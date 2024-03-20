@@ -5,7 +5,9 @@ ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/08/2023
 ms.search.form: VSCodeExtension
 ---
@@ -15,8 +17,6 @@ ms.search.form: VSCodeExtension
 The Visual Studio (VS) Code extension for Synapse fully supports the CRUD (create, read, update, and delete) notebook experience in Fabric. The extension also supports synchronization between local and remote workspaces; when you synchronize changes, you can address any conflicts or differences between your local and remote workspace.
 
 With this extension, you can also run notebooks onto the remote Fabric Spark compute.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Open a notebook with the Synapse extension
 
@@ -123,7 +123,7 @@ By selecting the kernel **synapse-spark-kernel** shipped with this extension, yo
 
 :::image type="content" source="media\vscode\run-notebook.png" alt-text="Screenshot showing where to run a notebook.":::
 
-## Next steps
+## Related content
 
 - [Spark Job Definition experience in VS Code](author-sjd-with-vs-code.md)
 - [Explore lakehouse from VS Code](explore-lakehouse-with-vs-code.md)

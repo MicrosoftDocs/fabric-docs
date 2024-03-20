@@ -4,9 +4,11 @@ description: Learn about templates for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.author: jburchel
 author: jonburchel
-ms.topic: conceptual 
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: conceptual
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Pipeline Template
 ---
 
@@ -15,8 +17,6 @@ ms.search.form: Pipeline Template
 Templates are pre-defined pipelines that allow you to get started quickly with Data Factory. These templates help to reduce development time by providing an easy way to create pipelines for common data integration scenarios.  
 
 :::image type="content" source="media/templates/templates-list.png" lightbox="media/templates/templates-list.png" alt-text="Screenshot showing the templates browser in [!INCLUDE [product-name](../includes/product-name.md)].":::
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## How to build a pipeline from a template
 
@@ -55,6 +55,6 @@ Templates are pre-defined pipelines that allow you to get started quickly with D
 
    :::image type="content" source="media/templates/run-with-parameters.png" lightbox="media/templates/run-with-parameters.png" alt-text="Screenshot showing the Pipeline run dialog with parameters specified.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)

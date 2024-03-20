@@ -5,8 +5,10 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Tutorial: Create a Warehouse in Microsoft Fabric
@@ -14,8 +16,6 @@ ms.date: 5/23/2023
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Now that you have a workspace, you can create your first [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create your first Warehouse
 
@@ -25,9 +25,9 @@ Now that you have a workspace, you can create your first [!INCLUDE [fabric-dw](i
 
    :::image type="content" source="media\tutorial-create-warehouse\search-workspaces.png" alt-text="Screenshot of the Workspaces panel, showing where to search for and select a workspace.":::
 
-1. Select the **+ New** button to display a full list of available items. From the list of objects to create, choose **Warehouse (Preview)** to create a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+1. Select the **+ New** button to display a full list of available items. From the list of objects to create, choose **Warehouse ** to create a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
-   :::image type="content" source="media\tutorial-create-warehouse\new-show-all.png" alt-text="Screenshot of the workspace screen, showing where to select Warehouse (Preview) in the New drop-down menu.":::
+   :::image type="content" source="media\tutorial-create-warehouse\new-show-all.png" alt-text="Screenshot of the workspace screen, showing where to select Warehouse  in the New drop-down menu.":::
 
 1. On the **New warehouse** dialog, enter `WideWorldImporters` as the name.
 
@@ -41,7 +41,7 @@ When provisioning is complete, the **Build a warehouse** landing page appears.
 
 :::image type="content" source="media\tutorial-create-warehouse\build-a-warehouse.png" alt-text="Screenshot of the Build a warehouse landing page." lightbox="media\tutorial-create-warehouse\build-a-warehouse.png":::
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Ingest data into a Microsoft Fabric data warehouse](tutorial-ingest-data.md)

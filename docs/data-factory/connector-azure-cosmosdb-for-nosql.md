@@ -1,18 +1,19 @@
 ---
-title: How to create an Azure Cosmos DB for NoSQL connection
+title: Set up your Azure Cosmos DB for NoSQL connection
 description: This article provides information about how to create an Azure Cosmos DB for NoSQL connection in Microsoft Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to create an Azure Cosmos DB for NoSQL connection
+# Set up your Azure Cosmos DB for NoSQL connection
 
 This article outlines the steps to create an Azure Cosmos DB for NoSQL connection.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -22,15 +23,13 @@ The Azure Cosmos DB for NoSQL connector supports the following authentication ty
 |:---|:---|:---|
 |Account key| √| n/a|
 
-## Prerequisites
+## Set up your connection in Dataflow Gen2
 
-The following prerequisites are required before you start:
+The Azure Cosmos DB for NoSQL connector isn't currently supported in Dataflow Gen2.
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+## Set up your connection in a data pipeline
 
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
-
-## Go to manage gateways to create connection
+To create a connection in a data pipeline:
 
 1. From the page header in the [!INCLUDE [product-name](../includes/product-name.md)] service, select **Settings** ![Settings gear icon](media/connector-common/settings.png) > **Manage connections and gateways**.
 
@@ -103,6 +102,6 @@ The properties in the following table are the supported authentication types.
 |**Key**||||✓|
 |- Account key|The  Azure Cosmos DB for NoSQL account key.|Yes |||
 
-## Next steps
+## Related content
 
-- [How to configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md)
+- [Configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md)

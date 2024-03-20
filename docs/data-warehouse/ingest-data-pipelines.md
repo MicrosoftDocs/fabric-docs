@@ -4,9 +4,13 @@ description: Follow steps to ingest data into a Warehouse with data pipelines in
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
 # Ingest data into your Warehouse using data pipelines
@@ -19,8 +23,6 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
 > [!NOTE]
 > Some features from Azure Data Factory are not available in [!INCLUDE [product-name](../includes/product-name.md)], but the concepts are interchangeable. You can learn more about Azure Data Factory and Pipelines on [Pipelines and activities in Azure Data Factory and Azure Synapse Analytics](/azure/data-factory/concepts-pipelines-activities). For a quickstart, visit [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create a data pipeline
 
@@ -45,11 +47,11 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
     :::image type="content" source="media\ingest-data-pipelines\sample-data-page.png" alt-text="Screenshot showing choices to use sample data or other data sources." lightbox="media\ingest-data-pipelines\sample-data-page.png":::
 
-1. In the next page, you can select a dataset, the source file format, and preview the selected dataset. Select the **Bing COVID-19** dataset, the **CSV** format, and select **Next**.
+1. In the next page, you can select a dataset, the source file format, and preview the selected dataset. Select **Bing COVID-19**, the **CSV** format, and select **Next**.
 
-    :::image type="content" source="media\ingest-data-pipelines\data-source-page.png" alt-text="Screenshot showing different dataset options for the COVID-19 sample, file formats, and a grid showing a preview of the dataset." lightbox="media\ingest-data-pipelines\data-source-page.png":::
+    :::image type="content" source="media\ingest-data-pipelines\data-source-page.png" alt-text="Screenshot showing different dataset options for the COVID-19 sample, file formats, and a grid showing a preview of the data." lightbox="media\ingest-data-pipelines\data-source-page.png":::
 
-1. The next page, **Data destinations**, allows you to configure the type of the destination dataset. We'll load data into a warehouse in our workspace, so select the **Warehouse** tab, and the **Data Warehouse** option. Select **Next**.
+1. The next page, **Data destinations**, allows you to configure the type of the destination workspace. We'll load data into a warehouse in our workspace, so select the **Warehouse** tab, and the **Data Warehouse** option. Select **Next**.
 
     :::image type="content" source="media\ingest-data-pipelines\data-destination-type-page.png" alt-text="Screenshot showing different destination options." lightbox="media\ingest-data-pipelines\data-destination-type-page.png":::
 
@@ -84,7 +86,7 @@ For more on data ingestion into your [!INCLUDE [fabric-dw](includes/fabric-dw.md
 - [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
 - [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
-> [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
+> [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

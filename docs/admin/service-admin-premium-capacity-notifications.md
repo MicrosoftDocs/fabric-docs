@@ -6,9 +6,11 @@ ms.author: kesharab
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
+ms.custom:
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/27/2023
-LocalizationGroup: Premium 
+ms.date: 11/02/2023
+LocalizationGroup: Premium
 ---
 
 # Configure notifications
@@ -64,8 +66,7 @@ To configure the capacity notification emails, follow these steps:
 
 * A 30-seconds window is applied to calculate your capacity usage. Due to a less granular calculation, capacity usage might appear differently in the [Power BI Premium utilization and metrics](/power-bi/enterprise/service-premium-metrics-app) app. As a result, you might not see the event your notification points to in the app. For example, a short spike in capacity activity that triggers a notification might not be seen at all in the Power BI Premium utilization and metrics app.
 
-## Next steps
+## Related content
 
 - [What is Power BI Premium?](/power-bi/enterprise/service-premium-what-is)
-
 - [What is Microsoft Fabric admin?](microsoft-fabric-admin.md)

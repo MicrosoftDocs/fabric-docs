@@ -5,92 +5,94 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 09/28/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/16/2023
 ms.search.form: Get data in a KQL Database
 ---
 # Get data from Amazon S3
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-In this article, you learn how to get data from Amazon S3. Amazon S3 is an object storage service built to store and retrieve data.
+In this article, you learn how to get data from Amazon S3 into either a new or existing table. Amazon S3 is an object storage service built to store and retrieve data.
 
 For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html).
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
-* An Amazon S3 bucket with data.
+* A [KQL database](create-database.md) with editing permissions
+* An Amazon S3 bucket with data
 
-## Get data
+## Source
 
-1. On the lower ribbon, select **Get Data** > **Amazon S3**.
-1. Enter a name for your table. By default, **New table** is selected.
+1. On the lower ribbon of your KQL database, select **Get Data**.
 
-      > [!NOTE]
-      > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
+    In the **Get data** window, the **Source** tab is selected.
 
-1. Select **Next: Source**.
+1. Select the data source from the available list. In this example, you're ingesting data from **Amazon S3**.
 
-### Source tab
+    :::image type="content" source="media/get-data-amazon-s3/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-amazon-s3/select-data-source.png":::
 
-1. In the **Link to source** field, paste the connection string of your bucket, or individual object in the following format.
+## Configure
 
-    > Bucket: `https://`*BucketName*`.s3.`*RegionName*`.amazonaws.com`
-    >
-    > Object: *ObjectName*`;AwsCredentials=`*AwsAccessID*`,`*AwsSecretKey*
+1. Select a target table. If you want to ingest data into a new table, select **+New table** and enter a table name.
 
-     :::image type="content" source="media/get-data-amazon-s3/source-tab.png" alt-text="Screenshot of the source tab in the Ingest data window showing the source type and link. The source link is highlighted.":::
+    > [!NOTE]
+    > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
-1. Select **Next: Schema** to view and edit your table column configuration.
+1. In the **URI** field, paste the connection string of a single bucket, or an individual object in the following format.
 
-### Schema tab
+    > Bucket: `https://`*BucketName*`.s3.`*RegionName*`.amazonaws.com;AwsCredentials=`*AwsAccessID*`,`*AwsSecretKey*
 
-Your data format and compression are automatically identified in the left-hand pane. If incorrectly identified, use the **Data format** dropdown menu to select the correct format.
+    Optionally, you can apply bucket filters to filter data according to a specific file extension.
 
-* If your data format is JSON, you must also select JSON levels, from 1 to 10. The levels determine the table column data division.
-* If your data format is CSV, select the check box **Ignore the first record** to ignore the heading row of the file.
+    :::image type="content" source="media/get-data-amazon-s3/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and an Amazon S3 connection string pasted." lightbox="media/get-data-amazon-s3/configure-tab.png":::
 
-For more information on data formats, see [Data formats supported for ingestion](/azure/data-explorer/ingestion-supported-formats?context=/fabric/context/context&pivots=fabric).
+1. Select **Next**.
 
-1. The **Mapping name** field is automatically filled. Optionally, you can enter a new name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
+## Inspect
 
-    :::image type="content" source="media/get-data-amazon-s3/amazon-s3-schema.png" alt-text="Screenshot of Schema window showing the data configuration." lightbox="media/get-data-amazon-s3/amazon-s3-schema.png":::
+The **Inspect** tab opens with a preview of the data.
 
-    >[!NOTE]
-    >
-    > The tool automatically infers the schema based on your data. If you want to change the schema to add and edit columns, you can do so under [Partial data preview](#partial-data-preview).
-    >
-    > You can optionally use the [Command viewer](#command-viewer) to view and copy the automatic commands generated from your inputs.
+To complete the ingestion process, select **Finish**.
 
-1. Select **Next: Summary**. To skip to the summary pane explanation, select [Complete data ingestion](#complete-data-ingestion).
+:::image type="content" source="media/get-data-amazon-s3/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-amazon-s3/inspect-data.png":::
 
-#### Command viewer
+Optionally:
 
-The command viewer shows the commands for creating tables, mapping, and ingesting data in tables.
+* Select **Command viewer** to view and copy the automatic commands generated from your inputs.
+* Use the **Schema definition file** dropdown to change the file that the schema is inferred from.
+* Change the automatically inferred data format by selecting the desired format from the dropdown. For more information, see [Data formats supported by Real-Time Analytics](ingestion-supported-formats.md).
+* [Edit columns](#edit-columns).
+* Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
 
-To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
+[!INCLUDE [get-data-edit-columns](../includes/real-time-analytics/get-data-edit-columns.md)]
 
-:::image type="content" source="media/get-data-amazon-s3/amazon-s3-command-viewer.png" alt-text="Screenshot of Command viewer pane showing mapping commands." lightbox="media/get-data-amazon-s3/amazon-s3-command-viewer.png":::
+:::image type="content" source="media/get-data-amazon-s3/edit-columns.png" alt-text="Screenshot of columns open for editing." lightbox="media/get-data-amazon-s3/edit-columns.png":::
 
-#### Partial data preview
+[!INCLUDE [mapping-transformations](../includes/real-time-analytics/mapping-transformations.md)]
 
-The partial data preview is automatically inferred based on your data. You can change the data preview by editing existing columns and adding new columns.
+### Advanced options based on data type
 
-1. To add a new column, select the **+** button on the right-hand column under **Partial data preview**.
+**Tabular (CSV, TSV, PSV)**:
 
-    :::image type="content" source="media/get-data-amazon-s3/amazon-s3-partial-preview.png" alt-text="Screenshot of Partial data preview pane." lightbox="media/get-data-amazon-s3/amazon-s3-partial-preview.png":::
+* If you're ingesting tabular formats in an *existing table*, you can select **Advanced** > **Keep table schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
+* To use the first row as column names, select  **Advanced** > **First row is column header**.
 
-    * The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
-    * The default column type is `string` but can be altered in the drop-down menu of the Column type field.
-    * Source: for table formats (CSV, TSV, etc.), each column can be linked to only one source column. For other formats (such as JSON, Parquet, etc.), multiple columns can use the same source.
+    :::image type="content" source="media/get-data-amazon-s3/advanced-csv.png" alt-text="Screenshot of advanced CSV options.":::
 
-1. Select **Next: Summary** to create a table and mapping and to begin data ingestion.
+**JSON**:
 
-### Complete data ingestion
+* To determine column division of JSON data, select **Advanced** > **Nested levels**, from 1 to 100.
+* If you select **Advanced** > **Skip JSON lines with errors**, the data is ingested in JSON format. If you leave this check box unselected, the data is ingested in multijson format.
 
-In the **Data ingestion completed** window, all three steps are marked with green check marks when data ingestion finishes successfully.
+    :::image type="content" source="media/get-data-amazon-s3/advanced-json.png" alt-text="Screenshot of advanced JSON options.":::
+
+## Summary
+
+In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to query, drop the ingested data, or see a dashboard of your ingestion summary.
+
+:::image type="content" source="media/get-data-amazon-s3/summary.png" alt-text="Screenshot of summary page with successful ingestion completed." lightbox="media/get-data-amazon-s3/summary.png":::
 
 ## Related content
 

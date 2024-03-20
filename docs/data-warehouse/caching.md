@@ -4,15 +4,15 @@ description: Learn more about caching in the data warehousing experience.
 author: filippopovic
 ms.author: fipopovi
 ms.reviewer: wiassaf
-ms.date: 09/06/2023
+ms.date: 11/15/2023
 ms.topic: overview
+ms.custom:
+  - ignite-2023
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Caching in Fabric data warehousing
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Retrieving data from the data lake is crucial input/output (IO) operation with substantial implications for query performance. In [!INCLUDE [product-name](../includes/product-name.md)], Synapse Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. Additionally, it intelligently minimizes the need for remote storage reads by leveraging local caches.
 
@@ -57,6 +57,6 @@ Full cache transactional consistency ensures that any modifications to the data 
 
 When the cache reaches its capacity threshold and fresh data is being read for the first time, objects that have remained unused for the longest duration will be removed from the cache. This process is enacted to create space for the influx of new data and maintain an optimal cache utilization strategy.
 
-## Next steps
+## Related content
 
 - [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)

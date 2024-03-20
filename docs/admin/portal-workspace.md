@@ -4,17 +4,18 @@ description: Learn how to configure workspace tenant settings as a Fabric admin.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.custom: tenant-setting, build-2023
+ms.custom:
+  - tenant-setting
+  - build-2023
+  - ignite-2023
 ms.topic: how-to
-ms.date: 08/24/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Workspace tenant settings
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Create workspaces (new workspace experience)
 
@@ -22,7 +23,7 @@ Workspaces are places where users collaborate on dashboards, reports, and other 
 
 :::image type="content" source="media/portal-workspace/power-bi-admin-workspace-settings.png" alt-text="Screenshot showing Create a workspace.":::
 
-For classic workspaces based on Microsoft 365 Groups, administration continues to occur in admin portal and Azure Active Directory.
+For classic workspaces based on Microsoft 365 Groups, administration continues to occur in admin portal and Microsoft Entra ID.
 
 > [!NOTE]
 > The **Create workspaces (new workspace experience)** setting defaults to allowing only users who can create Microsoft 365 Groups to create the new [!INCLUDE [product-name](../includes/product-name.md)] workspaces. Be sure to set a value in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal to ensure appropriate users can create them.
@@ -31,17 +32,21 @@ For classic workspaces based on Microsoft 365 Groups, administration continues t
 
 The admin portal has another section of settings about the workspaces in your tenant. In that section, you can sort and filter the list of workspaces and display the details for each workspace. See [Manage workspaces](portal-workspaces.md) for details.
 
-**Publish content packs and apps**
+**Publish apps**
 
-In the admin portal, you also control which users have permissions to distribute apps to the organization. See [Publish content packs and apps to the entire organization](service-admin-portal-content-pack-app.md#publish-content-packs-and-apps-to-the-entire-organization) for details.
+In the admin portal, you also control which users have permissions to distribute apps to the organization. See [Publish apps to the entire organization](service-admin-portal-app.md#publish-apps-to-the-entire-organization) for details.
 
-## Use datasets across workspaces
+## Use semantic models across workspaces
 
-Admins can control which users in the organization can use datasets across workspaces. When this setting is enabled, users still need the required Build permission for a specific dataset.
+Admins can control which users in the organization can use semantic models across workspaces. When this setting is enabled, users still need the required Build permission for a specific semantic model.
 
-:::image type="content" source="media/portal-workspace/power-bi-admin-datasets-workspaces.png" alt-text="Use datasets across workspaces":::
+:::image type="content" source="media/portal-workspace/power-bi-admin-datasets-workspaces.png" alt-text="Use semantic models across workspaces":::
 
-For more information, see [Intro to datasets across workspaces](/power-bi/connect-data/service-datasets-across-workspaces).
+For more information, see [Intro to semantic models across workspaces](/power-bi/connect-data/service-datasets-across-workspaces).
+
+## Identify your workspace ID
+
+The easiest way to find your workspace ID is in the URL of the Fabric site for an item in a workspace. As in Power BI, the Fabric URL contains the workspace ID, which is the unique identifier after `/groups/` in the URL, for example: `https://powerbi.com/groups/11aa111-a11a-1111-1abc-aa1111aaaa/...`. Alternatively, you can find the workspace ID in the Power BI Admin portal settings by selecting **Details** next to the workspace name.
 
 ## Block users from reassigning personal workspaces (My Workspace)
 
@@ -56,6 +61,6 @@ To turn on the setting:
 
 For more information, see [Prevent My workspace owners from reassigning their My workspaces to a different capacity](./portal-workspaces.md#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity).
 
-## Next steps
+## Related content
 
-[About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+[About tenant settings](tenant-settings-index.md)

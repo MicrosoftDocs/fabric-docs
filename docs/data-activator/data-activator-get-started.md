@@ -4,14 +4,15 @@ description: Learn how to get started using Data Activator.
 author: davidiseminger
 ms.author: davidi
 ms.topic: concept
-ms.custom: 
-ms.date: 10/03/2023
+ms.custom:
+  - ignite-2023-fabric
+ms.date: 11/20/2023
 ---
 
 # Get started with Data Activator
 
 > [!IMPORTANT]
-> Microsoft Fabric and Data Activator are in preview.
+> Data Activator is currently in preview.
 
 The first step in using Data Activator is for your administrator to enable Data Activator for your organization. The following image shows where to enable Data Activator in the Admin portal.
 
@@ -38,10 +39,11 @@ When you open a reflex, you see two tabs at the bottom of the screen that switch
 
 :::image type="content" source="media/data-activator-get-started/data-activator-get-started-02.png" alt-text="Screenshot of data activator switch between data mode and design mode.":::
 
-## Next steps
+## Related content
 
 Once you have created a reflex, you need to populate it with your data. Learn how to get data into your reflex from the [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md) and [Get data for Data Activator from Eventstreams](data-activator-get-data-eventstreams.md) articles. Alternatively, if you just want to learn about Data Activator using sample data, you can try the [Data Activator tutorial using sample data](data-activator-tutorial.md).
 
+* [Enable Data Activator](../admin/data-activator-switch.md)
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
 * [Get data for Data Activator from Eventstreams](data-activator-get-data-eventstreams.md)

@@ -6,14 +6,15 @@ summary: Data engineering in Microsoft Fabric enables users to design, build, an
 metadata:
   title: Data Engineering in Microsoft Fabric documentation
   description: Data engineering in Microsoft Fabric enables users to design, build, and maintain systems that enable their organizations to collect, store, process, and analyze large volumes of data. # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list. 
-  ms.subservice: data-engineering 
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice: data-engineering
+  ms.custom:
+    - ignite-2023
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
   author: SnehaGunda
   ms.author: sngun
   ms.date: 05/23/2023
-
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -60,7 +61,10 @@ landingContent:
             url: lakehouse-notebook-explore.md
           - text: Visualize notebooks
             url: notebook-visualization.md
-
+          - text: Notebooks source control and deployment
+            url: notebook-source-control-deployment.md
+          - text: Use MSSparkUtils in notebook
+            url: microsoft-spark-utilities.md
   # Card 
   - title: Delta Lake
     linkLists:
@@ -74,34 +78,6 @@ landingContent:
             url: delta-optimization-and-v-order.md
           - text: Load to tables
             url: load-to-tables.md
-
-  # Card 
-  - title: Apache Spark
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Apache Spark job definition
-            url: spark-job-definition.md
-          - text: Spark monitoring overview
-            url: spark-monitoring-overview.md
-          - text: Apache Spark advisor
-            url: spark-advisor-introduction.md
-      - linkListType: get-started
-        links:
-          - text: Create a Spark job definition
-            url: create-spark-job-definition.md
-      - linkListType: how-to-guide
-        links:
-          - text: Schedule and run a Spark job definition
-            url: run-spark-job-definition.md
-          - text: Monitor a Spark application
-            url: spark-detail-monitoring.md
-          - text: Manage Apache Spark libraries
-            url: library-management.md
-          - text: How to use Fabric MSSparkUtils
-            url: microsoft-spark-utilities.md
-          - text: Configure capacity settings
-            url: capacity-settings-management.md
 
   # Card 
   - title: Lakehouse end-to-end tutorial
@@ -126,6 +102,36 @@ landingContent:
             url: tutorial-lakehouse-clean-up.md
 
   # Card 
+  - title: Apache Spark
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Apache Spark job definition
+            url: spark-job-definition.md
+          - text: Spark monitoring overview
+            url: spark-monitoring-overview.md
+          - text: Apache Spark advisor
+            url: spark-advisor-introduction.md
+      - linkListType: get-started
+        links:
+          - text: Create a Spark job definition
+            url: create-spark-job-definition.md
+          - text: Create a Spark job definition with a Fabric API
+            url: spark-job-definition-api.md
+      - linkListType: how-to-guide
+        links:
+          - text: Schedule and run a Spark job definition
+            url: run-spark-job-definition.md
+          - text: Monitor a Spark application
+            url: spark-detail-monitoring.md
+          - text: Manage Apache Spark libraries
+            url: library-management.md
+          - text: How to use Fabric MSSparkUtils
+            url: microsoft-spark-utilities.md
+          - text: Configure capacity settings
+            url: capacity-settings-management.md
+
+  # Card 
   - title: VS Code integration
     linkLists:
       - linkListType: how-to-guide
@@ -138,3 +144,21 @@ landingContent:
             url: author-sjd-with-vs-code.md
           - text: Explore lakehouse from VS Code
             url: explore-lakehouse-with-vs-code.md
+          - text: Develop notebook from VS Code web experience
+            url: author-notebook-with-vs-code-web.md
+
+  # Card 
+  - title: Get started with environment
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Microsoft Fabric environments
+            url: create-and-use-environment.md
+      - linkListType: how-to-guide
+        links:
+          - text: Manage Spark compute in environments
+            url: environment-manage-compute.md
+          - text: Manage libraries in environments
+            url: environment-manage-library.md
+          - text: Migrate the existing workspace libraries and Spark properties to an environment
+            url: environment-workspace-migration.md

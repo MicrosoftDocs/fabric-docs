@@ -4,16 +4,16 @@ description: Learn how to use Stored procedure activity to execute a SQL stored 
 ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.topic: how-to 
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: how-to
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # How to use Stored procedure activity
 
 In this article, you learn how to add a new Stored procedure activity to a pipeline, add a new connection, and configure the activity to run.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ To get started, you must complete the following prerequisites:
 
 ## Step 3: Choose a stored procedure and configure parameters
 
-Select a stored procedure, and optionally import its parameters or manually add parameters.
+Select a stored procedure, and optionally import its parameters or manually add parameters. Select the **Import** button to import the parameters from the stored procedure as it is stored in the data source, or add them manually by selecting the **+ New** button for each parameter, then providing its name and data type, and nullability setting. Provide a value for each parameter, either by entering text directly, or by using a [custom expression](expression-language.md) to populate the value. 
 
 :::image type="content" source="media/stored-procedure-activity/select-procedure.png" alt-text="Screenshot showing where to select the stored procedure to execute and optionally configure its parameters.":::
 
@@ -55,5 +55,6 @@ Switch to the **Home** tab at the top of the pipeline editor, and select the sav
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
-[Monitor pipeline runs](monitor-pipeline-runs.md)
+## Related content
+
+- [Monitor pipeline runs](monitor-pipeline-runs.md)

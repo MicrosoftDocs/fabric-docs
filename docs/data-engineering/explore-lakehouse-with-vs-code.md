@@ -5,7 +5,9 @@ ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/08/2023
 ms.search.form: VSCodeExtension
 ---
@@ -13,8 +15,6 @@ ms.search.form: VSCodeExtension
 # Explore Microsoft Fabric lakehouses in Visual Studio Code
 
 You can use the Synapse VS Code extension to explore the structure of your lakehouse in a workspace.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 With the extension installed, Visual Studio (VS) Code displays the lakehouse structure in a tree view that includes the **Files** and **Tables** sections. All the lakehouses from the workspace you select appear under the lakehouse root tree node.
 
@@ -36,7 +36,9 @@ To make it easier to reference a table, folder, or file in the code, you can cop
 
 :::image type="content" source="media\vscode\copy-path.png" alt-text="Screenshot of the right-click menu, showing where to select from the copy options.":::
 
-## Next steps
+## Related content
 
-- [What is SQL Endpoint for a lakehouse?](lakehouse-sql-endpoint.md)
+- [What is the SQL analytics endpoint for a lakehouse?](lakehouse-sql-analytics-endpoint.md)
+- [What is a Lakehouse?](lakehouse-overview.md)
+- [Navigate your Lakehouse?](navigate-lakehouse-explorer.md)
 - [Get data into the Fabric Lakehouse](load-data-lakehouse.md)

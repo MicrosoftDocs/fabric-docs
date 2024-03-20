@@ -5,7 +5,9 @@ ms.reviewer: ssalgado
 ms.author: negust
 author: nelgson
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Train models with scikit-learn
 ---
@@ -14,7 +16,7 @@ ms.search.form: Train models with scikit-learn
 
 Scikit-learn ([scikit-learn.org](https://scikit-learn.org)) is a popular, open-source machine learning framework. It's frequently used for supervised and unsupervised learning. It also provides various tools for model fitting, data preprocessing, model selection, model evaluation, and more.  
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 In this section, we'll go through an example of how you can train and track the iterations of your Scikit-Learn model.
 
@@ -97,7 +99,7 @@ batch_predictions = model.transform(test_spark)
 batch_predictions.show()
 ```
 
-## Next steps
+## Related content
 
 - Learn about [machine learning models](machine-learning-model.md).
 - Learn about [machine learning experiments](machine-learning-experiment.md).

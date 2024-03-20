@@ -6,15 +6,17 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 08/29/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Developer tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 To manage Power BI developer settings, you must be a Global Admin in Office 365, or have been assigned the Fabric administrator role. For more information about the Fabric administrator role, see [Understand Microsoft Fabric admin roles](roles.md).
 
@@ -31,7 +33,7 @@ Learn about the [Embed for your customers](/power-bi/developer/embedded/embedded
 
 ## Allow service principals to use Power BI APIs
 
-Web apps registered in Azure Active Directory (Azure AD) use an assigned [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Power BI APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
+Web apps registered in Microsoft Entra ID use an assigned [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Power BI APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
 
 You can control who can access service principals by creating dedicated security groups and using these groups in any Power BI tenant level-settings.
 
@@ -49,6 +51,6 @@ For extra security, you can block the use of resource key-based authentication. 
 
 This setting applies to the entire organization. You can't apply it only to a select security group.
 
-## Next steps
+## Related content
 
-- [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+- [About tenant settings](tenant-settings-index.md)

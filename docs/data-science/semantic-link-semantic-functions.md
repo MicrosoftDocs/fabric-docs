@@ -1,20 +1,22 @@
 ---
-title: Semantic functions in Microsoft Fabric
+title: Semantic functions in Microsoft Fabric (preview)
 description: Learn about semantic functions that you can apply to FabricDataFrames and FabricSeries.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: marcozo
 author: eisber
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.date: 06/23/2023
 ms.search.form: semantic link
 ---
 
-# Semantic functions
+# Semantic functions (preview)
 
 This article covers semantic functions and how they can help data scientists and data engineers discover functions that are relevant to the FabricDataFrame or FabricSeries on which they're working.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 To use semantic functions, install the `SemPy` Python library in your notebook kernel by executing this code in a notebook cell:
 
@@ -55,12 +57,12 @@ df_geo = df.to_geopandas(lat_col="lat", long_col="long")
 df_geo.explore()
 ```
 
-Alternatively, you could read from a Power BI dataset into a FabricDataFrame, and in that case, the metadata will be autopopulated.
+Alternatively, you could read from a semantic model into a FabricDataFrame, and in that case, the metadata will be autopopulated.
 
 ```Python
 from sempy.fabric import FabricDataFrame
 
-# Alternative: reading from Power BI dataset
+# Alternative: reading from semantic model
 import sempy.fabric as fabric
 df = fabric.read_table("my_dataset_name", "my_countries")
 
@@ -113,9 +115,9 @@ The following points provide a breakdown of the code snippet:
 - Calling the function also supplies standard data types such as `str`, `int`, `float`, and `datetime` to define required input columns.
 - The type annotation of the first parameter (`df`) shows that the function is applicable to a FabricDataFrame, rather than a FabricSeries.
 
-## Next steps
+## Related content
 
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
-- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Power BI connectivity with semantic link and Microsoft Fabric](semantic-link-power-bi.md)
-- [Semantic data propagation from Power BI datasets](semantic-link-semantic-propagation.md)
+- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
+- [Power BI connectivity with semantic link and Microsoft Fabric (preview)](semantic-link-power-bi.md)
+- [Semantic data propagation from semantic models (preview)](semantic-link-semantic-propagation.md)

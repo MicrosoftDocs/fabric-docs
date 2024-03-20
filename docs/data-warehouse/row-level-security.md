@@ -2,10 +2,12 @@
 title: Row-level security in Fabric data warehousing
 description: Learn about row-level security in tables in Fabric data warehousing.
 author: SQLStijn-MSFT
-ms.author: stwynant 
+ms.author: stwynant
 ms.reviewer: wiassaf
 ms.topic: conceptual
-ms.date: 10/11/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 # Row-level security in Fabric data warehousing
 
@@ -17,7 +19,7 @@ Row-level security (RLS) enables you to use group membership or execution contex
 
 Row-level security simplifies the design and coding of security in your application. Row-level security helps you implement restrictions on data row access.
 
-The access restriction logic is in the database tier, not in any single application tier. The database applies the access restrictions every time data access is attempted, from any application or reporting platform including Power BI. This makes your security system more reliable and robust by reducing the surface area of your security system. Row-level security only applies to queries on a Warehouse or SQL Endpoint in Fabric. Power BI queries on a warehouse in Direct Lake mode will fall back to Direct Query mode to abide by row-level security.
+The access restriction logic is in the database tier, not in any single application tier. The database applies the access restrictions every time data access is attempted, from any application or reporting platform including Power BI. This makes your security system more reliable and robust by reducing the surface area of your security system. Row-level security only applies to queries on a Warehouse or SQL analytics endpoint in Fabric. Power BI queries on a warehouse in Direct Lake mode will fall back to Direct Query mode to abide by row-level security.
 
 ## Restrict access to certain rows to certain users
 
@@ -146,6 +148,7 @@ GO
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
 - [Column-level security in Fabric data warehousing](column-level-security.md)
+- [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
 
 ## Next step
 

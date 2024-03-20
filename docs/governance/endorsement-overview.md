@@ -3,14 +3,16 @@ title: Endorsement overview
 description: Learn how to make quality content easier to find through promotion or certification.
 author: paulinbar
 ms.author: painbar
-ms.topic: concept-article
-ms.custom: build-2023
+ms.topic: conceptual
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 07/15/2023
 ---
 
 # Endorsement
 
-Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. Identifying trustworthy, authoritative items can be difficult. Endorsement is a way to make it easier for users to find the high-quality items they need. Endorsed items are clearly labeled, both in Fabric and in other places where users look for Fabric items (such for Power BI datasets in Excel). Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists.
+Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. Identifying trustworthy, authoritative items can be difficult. Endorsement is a way to make it easier for users to find the high-quality items they need. Endorsed items are clearly labeled, both in Fabric and in other places where users look for Fabric items (such for Power BI semantic models in Excel). Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists.
 
 There are two kinds of endorsement: **promotion** and **certification**.
 
@@ -31,15 +33,15 @@ There are two kinds of endorsement: **promotion** and **certification**.
     > [!NOTE]
     > Certification enablement and configuration can be delegated to domain administrators, making it possible to specify a different set of reviewers for each domain. For more information, see [Set up item certification](../admin/endorsement-setup.md).
 
-The following image illustrates how endorsed, promoted, and certified datasets are clearly identified when you're searching for an item.
+The following image illustrates how endorsed, promoted, and certified semantic models are clearly identified when you're searching for an item.
 
-[ ![Screenshot of endorsed datasets in a dataset selection dialog.](media/endorsement-overview/endorsement-data-hub.png)](media/endorsement-overview/endorsement-data-hub.png#lightbox)
+[ ![Screenshot of endorsed semantic models in a semantic model selection dialog.](media/endorsement-overview/endorsement-data-hub.png)](media/endorsement-overview/endorsement-data-hub.png#lightbox)
 
 ## Types of items that can be endorsed
 
 All Fabric items can be endorsed except for Power BI dashboards.
 
-## Next steps
+## Related content
 
 * [Promote or certify Fabric content](../get-started/endorsement-promote-certify.md)
 * [Enable certification for your organization](../admin/endorsement-setup.md) (Fabric admins)

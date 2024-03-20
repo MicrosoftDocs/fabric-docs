@@ -1,20 +1,20 @@
 ---
-title: Incrementally load data from Data Warehouse to Lakehouse 
-description: Learn steps to incrementally load data from Data Warehouse to Lakehouse 
+title: Incrementally load data from Data Warehouse to Lakehouse
+description: Learn steps to incrementally load data from Data Warehouse to Lakehouse
 ms.reviewer: jonburchel
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 07/14/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Pipeline tutorials
 ---
 
 # Incrementally load data from Data Warehouse to Lakehouse 
 
 In this tutorial, you learn how to incrementally load data from Data Warehouse to Lakehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Overview
 
@@ -294,7 +294,7 @@ Go to your Lakehouse, you find the new copied data file is under the folder that
 
 :::image type="content" source="media/tutorial-incremental-copy-data-warehouse-lakehouse/lakehouse-data-preview-2.png" alt-text="Screenshot showing lakehouse data preview for the second pipeline run.":::
 
-## Next steps
+## Related content
 Next, advance to learn more about copy from Azure Blob Storage to Lakehouse.
 
 > [!div class="nextstepaction"]

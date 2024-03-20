@@ -1,30 +1,32 @@
 ---
-title: Use data from a KQL database in Power BI Desktop
-description: Learn how to use data from your KQL database in Power BI Desktop.
+title: Connect KQL Database to Power BI Desktop
+description: Learn how to connect your KQL database as a data source in Power BI Desktop.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.date: 09/28/2023
 ---
-# Use data from a KQL database in Power BI Desktop
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+# Connect KQL Database to Power BI Desktop
 
 In this article, you learn how to connect your KQL database as a data source to Power BI Desktop. Once connected, you can use multiple tables to build your Power BI reports.
 
-To create reports with Power BI service using a KQL Queryset, see [Create a Power BI report](create-powerbi-report.md).
+To create reports with Power BI service using a KQL queryset, see [Create a Power BI report](create-powerbi-report.md).
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md) with data.
-* [Power BI Desktop](https://powerbi.microsoft.com/get-started).
+* A [KQL database](create-database.md) with data
+* [Power BI Desktop](https://powerbi.microsoft.com/get-started)
 
 ## Connectivity modes
 
-Power BI supports *Import* and *DirectQuery* connectivity modes. When building Power BI reports or dashboards, choose your connectivity mode depending on your scenario, scale, and performance requirements. Using **Import** mode copies your data to Power BI. In contrast, using **DirectQuery** mode queries your data directly from your KQL database.
+Power BI supports *Import* and *DirectQuery* connectivity modes. When building Power BI reports, choose your connectivity mode depending on your scenario, scale, and performance requirements. Using **Import** mode copies your data to Power BI. In contrast, using **DirectQuery** mode queries your data directly from your KQL database.
 
 Use **Import** mode when:
 
@@ -37,54 +39,38 @@ Use **DirectQuery** mode when:
 
 For more information on connectivity modes, see [Import and Direct Query connectivity modes](/power-bi/desktop-directquery-about).
 
-## 1- Copy query URI
-
-1. Navigate to your **KQL database**.
-1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere to use in a later step.
-
-    :::image type="content" source="media/power-bi-data-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
-
-## 2- Use data in Power BI
-
-To use your **KQL database** as a data source in Power BI, you need to add the Azure Data Explorer connector.
+## Connect data source
 
 1. Launch Power BI Desktop.
-1. On the **Home** tab, select **Get Data** > **More**.
+1. On the **Home** tab, select **OneLake data hub** > **KQL Databases**.
 
-    :::image type="content" source="media/power-bi-data-connector/get-data.png" alt-text="Screenshot of the Home tab in Power BI Desktop, showing the drop-down menu of the Home tab entry titled Get data with the More option highlighted."  lightbox="media/power-bi-data-connector/get-data.png":::
+    :::image type="content" source="media/power-bi-data-connector/power-bi-desktop.png" alt-text="Screenshot of Power BI Desktop showing the dropdown menu of the OneLake data hub."  lightbox="media/power-bi-data-connector/power-bi-desktop-extended.png" :::
 
-1. Search for *Azure Data Explorer*, select **Azure Data Explorer (Kusto)**, and then select **Connect**.
+    A list of KQL Databases that you have access to appears in the **OneLake data hub** window.
 
-    :::image type="content" source="media/power-bi-data-connector/connect-data.png" alt-text="Screenshot of the Get Data window, showing  Azure Data Explorer in the search bar with the connect option highlighted." lightbox="media/power-bi-data-connector/connect-data.png":::
+1. Select a KQL database to use as a data source in Power BI, and then select **Connect**.
 
-1. In the window that appears, fill out the form with the following information.
+    :::image type="content" source="media/power-bi-data-connector/one-lake-data-hub.png" alt-text="Screenshot of OneLake data hub showing a list of KQL Database available for connection in Power BI Desktop.":::
 
-    :::image type="content" source="media/power-bi-data-connector/cluster-database-table.png" alt-text="Screenshot of the Azure Data Explorer(Kusto) connection window showing the help cluster URL, with the DirectQuery option selected." lightbox="media/power-bi-data-connector/cluster-database-table.png":::
+1. Provide your credentials in the authentication window.
 
-    | Setting | Field description | Sample value |
-    |---|---|---|
-    | Cluster | The Query URI from Microsoft Fabric's **KQL Database** dashboard. For other clusters, the URL is in the form *https://\<ClusterName\>.\<Region\>.kusto.windows.net*. | Paste your [Query URI](#1--copy-query-uri) |
-    | Database | A database that is hosted on the cluster you're connecting to. You can optionally select a database in a later step. | Leave blank |
-    | Table name | The name of a table in the database, or a query like <code>StormEvents \| take 1000</code>. You can optionally select a table name in a later step. | Leave blank |
-    | Advanced options | Optionally, you can select options for your queries, such as result set size. |  Leave blank |
-    | Data connectivity mode | Determines whether Power BI imports the data or connects directly to the data source. You can use either option with this connector. For more information, see [Connectivity modes](#connectivity-modes). | *DirectQuery* |
+### Load data
 
-    **Advanced options**
+1. In the **Navigator** window, select the tables you want to connect, and then select **Load**.
 
-    | Setting | Field description | Sample value |
-    |---|---|---|
-    | Limit query result record number| The maximum number of records to return in the result |`1000000` |
-    | Limit query result data size | The maximum data size in bytes to return in the result | `100000000` |
-    | Disable result set truncation | Enable/disable result truncation by using the notruncation request option | `true` |
-    | Additional set statements | Sets query options for the duration of the query. Query options control how a query executes and returns results. | `set query_datascope=hotcache` |
+    Optionally, if you want to shape your data first, select **Transform data** to launch the Power Query Editor. For more information, see [Shape data](/power-bi/fundamentals/desktop-getting-started?source=recommendations&branch=main#shape-data).
 
-1. On the **Navigator** screen, expand your database, select the tables you want to connect, and then select **Load Data**.
+    :::image type="content" source="media/power-bi-data-connector/navigator-pane.png" alt-text="Screenshot of the navigator pane showing the selected tables for connection.":::
 
-    Optionally, if you want to shape your data first, select **Transform data** to launch Power Query Editor. For more information, see [Shape data](/power-bi/fundamentals/desktop-getting-started?source=recommendations&branch=main#shape-data).
+    The **Connection settings** window that appears lists the data connectivity modes. The connectivity mode determines whether Power BI imports the data or connects directly to the data source. For more information, see [Connectivity modes](#connectivity-modes).
 
-    :::image type="content" source="media/power-bi-data-connector/select-table.png" alt-text="Screenshot of Navigator screen, showing that the StormEvents table is selected. The Load button is highlighted." lightbox="media/power-bi-data-connector/select-table.png":::
+1. Select **DirectQuery** to connect directly to the data source, and then select **OK**.
+
+    :::image type="content" source="media/power-bi-data-connector/connection-settings.png" alt-text="Screenshot of the connection settings pane showing the two available connectivity modes. DirectQuery is selected.":::
+
+You successfully connected your KQL database as a data source in Power BI Desktop. You can now visualize your data in a Power BI report.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Create reports and dashboards in Power BI](/power-bi/create-reports/).
+> [Create reports in Power BI](/power-bi/create-reports/)

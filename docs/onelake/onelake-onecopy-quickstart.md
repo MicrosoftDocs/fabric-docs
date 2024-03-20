@@ -5,7 +5,9 @@ ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/27/2023
 ---
 
@@ -20,8 +22,6 @@ In this guide, you will:
 - Analyze and transform data with Spark using a Fabric notebook.
 
 - Query one copy of data on OneLake with SQL.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -87,12 +87,12 @@ Before you begin, you must:
    SELECT City,newColumn FROM <replace with item name>.dim_city LIMIT 10;
    ```
 
-1. You can also access any Delta table on OneLake via a SQL endpoint. A SQL endpoint references the same physical copy of Delta table on OneLake and offers the T-SQL experience. Select the SQL endpoint for **lakehouse1** and then select **New SQL Query** to query the table using T-SQL.
+1. You can also access any Delta table on OneLake via a SQL analytics endpoint. A SQL analytics endpoint references the same physical copy of Delta table on OneLake and offers the T-SQL experience. Select the SQL analytics endpoint for **lakehouse1** and then select **New SQL Query** to query the table using T-SQL.
 
    ```sql
    SELECT TOP (100) * FROM [<replace with item name>].[dbo].[dim_city];
    ```
 
-## Next steps
+## Related content
 
 - [Connect to ADLS using a OneLake shortcut](onelake-shortcuts-adb-quickstart.md)

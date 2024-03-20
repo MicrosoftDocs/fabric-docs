@@ -6,14 +6,16 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
 ms.date: 06/12/2023
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
 
 # Manual update
 
 When you update items in a workspace or *undo* a commit, there’s always a chance that one or more items will fail. The workspace fails to update if the incoming update from the Git branch causes inconsistencies or other problems in the workspace that are difficult to determine in advance. When an item fails to update, the update process stops. If the item that failed is the first (or only) item that was updating, the workspace remains synced with the original branch. If an item fails after one or more items succeeded in updating, you have a situation where some items are synced and some aren't. In this case, your workspace isn't synced to any Git branch.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 An update can fail for many reasons. Possible reasons include, but not limited to, the following problems:
 
@@ -63,6 +65,6 @@ To update the workspace manually after it failed to update automatically:
 
 The update process fails as soon as one item fails. Therefore, there's no way to know if other items in the Git branch are also problematic. If you're updating many items and more than one item is problematic, you have to repeat this process once for each failed item.
 
-## Next steps
+## Related content
 
 [Conflict resolution](./conflict-resolution.md)

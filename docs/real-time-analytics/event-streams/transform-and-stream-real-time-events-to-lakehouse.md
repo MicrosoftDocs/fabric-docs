@@ -1,20 +1,20 @@
 ---
 title: Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
-description: Learn how to use event streams to ingest, filter, and transform data from Azure Event Hubs, and stream it into a lakehosue.
+description: Learn how to use event streams to ingest, filter, and transform data from Azure Event Hubs, and stream it into a lakehouse.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: Event streams
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
+ms.search.form: Event Streams Tutorials
 ---
 
 # Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
 
 This tutorial shows you how to use the Microsoft Fabric event streams feature to ingest, filter, and transform real-time events and send them in Delta Lake format from your Azure event hub to a lakehouse. You also learn how to build a Power BI report to visualize business insights in your events data.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 In this tutorial, you learn how to:
 
@@ -58,9 +58,9 @@ You can create an eventstream and a lakehouse from the **Workspace** page or the
 After you create both your new eventstream and lakehouse successfully, these items appear in your workspace:
 
 - **citypwr-es**: an Eventstream item
-- **citypwrdata**: a Lakehouse item, a Dataset (default) item, and a SQL endpoint item.
+- **citypwrdata**: a Lakehouse item, a semantic model (default) item, and a SQL endpoint item.
 
-:::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/four-items-list.png" alt-text="Screenshot showing the list of four items added to your workspace.":::
+   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/four-items-list.png" alt-text="Screenshot showing the list of four items added to your workspace.":::
 
 ## Add an Azure Event Hubs source to the eventstream
 
@@ -70,24 +70,22 @@ After you create the lakehouse and eventstream, follow these steps to add an Azu
 
 1. Enter a source name for the new source and select **Create new connection** to your Azure event hub.
 
-   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-connection.png" alt-text="Screenshot showing where to select Create new connection on the Azure Event Hubs source configuration screen.":::
+   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-connection.png" alt-text="Screenshot showing where to select Create new connection on the Azure Event Hubs source configuration screen." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-connection.png":::
 
 1. Fill in the information about your Azure event hub on the **New connection** page.
 
-   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing where to select Cloud on the New connection screen.":::
+   :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png":::
 
-   - **Connection name**: Enter a name for the cloud connection.
-   - **Connection type**: Default value is `EventHub`.
    - **Event Hub namespace**: Enter the name of your Azure event hub namespace.
-   - **Authentication**: Go to your Azure event hub and create a policy with `Manage` or `Listen` permission under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**.
+   - **Event Hub**: Enter the name of your Azure event hub in the Azure portal.
+   - **Connection name**: Enter a name for the cloud connection.
+   - **Shared access key name** and **Shared access key**: Go to your Azure event hub and create a policy with `Manage` or `Listen` permission under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**.
 
-       :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" alt-text="Screenshot showing where to select and enter the authentication information for your Azure event hub." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" :::
-
-   - **Privacy level**: choose a privacy level for the cloud connection.
-
-1. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
+      :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" alt-text="Screenshot showing where to select and enter the authentication information for your Azure event hub." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" :::
 
 1. Select a **Consumer group** that reads the event data from your Azure event hub and then **Add**.
+
+1. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
 
 1. The new source node appears in the canvas after the event hub source is created successfully. Select the event hub node in the canvas, then the **Data preview** tab in the bottom pane to view the data inside the event hub.
 
@@ -135,13 +133,9 @@ In this section, after you have started the process of adding a lakehouse destin
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/manage-fields-operator.png" alt-text="Screenshot showing where to select Manage fields in the Operations menu.":::
 
-1. Select the line between the eventstream and the lakehouse and press the **Delete** key to remove the connection between them. You must delete this connection before you can insert the **Manage fields** operator between them.
+1. Hover on the connection line and then select the "+" button. A drop-down menu appears on the connection line, and you can insert the **Manage fields** operator between them.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/delete-connection.png" alt-text="Screenshot showing where to select and delete the operator connection between the eventstream and the lakehouse." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/delete-connection.png" :::
-
-1. On the left edge of the eventstream node, click and drag the green circle with your mouse to connect it to the **Manage fields** operator node. Follow the same process to  connect the **Manage fields** operator node to the lakehouse node.
-
-   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/setup-connection.png" alt-text="Screenshot showing the operator connection screen in the Event processing editor." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/setup-connection.png" :::
 
 1. Select the **Manage fields** operator node. In the **Manage fields** configuration panel, select **Add all fields**. Then hover your mouse over the sensor column, select **...** and **Remove** to remove the column.
 
@@ -171,7 +165,7 @@ To verify the event data in your new lakehouse, open the **citypwrdata** lakehou
 
 ## Build a Power BI report with the ingested events data
 
-1. Go to your workspace and select the **citypwrdata** dataset, which the system automatically added when you created the new **citypwrdata** lakehouse.
+1. Go to your workspace and select the **citypwrdata** semantic model, which the system automatically added when you created the new **citypwrdata** lakehouse.
 
 1. From the **Create a report** menu in the ribbon, select **Auto-create** or **Start from scratch**.
 
@@ -193,7 +187,7 @@ To verify the event data in your new lakehouse, open the **citypwrdata** lakehou
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/final-report.png" alt-text="Screenshot showing the final edited report." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/final-report.png" :::
 
-## Next steps
+## Related content
 
 In this tutorial, you learned how to ingest, filter, and transform real-time events and send them from your Azure event hub to a lakehouse in Delta Lake format. You also learned how to use the lakehouse to build Power BI reports to visualize the business insights in your events data. If you're interested in discovering more advanced features for working with the Fabric event streams feature, you may find the following resources helpful.
 

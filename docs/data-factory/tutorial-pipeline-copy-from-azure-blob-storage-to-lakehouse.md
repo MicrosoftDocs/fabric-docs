@@ -4,16 +4,16 @@ description: Learn how to use a data pipeline to copy data from an Azure Blob St
 ms.reviewer: jonburchel
 ms.author: jburchel
 author: jonburchel
-ms.topic: tutorial 
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: tutorial
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Copy from Azure Blob Storage to Lakehouse
 
 In this tutorial, you'll build a data pipeline to move a CSV file from an input folder of an Azure Blob Storage source to a Lakehouse destination. 
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -120,7 +120,7 @@ In this session, you'll start to build a data pipeline by using the following st
 
    :::image type="content" source="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/scheduled-run.png" alt-text="Screenshot showing a pipeline with a configured schedule to run every 15 minutes.":::
 
-## Next steps
+## Related content
 
 The pipeline in this sample shows you how to copy data from Azure Blob Storage to Lakehouse.  You learned how to:
 

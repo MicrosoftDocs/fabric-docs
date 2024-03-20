@@ -2,14 +2,12 @@ items:
 - name: Real-Time Analytics documentation
   href: index.yml
 - name: Overview
+  expanded: true
   items:
   - name: What is Real-Time Analytics?
     href: overview.md
-
   - name: Compare with Azure Data Explorer
     href: realtime-analytics-compare.md
-- name: Get started
-  items:
   - name: End to end tutorial
     items:
     - name: Tutorial - Introduction
@@ -28,91 +26,212 @@ items:
       href: tutorial-6-build-report.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
-  - name: Sample Gallery
-    displayName: Query sample data
-    href: sample-gallery.md
-- name: Event streams
-  href: event-streams/toc.yml
-- name: KQL Database
+- name: Get data
   items:
-  - name: Create a KQL database
-    href: create-database.md
-  - name: Access an existing KQL database
-    displayName: copy URI, copy query URI, copy ingestion URI
-    href: access-database-copy-uri.md
-  - name: Create a database shortcut
-    href: database-shortcut.md
-  - name: Create an empty table
-    href: create-empty-table.md
-  - name: Get data
+  - name: Event streams
     items:
-    - name: Get data from a blob
-      href: get-data-blob.md
-    - name: Get data from a blob container
-      href: get-data-blob-container.md
+    - name: What is Event streams?
+      href: event-streams/overview.md
+    - name: Create and manage an eventstream
+      href: event-streams/create-manage-an-eventstream.md
+    - name: Monitor event streams capacity consumption
+      href: event-streams/monitor-capacity-consumption.md
+    - name: Add and manage sources
+      href: event-streams/add-manage-eventstream-sources.md
+    - name: Add and manage destinations
+      href: event-streams/add-manage-eventstream-destinations.md
+    - name: Process events using event processor
+      href: event-streams/process-events-using-event-processor-editor.md
+    - name: Preview data
+      href: event-streams/preview-data.md
+    - name: Monitor event streams
+      href: event-streams/monitor.md
+    - name: Tutorials
+      items:
+      - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
+        href: event-streams/transform-and-stream-real-time-events-to-lakehouse.md
+      - name: Stream real-time events from custom application to Microsoft Fabric KQL Database
+        href: event-streams/stream-real-time-events-from-custom-app-to-kusto.md
+      - name: Build a Power BI report by streaming data from Azure IoT Hub
+        href: event-streams/build-report-from-iot-hub.md
+      - name: Explore and transform bike-sharing data for KQL database integration
+        href: event-streams/transform-sample-data-and-route-to-kql.md
+    - name: Integrate with other Fabric items
+      href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
+  - name: Get data in a KQL Database
+    items: 
+    - name: Data formats
+      href: ingestion-supported-formats.md
+    - name: Schema optimization best practices
+      href: schema-best-practice.md
+    - name: Get data from local file
+      href: get-data-local-file.md
+    - name: Get data from Azure storage
+      href: get-data-azure-storage.md
     - name: Get data from Amazon S3
       href: get-data-amazon-s3.md
     - name: Get data from Azure Event Hubs
       href: get-data-event-hub.md
     - name: Get data from OneLake
       href: get-data-onelake.md
-  - name: Connectors
-    items:
+    - name: Get data from Eventstream
+      href: get-data-eventstream.md
     - name: Configure KQL Database in a data pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
       href: ../data-factory/connector-kusto-dataflows.md
-    - name: Data connectors
-      href: /azure/data-explorer/connector-overview?context=/fabric/context/context-rta&pivots=fabric
-  - name: Data management
+    - name: Connectors
+      items:
+      - name: Data connectors overview
+        href: data-connectors/data-connectors.md
+      - name: Apache Flink
+        href: get-data-flink.md
+      - name: Apache Kafka
+        href: get-data-kafka.md
+      - name: Apache Log4J 2
+        href: get-data-log4j2.md
+      - name: Apache Spark
+        href: /azure/data-explorer/spark-connector?context=/fabric/context/context-rta&pivots=fabric
+      - name: Azure Synapse workspace
+        href: /azure/synapse-analytics/quickstart-connect-azure-data-explorer
+      - name: Azure Data Factory
+        href: /azure/data-explorer/data-factory-load-data?context=/fabric/context/context-rta&pivots=fabric
+      - name: Azure Event Hubs
+        href: /azure/data-explorer/ingest-data-event-hub-overview?context=/fabric/context/context-rta&pivots=fabric
+      - name: Azure Functions
+        href: /azure/data-explorer/integrate-azure-functions?context=/fabric/context/context-rta&pivots=fabric
+      - name: Azure Stream Analytics
+        href: /azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rta&pivots=fabric
+      - name: Logstash
+        href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rta&pivots=fabric
+      - name: NLog sink
+        href: /azure/data-explorer/nlog-sink?context=/fabric/context/context-rta&pivots=fabric
+      - name: OpenTelemetry
+        href: /azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rta&pivots=fabric
+      - name: Microsoft Power Automate
+        href: /azure/data-explorer/flow?context=/fabric/context/context-rta&pivots=fabric
+      - name: Serilog sink
+        href: /azure/data-explorer/serilog-sink?context=/fabric/context/context-rta&pivots=fabric
+      - name: Splunk
+        href: /azure/data-explorer/ingest-data-splunk?context=/fabric/context/context-rta&pivots=fabric
+      - name: Splunk Universal Forwarder
+        href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rta&pivots=fabric
+      - name: Telegraf
+        href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rta&pivots=fabric
+- name: Store data
+  items:
+  - name: Eventhouse (preview)
     items:
-    - name: Data management overview  
-      href: data-management.md
-    - name: Change the data retention policy
-      href: data-retention-policy.md
-    - name: Create a table update policy
-      href: table-update-policy.md
-    - name: Create materialized views
-      href: materialized-view.md
-    - name: Create stored functions
-      href: create-functions.md 
-    - name: Enable Python plugin
-      href: python-plugin.md
-  - name: Management commands
-    href: management/toc.yml
-  - name: API
-    href: api/toc.yml
-- name: KQL Queryset
+    - name: Eventhouse overview (preview)
+      href: eventhouse.md
+    - name: Create an Eventhouse (preview)
+      href: create-eventhouse.md 
+  - name: KQL Database
+    items:
+    - name: Create a KQL database
+      href: create-database.md
+    - name: Access an existing KQL database
+      displayName: copy URI, copy query URI, copy ingestion URI
+      href: access-database-copy-uri.md
+    - name: Create a database shortcut
+      href: database-shortcut.md
+    - name: Create an empty table
+      href: create-empty-table.md
+    - name: Data management
+      items:
+      - name: Data management overview 
+        displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin 
+        href: data-management.md
+      - name: Change data policies
+        href: data-policies.md
+      - name: Create a table update policy
+        href: table-update-policy.md
+      - name: Create materialized views
+        href: materialized-view.md
+      - name: Create stored functions
+        href: create-functions.md 
+      - name: Enable Python plugin
+        href: python-plugin.md
+    - name: Management commands
+      href: management/toc.yml
+    - name: API
+      href: api/toc.yml
+    - name: OneLake
+      items:
+      - name: One logical copy (Preview)
+        href: one-logical-copy.md
+      - name: Create OneLake shortcuts
+        href: onelake-shortcuts.md
+  - name: Resource consumption
+    displayName: consumption, CU, metrics app, monitor, billing, usage
+    href: kql-database-consumption.md
+- name: Analyze and model data
   items:
-  - name: Query data in a KQL Queryset
-    href: kusto-query-set.md
-  - name: Customize results in the KQL Queryset results grid
-    href: customize-results.md
-- name: Query data
-  items:
-  - name: Use example queries
-    href: query-table.md
-  - name: Kusto Query Language
-    href: kusto-query-language/toc.yml
-  - name: Functions library
-    href: functions-library/toc.yml
-- name: Integrate with other experiences
+  - name: KQL Queryset
+    items:
+    - name: Create a KQL queryset
+      href: create-query-set.md
+    - name: Access the data profile of a table
+      href: data-profile.md
+    - name: Query data in a KQL queryset
+      href: kusto-query-set.md
+    - name: Customize results in the KQL Queryset results grid
+      href: customize-results.md
+    - name: Keyboard shortcuts
+      href: keyboard-shortcuts.md
+    - name: Use example queries
+      href: query-table.md
+    - name: Sample gallery
+      displayName: Query sample data
+      href: sample-gallery.md
+  - name: Notebooks
+    items:
+    - name: Use Fabric notebooks with data from a KQL database
+      href: notebooks.md
+    - name: Use a notebook with Apache Spark to query a KQL database
+      href: spark-connector.md
+- name: Visualize data
   items:
   - name: Power BI
     items:
     - name: Visualize data in a Power BI report
       href: create-powerbi-report.md
-    - name: Use data from a KQL database in Power BI Desktop
-      href: power-bi-data-connector.md
-  - name: OneLake
+    - name: Connect KQL Database in Power BI Desktop
+      href: power-bi-data-connector.md   
+- name: Respond to data
+  items:
+  - name: What is Data Activator?
+    href: ../data-activator/data-activator-introduction.md
+  - name: Get started with Data Activator
+    href: ../data-activator/data-activator-get-started.md    
+  - name: Data Activator tutorial using sample data
+    href: ../data-activator/data-activator-tutorial.md
+  - name: Get data in Data Activator
     items:
-    - name: One logical copy
-      href: onelake-mirroring.md
-    - name: Create OneLake shortcuts
-      href: onelake-shortcuts.md
-  - name: Notebooks
+    - name: Get data from Power BI
+      href: ../data-activator/data-activator-get-data-power-bi.md
+    - name: Get data from Eventstreams
+      href: ../data-activator/data-activator-get-data-eventstreams.md        
+  - name: Create objects and triggers
     items:
-    - name: Use a notebook with Kqlmagic to query a KQL database
-      href: jupyter-notebook.md
-    - name: Use a notebook with Apache Spark to query a KQL database
-      href: spark-connector.md
+    - name: Assign data to objects in Data Mode
+      href: ../data-activator/data-activator-assign-data-objects.md    
+    - name: Create triggers in design mode
+      href: ../data-activator/data-activator-create-triggers-design-mode.md        
+    - name: Detection conditions
+      href: ../data-activator/data-activator-detection-conditions.md            
+    - name: Use custom actions to trigger Power Automate flows
+      href: ../data-activator/data-activator-trigger-power-automate-flows.md         
+    - name: Data Activator limitations
+      href: ../data-activator/data-activator-limitations.md
+    - name: Troubleshoot errors
+      href: ../data-activator/data-activator-troubleshooting.md
+- name: KQL reference
+  items:
+  - name: Kusto Query Language
+    href: kusto-query-language/toc.yml
+  - name: Functions library
+    href: functions-library/toc.yml
+
+
+

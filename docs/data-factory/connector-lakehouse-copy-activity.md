@@ -1,18 +1,19 @@
 ---
-title: How to configure Lakehouse in a copy activity
+title: Configure Lakehouse in a copy activity
 description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 09/15/2023
-ms.custom: template-how-to, build-2023
+ms.date: 02/28/2024
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Lakehouse in a copy activity
+# Configure Lakehouse in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to the Fabric Lakehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+This article outlines how to use the copy activity in a data pipeline to copy data from and to the Fabric Lakehouse. By default, data is written to Lakehouse Table in V-Order, and you can go to [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order) for more information.
 
 ## Supported format
 
@@ -22,10 +23,10 @@ Lakehouse supports the following file formats. Refer to each article for format-
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
-- JSON format
-- ORC format
-- Parquet format
-- XML format
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
+- [Parquet format](format-parquet.md)
+- [XML format](format-xml.md)
 
 ## Supported configuration
 
@@ -114,8 +115,10 @@ The following properties are **required**:
       - **Max rows per file**: Specify the maximum rows per file when writing data into Lakehouse.
       - **Table actions**: Specify the operation against the selected table.
         - **Append**: Append new values to existing table.
+          - **Enable Partition**: This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".
+            - **Partition column name**: Select from the destination columns in schemas mapping when you append data to a new table. When you append data to an existing table that already has partitions, the partition columns are derived from the existing table automatically. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab. 
         - **Overwrite**: Overwrite the existing data and schema in the table using the new values. If this operation is selected, you can enable partition on your target table:
-          - **Enable Partition**: This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file". This selection supports insert-only mode and requires an empty directory in the destination.
+          - **Enable Partition**: This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".
             - **Partition column name**: Select from the destination columns in schemas mapping. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
       - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
@@ -185,7 +188,7 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Path to file list** |Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured. Apply when choosing **List of files** in **File path type**.|\<path to file list> |No| fileListPath|
 |**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder. This setting is disabled when a single file is selected.| select or unselect |No | recursive:<br>true or false|
 |**File format**|The format of the file that you use.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextReadSettings|
-|**Filter by last modified**|The files with last modified time in the range [Start time, End time) will be filtered for further processing.<br><br> The time will be applied to UTC time zone in the format of 'yyyy-mm-ddThh:mm:ss.fffZ'.<br><br>This property can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as **List of files**.|* **Start time**<br>* **End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
+|**Filter by last modified**|The files with last modified time in the range [Start time, End time) will be filtered for further processing.<br><br> The time is applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`.<br><br>This property can be skipped which means no file attribute filter is applied. This property doesn't apply when you configure your file path type as **List of files**.|* **Start time**<br>* **End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
 |**Enable partition discovery**|Whether to parse the partitions from the file path and add them as extra source columns.| Selected or unselected |No| enablePartitionDiscovery: <br> true or false (default)|
 |**Partition root path**|The absolute partition root path to read partitioned folders as data columns.| \<your partition root path\> |No| partitionRootPath|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. A value is needed only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
@@ -208,6 +211,6 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Block size (MB)** |The block size in MB used to write data to Lakehouse. Allowed value is between 4 MB and 100 MB.|\<block size\>|No|blockSizeInMB|
 |**Metadata** |The custom metadata set when copying to a destination.|* `$$LASTMODIFIED`<br>* Expression<br>* Static value|No |metadata|
 
-## Next steps
+## Related content
 
 - [Lakehouse connector overview](connector-lakehouse-overview.md)

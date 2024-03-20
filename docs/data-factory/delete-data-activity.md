@@ -5,15 +5,15 @@ ms.reviewer: jburchel
 ms.author: yexu
 author: dearandyxu
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 08/17/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the Delete data activity to look up data from a data source
 
 The Fabric Delete data activity can delete data from any of the data sources supported by [!INCLUDE [product-name](../includes/product-name.md)]. 
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 You can use the Delete Activity in Data Factory to delete files or folders from any supported storage stores. Use this activity to clean up or archive files when they are no longer needed.
 
@@ -78,6 +78,6 @@ Now you are using the Delete activity to delete folder or files by the combinati
 
 :::image type="content" source="media/delete-data-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

@@ -4,15 +4,16 @@ description: This article describes the procedure for moving Dataflow Gen1 queri
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Move queries from Dataflow Gen1 to Dataflow Gen2
 
 Dataflow Gen2 is the new generation of dataflows. However, many existing dataflows have been created over the years using the original version of dataflows  (now called *Dataflow Gen1* and listed as the **Dataflow** type in your workspace).  This article describes how you can reuse your older Dataflow Gen1 dataflows by importing Dataflow Gen1 dataflows into Dataflow Gen2 using the export template feature. It also includes information on how to copy the Gen1 queries and paste them into a new Dataflow Gen2.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Use the export template feature
 
@@ -32,9 +33,9 @@ To use the export template feature:
 
 1. Select **OK** to save the template. The template is saved in your default Downloads folder.
 
-1. From your Data Factory workspace, select **New**, and then select **Dataflow Gen2 (Preview)**.
+1. From your Data Factory workspace, select **New**, and then select **Dataflow Gen2**.
 
-   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/new-dataflow-gen2.png" alt-text="Screenshot with the New menu opened with Dataflow Gen2 (Preview) emphasized.":::
+   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/new-dataflow-gen2.png" alt-text="Screenshot with the New menu opened with Dataflow Gen2 emphasized.":::
 
 1. From the current view pane of the Power Query editor, select **Import from a Power Query template**.
 
@@ -60,9 +61,9 @@ To copy existing Dataflow Gen1 queries:
 
    :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/copy-queries.png" alt-text="Screenshot showing the Power Query workspace with the Contoso Financial Sample query selected and the copy option emphasized.":::
 
-1. Open an existing Dataflow Gen2, or create a new Dataflow Gen2 in Data Factory. To create a new dataflow, open an existing workflow and select **New** > **Dataflow Gen2 (Preview)**.
+1. Open an existing Dataflow Gen2, or create a new Dataflow Gen2 in Data Factory. To create a new dataflow, open an existing workflow and select **New** > **Dataflow Gen2**.
 
-   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/new-dataflow-gen2.png" alt-text="Screenshot showing the New menu opened with Dataflow Gen2 (Preview) emphasized.":::
+   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/new-dataflow-gen2.png" alt-text="Screenshot showing the New menu opened with Dataflow Gen2 emphasized.":::
 
 1. In the Power Query editor, select **Get data** > **Blank query**.
 
@@ -82,6 +83,6 @@ To copy existing Dataflow Gen1 queries:
 
    :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/clean-up-query.png" alt-text="Screenshot showing the blank query selected, with emphasis on the delete option in the query's menu.":::
 
-## Next steps
+## Related content
 
 - [Differences between Dataflow Gen1 and Gen2 in Microsoft Fabric](dataflows-gen2-overview.md)

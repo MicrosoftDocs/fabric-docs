@@ -4,13 +4,13 @@ description: Learn how to view the lineage of Fabric items.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/06/2023
 ---
 
 # Lineage in Fabric
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In modern business intelligence (BI) projects, understanding the flow of data from the data source to its destination can be a challenge. The challenge is even bigger if you've built advanced analytical projects spanning multiple data sources, data items, and dependencies. Questions like "What happens if I change this data?" or "Why isn't this report up to date?" can be hard to answer. They might require a team of experts or deep investigation to understand. Fabric's lineage view helps you answer these questions.
 
@@ -18,10 +18,14 @@ In modern business intelligence (BI) projects, understanding the flow of data fr
 
 In lineage view, you see the lineage relationships between all the items in a workspace, as well as data sources external to the workspace one-step upstream.
 
-Every workspace automatically has a lineage view. You need at least a *Contributor* role in the workspace to view it. See [Permissions](#permissions) in this article for details.
+Every workspace automatically has a lineage view.
 
 > [!NOTE]
 > Lineage in Fabric is in preview, and not all connections between items are fully supported yet. It is possible that the lineage between some items will be incorrectly shown.
+
+## Permissions
+
+Any user with a [role in a workspace](../get-started/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.
 
 ## Open lineage view
 
@@ -58,7 +62,7 @@ Items are represented by cards that provide some information about the item.
 
 **Data sources**
 
-You see the data sources from which the datasets and dataflows get their data. On the data source cards, you see information that can help identify the source. For example, for Azure SQL server, you also see the database name.
+You see the data sources from which the semantic models and dataflows get their data. On the data source cards, you see information that can help identify the source. For example, for Azure SQL server, you also see the database name.
 
 :::image type="content" source="./media/lineage/lineage-data-source-card.png" alt-text="Screenshot of the lineage view data source with no gateway.":::
 
@@ -79,16 +83,11 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 
     :::image type="content" source="./media/lineage/lineage-zoom.png" alt-text="Screenshot of zoom in or out, or full screen options." border="false":::
 
-## Permissions
-
-* Users must have an Admin, Member, or Contributor role in the workspace. Users with a Viewer role can't access lineage.
-
 ## Considerations and limitations
 
-* During Fabric public preview, some relationships between Fabric items might not be represented, or not represented correctly.
 * Lineage view isn't available in Internet Explorer. For more information, see [Supported browsers for Power BI](/power-bi/fundamentals/power-bi-browsers).
-* Correct display of dataset-dataflow lineage is guaranteed only if the **Get Data** UI is used to set up the connection to the dataflow, and the **Dataflows** connector is used. Correct display of dataset-dataflow lineage isn't guaranteed if a manually created Mashup query is used to connect to the dataflow.
+* Correct display of the lineage between semantic models and dataflows is guaranteed only if the **Get Data** UI is used to set up the connection to the dataflow, and the **Dataflows** connector is used. Correct display of the lineage between semantic models and dataflows isn't guaranteed if a manually created Mashup query is used to connect to the dataflow.
 
-## Next steps
+## Related content
 
 * [Impact analysis](./impact-analysis.md)

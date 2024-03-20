@@ -1,106 +1,170 @@
 ---
-title: Data science tutorial - create a Power BI report to visualize predictions
-description: In this sixth part of the tutorial series, learn how to get set up to create reports and how to create various visuals to analyze data.
+title: "Tutorial: Visualize predictions with a Power BI report"
+description: In this fifth part of the tutorial series, learn how to get set up to create reports and how to create various visuals to analyze data.
 ms.reviewer: sgilley
-ms.author: narsam
-author: narmeens
+ms.author: amjafari
+author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/4/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 10/16/2023
+#CustomerIntent: As a data scientist, I want to create a Power BI report to visualize the predictions data.
 ---
 
-# Part 6: Create a Power BI report to visualize predictions
+# Tutorial Part 5: Visualize predictions with a Power BI report
 
-In this tutorial, we use the Microsoft Fabric DirectLake feature, which enables direct connectivity from Power BI datasets to lakehouse tables in direct query mode with automatic data refresh. In this tutorial, you'll use the prediction data produced in [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+In this tutorial, you'll create a Power BI report from the predictions data that was generated in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+
+You'll learn how to:
+
+> [!div class="checklist"]
+>
+> * Create a semantic model from the predictions data.
+> * Add new measures to the data from Power BI.
+> * Create a Power BI report.
+> * Add visualizations to the report.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* Complete [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+This is part 5 of 5 in the tutorial series. To complete this tutorial, first complete:
 
-* Optionally, complete [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
+* [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+* [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
+* [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
+* [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
-* Complete [Part 3: Perform data cleansing and preparation using Apache Spark](tutorial-data-science-data-cleanse.md).
+## Create a semantic model
 
-* Complete [Part 4: Train and register machine learning models](tutorial-data-science-train-models.md).
+Create a new semantic model linked to the predictions data you produced in part 4:
 
-* Complete [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+1. On the left, select your workspace.
+1. On the top left, select **Lakehouse** as a filter.
+1. Select the lakehouse that you used in the previous parts of the tutorial series.
+1. Select **New semantic model** on the top ribbon.
 
-## Prepare for creating reports
+   :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New semantic model option on the ribbon.":::
 
-1. On the left, select **OneLake data hub**.
+1. Give the semantic model a name, such as "bank churn predictions." Then select the **customer_churn_test_predictions** dataset.
 
-1. Select the lakehouse that you used as part of the previous parts of the tutorial series.
+   :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New semantic model dialog box, showing where to select the correct data and select Continue.":::
 
-1. On the top right, select Open.
+1. Select **Confirm**.  
 
-   :::image type="content" source="media/tutorial-data-science-create-report/open-lakehouse.png" alt-text="Screenshot shows opening the lakehouse.":::
+## Add new measures
 
-1. Select **New Power BI dataset** on the top ribbon and select **nyctaxi_pred**, then select **Continue** to create a new Power BI dataset linked to the predictions data you produced in part 5.
+Now add a few measures to the semantic model:
 
-   :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New Power BI dataset option on the ribbon." lightbox="media\tutorial-data-science-create-report\new-power-bi-dataset.png":::
+1. Add a new measure for the churn rate.
 
-   :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New Power BI dataset dialog box, showing where to select the correct data and select Continue." lightbox="media\tutorial-data-science-create-report\select-predictions-data.png":::
+    1. Select **New measure** in the top ribbon.  This action adds a new item named **Measure** to the **customer_churn_test_predictions** dataset, and opens a formula bar above the table.
 
-1. Once the page for the new dataset loads, rename the dataset by selecting the dropdown at top left corner of the dataset page and entering the more user-friendly name ***nyctaxi_predictions***. Click outside the drop-down to apply the name change.
+        :::image type="content" source="media/tutorial-data-science-create-report/new-measure.png" alt-text="Screenshot show creating a new measure.":::
 
-   :::image type="content" source="media\tutorial-data-science-create-report\rename-dataset.png" alt-text="Screenshot of the dataset page, showing where to enter the new name." lightbox="media\tutorial-data-science-create-report\rename-dataset.png":::
+    1. To determine the average predicted churn rate, replace `Measure =` in the formula bar with:
 
-1. On the tools at the top of the dataset page, select **New report** to open the Power BI report authoring page.
+        ```python
+        Churn Rate = AVERAGE(customer_churn_test_predictions[predictions])
+        ```
 
-   :::image type="content" source="media\tutorial-data-science-create-report\visualize-this-data.png" alt-text="Screenshot of the dataset pane, showing how to start a new report." lightbox="media\tutorial-data-science-create-report\visualize-this-data.png":::
+    1. To apply the formula, select the check mark in the formula bar.  The new measure appears in the data table.  The calculator icon shows it was created as a measure.
+    1. Change the format from **General** to **Percentage** in the **Properties** panel.
+    1. Scroll down in the **Properties** panel to change the **Decimal places** to 1.
 
-You can now create various visuals to generate insights from the prediction dataset.
+        :::image type="content" source="media/tutorial-data-science-create-report/churn-rate.png" alt-text="Screenshot show the new Churn Rate measure with properties set." lightbox="media/tutorial-data-science-create-report/churn-rate.png":::
 
-## Sample visuals to analyze predictedTripDuration
+1. Add a new measure that counts the total number of bank customers.  You'll need it for the rest of the new measures.
+  
+    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the `customer_churn_test_predictions` dataset.  This action also opens a formula bar above the table.
+    1. Each prediction represents one customer. To determine the total number of customers, replace `Measure =` in the formula bar with:
 
-1. Create a Slicer visualization for pickupDate.
+        ```python
+        Customers = COUNT(customer_churn_test_predictions[predictions])
+        ```
 
-   - Select the slicer option from the visualizations pane and select ***pickupDate*** from the data pane and drop it on the created slicer visualization field of the date slider visual.
+    1. Select the check mark in the formula bar to apply the formula.
 
-      :::image type="content" source="media\tutorial-data-science-create-report\select-slicer-option.png" alt-text="Screenshot of the visualizations pane and the data pane, showing where to select the slicer option and pickupDate data." lightbox="media\tutorial-data-science-create-report\select-slicer-option.png":::
+1. Add the churn rate for Germany.
 
-1. Visualize Average tripDuration and predictedTripDuration by timeBins using a clustered column chart.
+    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the `customer_churn_test_predictions` dataset.  This action also opens a formula bar above the table.
+    1. To determine the churn rate for Germany, replace `Measure =` in the formula bar with:
 
-   - Add a clustered column chart, add ***timeBins*** to the X-axis, ***tripDuration*** and ***predictedTripDuration*** to the Y-axis and change the aggregation method to Average.
+        ```python
+        Germany Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_Germany] = 1)
+        ```
 
-      :::image type="content" source="media\tutorial-data-science-create-report\cluster-column-chart.png" alt-text="Screenshot of the Visualizations pane and Data pane, showing where to select data for the X axis and Y axis for a clustered column chart." lightbox="media\tutorial-data-science-create-report\cluster-column-chart.png":::
+        This filters the rows down to the ones with Germany as their geography (Geography_Germany equals one).
 
-1. Visualize Average tripDuration and predictedTripDuration by weekDayName.
+    1. To apply the formula, select the check mark in the formula bar.
 
-   - Add an area chart visual and add ***weekDayName*** onto X-axis, ***tripDuration*** to Y-axis and ***predictedTripDuration*** to secondary Y-axis. Switch aggregation method to Average for both Y-axes.
+1. Repeat the above step to add the churn rates for France and Spain.
 
-      :::image type="content" source="media\tutorial-data-science-create-report\add-area-chart-visual.png" alt-text="Screenshot of the Visualizations pane and Data pane, showing where to add data to an area chart visual." lightbox="media\tutorial-data-science-create-report\add-area-chart-visual.png":::
+    * Spain's churn rate:
 
-1. Add Card visuals for overall predictedTripDuration and tripDuration.
+        ```python
+        Spain Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_Spain] = 1)
+        ```
 
-   - Add a Card Visual and add predictedTripDuration to the fields and switch aggregation method to Average.
+    * France's churn rate:
 
-   - Add a Card Visual and add TripDuration to the fields and switch aggregation method to Average.
+        ```python
+        France Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_France] = 1)
+        ```
 
-      :::image type="content" source="media\tutorial-data-science-create-report\two-card-visuals.png" alt-text="Screenshot two Visualizations panes, showing where to add to the fields. The calculations are shown below the panes." lightbox="media\tutorial-data-science-create-report\two-card-visuals.png":::
+## Create new report
 
-1. Visualize Average tripDuration and predictedTripDuration by pickupDate using line chart.
+Once you're done with all operations, move on to the Power BI report authoring page by selecting **Create report** on the top ribbon.
 
-   - Add a line chart visual and add ***pickupDate*** onto X-axis, ***tripDuration*** and ***predictedTripDuration*** to Y-axis and switch aggregation method to Average for both fields.
+:::image type="content" source="media/tutorial-data-science-create-report/visualize-this-data.png" alt-text="Screenshot shows how to create a report.":::
 
-      :::image type="content" source="media\tutorial-data-science-create-report\add-line-chart.png" alt-text="Screenshot of the Visualizations pane beside the resulting line chart." lightbox="media\tutorial-data-science-create-report\add-line-chart.png":::
+Once the report page appears, add these visuals:
 
-1. Visualize Average predictedTripDuration using a map visual.
+1. Select the text box on the top ribbon and enter a title for the report, such as "Bank Customer Churn".  Change the font size and background color in the Format panel.  Adjust the font size and color by selecting the text and using the format bar.
+1. In the Visualizations panel, select the **Card** icon. From the **Data** pane, select **Churn Rate**. Change the font size and background color in the Format panel. Drag this visualization to the top right of the report.
 
-   - Add a map chart visual, and add ***startLat*** to the **Latitude** field and ***startLon*** to the **Longitude** field.
+    :::image type="content" source="media/tutorial-data-science-create-report/card-churn.png" alt-text="Screenshot shows addition of Churn Rate card." lightbox="media/tutorial-data-science-create-report/card-churn.png":::
 
-   - Add ***predictedTripDuration*** to bubble size field and switch the aggregation method of predictedTripDuration to Average.
+1. In the Visualizations panel, select the **Line and stacked column chart** icon. Select **age** for the x-axis, **Churn Rate** for column y-axis, and **Customers** for the line y-axis.
 
-      :::image type="content" source="media\tutorial-data-science-create-report\create-map-visual.png" alt-text="Screenshot of Visualizations pane beside the resulting map visual." lightbox="media\tutorial-data-science-create-report\create-map-visual.png":::
+    :::image type="content" source="media/tutorial-data-science-create-report/age.png" alt-text="Screenshot shows addition of a stacked column chart for Age."  lightbox="media/tutorial-data-science-create-report/age.png":::
 
-Once all the visuals are added, you can reshape the visuals and realign the layout based on your preferences.
+1. In the Visualizations panel, select the **Line and stacked column chart** icon. Select **NumOfProducts** for x-axis, **Churn Rate** for column y-axis, and **Customers** for the line y-axis.
 
-:::image type="content" source="media\tutorial-data-science-create-report\reshape-realign-visuals.png" alt-text="Screenshot of all four visuals arranged together." lightbox="media\tutorial-data-science-create-report\reshape-realign-visuals.png":::
+    :::image type="content" source="media/tutorial-data-science-create-report/number-of-products.png" alt-text="Screenshot shows addition of a stacked column chart of NumOfProducts." lightbox="media/tutorial-data-science-create-report/number-of-products.png":::
 
-## Next steps
 
-- [How to use end-to-end AI samples in Microsoft Fabric](use-ai-samples.md)
+1. In the Visualizations panel, select the **Stacked column chart** icon. Select **NewCreditsScore** for x-axis and  **Churn Rate** for y-axis.
+
+    :::image type="content" source="media/tutorial-data-science-create-report/new-credit-score.png" alt-text="Screenshot shows adding a stacked column chart of NewCreditScore." lightbox="media/tutorial-data-science-create-report/new-credit-score.png":::
+
+    Change the title "NewCreditsScore" to "Credit Score" in the Format panel.
+
+    :::image type="content" source="media/tutorial-data-science-create-report/change-title.png" alt-text="Screenshot shows changing the title for the chart." lightbox="media/tutorial-data-science-create-report/change-title.png":::
+
+
+1. In the Visualizations panel, select the **Clustered column chart** card. Select **Germany Churn**, **Spain Churn**, **France Churn** in that order for the y-axis.
+
+    :::image type="content" source="media/tutorial-data-science-create-report/germany-spain-france.png" alt-text="Screenshot shows the clustered column chart." lightbox="media/tutorial-data-science-create-report/germany-spain-france.png":::
+
+> [!NOTE]
+> This report represents an illustrated example of how you might analyze the saved prediction results in Power BI. However, for a real customer churn use-case, the you may have to do more thorough ideation of what visualizations to create, based on syour subject matter expertise, and what your firm and business analytics team has standardized as metrics.
+
+
+The Power BI report shows:
+
+* Customers who use more than two of the bank products have a higher churn rate although few customers had more than two products. The bank should collect more data, but also investigate other features correlated with more products (see the plot in the bottom left panel).
+* Bank customers in Germany have a higher churn rate than in France and Spain (see the plot in the bottom right panel), which suggests that an investigation into what has encouraged customers to leave could be beneficial.
+* There are more middle aged customers (between 25-45) and customers between 45-60 tend to exit more.
+* Finally, customers with lower credit scores would most likely leave the bank for other financial institutes. The bank should look into ways that encourage customers with lower credit scores and account balances to stay with the bank.
+
+
+## Next step
+
+This completes the five part tutorial series.  See other end-to-end sample tutorials:
+
+> [!div class="nextstepaction"]
+> [How to use end-to-end AI samples in Microsoft Fabric](use-ai-samples.md)

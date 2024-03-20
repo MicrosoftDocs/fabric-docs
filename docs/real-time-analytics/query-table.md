@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 08/13/2023
 ms.search.form: product-kusto
 ---
 # Use example queries
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you learn how to use example KQL queries to get an initial look at your data.
 
@@ -28,9 +28,9 @@ To learn how to use example SQL queries, see [Example SQL queries](tutorial-4-ex
 
 ## Query table
 
-1. In the **Data tree**, select the **More menu** [...] on a desired table > **Query table**. Example queries run in the context of a selected table.
+1. In the **Explorer** pane, select the **More menu** [...] on a desired table > **Query table**. Example queries run in the context of a selected table.
 
-    :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Data tree showing the More menu of a table. The Query table option is highlighted."  lightbox="media/query-table/query-table.png":::
+    :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Explorer pane showing the More menu of a table. The Query table option is highlighted."  lightbox="media/query-table/query-table.png":::
 
 1. Select a single query to populate the **Explore your data** window. The query will automatically run and display results.
 

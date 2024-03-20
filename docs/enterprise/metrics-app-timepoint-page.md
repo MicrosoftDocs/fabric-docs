@@ -4,25 +4,23 @@ description: Learn how to read the Microsoft Fabric Capacity Metrics app's explo
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 02/15/2024
 ---
 
 # Understand the metrics app timepoint page
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+All the operations in your capacity are ranked according to their compute impact. The compute impact of all your capacity operations is what we call capacity usage, and it's measured using capacity units (CUs). Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to your capacity's usage.
 
-All the activities in the capacity are ranked according to their compute impact. Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to CU usage.
+Scheduled and manual refresh workflows can trigger multiple internal operations in the backend service. For example, refreshes sometimes perform automatic retries if a temporary error occurred. These operations might be recorded in the app using different activity IDs. Each activity ID is represented as a row in the table. When reviewing the table, take into consideration that several rows may indicate a single action that triggers multiple operations, each with its own activity ID.
 
->[!NOTE]
->Start and end times may occur before or after the displayed time period, due to [background](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) [smoothing](/power-bi/enterprise/service-premium-smoothing) operations.
+When the total combined CUs for *interactive* and *background* operations exceed the 30 second timepoint allowance, the capacity is overloaded and depending on whether autoscale is enabled or not, throttling is applied.
 
-When the total combined CU for *interactive* and *background* operations exceeds the 30 second timepoint allowance, the capacity is overloaded and depending on whether autoscale is enabled or not, throttling is applied.
+* **Autoscale is enabled** - If the capacity has autoscale enabled, a new CU will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [Capacity utilization and throttling](metrics-app-compute-page.md#capacity-utilization-and-throttling) chart and the *CU (s)* card will change its color to yellow.
 
-* **Autoscale is enabled** - If the capacity has autoscale enabled, a new capacity unit (CU) will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [Capacity utilization and throttling](metrics-app-overview-page.md#capacity-utilization-and-throttling) chart and CU (s) card will changes its color to yellow.
-
-    >[!NOTE]
-    >When autoscale is enabled, if the capacity reaches the maximum number of capacity units (CUs) allowed by the autoscale operation, throttling is applied.
+    When autoscale is enabled, if the capacity reaches the maximum number of CUs allowed by the autoscale operation, throttling is applied.
 
 * **Autoscale isn't enabled** - If autoscale isn't enabled, throttling gets applied to every interactive operation in the subsequent timepoint.
 
@@ -30,7 +28,7 @@ When the total combined CU for *interactive* and *background* operations exceeds
 
 This section describes the operations of the visuals in the top row of the timepoint page.
 
-* **Top left card** - Displays the timepoint used to get to this page.
+* **Start/end card** - Displays the start and end date and time (timepoint) used to get to this page.
 
 * **Heartbeat line chart** - Shows a 60 minute window of CU activity. Use this visual to establish the duration of peaks and troughs.
 
@@ -59,11 +57,17 @@ This section describes the operations of the visuals in the top row of the timep
 
 * **Capacity CU card** - Displays the total number of CU seconds allowed for this capacity, for a given 30 second timepoint window. User can hover over card to see bifurcation of Base CU (s) and Autoscale CU (s). When autoscale is enabled, the card will change its color to yellow.
 
-## Interactive Operations
+## Interactive operations for timerange
 
 A table showing every [interactive operation](/power-bi/enterprise/service-premium-interactive-background-operations) that contributed CU usage in the viewed timepoint. Once an interactive operation completes, all of the CU seconds used by it get attributed to the timepoint window.
 
-* **Items** - The name of the item, its type, and its workspace details.
+Start and end times may occur before or after the displayed time period, due to [background](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) [smoothing](/power-bi/enterprise/service-premium-smoothing) operations.
+
+* **Workspace** - The workspace the item belongs to.
+
+* **Item kind** - The type of the item.
+
+* **Item name** - The name of the item.
 
 * **Operation** - The type of interactive operation.
 
@@ -96,25 +100,39 @@ A table showing every [interactive operation](/power-bi/enterprise/service-premi
 
 * **Operation ID** - A unique identifier assigned to an individual operation.
 
-## Background Operations
+* **Smoothing start** - The time smoothing started for the operation.
+
+* **Smoothing end** - The time smoothing ended for the operation.
+
+* **Virtualized item** - Displays one of the following values:
+    * *True* - Virtual items that consume CUs, for example virtual items used by Copilot.
+    * *False* - Items that aren't virtual.
+
+* **Virtualized workspace** - Displays one of the following values:
+    * *True* - Virtual workspaces that consume CUs, for example a virtual workspace used by a virtual network.
+    * *False* - Workspaces that aren't virtual.
+
+## Background operations for timerange
 
 A table showing every background operation that contributed CU usage to the viewed timepoint. Every background operation that completed in the prior 24 hours (defined as a 2,880 x 30 second timepoint window), contributes a small portion of its total usage to the CU value. This means that a background operation that completed the previous day can contribute some CU activity to determine if the capacity is in overload. For more information see [performance smoothing](/power-bi/enterprise/service-premium-smoothing).
 
-All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations) table. However, the background operations table doesn't have a *users* column.
+All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations-for-timerange) table.
 
-## Burndown table
+## Burndown table for timerange
 
 A table showing the *add*, *burndown* and *cumulative* percent by experiences, for the last 30 seconds.
 
 * **Experience** - The name of the experience.
 
-* **Add %** - The percentage of carryforward added compared to the capacity, for the last 30 seconds.
+* **Add %** - The percentage of carryforward added compared to the capacity, for a 30 seconds window.
 
-* **Burndown %** - The percentage of carryforward burndown compared to the capacity, for the last 30 seconds. 
+* **Burndown %** - The percentage of carryforward burndown compared to the capacity, for a 30 seconds window.
 
-* **Cumulative %** - The percentage of cumulative carryforward compared to the capacity, for the last 30 seconds.
+* **Cumulative %** - The percentage of cumulative carryforward compared to the capacity, for a 30 seconds window.
 
-## Overages 
+* **Minutes to burndown** - The estimated time, in minutes, it'll take the cumulative CUs to burndown, assuming no further consumption or smoothing takes place.
+
+## Overages
 
 You can change the overages visual scale to display 10 minutes, 60 minutes and 24 hours. Carryforward only takes into account billable operations.
 
@@ -122,10 +140,8 @@ You can change the overages visual scale to display 10 minutes, 60 minutes and 2
   
 * **Burndown %** - The blue columns represent the percentage of carryforward burned down within the specified timepoint window.
   
-* **Cumulative %** - The red line represents the cumulative carryforward within the specified timepoint window.
+* **Cumulative %** - The red line represents the cumulative carryforward within the specified timepoint window. Cumulative percent is displayed on the secondary axis located on the right side of the visual.
 
+## Related content
 
-
-## Next steps
-
-[Understand the metrics app overview page?](metrics-app-overview-page.md)
+* [Understand the metrics app compute page?](metrics-app-compute-page.md)

@@ -6,7 +6,9 @@ ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
 # Create a workspace
 
@@ -53,7 +55,7 @@ Different [license](../enterprise/licenses.md) mode provides different sets of f
 
 ### Default storage format
 
-Power BI datasets can store data in a highly compressed in-memory cache for optimized query performance, enabling fast user interactivity. With Premium capacities, large datasets beyond the default limit can be enabled with the Large dataset storage format setting. When enabled, dataset size is limited by the Premium capacity size or the maximum size set by the administrator. Learn more about [large dataset storage format](/power-bi/enterprise/service-premium-large-models#enable-large-models).
+Power BI semantic models can store data in a highly compressed in-memory cache for optimized query performance, enabling fast user interactivity. With Premium capacities, large semantic models beyond the default limit can be enabled with the Large semantic model storage format setting. When enabled, semantic model size is limited by the Premium capacity size or the maximum size set by the administrator. Learn more about [large semantic model storage format](/power-bi/enterprise/service-premium-large-models#enable-large-models).
 
 ### Template apps
   
@@ -86,6 +88,6 @@ Quickly access your favorite workspaces by pinning them to the top of the worksp
 
     ![Screenshot of unpin workspace.](media/create-workspaces/unpin-workspace.png)
 
-## Next steps
+## Related content
 
 * Read about [workspaces](workspaces.md)

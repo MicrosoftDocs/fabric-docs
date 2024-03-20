@@ -6,10 +6,12 @@ ms.author: painbar
 ms.reviewer: 'jadelynray'
 ms.service: powerbi
 ms.subservice: powerbi-admin
+ms.custom:
+  - ignite-2023
 ms.topic: conceptual
-ms.date: 07/23/2023
-Customer intent: As a Fabric admin, I need to know what information is passed from Fabric and Microsoft Graph to Microsoft 365.
+ms.date: 11/02/2023
 LocalizationGroup: Admin
+Customer intent: As a Fabric admin, I need to know what information is passed from Fabric and Microsoft Graph to Microsoft 365.
 ---
 
 # Share data with your Microsoft 365 services
@@ -59,9 +61,9 @@ The tables below list the data that is shared with Microsoft 365 services.
 
 |Property|What is Shared|Example|
 |---------|---------|---------|---------|
-|TenantID|Azure AD Tenant Identifier|762049eb-7a69-4c39-bf19-75a5b7fcce1d|
+|TenantID|Microsoft Entra tenant Identifier|762049eb-7a69-4c39-bf19-75a5b7fcce1d|
 |ArtifactID|Identifier for the Content Item (report, app, dashboard, scorecard, etc.)|762049eb-7a69-4c39-bf19-75a5b7fcce1d|
-|ACL|Access Control List with permissions and Azure AD User, Security Group and Distribution List Identifiers|{"accessType": "grant", "id" : "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "type" : "read" }|
+|ACL|Access Control List with permissions and Microsoft Entra user, Security Group and Distribution List Identifiers|{"accessType": "grant", "id" : "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "type" : "read" }|
 |DisplayName|Display name for the report, app, dashboard, scorecard, etc.|Retail Analysis Sample|
 |WorkspaceName|Workspace name as per [Create a workspace](/power-bi/collaborate-share/service-create-the-new-workspaces)|Retail workspace|
 |WorkspaceURL|Workspace URL|https://powerbi-df.analysis-df.windows.net/groups/8b5ac04e-89c1-4fc6-a364-e8411dfd8d17|
@@ -70,22 +72,21 @@ The tables below list the data that is shared with Microsoft 365 services.
 |SharingLinksURL|Sharing Link as per [Share a report using a link](/power-bi/collaborate-share/service-share-dashboards#share-a-report-via-link)|["https://app.powerbi.com/links/xyz123"]|
 |IconURL||cdn.com/report.png|
 |Description|Content description as per [Report settings](/power-bi/create-reports/power-bi-report-settings?tabs=powerbi-desktop)|Sample containing retail sales data|
-|Owner/Creator|Azure AD User Principal Name of the User that Created the Content as per [Azure AD user principal name](/azure/active-directory/hybrid/plan-connect-userprincipalname/)|user1@griffin1.org|
+|Owner/Creator|Microsoft Entra user principal name of the User that Created the Content as per [Microsoft Entra user principal name](/entra/identity/hybrid/connect/plan-connect-userprincipalname)|user1@griffin1.org|
 |CreatedDate|Date the content was created|2011-06-30T23:32:46Z|
 |LastModifiedDate|Last modified date for the content|2011-06-30T23:32:46Z|
-|LastModifiedUser|Azure AD User Principal Name for the last person who modified the content|user1@griffin1.org|
+|LastModifiedUser|Microsoft Entra user principal name for the last person who modified the content|user1@griffin1.org|
 
 **User activity that is leveraged for showing Fabric content within your "Recents" and "Recommended" sections at Office.com**
 
 |Property|What is Shared|Example|
 |---------|---------|---------|---------|
 |LastRefreshDate|Last refresh date for the content|2011-06-30T23:32:46Z|
-|UserID|Azure AD User Principal Name for the user who acted on the content|user1@griffin1.org|
+|UserID|Microsoft Entra user principal name for the user who acted on the content|user1@griffin1.org|
 |SignalType|The type of action the user took on the content (Viewed, Modified)|Viewed|
-|ActorID|Users Azure AD ID for the user who acted on the content|aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee|
+|ActorID|Users Microsoft Entra ID for the user who acted on the content|aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee|
 |StartTime/EndTime|Date/Time the user performed the action on the content|2011-06-30T23:32:46Z|
 
-## Next steps
+## Related content
 
->[!div class="nextstepaction"]
->[About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+- [About tenant settings](tenant-settings-index.md)

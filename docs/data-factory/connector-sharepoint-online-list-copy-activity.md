@@ -1,24 +1,25 @@
 ---
-title: How to configure SharePoint Online List in a copy activity
+title: Configure SharePoint Online List in a copy activity
 description: This article explains how to copy data using SharePoint Online List.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure SharePoint Online List in a copy activity
+# Configure SharePoint Online List in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from SharePoint Online List.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
 1. The SharePoint List Online connector uses service principal authentication to connect to SharePoint. Follow these steps to set it up:
 
-1. Register an application with the Microsoft Identity platform. To learn how, go to [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app). Make note of these values, which you use to define the connection:
+1. Register an application with the Microsoft identity platform. To learn how, go to [Quickstart: Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app). Make note of these values, which you use to define the connection:
 
    - Application ID
    - Application key
@@ -42,7 +43,7 @@ This article outlines how to use the copy activity in a data pipeline to copy da
       :::image type="content" source="./media/connector-sharepoint-online-list/request-xml.png" alt-text="Screenshot showing request XML.":::
 
       > [!NOTE]
-      > In the context of configuring the SharePoint connector, the **App Domain** and **Redirect URL** refer to the SharePoint app that you've registered in Azure Active Directory (Azure AD) to allow access to your SharePoint data. The **App Domain** is the domain where your SharePoint site is hosted. For example, if your SharePoint site is located at `https://contoso.sharepoint.com`, then the **App Domain** would be `contoso.sharepoint.com`. The **Redirect URL** is the URL that the SharePoint app redirects to after the user has authenticated and granted permissions to the app. This URL should be a page on your SharePoint site that the app has permission to access. For example, you could use the URL of a page that displays a list of files in a library, or a page that displays the contents of a document.
+      > In the context of configuring the SharePoint connector, the **App Domain** and **Redirect URL** refer to the SharePoint app that you've registered in Microsoft Entra ID to allow access to your SharePoint data. The **App Domain** is the domain where your SharePoint site is hosted. For example, if your SharePoint site is located at `https://contoso.sharepoint.com`, then the **App Domain** would be `contoso.sharepoint.com`. The **Redirect URL** is the URL that the SharePoint app redirects to after the user has authenticated and granted permissions to the app. This URL should be a page on your SharePoint site that the app has permission to access. For example, you could use the URL of a page that displays a list of files in a library, or a page that displays the contents of a document.
 
    3. Select **Trust It** for this app.
 
@@ -109,7 +110,6 @@ The following table contains more information about a copy activity in SharePoin
 |**Request timeout** |The wait time to get a response from SharePoint Online. Default value is 5 minutes (00:05:00).| timespan |No |requestTimeout|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.| • Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
 
-## Next steps
+## Related content
 
-- [How to create a SharePoint Online List connection](connector-sharepoint-online-list.md)
-- [Connect to a SharePoint Online list in dataflows](connector-sharepoint-online-list-dataflows.md)
+- [Set up your SharePoint Online List connection](connector-sharepoint-online-list.md)

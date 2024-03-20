@@ -4,16 +4,16 @@ description: Learn how to use Script activity.
 ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.topic: how-to 
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: how-to
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # How to use Script activity
 
 In this article, you learn how to add a new Script activity, add a new connection, and configure script content.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -59,5 +59,6 @@ To get started, you must complete the following prerequisites:
 
 5. The Script activity is successfully created and you can run it directly.
 
-## Next steps
-[Monitor pipeline runs](monitor-pipeline-runs.md)
+## Related content
+
+- [Monitor pipeline runs](monitor-pipeline-runs.md)

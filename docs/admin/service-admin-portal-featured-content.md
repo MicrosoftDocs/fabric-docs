@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: admin-portal
+ms.custom:
+  - admin-portal
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -32,8 +34,7 @@ To delete an item, mouse over and select the item, and then click the trash can 
 
 The featured content feature is enabled, disabled, and configured (for example, specifying who can feature content) via an admin setting. To learn more, see [Featured content](service-admin-portal-export-sharing.md#featured-content).
 
-## Next steps
+## Related content
 
 * [Feature content on colleagues' Power BI Home page](/power-bi/collaborate-share/service-featured-content)
-
 * [What is the admin portal?](admin-center.md)

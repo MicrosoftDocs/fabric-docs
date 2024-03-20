@@ -5,13 +5,13 @@ ms.reviewer: eloldag
 ms.author: harmeetgill
 author: gillharmeet
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/27/2023
 ---
 
 # Connect to ADLS and transform the data with Azure Databricks
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this guide, you will:
 
@@ -72,13 +72,13 @@ Before you start, you must have:
    display(df)
    ```
 
-1. To access and analyze this Delta table via Power BI, select **New Power BI dataset**.
+1. To access and analyze this Delta table via Power BI, select **New Power BI semantic model**.
 
-   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-pbi-dataset.png" alt-text="Screenshot showing how to create new Power BI dataset.":::
+   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-pbi-dataset.png" alt-text="Screenshot showing how to create new Power BI semantic model.":::
 
 1. Select the shortcut and then select **Confirm**.
 
-   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-dataset.png" alt-text="Screenshot showing new dataset setup.":::
+   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-dataset.png" alt-text="Screenshot showing new semantic model setup.":::
 
 1. When the data is published, select **Start from scratch**.
 
@@ -92,6 +92,6 @@ Before you start, you must have:
 
    :::image type="content" source="media\onelake-shortcuts-adb-quickstart\pbi-report.png" alt-text="Screenshot showing data being queried through Power BI report.":::
 
-## Next steps
+## Related content
 
 - [Ingest data into OneLake and analyze with Azure Databricks](onelake-open-access-quickstart.md)

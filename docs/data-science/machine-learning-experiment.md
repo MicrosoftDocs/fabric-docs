@@ -5,8 +5,10 @@ ms.reviewer: mopeakande
 ms.author: midesa
 author: midesa
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Create New Experiment, Run Comparison
 ---
 
@@ -14,11 +16,11 @@ ms.search.form: Create New Experiment, Run Comparison
 
 A machine learning *experiment* is the primary unit of organization and control for all related machine learning runs. A *run* corresponds to a single execution of model code. In [MLflow](https://mlflow.org/), tracking is based on experiments and runs.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 Machine learning experiments allow data scientists to log parameters, code versions, metrics, and output files when running their machine learning code. Experiments also let you visualize, search for, and compare runs, as well as download run files and metadata for analysis in other tools.
 
-In this article, you'll learn more about how data scientists can interact with and use machine learning experiments to organize their development process and to track multiple runs.
+In this article, you learn more about how data scientists can interact with and use machine learning experiments to organize their development process and to track multiple runs.
 
 ## Prerequisites
 
@@ -39,7 +41,7 @@ To create a machine learning experiment from the UI:
 
    :::image type="content" source="media/machine-learning-experiment/new-menu-experiment-option.png" alt-text="Screenshot showing where to select Experiment in the New menu." lightbox="media/machine-learning-experiment/new-menu-experiment-option.png":::
 
-Once you've created the experiment, you can start adding runs to track run metrics and parameters.
+After creating the experiment, you can start adding runs to track run metrics and parameters.
 
 ### Create an experiment using the MLflow API
 
@@ -76,15 +78,21 @@ Each run includes the following information:
 - **Metrics**: Run metrics saved as key-value pairs. The value is numeric.
 - **Output files**: Output files in any format. For example, you can record images, environment, models, and data files.
 
+### View recent runs
+
+You can also view recent runs for an experiment directly from the workspace list view. This view allows you to keep track of recent activity, quickly jump to the related Spark application, and apply filters based on the run status.
+
+:::image type="content" source="media/machine-learning-experiment/view-recent-runs.png" alt-text="Screenshot of machine learning recent runs and Spark application view." lightbox="media/machine-learning-experiment/view-recent-runs.png":::
+
 ## Compare and filter runs
 
 To compare and evaluate the quality of your machine learning runs, you can compare the parameters, metrics, and metadata between selected runs within an experiment.
 
 ### Visually compare runs
 
-You can visually compare and filter runs within an existing experiment. This allows you to easily navigate between multiple runs and sort across them.
+You can visually compare and filter runs within an existing experiment. Visual comparison allows you to easily navigate between multiple runs and sort across them.
 
-:::image type="content" source="media/machine-learning-experiment/ml-runs-compare-list.png" alt-text="Screenshot showing a list of runs." lightbox="media/machine-learning-experiment/ml-runs-compare-list.png":::
+:::image type="content" source="media/machine-learning-experiment/ml-runs-compare-list.png" alt-text="Screenshot showing a list of runs and the chart view." lightbox="media/machine-learning-experiment/ml-runs-compare-list.png":::
 
 To compare runs:
 
@@ -123,15 +131,21 @@ Use the `max_results` parameter from `search_runs` to limit the number of runs r
 mlflow.search_runs(experiment_ids=[ "1234-5678-90AB-CDEFG" ], max_results=1, order_by=["start_time DESC"])
 ```
 
-## Save run as a model
+### Compare runs within a Fabric notebook
 
-Once a run yields the desired result, you can save the run as a model for enhanced model tracking and for model deployment.
+You can use the MLFlow authoring widget within Fabric notebooks to track MLflow runs generated within each notebook cell. The widget allows you to track your runs, associated metrics, parameters, and properties right down to the individual cell level.
 
-<!-- add steps to save a run as a model and retake screenshot -->
+To obtain a visual comparison, you can also switch to the **Run comparison** view. This view presents the data graphically, aiding in the quick identification of patterns or deviations across different runs.
+
+:::image type="content" source="media/machine-learning-experiment/inline-authoring-mlflow.png" alt-text="Screenshot showing how to use the MLFlow authoring widget." lightbox="media/machine-learning-experiment/inline-authoring-mlflow.png":::
+
+## Save run as a machine learning model
+
+Once a run yields the desired result, you can save the run as a model for enhanced model tracking and for model deployment by selecting **Save as a ML model**.
 
 :::image type="content" source="media/machine-learning-experiment/create-model-select-new.png" alt-text="Screenshot showing where to select Create a new model." lightbox="media/machine-learning-experiment/create-model-select-new.png":::
 
-## Next Steps
+## Related content
 
 - [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
 - [Track and manage machine learning models](machine-learning-model.md)

@@ -5,15 +5,16 @@ summary: Learn more about the two Data Warehousing experiences in Microsoft Fabr
 
 metadata:
   title: Data Warehousing in Microsoft Fabric # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Data Warehousing using the SQL Endpoint and Warehouse in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list. 
+  description: Data Warehousing using the SQL analytics endpoint and Warehouse in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
+  ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-warehouse
+  ms.custom:
+    - ignite-2023
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 05/23/2023 #Required; mm/dd/yyyy format.
-
+  ms.date: 11/15/2023
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -37,19 +38,21 @@ landingContent:
             url: tutorial-introduction.md            
           - text: Create a Warehouse quickstart
             url: create-warehouse.md
+          - text: Migrate Azure Synapse Analytics dedicated SQL pools to Fabric Warehouse
+            url: migration-synapse-dedicated-sql-pool-warehouse.md            
   # Card 
-  - title: Get started with SQL Endpoint
+  - title: Get started with SQL analytics endpoint
     linkLists:
       - linkListType: get-started
         links:
           - text: What is a Lakehouse?
             url: ../data-engineering/lakehouse-overview.md
           - text: Better together - the lakehouse and warehouse
-            url: get-started-lakehouse-sql-endpoint.md
+            url: get-started-lakehouse-sql-analytics-endpoint.md
           - text: Create a lakehouse with OneLake
             url: ../onelake/create-lakehouse-onelake.md
-          - text: Understand default Power BI datasets
-            url: datasets.md
+          - text: Default Power BI semantic models
+            url: semantic-models.md
           - text: Load data into the Lakehouse
             url: ../data-engineering/load-data-lakehouse.md
           - text: How to copy data using Copy activity in Data pipeline
@@ -69,8 +72,14 @@ landingContent:
             url: workspace-roles.md
           - text: SQL granular permissions
             url: sql-granular-permissions.md
+          - text: Row-level security
+            url: row-level-security.md
+          - text: Column-level security
+            url: column-level-security.md
           - text: Share your Warehouse
             url: share-warehouse-manage-permissions.md            
+          - text: User audit logs
+            url: user-audit-logs.md
   # Card 
   - title: Ingest data
     linkLists:
@@ -89,10 +98,10 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Datasets
-            url: datasets.md            
-          - text: Model data in the default Power BI dataset
-            url: model-default-power-bi-dataset.md          
+          - text: Semantic models
+            url: semantic-models.md            
+          - text: Model data in the default Power BI semantic model
+            url: default-power-bi-semantic-model.md          
           - text: Define relationships in data models
             url: data-modeling-defining-relationships.md
           - text: Reports in the Power BI service
@@ -111,20 +120,51 @@ landingContent:
           - text: View data in the Data preview
             url: data-preview.md
   # Card 
-  - title: Manage and Monitor
+  - title: Manage
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Monitor 
-            url: monitor-using-dmv.md
-          - text: Capacity Metrics app
-            url: usage-reporting.md
-          - text: Workload Management
-            url: workload-management.md            
           - text: Statistics 
             url: statistics.md
+          - text: Query insights
+            url: query-insights.md            
+          - text: Caching
+            url: caching.md
           - text: Troubleshoot
             url: troubleshoot-synapse-data-warehouse.md
+  # Card 
+  - title: Monitor
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Capacity Metrics app
+            url: usage-reporting.md
+          - text: Monitor using DMVs
+            url: monitor-using-dmv.md
+  # Card 
+  - title: Warehouse capacity
+    linkLists:
+      - linkListType: architecture
+        links:
+          - text: Burstable capacity
+            url: burstable-capacity.md
+          - text: Pause and resume
+            url: pause-resume.md
+          - text: Smoothing and throttling
+            url: compute-capacity-smoothing-throttling.md
+          - text: Workload Management
+            url: workload-management.md            
+  # Card 
+  - title: Data recovery
+    linkLists:
+      - linkListType: architecture
+        links:
+          - text: Restore in-place
+            url: restore-in-place.md
+          - text: Clone tables
+            url: clone-table.md
+          - text: Clone tables in the Fabric portal
+            url: tutorial-clone-table-portal.md
   # Card 
   - title: Best practices
     linkLists:

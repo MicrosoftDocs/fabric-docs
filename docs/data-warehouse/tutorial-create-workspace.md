@@ -5,8 +5,10 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Tutorial: Create a Microsoft Fabric workspace
@@ -15,11 +17,9 @@ ms.date: 5/23/2023
 
 Before you can create a warehouse, you need to create a workspace where you'll build out the remainder of the tutorial.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Create a workspace
 
-The workspace contains all the items needed for data warehousing, including: Data Factory pipelines, the data warehouse, Power BI datasets, and reports.
+The workspace contains all the items needed for data warehousing, including: Data Factory pipelines, the data warehouse, Power BI semantic models, and reports.
 
 1. Sign in to [Power BI](https://powerbi.com).
 1. Select **Workspaces** > **New workspace**.
@@ -37,7 +37,7 @@ The workspace contains all the items needed for data warehousing, including: Dat
 1. Choose a premium capacity you have access to.
 1. Select **Apply**. The workspace is created and opened.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Create a Microsoft Fabric data warehouse](tutorial-create-warehouse.md)

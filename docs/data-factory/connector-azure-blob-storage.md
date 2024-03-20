@@ -1,104 +1,92 @@
 ---
-title: How to create an Azure Blob Storage connection
+title: Set up your Azure Blob Storage connection
 description: This article provides information about how to create an Azure Blob Storage connection.
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
-ms.date: 07/12/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to create an Azure Blob Storage connection
+# Set up your Azure Blob Storage connection
 
 [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) is Microsoft's object storage solution for the cloud. Blob storage is optimized for storing massive amounts of unstructured data. This article outlines the steps to create an Azure Blob Storage connection.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported authentication types
 
-The Azure Blob Storage connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Azure Blob Storage connector supports the following authentication types for copy and Dataflow Gen2 respectively.
 
-|Authentication type |Copy |Dataflow Gen2 |
-|:---|:---|:---|
-|Account key| √| √|
-|Anonymous | √| √|
-|Organizational account| √| √|
-|Service Principal|√||
-|Shared Access Signature (SAS)| √| √|
+| Authentication type | Copy | Dataflow Gen2 |
+| --- | :---: | :---: |
+| Anonymous | √ | √ |
+| Account key | √ | √ |
+| Shared Access Signature (SAS) | √ | √ |
+| Organizational account | √ | √ |
+| Service principal | √ | √ |
 
->[!Note]
->For information about an Azure Blob Storage connection in Dataflow Gen2, go to [Connect to Azure Blob Storage in dataflows](connector-azure-blob-storage-dataflows.md).
+## Set up your connection in Dataflow Gen2
 
-## Prerequisites
+Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Azure Blobs. The following links provide the specific Power Query connector information you need to connect to Azure Blobs in Dataflow Gen2:
 
-The following prerequisites are required before you start:
+* To get started using the Azure Blobs connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+* Be sure to install or set up any [Azure Blobs prerequisites](/power-query/connectors/azure-blob-storage#prerequisites) before connecting to the Azure Blobs connector.
+* To connect to the Azure Blobs connector from Power Query, go to [Connect to Azure Blob Storage from Power Query Online](/power-query/connectors/azure-analysis-services#connect-to-azure-analysis-services-database-from-power-query-online).
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
+## Set up your connection in a data pipeline
 
-## Go to Manage gateways to create a new connection
+Browse to the **New connection page** for the data factory pipeline to configure the connection details and create the connection.
 
-1. From the page header in Data Factory service, select **Settings** ![Settings gear icon.](./media/connector-common/settings.png) > **Manage connections and gateways.**
+:::image type="content" source="./media/connector-azure-blob-storage/new-connection-page.png" alt-text="Screenshot showing the new connection page." lightbox="./media/connector-azure-blob-storage/new-connection-page.png":::
 
-   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open Manage gateway.":::
+You have two ways to browse to this page:
 
-2. Select **New** at the top of the ribbon to add a new data source.
+* In copy assistant, browse to this page after selecting the connector.
+* In pipeline, browse to this page after selecting + New in Connection section and selecting the connector.
 
-   :::image type="content" source="./media/connector-common/add-new-connection.png" alt-text="Screenshot showing the '+ new' page." lightbox="./media/connector-common/add-new-connection.png":::
+### Step 1: Specify the account name or URL, connection and connection name
 
-   The **New connection** pane is then displayed on the left side of the page.
+:::image type="content" source="./media/connector-azure-blob-storage/configure-azure-blob-storage-connection-common.png" alt-text="Screenshot showing the common connection setup for Azure Blob Storage.":::
 
-   :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection' pane." lightbox="./media/connector-common/new-connection-pane.png":::
+In the **New connection** pane, specify the following fields:
 
-## Set up your connection
+* **Account name or URL**: Specify your Azure Blob Storage account name or URL. Browse to the **Endpoints** section in your storage account and the blob service endpoint is the account URL.
+* **Connection**: Select **Create new connection**.
+* **Connection name**: Specify a name for your connection.
 
-### Step 1: Specify the connection name, connection type, account, and domain
+### Step 2: Select and set your authentication kind
 
-:::image type="content" source="./media/connector-azure-blob-storage/configure-azure-blob-storage-connection-common.png" alt-text="Screenshot showing the new connection page.":::
+Under **Authentication kind**, select your authentication kind from the drop-down list and complete the related configuration. The Azure Blob Storage connector supports the following authentication types:
 
-In the **New connection** pane, choose **Cloud**, and specify the following field:
+* [Anonymous](#anonymous-authentication)
+* [Account key](#account-key-authentication)
+* [Shared Access Signature (SAS)](#shared-access-signature-sas-authentication)
+* [Organizational account](#organizational-account-authentication)
+* [Service principal](#service-principal-authentication)
 
-- **Connection name**: Specify a name for your connection.
-- **Connection type**: Select **Azure Blob Storage**.
-- **Account**: Enter your Azure Blob Storage account name.
-- **Domain**: Enter the domain of Azure Blob Storage: `blob.core.windows.net`.
-
-### Step 2: Select and set your authentication
-
-Under **Authentication** method, select your authentication from the drop-down list and complete the related configuration. The Azure Blob Storage connector supports the following authentication types:
-
-- [Anonymous](#anonymous-authentication)
-- [Key](#key-authentication)
-- [OAuth2](#oauth2-authentication)
-- [Shared Access Signature (SAS)](#shared-access-signature-sas-authentication)
-- [Service Principal](#service-principal-authentication)
-
-:::image type="content" source="./media/connector-azure-blob-storage/authentication-method.png" alt-text="Screenshot showing selecting authentication method page.":::
+:::image type="content" source="./media/connector-azure-blob-storage/authentication-kind.png" alt-text="Screenshot showing selecting authentication kind page.":::
 
 #### Anonymous authentication
 
-Select **Anonymous** under **Authentication method**.
+Select **Anonymous** under **Authentication** kind.
 
 :::image type="content" source="./media/connector-azure-blob-storage/authentication-anonymous.png" alt-text="Screenshot showing Anonymous authentication.":::
 
-#### Key authentication
+#### Account key authentication
 
 Specify the account key of your Azure Blob Storage. Go to your Azure Blob Storage account interface, browse to the **Access key** section, and get your account key.
 
-:::image type="content" source="./media/connector-azure-blob-storage/authentication-key.png" alt-text="Screenshot showing Key authentication method.":::
-
-#### OAuth2 authentication
-
-Open **Edit credentials**. You'll see the sign in interface. Enter your account and password to sign in your account. After signing in, go back to the **New connection** page.
-
-:::image type="content" source="./media/connector-azure-blob-storage/authentication-oauth2.png" alt-text="Screenshot showing OAuth2 authentication method.":::
+:::image type="content" source="./media/connector-azure-blob-storage/authentication-account-key.png" alt-text="Screenshot showing account key authentication.":::
 
 #### Shared Access Signature (SAS) authentication
 
-Specify the shared access signature token (SAS token) to the Storage resources, such as a blob or container.
+Specify the shared access signature token (SAS token) to the storage resources, such as a blob or container.
 
-:::image type="content" source="./media/connector-azure-blob-storage/authentication-shared-access-signature.png" alt-text="Screenshot showing shared access signature authentication method page.":::
+:::image type="content" source="./media/connector-azure-blob-storage/authentication-shared-access-signature.png" alt-text="Screenshot showing shared access signature authentication page.":::
 
 If you don’t have a SAS token, switch to **Shared access signature** in your Azure Blob Storage account interface. Under **Allowed resource types**, select **Service**. Then select **Generate SAS and connection string**. You can get your SAS token from the **SAS token** that's displayed.
 
@@ -106,68 +94,63 @@ The shared access signature is a URI that encompasses in its query parameters al
 
 For more information about shared access signatures, go to [Shared access signatures: Understand the shared access signature model](/azure/storage/common/storage-sas-overview).
 
+#### Organizational account authentication
+
+Select **Sign in**, which displays the sign in interface. Enter your account and password to sign in your organizational account. After signing in, go back to the **New connection** page.
+
+:::image type="content" source="./media/connector-azure-blob-storage/authentication-organizational-account.png" alt-text="Screenshot showing organizational account authentication.":::
+
 #### Service principal authentication
 
-:::image type="content" source="./media/connector-azure-blob-storage/authentication-service-principal.png" alt-text="Screenshot showing Service Principal authentication method page.":::
+You need to specify the tenant ID, service principal client ID and service principal key when using this authentication.
 
-- **Tenant Id**: Specify the tenant information (domain name or tenant ID) under which your application resides. Retrieve it by hovering over the upper-right corner of the Azure portal.
-- **Service principal ID**: Specify the application's client ID.
-- **Service principal key**: Specify your application's key.
+:::image type="content" source="./media/connector-azure-blob-storage/authentication-service-principal.png" alt-text="Screenshot showing Service principal authentication.":::
+
+* **Tenant ID**: Specify the tenant information (domain name or tenant ID) under which your application resides. Retrieve it by hovering over the upper-right corner of the Azure portal.
+* **Service principal client ID**: Specify the application's client ID.
+* **Service principal Key**: Specify your application's key.
 
 To use service principal authentication, follow these steps:
 
-1. Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
+1. Register an application entity in Microsoft Entra ID by following [Authorize access to blobs using Microsoft Entra ID](/azure/storage/blobs/authorize-access-azure-active-directory#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
 
-   - Tenant ID
-   - Application ID
-   - Application key
+   * Tenant ID
+   * Application ID
+   * Application key
 
-2. Grant the service principal proper permission in Azure Blob Storage. For more information on the roles, go to [Use the Azure portal to assign an Azure role for access to blob and queue data](/azure/storage/blobs/assign-azure-role-data-access?tabs=portal).
+2. Grant the service principal proper permission in Azure Blob Storage. For more information on the roles, go to [Assign an Azure role for access to blob data](/azure/storage/blobs/assign-azure-role-data-access).
 
-   - **As source**, in **Access control (IAM)**, grant at least the **Storage Blob Data Reader** role.
-   - **As destination**, in **Access control (IAM)**, grant at least the **Storage Blob Data Contributor** role.
+   * **As source**, in **Access control (IAM)**, grant at least the **Storage Blob Data Reader** role.
+   * **As destination**, in **Access control (IAM)**, grant at least the **Storage Blob Data Contributor** role.
 
-### Step 3: Specify the privacy level that you want to apply
+### Step 3: Create your connection
 
-In the **General** tab, select the privacy level that you want apply in the **Privacy level** drop-down list. Three privacy levels are supported. For more information, go to privacy levels.
+Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
-### Step 4: Create your connection
+### Table summary
 
-Select **Create**. Your creation will be successfully tested and saved if all the credentials are correct. If not correct, the creation will fail with errors.
+The following table contains the properties for data pipeline connection creation.
 
-:::image type="content" source="./media/connector-azure-blob-storage/connection.png" alt-text="Screenshot showing connection page.":::
+| Name | Description | Required | Property | Copy |
+| --- | --- | :---: | --- | :---: |
+| **Account name or URL** | Azure Blob Storage account name or endpoint. | Yes |  | ✓ |
+| **Connection** | Select **Create new connection**. | Yes |  | ✓ |
+| **Connection name** | A name for your connection. | Yes |  | ✓ |
+| **Authentication kind** | Go to [Authentication](). | Yes |  | Go to [Authentication]().
 
-## Table summary
-
-The following table contains connector properties that are supported in data pipeline creation.
-
-|Name|Description|Required|Property|Copy|
-|:---|:---|:---|:---|:---|
-|**Connection name**|A name for your connection.|Yes| |✓|
-|**Connection type**|Select a type for your connection. Select **Azure Blob Storage**.|Yes| |✓|
-|**Account**|Azure Blob Storage account name.|Yes||✓|
-|**Domain**|The domain of Azure Blob Storage: `blob.core.windows.net`.|Yes| |✓|
-|**Authentication**|Go to [Authentication](#authentication). |Yes||Go to [Authentication](#authentication).|
-|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**.|Yes||✓|
-
-### Authentication
+#### Authentication
 
 The properties in the following table are the supported authentication types.
 
-|Name |Description |Required |Property |Copy |
-|-----|-----|-----|-----|-----|
-|**Anonymous**||||✓|
-|**Key**||||✓|
-|- Account key|The account key of the Azure Blob Storage.|Yes |||
-|**OAuth2**||||✓|
-|**Shared Access Signature (SAS)**||||✓|
-|- SAS token|The shared access signature token to the Storage resources, such as a blob or container.|Yes |||
-|**Service Principal**||||✓|
-|- Tenant ID|The tenant information (domain name or tenant ID).|Yes |||
-|- Service Principal ID|The application's client ID.|Yes |||
-|- Service Principal key|The application's key.|Yes |||
-
-## Next steps
-
-- [Copy data in Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)
-- [Connect to Azure Blob Storage in dataflows](connector-azure-blob-storage-dataflows.md)
+| Name | Description | Required | Property | Copy |
+| --- | --- | :---: | --- | :---: |
+| **Anonymous** |  |  |  | ✓ |
+| **Account key** |  |  |  | ✓ |
+| - Account key | The account key of the Azure Blob Storage. | Yes |  |  |
+| **Shared Access Signature (SAS)** |  |  |  | ✓ |
+| - SAS token | The shared access signature token to the Storage resources, such as a blob or container. | Yes |  |  |
+| **Organizational account** |  |  |  | ✓ |
+| **Service principal** |  |  |  | ✓ |
+| - Tenant ID | The tenant information (domain name or tenant ID). | Yes |  |  |
+| - Service principal client ID | The application's client ID. | Yes |  |  |
+| - Service principal Key | The application's key. | Yes |  |  |

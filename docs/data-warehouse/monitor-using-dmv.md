@@ -4,9 +4,11 @@ description: Learn about monitoring with the available Dynamic Management Views.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 # Monitor connections, sessions, and requests using DMVs
@@ -14,8 +16,6 @@ ms.search.form: Monitoring # This article's title should not change. If so, cont
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 You can use existing dynamic management views (DMVs) to monitor connection, session, and request status in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about the tools and methods of executing T-SQL queries, see [Query the Warehouse](query-warehouse.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to monitor connections, sessions, and requests using query lifecycle DMVs
 
@@ -96,9 +96,10 @@ KILL '101'
 
 - An Admin has permissions to execute all three DMVs (`sys.dm_exec_connections`, `sys.dm_exec_sessions`, `sys.dm_exec_requests`) to see their own and others' information within a workspace.
 - A Member, Contributor, and Viewer can execute `sys.dm_exec_sessions` and `sys.dm_exec_requests` and see their own results within the warehouse, but does not have permission to execute `sys.dm_exec_connections`. 
-- Only an Admin has permission to run the `KILL` command. 
+- Only an Admin has permission to run the `KILL` command.
 
-## Next steps
+## Related content
 
 - [Query using the SQL Query editor](sql-query-editor.md)
-- [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
+- [Query the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric](query-warehouse.md)
+- [Query insights in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric](query-insights.md)

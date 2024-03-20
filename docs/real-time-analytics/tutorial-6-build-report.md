@@ -5,22 +5,22 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 6: Build a Power BI report
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md).
 
-A Power BI report is a multi-perspective view into a dataset, with visuals that represent findings and insights from that dataset. In this section, you create a new query that joins both datasets, and use this query output to create a new Power BI report.
+A Power BI report is a multi-perspective view into a semantic model, with visuals that represent findings and insights from that semantic model. In this section, you create a new query that joins both semantic models, and use this query output to create a new Power BI report.
 
 ## Build Power BI report
 
-1. Copy and paste the following query into your KQL queryset. The output of this query is used as the dataset for building the Power BI report.
+1. Copy and paste the following query into your KQL queryset. The output of this query is used as the semantic model for building the Power BI report.
 
     ```kusto
     nyctaxitrips
@@ -84,7 +84,7 @@ For more information about tasks performed in this tutorial, see:
 
 * [Visualize data in a Power BI report](create-powerbi-report.md)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 7: Clean up resources](tutorial-7-clean-up-resources.md)

@@ -6,15 +6,16 @@ ms.author: trolson
 author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 09/27/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 12/22/2023
 ---
 
 # OneLake shortcuts
 
 Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds, and accounts by creating a single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can directly connect to your existing data sources such as Azure, Amazon Web Services (AWS), and OneLake through a unified namespace. OneLake manages all permissions and credentials, so you don't need to separately configure each Fabric experience to connect to each data source. Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## What are shortcuts?
 
@@ -24,7 +25,9 @@ Shortcuts are objects in OneLake that point to other storage locations. The loca
 
 ## Where can I create shortcuts?
 
-You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases. Furthermore, the shortcuts you create within these items can point to other OneLake locations, Azure Data Lake Storage (ADLS) Gen2, or Amazon S3 storage accounts.
+You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases. Furthermore, the shortcuts you create within these items can point to other OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3 storage accounts, or Dataverse.
+
+You can use the Fabric UI to create shortcuts interactively, and you can use the [REST API](onelake-shortcuts-rest-api.md) to create shortcuts programmatically.
 
 ### Lakehouse
 
@@ -46,7 +49,7 @@ Any Fabric or non-Fabric service that can access data in OneLake can use shortcu
 
 ### Spark
 
-Spark notebooks and Spark jobs can use shortcuts that you create in OneLake. Relative file paths can be used to directly read data from shortcuts. Additionally, if you create a shortcut in the **Tables** section of the lakehouse and is in the Delta format, you can read it as a managed table using Spark SQL syntax.
+Spark notebooks and Spark jobs can use shortcuts that you create in OneLake. Relative file paths can be used to directly read data from shortcuts. Additionally, if you create a shortcut in the **Tables** section of the lakehouse and it is in the Delta format, you can read it as a managed table using Spark SQL syntax.
 
 ```python
 df = spark.read.format("delta").load("Tables/MyShortcut")
@@ -63,7 +66,7 @@ display(df)
 
 ### SQL
 
-You can also read shortcuts in the **Tables** section of a lakehouse through the SQL endpoint for the lakehouse. You can access the SQL endpoint through the mode selector of the lakehouse or through SQL Server Management Studio (SSMS).
+You can also read shortcuts in the **Tables** section of a lakehouse through the SQL analytics endpoint for the lakehouse. You can access the SQL analytics endpoint through the mode selector of the lakehouse or through SQL Server Management Studio (SSMS).
 
 ```SQL
 SELECT TOP (100) *
@@ -79,12 +82,9 @@ external_table('MyShortcut')
 | take 100
 ```
 
-> [!NOTE]
-> KQL databases don't currently support data in the Delta format. Tables in a KQL database only export to OneLake as Parquet files. Shortcuts in KQL databases that contain Delta-formatted data in the target aren't recognized as tables.
-
 ### Analysis Services
 
-You can create Power BI datasets for lakehouses containing shortcuts in the **Tables** section of the lakehouse. When the dataset runs in Direct Lake mode, Analysis Services can read data directly from the shortcut.
+You can create semantic models for lakehouses containing shortcuts in the **Tables** section of the lakehouse. When the semantic model runs in Direct Lake mode, Analysis Services can read data directly from the shortcut.
 
 ### Non-Fabric
 
@@ -96,7 +96,7 @@ https://onelake.dfs.fabric.microsoft.com/MyWorkspace/MyLakhouse/Tables/MyShortcu
 
 ## Types of shortcuts
 
-OneLake shortcuts support multiple filesystem data sources. These include internal OneLake locations, Azure Data Lake Storage Gen2, and Amazon S3.
+OneLake shortcuts support multiple filesystem data sources. These include internal OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3, and Dataverse.
 
 ### Internal OneLake shortcuts
 
@@ -105,7 +105,7 @@ Internal OneLake shortcuts allow you to reference data within existing Fabric it
 When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut*. This user must have permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When accessing shortcuts through Power BI Datasets or T-SQL, **the calling user’s identity is not passed through to the shortcut target.** The calling item owner’s identity is passed instead, delegating access to the calling user.
+> When accessing shortcuts through Power BI semantic models or T-SQL, **the calling user’s identity is not passed through to the shortcut target.** The calling item owner’s identity is passed instead, delegating access to the calling user.
 
 ### ADLS shortcuts
 
@@ -116,8 +116,7 @@ Shortcuts can also be created to ADLS Gen2 storage accounts. When you create sho
 ADLS shortcuts must point to the DFS endpoint for the storage account.
 Example: `https://accountname.dfs.core.windows.net/`
 
-> [!NOTE]
-> Access to storage account endpoint can't be blocked by storage firewall or VNET.
+If your storage account is protected by a storage firewall, you can configure trusted service access.  See [Trusted Workspace Access](..\security\security-trusted-workspace-access.md)
 
 #### Authorization
 
@@ -129,15 +128,18 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 
 ### S3 shortcuts
 
-You can also create shortcuts to Amazon S3 accounts. When you create shortcuts to Amazon S3, the target path must contain a bucket name at a minimum. S3 doesn’t natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
+You can also create shortcuts to Amazon S3 accounts. When you create shortcuts to Amazon S3, the target path must contain a bucket name at a minimum. S3 doesn't natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
 
 #### Access
 
 S3 shortcuts must point to the https endpoint for the S3 bucket.
+
 Example: `https://bucketname.s3.region.amazonaws.com/`
 
 > [!NOTE]
-> Access to storage account endpoint can't be blocked by storage firewall or VPC.
+> You do not need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
+> 
+> Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud.
 
 #### Authorization
 
@@ -152,19 +154,36 @@ The IAM user must have the following permissions on the bucket that the shortcut
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
 
-### Dataverse shortcuts (preview)
+### Dataverse shortcuts
 
-Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. The **View in Microsoft Fabric** feature, which is built into the PowerApps maker portal, makes all your Dynamics 365 data available for analysis in Microsoft Fabric. For more information, see [Dataverse direct integration with Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
+Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. This integration is accomplished through shortcuts, which can be created in two ways: through the PowerApps maker portal or through Fabric directly.
+
+#### Creating Shortcuts through PowerApps Maker Portal 
+Authorized PowerApps users can access the PowerApps maker portal and use the **Link to Microsoft Fabric** feature. From this single action, a Lakehouse is created in Fabric and shortcuts are automatically generated for each table in the Dataverse environment. 
+ For more information, see [Dataverse direct integration with Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
+
+#### Creating Shortcuts through Fabric 
+Fabric users can also create shortcuts to Dataverse. From the create shortcuts UX, users can select Dataverse, supply their environment URL, and browse the available tables. This experience allows users to selectively choose which tables to bring into Fabric rather than bringing in all tables.
 
 > [!NOTE]
-> Dataverse shortcuts can't be created through the Fabric UX. They must be created through the PowerApps maker portal.
+> Dataverse tables must first be available in the Dataverse Managed Lake before they are visible in the Fabric create shortcuts UX. If your tables are not visible from Fabric, use the **Link to Microsoft Fabric** feature from the PowerApps maker portal.
 
 #### Authorization
 
-Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut and all access to that shortcut is authorized using that credential. The supported delegated credential type is Organizational account (OAuth2). The organizational account must have permissions to access data in Dataverse Managed Lake.
+Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut, and all access to that shortcut is authorized using that credential. The supported delegated credential type is Organizational account (OAuth2). The organizational account must have the system administrator permission to access data in Dataverse Managed Lake.
 
 > [!NOTE]
 > Service Principals are currently not supported for Dataverse shortcut authorization.
+
+## Caching (Preview)
+Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24hrs it is purged from the cache. Individual files greater than 1GB in size are not cached.
+> [!NOTE]
+> Shortcut caching is currently only supported for S3 shortcuts.
+
+To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and click **Save**.
+
+:::image type="content" source="media\onelake-shortcuts\shortcut-cache-settings.png" alt-text="Screenshot of workspace settings panel with OneLake tab selected." lightbox="media\onelake-shortcuts\shortcut-cache-settings.png":::
+
 
 ## How shortcuts utilize cloud connections
 
@@ -227,17 +246,19 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 
 ## Limitations and considerations
 
-- The maximum number of shortcuts per Fabric item is 10,000. In this context, the term item refers to: apps, lakehouses, warehouses, reports, and more.
+- The maximum number of shortcuts per Fabric item is 100,000. In this context, the term item refers to: apps, lakehouses, warehouses, reports, and more.
 - The maximum number of shortcuts in a single OneLake path is 10.
 - The maximum number of direct shortcuts to shortcut links is 5.
-- ADLS and S3 shortcut target paths can't contain any reserved characters from RCF 3986 section 2.2.
-- OneLake shortcut target paths can’t contain “%” characters.
+- ADLS and S3 shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2).
+- OneLake shortcut names, parent paths, and target paths can't contain "%" or "+" characters.
 - Shortcuts don't support non-Latin characters.
 - Copy Blob API not supported for ADLS or S3 shortcuts.
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
 - OneLake shortcuts pointing to ADLS or S3 shortcuts isn't supported.
 - Additional shortcuts can't be created inside ADLS or S3 shortcuts.
+- Lineage for shortcuts to Data Warehouses and Semantic Models is not currently available.
 
-## Next steps
+## Related content
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)

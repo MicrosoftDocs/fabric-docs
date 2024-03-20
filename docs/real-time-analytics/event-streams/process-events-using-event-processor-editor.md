@@ -5,16 +5,18 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
-ms.search.form: Event streams
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+ms.date: 11/15/2023
+ms.search.form: Event Processor
 ---
 
 # Process event data with event processor editor
 
 The event processor in a Lakehouse destination allows you to process your data before it's ingested into your lakehouse. The event processor editor is a no-code experience that allows you to drag and drop to design the event data processing logic. This article describes how to use the editor to design your processing logic.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -33,21 +35,26 @@ To design your event processing with the event processor editor:
 
    :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-entrypoint.png" alt-text="Screenshot showing where to select Open event processor in the Lakehouse destination configuration screen.":::
 
-1. In the Event processing editor canvas, select the eventstream node. You can preview the data schema, rename the column, or change the data type in the right **Eventstream** pane.
+1. In the Event processing editor canvas, select the eventstream node. You can preview the data schema or change the data type in the right **Eventstream** pane.
 
    :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-schema.png" alt-text="Screenshot showing the data schema in the right pane of the Event processing editor screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-schema.png" :::
 
-1. From the **Operations** menu in the ribbon, select an operator to add event processing logic. For example, select **Manage fields**.
+1. To insert an event processing operator between this eventstream and destination in the event processor editor, you can use one of the following two methods:
 
-   :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing where to select Manage fields in the Operations menu." :::
+   1. Insert the operator directly from the connection line. Hover on the connection line and then select the "+" button. A drop-down menu appears on the connection line, and you can select an operator from this menu.
 
-1. Select the line between the eventstream and the lakehouse and press the **Delete** key to remove the connection between them. You must delete this connection before you can insert the **Manage fields** operator between them.
+      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-insert-node-1.png" alt-text="Screenshot showing where to hover on connection line to insert a node." :::
 
-   :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-delete-connection.png" alt-text="Screenshot showing where to select and delete the connection between the eventstream and the lakehouse." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-delete-connection.png" :::
+   1. Insert the operator from ribbon menu or canvas.
+      1. You can select an operator from the **Operations** menu in the ribbon. Alternatively, you can hover on one of the nodes and then select the "+" button if you have deleted the connection line. A drop-down menu appears next to that node, and you can select an operator from this menu.
 
-1. On the left edge of the eventstream node, click and drag the green circle with your mouse to connect it to the **Manage fields** operator node. Follow the same process to connect the **Manage fields** operator node to the lakehouse node.
+         :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing where to select an operator from the Operations menu." :::
 
-   :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-connecting.png" alt-text="Screenshot showing where to connect the nodes." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-connecting.png" :::
+         :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-insert-node-2.png" alt-text="Screenshot showing where to hover on nodes to insert a node." :::
+
+      2. Finally, you need to reconnect these nodes. Hover on the left edge of the event stream node, and then select and drag the green circle to connect it to the **Manage fields** operator node. Follow the same process to connect the **Manage fields** operator node to the lakehouse node.
+
+          :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-connecting.png" alt-text="Screenshot showing where to connect the nodes." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-connecting.png" :::
 
 1. Select the **Manage fields** operator node. In the **Manage fields** configuration panel, select the fields you want to output. If you want to add all fields, select **Add all fields**. You can also add a new field with the built-in functions to aggregate the data from upstream. (Currently, the built-in functions we support are some functions in **String Functions**, **Date and Time Functions**, **Mathematical Functions**. To find them, search on "built-in.")
 
@@ -89,6 +96,42 @@ The screen layout is like the main editor. It consists of three sections, shown 
 
 1. **Bottom pane with data preview and authoring error tabs**: In this pane, preview the data in a selected node with **Data preview** tab. The **Authoring errors** tab lists any incomplete or incorrect configuration in the operation nodes.
 
+### Authoring errors
+
+**Authoring errors** refers to the errors that occur in the **Event processor editor** due to incomplete or incorrect configuration of the operation nodes, helping you find and fix potential problems in your event processor.
+
+You can view **Authoring errors** in the bottom panel of the **Event processor editor**. The bottom panel lists all the authoring errors, each authoring error has four columns:
+
+- **Node ID**: Indicates the ID of the operation node where the Authoring error occurred.
+- **Node type**: Indicates the type of the operation node where the Authoring error occurred.
+- **Level**: Indicates the severity of the Authoring error, there are two levels, **Fatal** and **Information**. Fatal level authoring error means that your event processor has serious problems and can't be saved or run. Information level authoring error means that your event processor has some tips or suggestions that can help you optimize or improve your event processor.
+- **Error**: Indicates the specific information of the authoring error, briefly describing the cause and impact of the authoring error. You can select the **Show details** tab to see details.
+
+Since Eventstream and KQL Database support different data types, the process of data type conversion may generate authoring errors.
+
+The following table shows the results of data type conversion from Eventstream to KQL Database. The columns represent the data types supported by Eventstream, and the rows represent the data types supported by KQL Database. The cells indicate the conversion results, which can be one of the following three:
+
+✔️ Indicates successful conversion, no errors or warnings are generated.
+
+❌ Indicates impossible conversion, fatal authoring error is generated. The error message is similar to: The data type "{1}" for the column "{0}" does not match the expected type "{2}" in the selected KQL table. and cannot be auto-converted.
+
+⚠️ Indicates possible but inaccurate conversion, information authoring error is generated. The error message is similar to: The data type "{1}" for the column "{0}" does not exactly match the expected type "{2}" in the selected KQL table. It will be auto-converted to "{2}".
+
+| | string | bool | datetime | dynamic | guid | int | long | real | timespan | decimal |
+|:--------:|:------:|:----:|:--------:|:-------:|:----:|:---:|:----:|:----:|:--------:|:-------:|
+| **Int64**      |   ❌    |  ❌   |    ❌     |    ✔️    |  ❌   |  ⚠️  |  ✔️   |  ⚠️   |    ❌     |    ✔️    |
+| **Double**    |   ❌    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ⚠️   |    ❌     |   ⚠️    |
+| **String**   |   ✔️    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
+| **Datetime** |   ⚠️    |  ❌   |    ✔️     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
+| **Record**   |   ⚠️    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
+| **Array**    |   ⚠️    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
+
+As you can see from the table, some data type conversions are successful, such as string to string. These conversions do not generate any authoring errors, and do not affect the operation of your event processor.
+
+Some data type conversions are impossible, such as int to string. These conversions generate fatal level authoring errors, causing your event processor to fail to save. You need to change your data type either in your Eventstream or in KQL table to avoid these errors.
+
+Some data type conversions are possible, but not precise, such as int to real. These conversions generate information level authoring errors, indicating the mismatch between data types, and the automatic conversion results. These conversions may cause your data to lose precision or structure. You can choose whether to ignore these errors, or modify your data type either in your Eventstream or in KQL table to optimize your event processor.
+
 ## Transformation operators
 
 The event processor provides six operators, which you can use to transform your event data according to your business needs.
@@ -128,16 +171,31 @@ In time-streaming scenarios, performing operations on the data contained in temp
 
 ### Manage fields
 
-The **Manage fields** transformation allows you to add, remove, or rename fields coming in from an input or another transformation. The side pane settings give you the option of adding a new field by selecting **Add field** or adding all fields at once.
+The **Manage fields** transformation allows you to add, remove, change data type or rename fields coming in from an input or another transformation. The side pane settings give you the option of adding a new field by selecting **Add field** or adding all fields at once.  
 
 You can also add a new field with the built-in functions to aggregate the data from upstream. (Currently, the built-in functions we support are some functions in **String Functions**, **Date and Time Functions**, and **Mathematical Functions**. To find them, search on "built-in.")
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing the Manage field operator available in the event processor editor." :::
 
+The following table shows the results of changing the data type using manage fields. The columns represents the original data type, and the rows represents the target data type.
+
+- If there is a ✔️ in the cell, it means that it can be converted directly and the target data type option is shown in the dropdown list.
+- If there is a ❌ in the cell, it means that it cannot be converted and the target data type option is not shown in the dropdown list.
+- If there is a ⚠️ in the cell, it means that it can be converted, but it needs to meet certain conditions, such as the string format must conform to the requirements of the target data type. For example, when converting from string to int, the string needs to be a valid integer form, such as “123”, not “abc”.
+
+|      | Int64                      | Double                     | String                      | Datetime                    | Record | Array |
+|:------:|:-------------------------:|:-------------------------:|:---------------------------:|:---------------------------:|:------:|:-----:|
+| **Int64**     | ✔️                         | ✔️                         | ✔️                           | ❌                           | ❌      | ❌     |
+| **Double**  | ✔️                         | ✔️                         | ✔️                           | ❌                           | ❌      | ❌     |
+| **String** | ⚠️ | ⚠️ | ✔️                           | ⚠️ | ❌      | ❌     |
+| **Datetime** | ❌                         | ❌                         | ✔️                           | ✔️                           | ❌      | ❌     |
+| **Record** | ❌                         | ❌                         | ✔️                           | ❌                           | ✔️      | ❌     |
+| **Array**  | ❌                         | ❌                         | ✔️                           | ❌                           | ❌      | ✔️     |
+
 ### Union
 
 Use the Union transformation to connect two or more nodes and add events that have shared fields (with the same name and data type) into one table. Fields that don't match are dropped and not included in the output.
 
-## Next steps
+## Related content
 
-See [Add and manage destinations in an eventstream](./add-manage-eventstream-destinations.md).
+- [Add and manage destinations in an eventstream](./add-manage-eventstream-destinations.md).

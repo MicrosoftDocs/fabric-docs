@@ -2,31 +2,33 @@
 title: Implement row-level security in Microsoft Fabric data warehousing
 description: A guide to use row-level security in Fabric Data Warehousing
 author: SQLStijn-MSFT
-ms.author: stwynant 
+ms.author: stwynant
 ms.reviewer: wiassaf
 ms.topic: how-to
-ms.date: 10/03/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 # Implement row-level security in Microsoft Fabric data warehousing
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Row-level security (RLS) in Fabric Warehouse and SQL Endpoint allows you to control access to rows in a database table based on user roles and predicates. For more information, see [Row-level security in Fabric data warehousing](row-level-security.md).
+Row-level security (RLS) in Fabric Warehouse and SQL analytics endpoint allows you to control access to rows in a database table based on user roles and predicates. For more information, see [Row-level security in Fabric data warehousing](row-level-security.md).
 
-This guide will walk you through the steps to implement row-level security in Microsoft Fabric Warehouse or SQL Endpoint.
+This guide will walk you through the steps to implement row-level security in Microsoft Fabric Warehouse or SQL analytics endpoint.
 
 ## Prerequisites
 
 Before you begin, make sure you have the following:
 
 1. A Fabric workspace with an active capacity or trial capacity.
-1. A Fabric Warehouse or SQL Endpoint on a Lakehouse.
-1. Either the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the Warehouse or SQL Endpoint.
+1. A Fabric Warehouse or SQL analytics endpoint on a Lakehouse.
+1. Either the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the Warehouse or SQL analytics endpoint.
 
 ## 1. Connect
 
-1. Log in using an account with elevated access on the Warehouse or SQL Endpoint. (Either Admin/Member/Contributor role on the workspace or Control Permissions on the Warehouse or SQL Endpoint).
-1. Open the Fabric workspace and navigate to the Warehouse or SQL Endpoint where you want to apply row-level security.
+1. Log in using an account with elevated access on the Warehouse or SQL analytics endpoint. (Either Admin/Member/Contributor role on the workspace or Control Permissions on the Warehouse or SQL analytics endpoint).
+1. Open the Fabric workspace and navigate to the Warehouse or SQL analytics endpoint where you want to apply row-level security.
 
 ## 2. Define security policies
 
@@ -58,7 +60,7 @@ Before you begin, make sure you have the following:
 1. Replace `YourSecurityPolicy` with your policy name, `tvf_securitypredicate` with the name of your predicate function, `sampleschema` with the name of your schema and `sampletable` with the name of your target table. 
 1. Replace `UserName_column` with a column in your table that contains user names.
 1. Replace `WHERE @UserName = USER_NAME();` with a `WHERE` clause that matches the desired predicate-based security filter. For example, this filters the data where the `UserName` column, mapped to the `@UserName` parameter, matches the result of the system function [USER_NAME()](/sql/t-sql/functions/user-name-transact-sql?view=fabric&preserve-view=true).
-1. Repeat the above steps to create security policies for other tables if needed.
+1. Repeat these steps to create security policies for other tables if needed.
 
 ## 3. Test row-level security
 
@@ -74,7 +76,7 @@ Before you begin, make sure you have the following:
     SELECT * FROM sampleschema.sampletable
     ```
 
-1. Similar filtered results for the user will be filtered with other applications that use Microsoft Entra ID authentication for database access.
+1. Similar filtered results for the user will be filtered with other applications that use Microsoft Entra authentication for database access.
 
 ## 4. Monitor and maintain row-level security
 

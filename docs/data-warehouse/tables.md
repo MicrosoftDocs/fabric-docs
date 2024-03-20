@@ -4,9 +4,11 @@ description: Learn about tables in Microsoft Fabric.
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 12/13/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Tables in data warehousing in Microsoft Fabric
@@ -18,8 +20,6 @@ This article details key concepts for designing tables in [!INCLUDE [product-nam
 In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record.
 
 - In [!INCLUDE[fabricdw](includes/fabric-dw.md)], tables are database objects that contain all the transactional data. 
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Determine table category
 
@@ -44,7 +44,7 @@ To show the organization of the tables, you could use `fact`, `dim`, or `int` as
 | Order | Fact | `wwi.FactOrder` |
 
 - Table names are case sensitive. 
-- Table names can't contain `/` or `\`.
+- Table names can't contain `/` or `\` or end with a `.`.
 
 ## Create a table
 
@@ -64,6 +64,9 @@ CREATE TABLE MyTable (col1 int, col2 int );
 ### Schema names
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports the creation of custom schemas. Like in SQL Server, schemas are a good way to group together objects that are used in a similar fashion. The following code creates a [user-defined schema](/sql/t-sql/statements/create-schema-transact-sql?view=fabric&preserve-view=true) called `wwi`.
+
+- Schema names are case sensitive. 
+- Schema names can't contain `/` or `\` or end with a `.`.
 
 ```sql
 CREATE SCHEMA wwi;
@@ -108,8 +111,9 @@ If data is coming from multiple data stores, you can port the data into the data
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports many, but not all, of the table features offered by other databases.
 
-The following list shows some of the table features that aren't currently supported. During preview, this list is subject to change.
+The following list shows some of the table features that aren't currently supported.  
 
+- 1024 maximum columns per table
 - Computed columns
 - Indexed views
 - Partitioned tables
@@ -122,7 +126,7 @@ The following list shows some of the table features that aren't currently suppor
 - Unique indexes
 - User-defined types
 
-## Next steps
+## Related content
 
 - [What is data warehousing in [!INCLUDE [product-name](../includes/product-name.md)]?](data-warehousing.md)
 - [What is data engineering in [!INCLUDE [product-name](../includes/product-name.md)]?](../data-engineering/data-engineering-overview.md)

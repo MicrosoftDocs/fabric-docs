@@ -5,7 +5,9 @@ ms.reviewer: sngun
 ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: product-trident
 ms.date: 08/06/2023
 ---
@@ -14,8 +16,6 @@ ms.date: 08/06/2023
 
 In this article, you find a comprehensive list of end-to-end tutorials available in Microsoft Fabric. These tutorials guide you through a scenario that covers the entire process, from data acquisition to data consumption. They're designed to help you develop a foundational understanding of the Fabric UI, the various experiences supported by Fabric and their integration points, and the professional and citizen developer experiences that are available.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Multi-experience tutorials
 
 The following table lists tutorials that span multiple Fabric experiences.
@@ -23,8 +23,8 @@ The following table lists tutorials that span multiple Fabric experiences.
 |Tutorial name  |Scenario |
 |---------|---------|
 |[Lakehouse](../data-engineering/tutorial-lakehouse-introduction.md) | In this tutorial, you ingest, transform, and load the data of a fictional retail company, Wide World Importers, into the lakehouse and analyze sales data across various dimensions.  |
-|[Data Science](../data-science/tutorial-data-science-introduction.md)    |  In this tutorial, you explore, clean, and transform a taxicab trip dataset, and build a machine learning model to predict trip duration at scale on a large dataset.   |
-|[Real-Time Analytics](../real-time-analytics/tutorial-introduction.md)   | In this tutorial, you use the streaming and query capabilities of Real-Time Analytics to analyze the New York Yellow Taxi trip dataset. You uncover essential insights into trip statistics, taxi demand across the boroughs of New York, and other related insights. |
+|[Data Science](../data-science/tutorial-data-science-introduction.md)    |  In this tutorial, you explore, clean, and transform a taxicab trip semantic model, and build a machine learning model to predict trip duration at scale on a large semantic model.   |
+|[Real-Time Analytics](../real-time-analytics/tutorial-introduction.md)   | In this tutorial, you use the streaming and query capabilities of Real-Time Analytics to analyze the New York Yellow Taxi trip semantic model. You uncover essential insights into trip statistics, taxi demand across the boroughs of New York, and other related insights. |
 |[Data warehouse](../data-warehouse/tutorial-introduction.md) |  In this tutorial, you build an end-to-end data warehouse for the fictional Wide World Importers company. You ingest data into data warehouse, transform it using T-SQL and pipelines, run queries, and build reports. |
 
 ## Experience-specific tutorials
@@ -39,7 +39,7 @@ The following tutorials walk you through scenarios within specific Fabric experi
 | [Data Science - Price prediction with R](../data-science/r-avocado.md) | In this tutorial, you build a machine learning model to analyze and visualize the avocado prices in the US and predict future prices. |
 | [Application lifecycle management](../cicd/cicd-tutorial.md) | In this tutorial, you learn how to use deployment pipelines together with git integration to collaborate with others in the development, testing and publication of your data and reports. |
 
-## Next steps
+## Related content
 
 * [Create a workspace](create-workspaces.md)
 * Discover data items in the [OneLake data hub](onelake-data-hub.md)

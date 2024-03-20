@@ -5,14 +5,14 @@ ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: concepts
+ms.custom:
+  - ignite-2023
 ms.date: 07/16/2023
 ---
 
 # Configure high concurrency mode for Fabric notebooks
 
 When you run a notebook in Microsoft Fabric, an Apache Spark session is started and is used to run the queries submitted as part of the notebook cell executions. With High Concurrency Mode enabled, there's no need to start new spark sessions every time to run a notebook.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 If you already have a High Concurrency session running, you could attach notebooks to the high concurrency session getting a spark session instantly to run the queries and achieve a greater session utilization rate.
 
@@ -94,7 +94,7 @@ Monitoring and debugging are often a non-trivial task when you are running multi
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-high-concurrency-mode.png" alt-text="Screenshot showing the all related notebooks for high concurrency session in the monitoring detail view." lightbox="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-high-concurrency-mode.png":::
 
-## Next steps
+## Related content
 
 In this document, you get a basic understanding of a session sharing through high concurrency mode in notebooks. Advance to the next articles to learn how to create and get started with your own Data Engineering experiences using Lakehouse and Notebooks:
 

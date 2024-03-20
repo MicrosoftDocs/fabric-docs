@@ -9,8 +9,8 @@ items:
   items:
   - name: Buy a Microsoft Fabric subscription
     href: buy-subscription.md
-  - name: Service interruption notifications
-    href: service-interruption-notifications.md
+  - name: SKU considerations
+    href: sku-considerations.md
 - name: Capacity operations
   items:
   - name: Understand your Azure bill
@@ -21,15 +21,19 @@ items:
     href: scale-capacity.md
   - name: Throttling
     href: throttling.md
+  - name: Fabric operations    
+    href: fabric-operations.md   
   - name: Metrics app
     items:
     - name: What is the Microsoft Fabric Capacity Metrics app?
       href: metrics-app.md
     - name: Install the Microsoft Fabric Capacity Metrics app
       href: metrics-app-install.md
-    - name: Understand the Microsoft Fabric Capacity Metrics app overview page
-      href: metrics-app-overview-page.md
-    - name: Understand the metrics app OneLake page
-      href: metrics-app-onelake-page.md
+    - name: Understand the Microsoft Fabric Capacity Metrics app compute page
+      href: metrics-app-compute-page.md
+    - name: Understand the metrics app storage page
+      href: metrics-app-storage-page.md
     - name: Understand the metrics app timepoint page
-      href: metrics-app-timepoint-page.md             
+      href: metrics-app-timepoint-page.md    
+    - name: Monitor a paused capacity
+      href: monitor-paused-capacity.md                 

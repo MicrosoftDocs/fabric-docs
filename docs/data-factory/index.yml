@@ -6,13 +6,14 @@ summary: Data factory in Microsoft Fabric provides cloud-scale data movement and
 metadata:
   title: Data Factory  in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Summary of the Data Factory in Microsoft Fabric documentation # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list. 
-  ms.subservice: data-factory 
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice: data-factory
+  ms.custom:
+    - ignite-2023
   ms.topic: landing-page # Required
   author: DougKlopfenstein #Required; your GitHub user alias, with correct capitalization.
   ms.author: dougklo #Required; microsoft alias of author; optional team alias.
-  ms.date: 07/14/2023 #Required; mm/dd/yyyy format.
-
+  ms.date: 11/15/2023 #Required; mm/dd/yyyy format.
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -31,7 +32,7 @@ landingContent:
             url: whats-new.md
 
   # Card 
-  - title: Get started
+  - title: Using Data Factory
     linkLists:
       - linkListType: get-started
         links:
@@ -41,6 +42,10 @@ landingContent:
             url: create-first-pipeline-with-sample-data.md
           - text: Move and transform data
             url: transform-data.md
+          - text: Migrate to Data Factory
+            url: upgrade-paths.md
+          - text: Pricing in Data Factory
+            url: pricing-overview.md
       - linkListType: tutorial
         links:
           - text: Create an end-to-end data integration scenario
@@ -48,7 +53,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Data Factory training
-            url: /training/paths/get-started-fabric
+            url: /training/browse/?terms=data%20factory%20fabric
   
   # Card 
   - title: Working with data pipelines
@@ -85,5 +90,3 @@ landingContent:
         links:
         - text: Frequently asked questions
           url: frequently-asked-questions.yml
-
-

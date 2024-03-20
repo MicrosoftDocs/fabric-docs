@@ -5,7 +5,12 @@ ms.reviewer: sngun
 ms.author: gesaur
 author: gsaurer
 ms.topic: overview
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+  - ignite-2023-fabric
 ms.search.form: product-trident
 ms.date: 06/30/2023
 ---
@@ -18,8 +23,6 @@ With Fabric, you don't need to piece together different services from multiple v
 
 The platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## SaaS foundation
 
 Microsoft Fabric brings together new and existing components from Power BI, Azure Synapse, and Azure Data Factory into a single integrated environment. These components are then presented in various customized user experiences.
@@ -28,7 +31,7 @@ Microsoft Fabric brings together new and existing components from Power BI, Azur
 
 Fabric brings together experiences such as Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Analytics, and Power BI onto a shared SaaS foundation. This integration provides the following advantages:
 
-- An extensive range of deeply integrated analytics in the industry.
+- Access to an extensive range of deeply integrated analytics in the industry.
 - Shared experiences across experiences that are familiar and easy to learn.
 - Developers can easily access and reuse all assets.
 - A unified data lake that allows you to retain the data where it is while using your preferred analytics tools.
@@ -58,7 +61,7 @@ Microsoft Fabric offers the comprehensive set of analytics experiences designed 
 
 Fabric brings together all these experiences into a unified platform to offer the most comprehensive big data analytics platform in the industry.
 
-Microsoft Fabric enables organizations, and individuals, to turn large and complex data repositories into actionable workloads and analytics, and is an implementation of data mesh architecture. To learn more about data mesh, visit the article that explains [data mesh architecture](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh). 
+Microsoft Fabric enables organizations, and individuals, to turn large and complex data repositories into actionable workloads and analytics, and is an implementation of data mesh architecture. To learn more about data mesh, visit the article that explains [data mesh architecture](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh).
 
 ## OneLake and lakehouse - the unification of lakehouses
 
@@ -80,7 +83,7 @@ The tenant maps to the root of OneLake and is at the top level of the hierarchy.
 
 The following image shows the various Fabric items where data is stored. It's an example of how various items within Fabric would store data inside OneLake. As displayed, you can create multiple workspaces within a tenant, create multiple lakehouses within each workspace. A lakehouse is a collection of files, folders, and tables that represents a database over a data lake. To learn more, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md).
 
-:::image type="content" source="media\microsoft-fabric-overview\hierarchy-within-tenant.png" alt-text="Diagram of the hierarchy of items like lakehouses and datasets within a workspace within a tenant.":::
+:::image type="content" source="media\microsoft-fabric-overview\hierarchy-within-tenant.png" alt-text="Diagram of the hierarchy of items like lakehouses and semantic models within a workspace within a tenant.":::
 
 Every developer and business unit in the tenant can instantly create their own workspaces in OneLake. They can ingest data into their own lakehouses, start processing, analyzing, and collaborating on the data, just like OneDrive in Office.
 
@@ -92,7 +95,17 @@ OneLake is designed to allow instant mounting of existing PaaS storage accounts 
 
 Additionally, shortcuts allow you to easily share data between users and applications without moving or duplicating information. The shortcut capability extends to other storage systems, allowing you to compose and analyze data across clouds with transparent, intelligent caching that reduces egress costs and brings data closer to compute.
 
-## Next steps
+## Fabric solutions for ISVs
+
+If you're an ISV interested in integrating your solutions with Microsoft Fabric, you can use one of the following paths depending on the level of integration you want to achieve:
+
+- **Interop** - Integrate your solution with the OneLake Foundation and establish basic connections and interoperability with Fabric.
+- **Develop on Fabric** - Build your solution on top of the Fabric platform or seamlessly embed Fabric's functionalities within your existing applications. It allows you to actively leverage Fabric capabilities.
+- **Build a Fabric workload** - Create customized workloads and experiences in Fabric. Tailor your offerings to deliver their  value proposition while leveraging Fabric ecosystem.
+
+For more information, see the [Fabric ISV partner ecosystem](../cicd/partners/partner-integration.md).
+
+## Related content
 
 - [Microsoft Fabric terminology](fabric-terminology.md)
 - [Create a workspace](create-workspaces.md)

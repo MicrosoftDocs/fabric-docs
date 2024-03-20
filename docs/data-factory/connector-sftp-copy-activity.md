@@ -1,31 +1,32 @@
 ---
-title: How to configure SFTP in a copy activity
+title: Configure SFTP in a copy activity
 description: This article explains how to copy data using SFTP.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/18/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure SFTP in a copy activity
+# Configure SFTP in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from SFTP.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported format
 
 SFTP supports the following file formats. Refer to each article for format-based settings.
 
-- Avro format
+- [Avro format](format-avro.md)
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
-- JSON format
-- ORC format
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
 - [Parquet format](format-parquet.md)
-- XML format
+- [XML format](format-xml.md)
 
 ## Supported configuration
 
@@ -175,6 +176,6 @@ The following table contains more information about the copy activity in SFTP.
 |**Operation timeout (minutes)**|The timeout for writing each chunk to SFTP server.|< your operation timeout ><br>The default value is 60|No|operationTimeout|
 |**Upload with temp file**|Indicates whether to upload temporary file(s) and rename. Disable this option if your SFTP server doesn't support rename operation.|selected (default) or unselected |No|useTempFileRename:<br>true (default) or false |
 
-## Next steps
+## Related content
 
 - [SFTP connector overview](connector-sftp-overview.md)

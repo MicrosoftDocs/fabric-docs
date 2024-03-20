@@ -5,15 +5,15 @@ ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/4/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 03/01/2024
 ---
 
 # Prepare your system for data science tutorials
 
 Before you begin the data science end-to-end tutorial series, learn about prerequisites, how to import notebooks, and how to attach a lakehouse to those notebooks.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -41,29 +41,31 @@ We utilize the notebook item in the Data Science experience to demonstrate vario
 
 1. The imported notebooks are now available in your workspace for use.
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\imported-notebook-list.png" alt-text="Screenshot showing a list of available notebooks in a workspace." lightbox="media\tutorial-data-science-prepare-system\imported-notebook-list.png":::
-
 1. If the imported notebook includes output, select the **Edit** menu, then select **Clear all outputs**.
 
    :::image type="content" source="media\tutorial-data-science-prepare-system\clear-outputs.png" alt-text="Screenshot shows the edit menu option to clear all outputs." lightbox="media\tutorial-data-science-prepare-system\clear-outputs.png":::
 
 ## Attach a lakehouse to the notebooks
 
-To demonstrate Fabric lakehouse features, many of the tutorials require attaching a default lakehouse to the notebooks. The following steps show how to add an existing lakehouse to a notebook in a Fabric-enabled workspace.
+To demonstrate Fabric lakehouse features, many of the tutorials require attaching a default lakehouse to the notebooks. The following steps show how to add a lakehouse to a notebook in a Fabric-enabled workspace.
+
+> [!NOTE]
+> Before executing each notebooks, you need to perform these steps on that notebook. 
 
 1. Open the notebook in the workspace.
 
-1. Select **Add lakehouse** in the left pane and select **Existing lakehouse** to open the **Data hub** dialog box.
+1. Select **Add lakehouse** in the left pane.
 
-1. Select the workspace and the lakehouse you intend to use with these tutorials and select **Add**.
+    :::image type="content" source="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png" alt-text="Diagram of the process steps to attach a lakehouse to a notebook." lightbox="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png":::
 
-1. Once a lakehouse is added, it's visible in the lakehouse pane in the notebook UI where tables and files stored in the lakehouse can be viewed.
+1. Create a new lakehouse or use an existing lakehouse.
+    1. To create a new lakehouse, select **New**. Give the lakehouse a name and select **Create**.
+    1. To use an existing lakehouse, select **Existing lakehouse** to open the **Data hub** dialog box. Select the lakehouse you want to use and then select **Add**.
 
-> [!NOTE]
-> Before executing each notebooks, you need to perform these steps on that notebook.
+1. Once a lakehouse is added, it's visible in the lakehouse pane and you can view tables and files stored in the lakehouse.
 
-:::image type="content" source="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png" alt-text="Diagram of the process steps to attach a lakehouse to a notebook." lightbox="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png":::
 
-## Next steps
+## Next step
 
-* [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)
+> [!div class="nextstepaction"]
+> [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)

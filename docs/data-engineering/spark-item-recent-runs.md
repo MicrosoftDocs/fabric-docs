@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Browse artifacts recent runs
 ---
@@ -13,8 +15,6 @@ ms.search.form: Browse artifacts recent runs
 # Browse item's recent runs
 
 With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, Apache Spark job definitions, jobs, and other types of applications in your workspace. This article explains how to view your running Apache Spark applications, making it easier to keep an eye on the latest running status.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## View the recent runs pane
 
@@ -33,7 +33,6 @@ We can open **Recent runs** pane with the following steps:
  - Open the recent run pane from the **pipeline item context**.
 
     :::image type="content" source="media\spark-item-recent-runs\from-pipeline-open-the-recent-run.png" alt-text="Screenshot showing where to select Recent runs from pipeline." lightbox="media\spark-item-recent-runs\from-pipeline-open-the-recent-run.png":::
-
 
 ## All runs within a Notebook
 
@@ -59,7 +58,7 @@ In the **Recent runs** pane, you can view a list of applications, including **Ap
 
 Selecting the application name link navigates to spark application details where we can get to see the logs, data and skew details for the Spark run.
 
-## Next steps
+## Related content
 
 The next step after viewing the list of running Apache Spark applications is to view the application details. You can refer to:
 

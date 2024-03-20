@@ -5,8 +5,10 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Tutorial: Build a report from the OneLake data hub
@@ -15,17 +17,16 @@ ms.date: 5/23/2023
 
 Learn how to build a report with the data you ingested into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in the last step.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Build a report
 
 1. Select the **OneLake data hub** in the navigation menu.
 
    :::image type="content" source="media\tutorial-build-report\build-report-onelake-data-hub.png" alt-text="Screenshot of the navigation menu, showing where to select OneLake data hub.":::
 
-1. From the item list, select `WideWorldImporters` with the type of **Dataset (default)**.
+1. From the item list, select `WideWorldImporters` with the type of **Semantic model (default)**.
 
-   :::image type="content" source="media\tutorial-build-report\select-dataset-default-list.png" alt-text="Screenshot of WWI default dataset in the list of items in the workspace." lightbox="media\tutorial-build-report\select-dataset-default-list.png":::
+   > [!NOTE]
+   > Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see New name for Power BI datasets.
 
 1. In the **Visualize this data** section, select **Create a report** > **Auto-create**. A report is generated from the `dimension_customer` table that was loaded in the previous section.
 
@@ -46,7 +47,7 @@ Learn how to build a report with the data you ingested into your [!INCLUDE [fabr
     - Learn more about [Workspace roles in Fabric data warehousing](workspace-roles.md).
     - Consider [Microsoft Purview](../governance/microsoft-purview-fabric.md), included by default in every tenant to meet important compliance and governance needs.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Clean up tutorial resources](tutorial-clean-up.md)

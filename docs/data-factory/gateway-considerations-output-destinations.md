@@ -4,7 +4,9 @@ description: Describes multiple considerations and limitations when using a data
 author: nikkiwaghani
 ms.author: nikkiwaghani
 ms.topic: conceptual
-ms.date: 10/09/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # On-premises data gateway considerations for data destinations in Dataflow Gen2
@@ -49,7 +51,7 @@ To troubleshoot the issue, follow these steps:
 The firewall rules on the gateway server and/or customer's proxy servers need to be updated to allow outbound traffic from the gateway server to the following:
 
 * **Protocol**: TCP
-* **Endpoint**: *.datawarehouse.pbidedicated.windows.net
+* **Endpoints**: *.datawarehouse.pbidedicated.windows.net, *.datawarehouse.fabric.microsoft.com, *.dfs.fabric.microsoft.com 
 * **Port**: 1433
 
 If you want to narrow down the scope of the endpoint to the actual OneLake instance in a workspace (instead of the wildcard *.datawarehouse.pbidedicated.windows.net), that URL can be found by navigating to the Fabric workspace, locating `DataflowsStagingLakehouse`, and selecting **View Details**. Then, copy and paste the SQL connection string.

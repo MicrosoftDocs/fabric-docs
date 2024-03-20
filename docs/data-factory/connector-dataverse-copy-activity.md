@@ -1,21 +1,25 @@
 ---
-title: How to configure Dataverse in a copy activity
+title: Configure Dataverse in a copy activity
 description: This article explains how to copy data using Dataverse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/17/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Dataverse in a copy activity
+# Configure Dataverse in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Dataverse.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
-To use this connector with Azure AD service-principal authentication, you must set up server-to-server (S2S) authentication in Dataverse. First register the application user (Service Principal) in Azure Active Directory. You can find out how to do this [here](/azure/active-directory/develop/howto-create-service-principal-portal). During application registration you will need to create that user in Dataverse and grant permissions. Those permissions can either be granted directly or indirectly by adding the application user to a team which has been granted permissions in Dataverse. You can find more information on how to set up an application user to authenticate with Dataverse [here](/powerapps/developer/data-platform/use-single-tenant-server-server-authentication). 
+
+To use this connector with Microsoft Entra service principal authentication, you must set up server-to-server (S2S) authentication in Dataverse. First register the application user (Service Principal) in Microsoft Entra. For more information, see [Create a Microsoft Entra application and service principal that can access resources](/entra/identity-platform/howto-create-service-principal-portal). 
+
+During application registration you will need to create that user in Dataverse and grant permissions. Those permissions can either be granted directly or indirectly by adding the application user to a team which has been granted permissions in Dataverse. For more information on how to set up an application user to authenticate with Dataverse, see [Use single-tenant server-to-server authentication](/powerapps/developer/data-platform/use-single-tenant-server-server-authentication).
 
 ## Supported configuration
 
@@ -113,10 +117,10 @@ See the following table for the summary and more information for the Dataverse c
 |**Data store type**|Your data store type.|External|Yes|/|
 |**Connection**|Your connection to the source Dataverse.| < your connection >|Yes|connection|
 |**Connection type**|Your connection type. |**Dataverse**|Yes|type (under `typeProperties` -> `source` -> `datasetSettings`):<br>CommonDataServiceForAppsEntity|
-|**Use query**|The way to read data from Dataverse|• Tables<br>• Query|Yes|/|
+|**Use query**|The way to read data from Dataverse|* Tables<br>* Query|Yes|/|
 |**Entity name**|The logical name of the entity to retrieve.|< your entity name >|Yes|entityName|
 |**Query**| Use FetchXML to read data from Dataverse. FetchXML is a proprietary query language that is used in Dynamics online and on-premises. To learn more, see [Build queries with FetchXML](/previous-versions/dynamicscrm-2016/developers-guide/gg328332(v=crm.8)).|< your query > |Yes|query|
-|**Additional columns**|Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. For more information, go to [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy). |• Name<br>• Value|No|additionalColumns:<br>• name<br>• value|
+|**Additional columns**|Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. For more information, go to [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy). |* Name<br>* Value|No|additionalColumns:<br>* name<br>* value|
 
 ### Destination information
 
@@ -132,6 +136,6 @@ See the following table for the summary and more information for the Dataverse c
 |**Write batch size**|The row count of data written to Dataverse in each batch.|< your write batch size > <br>The default value is 10|No|writeBatchSize|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|< max concurrent connections >|No|maxConcurrentConnections|
 
-## Next steps
+## Related content
 
-[Dataverse connector overview](connector-dataverse-overview.md)
+- [Dataverse connector overview](connector-dataverse-overview.md)

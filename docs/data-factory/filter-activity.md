@@ -5,14 +5,14 @@ author: chez-charlie
 ms.author: chez
 ms.reviewer: jburchel
 ms.topic: how-to
-ms.date: 08/24/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the Filter activity to filter items from an array
 
 You can use a Filter activity in a pipeline to apply a filter expression to an input array.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -62,6 +62,6 @@ After adding any additional necessary activities using the output array of the F
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Microsoft Fabric documentation for admins
-summary: Learn about the Microsoft Fabric admin settings, options and tools.
+summary: Learn about the Microsoft Fabric admin settings, options, and tools.
 
 metadata:
   title: Microsoft Fabric documentation for admins
@@ -11,66 +11,84 @@ metadata:
   ms.topic: landing-page
   author: KesemSharabi
   ms.author: kesharab
-  ms.date: 05/23/2023
+  ms.date: 02/08/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
 
-  - title: Get started
+  - title: Fabric in your organization
     linkLists:
-      - linkListType: get-started
-        links:
-          - text: Enable Microsoft Fabric for your organization
-            url: fabric-switch.md
-          - text: Governance in Microsoft Fabric
-            url: ../governance/index.yml      
-          - text: Security in Microsoft Fabric
-            url: ../security/security-overview.md              
       - linkListType: overview
         links:
           - text: What is Microsoft Fabric admin?
             url: microsoft-fabric-admin.md       
           - text: What is the admin portal?
-            url: admin-center.md
+            url: admin-center.md                
+      - linkListType: get-started
+        links:
+          - text: Enable Fabric for your organization
+            url: fabric-switch.md
+          - text: Region availability
+            url: region-availability.md
+          - text: Find your Fabric home region
+            url: find-fabric-home-region.md             
       - linkListType: how-to-guide
         links:            
-          - text: Understand Microsoft Fabric admin roles
+          - text: Understand Fabric admin roles
             url: roles.md
+      - linkListType: reference
+        links:   
+          - text: Governance documentation
+            url: ../governance/index.yml      
+          - text: Security documentation
+            url: ../security/index.yml             
 
   - title: Tools and settings
     linkLists:
       - linkListType: overview
-        links: 
-          - text: Tenant admin settings for git integration
-            url: git-integration-admin-settings.md              
+        links:
+          - text: About tenant settings
+            url: tenant-settings-index.md
       - linkListType: how-to-guide
         links:
-          - text: Track user activities in Fabric
-            url: track-user-activities.md
+          - text: Set up git integration
+            url: git-integration-admin-settings.md
           - text: Set up item certification
-            url: endorsement-setup.md            
-          - text: Enable service principal authentication for read-only admin APIs
-            url: metadata-scanning-enable-read-only-apis.md     
-          - text: Set up metadata scanning in your organization
+            url: endorsement-setup.md
+          - text: Configure notifications
+            url: service-admin-premium-capacity-notifications.md
+          - text: Set up metadata scanning
             url: metadata-scanning-setup.md
+          - text: Enable content certification
+            url: service-admin-setup-certification.md
+          - text: Enable service principal authentication
+            url: metadata-scanning-enable-read-only-apis.md
+          - text: Configure Multi-Geo support
+            url: service-admin-premium-multi-geo.md
 
-  - title: Workspace settings
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Workspace tenant settings
-            url: portal-workspace.md
-      - linkListType: how-to-guide
-        links:
-          - text: Manage workspaces
-            url: portal-workspaces.md
-
-  - title: Admin monitoring workspace
+  - title: Monitoring and management
     linkLists:
       - linkListType: overview
         links:
           - text: What is the admin monitoring workspace?
             url: monitoring-workspace.md
+      - linkListType: concept
+        links:                
           - text: Feature usage and adoption report
             url: feature-usage-adoption.md
+      - linkListType: how-to-guide
+        links:            
+          - text: Use the Monitoring hub
+            url: monitoring-hub.md
+
+  - title: Workspace administration
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Manage workspaces
+            url: portal-workspaces.md
+      - linkListType: how-to-guide
+        links:            
+          - text: Workspace tenant settings
+            url: portal-workspace.md

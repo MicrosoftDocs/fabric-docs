@@ -1,10 +1,12 @@
 ---
-title: Differences between Dataflows Gen1 and Gen2
+title: Differences between Dataflow Gen1 and Dataflow Gen2
 description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory for Microsoft Fabric.
 author: luitwieler
 ms.topic: overview
-ms.custom: build-2023
-ms.date: 06/05/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.author: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ---
@@ -12,8 +14,6 @@ ms.search.form: DataflowGen2 Overview
 # Getting from Dataflow Generation 1 to Dataflow Generation 2
 
 Dataflow Gen2 is the new generation of dataflows. The new generation of dataflows resides alongside the Power BI Dataflow (Gen1) and brings new features and improved experiences. The following section provides a comparison between Dataflow Gen1 and Dataflow Gen2.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Feature overview
 
@@ -83,7 +83,7 @@ Similar to Dataflow Gen1, Dataflow Gen2 also features an enhanced compute engine
 
 ## Licensing Dataflow Gen1 vs Gen2
 
-Dataflow Gen1 works with Power BI Pro/PPU/Premium licenses while Dataflow Gen2 only works with a Fabric capacity (trail) as it requires support from other experiences like Data Engineering and Data Warehouses. Dataflow Gen2 is the new generation of dataflows that resides alongside the Power BI dataflow (Gen1) and brings new features and improved experiences. Dataflows are supported for Power BI Pro, Premium Per User (PPU), and Power BI Premium users. [Some features](/power-bi/transform-model/dataflows/dataflows-premium-features) are only available with a Power BI Premium subscription (which is either a Premium capacity or PPU license).
+Dataflow Gen2 is the new generation of dataflows that resides alongside the Power BI dataflow (Gen1) and brings new features and improved experiences. It requires a Fabric capacity or a Fabric trial capacity. To understand better how licensing works for dataflows you can read the following article: [Microsoft Fabric concepts and licenses](../enterprise/licenses.md)
 
 ## Try out Dataflow Gen2 by reusing your queries from Dataflow Gen1
 
@@ -97,7 +97,7 @@ You probably have many Dataflow Gen1 queries and you're wondering how you can tr
 
   If you have a dataflow in Power BI or Power Apps, you can copy your queries and paste them in the editor of your Dataflow Gen2. This functionality allows you to migrate your dataflow to Gen2 without having to rewrite your queries. For more information, go to [Copy and paste existing Dataflow Gen1 queries](move-dataflow-gen1-to-dataflow-gen2.md#copy-and-paste-existing-dataflow-gen1-queries).
 
-## Next steps
+## Related content
 
 - [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)
 - [Dataflows save as draft](dataflows-gen2-save-draft.md)

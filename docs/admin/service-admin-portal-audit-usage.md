@@ -6,19 +6,21 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 08/29/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Audit and usage tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Usage metrics for content creators
 
-When this setting is on, users in the organization can see usage metrics for dashboards, reports, and datasets for which they have appropriate permissions.
+When this setting is on, users in the organization can see usage metrics for dashboards, reports, and semantic models for which they have appropriate permissions.
 
 To learn more, see [Monitor usage metrics in the workspaces](/power-bi/collaborate-share/service-modern-usage-metrics).
 
@@ -34,6 +36,6 @@ Power BI integration with [Azure Log Analytics](/power-bi/transform-model/log-an
 
 When the switch is on, administrators and Premium workspace owners can [configure **Azure Log Analytics for Power BI**](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure).
 
-## Next steps
+## Related content
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

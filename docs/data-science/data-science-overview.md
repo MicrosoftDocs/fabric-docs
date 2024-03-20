@@ -5,15 +5,20 @@ author: nelgson
 ms.author: negust
 ms.reviewer: franksolomon
 ms.topic: overview
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 03/24/2023
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 11/15/2023
 
 ms.search.form: Data Science Overview
 ---
 
 # What is Data Science in Microsoft Fabric?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 [!INCLUDE [product-name](../includes/product-name.md)] offers Data Science experiences to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
 
@@ -85,11 +90,14 @@ In [!INCLUDE [product-name](../includes/product-name.md)], Predicted values can 
 
 Notebooks that contain batch scoring can be scheduled to run using the Notebook scheduling capabilities. Batch scoring can also be scheduled as part of data pipeline activities or Spark jobs. Power BI automatically gets the latest predictions without need for loading or refresh of the data, thanks to the Direct lake mode in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Data exploration with semantic link
+## Data exploration with semantic link (preview)
 
-Data scientists and business analysts spend lots of time trying to understand, clean, and transform data before they can start any meaningful analysis. Business analysts typically work with Power BI datasets and encode their domain knowledge and business logic into Power BI measures. On the other hand, data scientists can work with the same datasets, but typically in a different code environment or language.
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-Semantic link allows data scientists to establish a connection between Power BI datasets and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience via the [SemPy Python library](/python/api/semantic-link-sempy). SemPy simplifies data analytics by capturing and leveraging data semantics as users perform various transformations on their datasets.
+Data scientists and business analysts spend lots of time trying to understand, clean, and transform data before they can start any meaningful analysis. Business analysts typically work with semantic models and encode their domain knowledge and business logic into Power BI measures. On the other hand, data scientists can work with the same data, but typically in a different code environment or language.
+
+
+Semantic link (preview) allows data scientists to establish a connection between Power BI semantic models and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience via the [SemPy Python library](/python/api/semantic-link-sempy). SemPy simplifies data analytics by capturing and leveraging data semantics as users perform various transformations on the semantic models.
 By leveraging semantic link, data scientists can:
 
 - avoid the need to re-implement business logic and domain knowledge in their code
@@ -103,9 +111,9 @@ Through the use of SemPy, organizations can expect to see:
 - increased cross-collaboration across business intelligence and AI teams
 - reduced ambiguity and an easier learning curve when onboarding onto a new model or dataset
 
-For more information on semantic link, see [What is semantic link?](semantic-link-overview.md).
+For more information on semantic link, see [What is semantic link (preview)?](semantic-link-overview.md).
 
-## Next steps
+## Related content
 
 - Get started with end-to-end data science samples, see [Data Science Tutorials](tutorial-data-science-introduction.md)
 - Learn more about data preparation and cleansing with Data Wrangler, see [Data Wrangler](data-wrangler.md)

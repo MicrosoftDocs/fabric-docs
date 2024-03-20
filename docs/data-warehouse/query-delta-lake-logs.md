@@ -4,9 +4,11 @@ description: Learn how Warehouse in Microsoft Fabric publishes Delta Lake logs
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 12/11/2023
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Delta Lake logs in Warehouse in Microsoft Fabric 
@@ -45,14 +47,12 @@ You can locate Delta Lake logs via the following methods:
 
 - Delta Lake logs can be found via [Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md), through Spark connections such as the Power BI Direct Lake mode, or using any other service that can read delta tables.
  
-- Delta Lake logs can be found in the `_delta_log` folder of each table through the OneLake Explorer (Preview) in Windows, as shown in the following screenshot.
+- Delta Lake logs can be found in the `_delta_log` folder of each table through the OneLake Explorer  in Windows, as shown in the following screenshot.
 
     :::image type="content" source="media/query-delta-lake-logs/onelake-explorer-delta-log.png" alt-text="A screenshot of the Windows OneLake Explorer, showing the path to the delta logs folder for the call_center table.":::
 
 ## Limitations
 
-- Currently, tables with inserts only are supported.
-- Currently, Delta Lake log checkpoint and vacuum functions are unavailable.
 - Table Names can only be used by Spark and other systems if they only contain these characters: A-Z a-z 0-9 and underscores.
 - Column Names that will be used by Spark and other systems cannot contain:
   - spaces
@@ -68,7 +68,7 @@ You can locate Delta Lake logs via the following methods:
   - =
   - ]
 
-## Next steps
+## Related content
 
 - [Query the Warehouse](query-warehouse.md)
 - [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md)

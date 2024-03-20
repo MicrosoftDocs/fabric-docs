@@ -5,15 +5,15 @@ author: chez-charlie
 ms.author: chez
 ms.reviewer: jburchel
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 08/31/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the If Condition activity to execute activities based on an expression
 
 The If Condition activity in Data Factory for Microsoft Fabric provides the same functionality that an if statement provides in programming languages. It executes a set of activities when the condition evaluates to true and another set of activities when the condition evaluates to false.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -53,6 +53,6 @@ Switch to the **Home** tab at the top of the pipeline editor, and select the sav
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

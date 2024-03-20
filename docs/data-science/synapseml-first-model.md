@@ -2,7 +2,9 @@
 title: SynapseMl first model
 description: A quick introduction to building your first machine learning model with SynapseML.
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.reviewer: mopeakande
 author: JessicaXYWang
 ms.author: jessiwang
@@ -91,9 +93,9 @@ model = TextSentiment(
 display(model.transform(test))
 ```
 
-## Next steps
+## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use Azure AI services with SynapseML](overview-azure-ai-services.md)
+- [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource)

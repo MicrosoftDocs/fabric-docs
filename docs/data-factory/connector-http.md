@@ -1,18 +1,19 @@
 ---
-title: How to create an HTTP connection
+title: Set up your HTTP connection
 description: This article provides information about how to create an HTTP connection in Microsoft Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to create an HTTP connection
+# Set up your HTTP connection
 
 This article outlines the steps to create HTTP connection.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -20,23 +21,16 @@ The HTTP connector supports the following authentication types for copy and Data
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Anonymous| √| √|
-|Basic| √| √|
-|Organizational account| | √|
-|Windows| | √|
+|Anonymous| √ | n/a |
+|Basic| √ | n/a |
 
->[!Note]
->For information about an HTTP connection in Dataflow Gen2, go to [Connect to HTTP data in dataflows](connector-http-dataflows.md).
+## Set up your connection in Dataflow Gen2
 
-## Prerequisites
+The HTTP connector isn't currently supported in Dataflow Gen2.
 
-The following prerequisites are required before you start:
+## Set up your connection in a data pipeline
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
-
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
-
-## Go to manage gateways to create a connection
+To create a connection in a data pipeline:
 
 1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**.
 
@@ -109,7 +103,6 @@ The following properties in the table are the supported authentication types.
 |- Username|The user name to use to access the HTTP endpoint.|Yes |||
 |- Password|The password for specified username.|Yes |||
 
-## Next steps
+## Related content
 
-- [How to configure HTTP in copy activity](connector-http-copy-activity.md)
-- [Connect to HTTP data in dataflows](connector-http-dataflows.md)
+- [Configure HTTP in a copy activity](connector-http-copy-activity.md)

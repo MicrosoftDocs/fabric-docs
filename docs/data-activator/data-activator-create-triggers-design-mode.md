@@ -6,13 +6,13 @@ ms.author: davidi
 ms.topic: concept
 ms.custom: 
 ms.search.form: Data Activator Design Mode
-ms.date: 10/03/2023
+ms.date: 11/16/2023
 ---
 
 # Create Data Activator triggers in design mode
 
 > [!IMPORTANT]
-> Microsoft Fabric and Data Activator are in preview.
+> Data Activator is currently in preview.
 
 Once you have [assigned data to objects](data-activator-assign-data-objects.md#assign-data-to-objects-in-data-activator), you can create triggers to act on your data. You do this in **Design Mode,** which you can access from the tab at the bottom of your screen. 
 
@@ -94,7 +94,7 @@ Once you have defined a property, you can reference it from one or more triggers
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for a trigger.":::
 
-## Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

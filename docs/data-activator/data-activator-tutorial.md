@@ -5,13 +5,13 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 10/03/2023
+ms.date: 11/16/2023
 ---
 
 # Data Activator tutorial using sample data
 
 > [!IMPORTANT]
-> Microsoft Fabric and Data Activator are in preview.
+> Data Activator is currently in preview.
 
 This step-by-step tutorial uses the sample *Packages* data that comes with reflex. By the end of this tutorial, you'll have accomplished the following:
 
@@ -105,7 +105,11 @@ Now you'll create a trigger that alerts you if the average time in transit, for 
 
 Congratulations on creating your first object and trigger. As next steps, you might want to try setting up some other triggers on either the *City* or *Package* objects. When you're ready to try using Data Activator on real data, follow the steps in the [Get data for Data Activator](data-activator-get-data-eventstreams.md) article.
 
-## Next steps
+Once you’ve finished with the triggers you created as part of the tutorial, be sure to stop them so you don’t incur any charges for background processing of the trigger. Select each trigger in turn, and press the Stop button from the ribbon.
+
+:::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the trigger stop button for data activator tutorial.":::
+
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

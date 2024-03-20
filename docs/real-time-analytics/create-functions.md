@@ -5,14 +5,14 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/10/2023
 ms.search.form: product-kusto
 ---
 
 # Create stored functions
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Functions are reusable queries or query parts. Real-Time Analytics supports two kinds of functions:
 
@@ -29,7 +29,7 @@ For more information on the `.create-or-alter` `function` command, see [`.create
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
+* A [KQL database](create-database.md) with editing permissions
 
 ## Functions
 
@@ -43,9 +43,9 @@ This feature allows you to create or alter an existing function using the `.crea
 
     :::image type="content" source="media/create-functions/create-function.png" alt-text="Screenshot of the Explore your data window showing the newly created function in Real-Time Analytics." lightbox="media/create-functions/create-function.png":::
 
-    Stored functions appear under **Functions** in the **Data tree**.
+    Stored functions appear under **Functions** in the **Explorer** pane.
 
-    :::image type="content" source="media/create-functions/functions-object-tree.png" alt-text="Screenshot of Data tree showing the list of stored user-defined functions.":::
+    :::image type="content" source="media/create-functions/functions-object-tree.png" alt-text="Screenshot of Explorer pane showing the list of stored user-defined functions.":::
 
 1. In the **Explore your data** window, run a query to check that you have successfully created or altered your function.
 
@@ -54,5 +54,5 @@ This feature allows you to create or alter an existing function using the `.crea
 ## Related content
 
 * [Query data in a KQL queryset](kusto-query-set.md)
-* [Change the data retention policy](data-retention-policy.md)
+* [Change data policies](data-policies.md)
 * [Create a table update policy](table-update-policy.md)

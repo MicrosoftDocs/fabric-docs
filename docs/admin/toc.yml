@@ -3,27 +3,45 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is Microsoft Fabric administration?
+  - name: Administration overview
+    href: admin-overview.md          
+  - name: What is Microsoft Fabric admin?
     href: microsoft-fabric-admin.md
+  - name: What is the admin portal?
+    href: admin-center.md
+  - name: Governance and compliance documentation
+    href: ../governance/index.yml      
+  - name: Security documentation
+    href: ../security/index.yml    
 - name: Get started
   items:
-  - name: Enable Microsoft Fabric for your organization
+  - name: Enable Fabric for your organization
     href: fabric-switch.md
+  - name: Enable Data Activator for your organization
+    href: data-activator-switch.md    
   - name: Region availability
     href: region-availability.md
   - name: Find your Fabric home region
     href: find-fabric-home-region.md
-  - name: Understand Microsoft Fabric admin roles
-    href: roles.md
-  - name: What is the admin portal?
-    href: admin-center.md
+  - name: Understand Fabric admin roles
+    href: roles.md 
+  - name: Service interruption notifications      
+    href: service-interruption-notifications.md   
 - name: Monitor and manage Fabric
   expanded: false
   items:
-  - name: Using Monitoring hub
+  - name: Admin monitoring workspace
+    items:    
+    - name: What is the admin monitoring workspace?
+      href: monitoring-workspace.md
+    - name: Feature usage and adoption report
+      href: feature-usage-adoption.md
+  - name: Use the Monitoring hub
     href: monitoring-hub.md 
   - name: Track user activities
     href: track-user-activities.md
+  - name: Operation list
+    href: operation-list.md
   - name: Find users who have signed in
     href: service-admin-access-usage.md
   - name: Customize Fabric branding
@@ -42,10 +60,8 @@ items:
     href: organizational-visuals.md 
   - name: Manage Premium Per User
     href: service-admin-portal-premium-per-user.md
-  - name: Manage Premium Per User
+  - name: Manage users
     href: service-admin-portal-users.md
-  - name: Manage workspaces
-    href: service-admin-portal-workspaces.md
   - name: View audit logs
     href: service-admin-portal-audit-logs.md
   - name: View information protection metrics
@@ -54,12 +70,6 @@ items:
     href: service-admin-portal-refresh-summary.md
   - name: View usage metrics
     href: service-admin-portal-usage-metrics.md
-  - name: Monitoring workspace
-    items:    
-    - name: What is the admin monitoring workspace?
-      href: monitoring-workspace.md
-    - name: Feature usage and adoption report
-      href: feature-usage-adoption.md
 - name: Workspace administration
   items:
   - name: Manage workspaces
@@ -68,8 +78,6 @@ items:
     href: portal-workspace.md
 - name: Feature set up
   items:
-  - name: Set up git integration
-    href: git-integration-admin-settings.md
   - name: Set up item certification
     href: endorsement-setup.md
   - name: Configure notifications
@@ -78,21 +86,25 @@ items:
     href: metadata-scanning-setup.md
   - name: Enable content certification
     href: service-admin-setup-certification.md
-  - name: Enable service principal authentication for read-only admin APIs
+  - name: Enable service principal authentication
     href: metadata-scanning-enable-read-only-apis.md
-  - name: Configure Multi-Geo support for Fabric Premium
+  - name: Configure Multi-Geo support
     href: service-admin-premium-multi-geo.md
 - name: Fabric tenant settings
   items:
+  - name: About tenant settings
+    href: about-tenant-settings.md
   - name: Tenant settings index
     href: tenant-settings-index.md
-  - name: Tenant settings list
+  - name: Tenant settings sections
     expanded: false
     items:
-    - name: Microsoft Fabric (Preview)
+    - name: Microsoft Fabric
       href: fabric-switch.md
     - name: Help and support settings
       href: service-admin-portal-help-support.md
+    - name: Domain management settings
+      href: service-admin-portal-domain-management-settings.md
     - name: Workspace settings
       href: portal-workspace.md
     - name: Information protection
@@ -101,8 +113,10 @@ items:
       href: service-admin-portal-export-sharing.md
     - name: Discovery settings
       href: service-admin-portal-discovery.md
-    - name: Content pack and app settings
-      href: service-admin-portal-content-pack-app.md
+    - name: App settings
+      href: service-admin-portal-app.md
+    - name: Copilot settings
+      href: service-admin-portal-copilot.md
     - name: Integration settings
       href: service-admin-portal-integration.md
     - name: Power BI visuals
@@ -113,6 +127,8 @@ items:
       href: service-admin-portal-audit-usage.md
     - name: Dashboard settings
       href: service-admin-portal-dashboard.md
+    - name: Git integration settings
+      href: git-integration-admin-settings.md
     - name: Developer settings
       href: service-admin-portal-developer.md
     - name: Admin API settings
@@ -123,7 +139,7 @@ items:
       href: service-admin-portal-template-app.md
     - name: Q&A settings
       href: service-admin-portal-qa.md
-    - name: Dataset security
+    - name: Semantic model security
       href: service-admin-portal-dataset-security.md
     - name: Advanced networking 
       href: service-admin-portal-advanced-networking.md
@@ -145,5 +161,3 @@ items:
       href: service-admin-portal-scale-out.md
     - name: OneLake settings
       href: service-admin-portal-onelake.md
-    - name: Git integration settings
-      href: git-integration-admin-settings.md

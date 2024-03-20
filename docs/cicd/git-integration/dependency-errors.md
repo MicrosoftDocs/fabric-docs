@@ -5,6 +5,8 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Dan Weinstein
 ms.topic: how-to
+ms.custom:
+  - ignite-2023
 ms.date: 07/14/2023
 ---
 
@@ -16,13 +18,13 @@ This article explains what dependency errors are and how to resolve them.
 
 If you connect a workspace containing unsupported items to an empty git branch, the unsupported items aren't copied to the git branch and can't be accessed by it. You can perform any actions you want on the supported items, but the unsupported items are essentially unseen by git.
 
-For example, here's a sample workspace connected to a git repository. The workspace contains a *.pbix* file, report, and dataset. The report is dependent on the dataset because the report refers to data from the dataset to render. The *.pbix* file refers to both the report and the dataset and is therefore dependent on both of them. Reports and datasets are both supported items, while *.pbix* files are not supported.
+For example, here's a sample workspace connected to a git repository. The workspace contains a *.pbix* file, report, and semantic model. The report is dependent on the semantic model because the report refers to data from the semantic model to render. The *.pbix* file refers to both the report and the semantic model and is therefore dependent on both of them. Reports and semantic models are both supported items, while *.pbix* files are not supported.
 
 :::image type="content" source="./media/dependency-errors/workspace-with-dependencies.png" alt-text="Screenshot of workspace that has unsupported dependencies.":::
 
 If you try to delete an item from a workspace, and a different, unsupported item in that workspace is dependent on it, you can't delete it.
 
-For example, if you delete the dataset in the previous example, it would break the dependency on the *.pbix* file and the report. If you then try to switch branches or update, you get a message that the action can't be completed.
+For example, if you delete the semantic model in the previous example, it would break the dependency on the *.pbix* file and the report. If you then try to switch branches or update, you get a message that the action can't be completed.
 
 :::image type="content" source="./media/dependency-errors/unable-to-complete-action.png" alt-text="Screenshot of dependency error.":::
 
@@ -36,6 +38,6 @@ Try to switch to branch with unsupported artifact
 1. Manually remove the dependency. The easiest way to do this is to delete the item.
 1. Switch branches or update again.
 
-## Next steps
+## Related content
 
 [Maintain your git branches](./manage-branches.md)

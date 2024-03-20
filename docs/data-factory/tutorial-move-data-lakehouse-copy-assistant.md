@@ -5,16 +5,16 @@ ms.reviewer: jonburchel
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Pipeline Copy Assistant
 ---
 
 # Move data from Azure SQL DB into Lakehouse via copy assistant
 
 This tutorial describes the steps to move data into Lakehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 Two approaches are provided using the copy assistant:
 
@@ -103,7 +103,7 @@ Follow these steps to set up your copy activity.
    > Browsing or Previewing from Lakehouse Table isn't supported yet.
    > Data that gets loaded into the same table will be appended. Delete or Update to tables isn't supported yet.
 
-## Next steps
+## Related content
 
 This sample shows you how to move data from Azure SQL DB into Lakehouse with the Copy Assistant in Data Factory for Microsoft Fabric.  You learned how to:
 

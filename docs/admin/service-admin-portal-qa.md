@@ -6,19 +6,21 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 08/31/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Q&A tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Review questions
 
-When this setting is enabled, dataset owners can review questions end-users ask about their data.
+When this setting is enabled, semantic model owners can review questions end-users ask about their data.
 
 To learn more, see [Intro to Q&A tooling to train Power BI Q&A](/power-bi/natural-language/q-and-a-tooling-intro).
 
@@ -31,6 +33,6 @@ To learn about synonyms, see [Field synonyms](/power-bi/natural-language/q-and-a
 > [!NOTE]
 > If you disable this setting and apply the changes, and then later re-enable synonym sharing, it might take a few weeks to reshare all the synonyms within your organization.
 
-## Next steps
+## Related content
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

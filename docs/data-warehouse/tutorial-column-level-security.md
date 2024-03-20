@@ -2,10 +2,12 @@
 title: Implement column-level security in Fabric data warehousing
 description: A guide to use column-level security in Fabric data warehousing.
 author: SQLStijn-MSFT
-ms.author: stwynant 
+ms.author: stwynant
 ms.reviewer: wiassaf
 ms.topic: how-to
-ms.date: 10/03/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 # Implement column-level security in Fabric data warehousing
 
@@ -13,20 +15,20 @@ ms.date: 10/03/2023
 
 Column-level security (CLS) in Microsoft Fabric allows you to control access to columns in a table based on specific grants on these tables. For more information, see [Column-level security in Fabric data warehousing](column-level-security.md).
 
-This guide will walk you through the steps to implement column-level security in a Warehouse or SQL Endpoint. 
+This guide will walk you through the steps to implement column-level security in a Warehouse or SQL analytics endpoint. 
 
 ## Prerequisites
 
 Before you begin, make sure you have the following:
 
 1. A Fabric workspace with an active capacity or trial capacity.
-1. A Fabric Warehouse or SQL Endpoint on a Lakehouse.
-1. Either the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the Warehouse or SQL Endpoint.
+1. A Fabric Warehouse or SQL analytics endpoint on a Lakehouse.
+1. Either the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the Warehouse or SQL analytics endpoint.
 
 ## 1. Connect
 
-1. Log in using an account with elevated access on the Warehouse or SQL Endpoint. (Either Admin/Member/Contributor role on the workspace or Control Permissions on the Warehouse or SQL Endpoint).
-1. Open the Fabric workspace and navigate to the Warehouse or SQL Endpoint where you want to apply column-level security.
+1. Log in using an account with elevated access on the Warehouse or SQL analytics endpoint. (Either Admin/Member/Contributor role on the workspace or Control Permissions on the Warehouse or SQL analytics endpoint).
+1. Open the Fabric workspace and navigate to the Warehouse or SQL analytics endpoint where you want to apply column-level security.
 
 ## 2. Define column-level access for tables
 
@@ -42,7 +44,7 @@ Before you begin, make sure you have the following:
 1. Replace `YourSchema` with the name of your schema and `YourTable` with the name of your target table.
 1. Replace `SomeGroup` with the name of your User/Group.
 1. Replace the comma-delimited columns list with the columns you want to give the role access to.
-1. Repeat the above steps to grant specific column access for other tables if needed.
+1. Repeat these steps to grant specific column access for other tables if needed.
 
 ## 3. Test column-level access
 
@@ -51,7 +53,7 @@ Before you begin, make sure you have the following:
     ```sql
     SELECT * FROM YourSchema.YourTable;
     ```
-1. Similar results for the user will be filtered with other applications that use Microsoft Entra ID authentication for database access.
+1. Similar results for the user will be filtered with other applications that use Microsoft Entra authentication for database access.
 
 ## 4. Monitor and maintain column-level security
 

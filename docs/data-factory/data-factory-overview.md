@@ -5,16 +5,18 @@ ms.reviewer: DougKlopfenstein
 ms.author: makromer
 author: kromerm
 ms.topic: overview
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.search.form: product-data-integration, Data_Factory_Overview, product-data-factory
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ---
 
 # What is Data Factory in Microsoft Fabric?
 
 Data Factory empowers you with a modern data integration experience to ingest, prepare and transform data from a rich set of data sources (for example, databases, data warehouse, Lakehouse, real-time data, and more). Whether you are a citizen or professional developer, you will be able to transform the data with intelligent transformations and leverage a rich set of activities. With Data Factory in Microsoft Fabric, we are bringing fast copy  (data movement) capabilities to both dataflows and data pipelines. With Fast Copy, you can move data between your favorite data stores blazing fast. Most importantly, Fast Copy enables you to bring data to your Lakehouse and Data Warehouse in Microsoft Fabric for analytics.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 There are two primary high-level features Data Factory implements: dataflows and pipelines.
 
@@ -39,6 +41,6 @@ Add a configuration-driven copy activity together with your low-code dataflow re
 
 :::image type="content" source="media/data-factory-overview/data-pipelines.png" alt-text="Screenshot of the user interface showing copy activity." lightbox="media/data-factory-overview/data-pipelines.png":::
 
-## Next steps
+## Related content
 
 To get started with [!INCLUDE [product-name](../includes/product-name.md)], go to [Quickstart: Create your first Dataflow Gen2 to get and transform data](create-first-dataflow-gen2.md).

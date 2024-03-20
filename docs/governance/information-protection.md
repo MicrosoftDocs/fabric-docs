@@ -4,13 +4,13 @@ description: Learn about information protection in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/12/2023
 ---
 
 # Information protection in Microsoft Fabric
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Information protection in Fabric is based on information protection in Power BI. However, it's currently less fully supported than in Power BI. This article describes Fabric's information protection [capabilities](#capabilities), and details current support in the [considerations and limitations](#considerations-and-limitations) section.
 
@@ -18,7 +18,7 @@ Information protection in Fabric is based on information protection in Power BI.
 
 The following table summarizes the information protection capabilities in Fabric that help you achieve maximum coverage of the sensitive information in your organization. Fabric support is indicated in the third column. See the sections under [Considerations and limitations](#considerations-and-limitations) for details.
 
-|Capability|Scenario|Public preview support|
+|Capability|Scenario|Support status|
 |:----------|:---------|:----------|
 |Manual labeling| Users can manually apply sensitive labels to Fabric items|[Supported for all Fabric items](#manual-labeling).|
 |Default labeling| When an item is created or edited, it gets a default sensitivity label unless a label is applied through other means.|[Supported for all Fabric items, with limitations](#default-labeling). |
@@ -26,7 +26,7 @@ The following table summarizes the information protection capabilities in Fabric
 |Programmatic labeling| Sensitivity labels can be added, changed, or deleted programmatically via Power BI admin REST APIs.|[Supported for all Fabric items](#programmatic-labeling).|
 |Downstream inheritance| When a sensitivity label is applied to an item, the label propagates downstream to all dependent items. |[Supported for all Fabric items, with limitations](#downstream-inheritance). |
 |Inheritance upon creation| When you create a new item from an existing item, the new item inherits the label of the existing item.| [Supported for all Power BI Fabric items. Supported for some non-Power BI Fabric items as described in the considerations and limitations](#inheritance-upon-creation).|
-|Inheritance from data sources| When a Fabric item ingests data from a data source that has a sensitivity label, that label is applied to the Fabric item. The label then propagates downstream to the child items of that Fabric item via downstream inheritance.| [Currently supported for Power BI datasets only](#inheritance-from-data-sources).|
+|Inheritance from data sources| When a Fabric item ingests data from a data source that has a sensitivity label, that label is applied to the Fabric item. The label then propagates downstream to the child items of that Fabric item via downstream inheritance.| [Currently supported for Power BI semantic models only](#inheritance-from-data-sources).|
 |Export| When a user exports data from an item that has a sensitivity label, the sensitivity label moves with it to the exported format. |[Currently supported for Power BI items in supported export paths](#export). |
 
 ## Considerations and limitations
@@ -91,7 +91,7 @@ For more information about downstream inheritance, see [Sensitivity label inheri
 
 ### Inheritance from data sources
 
-Inheritance from data sources is currently supported for Power BI datasets only. For more information, see [Sensitivity label inheritance from data sources (preview)](service-security-sensitivity-label-inheritance-from-data-sources.md).
+Inheritance from data sources is currently supported for Power BI semantic models only. For more information, see [Sensitivity label inheritance from data sources (preview)](service-security-sensitivity-label-inheritance-from-data-sources.md).
 
 ### Export
 
@@ -99,6 +99,6 @@ Sensitivity label inheritance upon export is supported for Power BI items only i
 
 To see the supported export paths for Power BI items, see [Supported export paths in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview#supported-export-paths).
 
-## Next steps
+## Related content
 
 * [Sensitivity labels in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview)

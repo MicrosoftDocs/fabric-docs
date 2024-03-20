@@ -1,49 +1,63 @@
 ---
 title: Export and sharing tenant settings
-description: Learn how to configure export and sharing settings in Fabric. 
+description: Learn how to configure export and sharing settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/06/2023
+ms.date: 02/07/2024
 LocalizationGroup: Administration
 ---
 
 # Export and sharing tenant settings
 
-The export and sharing settings allow the Fabric administrator the flexibility to determine and allow Power BI content to export to formats within their organization’s security and compliance guidelines. These settings also allow you to keep unauthorized export formats from being exported by users.
+The export and sharing settings allow the Fabric administrator the flexibility to determine and allow Power BI content to export to formats within their organization's security and compliance guidelines. These settings also allow you to keep unauthorized export formats from being exported by users.
 
-Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
-## Allow Azure Active Directory guest users to access Microsoft Fabric
+<a name='allow-microsoft-entra-guest-users-to-access-microsoft-fabric'></a>
 
-When you turn on this setting, Azure Active Directory Business-to-Business (Azure AD B2B) guest users can access Power BI. If you turn off this setting, B2B guest users receive an error when trying to access Power BI. Disabling this setting for the entire organization also prevents users from inviting guests to your organization. Use the specific security groups option to control which B2B guest users can access Power BI.
+## Guest users can access Microsoft Fabric
 
-To learn more, see [Distribute Power BI content to external guest users with Azure AD B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
+When you turn on this setting, Microsoft Entra Business-to-Business (Microsoft Entra B2B) guest users can access Fabric. If you turn off this setting, B2B guest users receive an error when trying to access Fabric and any Fabric items they have permissions to. Disabling this setting for the entire organization also prevents users from inviting guests to your organization. Use the specific security groups option to control which B2B guest users can access Fabric.
 
-## Invite external users to your organization
+To learn more, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
-This setting helps organizations choose whether new external users can be invited to the organization through Fabric sharing, permissions, and subscription experiences.
+## Users can invite guest users to collaborate through item sharing and permissions
 
-To invite external users to your organization, the user must also have the Azure AD Guest Inviter role. Once invited, external users become Azure AD B2B guest users. This setting only controls the ability to invite through Fabric.
+This setting helps organizations choose whether new guest users can be invited to the organization through Fabric sharing, permissions, and subscription experiences.
+
+To invite external users to your organization, the user must also have the Microsoft Entra Guest Inviter role. Once invited, external users become Microsoft Entra B2B guest users. This setting only controls the ability to invite through Fabric.
 
 To learn more, see [Invite guest users](/power-bi/enterprise/service-admin-azure-ad-b2b#invite-guest-users).
 
 > [!IMPORTANT]
 > This setting was previously called **Share content with external users**.
 
-## Allow Azure Active Directory guest users to edit and manage content in the organization
+<a name='allow-microsoft-entra-guest-users-to-edit-and-manage-content-in-the-organization'></a>
 
-This setting allows Azure AD B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled. 
+## Guest users can browse and access Fabric content
 
-To learn more about sending Fabric content to Azure AD B2B guest users, read [Distribute Power BI content to external guest users with Azure AD B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
+This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
 
-## Show Azure Active Directory guests in lists of suggested people
+To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
-This setting helps organizations limit visibility of external users in sharing experiences. When disabled, Azure AD guest users aren't shown in people picker suggested users lists. This helps prevent accidental sharing to external users and seeing which external users have been added to your organization through Power BI sharing UIs.
+## Users can see guest users in lists of suggested people
+
+This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
+
+To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
+
+<a name='show-microsoft-entra-guests-in-lists-of-suggested-people'></a>
+
+## Show Microsoft Entra guests in lists of suggested people
+
+This setting helps organizations limit visibility of external users in sharing experiences. When disabled, Microsoft Entra guest users aren't shown in people picker suggested users lists. This helps prevent accidental sharing to external users and seeing which external users have been added to your organization through Power BI sharing UIs.
 
 > [!IMPORTANT]
 > When the setting is set to disabled, you can still give permission to a guest user by providing their full email address in people pickers.
@@ -52,7 +66,7 @@ This setting helps organizations limit visibility of external users in sharing e
 
 People in your organization can publish public reports on the web. Publicly published reports don't require authentication to view them.
 
-Only admins can allow the creation of new publish-to-web embed codes. Go to [Embed codes](/power-bi/admin/service-admin-portal-embed-codes) in the admin portal to review and manage public embed codes. If any of the codes contain private or confidential content remove them. Review embed codes regularly to make sure no confidential information is live on the web.
+Only admins can allow the creation of new publish-to-web embed codes. Go to [Embed codes](service-admin-portal-embed-codes.md) in the admin portal to review and manage public embed codes. If any of the codes contain private or confidential content remove them. Review embed codes regularly to make sure no confidential information is live on the web.
 
 The **Publish to web** setting in the admin portal gives options for which users can create embed codes. Admins can set **Publish to web** to **Enabled** and **Choose how embed codes work** to **Allow only existing embed codes**. In that case, users can create embed codes, but they have to contact the admin to allow them to do so.
 
@@ -82,12 +96,14 @@ To learn more, see [Export the data that was used to create a visualization](/po
 
 ## Export to .csv
 
-Users in the organization can export data from a tile, visualization, or paginated report to a .csv file.
+Users in the organization can export data from a tile, visualization, or paginated report to a *.csv* file.
 
-To learn more, see [Export Power BI paginated report to a CSV file](/power-bi/paginated-reports/report-builder/export-csv-file-report-builder).
+To turn this setting on or off:
 
-> [!NOTE]
-> Fabric automatically [applies a sensitivity label](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-labels-and-protection-on-exported-data) on the exported file and protects it according to the label's file encryption settings.
+1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Export to .csv**.
+1. Turn the switch on or off.
+1. Under **Apply to**, select the scope of users that the setting will affect.
+1. Select **Apply** to save your changes.
 
 ## Download reports
 
@@ -95,9 +111,9 @@ Users in the organization can download .pbix files and paginated reports.
 
 To learn more, see [Download a report from the Power BI service to Power BI Desktop](/power-bi/create-reports/service-export-to-pbix).
 
-## Users can work with Power BI datasets in Excel using a live connection
+## Users can work with Power BI semantic models in Excel using a live connection
 
-Turn this setting on to allow users to export data to Microsoft Excel from a Power BI visual or dataset, or export a dataset to an Excel workbook with Analyze in Excel, both options with a live connection to the XMLA endpoint.
+Turn this setting on to allow users to export data to Microsoft Excel from a Power BI visual or semantic model, or export a semantic model to an Excel workbook with Analyze in Excel, both options with a live connection to the XMLA endpoint.
 
 To learn more, see [Create Excel workbooks with refreshable Power BI data](/power-bi/collaborate-share/service-analyze-in-excel).
 
@@ -158,11 +174,9 @@ If this setting is off, only users in your organization can create and receive e
 > [!IMPORTANT]
 > The **Allow email subscriptions to be sent to external users users** switch will be automatically turned off if the **B2B guest users can set up and be subscribed to email subscriptions** switch is turned off. This is because B2B users are external users that have been granted elevated permissions to get content. Since B2B guest users have higher permissions than other external users, if they can't get the email subscription neither can the other external users.
 
-## Users can send email subscriptions to external users
+## Users can send email subscriptions to guest users
 
-This setting helps organizations choose whether external users can be included as recipients of email subscriptions.
-
-External users are users outside of the organization that haven't been added as Azure AD B2B guest users. If this setting is turned off, an external user who isn't already a guest user in the organization can't be included as a recipient of an email subscription.
+Users can send email subscriptions to guest users. With this setting off, users in your organization can't subscribe guest users to subscription emails.
 
 ## Featured content
 
@@ -170,7 +184,7 @@ This setting lets you enable or disable the ability of users in your organizatio
 
 To learn more, see [Feature content on colleagues' Power BI Home page](/power-bi/collaborate-share/service-featured-content).
 
-You can also manage featured content on the **Featured content** page in the Admin portal. Go to [Manage featured content](/power-bi/admin/service-admin-portal-featured-content) for more details.
+You can also manage featured content on the **Featured content** page in the Admin portal. Go to [Manage featured content](service-admin-portal-featured-content.md) for more details.
 
 ## Allow connections to featured tables
 
@@ -223,31 +237,35 @@ This integration requires that your organization's Microsoft Office admin has en
 >[!NOTE]
 > If you turn this setting off, that doesn't prevent people from using the add-in starting from PowerPoint. To completely block adding live Power BI report pages to PowerPoint slides using the add-in, the add-in must be turned off in both Power BI and PowerPoint.
 
-## Allow DirectQuery connections to Power BI datasets
+## Allow DirectQuery connections to Power BI semantic models
 
 When this setting is turned on (default), users can use DirectQuery to connect to Azure Analysis Services or Power BI datasets.
 
 To learn more about DirectQuery, see [Use DirectQuery in Power BI Desktop](/power-bi/connect-data/desktop-use-directquery).
 
-If you turn this switch off, it effectively stops users from publishing new composite models on Power BI datasets to the service. Existing reports that leverage a composite model on a Power BI dataset continue to work, and users are still able to create composite models using Desktop, but they can't publish to the service.
+If you turn this switch off, it effectively stops users from publishing new composite models on Power BI semantic models to the service. Existing reports that leverage a composite model on a Power BI semantic model continue to work, and users are still able to create composite models using Desktop, but they can't publish to the service.
 
 To learn more about composite models, see [Use composite models in Power BI Desktop](/power-bi/transform-model/desktop-composite-models).
 
 >[!NOTE]
-> Live connections to Power BI datasets aren't affected by this switch, nor are live or DirectQuery connections to Azure Analysis Services. These continue to work regardless of whether the setting is on or off. In addition, any published reports that leverage a composite model on a Power BI dataset continue to work even if the setting has been turned off after they were published.
+> Live connections to Power BI semantic models aren't affected by this switch, nor are live or DirectQuery connections to Azure Analysis Services. These continue to work regardless of whether the setting is on or off. In addition, any published reports that leverage a composite model on a Power BI semantic model continue to work even if the setting has been turned off after they were published.
 
-## Guest users can work with shared datasets in their own tenants
+## Guest users can work with shared semantic models in their own tenants
 
-When this setting is turned on, Azure AD B2B guest users of datasets shared with them by users in your organization can access and build on those datasets in their own tenant.
+When this setting is turned on, Microsoft Entra B2B guest users of semantic models shared with them by users in your organization can access and build on those semantic models in their own tenant.
 
-This setting is off by default for customers. If this setting is disabled, a guest user can still access the dataset in the provider tenant but not in their own tenant.
+This setting is off by default for customers. If this setting is disabled, a guest user can still access the semantic model in the provider tenant but not in their own tenant.
 
 ## Allow specific users to turn on external data sharing
 
-As a Fabric admin, you can specify which users or user groups in your organization can share datasets externally with guests from a different tenant through the in-place mechanism. Authorized guest users can then discover, connect to, and work with these shared datasets in their own tenants.
+As a Fabric admin, you can specify which users or user groups in your organization can share semantic models externally with guests from a different tenant through the in-place mechanism. Authorized guest users can then discover, connect to, and work with these shared semantic models in their own tenants.
 
-Disabling this setting prevents any user from sharing datasets externally by blocking the ability of users to turn on external sharing for datasets they own or manage.
+Disabling this setting prevents any user from sharing semantic models externally by blocking the ability of users to turn on external sharing for semantic models they own or manage.
 
-## Next steps
+## Users can deliver reports to OneDrive and SharePoint in Power BI
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+Users can deliver reports to OneDrive or SharePoint. If the **Users can set up subscriptions** setting is also turned on, users can use subscriptions to schedule delivery of these reports to OneDrive or SharePoint.
+
+## Related content
+
+* [About tenant settings](tenant-settings-index.md)

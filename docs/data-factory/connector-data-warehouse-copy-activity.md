@@ -1,18 +1,19 @@
 ---
-title: How to configure Data Warehouse in copy activity in Data Factory in Microsoft Fabric
+title: Configure Data Warehouse in copy activity in Data Factory in Microsoft Fabric
 description: This article explains how to copy data using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/12/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure the Data Warehouse connector for the copy activity in Data Factory in Microsoft Fabric
+# Configure Data Warehouse in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to a Data Warehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 
@@ -132,7 +133,7 @@ For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#c
 
 ## Table summary
 
-To following tables contain more information about a copy activity in Data Warehouse.
+The following tables contain more information about a copy activity in Data Warehouse.
 
 ### Source information
 
@@ -164,6 +165,6 @@ To following tables contain more information about a copy activity in Data Wareh
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
 
-## Next steps
+## Related content
 
 - [Data Warehouse connector overview](connector-data-warehouse-overview.md)

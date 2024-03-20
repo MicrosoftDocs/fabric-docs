@@ -5,13 +5,13 @@ ms.reviewer: eloldag
 ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/27/2023
 ---
 
 # Connecting to Microsoft OneLake
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Microsoft OneLake provides open access to all of your Fabric items through existing Azure Data Lake Storage (ADLS) Gen2 APIs and SDKs. You can access your data in OneLake through any API, SDK, or tool compatible with ADLS Gen2 just by using a OneLake URI instead. You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.
 
@@ -48,16 +48,18 @@ abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<path>/
 
 ## Authorization
 
-You can authenticate OneLake APIs using Microsoft Azure Active Directory (Azure AD) by passing through an authorization header. If a tool supports logging into your Azure account to enable Azure AD passthrough, you can select any subscription. OneLake only requires your Azure AD token and doesn't care about your Azure subscription.
+You can authenticate OneLake APIs using Microsoft Entra ID by passing through an authorization header. If a tool supports logging into your Azure account to enable token passthrough, you can select any subscription. OneLake only requires your user token and doesn't care about your Azure subscription.
 
-When calling OneLake via DFS APIs directly, you can authenticate with a bearer token for your Azure AD account. While there are multiple ways to get this token, here's a quick example using PowerShell: log in to your Azure account, retrieve a storage-scoped token, and copy it to your clipboard for easy use elsewhere. For more information about retrieving access tokens using PowerShell, see [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken).
+When calling OneLake via DFS APIs directly, you can authenticate with a bearer token for your Microsoft Entra account. To learn more about requesting and managing bearer tokens for your organization, check out the [Microsoft Authentication Library](/entra/identity-platform/msal-overview).  
+
+For quick, ad-hoc testing of OneLake using direct API calls, here's a simple example using PowerShell to sign in to your Azure account, retrieve a storage-scoped token, and copy it to your clipboard for easy use elsewhere. For more information about retrieving access tokens using PowerShell, see [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken).
 
    > [!NOTE]
    > OneLake only supports tokens in the `Storage` audience. In the following example, we set the audience through the `ResourceTypeName` parameter.
 
   ```powershell
   az login --allow-no-subscriptions
-  $bearerToken = Get-AzAccessToken -ResourceTypeName Storage
+  $testToken = Get-AzAccessToken -ResourceTypeName Storage
   $testToken.Token | Set-Clipboard
   ```
 
@@ -69,7 +71,7 @@ OneLake regional endpoints all follow the same format: `https://<region>-onelake
 
 ## Common issues
 
-If a tool or package you've used over ADLS Gen2 isn't working over OneLake, the most common issue is URL validation. As OneLake uses a different endpoint (`dfs.fabric.microsoft.com`) than ADLS Gen2 (`dfs.core.windows.net`), some tools don't recognize the OneLake endpoint and block it. Some tools allow you to use custom endpoints (such as PowerShell). Otherwise, it's often a simple fix to add OneLake's endpoint as a supported endpoint. If you find a URL validation issue or have any other issues connecting to OneLake, [let us know](https://ideas.fabric.microsoft.com/).
+If a tool or package compatible with ADLS Gen2 isn't working over OneLake, the most common issue is URL validation. As OneLake uses a different endpoint (`dfs.fabric.microsoft.com`) than ADLS Gen2 (`dfs.core.windows.net`), some tools don't recognize the OneLake endpoint and block it. Some tools allow you to use custom endpoints (such as PowerShell). Otherwise, it's often a simple fix to add OneLake's endpoint as a supported endpoint. If you find a URL validation issue or have any other issues connecting to OneLake, [let us know](https://ideas.fabric.microsoft.com/).
 
 ## Samples
 
@@ -80,8 +82,8 @@ Create file
 | **Headers** | `Authorization: Bearer <userAADToken>` |
 | **Response** | **ResponseCode:** `201 Created`<br>**Headers:**<br>`x-ms-version : 2021-06-08`<br>`x-ms-request-id : 272526c7-0995-4cc4-b04a-8ea3477bc67b`<br>`x-ms-content-crc64 : OAJ6r0dQWP0=`<br>`x-ms-request-server-encrypted : true`<br>`ETag : 0x8DA58EE365`<br>**Body:** |
 
-## Next steps
+## Related content
 
-- [OneLake API parity](onelake-api-parity.md)
+- [OneLake parity and integration](onelake-api-parity.md)
 - [Connect to OneLake with Python](onelake-access-python.md)
 - [OneLake integration with Azure Synapse Analytics](onelake-azure-synapse-analytics.md)

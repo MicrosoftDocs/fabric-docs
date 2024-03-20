@@ -7,8 +7,10 @@ items:
     href: onelake-overview.md
 - name: Get started
   items:
-  - name: Creating a lakehouse with OneLake
+  - name: Bring your data to OneLake with Lakehouse
     href: create-lakehouse-onelake.md
+  - name: Implement medallion lakehouse architecture
+    href: onelake-medallion-lakehouse-architecture.md
   - name: Transform with Spark and query data with SQL
     href: onelake-onecopy-quickstart.md
   - name: Connect to ADLS and transform data with Azure Databricks
@@ -27,11 +29,13 @@ items:
     href: create-adls-shortcut.md
   - name: Create an Amazon S3 shortcut
     href: create-S3-shortcut.md
+  - name: Use shortcuts REST API
+    href: onelake-shortcuts-rest-api.md
 - name: Open access
   items:
   - name: How do I connect to OneLake?
     href: onelake-access-api.md
-  - name: OneLake API parity
+  - name: OneLake parity and integration
     href: onelake-api-parity.md
   - name: Use Python to manage OneLake
     href: onelake-access-python.md
@@ -53,7 +57,7 @@ items:
     href: onelake-security.md
   - name: Get started with securing data in OneLake
     href: get-started-security.md
-  - name: Plan for disaster recovery
+  - name: Disaster recovery and data protection
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
   items:
@@ -63,3 +67,13 @@ items:
     href: onelake-file-explorer-release-notes.md
 - name: Discover data in the OneLake data hub
   href: ../get-started/onelake-data-hub.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
+- name: Billing and consumption
+  items:
+  - name: OneLake compute and storage consumption
+    href: onelake-consumption.md
+  - name: OneLake capacity consumption example
+    href: OneLake-capacity-consumption.md
+- name: Reference
+  items: 
+  - name: OneLake shortcuts REST API
+    href: /rest/api/fabric/core/onelake-shortcuts

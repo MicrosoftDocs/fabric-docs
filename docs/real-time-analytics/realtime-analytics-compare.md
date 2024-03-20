@@ -5,13 +5,15 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: overview
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: Overview
 ---
 # What is the difference between Real-Time Analytics and Azure Data Explorer?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Real-Time Analytics is a data analytics SaaS experience in the Microsoft Fabric offering. Azure Data Explorer is a PaaS service in Azure. Kusto in Real-Time Analytics (KQL Database and KQL Queryset) and Azure Data Explorer share the same core engine with the identical core capabilities, but different management behavior. This article details the difference between the two services. Real-Time Analytics also offers other capabilities, such as [Eventstreams](event-streams/overview.md), and has many aspects that are managed at the workspace level.
 
@@ -35,7 +37,7 @@ You can query data from your KQL database in the query editor of Azure Data Expl
 | **SKU** | Compute options | SaaS managed platform | User choice of various full managed compute options according to customer needs, including isolated and confidential compute. |
 | **Integration** | Ingestion pipelines | Built-in Fabric ingestion pipelines: Eventstream, Fabric Pipeline, and Fabric Dataflow. Also available with Azure Data Factory and Event Hubs | Fabric ingestion pipelines with Azure Data Explorer as a sink: Fabric Pipeline and Fabric Dataflow. Also available with Azure Data Factory, Event Hubs, IoT Hub, and Event Grid. |
 |  | OneLake integration | Data stored in KQL databases in Fabric Real-Time Analytics is available in OneLake. Data in OneLake is available in Real-Time Analytics via shortcuts | Not currently available |
-|  | Spark integration |  Built-in Kusto Spark connector adds value like predicate pushdowns. The data is also available in the OneLake so that Fabric experiences can access data also via OneLake APIs. |  Built-in Kusto Spark integration with support for Azure Active Directory pass-through authentication, Synapse Workspace MSI, and Service Principal. |
+|  | Spark integration |  Built-in Kusto Spark connector adds value like predicate pushdowns. The data is also available in the OneLake so that Fabric experiences can access data also via OneLake APIs. |  Built-in Kusto Spark integration with support for Microsoft Entra pass-through authentication, Synapse Workspace MSI, and Service Principal. |
 | **Features** | Database | KQL Database | Azure Data Explorer database|
 |  | KQL queries | &check; | &check; |
 |  | T-SQL queries | Using KQL Queryset or built-in Notebooks. | Using Azure Data Explorer query.  |
@@ -47,7 +49,6 @@ You can query data from your KQL database in the query editor of Azure Data Expl
 |  | Power BI connectivity | Power BI report Quick create allows for online creation of reports without the desktop application.  Power BI connector | Power BI connector |
 | **Pricing** | Business model | Included in the Power BI Premium workspace consumption model. Billing per use. | Cost plus billing model with multiple meters: Azure Data Explorer IP markup, with passthrough of infrastructure (Compute, Storage, and Networking) expenses. Leverages Azure reserved instances plans when in place. |
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [Get started with Real-Time Analytics](tutorial-introduction.md)
+- [Get started with Real-Time Analytics](tutorial-introduction.md)

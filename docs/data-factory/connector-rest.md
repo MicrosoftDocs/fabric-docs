@@ -4,15 +4,16 @@ description: This article provides information about how to do create a REST con
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 08/31/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # How to create REST connection
 
 This article outlines the steps to create REST connection.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -25,18 +26,13 @@ This REST connector supports the following authentication types for copy and Dat
 |Organizational account| | √|
 |Windows| | √|
 
->[!Note]
->For information about a REST connection in Dataflow Gen2, go to [Connect to REST APIs in dataflows](connector-rest-dataflows.md).
+## Set up your connection in Dataflow Gen2
 
-## Prerequisites
+The Microsoft 365 connector isn't currently supported in Dataflow Gen2. To connect to REST data in Dataflow Gen2, use the [Web API](/power-query/connectors/web/web) connector.
 
-The following prerequisites are required before you start:
+## Set up your connection in a data pipeline
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
-
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
-
-## Go to Manage gateways to create connection
+To create a connection in a data pipeline:
 
 1. From the page header in Data Factory service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**.
 
@@ -106,6 +102,6 @@ The following the following table contains the properties for supported authenti
 |:---|:---|:---|:---|:---|
 |**Anonymous**||||✓|
 
-## Next steps
+## Related content
 
 - [How to configure REST in copy activity](connector-rest-copy-activity.md)

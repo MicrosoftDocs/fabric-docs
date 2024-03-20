@@ -1,18 +1,19 @@
 ---
-title: How to create Google Cloud Storage connection
+title: Set up your Google Cloud Storage connection
 description: This article provides information about how to do create a Google Cloud Storage connection in Microsoft Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to create Google Cloud Storage connection
+# Set up your Google Cloud Storage connection
 
-This article outlines the steps to create Google Cloud Storage connection.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+This article outlines the steps to create a Google Cloud Storage connection.
 
 ## Supported authentication types
 
@@ -22,15 +23,13 @@ This Google Cloud Storage connector supports the following authentication types 
 |:---|:---|:---|
 |Basic| √| n/a|
 
-## Prerequisites
+## Set up your connection in Dataflow Gen2
 
-The following prerequisites are required before you start:
+The Google Cloud Storage connector isn't currently supported in Dataflow Gen2.
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+## Set up your connection in a data pipeline
 
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
-
-## Go to manage gateways to create connection
+To create a connection in a data pipeline:
 
 1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**
 
@@ -102,6 +101,6 @@ The following properties in the table are the supported authentication types.
 |- Username|ID of the secret access key. To find the access key and secret, go to [Prerequisites](connector-google-cloud-storage-copy-activity.md#prerequisites).|Yes |||
 |- Password|The secret access key itself.|Yes |||
 
-## Next steps
+## Related content
 
-- [How to configure Google Cloud Storage in copy activity](connector-google-cloud-storage-copy-activity.md)
+- [Configure Google Cloud Storage in copy activity](connector-google-cloud-storage-copy-activity.md)

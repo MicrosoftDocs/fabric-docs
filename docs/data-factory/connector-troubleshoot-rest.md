@@ -5,15 +5,15 @@ ms.reviewer: jburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: troubleshooting
-ms.custom: build-2023
-ms.date: 08/21/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Troubleshoot the REST connector in Data Factory in Microsoft Fabric
 
 This article provides suggestions to troubleshoot common problems with the REST connector in Data Factory in Microsoft Fabric.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Error code: RestSinkCallFailed
 
@@ -58,7 +58,7 @@ This article provides suggestions to troubleshoot common problems with the REST 
 
       Tools like **Postman** and **Fiddler** are recommended for the preceding case.
 
-## Next steps
+## Related content
 
 For more troubleshooting help, try these resources:
 

@@ -5,7 +5,9 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 08/03/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
@@ -58,7 +60,7 @@ The deployment pipelines permissions model is described the [permissions](deploy
 
 ### What permissions do I need to configure deployment rules?
 
-To configure deployment rules in deployment pipelines, you must be the dataset owner.
+To configure deployment rules in deployment pipelines, you must be the owner of the semantic model.
 
 ## Git integration questions
 
@@ -84,7 +86,7 @@ There could be several reasons why an item was removed from the workspace.
 These are some important considerations to keep in mind:
 
 * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
-* [Supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules)
+* [Supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-semantic-model-rules)
 * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
 * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)
 
@@ -98,15 +100,15 @@ Multi-geo is supported. It may take longer to deploy content between stages in d
 
 ### What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables?
 
-Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables aren't supported in deployment pipelines. If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
+Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables aren't supported in deployment pipelines. If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the methods listed below to edit your semantic model so that it works in deployment pipelines.
 
 * In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand#import-mode) mode.
 
-* Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
+* Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables from your semantic model. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your semantic model model works as it may result in data corruption in your visuals.
 
 ### Why aren't some tiles displaying information after deployment?
 
-When you pin a tile to a dashboard, if the tile relies on an [unsupported item](deployment-pipelines/understand-the-deployment-process.md#unsupported-items), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a dataset you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.
+When you pin a tile to a dashboard, if the tile relies on an [unsupported item](deployment-pipelines/understand-the-deployment-process.md#unsupported-items), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a semantic model you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.
 
 ### Paginated reports questions
 
@@ -120,15 +122,15 @@ If you're deploying a paginated report to a stage that already contains a copy o
 
 Paginated report subreports are kept in the same folder that holds your paginated report. To avoid rendering problems, when you're using [selective copy](deployment-pipelines/deploy-content.md#selective-deployment) to copy a paginated report with subreports, select both the parent report and the subreports.
           
-####  How do I create a deployment rule for a paginated report with a Fabric dataset?
+####  How do I create a deployment rule for a paginated report with a Fabric semantic model?
 
-Paginated report rules can be created if you want to point the paginated report to the dataset in the same stage. When creating a deployment rule for a paginated report, you need to select a database and a server.
+Paginated report rules can be created if you want to point the paginated report to the semantic model in the same stage. When creating a deployment rule for a paginated report, you need to select a database and a server.
 
-If you're setting a deployment rule for a paginated report that doesn't have a Fabric dataset, because the target data source is external, you need to specify both the server and the database.
+If you're setting a deployment rule for a paginated report that doesn't have a Fabric semantic model, because the target data source is external, you need to specify both the server and the database.
 
-However, paginated reports that use a Fabric dataset use an internal dataset. In such cases, you can't rely on the data source name to identify the Fabric dataset you're connecting to. The data source name doesn't change when you update it in the target stage, by creating a data source rule or by calling the [update datasource](/rest/api/power-bi/datasets/updatedatasourcesingroup) API. When you set a deployment rule, you need to keep the database format and replace the dataset object ID in the database field. As the dataset is internal, the server stays the same.
+However, paginated reports that use a Fabric semantic model use an internal semantic model. In such cases, you can't rely on the data source name to identify the Fabric semantic model you're connecting to. The data source name doesn't change when you update it in the target stage, by creating a data source rule or by calling the [update datasource](/rest/api/power-bi/datasets/updatedatasourcesingroup) API. When you set a deployment rule, you need to keep the database format and replace the semantic model object ID in the database field. As the semantic model is internal, the server stays the same.
 
-* **Database** - The database format for a paginated report with a Fabric dataset, is `sobe_wowvirtualserver-<dataset ID>`. For example, `sobe_wowvirtualserver-d51fd26e-9124-467f-919c-0c48a99a1d63`. Replace the `<dataset ID>` with your dataset's ID. You can get the dataset ID from the URL, by selecting the GUID that comes after `datasets/` and before the next forward slash.
+* **Database** - The database format for a paginated report with a Fabric semantic model, is `sobe_wowvirtualserver-<dataset ID>`. For example, `sobe_wowvirtualserver-d51fd26e-9124-467f-919c-0c48a99a1d63`. Replace the `<dataset ID>` with your dataset's ID. You can get the dataset ID from the URL, by selecting the GUID that comes after `datasets/` and before the next forward slash.
 
   :::image type="content" source="media/troubleshoot-cicd/datasets-id.png" alt-text="A screenshot of the dataset ID as it appears in a Fabric URL.":::
 
@@ -142,7 +144,7 @@ After a deployment, if you download the RDL of the paginated report, it might no
 
 #### What happens to the incremental refresh configuration after deploying dataflows?
 
-When you have a dataflow that contains datasets that are configured with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview), the refresh policy isn't copied or overwritten during deployment. After deploying a dataflow that includes a dataset with incremental refresh to a stage that doesn't include this dataflow, if you have a refresh policy you'll need to reconfigure it in the target stage. If you're deploying a dataflow with incremental refresh to a stage where it already resides, the incremental refresh policy isn't copied. In such cases, if you wish to update the refresh policy in the target stage, you need to do it manually.
+When you have a dataflow that contains semantic models that are configured with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview), the refresh policy isn't copied or overwritten during deployment. After deploying a dataflow that includes a semantic model with incremental refresh to a stage that doesn't include this dataflow, if you have a refresh policy you'll need to reconfigure it in the target stage. If you're deploying a dataflow with incremental refresh to a stage where it already resides, the incremental refresh policy isn't copied. In such cases, if you wish to update the refresh policy in the target stage, you need to do it manually.
 
 ### Datamarts
 
@@ -150,7 +152,7 @@ When you have a dataflow that contains datasets that are configured with [increm
 
 Deployment pipelines don't display datasets that belong to datamarts in the pipeline stages. When you're deploying a datamart, its dataset is also deployed. You can view your datamart's dataset in the workspace of the stage it's in.
 
-## Next steps
+## Related content
 
 * [Get started with Git integration](git-integration/git-get-started.md)
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)
