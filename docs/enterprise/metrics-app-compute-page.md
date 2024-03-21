@@ -157,7 +157,7 @@ A matrix table that displays metrics for each item on the capacity. To gain a be
 
 You can hover over any value in the visual to see operation level data. You can also filter the visual with the item kind slicer and add or remove columns using the optional columns slicer.
 
-The colors in the matrix represent your [performance delta](metrics-app-concepts.md#performance-delta):
+The colors in the matrix represent your [performance delta](metrics-app-calculations.md#performance-delta):
 * *No color* - A value higher than -10.
 * *Orange* - A value between -10 and -25.
 * *Red* - A value lower than -25.

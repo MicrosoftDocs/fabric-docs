@@ -31,7 +31,7 @@ To install the app, follow the instructions in [Install the Microsoft Fabric Cap
 
 When using the Microsoft Fabric Capacity Metrics app, consider the following limitations.
 
-* In the [Capacity utilization and throttling](metrics-app-compute-page.md#consumption-analysis) visual logarithmic's view, the primary axis seen on the left of the visual, isn't aligned with the secondary axis seen on the right of the visual.
+* In the [Capacity utilization and throttling](metrics-app-compute-page.md#capacity-utilization-and-throttling) visual logarithmic's view, the primary axis seen on the left of the visual, isn't aligned with the secondary axis seen on the right of the visual.
 
 * In the [interactive](metrics-app-timepoint-page.md#interactive-operations-for-timerange) and [background](metrics-app-timepoint-page.md#background-operations-for-timerange) operation tables, the *Throttling(s)* column displays zero when throttling is disabled, even when the capacity is overloaded.
 
