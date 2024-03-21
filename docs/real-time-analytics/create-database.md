@@ -13,7 +13,7 @@ ms.search.form: KQL Database
 ---
 # Create a KQL database
 
-In Real-Time Analytics, you interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
+In Real-Time Analytics, you interact with your data in the context of [Eventhouses](eventhouse.md) (Preview), databases, and tables. A single workspace can hold multiple Eventhouses, an Eventhouse can hold multiple databases, and each database can hold multiple tables.
 
 In this article, you learn how to create a new KQL database. Once your KQL database has data, you can proceed to query your data using Kusto Query Language in a KQL queryset.
 

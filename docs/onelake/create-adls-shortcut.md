@@ -14,7 +14,9 @@ ms.date: 11/15/2023
 
 # Create an Azure Data Lake Storage Gen2 shortcut
 
-In this article, you learn how to create an Azure Data Lake Storage (ADLS) Gen2 shortcut inside a Microsoft Fabric lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+In this article, you learn how to create an Azure Data Lake Storage (ADLS) Gen2 shortcut inside a Microsoft Fabric lakehouse.
+
+For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
 
 ## Prerequisite
 
@@ -32,7 +34,7 @@ If you don't have a lakehouse, create one by following these steps: [Create a la
 
 [!INCLUDE [adls-gen2-shortcut](../includes/adls-gen2-shortcut.md)]
 
-The lakehouse automatically refreshes. The shortcut appears under **Files** in the **Explorer** pane.
+The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 
@@ -40,3 +42,4 @@ The lakehouse automatically refreshes. The shortcut appears under **Files** in t
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
 - [Create an Amazon S3 shortcut](create-s3-shortcut.md)
+- [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)

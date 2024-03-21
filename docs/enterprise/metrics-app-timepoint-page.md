@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/09/2024
+ms.date: 03/21/2024
 ---
 
 # Understand the metrics app timepoint page
@@ -18,7 +18,7 @@ Scheduled and manual refresh workflows can trigger multiple internal operations 
 
 When the total combined CUs for *interactive* and *background* operations exceed the 30 second timepoint allowance, the capacity is overloaded and depending on whether autoscale is enabled or not, throttling is applied.
 
-* **Autoscale is enabled** - If the capacity has autoscale enabled, a new CU will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [Capacity utilization and throttling](metrics-app-compute-page.md#capacity-utilization-and-throttling) chart and the *CU (s)* card will changes its color to yellow.
+* **Autoscale is enabled** - If the capacity has autoscale enabled, a new CU will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [Capacity utilization and throttling](metrics-app-compute-page.md#capacity-utilization-and-throttling) chart and the *CU (s)* card will change its color to yellow.
 
     When autoscale is enabled, if the capacity reaches the maximum number of CUs allowed by the autoscale operation, throttling is applied.
 
@@ -63,7 +63,11 @@ A table showing every [interactive operation](/power-bi/enterprise/service-premi
 
 Start and end times may occur before or after the displayed time period, due to [background](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) [smoothing](/power-bi/enterprise/service-premium-smoothing) operations.
 
-* **Items** - The name of the item, its type, and its workspace details.
+* **Workspace** - The workspace the item belongs to.
+
+* **Item kind** - The type of the item.
+
+* **Item name** - The name of the item.
 
 * **Operation** - The type of interactive operation.
 
@@ -71,7 +75,7 @@ Start and end times may occur before or after the displayed time period, due to 
 
 * **End** - The time the interactive operation finished.
 
-* **Status** - An indication showing if the operation succeeded or failed. Canceled operations are reported as failed operations.
+* **Status** - An indication showing if the operation succeeded, failed, or is in progress. Canceled operations are reported as failed operations.
 
     >[!NOTE]
     >CU usage for failed operations is counted when determining if the capacity is in overload.
@@ -99,6 +103,14 @@ Start and end times may occur before or after the displayed time period, due to 
 * **Smoothing start** - The time smoothing started for the operation.
 
 * **Smoothing end** - The time smoothing ended for the operation.
+
+* **Virtualized item** - Displays one of the following values:
+    * *True* - Virtual items that consume CUs, for example virtual items used by Copilot.
+    * *False* - Items that aren't virtual.
+
+* **Virtualized workspace** - Displays one of the following values:
+    * *True* - Virtual workspaces that consume CUs, for example a virtual workspace used by a virtual network.
+    * *False* - Workspaces that aren't virtual.
 
 ## Background operations for timerange
 

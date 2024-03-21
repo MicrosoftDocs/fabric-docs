@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a recommendation system'
 description: This tutorial shows the data engineering and data science workflow for building a system that provides online book recommendations.
-ms.reviewer: fsolomon
+ms.reviewer: lagayhar
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
@@ -139,7 +139,7 @@ if not IS_CUSTOM_DATA:
 
 ### Set up the MLflow experiment tracking
 
-Use this code to set up the MLflow experiment tracking. This example disables autologging. For more information, see the [Autologging in Microsoft Fabric](/fabric/data-science/mlflow-autologging) article.
+Use this code to set up the MLflow experiment tracking. This example disables autologging. For more information, see the [Autologging in Microsoft Fabric](mlflow-autologging.md) article.
 
 ```python
 # Set up MLflow for experiment tracking
@@ -346,18 +346,18 @@ plt.show()
 
 :::image type="content" source="./media/retail-recommend-model/most-popular-books.png" alt-text="Screenshot of a graph of the most popular books." lightbox="./media/retail-recommend-model/most-popular-books.png":::
 
-### Prepare training and testing datasets
+### Prepare training and test datasets
 
 The ALS matrix requires some data preparation before training. Use this code sample to prepare the data. The code performs these actions:
 
 - Cast the rating column to the correct type
 - Sample the training data with user ratings
-- Split the data into training and testing datasets
+- Split the data into training and test datasets
 
 ```python
 if IS_SAMPLE:
     # Must sort by '_user_id' before performing limit to ensure that ALS works normally
-    # If training and testing datasets have no common _user_id, ALS will fail
+    # If training and test datasets have no common _user_id, ALS will fail
     df_all = df_all.sort("_user_id").limit(SAMPLE_ROWS)
 
 # Cast the column into the correct type
@@ -377,7 +377,7 @@ for i in ratings:
 train = df_all.sampleBy(RATING_COL, fractions=fractions_train)
 
 # Join with leftanti will select all rows from df_all with rating > 0 and not in the training dataset; for example, the remaining 20% of the dataset
-# Testing dataset
+# test dataset
 test = df_all.join(train, on="id", how="leftanti").sampleBy(
     RATING_COL, fractions=fractions_test
 )
@@ -553,7 +553,7 @@ with mlflow.start_run(run_name="als"):
     # Log models, metrics, and parameters
     for idx, model in enumerate(models.subModels):
         with mlflow.start_run(nested=True, run_name=f"als_{idx}") as run:
-            print("\nEvaluating on testing data:")
+            print("\nEvaluating on test data:")
             print(f"subModel No. {idx + 1}")
             predictions, (rmse, mae, r2, var) = evaluate(model, test, verbose=1)
 

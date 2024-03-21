@@ -28,9 +28,9 @@ items:
       href: tutorial-7-clean-up-resources.md
 - name: Get data
   items:
-  - name: Event streams
+  - name: Get, transform, and route events 
     items:
-    - name: What is Event streams?
+    - name: What is Fabric event streams?
       href: event-streams/overview.md
     - name: Create and manage an eventstream
       href: event-streams/create-manage-an-eventstream.md
@@ -85,11 +85,11 @@ items:
       - name: Data connectors overview
         href: data-connectors/data-connectors.md
       - name: Apache Flink
-        href: /azure/data-explorer/ingest-data-flink?context=/fabric/context/context-rta&pivots=fabric
+        href: get-data-flink.md
       - name: Apache Kafka
-        href: /azure/data-explorer/ingest-data-kafka?context=/fabric/context/context-rta&pivots=fabric
+        href: get-data-kafka.md
       - name: Apache Log4J 2
-        href: /azure/data-explorer/apache-log4j2-connector?context=/fabric/context/context-rta&pivots=fabric
+        href: get-data-log4j2.md
       - name: Apache Spark
         href: /azure/data-explorer/spark-connector?context=/fabric/context/context-rta&pivots=fabric
       - name: Azure Synapse workspace
@@ -120,9 +120,12 @@ items:
         href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rta&pivots=fabric
 - name: Store data
   items:
-  - name: Resource consumption
-    displayName: consumption, CU, metrics app, monitor, billing, usage
-    href: kql-database-consumption.md
+  - name: Eventhouse (preview)
+    items:
+    - name: Eventhouse overview (preview)
+      href: eventhouse.md
+    - name: Create an Eventhouse (preview)
+      href: create-eventhouse.md 
   - name: KQL Database
     items:
     - name: Create a KQL database
@@ -159,12 +162,17 @@ items:
         href: one-logical-copy.md
       - name: Create OneLake shortcuts
         href: onelake-shortcuts.md
+  - name: Resource consumption
+    displayName: consumption, CU, metrics app, monitor, billing, usage
+    href: kql-database-consumption.md
 - name: Analyze and model data
   items:
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
       href: create-query-set.md
+    - name: Access the data profile of a table
+      href: data-profile.md
     - name: Query data in a KQL queryset
       href: kusto-query-set.md
     - name: Customize results in the KQL Queryset results grid

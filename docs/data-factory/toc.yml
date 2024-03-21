@@ -74,7 +74,9 @@
     - name: Module 2 - Transform data with a dataflow
       href: tutorial-end-to-end-dataflow.md
     - name: Module 3 - Automate and send notification
-      href: tutorial-end-to-end-integration.md     
+      href: tutorial-end-to-end-integration.md
+    - name: SAP CDC to Fabric Onelake using ADF
+      href: change-data-capture-from-sap-to-onelake-with-azure-data-factory.md
   - name: Connectors
     items:
     - name: Connector overview
@@ -577,8 +579,6 @@
         href: notebook-activity.md
       - name: Office 365 Outlook activity
         href: outlook-activity.md
-      - name: Scope activity
-        href: scope-activity.md
       - name: Script activity
         href: script-activity.md
       - name: Set Variable Activity
@@ -645,6 +645,8 @@
       items:
       - name: Data source management
         href: data-source-management.md
+      - name: Dataflow Gen2 destinations and managed settings
+        href: dataflow-gen2-data-destinations-and-managed-settings.md
       - name: Monitoring your Dataflows in Fabric
         href: dataflows-gen2-monitor.md
     - name: How-to
@@ -659,7 +661,7 @@
         href: tutorial-dataflows-gen2-pipeline-activity.md
       - name: Pattern to incrementally amass data with Dataflow Gen2
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
-    - name: Guide to dataflow for mapping dataflow users
+    - name: Fabric Dataflows for ADF Mapping Data Flow users
       href: guide-to-dataflows-for-mapping-data-flow-users.md
   - name: FAQ and Troubleshooting
     items:
@@ -691,17 +693,8 @@
         href: connector-troubleshoot-rest.md        
       - name: Sharepoint Online list
         href: connector-troubleshoot-sharepoint-online-list.md
-
     - name: Data Factory limitations
-      items:
-      - name: Data Factory limitations overview
-        href: data-factory-limitations.md
-      - name: Pipeline limitations
-        href: pipeline-limitations.md
-      - name: Pipeline resource limits
-        href: pipeline-resource-limits.md
-      - name: Dataflow Gen2 limitations
-        href: dataflow-gen2-limitations.md
+      href: data-factory-limitations.md
     - name: Data Factory known issues
       href: data-factory-known-issues.md
 

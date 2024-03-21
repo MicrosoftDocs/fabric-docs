@@ -83,6 +83,9 @@ A Spark pool can be defined with node sizes that range from a small compute node
 
 Autoscale for Apache Spark pools allows automatic scale up and down of compute resources based on the amount of activity. When you enable the autoscale feature, you set the minimum and maximum number of nodes to scale. When you disable the autoscale feature, the number of nodes set remains fixed. You can alter this setting after pool creation, although you might need to restart the instance.
 
+> [!NOTE]
+>  By default, spark.yarn.executor.decommission.enabled is set to true, enabling the automatic shutdown of underutilized nodes to optimize compute efficiency. If less aggressive scaling down is preferred, this configuration can be set to false
+
 ## Dynamic allocation
 
 Dynamic allocation allows the Spark application to request more executors if the tasks exceed the load that current executors can bear. It also releases the executors when the jobs are completed, and if the Spark application is moving to idle state. Enterprise users often find it hard to tune the executor configurations because they're vastly different across different stages of a Spark job execution process. These configurations are also dependent on the volume of data processed, which changes from time to time. You can enable dynamic allocation of executors option as part of the pool configuration, which enables automatic allocation of executors to the Spark application based on the nodes available in the Spark pool.
