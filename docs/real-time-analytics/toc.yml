@@ -28,9 +28,9 @@ items:
       href: tutorial-7-clean-up-resources.md
 - name: Get data
   items:
-  - name: Event streams
+  - name: Get, transform, and route events 
     items:
-    - name: What is Event streams?
+    - name: What is Fabric event streams?
       href: event-streams/overview.md
     - name: Create and manage an eventstream
       href: event-streams/create-manage-an-eventstream.md
