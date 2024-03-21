@@ -214,7 +214,7 @@ productDirectory:
           text: What is Data Engineering?
         - url: data-engineering/create-lakehouse.md
           text: Create a Lakehouse
-        - url: data-engineering/create-spark-job-definition.md
+        - url: data-engineering/create-and-use-environment.md
           text: Configure and use an environment
         - url: data-engineering/migrate-synapse-overview.md
           text: Migrate data into lakehouse
@@ -306,10 +306,10 @@ productDirectory:
           text: What is Retail data solutions?
         - url: /industry/sustainability/sustainability-data-solutions-overview
           text: What is Sustainability data solutions? 
+        - url: /industry/healthcare/healthcare-data-solutions/overview
+          text: Healthcare data solutions in Microsoft Fabric
         - url: /industry/retail/retail-data-solutions/deploy-retail-data-solutions
           text: Deploy Retail data solutions
-        - url: /industry/sustainability/sustainability-data-solutions-deploy
-          text: Deploy Sustainability data solutions
         - url: /industry/industry-data-solutions-fabric
           text: See more
 

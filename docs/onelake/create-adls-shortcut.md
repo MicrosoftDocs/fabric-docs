@@ -34,7 +34,7 @@ If you don't have a lakehouse, create one by following these steps: [Create a la
 
 [!INCLUDE [adls-gen2-shortcut](../includes/adls-gen2-shortcut.md)]
 
-The lakehouse automatically refreshes. The shortcut appears under **Files** in the **Explorer** pane.
+The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 

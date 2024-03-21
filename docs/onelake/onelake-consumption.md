@@ -25,11 +25,6 @@ You can track storage usage in the Fabric Capacity Metrics app. For more informa
 Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. OneLake data can be accessed from applications running inside of Fabric environments, such as Fabric Spark. OneLake can also be accessed from applications running outside of Fabric environments such as via APIs. How the data in OneLake is accessed has a bearing on how many CUs are consumed.
 OneLake uses the same mappings as ADLS to classify the operation to the category as [here](/azure/storage/blobs/map-rest-apis-transaction-categories).
 
-> [!NOTE]
-> There is a [known issue](../get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md) where OneLake transaction usage is not consuming CUs and not counting against your capacity limits. Beginning February 19, 2024, we'll have corrected this issue and OneLake will resume consuming CUs and counting against capacity limits.  Meanwhile,
->* Start monitoring your OneLake usage in the [Fabric Capacity Metrics app](../enterprise/metrics-app.md) and compare it to your capacity limit. You will see OneLake usage labeled as background non-billable. After February 19, OneLake usage will change to background billable, meaning it counts against capacity limits.
->* If you use a warehouse or SQL analytics endpoint, we recommend that you review [the Sync the default Power BI semantic model setting](../data-warehouse/semantic-models.md#sync-the-default-power-bi-semantic-model) to further optimize OneLake transaction costs.
-
 ### Operation types
 
 This table defines CU consumption when OneLake data is accessed using most applications running inside of Fabric environments such as Fabric Spark and Fabric pipelines.

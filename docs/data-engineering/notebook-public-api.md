@@ -178,7 +178,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items/{{ART
             },
             "defaultLakehouse": {
                 "name": "<lakehouse-name>",
-                "id": "<(optional) lakehouse-id>",
+                "id": "<lakehouse-id>",
                 "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>"
             },
             "useStarterPool": false,
