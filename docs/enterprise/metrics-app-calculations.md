@@ -30,7 +30,7 @@ High percent throttling numbers indicate you overused your daily (24 hour) capac
 
 ### Interactive delay and interactive rejection
 
-When you look at these visuals, you only see what’s affecting your capacity at a specific timepoint. These visuals don’t include future capacity smoothing. However, background smoothed consumption could lower the amount of usage available for interactive requests in future timepoints.
+When you look at these visuals, you only see what’s affecting your capacity at a specific timepoint. These visuals include usage that was [smoothed](throttling.md#balance-between-performance-and-reliability) into the current evaluation window. Later timepoints might include additional smoothed usage that isn't impacting this timepoint. Background smoothed consumption could lower the amount of usage available for interactive requests in future timepoints.
 
 * **Interactive delay** - A 250% interactive delay means that Fabric is attempting to fit 25 minutes of consumption into the next 10 minutes.
 
