@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 02/15/2024
+ms.date: 03/21/2024
 ---
 
 # Understand the metrics app timepoint page
@@ -75,7 +75,7 @@ Start and end times may occur before or after the displayed time period, due to 
 
 * **End** - The time the interactive operation finished.
 
-* **Status** - An indication showing if the operation succeeded or failed. Canceled operations are reported as failed operations.
+* **Status** - An indication showing if the operation succeeded, failed, or is in progress. Canceled operations are reported as failed operations.
 
     >[!NOTE]
     >CU usage for failed operations is counted when determining if the capacity is in overload.
