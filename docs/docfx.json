@@ -46,6 +46,7 @@
         "globalMetadata": {
             "breadcrumb_path": "/fabric/breadcrumb/toc.json",
             "uhfHeaderId": "MSDocsHeader-Fabric",
+            "show_latex": true,            
             "feedback_system": "Standard",
             "feedback_help_link_url": "https://community.fabric.microsoft.com/powerbi",
             "feedback_help_link_type": "ask-the-community",
