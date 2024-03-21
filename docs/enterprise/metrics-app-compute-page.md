@@ -30,31 +30,9 @@ The multi metric column ribbon displays the following four values. You'll see th
 
 * **Users** - The number of users that performed operations.
 
-## Consumption analysis
+## Capacity utilization and throttling
 
-Use the consumption analysis visual to analyze your capacity's load. The visual displays [utilization](#utilization), [throttling](#throttling) and [overages](#overages) for the selected capacity. Use the tabs at the top of the visual to toggle how the visual is displayed.
-
-You can’t compare the information in the interactive delay and interactive rejection visuals, with the information in the background rejection visual because they're based on different time windows. The interactive delay and interactive rejection visuals are based on a 10 minute and 60 minute time window, while the background rejection visual is based on a 24 hour time window.
-
-When a capacity is using more than 100% of its capacity, it's considered to be overloaded and will start to throttle. Throttling will continue until the capacity usage is lower than 100%. The time it takes for the capacity usage to get back to 100% depends on whether background rejection, interactive rejection or interactive delays are the cause of your capacity over use.
-
-* **Background rejection** - High percent throttling numbers indicate you’ve overused your daily (24 hour) capacity resources. When your background rejection is higher than 100%, all requests are rejected. Rejection will stop once your capacity usage is lower than 100%. For example, a background rejection of 250% means that you’ve used 2.5 the amount of your daily capacity resources for your SKU level.
-
-* **Interactive delay and interactive rejection** - When you look at these visuals, you only see what’s affecting your capacity at a specific timepoint. These visuals don’t include future capacity smoothing. However, background smoothed consumption could lower the amount of usage available for interactive requests in future timepoints.
-
-    * *Interactive delay example* - A 250% interactive delay means that Fabric is attempting to fit 25 minutes of consumption into the next 10 minutes.
-
-    * *Interactive rejection example* - A 250% interactive rejection means that Fabric is attempting to fit 2.5 hours of consumption into the next 60 minutes.
-
-When your usage is 250%, you’ll need to wait until the capacity lowers future usage to below 100%. The time this takes depends on whether background rejection, interactive rejection or interactive delays are the cause of your capacity over use.
-
-* **Background rejection** - All requests are rejected and it'll takes 1.5 days or 36 hours for the capacity usage to get to 100%.
-
-* **Interactive rejection** - At least 1.5 hours which is 1.5 x the 60 minute smoothing window, for the capacity usage to get to 100%.  
-
-* **Interactive delays** - At least 15 minutes, which is 1.5 x the 10 minute throttling window.  
-
-Interactive rejection and interactive delay could take longer than 1.5 times the window duration to stop getting throttled. New requests could be adding more carry forward usage to the capacity making the time it takes for the capacity usage to get to 100% longer than the 60 minute or 10 minute time windows.
+Displays usage and throttling for the selected capacity. Use the tabs at the top of the visual to toggle how the visual is displayed.
 
 ### Utilization  
 
@@ -179,20 +157,14 @@ A matrix table that displays metrics for each item on the capacity. To gain a be
 
 You can hover over any value in the visual to see operation level data. You can also filter the visual with the item kind slicer and add or remove columns using the optional columns slicer.
 
-The colors in the matrix represent your *performance delta*:
+The colors in the matrix represent your [performance delta](metrics-app-concepts.md#performance-delta):
 * *No color* - A value higher than -10.
 * *Orange* - A value between -10 and -25.
 * *Red* - A value lower than -25.
 
-To create the *performance delta*, Microsoft Fabric calculates an hourly average for all the fast operations that take under 200 milliseconds to complete. The hourly value is used as a slow moving average over the last seven days (168 hours). The slow moving average is then compared to the average between the most recent data point, and a data point from seven days ago. The *performance delta* indicates the difference between these two averages.
-
-You can use the *performance delta* value to assess whether the average performance of your items improved or worsened over the past week. The higher the value is, the better the performance is likely to be. A value close to zero indicates that not much has changed, and a negative value suggests that the average performance of your items got worse over the past week.
-
-Sorting the matrix by the *performance delta* column helps identify semantic models that have the biggest change in their performance. During your investigation, don't forget to consider the *CU (s)* and number of *Users*. The *performance delta* value is a good indicator when it comes to Microsoft Fabric items that have a high CU utilization because they're heavily used or run many operations. However, small semantic models with little CU activity might not reflect a true picture, as they can easily show large positive or negative values.
-
 ### Default fields
 
-The table in this section lists the default fields that are displayed in the matrix by item and operation visual. You can't remove default fields from the table. 
+The table in this section lists the default fields that are displayed in the matrix by item and operation visual. You can't remove default fields from the table.
 
 |Name      |Description  |
 |----------|--------------|
