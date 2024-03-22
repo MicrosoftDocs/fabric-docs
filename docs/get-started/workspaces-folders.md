@@ -11,7 +11,7 @@ ms.date: 03/20/2024
 #customer intent: As a user, I want to learn how to create folders in workspaces so that I can efficiently organize and manage items in the workspace.
 ---
 
-# Create folders in workspaces in Fabric and Power BI
+# Create folders in workspaces
 
 This article explains what folders in workspaces are and how to use them in workspaces in [!INCLUDE [product-name](../includes/product-name.md)]. Folders are organizational units inside a workspace that enable users to efficiently organize and manage artifacts in the workspace. For more information about workspaces, see the [Workspaces](workspaces.md) article.
 
@@ -127,7 +127,15 @@ Currently folders inherit the permissions of the workspace where they're located
 | Move folder and items  | &#9989; | &#9989;  | &#9989;     | &#10060; |
 | View folder in workspace list| &#9989; | &#9989;  | &#9989;     | &#9989;  |
 
+## Considerations and limitations
+
+- Currently dataflow gen2, streaming semantic model, and streaming dataflow can't be created in folders. 
+- If you trigger item creation from the home page, create hub and industry solution, items are created at the root level of workspaces.
+- In a workspace page, `Filter` and `Filter by keywords` only applies to items at the current level.
+- Git doesn't support workspace folders yet.
+
 ## Related content
 
+- [Folders in deployment pipelines](../cicd/deployment-pipelines/understand-the-deployment-process.md)
 - [Create workspaces](create-workspaces.md)
 - [Give users access to workspaces](give-access-workspaces.md)
