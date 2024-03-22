@@ -86,11 +86,11 @@ OneLake data access roles are only supported for lakehouse items.
 
 ## Assign a member or group
 
-OneLake data access roles supports two different methods of adding users to a role. The main method is by adding users or groups directly to a role using the **Add people or group** box on the Assign role page. The second is using virtual memberships with the **Automatically add users with these permissions** control.  
+OneLake data access roles supports two different methods of adding users to a role. The main method is by adding users or groups directly to a role using the **Add people or group** box on the Assign role page. The second is using virtual memberships with the **Automatically add users with all these permissions** control.  
 
 Adding users directly to a role with the **Add people or group** box adds the users as explicit members of the role. These users show up with just their name and picture shown in the **Assigned people and groups** list.  
 
-The virtual members allows for the membership of the role to be dynamically adjusted based on the Fabric item permissions of the users. By selecting **Automatically add users with these permissions** box and selecting a permission, you're adding any user in the Fabric workspace who has all of the selected permissions as an implicit member of the role. For example, if you chose **ReadAll, Write** then any user of the Fabric workspace that has ReadAll AND Write permissions to the lakehouse would be included as a member of the role. You can see which users are being added as virtual members by looking for the "Assigned by workspace permissions" text under their name in the **Assigned people and groups** list. These members can't be manually removed and need to have their corresponding Fabric permission revoked in order to be unassigned.  
+The virtual members allows for the membership of the role to be dynamically adjusted based on the Fabric item permissions of the users. By selecting **Automatically add users with all these permissions** box and selecting a permission, you're adding any user in the Fabric workspace who has all of the selected permissions as an implicit member of the role. For example, if you chose **ReadAll, Write** then any user of the Fabric workspace that has ReadAll AND Write permissions to the lakehouse would be included as a member of the role. You can see which users are being added as virtual members by looking for the "Assigned by workspace permissions" text under their name in the **Assigned people and groups** list. These members can't be manually removed and need to have their corresponding Fabric permission revoked in order to be unassigned.  
 
 Regardless of which membership type, data access roles support adding individual users, Microsoft Entra groups, and security principals.  
 
@@ -116,7 +116,7 @@ To publish the access changes, select **Save** at the bottom of the pane.
 
 #### Assign virtual members
 
-To add virtual members, use the **Automatically add users with these permissions** box. Select the box to open the dropdown picker to choose the Fabric permissions to virtualize. Users are virtualized if they have **all** of the checked permissions.  
+To add virtual members, use the **Automatically add users with all these permissions** box. Select the box to open the dropdown picker to choose the Fabric permissions to virtualize. Users are virtualized if they have **all** of the checked permissions.  
 
 The permissions that can be used for virtualization are:
 
