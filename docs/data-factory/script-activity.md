@@ -53,7 +53,7 @@ To get started, you must complete the following prerequisites:
 
 3. Input the script content in the input box.
 
-4. You can also define parameters for your script.
+4. You can also define parameters for your script. Output parameters will be included in the output from the Script activity, and can be referenced by [parameterization of dynamic expressions](parameters.md) from subsequent activities.
 
    :::image type="content" source="media/script-activity/new-sql-connection-details.png" alt-text="Screenshot showing where to add script parameters." lightbox="media/script-activity/new-sql-connection-details.png":::
 
