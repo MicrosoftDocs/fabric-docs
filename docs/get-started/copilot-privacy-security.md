@@ -27,7 +27,6 @@ This article provides answers to common questions related to business data secur
 
 - Copilot features use [Azure OpenAI Service](/azure/ai-services/openai/overview), which is fully controlled by Microsoft. Your data isn't used to train models and isn't available to other customers.
 - You retain control over where your data is processed. Data processed by Copilot in Fabric stays within your tenant's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn't available in your region or availability is limited due to high demand. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
-- Data is stored for up to 30 days and may be reviewed by Microsoft employees for abuse monitoring.
 
 ### Check Copilot outputs before you use them
 
@@ -61,8 +60,6 @@ Grounding data may include a combination of dataset schema, specific data points
 Interactions with Copilot are specific to each user. This means that Copilot can only access data that the current user has permission to access, and its outputs are only visible to that user unless that user shares the output with others, such as sharing a generated Power BI report or generated code. Copilot doesn't use data from other users in the same tenant or other tenants.
 
 Copilot uses Azure OpenAI—not the publicly available OpenAI services—to process all data, including user inputs, grounding data, and Copilot outputs.  Copilot currently uses a combination of GPT models, including GPT 3.5. Microsoft hosts the OpenAI models in the Microsoft Azure environment, and the Service doesn't interact with any services by OpenAI, such as ChatGPT or the OpenAI API. Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
-
-Data from Copilot in Fabric is stored by Microsoft for up to 30 days (as outlined in the [Preview Terms of Use](https://azure.microsoft.com/support/legal/preview-supplemental-terms)) to help monitor and prevent abusive or harmful uses or outputs of the service. Authorized Microsoft employees may review data that has triggered our automated systems to investigate and verify potential abuse.
 
 ## The Copilot process
 
@@ -108,8 +105,6 @@ Grounding data may include a combination of dataset schema, specific data points
 Interactions with Copilot are specific to each user. This means that Copilot can only access data that the current user has permission to access, and its outputs are only visible to that user unless that user shares the output with others, such as sharing a generated Power BI report or generated code. Copilot doesn't use data from other users in the same tenant or other tenants.
 
 Copilot uses Azure OpenAI—not OpenAI's publicly available services—to process all data, including user inputs, grounding data, and Copilot outputs.  Copilot currently uses a combination of GPT models, including GPT 3.5. Microsoft hosts the OpenAI models in Microsoft's Azure environment and the Service doesn't interact with any services by OpenAI (for example, ChatGPT or the OpenAI API). Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
-
-Data from Copilot in Fabric is stored by Microsoft for up to 30 days (as outlined in the [Preview Terms of Use](https://azure.microsoft.com/support/legal/preview-supplemental-terms)) to help monitor and prevent abusive or harmful uses or outputs of the service. Authorized Microsoft employees may review data that has triggered our automated systems to investigate and verify potential abuse. 
 
 ### Data residency and compliance
 
