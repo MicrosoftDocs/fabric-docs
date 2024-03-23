@@ -149,13 +149,14 @@ You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL 
 ### Restrictions and Considerations
 
 * Trusted workspace access is only supported for workspaces in Fabric capacities (F64 or higher).
-* If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity lower than F64, trusted workspace access might stop working after an hour. In the case of SQL endpoints with managed shortcuts to storage accounts, the shortcuts might stop working after 90 minutes, or when the SQL endpoint cache is refreshed on demand.
+* If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity lower than F64, trusted workspace access will stop working after an hour.
 * Pre-existing shortcuts created before October 10, 2023 don't support trusted workspace access.
 * Connections for trusted workspace access can't be created or modified in **Manage connections and gateways**.
 * If you reuse connections that support trusted workspace access in Fabric items other than shortcuts, or in other workspaces, they might not work.
 * Only *organizational account* or *service principal* must be used for authentication to storage accounts for trusted workspace access.
 * Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.
 * A maximum of 200 resource instance rules can be configured. For more information, see [Azure subscription limits and quotas - Azure Resource Manager](/azure/azure-resource-manager/management/azure-subscription-service-limits).
+* Resource instance rules for Fabric workspaces must be created through ARM templates. Resource instance rules created through Azure Portal UI are not supported.
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity less than F64, trusted workspace access will stop working within 90 minutes.
 * Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the UI isn't supported.
 * Pre-existing shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
