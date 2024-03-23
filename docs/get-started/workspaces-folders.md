@@ -96,12 +96,12 @@ Folder names must follow certain naming conventions:
 
     :::image type="content" source="media/workspaces-folders/rename-folder.png" alt-text="Screenshot showing rename folder entry point in context menu.":::
 
-1. Give the folder a new name and select the **Rename** button. See [Folder name requirements](#folder-name-requirements) for naming restrictions.
+1. Give the folder a new name and select the **Rename** button.
 
     :::image type="content" source="media/workspaces-folders/input-name-rename-dialog.png" alt-text="Screenshot showing inputting name in rename dialog.":::
 
 > [!NOTE]
-> When renaming a folder, follow the same naming convention as when you're creating a folder. 
+> When renaming a folder, follow the same naming convention as when you're creating a folder.  See [Folder name requirements](#folder-name-requirements) for naming restrictions.
 
 ## Delete a folder
 
@@ -131,7 +131,7 @@ Currently folders inherit the permissions of the workspace where they're located
 
 - Currently dataflow gen2, streaming semantic model, and streaming dataflow can't be created in folders. 
 - If you trigger item creation from the home page, create hub and industry solution, items are created at the root level of workspaces.
-- In a workspace page, `Filter` and `Filter by keywords` only applies to items at the current level.
+- In a workspace page, `Filter` and `Filter by keywords` only apply to items at the current level.
 - Git doesn't support workspace folders yet.
 
 ## Related content
