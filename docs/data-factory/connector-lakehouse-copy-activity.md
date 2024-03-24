@@ -4,7 +4,7 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 03/22/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -14,6 +14,9 @@ ms.custom:
 # Configure Lakehouse in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to the Fabric Lakehouse. By default, data is written to Lakehouse Table in V-Order, and you can go to [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order) for more information.
+
+>[!Note]
+>Features Deletion Vector, Delta column mapping and change data rate of the Delta Lake table are not supported in Lakehouse Table currently.
 
 ## Supported format
 
@@ -57,12 +60,14 @@ The following properties are **required**:
     :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
 
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
+
   - If you select **Tables**:
     - **Table name**: Choose an existing table from the table list or specify a table name as the source.
     - Under **Advanced**, you can specify the following fields:
       - **Timestamp**: Specify to query an older snapshot by timestamp.
       - **Version**: Specify to query an older snapshot by version.
       - **Additional columns**: Add additional data columns to the store source files' relative path or static value. Expression is supported for the latter.
+
   - If you select **Files**:
     - **File path type**: You can choose **File path**, **Wildcard file path**, or **List of files** as your file path type. The following list describes the configuration of each setting：
 
@@ -106,6 +111,7 @@ The following properties are **required**:
     :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
 
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
+
   - If you select **Tables**:
     - **Table name**: Choose an existing table from the table list or specify a table name as the destination.
 
