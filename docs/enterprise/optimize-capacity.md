@@ -20,6 +20,8 @@ It's important to reduce the risk of depleting shared resources, Fabric—as a m
 - [Bursting and smoothing](https://blog.fabric.microsoft.com/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming?ft=All#BurstSmooth) ensures that CPU-intensive activities are completed quickly without requiring a higher SKU (and can be run at any time of the day).
 - [Throttling](throttling.md) delays or rejects operations when a capacity experiences sustained and high demand for CPU (above the SKU limit).
 
+Smoothing reduces the likelihood of throttling (although throttling can still occur). Smoothing is how usage is allocated against limits, but it's independent of the execution of jobs. Smoothing doesn't change performance, it just spreads the accounting for consumed compute over a longer period, so that a larger SKU isn't needed to handle the peak compute.
+
 To learn more about Fabric capacity, see [Microsoft Fabric concepts and licenses](licenses.md) and [Fabric Capacities – Everything you need to know about what's new and what's coming](https://blog.fabric.microsoft.com/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming).
 
 ## Planning and budgeting tools
@@ -31,17 +33,11 @@ To help you determine the right capacity size, you can provision [trial capaciti
 > [!TIP]
 > It's always a good strategy to start small and then gradually increase the size as necessary.
 
-## Manage capacities
+## Monitor capacities
 
-You should monitor utilization to get the most out of your capacities.
+You should monitor utilization to get the most out of your capacities. Foremost, it's important to understand that Fabric operations are either _interactive_ or _background_. For example, DAX queries from a Power BI report are on-demand requests that are interactive operations, while semantic model refreshes are background operations. For more information about operations and how they consume resources within Fabric, see [Fabric operations](fabric-operations.md).
 
-Foremost, it's important to understand that Fabric operations are either _interactive_ or _background_. For example, DAX queries from a Power BI report are on-demand requests that are interactive operations, while semantic model refreshes are background operations.
-
-For more information about operations and how they consume resources within Fabric, see [Fabric operations](fabric-operations.md).
-
-Throttling can occur due to numerous or long-running interactive operations. Typically, background operations related to SQL and Spark experiences are smoothed, meaning they're spread out over a 24-hour period. Smoothing reduces the likelihood of throttling (although throttling can still occur).
-
-Smoothing is how usage is allocated against limits, but it's independent of the execution of jobs. Smoothing doesn't change performance, it just spreads the accounting for consumed compute over a longer period, so that a larger SKU isn't needed to handle the peak compute.
+Monitoring can reveal to you that throttling is taking place. Throttling can happen when there are numerous or long-running interactive operations. Typically, background operations related to SQL and Spark experiences are smoothed, meaning they're spread out over a 24-hour period.
 
 The [Fabric Capacity Metrics App](metrics-app.md) is the best way to monitor and visualize recent utilization. The app breaks down to item type (semantic model, notebook, pipeline, and others), and helps you to identify items or operations that use high levels of compute (so that they can be [optimized](#compute-optimization-by-fabric-experience)).
 
@@ -118,11 +114,11 @@ An autoscale mechanism is utilized to determine the size of your KQL database. I
 
 To allow data to become available to other Fabric engines, the KQL database syncs with OneLake. Based on the number of reads and write transactions that your KQL database performs, CUs are utilized from your capacity. It utilizes the OneLake Read and Write meters, which are equivalent to read and write operations on Azure Data Lake Storage (ADLS) Gen2 accounts.
 
-### Data integration
+### Data Factory
 
-Data integration includes data pipelines in Data Factory and Dataflow Gen2.
+This section is concerned with optimizations for [dataflows](../data-factory/data-factory-overview.md#dataflows) and [data pipelines](../data-factory/data-factory-overview.md#data-pipelines) in Data Factory.
 
-All Data Integration operations are background operations, and they're [smoothed](../data-warehouse/compute-capacity-smoothing-throttling.md#smoothing) over a 24-hour period.
+All operations are background operations, and they're [smoothed](../data-warehouse/compute-capacity-smoothing-throttling.md#smoothing) over a 24-hour period.
 
 Here are some points to consider to help minimize compute.
 
