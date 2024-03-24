@@ -25,7 +25,7 @@ For domains, the domain-specific details are found under the **OperationProperti
 | Field | Type | Must appear in the schema | Value |
 |---|---|---|---|
 | OperationName | Edm.Enum | Yes | Activity name as described in the following table. |
-| OperationProperties | Edm.Enum | Yes | Per the properties described in the table below. |
+| OperationProperties | Edm.Enum | Yes | Per the properties described in the following table. |
 
 | Activity flow | Activity operation name | Properties |
 |:---|:---|:---|
