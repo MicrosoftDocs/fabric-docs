@@ -5,7 +5,7 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 11/16/2023
+ms.date: 03/22/2024
 ---
 
 # Data Activator tutorial using sample data
@@ -36,7 +36,7 @@ From the Fabric homepage, select a workspace with a Fabric capacity. Select the 
 
 ### Step 2: Explore the package events in data mode
 
-In the following step, we explore data mode. 
+In this step we explore data mode. 
 
 1. In the newly created reflex, select on the *data* tab, then select the *Package in Transit* events stream. These events show the real-time status of packages that are in the process of being delivered by a logistics company. Look at the incoming events and note the columns on the events. The *PackageId* column uniquely identifies the Packages; this is the ID column that we use to assign the Package events to Package objects.
 2. Select on the other two event streams. These come from different sources in the logistics company, but they're also about packages. They also have a *Package ID* column.
@@ -49,7 +49,7 @@ Now we explore design mode.
 
 2. In the left navigation pane, look at the *Events* section of the Package object. All three event streams from data mode are linked to the package object. This enables you to create triggers about packages that use data from any of the three event streams.
 
-3. Select the trigger called *Medicine too warm*. Observe how it works:
+3. Select the trigger called *Medicine package too warm*. Observe how it works:
     
     1. It selects the *Temperature* column from the *Package in Transit* events
     2. It detects the Temperature becoming greater than 50, but only if the *Special Care* column equals *Medicine*
@@ -73,9 +73,9 @@ Now it's time to create an object of your own. In this section, you'll create a 
 
 1. Return to data mode.
 2. Select the *Package In Transit* stream.
-3. Select *Assign your data* in the ribbon.
-4. Name your new object *City* and choose *City* as the ID column.
-5. Select **continue**.
+3. Select *Assign your data* in the pane that appears in the right side of the screen.
+4. Name your new object *City* and choose *City* as the Key column.
+5. Select **Save and go to design mode**.
 
 ### Step 6: Create a trigger on the City object
 
