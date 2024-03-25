@@ -30,7 +30,7 @@ items:
   - name: Create an Amazon S3 shortcut
     href: create-S3-shortcut.md
   - name: Use shortcuts REST API
-    href: onelake-shortcuts-rest-api.md
+    href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
 - name: Open access
   items:
   - name: How do I connect to OneLake?
