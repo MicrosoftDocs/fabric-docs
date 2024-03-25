@@ -84,6 +84,14 @@ To change the name of your capacity, follow these steps:
 
 ### Add and remove users
 
+To add or remove users in a Fabric capacity, follow these steps:
+
+1. In the **Capacity settings** page, select **Fabric capacity**.
+
+2. From the list of capacities, select the gear icon (**&#9881;**) next to the capacity you want to make changes to. The capacity 
+
+3. 
+
 ### Resize a capacity
 
 ### Delete a capacity
@@ -123,6 +131,9 @@ There are two type of capacity settings you can control:
 
 This table summarizes the actions you can take in the details section.
 
+>[!NOTE]
+>Trail capacities only have some of the settings listed in the table
+
 | Details setting name                 | Description |
 |--------------------------------------|-------------|
 | Disaster Recovery                    | Enable [disaster recovery](/azure/reliability/reliability-fabric#set-up-disaster-recovery) for the capacity |
@@ -137,7 +148,7 @@ This table summarizes the actions you can take in the details section.
 
 ### Delegated tenant settings
 
-Delegate the tenant settings listed in this section to specific users or security groups. [Delegating admin settings](../admin/admin-overview.md#delegate-admin-rights) to other admins in your organization, allows granular control across your organization.
+Delegate the tenant settings listed in this section to specific security groups. [Delegating admin settings](../admin/admin-overview.md#delegate-admin-rights) allows granular control across your organization.
 
 To delegate a tenant setting, follow these steps:
 
@@ -151,18 +162,11 @@ To delegate a tenant setting, follow these steps:
 
    * **All the users in capacity** - Delegate the setting to all the users in the capacity.
 
-   * **Specific security groups** - Apply the setting to specific users or security groups.
+   * **Specific security groups** - Apply the setting to specific security groups. Enter the security groups you want to apply the setting to.
 
+5. To exclude specific security groups from the setting, select **Except specific security groups** and enter the security groups you want to exclude. This setting is optional and can be used with together with the *Apply to* setting.
 
-### Trial capacity settings
-
-| Trial capacity setting name          | Description  |
-|--------------------------------------|---------|
-| Capacity usage report                |         |
-| Notifications                        |         |
-| Power BI workloads                   |         |
-| Data Engineering/Science Settings    |         |
-| Workspaces assigned to this capacity |         |
+6. Select **Apply**.
 
 ## Related content
 
