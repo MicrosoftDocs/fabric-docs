@@ -73,6 +73,27 @@ In modern business intelligence projects, understanding the flow of data from a 
 
 ### Purview for governance across the org
 
+His
+
+Microsoft Purview offers solutions for protecting and governing data across an organization's entire data estate. An integration between Purview and Fabric makes it possible to use some of Purviews capabilities to govern and monitor your Fabric data in the context of your org's entire data estates.
+
+The data governance capabilities which are offered on Fabric using purview described in the following sections.
+
+#### Data Curation
+
+Data curation in your organization involves gathering metadata information, lineage information, and others from all sources that your organization uses. This could be n-premise, third-party clouds, third-party products and services, or CRM systems to name a few. This extraction process is also referred to as scanning in purview. All information is retrieved using inbuilt scanners in purview which scan your organization’s data estate to collect this information. In purview this is executed by data map.
+
+#### Data Map
+P
+urview has a scanning engine which can scan and fetch metadata from disparate sources and populate purview’s data map. Purview exposes Via atlas APIs so that it can be consumed by external services or ISVs. Data Map also interacts with Fabric and gets its metadata populated internally so that business users can search, find and use these data products to build their insights on. Currently, data consumers can look at all Fabric workspaces they have viewer access to. This is known as live view. On top of this manual scans can be executed on all fabric Items from purview , where item level metadata is picked and is available for use in purview. In the current state , you can have lineage on an item level too. 
+
+#### Data Discovery in Purview
+
+Data consumers who work with your data should be able to  search and find the relevant data. Purview helps here by providing concepts of domains .  Business friendly terminology and groupings would make it more relevant and easier to search for data which teams are interested in based on terms which they are familiar with. This also blends well with the data mesh architectural pattern.  You could define data products which represent a grouping of items which consumers would search for. Definition for what defines a domain / definition of data products and defining roles and responsibilities are deliverables of the enterprise / business architecture teams. Data catalog is the application layer within purview which helps teams to search for data.
+
+#### Data Catalog in purview
+Purview data catalog exposes the metadata captured from all sources feeding your data platform. With this customers can search for the data and items they are interested to work in without having to know which systems are holding your data. All metadata information of fabric items are available inside purview.
+
 ## Monitor, uncover, get insights, and act
 
 ### Monitoring hub
