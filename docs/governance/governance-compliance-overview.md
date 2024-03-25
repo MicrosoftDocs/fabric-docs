@@ -60,13 +60,16 @@ For more information, see [Information Protection in Microsoft Fabric](./informa
 
 The OneLake data hub makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them.
 
-
-
-Finding relevant data to work is critical to generate right insights. This is the first step towards any data value creation at your organization. However this is not so easy , it has been done via tribal knowledge / leveraging peers or chasing data owners to find the right data consumers need to work with. Fabric provides you with OneLake Datahub which allows consumers to filter based on domains / sub-domains / workspaces to filter out items which will be relevant for them to work with. Metadata information as well as lineage information could be seen in this , while selecting the item to understand the and find out if this Is reliable by looking at the lineage information. Domain definition exercise is essential , this helps set context for teams for better definition of boundaries and ownership. Mapping workspaces to domains is key to help implement this in fabric.
+Finding relevant data to work is critical to generate right insights. Fabric provides you with OneLake Datahub which allows consumers to filter items by type, domain, etc.
 
 ### Endorsement
 
+Mine
+Endorsement is a way to make trustworthy, quality data more discoverable. Organizations often have large numbers of Microsoft Fabric items - data, processes and content - available for sharing and reuse by their Fabric users. Endorsement helps users identify and find the trustworthy high-quality items they need. With endorsement, item owners can promote their quality items, and organizations can certify items that meet their quality standards. Endorsed items are then clearly labeled, both in Fabric and in other places where users look for Fabric items. Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists. In the Microsoft Purview hub, admins can get insights about their organization's endorsed items in order to better drive users to quality content.
+
 ### Data lineage and impact analysis
+
+In modern business intelligence projects, understanding the flow of data from a data source to its destination is a complex task. Questions like "What happens if I change this data?" or "Why isn't this report up to date?" can be hard to answer. They might require a team of experts or deep investigation to understand. Lineage helps users understand the flow of data by providing a visualization that shows the relations between all the items in a workspace. For each item in the lineage view, you can display an impact analysis that shows what downstream items would be affected if you made changes to the item. 
 
 ### Purview for governance across the org
 
@@ -77,6 +80,12 @@ Finding relevant data to work is critical to generate right insights. This is th
 ### Capacity metrics
 
 ### Purview hub
+
+Mine
+Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and data owners manage and govern their Fabric data estate. For administrators and data owners, the hub offers reports that provide insights about their Fabric items, particularly with respect to sensitivity labeling and endorsement. The hub also serves as a gateway to more advanced Purview capabilities such as Information Protection, Data Loss Prevention, and Audit. For more information, see Microsoft Purview hub.
+
+His
+Purview hub also acts as an entry point towards purview governance and compliance portals where compliance administrators could investigate audit logs, set MIP / DLP policies and act on compliance issues.
 
 ### Admin monitoring
 
