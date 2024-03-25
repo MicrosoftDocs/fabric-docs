@@ -44,6 +44,10 @@ Microsoft Fabric governance and compliance provides set of capabilities that hel
 
 ### Purview Information Protection
 
+Information protection in Fabric enables you to discover, classify, and protect Fabric data using sensitivity labels from Microsoft Purview Information Protection. Fabric provides multiple capabilities, such as default labeling, label inheritance, and programmatic labeling, to help achieve maximal sensitivity label coverage across your entire Fabric data estate. Once labeled, data remains protected even when it's exported out of Fabric via supported export paths. Compliance admins can monitor activities on sensitivity labels in Microsoft Purview Audit.
+
+For more information, see [Information Protection in Microsoft Fabric](./information-protection.md).
+
 ### Securing items in a workspace
 
 ### Securing data in Fabric items
@@ -54,6 +58,12 @@ Microsoft Fabric governance and compliance provides set of capabilities that hel
 
 ### OneLake data hub
 
+The OneLake data hub makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them.
+
+
+
+Finding relevant data to work is critical to generate right insights. This is the first step towards any data value creation at your organization. However this is not so easy , it has been done via tribal knowledge / leveraging peers or chasing data owners to find the right data consumers need to work with. Fabric provides you with OneLake Datahub which allows consumers to filter based on domains / sub-domains / workspaces to filter out items which will be relevant for them to work with. Metadata information as well as lineage information could be seen in this , while selecting the item to understand the and find out if this Is reliable by looking at the lineage information. Domain definition exercise is essential , this helps set context for teams for better definition of boundaries and ownership. Mapping workspaces to domains is key to help implement this in fabric.
+
 ### Endorsement
 
 ### Data lineage and impact analysis
@@ -61,6 +71,14 @@ Microsoft Fabric governance and compliance provides set of capabilities that hel
 ### Purview for governance across the org
 
 ## Monitor, uncover, get insights, and act
+
+### Monitoring hub
+
+### Capacity metrics
+
+### Purview hub
+
+### Admin monitoring
 
 Fabric governance and compliance is tightly integrated with Microsoft Purview Information Protection and Data Loss Prevention. In addition, your Fabric data estate is automatically attached to Purview and can be investigated with Purview capabilities such as Data catalog and Microsoft Purview Audit.  
 
