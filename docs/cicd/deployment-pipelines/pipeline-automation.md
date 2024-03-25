@@ -1,17 +1,21 @@
 ---
-title: Automate your deployment pipeline by using APIs and Azure DevOps
+title: Automate deployment pipeline by using APIs and Azure DevOps
 description: Learn how to automate your deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs and Azure DevOps.
 author: data-goblin
 ms.author: v-kurtbuhler
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
-  - ignite-2023
+    - ignite-2023
 ms.date: 11/02/2023
+#customer intent: As a developer, I want to automate my deployment pipeline using APIs and Azure DevOps so that I can streamline the release process.
 ---
 
 # Automate your deployment pipeline by using APIs and Azure DevOps
 
-The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Fabric content.
+The Microsoft Power BI [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Power BI content.
+
+> [!NOTE]
+> The deployment pipelines APIs listed here only apply to Power BI items. For a Fabric APIs see the [Fabric API documentation](pipeline-automation-fabric.md).
 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
 
@@ -30,9 +34,6 @@ You can use the [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pip
 * Cascade depending on pipeline deployments. If you have content that's connected across pipelines, you can make sure some pipelines are deployed before others.
 
 ## Deployment pipelines API functions
-
-> [!NOTE]
-> The deployment pipelines APIs currently only work for Power BI items.
 
 The [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pipelines) allow you to perform the following functions:
 
