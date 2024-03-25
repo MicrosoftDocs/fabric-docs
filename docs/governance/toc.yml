@@ -49,7 +49,11 @@ items:
 - name: Impact analysis
   href: impact-analysis.md
 - name: Domains
-  href: domains.md
+  items:
+  - name: Domains
+    href: domains.md
+  - name: Audit schema for domains
+    href: domains-audit-schema.md
 - name: Metadata scanning
   items:
   - name: Metadata scanning overview
