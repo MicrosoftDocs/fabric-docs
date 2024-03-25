@@ -1,5 +1,5 @@
 ---
-title: Create folders in workspaces
+title: Create folders in workspaces (preview)
 description: "Learn how to create a folder inside a workspace to enable users to efficiently organize and manage items in the workspace."
 author: maggiesMSFT
 ms.author: maggies
@@ -7,11 +7,11 @@ ms.reviewer: yicw, mesrivas,liud
 ms.topic: how-to
 ms.custom: fabric
 ms.search.form: product-trident, Manage your workspace
-ms.date: 03/20/2024
+ms.date: 03/25/2024
 #customer intent: As a user, I want to learn how to create folders in workspaces so that I can efficiently organize and manage items in the workspace.
 ---
 
-# Create folders in workspaces
+# Create folders in workspaces (preview)
 
 This article explains what folders in workspaces are and how to use them in workspaces in [!INCLUDE [product-name](../includes/product-name.md)]. Folders are organizational units inside a workspace that enable users to efficiently organize and manage artifacts in the workspace. For more information about workspaces, see the [Workspaces](workspaces.md) article.
 
