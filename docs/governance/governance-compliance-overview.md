@@ -10,7 +10,9 @@ ms.date: 01/23/2024
 
 # Governance and compliance in Microsoft Fabric
 
-|Manage your data estate|Secure, protect, and comply|Encourage data discovery, trust, and use.|Monitor, uncover, insights, and act|
+Microsoft Fabric governance and compliance provides set of capabilities that help you know, protect, manage, and monitor your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in, others require 
+
+|[Manage your data estate](#manage-your-data-estate)|[Secure, protect, and comply](#secure-protect-and-comply)|[Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use)|[Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act)|
 |:----|:----|:----|:----|
 |Admin portal|Privacy|OneLake data hub|Monitoring hub|
 |Tenant, domain, and workspace setttings|Data security|Endorsement Trust and reuse|Capacity metrics|
@@ -19,7 +21,46 @@ ms.date: 01/23/2024
 |Capacities|Securing data with Fabric items|||
 |Metadata scanning|Audit logs|||
 
-Microsoft Fabric governance and compliance is a set of capabilities that help you know, protect, manage, and monitor your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations.
+
+## Manage your data estate
+
+### Admin portal
+
+### Tenant, domain, and workspace settings
+
+### Domains 
+
+### Workspaces
+
+### Capacities
+
+### Metadata scanning
+
+## Secure, protect, and comply
+
+### Privacy
+
+### Data security
+
+### Purview Information Protection
+
+### Securing items in a workspace
+
+### Securing data in Fabric items
+
+### Auditing
+
+## Encourage data discovery, trust, and use
+
+### OneLake data hub
+
+### Endorsement
+
+### Data lineage and impact analysis
+
+### Purview for governance across the org
+
+## Monitor, uncover, get insights, and act
 
 Fabric governance and compliance is tightly integrated with Microsoft Purview Information Protection and Data Loss Prevention. In addition, your Fabric data estate is automatically attached to Purview and can be investigated with Purview capabilities such as Data catalog and Microsoft Purview Audit.  
 
