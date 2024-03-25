@@ -4,7 +4,7 @@ description: A known issue is posted where you might receive a ParquetSharpNativ
 author: mihart
 ms.author: mihart
 ms.topic: troubleshooting  
-ms.date: 03/14/2024
+ms.date: 03/20/2024
 ms.custom: known-issue-650
 ---
 
@@ -12,9 +12,9 @@ ms.custom: known-issue-650
 
 After you upgrade to the December 2023 (or newer) version of the on-premises data gateway, Dataflow Gen2 refreshes using that gateway might start failing with the error "Unable to load DLL 'ParquetSharpNative'."
 
-**Status:** Open
+**Status:** Fixed: March 20, 2024
 
-**Product Experience:** Power BI
+**Product Experience:** Data Factory
 
 ## Symptoms
 
@@ -22,7 +22,7 @@ You have a Dataflow Gen2 dataflow that uses the December 2023 (or newer) version
 
 ## Solutions and workarounds
 
-As a workaround, you can revert back to the November (or older) version of the on-premises data gateway. This article will be updated when the fix is released.
+The issue is fixed. Upgrade to the March 2024 version of the on-premises data gateway to stop receiving the error. If you run the on-premises data gateway on a Hyper-V virtual machine with processor compatibility mode turned on, try disabling processor compatibility mode.
 
 ## Next steps
 

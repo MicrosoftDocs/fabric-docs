@@ -22,7 +22,7 @@ The SQL Server database connector supports the following authentication types fo
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Basic (Username/Password)| n/a | √ |
+|Basic (Username/Password)| √ | √ |
 |Organizational account| n/a | √ |
 |Windows| n/a | √ |
 
