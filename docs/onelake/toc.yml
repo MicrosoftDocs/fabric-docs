@@ -34,7 +34,7 @@ items:
   - name: Access OneLake shortcuts in a Spark notebook
     href: access-onelake-shortcuts.md
   - name: Use shortcuts REST API
-    href: onelake-shortcuts-rest-api.md
+    href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
 - name: Open access
   items:
   - name: How do I connect to OneLake?
