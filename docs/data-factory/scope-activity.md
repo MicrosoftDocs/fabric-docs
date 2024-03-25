@@ -1,8 +1,8 @@
 ---
 title: Scope activity
 description: The Scope activity for Data Factory pipelines in Microsoft Fabric allows you to execute a script in Azure Data Lake Analytics.
-author: chez-charlie
-ms.author: chez
+author: kromerm
+ms.author: makromer
 ms.reviewer: jburchel
 ms.topic: how-to
 ms.date: 01/11/2024
