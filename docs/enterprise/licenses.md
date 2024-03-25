@@ -66,7 +66,7 @@ A capacity license provides the infrastructure for Microsoft Fabric. Your capaci
     >[!NOTE]
     >To create Power BI items in workspaces that are not *My workspace*, you need a *Pro* license.
 
-* Save your items to a workspace and share them with a user that has an appropriate licensed
+* Save your items to a workspace and share them with a user that has an appropriate license
 
 Capacity licenses, are split into Stock Keeping Units (SKUs). Each SKU provides a set of Fabric resources for your organization. Your organization can have as many capacity licenses as needed.
 
