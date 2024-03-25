@@ -352,7 +352,9 @@ Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake Shortcuts](../one
 
 ### Limits on OneLake RBAC
 
-|  |  |
+The following table provides the limitations of OneLake data access roles. 
+
+| Scenario | Limit |
 | ---- | ---- |
 | Maximum number of OneLake RBAC roles per Fabric Item | At most 250 roles for each lakehouse item. |
 | Maximum number of members per OneLake RBAC role | At most 500 users and user groups per role. |

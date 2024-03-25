@@ -63,8 +63,6 @@ items:
   items:
   - name: Workspace roles and permissions
     href: workspace-roles-lakehouse.md
-  - name: OneLake data access permissions (Preview)
-    href: onelake-data-access-permissions.md
   - name: Sharing and permissions management
     href: lakehouse-sharing.md
 - name: Apache Spark
