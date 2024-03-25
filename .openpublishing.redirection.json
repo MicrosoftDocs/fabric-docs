@@ -389,6 +389,16 @@
           "source_path_from_root": "/docs/enterprise/service-interruption-notifications.md",
           "redirect_url": "/fabric/admin/service-interruption-notifications",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/onelake/get-started-security.md",
+          "redirect_url": "/docs/onelake/security/get-started-security.md",
+          "redirect_document_id": false
+        } ,
+        {
+          "source_path_from_root": "/docs/onelake/onelake-security.md",
+          "redirect_url": "/docs/onelake/security/get-started-security.md",
+          "redirect_document_id": false
         }        
     ]
 }
