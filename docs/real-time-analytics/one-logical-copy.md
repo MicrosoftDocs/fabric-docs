@@ -30,7 +30,7 @@ The following table describes the behavior of your KQL database and tables when 
 |**A table in KQL Database**| - New data is made available in OneLake. <br/> - Existing data isn't backfilled. <br/> - Data can't be deleted, truncated, or purged. <br/> - Table schema can't be altered and the table can't be renamed. | - New data isn't made available in OneLake. <br/> - Data can be deleted, truncated, or purged. <br/> - Table schema can be altered and the table can be renamed. <br/> - Data is soft deleted from OneLake.|
 
 > [!IMPORTANT]
-> There's no additional storage cost to turn on **OneLake availability**, you're charged only once for the data storage.
+> There's no additional storage cost to turn on **OneLake availability**. For more information, see [resource consumption](kql-database-consumption.md#storage-billing).
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ You can turn on **OneLake availability** either on a KQL database or table level
 
     :::image type="content" source="media/one-logical-copy/onelake-availability.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database with the edit OneLake availability option highlighted." lightbox="media/one-logical-copy/onelake-availability.png":::
 
-1. Turn on the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically. It might take up to a few  minutes for the data to be available in OneLake.
+1. Turn on the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically. 
 
     :::image type="content" source="media/one-logical-copy/enable-data-copy.png" alt-text="Screenshot of the OneLake folder details window in Real-Time Analytics in Microsoft Fabric. The option to expose data to OneLake is turned on.":::
 

@@ -140,6 +140,82 @@ items:
     href: clone-table.md
   - name: Clone tables in the Fabric portal
     href: tutorial-clone-table-portal.md
+- name: Mirroring databases
+  items: 
+  - name: Mirroring overview
+    href: ../database/mirrored-database/overview.md
+  - name: How to
+    items:
+    - name: Enable Mirroring in your tenant
+      href: ../database/mirrored-database/enable-mirroring.md
+    - name: Monitor mirrored databases
+      displayName: Monitor mirroring
+      href: ../database/mirrored-database/monitor.md
+  - name: Explore mirrored data
+    items:
+    - name: Explore your mirrored database
+      href: ../database/mirrored-database/explore.md
+    - name: Explore directly in OneLake
+      displayName: Explore mirrored data directly in OneLake
+      href: ../database/mirrored-database/explore-data-directly.md
+    - name: Explore with notebooks
+      displayName: Explore mirrored data with notebooks
+      href: ../database/mirrored-database/explore-onelake-shortcut.md
+  - name: Mirroring Azure SQL Database
+    items:
+      - name: Mirrored database from Azure SQL Database
+        href: ../database/mirrored-database/azure-sql-database.md
+      - name: Azure SQL Database tutorial
+        href: ../database/mirrored-database/azure-sql-database-tutorial.md
+      - name: FAQ about mirrored Azure SQL Database
+        displayName: Frequently asked questions about Mirroring Azure SQL Database
+        href: ../database/mirrored-database/azure-sql-database-mirroring-faq.yml
+      - name: Secure data 
+        displayName: Securing data in mirrored Azure SQL Database
+        href: ../database/mirrored-database/azure-sql-database-how-to-data-security.md
+      - name: Limitations
+        displayName: Limitations in mirrored Azure SQL Database
+        href: ../database/mirrored-database/azure-sql-database-limitations.md
+  - name: Mirroring Azure Cosmos DB
+    items: 
+      - name: Mirrored databases from Azure Cosmos DB
+        href: ../database/mirrored-database/azure-cosmos-db.md        
+      - name: Azure Cosmos DB tutorial
+        href: ../database/mirrored-database/azure-cosmos-db-tutorial.md
+      - name: FAQ about mirrored Azure Cosmos DB 
+        displayName: Frequently asked questions about mirrored Azure Cosmos DB
+        href: ../database/mirrored-database/azure-cosmos-db-faq.yml
+      - name: Limitations
+        displayName: Limitations in mirrored Azure Cosmos DB
+        href: ../database/mirrored-database/azure-cosmos-db-limitations.md
+      - name: Troubleshoot 
+        displayName: Troubleshoot mirrored Azure Cosmos DB
+        href: ../database/mirrored-database/azure-cosmos-db-troubleshooting.yml
+      - name: How to
+        items:
+          - name: Join data
+            href: ../database/mirrored-database/azure-cosmos-db-how-to-join-multiple.md
+          - name: Query nested data
+            href: ../database/mirrored-database/azure-cosmos-db-how-to-query-nested.md
+          - name: Access data using Lakehouse and notebooks
+            href: ../database/mirrored-database/azure-cosmos-db-lakehouse-notebooks.md
+  - name: Mirroring Snowflake
+    items: 
+      - name: Mirrored warehouses from Snowflake
+        href: ../database/mirrored-database/snowflake.md
+      - name: Snowflake tutorial
+        href: ../database/mirrored-database/snowflake-tutorial.md
+      - name: FAQ about mirrored Snowflake
+        displayName: Frequently asked questions about mirrored Snowflake
+        href: ../database/mirrored-database/snowflake-mirroring-faq.yml
+      - name: Secure data
+        displayName: Secure data in mirrored Snowflake
+        href: ../database/mirrored-database/snowflake-how-to-data-security.md
+      - name: Limitations 
+        displayName: Limitations in mirrored Snowflake
+        href: ../database/mirrored-database/snowflake-limitations.md        
+  - name: Troubleshoot Mirroring
+    href: ../database/mirrored-database/troubleshooting.md           
 - name: Manage performance
   items:
   - name: Statistics
