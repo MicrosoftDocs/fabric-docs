@@ -15,7 +15,7 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 ---
 # Query the SQL analytics endpoint or Warehouse in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
 
 To get started with this tutorial, check the following prerequisites:
 
@@ -108,7 +108,7 @@ There are several ways you can write cross-database queries within the same [!IN
 
    :::image type="content" source="media\query-warehouse\cross-warehouse-query-visual-query-editor.png" alt-text="Screenshot of a cross-database query in visual query editor." lightbox="media\query-warehouse\cross-warehouse-query-visual-query-editor.png":::
 
-## SELECT Top 100 Rows from the Explorer
+## Select Top 100 Rows from the Explorer
 
 1. After opening your warehouse from the workspace, expand your database, schema and tables folder in the object **Explorer** to see all tables listed.
 
