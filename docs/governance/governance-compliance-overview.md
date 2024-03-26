@@ -26,17 +26,27 @@ Microsoft Fabric governance and compliance provides set of capabilities that hel
 
 ### Admin portal
 
-Guidance: The admin portal enables domain and capacity admins to manage their respective domains and capacities, while allowing tenant admins to manage all capacities and domains across the tenant.
+DONE
+The Microsoft Fabric admin portal is a centralized place that allows your organization’s administrators to control your overall Fabric estate. This includes settings that govern Microsoft Fabric. For example, you can make changes to tenant settings, govern capacities, domains, and workspaces, and control how users interact with Microsoft Fabric. To provide flexibility, some aspects of administration and governance can be delegated to capacities, domains, and workspaces so the respective admins can manage them in their scope.
 
-
+**Guidance**: The admin portal enables domain and capacity admins to manage their respective domains and capacities, while allowing tenant admins to manage all capacities and domains across the tenant.
 
 ### Tenant, domain, and workspace settings
 
-DONE: The Fabric admins define tenant-wide settings, and the domain admins are expected to override the settings as needed. Individual teams (workspace owners) are expected to define their own more granular workspace-level controls and settings. 
+NOT DONE:
+Administrators on the tenant, domain, and workspace levels have controls to set certain settings which can allow certain functionality for a subset of users / privileged users or explicitly deny access to certain functionality and actions on different levels. This equates to applying tenant level settings / (non-negotiable) controls at the tenant admin level. Domain administrators have a limited set of delegated settings , which they are empowered to override. Tenant administrators can also decide on which users / groups are allowed to create workspaces. 
+
+**Guidance**: The Fabric admins define tenant-wide settings, and the domain admins are expected to override the settings as needed. Individual teams (workspace owners) are expected to define their own more granular workspace-level controls and settings. 
 
 ### Domains
 
-DONE: Recommendation: Business and enterprise architects should design the organization's domain setup, while Fabric admins implement this design by creating domains and assigning domain owners as requested. Preferably, center of excellence (COE) teams should be part of this discussion to align the domains with the overall strategy of the organization.
+Data Mesh is a decentralized data architecture that organizes data by specific domains.  It's an architectural pattern which has been followed by many organizations to help build a governed data platform. To support this pattern, Fabric makes it possible to define domains and sub-domains within the platform.
+
+a domain is a way of logically grouping together all the data in an organization that is relevant to a particular area or field. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
+
+This helps to effectively plan for organizing your teams and their items structurally. Fabric also provides delegated settings in domains which can help domain admins to adjust specific “delegated tenant level settings” which can be over over-ridden based on the business demand.
+
+**Guidance**: Business and enterprise architects should design the organization's domain setup, while Fabric admins implement this design by creating domains and assigning domain owners as requested. Preferably, center of excellence (COE) teams should be part of this discussion to align the domains with the overall strategy of the organization.
 
 ### Workspaces
 
