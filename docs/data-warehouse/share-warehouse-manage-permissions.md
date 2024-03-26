@@ -13,7 +13,7 @@ ms.search.form: Warehouse roles and permissions # This article's title should no
 ---
 # Share your warehouse and manage permissions
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE[fabric-dw-and-mirrored-db](includes/applies-to-version/fabric-dw-and-mirrored-db.md)]
 
 Sharing is a convenient way to provide users read access to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] for downstream consumption. Sharing allows downstream users in your organization to consume a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using SQL, Spark, or Power BI. You can customize the level of permissions that the shared recipient is granted to provide the appropriate level of access.
 
