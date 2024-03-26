@@ -71,7 +71,7 @@ The following tables contain more information about the copy activity in Azure A
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your connection >|Yes|connection|
 |**Index name**|The index name.| \<name of your index\> |Yes |indexName|
-|**Index action**|Specifies whether to merge or replace when a document already exists in the index. <br>Allowed values are: **Merge** (default), and **Upload**.|• Merge<br>• Upload|Yes|indexAction|
+|**Index action**|Specify whether to merge or replace when a document already exists in the index. <br>Allowed values are: **Merge** (default), and **Upload**.|• Merge<br>• Upload|Yes|indexAction:<br>• merge<br>• upload |
 |**Write batch size**|Support writing documents as a batch. A batch can contain 1 to 1,000 Actions. An action handles one document.|\<number of rows><br>(integer) |Yes|writeBatchSize|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run.|\<upper limit of concurrent connections><br>(integer)|No |maxConcurrentConnections|
 

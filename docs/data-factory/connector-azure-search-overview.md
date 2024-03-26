@@ -15,10 +15,6 @@ ms.custom:
 
 The Azure AI Search connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
-
-For information on how to connect to an Azure AI Search in Dataflow Gen2, go to [Set up your Azure AI Search connection](connector-azure-search.md).
-
 ## Support in data pipelines
 
 The Azure AI Search connector supports the following capabilities in Data pipeline:
