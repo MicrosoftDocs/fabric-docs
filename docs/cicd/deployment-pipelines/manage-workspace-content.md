@@ -1,13 +1,14 @@
 ---
 title: Deployment pipeline folders
-description: Understand how to manage your workspaces in deployment pipelines using folders.
+description: Understand how to manage your workspaces in deployment pipelines using folders. Please update the description to be between 100 and 160 characters.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Lee
-ms.topic: how-to
+ms.topic: concept-article
 ms.custom:
 ms.date: 01/28/2024
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
+#customer intent: As a <role>, I want to learn how to manage my workspaces in deployment pipelines using folders, so that I can efficiently organize and manage items in the workspace.
 ---
 
 # Deployment pipeline folders (Preview)

@@ -129,7 +129,7 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a memb
 
 ## Folders in deployment pipelines (preview)
 
-[Folders]() in a workspace enable users to efficiently organize and manage workspace items in a familiar way.
+[Folders](./manage-workspace-content.md) in a workspace enable users to efficiently organize and manage workspace items in a familiar way.
 When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
 
 ### Folders representation
@@ -137,7 +137,7 @@ When you deploy content that contains folders to a different stage, the folder h
 Since a deployment is of items only, workspace content is shown in Deployment pipelines as a flat list of items. An item’s full path is shown when hovering over its name on the list.
 In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it will be created in its workspace first. Folders can be seen and managed only on the workspace page.
 
-:::image type="content" source="media/understand-the-deployment-process/folder-path.png" alt-text="Screenshot showing the ful pathname of an item inside a folder. The name includes the name of the folder.":::
+:::image type="content" source="media/understand-the-deployment-process/folder-path.png" alt-text="Screenshot showing the full pathname of an item inside a folder. The name includes the name of the folder.":::
 
 ### Identify items that were moved to different folders
 
