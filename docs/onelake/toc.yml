@@ -23,12 +23,16 @@ items:
     href: onelake-shortcuts.md
   - name: Create a OneLake shortcut
     href: create-onelake-shortcut.md
-  - name: Access OneLake shortcuts in a Spark notebook
-    href: access-onelake-shortcuts.md
   - name: Create an ADLS Gen2 shortcut
     href: create-adls-shortcut.md
   - name: Create an Amazon S3 shortcut
-    href: create-S3-shortcut.md
+    href: create-s3-shortcut.md
+  - name: Create an Amazon S3 compatible shortcut
+    href: create-s3-compatible-shortcut.md
+  - name: Create a Google Cloud Storage shortcut
+    href: create-gcs-shortcut.md  
+  - name: Access OneLake shortcuts in a Spark notebook
+    href: access-onelake-shortcuts.md
   - name: Use shortcuts REST API
     href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
 - name: Open access
