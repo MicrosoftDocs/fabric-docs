@@ -10,15 +10,11 @@ ms.date: 11/02/2023
 
 # Automate your deployment pipeline with Fabric APIs
 
-The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Fabric content.
+The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables teams to build an efficient and reusable release process for their Fabric content.
 
 [!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 Use the [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipelines) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:
-
-* Manage pipelines from start to finish, including creating a pipeline, assigning a workspace to any stage, and deploying and deleting the pipeline.
-
-* Assign and unassign users to and from a pipeline.
 
 * Integrate Fabric into familiar DevOps tools such as Azure DevOps or GitHub Actions.
 
@@ -27,12 +23,6 @@ Use the [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipelines) to
 * Deploy multiple pipelines at the same time.
 
 * Cascade depending on pipeline deployments. If you have content that's connected across pipelines, you can make sure some pipelines are deployed before others.
-
-## Prerequisites
-
-Before you use the deployment pipelines APIs, make sure you have the following:
-
-* If you're going to use PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
 
 ## Deployment pipelines API functions
 

@@ -23,9 +23,9 @@ items:
     href: deployment-pipelines/deployment-history.md
   - name: Create deployment rules
     href: deployment-pipelines/create-rules.md
-  - name: Automate deployment pipelines for Power BI items
+  - name: Automate deployment pipelines for Power BI items only
     href: deployment-pipelines/pipeline-automation.md
-  - name: Automate deployment pipelines for Fabric items
+  - name: Automate deployment pipelines for Fabric
     href: deployment-pipelines/pipeline-automation-fabric.md
 - name: Git integration
   items:
