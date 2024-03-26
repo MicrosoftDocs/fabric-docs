@@ -24,6 +24,18 @@ Use the [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipelines) to
 
 * Cascade depending on pipeline deployments. If you have content that's connected across pipelines, you can make sure some pipelines are deployed before others.
 
+## Prerequisites
+
+To work with Fabric Git APIs you need the following:
+
+* The same [prerequisites you need to use deployment pipelines](./get-started-with-deployment-pipelines.md#prerequisites).
+* A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see Fabric API quickstart.
+
+You can use the REST APIs without PowerShell, but the scripts in this article use PowerShell. To run the scripts, you need to install the following:
+
+* [PowerShell](/powershell/scripting/install/installing-powershell)
+* [Azure PowerShell Az module](/powershell/azure/install-azure-powershell)
+
 ## Deployment pipelines API functions
 
 The [deployment pipelines Fabric REST APIs](/rest/api/fabric/core/deployment-pipelines) allow you to perform the following functions:
