@@ -135,6 +135,12 @@
         href: connector-azure-blob-storage.md
       - name: Configure in a data pipeline copy activity
         href: connector-azure-blob-storage-copy-activity.md
+    - name: Azure AI Search
+      items:
+      - name: Overview
+        href: connector-azure-search-overview.md
+      - name: Configure in a data pipeline copy activity
+        href: connector-azure-search-copy-activity.md
     - name: Azure Cosmos DB for NoSQL
       items:
       - name: Overview
