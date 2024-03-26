@@ -16,7 +16,7 @@ ms.custom:
 This article outlines how to use the copy activity in a data pipeline to copy data from and to the Fabric Lakehouse. By default, data is written to Lakehouse Table in V-Order, and you can go to [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order) for more information.
 
 >[!Note]
->Features Deletion Vector, Delta column mapping and change data rate of the Delta Lake table are not supported in Lakehouse Table currently.
+>Features Deletion Vector, Delta column mapping and change data rate of the Delta Lake table are not supported for Lakehouse Table currently.
 
 ## Supported format
 
