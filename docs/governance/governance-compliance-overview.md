@@ -26,19 +26,48 @@ Microsoft Fabric governance and compliance provides set of capabilities that hel
 
 ### Admin portal
 
+Guidance: The admin portal enables domain and capacity admins to manage their respective domains and capacities, while allowing tenant admins to manage all capacities and domains across the tenant.  
+
 ### Tenant, domain, and workspace settings
 
-### Domains 
+Guidance: The recommended approach is to have Fabric admins define tenant-wide settings, allow domains to decide whether they want to override settings, and to let individual teams (owning workspaces) define granular controls on their workspaces.
+
+### Domains
+
+Recommendation: Have Business and enterprise architects design the organization's domain setup, while Fabric admins implement this design by creating domains and assigning domain owners as requested. Preferably, center of excellence (COE) teams should be part of this discussion to align the domains with the overall strategy of the organization.
 
 ### Workspaces
 
+Recommendation: Assign workspaces to individual teams to be used to hold the Fabric items which are used by that team. For development purposes, a best practice is to having isolated workspaces per developer so that they can work on their own without interfering with the shared workspace. Fabric admins should define who has permission to create workspaces. Workspace admins can define Spark environments that can be reused by users.
+
 ### Capacities
+
+Recommendation: Split up capacity based on the requirements of the environment, e.g. development/test/acceptance/production (DTAP). This makes for better workload isolation and chargeback.
 
 ### Metadata scanning
 
+Metadata information, or "data about your data", is crucial to understanding your data and using it effectively.
+
+Metadata scanning facilitates governance of your organization's Microsoft Fabric data by making it possible for cataloging tools to catalog and report on the metadata of all your organization's Fabric items. It accomplishes this using a set of Admin REST APIs that are collectively known as the *scanner APIs*. The scanner APIs extract metadata such as item name, ID, sensitivity, endorsement status, etc. The scanner APIs help external tools or third-party tooling to collect metadata information from Fabric.
+
+For more information, see [Metadata scanning](./metadata-scanning-overview.md).
+
+Guidance: Scanner APIs help external tools or third-party tooling to collect metadata information from Fabric.
+
 ## Secure, protect, and comply
 
+Data security and having a compliant data platform are important to make sure that your data stays safe and is not compromised. For details about network security, access control, and encryption, see the [Security overview](XXX)
+
+Fabric leverages Microsoft Purview for making sure that the data is secure, complies with protected, and policies are applied to detect and alert sensitive data usage
+
+And that leakage of sensitive data are detected and alerted 
+
 ### Privacy
+
+The first phase of any data protection strategy is to identify where your private data sits.  This is considered one of the most challenging but important steps to make sure you can protect your data at the source. Manually identifying this is an inhumane task and can be quite ineffective. Fabric provides capabilities XXXXXX to do this..... 
+To help with this, Microsoft Purview provides capabilities to automatically identify where your private data sits. This can be done by automatically scanning your estate or users do have the ability to manually tag sensitive items.  
+
+ 
 
 ### Data security
 
@@ -54,13 +83,17 @@ For more information, see [Information Protection in Microsoft Fabric](./informa
 
 ### Auditing
 
+To mitigate the risks of unauthorized access and use of your Fabric data, Fabric administrators and compliance teams in your organizations track and investigate user activity on Fabric items using Purview Audit. Many companies also need these audit logs for regulatory requirements which mandate storing audit logs for forensic investigation and potential data regulation violations. Microsoft Fabric provides item-level audits recoreding all activities on items in the audit logs that can be investigated in Purview Audit, which is available in the Purview compliance portal. Security teams and CISO teams can use these audit logs for monitoring and follow up actions.
+
 ## Encourage data discovery, trust, and use
+
+Fabric provides built-in capabilities to help users find and use reliable, quality data.
 
 ### OneLake data hub
 
-The OneLake data hub makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them.
+The OneLake data hub makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them. Filtering and search options make it easier to get to relevant data.
 
-Finding relevant data to work is critical to generate right insights. Fabric provides you with OneLake Datahub which allows consumers to filter items by type, domain, etc.
+For more information, see [Discover data items in the OneLake data hub](../get-started/onelake-data-hub.md).
 
 ### Endorsement
 
@@ -114,15 +147,15 @@ Fabric governance and compliance is tightly integrated with Microsoft Purview In
 
 This article briefly describes the basic building blocks of Fabric governance and compliance and provides links for more information. Fabric governance and compliance capabilities work together with capabilities of [Fabric security](../security/security-overview.md) and [Fabric administration](../admin/admin-overview.md) to keep your organization’s data secure.
 
+
++++++++++
+
+
 ## Information protection
 
 Information protection in Fabric enables you to discover, classify, and protect Fabric data using sensitivity labels from Microsoft Purview Information Protection. Fabric provides multiple capabilities, such as default labeling, label inheritance, and programmatic labeling, to help achieve maximal sensitivity label coverage across your entire Fabric data estate. Once labeled, data remains protected even when it's exported out of Fabric via supported export paths. Compliance admins can monitor activities on sensitivity labels in Microsoft Purview Audit.
 
 For more information, see [Information Protection in Microsoft Fabric](./information-protection.md).
-
-## Data loss prevention
-
-Data loss prevention (DLP) policies help organizations detect and protect their sensitive data. DLP policies detect upload of sensitive data into Power BI semantic models and supported Fabric items. They can detect sensitivity labels and sensitive info types, such as credit card and social security numbers. They can be configured to generate policy tips for item owners and alerts for security admins. DLP policies can also be configured to allow data owners to override them.
 
 For more information, see [Data loss prevention policies for Power BI and Fabric](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
 
