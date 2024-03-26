@@ -67,6 +67,9 @@ Now you've created a Dataflow Gen2 to load data from an on-premises data source 
 
    :::image type="content" source="media/how-to-access-on-premises-data/create-pipeline.png" alt-text="Screenshot showing how to create a new data pipeline.":::
 
+> [!NOTE]
+> You need to configure the firewall to allow outbound connections ***.frontend.clouddatahub.net**  from the gateway for Fabric pipeline capabilities. 
+
 1. From the Home tab of the pipeline editor, select **Copy data** and then **Use copy assistant**. Add a new source to the activity in the assistant's **Choose data source** page, then select the connection established in the previous step.
 
    :::image type="content" source="media/how-to-access-on-premises-data/choose-data-source.png" lightbox="media/how-to-access-on-premises-data/choose-data-source.png" alt-text="Screenshot showing where to choose a new data source from the Copy data activity.":::
