@@ -41,6 +41,8 @@ For more information about the admin portal, see [What is the admin portal?](../
 
 Tenant, domain, and workspace admins each have settings within their scope that they can configure to control who has access to certain functionalities at different levels. Some tenant-level settings can be delegated to domain and capacity admins.
 
+For more information see [About tenant settings](../admin/about-tenant-settings.md), [Configure domain settings](./domains.md#configure-domain-settings), and [Workspace settings](../get-started/workspaces.md#workspace-settings).
+
 **Guidance**: Fabric admins should define tenant-wide settings, leaving domain admins to override delegated settings as needed. Individual teams (workspace owners) are expected to define their own more granular workspace-level controls and settings.
 
 ### Domains
@@ -147,7 +149,7 @@ For more information, see [Lineage](./lineage.md) and [Impact analysis](./impact
 
 Microsoft Purview offers solutions for protecting and governing data across an organization's entire data estate. The integration between Purview and Fabric makes it possible to use some of Purview's capabilities to govern and monitor your Fabric data in the context of your organization's entire data estates.
 
-The data governance capabilities offered on Fabric via Purview's [live view](/purview/live-view) (preview) are described in the following sections.
+The data governance capabilities offered on Fabric via Purview's [live view](/purview/live-view) (preview) are described in the following sections. See also [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md).
 
 #### Data curation
 
