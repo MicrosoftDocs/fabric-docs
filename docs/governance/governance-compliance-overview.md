@@ -191,9 +191,9 @@ Microsoft Purview hub is a centralized page in Fabric that helps Fabric administ
 
 ### Admin monitoring
 
-The Admin monitoring workspace provides admins with monitoring capabilities for their organization. Using the admin monitoring workspace resources, admins can perform security and governance tasks such as audits and usage checks. For more information, see [What is the admin monitoring workspace?](../admin/monitoring-workspace.md).
+The admin monitoring workspace provides admins with monitoring capabilities for their organization. Using the admin monitoring workspace resources, admins can perform security and governance tasks such as audits and usage checks. For more information, see [What is the admin monitoring workspace?](../admin/monitoring-workspace.md).
 
-**Guidance**: We recommend that platform qwners/Fabric administrators use this feature to gain an overall view of the Fabric platform.
+**Guidance**: We recommend that platform owners/Fabric administrators use this feature to gain an overall view of the Fabric platform.
 
 ## Related content
 
