@@ -12,7 +12,7 @@ ms.date: 2/1/2024
 
 Dataflows enable you to connect to, transform, combine, and load data to storage for downstream consumption. A key element in dataflows is the refresh process, which applies the transformation steps defined during authoring to extract, transform, and load data to the target storage.
 
-:::image type="content" source="media/concept-dataflow-refresh/Simple-Dataflow.png" alt-text="Screenshot showing a sample dataflow.":::
+:::image type="content" source="media/concept-dataflow-refresh/simple-dataflow.png" alt-text="Screenshot showing a sample dataflow.":::
 
 A dataflow refresh can be triggered in one of two ways, either on-demand or by setting up a refresh schedule. A scheduled refresh is run based on the specific days and times you specify.
 
@@ -38,7 +38,7 @@ To automatically refresh a dataflow on a schedule, select **Scheduled Refresh** 
 
 The refresh section is where you can define the frequency and time slots to refresh a dataflow, up to 48 times per day. The following screenshot shows a daily refresh schedule on a 12 hour interval.
 
-:::image type="content" source="media/concept-dataflow-refresh/Configure-Dataflow-Refresh-Schedule.png" alt-text="Screenshot showing example of a 12 hour daily schedule refresh setting.":::
+:::image type="content" source="media/concept-dataflow-refresh/configure-dataflow-refresh-schedule.png" alt-text="Screenshot showing example of a 12 hour daily schedule refresh setting.":::
 
 ## Cancel refresh
 
@@ -50,7 +50,7 @@ To cancel a dataflow refresh, select **Cancel** icon found in workspace list or 
 
 Once a dataflow refresh is canceled, the dataflow's refresh history status is updated to reflect cancelation status: 
 
-:::image type="content" source="media/concept-dataflow-refresh/Canceled-Dataflow-Refresh-History.png" alt-text="Screenshot showing the dataflows refresh history view for a canceled dataflow refresh.":::
+:::image type="content" source="media/concept-dataflow-refresh/canceled-dataflow-refresh-history.png" alt-text="Screenshot showing the dataflows refresh history view for a canceled dataflow refresh.":::
 
 ### Refresh cancelation implications to output data
 
