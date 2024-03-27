@@ -22,6 +22,7 @@ This article describes at a high level the main features and components that hel
 |[Workspaces](#workspaces)|[Securing Fabric items within a workspace](#securing-items-in-a-workspace)|[Purview for governance across the org](#purview-for-governance-across-the-org)*|[Admin monitoring](#admin-monitoring)|
 |[Capacities](#certifications)|[Securing data in Fabric items](#securing-data-in-fabric-items)|||
 |[Metadata scanning](#metadata-scanning)|[Auditing](#auditing)|||
+
 *Requires additional licensing
 
 ## Manage your data estate
