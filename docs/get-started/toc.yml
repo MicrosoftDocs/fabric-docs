@@ -41,6 +41,8 @@ items:
     href: create-workspaces.md
   - name: Roles in workspaces
     href: roles-workspaces.md
+  - name: Create folders in workspaces
+    href: workspaces-folders.md
   - name: Give users access to workspaces
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
