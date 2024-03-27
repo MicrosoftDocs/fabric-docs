@@ -20,7 +20,7 @@ This article describes at a high level the main features and components that hel
 |[Tenant, domain, and workspace settings](#tenant-domain-and-workspace-settings)|[Data security](#data-security)|[Endorsement, trust, and reuse](#endorsement)|[Capacity metrics](#capacity-metrics)|
 |[Domains](#domains)|[Purview Information Protection](#purview-information-protection)*|[Data lineage and impact analysis](#data-lineage-and-impact-analysis)|[Purview hub](#purview-hub)|
 |[Workspaces](#workspaces)|[Securing Fabric items within a workspace](#securing-items-in-a-workspace)|[Purview for governance across the org](#purview-for-governance-across-the-org)*|[Admin monitoring](#admin-monitoring)|
-|[Capacities](#certifications)|[Securing data in Fabric items](#securing-data-in-fabric-items)|||
+|[Capacities](#capacities)|[Securing data in Fabric items](#securing-data-in-fabric-items)|||
 |[Metadata scanning](#metadata-scanning)|[Auditing](#auditing)|||
 
 *Requires additional licensing
