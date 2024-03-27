@@ -40,6 +40,12 @@ Copilot for Data Factory is an AI-enhanced toolset that supports both citizen an
 
 Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities. See the article [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction) for details of the features and how to use Copilot for Power BI.
 
+## Copilot for Real-Time Analytics
+
+Copilot for Real-Time Analytics is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists. 
+
+For more information, see [Copilot for Real-Time Analytics overview](copilot-real-time-analytics.md).
+
 ## How do I use Copilot responsibly?
 
 Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues. Copilot sends your customer data to generate summaries to Azure OAI, where it's stored for 30 days. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms) for details.
