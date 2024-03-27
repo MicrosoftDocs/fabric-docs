@@ -26,14 +26,14 @@ The capacity settings page shows a list of all the capacities in your [tenant](l
 
 The rest of this article is divided to sections based on the different capacity types. To view the settings of your capacity, select the tab that matches your capacity type. If there's no tab to select, the section applies to all capacity types.
 
-# [Power BI Premium](#tab/P-SKU)
+# [Power BI Premium](#tab/power-bi-premium)
 
 A capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
 
 >[!NOTE]
 >Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
 
-# [Power BI Embedded](#tab/EM-SKU)
+# [Power BI Embedded](#tab/power-bi-embedded)
 
 A capacity that was bought as part of a Power BI Embedded subscription. These capacities use a EM SKUs.
 
@@ -41,7 +41,7 @@ A capacity that was bought as part of a Power BI Embedded subscription. These ca
 
 A [Microsoft Fabric trial](../get-started/fabric-trial.md) capacity. These capacities use a A SKUs.
 
-# [Fabric Capacity](#tab/F-SKU)
+# [Fabric Capacity](#tab/fabric-capacity)
 
 A Microsoft Fabric capacity. These capacities use a A SKUs.
 
@@ -53,7 +53,7 @@ This section lists basic capacity management tasks, such as creating a new capac
 
 ### Create a new capacity
 
-# [Power BI Premium](#tab/P-SKU)
+# [Power BI Premium](#tab/power-bi-premium)
 
 To create a new Power BI Premium capacity, follow these steps:
 
@@ -77,7 +77,7 @@ To create a new Power BI Premium capacity, follow these steps:
 
 4. Select **Create**.
 
-# [Power BI Embedded](#tab/EM-SKU)
+# [Power BI Embedded](#tab/power-bi-embedded)
 
 To create a new Power BI Embedded, follow these steps:
 
@@ -106,7 +106,7 @@ To create a new Power BI Embedded, follow these steps:
 
 To create a new Fabric capacity, see [Microsoft Fabric trial](../get-started/fabric-trial.md#start-the-fabric-trial).
 
-# [Fabric Capacity](#tab/F-SKU)
+# [Fabric Capacity](#tab/fabric-capacity)
 
 To create a new Fabric capacity, follow these steps:
 
@@ -148,11 +148,11 @@ To change the name of your capacity, follow these steps:
 
 ### Add and remove admins
 
-# [Power BI Premium](#tab/EM-SKU)
+# [Power BI Premium](#tab/power-bi-premium)
 
 ???
 
-# [Power BI Embedded](#tab/EM-SKU)
+# [Power BI Embedded](#tab/power-bi-embedded)
 
 ???
 
@@ -160,7 +160,7 @@ To change the name of your capacity, follow these steps:
 
 ???
 
-# [Fabric Capacity](#tab/F-SKU)
+# [Fabric Capacity](#tab/fabric-capacity)
 
 To add or remove admins in a Fabric capacity, follow these steps:
 
@@ -180,7 +180,7 @@ To add or remove admins in a Fabric capacity, follow these steps:
 
 ### Resize a capacity
 
-# [Power BI Premium](#tab/EM-SKU)
+# [Power BI Premium](#tab/power-bi-premium)
 
 To resize a Power BI Premium capacity, follow these steps:
 
@@ -194,7 +194,7 @@ To resize a Power BI Premium capacity, follow these steps:
 
 5. Select **Apply**.
 
-# [Power BI Embedded](#tab/EM-SKU)
+# [Power BI Embedded](#tab/power-bi-embedded)
 
 To resize a Power BI Embedded capacity, follow these steps:
 
@@ -212,7 +212,7 @@ To resize a Power BI Embedded capacity, follow these steps:
 
 You can't resize a trial capacity.
 
-# [Fabric Capacity](#tab/F-SKU)
+# [Fabric Capacity](#tab/fabric-capacity)
 
 To resize a Fabric capacity, follow these steps:
 
@@ -232,7 +232,7 @@ To resize a Fabric capacity, follow these steps:
 
 ### Delete a capacity
 
-# [Power BI Premium](#tab/EM-SKU)
+# [Power BI Premium](#tab/power-bi-premium)
 
 To delete a Power BI Premium capacity, follow these steps:
 
@@ -244,7 +244,7 @@ To delete a Power BI Premium capacity, follow these steps:
 
 4. In the confirmation dialog, select **Delete**.
 
-# [Power BI Embedded](#tab/EM-SKU)
+# [Power BI Embedded](#tab/power-bi-embedded)
 
 To delete a Power BI Embedded capacity, follow these steps:
 
@@ -260,7 +260,7 @@ To delete a Power BI Embedded capacity, follow these steps:
 
 You can't delete a Trial capacity. To end a fabric trial, see [End a Fabric trial](../get-started/fabric-trial.md#end-a-fabric-trial).
 
-# [Fabric Capacity](#tab/F-SKU)
+# [Fabric Capacity](#tab/fabric-capacity)
 
 To delete a *Fabric Capacity*, follow these steps:
 
@@ -278,11 +278,11 @@ To delete a *Fabric Capacity*, follow these steps:
 
 ### Autoscale
 
-# [Power BI Premium](#tab/EM-SKU)
+# [Power BI Premium](#tab/power-bi-premium)
 
 To enable autoscale on a Power BI Premium capacity, see [Using Autoscale with Power BI Premium](/power-bi/enterprise/service-premium-auto-scale).
 
-# [Power BI Embedded](#tab/EM-SKU)
+# [Power BI Embedded](#tab/power-bi-embedded)
 
 To enable autoscale on a Power BI Embedded capacity, see [Using Autoscale with Power BI Premium](/power-bi/enterprise/service-premium-auto-scale).
 
@@ -290,7 +290,7 @@ To enable autoscale on a Power BI Embedded capacity, see [Using Autoscale with P
 
 Autoscale isn't available for Trial capacities.
 
-# [Fabric Capacity](#tab/F-SKU)
+# [Fabric Capacity](#tab/fabric-capacity)
 
 Autoscale isn't available for Fabric capacities.
 
