@@ -30,10 +30,8 @@ The rest of this article is divided to sections based on the different capacity 
 
 A capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
 
->[!NOTE]
->Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
+Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
 
-Test1
 
 # [Power BI Embedded](#tab/power-bi-embedded)
 
