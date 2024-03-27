@@ -38,23 +38,27 @@ Administrators on the tenant, domain, and workspace levels have controls to set 
 
 **Guidance**: The Fabric admins define tenant-wide settings, and the domain admins are expected to override the settings as needed. Individual teams (workspace owners) are expected to define their own more granular workspace-level controls and settings. 
 
-### Domains
+### Domains (DONE)
 
-Data Mesh is a decentralized data architecture that organizes data by specific domains.  It's an architectural pattern which has been followed by many organizations to help build a governed data platform. To support this pattern, Fabric makes it possible to define domains and sub-domains within the platform.
+Domains are a way of logically grouping together all the data in an organization that is relevant to particular areas or fields, for example, by business unit. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
 
-a domain is a way of logically grouping together all the data in an organization that is relevant to a particular area or field. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
+Grouping data into domains and subdomains enables better discoverability and governance. For instance, in the [OneLake data hub](../get-started/onelake-data-hub.md), users can filter content by domain in order find content that is relevant to them. With respect to governance, some tenant-level settings for managing and governing data can be delegated to the domain level, thus allowing domain-specific configuration of those settings.
 
-This helps to effectively plan for organizing your teams and their items structurally. Fabric also provides delegated settings in domains which can help domain admins to adjust specific “delegated tenant level settings” which can be over over-ridden based on the business demand.
+For more information, see [Domains](./domains.md).
 
-**Guidance**: Business and enterprise architects should design the organization's domain setup, while Fabric admins implement this design by creating domains and assigning domain owners as requested. Preferably, center of excellence (COE) teams should be part of this discussion to align the domains with the overall strategy of the organization.
+**Guidance**: Business and enterprise architects should design the organization's domain setup, while Fabric admins should implement this design by creating domains and subdomains and assigning domain owners. Preferably, center of excellence (COE) teams should be part of this discussion to align the domains with the overall strategy of the organization.
 
-### Workspaces
+### Workspaces (DONE)
 
-DONE: Assigning workspaces to individual teams to hold the Fabric items used by the team very much depends on internal team structure and how the teams want to handle their Fabric items (e.g. do they need one or many workspaces). For development purposes, a best practice is to have isolated workspaces per developer, so that they can work on their own without interfering with the shared workspace. Fabric admins are expected to define who has permission to create workspaces. Workspace admins are expected to define Spark environments that can be reused by users.
+Teams in organizations use workspaces to create Fabric items and collaborate with each other. These workspaces can be assigned to teams or departments based on governance requirements and data boundaries. How exactly workspace assignment is done depends on internal team struture and how the teams want to handle their Fabric items (e.g. do they need one or many workspaces).
 
-### Capacities
+**Guidance**: For development purposes, a best practice is to have isolated workspaces per developer, so that they can work on their own without interfering with the shared workspace. Fabric admins are expected to define who has permission to create workspaces. Workspace admins are expected to define Spark environments that can be reused by users.
 
-DONE: Recommendation: Split up capacities based on the requirements of the environment, e.g. development/test/acceptance/production (DTAP). This makes for better workload isolation and chargeback.
+### Capacities (DONE)
+
+Capacities are the compute resources used by all Fabric workloads. Based on organizational requirements, capacities can be used as isolation boundaries for compute, chargebacks etc.
+
+**Guidance**: Split up capacities based on the requirements of the environment, e.g. development/test/acceptance/production (DTAP). This makes for better workload isolation and chargeback.
 
 ### Metadata scanning
 
@@ -188,51 +192,6 @@ This article briefly describes the basic building blocks of Fabric governance an
 
 Guidance: We recommend tenant administrators use this feature to have an overall view of the fabric platform. 
 Look at it to get an overall view. Data stewards.. how healthy is the platform (high level view, ) role that fits that profile. 
-
-+++++++++
-
-
-## Information protection
-
-Information protection in Fabric enables you to discover, classify, and protect Fabric data using sensitivity labels from Microsoft Purview Information Protection. Fabric provides multiple capabilities, such as default labeling, label inheritance, and programmatic labeling, to help achieve maximal sensitivity label coverage across your entire Fabric data estate. Once labeled, data remains protected even when it's exported out of Fabric via supported export paths. Compliance admins can monitor activities on sensitivity labels in Microsoft Purview Audit.
-
-For more information, see [Information Protection in Microsoft Fabric](./information-protection.md).
-
-For more information, see [Data loss prevention policies for Power BI and Fabric](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
-
-## Endorsement
-
-Endorsement is a way to make trustworthy, quality data more discoverable. Organizations often have large numbers of Microsoft Fabric items - data, processes and content -  available for sharing and reuse by their Fabric users. Endorsement helps users identify and find the trustworthy high-quality items they need. With endorsement, item owners can promote their quality items, and organizations can certify items that meet their quality standards. Endorsed items are then clearly labeled, both in Fabric and in other places where users look for Fabric items. Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists. In the [Microsoft Purview hub](./use-microsoft-purview-hub.md), admins can get insights about their organization's endorsed items in order to better drive users to quality content. 
-
-For more information, see [Endorsement](./endorsement-overview.md).
-
-## Metadata scanning
-
-Metadata scanning facilitates governance of your organization's Microsoft Fabric data by making it possible for cataloging tools to catalog and report on the metadata of all your organization's Fabric items. It accomplishes this using a set of Admin REST APIs that are collectively known as the *scanner APIs*. The scanner APIs extract metadata such as item name, ID, sensitivity, endorsement status, etc.
-
-For more information, see [Metadata scanning](./metadata-scanning-overview.md).
-
-## Data lineage and impact analysis
-
-In modern business intelligence projects, understanding the flow of data from a data source to its destination is a complex task. Questions like "What happens if I change this data?" or "Why isn't this report up to date?" can be hard to answer. They might require a team of experts or deep investigation to understand. Lineage helps users understand the flow of data by providing a visualization that shows the relations between all the items in a workspace. For each item in the lineage view, you can display an impact analysis that shows what downstream items would be affected if you made changes to the item.
-
-For more information, see [Lineage](./lineage.md) and [Impact analysis](./impact-analysis.md).
-
-## Domains
-
-Domains are a way of logically grouping together all the data in an organization that is relevant to particular areas or fields, for example, by business unit. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
-
-Grouping data into domains enables better discoverability and governance. For instance, in the [OneLake data hub](../get-started/onelake-data-hub.md), users can filter content by domain in order find content that is relevant to them. With respect to governance, some tenant-level settings for managing and governing data can be delegated to the domain level, thus allowing domain-specific configuration of those settings.
-
-For more information, see [Domains](./domains.md).
-
-## Microsoft Purview hub
-
-Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and data owners manage and govern their Fabric data estate. For administrators and data owners, the hub offers reports that provide insights about their Fabric items, particularly with respect to sensitivity labeling and endorsement. The hub also serves as a gateway to more advanced Purview capabilities such as Information Protection, Data Loss Prevention, and Audit. For more information, see [Microsoft Purview hub](./use-microsoft-purview-hub.md).
-
-## Certifications
-
-Microsoft Fabric has HIPPA BAA, ISO/IEC 27017, ISO/IEC 27018, ISO/IEC 27001, and ISO/IEC 27701 compliance certifications. To learn more, see [Fabric compliance offerings](https://powerbi.microsoft.com/blog/microsoft-fabric-is-now-hipaa-compliant/).
 
 ## Related content
 
