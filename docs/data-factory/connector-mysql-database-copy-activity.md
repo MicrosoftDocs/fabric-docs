@@ -34,22 +34,22 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for MySQL under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-mysql/mysql-source.png" alt-text="Screenshot showing source tab.":::
+:::image type="content" source="./media/connector-mysql-database/mysql-source.png" alt-text="Screenshot showing source tab.":::
 
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an MySQL connection from the connection list. If no connection exists, then create a new MySQL connection by selecting **New**.
+- **Connection**:  Select a MySQL connection from the connection list. If no connection exists, then create a new MySQL connection by selecting **New**.
 - **Use query**: Select from **Table** or **Query**.
     - If you select **Table**:
       - **Table**: Specify the name of the table in the MySQL database to read data. Select the table from the drop-down list.
 
-        :::image type="content" source="./media/connector-mysql/use-query-table.png" alt-text="Screenshot showing Use query - Table." :::
+        :::image type="content" source="./media/connector-mysql-database/use-query-table.png" alt-text="Screenshot showing Use query - Table." :::
 
     - If you select **Query**:
       - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`.
 
-        :::image type="content" source="./media/connector-mysql/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::
+        :::image type="content" source="./media/connector-mysql-database/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::
 
 Under **Advanced**, you can specify the following fields:
 
