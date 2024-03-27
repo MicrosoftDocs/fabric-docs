@@ -27,7 +27,6 @@ This article describes at a high level the main features and components that hel
 ## Manage your data estate
 
 ### Admin portal
-
 DONE
 The Microsoft Fabric admin portal is a centralized place that allows your organization’s administrators to control your overall Fabric estate. This includes settings that govern Microsoft Fabric. For example, you can make changes to tenant settings, govern capacities, domains, and workspaces, and control how users interact with Microsoft Fabric. To provide flexibility, some aspects of administration and governance can be delegated to capacities, domains, and workspaces so the respective admins can manage them in their scope.
 
