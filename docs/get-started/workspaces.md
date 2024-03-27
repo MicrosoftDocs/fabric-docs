@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: product-trident, Manage your workspace
-ms.date: 103/26/2024
+ms.date: 03/26/2024
 ---
 
 # Workspaces
@@ -18,7 +18,7 @@ ms.date: 103/26/2024
 
 Ready to get started? Read [Create a workspace](create-workspaces.md).
 
-:::image type="content" source="media/workspaces/fabric-workspace-page.png" alt-text="Screenshot showing a workspace." lightbox="media/workspaces/fabric-workspace-page.png":::
+:::image type="content" source="media/workspaces/fabric-workspace-page.png" alt-text="Screenshot showing a workspace with folders." lightbox="media/workspaces/fabric-workspace-page.png":::
 
 ## Work with workspaces
 
