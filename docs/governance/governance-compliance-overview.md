@@ -14,8 +14,8 @@ Microsoft Fabric governance and compliance provides set of capabilities that hel
 
 |[Manage your data estate](#manage-your-data-estate)|[Secure, protect, and comply](#secure-protect-and-comply)|[Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use)|[Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act)|
 |:----|:----|:----|:----|
-|Admin portal|Privacy|OneLake data hub|Monitoring hub|
-|Tenant, domain, and workspace setttings|Data security|Endorsement Trust and reuse|Capacity metrics|
+|[Admin portal](#admin-portal)|[Privacy](#privacy)|[OneLake data hub](#onelake-data-hub)|[Monitoring hub](#monitoring-hub)|
+|[Tenant, domain, and workspace setttings](#tenant-domain-and-workspace-settings)|[Data security](#data-security)|[Endorsement, trust and reuse](#endorsement)|[Capacity metrics](#capacity-metrics)|
 |Domains|Purview Information Protection|Data lineage and impact analysis|Purview hub|
 |Workspaces|Securing Fabric items within a workspace|Use Purview to govern data across the organization|Admin monitoring|
 |Capacities|Securing data with Fabric items|||
@@ -79,9 +79,7 @@ And that leakage of sensitive data are detected and alerted
 The first phase of any data protection strategy is to identify where your private data sits.  This is considered one of the most challenging but important steps to make sure you can protect your data at the source. Manually identifying this is an inhumane task and can be quite ineffective. Fabric provides capabilities XXXXXX to do this..... 
 To help with this, Microsoft Purview provides capabilities to automatically identify where your private data sits. This can be done by automatically scanning your estate or users do have the ability to manually tag sensitive items.  
 
- 
-
-### Data security
+ ### Data security
 
 ### Purview Information Protection
 
