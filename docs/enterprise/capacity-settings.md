@@ -33,6 +33,8 @@ A capacity that was bought as part of a Power BI Premium subscription. These cap
 >[!NOTE]
 >Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
 
+Test1
+
 # [Power BI Embedded](#tab/power-bi-embedded)
 
 A capacity that was bought as part of a Power BI Embedded subscription. These capacities use a EM SKUs.
