@@ -60,16 +60,11 @@ Capacities are the compute resources used by all Fabric workloads. Based on orga
 
 **Guidance**: Split up capacities based on the requirements of the environment, e.g. development/test/acceptance/production (DTAP). This makes for better workload isolation and chargeback.
 
-### Metadata scanning
+### Metadata scanning (DONE)
 
-NO GUIDANCE, ALL DESCRIPTION
-Metadata information, or "data about your data", is crucial to understanding your data and using it effectively.
-
-Metadata scanning facilitates governance of your organization's Microsoft Fabric data by making it possible for cataloging tools to catalog and report on the metadata of all your organization's Fabric items. It accomplishes this using a set of Admin REST APIs that are collectively known as the *scanner APIs*. The scanner APIs extract metadata such as item name, ID, sensitivity, endorsement status, etc. The scanner APIs help external tools or third-party tooling to collect metadata information from Fabric.
+Metadata scanning facilitates governance of your organization's Microsoft Fabric data by making it possible for cataloging tools to catalog and report on the metadata of all your organization's Fabric items. It accomplishes this using a set of Admin REST APIs that are collectively known as the *scanner APIs*. The scanner APIs extract metadata such as item name, ID, sensitivity, endorsement status, etc.
 
 For more information, see [Metadata scanning](./metadata-scanning-overview.md).
-
-Guidance: Scanner APIs help external tools or third-party tooling to collect metadata information from Fabric.
 
 ## Secure, protect, and comply
 
@@ -94,16 +89,19 @@ Information protection in Fabric enables you to discover, classify, and protect 
 
 For more information, see [Information Protection in Microsoft Fabric](./information-protection.md).
 
-DONE: Recommendation: Sensitivity labels from Micrsoft Purview Information Protection and their associated label policies should be specified at an organizational level and be valid for the whole organization.
+**Guidance**: Sensitivity labels from Micrsoft Purview Information Protection and their associated label policies should be specified at an organizational level and be valid for the whole organization.
 
-### Securing items in a workspace
+### Securing items in a workspace (DONE)
 
-DONE: Recommendation: Fabric administrators should decide, through specifying who can create workspaces, who can become a workspace administrator. These could be team leads in your organization, for example. These workspace administrators should then govern access to the items in their workspace by assigning appropriate workspace roles to users and consumers of the items.
+Organizational teams can have individual workspaces where different personas collaborate and work on generating content. Access to the items in the workspace is regulated via workspace roles assigned to users by the workspace admin.
 
-### Securing data in Fabric items
+**Guidance**: Fabric administrators should decide, through specifying who can create workspaces, who can become a workspace administrator. These could be team leads in your organization, for example. These workspace administrators should then govern access to the items in their workspace by assigning appropriate workspace roles to users and consumers of the items.
 
-DONE: Guidance: Individual teams are expected to apply additional controls at the item level.
+### Securing data in Fabric items (DONE)
 
+Along with the broad security that gets applied at the tenant or workspace level, there are additional data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, Synapse Data Warehouses in Fabric, and Direct Lake.
+
+**Guidance**: Individual teams are expected to apply these additional controls at the item and data level.
 
 ### Auditing
 
