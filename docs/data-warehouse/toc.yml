@@ -257,6 +257,8 @@ items:
     href: troubleshoot-synapse-data-warehouse.md
   - name: Limitations
     href: limitations.md      
+  - name: Change ownership of Warehouse
+    href: change-ownership.md
 - name: Reference
   items: 
   - name: T-SQL Reference for Fabric
