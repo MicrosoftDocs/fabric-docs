@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 03/05/2024
+ms.date: 03/24/2024
 ---
 
-# Feature usage and adoption report
+# Feature usage and adoption report (preview)
 
 The Feature Usage and Adoption report provides a comprehensive analysis of usage and adoption of different features in your Microsoft Fabric tenant. As a Fabric administrator, you can share this report with others in your organization. You can also share the report's semantic model, and use it to customize the report, or build a new report that relies on the same data.
 

@@ -23,6 +23,8 @@ items:
     href: throttling.md
   - name: Fabric operations    
     href: fabric-operations.md   
+  - name: Optimize your capacity
+    href: optimize-capacity.md
   - name: Metrics app
     items:
     - name: What is the Microsoft Fabric Capacity Metrics app?
