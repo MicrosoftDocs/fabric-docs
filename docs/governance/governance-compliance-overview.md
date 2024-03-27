@@ -10,17 +10,19 @@ ms.date: 01/23/2024
 
 # Governance and compliance in Microsoft Fabric
 
-Microsoft Fabric governance and compliance provides set of capabilities that help you know, protect, manage, and monitor your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in, others require 
+Microsoft Fabric governance and compliance provides set of capabilities that help you manage, protect, monitor, and improve the discoverabilitly of your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
+
+This article describes at a high level the main features and components that help you govern your organization's data estate, and includes some guidance with regard to taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
 
 |[Manage your data estate](#manage-your-data-estate)|[Secure, protect, and comply](#secure-protect-and-comply)|[Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use)|[Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act)|
 |:----|:----|:----|:----|
 |[Admin portal](#admin-portal)|[Privacy](#privacy)|[OneLake data hub](#onelake-data-hub)|[Monitoring hub](#monitoring-hub)|
 |[Tenant, domain, and workspace setttings](#tenant-domain-and-workspace-settings)|[Data security](#data-security)|[Endorsement, trust and reuse](#endorsement)|[Capacity metrics](#capacity-metrics)|
-|Domains|Purview Information Protection|Data lineage and impact analysis|Purview hub|
-|Workspaces|Securing Fabric items within a workspace|Use Purview to govern data across the organization|Admin monitoring|
-|Capacities|Securing data with Fabric items|||
-|Metadata scanning|Audit logs|||
-
+|[Domains](#domains)|[Purview Information Protection](#purview-information-protection)*|[Data lineage and impact analysis](#data-lineage-and-impact-analysis)|[Purview hub](#purview-hub)|
+|[Workspaces](#workspaces)|[Securing Fabric items within a workspace](#securing-items-in-a-workspace)|[Purview for governance across the org](#purview-for-governance-across-the-org)*|[Admin monitoring](#admin-monitoring)|
+|[Capacities](#certifications)|[Securing data in Fabric items](#securing-data-in-fabric-items)|||
+|[Metadata scanning](#metadata-scanning)|[Auditing](#auditing)|||
+* Requires additional licensing
 
 ## Manage your data estate
 
@@ -38,7 +40,8 @@ Administrators on the tenant, domain, and workspace levels have controls to set 
 
 **Guidance**: The Fabric admins define tenant-wide settings, and the domain admins are expected to override the settings as needed. Individual teams (workspace owners) are expected to define their own more granular workspace-level controls and settings. 
 
-### Domains (DONE)
+### Domains
+DONE
 
 Domains are a way of logically grouping together all the data in an organization that is relevant to particular areas or fields, for example, by business unit. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
 
@@ -48,19 +51,22 @@ For more information, see [Domains](./domains.md).
 
 **Guidance**: Business and enterprise architects should design the organization's domain setup, while Fabric admins should implement this design by creating domains and subdomains and assigning domain owners. Preferably, center of excellence (COE) teams should be part of this discussion to align the domains with the overall strategy of the organization.
 
-### Workspaces (DONE)
+### Workspaces
+DONE
 
 Teams in organizations use workspaces to create Fabric items and collaborate with each other. These workspaces can be assigned to teams or departments based on governance requirements and data boundaries. How exactly workspace assignment is done depends on internal team struture and how the teams want to handle their Fabric items (e.g. do they need one or many workspaces).
 
 **Guidance**: For development purposes, a best practice is to have isolated workspaces per developer, so that they can work on their own without interfering with the shared workspace. Fabric admins are expected to define who has permission to create workspaces. Workspace admins are expected to define Spark environments that can be reused by users.
 
-### Capacities (DONE)
+### Capacities
+DONE
 
 Capacities are the compute resources used by all Fabric workloads. Based on organizational requirements, capacities can be used as isolation boundaries for compute, chargebacks etc.
 
 **Guidance**: Split up capacities based on the requirements of the environment, e.g. development/test/acceptance/production (DTAP). This makes for better workload isolation and chargeback.
 
-### Metadata scanning (DONE)
+### Metadata scanning
+DONE
 
 Metadata scanning facilitates governance of your organization's Microsoft Fabric data by making it possible for cataloging tools to catalog and report on the metadata of all your organization's Fabric items. It accomplishes this using a set of Admin REST APIs that are collectively known as the *scanner APIs*. The scanner APIs extract metadata such as item name, ID, sensitivity, endorsement status, etc.
 
@@ -89,13 +95,15 @@ For more information, see [Information Protection in Microsoft Fabric](./informa
 
 **Guidance**: Sensitivity labels from Micrsoft Purview Information Protection and their associated label policies should be specified at an organizational level and be valid for the whole organization.
 
-### Securing items in a workspace (DONE)
+### Securing items in a workspace
+DONE
 
 Organizational teams can have individual workspaces where different personas collaborate and work on generating content. Access to the items in the workspace is regulated via workspace roles assigned to users by the workspace admin.
 
 **Guidance**: Fabric administrators should decide, through specifying who can create workspaces, who can become a workspace administrator. These could be team leads in your organization, for example. These workspace administrators should then govern access to the items in their workspace by assigning appropriate workspace roles to users and consumers of the items.
 
-### Securing data in Fabric items (DONE)
+### Securing data in Fabric items
+DONE
 
 Along with the broad security that gets applied at the tenant or workspace level, there are additional data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, Synapse Data Warehouses in Fabric, and Direct Lake.
 
@@ -106,6 +114,11 @@ Along with the broad security that gets applied at the tenant or workspace level
 To mitigate the risks of unauthorized access and use of your Fabric data, Fabric administrators and compliance teams in your organizations track and investigate user activity on Fabric items using Purview Audit. Many companies also need these audit logs for regulatory requirements which mandate storing audit logs for forensic investigation and potential data regulation violations. Microsoft Fabric provides item-level audits recoreding all activities on items in the audit logs that can be investigated in Purview Audit, which is available in the Purview compliance portal. Security teams and CISO teams can use these audit logs for monitoring and follow up actions.
 
 Statement: Recommendation: Fabric item-level audits are logged in purview audits and can be used for analysis. Security teams / CISO teams can use these audit logs for monitoring and follow up actions. 
+
+### Certifications
+DONE
+
+Microsoft Fabric has HIPPA BAA, ISO/IEC 27017, ISO/IEC 27018, ISO/IEC 27001, and ISO/IEC 27701 compliance certifications. To learn more, see [Fabric compliance offerings](https://powerbi.microsoft.com/blog/microsoft-fabric-is-now-hipaa-compliant/).
 
 ## Encourage data discovery, trust, and use
 
