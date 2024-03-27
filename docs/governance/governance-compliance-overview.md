@@ -10,14 +10,14 @@ ms.date: 03/26/2024
 
 # Governance overview and guidance
 
-Microsoft Fabric governance and compliance provides set of capabilities that help you manage, protect, monitor, and improve the discoverabilitly of your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
+Microsoft Fabric governance and compliance provides set of capabilities that help you manage, protect, monitor, and improve the discoverability of your organization's sensitive information, so as to gain and maintain customer trust and to meet data governance and compliance requirements and regulations. Many of these capabilities are built in and included with your Microsoft Fabric license, while some others require additional licensing from Microsoft Purview.
 
-This article describes at a high level the main features and components that help you govern your organization's data estate, and includes some guidance with regard to taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
+This article describes at a high level the main features and components that help you govern your organization's data estate, and includes some guidance regarding taking advantage of the capabilities these features and components offer. It also provides links to more detailed information about each feature and component.
 
 |[Manage your data estate](#manage-your-data-estate)|[Secure, protect, and comply](#secure-protect-and-comply)|[Encourage data discovery, trust, and use](#encourage-data-discovery-trust-and-use)|[Monitor, uncover, get insights, and act](#monitor-uncover-get-insights-and-act)|
 |:----|:----|:----|:----|
 |[Admin portal](#admin-portal)|[Privacy](#privacy)|[OneLake data hub](#onelake-data-hub)|[Monitoring hub](#monitoring-hub)|
-|[Tenant, domain, and workspace setttings](#tenant-domain-and-workspace-settings)|[Data security](#data-security)|[Endorsement, trust and reuse](#endorsement)|[Capacity metrics](#capacity-metrics)|
+|[Tenant, domain, and workspace settings](#tenant-domain-and-workspace-settings)|[Data security](#data-security)|[Endorsement, trust, and reuse](#endorsement)|[Capacity metrics](#capacity-metrics)|
 |[Domains](#domains)|[Purview Information Protection](#purview-information-protection)*|[Data lineage and impact analysis](#data-lineage-and-impact-analysis)|[Purview hub](#purview-hub)|
 |[Workspaces](#workspaces)|[Securing Fabric items within a workspace](#securing-items-in-a-workspace)|[Purview for governance across the org](#purview-for-governance-across-the-org)*|[Admin monitoring](#admin-monitoring)|
 |[Capacities](#certifications)|[Securing data in Fabric items](#securing-data-in-fabric-items)|||
@@ -54,7 +54,7 @@ For more information, see [Domains](./domains.md).
 
 ### Workspaces
 
-Teams in organizations use workspaces to create Fabric items and collaborate with each other. These workspaces can be assigned to teams or departments based on governance requirements and data boundaries. How exactly workspace assignment is done depends on internal team struture and how the teams want to handle their Fabric items (e.g. do they need one or many workspaces).
+Teams in organizations use workspaces to create Fabric items and collaborate with each other. These workspaces can be assigned to teams or departments based on governance requirements and data boundaries. How exactly workspace assignment is done depends on internal team structure and how the teams want to handle their Fabric items (for example, do they need one or many workspaces).
 
 **Guidance**: For development purposes, a best practice is to have isolated workspaces per developer, so that they can work on their own without interfering with the shared workspace. Fabric admins are expected to define who has permission to create workspaces. Workspace admins are expected to define Spark environments that can be reused by users.
 
@@ -62,7 +62,7 @@ Teams in organizations use workspaces to create Fabric items and collaborate wit
 
 Capacities are the compute resources used by all Fabric workloads. Based on organizational requirements, capacities can be used as isolation boundaries for compute, chargebacks etc.
 
-**Guidance**: Split up capacities based on the requirements of the environment, e.g. development/test/acceptance/production (DTAP). This makes for better workload isolation and chargeback.
+**Guidance**: Split up capacities based on the requirements of the environment, for example, development/test/acceptance/production (DTAP). This makes for better workload isolation and chargeback.
 
 ### Metadata scanning
 
@@ -72,7 +72,7 @@ For more information, see [Metadata scanning](./metadata-scanning-overview.md).
 
 ## Secure, protect, and comply
 
-Data security and having a compliant data platform are important for making sure that your data stays safe and is not compromised. For details about network security, access control, and encryption, see the [Security overview](../security/security-overview.md)
+Data security and having a compliant data platform are important for making sure that your data stays safe and is not compromised. For details about network security, access control, and encryption, see the [Security overview](../security/security-overview.md).
 
 Fabric leverages Microsoft Purview for protecting sensitive data and helping ensure compliance with data privacy regulations and requirements.
 
@@ -82,7 +82,7 @@ The first phase of any data protection strategy is to identify where your privat
 
 ### Data security
 
-To make sure data in Fabric is secure from unauthorized access and stays compliant wtih data privacy requirements, you can leverage sensitivity labels from Microsoft Purview Information Protection in combination with built-in Fabric capabilities to manually or automatically tag your organization's data. Purview Audit then captures audit trails on activities performed in Fabric.  This includes capturing user activities in the Fabric tenant, such as Lakehouse access, Power BI access, Spark activities, data factory activities, logins, etc.
+To make sure data in Fabric is secure from unauthorized access and stays compliant with data privacy requirements, you can use sensitivity labels from Microsoft Purview Information Protection in combination with built-in Fabric capabilities to manually or automatically tag your organization's data. Purview Audit then captures audit trails on activities performed in Fabric. This includes capturing user activities in the Fabric tenant, such as Lakehouse access, Power BI access, Spark activities, data factory activities, logins, etc.
 
 ### Purview Information Protection
 
@@ -90,7 +90,7 @@ Information protection in Fabric enables you to discover, classify, and protect 
 
 For more information, see [Information Protection in Microsoft Fabric](./information-protection.md).
 
-**Guidance**: Sensitivity labels from Micrsoft Purview Information Protection and their associated label policies should be specified at an organizational level and be valid for the whole organization.
+**Guidance**: Sensitivity labels from Microsoft Purview Information Protection and their associated label policies should be specified at an organizational level and be valid for the whole organization.
 
 ### Securing items in a workspace
 
@@ -100,7 +100,7 @@ Organizational teams can have individual workspaces where different personas col
 
 ### Securing data in Fabric items
 
-Along with the broad security that gets applied at the tenant or workspace level, there are additional data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, Synapse Data Warehouses in Fabric, and Direct Lake.
+Along with the broad security that gets applied at the tenant or workspace level, there are other data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, Synapse Data Warehouses in Fabric, and Direct Lake.
 
 **Guidance**: Individual teams are expected to apply these additional controls at the item and data level.
 
@@ -128,11 +128,11 @@ For more information, see [Discover data items in the OneLake data hub](../get-s
 
 ### Endorsement
 
-Endorsement is a way to make trustworthy, quality data more discoverable. Organizations often have large numbers of Microsoft Fabric items - data, processes and content -  available for sharing and reuse by their Fabric users. Endorsement helps users identify and find the trustworthy high-quality items they need. With endorsement, item owners can promote their quality items, and organizations can certify items that meet their quality standards. Endorsed items are then clearly labeled, both in Fabric and in other places where users look for Fabric items. Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists. In the [Microsoft Purview hub](./use-microsoft-purview-hub.md), admins can get insights about their organization's endorsed items in order to better drive users to quality content. 
+Endorsement is a way to make trustworthy, quality data more discoverable. Organizations often have large numbers of Microsoft Fabric items - data, processes, and content -  available for sharing and reuse by their Fabric users. Endorsement helps users identify and find the trustworthy high-quality items they need. With endorsement, item owners can promote their quality items, and organizations can certify items that meet their quality standards. Endorsed items are then clearly labeled, both in Fabric and in other places where users look for Fabric items. Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists. In the [Microsoft Purview hub](./use-microsoft-purview-hub.md), admins can get insights about their organization's endorsed items in order to better drive users to quality content. 
 
 For more information, see [Endorsement](./endorsement-overview.md).
 
-**Guidance**: Certification enablement should be delegated to domain admins, and the domain admins should authorize data owners and producers to be able to certify the items they create. The data owners and producers should then always certify their items which have been tested and are ready for use by other teams. This helps separate low-quality, non-trusted items from trusted, ready-to-use assets. It also makes these trusted assets easier to find. In addition, data consumers should be educated about how to find trusted assets, and encouraged to use only certified items in their reports and other downstream processing.
+**Guidance**: Certification enablement should be delegated to domain admins, and the domain admins should authorize data owners and producers to be able to certify the items they create. The data owners and producers should then always certify their items that have been tested and are ready for use by other teams. This helps separate low-quality, nontrusted items from trusted, ready-to-use assets. It also makes these trusted assets easier to find. In addition, data consumers should be educated about how to find trusted assets, and encouraged to use only certified items in their reports and other downstream processing.
 
 ### Data lineage and impact analysis
 
@@ -144,27 +144,27 @@ For more information, see [Lineage](./lineage.md) and [Impact analysis](./impact
 
 ### Purview for governance across the org
 
-Microsoft Purview offers solutions for protecting and governing data across an organization's entire data estate. The integration between Purview and Fabric makes it possible to use some of Purview's capabilities to govern and monitor your Fabric data in the context of your organizations's entire data estates.
+Microsoft Purview offers solutions for protecting and governing data across an organization's entire data estate. The integration between Purview and Fabric makes it possible to use some of Purview's capabilities to govern and monitor your Fabric data in the context of your organization's entire data estates.
 
 The data governance capabilities offered on Fabric via Purview's [live view](/purview/live-view) (preview) are described in the following sections.
 
 #### Data curation
 
-Data curation in your organization involves gathering metadata information, lineage information, and others from all sources that your organization uses. These could be on-premises, third-party clouds, third-party products and services, or CRM systems to name a few. This extraction process is also referred to as scanning in Purview. All information is retrieved using built-in scanners in Purview which scan your organization’s data estate to collect this information. In Purview this is executed by Data Map.
+Data curation in your organization involves gathering metadata information, lineage information, and others from all sources that your organization uses. These could be on-premises, third-party clouds, third-party products and services, or CRM systems to name a few. This extraction process is also referred to as scanning in Purview. All information is retrieved using built-in scanners in Purview that scan your organization’s data estate to collect this information. In Purview this is executed by Data Map.
 
 #### Data Map
 
-Purview has a scanning engine which can scan and fetch metadata from disparate sources and populate Purview's data map. Purview exposes this metadata via Atlas APIs so that it can be consumed by external services or ISVs. Data Map also interacts with Fabric and gets its metadata populated internally, so that business users can search, find, and use these data products to build their insights. Currently, data consumers can look at all Fabric workspaces they have viewer access to. This is known as [live view](/purview/live-view). On top of this, manual scans can be executed on all Fabric Items from Purview, where item level metadata is picked and made available for use in Purview. Currently you can have lineage on an item level.
+Purview has a scanning engine that can scan and fetch metadata from disparate sources and populate Purview's data map. Purview exposes this metadata via Atlas APIs so that it can be consumed by external services or ISVs. Data Map also interacts with Fabric and gets its metadata populated internally, so that business users can search, find, and use these data products to build their insights. Currently, data consumers can look at all Fabric workspaces they have viewer access to. This is known as [live view](/purview/live-view). On top of this, manual scans can be executed on all Fabric Items from Purview, where item level metadata is picked and made available for use in Purview. Currently you can have lineage on an item level.
 
 #### Data discovery in Purview
 
-Data consumers who work with your data should be able to search and find the relevant data. Purview helps here by providing concepts of domains. Business-friendly terminology and groupings make it more relevant and easier to search for data which teams are interested in, based on terms which they are familiar with. This also blends well with the data mesh architectural pattern. Data catalog is the application layer in Purview that helps teams search for data.
+Data consumers who work with your data should be able to search and find the relevant data. Purview helps here by providing concepts of domains. Business-friendly terminology and groupings make it more relevant and easier to search for data which teams are interested in, based on terms they're familiar with. This also blends well with the data mesh architectural pattern. Data catalog is the application layer in Purview that helps teams search for data.
 
-**Guidance**: Enterprise and business architecture teams should define domains and also the define a clear persona mapping between business and techinal players to make roles and responsibilities clear.
+**Guidance**: Enterprise and business architecture teams should define domains and also the define a clear persona mapping between business and technical players to make roles and responsibilities clear.
 
 #### Data Catalog in Purview
 
-Purview Data Catalog exposes the metadata captured from all sources feeding your data platform. With Data Catalog, customers can search for the data and items they are interested in working with without having to know which systems are holding your data. All metadata information of Fabric items is available inside Purview.
+Purview Data Catalog exposes the metadata captured from all sources feeding your data platform. With Data Catalog, customers can search for the data and items they're interested in working with without having to know which systems are holding your data. All metadata information of Fabric items is available inside Purview.
 
 ## Monitor, uncover, get insights, and act
 
@@ -174,13 +174,13 @@ Purview Data Catalog exposes the metadata captured from all sources feeding your
 
 ### Capacity metrics
 
-**Guidance**: Platform owners and those with platform administrator roles should be aware of this feature and use it to monitor usage and consumption. FOr more information, see [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md).
+**Guidance**: Platform owners and users with platform administrator roles should be aware of this feature and use it to monitor usage and consumption. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md).
 
 ### Purview hub
 
 Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and data owners manage and govern their Fabric data estate. For administrators and data owners, the hub offers reports that provide insights about their Fabric items, particularly with respect to sensitivity labeling and endorsement. The hub also serves as a gateway to more advanced Purview capabilities such as Information Protection, Data Loss Prevention, and Audit. For more information, see [Microsoft Purview hub](./use-microsoft-purview-hub.md).
 
-**Guidance**: Data stewards and owners should be made aware of the Fabric's Purview hub and what it provides in terms of getting insights about your organizations sentive and endoresed data.
+**Guidance**: Data stewards and owners should be made aware of the Fabric's Purview hub and what it provides in terms of getting insights about your organization's sensitive and endorsed data.
 
 ### Admin monitoring
 
