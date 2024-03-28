@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/11/2023
+ms.date: 03/29/2024
 ---
 
 # Microsoft Fabric trial
