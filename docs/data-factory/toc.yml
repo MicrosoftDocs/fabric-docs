@@ -137,7 +137,7 @@
         href: connector-azure-blob-storage-copy-activity.md
     - name: Azure AI Search
       items:
-      - name: Overview
+      - name: Azure AI Search - Overview
         href: connector-azure-search-overview.md
       - name: Configure in a data pipeline copy activity
         href: connector-azure-search-copy-activity.md

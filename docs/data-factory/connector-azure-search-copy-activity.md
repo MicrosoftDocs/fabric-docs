@@ -38,7 +38,7 @@ The following properties are **required**:
 
 - **Data store type**: Select **External**.
 - **Connection**:  Select an Azure AI Search connection from the connection list. If the connection doesn't exist, then create a new Azure AI Search connection by selecting **New**.
-- **Index name**: Select the index name.
+- **Index name**: Select the name of the search index. The service does not create the index. The index must exist in Azure AI Search.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -46,11 +46,12 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-azure-search/index-action.png" alt-text="Screenshot showing index action tab.":::
 
-  - **Merge**: If document exists, it will merge. If not exist, it will be uploaded as a new document.
+  - **Merge**: Combine all the columns in the new document with the existing one. If there is no existing document, the new document will be uploaded as a new one in the index.
 
-  - **Upload**: If document exists, all fields are replaced. If not exist, it will be uploaded as a new document.
+  - **Upload**: The new document replaces the existing one. If there is no existing document, the new document will be uploaded as a new one in the index.
 
-- **Write batch size**: Specify the number of rows to insert into the SQL table per batch. The allowed value is integer (number of rows). By default, the service dynamically determines the appropriate batch size based on the row size.
+- **Write batch size**: Data is uploaded into the search index when the buffer size reaches the specified write batch size. Allowed values are: integer 1 to 1,000, and the default value is 1000. <br>
+Azure AI Search service supports writing documents as a batch. A batch can contain 1 to 1,000 Actions. An action handles one document to perform the upload/merge operation.
 
 - **Max concurrent connections**: Specify the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
@@ -66,13 +67,15 @@ For **Settings** tab configuration, go to [Configure your other settings under s
 
 The following tables contain more information about the copy activity in Azure AI Search.
 
+### Destination information
+
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External**|Yes|/|
-|**Connection** |Your connection to the destination data store.|\<your connection >|Yes|connection|
-|**Index name**|The index name.| \<name of your index\> |Yes |indexName|
+|**Connection** |Your connection to the destination data store.|\< your Azure AI Search connection >|Yes|connection|
+|**Index name**|The name of the search index. The service does not create the index. The index must exist in Azure AI Search.| \< your search index name > |Yes |indexName|
 |**Index action**|Specify whether to merge or replace when a document already exists in the index. <br>Allowed values are: **Merge** (default), and **Upload**.|• Merge<br>• Upload|Yes|indexAction:<br>• merge<br>• upload |
-|**Write batch size**|Support writing documents as a batch. A batch can contain 1 to 1,000 Actions. An action handles one document.|\<number of rows><br>(integer) |Yes|writeBatchSize|
+|**Write batch size**|Data is uploaded into the search index when the buffer size reaches the specified write batch size.|Integer 1 to 1,000<br> Default is 1000|Yes|writeBatchSize|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run.|\<upper limit of concurrent connections><br>(integer)|No |maxConcurrentConnections|
 
 ## Related content
