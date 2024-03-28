@@ -413,7 +413,7 @@
         href: connector-mongodb-atlas-sql.md
     - name: MySQL database
       items:
-      - name: Overview
+      - name: MySQL database - Overview
         href: connector-mysql-database-overview.md
       - name: Set up your connection
         href: connector-mysql-database.md
