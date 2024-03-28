@@ -146,6 +146,46 @@ You can create reports on top of the default semantic models and custom semantic
 
 You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL database. The steps to create the managed shortcut with trusted workspace access remain the same.
 
+## Create a data pipeline to a storage account with trusted workspace access
+
+With the workspace identity configured in Fabric and trusted access enabled in your ADLS Gen2 storage account, you can create data pipelines to access your data from Fabric. You can create a new data pipeline to copy data into a Fabric lakehouse and then you can start analyzing your data with Spark, SQL, and Power BI.
+
+### Prerequisites
+ * A Fabric workspace associated with a Fabric capacity. See [Workspace identity](./workspace-identity.md).
+* Create a workspace identity associated with the Fabric workspace.
+* The user account or service principal used for creating the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope.
+* Configure a [resource instance rule](#resource-instance-rule) for the storage account.
+
+Steps
+
+1. Start by selecting **Get Data** in a lakehouse.
+
+1. Select **New data pipeline**. Provide a name for the pipeline and then select **Create**.
+
+    :::image type="content" source="./media/security-trusted-workspace-access/create-new-data-pipeline-dialog.png" alt-text="Screenshot showing the New pipeline dialog.":::
+
+1. Choose **Azure Data Lake Gen 2** as the data source.
+
+    :::image type="content" source="./media/security-trusted-workspace-access/select-azure-data-lake-gen2-data-source.png" alt-text="Screenshot showing choosing Azure Data Lake Gen 2 selection.":::
+
+1. Provide the URL of the storage account that has been configured with trusted workspace access, and choose a name for the connection. For **Authentication kind**, choose *Organizational account* or *Service Principal*.
+
+    :::image type="content" source="./media/security-trusted-workspace-access/connection-settings.png" alt-text="Screenshot showing connection settings for the data source.":::
+
+    When done, select **Next**.
+
+1. Select the file that you need to copy into the lakehouse.
+
+   :::image type="content" source="./media/security-trusted-workspace-access/file-selection.png" alt-text="Screenshot showing file selection.png":::
+
+    When done, select **Next**.
+
+1. On the **Review + save** screen, select **Start data transfer immediately**. When done, select **Save + Run**.
+
+   :::image type="content" source="./media/security-trusted-workspace-access/review-save.png" alt-text="Screenshot showing the review-and-save-screen.png":::
+
+1. When the pipeline status changes from *Queued* to *Succeeded*, go to the lakehouse and verify that the data tables were created.
+
 ### Restrictions and Considerations
 
 * Trusted workspace access is only supported for workspaces in Fabric capacities (F64 or higher).
