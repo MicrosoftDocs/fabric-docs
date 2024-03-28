@@ -16,7 +16,7 @@ In Fabric, you can configure and use an endpoint that allows your organization t
 The steps that allow you to securely access Fabric from private endpoints are:
 
 1. [Set up private endpoints for Fabric](#step-1-set-up-private-endpoints-for-fabric).
-2. [Create a Microsoft.PowerBI private link services for Power BI resource in the Azure portal](#step-2-create-a-microsoft.powerbi-private-link-services-for-power-bi-resource-in-the-azure-portal).
+2. [Create a Microsoft.PowerBI private link services for Power BI resource in the Azure portal](#step-2-step-2-create-a-microsoftpowerbi-private-link-services-for-power-bi-resource-in-the-azure-portal).
 3. [Create a virtual network](#step-3-create-a-virtual-network).
 4. [Create a virtual machine (VM)](#step-4-create-a-virtual-machine).
 5. [Create a private endpoint](#step-5-create-a-private-endpoint).
