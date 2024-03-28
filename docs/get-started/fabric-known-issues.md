@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 03/20/2024
+ms.date: 03/27/2024
 ms.custom:
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  660  | OneLake | [Exporting semantic model data to OneLake fails due to unicode characters](known-issues/known-issue-660-exporting-semantic-model-data-onelake-fails-unicode-characters.md) | March 28, 2024 |
+|  658  | Data Engineering | [PySpark import statements fail for .jar files installed through environment](known-issues/known-issue-658-pyspark-import-statements-fail-jar-files-installed.md) | March 28, 2024 |
+|  657  | OneLake | [Cross-region internal shortcuts don't work with SQL analytics endpoints](known-issues/known-issue-657-cross-region-internal-shortcuts-dont-work-sql-analytics-endpoints.md) | March 28, 2024 |
 |  647  | Data Engineering | [Library management updates with public python libraries time-out](known-issues/known-issue-647-library-management-updates-public-python-libraries-time-out.md) | March 14, 2024 |
 |  642  | Data Engineering | [Load Table public API response returns error](known-issues/known-issue-642-load-table-public-api-response-returns-error.md) | March 5, 2024 |
 |  641  | Power BI | [Visuals using the Denodo connector might show connection errors](known-issues/known-issue-641-visuals-using-denodo-connector-might-show-connection-errors.md) | March 5, 2024 |
@@ -53,7 +56,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
-|  650  | Data Factory | [ParquetSharpNative error in dataflow refresh using a gateway](known-issues/known-issue-650-parquetsharpnative-error-dataflow-refresh-using-gateway.md) | March 14, 2024 | Fixed: March 20, 2024
+|  650  | Data Factory | [ParquetSharpNative error in dataflow refresh using a gateway](known-issues/known-issue-650-parquetsharpnative-error-dataflow-refresh-using-gateway.md) | March 14, 2024 | Fixed: March 20, 2024 |
 |  624  | Administration & Management | [Tighter throttling limit for GetDatasourcesAsAdmin Admin API](known-issues/known-issue-624-tighter-throttling-limit-getdatasourcesasadmin-admin-api.md) | February 14, 2024 | Fixed: March 14, 2024 |
 |  585  | Data Activator | [Reflex item creation fails due to a token creation failure](known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md)  | December 15, 2023 | Fixed: February 27, 2024 |
 |  570  | Power BI |  [Version 17 of the Fabric Capacity Metrics app doesn't work](known-issues/known-issue-570-version-17-capacity-metrics-app-does-not-work.md)    | November 30, 2023 | Fixed: February 16, 2024 |
