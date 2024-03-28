@@ -1,7 +1,7 @@
 ---
 title: Data Access Control Model in OneLake (Public Preview)
-description: TBD
-ms.reviewer: eloldag
+description: Learn the details of how OneLake secures data.
+ms.reviewer: aamerril
 ms.author: yuturchi
 author: yuturchi
 ms.topic: conceptual
@@ -233,10 +233,6 @@ Files/
 
 Workspace and Item permissions let you grant "coarse-grain" access to data in OneLake for the given Item. OneLake RBAC permissions enable you to restrict the data access in OneLake only to specific folders.
 
-<!--
-The Mermaid diagram generated from the following file code:
-.\media\mermaids\rbac-evaluation-with-fabric.mmd
--->
 :::image type="content" source=".\media\mermaids\rbac-evaluation-with-fabric.svg" alt-text="Diagram showing the order of permissions evaluations with workspace, item, and RBAC.":::
 
 ## OneLake RBAC and Workspace permissions
@@ -328,10 +324,10 @@ The next table specifies whether the corresponding shortcut scenario is supporte
 
 | Internal Shortcut scenario | OneLake RBAC permissions supported? | Comments |
 | ---- | ---- | --- |
-| 1. Shortcut in a lakehouse1 pointing to folder2 located in the **same lakehouse**. | Supported. | To restrict the access to data in shortcut, define OneLake RBAC for folder2. |
-| 2. Shortcut in a lakehouse1 pointing to folder2 located in **another lakehouse2** | Supported. | To restrict the access to data in shortcut, define OneLake RBAC for folder2 in lakehouse2. |
-| 3. Shortcut in a lakehouse pointing to a Table located in a **datawarehouse** | Not supported. | OneLake doesn't support defining RBAC permissions in datawarehouses. Access is determined based on the ReadAll permission instead.|
-| 4. Shortcut in a lakehouse pointing to a Table located in a **KQL database** | Not supported. | OneLake doesn't support defining RBAC permissions in KQL databases. Access is determined based on the ReadAll permission instead.|
+| Shortcut in a lakehouse1 pointing to folder2 located in the **same lakehouse**. | Supported. | To restrict the access to data in shortcut, define OneLake RBAC for folder2. |
+| Shortcut in a lakehouse1 pointing to folder2 located in **another lakehouse2** | Supported. | To restrict the access to data in shortcut, define OneLake RBAC for folder2 in lakehouse2. |
+| Shortcut in a lakehouse pointing to a Table located in a **datawarehouse** | Not supported. | OneLake doesn't support defining RBAC permissions in datawarehouses. Access is determined based on the ReadAll permission instead.|
+| Shortcut in a lakehouse pointing to a Table located in a **KQL database** | Not supported. | OneLake doesn't support defining RBAC permissions in KQL databases. Access is determined based on the ReadAll permission instead.|
 
 ### OneLake RBAC in External Shortcuts (ADLS, S3, Dataverse)
 

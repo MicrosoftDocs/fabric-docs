@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 11/15/2023
 ---
 
-# How-to secure a lakehouse for Data Science teams
+# How to secure a lakehouse for Data Science teams
 
 ## Introduction
 

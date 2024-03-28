@@ -1,6 +1,6 @@
 ---
 title: Best practices for OneLake security
-description: Best practices for securing your data in OneLake
+description: Best practices for securing your data in OneLake.
 ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
@@ -18,9 +18,9 @@ In this article, we'll look at best practices around securing data in OneLake. F
 
 Least privilege access is a fundamental security principle in computer science that advocates for restricting users' permissions and access rights to only those permissions necessary to perform their tasks. For OneLake, this means assigning permissions at the appropriate level to ensure that users aren't over-provisioned and reduce risk.
 
-1. If users only need access to a single lakehouse or data item, use the share feature to grant them access to only that item. Assigning a user to a workspace role should only be used if that user needs to see ALL items in that workspace.
+- If users only need access to a single lakehouse or data item, use the share feature to grant them access to only that item. Assigning a user to a workspace role should only be used if that user needs to see ALL items in that workspace.
 
-2. Use [OneLake data access roles (preview)](../security/get-started-security.md) to restrict access to folders and tables within a lakehouse for access through OneLake APIs or Spark notebooks. This feature allows for access to be given to only select items in a lakehouse.
+- Use [OneLake data access roles (preview)](../security/get-started-security.md) to restrict access to folders and tables within a lakehouse for access through OneLake APIs or Spark notebooks. This feature allows for access to be given to only select items in a lakehouse.
 
 ## Secure by experience
 

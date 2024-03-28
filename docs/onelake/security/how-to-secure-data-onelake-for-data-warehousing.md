@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 11/15/2023
 ---
 
-# How-to secure a lakehouse for Data Warehousing teams
+# How to secure a lakehouse for Data Warehousing teams
 
 ## Introduction
 
@@ -69,5 +69,5 @@ For lakehouses that are not yet using the [OneLake data access roles](./get-star
 - [OneLake data access roles (preview)](./get-started-data-access-roles.md)
 - [OneLake data access control model](./data-access-control-model.md)
 - [Workspace roles](../../get-started/roles-workspaces.md)
-- [How to secure data in OneLake for data science](./how-to-secure-data-in-onelake-for-data-science.md)
+- [How to secure data in OneLake for data science](./how-to-secure-data-onelake-for-data-science.md)
 - [Share items](../../get-started/share-items.md)
