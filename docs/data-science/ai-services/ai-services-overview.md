@@ -40,6 +40,7 @@ Fabric provides two options for utilizing Azure AI services:
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md). [SynapseML](how-to-use-openai-sdk-synapse.md)
 
 - GPT-35-turbo: GPT-3.5 models can understand and generate natural language or code. The most capable and cost effective model in the GPT-3.5 family is GPT-3.5 Turbo, which has been optimized for chat and works well for traditional completions tasks as well. The `gpt-35-turbo` model supports 4096 max input tokens and the `gpt-35-turbo-16k` model supports up to 16,384 tokens.
+- gpt-4 family: `gpt-4` is supported.
 - text-embedding-ada-002 (version 2), embedding model that can be used with embedding API requests. The maximum accepted request token is 8,191, and the returned vector has dimensions of 1,536.
 - text-davinci-003, a legacy model that can do any language task with better quality, longer output, and consistent instruction.
 - code-cushman-002, a legacy model that is optimized for code-completion tasks.
@@ -57,19 +58,12 @@ Fabric provides two options for utilizing Azure AI services:
 [REST API](how-to-use-text-translator.md), [SynapseML](how-to-use-text-translator.md)
 - Translate: Translates text.
 - Transliterate: Converts text in one language from one script to another script.
-- Detect: Identifies the language of a piece of text. 
-- BreakSentence: Identifies the positioning of sentence boundaries in a piece of text. 
-- Dictionary Lookup: Provides alternative translations for a word and a few idiomatic phrases.
-- Dictionary Examples: Provides examples that show how terms in the dictionary are used in context. 
-
 
 ## Available regions
 
 ### Available regions for Azure OpenAI Service
 
-To access the prebuilt [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), including the [Copilot in Fabric](../../get-started/copilot-fabric-overview.md), you must have a paid SKU (F64 or higher, or P1 or higher) with capacity available in the following [Fabric regions](../../admin/region-availability.md). The Azure OpenAI Service isn't available on trial SKUs.
-
-[Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) is powered by large language models that are currently only deployed to US datacenters (East US, East US2, South Central US, and West US) and France datacenter (France Central). If your data is outside the US or France, the feature is disabled by default unless your tenant admin enables **Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance** tenant setting. To learn how to get to the tenant settings, see [About tenant settings](../../admin/tenant-settings-index.md).
+For the list of Azure regions where prebuilt AI services in Fabric are now available, see the [Available regions](../../get-started/copilot-fabric-overview.md#available-regions) section of the article "Overview of Copilot in Fabric and Power BI (preview)."
 
 ### Available regions for Text Analytics and Azure AI Translator 
 Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/)  in Fabric are now available for public preview in the Azure regions listed in this article. If your Microsoft Fabric home region isn't listed, you can still create a Microsoft Fabric capacity in a region that is supported. For more information, see [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).

@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/07/2023
+ms.date: 03/10/2024
 ---
 
 # Fabric operations
@@ -53,6 +53,14 @@ This section is divided into Fabric experience. Each experience had a table that
 
 >[!IMPORTANT]
 >Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s [Release Notes](/fabric/release-plan/) or [Microsoft Fabric blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers might use the cancellation options available for the chosen payment method.
+
+### Copilot in Fabric
+
+[Copilot](../get-started/copilot-fabric-overview.md) operations are listed in this table. You can find the consumption rates for Copilot in [Copilot consumption](../get-started/copilot-fabric-consumption.md).
+
+| Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
+| ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
+| Copilot in Fabric                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot in Fabric CU | Background |
 
 ### Data Factory
 

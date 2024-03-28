@@ -13,9 +13,9 @@ ms.search.form: Reporting
 ---
 # Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
 
-This article describes three different scenarios you can follow to create reports in the Power BI service. 
+This article describes three different scenarios you can follow to create reports in the Power BI service.
 
 ## Create a report from the warehouse editor
 
@@ -57,7 +57,7 @@ The Data hub integration in Power BI Desktop lets you connect to the Warehouse o
 
 1. Use **Data hub** menu in the ribbon to get list of all items.
 1. Select the warehouse that you would like to connect
-1. From the drop down on **Connect** button, select **Connect to SQL endpoint**. 
+1. From the dropdown on **Connect** button, select **Connect to SQL endpoint**. 
 
    :::image type="content" source="media\reports-power-bi-service\data-hub-pbi-desktop.png" alt-text="Screenshot of the Data hub in Power BI Desktop." lightbox="media\reports-power-bi-service\data-hub-pbi-desktop.png":::
 

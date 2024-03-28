@@ -174,11 +174,9 @@ If this setting is off, only users in your organization can create and receive e
 > [!IMPORTANT]
 > The **Allow email subscriptions to be sent to external users users** switch will be automatically turned off if the **B2B guest users can set up and be subscribed to email subscriptions** switch is turned off. This is because B2B users are external users that have been granted elevated permissions to get content. Since B2B guest users have higher permissions than other external users, if they can't get the email subscription neither can the other external users.
 
-## Users can send email subscriptions to external users
+## Users can send email subscriptions to guest users
 
-This setting helps organizations choose whether external users can be included as recipients of email subscriptions.
-
-External users are users outside of the organization that haven't been added as Microsoft Entra B2B guest users. If this setting is turned off, an external user who isn't already a guest user in the organization can't be included as a recipient of an email subscription.
+Users can send email subscriptions to guest users. With this setting off, users in your organization can't subscribe guest users to subscription emails.
 
 ## Featured content
 
@@ -263,6 +261,10 @@ This setting is off by default for customers. If this setting is disabled, a gue
 As a Fabric admin, you can specify which users or user groups in your organization can share semantic models externally with guests from a different tenant through the in-place mechanism. Authorized guest users can then discover, connect to, and work with these shared semantic models in their own tenants.
 
 Disabling this setting prevents any user from sharing semantic models externally by blocking the ability of users to turn on external sharing for semantic models they own or manage.
+
+## Users can deliver reports to OneDrive and SharePoint in Power BI
+
+Users can deliver reports to OneDrive or SharePoint. If the **Users can set up subscriptions** setting is also turned on, users can use subscriptions to schedule delivery of these reports to OneDrive or SharePoint.
 
 ## Related content
 
