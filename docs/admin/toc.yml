@@ -60,6 +60,8 @@ items:
     href: organizational-visuals.md 
   - name: Manage Premium Per User
     href: service-admin-portal-premium-per-user.md
+  - name: Disable self-service sign-up
+    href: service-admin-disable-self-service.md
   - name: Manage users
     href: service-admin-portal-users.md
   - name: View audit logs

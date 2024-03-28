@@ -36,12 +36,18 @@ items:
       href: service-security-sensitivity-label-default-label-policy.md
     - name: Mandatory label policy
       href: service-security-sensitivity-label-mandatory-label-policy.md
+    - name: Sensitivity label support for paginated reports
+      href: service-security-sensitivity-label-paginated-reports.md
     - name: Programmatic labeling
       href: service-security-sensitivity-label-inheritance-set-remove-api.md
     - name: Downstream inheritance
       href: service-security-sensitivity-label-downstream-inheritance.md
     - name: Inheritance from data sources
       href: service-security-sensitivity-label-inheritance-from-data-sources.md
+    - name: Troubleshoot sensitivity labels
+      href: service-security-sensitivity-label-troubleshooting.md
+  - name: Microsoft Defender for Cloud Apps with Power BI
+  - href: service-security-using-defender-for-cloud-apps-controls.md
 - name: Endorsement
   href: endorsement-overview.md
 - name: Lineage
