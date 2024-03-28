@@ -12,7 +12,7 @@
     - name: Pricing in Data Factory
       items:
       - name: Pricing overview
-        href: pricing-overview.md 
+        href: pricing-overview.md
       - name: Pricing data pipelines
         href: pricing-pipelines.md
       - name: Pricing Dataflow Gen2
@@ -45,6 +45,8 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
+    - name: Create an Apache Airflow Project
+      href: create-apache-airflow-project.md
     - name: Operationalize Data Factory
       href: transform-data.md
     - name: Decide - Copy activity, dataflow, or Spark?
@@ -62,7 +64,7 @@
     - name: Migrate from ADF and Power BI
       href: upgrade-paths.md
     - name: Move queries from Dataflow Gen1 to Gen2
-      href: move-dataflow-gen1-to-dataflow-gen2.md      
+      href: move-dataflow-gen1-to-dataflow-gen2.md
     - name: How to ingest data from ADF to Fabric
       href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
   - name: Tutorials
@@ -92,13 +94,13 @@
       - name: Overview
         href: connector-access-database-overview.md
       - name: Set up your connection
-        href: connector-access-database.md    
+        href: connector-access-database.md
     - name: Amazon RDS for SQL Server
       items:
       - name: Overview
         href: connector-amazon-rds-for-sql-server-overview.md
       - name: Configure in data pipeline Copy activity
-        href: connector-amazon-rds-for-sql-server-copy-activity.md      
+        href: connector-amazon-rds-for-sql-server-copy-activity.md
     - name: Amazon Redshift
       items:
       - name: Overview
@@ -106,7 +108,7 @@
       - name: Set up your connection
         href: connector-amazon-redshift.md
       - name: Configure in a data pipeline copy activity
-        href: connector-amazon-redshift-copy-activity.md            
+        href: connector-amazon-redshift-copy-activity.md
     - name: Amazon S3
       items:
       - name: Overview
@@ -168,9 +170,9 @@
     - name: Azure Database for PostgreSQL
       items:
       - name: Overview
-        href: connector-azure-database-for-postgresql-overview.md   
+        href: connector-azure-database-for-postgresql-overview.md
       - name: Configure in a data pipeline Copy activity
-        href: connector-azure-database-for-postgresql-copy-activity.md 
+        href: connector-azure-database-for-postgresql-copy-activity.md
     - name: Azure Databricks
       items:
       - name: Overview
@@ -196,7 +198,7 @@
       - name: Overview
         href: connector-azure-sql-database-managed-instance-overview.md
       - name: Configure in data pipeline Copy activity
-        href: connector-azure-sql-database-managed-instance-copy-activity.md    
+        href: connector-azure-sql-database-managed-instance-copy-activity.md
     - name: Azure Synapse Analytics
       items:
       - name: Overview
@@ -242,9 +244,9 @@
       - name: Overview
         href: connector-dataverse-overview.md
       - name: Set up your connection
-        href: connector-dataverse.md 
+        href: connector-dataverse.md
       - name: Configure in a data pipeline Copy activity
-        href: connector-dataverse-copy-activity.md 
+        href: connector-dataverse-copy-activity.md
     - name: Data Warehouse
       items:
       - name: Overview
@@ -252,7 +254,7 @@
       - name: Set up your connection
         href: connector-data-warehouse.md
       - name: Configure in a data pipeline Copy activity
-        href: connector-data-warehouse-copy-activity.md 
+        href: connector-data-warehouse-copy-activity.md
     - name: Dynamics CRM
       items:
       - name: Overview
@@ -310,7 +312,7 @@
       - name: XML
         items:
         - name: Configure in Data pipeline
-          href: format-xml.md       
+          href: format-xml.md
     - name: FTP
       items:
       - name: Overview
@@ -330,7 +332,7 @@
       - name: Set up your connection
         href: connector-google-bigquery.md
     - name: Google Cloud Storage
-      items: 
+      items:
       - name: Overview
         href: connector-google-cloud-storage-overview.md
       - name: Set up your connection
@@ -424,7 +426,7 @@
       - name: Set up your connection
         href: connector-odata.md
       - name: Configure in a data pipeline Copy activity
-        href: connector-odata-copy-activity.md 
+        href: connector-odata-copy-activity.md
     - name: Odbc
       items:
       - name: Overview
@@ -444,7 +446,7 @@
       - name: Set up your connection
         href: connector-postgresql.md
       - name: Configure in a data pipeline Copy activity
-        href: connector-postgresql-copy-activity.md  
+        href: connector-postgresql-copy-activity.md
     - name: REST
       items:
       - name: Overview
@@ -452,7 +454,7 @@
       - name: Set up your connection
         href: connector-rest.md
       - name: Configure in a data pipeline Copy activity
-        href: connector-rest-copy-activity.md    
+        href: connector-rest-copy-activity.md
     - name: Salesforce objects
       items:
       - name: Overview
@@ -524,7 +526,7 @@
       - name: Set up your connection
         href: connector-sql-server-database.md
       - name: Configure in a data pipeline Copy activity
-        href: connector-sql-server-copy-activity.md  
+        href: connector-sql-server-copy-activity.md
     - name: Teradata database
       items:
       - name: Overview
@@ -556,7 +558,7 @@
       - name: Dataflow activity
         href: dataflow-activity.md
       - name: Deactivate an activity
-        href: deactivate-activity.md        
+        href: deactivate-activity.md
       - name: Delete data activity
         href: delete-data-activity.md
       - name: Fail Activity
@@ -602,7 +604,7 @@
     - name: Concepts
       items:
       - name: Monitor data pipeline runs
-        href: monitor-pipeline-runs.md          
+        href: monitor-pipeline-runs.md
       - name: Parameterization
         items:
         - name: Parameter usage
@@ -626,21 +628,21 @@
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
-        href: tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md    
+        href: tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md
       - name: Copy sample data into Lakehouse and transform with a dataflow
         href: tutorial-load-data-lakehouse-transform.md
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
         href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
       - name: Move data from Azure SQL DB into Lakehouse via copy assistant
         href: tutorial-move-data-lakehouse-copy-assistant.md
-      - name: Move data from Azure SQL DB to Lakehouse via pipeline 
-        href: tutorial-move-data-lakehouse-pipeline.md         
+      - name: Move data from Azure SQL DB to Lakehouse via pipeline
+        href: tutorial-move-data-lakehouse-pipeline.md
       - name: Load sample data to Data Warehouse
         href: tutorial-load-sample-data-to-data-warehouse.md
       - name: Incrementally load data from Data Warehouse to Lakehouse
-        href: tutorial-incremental-copy-data-warehouse-lakehouse.md        
+        href: tutorial-incremental-copy-data-warehouse-lakehouse.md
       - name: Load data to Lakehouse using partition
-        href: tutorial-lakehouse-partition.md  
+        href: tutorial-lakehouse-partition.md
   - name: Dataflows
     items:
     - name: Concepts
@@ -664,7 +666,7 @@
       - name: How to obfuscate data
         href: data-obfuscation-with-delphix.md
     - name: Tutorials
-      items:  
+      items:
       - name: Use a dataflow in a pipeline
         href: tutorial-dataflows-gen2-pipeline-activity.md
       - name: Pattern to incrementally amass data with Dataflow Gen2
@@ -688,7 +690,7 @@
       - name: Azure Data Explorer
         href: connector-troubleshoot-azure-data-explorer.md
       - name: Azure Database for PostgreSQL
-        href: connector-troubleshoot-azure-database-for-postgresql.md        
+        href: connector-troubleshoot-azure-database-for-postgresql.md
       - name: Azure Table Storage
         href: connector-troubleshoot-azure-table-storage.md
       - name: Format
@@ -698,7 +700,7 @@
         - name: XML
           href: connector-troubleshoot-xml.md
       - name: Rest
-        href: connector-troubleshoot-rest.md        
+        href: connector-troubleshoot-rest.md
       - name: Sharepoint Online list
         href: connector-troubleshoot-sharepoint-online-list.md
     - name: Data Factory limitations
