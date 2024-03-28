@@ -673,6 +673,14 @@
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
     - name: Fabric Dataflows for ADF Mapping Data Flow users
       href: guide-to-dataflows-for-mapping-data-flow-users.md
+  - name: Workflow Orchestration Manager
+    items:
+      - name: Concepts
+        items:
+          - name: Sync GitHub repository
+          - href: airflow-git-sync.md
+      - name: How-to
+      - name: Tutorials
   - name: FAQ and Troubleshooting
     items:
     - name: Frequently asked questions

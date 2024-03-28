@@ -26,7 +26,7 @@ This tutorial provides step-by-step instructions to create an Apache Airflow Pro
 
    :::image type="content" source="media/workflow-orchestration-manager/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
-### Step 2: Configure the Apache Airflow Project
+### Step 2: Create an Apache Airflow Project
 
 1. [Create a new workspace](~/docs/get-started/create-workspaces.md).
 2. Expand + New -> Click on More Options -> Under Data Factory -> Select Apache Airflow Project (preview)
@@ -37,10 +37,31 @@ This tutorial provides step-by-step instructions to create an Apache Airflow Pro
 
    :::image type="content" source="media/workflow-orchestration-manager/name-airflow-project.png" alt-text="Screenshot to name Apache Airflow Project.":::
 
-4. Click on Start Apache Airflow Environment to configure the Airflow Runtime. (It should take about 5 mins for the configuration).
+### Step 3: Configure an Airflow Environment.
 
-   :::image type="content" source="media/workflow-orchestration-manager/configure-apache-airflow.png" alt-text="Screenshot to configure Apache Airflow Project.":::
+1. Click on “Configure Airflow” Card.
+2. Specify the Apache Airflow environment configuration for your DAGs to run against. You can change these settings later as well.
 
-## Related content
+:::image type="content" source="media/workflow-orchestration-manager/configure-airflow-env.png" alt-text="Screenshot to configure Apache Airflow Project.":::
 
-<!-- * Read about [workspaces](workspaces.md) -->
+* <strong>Compute Node Size:</strong> The size of the compute node you want your Airflow environment to run on.
+* <strong>Enable Autoscale:</strong> Allow your Airflow environment to scale nodes up or down as needed.
+* <strong>Environment variables:</strong> You can use this key value store within Airflow to store and retrieve arbitrary content or settings.
+* <strong>Configuration Overrides:</strong> You can override any Airflow configurations that you set in airflow.cfg. Examples are name: AIRFLOW__VAR__FOO and value: BAR. For more information, see Airflow configurations.
+* <strong>Kubernetes secrets:</strong> You can create a custom Kubernetes secret for your Airflow environment. An example is Private registry credentials to pull images for KubernetesPodOperator.
+* <strong>Enable Triggers:</strong> Allows the Airlfow Tasks to run in defferable mode.
+
+
+### Step 4: Synchronize your GitHub Repository
+
+1. You can update this later as well.
+
+### Step 5: Start Apache Airflow Environment
+
+1. Click on Start Apache Airflow Environment to configure the Airflow Runtime. (It should take about 5 mins for the configuration).
+
+   :::image type="content" source="media/workflow-orchestration-manager/start-apache-airflow.png" alt-text="Screenshot to configure Apache Airflow Project.":::
+
+## Next Steps
+
+* [Sync your Github Repository wiht Workflow Orchestration Manager](airflow-git-sync.md).
