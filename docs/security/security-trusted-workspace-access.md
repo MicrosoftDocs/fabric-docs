@@ -163,27 +163,27 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 
 1. Select **New data pipeline**. Provide a name for the pipeline and then select **Create**.
 
-    :::image type="content" source="./media/security-trusted-workspace-access/create-new-data-pipeline-dialog.png" alt-text="Screenshot showing the New pipeline dialog.":::
+    :::image type="content" source="./media/security-trusted-workspace-access/create-new-data-pipeline-dialog.png" alt-text="Screenshot showing the New pipeline dialog." lightbox="./media/security-trusted-workspace-access/create-new-data-pipeline-dialog.png":::
 
 1. Choose **Azure Data Lake Gen 2** as the data source.
 
-    :::image type="content" source="./media/security-trusted-workspace-access/select-azure-data-lake-gen2-data-source.png" alt-text="Screenshot showing choosing Azure Data Lake Gen 2 selection.":::
+    :::image type="content" source="./media/security-trusted-workspace-access/select-azure-data-lake-gen2-data-source.png" alt-text="Screenshot showing choosing Azure Data Lake Gen 2 selection." lightbox="./media/security-trusted-workspace-access/select-azure-data-lake-gen2-data-source.png":::
 
 1. Provide the URL of the storage account that has been configured with trusted workspace access, and choose a name for the connection. For **Authentication kind**, choose *Organizational account* or *Service Principal*.
 
-    :::image type="content" source="./media/security-trusted-workspace-access/connection-settings.png" alt-text="Screenshot showing connection settings for the data source.":::
+    :::image type="content" source="./media/security-trusted-workspace-access/connection-settings.png" alt-text="Screenshot showing connection settings for the data source." lightbox="./media/security-trusted-workspace-access/connection-settings.png":::
 
     When done, select **Next**.
 
 1. Select the file that you need to copy into the lakehouse.
 
-   :::image type="content" source="./media/security-trusted-workspace-access/file-selection.png" alt-text="Screenshot showing file selection.png":::
+   :::image type="content" source="./media/security-trusted-workspace-access/file-selection.png" alt-text="Screenshot showing file selection.png" lightbox="./media/security-trusted-workspace-access/file-selection.png":::
 
     When done, select **Next**.
 
 1. On the **Review + save** screen, select **Start data transfer immediately**. When done, select **Save + Run**.
 
-   :::image type="content" source="./media/security-trusted-workspace-access/review-save.png" alt-text="Screenshot showing the review-and-save-screen.png":::
+   :::image type="content" source="./media/security-trusted-workspace-access/review-save.png" alt-text="Screenshot showing the review-and-save-screen.png" lightbox="./media/security-trusted-workspace-access/review-save.png":::
 
 1. When the pipeline status changes from *Queued* to *Succeeded*, go to the lakehouse and verify that the data tables were created.
 
