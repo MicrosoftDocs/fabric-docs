@@ -16,9 +16,9 @@ ms.date: 03/25/2024
 ## Introduction
 A python package is a way to organize related Python modules into a single directory hierarchy. A package is typically represented as a directory that contains a special file called __init__.py. Inside a package directory, you can have multiple Python module files (.py files) that define functions, classes, and variables. In the context of Workflow Orchestration Manager, you can create packages to add your custom code.
 
-This guide provides step-by-step instructions on installing .whl (Wheel) file, which serve as a binary distribution format for Python package in your Workflow Orchestration Manager.
+This guide provides step-by-step instructions on installing `.whl` (Wheel) file, which serves as a binary distribution format for Python package in your Workflow Orchestration Manager.
 
-For illustration purpose, I create a simple custom operator as python package that can be imported as a module inside dags file.
+For illustration purpose, I create a simple custom operator as python package that can be imported as a module inside dag file.
 
 ### Step 1: Develop a custom operator to convert it to private package and an Apache Airflow Dag to test it.
 
@@ -60,9 +60,9 @@ with DAG(
     task
 ```
 
-3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file to the container. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Workflow Orchestration Manager or you can use pre-configured repository, (Install-Private-Package)[https://github.com/ambika-garg/Install-Private-Package-Fabric]
+3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file to the container. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Workflow Orchestration Manager or you can use preconfigured repository(Install-Private-Package)[https://github.com/ambika-garg/Install-Private-Package-Fabric]
 
-### Step 2: Add your package as an requirement.
+### Step 2: Add your package as a requirement.
 
 * Add the package as a requirement under `Airflow requirements`. Use the format `/opt/airflow/git/<repoName>.git/<pathToPrivatePackage>`
 
@@ -72,4 +72,4 @@ with DAG(
 
 ## Next Steps
 
-* [Sync your GitHub Repository with Workflow Orchestration Manager](airflow-git-sync.md).
+* [Sync your GitHub Repository with Workflow Orchestration Manager]().

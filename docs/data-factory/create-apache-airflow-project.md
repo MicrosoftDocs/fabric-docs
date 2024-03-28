@@ -113,4 +113,4 @@ Specify the git repository you want to sync your Airflow project with.
 
 ## Next Steps
 
-* [Sync your GitHub Repository with Workflow Orchestration Manager](airflow-git-sync.md).
+* [Sync your GitHub Repository with Workflow Orchestration Manager]().
