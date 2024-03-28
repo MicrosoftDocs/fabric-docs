@@ -1,5 +1,5 @@
 ---
-title: Create an Apache Airflow Project in Mircrosoft Fabric
+title: Create an Apache Airflow Project in Microsoft Fabric
 description: This tutorial helps you create an Apache Airflow Project in Microsoft Fabric.
 ms.reviewer: xupxhou
 ms.author: abnarain
@@ -21,7 +21,7 @@ This tutorial provides step-by-step instructions to create an Apache Airflow Pro
 
 ### Step 1: Enable Apache Airflow in your Tenant.
 
-1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand “Users can create and use Apache Airflow projects (preview)” section.
+1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow projects (preview)' section.
 2. Click Apply.
 
    :::image type="content" source="media/workflow-orchestration-manager/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
@@ -39,7 +39,7 @@ This tutorial provides step-by-step instructions to create an Apache Airflow Pro
 
 ### Step 3: Configure an Airflow Environment.
 
-1. Click on “Configure Airflow” Card.
+1. Click on 'Configure Airflow' Card.
 2. Specify the Apache Airflow environment configuration for your DAGs to run against. You can change these settings later as well.
 
 :::image type="content" source="media/workflow-orchestration-manager/configure-airflow-env.png" alt-text="Screenshot to configure Apache Airflow Project.":::
@@ -49,19 +49,68 @@ This tutorial provides step-by-step instructions to create an Apache Airflow Pro
 * <strong>Environment variables:</strong> You can use this key value store within Airflow to store and retrieve arbitrary content or settings.
 * <strong>Configuration Overrides:</strong> You can override any Airflow configurations that you set in airflow.cfg. Examples are name: AIRFLOW__VAR__FOO and value: BAR. For more information, see Airflow configurations.
 * <strong>Kubernetes secrets:</strong> You can create a custom Kubernetes secret for your Airflow environment. An example is Private registry credentials to pull images for KubernetesPodOperator.
-* <strong>Enable Triggers:</strong> Allows the Airlfow Tasks to run in defferable mode.
+* <strong>Enable Triggers:</strong> Allows the Airflow Tasks to run in deferrable mode.
 
 
 ### Step 4: Synchronize your GitHub Repository
 
-1. You can update this later as well.
+Specify the git repository you want to sync your Airflow project with.
+
+1. Click on 'Sync with Git' Card, you will be navigated to 'File Storage'.
+
+:::image type="content" source="media/workflow-orchestration-manager/git-sync.png" alt-text="Screenshot to synchronize Github repository.":::
+
+2. Fill out the following fields:
+
+* <strong>Git service type</strong>: Choose one of the following:
+    * GitHub
+    * ADO: Azure DevOps
+    * GitLab
+    * BitBucket
+
+* <strong>Git Credential type</strong>: Choose one of the following:
+    * None: If the repository is public.
+    * Personal Access token: A personal access token from the Git service, will be used to authenticate with repository. 1.	Fill out the fields that appear: 'Username' and 'Personal Access token'.
+    * Service Principal: Select this credential when you choose Git Service as Azure Devops:
+        * Fill out the fields:
+            * Service principal app id: Client Id of your Service Principal that has access to Azure Devops Repository.
+            * Service principal secret: Client secret with access to Azure DevOps repository.
+            * Service principal tenant Id: Tenant Id of your Service Principal.
+
+* <strong>Repo</strong>: The clone URL to the repository you want to sync.
+* <strong>Branch</strong>: Name of the repository’s branch you want to sync.
+
+3. Click on 'Apply'.
+
+#### Supported Git Repository Structure
+
+.. code-block:: bash
+
+    |── dags/
+    |   |-- *.py
+    |-- plugins
+    |    |-- executors/
+    |    |   ├-- __init__.py
+    |    |   └-- *.py
+    |    |-- hooks/
+    |    |   ├-- __init__.py
+    |    |   └-- *.py
+    |    |-- operators/
+    |    |   ├-- __init__.py
+    |    |   └-- *.py
+    |    |-- transfers/
+    |    |   ├-- __init__.py
+    |    |   └-- *.py
+    |    |-- triggers/
+    |    |    ├-- __init__.py
+    |    |    └-- *.py
 
 ### Step 5: Start Apache Airflow Environment
 
 1. Click on Start Apache Airflow Environment to configure the Airflow Runtime. (It should take about 5 mins for the configuration).
 
-   :::image type="content" source="media/workflow-orchestration-manager/start-apache-airflow.png" alt-text="Screenshot to configure Apache Airflow Project.":::
+   :::image type="content" source="media/workflow-orchestration-manager/start-apache-airflow.png" alt-text="Screenshot to start Apache Airflow Project.":::
 
 ## Next Steps
 
-* [Sync your Github Repository wiht Workflow Orchestration Manager](airflow-git-sync.md).
+* [Sync your GitHub Repository with Workflow Orchestration Manager](airflow-git-sync.md).
