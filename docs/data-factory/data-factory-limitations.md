@@ -61,7 +61,6 @@ The following table describes the resource limitations for pipelines in Data Fac
 
 The following list describes the limitations for Dataflow Gen2 in Data Factory in Microsoft Fabric.
 
-- Data Factory Fast Copy isn't yet available.
 - Data destination to Lakehouse:
   - Spaces or special characters aren't supported in column or table names.
   - Duration and binary columns aren't supported while authoring Dataflow Gen2 dataflows.
