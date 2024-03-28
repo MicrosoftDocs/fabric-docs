@@ -20,20 +20,31 @@ With a Fabric trial, you get the following:
 
 * OneLake storage up to 1 TB.
 
-* Users can create Fabric items and collaborate with others in the Fabric trial capacity. This includes:
+* Up to 5 Fabric trial capacities per tenant.
+
+* The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity. 
+
+This includes:
   * Creating [Workspaces](workspaces.md) (folders) for projects that support Fabric capabilities.
-  * Sharing Fabric items, such as semantic models, warehouses, and notebooks, and collaborate on them with other Fabric users.
+  * Sharing Fabric items, such as semantic models, warehouses, and notebooks, and collaborating on them with other Fabric users.
   * Creating analytics solutions using Fabric items.
 
 When you start a Fabric trial, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You don't have access to your capacity until you put something into it. To begin using your Fabric trial, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity using the *Trial* license mode, and then all the items in that workspace are saved and executed in that capacity.
 
+Your license is upgraded to Premium Per User (PPU) for the duration of the trial. Your Account manager still displays your non-trial license. But in order to make full use of Fabric, your trial includes the equivalent of a PPU license.
+
+There are a few key features that aren't available on trial capacities. These include CoPilot, Trusted Workspace Identity, and VNet. 
+
+
 ## Existing Power BI users
 
-If you're an existing Power BI user, you can skip to [Start the Fabric trial](#start-the-fabric-trial).
+If you're an existing Power BI user, you can skip to [Start the Fabric trial](#start-the-fabric-trial). During the trial if you have a free or Pro license, it is upgraded to PPU. 
 
 ## Users who are new to Power BI
 
-The Fabric trial requires a Power BI license. Navigate to https://app.fabric.microsoft.com to sign up for a Power BI *free* license. Once you have a Power BI license, you can start the Fabric trial.
+The Fabric trial requires a Power BI license. Navigate to https://app.fabric.microsoft.com to sign up for a Power BI *free* license. Once you have a Power BI license, you can start the Fabric trial. For the duration of the trial, that license is upgraded to PPU.
+
+You may already have a license and not realize it. For example, some versions of Microsoft 365 include a Fabric free or Power BI Pro license.
 
 ## Start the Fabric trial
 
@@ -65,7 +76,7 @@ If your Fabric administrator has [enabled Microsoft Fabric for the tenant](../ad
 
 :::image type="content" source="media/fabric-trial/cancel-trial.png" alt-text="Screenshot of the Cancel trial button in Account manager.":::
 
-You can cancel your trial from the Account manager. When you cancel your free Fabric trial, the trial capacity, with all of its workspaces and their contents, is deleted. In addition, you can't:
+You can cancel your trial from the Account manager. When you cancel your free Fabric trial, the trial capacity, with all of its workspaces and their contents, is deleted. Your license returns to the original version. In addition, you can't:
 
 - Create workspaces that support Fabric capabilities.
 
