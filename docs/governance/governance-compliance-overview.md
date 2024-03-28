@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: overview
 ms.custom:
-ms.date: 03/26/2024
+ms.date: 03/27/2024
 ---
 
 # Governance overview and guidance
@@ -20,7 +20,7 @@ This article describes at a high level the main features and components that hel
 |[Tenant, domain, and workspace settings](#tenant-domain-and-workspace-settings)|[Data security](#data-security)|[Endorsement, trust, and reuse](#endorsement)|[Capacity metrics](#capacity-metrics)|
 |[Domains](#domains)|[Purview Information Protection](#purview-information-protection)*|[Data lineage and impact analysis](#data-lineage-and-impact-analysis)|[Purview hub](#purview-hub)|
 |[Workspaces](#workspaces)|[Securing Fabric items within a workspace](#securing-items-in-a-workspace)|[Purview for governance across the org](#purview-for-governance-across-the-org)*|[Admin monitoring](#admin-monitoring)|
-|[Capacities](#certifications)|[Securing data in Fabric items](#securing-data-in-fabric-items)|||
+|[Capacities](#capacities)|[Securing data in Fabric items](#securing-data-in-fabric-items)|||
 |[Metadata scanning](#metadata-scanning)|[Auditing](#auditing)|||
 
 *Requires additional licensing
@@ -35,11 +35,13 @@ The Microsoft Fabric admin portal is a centralized place that allows your organi
 
 For more information about the admin portal, see [What is the admin portal?](../admin/admin-center.md).
 
-**Guidance**: The admin portal enables domain and capacity admins to manage their respective domains and capacities, while allowing tenant admins to manage all capacities and domains across the tenant.
+**Guidance**: Platform/IT owners should have access to the admin portal. They can define domains, and delegate domain and capacity management to domain and capacity owners as best suits your organizational needs.
 
 ### Tenant, domain, and workspace settings
 
 Tenant, domain, and workspace admins each have settings within their scope that they can configure to control who has access to certain functionalities at different levels. Some tenant-level settings can be delegated to domain and capacity admins.
+
+For more information see [About tenant settings](../admin/about-tenant-settings.md), [Configure domain settings](./domains.md#configure-domain-settings), and [Workspace settings](../get-started/workspaces.md#workspace-settings).
 
 **Guidance**: Fabric admins should define tenant-wide settings, leaving domain admins to override delegated settings as needed. Individual teams (workspace owners) are expected to define their own more granular workspace-level controls and settings.
 
@@ -57,7 +59,7 @@ For more information, see [Domains](./domains.md).
 
 Teams in organizations use workspaces to create Fabric items and collaborate with each other. These workspaces can be assigned to teams or departments based on governance requirements and data boundaries. How exactly workspace assignment is done depends on internal team structure and how the teams want to handle their Fabric items (for example, do they need one or many workspaces).
 
-**Guidance**: For development purposes, a best practice is to have isolated workspaces per developer, so that they can work on their own without interfering with the shared workspace. Fabric admins are expected to define who has permission to create workspaces. Workspace admins are expected to define Spark environments that can be reused by users.
+**Guidance**: For development purposes, a best practice is to have isolated workspaces per developer, so that they can work on their own without interfering with the shared workspace. Fabric admins are expected to define who has permission to create workspaces. Workspace admins are expected to define Spark environments that can be reused by users. For further information about best practices, see [Best practices for lifecycle management in Fabric](../cicd/best-practices-cicd.md).
 
 ### Capacities
 
@@ -97,11 +99,11 @@ For more information, see [Information Protection in Microsoft Fabric](./informa
 
 Organizational teams can have individual workspaces where different personas collaborate and work on generating content. Access to the items in the workspace is regulated via workspace roles assigned to users by the workspace admin.
 
-**Guidance**: Fabric administrators should decide, through specifying who can create workspaces, who can become a workspace administrator. These could be team leads in your organization, for example. These workspace administrators should then govern access to the items in their workspace by assigning appropriate workspace roles to users and consumers of the items.
+**Guidance**: Data owners should recommend users who could be workspace administrators. These could be team leads in your organization, for example. These workspace administrators should then govern access to the items in their workspace by assigning appropriate workspace roles to users and consumers of the items.
 
 ### Securing data in Fabric items
 
-Along with the broad security that gets applied at the tenant or workspace level, there are other data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, Synapse Data Warehouses in Fabric, and Direct Lake.
+Along with the broad security that gets applied at the tenant or workspace level, there are other data-level controls that can be deployed by individual teams to manage access to individual tables, rows, and columns. Fabric currently provides such data-level control for SQL analytics endpoints, Synapse Data Warehouses in Fabric, Direct Lake, and KQL Database.
 
 **Guidance**: Individual teams are expected to apply these additional controls at the item and data level.
 
@@ -147,7 +149,7 @@ For more information, see [Lineage](./lineage.md) and [Impact analysis](./impact
 
 Microsoft Purview offers solutions for protecting and governing data across an organization's entire data estate. The integration between Purview and Fabric makes it possible to use some of Purview's capabilities to govern and monitor your Fabric data in the context of your organization's entire data estates.
 
-The data governance capabilities offered on Fabric via Purview's [live view](/purview/live-view) (preview) are described in the following sections.
+The data governance capabilities offered on Fabric via Purview's [live view](/purview/live-view) (preview) are described in the following sections. See also [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md).
 
 #### Data curation
 
@@ -155,21 +157,25 @@ Data curation in your organization involves gathering metadata information, line
 
 #### Data Map
 
-Purview has a scanning engine that can scan and fetch metadata from disparate sources and populate Purview's data map. Purview exposes this metadata via Atlas APIs so that it can be consumed by external services or ISVs. Data Map also interacts with Fabric and gets its metadata populated internally, so that business users can search, find, and use these data products to build their insights. Currently, data consumers can look at all Fabric workspaces they have viewer access to. This is known as [live view](/purview/live-view). On top of this, manual scans can be executed on all Fabric Items from Purview, where item level metadata is picked and made available for use in Purview. Currently you can have lineage on an item level.
+Purview has a scanning engine that can scan and fetch metadata from disparate sources and populate Purview's data map. Purview exposes this metadata via Atlas APIs so that it can be consumed by external services or ISVs. Data Map also interacts with Fabric and gets its metadata populated internally, so that business users can search, find, and use these data products to build their insights. Currently, data consumers can look at all Fabric workspaces they have viewer access to. This is known as [live view](/purview/live-view). On top of this, manual scans can be executed on all Fabric Items from Purview, where item level metadata is picked and made available for use in Purview. This is only available for the enterprise tier. Currently you can have lineage on an item level.
 
 #### Data discovery in Purview
 
 Data consumers who work with your data should be able to search and find the relevant data. Purview helps here by providing concepts of domains. Business-friendly terminology and groupings make it more relevant and easier to search for data which teams are interested in, based on terms they're familiar with. This also blends well with the data mesh architectural pattern. Data catalog is the application layer in Purview that helps teams search for data.
 
-**Guidance**: Enterprise and business architecture teams should define domains and also the define a clear persona mapping between business and technical players to make roles and responsibilities clear.
+**Guidance**: Enterprise and business architecture teams should define domains and also a persona mapping between business and technical players to make roles and responsibilities clear. These definitions must be in line with the domain definitions in Fabric.
 
 #### Data Catalog in Purview
 
-Purview Data Catalog exposes the metadata captured from all sources feeding your data platform. With Data Catalog, customers can search for the data and items they're interested in working with without having to know which systems are holding your data. All metadata information of Fabric items is available inside Purview.
+Purview Data Catalog exposes the metadata captured from all sources feeding your data platform. With Data Catalog, customers can search for the data and items they're interested in working with without having to know which systems are holding your data. All Fabric item metadata is available inside Purview.
 
 ## Monitor, uncover, get insights, and act
 
 ### Monitoring hub
+
+The Microsoft Fabric monitoring hub enables users to monitor Fabric activities from a central location. Any Fabric user can use the monitoring hub, however, the monitoring hub displays activities only for Fabric items the user has permission to view.
+
+For more information, see [Use the Monitoring hub](../admin/monitoring-hub.md).
 
 **Guidance**: This capability should be exposed to developers and team members for monitoring scheduled workloads (such as a data flow or pipeline refresh), a Spark run, a data warehouse query, etc.
 
@@ -185,9 +191,9 @@ Microsoft Purview hub is a centralized page in Fabric that helps Fabric administ
 
 ### Admin monitoring
 
-The Admin monitoring workspace provides admins with monitoring capabilities for their organization. Using the admin monitoring workspace resources, admins can perform security and governance tasks such as audits and usage checks. For more information, see [What is the admin monitoring workspace?](../admin/monitoring-workspace.md).
+The admin monitoring workspace provides admins with monitoring capabilities for their organization. Using the admin monitoring workspace resources, admins can perform security and governance tasks such as audits and usage checks. For more information, see [What is the admin monitoring workspace?](../admin/monitoring-workspace.md).
 
-**Guidance**: We recommend tenant administrators use this feature to gain an overall view of the Fabric platform. 
+**Guidance**: We recommend that platform owners/Fabric administrators use this feature to gain an overall view of the Fabric platform.
 
 ## Related content
 

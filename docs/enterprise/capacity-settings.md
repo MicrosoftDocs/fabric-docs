@@ -24,28 +24,18 @@ To get to the capacity settings, follow these steps:
 
 The capacity settings page shows a list of all the capacities in your [tenant](licenses.md#tenant). At the top of the page you can see a list of the different Fabric capacity types. Select a capacity type to view all the capacities of that type in your tenant.
 
+* **Power BI Premium** - A capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
+
+   >[!NOTE]
+   >Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
+
+* **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use a EM SKUs.
+
+* **Trial** - A [Microsoft Fabric trial](../get-started/fabric-trial.md) capacity. These capacities use a A SKUs.
+
+* **Fabric capacity** - A Microsoft Fabric capacity. These capacities use a A SKUs.
+
 The rest of this article is divided to sections based on the different capacity types. To view the settings of your capacity, select the tab that matches your capacity type. If there's no tab to select, the section applies to all capacity types.
-
-# [Power BI Premium](#tab/power-bi-premium)
-
-A capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
-
-Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
-
-
-# [Power BI Embedded](#tab/power-bi-embedded)
-
-A capacity that was bought as part of a Power BI Embedded subscription. These capacities use a EM SKUs.
-
-# [Trial](#tab/trial)
-
-A [Microsoft Fabric trial](../get-started/fabric-trial.md) capacity. These capacities use a A SKUs.
-
-# [Fabric Capacity](#tab/fabric-capacity)
-
-A Microsoft Fabric capacity. These capacities use a A SKUs.
-
----
 
 ## Manage your capacity
 
