@@ -84,7 +84,7 @@ A Contributor on the storage account (an Azure RBAC role) can configure resource
 > [!NOTE]
 > Preexisting shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
 
-**Steps**
+#### Steps
 
 1. Start by creating a new shortcut in a Lakehouse.
 
@@ -146,17 +146,18 @@ You can create reports on top of the default semantic models and custom semantic
 
 You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL database. The steps to create the managed shortcut with trusted workspace access remain the same.
 
-## Create a data pipeline to a storage account with trusted workspace access
+### Create a data pipeline to a storage account with trusted workspace access
 
 With the workspace identity configured in Fabric and trusted access enabled in your ADLS Gen2 storage account, you can create data pipelines to access your data from Fabric. You can create a new data pipeline to copy data into a Fabric lakehouse and then you can start analyzing your data with Spark, SQL, and Power BI.
 
-### Prerequisites
+#### Prerequisites
+
  * A Fabric workspace associated with a Fabric capacity. See [Workspace identity](./workspace-identity.md).
 * Create a workspace identity associated with the Fabric workspace.
 * The user account or service principal used for creating the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope.
 * Configure a [resource instance rule](#resource-instance-rule) for the storage account.
 
-Steps
+#### Steps
 
 1. Start by selecting **Get Data** in a lakehouse.
 
