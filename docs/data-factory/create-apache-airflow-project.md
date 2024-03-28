@@ -84,26 +84,26 @@ Specify the git repository you want to sync your Airflow project with.
 
 #### Supported Git Repository Structure
 
-.. code-block:: bash
-
-    |── dags/
-    |   |-- *.py
-    |-- plugins
-    |    |-- executors/
-    |    |   ├-- __init__.py
-    |    |   └-- *.py
-    |    |-- hooks/
-    |    |   ├-- __init__.py
-    |    |   └-- *.py
-    |    |-- operators/
-    |    |   ├-- __init__.py
-    |    |   └-- *.py
-    |    |-- transfers/
-    |    |   ├-- __init__.py
-    |    |   └-- *.py
-    |    |-- triggers/
-    |    |    ├-- __init__.py
-    |    |    └-- *.py
+```
+|── dags/
+|   |-- *.py
+|-- plugins
+|    |-- executors/
+|    |   ├-- __init__.py
+|    |   └-- *.py
+|    |-- hooks/
+|    |   ├-- __init__.py
+|    |   └-- *.py
+|    |-- operators/
+|    |   ├-- __init__.py
+|    |   └-- *.py
+|    |-- transfers/
+|    |   ├-- __init__.py
+|    |   └-- *.py
+|    |-- triggers/
+|    |    ├-- __init__.py
+|    |    └-- *.py
+```
 
 ### Step 5: Start Apache Airflow Environment
 
