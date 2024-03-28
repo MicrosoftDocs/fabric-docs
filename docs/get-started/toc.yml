@@ -131,6 +131,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Exporting semantic model data to OneLake fails due to unicode characters
+      href: known-issues/known-issue-660-exporting-semantic-model-data-onelake-fails-unicode-characters.md
+    - name: PySpark import statements fail for .jar files installed through environment
+      href: known-issues/known-issue-658-pyspark-import-statements-fail-jar-files-installed.md
+    - name: Cross-region internal shortcuts don't work with SQL analytics endpoints
+      href: known-issues/known-issue-657-cross-region-internal-shortcuts-dont-work-sql-analytics-endpoints.md
     - name: ParquetSharpNative error in dataflow refresh using a gateway
       href: known-issues/known-issue-650-parquetsharpnative-error-dataflow-refresh-using-gateway.md
     - name: Library management updates with public python libraries time-out

@@ -91,7 +91,7 @@ For more information about downstream inheritance, see [Sensitivity label inheri
 
 ### Inheritance from data sources
 
-Inheritance from data sources is currently supported for Power BI semantic models only. For more information, see [Sensitivity label inheritance from data sources (preview)](service-security-sensitivity-label-inheritance-from-data-sources.md).
+Inheritance from data sources is currently supported for Power BI semantic models only. For more information, see [Sensitivity label inheritance from data sources](service-security-sensitivity-label-inheritance-from-data-sources.md).
 
 ### Export
 
