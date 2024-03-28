@@ -8,11 +8,11 @@ ms.subservice: powerbi-eim
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 09/12/2023
+ms.date: 03/28/2024
 LocalizationGroup: Data from files
 ---
 
-# Sensitivity label inheritance from data sources (preview)
+# Sensitivity label inheritance from data sources
 
 Power BI semantic models that connect to sensitivity-labeled data in supported data sources can inherit those labels, so that the data remains classified and secure when brought into Power BI.
 
@@ -37,7 +37,7 @@ To be operative, [sensitivity label inheritance from data sources must be enable
 
 * A Power BI Pro or Premium Per User (PPU) license is required for the user whose credentials are used to connect to the data source. In addition, [all other conditions for applying a label must be met](/power-bi/enterprise/service-security-apply-data-sensitivity-labels#apply-sensitivity-labels-in-the-power-bi-service).
 
-* The **[Apply sensitivity labels from data sources to their data in Power BI (preview)](../admin/service-admin-portal-information-protection.md#apply-sensitivity-labels-from-data-sources-to-their-data-in-power-bi)** tenant admin setting must be enabled. This requirement applies to the Power BI service only. In Desktop, a *.pbix* file inherits the label from the data source even if the tenant admin setting is off. However, after publishing to the service, upon refresh, changes to the label in the data source are only inherited by the report and semantic model if the setting is enabled. 
+* The **[Apply sensitivity labels from data sources to their data in Power BI](../admin/service-admin-portal-information-protection.md#apply-sensitivity-labels-from-data-sources-to-their-data-in-power-bi)** tenant admin setting must be enabled. This requirement applies to the Power BI service only. In Desktop, a *.pbix* file inherits the label from the data source even if the tenant admin setting is off. However, after publishing to the service, upon refresh, changes to the label in the data source are only inherited by the report and semantic model if the setting is enabled. 
 
 ## Inheritance behavior
 * In the Power BI service, when the semantic model is connected to the data source, Power BI inherits the label and applies it automatically to the semantic model. After, inheritance occurs upon semantic model refresh. In Power BI Desktop, when you connect to the data source via **Get data**, Power BI inherits the label and automatically applies it to the *.pbix* file (both the semantic model and report). Subsequently inheritance occurs upon refresh. 
