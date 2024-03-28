@@ -34,7 +34,7 @@ To view sensitivity label settings for your organization, visit the [Microsoft P
 
 When this setting is enabled, Power BI semantic models that connect to sensitivity-labeled data in supported data sources can inherit those labels, so that the data remains classified and secure when brought into Power BI.
 
-To learn more about sensitivity label inheritance from data sources, see [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources).
+To learn more about sensitivity label inheritance from data sources, see [Sensitivity label inheritance from data sources](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources).
 
 ## Automatically apply sensitivity labels to downstream content
 
