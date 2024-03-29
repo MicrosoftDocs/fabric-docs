@@ -90,7 +90,10 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
    get_variable_task
    ```
 
-1. Store variables for connections in Key Vault. For more information, see [Store credentials in Azure Key Vault](store-credentials-in-key-vault.md).
+1. Stored variable in Azure Key Vault.
 
    :::image type="content" source="media/workflow-orchestration-manager/variable-in-akv.png" alt-text="Screenshot that shows the configuration of secrets in Azure Key Vault." lightbox="media/workflow-orchestration-manager/variable-in-akv.png":::
 
+## Related Content
+
+* [Quickstart: Create an Apache Airflow Project in Data Factory](docs/data-factory/create-apache-airflow-project.md).

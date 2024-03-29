@@ -70,6 +70,6 @@ with DAG(
 
 :::image type="content" source="media/workflow-orchestration-manager/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
 
-## Next Steps
+## Related Content
 
-* [Sync your GitHub Repository with Workflow Orchestration Manager]().
+* [Quickstart: Create an Apache Airflow Project in Data Factory](docs/data-factory/create-apache-airflow-project.md).
