@@ -50,8 +50,6 @@ Under **Advanced**, you can specify the following fields:
 
   - **Upload**: The new document replaces the existing one. If there is no existing document, the new document will be uploaded as a new one to the index.
 
-  If the new document has a column but the existing document does not, its value will be set to null.
-
 - **Write batch size**: Data is uploaded into the search index when the buffer size reaches the specified write batch size. Allowed values are: integer 1 to 1,000, and the default value is 1000. <br>
 Azure AI Search service supports writing documents as a batch. A batch can contain 1 to 1,000 Actions. An action handles one document to perform the upload/merge operation.
 
