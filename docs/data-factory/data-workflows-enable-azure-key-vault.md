@@ -99,4 +99,8 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 
 ## Related Content
 
+<<<<<<< HEAD:docs/data-factory/data-workflows-enable-azure-key-vault.md
 * Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).
+=======
+* Quickstart: [Create an Apache Airflow Project in Data Factory](../data-factory/create-apache-airflow-project.md).
+>>>>>>> 1c5b43116 (Apply acrolinx suggestions):docs/data-factory/airflow-enable-azure-key-vault.md
