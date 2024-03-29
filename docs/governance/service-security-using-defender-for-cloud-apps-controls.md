@@ -61,7 +61,7 @@ Defender for Cloud Apps has two dedicated, built-in detections for Power BI. See
 
 Sensitivity labels enable you to classify and help protect sensitive content, so that people in your organization can collaborate with partners outside your organization, yet still be careful and aware of sensitive content and data.
 
-For information about the process of using sensitivity labels for Power BI, see [Sensitivity labels in Power BI](/powerbi-docs/enterprise/service-security-sensitivity-label-overview). [See the example later in this article of a Power BI policy based on sensitivity labels](#example).
+For information about the process of using sensitivity labels for Power BI, see [Sensitivity labels in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview). [See the example later in this article of a Power BI policy based on sensitivity labels](#example).
 
 ## Custom policies to alert on suspicious user activity in Power BI
 
@@ -137,9 +137,9 @@ In the window that appears, create the session policy. The numbered steps descri
 
 This article described how Defender for Cloud Apps can provide data and content protections for Power BI. For more information about Data Protection for Power BI and supporting content for the Azure services that enable it, see:
 
-* [Sensitivity labels in Power BI](/powerbi-docs/enterprise/service-security-sensitivity-label-overview)
-* [Enable sensitivity labels in Power BI](/powerbi-docs/enterprise/service-security-enable-data-sensitivity-labels)
-* [How to apply sensitivity labels in Power BI](/powerbi-docs/enterprise/service-security-apply-data-sensitivity-labels)
+* [Sensitivity labels in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview)
+* [Enable sensitivity labels in Power BI](/power-bi/enterprise/service-security-enable-data-sensitivity-labels)
+* [How to apply sensitivity labels in Power BI](/power-bi/enterprise/service-security-apply-data-sensitivity-labels)
 
 For information about Azure and security articles, see:
 
@@ -147,5 +147,5 @@ For information about Azure and security articles, see:
 * [Deploy Conditional Access App Control for catalog apps with Microsoft Entra ID](/defender-cloud-apps/proxy-deployment-aad)
 * [Session policies](/defender-cloud-apps/session-policy-aad)
 * [Learn about sensitivity labels](/microsoft-365/compliance/sensitivity-labels)
-* [Data protection metrics report](/powerbi-docs/enterprise/service-security-data-protection-metrics-report)
-* [Power BI implementation planning: Defender for Cloud Apps for Power BI](/powerbi-docs/enterprise/service-security-using-defender-for-cloud-apps-controls)
+* [Data protection metrics report](/power-bi/enterprise/service-security-data-protection-metrics-report)
+* [Power BI implementation planning: Defender for Cloud Apps for Power BI](/power-bi/enterprise/service-security-using-defender-for-cloud-apps-controls)
