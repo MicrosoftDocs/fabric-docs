@@ -13,7 +13,7 @@ LocalizationGroup: Data from files
 ---
 # Sensitivity label support for paginated reports
 
-Sensitivity labels can be applied to paginated reports hosted in the Power BI service. After uploading a paginated report to the service, apply the label to the report just as you would to a [regular Power BI report](service-security-apply-data-sensitivity-labels.md#apply-sensitivity-labels-in-the-power-bi-service).
+Sensitivity labels can be applied to paginated reports hosted in the Power BI service. After uploading a paginated report to the service, apply the label to the report just as you would to a [regular Power BI report](/powerbi-docs/enterprise/service-security-apply-data-sensitivity-labels#apply-sensitivity-labels-in-the-power-bi-service).
 
 When you export data from a labeled paginated report to a supported file type (Excel, PDF, PPTX, and Word), the sensitivity label on the paginated report is applied to the exported file.
 
@@ -32,5 +32,5 @@ When a supported file type is exported from a Paginated Report visual that is in
 
 ## Related content
 
-* [Apply sensitivity labels in Power BI](service-security-apply-data-sensitivity-labels.md)
-* [Sensitivity label overview](service-security-sensitivity-label-overview.md)
+* [Apply sensitivity labels in Power BI](/powerbi-docs/enterprise/service-security-apply-data-sensitivity-labels)
+* [Sensitivity label overview](/powerbi-docs/enterprise/service-security-sensitivity-label-overview)

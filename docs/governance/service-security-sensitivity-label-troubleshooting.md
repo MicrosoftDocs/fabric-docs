@@ -45,25 +45,25 @@ To be able to apply or change a sensitivity label, you must
 
 * Have a Power BI Pro or Premium Per User (PPU) license.
 * Have create and edit permissions on the item you want to apply the label to.
-* Belong to a security group that has permissions to apply sensitivity labels, as described in [Enable sensitivity labels in Power BI](./service-security-enable-data-sensitivity-labels.md).
+* Belong to a security group that has permissions to apply sensitivity labels, as described in [Enable sensitivity labels in Power BI](/powerbi-docs/enterprise/service-security-enable-data-sensitivity-labels).
 
 ### The sensitivity label I want to apply is greyed out
 
-If a particular label you wish to change is greyed out, you may not have the correct [usage rights](./service-security-sensitivity-label-change-enforcement.md) to change that label. If you need to change a sensitivity label and can't, either ask the person who applied the label in the first place to modify it, or contact the Microsoft 365/Office security administrator and request the necessary usage rights for the label.
+If a particular label you wish to change is greyed out, you may not have the correct [usage rights](/powerbi-docs/enterprise/service-security-sensitivity-label-change-enforcement) to change that label. If you need to change a sensitivity label and can't, either ask the person who applied the label in the first place to modify it, or contact the Microsoft 365/Office security administrator and request the necessary usage rights for the label.
 
 ### The sensitivity button in Desktop is greyed out
 
-If the sensitivity button is greyed out, it may indicate that you don't have an appropriate license or that you don't belong to a security group that has permissions to apply sensitivity labels, as described in [Enable sensitivity labels in Power BI](./service-security-enable-data-sensitivity-labels.md).
+If the sensitivity button is greyed out, it may indicate that you don't have an appropriate license or that you don't belong to a security group that has permissions to apply sensitivity labels, as described in [Enable sensitivity labels in Power BI](/powerbi-docs/enterprise/service-security-enable-data-sensitivity-labels).
 
 ### The sensitivity label doesn't protect an exported file
 
-Sensitivity labels and file encryption protect data only when it leaves Power BI via [supported export paths](./service-security-sensitivity-label-overview.md#supported-export-paths). Data that leaves Power BI via unsupported export paths won't inherit the sensitivity label and won't be encrypted.
+Sensitivity labels and file encryption protect data only when it leaves Power BI via [supported export paths](/powerbi-docs/enterprise/service-security-sensitivity-label-overview#supported-export-paths). Data that leaves Power BI via unsupported export paths won't inherit the sensitivity label and won't be encrypted.
 
-To prevent leakage of sensitive data, the Power BI admin can block export from non-supported export paths using Power BI's [export and sharing settings](../admin/service-admin-portal.md).
+To prevent leakage of sensitive data, the Power BI admin can block export from non-supported export paths using Power BI's [export and sharing settings](../service-admin-portal.md).
 
 ### Miscellaneous problems with sensitivity labels
 
-* Don't use parent labels. A parent label is a label that has sublabels. You can't apply parent labels, but a label that is already applied may become a parent label if it acquires sublabels. If you come across an item that has a parent label, apply the appropriate sublabel. To change a parent label, you must have [sufficient usage rights on the label](./service-security-sensitivity-label-change-enforcement.md).
+* Don't use parent labels. A parent label is a label that has sublabels. You can't apply parent labels, but a label that is already applied may become a parent label if it acquires sublabels. If you come across an item that has a parent label, apply the appropriate sublabel. To change a parent label, you must have [sufficient usage rights on the label](/powerbi-docs/enterprise/service-security-sensitivity-label-change-enforcement).
 
     If an item has a parent label, note the following behavior:
     * Parent labels won't be inherited.
@@ -75,13 +75,13 @@ To prevent leakage of sensitive data, the Power BI admin can block export from n
 
 * Power BI doesn’t support sensitivity labels of the [Do Not Forward](/microsoft-365/compliance/encryption-sensitivity-labels#let-users-assign-permissions), [user-defined](/microsoft-365/compliance/encryption-sensitivity-labels#let-users-assign-permissions), and [HYOK](/azure/information-protection/configure-adrms-restrictions) protection types. The Do Not Forward and user-defined protection types refer to labels defined in the [Purview compliance portal](https://compliance.microsoft.com/).
 
-* Get data and refresh scenarios from encrypted Excel (*.xlsx*) files are supported, unless the file is stored behind a gateway, in which case the Get data/refresh action will fail. Get data and refresh actions from an Excel file that is stored behind a gateway and that has an **unprotected** sensitivity label will succeed, but the sensitivity label won't be inherited. See [Sensitivity label inheritance from data sources](./service-security-sensitivity-label-inheritance-from-data-sources.md) for detail.
+* Get data and refresh scenarios from encrypted Excel (*.xlsx*) files are supported, unless the file is stored behind a gateway, in which case the Get data/refresh action will fail. Get data and refresh actions from an Excel file that is stored behind a gateway and that has an **unprotected** sensitivity label will succeed, but the sensitivity label won't be inherited. See [Sensitivity label inheritance from data sources](/powerbi-docs/enterprise/service-security-sensitivity-label-inheritance-from-data-sources) for detail.
 
 ## Problems with PBIX files
 
 ### I can see a report and semantic model in the Power BI service, but when I download them to pbix, I get a message that says I don't have sufficient permissions to open the file
 
-In the Power BI service, sensitivity labeling doesn't affect access to content. Access to content in the service is determined solely by the permissions a user has on the content. While the labels are visible in the service, any associated encryption settings (configured in the Microsoft Purview compliance portal) aren't applied. They're applied only to data that leaves the service via [supported export paths](./service-security-sensitivity-label-overview.md#supported-export-paths).
+In the Power BI service, sensitivity labeling doesn't affect access to content. Access to content in the service is determined solely by the permissions a user has on the content. While the labels are visible in the service, any associated encryption settings (configured in the Microsoft Purview compliance portal) aren't applied. They're applied only to data that leaves the service via [supported export paths](/powerbi-docs/enterprise/service-security-sensitivity-label-overview#supported-export-paths).
 
 In Power BI Desktop, sensitivity labels with encryption settings affect access to content. If a user doesn't have sufficient permissions according to the encryption settings of the sensitivity label on the *.pbix* file, they won't be able to open the file. In addition, in Desktop, when you save your work, any sensitivity label you've added and its associated encryption settings will be applied to the saved *.pbix* file.
 
@@ -141,7 +141,7 @@ Default labeling in Power BI covers most common scenarios, but there may be some
 
 Default labeling in Power BI isn't supported for service principals and APIs. Service principals and APIs aren't subject to default label policies.
 
-Default label policies in Power BI aren't supported for [external guest users (Microsoft Entra B2B)](service-admin-azure-ad-b2b.md). When a B2B user opens or creates an unlabeled *.pbix* file in Power BI Desktop or Power BI artifact in the Power BI service, no default label is applied automatically.
+Default label policies in Power BI aren't supported for [external guest users (Microsoft Entra B2B)](/powerbi-docs/enterprise/service-admin-azure-ad-b2b). When a B2B user opens or creates an unlabeled *.pbix* file in Power BI Desktop or Power BI artifact in the Power BI service, no default label is applied automatically.
 
 ### The pbix file I created didn't get the default label, even though default labeling is enabled on my tenant
 
@@ -175,7 +175,7 @@ Downstream inheritance never overwrites labels that were applied manually.
 
 Downstream inheritance never overwrites a label with a less restrictive label.
 
-Sensitivity labels inherited from data sources are automatically propagated downstream only when [fully automated downstream inheritance mode](./service-security-sensitivity-label-downstream-inheritance.md) is enabled.
+Sensitivity labels inherited from data sources are automatically propagated downstream only when [fully automated downstream inheritance mode](/powerbi-docs/enterprise/service-security-sensitivity-label-downstream-inheritance) is enabled.
 
 ## Sensitivity label inheritance from data sources
 
@@ -187,7 +187,7 @@ Sensitivity labels inherited from data sources are automatically propagated down
 * The **Apply sensitivity labels from data sources to their data in Power BI (preview)** tenant admin setting must be enabled.
 * All conditions for applying a label must be met.
 * Inheritance from data sources isn't supported for semantic models located in classic workspaces. My Workspace and V2 workspaces are supported.
-* Inheritance from data sources is supported only for semantic models with enhanced metadata. See [Using enhanced dataset metadata](../connect-data/desktop-enhanced-dataset-metadata.md) for more information.
+* Inheritance from data sources is supported only for semantic models with enhanced metadata. See [Using enhanced dataset metadata](/powerbi-docs//connect-data/desktop-enhanced-dataset-metadata) for more information.
 * Inheritance from data sources is supported only for semantic models using the Import data connectivity mode. Live connection and DirectQuery connectivity isn't supported.
 * Inheritance from data sources isn't supported in connections via gateways or Azure Virtual Network (VNet). This means that inheritance from an Excel file located on a local machine won't work, because this requires a gateway.
 
@@ -222,9 +222,9 @@ Using Defender for Cloud Apps with Power BI is designed to help secure your orga
 
 ### I open the data protection metrics page but no report is generated
 
-In order for the data protection metrics report to be successfully generated[, information protection](./service-security-enable-data-sensitivity-labels.md) must be enabled on your tenant and [sensitivity labels should have been applied](./service-security-apply-data-sensitivity-labels.md).
+In order for the data protection metrics report to be successfully generated[, information protection](/powerbi-docs/enterprise/service-security-enable-data-sensitivity-labels) must be enabled on your tenant and [sensitivity labels should have been applied](/powerbi-docs/enterprise/service-security-apply-data-sensitivity-labels).
 
-The data protection metrics report isn't available to [external users such as Microsoft Entra B2B (Microsoft Entra B2B) guest users](./service-admin-azure-ad-b2b.md).
+The data protection metrics report isn't available to [external users such as Microsoft Entra B2B (Microsoft Entra B2B) guest users](/powerbi-docs/enterprise/service-admin-azure-ad-b2b).
 
 ### I can't access the Defender for Cloud Apps information.
 
