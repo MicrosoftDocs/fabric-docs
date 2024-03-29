@@ -47,7 +47,7 @@ items:
     - name: Troubleshoot sensitivity labels
       href: service-security-sensitivity-label-troubleshooting.md
   - name: Microsoft Defender for Cloud Apps with Power BI
-  - href: service-security-using-defender-for-cloud-apps-controls.md
+    href: service-security-using-defender-for-cloud-apps-controls.md
 - name: Endorsement
   href: endorsement-overview.md
 - name: Lineage
