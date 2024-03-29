@@ -685,6 +685,8 @@
             href: airflow-install-private-package.md
           - name: Enable Azure Key Vault as Secret Backend
             href: airflow-enable-azure-key-vault.md
+          - name: Set up SMTP Server
+            href: airflow-set-smtp-server.md
       - name: Tutorials
   - name: FAQ and Troubleshooting
     items:
