@@ -233,7 +233,7 @@ Files/
 
 Workspace and Item permissions let you grant "coarse-grain" access to data in OneLake for the given Item. OneLake RBAC permissions enable you to restrict the data access in OneLake only to specific folders.
 
-:::image type="content" source=".\media\mermaids\rbac-evaluation-with-fabric.svg" alt-text="Diagram showing the order of permissions evaluations with workspace, item, and RBAC.":::
+:::image type="content" source=".\media\security-flow.png" alt-text="Diagram showing the order of permissions evaluations with workspace, item, and RBAC.":::
 
 ## OneLake RBAC and Workspace permissions
 
@@ -335,7 +335,7 @@ OneLake supports defining RBAC permissions for shortcuts such as [ADLS, S3 and D
 
 Suppose, user1 creates an S3 shortcut in a lakehouse pointing to a folder in an AWS S3 bucket. Then user2 is attempting to access data in this shortcut.
 
-| 1. Does S3 Connection authorize access for the delegated user1? | 2. Does OneLake RBAC authorize access for the requesting user2? | 1+2 Result: Can user2 access data in S3 Shortcut?  |
+| Does S3 Connection authorize access for the delegated user1? | Does OneLake RBAC authorize access for the requesting user2? | Result: Can user2 access data in S3 Shortcut?  |
 | ---- | --- | --- |
 | Yes | Yes | Yes |
 | No | No | No |

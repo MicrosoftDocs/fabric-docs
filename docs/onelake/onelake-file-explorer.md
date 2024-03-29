@@ -133,7 +133,7 @@ You can enable additional client-side logging by selecting **Diagnostic Operatio
 
 ### Release Notes
 
-Starting in version 1.0.11, you can information find about each release of the OneLake file explorer by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar.  Select **About** > **Release Notes**. This opens the OneLake file explorer release notes page in your browser window. 
+Starting in version 1.0.11, you can find information about each release of the OneLake file explorer by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar.  Select **About** > **Release Notes**. This opens the OneLake file explorer release notes page in your browser window.
 
 ### Uninstall instructions
 

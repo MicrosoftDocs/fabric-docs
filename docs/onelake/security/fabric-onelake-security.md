@@ -33,7 +33,7 @@ Many Fabric engines allow fine-grained access control such as table, column, and
 Learn more about engine-specific granular data security:
 
 - [Data warehousing Security](../../data-warehouse/security.md)
-- [PowerBI Security](/power-bi/enterprise/service-admin-power-bi-security)
+- [Power BI Security](/power-bi/enterprise/service-admin-power-bi-security)
 - [Data Factory - Set up you Lakehouse Connection](../../data-factory/connector-lakehouse-overview.md)
 - [Real-Time Analytics Row-Level Security](/azure/data-explorer/kusto/management/row-level-security-policy)
 
