@@ -56,26 +56,29 @@ This tutorial provides step-by-step instructions to create an Apache Airflow Pro
 
 Specify the git repository you want to sync your Airflow project with.
 
-1. Click on 'Sync with Git' Card, you will be navigated to 'File Storage'.
+1. Click on 'Sync with Git' Card, you are navigated to 'File Storage'.
 
-:::image type="content" source="media/workflow-orchestration-manager/git-sync.png" alt-text="Screenshot to synchronize Github repository.":::
+:::image type="content" source="media/workflow-orchestration-manager/git-sync.png" alt-text="Screenshot to synchronize GitHub repository.":::
 
 2. Fill out the following fields:
 
-* <strong>Git service type</strong>: Choose one of the following:
+* <strong>Git service type</strong>: Supported service types:
     * GitHub
     * ADO: Azure DevOps
     * GitLab
     * BitBucket
 
-* <strong>Git Credential type</strong>: Choose one of the following:
-    * None: If the repository is public.
-    * Personal Access token: A personal access token from the Git service, will be used to authenticate with repository. 1.	Fill out the fields that appear: 'Username' and 'Personal Access token'.
+* <strong>Git Credential type</strong>: Supported credential types:
+    * None: Choose this credential type, if the repository is public.
+    * Personal Access token: A personal access token from the Git service used to authenticate with repository.
+      * Fill out the fields:
+         * Username: Username of GitHub.
+         * Personal Access token
     * Service Principal: Select this credential when you choose Git Service as Azure Devops:
         * Fill out the fields:
-            * Service principal app id: Client Id of your Service Principal that has access to Azure Devops Repository.
+            * Service principal app ID: Client ID of your Service Principal that has access to Azure Devops Repository.
             * Service principal secret: Client secret with access to Azure DevOps repository.
-            * Service principal tenant Id: Tenant Id of your Service Principal.
+            * Service principal tenant ID: Tenant ID of your Service Principal.
 
 * <strong>Repo</strong>: The clone URL to the repository you want to sync.
 * <strong>Branch</strong>: Name of the repository’s branch you want to sync.
