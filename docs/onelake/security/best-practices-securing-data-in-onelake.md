@@ -55,6 +55,6 @@ A user needs to be a workspace Viewer, or have the Read permission and the ReadA
 
 - [Fabric Security overview](../../security/security-overview.md)
 
-- [Fabric and OneLake security overview](./fabric-and-onelake-security.md)
+- [Fabric and OneLake security overview](./fabric-onelake-security.md)
 
 - [Data Access Control Model](../security/data-access-control-model.md)

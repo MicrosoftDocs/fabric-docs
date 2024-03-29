@@ -138,6 +138,6 @@ The external data sharing preview feature (link) isn't compatible with the data 
 
 - [Fabric Security overview](../../security/security-overview.md)
 
-- [Fabric and OneLake security overview](./fabric-and-onelake-security.md)
+- [Fabric and OneLake security overview](./fabric-onelake-security.md)
 
 - [Data Access Control Model](../security/data-access-control-model.md)

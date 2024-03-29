@@ -86,7 +86,7 @@ Learn more about the security model for shortcuts in [Data Access Control Model]
 
 ## Related content
 
-- [Fabric and OneLake security overview](./fabric-and-onelake-security.md)
+- [Fabric and OneLake security overview](./fabric-onelake-security.md)
 - [OneLake data access roles (preview)](./get-started-data-access-roles.md)
 - [Workspace roles](../../get-started/roles-workspaces.md)
 - [OneLake file explorer](../onelake-file-explorer.md)
