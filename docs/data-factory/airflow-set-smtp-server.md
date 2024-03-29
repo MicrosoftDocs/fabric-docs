@@ -11,14 +11,14 @@ ms.date: 03/25/2024
 # Set up SMTP Server with Apache Airflow Project.
 
 ## Introduction
-Apache Airflow is an open-source platform for orchestrating workflows and data pipelines. It allows you to schedule, monitor, and manage complex tasks using a web interface and a Python-based programming language. One of the features of Airflow is the ability to send email notifications and alerts when a task fails, succeeds, or retries. This can help you keep track of your workflows and troubleshoot any issues.
+Apache Airflow is an open-source platform for orchestrating workflows and data pipelines. It allows you to schedule, monitor, and manage complex tasks using a web interface and a Python-based programming language. One of the features of Airflow is the ability to send email notifications and alerts when a task fails, succeeds, or retries. This feature can help you keep track of your workflows and troubleshoot any issues.
 
-To use email notifications and alerts, you need to set up an SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it is a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Apache Airflow using Gmail.
+To use email notifications and alerts, you need to set up an (Simple Mail Transfer Protocol)SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Apache Airflow using Gmail.
 
 ## Prerequisites
 Before you start, you need to have the following:
 
-* **SMTP server** or service that your can use to send emails. You will need the SMTP host, port, username, and password for your server or service. If you are using Gmail, create an app password for your account.
+* **SMTP server** or service that your can use to send emails. You'll need the SMTP host, port, username, and password for your server or service. If you're using Gmail, create an app password for your account.
 
 * An email address that you want to use as the sender of the notifications and alerts. This can be the same as your SMTP username, or a different one if your SMTP service allows it.
 
@@ -29,14 +29,14 @@ Before you start, you need to have the following:
 * Once you have the prerequisites, you can configure the Apache Airflow to use your SMTP server or service. Edit the `Airflow configurations` section, with the following fields:
 
     * **AIRFLOW__SMTP__SMTP_HOST**: The hostname or IP address of your SMTP server or service.
-    * **AIRFLOW__SMTP__SMTP_STARTTLS**: Whether to use TLS (Transport Layer Security) encryption when connecting to your SMTP server or service. Set this to True if your SMTP server or service supports TLS, or False otherwise.
-    * **AIRFLOW__SMTP__SMTP_SSL**: Whether to use SSL (Secure Sockets Layer) encryption when connecting to your SMTP server or service. Set this to True if your SMTP server or service requires SSL, or False otherwise.
-    * **AIRFLOW__SMTP__SMTP_USER**: The username for your SMTP server or service. This is usually your email address, or an API key if you are using SendGrid.
-    * **AIRFLOW__SMTP__SMTP_PASSWORD**: The password for your SMTP server or service. This is usually your email password, or an app password if you are using Gmail.
+    * **AIRFLOW__SMTP__SMTP_STARTTLS**: Whether to use TLS (Transport Layer Security) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service supports TLS, or False otherwise.
+    * **AIRFLOW__SMTP__SMTP_SSL**: Whether to use SSL (Secure Sockets Layer) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service requires SSL, or False otherwise.
+    * **AIRFLOW__SMTP__SMTP_USER**: The username for your SMTP server or service. This is usually your email address, or an API key if you're using SendGrid.
+    * **AIRFLOW__SMTP__SMTP_PASSWORD**: The password for your SMTP server or service. This is usually your email password, or an app password if you're using Gmail.
     * **AIRFLOW__SMTP__SMTP_PORT**: The port number for your SMTP server or service. This is usually 25, 465, or 587, depending on the encryption method and the SMTP service.
     * **AIRFLOW__SMTP__SMTP_MAIL_FROM**: The email address that you want to use as the sender of the notifications and alerts. This can be the same as your SMTP username, or a different one if your SMTP service allows it.
 
-    If you are using Gmail, refer to the following values.
+    If you're using Gmail, refer to the following values.
 
     | Airflow Configuration           | Gmail                   |
     |---------------------------------|-------------------------|
