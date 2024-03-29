@@ -59,7 +59,7 @@ If the sensitivity button is greyed out, it may indicate that you don't have an 
 
 Sensitivity labels and file encryption protect data only when it leaves Power BI via [supported export paths](/power-bi/enterprise/service-security-sensitivity-label-overview#supported-export-paths). Data that leaves Power BI via unsupported export paths won't inherit the sensitivity label and won't be encrypted.
 
-To prevent leakage of sensitive data, the Power BI admin can block export from non-supported export paths using Power BI's [export and sharing settings](../admin-center.md).
+To prevent leakage of sensitive data, the Power BI admin can block export from non-supported export paths using Power BI's [export and sharing settings](../admin/admin-center.md).
 
 ### Miscellaneous problems with sensitivity labels
 
