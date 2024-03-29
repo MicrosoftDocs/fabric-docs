@@ -64,7 +64,7 @@ items:
     - name: Get started with data access roles
       href: ./security/get-started-data-access-roles.md
     - name: Best Practices
-      href: ./security/best-practices-securing-data-in-onelake.md
+      href: ./security/best-practices-secure-data-in-onelake.md
   - name: How To Secure Data in OneLake
     items:
     - name: For Data Science
