@@ -9,6 +9,7 @@ ms.date: 03/13/2024
 ms.topic: overview
 ms.custom:
 ms.search.form: Fabric Mirroring
+no-loc: [Copilot]
 ---
 
 # What is Mirroring in Fabric?

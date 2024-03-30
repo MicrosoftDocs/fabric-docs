@@ -9,6 +9,7 @@ ms.custom:
   - ignite-2023-fabric
 ms.topic: conceptual
 ms.date: 02/07/2024
+no-loc: [Copilot]
 ---
 
 # Overview of Copilot in Fabric and Power BI (preview)

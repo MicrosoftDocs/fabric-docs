@@ -6,6 +6,7 @@ ms.author: yaschust
 ms.reviewer: mibar
 ms.topic: conceptual
 ms.date: 03/07/2024
+no-loc: [Copilot]
 ---
 
 # Privacy, security, and responsible use of Copilot for Real-Time Analytics (preview)

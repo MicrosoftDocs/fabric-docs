@@ -6,6 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.date: 03/17/2024
+no-loc: [Copilot]
 ---
 
 # Tenant settings index

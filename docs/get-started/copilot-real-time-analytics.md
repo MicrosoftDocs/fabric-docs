@@ -6,6 +6,7 @@ ms.author: yaschust
 ms.reviewer: mibar
 ms.topic: conceptual
 ms.date: 03/28/2024
+no-loc: [Copilot]
 ---
 # Copilot for Real-Time Analytics (preview)
 
