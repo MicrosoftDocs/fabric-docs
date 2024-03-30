@@ -71,10 +71,10 @@ For more information about semantic model folders and a complete list of their c
 In addition to the item definition files, each item directory contains one or two automatically generated system files, depending on which version you're using:
 
 - A version 1 directory contains [item.metadata.json](#metadata-file) and [item.config.json](#config-file). When using V1, both files must be in the directory.
-- A version 2 directory contains [.platform](#platform-file). This file includes the content of both item.metadata.json and item.config.json files. If you have this file, you can't have the other two files.
+- A version 2 directory contains [.platform](#platform-file). This file includes the content of both item.metadata.json and item.config.json files. If you have this file, you can't have the other two files. If you're using version 1 and you commit changes, your system files are automatically updated to this version.
 
 >[!NOTE]
->Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `.platform` file. You can’t have all three files.
+> Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `.platform` file. You can’t have all three files.
 
 ### [Version 2](#tab/v2)
 
@@ -106,6 +106,29 @@ The `.platform` file contains the following attributes:
 - `description`: (optional string) Description of the item.
 
 ### [Version 1](#tab/v1)
+
+IF you're using version 1, you have two files in each item directory:
+
+- [item.metadata.json](#metadata-file)
+- [item.config.json](#config-file)
+
+> [!NOTE]
+> When you commit changes to Git, the system files are automatically updated to version 2.
+
+```json
+{ 
+    "type": "report", 
+    "displayName": "All visual types",
+    "description": "This is a report"
+} 
+```
+
+```json
+{ 
+    version: "1.0", 
+    logicalId: "e553e3b0-0260-4141-a42a-70a24872f88d", 
+} 
+```
 
 ### Metadata file
 
