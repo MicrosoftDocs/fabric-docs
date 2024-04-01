@@ -54,13 +54,13 @@ To make sure sensitivity label inheritance from an Excel file works:
 
 1. Store the Excel file on OneDrive or SharePoint Online.
 
-1. In Power BI Desktop, connect to the Excel file using the web connector, as described in [Use OneDrive for work or school links in Power BI Desktop](../connect-data/desktop-use-onedrive-business-links.md). The process described in that article applies to both OneDrive and SharePoint Online.
+1. In Power BI Desktop, connect to the Excel file using the web connector, as described in [Use OneDrive for work or school links in Power BI Desktop](/power-bi/connect-data/desktop-use-onedrive-business-links). The process described in that article applies to both OneDrive and SharePoint Online.
 
 1. After publishing the semantic model, to enable refresh, reconfigure the authentication credentials for the semantic model, also as described in the above article. Be sure to select **OAuth2** as the authentication method, otherwise you might encounter an error when you attempt to connect or refresh.
 
 ## Considerations and limitations
 
-* Inheritance from data sources is supported only for semantic models with enhanced metadata. See [Using enhanced semantic model metadata](../connect-data/desktop-enhanced-dataset-metadata.md) for more information.
+* Inheritance from data sources is supported only for semantic models with enhanced metadata. See [Using enhanced semantic model metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata) for more information.
 * Inheritance from data sources is supported only for semantic models using the Import data connectivity mode. Live connection and DirectQuery connectivity isn't supported.
 * Inheritance from data sources isn't supported in connections via gateways or Azure Virtual Network (VNet). This means that inheritance from an Excel file located on a local machine won't work, because this requires a gateway. 
 
