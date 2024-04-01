@@ -164,7 +164,7 @@ This action results in a new DataFrame with all columns in the right format to t
 The first task is to split the dataset into a training set and a testing or validation set.
 
 ```python
-# Decide on the split between training and testing data from the DataFrame
+# Decide on the split between training and test data from the DataFrame
 trainingFraction = 0.7
 testingFraction = (1-trainingFraction)
 seed = 1234
@@ -173,7 +173,7 @@ seed = 1234
 train_data_df, test_data_df = encoded_final_df.randomSplit([trainingFraction, testingFraction], seed=seed)
 ```
 
-Now that there are two DataFrames, the next task is to create the model formula and run it against the training DataFrame. Then you can validate against the testing DataFrame. Experiment with different versions of the model formula to see the impact of different combinations.
+Now that there are two DataFrames, the next task is to create the model formula and run it against the training DataFrame. Then you can validate against the test dataFrame. Experiment with different versions of the model formula to see the impact of different combinations.
 
 ```python
 ## Create a new logistic regression object for the model

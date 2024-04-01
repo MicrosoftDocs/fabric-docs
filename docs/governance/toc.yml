@@ -3,12 +3,12 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: Governance and compliance in Microsoft Fabric
+  - name: Governance overview and guidance
     href: governance-compliance-overview.md
-  - name: Security overview
-    href: ../security/security-overview.md
-  - name: Admin overview
-    href: ../admin/microsoft-fabric-admin.md
+  - name: Security documentation
+    href: ../security/index.yml
+  - name: Admin documentation
+    href: ../admin/index.yml
 - name: Get started
   items:
   - name: Set up item certification
@@ -30,6 +30,8 @@ items:
     href: information-protection.md
   - name: Sensitivity labels
     items:
+    - name: Protected sensitivity labels
+      href: protected-sensitivity-labels.md
     - name: Default label policy
       href: service-security-sensitivity-label-default-label-policy.md
     - name: Mandatory label policy
@@ -47,7 +49,11 @@ items:
 - name: Impact analysis
   href: impact-analysis.md
 - name: Domains
-  href: domains.md
+  items:
+  - name: Domains
+    href: domains.md
+  - name: Audit schema for domains
+    href: domains-audit-schema.md
 - name: Metadata scanning
   items:
   - name: Metadata scanning overview

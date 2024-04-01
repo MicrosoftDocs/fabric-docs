@@ -5,8 +5,6 @@ metadata:
   author: maggiesMSFT
   ms.author: maggies
   ms.reviewer: ''
-  ms.service: fabric
-  ms.subservice:
   ms.custom:
     - ignite-2023
     - ignite-2023-fabric
@@ -20,7 +18,7 @@ summary: |
   >
   > - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details. 
   > - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
-  > - If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](/fabric/admin/service-admin-portal-copilot) tenant setting in the Fabric Admin portal.
+  > - If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md) tenant setting in the Fabric Admin portal.
   > - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
   > - Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
   > - For more information, see the article [Overview of Copilot in Fabric and Power BI](copilot-fabric-overview.md).
@@ -49,19 +47,19 @@ sections:
 
           Try restarting Copilot by closing the pane and selecting the Copilot button again.
       - question: |
-          I loaded the semantic model and Copilot generated a summary, but I don't think that it's accurate
+          I loaded the semantic model and Copilot generated a summary, but I don't think that it's accurate.
         answer: |
           This inaccuracy could be because your semantic model has missing values. Because AI is generating the summary, it can try to fill the holes and fabricate data. If you can remove the rows with missing values, this situation could be avoided.
       - question: |
-          I generated the report visuals, but the quality of the visuals concern me. I wouldn't choose them myself  
+          I generated the report visuals, but the quality of the visuals concern me. I wouldn't choose them myself.  
         answer: |
           We're continuously looking to improve the quality of the copilot generated visuals. For now, we recommend that you make the change by using the Power BI visualization tool.
       - question: |
           The accuracy of the narrative visual concerns me. 
         answer: |
-          We're continuously working to improve the accuracy of the narrative visual results. The Power BI team already has plans to improve the accuracy over the coming months. As a public preview, there might be mistakes. Know that we're working toward making the tool as accurate as possible. In the meantime, we recommend using the custom prompts as an additional tool to try to tweak the summary to meet your needs.
+          We're continuously working to improve the accuracy of the narrative visual results. The Power BI team already has plans to improve the accuracy over the coming months. As a public preview, there might be mistakes. Know that we're working toward making the tool as accurate as possible. In the meantime, we recommend using the custom prompts as an extra tool to try to tweak the summary to meet your needs.
       - question: |
-          I want to disable Copilot immediately as I'm concerned with the data storage you mentioned
+          I want to disable Copilot immediately as I'm concerned with the data storage you mentioned.
         answer: |
           Contact your help desk to get support from your IT admin.
       - question: |
@@ -74,10 +72,27 @@ sections:
       - question: |
           I'm a Fabric user. I opened the semantic model in Data Factory. Why can't I see Copilot?  
         answer: |
-          We have only enabled Copilot for Power BI. In the future, we'll enable it for other areas of Fabric as well. We don't have a timeline yet for those areas.
+          Copilot is not yet enabled for Data Factory.
 
+  - name: Real-Time Analytics
+    questions:
+      - question: |
+          Does Copilot respond to multiple questions in a conversation?
+        answer: |
+          No, Copilot doesn't answer follow-up questions. You need to ask one question at a time.
+      - question: |
+          How can I improve the quality of the Copilot answer?
+        answer: |
+           Provide any tips or relevant information in your question. For example, if you're asking about a specific column, provide the column name and the type of data it contains. If you want to use specific operators or functions, this will also help. The more information you provide, the better the Copilot answer will be.
+      - question: |
+          What access level do I need on a KQL queryset to use Copilot?
+        answer: |
+          You need read access to the KQL queryset to use Copilot. In order to insert and execute the Copilot-generated query in the KQL queryset, you need to have write access to that KQL queryset.
+      - question: |
+          What database does the Copilot-generated query run against?
+        answer: |
+          The Copilot-generated query runs against the database that the KQL queryset is connected to. If you want to change the database, you can do so in the KQL queryset.
 additionalContent: |
-
   ## Next steps
 
   - [What is Microsoft Fabric?](microsoft-fabric-overview.md)

@@ -10,7 +10,7 @@ ms.date: 06/28/2023
 ---
 # ONNX Inference on Spark
 
-In this example, you train a LightGBM model and convert the model to [ONNX](https://onnx.ai/) format. Once converted, you use the model to infer some testing data on Spark.
+In this example, you train a LightGBM model and convert the model to [ONNX](https://onnx.ai/) format. Once converted, you use the model to infer some test data on Spark.
 
 This example uses the following Python packages and versions:
 
@@ -139,7 +139,7 @@ onnx_ml = (
 
 ## Use the model for inference
 
-To perform inference with the model, the following code creates testing data and transforms the data through the ONNX model.
+To perform inference with the model, the following code creates test data and transforms the data through the ONNX model.
 
 ```python
 from pyspark.ml.feature import VectorAssembler

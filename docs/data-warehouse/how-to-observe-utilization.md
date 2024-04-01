@@ -21,7 +21,7 @@ The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provid
 
 ## Prerequisites
 
-- Have a [Microsoft Fabric licenses](/fabric/enterprise/licenses), which grants Capacity Units (CUs) shared across all Fabric workloads.
+- Have a [Microsoft Fabric licenses](../enterprise/licenses.md), which grants Capacity Units (CUs) shared across all Fabric workloads.
 - Add the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) from AppSource.
 
 ## Observe overall trend across all items in Fabric capacity
@@ -39,7 +39,7 @@ This graph can provide high-level CU trends in the last 14 days to see which Fab
 
 Use the timepoint graph to identify a range of activity where CU utilization was at its peak. We can identify individual interactive and background activities consuming utilization.
 
-The following animated image walks through several steps you can use to drill through utilization, throttling, and overage information. For more information, visit [Throttling in Microsoft Fabric](/fabric/enterprise/throttling).
+The following animated image walks through several steps you can use to drill through utilization, throttling, and overage information. For more information, visit [Throttling in Microsoft Fabric](../enterprise/throttling.md).
 
 :::image type="content" source="media/how-to-observe-utilization/metrics-app-throttling.gif" alt-text="An animated gif of the Metrics app showing the drill through steps.":::
 

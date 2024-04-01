@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Use R to predict flight delay'
 description: This tutorial shows how to predict flight delay by using tidymodels packages and build a Power BI report on the results.
-ms.reviewer: fsolomon
+ms.reviewer: sgilley
 author: ruixinxu
 ms.author: ruxu
 ms.topic: tutorial
@@ -109,7 +109,7 @@ unique(flight_data$carrier)
 
 ## Split the data
 
-Split the single dataset into two sets: a *training* set and a *testing* set. Keep most of the rows in the original dataset (as a randomly chosen subset) in the training dataset. Use the training dataset to fit the model, and use the testing dataset to measure model performance.
+Split the single dataset into two sets: a *training* set and a *testing* set. Keep most of the rows in the original dataset (as a randomly chosen subset) in the training dataset. Use the training dataset to fit the model, and use the test dataset to measure model performance.
 
 Use the `rsample` package to create an object that contains information about how to split the data. Then, use two more `rsample` functions to create DataFrames for the training and testing sets:
 

@@ -72,9 +72,6 @@ Consider using [CTAS (Transact-SQL)](/sql/t-sql/statements/create-table-as-selec
 
 If you're using client applications, make sure you're using [!INCLUDE [product-name](../includes/product-name.md)] in a region that's close to your client computer. Client application examples include Power BI Desktop, SQL Server Management Studio, and Azure Data Studio.
 
-## Create (UNENFORCED) Primary Key, Foreign Key and Unique Constraints
-
-Having [primary key, foreign key and/or unique](table-constraints.md) constraints help the Query Optimizer to generate an execution plan for a query. These constraints can only be UNENFORCED in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] so care must be taken to ensure referential integrity is not violated.
 
 ## Utilize Star Schema data design
 

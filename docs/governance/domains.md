@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/22/2023
+ms.date: 03/19/2024
 ---
 
 # Fabric domains
@@ -234,10 +234,15 @@ For descriptions of the things you need to set, see [Set up certification](../ad
 
 ## Microsoft Fabric REST Admin APIs for domains
 
-Most of the actions available from the UI are available through the Fabric REST Admin APIs for domains. For more information, see [Domains API reference](/rest/api/fabric/admin/domains)
+Most of the actions available from the UI are available through the Fabric REST Admin APIs for domains. For more information, see [Domains API reference](/rest/api/fabric/admin/domains).
+
+## Track user activity on domains
+
+Whenever a domain is created, edited or deleted, that activity is recorded in the audit log for Fabric. You can track these activities in the unified audit log or in the Fabric activity log. For information about the information in the Fabric auditing schema that's specific to domains, see [Audit schema for domains](./domains-audit-schema.md).
 
 ## Related content
 
 * [Domain management tenant settings](../admin/service-admin-portal-domain-management-settings.md)
 * [Microsoft Fabric REST Admin APIs for domains](/rest/api/fabric/admin/domains)
+* [Audit schema for domains](./domains-audit-schema.md)
 * [Admin role in workspaces](../get-started/roles-workspaces.md)

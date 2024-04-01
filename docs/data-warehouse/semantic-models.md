@@ -4,7 +4,7 @@ description: Learn more about default Power BI semantic models in Microsoft Fabr
 author: chuckles22
 ms.author: chweb
 ms.reviewer: wiassaf, salilkanade
-ms.date: 01/16/2024
+ms.date: 01/25/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -15,7 +15,7 @@ ms.search.form: Default semantic model overview # This article's title should no
 
 # Default Power BI semantic models in Microsoft Fabric
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
 
 In [!INCLUDE [product-name](../includes/product-name.md)], Power BI semantic models are a logical description of an analytical domain, with metrics, business friendly terminology, and representation, to enable deeper analysis. This semantic model is typically a star schema with facts that represent a domain, and dimensions that allow you to analyze, or slice and dice the domain to drill down, filter, and calculate different analyses. With the semantic model, the semantic model is created automatically for you, and the aforementioned business logic gets inherited from the parent lakehouse or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] respectively, jump-starting the downstream analytics experience for business intelligence and analysis with an item in [!INCLUDE [product-name](../includes/product-name.md)] that is managed, optimized, and kept in sync with no user intervention. 
 
@@ -56,15 +56,22 @@ When you create a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehou
 
 The default semantic model is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse or Warehouse. You can also query the default semantic model via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse).
 
-### Automatically update semantic model objects
+### Sync the default Power BI semantic model
 
-By default, all tables and views in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] are automatically added to the default Power BI semantic model. Users can also manually select tables or views from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] they want included in the model for more flexibility. Objects that are in the default Power BI semantic model are created as a layout in the model view.
+Previously we auto added all tables and views in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] to the default Power BI semantic model. Based on feedback, we have modified the default behavior to not automatically add tables and views to the default Power BI semantic model. This change will ensure the background sync will not get triggered. This will also disable some actions like "New Measure", "Create Report", "Analyze in Excel".
 
-The background sync that includes objects (tables and views) waits for the downstream semantic model to not be in use, honoring bounded staleness. Users can always go and manually pick tables they want or no want in the semantic model.
+If you want to change this default behavior, you can:
 
-In case you are not using the default Power BI semantic model for reporting purposes, manually toggle the **Automatically update semantic model objects** setting to avoid adding objects automatically. The setting update will ensure that background sync will not get triggered. Furthermore, this will reduce [Onelake costs](/fabric/onelake/onelake-consumption?branch=main&branchFallbackFrom=release-ignite-2023-release).
+1. Manually enable the **Sync the default Power BI semantic model** setting for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] in the workspace. This will restart the background sync that will incur some [consumption costs](../onelake/onelake-consumption.md).
 
-:::image type="content" source="media/semantic-models/automatically-update-default-power-bi-semantic-model.png" alt-text="Screenshot from the Fabric portal showing the option to Automatically update semantic model objects." lightbox="media/semantic-models/automatically-update-default-power-bi-semantic-model.png":::
+    :::image type="content" source="media/semantic-models/default-on.png" alt-text="Screenshot from the Fabric portal showing the setting Sync the default Power BI semantic model is enabled.":::
+
+1. Manually pick tables and views to be added to semantic model through **Manage default Power BI semantic model** in the ribbon or info bar.
+
+    :::image type="content" source="media/semantic-models/default-manage.png" alt-text="Screenshot from the Fabric portal showing the default Manage the semantic model page, and the ability to manually pick more tables.":::
+
+> [!NOTE]
+> In case you are not using the default Power BI semantic model for reporting purposes, manually disable the **Sync the default Power BI semantic model** setting to avoid adding objects automatically. The setting update will ensure that background sync will not get triggered and save on [Onelake consumption costs](../onelake/onelake-consumption.md).
 
 ### Manually update the default Power BI semantic model
 

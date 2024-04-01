@@ -3,15 +3,15 @@ title: Data modeling in the default Power BI semantic model
 description: Learn how to model your data in the default Power BI semantic model in Microsoft Fabric.
 author: salilkanade
 ms.author: salilkanade
-ms.reviewer: wiassaf
-ms.date: 01/22/2024
+ms.reviewer: wiassaf, sosivara
+ms.date: 01/25/2024
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Model view # This article's title should not change. If so, contact engineering.
 ---
 # Model data in the default Power BI semantic model in Microsoft Fabric
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
 
 The default Power BI semantic model inherits all relationships between entities defined in the model view and infers them as Power BI semantic model relationships, when objects are enabled for BI (Power BI Reports). Inheriting the warehouse's business logic allows a warehouse developer or BI analyst to decrease the time to value towards building a useful semantic model and metrics layer for analytical business intelligence (BI) reports in Power BI, Excel, or external tools like Tableau that read the XMLA format.
 
@@ -45,7 +45,7 @@ In Power BI, a semantic model is always required before any reports can be built
 
 To add objects such as tables or views to the default Power BI semantic model, you have options:
 
-- Automatically add objects to the semantic model, which happens by default with no user intervention needed.
+- Manually enable the **Sync the default Power BI semantic model** setting that will automatically add objects to the semantic model. For more information, see [Sync the default Power BI semantic model](semantic-models.md#sync-the-default-power-bi-semantic-model).
 - Manually add objects to the semantic model.
 
 The auto detect experience determines any tables or views and opportunistically adds them.
@@ -92,5 +92,6 @@ You can also hide the entire table and individual columns by using the **Model v
 ## Related content
 
 - [Model data in the default Power BI semantic model in Microsoft Fabric](default-power-bi-semantic-model.md)
+- [Default Power BI semantic models in Microsoft Fabric](semantic-models.md)
 - [Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop](reports-power-bi-service.md)
 - [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)

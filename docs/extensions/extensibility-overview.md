@@ -165,7 +165,7 @@ The UX workload frontend, a standard web app, uses an extension client SDK to op
 > [!NOTE]
 >
 > * Both the FE Quick Setup and the FE Deep Dive guides can be found in the [FE Readme](./extensibility-frontend.md).
-> * Before customizing the sample workload, implement the Frontend (FE) authentication token as outlined in the [Authentication Guide](Authentication/Setup.md#configuring-your-workload-local-manifest-and-acquiring-a-token-for-your-application-frontend).
+> * Before customizing the sample workload, implement the Frontend (FE) authentication token as outlined in the [Authentication Guide](./authentication-setup.md#configuring-your-workload-local-manifest-and-acquiring-a-token-for-your-application-frontend).
 
 ## Getting Started with the Workload Backend
 
@@ -195,7 +195,7 @@ Here are all the resources included and referenced. These documents provide addi
 
 * [Authentication Overview](./authentication-overview.md)
 * [Authentication Setup Guide](./authentication-setup.md)
-* [Authentication JavaScript API](./authentication-api.md)
+* [Authentication JavaScript API](./authentication-javascript-api.md)
 * [Backend Configuration Guide](./extensibility-backend.md))
 * [Frontend Configuration Guide](./extensibility-frontend.md)
 * [Frontend Manifest](./frontend-manifest.md)
