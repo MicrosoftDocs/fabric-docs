@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo
 ms.service: fabric
-ms.date: 03/13/2024
+ms.date: 04/01/2024
 ms.topic: overview
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -53,11 +53,7 @@ Mirroring creates three items in your Fabric workspace:
 
 In addition to the [Microsoft Fabric SQL Query Editor](/fabric/data-warehouse/sql-query-editor), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [Azure Data Studio](/sql/azure-data-studio/what-is-azure-data-studio), and even GitHub Copilot.
 
-Sharing enables ease of access control and management, to make sure you can control access to sensitive information. Sharing also enables secure and democratized decision-making across your organization.
-
-## Mirrored databases solution support
-
-With Mirroring in Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs, and built for openness and collaboration between technology solutions that can read the open-source Delta Lake table format.
+[Sharing](#sharing) enables ease of access control and management, to make sure you can control access to sensitive information. Sharing also enables secure and democratized decision-making across your organization.
 
 ### How do I enable Mirroring in my tenant?
 
