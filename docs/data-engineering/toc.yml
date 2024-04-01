@@ -59,7 +59,7 @@ items:
     href: lakehouse-shortcuts.md
   - name: Stream data to a lakehouse
     href: lakehouse-streaming-data.md
-- name: Lakehouse collaboration
+- name: Lakehouse access control
   items:
   - name: Workspace roles and permissions
     href: workspace-roles-lakehouse.md
