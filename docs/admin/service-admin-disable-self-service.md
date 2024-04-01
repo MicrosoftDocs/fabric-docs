@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: how-to
-ms.date: 11/21/2023
+ms.date: 04/01/2024
 ms.custom: licensing support, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 LocalizationGroup: Administration
 ---
