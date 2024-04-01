@@ -15,9 +15,9 @@ ms.date: 03/23/2024
 
 As a Fabric admin, you can manage many platform aspects for your organization. This section discusses the ability to manage some of Fabric's components, and the impact this has on your organization.
 
-### Purchase Fabric
+### Enable Fabric
 
-The [Microsoft Fabric admin switch](/fabric/admin/fabric-switch) lets organizations that use Power BI enable Microsoft Fabric.
+The [Microsoft Fabric admin switch](/fabric/admin/fabric-switch) is for organizations that already use Power BI. Once an organization has purchased Fabric, use the switch to enable it.
 
 ### Grant and manage licenses
 
