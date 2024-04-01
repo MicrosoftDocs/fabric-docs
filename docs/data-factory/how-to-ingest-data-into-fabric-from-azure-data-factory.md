@@ -71,7 +71,7 @@ From the [Power BI admin portal](https://msit.powerbi.com/admin-portal), navigat
 :::image type="content" source="media/how-to-ingest-data-into-fabric-from-azure-data-factory/power-bi-admin-portal.png" alt-text="Screenshot showing the Power BI admin portal with the Allow service principals to user Power BI APIs option expanded and enabled.":::
 
 > [!NOTE]
-> Please ensure the setting **Users can access data stored in OneLake with apps external to Fabric** is enabled. Refer to [Allow apps running outside of Fabric to access data via OneLake](../onelake/onelake-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake).
+> Please ensure the setting **Users can access data stored in OneLake with apps external to Fabric** is enabled. Refer to [Allow apps running outside of Fabric to access data via OneLake](../onelake/security/fabric-onelake-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake).
 
 ### Workspace
 

@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 03/18/2024
+ms.date: 03/24/2024
 ---
 
 # Microsoft Fabric concepts and licenses
