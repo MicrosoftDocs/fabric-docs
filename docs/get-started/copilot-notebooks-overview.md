@@ -12,6 +12,7 @@ ms.custom:
   - ignite-2023-fabric
 ms.date: 01/16/2024
 ms.search.form: Data Science Overview
+no-loc: [Copilot]
 ---
 # Overview of Copilot for Data Science and Data Engineering (preview)
 
