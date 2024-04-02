@@ -8,6 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 03/21/2024
+no-loc: [Copilot]
 ---
 
 # Understand the metrics app timepoint page
