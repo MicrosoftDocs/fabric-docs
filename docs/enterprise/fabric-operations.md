@@ -9,6 +9,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.date: 03/10/2024
+no-loc: [Copilot]
 ---
 
 # Fabric operations

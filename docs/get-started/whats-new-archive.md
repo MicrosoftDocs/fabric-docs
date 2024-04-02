@@ -8,6 +8,7 @@ ms.date: 03/28/2024
 ms.topic: whats-new
 ms.custom:
   - ignite-2023
+no-loc: [Copilot]
 ---
 # What's new in Microsoft Fabric? archive
 
