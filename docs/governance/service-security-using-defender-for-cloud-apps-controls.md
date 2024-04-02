@@ -147,5 +147,5 @@ For information about Azure and security articles, see:
 * [Deploy Conditional Access App Control for catalog apps with Microsoft Entra ID](/defender-cloud-apps/proxy-deployment-aad)
 * [Session policies](/defender-cloud-apps/session-policy-aad)
 * [Learn about sensitivity labels](/microsoft-365/compliance/sensitivity-labels)
-* [Data protection metrics report](/power-bi/enterprise/service-security-data-protection-metrics-report)
+* [Data protection metrics report](/fabric/governance/use-microsoft-purview-hub)
 * [Power BI implementation planning: Defender for Cloud Apps for Power BI](/power-bi/enterprise/service-security-using-defender-for-cloud-apps-controls)
