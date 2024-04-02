@@ -90,7 +90,7 @@ Take the properties object and surround them in braces - **{ }** - so the REST I
 
 Example:
 
-```POST https://dailyapi.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
 
 Body: 
 
@@ -141,7 +141,7 @@ Response 201:
 
 Example:
 
-```DELETE https://dailyapi.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id> ```
+```DELETE https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id> ```
 
 Response 200: (No body)
 
@@ -151,7 +151,7 @@ Response 200: (No body)
 
 Example:
 
-```GET https://dailyapi.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>```
+```GET https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>```
 
 Response 200:
 
@@ -170,7 +170,7 @@ Response 200:
 
 Example:
 
-```POST https://dailyapi.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/getDefinition```
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/getDefinition```
 
 Response 200:
 
@@ -194,7 +194,7 @@ Response 200:
 
 Example:
 
-```GET https://dailyapi.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
+```GET https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
 
 Response 200:
 
@@ -239,7 +239,7 @@ Response 200:
 
 Example:
 
-```PATCH https://dailyapi.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>```
+```PATCH https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>```
 
 Body:
 ```json
@@ -267,7 +267,7 @@ Response 200:
 
 Example:
 
-```POST https://dailyapi.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/updateDefinition```
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/updateDefinition```
 
 Body:
 
@@ -293,7 +293,7 @@ Response 200: (No body)
 
 Example:
 
-```POST https://dailyapi.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances?jobType=Pipeline```
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances?jobType=Pipeline```
 
 Response 202: (No body)
 
@@ -301,7 +301,7 @@ Example with two parameter values:
 
 Here we have a **Wait** activity with a parameter named **param_waitsec** to specify the number of seconds to wait.
 
-```POST https://dailyapi.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances?jobType=Pipeline```
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances?jobType=Pipeline```
 
 Body:
 
@@ -326,7 +326,7 @@ Response 202: (No body)
 
 Example:
 
-```GET https://dailyapi.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances/<job ID>```dotnetcli
+```GET https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances/<job ID>```dotnetcli
 
 Response 200:
 
@@ -350,7 +350,7 @@ Response 200:
 
 Example:
 
-```POST https://dailyapi.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances/<job ID>/cancel```
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances/<job ID>/cancel```
 
 Response 202: (No body)
 

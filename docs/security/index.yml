@@ -28,8 +28,8 @@ landingContent:
             url: security-fundamentals.md 
       - linkListType: concept
         links:
-          - text: OneLake security
-            url: ../onelake/onelake-security.md                           
+          - text: Fabric and OneLake security
+            url: ../onelake/security/fabric-onelake-security.md                           
       - linkListType: how-to-guide
         links:
           - text: Configure Multi-Geo support for Fabric

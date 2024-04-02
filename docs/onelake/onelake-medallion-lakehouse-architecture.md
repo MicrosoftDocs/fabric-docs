@@ -34,7 +34,7 @@ The basis of a modern data warehouse is a data lake. Microsoft OneLake, which is
 
 You can use OneLake to:
 
-- **Remove silos and reduce management effort.** All organizational data is stored, managed, and [secured](onelake-security.md) within one data lake resource. Because OneLake is provisioned with your Fabric tenant, there are no more resources to provision or manage.
+- **Remove silos and reduce management effort.** All organizational data is stored, managed, and [secured](./security/fabric-onelake-security.md) within one data lake resource. Because OneLake is provisioned with your Fabric tenant, there are no more resources to provision or manage.
 - **Reduce data movement and duplication.** The objective of OneLake is to store only one copy of data. Fewer copies of data results in fewer data movement processes, and that leads to efficiency gains and reduction in complexity. If necessary, you can create a [shortcut](onelake-shortcuts.md) to reference data stored in other locations, rather than copying it to OneLake.
 - **Use with multiple analytical engines.** The data in OneLake is stored in an open format. That way, the data can be queried by various analytical engines, including Analysis Services (used by Power BI), T-SQL, and Spark. Other non-Fabric applications can use APIs and SDKs to [access OneLake](onelake-access-api.md) as well.
 
