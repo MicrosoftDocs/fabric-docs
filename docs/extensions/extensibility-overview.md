@@ -157,7 +157,7 @@ When executing the workload SDK sample and building a workload, industry best pr
 
 ### Frontend Guides
 
-* [FE Quick Setup guide](./extensibility-frontend.md#installation-and-usage): A fast and straightforward way to add and test the sample Frontend (FE) workload to your Fabric capacity. It’s perfect for those who want to quickly see the workload in action.
+* [FE Quick Setup guide](./extensibility-frontend.md#prerequisites): A fast and straightforward way to add and test the sample Frontend (FE) workload to your Fabric capacity. It’s perfect for those who want to quickly see the workload in action.
 
 * [FE Deep Dive guide](./extensibility-frontend.md#package-structure): A comprehensive guide walks you through the process of customizing the sample workload. It’s ideal if you want to tailor the workload to your specific needs.
 The UX workload frontend, a standard web app, uses an extension client SDK to operate within the Fabric portal, providing workload-Specific UI experiences. This SDK can be installed in Angular or React applications, with React recommended for compatibility with the Fluent UI library. The package also includes a UX workload Sample implementation built on Fluent UI, designed for React. Alongside the web app, workloads must provide a UX workload Frontend Manifest, a JSON resource containing essential information about the workload. This combination allows workloads to integrate their web applications within the Fabric portal, ensuring a consistent user experience.

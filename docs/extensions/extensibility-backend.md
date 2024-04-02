@@ -73,7 +73,7 @@ Additionally, incorporate the Microsoft Identity package, as it plays a crucial 
 
 Lastly, our Software Development Kit (SDK) serves as the conduit linking our project to Fabric. The SDK will currently resides in the repository in src/packages/fabric. To configure the NuGet Package Manager, specify the path in the 'Package Sources' section prior to the build process.
 
-```
+```javascript
 	<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	  <PropertyGroup>
@@ -195,7 +195,7 @@ To fulfill the operation, OnGet and OnDelete directly transfer the necessary arg
 #### Implementation Walkthrough
 Below is a description of the 'Create' flow as an example as demonstrated in the boilerplate sample.
 
-
+```javascript
 	public async Task<SDKContracts.FabricItemOperationResult> OnCreateFabricItemAsync(SDKContracts.FabricItemMetadata fabricItemMetadataRequest, FabricExecutionContext fabricExecutionContext, CancellationToken ct)
 	{
 		LogInfo(nameof(OnCreateFabricItemAsync), fabricItemMetadataRequest);
@@ -216,6 +216,7 @@ Below is a description of the 'Create' flow as an example as demonstrated in the
 
 		return OperationCompleted;
 	}
+```
 
 **Authentication and Authorization** (FetchSubjectAndAppTokenTokenFromHeader): We retrieve and validate authentication tokens from the Authorization header in the fabricExecutionContext. This step ensures that the request comes from a legitimate and authorized source. We use the _authenticationService for this purpose and check against AllowedScopes.
 
@@ -277,6 +278,9 @@ As part of the LakehouseController, the WriteToLakehouseFile method serves as an
 
 The WriteToLakehouseFile method enables you to interact with Lakehouse storage efficiently, whether it involves creating new files, overwriting existing ones, or writing data to specific file paths. By utilizing this method, you can seamlessly manage and manipulate data in the Lakehouse, illustrating the boilerplate's support for custom logic execution in the context of data storage and retrieval.
 
+```javascript
+
+
 	[HttpPut("writeToLakehouseFile")]
         public async Task<IActionResult> WriteToLakehouseFile([FromBody] WriteToLakehouseFileRequest request)
         {
@@ -325,7 +329,7 @@ The WriteToLakehouseFile method enables you to interact with Lakehouse storage e
             _logger.LogInformation($"WriteToLakehouseFile succeeded for filePath: {filePath}");
             return Ok();
         }
-
+```
 
 ### Code walkthrough
 

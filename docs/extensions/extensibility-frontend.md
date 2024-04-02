@@ -30,7 +30,7 @@ The SDK provides a sample UI that has the following features:
 
    This package is built on top of the [Fluent UI](https://developer.microsoft.com/fluentui#/) and is designed for [React](https://react.dev/).
 
-* UX Workload Frontend Manifest
+* **UX Workload Frontend Manifest**
 
   The UX Workload Frontend Manifest is a JSON resource that the ISV provides. It contains essential information about the workload, such as the URL of the workload web app, and various UI details like the display name of the ISV item and associated icons. It also enables the ISV to customize what happens when users interact with their items in the Fabric portal (e.g user selects the ISV item in the workspace).
 
@@ -60,6 +60,7 @@ To get started with the Sample Project, follow these steps:
    git clone https://github.com/microsoft/Microsoft-Fabric-developer-sample.git
    ```
 
+    <a name="package-structure"></a>
     This is the package directory layout, with a description of the essential components and resources:
 
     * **docs** - SDK documentation, images
