@@ -2,9 +2,9 @@
 title: Administration overview
 description: This article provides a Microsoft Fabric administration overview.
 author: KesemSharabi
-ms.author: kesharab
+ms.author: mihart
 ms.topic: overview
-ms.date: 01/23/2024
+ms.date: 03/23/2024
 ---
 
 # Administration overview
@@ -15,7 +15,11 @@ ms.date: 01/23/2024
 
 As a Fabric admin, you can manage many platform aspects for your organization. This section discusses the ability to manage some of Fabric's components, and the impact this has on your organization.
 
-### Grant licenses
+### Enable Fabric
+
+The [Microsoft Fabric admin switch](/fabric/admin/fabric-switch) is for organizations that already use Power BI. Once an organization has purchased Fabric, use the switch to enable it.
+
+### Grant and manage licenses
 
 To access the Fabric SaaS platform, you need a license. Fabric has two type of licenses:
 
@@ -23,7 +27,38 @@ To access the Fabric SaaS platform, you need a license. Fabric has two type of l
 
 * [Per user license](../enterprise/licenses.md#per-user-licenses) - Per user licenses allow users to work in Fabric.
 
-Fabric admins can [buy licenses](../enterprise/buy-subscription.md) and control them with tools such as capacity [pause and resume](../enterprise/pause-resume.md) and [scale](../enterprise/scale-capacity.md).
+To purchase licenses, you must be a Billing or Global admin. Admins can [buy licenses](../enterprise/buy-subscription.md) and control them with tools such as capacity [pause and resume](../enterprise/pause-resume.md) and [scale](../enterprise/scale-capacity.md). 
+
+After you purchase licenses, use the Microsoft 365 admin center, PowerShell, or the Azure portal to view and manage those licenses. 
+
+You might see an unexpected subscription for Fabric (free), as shown here.
+
+:::image type="content" source="/power-bi/enterprise/media/service-admin-manage-licenses/power-bi-free-user-activated.png" alt-text="Screenshot of the Power BI subscription, showing a free subscription.":::
+
+This type of subscription is created when users take advantage of self-service sign-up. To read more, see [Power BI in your organization](/microsoft-365/admin/misc/power-bi-in-your-organization).
+
+> [!NOTE]
+>
+>It's possible for a user to have both a Fabric (free) and another Power BI license assigned. This can happen when a user signs up for a free license and then is later assigned a Pro or Premium license. The highest licensing level takes effect in this case.
+
+### Disable self-service
+
+You might not want users in your organization to use self-service. To learn how to disable self-service, visit [Enable or disable self-service](/power-bi/enterprise/service-admin-disable-self-service).
+
+Turning off self-service sign-up keeps users from exploring Fabric on their own. If you block individual sign-up, you might want to [get Fabric (free) licenses for your organization and assign them to all users](/power-bi/enterprise/service-admin-licensing-organization#about-self-service-sign-up).
+
+### Take over a subscription
+
+As an admin, you can't assign or unassign licenses for a self-service purchase subscription bought by a user in your organization. You can [take over a purchase or trial subscription](/microsoft-365/commerce/subscriptions/manage-self-service-purchases-admins#take-over-a-self-service-purchase-or-trial-subscription), and then assign or unassign licenses.
+
+## View your subscriptions
+
+To see which subscriptions your organization has, follow these steps.
+
+1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com).
+2. In the navigation menu, select **Billing** > **Your products**.
+
+Your active Fabric and Power BI subscriptions are listed along with any other subscriptions you have. 
 
 ### Assign admin roles
 
