@@ -58,7 +58,7 @@ Ensure that the NuGet Package Manager is integrated into your Visual Studio inst
 
 * `<GeneratePackageOnBuild>true</GeneratePackageOnBuild>`: When set to true, this property instructs the build process to automatically generate a NuGet package during each build. This is useful to ensure that the package is always up-to-date with the latest changes in the project.
 
-* `<IsPackable>true</IsPackable>`: When set to true, this property indicates that the project is packable, meaning it can be packaged into a NuGet package. It is an essential property for projects intended to produce NuGet packages during the build process.
+* `<IsPackable>true</IsPackable>`: When set to true, this property indicates that the project is packable, meaning it can be packaged into a NuGet package. It's an essential property for projects intended to produce NuGet packages during the build process.
 
 The generated NuGet package is located in the **src\bin\Debug** directory after the build process.
 
@@ -134,7 +134,7 @@ To set up the boilerplate/sample project on your local machine, follow these ste
 		&emsp;&emsp;ii. ClientId: Client ID (AppId) of the workload AAD application.\
 		&emsp;&emsp;iii. ClientSecret: The secret for the workload AAD application.\
 		&emsp;&emsp;iv. Audience: Audience for incoming AAD tokens.\
-	&nbsp;&nbsp;Please note that there is work to merge the two configuration files into one.
+	&nbsp;&nbsp;Note that there's work to merge the two configuration files into one.
 1. Manifest Package\
 To generate a manifest package file, build Fabric_Extension_BE_Boilerplate which will run a 3 step process to generate the manifest package file:
 
@@ -158,7 +158,7 @@ Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-de
 1. Lastly, change your startup project in Visual Studio to the 'Boilerplate' project and simply click the "Run" button. 
 ![Run](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/16da53ad-013a-4382-b6cd-51acc4352c52)
 
-Upon the initialization of the workload, an authentication prompt will be presented. It is essential to highlight that administrative privileges for the capacity are a prerequisite:
+Upon the initialization of the workload, an authentication prompt will be presented. It's essential to highlight that administrative privileges for the capacity are a prerequisite:
 
 ![signIn](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/573bb83a-1c54-4baf-bf52-0aca1e72bc21)
 
@@ -220,7 +220,7 @@ Below is a description of the 'Create' flow as an example as demonstrated in the
 
 **Authentication and Authorization** (FetchSubjectAndAppTokenTokenFromHeader): We retrieve and validate authentication tokens from the Authorization header in the fabricExecutionContext. This step ensures that the request comes from a legitimate and authorized source. We use the _authenticationService for this purpose and check against AllowedScopes.
 
-**Validation** (ValidateSubjectAndAppToken): We perform further validation, ensuring that fabricItemMetadataRequest is not null. If validation fails, a "Failed" result is returned.
+**Validation** (ValidateSubjectAndAppToken): We perform further validation, ensuring that fabricItemMetadataRequest isn't null. If validation fails, a "Failed" result is returned.
 
 **Tenant Verification** (EnsureTenant): We ensure that the request's TenantObjectId matches the authenticated user's Tenant to maintain data separation between Tenants.
 
@@ -255,7 +255,7 @@ This project features seamless integration with Lakehouse, facilitated through t
 * Access Token: Acquires an access token for interacting with the Lakehouse service.
 * File Existence Check: Determines if the file already exists in the Lakehouse and if overwriting is allowed.
 * File Write: Writes data to the Lakehouse file or creates a new file if it doesn't exist.
-* Response Handling: Responds with a success status and an empty response or a conflict response if overwriting is not allowed or the file already exists.
+* Response Handling: Responds with a success status and an empty response or a conflict response if overwriting isn't allowed or the file already exists.
 
 ## Execution of Custom Logic
 
@@ -277,7 +277,7 @@ The boilerplate project includes two essential controllers that expose APIs to m
 
 #### WriteToLakehouseFile - An Example of Execute Operation
 
-As part of the LakehouseController, the WriteToLakehouseFile method serves as an example of an Execute operation. This operation is used for writing data to storage, particularly to the Lakehouse. It is a practical demonstration of how you can execute custom logic within the boilerplate, specifically for data storage tasks.
+As part of the LakehouseController, the WriteToLakehouseFile method serves as an example of an Execute operation. This operation is used for writing data to storage, particularly to the Lakehouse. It's a practical demonstration of how you can execute custom logic within the boilerplate, specifically for data storage tasks.
 
 The WriteToLakehouseFile method enables you to interact with Lakehouse storage efficiently, whether it involves creating new files, overwriting existing ones, or writing data to specific file paths. By utilizing this method, you can seamlessly manage and manipulate data in the Lakehouse, illustrating the boilerplate's support for custom logic execution in the context of data storage and retrieval.
 
@@ -348,10 +348,10 @@ The method obtains an access token for interacting with the Lakehouse. This toke
 The desired file path is constructed based on information provided in the request, such as the workspace, Lakehouse, and file name. This path is used to specify the location where data will be written.
 
 **File Existence Check** (CheckIfFileExists):
-The method checks if the file already exists at the specified file path in the Lakehouse. If the file exists and overwriting is not allowed, a "Conflict" response is returned.
+The method checks if the file already exists at the specified file path in the Lakehouse. If the file exists and overwriting isn't allowed, a "Conflict" response is returned.
 
 **Data Writing or Overwriting** (WriteToLakehouseFile):
-If the file does not exist or overwriting is allowed, the method performs the data writing process. It either creates a new file if it doesn't exist or, in the case of an existing file, deletes the existing one and creates a new one. Data is then written to the newly created file.
+If the file doesn't exist or overwriting is allowed, the method performs the data writing process. It either creates a new file if it doesn't exist or, in the case of an existing file, deletes the existing one and creates a new one. Data is then written to the newly created file.
 
 **Logging Success**:
 Upon successful data writing or overwriting, the method logs the operation's success along with the file path.
@@ -389,14 +389,14 @@ Approve consent in the popped-up dialog.
 
 `Error`: PriorityPlacement: There are no available core services for priority placement only 'name','guid','workload-name'.
 
-`Resolution`: You might be using a user that only has access to Trial capacity. Make sure you are using a capacity that you have access to.
+`Resolution`: You might be using a user that only has access to Trial capacity. Make sure you're using a capacity that you have access to.
 
 #### File creation failure with 404 (NotFound) error
 
 `Error`: Creating a new file failed for filePath: 'workspace-id'/'lakehouse-id'/Files/data.json. Error: Response status code does not indicate success: 404 (NotFound).
-Resolution: Ensure you are using the correct OneLake DFS URL for your environment.
+Resolution: Ensure you're using the correct OneLake DFS URL for your environment.
 
-`Resolution`: Make sure you are working with the OneLake DFS URL that fits your environment. For example, if you work with PPE environment, change EnvironmentConstants.OneLakeDFSBaseUrl in Constants.cs to the appropriate URL.
+`Resolution`: Make sure you're working with the OneLake DFS URL that fits your environment. For example, if you work with PPE environment, change EnvironmentConstants.OneLakeDFSBaseUrl in Constants.cs to the appropriate URL.
 
 ### Debugging
 
