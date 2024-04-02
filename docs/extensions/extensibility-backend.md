@@ -39,7 +39,7 @@ This overview provides a glimpse into our architecture. For more information on 
 
 The frontend (FE) establishes communication with the Fabric FE portal via an IFrame. The portal, in turn, interacts with the Fabric backend (BE) by making calls to its exposed public APIs.
 
-For interactions between the BE development box and the Fabric BE, the Azure Relay serve as a conduit. Additionally, the BE development box seamlessly integrates with Lakehouse, performing operations such as saving, reading, and fetching data from this resource.
+For interactions between the BE development box and the Fabric BE, the Azure Relay serves as a conduit. Additionally, the BE development box seamlessly integrates with Lakehouse, performing operations such as saving, reading, and fetching data from this resource.
 The communication is facilitated by using Azure Relay and the Fabric Software Development Kit (SDK) installed on the BE development box.
 
 The authentication for all communication within these components is ensured through Azure Active Directory (AAD), providing a secure and authenticated environment for the interactions between the frontend, backend, Azure Relay, Fabric SDK, and Lakehouse.
@@ -71,7 +71,7 @@ The BE Boilerplate depends on the following Azure SDK packages:
 * Azure.Storage.Files.DataLake
 Additionally, incorporate the Microsoft Identity package, as it plays a crucial role in implementing secure authentication and authorization, particularly when interfacing with Azure Active Directory (AAD) or other identity providers.
 
-Lastly, our Software Development Kit (SDK) serves as the conduit linking our project to Fabric. The SDK will currently resides in the repository in src/packages/fabric. To configure the NuGet Package Manager, specify the path in the 'Package Sources' section prior to the build process.
+Lastly, our Software Development Kit (SDK) serves as the conduit linking our project to Fabric. The SDK currently resides in the repository in src/packages/fabric. To configure the NuGet Package Manager, specify the path in the 'Package Sources' section prior to the build process.
 
 ```javascript
 	<Project Sdk="Microsoft.NET.Sdk.Web">
@@ -139,7 +139,7 @@ To set up the boilerplate/sample project on your local machine, follow these ste
 To generate a manifest package file, build Fabric_Extension_BE_Boilerplate which will run a 3 step process to generate the manifest package file:
 
 	a. Trigger Fabric_Extension_BE_Boilerplate_WorkloadManifestValidator.exe on workloadManifest.xml in Packages\manifest\files\
-	&emsp;(you can find the code of the validation proccess in \workloadManifestValidator directory), if the validation fails,\
+	&emsp;(you can find the code of the validation process in \workloadManifestValidator directory), if the validation fails,\
 	&emsp;an error file will be generated specifying the failed validation.\
 	b. If the error file exists, the build will fail with "WorkloadManifest validation error",\
 	&emsp;you can double click on the error in VS studio and it will show you the error file.\
@@ -389,7 +389,7 @@ Approve consent in the popped-up dialog.
 
 `Error`: PriorityPlacement: There are no available core services for priority placement only 'name','guid','workload-name'.
 
-`Resolution`: You might be using a user that only have access to Trial capacity. Make sure you are using a capacity that you have access to.
+`Resolution`: You might be using a user that only has access to Trial capacity. Make sure you are using a capacity that you have access to.
 
 #### File creation failure with 404 (NotFound) error
 
