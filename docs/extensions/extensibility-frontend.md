@@ -296,7 +296,7 @@ While a frontend-only development scenario is easily supported, the full end-to-
 The setup and use of the backend side is described in details in the [Fabric extensibility backend boilerplate](./extensibility-backend.md).
 
 Once the backend is up and running, and the Fabric.WorkloadSample.SampleWorkloadArtifact type is **registered in Fabric**, you can perform CRUD operations on this type.
-These operations are exposed via `ArtifactCrudAPI` inside of `ExtensionClientAPI` - [ArtifactCrud API](./node_modules/@trident/extension-client-3p/src/lib/apis/artifact-crud-api.d.ts).
+These operations are exposed via [ArtifactCrud API](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/node_modules/@trident/extension-client-3p/src/lib/apis/artifact-crud-api.d.ts) inside `ExtensionClientAPI`.
 
 #### CREATE
 
