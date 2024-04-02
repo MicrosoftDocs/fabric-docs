@@ -241,13 +241,15 @@ The implementation for the other functions follows a similar structure. On subse
 
 This project features seamless integration with Lakehouse, facilitated through the `LakehouseController.cs` controller. The controller already exposes fundamental actions for essential Lakehouse integration.
 
-#### GetLakehouseFile()
+### GetLakehouseFile()
+
 * Authentication and Authorization: Validates the request's authentication and authorization to ensure it has the necessary permissions to read Lakehouse files.
 * Access Token: Acquires an access token for interacting with the Lakehouse service.
 * File Retrieval: Retrieves the specified file from the Lakehouse service.
 * Response Handling: Responds with either the retrieved data if it exists or a "No Content" status if the file is empty.
 
-#### WriteToLakehouseFile()
+### WriteToLakehouseFile()
+
 * Authentication and Authorization: Validates the request's authentication and authorization to ensure it has the necessary permissions to write Lakehouse files.
 * Request Validation: Checks that the request data is valid and not null.
 * Access Token: Acquires an access token for interacting with the Lakehouse service.
@@ -255,8 +257,8 @@ This project features seamless integration with Lakehouse, facilitated through t
 * File Write: Writes data to the Lakehouse file or creates a new file if it doesn't exist.
 * Response Handling: Responds with a success status and an empty response or a conflict response if overwriting is not allowed or the file already exists.
 
-
 ## Execution of Custom Logic
+
 In addition to supporting CRUD operations, our boilerplate also provides the flexibility to execute custom logic directly from the frontend (FE). The execution process starts from the FE and directly reaches the exposed APIs of the controllers within the boilerplate.
 
 The primary purpose of the Execute operations is to execute specific custom logic tailored to the requirements of your project. This could involve running complex computations, processing data, or performing tasks such as running  jobs on the workload's data stored in the Lakehouse.
@@ -274,6 +276,7 @@ The boilerplate project includes two essential controllers that expose APIs to m
 **LakehouseController**: The LakehouseController is designed for interactions and integration with the Lakehouse. It allows you to interact with and manipulate data stored in the Lakehouse, facilitating operations related to data storage and retrieval.
 
 #### WriteToLakehouseFile - An Example of Execute Operation
+
 As part of the LakehouseController, the WriteToLakehouseFile method serves as an example of an Execute operation. This operation is used for writing data to storage, particularly to the Lakehouse. It is a practical demonstration of how you can execute custom logic within the boilerplate, specifically for data storage tasks.
 
 The WriteToLakehouseFile method enables you to interact with Lakehouse storage efficiently, whether it involves creating new files, overwriting existing ones, or writing data to specific file paths. By utilizing this method, you can seamlessly manage and manipulate data in the Lakehouse, illustrating the boilerplate's support for custom logic execution in the context of data storage and retrieval.
