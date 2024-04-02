@@ -8,6 +8,7 @@ ms.date: 03/20/2024
 ms.service: fabric
 ms.topic: overview
 ms.search.form: Fabric Mirroring
+no-loc: [Copilot]
 ---
 
 # Mirroring Azure Cosmos DB (Preview)
