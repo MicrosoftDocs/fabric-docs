@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: Pierre, Nimrod
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/19/2024
+ms.date: 04/02/2024
 ---
 
 # Automate Git integration by using APIs and Azure DevOps
@@ -58,7 +58,7 @@ Use the following PowerShell scripts to understand how to perform several common
 
 This section gives a step by step description of how to programmatically commit all changes from the workspace to Git.
 
-The script is available at [Commit all changes to Git](https://github.com/microsoft/fabric-samples/blob/main/e2e-samples/GitIntegration-CommitAll.ps1).
+The script is available at [Commit all changes to Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-CommitAll.ps1).
 
 1. **Sign in and get access token** - Sign in to Fabric as a *user* (not a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to sign in.
 To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command.
@@ -113,7 +113,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
 In this section we describe the steps involved in committing only specific changes from the workspace to Git.
 
-You can find the complete script in [Commit select changes to Git](https://github.com/microsoft/fabric-samples/blob/main/e2e-samples/GitIntegration-CommitSelective.ps1)
+You can find the complete script in [Commit select changes to Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-CommitSelective.ps1)
 
 1. Log into Azure and get authentication.
 1. Connect to workspace.
@@ -125,7 +125,7 @@ You can find the complete script in [Commit select changes to Git](https://githu
 
 In this section, we describe the steps involved in updating a workspace with the changes from Git. In this script, we update the workspace items with changes from Git, but we leave the Git repository unchanged.
 
-[Update workspace from Git](https://github.com/microsoft/fabric-samples/blob/main/e2e-samples/GitIntegration-UpdateFromGit.ps1)
+[Update workspace from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-UpdateFromGit.ps1)
 
 1. Log into Azure and get authentication.
 1. Call the [Get Status](/rest/api/fabric/core/git/get-status) API to build the update from Git request body.
@@ -135,7 +135,7 @@ In this section, we describe the steps involved in updating a workspace with the
 
 In this section we describe the steps involved in connecting and syncing a workspace with Git. This script works in both directions. We commit changes from the workspace to Git and also update workspace items with changes from Git.
 
-You can find the complete script in [Connect and sync with Git](https://github.com/microsoft/fabric-samples/blob/main/e2e-samples/GitIntegration-ConnectAndUpdateFromGit.ps1)
+You can find the complete script in [Connect and sync with Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1)
 
 1. Log into Azure and get authentication.
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
@@ -144,7 +144,7 @@ You can find the complete script in [Connect and sync with Git](https://github.c
 
 #### Monitor the progress of long running operations
 
-[Poll a long running operation](https://github.com/microsoft/fabric-samples/blob/main/e2e-samples/LongRunningOperation-Polling.ps1)
+[Poll a long running operation](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/LongRunningOperation-Polling.ps1)
 
 1. Retrieve the operationId from [Update From Git](/rest/api/fabric/core/git/update-from-git) or [Commit To Git](/rest/api/fabric/core/git/commit-to-git) scripts
 1. Call the [Get LRO Status](/rest/api/fabric/core/git/get-status) API every x seconds and print the status.
