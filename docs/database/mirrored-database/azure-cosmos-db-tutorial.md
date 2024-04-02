@@ -8,6 +8,7 @@ ms.reviewer: anithaa
 ms.date: 03/15/2024
 ms.service: fabric
 ms.topic: tutorial
+no-loc: [Copilot]
 ---
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
