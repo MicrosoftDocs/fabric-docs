@@ -29,7 +29,7 @@ The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve 
 
 * [**Connect**](/rest/api/fabric/core/git/connect) and [**disconnect**](/rest/api/fabric/core/git/disconnect) a specific workspace from the Git repository and branch connected to it.
 
-* [**Initialize a connection**](/rest/api/fabric/core/git/initialize-connection) for a workspace that has been connected to Git.
+* [**Initialize a connection**](/rest/api/fabric/core/git/initialize-connection) for a workspace that is connected to Git.
 
 * See which items have incoming changes and which items have changes that weren't yet committed to Git with the [**Git status**](/rest/api/fabric/core/git/get-status) API.
 
@@ -39,13 +39,13 @@ The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve 
 
 ## Prerequisites
 
-To work with Fabric Git APIs you need the following:
+To work with Fabric Git APIs, you need:
 
 * The same [prerequisites you need to use Git integration in the UI](./git-get-started.md#prerequisites).
 
 * A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
 
-You can use the REST APIs without PowerShell, but the scripts in this article use [PowerShell](/powershell/scripting/overview). To run the scripts, you need to install the following:
+You can use the REST APIs without PowerShell, but the scripts in this article use [PowerShell](/powershell/scripting/overview). To run the scripts, you need to take the following steps:
 
 * Install [PowerShell](/powershell/scripting/install/installing-powershell)
 * Install [Azure PowerShell Az module](/powershell/azure/install-azure-powershell)
@@ -113,7 +113,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
 In this section we describe the steps involved in committing only specific changes from the workspace to Git.
 
-You can find the complete script in [Commit select changes to Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-CommitSelective.ps1)
+You can find the complete script in [Commit select changes to Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-CommitSelective.ps1).
 
 1. Log into Azure and get authentication.
 1. Connect to workspace.
@@ -133,9 +133,9 @@ In this section, we describe the steps involved in updating a workspace with the
 
 #### Connect and Sync
 
-In this section we describe the steps involved in connecting and syncing a workspace with Git. This script works in both directions. We commit changes from the workspace to Git and also update workspace items with changes from Git.
+This section describes the steps involved in connecting and syncing a workspace with Git. This script works in both directions. We commit changes from the workspace to Git and also update workspace items with changes from Git.
 
-You can find the complete script in [Connect and sync with Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1)
+You can find the complete script in [Connect and sync with Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1).
 
 1. Log into Azure and get authentication.
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
@@ -146,13 +146,13 @@ You can find the complete script in [Connect and sync with Git](https://github.c
 
 [Poll a long running operation](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/LongRunningOperation-Polling.ps1)
 
-1. Retrieve the operationId from [Update From Git](/rest/api/fabric/core/git/update-from-git) or [Commit To Git](/rest/api/fabric/core/git/commit-to-git) scripts
+1. Retrieve the operationId from the [Update From Git](/rest/api/fabric/core/git/update-from-git) or the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) script.
 1. Call the [Get LRO Status](/rest/api/fabric/core/git/get-status) API every x seconds and print the status.
 
 ## Considerations and limitations
 
 * Git integration using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
-* Service principal is not supported.
+* Service principal isn't supported.
 
 ## Related content
 
