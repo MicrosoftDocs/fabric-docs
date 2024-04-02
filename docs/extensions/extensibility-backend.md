@@ -237,7 +237,7 @@ The implementation for the other functions follows a similar structure. On subse
 
 * Additionally, file streaming is utilized for the purpose of storing information and metadata concerning the location of the Lakehouse.
 
-## Lakehouse Integration
+## Integration with Lakehouse
 
 This project features seamless integration with Lakehouse, facilitated through the `LakehouseController.cs` controller. The controller already exposes fundamental actions for essential Lakehouse integration.
 
