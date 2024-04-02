@@ -93,17 +93,17 @@ Telemetry is used to maintain performance and reliability of the Fabric platform
 
 OneLake supports the same [Azure Data Lake Storage Gen2 (ADLS Gen2)](/azure/storage/blobs/data-lake-storage-introduction) [APIs](../onelake/onelake-api-parity.md) and SDKs, therefore it's compatible with existing ADLS Gen2 applications, including [Azure Databricks](/azure/databricks/introduction/).
 
-For more information, see [OneLake security](../onelake/onelake-security.md).
+For more information, see [Fabric and OneLake security](../onelake/security/fabric-onelake-security.md).
 
 ### Workspace security
 
 [Workspaces](../get-started/workspaces.md) represent the primary security boundary for data stored in OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace by assigning users to [workspace roles](../get-started/roles-workspaces.md).
 
-For more information, see [OneLake security (Workspace security)](../onelake/onelake-security.md#workspace-security).
+For more information, see [Fabric and OneLake security (Workspace security)](../onelake/security/fabric-onelake-security.md#fabric-data-security).
 
 ### Item security
 
-Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/onelake-security.md#item-security) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
+Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/security/fabric-onelake-security.md#fabric-data-security) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
 
 ## Compliance resources
 
@@ -120,7 +120,7 @@ The Fabric service follows the Security Development Lifecycle (SDL), which consi
 For more information about Fabric security, see the following resources.
 
 - [Security in Microsoft Fabric](security-overview.md)
-- [OneLake security](../onelake/onelake-security.md)
+- [Fabric and OneLake security](../onelake/security/fabric-onelake-security.md)
 - [Microsoft Fabric licenses](../enterprise/licenses.md)
 - Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).
