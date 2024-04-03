@@ -38,8 +38,26 @@ items:
       href: event-streams/monitor-capacity-consumption.md
     - name: Add and manage sources
       href: event-streams/add-manage-eventstream-sources.md
+      items:
+      - name: Add an Azure Event Hubs source
+        href: event-streams/add-source-azure-event-hubs.md
+      - name: Add an Azure IoT Hub source
+        href: event-streams/add-source-azure-iot-hub.md
+      - name: Add a custom app source
+        href: event-streams/add-source-custom-app.md
+      - name: Add sample data source
+        href: event-streams/add-source-sample-data.md
     - name: Add and manage destinations
       href: event-streams/add-manage-eventstream-destinations.md
+      items:
+      - name: Add a KQL Database destination
+        href: event-streams/add-destination-kql-database.md
+      - name: Add a lakehouse destination
+        href: event-streams/add-destination-lakehouse.md
+      - name: Add a Reflex destination
+        href: event-streams/add-destination-reflex.md
+      - name: Add a custom app destination
+        href: event-streams/add-destination-custom-app.md
     - name: Process events using event processor
       href: event-streams/process-events-using-event-processor-editor.md
     - name: Preview data

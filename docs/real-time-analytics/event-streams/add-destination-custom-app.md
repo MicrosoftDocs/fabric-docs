@@ -1,0 +1,76 @@
+---
+title: Add custom app destination to an eventstream
+description: Learn how to add a custom app destination to Eventstream item with the Microsoft Fabric event streams feature.
+ms.reviewer: spelluru
+ms.author: xujiang1
+author: xujxu
+ms.topic: how-to
+ms.date: 04/03/2024
+ms.search.form: Source and Destination
+---
+
+# Add a custom app destination to an eventstream
+This article shows you how to add a custom app as a destination to a Microsoft Fabric eventstream. 
+
+## Prerequisites
+Before you start, you must complete the following prerequisites:
+
+- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
+
+> [!NOTE]
+> The maximum number of sources and destinations for one eventstream is **11**. 
+
+## Add a custom app as a destination
+
+If you want to route event data to your application, you can add a custom app as your eventstream destination. Follow these steps to add a custom app destination:
+
+1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Custom App**. The **Custom App** destination configuration screen appears.
+
+1. Enter a destination name for the custom app and select **Add**.
+
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot of the Custom App destination configuration screen." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png":::
+
+1. After you have successfully created the custom application destination, you can switch and view the following information in the **Details** tab in the lower pane:
+
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png":::
+
+   - **Basic**: Shows the name, description, type and status of your custom app.
+   - **Keys**: Shows the connection string for your custom app, which you can copy and paste into your application.
+   - **Sample code**: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstream.
+
+   For each tab (**Basic** / **Keys** / **Sample code**), you can also switch three protocol tabs: **Eventhub**, **AMQP, and **Kafka** to access diverse protocol formats information:
+
+   The connection string is an event hub compatible connection string, and you can use it in your application to receive events from your eventstream. The connection string has multiple protocol formats, which you can switch and select in the Keys tab. The following example shows what the connection string looks like in event hub format:
+
+   *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
+
+      The **EventHub** format is the default format for the connection string, and it's compatible with the Azure Event Hubs SDK. You can use this format to connect to eventstream using the Event Hubs protocol.
+
+      :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-detail.png" alt-text="Screenshot showing the custom app details." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-detail.png":::
+
+      The other two protocol formats are **AMQP** and **Kafka**, which you can select by clicking on the corresponding tabs in the Keys tab.
+
+      The **AMQP** format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between different platforms and languages. You can use this format to connect to eventstream using the AMQP protocol.
+
+      The **Kafka** format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use this format to connect to eventstream using the Kafka protocol.
+
+You can choose the protocol format that suits your application needs and preferences, and copy and paste the connection string into your application. You can also refer to or copy the sample code that we provide in the Sample code tab, which shows how to send or receive events using different protocols.
+
+## Manage a destination
+
+**Edit/remove**: You can edit or remove an eventstream destination either through the navigation pane or canvas.
+
+When you select **Edit**, the edit pane opens in the right side of the main editor. You can modify the configuration as you wish, including the event transformation logic through the event processor editor.
+
+:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing where to select the modify and delete options for destinations on the canvas." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
+
+## Related content
+
+To learn how to add other destinations to an eventstream, see the following articles: 
+- [KQL Database](add-destination-kql-database.md)
+- [Lakehouse](add-destination-lakehouse.md)
+- [Reflex](add-destination-reflex.md)
+
+To add a destination to the eventstream, see the following articles: 
+- [Add and manage sources to an eventstream](./add-manage-eventstream-sources.md)
+- [Create and manage an eventstream](./create-manage-an-eventstream.md)
