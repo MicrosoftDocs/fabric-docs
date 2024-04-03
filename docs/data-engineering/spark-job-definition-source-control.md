@@ -3,7 +3,7 @@ title: Spark Job Definition source control
 description: Learn about Spark Job Definition Git integration 
 ms.reviewer: snehagunda
 ms.author: qixwang
-author: Qixiao Wang
+author: qixwang
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/03/2024
