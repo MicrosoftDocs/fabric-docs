@@ -1,0 +1,39 @@
+items:
+- name: OneRiver documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is OneRiver?
+    href: oneriver-overview.md
+- name: Get started
+  items:
+  - name: Bring your data to OneRiver 
+    href: get-started-bring-events-oneriver.md
+- name: Get events and create streams
+  items:
+  - name: Get events from Microsoft sources
+    href: get-events-microsoft-sources.md
+  - name: Get events from external sources
+    href: get-events-external-sources.md
+  - name: Get system events
+    href: get-system-events.md
+- name: Discover and manage streams
+  items:
+  - name: Explore streams
+    href: explore-streams.md
+  - name: Preview streams
+    href: preview-streams.md
+  - name: View lineage
+    href: view-lineage.md
+  - name: Endorse streams
+    href: endorse-streams.md
+- name: Consume streams
+  items:
+  - name: Trigger actions on streams
+    href: trigger-actions-streams.md
+  - name: Trigger actions on system events
+    href: trigger-actions-system-events.md
+  - name: Create dashboards
+    href: create-dashboards.md
+    
+    
