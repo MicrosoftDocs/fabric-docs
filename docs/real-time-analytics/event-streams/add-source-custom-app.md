@@ -18,6 +18,8 @@ Before you start, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
 
+[!INCLUDE [sources-note](./includes/sources-destinations-note.md)]
+
 ## Add a custom app  as a source
 
 If you want to connect your own application with an eventstream, you can add a custom app source. Then, send data to the eventstream with your own application with the connection endpoint exposed in the custom app. Follow these steps to add a custom app source:

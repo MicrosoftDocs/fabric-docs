@@ -19,8 +19,7 @@ Before you start, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
 - Get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse is located.
 
-> [!NOTE]
-> The maximum number of sources and destinations for one eventstream is **11**.
+[!INCLUDE [sources-note](./includes/sources-destinations-note.md)]
 
 ## Add a lakehouse as a destination
 

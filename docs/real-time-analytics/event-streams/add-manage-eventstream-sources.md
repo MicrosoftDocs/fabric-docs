@@ -35,7 +35,7 @@ The following sources are supported by Fabric Eventstream:
 | [Custom App](add-source-custom-app.md) | The custom app feature allows your applications or Kafka clients to connect to Eventstream using a connection string, enabling the smooth ingestion of streaming data into Eventstream. |
 
 > [!NOTE]
-> - Select links the table to learn more about adding a specific source to the eventstream.
+> - Select links in the table to learn more about adding a specific source to the eventstream.
 > - The total count of sources and destinations for one eventstream is **11**.
 > - Event data retention in an eventstream is **1 day**, with the potential to extend it and make it configurable in the future.
 

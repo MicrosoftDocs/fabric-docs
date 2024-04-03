@@ -18,6 +18,8 @@ Before you start, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
 
+[!INCLUDE [sources-note](./includes/sources-destinations-note.md)]
+
 ## Add sample data as a source
 
 To get a better understanding of how an eventstream works, you can use the out-of-box sample data provided and send data to the eventstream. Follow these steps to add a sample data source:
