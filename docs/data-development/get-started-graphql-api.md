@@ -30,7 +30,7 @@ Creating a GraphQL API in Fabric is a straightforward process.
 
 1. Select **GraphQL API (Preview)**.
 
-   :::image type="content" source="media/get-started-graphql-api/graphql-api-workspace-button.png" alt-text="Screenshot of the GraphQL API tile.":::
+   :::image type="content" source="media/get-started-graphql-api/graphql-api-workspace-button.png" alt-text="Screenshot of the GraphQL API tile, which you select to create a new GraphQL API item.":::
 
    Alternatively, select **New** > **GraphQL API (Preview)** from any workspace in the Data Development experience.
 

@@ -8,4 +8,4 @@ items:
 - name: Connect applications to Fabric GraphQL API
   href: connect-apps-graphql-api.md
 - name: Manage relationships in Fabric GraphQL API
-  href: manage-relatioships.md
+  href: manage-relationships.md

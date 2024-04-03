@@ -41,4 +41,4 @@ The Fabric GraphQL API includes:
 
 * [Create and add data to GraphQL API in Microsoft Fabric](get-started-graphql-api.md)
 * [Connect applications to Fabric GraphQL API](connect-apps-graphql-api.md)
-* [GraphQL query language](GraphQL.org)
+* [GraphQL query language](https://graphql.org/)

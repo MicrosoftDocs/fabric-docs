@@ -20,18 +20,18 @@ One of the most powerful features in GraphQL is the ability to establish relatio
 
 1. From the Schema explorer pane, select the ellipsis next to a type and select the **Manage relationships** option. The **Manage relationships** screen appears.
 
-   :::image type="content" source="media/manage-relationships/manage-relationships-start.png" alt-text="":::
+   :::image type="content" source="media/manage-relationships/manage-relationships-start.png" alt-text="Screenshot of the Manage relationships screen, showing where to select the New relationship option.":::
 
 1. Select **New relationship**. For this example, we'll create a new one-to-one relationship between the **Product** type and the **ProductModel** type, based on the **ProductModelID** field that exists in both types. We select **One to one** for **Cardinality**, select the **From** and **To** types, and then select the From and To fields for this relationship.
 
-   :::image type="content" source="media/manage-relationships/create-relationship-one-to-one.png" alt-text="":::
+   :::image type="content" source="media/manage-relationships/create-relationship-one-to-one.png" alt-text="Screenshot of the New relationship screen, showing examples of selections for the five required fields.":::
 
    > [!NOTE]
    > You can choose multiple fields in the From and To field pickers. This feature allows you to create relationships that comprise multiple fields.
 
 1. Select **Create relationship**. Your list of relationships now shows the newly created relationship.
 
-   :::image type="content" source="media/manage-relationships/create-relationship-result.png" alt-text="":::
+   :::image type="content" source="media/manage-relationships/create-relationship-result.png" alt-text="Screenshot of the Manage relationships screen showing the newly created relationship in the list.":::
 
 1. Select the X in the upper right corner to close the **Manage relationships** screen.
 
