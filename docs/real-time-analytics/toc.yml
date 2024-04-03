@@ -28,15 +28,13 @@ items:
       href: tutorial-7-clean-up-resources.md
 - name: Get data
   items:
-  - name: Get, transform, and route events 
+  - name: Get, process, and route events 
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
     - name: Create and manage an eventstream
       href: event-streams/create-manage-an-eventstream.md
-    - name: Monitor event streams capacity consumption
-      href: event-streams/monitor-capacity-consumption.md
-    - name: Add and manage sources    
+    - name: Get events from sources
       items:
       - name: Add and manage an event source
         href: event-streams/add-manage-eventstream-sources.md
@@ -48,7 +46,9 @@ items:
         href: event-streams/add-source-custom-app.md
       - name: Add a sample data source
         href: event-streams/add-source-sample-data.md
-    - name: Add and manage destinations
+    - name: Process events using event processor
+      href: event-streams/process-events-using-event-processor-editor.md
+    - name: Route events to destinations
       items:
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations.md      
@@ -60,12 +60,14 @@ items:
         href: event-streams/add-destination-reflex.md
       - name: Add a custom app destination
         href: event-streams/add-destination-custom-app.md
-    - name: Process events using event processor
-      href: event-streams/process-events-using-event-processor-editor.md
     - name: Preview data
       href: event-streams/preview-data.md
     - name: Monitor event streams
       href: event-streams/monitor.md
+    - name: Monitor event streams capacity consumption
+      href: event-streams/monitor-capacity-consumption.md
+    - name: Integrate with other Fabric items
+      href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
     - name: Tutorials
       items:
       - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
@@ -76,8 +78,6 @@ items:
         href: event-streams/build-report-from-iot-hub.md
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
-    - name: Integrate with other Fabric items
-      href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
   - name: Get data in a KQL Database
     items: 
     - name: Data formats
