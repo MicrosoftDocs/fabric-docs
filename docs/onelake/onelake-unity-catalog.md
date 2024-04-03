@@ -12,7 +12,7 @@ ms.date: 02/15/2024
 
 # Integrate Databricks Unity Catalog with OneLake
 
-This scenario shows how to integrate Unity Catalog Delta tables to OneLake using shortcuts. After completing this tutorial, you’ll be able to automatically sync your Unity Catalog external Delta tables to a Microsoft Fabric lakehouse.
+This scenario shows how to integrate Unity Catalog external Delta tables to OneLake using shortcuts. After completing this tutorial, you’ll be able to automatically sync your Unity Catalog external Delta tables to a Microsoft Fabric lakehouse.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ Before you connect, you must have:
 
 - A [Fabric workspace](../get-started/create-workspaces.md).
 - A [Fabric lakehouse](../data-engineering/tutorial-build-lakehouse.md) in your workspace.
-- Unity Catalog schemas and tables created within your Azure Databricks workspace. 
+- [External Unity Catalog Delta tables](https://learn.microsoft.com/azure/databricks/sql/language-manual/sql-ref-external-tables) created within your Azure Databricks workspace.
 
 
 ## Set up your Cloud storage connection
@@ -32,6 +32,10 @@ First, examine which storage locations in Azure Data Lake Storage Gen2 (ADLS Gen
 2. Once you create the connection, obtain the connection ID by selecting **Settings** ![Settings gear icon](../data-factory/media/connector-common/settings.png) > **Manage connections and gateways** > **Connections** > **Settings**.
 
 :::image type="content" source="media\onelake-unity-catalog\adlsgen2-conn.png" alt-text="Screenshot showing ADLS Gen2 connection ID.":::
+
+> [!NOTE]
+> Granting users direct storage level access to external location storage in ADLS Gen2 does not honor any permissions granted or audits maintained by Unity Catalog.  Direct access will bypass auditing, lineage, and other security/monitoring features of Unity Catalog including access control and permissions. You are responsible for managing direct storage access through ADLS Gen2 and ensuring that users have the appropriate permissions granted via Fabric. 
+Avoid all scenarios granting direct storage level write access for buckets storing Databricks Managed Tables. Modifying, deleting, or evolving any objects directly through storage which were originally managed by Unity Catalog can result in data corruption. 
 
 ## Run the notebook
 
@@ -73,7 +77,7 @@ In the latter scenario, if you intend to pass parameters from the data pipeline,
 
 - For production scenarios, we recommend using [Databricks OAuth](https://learn.microsoft.com/azure/databricks/dev-tools/auth/oauth-m2m) for authentication and Azure Key Vault to manage secrets. For instance, you can use the [MSSparkUtils](../data-engineering/microsoft-spark-utilities.md) credentials utilities to access Key Vault secrets.
 - The notebook works with Unity Catalog external Delta tables. If you’re using multiple Cloud storage locations for your Unity Catalog tables, i.e. more than one ADLS Gen2, the recommendation is to run the notebook separately by each Cloud connection.
-- Managed Delta tables, Views and non-Delta tables are skipped.
+- Unity Catalog managed Delta tables, views, materialized views, streaming tables and non-Delta tables are not supported.
 - Changes to Unity Catalog table schemas like add / delete columns are reflected automatically in the shortcuts. However, some updates like Unity Catalog table rename and deletion require a notebook resync / rerun. This is considered by `fab_consider_dbx_uc_table_changes` parameter.
 - For writing scenarios, using the same storage layer across different compute engines can result in unintended consequences. Be sure to grasp the implications when using different Spark compute engines and runtime versions.
 
