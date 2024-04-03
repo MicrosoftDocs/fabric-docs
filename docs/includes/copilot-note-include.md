@@ -5,6 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.topic: include
 ms.date: 01/17/2024
+no-loc: [Copilot]
 ---
 
 > [!NOTE]

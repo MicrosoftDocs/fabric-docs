@@ -8,6 +8,7 @@ ms.service: fabric
 ms.date: 03/20/2024
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
+no-loc: [Copilot]
 ---
 
 # Mirroring Snowflake (Preview)
