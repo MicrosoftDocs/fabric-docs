@@ -66,7 +66,7 @@ To add a KQL database as a destination, you need to have a KQL database created 
 
       :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png" alt-text="Screenshot of the KQL Database push mode destination configuration screen." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png":::
 
-   2. Design the event processing with event processor,and then select **Save**
+   2. Design the event processing with event processor, and then select **Save**
 
       :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png" alt-text="Screenshot of the push mode event processor screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png":::
 
@@ -74,7 +74,7 @@ To add a KQL database as a destination, you need to have a KQL database created 
 
       :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-error.png" alt-text="Screenshot of the push mode event processor error screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-error.png":::
 
-      When open the event processor, the detailed mismatch information will be shown in Authoring error tab.
+      When open the event processor, the detailed mismatch information is shown in Authoring error tab.
 
       :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png" alt-text="Screenshot of the push mode event processor mismatch information screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png":::
 

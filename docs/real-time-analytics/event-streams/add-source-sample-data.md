@@ -27,7 +27,7 @@ To get a better understanding of how an eventstream works, you can use the out-o
 1. On the right pane, enter a source name to appear on the canvas, select the sample data you want to add to your eventstream, and then select **Add**.
    - **Bicycles**: sample bicycles data with a preset schema that includes fields such as BikepointID, Street, Neighborhood, Latitude, and more.
    - **Yellow Taxi**: sample taxi data with a preset schema that includes fields such as pickup time, drop-off time, distance, total fee, and more.
-   - **Stock Market**: sample data of a stock exchange with a preset schema column such as time, symbol, price, volume and more.
+   - **Stock Market**: sample data of a stock exchange with a preset schema column such as time, symbol, price, volume, and more.
 
        :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration." lightbox="./media/event-streams-source/eventstream-sources-sample-data.png":::
 
