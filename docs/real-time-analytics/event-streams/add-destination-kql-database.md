@@ -25,7 +25,7 @@ Before you start, you must complete the following prerequisites:
 
 To add a KQL database as a destination, you need to have a KQL database created in the workspace, and choose between two ingestion modes: **Direct ingestion** and **Event processing before ingestion**.
 
-1. **Direct ingestion**
+### Direct ingestion
    This mode ingests your event data directly into the KQL database without any processing. You can use this mode if you want to ingest your event data as-is and perform any processing or transformation later in KQL database using KQL queries.
    1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **KQL Database**. The **KQL Database** destination configuration screen appears.
 
@@ -59,7 +59,7 @@ To add a KQL database as a destination, you need to have a KQL database created 
 
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the new KQL database pull mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
 
-2. **Event processing before ingestion**
+### Event processing before ingestion
    This mode processes your event data before ingesting it into the KQL database. You can use this mode if you want to apply some processing or transformation to your event data before ingesting it, such as filtering, aggregating, or expanding. You can design the processing logic using event processor.
    1. Select **Event processing before ingestion**, complete the information about your KQL Database, and then select **Open event processor**.
 
