@@ -36,9 +36,10 @@ items:
       href: event-streams/create-manage-an-eventstream.md
     - name: Monitor event streams capacity consumption
       href: event-streams/monitor-capacity-consumption.md
-    - name: Add and manage sources
-      href: event-streams/add-manage-eventstream-sources.md
+    - name: Add and manage sources    
       items:
+      - name: Add and manage an event source
+        href: event-streams/add-manage-eventstream-sources.md
       - name: Add an Azure Event Hubs source
         href: event-streams/add-source-azure-event-hubs.md
       - name: Add an Azure IoT Hub source
@@ -48,8 +49,9 @@ items:
       - name: Add sample data source
         href: event-streams/add-source-sample-data.md
     - name: Add and manage destinations
-      href: event-streams/add-manage-eventstream-destinations.md
       items:
+      - name: Add and manage a destination
+        href: event-streams/add-manage-eventstream-destinations.md      
       - name: Add a KQL Database destination
         href: event-streams/add-destination-kql-database.md
       - name: Add a lakehouse destination
