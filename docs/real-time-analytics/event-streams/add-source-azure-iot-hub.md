@@ -19,7 +19,7 @@ Before you start, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
 - You need to have appropriate permission to get IoT hub's access keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
-[!INCLUDE [sources-note](./includes/sources-destinations-note.md)]
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add an Azure IoT hub as a source
 

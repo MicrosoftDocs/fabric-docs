@@ -25,7 +25,7 @@ Before you start, you must complete the following prerequisites:
 
 ## Supported sources
 
-The following sources are supported by Fabric Eventstream:
+The following sources are supported by Fabric event streams. Use links in the table to navigate to articles that provide more details about adding specific sources.
 
 | Sources          | Description |
 | --------------- | ---------- |
@@ -34,10 +34,7 @@ The following sources are supported by Fabric Eventstream:
 | [Sample data](add-source-sample-data.md) | You can choose **Bicycles**, **Yellow Taxi** or **Stock Market events** as a sample data source to test the data ingestion while setting up an eventstream. |
 | [Custom App](add-source-custom-app.md) | The custom app feature allows your applications or Kafka clients to connect to Eventstream using a connection string, enabling the smooth ingestion of streaming data into Eventstream. |
 
-> [!NOTE]
-> - Select links in the table to learn more about adding a specific source to the eventstream.
-> - The total count of sources and destinations for one eventstream is **11**.
-> - Event data retention in an eventstream is **1 day**, with the potential to extend it and make it configurable in the future.
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Manage a source
 

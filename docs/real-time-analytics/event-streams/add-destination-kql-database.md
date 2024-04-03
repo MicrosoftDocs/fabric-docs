@@ -19,7 +19,7 @@ Before you start, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
 - Access to a **premium workspace** with **Contributor** or above permissions where your KQL database is located.
 
-[!INCLUDE [sources-note](./includes/sources-destinations-note.md)]
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add a KQL database as a destination
 

@@ -1,6 +1,6 @@
 ---
-title: Add sample data source to an eventstream
-description: Learn how to add sample data source to an eventstream.
+title: Add a sample data source to an eventstream
+description: Learn how to Add a sample data source to an eventstream.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
@@ -9,8 +9,8 @@ ms.date: 04/03/2024
 ms.search.form: Source and Destination
 ---
 
-# Add sample data source to an eventstream
-This article shows you how to add sample data source to an eventstream. 
+# Add a sample data source to an eventstream
+This article shows you how to Add a sample data source to an eventstream. 
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ Before you start, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
 
-[!INCLUDE [sources-note](./includes/sources-destinations-note.md)]
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add sample data as a source
 

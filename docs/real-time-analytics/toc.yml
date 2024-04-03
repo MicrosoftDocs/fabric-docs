@@ -46,7 +46,7 @@ items:
         href: event-streams/add-source-azure-iot-hub.md
       - name: Add a custom app source
         href: event-streams/add-source-custom-app.md
-      - name: Add sample data source
+      - name: Add a sample data source
         href: event-streams/add-source-sample-data.md
     - name: Add and manage destinations
       items:
