@@ -9,3 +9,5 @@ items:
   href: connect-apps-graphql-api.md
 - name: Manage relationships in Fabric GraphQL API
   href: manage-relationships.md
+- name: Multiple data source support
+  href: multiple-data-sources.md
