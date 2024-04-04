@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/29/2024
+ms.date: 04/04/2024
 ---
 
 # Trusted workspace access (preview)
@@ -112,39 +112,25 @@ A Contributor on the storage account (an Azure RBAC role) can configure resource
 
     :::image type="content" source="./media/security-trusted-workspace-access/preview-storage-data-lakehouse-shortcut.png" alt-text="Screenshot showing previewing storage data through lakehouse shortcut." lightbox="./media/security-trusted-workspace-access/preview-storage-data-lakehouse-shortcut.png":::
 
-### Use the OneLake shortcut to a storage account with trusted workspace access in Fabric items
+#### Use the OneLake shortcut to a storage account with trusted workspace access in Fabric items
 
 With OneCopy in Fabric, you can access your OneLake shortcuts with trusted access from all Fabric workloads.
 
-#### Spark
+* **Spark**: You can use Spark to access data from your OneLake shortcuts. When shortcuts are used in Spark, they appear as folders in OneLake. You just need to reference the folder name to access the data. You can use the OneLake shortcut to storage accounts with trusted workspace access in Spark notebooks.
 
-You can use Spark to access data from your OneLake shortcuts. When shortcuts are used in Spark, they appear as folders in OneLake. You just need to reference the folder name to access the data.
+* **SQL endpoint**: Shortcuts created in the "Tables" section of your lakehouse are also available in the SQL endpoint.  You can open the SQL endpoint and query your data just like any other table.
 
-You can use the OneLake shortcut to storage accounts with trusted workspace access in Spark notebooks.
+* **Pipelines**: Data pipelines can access managed shortcuts to storage accounts with trusted workspace access. Data pipelines can be used to read from or write to storage accounts through OneLake shortcuts.
 
-#### SQL endpoint
+* **Dataflows v2**: Dataflows Gen2 can be used to access managed shortcuts to storage accounts with trusted workspace access. Dataflows Gen2 can read from or write to storage accounts through OneLake shortcuts.
 
- Shortcuts created in the "Tables" section of your lakehouse are also available in the SQL endpoint.  You can open the SQL endpoint and query your data just like any other table.
+* **Semantic models and reports**: The default semantic model associated with a Lakehouse SQL endpoint can read managed shortcuts to storage accounts with trusted workspace access. To see the managed tables in the default semantic model, go to the SQL endpoint, select **Reporting**, and choose **Automatically update semantic model**.
 
-#### Pipelines
+    * You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL endpoint, select **Reporting** and choose **New semantic model**.
 
-Data pipelines can access managed shortcuts to storage accounts with trusted workspace access. Data pipelines can be used to read from or write to storage accounts through OneLake shortcuts.
+    * You can create reports on top of the default semantic models and custom semantic models.
 
-#### Dataflows v2
-
-Dataflows Gen2 can be used to access managed shortcuts to storage accounts with trusted workspace access. Dataflows Gen2 can read from or write to storage accounts through OneLake shortcuts.
-
-#### Semantic models and reports
-
-The default semantic model associated with a Lakehouse SQL endpoint can read managed shortcuts to storage accounts with trusted workspace access. To see the managed tables in the default semantic model, go to the SQL endpoint, select **Reporting**, and choose **Automatically update semantic model**.
-
-You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL endpoint, select **Reporting** and choose **New semantic model**.
-
-You can create reports on top of the default semantic models and custom semantic models.
-
-#### KQL Database
-
-You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL database. The steps to create the managed shortcut with trusted workspace access remain the same.
+* **KQL Database**: You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL database. The steps to create the managed shortcut with trusted workspace access remain the same.
 
 ### Create a data pipeline to a storage account with trusted workspace access
 
@@ -154,7 +140,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 
  * A Fabric workspace associated with a Fabric capacity. See [Workspace identity](./workspace-identity.md).
 * Create a workspace identity associated with the Fabric workspace.
-* The user account or service principal used for creating the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope.
+* The user account or service principal used for creating the connection should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope.
 * Configure a [resource instance rule](#resource-instance-rule) for the storage account.
 
 #### Steps
