@@ -1,13 +1,28 @@
 items:
-- name: What is Microsoft Fabric GraphQL API?
-  href: graphql-api-overview.md
-- name: Create and add data to GraphQL API
-  href: get-started-graphql-api.md
-- name: Fabric GraphQL API editor
-  href: graphql-api-editor.md
-- name: Connect applications to Fabric GraphQL API
-  href: connect-apps-graphql-api.md
-- name: Manage relationships in Fabric GraphQL API
-  href: manage-relationships.md
-- name: Multiple data source support
-  href: multiple-data-sources.md
+- name: Data Development documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is GraphQL API?
+    href: graphql-api-overview.md
+- name: Get started
+  items:
+  - name: Create a GraphQL API
+    href: get-started-graphql-api.md
+- name: Concepts
+  items:
+  - name: GraphQL API editor
+    href: graphql-api-editor.md
+  - name: Schema view and explorer
+    href: graphql-schema-view.md
+  - name: Frequently asked questions
+    href: graphql-api-faq.md
+- name: How-to guides
+  items:
+  - name: Manage relationships
+    href: manage-relationships.md
+  - name: Connect applications
+    href: connect-apps-graphql-api.md
+  - name: Query multiple data sources
+    href: multiple-data-sources.md
+  

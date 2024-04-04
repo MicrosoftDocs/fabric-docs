@@ -1,0 +1,48 @@
+### YamlMime:Landing
+
+title: Data Development documentation in Microsoft Fabric # < 60 chars
+summary: Learn more about the Data Development experience in Microsoft Fabric  # < 160 chars
+
+metadata:
+  title: Data Development in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Summary of the Data Development documentation in Microsoft Fabric # Required; article description that is displayed in search results. < 160 chars.
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice:
+  ms.custom:
+  ms.topic: landing-page # Required
+  ms.collection: collection # Optional; Remove if no collection is used.
+  author: snehagunda #Required; your GitHub user alias, with correct capitalization.
+  ms.author: sngun #Required; microsoft alias of author; optional team alias.
+  ms.date: 04/04/2024 #Required; mm/dd/yyyy format.
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card 
+  - title: About Fabric GraphQL API
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is GraphQL API?
+            url: graphql-api-overview.md
+
+  # Card 
+  - title: Get started with GraphQL API
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Create a GraphQL API and add data
+            url: get-started-graphql-api.md
+
+  # Card 
+  - title: GraphQL API how-to guides
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Manage relationships
+            url: manage-relationships.md
+          - text: Connect applications
+            url: connect-apps-graphql-api.md
+          - text: Query multiple data sources
+            url: multiple-data-sources.md

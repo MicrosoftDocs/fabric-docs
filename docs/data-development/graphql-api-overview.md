@@ -24,21 +24,22 @@ Exposing data sources to a GraphQL item in Microsoft Fabric is quick and easy. P
 
 Currently, these supported data sources can be exposed through the Fabric GraphQL API:
 
-* Microsoft Fabric SQL Database
-* Microsoft Fabric Data Warehouse
-* Microsoft Fabric Lakehouse via SQL Analytics Endpoint
-* Microsoft Fabric Mirrored Databases via SQL Analytics Endpoint
+- Microsoft Fabric SQL Database
+- Microsoft Fabric Data Warehouse
+- Microsoft Fabric Lakehouse via SQL Analytics Endpoint
+- Microsoft Fabric Mirrored Databases via SQL Analytics Endpoint
 
 ## Features
 
 The Fabric GraphQL API includes:
 
-* Automatic generation of queries and mutations.
-* Support for stored procedures for SQL Database and Data Warehouse.
-* Support for multiple data sources with corresponding fan-out queries.
+- Automatic generation of queries and mutations.
+- Support for stored procedures for SQL Database and Data Warehouse.
+- Support for multiple data sources with corresponding fan-out queries.
 
 ## Related content
 
-* [Create and add data to GraphQL API in Microsoft Fabric](get-started-graphql-api.md)
-* [Connect applications to Fabric GraphQL API](connect-apps-graphql-api.md)
-* [GraphQL query language](https://graphql.org/)
+- [Create and add data to GraphQL API in Microsoft Fabric](get-started-graphql-api.md)
+- [Connect applications to Fabric GraphQL API](connect-apps-graphql-api.md)
+- [GraphQL API frequently asked questions](graphql-api-faq.md)
+- [GraphQL query language](https://graphql.org/)
