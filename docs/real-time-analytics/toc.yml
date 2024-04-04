@@ -32,7 +32,7 @@ items:
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
-    - name: Create and manage an eventstream
+    - name: Create an eventstream
       href: event-streams/create-manage-an-eventstream.md
     - name: Get events from sources
       items:
