@@ -44,8 +44,6 @@ In this article, you learn how to create an Eventhouse, add new databases to an 
     > [!NOTE]
     > The Eventhouse name can contain alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
-    :::image type="content" source="media/eventhouse/create-eventhouse.png" alt-text="Screenshot of creating Eventhouse by entering name in Real-Time Analytics." lightbox="media/eventhouse/create-eventhouse.png":::
-
 1. The [database details](create-database.md#database-details) page opens for the default database in the newly created Eventhouse. To view all the databases in this Eventhouse or create new databases, select the **Eventhouse** menu item.
 
     :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of choosing Eventhouse from database details page." lightbox="media/eventhouse/choose-eventhouse.png":::
