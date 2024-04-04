@@ -40,11 +40,11 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 
     :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/data-source.png" alt-text="Screenshot of the Select a data source type window showing the available data sources to use with the shortcut. The Next button is highlighted."  lightbox="media/onelake-shortcuts/onelake-shortcut/data-source.png":::
 
-1. Expand **Files**, and select a specific subfolder to connect to, then select **Create** to create your connection.
+1. Expand **Tables**, and select a specific table to connect to.
 
     :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted."  lightbox="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png":::
 
-1. Select **Close**.
+1. Select **Create**.
 
 > [!NOTE]
 > You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create additional shortcuts.
@@ -85,7 +85,7 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 
 1. On the rightmost side of your database, select **Explore your data**. The window opens with a few example queries you can run to get an initial look at your data.
 1. Replace the table name placeholder with `external_table('`*Shortcut name*`')`.
-1. Select **Run** or press **Shift+ Enter** to run a selected query.
+1. Select **Run** or press **Shift + Enter** to run a selected query.
 
 :::image type="content" source="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of an example query."  lightbox="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png":::
 
