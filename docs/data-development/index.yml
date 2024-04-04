@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
 title: Data Development documentation in Microsoft Fabric # < 60 chars
-summary: Learn more about the Data Development experience in Microsoft Fabric  # < 160 chars
+summary: Learn more about the Data Development experience in Microsoft Fabric.  # < 160 chars
 
 metadata:
   title: Data Development in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Summary of the Data Development documentation in Microsoft Fabric # Required; article description that is displayed in search results. < 160 chars.
+  description: Summary of the Data Development documentation in Microsoft Fabric. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice:
   ms.custom:
