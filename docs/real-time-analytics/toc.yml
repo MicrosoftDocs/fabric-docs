@@ -62,10 +62,18 @@ items:
         href: event-streams/add-destination-custom-app.md
     - name: Preview data
       href: event-streams/preview-data.md
-    - name: Monitor event streams
-      href: event-streams/monitor.md
-    - name: Monitor event streams capacity consumption
-      href: event-streams/monitor-capacity-consumption.md
+    - name: Manage eventstreams
+      items:
+      - name: Manage an eventstream
+        href: event-streams/manage-eventstream.md
+      - name: Configure settings
+        href: event-streams/configure-settings.md
+    - name: Monitor eventstreams
+      items:
+      - name: Monitor status and performance of eventstreams 
+        href: event-streams/monitor.md
+      - name: Monitor event streams capacity consumption
+        href: event-streams/monitor-capacity-consumption.md
     - name: Integrate with other Fabric items
       href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
     - name: Tutorials
