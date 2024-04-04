@@ -4,20 +4,21 @@ description: This article provides a Microsoft Fabric administration overview.
 author: KesemSharabi
 ms.author: mihart
 ms.topic: overview
-ms.date: 03/23/2024
+ms.date: 04/04/2024
 ---
 
 # Administration overview
 
 [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. Fabric unified administration enables you to [secure](../security/security-overview.md) and [govern](../governance/governance-compliance-overview.md) data across the platform, and [manage](#manage) Fabric features. Controlling feature access and capabilities allow you to comply with company policies and external rules and regulations. Fabric also allows admins to [delegate](#delegate-admin-rights) their responsibilities. Delegation lets you create different groups of admins for different tasks in your organization. Delegating admin responsibilities can reduce pressure that might cause one admin team to become a bottleneck for organizational processes.
 
+This article uses the generic term "admin." For details about which types of admins can perform the tasks described here, visit these articles:
+- [Admin roles in Fabric](../admin/microsoft-fabric-admin.md).
+- [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference)
+- [Microsoft 365 admin roles](/microsoft-365/admin/add-users/about-admin-roles)
+
 ## Manage
 
-As a Fabric admin, you can manage many platform aspects for your organization. This section discusses the ability to manage some of Fabric's components, and the impact this has on your organization.
-
-### Enable Fabric
-
-The [Microsoft Fabric admin switch](/fabric/admin/fabric-switch) is for organizations that already use Power BI. Once an organization has purchased Fabric, use the switch to enable it.
+As an admin, you can manage many platform aspects for your organization. This section discusses the ability to manage some of Fabric's components, and the impact this has on your organization.
 
 ### Grant and manage licenses
 
@@ -27,23 +28,13 @@ To access the Fabric SaaS platform, you need a license. Fabric has two type of l
 
 * [Per user license](../enterprise/licenses.md#per-user-licenses) - Per user licenses allow users to work in Fabric.
 
-To purchase licenses, you must be a Billing or Global admin. Admins can [buy licenses](../enterprise/buy-subscription.md) and control them with tools such as capacity [pause and resume](../enterprise/pause-resume.md) and [scale](../enterprise/scale-capacity.md). 
+To purchase licenses, you must be a Billing or Global administrator. Global and Billing administrators can [buy licenses](../enterprise/buy-subscription.md) and control them with tools such as capacity [pause and resume](../enterprise/pause-resume.md) and [scale](../enterprise/scale-capacity.md). 
 
 After you purchase licenses, use the Microsoft 365 admin center, PowerShell, or the Azure portal to view and manage those licenses. 
 
-You might see an unexpected subscription for Fabric (free), as shown here.
+### Turn off self-service
 
-:::image type="content" source="/power-bi/enterprise/media/service-admin-manage-licenses/power-bi-free-user-activated.png" alt-text="Screenshot of the Power BI subscription, showing a free subscription.":::
-
-This type of subscription is created when users take advantage of self-service sign-up. To read more, see [Power BI in your organization](/microsoft-365/admin/misc/power-bi-in-your-organization).
-
-> [!NOTE]
->
->It's possible for a user to have both a Fabric (free) and another Power BI license assigned. This can happen when a user signs up for a free license and then is later assigned a Pro or Premium license. The highest licensing level takes effect in this case.
-
-### Disable self-service
-
-You might not want users in your organization to use self-service. To learn how to disable self-service, visit [Enable or disable self-service](/power-bi/enterprise/service-admin-disable-self-service).
+Self-service allows individuals to sign up, try, or purchase Fabric or Power BI on their own. You might not want users in your organization to use one or more forms of self-service. Perhaps all licensing is centralized and managed by an admin team or perhaps your organization doesn't permit trials. To learn how to turn off self-service, visit [Enable or disable self-service](/power-bi/enterprise/service-admin-disable-self-service).
 
 Turning off self-service sign-up keeps users from exploring Fabric on their own. If you block individual sign-up, you might want to [get Fabric (free) licenses for your organization and assign them to all users](/power-bi/enterprise/service-admin-licensing-organization#about-self-service-sign-up).
 
@@ -62,15 +53,15 @@ Your active Fabric and Power BI subscriptions are listed along with any other su
 
 ### Assign admin roles
 
-Fabric admins can assign and manage [Fabric admin roles](../admin/roles.md). Admin roles allow users to buy licenses, and control organizational settings. For example, as an admin you can access the [admin center](../admin/admin-center.md) and manage your organization's [tenant settings](../admin/about-tenant-settings.md).
+Admins can assign and manage [Fabric admin roles](../admin/roles.md). Admin roles allow users to buy licenses, and control organizational settings. For example, admins with certain roles can access the [admin center](../admin/admin-center.md) and manage their organization's [tenant settings](../admin/about-tenant-settings.md).
 
 ### Customize a Fabric tenant
 
 Fabric is composed of tenants, capacities, and workspaces. Your organization might have one or more tenants, each with at least one capacity. Workspaces reside in capacities, and are where data is created, transformed, and consumed. Each organization can organize its tenants, capacities, and workspaces in accordance with their organizational structure. For example, in an organization with one tenant, capacities can be organized according to the organizational functions, and workspaces can be created according to each function's divisions.
 
-Fabric admins can control these processes throughout the organization. For example, being an admin allows you to create and delete workspaces, and to control [workspace settings](../get-started/workspaces.md#workspace-settings) such as [Azure connections](../data-factory/dataflow-support.md), [Git integration](../cicd/git-integration/intro-to-git-integration.md) and [OneLake](../onelake/onelake-overview.md).
+Admins can control these processes throughout the organization. For example, being an admin allows you to create and delete workspaces, and to control [workspace settings](../get-started/workspaces.md#workspace-settings) such as [Azure connections](../data-factory/dataflow-support.md), [Git integration](../cicd/git-integration/intro-to-git-integration.md) and [OneLake](../onelake/onelake-overview.md).
 
-To distribute management across the organization, you can also use [domains](../governance/domains.md). With a domain, you create a logical grouping of workspaces. For example, your organization can create domains according to functions such as sales and marketing. Designated users can become admins and oversee Fabric functions related to the data in each domain. Using domains allows your organization to appoint  the right admins at the right level. You no longer need global admins with lots of permissions and responsibilities to manage every single area in your organization. Using domains, you can allocate some admin rights to users who are closer to the domain's subject matter. By doing that, you free Fabric admins to concentrate on organizational processes, and allow experts to directly manage data in their fields.
+To distribute management across the organization, you can also use [domains](../governance/domains.md). With a domain, you create a logical grouping of workspaces. For example, your organization can create domains according to functions such as sales and marketing. Designated users can become admins and oversee Fabric functions related to the data in each domain. Using domains allows your organization to appoint the right admins at the right level. You no longer need Global administrators with lots of permissions and responsibilities to manage every single area in your organization. Using domains, you can allocate some admin rights to users who are closer to the domain's subject matter. By doing that, you free Global administrators to concentrate on organizational processes, and allow experts to directly manage data in their fields.
 
 ### Add and remove users
 
@@ -88,17 +79,17 @@ You can also control your organization's [disaster recovery capacity setting](/a
 
 ## Control
 
-An admin has control over Fabric settings and permissions across the platform. You can also delegate admin settings to other admins in your organization, to allow granular control across your organization.
+Admins have control over Fabric settings and permissions across the platform. You can also delegate admin settings to other admins in your organization, to allow granular control across your organization.
 
 ### Delegate admin rights
 
-To avoid becoming a bottleneck for every single setting in your organization, a Fabric admin can delegate many of the controls to capacity, workspace, and domain admins. Delegating settings allows your organization to have several admins with different levels of admin rights in multiple logical locations within your organization. For example, you can have a three admins with access to all the settings in your organization, and another admin for each team in your organization. The team admin can control settings and permissions relevant for the team, at the capacity, workspace, or domain level, depending on the way your organization is set up. You can also have multiple levels of admins in your organization, depending on your organization's needs.
+To avoid becoming a bottleneck for every single setting in your organization, you can delegate many of the controls to Capacity, Workspace, and Domain administrators. Delegating settings allows your organization to have several admins with different levels of admin rights in multiple logical locations within your organization. For example, you can have three admins with access to all the settings in your organization, and another admin for each team in your organization. The team admin can control settings and permissions relevant for the team, at the capacity, workspace, or domain level, depending on the way your organization is set up. You can also have multiple levels of admins in your organization, depending on your organization's needs.
 
 ### Enable Fabric settings
 
-Fabric admins can enable and disable global platform settings by controlling the [Tenant settings](../admin/about-tenant-settings.md). If your organization has one tenant, you can enable and disable settings for the entire organization from that tenant. Organizations with multiple tenants require an admin for each tenant. If your organization has several tenants, it can opt for a centralized approach by appointing one admin (or a team of admins) to control the settings for all the organization's tenants.
+Admins can enable and disable global platform settings by controlling the [Tenant settings](../admin/about-tenant-settings.md). If your organization has one tenant, you can enable and disable settings for the entire organization from that tenant. Organizations with multiple tenants require an admin for each tenant. If your organization has several tenants, it can opt for a centralized approach by appointing one admin (or a team of admins) to control the settings for all the organization's tenants.
 
-Capacity and workspace settings allow you to be more specific when you control your Fabric platform, because they apply to a specific capacity or workspace. Most Fabric experiences and features, have their own settings, allowing control at an experience or feature level. For example, workspace admins can customize [Spark compute configuration settings](../data-engineering/environment-manage-compute.md).
+Capacity and workspace settings allow you to be more specific when you control your Fabric platform, because they apply to a specific capacity or workspace. Most Fabric experiences and features, have their own settings, allowing control at an experience or feature level. For example, workspace administrators can customize [Spark compute configuration settings](../data-engineering/environment-manage-compute.md).
 
 ### Grant permissions
 
@@ -130,7 +121,7 @@ Admins can view their organization's [bills](../enterprise/azure-billing.md) to 
 
 ## Capabilities
 
-This section provides a high level list of some of Fabric admin capabilities mentioned in this article.
+This section provides a high level list of some of the admin capabilities mentioned in this article.
 
 | Capability |Description |
 |------------|------------|
@@ -141,6 +132,8 @@ This section provides a high level list of some of Fabric admin capabilities men
 | [workspace roles](../get-started/roles-workspaces.md) | Set up permissions for Fabric workspaces         |
 
 ## Related content
+
+* [Admin roles](roles.md)
 
 * [Security overview](../security/security-overview.md)
 
