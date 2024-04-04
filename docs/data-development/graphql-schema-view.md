@@ -23,7 +23,7 @@ The following image is an example of the schema view, including an extensive lis
 > [!NOTE]
 > The schema view is read only. You can only modify objects in the Schema explorer.
 
-:::image type="content" source="media/get-started-graphql-api/schema-view.png" alt-text="Screenshot of the GraphQL API schema view screen, which includes the Schema explorer in the left pane." lightbox="media/graphql-schema-view/schema-view.png":::
+:::image type="content" source="media/get-started-graphql-api/schema-view.png" alt-text="Screenshot of the GraphQL API schema view screen, which includes the Schema explorer in the left pane." lightbox="media/get-started-graphql-api/schema-view.png":::
 
 ## Types in Schema explorer
 
