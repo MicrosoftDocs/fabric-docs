@@ -521,7 +521,7 @@ To view your experiments:
 1. On the left panel, select your workspace.
 1. Find and select the experiment name, in this case _aisample-upliftmodelling_.
 
-:::image type="content" source="./media/uplift-modeling/aisample-upliftmodeling.png" alt-text="Screenshot that shows the aisample uplift modeling experiment results." lightbox="./media/uplift-modeling/criteo-uplift-curve.png":::
+:::image type="content" source="./media/uplift-modeling/aisample-uplift-model.png" alt-text="Screenshot that shows the aisample uplift modeling experiment results." lightbox="./media/uplift-modeling/aisample-uplift-model.png":::
 
 ## Step 5: Save the prediction results
 
