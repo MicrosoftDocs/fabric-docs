@@ -1,6 +1,6 @@
 ---
 title: Use Python for Apache Spark
-description: Overview of developing Spark applications using the Python language.
+description: Learn about developing Spark applications in Synapse using Python to analyze data through Spark batch job definitions or with interactive Fabric notebooks.
 ms.reviewer: mopeakande
 author: midesa
 ms.author: midesa
@@ -10,11 +10,12 @@ ms.custom:
   - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: Python Language
+#customer intent: As a data analyst, I want to understand how Spark applications in Synapse can analyze data.
 ---
 
 # Use Python for Apache Spark
 
-Microsoft Fabric provides built-in Python support for Apache Spark. This includes support for [PySpark](https://spark.apache.org/docs/latest/api/python/index.html), which allows users to interact with Spark using familiar Spark or Python interfaces. You can analyze data using Python through Spark batch job definitions or with interactive Fabric notebooks. This document provides an overview of developing Spark applications in Synapse using the Python language.
+Microsoft Fabric provides built-in Python support for Apache Spark. Support includes [PySpark](https://spark.apache.org/docs/latest/api/python/index.html), which allows users to interact with Spark using familiar Spark or Python interfaces. You can analyze data using Python through Spark batch job definitions or with interactive Fabric notebooks. This document provides an overview of developing Spark applications in Synapse using the Python language.
 
 ## Create and run notebook sessions
 
@@ -33,7 +34,7 @@ To learn more about notebooks within [!INCLUDE [product-name](../../includes/pro
 
 ## Install packages
 
-Libraries provide reusable code that you might want to include in your programs or projects. To make third party or locally built code available to your applications, you can install a library in-line into your notebook session or your workspace admin can create an environment, install the library in it, and attach the environment as the workspace default in the workspace setting.
+Libraries provide reusable code that you might want to include in your programs or projects. To make partner code or locally built code available to your applications, you can install a library in-line into your notebook session. Alternatively, your workspace admin can create an environment, install the library in it, and attach the environment as the workspace default in the workspace setting.
 
 To learn more about library management in Microsoft Fabric, see [manage Apache Spark libraries](../../data-engineering/library-management.md).
 
@@ -53,7 +54,7 @@ Learn more about the supported MSSparkUtils commands at [Use Microsoft Spark Uti
 
 ## Use Pandas on Spark
 
-The [Pandas API on Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html) allows you to scale your Pandas workload to any size by running it distributed across multiple nodes. If you are already familiar with pandas and want to leverage Spark for big data, pandas API on Spark makes you immediately productive and lets you migrate your applications without modifying the code. You can have a single codebase that works both with pandas (tests, smaller datasets) and with Spark (production, distributed datasets) and you can switch between the pandas API and the Pandas API on Spark easily and without overhead.
+The [Pandas API on Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html) allows you to scale your Pandas workload to any size by running it distributed across multiple nodes. If you're already familiar with pandas and want to use Spark for big data, pandas API on Spark makes you immediately productive. You can migrate your applications without modifying the code. You can have a single codebase that works both with pandas (tests, smaller datasets) and with Spark (production, distributed datasets). You can switch between the pandas API and the Pandas API on Spark easily and without overhead.
 
 ## Python runtime
 
