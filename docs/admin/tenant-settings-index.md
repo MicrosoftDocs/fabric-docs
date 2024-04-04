@@ -5,7 +5,8 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/17/2024
+no-loc: [Copilot]
+ms.date: 03/30/2024
 ---
 
 # Tenant settings index
@@ -23,6 +24,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |Retail data solutions (preview)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://aka.ms/Retail_data_solutions)|
 |Healthcare data solutions (preview)|Use advanced AI analytics to help generate new insights, enhance patient care, and improve outcomes.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2248375)|
 |[Create Eventhouse (preview)](../real-time-analytics/eventhouse.md)|Users in the organization can use Eventhouse|
+|[Database Mirroring (preview)](../database/mirrored-database/overview.md)|Users can connect to and continuously replicate data from an external database into Fabric OneLake via Delta tables. Once in OneLake, users can operationalize the data (i.e., run analytics with Spark, execute notebooks, visualize through Power BI Reports, etc.). This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2261406)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 
@@ -92,7 +94,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Allow DirectQuery connections to Power BI semantic models](service-admin-portal-export-sharing.md#allow-directquery-connections-to-power-bi-semantic-models)|DirectQuery connections allow users to make changes to existing semantic models or use them to build new ones.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2179788)|
 |[Guest users can work with shared semantic models in their own tenants](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-guest-users-to-work-with-shared-datasets-in-their-own-tenants)|Authorized guest users can discover semantic models shared with them in the OneLake data hub (in Power BI Desktop), and then work with these semantic models in their own Power BI tenants.|
 |[Allow specific users to turn on external data sharing](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-specific-users-to-turn-on-external-data-sharing)|Turn off this setting to prevent all users from turning on external data sharing. If this setting is on, all or specific users can turn on the external data sharing option, allowing them to share data with authorized guest users. Authorized guest users can then discover, connect to, and work with these shared semantic models in their own Power BI tenants.|
-|Users can deliver reports to OneDrive and SharePoint in Power BI|Users can deliver reports to OneDrive or SharePoint. If the **Users can set up subscriptions** setting is also turned on, users can use subscriptions to schedule delivery of these reports to OneDrive or SharePoint. [Learn More](./tenant-settings-index.md#export-and-sharing-settings)|
+																																																																																							  
 
 ## [Discovery settings](service-admin-portal-discovery.md)
 
@@ -127,7 +129,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Google BigQuery SSO](/power-query/connectors/google-bigquery-aad)|Enable SSO capability for Google BigQuery. By enabling, user access token information, including name and email, will be sent to Google BigQuery for authentication.|
 |[Microsoft Entra single sign-on for data gateway](service-admin-portal-integration.md#azure-ad-single-sign-on-sso-for-gateway)|Users can use Microsoft Entra single sign-on (SSO) to authenticate to on-premises data gateways and access data sources.<br><br>With this setting on, user access token information, including names and emails, is sent to data sources to authenticate to the  on-premises data gateway service.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2256374)|
 |[Power Platform Solutions Integration (preview)](service-admin-portal-integration.md#power-platform-solutions-integration-preview)|Allow integration with Power Platform solutions.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2194433)|
-|[Users can view Power BI files saved in OneDrive and SharePoint (preview)](/power-bi/collaborate-share/service-sharepoint-viewer)|Users in the organization can view Power BI files saved in OneDrive for Business or SharePoint document libraries. The permissions to save and share Power BI files in OneDrive and SharePoint document libraries are controlled by permissions managed in OneDrive and SharePoint. [Learn More](https://go.microsoft.com/fwlink/?linkid=2224280)|
+|[Users can view Power BI files saved in OneDrive and SharePoint (preview)](/power-bi/collaborate-share/service-sharepoint-viewer)|Users in the organization can view Power BI files saved in OneDrive or SharePoint document libraries. The permissions to save and share Power BI files in OneDrive and SharePoint document libraries are controlled by permissions managed in OneDrive and SharePoint. [Learn More](https://go.microsoft.com/fwlink/?linkid=2224280)|
 |[Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop](service-admin-portal-integration.md#users-can-share-links-to-power-bi-files-stored-in-onedrive-and-sharepoint-through-power-bi-desktop)|Users who have saved Power BI files (.pbix) to OneDrive and SharePoint can share links to those files using Power BI Desktop. [Learn More](https://go.microsoft.com/fwlink/?linkid=2227462)|
 |Enable granular access control for all data connections|Enforce strict access control for all data connection types. When this is turned on, shared items will be disconnected from data sources if they’re edited by users who don’t have permission to use the data connections.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2226159)|
 |[Semantic models can export data to OneLake (preview)](/power-bi/enterprise/onelake-integration-overview#admin-portal)|Semantic models configured for OneLake integration can send import tables to OneLake. Once the data is in OneLake, users can include the exported tables in Fabric items, including lakehouses and warehouses.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2252165)|
@@ -269,7 +271,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Users can access data stored in OneLake with apps external to Fabric](../onelake/onelake-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake)|Users can access data stored in OneLake with apps external to the Fabric environment, such as custom applications created with Azure Data Lake Storage (ADLS) APIs, OneLake File Explorer, and Databricks. Users can already access data stored in OneLake with apps internal to the Fabric environment, such as Spark, Data Engineering, and Data Warehouse. [Learn More](https://go.microsoft.com/fwlink/?linkid=2231198)|
+|[Users can access data stored in OneLake with apps external to Fabric](../onelake/security/fabric-onelake-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake)|Users can access data stored in OneLake with apps external to the Fabric environment, such as custom applications created with Azure Data Lake Storage (ADLS) APIs, OneLake File Explorer, and Databricks. Users can already access data stored in OneLake with apps internal to the Fabric environment, such as Spark, Data Engineering, and Data Warehouse. [Learn More](https://go.microsoft.com/fwlink/?linkid=2231198)|
 |[Users can sync data in OneLake with the OneLake File Explorer app](../onelake/onelake-file-explorer.md)|Turn on this setting to allow users to use OneLake File Explorer. This app will sync OneLake items to Windows File Explorer, similar to OneDrive. [Learn More](https://go.microsoft.com/fwlink/?linkid=2231052)|
 
 ## [Git integration](git-integration-admin-settings.md)

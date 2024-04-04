@@ -95,8 +95,8 @@ ms.search.form: Get started
 For more information about tasks performed in this tutorial, see:
 
 * [Create and manage an eventstream](event-streams/create-manage-an-eventstream.md)
-* [Add a sample data as a source](event-streams/add-manage-eventstream-sources.md#add-a-sample-data-as-a-source)
-* [Add a KQL database as a destination](event-streams/add-manage-eventstream-destinations.md#add-a-kql-database-as-a-destination)
+* [Add a sample data as a source](event-streams/add-source-sample-data.md#add-sample-data-as-a-source)
+* [Add a KQL database as a destination](event-streams/add-destination-kql-database.md)
 
 ## Next step
 
