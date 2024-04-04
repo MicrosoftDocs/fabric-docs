@@ -23,7 +23,7 @@ This article shows you how to:
 
 * [Configure trusted workspace access](#configure-trusted-workspace-access-in-adls-gen2) in an Azure Data Lake Gen 2 storage account.
 
-* [Create a OneLake shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse that connects to a trusted workspace access enabled Azure Data Lake Gen 2 storage account.
+* [Create a OneLake shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse that connects to a trusted-workspace-access enabled Azure Data Lake Gen 2 storage account.
 
 * [Create a data pipeline](#create-a-data-pipeline-to-a-storage-account-with-trusted-workspace-access) to connect directly to a firewall-enabled Azure Data Lake Gen 2 account that has trusted workspace access enabled.
 
