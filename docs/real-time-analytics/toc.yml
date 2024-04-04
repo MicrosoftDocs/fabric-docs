@@ -65,7 +65,7 @@ items:
     - name: Manage eventstreams
       items:
       - name: Manage an eventstream
-        href: manage-eventstream.md
+        href: event-streams/manage-eventstream.md
       - name: Configure settings
         href: event-streams/configure-settings.md
     - name: Monitor eventstreams
