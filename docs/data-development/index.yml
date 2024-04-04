@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Data Development documentation in Microsoft Fabric # < 60 chars
-summary: Learn more about the Data Development experience in Microsoft Fabric.  # < 160 chars
+summary: The Microsoft Fabric GraphQL API streamlines data access by enabling you to query across various sources. It offers a user-friendly query language and the ability to change result sets.  # < 160 chars
 
 metadata:
   title: Data Development in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
