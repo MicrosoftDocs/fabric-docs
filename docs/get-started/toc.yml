@@ -41,6 +41,8 @@ items:
     href: create-workspaces.md
   - name: Roles in workspaces
     href: roles-workspaces.md
+  - name: Create folders in workspaces
+    href: workspaces-folders.md
   - name: Give users access to workspaces
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
@@ -125,6 +127,24 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Upload reports from OneDrive or SharePoint fails
+      href: known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md
+    - name: Currency format is unavailable in web modeling
+      href: known-issues/known-issue-665-currency-format-unavailable-web-modeling.md
+    - name: Creating or opening a Dataflow Gen2 dataflow shows endless spinner
+      href: known-issues/known-issue-664-creating-opening-dataflow-gen2-shows-endless-spinner.md
+    - name: Creating or opening a Dataflow Gen2 dataflow fails if capacity is inactive
+      href: known-issues/known-issue-663-creating-opening-dataflow-gen2-fails-capacity-inactive.md
+    - name: Exporting semantic model data to OneLake fails due to unicode characters
+      href: known-issues/known-issue-660-exporting-semantic-model-data-onelake-fails-unicode-characters.md
+    - name: PySpark import statements fail for .jar files installed through environment
+      href: known-issues/known-issue-658-pyspark-import-statements-fail-jar-files-installed.md
+    - name: Cross-region internal shortcuts don't work with SQL analytics endpoints
+      href: known-issues/known-issue-657-cross-region-internal-shortcuts-dont-work-sql-analytics-endpoints.md
+    - name: ParquetSharpNative error in dataflow refresh using a gateway
+      href: known-issues/known-issue-650-parquetsharpnative-error-dataflow-refresh-using-gateway.md
+    - name: Library management updates with public python libraries time-out
+      href: known-issues/known-issue-647-library-management-updates-public-python-libraries-time-out.md
     - name: Load Table public API response returns error
       href: known-issues/known-issue-642-load-table-public-api-response-returns-error.md
     - name: Visuals using the Denodo connector might show connection errors

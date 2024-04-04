@@ -7,6 +7,7 @@ ms.reviewer: alpowers
 ms.topic: conceptual
 ms.date: 01/16/2024
 ms.custom: 
+no-loc: [Copilot]
 ---
 # Copilot for Data Factory overview
 

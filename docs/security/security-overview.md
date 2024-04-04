@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 03/06/2024
+ms.date: 03/12/2024
 ---
 
 # Security in Microsoft Fabric
@@ -85,7 +85,7 @@ You can connect to Fabric using your existing Azure Platform as a Service (PaaS)
 
 #### Azure service tags
 
-Use [service Tags](security-service-tags.md) to ingest data without the use of data gateways, from data sources deployed in an Azure virtual network, such as Azure SQL Virtual Machines (VMs), Azure SQL Managed Instance (MI) and EST APIs. You can also use service tags to get traffic from a virtual network or an Azure firewall. For example, service tags can allow outbound traffic to Fabric so that a user on a VM can connect to Fabric SQL endpoints from SSMS, while blocked from accessing other public internet resources.
+Use [service Tags](security-service-tags.md) to ingest data without the use of data gateways, from data sources deployed in an Azure virtual network, such as Azure SQL Virtual Machines (VMs), Azure SQL Managed Instance (MI) and REST APIs. You can also use service tags to get traffic from a virtual network or an Azure firewall. For example, service tags can allow outbound traffic to Fabric so that a user on a VM can connect to Fabric SQL endpoints from SSMS, while blocked from accessing other public internet resources.
 
 #### IP allowlists
 
@@ -113,11 +113,11 @@ Fabric ensures that your data is secure across regions when you're working with 
 
 ## Access data
 
-Fabric controls data access using [workspaces](../get-started/workspaces.md). In workspaces, data appears in the form of Fabric items, and users can't view or use items (data) unless you give them access to the workspace.
+Fabric controls data access using [workspaces](../get-started/workspaces.md). In workspaces, data appears in the form of Fabric items, and users can't view or use items (data) unless you give them access to the workspace. You can find more information about workspace and item permissions, in [Permission model](permission-model.md).
 
 ### Workspace roles
 
-Workspace access is listed in the table below. It includes [workspace roles](../get-started/roles-workspaces.md) and [OneLake security](../onelake/onelake-security.md#workspace-security). Users with a viewer role can run SQL, Data Analysis Expressions (DAX) or Multidimensional Expressions (MDX) queries, but they can't access Fabric items or run a [notebook](../data-engineering/how-to-use-notebook.md).
+Workspace access is listed in the table below. It includes [workspace roles](../get-started/roles-workspaces.md) and [Fabric and OneLake security](../onelake/security/fabric-onelake-security.md#fabric-data-security). Users with a viewer role can run SQL, Data Analysis Expressions (DAX) or Multidimensional Expressions (MDX) queries, but they can't access Fabric items or run a [notebook](../data-engineering/how-to-use-notebook.md).
 
 | Role                           | Workspace access                       | OneLake access                                                        |
 |--------------------------------|----------------------------------------|-----------------------------------------------------------------------|
@@ -160,7 +160,7 @@ Review this section for a list of some of the security features available in Mic
 |------------|------------|
 | [Conditional access](security-conditional-access.md)  | Secure your apps by using Microsoft Entra ID |
 | [Lockbox](security-lockbox.md)  | Control how Microsoft engineers access your data                   |
-| [OneLake security](../onelake/onelake-security.md) | Learn how to secure your data in OneLake. |
+| [Fabric and OneLake security](../onelake/security/fabric-onelake-security.md) | Learn how to secure your data in Fabric and OneLake. |
 | [Resiliency](az-resiliency.md) | Reliability and regional resiliency with Azure availability zones   |
 | [Service tags](security-service-tags.md) | Enable an Azure SQL Managed Instance (MI) to allow incoming connections from Microsoft Fabric |
 

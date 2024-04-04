@@ -28,24 +28,54 @@ items:
       href: tutorial-7-clean-up-resources.md
 - name: Get data
   items:
-  - name: Event streams
+  - name: Get, process, and route events 
     items:
-    - name: What is Event streams?
+    - name: What is Fabric event streams?
       href: event-streams/overview.md
     - name: Create and manage an eventstream
       href: event-streams/create-manage-an-eventstream.md
-    - name: Monitor event streams capacity consumption
-      href: event-streams/monitor-capacity-consumption.md
-    - name: Add and manage sources
-      href: event-streams/add-manage-eventstream-sources.md
-    - name: Add and manage destinations
-      href: event-streams/add-manage-eventstream-destinations.md
+    - name: Get events from sources
+      items:
+      - name: Add and manage an event source
+        href: event-streams/add-manage-eventstream-sources.md
+      - name: Add an Azure Event Hubs source
+        href: event-streams/add-source-azure-event-hubs.md
+      - name: Add an Azure IoT Hub source
+        href: event-streams/add-source-azure-iot-hub.md
+      - name: Add a custom app source
+        href: event-streams/add-source-custom-app.md
+      - name: Add a sample data source
+        href: event-streams/add-source-sample-data.md
     - name: Process events using event processor
       href: event-streams/process-events-using-event-processor-editor.md
+    - name: Route events to destinations
+      items:
+      - name: Add and manage a destination
+        href: event-streams/add-manage-eventstream-destinations.md      
+      - name: Add a KQL Database destination
+        href: event-streams/add-destination-kql-database.md
+      - name: Add a lakehouse destination
+        href: event-streams/add-destination-lakehouse.md
+      - name: Add a Reflex destination
+        href: event-streams/add-destination-reflex.md
+      - name: Add a custom app destination
+        href: event-streams/add-destination-custom-app.md
     - name: Preview data
       href: event-streams/preview-data.md
-    - name: Monitor event streams
-      href: event-streams/monitor.md
+    - name: Manage eventstreams
+      items:
+      - name: Manage an eventstream
+        href: event-streams/manage-eventstream.md
+      - name: Configure settings
+        href: event-streams/configure-settings.md
+    - name: Monitor eventstreams
+      items:
+      - name: Monitor status and performance of eventstreams 
+        href: event-streams/monitor.md
+      - name: Monitor event streams capacity consumption
+        href: event-streams/monitor-capacity-consumption.md
+    - name: Integrate with other Fabric items
+      href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
     - name: Tutorials
       items:
       - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
@@ -56,8 +86,6 @@ items:
         href: event-streams/build-report-from-iot-hub.md
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
-    - name: Integrate with other Fabric items
-      href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
   - name: Get data in a KQL Database
     items: 
     - name: Data formats

@@ -23,8 +23,20 @@ ms.date: 07/16/2023
       |**Connection name** | The Azure Data Lake Storage Gen2 connection name.| A name for your connection.|
       |**Authentication kind**| The authorization model. The supported models are: Organizational account, Account key, Shared Access Signature (SAS), and Service principal. For more information, see [ADLS shortcuts](../onelake/onelake-shortcuts.md#adls-shortcuts). | Dependent on the authorization model. Once you select an authentication kind, fill in the required credentials.|
 
+1. Select **Next**.
+1. Browse to the target location for the shortcut.
+
+    :::image type="content" source="../includes/media/onelake-shortcuts/adls-gen2-shortcut/shortcut-browse.png" alt-text="Screenshot of the storage browse window with multiple folders selected." lightbox="../includes/media/onelake-shortcuts/adls-gen2-shortcut/shortcut-browse.png":::
+
+    If you just used the storage account in the connection URL, all of your available containers appear in the left navigation view. If you specified a container in connection URL, only the specified container and its contents appear in the navigation view.
+
+    Navigate the storage account by selecting a folder or clicking on the expansion carrot next to a folder.
+
+    In this view, you can select one or more shortcut target locations. Choose target locations by clicking the checkbox next a folder in the left navigation view.
 1. Select **Next**
-1. Under **Shortcut Name**, enter a name for your shortcut.
-1. Under **Sub Path**, enter a sub path to select a specific folder in your storage account.
+
+    :::image type="content" source="../includes/media/onelake-shortcuts/adls-gen2-shortcut/shortcut-review.png" alt-text="Screenshot of shortcut review page with options to rename and delete shortcuts." lightbox="../includes/media/onelake-shortcuts/adls-gen2-shortcut/shortcut-review.png":::
+
+    The review page allows you to verify all of your selections. Here you can see each shortcut that will be created. In the action column, you can click the pencil icon to edit the shortcut name. You can click the trash can icon to delete shortcut.
 1. Select **Create**.
-1. In the **Shortcut creation completed** window, select **close**.
+

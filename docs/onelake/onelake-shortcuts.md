@@ -116,8 +116,7 @@ Shortcuts can also be created to ADLS Gen2 storage accounts. When you create sho
 ADLS shortcuts must point to the DFS endpoint for the storage account.
 Example: `https://accountname.dfs.core.windows.net/`
 
-> [!NOTE]
-> Access to storage account endpoint can't be blocked by storage firewall or VNET because storage firewalls are currently not supported.
+If your storage account is protected by a storage firewall, you can configure trusted service access.  See [Trusted Workspace Access](..\security\security-trusted-workspace-access.md)
 
 #### Authorization
 
@@ -155,24 +154,57 @@ The IAM user must have the following permissions on the bucket that the shortcut
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
 
-### Dataverse shortcuts
+### Google Cloud Storage shortcuts (Preview)
 
-Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. The **View in Microsoft Fabric** feature, which is built into the PowerApps maker portal, makes all your Dynamics 365 data available for analysis in Microsoft Fabric. For more information, see [Dataverse direct integration with Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
+Shortcuts can be created to Google Cloud Storage(GCS) using the XML API for GCS.  When you create shortcuts to Google Cloud Storage, the target path must contain a bucket name at a minimum.  You can also restrict the scope of the shortcut by further specifying the prefix/folder you want to point to within the storage hierarchy. 
 
-> [!NOTE]
-> Dataverse shortcuts can't be created through the Fabric UX. They must be created through the PowerApps maker portal.
+#### Access
+
+When configuring the connection for a GCS shortcut you can either specify the global endpoint for the storage service or use a bucket specific endpoint.
+
+- Global Endpoint example: `https://storage.googleapis.com`
+- Bucket Specific Endpoint example: ` https://<BucketName>.storage.googleapis.com`
 
 #### Authorization
 
-Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut and all access to that shortcut is authorized using that credential. The supported delegated credential type is Organizational account (OAuth2). The organizational account must have permissions to access data in Dataverse Managed Lake.
+GCS shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the GCS shortcut and all access to that shortcut is authorized using that credential. The supported delegated credential is an HMAC key and secret for a Service account or User account.
+
+The account must have permission to access the data within the GCS bucket. If the bucket specific endpoint was used in the connection for the shortcut, the account must have the following permissions:
+
+- `storage.objects.get`
+- `stoage.objects.list`
+
+If the global endpoint was used in the connection for the shortcut, the account must also have the following permission:
+- `storage.buckets.list`
+
+> [!NOTE]
+> GCS shortcuts are read-only. They don't support write operations regardless of the permissions for the account used.
+
+### Dataverse shortcuts
+
+Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. This integration is accomplished through shortcuts, which can be created in two ways: through the PowerApps maker portal or through Fabric directly.
+
+#### Creating Shortcuts through PowerApps Maker Portal 
+Authorized PowerApps users can access the PowerApps maker portal and use the **Link to Microsoft Fabric** feature. From this single action, a Lakehouse is created in Fabric and shortcuts are automatically generated for each table in the Dataverse environment. 
+ For more information, see [Dataverse direct integration with Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
+
+#### Creating Shortcuts through Fabric 
+Fabric users can also create shortcuts to Dataverse. From the create shortcuts UX, users can select Dataverse, supply their environment URL, and browse the available tables. This experience allows users to selectively choose which tables to bring into Fabric rather than bringing in all tables.
+
+> [!NOTE]
+> Dataverse tables must first be available in the Dataverse Managed Lake before they are visible in the Fabric create shortcuts UX. If your tables are not visible from Fabric, use the **Link to Microsoft Fabric** feature from the PowerApps maker portal.
+
+#### Authorization
+
+Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut, and all access to that shortcut is authorized using that credential. The supported delegated credential type is Organizational account (OAuth2). The organizational account must have the system administrator permission to access data in Dataverse Managed Lake.
 
 > [!NOTE]
 > Service Principals are currently not supported for Dataverse shortcut authorization.
 
-## Caching
+## Caching (Preview)
 Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24hrs it is purged from the cache. Individual files greater than 1GB in size are not cached.
 > [!NOTE]
-> Shortcut caching is currently only supported for S3 shortcuts.
+> Shortcut caching is currently only supported for GCS, S3 and S3 compatible shortcuts.
 
 To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and click **Save**.
 
@@ -203,6 +235,14 @@ The following table shows the shortcut-related permissions for each workspace ro
 <sup>2</sup> Users must have a role that provides read permission both in the shortcut location and the target location.
 
 <sup>3</sup> Users must have a role that provides write permission both in the shortcut location and the target location.
+
+## OneLake data access roles (preview)
+
+[OneLake data access roles](./security/get-started-data-access-roles.md) is a new feature that enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, and assign them to users or groups. The access permissions determine what folders users see when accessing the lake view of the data, either through the lakehouse UX, notebooks, or OneLake APIs. For items with the preview feature enabled, OneLake data access roles also determine a user's access to a shortcut.
+
+Users in the Admin, Member, and Contributor roles have full access to read data from a shortcut regardless of the OneLake data access roles defined. However they still need access on both the source and target of the shortcut as mentioned in [Workspace roles](./security/get-started-security.md#workspace-permissions).
+
+Users in the Viewer role or that had a lakehouse shared with them directly have access restricted based on if the user has access through a OneLake data access role. For more information on the access control model with shortcuts, see [Data Access Control Model in OneLake.](./security/data-access-control-model.md#shortcuts)
 
 ## How do shortcuts handle deletions?
 
