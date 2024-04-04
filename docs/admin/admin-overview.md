@@ -65,7 +65,7 @@ To distribute management across the organization, you can also use [domains](../
 
 ### Add and remove users
 
-Using the [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview), admins can [manage Fabric users](../admin/service-admin-portal-users.md). Managing users includes adding and deleting users, groups, and admins. You can also manage per user licenses and assign admin roles.
+Admins can [manage Fabric users](../admin/service-admin-portal-users.md) by using the [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). Managing users includes adding and deleting users, groups, and admins. You can also manage per user licenses and assign admin roles.
 
 ### Govern and secure data
 
@@ -97,7 +97,7 @@ In Fabric, [workspace roles](../get-started/roles-workspaces.md) allow workspace
 
 ## Monitor
 
-An important part of an admin's role is to monitor what's going on in the organization. Fabric has several tools for monitoring different aspects of the platform usage. Monitoring enables your organization to comply with internal policies and external rules and regulations. You can also use monitoring to review consumption and billing, so that you can establish the best way to use your organizational resources. By analyzing what's happening in your organization, you can decide if buying more resources is needed, and potentially save money by using cheaper or fewer resources if that can be done.
+An important part of an admin's role is to monitor what's going on in the organization. Fabric has several tools for monitoring different aspects of the platform usage. Monitoring enables your organization to comply with internal policies and external rules and regulations. You can also use monitoring to review consumption and billing, so that you can establish the best way to use your organizational resources. By analyzing what's happening in your organization, you can decide if you need to buy more resources, and potentially save money by using cheaper or fewer resources if that can be done.
 
 ### Admin monitoring workspace
 
