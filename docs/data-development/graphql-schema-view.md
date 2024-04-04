@@ -9,7 +9,7 @@ ms.search.form: GraphQL API Overview
 ms.date: 04/05/2024
 ---
 
-# Fabric GraphQL API schema view and Schema explorer
+# GraphQL API schema view and Schema explorer
 
 > [!NOTE]
 > Microsoft Fabric GraphQL API is in preview.

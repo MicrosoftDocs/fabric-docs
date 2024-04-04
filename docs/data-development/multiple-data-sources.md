@@ -1,5 +1,5 @@
 ---
-title: Multiple data source support in Fabric GraphQL API
+title: Query multiple data sources in Fabric GraphQL API
 description: Learn about GraphQL API support for multiple data sources, and see an example of a query that spans two sources.
 ms.reviewer: sngun
 ms.author: sngun
@@ -9,7 +9,7 @@ ms.search.form: GraphQL multiple data sources
 ms.date: 04/05/2024
 ---
 
-# Multiple data source support in Fabric GraphQL API
+# Query multiple data sources in GraphQL API
 
 > [!NOTE]
 > Microsoft Fabric GraphQL API is in preview.

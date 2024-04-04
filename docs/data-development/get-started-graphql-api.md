@@ -9,7 +9,7 @@ ms.search.form: Get started with GraphQL API
 ms.date: 04/05/2024
 ---
 
-# Create and add data to GraphQL API in Microsoft Fabric
+# Create a GraphQL API and add data
 
 > [!NOTE]
 > Microsoft Fabric GraphQL API is in preview.

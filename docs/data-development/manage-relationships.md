@@ -9,7 +9,7 @@ ms.search.form: GraphQL manage relationships
 ms.date: 04/05/2024
 ---
 
-# Manage relationships in Fabric GraphQL API
+# Manage relationships in GraphQL API
 
 > [!NOTE]
 > Microsoft Fabric GraphQL API is in preview.

@@ -9,7 +9,7 @@ ms.search.form: Connecting applications to GraphQL
 ms.date: 04/05/2024
 ---
 
-# Connect applications to Fabric GraphQL API
+# Connect applications to GraphQL API
 
 > [!NOTE]
 > Microsoft Fabric GraphQL API is in preview.

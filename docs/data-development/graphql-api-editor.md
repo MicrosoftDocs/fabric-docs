@@ -9,7 +9,7 @@ ms.search.form: GraphQL query editor
 ms.date: 04/05/2024
 ---
 
-# Fabric GraphQL API editor
+# GraphQL API editor
 
 > [!NOTE]
 > Microsoft Fabric GraphQL API is in preview.
