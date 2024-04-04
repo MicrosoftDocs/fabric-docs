@@ -157,7 +157,7 @@ Since folders are considered part of the item’s name, items moved into a diffe
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
-* [Data pipelines](../../data-factory/data-factory-overview.md#data-pipelines)
+* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
 * Dataflows Gen1
 * Datamarts
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
