@@ -20,7 +20,7 @@ In GraphQL API, you are able to expose many data sources through a single API it
 
 The following example shows a query that spans across both the "AdventureWorks" and the "testsqldb2" data sources:
 
-:::image type="content" source="media/multiple-data-sources/multi-data-source-query.png" alt-text="Screenshot of the editor screen, showing an example of a query that spans two data sources." lightbox=""media/multiple-data-sources/multi-data-source-query.png":::
+:::image type="content" source="media/multiple-data-sources/multi-data-source-query.png" alt-text="Screenshot of the editor screen, showing an example of a query that spans two data sources." lightbox="media/multiple-data-sources/multi-data-source-query.png":::
 
 This functionality can enhance the performance of your applications by reducing the amount of round trips between your application and the GraphQL API.
 
