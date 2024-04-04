@@ -19,7 +19,7 @@ Row-level security (RLS) with Power BI can be used to restrict data access for g
 
 You can configure RLS for data models imported into Power BI with Power BI. You can also configure RLS on semantic models that are using DirectQuery, such as SQL Server. For Analysis Services or Azure Analysis Services lives connections, you configure Row-level security in the model, not in Power BI. The security option doesn't show up for live connection semantic models.
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/power-bi/includes/rls-desktop-define-roles.md)]
+[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-desktop-define-roles.md)]
 
 By default, row-level security filtering uses single-directional filters, whether the relationships are set to single direction or bi-directional. You can manually enable bi-directional cross-filtering with row-level security by selecting the relationship and checking the **Apply security filter in both directions** checkbox. Note that if a table takes part in multiple bi-directional relationships you can only select this option for one of those relationships. Select this option when you've also implemented dynamic row-level security at the server level, where row-level security is based on username or login ID.
 
@@ -68,7 +68,7 @@ To define security roles using the enhanced row-level security editor:
 
 9. Select **Save**
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/power-bi/includes/rls-desktop-view-as-roles.md)]
+[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-desktop-view-as-roles.md)]
 
 ## Manage security on your model
 
@@ -136,15 +136,15 @@ To return to normal viewing, select **Back to Row-Level Security**.
 > [!NOTE]
 > The Test as role feature doesn't work for DirectQuery models with Single Sign-On (SSO) enabled. Additionally, not all aspects of a report can be validated in the Test as role feature including Q&A visualizations, Quick insights visualizations, and Copilot.
 
-[!INCLUDE [include-short-name](/../powerbi-repo/power-bi/includes/rls-usernames.md)]
+[!INCLUDE [include-short-name](/../powerbi-repo/powerbi-docs/includes/rls-usernames.md)]
 
 ## Using RLS with workspaces in Power BI
 
 If you publish your Power BI Desktop report to a [workspace](/power-bi/collaborate-share/service-new-workspaces) in the Power BI service, the RLS roles are applied to members who are assigned to the **Viewer** role in the workspace. Even if  **Viewers** are given Build permissions to the semantic model, RLS still applies. For example, if Viewers with Build permissions use [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel), their view of the data is restricted by RLS. Workspace members assigned **Admin**, **Member**, or **Contributor** have edit permission for the semantic model and, therefore, RLS doesn’t apply to them. If you want RLS to apply to people in a workspace, you can only assign them the **Viewer** role. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/power-bi/includes/rls-limitations.md)]
+[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-limitations.md)]
 
-[!INCLUDE [include-short-name](~/../powerbi-repo//power-bi/includes/rls-faq.md)]
+[!INCLUDE [include-short-name](~/../powerbi-repo//powerbi-docs/includes/rls-faq.md)]
 
 ## Related content
 
