@@ -56,8 +56,6 @@ Here's an example of a resource instance rule that can be created through ARM te
 ]
 ```
 
-
-
 ### Trusted service exception
 
 If you select the trusted service exception for an Azure Data Lake Gen 2 account that has public network access enabled from selected virtual networks and IP addresses, Fabric workspaces with a workspace identity will be able to access the storage account. When the trusted service exception checkbox is selected, any workspaces in your tenant's Fabric capacities that have a workspace identity can access data stored in the storage account.
@@ -126,9 +124,9 @@ With OneCopy in Fabric, you can access your OneLake shortcuts with trusted acces
 
 * **Semantic models and reports**: The default semantic model associated with a Lakehouse SQL endpoint can read managed shortcuts to storage accounts with trusted workspace access. To see the managed tables in the default semantic model, go to the SQL endpoint, select **Reporting**, and choose **Automatically update semantic model**.
 
-    * You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL endpoint, select **Reporting** and choose **New semantic model**.
+    You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL endpoint, select **Reporting** and choose **New semantic model**.
 
-    * You can create reports on top of the default semantic models and custom semantic models.
+    You can create reports on top of the default semantic models and custom semantic models.
 
 * **KQL Database**: You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL database. The steps to create the managed shortcut with trusted workspace access remain the same.
 
