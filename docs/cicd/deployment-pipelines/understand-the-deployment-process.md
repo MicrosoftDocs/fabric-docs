@@ -157,11 +157,12 @@ Since folders are considered part of the item’s name, items moved into a diffe
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
+* [Data pipelines](../../data-factory/data-factory-overview.md#data-pipelines)
 * Dataflows Gen1
 * Datamarts
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* Paginated reports
+* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (based on supported semantic models)
 * Semantic models (except for Direct Lake semantic models)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
@@ -171,7 +172,6 @@ When you deploy content from one pipeline stage to another, the copied content c
 Deployment pipelines doesn't support the following items:
 
 * Dataflows Gen2
-* Data pipelines
 * Datasets that don't originate from a *.pbix*
 * Direct Lake semantic model
 * PUSH datasets
