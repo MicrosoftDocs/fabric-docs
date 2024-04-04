@@ -22,7 +22,7 @@ One of the most powerful features in GraphQL is the ability to establish relatio
 
    :::image type="content" source="media/manage-relationships/manage-relationships-start.png" alt-text="Screenshot of the Manage relationships screen, showing where to select the New relationship option.":::
 
-1. Select **New relationship**. For this example, we'll create a new one-to-one relationship between the **Product** type and the **ProductModel** type, based on the **ProductModelID** field that exists in both types. We select **One to one** for **Cardinality**, select the **From** and **To** types, and then select the From and To fields for this relationship.
+1. Select **New relationship**. For this example, we create a new one-to-one relationship between the **Product** type and the **ProductModel** type, based on the **ProductModelID** field that exists in both types. We select **One to one** for **Cardinality**, select the **From** and **To** types, and then select the From and To fields for this relationship.
 
    :::image type="content" source="media/manage-relationships/create-relationship-one-to-one.png" alt-text="Screenshot of the New relationship screen, showing examples of selections for the five required fields.":::
 

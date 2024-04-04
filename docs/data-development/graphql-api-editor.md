@@ -36,4 +36,4 @@ Use the **Query variables** pane on the right side of the **Query** tab to pass 
 
 ## Related content
 
-- Fabric GraphQL API schema view and Schema explorer
+- [Fabric GraphQL API schema view and Schema explorer](graphql-schema-view.md)
