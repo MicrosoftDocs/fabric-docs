@@ -66,16 +66,6 @@ Creating a GraphQL API in Fabric is a straightforward process.
 
 Your GraphQL API is now ready to accept connections and requests.
 
-## Multiple data source support
-
-In GraphQL API, you are able to expose many data sources through a single API item. This feature allows you to issue a single query that will retrieve data across multiple data sources.
-
-The following example shows a query that spans across both the "AdventureWorks" and the "testsqldb2" data sources:
-
-:::image type="content" source="media/get-started-graphql-api/multi-data-source-query.png" alt-text="" lightbox="media/get-started-graphql-api/multi-data-source-query.pn":::
-
-This functionality can enhance the performance of your applications by reducing the amount of round trips between your application and the GraphQL API.
-
 ## Related content
 
 - Fabric GraphQL API editor
