@@ -50,33 +50,14 @@ You can create an eventstream on the **Workspace** page, the **Real-Time Analyti
 After you create an eventstream, you can edit and manage the eventstream in your workspace.
 
 - **Delete**: Delete the eventstream from your workspace.
-- **Settings**: Change the eventstream name, edit the sensitivity, and set the endorsement to Certified or Promoted Power BI content.
+- **Settings**: Change the eventstream name, edit the sensitivity, and set the endorsement to Certified or Promoted Power BI content. For more information, see [Configure settings](configure-settings.md)
 - **Add to Favorites**: Add the eventstream to the **Home** > **Favorites** tab.
 - **View lineage**: See an overview of where all the data comes from and goes to.
 - **View details**: View detailed information about your eventstream.
 
     :::image type="content" source="./media/create-manage-an-eventstream/eventstream-management.png" alt-text="Screenshot showing the eventstream management." lightbox="./media/create-manage-an-eventstream/eventstream-management.png" :::
 
-### Retention setting
-For the **retention** setting, you can specify the duration for which the incoming data needs to be retained. The default retention period is one day. Events are automatically removed when the retention period expires. If you set the retention period to one day (24 hours), the event becomes unavailable exactly 24 hours after it's accepted. You can't explicitly delete events. The maximum value for this setting is 90 days. To learn more about usage billing and reporting, see [Monitor capacity consumption for event streams](monitor-capacity-consumption.md).
-
-:::image type="content" source="./media/create-manage-an-eventstream/retention-setting.png" alt-text="Screenshot that shows the retention setting for an event stream.":::
-
-### Event throughput setting
-For the **event throughput** setting, you can select the throughput rate for incoming events for your eventstream. This feature allows you to scale your eventstream, ranging from 1 MB/sec to 100 MB/sec. 
-
-:::image type="content" source="./media/create-manage-an-eventstream/throughput-setting.png" alt-text="Screenshot that shows the throughput setting for an event stream.":::
-
-> [!NOTE]
-> Pause the node before you update the throughput setting and reactivate the node. 
-
-### Endorsement setting
-On the **Endorsement** tab of the **Settings** page, you can promote or endorse or recommended the eventstream for others to use. For more information on endorsement, see [Endorsement](/fabric/governance/endorsement-overview).
-
-:::image type="content" source="./media/create-manage-an-eventstream/endorsement-setting.png" alt-text="Screenshot that shows the endorsement setting for an event stream.":::
-
-### Sensitivity label setting
-On the **Sensitivity label** tab of the **Settings** page, you can specify the sensitivity level of the eventstream. 
+For more details, see [Manage an eventstream](manage-eventstream.md).
 
 ## Main editor for eventstreams
 
