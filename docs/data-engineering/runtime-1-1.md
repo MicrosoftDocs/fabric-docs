@@ -622,7 +622,7 @@ Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older 
    - Review the [Spark Core migration guide](https://spark.apache.org/docs/latest/core-migration-guide.html).
    - Review the [SQL, Datasets and DataFrame migration guide](https://spark.apache.org/docs/latest/sql-migration-guide.html).
    - If your solution is Apache Spark Structure Streaming related, review the [Structured Streaming migration guide](https://spark.apache.org/docs/latest/ss-migration-guide.html).
-   - If you use PySpark, reviewe the [Pyspark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html).
+   - If you use PySpark, review the [Pyspark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html).
    - If you migrate code from Koalas to PySpark, review the [Koalas to pandas API on Spark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/koalas_to_pyspark.html).
 
 1. Move your workloads to Fabric and ensure that you have backups of your data and configuration files in case you need to revert to the previous version.

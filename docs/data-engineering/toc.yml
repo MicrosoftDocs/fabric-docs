@@ -59,7 +59,7 @@ items:
     href: lakehouse-shortcuts.md
   - name: Stream data to a lakehouse
     href: lakehouse-streaming-data.md
-- name: Lakehouse collaboration
+- name: Lakehouse access control
   items:
   - name: Workspace roles and permissions
     href: workspace-roles-lakehouse.md
@@ -79,6 +79,8 @@ items:
       items:
         - name: Runtimes overview
           href: runtime.md
+        - name: Runtime 1.3 (Spark 3.5)
+          href: runtime-1-3.md
         - name: Runtime 1.2 (Spark 3.4)
           href: runtime-1-2.md
         - name: Runtime 1.1 (Spark 3.3)

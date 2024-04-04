@@ -40,15 +40,6 @@ For more limitations in specific areas, see:
 - [Transactions](transactions.md#limitations)
 - [Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
 
-## Regional availability
-
-The following Azure regions are currently not supported for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)]:
-   - West India
-   - UAE Central
-   - Poland
-   - Israel
-   - Italy
-
 ## Limitations of the SQL analytics endpoint
 
 The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)] automatic schema generation and metadata discovery.

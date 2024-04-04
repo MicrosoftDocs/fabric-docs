@@ -54,6 +54,9 @@ The firewall rules on the gateway server and/or customer's proxy servers need to
 * **Endpoints**: *.datawarehouse.pbidedicated.windows.net, *.datawarehouse.fabric.microsoft.com, *.dfs.fabric.microsoft.com 
 * **Port**: 1433
 
+>[!NOTE]
+>In certain scenarios, especially when the capacity is located in a region that is not the nearest to the Gateway, it might be necessary to configure the firewall to allow access to multiple endpoints(*cloudapp.azure.com). This adjustment is required to accommodate redirections that may occur under these conditions. If the traffic destined to *.cloudapp.azure.com do not get intercepted by the rule, you can alternatively allow the [IP addresses](/data-integration/gateway/service-gateway-communication#ports) for your data region in your firewall.
+
 If you want to narrow down the scope of the endpoint to the actual OneLake instance in a workspace (instead of the wildcard *.datawarehouse.pbidedicated.windows.net), that URL can be found by navigating to the Fabric workspace, locating `DataflowsStagingLakehouse`, and selecting **View Details**. Then, copy and paste the SQL connection string.
 
 :::image type="content" source="media/gateway-considerations-output-destination/staging.png" alt-text="Screenshot of the Fabric workspace with DataflowsStagingLakehouse, with the ellipsis selected, and the View details option emphasized." lightbox="media/gateway-considerations-output-destination/staging.png":::
