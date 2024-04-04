@@ -22,7 +22,7 @@ To get started, you must complete the following prerequisites:
 - A tenant account with an active subscription. Create an account for free.
 - A workspace is created.
 
-## Add a Script activity to a Pipeline wtih UI
+## Add a Script activity to a Pipeline with UI
 
 1. Open an existing data pipeline or create a new data pipeline.
 1. Click on add a pipeline activity and search for **Script**.
