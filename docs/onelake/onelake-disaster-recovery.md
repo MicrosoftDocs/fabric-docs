@@ -28,6 +28,8 @@ For a comprehensive understanding of the end-to-end experience, see [Fabric BCDR
 
 OneLake soft delete protects individual files from accidental deletion by retaining files for a default retention period before it's permanently deleted. Currently the default is 28 days, but it's subject to change. All soft-deleted data is billed at the same rate as active data.
 
+Files and folders can be restored using Blob REST APIs, Azure Storage SDKs, and the PowerShell Az.Storage module.  See [https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-manage#restore-soft-deleted-blobs-and-directories-by-using-powershell](/azure/storage/blobs/soft-delete-blob-manage) for instructions on how to undelete files using PowerShell. 
+
 ## Related content
 
 - [OneLake compute and storage consumption](onelake-consumption.md)
