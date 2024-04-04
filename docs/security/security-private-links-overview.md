@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
-ms.date: 03/11/2024
+ms.date: 04/04/2024
 ---
 
 # Private links for secure access to Fabric (preview)
@@ -85,8 +85,8 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 
 When you connect to Pipeline via private link, you can use the data pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize data pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
 
-### ML Model and Experiment
-ML Model and Experiment supports private link. 
+### ML Model, Experiment and AI skill
+ML Model, Experiment and AI skill supports private link. 
 
 ### Power BI
 
