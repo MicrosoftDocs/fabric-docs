@@ -1,11 +1,11 @@
 ---
 title: Trusted workspace access in Microsoft Fabric (preview)
-description: Learn how to configure and use trusted workspace access in Microsoft Fabric.
+description: Learn how to configure and use trusted workspace access to securely access your Azure Data Lake Gen 2 storage accounts from Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/29/2024
+ms.date: 04/04/2024
 ---
 
 # Trusted workspace access (preview)
@@ -17,7 +17,15 @@ Fabric workspaces that access a storage account with trusted workspace access ne
 To limit and protect access to firewall-enabled storage accounts from certain Fabric workspaces, you can set up resource instance rule to allow access from specific Fabric workspaces.
 
 > [!NOTE]
-> Trusted workspace access is currently in Public preview. Fabric workspace identity can only be created in workspaces associated with a Fabric capacity (F64 or higher). For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+> Trusted workspace access is currently in public preview. Fabric workspace identity can only be created in workspaces associated with a Fabric capacity (F64 or higher). For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+
+This article shows you how to:
+
+* [Configure trusted workspace access](#configure-trusted-workspace-access-in-adls-gen2) in an Azure Data Lake Gen 2 storage account.
+
+* [Create a OneLake shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse that connects to a trusted-workspace-access enabled Azure Data Lake Gen 2 storage account.
+
+* [Create a data pipeline](#create-a-data-pipeline-to-a-storage-account-with-trusted-workspace-access) to connect directly to a firewall-enabled Azure Data Lake Gen 2 account that has trusted workspace access enabled.
 
 ## Configure trusted workspace access in ADLS Gen2
 
@@ -56,8 +64,6 @@ Here's an example of a resource instance rule that can be created through ARM te
 ]
 ```
 
-
-
 ### Trusted service exception
 
 If you select the trusted service exception for an Azure Data Lake Gen 2 account that has public network access enabled from selected virtual networks and IP addresses, Fabric workspaces with a workspace identity will be able to access the storage account. When the trusted service exception checkbox is selected, any workspaces in your tenant's Fabric capacities that have a workspace identity can access data stored in the storage account.
@@ -70,9 +76,17 @@ A Contributor on the storage account (an Azure RBAC role) can configure resource
 
 ## How to use trusted workspace access in Fabric
 
+There are currently two ways to use trusted workspace access to access your data from Fabric in a secure manner:
+
+* You can [create a new ADLS shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse to start analyzing your data with Spark, SQL, and Power BI.
+
+* You can [create a data pipeline](#create-a-data-pipeline-to-a-storage-account-with-trusted-workspace-access) that leverages trusted workspace access to directly access a firewall-enabled Azure Data Lake Gen 2 account.
+
+The following sections show you how to use these two methods.
+
 ### Create a OneLake shortcut to storage account with trusted workspace access
 
- With the workspace identity configured in Fabric and trusted access enabled in your ADLS Gen2 storage account, you can create OneLake shortcuts to access your data from Fabric. You just create a new ADLS shortcut in a Fabric Lakehouse and you can start analyzing your data with Spark, SQL, and Power BI.
+ With the workspace identity configured in Fabric, and trusted workspace access enabled in your ADLS Gen2 storage account, you can create OneLake shortcuts to access your data from Fabric. You just create a new ADLS shortcut in a Fabric Lakehouse and you can start analyzing your data with Spark, SQL, and Power BI.
 
 #### Prerequisites
 
@@ -84,7 +98,7 @@ A Contributor on the storage account (an Azure RBAC role) can configure resource
 > [!NOTE]
 > Preexisting shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
 
-**Steps**
+#### Steps
 
 1. Start by creating a new shortcut in a Lakehouse.
 
@@ -112,39 +126,66 @@ A Contributor on the storage account (an Azure RBAC role) can configure resource
 
     :::image type="content" source="./media/security-trusted-workspace-access/preview-storage-data-lakehouse-shortcut.png" alt-text="Screenshot showing previewing storage data through lakehouse shortcut." lightbox="./media/security-trusted-workspace-access/preview-storage-data-lakehouse-shortcut.png":::
 
-### Use the OneLake shortcut to a storage account with trusted workspace access in Fabric items
+#### Use the OneLake shortcut to a storage account with trusted workspace access in Fabric items
 
 With OneCopy in Fabric, you can access your OneLake shortcuts with trusted access from all Fabric workloads.
 
-#### Spark
+* **Spark**: You can use Spark to access data from your OneLake shortcuts. When shortcuts are used in Spark, they appear as folders in OneLake. You just need to reference the folder name to access the data. You can use the OneLake shortcut to storage accounts with trusted workspace access in Spark notebooks.
 
-You can use Spark to access data from your OneLake shortcuts. When shortcuts are used in Spark, they appear as folders in OneLake. You just need to reference the folder name to access the data.
+* **SQL endpoint**: Shortcuts created in the "Tables" section of your lakehouse are also available in the SQL endpoint.  You can open the SQL endpoint and query your data just like any other table.
 
-You can use the OneLake shortcut to storage accounts with trusted workspace access in Spark notebooks.
+* **Pipelines**: Data pipelines can access managed shortcuts to storage accounts with trusted workspace access. Data pipelines can be used to read from or write to storage accounts through OneLake shortcuts.
 
-#### SQL endpoint
+* **Dataflows v2**: Dataflows Gen2 can be used to access managed shortcuts to storage accounts with trusted workspace access. Dataflows Gen2 can read from or write to storage accounts through OneLake shortcuts.
 
- Shortcuts created in the "Tables" section of your lakehouse are also available in the SQL endpoint.  You can open the SQL endpoint and query your data just like any other table.
+* **Semantic models and reports**: The default semantic model associated with a Lakehouse SQL endpoint can read managed shortcuts to storage accounts with trusted workspace access. To see the managed tables in the default semantic model, go to the SQL endpoint, select **Reporting**, and choose **Automatically update semantic model**.
 
-#### Pipelines
+    You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL endpoint, select **Reporting** and choose **New semantic model**.
 
-Data pipelines can access managed shortcuts to storage accounts with trusted workspace access. Data pipelines can be used to read from or write to storage accounts through OneLake shortcuts.
+    You can create reports on top of the default semantic models and custom semantic models.
 
-#### Dataflows v2
+* **KQL Database**: You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL database. The steps to create the managed shortcut with trusted workspace access remain the same.
 
-Dataflows Gen2 can be used to access managed shortcuts to storage accounts with trusted workspace access. Dataflows Gen2 can read from or write to storage accounts through OneLake shortcuts.
+### Create a data pipeline to a storage account with trusted workspace access
 
-#### Semantic models and reports
+With the workspace identity configured in Fabric and trusted access enabled in your ADLS Gen2 storage account, you can create data pipelines to access your data from Fabric. You can create a new data pipeline to copy data into a Fabric lakehouse and then you can start analyzing your data with Spark, SQL, and Power BI.
 
-The default semantic model associated with a Lakehouse SQL endpoint can read managed shortcuts to storage accounts with trusted workspace access. To see the managed tables in the default semantic model, go to the SQL endpoint, select **Reporting**, and choose **Automatically update semantic model**.
+#### Prerequisites
 
-You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL endpoint, select **Reporting** and choose **New semantic model**.
+ * A Fabric workspace associated with a Fabric capacity. See [Workspace identity](./workspace-identity.md).
+* Create a workspace identity associated with the Fabric workspace.
+* The user account or service principal used for creating the connection should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope.
+* Configure a [resource instance rule](#resource-instance-rule) for the storage account.
 
-You can create reports on top of the default semantic models and custom semantic models.
+#### Steps
 
-#### KQL Database
+1. Start by selecting **Get Data** in a lakehouse.
 
-You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL database. The steps to create the managed shortcut with trusted workspace access remain the same.
+1. Select **New data pipeline**. Provide a name for the pipeline and then select **Create**.
+
+    :::image type="content" source="./media/security-trusted-workspace-access/create-new-data-pipeline-dialog.png" alt-text="Screenshot showing the New pipeline dialog." lightbox="./media/security-trusted-workspace-access/create-new-data-pipeline-dialog.png":::
+
+1. Choose **Azure Data Lake Gen 2** as the data source.
+
+    :::image type="content" source="./media/security-trusted-workspace-access/select-azure-data-lake-gen2-data-source.png" alt-text="Screenshot showing choosing Azure Data Lake Gen 2 selection." lightbox="./media/security-trusted-workspace-access/select-azure-data-lake-gen2-data-source.png":::
+
+1. Provide the URL of the storage account that has been configured with trusted workspace access, and choose a name for the connection. For **Authentication kind**, choose *Organizational account* or *Service Principal*.
+
+    :::image type="content" source="./media/security-trusted-workspace-access/connection-settings.png" alt-text="Screenshot showing connection settings for the data source." lightbox="./media/security-trusted-workspace-access/connection-settings.png":::
+
+    When done, select **Next**.
+
+1. Select the file that you need to copy into the lakehouse.
+
+   :::image type="content" source="./media/security-trusted-workspace-access/file-selection.png" alt-text="Screenshot showing file selection.png" lightbox="./media/security-trusted-workspace-access/file-selection.png":::
+
+    When done, select **Next**.
+
+1. On the **Review + save** screen, select **Start data transfer immediately**. When done, select **Save + Run**.
+
+   :::image type="content" source="./media/security-trusted-workspace-access/review-save.png" alt-text="Screenshot showing the review-and-save-screen.png" lightbox="./media/security-trusted-workspace-access/review-save.png":::
+
+1. When the pipeline status changes from *Queued* to *Succeeded*, go to the lakehouse and verify that the data tables were created.
 
 ### Restrictions and Considerations
 
@@ -156,7 +197,7 @@ You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL 
 * Only *organizational account* or *service principal* must be used for authentication to storage accounts for trusted workspace access.
 * Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.
 * A maximum of 200 resource instance rules can be configured. For more information, see [Azure subscription limits and quotas - Azure Resource Manager](/azure/azure-resource-manager/management/azure-subscription-service-limits).
-* Resource instance rules for Fabric workspaces must be created through ARM templates. Resource instance rules created through the Azure Portal UI are not supported.
+* Resource instance rules for Fabric workspaces must be created through ARM templates. Resource instance rules created through the Azure portal UI aren't supported.
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity less than F64, trusted workspace access will stop working within 90 minutes.
 * Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the UI isn't supported.
 * Pre-existing shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
