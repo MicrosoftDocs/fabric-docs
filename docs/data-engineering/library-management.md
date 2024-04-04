@@ -1,6 +1,6 @@
 ---
 title: Manage Apache Spark libraries
-description: Learn how to manage and use libraries following best practices.
+description: Learn how to manage and use libraries following best practices. A library is a collection of prewritten code that can provide extra functionality.
 ms.reviewer: snehagunda
 ms.author: shuaijunye
 author: shuaijunye
@@ -8,16 +8,17 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 03/20/2023
+ms.date: 04/08/2024
+#customer intent: As a user, I want to learn about the mechanisms that Microsoft Fabric offers to manage libraries in order to make use of prewritten code.
 ---
 
 # Manage Apache Spark libraries in Microsoft Fabric
 
-A library is a collection of pre-written code that can be imported to provide extra functionality. By using libraries, developers can save time and effort by not having to write code from scratch to perform common tasks. Instead, they can import the library and use its functions and classes to achieve their desired functionality. On Microsoft Fabric, multiple mechanisms are provided to help you manage and use the libraries.
+A library is a collection of prewritten code that can be imported to provide extra functionality. By using libraries, developers can save time and effort by not having to write code from scratch to perform common tasks. Instead, they can import the library and use its functions and classes to achieve their desired functionality. On Microsoft Fabric, multiple mechanisms are provided to help you manage and use the libraries.
 
 - **Built-in** libraries: Each Fabric Spark runtime provides a rich set of popular preinstalled libraries. You can find the full built-in library list in [Fabric Spark Runtime](runtime.md)
 - **Public library**: Public libraries are sourced from repositories such as PyPI and Conda, which are currently supported.
-- **Custom library**: Custom libraries refer to code built by you or your organization, and are supported in the *.whl*, *.jar*, and *.tar.gz* formats. The *.tar.gz* format are only supported for R language. For Python custom libraries, use the *.whl* format.
+- **Custom library**: Custom libraries refer to code built by you or your organization, and are supported in the *.whl*, *.jar*, and *.tar.gz* formats. The *.tar.gz* format is only supported for R language. For Python custom libraries, use the *.whl* format.
 
 ## Library management in workspace setting
 
@@ -36,7 +37,7 @@ The notebooks and Spark job definitions in the workspace, which are attached to 
 
 You can [install the libraries in an environment](environment-manage-library.md) and [attach it to the code items](create-and-use-environment.md#attach-an-environment-to-a-notebook-or-a-spark-job-definition) if you want to persist the library specifications.
 
-One benefit of doing so is that it saves duplicated effort if running the code requires common libraries all the time. Once successfully installed in the environment, they are effective in all Spark sessions if the environment is attached.
+One benefit of doing so is that it saves duplicated effort if running the code requires common libraries all the time. Once successfully installed in the environment, they're effective in all Spark sessions if the environment is attached.
 
 Another benefit is that library configuration granularity lower than the workspace level is supported. One environment can be attached to multiple code artifacts. If you have a subset of notebooks or Spark job definitions in one workspace that require the same libraries, attach them to the same environment. Admin, member, and contributor of the workspace can create, edit, and attach the environment.
 
@@ -130,7 +131,7 @@ After uploading, you can use the following command to install the custom library
 
 ### R in-line installation
 
-Fabric supports *install.packages()*, *remove.packages()* and *devtools::* commands to manage R libraries.
+Fabric supports `install.packages()`, `remove.packages()`, and `devtools::` commands to manage R libraries.
 
 > [!TIP]
 > Find all available R in-line commands and clarifications in [install.packages command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/install.packages.html) and [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html).
@@ -141,7 +142,7 @@ Follow this example to walk through the steps of installing an R public library:
 
 To install an R feed library:
 
-1. Switch the working language to “SparkR(R)” in the notebook ribbon.
+1. Switch the working language to **SparkR(R)** in the notebook ribbon.
 
 2. install the *caesar* library by running the following command in a notebook cell.
 
