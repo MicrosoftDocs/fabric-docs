@@ -1,5 +1,5 @@
 ---
-title: Visualize data with Apache Spark and Python
+title: Analyze data with Apache Spark and Python
 description: In this tutorial, learn how to create rich data visualizations by using Apache Spark and Python in Microsoft Fabric.
 ms.reviewer: mopeakande
 author: midesa
