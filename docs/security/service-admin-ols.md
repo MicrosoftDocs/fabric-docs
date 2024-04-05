@@ -22,7 +22,7 @@ To create roles on **Power BI Desktop** semantic models, use [external tools](/p
 
 ### Configure object level security using tabular editor
 
-1. In Power BI Desktop, [create the model](service-admin-rls.md#define-roles) that will define your OLS rules.
+1. In Power BI Desktop, [create the model](service-admin-rls.md#define-roles-and-rules-in-power-bi-desktop) that will define your OLS rules.
 
 2. On the **External Tools** ribbon, select **Tabular Editor**. If you don’t see the Tabular Editor button, install the [program](https://tabulareditor.com). When open, Tabular Editor will automatically connect to your model.
   :::image type="content" source="./media/service-admin-ols/external-tools.png" alt-text="Screenshot of External tools Menu.":::
