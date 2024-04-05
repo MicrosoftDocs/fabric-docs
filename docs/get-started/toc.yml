@@ -17,9 +17,9 @@ items:
   items:
   - name: End-to-end tutorials
     href: end-to-end-tutorials.md
-- name: Taskflows
+- name: Task flows
   items:
-  - name: Taskflows overview
+  - name: Task flow overview
     href: taskflows-overview.md
 - name: Decision guides
   items:
