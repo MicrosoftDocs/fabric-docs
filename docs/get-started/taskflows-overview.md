@@ -146,11 +146,11 @@ Currently, the tasks are arranged vertically and separately on the canvas.
 
 To link tasks on the canvas, you can click **Add** and select **Link**.
 
-![](./media/taskflows-overview/image19.png)
+![Alttext1](./media/taskflows-overview/image19.png)
 
 In the new dialog box, choose the **Start task** and **End task** options accordingly, then click on **Add** to create the link.
 
-![](./media/taskflows-overview/image20.png)
+![Alttext2](./media/taskflows-overview/image20.png)
 
 Repeat this step to add links between other tasks.
 
@@ -158,13 +158,13 @@ Repeat this step to add links between other tasks.
 
 By selecting and clicking on a link on the canvas, you can view the **Link details** and update the link or delete the link as needed.
 
-![](./media/taskflows-overview/image22.png)
+![Alttext3](./media/taskflows-overview/image22.png)
 
 ### Delete a task
 
 To delete a task, first select it by clicking on it. Then, in the Task Details pane, you can find the **Delete** button to remove the task.
 
-![](./media/taskflows-overview/image23.png)
+![Alttext4](./media/taskflows-overview/image23.png)
 
 ## Attach and detach items with a task
 
@@ -174,17 +174,17 @@ Once the taskflow is set up, you can attach items to individual tasks for logica
 
 To create a new item for a specific task, first select the task by clicking on it. Then, click on the clip icon located on the task, and select **New item** to open the item creation panel for creating a new item.
 
-![](./media/taskflows-overview/image24.png)
+![Alttext15](./media/taskflows-overview/image24.png)
 
 Alternatively, you can click the **Attach item** in the header of the bottom list to select **New item** and open the item creation panel.
 
-![](./media/taskflows-overview/image25.png)
+![Alttext6](./media/taskflows-overview/image25.png)
 
 The recommended items are displayed by default in the creation panel. If the item you need is not listed, you can select 'All items' in the display option to view the full list of the items.  In the creation panel, select the item and create the item. Once the item is created, it is listed in the bottom list of the page. The task also shows that it has one item attached to it.
 
-![](./media/taskflows-overview/image26.png)
+![Alttext7](./media/taskflows-overview/image26.png)
 
-![](./media/taskflows-overview/image27.png)
+![Alttext8](./media/taskflows-overview/image27.png)
 
 ### Attach existing items to a task
 
@@ -194,7 +194,7 @@ To attach existing items, you can either click on the clip icon on task or click
 
 In the dialog box, select one or multiple items at once and click **Select** to attach selected items to the task. 
 
-![](./media/taskflows-overview/image29.png)
+![Alttext9](./media/taskflows-overview/image29.png)
 
 You can see the selected items are attached to the task and listed in the bottom list. 
 
@@ -206,23 +206,23 @@ You can detach items from a selected task or detach items from all tasks.
 
 To detach item(s) from a task, first select the task you want to remove the item from. Second, select the item(s) in the bottom list. Then, click on **Detach from task** in the list header to detach the item(s) from the task
 
-![](./media/taskflows-overview/image30.png)
+![AlttextA](./media/taskflows-overview/image30.png)
 
 #### Detach items from all tasks
 
 You can also detach multiple items that are attached to different tasks at once. When no step is selected in the taskflow, you can view all the items in the taskflow.  Select the items and click **Detach from all tasks** button to detach items from tasks. 
 
-![](./media/taskflows-overview/image31.png)
+![AlttextB](./media/taskflows-overview/image31.png)
 
 ## Navigate items with Taskflow
 
 With items attached to the tasks, you can use taskflow to quickly understand how items in the workspace work together and get a clear view of your work in the workspace. 
 
-![](./media/taskflows-overview/image32.png)
+![AlttextC](./media/taskflows-overview/image32.png)
 
 Clicking on each task in the taskflow, you can only view the items attached to the task. 
 
-![](./media/taskflows-overview/image33.png)
+![AlttextD](./media/taskflows-overview/image33.png)
 
 ## Delete a Taskflow
 
@@ -230,11 +230,11 @@ Deleting the taskflow will only delete all the tasks and any associations betwee
 
 To delete a taskflow, first click on a blank area of the canvas to ensure that no tasks are selected. This will make the taskflow pane visible. Next, locate the '...' in the top right corner of the pane and click on it. Then select **Delete** **taskflow** to delete the taskflow
 
-![](./media/taskflows-overview/image34.png)
+![AlttextE](./media/taskflows-overview/image34.png)
 
 Click **Delete** to delete the taskflow from current workspace. 
 
-![](./media/taskflows-overview/image35.png)
+![AlttextF](./media/taskflows-overview/image35.png)
 
 ## Private preview limitations
 
