@@ -24,6 +24,16 @@ With taskflows, you can understand how items are connected and work together in 
 
 Each task has a task type that classifies the task based on its key capabilities in the data process flow. The predefined task types are:
 
+| Task type | Description |
+|:--------|:----------|
+| **General** | Create tasks customized to your project needs and associate available item types with them. |
+| **Get data** | Ingest both batch and real-time data into a single location within your Fabric workspace. |
+| **Store data** | Organize, query, and store your ingested data in an easily retrievable format. |
+| **Prepare data** | Prepare your data for analysis or modeling by addressing issues with the data, such as duplicates, missing values, formatting, etc. |
+| **Analyze and train data** | Analyze and use your newly structured data to build and train machine learning models to make decisions and predictions. |
+| **Track data** | Take actions, such as sending automated emails or notifications, on the insights that your data provides. |
+| **Visualize data** | Present your data as rich visualizations and insights that can be shared with others. |
+
 * **Get data**: Ingest both batch and real-time data into a single location within your Fabric workspace.
 * **Clean and transform data**: Prepare your data for analysis or modeling by addressing issues with the data, such as duplicates, missing values, formatting, etc.
 * **Store and query data**: Organize, query, and store your ingested data in an easily retrievable format.
