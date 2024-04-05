@@ -22,43 +22,48 @@ To get started, you must complete the following prerequisites:
 - A tenant account with an active subscription. Create an account for free.
 - A workspace is created.
 
-## Step 1: Add a new Script activity in Pipeline canvas
+## Add a Script activity to a Pipeline with UI
 
 1. Open an existing data pipeline or create a new data pipeline.
-1. Select the **Script** activity.
+1. Click on add a pipeline activity and search for **Script**.
 
-   :::image type="content" source="media/script-activity/add-script-activity.png" alt-text="Screenshot showing where to select the Script activity." lightbox="media/script-activity/add-script-activity.png":::
+    :::image type="content" source="media/script-activity/add-script-activity-canvas.png" alt-text="Screenshot showing where to select the Script activity in the canvas." lightbox="media/script-activity/add-script-activity-canvas.png":::
 
-## Step 2: Add a new connection for SQL
+1. Alternately, you can search for **Script** Activity in the pipeline Activities ribbon at the top, and select it to add it to the pipeline canvas.
 
-1. Select the **Settings** tab. Select **New** to create a new connection.
+    :::image type="content" source="media/script-activity/add-script-activity-ribbon.png" alt-text="Screenshot showing where to select the Script activity in the ribbon." lightbox="media/script-activity/add-script-activity-ribbon.png":::
 
-   :::image type="content" source="media/script-activity/script-activity-settings.png" alt-text="Screenshot showing where to select New in the settings tab." lightbox="media/script-activity/script-activity-settings.png":::
+1. Select the new Script activity on the canvas if it isn’t already selected.
 
-2. In the new popup window, choose the target SQL source.
+    :::image type="content" source="media/script-activity/script-activity-general.png" alt-text="Screenshot showing general tab of script activity." lightbox="media/script-activity/script-activity-general.png":::
 
-   :::image type="content" source="media/script-activity/new-connection.png" alt-text="Screenshot showing where to choose the target source." lightbox="media/script-activity/new-connection.png":::
+Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
-3. Create a new connection for the SQL source.
+## Configure the Script Activity
 
-   :::image type="content" source="media/script-activity/new-connection-details.png" alt-text="Screenshot showing the details on the New connection screen.":::
+1. Selecting the **Settings** tab, you can choose to create a new workspace (within Fabric) connection or an external connection.
 
-## Step 3: Configure script content
+1. After selecting your connection, you can choose either **Query** to get a data result or **NonQuery** for any catalog operations.
 
-1. Select the connection you created in the previous step.
+    :::image type="content" source="media/script-activity/script-activity-settings.png" alt-text="Screenshot showing settings tab of script activity." lightbox="media/script-activity/script-activity-settings.png":::
 
-   :::image type="content" source="media/script-activity/select-new-connection.png" alt-text="Screenshot showing where to select the connection." lightbox="media/script-activity/select-new-connection.png":::
+1. Then you can input content into the script expression box. We have multiple ways in which you can input script content into the expression box:
+    1. You can add dynamic content by either clicking in the box or clicking on the "dynamic content" icon on the right-hand side. A flyout will appear, as seen in the screenshot below, that showcases dynamic content and functions that you can seamlessly use to build your expressions. If you are familiar with Power Automate, the experience is very similar.
 
-2. You can choose either **Query** to get a data result or **NonQuery** for any catalog operations.
+        :::image type="content" source="media/script-activity/script-activity-flyout.png" alt-text="Screenshot showing dynamic flyout content in script activity." lightbox="media/script-activity/script-activity-flyout.png":::
 
-3. Input the script content in the input box.
+    1. You can also directly edit your script code in the code editor by clicking on the pencil icon on the right-hand side, as seen in the screenshot below. After clicking on it, a new dialog box will pop up so that you can seamlessly write and edit your code.
 
-4. You can also define parameters for your script. Output parameters will be included in the output from the Script activity, and can be referenced by [parameterization of dynamic expressions](parameters.md) from subsequent activities.
+        :::image type="content" source="media/script-activity/script-activity-edit-code.png" alt-text="Screenshot showing edit code in script activity." lightbox="media/script-activity/script-activity-edit-code.png":::
 
-   :::image type="content" source="media/script-activity/new-sql-connection-details.png" alt-text="Screenshot showing where to add script parameters." lightbox="media/script-activity/new-sql-connection-details.png":::
+    1. You can also use the expression builder that utilizes IntelliSense code completion for highlighting, syntax checking, and autocompleting to create expressions. Refer to the [**Expression Language** doc](expression-language.md) guidance to use the expression builder.
 
-5. The Script activity is successfully created and you can run it directly.
+## Save and run or schedule the pipeline
+
+After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
+
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-save-and-run.png" alt-text="Screenshot showing how to save and run the pipeline.":::
 
 ## Related content
 
-- [Monitor pipeline runs](monitor-pipeline-runs.md)
+[How to monitor pipeline runs](monitor-pipeline-runs.md)
