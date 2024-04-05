@@ -72,4 +72,4 @@ with DAG(
 
 ## Related Content
 
-* [Quickstart: Create an Apache Airflow Project in Data Factory](docs/data-factory/create-apache-airflow-project.md).
+* [Quickstart: Create an Apache Airflow Project in Data Factory](../data-factory/create-apache-airflow-project.md).

@@ -28,7 +28,7 @@ This tutorial provides step-by-step instructions to create an Apache Airflow Pro
 
 ### Step 2: Create an Apache Airflow Project
 
-1. [Create a new workspace](~/docs/get-started/create-workspaces.md).
+1. [Create a new workspace](../get-started/create-workspaces.md).
 2. Expand + New -> Click on More Options -> Under Data Factory -> Select Apache Airflow Project (preview)
 
    :::image type="content" source="media/workflow-orchestration-manager/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow Project.":::
