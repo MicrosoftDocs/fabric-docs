@@ -96,4 +96,4 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 
 ## Related Content
 
-* [Quickstart: Create an Apache Airflow Project in Data Factory](docs/data-factory/create-apache-airflow-project.md).
+* Quickstart: [Create an Apache Airflow Project in Data Factory](../create-apache-airflow-project.md).
