@@ -20,9 +20,9 @@ In this tutorial, you learn how to perform exploratory data analysis by using Az
 In this tutorial, you:
 
 > [!div class="checklist"]
-> * Download and prepare data
-> * Analyze data
-> * Visualize data
+> - Download and prepare data
+> - Analyze data
+> - Visualize data
   
 ## Prerequisites
 
@@ -45,7 +45,7 @@ To start, download the [New York City (NYC) Taxi](https://azure.microsoft.com/se
    import pandas as pd
    ```
 
-3. Because the raw data is in a Parquet format, you can use the Spark context to pull the file into memory as a DataFrame directly. Create a Spark DataFrame by retrieving the data via the Open Datasets API. Use the Spark DataFrame *schema on read* properties to infer the datatypes and schema.
+3. Because the raw data is in a Parquet format, you can use the Spark context to pull the file into memory as a DataFrame directly. Create a Spark DataFrame by retrieving the data by using the Open Datasets API. To infer the datatypes and schema, use the Spark DataFrame *schema on read* properties.
 
     ```python
     from azureml.opendatasets import NycTlcYellow
@@ -82,7 +82,7 @@ As a data analyst, you have a wide range of tools available to help you extract 
 
 ### Apache Spark SQL Magic
 
-First, do exploratory data analysis by Apache Spark SQL and magic commands with the [!INCLUDE [product-name](../../includes/product-name.md)] notebook. After you have the query, visualize the results by using the built-in ```chart options``` capability.
+First, do exploratory data analysis by using Apache Spark SQL and magic commands with the [!INCLUDE [product-name](../../includes/product-name.md)] notebook. After you have the query, visualize the results by using the built-in `chart options` capability.
 
 1. Within the notebook, create a new cell and copy the following code. By using this query, you can understand how the average tip amounts change over the period you select. This query also helps you identify other useful insights, including the minimum/maximum tip amount per day and the average fare amount.
 
@@ -99,13 +99,13 @@ First, do exploratory data analysis by Apache Spark SQL and magic commands with 
    ORDER BY day_of_month ASC
    ```
 
-2. After your query finishes running, you can visualize the results by switching to the chart view. This example creates a line chart by specifying the ```day_of_month``` field as the key and ```avgTipAmount``` as the value. After you make the selections, select **Apply** to refresh your chart.
+2. After your query finishes running, you can visualize the results by switching to the chart view. This example creates a line chart by specifying the `day_of_month` field as the key and `avgTipAmount` as the value. After you make the selections, select **Apply** to refresh your chart.
 
 ## Visualize data
 
 In addition to the built-in notebook charting options, you can use popular open-source libraries to create your own visualizations. In the following examples, use Seaborn and Matplotlib, which are commonly used Python libraries for data visualization.
 
-1. To make development easier and less expensive, downsample the dataset. Use the built-in Apache Spark sampling capability. In addition, both Seaborn and Matplotlib require a Pandas DataFrame or NumPy array. To get a Pandas DataFrame, use the ```toPandas()``` command to convert the DataFrame.
+1. To make development easier and less expensive, downsample the dataset. Use the built-in Apache Spark sampling capability. In addition, both Seaborn and Matplotlib require a Pandas DataFrame or NumPy array. To get a Pandas DataFrame, use the `toPandas()` command to convert the DataFrame.
 
    ```python
    # To make development easier, faster, and less expensive, downsample for now
@@ -130,7 +130,7 @@ In addition to the built-in notebook charting options, you can use popular open-
 
    :::image type="content" source="../media/python-visualization/histogram.png" alt-text="Screenshot of histogram that shows tip amount distribution.":::
 
-1. Next, try to understand the relationship between the tips for a given trip and the day of the week. Use Seaborn to create a box plot that summarizes the trends for each day of the week. 
+1. Next, try to understand the relationship between the tips for a given trip and the day of the week. Use Seaborn to create a box plot that summarizes the trends for each day of the week.
 
    ```python
    # View the distribution of tips by day of week using Seaborn
@@ -144,7 +144,7 @@ In addition to the built-in notebook charting options, you can use popular open-
 
    :::image type="content" source="../media/python-visualization/data-analyst-tutorial-per-day.png" alt-text="Graph that shows the distribution of tips per day.":::
 
-4. Another hypothesis might be that there's a positive relationship between the number of passengers and the total taxi tip amount. To verify this relationship, run the following code to generate a box plot that illustrates the distribution of tips for each passenger count.
+1. Another hypothesis might be that there's a positive relationship between the number of passengers and the total taxi tip amount. To verify this relationship, run the following code to generate a box plot that illustrates the distribution of tips for each passenger count.
 
    ```python
    # How many passengers tipped by various amounts 
@@ -159,8 +159,8 @@ In addition to the built-in notebook charting options, you can use popular open-
 
    :::image type="content" source="../media/python-visualization/box-whisker-plot.png" alt-text="Graph that shows a box whisker plot of tip amount by passenger count.":::
 
-5. Last, explore the relationship between the fare amount and the tip amount. Based on the results, you can see that there are several observations where people don't tip. However, there's a positive relationship between the overall fare and tip amounts.
-   
+1. Last, explore the relationship between the fare amount and the tip amount. Based on the results, you can see that there are several observations where people don't tip. However, there's a positive relationship between the overall fare and tip amounts.
+
    ```python
    # Look at the relationship between fare and tip amounts
 
