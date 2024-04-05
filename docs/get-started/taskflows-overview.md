@@ -36,7 +36,7 @@ Each task has a task type that classifies the task based on its key capabilities
 
 Open the workspace, you can see the **Taskflow(preview)** tab in workspace page, where you can build taskflow and manage items. You can also click the **All items and folders** and back to the item list view.  
 
-![A screenshot of a computer  Description automatically generated](media/image4.png)
+![A screenshot of a computer  Description automatically generated](./media/taskflows-overview/image4.png)
 
 To build a taskflow, you can either select a taskflow from one of pre-designed taskflows or add a task to start building one yourself.  
 
@@ -44,13 +44,13 @@ To build a taskflow, you can either select a taskflow from one of pre-designed t
 
 In the Taskflow default page, you can see the option of **Select a** **taskflow**
 
-![A screenshot of a computer  Description automatically generated](media/image5.png)
+![A screenshot of a computer  Description automatically generated](./media/taskflows-overview/image5.png)
 
 By clicking it, you can open and browse the pre-designed taskflows provided by Microsoft. It lists 8 taskflows with descriptions about each taskflow and item types used in the each taskflow, which gives a high level view of the taskflows and how it is used. 
 
 The layout and content are listed here and discussed in more detail later.
 
-![A screenshot of a computer  Description automatically generated](media/image6.png)
+![A screenshot of a computer  Description automatically generated](./media/taskflows-overview/image6.png)
 
 1. Takflow name 
 1. Briefly description of the use case of taskflow 
@@ -60,7 +60,7 @@ The layout and content are listed here and discussed in more detail later.
 
 You can select one which can best fit your project needs by clicking **Select.** And the selected taskflow is applied into the taskflow canvas.
 
-![A screenshot of a computer  Description automatically generated](media/image7.png)
+![A screenshot of a computer  Description automatically generated](./media/taskflows-overview/image7.png)
 
 The layout of the taskflow view is :
 
@@ -70,21 +70,21 @@ The layout of the taskflow view is :
 
 You can also update the taskflow name and description in taskflow details pane by clicking **Edit** .
 
-![A group of rectangular boxes with text  Description automatically generated](media/image8.png)
+![A group of rectangular boxes with text  Description automatically generated](./media/taskflows-overview/image8.png)
 
 The details section is in editing mode now. You can edit name and description and save the update by clicking **Save** . 
 
-![A diagram of a diagram  Description automatically generated with medium confidence](media/image9.png)
+![A diagram of a diagram  Description automatically generated with medium confidence](./media/taskflows-overview/image9.png)
 
 ## Start with a custom Taskflow
 
 If you already have a clear view of your taskflow, or none of the pre-designed taskflows fit with your needs, you can choose to build a custom taskflow by selecting a task type and adding a task directly into a canvas. 
 
-![A screenshot of a computer  Description automatically generated](media/image10.png)
+![A screenshot of a computer  Description automatically generated](./media/taskflows-overview/image10.png)
 
 The task is added into the canvas then. And the taskflow is initiated in this workspacenow.  Click **Edit** to update taskflow name and decriptions to help other members in this workspace to understand the taskflow and your project.
 
-![A white background with a black and white flag  Description automatically generated with medium confidence](media/image11.png)
+![A white background with a black and white flag  Description automatically generated with medium confidence](./media/taskflows-overview/image11.png)
 
 You can continue to add other tasks, link tasks and manage tasks on canvas, which will be discussed in more detail later.
 
@@ -92,7 +92,7 @@ You can continue to add other tasks, link tasks and manage tasks on canvas, whic
 
 When you select a task by clicking on it, you can see the **Task details**. 
 
-![A white background with a black and white flag  Description automatically generated with medium confidence](media/image12.png)
+![A white background with a black and white flag  Description automatically generated with medium confidence](./media/taskflows-overview/image12.png)
 
 There are 5 parts in the Task details pane:
 
@@ -106,25 +106,25 @@ There are 5 parts in the Task details pane:
 
 **When adding a task, the system task type and its associated description are assigned as the default name and description** **to the task. You can update the task name and description by clicking** **Edit details.**
 
-![A white background with black and white clouds  Description automatically generated with medium confidence](media/image13.png)
+![A white background with black and white clouds  Description automatically generated with medium confidence](./media/taskflows-overview/image13.png)
 
 **The details section is in editing mode now. You can edit name and description and save the update by clicking** **Save .** 
 
-![A white background with black and white clouds  Description automatically generated with medium confidence](media/image14.png)
+![A white background with black and white clouds  Description automatically generated with medium confidence](./media/taskflows-overview/image14.png)
 
 To update or reset the task type for an existing task, simply click on the dropdown menu and choose a new type.
 
-![A white rectangular object with a black border  Description automatically generated with medium confidence](media/image15.png)
+![A white rectangular object with a black border  Description automatically generated with medium confidence](./media/taskflows-overview/image15.png)
 
 ### Add tasks
 
 To add more tasks into canvas, you can click **Add** and select a task type in the drop-down list. 
 
-![A white rectangular object with a black border  Description automatically generated](media/image16.png)
+![A white rectangular object with a black border  Description automatically generated](./media/taskflows-overview/image16.png)
 
 The task of the selected task type is added into the canvas. You can also update the name and description of the task.  
 
-![A white background with black and white text  Description automatically generated with medium confidence](media/image17.png)
+![A white background with black and white text  Description automatically generated with medium confidence](./media/taskflows-overview/image17.png)
 
 Repeat the previous steps and add more tasks into the canvas.
 
@@ -132,29 +132,29 @@ Repeat the previous steps and add more tasks into the canvas.
 
 Currently, the tasks are arranged vertically and separately on the canvas.
 
-![A white background with black and white clouds  Description automatically generated with medium confidence](media/image18.png)
+![A white background with black and white clouds  Description automatically generated with medium confidence](./media/taskflows-overview/image18.png)
 
 To link tasks on the canvas, you can click **Add** and select **Link**.
 
-![](media/image19.png)
+![](./media/taskflows-overview/image19.png)
 
 In the new dialog box, choose the **Start task** and **End task** options accordingly, then click on **Add** to create the link.
 
-![](media/image20.png)
+![](./media/taskflows-overview/image20.png)
 
 Repeat this step to add links between other tasks.
 
-![A screenshot of a computer  Description automatically generated](media/image21.png)
+![A screenshot of a computer  Description automatically generated](./media/taskflows-overview/image21.png)
 
 By selecting and clicking on a link on the canvas, you can view the **Link details** and update the link or delete the link as needed.
 
-![](media/image22.png)
+![](./media/taskflows-overview/image22.png)
 
 ### Delete a task
 
 To delete a task, first select it by clicking on it. Then, in the Task Details pane, you can find the **Delete** button to remove the task.
 
-![](media/image23.png)
+![](./media/taskflows-overview/image23.png)
 
 # Attach and detach items with a task
 
@@ -164,27 +164,27 @@ Once the taskflow is set up, you can attach items to individual tasks for logica
 
 To create a new item for a specific task, first select the task by clicking on it. Then, click on the clip icon located on the task, and select **New item** to open the item creation panel for creating a new item.
 
-![](media/image24.png)
+![](./media/taskflows-overview/image24.png)
 
 Alternatively, you can click the **Attach item** in the header of the bottom list to select **New item** and open the item creation panel.
 
-![](media/image25.png)
+![](./media/taskflows-overview/image25.png)
 
 The recommended items are displayed by default in the creation panel. If the item you need is not listed, you can select 'All items' in the display option to view the full list of the items.  In the creation panel, select the item and create the item. Once the item is created, it is listed in the bottom list of the page. The task also shows that it has one item attached to it.
 
-![](media/image26.png)
+![](./media/taskflows-overview/image26.png)
 
-![](media/image27.png)
+![](./media/taskflows-overview/image27.png)
 
 ### Attach existing items to a task
 
 To attach existing items, you can either click on the clip icon on task or click the **Attach item** in the header of the bottom list, and select **Existing item**. 
 
-![A group of rectangular boxes with text  Description automatically generated with medium confidence](media/image28.png)
+![A group of rectangular boxes with text  Description automatically generated with medium confidence](./media/taskflows-overview/image28.png)
 
 In the dialog box, select one or multiple items at once and click **Select** to attach selected items to the task. 
 
-![](media/image29.png)
+![](./media/taskflows-overview/image29.png)
 
 You can see the selected items are attached to the task and listed in the bottom list. 
 
@@ -196,23 +196,23 @@ You can detach items from a selected task or detach items from all tasks.
 
 To detach item(s) from a task, first select the task you want to remove the item from. Second, select the item(s) in the bottom list. Then, click on **Detach from task** in the list header to detach the item(s) from the task
 
-![](media/image30.png)
+![](./media/taskflows-overview/image30.png)
 
 #### Detach items from all tasks
 
 You can also detach multiple items that are attached to different tasks at once. When no step is selected in the taskflow, you can view all the items in the taskflow.  Select the items and click **Detach from all tasks** button to detach items from tasks. 
 
-![](media/image31.png)
+![](./media/taskflows-overview/image31.png)
 
 # Navigate items with Taskflow
 
 With items attached to the tasks, you can use taskflow to quickly understand how items in the workspace work together and get a clear view of your work in the workspace. 
 
-![](media/image32.png)
+![](./media/taskflows-overview/image32.png)
 
 Clicking on each task in the taskflow, you can only view the items attached to the task. 
 
-![](media/image33.png)
+![](./media/taskflows-overview/image33.png)
 
 # Delete a Taskflow
 
@@ -220,11 +220,11 @@ Deleting the taskflow will only delete all the tasks and any associations betwee
 
 To delete a taskflow, first click on a blank area of the canvas to ensure that no tasks are selected. This will make the taskflow pane visible. Next, locate the '...' in the top right corner of the pane and click on it. Then select **Delete** **taskflow** to delete the taskflow
 
-![](media/image34.png)
+![](./media/taskflows-overview/image34.png)
 
 Click **Delete** to delete the taskflow from current workspace. 
 
-![](media/image35.png)
+![](./media/taskflows-overview/image35.png)
 
 # Private preview limitations
 
