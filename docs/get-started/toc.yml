@@ -17,6 +17,10 @@ items:
   items:
   - name: End-to-end tutorials
     href: end-to-end-tutorials.md
+- name: Taskflows
+  items:
+  - name: Taskflows overview
+    href: taskflows-overview.md
 - name: Decision guides
   items:
   - name: Decision guide - copy activity, dataflow, or Spark

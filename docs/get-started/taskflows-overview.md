@@ -32,7 +32,7 @@ Each task has a task type that classifies the task based on its key capabilities
 * **Respond to data**: Take actions, such as sending automated emails or notifications, on the insights that your data provides.
 * **General**: Create tasks customized to your project needs and associate available item types with them.
 
-# Set up Taskflow in workspace
+## Set up Taskflow in workspace
 
 Open the workspace, you can see the **Taskflow(preview)** tab in workspace page, where you can build taskflow and manage items. You can also click the **All items and folders** and back to the item list view.  
 
@@ -156,7 +156,7 @@ To delete a task, first select it by clicking on it. Then, in the Task Details p
 
 ![](./media/taskflows-overview/image23.png)
 
-# Attach and detach items with a task
+## Attach and detach items with a task
 
 Once the taskflow is set up, you can attach items to individual tasks for logically structuring and organizing your work.  You can choose to create a new item or attach existing items from the many already saved to the workspace. 
 
@@ -204,7 +204,7 @@ You can also detach multiple items that are attached to different tasks at once.
 
 ![](./media/taskflows-overview/image31.png)
 
-# Navigate items with Taskflow
+## Navigate items with Taskflow
 
 With items attached to the tasks, you can use taskflow to quickly understand how items in the workspace work together and get a clear view of your work in the workspace. 
 
@@ -214,7 +214,7 @@ Clicking on each task in the taskflow, you can only view the items attached to t
 
 ![](./media/taskflows-overview/image33.png)
 
-# Delete a Taskflow
+## Delete a Taskflow
 
 Deleting the taskflow will only delete all the tasks and any associations between the items and the tasks. 
 
@@ -226,7 +226,7 @@ Click **Delete** to delete the taskflow from current workspace.
 
 ![](./media/taskflows-overview/image35.png)
 
-# Private preview limitations
+## Private preview limitations
 
 The private preview of external data sharing has certain limitations that you should be aware of.
 
@@ -235,5 +235,4 @@ The private preview of external data sharing has certain limitations that you sh
 * Dragging link on the canvas is not supported.
 * Creation of Report and Dataflow Gen2 from tasks are not supported in taskflow. 
 
-  
-
+## Related content
