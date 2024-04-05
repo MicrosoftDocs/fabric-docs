@@ -8,49 +8,29 @@ ms.topic: conceptual
 ms.date: 04/05/2024
 ---
 
-![](media/image1.png)
+# What is a Fabric taskflow?
 
-# What is Fabric Taskflow?
+A Fabric taskflow is a visualization of the logical structure of your work in the workspace. Fabric provides a range of pre-defined, end-to-end taskflows based on industry best practices that are intended to make it easier to get started with your project. In addition, you can customize the taskflows to suit your specific needs and requirements. This enables you to create a tailored solution that meets your unique business needs and goals.
 
-Fabric Taskflow is a visual logical structure of your work in the workspace. It provides a range of pre-defined end-to-end Taskflows that are based on industry best practices, allowing you to kickstart your project with ease. In addition, you have the flexibility to customize the Taskflow to match your specific needs and requirements. This enables you to create a tailored solution that meets your unique business needs and goals.
-
-With Taskflow, you can understand how items are connected and work together in your workspace.  This makes it easier for you to navigate your workspace, even as it becomes more complex over time. Moreover, you can easily standardize your team’s work and keep your design and development work in sync to boost teams’ collaboration and improve efficiency.  
+With taskflows, you can understand how items are connected and work together in your workspace.  This makes it easier for you to navigate your workspace, even as it becomes more complex over time. Moreover, you can easily standardize your team's work and keep your design and development work in sync to boost the team's collaboration and efficiency.  
 
 ## Terms
 
-Taskflow: A Taskflow is a collection of connected tasks that represent relationships in <br>a process or collection of processes that complete an end-to-end data solution.
+* **Taskflow**: A taskflow is a collection of connected tasks that represent relationships in a process or collection of processes that complete an end-to-end data solution.
 
-Task: A task is a unit of process in the Taskflow. On a task, it provides task type and item recommendations to help you select the appropriate item and allows you to create and attach items to tasks, as well as navigate items. 
+* **Task**: A task is a unit of process in the taskflow. On a task, it provides task type and item recommendations to help you select the appropriate item and allows you to create and attach items to tasks, as well as to navigate items.
 
 ## Task types
 
-Each task has a task type that classifies the tasks based on its key capabilities in data process flow. The predefined task types are: 
+Each task has a task type that classifies the task based on its key capabilities in the data process flow. The predefined task types are:
 
-* Get data: Ingest both batch and real-time data into a single location within your Fabric workspace. 
-* Clean and transform data: Prepare your data for analysis or modeling by addressing issues with the data, such as duplicates, missing values, formatting, etc.
-* Store and query data: Organize, query, and store your ingested data in an easily retrievable format.
-* Analyze and model data: Analyze and use your newly structured data to build and train machine learning models to make decisions and predictions. 
-* Visualize data: Present your data as rich visualizations and insights that can be shared with others.
-* Respond to data: Take actions, such as send automated emails or notifications, on the insights that your data provides.
-* General: Create tasks that are customized to your project needs and associate available item types with them.
-
-# Enable and disable Taskflow
-
-Note: As this feature is still in private preview, we recommend you use and try this feature in your test workspaces. 
-
-## Enable Taskflow
-
-To enable Taskflow experience, attach ***&workspaceTemplateAndDiagram=1*** after the URL in your browser address bar.
-
-![](media/image2.png)
-
-Then you can see the Taskflow view in workspace page 
-
-![](media/image3.png)
-
-## Disable Taskflow
-
-To disable Taskflow, remove ***&workspaceTemplateAndDiagram=1*** from URL in your browser address bar.
+* **Get data**: Ingest both batch and real-time data into a single location within your Fabric workspace.
+* **Clean and transform data**: Prepare your data for analysis or modeling by addressing issues with the data, such as duplicates, missing values, formatting, etc.
+* **Store and query data**: Organize, query, and store your ingested data in an easily retrievable format.
+* **Analyze and model data**: Analyze and use your newly structured data to build and train machine learning models to make decisions and predictions.
+* **Visualize data**: Present your data as rich visualizations and insights that can be shared with others.
+* **Respond to data**: Take actions, such as sending automated emails or notifications, on the insights that your data provides.
+* **General**: Create tasks customized to your project needs and associate available item types with them.
 
 # Set up Taskflow in workspace
 
