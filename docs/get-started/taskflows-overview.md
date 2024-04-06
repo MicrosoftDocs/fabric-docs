@@ -56,7 +56,7 @@ In the task flow default page, you can see the option of **Select a task flow**
 
 :::image type="content" source="./media/taskflows-overview/image5.png" alt-text="A screenshot of a computer  Description automatically generated2":::
 
-By clicking it, you can open and browse the predesigned task flows provided by Microsoft. It lists eight task flows with descriptions about each task flow and item types used in each task flow, which gives a high level view of the task flows and how it's used.
+By selecting it, you can open and browse the predesigned task flows provided by Microsoft. It lists eight task flows with descriptions about each task flow and item types used in each task flow, which gives a high level view of the task flows and how it's used.
 
 The layout and content are listed here and discussed in more detail later.
 
@@ -68,7 +68,7 @@ The layout and content are listed here and discussed in more detail later.
 1. More detailed description of the task flow and how it's used
 1. Item types that are used in task flow 
 
-You can select one that can best fit your project needs by clicking **Select.** And the selected task flow is applied into the task flow canvas.
+You can select one that can best fit your project needs by selecting **Select.** And the selected task flow is applied into the task flow canvas.
 
 :::image type="content" source="./media/taskflows-overview/image7.png" alt-text="A screenshot of a computer  Description automatically generated4":::
 :::image type="content" source="{source}" alt-text="{alt-text}":::
@@ -79,11 +79,11 @@ The layout of the task flow view is:
 1. Task flow details pane: detailed information of the task flow, including name, description, total number of tasks and task list.
 1. Item list: which includes items that are attached with tasks in this task flow
 
-You can also update the task flow name and description in task flow details pane by clicking **Edit** .
+You can also update the task flow name and description in task flow details pane by selecting **Edit** .
 
 :::image type="content" source="./media/taskflows-overview/image8.png" alt-text="A group of rectangular boxes with text  Description automatically generated5":::
 
-The details section is in editing mode now. You can edit name and description and save the update by clicking **Save** . 
+The details section is in editing mode now. You can edit name and description and save the update by selecting **Save** . 
 
 :::image type="content" source="./media/taskflows-overview/image9.png" alt-text="A diagram of a diagram  Description automatically generated with medium confidence6":::
 
@@ -101,7 +101,7 @@ You can continue to add other tasks, link tasks and manage tasks on canvas, whic
 
 ## Task management in task flows
 
-When you select a task by clicking on it, you can see the **Task details**. 
+When you select a task by selecting on it, you can see the **Task details**. 
 
 :::image type="content" source="./media/taskflows-overview/image12.png" alt-text="A white background with a black and white flag  Description automatically generated with medium confidence9":::
 
@@ -115,11 +115,11 @@ There are five parts in the Task details pane:
 
 ### Update task details and type
 
-**When adding a task, the system task type and its associated description are assigned as the default name and description** **to the task. You can update the task name and description by clicking** **Edit details.**
+When adding a task, the system task type and its associated description are assigned as the default name and description to the task. You can update the task name and description by selecting **Edit details**.
 
 :::image type="content" source="./media/taskflows-overview/image13.png" alt-text="A white background with black and white clouds  Description automatically generated with medium confidenceA":::
 
-**The details section is in editing mode now. You can edit name and description and save the update by clicking** **Save .** 
+**The details section is in editing mode now. You can edit name and description and save the update by selecting** **Save .** 
 
 :::image type="content" source="./media/taskflows-overview/image14.png" alt-text="A white background with black and white clouds  Description automatically generated with medium confidenceB":::
 
@@ -157,13 +157,13 @@ Repeat this step to add links between other tasks.
 
 :::image type="content" source="./media/taskflows-overview/image21.png" alt-text="A screenshot of a computer  Description automatically generatedG":::
 
-By selecting and clicking on a link on the canvas, you can view the **Link details** and update the link or delete the link as needed.
+By selecting and selecting on a link on the canvas, you can view the **Link details** and update the link or delete the link as needed.
 
 :::image type="content" source="./media/taskflows-overview/image22.png" alt-text="Alttext3":::
 
 ### Delete a task
 
-To delete a task, first select it by clicking on it. Then, in the Task Details pane, you can find the **Delete** button to remove the task.
+To delete a task, first select it by selecting on it. Then, in the Task Details pane, you can find the **Delete** button to remove the task.
 
 :::image type="content" source="./media/taskflows-overview/image23.png" alt-text="Alttext4":::
 
@@ -173,7 +173,7 @@ Once the task flow is set up, you can attach items to individual tasks for logic
 
 ### Create an item on a task
 
-To create a new item for a specific task, first select the task by clicking on it. Then, select on the clip icon located on the task, and select **New item** to open the item creation panel for creating a new item.
+To create a new item for a specific task, first select the task by selecting on it. Then, select on the clip icon located on the task, and select **New item** to open the item creation panel for creating a new item.
 
 :::image type="content" source="./media/taskflows-overview/image24.png" alt-text="Alttext15":::
 
@@ -221,7 +221,7 @@ With items attached to the tasks, you can use task flow to quickly understand ho
 
 :::image type="content" source="./media/taskflows-overview/image32.png" alt-text="AlttextC":::
 
-Clicking on each task in the task flow, you can only view the items attached to the task. 
+selecting on each task in the task flow, you can only view the items attached to the task. 
 
 :::image type="content" source="./media/taskflows-overview/image33.png" alt-text="AlttextD":::
 
@@ -244,6 +244,6 @@ The private preview of external data sharing has certain limitations that you sh
 * Please note that tasks’ positions can't be saved on canvas. Whenever a new task is added, all tasks on the canvas will be reset to their default positions.
 * Keyboard interactions aren't supported.
 * Dragging link on the canvas isn't supported.
-* Creation of Report and Dataflow Gen2 from tasks aren't supported in task flowa.
+* Creation of Report and Dataflow Gen2 from tasks aren't supported in task flows.
 
 ## Related content
