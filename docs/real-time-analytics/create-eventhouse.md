@@ -82,8 +82,8 @@ In this section, you add a new KQL database to an existing event house. This dat
 
 
 1. Select the Eventhouse from your list of items in the workspace.
-1. In the top righthand side of the event house details page, select **Eventhouse settings** > **Minimum consumption**
-1. From the dropdown, select the size corresponding to the [minimium available CU](eventhouse.md#minimum-consumption) size you want to apply to this event house.
+1. In the top right-hand side of the event house details page, select **Eventhouse settings** > **Minimum consumption**
+1. From the dropdown, select the size corresponding to the [minimum available CU](eventhouse.md#minimum-consumption) size you want to apply to this event house.
 
     The following table maps the size to the minimum [capacity units](../admin/service-admin-portal-capacity-settings.md) allotted to the event house:
     
