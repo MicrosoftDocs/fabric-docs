@@ -1,6 +1,6 @@
 ---
 title: Event house overview (preview)
-description: Learn about Eventhouse data storage in Real-Time Analytics.
+description: Learn about event house data storage in Real-Time Analytics.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
