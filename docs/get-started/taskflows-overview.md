@@ -34,14 +34,6 @@ Each task has a task type that classifies the task based on its key capabilities
 | **Track data** | Take actions, such as sending automated emails or notifications, on the insights that your data provides. |
 | **Visualize data** | Present your data as rich visualizations and insights that can be shared with others. |
 
-* **Get data**: Ingest both batch and real-time data into a single location within your Fabric workspace.
-* **Clean and transform data**: Prepare your data for analysis or modeling by addressing issues with the data, such as duplicates, missing values, formatting, etc.
-* **Store and query data**: Organize, query, and store your ingested data in an easily retrievable format.
-* **Analyze and model data**: Analyze and use your newly structured data to build and train machine learning models to make decisions and predictions.
-* **Visualize data**: Present your data as rich visualizations and insights that can be shared with others.
-* **Respond to data**: Take actions, such as sending automated emails or notifications, on the insights that your data provides.
-* **General**: Create tasks customized to your project needs and associate available item types with them.
-
 ## Set up a task flow in a workspace
 
 Open the workspace. At the top of the main workspace area, you see the **Task flow (preview)** tab, where you can build task flows and manage items. You can also select the **All items and folders** and back to the item list view.  
@@ -52,26 +44,25 @@ To build a task flow, you can either select a task flow from one of predesigned 
 
 ## Start with predesigned task flows
 
-In the task flow default page, you can see the option of **Select a task flow**
+On the default task flow page, choose **Select a task flow**. The side pane lists the ten predesigned task flows provided by Microsoft along with a brief description of the task flow use case.
 
 :::image type="content" source="./media/taskflows-overview/image5.png" alt-text="A screenshot of a computer  Description automatically generated2":::
 
-By selecting it, you can open and browse the predesigned task flows provided by Microsoft. It lists eight task flows with descriptions about each task flow and item types used in each task flow, which gives a high level view of the task flows and how it's used.
+When you select a predefined task flow in the side pane, you'll see a more detailed description of the task flow and how it's used, and the workloads and item types required in the task flow.
 
 The layout and content are listed here and discussed in more detail later.
 
 :::image type="content" source="./media/taskflows-overview/image6.png" alt-text="A screenshot of a computer  Description automatically generated3":::
 
-1. Task flow name 
-1. Briefly description of the use case of task flow 
-1. Total number of tasks in this task flow 
+1. Task flow name.
+1. Brief description of the task flow use case. 
+1. Number of tasks in this task flow. 
 1. More detailed description of the task flow and how it's used
 1. Item types that are used in task flow 
 
-You can select one that can best fit your project needs by selecting **Select.** And the selected task flow is applied into the task flow canvas.
+Select the task flow that best fits your project needs and then choose **Select**. The selected task flow will be applied to the task flow canvas.
 
 :::image type="content" source="./media/taskflows-overview/image7.png" alt-text="A screenshot of a computer  Description automatically generated4":::
-:::image type="content" source="{source}" alt-text="{alt-text}":::
 
 The layout of the task flow view is:
 
