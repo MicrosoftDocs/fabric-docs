@@ -31,7 +31,7 @@ Creating and collaborating in Fabric includes:
 
 When you start a Fabric trial, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You don't have access to your capacity until you put something into it. To begin using your Fabric trial, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity using the *Trial* license mode, and then all the items in that workspace are saved and executed in that capacity.
 
-Your license is upgraded to [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) during the trial. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a PPU license. There are a few key PPU features that aren't available on trial capacities. These include [Co-Pilot](/power-bi/create-reports/copilot-create-report), Trusted Workspace Identity, and VNet. 
+Your license is upgraded to [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) during the trial. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a PPU license. There are a few key PPU features that aren't available on trial capacities. These include [Co-Pilot](/fabric/get-started/copilot-faq-fabric), Trusted Workspace Identity, and VNet. 
 
 ## Existing Power BI users
 
