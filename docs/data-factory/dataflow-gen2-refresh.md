@@ -48,7 +48,7 @@ To cancel a dataflow refresh, select **Cancel** icon found in workspace list or 
 
 :::image type="content" source="media/concept-dataflow-refresh/cancel-dataflow-refresh.png" alt-text="Screenshot showing where to configure dataflow refresh schedule in the dataflow settings page.":::
 
-Once a dataflow refresh is canceled, the dataflow's refresh history status is updated to reflect cancelation status: 
+Once a dataflow refresh is canceled, the dataflow's refresh history status is updated to reflect cancelation status:
 
 :::image type="content" source="media/concept-dataflow-refresh/canceled-dataflow-refresh-history.png" alt-text="Screenshot showing the dataflows refresh history view for a canceled dataflow refresh.":::
 
@@ -56,8 +56,8 @@ Once a dataflow refresh is canceled, the dataflow's refresh history status is up
 
 A dataflow refresh can be stopped via cancel refresh feature or if a failure occurred during processing of the dataflow's queries. Different outcomes can be observed depending on the type of destination and when refresh was stopped. Here are the possible outcomes, for the two types of data destination for a query:
 
-1. Query is loading data to staging: Data from the last successful refresh is available.
-2. Query is loading data to a data destination: Data written up to the point of cancelation is available.
+- Query is loading data to staging: Data from the last successful refresh is available.
+- Query is loading data to a data destination: Data written up to the point of cancelation is available.
 
 Not all queries in a dataflow are processed at the same time, for example, if a dataflow contains many queries or some queries depend on others. If a refresh is canceled before evaluation of a query that loads data to a destination began, there's no change to data in that query's destination.
 
