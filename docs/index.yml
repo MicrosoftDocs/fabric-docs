@@ -190,6 +190,22 @@ productDirectory:
           text: See more
 
     # Card
+    - title: OneRiver
+
+      imageSrc: ./media/onelake-icon.png
+      links:
+        - url: oneriver/oneriver-overview.md
+          text: What is OneRiver?
+        - url: oneriver/get-started-bring-events-oneriver.md
+          text: Bring your data to OneRiver
+        - url: oneriver/explore-streams.md
+          text: Explore streams
+        - url: oneriver/trigger-actions-streams.md
+          text: Trigger actions on streams
+        - url: oneriver/index.yml
+          text: See more
+
+    # Card
     - title: Data Factory
 
       imageSrc: ./media/data-factory-icon.png
