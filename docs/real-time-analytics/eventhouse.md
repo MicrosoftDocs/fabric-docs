@@ -1,5 +1,5 @@
 ---
-title: Eventhouse overview (preview)
+title: Event house overview (preview)
 description: Learn about Eventhouse data storage in Real-Time Analytics.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
@@ -8,7 +8,7 @@ ms.topic: Conceptual
 ms.date: 04/07/2024
 ms.search.form: Eventhouse
 ---
-# Eventhouse overview (preview)
+# Event house overview (preview)
 
 Event houses provide a solution for handling and analyzing large volumes of data, particularly in scenarios requiring real-time analytics and exploration. They're designed to handle real-time data streams efficiently, which lets organizations ingest, process, and analyze data in near real-time. These aspects make event houses particularly useful for scenarios where timely insights are crucial. Event houses provide a scalable infrastructure that allows organizations to handle growing volumes of data, ensuring optimal performance and resource use. Event houses are the storage solution for streaming data in Fabric, and for semistructured and free text analysis. An event house is a workspace of databases, which might be shared across a certain project. An event house allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database.
 
