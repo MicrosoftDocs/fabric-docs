@@ -43,6 +43,8 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following lim
 
 * Editing the semantic model of the Microsoft Fabric Capacity Metrics app using external model authoring tools, isn't supported.
 
+* The cumulative consumption of CU seconds for a specific item over the past 14 days, is displayed in the *CU (s)* column of the [matrix by item and operation](metrics-app-compute-page.md#matrix-by-item-and-operation) table. If the item was moved from another workspace to the current workspace in the last 14 days, the cumulative consumption of CU seconds for the item in the previous workspace is included in the *CU (s)* column.
+
 ## Related content
 
 - [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md)
