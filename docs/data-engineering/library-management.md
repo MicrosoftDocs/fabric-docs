@@ -29,7 +29,7 @@ A library is a collection of prewritten code that developers can import to provi
 
 The following scenarios describe best practices.
 
-### Scenario 1: Administrator sets default libraries for the workspace
+### Scenario 1: Admin sets default libraries for the workspace
 
 In order to set default libraries, you have to be the administrator of the workspace.
 
