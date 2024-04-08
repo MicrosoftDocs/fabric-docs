@@ -8,7 +8,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/24/2023
+ms.date: 04/09/2024
 ms.search.form: Python Language
 #customer intent: As a data analyst, I want to understand how Spark applications in Synapse can analyze data.
 ---
@@ -23,26 +23,26 @@ Microsoft Fabric provides built-in Python support for Apache Spark. Support incl
 
 To get started with Python in [!INCLUDE [product-name](../../includes/product-name.md)] notebooks, change the primary **language** at the top of your notebook by setting the language option to _PySpark (Python)_.
 
-In addition, you can use multiple languages in one notebook by specifying the language magic command at the beginning of a cell.
-
 ```Python
 %%pyspark
 # Enter your Python code here
 ```
 
-To learn more about notebooks within [!INCLUDE [product-name](../../includes/product-name.md)] Analytics, see [How to use notebooks](../../data-engineering/how-to-use-notebook.md).
+You can use multiple languages in one notebook by specifying the language magic command at the beginning of a cell.
+
+To learn more about notebooks in [!INCLUDE [product-name](../../includes/product-name.md)] Analytics, see [How to use notebooks](../../data-engineering/how-to-use-notebook.md).
 
 ## Install packages
 
-Libraries provide reusable code that you might want to include in your programs or projects. To make partner code or locally built code available to your applications, you can install a library in-line into your notebook session. Alternatively, your workspace admin can create an environment, install the library in it, and attach the environment as the workspace default in the workspace setting.
+Libraries provide reusable code that you can include in your programs or projects. To make partner code or locally built code available to your applications, install a library in-line into your notebook session. Alternatively, your workspace administrator can create an environment, install the library in it, and attach the environment as the workspace default in the workspace setting.
 
-To learn more about library management in Microsoft Fabric, see [manage Apache Spark libraries](../../data-engineering/library-management.md).
+To learn more about library management in Microsoft Fabric, see [Manage Apache Spark libraries](../../data-engineering/library-management.md).
 
 ## Notebook utilities
 
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can use MSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. MSSparkUtils is supported for PySpark notebooks.
 
-To get started, you can run the following commands:
+To get started, run the following commands:
 
 ```python
 from notebookutils import mssparkutils
@@ -50,19 +50,21 @@ mssparkutils.notebook.help()
 
 ```
 
-Learn more about the supported MSSparkUtils commands at [Use Microsoft Spark Utilities](../../data-engineering/microsoft-spark-utilities.md).
+For more information about the supported MSSparkUtils commands, see [Use Microsoft Spark Utilities](../../data-engineering/microsoft-spark-utilities.md).
 
 ## Use Pandas on Spark
 
-The [Pandas API on Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html) allows you to scale your Pandas workload to any size by running it distributed across multiple nodes. If you're already familiar with pandas and want to use Spark for big data, pandas API on Spark makes you immediately productive. You can migrate your applications without modifying the code. You can have a single codebase that works both with pandas (tests, smaller datasets) and with Spark (production, distributed datasets). You can switch between the pandas API and the Pandas API on Spark easily and without overhead.
+The [Pandas API on Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html) allows you to scale your Pandas workload to any size by running it distributed across multiple nodes. If you're already familiar with pandas and want to use Spark for big data, pandas API on Spark makes you immediately productive.
+
+You can migrate your applications without modifying the code. You can have a single codebase that works both with pandas, for tests and smaller datasets, and with Spark for production and distributed datasets. You can switch between the pandas API and the Pandas API on Spark easily and without overhead.
 
 ## Python runtime
 
-The [!INCLUDE [product-name](../../includes/product-name.md)] [Runtime](../../data-engineering/runtime.md) is a curated environment optimized for data science and machine learning. The [!INCLUDE [product-name](../../includes/product-name.md)] runtime offers a range of popular, Python open-source libraries, including libraries like Pandas, PyTorch, Scikit-Learn, XGBoost, and more.
+The [!INCLUDE [product-name](../../includes/product-name.md)] [Runtime](../../data-engineering/runtime.md) is a curated environment optimized for data science and machine learning. The [!INCLUDE [product-name](../../includes/product-name.md)] runtime offers a range of popular, Python open-source libraries, including libraries like Pandas, PyTorch, Scikit-Learn, and XGBoost.
 
 ## Python visualization
 
-The Python ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Spark instance in [!INCLUDE [product-name](../../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage extra libraries or versions. For more information on library management, see [Summary of library management best practices](../../data-engineering/library-management.md#summary-of-library-management-best-practices).
+The Python ecosystem offers multiple graphing libraries that come with many different features. By default, every Spark instance in [!INCLUDE [product-name](../../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage extra libraries or versions. For more information on library management, see [Summary of library management best practices](../../data-engineering/library-management.md#summary-of-library-management-best-practices).
 
 Learn more about how to create Python visualizations by visiting [Python visualization](../python-guide/python-visualizations.md).
 
