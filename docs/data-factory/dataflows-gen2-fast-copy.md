@@ -19,9 +19,9 @@ Using the fast copy indicators in the query steps pane, you can easily check if 
 
 ## Prerequisites
 
-- Fabric capacity
-- For file data, stored in .csv or parquet format of at least 100 MB, stored in an Azure Data Lake Storage (ADLS) Gen2 or Blob account
-- For Azure SQL DB, 1 million rows or more of data.
+- You must have a Fabric capacity.
+- For file data, files are in .csv or parquet format of at least 100 MB, and stored in an Azure Data Lake Storage (ADLS) Gen2 or a Blob storage account.
+- For Azure SQL DB, 1 million rows or more of data in the data source.
 
 ## Connector support
 
