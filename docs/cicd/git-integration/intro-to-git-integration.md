@@ -47,8 +47,7 @@ Before you enable Git integration, make sure you understand the following possib
 
 The following items are currently supported:
 
-<!--- * [Data pipelines](../../data-factory/data-factory-overview.md#data-pipelines) --->
-
+* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
