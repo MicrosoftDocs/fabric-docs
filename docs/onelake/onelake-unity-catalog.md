@@ -43,7 +43,7 @@ Once the Cloud connection ID is obtained, integrate Unity Catalog tables to Fabr
 
 :::image type="content" source="media\onelake-unity-catalog\uc-fabric-flow.png" alt-text="Screenshot showing Unity Catalog to Fabric shortcuts flow.":::
 
-1. **Import sync notebook** to your Fabric workspace.  [This notebook](./onelake-unity-catalog.md) exports all Unity Catalog tables metadata from a given catalog and schemas in your metastore. 
+1. **Import sync notebook** to your Fabric workspace.  [This notebook](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/onelake/unity-catalog/nb-sync-uc-fabric-onelake.ipynb) exports all Unity Catalog tables metadata from a given catalog and schemas in your metastore. 
 
 2. **Configure the parameters** in the first cell of the notebook to integrate Unity Catalog tables. The Databricks API, authenticated through PAT token, is utilized for exporting Unity Catalog tables. The following snippet is used to configure the source (Unity Catalog) and destination (OneLake) parameters. Ensure to replace them with your own values.
 
