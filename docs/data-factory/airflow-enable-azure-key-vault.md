@@ -1,5 +1,5 @@
 ---
-title: Enable Azure Key Vault for airflow
+title: Enable Azure Key Vault for Apache Airflow Backend
 description: This article explains how to enable Azure Key Vault as the secret back end for a Workflow Orchestration Manager instance.
 ms.reviewer: xupxhou
 ms.author: abnarain
@@ -11,7 +11,7 @@ ms.date: 03/25/2024
 # Enable Azure Key Vault as a Secret Backend
 
 ## Introduction
-Apache Airflow offers various backends for securely storing sensitive information such as variables and connections. One of these options is Azure Key Vault. This article walks you through the process of configuring Key Vault as the secret backend for Apache Airflow Project within Fabric Data Factory.
+Apache Airflow offers various backends for securely storing sensitive information such as variables and connections. One of these options is Azure Key Vault. This article walks you through the process of configuring Key Vault as the secret backend for Data worflows in Data Factory.
 
 ## Prerequisites
 
@@ -30,14 +30,14 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 
 * **Airflow Requirements**: Install [apache-airflow-providers-microsoft-azure](https://airflow.apache.org/docs/apache-airflow-providers-microsoft-azure/stable/index.html) during your initial Airflow environment setup.
 
-   :::image type="content" source="media/workflow-orchestration-manager/enable-akv-requirement.png" alt-text="Screenshot that shows the Airflow Environment Setup window highlighting the Airflow requirements." lightbox="media/workflow-orchestration-manager/enable-akv-requirement.png":::
+   :::image type="content" source="media/data-workflows/enable-akv-requirement.png" alt-text="Screenshot that shows the Airflow Environment Setup window highlighting the Airflow requirements." lightbox="media/data-workflows/enable-akv-requirement.png":::
 
 *  **Configuration overrides**: Add the following settings for the **Airflow configuration overrides** in integration runtime properties:
 
    - **AIRFLOW__SECRETS__BACKEND**: `airflow.providers.microsoft.azure.secrets.key_vault.AzureKeyVaultBackend`
    - **AIRFLOW__SECRETS__BACKEND_KWARGS**: `{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "vault_url": **\<your keyvault uri\>**}`
 
-   :::image type="content" source="media/workflow-orchestration-manager/enable-akv-configs.png" alt-text="Screenshot that shows the configuration of the Airflow configuration overrides setting in the Airflow environment setup." lightbox="media/workflow-orchestration-manager/enable-akv-configs.png":::
+   :::image type="content" source="media/data-workflows/enable-akv-configs.png" alt-text="Screenshot that shows the configuration of the Airflow configuration overrides setting in the Airflow environment setup." lightbox="media/data-workflows/enable-akv-configs.png":::
 
 <!-- Do we even need it? -->
 * **Environment variables**: Add the following variables for the  configuration in the Airflow integration runtime properties:
@@ -92,8 +92,8 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 
 1. Stored variable in Azure Key Vault.
 
-   :::image type="content" source="media/workflow-orchestration-manager/variable-in-akv.png" alt-text="Screenshot that shows the configuration of secrets in Azure Key Vault." lightbox="media/workflow-orchestration-manager/variable-in-akv.png":::
+   :::image type="content" source="media/data-workflows/variable-in-akv.png" alt-text="Screenshot that shows the configuration of secrets in Azure Key Vault." lightbox="media/data-workflows/variable-in-akv.png":::
 
 ## Related Content
 
-* Quickstart: [Create an Apache Airflow Project in Data Factory](../data-factory/create-apache-airflow-project.md).
+* Quickstart: [Create the Apache Airflow Project in Data Factory](../data-factory/create-apache-airflow-project.md).

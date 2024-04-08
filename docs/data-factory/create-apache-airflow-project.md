@@ -1,6 +1,6 @@
 ---
-title: Create an Apache Airflow Project in Microsoft Fabric
-description: This tutorial helps you create an Apache Airflow Project in Microsoft Fabric.
+title: Create the Data Workflow project in Microsoft Fabric
+description: This tutorial helps you create the Data Workflow project in Microsoft Fabric.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -10,39 +10,44 @@ ms.topic: quickstart
 ms.date: 03/25/2024
 ---
 
-# Quickstart: Create an Apache Airflow Project
+# Quickstart: Create the Data Workflow project
 
 ## Introduction
-[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines. Airflow enables you to execute these DAGs on a schedule or in response to an event, monitor the progress of workflows, and provide visibility into the state of each task. It is widely used in data engineering and data science to orchestrate data pipelines, and is known for its flexibility, extensibility, and ease of use.
 
-Data Factory's Workflow Orchestration Manager service is a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease.
+> [!NOTE]
+> Data workflows is powered by Apache Airflow.
+> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-This tutorial provides step-by-step instructions to create an Apache Airflow Project in Microsoft Fabric.
+Data workflows is a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease.
+
+This tutorial provides step-by-step instructions to create the Data workflow project in Microsoft Fabric.
 
 ### Step 1: Enable Apache Airflow in your Tenant.
 
 1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow projects (preview)' section.
 2. Click Apply.
 
-   :::image type="content" source="media/workflow-orchestration-manager/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+   :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
 
-### Step 2: Create an Apache Airflow Project
+### Step 2: Create a Data workflow project
 
-1. [Create a new workspace](../get-started/create-workspaces.md).
-2. Expand + New -> Click on More Options -> Under Data Factory -> Select Apache Airflow Project (preview)
+1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
+2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Project (preview)
 
-   :::image type="content" source="media/workflow-orchestration-manager/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow Project.":::
+   :::image type="content" source="media/data-workflows/more-options.png" alt-text="Screenshot shows click on more options.":::
+
+   :::image type="content" source="media/data-workflows/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow Project.":::
 
 3. Give a suitable name to your project and Click on Create Button.
 
-   :::image type="content" source="media/workflow-orchestration-manager/name-airflow-project.png" alt-text="Screenshot to name Apache Airflow Project.":::
+   :::image type="content" source="media/data-workflows/name-airflow-project.png" alt-text="Screenshot to name Apache Airflow Project.":::
 
 ### Step 3: Configure an Airflow Environment.
 
 1. Click on 'Configure Airflow' Card.
 2. Specify the Apache Airflow environment configuration for your DAGs to run against. You can change these settings later as well.
 
-:::image type="content" source="media/workflow-orchestration-manager/configure-airflow-env.png" alt-text="Screenshot to configure Apache Airflow Project.":::
+:::image type="content" source="media/data-workflows/configure-airflow-env.png" alt-text="Screenshot to configure Apache Airflow Project.":::
 
 * <strong>Compute Node Size:</strong> The size of the compute node you want your Airflow environment to run on.
 * <strong>Enable Autoscale:</strong> Allow your Airflow environment to scale nodes up or down as needed.
@@ -58,7 +63,7 @@ Specify the git repository you want to sync your Airflow project with.
 
 1. Click on 'Sync with Git' Card, you are navigated to 'File Storage'.
 
-:::image type="content" source="media/workflow-orchestration-manager/git-sync.png" alt-text="Screenshot to synchronize GitHub repository.":::
+:::image type="content" source="media/data-workflows/git-sync.png" alt-text="Screenshot to synchronize GitHub repository.":::
 
 2. Fill out the following fields:
 
@@ -112,7 +117,7 @@ Specify the git repository you want to sync your Airflow project with.
 
 1. Click on Start Apache Airflow Environment to configure the Airflow Runtime. (It should take about 5 mins for the configuration).
 
-   :::image type="content" source="media/workflow-orchestration-manager/start-apache-airflow.png" alt-text="Screenshot to start Apache Airflow Project.":::
+   :::image type="content" source="media/data-workflows/start-apache-airflow.png" alt-text="Screenshot to start Apache Airflow Project.":::
 
 ## Next Steps
 

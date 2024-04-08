@@ -45,7 +45,7 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
-    - name: Create an Apache Airflow Project
+    - name: Create a data workflow project
       href: create-apache-airflow-project.md
     - name: Operationalize Data Factory
       href: transform-data.md
@@ -673,7 +673,7 @@
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
     - name: Fabric Dataflows for ADF Mapping Data Flow users
       href: guide-to-dataflows-for-mapping-data-flow-users.md
-  - name: Workflow Orchestration Manager
+  - name: Data Workflows
     items:
       - name: Concepts
         items:

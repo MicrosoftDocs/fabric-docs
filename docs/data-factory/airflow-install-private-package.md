@@ -1,6 +1,6 @@
 ---
-title: Install a Private Package as a requirement in Workflow Orchestration Manager.
-description: This tutorial helps to install a Private Package as a requirement in Workflow Orchestration Manager.
+title: Install a Private Package as a requirement in Data Workflows Project.
+description: This tutorial helps to install a Private Package as a requirement in Data Workflows Project.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -11,7 +11,12 @@ ms.date: 03/25/2024
 ---
 
 
-# Install a Private Package as a requirement in Workflow Orchestration Manager.
+# Install a Private Package as a requirement in Data Workflows Project.
+
+> [!NOTE]
+> Data workflows is powered by Apache Airflow.
+> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+
 
 ## Introduction
 A python package is a way to organize related Python modules into a single directory hierarchy. A package is typically represented as a directory that contains a special file called __init__.py. Inside a package directory, you can have multiple Python module files (.py files) that define functions, classes, and variables. In the context of Workflow Orchestration Manager, you can create packages to add your custom code.
@@ -39,7 +44,7 @@ class SampleOperator(BaseOperator):
 
 ```
 
-2. Create an Apache Airflow DAG file `sample_dag.py` to test the operator defined in Step 1.
+2. Create the Apache Airflow DAG file `sample_dag.py` to test the operator defined in Step 1.
 
 ```python
 from datetime import datetime
@@ -68,8 +73,8 @@ with DAG(
 
 * For example, if your private package is located at `/dags/test/private.whl` in a GitHub repo, add the requirement `/opt/airflow/git/<repoName>.git/dags/test/private.whl` to the Airflow environment.
 
-:::image type="content" source="media/workflow-orchestration-manager/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
+:::image type="content" source="media/data-workflows/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
 
 ## Related Content
 
-* [Quickstart: Create an Apache Airflow Project in Data Factory](../data-factory/create-apache-airflow-project.md).
+* [Quickstart: Create the Apache Airflow Project in Data Factory](../data-factory/create-apache-airflow-project.md).

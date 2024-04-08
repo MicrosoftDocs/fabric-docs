@@ -1,6 +1,6 @@
 ---
-title: Set up SMTP server with Apache Airflow Project.
-description: This tutorial helps to set up smtp server with Apache Airflow Project that can send email on behalf of Airflow.
+title: Set up SMTP server with Data workflows project.
+description: This tutorial helps to set up smtp server with Data workflows project that can send email on behalf of Apache Airflow.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -8,12 +8,17 @@ ms.topic: how-to
 ms.date: 03/25/2024
 ---
 
-# Set up SMTP Server with Apache Airflow Project.
+# Set up SMTP Server with Data Workflows project.
 
 ## Introduction
-Apache Airflow is an open-source platform for orchestrating workflows and data pipelines. It allows you to schedule, monitor, and manage complex tasks using a web interface and a Python-based programming language. One of the features of Airflow is the ability to send email notifications and alerts when a task fails, succeeds, or retries. This feature can help you keep track of your workflows and troubleshoot any issues.
 
-To use email notifications and alerts, you need to set up an (Simple Mail Transfer Protocol)SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Apache Airflow using Gmail.
+> [!NOTE]
+> Data workflows is powered by Apache Airflow.
+> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+
+One of the features of Airflow is the ability to send email notifications and alerts when a task fails, succeeds, or retries. This feature can help you keep track of your workflows and troubleshoot any issues.
+
+To use email notifications and alerts, you need to set up an (Simple Mail Transfer Protocol) SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Apache Airflow using Gmail.
 
 ## Prerequisites
 * **SMTP server** or service that your can use to send emails.  You need the SMTP host, port, username, and password for your server or service. If you're using Gmail, create an app password for your account.
@@ -86,6 +91,6 @@ The email contains the following information:
 * Host: Host Name of your Apache Airflow Project
 * Mark success: Link that redirects to the Failed DAG state.
 
-:::image type="content" source="media/workflow-orchestration-manager/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::
+:::image type="content" source="media/data-workflows/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::
 
 
