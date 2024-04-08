@@ -37,7 +37,7 @@ In order to set default libraries, you have to be the administrator of the works
 - [Install the required libraries](environment-manage-library.md)
 - [Attach this environment as workspace default](create-and-use-environment.md#attach-an-environment-as-workspace-default)
 
-The notebooks and Spark job definitions in the workspace are attached to the *Workspace Settings*. They start sessions with the libraries installed in the workspace's default environment.
+The notebooks and Spark job definitions in the workspace are attached to the **Workspace settings**. They start sessions with the libraries installed in the workspace's default environment.
 
 ### Scenario 2: Persist library specifications for one or multiple code items
 
@@ -87,7 +87,9 @@ However, `%pip` handles these scenarios. Libraries installed through `%pip` are 
 
 > [!TIP]
 >
-> - The `%conda install` command usually takes longer than the `%pip install` command to install new Python libraries. It checks the full dependencies and resolves conflicts. You might want to use `%conda install` for more reliability and stability. You can use `%pip install` if you are sure that the library you want to install doesn't conflict with the preinstalled libraries in the runtime environment.
+> The `%conda install` command usually takes longer than the `%pip install` command to install new Python libraries. It checks the full dependencies and resolves conflicts.
+>
+> You might want to use `%conda install` for more reliability and stability. You can use `%pip install` if you are sure that the library you want to install doesn't conflict with the preinstalled libraries in the runtime environment.
 
 For all available Python in-line commands and clarifications, see [%pip commands](https://pip.pypa.io/en/stable/cli/) and [%conda commands](https://docs.conda.io/projects/conda/en/latest/commands.html).
 
@@ -142,11 +144,11 @@ To manage R libraries, Fabric supports the `install.packages()`, `remove.package
 
 #### Manage R public libraries through in-line installation
 
-Follow this example to walk through the steps of installing an R public library:
+Follow this example to walk through the steps of installing an R public library.
 
 To install an R feed library:
 
-1. Switch the working language to **SparkR(R)** in the notebook ribbon.
+1. Switch the working language to **SparkR (R)** in the notebook ribbon.
 
 2. Install the *caesar* library by running the following command in a notebook cell.
 
@@ -183,4 +185,4 @@ The *.jar* files are supported at notebook sessions with following code.
 
 ## Related content
 
-- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).
+- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md)
