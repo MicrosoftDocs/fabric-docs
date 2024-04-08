@@ -84,7 +84,7 @@ As a data analyst, you have a wide range of tools available to help you extract 
 
 First, do exploratory data analysis by using Apache Spark SQL and magic commands with the [!INCLUDE [product-name](../../includes/product-name.md)] notebook. After you have the query, visualize the results by using the built-in `chart options` capability.
 
-1. Within the notebook, create a new cell and copy the following code. By using this query, you can understand how the average tip amounts change over the period you select. This query also helps you identify other useful insights, including the minimum/maximum tip amount per day and the average fare amount.
+1. In the notebook, create a new cell and copy the following code. By using this query, you can understand how the average tip amounts change over the period you select. This query also helps you identify other useful insights, including the minimum/maximum tip amount per day and the average fare amount.
 
    ```sql
    %%sql
