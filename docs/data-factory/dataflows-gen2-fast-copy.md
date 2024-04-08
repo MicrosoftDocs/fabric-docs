@@ -77,7 +77,7 @@ When you directly load the query to an output destination, only Lakehouse destin
 1. Select **Get data** and then choose the ADLS Gen2 source, and fill in the details for your container.
 1. Use the **Combine file**  functionality.
 
-   :::image type="content" source="media/dataflows-gen2-fast-copy/preview-folder-data.png" alt-text="Screenshot showing the Preview folder data window with the Combine option highlighted.":::
+   :::image type="content" source="media/dataflows-gen2-fast-copy/preview-folder-data.png" lightbox="media/dataflows-gen2-fast-copy/preview-folder-data.png" alt-text="Screenshot showing the Preview folder data window with the Combine option highlighted.":::
 
 1. To ensure fast copy, only apply transformations listed in the [Connector support](#connector-support) section of this article. If you need to apply more transformations, stage the data first, and reference the query later. Make other transformations on the referenced query.
 1. **(Optional)** You can set the **Require fast copy** option for the query by right-clicking on it to select and enable that option.
