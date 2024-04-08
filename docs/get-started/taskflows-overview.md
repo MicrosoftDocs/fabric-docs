@@ -36,7 +36,7 @@ Each task has a task type that classifies the task based on its key capabilities
 
 ## Set up a task flow in a workspace
 
-Open the workspace. At the top of the main workspace area, you see the **Task flow (preview)** tab, where you can build task flows and manage items. You can also select the **All items and folders** and back to the item list view.  
+Open the workspace. You'll see that the workspace is split between the task flow partition and the workspace list. You'll build and manage your task flow in the task flow partition.
 
 :::image type="content" source="./media/taskflows-overview/image4.png" alt-text="A screenshot of a computer  Description automatically generated1":::
 
