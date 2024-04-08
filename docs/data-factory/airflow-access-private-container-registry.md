@@ -18,7 +18,7 @@ This article shows how to add a Kubernetes secret in Apache Airflow environment 
 
 ### Add a Kubernetes secret.
 
-1. Click on `Configure Airflow`, you are navigated to `Environment configuration` page.
+1. Navigate to the `Environment configuration` page by clicking on `Configure Airflow`.
 2. Under `Kubernetes secrets` section, click on `New` button.
 :::image type="content" source="media/workflow-orchestration-manager/K8s-new-secret.png" alt-text="Screenshot that shows button to add new K8s secret." :::
 3. Fill out the fields that appear in Dialog box:
@@ -29,7 +29,7 @@ This article shows how to add a Kubernetes secret in Apache Airflow environment 
     * <strong>Username</strong>: Username of your private container registry.
     * <strong>Password</strong>: Password to access the private container registry.
 :::image type="content" source="media/workflow-orchestration-manager/K8s-new-secret-form.png" alt-text="Screenshot that shows form to add new K8s secret." :::
-4. Click `Create`.
+4. Once all the fields are filled, click on the `Create` button to finalize the creation of the Kubernetes secret.
 
 ### A sample DAG using stored Kubernetes secret to pull a custom image from ACR.
 

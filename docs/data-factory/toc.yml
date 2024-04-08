@@ -687,6 +687,8 @@
             href: airflow-enable-azure-key-vault.md
           - name: Set up SMTP Server
             href: airflow-set-smtp-server.md
+          - name: Add a Kubernetes secret
+            href: airflow-access-private-container-registry.md
       - name: Tutorials
   - name: FAQ and Troubleshooting
     items:
