@@ -36,7 +36,7 @@ Each task has a task type that classifies the task based on its key capabilities
 
 ## Set up a task flow in a workspace
 
-Open the workspace. You'll see that the workspace is split between the task flow partition and the workspace list. You'll build and manage your task flow in the task flow partition.
+Open the workspace. You'll see that the workspace view is split between a task flow partition and the workspace list. You'll build and manage your task flow in the task flow partition.
 
 :::image type="content" source="./media/taskflows-overview/image4.png" alt-text="A screenshot of a computer  Description automatically generated1":::
 
@@ -44,11 +44,11 @@ To build a task flow, you can either select a task flow from one of predesigned 
 
 ## Start with predesigned task flows
 
-On the default task flow page, choose **Select a task flow**. The side pane lists the ten predesigned task flows provided by Microsoft along with a brief description of the task flow use case.
+On the default task flow page, choose **Select a task flow**. The side pane lists ten predesigned task flows provided by Microsoft. Each predefined task flow has a a brief description of its use case.
 
 :::image type="content" source="./media/taskflows-overview/image5.png" alt-text="A screenshot of a computer  Description automatically generated2":::
 
-When you select a predefined task flow in the side pane, you'll see a more detailed description of the task flow and how it's used, and the workloads and item types required in the task flow.
+When you select a predefined task flow in the side pane, you'll see a more detailed description of the task flow and how it's used. You'll also see the workloads and item types that the task flow requires.
 
 The layout and content are listed here and discussed in more detail later.
 
@@ -66,41 +66,41 @@ Select the task flow that best fits your project needs and then choose **Select*
 
 The layout of the task flow view is:
 
-1. Canvas: The canvas contains a graph view of tasks and all interactions of task flow.
-1. Task flow details pane: detailed information of the task flow, including name, description, total number of tasks and task list.
-1. Item list: which includes items that are attached with tasks in this task flow
+1. **Task flow canvasv: Provides a graphic view of tasks and all interactions of the task flow. [QUESTION: what do we mean by "all interactions"?]
+1. **Task flow details pane**: Shows detailed information about the task flow, including task flow name, description, total number of tasks in the task flow, and a list of those tasks.
+1. Items list: The items list shows all the items and folders in the workspace, includeing those items that are attached to tasks in the task flow. When you select a task in the task flow, the list is filtered to just the items that are attached to the selected task.
 
-You can also update the task flow name and description in task flow details pane by selecting **Edit** .
+You can change the task flow name and description in the task flow details pane by selecting **Edit** .
 
 :::image type="content" source="./media/taskflows-overview/image8.png" alt-text="A group of rectangular boxes with text  Description automatically generated5":::
 
-The details section is in editing mode now. You can edit name and description and save the update by selecting **Save** . 
+The following image shows the details section in editing mode. You can edit name and description and save your changes by selecting **Save** .
 
 :::image type="content" source="./media/taskflows-overview/image9.png" alt-text="A diagram of a diagram  Description automatically generated with medium confidence6":::
 
 ## Start with a custom task flow
 
-If you already have a clear view of your taskflow, or none of the predesigned task flows fit with your needs, you can choose to build a custom task flow by selecting a task type and adding a task directly into a canvas. 
+If you already have a clear idea of what the structure of your task flow needs to be, or if none of the predesigned task flows fit your needs, you can build a custom task flow by selecting **Add a task** choosing a task type to add a task directly onto the canvas.
 
 :::image type="content" source="./media/taskflows-overview/image10.png" alt-text="A screenshot of a computer  Description automatically generated7":::
 
-The task is added into the canvas then. And the task flow is initiated in this workspace now.  Select **Edit** to update task flow name and descriptions to help other members in this workspace to understand the task flow and your project.
+The task is added into the canvas, and the task flow is in this workspace begun.  Select **Edit** to update the task flow name and descriptions to help other members of this workspace understand the task flow and your project.
 
 :::image type="content" source="./media/taskflows-overview/image11.png" alt-text="A white background with a black and white flag  Description automatically generated with medium confidence8":::
 
-You can continue to add other tasks, link tasks and manage tasks on canvas, which will be discussed in more detail later.
+You can continue to add other tasks to the canvas, as well as manage tasks and link tasks together. These topics are discussed in more detail in the following sections.
 
 ## Task management in task flows
 
-When you select a task by selecting on it, you can see the **Task details**. 
+When you select a task, you'll see **Task details** pane.
 
 :::image type="content" source="./media/taskflows-overview/image12.png" alt-text="A white background with a black and white flag  Description automatically generated with medium confidence9":::
 
 There are five parts in the Task details pane:
 
-1. Task name, identifying a task and providing a clear indication of its intended use
-1. This is an overview of task type and the number of items attached to it.
-1. Task description, it provides a detailed explanation of the task and its intended use.
+1. Task name. A good task name should identify the task and provides a clear indication of its intended use.
+1. Number of items attached to the task.
+1. Task description, Provides a detailed explanation of the task and its intended use.
 1. Task type, by configuring and selecting task type, the specific category of the recommended items are different.
 1. Item recommendation: recommended items vary depending on the selected task type.
 
