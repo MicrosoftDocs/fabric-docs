@@ -11,7 +11,7 @@ ms.author: yexu
 
 This article describes the fast copy feature in Dataflows Gen2 for Data Factory in Microsoft Fabric. Dataflows help with ingesting and transforming data. With the introduction of dataflow scale out with SQL DW compute, you can transform your data at scale. However, your data needs to be ingested first. With the introduction of fast copy, you can ingest terabytes of data with the easy experience of dataflows, but with the scalable back-end of the pipeline Copy Activity.
 
-After enabling this capability. Dataflows automatically switch the back-end when data size exceeds 100 MB, without needing to change anything during authoring of the dataflows. After the refresh of a dataflow, you can easily check in the refresh history if fast copy was used during the run by looking at the entity status in the refresh history.
+After enabling this capability, Dataflows automatically switch the back-end when data size exceeds 100 MB, without needing to change anything during authoring of the dataflows. After the refresh of a dataflow, you can easily check in the refresh history if fast copy was used during the run by looking at the entity status in the refresh history.
 
 With the _Require fast copy_ option enabled, you can start a debugging session to test the dataflow behavior with your data. When require fast copy isn't used on a query, the dataflow refresh is canceled, and you don't have to wait until the refresh times out.
 
