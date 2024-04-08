@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 03/14/2024
+ms.date: 04/4/2024
 ms.custom: build-2023
 #customer intent: As a developer, I want to understand how the items in Microsoft Fabric's Git integration tool are structured so that I can use it effectively.
 ---
