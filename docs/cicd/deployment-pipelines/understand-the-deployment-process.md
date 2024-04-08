@@ -157,11 +157,12 @@ Since folders are considered part of the item’s name, items moved into a diffe
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
+* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
 * Dataflows Gen1
 * Datamarts
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* Paginated reports
+* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (based on supported semantic models)
 * Semantic models (except for Direct Lake semantic models)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
@@ -171,7 +172,6 @@ When you deploy content from one pipeline stage to another, the copied content c
 Deployment pipelines doesn't support the following items:
 
 * Dataflows Gen2
-* Data pipelines
 * Datasets that don't originate from a *.pbix*
 * Direct Lake semantic model
 * PUSH datasets
@@ -298,7 +298,7 @@ Other changes such as adding a column, removing a column, and renaming a calcula
 
 Using [composite models](/power-bi/transform-model/desktop-composite-models) you can set up a report with multiple data connections.
 
-You can use the composite models functionality to connect a Fabric semantic model to an external semantic models such as Azure Analysis Services. For more information, see [Using DirectQuery for Fabric semantic models and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services).
+You can use the composite models functionality to connect a Fabric semantic model to an external semantic model such as Azure Analysis Services. For more information, see [Using DirectQuery for Fabric semantic models and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services).
 
 In a deployment pipeline, you can use composite models to connect a semantic model to another Fabric semantic model external to the pipeline.
 
