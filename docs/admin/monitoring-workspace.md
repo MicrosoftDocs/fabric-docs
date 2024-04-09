@@ -7,7 +7,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 02/01/2024
+ms.date: 04/07/2024
 ---
 
 # What is the admin monitoring workspace?
@@ -44,7 +44,7 @@ The admin monitoring workspace is automatically installed during the first time 
 
 ## Reports and semantic models
 
-In the monitoring workspace, you can use the [Feature Usage and Adoption](feature-usage-adoption.md) report as is. You can also connect to this report's semantic model, and create a solution that's optimized for your organization.
+You can use the reports in the monitoring workspace as is, for analysis and for getting insights about performance and sharing in your organization. You can also connect to the semantic models of the reports, and create a solution that's optimized for your organization.
 
 ### Manage access
 

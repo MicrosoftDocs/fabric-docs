@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 12/18/2023
+ms.date: 04/09/2024
 ---
 
 # Manage your Fabric capacity
@@ -29,11 +29,11 @@ The capacity settings page shows a list of all the capacities in your [tenant](l
    >[!NOTE]
    >Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
 
-* **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use a EM SKUs.
+* **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use EM SKUs.
 
-* **Trial** - A [Microsoft Fabric trial](../get-started/fabric-trial.md) capacity. These capacities use a A SKUs.
+* **Trial** - A [Microsoft Fabric trial](../get-started/fabric-trial.md) capacity. These capacities use Trial SKUs.
 
-* **Fabric capacity** - A Microsoft Fabric capacity. These capacities use a A SKUs.
+* **Fabric capacity** - A Microsoft Fabric capacity. These capacities use F SKUs.
 
 The rest of this article is divided to sections based on the different capacity types. To view the settings of your capacity, select the tab that matches your capacity type. If there's no tab to select, the section applies to all capacity types.
 
@@ -248,7 +248,7 @@ To delete a Power BI Embedded capacity, follow these steps:
 
 # [Trial](#tab/trial)
 
-You can't delete a Trial capacity. To end a fabric trial, see [End a Fabric trial](../get-started/fabric-trial.md#end-a-fabric-trial).
+To delete a trial capacity you need to cancel the trial. To cancel a trial, see [End a Fabric trial](../get-started/fabric-trial.md#end-a-fabric-trial).
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -293,6 +293,9 @@ There are two type of capacity settings you can control:
 * **Details** - Capacity details are settings that are specific to the capacity.
 
 * **Delegated tenant settings** - Tenant settings enable you to delegate certain settings to specific users or security groups
+
+    >[!NOTE]
+    >Delegated tenant settings are only available for Fabric capacities.
 
 To view the settings of a specific capacity, follow these steps:
 

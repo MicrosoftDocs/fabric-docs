@@ -69,8 +69,6 @@ items:
       href: copilot-data-science-privacy-security.md
     - name: Responsible use in Power BI
       href: copilot-power-bi-privacy-security.md
-    - name: Responsible use in Real-Time Analytics
-      href: copilot-real-time-analytics-privacy-security.md
   - name: Copilot for Data Factory
     href: copilot-fabric-data-factory.md
   - name: Copilot for Data Science and Data Engineering
@@ -81,8 +79,6 @@ items:
       href: copilot-notebooks-chat-magics.md
     - name: Use the Copilot chat panel
       href: copilot-notebooks-chat-pane.md
-  - name: Copilot for Real-Time Analytics
-    href: copilot-real-time-analytics.md
   - name: Copilot in Fabric Consumption
     href: copilot-fabric-consumption.md
 - name: Promote or certify items
@@ -131,6 +127,14 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Upload reports from OneDrive or SharePoint fails
+      href: known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md
+    - name: Currency format is unavailable in web modeling
+      href: known-issues/known-issue-665-currency-format-unavailable-web-modeling.md
+    - name: Creating or opening a Dataflow Gen2 dataflow shows endless spinner
+      href: known-issues/known-issue-664-creating-opening-dataflow-gen2-shows-endless-spinner.md
+    - name: Creating or opening a Dataflow Gen2 dataflow fails if capacity is inactive
+      href: known-issues/known-issue-663-creating-opening-dataflow-gen2-fails-capacity-inactive.md
     - name: Exporting semantic model data to OneLake fails due to unicode characters
       href: known-issues/known-issue-660-exporting-semantic-model-data-onelake-fails-unicode-characters.md
     - name: PySpark import statements fail for .jar files installed through environment

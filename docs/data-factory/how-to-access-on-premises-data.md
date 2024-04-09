@@ -81,6 +81,41 @@ Now you've created a Dataflow Gen2 to load data from an on-premises data source 
 
 Now you've created and ran a pipeline to load data from an on-premises data source into a cloud destination.
 
+These are the connectors currently supported by Fabric Pipeline when utilizing an on-premises data gateway:
+- ADLS Gen1 for Cosmos Structured Stream
+- ADLS Gen2 for Cosmos Structured Stream
+- Amazon S3
+- Amazon S3 Compatible Storage
+- Amazon RDS for SQL Server
+- Azure Blob Storage
+- Azure Cosmos DB (SQL API)
+- Azure Database for PostgreSQL
+- Azure Data Explorer
+- Azure Data Lake Storage Gen2
+- Azure SQL Database
+- Azure SQL Managed Instance
+- Azure Synapse Analytics
+- Azure Table Storage
+- Dataverse
+- DB2
+- Dynamics 365
+- Dynamics CRM
+- Microsoft Fabric Warehouse
+- File System
+- FTP
+- Generic HTTP
+- Generic OData
+- Generic ODBC
+- Google Cloud Storage
+- KQL Database
+- Microsoft Fabric Lakehouse
+- MongoDB
+- MongoDB Atlas
+- SAP HANA
+- SFTP
+- SharePoint Online List
+- SQL Server
+
 ## Related content
 
 - [On-premises data gateway considerations for output destinations](gateway-considerations-output-destinations.md)

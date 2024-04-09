@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 03/14/2024
+ms.date: 04/4/2024
 ms.custom: build-2023
 #customer intent: As a developer, I want to understand how the items in Microsoft Fabric's Git integration tool are structured so that I can use it effectively.
 ---
@@ -71,10 +71,10 @@ For more information about semantic model folders and a complete list of their c
 In addition to the item definition files, each item directory contains one or two automatically generated system files, depending on which version you're using:
 
 - A version 1 directory contains [item.metadata.json](#metadata-file) and [item.config.json](#config-file). When using V1, both files must be in the directory.
-- A version 2 directory contains [.platform](#platform-file). This file includes the content of both item.metadata.json and item.config.json files. If you have this file, you can't have the other two files.
+- A version 2 directory contains [.platform](#platform-file). This file includes the content of both item.metadata.json and item.config.json files. If you have this file, you can't have the other two files. If you're using version 1 and you commit changes, your system files are automatically updated to this version.
 
 >[!NOTE]
->Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `.platform` file. You can’t have all three files.
+> Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `.platform` file. You can’t have all three files.
 
 ### [Version 2](#tab/v2)
 
@@ -106,6 +106,26 @@ The `.platform` file contains the following attributes:
 - `description`: (optional string) Description of the item.
 
 ### [Version 1](#tab/v1)
+
+IF you're using version 1, you have two files in each item directory:
+
+- [item.metadata.json](#metadata-file)
+- [item.config.json](#config-file)
+
+```json
+{ 
+    "type": "report", 
+    "displayName": "All visual types",
+    "description": "This is a report"
+} 
+```
+
+```json
+{ 
+    version: "1.0", 
+    logicalId: "e553e3b0-0260-4141-a42a-70a24872f88d", 
+} 
+```
 
 ### Metadata file
 
@@ -140,6 +160,9 @@ The `item.config.json` file contains the following attributes:
 - `logicalId`: An automatically generated cross-workspace identifier representing an item and its source control representation.
 
 The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
+
+> [!NOTE]
+> When you commit changes to Git in version 1, the system files are automatically updated to version 2 along with the changes. Also, any new files exported from Power BI Desktop developer mode will be saved in the version 2 file format.
 
 ---
 
