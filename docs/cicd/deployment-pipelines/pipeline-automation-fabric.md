@@ -26,7 +26,7 @@ Use the [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipelines) to
 
 ## Prerequisites
 
-To work with Fabric Git APIs you need the following:
+To work with deployment pipeline APIs you need the following:
 
 * The same [prerequisites you need to use deployment pipelines](./get-started-with-deployment-pipelines.md#prerequisites).
 * A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see Fabric API quickstart.
@@ -80,8 +80,18 @@ You can use the following PowerShell scripts to understand how to perform severa
 
 ## Considerations and limitations
 
+When using the deployment pipelines APIs, consider the following limitations:
+
+* All limitations that apply for deployment pipeline, apply when using the APIs. For more information, see [Deployment pipelines best practices](./understand-the-deployment-process.md#considerations-and-limitations).
 * *Dataflows* are currently not supported. Customers using dataflows can use the [Power BI APIs](./pipeline-automation.md).
 * Service principals are only supported for Power BI items.
+* Not all deployment options available in the Power BI APIs are available in Fabric. The following APIs are not available in Fabric's Deploy stage content API:
+
+  * allowPurgeData
+  * allowTakeOver
+  * allowSkipTilesWithMissingPrerequisites
+
+  If you need one of these APIs, use Power BI API to deploy. However, these APIs only work for Power BI items.
 
 ## Related content
 
