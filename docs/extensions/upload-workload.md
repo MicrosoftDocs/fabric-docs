@@ -19,6 +19,7 @@ This article describes how to upload and manage a workload to the Fabric service
 Before you can deploy a workload, you must have the following:
 
 * A Fabric account with the Admin permissions.
+* A [nuget package]
 * A workload solution that you want to deploy. For information about creating a workload solution, see [Create a workload solution](create-workload.md).
 
 ## "[verb] * [noun]"
@@ -28,6 +29,24 @@ Before you can deploy a workload, you must have the following:
 1. Procedure step
 1. Procedure step
 1. Procedure step
+
+1. log in
+1. admin portal - activate workload extenstion in the tenant settings
+1. admin portal - go to workloads
+1. Upload workload
+1. Select nugger package
+1. click open
+1. Go to workload
+1. select uploaded version
+1. Click add
+
+Step 2
+
+also in wrokload settings:
+ delete
+ edit
+ deactivate
+ uploads
 
 <!-- Required: Steps to complete the task - H2
 
