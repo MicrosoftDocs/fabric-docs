@@ -16,7 +16,7 @@ In Fabric, you can configure and use an endpoint that allows your organization t
 The steps that allow you to securely access Fabric from private endpoints are:
 
 1. [Set up private endpoints for Fabric](#step-1-set-up-private-endpoints-for-fabric).
-2. [Create a Fabric resource in the Azure portal](#step-2-create-a-fabric-resource-in-the-azure-portal).
+2. [Create a Microsoft.PowerBI private link services for Power BI resource in the Azure portal](#step-2-create-a-microsoftpowerbi-private-link-services-for-power-bi-resource-in-the-azure-portal).
 3. [Create a virtual network](#step-3-create-a-virtual-network).
 4. [Create a virtual machine (VM)](#step-4-create-a-virtual-machine).
 5. [Create a private endpoint](#step-5-create-a-private-endpoint).
@@ -39,7 +39,9 @@ It takes about 15 minutes to configure a private link for your tenant. This incl
 
 When this process is finished, move on to the next step.
 
-### Step 2. Create a Fabric resource in the Azure portal
+### Step 2. Create a Microsoft.PowerBI private link services for Power BI resource in the Azure portal
+
+This step is used to support Azure Private Endpoint association with your Fabric resource.
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Select **Create a resource**.
@@ -112,7 +114,7 @@ The number of IP addresses your subnet will need is the number of capacities on 
     |-------------------|---------|
     |**Project details**|
     |Subscription |	Select your subscription. |
-    |Resource group | Select **test-PL**, the name we created in [Step 2](#step-2-create-a-fabric-resource-in-the-azure-portal). |
+    |Resource group | Select **test-PL**, the name we created in [Step 2](#step-2-create-a-microsoftpowerbi-private-link-services-for-power-bi-resource-in-the-azure-portal). |
     |**Instance details**|
     |Name	| Enter **vnet-1**. |
     |Region | Select the region where you'll initiate the connection to Fabric. |
@@ -141,7 +143,7 @@ The next step is to create a virtual machine.
     |:-------------------|:---------|
     |**Project details**||
     |Subscription |	Select your Azure Subscription. |
-    |Resource group |	Select the resource group you provided in [Step 2](#step-2-create-a-fabric-resource-in-the-azure-portal). |
+    |Resource group |	Select the resource group you provided in [Step 2](#step-2-create-a-microsoftpowerbi-private-link-services-for-power-bi-resource-in-the-azure-portal). |
     |**Instance details** ||
     |Virtual machine name | Enter a name for the new virtual machine. Select the info bubble next to the field name to see important information about virtual machine names. |
     |Region | Select the region you selected in [Step 3](#step-3-create-a-virtual-network). |
@@ -192,7 +194,7 @@ The next step is to create a private endpoint for Fabric.
     |-------------------|---------|
     |**Project details** ||
     |Subscription| Select your Azure Subscription. |
-    |Resource group| Select the resource group you created in [Step 2](#step-2-create-a-fabric-resource-in-the-azure-portal).|
+    |Resource group| Select the resource group you created in [Step 2](#step-2-create-a-microsoftpowerbi-private-link-services-for-power-bi-resource-in-the-azure-portal).|
     |**Instance details** ||
     |Name| Enter *FabricPrivateEndpoint*. If this name is taken, create a unique name. |
     |Region| Select the region you created for your virtual network in [Step 3](#step-3-create-a-virtual-network).|
@@ -208,7 +210,7 @@ The next step is to create a private endpoint for Fabric.
     |Connection method|	Select connect to an Azure resource in my directory. |
     |Subscription|	Select your subscription.|
     |Resource type|	Select **Microsoft.PowerBI/privateLinkServicesForPowerBI** |
-    |Resource| Choose the Fabric resource you created in [Step 2](#step-2-create-a-fabric-resource-in-the-azure-portal). |
+    |Resource| Choose the Fabric resource you created in [Step 2](#step-2-create-a-microsoftpowerbi-private-link-services-for-power-bi-resource-in-the-azure-portal). |
     |Target subresource| Tenant |
 
     The following image shows the **Create a private endpoint - Resource** window.

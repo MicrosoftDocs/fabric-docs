@@ -13,7 +13,7 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 ---
 # Query using the visual query editor
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
 
 This article describes how to use the visual query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal to quickly and efficiently write queries. You can use the visual query editor for a no-code experience to create your queries.
 

@@ -386,9 +386,44 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/onelake/onelake-shortcuts-rest-api.md",
+          "redirect_url": "/rest/api/fabric/core/onelake-shortcuts",
+          "redirect_document_id": false
+        },
+        {
           "source_path_from_root": "/docs/enterprise/service-interruption-notifications.md",
           "redirect_url": "/fabric/admin/service-interruption-notifications",
           "redirect_document_id": false
-        }        
+        },
+        {
+          "source_path_from_root": "/docs/onelake/get-started-security.md",
+          "redirect_url": "/docs/onelake/security/get-started-security",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/onelake/onelake-security.md",
+          "redirect_url": "/docs/onelake/security/get-started-security",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/onelake/fabric-and-onelake-security.md",
+          "redirect_url": "/docs/onelake/security/fabric-onelake-security",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/copilot-real-time-analytics.md",
+          "redirect_url": "/docs/get-started/copilot-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/copilot-real-time-analytics-privacy-security.md",
+          "redirect_url": "/docs/get-started/copilot-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/data-profile.md",
+          "redirect_url": "/fabric/real-time-analytics/create-database",
+          "redirect_document_id": false
+        }          
     ]
 }
