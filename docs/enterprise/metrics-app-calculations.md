@@ -16,17 +16,17 @@ This article explains some of the calculations that are used to calculate consum
 
 An overloaded capacity is a capacity that reaches more than 100% of its compute power. When a capacity is overloaded, it starts to throttle. The [throttling](metrics-app-compute-page.md#throttling) visual helps you understand your consumption as a percentage of Fabric's throttling limit at a given time point. Throttling continues until the capacity usage is lower than 100%. The throttling visual has three tabs, each showing information about different throttling types, based on different time windows.
 
-| Tab                   | Window    | What happens when your capacity reaches 100%?                                         |How long before your capacity is back at 100%? |
-|-----------------------|-----------|-------------------------------------------------------------------------|---|
-| Interactive delay     | 10 minutes | A 20-second throttle is applied to interactive requests                 | After delays are applied new interactive and background requests continue to accumulate future compute usage |
-| Interactive rejection | 60 minutes | Interactive requests are rejected and users see an error in the UI      | Background requests continue to accumulate future compute usage |
-| Background rejection  | 24 hours  | All requests are rejected including background and interactive requests | N/A   |
+| Tab                   | Threshold limit | What happens when your capacity reaches 100%?                                         |How long before your capacity is back at 100%? |
+|-----------------------|-----------------|-------------------------------------------------------------------------|---|
+| Interactive delay     | 10 minutes      | A 20-second throttle is applied to interactive requests                 | After delays are applied new interactive and background requests continue to accumulate future compute usage |
+| Interactive rejection | 60 minutes      | Interactive requests are rejected and users see an error in the UI      | Background requests continue to accumulate future compute usage |
+| Background rejection  | 24 hours        | All requests are rejected including background and interactive requests | N/A   |
 
 When the future compute usage drops below 100%, additional requests are accepted. These requests can result in your capacity's usage exceeding 100% again. You might perceive this as a single continuous throttling event, when in fact it's two consecutive throttling events.
 
 ### Background rejection
 
-High percent throttling numbers indicate you overused your daily (24 hour) capacity resources. When your background rejection is higher than 100%, all requests are rejected. Rejection stops once your capacity usage is lower than 100%. For example, a background rejection of 250% means that you used 2.5 times the amount of your daily capacity resources for your SKU level.
+Since the background rejection threshold is 24 hours, high percent throttling numbers indicate you overused your daily (24 hour) capacity resources. When your background rejection is higher than 100%, all requests are rejected. Rejection stops once your capacity usage is lower than 100%. For example, a background rejection of 250% means that you used 2.5 times the amount of your daily capacity resources for your SKU level.
 
 ### Interactive delay and interactive rejection
 
