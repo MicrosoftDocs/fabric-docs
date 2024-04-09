@@ -10,15 +10,47 @@ ms.date: 04/05/2024
 
 # What is a Fabric task flow?
 
+Workspaces are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports. This article describes workspaces, how to manage access to them, and what settings are available.
+
+A workspace is consists of the a header, toolbar, and a main window. The main window has two views, list view and lineage view. 
+
+Lineage view shows....
+
+List view
+
+List view is divided into two sections: task flow and items list. 
+
+Items list:
+
+The items list lists the items and folders that the workspace contains. The items list can be filtered by Keyword or by task, item type, workload, or owner, using the filters in the workspace toolbar, or by selecting a task in the task flow.
+
+Task flow:
+
+Contains a canvas where you can create a visualization of the structure of your work in the workspace. The task flow helps you organize, visualize, and keep track of your work. It consists of tasks that represent the kind of work/activity that is being done in the workspace. There are XX task types that represent common activities. Each task type has recommended item types (i.e. the types of items that are typically used in the task). To use a task flow, you can either build your own, task by task, or you can start with one of the ten predefined task flows provided with Fabric.
+
+A workspace has only one task flow. You configure it either by building yourself or be starting with one of the predefined task flows that come with Fabric.
+
+While the task flow helps you organize and visualize your work, it is a visual representation only. Connecting tasks together in a task flow does not do any of the actual work connecting Fabric items. That you do using the usual methods of creating items.
+
+
+
+
+
 A Fabric task flow is a visualization of the logical structure of your work in the workspace. Fabric provides a range of predefined, end-to-end task flows based on industry best practices that are intended to make it easier to get started with your project. In addition, you can customize the task flows to suit your specific needs and requirements. This enables you to create a tailored solution that meets your unique business needs and goals.
 
-With task flows, you can understand how items are connected and work together in your workspace. This makes it easier for you to navigate your workspace, even as it becomes more complex over time. Moreover, you can easily standardize your team's work and keep your design and development work in sync to boost the team's collaboration and efficiency.  
+With task flows, you can understand how items are connected and work together in your workspace. This makes it easier for you to navigate your workspace, even as it becomes more complex over time. Moreover, you can easily standardize your team's work and keep your design and development work in sync to boost the team's collaboration and efficiency.
+
+THINGS TO MENTION:
+Only one taskflow per workspace
+Start with an empty, default configuration - rename and start populating.
+or choose preconfigured.
+The task flow interacts with the items list as a filter. 
 
 ## Terms
 
 * **Task flow**: A task flow is a collection of connected tasks that represent relationships in a process or collection of processes that complete an end-to-end data solution.
 
-* **Task**: A task is a unit of process in the task flow. On a task, it provides task type and item recommendations to help you select the appropriate item and allows you to create and attach items to tasks, as well as to navigate items.
+* **Task**: A task is a unit of process in the task flow. A task has recommended item types to help you select the appropriate item when building your solution. Tasks can also help you navigate the items in the workspace.
 
 ## Task types
 
@@ -34,17 +66,20 @@ Each task has a task type that classifies the task based on its key capabilities
 | **Track data** | Take actions, such as sending automated emails or notifications, on the insights that your data provides. |
 | **Visualize data** | Present your data as rich visualizations and insights that can be shared with others. |
 
+
+Get started
+
 ## Set up a task flow in a workspace
 
-Open the workspace. You'll see that the workspace view is split between a task flow partition and the workspace list. You'll build and manage your task flow in the task flow partition.
+Open the workspace. You'll see that the workspace view is split between a task flow partition and the workspace list. You'll build and manage your task flow in the task flow partition. The task flow partition is split between the canvas, which will hold the visualization of your work flow, and the side panel that contains information and controls to help you build the task flow. The contents of the side panel changes according to what is selected in the canvas.
 
 :::image type="content" source="./media/taskflows-overview/image4.png" alt-text="A screenshot of a computer  Description automatically generated1":::
 
-To build a task flow, you can either select a task flow from one of predesigned task flows or add a task to start building one yourself.  
+When no task flow has been configured, an empty default task flow entitled "Get started with a task flow" is there. To start building a task flow, you can either select a task flow from one of predesigned task flows or add a task to start building one yourself.  
 
 ## Start with predesigned task flows
 
-On the default task flow page, choose **Select a task flow**. The side pane lists ten predesigned task flows provided by Microsoft. Each predefined task flow has a a brief description of its use case.
+On the default task flow page, choose **Select a task flow**. The side panel lists ten predesigned task flows provided by Microsoft. Each predefined task flow has a a brief description of its use case.
 
 :::image type="content" source="./media/taskflows-overview/image5.png" alt-text="A screenshot of a computer  Description automatically generated2":::
 
@@ -210,13 +245,21 @@ To unassign multiple items from multiple tasks, select **Clear all** at the top 
 
 :::image type="content" source="./media/taskflows-overview/image31.png" alt-text="AlttextB":::
 
+[QUESTION: Can an item only be assigned to one task at a time?]
+
 ## Navigate items with task flows
 
-With items attached to the tasks, you can use task flow to quickly understand how items in the workspace work together and get a clear view of your work in the workspace. 
+With items assigned to the tasks, you can use the task flow to quickly understand how items in the workspace work together and get a clear view of your work in the workspace.
+
+For each item that you see in the items list, you can see the item type as well as what task it is assigned to, if any. 
+
+When you select a task, the items list is filtered to show only the items that are assigned to that task. 
+
+[QUESTION: Can you clarify what you mean by "understand how they work together, and "get a clear view of your work in the workspace. To mean, I understand that selecting a task filters the items to those that are in the task. Can you state more precisely how this helps you understand your work?] 
 
 :::image type="content" source="./media/taskflows-overview/image32.png" alt-text="AlttextC":::
 
-selecting on each task in the task flow, you can only view the items attached to the task. 
+When you select a task, the items list is filtered to show only the items that are assigned to that task. 
 
 :::image type="content" source="./media/taskflows-overview/image33.png" alt-text="AlttextD":::
 
@@ -224,7 +267,9 @@ selecting on each task in the task flow, you can only view the items attached to
 
 Deleting the task flow will only delete all the tasks and any associations between the items and the tasks. 
 
-To delete a task flow, first select on a blank area of the canvas to ensure that no tasks are selected. This makes the task flow pane visible. Next, locate the '...' in the top right corner of the pane and select on it. Then select **Delete** **task flow** to delete the task flow.
+[QWESTION: What do you mean by "associations between the items and the tasks? Do you mean assignments?]
+
+To delete a task flow, first select on a blank area of the canvas to display the task flow pane. Next, select the trash icon to delete the task flow.
 
 :::image type="content" source="./media/taskflows-overview/image34.png" alt-text="AlttextE":::
 
