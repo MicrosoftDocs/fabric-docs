@@ -71,7 +71,7 @@ If you want to execute the notebook at regular intervals to integrate Unity Cata
 
 In the latter scenario, if you intend to pass parameters from the data pipeline, designate the first cell of the notebook as a [toggle parameter cell](../data-engineering/author-execute-notebook.md) and provide the appropriate parameters in the pipeline.
 
-:::image type="content" source="media\onelake-unity-catalog\pipeline-parameters.png" alt-text="Screenshot showing notebook activity parameters.":::
+:::image type="content" source="media\onelake-unity-catalog\pipeline-parameters-zoom.png" alt-text="Screenshot showing notebook activity parameters." lightbox="media\onelake-unity-catalog\pipeline-parameters.png":::
 
 ### Other considerations
 
