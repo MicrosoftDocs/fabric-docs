@@ -55,7 +55,7 @@ Within the results, you can group results by any column.
     | take 10
     ```
 
-1. Mouse-over the **State** column, select the menu, and select **Group by State**.
+1. Hover over the **State** column, select the menu, and select **Group by State**.
 
     :::image type="content" source="media/kusto-query-set/group-by.png" alt-text="Screenshot of the KQL Queryset result pane showing the menu of the column titled State. The menu option to group by state is highlighted."  lightbox="media/kusto-query-set/group-by.png":::
 
@@ -63,7 +63,7 @@ Within the results, you can group results by any column.
 
     :::image type="content" source="media/kusto-query-set/group-expanded.png" alt-text="Screenshot of a query results grid with California group expanded in the KQL Queryset."  lightbox="media/kusto-query-set/group-expanded.png":::
 
-1. Mouse-over the **Group** column, then select **Reset columns**/**Ungroup by \<column name>**. This setting returns the grid to its original state.
+1. Hover over the **Group** column, then select **Reset columns**/**Ungroup by \<column name>**. This setting returns the grid to its original state.
 
     :::image type="content" source="media/kusto-query-set/reset-columns.png" alt-text="Screenshot of the reset columns setting highlighted in the column dropdown.":::
 
