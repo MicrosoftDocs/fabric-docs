@@ -46,7 +46,7 @@ also in wrokload settings:
  delete
  edit
  deactivate
- uploads
+ uploads 
 
 <!-- Required: Steps to complete the task - H2
 
