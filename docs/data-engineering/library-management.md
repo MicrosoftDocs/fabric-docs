@@ -78,14 +78,14 @@ Inline commands support Python libraries and R libraries.
 <a id="python-in-line-installation"></a>
 ### Python inline installation
 
-The Python interpreter restarts to apply the change of libraries. Any variables defined before you run the command cell are lost. We strongly recommend you to put all the commands for adding, deleting, or updating Python packages at the beginning of your notebook.
+The Python interpreter restarts to apply the change of libraries. Any variables defined before you run the command cell are lost. We strongly recommend that you put all the commands for adding, deleting, or updating Python packages at the beginning of your notebook.
 
 We recommend `%pip` instead of `!pip`. `!pip` is an IPython built-in shell command, which has the following limitations:
 
 - `!pip` only installs a package on the driver node, not executor nodes.
 - Packages that install through `!pip` don't affect conflicts with built-in packages or whether packages are already imported in a notebook.
 
-However, `%pip` handles these scenarios. Libraries installed through `%pip` are available on both driver and executor nodes and are still effective even it's already imported.
+However, `%pip` handles these scenarios. Libraries installed through `%pip` are available on both driver and executor nodes and are still effective even the library is already imported.
 
 > [!TIP]
 >
@@ -133,7 +133,7 @@ You can use inline commands to enable *altair* on your notebook session without 
 
 You can upload your Python custom libraries to the *File* folder of the lakehouse attached to your notebook. Go to your lakehouse, select the **…** icon on the **File** folder, and upload the custom library.
 
-After your upload, use the following command to install the custom library to your notebook session:
+After your upload, use the following command to install the custom library to your notebook session.
 
 ```python
 # install the .whl through pip command
@@ -175,7 +175,7 @@ To install an R feed library:
 
 The *.jar* files are supported at notebook sessions with following code.
 
-```Scala
+```scala
 // Using notebook built-in folder as an example
 %%configure -f: 
 {
