@@ -99,7 +99,7 @@ In this example, see how to use in-line commands to manage libraries. Suppose yo
 
 You can use in-line commands to enable *altair* on your notebook session without affecting other sessions of the notebook or other items.
 
-1. To install the *altair* library, run the following command in a notebook code cell. Also, install *vega_datasets*, which contains semantic model you can use to visualize:
+1. Run the following commands in a notebook code cell. The first command installs the *altair* library. Also, install *vega_datasets*, which contains semantic model you can use to visualize:
 
    ```python
    %conda install altair          # install latest version through conda command
