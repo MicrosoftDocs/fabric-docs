@@ -164,45 +164,49 @@ Once the task flow is set up, you can attach items to individual tasks for logic
 
 ### Create an item on a task
 
-To create a new item for a specific task, first select the task by selecting on it. Then, select on the clip icon located on the task, and select **New item** to open the item creation panel for creating a new item.
+To create a new item for a specific task, select **+ New item** on the task.
 
 :::image type="content" source="./media/taskflows-overview/image24.png" alt-text="Alttext15":::
 
-Alternatively, you can select the **Attach item** in the header of the bottom list to select **New item** and open the item creation panel.
+On the **Create an item** pane that opens, the item types recommended for the task are displayed by default. choose one of the recommended item types. If you don't see the item type you want, change the **Display** selector from *Recommended items* to *All items*. Choose the item type you want.
 
-:::image type="content" source="./media/taskflows-overview/image25.png" alt-text="Alttext6":::
-
-The recommended items are displayed by default in the creation panel. If the item you need isn't listed, you can select 'All items' in the display option to view the full list of the items. In the creation panel, select the item and create the item. Once the item is created, it's listed in the bottom list of the page. The task also shows that it has one item attached to it.
 
 :::image type="content" source="./media/taskflows-overview/image26.png" alt-text="Alttext7":::
+
+Once the item is created, the it will show up in the items list, and the task will show that it has had an item attached to it.
 
 :::image type="content" source="./media/taskflows-overview/image27.png" alt-text="Alttext8":::
 
 ### Attach existing items to a task
 
-To attach existing items, you can either select on the clip icon on task or select the **Attach item** in the header of the bottom list, and select **Existing item**. 
+To attach existing items to a task, select the clip icon on the task. 
 
 :::image type="content" source="./media/taskflows-overview/image28.png" alt-text="A group of rectangular boxes with text  Description automatically generated with medium confidenceH":::
 
-In the dialog box, select one or multiple items at once and select **Select** to attach selected items to the task. 
+In the **Assign item** dialog box that opens, select one or more items, and then choose **Select** to attach selected items to the task. 
 
 :::image type="content" source="./media/taskflows-overview/image29.png" alt-text="Alttext9":::
 
-You can see the selected items are attached to the task and listed in the bottom list. 
+The items you selected items are attached to the task and listed in the Items list.
 
 ### Detach items from task
 
-You can detach items from a selected task or detach items from all tasks. 
+You can detach items from a selected task or detach items from all tasks.
+
+> [!NOTE]
+> Detaching items from tasks does not remove the items from the workspace.
 
 #### Detach items from a task
 
-To detach item(s) from a task, first select the task you want to remove the item from. Second, select the item(s) in the bottom list. Then, select on **Detach from task** in the list header to detach the item(s) from the task.
+To detach item(s) from a task, first select the task you want to remove the item from. Next, in the Item's list, select the item(s) you want to unassign. Finally, on the workspace toolbar, choose **Unassign from task**.
 
 :::image type="content" source="./media/taskflows-overview/image30.png" alt-text="AlttextA":::
 
 #### Detach items from all tasks
 
-You can also detach multiple items that are attached to different tasks at once. When no step is selected in the task flow, you can view all the items in the task flow. Select the items and select **Detach from all tasks** button to detach items from tasks. 
+You can also detach multiple items that are attached to different tasks at once.
+
+To unassign multiple items from multiple tasks, select **Clear all** at the top of the Item list to clear all filters. All the items in the workspace are now visibile. Hover over the items that you want to unassign from all tasks and select the checkbox. When you've finished making your selections, select **Unassign from all tasks** in the workspace toolbar.
 
 :::image type="content" source="./media/taskflows-overview/image31.png" alt-text="AlttextB":::
 
