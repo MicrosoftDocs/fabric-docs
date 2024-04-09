@@ -47,21 +47,21 @@ Once the Cloud connection ID is obtained, integrate Unity Catalog tables to Fabr
 
 2. **Configure the parameters** in the first cell of the notebook to integrate Unity Catalog tables. The Databricks API, authenticated through PAT token, is utilized for exporting Unity Catalog tables. The following snippet is used to configure the source (Unity Catalog) and destination (OneLake) parameters. Ensure to replace them with your own values.
 
-```python
-  # Databricks workspace
-  dbx_workspace = "<databricks_workspace_url>"
-  dbx_token = "<pat_token>"
-  # Unity Catalog
-  dbx_uc_catalog = "catalog1"
-  dbx_uc_schemas = '["schema1", "schema2"]'
+    ```python
+    # Databricks workspace
+    dbx_workspace = "<databricks_workspace_url>"
+    dbx_token = "<pat_token>"
+    # Unity Catalog
+    dbx_uc_catalog = "catalog1"
+    dbx_uc_schemas = '["schema1", "schema2"]'
 
-  # Fabric
-  fab_workspace_id = "<workspace_id>"
-  fab_lakehouse_id = "<lakehouse_id>"
-  fab_shortcut_connection_id = "<connection_id>"
-  # If True, UC table renames and deletes will be considered
-  fab_consider_dbx_uc_table_changes = True
-```
+    # Fabric
+    fab_workspace_id = "<workspace_id>"
+    fab_lakehouse_id = "<lakehouse_id>"
+    fab_shortcut_connection_id = "<connection_id>"
+    # If True, UC table renames and deletes will be considered
+    fab_consider_dbx_uc_table_changes = True
+    ```
 
 3. **Run all cells** of the notebook to start synchronizing Unity Catalog Delta tables to OneLake using shortcuts. Once notebook is completed, shortcuts to Unity Catalog Delta tables are available in the lakehouse, SQL endpoint, and semantic model.
 
