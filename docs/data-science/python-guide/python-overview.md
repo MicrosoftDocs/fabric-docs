@@ -15,13 +15,15 @@ ms.search.form: Python Language
 
 # Use Python for Apache Spark
 
-Microsoft Fabric provides built-in Python support for Apache Spark. Support includes [PySpark](https://spark.apache.org/docs/latest/api/python/index.html), which allows users to interact with Spark using familiar Spark or Python interfaces. You can analyze data using Python through Spark batch job definitions or with interactive Fabric notebooks. This document provides an overview of developing Spark applications in Synapse using the Python language.
+Microsoft Fabric provides built-in Python support for Apache Spark. Support includes [PySpark](https://spark.apache.org/docs/latest/api/python/index.html), which allows users to interact with Spark using familiar Spark or Python interfaces.
+
+You can analyze data using Python through Spark batch job definitions or with interactive Fabric notebooks. This article provides an overview of developing Spark applications in Synapse using the Python language.
 
 ## Create and run notebook sessions
 
 [!INCLUDE [product-name](../../includes/product-name.md)] notebook is a web interface for you to create files that contain live code, visualizations, and narrative text. Notebooks are a good place to validate ideas and use quick experiments to get insights from your data. Notebooks are also widely used in data preparation, data visualization, machine learning, and other big data scenarios.
 
-To get started with Python in [!INCLUDE [product-name](../../includes/product-name.md)] notebooks, change the primary **language** at the top of your notebook by setting the language option to _PySpark (Python)_.
+To get started with Python in [!INCLUDE [product-name](../../includes/product-name.md)] notebooks, change the primary **Language** at the top of your notebook by setting the language option to _PySpark (Python)_.
 
 ```Python
 %%pyspark
@@ -56,7 +58,7 @@ For more information about the supported MSSparkUtils commands, see [Use Microso
 
 The [Pandas API on Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html) allows you to scale your Pandas workload to any size by running it distributed across multiple nodes. If you're already familiar with pandas and want to use Spark for big data, pandas API on Spark makes you immediately productive.
 
-You can migrate your applications without modifying the code. You can have a single codebase that works both with pandas, for tests and smaller datasets, and with Spark for production and distributed datasets. You can switch between the pandas API and the Pandas API on Spark easily and without overhead.
+You can migrate your applications without modifying the code. You can have a single codebase that works both with pandas, for tests and smaller datasets, and with Spark, for production and distributed datasets. You can switch between the pandas API and the Pandas API on Spark easily and without overhead.
 
 ## Python runtime
 
@@ -64,9 +66,9 @@ The [!INCLUDE [product-name](../../includes/product-name.md)] [Runtime](../../da
 
 ## Python visualization
 
-The Python ecosystem offers multiple graphing libraries that come with many different features. By default, every Spark instance in [!INCLUDE [product-name](../../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage extra libraries or versions. For more information on library management, see [Summary of library management best practices](../../data-engineering/library-management.md#summary-of-library-management-best-practices).
+The Python ecosystem offers multiple graphing libraries that come with many different features. By default, every Spark instance in [!INCLUDE [product-name](../../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage other libraries or versions. For more information on library management, see [Summary of library management best practices](../../data-engineering/library-management.md#summary-of-library-management-best-practices).
 
-Learn more about how to create Python visualizations by visiting [Python visualization](../python-guide/python-visualizations.md).
+To learn more about how to create Python visualizations, see [Python visualization](../python-guide/python-visualizations.md).
 
 ## Related content
 
