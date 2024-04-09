@@ -11,6 +11,8 @@ items:
     href: deployment-pipelines/intro-to-deployment-pipelines.md
   - name: Understand the deployment process
     href: deployment-pipelines/understand-the-deployment-process.md
+  - name: Deployment pipeline folders
+    href: deployment-pipelines/manage-workspace-content.md
   - name: Get started with deployment pipelines
     href: deployment-pipelines/get-started-with-deployment-pipelines.md
   - name: Assign a workspace
