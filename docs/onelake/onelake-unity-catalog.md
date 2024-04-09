@@ -31,7 +31,7 @@ First, examine which storage locations in Azure Data Lake Storage Gen2 (ADLS Gen
 
 2. Once you create the connection, obtain the connection ID by selecting **Settings** ![Settings gear icon](../data-factory/media/connector-common/settings.png) > **Manage connections and gateways** > **Connections** > **Settings**.
 
-:::image type="content" source="media\onelake-unity-catalog\adlsgen2-conn.png" alt-text="Screenshot showing ADLS Gen2 connection ID.":::
+:::image type="content" source="media\onelake-unity-catalog\adlsgen2-connection.png" alt-text="Screenshot showing ADLS Gen2 connection ID.":::
 
 > [!NOTE]
 > Granting users direct storage level access to external location storage in ADLS Gen2 does not honor any permissions granted or audits maintained by Unity Catalog.  Direct access will bypass auditing, lineage, and other security/monitoring features of Unity Catalog including access control and permissions. You are responsible for managing direct storage access through ADLS Gen2 and ensuring that users have the appropriate permissions granted via Fabric. 
@@ -41,26 +41,26 @@ Avoid all scenarios granting direct storage level write access for buckets stori
 
 Once the Cloud connection ID is obtained, integrate Unity Catalog tables to Fabric lakehouse as follows:
 
-:::image type="content" source="media\onelake-unity-catalog\uc-fabric-flow.png" alt-text="Screenshot showing Unity Catalog to Fabric shortcuts flow.":::
+:::image type="content" source="media\onelake-unity-catalog\unity-catalog-fabric-flow.png" alt-text="Screenshot showing Unity Catalog to Fabric shortcuts flow.":::
 
 1. **Import sync notebook** to your Fabric workspace.  [This notebook](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/onelake/unity-catalog/nb-sync-uc-fabric-onelake.ipynb) exports all Unity Catalog tables metadata from a given catalog and schemas in your metastore. 
 
 2. **Configure the parameters** in the first cell of the notebook to integrate Unity Catalog tables. The Databricks API, authenticated through PAT token, is utilized for exporting Unity Catalog tables. The following snippet is used to configure the source (Unity Catalog) and destination (OneLake) parameters. Ensure to replace them with your own values.
 
 ```python
-# Databricks workspace
-dbx_workspace = "<databricks_workspace_url>"
-dbx_token = "<pat_token>"
-# Unity Catalog
-dbx_uc_catalog = "catalog1"
-dbx_uc_schemas = '["schema1", "schema2"]'
+  # Databricks workspace
+  dbx_workspace = "<databricks_workspace_url>"
+  dbx_token = "<pat_token>"
+  # Unity Catalog
+  dbx_uc_catalog = "catalog1"
+  dbx_uc_schemas = '["schema1", "schema2"]'
 
-# Fabric
-fab_workspace_id = "<workspace_id>"
-fab_lakehouse_id = "<lakehouse_id>"
-fab_shortcut_connection_id = "<connection_id>"
-# If True, UC table renames and deletes will be considered
-fab_consider_dbx_uc_table_changes = True
+  # Fabric
+  fab_workspace_id = "<workspace_id>"
+  fab_lakehouse_id = "<lakehouse_id>"
+  fab_shortcut_connection_id = "<connection_id>"
+  # If True, UC table renames and deletes will be considered
+  fab_consider_dbx_uc_table_changes = True
 ```
 
 3. **Run all cells** of the notebook to start synchronizing Unity Catalog Delta tables to OneLake using shortcuts. Once notebook is completed, shortcuts to Unity Catalog Delta tables are available in the lakehouse, SQL endpoint, and semantic model.
@@ -71,7 +71,7 @@ If you want to execute the notebook at regular intervals to integrate Unity Cata
 
 In the latter scenario, if you intend to pass parameters from the data pipeline, designate the first cell of the notebook as a [toggle parameter cell](../data-engineering/author-execute-notebook.md) and provide the appropriate parameters in the pipeline.
 
-:::image type="content" source="media\onelake-unity-catalog\pipeline-params.png" alt-text="Screenshot showing notebook activity parameters.":::
+:::image type="content" source="media\onelake-unity-catalog\pipeline-parameters.png" alt-text="Screenshot showing notebook activity parameters.":::
 
 ### Other considerations
 
