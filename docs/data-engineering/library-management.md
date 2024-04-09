@@ -68,12 +68,14 @@ Users who have the permission to run the notebook, can install other libraries i
 >
 > - For Scala users, the *.jar* file can install successfully in an environment but it isn't effective for your Spark/Scala sessions. The installation overrides the built-in library with a different library. The new *.jar* works in the sessions.
 > - For Python users, all *.jar* files are currently not supported in an environment. They can install successfully in an environment but aren't effective in PySpark sessions.
-> - You can install the *.jar* files at the notebook [session level](md#manage-jar-libraries-through-inline-installation) instead.
+> - You can install the *.jar* files at the notebook [session level](#manage-jar-libraries-through-inline-installation) instead.
 
+<a id="in-line-installation"></a>
 ## Inline installation
 
 Inline commands support Python libraries and R libraries.
 
+<a id="python-in-line-installation"></a>
 ### Python inline installation
 
 The Python interpreter restarts to apply the change of libraries. Any variables defined before you run the command cell are lost. We strongly recommend you to put all the commands for adding, deleting, or updating Python packages at the beginning of your notebook.
