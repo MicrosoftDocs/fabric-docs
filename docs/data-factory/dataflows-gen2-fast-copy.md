@@ -11,11 +11,11 @@ ms.author: yexu
 
 This article describes the fast copy feature in Dataflows Gen2 for Data Factory in Microsoft Fabric. Dataflows help with ingesting and transforming data. With the introduction of dataflow scale out with SQL DW compute, you can transform your data at scale. However, your data needs to be ingested first. With the introduction of fast copy, you can ingest terabytes of data with the easy experience of dataflows, but with the scalable back-end of the pipeline Copy Activity.
 
-After enabling this capability, Dataflows automatically switch the back-end when data size exceeds 100 MB, without needing to change anything during authoring of the dataflows. After the refresh of a dataflow, you can check in the refresh history to see if fast copy was used during the run by looking at the **Engine** type that appears there.
+After enabling this capability, Dataflows automatically switch the back-end when data size exceeds a particular threshold, without needing to change anything during authoring of the dataflows. After the refresh of a dataflow, you can check in the refresh history to see if fast copy was used during the run by looking at the **Engine** type that appears there.
 
-With the _Require fast copy_ option enabled, the dataflow refresh is cancelled if fast copy isn't used. This helps you avoid waiting for a refresh timeout to continue. This behavior can also be helpful in a debugging session to test the dataflow behavior with your data while reducing wait time.
+With the _Require fast copy_ option enabled, the dataflow refresh is cancelled if fast copy isn't used. This helps you avoid waiting for a refresh timeout to continue. This behavior can also be helpful in a debugging session to test the dataflow behavior with your data while reducing wait time. Using the fast copy indicators in the query steps pane, you can easily check if your query can run with fast copy.
 
-Using the fast copy indicators in the query steps pane, you can easily check if your query can run with fast copy.
+:::image type="content" source="media/dataflows-gen2-fast-copy/fast-copy-indicators.png" alt-text="Screenshot showing where the fast copy indicator appears in the query steps pane.":::
 
 ## Prerequisites
 
