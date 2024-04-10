@@ -63,23 +63,28 @@ Select the task flow that best fits your project needs and then choose **Select*
 
 :::image type="content" source="./media/taskflows-overview/task-flow-predefined-task-flow-applied.png" alt-text="Screenshot showing a predefined task flow selected and applied to canvas." lightbox="./media/taskflows-overview/task-flow-predefined-task-flow-applied.png":::
 
-* The Task flow canvas provides a graphic view of the tasks and all interactions of the task flow. [QUESTION: what do we mean by "all interactions"?]
+* The task flow canvas provides a graphic view of the tasks and all interactions of the task flow. [QUESTION: what do we mean by "all interactions"?]
 
 * The side panel shows detailed information about the task flow, including task flow name, description, total number of tasks in the task flow, and a list of those tasks. You can change the task flow name and description in the task flow details pane by selecting **Edit** .
 
 * The items list shows all the items and folders in the workspace, including those items that are attached to tasks in the task flow. When you select a task in the task flow, the items list is filtered to show just the items that are attached to the selected task. In the preceding illustration, the items list is empty because no items have been created yet.
 
-Selecting a predefined task flow just places the tasks involved in the task flow on the canvas and indicates the connections between them. It is just a graphical representation - no actual items or data connections are created at this point.
+> [!NOTE]
+. Selecting a predefined task flow just places the tasks involved in the task flow on the canvas and indicates the connections between them. It is just a graphical representation - no actual items or data connections are created at this point.
 
 ## Start with a custom task flow
 
-If you already have a clear idea of what the structure of your task flow needs to be, or if none of the predesigned task flows fit your needs, you can build a custom task flow by selecting **Add a task** choosing a task type to add a task directly onto the canvas.
+If you already have a clear idea of what the structure of your task flow needs to be, or if none of the predesigned task flows fit your needs, you can build a custom task flow.
 
-:::image type="content" source="./media/taskflows-overview/image10.png" alt-text="A screenshot of a computer  Description automatically generated7":::
+First, select **Edit** in the task flow side panel and provide a name and description for your task flow to help other members of this workspace understand the task flow and your project.
 
-The task is added into the canvas, and the task flow is in this workspace begun.  Select **Edit** to update the task flow name and descriptions to help other members of this workspace understand the task flow and your project.
+Next, on the task flow canvas select **Add a task** and choose a task type.
 
-:::image type="content" source="./media/taskflows-overview/image11.png" alt-text="A white background with a black and white flag  Description automatically generated with medium confidence8":::
+:::image type="content" source="./media/taskflows-overview/task-flow-add-initial-task.png" alt-text="Screenshot illustrating renaming a task flow and adding an initial task." lightbox="./media/taskflows-overview/task-flow-add-initial-task.png":::
+
+The task appears on the canvas. Note that the side panel now shows the task details.
+
+:::image type="content" source="./media/taskflows-overview/task-flow-initial-task.png" alt-text="Screenshot showing the first task added to the canvas.":::
 
 You can continue to add other tasks to the canvas, as well as manage tasks and link tasks together. These topics are discussed in more detail in the following sections.
 
