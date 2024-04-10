@@ -10,62 +10,29 @@ ms.date: 04/05/2024
 
 # What is a Fabric task flow?
 
-Workspaces are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports. This article describes workspaces, how to manage access to them, and what settings are available.
+Fabric task flow is a workspace feature that enables you to build a visualization of the flow of work in the workspace. The task flow helps you understand how items are related and work together in your workspace, and makes it easier for you to navigate your workspace, even as it becomes more complex over time. Moreover, the task flow can help you standardize your team's work and keep your design and development work in sync to boost the team's collaboration and efficiency.
 
-A workspace is consists of the a header, toolbar, and a main window. The main window has two views, list view and lineage view. 
-
-Lineage view shows....
-
-List view
-
-List view is divided into two sections: task flow and items list. 
-
-Items list:
-
-The items list lists the items and folders that the workspace contains. The items list can be filtered by Keyword or by task, item type, workload, or owner, using the filters in the workspace toolbar, or by selecting a task in the task flow.
-
-Task flow:
-
-Contains a canvas where you can create a visualization of the structure of your work in the workspace. The task flow helps you organize, visualize, and keep track of your work. It consists of tasks that represent the kind of work/activity that is being done in the workspace. There are XX task types that represent common activities. Each task type has recommended item types (i.e. the types of items that are typically used in the task). To use a task flow, you can either build your own, task by task, or you can start with one of the ten predefined task flows provided with Fabric.
-
-A workspace has only one task flow. You configure it either by building yourself or be starting with one of the predefined task flows that come with Fabric.
-
-While the task flow helps you organize and visualize your work, it is a visual representation only. Connecting tasks together in a task flow does not do any of the actual work connecting Fabric items. That you do using the usual methods of creating items.
-
-
-
-
-
-A Fabric task flow is a visualization of the logical structure of your work in the workspace. Fabric provides a range of predefined, end-to-end task flows based on industry best practices that are intended to make it easier to get started with your project. In addition, you can customize the task flows to suit your specific needs and requirements. This enables you to create a tailored solution that meets your unique business needs and goals.
-
-With task flows, you can understand how items are connected and work together in your workspace. This makes it easier for you to navigate your workspace, even as it becomes more complex over time. Moreover, you can easily standardize your team's work and keep your design and development work in sync to boost the team's collaboration and efficiency.
-
-THINGS TO MENTION:
-Only one taskflow per workspace
-Start with an empty, default configuration - rename and start populating.
-or choose preconfigured.
-The task flow interacts with the items list as a filter. 
+Fabric provides a range of predefined, end-to-end task flows based on industry best practices that are intended to make it easier to get started with your project. In addition, you can customize the task flows to suit your specific needs and requirements. This enables you to create a tailored solution that meets your unique business needs and goals.
 
 ## Terms
 
-* **Task flow**: A task flow is a collection of connected tasks that represent relationships in a process or collection of processes that complete an end-to-end data solution.
+* **Task flow**: A task flow is a collection of connected tasks that represent relationships in a process or collection of processes that complete an end-to-end data solution. A workspace has one task flow. You can either build it from scratch or use one of Fabric's predefined task flows, which you can customize as desired.
 
-* **Task**: A task is a unit of process in the task flow. A task has recommended item types to help you select the appropriate item when building your solution. Tasks can also help you navigate the items in the workspace.
+* **Task**: A task is a unit of process in the task flow. A task has recommended item types to help you select the appropriate items when building your solution. Tasks also help you navigate the items in the workspace.
 
 ## Task types
 
 Each task has a task type that classifies the task based on its key capabilities in the data process flow. The predefined task types are:
 
-| Task type | Description |
+| Task type | What you want to do with the task |
 |:--------|:----------|
-| **General** | Create tasks customized to your project needs and associate available item types with them. |
+| **General** | Create a task customized to your project needs that you can then assign available item types to. |
 | **Get data** | Ingest both batch and real-time data into a single location within your Fabric workspace. |
 | **Store data** | Organize, query, and store your ingested data in an easily retrievable format. |
 | **Prepare data** | Prepare your data for analysis or modeling by addressing issues with the data, such as duplicates, missing values, formatting, etc. |
 | **Analyze and train data** | Analyze and use your newly structured data to build and train machine learning models to make decisions and predictions. |
-| **Track data** | Take actions, such as sending automated emails or notifications, on the insights that your data provides. |
+| **Track data** | Take actions, such as sending automated emails or notifications, about the insights that your data provides. |
 | **Visualize data** | Present your data as rich visualizations and insights that can be shared with others. |
-
 
 Get started
 
