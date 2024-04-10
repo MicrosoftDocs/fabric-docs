@@ -106,7 +106,7 @@ There are five parts in the Task details pane:
 
 When you add a task, the task type and its associated description are assigned as the default name and description of the task. You can update the task name and description by selecting **Edit**.
 
-:::image type="content" source="./media/taskflows-overview/edit-task-name-description.png" alt-text="Screenshot showing how to edit the task name and description in the task details pane.:::
+:::image type="content" source="./media/taskflows-overview/edit-task-name-description.png" alt-text="Screenshot showing how to edit the task name and description in the task details pane.":::
 
 You can switch the task to another task type by choosing another type from **Task type** dropdown menu.
 
@@ -120,15 +120,13 @@ You can switch the task to another task type by choosing another type from **Tas
 
 ### Add tasks
 
-To add more tasks into canvas, you can select **Add** and select a task type in the drop-down list. 
+To add more tasks onto the canvas, open the **Add** dropdown menu and select the desired task type. 
 
-:::image type="content" source="./media/taskflows-overview/image16.png" alt-text="A white rectangular object with a black border  Description automatically generatedD":::
+:::image type="content" source="./media/taskflows-overview/add-task.png" alt-text="Screenshot showing the Add dropdown menu on the task flow canvas.":::
 
-The task of the selected task type is added into the canvas. You can also update the name and description of the task.  
+The task of the selected task type is added onto the canvas. You can update the name and description of the task as you did when you created the first task.  
 
-:::image type="content" source="./media/taskflows-overview/image17.png" alt-text="A white background with black and white text  Description automatically generated with medium confidenceE":::
-
-Repeat the previous steps and add more tasks into the canvas.
+Repeat the previous steps to add more tasks to the canvas.
 
 ### Link tasks
 
