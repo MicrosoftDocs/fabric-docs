@@ -114,10 +114,6 @@ You can switch the task to another task type by choosing another type from **Tas
 
 To update or reset the task type for an existing task, simply select on the dropdown menu and choose a new type. [QUESTION: This doesn't seem to be true.]
 
-You can switch the task to another task type by choosing another type from **Task type** dropdown menu.
-
-:::image type="content" source="./media/taskflows-overview/image15.png" alt-text="A white rectangular object with a black border  Description automatically generated with medium confidenceC":::
-
 ### Add tasks
 
 To add more tasks to the canvas, open the **Add** dropdown menu and select the desired task type. 
