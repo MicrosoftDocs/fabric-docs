@@ -90,17 +90,17 @@ You can continue to add other tasks to the canvas, as well as manage tasks and l
 
 ## Task management in task flows
 
-When you select a task, you'll see **Task details** pane.
+When you select a task, the side panel displays the task details.
 
-:::image type="content" source="./media/taskflows-overview/image12.png" alt-text="A white background with a black and white flag  Description automatically generated with medium confidence9":::
+:::image type="content" source="./media/taskflows-overview/task-details-pane.png" alt-text="Screenshot explaining the task details pane.":::
 
 There are five parts in the Task details pane:
 
-1. Task name. A good task name should identify the task and provides a clear indication of its intended use.
-1. Number of items attached to the task.
-1. Task description, Provides a detailed explanation of the task and its intended use.
-1. Task type, by configuring and selecting task type, the specific category of the recommended items are different.
-1. Item recommendation: recommended items vary depending on the selected task type.
+1. Task name. A good task name should identify the task and provide a clear indication of its intended use.
+1. Number of items assigned to the task.
+1. Task description. A good task description provides a detailed explanation of the task and its intended use.
+1. Task type. By configuring and selecting task type, the specific category of the recommended items are different.
+1. Item recommendation: The list of items recommended for the task. The list of recommended items varies depending on the selected task type.
 
 ### Update task details and type
 
