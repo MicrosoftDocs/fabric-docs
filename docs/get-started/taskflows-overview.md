@@ -130,6 +130,10 @@ Repeat the previous steps to add more tasks to the canvas.
 
 ### Connecting tasks
 
+[NOTE: Add note or important bubble to inform that connectors don't do any acutual data connections - they are graphic representations of the flow of tasks only.]
+
+[NOTE: Add tip: arrange the tasks on the canvas they way you want them to appear before connecting them. Connected tasks maintain their arrangement when you add new tasks to the canvas. Unconnected tasks get rearranged vertically every time you add a new task.]
+
 Up this point, the tasks are arranged vertically and separately on the canvas.
 
 To illustrate the flow of work, you can connect the tasks. To connect two tasks, select the edge of the starting task and drag to an edge of the next task.
@@ -139,9 +143,6 @@ To illustrate the flow of work, you can connect the tasks. To connect two tasks,
 The connector appears between the two tasks.
 
 :::image type="content" source="./media/taskflows-overview/connector-between-two-tasks.png" alt-text="Screenshot showing a connector between two tasks.":::
-
-
-
 
 Alternatively, you can select **Add** > **Connector**.
 
