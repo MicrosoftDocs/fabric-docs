@@ -163,7 +163,7 @@ To delete a task, select it, and then select the trash can icon in the task deta
 
 :::image type="content" source="./media/taskflows-overview/delete-task.png" alt-text="Screenshot showing how to delete a task.":::
 
-Alternatively, select the task flow canvas to open the task flow details pane, hover over the task you want to delete, and select the trash can icon.
+Alternatively, select the task flow canvas to open the task flow details pane. Then in the task flow details pane, hover over the task you want to delete in the Tasks list and select the trash can icon.
 
 :::image type="content" source="./media/taskflows-overview/delete-task-via-task-flow-details-pane.png" alt-text="Screenshot showing how to delete a task from the task flow details pane.":::
 
