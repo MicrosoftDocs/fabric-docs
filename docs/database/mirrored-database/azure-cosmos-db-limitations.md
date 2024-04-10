@@ -3,8 +3,8 @@ title: Limits and quotas in Microsoft Fabric mirrored databases from Azure Cosmo
 description: This article includes a list of limitations and quotas for Microsoft Fabric mirrored databases from Azure Cosmos DB.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa
-ms.date: 03/15/2024
+ms.reviewer: anithaa, wiassaf
+ms.date: 04/09/2024
 ms.service: fabric
 ms.topic: limits-and-quotas
 ms.custom:
@@ -73,6 +73,7 @@ Here's a list of regions that support mirroring for Azure Cosmos DB:
     - Brazil South
     - Canada Central
     - Canada East
+    - Central US
     - East US
     - East US2
     - North Central US

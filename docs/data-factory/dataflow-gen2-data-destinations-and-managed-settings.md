@@ -1,11 +1,11 @@
 ---
 title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
-ms.reviewer: DougKlopfenstein
-ms.author: mideboer
-author: miquelladeboer
+ms.reviewer: jonburchel
+ms.author: jeluitwi
+author: luitwieler
 ms.topic: how-to
-ms.date: 2/28/2024
+ms.date: 4/10/2024
 ---
 
 # Dataflow Gen2 data destinations and managed settings
@@ -121,7 +121,7 @@ Schema options on publish only apply when the update method is replace. When you
 | Function                         | No  | No  | No  | No  | No  |
 | None                             | No  | No  | No  | No  | No  |
 | Null                             | No  | No  | No  | No  | No  |
-| Time                             | Yes | Yes | No  | Yes | Yes |
+| Time                             | Yes | Yes | No  | No | No |
 | Type                             | No  | No  | No  | No  | No  |
 | Structured (List, Record, Table) | No  | No  | No  | No  | No  |
 
