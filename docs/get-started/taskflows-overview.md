@@ -104,15 +104,17 @@ There are five parts in the Task details pane:
 
 ### Update task details and type
 
-When adding a task, the system task type and its associated description are assigned as the default name and description to the task. You can update the task name and description by selecting **Edit details**.
+When you add a task, the task type and its associated description are assigned as the default name and description of the task. You can update the task name and description by selecting **Edit**.
 
-:::image type="content" source="./media/taskflows-overview/image13.png" alt-text="A white background with black and white clouds  Description automatically generated with medium confidenceA":::
+:::image type="content" source="./media/taskflows-overview/edit-task-name-description.png" alt-text="Screenshot showing how to edit the task name and description in the task details pane.:::
 
-**The details section is in editing mode now. You can edit name and description and save the update by selecting** **Save .** 
+You can switch the task to another task type by choosing another type from **Task type** dropdown menu.
 
-:::image type="content" source="./media/taskflows-overview/image14.png" alt-text="A white background with black and white clouds  Description automatically generated with medium confidenceB":::
+:::image type="content" source="./media/taskflows-overview/task-change-type.png" alt-text="Screenshot showing how to change task type in the task details pane.":::
 
-To update or reset the task type for an existing task, simply select on the dropdown menu and choose a new type.
+To update or reset the task type for an existing task, simply select on the dropdown menu and choose a new type. [QUESTION: This doesn't seem to be true.]
+
+You can switch the task to another task type by choosing another type from **Task type** dropdown menu.
 
 :::image type="content" source="./media/taskflows-overview/image15.png" alt-text="A white rectangular object with a black border  Description automatically generated with medium confidenceC":::
 
