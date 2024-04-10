@@ -4,7 +4,7 @@ description: This article explains how to copy data using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 04/10/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -122,6 +122,14 @@ Data Warehouse COPY command directly supports **Azure Blob Storage** and **Azure
 To learn how to ingest data into your Data Warehouse using the COPY command, see this [article](../data-warehouse/ingest-data-copy.md).
 
 If your source data store and format isn't originally supported by a COPY command, use the Staged copy by using the COPY command feature instead. It automatically converts the data into a COPY command compatible format, then calls a COPY command to load data into Data Warehouse.
+
+#### Staged copy by using COPY command
+
+When your source data is not natively compatible with COPY command, enable data copying via an interim staging storage. In this case, the service automatically converts the data to meet the data format requirements of COPY command. Then it invokes COPY command to load data into Data Warehouse. Finally, it cleans up your temporary data from the storage. 
+
+To use staged copy, go to **Settings** tab and select **Enable staging**. You can choose **Workspace** to use the auto-created staging storage. For **External**, Azure Blob Storage and Azure Data Lake Storage Gen2 are supported as the external staging storage. You need to create an Azure Blob Storage or Azure Data Lake Storage Gen2 connection first, and then select the connection from the drop-down list to use the staging storage.
+
+By using staged copy, you can copy data from more diverse data sources to Data Warehouse.
 
 ### Mapping
 
