@@ -48,23 +48,18 @@ The following image shows how the workspace looks before a task flow has been co
 
 :::image type="content" source="./media/taskflows-overview/task-flow-initial-state.png" alt-text="Screenshot showing the initial empty state of a task flow." lightbox="./media/taskflows-overview/task-flow-initial-state.png"::: 
 
-## Start with predesigned task flows
+## Start with a predesigned task flow
 
-On the default task flow page, choose **Select a task flow**. The side panel lists ten predesigned task flows provided by Microsoft. Each predefined task flow has a a brief description of its use case.
+On the default task flow, choose **Select a task flow**. The side panel lists ten predesigned task flows provided by Microsoft. Each predefined task flow has a a brief description of its use case. When you select a flows, you'll see a more detailed description of the task flow and how it's used, and also the workloads and item types that the task flow requires.
 
-:::image type="content" source="./media/taskflows-overview/image5.png" alt-text="A screenshot of a computer  Description automatically generated2":::
-
-When you select a predefined task flow in the side pane, you'll see a more detailed description of the task flow and how it's used. You'll also see the workloads and item types that the task flow requires.
-
-The layout and content are listed here and discussed in more detail later.
-
-:::image type="content" source="./media/taskflows-overview/image6.png" alt-text="A screenshot of a computer  Description automatically generated3":::
+:::image type="content" source="./media/taskflows-overview/task-flow-predesigned-panel.png" alt-text="Screenshot showing the task flow side panel of a predesigned task flow." lightbox="./media/taskflows-overview/task-flow-predesigned-panel.png":::
 
 1. Task flow name.
-1. Brief description of the task flow use case. 
-1. Number of tasks in this task flow. 
-1. More detailed description of the task flow and how it's used
-1. Item types that are used in task flow 
+1. Brief description of the task flow use case.
+1. Number of tasks in the task flow.
+1. Detailed description of the task flow and how it's used.
+1. The workloads that the task flow typically requires.
+1. The item types that are typically used in task flow.
 
 Select the task flow that best fits your project needs and then choose **Select**. The selected task flow will be applied to the task flow canvas.
 
