@@ -1,25 +1,25 @@
 ---
-title: Learn how to create a Lakehouse for Direct Lake in Power BI and Microsoft Fabric
-description: Describes how to create a Lakehouse for Direct Lake in Power BI and Microsoft Fabric.
+title: Learn how to create a Lakehouse for Direct Lake in Microsoft Fabric
+description: Describes how to create a Lakehouse for Direct Lake in Microsoft Fabric.
 author: kfollis
 ms.author: kfollis
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: conceptual
-ms.date: 04/02/2024
+ms.date: 04/15/2024
 LocalizationGroup: Admin
 ---
 
 # Create a Lakehouse for Direct Lake
 
-This article describes how to create a Lakehouse, create a delta table in the Lakehouse, and then create a basic semantic model for the Lakehouse in a Microsoft Fabric or Power BI workspace.
+This article describes how to create a Lakehouse, create a delta table in the Lakehouse, and then create a basic semantic model for the Lakehouse in a Microsoft Fabric workspace.
 
 Before getting started creating a Lakehouse for Direct Lake, be sure to read [Direct Lake overview](directlake-overview.md).
 
 ## Create a Lakehouse
 
-1. In your Microsoft Fabric or Power BI workspace, select **New** > **Show all**, and then in **Data engineering**, select the **Lakehouse** tile.
+1. In your Microsoft Fabric workspace, select **New** > **Show all**, and then in **Data engineering**, select the **Lakehouse** tile.
 
     :::image type="content" source="media/directlake-create-lakehouse/directlake-lakehouse-tile.png" border="false" alt-text="Screenshot showing Lakehouse tile.":::
 
@@ -115,4 +115,4 @@ When you're finished adding relationships and DAX measures, you can then create 
 
 - [Specify a fixed identity for a Direct Lake model](directlake-fixed-identity.md)
 - [Direct Lake overview](directlake-overview.md)  
-- [Analyze query processing for Direct Lake datasets](directlake-analyze-qp.md)  
+- [Analyze query processing for Direct Lake semantic models](directlake-analyze-qp.md)  

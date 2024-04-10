@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: conceptual
-ms.date: 04/02/2024
+ms.date: 04/15/2024
 LocalizationGroup: Admin
 ---
 
@@ -36,4 +36,4 @@ Follow these steps to specify a fixed identity connection for a Direct Lake sema
 ## Related content
 
 - [Direct Lake overview](directlake-overview.md)  
-- [Analyze query processing for Direct Lake datasets](directlake-analyze-qp.md)  
+- [Analyze query processing for Direct Lake semantic models](directlake-analyze-qp.md)  

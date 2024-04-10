@@ -9,7 +9,7 @@ ms.subservice: powerbi-premium
 ms.custom:
   - ignite-2023-fabric
 ms.topic: concept-article
-ms.date: 04/02/2024
+ms.date: 04/15/2024
 LocalizationGroup: Admin
 ---
 # Direct Lake
@@ -181,9 +181,9 @@ You may want to disable if, for example, you need to allow completion of data pr
 
 ## Get started
 
-The best way to get started with a Direct Lake solution in your organization is to create a Lakehouse, create a delta table in it, and then create a basic semantic model for the Lakehouse in your Microsoft Fabric or Power BI workspace. To learn more, see [Create a Lakehouse for Direct Lake](directlake-create-lakehouse.md).
+The best way to get started with a Direct Lake solution in your organization is to create a Lakehouse, create a delta table in it, and then create a basic semantic model for the Lakehouse in your Microsoft Fabric workspace. To learn more, see [Create a Lakehouse for Direct Lake](directlake-create-lakehouse.md).
 
 ## Related content
 
 - [Create a Lakehouse for Direct Lake](directlake-create-lakehouse.md)  
-- [Analyze query processing for Direct Lake datasets](directlake-analyze-qp.md)  
+- [Analyze query processing for Direct Lake semantic models](directlake-analyze-qp.md)  
