@@ -29,6 +29,9 @@ Select the tab that corresponds to the shortcut you'd like to create:
 
 [!INCLUDE [onelake-shortcut-prerequisites](../includes/real-time-analytics/onelake-shortcut-prerequisites.md)]
 
+>[!NOTE]
+>The following flow shows how to create a shortcut that points to data in a Lakehouse in Fabric. Similarly, you can create shortcuts that point to Data Warehouses or other KQL databases. 
+
 1. Browse to an existing KQL database.
 1. Select **New** > **OneLake shortcut**.
 
