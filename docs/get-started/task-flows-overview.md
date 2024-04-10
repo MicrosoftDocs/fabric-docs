@@ -237,9 +237,9 @@ To delete a task flow, first select a blank area of the canvas to display the ta
 
 :::image type="content" source="./media/task-flows-overview/delete-task-flow.png" alt-text="Screenshot showing how to delete a task flow.":::
 
-Select **Delete** to delete the task flow from current workspace. 
+Deleting a task flow deletes all tasks, the task list, and any item assignments.
 
-:::image type="content" source="./media/task-flows-overview/image35.png" alt-text="AlttextF":::
+Any items created will remain in the workspace, but you need to assign them to tasks in your new task flow.
 
 ## Private preview limitations
 
