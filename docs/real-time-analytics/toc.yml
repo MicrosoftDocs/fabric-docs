@@ -188,7 +188,7 @@ items:
       items:
       - name: One logical copy (Preview)
         href: one-logical-copy.md
-      - name: Create OneLake shortcuts
+      - name: Create OneLake shortcuts in a KQL database 
         href: onelake-shortcuts.md
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage

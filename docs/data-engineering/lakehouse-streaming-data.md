@@ -79,11 +79,11 @@ Schema = StructType([StructField("<column_name_01>", StringType(), False),
 
 rawData = df \ 
   .withColumn("bodyAsString", f.col("body").cast("string")) \  
-  .select(from_json("bodyAsString", Schema).alias("events")) \ 
+  .select(f.from_json("bodyAsString", Schema).alias("events")) \ 
   .select("events.*") \ 
   .writeStream \ 
   .format("delta") \ 
-  .option("checkpointLocation", " Files/checkpoint") \ 
+  .option("checkpointLocation", "Files/checkpoint") \ 
   .outputMode("append") \ 
   .toTable("deltaeventstable") 
 ```
@@ -111,12 +111,12 @@ import json
 
 rawData = df \ 
   .withColumn("bodyAsString", f.col("body").cast("string")) \  
-  .select(from_json("bodyAsString", Schema).alias("events")) \ 
+  .select(f.from_json("bodyAsString", Schema).alias("events")) \ 
   .select("events.*") \ 
   .repartition(48) \ 
   .writeStream \ 
   .format("delta") \ 
-  .option("checkpointLocation", " Files/checkpoint") \ 
+  .option("checkpointLocation", "Files/checkpoint") \ 
   .outputMode("append") \ 
   .partitionBy("<column_name_01>", "<column_name_02>") \ 
   .toTable("deltaeventstable") 
@@ -133,11 +133,11 @@ spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", true)
  
 rawData = df \ 
  .withColumn("bodyAsString", f.col("body").cast("string")) \  
-  .select(from_json("bodyAsString", Schema).alias("events")) \ 
+  .select(f.from_json("bodyAsString", Schema).alias("events")) \ 
   .select("events.*") \ 
   .writeStream \ 
   .format("delta") \ 
-  .option("checkpointLocation", " Files/checkpoint") \ 
+  .option("checkpointLocation", "Files/checkpoint") \ 
   .outputMode("append") \ 
   .partitionBy("<column_name_01>", "<column_name_02>") \ 
   .toTable("deltaeventstable") 
@@ -154,12 +154,12 @@ The following example shows a streaming query where events are periodically proc
 ```PySpark 
 rawData = df \ 
   .withColumn("bodyAsString", f.col("body").cast("string")) \  
-  .select(from_json("bodyAsString", Schema).alias("events")) \ 
+  .select(f.from_json("bodyAsString", Schema).alias("events")) \ 
   .select("events.*") \ 
   .repartition(48) \ 
   .writeStream \ 
   .format("delta") \ 
-  .option("checkpointLocation", " Files/checkpoint") \ 
+  .option("checkpointLocation", "Files/checkpoint") \ 
   .outputMode("append") \ 
   .partitionBy("<column_name_01>", "<column_name_02>") \ 
   .trigger(processingTime="1 minute") \ 

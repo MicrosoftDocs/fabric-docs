@@ -14,6 +14,6 @@ ms.date: 06/26/2023
 
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A [KQL database](../../real-time-analytics/create-database.md) with editing permissions
-* An [Azure Data Lake Storage Gen2](/azure/storage/blobs/data-lake-storage-introduction) account with data.
+* An [Azure Data Lake Storage Gen2](/azure/storage/blobs/data-lake-storage-introduction) account.
 
 ## Create shortcut
