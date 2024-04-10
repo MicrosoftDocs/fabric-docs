@@ -34,8 +34,6 @@ Each task has a task type that classifies the task based on its key capabilities
 | **Track data** | Take actions, such as sending automated emails or notifications, about the insights that your data provides. |
 | **Visualize data** | Present your data as rich visualizations and insights that can be shared with others. |
 
-Get started
-
 ## Set up a task flow in a workspace
 
 Open the workspace. You'll see that the workspace view is split between the task flow, where you'll build your task flow, and the item list, which shows you the items in the workspace. A moveable separator allows you adjust the size of the views.
@@ -50,7 +48,7 @@ The following image shows how the workspace looks before a task flow has been co
 
 ## Start with a predesigned task flow
 
-On the default task flow, choose **Select a task flow**. The side panel lists ten predesigned task flows provided by Microsoft. Each predefined task flow has a a brief description of its use case. When you select a flows, you'll see a more detailed description of the task flow and how it's used, and also the workloads and item types that the task flow requires.
+On the default task flow, choose **Select a task flow**. The side panel lists ten predesigned task flows provided by Microsoft. Each predefined task flow has a a brief description of its use case. When you select a flow, you'll see a more detailed description of the task flow and how it's used, and also the workloads and item types that the task flow requires.
 
 :::image type="content" source="./media/taskflows-overview/task-flow-predesigned-panel.png" alt-text="Screenshot showing the task flow side panel of a predesigned task flow." lightbox="./media/taskflows-overview/task-flow-predesigned-panel.png":::
 
@@ -63,21 +61,15 @@ On the default task flow, choose **Select a task flow**. The side panel lists te
 
 Select the task flow that best fits your project needs and then choose **Select**. The selected task flow will be applied to the task flow canvas.
 
-:::image type="content" source="./media/taskflows-overview/image7.png" alt-text="A screenshot of a computer  Description automatically generated4":::
+:::image type="content" source="./media/taskflows-overview/task-flow-predefined-task-flow-applied.png" alt-text="Screenshot showing a predefined task flow selected and applied to canvas." lightbox="./media/taskflows-overview/task-flow-predefined-task-flow-applied.png":::
 
-The layout of the task flow view is:
+Task flow canvas provides a graphic view of the tasks and all interactions of the task flow. [QUESTION: what do we mean by "all interactions"?]
 
-1. **Task flow canvasv: Provides a graphic view of tasks and all interactions of the task flow. [QUESTION: what do we mean by "all interactions"?]
-1. **Task flow details pane**: Shows detailed information about the task flow, including task flow name, description, total number of tasks in the task flow, and a list of those tasks.
-1. Items list: The items list shows all the items and folders in the workspace, includeing those items that are attached to tasks in the task flow. When you select a task in the task flow, the list is filtered to just the items that are attached to the selected task.
+The **Task flow details** panel shows detailed information about the task flow, including task flow name, description, total number of tasks in the task flow, and a list of those tasks. You can change the task flow name and description in the task flow details pane by selecting **Edit** .
 
-You can change the task flow name and description in the task flow details pane by selecting **Edit** .
+The items list shows all the items and folders in the workspace, including those items that are attached to tasks in the task flow. When you select a task in the task flow, the items list is filtered to show just the items that are attached to the selected task. In the preceding illustration, the items list is empty because no items have been created yet.
 
-:::image type="content" source="./media/taskflows-overview/image8.png" alt-text="A group of rectangular boxes with text  Description automatically generated5":::
-
-The following image shows the details section in editing mode. You can edit name and description and save your changes by selecting **Save** .
-
-:::image type="content" source="./media/taskflows-overview/image9.png" alt-text="A diagram of a diagram  Description automatically generated with medium confidence6":::
+Selecting a predefined task flow causes the tasks involved in the task flow and the connections between them to be graphically represented on the canvas. No actual items or data connections are created at this point. The representation is graphical only.
 
 ## Start with a custom task flow
 
