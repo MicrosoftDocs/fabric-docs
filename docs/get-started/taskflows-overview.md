@@ -26,7 +26,7 @@ Each task has a task type that classifies the task based on its key capabilities
 
 | Task type | What you want to do with the task |
 |:--------|:----------|
-| **General** | Create a task customized to your project needs that you can then assign available item types to. |
+| **General** | Create a customized task customized to your project needs that you can assign available item types to. |
 | **Get data** | Ingest both batch and real-time data into a single location within your Fabric workspace. |
 | **Store data** | Organize, query, and store your ingested data in an easily retrievable format. |
 | **Prepare data** | Prepare your data for analysis or modeling by addressing issues with the data, such as duplicates, missing values, formatting, etc. |
@@ -38,11 +38,15 @@ Get started
 
 ## Set up a task flow in a workspace
 
-Open the workspace. You'll see that the workspace view is split between a task flow partition and the workspace list. You'll build and manage your task flow in the task flow partition. The task flow partition is split between the canvas, which will hold the visualization of your work flow, and the side panel that contains information and controls to help you build the task flow. The contents of the side panel changes according to what is selected in the canvas.
+Open the workspace. You'll see that the workspace view is split between the task flow, where you'll build your task flow, and the item list, which shows you the items in the workspace. A moveable separator allows you adjust the size of the views.
 
-:::image type="content" source="./media/taskflows-overview/image4.png" alt-text="A screenshot of a computer  Description automatically generated1":::
+The task flow itself is split between the canvas, which will hold the visualization of your work flow, and a side panel that contains information and controls to help you build the task flow. The contents of the side panel changes according to what is selected in the canvas.
 
-When no task flow has been configured, an empty default task flow entitled "Get started with a task flow" is there. To start building a task flow, you can either select a task flow from one of predesigned task flows or add a task to start building one yourself.  
+When no task flow has been configured, an empty default task flow entitled **Get started with a task flow** is there. To start building a task flow, you can either select a task flow from one of predesigned task flows or add a task to start building one yourself.
+
+The following image shows how the workspace looks before a task flow has been configured and before any items have been created in the workspace. 
+
+:::image type="content" source="./media/taskflows-overview/task-flow-initial-state.png" alt-text="Screenshot showing the initial empty state of a task flow." lightbox="./media/taskflows-overview/task-flow-initial-state.png"::: 
 
 ## Start with predesigned task flows
 
