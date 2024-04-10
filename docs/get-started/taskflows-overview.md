@@ -120,7 +120,7 @@ You can switch the task to another task type by choosing another type from **Tas
 
 ### Add tasks
 
-To add more tasks onto the canvas, open the **Add** dropdown menu and select the desired task type. 
+To add more tasks to the canvas, open the **Add** dropdown menu and select the desired task type. 
 
 :::image type="content" source="./media/taskflows-overview/add-task.png" alt-text="Screenshot showing the Add dropdown menu on the task flow canvas.":::
 
@@ -128,27 +128,34 @@ The task of the selected task type is added onto the canvas. You can update the 
 
 Repeat the previous steps to add more tasks to the canvas.
 
-### Link tasks
+### Connecting tasks
 
-Currently, the tasks are arranged vertically and separately on the canvas.
+Up this point, the tasks are arranged vertically and separately on the canvas.
 
-:::image type="content" source="./media/taskflows-overview/image18.png" alt-text="A white background with black and white clouds  Description automatically generated with medium confidenceF":::
+To illustrate the flow of work, you can connect the tasks. To connect two tasks, select the edge of the starting task and drag to an edge of the next task.
 
-To link tasks on the canvas, you can select **Add** and select **Link**.
+:::image type="content" source="./media/taskflows-overview/connecting-two-tasks-select-drag.png" alt-text="Screenshot showing how to create a connector via select and drag.":::
 
-:::image type="content" source="./media/taskflows-overview/image19.png" alt-text="Alttext1":::
+The connector appears between the two tasks.
 
-In the new dialog box, choose the **Start task** and **End task** options accordingly, then select on **Add** to create the link.
+:::image type="content" source="./media/taskflows-overview/connector-between-two-tasks.png" alt-text="Screenshot showing a connector between two tasks.":::
 
-:::image type="content" source="./media/taskflows-overview/image20.png" alt-text="Alttext2":::
 
-Repeat this step to add links between other tasks.
 
-:::image type="content" source="./media/taskflows-overview/image21.png" alt-text="A screenshot of a computer  Description automatically generatedG":::
 
-By selecting and selecting on a link on the canvas, you can view the **Link details** and update the link or delete the link as needed.
+Alternatively, you can select **Add** > **Connector**.
 
-:::image type="content" source="./media/taskflows-overview/image22.png" alt-text="Alttext3":::
+:::image type="content" source="./media/taskflows-overview/connecting-two-tasks-add-menu.png" alt-text="Screenshot showing how to create a connector using the add menu.":::
+
+Then, in the **Add connector** dialog, select the start and end tasks, then select **Add**.
+
+:::image type="content" source="./media/taskflows-overview/connecting-two-tasks-add-connector-dialog.png" alt-text="Screenshot showing how to specify the start and end tasks in the add connector dialog.":::
+
+Repeat these steps to add connectors between the other tasks.
+
+To delete a connector or to update its start and end values, select the connector. The **Connector details** side pane allows you to delete the connector or change its start and end values.
+
+:::image type="content" source="./media/taskflows-overview/connector-details-pane.png" alt-text="Screenshot showing how to delete or edit a connector on the connector details pane.":::
 
 ### Delete a task
 
