@@ -182,7 +182,7 @@ Once the item is created, the item count on the task shows that the task has had
 
 To attach existing items to a task, select the clip icon on the task.
 
-:::image type="content" source="./media/taskflows-overview/assign-existing-task-clip-icon.png" alt-text=Screenshot showing the assign existing items clip icon.":::
+:::image type="content" source="./media/taskflows-overview/assign-existing-task-clip-icon.png" alt-text="Screenshot showing the assign existing items clip icon.":::
 
 In the **Assign item** dialog box that opens, hover over item you want to assign to the task and mark the checkbox. You can assign more than one item. When done choosing the items you want to assign to the task, choose **Select** to attach the selected items to the task.
 
