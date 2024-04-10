@@ -25,7 +25,7 @@ The Azure Files connector supports the following capabilities in Data pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Account key |
+| **Copy activity (source/destination)** | None | Account key |
 | **Lookup activity** | None | Account key |
 | **GetMetadata activity** | None | Account key |
 | **Delete data activity** | None | Account key |

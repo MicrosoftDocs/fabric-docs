@@ -104,7 +104,7 @@ When **Start time (UTC)** has datetime value but **End time (UTC)** is NULL, it 
     - If you specify partition root path as `root/folder/year=2020`, copy activity will generate two more columns month and day with value "08" and "27" respectively, in addition to the columns inside the files.
     - If partition root path is not specified, no extra column will be generated.
 
-  :::image type="content" source="./media/connector-azure-data-lake-storage-gen1/partition-discovery.png" alt-text="Screenshot showing partition discovery.":::
+  :::image type="content" source="./media/connector-azure-files/partition-discovery.png" alt-text="Screenshot showing partition discovery.":::
 
 - **Max concurrent connections**: This property indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
@@ -174,6 +174,7 @@ The following tables contain more information about the copy activity in Azure F
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| \<max concurrent connections\>|No |maxConcurrentConnections|
+| **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
 ### Destination information
 
