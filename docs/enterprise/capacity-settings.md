@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 04/09/2024
+ms.date: 04/10/2024
 ---
 
 # Manage your Fabric capacity
@@ -148,7 +148,7 @@ To change the name of your capacity, follow these steps:
 
 # [Trial](#tab/trial)
 
-???
+A [trial capacity](../get-started/fabric-trial.md#start-the-fabric-trial) is assigned to the user who signed up for the trial. Other admins can't be added or removed.
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
