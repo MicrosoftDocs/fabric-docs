@@ -61,7 +61,7 @@ Delta is added as one of the possible outputs sinks formats used in writeStream.
 
 The following example demonstrates how it's possible to stream data into Delta Lake.  
 
-```PySpark 
+```python
 import pyspark.sql.functions as f 
 from pyspark.sql.types import * 
 
@@ -87,6 +87,7 @@ rawData = df \
   .outputMode("append") \ 
   .toTable("deltaeventstable") 
 ```
+
  About the code snipped in the example:  
 
 - *format()* is the instruction that defines the output format of the data.  
@@ -104,7 +105,7 @@ Data partitioning is a critical part in creating a robust streaming solution: pa
 
 Combining both partitioning approaches is a good solution in scenario with high throughput. *repartition()* creates a specific number of partitions in memory, while *partitionBy()* writes files to disk for each memory partition and partitioning column. The following example illustrates the usage of both partitioning strategies in the same Spark job: data is first split into 48 partitions in memory (assuming we have total 48 CPU cores), and then partitioned on disk based in two existing columns in the payload. 
 
-```PySpark
+```python
 import pyspark.sql.functions as f 
 from pyspark.sql.types import * 
 import json 
@@ -128,7 +129,7 @@ Another option to optimize writes to Delta Lake is using Optimized Write. Optimi
 
 The following code is an example of the use of Optimized Write. Note that *partitionBy()* is still used.  
 
-```PySpark 
+```python
 spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", true) 
  
 rawData = df \ 
@@ -151,7 +152,7 @@ Triggers define how often a streaming query should be executed (triggered) and e
 
 The following example shows a streaming query where events are periodically processed in intervals of one minute.  
 
-```PySpark 
+```python
 rawData = df \ 
   .withColumn("bodyAsString", f.col("body").cast("string")) \  
   .select(f.from_json("bodyAsString", Schema).alias("events")) \ 
