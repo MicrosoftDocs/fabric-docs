@@ -110,15 +110,15 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 ## Build a report
 
-1. Previously all the lakehouse tables and views were automatically added to the semantic model. With the recent updates, you have to manually sync your tables to the semantic model. To do so, switch to the **SQL analytics endpoint** view. From the lakehouse **Home** tab, open the  lakehouse settings, select **Default Power BI semantic model** and turn on **Sync the default Power BI semantic model** setting. For more information, see [Default Power BI semantic models](../data-warehouse/semantic-models.md#sync-the-default-power-bi-semantic-model)
-
-   :::image type="content" source="media\tutorial-build-lakehouse\enable-semantic-model-sync.png" alt-text="Screenshot showing how to turn on data sync to the default semantic model":::
-
-1. From the lakehouse **Reporting** tab, select **Manage default semantic model** and select the tables that you want to add to the semantic model. In this case, select the **dimension_customer** table.
+1. Previously all the lakehouse tables and views were automatically added to the semantic model. With the recent updates, for new lakehouses, you have to manually add your tables to the semantic model. From the lakehouse **Reporting** tab, select **Manage default semantic model** and select the tables that you want to add to the semantic model. In this case, select the **dimension_customer** table.
 
    :::image type="content" source="media\tutorial-build-lakehouse\select-semantic-model-tables.png" alt-text="Screenshot where you can select the tables to add to the semantic model.":::
 
-1. A semantic model with the same name as the lakehouse is created.
+1. To ensure that the tables in the semantic model are always in sync, switch to the **SQL analytics endpoint** view and open the lakehouse **settings** pane. Select **Default Power BI semantic model** setting and turn on **Sync the default Power BI semantic model** setting. For more information, see [Default Power BI semantic models](../data-warehouse/semantic-models.md#sync-the-default-power-bi-semantic-model)
+
+   :::image type="content" source="media\tutorial-build-lakehouse\enable-semantic-model-sync.png" alt-text="Screenshot showing how to turn on data sync to the default semantic model":::
+
+1. After the table is added, a semantic model with the same name as the lakehouse is created.
 
    :::image type="content" source="media\tutorial-build-lakehouse\workspace-default-dataset.png" alt-text="Screenshot showing the default semantic model that was created when the new lakehouse was created.":::
 
