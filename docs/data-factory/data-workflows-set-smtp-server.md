@@ -1,6 +1,6 @@
 ---
-title: Set up SMTP server with Data workflows project.
-description: This tutorial helps to set up smtp server with Data workflows project that can send email on behalf of Apache Airflow.
+title: Set up SMTP server in Data workflows.
+description: This tutorial helps to set up smtp server in Data workflows.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -8,12 +8,13 @@ ms.topic: how-to
 ms.date: 03/25/2024
 ---
 
-# Set up SMTP Server with Data Workflows project.
+# Set up SMTP Server in Data workflows.
 
 ## Introduction
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow.
+
 > [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
 One of the features of Airflow is the ability to send email notifications and alerts when a task fails, succeeds, or retries. This feature can help you keep track of your workflows and troubleshoot any issues.

@@ -45,8 +45,8 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
-    - name: Create a data workflow project
-      href: create-apache-airflow-project.md
+    - name: Create a Data workflows
+      href: create-data-workflows.md
     - name: Operationalize Data Factory
       href: transform-data.md
     - name: Decide - Copy activity, dataflow, or Spark?
@@ -673,23 +673,20 @@
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
     - name: Fabric Dataflows for ADF Mapping Data Flow users
       href: guide-to-dataflows-for-mapping-data-flow-users.md
-  - name: Data Workflows
+  - name: Data workflows
     items:
-      - name: Concepts
-        items:
-          # - name: Sync GitHub repository
-          # - href: airflow-git-sync.md
+      # - name: Concepts
+      #   items:
       - name: How-to
         items:
           - name: Install a Private Package
-            href: airflow-install-private-package.md
+            href: data-workflows-install-private-package.md
           - name: Enable Azure Key Vault as Secret Backend
-            href: airflow-enable-azure-key-vault.md
+            href: data-workflows-enable-azure-key-vault.md
           - name: Set up SMTP Server
-            href: airflow-set-smtp-server.md
+            href: data-workflows-set-smtp-server.md
           - name: Add a Kubernetes secret
-            href: airflow-access-private-container-registry.md
-      - name: Tutorials
+            href: data-workflows-access-private-container-registry.md
   - name: FAQ and Troubleshooting
     items:
     - name: Frequently asked questions

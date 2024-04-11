@@ -1,6 +1,6 @@
 ---
-title: Install a Private Package as a requirement in Data Workflows Project.
-description: This tutorial helps to install a Private Package as a requirement in Data Workflows Project.
+title: Install a Private Package as a requirement in Data workflows.
+description: This tutorial helps to install a Private Package as a requirement in Data workflows.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -11,17 +11,18 @@ ms.date: 03/25/2024
 ---
 
 
-# Install a Private Package as a requirement in Data Workflows Project.
+# Install a Private Package as a Requirement in Data workflows.
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow.
+
 > [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
 
 ## Introduction
-A python package is a way to organize related Python modules into a single directory hierarchy. A package is typically represented as a directory that contains a special file called __init__.py. Inside a package directory, you can have multiple Python module files (.py files) that define functions, classes, and variables. In the context of Workflow Orchestration Manager, you can create packages to add your custom code.
+A python package is a way to organize related Python modules into a single directory hierarchy. A package is typically represented as a directory that contains a special file called __init__.py. Inside a package directory, you can have multiple Python module files (.py files) that define functions, classes, and variables. In the context of Data workflows, you can create packages to add your custom code.
 
-This guide provides step-by-step instructions on installing `.whl` (Wheel) file, which serves as a binary distribution format for Python package in your Workflow Orchestration Manager.
+This guide provides step-by-step instructions on installing `.whl` (Wheel) file, which serves as a binary distribution format for Python package in Data workflows.
 
 For illustration purpose, I create a simple custom operator as python package that can be imported as a module inside dag file.
 
@@ -65,7 +66,7 @@ with DAG(
     task
 ```
 
-3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file to the container. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Workflow Orchestration Manager or you can use preconfigured repository(Install-Private-Package)[https://github.com/ambika-garg/Install-Private-Package-Fabric]
+3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Data workflows or you can use preconfigured repository(Install-Private-Package)[https://github.com/ambika-garg/Install-Private-Package-Fabric]
 
 ### Step 2: Add your package as a requirement.
 
@@ -77,4 +78,4 @@ with DAG(
 
 ## Related Content
 
-* [Quickstart: Create the Apache Airflow Project in Data Factory](../data-factory/create-apache-airflow-project.md).
+* [Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md).

@@ -1,6 +1,6 @@
 ---
-title: Create the Data Workflow project in Microsoft Fabric
-description: This tutorial helps you create the Data Workflow project in Microsoft Fabric.
+title: Create a Data workflows project in Microsoft Fabric
+description: This tutorial helps you create a Data workflows in Microsoft Fabric.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -10,26 +10,30 @@ ms.topic: quickstart
 ms.date: 03/25/2024
 ---
 
-# Quickstart: Create the Data Workflow project
+# Quickstart: Create a Data workflows
 
 ## Introduction
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow.
+
 > [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
 Data workflows is a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease.
 
-This tutorial provides step-by-step instructions to create the Data workflow project in Microsoft Fabric.
+This tutorial provides step-by-step instructions to create a Data workflows in Microsoft Fabric.
 
-### Step 1: Enable Apache Airflow in your Tenant.
+## Prerequisite
+* Enable Apache Airflow in your Tenant.
+> [!NOTE]
+> Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
 
 1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow projects (preview)' section.
 2. Click Apply.
 
    :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
 
-### Step 2: Create a Data workflow project
+### Step 2: Create a Data workflows
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Project (preview)
@@ -39,8 +43,6 @@ This tutorial provides step-by-step instructions to create the Data workflow pro
    :::image type="content" source="media/data-workflows/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow Project.":::
 
 3. Give a suitable name to your project and Click on Create Button.
-
-   :::image type="content" source="media/data-workflows/name-airflow-project.png" alt-text="Screenshot to name Apache Airflow Project.":::
 
 ### Step 3: Configure an Airflow Environment.
 
@@ -59,7 +61,7 @@ This tutorial provides step-by-step instructions to create the Data workflow pro
 
 ### Step 4: Synchronize your GitHub Repository
 
-Specify the git repository you want to sync your Airflow project with.
+Specify the git repository you want to sync your Data workflows with.
 
 1. Click on 'Sync with Git' Card, you are navigated to 'File Storage'.
 
@@ -121,4 +123,4 @@ Specify the git repository you want to sync your Airflow project with.
 
 ## Next Steps
 
-* [Sync your GitHub Repository with Workflow Orchestration Manager]().
+* [Concepts]().
