@@ -19,7 +19,7 @@ After purchasing the capacity, admins can create workspaces within the capacity 
 
 Job queueing is supported for Notebook jobs that are triggered by pipelines or through the scheduler, as well as for Spark job definitions. The queue operates in a First-In-First-Out (FIFO) manner, where jobs are added to the queue based on the time of their submission and are constantly retried and start executing when the capacity is freed up. 
 
-:::image type="content" source="./media/job-queueing-for-fabric-spark/job-queueing-animation.gif" alt-text="Animated illustration of the process of job queuing in Microsoft Fabric.":::
+:::image type="content" source="media\job-queueing-for-fabric-spark\job-queueing-animation.gif" alt-text="Animated illustration of the process of job queuing in Microsoft Fabric.":::
 
 Once a job is added to the queue, its status is updated to **Not Started** in the Monitoring hub. Notebooks and Spark Job Definitions when they get picked from the queue and begin executing, their status is updated from **Not Started** to **In progress**.
 
