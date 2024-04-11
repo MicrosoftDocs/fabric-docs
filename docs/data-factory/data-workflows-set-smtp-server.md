@@ -28,9 +28,9 @@ To use email notifications and alerts, you need to set up an (Simple Mail Transf
 
 * One or more email addresses that you want to receive the notifications and alerts. These can be your own email addresses, or the email addresses of your team members, stakeholders, or clients.
 
-## Configure Apache Airflow Project
+## Set up the environment variables
 
-* Once you have the prerequisites, you can configure the Apache Airflow to use your SMTP server or service. Edit the `Airflow configurations` section, with the following fields:
+* Once you have the prerequisites, you can configure the Data workflows to use your SMTP server or service. Edit the `Airflow configurations` section, with the following fields:
 
     * **AIRFLOW__SMTP__SMTP_HOST**: The hostname or IP address of your SMTP server or service.
     * **AIRFLOW__SMTP__SMTP_STARTTLS**: Whether to use TLS (Transport Layer Security) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service supports TLS, or False otherwise.
@@ -89,7 +89,7 @@ The email contains the following information:
 * Number of Attempts
 * Error
 * Log: Link that redirects to the failed task logs.
-* Host: Host Name of your Apache Airflow Project
+* Host: Host Name of Data workflows
 * Mark success: Link that redirects to the Failed DAG state.
 
 :::image type="content" source="media/data-workflows/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::

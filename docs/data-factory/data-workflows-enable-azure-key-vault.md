@@ -26,7 +26,7 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 - Key Vault Contributor
 - Key Vault Secrets User
 
-## Configurations to enable the Azure Key Vault as a secret backend in Apache Airflow Project.
+## Configurations to enable the Azure Key Vault as a secret backend in Data workflows.
 
 * **Airflow Requirements**: Install [apache-airflow-providers-microsoft-azure](https://airflow.apache.org/docs/apache-airflow-providers-microsoft-azure/stable/index.html) during your initial Airflow environment setup.
 
