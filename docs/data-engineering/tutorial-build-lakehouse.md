@@ -66,7 +66,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 1. In this tutorial, you have already associated the customer data to a lakehouse. In case you have other data items that you want to associate with the lakehouse can add them with the following steps:
 
-   * From the menu items, select **Add data destination** and select **Lakehouse**. From the **Connect to data destination** screen, sign into your account if required and select **Next**.
+   * From the menu items, select **Add data destination** and select **Lakehouse**. From the **Connect to data destination** screen, sign into your account if necessary and select **Next**.
 
    * Navigate to the **wwilakehouse** in your workspace.
 
@@ -110,7 +110,15 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 ## Build a report
 
-1. In the item view of the workspace, select the **wwilakehouse** default semantic model. This semantic model is automatically created and has the same name as the lakehouse.
+1. Previously all the lakehouse tables and views were automatically added to the semantic model. With the recent updates, you have to manually sync your tables to the semantic model. To do so, switch to the **SQL analytics endpoint** view. From the lakehouse **Home** tab, open the  lakehouse settings, select **Default Power BI semantic model** and turn on **Sync the default Power BI semantic model** setting.
+
+   :::image type="content" source="media\tutorial-build-lakehouse\enable-semantic-model-sync.png" alt-text="Screenshot showing how to turn on data sync to the default semantic model":::
+
+1. From the lakehouse **Reporting** tab, select **Manage default semantic model** and select the tables that you want to add to the semantic model. In this case, select the **dimension_customer** table.
+
+   :::image type="content" source="media\tutorial-build-lakehouse\select-semantic-model-tables.png" alt-text="Screenshot where you can select the tables to add to the semantic model.":::
+
+1. A semantic model with the same name as the lakehouse is created.
 
    :::image type="content" source="media\tutorial-build-lakehouse\workspace-default-dataset.png" alt-text="Screenshot showing the default semantic model that was created when the new lakehouse was created.":::
 
