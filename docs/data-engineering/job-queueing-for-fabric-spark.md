@@ -21,9 +21,6 @@ Job queueing is supported for Notebook jobs that are triggered by pipelines or t
 
 :::image type="content" source="media\job-queueing-for-fabric-spark\job-queueing-animation.gif" alt-text="Animated illustration of the process of job queuing in Microsoft Fabric.":::
 
-
-:::image type="content" source="media\capacity-settings\capacity-settings-without-user-defined-pools.gif" alt-text="Animated illustration of the process of job queuing in Microsoft Fabric.":::
-
 Once a job is added to the queue, its status is updated to **Not Started** in the Monitoring hub. Notebooks and Spark Job Definitions when they get picked from the queue and begin executing, their status is updated from **Not Started** to **In progress**.
 
 > [!NOTE]
