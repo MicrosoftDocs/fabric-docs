@@ -8,7 +8,7 @@ ms.topic: troubleshooting
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 08/03/2023
+ms.date: 04/11/2024
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -108,7 +108,7 @@ Datasets that use DirectQuery or Composite connectivity mode and have variation 
 
 ### Why aren't some tiles displaying information after deployment?
 
-When you pin a tile to a dashboard, if the tile relies on an [unsupported item](deployment-pipelines/understand-the-deployment-process.md#unsupported-items), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a semantic model you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.
+When you pin a tile to a dashboard, if the tile relies on an unsupported item (any item not on this [list](deployment-pipelines/understand-the-deployment-process.md#supported-items) is unsupported), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a semantic model you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.
 
 ### Paginated reports questions
 

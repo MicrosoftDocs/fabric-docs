@@ -14,6 +14,6 @@ ms.date: 06/25/2023
 
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A [KQL database](../../real-time-analytics/create-database.md) with editing permissions
-* An Amazon S3 account with data. For more information, see [What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+* An Amazon S3 account. For more information, see [What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
 
 ## Create shortcut
