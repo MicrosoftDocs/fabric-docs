@@ -389,7 +389,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#considerations-and-limitations).
 
-* For a list of unsupported items, see [unsupported items](#unsupported-items).
+* For a list of supported items, see [supported items](#supported-items). Any item not on the list isn't supported.
 
 * The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
 
