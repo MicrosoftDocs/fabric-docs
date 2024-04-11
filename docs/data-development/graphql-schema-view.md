@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: conceptual
-ms.search.form: GraphQL API Overview
+ms.search.form: GrpahQL schema view
 ms.date: 04/05/2024
 ---
 
