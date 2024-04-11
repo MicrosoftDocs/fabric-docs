@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: Lee
 ms.topic: conceptual
 ms.custom:
-ms.date: 01/28/2024
+ms.date: 04/11/2024
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -166,20 +166,6 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Reports (based on supported semantic models)
 * Semantic models (except for Direct Lake semantic models)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
-
-### Unsupported items
-
-Deployment pipelines doesn't support the following items:
-
-* Dataflows Gen2
-* Datasets that don't originate from a *.pbix*
-* Direct Lake semantic model
-* PUSH datasets
-* Streaming dataflows
-* Reports based on unsupported semantic models
-* [Template app workspaces](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace)
-* Workbooks
-* Metrics
 
 ## Item properties copied during deployment
 
