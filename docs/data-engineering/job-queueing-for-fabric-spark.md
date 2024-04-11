@@ -14,75 +14,42 @@ ms.date: 04/10/2024
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Microsoft Fabric supports queueing of background jobs when you have hit your Spark compute limits for your Fabric capacity. The job queueing offers automatic retries to jobs that are added to the queue till they reach queue expiry. Users create a Microsoft Fabric capacity on Azure, they choose a capacity size based on their analytics workload size. In Spark, users get two Spark VCores for every capacity unit they reserve as part of their SKU.
+Microsoft Fabric supports the queueing of background jobs when you have reached your Spark compute limits for your Fabric capacity. The job queueing system offers automatic retries for jobs that are added to the queue until they reach queue expiry. When users create a Microsoft Fabric capacity on Azure, they choose a capacity size based on the size of their analytics workload. 
 
-*One Capacity Unit = Two Spark VCores*
+After purchasing the capacity, admins can create workspaces within the capacity in Microsoft Fabric. Spark jobs that run within these workspaces can use up to the maximum cores allocated for a given capacity, and once the max limit has been reached, the jobs are either throttled or queued. Learn more about the concurrency limits on Fabric Spark based on Fabric SKUs in Concurrency Limits on Fabric Spark. Learn more about the Spark concurrency limits [Spark Concurrency Limits in Microsoft Fabric](/spark-job-concurrency-and-queueing.md)
 
-Once they have purchased the capacity, admins can create workspaces within the capacity in Microsoft Fabric. The Spark VCores associated with the capacity are shared among all the Spark-based items like notebooks, Spark job definitions, and lakehouses created in these workspaces. Spark jobs that run within these workspaces can use upto the max cores allocated for a given capacity and once the max limit has been reached the jobs are either throttled or queued. Learn more about the concurrency limits on Fabric Spark based on Fabric SKUs [Concurrency limits on Fabric Spark](spark-job-concurrency-and-queueing.md)
-Job queueing is support for Notebook jobs that are triggered by Pipelines, or triggered through Scheduler, and Spark job definitions. The queue works in a First-In-First-Out(FIFO) manner where the jobs are added to the queue based on the time of their submission and are contsnalt retied and start executing when the capacity is freed up. 
+Job queueing is supported for Notebook jobs that are triggered by pipelines or through the scheduler, as well as for Spark job definitions. The queue operates in a First-In-First-Out (FIFO) manner, where jobs are added to the queue based on the time of their submission and are constantly retried and start executing when the capacity is freed up. 
 
 > [!NOTE]
-> The bursting factor only increases the total number of Spark VCores to help with the concurrency but doesn't increase the max cores per job. Users can't submit a job that requires more cores than what their Fabric capacity offers.
+> Queue expiration is 24 hours for all jobs from the time they were admitted into the queue. Once the expiration time is reached, the jobs will need to be resubmitted.
 
 
 ## Queue Sizes
 
-Fabric Spark enforces a cores-based throttling and queueing mechanism, where users can submit jobs based on the purchased Fabric capacity SKUs. The queueing mechanism is a simple FIFO-based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available. 
-When users submit notebook or lakehouse jobs like Load to Table when their capacity is at its maximum utilization due to concurrent running jobs using all the Spark Vcores available for their purchased Fabric capacity SKU, they're throttled with the message *HTTP Response code 430: Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later.*
+Fabric Spark enforces queue sizes based on the capacity SKU size attached to a workspace, providing a throttling and queueing mechanism where users can submit jobs based on the purchased Fabric capacity SKUs.
 
-With queueing enabled, notebook jobs triggered from pipelines and job scheduler and spark job defintions are added to the queue and automatically retried when the capacity is freed up.
-The queue expiration is set to 24 hours from the job submission time. After this period, the jobs will need to be resubmitted.
+The following section lists various queue sizes for Spark workloads based on Microsoft Fabric based on the capacity SKUs:
 
-Fabric capacities offer bursting which allows you to consume extra compute cores beyond what have been purchased to speed the execution of a workload. For Spark workloads bursting allows users to submit jobs with a total of 3X the Spark VCores purchased.
+| Fabric capacity SKU | Equivalent Power BI SKU | Queue limit |
+| ------------------- | ----------------------- | ----------- |
+| F2                  | -                       | 4           |
+| F4                  | -                       | 4           |
+| F8                  | -                       | 8           |
+| F16                 | -                       | 16          |
+| F32                 | -                       | 32          |
+| F64                 | P1                      | 64          |
+| F128                | P2                      | 128         |
+| F256                | P3                      | 256         |
+| F512                | P4                      | 512         |
+| F1024               | -                       | 1024        |
+| F2048               | -                       | 2048        |
+| Trial Capacity      | P1                      | NA          |
 
-> [!NOTE]
-> The bursting factor only increases the total number of Spark VCores to help with the concurrency but doesn't increase the max cores per job. Users can't submit a job that requires more cores than what their Fabric capacity offers.
-
-The following section lists various cores-based limits for Spark workloads based on Microsoft Fabric capacity SKUs:
-
-| Fabric capacity SKU | Equivalent Power BI SKU | Spark VCores | Max Spark VCores with Burst Factor | Queue limit |
-|--|--|--|--|--|
-| F2 | - | 4 | 20 | 4 |
-| F4 | - | 8 | 24 | 4 |
-| F8 | - | 16 | 48 | 8 |
-| F16 | - | 32 | 96 | 16 |
-| F32 | - | 64 | 192 | 32 |
-| F64 | P1 | 128 | 384 | 64 |
-| F128 | P2 | 256 | 768 | 128 |
-| F256 | P3 | 512 | 1536 | 256 |
-| F512 | P4 | 1024 | 3072 | 512 |
-| F1024 | - | 2048 | 6144 | 1024 |
-| F2048 | - | 4096 | 12288 | 2048 |
-| Trial Capacity | P1 | 128 | 128 |  NA |
-
-Example calculation:
-*F64 SKU* offers *128 Spark VCores*. The burst factor applied for a F64 SKU is 3, which gives a total of 384 Spark Vcores. The burst factor is only applied to help with concurrency and does not increase the max cores available for a single Spark job.  That means *a single Notebook or Spark Job Definition or Lakehouse Job* can use a pool configuration of max 128 vCores and 3 jobs with the same configuration can be run concurrently. If notebooks are using a smaller compute configuration, they can be run concurrently till the max utilization reaches the 384 SparkVcore limit.
 
 > [!NOTE]
-> The jobs have a queue expiration period of 24 hours, after which they are cancelled, and users must resubmit them for job execution.
-
-Fabric Spark throttling doesn't have enforced arbitrary jobs-based limits, and the throttling is only based on the number of cores allowed for the purchased Fabric capacity SKU.
-
-If the default pool (Starter Pool) option is selected for the workspace, the following table lists the max concurrency job limits.
-
-Learn more about the default starter pool configurations based on the Fabric Capacity SKU [Configuring Starter Pools](configure-starter-pools.md)
-
-| SKU Name         | Capacity Units | Spark VCores | Cores per Job (Default Starter Pools Configuration)| Max Jobs |
-|------------------|----------------|--------------|---------------------------|----------|
-| F2               | 2              | 4            | 8                         | 2        |
-| F4               | 4              | 8            | 8                         | 3        |
-| F8               | 8              | 16           | 16                        | 3        |
-| F16              | 16             | 32           | 32                        | 3        |
-| F32              | 32             | 64           | 64                        | 3        |
-| F64              | 64             | 128          | 80                        | 4        |
-| Trial Capacity   | 64             | 128          | 80                        | 4        |
-| F128             | 128            | 256          | 80                        | 9        |
-| F256             | 256            | 512          | 80                        | 19       |
-| F512             | 512            | 1024         | 80                        | 38       |
-| F1024            | 1024           | 2048         | 80                        | 76       |
-| F2048            | 2048           | 4096         | 80                        | 153      |
+> Queueing is not supported for Fabric trial capacities. Users would have to switch to a paid Fabric F or P SKU to use queueing for Spark jobs.
 
 ## Related content
 
-- Get started with [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).
+- Learn about the [Billing and utilization for Spark in Microsoft Fabric](billing-capacity-management-for-spark.md).
 - Learn about the [Spark compute for Fabric](spark-compute.md) data engineering and data science experiences.
