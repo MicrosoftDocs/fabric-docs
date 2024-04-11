@@ -108,7 +108,7 @@ When you add a task, the task type and its associated description are assigned a
 
 :::image type="content" source="./media/task-flows-overview/edit-task-name-description.png" alt-text="Screenshot showing how to edit the task name and description in the task details pane.":::
 
-You can switch the task to another task type by choosing another type from **Task type** dropdown menu.
+You can switch the task to another task type by choosing another type from the **Task type** dropdown menu.
 
 :::image type="content" source="./media/task-flows-overview/task-change-type.png" alt-text="Screenshot showing how to change task type in the task details pane.":::
 
@@ -118,7 +118,7 @@ To update or reset the task type for an existing task, simply select on the drop
 
 To add more tasks to the canvas, open the **Add** dropdown menu and select the desired task type. 
 
-:::image type="content" source="./media/task-flows-overview/add-task.png" alt-text="Screenshot showing the Add dropdown menu on the task flow canvas.":::
+:::image type="content" source="./media/task-flows-overview/add-task.png" alt-text="Screenshot showing the Add dropdown menu on the task flow canvas." lightbox="./media/task-flows-overview/add-task.png":::
 
 The task of the selected task type is added onto the canvas. You can update the name and description of the task as you did when you created the first task.  
 
