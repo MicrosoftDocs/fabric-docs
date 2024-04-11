@@ -20,6 +20,8 @@ After purchasing the capacity, admins can create workspaces within the capacity 
 
 Job queueing is supported for Notebook jobs that are triggered by pipelines or through the scheduler, as well as for Spark job definitions. The queue operates in a First-In-First-Out (FIFO) manner, where jobs are added to the queue based on the time of their submission and are constantly retried and start executing when the capacity is freed up. 
 
+    :::image type="content" source="./media/job-queueing-for-fabric-spark/job-queueing-animation.gif" alt-text="Animated illustration of the process of job queuing in Microsoft Fabric.":::
+
 > [!NOTE]
 > Queue expiration is 24 hours for all jobs from the time they were admitted into the queue. Once the expiration time is reached, the jobs will need to be resubmitted.
 
