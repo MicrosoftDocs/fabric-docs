@@ -56,7 +56,7 @@ When you deploy content from the source stage to a target stage, the source cont
 
 :::image type="content" source="media/intro-to-deployment-pipelines/replaced-content.png" alt-text="A screenshot of the replaced content warning displayed when a deployment is about to cause changes to items in the stage you're deploying to.":::
 
-You can learn more about [which items are copied to the next stage](understand-the-deployment-process.md#supported-items), and [which items are not copied](understand-the-deployment-process.md#unsupported-items), in [Understand the deployment process](understand-the-deployment-process.md).
+You can learn more about [which items are copied to the next stage](understand-the-deployment-process.md#supported-items), and which items are not copied, in [Understand the deployment process](understand-the-deployment-process.md).
 
 ## Automation
 
