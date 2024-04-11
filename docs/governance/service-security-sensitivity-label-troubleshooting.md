@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-eim
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/01/2024
+ms.date: 11/04/2024
 LocalizationGroup: Data from files
 ---
 
@@ -78,6 +78,10 @@ To prevent leakage of sensitive data, the Power BI admin can block export from n
 * Get data and refresh scenarios from encrypted Excel (*.xlsx*) files are supported, unless the file is stored behind a gateway, in which case the Get data/refresh action will fail. Get data and refresh actions from an Excel file that is stored behind a gateway and that has an **unprotected** sensitivity label will succeed, but the sensitivity label won't be inherited. See [Sensitivity label inheritance from data sources](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources) for detail.
 
 ## Problems with PBIX files
+
+### Export from the Power BI service to a .pbix file fails when I try to export a report that has a protected sensitivity label.
+
+When you exporti a report with a protected sensitivity label from the Power BI service to a pbix file, if the pbix file size gets to be greater than 6 GB, the protected label can't be applied (due to a Microsoft Purview Information Protection limitation) and the export fails.
 
 ### I can see a report and semantic model in the Power BI service, but when I download them to pbix, I get a message that says I don't have sufficient permissions to open the file
 
