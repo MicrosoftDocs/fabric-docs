@@ -26,7 +26,7 @@ Each task has a task type that classifies the task based on its key capabilities
 
 | Task type | What you want to do with the task |
 |:--------|:----------|
-| **General** | Create a customized task customized to your project needs that you can assign available item types to. |
+| **General** | Create a customized task for your project needs that you can assign available item types to. |
 | **Get data** | Ingest both batch and real-time data into a single location within your Fabric workspace. |
 | **Store data** | Organize, query, and store your ingested data in an easily retrievable format. |
 | **Prepare data** | Prepare your data for analysis or modeling by addressing issues with the data, such as duplicates, missing values, formatting, etc. |
