@@ -58,6 +58,7 @@ Data workflows provides a simple and efficient way to create and manage Apache A
 ### Step 3: Synchronize your GitHub Repository
 
 Specify the git repository you want to sync your Data workflows with.
+Specify the git repository you want to sync your Data workflows with.
 
 1. Click on 'Sync with Git' Card, you are navigated to 'File Storage'.
 
@@ -118,5 +119,7 @@ Specify the git repository you want to sync your Data workflows with.
    :::image type="content" source="media/data-workflows/start-apache-airflow.png" alt-text="Screenshot to start Apache Airflow Project.":::
 
 ## Related Content
+## Related Content
 
+* [Install Private Package in Data workflows](data-workflows-install-private-package.md).
 * [Install Private Package in Data workflows](data-workflows-install-private-package.md).

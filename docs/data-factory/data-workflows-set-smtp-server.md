@@ -1,6 +1,8 @@
 ---
 title: Set up SMTP server in Data workflows.
 description: This tutorial helps to set up smtp server in Data workflows.
+title: Set up SMTP server in Data workflows.
+description: This tutorial helps to set up smtp server in Data workflows.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -18,6 +20,7 @@ ms.date: 03/25/2024
 One of the features of Airflow is the ability to send email notifications and alerts when a task fails, succeeds, or retries. This feature can help you keep track of your workflows and troubleshoot any issues.
 
 To use email notifications and alerts, you need to set up a (Simple Mail Transfer Protocol) SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Data workflows using Gmail.
+To use email notifications and alerts, you need to set up a (Simple Mail Transfer Protocol) SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Data workflows using Gmail.
 
 ## Prerequisites
 
@@ -28,7 +31,9 @@ To use email notifications and alerts, you need to set up a (Simple Mail Transfe
 * One or more email addresses that you want to receive the notifications and alerts. These can be your own email addresses, or the email addresses of your team members, stakeholders, or clients.
 
 ## Set up the environment variables
+## Set up the environment variables
 
+* Once you have the prerequisites, you can configure the Data workflows to use your SMTP server or service. Edit the `Airflow configurations` section, with the following fields:
 * Once you have the prerequisites, you can configure the Data workflows to use your SMTP server or service. Edit the `Airflow configurations` section, with the following fields:
 
     * **AIRFLOW__SMTP__SMTP_HOST**: The hostname or IP address of your SMTP server or service.
@@ -93,10 +98,13 @@ The email contains the following information:
 * Error
 * Log: Link that redirects to the failed task logs.
 * Host: Host Name of Data workflows
+* Host: Host Name of Data workflows
 * Mark success: Link that redirects to the Failed DAG state.
 
     :::image type="content" source="media/data-workflows/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::
 
 ## Related Content
+## Related Content
 
+* Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).
 * Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).

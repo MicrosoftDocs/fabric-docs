@@ -47,6 +47,8 @@
       href: create-first-pipeline-with-sample-data.md
     - name: Create a Data workflows
       href: create-data-workflows.md
+    - name: Create a Data workflows
+      href: create-data-workflows.md
     - name: Operationalize Data Factory
       href: transform-data.md
     - name: Decide - Copy activity, dataflow, or Spark?
