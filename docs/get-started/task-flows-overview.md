@@ -70,7 +70,7 @@ Select the task flow that best fits your project needs and then choose **Select*
 * The items list shows all the items and folders in the workspace, including those items that are attached to tasks in the task flow. When you select a task in the task flow, the items list is filtered to show just the items that are attached to the selected task. In the preceding illustration, the items list is empty because no items have been created yet.
 
 > [!NOTE]
-. Selecting a predefined task flow just places the tasks involved in the task flow on the canvas and indicates the connections between them. It is just a graphical representation - no actual items or data connections are created at this point.
+> Selecting a predefined task flow just places the tasks involved in the task flow on the canvas and indicates the connections between them. It is just a graphical representation - no actual items or data connections are created at this point.
 
 ## Start with a custom task flow
 
@@ -84,7 +84,7 @@ Next, on the task flow canvas select **Add a task** and choose a task type.
 
 The task appears on the canvas. Note that the side panel now shows the task details.
 
-:::image type="content" source="./media/task-flows-overview/task-flow-initial-task.png" alt-text="Screenshot showing the first task added to the canvas.":::
+:::image type="content" source="./media/task-flows-overview/task-flow-initial-task.png" alt-text="Screenshot showing the first task added to the canvas." lightbox="./media/task-flows-overview/task-flow-initial-task.png":::
 
 You can continue to add other tasks to the canvas, as well as manage tasks and link tasks together. These topics are discussed in more detail in the following sections.
 
@@ -99,7 +99,7 @@ There are five parts in the Task details pane:
 1. Task name. A good task name should identify the task and provide a clear indication of its intended use.
 1. Number of items assigned to the task.
 1. Task description. A good task description provides a detailed explanation of the task and its intended use.
-1. Task type. By configuring and selecting task type, the specific category of the recommended items are different.
+1. Task type. By configuring and selecting task type, the specific category of the recommended items are different. [QUESTION: I don't understand this sentence very well.]
 1. Item recommendation: The list of items recommended for the task. The list of recommended items varies depending on the selected task type.
 
 ### Update task details and type
