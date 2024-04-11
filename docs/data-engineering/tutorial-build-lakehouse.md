@@ -110,7 +110,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 ## Build a report
 
-1. Previously all the lakehouse tables and views were automatically added to the semantic model. With the recent updates, you have to manually sync your tables to the semantic model. To do so, switch to the **SQL analytics endpoint** view. From the lakehouse **Home** tab, open the  lakehouse settings, select **Default Power BI semantic model** and turn on **Sync the default Power BI semantic model** setting.
+1. Previously all the lakehouse tables and views were automatically added to the semantic model. With the recent updates, you have to manually sync your tables to the semantic model. To do so, switch to the **SQL analytics endpoint** view. From the lakehouse **Home** tab, open the  lakehouse settings, select **Default Power BI semantic model** and turn on **Sync the default Power BI semantic model** setting. For more information, see [Default Power BI semantic models](../data-warehouse/semantic-models.md#sync-the-default-power-bi-semantic-model)
 
    :::image type="content" source="media\tutorial-build-lakehouse\enable-semantic-model-sync.png" alt-text="Screenshot showing how to turn on data sync to the default semantic model":::
 
