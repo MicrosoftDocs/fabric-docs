@@ -114,7 +114,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
    :::image type="content" source="media\tutorial-build-lakehouse\select-semantic-model-tables.png" alt-text="Screenshot where you can select the tables to add to the semantic model.":::
 
-1. To ensure that the tables in the semantic model are always in sync, switch to the **SQL analytics endpoint** view and open the lakehouse **settings** pane. Select **Default Power BI semantic model** setting and turn on **Sync the default Power BI semantic model** setting. For more information, see [Default Power BI semantic models](../data-warehouse/semantic-models.md#sync-the-default-power-bi-semantic-model)
+1. To ensure that the tables in the semantic model are always in sync, switch to the **SQL analytics endpoint** view and open the lakehouse **settings** pane. Select **Default Power BI semantic model** setting and turn on **Sync the default Power BI semantic model**. For more information, see [Default Power BI semantic models](../data-warehouse/semantic-models.md#sync-the-default-power-bi-semantic-model)
 
    :::image type="content" source="media\tutorial-build-lakehouse\enable-semantic-model-sync.png" alt-text="Screenshot showing how to turn on data sync to the default semantic model":::
 
