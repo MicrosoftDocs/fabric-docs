@@ -8,7 +8,7 @@ ms.topic: troubleshooting
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/17/2023
+ms.date: 04/11/2024
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -239,11 +239,13 @@ Workspaces that don't meet these conditions, aren't displayed in the list of wor
 ### I have 'unsupported items' in my workspace when I'm trying to deploy
 
 **Cause**: Deployment pipelines doesn't support all items.  
-**Solution**: For a comprehensive list of items that aren't supported in deployment pipelines, see the following sections:
+**Solution**: For a comprehensive list of supported items that in deployment pipelines, see the following sections:
 
-* [Unsupported items](deployment-pipelines/understand-the-deployment-process.md#unsupported-items)
+* [Supported items](deployment-pipelines/understand-the-deployment-process.md#supported-items)
 
 * [Item properties that aren't copied](deployment-pipelines/understand-the-deployment-process.md#item-properties-that-are-not-copied)
+
+Any item not listed in the supported items list isn't copied to the next stage.
 
 ### I want to change the data source in the pipeline stages
 
