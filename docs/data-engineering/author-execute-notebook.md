@@ -271,7 +271,7 @@ Examples:
 > [!NOTE] 
 > If the command does not contain **-b/--builtin**, it will attempt to find and execute notebook item inside the same workspace rather than the built-in resources.
 
-Examples for nested run case:
+Usage example for nested run case:
 
 1. Suppose we have two notebooks.
     - **Notebook1**: Contains *script_file1.py* in its built-in resources
