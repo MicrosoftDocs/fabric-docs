@@ -101,9 +101,11 @@ ChatGPT and GPT-4 models are language models that are optimized for conversation
 
 `deployment_name` could be one of:
 
--   `gpt-35-turbo`
--   `gpt-35-turbo-16k`
--   `gpt-4`
+-   `gpt-35-turbo` (to be deprecated)
+-   `gpt-35-turbo-16k` (to be deprecated)
+-   `gpt-4` (to be deprecated)
+-   `gpt-35-turbo-0125` (coming soon)
+-   `gpt-4-turbo` (coming soon)
 
 ``` python
 from pyspark.sql import Row
