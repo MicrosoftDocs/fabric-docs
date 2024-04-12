@@ -126,6 +126,9 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 - **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute
 - **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
 
+> [!NOTE]
+> You must have Hierarchical Namespaces enabled on your ADLS Gen 2 storage account.
+
 ### S3 shortcuts
 
 You can also create shortcuts to Amazon S3 accounts. When you create shortcuts to Amazon S3, the target path must contain a bucket name at a minimum. S3 doesn't natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
