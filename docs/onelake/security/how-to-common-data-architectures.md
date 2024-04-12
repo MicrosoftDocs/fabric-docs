@@ -14,52 +14,81 @@ ms.date: 11/15/2023
 
 ## Introduction
 
-In this article, we'll provide an overview of how to configure security for a lakehouse in Fabric for use with data science teams and workloads.
+In this article, we'll provide an overview of how to configure security for OneLake data in use for both data mesh and hub and spoke architectures.
 
 ## Security features
 
-Microsoft Fabric uses a multi-layer security model with different controls available at different levels in order to provide only the minimum needed permissions. For more information on the different security features available in Fabric, see this [document.](../security/data-access-control-model.md)
-
-
+Microsoft Fabric uses a multi-layer security model with different controls available at different levels in order to provide only the minimum needed permissions. For more information on the different security discussed in this how-to guide, see this [document.](../security/data-access-control-model.md)
 
 ## Secure for data mesh
 
-Security in Microsoft Fabric is optimized around securing data for specific use cases. A use case is a set of users needing specific access and accessing data through a given engine. For data science scenarios, some example use cases are:
+Data mesh is an architectural paradigm that treats data as a product, rather than a service or a resource. Data mesh aims to decentralize the ownership and governance of data across different domains and teams, while enabling interoperability and discoverability through a common platform. In a data mesh architecture, each decentralized team manages the ownership of the data that is part of their data product. The security guidance provided in this section is focused on a single data product team configuring access for their workspace. The steps will be repeated for each data product team on their own workspace, as they enable their downstream consumers.
 
-- Spark writers: Users that need to write data to a lakehouse using Spark notebooks.
-- Spark readers: Users that need to read data using Spark notebooks.
-- Pipeline readers: Users that need to read data from a lakehouse using pipelines.
-- Shortcut creators: Users that need to create shortcuts to data in a lakehouse.
+To get started building a data mesh, use the domain feature of Microsoft Fabric to tag workspaces according to their associated data product and ownership. For more information on domains, see []()
 
-We can then align each use case with the necessary permissions in Fabric.
+Within the domains, each team will have their own workspace or workspaces. The workspace will store the data and orchestration needed to build out the final data products for consumption. Grant users access to the workspace roles using [these guidelines.](#workspace-roles)
+
+Next, identify the downstream consumers of your data products and grant access according to the minimum permissions needed to achieve their goals. For example: data scientists, business analysts, and company leaders. To keep users aligned with their target experiences, each type of downstream user can be given access to a single Fabric data experience.
+
+
 
 ## Secure for hub and spoke
 
-### Write access
+A hub and spoke architecture differs from a data mesh by having all of the certified data products managed in a single, centrally owned location. Downstream consumers are less focused on building additional data products and instead perform analysis on the data produced by the central team.
 
-For users that need to write data in Fabric, access is controlled via the [Fabric workspace roles.](./get-started-security.md#workspace-permissions) There are three workspace roles that grant write permissions: Admin, Member, and Contributor. Choose the required role and grant users access to it.
+identify the downstream consumers and grant access according to the minimum permissions needed to achieve their goals. For example: data scientists, business analysts, and company leaders. To keep users aligned with their target experiences, each type of downstream user can be given access to a single Fabric data experience.
 
-Users with write access aren't restricted by [OneLake data access roles (preview).](./get-started-security.md) Write users can have their access restricted to data through the SQL Analytics endpoint data, but retain full access to the data in OneLake. To restrict access to data for write users, a separate workspace needs to be created for that data.
+| User persona | Fabric experience |
+| ---- | --- |
+| [Data scientists](#data-scientists) | Spark notebooks or lakehouse |
+| [Data engineers](#data-engineers) | N/A for hub and spoke |
+| [Business analysts](#business-analysts) | SQL Endpoint |
+| [Report creators](#report-creators) | Semantic models |
+| [Report consumers](#report-consumers) | Power BI reports |
 
-### Read access
+### Workspace roles
 
-For users that need to read data using pipelines or Spark notebooks, permissions are governed by the Fabric item permissions together with the [OneLake data access roles (preview).](./get-started-security.md) The Fabric item permissions govern what items a user can see and how they can access that item. The OneLake data access roles govern what data the user can access through experiences that connect to OneLake. For lakehouses without the OneLake data access roles preview enabled, instead access is governed by the ReadAll item permission and access to OneLake data is granted for the entire lakehouse.
+TODO
 
-In order to read data, a user first needs access to the lakehouse where that data lives. Granting access to a lakehouse can be done by selecting the **Share** button on a lakehouse either from the workspace page or from within the lakehouse UI. Enter the email addresses or security group for those users and select **Share**. (Leave the Additional permissions boxes unchecked. For lakehouses without the OneLake data access roles preview enabled, check the **Read all OneLake data (ReadAll)**) box.
+| Job responsibilities | Workspace role |
+| ---- | --- |
+| Own the workspace and manage role assignments | Admin |
+| Manage role assignments for non-admin users | Member |
+| Create Fabric items and write data | Contributor |
+| Create tables and views in SQL | Viewer + SQL permissions |
 
-Next, navigate to the lakehouse and select the **Manage OneLake data access (preview)** button. Using this experience you can create roles that grant users access to see and read from specific folders in the lakehouse. Access to folders is disallowed by default. Users that are added to a role are granted access to the folders covered by that role. For more information, see [OneLake data access roles (preview).](../security/get-started-data-access-roles.md) Create roles as needed to grant users access to read the folders through pipelines, shortcuts, or Spark notebooks.
+### Data scientists
 
-> [!IMPORTANT]
-> All lakehouses using the OneLake data access roles preview have a DefaultReader role that grants access to the lakehouse data. If a user has the ReadAll permission, they will not be restricted by other data access roles. Make sure that any users that are included in a data access role are not also part of the DefaultReader role or remove the DefaultReader role.
+Data scientists need access to data in a lakehouse to consume through Spark. In a data mesh, the consumption will take place in another workspace. Similarly, data engineers consume data from one workspace to build out additional data products in their own workspace. To allow these data scientists to access the data from their own workspace, provide these permissions.
 
-### Use with shortcuts
+Use the share button to share the lakehouse with data scientists. Check the "Read all Apache Spark" box in the dialog. For lakehouses with [OneLake data access roles (preview)]() enabled, instead give the same users access by adding them to a OneLake data access role. Using OneLake data access roles will give finer-grained access to the data. Data engineers can then create [shortcuts]() to only select tables or folders in a lakehouse.
 
-Shortcuts are a OneLake feature that allow for data to be referenced from one location without physically copying the data. For more information on shortcuts, see the document [here.](../onelake-shortcuts.md)
+### Data engineers
 
-You can secure data for use with shortcuts just like any other folder in OneLake. After configuring the data access roles, users from other lakehouses will only be able to create shortcuts to folders they have access to. This can be used to give users in other workspaces access to only select data in a lakehouse.
+Data scientists need access to data in a lakehouse to consume through Spark. In a data mesh, the consumption will take place in another workspace. Similarly, data engineers consume data from one workspace to build out additional data products in their own workspace. To allow these data scientists to access the data from their own workspace, provide these permissions.
 
-> [!IMPORTANT]
-> SQL Analytics Endpoint uses a fixed identity for accessing shortcuts. When a user queries a shortcut table through SQL Analytics Endpoint, the identity of the lakehouse owner is checked for access to the shortcut. This means that when creating shortcuts for use with SQL queries, the lakehouse creator also needs to be part of any OneLake data access roles that are restricting access to only selected folders.
+Use the share button to share the lakehouse with data scientists. Check the "Read all Apache Spark" box in the dialog. For lakehouses with [OneLake data access roles (preview)]() enabled, instead give the same users access by adding them to a OneLake data access role. Using OneLake data access roles will give finer-grained access to the data. Data engineers can then create [shortcuts]() to only select tables or folders in a lakehouse.
+
+### Business analysts
+
+Business analysts (sometimes call data analysts) query data through SQL to answer business questions.
+
+Use the share button to share the lakehouse with the business analysts. Check the "Read all SQL endpoint data" box in the dialog. This setting will give business analysts access to the data in the SQL endpoint, but not to see the underlying OneLake files.
+
+Access to data can be further restricted for these users by defining row or column level security directly in SQL.
+
+### Report creators
+
+Report creators build Power BI reports for other users to consume.
+
+Use the share button to share the lakehouse with the report creators. Check the "Build reports on the default semantic model" box in the dialog. This permission allows the report creators to build reports using the semantic model associated with the lakehouse. Those users cannot access the data in OneLake or have full access to the SQL endpoint.
+
+### Report consumers
+
+Report consumers are the business leaders or directors that need to view data in a Power BI report to make decisions but are not creating their own queries.
+
+Share a report with consumers using the share button. Don't check any of the boxes to grant acccess to read the report but not see any of the underlying data. However with this approach users can still connect to the SQL endpoint and view any tables they have access to. To prevent this, ensure that no SQL permissions are defined that would grant access for this set of users.
+
 
 ## Related content
 
