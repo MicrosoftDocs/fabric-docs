@@ -5,8 +5,6 @@ author: mihart
 ms.author: mihirwagle
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 03/29/2024
 ---
 
@@ -25,7 +23,7 @@ With a Fabric trial, you get the following features:
 * The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity. 
 
 Creating and collaborating in Fabric includes:
-  * Creating [Workspaces](workspaces.md) (folders) for projects that support Fabric capabilities.
+* Creating [Workspaces](workspaces.md) (folders) for projects that support Fabric capabilities.
   * Sharing Fabric items, such as semantic models, warehouses, and notebooks, and collaborating on them with other Fabric users.
   * Creating analytics solutions using Fabric items.
 
@@ -144,6 +142,10 @@ The Fabric trial capacity doesn't support autoscale. If you need more compute ca
 You can migrate your existing workspaces into a trial capacity using workspace settings and choosing "Trial" as the license mode. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
 
 :::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
+
+## Fabric Trial Capacity Availability by Azure Region
+
+[Fabric trial capacities are available in all regions.](../admin/region-availability.md)
 
 ## Related content
 
