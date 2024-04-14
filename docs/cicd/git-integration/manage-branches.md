@@ -51,7 +51,7 @@ For a developer who works in the web, the flow would be as follows:
 1. Create a new workspace (or use an existing one you already use).
 1. Assign that workspace a Premium license.
 1. Go to [**Git integration**](./git-get-started.md#connect-a-workspace-to-an-azure-repo) in workspace settings, and specify the repo details.
-1. Under **Branch** drop-down, choose **Create a new branch**, and branch it from the *main* branch.
+1. Under **Branch** drop-down, choose **+ New branch**, and branch it from the *main* (or *master*) branch.
 1. In **Git folder**, enter the name of the folder you want to sync to in your repo.
 
    The workspace syncs with your feature branch, and becomes a copy of the Dev team's workspace, as illustrated. You can now work in this new isolated environment.
@@ -62,6 +62,8 @@ For a developer who works in the web, the flow would be as follows:
 1. When ready, create a PR to the *main* branch. The review and merge processes are done through Azure Repos based on the configuration your team defined for that repo.
 
 Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes.
+
+Alternatively, if you're already connected to a Git branch, you can branch out to a new branch by selecting **Branch out to a new workspace** from the Source control panel.
 
 ## Switch branches
 
