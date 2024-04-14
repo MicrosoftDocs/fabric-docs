@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 03/12/2024
+ms.date: 04/14/2024
 ---
 
 # Security in Microsoft Fabric
@@ -70,6 +70,12 @@ With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts secur
 #### Managed Private Endpoints
 
 [Managed private endpoints](security-managed-private-endpoints-overview.md) allow secure connections to data sources such Azure SQL databases without exposing them to the public network or requiring complex network configurations.  
+
+#### Managed virtual networks
+
+[Managed virtual networks](security-managed-vnets-fabric-overview.md) are virtual networks that are created and managed by Microsoft Fabric for each Fabric workspace. Managed virtual networks provide network isolation for Fabric Spark workloads, meaning that the compute clusters are deployed in a dedicated network and are no longer part of the shared virtual network.
+
+Managed virtual networks also enable network security features such as managed private endpoints, and private link support for Data Engineering and Data Science items in Microsoft Fabric that use Apache Spark.
 
 #### Data gateway
 
