@@ -1,31 +1,20 @@
 ---
-title: "External data sharing in Microsoft Fabric"
-description: "This article describes the external data sharing feature in Microsoft Fabric."
+title: External data sharing
+description: Learn about sharing data from OneLake with external users.
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.date: 04/14/2024
-
-#customer intent: As a Fabric administrator, data creator, or data consumer, I want to learn about sharing data stored in OneLake from one tenant to another, so that data doesn't have to be copied when it is shared.
+ms.custom:
+ms.date: 03/19/2024
 ---
 
-# External data sharing in Microsoft Fabric
+# External data sharing
 
 Fabric external data sharing is a feature that enables Fabric users to share data from their tenant with users in another Fabric tenant. The data is shared *in-place* from [OneLake](../onelake/onelake-overview.md) storage locations in the sharer's tenant, meaning that no data is actually copied to the other tenant. Rather, this cross-tenant sharing creates a [OneLake shortcut](../onelake/onelake-shortcuts.md) in the other tenant that points back to the original data in the sharer's tenant. Data that is shared across tenant boundaries is exposed to users in the other tenant as read-only, and can be consumed by any OneLake compatible Fabric workload in that tenant.
 
 :::image type="content" source="./media/external-data-sharing-overview/external-data-share-illustration.png" alt-text="Illustration of a cross-tenant OneLake data share." border="false":::
 
 This external data sharing feature for Fabric OneLake data isn't related to the mechanism that exists for sharing Power BI semantic models with Entra B2B guest users.
-
-## Use cases
-
-<!-- Optional: Describe or list use cases - H2
-
-In an H2 section, briefly describe a few key scenarios that 
-you can use the feature in. Describe how to use it in those
-environments.
-
--->
 
 ## How does external data sharing work
 
@@ -71,5 +60,7 @@ With this understanding in mind, be aware of the following:
 ## Related content
 
 * [Create and manage external data shares](./external-data-sharing-create.md)
+
 * [Accept an external data share](./external-data-sharing-accept.md)
+
 * [Fabric admins: Set up external data sharing on your tenant](./external-data-sharing-enable.md)
