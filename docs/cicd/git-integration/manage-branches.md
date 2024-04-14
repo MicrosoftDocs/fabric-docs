@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
-ms.date: 06/23/2023
+ms.date: 04/14/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -16,7 +16,7 @@ ms.custom:
 The Fabric workspace is a shared environment that accesses live items. Any changes made directly in the workspace override and affect all other workspace users. Therefore, Git best practice is for developers to work in isolation outside of the shared workspaces. There are two ways for a developer to work in their own protected workspace.
 
 - [Develop using client tools](#develop-using-client-tools), such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for reports and semantic models, or [VS Code](https://code.visualstudio.com/) for Notebooks.
-- [Develop in a separate workspace](#develop-using-another-workspace). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
+- [Develop in a separate Fabric workspace](#develop-using-another-workspace). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
 
 [!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
@@ -25,6 +25,8 @@ To work with branches using Git integration, first connect the shared developmen
 Then, each developer can choose the isolated environment in which to work.
 
 ## Develop using client tools
+
+If the items you're developing are available in other tools, you can work on those items directly in the client tool. Not all items are available in every tool. Items that are only available in Fabric need to be developed in Fabric.
 
 The workflow for developers using a client tool like Power BI Desktop should look something like this:
 

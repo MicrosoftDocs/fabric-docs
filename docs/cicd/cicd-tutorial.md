@@ -7,12 +7,12 @@ ms.reviewer: NimrodShalit
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
-ms.date: 07/12/2023
+ms.date: 04/14/2024
 ---
 
 # Tutorial: Lifecycle management in Fabric
 
-This tutorial takes you through the whole process of loading data into your workspace, and using deployment pipelines together with Git integration to collaborate with others in the development, testing, and publication of your data and reports.
+In this tutorial, you go through the whole process of loading data into your workspace, and using deployment pipelines together with Git integration to collaborate with others in the development, testing, and publication of your data and reports.
 
 ## Prerequisites
 
@@ -31,12 +31,12 @@ To create a new workspace and assign it a license:
 
 1. From the left navigation bar of the **Power BI** experience, select **Workspaces > + New workspace**.
 
-   :::image type="content" source="media/cicd-tutorial/create-workspace.png" alt-text="Screenshot of Create workspace.":::
+   :::image type="content" source="media/cicd-tutorial/create-workspace.png" alt-text="Screenshot of Create workspace user interface.":::
 
 1. Name the workspace **FoodSalesWS**.
 1. (Optional) Add a description.
 
-   :::image type="content" source="media/cicd-tutorial/name-workspace.png" alt-text="Screenshot of new workspace with name.":::
+   :::image type="content" source="media/cicd-tutorial/name-workspace.png" alt-text="Screenshot of new workspace with name. The name is FoodSalesWS.":::
 
 1. Expand the **Advanced** section to reveal **License mode**.
 1. Select either **Trial** or **Premium capacity**.
@@ -53,7 +53,7 @@ You can upload content from OneDrive, SharePoint, or a local file. In this tutor
 
 1. From the top menu bar, select **Upload > Browse**.
 
-   :::image type="content" source="media/cicd-tutorial/upload-data.png" alt-text="Screenshot of Upload menu.":::
+   :::image type="content" source="media/cicd-tutorial/upload-data.png" alt-text="Screenshot of Upload menu user interface.":::
 
 1. Browse to the location of the **FoodSales.pbix** file you [downloaded earlier](#prerequisites), or load your own sample semantic model and report.
 
@@ -67,7 +67,7 @@ Before you create a deployment pipeline, you need to set the credentials. This s
 
 1. Go to **Settings > Power BI settings**.
 
-   :::image type="content" source="media/cicd-tutorial/settings.png" alt-text="Screenshot of Settings menu.":::
+   :::image type="content" source="media/cicd-tutorial/settings.png" alt-text="Screenshot of Settings menu user interface.":::
 
 1. Select **Semantic models > Data source credentials > Edit credentials**.
 
@@ -125,11 +125,11 @@ To create a deployment pipeline and assign the workspace to the development stag
 
 1. Name your pipeline *FoodSalesDP*, give it a description (optional) and select **Create**.
 
-   :::image type="content" source="media/cicd-tutorial/name-pipeline.png" alt-text="Screenshot of new pipeline with name.":::
+   :::image type="content" source="media/cicd-tutorial/name-pipeline.png" alt-text="Screenshot of how to create a new pipeline with name.":::
 
 1. Assign the FoodSalesWS workspace to the Development stage.
 
-   :::image type="content" source="media/cicd-tutorial/assign-workspace.png" alt-text="Screenshot of Assign workspace.":::
+   :::image type="content" source="media/cicd-tutorial/assign-workspace.png" alt-text="Screenshot of how to assign a workspace.":::
 
 The development stage of the deployment pipeline shows one semantic model, one report, and one dashboard. The other stages are empty.
 
@@ -169,27 +169,19 @@ For more information on deploying content, see [Deploy content](./deployment-pip
 
 In order to edit the workspace without interfering with other team members' changes, each team member creates their own isolated workspace to work in until they're ready to share their changes with the team.
 
-1. Create a new workspace like you did in [Step 1](#step-1-create-a-premium-workspace).
+1. From the **Source control** menu, select **Branch out to a new workspace**.
 
-   :::image type="content" source="./media/cicd-tutorial/isolated-workspace.png" alt-text="Screenshot of workspace with new workspace link displayed.":::
+    :::image type="content" source="media/cicd-tutorial/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
-1. Connect this new workspace to a new branch of the Git repo:
+1. Specify the following details about the branch you want to create:
 
-   From the dropdown menu, specify the following details about the branch you want to connect to:
+   * New branch name (for this tutorial, name it *MyFoodEdits*)
+   * Based on (default is the current branch)
+   * New workspace name (for this tutorial, name it *My_FoodSales*)
 
-   * [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
-   * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
-   * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
-   * Select **+ New Branch** to create a new branch.
-   * Name the new branch *MyFoodEdits*, branch it from *main* (or *master*), and Select **Create**.
-   * The folder in the repo where the *.pbix* file located.
+   :::image type="content" source="media/cicd-tutorial/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
 
-    :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
-
-1. Select **Connect and sync**.
-
-The new workspace now contains the content of the Git repo folder. Notice it doesn't contain the *.pbix* file. Since *.pbix* files are unsupported, this file wasn't copied to the Git repo when we synced.  
-This is the workspace you use to make changes to the semantic model and report until you're ready to share them with your team.
+1. Select **Branch out**.
 
 ## Step 7: Edit the workspace
 
@@ -224,7 +216,7 @@ The source control icon now shows `1` because one item in the workspace was chan
 1. Select the item to commit and add an optional message.
 1. Select **Commit**.
 
-   :::image type="content" source="media/cicd-tutorial/commit-changes.png" alt-text="Screenshot of committing changes.":::
+   :::image type="content" source="media/cicd-tutorial/commit-changes.png" alt-text="Screenshot of committing changes user interface.":::
 
 The Git status of the semantic model changes to *Synced* and the workspace and Git repo are in sync.
 
@@ -234,7 +226,7 @@ In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#c
 
 1. Select **Create a pull request**.
 
-   :::image type="content" source="media/cicd-tutorial/create-pull-request.png" alt-text="Screenshot of create pull request.":::
+   :::image type="content" source="media/cicd-tutorial/create-pull-request.png" alt-text="Screenshot of create pull request user interface.":::
 
 1. Provide a title, description, and any other information you want for the pull request. Then select **Create**.
 
@@ -255,7 +247,7 @@ The source control icon now shows 1 because one item in the Git repo was changed
 
 1. Select **Update all**.
 
-   :::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of update workspace.":::
+   :::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of the update workspace user interface.":::
 
 The Git status of the semantic model changes to *Synced* and the workspace is synced with the *main* Git branch.
 
@@ -271,7 +263,7 @@ The Git status of the semantic model changes to *Synced* and the workspace is sy
 
 1. Select the down arrow > **Review Changes** to view the changes. The **Change Review** screen shows the difference between the semantic models in the two stages.
 
-   :::image type="content" source="media/cicd-tutorial/change-review.png" alt-text="Screenshot of change review.":::
+   :::image type="content" source="media/cicd-tutorial/change-review.png" alt-text="Screenshot of change review user interface.":::
 
 1. Review the changes and close the window.
 
