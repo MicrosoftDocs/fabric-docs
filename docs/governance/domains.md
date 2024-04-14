@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 03/19/2024
+ms.date: 04/14/2024
 ---
 
 # Fabric domains
@@ -212,7 +212,7 @@ Select **Contributors** and then specify who can assign workspaces to the domain
 
 To specify a domain as a default domain, you must be a Fabric admin or a domain admin of the domain.
 
-Select **Default domain** and specify users and/or security groups. When you add people to the default domain list, new and unassigned workpaces they are admins of are automatically assigned to the domain. For a more detailed description of the process, see [Default domain](#default-domain).
+Select **Default domain** and specify users and/or security groups. When you add people to the default domain list, new and unassigned workspaces they're admins of are automatically assigned to the domain. For a more detailed description of the process, see [Default domain](#default-domain).
 
 :::image type="content" source="./media/domains/domain-specify-default-domain.png" alt-text="Screenshot showing default domain specification section.":::
 
@@ -245,7 +245,7 @@ Most of the actions available from the UI are available through the Fabric REST 
 
 ## Track user activity on domains
 
-Whenever a domain is created, edited or deleted, that activity is recorded in the audit log for Fabric. You can track these activities in the unified audit log or in the Fabric activity log. For information about the information in the Fabric auditing schema that's specific to domains, see [Audit schema for domains](./domains-audit-schema.md).
+Whenever a domain is created, edited, or deleted, that activity is recorded in the audit log for Fabric. You can track these activities in the unified audit log or in the Fabric activity log. For information about the information in the Fabric auditing schema that's specific to domains, see [Audit schema for domains](./domains-audit-schema.md).
 
 ## Related content
 
