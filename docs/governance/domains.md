@@ -61,7 +61,7 @@ For information about how to specify an image for a domain, see [Specify a domai
 
 ### Default domain
 
-A default domain is a domain that has been defined as the default domain for specified users and/or specified security groups. When you define a domain as the default domain for specified users and/or specified security groups, the following happens:
+A default domain is a domain that has been defined as the default domain for specified users and/or security groups. When you define a domain as the default domain for specified users and/or security groups, the following happens:
 
 1. The system scans the organization's workspaces. When it finds a workspace whose admin is a specified user or member of a specified security group:
     * If the workspace already has a domain assignment, it is preserved. The default domain doesn't override the current assignment.
