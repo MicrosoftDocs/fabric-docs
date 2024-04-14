@@ -63,8 +63,8 @@ For information about how to specify an image for a domain, see [Specify a domai
 
 A default domain is a domain that has been defined as the default domain for specified users and/or specified security groups. When you define a domain as the default domain for specified users and/or specified security groups, the following happens:
 
-1. The system scans the organization's workspaces. When it finds a workspace whose admin is one of the specified users or a member of the one of the specified security groups:
-    * If the workspace already has a domain assignment, nothing happens. The default domain doesn't override the current assignment.
+1. The system scans the organization's workspaces. When it finds a workspace whose admin is a specified user or member of a specified security group:
+    * If the workspace already has a domain assignment, it is preserved. The default domain doesn't override the current assignment.
     * If the workspace is unassigned, it is assigned to the default domain.
 1. After this, whenever a specified user or member of a specified security group creates a new workspace, it is assigned to the default domain.
 
@@ -210,9 +210,9 @@ Select **Contributors** and then specify who can assign workspaces to the domain
 
 ### Define the domain as a default domain
 
-To specify a domain as a default domain, you must be a Fabric admin or a domain admin of the domain.
+To define a domain as a default domain, you must be a Fabric admin or a domain admin of the domain.
 
-Select **Default domain** and specify users and/or security groups. When you add people to the default domain list, new and unassigned workspaces they're admins of are automatically assigned to the domain. For a more detailed description of the process, see [Default domain](#default-domain).
+Select **Default domain** and specify users and/or security groups. When you add people to the default domain list, unassigned workspaces they're admins of, and new workspaces they create, will automatically be assigned to the domain. For a detailed description of the process, see [Default domain](#default-domain).
 
 :::image type="content" source="./media/domains/domain-specify-default-domain.png" alt-text="Screenshot showing default domain specification section.":::
 
