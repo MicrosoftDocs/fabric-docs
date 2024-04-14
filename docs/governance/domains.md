@@ -156,7 +156,7 @@ The domain settings side pane has the following tabs:
 * [Image](#specify-a-domain-image): Specify domain image
 * [Admins](#specify-domain-admins): Specify domain admins
 * [Contributors](#specify-domain-contributors): Specify domain contributors
-* [Default domain](#specify-a-default-domain): Set up domain as a default domain
+* [Default domain](#define-the-domain-as-a-default-domain): Set up domain as a default domain
 * [Delegated settings](#delegate-settings-to-the-domain-level): Override tenant-level settings
 
 > [!NOTE]
