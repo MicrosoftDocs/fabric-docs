@@ -70,7 +70,7 @@ A default domain is a domain that has been defined as the default domain for spe
 
 The specified users and/or members of the specified security groups generally automatically become domain contributors of workspaces that are assigned in this manner.
 
-For information about specifying a default domain, see [Specify a default domain](#define-the-domain-as-a-default-domain).
+For information about defining a domain as a default domain, see [Define the domain as a default domain](#define-the-domain-as-a-default-domain).
 
 ## Create a domain
 
