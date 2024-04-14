@@ -61,9 +61,16 @@ For information about how to specify an image for a domain, see [Specify a domai
 
 ### Default domain
 
-A default domain is a domain that has been specified as the default domain for specific users and/or security groups. This means that when these users/security groups create a new workspace, or when they update an unassigned workspace they're an admin of, that workspace will automatically be assigned to that domain. These users/security groups generally automatically become domain contributors of the workspaces that are assigned in this manner.
+A default domain is a domain that has been defined as the default domain for specified users and/or specified security groups. When you define a domain as the default domain for specified users and/or specified security groups, the following happens:
 
-For information about specifying a default domain, see [Specify a default domain](#specify-a-default-domain).
+1. The system scans the organization's workspaces. When it finds a workspace whose admin is one of the specified users or a member of the one of the specified security groups:
+    * If the workspace already has a domain assignment, nothing happens. The default domain doesn't override the current assignment.
+    * If the workspace is unassigned, it is assigned to the default domain.
+1. After this, whenever a specified user or member of a specified security group creates a new workspace, it is assigned to the default domain.
+
+The specified users and/or members of the specified security groups generally automatically become domain contributors of workspaces that are assigned in this manner.
+
+For information about specifying a default domain, see [Specify a default domain](#define-the-domain-as-a-default-domain).
 
 ## Create a domain
 
@@ -201,16 +208,16 @@ Select **Contributors** and then specify who can assign workspaces to the domain
 >[!NOTE]
 > For domain contributors to be able to associate their workspaces with their domains, they must have an admin role in the workspaces they are trying to associate with the domain.
 
-### Specify a default domain
+### Define the domain as a default domain
 
 To specify a domain as a default domain, you must be a Fabric admin or a domain admin of the domain.
 
-Select **Default domain** and specify users and/or security groups. When the specified users and/or security groups create new workspaces, or update unassigned workspaces, those workspaces will automatically be assigned to the domain.
+Select **Default domain** and specify users and/or security groups. When you add people to the default domain list, new and unassigned workpaces they are admins of are automatically assigned to the domain. For a more detailed description of the process, see [Default domain](#default-domain).
 
 :::image type="content" source="./media/domains/domain-specify-default-domain.png" alt-text="Screenshot showing default domain specification section.":::
 
 > [!Note]
-> The users/security groups specified in the default domain definition generally automatically become domain contributors of the workspaces that get assigned to the domain via the default domain mechanism.
+> The users and/or members of the security groups specified in the default domain definition generally automatically become domain contributors of the workspaces that get assigned to the domain via the default domain mechanism.
 
 ### Delegate settings to the domain level
 
