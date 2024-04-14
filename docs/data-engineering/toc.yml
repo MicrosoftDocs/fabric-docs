@@ -59,7 +59,7 @@ items:
     href: lakehouse-shortcuts.md
   - name: Stream data to a lakehouse
     href: lakehouse-streaming-data.md
-- name: Lakehouse collaboration
+- name: Lakehouse access control
   items:
   - name: Workspace roles and permissions
     href: workspace-roles-lakehouse.md
@@ -91,8 +91,10 @@ items:
       href: high-concurrency-overview.md
     - name: Autotune Spark configuration
       href: autotune.md
-    - name: Spark concurrency limits and queueing
+    - name: Spark concurrency limits
       href: spark-job-concurrency-and-queueing.md
+    - name: Job queueing for Fabric Spark
+      href: job-queueing-for-fabric-spark.md
   - name: Spark job definition
     items:
     - name: What is a Spark job definition?

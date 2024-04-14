@@ -8,7 +8,7 @@ ms.custom:
   - intro-get-started
   - build-2023
   - ignite-2023
-ms.date: 3/6/2024
+ms.date: 04/14/2024
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
@@ -105,19 +105,17 @@ You can have as many public stages as you want, or none at all. To change the pu
 
 When you finished working with content in one pipeline stage, you can deploy it to the next stage. Deploying content to another stage is often done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production, but you can deploy in any direction. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
-Deployment pipelines offer three options when it comes to deploying your content:
+Deployment pipelines offer two options when it comes to deploying your content:
 
 * [Full deployment](deploy-content.md#deploy-all-content) - Deploy all your content to the target stage.
 
 * [Selective deployment](deploy-content.md#selective-deployment) - Select which content to deploy to the target stage.
 
-* [Backwards deployment](deploy-content.md#backwards-deployment) - Deploy your content to a previous stage in the pipeline.
-
 After you choose how to deploy your content, you can [Review your deployment and leave a note](deploy-content.md#review-your-deployment-and-leave-a-note).
 
 ## Step 5 - Deploy content from one stage to another
 
-Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. Items with the same name and type are overwritten. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
+Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](./assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
 To deploy content to the next stage in the deployment pipeline, select the deploy button at the bottom of the stage.
 

@@ -126,6 +126,9 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 - **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute
 - **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
 
+> [!NOTE]
+> You must have Hierarchical Namespaces enabled on your ADLS Gen 2 storage account.
+
 ### S3 shortcuts
 
 You can also create shortcuts to Amazon S3 accounts. When you create shortcuts to Amazon S3, the target path must contain a bucket name at a minimum. S3 doesn't natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
@@ -154,6 +157,32 @@ The IAM user must have the following permissions on the bucket that the shortcut
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
 
+### Google Cloud Storage shortcuts (Preview)
+
+Shortcuts can be created to Google Cloud Storage(GCS) using the XML API for GCS.  When you create shortcuts to Google Cloud Storage, the target path must contain a bucket name at a minimum.  You can also restrict the scope of the shortcut by further specifying the prefix/folder you want to point to within the storage hierarchy. 
+
+#### Access
+
+When configuring the connection for a GCS shortcut you can either specify the global endpoint for the storage service or use a bucket specific endpoint.
+
+- Global Endpoint example: `https://storage.googleapis.com`
+- Bucket Specific Endpoint example: ` https://<BucketName>.storage.googleapis.com`
+
+#### Authorization
+
+GCS shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the GCS shortcut and all access to that shortcut is authorized using that credential. The supported delegated credential is an HMAC key and secret for a Service account or User account.
+
+The account must have permission to access the data within the GCS bucket. If the bucket specific endpoint was used in the connection for the shortcut, the account must have the following permissions:
+
+- `storage.objects.get`
+- `stoage.objects.list`
+
+If the global endpoint was used in the connection for the shortcut, the account must also have the following permission:
+- `storage.buckets.list`
+
+> [!NOTE]
+> GCS shortcuts are read-only. They don't support write operations regardless of the permissions for the account used.
+
 ### Dataverse shortcuts
 
 Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. This integration is accomplished through shortcuts, which can be created in two ways: through the PowerApps maker portal or through Fabric directly.
@@ -178,7 +207,7 @@ Dataverse shortcuts use a delegated authorization model. In this model, the shor
 ## Caching (Preview)
 Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24hrs it is purged from the cache. Individual files greater than 1GB in size are not cached.
 > [!NOTE]
-> Shortcut caching is currently only supported for S3 shortcuts.
+> Shortcut caching is currently only supported for GCS, S3 and S3 compatible shortcuts.
 
 To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and click **Save**.
 
@@ -209,6 +238,14 @@ The following table shows the shortcut-related permissions for each workspace ro
 <sup>2</sup> Users must have a role that provides read permission both in the shortcut location and the target location.
 
 <sup>3</sup> Users must have a role that provides write permission both in the shortcut location and the target location.
+
+## OneLake data access roles (preview)
+
+[OneLake data access roles](./security/get-started-data-access-roles.md) is a new feature that enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, and assign them to users or groups. The access permissions determine what folders users see when accessing the lake view of the data, either through the lakehouse UX, notebooks, or OneLake APIs. For items with the preview feature enabled, OneLake data access roles also determine a user's access to a shortcut.
+
+Users in the Admin, Member, and Contributor roles have full access to read data from a shortcut regardless of the OneLake data access roles defined. However they still need access on both the source and target of the shortcut as mentioned in [Workspace roles](./security/get-started-security.md#workspace-permissions).
+
+Users in the Viewer role or that had a lakehouse shared with them directly have access restricted based on if the user has access through a OneLake data access role. For more information on the access control model with shortcuts, see [Data Access Control Model in OneLake.](./security/data-access-control-model.md#shortcuts)
 
 ## How do shortcuts handle deletions?
 

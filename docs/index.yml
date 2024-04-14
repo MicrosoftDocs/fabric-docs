@@ -307,9 +307,9 @@ productDirectory:
         - url: /industry/sustainability/sustainability-data-solutions-overview
           text: What is Sustainability data solutions? 
         - url: /industry/healthcare/healthcare-data-solutions/overview
-          text: Healthcare data solutions in Microsoft Fabric
-        - url: /industry/retail/retail-data-solutions/deploy-retail-data-solutions
-          text: Deploy Retail data solutions
+          text: What is healthcare data solutions?
+        - url: /industry/healthcare/healthcare-data-explorer/overview
+          text: What is healthcare data explorer?
         - url: /industry/industry-data-solutions-fabric
           text: See more
 

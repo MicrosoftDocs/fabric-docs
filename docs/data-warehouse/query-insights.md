@@ -4,7 +4,7 @@ description: Query insights makes past query execution data and aggregated insig
 author: mariyaali
 ms.author: mariyaali
 ms.reviewer: wiassaf
-ms.date: 12/06/2023
+ms.date: 03/28/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -20,7 +20,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], the query insights fe
 The query insights feature provides a central location for historic query data and actionable insights for 30 days, helping you to make informed decisions to enhance the performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)]. When a SQL query runs in [!INCLUDE [product-name](../includes/product-name.md)], the query insights feature collect and consolidates its execution data, providing you with valuable information. You can view complete query text for Admin, Member, and Contributor roles.
 
 - **Historical Query Data:** The query insights feature stores historical data about query executions, enabling you to track performance changes over time. System queries aren't stored in query insights.
-- **Aggregated Insights:** The query insights feature aggregates query execution data into insights that are more actionable, such as identifying long-running queries or most active users.
+- **Aggregated Insights:** The query insights feature aggregates query execution data into insights that are more actionable, such as identifying long-running queries or most active users. These aggregations are based on the query shape and is explained further in [How are similar queries aggregated to generate insights?](#how-are-similar-queries-aggregated-to-generate-insights).
 
 ## Before you begin
 
@@ -70,6 +70,8 @@ After your query completes execution, you see its execution data in the `queryin
 ## How are similar queries aggregated to generate insights?
 
 Queries are considered the same by the query insights feature if, other than predicate value, two queries have an exact match in the query text. White spaces and new line characters render the queries to be considered different.
+
+You can utilize the `query hash` column in the views to analyze similar queries and drill down to each execution.
 
 For example, the following queries are considered the same after their predicates are parameterized:
 

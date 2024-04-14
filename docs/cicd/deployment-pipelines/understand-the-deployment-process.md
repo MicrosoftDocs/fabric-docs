@@ -3,12 +3,10 @@ title: The Microsoft Fabric deployment pipelines process
 description: Understand how deployment pipelines, the Fabric Application lifecycle management (ALM) tool, works.
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: Lee
 ms.topic: conceptual
 ms.custom:
-  - intro-deployment
-  - build-2023
-  - ignite-2023
-ms.date: 01/21/2024
+ms.date: 04/14/2024
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -34,13 +32,11 @@ After the deployment is complete, refresh the semantic models so that you can us
 
 The first time you deploy content, deployment pipelines checks if you have permissions.  
 
-If you have permissions, the content of the workspace is copied to the stage you're deploying to, and a new  workspace for that stage is created on the capacity.
+If you have permissions, the content of the workspace is copied to the stage you're deploying to, and a new workspace for that stage is created on the capacity.
 
 If you don't have permissions, the workspace is created but the content isn’t copied. You can ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. Later, when the workspace is assigned to a capacity, you can deploy content to this workspace.
 
 If you're using [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq), your workspace is automatically associated with your PPU. In such cases, permissions aren't required. However, if you create a workspace with a PPU, only other PPU users can access it. In addition, only PPU users can consume content created in such workspaces.
-
-### Workspace and content ownership
 
 The deploying user automatically becomes the owner of the cloned semantic models, and the only admin of the new workspace.
 
@@ -131,33 +127,45 @@ In many cases, when you have a small change such as adding or removing a table, 
 
 Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity-license) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
 
+## Folders in deployment pipelines (preview)
+
+[Folders](./manage-workspace-content.md) in a workspace enable users to efficiently organize and manage workspace items in a familiar way.
+When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
+
+### Folders representation
+
+Since a deployment is of items only, workspace content is shown in Deployment pipelines as a flat list of items. An item’s full path is shown when hovering over its name on the list.
+In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it will be created in its workspace first. Folders can be seen and managed only on the workspace page.
+
+:::image type="content" source="media/understand-the-deployment-process/folder-path.png" alt-text="Screenshot showing the full pathname of an item inside a folder. The name includes the name of the folder.":::
+
+### Identify items that were moved to different folders
+
+Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* in *Compare* mode. Moreover, unless there is also a schema change, the option next to the label to open a *Change review* window which presents the schema changes, is disabled. Hovering over it shows a note saying the change is a *settings* change (like *rename*). This is because compared to their paired items on the source stage, the change is not yet deployed.
+
+:::image type="content" source="media/understand-the-deployment-process/moved-folder-item.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder.":::
+
+* Individual folders can't be deployed manually in deployment pipelines. Their deployment is triggered automatically when at least one of their items is deployed.
+
+* The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items isn't updated yet.
+
+* Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
+
+* Deploying one item out of several in a folder also updates the structure of the items which aren't deployed in the target stage even though the items themselves aren't be deployed.
+
 ## Supported items
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
+* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
 * Dataflows Gen1
 * Datamarts
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* Paginated reports
+* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (based on supported semantic models)
 * Semantic models (except for Direct Lake semantic models)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
-
-### Unsupported items
-
-Deployment pipelines doesn't support the following items:
-
-* Dataflows Gen2
-* Data pipelines
-* Datasets that don't originate from a *.pbix*
-* Direct Lake semantic model
-* PUSH datasets
-* Streaming dataflows
-* Reports based on unsupported semantic models
-* [Template app workspaces](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace)
-* Workbooks
-* Metrics
 
 ## Item properties copied during deployment
 
@@ -254,7 +262,7 @@ The following are a few examples of how you may integrate incremental refresh wi
 
 * Enable incremental refresh in a semantic model that's already in a *development* workspace.  
 
-* Create a pipeline from a production workspace that has a semantic model that uses incremental refresh. This is done by using [backwards deployment](./deploy-content.md#backwards-deployment). For example, assign the workspace to a new pipeline's *production* stage, and use backwards deployment to deploy to the *test* stage, and then to the *development* stage.
+* Create a pipeline from a production workspace that has a semantic model that uses incremental refresh. For example, assign the workspace to a new pipeline's *production* stage, and use backwards deployment to deploy to the *test* stage, and then to the *development* stage.
 
 * Publish a semantic model that uses incremental refresh to a workspace that's part of an existing pipeline.
 
@@ -276,7 +284,7 @@ Other changes such as adding a column, removing a column, and renaming a calcula
 
 Using [composite models](/power-bi/transform-model/desktop-composite-models) you can set up a report with multiple data connections.
 
-You can use the composite models functionality to connect a Fabric semantic model to an external semantic models such as Azure Analysis Services. For more information, see [Using DirectQuery for Fabric semantic models and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services).
+You can use the composite models functionality to connect a Fabric semantic model to an external semantic model such as Azure Analysis Services. For more information, see [Using DirectQuery for Fabric semantic models and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services).
 
 In a deployment pipeline, you can use composite models to connect a semantic model to another Fabric semantic model external to the pipeline.
 
@@ -381,7 +389,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#considerations-and-limitations).
 
-* For a list of unsupported items, see [unsupported items](#unsupported-items).
+* For a list of supported items, see [supported items](#supported-items). Any item not on the list isn't supported.
 
 * The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
 
