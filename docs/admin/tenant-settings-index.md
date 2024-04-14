@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/07/2024
+ms.date: 04/14/2024
 ---
 
 # Tenant settings index
@@ -20,7 +20,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Users can create Fabric items](fabric-switch.md)|Users can use production-ready features to create Fabric items. Turning off this setting doesn't impact users’ ability to create Power BI items. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2247554)|
 |Users can create Fabric environments to save and apply Spark settings (preview)|In Synapse Data Engineering and Data Science, users can select specific Spark runtimes, configure compute resources, and install libraries, and then save their choices as an environment. Environments can be attached to workspaces, notebooks, and Spark job definitions.|
 |[Sustainability solutions (preview)](/industry/sustainability/sustainability-data-solutions-overview)|Turn on this setting to give your tenant users the permission to deploy the Sustainability solutions (preview) and its associated capabilities.  [Learn More](https://aka.ms/learn-about-sustainability-solutions)|
-|Retail data solutions (preview)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://aka.ms/Retail_data_solutions)|
+|Retail data solutions (preview)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://go.microsoft.com/fwlink/?linkid=2263806)|
 |Healthcare data solutions (preview)|Use advanced AI analytics to help generate new insights, enhance patient care, and improve outcomes.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2248375)|
 |[Create Eventhouse (preview)](../real-time-analytics/eventhouse.md)|Users in the organization can use Eventhouse|
 |[Database Mirroring (preview)](../database/mirrored-database/overview.md)|Users can connect to and continuously replicate data from an external database into Fabric OneLake via Delta tables. Once in OneLake, users can operationalize the data (i.e., run analytics with Spark, execute notebooks, visualize through Power BI Reports, etc.). This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2261406)|
