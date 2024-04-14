@@ -44,6 +44,8 @@ External data sharing is currently supported for data residing in tables or file
 
 * [KQL databases](../real-time-analytics/create-database.md)
 
+## Revoking external data shares
+
 ## Security Considerations
 
 Sharing data with users outside your home tenant has implications for data security and privacy that you should consider. It's important to understand the underlying flows of data sharing to better evaluate these implications.
