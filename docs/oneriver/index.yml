@@ -33,7 +33,7 @@ landingContent:
             url: get-started-bring-events-oneriver.md
 
   # Card 
-  - title: Get events from create streams
+  - title: Get events and create streams
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -42,19 +42,7 @@ landingContent:
           - text: Get events from external sources
             url: get-events-external-sources.md
           - text: Get system events
-            url: get-system-events.md
-
-  # Card 
-  - title: Get events from create streams
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Get events from Microsoft sources
-            url: get-events-microsoft-sources.md
-          - text: Get events from external sources
-            url: get-events-external-sources.md
-          - text: Get system events
-            url: get-system-events.md
+            url: get-fabric-events.md
 
   # Card 
   - title: Discover and manage streams
@@ -63,21 +51,23 @@ landingContent:
         links:
           - text: Explore streams
             url: explore-streams.md
+          - text: View stream details
+            url: view-stream-details.md
           - text: Preview streams
             url: preview-streams.md
-          - text: View lineage
-            url: view-lineage.md
           - text: Endorse streams
             url: endorse-streams.md
+          - text: Explore Fabric events
+            url: endorse-fabric-events.md
 
   # Card 
-  - title: Consume streams
+  - title: Consume events and streams
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Trigger actions on streams
-            url: trigger-actions-streams.md
-          - text: Trigger actions on system events
-            url: trigger-actions-system-events.md
-          - text: Create dashboards
-            url: create-dashboards.md 
+        - text: Set alerts on streams
+          url: set-alerts-streams.md
+        - text: Set alerts on Fabric events
+          url: set-alerts-fabric-events.md
+        - text: Consume Fabric events using an event stream
+          url: consume-fabric-events-event-stream.md
