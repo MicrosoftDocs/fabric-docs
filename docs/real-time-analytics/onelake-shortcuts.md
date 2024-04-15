@@ -115,7 +115,7 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 | `boolean` | `bool`
 | `binary` | `string`
 | `date` | `datetime`
-| timestamp_ntz (without time zone)| `datetime` 
+| `timestamp_ntz` (without time zone)| `datetime` 
 | `struct` | `dynamic`
 | `array` | `dynamic`
 | `map` | `dynamic`
