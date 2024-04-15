@@ -72,7 +72,7 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
 
 ## Data types mapping
 
-### Eventhouse to Delta parquet data types mapping
+### Event house to Delta parquet data types mapping
 
  Event house data types are mapped to Delta Parquet data types using the following rules. For more information on Event house data types, see [Scalar data types](/azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric).
 
