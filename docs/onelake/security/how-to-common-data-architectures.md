@@ -24,7 +24,7 @@ Microsoft Fabric uses a multi-layer security model with different controls avail
 
 Data mesh is an architectural paradigm that treats data as a product, rather than a service or a resource. Data mesh aims to decentralize the ownership and governance of data across different domains and teams, while enabling interoperability and discoverability through a common platform. In a data mesh architecture, each decentralized team manages the ownership of the data that is part of their data product. The security guidance provided in this section is focused on a single data product team configuring access for their workspace. The steps will be repeated for each data product team on their own workspace, as they enable their downstream consumers.
 
-To get started building a data mesh, use the domain feature of Microsoft Fabric to tag workspaces according to their associated data product and ownership. For more information on domains, see [Fabric domains.](..\..\governance\domains.md)
+To get started building a data mesh, use the domain feature of Microsoft Fabric to tag workspaces according to their associated data product and ownership. For more information on domains, see [Fabric domains.](../../governance/domains.md)
 
 Within the domains, each team will have their own workspace or workspaces. The workspace will store the data and orchestration needed to build out the final data products for consumption. Grant users access to the workspace roles using [these guidelines.](#workspace-roles)
 
@@ -53,7 +53,7 @@ Identify the downstream consumers and grant access according to the minimum perm
 
 ### Workspace roles
 
-Workspace role assignments follow the same guidelines for both hub and spoke and data mesh architectures. The job responsibilities table outlines which workspace role to assign users based on the functions they will perform in the workspace. For more information on the Fabric workspace roles see [this document.](..\..\get-started\roles-workspaces.md)
+Workspace role assignments follow the same guidelines for both hub and spoke and data mesh architectures. The job responsibilities table outlines which workspace role to assign users based on the functions they will perform in the workspace. For more information on the Fabric workspace roles see [this document.](../../get-started/roles-workspaces.md)
 
 | Job responsibilities | Workspace role |
 | ---- | --- |
@@ -94,7 +94,7 @@ Report consumers are the business leaders or directors that need to view data in
 
 Share a report with consumers using the share button. Don't check any of the boxes to grant acccess to read the report but not see any of the underlying data. However with this approach users can still connect to the SQL endpoint and view any tables they have access to. To prevent this, ensure that no SQL permissions are defined that would grant access for this set of users.
 
-You can also share data with report consumers by using an [app](https://learn.microsoft.com/en-us/power-bi/consumer/end-user-apps). Apps allow users to access a predefined report or set of reports without needing access to the underlying workspace. Note that for reports in direct lake mode, the users will still need to have the underlying lakehouse shared with them in order to see data.
+You can also share data with report consumers by using an [app](/power-bi/consumer/end-user-apps.md). Apps allow users to access a predefined report or set of reports without needing access to the underlying workspace. Note that for reports in direct lake mode, the users will still need to have the underlying lakehouse shared with them in order to see data.
 
 ## Related content
 
