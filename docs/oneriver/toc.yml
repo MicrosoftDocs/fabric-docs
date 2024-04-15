@@ -15,25 +15,27 @@ items:
     href: get-events-microsoft-sources.md
   - name: Get events from external sources
     href: get-events-external-sources.md
-  - name: Get system events
-    href: get-system-events.md
+  - name: Get Fabric events
+    href: get-fabric-events.md
 - name: Discover and manage streams
   items:
   - name: Explore streams
     href: explore-streams.md
+  - name: View stream details
+    href: view-stream-details.md
   - name: Preview streams
     href: preview-streams.md
-  - name: View lineage
-    href: view-lineage.md
   - name: Endorse streams
     href: endorse-streams.md
-- name: Consume streams
+  - name: Explore Fabric events
+    href: explore-fabric-events.md
+- name: Consume events and streams
   items:
-  - name: Trigger actions on streams
-    href: trigger-actions-streams.md
-  - name: Trigger actions on system events
-    href: trigger-actions-system-events.md
-  - name: Create dashboards
-    href: create-dashboards.md
+  - name: Set alerts on streams
+    href: set-alerts-streams.md
+  - name: Set alerts on Fabric events
+    href: set-alerts-fabric-events.md
+  - name: Consume Fabric events using an eventstream
+    href: consume-fabric-events-event-stream.md
     
     
