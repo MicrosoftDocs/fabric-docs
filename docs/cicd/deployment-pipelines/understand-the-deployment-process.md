@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: Lee
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/11/2024
+ms.date: 04/14/2024
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
