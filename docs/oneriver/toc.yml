@@ -16,7 +16,7 @@ items:
   - name: Get events from external sources
     href: get-events-external-sources.md
   - name: Get Fabric events
-    href: get-system-events.md
+    href: get-fabric-events.md
 - name: Discover and manage streams
   items:
   - name: Explore streams
@@ -28,7 +28,7 @@ items:
   - name: Endorse streams
     href: endorse-streams.md
   - name: Explore Fabric events
-    href: endorse-fabric-events.md
+    href: explore-fabric-events.md
 - name: Consume events and streams
   items:
   - name: Set alerts on streams

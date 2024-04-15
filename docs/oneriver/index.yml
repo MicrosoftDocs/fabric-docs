@@ -58,7 +58,7 @@ landingContent:
           - text: Endorse streams
             url: endorse-streams.md
           - text: Explore Fabric events
-            url: endorse-fabric-events.md
+            url: explore-fabric-events.md
 
   # Card 
   - title: Consume events and streams
