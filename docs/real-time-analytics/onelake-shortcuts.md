@@ -96,6 +96,30 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 
 :::image type="content" source="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of an example query."  lightbox="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png":::
 
+## Data types mapping
+
+### Delta parquet to Event house data types mapping
+
+ Delta primitive data types are mapped to Event house scalar data types using the following rules. For more information on Event house data types, see [Scalar data types](/azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric).
+
+| Delta Type | Eventhouse Scalar Data Type 
+| --------------- | ----------------- 
+| `string`     | `string` 
+| `long` | `long` 
+| `integer`  | `int` 
+| `short` | `int`
+| `byte` | `real`
+| `float` | `real`
+| `double` | `real`
+| `decimal` | `decimal` 
+| `boolean` | `bool`
+| `binary` | `string`
+| `date` | `datetime`
+| `timestamp_ntz` (without time zone)| `datetime` 
+| `struct` | `dynamic`
+| `array` | `dynamic`
+| `map` | `dynamic`
+
 ## Related content
 
 * [Query data in a KQL queryset](kusto-query-set.md)
