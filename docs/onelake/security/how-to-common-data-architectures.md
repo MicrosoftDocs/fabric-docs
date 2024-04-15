@@ -94,7 +94,7 @@ Report consumers are the business leaders or directors that need to view data in
 
 Share a report with consumers using the share button. Don't check any of the boxes to grant acccess to read the report but not see any of the underlying data. However with this approach users can still connect to the SQL endpoint and view any tables they have access to. To prevent this, ensure that no SQL permissions are defined that would grant access for this set of users.
 
-You can also share data with report consumers by using an [app](/power-bi/consumer/end-user-apps.md). Apps allow users to access a predefined report or set of reports without needing access to the underlying workspace. Note that for reports in direct lake mode, the users will still need to have the underlying lakehouse shared with them in order to see data.
+You can also share data with report consumers by using an [app](/power-bi/consumer/end-user-apps). Apps allow users to access a predefined report or set of reports without needing access to the underlying workspace. Note that for reports in direct lake mode, the users will still need to have the underlying lakehouse shared with them in order to see data.
 
 ## Related content
 
