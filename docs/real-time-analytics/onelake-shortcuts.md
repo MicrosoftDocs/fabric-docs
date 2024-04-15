@@ -98,7 +98,7 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 
 ## Data types mapping
 
-### Delta parquet to Eventhouse data types mapping
+### Delta parquet to Event house data types mapping
 
  Delta primitive data types are mapped to Kusto scalar data types using the following rules:
 
