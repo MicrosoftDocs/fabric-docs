@@ -69,5 +69,5 @@ landingContent:
           url: set-alerts-streams.md
         - text: Set alerts on Fabric events
           url: set-alerts-fabric-events.md
-        - text: Consume Fabric events using an event stream
+        - text: Consume Fabric events using an eventstream
           url: consume-fabric-events-event-stream.md

@@ -35,7 +35,7 @@ items:
     href: set-alerts-streams.md
   - name: Set alerts on Fabric events
     href: set-alerts-fabric-events.md
-  - name: Consume Fabric events using an event stream
+  - name: Consume Fabric events using an eventstream
     href: consume-fabric-events-event-stream.md
     
     
