@@ -18,49 +18,51 @@ This article describes how to upload and manage a workload to the Fabric service
 
 Before you can deploy a workload, you must have the following:
 
-* A Fabric account with the Admin permissions.
-* A [nuget package]
-* A workload solution that you want to deploy. For information about creating a workload solution, see [Create a workload solution](create-workload.md).
+* A Fabric account with the *Admin* permissions.
+* The [nuget package](https://www.nuget.org/) workload solution that you want to deploy. For information about creating a workload solution, see [Create a workload solution](create-workload.md).
+* [Visual Studio Enterprise 2022] or later.
 
-## "[verb] * [noun]"
+## Upload a workload
 
-[Introduce the procedure.]
+To upload a workload to the Fabric service, follow these steps:
 
-1. Procedure step
-1. Procedure step
-1. Procedure step
+1. Log into [Fabric](http://powerbi.com) with an *Admin* account.
 
-1. log in
-1. admin portal - activate workload extenstion in the tenant settings
-1. admin portal - go to workloads
-1. Upload workload
-1. Select nugger package
-1. click open
+   :::image type="content" source="./media/upload-workload/sign-in.png" alt-text="Screenshot of Microsoft Fabric log in screen.":::
+
+1. From **Settings**, go to the **Admin portal**.
+
+   :::image type="content" source="./media/upload-workload/settings-admin-portal.png" alt-text="Screenshot showing how to get to the Fabric Admin portal.":::
+
+1. From **Workloads**, select **Upload workload**.
+
+   :::image type="content" source="./media/upload-workload/upload-workload.png" alt-text="Screenshot showing how to upload a workload.":::
+
+1. Browse to the nugget package you want to upload, and select **Open**.
+
+   :::image type="content" source="./media/upload-workload/browse-nuget-package.png" alt-text="Screenshot showing how to browse to the nuget package.":::
+
 1. Go to workload
 1. select uploaded version
 1. Click add
 
-Step 2
+## Manage a workload
 
-also in wrokload settings:
- delete
- edit
- deactivate
- uploads 
+Once you have a workload uploaded, you can manage it by performing the following actions:
 
-<!-- Required: Steps to complete the task - H2
+* [Delete](#delete-a-workload)  
+* [Edit](#edit-a-workload)  
+* [Deactivate](#deactivate-a-workload)  
 
-In one or more H2 sections, organize procedures. A section
-contains a major grouping of steps that help the user complete
-a task.
+### Delete a workload
 
-Begin each section with a brief explanation for context, and
-provide an ordered list of steps to complete the procedure.
+To delete a workload, follow these steps:
 
-If it applies, provide sections that describe alternative tasks or
-procedures.
+1. From **Settings**, go to the **Admin portal**.
 
--->
+### Edit a workload
+
+### Deactivate a workload  
 
 ## Related content
 
