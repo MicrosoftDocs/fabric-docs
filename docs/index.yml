@@ -277,7 +277,7 @@ productDirectory:
         - url: real-time-analytics/overview.md
           text: What is Real-Time Analytics?
         - url: real-time-analytics/event-streams/overview.md
-          text: What is Event streams?
+          text: What is Fabric event streams?
         - url: real-time-analytics/create-database.md
           text: Create a database
         - url: real-time-analytics/query-table.md
@@ -293,7 +293,7 @@ productDirectory:
         - url: data-activator/data-activator-introduction.md
           text: What is Data Activator?
         - url: data-activator/data-activator-get-data-eventstreams.md
-          text: Get data from Eventstreams
+          text: Get data from an eventstream
         - url: data-activator/data-activator-tutorial.md
           text: Create objects and triggers - Tutorial 
         - url: data-activator/index.yml
