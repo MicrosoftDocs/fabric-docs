@@ -1,10 +1,10 @@
 ---
 title: Analyze data with Apache Spark and Python
-description: In this tutorial, learn how to create rich data visualizations by using Apache Spark and Python in Microsoft Fabric.
+description: In this article, learn how to create rich data visualizations by using Apache Spark and Python in Microsoft Fabric.
 ms.reviewer: mopeakande
 author: midesa
 ms.author: midesa
-ms.topic: tutorial
+ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
@@ -13,11 +13,11 @@ ms.search.form: Python Language
 #customer intent: As a data analyst, I want to learn to perform data analysis by using Azure Open Datasets and Apache Spark to create useful visualizations.
 ---
 
-# Tutorial: Analyze data with Apache Spark and Python
+# Analyze data with Apache Spark and Python
 
-In this tutorial, you learn how to perform exploratory data analysis by using Azure Open Datasets and Apache Spark. This article analyzes the New York City taxi dataset. The data is available through Azure Open Datasets. This subset of the dataset contains information about yellow taxi trips: information about each trip, the start and end time and locations, the cost, and other interesting attributes.
+In this article, you learn how to perform exploratory data analysis by using Azure Open Datasets and Apache Spark. This article analyzes the New York City taxi dataset. The data is available through Azure Open Datasets. This subset of the dataset contains information about yellow taxi trips: information about each trip, the start and end time and locations, the cost, and other interesting attributes.
 
-In this tutorial, you:
+In this article, you:
 
 > [!div class="checklist"]
 > - Download and prepare data
@@ -37,7 +37,7 @@ To start, download the [New York City (NYC) Taxi](https://azure.microsoft.com/se
    > [!Note]
    > Because of the PySpark kernel, you don't need to create any contexts explicitly. The Spark context is automatically created for you when you run the first code cell.
 
-2. In this tutorial, you use several different libraries to help visualize the dataset. To do this analysis, import the following libraries:
+2. In this article, you use several different libraries to help visualize the dataset. To do this analysis, import the following libraries:
 
    ```python
    import matplotlib.pyplot as plt
@@ -45,7 +45,7 @@ To start, download the [New York City (NYC) Taxi](https://azure.microsoft.com/se
    import pandas as pd
    ```
 
-3. Because the raw data is in a Parquet format, you can use the Spark context to pull the file into memory as a DataFrame directly. Create a Spark DataFrame by retrieving the data by using the Open Datasets API. To infer the datatypes and schema, use the Spark DataFrame *schema on read* properties.
+3. Because the raw data is in Parquet format, you can use the Spark context to pull the file into memory as a DataFrame directly. Use the Open Datasets API to retrieve the data and create a Spark DataFrame. To infer the datatypes and schema, use the Spark DataFrame *schema on read* properties.
 
     ```python
     from azureml.opendatasets import NycTlcYellow
@@ -78,7 +78,7 @@ To start, download the [New York City (NYC) Taxi](https://azure.microsoft.com/se
 
 ## Analyze data
 
-As a data analyst, you have a wide range of tools available to help you extract insights from the data. In this part of the tutorial, learn about a few useful tools available within [!INCLUDE [product-name](../../includes/product-name.md)] notebooks. In this analysis, you want to understand the factors that yield higher taxi tips for the selected period.
+As a data analyst, you have a wide range of tools available to help you extract insights from the data. In this part of the article, learn about a few useful tools available within [!INCLUDE [product-name](../../includes/product-name.md)] notebooks. In this analysis, you want to understand the factors that yield higher taxi tips for the selected period.
 
 ### Apache Spark SQL Magic
 
