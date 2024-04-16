@@ -65,7 +65,30 @@ Congratulations. You now have a Fabric trial that includes a Power BI individual
 
 ## Other ways to start a Microsoft Fabric trial
 
-In some situations, your Fabric administrator has [enabled Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant) but you don't have access to a capacity that has Fabric enabled. You have another option for enabling a Fabric trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you're prompted to start a Fabric trial. If you agree, your Fabric trial starts and your workspace is upgraded to a trial capacity workspace.
+In some situations, your Fabric administrator has [enabled Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant) but you don't have access to a capacity that has Fabric enabled. You have another option for enabling a Fabric trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you're prompted to start a Fabric trial. If you agree, your Fabric trial starts and your workspace is upgraded to a trial capacity workspace. You are now the Capacity administrator and can add workspaces to the trial capacity. 
+
+## Share trial capacities
+
+Each trial includes up to 5 trial capacities. Each trial capacity can be shared with other users. To do this, the Capacity administrator (the user who initiated the trial) and the Fabric administrator assign workspaces to a trial capacity. All users with access to those workspaces are now able to use that trial capacity.
+
+If the Fabric tenant switch is enabled, users can view, consume, and add Fabric content. If the Fabric tenant switch is disabled, users can only view and consume Fabric content. For more information, see [Fabric tenant setting](#look-up-the-fabric-tenant-switch-setting).
+
+Admins can also enable Fabric on a per capacity basis. [Enable for a capacity](../admin/fabric-switch#enable-for-a-capacity)
+
+## Look up the Fabric tenant switch setting
+
+If you have permissions, you can verify or change the Fabric tenant setting. If you need help, [contact the Capacity administrator directly](#look-up-the-trial-capacity-administrator).
+
+:::image type="content" source="media/fabric-trial/fabric-tenant-setting.png" alt-text="Screenshot of the Admin portal with Tenant settings outlined in red and an arrow pointing to the word Enabled":::
+
+
+## Look up the trial Capacity administrator
+
+Contact your Capacity administrator to request access to a trial capacity or to check whether your organization has the Fabric tenant setting enabled. Use the Admin portal to look up your Capacity administrator. 
+
+From the upper right corner of Fabric, select the gear icon. Choose **Admin portal**. For a Fabric trial, select *Capacity settings** and then the **Trial** tab. 
+
+:::image type="content" source="media/fabric-trial/fabric-admin.png" alt-text="Screenshot of Admin center showing the Capacity settings screen.":::
 
 ## End a Fabric trial
 
@@ -87,7 +110,7 @@ Additionally, if you cancel your trial, you might not be able to start another t
 
 If you don't see the **Start trial** button in your Account manager:
 
-- Your Fabric administrator might disable access, and you can't start a Fabric trial. To request access, contact your Fabric administrator. You can also start a trial using your own tenant. For more information, see [Sign up for Power BI with a new Microsoft 365 account](/power-bi/enterprise/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial).
+- Your Fabric administrator might disable access, and you can't start a Fabric trial. To request access, [contact your Fabric administrator](#look-up-the-trial-capacity-administrator). You can also start a trial using your own tenant. For more information, see [Sign up for Power BI with a new Microsoft 365 account](/power-bi/enterprise/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial).
 
 - You're an existing Power BI trial user, and you don't see **Start trial** in your Account manager. You can start a Fabric trial by attempting to [create a Fabric item](#other-ways-to-start-a-microsoft-fabric-trial). When you attempt to create a Fabric item, you're prompted to start a Fabric trial. If you don't see this prompt, it's possible that this action is deactivated by your Fabric administrator.
 
@@ -95,15 +118,13 @@ If you do see the **Start trial** button in your Account manager:
 
 - You might not be able to start a trial if your tenant exhausted its limit of trial capacities. If that is the case, you have the following options:
 
-  - [Purchase a Fabric capacity from Azure](https://portal.azure.com/) by performing a search for *Microsoft Fabric*.
-
   - Request another trial capacity user to share their trial capacity workspace with you. [Give users access to workspaces](give-access-workspaces.md)
-
-  - To increase tenant trial capacity limits, reach out to your Fabric administrator to create a Microsoft support ticket.
+  - [Purchase a Fabric capacity from Azure](https://portal.azure.com/) by performing a search for *Microsoft Fabric*.
+  - To increase tenant trial capacity limits, [reach out to your Fabric administrator](#look-up-the-trial-capacity-administrator) to create a Microsoft support ticket.
 
 **In Workplace settings, I can't assign a workspace to the trial capacity**
 
-This known bug occurs when the Fabric administrator turns off trials after you start a trial. To add your workspace to the trial capacity, open the Admin portal by selecting it from the gear icon in the top menu bar. Then, select **Trial > Capacity settings** and choose the name of the capacity. If you don't see your workspace assigned, add it here.
+This bug occurs when the Fabric administrator turns off trials after you start a trial. To add your workspace to the trial capacity, open the Admin portal by selecting it from the gear icon in the top menu bar. Then, select **Trial > Capacity settings** and choose the name of the capacity. If you don't see your workspace assigned, add it here.
 
 :::image type="content" source="media/fabric-trial/capacity-wk-assignment.png" alt-text="Screenshot of the Capacities page in the Admin portal.":::
 
