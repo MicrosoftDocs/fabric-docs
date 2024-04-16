@@ -24,7 +24,7 @@ Job queueing is supported for Notebook jobs that are triggered by pipelines or t
 The queue operates in a First-In-First-Out (FIFO) manner, where jobs are added to the queue based on the time of their submission and are constantly retried and start executing when the capacity is freed up. 
 
 > [!NOTE]
-> Queueing of Spark jobs is not supported when your Fabric capacity is in its throttled state. All new jobs submitted will be rejected. In the case of Spark jobs this could occur when the Spark usage has been at its maximum for > 24 Hours. Learn more about [Fabric Capacity throttling policy](./enterprise/throttling.md)
+> Queueing of Spark jobs is not supported when your Fabric capacity is in its throttled state. All new jobs submitted will be rejected.
 
 :::image type="content" source="media\job-queueing-for-fabric-spark\job-queueing-animation.gif" alt-text="Animated illustration of the process of job queuing in Microsoft Fabric.":::
 
