@@ -34,7 +34,7 @@ For more information about supported data sources for managed private endpoints 
 
 * **Managed private endpoints**: Managed private endpoints are supported only for Fabric trial capacity and Fabric capacities F64 or higher.
 
-* * **Tenant Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported Fabric Tenant home regions results in errors. These unsupported Tenant home regions include
+* **Tenant Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported Fabric Tenant home regions results in errors. These unsupported Tenant home regions include
   
 | Region         |
 |----------------|
