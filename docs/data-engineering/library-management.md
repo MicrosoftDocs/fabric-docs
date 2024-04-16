@@ -23,7 +23,7 @@ A library is a collection of prewritten code that developers can import to provi
 ## Library management in workspace setting
 
 > [!IMPORTANT]
-> Library management at the workspace setting is no longer supported. To migrate workspace libraries and Spark properties to an environment and attach as workspace default, see [Migrate the workspace libraries and Spark properties](environment-workspace-migration.md).
+> Library management at the workspace setting is no longer supported. To migrate workspace libraries and Spark properties to a default environment, see [Migrate the workspace libraries and Spark properties](environment-workspace-migration.md).
 
 ## Summary of library management best practices
 
@@ -31,7 +31,7 @@ The following scenarios describe best practices.
 
 ### Scenario 1: Admin sets default libraries for the workspace
 
-In order to set default libraries, you have to be the administrator of the workspace. As admin, you can perform these tasks:
+To set default libraries, you have to be the administrator of the workspace. As admin, you can perform these tasks:
 
 1. [Create a new environment](create-and-use-environment.md#create-an-environment)
 1. [Install the required libraries in the environment](environment-manage-library.md)
