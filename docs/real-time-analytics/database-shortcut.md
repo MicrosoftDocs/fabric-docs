@@ -103,12 +103,11 @@ To create an invitation token, the data provider can use the following steps:
 
 1. Browse to the [Azure portal](https://ms.portal.azure.com).
 1. Browse to the Azure Data Explorer database you wish to use as source.
-1. Select Share.
+1. Select **Share**.
 
     :::image type="content" source="media/database-shortcut/database-share.png" alt-text="Screenshot of database in the Azure portal and the share button." lightbox="media/database-shortcut/database-share.png":::
 
 1. Enter the recipient email address. This address should be the email address associated with the Fabric user account in which you later create the database shortcut. This email address may be your own, or someone else's.
-1. Select **Share**.
 1. Choose one of the following options to create a link for a new shortcut.
 
     We recommend using a link to create a shortcut as it opens the **New database shortcuts** dialog box and with the **Source cluster URI** and **Database** name autopopulated from the information in the invitation token.
