@@ -20,8 +20,6 @@ To get to the capacity settings, follow these steps:
 
 2. In the Admin portal, select **Capacity settings**.
 
-3. In the *capacity settings* select the 
-
 ## View your capacity
 
 The capacity settings page shows a list of all the capacities in your [tenant](licenses.md#tenant). At the top of the page you can see a list of the different Fabric capacity types. Select a capacity type to view all the capacities of that type in your tenant.
@@ -31,7 +29,7 @@ The capacity settings page shows a list of all the capacities in your [tenant](l
    >[!NOTE]
    >Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
 
-* **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use EM SKUs.
+* **Power BI Embedded** - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A SKUs.
 
 * **Trial** - A [Microsoft Fabric trial](../get-started/fabric-trial.md) capacity. These capacities use Trial SKUs.
 
@@ -71,7 +69,9 @@ To create a new Power BI Premium capacity, follow these steps:
 
 # [Power BI Embedded](#tab/power-bi-embedded)
 
-To create a new Power BI Embedded, follow these steps:
+To create a new Power BI Embedded capacity with an A SKU, follow the steps described in the *Fabric Capacity* tab. 
+
+To create a new Power BI Embedded with an EM SKU, follow these steps:
 
 1. In the **Capacity settings** page, select **Power BI Premium**.
 
@@ -89,7 +89,7 @@ To create a new Power BI Embedded, follow these steps:
 
    * **Capacity size** - Select one of these sizes:
        * **EM1** - 1 v-core
-       * **ME2** - 2 v-cores
+       * **EM2** - 2 v-cores
        * **EM3** - 4 v-cores
 
 4. Select **Create**.
