@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
 ms.topic: how-to
-ms.date: 04/09/2024
+ms.date: 04/16/2024
 
 #customer intent: As an ISV, I want upload my Fabric extension workload in order to integrating my app into the Fabric framework.
 ---
