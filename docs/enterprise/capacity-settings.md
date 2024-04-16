@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 04/10/2024
+ms.date: 04/16/2024
 ---
 
 # Manage your Fabric capacity
@@ -310,7 +310,7 @@ Autoscale isn't available for Fabric capacities.
 
 ## Capacity settings
 
-There are two type of capacity settings you can control:
+After selecting a capacity, you can control its settings from these two tabs:
 
 * **Details** - Capacity details are settings that are specific to the capacity.
 
