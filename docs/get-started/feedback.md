@@ -4,7 +4,7 @@ description: Learn about giving feedback about Microsoft Fabric to Microsoft.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 04/08/2024
+ms.date: 04/16/2024
 ---
 
 # Learn about Microsoft Fabric feedback
@@ -70,16 +70,6 @@ Here are the most common items collected or calculated.
 * **Tenant ID** - When the feedback is submitted from a Microsoft Entra account.
 
 * **User ID** - Microsoft Entra ID or email address of the authenticated user submitting the feedback.
-
-## How can I see my user's feedback?  
-
-To see your feedback a Fabric administrator has to open an incident management (IcM) ticket. We share data about the following feedback as a .csv file, with your Fabric administrator. We don't share EU Peacebuilding Initiative (EUPI) data.
-
-* Verbatims
-
-* Scores
-
-* Requested compliant metadata
 
 ## Data handling and privacy
 

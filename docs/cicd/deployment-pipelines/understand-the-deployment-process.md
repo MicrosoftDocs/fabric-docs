@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: Lee
 ms.topic: conceptual
 ms.custom:
-ms.date: 01/28/2024
+ms.date: 04/14/2024
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -157,29 +157,15 @@ Since folders are considered part of the item’s name, items moved into a diffe
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
+* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
 * Dataflows Gen1
 * Datamarts
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* Paginated reports
+* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (based on supported semantic models)
 * Semantic models (except for Direct Lake semantic models)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
-
-### Unsupported items
-
-Deployment pipelines doesn't support the following items:
-
-* Dataflows Gen2
-* Data pipelines
-* Datasets that don't originate from a *.pbix*
-* Direct Lake semantic model
-* PUSH datasets
-* Streaming dataflows
-* Reports based on unsupported semantic models
-* [Template app workspaces](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace)
-* Workbooks
-* Metrics
 
 ## Item properties copied during deployment
 
@@ -298,7 +284,7 @@ Other changes such as adding a column, removing a column, and renaming a calcula
 
 Using [composite models](/power-bi/transform-model/desktop-composite-models) you can set up a report with multiple data connections.
 
-You can use the composite models functionality to connect a Fabric semantic model to an external semantic models such as Azure Analysis Services. For more information, see [Using DirectQuery for Fabric semantic models and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services).
+You can use the composite models functionality to connect a Fabric semantic model to an external semantic model such as Azure Analysis Services. For more information, see [Using DirectQuery for Fabric semantic models and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services).
 
 In a deployment pipeline, you can use composite models to connect a semantic model to another Fabric semantic model external to the pipeline.
 
@@ -403,7 +389,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#considerations-and-limitations).
 
-* For a list of unsupported items, see [unsupported items](#unsupported-items).
+* For a list of supported items, see [supported items](#supported-items). Any item not on the list isn't supported.
 
 * The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
 
