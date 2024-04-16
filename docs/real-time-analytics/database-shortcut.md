@@ -62,7 +62,7 @@ To create a shortcut using a cluster URI and database name, make sure you have a
 
 1. Browse to your workspace in Microsoft Fabric.
 1. Open a new or existing [event house](create-eventhouse.md) in **Real-Time Analytics**.
-1. Select the plus sign next to **KQL Databases**.
+1. Select the plus sign next to **KQL databases**.
 
     :::image type="content" source="media/database-shortcut/kql-databases-add.png" alt-text="Screenshot in event house of adding a new KQL database.":::
 
