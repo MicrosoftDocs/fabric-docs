@@ -64,10 +64,12 @@ items:
   items:
   - name: Overview
     href: external-data-sharing-overview.md
-  - name: Create and manage an external data share
+  - name: Create an external data share
     href: external-data-sharing-create.md
   - name: Accept an external data share
     href: external-data-sharing-accept.md
+  - name: Manage external data shares
+    href: external-data-sharing-manage.md
   - name: "Admins: Enable external data sharing"
     href: external-data-sharing-enable.md
 - name: Metadata scanning

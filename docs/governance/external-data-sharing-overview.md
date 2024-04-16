@@ -17,21 +17,13 @@ Fabric external data sharing is a feature that enables Fabric users to share dat
 
 This external data sharing feature for Fabric OneLake data isn't related to the mechanism that exists for sharing Power BI semantic models with Entra B2B guest users.
 
-## Use cases
-
-<!-- Optional: Describe or list use cases - H2
-
-In an H2 section, briefly describe a few key scenarios that 
-you can use the feature in. Describe how to use it in those
-environments.
-
--->
-
 ## How does external data sharing work
 
 As a prerequisite to external data sharing, Fabric admins need to turn on external data sharing both in the sharer's tenant and in the external tenant. Enabling external data sharing includes specifying who can create and accept external data shares. For more information, see [Enable external data sharing](./external-data-sharing-enable.md).
 
 Users who are allowed to create external data shares can share data residing in tables or files within [supported Fabric items](#supported-fabric-item-types), as long as they have the standard Fabric read and reshare permissions for the item being shared. The user creating the share invites a user from another tenant to accept the external data share. This user receives a link that they use to accept the share. Upon accepting the share, the recipient chooses a lakehouse where a shortcut to the shared data will be created.
+
+External data share links don't work for users who are in the tenant where the external data share was created. They work only for users in external tenants. To share data from OneLake storage accounts with users in the same tenant, use [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 > [!NOTE]
 > Cross-tenant data access is enabled via a dedicated Fabric-to-Fabric authentication mechanism and does not require [Entra B2B guest user access](/power-bi/enterprise/service-admin-azure-ad-b2b).
@@ -41,10 +33,13 @@ Users who are allowed to create external data shares can share data residing in 
 External data sharing is currently supported for data residing in tables or files within:
 
 * [Lakehouses](../data-engineering/lakehouse-overview.md)
-
 * [KQL databases](../real-time-analytics/create-database.md)
 
 ## Revoking external data shares
+
+Any user in the sharing tenant who has write permissions on an externally shared item can revoke the external data share at any time using the External data shares tab on the manage permissions page.
+
+Revoking an external data share is a serious matter that should be considered carefully and in consultation with the receiving tenant. It completely and irreversibly severs all access from the receiving tenant to the shared data. This means that any and all data artifacts built in the receiving tenant on the basis of the shared data will cease to function. A revoked external data share can't be restored. A new external data share can be created, but all work done in the receiving tenant based on the revoked share will have to be rebuilt from scratch.
 
 ## Security Considerations
 
@@ -60,7 +55,19 @@ With this understanding in mind, be aware of the following:
 
 * Data might be transferred across geographic boundaries when it is accessed within the consumer's tenant.
 
-## Known Issues
+Sharing data with users outside your home tenant has implications for data security and privacy that you should consider. It's important to understand the underlying flows of data sharing to better evaluate these implications.
+
+Data is shared across tenants using Fabric-internal security mechanisms. The share security mechanism grants read-only access to **any user** within the home tenant of the user that was invited to accept the share. Data is shared “in-place”. No data is copied, and it isn't even accessed until the someone in the receiving tenant executes a Fabric workload over the shared data. Fabric evaluates and enforces Entra-ID-based roles and permissions locally, within the tenant they're defined in. This means that access control policies defined in the sharer's tenant, such as semantic model row-level security (RLS), Microsoft Purview Information Protection policies, and Purview Data Loss Prevention policies **are not** enforced on data that crosses organization boundaries. Rather, it is the policies defined in the consumer's tenant that are enforced on the incoming share, the same way that they are enforced on any data within that tenant.
+
+With this understanding in mind, be aware of the following:
+
+* The sharer can't control who has access to the data in the consumer's tenant.
+
+* The consumer can grant access to the data to anyone, even guest users from outside the consumer's organization.
+
+* Data might be transferred across geographic boundaries when it is accessed within the consumer's tenant.
+
+## Considerations and limitations
 
 * **Shortcuts:** Shortcuts contained in folders that are shared via external data sharing won't resolve in the consumer tenant.
 
@@ -74,4 +81,5 @@ With this understanding in mind, be aware of the following:
 
 * [Create and manage external data shares](./external-data-sharing-create.md)
 * [Accept an external data share](./external-data-sharing-accept.md)
+* [Manage external data shares](./external-data-sharing-manage.md)
 * [Fabric admins: Set up external data sharing on your tenant](./external-data-sharing-enable.md)
