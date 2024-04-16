@@ -40,7 +40,7 @@ The following properties are **required**:
 - **Connection**:  Select a Dynamics AX connection from the connection list. If no connection exists, then create a new Dynamics AX connection by selecting **New**.
 - **Connection type**: Select Dynamics AX.
 - **Use query**: Specify way to read data. Select **Path** to read data from the specified path or select **Query** to read data using queries.
-    - If you select **Table**:
+    - If you select **Path**:
       - **Path**: Specify the path to the Dynamics AX OData entity.
 
         :::image type="content" source="./media/connector-dynamics-ax/use-query-path.png" alt-text="Screenshot showing Use query - Path." :::
@@ -53,7 +53,7 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Request timeout**: The timeout (the TimeSpan value) for the HTTP request to get a response. This value is the timeout to get a response, not the timeout to read response data.
+- **Request timeout**: The timeout (the **TimeSpan** value) for the HTTP request to get a response. This value is the timeout to get a response, not the timeout to read response data.
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ### Mapping
@@ -78,7 +78,7 @@ The following tables contain more information about the copy activity in Dynamic
 | **Use query** |The way to read data from Dynamics AX. Apply **Path** to read data from the specified path or apply **Query** to read data using queries.|• **Path** <br>• **Query** |Yes |/|
 | **Path** | The path to the Dynamics AX OData entity. | < your path > | Yes | path |
 | **Query** | OData query options for filtering data. Example: `"?$select=Name,Description&$top=5"`.  | < your query > | No | query |
-| **Request timeout** |The timeout (the TimeSpan value) for the HTTP request to get a response. This value is the timeout to get a response, not the timeout to read response data.| timespan |No|httpRequestTimeout|
+| **Request timeout** |The timeout (the **TimeSpan** value) for the HTTP request to get a response. This value is the timeout to get a response, not the timeout to read response data.| timespan<br>(the default is **00:05:00** - 5 minutes) |No|httpRequestTimeout|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
 ## Related content
