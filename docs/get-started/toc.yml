@@ -127,6 +127,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Copy visual as image for report and dashboard visuals is broken
+      href: known-issues/known-issue-679-copy-visual-image-report-dashboard-visuals-broken.md
+    - name: Git integrated workspaces incorrectly show status of Uncommitted
+      href: known-issues/known-issue-678-git-integrated-workspaces-show-status-uncommitted.md
+    - name: Filled or bubble layers on Azure Maps visual doesn't render
+      href: known-issues/known-issue-670-filled-bubble-layers-azure-maps-visual-render.md
     - name: Upload reports from OneDrive or SharePoint fails
       href: known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md
     - name: Currency format is unavailable in web modeling

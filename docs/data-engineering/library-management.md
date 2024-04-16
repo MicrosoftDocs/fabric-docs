@@ -173,11 +173,10 @@ To install an R feed library:
 
 ### Manage Jar libraries through inline installation
 
-The *.jar* files are supported at notebook sessions with following code.
+The *.jar* files are support at notebook sessions with following command. The following code cell is using Notebook built-in folder as an example.
 
-```scala
-// Using notebook built-in folder as an example
-%%configure -f: 
+```Scala
+%%configure -f
 {
     "conf": {
         "spark.jars": "{mssparkutils.nbResPath}/builtin/jar_file_name.jar"

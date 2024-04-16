@@ -148,11 +148,11 @@ items:
         href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rta&pivots=fabric
 - name: Store data
   items:
-  - name: Eventhouse (preview)
+  - name: Event house (preview)
     items:
-    - name: Eventhouse overview (preview)
+    - name: Event house overview (preview)
       href: eventhouse.md
-    - name: Create an Eventhouse (preview)
+    - name: Create an event house (preview)
       href: create-eventhouse.md 
   - name: KQL Database
     items:
@@ -188,7 +188,7 @@ items:
       items:
       - name: One logical copy (Preview)
         href: one-logical-copy.md
-      - name: Create OneLake shortcuts
+      - name: Create OneLake shortcuts in a KQL database 
         href: onelake-shortcuts.md
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage

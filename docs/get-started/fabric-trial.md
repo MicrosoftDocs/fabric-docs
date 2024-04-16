@@ -5,8 +5,6 @@ author: mihart
 ms.author: mihirwagle
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 03/29/2024
 ---
 
@@ -25,13 +23,13 @@ With a Fabric trial, you get the following features:
 * The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity. 
 
 Creating and collaborating in Fabric includes:
-  * Creating [Workspaces](workspaces.md) (folders) for projects that support Fabric capabilities.
+* Creating [Workspaces](workspaces.md) (folders) for projects that support Fabric capabilities.
   * Sharing Fabric items, such as semantic models, warehouses, and notebooks, and collaborating on them with other Fabric users.
   * Creating analytics solutions using Fabric items.
 
 When you start a Fabric trial, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You don't have access to your capacity until you put something into it. To begin using your Fabric trial, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity using the *Trial* license mode, and then all the items in that workspace are saved and executed in that capacity.
 
-Your license is upgraded to [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) during the trial. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a PPU license. There are a few key PPU features that aren't available on trial capacities. These include [Co-Pilot](/power-bi/create-reports/copilot-create-report), Trusted Workspace Identity, and VNet. 
+Your license is upgraded to [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) during the trial. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a PPU license. There are a few key PPU features that aren't available on trial capacities. These include [Co-Pilot](/fabric/get-started/copilot-faq-fabric), Trusted Workspace Identity, and VNet. 
 
 ## Existing Power BI users
 
@@ -144,6 +142,10 @@ The Fabric trial capacity doesn't support autoscale. If you need more compute ca
 You can migrate your existing workspaces into a trial capacity using workspace settings and choosing "Trial" as the license mode. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
 
 :::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
+
+## Fabric Trial Capacity Availability by Azure Region
+
+[Fabric trial capacities are available in all regions.](../admin/region-availability.md)
 
 ## Related content
 
