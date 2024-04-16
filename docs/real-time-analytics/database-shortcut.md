@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 03/19/2024
+ms.date: 04/16/2024
 ms.search.form: KQL Database
 #Customer intent: To create a database shortcut in Real-Time Analytics.
 ---
@@ -103,6 +103,9 @@ To create a shortcut using a cluster URI and database name, make sure you have a
 1. Browse to your workspace in Microsoft Fabric.
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
 1. Select **+ New** > **KQL Database**.
+
+    :::image type="content" source="media/database-shortcut/kql-databases-add.png" alt-text="Screenshot in event house of adding a new KQL database.":::
+
 1. Enter a name for your database shortcut.
 1. Select **Type** > **New shortcut database (Follower)**
 
