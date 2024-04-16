@@ -16,7 +16,7 @@ This article describes how to upload and manage a workload to the Fabric service
 
 ## Prerequisites
 
-Before you can deploy a workload, you must have the following:
+Before you can deploy a workload, you must have the following prerequisites:
 
 * A Fabric account with the *Admin* permissions.
 * The [nuget package](https://www.nuget.org/) workload solution that you want to deploy. For information about creating a workload solution, see [Create a workload solution](create-workload.md).
@@ -27,7 +27,7 @@ To upload a workload to the Fabric service, follow these steps:
 
 1. Log into [Fabric](https://powerbi.com) with an *Admin* account.
 
-   :::image type="content" source="./media/manage-workload/sign-in.png" alt-text="Screenshot of Microsoft Fabric log in screen.":::
+   :::image type="content" source="./media/manage-workload/sign-in.png" alt-text="Screenshot of Microsoft Fabric sign in screen.":::
 
 1. From **Settings**, go to the **Admin portal**.
 
@@ -88,7 +88,7 @@ To delete a workload, follow these steps:
 
    :::image type="content" source="./media/manage-workload/delete-workload.png" alt-text="Screenshot showing how to delete a workload.":::
 
-Note that you can't delete the active version of a workload. To delete the active version, first [deactivate](#deactivate-a-workload) it.
+You can't delete the active version of a workload. To delete the active version, first [deactivate](#deactivate-a-workload) it.
 
 ### Deactivate a workload
 
