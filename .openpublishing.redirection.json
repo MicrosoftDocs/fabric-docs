@@ -16,6 +16,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-oneLake-table-folder-not-removed.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },      
+      {
         "source_path_from_root": "/docs/get-started/known-issues/known-issue-471-embedded-setup-tool-isnt-reponsive.md",
         "redirect_url": "/fabric/get-started/fabric-known-issues",
         "redirect_document_id": false
