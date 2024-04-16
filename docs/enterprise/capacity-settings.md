@@ -20,6 +20,8 @@ To get to the capacity settings, follow these steps:
 
 2. In the Admin portal, select **Capacity settings**.
 
+3. In the *capacity settings* select the 
+
 ## View your capacity
 
 The capacity settings page shows a list of all the capacities in your [tenant](licenses.md#tenant). At the top of the page you can see a list of the different Fabric capacity types. Select a capacity type to view all the capacities of that type in your tenant.
@@ -140,21 +142,23 @@ To change the name of your capacity, follow these steps:
 
 # [Power BI Premium](#tab/power-bi-premium)
 
-???
+To add or remove admins in a Power BI Premium capacity, follow these steps:
+
+1. In the **Capacity settings** page, select **Power BI Premium**.
+
+2. From the list of capacities, select the capacity you want to make changes to.
+
+3. In the capacity's setting page, from the *Details tab*, select expand **Admin permissions**.
+
+4. Add or remove admins from the text box.
+
+5. Select **Apply**.
 
 # [Power BI Embedded](#tab/power-bi-embedded)
 
-???
+To add or remove admins in a Power BI Embedded capacity, follow these steps:
 
-# [Trial](#tab/trial)
-
-A [trial capacity](../get-started/fabric-trial.md#start-the-fabric-trial) is assigned to the user who signed up for the trial. Other admins can't be added or removed.
-
-# [Fabric Capacity](#tab/fabric-capacity)
-
-To add or remove admins in a Fabric capacity, follow these steps:
-
-1. In the **Capacity settings** page, select **Fabric capacity**.
+1. In the **Capacity settings** page, select **Power BI Embedded**.
 
 2. From the list of capacities, select the gear icon (**&#9881;**) next to the capacity you want to make changes to.
 
@@ -165,6 +169,24 @@ To add or remove admins in a Fabric capacity, follow these steps:
    * To add an admin, select **Add**, select the user or group to add as an admin, and then select **Select**.
 
    * To remove an admin, select the admin you want to remove, and then select **Delete**.
+
+# [Trial](#tab/trial)
+
+A [trial capacity](../get-started/fabric-trial.md#start-the-fabric-trial) is assigned to the user who signed up for the trial. Other admins can't be added or removed.
+
+# [Fabric Capacity](#tab/fabric-capacity)
+
+To add or remove admins in a Fabric capacity, follow these steps:
+
+1. In the **Capacity settings** page, select **Fabric Capacity**.
+
+2. From the list of capacities, select the capacity you want to make changes to.
+
+3. In the capacity's setting page, from the *Details tab*, select expand **Admin permissions**.
+
+4. Add or remove admins from the text box.
+
+5. Select **Apply**.
 
 ---
 
