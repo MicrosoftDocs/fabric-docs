@@ -62,7 +62,7 @@ You can migrate your applications without modifying the code. You can have a sin
 
 ## Python runtime
 
-The [!INCLUDE [product-name](../../includes/product-name.md)] [Runtime](../../data-engineering/runtime.md) is a curated environment optimized for data science and machine learning. The [!INCLUDE [product-name](../../includes/product-name.md)] runtime offers a range of popular, Python open-source libraries, including libraries like Pandas, PyTorch, Scikit-Learn, and XGBoost.
+The [!INCLUDE [product-name](../../includes/product-name.md)] [Runtime](../../data-engineering/runtime.md) is a curated environment optimized for data science and machine learning. The [!INCLUDE [product-name](../../includes/product-name.md)] runtime offers a range of popular, Python open-source libraries, including libraries like Pandas, PyTorch, scikit-learn, and XGBoost.
 
 ## Python visualization
 
