@@ -65,15 +65,15 @@ Congratulations. You now have a Fabric trial that includes a Power BI individual
 
 ## Other ways to start a Microsoft Fabric trial
 
-In some situations, your Fabric administrator has [enabled Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant) but you don't have access to a capacity that has Fabric enabled. You have another option for enabling a Fabric trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you're prompted to start a Fabric trial. If you agree, your Fabric trial starts and your workspace is upgraded to a trial capacity workspace. You are now the Capacity administrator and can add workspaces to the trial capacity. 
+In some situations, your Fabric administrator has [enabled Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant) but you don't have access to a capacity that has Fabric enabled. You have another option for enabling a Fabric trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you're prompted to start a Fabric trial. If you agree, your Fabric trial starts and your workspace is upgraded to a trial capacity workspace. You're now the Capacity administrator and can add workspaces to the trial capacity. 
 
 ## Share trial capacities
 
-Each trial includes up to 5 trial capacities. Each trial capacity can be shared with other users. There are several way to share. T
+Each trial includes up to 5 trial capacities. Each trial capacity can be shared with other users. There are several ways to share.
 
-- You are the Capacity administrator (the user who initiated the trial) or the Fabric administrator. You can [assign workspaces to a trial capacity](give-access-workspaces.md). All users with access to those workspaces are now able to use that trial capacity. 
+- You're the Capacity administrator (the user who initiated the trial) or the Fabric administrator. You can [assign workspaces to a trial capacity](give-access-workspaces.md). All users with access to those workspaces are now able to use that trial capacity. 
 
-- You are the workspace creator or a user with the Admin or Member [role in that workspace](roles-workspaces.md). If you created the workspace, you have the Admin role.  You can [create the workspace in trial capacity](create-workspaces.md) or [assign that workspace to a trial capacity](give-access-workspaces.md).  
+- You're the workspace creator or a user with the Admin or Member [role in that workspace](roles-workspaces.md). If you created the workspace, you have the Admin role.  You can [create the workspace in trial capacity](create-workspaces.md) or [assign that workspace to a trial capacity](give-access-workspaces.md).  
 
     :::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
@@ -85,7 +85,7 @@ Admins can also enable Fabric on a per capacity basis. [Enable for a capacity](.
 
 If you have permissions, you can view, verify, or change the Fabric tenant setting. If you need help, [contact the Capacity administrator directly](#look-up-the-trial-capacity-administrator).
 
-:::image type="content" source="media/fabric-trial/fabric-tenant-setting.png" alt-text="Screenshot of the Admin portal with Tenant settings outlined in red and an arrow pointing to the word Enabled":::
+:::image type="content" source="media/fabric-trial/fabric-tenant-setting.png" alt-text="Screenshot of the Admin portal with Tenant settings outlined in red and an arrow pointing to the word Enabled.":::
 
 
 ## Look up the trial Capacity administrator
