@@ -71,6 +71,7 @@ To create a shortcut using a cluster URI and database name, make sure you have a
 
     :::image type="content" source="media/database-shortcut/new-database.png" alt-text="Screenshot of new database dialog for creating database shortcut in Real-Time Analytics." lightbox="media/database-shortcut/new-database.png":::
 
+1. Select **Next**.
 1. Select **Method** > **Cluster URI**.
 1. Enter the URI of the source cluster. To find the URI of a KQL Database, see [Copy URI](access-database-copy-uri.md#copy-uri).
 1. Specify the source **Database**.
