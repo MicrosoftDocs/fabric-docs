@@ -675,8 +675,8 @@
       href: guide-to-dataflows-for-mapping-data-flow-users.md
   - name: Data workflows
     items:
-      # - name: Concepts
-      #   items:
+      - name: Concepts
+        items: data-workflows-concepts.md
       - name: How-to
         items:
           - name: Install a Private Package
