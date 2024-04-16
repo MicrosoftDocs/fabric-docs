@@ -26,7 +26,7 @@ Before you can deploy a workload, you must have the following:
 
 To upload a workload to the Fabric service, follow these steps:
 
-1. Log into [Fabric](http://powerbi.com) with an *Admin* account.
+1. Log into [Fabric](https://powerbi.com) with an *Admin* account.
 
    :::image type="content" source="./media/upload-workload/sign-in.png" alt-text="Screenshot of Microsoft Fabric log in screen.":::
 
@@ -68,15 +68,15 @@ To change to a different active version of a workload, follow these steps:
 1. From **Workloads** in the **Admin portal** select the workload you want to deactivate.
 1. From the *Add* tab, select **Edit**.
 
-   :::image type="content" source="./media/update-workload/edit-workload.png" alt-text="Screenshot showing how to update a workload.":::
+   :::image type="content" source="./media/upload-workload/edit-workload.png" alt-text="Screenshot showing how to update a workload.":::
 
 1. Select the version you want to activate and select **Add**.
 
-   :::image type="content" source="./media/update-workload/select-version.png" alt-text="Screenshot showing how to select the version of the workload to activate.":::
+   :::image type="content" source="./media/upload-workload/select-version.png" alt-text="Screenshot showing how to select the version of the workload to activate.":::
 
 1. Select Add again to confirm the change.
 
-   :::image type="content" source="./media/update-workload/confirm-change.png" alt-text="Screenshot showing how to confirm the change.":::
+   :::image type="content" source="./media/upload-workload/confirm-change.png" alt-text="Screenshot showing how to confirm the change.":::
 
 Notice that the new version number is now listed and **Status** is *Active in tenant*.
 
@@ -87,7 +87,7 @@ To delete a workload, follow these steps:
 1. From **Workloads** in the **Admin portal** select the workload you want to delete.
 1. From the Uploads tab, select delete icon next to the version you want to delete.
 
-   :::image type="content" source="./media/delete-workload/delete-workload.png" alt-text="Screenshot showing how to delete a workload.":::
+   :::image type="content" source="./media/upload-workload/delete-workload.png" alt-text="Screenshot showing how to delete a workload.":::
 
 Note that you can't delete the active version of a workload. To delete the active version, first [deactivate](#deactivate-a-workload) it.
 
@@ -98,10 +98,8 @@ To deactivate a workload, follow these steps:
 1. From **Workloads** in the **Admin portal** select the workload you want to deactivate.
 1. From the *Add* tab, select **Deactivate**.
 
-   :::image type="content" source="./media/deactivate-workload/deactivate.png" alt-text="Screenshot showing how to deactivate a workload.":::
+   :::image type="content" source="./media/upload-workload/deactivate.png" alt-text="Screenshot showing how to deactivate a workload.":::
 
 ## Related content
 
-* [Related article title](link.md)
-* [Related article title](link.md)
 * [Related article title](link.md)
