@@ -20,11 +20,11 @@ This article explains what you see on the external data share manage permissions
 
 To view and manage existing external data shares, navigate to the shared lakehouse or KQL database in the workspace or in the OneLake data hub, open the options menu, and select **Manage permissions**.
 
-:::image type="content" source="./media/external-data-sharing-create/manage-permissions-option.png" alt-text="Screenshot showing the manage permissions option.":::
+:::image type="content" source="./media/external-data-sharing-manage/manage-permissions-option.png" alt-text="Screenshot showing the manage permissions option.":::
 
 You'll see a list of all the external shares for this item.
 
-:::image type="content" source="./media/external-data-sharing-create/manage-external-data-share-revoke-share.png" alt-text="Screenshot showing how to revoke an external data share.":::
+:::image type="content" source="./media/external-data-sharing-manage/manage-external-data-share-share-list.png" alt-text="Screenshot showing how to revoke an external data share." lightbox="./media/external-data-sharing-manage/manage-external-data-share-share-list.png":::
 
 The following table describes the columns.
 
@@ -44,7 +44,7 @@ External data shares can be revoked at any time. You can revoke the external dat
 
 To revoke a share, hover over its Share ID and select the **Revoke share** icon that appears.
 
-:::image type="content" source="./media/external-data-sharing-create/manage-external-data-share-revoke-share.png" alt-text="Screenshot showing how to revoke an external data share.":::
+:::image type="content" source="./media/external-data-sharing-manage/manage-external-data-share-revoke-share.png" alt-text="Screenshot showing how to revoke an external data share.":::
 
 > [!Warning]
 > Revoking an external data share might have serious repercussions for the receiving tenant, and should be considered carefully and in consultation with the receiving tenant. For more information, see [Revoking external data shares](./external-data-sharing-overview.md#revoking-external-data-shares).
