@@ -21,7 +21,7 @@
         "redirect_document_id": false
       },      
       {
-        "source_path_from_root": "/docs/get-started/known-issues/known-issue-471-embedded-setup-tool-isnt-reponsive.md",
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-471-embedded-setup-tool-isnt-responsive.md",
         "redirect_url": "/fabric/get-started/fabric-known-issues",
         "redirect_document_id": false
       },
