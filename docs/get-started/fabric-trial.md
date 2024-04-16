@@ -73,7 +73,7 @@ Each trial includes up to 5 trial capacities. Each trial capacity can be shared 
 
 If the Fabric tenant switch is enabled, users can view, consume, and add Fabric content. If the Fabric tenant switch is disabled, users can only view and consume Fabric content. For more information, see [Fabric tenant setting](#look-up-the-fabric-tenant-switch-setting).
 
-Admins can also enable Fabric on a per capacity basis. [Enable for a capacity](../admin/fabric-switch#enable-for-a-capacity)
+Admins can also enable Fabric on a per capacity basis. [Enable for a capacity](../admin/fabric-switch.md#enable-for-a-capacity)
 
 ## Look up the Fabric tenant switch setting
 
