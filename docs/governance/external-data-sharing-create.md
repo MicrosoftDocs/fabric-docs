@@ -42,17 +42,6 @@ This article shows how you can share data from your Fabric tenant's OneLake stor
 * [Accept an external data share](./external-data-sharing-accept.md)
 * [Fabric admins: Enable external data sharing](./external-data-sharing-enable.md)
 
-
-## Manage external data shares
-
-To view and manage existing external data shares, navigate to the shared lakehouse or KQL database in the workspace or in the OneLake data hub, open the options menu, and select **Manage permissions**.
-
-:::image type="content" source="./media/external-data-sharing-create/manage-permissions-option.png" alt-text="Screenshot showing the manage permissions option.":::
-
-You'll see a list of all the external shares for this item. To revoke a share, hover over the Share ID and select the Revoke share that appears. Shares may be revoked at any time.
-
-:::image type="content" source="./media/external-data-sharing-create/manage-external-data-share-revoke-share.png" alt-text="Screenshot showing how to revoke an external data share.":::
-
 ## Considerations and limitations
 
 Sharing data with users in other Fabric tenants has important implications for data security and privacy. See [Security considerations](./external-data-sharing-overview.md#security-considerations) for detail.

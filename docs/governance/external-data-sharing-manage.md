@@ -31,8 +31,8 @@ The following table describes the columns.
 | Column | Description |
 |:-------|:------------|
 |**Share ID** | A guid that is assignnd to the external data share when it is created. |
-|**Status** | Share status.<br>Pending: Share invitation sent but not yet accepted.<br>Active: Shared accepted.<br>Expired: Share sent but not excepted within the permitted time window.<br>Revoked: Share revoked. Data no longer accessible via this share.|
-|**Shared with** |The user to whom the external data invitation was sent to. |
+|**Status** | Share status.<br>- Pending: Share invitation sent but not yet accepted.<br>- Active: Share accepted.<br>- Expired: Share sent but not accepted within the permitted time window.<br>- Revoked: Share revoked. Data no longer accessible via this share.|
+|**Shared with** |The user to whom the external data invitation was sent. |
 |**Location** |URL to the shared data.|
 |**Created** | Creation date of the external data share.|
 |**Created by** |The user who created the external data share.|
@@ -42,7 +42,7 @@ The following table describes the columns.
 
 External data shares can be revoked at any time. You can revoke the external data shares of any item you have write permissions on.
 
-To revoke a share, hover over its Share ID and select the Revoke share icon that appears.
+To revoke a share, hover over its Share ID and select the **Revoke share** icon that appears.
 
 :::image type="content" source="./media/external-data-sharing-create/manage-external-data-share-revoke-share.png" alt-text="Screenshot showing how to revoke an external data share.":::
 
