@@ -42,6 +42,44 @@ A data consumer can create a database shortcut in Real-Time Analytics from any s
 
 Select the desired tab that corresponds with the way you'd like to create a shortcut. 
 
+
+### [Use a cluster URI](#tab/workspace)
+
+## Prerequisites
+
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
+* An [event house](create-eventhouse.md)
+
+> [!IMPORTANT]
+> Both the source database and the database shortcut in Real-Time Analytics must be in the same region, but can be in different tenants.
+
+
+> [!IMPORTANT]
+> This method works with sources both in Azure Data Explorer and in Real-Time Analytics.
+
+To create a shortcut using a cluster URI and database name, make sure you have at least contributor permissions on the source data, and then follow these steps:
+
+1. Browse to your workspace in Microsoft Fabric.
+1. Open a new or existing [event house](create-eventhouse.md) in **Real-Time Analytics**.
+1. Select the plus sign next to **KQL Databases**.
+
+    :::image type="content" source="media/database-shortcut/kql-databases-add.png" alt-text="Screenshot in event house of adding a new KQL database.":::
+
+1. Enter a name for your database shortcut.
+1. Select **Type** > **New shortcut database (Follower)**
+
+    :::image type="content" source="media/database-shortcut/new-database.png" alt-text="Screenshot of new database dialog for creating database shortcut in Real-Time Analytics." lightbox="media/database-shortcut/new-database.png":::
+
+1. Select **Method** > **Cluster URI**.
+1. Enter the URI of the source cluster. To find the URI of a KQL Database, see [Copy URI](access-database-copy-uri.md#copy-uri).
+1. Specify the source **Database**.
+1. Optionally, modify the default cache policy.
+
+    :::image type="content" source="media/database-shortcut/new-shortcut-with-uri.png" alt-text="Screenshot of new database shortcut from a cluster URI dialog in Real-Time Analytics." lightbox="media/database-shortcut/new-shortcut-with-uri.png":::
+
+1. Select **Create**.
+
 ### [Use an invitation link](#tab/link)
 
 > [!IMPORTANT]
@@ -92,43 +130,6 @@ Use the link to open Real-Time Analytics showing the **New database shortcut** d
 1. Check that the **Invitation token** is populated with the token you created and verified.
 
     :::image type="content" source="media/database-shortcut/new-shortcut-with-link.png" alt-text="Screenshot of new database shortcut from link dialog in Real-Time Analytics." lightbox="media/database-shortcut/new-shortcut-with-link.png":::
-
-1. Select **Create**.
-
-### [Use a cluster URI](#tab/workspace)
-
-## Prerequisites
-
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
-* An [event house](create-eventhouse.md)
-
-> [!IMPORTANT]
-> Both the source database and the database shortcut in Real-Time Analytics must be in the same region, but can be in different tenants.
-
-
-> [!IMPORTANT]
-> This method works with sources both in Azure Data Explorer and in Real-Time Analytics.
-
-To create a shortcut using a cluster URI and database name, make sure you have at least contributor permissions on the source data, and then follow these steps:
-
-1. Browse to your workspace in Microsoft Fabric.
-1. Open a new or existing [event house](create-eventhouse.md) in **Real-Time Analytics**.
-1. Select the plus sign next to **KQL Databases**.
-
-    :::image type="content" source="media/database-shortcut/kql-databases-add.png" alt-text="Screenshot in event house of adding a new KQL database.":::
-
-1. Enter a name for your database shortcut.
-1. Select **Type** > **New shortcut database (Follower)**
-
-    :::image type="content" source="media/database-shortcut/new-database.png" alt-text="Screenshot of new database dialog for creating database shortcut in Real-Time Analytics." lightbox="media/database-shortcut/new-database.png":::
-
-1. Select **Method** > **Cluster URI**.
-1. Enter the URI of the source cluster. To find the URI of a KQL Database, see [Copy URI](access-database-copy-uri.md#copy-uri).
-1. Specify the source **Database**.
-1. Optionally, modify the default cache policy.
-
-    :::image type="content" source="media/database-shortcut/new-shortcut-with-uri.png" alt-text="Screenshot of new database shortcut from a cluster URI dialog in Real-Time Analytics." lightbox="media/database-shortcut/new-shortcut-with-uri.png":::
 
 1. Select **Create**.
 
