@@ -17,6 +17,12 @@ Continue reading for information on major updates to OneLake file explorer.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
+## April 2024 Update (v 1.0.12.0)
+
+### Update Notifications
+
+We believe that staying informed about app updates is crucial. Whether it’s a bug fix, performance improvement, or exciting new features. Starting with this version, our file explorer app will now notify you when a new update is available. You’ll receive a notification when a new version is available, or simply check when icon changes and right-click to see if an update awaits.
+
 ## December 2023 Update (v 1.0.11.0)
 
 ### Ability to update files using Excel
