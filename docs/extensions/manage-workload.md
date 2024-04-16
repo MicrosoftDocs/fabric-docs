@@ -35,7 +35,7 @@ To upload a workload to the Fabric service, follow these steps:
 
 1. From **Workloads**, select **Upload workload**.
 
-   :::image type="content" source="./media/manage-workload/manage-workload.png" alt-text="Screenshot showing how to upload a workload.":::
+   :::image type="content" source="./media/manage-workload/upload-workload.png" alt-text="Screenshot showing how to upload a workload.":::
 
 1. Browse to the nugget package you want to upload, and select **Open**.
 
