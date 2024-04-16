@@ -12,14 +12,14 @@ ms.date: 04/16/2024
 
 # Deploy a workload in Fabric
 
-This article describes how to upload and manage a workload to the Fabric service. Workloads enhance the usability of your service within a familiar workspace, eliminating the need to leave the Fabric environment. Fabric workloads increase user engagement and improve your application’s discoverability in the Fabric store, supporting compelling business models. The Fabric workspace includes various components, known as Fabric items, which handle the storage, analysis, and presentation of your data.
+This article describes how to upload and manage a workload to the Fabric service. Workloads enhance the usability of your service within a familiar workspace, eliminating the need to leave the Fabric environment. Fabric workloads increase user engagement and improve your application’s discoverability in the Fabric store. The Fabric workspace includes various components, known as Fabric items, which handle the storage, analysis, and presentation of your data.
 
 ## Prerequisites
 
 Before you can deploy a workload, you must have the following prerequisites:
 
 * A Fabric account with the *Admin* permissions.
-* The [nuget package](https://www.nuget.org/) workload solution that you want to deploy. For information about creating a workload solution, see [Create a workload solution](create-workload.md).
+* The [NuGet package](https://www.nuget.org/) workload solution that you want to deploy. For information about creating a workload solution, see [Create a workload solution](create-workload.md).
 
 ## Upload a workload
 
@@ -39,7 +39,7 @@ To upload a workload to the Fabric service, follow these steps:
 
 1. Browse to the nugget package you want to upload, and select **Open**.
 
-   :::image type="content" source="./media/manage-workload/browse-nuget-package.png" alt-text="Screenshot showing how to browse to the nuget package.":::
+   :::image type="content" source="./media/manage-workload/browse-nuget-package.png" alt-text="Screenshot showing how to browse to the NuGet package.":::
 
 1. Select workload.
 1. Select uploaded version
