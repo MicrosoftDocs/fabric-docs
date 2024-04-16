@@ -20,7 +20,6 @@ Before you can deploy a workload, you must have the following:
 
 * A Fabric account with the *Admin* permissions.
 * The [nuget package](https://www.nuget.org/) workload solution that you want to deploy. For information about creating a workload solution, see [Create a workload solution](create-workload.md).
-* [Visual Studio Enterprise 2022] or later.
 
 ## Upload a workload
 
@@ -28,30 +27,30 @@ To upload a workload to the Fabric service, follow these steps:
 
 1. Log into [Fabric](https://powerbi.com) with an *Admin* account.
 
-   :::image type="content" source="./media/upload-workload/sign-in.png" alt-text="Screenshot of Microsoft Fabric log in screen.":::
+   :::image type="content" source="./media/manage-workload/sign-in.png" alt-text="Screenshot of Microsoft Fabric log in screen.":::
 
 1. From **Settings**, go to the **Admin portal**.
 
-   :::image type="content" source="./media/upload-workload/settings-admin-portal.png" alt-text="Screenshot showing how to get to the Fabric Admin portal.":::
+   :::image type="content" source="./media/manage-workload/settings-admin-portal.png" alt-text="Screenshot showing how to get to the Fabric Admin portal.":::
 
 1. From **Workloads**, select **Upload workload**.
 
-   :::image type="content" source="./media/upload-workload/upload-workload.png" alt-text="Screenshot showing how to upload a workload.":::
+   :::image type="content" source="./media/manage-workload/manage-workload.png" alt-text="Screenshot showing how to upload a workload.":::
 
 1. Browse to the nugget package you want to upload, and select **Open**.
 
-   :::image type="content" source="./media/upload-workload/browse-nuget-package.png" alt-text="Screenshot showing how to browse to the nuget package.":::
+   :::image type="content" source="./media/manage-workload/browse-nuget-package.png" alt-text="Screenshot showing how to browse to the nuget package.":::
 
 1. Select workload.
 1. Select uploaded version
 
-   :::image type="content" source="./media/upload-workload/select-version.png" alt-text="Screenshot showing how to select the workload.":::
+   :::image type="content" source="./media/manage-workload/select-version.png" alt-text="Screenshot showing how to select the workload.":::
 
 1. Select **Add**.
 
 Notice that the version number is now listed and **Status** is *Active in tenant*.
 
-   :::image type="content" source="./media/upload-workload/active-version.png" alt-text="Screenshot showing the active version of the workload.":::
+   :::image type="content" source="./media/manage-workload/active-version.png" alt-text="Screenshot showing the active version of the workload.":::
 
 ## Manage a workload
 
@@ -68,15 +67,15 @@ To change to a different active version of a workload, follow these steps:
 1. From **Workloads** in the **Admin portal** select the workload you want to deactivate.
 1. From the *Add* tab, select **Edit**.
 
-   :::image type="content" source="./media/upload-workload/edit-workload.png" alt-text="Screenshot showing how to update a workload.":::
+   :::image type="content" source="./media/manage-workload/edit-workload.png" alt-text="Screenshot showing how to update a workload.":::
 
 1. Select the version you want to activate and select **Add**.
 
-   :::image type="content" source="./media/upload-workload/select-version.png" alt-text="Screenshot showing how to select the version of the workload to activate.":::
+   :::image type="content" source="./media/manage-workload/select-version.png" alt-text="Screenshot showing how to select the version of the workload to activate.":::
 
 1. Select Add again to confirm the change.
 
-   :::image type="content" source="./media/upload-workload/confirm-change.png" alt-text="Screenshot showing how to confirm the change.":::
+   :::image type="content" source="./media/manage-workload/confirm-change.png" alt-text="Screenshot showing how to confirm the change.":::
 
 Notice that the new version number is now listed and **Status** is *Active in tenant*.
 
@@ -87,7 +86,7 @@ To delete a workload, follow these steps:
 1. From **Workloads** in the **Admin portal** select the workload you want to delete.
 1. From the Uploads tab, select delete icon next to the version you want to delete.
 
-   :::image type="content" source="./media/upload-workload/delete-workload.png" alt-text="Screenshot showing how to delete a workload.":::
+   :::image type="content" source="./media/manage-workload/delete-workload.png" alt-text="Screenshot showing how to delete a workload.":::
 
 Note that you can't delete the active version of a workload. To delete the active version, first [deactivate](#deactivate-a-workload) it.
 
@@ -98,7 +97,7 @@ To deactivate a workload, follow these steps:
 1. From **Workloads** in the **Admin portal** select the workload you want to deactivate.
 1. From the *Add* tab, select **Deactivate**.
 
-   :::image type="content" source="./media/upload-workload/deactivate.png" alt-text="Screenshot showing how to deactivate a workload.":::
+   :::image type="content" source="./media/manage-workload/deactivate.png" alt-text="Screenshot showing how to deactivate a workload.":::
 
 ## Related content
 
