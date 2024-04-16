@@ -32,13 +32,6 @@ The database shortcut is attached in read-only mode, making it possible to view 
 
 The source and database shortcuts use the same storage account to fetch the data. The storage is owned by the source database. The database shortcut views the data without needing to ingest it. Since the database shortcut is a read-only database, the data, tables, and policies in the database can't be modified except for caching policy, principals, and permissions.
 
-## Prerequisites
-
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
-
-> [!IMPORTANT]
-> Both the source database and the database shortcut in Real-Time Analytics must be in the same region, but can be in different tenants.
 
 ## Create database shortcut
 
@@ -53,6 +46,15 @@ Select the desired tab that corresponds with the way you'd like to create a shor
 
 > [!IMPORTANT]
 > This method only works when the source database is in Azure Data Explorer.
+
+## Prerequisites
+
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
+
+> [!IMPORTANT]
+> Both the source database and the database shortcut in Real-Time Analytics must be in the same region, but can be in different tenants.
+
 
 #### Create an invitation token
 
@@ -95,14 +97,24 @@ Use the link to open Real-Time Analytics showing the **New database shortcut** d
 
 ### [Use a cluster URI](#tab/workspace)
 
+## Prerequisites
+
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
+* An [event house](create-eventhouse.md)
+
+> [!IMPORTANT]
+> Both the source database and the database shortcut in Real-Time Analytics must be in the same region, but can be in different tenants.
+
+
 > [!IMPORTANT]
 > This method works with sources both in Azure Data Explorer and in Real-Time Analytics.
 
 To create a shortcut using a cluster URI and database name, make sure you have at least contributor permissions on the source data, and then follow these steps:
 
 1. Browse to your workspace in Microsoft Fabric.
-1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
-1. Select **+ New** > **KQL Database**.
+1. Open a new or existing [event house](create-eventhouse.md) in **Real-Time Analytics**.
+1. Select the plus sign next to **KQL Databases**.
 
     :::image type="content" source="media/database-shortcut/kql-databases-add.png" alt-text="Screenshot in event house of adding a new KQL database.":::
 
