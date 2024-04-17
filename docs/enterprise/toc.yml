@@ -9,8 +9,8 @@ items:
   items:
   - name: Buy a Microsoft Fabric subscription
     href: buy-subscription.md
-  - name: Service interruption notifications
-    href: service-interruption-notifications.md
+  - name: SKU considerations
+    href: sku-considerations.md
 - name: Capacity operations
   items:
   - name: Understand your Azure bill
@@ -21,6 +21,10 @@ items:
     href: scale-capacity.md
   - name: Throttling
     href: throttling.md
+  - name: Fabric operations    
+    href: fabric-operations.md   
+  - name: Optimize your capacity
+    href: optimize-capacity.md
   - name: Metrics app
     items:
     - name: What is the Microsoft Fabric Capacity Metrics app?

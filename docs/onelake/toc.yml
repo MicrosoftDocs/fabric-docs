@@ -23,14 +23,18 @@ items:
     href: onelake-shortcuts.md
   - name: Create a OneLake shortcut
     href: create-onelake-shortcut.md
-  - name: Access OneLake shortcuts in a Spark notebook
-    href: access-onelake-shortcuts.md
   - name: Create an ADLS Gen2 shortcut
     href: create-adls-shortcut.md
   - name: Create an Amazon S3 shortcut
-    href: create-S3-shortcut.md
+    href: create-s3-shortcut.md
+  - name: Create an Amazon S3 compatible shortcut
+    href: create-s3-compatible-shortcut.md
+  - name: Create a Google Cloud Storage shortcut
+    href: create-gcs-shortcut.md  
+  - name: Access OneLake shortcuts in a Spark notebook
+    href: access-onelake-shortcuts.md
   - name: Use shortcuts REST API
-    href: onelake-shortcuts-rest-api.md
+    href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
 - name: Open access
   items:
   - name: How do I connect to OneLake?
@@ -47,16 +51,32 @@ items:
     href: onelake-azure-storage-explorer.md
   - name: Azure Databricks
     href: onelake-azure-databricks.md
+  - name: Databricks Unity Catalog
+    href: onelake-unity-catalog.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
   - name: PowerShell
     href: onelake-powershell.md
 - name: Secure and manage data
   items:
-  - name: Secure data
-    href: onelake-security.md
+  - name: Fabric and OneLake data security
+    href: ./security/fabric-onelake-security.md
+  - name: OneLake Data Access Control Model
+    href: ./security/data-access-control-model.md
   - name: Get started with securing data in OneLake
-    href: get-started-security.md
+    items:
+    - name: OneLake security overview
+      href: ./security/get-started-security.md
+    - name: Get started with data access roles
+      href: ./security/get-started-data-access-roles.md
+    - name: Best Practices
+      href: ./security/best-practices-secure-data-in-onelake.md
+  - name: How To Secure Data in OneLake
+    items:
+    - name: For Data Science
+      href: ./security/how-to-secure-data-onelake-for-data-science.md
+    - name: For Data Warehousing
+      href: ./security/how-to-secure-data-onelake-for-data-warehousing.md
   - name: Plan for disaster recovery
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows

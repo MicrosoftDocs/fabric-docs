@@ -2,8 +2,8 @@
 title: Invoke pipeline activity
 description: Learn how to add an Invoke pipeline activity to a pipeline and use it to run another pipeline.
 ms.reviewer: jburchel
-ms.author: chez
-author: chez-charlie
+ms.author: makromer
+author: kromerm
 ms.topic: how-to
 ms.custom:
   - ignite-2023

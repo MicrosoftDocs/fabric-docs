@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
-ms.date: 02/28/2024
+ms.date: 04/04/2024
 ---
 
 # Private links for secure access to Fabric (preview)
@@ -71,7 +71,7 @@ Visual query in Warehouse doesn't work when the **Block Public Internet Access**
 
 Once you've enabled the **Azure Private Link** tenant setting, running the first Spark job (Notebook or Spark job definition) or performing a Lakehouse operation (Load to Table, table maintenance operations such as Optimize or Vacuum) will result in the creation of a managed virtual network for the workspace.
 
-Once the managed virtual network has been provisioned, the starter pools (default Compute option) for Spark are disabled, as these are prewarmed clusters hosted in a shared virtual network. Spark jobs run on custom pools that are created on-demand at the time of job submission within the dedicated managed virtual network of the workspace. Using table maintenance to manage delta tables in Lakehouse might fail. This is a temporary limitation. Workspace migration across capacities in different regions isn't supported when a managed virtual network is allocated to your workspace.
+Once the managed virtual network has been provisioned, the starter pools (default Compute option) for Spark are disabled, as these are prewarmed clusters hosted in a shared virtual network. Spark jobs run on custom pools that are created on-demand at the time of job submission within the dedicated managed virtual network of the workspace. Workspace migration across capacities in different regions isn't supported when a managed virtual network is allocated to your workspace.
 
 When the private link setting is enabled, Spark jobs won't work for tenants whose home region doesn't support Fabric Data Engineering, even if they use Fabric capacities from other regions that do.
 
@@ -84,6 +84,9 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 ### Pipeline
 
 When you connect to Pipeline via private link, you can use the data pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize data pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
+
+### ML Model, Experiment, and AI skill
+ML Model, Experiment and AI skill supports private link. 
 
 ### Power BI
 
@@ -99,7 +102,7 @@ When you connect to Pipeline via private link, you can use the data pipeline to 
 
 ### Other Fabric items
 
-Other Fabric items, such as Model, Experience, KQL Database, and EventStream, don’t currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+Other Fabric items, such as KQL Database, and EventStream, don’t currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 
 ### Microsoft Purview Information Protection
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 03/05/2024
+ms.date: 03/24/2024
 ---
 
-# Feature usage and adoption report
+# Feature usage and adoption report (preview)
 
-The Feature Usage and Adoption Report is a comprehensive analysis of usage and adoption of different features in your Microsoft Fabric tenant. As a Fabric admin you can share this report with others in your organization. You can also share the report's semantic model, and use it to customize the report, or build a new report that relies on the same data.
+The Feature Usage and Adoption report provides a comprehensive analysis of usage and adoption of different features in your Microsoft Fabric tenant. As a Fabric administrator, you can share this report with others in your organization. You can also share the report's semantic model, and use it to customize the report, or build a new report that relies on the same data.
 
 You can access the report from the [admin monitoring](monitoring-workspace.md) workspace. To see this workspace you need to be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles).
 
@@ -22,7 +22,7 @@ The report is built to allow admins to analyze specific scenarios. Use the repor
 
 ## Report pages
 
-The *feature usage and adoption* report has four pages:
+The Feature Usage and Adoption report has four pages:
 
 * **Activity Overview** - Provides a bird's eye view of activities and usage across the entire organization
 
@@ -62,7 +62,7 @@ Continuing the example from the [Activity Overview](#activity-overview-page) pag
 
 ### Inventory page
 
-The inventory page displays all the items in your tenant. You can filter the results according to:
+The Inventory page displays all the items in your tenant. You can filter the results according to:
 
 * **Item type** - Sort the results to display only the Fabric items you want to see.
 
@@ -104,7 +104,7 @@ This section lists the report's considerations and limitations.
 
 ### Display
 
-* The single data point across the zoom slider, displays a misleading date range for the total activities and users.
+* Using a single data point with the zoom slider displays a misleading date range for the *Total activities and users* visual.
 
 * When drilling down to a workspace, the *Expand All* feature doesn't update the *Most Active Capacities* visual title.
 
@@ -125,4 +125,6 @@ This section lists the report's considerations and limitations.
 ## Related content
 
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
+
 * [Admin overview](microsoft-fabric-admin.md)
+

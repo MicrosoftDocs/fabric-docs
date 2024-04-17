@@ -101,7 +101,7 @@ The OneLake file explorer only syncs updates when you're online and the applicat
 
 ### Edit files
 
-You can open files using your favorite apps and make edits. Selecting **Save** syncs the file to OneLake. Starting in version 1.0.11, you can also make updates with Excel to your files. **Close** the file after the udpate in Excel and it will initiate the sync to OneLake.
+You can open files using your favorite apps and make edits. Selecting **Save** syncs the file to OneLake. Starting in version 1.0.11, you can also make updates with Excel to your files. **Close** the file after the update in Excel and it will initiate the sync to OneLake.
 
 If you edit a file locally and select **Save**, the OneLake file explorer app detects if that file was updated elsewhere (by someone else) since you last selected **Sync from OneLake**. A **Confirm the action** dialog box appears:
 
@@ -133,7 +133,7 @@ You can enable additional client-side logging by selecting **Diagnostic Operatio
 
 ### Release Notes
 
-Starting in version 1.0.11, you can information find about each release of the OneLake file explorer by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar.  Select **About** > **Release Notes**. This opens the OneLake file explorer release notes page in your browser window. 
+Starting in version 1.0.11, you can find information about each release of the OneLake file explorer by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar.  Select **About** > **Release Notes**. This opens the OneLake file explorer release notes page in your browser window.
 
 ### Uninstall instructions
 
@@ -155,5 +155,5 @@ These OneLake file explorer icons appear in Windows File Explorer to indicate th
 
 ## Related content
 
-- Learn more about [OneLake security](onelake-security.md).
+- Learn more about [Fabric and OneLake security](./security/fabric-onelake-security.md).
 - [What's new in the latest OneLake file explorer?](onelake-file-explorer-release-notes.md)

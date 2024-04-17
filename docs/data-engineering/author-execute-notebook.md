@@ -35,6 +35,7 @@ We provide rich operations to develop notebooks:
 - [Delete a cell](#delete-a-cell)
 - [Collapse a cell input](#collapse-a-cell-input)
 - [Collapse a cell output](#collapse-a-cell-output)
+- [Cell output security](#cell-output-security)
 - [Lock or freeze a cell](#lock-or-freeze-a-cell)
 - [Notebook contents](#notebook-contents)
 - [Markdown folding](#markdown-folding)
@@ -160,6 +161,13 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide input
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide output** to collapse the current cell's output. To expand it again, select **Show output** when the cell output is collapsed.
 
+### Cell output security
+
+Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table will see an unauthorized error during query execution.
+
+> [!IMPORTANT]
+> Security only applies during query execution and any notebook cells containing query results can be viewed by users that are not authorized to run queries against the data directly.
+
 ### Lock or freeze a cell
 
 The lock and freeze cell operations allow you to make cells read-only or stop code cells from being run on an individual basis.
@@ -224,7 +232,10 @@ Select **Cancel all** to cancel the running cells or cells waiting in the queue.
 
 :::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
 
-### Notebook reference run
+
+### Reference run
+
+#### Reference run a Notebook
 
 In addition to [mssparkutils reference run API](microsoft-spark-utilities.md), you can also use the ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. The ```%run``` magic command supports nested calls but doesn't support recursive calls. You receive an exception if the statement depth is larger than **five**.
 
@@ -238,6 +249,37 @@ Notebook reference works in both interactive mode and pipeline.
 > - The ```%run``` command currently only supports reference notebooks in the same workspace with the current notebook.
 > - The ```%run``` command currently only supports up to four parameter value types: `int`, `float`, `bool`, and `string`. Variable replacement operation is not supported.
 > - The ```%run``` command doesn't support nested reference with a depth larger than **five**.
+
+#### Reference run a script
+
+The ```%run``` command also allows you to run Python or SQL files that are stored in the notebook’s built-in resources, so you can execute your source code files in notebook conveniently.
+
+``` %run [-b/--builtin -c/--current] [script_file.py/.sql] [variables ...] ```
+
+For options:
+- **-b/--builtin**: This option indicates that the command will find and run the specified script file from the notebook’s built-in resources.
+- **-c/--current**: This option ensures that the command always uses the current notebook’s built-in resources, even if the current notebook is referenced by other notebooks.
+
+Examples:
+
+- To run *script_file.py* from the built-in resources: ``` %run -b script_file.py ```
+
+- To run *script_file.sql* from the built-in resources: ``` %run -b script_file.sql ```
+
+- To run *script_file.py* from the built-in resources with specific variables: ``` %run -b script_file.py { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true, "parameterString": "abc" } ```
+
+> [!NOTE] 
+> If the command does not contain **-b/--builtin**, it will attempt to find and execute notebook item inside the same workspace rather than the built-in resources.
+
+Usage example for nested run case:
+
+- Suppose we have two notebooks.
+    - **Notebook1**: Contains *script_file1.py* in its built-in resources
+    - **Notebook2**: Contains *script_file2.py* in its built-in resources
+- Let's use **Notebook1** work as a root notebook with the content: ``` %run Notebook2 ```.
+- Then in the **Notebook2** the usage instruction is:
+    - To run *script_file1.py* in **Notebook1**(the root Notebook) the code would be: ``` %run -b script_file1.py ```
+    - To run *script_file2.py* in **Notebook2**(the current Notebook) the code would be: ``` %run -b -c script_file2.py ```
 
 ### Variable explorer
 
@@ -284,7 +326,7 @@ You can use familiar Ipython magic commands in Fabric notebooks. Review the foll
 > These are the only magic commands supported in Fabric pipeline: %%pyspark, %%spark, %%csharp, %%sql, %%configure.
 
 Available line magic commands:
-[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#notebook-reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode.
+[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode.
 
 Fabric notebook also supports the improved library management commands **%pip** and **%conda**. For more information about usage, see [Manage Apache Spark libraries in Microsoft Fabric](library-management.md).
 
@@ -415,7 +457,7 @@ You can personalize your Spark session with the magic command **%%configure**. F
     }
     "defaultLakehouse": {  // This overwrites the default lakehouse for current session
         "name": "<lakehouse-name>",
-        "id": "<(optional) lakehouse-id>",
+        "id": "<lakehouse-id>",
         "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>" // Add workspace ID if it's from another workspace
     },
     "mountPoints": [

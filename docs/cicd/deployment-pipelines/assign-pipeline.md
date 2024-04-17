@@ -1,14 +1,15 @@
 ---
-title: Assign a workspace to a Microsoft Fabric Application lifecycle management (ALM) deployment pipeline
+title: Assign a workspace to a deployment pipeline
 description: Learn how to assign and unassign a workspace to a deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 10/25/2023
+    - build-2023
+    - ignite-2023
+ms.date: 04/11/2024
 ms.search.form: Deployment pipelines operations
+#customer intent: As a developer, I want to learn how to assign a workspace to a deployment pipeline so that I can manage my development process efficiently.
 ---
 
 # Assign a workspace to a Microsoft Fabric deployment pipeline
@@ -35,13 +36,13 @@ To assign a workspace to a pipeline stage, follow these steps:
 
     :::image type="content" source="media/assign-pipeline/new-workspace.png" alt-text="A screenshot showing a deployment pipelines new workspace with all the pipeline stages unassigned." lightbox="media/assign-pipeline/new-workspace.png":::
 
-2. In the stage you want to assign a workspace to, expand the dropdown titled **Choose a workspace to assign to this pipeline**.
+1. In the stage you want to assign a workspace to, expand the dropdown titled **Choose a workspace to assign to this pipeline**.
 
-3. From the dropdown menu, select the workspace you want to assign to this stage.
+1. From the dropdown menu, select the workspace you want to assign to this stage. If you don't see the workspace you want, review the [limitations](#considerations-and-limitations) section and make sure that your workspace meets the required conditions.
 
     :::image type="content" source="media/assign-pipeline/assign-workspace.png" alt-text="A screenshot showing the assign workspace dropdown in a deployment pipelines empty stage.":::
 
-4. Select **Assign a workspace**.
+1. Select **Assign a workspace**.
 
     :::image type="content" source="media/assign-pipeline/assign-button.png" alt-text="A screenshot showing the assign workspace button in a deployment pipelines empty stage.":::
 
@@ -53,19 +54,19 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 1. Open the pipeline.
 
-2. In the stage you want to unassign the workspace from, select **settings**.
+1. In the stage you want to unassign the workspace from, select **settings**.
 
-3. From the *settings* menu, select **Unassign workspace**.
+1. From the *settings* menu, select **Unassign workspace**.
 
     :::image type="content" source="media/assign-pipeline/unassign-workspace.png" alt-text="A screenshot showing the unassign workspace option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/assign-pipeline/unassign-workspace.png":::
 
-4. In the *Unassign workspace* dialogue box, select **Unassign**.
+1. In the *Unassign workspace* dialogue box, select **Unassign**.
 
     :::image type="content" source="media/assign-pipeline/unassign-note.png" alt-text="A screenshot showing the unassign workspace pop-up window in deployment pipelines. The unassign button is highlighted.":::
 
-## Item connections
+## Item pairing
 
-After assigning a workspace to a deployment pipeline stage, if there are any adjacent stages already assigned, deployment pipelines attempts to create the connections between the items (such as reports, dashboards, and semantic models) in the adjacent stages. During this process, deployment pipelines checks the names of the items in the source stage and the stages next to it. Connections to items in adjacent stages, are established according to the item's type and name. If there are multiple items of the same type with the same name in the adjacent stages, assigning the workspace fails. To understand why this happens and resolve such cases, see [I can't assign the workspace to a stage?](../troubleshoot-cicd.md#i-cant-assign-a-workspace-to-a-stage)
+After assigning a workspace to a deployment pipeline stage, if there are any adjacent stages already assigned, deployment pipelines attempts to create the connections between the items (such as reports, dashboards, and semantic models) in the adjacent stages. During this process, deployment pipelines checks the names of the items in the source stage and the stages next to it. Connections to items in adjacent stages, are established according to the item's type and name. If there are multiple items of the same type with the same name in the adjacent stages, assigning the workspace fails. To understand why this happens and resolve such cases, see [I can't assign the workspace to a stage?](../troubleshoot-cicd.md#i-cant-assign-a-workspace-to-a-stage).
 
 Connections between items are only established when you assign a workspace to a pipeline stage. Adding a new item to a workspace that's part of a pipeline, doesn't trigger the creation of connections between that item and identical items in adjacent stages. To trigger forming a connection between a newly added item in a workspace stage and its equivalent item in an adjacent stage, unassign and reassign the workspace that contains the newly added item.
 

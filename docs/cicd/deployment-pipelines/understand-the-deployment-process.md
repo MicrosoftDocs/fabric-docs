@@ -3,12 +3,10 @@ title: The Microsoft Fabric deployment pipelines process
 description: Understand how deployment pipelines, the Fabric Application lifecycle management (ALM) tool, works.
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: Lee
 ms.topic: conceptual
 ms.custom:
-  - intro-deployment
-  - build-2023
-  - ignite-2023
-ms.date: 01/21/2024
+ms.date: 04/14/2024
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -34,13 +32,11 @@ After the deployment is complete, refresh the semantic models so that you can us
 
 The first time you deploy content, deployment pipelines checks if you have permissions.  
 
-If you have permissions, the content of the workspace is copied to the stage you're deploying to, and a new  workspace for that stage is created on the capacity.
+If you have permissions, the content of the workspace is copied to the stage you're deploying to, and a new workspace for that stage is created on the capacity.
 
 If you don't have permissions, the workspace is created but the content isn’t copied. You can ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. Later, when the workspace is assigned to a capacity, you can deploy content to this workspace.
 
 If you're using [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq), your workspace is automatically associated with your PPU. In such cases, permissions aren't required. However, if you create a workspace with a PPU, only other PPU users can access it. In addition, only PPU users can consume content created in such workspaces.
-
-### Workspace and content ownership
 
 The deploying user automatically becomes the owner of the cloned semantic models, and the only admin of the new workspace.
 
@@ -58,7 +54,7 @@ When content from the current stage is copied to the target stage, Fabric identi
 
 In the target stage, [item properties that aren't copied](understand-the-deployment-process.md#item-properties-that-are-not-copied), remain as they were before deployment. New content and new items are copied from the current stage to the target stage.
 
-### Auto-binding
+### Autobinding
 
 In Fabric, when items are connected, one of the items depends on the other. For example, a report always depends on the semantic model it's connected to. A semantic model can depend on another semantic model, and can also be connected to several reports that depend on it. If there's a connection between two items, deployment pipelines always tries to maintain this connection.
 
@@ -68,11 +64,11 @@ During deployment, deployment pipelines checks for dependencies. The deployment 
 
 * **Linked item doesn't exist in the target stage** - Deployment pipelines fail a deployment if an item has a dependency on another item, and the item providing the data isn't deployed and doesn't reside in the target stage. For example, if you deploy a report from development to test, and the test stage doesn't contain its semantic model, the deployment will fail. To avoid failed deployments due to dependent items not being deployed, use the *Select related* button. *Select related* automatically selects all the related items that provide dependencies to the items you're about to deploy.
 
-Auto-binding works only with items that are supported by deployment pipelines and reside within Fabric. To view the dependencies of an item, from the item's *More options* menu, select *View lineage*.
+Autobinding works only with items that are supported by deployment pipelines and reside within Fabric. To view the dependencies of an item, from the item's *More options* menu, select *View lineage*.
 
 :::image type="content" source="media/understand-the-deployment-process/view-lineage.png" alt-text="A screenshot of the view lineage option, in an item's more options menu.":::
 
-#### Auto-binding across pipelines
+#### Autobinding across pipelines
 
 Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item it's connected to in the other pipeline. For example, if you have a report in the test stage of pipeline A that's connected to a semantic model in the test stage of pipeline B, deployment pipelines recognizes this connection.
 
@@ -90,23 +86,23 @@ Here's an example with illustrations that to help demonstrate how autobinding ac
 
     * *If you have a copy of the semantic model the report depends on in the test stage of pipeline A*:
 
-        The deployment succeeds, and deployment pipelines connects (auto-bind) the report in the test stage of pipeline B, to the semantic model in the test stage of pipeline A.
+        The deployment succeeds, and deployment pipelines connects (autobind) the report in the test stage of pipeline B, to the semantic model in the test stage of pipeline A.
 
         :::image type="content" source="media/understand-the-deployment-process/successful-deployment.png" alt-text="A diagram showing a deployment of a report from the development stage to the test stage in pipeline B. The report is connected to a dataset in pipeline A. The deployment is successful because there's a copy of the dataset the report depends on in the test stage of pipeline A. After the deployment the report in the test stage on pipeline B, autobinds with the dataset in the test stage of pipeline A.":::
 
     * *If you don't have a copy of the semantic model the report depends on in the test stage of pipeline A*:
 
-        The deployment fails because deployment pipelines can't connect (auto-bind) the report in the test stage in pipeline B, to the semantic model it depends on in the test stage of pipeline A.
+        The deployment fails because deployment pipelines can't connect (autobind) the report in the test stage in pipeline B, to the semantic model it depends on in the test stage of pipeline A.
 
         :::image type="content" source="media/understand-the-deployment-process/failed-deployment.png" alt-text="A diagram showing a deployment of a report from the development stage to the test stage in pipeline B. The report is connected to a dataset in pipeline A. The deployment fails because there isn't a copy of the dataset the report depends on in the test stage of pipeline A.":::
 
-#### Avoid using auto-binding
+#### Avoid using autobinding
 
-In some cases, you might not want to use auto-binding. For example, if you have one pipeline for developing organizational semantic models, and another for creating reports. In this case, you might want all the reports to always be connected to semantic models in the production stage of the pipeline they belong to. To accomplish this, avoid using the auto-binding feature.
+In some cases, you might not want to use autobinding. For example, if you have one pipeline for developing organizational semantic models, and another for creating reports. In this case, you might want all the reports to always be connected to semantic models in the production stage of the pipeline they belong to. To accomplish this, avoid using the autobinding feature.
 
 :::image type="content" source="media/understand-the-deployment-process/no-auto-binding.png" alt-text="A diagram showing two pipelines. Pipeline A has a semantic model in every stage and pipeline B has a report in every stage. All the reports from pipeline B are connected to the semantic model in the production stage of pipeline A.":::
 
-There are three methods you can use to avoid using auto-binding:
+There are three methods you can use to avoid using autobinding:
 
 * Don't connect the item to corresponding stages. When the items aren't connected in the same stage, deployment pipelines keeps the original connection. For example, if you have a report in the development stage of pipeline B that's connected to a semantic model in the production stage of pipeline A. When you deploy the report to the test stage of pipeline B, it remains connected to the semantic model in the production stage of pipeline A.
 
@@ -114,7 +110,7 @@ There are three methods you can use to avoid using auto-binding:
 
 * Connect your reports, dashboards, and tiles to a proxy semantic model or dataflow that isn't connected to a pipeline.
 
-#### Auto-binding and parameters
+#### Autobinding and parameters
 
 Parameters can be used to control the connections between semantic models or dataflows and the items that they depend on. When a parameter controls the connection, autobinding after deployment won't take place, even when the connection includes a parameter that applies to the semantic model’s or dataflow's ID, or the workspace ID. In such cases, you'll need to rebind the items after the deployment by changing the parameter value, or by using [parameter rules](create-rules.md).
 
@@ -131,33 +127,45 @@ In many cases, when you have a small change such as adding or removing a table, 
 
 Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity-license) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
 
+## Folders in deployment pipelines (preview)
+
+[Folders](./manage-workspace-content.md) in a workspace enable users to efficiently organize and manage workspace items in a familiar way.
+When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
+
+### Folders representation
+
+Since a deployment is of items only, workspace content is shown in Deployment pipelines as a flat list of items. An item’s full path is shown when hovering over its name on the list.
+In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it will be created in its workspace first. Folders can be seen and managed only on the workspace page.
+
+:::image type="content" source="media/understand-the-deployment-process/folder-path.png" alt-text="Screenshot showing the full pathname of an item inside a folder. The name includes the name of the folder.":::
+
+### Identify items that were moved to different folders
+
+Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* in *Compare* mode. Moreover, unless there's also a schema change, the option next to the label to open a *Change review* window that presents the schema changes, is disabled. Hovering over it shows a note saying the change is a *settings* change (like *rename*). This is because compared to their paired items on the source stage, the change isn't yet deployed.
+
+:::image type="content" source="media/understand-the-deployment-process/moved-folder-item.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder.":::
+
+* Individual folders can't be deployed manually in deployment pipelines. Their deployment is triggered automatically when at least one of their items is deployed.
+
+* The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items isn't updated yet.
+
+* Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
+
+* Deploying one item out of several in a folder also updates the structure of the items that aren't deployed in the target stage even though the items themselves aren't be deployed.
+
 ## Supported items
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
+* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
 * Dataflows Gen1
 * Datamarts
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* Paginated reports
+* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (based on supported semantic models)
 * Semantic models (except for Direct Lake semantic models)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
-
-### Unsupported items
-
-Deployment pipelines doesn't support the following items:
-
-* Dataflows Gen2
-* Data pipelines
-* Datasets that don't originate from a *.pbix*
-* Direct Lake semantic model
-* PUSH datasets
-* Streaming dataflows
-* Reports based on unsupported semantic models
-* [Template app workspaces](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace)
-* Workbooks
-* Metrics
 
 ## Item properties copied during deployment
 
@@ -248,13 +256,13 @@ Once your pipeline is configured with incremental refresh, we recommend that you
 
 #### Usage examples
 
-The following are a few examples of how you may integrate incremental refresh with deployment pipelines.
+The following are a few examples of how you can integrate incremental refresh with deployment pipelines.
 
 * [Create a new pipeline](get-started-with-deployment-pipelines.md#step-1---create-a-deployment-pipeline) and connect it to a workspace with a semantic model that has incremental refresh enabled.
 
 * Enable incremental refresh in a semantic model that's already in a *development* workspace.  
 
-* Create a pipeline from a production workspace that has a semantic model that uses incremental refresh. This is done by using [backwards deployment](./deploy-content.md#backwards-deployment). For example, assign the workspace to a new pipeline's *production* stage, and use backwards deployment to deploy to the *test* stage, and then to the *development* stage.
+* Create a pipeline from a production workspace that has a semantic model that uses incremental refresh. For example, assign the workspace to a new pipeline's *production* stage, and use backwards deployment to deploy to the *test* stage, and then to the *development* stage.
 
 * Publish a semantic model that uses incremental refresh to a workspace that's part of an existing pipeline.
 
@@ -276,7 +284,7 @@ Other changes such as adding a column, removing a column, and renaming a calcula
 
 Using [composite models](/power-bi/transform-model/desktop-composite-models) you can set up a report with multiple data connections.
 
-You can use the composite models functionality to connect a Fabric semantic model to an external semantic models such as Azure Analysis Services. For more information, see [Using DirectQuery for Fabric semantic models and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services).
+You can use the composite models functionality to connect a Fabric semantic model to an external semantic model such as Azure Analysis Services. For more information, see [Using DirectQuery for Fabric semantic models and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services).
 
 In a deployment pipeline, you can use composite models to connect a semantic model to another Fabric semantic model external to the pipeline.
 
@@ -315,13 +323,13 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 
 * Workspaces have different permissions, also called [roles](../../get-started/roles-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
 
-* Deployment pipelines do not support [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) as pipeline admins.
+* Deployment pipelines doesn't support [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) as pipeline admins.
 
-To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a member or an admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, will be able to view the pipeline and share it with others. However, this user won't be able to view the content of the workspace in the pipeline, or in the service, and won't be able to perform deployments.
+To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a member or an admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, can view the pipeline and share it with others. However, this user can't view the content of the workspace in the pipeline, or in the service, and can't perform deployments.
 
 ### Permissions table
 
-This section describes the deployment pipeline permissions. The permissions listed in this section may have different applications in other Fabric features.
+This section describes the deployment pipeline permissions. The permissions listed in this section might have different applications in other Fabric features.
 
 The lowest deployment pipeline permission is *pipeline admin*, and it's required for all deployment pipeline operations.
 
@@ -335,7 +343,7 @@ The lowest deployment pipeline permission is *pipeline admin*, and it's required
 
 ### Granted permissions
 
-When you're deploying Power BI items, the ownership of the deployed item may change. Review the following table to understand who can deploy each item and how the deployment affects the item's ownership.
+When you're deploying Power BI items, the ownership of the deployed item might change. Review the following table to understand who can deploy each item and how the deployment affects the item's ownership.
 
 |Fabric Item    |Required permission to deploy an existing item |Item ownership after a first time deployment |Item ownership after deployment to a stage with the item|
 |-----------------|---|---|---|
@@ -370,20 +378,14 @@ The following table lists required permissions for popular deployment pipeline a
 This section lists most of the limitations in deployment pipelines.
 
 * The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md#capacity).
-
 * The maximum number of items that can be deployed in a single deployment is 300.
-
 * Downloading a *.pbix* file after deployment isn't supported.
-
 * [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) aren't supported as pipeline admins.
-
 * When you're deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment fails.
-
 * For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#considerations-and-limitations).
-
-* For a list of unsupported items, see [unsupported items](#unsupported-items).
-
+* For a list of supported items, see [supported items](#supported-items). Any item not on the list isn't supported.
 * The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
+* Only Power BI items can be deployed to a workspace in a different capacity region. Other Fabric items can't be deployed to a workspace in a different capacity region.
 
 ### Semantic model limitations
 
@@ -393,7 +395,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * During deployment, if the target semantic model is using a [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets), the source semantic model must use this connection mode too.
 
-* After deployment, downloading a semantic model (from the stage it's been deployed to) isn't supported.
+* After deployment, downloading a semantic model (from the stage it was deployed to) isn't supported.
 
 * For a list of deployment rule limitations, see [deployment rules limitations](create-rules.md#considerations-and-limitations).
 
@@ -411,14 +413,14 @@ This section lists most of the limitations in deployment pipelines.
 
 * If a dataflow is being refreshed during deployment, the deployment fails.
 
-* When comparing stages during dataflow refresh, the results are unpredictable.
+* If you compare stages during a dataflow refresh, the results are unpredictable.
 
 ### Datamart limitations
 
 * You can't deploy a datamart with sensitivity labels.
 
-* To deploy a datamart, you need to be the datamart owner.
+* You need to be the datamart owner to deploy a datamart.
 
 ## Related content
 
-[Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
+[Get started with deployment pipelines](get-started-with-deployment-pipelines.md).

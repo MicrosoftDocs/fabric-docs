@@ -30,7 +30,7 @@ The following table describes the behavior of your KQL database and tables when 
 |**A table in KQL Database**| - New data is made available in OneLake. <br/> - Existing data isn't backfilled. <br/> - Data can't be deleted, truncated, or purged. <br/> - Table schema can't be altered and the table can't be renamed. | - New data isn't made available in OneLake. <br/> - Data can be deleted, truncated, or purged. <br/> - Table schema can be altered and the table can be renamed. <br/> - Data is soft deleted from OneLake.|
 
 > [!IMPORTANT]
-> There's no additional storage cost to turn on **OneLake availability**, you're charged only once for the data storage.
+> There's no additional storage cost to turn on **OneLake availability**. For more information, see [resource consumption](kql-database-consumption.md#storage-billing).
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ You can turn on **OneLake availability** either on a KQL database or table level
 
     :::image type="content" source="media/one-logical-copy/onelake-availability.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database with the edit OneLake availability option highlighted." lightbox="media/one-logical-copy/onelake-availability.png":::
 
-1. Turn on the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically. It might take up to a few  minutes for the data to be available in OneLake.
+1. Turn on the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically. 
 
     :::image type="content" source="media/one-logical-copy/enable-data-copy.png" alt-text="Screenshot of the OneLake folder details window in Real-Time Analytics in Microsoft Fabric. The option to expose data to OneLake is turned on.":::
 
@@ -69,6 +69,26 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
 
     1. Select the **_delta_log** folder.
     1. Select a file to view the table metadata and schema. The editor that opens is in read-only format.
+
+## Data types mapping
+
+### Event house to Delta parquet data types mapping
+
+ Event house data types are mapped to Delta Parquet data types using the following rules. For more information on Event house data types, see [Scalar data types](/azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric).
+
+| Event house Data Type | Delta Data Type 
+| --------------- | ----------------- 
+| `bool`     | `boolean` 
+| `datetime` | `timestamp OR date (for date-bound partition definitions)` 
+| `dynamic`  | `string` 
+| `guid` | `string`
+| `int` | `integer`
+| `long` | `long`
+| `real` | `double`
+| `string` | `string` 
+| `timespan` | `long`
+| `decimal` | `decimal(38,18)`
+
 
 ## Related content
 

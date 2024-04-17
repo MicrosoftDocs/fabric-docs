@@ -121,7 +121,7 @@ When a workspace is deleted, its workspace identity is deleted as well. If the w
 
 ### Renaming the workspace
 
-WWhen a workspace gets renamed, the workspace identity is also renamed to match the workspace name. However its Entra application and service principal remain the same. Note that there can be multiple application and app registration objects with same name in a tenant.
+When a workspace gets renamed, the workspace identity is also renamed to match the workspace name. However its Entra application and service principal remain the same. Note that there can be multiple application and app registration objects with same name in a tenant.
 
 ## Considerations and limitations
 

@@ -24,7 +24,7 @@ When the Dataflow Gen1 admin switch is disabled, users aren't able to use Datafl
 
 ## Solutions and workarounds
 
-Enable the Dataflow Gen1 admin switch to use Dataflow Gen2. For more information, see [Dataflow Gen1 admin switch](/fabric/admin/service-admin-portal-dataflow)
+Enable the Dataflow Gen1 admin switch to use Dataflow Gen2. For more information, see [Dataflow Gen1 admin switch](../../admin/service-admin-portal-dataflow.md)
 
 ## Next steps
 
