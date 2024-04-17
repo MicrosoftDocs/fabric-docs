@@ -409,6 +409,11 @@
           "source_path_from_root": "/docs/onelake/fabric-and-onelake-security.md",
           "redirect_url": "/docs/onelake/security/fabric-onelake-security",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-engineering/lakehouse-pbi-reporting.md",
+          "redirect_url": "/docs/get-started/lakehouse-pbi-reporting",
+          "redirect_document_id": false
         }   
     ]
 }
