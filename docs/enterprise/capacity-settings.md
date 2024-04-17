@@ -128,15 +128,31 @@ To create a new Fabric capacity, follow these steps:
 
 ### Change the name of your capacity
 
-To change the name of your capacity, follow these steps:
+# [Power BI Premium](#tab/power-bi-premium)
 
-1. Select the capacity type your capacity belongs to.
+To change the name of your Power BI Premium capacity, follow these steps:
+
+1. In the **Capacity settings** page, select **Power BI Premium**.
 
 2. From the list of capacities, select the gear icon (**&#9881;**) next to the capacity you want to change.
 
 3. In the capacity's setting page, select the pencil icon next to the **Capacity name** field.
 
 4. Enter the new name for the capacity, and then select the checkmark icon (**&check;*)*.
+
+# [Power BI Embedded](#tab/power-bi-embedded)
+
+You can't change a trial capacity's name.
+
+# [Trial](#tab/trial)
+
+You can't change a trial capacity's name.
+
+# [Fabric Capacity](#tab/fabric-capacity)
+
+You can't change a trial capacity's name.
+
+---
 
 ### Add and remove admins
 
@@ -210,24 +226,6 @@ To resize a Power BI Premium capacity, follow these steps:
 
 To resize a Power BI Embedded capacity, follow these steps:
 
-1. In the **Capacity settings** page, select **Power BI Embedded**.
-
-2. Select the capacity you want to resize.
-
-3. Select **Change size**.
-
-4. In the *Change size* window, from the **Capacity ize** dropdown, select the new size for the capacity.
-
-5. Select **Apply**.
-
-# [Trial](#tab/trial)
-
-You can't resize a trial capacity.
-
-# [Fabric Capacity](#tab/fabric-capacity)
-
-To resize a Fabric capacity, follow these steps:
-
 1. From the list of Fabric capacities, select the gear icon (**&#9881;**) next to the capacity you want to delete.
 
 2. In the capacity's setting page, select the link **Manage fabric capacities in Azure**. A list of your Fabric capacities in Azure opens in a new tab.
@@ -240,9 +238,21 @@ To resize a Fabric capacity, follow these steps:
 
 6. Select **Resize**.
 
+# [Trial](#tab/trial)
+
+You can't resize a trial capacity.
+
+# [Fabric Capacity](#tab/fabric-capacity)
+
+To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capacity.md).
+
 ---
 
 ### Delete a capacity
+
+When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they are deleted. If you have defined a [workspace retention policy](../admin/portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified.
+
+Ongoing operations are stopped or canceled and scheduled operations are canceled.
 
 # [Power BI Premium](#tab/power-bi-premium)
 
