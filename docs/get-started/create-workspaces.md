@@ -1,14 +1,15 @@
 ---
 title: Create a workspace
-description: "Learn how to create a workspace: a collection of items such as lakehouses, warehouses, and reports built to deliver key metrics for your organization."
+description: "Learn how you can create a workspace: a collection of items such as lakehouses, warehouses, and reports, with task flows built to deliver key metrics for your organization."
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 04/15/2024
 ms.custom:
   - build-2023
   - ignite-2023
+#customer intent: As a report creator, I want use workspaces so that I can create collections of artifacts that are related.
 ---
 # Create a workspace
 

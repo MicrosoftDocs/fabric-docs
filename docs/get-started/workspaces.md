@@ -1,5 +1,5 @@
 ---
-title: Workspaces
+title: Workspaces in Microsoft Fabric and Power BI
 description: Learn about workspaces, which are collections of items such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
 author: maggiesMSFT
 ms.author: maggies
@@ -9,12 +9,13 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: product-trident, Manage your workspace
-ms.date: 03/26/2024
+ms.date: 04/15/2024
+#customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
 ---
 
-# Workspaces
+# Workspaces in Microsoft Fabric and Power BI
 
-*Workspaces* are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports. This article describes workspaces, how to manage access to them, and what settings are available.
+*Workspaces* are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports, and to create task flows. This article describes workspaces, how to manage access to them, and what settings are available.
 
 Ready to get started? Read [Create a workspace](create-workspaces.md).
 
