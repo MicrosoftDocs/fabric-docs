@@ -150,7 +150,7 @@ Now, use the SQL analytics endpoint to create a query that can handle simple nes
 
 1. Switch from **Mirrored Azure Cosmos DB** to **SQL analytics endpoint**.
 
-    :::image type="content" source="media/azure-cosmos-db-how-to-query-nested/switch-experience.png" alt-text="Screenshot of the selector to switch between experiences in the Fabric portal." lightbox="media/azure-cosmos-db-how-to-query-nested/switch-experience.png":::
+    :::image type="content" source="media/azure-cosmos-db-how-to-query-nested/switch-experience.png" alt-text="Screenshot of the selector to switch between items in the Fabric portal." lightbox="media/azure-cosmos-db-how-to-query-nested/switch-experience.png":::
 
 1. Open the context menu for the **test** table and select **New SQL Query**.
 

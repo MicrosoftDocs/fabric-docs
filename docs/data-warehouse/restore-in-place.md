@@ -35,7 +35,7 @@ System-generated restore points are created throughout the day, and are availabl
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports an eight-hour recovery point objective (RPO).
 
-<!-- To see when the last restore point started, execute the query below on your warehouse via the [Fabric portal SQL query editor](sql-query-editor.md). Refer to the top (most recent) row. -->
+<!-- To see when the last restore point started, execute the following query on your warehouse via the [Fabric portal SQL query editor](sql-query-editor.md). Refer to the top (most recent) row. -->
 
 If the warehouse is paused, system-generated restore points cannot be created unless and until the warehouse is resumed. It is recommended to create a [user-defined restore point](#user-defined-restore-points) before pausing the warehouse. Before a warehouse is dropped, a system-generated restore point is not automatically created.
 

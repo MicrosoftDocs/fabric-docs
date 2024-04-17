@@ -54,7 +54,7 @@ Now, use the SQL analytics endpoint to create a query across two mirrored databa
 
 1. Switch from **Mirrored Azure Cosmos DB** to **SQL analytics endpoint**.
 
-    :::image type="content" source="media/azure-cosmos-db-how-to-join-multiple/switch-experience.png" alt-text="Screenshot of the selector to switch between experiences in the Fabric portal." lightbox="media/azure-cosmos-db-how-to-join-multiple/switch-experience.png":::
+    :::image type="content" source="media/azure-cosmos-db-how-to-join-multiple/switch-experience.png" alt-text="Screenshot of the selector to switch between between items in the Fabric portal." lightbox="media/azure-cosmos-db-how-to-join-multiple/switch-experience.png":::
 
 1. In the menu, select **+ Warehouses**. Select the SQL analytics endpoint item for the other mirrored database.
 

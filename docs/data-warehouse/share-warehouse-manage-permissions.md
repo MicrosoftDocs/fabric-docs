@@ -95,7 +95,7 @@ For users who were provided workspace roles, it shows the corresponding user, wo
 
 :::image type="content" source="media\share-warehouse-manage-permissions\manage-permissions-page.png" alt-text="Screenshot showing the Manage permissions page of the Warehouse in the Fabric portal." lightbox="media\share-warehouse-manage-permissions\manage-permissions-page.png":::
 
-You can choose to add or remove permissions using the "Manage permissions" experience:
+You can choose to add or remove permissions using **Manage permissions**:
 
 - **Remove access** removes all item permissions.
 - **Remove ReadData** removes the **ReadData** permissions.

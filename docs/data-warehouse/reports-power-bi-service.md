@@ -19,7 +19,7 @@ This article describes three different scenarios you can follow to create report
 
 ## Create a report from the warehouse editor
 
-From within the warehouse experience, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI semantic model.
+From within Synapse Data Warehouse in Microsoft Fabric, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI semantic model.
 
 :::image type="content" source="media\reports-power-bi-service\new-report-ribbon.png" alt-text="Screenshot of new report in the ribbon." lightbox="media\reports-power-bi-service\new-report-ribbon.png":::
 
