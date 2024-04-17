@@ -1,6 +1,6 @@
 ---
 title: Create reports
-description: Learn about reports in the warehouse experience.
+description: Learn about reports in Synapse Data Warehouse in Microsoft Fabric.
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: WilliamDAssafMSFT
@@ -33,7 +33,7 @@ Reports that use the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE 
 
 ## Create reports using the Power BI service
 
-Within the warehouse experience, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI semantic model.
+Within **Data Warehouse**, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI semantic model.
 
 :::image type="content" source="media/create-reports/new-report-ribbon.png" alt-text="Screenshot of new report in the ribbon." lightbox="media/create-reports/new-report-ribbon.png":::
 
@@ -49,7 +49,7 @@ You can build reports from semantic models with **Power BI Desktop** using a Liv
 
 For a tutorial with Power BI Desktop, see [Get started with Power BI Desktop](/power-bi/fundamentals/desktop-getting-started). For advanced situations where you want to add more data or change the storage mode, see [use composite models in Power BI Desktop](/power-bi/transform-model/desktop-composite-models).
 
-If you're browsing for a specific [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) in OneLake, you can use integrated **OneLake data hub** experience in Power BI Desktop to make a connection and build reports:
+If you're browsing for a specific [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) in OneLake, you can use the integrated **OneLake data hub** in Power BI Desktop to make a connection and build reports:
 
 1. Open Power BI Desktop and select **Warehouse** under the **OneLake data hub** dropdown list in the ribbon.
 1. Select the desired warehouse.

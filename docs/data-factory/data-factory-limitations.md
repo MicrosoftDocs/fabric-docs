@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 02/15/2024
+ms.date: 04/10/2024
 ---
 
 # Data Factory limitations overview
@@ -75,18 +75,18 @@ The following table indicates the supported data types in specific storage locat
 
 | **Supported data types per storage location:**  | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output |
 |-------------------------------------------------|--------------------------|-----------------------|----------------------------|------------------------------|------------------------------|
-| Action                                          | No                       | No                    | No                         | No                           | No                           |
-| Any                                             | No                       | No                    | No                         | No                           | No                           |
-| Binary                                          | No                       | No                    | No                         | No                           | No                           |
-| Currency                                        | Yes                      | Yes                   | Yes                        | Yes                          | No                           |
-| DateTimeZone                                    | Yes                      | Yes                   | Yes                        | No                           | No                           |
-| Duration                                        | No                       | No                    | Yes                        | No                           | No                           |
-| Function                                        | No                       | No                    | No                         | No                           | No                           |
-| None                                            | No                       | No                    | No                         | No                           | No                           |
-| Null                                            | No                       | No                    | No                         | No                           | No                           |
-| Time                                            | Yes                      | Yes                   | No                         | Yes                          | Yes                          |
-| Type                                            | No                       | No                    | No                         | No                           | No                           |
-| Structured (List, Record, Table)                | No                       | No                    | No                         | No                           | No                           |
+| Action| No| No | No  | No    | No    |
+| Any   | No| No | No  | No    | No    |
+| Binary| No| No | No  | No    | No    |
+| Currency | Yes   | Yes| Yes | Yes   | No    |
+| DateTimeZone| Yes   | Yes| Yes | No    | No    |
+| Duration | No| No | Yes | No    | No    |
+| Function | No| No | No  | No    | No    |
+| None  | No| No | No  | No    | No    |
+| Null  | No| No | No  | No    | No    |
+| Time  | Yes   | Yes| No  | No   | No   |
+| Type  | No| No | No  | No    | No    |
+| Structured (List, Record, Table)| No| No | No  | No    | No    |
 
 ## Related content
 

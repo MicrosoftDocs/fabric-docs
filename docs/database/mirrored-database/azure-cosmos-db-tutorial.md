@@ -8,6 +8,7 @@ ms.reviewer: anithaa
 ms.date: 03/15/2024
 ms.service: fabric
 ms.topic: tutorial
+no-loc: [Copilot]
 ---
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
@@ -120,7 +121,7 @@ Now, use T-SQL to query your NoSQL data that is now stored in Fabric OneLake.
 
 1. Switch from **Mirrored Azure Cosmos DB** to **SQL analytics endpoint**.
 
-    :::image type="content" source="media/azure-cosmos-db-tutorial/switch-experience.png" alt-text="Screenshot of the selector to switch between experiences in the Fabric portal." lightbox="media/azure-cosmos-db-tutorial/switch-experience.png":::
+    :::image type="content" source="media/azure-cosmos-db-tutorial/switch-experience.png" alt-text="Screenshot of the selector to switch between items in the Fabric portal." lightbox="media/azure-cosmos-db-tutorial/switch-experience.png":::
 
 1. Each container in the source database should be represented in the SQL analytics endpoint as a warehouse table.
 

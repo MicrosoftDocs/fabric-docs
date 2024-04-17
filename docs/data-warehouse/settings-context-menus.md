@@ -1,6 +1,6 @@
 ---
 title: Warehouse settings and context menus
-description: Learn about context menus and settings in the warehouse experience.
+description: Learn about context menus and settings in Synapse Data Warehouse in Microsoft Fabric.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
