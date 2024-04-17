@@ -22,12 +22,18 @@ ms.date: 04/17/2024
 
 OneLake 
 
-
+# SaaS requirments
+<< add a link to the Azure marketplace polace policy >>
 # Design requirements
 
 TODO [Horizon](https://aka.ms/horizon)
 
+# Nuget package requirmenets 
+1. Duplicated fields
+Title, Summary, icon,...
+Make sure they are identical to the SaaS offer metadata
 
+3. additional fields
 # Azure requirements
 
 TODO
