@@ -31,7 +31,7 @@ In the ribbon, create a new query using the **New visual query** button, as show
 
 :::image type="content" source="media\visual-query-editor\new-visual-query.png" alt-text="Screenshot showing where to find the New query menu in the Data preview view." lightbox="media\visual-query-editor\new-visual-query.png":::
 
-To create a query, drag and drop tables from the **Object explorer** on the left onto the canvas. Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
+To create a query, drag and drop tables from the **Object explorer** onto the canvas. Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
 
 As you work on your visual query, the queries are automatically saved every few seconds. A "saving indicator" appears in your query tab to indicate that your query is being saved. All workspace users can save their queries in **My queries** folder. However, users in viewer role of the workspace or shared recipients of the warehouse are restricted from moving queries to **Shared queries** folder.
 
