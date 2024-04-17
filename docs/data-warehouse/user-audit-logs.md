@@ -16,7 +16,7 @@ ms.search.form: Monitoring # This article's title should not change. If so, cont
 
 To track user activity for meeting regulatory compliance and records managements requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell. You can use user audit logs to identify who is taking what action on your Fabric items.
 
-For more information on how to access user audit logs, visit [Track user activities in Power BI](/power-bi/enterprise/service-admin-auditing#use-the-audit-log).
+For more information on how to access user audit logs, visit [Track user activities in Microsoft Fabric](../admin/track-user-activities.md).
 
 ## Permissions
 

@@ -14,7 +14,7 @@ ms.date: 06/25/2023
 
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A [KQL database](../../real-time-analytics/create-database.md) with editing permissions
-* A [Lakehouse](../../data-engineering/create-lakehouse.md) with data
+* A [Lakehouse](../../data-engineering/create-lakehouse.md) 
 
 To access the data in your KQL database in other [!INCLUDE [product-name](../../includes/product-name.md)] experiences, see [One logical copy](../../real-time-analytics/one-logical-copy.md).
 
