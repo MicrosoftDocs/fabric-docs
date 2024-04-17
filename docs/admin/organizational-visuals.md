@@ -31,7 +31,7 @@ These settings allow you to control the following actions for Power BI visuals i
 * [Allow access to certified Power BI visuals only](#certified-power-bi-visuals)
 * [Allow downloads from custom visuals onto your storage device](#export-data-to-file)
 * [Allow custom visuals to store data on the user's local machine](#local-storage)
-* [Obtain Microsoft Entra access token](#obtain-microsoft-entra-access-token)
+* [Obtain Microsoft Entra access token](#appsource-custom-visuals-sso)
 
 ### Visuals from AppSource or a file
 
