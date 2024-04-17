@@ -1,5 +1,5 @@
 ---
-title: Automate your deployment pipeline by using APIs and Azure DevOps
+title: Automate deployment pipelines with APIs and Azure DevOps
 description: Learn how to automate your deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs and Azure DevOps.
 author: data-goblin
 ms.author: v-kurtbuhler
@@ -7,6 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
 ms.date: 11/02/2023
+ms.search.form: Deployment pipelines APIs, Automate deployment pipelines, Power BI automation tools, Azure DevOps integration
 ---
 
 # Automate your deployment pipeline by using APIs and Azure DevOps
