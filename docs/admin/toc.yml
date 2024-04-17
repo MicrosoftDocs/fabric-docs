@@ -9,6 +9,8 @@ items:
     href: microsoft-fabric-admin.md
   - name: What is the admin portal?
     href: admin-center.md
+  - name: Delegate settings
+    href: delegate-settings.md    
   - name: Governance and compliance documentation
     href: ../governance/index.yml      
   - name: Security documentation
