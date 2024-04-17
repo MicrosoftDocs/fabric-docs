@@ -7,23 +7,23 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: conceptual
-ms.date: 04/15/2024
+ms.date: 04/18/2024
 LocalizationGroup: Admin
 ---
 
 # Create a Lakehouse for Direct Lake
 
-This article describes how to create a Lakehouse, create a delta table in the Lakehouse, and then create a basic semantic model for the Lakehouse in a Microsoft Fabric workspace.
+This article describes how to create a Lakehouse, create a Delta table in the Lakehouse, and then create a basic semantic model for the Lakehouse in a Microsoft Fabric workspace.
 
 Before getting started creating a Lakehouse for Direct Lake, be sure to read [Direct Lake overview](directlake-overview.md).
 
 ## Create a Lakehouse
 
-1. In your Microsoft Fabric workspace, select **New** > **Show all**, and then in **Data engineering**, select the **Lakehouse** tile.
+1. In your Microsoft Fabric workspace, select **New** > **More options**, and then in **Data Engineering**, select the **Lakehouse** tile.
 
     :::image type="content" source="media/directlake-create-lakehouse/directlake-lakehouse-tile.png" border="false" alt-text="Screenshot showing Lakehouse tile.":::
 
-2. In the **New Lakehouse** dialog box, enter a name, and then select **Create**. The name can only contain alphanumeric characters and underscores.
+2. In the **New lakehouse** dialog box, enter a name, and then select **Create**. The name can only contain alphanumeric characters and underscores.
 
     :::image type="content" source="media/directlake-create-lakehouse/directlake-new-lakehouse.png" border="false" alt-text="Screenshot showing New Lakehouse dialogue.":::
 
@@ -31,11 +31,11 @@ Before getting started creating a Lakehouse for Direct Lake, be sure to read [Di
 
     :::image type="content" source="media/directlake-create-lakehouse/directlake-verify-lakehouse.png" border="false" alt-text="Screenshot showing verify lakehouse screen.":::
 
-## Create a delta table in Lakehouse
+## Create a Delta table in Lakehouse
 
-After creating a new Lakehouse, you must then create at least one delta table so Direct Lake can access some data. Direct Lake can read parquet-formatted files, but for the best performance, it's best to compress the data by using the VORDER compression method. VORDER compresses the data using the Power BI engine’s native compression algorithm. This way the engine can load the data into memory as quickly as possible.
+After creating a new Lakehouse, you must then create at least one Delta table so Direct Lake can access some data. Direct Lake can read parquet-formatted files, but for the best performance, it's best to compress the data by using the VORDER compression method. VORDER compresses the data using the Power BI engine’s native compression algorithm. This way the engine can load the data into memory as quickly as possible.
 
-There are multiple options to load data into a Lakehouse, including data pipelines and scripts. The following steps use PySpark to add a delta table to a Lakehouse based on an [Azure Open Dataset](/azure/open-datasets/dataset-catalog):
+There are multiple options to load data into a Lakehouse, including data pipelines and scripts. The following steps use PySpark to add a Delta table to a Lakehouse based on an [Azure Open Dataset](/azure/open-datasets/dataset-catalog):
 
 1. In the newly created Lakehouse, select **Open notebook**, and then select **New notebook**.
 
@@ -76,7 +76,7 @@ There are multiple options to load data into a Lakehouse, including data pipelin
 
     :::image type="content" source="media/directlake-create-lakehouse/directlake-dataframe-schema.png" border="false" alt-text="Screenshot showing schema dataframe.":::
 
-1. Copy and paste the following lines into the next cell, and then press **Shift + Enter**. The first instruction enables the VORDER compression method, and the next instruction saves the DataFrame as a delta table in the Lakehouse.
+1. Copy and paste the following lines into the next cell, and then press **Shift + Enter**. The first instruction enables the VORDER compression method, and the next instruction saves the DataFrame as a Delta table in the Lakehouse.
 
     ```python
     # Save as delta table 
@@ -93,7 +93,7 @@ There are multiple options to load data into a Lakehouse, including data pipelin
 
     :::image type="content" source="media/directlake-create-lakehouse/directlake-tables-node.png" border="false" alt-text="Screenshot showing Tables node.":::
 
-1. Using either the same method as above or other supported methods, add more delta tables for the data you want to analyze.
+1. Using either the same method as above or other supported methods, add more Delta tables for the data you want to analyze.
 
 ## Create a basic Direct Lake model for your Lakehouse
 

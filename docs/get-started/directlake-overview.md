@@ -9,7 +9,7 @@ ms.subservice: powerbi-premium
 ms.custom:
   - ignite-2023-fabric
 ms.topic: concept-article
-ms.date: 04/15/2024
+ms.date: 04/18/2024
 LocalizationGroup: Admin
 ---
 # Direct Lake
@@ -28,13 +28,13 @@ Direct Lake also supports [row-level security](/power-bi/enterprise/service-admi
 
 ## Prerequisites
 
-Direct Lake is supported on Power BI Premium P and Microsoft Fabric F SKUs only. It's not supported on Power BI Pro, Premium Per User, or Power BI Embedded A/EM SKUs.
+Direct Lake is supported on Microsoft Fabric F SKUs only.
 
 ### Lakehouse
 
-Before using Direct Lake, you must provision a Lakehouse (or a Warehouse) with one or more Delta tables in a workspace hosted on a supported Power BI or Microsoft Fabric capacity. The Lakehouse is required because it provides the storage location for your parquet-formatted files in OneLake. The Lakehouse also provides an access point to launch the Web modeling feature to create a Direct Lake model.
+Before using Direct Lake, you must provision a Lakehouse (or a Warehouse) with one or more Delta tables in a workspace hosted on a supported Microsoft Fabric capacity. The Lakehouse is required because it provides the storage location for your parquet-formatted files in OneLake. The Lakehouse also provides an access point to launch the Web modeling feature to create a Direct Lake model.
 
-To learn how to provision a Lakehouse, create a delta table in the Lakehouse, and create a basic model for the Lakehouse, see [Create a Lakehouse for Direct Lake](directlake-create-lakehouse.md).
+To learn how to provision a Lakehouse, create a Delta table in the Lakehouse, and create a basic model for the Lakehouse, see [Create a Lakehouse for Direct Lake](directlake-create-lakehouse.md).
 
 ### SQL endpoint
 
@@ -60,8 +60,6 @@ Note that Direct Lake tables created using XMLA applications will initially be i
 
 Before performing write operations on Direct Lake models through the XMLA endpoint, XMLA read-write must be enabled for the capacity.
 
-For Power BI Premium capacities, see [Enable XMLA read-write](/power-bi/enterprise/service-premium-connect-tools#enable-xmla-read-write).
-
 For **Fabric trial** capacities, the trial user has the admin privileges necessary to enable XMLA read-write.
 
 1. In the Admin portal, select **Capacity settings**.
@@ -84,7 +82,7 @@ When connecting to a standalone Direct Lake model through the XMLA endpoint, the
 
 - The `Mode` property of Direct Lake partitions is set to `directLake`.
 
-- Direct Lake partitions use shared expressions to define data sources. The expression points to the SQL endpoint of a Lakehouse or Warehouse. Direct Lake uses the SQL endpoint to discover schema and security information but loads the data directly from the delta tables (unless Direct Lake must fall back to DirectQuery mode for any reason).
+- Direct Lake partitions use shared expressions to define data sources. The expression points to the SQL endpoint of a Lakehouse or Warehouse. Direct Lake uses the SQL endpoint to discover schema and security information but loads the data directly from the Delta tables (unless Direct Lake must fall back to DirectQuery mode for any reason).
 
 Here's an example XMLA query in SSMS:
 
@@ -94,13 +92,13 @@ To learn more about tool support through the XMLA endpoint, see [Semantic model 
 
 ## Fallback
 
-Power BI semantic models in Direct Lake mode read delta tables directly from OneLake. However, if a DAX query on a Direct Lake model exceeds limits for the SKU, or uses features that don’t support Direct Lake mode, like SQL views in a Warehouse, the query can fall back to DirectQuery mode. In DirectQuery mode, queries use SQL to retrieve the results from the SQL endpoint of the Lakehouse or Warehouse, which can impact query performance. You can [disable fallback](#fallback-behavior) to DirectQuery mode if you want to process DAX queries in pure Direct Lake mode only. Disabling fallback is recommended if you don’t need fallback to DirectQuery. It can also be helpful when analyzing query processing for a Direct Lake model to identify if and how often fallbacks occur. To learn more about DirectQuery mode, see [Semantic model modes in the Power BI service](/power-bi/connect-data/service-dataset-modes-understand#directquery-mode).
+Power BI semantic models in Direct Lake mode read Delta tables directly from OneLake. However, if a DAX query on a Direct Lake model exceeds limits for the SKU, or uses features that don’t support Direct Lake mode, like SQL views in a Warehouse, the query can fall back to DirectQuery mode. In DirectQuery mode, queries use SQL to retrieve the results from the SQL endpoint of the Lakehouse or Warehouse, which can impact query performance. You can [disable fallback](#fallback-behavior) to DirectQuery mode if you want to process DAX queries in pure Direct Lake mode only. Disabling fallback is recommended if you don’t need fallback to DirectQuery. It can also be helpful when analyzing query processing for a Direct Lake model to identify if and how often fallbacks occur. To learn more about DirectQuery mode, see [Semantic model modes in the Power BI service](/power-bi/connect-data/service-dataset-modes-understand#directquery-mode).
 
-***Guardrails*** define resource limits for Direct Lake mode beyond which a fallback to DirectQuery mode is necessary to process DAX queries. For details about how to determine the number of parquet files and row groups for a delta table, refer to the [Delta table properties reference](/azure/databricks/delta/table-properties#delta-table-properties).
+***Guardrails*** define resource limits for Direct Lake mode beyond which a fallback to DirectQuery mode is necessary to process DAX queries. For details about how to determine the number of parquet files and row groups for a Delta table, refer to the [Delta table properties reference](/azure/databricks/delta/table-properties#delta-table-properties).
 
 For Direct Lake semantic models, **Max Memory** represents the upper memory resource limit for how much data can be paged in. In effect, it's not a guardrail because exceeding it does not cause a fallback to DirectQuery; however, it can have a performance impact if the amount of data is large enough to cause paging in and out of the model data from the OneLake data.
 
-The following table lists both resource guardrails and MaxMemory:
+The following table lists both resource guardrails and Max Memory:
 
 | Fabric/Power BI SKUs |Parquet files per table | Row groups per table | Rows per table (millions) | Max model size on disk/OneLake<sup>[1](#mm)</sup> (GB) | Max memory (GB) |
 |-------------|-------------------------|-------------------------|------------------------|-------------------------|-------------------------|
@@ -118,7 +116,7 @@ The following table lists both resource guardrails and MaxMemory:
 
 <a name="mm">1</a> - If exceeded, Max model size on disk/Onelake will cause all queries to the model to fall back to DirectQuery, unlike other guardrails that are evaluated per query.
 
-Depending on your Fabric or Power BI SKU, additional **Capacity unit** and **Max memory per query** limits also apply to Direct Lake models. To learn more, see [Capacities and SKUs](/power-bi/enterprise/service-premium-what-is#capacities-and-skus).
+Depending on your Fabric SKU, additional **Capacity unit** and **Max memory per query** limits also apply to Direct Lake models. To learn more, see [Capacities and SKUs](/power-bi/enterprise/service-premium-what-is#capacities-and-skus).
 
 ### Fallback behavior
 
@@ -165,7 +163,7 @@ You may want to disable if, for example, you need to allow completion of data pr
 
 - Some data types may not be supported.
 
-- Direct Lake tables do not support complex delta table column types. Binary and Guid semantic types are also unsupported. You must convert these data types into strings or other supported data types.
+- Direct Lake tables do not support complex Delta table column types. Binary and Guid semantic types are also unsupported. You must convert these data types into strings or other supported data types.
 
 - Table relationships require the data types of their key columns to coincide. Primary key columns must contain unique values. DAX queries will fail if duplicate primary key values are detected.
 
@@ -181,7 +179,7 @@ You may want to disable if, for example, you need to allow completion of data pr
 
 ## Get started
 
-The best way to get started with a Direct Lake solution in your organization is to create a Lakehouse, create a delta table in it, and then create a basic semantic model for the Lakehouse in your Microsoft Fabric workspace. To learn more, see [Create a Lakehouse for Direct Lake](directlake-create-lakehouse.md).
+The best way to get started with a Direct Lake solution in your organization is to create a Lakehouse, create a Delta table in it, and then create a basic semantic model for the Lakehouse in your Microsoft Fabric workspace. To learn more, see [Create a Lakehouse for Direct Lake](directlake-create-lakehouse.md).
 
 ## Related content
 

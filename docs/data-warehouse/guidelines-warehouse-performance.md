@@ -21,7 +21,7 @@ These are guidelines to help you understand performance of your [!INCLUDE [fabri
 
 - Manually create statistics. Auto-statistics are not currently available. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance.
 
-- If using Power BI, use [Direct Lake](../data-engineering/lakehouse-pbi-reporting.md) mode where possible.
+- If using Power BI, use [Direct Lake](../get-started/lakehouse-pbi-reporting.md) mode where possible.
  
 ## Metrics for monitoring performance
 

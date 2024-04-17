@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: conceptual
-ms.date: 04/15/2024
+ms.date: 04/18/2024
 LocalizationGroup: Admin
 ---
 

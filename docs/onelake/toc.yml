@@ -55,18 +55,6 @@ items:
     href: onelake-azure-hdinsight.md
   - name: PowerShell
     href: onelake-powershell.md
-- name: Direct Lake
-  items:
-   - name: Direct Lake overview
-     href: directlake-overview.md
-   - name: Create a Lakehouse for Direct Lake
-     href: directlake-create-lakehouse.md
-   - name: Specify a fixed identity
-     href: directlake-fixed-identity.md
-   - name: Analyze query processing
-     href: directlake-analyze-qp.md
-- name: OneLake integration for semantic models (Preview)
-  href: onelake-integration-overview.md
 - name: Secure and manage data
   items:
   - name: Fabric and OneLake data security
