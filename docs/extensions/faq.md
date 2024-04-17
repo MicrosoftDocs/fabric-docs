@@ -9,8 +9,6 @@ ms.custom:
 ms.date: 04/17/2024
 ---
 
-# Intro
-
 
 # Fabric Workload Design
 ## What design language is Fabric following?
