@@ -137,11 +137,11 @@ To enable the local storage setting, follow these steps:
 
 4. Select **Apply**.
 
-### Obtain Microsoft Entra access token
+### AppSource Custom Visuals SSO
 
-When this setting is enabled, visuals can obtain [Microsoft Entra ID (formerly known as Azure Active Directory) access tokens](/entra/identity/authentication/concept-authentication-oath-tokens) for the signed-in users using the [Authentication API](/graph/api/resources/authenticationmethods-overview). The setting is disabled by default and applies to all Appsource visuals, including those managed by your organizational store.
+When this setting is enabled, AppSource Custom Visuals can obtain  [Microsoft Entra ID (formerly known as Azure Active Directory) access tokens](/entra/identity/authentication/concept-authentication-oath-tokens) with restricted audiences for signed-in users, utilizing the [Authentication API](/graph/api/resources/authenticationmethods-overview). These tokens contain personal information such as the user's name and email address. Custom Visuals can send these tokens across different regions and compliance boundaries, and it is their full responsibility to handle the tokens they possess. The setting is disabled by default and applies to all AppSource Custom Visuals, including those managed by your organizational store.
 
-:::image type="content" source="./media/organizational-visuals/authentication-setting.png" alt-text="Screenshot of authentication switch.":::
+:::image type="content" source="./media/organizational-visuals/authentication-setting.png" alt-text="Screenshot of authentication switch found in tenant settings.":::
 
 1. Expand the **Allow custom visuals to get user Microsoft Entra access tokens** settings.
 
