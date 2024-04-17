@@ -20,7 +20,7 @@ This article is specific to data warehousing workloads in Microsoft Fabric. For 
 
 ## Compute capacity
 
-Capacity forms the foundation in Microsoft Fabric and provides the computing power that drives all Fabric workload experiences. Based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across Fabric. You can review the CUs for each SKU at [Capacity and SKUs](../enterprise/licenses.md#capacity-license).
+Capacity forms the foundation in Microsoft Fabric and provides the computing power that drives all Fabric workloads. Based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across Fabric. You can review the CUs for each SKU at [Capacity and SKUs](../enterprise/licenses.md#capacity-license).
 
 ## Smoothing
 
@@ -86,7 +86,7 @@ For a walkthrough of the app, visit [How to: Observe Synapse Data Warehouse util
 
 ### Utilization tab
 
-This tab shows utilization of resources compared to capacity purchased. 100% of utilization represents the full throughput of a capacity SKU and is shared by all Fabric experiences. This is represented by the yellow dotted line. Selecting a specific timepoint in the graph enables the **Explore** button, which opens a detailed drill through page.
+This tab shows utilization of resources compared to capacity purchased. 100% of utilization represents the full throughput of a capacity SKU and is shared by all Fabric workloads. This is represented by the yellow dotted line. Selecting a specific timepoint in the graph enables the **Explore** button, which opens a detailed drill through page.
 
 ### Throttling tab
 
