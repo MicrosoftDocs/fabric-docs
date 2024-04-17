@@ -35,6 +35,8 @@ To install:
 
 Once you have installed and launched the application, you can now see your OneLake data in Windows File Explorer.
 
+Starting in version 1.0.12, file explorer app will now notify you when a new update is available. You’ll receive a notification when a new version becomes available Or you can see the file explorer icon change. Right-click on the OneLake icon in the Windows notification area.  Select **About** > **Update Available** and follow steps to update.
+   
 ## Limitations and considerations
 
 - Workspace names with the "/" character, encoded escape characters such as `%23`, and names that look like GUIDs fail to sync.
