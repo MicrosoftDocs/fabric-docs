@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
-ms.date: 04/12/2024
+ms.date: 04/16/2024
 ms.service: fabric
 ms.topic: tutorial
 ms.custom:
@@ -45,28 +45,28 @@ Next, you need to create a way for the Fabric service to connect to your Azure S
 #### Use a login and mapped database user
 
 1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/azure-data-studio/download-azure-data-studio). Connect to the `master` database.
-1. Execute the following script to create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password.
+1. Execute the following script to create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following in the `master` database:
 
     ```sql
     CREATE LOGIN fabric_login WITH PASSWORD = '<strong password>';
+    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER fabric_login;
     ```
 
 1. Connect to the Azure SQL database your plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [Azure Data Studio](/azure-data-studio/download-azure-data-studio).
-1. Create a database user connected to the login, and grant the necessary permissions on the `##MS_ServerStateReader##` server role with the following T-SQL script:
+1. Create a database user connected to the login:
 
     ```sql
     CREATE USER fabric_user FOR LOGIN fabric_login;
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER fabric_login;
     ```
 
 #### Use a contained database user
 
 1. Connect to the Azure SQL database your plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [Azure Data Studio](/azure-data-studio/download-azure-data-studio).
-1. Create a [contained database user with password](/sql/relational-databases/security/contained-database-users-making-your-database-portable?view=azuresqldb-current&preserve-view=true), and grant the necessary permissions on the `##MS_ServerStateReader##` server role with the following T-SQL script:
+1. Create a [contained database user with password](/sql/relational-databases/security/contained-database-users-making-your-database-portable?view=azuresqldb-current&preserve-view=true), and grant the **CONTROL** permission to the contained daabase user with the following T-SQL script:
 
     ```sql
     CREATE USER fabric_user WITH PASSWORD = '<strong password>';
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER fabric_login;
+    GRANT CONTROL TO fabric_login;
     ```
 
 ## Create a mirrored Azure SQL Database
