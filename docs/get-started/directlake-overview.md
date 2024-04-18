@@ -24,7 +24,7 @@ On the other hand, with import mode, performance can be better because the data 
 
 Direct Lake mode eliminates the import requirement by loading the data directly from OneLake. Unlike DirectQuery, there is no translation from DAX or MDX to other query languages or query execution on other database systems, yielding performance similar to import mode. Because there's no explicit import process, it's possible to pick up any changes at the data source as they occur, combining the advantages of both DirectQuery and import modes while avoiding their disadvantages. Direct Lake mode can be the ideal choice for analyzing very large models and models with frequent updates at the data source.
 
-Direct Lake also supports [row-level security](/power-bi/enterprise/service-admin-ols) and [object-level](/power-bi/enterprise/service-admin-rls) security so users only see the data they have permission to see.
+Direct Lake also supports [row-level security](../security/service-admin-ols.md) and [object-level](../security/service-admin-rls.md) security so users only see the data they have permission to see.
 
 ## Prerequisites
 
