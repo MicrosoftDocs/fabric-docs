@@ -1,0 +1,41 @@
+items:
+- name: Real-Time hub documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Real-Time hub?
+    href: real-time-hub-overview.md
+- name: Get started
+  items:
+  - name: Bring your data to Real-Time hub 
+    href: get-started-bring-events-real-time-hub.md
+- name: Get events and create streams
+  items:
+  - name: Get events from Microsoft sources
+    href: get-events-microsoft-sources.md
+  - name: Get events from external sources
+    href: get-events-external-sources.md
+  - name: Get Fabric events
+    href: get-fabric-events.md
+- name: Discover and manage streams
+  items:
+  - name: Explore streams
+    href: explore-streams.md
+  - name: View stream details
+    href: view-stream-details.md
+  - name: Preview streams
+    href: preview-streams.md
+  - name: Endorse streams
+    href: endorse-streams.md
+  - name: Explore Fabric events
+    href: explore-fabric-events.md
+- name: Consume events and streams
+  items:
+  - name: Set alerts on streams
+    href: set-alerts-streams.md
+  - name: Set alerts on Fabric events
+    href: set-alerts-fabric-events.md
+  - name: Consume Fabric events using an eventstream
+    href: consume-fabric-events-event-stream.md
+    
+    

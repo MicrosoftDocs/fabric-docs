@@ -34,6 +34,9 @@ items:
   - name: Real-Time Intelligence
     tocHref: /azure/data-explorer/
     topicHref: /fabric/real-time-intelligence/index
+  - name: Real-Time hub
+    tocHref: /fabric/real-time-hub/
+    topicHref: /fabric/real-time-hub/index
   - name: Microsoft Fabric Security
     tocHref: /azure/reliability
     topicHref: /fabric/security/index
