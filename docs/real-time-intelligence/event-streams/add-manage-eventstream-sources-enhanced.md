@@ -14,7 +14,7 @@ ms.search.form: Source and Destination
 
 # Add and manage an event source in an eventstream (preview)
 
-Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that you can add to your eventstream include Azure Event Hubs, Azure IoT Hub, Sample data, and Custom app. In this article, you learn how to add and manage an event source in an eventstream with enhanced capabilities that are in preview. 
+Once you created an eventstream, you can connect it to various data sources and destinations. The types of event sources that you can add to your eventstream include Azure Event Hubs, Azure IoT Hub, Sample data, and Custom app. In this article, you learn how to add and manage an event source in an eventstream with enhanced capabilities that are in preview. 
 
 
 ## Related content

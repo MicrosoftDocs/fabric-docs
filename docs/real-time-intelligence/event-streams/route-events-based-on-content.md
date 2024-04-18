@@ -1,6 +1,6 @@
 ---
 title: Route events based on content
-description: Learn how to route events based on content in the data reeived from a source in a Fabric eventstream. 
+description: Learn how to route events based on content in the data received from a source in a Fabric eventstream. 
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu

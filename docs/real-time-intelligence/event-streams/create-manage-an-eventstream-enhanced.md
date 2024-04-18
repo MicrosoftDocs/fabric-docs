@@ -10,11 +10,8 @@ ms.search.form: Event Streams Overview
 ---
 
 # Create an eventstream in Microsoft Fabric with enhanced capabilities
-This article describes how to create an eventstream item with Microsoft Fabric event streams enhanced capabilities. and lakehouses.
+This article describes how to create an eventstream item with Microsoft Fabric event streams enhanced capabilities.
 
 
 ## Related content
 
-- To learn how to configure an eventstream and more, see [Manage an eventstream](manage-eventstream.md).
-- [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
-- [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)

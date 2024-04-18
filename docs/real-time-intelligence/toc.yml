@@ -60,7 +60,7 @@ items:
         href: event-streams/add-source-mysql-database-change-data-capture.md
       - name: Add an Azure Cosmos DB CDC source (preview)
         href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-      - name: Add an Google Cloud Pub/Sub source (preview)
+      - name: Add a Google Cloud Pub/Sub source (preview)
         href: event-streams/add-source-google-cloud-pub-sub.md
       - name: Add an Amazon Kinesis Data Streams source (preview)
         href: event-streams/add-source-amazon-kinesis-data-streams.md

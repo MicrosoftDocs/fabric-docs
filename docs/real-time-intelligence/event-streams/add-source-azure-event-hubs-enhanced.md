@@ -10,7 +10,7 @@ ms.search.form: Source and Destination
 ---
 
 # Add Azure Event Hubs source to an eventstream with enhanced capabilities
-This article shows you how to add an Azure Event Hubs source to an eventstream with enhanced capabilities. . 
+This article shows you how to add an Azure Event Hubs source to an eventstream with enhanced capabilities. 
 
 
 ## Related content

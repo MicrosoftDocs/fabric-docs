@@ -1,6 +1,6 @@
 ---
 title: Edit and publish Fabric eventstreams
-description: Learn how to edit and publish an eventstream
+description: Learn how to edit and publish an eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
