@@ -6,9 +6,74 @@
         "redirect_document_id": false
       },
       {
-       "source_path_from_root": "/docs/data-science/overview-azure-ai-services.md",
-       "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
-       "redirect_document_id": false
+        "source_path_from_root": "/docs/data-science/overview-azure-ai-services.md",
+        "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-onelake-table-folder-isnt-removed.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-oneLake-table-folder-not-removed.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-471-embedded-setup-tool-isnt-responsive.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-482-desktop-sign-in-prompt-shows-unsupported-personal-microsoft-accounts.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-532-sign-in-fails-securely-embedded-reports-using-chrome-browser.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-570-version-17-capacity-metrics-app-does-not-work.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-571-contributor-can-not-update-organizational-app.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-577-tables-not-visible-sql-endpoint-for-some-shortcuts.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-580-git-integration-tab-disappears-workspace-settings.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/get-started/known-issues/known-issue-598-failed-to-publish-dataflow-gen2.md",
+        "redirect_url": "/fabric/get-started/fabric-known-issues",
+        "redirect_document_id": false
       },
       {
       "source_path_from_root": "/docs/data-science/cognitive-services-multivariate-anomaly-detection.md",
@@ -66,11 +131,6 @@
           "redirect_document_id": true
         },
         {
-          "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-oneLake-table-folder-not-removed.md",
-          "redirect_url": "/fabric/get-started/known-issues/known-issue-446-onelake-table-folder-isnt-removed",
-          "redirect_document_id": false
-        },
-        {
           "source_path_from_root": "/docs/real-time-analytics/event-streams/bring-events-to-fabric-from-event-hub.md",
           "redirect_url": "/fabric/real-time-analytics/event-streams/transform-and-stream-real-time-events-to-lakehouse",
           "redirect_document_id": false
@@ -120,7 +180,7 @@
           "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
           "redirect_document_id": true
         },
-        { 
+        {
           "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
           "redirect_document_id": false
@@ -150,7 +210,7 @@
           "redirect_url": "/fabric/data-factory/metrics-app-compute-page.md",
           "redirect_document_id": false
         },
-        {                  
+        {
           "source_path_from_root": "/docs/data-factory/connector-azure-cosmosdb-for-nosql-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-azure-cosmosdb-for-nosql",
           "redirect_document_id": false
@@ -397,18 +457,23 @@
         },
         {
           "source_path_from_root": "/docs/onelake/get-started-security.md",
-          "redirect_url": "/docs/onelake/security/get-started-security",
+          "redirect_url": "/fabric/onelake/security/get-started-security",
           "redirect_document_id": false
         },
         {
           "source_path_from_root": "/docs/onelake/onelake-security.md",
-          "redirect_url": "/docs/onelake/security/get-started-security",
+          "redirect_url": "/fabric/onelake/security/get-started-security",
           "redirect_document_id": false
         },
         {
           "source_path_from_root": "/docs/onelake/fabric-and-onelake-security.md",
-          "redirect_url": "/docs/onelake/security/fabric-onelake-security",
+          "redirect_url": "/fabric/onelake/security/fabric-onelake-security",
           "redirect_document_id": false
-        }   
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/data-profile.md",
+          "redirect_url": "/fabric/real-time-analytics/create-database",
+          "redirect_document_id": false
+        }
     ]
 }

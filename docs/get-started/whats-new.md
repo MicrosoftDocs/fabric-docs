@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 04/08/2024
+ms.date: 04/17/2024
 ms.topic: whats-new
 ms.custom:
   - ignite-2023
@@ -18,9 +18,6 @@ This page is continuously updated with a recent review of what's new in [Microso
 - For community, marketing, case studies, and industry news, see the [Microsoft Fabric Blog](https://www.microsoft.com/microsoft-fabric/blog/).
 - Follow the latest in Power BI at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
 - For older news updates, review [previous updates in Microsoft Fabric](whats-new-archive.md).
-
-> [!TIP]
-> Join us April 9 for a Microsoft Fabric AMA for a live, expert-led Q&A session on all things Microsoft Fabric! Register at [https://aka.ms/FabricAMA-Apr24](https://aka.ms/FabricAMA-Apr24).
 
 ## New to Microsoft Fabric?
 
@@ -73,6 +70,8 @@ The following table lists the features of Microsoft Fabric that are currently in
 |**Notebook in Deployment Pipeline Preview**|Now you can also [use notebooks to deploy your code across different environments](https://blog.fabric.microsoft.com/blog/microsoft-fabric-november-2023-update/#post-5122-_Toc667667104), such as development, test, and production. You can also use deployment rules to customize the behavior of your notebooks when they're deployed, such as changing the default Lakehouse of a Notebook. [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md), and Notebook shows up in the deployment content automatically. |
 |**OneLake data access roles**|[OneLake data access roles for lakehouse are in preview](https://blog.fabric.microsoft.com/blog/9046). [Role permissions and user/group assignments can be easily updated](../onelake/security/get-started-data-access-roles.md) through a new folder security user interface or through API calls. |
 |**OneLake Shortcuts API**|[New REST APIs for OneLake Shortcuts](https://blog.fabric.microsoft.com/blog/interacting-with-onelake-using-rest-apis?ft=All) allow programmatic creation and management of shortcuts, currently in preview. You can now [programmatically create, read, and delete OneLake shortcuts](/rest/api/fabric/core/onelake-shortcuts). For example, see [Use OneLake shortcuts REST APIs](../onelake/onelake-shortcuts-rest-api.md).|
+|**OneLake shortcuts to S3-compatible data sources preview**|[OneLake shortcuts to S3-compatible data sources are now in preview](https://blog.fabric.microsoft.com/blog/public-preview-of-onelake-shortcuts-to-s3-compatible-data-sources?ft=All). Shortcuts in OneLake allow you to connect to your existing data through a single unified name space without having to copy or move data.|
+|**OneLake shortcuts to Google Cloud Storage preview**|[OneLake shortcuts to Google Cloud Storage are now in preview](https://blog.fabric.microsoft.com/blog/shortcuts-to-google-cloud-storage-now-available-in-public-preview?ft=All). Shortcuts in OneLake allow you to connect to your existing data through a single unified name space without having to copy or move data.|
 |**Prebuilt Azure AI services in Fabric preview**|The [preview of prebuilt AI services in Fabric](https://blog.fabric.microsoft.com/blog/prebuilt-azure-ai-services-in-fabric-2?ft=All) is an integration with [Azure AI services](https://azure.microsoft.com/products/ai-services), formerly known as Azure Cognitive Services. [Prebuilt Azure AI services](../data-science/ai-services/ai-services-overview.md) allow for easy enhancement of data with prebuilt AI models without any prerequisites. Currently, prebuilt AI services are in preview and include support for [Azure Open AI service](https://azure.microsoft.com/products/ai-services/openai-service/), [Azure AI Language](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/). |
 |**Private Endpoints for Microsoft Fabric (Preview)**|[Managed Private Endpoints for Microsoft Fabric](../security/security-managed-private-endpoints-overview.md) (preview) allow secure connections to data sources that are behind a firewall or not accessible from the public internet. For more information, see [Introducing Managed Private Endpoints for Microsoft Fabric in Preview](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview?ft=All).|
 |**Private Link support for Microsoft Fabric (Preview)**|[Azure Private Link for Microsoft Fabric](../security/security-private-links-overview.md) secures access to your sensitive data in Microsoft Fabric by providing network isolation and applying required controls on your inbound network traffic. For more information, see [Announcing Azure Private Link Support for Microsoft Fabric in Preview](https://blog.fabric.microsoft.com/blog/announcing-azure-private-link-support-for-microsoft-fabric-in-public-preview/).|
@@ -141,6 +140,9 @@ This section summarizes new guidance and sample project resources for Microsoft 
 
 With Copilot and other generative AI features in preview, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports. For more information, see [Copilot in Fabric](copilot-fabric-overview.md).
 
+> [!NOTE]
+> Starting May 20th, 2024, [Copilot in Microsoft Fabric will be enabled by default for all tenants](https://blog.fabric.microsoft.com/blog/exciting-updates-for-copilot-in-microsoft-fabric?ft=All).
+
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
 |February 2024|**Fabric Change the Game: How easy is it to use Copilot in Microsoft Fabric**|This [blog post shows how simple is to enable Copilot](https://blog.fabric.microsoft.com/blog/fabric-change-the-game-how-easy-is-it-to-use-copilot-in-microsoft-fabric?ft=All), a generative AI that brings new ways to transform and analyze data, generate insights, and create visualizations and reports in Microsoft Fabric.|
@@ -205,9 +207,11 @@ This section summarizes recent new features and capabilities of the [Data Engine
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|April 2024|**OneLake shortcuts to S3-compatible data sources preview**|[OneLake shortcuts to S3-compatible data sources are now in preview](https://blog.fabric.microsoft.com/blog/public-preview-of-onelake-shortcuts-to-s3-compatible-data-sources?ft=All). Shortcuts in OneLake allow you to connect to your existing data through a single unified name space without having to copy or move data.|
+|April 2024|**OneLake shortcuts to Google Cloud Storage preview**|[OneLake shortcuts to Google Cloud Storage are now in preview](https://blog.fabric.microsoft.com/blog/shortcuts-to-google-cloud-storage-now-available-in-public-preview?ft=All). Shortcuts in OneLake allow you to connect to your existing data through a single unified name space without having to copy or move data.|
 |April 2024|**OneLake data access roles**|[OneLake data access roles for lakehouse are in preview](https://blog.fabric.microsoft.com/blog/9046). [Role permissions and user/group assignments can be easily updated](../onelake/security/get-started-data-access-roles.md) through a new folder security user interface or through API calls. |
 |March 2024|**New validation enhancement for "Load to table"**|The [new validation enhancement to the "Load to table" feature](https://blog.fabric.microsoft.com/blog/microsoft-fabric-march-2024-update?ft=Monthly-update:category#post-7976-_Toc162004165) help mitigate any validation issues and make your data loading experience smoother and faster.|
-|March 2024|**Queueing for Notebook Jobs**|Now with [Job Queueing for Notebook Jobs](https://blog.fabric.microsoft.com/blog/microsoft-fabric-march-2024-update?ft=Monthly-update:category#post-7976-_Toc162004164), jobs that are triggered by pipelines or job scheduler will be added to a queue and will be retried automatically when the capacity frees up. |
+|March 2024|**Queuing for Notebook Jobs**|Now with [Job Queueing for Notebook Jobs](https://blog.fabric.microsoft.com/blog/introducing-job-queueing-for-notebook-in-microsoft-fabric?ft=All), jobs that are triggered by pipelines or job scheduler will be added to a queue and will be retried automatically when the capacity frees up. For more information, see [Job queueing in Microsoft Fabric Spark](../data-engineering/job-queueing-for-fabric-spark.md).|
 |March 2024|**Autotune Query Tuning feature for Apache Spark**|The [Autotune Query Tuning feature for Apache Spark](https://blog.fabric.microsoft.com/blog/microsoft-fabric-march-2024-update?ft=Monthly-update:category#post-7976-_Toc162004162) is now available. [Autotune](../data-engineering/autotune.md) leverages historical data from your Spark SQL queries and machine learning algorithms to automatically fine-tune your configurations, ensuring faster execution times and enhanced efficiency. |
 |March 2024|**OneLake File Explorer: Editing via Excel**|With our [latest release v1.0.11.0 of file explorer](https://www.microsoft.com/download/details.aspx?id=105222), we're excited to announce that [you can now update your files directly using Excel](https://blog.fabric.microsoft.com/blog/microsoft-fabric-march-2024-update?ft=Monthly-update:category#post-7976-_Toc162004154), mirroring the user-friendly experience available in OneDrive. |
 |February 2024|**Trusted workspace access (preview) for OneLake Shortcuts**|Trusted workspace access (preview) enables [secure and seamless access to ADLS Gen2 storage accounts from OneLake shortcuts in Fabric](https://blog.fabric.microsoft.com/blog/introducing-trusted-workspace-access-for-onelake-shortcuts?ft=All). For more information, see [Trusted workspace access (preview)](../security/security-trusted-workspace-access.md).|
@@ -321,6 +325,7 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|April 2024|**Fabric Change the Game: Azure SQL Database mirror into Microsoft Fabric**|A [step-by-step guide to mirror your Azure SQL Database](https://blog.fabric.microsoft.com/blog/fabric-change-the-game-sqldb-mirror-into-microsoft-fabric?ft=All) into Microsoft Fabric.|
 |February 2024|**Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute**|Read for [guidance on mapping Data Warehouse Units (DWU) from Azure Synapse Analytics dedicated SQL pool to an approximate equivalent number of Fabric Capacity Units (CU)](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute?ft=All).|
 |January 2024|**Automate Fabric Data Warehouse Queries and Commands with Data Factory**| In Fabric Data Factory, there are many ways to query data, retrieve data, and [execute commands from your warehouse using pipeline activities that can then be easily automated](https://blog.fabric.microsoft.com/blog/automate-fabric-data-warehouse-queries-and-commands-with-data-factory?ft=All).|
 |November 2023|**Migrate from Azure Synapse dedicated SQL pools**|A detailed guide with a migration runbook is available for [migrations from Azure Synapse Data Warehouse dedicated SQL pools into Microsoft Fabric](../data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md).|
@@ -395,6 +400,7 @@ This section includes guidance and documentation updates on development process,
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|April 2024|**Introducing Trusted Workspace Access in Fabric Data Pipelines**|Create data pipelines in Fabric to [access your firewall-enabled ADLS Gen2 storage accounts](https://blog.fabric.microsoft.com/blog/introducing-trusted-workspace-access-in-fabric-data-pipelines?ft=All) with ease and security. This feature leverages the workspace identity to establish a secure and seamless connection between Fabric and your storage accounts.|
 |March 2024|**CI/CD for Fabric Data Pipelines preview**|[Git Integration and integration with built-in Deployment Pipelines to Data Factory data pipelines](../data-factory/git-integration-deployment-pipelines.md) is now in preview. For more information, see [Data Factory Adds CI/CD to Fabric Data Pipelines](https://blog.fabric.microsoft.com/blog/data-factory-adds-ci-cd-to-fabric-data-pipelines?ft=All).|
 |March 2024|**System file updates for Git integration**|The automatically generated system files `item.metadata.json` and `item.config.json` have been consolidated into a single system file `.platform`. For more information, see [Automatically generated system files](../cicd/git-integration/source-code-format.md#automatically-generated-system-files).|
 |February 2024|**REST APIs for Fabric Git integration**|[REST APIs for Fabric Git integration](https://blog.fabric.microsoft.com/blog/automate-your-ci-cd-pipelines-with-microsoft-fabric-git-rest-apis/) enable seamless incorporation of Fabric Git integration into your team's end-to-end CI/CD pipeline, eliminating the need for manual triggering of actions from Fabric. |

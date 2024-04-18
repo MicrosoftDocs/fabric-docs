@@ -271,7 +271,7 @@ In the **Settings** tab:
 
     This expression within the LookUp Activity generates a SQL statement to query the system views to retrieve a list of schemas and tables. References the SchemaName parameter to allow for filtering on SQL schemas. The Output of this is an Array of SQL schema and tables that will be used as input into the ForEach Activity.
 
-    Use the below code to return a list of all user tables with their schema name. 
+    Use the following code to return a list of all user tables with their schema name.
 
     ```json
     @concat('

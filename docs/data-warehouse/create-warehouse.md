@@ -26,7 +26,7 @@ This article describes how to get started with [!INCLUDE [fabric-dw](includes/fa
 
 ## How to create a blank warehouse
 
-In this section, we walk you through three distinct experiences available for creating a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from scratch in the [!INCLUDE [product-name](../includes/product-name.md)] portal: using [the Home hub](#create-a-warehouse-using-the-home-hub), [the Create hub](#create-a-warehouse-using-the-create-hub), or [the workspace list view](#create-a-warehouse-from-the-workspace-list-view).
+In this section, we walk you through three distinct workloads available for creating a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from scratch in the [!INCLUDE [product-name](../includes/product-name.md)] portal: using [the Home hub](#create-a-warehouse-using-the-home-hub), [the Create hub](#create-a-warehouse-using-the-create-hub), or [the workspace list view](#create-a-warehouse-from-the-workspace-list-view).
 
 #### Create a warehouse using the Home hub
 

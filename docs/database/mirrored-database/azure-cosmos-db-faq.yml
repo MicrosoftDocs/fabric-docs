@@ -21,7 +21,7 @@ sections:
       - question: |
           How is mirroring different from shortcuts in relation to Azure Cosmos DB?          
         answer: |
-          Mirroring replicates the source database into Fabric OneLake in open-source delta format. You can run analytics on this data from any compute experience in Fabric. Shortcuts don't replicate the data into Fabric OneLake. Instead, shortcuts link to the source data without data movement. Currently, Azure Cosmos DB is only available as a source for mirroring.
+          Mirroring replicates the source database into Fabric OneLake in open-source delta format. You can run analytics on this data from anywhere in Fabric. Shortcuts don't replicate the data into Fabric OneLake. Instead, shortcuts link to the source data without data movement. Currently, Azure Cosmos DB is only available as a source for mirroring.
       - question: |
           Does mirroring affect the performance of the source Azure Cosmos DB database?
         answer: |
@@ -46,7 +46,7 @@ sections:
       - question: |
           What costs are associated with mirroring Azure Cosmos DB?
         answer: |
-          Mirroring is in public preview. There are currently no costs for mirroring or storing mirrored data in Fabric. The compute experience for querying data using SQL, Power BI, or Spark is charged at regular rates. For more information, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric).
+          Mirroring is in preview. There are currently no costs for mirroring or storing mirrored data in Fabric. The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. For more information, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric).
           
           For Azure Cosmos DB, continuous backup is a prerequisite to mirroring. If you enabled any continuous backup tier before mirroring, you don't accrue any extra cost. If you enable continuous backup specifically for mirroring, you're billed the price associated with that feature. For more information, see [Azure Cosmos DB pricing](https://azure.microsoft.com/pricing/details/cosmos-db).
 
@@ -195,11 +195,11 @@ sections:
       - question: |
           What happens if I delete the source Azure Cosmos DB database in Azure, while it is being mirrored?
         answer: |
-          The data explorer experience and replication begin to fail in Fabric. OneLake data remain as-is, until you delete the existing mirrored data.
+          Data Explorer and replication begin to fail in Fabric. OneLake data remain as-is, until you delete the existing mirrored data.
       - question: |
           After Azure Cosmos DB is mirrored, how do I connect the SQL analysis endpoint to client tools or applications?
         answer: |
-          Connecting to the SQL analysis endpoint for mirrored data is similar to using the same endpoint for any other experience in Fabric. For more information, see [connect to data warehousing in Fabric](../../data-warehouse/connectivity.md).
+          Connecting to the SQL analysis endpoint for mirrored data is similar to using the same endpoint for any other item in Fabric. For more information, see [connect to data warehousing in Fabric](../../data-warehouse/connectivity.md).
       - question: |
           How do I join Azure Cosmos DB mirrored data across databases?
         answer: |
