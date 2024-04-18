@@ -23,7 +23,7 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
    :::image type="content" source="media\tutorial-ingest-data\select-tutorial-menu.png" alt-text="Screenshot of the navigation menu, showing where to select Data Warehouse Tutorial.":::
 
-1. In the upper left corner, select **New** > **More options** to display a full list of available items.
+1. Select **New** > **More options** to display a full list of available items.
 
 1. In the **Data Factory** section, select **Data pipeline**.
 

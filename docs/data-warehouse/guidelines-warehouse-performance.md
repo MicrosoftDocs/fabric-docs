@@ -25,7 +25,7 @@ These are guidelines to help you understand performance of your [!INCLUDE [fabri
  
 ## Metrics for monitoring performance
 
-Currently, the [Monitoring Hub](../admin/monitoring-hub.md) does not include [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you choose the Data Warehouse experience, you will not be able to access the **Monitoring Hub** from the left nav menu.
+Currently, the [Monitoring Hub](../admin/monitoring-hub.md) does not include [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you choose **Data Warehouse**, you will not be able to access the **Monitoring Hub** from the navigation bar.
 
 Fabric administrators will be able to access the **Capacity Utilization and Metrics** report for up-to-date information tracking the utilization of capacity that includes [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
