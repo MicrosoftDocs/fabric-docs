@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Introduction to the Real-Time Intelligence tutorial](tutorial-introduction.md).
 
-## Create a KQL database
+## Create an event house
 
 1. Browse to the workspace in which you want to create your tutorial resources.
 1. On the bottom left experience switcher, select **Real-Time Intelligence**. 
@@ -29,10 +29,10 @@ ms.search.form: Get started
 1. From the **System overview** page, select the KQL database you created in the previous step.
 
     :::image type="content" source="media/tutorial/select-tutorial-database.png" alt-text="Screnshot of the System overview for new event house with Tutorial database selected and highlighted with a red box.":::
-
+1. In the **Database details** section, select the **pencil icon** next to **OneLake availability**.
 1. Toggle the button to **Active** and select **Done**.
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/enable-copy-one-lake.png" alt-text="Screenshot of enabling data copy to OneLake in Real-Time Intelligence in Microsoft Fabric." :::
+    :::image type="content" source="media/tutorial/one-lake-availability.png" alt-text="Screenshot showing how to turn on OneLake availability.":::
 
 ## Related content
 
@@ -44,4 +44,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md)
+> [Tutorial part 2: Get data in the Real-Time data hub](tutorial-2-get-real-time-events.md)
