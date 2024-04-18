@@ -21,7 +21,7 @@ This article describes how to get started with sample [!INCLUDE [fabric-dw](incl
 
 ## How to create a new warehouse with sample data
 
-In this section, we walk you through the experience of creating a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with sample data.
+In this section, we walk you through creating a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with sample data.
 
 ### Create a warehouse sample using the Home hub
 
