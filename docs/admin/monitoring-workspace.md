@@ -7,7 +7,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/07/2024
+ms.date: 04/18/2024
 ---
 
 # What is the admin monitoring workspace? (preview)
@@ -68,7 +68,7 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 
 ## Considerations and limitations
 
-* The admin monitoring workspace can only be created by user that is an admin for the tenant. This user needs to be assigned as an admin to the tenant directly. Users that belong to a group that's assigned as an admin to the tenant, can't create the admin monitoring workspace.
+* The admin monitoring workspace can only be created by a user that is an admin for the tenant. This user needs to be assigned as an admin to the tenant directly. Users that belong to a group that's assigned as an admin to the tenant, can't create the admin monitoring workspace.
 
 * The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Users, including admins, are not able to edit or view properties of items such as semantic models and reports in the workspace.
 
