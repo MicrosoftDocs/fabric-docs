@@ -28,7 +28,7 @@ items:
       href: tutorial-7-clean-up-resources.md
 - name: Get data
   items:
-  - name: Get, process, and route events 
+  - name: Get, process, and route events
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
@@ -51,7 +51,7 @@ items:
     - name: Route events to destinations
       items:
       - name: Add and manage a destination
-        href: event-streams/add-manage-eventstream-destinations.md      
+        href: event-streams/add-manage-eventstream-destinations.md
       - name: Add a KQL Database destination
         href: event-streams/add-destination-kql-database.md
       - name: Add a lakehouse destination
@@ -70,7 +70,7 @@ items:
         href: event-streams/configure-settings.md
     - name: Monitor eventstreams
       items:
-      - name: Monitor status and performance of eventstreams 
+      - name: Monitor status and performance of eventstreams
         href: event-streams/monitor.md
       - name: Monitor event streams capacity consumption
         href: event-streams/monitor-capacity-consumption.md
@@ -87,7 +87,7 @@ items:
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
   - name: Get data in a KQL Database
-    items: 
+    items:
     - name: Data formats
       href: ingestion-supported-formats.md
     - name: Schema optimization best practices
@@ -148,12 +148,12 @@ items:
         href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric
 - name: Store data
   items:
-  - name: Event house (preview)
+  - name: Event house (Preview)
     items:
-    - name: Event house overview (preview)
+    - name: Event house overview (Preview)
       href: eventhouse.md
-    - name: Create an event house (preview)
-      href: create-eventhouse.md 
+    - name: Create an event house (Preview)
+      href: create-eventhouse.md
   - name: KQL Database
     items:
     - name: Create a KQL database
@@ -167,8 +167,8 @@ items:
       href: create-empty-table.md
     - name: Data management
       items:
-      - name: Data management overview 
-        displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin 
+      - name: Data management overview
+        displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin
         href: data-management.md
       - name: Change data policies
         href: data-policies.md
@@ -177,7 +177,7 @@ items:
       - name: Create materialized views
         href: materialized-view.md
       - name: Create stored functions
-        href: create-functions.md 
+        href: create-functions.md
       - name: Enable Python plugin
         href: python-plugin.md
     - name: Management commands
@@ -188,7 +188,7 @@ items:
       items:
       - name: One logical copy (Preview)
         href: one-logical-copy.md
-      - name: Create OneLake shortcuts in a KQL database 
+      - name: Create OneLake shortcuts in a KQL database
         href: onelake-shortcuts.md
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
@@ -224,28 +224,30 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
-    - name: Create a Real-Time Dashboard
+    - name: Create a Real-Time Dashboard (Preview)
       href: dashboard-real-time-create.md
-    - name: Customize Real-Time Dashboard visuals
+    - name: Explore data in Real-Time Dashboard tiles (Preview)
+      href: dashboard-explore-data.md
+    - name: Customize Real-Time Dashboard visuals (Preview)
       href: dashboard-visuals-customize.md
-    - name: Apply conditional formatting in Real-Time Dashboards
+    - name: Apply conditional formatting in Real-Time Dashboards (Preview)
       href: dashboard-conditional-formatting.md
-    - name: Use parameters in Real-Time Dashboards
+    - name: Use parameters in Real-Time Dashboards (Preview)
       href: dashboard-parameters.md
-    - name: Real-Time Dashboard-specific visuals
+    - name: Real-Time Dashboard-specific visuals (Preview)
       href: dashboard-visuals.md
   - name: Power BI
     items:
     - name: Visualize data in a Power BI report
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
-      href: power-bi-data-connector.md   
+      href: power-bi-data-connector.md
 - name: Respond to data
   items:
   - name: What is Data Activator?
     href: ../data-activator/data-activator-introduction.md
   - name: Get started with Data Activator
-    href: ../data-activator/data-activator-get-started.md    
+    href: ../data-activator/data-activator-get-started.md
   - name: Data Activator tutorial using sample data
     href: ../data-activator/data-activator-tutorial.md
   - name: Get data in Data Activator
@@ -253,17 +255,17 @@ items:
     - name: Get data from Power BI
       href: ../data-activator/data-activator-get-data-power-bi.md
     - name: Get data from Eventstreams
-      href: ../data-activator/data-activator-get-data-eventstreams.md        
+      href: ../data-activator/data-activator-get-data-eventstreams.md
   - name: Create objects and triggers
     items:
     - name: Assign data to objects in Data Mode
-      href: ../data-activator/data-activator-assign-data-objects.md    
+      href: ../data-activator/data-activator-assign-data-objects.md
     - name: Create triggers in design mode
-      href: ../data-activator/data-activator-create-triggers-design-mode.md        
+      href: ../data-activator/data-activator-create-triggers-design-mode.md
     - name: Detection conditions
-      href: ../data-activator/data-activator-detection-conditions.md            
+      href: ../data-activator/data-activator-detection-conditions.md
     - name: Use custom actions to trigger Power Automate flows
-      href: ../data-activator/data-activator-trigger-power-automate-flows.md         
+      href: ../data-activator/data-activator-trigger-power-automate-flows.md
     - name: Data Activator limitations
       href: ../data-activator/data-activator-limitations.md
     - name: Troubleshoot errors
