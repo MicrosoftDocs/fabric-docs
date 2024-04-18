@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: OneRiver in Microsoft Fabric documentation
-summary: OneRiver is a single, unified, logical storage for data in motion.
+title: Real-Time Data Hub in Microsoft Fabric documentation
+summary: Real-Time Data Hub is a single, unified, logical storage for data in motion.
 
 metadata:
-  title: OneRiver in Microsoft Fabric documentation
-  description: OneRiver is a single, unified, logical storage for data in motion.
+  title: Real-Time Data Hub in Microsoft Fabric documentation
+  description: Real-Time Data Hub is a single, unified, logical storage for data in motion.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: onelake
   ms.custom:
@@ -21,16 +21,16 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About OneRiver
+  - title: About Real-Time Data Hub
     linkLists:
       - linkListType: overview
         links:
-          - text: What is OneRiver?
-            url: oneriver-overview.md
+          - text: What is Real-Time Data Hub?
+            url: real-time-data-hub-overview.md
       - linkListType: get-started
         links:
-          - text: Bring data into OneRiver
-            url: get-started-bring-events-oneriver.md
+          - text: Bring data into Real-Time Data Hub
+            url: get-started-bring-events-real-time-data-hub.md
 
   # Card 
   - title: Get events and create streams
