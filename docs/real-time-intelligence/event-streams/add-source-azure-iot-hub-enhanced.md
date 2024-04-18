@@ -9,7 +9,7 @@ ms.date: 04/03/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Azure Event Hubs source to an eventstream with enhanced capabilities
+# Add Azure IoT Hub source to an eventstream with enhanced capabilities
 This article shows you how to add an Azure IoT Hub source to an eventstream with enhanced capabilities. . 
 
 
