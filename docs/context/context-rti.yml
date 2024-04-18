@@ -1,0 +1,5 @@
+### YamlMime: ContextObject
+# based on https://review.learn.microsoft.com/help/platform/navigation-set-up-contextual-toc?toc=%2Fhelp%2Fplatform%2Ftoc.json&bc=%2Fhelp%2Fplatform%2Fbreadcrumb%2Ftoc.json&branch=main#create-a-context-file
+brand: fabric
+breadcrumb_path: ../breadcrumb/toc.yml
+toc_rel: ../real-time-Intelligence/toc.yml

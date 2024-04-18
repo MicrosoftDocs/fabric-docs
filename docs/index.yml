@@ -272,17 +272,17 @@ productDirectory:
     # Card
     - title: Synapse Real-Time Analytics
 
-      imageSrc: ./media/synapse-real-time-analytics-icon.png
+      imageSrc: ./media/synapse-real-time-intelligence-icon.png
       links:
-        - url: real-time-analytics/overview.md
+        - url: real-time-intelligence/overview.md
           text: What is Real-Time Analytics?
-        - url: real-time-analytics/event-streams/overview.md
+        - url: real-time-intelligence/event-streams/overview.md
           text: What is Fabric event streams?
-        - url: real-time-analytics/create-database.md
+        - url: real-time-intelligence/create-database.md
           text: Create a database
-        - url: real-time-analytics/query-table.md
+        - url: real-time-intelligence/query-table.md
           text: Query with KQL
-        - url: real-time-analytics/index.yml
+        - url: real-time-intelligence/index.yml
           text: See more
 
     # Card

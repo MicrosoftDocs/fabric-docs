@@ -82,8 +82,8 @@
                 "onelake/**/*.yml": "onelake",
                 "oneriver/**/*.md": "oneriver",
                 "oneriver/**/*.yml": "oneriver",
-                "real-time-analytics/**/*.md": "real-time-analytics",
-                "real-time-analytics/**/*.yml": "real-time-analytics",
+                "real-time-intelligence/**/*.md": "real-time-analytics",
+                "real-time-intelligence/**/*.yml": "real-time-analytics",
                 "security/**/*.md": "security",
                 "security/**/*.yml": "security"
             },
@@ -110,8 +110,8 @@
                 "onelake/**/*.yml": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=a81db3f3-43be-ed11-83ff-00224827e905",
                 "oneriver/**/*.md": "https://ideas.fabric.microsoft.com/",
                 "oneriver/**/*.yml": "https://ideas.fabric.microsoft.com/",
-                "real-time-analytics/**/*.md": "https://ideas.fabric.microsoft.com/?forum=f2a1a698-503e-ed11-bba2-000d3a8b12b6&category=f4e6a6b3-6748-ed11-bba3-000d3a8b12b6",
-                "real-time-analytics/**/*.yml": "https://ideas.fabric.microsoft.com/?forum=f2a1a698-503e-ed11-bba2-000d3a8b12b6&category=f4e6a6b3-6748-ed11-bba3-000d3a8b12b6",
+                "real-time-intelligence/**/*.md": "https://ideas.fabric.microsoft.com/?forum=f2a1a698-503e-ed11-bba2-000d3a8b12b6&category=f4e6a6b3-6748-ed11-bba3-000d3a8b12b6",
+                "real-time-intelligence/**/*.yml": "https://ideas.fabric.microsoft.com/?forum=f2a1a698-503e-ed11-bba2-000d3a8b12b6&category=f4e6a6b3-6748-ed11-bba3-000d3a8b12b6",
                 "security/**/*.md": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=e94fbb29-45f9-ed11-8849-000d3a4ef41d",
                 "security/**/*.yml": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=e94fbb29-45f9-ed11-8849-000d3a4ef41d"
             },
@@ -138,8 +138,8 @@
                 "onelake/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "oneriver/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "oneriver/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
-                "real-time-analytics/**/*.md": "https://community.fabric.microsoft.com/synapse",
-                "real-time-analytics/**/*.yml": "https://community.fabric.microsoft.com/synapse",
+                "real-time-intelligence/**/*.md": "https://community.fabric.microsoft.com/synapse",
+                "real-time-intelligence/**/*.yml": "https://community.fabric.microsoft.com/synapse",
                 "security/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "security/**/*.yml": "https://community.fabric.microsoft.com/powerbi"
             },
@@ -162,7 +162,7 @@
                 "data-factory/**/*.md": [
                     "fabric-datafactory-docs"
                 ],
-                "real-time-analytics/**/*.md": [
+                "real-time-intelligence/**/*.md": [
                     "fabric-realtimeanalytics-docs"
                 ],
                 "data-science/**/*.md": [
