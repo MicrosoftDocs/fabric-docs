@@ -42,6 +42,8 @@ The admin monitoring workspace is automatically installed during the first time 
 
 3. Select **Admin monitoring**. When you select this option for the first time, the required items are automatically installed.
 
+:::image type="content" source="./media/monitoring-workspace/install-admin-monitoring-workspace.gif" alt-text="Image shows process of installing and opening admin monitoring workspace":::
+
 ## Reports and semantic models
 
 You can use the reports in the monitoring workspace as is, for analysis and for getting insights about performance and sharing in your organization. You can also connect to the semantic models of the reports, and create a solution that's optimized for your organization.

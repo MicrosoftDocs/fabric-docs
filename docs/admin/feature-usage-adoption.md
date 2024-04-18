@@ -58,6 +58,8 @@ To view the details of a specific activity, drill through to the [Activity Detai
 
 3. Select *Activity Details*.
 
+:::image type="content" source="./media/feature-usage-adoption/analysis-drill-through-option.gif" alt-text="Image shows drill through option use case from Analysis to Details page":::
+
 Continuing the example from the [Activity Overview](#activity-overview-page) page, you turn to the Analysis page to understand why in December, the *sales and marketing* capacity has almost five times more activities than any other capacity. Using the *Date* fields, you filter the results for December. By reviewing the *Decomposition tree*, you see that almost all of the activities are for viewing a Power BI report. You decide to drill through to the [Activity details](#activity-details-page) page to understand which report is being extensively viewed.
 
 ### Inventory page
@@ -127,4 +129,3 @@ This section lists the report's considerations and limitations.
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
 
 * [Admin overview](microsoft-fabric-admin.md)
-
