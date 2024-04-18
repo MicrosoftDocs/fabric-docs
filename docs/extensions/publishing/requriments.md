@@ -29,11 +29,17 @@ OneLake
 TODO [Horizon](https://aka.ms/horizon)
 
 # Nuget package requirmenets 
-1. Duplicated fields
+1. Add all the asssests of the workload such as icons, screenshots videos under fe/assests
+2. For more details about the https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/frontendManifest.md
+3. 
+
+4.  Duplicated fields
 Title, Summary, icon,...
 Make sure they are identical to the SaaS offer metadata
 
-3. additional fields
+5. Backend part
+   * Backend information should be filed under be/
+
 # Azure requirements
 
 TODO
