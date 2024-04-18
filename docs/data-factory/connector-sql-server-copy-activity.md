@@ -151,7 +151,7 @@ For the **Mapping** tab configuration, if you don't apply SQL server with auto c
 
 If you apply SQL Server with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
-For example, the type for *id* column in source is int, and you can change it to float type when mapping to the destination column.
+For example, the type for *ID* column in source is int, and you can change it to float type when mapping to the destination column.
 
 :::image type="content" source="media/connector-sql-server/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
@@ -232,7 +232,7 @@ See the following table for the summary and more information for the SQL server 
 |**Table option** |Specifies whether to automatically create the destination table if it doesn't exist based on the source schema.|• Use existing <br>• Auto create table|No |tableOption:<br><br>• autoCreate|
 |**Table**|Your destination data table.| \<name of your table\> |Yes |schema <br> table|
 |**Write behavior** |The write behavior for copy activity to load data into SQL server database..|• Insert<br>• Upsert<br>• Stored procedure|No |writeBehavior:<br>• insert<br>• upsert<br>sqlWriterStoredProcedureName, sqlWriterTableType, storedProcedureTableTypeParameterName, storedProcedureParameters|
-|**Use TempDB** | Whether to use the a global temporary table or physical table as the interim table for upsert. |selected (default) or unselected  |No |useTempDB:<br>true (default) or false |
+|**Use TempDB** | Whether to use a global temporary table or physical table as the interim table for upsert. |selected (default) or unselected  |No |useTempDB:<br>true (default) or false |
 |**Select user DB schema** | The interim schema for creating interim table if physical table is used. Note: user need to have the permission for creating and deleting table. By default, interim table will share the same schema as destination table. Apply when you don't select **Use TempDB**. |selected (default) or unselected  |No |interimSchemaName|
 |**Key columns** | The column names for unique row identification. Either a single key or a series of keys can be used. If not specified, the primary key is used. |< your key column> |No |keys|
 |**Stored procedure name** |The name of the stored procedure that defines how to apply source data into a target table. This stored procedure is *invoked per batch*. For operations that run only once and have nothing to do with source data, for example, delete or truncate, use the **Pre-copy script** property.|< your stored procedure name > |No |sqlWriterStoredProcedureName|
