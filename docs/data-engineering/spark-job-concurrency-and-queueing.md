@@ -27,10 +27,10 @@ Once they have purchased the capacity, admins can create workspaces within the c
 Fabric Spark enforces a cores-based throttling and queueing mechanism, where users can submit jobs based on the purchased Fabric capacity SKUs. The queueing mechanism is a simple FIFO-based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available. 
 When users submit notebook or lakehouse jobs like Load to Table when their capacity is at its maximum utilization due to concurrent running jobs using all the Spark Vcores available for their purchased Fabric capacity SKU, they're throttled with the message *HTTP Response code 430: Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later.*
 
-With queueing enabled, notebook jobs triggered from pipelines and job scheduler and spark job defintions are added to the queue and automatically retried when the capacity is freed up.
+With queueing enabled, notebook jobs triggered from pipelines and job scheduler and spark job definitions are added to the queue and automatically retried when the capacity is freed up.
 The queue expiration is set to 24 hours from the job submission time. After this period, the jobs will need to be resubmitted.
 
-Fabric capacities offer bursting which allows you to consume extra compute cores beyond what have been purchased to speed the execution of a workload. For Spark workloads bursting allows users to submit jobs with a total of 3X the Spark VCores purchased.
+Fabric capacities are enabled with bursting which allows you to consume extra compute cores beyond what have been purchased to speed the execution of a workload. For Spark workloads bursting allows users to submit jobs with a total of 3X the Spark VCores purchased.
 
 > [!NOTE]
 > The bursting factor only increases the total number of Spark VCores to help with the concurrency but doesn't increase the max cores per job. Users can't submit a job that requires more cores than what their Fabric capacity offers.
@@ -59,7 +59,7 @@ Example calculation:
 > The jobs have a queue expiration period of 24 hours, after which they are cancelled, and users must resubmit them for job execution.
 
 Fabric Spark throttling doesn't have enforced arbitrary jobs-based limits, and the throttling is only based on the number of cores allowed for the purchased Fabric capacity SKU.
-The job admission by default will be an optimistic admission control, where the jobs are admitted based on their minimum cores requirement. Learn more about the optimitic job admission [Job Admission and Management](job-admission-and-management.md)
+The job admission by default will be an optimistic admission control, where the jobs are admitted based on their minimum cores requirement. Learn more about the optimistic job admission [Job Admission and Management](job-admission-management.md)
 If the default pool (Starter Pool) option is selected for the workspace, the following table lists the max concurrency job limits.
 
 Learn more about the default starter pool configurations based on the Fabric Capacity SKU [Configuring Starter Pools](configure-starter-pools.md)
