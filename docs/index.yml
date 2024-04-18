@@ -200,7 +200,7 @@ productDirectory:
           text: Bring your data to Real-Time Data Hub
         - url: real-time-data-hub/explore-streams.md
           text: Explore streams
-        - url: real-time-data-hug/set-alerts-streams.md
+        - url: real-time-data-hub/set-alerts-streams.md
           text: Set alerts on streams
         - url: real-time-data-hub/index.yml
           text: See more
