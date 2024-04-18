@@ -77,7 +77,7 @@ With this understanding in mind, be aware of the following:
 
 ## Related content
 
-* [Create and manage external data shares](./external-data-sharing-create.md)
+* [Create an external data share](./external-data-sharing-create.md)
 * [Accept an external data share](./external-data-sharing-accept.md)
 * [Manage external data shares](./external-data-sharing-manage.md)
 * [Fabric admins: Set up external data sharing on your tenant](./external-data-sharing-enable.md)

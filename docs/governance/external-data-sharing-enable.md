@@ -38,5 +38,6 @@ You must have the Fabric administrator role in the consuming tenant to perform t
 ## Related content
 
 * [External data sharing overview](./external-data-sharing-overview.md)
-* [Create and manage external data shares](./external-data-sharing-create.md)
+* [Create an external data share](./external-data-sharing-create.md)
 * [Accept an external data share](./external-data-sharing-accept.md)
+* [Manage external data shares](./external-data-sharing-manage.md)
