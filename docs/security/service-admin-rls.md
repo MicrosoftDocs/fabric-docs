@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: how-to
-ms.date: 04/03/2024
+ms.date: 04/18/2024
 ms.custom: ''
 LocalizationGroup: Administration
 no-loc: [Copilot]

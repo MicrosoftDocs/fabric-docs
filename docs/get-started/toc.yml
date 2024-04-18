@@ -91,7 +91,7 @@ items:
     href: directlake-fixed-identity.md
   - name: Analyze query processing
     href: directlake-analyze-qp.md
-  - name: Direct lake mode and PBI reporting
+  - name: Direct Lake mode and PBI reporting
     href: lakehouse-pbi-reporting.md
 - name: Promote or certify items
   href: endorsement-promote-certify.md
