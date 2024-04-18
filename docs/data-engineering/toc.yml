@@ -94,7 +94,7 @@ items:
     - name: Spark concurrency limits
       href: spark-job-concurrency-and-queueing.md
     - name: Job admission and management
-      href: job-admission-and-management.md
+      href: job-admission-management.md
     - name: Job queueing for Fabric Spark
       href: job-queueing-for-fabric-spark.md
   - name: Spark job definition
