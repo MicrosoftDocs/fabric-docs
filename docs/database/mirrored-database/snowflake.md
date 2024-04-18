@@ -23,7 +23,7 @@ With Mirroring in Fabric, you don't need to piece together different services fr
 
 ## What analytics experiences are built in?
 
-Mirrored databases are an item in the **Fabric Synapse Data Warehousing** experience distinct from the **Warehouse** and **SQL analytics endpoint** items.
+Mirrored databases are an item in **Fabric Synapse Data Warehousing** distinct from the **Warehouse** and **SQL analytics endpoint**.
 
 :::image type="content" source="media/snowflake/fabric-mirroring-snowflake.svg" alt-text="Diagram of Fabric Database Mirroring for Snowflake.":::
 
@@ -71,7 +71,7 @@ There are Snowflake compute and cloud query costs when data is being mirrored: v
   - Although there aren't any compute charges for behind the scenes tasks such as authoring, metadata queries, access control, showing data changes, and even DDL queries, there are cloud costs associated with these queries.
   - Depending on what type of Snowflake edition you have, you will be charged for the corresponding credits for any cloud services costs.
 
-In the following screenshot, you can see the virtual warehouse compute and cloud services compute costs for the associated Snowflake database that is being mirrored into Fabric. In this scenario, majority of the cloud services compute costs (in yellow) are coming from data change queries based on the points mentioned above. The virtual warehouse compute charges (in blue) are coming strictly from the data changes are being read from Snowflake and mirrored into Fabric.
+In the following screenshot, you can see the virtual warehouse compute and cloud services compute costs for the associated Snowflake database that is being mirrored into Fabric. In this scenario, majority of the cloud services compute costs (in yellow) are coming from data change queries based on the points mentioned previously. The virtual warehouse compute charges (in blue) are coming strictly from the data changes are being read from Snowflake and mirrored into Fabric.
 
   :::image type="content" source="media/snowflake/snowflake-costs-graph.png" alt-text="Screenshot of Snowflake costs graph." lightbox="media/snowflake/snowflake-costs-graph.png":::
 
