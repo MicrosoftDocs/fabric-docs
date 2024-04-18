@@ -42,7 +42,6 @@ A data consumer can create a database shortcut in Real-Time Analytics from any s
 
 Select the desired tab that corresponds with the way you'd like to create a shortcut. 
 
-
 ### [Use a cluster URI](#tab/workspace)
 
 ## Prerequisites
@@ -54,7 +53,6 @@ Select the desired tab that corresponds with the way you'd like to create a shor
 > [!IMPORTANT]
 > Both the source database and the database shortcut in Real-Time Analytics must be in the same region, but can be in different tenants.
 
-
 > [!IMPORTANT]
 > This method works with sources both in Azure Data Explorer and in Real-Time Analytics.
 
@@ -64,7 +62,7 @@ To create a shortcut using a cluster URI and database name, make sure you have a
 1. Open a new or existing [event house](create-eventhouse.md) in **Real-Time Analytics**.
 1. Select the plus sign next to **KQL databases**.
 
-    :::image type="content" source="media/database-shortcut/kql-databases-add.png" alt-text="Screenshot in event house of adding a new KQL database.":::
+    <!-- :::image type="content" source="media/database-shortcut/kql-databases-add.png" alt-text="Screenshot in event house of adding a new KQL database."::: -->
 
 1. Enter a name for your database shortcut.
 1. Select **Type** > **New shortcut database (Follower)**
