@@ -4,7 +4,7 @@ description: "This article describes the external data sharing feature in Micros
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.date: 04/14/2024
+ms.date: 04/18/2024
 
 #customer intent: As a Fabric administrator, data creator, or data consumer, I want to learn about sharing data stored in OneLake from one tenant to another, so that data doesn't have to be copied when it is shared.
 ---
@@ -43,7 +43,7 @@ Any user in the sharing tenant who has read and reshare permissions on an extern
 
 Sharing data with users outside your home tenant has implications for data security and privacy that you should consider. It's important to understand the underlying flows of data sharing to better evaluate these implications.
 
-Data is shared across tenants using Fabric-internal security mechanisms. The share security mechanism grants read-only access to **any user** within the home tenant of the user that was invited to accept the share. Data is shared “in-place”. No data is copied, and it isn't even accessed until the someone in the receiving tenant executes a Fabric workload over the shared data. Fabric evaluates and enforces Entra-ID-based roles and permissions locally, within the tenant they're defined in. This means that access control policies defined in the sharer's tenant, such as semantic model row-level security (RLS), Microsoft Purview Information Protection policies, and Purview Data Loss Prevention policies **are not** enforced on data that crosses organization boundaries. Rather, it is the policies defined in the consumer's tenant that are enforced on the incoming share, the same way that they are enforced on any data within that tenant.
+Data is shared across tenants using Fabric-internal security mechanisms. The share security mechanism grants read-only access to **any user** within the home tenant of the user that was invited to accept the share. Data is shared “in-place”. No data is copied, and it isn't even accessed until the someone in the receiving tenant executes a Fabric workload over the shared data. Fabric evaluates and enforces Entra-ID-based roles and permissions locally, within the tenant they're defined in. This means that access control policies defined in the sharer's tenant, such as semantic model row-level security (RLS), Microsoft Purview Information Protection policies, and Purview Data Loss Prevention policies **are not** enforced on data that crosses organization boundaries. Rather, it is the policies defined in the consumer's tenant that are enforced on the incoming share, the same way that they're enforced on any data within that tenant.
 
 With this understanding in mind, be aware of the following:
 
@@ -51,7 +51,7 @@ With this understanding in mind, be aware of the following:
 
 * The consumer can grant access to the data to anyone, even guest users from outside the consumer's organization.
 
-* Data might be transferred across geographic boundaries when it is accessed within the consumer's tenant.
+* Data might be transferred across geographic boundaries when it's accessed within the consumer's tenant.
 
 Sharing data with users outside your home tenant has implications for data security and privacy that you should consider. It's important to understand the underlying flows of data sharing to better evaluate these implications.
 
@@ -69,11 +69,11 @@ With this understanding in mind, be aware of the following:
 
 * **Shortcuts:** Shortcuts contained in folders that are shared via external data sharing won't resolve in the consumer tenant.
 
-* **Billing:** The cost of read operations is billed to the data provider. The expected behavior is to bill the provider for storage-related costs, and the consumer for read-related costs.
+* **Billing:** The cost of read operations is billed to the data provider.
 
-* **[Security]** **Invitations:** External data share invitation can be forwarded to other users within the same tenant and can be accepted more than once. In the future, invitations will be usable only once and scoped to a specific user. Only that user will be able to accept the invitation. Any user with permission to access the lakehouse in which the share was accepted will be able to read the data.
+* **[Security]** **Invitations:** External data share invitation can be forwarded to other users within the same tenant and can be accepted more than once. Any user with permission to access the lakehouse in which the share was accepted will be able to read the data.
 
-* **[Security]** **Admin control:** The tenant admin switch that specifies which users can accept external data shares is enforced via the user interface. Validation will be added to all layers of the system before this the external data sharing feature is released publicly.
+* **[Security]** **Admin control:** The tenant admin switch that specifies which users can accept external data shares is enforced via the user interface.
 
 ## Related content
 
