@@ -32,7 +32,49 @@ items:
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
-    - name: Create an eventstream
+    - name: Create eventstreams (preview)
+      items: 
+      - name: Create an eventstream (preview)
+        href: event-streams/create-manage-an-eventstream-enhanced.md
+      - name: Route events based on content
+        href: event-streams/route-events-based-on-content.md
+      - name: Edit and publish eventstreams
+        href: event-streams/edit-publish.md
+      - name: Create default and derived streams
+        href: event-streams/create-default-derived-streams.md
+      - name: Create eventstreams for discrete events
+        href: event-streams/create-eventstreams-discrete-events.md
+    - name: Get events from sources (preview)
+      items:
+      - name: Add and manage an event source (preview)
+        href: event-streams/add-manage-eventstream-sources-enhanced.md
+      - name: Add an Azure Event Hubs source (preview)
+        href: event-streams/add-source-azure-event-hubs-enhanced.md
+      - name: Add an Azure IoT Hub source (preview)
+        href: event-streams/add-source-azure-iot-hub-enhanced.md
+      - name: Add an Azure SQL Database CDC source (preview)
+        href: event-streams/add-source-azure-sql-database-change-data-capture.md
+      - name: Add a PostgreSQL Database CDC source (preview)
+        href: event-streams/add-source-postgresql-database-change-data-capture.md
+      - name: Add a MySQL Database CDC source (preview)
+        href: event-streams/add-source-mysql-database-change-data-capture.md
+      - name: Add an Azure Cosmos DB CDC source (preview)
+        href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
+      - name: Add an Google Cloud Pub/Sub source (preview)
+        href: event-streams/add-source-google-cloud-pub-sub.md
+      - name: Add an Amazon Kinesis Data Streams source (preview)
+        href: event-streams/add-source-amazon-kinesis-data-streams.md
+      - name: Add a Confluent Kafka source (preview)
+        href: event-streams/add-source-confluent-kafka.md
+      - name: Add Fabric workspace source (preview)
+        href: event-streams/add-source-fabric-workspace.md
+      - name: Add Azure Blob Storage source (preview)
+        href: event-streams/add-source-azure-blob-storage.md
+      - name: Add a custom app source (preview)
+        href: event-streams/add-source-custom-app-enhanced.md
+      - name: Add a sample data source (preview)
+        href: event-streams/add-source-sample-data-enhanced.md
+    - name: Create eventstreams
       href: event-streams/create-manage-an-eventstream.md
     - name: Get events from sources
       items:
