@@ -29,9 +29,14 @@ Lets take the example scenario where a user is using Fabric F32 capacity SKU. As
 
 :::image type="content" source="media/job-admission-and-management/reserved-job-admission-overview.png" alt-text="Image showing the job concurrency without optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/reserved-job-admission-overview.png":::
 
-With Optimistic job admission, with the same configuration, the capacity would allow 24 jobs to be admitted and start executing with their min node configuration during a max concurrency scenario as the jobs are admitted accounting for 8 SparkVCores (1 Minimum node configuration of size Medium)
+With Optimistic job admission, as an example with the same configuration, the capacity would allow 24 jobs to be admitted and start executing with their min node configuration during a max concurrency scenario as the jobs are admitted accounting for 8 SparkVCores (1 Minimum node configuration of size Medium)
 
-:::image type="content" source="media/job-admission-and-management/optimistic-job-admission-overview.png" alt-text="Image showing the job concurrency with optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/optimistic-job-admission-overview.png":::
+:::image type="content" source="media/job-admission-and-management/job-admission.gif" alt-text="Image showing the job concurrency with optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/job-admission.gif":::
+
+## Job Scale using Spark Autoscale
+When Spark Autoscale is enabled for the Spark pools, jobs would start exexuting with their minimum node configuration and during runtime, the job scale up could be triggered and these scale up requests for additional nodes. These scale up requests will go through the job admission control which approves the scale up allowing it to scale to its max limits based on the total available cores on Spark. When Autoscale requests are rejected, the active running jobs are not impacted and continue to run with their current configuration till cores become available. 
+
+:::image type="content" source="media/job-admission-and-management/job-scale-up.gif" alt-text="Image showing the job scale up with optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/job-scale-up.gif":::
 
 
 > [!NOTE]
