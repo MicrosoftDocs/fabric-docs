@@ -1,13 +1,13 @@
 items:
-- name: Real-Time Data Hub documentation
+- name: Real-Time Hub documentation
   href: index.yml
 - name: Overview
   items:
-  - name: What is Real-Time Data Hub?
+  - name: What is Real-Time Hub?
     href: real-time-hub-overview.md
 - name: Get started
   items:
-  - name: Bring your data to Real-Time Data Hub 
+  - name: Bring your data to Real-Time Hub 
     href: get-started-bring-events-real-time-hub.md
 - name: Get events and create streams
   items:

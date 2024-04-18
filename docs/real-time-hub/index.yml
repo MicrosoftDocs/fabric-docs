@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: Real-Time Data Hub in Microsoft Fabric documentation
-summary: Real-Time Data Hub is a single, unified, logical storage for data in motion.
+title: Real-Time Hub in Microsoft Fabric documentation
+summary: Real-Time Hub is a single, unified, logical storage for data in motion.
 
 metadata:
-  title: Real-Time Data Hub in Microsoft Fabric documentation
-  description: Real-Time Data Hub is a single, unified, logical storage for data in motion.
+  title: Real-Time Hub in Microsoft Fabric documentation
+  description: Real-Time Hub is a single, unified, logical storage for data in motion.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: onelake
   ms.custom:
@@ -21,15 +21,15 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About Real-Time Data Hub
+  - title: About Real-Time Hub
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Real-Time Data Hub?
+          - text: What is Real-Time Hub?
             url: real-time-hub-overview.md
       - linkListType: get-started
         links:
-          - text: Bring data into Real-Time Data Hub
+          - text: Bring data into Real-Time Hub
             url: get-started-bring-events-real-time-hub.md
 
   # Card 
