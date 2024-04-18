@@ -1,6 +1,6 @@
 ---
-title: Get data from Eventstream
-description: Learn how to get data from an eventstream in a KQL database in Real-Time Intelligence.
+title: Get data from Real-Time data hub (Public Preview)
+description: Learn how to get data from Real-Time event hub in a KQL database in Real-Time Intelligence.
 ms.reviewer: aksdi
 ms.author: yaschust
 author: YaelSchuster
@@ -8,15 +8,18 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/16/2023
+ms.date: 04/18/2024
 ms.search.form: Get data in a KQL Database
 ---
 
-# Get data from Eventstream
+# Get data from Real-Time data hub
 
-In this article, you learn how to get data from an existing eventstream into either a new or existing table.
+In this article, you learn how to get events from Real-Time event hub into either a new or existing table.
 
-To get data from a new eventstream, see [Get data from a new eventstream](event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-a-new-eventstream).
+Real-Time data hub is currently in public preview.
+
+> [!NOTE]
+> Currently Real-Time event hub only supports eventstream data.
 
 ## Prerequisites
 
@@ -26,17 +29,17 @@ To get data from a new eventstream, see [Get data from a new eventstream](event-
 
 ## Source
 
-To get data from an eventstream, you need to select the eventstream as your data source. You can select an existing eventstream in the following ways:
+To get data from Real-Time data hub, you need to select Real-Time data hub as your data source. You can select <!--an existing eventstream--> Real-Time data hub in the following ways:
 
 On the lower ribbon of your KQL database, either:
 
-* From the **Get Data** dropdown menu, then under **Continuous**, select **Eventstream** > **Existing Eventstream**.
+* From the **Get Data** dropdown menu, then under **Continuous**, select **Real-Time data hub** > **Existing Eventstream**.
 
-* Select **Get Data** and then in the **Get data** window, select **Eventstream**.
+* Select **Get Data** and then in the **Get data** window, select a stream from the Real-Time data hub section.
 
-* From the **Get Data** drop down menu, under **Continuous**, select **Real-Time data hub** > **Existing Eventstream**.
+    :::image type="content" source="media/get-data-real-time-hub/select-data-source.png" alt-text="Screenshot of get data window with Real-Time data hub options." lightbox="media/get-data-real-time-hub/select-data-source.png":::
 
-    :::image type="content" source="media/get-data-eventstream/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-eventstream/select-data-source.png":::
+* Select an <!--check what the appropriate term should be-->eventstream from the list.
 
 ## Configure
 
@@ -44,14 +47,14 @@ On the lower ribbon of your KQL database, either:
 
     > [!NOTE]
     > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
-1. Under **Configure the data source**, fill out the settings using the information in the following table:
+1. Under **Configure the data source**, fill out the settings using the information in the following table. Some setting information automatically fills from your eventstream.
 
-    :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-eventstream/configure-tab.png":::
+    :::image type="content" source="media/get-data-real-time-hub/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-real-time-hub/configure-tab.png":::
 
     |**Setting** | **Description**|
-    |----|----|----|
-    | Workspace| Your eventstream workspace location. Select a workspace from the dropdown.|
-    | Eventstream Name| The name of your eventstream. Select an eventstream from the dropdown.|
+    |----|----|
+    | Workspace| Your eventstream workspace location. Your workspace name is automatically filled. |
+    | Eventstream Name| The name of your eventstream. Your eventstream name is automatically filled.|
     | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
     | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
     | **Advanced filters**| |
@@ -93,20 +96,20 @@ The **Inspect** tab opens with a preview of the data.
 
 To complete the ingestion process, select **Finish**.
 
-:::image type="content" source="media/get-data-eventstream/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-eventstream/inspect-data.png":::
+:::image type="content" source="media/get-data-event-hub/inspect-data.png" alt-text="Screenshot of the inspect tab. " lightbox="media/get-data-event-hub/inspect-data.png":::
 
 Optionally:
 
 * Select **Command viewer** to view and copy the automatic commands generated from your inputs.
-* Change the automatically inferred data format by selecting the desired format from the dropdown. Data is read from the event hub in form of [EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata?context=/fabric/context/context) objects. Supported formats are CSV, JSON, PSV, SCsv, SOHsv TSV, TXT, and TSVE.
+* Change the automatically inferred data format by selecting the desired format from the dropdown. Data is read from the event hub in the form of [EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata?context=/fabric/context/context) objects. Supported formats are CSV, JSON, PSV, SCsv, SOHsv TSV, TXT, and TSVE.
 * [Edit columns](#edit-columns).
 * Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
 
-[!INCLUDE [get-data-edit-columns](includes/get-data-edit-columns.md)]
+[!INCLUDE [get-data-edit-columns](../includes/real-time-analytics/get-data-edit-columns.md)]
 
 :::image type="content" source="media/get-data-eventstream/edit-columns.png" alt-text="Screenshot of columns open for editing." lightbox="media/get-data-eventstream/edit-columns.png":::
 
-[!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
+[!INCLUDE [mapping-transformations](../includes/real-time-analytics/mapping-transformations.md)]
 
 ### Advanced options based on data type
 
@@ -134,3 +137,4 @@ In the **Data preparation** window, all three steps are marked with green check 
 
 * To manage your database, see [Manage data](data-management.md)
 * To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md)
+* To get data from a new eventstream, see [Get data from a new eventstream](event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-a-new-eventstream)
