@@ -1,14 +1,14 @@
 items:
-- name: OneRiver documentation
+- name: Real-Time hub documentation
   href: index.yml
 - name: Overview
   items:
-  - name: What is OneRiver?
-    href: oneriver-overview.md
+  - name: What is Real-Time hub?
+    href: real-time-hub-overview.md
 - name: Get started
   items:
-  - name: Bring your data to OneRiver 
-    href: get-started-bring-events-oneriver.md
+  - name: Bring your data to Real-Time hub 
+    href: get-started-bring-events-real-time-hub.md
 - name: Get events and create streams
   items:
   - name: Get events from Microsoft sources
