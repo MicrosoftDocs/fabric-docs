@@ -173,16 +173,19 @@ To install an R feed library:
 
 ### Manage Jar libraries through inline installation
 
-The *.jar* files are support at notebook sessions with following command. The following code cell is using Notebook built-in folder as an example.
+The *.jar* files are support at notebook sessions with following command.
 
 ```Scala
 %%configure -f
 {
     "conf": {
-        "spark.jars": "{mssparkutils.nbResPath}/builtin/jar_file_name.jar"
+        "spark.jars": "abfss://<<Lakehouse prefix>>.dfs.fabric.microsoft.com/<<path to JAR file>>/<<JAR file name>>.jar",
     }
-}       
+}        
 ```
+
+The code cell is using Lakehouse's storage as an example. At the notebook explorer, you can copy the full file ABFS path and replace in the code.
+:::image type="content" source="media\environment-lm\library-management-get-ABFS-path.png" alt-text="Screenshot of get the ABFS path.":::
 
 ## Related content
 
