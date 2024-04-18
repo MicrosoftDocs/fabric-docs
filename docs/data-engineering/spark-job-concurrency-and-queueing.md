@@ -64,20 +64,6 @@ If the default pool (Starter Pool) option is selected for the workspace, the fol
 
 Learn more about the default starter pool configurations based on the Fabric Capacity SKU [Configuring Starter Pools](configure-starter-pools.md)
 
-| SKU Name         | Capacity Units | Spark VCores | Total Cores per Job (Default Starter Pools Configuration)| Max Jobs |
-|------------------|----------------|--------------|---------------------------|----------|
-| F2               | 2              | 4            | 8                         | 2        |
-| F4               | 4              | 8            | 8                         | 3        |
-| F8               | 8              | 16           | 16                        | 6        |
-| F16              | 16             | 32           | 32                        | 12       |
-| F32              | 32             | 64           | 64                        | 24       |
-| F64              | 64             | 128          | 80                        | 48       |
-| Trial Capacity   | 64             | 128          | 80                        | 24       |
-| F128             | 128            | 256          | 80                        | 96       |
-| F256             | 256            | 512          | 80                        | 192      |
-| F512             | 512            | 1024         | 80                        | 384      |
-| F1024            | 1024           | 2048         | 80                        | 768      |
-| F2048            | 2048           | 4096         | 80                        | 1536     |
 
 ## Related content
 
