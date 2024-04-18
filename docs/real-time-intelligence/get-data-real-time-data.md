@@ -37,7 +37,7 @@ On the lower ribbon of your KQL database, either:
 
 * Select **Get Data** and then in the **Get data** window, select a stream from the Real-Time data hub section.
 
-    :::image type="content" source="media/get-data-real-time-hub/select-data-source.png" alt-text="Screenshot of get data window with Real-Time data hub options." lightbox="media/get-data-real-time-hub/select-data-source.png":::
+    :::image type="content" source="media/get-data-real-time-data/select-data-source.png" alt-text="Screenshot of get data window with Real-Time data hub options." lightbox="media/get-data-real-time-data/select-data-source.png":::
 
 * Select an <!--check what the appropriate term should be-->eventstream from the list.
 
@@ -49,7 +49,7 @@ On the lower ribbon of your KQL database, either:
     > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 1. Under **Configure the data source**, fill out the settings using the information in the following table. Some setting information automatically fills from your eventstream.
 
-    :::image type="content" source="media/get-data-real-time-hub/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-real-time-hub/configure-tab.png":::
+    :::image type="content" source="media/get-data-real-time-data/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-real-time-data/configure-tab.png":::
 
     |**Setting** | **Description**|
     |----|----|
@@ -105,11 +105,11 @@ Optionally:
 * [Edit columns](#edit-columns).
 * Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
 
-[!INCLUDE [get-data-edit-columns](../includes/real-time-analytics/get-data-edit-columns.md)]
+[!INCLUDE [get-data-edit-columns](includes/get-data-edit-columns.md)]
 
 :::image type="content" source="media/get-data-eventstream/edit-columns.png" alt-text="Screenshot of columns open for editing." lightbox="media/get-data-eventstream/edit-columns.png":::
 
-[!INCLUDE [mapping-transformations](../includes/real-time-analytics/mapping-transformations.md)]
+[!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
 
 ### Advanced options based on data type
 
