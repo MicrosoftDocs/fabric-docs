@@ -25,7 +25,7 @@ To view and manage existing external data shares, navigate to the shared lakehou
 
 You'll see a list of all the external shares for this item.
 
-:::image type="content" source="./media/external-data-sharing-manage/manage-external-data-share-share-list.png" alt-text="Screenshot showing how to revoke an external data share." lightbox="./media/external-data-sharing-manage/manage-external-data-share-share-list.png":::
+:::image type="content" source="./media/external-data-sharing-manage/manage-external-data-share-share-list.png" alt-text="Screenshot showing the list of external data shares on the External data shares tab of the Manage permissions page." lightbox="./media/external-data-sharing-manage/manage-external-data-share-share-list.png":::
 
 The following table describes the columns.
 
