@@ -12,5 +12,6 @@ ms.search.form: Source and Destination
 # Add Amazon Kinesis Data Streams source to an eventstream
 This article shows you how to add Amazon Kinesis Data Streams source to an eventstream. 
 
+[!INCLUDE [amazon-kinesis-data-streams-connector](./includes/amazon-kinesis-data-streams-connector.md)]
 
 ## Related content

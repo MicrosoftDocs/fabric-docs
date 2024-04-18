@@ -12,5 +12,7 @@ ms.search.form: Source and Destination
 # Add MySQL Database Change Data Capture source to an eventstream
 This article shows you how to add a MySQL Database Change Data Capture source to an eventstream.
 
+[!INCLUDE [mysql-database-cdc-connector](./includes/mysql-database-cdc-connector.md)]
+
 ## Related content
 

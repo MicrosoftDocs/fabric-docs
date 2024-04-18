@@ -12,5 +12,6 @@ ms.search.form: Source and Destination
 # Add a sample data source to an eventstream with enhanced capabilities (preview)
 This article shows you how to add a sample data source to an eventstream with enhanced capabilities. 
 
+[!INCLUDE [sample-data-connector](./includes/sample-data-connector.md)]
 
 ## Related content

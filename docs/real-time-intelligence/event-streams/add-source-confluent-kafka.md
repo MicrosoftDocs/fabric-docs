@@ -12,5 +12,6 @@ ms.search.form: Source and Destination
 # Add Confluent Kafka source to an eventstream
 This article shows you how to add Amazon Kinesis Data Streams source to an eventstream. 
 
+[!INCLUDE [confluent-kafka-connector](./includes/confluent-kafka-connector.md)]
 
 ## Related content

@@ -12,5 +12,6 @@ ms.search.form: Source and Destination
 # Add a custom app source to an eventstream with enhanced capabilities (preview)
 This article shows you how to add an app source to an eventstream with enhanced capabilities. 
 
+[!INCLUDE [custom-app-connector](./includes/custom-app-connector.md)]
 
 ## Related content
