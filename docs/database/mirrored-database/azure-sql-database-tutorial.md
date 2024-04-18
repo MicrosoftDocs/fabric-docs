@@ -75,7 +75,7 @@ Next, you need to create a way for the Fabric service to connect to your Azure S
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create hub**.
     <!-- ![Screenshot of Workspace creation](media/image.png) -->
-1. Select the **Create** icon on the left-hand side upper section of the screen.  
+1. Select the **Create** icon.  
     <!-- ![Screenshot of Create button](media/image.png) -->
 1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure SQL Database (preview)**.
     <!-- ![Screenshot of SQL DB card](media/image.png) -->
