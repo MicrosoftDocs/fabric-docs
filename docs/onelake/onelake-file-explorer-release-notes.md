@@ -21,7 +21,7 @@ Continue reading for information on major updates to OneLake file explorer.
 
 ### Update Notifications
 
-We believe that staying informed about app updates is crucial. Whether it’s a bug fix, performance improvement, or exciting new features. Starting with this version, our file explorer app will now notify you when a new update is available. You’ll receive a notification when a new version is available, or simply check when icon changes and right-click to see if an update awaits.
+We believe that staying informed about app updates is crucial. Whether it’s a bug fix, performance improvement, or exciting new features. Starting with this version, the OneLake file explorer app will now notify you when a new update is available. You’ll receive a Windows notification when a new version is available and the OneLake icon in the Windows notification area will change. Simply right-click the icon to see if an update is available.
 
 ## December 2023 Update (v 1.0.11.0)
 
