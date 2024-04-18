@@ -10,7 +10,7 @@ ms.date: 04/18/2024
 
 # Accept an external data share
 
-When someone invites you to share OneLake data from their organization, you receive a link that you can use to accept the invitation and to create a shortcut to the shared data a in Fabric item of your choosing. You have 90 days to accept the invitation.
+When someone invites you to share OneLake data from their organization, you receive a link that you can use to accept the invitation and to create a shortcut to the shared data in a Fabric item of your choosing. You have 90 days to accept the invitation.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ To be able to accept and use an external data share, you need standard Fabric wr
 
 To accept a share:
 
-1. Select the share link or paste the URL in a browser. This navigates you to a dialog that displays the name of the share and the data provider's tenant details.
+1. Select the share link or paste the URL in a browser. This navigates you to a dialog that displays the name of the share and the details of the data provider's tenant.
 
     :::image type="content" source="./media/external-data-sharing-accept/review-accept-dialog.png" alt-text="Screenshot showing external data share review and accept dialog.":::
 
