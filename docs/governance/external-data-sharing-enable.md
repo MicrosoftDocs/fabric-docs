@@ -21,25 +21,19 @@ Sharing data via external data sharing has important security considerations. Fo
 
 For more information about external data sharing, see the [External data sharing overview](./external-data-sharing-overview.md).
 
-## Prerequisites
-
-* You must have the Fabric administrator role to enable external data sharing.
-
 ## Enable external data sharing in the providing tenant
 
-To enable external data sharing in the providing tenant so that users can create external data shares:
+You must have the Fabric administrator role in the providing tenant to perform these steps.
 
-1. [Go to the tenant settings](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings) in the providing tenant and turn on the **External data sharing (preview)** tenant setting in the Export and sharing settings section.
-
-1. Specify who in the tenant can create external data shares.
+1. [Go to the tenant settings](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings) in the providing tenant.
+1. Find the **External data sharing (preview)** tenant setting (under export and sharing settings), enable the toggle, and specify who in the tenant can create external data shares.
 
 ## Enable external data sharing in the consuming tenant
 
-To enable external data sharing in the consuming tenant so that users in the tenant can accept external data shares:
+You must have the Fabric administrator role in the consuming tenant to perform these steps.
 
-1. [Go to the tenant settings](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings) in the consuming tenant and turn on the **Users can accept external data shares (preview)** tenant setting in the Export and sharing settings section.
-
-1. Specify who in the tenant can create external data shares.
+1. [Go to the tenant settings](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings) in the consuming tenant.
+1. Find the **Users can accept external data shares (preview)** tenant setting (under export and sharing settings), enable the toggle, and specify who in the tenant can create external data shares.
 
 ## Related content
 
