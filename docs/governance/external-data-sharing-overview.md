@@ -37,9 +37,7 @@ External data sharing is currently supported for data residing in tables or file
 
 ## Revoking external data shares
 
-Any user in the sharing tenant who has write permissions on an externally shared item can revoke the external data share at any time using the External data shares tab on the manage permissions page.
-
-Revoking an external data share is a serious matter that should be considered carefully and in consultation with the receiving tenant. It completely and irreversibly severs all access from the receiving tenant to the shared data. This means that any and all data artifacts built in the receiving tenant on the basis of the shared data will cease to function. A revoked external data share can't be restored. A new external data share can be created, but all work done in the receiving tenant based on the revoked share will have to be rebuilt from scratch.
+Any user in the sharing tenant who has read and reshare permissions on an externally shared item can revoke the external data share at any time using the **External data shares** tab on the manage permissions page. Revoking external data shares can have serious implications for the consuming tenants and should be considered carefully. For more information, see [Revoking external data shares](./external-data-sharing-manage.md#revoke-external-data-shares).
 
 ## Security Considerations
 

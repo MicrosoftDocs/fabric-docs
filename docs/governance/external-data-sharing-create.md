@@ -13,6 +13,8 @@ ms.date: 04/16/2024
 
 This article shows how you can share data from your Fabric tenant's OneLake storage with users in other Fabric tenants.
 
+Before sharing data with a user in another tenant via external data sharing, be sure to review the [external data sharing security considerations](./external-data-sharing-overview.md#security-considerations).
+
 ## Prerequisites
 
 * A lakehouse or KQL database with at least one folder or table.
@@ -36,18 +38,11 @@ This article shows how you can share data from your Fabric tenant's OneLake stor
  
     The consumer will now be able to accept the share and access the data within their tenant.
 
-## Related content
-
-* [External data sharing overview](./external-data-sharing-overview.md)
-* [Accept an external data share](./external-data-sharing-accept.md)
-* [Fabric admins: Enable external data sharing](./external-data-sharing-enable.md)
-
-## Considerations and limitations
-
-Sharing data with users in other Fabric tenants has important implications for data security and privacy. See [Security considerations](./external-data-sharing-overview.md#security-considerations) for detail.
+You can revoke the external share at any time, although doing so can have serious implications for the consuming tenant. For information see [Manage external data shares](./external-data-sharing-manage.md#revoke-external-data-shares).
 
 ## Related content
 
 * [External data sharing overview](./external-data-sharing-overview.md)
 * [Accept an external data share](./external-data-sharing-accept.md)
+* [Manage external data shares](./external-data-sharing-manage.md)
 * [Fabric admins: Enable external data sharing](./external-data-sharing-enable.md)
