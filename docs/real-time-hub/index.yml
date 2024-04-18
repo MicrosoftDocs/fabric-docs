@@ -26,11 +26,11 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is Real-Time Data Hub?
-            url: real-time-data-hub-overview.md
+            url: real-time-hub-overview.md
       - linkListType: get-started
         links:
           - text: Bring data into Real-Time Data Hub
-            url: get-started-bring-events-real-time-data-hub.md
+            url: get-started-bring-events-real-time-hub.md
 
   # Card 
   - title: Get events and create streams

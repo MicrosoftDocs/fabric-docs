@@ -4,11 +4,11 @@ items:
 - name: Overview
   items:
   - name: What is Real-Time Data Hub?
-    href: real-time-data-hub-overview.md
+    href: real-time-hub-overview.md
 - name: Get started
   items:
   - name: Bring your data to Real-Time Data Hub 
-    href: get-started-bring-events-real-time-data-hub.md
+    href: get-started-bring-events-real-time-hub.md
 - name: Get events and create streams
   items:
   - name: Get events from Microsoft sources
