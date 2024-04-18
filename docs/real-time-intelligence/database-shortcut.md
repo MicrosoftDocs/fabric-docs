@@ -42,7 +42,6 @@ A data consumer can create a database shortcut in Real-Time Analytics from any s
 
 Select the desired tab that corresponds with the way you'd like to create a shortcut. 
 
-
 ### [Use a cluster URI](#tab/workspace)
 
 ## Prerequisites
@@ -53,7 +52,6 @@ Select the desired tab that corresponds with the way you'd like to create a shor
 
 > [!IMPORTANT]
 > Both the source database and the database shortcut in Real-Time Analytics must be in the same region, but can be in different tenants.
-
 
 > [!IMPORTANT]
 > This method works with sources both in Azure Data Explorer and in Real-Time Analytics.
