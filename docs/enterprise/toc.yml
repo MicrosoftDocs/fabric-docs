@@ -5,6 +5,8 @@ items:
   items:
   - name: Microsoft Fabric licenses
     href: licenses.md
+  - name: Microsoft Fabric features
+    href: fabric-features.md    
 - name: Get started
   items:
   - name: Buy a Microsoft Fabric subscription
