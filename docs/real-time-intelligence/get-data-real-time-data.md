@@ -101,7 +101,7 @@ To complete the ingestion process, select **Finish**.
 Optionally:
 
 * Select **Command viewer** to view and copy the automatic commands generated from your inputs.
-* Change the automatically inferred data format by selecting the desired format from the dropdown. Data is read from the event hub in the form of [EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata?context=/fabric/context/context) objects. Supported formats are CSV, JSON, PSV, SCsv, SOHsv TSV, TXT, and TSVE.
+* Change the automatically inferred data format by selecting the desired format from the dropdown. Data is read from the event hub in the form of [EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata?context=/fabric/context/context) objects. Supported formats are Avro, Apache Avro, CSV, JSON, ORC, Parquet, PSV, RAW, SCsv, SOHsv, TSV, TXT, and TSVE.
 * [Edit columns](#edit-columns).
 * Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
 
