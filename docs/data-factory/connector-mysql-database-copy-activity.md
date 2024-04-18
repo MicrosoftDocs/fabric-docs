@@ -1,5 +1,5 @@
 ---
-title: Configure MySQL in copy activity
+title: Configure MySQL in a copy activity
 description: This article explains how to copy data using MySQL.
 author: jianleishen
 ms.author: jianleishen
@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
 ---
 
-# Configure MySQL in copy activity
+# Configure MySQL in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from MySQL.
 
