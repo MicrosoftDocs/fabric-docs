@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
-ms.date: 02/23/2023
+ms.date: 04/18/2024
 ---
 # Job admission in Microsoft Fabric Spark
 
@@ -27,16 +27,16 @@ The minimum cores requirements for each job will determine whether the job can b
 
 Lets take the example scenario where a user is using Fabric F32 capacity SKU. Assuming all jobs submitted are using the default Starter Pool configuration, without Optimistic Job Admission, the capacity would allow a maximum concurrency of 3 jobs as it reserved all the max number of cores for each job based on the max nodes configuration.
 
-:::image type="content" source="media/job-admission-and-management/reserved-job-admission-overview.png" alt-text="Image showing the job concurrency without optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/reserved-job-admission-overview.png":::
+:::image type="content" source="media/job-admission-and-management/reserved-job-admission-overview.png" alt-text="Screenshot showing the job concurrency without optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/reserved-job-admission-overview.png":::
 
 With Optimistic job admission, as an example with the same configuration, the capacity would allow 24 jobs to be admitted and start executing with their min node configuration during a max concurrency scenario as the jobs are admitted accounting for 8 SparkVCores (1 Minimum node configuration of size Medium)
 
-:::image type="content" source="media/job-admission-and-management/job-admission.gif" alt-text="Image showing the job concurrency with optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/job-admission.gif":::
+:::image type="content" source="media/job-admission-and-management/job-admission.gif" alt-text="Screenshot showing the job concurrency with optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/job-admission.gif":::
 
 ## Job Scale using Spark Autoscale
 When Spark Autoscale is enabled for the Spark pools, jobs would start exexuting with their minimum node configuration and during runtime, the job scale up could be triggered and these scale up requests for additional nodes. These scale up requests will go through the job admission control which approves the scale up allowing it to scale to its max limits based on the total available cores on Spark. When Autoscale requests are rejected, the active running jobs are not impacted and continue to run with their current configuration till cores become available. 
 
-:::image type="content" source="media/job-admission-and-management/job-scale-up.gif" alt-text="Image showing the job scale up with optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/job-scale-up.gif":::
+:::image type="content" source="media/job-admission-and-management/job-scale-up.gif" alt-text="Screenshot showing the job scale up with optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/job-scale-up.gif":::
 
 
 > [!NOTE]
