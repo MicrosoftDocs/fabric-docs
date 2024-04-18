@@ -1,6 +1,6 @@
 ---
 title: What is data warehousing in Microsoft Fabric?
-description: Learn more about the data warehousing experience.
+description: Learn more about data warehousing workloads in Synapse Data Warehouse in Microsoft Fabric.
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
@@ -40,7 +40,7 @@ Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an
 
 ### Open format for seamless engine interoperability
 
-Data in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is stored in the parquet file format and published as Delta Lake Logs, enabling ACID transactions and cross engine interoperability that can be leveraged through other [!INCLUDE [product-name](../includes/product-name.md)] experiences such as Spark, Pipelines, Power BI and Azure Data Explorer. Customers no longer need to create multiple copies of their data to enable data professionals with different skill sets. Data engineers that are accustomed to working in Python can easily leverage the same data that was modeled and served by a data warehouse professional that is accustomed to working in SQL. In parallel, BI professionals can quickly and easily leverage the same data to create a rich set of visualizations in Power BI with record performance and no data duplication. 
+Data in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is stored in the parquet file format and published as Delta Lake Logs, enabling ACID transactions and cross engine interoperability that can be leveraged through other [!INCLUDE [product-name](../includes/product-name.md)] workloads such as Spark, Pipelines, Power BI and Azure Data Explorer. Customers no longer need to create multiple copies of their data to enable data professionals with different skill sets. Data engineers that are accustomed to working in Python can easily leverage the same data that was modeled and served by a data warehouse professional that is accustomed to working in SQL. In parallel, BI professionals can quickly and easily leverage the same data to create a rich set of visualizations in Power BI with record performance and no data duplication. 
 
 ### Separation of storage and compute
 
@@ -48,11 +48,11 @@ Compute and storage are decoupled in a [!INCLUDE [fabric-dw](includes/fabric-dw.
 
 ### Easily ingest, load and transform at scale
 
-Data can be [ingested](ingest-data.md) into the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] through Pipelines, Dataflows, cross database querying or the COPY INTO command. Once ingested, data can be analyzed by multiple business groups through functionality such as sharing and cross database querying. Time to insights is expedited through a fully integrated BI experience through graphical data modeling easy to use web experience for querying within the Warehouse Editor. 
+Data can be [ingested](ingest-data.md) into the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] through Pipelines, Dataflows, cross database querying or the COPY INTO command. Once ingested, data can be analyzed by multiple business groups through functionality such as sharing and cross database querying. Time to insights is expedited through a fully integrated BI experience through graphical data modeling easy to use web experience for querying within the Warehouse Editor.
 
-## Data Warehousing experiences in Microsoft Fabric
+## Data warehousing items in Microsoft Fabric
 
-This section provides an overview of two distinct data warehousing experiences in Microsoft Fabric: the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+There are two distinct data warehousing items: the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 ### SQL analytics endpoint of the Lakehouse
 
@@ -86,7 +86,7 @@ This section describes the differences between the [!INCLUDE [fabric-dw](include
 
 :::image type="content" source="media\data-warehousing\fabric-workspace.svg" alt-text="Diagram of the Fabric workspace for data warehousing, including the SQL analytics endpoint and Warehouse.":::
 
-The **[!INCLUDE [fabricse](includes/fabric-se.md)]** is a *read-only* warehouse that is automatically generated upon creation from a [Lakehouse](../data-engineering/lakehouse-overview.md) in [!INCLUDE [product-name](../includes/product-name.md)]. Delta tables that are created through Spark in a Lakehouse are automatically discoverable in the [!INCLUDE [fabricse](includes/fabric-se.md)] as tables. The [!INCLUDE [fabricse](includes/fabric-se.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using the SQL connection string. Data analysts can then use T-SQL to access Lakehouse data using the warehouse experience. Use [!INCLUDE [fabricse](includes/fabric-se.md)] to design your warehouse for BI needs and serving data.
+The **[!INCLUDE [fabricse](includes/fabric-se.md)]** is a *read-only* warehouse that is automatically generated upon creation from a [Lakehouse](../data-engineering/lakehouse-overview.md) in [!INCLUDE [product-name](../includes/product-name.md)]. Delta tables that are created through Spark in a Lakehouse are automatically discoverable in the [!INCLUDE [fabricse](includes/fabric-se.md)] as tables. The [!INCLUDE [fabricse](includes/fabric-se.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using the SQL connection string. Data analysts can then use T-SQL to access Lakehouse data using Synapse Data Warehouse. Use [!INCLUDE [fabricse](includes/fabric-se.md)] to design your warehouse for BI needs and serving data.
 
 The **Synapse Data Warehouse** or **Warehouse** is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities like an enterprise data warehouse. As opposed to [!INCLUDE [fabricse](includes/fabric-se.md)], where tables and data are automatically created, you are fully in control of [creating tables](tables.md), loading, transforming, and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands. 
 
