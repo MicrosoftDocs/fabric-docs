@@ -1,5 +1,5 @@
 ---
-title: Configure Google BigQuery in copy activity
+title: Configure Google BigQuery in a copy activity
 description: This article explains how to copy data using Google BigQuery.
 author: jianleishen
 ms.author: jianleishen
@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
 ---
 
-# Configure Google BigQuery in copy activity
+# Configure Google BigQuery in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from Google BigQuery.
 
