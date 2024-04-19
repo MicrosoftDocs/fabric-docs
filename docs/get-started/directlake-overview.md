@@ -141,7 +141,7 @@ database.Model.SaveChanges();
 
 ## Analyze query processing
 
-To determine if a report visual's DAX queries to the data source are providing the best performance by using Direct Lake mode, or falling back to DirectQuery mode, you can use Performance analyzer in Power BI Desktop, SQL Server Profiler, or other third party tools to analyze queries. To learn more, see [Analyze query processing for Direct Lake models](directlake-analyze-qp.md).
+To determine if a report visual's DAX queries to the data source are providing the best performance by using Direct Lake mode, or falling back to DirectQuery mode, you can use Performance analyzer in Power BI Desktop, SQL Server Profiler, or other third party tools to analyze queries. To learn more, see [Analyze query processing for Direct Lake models](directlake-analyze-query-processing.md).
 
 ## Refresh
 
@@ -197,4 +197,4 @@ The best way to get started with a Direct Lake solution in your organization is 
 ## Related content
 
 - [Create a Lakehouse for Direct Lake](directlake-create-lakehouse.md)  
-- [Analyze query processing for Direct Lake semantic models](directlake-analyze-qp.md)  
+- [Analyze query processing for Direct Lake semantic models](directlake-analyze-query-processing.md)  

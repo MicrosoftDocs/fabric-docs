@@ -115,4 +115,4 @@ When you're finished adding relationships and DAX measures, you can then create 
 
 - [Specify a fixed identity for a Direct Lake model](directlake-fixed-identity.md)
 - [Direct Lake overview](directlake-overview.md)  
-- [Analyze query processing for Direct Lake semantic models](directlake-analyze-qp.md)  
+- [Analyze query processing for Direct Lake semantic models](directlake-analyze-query-processing.md)  

@@ -36,4 +36,4 @@ Follow these steps to specify a fixed identity connection for a Direct Lake sema
 ## Related content
 
 - [Direct Lake overview](directlake-overview.md)  
-- [Analyze query processing for Direct Lake semantic models](directlake-analyze-qp.md)  
+- [Analyze query processing for Direct Lake semantic models](directlake-analyze-query-processing.md)  
