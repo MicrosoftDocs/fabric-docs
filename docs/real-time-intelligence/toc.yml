@@ -86,7 +86,7 @@ items:
         href: event-streams/add-destination-lakehouse-enhanced.md
       - name: Reflex
         href: event-streams/add-destination-reflex-enhanced.md
-      - name: Custom app
+      - name: Custom endpoint
         href: event-streams/add-destination-custom-app-enhanced.md
     - name: Create eventstreams
       href: event-streams/create-manage-an-eventstream.md
