@@ -488,7 +488,7 @@
         {
           "source_path_from_root": "/docs/data-engineering/lakehouse-pbi-reporting.md",
           "redirect_url": "/docs/get-started/lakehouse-pbi-reporting",
-          "redirect_document_id": false
+          "redirect_document_id": true
         }   
     ]
 }
