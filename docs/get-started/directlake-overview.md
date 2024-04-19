@@ -84,7 +84,7 @@ When connecting to a standalone Direct Lake model through the XMLA endpoint, the
 
 - Direct Lake partitions use shared expressions to define data sources. The expression points to the SQL endpoint of a Lakehouse or Warehouse. Direct Lake uses the SQL endpoint to discover schema and security information but loads the data directly from the Delta tables (unless Direct Lake must fall back to DirectQuery mode for any reason).
 
-Here's an example XMLA query in SSMS:
+Here's an example XMLA query in SSMS: 
 
 :::image type="content" source="media/dl-dataset-metadata.png" alt-text="XMLA query in SSMS":::
 
