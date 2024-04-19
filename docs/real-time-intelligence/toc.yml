@@ -48,27 +48,27 @@ items:
       items:
       - name: Add and manage an event source (preview)
         href: event-streams/add-manage-eventstream-sources-enhanced.md
-      - name: Add an Azure Event Hubs source (preview)
+      - name: Azure Event Hubs
         href: event-streams/add-source-azure-event-hubs-enhanced.md
-      - name: Add an Azure IoT Hub source (preview)
+      - name: Azure IoT Hub
         href: event-streams/add-source-azure-iot-hub-enhanced.md
-      - name: Add an Azure SQL Database CDC source (preview)
+      - name: Azure SQL Database CDC
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
-      - name: Add a PostgreSQL Database CDC source (preview)
+      - name: PostgreSQL Database CDC
         href: event-streams/add-source-postgresql-database-change-data-capture.md
-      - name: Add a MySQL Database CDC source (preview)
+      - name: MySQL Database CDC
         href: event-streams/add-source-mysql-database-change-data-capture.md
-      - name: Add an Azure Cosmos DB CDC source (preview)
+      - name: Azure Cosmos DB CDC
         href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-      - name: Add a Google Cloud Pub/Sub source (preview)
+      - name: Google Cloud Pub/Sub
         href: event-streams/add-source-google-cloud-pub-sub.md
-      - name: Add an Amazon Kinesis Data Streams source (preview)
+      - name: Amazon Kinesis Data Streams
         href: event-streams/add-source-amazon-kinesis-data-streams.md
-      - name: Add a Confluent Kafka source (preview)
+      - name: Confluent Kafka
         href: event-streams/add-source-confluent-kafka.md
-      - name: Add Fabric workspace source (preview)
+      - name: Fabric workspace events
         href: event-streams/add-source-fabric-workspace.md
-      - name: Add Azure Blob Storage source (preview)
+      - name: Azure Blob Storage events
         href: event-streams/add-source-azure-blob-storage.md
       - name: Add a custom app source (preview)
         href: event-streams/add-source-custom-app-enhanced.md
@@ -78,15 +78,15 @@ items:
       items:
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations-enhanced.md      
-      - name: Add a Stream destination
+      - name: Stream 
         href: event-streams/add-destination-stream.md
-      - name: Add a KQL Database destination
+      - name: KQL Database
         href: event-streams/add-destination-kql-database-enhanced.md
-      - name: Add a lakehouse destination
+      - name: Lakehouse
         href: event-streams/add-destination-lakehouse-enhanced.md
-      - name: Add a Reflex destination
+      - name: Reflex
         href: event-streams/add-destination-reflex-enhanced.md
-      - name: Add a custom app destination
+      - name: Custom app
         href: event-streams/add-destination-custom-app-enhanced.md
     - name: Create eventstreams
       href: event-streams/create-manage-an-eventstream.md
