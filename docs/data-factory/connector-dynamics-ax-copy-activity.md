@@ -1,5 +1,5 @@
 ---
-title: Configure Dynamics AX in copy activity
+title: Configure Dynamics AX in a copy activity
 description: This article explains how to copy data using Dynamics AX.
 author: jianleishen
 ms.author: jianleishen
@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
 ---
 
-# Configure Dynamics AX in copy activity
+# Configure Dynamics AX in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from Dynamics AX.
 
@@ -38,7 +38,7 @@ The following properties are **required**:
 
 - **Data store type**: Select **External**.
 - **Connection**:  Select a Dynamics AX connection from the connection list. If no connection exists, then create a new Dynamics AX connection by selecting **New**.
-- **Connection type**: Select Dynamics AX.
+- **Connection type**: Select **Dynamics AX**.
 - **Use query**: Specify way to read data. Select **Path** to read data from the specified path or select **Query** to read data using queries.
     - If you select **Path**:
       - **Path**: Specify the path to the Dynamics AX OData entity.
@@ -47,13 +47,13 @@ The following properties are **required**:
 
     - If you select **Query**:
       - **Path**: Specify the path to the Dynamics AX OData entity.
-      - **Query**: Specify the OData query options for filtering data. Example: `"?$select=Name,Description&$top=5"`.
+      - **Query**: Specify the OData query options for filtering data. For example, `"?$select=Name,Description&$top=5"`.<br/>**Note**: The connector copies data from the combined URL: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. For more information, see [OData URL components](https://www.odata.org/documentation/odata-version-3-0/url-conventions/).
 
         :::image type="content" source="./media/connector-dynamics-ax/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::
 
 Under **Advanced**, you can specify the following fields:
 
-- **Request timeout**: The timeout (the **TimeSpan** value) for the HTTP request to get a response. This value is the timeout to get a response, not the timeout to read response data.
+- **Request timeout**: Specify the timeout (the **TimeSpan** value) for the HTTP request to get a response. This value is the timeout to get a response, not the timeout to read response data. If not specified, the default value is 00:05:00 (5 minutes).
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ### Mapping
@@ -77,7 +77,7 @@ The following tables contain more information about the copy activity in Dynamic
 | **Connection type** |Select a type for your connection.|**Dynamics AX**|Yes|/|
 | **Use query** |The way to read data from Dynamics AX. Apply **Path** to read data from the specified path or apply **Query** to read data using queries.|• **Path** <br>• **Query** |Yes |/|
 | **Path** | The path to the Dynamics AX OData entity. | < your path > | Yes | path |
-| **Query** | OData query options for filtering data. Example: `"?$select=Name,Description&$top=5"`.  | < your query > | No | query |
+| **Query** | OData query options for filtering data. For example, `"?$select=Name,Description&$top=5"`. <br/><br/>**Note**: The connector copies data from the combined URL: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. For more information, see [OData URL components](https://www.odata.org/documentation/odata-version-3-0/url-conventions/).  | < your query > | No | query |
 | **Request timeout** |The timeout (the **TimeSpan** value) for the HTTP request to get a response. This value is the timeout to get a response, not the timeout to read response data.| timespan<br>(the default is **00:05:00** - 5 minutes) |No|httpRequestTimeout|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
