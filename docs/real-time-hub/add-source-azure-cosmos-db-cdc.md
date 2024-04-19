@@ -10,4 +10,4 @@ ms.date: 04/03/2024
 # Add Azure Cosmos DB CDC as source in Real-Time hub
 This article describes how to add Azure Cosmos DB Change Data Capture (CDC) as an event source in Fabric Real-Time hub. 
 
-[!INCLUDE [azure-cosmos-db-source-connector](../real-time-intelligence/event-streams/includes/azure-cosmos-db-source-connector.md)]
+[!INCLUDE [azure-cosmos-db-source-connector](../real-time-intelligence/event-streams/includes/azure-cosmos-db-cdc-source-connector.md)]
