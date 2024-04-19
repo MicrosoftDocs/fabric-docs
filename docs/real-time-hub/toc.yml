@@ -15,26 +15,26 @@ items:
     href: get-events-microsoft-sources.md
     items:
     - name: Add an Azure Event Hubs source
-      href: add-azure-event-hubs-source.md
+      href: add-source-azure-event-hubs.md
     - name: Add an Azure IoT Hub source
-      href: add-azure-iot-hub-source.md
+      href: add-source-azure-iot-hub.md
     - name: Add an Azure SQL Database Change Data Capture source
-      href: add-azure-sql-database-cdc.md
+      href: add-source-azure-sql-database-cdc.md
     - name: Add an Azure Cosmos DB Change Data Capture source
-      href: add-azure-cosmos-db-cdc.md
+      href: add-source-azure-cosmos-db-cdc.md
   - name: Get events from external sources
     href: get-events-external-sources.md
     items:
     - name: Add a Google Pub/Sub source
-      href: add-google-pub-sub-source.md
+      href: add-source-google-cloud-pub-sub.md
     - name: Add Kinesis Data Streams source
-      href: add-kinesis-data-streams-source.md
+      href: add-source-amazon-kinesis-data-streams.md
     - name: Add Confluent Kafka source
-      href: add-confluent-kafka-source.md
+      href: add-source-confluent-kafka.md
     - name: Add custom app source
-      href: add-custom-app-source.md
+      href: add-source-custom-app.md
     - name: Add sample data source
-      href: add-sample-data-source.md
+      href: add-source-sample-data.md
   - name: Get Fabric events
     href: get-fabric-events.md
     items:

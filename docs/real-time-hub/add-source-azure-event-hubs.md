@@ -1,11 +1,13 @@
 ---
-title: Explore system events in to Real-Time hub
-description: This article describes how to explore system events (Fabric and Azure Blob Storage) into Fabric Real-Time hub.
+title: Add Azure Event Hubs as source in Real-Time hub
+description: This article describes how to add an Azure event hub as an event source in Fabric Real-Time hub. 
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# Explore Fabric events in to Real-Time hub
-This article describes how to explore Fabric events in Real-Time hub.
+# Add Azure Event Hubs as source in Real-Time hub
+This article describes how to add an Azure event hub as an event source in Fabric Real-Time hub. 
+
+[!INCLUDE [azure-event-hubs-source-connector](../real-time-intelligence/event-streams/includes/azure-event-hubs-source-connector.md)]
