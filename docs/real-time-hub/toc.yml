@@ -9,7 +9,7 @@ items:
   items:
   - name: Bring your data to Real-Time hub 
     href: get-started-bring-events-real-time-hub.md
-- name: Get events and create streams
+- name: Get events and create data streams
   items:
   - name: Get events from Microsoft sources
     href: get-events-microsoft-sources.md
@@ -46,22 +46,22 @@ items:
       href: get-azure-blob-storage-events.md
     - name: Fabric workspace item events
       href: get-fabric-workspace-item-events.md
-- name: Discover and manage streams
+- name: Discover and manage data streams
   items:
-  - name: Explore streams
-    href: explore-streams.md
+  - name: Explore data streams
+    href: explore-data-streams.md
   - name: View stream details
     href: view-stream-details.md
-  - name: Preview streams
-    href: preview-streams.md
-  - name: Endorse streams
-    href: endorse-streams.md
+  - name: Preview data streams
+    href: preview-data-streams.md
+  - name: Endorse data streams
+    href: endorse-data-streams.md
   - name: Explore Fabric events
     href: explore-fabric-events.md
-- name: Consume events and streams
+- name: Consume events and data streams
   items:
-  - name: Set alerts on streams
-    href: set-alerts-streams.md
+  - name: Set alerts on data streams
+    href: set-alerts-data-streams.md
   - name: Set alerts on Fabric events
     href: set-alerts-fabric-events.md
   - name: Consume Fabric events using an eventstream
