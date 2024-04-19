@@ -29,12 +29,16 @@ items:
       href: add-source-google-cloud-pub-sub.md
     - name: Kinesis Data Streams 
       href: add-source-amazon-kinesis-data-streams.md
-    - name: Confluent Kafka source
+    - name: Confluent Cloud Kafka
       href: add-source-confluent-kafka.md
-    - name: Custom app source
+    - name: Custom endpoint
       href: add-source-custom-app.md
-    - name: Sample data source
+    - name: Sample data 
       href: add-source-sample-data.md
+    - name: PostgreSQL Database Change Data Capture
+      href: add-source-postgresql-database-cdc.md
+    - name: MySQL Database Change Data Capture
+      href: add-source-mysql-database-cdc.md
   - name: Get Fabric events
     href: get-fabric-events.md
     items:
