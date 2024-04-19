@@ -1,6 +1,6 @@
 ---
 title: Add Azure IoT Hub as source in Real-Time hub
-description: This article describes how to add an Azure event hub as an event source in Fabric Real-Time hub. 
+description: This article describes how to add an Azure IoT hub as an event source in Fabric Real-Time hub. 
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to

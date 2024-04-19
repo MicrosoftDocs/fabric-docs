@@ -1,6 +1,6 @@
 ---
 title: Add and manage eventstream destinations (preview)
-description: Learn how to add and manage an event destination in an eventstream that has enhanced capabilities enabled. 
+description: Learn how to add and manage an event destination in an eventstream with enhanced capabilities. 
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -13,6 +13,6 @@ ms.search.form: Source and Destination
 ---
 
 # Add and manage eventstream destinations (preview)
-This article shows you how to add and manage an event destination in an eventstream that has enhanced capabilities enabled. 
+This article shows you how to add and manage an event destination in an eventstream with enhanced capabilities. 
 
 ## Related content
