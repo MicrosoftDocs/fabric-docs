@@ -12,7 +12,7 @@ ms.search.form: Source and Destination
 # Add PostgreSQL Database Change Data Capture source to an eventstream
 This article shows you how to add a PostgreSQL Database Change Data Capture source to an eventstream.
 
-[!INCLUDE [postgresql-database-cdc-connector](./includes/postgresql-database-cdc-connector.md)]
+[!INCLUDE [postgresql-database-cdc-connector](./includes/postgresql-database-cdc-source-connector.md)]
 
 ## Related content
 

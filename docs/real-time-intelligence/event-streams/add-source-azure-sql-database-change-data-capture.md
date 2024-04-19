@@ -12,7 +12,7 @@ ms.search.form: Source and Destination
 # Add Azure SQL Database Change Data Capture source to an eventstream
 This article shows you how to add an Azure SQL Database Change Data Capture source to an eventstream.
 
-[!INCLUDE [azure-sql-database-cdc-connector](../includes/azure-sql-database-cdc-connector.md)]
+[!INCLUDE [azure-sql-database-cdc-connector](../includes/azure-sql-database-cdc-source-connector.md)]
 
 ## Related content
 

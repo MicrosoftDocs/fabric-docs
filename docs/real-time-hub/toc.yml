@@ -13,10 +13,35 @@ items:
   items:
   - name: Get events from Microsoft sources
     href: get-events-microsoft-sources.md
+    items:
+    - name: Add an Azure Event Hubs source
+      href: add-azure-event-hubs-source.md
+    - name: Add an Azure IoT Hub source
+      href: add-azure-iot-hub-source.md
+    - name: Add an Azure SQL Database Change Data Capture source
+      href: add-azure-sql-database-cdc.md
+    - name: Add an Azure Cosmos DB Change Data Capture source
+      href: add-azure-cosmos-db-cdc.md
   - name: Get events from external sources
     href: get-events-external-sources.md
+    items:
+    - name: Add a Google Pub/Sub source
+      href: add-google-pub-sub-source.md
+    - name: Add Kinesis Data Streams source
+      href: add-kinesis-data-streams-source.md
+    - name: Add Confluent Kafka source
+      href: add-confluent-kafka-source.md
+    - name: Add custom app source
+      href: add-custom-app-source.md
+    - name: Add sample data source
+      href: add-sample-data-source.md
   - name: Get Fabric events
     href: get-fabric-events.md
+    items:
+    - name: Get Azure Blob Storage events
+      href: get-azure-blob-storage-events.md
+    - name: Get Fabric workspace item events
+      href: get-fabric-workspace-item-events.md
 - name: Discover and manage streams
   items:
   - name: Explore streams

@@ -12,6 +12,6 @@ ms.search.form: Source and Destination
 # Add an Azure Blob Storage source to an eventstream
 This article shows you how to add an Azure Blob Storage source to an eventstream. 
 
-[!INCLUDE [azure-blob-storage-connector](./includes/azure-blob-storage-connector.md)]
+[!INCLUDE [azure-blob-storage-connector](./includes/azure-blob-storage-source-connector.md)]
 
 ## Related content

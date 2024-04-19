@@ -12,6 +12,6 @@ ms.search.form: Source and Destination
 # Add Fabric Workspace source to an eventstream
 This article shows you how to add Fabric Workspace source to an eventstream. 
 
-[!INCLUDE [fabric-workspace-connector](./includes/fabric-workspace-connector.md)]
+[!INCLUDE [fabric-workspace-connector](./includes/fabric-workspace-source-connector.md)]
 
 ## Related content
