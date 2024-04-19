@@ -198,9 +198,9 @@ productDirectory:
           text: What is Real-Time hub?
         - url: real-time-hub/get-started-bring-events-real-time-hub.md
           text: Bring your data to Real-Time hub
-        - url: real-time-hub/explore-streams.md
+        - url: real-time-hub/explore-data-streams.md
           text: Explore streams
-        - url: real-time-hub/set-alerts-streams.md
+        - url: real-time-hub/set-alerts-data-streams.md
           text: Set alerts on streams
         - url: real-time-hub/index.yml
           text: See more
