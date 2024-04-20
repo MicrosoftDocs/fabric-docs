@@ -8,8 +8,6 @@ ms.date: 04/03/2024
 ---
 
 # Explore streams in Fabric Real-Time hub
-In this article, you learn how to explore data streams in the Fabric Real-Time hub. 
-
 When you navigate to Real-Time hub in Fabric, you can view all the data streams that are present in Fabric. There are three tabs in the hub:
 
 <<< SCREENSHOT >>>
@@ -127,6 +125,6 @@ Here are the actions available on each event type group:
 ## Related content
 
 - [View data stream details](view-data-stream-details.md)
-- [Preview data streams](preview-data-streams.md)
+- [Preview] data streams](preview-data-streams.md)
 - [Endorse data streams](endorse-data-streams.md)
 - [Explore fabric events](explore-fabric-events.md)

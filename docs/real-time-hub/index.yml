@@ -52,7 +52,7 @@ landingContent:
           - text: Explore streams
             url: explore-data-streams.md
           - text: View stream details
-            url: view-stream-details.md
+            url: view-data-stream-details.md
           - text: Preview streams
             url: preview-data-streams.md
           - text: Endorse streams
