@@ -95,3 +95,9 @@ This section shows two relationships of the table: Upstream, Parent.
 
 :::image type="content" source="./media/view-data-stream-details/kql-table-see-what-already-exists.png" alt-text="Screenshot that shows the See what already exists section in the KQL table detail view page.":::
 
+## Related content
+
+- [Explore data streams](explore-data-streams.md)
+- [Preview data streams](preview-data-streams.md)
+- [Endorse data streams](endorse-data-streams.md)
+- [Explore fabric events](explore-fabric-events.md)

@@ -125,6 +125,6 @@ Here are the actions available on each event type group:
 ## Related content
 
 - [View data stream details](view-data-stream-details.md)
-- [Preview] data streams](preview-data-streams.md)
+- [Preview data streams](preview-data-streams.md)
 - [Endorse data streams](endorse-data-streams.md)
 - [Explore fabric events](explore-fabric-events.md)
