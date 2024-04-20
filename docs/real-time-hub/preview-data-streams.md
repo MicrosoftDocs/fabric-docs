@@ -31,7 +31,7 @@ You can preview data in a stream whose parent is an eventstream using one of the
 ## Preview data page
 When you select **Preview data** from one of the options described earlier, you see a page similar to the following example.
 
-:::image type="content" source="./media/preview-data-streams/preview-data.png" alt-text="Screenshot that shows the Preview data links from the Data streams page of Real-Time hub." lightbox="./media/preview-data-streams/preview-data.png":::
+:::image type="content" source="./media/preview-data-streams/preview-data.png" alt-text="Screenshot that shows the Preview data page." lightbox="./media/preview-data-streams/preview-data.png":::
 
 ## Related content
 
