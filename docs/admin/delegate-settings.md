@@ -1,46 +1,75 @@
 ---
-title: Delegate settings
+title: Delegate tenant settings
 description: Learn how you can delegate settings in the Microsoft Fabric admin portal, from the tenant to the capacity, and from the capacity to workspaces.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/16/2023
+# customer intent: Learn how to delegate settings in the Microsoft Fabric admin portal.
 ---
 
-# Delegate settings
+# Delegate tenant settings
 
 Microsoft Fabric allows organizations to delegate settings from the tenant to the capacity, and from the capacity to workspaces. Delegation allows the organization to give admins control over specific settings relevant for their area of responsibility. Delegation prevents centralized admins from becoming a bottle neck for teams across the organization that require control over specific settings.
 
-For example, **RK to provide**
+Here are some key concepts related to delegating settings in Fabric:
 
-## Delegation hierarchy
+* [Tenant Settings](../admin/about-tenant-settings.md) - Global settings controlled by tenant administrators that impact the entire tenant.
 
-Fabric provides the following hierarchy for delegating settings:
+* [Domain](../governance/domains.md) - A logical grouping of workspaces aimed at facilitating data mesh architecture.
 
-1. **Tenant settings** - Tenant settings can be delegated to the capacities in the tenant.
+* [Capacity](../enterprise/licenses.md#capacity) - A dedicated compute resource. Capacity admins can delegate settings concerning the performance and consumption of compute resources.  
 
-2. **Capacity settings** - Capacity admins settings can be delegated to the workspaces in the capacity.
+* [Workspace](../get-started/workspaces.md) - Collaborative environments where Fabric items are stored and shared. Certain tenant settings can be delegated to workspaces through a domain or a capacity.  
 
-### Tenant settings
+Domain, capacity and workspace admins can override tenant settings. Overriding tenant settings allows admins to modify their environment to meet their specific requirements. When a setting is adjusted at the domain or capacity level, it affects only the workspaces linked to those administrative units. Similarly, changes at the workspace level impact only the items stored within that workspace.
 
-[Global administrators](../admin/microsoft-fabric-admin.md#microsoft-365-admin-roles), [Power Platform administrators](../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles), and [Fabric administrators](../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) can control the organization's [tenant settings](../admin/about-tenant-settings.md). The admin that controls the tenant settings can delegate settings to the tenants capacities, as described in [How to use the tenant settings](../admin/about-tenant-settings.md#how-to-use-the-tenant-settings).
+## Delegation Design
 
-### Capacity settings
+A setting can be delegated either through domains or capacities, but not both. This ensures clarity in governance and prevents conflicts in the management of settings.
 
-Capacity administrators can delegate the settings available to them in the capacity. Capacity admins can also override tenant settings, allowing them to create a capacity with settings that are different from the settings in other capacities in the tenant.
+After delegating to a domain or a capacity, certain settings can be further delegated to workspaces. This allows for finer granularity in control, empowering workspace owners to customize the settings to their requirements. Tenant admins can bypass domain and capacity admins and delegate directly to workspaces.
 
-For example **RK to provide**
+## Delegate settings to domains and capacities
 
-Delegate capacity settings, follow the steps described in <article to be published shortly>
+Follow these steps to delegate settings to domains and capacities:
 
-### Domain ???
+1. In Fabric, go to [tenant Settings](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 
-### Workspace settings
+2. Select the setting you want to delegate, and select *Domain* or *Capacity*.
 
-[Workspace admins](../get-started/roles-workspaces.md#roles-in-workspaces-in-microsoft-fabric) can control the settings available to them in the workspace. These settings depend on the settings delegated to the workspace by the capacity admin. 
+3. Select the domain, capacity, and workspace you want to delegate the setting to.
+
+4. Select **Apply**.
+
+## Delegate settings to workspaces
+
+Follow these steps to delegate settings to workspaces:
+
+1. Delegate tenant settings to a [capacity or a domain](#delegate-settings-to-domains-and-capacities).
+
+2. Locate setting you want to delegate to a workspace in your domain or capacity.
+
+3. Select the option to delegate to a workspaces. Some settings can't be delegated to workspaces. In such cases, there isn't an option to delegate to a workspace.
+
+4. Select **Apply**
+
+## Audit your delegated settings
+
+The following [activity events](../admin/track-user-activities.md) represent tenant setting changes:
+
+* **UpdatedAdminFeatureSwitch** - Tenant delegation changes.
+
+* **UpdateCapacityTenantSettingDelegation** - Capacity delegation changes.
+
+* **UpdateDomainTenantSettingDelegation** - Domain delegation changes.
+
+* **UpdateWorkspaceTenantSettingDelegation** - Workspace delegation changes.
 
 ## Related content
 
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
+
 * [Workspace tenant settings](portal-workspace.md)
+
 * [Manage workspaces](portal-workspaces.md)
