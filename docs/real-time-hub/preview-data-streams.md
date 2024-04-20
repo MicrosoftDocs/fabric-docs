@@ -25,13 +25,13 @@ You can preview data in a stream whose parent is an eventstream using one of the
 1. Select a stream whole parent is an eventstream in the **Data streams** tab of the **Real-time hub**.
 1. On the stream details page, select one of the **Preview data** links as shown in the following image.
 
-    :::image type="content" source="./media/preview-data-streams/preview-data-from-stream-details-page.png" alt-text="Screenshot that shows the Preview data links from the Data streams page of Real-Time hub." lightbox="preview-data-from-stream-details-page.png":::
+    :::image type="content" source="./media/preview-data-streams/preview-data-from-stream-details-page.png" alt-text="Screenshot that shows the Preview data links from the stream detail page of Real-Time hub." lightbox="./media/preview-data-streams/preview-data-from-stream-details-page.png":::
 
 
 ## Preview data page
 When you select **Preview data** from one of the options described earlier, you see a page similar to the following example.
 
-:::image type="content" source="./media/preview-data-streams/preview-data.png" alt-text="Screenshot that shows the Preview data links from the Data streams page of Real-Time hub." lightbox="preview-data.png":::
+:::image type="content" source="./media/preview-data-streams/preview-data.png" alt-text="Screenshot that shows the Preview data links from the Data streams page of Real-Time hub." lightbox="./media/preview-data-streams/preview-data.png":::
 
 ## Related content
 

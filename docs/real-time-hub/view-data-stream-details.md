@@ -24,7 +24,7 @@ In the **Stream metadata** section in the top-left corner, you see the following
 - **Location** or workspace of the stream.
 - **Type**, which is **Stream** in this case. 
 
-:::image type="content" source="./media/view-data-stream-details/stream-metadata.png" alt-text="Screenshot that shows the Stream metadata in the Stream detail view page.":::
+    :::image type="content" source="./media/view-data-stream-details/stream-metadata.png" alt-text="Screenshot that shows the Stream metadata in the Stream detail view page.":::
 
 ### Stream profile section
 In the **Stream profile** section to the right, you can: 
@@ -33,7 +33,7 @@ In the **Stream profile** section to the right, you can:
 - Filter these insights based on time:  Last 6 hours, 12 hours, 24 hours, and 7 days. 
 - Preview the data in your stream by selecting **Preview data** link.
 
-:::image type="content" source="./media/view-data-stream-details/stream-profile.png" alt-text="Screenshot that shows the Stream profile pane of the Stream detail view page.":::
+    :::image type="content" source="./media/view-data-stream-details/stream-profile.png" alt-text="Screenshot that shows the Stream profile pane of the Stream detail view page.":::
 
 
 ### Actions available
@@ -44,7 +44,7 @@ On the top of the stream details page, you can take the following actions on the
 - Endorse
 - Set alert.  
 
-:::image type="content" source="./media/view-data-stream-details/stream-actions.png" alt-text="Screenshot that shows the actions available in the Stream detail view page." lightbox="./media/view-data-stream-details/stream-actions.png" :::
+    :::image type="content" source="./media/view-data-stream-details/stream-actions.png" alt-text="Screenshot that shows the actions available in the Stream detail view page." lightbox="./media/view-data-stream-details/stream-actions.png" :::
 
 
 ### See what already exists section
@@ -54,8 +54,7 @@ This section shows three relationships of the stream: Upstream, Parent, and Down
 - **Parent** – It's the parent eventstream of the selected stream. 
 - **Downstream** – Destinations of the selected stream. 
 
-:::image type="content" source="./media/view-data-stream-details/stream-see-what-already-exists
-.png" alt-text="Screenshot that shows the See what already exists section on the Stream detail view page." :::
+    :::image type="content" source="./media/view-data-stream-details/stream-see-what-already-exists.png" alt-text="Screenshot that shows the See what already exists section on the Stream detail view page." :::
 
 
 ## View details of a KQL table
@@ -71,7 +70,7 @@ In this section of the page, you see the following information:
 - **Location** or workspace of the table 
 - **Type**, which is set to **KQL table** in this case. 
 
-:::image type="content" source="./media/view-data-stream-details/kql-table-metadata.png" alt-text="Screenshot that shows the KQL table metadata in the Stream detail view page.":::
+    :::image type="content" source="./media/view-data-stream-details/kql-table-metadata.png" alt-text="Screenshot that shows the KQL table metadata in the Stream detail view page.":::
 
 ### Insights section
 In this section of the page, you see the amount of data in the table over time. 
@@ -84,7 +83,7 @@ On the top of the KQL table details page, you can take the following actions on 
 - Open KQL database
 - Endorse 
 
-:::image type="content" source="./media/view-data-stream-details/kql-table-actions.png" alt-text="Screenshot that shows the actions available for a KQL table in the detail view page.":::
+    :::image type="content" source="./media/view-data-stream-details/kql-table-actions.png" alt-text="Screenshot that shows the actions available for a KQL table in the detail view page.":::
 
 ### See what already exists section
 
@@ -93,7 +92,7 @@ This section shows two relationships of the table: Upstream, Parent.
 - **Upstream** – Connectors from which data is flowing into the table. 
 - **Parent** – It's the KQL database that has the selected KQL table.
 
-:::image type="content" source="./media/view-data-stream-details/kql-table-see-what-already-exists.png" alt-text="Screenshot that shows the See what already exists section in the KQL table detail view page.":::
+    :::image type="content" source="./media/view-data-stream-details/kql-table-see-what-already-exists.png" alt-text="Screenshot that shows the See what already exists section in the KQL table detail view page.":::
 
 ## Related content
 
