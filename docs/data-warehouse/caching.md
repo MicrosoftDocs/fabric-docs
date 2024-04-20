@@ -1,6 +1,6 @@
 ---
 title: Caching in Fabric data warehousing
-description: Learn more about caching in the data warehousing experience.
+description: Learn more about caching in Synapse Data Warehouse in Microsoft Fabric.
 author: filippopovic
 ms.author: fipopovi
 ms.reviewer: wiassaf

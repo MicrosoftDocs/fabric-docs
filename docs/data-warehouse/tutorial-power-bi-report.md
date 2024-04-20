@@ -19,9 +19,9 @@ Learn how to create and save several types of Power BI reports.
 
 ## Create reports
 
-1. Select the **Model** view from the options in the bottom left corner, just outside the canvas.
+1. Select the **Model** view.
 
-   :::image type="content" source="media\tutorial-power-bi-report\select-model-view.png" alt-text="Screenshot of the bottom left corner of the screen, showing where to select the Model view option.":::
+   :::image type="content" source="media\tutorial-power-bi-report\select-model-view.png" alt-text="Screenshot showing where to select the Model view option.":::
 
 1. From the `fact_sale` table, drag the `CityKey` field and drop it onto the `CityKey` field in the `dimension_city` table to create a relationship.
 

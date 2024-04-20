@@ -1,20 +1,18 @@
 ### YamlMime:Landing
 
 title: Data warehousing documentation in Microsoft Fabric  # < 60 chars
-summary: Learn more about the two Data Warehousing experiences in Microsoft Fabric # < 160 chars
+summary: Learn more about Synapse Data Warehouse in Microsoft Fabric # < 160 chars
 
 metadata:
-  title: Data Warehousing in Microsoft Fabric # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Data Warehousing using the SQL analytics endpoint and Warehouse in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
+  title: Synapse Data Warehouse in Microsoft Fabric # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Data warehousing in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-warehouse
-  ms.custom:
-    - ignite-2023
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 11/15/2023
+  ms.date: 04/17/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:

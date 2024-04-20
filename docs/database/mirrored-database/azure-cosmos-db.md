@@ -39,7 +39,7 @@ OneLake data is stored in the open-source Delta Lake format, allowing you to use
 
 ## What analytics experiences are built in?
 
-Mirrored databases are an item in the **Fabric Synapse Data Warehousing** experience distinct from the **Warehouse** and **SQL analytics endpoint** items.
+Mirrored databases are an item in **Fabric Synapse Data Warehousing** distinct from the **Warehouse** and **SQL analytics endpoint**.
 
 :::image type="content" source="media/azure-cosmos-db/fabric-mirroring-cosmos-db.svg" alt-text="Diagram of Fabric Mirroring for Azure Cosmos DB.":::
 
