@@ -230,7 +230,7 @@ To resize a Power BI Premium capacity, follow these steps:
 
 3. Select **Change size**.
 
-4. In the *Change size* window, from the **Capacity ize** dropdown, select the new size for the capacity.
+4. In the *Change size* window, from the **Capacity size** dropdown, select the new size for the capacity.
 
 5. Select **Apply**.
 
@@ -262,7 +262,7 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 
 ### Delete a capacity
 
-When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they are deleted. If you have defined a [workspace retention policy](../admin/portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified. For more information about what happens to your files when you delete a capacity, see [Fabric capacity deletion](../admin/service-admin-portal-capacity-settings.md#fabric-capacity-deletion).
+When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they're deleted. If you have defined a [workspace retention policy](../admin/portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified. For more information about what happens to your files when you delete a capacity, see [Fabric capacity deletion](../admin/service-admin-portal-capacity-settings.md#fabric-capacity-deletion).
 
 Ongoing operations are stopped or canceled and scheduled operations are canceled.
 
@@ -292,7 +292,7 @@ To delete a Power BI Embedded capacity, follow these steps:
 
 # [Trial](#tab/trial)
 
-To delete a trial capacity you need to cancel the trial. To cancel a trial, see [End a Fabric trial](../get-started/fabric-trial.md#end-a-fabric-trial).
+To delete a trial capacity, you need to cancel the trial. To cancel a trial, see [End a Fabric trial](../get-started/fabric-trial.md#end-a-fabric-trial).
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -360,7 +360,7 @@ This table summarizes the actions you can take in the details section.
 |--------------------------------------|-------------|
 | Disaster Recovery                    | Enable [disaster recovery](/azure/reliability/reliability-fabric#set-up-disaster-recovery) for the capacity |
 | Capacity usage report                | The usage report is replaced with the [capacity metrics app](metrics-app.md) |
-| Notifications                        | Enable [notification](../admin/service-admin-premium-capacity-notifications.md) for you capacity |
+| Notifications                        | Enable [notification](../admin/service-admin-premium-capacity-notifications.md) for your capacity |
 | Contributor permissions              | Set up the ability to add workspaces to the capacity. Select one of these two options:<li>The entire organization</li><li>Specific users or security groups</li> |
 | Admin permissions                    | Give specific users or security groups the ability to do the following:<li>Change capacity settings</li><li>Add contributors to the capacity</li><li>Add or remove workspaces from the capacity</li> |
 | Power BI workloads                   | Configure [Power BI workloads](/power-bi/enterprise/service-admin-premium-workloads) for:<li>[Semantic models](/power-bi/enterprise/service-admin-premium-workloads#semantic-models)</li><li>[Paginated reports](/power-bi/enterprise/service-admin-premium-workloads#paginated-reports)</li><li>[AI](/power-bi/enterprise/service-admin-premium-workloads#ai-preview)</li> |
@@ -376,7 +376,7 @@ This table summarizes the actions you can take in the details section.
 
 * Tenant settings delegated by the Fabric Admin.
 
-By default, delegated tenant settings inherit their configuration from the tenant. To override this configurations, follow these steps:
+By default, delegated tenant settings inherit their configuration from the tenant. To override this configuration, follow these steps:
 
 1. From the **Delegate tenant setting** list, open the setting you want to delegate permissions for.
 
