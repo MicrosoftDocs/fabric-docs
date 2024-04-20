@@ -262,7 +262,7 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 
 ### Delete a capacity
 
-When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they are deleted. If you have defined a [workspace retention policy](../admin/portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified.
+When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they are deleted. If you have defined a [workspace retention policy](../admin/portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified. For more information about what happens to your files when you delete a capacity, see [Fabric capacity deletion](../admin/service-admin-portal-capacity-settings.md#fabric-capacity-deletion).
 
 Ongoing operations are stopped or canceled and scheduled operations are canceled.
 
@@ -336,10 +336,10 @@ After selecting a capacity, you can control its settings from these two tabs:
 
 * **Details** - Capacity details are settings that are specific to the capacity.
 
-* **Delegated tenant settings** - Tenant settings enable you to delegate certain settings to specific users or security groups
+* **Delegated tenant settings** - Tenant settings are delegated by Fabric admins to be managed by capacity admins. Changes to these settings only affect the capacity the changes are made in.
 
     >[!NOTE]
-    >Delegated tenant settings are only available for Fabric capacities.
+    >Delegated tenant settings are available for Power BI Premium and Fabric capacities.
 
 To view the settings of a specific capacity, follow these steps:
 
@@ -370,9 +370,13 @@ This table summarizes the actions you can take in the details section.
 
 ### Delegated tenant settings
 
-Delegate the tenant settings listed in this section to specific security groups. [Delegating admin settings](../admin/admin-overview.md#delegate-admin-rights) allows granular control across your organization.
+[Delegating admin settings](../admin/admin-overview.md#delegate-admin-rights) can be used to grant granular access to features in the capacity. The delegated tenant settings section lists these tenant settings:
 
-To delegate a tenant setting, follow these steps:
+* Workload management tenant settings that are automatically delegated to the capacity.
+
+* Tenant settings delegated by the Fabric Admin.
+
+By default, delegated tenant settings inherit their configuration from the tenant. To override this configurations, follow these steps:
 
 1. From the **Delegate tenant setting** list, open the setting you want to delegate permissions for.
 
@@ -386,9 +390,9 @@ To delegate a tenant setting, follow these steps:
 
    * **Specific security groups** - Apply the setting to specific security groups. Enter the security groups you want to apply the setting to.
 
-5. To exclude specific security groups from the setting, select **Except specific security groups** and enter the security groups you want to exclude. This setting is optional and can be used with together with the *Apply to* setting.
+    To exclude specific security groups from the setting, select **Except specific security groups** and enter the security groups you want to exclude. This setting is optional and can be used with together with the *Apply to* setting.
 
-6. Select **Apply**.
+5. Select **Apply**.
 
 ## Related content
 
