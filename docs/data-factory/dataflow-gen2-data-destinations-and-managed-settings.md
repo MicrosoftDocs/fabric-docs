@@ -1,7 +1,7 @@
 ---
 title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
-ms.reviewer: jonburchel
+ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
@@ -133,13 +133,11 @@ To enhance performance of query processing, staging can be used within Dataflows
 
 When staging is enabled on your queries (the default behavior), your data is loaded into the staging location, which is an internal Lakehouse only accessible by dataflows itself.
 
-Using staging locations can enhance performance in some cases.
+Using staging locations can enhance performance in some cases in which folding the query to the SQL endpoint is faster than in memory processing.
 
-#### Loading data into the Lakehouse
+When you're loading data into the Lakehouse or other non-warehouse destinations, we by default disable the staging feature to improve performance. When you load data into the data destination, the data is directly written to the data destination without using staging. If you want to use staging for your query, you can enable it again.
 
-When you're loading data into the Lakehouse, we recommend that you disable staging on the query to avoid loading twice into a similar destination, once for staging and once for data destination. To improve the dataflow performance, disable staging for any query that has Lakehouse as the data destination.
-
-To disable staging, right-click on the query and disable staging by selecting the **Enable staging** button. Your query then turns italic.
+To enable staging, right-click on the query and enable staging by selecting the **Enable staging** button. Your query then turns blue.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/disable-staging.png" alt-text="Screenshot of the query drop-down menu with Enable staging emphasized.":::
 
