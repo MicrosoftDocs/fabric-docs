@@ -50,8 +50,8 @@ items:
   items:
   - name: Explore data streams
     href: explore-data-streams.md
-  - name: View stream details
-    href: view-stream-details.md
+  - name: View data stream details
+    href: view-data-stream-details.md
   - name: Preview data streams
     href: preview-data-streams.md
   - name: Endorse data streams
