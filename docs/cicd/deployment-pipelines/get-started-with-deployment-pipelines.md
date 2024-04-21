@@ -19,7 +19,7 @@ This article walks you through the basic settings required for using deployment 
 You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) training module, which shows you step by step how to create a deployment pipeline.
 
 >[!NOTE]
->In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](../faq.md#what-type-of-capacity-do-i-need) for the pipeline's workspaces.
+>In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](../faq.yml#what-type-of-capacity-do-i-need) for the pipeline's workspaces.
 
 ## Prerequisites
 
