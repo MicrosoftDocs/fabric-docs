@@ -70,7 +70,7 @@ Here are the actions available on a KQL table in the Data streams tab.
 | Open KQL Database | Open parent KQL Database of the KQL table. |
 | Endorse | Endorse parent KQL Database of the KQL table. |
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-kql-table-actions.png" alt-text="Screenshot that shows the actions available on streams in the Data streams tab of Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-kql-table-actions.png":::
+:::image type="content" source="./media/explore-data-streams/real-time-hub-kql-table-actions.png" alt-text="Screenshot that shows the actions available on KQL tables in the Data streams tab of Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-kql-table-actions.png":::
 
 
 ## Microsoft sources tab
@@ -118,8 +118,7 @@ Here are the actions available on resources in the **Microsoft sources** tab. Wh
 
 ## Fabric events tab
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-tab
-.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-tab.png":::
+:::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-tab.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-tab.png":::
 
 
 ### Columns
@@ -142,8 +141,7 @@ Here are the actions available on each event type group. When you move the mouse
 | Create eventstream | This action creates an eventstream on the selected event type group with all Event types selected. |
 | Set alert | This action sets an alert on the selected event type group. |
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-actions.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub with actions highlighted." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-actions
-.png":::
+:::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-actions.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub with actions highlighted." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-actions.png":::
 
 
 
