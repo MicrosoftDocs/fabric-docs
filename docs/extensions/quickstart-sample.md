@@ -1,6 +1,6 @@
 ---
-title: Set up your extensibility Microsoft Fabric environment
-description: Learn how to set up your Microsoft Fabric extensibility environmet so that you can start developing your workloads.
+title: QuickStart: Run a workload sample
+description: Create a Microsoft Fabric workload using a sample with the instructions in this quickstart tutorial.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: muliwienrib

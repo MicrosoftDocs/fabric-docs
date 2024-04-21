@@ -9,20 +9,20 @@ ms.custom:
 ms.date: 12/25/2023
 ---
 
-## Workload environment
+# Workload environment
 
 [user story 242743](https://dev.azure.com/msft-skilling/Content/_workitems/edit/242723)
 
 Admin settings
 
-### Local
+## Local
 
 Scope of affect (frontend user scope, backend capacity scope)
 Test - Cloud (tenant) mode
 Workload management - Admin settings
 Upload and Add
 
-### Cloud
+## Cloud
 
 Scope of affect (frontend user scope, backend capacity scope)
 Test - Cloud (tenant) mode

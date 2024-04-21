@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 12/25/2023
 ---
 
-## Workload architecture
+# Workload architecture
 
 Fabric workload scheme / architecture - [user story 242722](https://dev.azure.com/msft-skilling/Content/_workitems/edit/242722)
 
