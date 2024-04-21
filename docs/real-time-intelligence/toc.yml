@@ -26,6 +26,18 @@ items:
       href: tutorial-6-build-report.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
+- name: User flows
+  items:
+  - name: "User flow 1: Discover and respond to events"
+    href: user-flow-1.md
+  - name: "User flow 2: Transform events from streaming sources"
+    href: user-flow-2.md
+  - name: "User flow 3:  Discover streaming sources from Microsoft"
+    href: user-flow-3.md
+  - name: "User flow 4: Explore your data visually with Real-Time Dashboards"
+    href: user-flow-4.md
+  - name: "User flow 5: Trigger Fabric dataflows from the Real-Time Hub"
+    href: user-flow-5.md 
 - name: Get data
   items:
   - name: Get, process, and route events 
