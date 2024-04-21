@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2024
   - ignite-2023
-ms.date: 02/04/2024
+ms.date: 05/21/2024
 ms.search.form: Get started
 ---
 # Real-Time Intelligence tutorial part 1: Create resources
@@ -19,7 +19,7 @@ ms.search.form: Get started
 ## Create an event house
 
 1. Browse to the workspace in which you want to create your tutorial resources.
-1. On the bottom left experience switcher, select **Real-Time Intelligence**. 
+1. On the bottom left experience switcher, select **Real-Time Intelligence**.
 1. In the upper left corner, select **+ New > Eventhouse**.
 1. Enter *Tutorial* as the event house name. A KQL database will be created simultaneously with the same name.
 1. Select **Create**. When provisioning is complete, the event house **System overview** page is shown.
@@ -44,4 +44,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 2: Get data in the Real-Time data hub](tutorial-2-get-real-time-events.md)
+> [Tutorial part 2: Get data in the Real-Time Hub](tutorial-2-get-real-time-events.md)

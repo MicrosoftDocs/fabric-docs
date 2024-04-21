@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 04/18/2024
+ms.date: 05/21/2024
 ms.search.form: Get started
 ---
 # Real-Time Intelligence tutorial part 4: Transform your data in Event streams

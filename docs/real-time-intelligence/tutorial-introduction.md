@@ -1,41 +1,33 @@
 ---
-title: Real-Time Analytics Tutorial- Introduction
-description: Get started with Synapse Real-Time Analytics in Microsoft Fabric.
+title: Real-Time Intelligence Tutorial- Introduction
+description: Get started with Real-Time Intelligence in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 09/28/2023
-ms.search.form: Get started
+  - build-2024
+ms.date: 05/21/2024
+ms.search.form: Get started//
 ---
 
-# Real-Time Analytics Tutorial- Introduction
+# Real-Time Intelligence Tutorial- Introduction
 
-Real-Time Analytics in Microsoft Fabric is a fully managed big data analytics platform optimized for streaming and time-series data. It utilizes a query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios. For more information, see [What is Real-Time Analytics in Fabric?](overview.md).
+Real-Time Intelligence in Microsoft Fabric is a powerful tool to extract insights and visualize your data in motion. Real-Time Intelligence provides an end-to-end solution for event-driven scenarios, streaming data, and data logs.
+
+In this tutorial, you'll learn how to set up and use the main features of Real-Time Intelligence with a sample set of data.
+
+ For more information, see [What is Real-Time Intelligence in Fabric?](overview.md).
 
 ## Scenario
 
-This tutorial is based on sample streaming data called *New York Yellow Taxi trip data*. The dataset contains trip records of New York's yellow taxis, with fields capturing pick-up and drop-off dates/times, pick-up and drop-off locations, trip distances, itemized fares, rate types, payment types, and driver-reported passenger counts. This data doesn't contain latitude and longitude data, which will be loaded from a blob container and joined together with the streaming data in a later step.
-
-You'll use the streaming and query capabilities of Real-Time Analytics to answer key questions about the trip statistics, taxi demand in the boroughs of New York and related insights, and build Power BI reports.
+The sample data you'll use in this tutorial is a set of bicycle data, containing information about bike ID, location, timestamp, and more. You'll learn how to set up resources, ingest data, visualize the data to extract insights, and respond to the data.
 
 Specifically, in this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
-> * Create a KQL database
-> * Enable data copy to OneLake
-> * Create an eventstream
-> * Stream data from Eventstream to your KQL database
-> * Get additional historical data
-> * Explore data with KQL and SQL
-> * Create a KQL queryset
-> * Use advanced KQL queries
-> * Create a Power BI report
-> * Clean up resources
+> * TODO Enter checklist here
 
 ## Prerequisites
 

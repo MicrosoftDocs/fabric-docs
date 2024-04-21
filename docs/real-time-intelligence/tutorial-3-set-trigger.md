@@ -7,13 +7,13 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 04/18/2024
+ms.date: 05/21/2024
 ms.search.form: Get started
 ---
 # Real-Time Intelligence tutorial part 3: Set a trigger on your event stream
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data in the Real-Time data hub](tutorial-2-get-real-time-events.md).
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data in the Real-Time Hub](tutorial-2-get-real-time-events.md).
 
 
 

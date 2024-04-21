@@ -14,16 +14,14 @@ items:
       href: tutorial-introduction.md
     - name: 1- Create resources
       href: tutorial-1-resources.md
-    - name: 2- Get data with Eventstream
-      href: tutorial-2-event-streams.md
-    - name: 3- Get historical data
-      href: tutorial-3-get-historical-data.md
-    - name: 4- Explore data with KQL and SQL
-      href: tutorial-4-explore.md
+    - name: 2- Get data Get data in the Real-Time Hub
+      href: tutorial-2-get-real-time-events.md
+    - name: 3- Set a trigger on your event stream
+      href: tutorial-3-set-trigger.md
+    - name: 4- Transform your data in Event streams
+      href: tutorial-4-transform.md
     - name: 5- Use advanced KQL queries
-      href: tutorial-5-advanced-kql-query.md
-    - name: 6- Build a Power BI report
-      href: tutorial-6-build-report.md
+      href: tutorial-5-query-data.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
 - name: Get data
