@@ -36,7 +36,7 @@ To turn on external data sharing:
 
 ## Users can accept external data shares (preview)
 
-When you turn on this setting, the users you specify will be able to accept read-only links to data from another organization’s Fabric tenant. Users who accept an external share link can view, build on, and share this data, both inside and outside of your organization. For more information about external data sharing and its security conderations, see [External data sharing](../governance/external-data-sharing-overview.md).
+When you turn on this setting, the users you specify will be able to accept read-only links to data from another organization’s Fabric tenant. Users who accept an external share link can view, build on, and share this data, both inside and outside of your organization. For more information about external data sharing and its security considerations, see [External data sharing](../governance/external-data-sharing-overview.md).
 
 To allow users to accept external data shares:
 
@@ -197,7 +197,7 @@ There may be instances that admin may want B2B guest users to receive email subs
 If this setting is off, only users in your organization can create and receive email subscriptions.
 
 > [!IMPORTANT]
-> The **Allow email subscriptions to be sent to external users users** switch will be automatically turned off if the **B2B guest users can set up and be subscribed to email subscriptions** switch is turned off. This is because B2B users are external users that have been granted elevated permissions to get content. Since B2B guest users have higher permissions than other external users, if they can't get the email subscription neither can the other external users.
+> The **Allow email subscriptions to be sent to external users** switch will be automatically turned off if the **B2B guest users can set up and be subscribed to email subscriptions** switch is turned off. This is because B2B users are external users that have been granted elevated permissions to get content. Since B2B guest users have higher permissions than other external users, if they can't get the email subscription neither can the other external users.
 
 ## Users can send email subscriptions to guest users
 

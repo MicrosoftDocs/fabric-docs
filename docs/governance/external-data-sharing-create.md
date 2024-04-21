@@ -36,7 +36,7 @@ Before sharing data with a user in another tenant via external data sharing, be 
 
     :::image type="content" source="./media/external-data-sharing-create/create-send-link-dialog.png" alt-text="Screenshot of the external data share create and send link dialog.":::
  
-    The person you invited will now be able to accept the share and access the data from within their tenant. They have 90 days to accept the inviation, after which the invitation expires.
+    The person you invited will now be able to accept the share and access the data from within their tenant. They have 90 days to accept the invitation, after which the invitation expires.
 
 You can revoke the external share at any time, although doing so can have serious implications for the consuming tenant. For information see [Manage external data shares](./external-data-sharing-manage.md#revoke-external-data-shares).
 
