@@ -12,16 +12,9 @@ ms.search.form: Get started
 ---
 # User flow 2:Transform events from streaming sources
 
-The Real-Time Hub is used to discover and manage your streaming
-data in Fabric. Ingesting streaming data with the Real-Time Hub is
-the first step in seamlessly integrating your data in Fabric, which, in
-turn, empowers analysts to extract real-time insights from the data. The
-rich set of available connectors ensures that regardless of you
-streaming source, you can effortlessly import data into Fabric.
+The Real-Time Hub is used to discover and manage your streaming data in Fabric. Ingesting streaming data with the Real-Time Hub is the first step in seamlessly integrating your data in Fabric, which, in turn, empowers analysts to extract real-time insights from the data. The rich set of available connectors ensures that regardless of your streaming source, you can effortlessly import data into Fabric. 
 
-This user flow shows how a data engineer can load, transform and certify
-events from a wide variety of streaming sources into the Real-Time data
-hub. 
+This user flow shows how a data engineer can load, transform, and certify events from a wide variety of streaming sources into the Real-Time Hub. 
 
 :::image type="content" source="media/user-flows/user-flow-2.png" alt-text="Schematic image showing the steps in user flow 2.":::
 

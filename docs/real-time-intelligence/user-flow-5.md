@@ -28,24 +28,19 @@ Fabric dataflows based on events from the Real-Time Hub.
 
 1. In the Real-time hub, select the system events tab.
 1. Select the system event group that you want to further explore.
-1. You're taken to the L2 view, where detailed schemas of the system
-    events are presented.
-1. Create a Reflex trigger to act on desired events. You can further
-    filter on events to act only when the desired rules are met. Actions
-    include sending event information to a Teams chat message, to an
-    email, kicking off a Power Automate workflow, or running a data
-    pipeline.
+1. You're taken to the L2 view, where detailed schemas of the system events are presented.
+1. Create a Reflex trigger to act on desired events. You can further filter on events to act only when the desired rules are met. Actions include sending event information to a Teams chat message, to an email, kicking off a Power Automate workflow, or running a data pipeline.
 1. Save the Reflex item.
 
-## Potential use cases \[\[can we get another one??\]\] 
+## Potential use cases
 
-You can run a data pipeline every time there is new data or change in
+You can run a data pipeline every time there's new data or change in
 data in your Azure Blob storage.
 
 You can audit or monitor workspace level activity through Fabric system
 events available in the Real-time hub. You can stream these events
 to an event stream and send it to a custom application through the event
-Stream.
+stream.
 
 ## Related content:
 
