@@ -19,7 +19,7 @@ This article describes how to upload and manage a workload to the Fabric service
 Before you can deploy a workload, you must have the following prerequisites:
 
 * A Fabric account with the *Admin* permissions.
-* The [NuGet package](https://www.nuget.org/) workload solution that you want to deploy. For information about creating a workload solution, see [Create a workload solution](create-workload.md).
+* The [NuGet package](https://www.nuget.org/) workload solution that you want to deploy. For information about creating a workload solution, see [QuickStart: Run a workload sample](quickstart-sample.md).
 
 ## Upload a workload
 
@@ -101,4 +101,4 @@ To deactivate a workload, follow these steps:
 
 ## Related content
 
-* [Related article title](link.md)
+* [QuickStart: Run a workload sample](quickstart-sample.md)
