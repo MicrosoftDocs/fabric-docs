@@ -22,7 +22,7 @@ To get to the capacity settings, follow these steps:
 
 ## View your capacity
 
-The capacity settings page shows a list of all the capacities in your [tenant](licenses.md#tenant). At the top of the page you can see a list of the different Fabric capacity types. Select a capacity type to view all the capacities of that type in your tenant.
+The capacity settings page shows a list of all the capacities in your [tenant](../enterprise/licenses.md#tenant). At the top of the page you can see a list of the different Fabric capacity types. Select a capacity type to view all the capacities of that type in your tenant.
 
 * **Power BI Premium** - A capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
 
@@ -290,7 +290,7 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 
 ### Delete a capacity
 
-When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they're deleted. If you have defined a [workspace retention policy](../admin/portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified. For more information about what happens to your files when you delete a capacity, see [Fabric capacity deletion](../admin/service-admin-portal-capacity-settings.md#fabric-capacity-deletion).
+When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they're deleted. If you have defined a [workspace retention policy](portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified. For more information about what happens to your files when you delete a capacity, see [Fabric capacity deletion](service-admin-portal-capacity-settings.md#fabric-capacity-deletion).
 
 Ongoing operations are stopped or canceled and scheduled operations are canceled.
 
@@ -387,8 +387,8 @@ This table summarizes the actions you can take in the details section.
 | Details setting name                 | Description |
 |--------------------------------------|-------------|
 | Disaster Recovery                    | Enable [disaster recovery](/azure/reliability/reliability-fabric#set-up-disaster-recovery) for the capacity |
-| Capacity usage report                | The usage report is replaced with the [capacity metrics app](metrics-app.md) |
-| Notifications                        | Enable [notification](../admin/service-admin-premium-capacity-notifications.md) for your capacity |
+| Capacity usage report                | The usage report is replaced with the [capacity metrics app](../enterprise/metrics-app.md) |
+| Notifications                        | Enable [notification](service-admin-premium-capacity-notifications.md) for your capacity |
 | Contributor permissions              | Set up the ability to add workspaces to the capacity. Select one of these two options:<li>The entire organization</li><li>Specific users or security groups</li> |
 | Admin permissions                    | Give specific users or security groups the ability to do the following:<li>Change capacity settings</li><li>Add contributors to the capacity</li><li>Add or remove workspaces from the capacity</li> |
 | Power BI workloads                   | Configure [Power BI workloads](/power-bi/enterprise/service-admin-premium-workloads) for:<li>[Semantic models](/power-bi/enterprise/service-admin-premium-workloads#semantic-models)</li><li>[Paginated reports](/power-bi/enterprise/service-admin-premium-workloads#paginated-reports)</li><li>[AI](/power-bi/enterprise/service-admin-premium-workloads#ai-preview)</li> |
@@ -398,7 +398,7 @@ This table summarizes the actions you can take in the details section.
 
 ### Delegated tenant settings
 
-[Delegating admin settings](../admin/admin-overview.md#delegate-admin-rights) can be used to grant granular access to features in the capacity. The delegated tenant settings section lists these tenant settings:
+[Delegating admin settings](admin-overview.md#delegate-admin-rights) can be used to grant granular access to features in the capacity. The delegated tenant settings section lists these tenant settings:
 
 * Workload management tenant settings that are automatically delegated to the capacity.
 
@@ -424,6 +424,6 @@ By default, delegated tenant settings inherit their configuration from the tenan
 
 ## Related content
 
-* [Microsoft Fabric licenses](licenses.md)
+* [Microsoft Fabric licenses](../enterprise/licenses.md)
 
-* [About tenant settings](../admin//about-tenant-settings.md)
+* [About tenant settings](about-tenant-settings.md)
