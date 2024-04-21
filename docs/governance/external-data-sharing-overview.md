@@ -55,7 +55,7 @@ With this understanding in mind, be aware of the following:
 
 Sharing data with users outside your home tenant has implications for data security and privacy that you should consider. It's important to understand the underlying flows of data sharing to better evaluate these implications.
 
-Data is shared across tenants using Fabric-internal security mechanisms. The share security mechanism grants read-only access to **any user** within the home tenant of the user that was invited to accept the share. Data is shared “in-place”. No data is copied, and it isn't even accessed until the someone in the receiving tenant executes a Fabric workload over the shared data. Fabric evaluates and enforces Entra-ID-based roles and permissions locally, within the tenant they're defined in. This means that access control policies defined in the sharer's tenant, such as semantic model row-level security (RLS), Microsoft Purview Information Protection policies, and Purview Data Loss Prevention policies **are not** enforced on data that crosses organization boundaries. Rather, it is the policies defined in the consumer's tenant that are enforced on the incoming share, the same way that they are enforced on any data within that tenant.
+Data is shared across tenants using Fabric-internal security mechanisms. The share security mechanism grants read-only access to **any user** within the home tenant of the user that was invited to accept the share. Data is shared "in-place". No data is copied, and it isn't even accessed until the someone in the receiving tenant executes a Fabric workload over the shared data. Fabric evaluates and enforces Entra-ID-based roles and permissions locally, within the tenant they're defined in. This means that access control policies defined in the sharer's tenant, such as semantic model row-level security (RLS), Microsoft Purview Information Protection policies, and Purview Data Loss Prevention policies **are not** enforced on data that crosses organization boundaries. Rather, it is the policies defined in the consumer's tenant that are enforced on the incoming share, the same way that they're enforced on any data within that tenant.
 
 With this understanding in mind, be aware of the following:
 
@@ -63,7 +63,7 @@ With this understanding in mind, be aware of the following:
 
 * The consumer can grant access to the data to anyone, even guest users from outside the consumer's organization.
 
-* Data might be transferred across geographic boundaries when it is accessed within the consumer's tenant.
+* Data might be transferred across geographic boundaries when it's accessed within the consumer's tenant.
 
 ## Considerations and limitations
 
