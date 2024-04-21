@@ -25,7 +25,7 @@ In this tutorial, learn about how you can easily create and execute T-SQL querie
 
     :::image type="content" source="media\tutorial-sql-cross-warehouse-query-editor\explorer-add-warehouses.png" alt-text="Screenshot from the Fabric portal Explorer, showing the + Warehouse button boxed in red.":::
 
-1. Select the SQL analytics endpoint of the lakehouse you created using shortcuts previously, named `ShortcutExercise`. Both warehouse experiences are added to the query.
+1. Select the SQL analytics endpoint of the lakehouse you created using shortcuts previously, named `ShortcutExercise`. Both items are added to the query.
 
     :::image type="content" source="media\tutorial-sql-cross-warehouse-query-editor\explorer-add-warehouses-select-sql-endpoint.png" alt-text="Screenshot from the Fabric portal Add warehouses window. Two warehouses are selected, including the ShortcutExercise SQL analytics endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png":::
 
