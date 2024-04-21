@@ -63,13 +63,41 @@ To create a new Power BI Premium capacity, follow these steps:
 
    * **Capacity size** - Select the size of the capacity.
       >[!NOTE]
-      >If you select an EN size, you'll create a Power BI Embedded capacity.
+      >If you select an EM size, you'll create a Power BI Embedded capacity.
 
 4. Select **Create**.
 
 # [Power BI Embedded](#tab/power-bi-embedded)
 
-To create a new Power BI Embedded capacity with an A SKU, follow the steps described in the *Fabric Capacity* tab. 
+You can create a new Power BI Embedded capacity with an A SKU or an EM SKU.
+
+#### Create a new Power BI Embedded capacity with an A SKU
+
+To create a new Power BI Embedded capacity with an A SKU, follow these steps:
+
+1. Log into Azure and search for **Power BI Embedded**.
+
+2. Select **Create**.
+
+3. In the *Basics* tab, enter the following information:
+
+   * **Subscription** - Select the Azure subscription you want to use for the capacity.
+
+   * **Resource group** - Select the Azure resource group you want to use for the capacity.
+
+   * **Resource name** - Give your capacity a name.
+
+   * **Location** - Select the region you want to create the capacity in.
+
+   * **Size** - Select the size of the capacity.
+
+   * **Power BI capacity administrator** - Select the capacity admins.
+
+4. Select **Review + create**.
+
+5. Review the details of your capacity, and then select **Create**.
+
+#### Create a new Power BI Embedded capacity with an EM SKU
 
 To create a new Power BI Embedded with an EM SKU, follow these steps:
 
