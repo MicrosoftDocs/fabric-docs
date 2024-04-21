@@ -9,7 +9,7 @@ ms.date: 04/16/2024
 #customer intent: As a data owner, I want to manage the external data shares on an item.
 ---
 
-# Manage external data shares
+# Manage external data shares (preview)
 
 This article explains what you see on the external data share manage permissions tab, and shows how to revoke external data shares.
 

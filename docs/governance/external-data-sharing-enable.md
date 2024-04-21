@@ -11,7 +11,7 @@ ms.date: 04/18/2024
 
 ---
 
-# Enable external data sharing in a Fabric tenant
+# Enable external data sharing in a Fabric tenant (preview)
 
 This article is intended for Fabric administrators who want to enable external data sharing in their Fabric tenant.
 

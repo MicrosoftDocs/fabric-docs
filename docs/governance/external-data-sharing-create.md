@@ -9,7 +9,7 @@ ms.date: 04/16/2024
 #customer intent: As a data owner, I want to share data in my tenant's OneLake storage with an user in another Fabric tenant.
 ---
 
-# Create an external data share
+# Create an external data share (preview)
 
 This article shows how you can share data from your Fabric tenant's OneLake storage with users in other Fabric tenants.
 
