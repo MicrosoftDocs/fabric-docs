@@ -14,7 +14,7 @@ LocalizationGroup: Admin
 ---
 # Direct Lake
 
-*Direct Lake* mode is a groundbreaking semantic model capability for analyzing very large data volumes in Power BI. Direct Lake is based on loading parquet-formatted files directly from a data lake without having to query a Lakehouse or Warehouse endpoint, and without having to import or duplicate data into a Power BI model. Direct Lake is a fast-path to load the data from the lake straight into the Power BI engine, ready for analysis. The following diagram shows how classic import and DirectQuery modes compare with Direct Lake mode.
+*Direct Lake* mode is a semantic model capability for analyzing very large data volumes in Power BI. Direct Lake is based on loading parquet-formatted files directly from a data lake without having to query a Lakehouse or Warehouse endpoint, and without having to import or duplicate data into a Power BI model. Direct Lake is a fast-path to load the data from the lake straight into the Power BI engine, ready for analysis. The following diagram shows how classic import and DirectQuery modes compare with Direct Lake mode.
 
 :::image type="content" source="media/directlake-overview/directlake-diagram.png" border="false" alt-text="Direct Lake feature diagram.":::
 
@@ -141,7 +141,7 @@ database.Model.SaveChanges();
 
 ## Analyze query processing
 
-To determine if a report visual's DAX queries to the data source are providing the best performance by using Direct Lake mode, or falling back to DirectQuery mode, you can use Performance analyzer in Power BI Desktop, SQL Server Profiler, or other third party tools to analyze queries. To learn more, see [Analyze query processing for Direct Lake models](directlake-analyze-query-processing.md).
+To determine if a report visual's DAX queries to the data source are providing the best performance by using Direct Lake mode, or falling back to DirectQuery mode, you can use Performance analyzer in Power BI Desktop, SQL Server Profiler, or other third-party tools to analyze queries. To learn more, see [Analyze query processing for Direct Lake models](directlake-analyze-query-processing.md).
 
 ## Refresh
 
@@ -150,6 +150,8 @@ By default, data changes in OneLake are automatically reflected in a Direct Lake
 :::image type="content" source="media/directlake-overview/direct-lake-refresh.png" alt-text="Direct Lake refresh in model settings":::
 
 You may want to disable if, for example, you need to allow completion of data preparation jobs before exposing any new data to consumers of the model. When disabled, you can invoke refresh manually or by using the refresh APIs. Invoking a refresh for a Direct Lake model is a low cost operation where the model analyzes the metadata of the latest version of the Delta Lake table and is updated to reference the latest files in the OneLake.
+
+Note that Power BI can pause automatic updates of Direct Lake tables if a non-recoverable error is encountered during refresh, so make sure your semantic model can be refreshed successfully. Power BI automatically resumes automatic updates when a subsequent user-invoked refresh completes without errors.
 
 ## Layered data access security
 
@@ -176,7 +178,7 @@ For example, a Warehouse administrator can grant a user SELECT permissions on a 
 
 - Some data types may not be supported.
 
-- Direct Lake tables do not support complex Delta table column types. Binary and Guid semantic types are also unsupported. You must convert these data types into strings or other supported data types.
+- Direct Lake tables don't support complex Delta table column types. Binary and Guid semantic types are also unsupported. You must convert these data types into strings or other supported data types.
 
 - Table relationships require the data types of their key columns to coincide. Primary key columns must contain unique values. DAX queries will fail if duplicate primary key values are detected.
 
