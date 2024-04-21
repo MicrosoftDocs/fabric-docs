@@ -8,7 +8,7 @@ ms.date: 04/03/2024
 ---
 
 # Endorse streams in Fabric Real-Time hub
-Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. Identifying trustworthy, authoritative items can be difficult. Endorsement is a way to make it easier for users to find the high-quality items they need. For more information, see [Endorsement in Fabric](../get-started/endorsement-promote-certify.md).  
+Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. It can be difficult to identify trustworthy and authoritative items. Endorsement is a way to make it easier for users to find the high-quality items they need. For more information, see [Endorsement in Fabric](../get-started/endorsement-promote-certify.md).  
 
 You can endorse a stream from one of the following pages:
 

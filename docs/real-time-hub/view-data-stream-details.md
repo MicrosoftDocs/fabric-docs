@@ -11,7 +11,7 @@ ms.date: 04/03/2024
 You can view details of a data stream by selecting the data stream in the **Data streams** tab of the **Real-Time hub**.  
 
 ## View details of a stream
-On the **Data streams** page, select the stream whose parent is an event stream.
+On the **Data streams** page, select the stream whose parent is an eventstream.
 
 :::image type="content" source="./media/view-data-stream-details/stream-details.png" alt-text="Screenshot that shows the Stream detail view page." lightbox="./media/view-data-stream-details/stream-details.png":::
 
@@ -57,7 +57,7 @@ This section shows three relationships of the stream: Upstream, Parent, and Down
     :::image type="content" source="./media/view-data-stream-details/stream-see-what-already-exists.png" alt-text="Screenshot that shows the See what already exists section on the Stream detail view page." :::
 
 
-## View details of a KQL table
+## View details of a Kusto Query Language (KQL) table
 On the **Data streams** page, select a KQL table to see its details.
 
 :::image type="content" source="./media/view-data-stream-details/kql-table-details.png" alt-text="Screenshot that shows the detail view page for a KQL table in the data streams." lightbox="./media/view-data-stream-details/kql-table-details.png":::
