@@ -40,7 +40,7 @@ In the world of data, Real-Time hub is never dry. Here’s why:
 - **Microsoft Product Integration**: Many customers use multiple Microsoft products. Real-Time hub ensures that it’s never dry by listing all streaming resources from Microsoft products. Whether it’s Azure Event Hubs, Azure IoT Hub, or other services, users can seamlessly ingest data into Real-Time hub. 
 - **Streams/tables**: for customers who have running eventstreams and KQL databases, all the streams from eventstreams and tables from KQL databases automatically show up in Real-Time hub.  
 
-## Sigle copy of events/streams for use with multiple real-time analytics engines 
+## Single copy of events/streams for use with multiple real-time analytics engines 
 As data flows into Real-Time hub, you can create a stream out of it. Once the stream is created, the data is stored in a canonical format. This format is universally accessible to all processing engines. No need for redundant copies of data. Real-Time hub ensures efficiency and consistency.
 
 ## Related content
