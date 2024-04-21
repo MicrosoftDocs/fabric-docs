@@ -70,4 +70,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md)
+> [Tutorial part 5: Query your streaming data](tutorial-5-query-data.md)
