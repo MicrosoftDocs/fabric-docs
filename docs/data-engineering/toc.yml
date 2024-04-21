@@ -45,8 +45,6 @@ items:
     href: navigate-lakehouse-explorer.md
   - name: Lakehouse SQL analytics endpoint
     href: lakehouse-sql-analytics-endpoint.md
-  - name: Direct lake mode and PBI reporting
-    href: lakehouse-pbi-reporting.md
   - name: Git and deployment pipelines
     href: lakehouse-git-deployment-pipelines.md
   - name: Lakehouse REST API
