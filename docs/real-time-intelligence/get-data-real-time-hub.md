@@ -1,6 +1,6 @@
 ---
-title: Get data from Real-Time data hub (Public Preview)
-description: Learn how to get data from Real-Time event hub in a KQL database in Real-Time Intelligence.
+title: Get data from Real-Time hub (Public Preview)
+description: Learn how to get data from Real-Time hub in a KQL database in Real-Time Intelligence.
 ms.reviewer: aksdi
 ms.author: yaschust
 author: YaelSchuster
@@ -12,11 +12,11 @@ ms.date: 04/18/2024
 ms.search.form: Get data in a KQL Database
 ---
 
-# Get data from Real-Time data hub
+# Get data from Real-Time hub
 
 In this article, you learn how to get events from Real-Time event hub into either a new or existing table.
 
-Real-Time data hub is currently in public preview.
+Real-Time hub is currently in public preview.
 
 > [!NOTE]
 > Currently Real-Time event hub only supports eventstream data.
@@ -29,17 +29,17 @@ Real-Time data hub is currently in public preview.
 
 ## Source
 
-To get data from Real-Time data hub, you need to select Real-Time data hub as your data source. You can select <!--an existing eventstream--> Real-Time data hub in the following ways:
+To get data from Real-Time hub, you need to select Real-Time hub as your data source. You can select <!--an existing eventstream--> Real-Time hub in the following ways:
 
 On the lower ribbon of your KQL database, either:
 
-* From the **Get Data** dropdown menu, then under **Continuous**, select **Real-Time data hub** > **Existing Eventstream**.
+* From the **Get Data** dropdown menu, then under **Continuous**, select **Real-Time hub** > **Existing Eventstream**.
 
-* Select **Get Data** and then in the **Get data** window, select a stream from the Real-Time data hub section.
+* Select **Get Data** and then in the **Get data** window, select a stream from the Real-Time hub section.
 
-    :::image type="content" source="media/get-data-real-time-data/select-data-source.png" alt-text="Screenshot of get data window with Real-Time data hub options." lightbox="media/get-data-real-time-data/select-data-source.png":::
+    :::image type="content" source="media/get-data-real-time-data/select-data-source.png" alt-text="Screenshot of get data window with Real-Time hub options." lightbox="media/get-data-real-time-data/select-data-source.png":::
 
-* Select an <!--check what the appropriate term should be-->eventstream from the list.
+* Select a data stream from the Real-Time hub stream list.
 
 ## Configure
 
@@ -64,31 +64,7 @@ On the lower ribbon of your KQL database, either:
 
 1. Select **Next**
 
-### Process event before ingestion in Eventstream
-
-The **Process event before ingestion in Eventstream** option enables you to process the data before it's ingested into the destination table. With this option, the get data process seamlessly continues in Eventstream, with the destination table and data source details automatically populated.
-
-To process event before ingestion in Eventstream:
-
-1. On the **Configure** tab, select **Process event before ingestion in Eventstream**.
-
-1. In the **Process events in Eventstream** dialog box, select **Continue in Eventstream**.
-
-    > [!IMPORTANT]
-    > Selecting **Continue in Eventstream** ends the get data process in Real-Time Intelligence and continues in Eventstream with the destination table and data source details automatically populated.
-
-    :::image type="content" source="media/get-data-eventstream/configure-tab-process-event-in-eventstream.png" alt-text="Screenshot of the Process events in Eventstream dialog box." lightbox="media/get-data-eventstream/configure-tab-process-event-in-eventstream.png":::
-
-1. In Eventstream, select the **KQL Database** destination node, and in the **KQL Database** pane, verify that **Event processing before ingestion** is selected and that the destination details are correct.
-
-    :::image type="content" source="media/get-data-eventstream/process-event-in-eventstream.png" alt-text="Screenshot of the Process events in Eventstream page." lightbox="media/get-data-eventstream/process-event-in-eventstream.png":::
-
-1. Select **Open event processor** to configure the data processing and then select **Save**. For more information, see [Process event data with event processor editor](event-streams/process-events-using-event-processor-editor.md).
-1. Back in the **KQL Database** pane, select **Add** to complete the **KQL Database** destination node setup.
-1. Verify data is ingested into the destination table.
-
-> [!NOTE]
-> The process event before ingestion in Eventstream process is complete and the remaining steps in this article aren't required.
+[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
 
 ## Inspect
 
@@ -111,21 +87,7 @@ Optionally:
 
 [!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
 
-### Advanced options based on data type
-
-**Tabular (CSV, TSV, PSV)**:
-
-* If you're ingesting tabular formats in an *existing table*, you can select **Advanced** > **Keep table schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
-* To use the first row as column names, select  **Advanced** > **First row is column header**.
-
-    :::image type="content" source="media/get-data-eventstream/advanced-csv.png" alt-text="Screenshot of advanced CSV options.":::
-
-**JSON**:
-
-* To determine column division of JSON data, select **Advanced** > **Nested levels**, from 1 to 100.
-* If you select **Advanced** > **Skip JSON lines with errors**, the data is ingested in JSON format. If you leave this check box unselected, the data is ingested in multijson format.
-
-    :::image type="content" source="media/get-data-eventstream/advanced-json.png" alt-text="Screenshot of advanced JSON options.":::
+[!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
 
 ## Summary
 
