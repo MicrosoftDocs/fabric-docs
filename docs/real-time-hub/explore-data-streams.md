@@ -107,7 +107,7 @@ You can also search your Microsoft resource using the search bar by typing in th
 :::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-search.png" alt-text="Screenshot that shows the search box on the Microsoft sources tab of the Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-microsoft-sources-search.png":::
 
 ### Actions
-Here are the actions available on resources in the **Microsoft sources** tab. When you move the mouse over a resource, you see a connect button and an ellipsis (...). When you select the ellipsis (...) button, you also see the connect button when you select ellipsis (...).
+Here are the actions available on resources in the **Microsoft sources** tab. When you move the mouse over a resource, you see a connect button and an ellipsis (...). When you select the ellipsis (...) button, you see the connect button here too.
 
 | Action | Description |
 | ------ | ----------- | 
