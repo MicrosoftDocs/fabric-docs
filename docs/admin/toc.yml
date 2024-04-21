@@ -23,6 +23,8 @@ items:
     href: region-availability.md
   - name: Find your Fabric home region
     href: find-fabric-home-region.md
+  - name: Manage your Fabric capacity
+    href: capacity-settings.md     
   - name: Understand Fabric admin roles
     href: roles.md 
   - name: Service interruption notifications      
