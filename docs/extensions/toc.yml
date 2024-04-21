@@ -31,6 +31,8 @@ items:
     href: extensibility-backend.md        
   - name: Frontend configuration guide
     href: extensibility-frontend.md
+  - name: Upload and manage a workload
+    href: manage-workload.md
 - name: Reference
   items:
   - name: REST APIs
