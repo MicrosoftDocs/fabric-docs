@@ -26,7 +26,7 @@ To process event before ingestion in Eventstream:
 
     :::image type="content" source="../media/get-data-process-event-preingestion/process-event-in-eventstream.png" alt-text="Screenshot of the Process events in Eventstream page." lightbox="../media/get-data-process-event-preingestion/process-event-in-eventstream.png":::
 
-1. Select **Open event processor** to configure the data processing and then select **Save**. For more information, see [Process event data with event processor editor](event-streams/process-events-using-event-processor-editor.md).
+1. Select **Open event processor** to configure the data processing and then select **Save**. For more information, see [Process event data with event processor editor](../event-streams/process-events-using-event-processor-editor.md).
 1. Back in the **KQL Database** pane, select **Add** to complete the **KQL Database** destination node setup.
 1. Verify data is ingested into the destination table.
 
