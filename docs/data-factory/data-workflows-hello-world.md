@@ -47,14 +47,14 @@ To get started, you must complete the following prerequisite:
    :::image type="content" source="media/data-workflows/name-dag-file.png" alt-text="Screenshot to name the DAG file.":::
 
 2. A boilerplate DAG code is presented to you. You can edit the file as per your requirements.
-   :::image type="content" source="media/data-workflows/boilerplate-dag.png" alt-text="Screenshot presents boilerplate DAG file in Micrsoft Fabric.":::
+   :::image type="content" source="media/data-workflows/boilerplate-dag.png" alt-text="Screenshot presents boilerplate DAG file in Microsoft Fabric.":::
 
 3. Click on "Save icon".
-   :::image type="content" source="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Micrsoft Fabric.":::
+   :::image type="content" source="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
 ## Resume the cluster pool
 
-1. Once your DAG file is set up, please Click on "Resume Cluster pool". A Dialog box appears click on "Resume". The resuming process might take 2-3 minutes.
+1. Once your DAG file is set up, Click on "Resume Cluster pool". A Dialog box appears click on "Resume". The resuming process might take 2-3 minutes.
    :::image type="content" source="media/data-workflows/resume-cluster-pool.png" alt-text="Screenshot presents dialog box to resume cluster pool.":::
 
 ## Monitor your Data workflow DAG in Apache Airflow
@@ -66,5 +66,5 @@ To get started, you must complete the following prerequisite:
 
 ## Stop the cluster pool
 
-Once you are done with your work, you can stop the cluster pool.
+Once you're done with your work, you can stop the cluster pool.
 :::image type="content" source="media/data-workflows/stop-cluster-pool.png" alt-text="Screenshot to stop the cluster pool.":::
