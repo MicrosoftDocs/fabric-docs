@@ -70,8 +70,10 @@ items:
   - name: Set alerts on data streams
     href: set-alerts-data-streams.md
   - name: Set alerts on Fabric events
-    href: set-alerts-fabric-events.md
-  - name: Consume Fabric events using an eventstream
-    href: consume-fabric-events-event-stream.md
+    items:
+    - name: Set alerts on Azure blob storage events
+      href: set-alerts-azure-blob-storage-events.md
+    - name: Set alerts on Fabric workspace item events
+      href: set-alerts-fabric-workspace-item-events.md
     
     
