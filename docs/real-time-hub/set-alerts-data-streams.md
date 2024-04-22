@@ -33,12 +33,7 @@ Move the mouse over the data stream, and do one of the following steps:
 ## Set alert
 On the **Set alert** page, follow these steps:
 
-1. In the **Monitor** section, choose **Select events**.
-1. On the **Select events** page, do these steps: 
-    1. Select the **Azure subscription** that has the Azure storage account.
-    1. Select the **Azure storage account**.
-    1. Select the **events** that you want to monitor.
-    1. Select **Ok** to navigate back to the **Set alert** page.
+1. Confirm that **Source** set to the name of your eventstream. 
 1. For **Condition**, select one of the following options:
     1. If you want to monitor each event with no condition, select **On each event**. 
 1. For **Action**, select one of the following options:
