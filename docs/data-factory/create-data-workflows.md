@@ -1,7 +1,7 @@
 ---
 title: Create a Data workflows project in Microsoft Fabric
 description: This tutorial helps you create a Data workflows in Microsoft Fabric.
-ms.reviewer: xupxhou
+ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
 ms.topic: quickstart
