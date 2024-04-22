@@ -687,7 +687,8 @@
             href: data-workflows-set-smtp-server.md
           - name: Add a Kubernetes secret
             href: data-workflows-access-private-container-registry.md
-        - name: Tutorials
+      - name: Tutorials
+        items:
           - name: Hello Data workflows
             href: data-workflows-hello-world.md
           - name: Data workflows with dbt
