@@ -19,9 +19,12 @@ More Workloads: This view showcases all available workloads that can be added to
 
 To publish your workload to the Fabric Workload Hub, which is currently in public preview, you can follow these steps. Please review all steps before you start developing your workload and make sure you comply with all of the mandatory requirmenets, before you submit your Fabric workload to ensure a smooth and quick publishing flow.
 
-## Step 1: Develop Your Workload
+## Step 1: Develop and Test Your Workload
 Ensure your workload is compatible with the Fabric Extensibility framework and prepare your branding materials for listing.
 Find this comprehensive [guide](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/README.md) that covers everything you need to know to create your own custom Fabric workload.
+For testing your workload follow these instructions.
+
+
 
 ## Step 2: Comply to the functional requirmenets
 In order to pass all validation checks your workload should comply with the following functional and design requirmenets:
@@ -37,21 +40,38 @@ Your nuget package should comply to the following requirmenets
 ### Prerequisite
 To submit your Fabric, you must be enrolled with [Partner Center](https://learn.microsoft.com/en-us/partner-center/overview). If you're not yet enrolled, [Open a developer account in Partner Center](https://learn.microsoft.com/en-us/azure/marketplace/create-account).
 
-### Create a SaaS offer
+### 3.1. Create a SaaS offer
 Once you have a Partner Center account follow these [steps](https://learn.microsoft.com/en-us/partner-center/marketplace/create-new-saas-offer) to create a SaaS offer.
 If you alrady have an exting SaaS offer in Azure Marketplace, you don't need to create a new one. Follow these steps to connect your SaaS offer with Fabric Hub. ***????????????????????????***
 Choose the configuration based on your solution and buisness model prefenrces. For instance if you arelady have a transacatbility model choose the option "No, I would prefer to only list my offer through the marketplace and process transactions independently".
 Note that choosing both options at the same time:
 "Yes, I would like to sell through Microsoft and have Microsoft host transactions on my behalf" and "Yes, I would like Microsoft to manage customer licenses on my behalf" will create a SaaS offer in [AppSource](https://appsource.microsoft.com/) storefront and not [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/home) therefore this combination is not allowed. Having a SaaS offer in both AppSource and Azure Marketplace is allowed.
-1. Create nuget package
-2. Test the extension in your test tenant
-3. Create a SaaS offer in Partner Center
-   < add a link>
+> [!NOTE]
+> Your SaaS offer must have [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/home) storefront entry. Having both [AppSource](https://appsource.microsoft.com/) and Azure Marketplace is allowed. Therefore the offer setup combination of "Yes, I would like to sell through Microsoft and have Microsoft host transactions on my behalf" and "Yes, I would like Microsoft to manage customer licenses on my behalf" will create a SaaS offer in AppSource only, therefore it is not supported yet. 
 
-4. Add the link of SaaS offer link to your .nupkg 
-Make sure that the .nupkg complies with these requirements
-5. Make sure your extensions complies with the requirmernts
-6. Reach out to our team for opting in to the public preview
-   mailto: FabricWorkloadSubmission@microsoft.com
+> [!NOTE]
+> The following metadata are required both in the manifest in the nuget package and in Partner Center when you create your SaaS offer. Any duplocated metadata should be identical in SaaS offer setup in Partner Ceneter and in the nuget package manifest. Metadata includes but not limited to:
+> Workload title
+> Icons
+> Screenshots
+> Descriptions
+> Publisher name
+> Product compliance documentations
+
+
+
+
+### 3.1. SaaS public link 
+Add the public link of SaaS offer to your .nupkg. 
+
+## Step 4 Reach out to our Workload Fabric Team
+Once you have a public SaaS link in Azure Marketplace and the nuget packge and workload complies to the above requirmenets, 
+reach out to our team for opting in to the public preview
+mailto: FabricWorkloadSubmission@microsoft.com
+Include in your email:
+* Workload extension
+* Final Success submission email from Partner Ceneter
+
+
    
     
