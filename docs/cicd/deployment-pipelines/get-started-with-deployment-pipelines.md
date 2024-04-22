@@ -8,7 +8,7 @@ ms.custom:
   - intro-get-started
   - build-2023
   - ignite-2023
-ms.date: 3/6/2024
+ms.date: 04/14/2024
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
@@ -19,7 +19,7 @@ This article walks you through the basic settings required for using deployment 
 You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) training module, which shows you step by step how to create a deployment pipeline.
 
 >[!NOTE]
->In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](../faq.md#what-type-of-capacity-do-i-need) for the pipeline's workspaces.
+>In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](../faq.yml#what-type-of-capacity-do-i-need) for the pipeline's workspaces.
 
 ## Prerequisites
 
@@ -115,7 +115,7 @@ After you choose how to deploy your content, you can [Review your deployment and
 
 ## Step 5 - Deploy content from one stage to another
 
-Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. Items with the same name and type are overwritten. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
+Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](./assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
 To deploy content to the next stage in the deployment pipeline, select the deploy button at the bottom of the stage.
 

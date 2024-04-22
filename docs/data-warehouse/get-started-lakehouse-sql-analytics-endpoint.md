@@ -1,6 +1,6 @@
 ---
 title: Better together - the lakehouse and warehouse
-description: Learn more about the lakehouse data warehousing experience in Microsoft Fabric.
+description: Learn more about scenarios for the lakehouse and data warehousing workloads in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
@@ -13,7 +13,7 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article explains the data warehousing experience with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing.
+This article explains the data warehousing workload with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing.
 
 ## What is a Lakehouse SQL analytics endpoint?
 

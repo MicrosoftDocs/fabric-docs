@@ -8,19 +8,19 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 04/12/2023
 ms.search.form: Lakehouse Explorer
 ---
 
 # Navigate the Fabric Lakehouse explorer
 
-The Lakehouse Explorer page serves as the central hub for all your interactions within the Lakehouse environment. The Lakehouse Explorer is built into the Fabric portal. It's your gateway to seamlessly load data into your Lakehouse, navigate through your data, preview content, and perform various data-related tasks. This page is divided into three main sections: the Lakehouse Explorer, the Main View, and the Ribbon.
+The Lakehouse explorer page serves as the central hub for all your interactions within the Lakehouse environment. The explorer is built into the Fabric portal. To open the lakehouse explorer, switch to the **Data Engineering** experience form the workload switcher. Find and navigate to your lakehouse item, which opens the explorer where you can interact with the lakehouse data. The explorer is your gateway to seamlessly load data into your Lakehouse, navigate through your data, preview content, and perform various data-related tasks. This page is divided into three main sections: the Lakehouse explorer, the Main View, and the Ribbon.
 
-:::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
+:::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif explaining the controls within the lakehouse explorer experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
 ## Lakehouse explorer
 
-The Lakehouse Explorer offers a unified, graphical representation of your entire Lakehouse, providing users with an intuitive interface for data navigation, access, and management.
+The Lakehouse explorer offers a unified, graphical representation of your entire Lakehouse, providing users with an intuitive interface for data navigation, access, and management.
 
 - The **Table Section** is a user-friendly representation of the managed area within your Lakehouse. This area is typically organized and governed to facilitate efficient data processing and analysis. Here, you find all your tables, whether they were automatically generated or explicitly created and registered in the metastore. You can select a table to preview, inspect the table schema, access underlying files, and execute various other actions related to your data.
 
@@ -51,7 +51,7 @@ Preview is available for the following file types:
 
 ## Ribbon
 
-The Lakehouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within your Lakehouse. From here, you can refresh your Lakehouse, update settings, load data, or create new custom semantic models with ease.
+The Lakehouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within your Lakehouse. From here, you can refresh your Lakehouse, update settings, load data, create or open notebooks, create new custom semantic models, ot manage OneLake data access with ease.
 
 ### Different ways to load data into a Lakehouse
 
@@ -77,7 +77,7 @@ The [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) can be accesse
 
 ## Related content
 
-We hope this guide helps you make the most of the Lakehouse Explorer and its diverse functionalities. Feel free to explore, experiment, and make your data management tasks more efficient.
+We hope this guide helps you make the most of the Lakehouse explorer and its diverse functionalities. Feel free to explore, experiment, and make your data management tasks more efficient.
 
 - [Get data experience for Lakehouse](load-data-lakehouse.md).
 

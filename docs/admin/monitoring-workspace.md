@@ -7,10 +7,10 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 02/01/2024
+ms.date: 04/18/2024
 ---
 
-# What is the admin monitoring workspace?
+# What is the admin monitoring workspace? (Preview)
 
 The *Admin monitoring* workspace is designed to provide admins with monitoring capabilities for their organization. Using the admin monitoring workspace resources, admins can perform security and governance tasks such as audits and usage checks.
 
@@ -24,13 +24,13 @@ To use the admin monitoring workspace, you need to be an admin with one of these
 
 ## Access the admin monitoring workspace
 
-The admin monitoring workspace is enabled for [Microsoft Fabric admins](microsoft-fabric-admin.md) that have the *Global administrator* or *Fabric administrator* role. Admins can also share its content with other users. Users with viewer permissions that are not admins, can view the admin monitoring workspace by navigating to the workspace URL.
+The admin monitoring workspace is enabled for [Microsoft Fabric admins](microsoft-fabric-admin.md) that have the *Global administrator* or *Fabric administrator* role. Admins can also share its content with other users. Users with viewer permissions that aren't admins, can view the admin monitoring workspace by navigating to the workspace URL.
 
 ### Admin monitoring workspace view
 
 Only admins with the *Global administrator* or *Fabric administrator* roles, can see the admin monitoring workspace at the top of their list of workspaces. Admins can access the monitoring workspace by selecting it from the list.
 
-Users that are not admins, and do not have a *Global administrator* or *Fabric administrator* role, can't see the admin monitoring workspace at the top of their list of workspaces. Such users can only view the admin monitoring workspace by navigating to it's URL after they've been given viewer permissions by an admin.
+Users that aren't admins, and don't have a *Global administrator* or *Fabric administrator* role, can't see the admin monitoring workspace at the top of their list of workspaces. Such users can only view the admin monitoring workspace by navigating to it's URL after they've been given viewer permissions by an admin.
 
 ### Installing the admin monitoring workspace
 
@@ -42,9 +42,11 @@ The admin monitoring workspace is automatically installed during the first time 
 
 3. Select **Admin monitoring**. When you select this option for the first time, the required items are automatically installed.
 
+:::image type="content" source="./media/monitoring-workspace/install-admin-monitoring-workspace.gif" alt-text="Image shows process of installing and opening admin monitoring workspace.":::
+
 ## Reports and semantic models
 
-In the monitoring workspace, you can use the [Feature Usage and Adoption](feature-usage-adoption.md) report as is. You can also connect to this report's semantic model, and create a solution that's optimized for your organization.
+You can use the reports in the monitoring workspace as is, for analysis and for getting insights about performance and sharing in your organization. You can also connect to the semantic models of the reports, and create a solution that's optimized for your organization.
 
 ### Manage access
 
@@ -62,15 +64,17 @@ The admin monitoring workspace is automatically refreshed once a day. The refres
 
 For the refresh to work, the admin that accessed the workspace for the first time, has to:
 
-* Keep his *Global administrator* or *Fabric administrator* role. If the role of the admin who first accessed the workspace changes, the admin monitoring workspace will not be refreshed.
+* Keep his *Global administrator* or *Fabric administrator* role. If the role of the admin who first accessed the workspace changes, the admin monitoring workspace won't be refreshed.
 
 * If the workspace creator uses [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure), it has to be enabled during the scheduled refresh.
 
 ## Considerations and limitations
 
-* The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Users, including admins, are not able to edit or view properties of items such as semantic models and reports in the workspace.
+* The admin monitoring workspace can only be created by a user that is an admin for the tenant. This user needs to be assigned as an admin to the tenant directly. Users that belong to a group that's assigned as an admin to the tenant, can't create the admin monitoring workspace.
 
-* Sovereign clouds are not supported.
+* The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Users, including admins, aren't able to edit or view properties of items such as semantic models and reports in the workspace.
+
+* Sovereign clouds aren't supported.
 
 * Users granted *build* permissions to a semantic model in the monitoring workspace, show as having *read* permissions.
 
