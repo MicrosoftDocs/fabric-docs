@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihirwagle
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/29/2024
+ms.date: 04/18/2024
 ---
 
 # Microsoft Fabric trial
@@ -69,24 +69,20 @@ In some situations, your Fabric administrator has [enabled Microsoft Fabric for 
 
 ## Share trial capacities
 
-Each trial includes up to 5 trial capacities. Each trial capacity can be shared with other users. There are several ways to share.
+Each trial includes up to 5 trial capacities. Each trial capacity can be shared with other users. The person who initiated the trial is automatically assigned the Trial Capacity administrator role. If you're the Capacity administrator, you can assign workspaces to the trial capacity two different ways. 
 
-- You're the Capacity administrator (the user who initiated the trial) or the Fabric administrator. You can [assign workspaces to a trial capacity](give-access-workspaces.md). All users with access to those workspaces are now able to use that trial capacity. 
-
-- You're the workspace creator or a user with the Admin or Member [role in that workspace](roles-workspaces.md). If you created the workspace, you have the Admin role.  You can [create the workspace in trial capacity](create-workspaces.md) or [assign that workspace to a trial capacity](give-access-workspaces.md).  
+- [Use the Admin center **Capacity settings**](give-access-workspaces.md). All users with access to those workspaces are now able to use that trial capacity. The Fabric administrator can do this as well.
+- [Use Workplace settings](create-workspaces.md).  
 
     :::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
 If the Fabric tenant switch is enabled, users can view, consume, and add Fabric content. If the Fabric tenant switch is disabled, users can only view and consume Fabric content. For more information, see [Fabric tenant setting](#look-up-the-fabric-tenant-switch-setting).
-
-Admins can also enable Fabric on a per capacity basis. [Enable for a capacity](../admin/fabric-switch.md#enable-for-a-capacity)
 
 ## Look up the Fabric tenant switch setting
 
 If you have permissions, you can view, verify, or change the Fabric tenant setting. If you need help, [contact the Capacity administrator directly](#look-up-the-trial-capacity-administrator).
 
 :::image type="content" source="media/fabric-trial/fabric-tenant-setting.png" alt-text="Screenshot of the Admin portal with Tenant settings outlined in red and an arrow pointing to the word Enabled.":::
-
 
 ## Look up the trial Capacity administrator
 
