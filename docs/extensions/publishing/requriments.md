@@ -22,20 +22,17 @@ ms.date: 04/17/2024
 
 OneLake 
 
-# SaaS requirments
-Make sure you prepare before hand the following requirmenets for the SaaS offer:
-For the full [general policies](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies#100-general), for [SaaS specific policies](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies#1000-software-as-a-service-saas).
-- - -
-| Requirement | Description | Domain  | Links  | 
-| --- | --- |
-| Apache Hadoop |1.2.0 |
-| Apache Hive |0.11.0 |
-| Apache Pig |0.11 |
-| Apache Sqoop |1.4.3 |
-| Apache Oozie |3.2.2 |
-| Apache HCatalog |Merged with Hive |
-| Apache Templeton |Merged with Hive |
-| Ambari |API v1.0 |
+# Azure Marketplace SaaS Requirements
+
+Before [publishing your Software as a Service (SaaS) offer on the Azure Marketplace](https://learn.microsoft.com/partner-center/marketplace/plan-saas-offer), it's essential to prepare and meet the following requirements. These guidelines ensure that your offer aligns with the [marketplace's general policies](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies#100-general) and [SaaS specific policies](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies#1000-software-as-a-service-saas) and provides a seamless experience for potential customers.
+
+
+
+| **Requirement Category** | **Detailed Description** | **Applicable Domain**  | **Reference Links**  |
+| -- | -- | -- | -- |
+| **Title** | Must have accurate and descriptive title. The product title must include the seller’s name. If the offer is promoted on another website both titles should match.	| SaaS submission, NuGet metadata | [More information about the title](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies#10011-title)  |
+|
+
 
 
 # Design requirements
