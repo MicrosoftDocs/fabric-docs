@@ -27,7 +27,7 @@ Find this comprehensive [guide](https://github.com/microsoft/Microsoft-Fabric-de
 In order to pass all validation checks your workload should comply with the following functional and design requirmenets:
 
 ### 2.1. Fabric requirements
-Your nuget package should comply to the following 
+Your nuget package should comply to the following requirmenets
 ### 2.2. Design requirements
 ### 2.3. Compliance requirmenets
 ### 2.4. Privacy requirmenets
@@ -37,6 +37,12 @@ Your nuget package should comply to the following
 ### Prerequisite
 To submit your Fabric, you must be enrolled with [Partner Center](https://learn.microsoft.com/en-us/partner-center/overview). If you're not yet enrolled, [Open a developer account in Partner Center](https://learn.microsoft.com/en-us/azure/marketplace/create-account).
 
+### Create a SaaS offer
+Once you have a Partner Center account follow these [steps](https://learn.microsoft.com/en-us/partner-center/marketplace/create-new-saas-offer) to create a SaaS offer.
+If you alrady have an exting SaaS offer in Azure Marketplace, you don't need to create a new one. Follow these steps to connect your SaaS offer with Fabric Hub. ***????????????????????????***
+Choose the configuration based on your solution and buisness model prefenrces. For instance if you arelady have a transacatbility model choose the option "No, I would prefer to only list my offer through the marketplace and process transactions independently".
+Note that choosing both options at the same time:
+"Yes, I would like to sell through Microsoft and have Microsoft host transactions on my behalf" and "Yes, I would like Microsoft to manage customer licenses on my behalf" will create a SaaS offer in [AppSource](https://appsource.microsoft.com/) storefront and not [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/home) therefore this combination is not allowed. Having a SaaS offer in both AppSource and Azure Marketplace is allowed.
 1. Create nuget package
 2. Test the extension in your test tenant
 3. Create a SaaS offer in Partner Center
