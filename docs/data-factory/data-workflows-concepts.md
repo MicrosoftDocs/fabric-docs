@@ -6,15 +6,14 @@ author: nabhishek
 ms.author: abnarain
 ms.date: 04/16/2024
 ---
-
-# What is Data Workflows?
+# What is Data workflows?
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow.
 
 > > [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-Data Workflows is the next gen of Azure Data Factory's Workflow Orchestration Manager.
+Data workflows is the next gen of Azure Data Factory's Workflow Orchestration Manager.
 Fabric Data Factory offers serverless pipelines for data process orchestration, data movement with 100+ managed connectors, and visual transformations with the mapping data flow.
 Data Workflows is a simple and efficient way to create and manage [Apache Airflow](https://airflow.apache.org) environments, enabling you to run data pipelines at scale with ease. Developers can focus on writing business logic without worrying about the underlying infrastructure. It abstracts away the complexities of distributed systems, allowing developers to build resilient and scalable DAGs.
 

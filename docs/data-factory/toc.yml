@@ -676,7 +676,7 @@
   - name: Data workflows
     items:
       - name: Concepts
-        items: data-workflows-concepts.md
+        href: data-workflows-concepts.md
       - name: How-to
         items:
           - name: Install a Private Package
@@ -687,6 +687,14 @@
             href: data-workflows-set-smtp-server.md
           - name: Add a Kubernetes secret
             href: data-workflows-access-private-container-registry.md
+        - name: Tutorials
+          - name: Hello Data workflows
+            href: data-workflows-hello-world.md
+          - name: Data workflows with dbt
+            href: data-workflows-dbt.md
+          - name: Run ADF pipeline from Data workflows
+            href: data-workflows-run-adf-pipeline.md
+
   - name: FAQ and Troubleshooting
     items:
     - name: Frequently asked questions
