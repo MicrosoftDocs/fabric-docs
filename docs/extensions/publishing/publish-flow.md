@@ -14,10 +14,10 @@ The Fabric Workload Hub serves as a marketplace users can browse, explore and ma
 
 The hub is structured with two main views:
 
-My Workloads: This view lists the workloads that have been added by the user or others within the organization, including built-in workloads that are part of Fabric.
-More Workloads: This view showcases all available workloads that can be added to Fabric.
+**My Workloads:** This view lists the workloads that have been added by the user or others within the organization, including built-in workloads that are part of Fabric.
+**More Workloads:** This view showcases all available workloads that can be added to Fabric.
 
-To publish your workload to the Fabric Workload Hub, which is currently in public preview, you can follow these steps. Please review all steps before you start developing your workload and make sure you comply with all of the mandatory requirmenets, before you submit your Fabric workload to ensure a smooth and quick publishing flow.
+Publishing your workload to the Fabric Workload Hub involves several key steps to ensure a smooth and successful process. Below is a step by step flow with additional details to guide you through each stage. Review all steps before you start developing your workload and make sure you comply with all of the mandatory requirmenets.
 
 ## Step 1: Develop and Test Your Workload
 Ensure your workload is compatible with the Fabric Extensibility framework and prepare your branding materials for listing.
