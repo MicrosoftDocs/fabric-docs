@@ -17,7 +17,7 @@ The hub is structured with two main views:
 My Workloads: This view lists the workloads that have been added by the user or others within the organization, including built-in workloads that are part of Fabric.
 More Workloads: This view showcases all available workloads that can be added to Fabric.
 
-To publish your workload to the Fabric Workload Hub, which is currently in public preview, you can follow these steps:
+To publish your workload to the Fabric Workload Hub, which is currently in public preview, you can follow these steps. Please review all steps before you start developing your workload and make sure you comply with all of the mandatory requirmenets, before you submit your Fabric workload to ensure a smooth and quick publishing flow.
 
 ## Step 1: Develop Your Workload
 Ensure your workload is compatible with the Fabric Extensibility framework and prepare your branding materials for listing.
@@ -26,10 +26,16 @@ Find this comprehensive [guide](https://github.com/microsoft/Microsoft-Fabric-de
 ## Step 2: Comply to the functional requirmenets
 In order to pass all validation checks your workload should comply with the following functional and design requirmenets:
 
-### Design requirements
-### Security requirmenets
-### Privacy requirmenets
+### 2.1. Fabric requirements
+Your nuget package should comply to the following 
+### 2.2. Design requirements
+### 2.3. Compliance requirmenets
+### 2.4. Privacy requirmenets
 
+## Step 3: Create an Azure  Marketplace Lisitng 
+
+### Prerequisite
+To submit your Fabric, you must be enrolled with [Partner Center](https://learn.microsoft.com/en-us/partner-center/overview). If you're not yet enrolled, [Open a developer account in Partner Center](https://learn.microsoft.com/en-us/azure/marketplace/create-account).
 
 1. Create nuget package
 2. Test the extension in your test tenant
