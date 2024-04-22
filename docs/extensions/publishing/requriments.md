@@ -14,7 +14,7 @@ ms.date: 04/17/2024
 
 |  Requirement | Description   | Domain  | Links  | 
 |---|---|---|---|
-| Significant value | Offer should provide significant benefits  |   | [100.8](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies#1008-significant-value)  |
+|Significat value| Offer should provide significat benefits   | [100.8](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies#1008-significant-value)  |
 |   |   |   |   | 
 |   |   |   |   | 
 
@@ -23,7 +23,21 @@ ms.date: 04/17/2024
 OneLake 
 
 # SaaS requirments
-<< add a link to the Azure marketplace polace policy >>
+Make sure you prepare before hand the following requirmenets for the SaaS offer:
+For the full [general policies](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies#100-general), for [SaaS specific policies](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies#1000-software-as-a-service-saas).
+- - -
+| Requirement | Description | Domain  | Links  | 
+| --- | --- |
+| Apache Hadoop |1.2.0 |
+| Apache Hive |0.11.0 |
+| Apache Pig |0.11 |
+| Apache Sqoop |1.4.3 |
+| Apache Oozie |3.2.2 |
+| Apache HCatalog |Merged with Hive |
+| Apache Templeton |Merged with Hive |
+| Ambari |API v1.0 |
+
+
 # Design requirements
 
 TODO [Horizon](https://aka.ms/horizon)
