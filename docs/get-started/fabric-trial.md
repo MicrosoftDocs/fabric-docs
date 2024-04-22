@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihirwagle
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/18/2024
+ms.date: 04/22/2024
 ---
 
 # Microsoft Fabric trial
@@ -146,7 +146,7 @@ Not all regions are available for the Fabric trial. Start by [looking up your ho
 
 You can't move your organization's tenant between regions by yourself. If you need to change your organization's default data location from the current region to another region, you must contact support to manage the migration for you. For more information, see [Move between regions](/power-bi/support/service-admin-region-move).
 
-## Fabric Trial Capacity Availability by Azure Region
+**Fabric Trial Capacity Availability by Azure Region**
 
 To learn more about regional availability for Fabric trials, see [Fabric trial capacities are available in all regions.](../admin/region-availability.md)
 
