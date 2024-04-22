@@ -74,7 +74,7 @@ When you're loading into a new table, the automatic settings are on by default. 
 
 * **Managed mapping**: Mapping is managed for you. When you need to make changes to your data/query to add another column or change a data type, mapping is automatically adjusted for this change when you republish your dataflow. You don't have to go into the data destination experience every time you make changes to your dataflow, allowing for easy schema changes when you republish the dataflow.
 
-* **Drop and recreate table**: To allow for these schema changes, on every dataflow refresh the table is dropped and recreated. Your dataflow refresh fails if you have any relationships or measures added to your table.
+* **Drop and recreate table**: To allow for these schema changes, on every dataflow refresh the table is dropped and recreated. Your dataflow refresh may cause the removal of relationships or measures that were added previously to your table.
 
 > [!NOTE]
 > Currently, automatic setting are only supported for Lakehouse and Azure SQL database as data destination.  
@@ -99,7 +99,7 @@ Most destinations support both append and replace as update methods. However, Fa
 
 Schema options on publish only apply when the update method is replace. When you append data, changes to the schema aren't possible.
 
-* **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination flow when you make any changes to your query. When the dataflow is refreshed, your table is dropped and recreated. Your dataflow refresh fails if you have any relationships or measures added to your table.
+* **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination flow when you make any changes to your query. When the dataflow is refreshed, your table is dropped and recreated. Your dataflow refresh may cause the removal of relationships or measures that were added previously to your table.
 
 * **Fixed schema**: When you choose fixed schema, schema changes aren't possible. When the dataflow gets refreshed, only the rows in the table are dropped and replaced with the output data from the dataflow. Any relationships or measures on the table stay intact. If you make any changes to your query in the dataflow, the dataflow publish fails if it detects that the query schema doesn't match the data destination schema. Use this setting when you don't plan to change the schema and have relationships or measure added to your destination table.
 
