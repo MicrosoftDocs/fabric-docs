@@ -118,6 +118,8 @@ landingContent:
             url: create-spark-job-definition.md
           - text: Create a Spark job definition with a Fabric API
             url: spark-job-definition-api.md
+          - text: Spark job definition Git Integration
+            url: spark-job-definition-source-control.md
       - linkListType: how-to-guide
         links:
           - text: Schedule and run a Spark job definition
