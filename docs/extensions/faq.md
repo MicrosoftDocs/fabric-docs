@@ -1,9 +1,9 @@
 ---
 title: FAQ for extensibility certification 
 description: Learn how to certify and publish a workload over the Fabric extensibility platform.
-author: gesaur
-ms.author: gesaur
-ms.reviewer: gesaur
+author: gesaur,rasala
+ms.author: gesaur,rasala
+ms.reviewer: gesaur, rasala
 ms.topic: how-to
 ms.custom:
 ms.date: 04/17/2024
@@ -36,6 +36,8 @@ https://microsofteur-my.sharepoint.com/:b:/g/personal/litaltal_microsoft_com/Ebm
 ## How can I test my Workload?
 ## How can I share a preview version with my customer before submitting to Marketplace?
 ## Is there any default EULA and terms of use that I can use?
+## Do I need to submit an Azure Marketplace SaaS offer before reaching out to the team?
+## What buisness model should I choose for my SaaS offer?
 
 
 # Fabric development
