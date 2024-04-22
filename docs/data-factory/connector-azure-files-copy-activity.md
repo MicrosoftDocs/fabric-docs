@@ -155,7 +155,7 @@ The following tables contain more information about the copy activity in Azure F
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|  **External**|Yes|/|
-|**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
+|**Connection** |Your connection to the source data store.|\<your Azure Files connection> |Yes|connection|
 |**File path type** |The file path type used to get source data.|• File path <br>• Prefix<br>• Wildcard file path<br>• List of files|Yes |/|
 |*For **File path*** |||||
 | **Directory** |The path to the folder. | \<your folder name> |No|folderPath|
@@ -182,10 +182,10 @@ The following tables contain more information about the copy activity in Azure F
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External** |Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your connection>|Yes|connection|
-|**File path**|The folder/file path to the destination file.|< folder/file path > |Yes |folderPath <br> fileName|
+|**File path**|The folder/file path to the destination file.|< folder/file path > |Yes |/|
 | **Directory** |The path to the folder under the specified bucket. | \<your folder name> |No|folderpath|
 | **File name** |The file name under the specified bucket and folder path. | \<your file name> |No|fileName|
-|**Copy behavior** |Defines the behavior when copying files from one file system, like storage, to the other (for example, from one blob storage to another).|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
+|**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 |**Max rows per file**|When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file. Specify the maximum rows that you want to write per file.|< your max rows per file >|No|maxRowsPerFile|
 
