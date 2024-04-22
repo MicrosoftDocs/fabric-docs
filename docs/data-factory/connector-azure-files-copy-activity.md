@@ -54,15 +54,15 @@ The following properties are **required**:
 - **Connection**:  Select an Azure File Storage connection from the connection list. If no connection exists, then create a new Azure File Storage connection by selecting **New**.
 - **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, **List of files** as your file path type. The configuration of each setting is:
 
-  - **File path**: If you choose this type, the data can be copied from the specified file system or folder/file path specified previously.
+  - **File path**: If you choose this type, the data can be copied from the folder/file path specified previously.
 
-  - **Prefix**: Prefix for the file name under the given file share configured to filter source files. Files with name starting with `fileshare_in_linked_service/this_prefix` are selected. It utilizes the service-side filter for Azure Files, which provides better performance than a wildcard filter.
+  - **Prefix**: Prefix for the file name under the specified file share to filter source files. Files with name starting with `fileshare_in_connection/this_prefix` are selected. It utilizes the service-side filter for Azure Files, which provides better performance than a wildcard filter.
 
     :::image type="content" source="./media/connector-azure-files/prefix.png" alt-text="Screenshot showing prefix file path type.":::
 
   - **Wildcard file path**: Specify the folder or file path with wildcard characters to filter source folders or files.
 
-    Allowed wildcards are `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has a wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#folder-and-file-filter-examples).
+    Allowed wildcards are `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has a wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-azure-file-storage?tabs=data-factory#folder-and-file-filter-examples).
 
     :::image type="content" source="./media/connector-azure-files/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path.":::
 
@@ -72,7 +72,7 @@ The following properties are **required**:
 
   - **List of files**: Indicates a given file set to copy to. In **Path to file list**, enter or browse to a text file that includes a list of files you want to copy, one file per line, which is the relative path to to each file.
 
-    When you're using this option, don't specify a file name. For more examples, go to [File list examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#file-list-examples).
+    When you're using this option, don't specify a file name. For more examples, go to [File list examples](/azure/data-factory/connector-azure-file-storage?tabs=data-factory#file-list-examples).
 
     :::image type="content" source="./media/connector-azure-files/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
 
@@ -90,7 +90,8 @@ Under **Advanced**, you can specify the following fields:
 
   - **Start time (UTC)**: The files are selected if their last modified time is greater than or equal to the configured time.
   - **End time (UTC)**: The files are selected if their last modified time is less than the configured time.
-When **Start time (UTC)** has datetime value but **End time (UTC)** is NULL, it means the files whose last modified attribute is greater than or equal with the datetime value will be selected. When **End time (UTC)** has datetime value but **Start time (UTC)** is NULL, it means the files whose last modified attribute is less than the datetime value will be selected. The properties can be NULL, which means no file attribute filter will be applied to the data.
+
+    When **Start time (UTC)** has datetime value but **End time (UTC)** is NULL, it means the files whose last modified attribute is greater than or equal with the datetime value will be selected. When **End time (UTC)** has datetime value but **Start time (UTC)** is NULL, it means the files whose last modified attribute is less than the datetime value will be selected. The properties can be NULL, which means no file attribute filter will be applied to the data.
 - **Enable partition discovery**: Specify whether to parse the partitions from the file path and add them as additional source columns. It is unselected by default and not supported when you use binary file format.
 
   - **Partition root path**: When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns.
@@ -135,7 +136,6 @@ Under **Advanced**, you can specify the following fields:
 
 - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
-- **File extension**: The file extension used to name the output files, for example, `.csv`, `.txt`.
 - **Max rows per file**: When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file. Specify the maximum rows that you want to write per file.
 
 ### Mapping
@@ -156,12 +156,12 @@ The following tables contain more information about the copy activity in Azure F
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|  **External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
-|**File path type** |The file path type that you want to use.|• File path <br>• Prefix<br>• Wildcard file path<br>• List of files|No |<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
+|**File path type** |The file path type used to get source data.|• File path <br>• Prefix<br>• Wildcard file path<br>• List of files|Yes |/|
 |*For **File path*** |||||
 | **Directory** |The path to the folder. | \<your folder name> |No|folderPath|
 | **File name** |The file name under the specified folder path. | \<your file name> |No|fileName|
 |*For **Prefix*** |||||
-| **Prefix** | The prefix for the file name under the given file share configured to filter source files. | \<your prefix> |No|prefix|
+| **Prefix** | The prefix for the file name under the specified file share to filter source files. | \<your prefix> |No|prefix|
 |*For **Wildcard file path*** |||||
 | **Wildcard folder path** | The folder path with wildcard characters to filter source folders. | \<your folder path with wildcard characters> |No|wildcardFolderPath |
 | **Wildcard file name** | The file name with wildcard characters under the specified folder/wildcard folder path to filter source files. | \<your file name with wildcard characters> |Yes|wildcardFileName |
@@ -182,11 +182,11 @@ The following tables contain more information about the copy activity in Azure F
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External** |Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your connection>|Yes|connection|
-|**File path**|The file path of your destination data.|< your file path > |Yes |folderPath <br> fileName|
-| **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / |
+|**File path**|The folder/file path to the destination file.|< folder/file path > |Yes |folderPath <br> fileName|
+| **Directory** |The path to the folder under the specified bucket. | \<your folder name> |No|folderpath|
+| **File name** |The file name under the specified bucket and folder path. | \<your file name> |No|fileName|
 |**Copy behavior** |Defines the behavior when copying files from one file system, like storage, to the other (for example, from one blob storage to another).|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
-|**File extension**|The file extension used to name the output files.|< your file extension ><br> `.txt` (by default)|No|fileExtension|
 |**Max rows per file**|When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file. Specify the maximum rows that you want to write per file.|< your max rows per file >|No|maxRowsPerFile|
 
 ## Related content
