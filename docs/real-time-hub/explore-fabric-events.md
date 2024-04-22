@@ -43,7 +43,7 @@ Here are the actions available on each event type group. When you move the mouse
 
 :::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-actions.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub with actions highlighted." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-actions.png":::
 
-## Related articles
+## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md)

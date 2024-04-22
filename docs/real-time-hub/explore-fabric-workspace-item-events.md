@@ -12,16 +12,24 @@ Real-Time hub expands Fabric with event-driven capabilities to support real-time
 
 Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items, such as when a new artifact is created, or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
 
-## View Azure blob storage events detail page
+## View Fabric workspace item events detail page
 
 1. In **Real-Time hub**, switch to the **Fabric events** tab. 
-1. Select **Fabric workspace item events** in the list. You should see the detail view for Fabric workspace item events. 
+1. Select **Fabric workspace item events** in the list. 
+
+    :::image type="content" source="./media/explore-fabric-workspace-item-events/select-from-list.png" alt-text="Screenshot that shows the selection of Fabric workspace item events in the Fabric events tab.":::
+1. You should see the detail view for Fabric workspace item events. 
+
+    :::image type="content" source="./media/explore-fabric-workspace-item-events/detail-page.png" alt-text="Screenshot that shows the detail page for Fabric workspace item events." lightbox="./media/explore-fabric-workspace-item-events/detail-page.png":::
 
 ## Actions
 At the top of the detail page, you see the following two actions.
 
 - **Create eventstream** - lets you create an eventstream based on events from the selected Fabric workspace item. 
 - **Set alert** - lets you set an alert when an operation is done for a Fabric workspace item, such as a new artifact is created.
+
+    :::image type="content" source="./media/explore-fabric-workspace-item-events/actions.png" alt-text="Screenshot that shows actions on the Fabric workspace item events detail page.":::
+
 
 ## See what's using this category
 
@@ -35,6 +43,9 @@ This section shows subscriptions using the event category. Here are the columns 
 | Source | Name of the source (Azure blob storage account) that the user subscribed to. |
 
 ## Fabric workspace item events profile
+
+:::image type="content" source="./media/explore-fabric-workspace-item-events/profile.png" alt-text="Screenshot that shows the Profile section of the Fabric workspace item events detail page.":::
+
 
 ### Event types
 
@@ -77,7 +88,7 @@ The `data` object has the following properties:
 | `executingPrincipalType` | string | The kind of user. |
 
 
-## Related articles
+## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
 

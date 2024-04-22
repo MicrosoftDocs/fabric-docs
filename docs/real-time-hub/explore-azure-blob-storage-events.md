@@ -16,13 +16,20 @@ This article shows how to explore Azure blob storage events in Fabric Real-Time 
 ## View Azure blob storage events detail page
 
 1. In **Real-Time hub**, switch to the **Fabric events** tab. 
-1. Select **Azure blob storage events** in the list. You should see the Azure blob storage events detail page. 
+1. Select **Azure blob storage events** in the list. 
+
+    :::image type="content" source="./media/explore-azure-blob-storage-events/select-from-list.png" alt-text="Screenshot that shows the selection of Azure blob storage events in the Fabric events tab." :::
+1. You should see the Azure blob storage events detail page. 
+
+    :::image type="content" source="./media/explore-azure-blob-storage-events/detail-page.png" alt-text="Screenshot that shows the Azure blob storage events detail page." lightbox="./media/explore-azure-blob-storage-events/detail-page.png":::
 
 ## Actions
 At the top of the Azure blob storage events detail page, you see the following two actions.
 
 - **Create eventstream** - lets you create an eventstream based on events from the selected Azure blob storage. 
 - **Set alert** - lets you set an alert when an operation is done on an Azure blob storage artifact. For example, you can set an alert when a blob is created or deleted. 
+
+    :::image type="content" source="./media/explore-azure-blob-storage-events/actions.png" alt-text="Screenshot that shows the Actions section of the Azure blob storage events detail page." :::
 
 
 ## See what's using this category
@@ -36,8 +43,12 @@ This section shows subscriptions using the event category. Here are the columns 
 | Workspace | Workspace where the artifact lives. |
 | Source | Name of the source (Azure blob storage account) that the user subscribed to. |
 
+:::image type="content" source="./media/explore-azure-blob-storage-events/see-what-is-using.png" alt-text="Screenshot that shows the See what is using the section of the Azure blob storage events detail page." :::
 
 ## Azure blob storage events profile
+
+:::image type="content" source="./media/explore-azure-blob-storage-events/profile.png" alt-text="Screenshot that shows the events profile section of the Azure blob storage events detail page." :::
+
 
 ### Event types
 
@@ -121,7 +132,7 @@ Here's a `Microsoft.Storage.BlobCreated` sample payload using the Cloud Events s
 
 
 
-## Related articles
+## Related content
 
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md)
 
