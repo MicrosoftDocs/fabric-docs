@@ -24,7 +24,12 @@ Ensure your workload is compatible with the Fabric Extensibility framework and p
 Find this comprehensive [guide](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/README.md) that covers everything you need to know to create your own custom Fabric workload.
 
 ## Step 2: Comply to the functional requirmenets
-Inorder to pass 
+In order to pass all validation checks your workload should comply with the following functional and design requirmenets:
+
+### Design requirements
+### Security requirmenets
+### Privacy requirmenets
+
 
 1. Create nuget package
 2. Test the extension in your test tenant
