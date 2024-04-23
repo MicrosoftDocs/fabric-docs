@@ -56,6 +56,22 @@ landingContent:
             url: apply-sensitivity-labels.md 
 
   # Card 
+  - title: Copilot
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Copilot overview
+            url: copilot-fabric-overview.md
+          - text: Copilot in Fabric FAQ
+            url: copilot-faq-fabric.yml
+          - text: Privacy, security, and responsible use for Copilot
+            url: copilot-privacy-security.md
+      - linkListType: how-to-guide
+        links:
+          - text: Enable Copilot
+            url: copilot-fabric-enable.md
+
+  # Card 
   - title: Workspaces
     linkLists:
       - linkListType: concept
