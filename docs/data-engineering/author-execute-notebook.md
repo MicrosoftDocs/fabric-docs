@@ -577,7 +577,7 @@ Where range can be:
 - **N**: Print code of **Nth** executed cell.
 - **M-N**: Print code from **Mth** to **Nth** executed cell.
 
-Examples:
+Example:
 - Print input history from 1st to 2nd executed cell: ``` %history -n 1-2 ```
 
 ## Shortcut keys
