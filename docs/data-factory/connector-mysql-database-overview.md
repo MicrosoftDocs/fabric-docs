@@ -25,7 +25,7 @@ The MySQL database connector supports the following capabilities in Data pipelin
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Basic |
-| **Lookup activity** | None | Basic |
+| **Copy activity (source/-)** | None <br>On-premises | Basic |
+| **Lookup activity** | None <br>On-premises | Basic |
 
 To learn more about the copy activity configuration for MySQL database in Data pipeline, go to [Configure in a data pipeline copy activity](connector-mysql-database-copy-activity.md).
