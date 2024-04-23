@@ -25,11 +25,11 @@ To get started, you must complete the following prerequisite:
   > [!NOTE]
   > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
 
-1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow projects (preview)' section.
+    1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow projects (preview)' section.
 
-2. Click Apply.
+    2. Click Apply.
 
-   :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
+        :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
 
 ## Create a Data workflows
 
@@ -47,7 +47,7 @@ To get started, you must complete the following prerequisite:
 
 1. Click on "New DAG file" card -> give the name to the file and Click on "Create" button.
 
-   :::image type="content" source="media/data-workflows/name-dag-file.png" alt-text="Screenshot to name the DAG file.":::
+   :::image type="content" source="media/data-workflows/name-dag-file.png" alt-text="Screenshot to name the DAG file." width="500":::
 
 2. A boilerplate DAG code is presented to you. You can edit the file as per your requirements.
 
