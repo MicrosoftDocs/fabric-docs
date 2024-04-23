@@ -16,9 +16,7 @@ This article shows you how to add an Azure Event Hubs source to an eventstream w
 
 1. Create an eventstream with enhanced capabilities. 
 1. Select **Add source** and select **Get event** option, or select the **Get events** card on the eventstream homepage.
-1. On the **Select a data source** page of the **Get events** wizard, select **Azure Event Hubs**. 
 
-    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Event Hubs as the source type in the Get events wizard.":::
 
 ## Configure Azure Event Hubs connector
 [!INCLUDE [azure-event-hubs-connector](./includes/azure-event-hubs-source-connector.md)]

@@ -9,6 +9,9 @@ ms.custom:
 ms.date: 04/18/2024
 ---
 
+1. On the **Select a data source** page of the **Get events** wizard, select **Confluent**. 
+
+    :::image type="content" source="./media/confluent-kafka-source-connector/select-confluent.png" alt-text="Screenshot that shows the selection of Confluent as the source type in the Get events wizard.":::
 1. In the **Connection settings** section, enter **Confluent Bootstrap Server**. Navigate to your Confluent Cloud home page, select **Cluster Settings**, and copy the address to your Bootstrap Server.  
 1. In the **Connection credentials** section, If you have an existing connection to the Confluent cluster, select it from the drop-down list for **Connection**. Otherwise, follow these steps: 
     1. For **Connection name**, enter a name for the connection. 

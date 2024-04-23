@@ -9,7 +9,9 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
+1. On the **Select a data source** page, select **Azure Event Hubs**. 
 
+    :::image type="content" source="./media/azure-event-hubs-source-connector/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Event Hubs as the source type in the Get events wizard." lightbox="./media/azure-event-hubs-source-connector/select-azure-event-hubs.png":::
 1. On the **Connect** page, follow these steps:
     1. In the **Connection settings** section, do these steps:
         1. Enter the name of the Event Hubs namespace.
@@ -21,22 +23,22 @@ ms.date: 05/21/2024
         1. For **Shared Access Key Name**, enter the name of the shared access key. 
         1. For **Shared Access Key**, enter the value of the shared access key.
             
-            :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-1.png" alt-text="Screenshot that shows the Connect page one for Azure Event Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-1.png":::
+            :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-1.png" alt-text="Screenshot that shows the Connect page one for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-1.png":::
         1. For **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the event hub. 
         1. For **Data format**, select the format of the data in the event hub. 
         
-            :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-2.png" alt-text="Screenshot that shows the Connect page two for Azure Event Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-2.png":::        
+            :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-2.png" alt-text="Screenshot that shows the Connect page two for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-2.png":::        
     1. In the **Stream details** section, do these steps:
         1. Select your **Fabric workspace** where you want to save the connection and the stream. 
         1. For **Stream name**, enter a name for the eventstream that's being created. 
         1. The value for **Stream name** is automatically generated. 
         
-            :::image type="content" source="./media/azure-event-hubs-source-connector/connect-stream-details.png" alt-text="Screenshot that shows the Stream details section of the Connect page for Azure Event Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-stream-details.png":::        
+            :::image type="content" source="./media/azure-event-hubs-source-connector/connect-stream-details.png" alt-text="Screenshot that shows the Stream details section of the Connect page for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-stream-details.png":::        
     1. Select **Connect** at the bottom of the page. 
     1. Once the connection is successful, select **Next**. 
 1. On the **Review and create** page, review settings, and select **Create source**. 
 
-    :::image type="content" source="./media/azure-event-hubs-source-connector/review-create-page.png" alt-text="Screenshot that shows the Stream details section of the Connect page for Azure Event Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/review-create-page.png":::        
+    :::image type="content" source="./media/azure-event-hubs-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/review-create-page.png":::        
 
 ### Existing connection
 
