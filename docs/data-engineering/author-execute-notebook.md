@@ -326,7 +326,7 @@ You can use familiar Ipython magic commands in Fabric notebooks. Review the foll
 > These are the only magic commands supported in Fabric pipeline: %%pyspark, %%spark, %%csharp, %%sql, %%configure.
 
 Available line magic commands:
-[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode.
+[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](#view-the-history-of-input-commands), [%run](#reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode.
 
 Fabric notebook also supports the improved library management commands **%pip** and **%conda**. For more information about usage, see [Manage Apache Spark libraries in Microsoft Fabric](library-management.md).
 
@@ -563,6 +563,22 @@ customizedLogger.warning("customized warning message")
 customizedLogger.error("customized error message")
 customizedLogger.critical("customized critical message")
 ```
+
+## View the history of input commands
+
+Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook. 
+
+``` %history [-n] [range [range ...]] ```
+
+For options:
+- **-n**: Print execution number.
+
+Where range can be:
+- **N**: Print code of **Nth** executed cell.
+- **M-N**: Print code from **Mth** to **Nth** executed cell.
+
+Example:
+- Print input history from 1st to 2nd executed cell: ``` %history -n 1-2 ```
 
 ## Shortcut keys
 
