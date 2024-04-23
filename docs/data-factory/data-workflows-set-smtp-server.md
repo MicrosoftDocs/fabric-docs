@@ -53,6 +53,9 @@ To use email notifications and alerts, you need to set up a (Simple Mail Transfe
     | AIRFLOW__SMTP__SMTP_PORT        | 587                     |
     | AIRFLOW__SMTP__SMTP_MAIL_FROM   | your_email@gmail.com    |
 
+    :::image type="content" source="media/data-workflows/airflow-smtp-configs.png" alt-text="Screenshot presents airflow configs for smtp.":::
+
+
 ## Example: A DAG that sends an email on the DAG Failure.
 
     ```python
