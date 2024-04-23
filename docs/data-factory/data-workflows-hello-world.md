@@ -41,13 +41,13 @@ To get started, you must complete the following prerequisite:
 
    :::image type="content" source="media/data-workflows/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow Project.":::
 
-3. Give a suitable name to your project and Click on the Create Button.
+3. Give a suitable name to your project and Click on the "Create" Button.
 
 ## Create a DAG File
 
 1. Click on "New DAG file" card -> give the name to the file and Click on "Create" button.
 
-   :::image type="content" source="media/data-workflows/name-dag-file.png" alt-text="Screenshot to name the DAG file." width="500":::
+   :::image type="content" source="media/data-workflows/name-dag-file.png" alt-text="Screenshot to name the DAG file.":::
 
 2. A boilerplate DAG code is presented to you. You can edit the file as per your requirements.
 

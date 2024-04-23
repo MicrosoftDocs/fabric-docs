@@ -43,7 +43,7 @@ To get started, you must complete the following prerequisite:
 
 1. Click on "New DAG file" card -> give the name to the file and Click on "Create" button.
 
-    :::image type="content" source="media/data-workflows/adf-name-file.png" alt-text="Screenshot to name the DAG file." width="500":::
+    :::image type="content" source="media/data-workflows/adf-name-file.png" alt-text="Screenshot to name the DAG file." :::
 
 2. A boilerplate DAG code is presented to you. Edit the file with below contents.
 
