@@ -566,7 +566,7 @@ customizedLogger.critical("customized critical message")
 
 ## View the history of input commands
 
-The Ipython magic command ```%history``` prints input history in Fabric notebook.
+Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook. 
 
 ``` %history [-n] [range [range ...]] ```
 
