@@ -18,7 +18,7 @@ Copilot and other generative AI features in preview bring new ways to transform 
 
 ## Enable Copilot
 
-Before your business can start using Copilot capabilities in Microsoft Fabric, you need to [enable Copilot](copilot-fabric-enable.md).
+Before your business can start using Copilot capabilities in Microsoft Fabric, you need to [enable Copilot](copilot-enable-fabric.md).
 
 Read on for answers to your questions about how it works in the different workloads, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. 
 

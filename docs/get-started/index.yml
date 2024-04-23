@@ -69,7 +69,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Enable Copilot
-            url: copilot-fabric-enable.md
+            url: copilot-enable-fabric.md
 
   # Card 
   - title: Workspaces
