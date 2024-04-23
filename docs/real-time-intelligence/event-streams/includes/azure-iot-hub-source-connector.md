@@ -37,6 +37,9 @@ ms.date: 05/21/2024
 1. On the **Review and create** page, review settings, and select **Create source**. 
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page for Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/review-create-page.png":::        
+1. After the creation is successful, you can **Close** the wizard or **Open the eventstream** that was created. 
+
+    :::image type="content" source="./media/azure-iot-hub-source-connector/review-create-success.png" alt-text="Screenshot that shows the Review and create page for Azure IoT Hub connector after the creation of source is successful." lightbox="./media/azure-iot-hub-source-connector/review-create-success.png":::            
 
 ### Existing connection
 
