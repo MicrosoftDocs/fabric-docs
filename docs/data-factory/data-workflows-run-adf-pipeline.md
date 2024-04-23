@@ -56,33 +56,33 @@ To get started, you must complete the following prerequisites:
 
 2. Once created, you'll be presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the `pipeline_name` argument with with the name of your ADF pipeline.
 
-  ```python
-  from datetime import datetime, timedelta
+```python
+from datetime import datetime, timedelta
 
-  from airflow.models import DAG
-  from airflow.providers.microsoft.azure.operators.data_factory import AzureDataFactoryRunPipelineOperator
+from airflow.models import DAG
+from airflow.providers.microsoft.azure.operators.data_factory import AzureDataFactoryRunPipelineOperator
 
 
-  with DAG(
-      dag_id="example_adf_run_pipeline",
-      start_date=datetime(2022, 5, 14),
-      schedule_interval="@daily",
-      catchup=False,
-      default_args={
-          "retries": 1,
-          "retry_delay": timedelta(minutes=3),
-          "azure_data_factory_conn_id": "azure_data_factory_conn_id", #This is a connection created on Airflow UI
-      },
-      default_view="graph",
-  ) as dag:
+with DAG(
+    dag_id="example_adf_run_pipeline",
+    start_date=datetime(2022, 5, 14),
+    schedule_interval="@daily",
+    catchup=False,
+    default_args={
+        "retries": 1,
+        "retry_delay": timedelta(minutes=3),
+        "azure_data_factory_conn_id": "azure_data_factory_conn_id", #This is a connection created on Airflow UI
+    },
+    default_view="graph",
+) as dag:
 
     run_adf_pipeline = AzureDataFactoryRunPipelineOperator(
         task_id="run_adf_pipeline",
         pipeline_name="<Pipeline Name>",
     )
 
-      run_adf_pipeline
-  ```
+    run_adf_pipeline
+```
 
 3. Click on "Save," to save the file.
 
@@ -105,7 +105,7 @@ To get started, you must complete the following prerequisites:
    :::image type="content" source="media/data-workflows/monitor-dag.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 1. The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on "Monitor in Apache Airflow" button.
 
-    :::image type="content" source="media/data-workflows/monitor-dag.png" alt-text="Screenshot to monitor the Airflow DAG.":::
+   :::image type="content" source="media/data-workflows/monitor-dag.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 
 :::image type="content" source="media/data-workflows/loaded-adf-dag.png" alt-text="Screenshot to load Airflow DAG.":::
 
