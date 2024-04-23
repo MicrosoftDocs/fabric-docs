@@ -25,7 +25,7 @@ ms.date: 05/21/2024
         1. For **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the IoT hub. 
         1. For **Data format**, select the format of the data in the IoT hub. 
         
-            :::image type="content" source="./media/azure-iot-hub-source-connector/connection-page-2.png" alt-text="Screenshot that shows the Connect page two for Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/connect-page-2.png":::        
+            :::image type="content" source="./media/azure-iot-hub-source-connector/connection-page-2.png" alt-text="Screenshot that shows the Connect page two for Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/connection-page-2.png":::        
     1. In the **Stream details** section, do these steps:
         1. Select your **Fabric workspace** where you want to save the connection and the stream. 
         1. For **Stream name**, enter a name for the eventstream that's being created. 
