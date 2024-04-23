@@ -41,11 +41,11 @@ Here's an overview of everything you find in the two different modes:
 
    ![A screenshot of building a pipe.](media/edit-publish/build.png)
 
-1. Select **Azure Event Hub** as your data source and input the necessary Event Hub details to link it with your Fabric eventstreams.
+1. Select **Azure Event Hubs** as your data source and input the necessary event hub details to link it with your Fabric eventstreams.
 
-   ![A screenshot of connecting to Event Hub.](media/edit-publish/connect.png)
+   ![A screenshot of connecting to Event Hubs.](media/edit-publish/connect.png)
 
-1. When you're done, select **Add** to finish the setup. This adds the Azure Event Hub source to your Fabric eventstream.
+1. When you're done, select **Add** to finish the setup and add the Azure Event Hubs source to your Fabric eventstream.
 
    ![A screenshot of the Summary for a new eventstream.](media/edit-publish/summary.png)
 
@@ -63,7 +63,7 @@ The following steps show how you can add event processing operations and a desti
 
    ![A screenshot of choosing a destination or operation.](media/edit-publish/destination.png)
 
-1. Note that the **Publish** button is disabled if there are any authoring errors. For example, you must add a destination for a **Filter** operation before you can publish it.
+1. The **Publish** button is disabled if there are any authoring errors. For example, you must add a destination for a **Filter** operation before you can publish it.
 
    ![A screenshot showing an Authoring error that prevents publishing.](media/edit-publish/error.png)
 
