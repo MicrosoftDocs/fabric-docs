@@ -45,7 +45,7 @@ ms.date: 05/21/2024
 
 If there's an existing connection to the Azure IoT hub, you see the Connect page as shown in the following image.
 
-:::image type="content" source="./media/azure-event-hubs-source-connector/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure IoT hub." lightbox="./media/azure-event-hubs-source-connector/existing-connection.png":::        
+:::image type="content" source="./media/azure-iot-hub-source-connector/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure IoT hub." lightbox="./media/azure-iot-hub-source-connector/existing-connection.png":::        
 
 Select **Edit connection** to edit the connection settings to the Azure IoT hub. 
 
