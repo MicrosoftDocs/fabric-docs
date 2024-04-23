@@ -11,11 +11,7 @@ ms.date: 04/03/2024
 This article describes how to add an Azure event hub as an event source in Fabric Real-Time hub. 
 
 ## Launch the Get events experience
-
-1. In Fabric Real-Time hub, select **Get events** button in the top-right corner. 
-1. On the **Select a data source** page of the **Get events** wizard, select **Confluent**. 
-
-    :::image type="content" source="./media/add-source-azure-event-hubs/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Confluent as the source type in the Get events wizard.":::
+In Fabric Real-Time hub, select **Get events** button in the top-right corner. 
 
 ## Add Azure Event Hubs as a source
 
