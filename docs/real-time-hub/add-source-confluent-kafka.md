@@ -16,7 +16,11 @@ This article describes how to add Confluent Kafka as an event source in Fabric R
 - A Confluent Cloud Kafka cluster and an API Key. 
 
 ## Launch the Get events experience
-In Fabric Real-Time hub, select **Get events** button in the top-right corner. 
+
+1. In Fabric Real-Time hub, select **Get events** button in the top-right corner. 
+1. On the **Select a data source** page of the **Get events** wizard, select **Confluent**. 
+
+    :::image type="content" source="./media/add-source-confluent-kafka/select-confluent.png" alt-text="Screenshot that shows the selection of Confluent as the source type in the Get events wizard.":::
 
 ## Add Confluent Cloud Kafka as a source
 

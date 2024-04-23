@@ -23,6 +23,10 @@ Confluent Cloud Kafka is a streaming platform offering powerful data streaming a
 
 1. Create an eventstream with selecting the preview toggle.
 1. Select **Add source** and select **Get event** option, or select the **Get events** card on the eventstream homepage.
+1. On the **Select a data source** page of the **Get events** wizard, select **Confluent**. 
+
+    :::image type="content" source="./media/add-source-confluent-kafka/select-confluent.png" alt-text="Screenshot that shows the selection of Confluent as the source type in the Get events wizard.":::
+
 
 ## Configure and connect to Confluent Kafka
 
