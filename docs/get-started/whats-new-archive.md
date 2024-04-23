@@ -310,7 +310,7 @@ This section includes guidance and documentation updates on monitoring your Micr
 |September 2023|**Fabric Capacities – Everything you need to know about what's new and what's coming**|Read more about the improvements we're making to [the Fabric capacity management platform for Fabric and Power BI users](https://blog.fabric.microsoft.com/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming). |
 |September 2023|**Microsoft Fabric Capacity Metrics**|The [Microsoft Fabric Capacity Metrics](../enterprise/metrics-app.md) app is available in App Source for a variety of billing and utilization reporting.|
 |August 2023|**Monitoring Hub support for personalized column options**|The Monitoring Hub to allow users to personalize activity-specific columns. You now have the flexibility to display columns that are relevant to the activities you're focused on.|
-|May 2023|**Capacity metrics in Microsoft Fabric**|Learn more about the [universal compute capacities and Fabric's capacity metrics governance features](https://blog.fabric.microsoft.com/blog/capacity-metrics-in-microsoft-fabric) that admins can use to [monitor usage](https://appsource.microsoft.com/product/power-bi/pbi_pcmm.microsoftpremiumfabricpreviewreport?exp=ubp8) and make data-driven scale-up decisions.|
+|May 2023|**Capacity metrics in Microsoft Fabric**|Learn more about the [universal compute capacities and Fabric's capacity metrics governance features](https://blog.fabric.microsoft.com/blog/capacity-metrics-in-microsoft-fabric) that admins can use to [monitor usage](../enterprise/metrics-app.md) and make data-driven scale-up decisions.|
 
 ## Microsoft Purview
 
