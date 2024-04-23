@@ -11,7 +11,7 @@ ms.search.form: Source and Destination
 
 # Route data streams based on content in Fabric event streams
 
-This article shows you how to route events based on content in Fabric event streams.
+This article shows you how to route events based on content in Microsoft Fabric event streams.
 
 You can now use the no-code editor in the Fabric event streams main canvas to create complex stream processing logic without writing any code. This feature lets you tailor, transform, and manage your data streams more easily. After setting your stream processing operations, you can smoothly send your data streams to different destinations according to the specific schema and stream data.
 
