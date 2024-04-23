@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 03/20/2024
+ms.date: 04/23/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -26,8 +26,8 @@ The Google BigQuery connector supports the following capabilities in Data pipeli
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Service Account Login |
-| **Lookup activity** | None | Service Account Login |
+| **Copy activity (source/-)** | None<br>On-premises | Service Account Login |
+| **Lookup activity** | None<br>On-premises | Service Account Login |
 
 To learn more about the copy activity configuration for Google BigQuery in Data pipeline, go to [Configure in a data pipeline copy activity](connector-google-bigquery-copy-activity.md).
 
