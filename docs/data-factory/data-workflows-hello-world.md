@@ -11,7 +11,7 @@ ms.date: 04/15/2024
 # Tutorial: Run Hello-world DAG in Data workflows
 
 > [!NOTE]
-> Data workflows is powered by Apache Airflow. [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
 In this tutorial, you'll run a hello-world DAG in Data workflows. This tutorial focuses on getting users acquainted with the Data workflows features and environment.
 

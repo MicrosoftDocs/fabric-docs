@@ -11,6 +11,10 @@ ms.date: 03/25/2024
 # Enable Azure Key Vault as a Secret Backend
 
 ## Introduction
+
+> [!NOTE]
+> Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+
 Apache Airflow offers various backends for securely storing sensitive information such as variables and connections. One of these options is Azure Key Vault. This article walks you through the process of configuring Key Vault as the secret backend for Data worflows in Data Factory.
 
 ## Prerequisites

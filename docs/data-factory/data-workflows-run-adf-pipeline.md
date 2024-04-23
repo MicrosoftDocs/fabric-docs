@@ -13,7 +13,8 @@ ms.date: 04/15/2023
 > [!NOTE]
 > Data workflows is powered by Apache Airflow.
 
-> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> [!NOTE]
+> Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
 In this tutorial, you'll build a Directed Acyclic Graph (DAG) in Data workflows that runs the Azure data factory pipeline from the Apache Airflow UI.
 

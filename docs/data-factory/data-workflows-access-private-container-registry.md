@@ -13,9 +13,7 @@ ms.date: 03/25/2024
 ## Introduction
 
 > [!NOTE]
-> Data workflows is powered by Apache Airflow.
-
-> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Data workflows is powered by Apache Airflow.</br>[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
 This article shows how to add a Kubernetes secret in Apache Airflow environment in Fabric to pull a custom image from an Azure Container Registry.
 
