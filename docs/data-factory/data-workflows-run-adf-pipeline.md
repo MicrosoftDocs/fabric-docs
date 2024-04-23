@@ -1,42 +1,108 @@
 ---
-title: Run Data Factory Pipeline with Data workflows
-description: Learn how to use a data pipeline to copy data from an Azure Blob Storage source to a Lakehouse destination.
-ms.reviewer: jonburchel
-ms.author: jburchel
-author: jonburchel
+title: Run Azure Data Factory Pipeline with Data workflows
+description: Learn to run data factory pipeline in Data workflows
+ms.reviewer: abnarain
+ms.author: abnarain
+author: abnarain
 ms.topic: tutorial
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 04/15/2023
 ---
 
-# Run Data Factory Pipeline with Data workflows
+# Tutorial: Run Azure Data Factory Pipeline with Data workflows
 
-In this tutorial, you'll build a Directed Acyclic Graph(DAG) in Data worflows that triggers the data factory pipeline.
+> [!NOTE]
+> Data workflows is powered by Apache Airflow.
+
+> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+
+In this tutorial, you'll build a Directed Acyclic Graph (DAG) in Data workflows that runs the Azure data factory pipeline from the Apache Airflow UI.
 
 ## Prerequisites
-To get started, you must complete the following prerequisites:
-- - Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
-## Create a data pipeline
-For this tutorial, you c
+To get started, you must complete the following prerequisite:
 
+- Enable Apache Airflow in your Tenant.
+  > [!NOTE]
+  > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
+
+1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow projects (preview)' section.
+2. Click Apply.
+
+   :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
+
+- [Create the "Data Workflow" in the workspace.](../data-factory/create-data-workflows.md)
+
+- [Create the data pipeline in Azure Data Factory.](https://learn.microsoft.com/azure/data-factory/tutorial-copy-data-portal)
+
+- [Create the Service Principal](https://learn.microsoft.com/entra/identity-platform/howto-create-service-principal-portal), To run existing ADF pipeline, you need to Grant SPN identity contributor permission to the ADF instance where you are running the pipeline.
 
 ## Create DAG in Data workflows
 
+1. Click on "New DAG file" card -> give the name to the file and Click on "Create" button.
+   :::image type="content" source="media/data-workflows/name-dag-file.png" alt-text="Screenshot to name the DAG file.":::
+
+2. A boilerplate DAG code is presented to you. Edit the file with below contents.
+
+```python
+from datetime import datetime, timedelta
+
+from airflow.models import DAG
+from airflow.providers.microsoft.azure.operators.data_factory import AzureDataFactoryRunPipelineOperator
 
 
+with DAG(
+    dag_id="example_adf_run_pipeline",
+    start_date=datetime(2022, 5, 14),
+    schedule_interval="@daily",
+    catchup=False,
+    default_args={
+        "retries": 1,
+        "retry_delay": timedelta(minutes=3),
+        "azure_data_factory_conn_id": "azure_data_factory_conn_id", #This is a connection created on Airflow UI
+    },
+    default_view="graph",
+) as dag:
 
-Subscription with Azure Data Factory containing data pipelines.
-Steps
-1.	Configure an Azure Data Factory Pipeline named “Pipeline1”.
-2.	Configure the Environment:
-a.	Add “apache-airflow-providers-microsoft-azure” under “Airflow requirements.”
-b.	Click on Apply.
-3.	Set up an Airflow Connection for Azure Data Factory:
-a.	Click on the ‘View Airflow connections’ to see list of all the connections configured and to set up a new one.
-b.	Click on ‘+’ -> Select Connection type: Azure Data Factory -> Fill out the fields:
-c.	Connection Id, Client Id, Secret, Tenant Id, Subscription Id, Resource group name, Factory name.
-d.	To create Service Principal, refer to doc: https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal
-e.	[Note: To run existing ADF pipeline, you need to Grant SPN identity contributor permission to the ADF instance where you are running]
+    run_adf_pipeline = AzureDataFactoryRunPipelineOperator(
+        task_id="run_adf_pipeline",
+        pipeline_name="<Pipeline Name>",
+        parameters={"myParam": "value"},
+    )
+
+    run_adf_pipeline
+```
+
+3. Click on "Save icon".
+   :::image type="content" source="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
+
+## Add Apache Airflow requirement
+
+1. Click on "Settings" Button. Click on "Environment configuration".
+
+2. Add “apache-airflow-providers-microsoft-azure” under “Airflow requirements.”
+
+3. Click "Apply".
+
+:::image type="content" source="media/data-workflows/add-airflow-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
+
+## Create an Apache Airflow connection to connect with Azure Data Factory
+
+1. Click on the ‘View Airflow connections’ to see list of all the connections configured and to set up a new one.
+
+:::image type="content" source="media/data-workflows/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
+
+2. Click on ‘+’ -> Select Connection type: Azure Data Factory -> Fill out the fields: Connection Id, Client Id, Secret, Tenant Id, Subscription Id, Resource group name, Factory name.
+
+3. Click "Save" button.
+
+## Monitor the Data workflow DAG and trigger it from Apache Airflow UI.
+
+1. The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on "Monitor in Apache Airflow" button.
+   :::image type="content" source="media/data-workflows/monitor-dag.png" alt-text="Screenshot to monitor the Airflow DAG.":::
+
+:::image type="content" source="media/data-workflows/loaded-adf-dag.png" alt-text="Screenshot to load Airflow DAG.":::
+
+
+## Related Content
+
+- Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).

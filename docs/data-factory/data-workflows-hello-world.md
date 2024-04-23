@@ -52,12 +52,7 @@ To get started, you must complete the following prerequisite:
 3. Click on "Save icon".
    :::image type="content" source="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
-## Resume the cluster pool
-
-1. Once your DAG file is set up, Click on "Resume Cluster pool". A Dialog box appears click on "Resume". The resuming process might take 2-3 minutes.
-   :::image type="content" source="media/data-workflows/resume-cluster-pool.png" alt-text="Screenshot presents dialog box to resume cluster pool.":::
-
-## Monitor your Data workflow DAG in Apache Airflow
+## Monitor your Data workflow DAG in Apache Airflow UI
 
 1. The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on "Monitor in Apache Airflow" button.
    :::image type="content" source="media/data-workflows/monitor-dag.png" alt-text="Screenshot to monitor the Airflow DAG.":::
@@ -68,3 +63,12 @@ To get started, you must complete the following prerequisite:
 
 Once you're done with your work, you can stop the cluster pool.
 :::image type="content" source="media/data-workflows/stop-cluster-pool.png" alt-text="Screenshot to stop the cluster pool.":::
+
+## Resume the cluster pool
+
+1. When you get back, Click on "Resume Cluster pool". A Dialog box appears click on "Resume". The resuming process might take 2-3 minutes.
+   :::image type="content" source="media/data-workflows/resume-cluster-pool.png" alt-text="Screenshot presents dialog box to resume cluster pool.":::
+
+## Related Content
+
+* Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).
