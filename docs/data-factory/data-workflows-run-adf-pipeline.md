@@ -47,7 +47,7 @@ To get started, you must complete the following prerequisite:
 
 2. A boilerplate DAG code is presented to you. Edit the file with below contents.
 
-```python
+  ```python
   from datetime import datetime, timedelta
 
   from airflow.models import DAG
@@ -74,7 +74,7 @@ To get started, you must complete the following prerequisite:
       )
 
       run_adf_pipeline
-```
+  ```
 
 3. Click on "Save," icon.
 

@@ -9,9 +9,7 @@ ms.date: 04/16/2024
 # What is Data workflows?
 
 > [!NOTE]
-> Data workflows is powered by Apache Airflow.
-
-> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Data workflows is powered by Apache Airflow. [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
 Data workflows is the next gen of Azure Data Factory's Workflow Orchestration Manager.
 Fabric Data Factory offers serverless pipelines for data process orchestration, data movement with 100+ managed connectors, and visual transformations with the mapping data flow.
@@ -38,7 +36,6 @@ Data Workflows in MS Fabric Data Factory offers a range of powerful features, in
 | Pause and Resume TTL | Yes | No |
 | SaaSified Experience - 10 secs to get started - Authoring DAGs - Fabric Free Trial | Yes | No |
 
-
 ## Region availability (public preview)
 
 - Japan West
@@ -63,7 +60,6 @@ Data Workflows in MS Fabric Data Factory offers a range of powerful features, in
 
 > [!NOTE]
 > Changing the Apache Airflow version within an existing IR is not supported. Instead, the recommended solution is to create a new Airflow IR with the desired version
-
 
 ## Related Content
 

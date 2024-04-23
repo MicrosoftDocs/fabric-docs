@@ -30,41 +30,41 @@ For illustration purpose, I create a simple custom operator as python package th
 
 1. Create a file `sample_operator.py` and convert it to Private Package. Refer to the guide: [Creating a package in python](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/modules_management.html#creating-a-package-in-python)
 
-```python
-from airflow.models.baseoperator import BaseOperator
+    ```python
+    from airflow.models.baseoperator import BaseOperator
 
 
-class SampleOperator(BaseOperator):
-    def __init__(self, name: str, **kwargs) -> None:
-        super().__init__(**kwargs)
-        self.name = name
+    class SampleOperator(BaseOperator):
+        def __init__(self, name: str, **kwargs) -> None:
+            super().__init__(**kwargs)
+            self.name = name
 
-    def execute(self, context):
-        message = f"Hello {self.name}"
-        return message
+        def execute(self, context):
+            message = f"Hello {self.name}"
+            return message
 
-```
+    ```
 
 2. Create the Apache Airflow DAG file `sample_dag.py` to test the operator defined in Step 1.
 
-```python
-from datetime import datetime
-from airflow import DAG
+    ```python
+    from datetime import datetime
+    from airflow import DAG
 
-from airflow_operator.sample_operator import SampleOperator
+    from airflow_operator.sample_operator import SampleOperator
 
 
-with DAG(
-   "test-custom-package",
-   tags=["example"]
-   description="A simple tutorial DAG",
-   schedule_interval=None,
-   start_date=datetime(2021, 1, 1),
-) as dag:
-    task = SampleOperator(task_id="sample-task", name="foo_bar")
+    with DAG(
+    "test-custom-package",
+    tags=["example"]
+    description="A simple tutorial DAG",
+    schedule_interval=None,
+    start_date=datetime(2021, 1, 1),
+    ) as dag:
+        task = SampleOperator(task_id="sample-task", name="foo_bar")
 
-    task
-```
+        task
+    ```
 
 3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Data workflows or you can use preconfigured repository(Install-Private-Package)[https://github.com/ambika-garg/Install-Private-Package-Fabric]
 
@@ -74,7 +74,7 @@ with DAG(
 
 * For example, if your private package is located at `/dags/test/private.whl` in a GitHub repo, add the requirement `/opt/airflow/git/<repoName>.git/dags/test/private.whl` to the Airflow environment.
 
-:::image type="content" source="media/data-workflows/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
+    :::image type="content" source="media/data-workflows/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
 
 ## Related Content
 

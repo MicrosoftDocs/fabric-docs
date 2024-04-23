@@ -22,6 +22,7 @@ One of the features of Airflow is the ability to send email notifications and al
 To use email notifications and alerts, you need to set up a (Simple Mail Transfer Protocol) SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Data workflows using Gmail.
 
 ## Prerequisites
+
 * **SMTP server** or service that your can use to send emails.  You need the SMTP host, port, username, and password for your server or service. If you're using Gmail, create an app password for your account.
 
 * An email address that you want to use as the sender of the notifications and alerts. This email address can be the same as your SMTP username, or a different one if your SMTP service allows it.
@@ -53,35 +54,36 @@ To use email notifications and alerts, you need to set up a (Simple Mail Transfe
     | AIRFLOW__SMTP__SMTP_MAIL_FROM   | your_email@gmail.com    |
 
 ## Example: A DAG that sends an email on the DAG Failure.
-```python
-from airflow import DAG
-rom airflow.operators.bash_operator import BashOperator
-from airflow.utils.email import send_emailfrom datetime import datetime
+
+    ```python
+    from airflow import DAG
+    rom airflow.operators.bash_operator import BashOperator
+    from airflow.utils.email import send_emailfrom datetime import datetime
 
 
-default_args = {
-"owner": "airflow",
-"start_date": datetime(2024, 3, 1),
-"email": ["your_email@gmail.com"], # The email address that you want to receive the notifications and alerts
-"email_on_failure": True,
-"email_on_retry": False,
-"retries": 0
-}
+    default_args = {
+    "owner": "airflow",
+    "start_date": datetime(2024, 3, 1),
+    "email": ["your_email@gmail.com"], # The email address that you want to receive the notifications and alerts
+    "email_on_failure": True,
+    "email_on_retry": False,
+    "retries": 0
+    }
 
-with DAG(
-    "email_callback_test",
-    default_args=default_args,
-    schedule_interval=None
-) as dag:
+    with DAG(
+        "email_callback_test",
+        default_args=default_args,
+        schedule_interval=None
+    ) as dag:
 
-fail_task = BashOperator(
-        task_id="fail_task",
-        bash_command="cd fail",
-    )
+    fail_task = BashOperator(
+            task_id="fail_task",
+            bash_command="cd fail",
+        )
 
-fail_task
+    fail_task
 
-```
+    ```
 
 ### Sample Email received from SMTP server.
 
@@ -92,7 +94,7 @@ The email contains the following information:
 * Host: Host Name of Data workflows
 * Mark success: Link that redirects to the Failed DAG state.
 
-:::image type="content" source="media/data-workflows/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::
+    :::image type="content" source="media/data-workflows/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::
 
 ## Related Content
 
