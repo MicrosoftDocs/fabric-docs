@@ -25,7 +25,7 @@ Ready to get started? Read [Create a workspace](create-workspaces.md).
 
 Here are some useful tips about working with workspaces.
 
-- **Pin workspaces** to the top of the workspace flyout list to quickly access your favorite workspaces. Read more about [pin workspaces](create-workspaces.md#pin-workspaces).
+- **Pin workspaces** to the top of the workspace flyout list to quickly access your favorite workspaces. Read more about [pinning workspaces](create-workspaces.md#pin-workspaces).
 - **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer. Read more about [workspace roles](roles-workspaces.md).
 - **Create folders in the workspace**: Organize and manage artifacts in the workspace. Read more about [creating folders in workspaces](workspaces-folders.md).
 - **Navigate to current workspace** from anywhere by selecting the icon on left nav pane. Read more about [current workspace](#current-workspace) in this article.
