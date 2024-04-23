@@ -21,6 +21,6 @@ The Azure AI Search connector supports the following capabilities in Data pipeli
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (-/destination)** | None | Service admin key |
+| **Copy activity (-/destination)** | None <br>On-premises| Service admin key |
 
 To learn more about the copy activity configuration for Azure AI Search in Data pipeline, go to [Configure in a data pipeline copy activity](connector-azure-search-copy-activity.md).
