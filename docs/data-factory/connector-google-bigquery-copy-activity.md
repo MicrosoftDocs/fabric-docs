@@ -37,7 +37,7 @@ The following properties are supported for Google BigQuery under the **Source** 
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an Google BigQuery connection from the connection list. If no connection exists, then create a new Google BigQuery connection by selecting **New**.
+- **Connection**:  Select a Google BigQuery connection from the connection list. If no connection exists, then create a new Google BigQuery connection by selecting **New**.
 - **Use query**: Select from **Table** or **Google SQL**.
     - If you select **Table**:
       - **Table**: Specify the name of the Google BigQuery table. Select the table from the drop-down list or select **Edit** to manually enter it.
