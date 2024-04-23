@@ -22,7 +22,7 @@ Visual Studio (VS) Code is a one of the most popular lightweight source code edi
 
 Prerequisites for the Synapse VS Code extension:
 
-- Install Java Runtime Environment from the [OpenJDK8](https://adoptium.net/temurin/releases/?version=8) website.
+- Install Java Development Kit(JDK) from the [OpenJDK8](https://adoptium.net/temurin/releases/?version=8) website.Please make sure to use the link of JDK, not the JRE one
 - Install [Conda](https://docs.conda.io/en/latest/miniconda.html).
 - Install the [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
@@ -30,7 +30,7 @@ After you have installed the required software, you must update the operating sy
 
 ### Windows
 
-1. Add **JAVA_HOME** to the environment variables and point it to the directory where java 1.8 is installed. For example, if you install JRE at this path `C:\Program Files\Eclipse Adoptium\jre-8.0.402.6-hotspot`, set the *JAVA_HOME* variable value to that path.
+1. Add **JAVA_HOME** to the environment variables and point it to the directory where java 1.8 is installed. For example, if you install JDK at this path `C:\Program Files\Java\jdk-1.8`, set the *JAVA_HOME* variable value to that path.
 
 2. Add both **%JAVA_HOME%/bin** and the **condabin** subfolder of the Conda installation to the system path directory. The *condabin* folder could be in the folder where you installed and in this format `\miniconda3\condsbin`. Open the environment variables and add **%JAVA_HOME%/bin** and **condabin** paths to the **Path** variable.
 
