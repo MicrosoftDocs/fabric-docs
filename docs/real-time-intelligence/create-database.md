@@ -1,6 +1,6 @@
 ---
 title: Create a KQL database
-description: Learn how to create a KQL database in Real-Time Analytics.
+description: Learn how to create a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/05/2023
+ms.date: 04/21/2024
 ms.search.form: KQL Database
 ---
 # Create a KQL database
 
-In Real-Time Analytics, you interact with your data in the context of [Eventhouses](eventhouse.md) (Preview), databases, and tables. A single workspace can hold multiple Eventhouses, an Eventhouse can hold multiple databases, and each database can hold multiple tables.
+In Real-Time Intelligence, you interact with your data in the context of [Eventhouses](eventhouse.md) (Preview), databases, and tables. A single workspace can hold multiple Eventhouses, an Eventhouse can hold multiple databases, and each database can hold multiple tables.
 
 In this article, you learn how to create a new KQL database. Once your KQL database has data, you can proceed to query your data using Kusto Query Language in a KQL queryset.
 
@@ -25,7 +25,7 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
 1. Select **New** > **KQL Database**.
 
-    :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Real-time Analytics workspace that shows the dropdown menu of the ribbon button titled New. The entry titled KQL Database is highlighted.":::
+    :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Real-Time Intelligence workspace that shows the dropdown menu of the ribbon button titled New. The entry titled KQL Database is highlighted.":::
 
 1. Enter your database name, then select **Create**.
 

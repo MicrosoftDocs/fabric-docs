@@ -1,10 +1,10 @@
 items:
-- name: Real-Time Analytics documentation
+- name: Real-Time Intelligence documentation
   href: index.yml
 - name: Overview
   expanded: true
   items:
-  - name: What is Real-Time Analytics?
+  - name: What is Real-Time Intelligence?
     href: overview.md
   - name: Compare with Azure Data Explorer
     href: real-time-intelligence-compare.md
@@ -251,7 +251,7 @@ items:
     href: kql-database-consumption.md
 - name: Analyze and model data
   items:
-  - name: Copilot for Real-Time Analytics
+  - name: Copilot for Real-Time Intelligence
     href: ../get-started/copilot-real-time-analytics.md
   - name: KQL Queryset
     items:

@@ -1,6 +1,6 @@
 ---
 title: Tutorial- Use a notebook with Apache Spark to query a KQL database
-description: Learn how to import and query the NYC GreenTaxi notebook in your Real-time Analytics in Microsoft Fabric environment using Apache Spark.
+description: Learn how to import and query the NYC GreenTaxi notebook in your Real-Time Intelligence in Microsoft Fabric environment using Apache Spark.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/28/2023
+ms.date: 04/21/2024
 ms.search.form: Notebooks
 ---
 # Tutorial: Use a notebook with Apache Spark to query a KQL database
 
-Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
+Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-Time Intelligence and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
 Specifically, you learn how to:
 
@@ -33,7 +33,7 @@ Specifically, you learn how to:
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
 2. Select the **KQL Database** tile.
 
-    :::image type="content" source="media/jupyter-notebook/kql-database-tile.png" alt-text="Screenshot of new KQL database tile in Real-Time Analytics.":::
+    :::image type="content" source="media/jupyter-notebook/kql-database-tile.png" alt-text="Screenshot of new KQL database tile in Real-Time Intelligence.":::
 
 3. In the **KQL Database name** field, enter *nycGreenTaxi*, then select **Create**.
 

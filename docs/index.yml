@@ -270,12 +270,12 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Synapse Real-Time Analytics
+    - title: Synapse Real-Time Intelligence
 
       imageSrc: ./media/synapse-real-time-intelligence-icon.png
       links:
         - url: real-time-intelligence/overview.md
-          text: What is Real-Time Analytics?
+          text: What is Real-Time Intelligence?
         - url: real-time-intelligence/event-streams/overview.md
           text: What is Fabric event streams?
         - url: real-time-intelligence/create-database.md

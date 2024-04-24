@@ -1,6 +1,6 @@
 ---
 title: Get data from OneLake
-description: Learn how to get data from OneLake into a KQL database in Real-Time Analytics.
+description: Learn how to get data from OneLake into a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/28/2023
+ms.date: 04/21/2024
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -80,7 +80,7 @@ Optionally:
 
 * Select **Command viewer** to view and copy the automatic commands generated from your inputs.
 * Use the **Schema definition file** dropdown to change the file that the schema is inferred from.
-* Change the automatically inferred data format by selecting the desired format from the dropdown. For more information, see [Data formats supported by Real-Time Analytics](ingestion-supported-formats.md).
+* Change the automatically inferred data format by selecting the desired format from the dropdown. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
 * [Edit columns](#edit-columns).
 * Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
 

@@ -1,6 +1,6 @@
 ---
 title: Create an empty table
-description: Learn how to create an empty table in Real-Time Analytics.
+description: Learn how to create an empty table in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/06/2023
+ms.date: 04/21/2024
 ms.search.form: Create a table
 ---
 # Create an empty table
@@ -27,11 +27,11 @@ You can create an empty table without a data source to use as a testing environm
 1. Browse to your desired KQL database.
 1. Select **+New** > **Table**.
 
-    :::image type="content" source="media/empty-table/new-table.png" alt-text="Screenshot of lower ribbon that shows the dropdown menu of the New button in Real-Time analytics. The dropdown option titled Table is highlighted.":::
+    :::image type="content" source="media/empty-table/new-table.png" alt-text="Screenshot of lower ribbon that shows the dropdown menu of the New button in Real-Time Intelligence. The dropdown option titled Table is highlighted.":::
 
 1. Enter a name for your table.
 
-    :::image type="content" source="media/empty-table/table-name.png" alt-text="Screenshot of the Destination tab in the new table wizard in Real-Time Analytics. The table name is highlighted.":::
+    :::image type="content" source="media/empty-table/table-name.png" alt-text="Screenshot of the Destination tab in the new table wizard in Real-Time Intelligence. The table name is highlighted.":::
 
     > [!NOTE]
     > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
@@ -43,7 +43,7 @@ You can create an empty table without a data source to use as a testing environm
 1. By default, the **Source type** is set to **None**. If you select **None**, you can manually define the table schema.
 1. Select **Next: Schema**.
 
-:::image type="content" source="media/empty-table/table-source.png" alt-text="Screenshot of the Source tab that shows that the source type is set to None in the new table wizard in Real-Time Analytics.":::
+:::image type="content" source="media/empty-table/table-source.png" alt-text="Screenshot of the Source tab that shows that the source type is set to None in the new table wizard in Real-Time Intelligence.":::
 
 ### Schema
 
@@ -63,7 +63,7 @@ The partial data preview is automatically inferred based on your data.
 
 To add a new column, select **Add new column** under **Partial data preview**.
 
-:::image type="content" source="media/empty-table/schema-new-column.png" alt-text="Screenshot of the Schema tab in the new table wizard in Real-Time Analytics. The Add new column button is highlighted." lightbox="media/empty-table/schema-new-column.png":::
+:::image type="content" source="media/empty-table/schema-new-column.png" alt-text="Screenshot of the Schema tab in the new table wizard in Real-Time Intelligence. The Add new column button is highlighted." lightbox="media/empty-table/schema-new-column.png":::
 
 ##### Edit columns
 
@@ -73,7 +73,7 @@ To add a new column, select **Add new column** under **Partial data preview**.
 
 1. Select **Save** to add the columns to your table.
 
-    :::image type="content" source="media/empty-table/edit-columns.png" alt-text="Screenshot of  the Edit columns window showing filled column names and their data type in the new table wizard in Real-Time Analytics." lightbox="media/empty-table/edit-columns.png":::
+    :::image type="content" source="media/empty-table/edit-columns.png" alt-text="Screenshot of  the Edit columns window showing filled column names and their data type in the new table wizard in Real-Time Intelligence." lightbox="media/empty-table/edit-columns.png":::
 
     The Partial data preview  reflects the added columns:
 
@@ -88,7 +88,7 @@ To add a new column, select **Add new column** under **Partial data preview**.
 
 In the **Create table completed** window, the empty table is marked with a green check mark to indicate that it was created successfully.
 
-:::image type="content" source="media/empty-table/table-summary.png" alt-text="Screenshot of the Summary tab that shows that the table was created successfully in Real-Time Analytics.":::
+:::image type="content" source="media/empty-table/table-summary.png" alt-text="Screenshot of the Summary tab that shows that the table was created successfully in Real-Time Intelligence.":::
 
 ## Related content
 
