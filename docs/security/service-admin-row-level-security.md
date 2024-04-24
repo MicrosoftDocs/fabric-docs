@@ -17,9 +17,9 @@ no-loc: [Copilot]
 
 Row-level security (RLS) with Power BI can be used to restrict data access for given users. Filters restrict data access at the row level, and you can define filters within roles. In the Power BI service, users with access to a workspace have access to semantic models in that workspace. RLS only restricts data access for users with **Viewer** permissions. It doesn't apply to Admins, Members, or Contributors.
 
-You can configure RLS for data models imported into Power BI with Power BI. You can also configure RLS on semantic models that are using DirectQuery, such as SQL Server. For Analysis Services or Azure Analysis Services lives connections, you configure Row-level security in the model, not in Power BI. The security option doesn't show up for live connection semantic models.
+You can configure RLS for data models imported into Power BI with Power BI. You can also configure RLS on semantic models that are using DirectQuery, such as SQL Server. For Analysis Services or Azure Analysis Services lives connections, you configure row-level security in the model, not in Power BI. The security option doesn't show up for live connection semantic models.
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/row-level-security-desktop-define-roles.md)]
+[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-desktop-define-roles.md)]
 
 By default, row-level security filtering uses single-directional filters, whether the relationships are set to single direction or bi-directional. You can manually enable bi-directional cross-filtering with row-level security by selecting the relationship and checking the **Apply security filter in both directions** checkbox. Note that if a table takes part in multiple bi-directional relationships you can only select this option for one of those relationships. Select this option when you've also implemented dynamic row-level security at the server level, where row-level security is based on username or login ID.
 
@@ -68,7 +68,7 @@ To define security roles using the enhanced row-level security editor:
 
 9. Select **Save**
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/row-level-security-desktop-view-as-roles.md)]
+[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-desktop-view-as-roles.md)]
 
 ## Manage security on your model
 

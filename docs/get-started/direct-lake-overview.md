@@ -70,7 +70,7 @@ For **Fabric trial** capacities, the trial user has the admin privileges necessa
 
 1. Expand **Power BI workloads**, and then in the **XMLA Endpoint** setting, select **Read Write**.
 
-    :::image type="content" source="media/direct-lake-overview/fabric-enable-xmla-readwrite.png" alt-text="Screenshot of the XMLA Endpoint read-write setting for a Fabric trial capacity.":::
+    :::image type="content" source="media/direct-lake-overview/fabric-enable-xmla-read-write.png" alt-text="Screenshot of the XMLA Endpoint read-write setting for a Fabric trial capacity.":::
 
 Keep in mind, the XMLA Endpoint setting applies to all workspaces and models assigned to the capacity.
 

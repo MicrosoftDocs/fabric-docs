@@ -67,7 +67,7 @@ landingContent:
           - text: Lakehouse SQL endpoints
             url: ../data-engineering/lakehouse-sql-analytics-endpoint.md
           - text: Direct lake
-            url: ../get-started/direct-lake-overview                        
+            url: ../get-started/direct-lake-overview.md                       
       - linkListType: reference
         links:            
           - text: Azure service tags
