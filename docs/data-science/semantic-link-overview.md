@@ -29,7 +29,7 @@ The data flow starts with semantic models that contain data and semantic informa
 :::image type="content" source="media/semantic-link-overview/data-flow-with-semantic-link.png" alt-text="A diagram that shows data flow from Power BI to notebooks in Synapse Data Science and back to Power BI.":::
 
 With semantic link, you can use semantic models from Power BI in the Data Science experience to perform tasks such as in-depth statistical analysis and predictive modeling with machine learning techniques.
-The output of your data science work can be stored in [OneLake](../onelake/onelake-overview.md) using Apache Spark and ingested into Power BI using [Direct Lake](/power-bi/enterprise/directlake-overview).
+The output of your data science work can be stored in [OneLake](../onelake/onelake-overview.md) using Apache Spark and ingested into Power BI using [Direct Lake](../get-started/direct-lake-overview.md).
 
 ## Power BI connectivity
 

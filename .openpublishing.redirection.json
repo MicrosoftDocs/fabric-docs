@@ -246,6 +246,11 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/data-engineering/lakehouse-pbi-reporting.md",
+          "redirect_url": "/fabric/get-started/lakehouse-power-bi-reporting",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/data-factory/connector-sharepoint-online-list-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-sharepoint-online-list",
           "redirect_document_id": false
@@ -484,11 +489,6 @@
           "source_path_from_root": "/docs/real-time-analytics/data-profile.md",
           "redirect_url": "/fabric/real-time-analytics/create-database",
           "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/data-engineering/lakehouse-pbi-reporting.md",
-          "redirect_url": "/fabric/get-started/lakehouse-pbi-reporting",
-          "redirect_document_id": true
         }   
     ]
 }

@@ -121,4 +121,4 @@ Microsoft Fabric users can access [Data Science workloads](../../data-science/da
 - [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
 - [Model data in the default Power BI semantic model in Microsoft Fabric](../../data-warehouse/model-default-power-bi-dataset.md)
 - [What is the SQL analytics endpoint for a Lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake](/power-bi/enterprise/directlake-overview)
+- [Direct Lake](../../get-started/direct-lake-overview.md)
