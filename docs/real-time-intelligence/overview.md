@@ -57,7 +57,7 @@ Real-Time Intelligence in Microsoft Fabric offers capabilities that, in
 combination, enable the creation of Real-Time Intelligence solutions in
 support of business and engineering processes.
 
-:::image type="content" source="media/overview/overview-schematic.png" alt-text="Schematic image of the architecture of Real-Time Intelligence in Microsoft Fabric." lightbox="media/overview/overview-schematic.png" outline=none:::
+:::image type="content" source="media/overview/overview-schematic.png" alt-text="Schematic image of the architecture of Real-Time Intelligence in Microsoft Fabric." lightbox="media/overview/overview-schematic.png" border=none:::
 
 -   The Real-Time hub is a centralized catalog that allows you to easily
     access, add, explore, and share data within your organization,
@@ -85,9 +85,9 @@ support of business and engineering processes.
     you set up Reflex triggers from various parts of Fabric to react to
     data patterns or conditions in real-time.
 
-###  How do you interact with the components of Real-Time Intelligence?
+##  How do you interact with the components of Real-Time Intelligence?
 
-### Discover streaming data 
+### Discover streaming data
 
 The Real-Time hub is used to discover and manage your streaming data.
 Real-Time hub events is a catalog of data in motion, and contains:
@@ -109,7 +109,7 @@ Real-Time hub events is a catalog of data in motion, and contains:
 This data is all presented in a readily consumable format and is
 available to all Fabric workloads.
 
-## Connect to streaming data
+### Connect to streaming data
 
 Event streams are the Fabric platform way to capture, transform, and
 route high volumes of real-time events to various destinations with a
@@ -118,7 +118,7 @@ destinations, including a wide range of connectors to external sources,
 for example: Apache Kafka clusters, database change data capture feeds,
 AWS streaming sources (Kinesis), Google (GCP Pub/Sub).
 
-## Process data streams
+### Process data streams
 
 By using the event processing capabilities in Event streams, you can do
 filtering, data cleansing, transformation, windowed aggregations, and
