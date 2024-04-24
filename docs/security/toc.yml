@@ -35,6 +35,8 @@ items:
       href: security-managed-private-endpoints-overview.md
     - name: Create managed private endpoints
       href: security-managed-private-endpoints-create.md
+    - name: Add Power BI URLs to your allowlist
+      href: power-bi-allow-list-urls.md
     - name: Workspace identity
       href: workspace-identity.md
     - name: Trusted workspace access
@@ -45,6 +47,12 @@ items:
     href: security-b2b.md
   - name: Customer Lockbox
     href: security-lockbox.md
+- name: Power BI security
+  items:
+  - name: Row-level security
+    href: service-admin-rls.md 
+- name: Object-level security
+  href: service-admin-ols.md 
 - name: Reliability
   items:
   - name: Reliability in Microsoft Fabric
