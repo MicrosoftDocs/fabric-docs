@@ -37,13 +37,13 @@ Here's an overview of everything you find in the two different modes:
 
    ![A screenshot of creating a new eventstream.](media/edit-publish/new.png)
 
-1. On the next screen, select **Add external source** and then select **Azure Event Hub** to stream your data to Fabric event streams.
+1. On the next screen, select **Add external source** to stream your data to Fabric event streams.
 
    ![A screenshot of selecting Add external source.](media/edit-publish/build.png)
 
-1. Select **Azure Event Hubs** as your data source and input the necessary event hub details to link it with your Fabric eventstreams.
+1. Select **Azure Event Hub** as your data source and input the necessary event hub details to link it with your Fabric eventstreams.
 
-   ![A screenshot of connecting to Event Hubs.](media/edit-publish/connect.png)
+   ![A screenshot of connecting to Event Hub.](media/edit-publish/connect.png)
 
 1. When you're done, select **Add** to finish the setup and add the Azure Event Hubs source to your Fabric eventstream.
 
