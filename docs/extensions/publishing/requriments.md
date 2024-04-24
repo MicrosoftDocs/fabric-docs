@@ -67,6 +67,12 @@ Make sure they are identical to the SaaS offer metadata
 | **SaaS in Azure Marketplace** | For your SaaS offer to be listed on Azure Marketplace, it must be primarily platformed on Microsoft Azure. | SaaS submission, Azure Requirmenets, Functional | [More information about the SaaS Azure Requirmenets](https://learn.microsoft.com/legal/marketplace/certification-policies#10001-value-proposition-and-offer-requirements) |
 
 # Compliance requirements
+| **Requirement Category** | **Detailed Description** | **Applicable Domain**  | **Reference Links**  |
+| -- | -- | -- | -- |
+| **ISO 27001:2013** | Your Fabric workload must comply with ISO 27001:2013. | Compliance, Security | [More information about the ISO 27001:2013](https://www.iso.org/contents/data/standard/05/45/54534.html) |
+| **SOC 2 Type 2** | Your Fabric workload must comply with ISOC 2 Type 2. | Compliance, Security | [More information about the SOC 2 Type 2] |
+| **Optional recommended compliance** | If applicable, your Fabric is recommnded to comply with the FedRAMP High, HITRUST certifications, PCI DSS level 1. | Compliance, Security | [More information about the SOC 2 Type 2] |
+ 
 
-TODO
+
 
