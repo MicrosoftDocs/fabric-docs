@@ -42,7 +42,7 @@ If you're an existing Power BI user, you can skip to [Start the Fabric trial](#s
 
 ## Users who are new to Power BI
 
-The Fabric trial requires a per-user license. Navigate to https://app.fabric.microsoft.com to sign up for a Fabric (Free) license. Once you have the free license, start the Fabric trial. For the duration of the trial, that license is upgraded to PPU.
+The Fabric trial requires a per-user license. Navigate to https://app.fabric.microsoft.com to sign up for a Fabric (Free) license. Once you have the free license, start the Fabric trial. During the trial, that license is upgraded to PPU.
 
 You may already have a license and not realize it. For example, some versions of Microsoft 365 include a Fabric (Free) or Power BI Pro license. Open Fabric (app.fabric.microsoft.com) and select your Account manager to see if you already have a license, and which license it is. Read on to see how to open your Account manager. 
 
@@ -60,7 +60,7 @@ Follow these steps to start your Fabric trial.
 
 3. If prompted, agree to the terms and then select **Start trial**.
 
-4. Once your trial capacity is ready, you receive a confirmation message. Select **Got it** to begin working in Fabric. You are now the Capacity administrator for that trial capacity. To learn how to share your trial capacity using workspaces, see [Share trial capacities](#share-trial-capacities)
+4. Once your trial capacity is ready, you receive a confirmation message. Select **Got it** to begin working in Fabric. You're now the Capacity administrator for that trial capacity. To learn how to share your trial capacity using workspaces, see [Share trial capacities](#share-trial-capacities)
 
 5. Open your Account manager again. Notice that you now have a heading for **Trial status**. Your Account manager keeps track of the number of days remaining in your trial. You also see the countdown in your Fabric menu bar when you work in a product workload.
 
