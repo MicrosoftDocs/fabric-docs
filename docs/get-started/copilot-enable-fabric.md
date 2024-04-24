@@ -33,3 +33,4 @@ See the article [Overview of Copilot in Fabric and Power BI](copilot-fabric-over
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
 - [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
 - [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
+- [Copilot in Power BI](/power-bi/create-reports/copilot-introduction)
