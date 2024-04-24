@@ -31,7 +31,7 @@ For testing your workload follow [these instructions?????]
 [??? open the repositorey for everyone ]
 
 ## Step 2: Comply to the requirmenets
-In order to pass all validation checks and increase chances for your worklload to be displayed publicly in the Fabric Workload Hubm your workload should comply with the following functional and design [requirmenets](./requriments.md)
+In order to pass all validation checks and display it publicly in the Fabric Workload Hub, your workload must comply with the following functional and design [requirmenets](./requriments.md)
 
 
 ## Step 3: Create an Azure  Marketplace Lisitng 
@@ -63,7 +63,7 @@ The SaaS offer linked to the Fabric Workload must meet all requirements defined 
 
 
 
-### 3.1. SaaS public link 
+### 3.1. Link your SaaS offer to Worklod nuget package
 The SaaS offer must be live in Azure Marketplace and has at least one public plan. The nuget package manifest should comepletly and accuretly define the public SaaS URL linked to the Workload manifest.
 
 ## Step 4 Reach out to our Workload Fabric Team
