@@ -83,7 +83,7 @@ The Capacity administrator can assign the trial capacity to multiple workspaces.
 If you're the Capacity administrator, you can assign workspaces to the trial capacity two different ways. 
 
 - [Use the Admin center **Capacity settings**](give-access-workspaces.md). All users with access to those workspaces are now able to use that trial capacity. The Fabric administrator can do this as well.
-    :::image type="content" source="media/fabric-trial/fabric-admin-center.md" alt-text="Screenshot of the Admin center showing Capacity settings selected.":::
+    :::image type="content" source="media/fabric-trial/fabric-admin-portal.png" alt-text="Screenshot of the Admin center showing Capacity settings selected.":::
 
 - [Use Workplace settings](create-workspaces.md).  
 
