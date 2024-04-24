@@ -31,7 +31,7 @@ OneLake standard storage is standard storage that's used to persist and store 
 
 ## Monitor OneLake storage 
 
-The [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md) allows any capacity administrator to monitor OneLake Storage. Learn how to understand the Metrics app storage page in [Understand the metrics app storage](../enterprise/metrics-app-storage-page.md) page.
+The [Microsoft Fabric Capacity Metric app](../../enterprise/metrics-app.md) allows any capacity administrator to monitor OneLake Storage. Learn how to understand the Metrics app storage page in [Understand the metrics app storage](../../enterprise/metrics-app-storage-page.md) page.
 
 ## Important considerations
 Here are a few important points to consider:
@@ -46,15 +46,15 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 Microsoft Fabric lets you pause and resume your capacity. When your capacity isn't operational, you can pause it to enable cost savings for your organization. Later, when you want to resume work on your capacity, you can reactivate it. What does it mean for an eventstream when a capacity is paused/resumed? 
  
-| | Capacity gets paused | Capacity gets resumed |
+| &nbsp; | Capacity gets paused | Capacity gets resumed |
 | --- | -------------- | -------------- | 
 | Active eventstream<br/>The eventstream is actively running | All nodes of the eventstream are paused. In 1-2 mins, data that’s being ingested is paused. <p>If your destination nodes are in a different capacity that wasn’t paused, then those destination nodes are also paused. | Input nodes start the data ingestion and data starts flowing in to the rest of the eventstream. |
 | Inactive eventstream<br/>The eventstream is paused | No effect | No effect. The eventstream has to be resumed/activated manually. |
 
 To understand more about Fabric capacity pause and resume, see the following articles: 
 
-- [Monitor a paused capacity in Microsoft Fabric](../enterprise/monitor-paused-capacity.md)
-- [Pause and resume your capacity in Microsoft Fabric](../enterprise/pause-resume.md)
+- [Monitor a paused capacity in Microsoft Fabric](../../enterprise/monitor-paused-capacity.md)
+- [Pause and resume your capacity in Microsoft Fabric](../../enterprise/pause-resume.md)
 
 ## Related content 
 
