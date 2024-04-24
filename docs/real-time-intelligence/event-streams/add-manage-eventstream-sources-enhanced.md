@@ -38,8 +38,6 @@ Fabric event streams with enhanced capabilities support the following sources. U
 - [Sample data](add-source-sample-data-enhanced.md)
 - [Custom endpoint](add-source-custom-app-enhanced.md) 
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 
 ## Related content
 
