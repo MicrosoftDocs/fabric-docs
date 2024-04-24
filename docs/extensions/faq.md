@@ -37,6 +37,7 @@ https://microsofteur-my.sharepoint.com/:b:/g/personal/litaltal_microsoft_com/Ebm
 ## How can I share a preview version with my customer before submitting to Marketplace?
 ## Is there any default EULA and terms of use that I can use?
 ## Do I need to submit an Azure Marketplace SaaS offer before reaching out to the team?
+## What should I do if I already have a SaaS offer? How can I link it to the Faberic Workload nuget package?
 ## What buisness model should I choose for my SaaS offer?
 
 
