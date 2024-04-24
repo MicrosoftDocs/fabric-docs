@@ -17,11 +17,11 @@ The integration of the Real-Time hub feature within Fabric event streams further
 
 ## Concepts
 
-- An **eventstream** is an item within your Fabric workspace that allows you to ingest, transform, and route data streams to various destinations in Fabric.
+- **Eventstream** is an item within your Fabric workspace that allows you to ingest, transform, and route data streams to various destinations in Fabric.
 
 - A **stream** is a continuous and unbounded flow of data events. When data events flow into Fabric event streams, the stream forms inside Fabric event streams to represent the data events. There are two kinds of streams in Fabric event streams:
 
-  - **Default stream**: Every Fabric event streams item comes with a default stream that's automatically generated once a streaming source is added to the eventstream. It represents the raw events coming from the streaming source. You can transform and route the default stream to multiple destinations in Fabric. You can view the default stream from the Real-Time hub.
+  - **Default stream**. Every Fabric event streams item comes with a default stream that's automatically generated once a streaming source is added to the eventstream. It represents the raw events coming from the streaming source. You can transform and route the default stream to multiple destinations in Fabric. You can view the default stream from the Real-Time hub.
 
   - **Derived stream** is a specialized type of destination within Fabric event streams that's created following the addition of a series of stream operations, such as **Filter** or **Manage Fields**. The derived stream represents the transformed default stream following stream processing. You can also route the derived stream to multiple destinations in Fabric. Once created, you can view the derived stream from the Real-Time hub.
 

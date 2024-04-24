@@ -13,7 +13,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to edit and publish a Microsoft Fabric eventstream.
 
-Fabric event streams offers two distinct modes, **Edit mode** and **Live view**, to provide flexibility and control over your data streams. If you create a new eventstream with the Real-Time hub feature enabled, you can modify your eventstreams in **Edit mode** and design stream processing operations for your data streams by using a no-code editor. Once you're done, you can publish your eventstreams and visualize how your eventstreams start streaming and processing data in **Live view**.
+Fabric event streams offers two distinct modes, **Edit mode** and **Live view**, to provide flexibility and control over your data streams. If you create a new eventstream with enhanced capabilities enabled, you can modify your eventstreams in **Edit mode** and design stream processing operations for your data streams by using a no-code editor. Once you're done, you can publish your eventstreams and visualize how your eventstreams start streaming and processing data in **Live view**.
 
 Here's an overview of everything you find in the two different modes:
 
@@ -27,7 +27,7 @@ Here's an overview of everything you find in the two different modes:
 
 **Live view:**
 
-- You can visualize how your eventstreams stream, transform your eventstreams, and route your data streams to various destinations after you publish the changes.
+- You can visualize how your eventstreams receive, transform, and route your events to various destinations after you publish the changes.
 
 - You can pause the flow of data on any selected sources and destinations, providing you with more control over your data streams.
 
@@ -75,6 +75,7 @@ The following steps show how you can add event processing operations and a desti
 
    ![A screenshot of seeing real-time data from the new eventstream.](media/edit-publish/preview.png)
 
+## Related content
 
 - [New capabilities in Microsoft Fabric event streams](new-capabilities.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)
