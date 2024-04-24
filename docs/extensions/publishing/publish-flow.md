@@ -72,7 +72,8 @@ reach out to our team for opting in to the public preview
 mailto: FabricWorkloadSubmission@microsoft.com
 Include in your email:
 * Workload extension package
-* Final SaaS success submission email from Partner Ceneter
+> [!NOTE]
+Either the publisher of SaaS offer shoud be the same publisher who reach out to us via emial, OR the email domain of the engineering contact in the SaaS offer (in offer listing page) should match the email domain of the publisher reaching out to us with the nuget package. 
 
 ## Step 5 Preview and publish your workload
 After your package passed validation you will recieve an email from the team, and you will be able to preview your workload with specifdic tenanst or publicly publish it to all tenants through the "Workload" page in the admin portal that will be vailable only for ISVs who passed validation and out in to PuPr.
