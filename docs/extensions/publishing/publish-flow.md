@@ -17,6 +17,7 @@ The Fabric Workload Hub serves as a marketplace. Users can browse, explore and m
 The hub is structured with two main views:
 
 **My Workloads:** This view lists the workloads that have been added by the user or others within the organization, including built-in workloads that are part of Fabric.
+
 **More Workloads:** This view showcases all available workloads that can be added to Fabric.
 
 Publishing your workload to the Fabric Workload Hub involves several key steps to ensure a smooth and successful process. Below is a step by step flow with additional details to guide you through each stage. Review all steps before you start developing your workload and make sure you comply with all of the mandatory requirmenets.
