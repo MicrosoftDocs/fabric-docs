@@ -10,7 +10,7 @@ ms.date: 04/17/2024
 ---
 
 # Intro
-The Fabric Workload Hub serves as a marketplace users can browse, explore and manage workloads within Fabric. Workloads are categorized into two groups: Core Fabric workloads and those developed by Microsoft partners.
+The Fabric Workload Hub serves as a marketplace. Users can browse, explore and manage workloads within Fabric. Workloads are categorized into two groups: Core Fabric workloads and those developed by Microsoft partners.
 
 The hub is structured with two main views:
 
@@ -22,7 +22,7 @@ Publishing your workload to the Fabric Workload Hub involves several key steps t
 ## Step 1: Develop and Test Your Workload
 Ensure your workload is compatible with the Fabric Extensibility framework and prepare your branding materials for listing.
 Find this comprehensive [guide](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/README.md) that covers everything you need to know to create your own custom Fabric workload.
-For testing your workload follow these instructions.
+For testing your workload follow [these instructions?????]
 
 
 
@@ -62,15 +62,15 @@ Note that choosing both options at the same time:
 
 
 ### 3.1. SaaS public link 
-Add the public link of SaaS offer to your .nupkg. 
+Add the Azure Marketplace SaaS public link to your .nupkg.
 
 ## Step 4 Reach out to our Workload Fabric Team
 Once you have a public SaaS link in Azure Marketplace and the nuget packge and workload complies to the above requirmenets, 
 reach out to our team for opting in to the public preview
 mailto: FabricWorkloadSubmission@microsoft.com
 Include in your email:
-* Workload extension
-* Final Success submission email from Partner Ceneter
+* Workload extension package
+* Final SaaS success submission email from Partner Ceneter
 
 
    
