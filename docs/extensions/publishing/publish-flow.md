@@ -30,10 +30,11 @@ For testing your workload follow [these instructions?????]
 In order to pass all validation checks your workload should comply with the following functional and design requirmenets:
 
 ### 2.1. Fabric requirements
-Your nuget package should comply to the following requirmenets
+Your Fabric Workload nuget package must follow Fabric Workload [nuget guidelines and requirmenets] 
 ### 2.2. Design requirements
-Your Fabric Workload must follow Fabric Workload [design guidelines] 
+Your Fabric Workload must follow Fabric Workload [design guidelines and requirmenets] 
 ### 2.3. Compliance requirmenets
+Your Fabric Workload must follow Fabric Workload [complaince guidelines and requirmenets] 
 ### 2.4. Privacy requirmenets
 
 ## Step 3: Create an Azure  Marketplace Lisitng 
