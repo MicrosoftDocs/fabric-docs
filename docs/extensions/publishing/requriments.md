@@ -73,6 +73,7 @@ Make sure they are identical to the SaaS offer metadata
 | -- | -- | -- | -- |
 | **SaaS in Azure Marketplace** | For your SaaS offer to be listed on Azure Marketplace, it must be primarily platformed on Microsoft Azure. | SaaS submission, Azure Requirmenets, Functional | [More information about the SaaS Azure Requirmenets](https://learn.microsoft.com/legal/marketplace/certification-policies#10001-value-proposition-and-offer-requirements) |
 | **OneLake** | OneLake is the hart to store data within Fabric. Extensions need to integarte with it to store data in the standard formats supported by the platform that other services can take advantage of it. | Functional | [More information about the OneLake](https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview) |
+| **Multi Tenant / Multi Region** | tbd |  |
 
 # Compliance requirements
 | **Requirement Category** | **Detailed Description** | **Applicable Domain**  | **Reference Links**  |
