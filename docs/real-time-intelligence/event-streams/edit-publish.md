@@ -71,7 +71,7 @@ The following steps show how you can add event processing operations and a desti
 
    ![A screenshot of publishing the eventstream.](media/edit-publish/publish.png)
 
-   This action switches your eventstreamsfrom **Edit** mode to **Live** view, initiating real-time data processing.
+   This action switches your eventstream from **Edit** mode to **Live** view, initiating real-time data processing.
 
    ![A screenshot of seeing real-time data from the new eventstream.](media/edit-publish/preview.png)
 
