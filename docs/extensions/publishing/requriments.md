@@ -77,9 +77,11 @@ Make sure they are identical to the SaaS offer metadata
 # Compliance requirements
 | **Requirement Category** | **Detailed Description** | **Applicable Domain**  | **Reference Links**  |
 | -- | -- | -- | -- |
+| **Terms & Conditions** | You need to provide your customers with Terms and conditions for the offer you provide on the platform. In these Terms you also need to highlightthe compliancy aspects of your soltuion (e.g. what happens to data at Rest vs. Transit. Where are the services avaialable that you provide to Azure customers, ...)  | [More information on Fabric Compliancy](https://learn.microsoft.com/en-us/fabric/governance/governance-compliance-overview) |
 | **ISO 27001:2013** | Your Fabric workload must comply with ISO 27001:2013. | Compliance, Security | [More information about the ISO 27001:2013](https://www.iso.org/contents/data/standard/05/45/54534.html) |
-| **SOC 2 Type 2** | Your Fabric workload must comply with ISOC 2 Type 2. | Compliance, Security | [More information about the SOC 2 Type 2] |
-| **Optional recommended compliance** | If applicable, your Fabric is recommnded to comply with the FedRAMP High, HITRUST certifications, PCI DSS level 1. | Compliance, Security | [More information about the SOC 2 Type 2] |
+| **SOC 2 Type 2** | Your Fabric workload should comply with SOC 2 Type 2. | Compliance, Security | [More information about the SOC 2 Type 2] |
+| **Optional/recommended certifications** | If applicable to your customers you want to align with addtional certifications Fabric provides today.   | Compliance, Security | [Fabric Certifications](https://learn.microsoft.com/en-us/fabric/governance/governance-compliance-overview) |
+
  
 
 
