@@ -10,6 +10,8 @@ ms.date: 04/17/2024
 ---
 
 # Intro
+This document is about publishing a workload extension to Fabric Hub. to learn more about Fabric and workloads find these articles.
+
 The Fabric Workload Hub serves as a marketplace. Users can browse, explore and manage workloads within Fabric. Workloads are categorized into two groups: Core Fabric workloads and those developed by Microsoft partners.
 
 The hub is structured with two main views:
@@ -18,6 +20,8 @@ The hub is structured with two main views:
 **More Workloads:** This view showcases all available workloads that can be added to Fabric.
 
 Publishing your workload to the Fabric Workload Hub involves several key steps to ensure a smooth and successful process. Below is a step by step flow with additional details to guide you through each stage. Review all steps before you start developing your workload and make sure you comply with all of the mandatory requirmenets.
+
+
 
 ## Step 1: Develop and Test Your Workload
 Ensure your workload is compatible with the Fabric Extensibility framework and prepare your branding materials for listing.
