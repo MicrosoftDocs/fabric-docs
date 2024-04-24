@@ -22,7 +22,7 @@ Infrastructure level security, compliance and governance is managed by expert ad
 | **Requirement Category** | **Detailed Description** | **Applicable Domain**  | **Reference Links**  |
 | -- | -- | -- | -- |
 | **Singificant value** | Your offers must provide enough value to justify the investment it takes to learn and use them. Your offer should provide significant benefits such as enhanced efficiency, innovative features, or strategic advantages. | Functional, SaaS Submission | [More information about offer value](https://learn.microsoft.com/legal/marketplace/certification-policies#1008-significant-value) |
-| **Trials** | We expect that partners are providing an easy and fast trial experience on the platform. This experience should be available without waiting time and give the customer a free and easy way to explore the offered workload. |  |  |
+| **Trials** | We expect that partners are providing an easy and fast trial experience on the platform. This experience should be available to the customer without waiting time (less than 5 seconds) and give the them a free and easy way to explore the offered workload. |  |  |
 | **Monetization** | Partners need to enlist a SaaS - offer within the Azure Marketplace. This offer can just be a contact-us listing to get leads from the platform. Idealy we expect partners to also transact over the Marketplace. In addtion they can build Bring your own License (BYOL) capabilities into their integration. |  |  |
 
 # Design requirements
