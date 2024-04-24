@@ -31,7 +31,7 @@ For testing your workload follow [these instructions?????]
 [??? open the repositorey for everyone ]
 
 ## Step 2: Comply to the requirmenets
-In order to pass all validation checks your workload should comply with the following functional and design [requirmenets](./requriments.md)
+In order to pass all validation checks and increase chances for your worklload to be displayed publicly in the Fabric Workload Hubm your workload should comply with the following functional and design [requirmenets](./requriments.md)
 
 
 ## Step 3: Create an Azure  Marketplace Lisitng 
