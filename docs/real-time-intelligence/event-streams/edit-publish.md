@@ -33,13 +33,13 @@ Here's an overview of everything you find in the two different modes:
 
 ## Create a new eventstream
 
-1. Switch your Power BI experience to **Real-time Analytics** and select **Fabric event streams** to create a new eventstream. Make sure the **OneRiver (Preview)** option is enabled.
+1. Switch your Power BI experience to **Real-time Analytics** and select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/edit-publish/new.png)
 
-1. On the **Get started** page, select **Get events** to stream your data to Fabric event streams.
+1. On the next screen, select **Add external source** and then select **Azure Event Hub** to stream your data to Fabric event streams.
 
-   ![A screenshot of building a pipe.](media/edit-publish/build.png)
+   ![A screenshot of selecting Add external source.](media/edit-publish/build.png)
 
 1. Select **Azure Event Hubs** as your data source and input the necessary event hub details to link it with your Fabric eventstreams.
 
