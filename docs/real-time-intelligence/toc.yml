@@ -81,7 +81,7 @@ items:
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations-enhanced.md      
       - name: Derived stream 
-        href: event-streams/add-destination-stream.md
+        href: event-streams/add-destination-derived-stream.md
       - name: KQL Database
         href: event-streams/add-destination-kql-database-enhanced.md
       - name: Lakehouse

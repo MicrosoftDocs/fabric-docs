@@ -4,35 +4,41 @@ description: Learn about external event sources in an eventstream with enhanced 
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
-ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 04/23/2024
+ms.topic: how-to
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
-# External event sources in an eventstream (preview)
+# Add and manage an event source in an eventstream (preview)
+Once you created an eventstream, you can connect it to various data sources and destinations. In this article, you learn about the event sources that you can add to an eventstream with enhanced capabilities that are in preview. 
 
-This article describes enhanced external event sources that are in preview for Microsoft Fabric event streams.
+## Prerequisites
 
-Fabric event streams not only lets you stream data from Microsoft sources but also supports ingestion from third-party platforms like Google Cloud and Amazon Kinesis with new messaging connectors. This expanded capability offers seamless integration of external data streams into Fabric, providing greater flexibility and enabling real-time insights from multiple sources. The following list shows supported Fabric event streams sources:
+Before you start, you must complete the following prerequisites:
 
-- Confluent Cloud Kafka
-- Amazon Kinesis Data Streams
-- Azure SQL DB (CDC)
-- PostgreSQL DB (CDC)
-- Azure Cosmos DB (CDC) coming soon
-- MySQL DB (CDC) coming soon
-- Google Cloud Pub/Sub coming soon
+- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
 
-> [!NOTE]
-> 
-> - MySQL and Google Cloud Pub/Sub aren't yet available for preview.
-> - Data preview on source nodes isn't supported yet.
-> - A temporary warning might appear immediately after you add a source. This false alarm will last about 30 seconds and then disappear. You can select **Refresh** on the ribbon to dismiss the warning.
+There are prerequisites specific to each source that are documented in the source-specific articles.
+
+## Supported sources
+
+Fabric event streams with enhanced capabilities support the following sources. Use links in the table to navigate to articles that provide more details about adding specific sources.
+
+- [Azure Event Hubs](add-source-azure-event-hubs-enhanced.md)
+- [Azure IoT Hub](add-source-azure-iot-hub-enhanced.md)
+- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
+- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
+- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
+- [Azure Cosmos DB CDC](add-source-azure-cosmos-db-change-data-capture.md)
+- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md)
+- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
+- [Confluent Cloud Kafka](add-source-confluent-kafka.md)
+- [Fabric workspace events](add-source-fabric-workspace.md)
+- [Azure blob storage events](add-source-azure-blob-storage.md)
+- [Sample data](add-source-sample-data-enhanced.md)
+- [Custom endpoint](add-source-custom-app-enhanced.md) 
 
 ## Related content
 
-- [Create and manage an eventstream](create-manage-an-eventstream.md)
-- [Add and manage a destination in an eventstream](add-manage-eventstream-destinations.md)
+- [Create and manage an eventstream](./create-manage-an-eventstream-enhanced.md)
+- [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations-enhanced.md)
