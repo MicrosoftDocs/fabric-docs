@@ -19,7 +19,7 @@ The MySQL database connector is supported in Data Factory for [!INCLUDE [product
 
 For information on how to connect to a MySQL database in Dataflow Gen2, go to [Set up your MySQL database connection](connector-mysql-database.md).
 
-## Support in data pipelines
+## Support in Data pipeline
 
 The MySQL database connector supports the following capabilities in Data pipeline:
 
@@ -28,4 +28,4 @@ The MySQL database connector supports the following capabilities in Data pipelin
 | **Copy activity (source/-)** | None <br>On-premises | Basic |
 | **Lookup activity** | None <br>On-premises | Basic |
 
-To learn more about the copy activity configuration for MySQL database in Data pipeline, go to [Configure in a data pipeline copy activity](connector-mysql-database-copy-activity.md).
+To learn more about the copy activity configuration for MySQL database in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-mysql-database-copy-activity.md).
