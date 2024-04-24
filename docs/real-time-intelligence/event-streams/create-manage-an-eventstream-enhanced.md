@@ -34,11 +34,10 @@ You can create an eventstream on the **Workspace** page, the **Real-Time Analyti
 
    - On the **Create hub** page, select the **Eventstream** tile:
 
-       :::image type="content" source="./media/create-manage-an-eventstream-enhanced/create-event-stream-dialog-box.png" alt-text="Screenshot showing the New eventstream dialog box." lightbox="./media/create-manage-an-eventstream-enhanced/create-event-stream-dialog-box.png" :::
+       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the Eventstream tile on the Create hub page." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
 1. Enter a **name** for the new eventstream and select **Enhanced Capabilities (preview)** checkbox, and then select **Create**. 
 
-   :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-naming.png" alt-text="Screenshot showing where to enter the eventstream name on the New Eventstream screen." :::
-
+    :::image type="content" source="./media/create-manage-an-eventstream-enhanced/create-event-stream-dialog-box.png" alt-text="Screenshot showing the New eventstream dialog box." lightbox="./media/create-manage-an-eventstream-enhanced/create-event-stream-dialog-box.png" :::
 1. Creation of the new eventstream in your workspace can take a few seconds. After the eventstream is created, you're directed to the main editor where you can start with adding sources to the eventstream. 
 
    :::image type="content" source="./media/create-manage-an-eventstream-enhanced/editor.png" alt-text="Screenshot showing the editor." lightbox="./media/create-manage-an-eventstream-enhanced/editor.png" :::
