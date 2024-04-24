@@ -262,7 +262,8 @@ The execution result from the root notebook is as follows:
 :::image type="content" source="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png" alt-text="Screenshot of reference a list of notebooks with parameters." lightbox="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png":::
 
 > [!NOTE]
-> The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
+> - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
+> - You can use no more than 50 notebook activities in ```msspakrutils.notebook.runMultiple()```.
 
 ### Exit a notebook
 
