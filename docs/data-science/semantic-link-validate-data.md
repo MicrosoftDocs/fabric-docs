@@ -34,6 +34,11 @@ In this article, you'll use semantic link to:
 - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
 - [!INCLUDE [sempy-notebook-installation](includes/sempy-notebook-installation.md)]
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+- Semantic link is available in the default runtime when using Fabric, and there is no need to install it. If you want to be sure you are using the most updated version of semantic link you can run the command:
+
+` ` ` python
+%pip install -U semantic-link
+` ` ` 
 
 ## Find functional dependencies in data
 
