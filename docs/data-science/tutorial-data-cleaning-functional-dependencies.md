@@ -40,11 +40,11 @@ The [data_cleaning_functional_dependencies_tutorial.ipynb](https://github.com/mi
 
 In this section, you set up a notebook environment with the necessary modules and data.
 
-1. Install `SemPy` from PyPI, using the `%pip` in-line installation capability within the notebook:
+1. Semantic link is available in the default runtime when using Fabric, and there is no need to install it. If you want to be sure you are using the most updated version of semantic link you can run the command:
 
-    ```python
-    %pip install semantic-link
-    ```
+` ` ` python
+%pip install -U semantic-link
+` ` ` 
 
 1. Perform necessary imports of modules that you'll need later:
 
