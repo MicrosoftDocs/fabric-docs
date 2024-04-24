@@ -16,11 +16,12 @@ ms.search.form: semantic link
 
 This article covers semantic functions and how they can help data scientists and data engineers discover functions that are relevant to the FabricDataFrame or FabricSeries on which they're working.
 
-To use semantic functions, install the `SemPy` Python library in your notebook kernel by executing this code in a notebook cell:
+Semantic functions are available in the default runtime when using Fabric, and there is no need to install it. If you want to be sure you are using the most updated version of semantic link you can run the command:
 
-```python
-%pip install semantic-link
-```
+` ` ` python
+%pip install -U semantic-link
+` ` ` 
+
 
 [FabricDataFrames](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) dynamically expose semantic functions based on logic defined by each function.
 For example, the `is_holiday` function shows up in the autocomplete suggestions when you're working on a FabricDataFrame containing both a datetime column and a country column.
