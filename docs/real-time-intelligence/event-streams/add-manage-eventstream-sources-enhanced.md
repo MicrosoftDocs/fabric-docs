@@ -1,6 +1,6 @@
 ---
-title: External eventstream sources (preview)
-description: Learn about external event sources in an eventstream with enhanced capabilities that are in preview.
+title: Add and manage eventstream sources (preview)
+description: Learn how to add and manage an event source in an eventstream with enhanced capabilities that are in preview. 
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
