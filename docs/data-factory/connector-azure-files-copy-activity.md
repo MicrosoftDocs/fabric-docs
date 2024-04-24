@@ -13,7 +13,7 @@ ms.custom:
 
 # Configure Azure Files in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Files.
+This article outlines how to use the copy activity in Data pipeline to copy data from and to Azure Files.
 
 ## Supported format
 
@@ -51,7 +51,7 @@ The following properties are supported for Azure Files under the **Source** tab 
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an Azure File Storage connection from the connection list. If no connection exists, then create a new Azure File Storage connection by selecting **New**.
+- **Connection**:  Select an Azure Files connection from the connection list. If no connection exists, then create a new Azure Files connection by selecting **New**.
 - **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, **List of files** as your file path type. The configuration of each setting is:
 
   - **File path**: If you choose this type, the data can be copied from the folder/file path specified previously.
@@ -120,7 +120,7 @@ The following properties are supported for Azure Files under the **Destination**
 The following properties are **required**:
 
 - **Data store type:** Select **External**.
-- **Connection:** Select an Azure File Storage connection from the connection list. If the connection doesn't exist, then create a new Azure File Storage connection by selecting **New**.
+- **Connection:** Select an Azure Files connection from the connection list. If the connection doesn't exist, then create a new Azure Files connection by selecting **New**.
 - **File path**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
 - **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
