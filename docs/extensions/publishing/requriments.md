@@ -32,6 +32,11 @@ There are two different resources you can leverage to get familar with the Desig
 
  * [Figma File](https://www.figma.com/file/jC5Qmzuazv7TKTRVndOmOZ/Item-creation-guidance?type=design&node-id=1516-354449&mode=design&t=fT3hdhjk8nVNh4UR-0) Provides additonal context and guidelines on the different intaction flows within Fabric. 
 
+| **Requirement Category** | **Detailed Description** | **Applicable Domain**  | **Reference Links**  |
+| -- | -- | -- | -- |
+| **Loading Times** |  Users in fabric are expecting that the UX is loading fast. This is also a requriment for extension workloads. Independent of the technical implementation and regional hosting the extension should load fast within all Regions Fabric customers are able to use it. |  |  |
+
+
 
 # non-Functional and SaaS Submission Requirements
 
