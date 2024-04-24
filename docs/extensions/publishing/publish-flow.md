@@ -24,18 +24,9 @@ Ensure your workload is compatible with the Fabric Extensibility framework and p
 Find this comprehensive [guide](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/README.md) that covers everything you need to know to create your own custom Fabric workload.
 For testing your workload follow [these instructions?????]
 
+## Step 2: Comply to the requirmenets
+In order to pass all validation checks your workload should comply with the following functional and design [requirmenets](./requriments.md)
 
-
-## Step 2: Comply to the functional requirmenets
-In order to pass all validation checks your workload should comply with the following functional and design requirmenets:
-
-### 2.1. Fabric requirements
-Your Fabric Workload nuget package must follow Fabric Workload [nuget guidelines and requirmenets] 
-### 2.2. Design requirements
-Your Fabric Workload must follow Fabric Workload [design guidelines and requirmenets] 
-### 2.3. Compliance requirmenets
-Your Fabric Workload must follow Fabric Workload [complaince guidelines and requirmenets] 
-### 2.4. Privacy requirmenets
 
 ## Step 3: Create an Azure  Marketplace Lisitng 
 
