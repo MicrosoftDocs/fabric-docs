@@ -125,7 +125,7 @@ To retain your Fabric items, before your trial ends, [purchase Fabric](https://a
 
 ### Cancel your Fabric trial - non admins
 
-[MH]What does this look like for sharees? When they are added to a ws in trial capacity, and open their account manager, what do they see?  Does the "days left" match the Capacity administrator's? Can they "Cancel trial" and, if so, what exactly happens since i'm assuming only the Cap admin can fully cancel the trial. 
+
 
 ### Cancel the Fabric trial - Capacity admins
 
