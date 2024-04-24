@@ -28,6 +28,7 @@ Publishing your workload to the Fabric Workload Hub involves several key steps t
 Ensure your workload is compatible with the Fabric Extensibility framework and prepare your branding materials for listing.
 Find this comprehensive [guide](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/README.md) that covers everything you need to know to create your own custom Fabric workload.
 For testing your workload follow [these instructions?????]
+[??? open the repositorey for everyone ]
 
 ## Step 2: Comply to the requirmenets
 In order to pass all validation checks your workload should comply with the following functional and design [requirmenets](./requriments.md)
