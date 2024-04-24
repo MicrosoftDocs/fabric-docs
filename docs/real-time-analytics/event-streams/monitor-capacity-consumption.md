@@ -48,7 +48,7 @@ Microsoft Fabric lets you pause and resume your capacity. When your capacity isn
  
 | &nbsp; | Capacity gets paused | Capacity gets resumed |
 | --- | -------------- | -------------- | 
-| Active eventstream<br/>The eventstream is actively running | All nodes of the eventstream are paused. In 1-2 mins, data that’s being ingested is paused. <p>If your destination nodes are in a different capacity that wasn’t paused, then those destination nodes are also paused. | Input nodes start the data ingestion and data starts flowing in to the rest of the eventstream. |
+| Active eventstream<br/>The eventstream is actively running | All nodes of the eventstream are paused. In 1-2 mins, data that’s being ingested is paused. <p>If your destination nodes are in a different capacity that wasn’t paused, then those destination nodes are also paused.</p> | Input nodes start the data ingestion and data starts flowing in to the rest of the eventstream. |
 | Inactive eventstream<br/>The eventstream is paused | No effect | No effect. The eventstream has to be resumed/activated manually. |
 
 To understand more about Fabric capacity pause and resume, see the following articles: 
