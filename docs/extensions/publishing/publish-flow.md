@@ -32,6 +32,7 @@ In order to pass all validation checks your workload should comply with the foll
 ### 2.1. Fabric requirements
 Your nuget package should comply to the following requirmenets
 ### 2.2. Design requirements
+Your Fabric Workload must follow Fabric Workload [design guidelines] 
 ### 2.3. Compliance requirmenets
 ### 2.4. Privacy requirmenets
 
