@@ -57,7 +57,7 @@ Real-Time Intelligence in Microsoft Fabric offers capabilities that, in
 combination, enable the creation of Real-Time Intelligence solutions in
 support of business and engineering processes.
 
-:::image type="content" source="media/overview/overview-schematic.png" alt-text="Schematic image of the architecture of Real-Time Intelligence in Microsoft Fabric." lightbox="media/overview/overview-schematic.png" border="none":::
+:::image type="content" source="media/overview/overview-schematic.png" alt-text="Diagram of the architecture of Real-Time Intelligence in Microsoft Fabric." lightbox="media/overview/overview-schematic.png" border="none":::
 
 -   The Real-Time hub is a centralized catalog that allows you to easily
     access, add, explore, and share data within your organization,
