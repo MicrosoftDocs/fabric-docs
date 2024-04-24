@@ -74,6 +74,9 @@ Include in your email:
 * Workload extension package
 * Final SaaS success submission email from Partner Ceneter
 
-
+## Step 5 Preview and publish your workload
+After your package passed validation you will recieve an email from the team, and you will be able to preview your workload with specifdic tenanst or publicly publish it to all tenants through the "Workload" page in the admin portal that will be vailable only for ISVs who passed validation and out in to PuPr.
+[??? should we add a screenshots???]
+[???? explain about versioning: when should they update the verstion, when should they update the muget or SaaS offer ??]
    
     
