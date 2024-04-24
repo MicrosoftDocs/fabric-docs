@@ -56,7 +56,7 @@ items:
   - name: Copilot in Fabric overview
     href: copilot-fabric-overview.md
   - name: Enable Copilot in Fabric
-    href: copilot-fabric-enable.md
+    href: copilot-enable-fabric.md
   - name: Copilot in Fabric FAQ
     href: copilot-faq-fabric.yml
   - name: Privacy, security, and responsible use for Copilot in Fabric
@@ -85,6 +85,18 @@ items:
     href: copilot-real-time-analytics.md
   - name: Copilot in Fabric Consumption
     href: copilot-fabric-consumption.md
+- name: Direct Lake
+  items:
+  - name: Direct Lake overview
+    href: directlake-overview.md
+  - name: Create a Lakehouse for Direct Lake
+    href: directlake-create-lakehouse.md
+  - name: Specify a fixed identity
+    href: directlake-fixed-identity.md
+  - name: Analyze query processing
+    href: directlake-analyze-query-processing.md
+  - name: Direct Lake mode and PBI reporting
+    href: lakehouse-pbi-reporting.md
 - name: Promote or certify items
   href: endorsement-promote-certify.md
 - name: Share items

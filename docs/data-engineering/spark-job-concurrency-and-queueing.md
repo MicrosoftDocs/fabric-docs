@@ -62,8 +62,11 @@ Fabric Spark throttling doesn't have enforced arbitrary jobs-based limits, and t
 The job admission by default will be an optimistic admission control, where the jobs are admitted based on their minimum cores requirement. Learn more about the optimistic job admission [Job Admission and Management](job-admission-management.md)
 If the default pool (Starter Pool) option is selected for the workspace, the following table lists the max concurrency job limits.
 
-Learn more about the default starter pool configurations based on the Fabric Capacity SKU [Configuring Starter Pools](configure-starter-pools.md)
+Learn more about the default starter pool configurations based on the Fabric Capacity SKU [Configuring Starter Pools](configure-starter-pools.md).
 
+## Job level bursting 
+
+Admins can configure their Spark pools to utilize the max spark cores with burst factor available for the entire capacity. For example a workspace admin having their workspace attached to a F46 Fabric capacity can now configure their Spark pool (Starter pool or Custom pool) to 364 Spark VCores, where the max nodes of Starter pools can be set to 48 or admins can set up an XX Large node size pool with 6 max nodes. 
 
 ## Related content
 

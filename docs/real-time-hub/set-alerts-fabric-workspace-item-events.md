@@ -36,14 +36,17 @@ On the **Set alert** page, follow these steps:
 
 1. In the **Monitor** section, choose **Select events**.
 1. In the **Get events** wizard, do these steps:
-    1. On the **Connect** page, do these steps:
-        1. For **Event types**, select the events that you want to monitor.
-        1. In the **Set filters** section, select **+ Filter** to a filter based on a field.
-        1. Select **Next**. 
-    1. On the **Configure trigger** page, do these optional steps:
-        1. In the **Set filters** section, select **+ Filter** to a filter based on a field.
-        1. Select **Next**. 
-    1. On the **Review and create** page, review the settings, and select **Create source**. 
+    1. For **Event types**, select event types that you want to monitor.
+    
+        :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/event-types.png" alt-text="Screenshot that shows the event types for Fabric workspace item events.":::
+    1. For **Workspaces**, select the Fabric workspace.
+    
+        :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/select-workspace.png" alt-text="Screenshot that shows the Connect page for Fabric workspace item events with a Fabric workspace selected." lightbox="./media/set-alerts-fabric-workspace-item-events/select-workspace.png":::
+    1. In the **Set filters** section, select **+ Filter** to a filter based on a field.
+    1. Select **Next**. 
+    1. On the **Review and create** page, review the settings, and select **Save**. 
+    
+        :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/review-create-page.png" alt-text="Screenshot that shows the Review and create page in the Get events wizard for Fabric workspace item events.":::        
 1. For **Condition**, select one of the following options:
     1. If you want to monitor each event with no condition, select **On each event**. 
 1. For **Action**, select one of the following options:
@@ -53,7 +56,9 @@ On the **Set alert** page, follow these steps:
 1. In the **Save location** section, do these steps: 
     1. For **Workspace**, select the workspace where you want to save the alert. 
     1. For **Reflex item**, select an existing Reflex item or create a Reflex item for this alert. 
+1. Select **Create** at the bottom of the page to create the alert. 
 
+    :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/create-alert.png" alt-text="Screenshot that shows the Set alert page with all fields selected.":::        
 ## Related content
 
 - [Set alerts on Azure blob storage events](set-alerts-azure-blob-storage-events.md)
