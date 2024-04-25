@@ -11,11 +11,11 @@ ms.date: 04/22/2024
 
 1. On the **Select a data source** screen, select **Azure SQL DB (CDC)**.
 
-   ![A screenshot of selecting Azure SQL DB (CDC).](media/amazon-kinesis-data-streams-connector/select-external-source.png)
+   ![A screenshot of selecting Azure SQL DB (CDC).](media/azure-sql-database-cdc-source-connector/select-external-source.png)
 
 1. On the **Connect** screen, enter the **Connection settings** and **Connection credentials** for your Azure SQL database.
 
-   ![A screenshot of the Connect screen.](media/amazon-kinesis-data-streams-connector/connect.png)
+   ![A screenshot of the Connect screen.](media/azure-sql-database-cdc-source-connector/connect.png)
 
    - **Server:** Enter the Azure SQL server name from the Azure portal.
    - **Database:** Enter the Azure SQL database name from the Azure portal.
@@ -25,7 +25,7 @@ ms.date: 04/22/2024
 
 1. Select **Connect**.
 
-   ![A screenshot showing the second half of the Connect screen and the Connect button.](media/amazon-kinesis-data-streams-connector/select-connect.png)
+   ![A screenshot showing the second half of the Connect screen and the Connect button.](media/azure-sql-database-cdc-source-connector/select-connect.png)
 
 1. Select **Next**. On the **Review and create** screen, review the summary and then select **Add**. You can see the Azure SQL DB (CDC) source added to your eventstream in the editor.
 
