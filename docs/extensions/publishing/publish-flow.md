@@ -10,7 +10,7 @@ ms.date: 04/17/2024
 ---
 
 # Intro
-This document is about publishing a workload extension to Fabric Hub. to learn more about Fabric and workloads find these articles.
+This document is about publishing a workload extension to Fabric Hub. to learn more about Fabric and workloads [find these articles ???](????????????????).
 
 The Fabric Workload Hub serves as a marketplace. Users can browse, explore and manage workloads within Fabric. Workloads are categorized into two groups: Core Fabric workloads and those developed by Microsoft partners.
 
