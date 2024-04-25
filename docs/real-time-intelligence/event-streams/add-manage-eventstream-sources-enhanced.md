@@ -40,12 +40,6 @@ Fabric event streams with enhanced capabilities support the following sources. E
 - [Sample data](add-source-sample-data-enhanced.md)
 - [Custom endpoint](add-source-custom-app-enhanced.md) 
 
-## Preview issues and known limitations
-
-- MySQL Database CDC and Google Cloud Pub/Sub aren't yet available for preview.
-- Data preview on source nodes isn't supported yet.
-- A temporary warning might be shown immediately after you add a source. This false alarm lasts about 30 seconds and then disappears. You can select **Refresh** to end it.
-
 ## Related content
 
 - [Create and manage an eventstream](./create-manage-an-eventstream-enhanced.md)
