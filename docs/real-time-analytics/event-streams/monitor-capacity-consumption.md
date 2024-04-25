@@ -51,7 +51,7 @@ What happened to Eventstream when a capacity is paused/resumed?
 | Eventstream status | Capacity gets paused | Capacity gets resumed |
 | --- | -------------- | -------------- | 
 | Active | All Eventstream sources and destinations are paused. In 1-2 mins, data that’s being ingested is paused. <p>Note that if your destination nodes are in a different capacity that has not been paused, those destination nodes will also be paused.</p> | All Eventstream sources and destinations start data ingestion, followed by the data flowing into the rest of the Eventstream. |
-| Inactive eventstream<br/>The eventstream is paused | No effect | No effect. The eventstream has to be resumed/activated manually. |
+| Inactive | No effect | No effect. The eventstream has to be resumed/activated manually. |
 
 To understand more about Fabric capacity pause and resume, see the following articles: 
 
