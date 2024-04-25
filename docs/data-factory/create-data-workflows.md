@@ -3,7 +3,7 @@ title: Create a Data workflows project in Microsoft Fabric
 description: This tutorial helps you create a Data workflows in Microsoft Fabric.
 ms.reviewer: abnarain
 ms.author: abnarain
-author: abnarain
+author: nabhishek
 ms.topic: quickstart
 # ms.custom:
 #   - ignite-2023
@@ -15,25 +15,21 @@ ms.date: 03/25/2024
 ## Introduction
 
 > [!NOTE]
-> Data workflows is powered by Apache Airflow.
+> Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+Data workflows provides a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease. In this quickstart, you create your first Data workflow and run a Directed Acyclic Graph (DAG) to familiarize yourself with the environment and functionalities of Data workflows.
 
-Data workflows is a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease.
-
-This tutorial provides step-by-step instructions to create a Data workflows in Microsoft Fabric.
-
-## Prerequisite
+## Prerequisites
 * Enable Apache Airflow in your Tenant.
-> [!NOTE]
-> Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
+   > [!NOTE]
+   > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
 
-1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow projects (preview)' section.
-2. Click Apply.
+   1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow projects (preview)' section.
+   2. Click Apply.
 
    :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
 
-### Step 2: Create a Data workflows
+### Step 1: Create a Data workflows
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Project (preview)
@@ -44,22 +40,22 @@ This tutorial provides step-by-step instructions to create a Data workflows in M
 
 3. Give a suitable name to your project and Click on Create Button.
 
-### Step 3: Configure an Airflow Environment.
+### Step 2: Configure an Airflow Environment.
 
 1. Click on 'Configure Airflow' Card.
 2. Specify the Apache Airflow environment configuration for your DAGs to run against. You can change these settings later as well.
 
-:::image type="content" source="media/data-workflows/configure-airflow-env.png" alt-text="Screenshot to configure Apache Airflow Project.":::
+   :::image type="content" source="media/data-workflows/configure-airflow-env.png" alt-text="Screenshot to configure Apache Airflow Project.":::
 
-* <strong>Compute Node Size:</strong> The size of the compute node you want your Airflow environment to run on.
-* <strong>Enable Autoscale:</strong> Allow your Airflow environment to scale nodes up or down as needed.
-* <strong>Environment variables:</strong> You can use this key value store within Airflow to store and retrieve arbitrary content or settings.
-* <strong>Configuration Overrides:</strong> You can override any Airflow configurations that you set in airflow.cfg. Examples are name: AIRFLOW__VAR__FOO and value: BAR. For more information, see Airflow configurations.
-* <strong>Kubernetes secrets:</strong> You can create a custom Kubernetes secret for your Airflow environment. An example is Private registry credentials to pull images for KubernetesPodOperator.
-* <strong>Enable Triggers:</strong> Allows the Airflow Tasks to run in deferrable mode.
+   * <strong>Compute Node Size:</strong> The size of the compute node you want your Airflow environment to run on.
+   * <strong>Enable Autoscale:</strong> Allow your Airflow environment to scale nodes up or down as needed.
+   * <strong>Environment variables:</strong> You can use this key value store within Airflow to store and retrieve arbitrary content or settings.
+   * <strong>Configuration Overrides:</strong> You can override any Airflow configurations that you set in airflow.cfg. Examples are name: AIRFLOW__VAR__FOO and value: BAR. For more information, see Airflow configurations.
+   * <strong>Kubernetes secrets:</strong> You can create a custom Kubernetes secret for your Airflow environment. An example is Private registry credentials to pull images for KubernetesPodOperator.
+   * <strong>Enable Triggers:</strong> Allows the Airflow Tasks to run in deferrable mode.
 
 
-### Step 4: Synchronize your GitHub Repository
+### Step 3: Synchronize your GitHub Repository
 
 Specify the git repository you want to sync your Data workflows with.
 
@@ -115,7 +111,7 @@ Specify the git repository you want to sync your Data workflows with.
 |    |    └-- *.py
 ```
 
-### Step 5: Start Apache Airflow Environment
+### Step 4: Start Apache Airflow Environment
 
 1. Click on Start Apache Airflow Environment to configure the Airflow Runtime. (It should take about 5 mins for the configuration).
 

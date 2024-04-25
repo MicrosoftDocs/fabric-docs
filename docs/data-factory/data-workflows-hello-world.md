@@ -15,7 +15,7 @@ ms.date: 04/15/2024
 
 In this tutorial, you'll run a hello-world DAG in Data workflows. This tutorial focuses on getting users acquainted with the Data workflows features and environment.
 
-## Prerequisite
+## Prerequisites
 
 To get started, you must complete the following prerequisite:
 
@@ -29,7 +29,7 @@ To get started, you must complete the following prerequisite:
 
         :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
 
-## Create a Data workflows
+### Create a Data workflows
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 
@@ -37,11 +37,11 @@ To get started, you must complete the following prerequisite:
 
    :::image type="content" source="media/data-workflows/more-options.png" alt-text="Screenshot shows click on more options.":::
 
-   :::image type="content" source="media/data-workflows/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow Project.":::
+   :::image type="content" source="media/data-workflows/apache-airflow-project.png" alt-text="Screenshot to select Data Workflow.":::
 
-3. Give a suitable name to your project and Click on the "Create" Button.
+3. Give a suitable name to your project and click on the "Create" button.
 
-## Create a DAG File
+### Create a DAG File
 
 1. Click on "New DAG file" card -> give the name to the file and Click on "Create" button.
 
@@ -55,7 +55,7 @@ To get started, you must complete the following prerequisite:
 
    :::image type="content" source="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
-## Monitor your Data workflow DAG in Apache Airflow UI
+### Monitor your Data workflow DAG in Apache Airflow UI
 
 1. The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on the "Monitor in Apache Airflow" button.
 
@@ -63,17 +63,6 @@ To get started, you must complete the following prerequisite:
 
     :::image type="content" source="media/data-workflows/dag-in-ui.png" alt-text="Screenshot presents the loaded Airflow DAG.":::
 
-## Stop the cluster pool
-
-Once you're done with your work, you can stop the cluster pool.
-
-    :::image type="content" source="media/data-workflows/stop-cluster-pool.png" alt-text="Screenshot to stop the cluster pool.":::
-
-## Resume the cluster pool
-
-1. When you get back, Click on "Resume Cluster pool". A Dialog box appears click on "Resume". The resuming process might take 2-3 minutes.
-
-   :::image type="content" source="media/data-workflows/resume-cluster-pool.png" alt-text="Screenshot presents dialog box to resume cluster pool.":::
 
 ## Related Content
 

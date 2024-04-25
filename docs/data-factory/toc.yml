@@ -687,6 +687,8 @@
             href: data-workflows-set-smtp-server.md
           - name: Add a Kubernetes secret
             href: data-workflows-access-private-container-registry.md
+          - name: Apache Airflow configurations
+            href: data-workflows-supported-apache-airflow-configurations.md
       - name: Tutorials
         items:
           - name: Hello Data workflows
