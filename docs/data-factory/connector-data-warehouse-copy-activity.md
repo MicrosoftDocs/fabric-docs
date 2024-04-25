@@ -133,7 +133,13 @@ By using staged copy, you can copy data from more diverse data sources to Data W
 
 ### Mapping
 
-For the **Mapping** tab configuration, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, if you don't apply Data Warehouse with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+
+If you apply Data Warehouse with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+
+For example, the type for *ID* column in source is int, and you can change it to float type when mapping to the destination column.
+
+:::image type="content" source="media/connector-data-warehouse/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
 ### Settings
 

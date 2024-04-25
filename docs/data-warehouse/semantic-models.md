@@ -113,7 +113,7 @@ The **New Power BI semantic model** button inherits the default semantic model's
 
 To create a Power BI semantic model from a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], follow these steps:
 
-1. Go to the **Data Warehouse** experience in the Fabric portal.
+1. Go to **Data Warehouse** in the Fabric portal.
 
 1. Open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Switch to the **Reporting** ribbon.
 
