@@ -197,6 +197,9 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 ### Reference run multiple notebooks in parallel
 
+> [!IMPORTANT]
+> This feature is in [preview](../get-started/preview.md).
+
 The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the compute resources are shared by the reference notebook runs.
 
 With `mssparkutils.notebook.runMultiple()`, you can:
@@ -263,7 +266,7 @@ The execution result from the root notebook is as follows:
 
 > [!NOTE]
 > - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
-> - You can use no more than 50 notebook activities in ```msspakrutils.notebook.runMultiple()```.
+> - The upper limitation of notebook activities in ``` msspakrutils.notebook.runMultiple() ``` is **50, having more than 50 notebook activities may have stability and performance issues due to compute resource usage**. If you still want to use more notebook activities in the API, you can set the spark settings '*spark.notebookutils.runmultiple.limit*' to a larger value as a workaround. You can set the spark properties in attached Environment or using [%%configure](author-execute-notebook.md#spark-session-configuration-magic-command) command.
 
 ### Exit a notebook
 

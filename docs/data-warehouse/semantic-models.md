@@ -1,10 +1,12 @@
 ---
 title: Default Power BI semantic models
 description: Learn more about default Power BI semantic models in Microsoft Fabric.
-author: chuckles22
-ms.author: chweb
-ms.reviewer: wiassaf, salilkanade
-ms.date: 01/25/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: chweb, salilkanade
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -64,11 +66,11 @@ If you want to change this default behavior, you can:
 
 1. Manually enable the **Sync the default Power BI semantic model** setting for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] in the workspace. This will restart the background sync that will incur some [consumption costs](../onelake/onelake-consumption.md).
 
-    :::image type="content" source="media/semantic-models/default-on.png" alt-text="Screenshot from the Fabric portal showing the setting Sync the default Power BI semantic model is enabled.":::
+    :::image type="content" source="media/semantic-models/default-on.png" alt-text="Screenshot from the Fabric portal showing the setting Sync the default Power BI semantic model is enabled." lightbox="media/semantic-models/default-on.png":::
 
 1. Manually pick tables and views to be added to semantic model through **Manage default Power BI semantic model** in the ribbon or info bar.
 
-    :::image type="content" source="media/semantic-models/default-manage.png" alt-text="Screenshot from the Fabric portal showing the default Manage the semantic model page, and the ability to manually pick more tables.":::
+    :::image type="content" source="media/semantic-models/default-manage.png" alt-text="Screenshot from the Fabric portal showing the default Manage the semantic model page, and the ability to manually pick more tables." lightbox="media/semantic-models/default-manage.png":::
 
 > [!NOTE]
 > In case you are not using the default Power BI semantic model for reporting purposes, manually disable the **Sync the default Power BI semantic model** setting to avoid adding objects automatically. The setting update will ensure that background sync will not get triggered and save on [Onelake consumption costs](../onelake/onelake-consumption.md).
@@ -87,7 +89,7 @@ The default layout for BI-enabled tables persists in the user session and is gen
 
 To access default Power BI semantic models, go to your workspace, and find the semantic model that matches the name of the desired Lakehouse. The default Power BI semantic model follows the naming convention of the Lakehouse.
 
-   :::image type="content" source="media\semantic-models\find-semantic-models.png" alt-text="Screenshot showing where to find a semantic model." lightbox="media\semantic-models\find-semantic-models.png":::
+   :::image type="content" source="media/semantic-models/find-semantic-models.png" alt-text="Screenshot showing where to find a semantic model." lightbox="media/semantic-models/find-semantic-models.png":::
 
 To load the semantic model, select the name of the semantic model.
 

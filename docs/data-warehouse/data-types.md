@@ -1,10 +1,12 @@
 ---
 title: Data types
 description: Learn about the T-SQL data types supported the SQL analytics endpoint and Warehouse in Microsoft Fabric.
-author: cynotebo
-ms.author: cynotebo
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: cynotebo
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -13,9 +15,9 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This artic
 ---
 # Data types in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the most commonly used T-SQL data types. 
+Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the most commonly used T-SQL data types.
 
 - For more information on table creation, see [Tables](tables.md).
 
@@ -34,7 +36,7 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 > [!NOTE]
 > The precision for datetime2 and time is limited to 6 digits of precision on fractions of seconds.
 
-The uniqueidentifier data type is a T-SQL data type, without a matching data type in Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading uniqueidentifier columns, but these values can't be read on the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. Reading uniqueidentifier values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-dw](includes/fabric-se.md)] using a uniqueidentifier column doesn't work as expected.
+The **uniqueidentifier** data type is a T-SQL data type, without a matching data type in Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading **uniqueidentifier** columns, but these values can't be read on the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. Reading **uniqueidentifier** values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-dw](includes/fabric-se.md)] using a **uniqueidentifier** column doesn't work as expected.
 
 For more information about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric). 
 
@@ -44,11 +46,11 @@ For T-SQL data types that aren't currently supported, some alternatives are avai
 
 | **Unsupported data type** | **Alternatives available** |
 |---|---|
-| **money and smallmoney** | Use decimal, however note that it can't store the monetary unit.  |
-| **datetime and smalldatetime** | Use datetime2. |
-| **nchar and nvarchar** | Use char and varchar respectively, as there's no similar unicode data type in Parquet. Char and varchar types in a UTF-8 collation might use more storage than nchar and nvarchar to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](/sql/relational-databases/collations/collation-and-unicode-support?view=fabric&preserve-view=true#storage_differences). |
-| **text and ntext** | Use varchar. |
-| **image** | Use varbinary. |
+| **money** and **smallmoney** | Use **decimal**, however note that it can't store the monetary unit.  |
+| **datetime** and **smalldatetime** | Use **datetime2**. |
+| **nchar** and **nvarchar** | Use **char** and **varchar** respectively, as there's no similar **unicode** data type in Parquet. The **char** and **varchar** types in a UTF-8 collation might use more storage than **nchar** and **nvarchar** to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](/sql/relational-databases/collations/collation-and-unicode-support?view=fabric&preserve-view=true#storage_differences). |
+| **text and ntext** | Use **varchar**. |
+| **image** | Use **varbinary**. |
 
 Unsupported data types can still be used in T-SQL code for variables, or any in-memory use in session. Creating tables or views that persist data on disk with any of these types isn't allowed.
 

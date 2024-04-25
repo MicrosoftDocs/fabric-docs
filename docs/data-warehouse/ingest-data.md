@@ -1,10 +1,12 @@
 ---
 title: Ingesting data into the warehouse
 description: Learn about the features that allow you to ingest data into your warehouse.
-author: periclesrocha
-ms.author: procha
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: procha
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -13,7 +15,7 @@ ms.search.form: Ingesting data # This article's title should not change. If so, 
 ---
 # Ingest data into the Warehouse
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
  [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
 

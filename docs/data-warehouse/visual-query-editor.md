@@ -1,10 +1,12 @@
 ---
 title: Query using the visual query editor
 description: Learn how to use the visual query editor for a no-code experience to create your queries.
-author: prlangad
-ms.author: prlangad
-ms.reviewer: wiassaf
-ms.date: 01/22/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: prlangad
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -29,15 +31,15 @@ Once you've loaded data into your warehouse, you can use the visual query editor
 
 In the ribbon, create a new query using the **New visual query** button, as shown in the following image.
 
-:::image type="content" source="media\visual-query-editor\new-visual-query.png" alt-text="Screenshot showing where to find the New query menu in the Data preview view." lightbox="media\visual-query-editor\new-visual-query.png":::
+:::image type="content" source="media/visual-query-editor/new-visual-query.png" alt-text="Screenshot showing where to find the New query menu in the Data preview view." lightbox="media/visual-query-editor/new-visual-query.png":::
 
 To create a query, drag and drop tables from the **Object explorer** onto the canvas. Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
 
 As you work on your visual query, the queries are automatically saved every few seconds. A "saving indicator" appears in your query tab to indicate that your query is being saved. All workspace users can save their queries in **My queries** folder. However, users in viewer role of the workspace or shared recipients of the warehouse are restricted from moving queries to **Shared queries** folder.
 
-The following animated gif shows the merging of two tables using a no-code visual query editor. 
+The following animated gif shows the merging of two tables using a no-code visual query editor.
 
-:::image type="content" source="media\visual-query-editor\visual-query-editor.gif" alt-text="Animation of the results of a sample query to merge two tables using the visual query editor." lightbox="media\visual-query-editor\visual-query-editor.gif":::
+:::image type="content" source="media/visual-query-editor/visual-query-editor.gif" alt-text="Animation of the results of a sample query to merge two tables using the visual query editor." lightbox="media/visual-query-editor/visual-query-editor.gif":::
 
 The steps shown in the gif are:
 
@@ -52,13 +54,13 @@ The steps shown in the gif are:
 
 You can save your query as a view on which data load is enabled using the **Save as view** button. Select the schema name that you have access to create views, provide name of view and verify the SQL statement before confirming creating view. When view is successfully created, it appears in the **Explorer**.
 
-   :::image type="content" source="media\visual-query-editor\save-as-view.png" alt-text="Screenshot showing how to use Save as view menu in visual query editor." lightbox="media\visual-query-editor\save-as-view.png":::
+:::image type="content" source="media/visual-query-editor/save-as-view.png" alt-text="Screenshot showing how to use Save as view menu in visual query editor." lightbox="media/visual-query-editor/save-as-view.png":::
 
 #### Save as table
 
 You can use **Save as table** to save your query results into a table for the query with load enabled. Select the warehouse in which you would like to save results, select schema that you have access to create tables and provide table name to load results into the table using [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) statement. When table is successfully created, it appears in the **Explorer**.
 
-   :::image type="content" source="media\visual-query-editor\save-as-table.png" alt-text="Screenshot showing how to use Save as table menu in visual query editor." lightbox="media\visual-query-editor\save-as-table.png":::
+:::image type="content" source="media/visual-query-editor/save-as-table.png" alt-text="Screenshot showing how to use Save as table menu in visual query editor." lightbox="media/visual-query-editor/save-as-table.png":::
 
 ## Create a cross-warehouse query in visual query editor
 
@@ -66,7 +68,7 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 
 - To create a cross-warehouse query, drag and drop tables from added warehouses and add merge activity. For example, in the following image example, `store_sales` is added from `sales` warehouse and it's merged with `item` table from `marketing` warehouse.
 
-:::image type="content" source="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png" alt-text="Screenshot of sample cross-warehouse query between sales and marketing database and Power Query activities." lightbox="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png":::
+:::image type="content" source="media/visual-query-editor/cross-warehouse-query-visual-query-editor.png" alt-text="Screenshot of sample cross-warehouse query between sales and marketing database and Power Query activities." lightbox="media/visual-query-editor/cross-warehouse-query-visual-query-editor.png":::
 
 ## Limitations with visual query editor
 

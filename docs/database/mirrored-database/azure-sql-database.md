@@ -4,8 +4,8 @@ description: Learn about the mirrored databases from Azure SQL Database in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
+ms.date: 04/24/2024
 ms.service: fabric
-ms.date: 03/20/2024
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
