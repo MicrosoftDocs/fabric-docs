@@ -25,6 +25,9 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
 
   For other PostgreSQL databases, see [Debezium connector for PostgreSQL :: Debezium Documentation](https://debezium.io/documentation/reference/stable/connectors/postgresql.html#setting-up-postgresql).
 
+>[!NOTE]
+>Multiple tables CDC isn't supported.
+
 ## Enable CDC in your Azure Database for PostgreSQL
 
 To enable CDC in your Azure Database for PostgreSQL, follow these steps based on your deployment type.
@@ -49,8 +52,6 @@ To enable CDC in your Azure Database for PostgreSQL, follow these steps based on
 
 1. Save the changes and restart the server.
 
-## Add Azure Database for PostgreSQL CDC as a source
-
 1. Confirm that your Azure Database for PostgreSQL flexible server instance allows public network traffic.
 
 1. Grant the admin user replication permissions by running the following SQL statement.
@@ -58,6 +59,8 @@ To enable CDC in your Azure Database for PostgreSQL, follow these steps based on
    ```sql
    ALTER ROLE <admin user> WITH REPLICATION;
    ```
+
+## Add Azure Database for PostgreSQL CDC as a source
 
 1. Select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
 

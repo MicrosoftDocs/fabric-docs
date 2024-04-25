@@ -22,6 +22,7 @@ ms.date: 04/22/2024
 
 1. Scroll down, and enter the **Connection credentials** and **Table(s)** for your Azure SQL database.
 
+   - **Connection name**: Automatically generated, or you can enter a new name.
    - **Authentication kind:** Currently, Fabric event streams only supports **Basic** authentication.
    - **Username** and **Password**: Enter the username and password for the database.
    - **Table(s)**: Enter the table name for the new source. The table name should be the full name, for example `dbo.demotable`.
@@ -30,9 +31,5 @@ ms.date: 04/22/2024
 
    ![A screenshot showing the second half of the Connect screen and the Connect button.](media/azure-sql-database-cdc-source-connector/select-connect.png)
 
-1. Select **Next**. On the **Review and create** screen, review the summary and then select **Add**.
-
->[!NOTE]
->- Mirroring shouldn't be enabled in your database.
->- Multiple tables CDC isn't supported.
+1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
 

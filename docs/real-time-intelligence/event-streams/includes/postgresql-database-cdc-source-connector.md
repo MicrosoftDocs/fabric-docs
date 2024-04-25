@@ -27,6 +27,3 @@ ms.date: 04/24/2024
 
 1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
 
->[!NOTE]
->Multiple tables CDC isn't supported.
-

@@ -40,4 +40,4 @@ ms.date: 04/18/2024
 
         :::image type="content" source="./media/confluent-kafka-source-connector/stream-details.png" alt-text="Screenshot that shows the right pane with Stream details section of the Confluent connection settings page. ":::                
 1. Select **Connect**. 
-1. Select **Next**. On the **Review and create** screen, review the summary and then select **Add**.
+1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
