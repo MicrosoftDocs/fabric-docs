@@ -1,19 +1,21 @@
 ---
 title: Data warehouse tutorial - introduction
 description: Learn about the purpose of the tutorial, the end-to-end scenario and architecture, the sample data, and the data model.
-ms.reviewer: wiassaf
-ms.author: scbradl
-author: bradleyschacht
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: scbradl
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
 ---
 
 # Data warehouse tutorial introduction
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [[!INCLUDE [product-name](../includes/product-name.md)]](../get-started/microsoft-fabric-overview.md) provides a one-stop shop for all the analytical needs for every enterprise. It covers the complete spectrum of services including data movement, data lake, data engineering, data integration and data science, real time analytics, and business intelligence. With [!INCLUDE [product-name](../includes/product-name.md)], there's no need to stitch together different services from multiple vendors. Instead, the customer enjoys an end-to-end, highly integrated, single comprehensive product that is easy to understand, onboard, create and operate. No other product on the market offers the breadth, depth, and level of integration that [!INCLUDE [product-name](../includes/product-name.md)] offers. Additionally, [Microsoft Purview](../governance/microsoft-purview-fabric.md) is included by default in every tenant to meet compliance and governance needs.
 
@@ -47,7 +49,7 @@ In this tutorial, you take on the role of a [!INCLUDE [fabric-dw](includes/fabri
 
 ## Data warehouse end-to-end architecture
 
-:::image type="content" source="media\tutorial-introduction\data-warehouse-architecture.png" alt-text="Diagram that shows the data warehouse end to end architecture." lightbox="media\tutorial-introduction\data-warehouse-architecture.png":::
+:::image type="content" source="media/tutorial-introduction/data-warehouse-architecture.png" alt-text="Diagram that shows the data warehouse end to end architecture.":::
 
 **Data sources** - [!INCLUDE [product-name](../includes/product-name.md)] makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data from.
 
@@ -67,11 +69,11 @@ Typically, you would bring data from transactional systems (or line of business 
 
 ## Data model
 
-While the WWI dimensional model contains multiple fact tables, for this tutorial we focus on the Sale Fact table and its related dimensions only, as follows, to demonstrate this end-to-end data warehouse scenario:
+While the WWI dimensional model contains multiple fact tables, for this tutorial we focus on the `fact_sale` table and its related dimensions only, as follows, to demonstrate this end-to-end data warehouse scenario:
 
-:::image type="content" source="media\tutorial-introduction\data-warehouse-data-model.png" alt-text="Diagram that shows the data model you use in this tutorial, which includes the Sale Fact table and its related dimensions." lightbox="media\tutorial-introduction\data-warehouse-data-model.png":::
+:::image type="content" source="media/tutorial-introduction/data-warehouse-data-model.png" alt-text="Diagram that shows the data model you use in this tutorial, which includes the fact_sale table and its related dimensions.":::
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Microsoft [!INCLUDE [product-name](../includes/product-name.md)] workspace](tutorial-create-workspace.md)
+> [Tutorial: Create a Microsoft [!INCLUDE [product-name](../includes/product-name.md)

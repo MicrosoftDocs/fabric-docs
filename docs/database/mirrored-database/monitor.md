@@ -4,8 +4,8 @@ description: Learn about monitoring mirrored database replication in Microsoft F
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
+ms.date: 04/24/2024
 ms.service: fabric
-ms.date: 03/13/2024
 ms.topic: conceptual
 ---
 # Monitor Fabric mirrored database replication
@@ -14,7 +14,7 @@ Once mirroring is configured, visit the **Monitor replication** page to monitor 
 
 The **Monitor replication** pane shows you the current state of the source database replication, with the corresponding statuses of the tables, total rows replicated, and last refresh date/time as well.
 
-:::image type="content" source="media/monitor/monitor-azure-cosmos-db.png" alt-text="Screenshot from the Fabric portal of the Monitor mirror database pane. The status of the source replication and all tables show Running.":::
+:::image type="content" source="media/monitor/monitor-azure-cosmos-db.png" alt-text="Screenshot from the Fabric portal of the Monitor mirror database pane. The status of the source replication and all tables show Running." lightbox="media/monitor/monitor-azure-cosmos-db.png":::
 
 ## Status
 
