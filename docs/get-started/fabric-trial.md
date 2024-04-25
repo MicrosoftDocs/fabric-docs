@@ -12,6 +12,9 @@ ms.date: 04/24/2024
 
 Microsoft Fabric is provided free of charge when you sign up for the Fabric trial. Your use of the Microsoft Fabric trial includes access to the Fabric product workloads and the resources to create and host Fabric items. The Fabric trial lasts for 60 days, but Microsoft can extend it, at our discretion. You'll have the option to request an extension the week before your trial is scheduled to end.
 
+> [!NOTE]
+> If you're ready to purchase Fabric, visit the [Purchase Fabric page.](../enterprise/buy-subscription.md)
+
 When you start a Fabric trial, you get the following features:
 
 * [F64 F SKU subscription](../enterprise/licenses.md#microsoft-fabric-license-types) with full access to all of the Fabric workloads and features.
