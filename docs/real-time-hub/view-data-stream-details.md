@@ -10,6 +10,8 @@ ms.date: 04/03/2024
 # View details of data streams in Fabric Real-Time hub
 You can view details of a data stream by selecting the data stream in the **Data streams** tab of the **Real-Time hub**.  
 
+[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 ## View details of a stream
 On the **Data streams** page, select the stream whose parent is an eventstream.
 

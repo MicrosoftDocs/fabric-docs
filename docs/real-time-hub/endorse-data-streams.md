@@ -15,6 +15,8 @@ You can endorse a stream from one of the following pages:
 - Data streams tab of the Real-time hub
 - Stream details page of a stream
 
+[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 ## From data streams page
 
 You can endorse data in a data stream using the following steps:
