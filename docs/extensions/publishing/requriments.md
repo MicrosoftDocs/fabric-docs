@@ -1,8 +1,8 @@
 ---
-title: Overview of Fabric extensibility requiements 
+title: Fabric Workload Hub Validation Guidlines and Requirements
 description: Learn about the requirments for fabric extensions to be  publish as a workload over the Fabric extensibility platform.
-author: gesaur
-ms.author: gesaur
+author: gesaur, rasala
+ms.author: gesaur, rasala
 ms.reviewer: gesaur
 ms.topic: how-to
 ms.custom:
@@ -66,13 +66,13 @@ Before [publishing your Software as a Service (SaaS) offer on the Azure Marketpl
 # Nuget package requirmenets 
 1. Add all the asssests of the workload such as icons, screenshots videos under fe/assests
 2. For more details about the https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/frontendManifest.md
-3. 
+   
 
-4.  Duplicated fields
-Title, Summary, icon,...
-Make sure they are identical to the SaaS offer metadata
+3.  Meta data must be identical in the Nuget package manifest and the SaaS offer submission in Partner Center.
+Such as: Title, Summary, icon,...
 
-5. Backend part
+4. Frontend requirmenets 
+5. Backend requirmenets
    * Backend information should be filed under be/
 
 # Technical requirements
