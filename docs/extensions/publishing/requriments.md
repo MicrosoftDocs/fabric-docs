@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 04/17/2024
 ---
 
-# Fabric Workload Requirements
+# Fabric Workload Hub Validation Guidlines and Requirements
 This article discribes in details all the functional and non-functional requirmenets that are required for a custom workload to be listed in Fabric Workload Hub. These requirmenets will help you create a new workload with seamless user expereince that will delight your customers. Make sure your workload complies with these requirmenets before you submit your workload to publictiong. 
 
 # Business requirements
