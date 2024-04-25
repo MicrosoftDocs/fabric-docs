@@ -44,7 +44,9 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 ## Capacity pause/resume 
 
-Microsoft Fabric lets you pause and resume your capacity. When your capacity isn't operational, you can pause it to enable cost savings for your organization. Later, when you want to resume work on your capacity, you can reactivate it. What does it mean for an eventstream when a capacity is paused/resumed? 
+Microsoft Fabric allows you to pause and resume your capacity. When your capacity isn't operational, you can pause it to enable cost savings for your organization. Later, when you want to resume work on your capacity, you can reactivate it. 
+
+What happened to Eventstream when a capacity is paused/resumed?
  
 | &nbsp; | Capacity gets paused | Capacity gets resumed |
 | --- | -------------- | -------------- | 
