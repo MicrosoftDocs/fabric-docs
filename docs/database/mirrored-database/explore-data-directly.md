@@ -4,7 +4,7 @@ description: Learn how to access your mirrored database directly from OneLake in
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, anithaa
-ms.date: 03/13/2024
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: how-to
 ---
@@ -49,4 +49,3 @@ You can access mirrored database table data in Delta format files. This tutorial
 - [Explore data in your mirrored database using Microsoft Fabric](explore.md)
 - [Explore data in your mirrored database with notebooks](explore-onelake-shortcut.md)
 - [Connecting to Microsoft OneLake](../../onelake/onelake-access-api.md)
-

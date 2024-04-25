@@ -4,7 +4,7 @@ description: Learn how to explore data in your mirrored databases using Microsof
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, anithaa
-ms.date: 03/13/2024
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: conceptual
 ---
@@ -63,7 +63,7 @@ A well-defined data model is instrumental in driving your analytics and reportin
 Create a report directly from the semantic model (default) in three different ways:
 
 - SQL analytics endpoint editor in the ribbon
-- Data hub in the navigation bar
+- **Data** pane in the navigation bar
 - Semantic model (default) in the workspace
 
 For more information, see [Create reports in the Power BI](../../data-warehouse/reports-power-bi-service.md).
