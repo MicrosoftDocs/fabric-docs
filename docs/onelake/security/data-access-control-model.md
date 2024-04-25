@@ -283,7 +283,7 @@ In Microsoft Fabric, when the user creates a lakehouse, the system also provisio
 
 | **Default Semantic Model Permission** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can see schema in Semantic Model?** | **Can read data in Semantic Model?** |
 |----------|----------|----------|--------------|-------------|
-| Read  | No by default, use OneLake RBAC to grant access. | No | No | Yes by default. Can be restricted with [Power BI object-level security](../../security/service-admin-object-level-security.md?tabs=table) and [Power BI row-Level security](../../security/service-admin-row-level-security.md)  |
+| Read  | No by default, use OneLake RBAC to grant access. | No | No | Yes by default. Can be restricted with [Power BI object-level security](../../security/service-admin-object-level-security.md?tabs=table) and [Power BI row-level security](../../security/service-admin-row-level-security.md)  |
 | Build | Yes by default. Use OneLake RBAC to restrict the access. | Yes | Yes | Yes |
 | Write | Yes | Yes | Yes | Yes |
 | Reshare |  N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own |

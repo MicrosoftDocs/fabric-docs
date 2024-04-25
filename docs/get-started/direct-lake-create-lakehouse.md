@@ -1,6 +1,6 @@
 ---
 title: Learn how to create a lakehouse for Direct Lake in Microsoft Fabric
-description: Describes how to create a Llkehouse for Direct Lake in Microsoft Fabric.
+description: Describes how to create a lakehouse for Direct Lake in Microsoft Fabric.
 author: kfollis
 ms.author: kfollis
 ms.reviewer: ''
@@ -25,7 +25,7 @@ Before getting started creating a lakehouse for Direct Lake, be sure to read [Di
 
 2. In the **New lakehouse** dialog box, enter a name, and then select **Create**. The name can only contain alphanumeric characters and underscores.
 
-    :::image type="content" source="media/direct-lake-create-lakehouse/direct-lake-new-lakehouse.png" border="false" alt-text="Screenshot showing New lakehouse dialog.":::
+    :::image type="content" source="media/direct-lake-create-lakehouse/direct-lake-new-lakehouse.png" border="false" alt-text="Screenshot showing the New lakehouse dialog.":::
 
 3. Verify the new lakehouse is created and opens successfully.
 
@@ -87,7 +87,7 @@ There are multiple options to load data into a lakehouse, including data pipelin
 
 1. Verify all SPARK jobs complete successfully. Expand the SPARK jobs list to view more details.
 
-    :::image type="content" source="media/direct-lake-create-lakehouse/direct-lake-spark-jobs-list.png" border="false" alt-text="Screenshot showing expanded list of Spark jobs.":::
+    :::image type="content" source="media/direct-lake-create-lakehouse/direct-lake-spark-jobs-list.png" border="false" alt-text="Screenshot showing expanded list of SPARK jobs.":::
 
 1. To verify a table has been created successfully, in the upper left area, next to **Tables**, select the ellipsis (**…**), then select **Refresh**, and then expand the **Tables** node.
 
@@ -101,7 +101,7 @@ There are multiple options to load data into a lakehouse, including data pipelin
 
     :::image type="content" source="media/direct-lake-create-lakehouse/direct-lake-new-dataset.png" border="false"  alt-text="Screenshot of the dialog to create a new model.":::
 
-1. Select **Confirm** to generate the Direct Lake model. The model is automatically saved  in the workspace based on the name of your lakehouse, and then opens the model.
+1. Select **Confirm** to generate the Direct Lake model. The model is automatically saved in the workspace based on the name of your lakehouse, and then opens the model.
 
     :::image type="content" source="media/direct-lake-create-lakehouse/direct-lake-open-dataset.png" border="false" alt-text="Screenshot showing open model in Power BI.":::
 

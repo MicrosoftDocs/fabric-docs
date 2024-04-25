@@ -246,12 +246,12 @@
           "redirect_document_id": false
         },
         {
-          "source_path_from_root": "/docs/data-engineering/lakehouse-pbi-reporting.md",
+          "source_path_from_root": "/docs/get-started/lakehouse-pbi-reporting.md",
           "redirect_url": "/fabric/get-started/lakehouse-power-bi-reporting",
           "redirect_document_id": true
         },
         {
-          "source_path_from_root": "/docs/get-started/directlake-analyze-qp.md",
+          "source_path_from_root": "/docs/get-started/directlake-analyze-query-processing.md",
           "redirect_url": "/fabric/get-started/direct-lake-analyze-query-processing",
           "redirect_document_id": true
         },
@@ -271,12 +271,12 @@
           "redirect_document_id": true
         },
         {
-          "source_path_from_root": "/docs/security/admin-service-ols.md",
+          "source_path_from_root": "/docs/security/service-admin-ols.md",
           "redirect_url": "/fabric/security/service-admin-object-level-security",
           "redirect_document_id": true
         },
         {
-          "source_path_from_root": "/docs/security/admin-service-rls.md",
+          "source_path_from_root": "/docs/security/service-admin-rls.md",
           "redirect_url": "/fabric/security/service-admin-row-level-security",
           "redirect_document_id": true
         },
