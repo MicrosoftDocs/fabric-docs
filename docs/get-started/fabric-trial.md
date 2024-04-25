@@ -5,12 +5,12 @@ author: mihart
 ms.author: mihirwagle
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/23/2024
+ms.date: 04/24/2024
 ---
 
 # Microsoft Fabric trial
 
-Microsoft Fabric is provided free of charge when you sign up for the Fabric trial. Your use of the Microsoft Fabric trial includes access to the Fabric product workload and the resources to create and host Fabric items. The Fabric trial lasts for 60 days, but Microsoft can extend it, at our discretion. To learn how to ask for an extension, see [x](xx).
+Microsoft Fabric is provided free of charge when you sign up for the Fabric trial. Your use of the Microsoft Fabric trial includes access to the Fabric product workloads and the resources to create and host Fabric items. The Fabric trial lasts for 60 days, but Microsoft can extend it, at our discretion. You'll have the option to request an extension the week before your trial is scheduled to end.
 
 When you start a Fabric trial, you get the following features:
 
@@ -18,7 +18,7 @@ When you start a Fabric trial, you get the following features:
 
 * OneLake storage up to 1 TB. 
 
-* One trial capacity. Additional trial capacities are available. The maximum number of capacities available per tenant is determined by Microsoft. The person starting the trial becomes the Capacity administrator for that trial capacity. 
+* One trial capacity. The person starting the trial becomes the Capacity administrator for that trial capacity. Additional trial capacities are available. The maximum number of capacities available per tenant is determined by Microsoft.
 
 * The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity. 
 
@@ -76,9 +76,9 @@ In some situations, your Fabric administrator has [enabled Microsoft Fabric for 
 
 Each Fabric trial includes one [F64 trial capacity](../enterprise/licenses.md#microsoft-fabric-license-types). The person who starts the trial becomes the Capacity administrator for only that trial capacity. And that Capacity administrator can share the trial by assigning workspaces to that specific trial capacity.  
 
-Other users on the same tenant can also start a Fabric trial and become the Capacity administrator for their trial capacity. Microsoft sets a limit on the number of trial capacities that can be created on a single tenant. ​So sharing workspaces in trial capacities is essential to allow your colleagues to participate in the Fabric trial.
+Other users on the same tenant can also start a Fabric trial and become the Capacity administrator for their trial capacity. Microsoft sets a limit on the number of trial capacities that can be created on a single tenant. ​So sharing workspaces in trial capacities is essential to allow your colleagues to participate in the Fabric trial. Each Fabric trial capacity can be used by hundreds of users.
 
-The Capacity administrator can assign the trial capacity to multiple workspaces. Anyone with permissions for one of those workspaces now has permissions for the Fabric trial. 
+The Capacity administrator can assign the trial capacity to multiple workspaces. Anyone with access to one of those workspaces now has permissions to start a Fabric trial. 
 
 If you're the Capacity administrator, you can assign workspaces to the trial capacity two different ways. 
 
@@ -101,7 +101,7 @@ If you're a Capacity administrator or a tenant admin, you can view, verify, or c
 
 Contact your Capacity administrator to request access to a trial capacity or to check whether your organization has the Fabric tenant setting enabled. Use the Admin portal to look up your Capacity administrator. 
 
-From the upper right corner of Fabric, select the gear icon. Choose **Admin portal**. For a Fabric trial, select *Capacity settings** and then the **Trial** tab. 
+From the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select *Capacity settings** and then choose the **Trial** tab. 
 
 :::image type="content" source="media/fabric-trial/fabric-admin.png" alt-text="Screenshot of Admin center showing the Capacity settings screen.":::
 
