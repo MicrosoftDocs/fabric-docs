@@ -74,7 +74,7 @@ The following tables contain more information about the copy activity in Google 
 |**Connection type** | Your connection type. Select **Google BigQuery**.|**Google BigQuery**|Yes |/|
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Google SQL** to read data using SQL queries.|• **Table** <br>• **Google SQL** |Yes |/|
 | *For **Table*** |  |  |  |  |
-| **schema name** | Name of the Google BigQuery dataset. |< your dataset name >  | No (if **Google SQL** is specified) | dataset |
+| **dataset name** | Name of the Google BigQuery dataset. |< your dataset name >  | No (if **Google SQL** is specified) | dataset |
 | **table name** | 	Name of the table. | < your table name > | No (if **Google SQL** is specified) |table |
 | *For **Google SQL*** |  |  |  |  |
 | **Google SQL** | Use the custom SQL query to read data. An example is `SELECT * FROM MyTable`. For more information, go to [Query syntax](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax). |  < Google SQL query > |No (if **Table** is specified) | query|
