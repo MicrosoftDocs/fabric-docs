@@ -23,10 +23,10 @@ ms.date: 04/24/2024
    - **Username** and **Password**: Enter the user name and password for your PostgreSQL database. Make sure to use the server admin login name.
    - **Table(s)**: Enter a table name or leave it as **All tables**.
 
-     >[!NOTE]
-     >Multiple tables CDC isn't supported.
-
 1. Select **Connect**.
 
-1. Select **Next**. On the **Review and create** screen, review the summary and then select **Add**. You can see the PostgreSQL DB (CDC) source added to your eventstream in the editor.
+1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
+
+>[!NOTE]
+>Multiple tables CDC isn't supported.
 

@@ -71,6 +71,8 @@ To enable CDC in your Azure Database for PostgreSQL, follow these steps based on
 
 [!INCLUDE [postgresql-database-cdc-connector](./includes/postgresql-database-cdc-source-connector.md)]
 
+You can see the PostgreSQL DB (CDC) source added to your eventstream in the editor.
+
 ## Related content
 
 Other connectors:

@@ -37,7 +37,7 @@ ms.date: 04/18/2024
     1. Select the **workspace** where you want to save the connection.
     1. Enter a **name for the eventstream** to be created for you.
     1. Name of the **stream** for Real-Time hub is automatically generated for you. 
-    1. Select **Connect**. 
-    
+
         :::image type="content" source="./media/confluent-kafka-source-connector/stream-details.png" alt-text="Screenshot that shows the right pane with Stream details section of the Confluent connection settings page. ":::                
-1. Review the summary and select **Confirm** to complete the configuration. 
+1. Select **Connect**. 
+1. Select **Next**. On the **Review and create** screen, review the summary and then select **Add**.

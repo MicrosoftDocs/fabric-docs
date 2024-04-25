@@ -10,19 +10,21 @@ ms.search.form: Source and Destination
 ---
 
 # Add and manage an event source in an eventstream (preview)
-Once you created an eventstream, you can connect it to various data sources and destinations. In this article, you learn about the event sources that you can add to an eventstream with enhanced capabilities that are in preview. 
+
+Once you create an eventstream, you can connect it to various data sources and destinations.
+
+Eventstream not only allows you to stream data from Microsoft sources, but also supports ingestion from third-party platforms like Google Cloud and Amazon Kinesis with new messaging connectors. This expanded capability offers seamless integration of external data streams into Fabric, providing greater flexibility and enabling you to gain real-time insights from multiple sources.
+
+In this article, you learn about the event sources that you can add to an eventstream with enhanced capabilities that are in preview.
 
 ## Prerequisites
 
-Before you start, you must complete the following prerequisites:
-
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
-
-There are prerequisites specific to each source that are documented in the source-specific articles.
+- Access to the Fabric **premium workspace** for your eventspace with **Contributor** or higher permissions.
+- Prerequisites specific to each source that are documented in the following source-specific articles.
 
 ## Supported sources
 
-Fabric event streams with enhanced capabilities support the following sources. Use links in the table to navigate to articles that provide more details about adding specific sources.
+Fabric event streams with enhanced capabilities support the following sources. Each article provides details and instructions for adding specific sources.
 
 - [Azure Event Hubs](add-source-azure-event-hubs-enhanced.md)
 - [Azure IoT Hub](add-source-azure-iot-hub-enhanced.md)
@@ -38,6 +40,11 @@ Fabric event streams with enhanced capabilities support the following sources. U
 - [Sample data](add-source-sample-data-enhanced.md)
 - [Custom endpoint](add-source-custom-app-enhanced.md) 
 
+## Preview issues and known limitations
+
+- MySQL Database CDC and Google Cloud Pub/Sub aren't yet available for preview.
+- Data preview on source nodes isn't supported yet.
+- A temporary warning might be shown immediately after you add a source. This false alarm lasts about 30 seconds and then disappears. You can select **Refresh** to end it.
 
 ## Related content
 
