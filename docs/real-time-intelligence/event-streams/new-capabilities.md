@@ -19,6 +19,8 @@ We're excited to announce a range of new enhancements in Microsoft Fabric event 
 
 - [Data stream routing based on content](route-events-based-on-content.md). Transform and route your data streams anywhere within Fabric based on the data stream content you designed with the event processor.
 
+## Preview issues and limitations
+
 Fabric event streams is currently in preview, and may encounter some known issues and limitations, including:
 
 - **Loss of eventstream changes**. Refreshing the page or switching Fabric items while in **Edit mode** might result in the loss of all changes made to your eventstream.

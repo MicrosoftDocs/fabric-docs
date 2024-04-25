@@ -49,7 +49,7 @@ Here's an overview of everything you find in the two different modes:
 
    ![A screenshot of the Summary for a new eventstream.](media/edit-publish/summary.png)
 
-1. You're now in the eventstream **Edit mode**. Select **Refresh** to preview your Azure Event Hub data.
+1. You're now in the eventstream **Edit mode**. Select **Refresh** to preview your Azure Event Hubs data.
 
    ![A screenshot of selecting Refresh to preview the Event Hub data.](media/edit-publish/refresh.png)
 
