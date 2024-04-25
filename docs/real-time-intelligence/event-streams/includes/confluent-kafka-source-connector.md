@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 04/18/2024
 ---
 
-1. On the **Select a data source** page of the **Get events** wizard, select **Confluent**. 
+1. On the **Select a data source** page, select **Confluent**. 
 
     :::image type="content" source="./media/confluent-kafka-source-connector/select-confluent.png" alt-text="Screenshot that shows the selection of Confluent as the source type in the Get events wizard.":::
 1. In the **Connection settings** section, enter **Confluent Bootstrap Server**. Navigate to your Confluent Cloud home page, select **Cluster Settings**, and copy the address to your Bootstrap Server.  
@@ -37,7 +37,7 @@ ms.date: 04/18/2024
     1. Select the **workspace** where you want to save the connection.
     1. Enter a **name for the eventstream** to be created for you.
     1. Name of the **stream** for Real-Time hub is automatically generated for you. 
-    1. Select **Connect**. 
-    
+
         :::image type="content" source="./media/confluent-kafka-source-connector/stream-details.png" alt-text="Screenshot that shows the right pane with Stream details section of the Confluent connection settings page. ":::                
-1. Review the summary and select **Confirm** to complete the configuration. 
+1. Select **Connect**. 
+1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
