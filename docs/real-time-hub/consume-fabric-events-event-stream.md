@@ -9,3 +9,5 @@ ms.date: 04/03/2024
 
 # Consume Fabric events via event streams
 This article describes how to consume Fabric events via event streams. 
+
+[!INCLUDE [preview-note](./includes/preview-note.md)]

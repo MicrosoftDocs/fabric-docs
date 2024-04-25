@@ -10,6 +10,8 @@ ms.date: 05/21/2024
 # Set alerts on Azure blob storage events in Real-Time hub
 This article describes how to set alerts on Azure blob storage events in Real-Time hub.
 
+[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 ## Launch the Set alert page 
 
 Do steps from one of the following sections, which opens a side panel where you can configure the following options:

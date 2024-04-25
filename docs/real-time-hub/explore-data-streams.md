@@ -10,6 +10,8 @@ ms.date: 05/21/2024
 # Explore streams in Fabric Real-Time hub
 When you navigate to Real-Time hub in Fabric, you can view all the data streams that are present in Fabric. There are three tabs in the hub. This article covers the **Data streams** tab of the Real-Time hub. 
 
+[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 | Tab | Description |
 | --- | ----------- | 
 | Data streams | You see all data streams that are actively running in Fabric that you have access to. It includes the following artifacts: <ul><li>Streams from Fabric eventstreams</li><li>KQL tables from KQL databases</li></ul> | 

@@ -10,6 +10,8 @@ ms.date: 05/21/2024
 # Explore Fabric events in Fabric Real-Time hub
 When you navigate to Real-Time hub in Fabric, you see the following three tabs in the user interface (UI). This article covers the **Fabric events** tab. 
 
+[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 | Tab | Description |
 | --- | ----------- | 
 | Data streams | You see all data streams that are actively running in Fabric that you have access to. It includes the following artifacts: <ul><li>Streams from Fabric eventstreams</li><li>KQL tables from KQL databases</li></ul> | 

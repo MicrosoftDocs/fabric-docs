@@ -1,19 +1,21 @@
 ---
-title: Introduction to Fabric Real-Time hub
-description: This article describes what Real-Time hub in Fabric is and how it can be used in near-realtime scenarios. 
+title: Introduction to Microsoft Fabric Real-Time hub
+description: This article describes what Real-Time hub in Microsoft Fabric is and how it can be used in near-realtime scenarios. 
 author: ajetasin
 ms.author: ajetasi
 ms.topic: overview
 ms.date: 04/03/2024
 ---
 
-# Introduction to Fabric Real-Time hub
+# Introduction to Fabric Real-Time hub (preview)
 Real-Time hub is the single estate for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with Real-Time hub, with no extra steps needed to set up or manages it. Real-Time hub has several key features including the following ones:
 
 - Single place for data-in-motion for the entire organization
 - Abundant connectors for simplified data ingestion 
 - Real-Time hub is never dry 
 - Single copy of events or streams for use with multiple real-time analytics engines 
+
+[!INCLUDE [preview-note](./includes/preview-note.md)]
 
 ## Single data-in-motion estate for the entire organization 
 Real-Time hub is to data-in-motion, what [OneLake](../onelake/onelake-overview.md) is for data-at-rest; a single, tenant-wide, unified, logical place for streaming data-in-motion.   

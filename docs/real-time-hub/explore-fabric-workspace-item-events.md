@@ -12,6 +12,8 @@ Real-Time hub expands Fabric with event-driven capabilities to support real-time
 
 Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items, such as when a new artifact is created, or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
 
+[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 ## View Fabric workspace item events detail page
 
 1. In **Real-Time hub**, switch to the **Fabric events** tab. 
