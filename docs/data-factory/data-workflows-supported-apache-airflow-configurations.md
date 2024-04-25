@@ -15,13 +15,11 @@ ms.date: 04/24/2024
 
 In Data workflows, Apache Airflow configurations can be integrated with the platform's runtime as key-value pairs. While the `airflow.cfg` isn't directly accessible in the UI, users can override these configurations via the UI's "Airflow Configuration overrides" section, retaining access to other `airflow.cfg` settings. Developers have the flexibility to override most Apache Airflow configurations within Data workflows, `except for those explicitly outlined in a provided table`.
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
-
 For more information on Apache Airflow configurations, see [Configuration Reference](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html).
 
 The following table contains the list of configurations that don't support overrides.
 
-|Configuration  |Description  | Default value
+|Configuration  |Description  |Default value
 |---------|---------|------|
 |[AIRFLOW__CELERY__FLOWER_URL_PREFIX](https://airflow.apache.org/docs/apache-airflow-providers-celery/stable/configurations-ref.html#flower-url-prefix) |The root URL for Flower. |"" |
 |[AIRFLOW__CORE__DAGS_FOLDER](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#dags-folder) |The path of the folder where Airflow pipelines live.|AIRFLOW_DAGS_FOLDER |
