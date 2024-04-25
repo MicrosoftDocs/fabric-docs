@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: conceptual
-ms.date: 04/18/2024
+ms.date: 04/24/2024
 LocalizationGroup: Admin
 ---
 
@@ -15,19 +15,19 @@ LocalizationGroup: Admin
 
 Follow these steps to specify a fixed identity connection for a Direct Lake semantic model.
 
-1. In your Direct Lake model's settings, expand **Gateway and cloud connections**. Note that your Direct Lake model has a SQL Server data source pointing to a Lakehouse or Data Warehouse in Fabric.
+1. In your Direct Lake model's settings, expand **Gateway and cloud connections**. Note that your Direct Lake model has a SQL Server data source pointing to a lakehouse or data warehouse in Fabric.
 
-    :::image type="content" source="media/directlake-fixed-identity/directlake-settings-fixed-identity.png" alt-text="Direct Lake model settings":::
+    :::image type="content" source="media/direct-lake-fixed-identity/direct-lake-settings-fixed-identity.png" alt-text="Screenshot of Direct Lake model settings.":::
 
 1. In the **Maps to** listbox, select **Create a connection**. A **New connection** pane appears with some data source information already entered for you. Specify a connection name.
 
 1. In **Authentication method**, select **OAuth 2.0** or **Service Principal**,  and then specify credentials for the fixed identity you want to use.
 
-    :::image type="content" source="media/directlake-fixed-identity/directlake-settings-fixed-identity-new-connection.png" alt-text="Specify authentication credentials in new connection settings":::
+    :::image type="content" source="media/direct-lake-fixed-identity/direct-lake-settings-fixed-identity-new-connection.png" alt-text="Screenshot of authentication credentials specified in new connection settings.":::
 
 1. In **Single sign-on**, ensure **SSO via Microsoft Entra ID for DirectQuery queries** is *not* selected.
 
-    :::image type="content" source="media/directlake-fixed-identity/directlake-settings-fixed-identity-new-connection-sso.png" alt-text="Ensure Use SSO in new connection settings is not selected":::
+    :::image type="content" source="media/direct-lake-fixed-identity/direct-lake-settings-fixed-identity-new-connection-single-sign-on.png" alt-text="Screenshot of Single sign-on where option is not selected.":::
 
 1. Configure any additional parameters if needed and then click **Create**.
 
@@ -35,5 +35,5 @@ Follow these steps to specify a fixed identity connection for a Direct Lake sema
 
 ## Related content
 
-- [Direct Lake overview](directlake-overview.md)  
-- [Analyze query processing for Direct Lake semantic models](directlake-analyze-query-processing.md)  
+- [Direct Lake overview](direct-lake-overview.md)  
+- [Analyze query processing for Direct Lake semantic models](direct-lake-analyze-query-processing.md)  
