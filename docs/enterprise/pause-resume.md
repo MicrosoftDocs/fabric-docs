@@ -25,7 +25,7 @@ To pause your capacity, you need:
 
 * An [F SKU capacity](buy-subscription.md#azure-skus)
 
-* To be a [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) with atleast the following Azure RBAC roles
+* To be a [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) with **all** of the following Azure RBAC role permissions
 
 1. Microsoft.Fabric/capacities/read
 2. Microsoft.Fabric/capacities/write
