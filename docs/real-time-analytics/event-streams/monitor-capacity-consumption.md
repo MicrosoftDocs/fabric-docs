@@ -27,7 +27,7 @@ The event streams usage is defined by three operation types, which are described
 ## Storage billing
 Events retention in Fabric event streams is billed separately from your Fabric or Power BI premium capacity units.  
 
-OneLake standard storage is standard storage that's used to persist and store all data. When you set the retention setting for more than 1 day (that is, 24 hours), you're charged as per OneLake standard storage. See details of OneLake storage/month price on the [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) page. 
+* **OneLake Standard Storage** is standard storage that's used to persist and store all data. When you set the **retention setting** for more than 1 day (that is, 24 hours), you're charged as per OneLake Standard storage. See details of OneLake storage/month price on the [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) page. 
 
 ## Monitor OneLake storage 
 
