@@ -1,10 +1,12 @@
 ---
 title: Data warehouse tutorial - Create queries cross-warehouse with the SQL query editor
 description: In this tutorial step, learn how to use the SQL query editor to write cross-warehouse queries.
-author: prlangad
-ms.author: prlangad
-ms.reviewer: wiassaf
-ms.date: 01/22/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: prlangad
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -23,11 +25,11 @@ In this tutorial, learn about how you can easily create and execute T-SQL querie
 1. Select the `WideWorldImporters` **warehouse** item.
 1. In the **Explorer**, select the **+ Warehouses** button.
 
-    :::image type="content" source="media\tutorial-sql-cross-warehouse-query-editor\explorer-add-warehouses.png" alt-text="Screenshot from the Fabric portal Explorer, showing the + Warehouse button boxed in red.":::
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses.png" alt-text="Screenshot from the Fabric portal Explorer, showing the + Warehouse button boxed in red.":::
 
 1. Select the SQL analytics endpoint of the lakehouse you created using shortcuts previously, named `ShortcutExercise`. Both items are added to the query.
 
-    :::image type="content" source="media\tutorial-sql-cross-warehouse-query-editor\explorer-add-warehouses-select-sql-endpoint.png" alt-text="Screenshot from the Fabric portal Add warehouses window. Two warehouses are selected, including the ShortcutExercise SQL analytics endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png":::
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" alt-text="Screenshot from the Fabric portal Add warehouses window. Two warehouses are selected, including the ShortcutExercise SQL analytics endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png":::
 
 1. Your selected warehouses now show the same **Explorer** pane.
 
@@ -37,7 +39,7 @@ In this example, you can see how easily you can run T-SQL queries across the `Wi
 
 1. From the ribbon, select **New SQL query**.
 
-    :::image type="content" source="media\tutorial-sql-cross-warehouse-query-editor\new-sql-query.png" alt-text="Screenshot from the Fabric portal showing the ribbon, and the New SQL query option boxed in red.":::
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/new-sql-query.png" alt-text="Screenshot from the Fabric portal showing the ribbon, and the New SQL query option boxed in red.":::
 
 1. In the query editor, copy and paste the following T-SQL code.
 
@@ -54,7 +56,7 @@ In this example, you can see how easily you can run T-SQL queries across the `Wi
 
 1. Select the **Run** button to execute the query. After the query is completed, you will see the results.
 
-    :::image type="content" source="media\tutorial-sql-cross-warehouse-query-editor\cross-warehouse-query-results.png" alt-text="Screenshot from the Fabric portal showing the results of a cross-warehouse query." lightbox="media\tutorial-sql-cross-warehouse-query-editor\cross-warehouse-query-results.png":::
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/cross-warehouse-query-results.png" alt-text="Screenshot from the Fabric portal showing the results of a cross-warehouse query." lightbox="media/tutorial-sql-cross-warehouse-query-editor/cross-warehouse-query-results.png":::
 
 1. Rename the query for reference later. Right-click on `SQL query 1` in the **Explorer** and select **Rename**.
 1. Type `Cross-warehouse query` to change the name of the query.
@@ -67,7 +69,6 @@ To query data from Warehouse A residing in another workspace than your Warehouse
 1. Create a lakehouse in the same workspace as your Warehouse B.
 1. In that lakehouse, create a shortcut pointing to the required databases or tables from Warehouse A.
 1. Through the previous cross-warehouse sample query, you can now query tables in that lakehouse which are just a shortcut to Warehouse A. For example:
-   
     ```sql
     SELECT * FROM [lakehouse].[dbo].[table_shortcuted_from_warehouse_A]
     ```
