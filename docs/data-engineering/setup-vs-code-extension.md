@@ -22,7 +22,7 @@ Visual Studio (VS) Code is a one of the most popular lightweight source code edi
 
 Prerequisites for the Synapse VS Code extension:
 
-- Install Java Development Kit(JDK) from the [OpenJDK8](https://adoptium.net/temurin/releases/?version=8) website.Please make sure to use the link of JDK, not the JRE one
+- Install Java Development Kit(JDK) from the [OpenJDK8](https://adoptium.net/temurin/releases/?version=8) website. Ensure to use the JDK link and not the JRE.
 - Install [Conda](https://docs.conda.io/en/latest/miniconda.html).
 - Install the [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
