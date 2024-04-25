@@ -51,8 +51,8 @@ items:
   items:
   - name: Row-level security
     href: service-admin-row-level-security.md 
-- name: Object-level security
-  href: service-admin-object-level-security.md 
+  - name: Object-level security
+    href: service-admin-object-level-security.md 
 - name: Reliability
   items:
   - name: Reliability in Microsoft Fabric
