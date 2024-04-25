@@ -76,4 +76,4 @@ While the WWI dimensional model contains multiple fact tables, for this tutorial
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Microsoft [!INCLUDE [product-name](../includes/product-name.md)
+> [Tutorial: Create a Microsoft [!INCLUDE [product-name](../includes/product-name.md)] workspace](tutorial-create-workspace.md)
