@@ -13,7 +13,7 @@ ms.search.form: Source and Destination
 
 We're excited to announce a range of new enhancements in Microsoft Fabric event streams that are tailored to improve your development experience in building streaming applications. With [Real-Time hub](../../real-time-hub/real-time-hub-overview.md) seamlessly integrated into Fabric event streams, you gain greater flexibility and control over your data in motion. Here's a brief overview of the latest features:
 
-- **Edit Mode and Live View**. Explore two distinct modes for visualizing and designing stream processing.
+- [Edit Mode and Live View](edit-publish.md#edit-mode-and-live-view). Explore two distinct modes for visualizing and designing stream processing.
 
 - [Default and derived streams](create-default-derived-streams.md). Create a continuous flow of streams with the format you design, with an event processor that can be consumed later in Real-Time hub.
 
@@ -33,8 +33,6 @@ Fabric event streams is currently in preview, and may encounter some known issue
 
 - **Failure to route data from derived streams to destinations**. This issue might arise when you attempt to add a Lakehouse or KQL Database destination to a derived stream, resulting in no data being sent to the destination.
 - **Invalid Lakehouse destination name**. Only uppercase or lowercase letters and numerals are allowed for a Lakehouse destination name. Symbols like "_" or "-" aren't allowed in the destination name.
-
-- **You can't move Custom App and Reflex between derived streams and default streams**.
 
 - **Duplicate KQL Database destination nodes**: When you add a KQL Database destination with Direct Ingestion mode, an error might display two destination nodes in the editor.
 
