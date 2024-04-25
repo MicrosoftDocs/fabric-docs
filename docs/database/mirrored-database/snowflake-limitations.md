@@ -4,11 +4,11 @@ description: Learn about the limitations of mirrored databases from Snowflake in
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
+ms.date: 04/24/2024
 ms.service: fabric
-ms.date: 03/19/2024
 ms.topic: conceptual
-ms.custom: references_regions
-ms.search.form:
+ms.custom:
+  - references_regions
 ---
 
 # Limitations in Microsoft Fabric mirrored databases from Snowflake (Preview)

@@ -1,17 +1,20 @@
 ---
 title: "Generate unique identifiers in a warehouse table in Microsoft Fabric"
 description: "Learn about a workaround technique to generate unique identifiers in a Microsoft Fabric warehouse table."
-author: peter-myers
-ms.author: v-myerspeter
-ms.reviewer: wiassaf
-ms.date: 12/13/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: v-myerspeter
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
-ms.custom: fabric-cat
+ms.custom:
+  - fabric-cat
 ---
 
 # Generate unique identifiers in a warehouse table in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 It's a common requirement in data warehouses to assign a unique identifier to each row of a table. In SQL Server-based environments that's typically done by creating an [identity column](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-ver16&preserve-view=true) in a table, however this feature isn't supported in a warehouse in Microsoft Fabric. Instead, you'll need to use a workaround technique.
 

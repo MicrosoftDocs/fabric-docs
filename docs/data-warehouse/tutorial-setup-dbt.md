@@ -1,10 +1,12 @@
 ---
 title: Set up dbt for Fabric Data Warehouse
 description: In this tutorial, learn how to use the dbt adapter for Fabric Data Warehouse. dbt (Data Build Tool) is an open-source framework for SQL-first transformation.
-author: MarkPryceMaherMSFT
-ms.author: maprycem
-ms.reviewer: wiassaf
-ms.date: 01/22/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: maprycem
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
@@ -38,7 +40,7 @@ Follow this list to install and set up the dbt prerequisites:
     pip install dbt-fabric
     ```
 
-    > [!NOTE] 
+    > [!NOTE]
     > By changing `pip install dbt-fabric` to `pip install dbt-synapse` and using the following instructions, you can [install the dbt adapter for Synapse dedicated SQL pool](https://docs.getdbt.com/docs/core/connect-data-platform/azuresynapse-setup).
 
 1. Make sure to verify that dbt-fabric and its dependencies are installed by using `pip list` command:
@@ -66,7 +68,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 
 1. Open the `jaffle_shop` project folder in Visual Studio Code.
 
-    :::image type="content" source="media\tutorial-setup-dbt\jaffle-project-vscode.png" alt-text="Screenshot from the Visual Studio Code, showing the open project.":::
+    :::image type="content" source="media/tutorial-setup-dbt/jaffle-project-vscode.png" alt-text="Screenshot from the Visual Studio Code, showing the open project.":::
 
 1. You can skip the sign-up if you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] already.
 1. Create a `profiles.yml` file. Add the following configuration to `profiles.yml`. This file configures the connection to your warehouse in Microsoft Fabric using the dbt-fabric adapter.
@@ -101,13 +103,13 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
     dbt debug
     ```
 
-    :::image type="content" source="media\tutorial-setup-dbt\dbt-debug.png" alt-text="Screenshot from the Visual Studio Code, showing the dbt debug command." lightbox="media/tutorial-setup-dbt\dbt-debug.png":::
+    :::image type="content" source="media/tutorial-setup-dbt/dbt-debug.png" alt-text="Screenshot from the Visual Studio Code, showing the dbt debug command." lightbox="media/tutorial-setup-dbt/dbt-debug.png":::
 
     All checks are passed, which means you can connect your warehouse using dbt-fabric adapter from the `jaffle_shop` dbt project.
 
 1. Now, it's time to test if the adapter is working or not. First run `dbt seed` to insert sample data into the warehouse.
 
-    :::image type="content" source="media\tutorial-setup-dbt\dbt-seed.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt seed command." lightbox="media/tutorial-setup-dbt\dbt-seed.png":::
+    :::image type="content" source="media/tutorial-setup-dbt/dbt-seed.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt seed command." lightbox="media/tutorial-setup-dbt/dbt-seed.png":::
   
 1. Run `dbt run` to validate data against some tests.
 
@@ -115,15 +117,15 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
     dbt run
     ```
 
-    :::image type="content" source="media\tutorial-setup-dbt\dbt-run.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt run command." lightbox="media/tutorial-setup-dbt\dbt-run.png":::
+    :::image type="content" source="media/tutorial-setup-dbt/dbt-run.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt run command." lightbox="media/tutorial-setup-dbt/dbt-run.png":::
 
 1. Run `dbt test` to run the models defined in the demo dbt project.
-   
+
     ```powershell
     dbt test
     ```
-     
-    :::image type="content" source="media\tutorial-setup-dbt\dbt-test.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt test command." lightbox="media/tutorial-setup-dbt\dbt-test.png":::
+
+    :::image type="content" source="media/tutorial-setup-dbt/dbt-test.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt test command." lightbox="media/tutorial-setup-dbt/dbt-test.png":::
 
 You have now deployed a dbt project to Synapse Data Warehouse in Fabric.
 
