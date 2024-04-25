@@ -433,6 +433,12 @@
         href: connector-odbc-overview.md
       - name: Set up your connection
         href: connector-odbc.md
+    - name: Oracle Cloud Storage
+      items:
+      - name: Oracle Cloud Storage - Overview
+        href: connector-oracle-cloud-storage-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-oracle-cloud-storage-copy-activity.md
     - name: Palantir Foundry
       items:
       - name: Overview
