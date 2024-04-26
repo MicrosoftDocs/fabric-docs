@@ -167,11 +167,9 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
  
 1. Moreover, authorize and configure the permissions for users when tagging someone who doesn’t have access, ensuring that your code assets are well managed.
 
-   ![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
+![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
 
-
-> [!NOTE] 
-> 
+> [!NOTE]
 > For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.
 
 ## Switch notebook mode
