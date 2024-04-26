@@ -12,7 +12,7 @@ This article describes how to get events from external sources such as Amazon Ki
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-## Supported external source
+## Supported external sources
 
 - [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md)
 - [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
