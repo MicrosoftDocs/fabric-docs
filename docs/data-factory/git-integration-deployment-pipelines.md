@@ -4,7 +4,7 @@ description: This article describes how to use continuous integration and deploy
 author: kromerm
 ms.author: makromer
 ms.topic: conceptual
-ms.date: 03/13/2024
+ms.date: 04/18/2024
 ---
 
 # Git integration and deployment for data pipelines (Preview)
@@ -52,7 +52,6 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 
 ## Current limitations
 
-- Currently, pipelines with activities that reference Fabric artifacts (for example, Notebook or Invoke pipeline activities) require that those dependent items already be imported and present in the target workspace. For now, you must sequence your deployments so those items are loaded first.
 - Deployment rules in Deployment Pipelines (built-in Fabric CI/CD) aren't yet supported.
 
 ## Next steps

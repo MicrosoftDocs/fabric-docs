@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 04/01/2024
+ms.date: 04/25/2024
 ms.custom:
 ---
 
@@ -20,8 +20,13 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  701  | OneLake | [Shortcut data inaccessible if data is in a paused capacity](known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md) | April 25, 2024 |
+|  690  | Power BI | [Report Copilot button shows even though Copilot admin setting is off](known-issues/known-issue-690-report-copilot-button-shows-admin-setting-off.md) | April 25, 2024 |
+|  689  | Administration & Management | [Copilot and Azure OpenAI service capacity setting delegation postponed](known-issues/known-issue-689-copilot-service-capacity-setting-delegation-postponed.md) | April 25, 2024 |
+|  679  | Power BI | [Copy visual as image for report and dashboard visuals is broken](known-issues/known-issue-679-copy-visual-image-report-dashboard-visuals-broken.md) | April 11, 2024 |
+|  678  | Administration & Management | [Git integrated workspaces incorrectly show status of Uncommitted](known-issues/known-issue-678-git-integrated-workspaces-show-status-uncommitted.md) | April 11, 2024 |
+|  670  | Power BI | [Filled or bubble layers on Azure Maps visual doesn't render](known-issues/known-issue-670-filled-bubble-layers-azure-maps-visual-render.md) | April 11, 2024 |
 |  667  | Power BI | [Upload reports from OneDrive or SharePoint fails](known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md) | April 1, 2024 |
-|  665  | Power BI | [Currency format is unavailable in web modeling](known-issues/known-issue-665-currency-format-unavailable-web-modeling.md) | April 1, 2024 |
 |  664  | Data Factory | [Creating or opening a Dataflow Gen2 dataflow shows endless spinner](known-issues/known-issue-664-creating-opening-dataflow-gen2-shows-endless-spinner.md) | April 1, 2024 |
 |  663  | Data Factory | [Creating or opening a Dataflow Gen2 dataflow fails if capacity is inactive](known-issues/known-issue-663-creating-opening-dataflow-gen2-fails-capacity-inactive.md) | April 1, 2024 |
 |  660  | OneLake | [Exporting semantic model data to OneLake fails due to unicode characters](known-issues/known-issue-660-exporting-semantic-model-data-onelake-fails-unicode-characters.md) | March 28, 2024 |
@@ -35,7 +40,6 @@ Select the **Title** to view more information about that specific known issue.
 |  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 |
 |  618  | Data Warehouse | [Using an inactive SQL analytics endpoint can show old data](known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md) | February 14, 2024 |
 |  616  | OneLake | [Under-billing of OneLake storage for January 26 2024](known-issues/known-issue-616-under-billing-onelake-storage.md) | February 14, 2024 |
-|  611  | OneLake | [OneLake storage isn't billed for paused capacities](known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md) | February 2, 2024 |
 |  597  | Data Factory   | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md) | November 6, 2023 |
 |  592  | Data Warehouse | [Relationships in the default semantic model get dropped](known-issues/known-issue-592-relationships-default-semantic-model-dropped.md)  | January 8, 2024 |
 |  581  | Administration & Management | [Product switcher and creation process inadvertently show Fabric experiences](known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md)  | December 15, 2023 |
@@ -55,15 +59,15 @@ Select the **Title** to view more information about that specific known issue.
 
 ## Recently closed known issues
 
-Select the **Title** to view more information about that specific known issue. Known issues are organized in descending order by date. Fixed issues are removed after 46 days.
+Select the **Title** to view more information about that specific known issue. Known issues are organized in descending order by fixed date. Fixed issues are retained for at least 46 days.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  665  | Power BI | [Currency format is unavailable in web modeling](known-issues/known-issue-665-currency-format-unavailable-web-modeling.md) | April 1, 2024 | Fixed: April 25, 2024 |
+|  611  | OneLake | [OneLake storage isn't billed for paused capacities](known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md) | February 2, 2024 | Fixed: April 25, 2024 |
 |  642  | Data Engineering | [Load Table public API response returns error](known-issues/known-issue-642-load-table-public-api-response-returns-error.md) | March 5, 2024 | Fixed: April 1, 2024 |
 |  650  | Data Factory | [ParquetSharpNative error in dataflow refresh using a gateway](known-issues/known-issue-650-parquetsharpnative-error-dataflow-refresh-using-gateway.md) | March 14, 2024 | Fixed: March 20, 2024 |
 |  624  | Administration & Management | [Tighter throttling limit for GetDatasourcesAsAdmin Admin API](known-issues/known-issue-624-tighter-throttling-limit-getdatasourcesasadmin-admin-api.md) | February 14, 2024 | Fixed: March 14, 2024 |
-|  585  | Data Activator | [Reflex item creation fails due to a token creation failure](known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md)  | December 15, 2023 | Fixed: February 27, 2024 |
-|  570  | Power BI |  [Version 17 of the Fabric Capacity Metrics app doesn't work](known-issues/known-issue-570-version-17-capacity-metrics-app-does-not-work.md)    | November 30, 2023 | Fixed: February 16, 2024 |
 
 ## Related content
 

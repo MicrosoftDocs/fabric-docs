@@ -9,6 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 12/17/2023
+ms.search.form: Git integration supported items, Introduction to Git integration
 ---
 
 # Introduction to Git integration (preview)
@@ -47,8 +48,7 @@ Before you enable Git integration, make sure you understand the following possib
 
 The following items are currently supported:
 
-<!--- * [Data pipelines](../../data-factory/data-factory-overview.md#data-pipelines) --->
-
+* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)

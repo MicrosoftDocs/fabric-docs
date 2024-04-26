@@ -1,10 +1,12 @@
 ---
 title: Monitor connections, sessions, and requests using DMVs
 description: Learn about monitoring with the available Dynamic Management Views.
-author: jacindaeng
-ms.author: jacindaeng
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: jacindaeng
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -13,7 +15,7 @@ ms.search.form: Monitoring # This article's title should not change. If so, cont
 ---
 # Monitor connections, sessions, and requests using DMVs
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 You can use existing dynamic management views (DMVs) to monitor connection, session, and request status in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about the tools and methods of executing T-SQL queries, see [Query the Warehouse](query-warehouse.md).
 
@@ -46,7 +48,7 @@ The following example queries `sys.dm_exec_sessions` to find all sessions that a
 SELECT * 
 FROM sys.dm_exec_sessions;
 ```
-:::image type="content" source="media\monitor-using-dmv\exec-sessions-results.png" alt-text="Screenshot showing the results of sys.dm_exec_sessions." lightbox="media\monitor-using-dmv\exec-sessions-results.png":::
+:::image type="content" source="media/monitor-using-dmv/exec-sessions-results.png" alt-text="Screenshot showing the results of sys.dm_exec_sessions." lightbox="media/monitor-using-dmv/exec-sessions-results.png":::
 
 ### Find the relationship between connections and sessions
 
