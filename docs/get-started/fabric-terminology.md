@@ -68,11 +68,11 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## Synapse Real-Time Analytics
 
-- **KQL database:** The KQL database holds data in a format that you can execute KQL queries against. For more information, see [Query a KQL database](../real-time-analytics/create-database.md).
+- **KQL database:** The KQL database holds data in a format that you can execute KQL queries against. For more information, see [Query a KQL database](../real-time-intelligence/create-database.md).
 
-- **KQL Queryset:** The KQL Queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL Queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-analytics/kusto-query-set.md)
+- **KQL Queryset:** The KQL Queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL Queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-intelligence/kusto-query-set.md)
 
-- **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../real-time-analytics/event-streams/overview.md).
+- **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../real-time-intelligence/event-streams/overview.md).
 
 ## OneLake
 

@@ -19,7 +19,7 @@
         "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-oneLake-table-folder-not-removed.md",
         "redirect_url": "/fabric/get-started/fabric-known-issues",
         "redirect_document_id": false
-      },      
+      },
       {
         "source_path_from_root": "/docs/get-started/known-issues/known-issue-471-embedded-setup-tool-isnt-responsive.md",
         "redirect_url": "/fabric/get-started/fabric-known-issues",
@@ -180,7 +180,7 @@
           "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
           "redirect_document_id": true
         },
-        { 
+        {
           "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
           "redirect_document_id": false
@@ -210,7 +210,7 @@
           "redirect_url": "/fabric/data-factory/metrics-app-compute-page.md",
           "redirect_document_id": false
         },
-        {                  
+        {
           "source_path_from_root": "/docs/data-factory/connector-azure-cosmosdb-for-nosql-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-azure-cosmosdb-for-nosql",
           "redirect_document_id": false
@@ -496,6 +496,11 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/data-engineering/lakehouse-pbi-reporting.md",
+          "redirect_url": "/fabric/get-started/lakehouse-pbi-reporting",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/onelake/get-started-security.md",
           "redirect_url": "/fabric/onelake/security/get-started-security",
           "redirect_document_id": false
@@ -508,16 +513,6 @@
         {
           "source_path_from_root": "/docs/onelake/fabric-and-onelake-security.md",
           "redirect_url": "/fabric/onelake/security/fabric-onelake-security",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/get-started/copilot-real-time-analytics.md",
-          "redirect_url": "/fabric/get-started/copilot-fabric-overview",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/get-started/copilot-real-time-analytics-privacy-security.md",
-          "redirect_url": "/fabric/get-started/copilot-fabric-overview",
           "redirect_document_id": false
         },
         {

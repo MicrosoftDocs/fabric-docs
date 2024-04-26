@@ -1,6 +1,6 @@
 ---
 title: Microsoft Fabric ISV Partner integration with Fabric
-description:  Fabric ISV Partner Ecosystem enables ISVs to use a streamlined solution that’s easy to connect, onboard, and operate.
+description:  Fabric ISV Partner Ecosystem enables ISVs to use a streamlined solution that's easy to connect, onboard, and operate.
 ms.reviewer: richin
 ms.author: monaberdugo
 author: mberdugo
@@ -47,13 +47,13 @@ Here are a few ways to get you started with this model:
 Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds, and accounts by creating a single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can directly point to your existing data sources such as OneLake in different tenant, [Azure Data Lake Storage (ADLS) Gen2](../../onelake/create-adls-shortcut.md), [Amazon S3 storage accounts](../../onelake/create-s3-shortcut.md), and [Dataverse](/power-apps/maker/data-platform/azure-synapse-link-view-in-fabric) through a unified namespace. OneLake presents ISVs with a transformative data access solution, seamlessly bridging integration across diverse domains and cloud platforms.
 
 - [Learn more about OneLake shortcuts](../../onelake/onelake-shortcuts.md)
-- [Learn more about OneLake, one copy](../../real-time-analytics/one-logical-copy.md)
+- [Learn more about OneLake, one copy](../../real-time-intelligence/one-logical-copy.md)
 
 :::image type="content" source="media/partner-integration/multicloud-shortcuts.png" alt-text="Diagram showing multicloud shortcuts in OneLake.":::
 
 ### Database Mirroring
 
-You’ve seen the shortcuts, now you’re wondering about integration capabilities with external databases and warehouses. Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from any database or data warehouse into the Data warehousing experience in Microsoft Fabric. Mirror is all in near real-time thus giving users immediate access to changes in the source. You can learn more about mirroring and the supported databases at [Introducing Mirroring in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/introducing-mirroring-in-microsoft-fabric/).
+You've seen the shortcuts, now you're wondering about integration capabilities with external databases and warehouses. Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from any database or data warehouse into the Data warehousing experience in Microsoft Fabric. Mirror is all in near real-time thus giving users immediate access to changes in the source. You can learn more about mirroring and the supported databases at [Introducing Mirroring in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/introducing-mirroring-in-microsoft-fabric/).
 
 :::image type="content" source="media/partner-integration/database-mirroring.png" alt-text="Diagram of database mirroring.":::
 
