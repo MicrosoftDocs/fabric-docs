@@ -246,6 +246,46 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/data-engineering/lakehouse-pbi-reporting.md",
+          "redirect_url": "/fabric/get-started/lakehouse-pbi-reporting",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/get-started/lakehouse-pbi-reporting.md",
+          "redirect_url": "/fabric/get-started/lakehouse-power-bi-reporting",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/get-started/directlake-analyze-query-processing.md",
+          "redirect_url": "/fabric/get-started/direct-lake-analyze-query-processing",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/get-started/directlake-create-lakehouse.md",
+          "redirect_url": "/fabric/get-started/direct-lake-create-lakehouse",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/get-started/directlake-fixed-identity.md",
+          "redirect_url": "/fabric/get-started/direct-lake-fixed-identity",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/get-started/directlake-overview.md",
+          "redirect_url": "/fabric/get-started/direct-lake-overview",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/security/service-admin-ols.md",
+          "redirect_url": "/fabric/security/service-admin-object-level-security",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/security/service-admin-rls.md",
+          "redirect_url": "/fabric/security/service-admin-row-level-security",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/data-factory/connector-sharepoint-online-list-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-sharepoint-online-list",
           "redirect_document_id": false
@@ -456,11 +496,6 @@
           "redirect_document_id": false
         },
         {
-          "source_path_from_root": "/docs/data-engineering/lakehouse-pbi-reporting.md",
-          "redirect_url": "/fabric/get-started/lakehouse-pbi-reporting",
-          "redirect_document_id": true
-        },
-        {
           "source_path_from_root": "/docs/onelake/get-started-security.md",
           "redirect_url": "/fabric/onelake/security/get-started-security",
           "redirect_document_id": false
@@ -479,6 +514,6 @@
           "source_path_from_root": "/docs/real-time-analytics/data-profile.md",
           "redirect_url": "/fabric/real-time-analytics/create-database",
           "redirect_document_id": false
-        }
+        }   
     ]
 }
