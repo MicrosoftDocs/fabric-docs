@@ -170,8 +170,7 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
    ![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
 
 
-> [!NOTE] 
-> For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.
+> [!NOTE] For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.
 
 ## Switch notebook mode
 
