@@ -16,7 +16,7 @@ ms.search.form: semantic link
 
 This article covers semantic functions and how they can help data scientists and data engineers discover functions that are relevant to the FabricDataFrame or FabricSeries on which they're working.
 
-Semantic functions are available in the default runtime when using Fabric, and there is no need to install it. If you want to be sure you are using the most updated version of semantic link you can run the command:
+For Spark 3.4 and above, Semantic link is available in the default runtime when using Fabric, and there is no need to install it. If you are using Spark 3.3 or below, or if you want to update to the most recent version of Semantic Link, you can run the command:
 
 ` ` ` python
 %pip install -U semantic-link

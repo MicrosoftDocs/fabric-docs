@@ -17,10 +17,10 @@ ms.search.form: semantic link
 Semantic link is a feature that allows you to establish a connection between [semantic models](/power-bi/connect-data/service-datasets-understand) and [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in Microsoft Fabric.
 Use of semantic link is only supported in Microsoft Fabric.
 
-Semantic link is available in the default runtime when using Fabric, and there is no need to install it. If you want to update to the most recent version of semantic link you can run the command:
+For Spark 3.4 and above, Semantic link is available in the default runtime when using Fabric, and there is no need to install it. If you are using Spark 3.3 or below, or if you want to update to the most recent version of Semantic Link, you can run the command:
 
 ```python
-%pip in-line installation within in the notebook: %pip install -U semantic-link
+%pip install -U semantic-link
 ```
 
 The primary goals of semantic link are to facilitate data connectivity, enable the propagation of semantic information, and seamlessly integrate with established tools used by data scientists, such as [notebooks](../data-engineering/how-to-use-notebook.md).

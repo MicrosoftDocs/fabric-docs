@@ -34,7 +34,7 @@ Thereby, providing a way for business analysts and data scientists to collaborat
 The [SemPy Python library](/python/api/semantic-link/overview-semantic-link) is part of the semantic link feature and serves pandas users.
 SemPy provides functionalities that include data retrieval from [tables](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-read-table), [computation of measures](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-measure), and [execution of DAX queries](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-dax) and metadata.
 
-Semantic link is available in the default runtime when using Fabric, and there is no need to install it. If you want to be sure you are using the most updated version of Semantic link you can run the command:
+For Spark 3.4 and above, Semantic link is available in the default runtime when using Fabric, and there is no need to install it. If you are using Spark 3.3 or below, or if you want to update to the most recent version of Semantic Link, you can run the command:
 
 ` ` ` python
 %pip install -U semantic-link
