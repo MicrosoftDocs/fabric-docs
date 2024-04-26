@@ -22,8 +22,6 @@ items:
       href: add-source-azure-sql-database-cdc.md
     - name: Azure Cosmos DB Change Data Capture
       href: add-source-azure-cosmos-db-cdc.md
-    - name: Azure Blob Storage events
-      href: get-azure-blob-storage-events.md      
   - name: External sources 
     href: get-events-external-sources.md
     items:
@@ -41,8 +39,12 @@ items:
       href: add-source-postgresql-database-cdc.md
     - name: MySQL Database Change Data Capture
       href: add-source-mysql-database-cdc.md
-  - name: Create streams for Fabric workspace item events
-    href: create-streams-fabric-workspace-item-events.md
+  - name: Fabric events
+    items:    
+    - name: Get Azure blob storage events and create streams
+      href: get-azure-blob-storage-events.md      
+    - name: Create streams for Fabric workspace item events
+      href: create-streams-fabric-workspace-item-events.md
 - name: Discover and manage data streams and events
   items:
   - name: Explore data streams
