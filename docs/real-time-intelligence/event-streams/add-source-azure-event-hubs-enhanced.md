@@ -33,11 +33,26 @@ If you have an Azure event hub created with streaming data, follow these steps t
 ## Configure Azure Event Hubs connector
 [!INCLUDE [azure-event-hubs-connector](./includes/azure-event-hubs-source-connector.md)]
 
-1. You see that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added Azure event hub, select **Publish** on the ribbon.
+You see that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added Azure event hub, select **Publish** on the ribbon.
 
-    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
-1. After you complete these steps, the Azure event hub is available for visualization in the **Live view**. 
+:::image type="content" source="./media/add-source-azure-event-hubs-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
+After you complete these steps, the Azure event hub is available for visualization in the **Live view**. 
 
-    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
+:::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
+
 ## Related content
 
+Other connectors:
+
+- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
+- [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
+- [Azure SQL Database CDC](add-source-azure-sql-database-change-data-capture.md)
+- [Azure IoT Hub](add-source-azure-iot-hub-enhanced.md)
+- [Confluent Kafka](add-source-confluent-kafka.md)
+- [Custom endpoint](add-source-custom-app-enhanced.md)
+- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
+- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
+- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
+- [Sample data](add-source-sample-data-enhanced.md)
+- [Azure Blob Storage events](add-source-azure-blob-storage.md)
+- [Fabric workspace event](add-source-fabric-workspace.md)
