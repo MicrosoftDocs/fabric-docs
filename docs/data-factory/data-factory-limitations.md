@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 04/46/2024
+ms.date: 04/26/2024
 ---
 
 # Data Factory limitations overview
