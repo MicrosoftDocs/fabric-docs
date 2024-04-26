@@ -22,6 +22,10 @@ items:
       href: add-source-azure-sql-database-cdc.md
     - name: Azure Cosmos DB Change Data Capture
       href: add-source-azure-cosmos-db-cdc.md
+    - name: PostgreSQL Database Change Data Capture
+      href: add-source-postgresql-database-cdc.md
+    - name: MySQL Database Change Data Capture
+      href: add-source-mysql-database-cdc.md
   - name: External sources 
     href: get-events-external-sources.md
     items:
@@ -31,14 +35,6 @@ items:
       href: add-source-amazon-kinesis-data-streams.md
     - name: Confluent Cloud Kafka
       href: add-source-confluent-kafka.md
-    - name: Custom endpoint
-      href: add-source-custom-app.md
-    - name: Sample data 
-      href: add-source-sample-data.md
-    - name: PostgreSQL Database Change Data Capture
-      href: add-source-postgresql-database-cdc.md
-    - name: MySQL Database Change Data Capture
-      href: add-source-mysql-database-cdc.md
   - name: Fabric events
     items:    
     - name: Get Azure blob storage events and create streams
