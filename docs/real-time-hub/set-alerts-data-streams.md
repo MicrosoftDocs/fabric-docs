@@ -31,6 +31,8 @@ On the **Set alert** page, follow these steps:
 1. For **Condition**, select one of the following options:
     1. To monitor each event with no condition, select **On each event**. 
     1. To monitor events that satisfy a condition, select **On each event when**, select a field, select a condition, and a value. 
+
+        :::image type="content" source="./media/set-alerts-data-streams/event-condition.png" alt-text="Screenshot that shows the condition for an alert." lightbox="./media/set-alerts-data-streams/event-condition.png":::
     1. To monitor events grouped by, select **On each event grouped by**, select a grouping field, a field for filtering, condition, and a value to be checked against. 
 1. For **Action**, select one of the following options:
     1. To receive an email when the event occurs and the condition is met, select **Send me an email**. 
@@ -39,6 +41,8 @@ On the **Set alert** page, follow these steps:
 1. In the **Save location** section, do these steps: 
     1. For **Workspace**, select the workspace where you want to save the alert. 
     1. For **Reflex item**, select an existing Reflex item or create a Reflex item for this alert. 
+    
+        :::image type="content" source="./media/set-alerts-data-streams/save-location.png" alt-text="Screenshot that shows the Save location details of an alert." lightbox="./media/set-alerts-data-streams/save-location.png":::
 
 ## Related content
 
