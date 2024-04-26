@@ -49,8 +49,7 @@ On the **Set alert** page, follow these steps:
     1. On the **Review and create** page, review the settings, and select **Save**. 
     
         :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/review-create-page.png" alt-text="Screenshot that shows the Review and create page in the Get events wizard for Fabric workspace item events.":::        
-1. For **Condition**, select one of the following options:
-    1. If you want to monitor each event with no condition, select **On each event**. 
+1. For **Condition**, confirm that **On each event** is selected. 
 1. For **Action**, select one of the following options:
     1. To receive an email when the event occurs and the condition is met, select **Send me an email**. 
     1. To receive notification via Teams, select **Message me in Teams**.
@@ -64,3 +63,4 @@ On the **Set alert** page, follow these steps:
 ## Related content
 
 - [Set alerts on Azure blob storage events](set-alerts-azure-blob-storage-events.md)
+- [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)

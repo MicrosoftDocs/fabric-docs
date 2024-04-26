@@ -60,8 +60,7 @@ On the **Set alert** page, follow these steps:
     1. On the **Review and create** page, review the settings, and select **Create source**. 
     
         :::image type="content" source="./media/set-alerts-azure-blob-storage-events/review-create.png" alt-text="Screenshot that shows Review and create page of the Get events wizard for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/review-create.png":::                
-1. For **Condition**, select one of the following options:
-    1. If you want to monitor each event with no condition, select **On each event**. 
+1. For **Condition**, confirm that **On each event** is selected. 
 1. For **Action**, select one of the following options:
     1. To receive an email when the event occurs and the condition is met, select **Send me an email**. 
     1. To receive notification via Teams, select **Message me in Teams**.
@@ -71,6 +70,9 @@ On the **Set alert** page, follow these steps:
     1. For **Reflex item**, select an existing Reflex item or create a Reflex item for this alert. 
 1. Select **Create** at the bottom of the page to create the alert. 
 
+    :::image type="content" source="./media/set-alerts-azure-blob-storage-events/set-alert.png" alt-text="Screenshot that shows the Set alert page for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/set-alert.png":::                
+
 ## Related content
 
 - [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
+- [Set alerts on data streams](set-alerts-data-streams.md)
