@@ -19,4 +19,7 @@ This article describes how to get events from external sources such as Amazon Ki
 - [Confluent Cloud Kafka](add-source-confluent-kafka.md)
 
 ## Related content
-See the following article: [Get events from Microsoft sources](get-events-microsoft-sources.md)
+
+- [Get events from Microsoft sources](get-events-microsoft-sources.md)
+- [Get Azure blob storage events](get-azure-blob-storage-events.md)
+- [Create streams for Fabric workspace item events](create-streams-fabric-workspace-item-events.md)

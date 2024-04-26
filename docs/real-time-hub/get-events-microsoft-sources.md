@@ -22,4 +22,7 @@ This article describes how to get events from Microsoft sources such as Azure Ev
 - [Azure Cosmos DB CDC](add-source-mysql-database-cdc.md)
 
 ## Related content
-See the following article: [Get events from external sources](get-events-external-sources.md)
+
+- [Get events from external sources](get-events-external-sources.md)
+- [Get Azure blob storage events](get-azure-blob-storage-events.md)
+- [Create streams for Fabric workspace item events](create-streams-fabric-workspace-item-events.md)
