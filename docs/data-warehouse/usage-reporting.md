@@ -1,10 +1,12 @@
 ---
 title: Data warehouse billing and utilization reporting
 description: Learn more about utilization reporting for the data warehouse, including capacity and compute usage reporting.
-author: sowmi93
-ms.author: sosivara
-ms.reviewer: wiassaf
-ms.date: 11/30/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sosivara
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -13,7 +15,7 @@ ms.search.form: Warehouse billing and utilization
 
 # Billing and utilization reporting in Synapse Data Warehouse
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 The article explains compute usage reporting of the Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)], which includes read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 
@@ -55,19 +57,19 @@ Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se]
 
 For example:
 
-:::image type="content" source="media/usage-reporting/warehouse-operations.png" alt-text="A screenshot of the Data warehouse operation categories in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/warehouse-operations.png":::
+:::image type="content" source="media/usage-reporting/warehouse-operations.png" alt-text="Screenshot of the Data warehouse operation categories in the Microsoft Fabric Capacity Metrics app.":::
 
 ### Timepoint explore graph
 
-This graph in the Microsoft Fabric Capacity Metrics app shows utilization of resources compared to capacity purchased. 100% of utilization represents the full throughput of a capacity SKU and is shared by all Fabric experiences. This is represented by the yellow dotted line. Selecting a specific timepoint in the graph enables the **Explore** button, which opens a detailed drill through page.
+This graph in the Microsoft Fabric Capacity Metrics app shows utilization of resources compared to capacity purchased. 100% of utilization represents the full throughput of a capacity SKU and is shared by all Fabric workloads. This is represented by the yellow dotted line. Selecting a specific timepoint in the graph enables the **Explore** button, which opens a detailed drill through page.
+
+:::image type="content" source="media/usage-reporting/throttling-explore.png" alt-text="Screenshot of the explore button in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/throttling-explore.png":::
 
 In general, similar to Power BI, [operations are classified either as interactive or background](/power-bi/enterprise/service-premium-interactive-background-operations#operation-list), and denoted by color. Most operations in **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. Classifying data warehousing as background reduces the frequency of peaks of CU utilization from triggering [throttling](compute-capacity-smoothing-throttling.md#throttling).
 
-:::image type="content" source="media/usage-reporting/throttling-explore.png" alt-text="A screenshot of the explore button in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/throttling-explore.png":::
-
 ### Timepoint drill through graph
 
-:::image type="content" source="media/usage-reporting/drill-through.png" alt-text="A screenshot of the Timepoint drill through graph in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/drill-through.png":::
+:::image type="content" source="media/usage-reporting/drill-through.png" alt-text="Screenshot of the Timepoint drill through graph in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/drill-through.png":::
 
 This table in the Microsoft Fabric Capacity Metrics app provides a detailed view of utilization at specific timepoints. The amount of capacity provided by the given SKU per 30-second period is shown along with the breakdown of interactive and background operations. The interactive operations table represents the list of operations that were executed at that timepoint.
 
@@ -105,6 +107,11 @@ Consider the following usage reporting nuances:
 - Queries on system catalog views and dynamic management views are billable queries.
 - **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the statement execution duration and might not include the complete end-to-end duration for rendering results back to the web application like the [SQL Query Editor](sql-query-editor.md) or client applications like [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) and [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio).
 
+## Next step
+
+> [!div class="nextstepaction"]
+> [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)
+
 ## Related content
 
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
@@ -115,8 +122,3 @@ Consider the following usage reporting nuances:
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
 - [Understand the metrics app compute page](../enterprise/metrics-app-compute-page.md)
 - [Pause and resume in Fabric data warehousing](pause-resume.md)
-
-## Next step
-
-> [!div class="nextstepaction"]
-> [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)

@@ -59,7 +59,7 @@ sections:
               ```sql
               SELECT * FROM sys.dm_change_feed_log_scan_sessions 
               ```
-           1. If the `sys.dm_change_feed_log_scan_sessions` DMV doesn't show any progress on processing incremental changes, execute the below query to check if there are any problems reported:
+           1. If the `sys.dm_change_feed_log_scan_sessions` DMV doesn't show any progress on processing incremental changes, execute the following T-SQL query to check if there are any problems reported:
               ```sql
               SELECT * FROM sys.dm_change_feed_errors;
               ```

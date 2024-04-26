@@ -33,9 +33,9 @@ highlightedContent:
       itemType: overview
       url: security/security-overview.md
     # Card
-    - title: Join the Fabric Community Conference
-      itemType: whats-new
-      url: https://fabricconf.com/#!/
+    - title:  Choose a Fabric data store
+      itemType: concept
+      url: get-started/decision-guide-data-store.md
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
@@ -49,7 +49,7 @@ highlightedContent:
 conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   sections:
-    - title: Microsoft Fabric shared platform experiences # < 60 chars (Optional; Remove if not applicable.)
+    - title: Microsoft Fabric shared platform # < 60 chars (Optional; Remove if not applicable.)
       summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
@@ -154,7 +154,7 @@ conceptualContent:
             text: See more
 
 productDirectory:
-  title: Explore Microsoft Fabric experiences
+  title: Explore Microsoft Fabric
   summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
   items:
     # Card
@@ -307,9 +307,9 @@ productDirectory:
         - url: /industry/sustainability/sustainability-data-solutions-overview
           text: What is Sustainability data solutions? 
         - url: /industry/healthcare/healthcare-data-solutions/overview
-          text: Healthcare data solutions in Microsoft Fabric
-        - url: /industry/retail/retail-data-solutions/deploy-retail-data-solutions
-          text: Deploy Retail data solutions
+          text: What is healthcare data solutions?
+        - url: /industry/healthcare/healthcare-data-explorer/overview
+          text: What is healthcare data explorer?
         - url: /industry/industry-data-solutions-fabric
           text: See more
 
