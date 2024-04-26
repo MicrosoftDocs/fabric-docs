@@ -3,7 +3,7 @@ title: "Generate unique identifiers in a warehouse table in Microsoft Fabric"
 description: "Learn about a workaround technique to generate unique identifiers in a Microsoft Fabric warehouse table."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: v-myerspeter
+ms.reviewer: v-myerspeter, shrisk
 ms.date: 04/24/2024
 ms.service: fabric
 ms.subservice: data-warehouse

@@ -73,4 +73,4 @@ For more information, see [Create reports in the Power BI](../../data-warehouse/
 - [What is Mirroring in Fabric?](overview.md)
 - [Model data in the default Power BI semantic model in Microsoft Fabric](../../data-warehouse/model-default-power-bi-dataset.md)
 - [What is the SQL analytics endpoint for a Lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake](/power-bi/enterprise/directlake-overview)
+- [Direct Lake](../../get-started/direct-lake-overview.md)
