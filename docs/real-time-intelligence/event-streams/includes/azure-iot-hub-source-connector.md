@@ -33,7 +33,7 @@ ms.date: 05/21/2024
             1. Select a **policy name** from the list. Note down the policy name.
             1. Select the copy button next to the **Primary key**. 
         
-                :::image type="content" source="./media/azure-iot-hub-source-connector/access-key-value.png" alt-text="Screenshot that shows the access key for an Azure IoT Hub." lightbox="./media/azure-event-hubs-source-connector/access-key-value.png":::                        
+                :::image type="content" source="./media/azure-iot-hub-source-connector/access-key-value.png" alt-text="Screenshot that shows the access key for an Azure IoT Hub." lightbox="./media/azure-iot-hub-source-connector/access-key-value.png":::                        
         1. For **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the IoT hub. 
         1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure IoT hub. You can select from JSON, Avro, and CSV data formats, and then select Connect.
         
