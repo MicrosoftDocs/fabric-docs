@@ -84,15 +84,15 @@ items:
 - name: Direct Lake
   items:
   - name: Direct Lake overview
-    href: directlake-overview.md
+    href: direct-lake-overview.md
   - name: Create a Lakehouse for Direct Lake
-    href: directlake-create-lakehouse.md
+    href: direct-lake-create-lakehouse.md
   - name: Specify a fixed identity
-    href: directlake-fixed-identity.md
+    href: direct-lake-fixed-identity.md
   - name: Analyze query processing
-    href: directlake-analyze-query-processing.md
+    href: direct-lake-analyze-query-processing.md
   - name: Direct Lake mode and PBI reporting
-    href: lakehouse-pbi-reporting.md
+    href: lakehouse-power-bi-reporting.md
 - name: Promote or certify items
   href: endorsement-promote-certify.md
 - name: Share items

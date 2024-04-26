@@ -4,7 +4,7 @@ description: Learn about the T-SQL data types supported the SQL analytics endpoi
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 04/24/2024
+ms.date: 04/25/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -23,22 +23,22 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 
 ## Data types in Warehouse
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports a subset of T-SQL data types: 
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports a subset of T-SQL data types:
 
 | **Category** | **Supported data types** |
 |---|---|
-| **Exact numerics** | <ul><li>bit</li><li>bigint</li><li>int</li><li>smallint</li><li>decimal</li><li>numeric</li></ul> |
-| **Approximate numerics** | <ul><li>float</li><li>real</li></ul> |
-| **Date and time** | <ul><li>date</li><li>datetime2</li><li>time</li></ul> |
-| **Character strings** | <ul><li>char</li><li>varchar</li></ul> |
-| **Binary strings** | <ul><li>varbinary</li><li>uniqueidentifer</li></ul> |
+| **Exact numerics** | <ul><li>**bit**</li><li>**bigint**</li><li>**int**</li><li>**smallint**</li><li>**decimal**</li><li>**numeric**</li></ul> |
+| **Approximate numerics** | <ul><li>**float**</li><li>**real**</li></ul> |
+| **Date and time** | <ul><li>**date**</li><li>**datetime2**</li><li>**time**</li></ul> |
+| **Character strings** | <ul><li>**char**</li><li>**varchar**</li></ul> |
+| **Binary strings** | <ul><li>**varbinary**</li><li>**uniqueidentifer**</li></ul> |
 
 > [!NOTE]
-> The precision for datetime2 and time is limited to 6 digits of precision on fractions of seconds.
+> The precision for **datetime2** and **time** is limited to 6 digits of precision on fractions of seconds.
 
-The **uniqueidentifier** data type is a T-SQL data type, without a matching data type in Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading **uniqueidentifier** columns, but these values can't be read on the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. Reading **uniqueidentifier** values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-dw](includes/fabric-se.md)] using a **uniqueidentifier** column doesn't work as expected.
+The **uniqueidentifier** data type is a T-SQL data type, without a matching data type in Delta Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading **uniqueidentifier** columns, but these values can't be read on the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. Reading **uniqueidentifier** values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-dw](includes/fabric-se.md)] using a **uniqueidentifier** column doesn't work as expected.
 
-For more information about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric). 
+For more information about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric).
 
 ### Unsupported data types
 
@@ -62,20 +62,21 @@ The tables in [!INCLUDE [fabric-se](includes/fabric-se.md)] are automatically cr
 
 The rules for mapping original Delta types to the SQL types in [!INCLUDE [fabric-se](includes/fabric-se.md)] are shown in the following table:
 
-| **Delta Data Type** | **SQL Data** **Type (Mapped)** |
-|---|---|
-| **Long &#124;** **BIGINT** | bigint |
-| **BOOLEAN &#124;** **BOOL** | bit |
-| **INT &#124; INTEGER** | int |
-| **TINYINT &#124; BYTE &#124;** **SMALLINT &#124; SHORT** | smallint |
-| **DOUBLE** | float |
-| **FLOAT &#124; REAL** | real |
-| **DATE** | date |
-| **TIMESTAMP** | datetime2 |
-| **CHAR(n)** | varchar(n) with `Latin1_General_100_BIN2_UTF8` collation. |
-| **STRING &#124; VARCHAR(n)** | varchar(n) with `Latin1_General_100_BIN2_UTF8` collation. STRING/VARCHAR(MAX) is mapped to varchar(8000). |
-| **BINARY** | varbinary(n). |
-| **DECIMAL &#124; DEC &#124; NUMERIC** | decimal(p,s) |
+| Delta data type | SQL data type (mapped) |
+| :---| :---|
+| **LONG**, **BIGINT** | **bigint** |
+| **BOOLEAN**, **BOOL** | **bit** |
+| **INT**, **INTEGER** | **int** |
+| **TINYINT**, **BYTE**, **SMALLINT**, **SHORT** | **smallint** |
+| **DOUBLE** | **float** |
+| **FLOAT**, **REAL** | **real** |
+| **DATE** | **date** |
+| **TIMESTAMP** | **datetime2** |
+| **CHAR**(n) | **varchar**(n) with `Latin1_General_100_BIN2_UTF8` collation |
+| **STRING**, **VARCHAR**(n) | **varchar**(n) with `Latin1_General_100_BIN2_UTF8` collation |
+| **STRING**, **VARCHAR**(MAX) | **varchar**(8000) with `Latin1_General_100_BIN2_UTF8` collation |
+| **BINARY** | **varbinary**(n) |
+| **DECIMAL**, **DEC**, **NUMERIC** | **decimal**(p,s) |
 
 The columns that have the types that aren't listed in the table aren't represented as the table columns in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
