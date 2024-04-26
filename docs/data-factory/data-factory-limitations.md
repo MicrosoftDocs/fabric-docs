@@ -23,7 +23,7 @@ The following list describes the current limitations of pipelines in Data Factor
 - Connectors can't use parameters.
 - GetMetaData activity can't have a source from Fabric KQL databases.
 - Script activity can't have a source from Fabric KQL databases.
-- Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and rreoesource URI.
+- Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and resource URI.
 - Custom activities aren't available in Fabric pipelines. Use Azure Batch activity instead.
 - Data pipelines are scoped to their workspace, and can't interact with items in other workspaces.
 - Pipelines can't use a managed VNet.
