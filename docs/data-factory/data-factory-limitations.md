@@ -28,6 +28,7 @@ The following list describes the current limitations of pipelines in Data Factor
 - Data pipelines are scoped to their workspace, and can't interact with items in other workspaces.
 - Pipelines can't use a managed VNet.
 - Web activity does not support service principal based authentication.
+- Pipeline scheduling options currently include only by the minute, hourly, daily, and weekly. 
 
 ## Data pipeline resource limits
 
