@@ -16,7 +16,7 @@ ms.date: 05/21/2024
     1. In the **Connection settings** section, do these steps:
         1. Enter the name of the Event Hubs namespace.
         1. Enter the name of the event hub.
-    1. If there's an existing connection to the Azure event hub, you see the Connect page as shown in the following image. If not, move on to the next step.
+    1. If there's an existing connection to the Azure event hub, you see the Connect page as shown in the following image. Otherwise, move on to the next step.
 
         :::image type="content" source="./media/azure-event-hubs-source-connector/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure event hub." lightbox="./media/azure-event-hubs-source-connector/existing-connection.png":::        
 
@@ -35,7 +35,7 @@ ms.date: 05/21/2024
             1. Select the **access key** from the list. Note down the access key name.
             1. Select the copy button next to the **Primary key**. 
 
-                :::image type="content" source="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png" alt-text="Screenshot that shows the acccess key for an Azure Event Hubs namspace." lightbox="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png":::            
+                :::image type="content" source="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png" alt-text="Screenshot that shows the access key for an Azure Event Hubs namspace." lightbox="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png":::            
         1. For **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the event hub. 
         1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure event hub. You can select from JSON, Avro, and CSV (with header) data formats.  
         

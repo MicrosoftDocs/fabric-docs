@@ -37,7 +37,7 @@ You see that the Event Hubs source is added to your eventstream on the canvas in
 
 :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
     
-After you complete these steps, the Azure event hub is available for visualization in the **Live view**. 
+After you complete these steps, the Azure event hub is available for visualization in the **Live view**. Select the **Event hub** tile in the diagram to see the page similar to the following one.
 
 :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 
@@ -47,7 +47,7 @@ Other connectors:
 
 - [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
 - [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
-- [Azure SQL Database CDC](add-source-azure-sql-database-change-data-capture.md)
+- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
 - [Azure IoT Hub](add-source-azure-iot-hub-enhanced.md)
 - [Confluent Kafka](add-source-confluent-kafka.md)
 - [Custom endpoint](add-source-custom-app-enhanced.md)
