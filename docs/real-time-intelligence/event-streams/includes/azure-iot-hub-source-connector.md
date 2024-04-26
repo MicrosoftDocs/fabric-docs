@@ -47,8 +47,3 @@ ms.date: 05/21/2024
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/review-create-success.png" alt-text="Screenshot that shows the Review and create page for Azure IoT Hub connector after the creation of source is successful." lightbox="./media/azure-iot-hub-source-connector/review-create-success.png":::            
 
-### Existing connection
-
-
-### Get the access key
-
