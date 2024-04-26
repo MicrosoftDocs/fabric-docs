@@ -49,4 +49,4 @@ As data flows into Real-Time hub, you can create a stream out of it. Once the st
 
 - [Get events from Microsoft sources](get-events-microsoft-sources.md)
 - [Get events from external sources](get-events-external-sources.md)
-- [Get Fabric events](get-fabric-events.md)
+- [Get Azure blob storage events](get-azure-blob-storage-events.md)

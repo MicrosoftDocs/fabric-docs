@@ -11,7 +11,7 @@ items:
     href: get-started-bring-events-real-time-hub.md
 - name: Get events and create data streams
   items:
-  - name: Get events from Microsoft sources
+  - name: Microsoft sources
     href: get-events-microsoft-sources.md
     items:
     - name: Azure Event Hubs
@@ -22,7 +22,7 @@ items:
       href: add-source-azure-sql-database-cdc.md
     - name: Azure Cosmos DB Change Data Capture
       href: add-source-azure-cosmos-db-cdc.md
-  - name: Get events from external sources
+  - name: External sources 
     href: get-events-external-sources.md
     items:
     - name: Google Cloud Pub/Sub
@@ -39,13 +39,12 @@ items:
       href: add-source-postgresql-database-cdc.md
     - name: MySQL Database Change Data Capture
       href: add-source-mysql-database-cdc.md
-  - name: Get Fabric events
-    href: get-fabric-events.md
-    items:
-    - name: Azure Blob Storage events
-      href: get-azure-blob-storage-events.md
-    - name: Fabric workspace item events
-      href: get-fabric-workspace-item-events.md
+  - name: Fabric events
+    items:    
+    - name: Get Azure blob storage events and create streams
+      href: get-azure-blob-storage-events.md      
+    - name: Create streams for Fabric workspace item events
+      href: create-streams-fabric-workspace-item-events.md
 - name: Discover and manage data streams and events
   items:
   - name: Explore data streams
