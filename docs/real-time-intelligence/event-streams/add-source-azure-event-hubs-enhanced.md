@@ -33,12 +33,13 @@ If you have an Azure event hub created with streaming data, follow these steps t
 ## Configure Azure Event Hubs connector
 [!INCLUDE [azure-event-hubs-connector](./includes/azure-event-hubs-source-connector.md)]
 
-You see that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added Azure event hub, select **Publish** on the ribbon.
+    You see that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added Azure event hub, select **Publish** on the ribbon.
 
-:::image type="content" source="./media/add-source-azure-event-hubs-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
-After you complete these steps, the Azure event hub is available for visualization in the **Live view**. 
+    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
+    
+    After you complete these steps, the Azure event hub is available for visualization in the **Live view**. 
 
-:::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
+    :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 
 ## Related content
 
