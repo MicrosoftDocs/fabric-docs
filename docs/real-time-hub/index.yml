@@ -43,6 +43,9 @@ landingContent:
             url: get-events-external-sources.md
           - text: Get Azure blob storage events
             url: get-azure-blob-storage-events.md
+          - text: Create streams for Fabric workspace item events
+            url: create-streams-fabric-workspace-item-events.md
+
 
   # Card 
   - title: Discover and manage streams
