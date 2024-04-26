@@ -35,7 +35,7 @@ ms.date: 05/21/2024
             1. Select the **access key** from the list. Note down the access key name.
             1. Select the copy button next to the **Primary key**. 
 
-                :::image type="content" source="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png" alt-text="Screenshot that shows the Connect page one for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png":::            
+                :::image type="content" source="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png" alt-text="Screenshot that shows the acccess key for an Azure Event Hubs namspace." lightbox="./media/azure-event-hubs-source-connector/event-hubs-access-key-value.png":::            
         1. For **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the event hub. 
         1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure event hub. You can select from JSON, Avro, and CSV (with header) data formats.  
         

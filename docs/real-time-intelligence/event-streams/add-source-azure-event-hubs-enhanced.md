@@ -26,9 +26,9 @@ If you have an Azure event hub created with streaming data, follow these steps t
 
     :::image type="content" source="./media/add-source-tile-menu/add-external-source-tile.png" alt-text="Screenshot that shows a new eventstream with Add External Source tile selected.":::
 
-    If you are adding an Azure event hub as a source to an already published eventstream, switch to **Edit** mode, select **Add source** on the ribbon, and then select **External sources**. 
+    If you're adding an Azure event hub as a source to an already published eventstream, switch to **Edit** mode, select **Add source** on the ribbon, and then select **External sources**. 
 
-    :::image type="content" source="./media/add-source-tile-menu/add-source-external-sources-menu.png" alt-text="Screenshot that shows a new eventstream with Add External Source tile selected.":::
+    :::image type="content" source="./media/add-source-tile-menu/add-source-external-sources-menu.png" alt-text="Screenshot that shows Add External Source menu for a published eventstream.":::
 
 ## Configure Azure Event Hubs connector
 [!INCLUDE [azure-event-hubs-connector](./includes/azure-event-hubs-source-connector.md)]
@@ -36,7 +36,7 @@ If you have an Azure event hub created with streaming data, follow these steps t
 1. You see that the Event Hubs source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added Azure event hub, select **Publish** on the ribbon.
 
     :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/publish.png" alt-text="Screenshot that shows the editor with Publish button selected.":::
-1. After completing these steps, the Azure event hub is available for visualization in the **Live view**. 
+1. After you complete these steps, the Azure event hub is available for visualization in the **Live view**. 
 
     :::image type="content" source="./media/add-source-azure-event-hubs-enhanced/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 ## Related content
