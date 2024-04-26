@@ -34,7 +34,9 @@ This article shows you how to add Amazon Kinesis Data Streams source to an event
 
 [!INCLUDE [amazon-kinesis-data-streams-connector](includes/amazon-kinesis-data-streams-connector.md)]
 
-You can see the Amazon Kinesis Data Stream source added to your eventstream in the editor.
+You can see the Amazon Kinesis Data Stream source added to your eventstream in **Edit mode**.
+
+To implement this newly added Amazon Kinesis Data Stream source, select **Publish**. After you complete these steps, your Amazon Kinesis Data Stream source is available for visualization in the **Live view**.
 
 ## Related content
 
