@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 04/26/2024
 ms.search.form: lakehouse table maintenance delta lake tables
 ---
 
@@ -35,7 +35,7 @@ The table maintenance feature offers three operations.
 
 * **Optimize**: Consolidates multiple small Parquet files into large file. Big Data processing engines, and all Fabric engines, benefit from having larger files sizes. Having files of size above 128 MB, and optimally close to 1 GB, improves compression and data distribution, across the cluster nodes. It reduces the need to scan numerous small files for efficient read operations. It's a general best practice to run optimization strategies after loading large tables.
 * **V-Order**: Applies optimized sorting, encoding, and compression to Delta parquet files to enable fast read operations across all the Fabric engines. V-Order happens during the optimize command, and is presented as an option to the command group in the user experience. To learn more about V-Order, see [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md).
-* **Vacuum**: Removes old files no longer referenced by a Delta table log. Files need to be older than the retention threshold, and the default file retention threshold is seven days. This maintenance is important to optimize storage cost. Setting a shorter retention period impacts Delta's time travel capabilities. It's a general best practice to set a retention interval to at least seven days, because old snapshots and uncommitted files can still be in use by the concurrent table readers and writers. Cleaning up active files with the VACUUM command might lead to reader failures or even table corruption if the uncommitted files are removed.
+* **Vacuum**: Removes old files no longer referenced by a Delta table log. Files need to be older than the retention threshold, and the default file retention threshold is seven days. The retention period remains same regardless of the Fabric compute engine you are using. This maintenance is important to optimize storage cost. Setting a shorter retention period impacts Delta's time travel capabilities. It's a general best practice to set a retention interval to at least seven days, because old snapshots and uncommitted files can still be in use by the concurrent table readers and writers. Cleaning up active files with the VACUUM command might lead to reader failures or even table corruption if the uncommitted files are removed.
 
 ## Execute ad-hoc table maintenance on a Delta table using Lakehouse
 
