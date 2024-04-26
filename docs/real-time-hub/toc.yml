@@ -11,7 +11,7 @@ items:
     href: get-started-bring-events-real-time-hub.md
 - name: Get events and create data streams
   items:
-  - name: Get events and create streams from Microsoft sources
+  - name: Microsoft sources
     href: get-events-microsoft-sources.md
     items:
     - name: Azure Event Hubs
@@ -24,7 +24,7 @@ items:
       href: add-source-azure-cosmos-db-cdc.md
     - name: Azure Blob Storage events
       href: get-azure-blob-storage-events.md      
-  - name: Get events and create streams from external sources 
+  - name: External sources 
     href: get-events-external-sources.md
     items:
     - name: Google Cloud Pub/Sub
