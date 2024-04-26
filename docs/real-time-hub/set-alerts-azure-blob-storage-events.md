@@ -61,7 +61,9 @@ On the **Set alert** page, follow these steps:
     
         :::image type="content" source="./media/set-alerts-azure-blob-storage-events/review-create.png" alt-text="Screenshot that shows Review and create page of the Get events wizard for Azure blob storage events." lightbox="./media/set-alerts-azure-blob-storage-events/review-create.png":::                
 1. For **Condition**, select one of the following options:
-    1. If you want to monitor each event with no condition, select **On each event**. 
+    1. To monitor each event with no condition, select **On each event**. 
+    1. To monitor events that satisfy a condition, select **On each event when**, select a field, select a condition, and a value. 
+    1. To monitor events grouped by, select **On each event grouped by**, select a grouping field, a field for filtering, condition, and a value to checked against. 
 1. For **Action**, select one of the following options:
     1. To receive an email when the event occurs and the condition is met, select **Send me an email**. 
     1. To receive notification via Teams, select **Message me in Teams**.
