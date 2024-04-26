@@ -11,3 +11,15 @@ ms.date: 04/03/2024
 This article describes how to get events from external sources such as Amazon Kinesis and Google Pub Sub into Fabric Real-Time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
+
+## Supported external sources
+
+- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md)
+- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
+- [Confluent Cloud Kafka](add-source-confluent-kafka.md)
+
+## Related content
+
+- [Get events from Microsoft sources](get-events-microsoft-sources.md)
+- [Get Azure blob storage events](get-azure-blob-storage-events.md)
+- [Create streams for Fabric workspace item events](create-streams-fabric-workspace-item-events.md)
