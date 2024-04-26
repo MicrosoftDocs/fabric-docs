@@ -40,7 +40,7 @@ For more on Power BI, see [Power BI guidance](/power-bi/guidance/).
 
 ## Direct Lake mode
 
-[Direct Lake](/power-bi/enterprise/directlake-overview) mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of loading parquet-formatted files directly from a data lake, without having to query a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and without having to import or duplicate data into a Power BI semantic model. This native integration brings a unique mode of accessing the data from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], called Direct Lake.  
+[Direct Lake](../get-started/direct-lake-overview.md) mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of loading parquet-formatted files directly from a data lake, without having to query a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and without having to import or duplicate data into a Power BI semantic model. This native integration brings a unique mode of accessing the data from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], called Direct Lake.  
 
 Direct Lake provides the most performant query and reporting experience. Direct Lake is a fast path to load the data from the data lake straight into the Power BI engine, ready for analysis.
 
