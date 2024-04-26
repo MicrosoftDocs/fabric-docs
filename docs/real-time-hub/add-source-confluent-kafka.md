@@ -37,5 +37,5 @@ In Fabric Real-Time hub, select **Get events** button in the top-right corner.
 - [PostgreSQL Database CDC](add-source-postgresql-database-cdc.md)
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](get-azure-blob-storage-events.md)
-- [Fabric workspace event](get-fabric-workspace-item-events.md)
+- [Fabric workspace event](create-streams-fabric-workspace-item-events.md)
 
