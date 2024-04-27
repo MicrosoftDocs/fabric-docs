@@ -8,8 +8,8 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/18/2024
-ms.search.form: Lakehouse PBI Reporting
+ms.date: 04/24/2024
+ms.search.form: Lakehouse Power BI Reporting
 ---
 
 # How Direct Lake mode works with Power BI reporting
@@ -22,7 +22,7 @@ Lakehouse applies V-order optimization to tables. This optimization enables quic
 
 This approach gives unprecedented performance and the ability to instantly load large amounts of data for Power BI reporting.
 
-:::image type="content" source="media\pbi-reporting\dataset.png" alt-text="Screenshot of the default semantic model landing page." lightbox="media\pbi-reporting\dataset.png":::
+:::image type="content" source="media\power-bi-reporting\dataset.png" alt-text="Screenshot of the default semantic model landing page." lightbox="media\power-bi-reporting\dataset.png":::
 
 ## Setting permissions for report consumption
 
