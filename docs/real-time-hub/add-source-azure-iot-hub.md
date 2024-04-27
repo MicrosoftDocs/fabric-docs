@@ -12,8 +12,12 @@ This article describes how to add an Azure IoT Hub as an event source in Fabric 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-## Launch the Get events experience
-In Fabric Real-Time hub, select **Get events** button in the top-right corner. 
+## Prerequisites 
+
+- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+
+
+[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Add Azure IoT Hub as a source
 

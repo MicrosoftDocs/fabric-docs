@@ -12,8 +12,13 @@ This article describes how to add an Azure event hub as an event source in Fabri
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-## Launch the Get events experience
-In Fabric Real-Time hub, select **Get events** button in the top-right corner. 
+## Prerequisites 
+
+- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+
+
+[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
+
 
 ## Add Azure Event Hubs as a source
 

@@ -12,4 +12,11 @@ This article describes how to add Amazon Kinesis Data Streams as an event source
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
+## Prerequisites 
+
+- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+
+
+[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
+
 [!INCLUDE [amazon-kinesis-data-streams-connector](../real-time-intelligence/event-streams/includes/amazon-kinesis-data-streams-connector.md)]

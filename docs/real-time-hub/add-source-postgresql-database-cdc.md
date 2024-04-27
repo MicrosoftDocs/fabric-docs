@@ -12,4 +12,11 @@ This article describes how to add PostgreSQL Database Change Data Capture (CDC) 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
+## Prerequisites 
+
+- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+
+
+[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
+
 [!INCLUDE [postgresql-database-cdc-source-connector](../real-time-intelligence/event-streams/includes/postgresql-database-cdc-source-connector.md)]

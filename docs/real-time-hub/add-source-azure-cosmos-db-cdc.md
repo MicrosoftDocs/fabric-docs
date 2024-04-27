@@ -12,4 +12,10 @@ This article describes how to add Azure Cosmos DB Change Data Capture (CDC) as a
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
+## Prerequisites 
+
+- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+
+[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
+
 [!INCLUDE [azure-cosmos-db-source-connector](../real-time-intelligence/event-streams/includes/azure-cosmos-db-cdc-source-connector.md)]
