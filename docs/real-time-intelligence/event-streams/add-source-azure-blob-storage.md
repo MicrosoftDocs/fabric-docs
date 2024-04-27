@@ -51,15 +51,9 @@ For more details about available event types, see [Azure Blob Storage as Event G
 
 Once the connection is created, you can see the Azure Blob Storage event source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and capture the workspace events.
 
-![A screenshot of the Azure Blob Storage events source added to the eventstream.](media/add-source-fabric-workspace/fabric-workspace-item-events-edit.png)
+![A screenshot of the Azure Blob Storage events source added to the eventstream.](media/add-source-azure-blob-storage/edit.png)
 
 Before you proceed with event transformation or routing, make sure you successfully created and captured the workspace events in the eventstream and published the eventstream. Once it's published, you can find the default stream representing the captured events in **Real-Time hub** on the **Fabric events** tab.
-
-![A screenshot of the Azure Blob Storage events in Real-Time hub.](media/add-source-fabric-workspace/fabric-workspace-item-events.png)
-
-Select **Edit** on the Eventstream ribbon to enter **Edit mode**, where you can add operations to transform the Fabric workspace events or route them to a destination such as Lakehouse.
-
-![A screenshot of the Azure Blob Storage events in Live view, where you can select Edit.](media/add-source-fabric-workspace/fabric-workspace-item-events-live.png)
 
 ## Related content
 
