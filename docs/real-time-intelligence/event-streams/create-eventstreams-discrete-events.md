@@ -64,7 +64,7 @@ To connect discrete events to an eventstream, take the following steps:
 
 Once completed, the eventstream starts capturing discrete events as they occur. In Real-Time hub, you can find the events under **Fabric events**. You can set an alert to take further action in the right pane.
 
-![A screenshot of the Real-Time hub Fabric events tab and the Set alert pane.](media/create-eventstreams-discrete-events/real-time-hub.png)
+![A screenshot of the Real-Time hub Fabric events tab and the Set alert pane.](media/create-eventstreams-discrete-events/set-alert.png)
 
 ## Related content
 
