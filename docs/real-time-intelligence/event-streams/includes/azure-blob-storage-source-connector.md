@@ -21,4 +21,4 @@ ms.date: 04/26/2024
 
 1. On the **Review and create** screen, review the summary and then select **Add** to complete the configuration for Azure Blob Storage events.
 
-   ![A screenshot of the Add screen.](media/azure-blob-storage-source-connector/connect.png)
+   ![A screenshot of the Add screen.](media/azure-blob-storage-source-connector/add.png)
