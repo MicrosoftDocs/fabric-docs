@@ -44,7 +44,7 @@ Use instructions from the [Add Azure SQL Database CDC as a source](#add-azure-sq
 1. For **Region**, select a location where your SQL database is located. 
 1. Now, move the mouse over the name of the SQL database that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button. 
 
-    :::image type="content" source="./media/add-source-azure-sql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources tab with filters to show SQL databases and the connect button for a SQL database.":::
+    :::image type="content" source="./media/add-source-azure-sql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources tab with filters to show SQL databases and the connect button for an Azure SQL database.":::
 
     To configure connection information, use steps from the [Add Azure SQL Database CDC as a source](#add-azure-sql-database-cdc-as-a-source) section. Skip the first step of selecting Azure SQL DB (CDC) as a source type in the Get events wizard. 
 
