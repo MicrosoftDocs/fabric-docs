@@ -19,7 +19,7 @@ To improve support and provide more effective troubleshooting, Microsoft might s
 
 ## What is stored query text
 
-*Query text* refers the text of the queries/commands (for example, DAX, MDX, TMSL, XMLA, etc.) that Fabric executes when users use Fabric items such as reports and dashboards, as well as external applications such as Excel, SQL Server Management Studio, etc. This information helps the Fabric support team understand the context and specifics of any issues that arise, thereby facilitating a quicker and more precise resolution.
+*Query text* refers to the text of the queries/commands (for example, DAX, MDX, TMSL, XMLA, etc.) that Fabric executes when users use Fabric items such as reports and dashboards, as well as external applications such as Excel, SQL Server Management Studio, etc. This information helps the Fabric support team understand the context and specifics of any issues that arise, thereby facilitating a quicker and more precise resolution.
 
 ## Privacy and security
 
