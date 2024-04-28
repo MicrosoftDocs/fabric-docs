@@ -1,5 +1,5 @@
 ---
-title: What is semantic link (preview)?
+title: What is semantic link?
 description: Overview of semantic link.
 ms.reviewer: mopeakande
 ms.author: marcozo
@@ -12,12 +12,16 @@ ms.date: 06/06/2023
 ms.search.form: semantic link
 ---
 
-# What is semantic link (preview)?
+# What is semantic link?
 
 Semantic link is a feature that allows you to establish a connection between [semantic models](/power-bi/connect-data/service-datasets-understand) and [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in Microsoft Fabric.
 Use of semantic link is only supported in Microsoft Fabric.
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+For Spark 3.4 and above, Semantic link is available in the default runtime when using Fabric, and there is no need to install it. If you are using Spark 3.3 or below, or if you want to update to the most recent version of Semantic Link, you can run the command:
+
+```python
+%pip install -U semantic-link
+```
 
 The primary goals of semantic link are to facilitate data connectivity, enable the propagation of semantic information, and seamlessly integrate with established tools used by data scientists, such as [notebooks](../data-engineering/how-to-use-notebook.md).
 semantic link helps you to preserve domain knowledge about data semantics in a standardized way that can speed up data analysis and reduce errors.
@@ -64,7 +68,7 @@ It exposes semantic functions and the [add-measure](semantic-link-power-bi.md#da
 ## Related content
 
 - [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link/)
-- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
-- [Learn more about semantic link and Power BI connectivity (preview)](semantic-link-power-bi.md)
-- [How to validate data with semantic link (preview)](semantic-link-validate-data.md)
-- [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)
+- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
+- [Learn more about semantic link and Power BI connectivity](semantic-link-power-bi.md)
+- [How to validate data with semantic link](semantic-link-validate-data.md)
+- [Explore and validate relationships in semantic models](semantic-link-validate-relationship.md)
