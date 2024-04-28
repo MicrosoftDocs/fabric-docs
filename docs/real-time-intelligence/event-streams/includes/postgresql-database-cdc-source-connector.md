@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 04/24/2024
 ---
 
-1. On the **Select a data source** screen, select **PostgreSQL DB (CDC)**.
+1. On the **Select a data source** screen, select **Azure DB for PostgreSQL (CDC)**.
 
    ![A screenshot of selecting PostgreSQL DB (CDC).](media/postgresql-database-cdc-source-connector/select-external-source.png)
 

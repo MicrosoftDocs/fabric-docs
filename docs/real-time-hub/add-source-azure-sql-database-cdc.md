@@ -50,4 +50,37 @@ Use instructions from the [Add Azure SQL Database CDC as a source](#add-azure-sq
 
 ## Add Azure SQL Database CDC as a source
 
-[!INCLUDE [azure-sql-database-cdc-source-connector](../real-time-intelligence/event-streams/includes/azure-sql-database-cdc-source-connector.md)]
+1. On the **Select a data source** screen, select **Azure SQL DB (CDC)**.
+
+   ![A screenshot of selecting Azure SQL DB (CDC).](media/add-source-azure-sql-database-cdc/select-external-source.png)
+1. On the **Connect** page, select **New connection**.
+
+    :::image type="content" source="./media/add-source-azure-sql-database-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-sql-database-cdc/new-connection-link.png"::: 
+1. In the **Connection settings** section, enter the following values for your Azure SQL database:
+
+   - **Server:** Enter the Azure SQL server name from the Azure portal.
+   - **Database:** Enter the Azure SQL database name from the Azure portal.
+
+        :::image type="content" source="./media/add-source-azure-sql-database-cdc/connect.png" alt-text="Screenshot that shows the Connection settings section of the New connection page." ::: 
+1. Scroll down, and in the **Connection credentials** section, follow these steps.
+    1. For **Connection name**, enter a name for the connection. 
+    1. For **Authentication kind**, select **Basic**. 
+    
+        > [!NOTE]
+        > Currently, Fabric event streams supports only **Basic** authentication.
+    1. Enter **Username** and **Password** for the database.   
+    1. Select **Connect**.
+   
+        :::image type="content" source="./media/add-source-azure-sql-database-cdc/connection-credentials.png" alt-text="Screenshot that shows the Connection credentials section of the New connection page." ::: 
+1. Now, on the **Connect** page, do these steps:
+    1. Enter the **name** of the **SQL table**.
+    1. For **Port**, Enter the port number (default is 1433). 
+    1. In the **Stream details** section to the right, select the Fabric **workspace** where you want to save the eventstream that the Wizard is going to create. 
+    1. For **eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected event hub as a source.
+    1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **Data streams** tab of Real-Time hub when the wizard finishes. 
+    1. Select **Next**. 
+
+        :::image type="content" source="./media/add-source-azure-sql-database-cdc/connect-page-filled.png" alt-text="Screenshot that shows the Connect page of the Get events wizard filled." lightbox="./media/add-source-azure-sql-database-cdc/connect-page-filled.png":::         
+1. On the **Review and create** screen, review the summary, and then select **Create source**.
+
+      :::image type="content" source="./media/add-source-azure-sql-database-cdc/review-create-page.png" alt-text="Screenshot that shows the Review and create page of the Get events wizard filled." lightbox="./media/add-source-azure-sql-database-cdc/review-create-page.png:::         
