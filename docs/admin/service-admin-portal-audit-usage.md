@@ -36,6 +36,12 @@ Power BI integration with [Azure Log Analytics](/power-bi/transform-model/log-an
 
 When the switch is on, administrators and Premium workspace owners can [configure **Azure Log Analytics for Power BI**](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure).
 
+## Microsoft can store query text to aid in support investigation
+
+*Query text* refers to the text of the queries/commands (for example, DAX, MDX, TMSL, XMLA, etc.) that Fabric executes when users use Fabric items such as reports and dashboards, as well as external applications such as Excel, SQL Server Management Studio, etc. To improve support and provide more effective troubleshooting, Microsoft might store the query text generated when users use Fabric items such as reports and dashboards. This data is sometimes necessary for debugging and resolving complex issues related to the performance and functionality of Fabric Items such as semantic models.
+
+When this setting is enabled, Microsoft can store the query text generated when users use Fabric items such as reports and dashboards. This data is sometimes necessary for debugging and resolving complex issues related to the performance and functionality of Fabric Items such as semantic models.
+
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
