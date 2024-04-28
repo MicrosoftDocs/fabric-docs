@@ -16,10 +16,9 @@ ms.search.form: Get data in a KQL Database
 
 In this article, you learn how to get events from Real-Time event hub into either a new or existing table.
 
-Real-Time hub is currently in public preview.
-
 > [!NOTE]
-> Currently Real-Time event hub only supports eventstream data.
+> Currently Real-Time event hub only supports eventstreams.
+> Real-Time hub is currently in public preview.
 
 ## Prerequisites
 
@@ -29,15 +28,15 @@ Real-Time hub is currently in public preview.
 
 ## Source
 
-To get data from Real-Time hub, you need to select Real-Time hub as your data source. You can select <!--an existing eventstream--> Real-Time hub in the following ways:
+To get data from Real-Time hub, you need to select  a Real-Time Stream from Real-Time data hub as your data source. You can select <!--an existing eventstream--> Real-Time hub in the following ways:
 
 On the lower ribbon of your KQL database, either:
 
-* From the **Get Data** dropdown menu, then under **Continuous**, select **Real-Time hub** > **Existing Eventstream**.
+* From the **Get Data** dropdown menu, then under **Continuous**, select **Real-Time hub (Preview)**.
 
 * Select **Get Data** and then in the **Get data** window, select a stream from the Real-Time hub section.
 
-    :::image type="content" source="media/get-data-real-time-data/select-data-source.png" alt-text="Screenshot of get data window with Real-Time hub options." lightbox="media/get-data-real-time-data/select-data-source.png":::
+    :::image type="content" source="media/get-data-real-time-hub/select-data-source.png" alt-text="Screenshot of get data window with Real-Time hub options." lightbox="media/get-data-real-time-hub/select-data-source.png":::
 
 * Select a data stream from the Real-Time hub stream list.
 
@@ -49,7 +48,7 @@ On the lower ribbon of your KQL database, either:
     > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 1. Under **Configure the data source**, fill out the settings using the information in the following table. Some setting information automatically fills from your eventstream.
 
-    :::image type="content" source="media/get-data-real-time-data/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-real-time-data/configure-tab.png":::
+    :::image type="content" source="media/get-data-real-time-hub/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-real-time-hub/configure-tab.png":::
 
     |**Setting** | **Description**|
     |----|----|
@@ -72,7 +71,7 @@ The **Inspect** tab opens with a preview of the data.
 
 To complete the ingestion process, select **Finish**.
 
-:::image type="content" source="media/get-data-event-hub/inspect-data.png" alt-text="Screenshot of the inspect tab. " lightbox="media/get-data-event-hub/inspect-data.png":::
+:::image type="content" source="media/get-data-real-time-hub/inspect-data.png" alt-text="Screenshot of the inspect tab. " lightbox="media/get-data-real-time-hub/inspect-data.png":::
 
 Optionally:
 
@@ -93,7 +92,7 @@ Optionally:
 
 In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to query, drop the ingested data, or see a dashboard of your ingestion summary. Select **Close** to close the window.
 
-:::image type="content" source="media/get-data-eventstream/summary.png" alt-text="Screenshot of summary page with successful ingestion completed." lightbox="media/get-data-eventstream/summary.png":::
+:::image type="content" source="media/get-data-real-time-hub/summary.png" alt-text="Screenshot of summary page with successful ingestion completed." lightbox="media/get-data-real-time-hub/summary.png":::
 
 ## Related content
 
