@@ -12,6 +12,7 @@ Real-Time hub expands Fabric with event-driven capabilities to support real-time
 
 This article shows how to explore Azure blob storage events in Fabric Real-Time hub. Azure blob storage events allow you to receive notifications when certain actions occur on your blobs. For example, you can receive a notification when a new blob is created, or an existing blob is modified. These events can be used to set alert on other actions or workflows, such as updating a database or sending a notification. This article provides the properties and schema for Azure blob storage events.  
 
+[!INCLUDE [preview-note](./includes/preview-note.md)]
 
 ## View Azure blob storage events detail page
 
@@ -68,68 +69,35 @@ This section shows subscriptions using the event category. Here are the columns 
 ### Schemas
 An event has the following top-level data:
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `source` | string | Full resource path to the event source. This field isn't writeable. Event Grid provides this value. |
-| `subject` | string | Publisher-defined path to the event subject. |
-| `type` | string | One of the registered event types for this event source. |
-| `time` | string | The time the event is generated based on the provider's UTC time. |
-| `id` | string | Unique identifier for the event. |
-| `data` | object | Blob storage event data. |
-| `specversion` | string | CloudEvents schema specification version. |
+| Property | Type | Description | Example | 
+| -------- | ---- | ----------- | ------- |
+| `source` | string | Full resource path to the event source. This field isn't writeable. Event Grid provides this value. | `/subscriptions/{subscription-id}/resourceGroups/Storage/providers/Microsoft.Storage/storageAccounts/my-storage-account`|
+| `subject` | string | Publisher-defined path to the event subject. | `/blobServices/default/containers/my-file-system/blobs/new-file.txt` |
+| `type` | string | One of the registered event types for this event source. | `Microsoft.Storage.BlobCreated` |
+| `time` | string | The time the event is generated based on the provider's UTC time. | `2017-06-26T18:41:00.9584103Z` |
+| `id` | string | Unique identifier for the event. | `00000000-0000-0000-0000-000000000000` |
+| `data` | object | Blob storage event data. | `{{Data object}}` |
+| `specversion` | string | CloudEvents schema specification version. | `1.0` |
 
 The `data` object has the following properties: 
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `api` | string | The operation that triggered the event. |
-| `clientRequestId` | string | A client-provided request ID for the storage API operation. This ID can be used to correlate to Azure Storage diagnostic logs using the "client-request-id" field in the logs, and can be provided in client requests using the "x-ms-client-request-id" header. See [Log Format](/rest/api/storageservices/storage-analytics-log-format). |
-| `requestId` | string | Service-generated request ID for the storage API operation. Can be used to correlate to Azure Storage diagnostic logs using the "request-id-header" field in the logs and is returned from initiating API call in the 'x-ms-request-id' header. See [Log Format](/rest/api/storageservices/storage-analytics-log-format). |
-| `eTag` | string | The value that you can use to run operations conditionally. | 
-| `contentType` | string | The content type specified for the blob. |
-| `contentLength` | integer | The size of the blob in bytes. |
-| `blobType` | string | The type of blob. Valid values are either `BlockBlob` or `PageBlob`. |
-| `contentOffset` | number | The offset in bytes of a write operation taken at the point where the event-triggering application completed writing to the file. <p>Appears only for events triggered on blob storage accounts that have a hierarchical namespace.</p> |
-| `destinationUrl` | string | The url of the file that will exist after the operation completes. For example, if a file is renamed, the destinationUrl property contains the url of the new file name. <p> Appears only for events triggered on blob storage accounts that have a hierarchical namespace. </p>|
-| `sourceUrl` | string | The url of the file that exists before the operation is done. For example, if a file is renamed, the sourceUrl contains the url of the original file name before the rename operation. <p> Appears only for events triggered on blob storage accounts that have a hierarchical namespace. </p> | 
-| `url` | string | The path to the blob. <p>If the client uses a Blob REST API, then the url has this structure: `<storage-account-name>.blob.core.windows.net\<container-name>\<file-name>`. If the client uses a Data Lake Storage REST API, then the url has this structure: `<storage-account-name>.dfs.core.windows.net/<file-system-name>/<file-name>`.  |
-| `recursive` | string | True to run the operation on all child directories; otherwise False. <p>Appears only for events triggered on blob storage accounts that have a hierarchical namespace. </p> |
-| `sequencer` | string | An opaque string value representing the logical sequence of events for any particular blob name. Users can use standard string comparison to understand the relative sequence of two events on the same blob name. |
-| `identity` | string | A string value representing the identity associated with the event. For SFTP, the value is the local user name. |
-| `storageDiagnostics` | object | Diagnostic data occasionally included by the Azure Storage service. When present, event consumers should ignore it. |
-
-### Sample payload
-Here's a `Microsoft.Storage.BlobCreated` sample payload using the Cloud Events schema.
-
-```json
-[
-    {
-        "source": "/subscriptions/{subscription-id}/resourceGroups/Storage/providers/Microsoft.Storage/storageAccounts/my-storage-account",
-        "subject": "/blobServices/default/containers/my-file-system/blobs/new-file.txt",
-        "type": "Microsoft.Storage.BlobCreated",
-        "time": "2017-06-26T18:41:00.9584103Z",
-        "id": "831e1650-001e-001b-66ab-eeb76e069631",
-        "data": {
-            "api": "CreateFile",
-            "clientRequestId": "6d79dbfb-0e37-4fc4-981f-442c9ca65760",
-            "requestId": "831e1650-001e-001b-66ab-eeb76e000000",
-            "eTag": "\"0x8D4BCC2E4835CD0\"",
-            "contentType": "text/plain",
-            "contentLength": 0,
-            "contentOffset": 0,
-            "blobType": "BlockBlob",
-            "url": "https://my-storage-account.dfs.core.windows.net/my-file-system/new-file.txt",
-            "sequencer": "00000000000004420000000000028963",
-            "storageDiagnostics": {
-                "batchId": "b68529f3-68cd-4744-baa4-3c0498ec19f0"
-            }
-        },
-        "specversion": "1.0"
-    }
-]
-```
-
-
+| Property | Type | Description | Example | 
+| -------- | ---- | ----------- | ------- |
+| `api` | string | The operation that triggered the event. | `CreateFile` |
+| `clientRequestId` | string | A client-provided request ID for the storage API operation. This ID can be used to correlate to Azure Storage diagnostic logs using the "client-request-id" field in the logs, and can be provided in client requests using the "x-ms-client-request-id" header. See [Log Format](/rest/api/storageservices/storage-analytics-log-format). | `00000000-0000-0000-0000-000000000000 ` |
+| `requestId` | string | Service-generated request ID for the storage API operation. Can be used to correlate to Azure Storage diagnostic logs using the "request-id-header" field in the logs and is returned from initiating API call in the 'x-ms-request-id' header. See [Log Format](/rest/api/storageservices/storage-analytics-log-format). | `00000000-0000-0000-0000-000000000000` |
+| `eTag` | string | The value that you can use to run operations conditionally. | `\"0x8D4BCC2E4835CD0\"` |
+| `contentType` | string | The content type specified for the blob. | `text/plain` |
+| `contentLength` | integer | The size of the blob in bytes. | `0` |
+| `blobType` | string | The type of blob. Valid values are either `BlockBlob` or `PageBlob`. | `BlockBlob` | 
+| `contentOffset` | number | The offset in bytes of a write operation taken at the point where the event-triggering application completed writing to the file. <p>Appears only for events triggered on blob storage accounts that have a hierarchical namespace.</p> | `0` |
+| `destinationUrl` | string | The url of the file that will exist after the operation completes. For example, if a file is renamed, the destinationUrl property contains the url of the new file name. <p> Appears only for events triggered on blob storage accounts that have a hierarchical namespace. </p>| `https://my-storage-account.dfs.core.windows.net/my-file-system/new-file.txt` | 
+| `sourceUrl` | string | The url of the file that exists before the operation is done. For example, if a file is renamed, the sourceUrl contains the url of the original file name before the rename operation. <p> Appears only for events triggered on blob storage accounts that have a hierarchical namespace. </p> | `https://my-storage-account.dfs.core.windows.net/my-file-system/my-original-directory` |
+| `url` | string | The path to the blob. <p>If the client uses a Blob REST API, then the url has this structure: `<storage-account-name>.blob.core.windows.net\<container-name>\<file-name>`. If the client uses a Data Lake Storage REST API, then the url has this structure: `<storage-account-name>.dfs.core.windows.net/<file-system-name>/<file-name>`.  | `https://myaccount.blob.core.windows.net/container01/file.txt` |
+| `recursive` | string | True to run the operation on all child directories; otherwise False. <p>Appears only for events triggered on blob storage accounts that have a hierarchical namespace. </p> | `true` |
+| `sequencer` | string | An opaque string value representing the logical sequence of events for any particular blob name. Users can use standard string comparison to understand the relative sequence of two events on the same blob name. | `00000000000004420000000000028963` | 
+| `identity` | string | A string value representing the identity associated with the event. For SFTP, the value is the local user name. | `localuser` | 
+| `storageDiagnostics` | object | Diagnostic data occasionally included by the Azure Storage service. When present, event consumers should ignore it. | `{{Storage diagnostic object}}` |
 
 
 ## Related content

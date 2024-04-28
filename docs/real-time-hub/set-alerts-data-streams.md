@@ -10,32 +10,30 @@ ms.date: 05/21/2024
 # Set alerts on streams in Real-Time hub
 This article describes how to set alerts on streams in Real-Time hub.
 
-## Launch the Set alert page 
+[!INCLUDE [preview-note](./includes/preview-note.md)]
 
-Do steps from one of the following sections, which opens a side panel where you can configure the following options:
+## Launch Set alert page for a data stream
 
-- Events you want to monitor.
-- Conditions you want to look for in the events.
-- Action you want Data Activator to take. 
+1. Navigate to the Real-Time hub.
+1. Select a data stream whose parent is an eventstream. 
 
+    :::image type="content" source="./media/set-alerts-data-streams/select-data-stream.png" alt-text="Screenshot that shows Real-Time hub with a data stream selected.":::
+1. On the stream detail page, select **Set alert**. 
 
-### From the data streams list
-Move the mouse over the data stream, and do one of the following steps: 
-
-- Select the **Alert** button 
-- Select **ellipsis (...)**, and select **Set alert**.
-
-### From the data stream detail page
-
-1. Select a data stream from the list to see the detail page. 
-1. Select **Create alert** button at the top of page. 
+    :::image type="content" source="./media/set-alerts-data-streams/set-alert-button.png" alt-text="Screenshot that shows the selection of the Set alert button on the data stream detail page." lightbox="./media/set-alerts-data-streams/set-alert-button.png":::
+    
 
 ## Set alert
+
 On the **Set alert** page, follow these steps:
 
 1. Confirm that **Source** set to the name of your eventstream. 
 1. For **Condition**, select one of the following options:
-    1. If you want to monitor each event with no condition, select **On each event**. 
+    1. To monitor each event with no condition, select **On each event**. 
+    1. To monitor events that satisfy a condition, select **On each event when**, select a field, select a condition, and a value. 
+
+        :::image type="content" source="./media/set-alerts-data-streams/event-condition.png" alt-text="Screenshot that shows the condition for an alert." lightbox="./media/set-alerts-data-streams/event-condition.png":::
+    1. To monitor events grouped by, select **On each event grouped by**, select a grouping field, a field for filtering, condition, and a value to be checked against. 
 1. For **Action**, select one of the following options:
     1. To receive an email when the event occurs and the condition is met, select **Send me an email**. 
     1. To receive notification via Teams, select **Message me in Teams**.
@@ -43,6 +41,13 @@ On the **Set alert** page, follow these steps:
 1. In the **Save location** section, do these steps: 
     1. For **Workspace**, select the workspace where you want to save the alert. 
     1. For **Reflex item**, select an existing Reflex item or create a Reflex item for this alert. 
+    
+        :::image type="content" source="./media/set-alerts-data-streams/save-location.png" alt-text="Screenshot that shows the Save location details of an alert." lightbox="./media/set-alerts-data-streams/save-location.png":::
+
+## Related content
+
+- [Set alerts for Azure blob storage events](set-alerts-azure-blob-storage-events.md)
+- [Set alerts for Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
 
 
 

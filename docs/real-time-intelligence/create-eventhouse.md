@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.date: 04/21/2024
 ms.search.form: Eventhouse
 ---
+
 # Create and manage an event house (preview)
 
 An event house allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Eventhouse overview (preview)](eventhouse.md).
@@ -28,7 +29,7 @@ In this article, you learn how to create an event house, add new databases to an
 1. Browse to the [admin portal](../admin/admin-center.md).
 1. In the **Tenant settings** tab, search for *Eventhouse*. For more information, see [About tenant settings](../admin/about-tenant-settings.md).
 1. Toggle the button for **Create Eventhouse (preview)** to **Enabled**. For more information, see [Tenant settings - Microsoft Fabric](../admin/tenant-settings-index.md).
-1. Select **Apply**. 
+1. Select **Apply**.
 
     :::image type="content" source="media/eventhouse/enable-admin-settings.png" alt-text="Screenshot of section of admin settings relating to enabling Eventhouse.":::
 
@@ -79,18 +80,15 @@ In this section, you add a new KQL database to an existing event house. This dat
 
 [Minimum consumption](eventhouse.md#minimum-consumption) sets a minimum available capacity unit (CU) size for your event house.
 
-
-
 1. Select the Eventhouse from your list of items in the workspace.
 1. In the top right-hand side of the event house details page, select **Eventhouse settings** > **Minimum consumption**
 1. From the dropdown, select the size corresponding to the [minimum available CU](eventhouse.md#minimum-consumption) size you want to apply to this event house.
 
     The following table maps the size to the minimum [capacity units](../admin/service-admin-portal-capacity-settings.md) allotted to the event house:
-    
+
     [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
 
     :::image type="content" source="media/eventhouse/guaranteed-availability.png" alt-text="Screenshot showing how to select the correct minimum consumption in Real-Time Intelligence Eventhouse."  lightbox="media/eventhouse/guaranteed-availability.png":::
-
 
 ## Delete an event house
 

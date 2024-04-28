@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
-title: Real-Time hub in Microsoft Fabric documentation
-summary: Real-Time hub is a single, unified, logical storage for data in motion.
+title: Real-Time hub (preview) in Microsoft Fabric documentation
+summary: Microsoft Fabric Real-Time hub (preview) is a single, unified, logical storage for data in motion.
 
 metadata:
   title: Real-Time hub in Microsoft Fabric documentation
@@ -41,8 +41,11 @@ landingContent:
             url: get-events-microsoft-sources.md
           - text: Get events from external sources
             url: get-events-external-sources.md
-          - text: Get system events
-            url: get-fabric-events.md
+          - text: Get Azure blob storage events
+            url: get-azure-blob-storage-events.md
+          - text: Create streams for Fabric workspace item events
+            url: create-streams-fabric-workspace-item-events.md
+
 
   # Card 
   - title: Discover and manage streams
@@ -71,5 +74,3 @@ landingContent:
           url: set-alerts-azure-blob-storage-events.md
         - text: Set alerts on Fabric workspace item events
           url: set-alerts-fabric-workspace-item-events.md
-        - text: Consume Fabric events using an eventstream
-          url: consume-fabric-events-event-stream.md

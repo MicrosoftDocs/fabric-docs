@@ -10,6 +10,8 @@ ms.date: 04/03/2024
 # Add Confluent Cloud Kafka as source in Real-Time hub
 This article describes how to add Confluent Kafka as an event source in Fabric Real-Time hub. 
 
+[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 ## Prerequisites 
 
 - Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
@@ -29,11 +31,9 @@ In Fabric Real-Time hub, select **Get events** button in the top-right corner.
 - [Azure Event Hubs](add-source-azure-event-hubs.md)
 - [Azure IoT Hub](add-source-azure-iot-hub.md)
 - [Azure SQL Database CDC](add-source-azure-sql-database-cdc.md)
-- [Custom endpoint](add-source-custom-app.md)
 - [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md)
 - [MySQL Database CDC](add-source-mysql-database-cdc.md)
 - [PostgreSQL Database CDC](add-source-postgresql-database-cdc.md)
-- [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](get-azure-blob-storage-events.md)
-- [Fabric workspace event](get-fabric-workspace-item-events.md)
+- [Fabric workspace event](create-streams-fabric-workspace-item-events.md)
 

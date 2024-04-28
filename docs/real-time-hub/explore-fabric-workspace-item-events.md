@@ -12,6 +12,8 @@ Real-Time hub expands Fabric with event-driven capabilities to support real-time
 
 Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items, such as when a new artifact is created, or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
 
+[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 ## View Fabric workspace item events detail page
 
 1. In **Real-Time hub**, switch to the **Fabric events** tab. 
@@ -63,29 +65,29 @@ This section shows subscriptions using the event category. Here are the columns 
 ### Schemas
 An event has the following top-level data:
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `source` | string | Identifies the context in which an event happened.  |
-| `subject` | string | Identifies the subject of the event in the context of the event producer. |
-| `type` | string | Contains a value describing the type of event related to the originating occurrence. |
-| `time` | timestamp | Timestamp of when the occurrence happened. |
-| `id` | string | Unique identifier for the event. |
-| `specversion` | string | The version of the Cloud Event spec. |
-| `dataschemaversion` | String | The version of the data schema. |
-| `capacityId` | string | Unique identifier for the capacity. |
-| `domainId` | string | Unique identifier for the domain. |
+| Property | Type | Description | Example |
+| -------- | ---- | ----------- | ----- |
+| `source` | string | Identifies the context in which an event happened.  | `00000000-0000-0000-0000-000000000000` |
+| `subject` | string | Identifies the subject of the event in the context of the event producer. |  `/workspaces/00000000-0000-0000-0000-000000000000/items/00000000-0000-0000-0000-000000000000` |
+| `type` | string | Contains a value describing the type of event related to the originating occurrence. | `Microsoft.Fabric.ItemCreateSucceeded` |
+| `time` | timestamp | Timestamp of when the occurrence happened. | `2024-04-23T21:17:32.6029537+00:00` |
+| `id` | string | Unique identifier for the event. | `00000000-0000-0000-0000-000000000000` |
+| `specversion` | string | The version of the Cloud Event spec. | `1.0` |
+| `dataschemaversion` | String | The version of the data schema. | `1.0` |
+| `capacityId` | string | Unique identifier for the capacity. | `00000000-0000-0000-0000-000000000000` |
+| `domainId` | string | Unique identifier for the domain. | `00000000-0000-0000-0000-000000000000` |
 
 The `data` object has the following properties: 
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `itemId` | guid | Unique identifier for the item/artifact. |
-| `itemKind` | string | The kind of item/artifact. |
-| `itemName` | string | The item/artifact name. |
-| `workspaceId` | guid | Unique identifier for the workspace. |
-| `workspaceName` | string | The name of the workspace. |
-| `principalId` | guid | Unique identifier for the user. |
-| `executingPrincipalType` | string | The kind of user. |
+| Property | Type | Description | Example |
+| -------- | ---- | ----------- | ------- |
+| `itemId` | guid | Unique identifier for the item/artifact. | `00000000-0000-0000-0000-000000000000` |
+| `itemKind` | string | The kind of item/artifact. | `Notebook` |
+| `itemName` | string | The item/artifact name. | `Test Notebook` |
+| `workspaceId` | guid | Unique identifier for the workspace. | `00000000-0000-0000-0000-000000000000` |
+| `workspaceName` | string | The name of the workspace. | `Test Workspace` |
+| `principalId` | guid | Unique identifier for the user. | `00000000-0000-0000-0000-000000000000` |
+| `executingPrincipalType` | string | The kind of user. | `User` |
 
 
 ## Related content

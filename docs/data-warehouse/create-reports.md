@@ -1,10 +1,12 @@
 ---
 title: Create reports
 description: Learn about reports in Synapse Data Warehouse in Microsoft Fabric.
-author: salilkanade
-ms.author: salilkanade
-ms.reviewer: WilliamDAssafMSFT
-ms.date: 02/24/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: salilkanade
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -35,7 +37,7 @@ Reports that use the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE 
 
 Within **Data Warehouse**, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI semantic model.
 
-:::image type="content" source="media/create-reports/new-report-ribbon.png" alt-text="Screenshot of new report in the ribbon." lightbox="media/create-reports/new-report-ribbon.png":::
+:::image type="content" source="media/create-reports/new-report-ribbon.png" alt-text="Screenshot of new report in the ribbon.":::
 
 If no tables have been added to the default Power BI semantic model, the dialog first automatically adds tables, prompting the user to confirm or manually select the tables included in the canonical default semantic model first, ensuring there's always data first.
 

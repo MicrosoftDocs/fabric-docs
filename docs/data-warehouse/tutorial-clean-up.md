@@ -1,10 +1,12 @@
 ---
 title: Data warehouse tutorial - clean up tutorial resources
 description: In this final tutorial step, clean up the workspace, individual reports, pipelines, warehouses, and other items you created as part of the tutorial.
-author: bradleyschacht
-ms.author: scbradl
-ms.reviewer: wiassaf
-ms.date: 02/21/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: scbradl
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: tutorial
 ms.custom:
   - build-2023
