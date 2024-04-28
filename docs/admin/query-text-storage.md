@@ -3,7 +3,7 @@ title: "Query text storage in Microsoft Fabric"
 description: "This article describes query text storage for support purposes and its implications for data security and privacy."
 author: paulinbar
 ms.author: painbar
-ms.service: Fabric
+ms.service: fabric
 ms.topic: concept-article #Don't change
 ms.date: 04/28/2024
 #customer intent: As a Fabric administrator or as a security or governance admin, I want to know about query text storage and its implications for data privacy and security.
