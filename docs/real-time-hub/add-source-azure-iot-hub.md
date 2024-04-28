@@ -16,6 +16,7 @@ This article describes how to add an Azure IoT Hub as an event source in Fabric 
 
 - Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
 - [Create an Azure IoT hub](/azure/iot-hub/iot-hub-create-through-portal) if you don't have one. 
+- You need to have appropriate permission to get IoT hub's access keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
 
 ## Get events from an Azure IoT hub
 You can get events from an Azure IoT hub into Real-Time hub in one of the ways:

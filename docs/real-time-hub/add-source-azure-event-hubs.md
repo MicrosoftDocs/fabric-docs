@@ -15,7 +15,8 @@ This article describes how to get events from an Azure event hub in Real-Time hu
 ## Prerequisites 
 
 - Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
-- [Create ann Azure Event Hubs namespace and an event hub](/azure/event-hubs/event-hubs-create) if you don't have one.
+- [Create an Azure Event Hubs namespace and an event hub](/azure/event-hubs/event-hubs-create) if you don't have one. 
+- You need to have appropriate permission to get access keys for the event hub. The event hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
 
 ## Get events from an Azure event hub
 You can get events from an Azure event hub into Real-Time hub in one of the ways:
