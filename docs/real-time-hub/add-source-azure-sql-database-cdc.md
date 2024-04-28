@@ -83,4 +83,4 @@ Use instructions from the [Add Azure SQL Database CDC as a source](#add-azure-sq
         :::image type="content" source="./media/add-source-azure-sql-database-cdc/connect-page-filled.png" alt-text="Screenshot that shows the Connect page of the Get events wizard filled." lightbox="./media/add-source-azure-sql-database-cdc/connect-page-filled.png":::         
 1. On the **Review and create** screen, review the summary, and then select **Create source**.
 
-      :::image type="content" source="./media/add-source-azure-sql-database-cdc/review-create-page.png" alt-text="Screenshot that shows the Review and create page of the Get events wizard filled." lightbox="./media/add-source-azure-sql-database-cdc/review-create-page.png:::         
+      :::image type="content" source="./media/add-source-azure-sql-database-cdc/review-create-page.png" alt-text="Screenshot that shows the Review and create page of the Get events wizard filled." lightbox="./media/add-source-azure-sql-database-cdc/review-create-page.png":::         

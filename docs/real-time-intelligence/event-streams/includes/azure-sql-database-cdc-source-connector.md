@@ -6,7 +6,7 @@ author: xujxu
 ms.topic: include
 ms.custom:
   - build-2024
-ms.date: 04/22/2024
+ms.date: 05/21/2024
 ---
 
 1. On the **Select a data source** screen, select **Azure SQL DB (CDC)**.
@@ -40,4 +40,4 @@ ms.date: 04/22/2024
       :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connect-page-filled.png" alt-text="Screenshot that shows the Connect page of the Get events wizard filled." lightbox="./media/azure-sql-database-cdc-source-connector/connect-page-filled.png":::         
 1. On the **Review and create** screen, review the summary, and then select **Add**.
 
-      :::image type="content" source="./media/azure-sql-database-cdc-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page of the Get events wizard filled." lightbox="./media/azure-sql-database-cdc-source-connector/review-create-page.png:::         
+      :::image type="content" source="./media/azure-sql-database-cdc-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page of the Get events wizard filled." lightbox="./media/azure-sql-database-cdc-source-connector/review-create-page.png":::         
