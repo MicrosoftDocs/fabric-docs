@@ -18,6 +18,9 @@ items:
   - name: OneLake
     tocHref: /fabric/onelake/
     topicHref: /fabric/onelake/index
+  - name: Real-Time hub
+    tocHref: /fabric/real-time-hub/
+    topicHref: /fabric/real-time-hub/index
   - name: Real-Time Intelligence
     tocHref: /fabric/real-time-intelligence/
     topicHref: /fabric/real-time-intelligence/index
