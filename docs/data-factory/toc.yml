@@ -177,6 +177,12 @@
         href: connector-azure-databricks-overview.md
       - name: Set up your connection
         href: connector-azure-databricks.md
+    - name: Azure Files 
+      items: 
+      - name: Azure Files - Overview 
+        href: connector-azure-files-overview.md 
+      - name: Configure in a data pipeline Copy activity 
+        href: connector-azure-files-copy-activity.md 
     - name: Azure HDInsight on AKS Trino
       items:
       - name: Overview
