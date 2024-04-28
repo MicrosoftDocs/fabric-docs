@@ -58,6 +58,14 @@ This article describes how to add Confluent Kafka as an event source in Fabric R
 1. Select **Next**. 
 1. On the **Review and create** screen, review the summary, and then select **Create source**.
 
+## View data stream details
+
+1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Confluent Cloud Kafka source. To close the wizard, select **Close** at the bottom of the page. 
+1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you.
+
+    For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+ 
+
 ## Related content
 
 - [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)

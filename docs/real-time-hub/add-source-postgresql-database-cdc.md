@@ -57,6 +57,8 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
 1. Now, on the **Connect** page, do these steps:
     1. For **table**, Enter a table name.
     1. For **Port**, enter the port number or leave the default value: 5432. 
+    1. For **eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected PostgreSQL Database CDC as a source.
+    1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **Data streams** tab of Real-Time hub when the wizard finishes. 
     1. Select **Next** at the bottom of the page.
 
         :::image type="content" source="media/add-source-postgresql-database-cdc/connect-page-filled.png" alt-text="Screenshot that shows the Connect page filled for the Azure PostgreSQL database connector." lightbox="media/add-source-postgresql-database-cdc/connect-page-filled.png":::
