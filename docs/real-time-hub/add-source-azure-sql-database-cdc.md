@@ -87,7 +87,7 @@ Use instructions from the [Add Azure SQL Database CDC as a source](#add-azure-sq
 
 1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure SQL Database CDC as a source. To close the wizard, select **Close** at the bottom of the page. 
 
-    :::image type="content" source="./media/add-source-azure-sql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream you just created." lightbox="./media/add-source-azure-sql-database-cdc/review-create-success.png":::
+    :::image type="content" source="./media/add-source-azure-sql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create page after successful creation of the source." lightbox="./media/add-source-azure-sql-database-cdc/review-create-success.png":::
 1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you as shown in the following image.
 
     :::image type="content" source="./media/add-source-azure-sql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream you just created." lightbox="./media/add-source-azure-sql-database-cdc/verify-data-stream.png":::
