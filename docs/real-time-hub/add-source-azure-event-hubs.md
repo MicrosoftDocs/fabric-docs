@@ -8,7 +8,7 @@ ms.date: 05/21/2024
 ---
 
 # Get events from Azure Event Hubs into Real-Time hub
-This article describes how to get events from an Azure event hub in Real-Time hub. 
+This article describes how to get events from an Azure event hub into Real-Time hub. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -28,7 +28,7 @@ You can get events from an Azure event hub into Real-Time hub in one of the ways
 
 Use instructions from the [Add an Azure event hub as a source](#add-an-azure-event-hub-as-a-source) section. 
 
-## Using the Microsoft sources tab
+## Microsoft sources tab
 
 1. In Real-Time hub, switch to the **Microsoft sources** tab. 
 1. In the **Source** drop-down list, select **Azure Event Hubs namespace**. 

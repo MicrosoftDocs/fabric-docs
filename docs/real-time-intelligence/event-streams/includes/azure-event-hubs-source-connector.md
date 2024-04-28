@@ -44,7 +44,7 @@ ms.date: 05/21/2024
 1. Select **Next** at the bottom of the page. 
    
     :::image type="content" source="./media/azure-event-hubs-source-connector/connect-page-2.png" alt-text="Screenshot that shows the Connect page two for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/connect-page-2.png":::        
-1. On the **Review and create** page, review settings, and select **Create source**. 
+1. On the **Review and create** page, review settings, and select **Add**. 
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page for Azure Event Hubs connector." lightbox="./media/azure-event-hubs-source-connector/review-create-page.png":::        
 

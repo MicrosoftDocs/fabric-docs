@@ -4,11 +4,11 @@ description: This article describes how to add an Azure IoT hub as an event sour
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.date: 04/03/2024
+ms.date: 05/21/2024
 ---
 
 # Add Azure IoT Hub as source in Real-Time hub
-This article describes how to add an Azure IoT Hub as an event source in Fabric Real-Time hub. 
+This article describes how to get events from an Azure IoT hub into Real-Time hub. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -28,7 +28,7 @@ You can get events from an Azure IoT hub into Real-Time hub in one of the ways:
 
 Use instructions from the [Add an Azure IoT hub as a source](#add-an-azure-iot-hub-as-a-source) section. 
 
-## Using the Microsoft sources tab
+## Microsoft sources tab
 
 1. In Real-Time hub, switch to the **Microsoft sources** tab. 
 1. In the **Source** drop-down list, select **Azure IoT Hub**. 
@@ -77,7 +77,7 @@ Use instructions from the [Add an Azure IoT hub as a source](#add-an-azure-iot-h
 1. Now, on the **Connect** page of wizard, for **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the IoT hub. 
 1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure IoT hub. You can select from JSON, Avro, and CSV data formats, and then select Connect.
 1. In the **Stream details** section to the right, select the Fabric **workspace** where you want to save the eventstream that the Wizard is going to create. 
-1. For **eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected event hub as a source.
+1. For **eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected Azure IoT hub as a source.
 1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **Data streams** tab of Real-Time hub when the wizard finishes. 
 1. Select **Next** at the bottom of the page. 
     
@@ -91,7 +91,7 @@ Use instructions from the [Add an Azure IoT hub as a source](#add-an-azure-iot-h
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream. To close the wizard, select **Close** at the bottom of the page. 
+1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream with the selected Azure IoT hub as a source. To close the wizard, select **Close** at the bottom of the page. 
 
     :::image type="content" source="./media/add-source-azure-iot-hub/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open eventstream and close the wizard." lightbox="./media/add-source-azure-iot-hub/review-create-success.png":::
 
