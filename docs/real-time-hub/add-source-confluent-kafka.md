@@ -26,7 +26,7 @@ This article describes how to add Confluent Kafka as an event source in Fabric R
     :::image type="content" source="./media/add-source-confluent-kafka/select-confluent.png" alt-text="Screenshot that shows the selection of Confluent as the source type in the Get events wizard.":::
 1. To create a connection to the Confluent Cloud Kafka source, select **New connection**.
 
-    :::image type="content" source="./media/add-source-confluent-kafka/new-connection-link.png" alt-text="Screenshot that shows the selection of the New connectiuon link on the Connect page of the Get events wizard.":::    
+    :::image type="content" source="./media/add-source-confluent-kafka/new-connection-link.png" alt-text="Screenshot that shows the selection of the New connection link on the Connect page of the Get events wizard.":::    
 1. In the **Connection settings** section, enter **Confluent Bootstrap Server**. Navigate to your Confluent Cloud home page, select **Cluster Settings**, and copy the address to your Bootstrap Server.      
 1. In the **Connection credentials** section, If you have an existing connection to the Confluent cluster, select it from the drop-down list for **Connection**. Otherwise, follow these steps: 
     1. For **Connection name**, enter a name for the connection. 
