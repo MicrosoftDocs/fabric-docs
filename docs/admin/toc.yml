@@ -64,6 +64,8 @@ items:
     href: service-admin-portal-premium-per-user.md
   - name: Manage users
     href: service-admin-portal-users.md
+  - name: Store query text for support purposes
+    href: query-text-storage.md
   - name: View audit logs
     href: service-admin-portal-audit-logs.md
   - name: View information protection metrics
