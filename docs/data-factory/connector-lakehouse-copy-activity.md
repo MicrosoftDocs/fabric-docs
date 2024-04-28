@@ -120,6 +120,9 @@ The following properties are **required**:
         - **Overwrite**: Overwrite the existing data and schema in the table using the new values. If this operation is selected, you can enable partition on your target table:
           - **Enable Partition**: This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".
             - **Partition column name**: Select from the destination columns in schemas mapping. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
+        
+          This **Overwrite** feature applies soft delete for the overwritten tables. You can find the delta log of the previous version table in your Lakehouse. When you configure Lakehouse as source in a copy activity, you can specify the previous version and consume it by using **Version** feature.
+
       - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
   - If you select **Files**:
