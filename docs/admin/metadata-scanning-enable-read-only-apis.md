@@ -39,7 +39,7 @@ To enable service principal authentication for Power BI read-only APIs, follow t
 
 4. Enable the Fabric admin settings:
     1. Log in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
-    1. Under **Admin API settings**, you'll see **Allow service principals to use read-only Power BI admin APIs**. Set the toggle to Enabled, and then select the **Specific security groups** radio button and add the security group you created in Step 2 in the text field that appears below it.
+    1. Under **Admin API settings**, you'll see **Service principals can access read-only admin APIs**. Set the toggle to Enabled, and then select the **Specific security groups** radio button and add the security group you created in Step 2 in the text field that appears below it.
 
         :::image type="content" source="media/enable-read-only-apis/allow-service-principals-tenant-setting.png" alt-text="Screenshot of allow service principals tenant setting.":::
 
