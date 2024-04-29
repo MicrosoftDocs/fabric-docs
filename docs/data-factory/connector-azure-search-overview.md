@@ -15,6 +15,10 @@ ms.custom:
 
 The Azure AI Search connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Support in Dataflow Gen2
+
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support the Azure AI Search connector in Dataflow Gen2.
+
 ## Support in Data pipeline
 
 The Azure AI Search connector supports the following capabilities in Data pipeline:
