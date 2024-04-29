@@ -26,10 +26,10 @@ If you want to route event data to your app, you can add a custom endpoint as yo
 1. In the edit mode, add a custom endpoint destination in one of the following ways: 
     - Select **Add destination** on the ribbon, then select **Custom endpoint**, and connect it to your default stream or derived stream.
 
-        :::image type="content" source="./media/add-destination-custom-app-enhanced/add-destination-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of Custom endpoint menu." lightbox="./media/add-destination-custom-app-enhanced/add-destination-custom-endpoint-menu.png"::: 
+        :::image type="content" source="./media/add-destination-custom-app-enhanced/add-destination-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of Custom endpoint menu on the ribbon." lightbox="./media/add-destination-custom-app-enhanced/add-destination-custom-endpoint-menu.png"::: 
     - In the editor, select **Transform events or add destination**, and then select **Custom endpoint**. 
     
-        :::image type="content" source="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of Custom endpoint menu." lightbox="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png":::                
+        :::image type="content" source="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of Custom endpoint menu in the editor." lightbox="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png":::                
 1. Enter a destination **name** for the custom endpoint, and select **Save**. 
 
     :::image type="content" source="./media/add-destination-custom-app-enhanced/custom-app-name.png" alt-text="Screenshot that shows the popup to enter the name for the custom endpoint." lightbox="./media/add-destination-custom-app-enhanced/custom-app-name.png":::    
