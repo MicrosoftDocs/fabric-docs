@@ -46,6 +46,8 @@ Storing and retaining query text data can have implications for data security an
 1. Find the setting **Microsoft can store query text to aid in support investigation**. It is in the Audit and usage section. You can use the search box on the tenant settings tab to help find it.
 1. Set the toggle to **Disabled**.
 
+For more information about the diagnostic query text storage feature, see [Diagnostic query text storage](./query-text-storage.md).
+
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
