@@ -47,7 +47,10 @@ The following properties are **required**:
 
     - If you select **Query**:
       - **Path**: Specify the path to the Dynamics AX OData entity.
-      - **Query**: Specify the OData query options for filtering data. For example, `"?$select=Name,Description&$top=5"`.<br/>**Note**: The connector copies data from the combined URL: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. For more information, see [OData URL components](https://www.odata.org/documentation/odata-version-3-0/url-conventions/).
+      - **Query**: Specify the OData query options for filtering data. For example, `"?$select=Name,Description&$top=5"`.
+      
+      > [!Note]
+      > The connector copies data from the combined URL: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. For more information, see [OData URL components](https://www.odata.org/documentation/odata-version-3-0/url-conventions/).
 
         :::image type="content" source="./media/connector-dynamics-ax/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::
 
