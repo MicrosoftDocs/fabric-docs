@@ -23,11 +23,11 @@ To improve support and provide more effective troubleshooting, Microsoft might s
 
 ## Privacy and security
 
-In compliance with Microsoft's stringent data protection standards, stored query text is securely handled within Fabric and retained for a limited period (less than 30 days). The data is used for approved investigations only. To prevent unauthorized use, access is strictly controlled and monitored. It is also be protected by [Customer Lockbox for Microsoft Azure](../security/security-lockbox.md) if that feature is enabled.
+In compliance with Microsoft's stringent data protection standards, stored query text is securely handled within Fabric and retained for a limited period of time (less than 30 days). The data is used for approved investigations only. To prevent unauthorized use, access is strictly controlled and monitored. It is also be protected by [Customer Lockbox for Microsoft Azure](../security/security-lockbox.md) if that feature is enabled.
 
 ## Disabling diagnostic query text storage
 
-Diagnostic query text storage controlled by the tenant setting **Microsoft can store query text to aid in support investigation**, and is on by default. This means that unless a Fabric admin changes the setting, Microsoft stores the query text associated with the use of some Fabric items in the organization.
+Diagnostic query text storage is controlled by the tenant setting **Microsoft can store query text to aid in support investigation**. The feature is on by default. This means that unless a Fabric admin changes the setting, Microsoft stores the query text associated with the use of some Fabric items in the organization.
 
 If there are organizational requirements that don't permit the storage of query text, or if you wish to opt out of this feature for any other reason, you can turn the feature off. [Go to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings), find the setting, and set the toggle to **Disabled**. See [Microsoft can store query text to aid in support investigation](./service-admin-portal-audit-usage.md#microsoft-can-store-query-text-to-aid-in-support-investigation) for more information.
 
