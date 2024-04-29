@@ -40,14 +40,14 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
 
     To configure connection information, use steps from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmos-db-cdc-as-a-source) section. Skip the first step of selecting Azure Cosmos DB CDC as a source type in the Get events wizard. 
 
-## Add Azure Cosmos CDC as a source
+## Add Azure Cosmos DB CDC as a source
 
 1. On the **Select a data source** screen, select **Azure Cosmos DB (CDC)**.
 
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/select-azure-cosmos-db-cdc.png" alt-text="Screenshot that shows the Select a data source page with Azure Cosmos DB (CDC) selected.":::
 1. On the **Connect** page, select **New connection**.
 
-    :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-cosmos-database-cdc/new-connection-link.png"::: 
+    :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-cosmos-db-cdc/new-connection-link.png"::: 
 1. In the **Connection settings** section, specify the **Cosmos DB endpoint**. 
 
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/connection-settings.png" alt-text="Screenshot that shows the Connection settings section of the New connection page." ::: 
@@ -92,5 +92,9 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
 1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure Cosmos DB CDC as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
 
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create page after successful creation of the source." lightbox="./media/add-source-azure-cosmos-db-cdc/review-create-success.png":::
-1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you as shown in the following image.
 
+    :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream you just created." lightbox="./media/add-source-azure-cosmos-db-cdc/verify-data-stream.png":::
+
+    For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+1
