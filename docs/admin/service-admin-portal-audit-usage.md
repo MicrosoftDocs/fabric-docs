@@ -3,9 +3,7 @@ title: Audit and usage admin settings
 description: Learn how to configure Fabric audit and usage admin settings.
 author: paulinbar
 ms.author: painbar
-ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+ms.service: fabric
 ms.custom:
   - tenant-setting
 ms.topic: how-to
