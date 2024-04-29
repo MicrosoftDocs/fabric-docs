@@ -135,6 +135,12 @@
         href: connector-azure-blob-storage.md
       - name: Configure in a data pipeline copy activity
         href: connector-azure-blob-storage-copy-activity.md
+    - name: Azure AI Search
+      items:
+      - name: Azure AI Search - Overview
+        href: connector-azure-search-overview.md
+      - name: Configure in a data pipeline copy activity
+        href: connector-azure-search-copy-activity.md
     - name: Azure Cosmos DB for NoSQL
       items:
       - name: Overview
@@ -177,6 +183,12 @@
         href: connector-azure-databricks-overview.md
       - name: Set up your connection
         href: connector-azure-databricks.md
+    - name: Azure Files 
+      items: 
+      - name: Azure Files - Overview 
+        href: connector-azure-files-overview.md 
+      - name: Configure in a data pipeline Copy activity 
+        href: connector-azure-files-copy-activity.md 
     - name: Azure HDInsight on AKS Trino
       items:
       - name: Overview
@@ -253,6 +265,12 @@
         href: connector-data-warehouse.md
       - name: Configure in a data pipeline Copy activity
         href: connector-data-warehouse-copy-activity.md 
+    - name: Dynamics AX
+      items: 
+      - name: Dynamics AX - Overview 
+        href: connector-dynamics-ax-overview.md 
+      - name: Configure in a data pipeline Copy activity 
+        href: connector-dynamics-ax-copy-activity.md 
     - name: Dynamics CRM
       items:
       - name: Overview
