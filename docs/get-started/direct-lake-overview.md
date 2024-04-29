@@ -28,7 +28,7 @@ Direct Lake also supports [row-level security](../security/service-admin-object-
 
 ## Prerequisites
 
-Direct Lake is supported on Microsoft Fabric F SKUs only.
+Direct Lake is supported on Microsoft Premium (P) SKUs and Microsoft Fabric (F) SKUs only.
 
 ### Lakehouse
 
