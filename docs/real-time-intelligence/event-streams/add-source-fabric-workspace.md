@@ -51,9 +51,15 @@ Once the connection is created, you can see the Fabric workspace item events sou
 
 ![A screenshot of the Fabric workspace item events source added to the eventstream.](media/add-source-fabric-workspace/fabric-workspace-item-events-edit.png)
 
-Before you proceed with event transformation or routing, make sure you successfully created and captured the workspace events in the eventstream and published the eventstream. Once it's published, you can find the default stream representing the captured events in **Real-Time hub** on the **Fabric events** tab.
+Before you proceed with event transformation or routing, make sure you successfully created and captured the workspace events in the eventstream and published the eventstream.
+
+Once it's published, you can find the default stream representing the captured events in **Real-Time hub** on the **Fabric events** tab.
 
 ![A screenshot of the Fabric workspace item events in Real-Time hub.](media/add-source-fabric-workspace/fabric-workspace-item-events.png)
+
+You can set an alert or take other actions.
+
+![A screenshot of the Fabric workspace item events in Real-Time hub.](media/add-source-fabric-workspace/set-alert.png)
 
 Select **Edit** on the Eventstream ribbon to enter **Edit mode**, where you can add operations to transform the Fabric workspace events or route them to a destination such as Lakehouse.
 

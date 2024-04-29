@@ -17,11 +17,11 @@ When you develop applications for real-time analytics, you commonly encounter tw
 
 ## Understand discrete and continuous events
 
-To build an efficient and scalable eventstream within Fabric, it's important to understand the distinction between discrete events and continuous events or streams.
+To build an efficient and scalable eventstream in Fabric, it's important to understand the distinction between discrete events and continuous events or streams.
 
-**Discrete events**, often referred to as notification events, are individual occurrences that happen at specific points in time. Each event is independent of others and has a clear start and end point. Examples of discrete events include users placing orders on a website or making changes to a database.
+- **Discrete events**, often referred to as notification events, are individual occurrences that happen at specific points in time. Each event is independent of others and has a clear start and end point. Examples of discrete events include users placing orders on a website or making changes to a database.
 
-**Continuous events** or streams represent a continuous flow or stream of data over time. Unlike discrete events, continuous events don't have distinct start or end points. Instead, they represent a steady and ongoing stream of data, often with no predefined boundaries. Examples include sensor data from IoT devices, stock market ticker data, or social media posts in a real-time feed.
+- **Continuous events** or streams represent a continuous flow or stream of data over time. Unlike discrete events, continuous events don't have distinct start or end points. Instead, they represent a steady and ongoing stream of data, often with no predefined boundaries. Examples include sensor data from IoT devices, stock market ticker data, or social media posts in a real-time feed.
 
 >[!NOTE]
 >It's recommended to have either discrete event sources or continuous event (stream) sources, not a mix of both, in one eventstream.
@@ -32,8 +32,8 @@ Fabric event streams enables you to build event-driven solutions for capturing s
 
 |Discrete events|Description|
 |----|---------|
-|Azure Blob Storage events|Generated upon any change made to Azure Blob Storage, such as creation, modification, or deletion of records or files.|
-|Fabric Workspace Item events|Generated upon any change made to a Fabric workspace, including creation, update, or deletion of items.|
+|[Azure Blob Storage events](add-source-azure-blob-storage.md)|Generated upon any change made to Azure Blob Storage, such as creation, modification, or deletion of records or files.|
+|[Fabric Workspace Item events](add-source-fabric-workspace.md)|Generated upon any change made to a Fabric workspace, including creation, update, or deletion of items.|
 
 ## Connect discrete events to eventstreams
 
@@ -60,9 +60,12 @@ To connect discrete events to an eventstream, take the following steps:
 
    ![A screenshot of selecting Azure Blob Storage Events.](media/create-eventstreams-discrete-events/select-external-events.png)
 
-1. Add the event source and publish the eventstream by following the instructions at [Add Fabric workspace item events](add-source-fabric-workspace.md) or [Add Azure Blob Storage events](add-source-azure-blob-storage.md).
+1. Add the event source and publish the eventstream by following the instructions in one of the following articles:
 
-Once completed, the eventstream starts capturing discrete events as they occur. In Real-Time hub, you can find the events under **Fabric events**. You can set an alert to take further action in the right pane.
+   - For Azure Blob Storage events, see [Add Azure Blob Storage events](add-source-azure-blob-storage.md).
+   - For Fabric Workspace Item events, see [Add Fabric workspace item events](add-source-fabric-workspace.md).
+
+Once completed, the eventstream starts capturing discrete events as they occur. In **Real-Time hub**, you can find the events under **Fabric events**. In the right pane, you can set an alert to take further action.
 
 ![A screenshot of the Real-Time hub Fabric events tab and the Set alert pane.](media/create-eventstreams-discrete-events/set-alert.png)
 
