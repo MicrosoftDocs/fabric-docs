@@ -28,7 +28,7 @@ To enable service principal authentication for Power BI read-only APIs, follow t
 1. Create a new Microsoft Entra **Security Group**. [Read more about how to create a basic group and add members using Microsoft Entra](/entra/fundamentals/how-to-manage-groups). You can skip this step if you already have a Microsoft Entra security group you would like to use.
     Make sure to select **Security** as the Group type.
 
-    ![Screenshot of new group creation dialog in Azure portal.](media/enable-read-only-apis/azure-portal-new-group-dialog.png)
+    :::image type="content" source="media/enable-read-only-apis/azure-portal-new-group-dialog.png" alt-text="Screenshot of new group creation dialog in Azure portal.":::
 
 3. Add your App-Id as a member of the security group you created. To do so:
     1. Navigate to **Azure portal > Microsoft Entra ID > Groups**, and choose the security group you created in Step 2.
