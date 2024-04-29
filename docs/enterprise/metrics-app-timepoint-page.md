@@ -115,7 +115,7 @@ Start and end times may occur before or after the displayed time period, due to 
 
 ## Background operations for timerange
 
-A table showing every background operation that contributed Capacity Unit(CU) usage to the viewed timepoint. It fetches the top 100k records based on capacity units. Every background operation that completed within the last 24 hours (defined as a 2,880 x 30 second timepoint window), contributes a small portion of its total usage to the CU value. This means that a background operation that completed the previous day can contribute some CU activity to determine if the capacity is in overload. For more information see [performance smoothing](/power-bi/enterprise/service-premium-smoothing).
+A table showing every background operation that contributed Capacity Unit(CU) usage to the viewed timepoint. It fetches the top 100k records based on capacity units. Every background operation that completed within the last 24 hours (defined as a window of 2,880 intervals, each lasting 30 seconds) contributes a small portion of its total usage to the CU value. This means that a background operation that completed the previous day can contribute some CU activity to determine if the capacity is in overload. For more information see [performance smoothing](/power-bi/enterprise/service-premium-smoothing).
 
 All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations-for-timerange) table.
 
