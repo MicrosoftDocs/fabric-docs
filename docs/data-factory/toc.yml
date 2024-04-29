@@ -265,6 +265,12 @@
         href: connector-data-warehouse.md
       - name: Configure in a data pipeline Copy activity
         href: connector-data-warehouse-copy-activity.md 
+    - name: Dynamics AX
+      items: 
+      - name: Dynamics AX - Overview 
+        href: connector-dynamics-ax-overview.md 
+      - name: Configure in a data pipeline Copy activity 
+        href: connector-dynamics-ax-copy-activity.md 
     - name: Dynamics CRM
       items:
       - name: Overview
