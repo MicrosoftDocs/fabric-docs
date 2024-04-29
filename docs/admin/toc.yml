@@ -28,7 +28,10 @@ items:
   - name: Understand Fabric admin roles
     href: roles.md 
   - name: Service interruption notifications      
-    href: service-interruption-notifications.md   
+    href: service-interruption-notifications.md
+  - name: Diagnostic query text storage
+    href: query-text-storage.md
+  - name: View audit logs   
 - name: Monitor and manage Fabric
   expanded: false
   items:
@@ -64,8 +67,6 @@ items:
     href: service-admin-portal-premium-per-user.md
   - name: Manage users
     href: service-admin-portal-users.md
-  - name: Store query text for support purposes
-    href: query-text-storage.md
   - name: View audit logs
     href: service-admin-portal-audit-logs.md
   - name: View information protection metrics
