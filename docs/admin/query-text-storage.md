@@ -9,7 +9,7 @@ ms.date: 04/29/2024
 #customer intent: As a Fabric administrator or as a security or governance admin, I want to know what diagnostic query text storage is and what its implications are for data privacy and security.
 ---
 
-# Query text storage
+# Diagnostic query text storage
 
 Diagnostic query text storage is a Fabric feature that stores query text content for a limited period to help Fabric support teams to resolve issues that might arise from the use of some Fabric items. The feature is on by default. This article describes feature and how to disable it, if necessary or desired. Its target audience is Fabric administrators and others (for example, security and compliance teams) who want to understand the feature and its implications for data privacy and security.
 
