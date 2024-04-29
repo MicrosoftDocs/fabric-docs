@@ -17,7 +17,7 @@ Before you start, you must complete the following prerequisites: 
 
 - Get access to a premium workspace with Contributor or above permissions where your eventstream is located.  
 
-## Add a Custom endpoint as a destination  
+## Add a custom endpoint as a destination  
 If you want to route event data to your app, you can add a custom endpoint as your eventstream destination. Follow these steps to add a custom endpoint destination: 
 
 1. If you are in the **live view**, switch to the edit mode by selecting **Edit** on the ribbon. 
