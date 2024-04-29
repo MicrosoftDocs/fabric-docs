@@ -27,9 +27,9 @@ In compliance with Microsoft's stringent data protection standards, stored query
 
 ## Disabling diagnostic query text storage
 
-Diagnositic query text storage controlled by the tenant setting **Microsoft can store query text to aid in support investigation**, and is on by default. This means that unless a Fabric admin changes the setting, Microsoft stores the query text associated with the use of some Fabric items in the organization.
+Diagnostic query text storage controlled by the tenant setting **Microsoft can store query text to aid in support investigation**, and is on by default. This means that unless a Fabric admin changes the setting, Microsoft stores the query text associated with the use of some Fabric items in the organization.
 
-If there are organizational requirements that don't permit the storage of query text, or if you wish to opt out of this feature for any other reason, you can turn the feature off. [Go to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings), find the setting, and set the toggle to **Disabled**.
+If there are organizational requirements that don't permit the storage of query text, or if you wish to opt out of this feature for any other reason, you can turn the feature off. [Go to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings), find the setting, and set the toggle to **Disabled**. See [Microsoft can store query text to aid in support investigation](./service-admin-portal-audit-usage.md#microsoft-can-store-query-text-to-aid-in-support-investigation) for more information.
 
 > [!NOTE]
 > The availability of stored query text enables high-quality support without any additional configuration on the part of Fabric administrators. It is thus not recommended to disable diagnostic query text storage unless there is a specific reason for doing so.
