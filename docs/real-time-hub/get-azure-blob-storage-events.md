@@ -11,3 +11,9 @@ ms.date: 04/03/2024
 This article describes how to get Azure Blob Storage events as an eventstream in Fabric Real-Time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
+
+## Prerequisites 
+
+- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+
+[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]

@@ -12,16 +12,20 @@ ms.date: 04/18/2024
 1. On the **Select a data source** page, select **Confluent**. 
 
     :::image type="content" source="./media/confluent-kafka-source-connector/select-confluent.png" alt-text="Screenshot that shows the selection of Confluent as the source type in the Get events wizard.":::
-1. In the **Connection settings** section, enter **Confluent Bootstrap Server**. Navigate to your Confluent Cloud home page, select **Cluster Settings**, and copy the address to your Bootstrap Server.  
+1. To create a connection to the Confluent Cloud Kafka source, select **New connection**.
+
+    :::image type="content" source="./media/confluent-kafka-source-connector/new-connection-link.png" alt-text="Screenshot that shows the selection of the New connection link on the Connect page of the Get events wizard.":::    
+1. In the **Connection settings** section, enter **Confluent Bootstrap Server**. Navigate to your Confluent Cloud home page, select **Cluster Settings**, and copy the address to your Bootstrap Server.      
 1. In the **Connection credentials** section, If you have an existing connection to the Confluent cluster, select it from the drop-down list for **Connection**. Otherwise, follow these steps: 
     1. For **Connection name**, enter a name for the connection. 
-    1. For **Authentication method**, confirm that **Confluent Cloud Key** is selected. 
+    1. For **Authentication kind**, confirm that **Confluent Cloud Key** is selected. 
     1. For **API Key** and **API Key Secret**: 
         1. Navigate to your Confluent Cloud.
         1. Select **API Keys** on the side menu. 
         1. Select the **Add key** button to create a new API key. 
         1. Copy the **API Key** and **Secret**. 
         1. Paste those values into the **API Key** and **API Key Secret** fields. 
+        1. Select **Connect**
 
             :::image type="content" source="./media/confluent-kafka-source-connector/confluent-connection-settings-page-1.png" alt-text="Screenshot that shows the first page of the Confluent connection settings. ":::        
 1. Scroll to see the **Configure Confluent data source** section on the page. Enter the information to complete the configuration of the Confluent data source. 
@@ -33,11 +37,4 @@ ms.date: 04/18/2024
         - **None** – don't automatically set the offset. 
 
             :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings. ":::        
-1. In the **Stream details** section of the right pane, do these steps:
-    1. Select the **workspace** where you want to save the connection.
-    1. Enter a **name for the eventstream** to be created for you.
-    1. Name of the **stream** for Real-Time hub is automatically generated for you. 
-
-        :::image type="content" source="./media/confluent-kafka-source-connector/stream-details.png" alt-text="Screenshot that shows the right pane with Stream details section of the Confluent connection settings page. ":::                
-1. Select **Connect**. 
 1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
