@@ -55,7 +55,7 @@ You must enable binary logging for MySQL replication. The binary logs record tra
 
    - For [binlog_row_image](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_image), select **full**.
 
-   - For [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds) set the number of seconds the service waits before the binary log file is purged. Set the value to match the needs of your environment, for example *86400*.
+   - For [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds), set the number of seconds the service waits before the binary log file is purged. Set the value to match the needs of your environment, for example *86400*.
 
    ![A screenshot of the binlog settings for replication under Server parameters.](media/add-source-mysql-database-change-data-capture/binlog.png)
 
