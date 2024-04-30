@@ -30,7 +30,7 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Bring data into Real-Time hub
-            url: get-started-bring-events-real-time-hub.md
+            url: get-started-real-time-hub.md
 
   # Card 
   - title: Get events and create streams

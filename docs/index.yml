@@ -196,7 +196,7 @@ productDirectory:
       links:
         - url: real-time-hub/real-time-hub-overview.md
           text: What is Real-Time hub?
-        - url: real-time-hub/get-started-bring-events-real-time-hub.md
+        - url: real-time-hub/get-started-real-time-hub.md
           text: Bring your data to Real-Time hub
         - url: real-time-hub/explore-data-streams.md
           text: Explore streams
