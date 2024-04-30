@@ -40,7 +40,7 @@ This overview provides a glimpse into our architecture. For more information on 
 
 The frontend (FE) establishes communication with the Fabric FE portal via an IFrame. The portal, in turn, interacts with the Fabric backend (BE) by making calls to its exposed public APIs.
 
-For interactions between the BE development box and the Fabric BE, the Azure Relay serve as a conduit. Additionally, the BE development box seamlessly integrates with Lakehouse, performing operations such as saving, reading, and fetching data from this resource.
+For interactions between the BE development box and the Fabric BE, the Azure Relay serves as a conduit. Additionally, the BE development box seamlessly integrates with Lakehouse, performing operations such as saving, reading, and fetching data from this resource.
 The communication is facilitated by using Azure Relay and the Fabric Software Development Kit (SDK) installed on the BE development box.
 
 The authentication for all communication within these components is ensured through Microsoft Entra, providing a secure and authenticated environment for the interactions between the frontend, backend, Azure Relay, Fabric SDK, and Lakehouse.
@@ -72,7 +72,7 @@ The BE Boilerplate depends on the following Azure SDK packages:
 * Azure.Storage.Files.DataLake
 Additionally, incorporate the Microsoft Identity package, as it plays a crucial role in implementing secure authentication and authorization, particularly when interfacing with Azure Active Directory (AAD) or other identity providers.
 
-Lastly, our Software Development Kit (SDK) serves as the conduit linking our project to Fabric. The SDK will currently resides in the repository in src/packages/fabric. To configure the NuGet Package Manager, specify the path in the 'Package Sources' section before the build process.
+Lastly, our Software Development Kit (SDK) serves as the conduit linking our project to Fabric. The SDK will currently reside in the repository in src/packages/fabric. To configure the NuGet Package Manager, specify the path in the 'Package Sources' section before the build process.
 
 ```javascript
 	<Project Sdk="Microsoft.NET.Sdk.Web">
