@@ -54,7 +54,7 @@ items:
 - name: Lifecycle management best practices
   href: best-practices-cicd.md
 - name: Frequently asked questions
-  href: faq.md
+  href: faq.yml
 - name: Troubleshooting
   href: troubleshoot-cicd.md
 - name: Partner solutions

@@ -1,20 +1,43 @@
 items:
-- name: Extensions documentation
+- name: Extensibility documentation
+  href: index.yml
 - name: Overview
-  href: extensibility-overview.md
-- name: Frontend configuration guide
-  href: extensibility-frontend.md
-- name: Backend configuration guide
-  href: extensibility-backend.md
-- name: Authentication overview
-  href: authentication-overview.md
-- name: Authentication setup guide
-  href: authentication-setup.md
-- name: Authentication JavaScript API
-  href: authentication-javascript-api.md
-- name: Backend authentication and authorization
-  href: backend-authentication.md
-- name: Frontend manifest
-  href: frontend-manifest.md
-- name: Onboarding to the Fabric monitoring hub
-  href: monitoring-hub.md
+  items:
+  - name: Extensibility overview
+    href: extensibility-overview.md
+  - name: What are workloads?
+    href: workloads.md  
+  - name: Publish your workload
+    href: publish-workload.md  
+- name: Get started
+  items:
+  - name: Set up your environment
+    href: environment-setup.md
+  - name: QuickStart - Run a workload sample
+    href: quickstart-sample.md
+- name: Conceptual
+  items:
+  - name: Authentication overview
+    href: authentication-overview.md
+  - name: Workload architecture
+    href: architecture.md
+  - name: Workload environment
+    href: workload-environment.md                       
+- name: Tutorials
+  items: 
+  - name: Authentication setup guide
+    href: authentication-setup.md    
+  - name: Backend configuration guide
+    href: extensibility-backend.md        
+  - name: Frontend configuration guide
+    href: extensibility-frontend.md
+  - name: Upload and manage a workload
+    href: manage-workload.md
+- name: Reference
+  items:
+  - name: REST APIs
+    href: https://review.learn.microsoft.com/en-us/rest/api/fabric/workload/workloadapi/jobs?branch=drafts%2ffeatures%2fworkloadsapi&tabs=HTTP
+  - name: Client-side APIs
+    href: https://review.learn.microsoft.com/en-us/javascript/api/overview/fabric-extensibility-overview?view=fabric-extensibility-js-latest&branch=smoke-test
+  - name: Samples
+    href: https://github.com/microsoft/fabric-samples
