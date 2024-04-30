@@ -49,4 +49,4 @@ As data flows into Real-Time hub, you can create a stream out of it. Once the st
 
 - [Create streams for supported sources](supported-sources.md)
 - [Azure blob storage events](get-azure-blob-storage-events.md)
-- [Fabric Workspace item events ](get-fabric-workspace-item-events.md)
+- [Fabric Workspace item events ](create-streams-fabric-workspace-item-events.md)
