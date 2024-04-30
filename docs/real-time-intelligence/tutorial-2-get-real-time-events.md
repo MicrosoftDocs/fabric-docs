@@ -15,15 +15,38 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md).
 
-## Get events
+## Create eventstream
 
 1. From the navigation bar, select **Real-Time Hub**.
 1. Select **+ Get events**.
-1. The **Get events** pane opens. Select **Sample data**.
-1. In **Eventstream name**, enter *Tutorial-event*. 
-1. From the available samples, select **Bike location data**.
-1. In **Source name**, enter *Tutorial*.
-1. Select **Add**. TODO: CONFIRM. 
+1. The **Get events** pane opens. Select **Sample data**. 
+
+### Sample data
+
+1. In **Source name**, enter *TutorialSource*.
+1. In **Sample data** select *Bicycles (Reflex compatible).
+
+### Stream details
+
+1. Edit the **Eventstream name** by selecting the pencil icon and entering *TutorialEventstream*.
+1. Select **Next**.
+
+### Review and create
+
+1. Review the eventstream details and select **Create source**.
+
+   A new eventstream named *TutorialEventstream* has been created with data flowing.
+
+## Transform events
+
+1. Select **Open Eventstream**.
+1. In the eventstream authoring canvas, select the eventstream tile in the center.
+1. From the menu ribbon, select **Edit**.
+1. Select **Transform events** > **Manage fields**.
+
+    :::image type="content" source="media/tutorial/manage-fields.png" alt-text="Screenshot showing the edit window of eventstreams with transform events selected in Real-Time Intelligence in Microsoft Fabric.":::
+1. From the TutorialEventstream item rightmost node, drag
+
 
 ## Related content
 
