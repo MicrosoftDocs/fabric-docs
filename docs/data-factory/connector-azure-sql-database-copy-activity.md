@@ -100,7 +100,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Write behavior**: Defines the write behavior when the source is files from a file-based data store. You can choose **Insert**, **Upsert** or **Stored procedure**.
 
-    :::image type="content" source="./media/connector-azure-sql-database/writer-behavior.png" alt-text="Screenshot showing write behavior tab.":::
+    :::image type="content" source="./media/connector-azure-sql-database/writer-behavior.png" alt-text="Screenshot of write behavior tab.":::
 
   - **Insert**: Choose this option if your source data has inserts.
 

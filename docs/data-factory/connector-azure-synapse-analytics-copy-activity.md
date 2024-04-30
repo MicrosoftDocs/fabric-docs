@@ -195,7 +195,7 @@ Best practices to load data with partition option:
 
 - Choose distinctive column as partition column (like primary key or unique key) to avoid data skew.
 - If the table has built-in partition, use partition option **Physical partitions of table** to get better performance.
-3. Azure Synapse Analytics can execute a maximum of 32 queries at a moment, setting **Degree of copy parallelism** too large may cause a Synapse throttling issue.
+- Azure Synapse Analytics can execute a maximum of 32 queries at a moment, setting **Degree of copy parallelism** too large may cause a Synapse throttling issue.
 
 ### Sample query to check physical partition
 
