@@ -31,10 +31,7 @@ This user flow shows how an analyst can easily discover and use streaming data f
 
 ## Potential use cases
 
-Customers have streaming data in Azure Event Hubs. In the **Microsoft sources** tab, customers select the specific Eventhub they want to use, and validate the prepopulated information, then a new Eventstream is created and streaming data from this Eventhub starts to flow in.
+Customers have streaming data in Azure Event Hubs. In the **Microsoft sources** tab, customers select the specific event hub they want to use, and validate the prepopulated information, then a new Eventstream is created and streaming data from this event hub starts to flow in.
 
 Change Data Capture (CDC) is a crucial feature in the realm of database management. It enables customers to track and record changes in their database, which can be used for various purposes such as database reconstruction, auditing, and more. In the **Microsoft sources** tab, customers can find options for Postgres SQL and Azure SQL, allowing them to configure and connect their database’s CDC to Fabric. This integration facilitates a seamless flow of data changes into Fabric as streams.
 
-## Related content
-
--   Tutorial link

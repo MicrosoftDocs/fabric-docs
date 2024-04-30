@@ -31,6 +31,3 @@ This user flow shows how an insights explorer can use a Real-Time Dashboard to u
 
 A NYC taxi fleet analyst is exploring the rides data to learn in which boroughs and in what time of the day it's more cost effective to have taxi drivers available for rides.
 
-## Related content
-
--   Tutorial link

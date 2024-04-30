@@ -34,7 +34,3 @@ This user flow shows how a data engineer can load and transform events from a wi
 My streaming data source is in a Confluent Kafka cluster, and I want to
 bring it to Fabric. 'GetEvents' experience in Real-Time hub enables me
 to easily ingest data from my Confluent Kafka cluster into Fabric.
-
-## Related content
-
-- Tutorial link

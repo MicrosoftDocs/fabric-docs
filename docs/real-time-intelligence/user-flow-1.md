@@ -33,6 +33,3 @@ An analyst in a vehicle telematics company searches for events about their fleet
 
 The manager of an e-commerce site tracks orders placed by each user to limit fraud/bot traffic. They set up a trigger looking for anomalies such as many orders being placed in quick succession, or orders placed by the same user from different locations at the same time, and start a workflow to verify the user's identity.
 
-## Related content
-
--   Tutorial link

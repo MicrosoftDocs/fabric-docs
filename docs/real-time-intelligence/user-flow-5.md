@@ -43,6 +43,4 @@ events available in the Real-time hub. You can stream these events
 to an event stream and send it to a custom application through the event
 stream.
 
-## Related content
 
--   Tutorial link
