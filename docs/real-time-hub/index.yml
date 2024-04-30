@@ -37,10 +37,8 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Get events from Microsoft sources
-            url: get-events-microsoft-sources.md
-          - text: Get events from external sources
-            url: get-events-external-sources.md
+          - text: Supported sources
+            url: supported-sources.md
           - text: Get Azure blob storage events
             url: get-azure-blob-storage-events.md
           - text: Create streams for Fabric workspace item events
