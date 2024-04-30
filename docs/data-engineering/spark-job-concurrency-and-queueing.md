@@ -25,7 +25,9 @@ Once they have purchased the capacity, admins can create workspaces within the c
 ## Concurrency throttling and queueing
 
 Fabric Spark enforces a cores-based throttling and queueing mechanism, where users can submit jobs based on the purchased Fabric capacity SKUs. The queueing mechanism is a simple FIFO-based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available. 
-When users submit notebook or lakehouse jobs like Load to Table when their capacity is at its maximum utilization due to concurrent running jobs using all the Spark Vcores available for their purchased Fabric capacity SKU, they're throttled with the message *HTTP Response code 430: Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later.*
+When users submit notebook or lakehouse jobs like Load to Table when their capacity is at its maximum utilization due to concurrent running jobs using all the Spark Vcores available for their purchased Fabric capacity SKU, they're throttled with the message
+
+*HTTP Response code 430: This spark job can't be run because you have hit a spark compute or API rate limit. To run this spark job, cancel an active Spark job through the Monitoring hub, or choose a larger capacity SKU or try again later.*
 
 With queueing enabled, notebook jobs triggered from pipelines and job scheduler and spark job definitions are added to the queue and automatically retried when the capacity is freed up.
 The queue expiration is set to 24 hours from the job submission time. After this period, the jobs will need to be resubmitted.
