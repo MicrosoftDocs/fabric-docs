@@ -30,7 +30,7 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 - **Streaming data from other clouds**: Google Pub/Sub, Amazon Kinesis Data Streams
 - **Kafka Clusters**: Confluent, On-premises, or in the cloud 
 - **Database Change Data Capture (CDC) feeds**: Azure SQL CDC, Postgres CDC, Cosmos DB CDC 
-- **Microsoft streaming sources**: Azure Event Hubs, IoT hubs, Azure Monitor, Dynamic 365 logs, Microsoft 365 logs, Microsoft Sentinel 
+- **Microsoft streaming sources**: Azure Event Hubs, IoT hubs 
 - **System events**: both Azure system events (like Azure storage account events) and Fabric system events are automatically generated into Real-Time hub 
 
 A unified Get Events experience makes it effortless to connect from these sources into components in Real-Time hub like eventstream, KQL database, and Data activator.  
