@@ -14,10 +14,10 @@ ms.search.form: Get data in a KQL Database
 
 # Get data from Real-Time hub
 
-In this article, you learn how to get events from Real-Time event hub into either a new or existing table.
+In this article, you learn how to get events from Real-Time hub into either a new or existing table.
 
 > [!NOTE]
-> Currently Real-Time event hub only supports eventstreams.
+> Currently Real-Time event hub only supports eventstreams as a source.
 > Real-Time hub is currently in public preview.
 
 ## Prerequisites
@@ -28,7 +28,7 @@ In this article, you learn how to get events from Real-Time event hub into eithe
 
 ## Source
 
-To get data from Real-Time hub, you need to select  a Real-Time Stream from Real-Time data hub as your data source. You can select <!--an existing eventstream--> Real-Time hub in the following ways:
+To get data from Real-Time hub, you need to select a Real-Time stream from Real-Time data hub as your data source. You can select Real-Time hub in the following ways:
 
 On the lower ribbon of your KQL database, either:
 
