@@ -122,7 +122,7 @@ If you cancel your free Fabric trial or the trial expires, the trial capacity, w
 
 ### The trial expires 
 
-If you don't upgrade to a paid Fabric capacity before the end of the trial period, non-Power BI Fabric items are removed according to the [retention policy upon removal](../admin/portal-workspaces.md#workspace-states).
+If you don't upgrade to a paid Fabric capacity before the end of the trial period, non-Power BI Fabric items are removed according to the [retention policy upon removal](../admin/portal-workspaces.md#workspace-states). You have seven days after the expiration date to save your non-Power BI Fabric items by assigning the workspaces to an active capacity.
 
 To retain your Fabric items, before your trial ends, [purchase Fabric](https://aka.ms/fabricibiza).
 
