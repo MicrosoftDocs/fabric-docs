@@ -100,11 +100,13 @@ items:
     href: delegate-settings.md     
   - name: Tenant settings index
     href: tenant-settings-index.md
-  - name: Tenant settings sections
+  - name: Tenant settings
     expanded: false
     items:
     - name: Microsoft Fabric
       href: fabric-switch.md
+    - name: Product feedback
+      href: product-feedback.md      
     - name: Help and support settings
       href: service-admin-portal-help-support.md
     - name: Domain management settings
