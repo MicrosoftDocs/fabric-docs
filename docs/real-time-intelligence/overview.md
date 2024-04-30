@@ -59,15 +59,7 @@ support of business and engineering processes.
 
 :::image type="content" source="media/overview/overview-schematic.png" alt-text="Diagram of the architecture of Real-Time Intelligence in Microsoft Fabric." lightbox="media/overview/overview-schematic.png" border="none":::
 
--   The Real-Time hub is a centralized catalog that allows you to easily
-    access, add, explore, and share data within your organization,
-    expanding the scope of your sources and allowing for a wider breadth
-    of insights across different domains. This hub ensures that data isn't only available but also accessible to everyone and easy to
-    interact with, enabling you to quickly gain insights and visual
-    clarity make informed decisions and act. This sharing of streaming
-    data from multiple sources across different unlocks the ability to
-    build business intelligence across all the data in your
-    organization.
+-   The Real-Time hub serves as a centralized catalog within your organization. It facilitates easy access, addition, exploration, and data sharing. By expanding the range of data sources, it enables broader insights and visual clarity across various domains. Importantly, this hub ensures that data is not only available but also accessible to all, promoting quick decision-making and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
 
 -   Once you select a stream from your organization or connected to
     outside or internal sources, you can use the data consumption tools
@@ -116,7 +108,7 @@ route high volumes of real-time events to various destinations with a
 no-code experience. Event streams support multiple data sources and data
 destinations, including a wide range of connectors to external sources,
 for example: Apache Kafka clusters, database change data capture feeds,
-AWS streaming sources (Kinesis), Google (GCP Pub/Sub).
+AWS streaming sources (Kinesis), and Google (GCP Pub/Sub).
 
 ### Process data streams
 
