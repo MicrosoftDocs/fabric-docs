@@ -35,7 +35,7 @@ The Messaging Connector for Eventstream uses the Debezium MySQL connector to cap
 
    ```
    mysql> GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'user'@'localhost';
-```
+   ```
 
 1. Finalize the user's permissions:
 

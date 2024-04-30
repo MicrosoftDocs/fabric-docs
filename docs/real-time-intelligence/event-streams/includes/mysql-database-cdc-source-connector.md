@@ -22,7 +22,7 @@ ms.date: 04/29/2024
    - **Connection name**: Automatically generated, or you can enter a new name for this connection.
    - **Username** and **Password**: Enter the credentials for your Azure Database for MySQL database. Make sure you enter the **Server admin login name.**
 
-   ![A screenshot of selecting Azure MySQL DB (CDC).](media/mysql-database-cdc-source-connector/connect.png)
+   ![A screenshot of the connection settings for Azure MySQL DB (CDC).](media/mysql-database-cdc-source-connector/connect.png)
 
 1. Enter the following information to configure the Azure MySQL DB CDC data source, and then select **Next**.
 
