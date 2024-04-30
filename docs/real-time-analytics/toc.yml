@@ -154,7 +154,7 @@ items:
       href: eventhouse.md
     - name: Create an event house (preview)
       href: create-eventhouse.md
-    - name: Manage and monitor an Eventhouse (preview)
+    - name: Manage and monitor an event house (preview)
       href: manage-monitor-eventhouse.md
   - name: KQL Database
     items:
