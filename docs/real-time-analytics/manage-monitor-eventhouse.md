@@ -73,7 +73,7 @@ The system overview page provides a snapshot of the current state of the event h
         * **Running**: The event house is running optimally
         * **Optimize capacity**: The event house is not running optimally and requires more capacity. Contact your capacity admin to increase the capacity.
         * **Throttling**: The event house is running at maximum capacity. Contact your capacity admin to increase the capacity.
-    * **Storage**: Shows the amount of data retained in OneLake Standard and OneLake Cache storage. For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md).
+    * **Storage**: Shows the amount of data retained in OneLake Cache storage and OneLake Standard storage shows any additional data that's not in the cache. <!-- For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md). -->
     * **Storage usage by database**: Show the storage breakdown by database. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
     * **Activity in minutes**: Shows the duration, in minutes, to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
 
