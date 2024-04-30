@@ -162,7 +162,7 @@ items:
       href: get-data-onelake.md
     - name: Get data from Eventstream
       href: get-data-eventstream.md
-    - name: Get data from Real-Time hub (Public Preview)
+    - name: Get data from Real-Time hub (Preview)
       href: get-data-real-time-hub.md
     - name: Configure KQL Database in a data pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
