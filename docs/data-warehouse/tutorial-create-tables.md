@@ -1,19 +1,21 @@
 ---
 title: Data warehouse tutorial - create a table in a warehouse
 description: In this tutorial step, learn how to create tables in the data warehouse you created in a previous part of the tutorial.
-ms.reviewer: wiassaf
-ms.author: scbradl
-author: bradleyschacht
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: scbradl
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
 ---
 
 # Tutorial: Create tables in a data warehouse
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Learn how to create tables in the data warehouse you created in a previous part of the tutorial.
 
@@ -25,11 +27,11 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 1. From the item list, select `WideWorldImporters` with the type of **Warehouse**.
 
-   :::image type="content" source="media\tutorial-create-tables\select-the-warehouse.png" alt-text="Screenshot of the warehouse option that appears in the item list.":::
+   :::image type="content" source="media/tutorial-create-tables/select-the-warehouse.png" alt-text="Screenshot of the warehouse option that appears in the item list.":::
 
 1. From the ribbon, select **New SQL query**.
 
-   :::image type="content" source="media\tutorial-create-tables\ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option where it appears on the ribbon.":::
+   :::image type="content" source="media/tutorial-create-tables/ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option where it appears on the ribbon.":::
 
 1. In the query editor, paste the following code.
 
@@ -97,11 +99,11 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 1. Select **Run** to execute the query.
 
-   :::image type="content" source="media\tutorial-create-tables\run-to-execute.png" alt-text="Screenshot of the top corner of the query editor screen, showing where to select Run.":::
+   :::image type="content" source="media/tutorial-create-tables/run-to-execute.png" alt-text="Screenshot of the top corner of the query editor screen, showing where to select Run.":::
 
 1. To save this query for reference later, right-click on the query tab, and select **Rename**.
 
-   :::image type="content" source="media\tutorial-create-tables\rename-query-option.png" alt-text="Screenshot of the top corner of the query editor screen, showing where to right-click to select the Rename option.":::
+   :::image type="content" source="media/tutorial-create-tables/rename-query-option.png" alt-text="Screenshot of the top corner of the query editor screen, showing where to right-click to select the Rename option.":::
 
 1. Type `Create Tables` to change the name of the query.
 
@@ -109,11 +111,11 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 1. Validate the table was created successfully by selecting the **refresh** button on the ribbon.
 
-   :::image type="content" source="media\tutorial-create-tables\home-ribbon-refresh.png" alt-text="Screenshot of the ribbon on the Home screen, showing where to select the refresh option.":::
+   :::image type="content" source="media/tutorial-create-tables/home-ribbon-refresh.png" alt-text="Screenshot of the ribbon on the Home screen, showing where to select the refresh option.":::
 
 1. In the **Object explorer**, verify that you can see the newly created **Create Tables** query, `fact_sale` table, and `dimension_city` table.
 
-   :::image type="content" source="media\tutorial-create-tables\object-explorer-verify.png" alt-text="Screenshot of the Explorer pane, showing where to find your tables and newly created query.":::
+   :::image type="content" source="media/tutorial-create-tables/object-explorer-verify.png" alt-text="Screenshot of the Explorer pane, showing where to find your tables and newly created query.":::
 
 ## Next step
 
