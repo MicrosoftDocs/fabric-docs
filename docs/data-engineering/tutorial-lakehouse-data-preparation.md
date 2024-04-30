@@ -28,9 +28,9 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Download the notebooks from the [Lakehouse Tutorial Source Code](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/Lakehouse%20Tutorial%20Source%20Code) folder.
 
-1. From the experience switcher located at the bottom left of the screen, select **Data Engineering**.
+1. From the switcher located at the bottom left of the screen, select **Data Engineering**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\workload-switcher-data-engineering.png" alt-text="Screenshot showing where to find the experience switcher and select Data Engineering.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\workload-switcher-data-engineering.png" alt-text="Screenshot showing where to find the switcher and select Data Engineering.":::
 
 1. Select **Import notebook** from the **New** section at the top of the landing page.
 

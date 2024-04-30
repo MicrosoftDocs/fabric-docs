@@ -26,9 +26,9 @@ In this tutorial, you build a lakehouse, ingest sample data into the Delta table
 
 1. To open your workspace, enter its name in the search textbox located at the top and select it from the search results.
 
-1. From the workload switcher located at the bottom left, select **Data Engineering**.
+1. From the switcher located at the bottom left, select **Data Engineering**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\workload-switch-data-engineering.png" alt-text="Screenshot showing where to select the workload switcher and Data Engineering.":::
+   :::image type="content" source="media\tutorial-build-lakehouse\workload-switch-data-engineering.png" alt-text="Screenshot showing where to select the switcher and Data Engineering.":::
 
 1. In the **Data Engineering** screen, select **Lakehouse** to create a lakehouse.
 
