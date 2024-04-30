@@ -1,0 +1,77 @@
+items:
+- name: Real-Time hub documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Real-Time hub?
+    href: real-time-hub-overview.md
+- name: Get started
+  items:
+  - name: Bring your data to Real-Time hub 
+    href: get-started-bring-events-real-time-hub.md
+- name: Get events and create data streams
+  items:
+  - name: Microsoft sources
+    href: get-events-microsoft-sources.md
+    items:
+    - name: Azure Event Hubs
+      href: add-source-azure-event-hubs.md
+    - name: Azure IoT Hub
+      href: add-source-azure-iot-hub.md
+    - name: Azure SQL Database Change Data Capture
+      href: add-source-azure-sql-database-cdc.md
+    - name: PostgreSQL Database Change Data Capture
+      href: add-source-postgresql-database-cdc.md
+    - name: MySQL Database Change Data Capture
+      href: add-source-mysql-database-cdc.md
+    - name: Azure Cosmos DB Change Data Capture
+      href: add-source-azure-cosmos-db-cdc.md
+  - name: External sources 
+    href: get-events-external-sources.md
+    items:
+    - name: Google Cloud Pub/Sub
+      href: add-source-google-cloud-pub-sub.md
+    - name: Amazon Kinesis Data Streams 
+      href: add-source-amazon-kinesis-data-streams.md
+    - name: Confluent Cloud Kafka
+      href: add-source-confluent-kafka.md
+  - name: Fabric events
+    items:    
+    - name: Get Azure blob storage events and create streams
+      href: get-azure-blob-storage-events.md      
+    - name: Create streams for Fabric workspace item events
+      href: create-streams-fabric-workspace-item-events.md
+  - name: Create derived streams
+    href: ../real-time-intelligence/event-streams/create-default-derived-streams.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+- name: Discover and manage data streams and events
+  items:
+  - name: Explore data streams
+    href: explore-data-streams.md
+  - name: View data stream details
+    href: view-data-stream-details.md
+  - name: Preview data streams
+    href: preview-data-streams.md
+  - name: Endorse data streams
+    href: endorse-data-streams.md
+  - name: Explore Microsoft sources
+    href: explore-microsoft-sources.md    
+  - name: Explore Fabric events
+    href: explore-fabric-events.md
+    items:
+    - name: Explore Azure blob storage events
+      href: explore-azure-blob-storage-events.md
+    - name: Explore Fabric workspace item events
+      href: explore-fabric-workspace-item-events.md
+- name: Consume events and data streams
+  items:
+  - name: Set alerts on data streams
+    href: set-alerts-data-streams.md
+  - name: Set alerts on Fabric events
+
+    items:
+    - name: Set alerts on Azure blob storage events
+      href: set-alerts-azure-blob-storage-events.md
+    - name: Set alerts on Fabric workspace item events
+      href: set-alerts-fabric-workspace-item-events.md
+    
+    

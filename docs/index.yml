@@ -190,19 +190,19 @@ productDirectory:
           text: See more
 
     # Card
-    - title: OneRiver
+    - title: Real-Time hub
 
       imageSrc: ./media/onelake-icon.png
       links:
-        - url: oneriver/oneriver-overview.md
-          text: What is OneRiver?
-        - url: oneriver/get-started-bring-events-oneriver.md
-          text: Bring your data to OneRiver
-        - url: oneriver/explore-streams.md
+        - url: real-time-hub/real-time-hub-overview.md
+          text: What is Real-Time hub?
+        - url: real-time-hub/get-started-bring-events-real-time-hub.md
+          text: Bring your data to Real-Time hub
+        - url: real-time-hub/explore-data-streams.md
           text: Explore streams
-        - url: oneriver/set-alerts-streams.md
+        - url: real-time-hub/set-alerts-data-streams.md
           text: Set alerts on streams
-        - url: oneriver/index.yml
+        - url: real-time-hub/index.yml
           text: See more
 
     # Card

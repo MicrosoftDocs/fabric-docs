@@ -4,10 +4,9 @@ description: Learn how to configure a mirrored database from Snowflake in Micros
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 02/27/2024
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake (Preview)
@@ -47,7 +46,7 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 ## Connect to your Snowflake instance in any cloud
 
 > [!NOTE]
-> You may need to alter the firewall cloud to allow Mirroring to connect to the Snowflake instance.
+> You might need to alter the firewall cloud to allow Mirroring to connect to the Snowflake instance.
 
 1. Select **Snowflake** under "*New connection*" or selected an existing connection.
 1. If you selected "*New connection*", enter the connection details to the Snowflake database.
@@ -68,10 +67,10 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 1. The **Configure mirroring** screen allows you to mirror all data in the database, by default.
 
     - **Mirror all data** means that any new tables created after Mirroring is started will be mirrored.
-    <!-- ![Screenshot of Configure mirroring - All data](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Configure mirroring - All data."::: -->
 
     - Optionally, choose only certain objects to mirror. Disable the **Mirror all data** option, then select individual tables from your database.
-    <!-- ![Screenshot of Configure mirroring - Selective](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Configure mirroring - Selective."::: -->
 
     For this tutorial, we select the **Mirror all data** option.
 
@@ -80,7 +79,7 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
     :::image type="content" source="media/snowflake-tutorial/mirrored-snowflake-is-running.png" alt-text="Screenshot from the Fabric portal showing that mirrored snowflake is running. The Monitor mirroring button is visible.":::
 
 1. Wait for 2-5 minutes. Then, select **Monitor replication** to see the status.
-    <!-- ![Screenshot of Monitoring Mirroring](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Monitoring Mirroring."::: -->
 
 1. After a few minutes, the status should change to *Running*,  which means the tables are being synchronized.
 
@@ -88,7 +87,7 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
 
 1. When they have finished the initial copying of the tables, a date appears in the **Last refresh** column.
 
-    <!-- ![Screenshot of Mirroring Status](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Mirroring Status."::: -->
 
 1. Now that your data is up and running, there are various analytics scenarios available across all of Fabric.
 
