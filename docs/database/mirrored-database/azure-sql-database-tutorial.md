@@ -4,10 +4,9 @@ description: Learn how to configure a mirrored database from Azure SQL Database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
-ms.date: 04/16/2024
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)
@@ -36,7 +35,7 @@ The System Assigned Managed Identity (SAMI) of your Azure SQL logical server nee
 1. To configure or verify that the SAMI is enabled, go to your logical SQL Server in the Azure portal. Under **Security** in the resource menu, select **Identity**.
 1. Under **System assigned managed identity**, select **Status** to **On**.
 
-    <!-- ![Screenshot of turning on the system assigned managed identity.](media/image2.png)-->
+    <!-- :::image type="content" source="media/image2.png" alt-text="Screenshot of turning on the system assigned managed identity."::: -->
 
 ### Database principal for Fabric
 
@@ -73,21 +72,21 @@ Next, you need to create a way for the Fabric service to connect to your Azure S
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
-1. Navigate to the **Create hub**.
-    <!-- ![Screenshot of Workspace creation](media/image.png) -->
-1. Select the **Create** icon on the left-hand side upper section of the screen.  
-    <!-- ![Screenshot of Create button](media/image.png) -->
+1. Navigate to the **Create** pane..
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Workspace creation."::: -->
+1. Select the **Create** icon.  
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Create button."::: -->
 1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure SQL Database (preview)**.
-    <!-- ![Screenshot of SQL DB card](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of SQL DB card."::: -->
 1. Enter the name of your Azure SQL database to be mirrored, then select **Create**.
-    <!-- ![Screenshot of SQL DB mirrored name](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of SQL DB mirrored name."::: -->
 
 ## Connect to your Azure SQL Database
 
 The following steps guide you through the process of creating the connection to your Azure SQL Database:
 
 1. Select **Azure SQL Database** under **New connection** or select an existing connection.  
-    <!-- ![Screenshot of New connection panel](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of New connection panel."::: -->
 
 1. If you selected **New connection**, enter the connection details to the Azure SQL Database.
    - **Server**: You can find the **Server name** by navigating to the Azure SQL Database **Overview** page in the Azure portal. For example, `server-name.database.windows.net`.
@@ -96,11 +95,11 @@ The following steps guide you through the process of creating the connection to 
    - **Connection name**: An automatic name is provided. You can change it.
    - **Authentication kind**:
        - Basic (SQL Authentication)
-         <!-- ![Screenshot of New connection with SQL Login](media/image.png) -->
+         <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of New connection with SQL Login."::: -->
        - Organization account (Microsoft Entra ID)  
-         <!-- ![Screenshot of New connection with Microsoft Entra ID](media/image.png) -->
+         <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of New connection with Microsoft Entra ID."::: -->
        - Tenant ID (Azure Service Principal)  
-         <!-- ![Screenshot of New connection with Service Principal](media/image.png) -->
+         <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of New connection with Service Principal."::: -->
 1. Select **Connect**.
 
 ## Start mirroring process
@@ -108,18 +107,18 @@ The following steps guide you through the process of creating the connection to 
 1. The **Configure mirroring** screen allows you to mirror all data in the database, by default.
 
     - **Mirror all data** means that any new tables created after Mirroring is started will be mirrored. 
-    <!-- ![Screenshot of Configure mirroring - All data](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Configure mirroring - All data."::: -->
 
     - Optionally, choose only certain objects to mirror. Disable the **Mirror all data** option, then select individual tables from your database.
-    <!-- ![Screenshot of Configure mirroring - Selective](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Configure mirroring - Selective."::: -->
 
     For this tutorial, we select the **Mirror all data** option.
 
 1. Select **Mirror database**. Mirroring begins.
-    <!-- ![Screenshot of Mirroring starting](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Mirroring starting."::: -->
 
 1. Wait for 2-5 minutes. Then, select **Monitor replication** to see the status.
-    <!-- ![Screenshot of Monitoring Mirroring](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Monitoring Mirroring."::: -->
 
 1. After a few minutes, the status should change to *Running*,  which means the tables are being synchronized.
 
@@ -127,7 +126,7 @@ The following steps guide you through the process of creating the connection to 
 
 1. When they have finished the initial copying of the tables, a date appears in the **Last refresh** column.
 
-    <!-- ![Screenshot of Mirroring Status](media/image.png) -->
+    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Mirroring Status."::: -->
 
 1. Now that your data is up and running, there are various analytics scenarios available across all of Fabric.
 

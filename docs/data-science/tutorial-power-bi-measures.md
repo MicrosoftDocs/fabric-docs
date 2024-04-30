@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)'
+title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter notebook'
 description: This article shows how to use SemPy to calculate measures in Power BI semantic models.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -13,11 +13,9 @@ ms.date: 09/27/2023
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_measures_tutorial.ipynb -->
 
-# Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)
+# Tutorial: Extract and calculate Power BI measures from a Jupyter notebook
 
 This tutorial illustrates how to use SemPy (preview) to calculate measures in semantic models (Power BI datasets).
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this tutorial, you learn how to:
 
@@ -142,9 +140,9 @@ fabric.evaluate_measure(dataset, \
 
 Check out other tutorials for semantic link / SemPy:
 
-- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Analyze functional dependencies in a sample semantic model (preview)](tutorial-power-bi-dependencies.md)
-- [Tutorial: Discover relationships in a semantic model, using semantic link (preview)](tutorial-power-bi-relationships.md)
+- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Analyze functional dependencies in a sample semantic model](tutorial-power-bi-dependencies.md)
+- [Tutorial: Discover relationships in a semantic model, using semantic link](tutorial-power-bi-relationships.md)
 - [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link (preview)](tutorial-relationships-detection.md)
 - [Tutorial: Validate data using SemPy and Great Expectations (GX) (preview)](tutorial-great-expectations.md)
 

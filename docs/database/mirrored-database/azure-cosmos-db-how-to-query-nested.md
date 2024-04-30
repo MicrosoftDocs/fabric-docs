@@ -4,8 +4,8 @@ title: |
 description: Query nested Azure Cosmos DB JSON data in a mirrored database within Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa
-ms.date: 03/17/2024
+ms.reviewer: anithaa, wiassaf
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: how-to
 ---
@@ -150,7 +150,7 @@ Now, use the SQL analytics endpoint to create a query that can handle simple nes
 
 1. Switch from **Mirrored Azure Cosmos DB** to **SQL analytics endpoint**.
 
-    :::image type="content" source="media/azure-cosmos-db-how-to-query-nested/switch-experience.png" alt-text="Screenshot of the selector to switch between experiences in the Fabric portal." lightbox="media/azure-cosmos-db-how-to-query-nested/switch-experience.png":::
+    :::image type="content" source="media/azure-cosmos-db-how-to-query-nested/switch-experience.png" alt-text="Screenshot of the selector to switch between items in the Fabric portal." lightbox="media/azure-cosmos-db-how-to-query-nested/switch-experience.png":::
 
 1. Open the context menu for the **test** table and select **New SQL Query**.
 

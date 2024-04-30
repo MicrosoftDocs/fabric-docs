@@ -61,7 +61,13 @@ To use a Semantic model refresh activity in a pipeline, complete the following s
 
 1. Select your **Workspace** and **Dataset** to configure the rest of the activity. Find more configuration options under **Advanced**.
 
-   :::image type="content" source="media/semantic-model-refresh-activity/provide-connection-details.png" alt-text="Screenshot showing where to provide additional details after selecting the Power BI connection for the activity.":::
+   - Under **Advanced**, you have the option to select **Wait on completion**, that by default is turned *on*. Users can choose this option where we will poll for the completion of the process, allowing to wait for the completion of the refresh before proceeding.
+   - You can also input values for **Max parallelism** and **Retry Count**, whether to commit the refreshes when the complete (**Transactional**) or in batches **Partial Batch**.
+
+   > [!NOTE]
+   > By default, when you run the semantic model refresh activity, the behavior of the refresh type from the pipeline activity is set to "full".
+
+   :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-wait-on-completion.png" alt-text="Screenshot showing where to provide additional details after selecting the connection for the activity.":::
 
 ## Save and run or schedule the pipeline
 
