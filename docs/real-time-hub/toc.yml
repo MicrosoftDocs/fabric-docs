@@ -7,8 +7,20 @@ items:
     href: real-time-hub-overview.md
 - name: Get started
   items:
-  - name: Bring your data to Real-Time hub 
-    href: get-started-bring-events-real-time-hub.md
+  - name: Get started with Real-Time hub
+    href: get-started-real-time-hub.md
+  - name: User flows
+    items:
+    - name: "User flow 1: Discover and respond to events"
+      href: ../real-time-intelligence/user-flow-1.md
+    - name: "User flow 2: Get and transform events from streaming sources"
+      href: ../real-time-intelligence/user-flow-2.md
+    - name: "User flow 3:  Discover streaming sources from Microsoft"
+      href: ../real-time-intelligence/user-flow-3.md
+    - name: "User flow 4: Explore your data visually with Real-Time Dashboards"
+      href: ../real-time-intelligence/user-flow-4.md
+    - name: "User flow 5: Trigger Fabric dataflows from the Real-Time Hub"
+      href: ../real-time-intelligence/user-flow-5.md 
 - name: Get events and create data streams
   items:
   - name: Microsoft sources
