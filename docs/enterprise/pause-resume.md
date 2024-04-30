@@ -17,7 +17,7 @@ Microsoft Fabric lets you pause and resume your capacity. When your capacity isn
 When you pause your capacity, the remaining [cumulative overages and smoothed operations](../enterprise/throttling.md#balance-between-performance-and-reliability) on your capacity are summed, and added to your Azure bill. You can [monitor a paused capacity](monitor-paused-capacity.md) using the [Microsoft Fabric Capacity Metrics app](metrics-app.md).  
 
 > [!IMPORTANT]
-> Pausing a capacity can prevent Microsoft Fabric content from being available. Before you pause your capacity, make sure the capacity is not being used.
+> Pausing a capacity can prevent Microsoft Fabric content from being available. Before you pause your capacity, make sure the capacity is not being used. Alternatively, if your capacity is being throttled, pausing stops throttling, and returns your capacity to a healthy state immediately. Therefore, pausing is a self-service mechanism to end throttling.
 
 ## Prerequisites
 
@@ -25,7 +25,12 @@ To pause your capacity, you need:
 
 * An [F SKU capacity](buy-subscription.md#azure-skus)
 
-* To be a [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
+* To be a [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) with **all** of the following Azure RBAC role permissions
+
+1. Microsoft.Fabric/capacities/read
+2. Microsoft.Fabric/capacities/write
+3. Microsoft.Fabric/suspend/action
+4. Microsoft.Fabric/resume/action
 
 ## Pause your capacity
 
@@ -64,6 +69,7 @@ With [Azure runbook](/azure/automation/automation-runbook-types) you can schedul
 2. In the runbook gallery, search for *Fabric*.
 
 3. Select the notebook you want to schedule. The scheduling parameters are described in the description of the runbook.
+
 
 ## Related content
 
