@@ -12,15 +12,15 @@ items:
   - name: User flows
     items:
     - name: "User flow 1: Discover and respond to events"
-      href: ../real-time-intelligence/user-flow-1.md
+      href: ../real-time-intelligence/user-flow-1.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
     - name: "User flow 2: Get and transform events from streaming sources"
-      href: ../real-time-intelligence/user-flow-2.md
+      href: ../real-time-intelligence/user-flow-2.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
     - name: "User flow 3:  Discover streaming sources from Microsoft"
-      href: ../real-time-intelligence/user-flow-3.md
+      href: ../real-time-intelligence/user-flow-3.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
     - name: "User flow 4: Explore your data visually with Real-Time Dashboards"
-      href: ../real-time-intelligence/user-flow-4.md
+      href: ../real-time-intelligence/user-flow-4.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
     - name: "User flow 5: Trigger Fabric dataflows from the Real-Time Hub"
-      href: ../real-time-intelligence/user-flow-5.md 
+      href: ../real-time-intelligence/user-flow-5.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json 
 - name: Get events and create data streams
   items:
   - name: Microsoft sources
