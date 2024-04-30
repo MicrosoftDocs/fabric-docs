@@ -39,7 +39,7 @@ items:
     items:    
     - name: Create streams for events
       href: create-streams-for-events.md
-    - name: Get Azure blob storage events and create streams
+    - name: Get Azure Blob Storage events and create streams
       href: get-azure-blob-storage-events.md      
     - name: Create streams for Fabric workspace item events
       href: create-streams-fabric-workspace-item-events.md
@@ -60,7 +60,7 @@ items:
   - name: Explore Fabric events
     href: explore-fabric-events.md
     items:
-    - name: Explore Azure blob storage events
+    - name: Explore Azure Blob Storage events
       href: explore-azure-blob-storage-events.md
     - name: Explore Fabric workspace item events
       href: explore-fabric-workspace-item-events.md
@@ -71,7 +71,7 @@ items:
   - name: Set alerts on Fabric events
 
     items:
-    - name: Set alerts on Azure blob storage events
+    - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
     - name: Set alerts on Fabric workspace item events
       href: set-alerts-fabric-workspace-item-events.md

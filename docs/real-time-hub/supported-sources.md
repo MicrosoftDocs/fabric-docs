@@ -7,8 +7,8 @@ ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# Get events from Microsoft sources into Real-Time hub
-This article describes how to get events from Microsoft sources such as Azure Event Hubs and Azure IoT Hub into Fabric Real-Time hub.
+# Get events from Microsoft sources into Fabric Real-Time hub
+This article provides a list of sources that Real-Time hub supports. The Real-Time hub enables you to get events from these sources and create data streams in Fabric. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -33,6 +33,8 @@ This article describes how to get events from Microsoft sources such as Azure Ev
 - [Fabric Workspace Item events](create-streams-fabric-workspace-item-events.md)
 
 ## Related content
+Real-Time hub also allows you to set alerts based on events and specify actions to take when the events happen. 
 
-- [Get Azure blob storage events](get-azure-blob-storage-events.md)
-- [Create streams for Fabric workspace item events](create-streams-fabric-workspace-item-events.md)
+- [Set alerts on data streams](set-alerts-data-streams.md)
+- [Set alerts on Azure Blob Storage events](set-alerts-azure-blob-storage-events.md)
+- [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
