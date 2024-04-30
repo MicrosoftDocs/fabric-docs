@@ -8,12 +8,12 @@ ms.date: 05/21/2024
 ---
 
 # Introduction to Fabric Real-Time hub (preview)
-Real-Time hub is the single estate for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with Real-Time hub, with no extra steps needed to set up or manages it. Real-Time hub has several key features including the following ones:
+Real-Time hub is the single estate for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with the hub, with no extra steps needed to setup or manage it. Several key features of the hub:
 
 - Single place for data-in-motion for the entire organization
-- Abundant connectors for simplified data ingestion 
-- Real-Time hub is never dry 
-- Single copy of events or streams for use with multiple real-time analytics engines 
+- Abundant connectors for simplified data ingestion
+- Real-Time hub is never empty
+- Single copy of events/streams for use with multiple real-time analytics engines
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -35,12 +35,12 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 
 A unified Get Events experience makes it effortless to connect from these sources into components in Real-Time hub like eventstream, KQL database, and Data Activator.  
 
-## Real-Time hub is never dry 
+## Real-Time hub is never empty 
 In the world of data, Real-Time hub is never empty. Here’s why: 
 
-- **Fabric events as the nervous system**: When customers take CRUD (Create, Read, Update, Delete) actions on artifacts, these events are emitted as Fabric events within Real-Time hub. Much like a human nervous system, these events provide vital feedback. Customers can gauge whether their entire project is functioning correctly based on these events. Even when a user visits Real-Time hub for the first time, they encounter these events. They can subscribe to them, gaining insights into the health and performance of their data ecosystem. 
+- **Streams/tables**: For customers who have running eventstreams and KQL databases, all the streams from eventstreams and tables from KQL databases automatically show up in Real-Time hub. 
 - **Microsoft Product Integration**: Many customers use multiple Microsoft products. Real-Time hub ensures that it’s never empty by listing all streaming resources from Microsoft products. Whether it’s Azure Event Hubs, Azure IoT Hub, or other services, users can seamlessly ingest data into Real-Time hub. 
-- **Streams/tables**: for customers who have running eventstreams and KQL databases, all the streams from eventstreams and tables from KQL databases automatically show up in Real-Time hub.  
+- **Fabric events as the nervous system**: When customers take CRUD (Create, Read, Update, Delete) actions on artifacts, these events are emitted as Fabric events within Real-Time hub. Much like a human nervous system, these events provide vital feedback. Customers can gauge whether their entire project is functioning correctly based on these events. Even when a user visits Real-Time hub for the first time, they encounter these events. They can subscribe to them, gaining insights into the health and performance of their data ecosystem. 
 
 ## Single copy of events/streams for use with multiple real-time analytics engines 
 As data flows into Real-Time hub, you can create a stream out of it. Once the stream is created, the data is stored in a canonical format. This format is universally accessible to all processing engines. No need for redundant copies of data. Real-Time hub ensures efficiency and consistency.
