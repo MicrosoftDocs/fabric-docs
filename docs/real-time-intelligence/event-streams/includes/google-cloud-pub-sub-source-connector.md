@@ -46,9 +46,9 @@ ms.date: 04/29/2024
       :::image type="content" source="media/google-cloud-pub-sub-source-connector/add-key.png" alt-text="A screenshot of selecting Create new key.":::
 
    1. Download the JSON file, copy all the JSON content, and enter it as **Service account key** on the Fabric **Connection settings** screen.
-   
-   >![IMPORTANT]
-   >This JSON file can be downloaded only once.
+
+      >[!IMPORTANT]
+      >This JSON file can be downloaded only once.
 
 1. Select **Connect** on the **Connection settings** screen.
 

@@ -17,9 +17,9 @@ ms.date: 04/29/2024
 
 1. On the **Connection settings** screen, enter the following information:
 
-   - **Cosmos DB Endpoint:** Enter the **Endpoint** for your Cosmos DB account that you copied from the Azure portal.
+   - **Cosmos DB Endpoint:** Enter the **Endpoint** for your Cosmos DB account that you copy from the Azure portal.
    - **Connection name**: Automatically generated, or you can enter a new name for this connection.
-   - **Account key:** Enter the **Primary key** for your Azure Cosmos DB resource that you copied from the Azure portal.
+   - **Account key:** Enter the **Primary key** for your Azure Cosmos DB account that you copy from the Azure portal.
 
    ![A screenshot of the Connection settings for the Azure Cosmos DB CDC source.](media/azure-cosmos-db-cdc-source-connector/connect.png)
 
