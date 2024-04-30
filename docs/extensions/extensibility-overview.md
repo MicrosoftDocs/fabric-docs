@@ -106,7 +106,7 @@ This chapter covers the basic concepts and components of Fabric, and a dive into
 
 The following diagram is a high-level overview of how workloads function within the Fabric architecture. It depicts the interaction and flow between various components.
 
-* The workload Backend (BE) handles data processing, storage, and management. It validates Entra ID tokens before processing them and interacts with external Azure services, such as Lakehouse.
+* The workload Backend (BE) handles data processing, storage, and management. It validates Microsoft Entra ID tokens before processing them and interacts with external Azure services, such as Lakehouse.
 * The workload Frontend (FE) offers a user interface for job creation, authoring, management, and execution.
 * User interactions via the FE initiates request to the BE, either directly or indirectly via the Fabric Backend (Fabric BE).
 
@@ -130,7 +130,7 @@ Our architecture is designed to integrate flawlessly with Lakehouse, enabling op
 
 #### Authentication and Security
 
-We employ Entra ID (formerly Azure AD) for robust and secure authentication, ensuring that all interactions within the architecture are authorized and secure. For a complete introduction to the workload authentication as displayed in the diagram above, refer to the following authentication documents:
+We employ Microsoft Entra ID (formerly Azure AD) for robust and secure authentication, ensuring that all interactions within the architecture are authorized and secure. For a complete introduction to the workload authentication as displayed in the diagram above, refer to the following authentication documents:
 
 1. [Workload Authentication - Setup Guide](./authentication-setup.md)
 1. [Workload Authentication - Architecture Overview](./authentication-overview.md)
