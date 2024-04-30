@@ -601,7 +601,7 @@ Feel free to explore these utilities and incorporate them into your Fabric workf
 
 ## Known issue 
 
-When your Spark version is greater than 1.2 and you run ``` mssparkutils.help() ``` to search for available APIs, currently the following APIs (`fabricClient`, `warehouse`, and `workspace`) are not supported.
+When your Spark version is greater than 1.2 and you run ``` mssparkutils.help() ``` to search for available APIs, currently the following APIs (**fabricClient**, **warehouse**, and **workspace**) are not supported.
 
 ## Related content
 
