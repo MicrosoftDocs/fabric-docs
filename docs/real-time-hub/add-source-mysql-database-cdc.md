@@ -21,25 +21,7 @@ The Azure MySQL Database Change Data Capture (CDC) connector allows you to captu
 
  ### Set up MySQL database 
 
-The Azure MySQL DB connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. 
-
-1. Create the MySQL user: 
-
-    ```sql
-    CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';     
-    ```
-2. Grant the required permissions to the user: 
-
-    ```sql        
-    GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'user' IDENTIFIED BY 'password'; 
-    ```
-3. Finalize the user’s permissions: 
-
-    ```sql
-    FLUSH PRIVILEGES; 
-    ```    
-
-    For more information about granting the required permissions to the user, see [Debezium connector for MySQL :: Debezium Documentation](https://debezium.io/documentation/reference/1.9/connectors/mysql.html#mysql-creating-user).
+The Azure MySQL DB connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. For information about granting the required permissions (`SHOW DATABASE` and `REPLICATION`) to the user, see [Debezium connector for MySQL :: Debezium Documentation](https://debezium.io/documentation/reference/1.9/connectors/mysql.html#mysql-creating-user).
 
 ### Enable the binlog 
 You must enable binary logging for MySQL replication. The binary logs record transaction updates for replication tools to propagate changes. For example, Azure Database for MySQL. 
@@ -75,7 +57,7 @@ Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-
 
     To configure connection information, use steps from the [Add Azure MySQL DB CDC as a source](#add-azure-mysql-database-cdc-as-a-source) section. Skip the first step of selecting Azure MySQL DB CDC as a source type in the Get events wizard. 
 
-## Add Azure MySQL Database as a source
+## Add Azure MySQL Database CDC as a source
 
 1. On the **Select a data source** screen, select **MySQL DB (CDC)**.
 
