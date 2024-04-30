@@ -75,14 +75,13 @@ The system overview page provides a snapshot of the current state of the event h
         * **Throttling**: The event house is running at maximum capacity. Contact your capacity admin to increase the capacity.
     * **Storage**: Shows the amount of data retained in OneLake Standard and OneLake Cache storage. For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md).
     * **Storage usage by database**: Show the storage breakdown by database. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
-    * **Compute minutes**: Shows the duration, in minutes, to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
+    * **Activity in minutes**: Shows the duration, in minutes, to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
 
         For example, if two users execute queries at the same time, one taking 3 minutes and the other 5 minutes, the total compute minutes would be 8. But since these queries ran together, the actual compute units used is just 5 minutes.
 
         Likewise, even if 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
 
-    * **Most active databases**: Highlights the most active databases in the event house. The information can assist you in obtaining a comprehensive overview of the efficiency with which databases are utilizing compute units.
-    * **Compute minutes by top users**: Shows the total compute minutes used users. The information can help you understand the efficiency with which users are utilizing compute units.
+    * **Most queried databases**: Highlights the most active databases in the event house. The information can assist you in obtaining a comprehensive overview of the efficiency with which databases are utilizing compute units.
     * **Eventhouse details**: Displays the event house name, creation date, and last updated date. You can copy the following event house URI values:
 
         |URI type |Usage |
@@ -90,6 +89,7 @@ The system overview page provides a snapshot of the current state of the event h
         |Query URI |URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](data-connectors/data-connectors.md) and APIs to run queries or management commands.|
         |Ingestion URI |URI that can be used by connectors and APIs to ingest data.|
 
+    * **Activity in minutes - Top 5 users**: Shows the total compute minutes used users. The information can help you understand the efficiency with which users are utilizing compute units.
     * **What's new**: Highlights recent event house events, such as the following operations:
 
         * Create or delete a database
