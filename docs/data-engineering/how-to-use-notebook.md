@@ -153,6 +153,25 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
 
 1. If you need them, find the **Edit comment**, **Resolve thread**, and **Delete thread** options by selecting the More option next to your comment.
 
+### Tagging others in a comment
+ 
+"Tagging" refers to mentioning and notifying a user in a comment thread, enhancing collaboration efficiently on the specifics.
+ 
+1. Select a section of code in a cell and new a comment thread.
+ 
+1. Input user name and choose the correct one on the suggestion list if you want to mention someone for discussion about a certain section.
+ 
+1. Share your insights and **Post** them.
+ 
+1. An Email notification will be triggered, and user clicks on **Open Comments** link to quickly locate this cell.
+ 
+1. Moreover, authorize and configure the permissions for users when tagging someone who doesn’t have access, ensuring that your code assets are well managed.
+
+![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
+
+> [!NOTE]
+> For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.
+
 ## Switch notebook mode
 
 Fabric notebooks support two modes that you can easily switch between: **Editing** mode and **Viewing** mode.

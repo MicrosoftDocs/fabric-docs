@@ -56,7 +56,7 @@ items:
   - name: Copilot in Fabric overview
     href: copilot-fabric-overview.md
   - name: Enable Copilot in Fabric
-    href: copilot-fabric-enable.md
+    href: copilot-enable-fabric.md
   - name: Copilot in Fabric FAQ
     href: copilot-faq-fabric.yml
   - name: Privacy, security, and responsible use for Copilot in Fabric
@@ -81,6 +81,18 @@ items:
       href: copilot-notebooks-chat-pane.md
   - name: Copilot in Fabric Consumption
     href: copilot-fabric-consumption.md
+- name: Direct Lake
+  items:
+  - name: Direct Lake overview
+    href: direct-lake-overview.md
+  - name: Create a Lakehouse for Direct Lake
+    href: direct-lake-create-lakehouse.md
+  - name: Specify a fixed identity
+    href: direct-lake-fixed-identity.md
+  - name: Analyze query processing
+    href: direct-lake-analyze-query-processing.md
+  - name: Direct Lake mode and PBI reporting
+    href: lakehouse-power-bi-reporting.md
 - name: Promote or certify items
   href: endorsement-promote-certify.md
 - name: Share items
@@ -127,6 +139,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Shortcut data inaccessible if data is in a paused capacity
+      href: known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md
+    - name: Report Copilot button shows even though Copilot admin setting is off
+      href: known-issues/known-issue-690-report-copilot-button-shows-admin-setting-off.md
+    - name: Copilot and Azure OpenAI service capacity setting delegation postponed
+      href: known-issues/known-issue-689-copilot-service-capacity-setting-delegation-postponed.md
     - name: Copy visual as image for report and dashboard visuals is broken
       href: known-issues/known-issue-679-copy-visual-image-report-dashboard-visuals-broken.md
     - name: Git integrated workspaces incorrectly show status of Uncommitted
@@ -177,18 +195,8 @@ items:
       href: known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md
     - name: Product switcher and creation process inadvertently show Fabric experiences
       href: known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md      
-    - name: Git integration tab disappears in Workspace settings
-      href: known-issues/known-issue-580-git-integration-tab-disappears-workspace-settings.md
-    - name: Tables aren't visible to the SQL analytics endpoint for some shortcuts
-      href: known-issues/known-issue-577-tables-not-visible-sql-endpoint-for-some-shortcuts.md
     - name: Lakehouse doesn't recognize table names with special characters
       href: known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md
-    - name: OneLake compute transactions not reported in Metrics app
-      href: known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md
-    - name: Making model changes to a semantic model might not work
-      href: known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md
-    - name: Failed to publish Dataflow Gen2
-      href: known-issues/known-issue-598-failed-to-publish-dataflow-gen2.md
     - name: Dataflow Gen1 admin switch affects Dataflow Gen2
       href: known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md
     - name: Creating or updating Fabric items is blocked
@@ -201,17 +209,11 @@ items:
       href: known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md
     - name: Refresh history reports in progress for some tables that failed
       href: known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables.md  
-    - name: Admin monitoring semantic model refresh fails and credentials expire
-      href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
     - name: Warehouse's object explorer doesn't support case-sensitive object names
       href: known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md
     - name: Temp tables in Warehouse and SQL analytics endpoint
       href: known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md  
     - name: Contributor can't update organizational app
-      href: known-issues/known-issue-571-contributor-can-not-update-organizational-app.md
-    - name: Version 17 of the Fabric Capacity Metrics app doesn't work
-      href: known-issues/known-issue-570-version-17-capacity-metrics-app-does-not-work.md
-    - name: Autoscale not triggered by carry forward accumulated usage
       href: known-issues/known-issue-552-autoscale-not-triggered-carry-forward-accumulated-usage.md
     - name: Closing a Dataflow Gen1 takes you to the wrong workspace
       href: known-issues/known-issue-546-closing-dataflow-gen1-takes-wrong-workspace.md
@@ -221,10 +223,6 @@ items:
       href: known-issues/known-issue-532-sign-in-fails-securely-embedded-reports-using-chrome-browser.md
     - name: Dataflow REST API returns more data sources and gateways than expected
       href: known-issues/known-issue-526-dataflow-rest-api-returns-more-data-sources-gateways.md
-    - name: Desktop sign-in prompt shows unsupported personal Microsoft accounts
-      href: known-issues/known-issue-482-desktop-sign-in-prompt-shows-unsupported-personal-microsoft-accounts.md
-    - name: Power BI Embedded setup tool isn't responsive
-      href: known-issues/known-issue-471-embedded-setup-tool-isnt-responsive.md
     - name: A scheduled refresh of a semantic model intermittently hangs when connected to a dataflow
       href: known-issues/known-issue-461-scheduled-refresh-dataset-hangs.md   
     - name: Search strings with Japanese symbols don't return content in search results

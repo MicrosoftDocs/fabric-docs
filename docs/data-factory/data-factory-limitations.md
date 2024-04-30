@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 04/10/2024
+ms.date: 04/26/2024
 ---
 
 # Data Factory limitations overview
@@ -26,9 +26,9 @@ The following list describes the current limitations of pipelines in Data Factor
 - Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and resource URI.
 - Custom activities aren't available in Fabric pipelines. Use Azure Batch activity instead.
 - Data pipelines are scoped to their workspace, and can't interact with items in other workspaces.
-- The on-premises data gateway can be used with Dataflow Gen2 to ingest on-premises data now. You can orchestrate on-premises data ingestion with a data flow activity in the pipeline.
 - Pipelines can't use a managed VNet.
 - Web activity does not support service principal based authentication.
+- Pipeline scheduling options currently include only by the minute, hourly, daily, and weekly. 
 
 ## Data pipeline resource limits
 

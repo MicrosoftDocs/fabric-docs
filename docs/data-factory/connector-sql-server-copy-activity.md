@@ -4,7 +4,7 @@ description: This article explains how to copy data using SQL server.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 02/27/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -147,7 +147,13 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, if you don't apply SQL server with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+
+If you apply SQL Server with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+
+For example, the type for *ID* column in source is int, and you can change it to float type when mapping to the destination column.
+
+:::image type="content" source="media/connector-sql-server/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
 ### Settings
 
