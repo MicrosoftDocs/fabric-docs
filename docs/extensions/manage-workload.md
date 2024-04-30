@@ -10,7 +10,7 @@ ms.date: 04/16/2024
 #customer intent: As an ISV, I want upload my Fabric extension workload in order to integrating my app into the Fabric framework.
 ---
 
-# Deploy a workload in Fabric
+# Manage a workload in Fabric
 
 This article describes how to upload and manage a workload to the Fabric service. Workloads enhance the usability of your service within a familiar workspace, eliminating the need to leave the Fabric environment. Fabric workloads increase user engagement and improve your application’s discoverability in the Fabric store. The Fabric workspace includes various components, known as Fabric items, which handle the storage, analysis, and presentation of your data.
 
