@@ -32,11 +32,11 @@ The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fab
 
    - **Azure Cosmos DB for NoSQL:**
    
-     ![A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account.](media/add-source-azure-cosmos-db-change-data-capture/endpoint.png)
+     ![A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account.](media/add-source-azure-cosmos-db-change-data-capture/containers.png)
 
    - **Azure Cosmos DB for Table:**
    
-     ![A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account.](media/add-source-azure-cosmos-db-change-data-capture/endpoint.png)
+     ![A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account.](media/add-source-azure-cosmos-db-change-data-capture/tables.png)
 
 ## Add Azure Cosmos DB (CDC) as a source
 

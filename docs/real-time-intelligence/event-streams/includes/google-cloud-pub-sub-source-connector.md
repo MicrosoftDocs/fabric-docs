@@ -11,44 +11,44 @@ ms.date: 04/29/2024
 
 1. On the **Connect** screen, under **Connection**, select **New connection**.
 
-1. On the **Connection settings** screen, fill out the required information:
+1. On the **Connection settings** screen, fill out the required information.
 
    :::image type="content" source="media/google-cloud-pub-sub-source-connector/connect.png" alt-text="A screenshot of the Connection settings for the Google Cloud Pub/Sub source.":::
 
 1. For **Project ID**, enter the Project ID from your Google Cloud Console.
 
-   ![A screenshot of the Project ID in the Google Cloud Console.](media/google-cloud-pub-sub-source-connector/project.png)
+   :::image type="content" source="media/google-cloud-pub-sub-source-connector/project.png" alt-text="A screenshot of the Project ID in the Google Cloud Console.":::
 
 1. For **Subscription name**, open your Google Pub/Sub and select **Subscriptions**. You can find the Subscription ID in the list.
 
-   ![A screenshot of a computer Description automatically generated.](media/google-cloud-pub-sub-source-connector/subscription.png)
+   :::image type="content" source="media/google-cloud-pub-sub-source-connector/subscription.png" alt-text="A screenshot of a computer Description automatically generated.":::
 
 1. **Service account key** is a JSON file that contains the credentials of your service account. Follow the next steps to generate the file in Google Cloud.
 
    1. Select **IAM & Admin** in your Google Cloud Console.
 
-      ![A screenshot of selecting IAM & Admin in Google Cloud Console.](media/google-cloud-pub-sub-source-connector/iam.png)
+      :::image type="content" source="media/google-cloud-pub-sub-source-connector/iam.png" alt-text="A screenshot of selecting IAM & Admin in Google Cloud Console.":::
 
    1. On the **IAM & Admin** page, under **Service Accounts**, select **CREATE SERVICE ACCOUNT**.
 
-      ![A screenshot of selecting Create service account.](media/google-cloud-pub-sub-source-connector/create-account.png)
+      :::image type="content" source="media/google-cloud-pub-sub-source-connector/create-account.png" alt-text="A screenshot of selecting Create service account.":::
 
    1. After configuring, give your role appropriate **Owner** permission, and then select **Done**.
 
-      ![A screenshot of giving your role Owner permissions and then selecting Done.](media/google-cloud-pub-sub-source-connector/owner.png)
+      :::image type="content" source="media/google-cloud-pub-sub-source-connector/owner.png" alt-text="A screenshot of giving your role Owner permissions and then selecting Done.":::
 
    1. On the **Service accounts** page, select your role and then select **Manage keys** under **Actions**.
 
-      ![A screenshot of selecting Manage keys under Actions.](media/google-cloud-pub-sub-source-connector/actions.png)
+      :::image type="content" source="media/google-cloud-pub-sub-source-connector/actions.png" alt-text="A screenshot of selecting Manage keys under Actions.":::
 
    1. Under **ADD KEY**, select **Create new key**.
 
-      ![A screenshot of selecting Create new key.](media/google-cloud-pub-sub-source-connector/add-key.png)
+      :::image type="content" source="media/google-cloud-pub-sub-source-connector/add-key.png" alt-text="A screenshot of selecting Create new key.":::
 
    1. Download the JSON file, copy all the JSON content, and enter it as **Service account key** on the Fabric **Connection settings** screen.
-
-      > ![IMPORTANT]
-      > This JSON file can be downloaded only once.
+   
+   >![IMPORTANT]
+   >This JSON file can be downloaded only once.
 
 1. Select **Connect** on the **Connection settings** screen.
 
