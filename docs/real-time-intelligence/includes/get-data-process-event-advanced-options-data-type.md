@@ -13,7 +13,7 @@ ms.date: 04/21/2024
 
 Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. To use the first row as column names, turn on  **First row is column header**.
 
-:::image type="content" source="../media/get-data-process-event-advanced-options/first-row-header.png" alt-text="Screenshot of the First row is column header switch.":::
+:::image type="content" source="../media/get-data-process-event-advanced-options/first-row-header.png" alt-text="Screenshot of the First row is column header switch." lightbox="../media/get-data-process-event-advanced-options/first-row-header.png":::
 
 **JSON**:
 
