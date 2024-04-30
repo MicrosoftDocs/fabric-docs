@@ -11,7 +11,7 @@ ms.search.form: Source and Destination
 
 # Add Azure Cosmos DB CDC source to an eventstream
 
-This article shows you how to add an Azure SQL Database Change Data Capture source to an eventstream. The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fabric event streams lets you capture a snapshot of the current data in an Azure Cosmos DB database.
+This article shows you how to add an Azure Cosmos DB Change Data Capture source to an eventstream. The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fabric event streams lets you capture a snapshot of the current data in an Azure Cosmos DB database.
 
 The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
