@@ -4,11 +4,12 @@ description: Learn about Real-Time Intelligence tutorial user flow 5- Trigger Fa
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
-ms.topic: tutorial
+ms.topic: concept-article
 ms.custom:
   - build-2024
 ms.date: 05/21/2024
 ms.search.form: Get started
+#customer intent: I want to learn how to trigger Fabric dataflows from the Real-Time Hub.
 ---
 
 # User flow 5: Trigger Fabric dataflows from the Real-Time Hub
@@ -22,7 +23,7 @@ response times to your event data.
 This user flow shows how a data engineer or data analyst can trigger
 Fabric dataflows based on events from the Real-Time Hub.
 
-:::image type="content" source="media/user-flows/user-flow-5.png" alt-text="Schematic image showing the steps in user flow 5.":::
+:::image type="content" source="media/user-flows/user-flow-5.png" alt-text="Schematic image showing the steps in user flow 5."  lightbox="media/user-flows/user-flow-5.png" border="false":::
 
 ## Steps
 
@@ -42,8 +43,6 @@ events available in the Real-time hub. You can stream these events
 to an event stream and send it to a custom application through the event
 stream.
 
-## Related content:
-
-\[\[links\]\]
+## Related content
 
 -   Tutorial link

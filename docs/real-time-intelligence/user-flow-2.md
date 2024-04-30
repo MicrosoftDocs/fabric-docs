@@ -4,11 +4,12 @@ description: Learn about Real-Time Intelligence tutorial user flow 1- Transform 
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
-ms.topic: tutorial
+ms.topic: concept-article
 ms.custom:
   - build-2024
 ms.date: 05/21/2024
 ms.search.form: Get started
+#customer intent: I want to learn how to transform events from streaming sources in Real-Time Intelligence.
 ---
 # User flow 2:Transform events from streaming sources
 
@@ -16,7 +17,7 @@ The Real-Time Hub is used to discover and manage your streaming data in Fabric. 
 
 This user flow shows how a data engineer can load, transform, and certify events from a wide variety of streaming sources into the Real-Time Hub. 
 
-:::image type="content" source="media/user-flows/user-flow-2.png" alt-text="Schematic image showing the steps in user flow 2.":::
+:::image type="content" source="media/user-flows/user-flow-2.png" alt-text="Schematic image showing the steps in user flow 2."  border="false" lightbox="media/user-flows/user-flow-2.png":::
 
 ## Steps
 

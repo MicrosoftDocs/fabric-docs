@@ -1,10 +1,10 @@
 items:
-- name: Real-Time Analytics documentation
+- name: Real-Time Intelligence documentation
   href: index.yml
 - name: Overview
   expanded: true
   items:
-  - name: What is Real-Time Analytics?
+  - name: What is Real-Time Intelligence?
     href: overview.md
   - name: Compare with Azure Data Explorer
     href: real-time-intelligence-compare.md
