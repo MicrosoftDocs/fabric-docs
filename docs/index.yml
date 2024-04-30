@@ -192,7 +192,7 @@ productDirectory:
     # Card
     - title: Real-Time hub
 
-      imageSrc: ./media/onelake-icon.png
+      imageSrc: ./media/real-time-hub-icon.png
       links:
         - url: real-time-hub/real-time-hub-overview.md
           text: What is Real-Time hub?
