@@ -12,7 +12,7 @@ This article describes how to get events from Microsoft sources such as Azure Ev
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-## Supported Microsoft sources
+## Microsoft sources
 
 - [Azure Event Hubs](add-source-azure-event-hubs.md)
 - [Azure IoT Hub](add-source-azure-iot-hub.md)
@@ -21,8 +21,18 @@ This article describes how to get events from Microsoft sources such as Azure Ev
 - [Azure Database for MySQL CDC](add-source-mysql-database-cdc.md)
 - [Azure Cosmos DB CDC](add-source-mysql-database-cdc.md)
 
+## External sources
+
+- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md)
+- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
+- [Confluent Cloud Kafka](add-source-confluent-kafka.md)
+
+## Discrete events
+
+- [Azure Blob Storage events](get-azure-blob-storage-events.md)
+- [Fabric Workspace Item events](create-streams-fabric-workspace-item-events.md)
+
 ## Related content
 
-- [Get events from external sources](get-events-external-sources.md)
 - [Get Azure blob storage events](get-azure-blob-storage-events.md)
 - [Create streams for Fabric workspace item events](create-streams-fabric-workspace-item-events.md)
