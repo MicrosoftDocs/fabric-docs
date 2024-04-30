@@ -88,7 +88,7 @@ If you're the Capacity administrator, you can assign workspaces to the trial cap
 - [Use the Admin center **Capacity settings**](give-access-workspaces.md). All users with access to those workspaces are now able to use that trial capacity. The Fabric administrator can do this as well.
     :::image type="content" source="media/fabric-trial/fabric-admin-portal.png" alt-text="Screenshot of the Admin center showing Capacity settings selected.":::
 
-- [Use Workplace settings](create-workspaces.md).  
+- [Use Workspace settings](create-workspaces.md).  
 
     :::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
@@ -160,7 +160,7 @@ If you do see the **Start trial** button in your Account manager:
   - [Purchase a Fabric capacity from Azure](https://aka.ms/fabricibiza) by performing a search for *Microsoft Fabric*.
   - To increase tenant trial capacity limits, [reach out to your Fabric administrator](#look-up-the-trial-capacity-administrator) to create a Microsoft support ticket.
 
-**In Workplace settings, I can't assign a workspace to the trial capacity**
+**In Workspace settings, I can't assign a workspace to the trial capacity**
 
 This bug occurs when the Fabric administrator turns off trials after you start a trial. To add your workspace to the trial capacity, open the Admin portal by selecting it from the gear icon in the top menu bar. Then, select **Trial > Capacity settings** and choose the name of the capacity. If you don't see your workspace assigned, add it here.
 
