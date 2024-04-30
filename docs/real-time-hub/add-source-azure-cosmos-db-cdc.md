@@ -97,4 +97,3 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream you just created." lightbox="./media/add-source-azure-cosmos-db-cdc/verify-data-stream.png":::
 
     For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
-1
