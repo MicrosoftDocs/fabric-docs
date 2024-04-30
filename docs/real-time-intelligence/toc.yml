@@ -30,7 +30,7 @@ items:
   items:
   - name: "User flow 1: Discover and respond to events"
     href: user-flow-1.md
-  - name: "User flow 2: Transform events from streaming sources"
+  - name: "User flow 2: Get and transform events from streaming sources"
     href: user-flow-2.md
   - name: "User flow 3:  Discover streaming sources from Microsoft"
     href: user-flow-3.md
