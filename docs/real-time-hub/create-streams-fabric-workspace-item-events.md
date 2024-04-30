@@ -12,9 +12,26 @@ This article describes how to get Fabric workspace item events as an eventstream
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
+Fabric workspace item events are discrete Fabric events that occur when changes are made to your Fabric Workspace. These changes include creating, updating, or deleting a Fabric item.
+
+With Fabric event streams, you can capture these Fabric workspace events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Fabric workspace events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your Fabric workspace.
+
+Here are the supported Fabric workspace events:
+
+- Microsoft.Fabric.ItemCreateSucceeded
+- Microsoft.Fabric.ItemCreateFailed
+- Microsoft.Fabric.ItemUpdateSucceeded
+- Microsoft.Fabric.ItemUpdateFailed
+- Microsoft.Fabric.ItemDeleteSucceeded
+- Microsoft.Fabric.ItemDeleteFailed
+- Microsoft.Fabric.ItemReadSucceeded
+- Microsoft.Fabric.ItemReadFailed
+
+
 ## Prerequisites 
 
 - Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
+- A Fabric workspace with events you want to track.
 
 ## Create streams for Fabric workspace item events
 You can create streams for Fabric workspace item events in Real-Time hub using one of the ways:
