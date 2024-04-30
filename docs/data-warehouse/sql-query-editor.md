@@ -1,10 +1,12 @@
 ---
 title: Query using the SQL query editor
 description: Learn how to use the SQL query editor.
-author: prlangad
-ms.author: prlangad
-ms.reviewer: wiassaf, jacindaeng
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: prlangad, jacindaeng
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -13,7 +15,7 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 ---
 # Query using the SQL query editor
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
 
 This article describes how to use the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
@@ -29,11 +31,11 @@ The SQL query editor provides a text editor to write queries using T-SQL. To acc
 
 - Select the **Query** icon located at the bottom of the warehouse editor window.
 
-   :::image type="content" source="media\sql-query-editor\query-button-ribbon.png" alt-text="Screenshot showing the SQL query editor query icon.":::
+   :::image type="content" source="media/sql-query-editor/query-button-ribbon.png" alt-text="Screenshot showing the SQL query editor query icon.":::
 
 - Create a new query using the **New SQL query** button. If you select the dropdown, you can easily create T-SQL objects with code templates that populate in your SQL query window, as shown in the following image.
 
-   :::image type="content" source="media\sql-query-editor\new-sql-query-dropdown-templates.png" alt-text="Screenshot showing where to find the New query menu on the Data preview view ribbon.":::
+   :::image type="content" source="media/sql-query-editor/new-sql-query-dropdown-templates.png" alt-text="Screenshot showing where to find the New query menu on the Data preview view ribbon.":::
 
 ### View query results
 
@@ -45,35 +47,35 @@ The status bar indicates the query status, duration of the run and number of row
 
 To enable **Save as view**, **Save as table**, **Download Excel file**, and **Visualize results** menus, highlight the SQL statement containing `SELECT` statement in the SQL query editor.
 
-   :::image type="content" source="media\sql-query-editor\editor-commands.png" alt-text="Screenshot of the query editor window. Command buttons are boxed in red." lightbox="media\sql-query-editor\editor-commands.png":::
+   :::image type="content" source="media/sql-query-editor/editor-commands.png" alt-text="Screenshot of the query editor window. Command buttons are boxed in red." lightbox="media/sql-query-editor/editor-commands.png":::
 
 #### Save as view
 
 You can select the query and save your query as a view using the **Save as view** button. Select the schema name that you have access to create views, provide name of view and verify the SQL statement before confirming creating view. When view is successfully created, it appears in the **Explorer**.
 
-   :::image type="content" source="media\sql-query-editor\save-as-view.png" alt-text="Screenshot showing how to use Save as view menu." lightbox="media\sql-query-editor\save-as-view.png":::
+   :::image type="content" source="media/sql-query-editor/save-as-view.png" alt-text="Screenshot showing how to use Save as view menu.":::
 
 #### Save as table
 
 You can use **Save as table** to save your query results into a table. Select the warehouse in which you would like to save results, select schema that you have access to create tables and provide table name to load results into the table using [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) statement. When table is successfully created, it appears in the **Explorer**.
 
-   :::image type="content" source="media\sql-query-editor\save-as-table.png" alt-text="Screenshot showing how to use Save as table menu." lightbox="media\sql-query-editor\save-as-table.png":::
+   :::image type="content" source="media/sql-query-editor/save-as-table.png" alt-text="Screenshot showing how to use Save as table menu.":::
 
 #### Download Excel file
 
 The **Download Excel file** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to work with the results in Microsoft Excel on your local computer.
 
-   :::image type="content" source="media\sql-query-editor\download-excel-file-query.png" alt-text="Screenshot showing how to use Download Excel file menu." lightbox="media\sql-query-editor\download-excel-file-query.png":::
+   :::image type="content" source="media/sql-query-editor/download-excel-file-query.png" alt-text="Screenshot showing how to use Download Excel file menu." lightbox="media/sql-query-editor/download-excel-file-query.png":::
 
 Follow these steps to work with the Excel file locally:
 
 1. After you select the **Continue** button, locate the downloaded Excel file in your Windows File Explorer, for example, in the **Downloads** folder of your browser.
 1. To see the data, select the **Enable Editing** button in the **Protected View** ribbon followed by the **Enable Content** button in the **Security Warning** ribbon. Once both are enabled, you are presented with the following dialog to approve running the query listed.
-   :::image type="content" source="media\sql-query-editor\native-database-query.png" alt-text="Screenshot from Microsoft Excel showing the Native Database Query dialog." lightbox="media\sql-query-editor\native-database-query.png":::
+   :::image type="content" source="media/sql-query-editor/native-database-query.png" alt-text="Screenshot from Microsoft Excel showing the Native Database Query dialog." lightbox="media/sql-query-editor/native-database-query.png":::
 
 1. Select **Run**.
 1. Select one of the following methods (Windows, Database, or Microsoft account) to authenticate your account. Select **Connect**.
-   :::image type="content" source="media\sql-query-editor\sql-server-database-authentication.png" alt-text="Screenshot from Microsoft Excel showing the SQL Server database dialog." lightbox="media\sql-query-editor\sql-server-database-authentication.png":::
+   :::image type="content" source="media/sql-query-editor/sql-server-database-authentication.png" alt-text="Screenshot from Microsoft Excel showing the SQL Server database dialog." lightbox="media/sql-query-editor/sql-server-database-authentication.png":::
 
 Once you have successfully signed in, you'll see the data presented in the spreadsheet.
 
@@ -81,15 +83,15 @@ Once you have successfully signed in, you'll see the data presented in the sprea
 
 **Visualize results** allows you to create reports from your query results within the SQL query editor.
 
-   :::image type="content" source="media\sql-query-editor\visualize-results-query.png" alt-text="Screenshot showing how to use Visualize results menu" lightbox="media\sql-query-editor\visualize-results-query.png":::
+   :::image type="content" source="media/sql-query-editor/visualize-results-query.png" alt-text="Screenshot showing how to use Visualize results menu." lightbox="media/sql-query-editor/visualize-results-query.png":::
 
 As you work on your SQL query, the queries are automatically saved every few seconds. A "saving" indicator appears in your query tab at the bottom to indicate that your query is being saved.
 
 #### Multiple result sets
 
-When you run multiple queries and those return multiple results, you can select results drop down list to see individual results.
+When you run multiple queries and those return multiple results, you can select results dropdown list to see individual results.
 
-   :::image type="content" source="media\sql-query-editor\sql-query-editor-overview.png" alt-text="Screenshot of the query editor window with results." lightbox="media\sql-query-editor\sql-query-editor-overview.png":::
+   :::image type="content" source="media/sql-query-editor/sql-query-editor-overview.png" alt-text="Screenshot of the query editor window with results." lightbox="media/sql-query-editor/sql-query-editor-overview.png":::
 
 ## Cross-warehouse querying
 
@@ -148,7 +150,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
    - For example, when independently executing transaction statements, session context is not retained. In the following screenshot, `BEGIN TRAN` was executed in the first request, but since the second request was executed in a different session, there is no transaction to commit, resulting into the failure of commit/rollback operation. If the SQL batch submitted does not include a COMMIT TRAN, the changes applied after `BEGIN TRAN` will not commit.
 
-   :::image type="content" source="media\sql-query-editor\transaction-run-error.png" alt-text="Screenshot showing independent run of transactions failed in SQL query editor." lightbox="media\sql-query-editor\transaction-run-error.png":::
+   :::image type="content" source="media/sql-query-editor/transaction-run-error.png" alt-text="Screenshot showing independent run of transactions failed in SQL query editor." lightbox="media/sql-query-editor/transaction-run-error.png":::
 
    - The SQL query editor does not support `sp_set_session_context`.
 

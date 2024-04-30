@@ -351,7 +351,7 @@ To use this script, you need to provide a *workspace name* and a *user principal
 
 When you deploy a paginated report that's connected to a Fabric semantic model, it continues to point to the semantic model it was originally connected to. Use [deployment rules](deployment-pipelines/create-rules.md) to point your paginated report to any semantic model you want, including, for example,  the target stage semantic model.
 
-**Solution**: If you're using a paginated report with a Fabric semantic model, see [How do I create a deployment rule for a paginated report with a Fabric semantic model?](./faq.md#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-fabric-semantic-model)
+**Solution**: If you're using a paginated report with a Fabric semantic model, see [How do I create a deployment rule for a paginated report with a Fabric semantic model?](./faq.yml#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-fabric-semantic-model)
 
 #### Deployment failure: Large number of paginated reports fails
 

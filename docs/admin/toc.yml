@@ -8,7 +8,7 @@ items:
   - name: What is Microsoft Fabric admin?
     href: microsoft-fabric-admin.md
   - name: What is the admin portal?
-    href: admin-center.md
+    href: admin-center.md   
   - name: Governance and compliance documentation
     href: ../governance/index.yml      
   - name: Security documentation
@@ -23,6 +23,8 @@ items:
     href: region-availability.md
   - name: Find your Fabric home region
     href: find-fabric-home-region.md
+  - name: Manage your Fabric capacity
+    href: capacity-settings.md     
   - name: Understand Fabric admin roles
     href: roles.md 
   - name: Service interruption notifications      
@@ -94,13 +96,17 @@ items:
   items:
   - name: About tenant settings
     href: about-tenant-settings.md
+  - name: Delegate settings
+    href: delegate-settings.md     
   - name: Tenant settings index
     href: tenant-settings-index.md
-  - name: Tenant settings sections
+  - name: Tenant settings
     expanded: false
     items:
     - name: Microsoft Fabric
       href: fabric-switch.md
+    - name: Product feedback
+      href: product-feedback.md      
     - name: Help and support settings
       href: service-admin-portal-help-support.md
     - name: Domain management settings
