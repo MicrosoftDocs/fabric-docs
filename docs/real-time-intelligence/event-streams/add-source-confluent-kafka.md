@@ -28,7 +28,6 @@ Confluent Cloud Kafka is a streaming platform offering powerful data streaming a
 
 [!INCLUDE [confluent-kafka-connector](./includes/confluent-kafka-source-connector.md)]
 
-You should see a Confluent Cloud Kafka source added to your eventstream in the editor.
 You see that the Confluent Cloud Kafka source is added to your eventstream on the canvas in **Edit mode**. To implement this newly added Confluent Cloud Kafka source, select **Publish** on the ribbon. 
 
 After you complete these steps, the Confluent Cloud Kafka source is available for visualization in **Live view**.
