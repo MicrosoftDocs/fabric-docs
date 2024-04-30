@@ -33,9 +33,9 @@ highlightedContent:
       itemType: overview
       url: security/security-overview.md
     # Card
-    - title: Join the Fabric Community Conference
-      itemType: whats-new
-      url: https://fabricconf.com/#!/
+    - title:  Choose a Fabric data store
+      itemType: concept
+      url: get-started/decision-guide-data-store.md
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
@@ -49,7 +49,7 @@ highlightedContent:
 conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   sections:
-    - title: Microsoft Fabric shared platform experiences # < 60 chars (Optional; Remove if not applicable.)
+    - title: Microsoft Fabric shared platform # < 60 chars (Optional; Remove if not applicable.)
       summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
@@ -154,7 +154,7 @@ conceptualContent:
             text: See more
 
 productDirectory:
-  title: Explore Microsoft Fabric experiences
+  title: Explore Microsoft Fabric
   summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
   items:
     # Card
@@ -190,19 +190,19 @@ productDirectory:
           text: See more
 
     # Card
-    - title: OneRiver
+    - title: Real-Time hub
 
       imageSrc: ./media/onelake-icon.png
       links:
-        - url: oneriver/oneriver-overview.md
-          text: What is OneRiver?
-        - url: oneriver/get-started-bring-events-oneriver.md
-          text: Bring your data to OneRiver
-        - url: oneriver/explore-streams.md
+        - url: real-time-hub/real-time-hub-overview.md
+          text: What is Real-Time hub?
+        - url: real-time-hub/get-started-bring-events-real-time-hub.md
+          text: Bring your data to Real-Time hub
+        - url: real-time-hub/explore-data-streams.md
           text: Explore streams
-        - url: oneriver/set-alerts-streams.md
+        - url: real-time-hub/set-alerts-data-streams.md
           text: Set alerts on streams
-        - url: oneriver/index.yml
+        - url: real-time-hub/index.yml
           text: See more
 
     # Card

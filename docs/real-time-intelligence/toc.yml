@@ -44,9 +44,67 @@ items:
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
-    - name: Create an eventstream
+    - name: New capabilities (preview)
+      href: event-streams/new-capabilities.md
+    - name: Create eventstreams (preview)
+      items: 
+      - name: Create an eventstream (preview)
+        href: event-streams/create-manage-an-eventstream-enhanced.md
+      - name: Create default and derived streams
+        href: event-streams/create-default-derived-streams.md
+      - name: Create eventstreams for discrete events
+        href: event-streams/create-eventstreams-discrete-events.md
+      - name: Edit and publish eventstreams
+        href: event-streams/edit-publish.md
+      - name: Route events based on content
+        href: event-streams/route-events-based-on-content.md
+    - name: Add sources to eventstreams (preview)
+      items:
+      - name: Add and manage an event source (preview)
+        href: event-streams/add-manage-eventstream-sources-enhanced.md
+      - name: Custom endpoint
+        href: event-streams/add-source-custom-app-enhanced.md
+      - name: Sample data
+        href: event-streams/add-source-sample-data-enhanced.md
+      - name: Azure Event Hubs
+        href: event-streams/add-source-azure-event-hubs-enhanced.md
+      - name: Azure IoT Hub
+        href: event-streams/add-source-azure-iot-hub-enhanced.md
+      - name: Azure SQL Database Change Data Capture
+        href: event-streams/add-source-azure-sql-database-change-data-capture.md
+      - name: PostgreSQL Database Change Data Capture
+        href: event-streams/add-source-postgresql-database-change-data-capture.md
+      - name: MySQL Database Change Data Capture
+        href: event-streams/add-source-mysql-database-change-data-capture.md
+      - name: Azure Cosmos DB Change Data Capture
+        href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
+      - name: Google Cloud Pub/Sub
+        href: event-streams/add-source-google-cloud-pub-sub.md
+      - name: Amazon Kinesis Data Streams
+        href: event-streams/add-source-amazon-kinesis-data-streams.md
+      - name: Confluent Cloud Kafka
+        href: event-streams/add-source-confluent-kafka.md
+      - name: Fabric workspace events
+        href: event-streams/add-source-fabric-workspace.md
+      - name: Azure Blob Storage events
+        href: event-streams/add-source-azure-blob-storage.md
+    - name: Route events to destinations (preview)
+      items:
+      - name: Add and manage a destination
+        href: event-streams/add-manage-eventstream-destinations-enhanced.md      
+      - name: Derived stream 
+        href: event-streams/add-destination-derived-stream.md
+      - name: KQL Database
+        href: event-streams/add-destination-kql-database-enhanced.md
+      - name: Lakehouse
+        href: event-streams/add-destination-lakehouse-enhanced.md
+      - name: Reflex
+        href: event-streams/add-destination-reflex-enhanced.md
+      - name: Custom endpoint
+        href: event-streams/add-destination-custom-app-enhanced.md
+    - name: Create eventstreams
       href: event-streams/create-manage-an-eventstream.md
-    - name: Get events from sources
+    - name: Add sources to eventstreams
       items:
       - name: Add and manage an event source
         href: event-streams/add-manage-eventstream-sources.md
