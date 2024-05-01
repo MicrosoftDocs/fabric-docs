@@ -270,7 +270,7 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Synapse Real-Time Intelligence
+    - title: Real-Time Intelligence
 
       imageSrc: ./media/synapse-real-time-intelligence-icon.png
       links:

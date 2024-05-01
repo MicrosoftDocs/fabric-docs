@@ -36,11 +36,11 @@ Power BI has introduced generative AI that allows you to create reports automati
 
 See the article [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction) for details of the features and how to use Copilot for Power BI.
 
-## Copilot for Real-Time Analytics
+## Copilot for Real-Time Intelligence
 
-Copilot for Real-Time Analytics is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists. 
+Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists. 
 
-For more information, see [Copilot for Real-Time Analytics overview](copilot-real-time-analytics.md).
+For more information, see [Copilot for Real-Time Intelligence overview](copilot-real-time-analytics.md).
 
 ## How do I use Copilot responsibly?
 
