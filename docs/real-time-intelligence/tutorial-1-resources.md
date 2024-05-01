@@ -29,6 +29,7 @@ ms.search.form: Get started
 1. From the **System overview** page, select the KQL database you created in the previous step.
 
     :::image type="content" source="media/tutorial/select-tutorial-database.png" alt-text="Screnshot of the System overview for new event house with Tutorial database selected and highlighted with a red box.":::
+
 1. In the **Database details** section, select the **pencil icon** next to **OneLake availability**.
 1. Toggle the button to **Active** and select **Done**.
 

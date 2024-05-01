@@ -45,7 +45,10 @@ ms.search.form: Get started
 1. Select **Transform events** > **Manage fields**.
 
     :::image type="content" source="media/tutorial/manage-fields.png" alt-text="Screenshot showing the edit window of eventstreams with transform events selected in Real-Time Intelligence in Microsoft Fabric.":::
-1. From the TutorialEventstream item rightmost node, drag
+
+     A new tile is created entitled *Managefields1*.
+
+1. Connect this new tile such that the righthand *TutorialEventstream* node is connected to the lefthand *Managefields* tile.
 
 
 ## Related content
