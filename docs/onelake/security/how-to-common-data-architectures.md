@@ -53,7 +53,7 @@ Identify the downstream consumers and grant access according to the minimum perm
 
 ### Workspace roles
 
-Workspace role assignments follow the same guidelines for both hub and spoke and data mesh architectures. The job responsibilities table outlines which [workspace role.](../../get-started/roles-workspaces.md) to assign to users based on the functions they perform in the workspace.
+Workspace role assignments follow the same guidelines for both hub and spoke and data mesh architectures. The job responsibilities table outlines which [workspace role](../../get-started/roles-workspaces.md) to assign to users based on the functions they perform in the workspace.
 
 | Job responsibilities | Workspace role |
 | ---- | --- |
@@ -70,7 +70,7 @@ To provision access for data scientists, use the share button to share the lakeh
 
 ### Data engineers
 
-Data engineers need access to data in a lakehouse to build out downstream data products. Data engineers need access to the data in OneLake so pipelines or notebooks can be created to read the data. In a true hub and spoke model, the data engineer role exists only within the layers of the central hub team. However for data mesh, data engineers perform combine data products across domains to build new data sets.
+Data engineers need access to data in a lakehouse to build out downstream data products. Data engineers need access to the data in OneLake so pipelines or notebooks can be created to read the data. In a true hub and spoke model, the data engineer role exists only within the layers of the central hub team. However, for data mesh, data engineers combine data products across domains to build new data sets.
 
 Use the share button to share the lakehouse with data engineers. Check the **Read all Apache Spark** box in the dialog. For lakehouses with [OneLake data access roles](.\get-started-data-access-roles.md) enabled, give the same users access by adding them to a OneLake data access role. Using OneLake data access roles gives finer-grained access to the data. Data engineers can then create [shortcuts](../onelake-shortcuts.md) to select tables or folders in a lakehouse.
 
@@ -92,7 +92,7 @@ Use the share button to share the lakehouse with the report creators. Check the 
 
 Report consumers are the business leaders or directors that view data in a Power BI report to make decisions.
 
-Share a report with consumers using the share button. Don't check any of the boxes to grant acccess to read the report but not see any of the underlying data. To prevent users from accessing the SQL endpoint and viewing tables, ensure that no SQL permissions are defined that would grant access for these users.
+Share a report with consumers using the share button. Don't check any of the boxes to grant access to read the report but not see any of the underlying data. To prevent users from accessing the SQL endpoint and viewing tables, ensure that no SQL permissions are defined that would grant access for these users.
 
 You can also share data with report consumers by using an [app](/power-bi/consumer/end-user-apps). Apps allow users to access a predefined report or set of reports without needing access to the underlying workspace. Note that for reports in direct lake mode, the users will need to have the underlying lakehouse shared with them in order to see data.
 
