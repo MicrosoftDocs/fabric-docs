@@ -75,14 +75,14 @@ Select **Publish** to publish the changes and begin streaming Azure Cosmos DB CD
 Other connectors:
 
 - [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
-- [Azure Event Hubs](add-source-azure-event-hubs-enhanced.md)
-- [Azure IoT Hub](add-source-azure-iot-hub-enhanced.md)
+- [Azure Event Hubs](add-source-azure-event-hubs.md)
+- [Azure IoT Hub](add-source-azure-iot-hub.md)
 - [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
 - [Confluent Kafka](add-source-confluent-kafka.md)
-- [Custom endpoint](add-source-custom-app-enhanced.md)
+- [Custom endpoint](add-source-custom-app.md)
 - [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
 - [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
 - [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
-- [Sample data](add-source-sample-data-enhanced.md)
+- [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
