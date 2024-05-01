@@ -51,7 +51,7 @@ Many customers use multiple Microsoft products. Real-Time hub ensures that it’
 ### Fabric events as the nervous system
 When customers take CRUD (Create, Read, Update, Delete) actions on artifacts, these events are emitted as Fabric events within Real-Time hub. Much like a human nervous system, these events provide vital feedback. Customers can gauge whether their entire project is functioning correctly based on these events. Even when a user visits Real-Time hub for the first time, they encounter these events. They can subscribe to them, gaining insights into the health and performance of their data ecosystem. 
 
-### Single copy of events/streams for use with multiple real-time analytics engines 
+### Single copy of events/streams to be consumed by real-time analytics engines 
 As data flows into Real-Time hub, you can create a stream out of it. Once the stream is created, the data is stored in a canonical format. This format is universally accessible to all processing engines. No need for redundant copies of data. Real-Time hub ensures efficiency and consistency.
 
 ## Related content
