@@ -10,7 +10,7 @@ ms.date: 05/21/2024
 # Explore Fabric events in Fabric Real-time hub
 When you navigate to Real-time hub in Fabric, you see the following three tabs in the user interface (UI). This article covers the **Fabric events** tab. 
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-tab.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-tab.png":::
+:::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-tab.png" alt-text="Screenshot that shows the Fabric events tab of the Real-time hub." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-tab.png":::
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
