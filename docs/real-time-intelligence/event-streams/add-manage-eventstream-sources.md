@@ -37,7 +37,7 @@ In this article, you learn about the event sources that you can add to an events
 Fabric event streams with enhanced capabilities support the following sources. Each article provides details and instructions for adding specific sources.
 
 - [Azure Event Hubs](add-source-azure-event-hubs.md)
-- [Azure IoT Hub](add-source-azure-iot-hub-enhanced.md)
+- [Azure IoT Hub](add-source-azure-iot-hub.md)
 - [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
 - [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
 - [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)

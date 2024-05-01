@@ -75,7 +75,7 @@ items:
       - name: Sample data
         href: event-streams/add-source-sample-data-enhanced.md
       - name: Azure IoT Hub
-        href: event-streams/add-source-azure-iot-hub-enhanced.md
+        href: event-streams/add-source-azure-iot-hub.md
       - name: Azure SQL Database Change Data Capture (preview)
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
       - name: PostgreSQL Database Change Data Capture (preview)

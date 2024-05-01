@@ -44,7 +44,7 @@ Other connectors:
 
 - [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
 - [Azure Event Hubs](add-source-azure-event-hubs.md)
-- [Azure IoT Hub](add-source-azure-iot-hub-enhanced.md)
+- [Azure IoT Hub](add-source-azure-iot-hub.md)
 - [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
 - [Confluent Kafka](add-source-confluent-kafka.md)
 - [Custom endpoint](add-source-custom-app-enhanced.md)
