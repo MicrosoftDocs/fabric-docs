@@ -1,7 +1,5 @@
 ---
 title: Real-Time Intelligence Tutorial- Introduction
-description: Get started with Synapse Real-Time Intelligence in Microsoft Fabric.
-title: Real-Time Intelligence Tutorial- Introduction
 description: Get started with Real-Time Intelligence in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -12,8 +10,6 @@ ms.custom:
 ms.date: 05/21/2024
 ms.search.form: Get started//
 ---
-
-# Real-Time Intelligence Tutorial- Introduction
 # Real-Time Intelligence Tutorial- Introduction
 
 Real-Time Intelligence in Microsoft Fabric is a powerful tool to extract insights and visualize your data in motion. Real-Time Intelligence provides an end-to-end solution for event-driven scenarios, streaming data, and data logs.

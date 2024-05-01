@@ -20,6 +20,9 @@ ms.search.form: Get started
 
 1. From the navigation bar, select **Real-Time Hub**.
 1. Select **+ Get events**.
+    
+    :::image type="content" source="media/tutorial/get-events.png" alt-text="Screenshot of Real-time hub with get events highlighted.":::
+
 1. The **Get events** pane opens. Select **Sample data**. 
 
 ### Sample data
@@ -40,7 +43,7 @@ ms.search.form: Get started
 
 ## Transform events
 
-1. Select **Open Eventstream** from the notification that appears after creating the eventstream, or browse to the eventstream from the Real-time hub.
+1. Select **Open Eventstream** from the notification that appears after creating the eventstream, or browse to the eventstream from the Real-time hub and select **Open Eventstream**.
 1. In the eventstream authoring canvas, select the eventstream tile in the center.
 1. From the menu ribbon, select **Edit**.
 1. Select **Transform events** > **Manage fields**.
@@ -55,7 +58,7 @@ ms.search.form: Get started
     1. In **Operation name**, enter *TutorialTransform*. 
     1. Select **Add all fields**
     1. Select **+ Add field**.
-    1. In the **Built-in Date Time Function** dropdown, select **SYSTEM.Timestamp()**
+    1. From the **Built-in Date Time Function** dropdown, select **SYSTEM.Timestamp()**
     
         :::image type="content" source="media/tutorial/system-timestamp.png" alt-text="Screenshot showing the system timestamp selected in the event stream manage fields tile in Real-Time Intelligence.":::
     1. Enter *Timestamp* as the **Field name**.
@@ -77,6 +80,7 @@ ms.search.form: Get started
     1. In **Destination table** select **Create new**. For the table name, enter *TutorialTable*.
     1. Leave **Input data format** as *JSON*.
     1. Select **Save**.
+    1. Select **Publish**.
     
         :::image type="content" source="media/tutorial/kql-database-details.png" alt-text="Screenshot showing the KQL database destination pane in Real-Time Intelligence.":::
 
