@@ -12,7 +12,7 @@ ms.custom: licensing support
 LocalizationGroup: Get started
 ---
 
-## Close your account, cancel your subscription, end your trial
+# Close your account, cancel your subscription, end your trial
 
 You always have the option to close your account, cancel your subscription, or end your trial. Each of these actions has a different set of procedures and considerations. 
 
@@ -32,11 +32,11 @@ Cancel a Fabric subscription in the Microsoft 365 admin portal. If you're within
 
 ### Disable Fabric
 
-Certain administrators can turn off Fabric for an entire organization or for a specific capacity. See [Can I disable Microsoft Fabric?](..admin/fabric-switch.md#can-i-disable-microsoft-fabric)
+Certain administrators can turn off Fabric for an entire organization or for a specific capacity. See [Can I disable Microsoft Fabric?](../admin/fabric-switch.md#can-i-disable-microsoft-fabric)
 
 ### Delete a Fabric capacity and Fabric trial capacity
 
-The Capacity admin can delete Fabric capacities using the Fabric admin portal. Fabric items in workspaces assigned to the capacity become unusable unless the workspaces are assigned to a different capacity within seven days. To learn more, see [Delete a capacity](../admin/capacity-settings?tabs=power-bi-premium#delete-a-capacity) and 
+The Capacity admin can delete Fabric capacities using the Fabric admin portal. Fabric items in workspaces assigned to the capacity become unusable unless the workspaces are assigned to a different capacity within seven days. To learn more, see [Delete a capacity](../admin/capacity-settings.md#delete-a-capacity) and 
 [Fabric capacity deletion.](../admin/service-admin-portal-capacity-settings.md#fabric-capacity-deletion)
 
 ### Close your Fabric account
@@ -59,7 +59,7 @@ To cancel a free trial for your organization, [turn off recurring billing](/micr
 
 ### Cancel your Power BI subscription
 
-[Cancel your Power BI subscription](//microsoft-365/commerce/subscriptions/cancel-your-subscription) by turning off recurring billing in the Microsoft 365 admin center. The subscription remains active until it expires. Only the Global or someone with Billing permissions can cancel the subscription. Remember to ask users to save their data. 
+[Cancel your Power BI subscription](/microsoft-365/commerce/subscriptions/cancel-your-subscription) by turning off recurring billing in the Microsoft 365 admin center. The subscription remains active until it expires. Only the Global or someone with Billing permissions can cancel the subscription. Remember to ask users to save their data. 
 
 ### Manage an expired Power BI license
 
