@@ -28,15 +28,15 @@ items:
       href: tutorial-7-clean-up-resources.md
 - name: User flows
   items:
-  - name: "User flow 1: Discover and respond to events"
+  - name: "Discover and respond to events"
     href: user-flow-1.md
-  - name: "User flow 2: Get and transform events from streaming sources"
+  - name: "Get and transform events from streaming sources"
     href: user-flow-2.md
-  - name: "User flow 3:  Discover streaming sources from Microsoft"
+  - name: "Discover streaming sources from Microsoft"
     href: user-flow-3.md
-  - name: "User flow 4: Explore your data visually with Real-Time Dashboards"
+  - name: "Explore your data visually with Real-Time Dashboards"
     href: user-flow-4.md
-  - name: "User flow 5: Trigger Fabric dataflows from the Real-Time Hub"
+  - name: "Trigger Fabric dataflows from the Real-time hub"
     href: user-flow-5.md 
 - name: Get data
   items:
@@ -46,17 +46,17 @@ items:
       href: event-streams/overview.md
     - name: New capabilities (preview)
       href: event-streams/new-capabilities.md
-    - name: Create eventstreams (preview)
+    - name: Create eventstreams 
       items: 
-      - name: Create an eventstream (preview)
-        href: event-streams/create-manage-an-eventstream-enhanced.md
-      - name: Create default and derived streams
+      - name: Create an eventstream
+        href: event-streams/create-manage-an-eventstream.md
+      - name: Create default and derived streams (preview)
         href: event-streams/create-default-derived-streams.md
-      - name: Create eventstreams for discrete events
+      - name: Create eventstreams for discrete events (preview)
         href: event-streams/create-eventstreams-discrete-events.md
-      - name: Edit and publish eventstreams
+      - name: Edit and publish eventstreams (preview)
         href: event-streams/edit-publish.md
-      - name: Route events based on content
+      - name: Route events based on content (preview)
         href: event-streams/route-events-based-on-content.md
     - name: Add sources to eventstreams (preview)
       items:
@@ -102,8 +102,6 @@ items:
         href: event-streams/add-destination-reflex-enhanced.md
       - name: Custom endpoint
         href: event-streams/add-destination-custom-app-enhanced.md
-    - name: Create eventstreams
-      href: event-streams/create-manage-an-eventstream.md
     - name: Add sources to eventstreams
       items:
       - name: Add and manage an event source
@@ -174,6 +172,8 @@ items:
       href: get-data-onelake.md
     - name: Get data from Eventstream
       href: get-data-eventstream.md
+    - name: Get data from Real-time hub (Preview)
+      href: get-data-real-time-hub.md
     - name: Configure KQL Database in a data pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
@@ -265,7 +265,7 @@ items:
     href: kql-database-consumption.md
 - name: Analyze and model data
   items:
-  - name: Copilot for Real-Time Analytics
+  - name: Copilot for Real-Time Intelligence
     href: ../get-started/copilot-real-time-analytics.md
   - name: KQL Queryset
     items:
@@ -324,11 +324,11 @@ items:
       href: ../data-activator/data-activator-get-data-power-bi.md
     - name: Get data from Eventstreams
       href: ../data-activator/data-activator-get-data-eventstreams.md        
-  - name: Create objects and triggers
+  - name: Create objects and alerts
     items:
     - name: Assign data to objects in Data Mode
       href: ../data-activator/data-activator-assign-data-objects.md    
-    - name: Create triggers in design mode
+    - name: Create alerts in design mode
       href: ../data-activator/data-activator-create-triggers-design-mode.md        
     - name: Detection conditions
       href: ../data-activator/data-activator-detection-conditions.md            

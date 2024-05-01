@@ -1,22 +1,22 @@
 ---
-title: Explore Fabric workspace item events in Fabric Real-Time hub
-description: This article shows how to explore Fabric workspace item events in Fabric Real-Time hub. 
+title: Explore Fabric workspace item events in Fabric Real-time hub
+description: This article shows how to explore Fabric workspace item events in Fabric Real-time hub. 
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Explore Fabric workspace item events in Fabric Real-Time hub
-Real-Time hub expands Fabric with event-driven capabilities to support real-time data processing and analysis. This feature enables event-driven scenarios for various system events, including Fabric workspace item events and Azure blob storage events. By using System events in Fabric, you can gain access to real-time data streams that enable them to monitor and react to changes and events as they occur. 
+# Explore Fabric workspace item events in Fabric Real-time hub
+Real-time hub expands Fabric with event-driven capabilities to support real-time data processing and analysis. This feature enables event-driven scenarios for various Fabric events, including Fabric workspace item events and Azure blob storage events. By using events in Fabric, you can gain access to real-time data streams that enable them to monitor and react to changes and events as they occur. 
 
-Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items, such as when a new artifact is created, or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
+Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items, such as when a new artifact is created, or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
 ## View Fabric workspace item events detail page
 
-1. In **Real-Time hub**, switch to the **Fabric events** tab. 
+1. In **Real-time hub**, switch to the **Fabric events** tab. 
 1. Select **Fabric workspace item events** in the list. 
 
     :::image type="content" source="./media/explore-fabric-workspace-item-events/select-from-list.png" alt-text="Screenshot that shows the selection of Fabric workspace item events in the Fabric events tab.":::
