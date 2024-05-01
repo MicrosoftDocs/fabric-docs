@@ -27,7 +27,7 @@ On the **Data streams** tab, you see streams and tables. Streams are the outputs
 1. To **explore** streams and tables that you have access, use instructions from [Explore data streams](explore-data-streams.md). 
 1. To **view details** for a stream or a table, see [View data stream details](view-data-stream-details.md).
 1. To **preview data** in a data stream, see [Preview data streams](preview-data-streams.md).
-1. To **endorse** data streams for others to use, see [Endorse streams](endorse-streams.md)
+1. To **endorse** data streams for others to use, see [Endorse streams](endorse-data-streams.md)
 1. You can also open an eventstream that's the parent of a data stream (or) open KQL database that's the parent of a KQL table. 
 
     :::image type="content" source="./media/get-started-real-time-hub/data-streams-actions.png" alt-text="Screenshot that shows the actions available on a data stream." lightbox="./media/get-started-real-time-hub/data-streams-actions.png":::
@@ -46,7 +46,7 @@ On the **Fabric events** tab, you see the following types of events.
 
 [!INCLUDE [discrete-event-sources](./includes/discrete-event-sources.md)]
 
-To **explore Fabric events**, see [Explore Fabric events in Real-Time hub](expore-fabric-events.md).
+To **explore Fabric events**, see [Explore Fabric events in Real-Time hub](explore-fabric-events.md).
 
 You can **create eventstreams** for events from your Azure Blob Storage accounts or Fabric Workspaces. You can also set up an alert to send notifications via email, Teams etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Azure Blob Storage events and Fabric workspace item events. 
 
