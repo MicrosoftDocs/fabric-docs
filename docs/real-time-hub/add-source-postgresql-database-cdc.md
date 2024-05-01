@@ -1,14 +1,14 @@
 ---
-title: Add PostgreSQL Database CDC as source in Real-time hub
-description: This article describes how to add PostgreSQL Database Change Data Capture (CDC) as an event source in Fabric Real-time hub. 
+title: Add PostgreSQL Database CDC as source in Real-Time hub
+description: This article describes how to add PostgreSQL Database Change Data Capture (CDC) as an event source in Fabric Real-Time hub. 
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Add PostgreSQL Database CDC as source in Real-time hub
-This article describes how to add PostgreSQL Database Change Data Capture (CDC) as an event source in Fabric Real-time hub. 
+# Add PostgreSQL Database CDC as source in Real-Time hub
+This article describes how to add PostgreSQL Database Change Data Capture (CDC) as an event source in Fabric Real-Time hub. 
 
 The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in a PostgreSQL database. The connector then monitors and records any future row-level changes to this data. 
 
@@ -58,7 +58,7 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
     1. For **table**, Enter a table name.
     1. For **Port**, enter the port number or leave the default value: 5432. 
     1. For **eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected PostgreSQL Database CDC as a source.
-    1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **Data streams** tab of Real-time hub when the wizard finishes. 
+    1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **Data streams** tab of Real-Time hub when the wizard finishes. 
     1. Select **Next** at the bottom of the page.
 
         :::image type="content" source="media/add-source-postgresql-database-cdc/connect-page-filled.png" alt-text="Screenshot that shows the Connect page filled for the Azure PostgreSQL database connector." lightbox="media/add-source-postgresql-database-cdc/connect-page-filled.png":::
@@ -70,5 +70,5 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
 
 1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected PostgreSQL Database CDC as a source. To close the wizard, select **Close** at the bottom of the page. 
 
-    :::image type="content" source="./media/add-source-postgresql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Data streams tab of Real-time hub with the stream based on PostgreSQL Database CDC source." lightbox="./media/add-source-postgresql-database-cdc/review-create-success.png":::
-1. In Real-time hub, switch to the **Data streams** tab of Real-time hub. Refresh the page. You should see the data stream created for you as shown in the following image.
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream based on PostgreSQL Database CDC source." lightbox="./media/add-source-postgresql-database-cdc/review-create-success.png":::
+1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you as shown in the following image.

@@ -1,14 +1,14 @@
 ---
-title: Explore Microsoft sources in Fabric Real-time hub
-description: This article shows how to explore Microsoft sources in Fabric Real-time hub. It provides details on the Microsoft sources tab in the Real-time hub user interface.
+title: Explore Microsoft sources in Fabric Real-Time hub
+description: This article shows how to explore Microsoft sources in Fabric Real-Time hub. It provides details on the Microsoft sources tab in the Real-Time hub user interface.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# Explore Microsoft sources in Fabric Real-time hub
-When you navigate to Real-time hub in Fabric, you see the following three tabs in the user interface (UI). This article covers the **Microsoft sources** tab. 
+# Explore Microsoft sources in Fabric Real-Time hub
+When you navigate to Real-Time hub in Fabric, you see the following three tabs in the user interface (UI). This article covers the **Microsoft sources** tab. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -21,7 +21,7 @@ When you navigate to Real-time hub in Fabric, you see the following three tabs i
 
 ## Microsoft sources tab
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-tab.png" alt-text="Screenshot that shows the Microsoft sources tab of the Real-time hub.":::
+:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-tab.png" alt-text="Screenshot that shows the Microsoft sources tab of the Real-Time hub.":::
 
 ### Columns
 
@@ -33,7 +33,7 @@ When you navigate to Real-time hub in Fabric, you see the following three tabs i
 | Resource group | Name of the Azure resource group that has the Azure resource. | 
 | Region | Region name of Azure resource. |
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-columns.png" alt-text="Screenshot that shows the Microsoft sources tab of the Real-time hub with columns highlighted.":::
+:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-columns.png" alt-text="Screenshot that shows the Microsoft sources tab of the Real-Time hub with columns highlighted.":::
 
 ### Filters
 The following filters are available at the top for you to narrow down easily to the desired Microsoft resource: 
@@ -45,12 +45,12 @@ The following filters are available at the top for you to narrow down easily to 
 | Resource group | You can filter on the desired Azure resource group name. |
 | Region | You can filter on the desired region name. |
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-filters.png" alt-text="Screenshot that shows the Microsoft sources tab of the Real-time hub with filters highlighted.":::
+:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-filters.png" alt-text="Screenshot that shows the Microsoft sources tab of the Real-Time hub with filters highlighted.":::
 
 ### Search
 You can also search your Microsoft resource using the search bar by typing in the name of the source. 
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-search.png" alt-text="Screenshot that shows the search box on the Microsoft sources tab of the Real-time hub." lightbox="./media/explore-data-streams/real-time-hub-microsoft-sources-search.png":::
+:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-search.png" alt-text="Screenshot that shows the search box on the Microsoft sources tab of the Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-microsoft-sources-search.png":::
 
 ### Actions
 Here are the actions available on resources in the **Microsoft sources** tab. When you move the mouse over a resource, you see a connect button and an ellipsis (...). When you select the ellipsis (...) button, you see the connect button here too.
@@ -59,7 +59,7 @@ Here are the actions available on resources in the **Microsoft sources** tab. Wh
 | ------ | ----------- | 
 | Connect | Connect Fabric to your Microsoft resource. |
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-actions.png" alt-text="Screenshot that shows the actions available for resources on the Microsoft sources tab of the Real-time hub." lightbox="./media/explore-data-streams/real-time-hub-microsoft-sources-actions.png":::
+:::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-actions.png" alt-text="Screenshot that shows the actions available for resources on the Microsoft sources tab of the Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-microsoft-sources-actions.png":::
 
 
 ## Related content

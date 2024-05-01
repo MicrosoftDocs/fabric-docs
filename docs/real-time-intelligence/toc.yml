@@ -58,35 +58,39 @@ items:
         href: event-streams/edit-publish.md
       - name: Route events based on content (preview)
         href: event-streams/route-events-based-on-content.md
-    - name: Add sources to eventstreams (preview)
+    - name: Add sources to eventstreams
       items:
-      - name: Add and manage an event source (preview)
-        href: event-streams/add-manage-eventstream-sources-enhanced.md
+      - name: Add and manage an event source
+        href: event-streams/add-manage-eventstream-sources.md
+      - name: Add an Azure Event Hubs source
+        href: event-streams/add-source-azure-event-hubs.md
+      - name: Add an Azure IoT Hub source
+        href: event-streams/add-source-azure-iot-hub.md
+      - name: Add a custom app source
+        href: event-streams/add-source-custom-app.md
+      - name: Add a sample data source
+        href: event-streams/add-source-sample-data.md              
       - name: Custom endpoint
         href: event-streams/add-source-custom-app-enhanced.md
       - name: Sample data
         href: event-streams/add-source-sample-data-enhanced.md
-      - name: Azure Event Hubs
-        href: event-streams/add-source-azure-event-hubs-enhanced.md
-      - name: Azure IoT Hub
-        href: event-streams/add-source-azure-iot-hub-enhanced.md
-      - name: Azure SQL Database Change Data Capture
+      - name: Azure SQL Database Change Data Capture (preview)
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
-      - name: PostgreSQL Database Change Data Capture
+      - name: PostgreSQL Database Change Data Capture (preview)
         href: event-streams/add-source-postgresql-database-change-data-capture.md
-      - name: MySQL Database Change Data Capture
+      - name: MySQL Database Change Data Capture (preview)
         href: event-streams/add-source-mysql-database-change-data-capture.md
-      - name: Azure Cosmos DB Change Data Capture
+      - name: Azure Cosmos DB Change Data Capture (preview)
         href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-      - name: Google Cloud Pub/Sub
+      - name: Google Cloud Pub/Sub (preview)
         href: event-streams/add-source-google-cloud-pub-sub.md
-      - name: Amazon Kinesis Data Streams
+      - name: Amazon Kinesis Data Streams (preview)
         href: event-streams/add-source-amazon-kinesis-data-streams.md
-      - name: Confluent Cloud Kafka
+      - name: Confluent Cloud Kafka (preview)
         href: event-streams/add-source-confluent-kafka.md
-      - name: Fabric workspace events
+      - name: Fabric workspace events (preview)
         href: event-streams/add-source-fabric-workspace.md
-      - name: Azure Blob Storage events
+      - name: Azure Blob Storage events (preview)
         href: event-streams/add-source-azure-blob-storage.md
     - name: Route events to destinations (preview)
       items:
@@ -102,18 +106,6 @@ items:
         href: event-streams/add-destination-reflex-enhanced.md
       - name: Custom endpoint
         href: event-streams/add-destination-custom-app-enhanced.md
-    - name: Add sources to eventstreams
-      items:
-      - name: Add and manage an event source
-        href: event-streams/add-manage-eventstream-sources.md
-      - name: Add an Azure Event Hubs source
-        href: event-streams/add-source-azure-event-hubs.md
-      - name: Add an Azure IoT Hub source
-        href: event-streams/add-source-azure-iot-hub.md
-      - name: Add a custom app source
-        href: event-streams/add-source-custom-app.md
-      - name: Add a sample data source
-        href: event-streams/add-source-sample-data.md
     - name: Process events using event processor
       href: event-streams/process-events-using-event-processor-editor.md
     - name: Route events to destinations
