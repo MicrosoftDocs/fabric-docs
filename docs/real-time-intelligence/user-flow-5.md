@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial user flow 5- alert Fabric dataflows from the Real-time hub
+title: Real-Time Intelligence tutorial user flow 5- trigger Fabric dataflows from the Real-time hub
 description: Learn about Real-Time Intelligence tutorial user flow 5- Trigger Fabric dataflows from the Real-time hub in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
