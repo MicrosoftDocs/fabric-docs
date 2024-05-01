@@ -24,7 +24,7 @@ With Microsoft Fabric, you can end a Fabric trial, cancel a capacity subscriptio
 
 ### End a Fabric trial
 
-The Fabric trial lasts 60 days. [End a Fabric trial](../get-started/fabric-trial.md#end-a-fabric-trial) explains what happens when a trial ends, expires, or is cancelled. You'll find helpful information on how to save your data whether you upgrade or not.  
+The Fabric trial lasts 60 days. [End a Fabric trial](../get-started/fabric-trial.md#end-a-fabric-trial) explains what happens when a trial ends, expires, or is canceled. Use this article to find helpful information on how to save your data whether you upgrade or not.  
 
 ### Cancel a capacity subscription
 
@@ -49,7 +49,7 @@ Administrators can use the Microsoft 365 admin portal to remove a user's Fabric 
 
 With the Power BI service, you can end a trial of a paid license, cancel a subscription, or close your account. 
 
-### End a trial of Power BI Pro or PPU
+### End a trial of Power BI Pro or PPU (Premium Per User)
 
 To opt out of a trial, select **Cancel trial** from the **Me** icon.
 
@@ -63,11 +63,11 @@ To cancel a free trial for your organization, [turn off recurring billing](/micr
 
 ### Manage an expired Power BI license
 
-When a paid license passes its expiration date, you have a grace period for repurchasing the license. To learn more about expired licenses, see [Power BI license expiration](/power-bi/enterprise/service-admin-licensing-organization#power-bi-license-expiration)
+When a paid license passes its expiration date, you have a grace period for repurchasing the license. To learn more about expired licenses, see [Power BI license expiration.](/power-bi/enterprise/service-admin-licensing-organization#power-bi-license-expiration)
 
 ### Close your Power BI account
 
-If you don't want to use Power BI any longer, close your Power BI account.  After you close your account, you can't sign in to Power BI. Also, as it states in the data retention policy in the [Power BI Service Agreement](https://azure.microsoft.com/support/legal/subscription-agreement/), Power BI deletes any customer data you uploaded or created.
+If you don't want to use Power BI any longer, close your Power BI account. After you close your account, you can't sign in to Power BI. Also, as it states in the data retention policy in the [Power BI Service Agreement](https://azure.microsoft.com/support/legal/subscription-agreement/), Power BI deletes any customer data you uploaded or created.
 
 If you signed up for Power BI as an individual, you can close your account from the **Settings** screen.
 
