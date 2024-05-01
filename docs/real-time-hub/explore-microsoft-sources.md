@@ -64,4 +64,5 @@ Here are the actions available on resources in the **Microsoft sources** tab. Wh
 
 ## Related content
 
-- [Get events from Microsoft sources](get-events-microsoft-sources.md)
+- [Explore Azure blob storage events](get-azure-blob-storage-events.md)
+- [Explore Fabric workspace item events](create-streams-fabric-workspace-item-events.md)
