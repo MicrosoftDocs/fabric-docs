@@ -9,7 +9,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.date: 11/17/2023
-ms.search.form: Event Streams Tutorials
+ms.search.form: Eventstreams Tutorials
 ---
 
 # Tutorial: Explore and transform sample bike-sharing data with Eventstream for KQL Database integration
@@ -106,6 +106,6 @@ You successfully completed the tutorial on exploring and transforming bike-shari
 
 If you want to learn more about ingesting and processing data streams using Eventstream, check out the following resources:
 
-- [Introduction to Microsoft Fabric event streams](./overview.md)
+- [Introduction to Microsoft Fabric eventstreams](./overview.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
 - [Stream real-time events from a custom app to a Microsoft Fabric KQL database](./stream-real-time-events-from-custom-app-to-kusto.md)

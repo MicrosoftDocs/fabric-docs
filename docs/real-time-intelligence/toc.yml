@@ -42,7 +42,7 @@ items:
   items:
   - name: Get, process, and route events 
     items:
-    - name: What is Fabric event streams?
+    - name: What is Fabric Eventstreams?
       href: event-streams/overview.md
     - name: New capabilities (preview)
       href: event-streams/new-capabilities.md
@@ -142,7 +142,7 @@ items:
       items:
       - name: Monitor status and performance of eventstreams 
         href: event-streams/monitor.md
-      - name: Monitor event streams capacity consumption
+      - name: Monitor eventstreams capacity consumption
         href: event-streams/monitor-capacity-consumption.md
     - name: Integrate with other Fabric items
       href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md

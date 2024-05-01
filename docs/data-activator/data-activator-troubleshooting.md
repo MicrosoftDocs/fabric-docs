@@ -37,7 +37,7 @@ This error code means that Data Activator couldn't find the Fabric Eventstream f
 
 ### EventHubException
 
-This error code means that Data Activator received an exception from Eventstreams when importing your data from your Eventstreams item. To resolve the problem, open your eventstreams item and examine the connection to your Data Activator object, to check for errors in the connection or the event stream.
+This error code means that Data Activator received an exception from Eventstreams when importing your data from your Eventstreams item. To resolve the problem, open your eventstreams item and examine the connection to your Data Activator object, to check for errors in the connection or the eventstream.
 
 ### UnauthorizedAccess
 

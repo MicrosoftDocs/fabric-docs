@@ -277,7 +277,7 @@ productDirectory:
         - url: real-time-intelligence/overview.md
           text: What is Real-Time Intelligence?
         - url: real-time-intelligence/event-streams/overview.md
-          text: What is Fabric event streams?
+          text: What is Fabric eventstreams?
         - url: real-time-intelligence/create-database.md
           text: Create a database
         - url: real-time-intelligence/query-table.md

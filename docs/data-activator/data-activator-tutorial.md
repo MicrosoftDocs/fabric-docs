@@ -39,7 +39,7 @@ From the Fabric homepage, select a workspace with a Fabric capacity. Select the 
 In this step we explore data mode. 
 
 1. In the newly created reflex, select on the *data* tab, then select the *Package in Transit* events stream. These events show the real-time status of packages that are in the process of being delivered by a logistics company. Look at the incoming events and note the columns on the events. The *PackageId* column uniquely identifies the Packages; this is the ID column that we use to assign the Package events to Package objects.
-2. Select on the other two event streams. These come from different sources in the logistics company, but they're also about packages. They also have a *Package ID* column.
+2. Select on the other two eventstreams. These come from different sources in the logistics company, but they're also about packages. They also have a *Package ID* column.
 
 ### Step 3: Explore the Package object in design mode
 
@@ -47,7 +47,7 @@ Now we explore design mode.
 
 1. Select the *Design* tab at the bottom of the screen to enter design mode.
 
-2. In the left navigation pane, look at the *Events* section of the Package object. All three event streams from data mode are linked to the package object. This enables you to create triggers about packages that use data from any of the three event streams.
+2. In the left navigation pane, look at the *Events* section of the Package object. All three eventstreams from data mode are linked to the package object. This enables you to create triggers about packages that use data from any of the three eventstreams.
 
 3. Select the trigger called *Medicine package too warm*. Observe how it works:
     

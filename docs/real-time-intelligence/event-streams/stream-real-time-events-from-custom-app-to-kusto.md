@@ -9,13 +9,13 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 11/15/2023
-ms.search.form: Event Streams Tutorials
-#CustomerIntent: As a developer, I want to stream real-time events from my app to a Microsoft Fabric KQL database by using Fabric event streams, and then build reports for business users.
+ms.search.form: Eventstreams Tutorials
+#CustomerIntent: As a developer, I want to stream real-time events from my app to a Microsoft Fabric KQL database by using Fabric eventstreams, and then build reports for business users.
 ---
 
 # Stream real-time events from a custom app to a Microsoft Fabric KQL database
 
-In this tutorial, you learn how to use the Microsoft Fabric event streams feature to stream real-time events from your custom application into a KQL database. You also discover how to create a near-real-time Power BI report to effectively monitor your business data.
+In this tutorial, you learn how to use the Microsoft Fabric eventstreams feature to stream real-time events from your custom application into a KQL database. You also discover how to create a near-real-time Power BI report to effectively monitor your business data.
 
 In this tutorial, you learn how to:
 
@@ -259,7 +259,7 @@ In this tutorial, you learned how to stream real-time events from your own appli
 
 If you want to discover more advanced functionalities for working with Fabric eventstreams, you might find the following resources helpful:
 
-- [Introduction to Microsoft Fabric event streams](./overview.md)
+- [Introduction to Microsoft Fabric eventstreams](./overview.md)
 - [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)

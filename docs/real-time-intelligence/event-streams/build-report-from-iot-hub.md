@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 01/18/2024
-ms.search.form: Event Streams Tutorials
+ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from Azure IoT Hub to Microsoft Fabric and build a report to monitor the health my devices.
 ---
 

@@ -15,9 +15,9 @@ This article shows you how to add Fabric workspace item event source to an event
 
 Fabric workspace item events are discrete Fabric events that occur when changes are made to your Fabric Workspace. These changes include creating, updating, or deleting a Fabric item.
 
-With Fabric event streams, you can capture these Fabric workspace events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Fabric workspace events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your Fabric workspace.
+With Fabric eventstreams, you can capture these Fabric workspace events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Fabric workspace events within Fabric Eventstreams gives you greater flexibility for monitoring and analyzing activities in your Fabric workspace.
 
-Fabric event streams supports the following Fabric workspace events:
+Fabric eventstreams supports the following Fabric workspace events:
 
 - Microsoft.Fabric.ItemCreateSucceeded
 - Microsoft.Fabric.ItemCreateFailed

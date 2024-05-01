@@ -1,6 +1,6 @@
 ---
 title: Add custom app destination to an eventstream
-description: Learn how to add a custom app destination to Eventstream item with the Microsoft Fabric event streams feature.
+description: Learn how to add a custom app destination to Eventstream item with the Microsoft Fabric eventstreams feature.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu

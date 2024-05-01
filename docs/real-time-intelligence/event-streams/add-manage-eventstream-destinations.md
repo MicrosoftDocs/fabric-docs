@@ -1,6 +1,6 @@
 ---
 title: Add and manage eventstream destinations
-description: Learn how to add and manage an event destination in an Eventstream item with the Microsoft Fabric event streams feature.
+description: Learn how to add and manage an event destination in an Eventstream item with the Microsoft Fabric eventstreams feature.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -25,7 +25,7 @@ Before you start, you must complete the following prerequisites:
 
 ## Supported destinations
 
-The following destinations are supported by Fabric event streams. Use links in the table to navigate to articles that provide more details about adding specific destinations.
+The following destinations are supported by Fabric eventstreams. Use links in the table to navigate to articles that provide more details about adding specific destinations.
 
 | Destinations          | Description |
 | --------------- | ---------- |

@@ -65,7 +65,7 @@ Use instructions from the [Add Azure SQL Database CDC as a source](#add-azure-sq
     1. For **Authentication kind**, select **Basic**. 
     
         > [!NOTE]
-        > Currently, Fabric event streams supports only **Basic** authentication.
+        > Currently, Fabric eventstreams supports only **Basic** authentication.
     1. Enter **Username** and **Password** for the database.   
     1. Select **Connect**.
    

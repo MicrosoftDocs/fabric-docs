@@ -16,7 +16,7 @@ ms.search.form: Data Preview and Insights
 
 # Monitoring status and performance of an eventstream
 
-The Microsoft Fabric event streams feature allows you to easily monitor streaming event data, ingestion status, and ingestion performance. This article explains how to monitor the eventstream status, check logs, errors, and data insights with metrics.
+The Microsoft Fabric eventstreams feature allows you to easily monitor streaming event data, ingestion status, and ingestion performance. This article explains how to monitor the eventstream status, check logs, errors, and data insights with metrics.
 
 In an eventstream, there are two types of monitoring experiences: **Data insights** and **Runtime logs**. You see one or both views, depending on the source or destination you select.
 

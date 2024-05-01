@@ -24,7 +24,7 @@ In this article, you learn about the event sources that you can add to an events
 
 ## Supported sources
 
-Fabric event streams with enhanced capabilities support the following sources. Each article provides details and instructions for adding specific sources.
+Fabric Eventstreams with enhanced capabilities support the following sources. Each article provides details and instructions for adding specific sources.
 
 - [Azure Event Hubs](add-source-azure-event-hubs-enhanced.md)
 - [Azure IoT Hub](add-source-azure-iot-hub-enhanced.md)

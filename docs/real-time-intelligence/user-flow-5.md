@@ -14,7 +14,7 @@ ms.search.form: Get started
 
 # User flow 5: Trigger Fabric dataflows from the Real-time hub
 
-By building alerts based on events from event streams, you can
+By building alerts based on events from eventstreams, you can
 seamlessly connect events with other Fabric artifacts. This capability
 simplifies the creation of automated workflows and lets you swiftly
 respond to data changes in both Fabric and Azure, resulting in reduced
@@ -40,7 +40,7 @@ data in your Azure Blob storage.
 
 You can audit or monitor workspace level activity through Fabric system
 events available in the Real-time hub. You can stream these events
-to an event stream and send it to a custom application through the event
+to an eventstream and send it to a custom application through the event
 stream.
 
 

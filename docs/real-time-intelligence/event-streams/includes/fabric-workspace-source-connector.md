@@ -1,6 +1,6 @@
 ---
-title: Fabric Workspace Item events connector for Fabric event streams
-description: This include files has the common content for configuring Fabric Workspace Item events connector for Fabric event streams and Real-time hub. 
+title: Fabric Workspace Item events connector for Fabric eventstreams
+description: This include files has the common content for configuring Fabric Workspace Item events connector for Fabric eventstreams and Real-time hub. 
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include

@@ -6,7 +6,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.date: 03/15/2024
-ms.search.form: Event Streams Overview
+ms.search.form: Eventstreams Overview
 ---
 
 # Configure settings for a Fabric eventstream
@@ -21,14 +21,14 @@ You can also launch the **Settings** page from a workspace by selecting **...(el
 :::image type="content" source="./media/configure-settings/workspace-settings-button.png" alt-text="Screenshot that shows the Settings button on the workspace page. " lightbox="./media/configure-settings/workspace-settings-button.png":::
 
 ## Retention setting
-For the **retention** setting, you can specify the duration for which the incoming data needs to be retained. The default retention period is one day. Events are automatically removed when the retention period expires. If you set the retention period to one day (24 hours), the event becomes unavailable exactly 24 hours after it's accepted. You can't explicitly delete events. The maximum value for this setting is 90 days. To learn more about usage billing and reporting, see [Monitor capacity consumption for event streams](monitor-capacity-consumption.md).
+For the **retention** setting, you can specify the duration for which the incoming data needs to be retained. The default retention period is one day. Events are automatically removed when the retention period expires. If you set the retention period to one day (24 hours), the event becomes unavailable exactly 24 hours after it's accepted. You can't explicitly delete events. The maximum value for this setting is 90 days. To learn more about usage billing and reporting, see [Monitor capacity consumption for eventstreams](monitor-capacity-consumption.md).
 
-:::image type="content" source="./media/create-manage-an-eventstream/retention-setting.png" alt-text="Screenshot that shows the retention setting for an event stream.":::
+:::image type="content" source="./media/create-manage-an-eventstream/retention-setting.png" alt-text="Screenshot that shows the retention setting for an eventstream.":::
 
 ## Event throughput setting
 For the **event throughput** setting, you can select the throughput rate for incoming events for your eventstream. This feature allows you to scale your eventstream, ranging from 1 MB/sec to 100 MB/sec. 
 
-:::image type="content" source="./media/create-manage-an-eventstream/throughput-setting.png" alt-text="Screenshot that shows the throughput setting for an event stream.":::
+:::image type="content" source="./media/create-manage-an-eventstream/throughput-setting.png" alt-text="Screenshot that shows the throughput setting for an eventstream.":::
 
 > [!NOTE]
 > Pause the node before you update the throughput setting and reactivate the node. 
@@ -36,7 +36,7 @@ For the **event throughput** setting, you can select the throughput rate for inc
 ## Endorsement setting
 On the **Endorsement** tab of the **Settings** page, you can promote or endorse or recommended the eventstream for others to use. For more information on endorsement, see [Endorsement](/fabric/governance/endorsement-overview).
 
-:::image type="content" source="./media/create-manage-an-eventstream/endorsement-setting.png" alt-text="Screenshot that shows the endorsement setting for an event stream.":::
+:::image type="content" source="./media/create-manage-an-eventstream/endorsement-setting.png" alt-text="Screenshot that shows the endorsement setting for an eventstream.":::
 
 ## Sensitivity label setting
 On the **Sensitivity label** tab of the **Settings** page, you can specify the sensitivity level of the eventstream. 

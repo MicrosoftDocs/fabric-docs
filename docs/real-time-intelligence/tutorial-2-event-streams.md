@@ -57,7 +57,7 @@ ms.search.form: Get started
 1. Select **+ New table**,  and enter *nyctaxitrips* as the table name.
 1. Under **Configure the data source**, review the default values. The **Data connection name** is made from the database name and the eventstream name.
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/source-tab.png" alt-text="Screenshot of source tab for event stream in Real-Time Intelligence in Microsoft Fabric.":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/source-tab.png" alt-text="Screenshot of source tab for eventstream in Real-Time Intelligence in Microsoft Fabric.":::
 
     The incoming data source is uncompressed, so keep the **Compression** type as *None*.
 1. Select **Next** to inspect the data.
