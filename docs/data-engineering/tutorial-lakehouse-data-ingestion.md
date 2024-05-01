@@ -25,7 +25,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. Select **Workspaces** in the left navigation pane, and then select your new workspace from the **Workspaces** menu. The items view of your workspace appears.
 
-1. From the **+New** menu in the workspace ribbon, select **Data pipeline**.
+1. From the **+New** menu item in the workspace ribbon, select **Data pipeline**.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\create-data-pipeline.png" alt-text="Screenshot showing how to create a new data pipeline.":::
 
