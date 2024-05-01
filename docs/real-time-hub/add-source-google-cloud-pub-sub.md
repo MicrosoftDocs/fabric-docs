@@ -1,14 +1,14 @@
 ---
-title: Get events from Google Cloud Pub/Sub in Real-time hub
-description: This article describes how to get events from Google Cloud Pub/Sub as an event source in Fabric Real-time hub. 
+title: Get events from Google Cloud Pub/Sub in Real-Time hub
+description: This article describes how to get events from Google Cloud Pub/Sub as an event source in Fabric Real-Time hub. 
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# Get events from Google Cloud Pub/Sub into Real-time hub
-This article describes how to add Google Cloud Pub/Sub as an event source in Fabric Real-time hub. Google Pub/Sub is a messaging service that enables you to publish and subscribe to streams of events. 
+# Get events from Google Cloud Pub/Sub into Real-Time hub
+This article describes how to add Google Cloud Pub/Sub as an event source in Fabric Real-Time hub. Google Pub/Sub is a messaging service that enables you to publish and subscribe to streams of events. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -82,4 +82,4 @@ Get the following information from Google Cloud:
 ## View data stream details
 
 1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Google Cloud Pub/Sub as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
-1. In Real-time hub, switch to the **Data streams** tab of Real-time hub. Refresh the page. For detailed steps, see [View details of data streams in Fabric Real-time hub](view-data-stream-details.md).
+1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
