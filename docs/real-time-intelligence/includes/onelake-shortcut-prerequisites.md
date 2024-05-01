@@ -1,6 +1,6 @@
 ---
-title: Include file for the OneLake shortcut prerequisite in Real-Time Analytics
-description: Include file for the OneLake shortcut prerequisite in Real-Time Analytics
+title: Include file for the OneLake shortcut prerequisite in Real-Time Intelligence
+description: Include file for the OneLake shortcut prerequisite in Real-Time Intelligence
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: include

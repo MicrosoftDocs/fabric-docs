@@ -1,6 +1,6 @@
 ---
-title: Include file for the Mapping transformations heading in Real-Time Analytics
-description: Include file for the Mapping transformations heading in the Get data hub in Real-Time Analytics
+title: Include file for the Mapping transformations heading in Real-Time Intelligence
+description: Include file for the Mapping transformations heading in the Get data hub in Real-Time Intelligence
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: include

@@ -18,7 +18,7 @@ items:
   - name: OneLake
     tocHref: /fabric/onelake/
     topicHref: /fabric/onelake/index
-  - name: Real-Time hub
+  - name: Real-time hub
     tocHref: /fabric/real-time-hub/
     topicHref: /fabric/real-time-hub/index
   - name: Real-Time Intelligence
@@ -37,7 +37,7 @@ items:
   - name: Real-Time Intelligence
     tocHref: /azure/data-explorer/
     topicHref: /fabric/real-time-intelligence/index
-  - name: Real-Time hub
+  - name: Real-time hub
     tocHref: /fabric/real-time-hub/
     topicHref: /fabric/real-time-hub/index
   - name: Microsoft Fabric Security
