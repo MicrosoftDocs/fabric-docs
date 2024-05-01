@@ -180,6 +180,7 @@
                           "exclude": [
                               "real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md"
                           ]
+            }
+        }
     }
-  }
 }
