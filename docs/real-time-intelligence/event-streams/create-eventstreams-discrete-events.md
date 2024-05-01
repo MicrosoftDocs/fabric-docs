@@ -30,7 +30,7 @@ To build an efficient and scalable eventstream in Fabric, it's important to unde
 
 ## Supported discrete events
 
-Fabric event streams enables you to build event-driven solutions for capturing system state changes or events in your Fabric data source. Fabric event streams supports the following types of discrete events:
+Fabric event streams enable you to build event-driven solutions for capturing system state changes or events in your Fabric data source. Fabric event streams support the following types of discrete events:
 
 |Discrete events|Description|
 |----|---------|
