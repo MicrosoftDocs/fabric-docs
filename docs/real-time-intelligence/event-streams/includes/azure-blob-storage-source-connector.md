@@ -6,7 +6,7 @@ author: xujxu
 ms.topic: include
 ms.custom:
   - build-2024
-ms.date: 04/26/2024
+ms.date: 04/30/2024
 ---
 
 1. On the **Select a data source** screen, select **Azure Blob Storage events**.
