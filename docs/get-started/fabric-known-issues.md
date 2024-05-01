@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 04/25/2024
+ms.date: 04/30/2024
 ms.custom:
 ---
 
@@ -20,6 +20,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  694  | Power BI | [Apps and reports not available when editing scorecard metrics](known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md) | April 30 2024 |
+|  693  | Power BI | [Semantic model export to OneLake fails for calculated columns in error state](known-issues/known-issue-693-semantic-model-export-onelake-fails-calculated-columns.md) | April 30 2024 |
 |  701  | OneLake | [Shortcut data inaccessible if data is in a paused capacity](known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md) | April 25, 2024 |
 |  690  | Power BI | [Report Copilot button shows even though Copilot admin setting is off](known-issues/known-issue-690-report-copilot-button-shows-admin-setting-off.md) | April 25, 2024 |
 |  689  | Administration & Management | [Copilot and Azure OpenAI service capacity setting delegation postponed](known-issues/known-issue-689-copilot-service-capacity-setting-delegation-postponed.md) | April 25, 2024 |
@@ -67,7 +69,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  611  | OneLake | [OneLake storage isn't billed for paused capacities](known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md) | February 2, 2024 | Fixed: April 25, 2024 |
 |  642  | Data Engineering | [Load Table public API response returns error](known-issues/known-issue-642-load-table-public-api-response-returns-error.md) | March 5, 2024 | Fixed: April 1, 2024 |
 |  650  | Data Factory | [ParquetSharpNative error in dataflow refresh using a gateway](known-issues/known-issue-650-parquetsharpnative-error-dataflow-refresh-using-gateway.md) | March 14, 2024 | Fixed: March 20, 2024 |
-|  624  | Administration & Management | [Tighter throttling limit for GetDatasourcesAsAdmin Admin API](known-issues/known-issue-624-tighter-throttling-limit-getdatasourcesasadmin-admin-api.md) | February 14, 2024 | Fixed: March 14, 2024 |
 
 ## Related content
 
