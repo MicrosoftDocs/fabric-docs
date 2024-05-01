@@ -17,7 +17,7 @@ ms.search.form: Get data in a KQL Database
 In this article, you learn how to get events from Real-time hub into either a new or existing table.
 
 > [!NOTE]
-> Currently Real-time event hub only supports eventstreams as a source.
+> Currently Real-time hub only supports eventstreams as a source.
 > Real-time hub is currently in preview.
 
 ## Prerequisites
@@ -57,9 +57,9 @@ On the lower ribbon of your KQL database, either:
     | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
     | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
     | **Advanced filters**| |
-    | Compression| Data compression of the events, as coming from the event hub. Options are None (default), or Gzip compression.|
+    | Compression| Data compression of the events, as coming from the hub. Options are None (default), or Gzip compression.|
     | Event system properties| If there are multiple records per event message, the system properties are added to the first one. For more information, see [Event system properties](get-data-event-hub.md#event-system-properties).|
-    | Event retrieval start date| The data connection retrieves existing events created since the Event retrieval start date. It can only retrieve events retained by the event hub, based on its retention period. The time zone is UTC. If no time is specified, the default time is the time at which the data connection is created.|
+    | Event retrieval start date| The data connection retrieves existing events created since the Event retrieval start date. It can only retrieve events retained by the hub, based on its retention period. The time zone is UTC. If no time is specified, the default time is the time at which the data connection is created.|
 
 1. Select **Next**
 
@@ -76,7 +76,7 @@ To complete the ingestion process, select **Finish**.
 Optionally:
 
 * Select **Command viewer** to view and copy the automatic commands generated from your inputs.
-* Change the automatically inferred data format by selecting the desired format from the dropdown. Data is read from the event hub in the form of [EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata?context=/fabric/context/context) objects. Supported formats are Avro, Apache Avro, CSV, JSON, ORC, Parquet, PSV, RAW, SCsv, SOHsv, TSV, TXT, and TSVE.
+* Change the automatically inferred data format by selecting the desired format from the dropdown. Data is read from the hub in the form of [EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata?context=/fabric/context/context) objects. Supported formats are Avro, Apache Avro, CSV, JSON, ORC, Parquet, PSV, RAW, SCsv, SOHsv, TSV, TXT, and TSVE.
 * [Edit columns](#edit-columns).
 * Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
 
