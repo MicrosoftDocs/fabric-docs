@@ -66,42 +66,42 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 ## Item pairing
 
-Pairing is the process by which an item in one stage of the deployment pipeline is associated with the same item in the adjacent stage. Pairing is vital for correct deployments. If items aren't paired, even if they appear to be the same, they won't overwrite on a subsequent deployment.
+Pairing is the process by which an item in one stage of the deployment pipeline is associated with the same item in the adjacent stage. Pairing is vital for correct deployments. If items aren't paired, even if they appear to be the same, they don't overwrite on a subsequent deployment.
 
 <a name="pairingrules">
 Pairing can happen in one of two ways:
 </a>
 
-* Through a clean deploy- when items are copied from one stage to another using the “deploy” button they are automatically paired.
-* Through assigning a workspace to a deployment stage- when a workspace is assigned to a deployment stage the deployment pipeline will attempt to pair items. The pairing criteria are:
+* Deployment: when items are copied from one stage to another using the **Deploy** button they're automatically paired.
+* Assigning a workspace to a deployment stage: when a workspace is assigned to a deployment stage the deployment pipeline attempts to pair items. The pairing criteria are:
 
   * Item Name
   * Item Type
   * Folder Location
 
-If a single item can be identified that matches all three of the above then pairing occurs. If more than one item in a single stage matches an item in an adjacent stage, then pairing fails.
+If a single item can be identified that matches all three of these criteria then pairing occurs. If more than one item in a single stage matches an item in an adjacent stage, then pairing fails.
 
-Once items are paired, renaming them *doesn't* unpair the items. Thus, you can have paired items that have different names.
+Once items are paired, renaming them *doesn't* unpair the items. Thus, there can be paired items with different names.
 
 ### See which items are paired
 
 Paired items appear on the same line in the pipeline content list. Items that aren't paired, appear on a line by themselves:
 
-:::image type="content" source="./assign-pipeline/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
+:::image type="content" source="./media/assign-pipeline/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
 
-### Create non-paired items with the same name
+### Create nonpaired items with the same name
 
-There's no way to manually pair items except by following the pairing rules described in the [previous section](#pairingrules). Adding a new item to a workspace that's part of a pipeline, doesn't automatically pair it to an identical items in an adjacent stage. Thus, you can have identical items with the same name in adjacent workspaces that aren't paired.
+There's no way to manually pair items except by following the pairing rules described in the [previous section](#pairingrules). Adding a new item to a workspace that's part of a pipeline, doesn't automatically pair it to an identical item in an adjacent stage. Thus, you can have identical items with the same name in adjacent workspaces that aren't paired.
 
-Here's an example of items that were added to the *Test* pipeline after it was assigned and therefor not paired with the identical item in the *Dev* pipeline:
+Here's an example of items that were added to the *Test* pipeline after it was assigned and therefore not paired with the identical item in the *Dev* pipeline:
 
-:::image type="content" source="./assign-pipeline/non-paired-items.png" alt-text="Screenshot showing adjacent stages with non-paired items with identical names and types listed on the different lines.":::
+:::image type="content" source="./media/assign-pipeline/non-paired-items.png" alt-text="Screenshot showing adjacent stages with non-paired items with identical names and types listed on the different lines.":::
 
 ### Multiple items with the same name and type in a workspace
 
 If two or more items in the workspace to be paired have the same name, type and folder, pairing fails. Move one item to a different folder or change its name so that there are no longer two items that match an existing item in the other stage.
 
-:::image type="content" source="./assign-pipeline/pairing-failure.png" alt-text="Screenshot of a workspace assignment failing because there's more than one item with the same name and type.":::
+:::image type="content" source="./media/assign-pipeline/pairing-failure.png" alt-text="Screenshot of a workspace assignment failing because there's more than one item with the same name and type.":::
 
 ## Considerations and limitations
 
@@ -119,4 +119,4 @@ If two or more items in the workspace to be paired have the same name, type and 
 
 ## Related content
 
-[Compare content in different stages](compare-pipeline-content.md)
+[Compare content in different stages](compare-pipeline-content.md).
