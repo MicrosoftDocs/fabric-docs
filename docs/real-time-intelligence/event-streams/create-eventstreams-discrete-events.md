@@ -48,7 +48,7 @@ In Fabric event streams, you can add a discrete event source into an eventstream
 
 To connect discrete events to an eventstream, take the following steps:
 
-1. Under **Real-Time Analytics**, select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. Under **Real-Time Intelligence**, select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 

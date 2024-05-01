@@ -39,7 +39,7 @@ Before you start, you must have:
 
 You can create an eventstream and a lakehouse from the **Workspace** page or the **Create hub** page. Follow these steps to create a lakehouse, and then again to create an eventstream:
 
-1. Change your Fabric experience to **Real-time Analytics** and select **Lakehouse** or **Eventstream** to create these items in your workspace or the Create hub. (For best results, create the Lakehouse item first and the Eventstream item second.)
+1. Change your Fabric experience to **Real-Time Intelligence** and select **Lakehouse** or **Eventstream** to create these items in your workspace or the Create hub. (For best results, create the Lakehouse item first and the Eventstream item second.)
 
    - In the **Workspace** screen, select **New** and then **Lakehouse** or **Eventstream**:
 

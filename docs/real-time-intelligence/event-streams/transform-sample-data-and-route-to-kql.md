@@ -25,7 +25,7 @@ Eventstream is a streaming platform that allows you to ingest, transform, and ro
 
 Follow these steps to create an eventstream in your workspace:
 
-1. Switch your Power BI experience to **Real-time Analytics** and select the **Eventstream** button to create a new one.
+1. Switch your Power BI experience to **Real-Time Intelligence** and select the **Eventstream** button to create a new one.
 2. Name your Eventstream "eventstream-1" and select **Create**.
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/create-eventstream.png" alt-text="Screenshot that shows where to add new eventstream." lightbox="./media/transform-sample-data-and-to-kql/create-eventstream.png":::
