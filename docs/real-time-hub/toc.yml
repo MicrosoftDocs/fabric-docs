@@ -49,8 +49,6 @@ items:
       href: add-source-confluent-kafka.md
   - name: Fabric events
     items:    
-    - name: Create streams for events
-      href: create-streams-for-events.md
     - name: Get Azure Blob Storage events and create streams
       href: get-azure-blob-storage-events.md      
     - name: Create streams for Fabric workspace item events

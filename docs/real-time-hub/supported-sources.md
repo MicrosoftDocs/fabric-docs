@@ -28,9 +28,14 @@ This article provides a list of sources that Real-Time hub supports. The Real-Ti
 - [Confluent Cloud Kafka](add-source-confluent-kafka.md)
 
 ## Discrete events
+**Discrete events**, often referred to as notification events, are individual occurrences that happen at specific points in time. Each event is independent of others and has a clear start and end point. Examples of discrete events include users placing orders on a website or making changes to a database.
 
-- [Azure Blob Storage events](get-azure-blob-storage-events.md)
-- [Fabric Workspace Item events](create-streams-fabric-workspace-item-events.md)
+Real-Time hub supports the following types of discrete events:
+
+|Discrete events|Description|
+|----|---------|
+|[Azure Blob Storage events](get-azure-blob-storage-events.md)|Generated upon any change made to Azure Blob Storage, such as creation, modification, or deletion of records or files.|
+|[Fabric Workspace Item events](create-streams-fabric-workspace-item-events.md)|Generated upon any change made to a Fabric workspace, including creation, update, or deletion of items.|
 
 ## Related content
 Real-Time hub also allows you to set alerts based on events and specify actions to take when the events happen. 
