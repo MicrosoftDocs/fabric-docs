@@ -19,7 +19,7 @@ Fabric Runtime 1.3, incorporates the following components and upgrades designed 
 - Operating System: Mariner 2.0
 - Java: 11
 - Scala: 2.12.17
-- Python: 3.10
+- Python: 3.11
 - Delta Lake: 3.1
 - R: 4.3.3
 
@@ -31,7 +31,7 @@ Use the following instructions to integrate runtime 1.3 into your workspace and 
 1. Navigate to the **Workspace settings** tab within your Fabric workspace.
 2. Go to **Data Engineering/Science** tab and select **Spark Settings**.
 3. Select the **Environment** tab.
-4. Under the **Runtime Versions** dropdown, select **1.3 (Spark 3.5, Delta 3.1)** and save your changes. This action sets 1.3 as the default runtime for your workspace.
+4. Under the **Runtime Versions** dropdown, select **1.3 Public Preview (Spark 3.5, Delta 3.1)** and save your changes. This action sets 1.3 as the default runtime for your workspace.
 
 :::image type="content" source="media\mrs\runtime13.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\mrs\runtime13.png":::
 
