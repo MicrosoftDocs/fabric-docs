@@ -10,6 +10,7 @@ ms.custom:
   - ignite-2023
 ms.date: 05/21/2024
 ms.search.form: Get started
+# customer intent: I want to learn how to create a KQL database and enable data availability in Microsoft Fabric.
 ---
 # Real-Time Intelligence tutorial part 1: Create resources
 
