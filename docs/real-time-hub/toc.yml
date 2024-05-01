@@ -1,13 +1,13 @@
 items:
-- name: Real-Time hub documentation
+- name: Real-time hub documentation
   href: index.yml
 - name: Overview
   items:
-  - name: What is Real-Time hub?
+  - name: What is Real-time hub?
     href: real-time-hub-overview.md
 - name: Get started
   items:
-  - name: Get started with Real-Time hub
+  - name: Get started with Real-time hub
     href: get-started-real-time-hub.md
   - name: User flows
     items:
@@ -19,7 +19,7 @@ items:
       href: ../real-time-intelligence/user-flow-3.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
     - name: "User flow 4: Explore your data visually with Real-Time Dashboards"
       href: ../real-time-intelligence/user-flow-4.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
-    - name: "User flow 5: Trigger Fabric dataflows from the Real-Time Hub"
+    - name: "User flow 5: Trigger Fabric dataflows from the Real-time hub"
       href: ../real-time-intelligence/user-flow-5.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json 
 - name: Get events and create data streams
   items:

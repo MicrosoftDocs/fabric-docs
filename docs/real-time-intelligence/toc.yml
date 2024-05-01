@@ -28,15 +28,15 @@ items:
       href: tutorial-7-clean-up-resources.md
 - name: User flows
   items:
-  - name: "User flow 1: Discover and respond to events"
+  - name: "Discover and respond to events"
     href: user-flow-1.md
-  - name: "User flow 2: Get and transform events from streaming sources"
+  - name: "Get and transform events from streaming sources"
     href: user-flow-2.md
-  - name: "User flow 3:  Discover streaming sources from Microsoft"
+  - name: "Discover streaming sources from Microsoft"
     href: user-flow-3.md
-  - name: "User flow 4: Explore your data visually with Real-Time Dashboards"
+  - name: "Explore your data visually with Real-Time Dashboards"
     href: user-flow-4.md
-  - name: "User flow 5: Trigger Fabric dataflows from the Real-Time Hub"
+  - name: "Trigger Fabric dataflows from the Real-time hub"
     href: user-flow-5.md 
 - name: Get data
   items:
@@ -265,7 +265,7 @@ items:
     href: kql-database-consumption.md
 - name: Analyze and model data
   items:
-  - name: Copilot for Real-Time Analytics
+  - name: Copilot for Real-Time Intelligence
     href: ../get-started/copilot-real-time-analytics.md
   - name: KQL Queryset
     items:
@@ -324,11 +324,11 @@ items:
       href: ../data-activator/data-activator-get-data-power-bi.md
     - name: Get data from Eventstreams
       href: ../data-activator/data-activator-get-data-eventstreams.md        
-  - name: Create objects and triggers
+  - name: Create objects and alerts
     items:
     - name: Assign data to objects in Data Mode
       href: ../data-activator/data-activator-assign-data-objects.md    
-    - name: Create triggers in design mode
+    - name: Create alerts in design mode
       href: ../data-activator/data-activator-create-triggers-design-mode.md        
     - name: Detection conditions
       href: ../data-activator/data-activator-detection-conditions.md            

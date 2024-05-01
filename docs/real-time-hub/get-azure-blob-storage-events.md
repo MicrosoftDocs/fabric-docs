@@ -1,14 +1,14 @@
 ---
-title: Get Azure Blob Storage events in Real-Time hub
-description: This article describes how to get Azure Blob Storage events as an eventstream in Fabric Real-Time hub.
+title: Get Azure Blob Storage events in Real-time hub
+description: This article describes how to get Azure Blob Storage events as an eventstream in Fabric Real-time hub.
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Get Azure Blob Storage events in Real-Time hub
-This article describes how to get Azure Blob Storage events as an eventstream in Fabric Real-Time hub.
+# Get Azure Blob Storage events in Real-time hub
+This article describes how to get Azure Blob Storage events as an eventstream in Fabric Real-time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -18,7 +18,7 @@ This article describes how to get Azure Blob Storage events as an eventstream in
 - An Azure Blob Storage account of kind **StorageV2** (general purpose v2), Block Blob Storage, or Blob Storage. General purpose v1 storage accounts aren't supported. 
 
 ## Create streams for Azure Blob Storage events
-You can create streams for Azure Blob Storage events in Real-Time hub using one of the ways:
+You can create streams for Azure Blob Storage events in Real-time hub using one of the ways:
 
 - Using the **Get events** experience
 - Using the **Fabric events** tab
@@ -34,10 +34,10 @@ On the **Get events** page, select **Azure Blob Storage events**.
 
 ## Fabric events tab
 
-1. In Real-Time hub, switch to the **Fabric events** tab. 
+1. In Real-time hub, switch to the **Fabric events** tab. 
 1. Move the mouse over **Azure Blob Storage**, and select the **Create stream** link or select ... (ellipsis) and then select **Create stream**. 
 
-    :::image type="content" source="./media/get-azure-blob-storage-events/fabric-events-tab.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub.":::
+    :::image type="content" source="./media/get-azure-blob-storage-events/fabric-events-tab.png" alt-text="Screenshot that shows the Fabric events tab of the Real-time hub.":::
 
 ## Configure and create an eventstream
 
@@ -56,7 +56,7 @@ On the **Get events** page, select **Azure Blob Storage events**.
 
 ## View stream on the Data streams tab
 
-1. In **Real-Time hub**, switch to the **Data streams** tab. 
+1. In **Real-time hub**, switch to the **Data streams** tab. 
 1. Confirm that you see the stream you created. 
 
     :::image type="content" source="./media/get-azure-blob-storage-events/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab with the generated stream." lightbox="./media/get-azure-blob-storage-events/verify-data-stream.png":::
@@ -64,6 +64,6 @@ On the **Get events** page, select **Azure Blob Storage events**.
 
 ## Related content
 
-- [Set alerts on Azure Blob Storage events in Real-Time hub](set-alerts-azure-blob-storage-events.md)
-- - [Set alerts on Fabric Workspace item events in Real-Time hub](set-alerts-fabric-workspace-item-events.md)
+- [Set alerts on Azure Blob Storage events in Real-time hub](set-alerts-azure-blob-storage-events.md)
+- - [Set alerts on Fabric Workspace item events in Real-time hub](set-alerts-fabric-workspace-item-events.md)
 - [Create streams for Fabric workspace item events](create-streams-fabric-workspace-item-events.md)

@@ -1,6 +1,6 @@
 ---
-title: Introduction to Microsoft Fabric Real-Time hub
-description: This article describes what Real-Time hub in Microsoft Fabric is and how it can be used in near-realtime scenarios. 
+title: Introduction to Microsoft Fabric Real-time hub
+description: This article describes what Real-time hub in Microsoft Fabric is and how it can be used in near-realtime scenarios. 
 author: ajetasin
 ms.author: ajetasi
 ms.topic: overview
@@ -18,16 +18,16 @@ Real-Time hub is the single estate for all data-in-motion across your entire org
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
 ## Single data-in-motion estate for the entire organization 
-Real-Time hub is to data-in-motion, what [OneLake](../onelake/onelake-overview.md) is for data-at-rest; a single, tenant-wide, unified, logical place for streaming data-in-motion.   
+Real-time hub is to data-in-motion, what [OneLake](../onelake/onelake-overview.md) is for data-at-rest; a single, tenant-wide, unified, logical place for streaming data-in-motion.   
 
 The Real-Time hub enables users to easily discover, ingest, manage, and consume data-in-motion from a wide variety of sources. It lists all the streams and Kusto Query Language (KQL) tables that customers can directly act on. It also gives easy access to ingest streaming data from Microsoft products and from Fabric events.  
 
-Each user in the tenant can view and edit all the events/streams that they have access to. Real-Time hub makes it so easy to collaborate and develop streaming applications within one place.  
+Each user in the tenant can view and edit all the events/streams that they have access to. Real-time hub makes it so easy to collaborate and develop streaming applications within one place.  
 
 :::image type="content" source="./media/real-time-hub-overview/hub-data-streams-tab.png" alt-text="Screenshot that shows the Real-Time hub page with the Data Streams tab selected." lightbox="./media/real-time-hub-overview/hub-data-streams-tab.png" :::
 
 ## Numerous connectors to simplify data ingestion from anywhere  
-Real-Time hub has numerous out-of-box connectors that make it easy for you to ingest data into Microsoft Fabric from a wide variety of sources. To start with, the following connectors are supported: 
+Real-time hub has numerous out-of-box connectors that make it easy for you to ingest data into Microsoft Fabric from a wide variety of sources. To start with, the following connectors are supported: 
 
 | &nbsp; | &nbsp; |
 | ------ | ------- |

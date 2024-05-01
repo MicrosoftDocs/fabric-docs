@@ -1,6 +1,6 @@
 ---
-title: Create stored functions in Real-Time Analytics
-description: "Learn how to use the `.create-or-alter function` command to create stored functions in Real-Time Analytics."
+title: Create stored functions in Real-Time Intelligence
+description: "Learn how to use the `.create-or-alter function` command to create stored functions in Real-Time Intelligence."
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/10/2023
+ms.date: 04/21/2024
 ms.search.form: product-kusto
 ---
 
 # Create stored functions
 
-Functions are reusable queries or query parts. Real-Time Analytics supports two kinds of functions:
+Functions are reusable queries or query parts. Real-Time Intelligence supports two kinds of functions:
 
 * Built-in functions, which are hard-coded functions that can't be modified by users.
 * User-defined functions, which are divided into two types:
@@ -41,7 +41,7 @@ This feature allows you to create or alter an existing function using the `.crea
 
 1. Enter the function name and query parameters of your function instead of the placeholder text, and then select **Run**.
 
-    :::image type="content" source="media/create-functions/create-function.png" alt-text="Screenshot of the Explore your data window showing the newly created function in Real-Time Analytics." lightbox="media/create-functions/create-function.png":::
+    :::image type="content" source="media/create-functions/create-function.png" alt-text="Screenshot of the Explore your data window showing the newly created function in Real-Time Intelligence." lightbox="media/create-functions/create-function.png":::
 
     Stored functions appear under **Functions** in the **Explorer** pane.
 
@@ -49,7 +49,7 @@ This feature allows you to create or alter an existing function using the `.crea
 
 1. In the **Explore your data** window, run a query to check that you have successfully created or altered your function.
 
-    :::image type="content" source="media/create-functions/function-example.png" alt-text="Screenshot of the Explore your data window showing query results of a stored function in Real-Time Analytics." lightbox="media/create-functions/function-example.png":::
+    :::image type="content" source="media/create-functions/function-example.png" alt-text="Screenshot of the Explore your data window showing query results of a stored function in Real-Time Intelligence." lightbox="media/create-functions/function-example.png":::
 
 ## Related content
 

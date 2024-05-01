@@ -1,14 +1,14 @@
 ---
-title: View details of streams in Fabric Real-Time hub
-description: This article shows how to view details of for streams in Fabric Real-Time hub in either detail view or a table view.
+title: View details of streams in Fabric Real-time hub
+description: This article shows how to view details of for streams in Fabric Real-time hub in either detail view or a table view.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# View details of data streams in Fabric Real-Time hub
-You can view details of a data stream by selecting the data stream in the **Data streams** tab of the **Real-Time hub**.  
+# View details of data streams in Fabric Real-time hub
+You can view details of a data stream by selecting the data stream in the **Data streams** tab of the **Real-time hub**.  
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 

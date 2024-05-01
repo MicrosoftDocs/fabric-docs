@@ -1,6 +1,6 @@
 ---
 title: Get data from Eventstream
-description: Learn how to get data from an eventstream in a KQL database in Real-Time Analytics.
+description: Learn how to get data from an eventstream in a KQL database in Real-Time Intelligence.
 ms.reviewer: aksdi
 ms.author: yaschust
 author: YaelSchuster
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/16/2023
+ms.date: 04/21/2024
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -70,7 +70,7 @@ To process event before ingestion in Eventstream:
 1. In the **Process events in Eventstream** dialog box, select **Continue in Eventstream**.
 
     > [!IMPORTANT]
-    > Selecting **Continue in Eventstream** ends the get data process in Real-Time Analytics and continues in Eventstream with the destination table and data source details automatically populated.
+    > Selecting **Continue in Eventstream** ends the get data process in Real-Time Intelligence and continues in Eventstream with the destination table and data source details automatically populated.
 
     :::image type="content" source="media/get-data-eventstream/configure-tab-process-event-in-eventstream.png" alt-text="Screenshot of the Process events in Eventstream dialog box." lightbox="media/get-data-eventstream/configure-tab-process-event-in-eventstream.png":::
 

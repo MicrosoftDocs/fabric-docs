@@ -1,6 +1,6 @@
 ---
-title: Change data policies in Real-Time Analytics
-description: Learn how to change the retention and caching policies in Real-Time Analytics.
+title: Change data policies in Real-Time Intelligence
+description: Learn how to change the retention and caching policies in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 10/22/2023
+ms.date: 04/21/2024
 ms.search.form: product-kusto
 ---
 
@@ -41,7 +41,7 @@ For more information, see [Retention policy](/azure/data-explorer/kusto/manageme
 
 ## Caching policy
 
-The caching policy allows to you to choose which data should be cached and kept in local SSD storage. The availability of data in hot cache increases query performance but also storage costs. In Real-Time Analytics, you can enable a caching policy on KQL Databases. After enabling caching, you can set the time span that the data remains in the hot cache.
+The caching policy allows to you to choose which data should be cached and kept in local SSD storage. The availability of data in hot cache increases query performance but also storage costs. In Real-Time Intelligence, you can enable a caching policy on KQL Databases. After enabling caching, you can set the time span that the data remains in the hot cache.
 
 For more information, see [Caching policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context&pivots=fabric).
 

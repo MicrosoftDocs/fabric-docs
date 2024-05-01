@@ -1,14 +1,14 @@
 ---
-title: Add Azure IoT Hub as source in Real-Time hub
-description: This article describes how to add an Azure IoT hub as an event source in Fabric Real-Time hub. 
+title: Add Azure IoT Hub as source in Real-time hub
+description: This article describes how to add an Azure IoT hub as an event source in Fabric Real-time hub. 
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Add Azure IoT Hub as source in Real-Time hub
-This article describes how to get events from an Azure IoT hub into Real-Time hub. 
+# Add Azure IoT Hub as source in Real-time hub
+This article describes how to get events from an Azure IoT hub into Real-time hub. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -19,7 +19,7 @@ This article describes how to get events from an Azure IoT hub into Real-Time hu
 - You need to have appropriate permission to get IoT hub's access keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
 
 ## Get events from an Azure IoT hub
-You can get events from an Azure IoT hub into Real-Time hub in one of the ways:
+You can get events from an Azure IoT hub into Real-time hub in one of the ways:
 
 - Using the **Get events** experience
 - Using the **Microsoft sources** tab
@@ -30,12 +30,12 @@ Use instructions from the [Add an Azure IoT hub as a source](#add-an-azure-iot-h
 
 ## Microsoft sources tab
 
-1. In Real-Time hub, switch to the **Microsoft sources** tab. 
+1. In Real-time hub, switch to the **Microsoft sources** tab. 
 1. In the **Source** drop-down list, select **Azure IoT Hub**. 
 1. For **Subscription**, select an **Azure subscription** that has the resource group with your IoT hub. 
 1. For **Resource group**, select a **resource group** that has your IoT hub.
 1. For **Region**, select a location where your IoT hub is located. 
-1. Now, move the mouse over the name of the IoT hub that you want to connect to Real-Time hub in the list of IoT hubs, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button. 
+1. Now, move the mouse over the name of the IoT hub that you want to connect to Real-time hub in the list of IoT hubs, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button. 
 
     :::image type="content" source="./media/add-source-azure-iot-hub/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources tab with filters to show IoT hubs and the connect button for an IoT hub.":::
 
@@ -78,7 +78,7 @@ Use instructions from the [Add an Azure IoT hub as a source](#add-an-azure-iot-h
 1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure IoT hub. You can select from JSON, Avro, and CSV data formats, and then select Connect.
 1. In the **Stream details** section to the right, select the Fabric **workspace** where you want to save the eventstream that the Wizard is going to create. 
 1. For **eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected Azure IoT hub as a source.
-1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **Data streams** tab of Real-Time hub when the wizard finishes. 
+1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **Data streams** tab of Real-time hub when the wizard finishes. 
 1. Select **Next** at the bottom of the page. 
     
     :::image type="content" source="./media/add-source-azure-iot-hub/connection-page-2.png" alt-text="Screenshot that shows the Connect page two for Azure IoT Hub connector." lightbox="./media/add-source-azure-iot-hub/connection-page-2.png":::        
@@ -95,9 +95,9 @@ Use instructions from the [Add an Azure IoT hub as a source](#add-an-azure-iot-h
 
     :::image type="content" source="./media/add-source-azure-iot-hub/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open eventstream and close the wizard." lightbox="./media/add-source-azure-iot-hub/review-create-success.png":::
 
-2. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you as shown in the following image.
+2. In Real-time hub, switch to the **Data streams** tab of Real-time hub. Refresh the page. You should see the data stream created for you as shown in the following image.
 
-    :::image type="content" source="./media/add-source-azure-iot-hub/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream you just created." lightbox="./media/add-source-azure-iot-hub/verify-data-stream.png":::
+    :::image type="content" source="./media/add-source-azure-iot-hub/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab of Real-time hub with the stream you just created." lightbox="./media/add-source-azure-iot-hub/verify-data-stream.png":::
 
-    For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+    For detailed steps, see [View details of data streams in Fabric Real-time hub](view-data-stream-details.md).
 
