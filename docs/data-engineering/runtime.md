@@ -33,9 +33,9 @@ Below, you find a comprehensive comparison of key components, including Apache S
 | **Operating System**  | Ubuntu 18.04                        | Mariner 2.0                         | Mariner 2.0                         |
 | **Java**              | 8                                   | 11                                  | 11                                  |
 | **Scala**             | 2.12.15                             | 2.12.17                             | 2.12.17                             |
-| **Python**            | 3.10                                | 3.10                                | 3.10                                |
-| **Delta Lake**        | 2.2.0                               | 2.4.0                               | 3.0.0                               |
-| **R**                 | 4.2.2                               | 4.2.2                               | N/A                                 |
+| **Python**            | 3.10                                | 3.10                                | 3.11                                |
+| **Delta Lake**        | 2.2.0                               | 2.4.0                               | 3.1                               |
+| **R**                 | 4.2.2                               | 4.2.2                               | 4.3.3                                 |
 
 Visit [Runtime 1.1](./runtime-1-1.md), [Runtime 1.2](./runtime-1-2.md) or [Runtime 1.3](./runtime-1-3.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
 
@@ -122,6 +122,6 @@ Our runtime version numbering, while closely related to Semantic Versioning, fol
 
 ## Related content
 
-- [Runtime 1.3 (Spark 3.5, Java 11, Python 3.10, Delta Lake 3.1)](./runtime-1-3.md)
+- [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.1)](./runtime-1-3.md)
 - [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)
 - [Runtime 1.1 (Spark 3.3, Java 8, Python 3.10, Delta Lake 2.2)](./runtime-1-1.md)
