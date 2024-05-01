@@ -178,7 +178,7 @@
         "rules": {
             "sensitive-language-sl": {
                           "exclude": [
-                              real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md
+                              "real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md"
                           ]
     }
   }
