@@ -51,7 +51,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the Delta table
 
 1. On the new dataflow screen, select **Import from a Text/CSV file**.
 
-1. On the **Connect to data source** screen, select the **Upload file** radio button. Drag and drop or browse the *dimension_customer.csv* file that you downloaded in step 1. After the file is uploaded, select **Next**.
+1. On the **Connect to data source** screen, select the **Upload file** radio button. Drag and drop the *dimension_customer.csv* file that you downloaded in step 1. After the file is uploaded, select **Next**.
 
    :::image type="content" source="media\tutorial-build-lakehouse\connection-settings-upload.png" alt-text="Screenshot showing where to select Upload file and where to drag the previously downloaded file.":::
 
