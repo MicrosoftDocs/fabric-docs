@@ -38,7 +38,7 @@ Before you start, you must complete the following prerequisites:
 
 You can create a KQL database and an eventstream from the **Workspace** page or the **Create hub** page. Follow these steps to create the database, and then again to create an eventstream:
 
-1. Change your Fabric experience to **Real-time Analytics**, and select **KQL Database** or **Eventstream** to create these items in your workspace or hub. (For best results, create the KQL database first and the eventstream second.)
+1. Change your Fabric experience to **Real-Time Intelligence**, and select **KQL Database** or **Eventstream** to create these items in your workspace or hub. (For best results, create the KQL database first and the eventstream second.)
 
    - On the **Workspace** page, select **New**, and then select **KQL Database** or **Eventstream**.
 
