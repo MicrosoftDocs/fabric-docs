@@ -9,7 +9,7 @@ ms.date: 03/15/2024
 ms.search.form: Event Streams Overview
 ---
 
-# [EnhancedCapabilities](#tab/enhancedcapabilities)
+# [Enhanced Capabilities (Preview)](#tab/enhancedcapabilities)
 
 # Create an eventstream in Microsoft Fabric with enhanced capabilities (preview)
 This article describes how to create a Fabric eventstream with enhanced capabilities that are in preview.
