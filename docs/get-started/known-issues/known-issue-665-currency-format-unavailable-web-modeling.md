@@ -4,7 +4,7 @@ description: A known issue is posted where the currency format is unavailable in
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/01/2024
+ms.date: 04/30/2024
 ms.custom: known-issue-665
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-665
 
 When working in the Power BI service, you can edit your semantic models. Within the **Edit tables** screen, you can change the **Format** property for a columns and measure. If you change the column's or measure's **Format** value to **Currency**, the value doesn't show in the currency format. You also might not be able to interact with the column or measure anymore. The change was applied on the model even though you can't see it reflected in the **Edit tables** screen.
 
-**Status:** Open
+**Status:** Fixed: April 25, 2024
 
 **Product Experience:** Power BI
 
