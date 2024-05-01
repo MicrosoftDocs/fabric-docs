@@ -1,10 +1,12 @@
 ---
 title: Create a Warehouse
 description: Learn how to create a Warehouse in Microsoft Fabric.
-author: prlangad
-ms.author: prlangad
-ms.reviewer: wiassaf
-ms.date: 03/18/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: prlangad
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -26,7 +28,7 @@ This article describes how to get started with [!INCLUDE [fabric-dw](includes/fa
 
 ## How to create a blank warehouse
 
-In this section, we walk you through three distinct experiences available for creating a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from scratch in the [!INCLUDE [product-name](../includes/product-name.md)] portal: using [the Home hub](#create-a-warehouse-using-the-home-hub), [the Create hub](#create-a-warehouse-using-the-create-hub), or [the workspace list view](#create-a-warehouse-from-the-workspace-list-view).
+In this section, we walk you through three distinct workloads available for creating a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from scratch in the [!INCLUDE [product-name](../includes/product-name.md)] portal: using [the Home hub](#create-a-warehouse-using-the-home-hub), [the Create hub](#create-a-warehouse-using-the-create-hub), or [the workspace list view](#create-a-warehouse-from-the-workspace-list-view).
 
 #### Create a warehouse using the Home hub
 

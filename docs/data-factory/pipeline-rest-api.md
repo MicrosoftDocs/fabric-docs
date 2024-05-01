@@ -357,6 +357,10 @@ Response 202: (No body)
 > [!NOTE]
 > After cancelling a job you can check the status either by calling **Get item job instance** or looking at the **View run history** in the Fabric user interface.
 
+## Known limitations
+
+- Service Principal Auth (SPN) is currenty not supported
+
 ## Next steps
 
 - [REST API - Items](/rest/api/fabric/core/items)
