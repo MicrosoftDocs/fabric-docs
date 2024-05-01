@@ -174,9 +174,9 @@
             }
         },
         "template": [],
-        "dest": "fabric-docs"
-            "rules": {
-              "sensitive-language-sl": {
+        "dest": "fabric-docs",
+        "rules": {
+            "sensitive-language-sl": {
                           "exclude": [
                               real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md
                           ]
