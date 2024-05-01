@@ -1,6 +1,6 @@
 ---
-title: Real-Time Analytics tutorial part 5- Use advanced KQL queries
-description: Learn how to query your data in a KQL queryset in Real-Time Analytics.
+title: Real-Time Intelligence tutorial part 5- Use advanced KQL queries
+description: Learn how to query your data in a KQL queryset in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/28/2023
+ms.date: 04/21/2024
 ms.search.form: Get started
 ---
-# Real-Time Analytics tutorial part 5: Use advanced KQL queries
+# Real-Time Intelligence tutorial part 5: Use advanced KQL queries
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 4: Explore your data with KQL and SQL](tutorial-4-explore.md).
@@ -40,7 +40,7 @@ This section walks you through some of the query and visualization capabilities 
     | top 10 by Count
     ```
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/top-10-by-count.png" alt-text="Screenshot of query result in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/top-10-by-count.png" alt-text="Screenshot of query result in Real-Time Intelligence in Microsoft Fabric.":::
 
 1. This query adds a step to the previous query. Run the query to look up the corresponding zones of the top 10 pickup locations using the *Locations* table. The [lookup operator](/azure/data-explorer/kusto/query/lookupoperator?context=/fabric/context/context&pivots=fabric) extends the columns of a fact table with values looked-up in a dimension table.
 
@@ -52,7 +52,7 @@ This section walks you through some of the query and visualization capabilities 
     | render columnchart
     ```
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/top-10-locations.png" alt-text="Screenshot of top 10 location results in Real-Time Analytics in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/top-10-locations.png":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/top-10-locations.png" alt-text="Screenshot of top 10 location results in Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/top-10-locations.png":::
 
 1. KQL also provides machine learning functions to detect anomalies. Run the following query to check anomalies in the tips given by the customers in the Manhattan borough. This query uses the [series_decompose_anomalies function](/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?context=/fabric/context/context&pivots=fabric).
 
@@ -65,7 +65,7 @@ This section walks you through some of the query and visualization capabilities 
     | render anomalychart with (anomalycolumns=anomalies)
     ```
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/anomaly-chart.png" alt-text="Screenshot of anomaly chart result in Real-Time Analytics in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/anomaly-chart.png":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/anomaly-chart.png" alt-text="Screenshot of anomaly chart result in Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/anomaly-chart.png":::
 
     Hover over the red dots to see the values of the anomalies.
 
@@ -80,7 +80,7 @@ This section walks you through some of the query and visualization capabilities 
     | render timechart
     ```
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/forecast-results.png" alt-text="Screenshot of forecast results in Real-Time Analytics in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/forecast-results.png":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/forecast-results.png" alt-text="Screenshot of forecast results in Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/forecast-results.png":::
 
 ## Related content
 

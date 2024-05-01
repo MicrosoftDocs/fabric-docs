@@ -265,7 +265,7 @@ items:
     href: kql-database-consumption.md
 - name: Analyze and model data
   items:
-  - name: Copilot for Real-Time Analytics
+  - name: Copilot for Real-Time Intelligence
     href: ../get-started/copilot-real-time-analytics.md
   - name: KQL Queryset
     items:

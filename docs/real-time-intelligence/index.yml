@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: Real-Time Analytics documentation in Microsoft Fabric
-summary: Gain quick access to data insights with just seconds of provisioning, automatic data streaming, indexing, and partitioning for any data source or format, and on-demand query generation and visualizations. Real-Time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
+title: Real-Time Intelligence documentation in Microsoft Fabric
+summary: Gain quick access to data insights with just seconds of provisioning, automatic data streaming, indexing, and partitioning for any data source or format, and on-demand query generation and visualizations. Real-Time Intelligence lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
 
 metadata:
-  title: Real-Time Analytics in Microsoft Fabric documentation
-  description: Learn about Real-Time Analytics, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis.
+  title: Real-Time Intelligence in Microsoft Fabric documentation
+  description: Learn about Real-Time Intelligence, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: real-time-analytics
   ms.custom:
@@ -14,20 +14,20 @@ metadata:
   ms.collection: collection
   author: YaelSchuster
   ms.author: yaschust
-  ms.date: 01/27/2020
+  ms.date: 04/21/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
   # Card 
-  - title: About Real-Time Analytics
+  - title: About Real-Time Intelligence
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Real-Time Analytics?
+          - text: What is Real-Time Intelligence?
             url: overview.md
       - linkListType: get-started
         links: 
-          - text: Real-Time Analytics Tutorial
+          - text: Real-Time Intelligence Tutorial
             url: tutorial-introduction.md
 
 

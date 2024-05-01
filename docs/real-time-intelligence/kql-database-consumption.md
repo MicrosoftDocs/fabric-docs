@@ -1,6 +1,6 @@
 ---
 title: KQL Database consumption
-description: Learn how to KQL databases consume capacity units in Real-Time Analytics.
+description: Learn how to KQL databases consume capacity units in Real-Time Intelligence.
 ms.reviewer: bwatts
 ms.author: yaschust
 author: YaelSchuster
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/02/2023
+ms.date: 04/21/2024
 ms.search.form: KQL Database, Overview
 ---
 # KQL Database consumption
@@ -66,7 +66,7 @@ The [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md) allows 
 
 The following image shows a sample storage page from monitoring a KQL database in the Fabric Capacity Metric app:
 
-:::image type="content" source="media/database-consumption/fabric-capacity-metrics.png" alt-text="Screenshot of Fabric capacity metrics app with data from Real-Time Analytics.":::
+:::image type="content" source="media/database-consumption/fabric-capacity-metrics.png" alt-text="Screenshot of Fabric capacity metrics app with data from Real-Time Intelligence.":::
 
 ## Related content
 
