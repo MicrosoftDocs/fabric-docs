@@ -26,7 +26,7 @@ This article describes how DLP in Fabric works, lists considerations and limitat
 
 ## Considerations and limitations
 
-* •	DLP policies for Fabric are defined in the [Microsoft Purview compliance portal](https://go.microsoft.com/fwlink/p/?linkid=2077149).
+* DLP policies for Fabric are defined in the [Microsoft Purview compliance portal](https://go.microsoft.com/fwlink/p/?linkid=2077149).
 
 * DLP policies apply to workspaces. Only workspaces hosted in Fabric or  [Premium capacities](./service-premium-what-is.md) are supported.
 
