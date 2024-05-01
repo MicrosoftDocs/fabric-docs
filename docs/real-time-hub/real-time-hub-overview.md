@@ -58,8 +58,5 @@ In the world of data, Real-Time hub is never empty. Here's why:
  
     As data flows into Real-Time hub, you can create a stream out of it. Once the stream is created, the data is stored in a canonical format. This format is universally accessible to all processing engines. No need for redundant copies of data. Real-Time hub ensures efficiency and consistency.
 
-## Related content
-
-- [Create streams for supported sources](supported-sources.md)
-- [Azure blob storage events](get-azure-blob-storage-events.md)
-- [Fabric Workspace item events ](create-streams-fabric-workspace-item-events.md)
+## Next step
+See [Get started with Real-Time hub](get-started-real-time-hub.md)
