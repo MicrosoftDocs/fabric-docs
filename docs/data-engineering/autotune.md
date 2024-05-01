@@ -56,40 +56,7 @@ Autotune includes a built-in mechanism for monitoring performance and detecting 
 > [!NOTE]
 > The Autotune is compatible with [Fabric Runtime 1.1](./runtime-1-1.md) and [Runtime 1.2](./runtime-1-2.md). Autotune doesn't function when [the high concurrency mode](./high-concurrency-overview.md) or when the [private endpoint](./../security/security-managed-private-endpoints-overview.md) is enabled. However, autotune seamlessly integrates with autoscaling, regardless of its configuration.
 
-You can enable autotune within a session by including the respective Spark setting in your Spark notebook or Spark Job Definition code. 
-
-# [Spark SQL](#tab/sparksql)
-
-```sql
-%%sql 
-SET spark.ms.autotune.enabled=TRUE 
-```
-
-# [PySpark](#tab/pyspark)
-
-```python
-%%pyspark
-spark.conf.set('spark.ms.autotune.enabled', 'true')
-```
-
-# [Scala Spark](#tab/scalaspark)
-
-```scala
-%%spark  
-spark.conf.set("spark.ms.autotune.enabled", "true") 
-```
-
-# [SparkR](#tab/sparkr)
-
-```r
-%%sparkr
-library(SparkR)
-sparkR.conf("spark.ms.autotune.enabled", "true")
-```
-
----
-
-You can control Autotune through Spark Settings. To disable Autotune, execute the following commands:
+You can control Autotune through Spark Settings for your respective Spark notebook or Spark Job Definition code. To disable Autotune, execute the following commands as the first cell (notebook) or line of the code (SJD).
 
 # [Spark SQL](#tab/sparksql)
 
