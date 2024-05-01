@@ -46,17 +46,17 @@ items:
       href: event-streams/overview.md
     - name: New capabilities (preview)
       href: event-streams/new-capabilities.md
-    - name: Create eventstreams (preview)
+    - name: Create eventstreams 
       items: 
-      - name: Create an eventstream (preview)
-        href: event-streams/create-manage-an-eventstream-enhanced.md
-      - name: Create default and derived streams
+      - name: Create an eventstream
+        href: event-streams/create-manage-an-eventstream.md
+      - name: Create default and derived streams (preview)
         href: event-streams/create-default-derived-streams.md
-      - name: Create eventstreams for discrete events
+      - name: Create eventstreams for discrete events (preview)
         href: event-streams/create-eventstreams-discrete-events.md
-      - name: Edit and publish eventstreams
+      - name: Edit and publish eventstreams (preview)
         href: event-streams/edit-publish.md
-      - name: Route events based on content
+      - name: Route events based on content (preview)
         href: event-streams/route-events-based-on-content.md
     - name: Add sources to eventstreams (preview)
       items:
@@ -102,8 +102,6 @@ items:
         href: event-streams/add-destination-reflex-enhanced.md
       - name: Custom endpoint
         href: event-streams/add-destination-custom-app-enhanced.md
-    - name: Create eventstreams
-      href: event-streams/create-manage-an-eventstream.md
     - name: Add sources to eventstreams
       items:
       - name: Add and manage an event source
