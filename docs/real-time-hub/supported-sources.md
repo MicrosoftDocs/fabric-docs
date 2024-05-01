@@ -1,6 +1,6 @@
 ---
-title: Get events from Microsoft sources in to Real-Time hub
-description: This article describes how to get events from Microsoft sources such as Azure Event Hubs and Azure IoT Hub into Fabric Real-Time hub.
+title: Supported sources in to Real-Time hub
+description: This article describes supported sources such as Azure Event Hubs and Azure IoT Hub in Fabric Real-Time hub.
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
