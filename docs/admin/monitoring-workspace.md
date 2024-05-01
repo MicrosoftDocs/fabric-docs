@@ -70,7 +70,7 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 
 ## Considerations and limitations
 
-* The admin monitoring workspace can only be created by a user that is an admin for the tenant. This user needs to be assigned as an admin to the tenant directly. Users that belong to a group that's assigned as an admin to the tenant, can't create the admin monitoring workspace.
+* The admin monitoring workspace can only be created by a user that is an admin for the tenant. This user needs to be assigned as an admin to the tenant directly. If the admin monitoring workspace is created by a user that belongs to a group that's assigned as an admin to the tenant, refreshes of the semantic models in the workspace will fail.
 
 * The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Users, including admins, aren't able to edit or view properties of items such as semantic models and reports in the workspace.
 
