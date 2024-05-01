@@ -12,8 +12,6 @@ ms.date: 11/15/2023
 
 # How to secure data for common data architectures
 
-## Introduction
-
 This article provides an overview of how to configure security for OneLake data for both _data mesh_ and _hub and spoke_ architectures.
 
 ## Security features
