@@ -14,13 +14,13 @@ ms.date: 12/14/2023
 
 # Microsoft Fabric terminology
 
-Learn the definitions of terms used in Microsoft Fabric, including terms specific to Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-Time Analytics, Data Factory, and Power BI.
+Learn the definitions of terms used in Microsoft Fabric, including terms specific to Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Real-Time Intelligence, Data Factory, and Power BI.
 
 ## General terms
 
 - **Capacity:** Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. Fabric offers capacity through the Fabric SKU and Trials. For more information, see [What is capacity?](../enterprise/licenses.md#capacity)
 
-- **Experience:** A collection of capabilities targeted to a specific functionality. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-Time Analytics, Data Factory, and Power BI.
+- **Experience:** A collection of capabilities targeted to a specific functionality. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Real-Time Intelligence, Data Factory, and Power BI.
 
 - **Item:** An item a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
 
@@ -66,7 +66,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Synapse Data Warehouse:** The Synapse Data Warehouse functions as a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse Data Warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
 
-## Synapse Real-Time Analytics
+## Real-Time Intelligence
 
 - **KQL database:** The KQL database holds data in a format that you can execute KQL queries against. For more information, see [Query a KQL database](../real-time-intelligence/create-database.md).
 
