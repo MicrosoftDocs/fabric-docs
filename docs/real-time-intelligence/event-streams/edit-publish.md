@@ -9,13 +9,15 @@ ms.date: 04/22/2024
 ms.search.form: Source and Destination
 ---
 
-# Edit and publish a Microsoft Fabric eventstream
+# Edit and publish a Microsoft Fabric eventstream (preview)
 
 This article shows you how to edit and publish a Microsoft Fabric eventstream.
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 ## Edit mode and Live view
 
-Fabric event streams offers two distinct modes, **Edit mode** and **Live view**, to provide flexibility and control over your data streams. If you create a new eventstream with enhanced capabilities enabled, you can modify your eventstreams in **Edit mode** and design stream processing operations for your data streams by using a no-code editor. Once you're done, you can publish your eventstreams and visualize how your eventstreams start streaming and processing data in **Live view**.
+Fabric event streams offer two distinct modes, **Edit mode** and **Live view**, to provide flexibility and control over your data streams. If you create a new eventstream with enhanced capabilities enabled, you can modify your eventstreams in **Edit mode** and design stream processing operations for your data streams by using a no-code editor. Once you're done, you can publish your eventstreams and visualize how your eventstreams start streaming and processing data in **Live view**.
 
 Here's an overview of everything you find in the two different modes:
 

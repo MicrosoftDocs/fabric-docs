@@ -33,7 +33,7 @@ Fabric event streams with enhanced capabilities support the following destinatio
 
 ## Related content
 
-- [Create and manage an eventstream](./create-manage-an-eventstream-enhanced.md)
+- [Create and manage an eventstream](./create-manage-an-eventstream.md)
 - [Add and manage a source in an eventstream](./add-manage-eventstream-sources-enhanced.md)
 
 
