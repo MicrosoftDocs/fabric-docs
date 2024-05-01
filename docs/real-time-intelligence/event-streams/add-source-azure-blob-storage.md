@@ -49,7 +49,7 @@ Azure Blob Storage events are discrete events with clear start and end points. F
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
-- Access to an Azure Blob Storage **StorageV2 (general purpose v2)**, **BlockBlobStorage**, or **BlobStorage** account. **Storage (general purpose v1)** doesn't support integration with Fabric event streams.
+- Access to an Azure Blob Storage **StorageV2 (general purpose v2)**, **BlockBlobStorage**, or **BlobStorage** account. The **Storage (general purpose v1)** storage type doesn't support integration with Fabric event streams.
 
 ## Add Azure Blob Storage events as source
 
@@ -67,17 +67,17 @@ Azure Blob Storage events are discrete events with clear start and end points. F
 
 Once the connection is created, you can see the Azure Blob Storage event source added to your eventstream in **Edit mode**. Note that the eventstream node in the editor doesn't have a default stream created. This is because the Blob Storage events are still in the form of discrete events and aren't yet converted to a stream or connected to the eventstream.
 
-Select **Publish** to publish the eventstream and capture the workspace events.
+1. Select **Publish** to publish the eventstream and capture the workspace events.
 
-![A screenshot of the Azure Blob Storage events source added to the eventstream.](media/add-source-azure-blob-storage/edit.png)
+   ![A screenshot of the Azure Blob Storage events source added to the eventstream.](media/add-source-azure-blob-storage/edit.png)
 
-After you publish the changes, go to the **Fabric events** tab in **Real-Time hub** and select **Azure Blob Storage Events**. 
+1. After you publish the changes, go to the **Fabric events** tab in **Real-Time hub** and select **Azure Blob Storage Events**. 
 
-![A screenshot of selecting Azure Blob Storage Events under Fabric events in Real-Time hub.](media/add-source-azure-blob-storage/fabric-events.png)
+   ![A screenshot of selecting Azure Blob Storage Events under Fabric events in Real-Time hub.](media/add-source-azure-blob-storage/fabric-events.png)
 
-Here you can see the Azure Blob Storage events being added to the Real-Time hub. You can set an alert to take action based on these events.
+   Here you can see the Azure Blob Storage events being added to the Real-Time hub. You can set an alert to take action based on these events.
 
-![A screenshot of the Azure Blob Storage Events page in Real-Time hub.](media/add-source-azure-blob-storage/blob-events.png)
+   ![A screenshot of the Azure Blob Storage Events page in Real-Time hub.](media/add-source-azure-blob-storage/blob-events.png)
 
 ## Transform Azure Blob Storage events
 
@@ -85,7 +85,9 @@ After you link Azure Blob Storage events to Fabric events in Real-Time hub, you 
 
 1. After you add an Azure Blob Storage event source in **Edit mode**, select **Stream events** in the source to convert the Blob Storage events into a data stream.
 
-1. Select **Yes** in the popup that asks if you want to stream the Blob Storage events into the eventstream.
+   ![A screenshot of the unstreamed event source in Edit mode with Stream events highlighted.](media/add-source-azure-blob-storage/unstreamed.png)
+
+1. Respond **Yes** to the popup that asks if you want to stream the Blob Storage events into the eventstream.
 
    ![A screenshot of the confirmation popup for streaming events.](media/add-source-azure-blob-storage/popup.png)
 
