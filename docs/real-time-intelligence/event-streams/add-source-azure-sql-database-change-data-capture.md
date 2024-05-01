@@ -40,7 +40,11 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 
 [!INCLUDE [azure-sql-database-cdc-connector](./includes/azure-sql-database-cdc-source-connector.md)]
 
-You can see the Azure SQL DB (CDC) source added to your eventstream in the editor.
+You can see the Azure SQL DB (CDC) source added to your eventstream in **Edit mode**.
+
+To implement this newly added Azure SQL Database CDC source, select **Publish**. After you complete these steps, your Azure SQL Database CDC source is available for visualization in the **Live view**.
+
+![A screenshot of streaming Azure SQL Database CDC source in Live view.](media/add-source-azure-sql-database-change-data-capture/live-view.png)
 
 ## Related content
 

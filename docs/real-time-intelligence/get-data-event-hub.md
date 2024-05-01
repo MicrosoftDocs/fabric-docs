@@ -1,6 +1,6 @@
 ---
 title:  Get data from Azure Event Hubs
-description: Learn how to create a connection to Event Hubs and get data into your KQL database in Real-Time Analytics.
+description: Learn how to create a connection to Event Hubs and get data into your KQL database in Real-Time Intelligence.
 ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster
@@ -8,16 +8,16 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/16/2023
+ms.date: 04/21/2024
 ms.search.form: Get data in a KQL Database, Data connection
 ---
 # Get data from Azure Event Hubs
 
 In this article, you learn how to get data from Event Hubs into your KQL database in Microsoft Fabric. [Azure Event Hubs](/azure/event-hubs/event-hubs-about?context=/fabric/context/context) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
 
-To stream data from Event Hubs into Real-Time Analytics, you go through two main steps. The first step is performed in the Azure portal, where you define the shared access policy on your event hub instance and capture the details needed to later connect via this policy.
+To stream data from Event Hubs into Real-Time Intelligence, you go through two main steps. The first step is performed in the Azure portal, where you define the shared access policy on your event hub instance and capture the details needed to later connect via this policy.
 
-The second step takes place in Real-Time Analytics in Fabric, where you connect a KQL database to the event hub and configure the schema for incoming data. This step creates two connections. The first connection, called a "cloud connection," connects Microsoft Fabric to the event hub instance. The second connection connects the "cloud connection" to your KQL database. Once you finish configuring the event data and schema, the streamed data is available to query using a [KQL Queryset](kusto-query-set.md).
+The second step takes place in Real-Time Intelligence in Fabric, where you connect a KQL database to the event hub and configure the schema for incoming data. This step creates two connections. The first connection, called a "cloud connection," connects Microsoft Fabric to the event hub instance. The second connection connects the "cloud connection" to your KQL database. Once you finish configuring the event data and schema, the streamed data is available to query using a [KQL Queryset](kusto-query-set.md).
 
 ## Prerequisites
 

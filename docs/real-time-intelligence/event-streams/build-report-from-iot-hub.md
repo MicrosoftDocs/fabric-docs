@@ -32,7 +32,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
     :::image type="content" source="./media/add-iot-hub-source/my-workspace-show-all.png" alt-text="Screenshot that shows where to select my workspace and select show all to find eventstream.":::
 
-2. Scroll down to the **Real-Time Analytics** section, select **KQL Database** or **Eventstream**.
+2. Scroll down to the **Real-Time Intelligence** section, select **KQL Database** or **Eventstream**.
 
     :::image type="content" source="./media/add-iot-hub-source/add-kusto-and-eventstream.png" alt-text="Screenshot that shows where to find the eventstream and KQL database.":::
 

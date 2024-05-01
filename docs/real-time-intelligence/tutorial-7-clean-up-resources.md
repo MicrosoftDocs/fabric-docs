@@ -11,6 +11,7 @@ ms.date: 05/21/2024
 ms.search.form: Get started
 ---
 # Real-Time Intelligence tutorial part 7: Clean up resources
+# Real-Time Intelligence tutorial part 7: Clean up resources
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 6: Build a Power BI report](tutorial-6-build-report.md).
@@ -26,5 +27,6 @@ Once you're finished with the tutorial, you might want to delete all resources y
 
 ## Related content
 
+* [What is Real-Time Intelligence in Fabric?](overview.md)
 * [What is Real-Time Intelligence in Fabric?](overview.md)
 * [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)

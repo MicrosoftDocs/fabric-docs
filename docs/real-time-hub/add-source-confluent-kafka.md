@@ -1,14 +1,14 @@
 ---
-title: Add Confluent Cloud Kafka as source in Real-Time hub
-description: This article describes how to add Confluent Cloud Kafka as an event source in Fabric Real-Time hub. 
+title: Add Confluent Cloud Kafka as source in Real-time hub
+description: This article describes how to add Confluent Cloud Kafka as an event source in Fabric Real-time hub. 
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# Add Confluent Cloud Kafka as source in Real-Time hub
-This article describes how to add Confluent Kafka as an event source in Fabric Real-Time hub. 
+# Add Confluent Cloud Kafka as source in Real-time hub
+This article describes how to add Confluent Cloud Kafka as an event source in Fabric Real-time hub. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -52,7 +52,7 @@ This article describes how to add Confluent Kafka as an event source in Fabric R
 1. In the **Stream details** section of the right pane, do these steps:
     1. Select the **workspace** where you want to save the connection.
     1. Enter a **name for the eventstream** to be created for you.
-    1. Name of the **stream** for Real-Time hub is automatically generated for you. 
+    1. Name of the **stream** for Real-time hub is automatically generated for you. 
 
         :::image type="content" source="./media/add-source-confluent-kafka/stream-details.png" alt-text="Screenshot that shows the right pane with Stream details section of the Confluent connection settings page. ":::                
 1. Select **Next**. 
@@ -61,9 +61,9 @@ This article describes how to add Confluent Kafka as an event source in Fabric R
 ## View data stream details
 
 1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Confluent Cloud Kafka source. To close the wizard, select **Close** at the bottom of the page. 
-1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you.
+1. In Real-time hub, switch to the **Data streams** tab of Real-time hub. Refresh the page. You should see the data stream created for you.
 
-    For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+    For detailed steps, see [View details of data streams in Fabric Real-time hub](view-data-stream-details.md).
  
 
 ## Related content

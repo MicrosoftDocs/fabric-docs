@@ -69,7 +69,7 @@ items:
       href: copilot-data-science-privacy-security.md
     - name: Responsible use in Power BI
       href: copilot-power-bi-privacy-security.md
-    - name: Responsible use in Real-Time Analytics
+    - name: Responsible use in Real-Time Intelligence
       href: copilot-real-time-analytics-privacy-security.md
   - name: Copilot for Data Factory
     href: copilot-fabric-data-factory.md
@@ -81,7 +81,7 @@ items:
       href: copilot-notebooks-chat-magics.md
     - name: Use the Copilot chat panel
       href: copilot-notebooks-chat-pane.md
-  - name: Copilot for Real-Time Analytics
+  - name: Copilot for Real-Time Intelligence
     href: copilot-real-time-analytics.md
   - name: Copilot in Fabric Consumption
     href: copilot-fabric-consumption.md
@@ -105,6 +105,8 @@ items:
   href: apply-sensitivity-labels.md
 - name: Delta Lake interoperability
   href: delta-lake-interoperability.md
+- name: Learn about Microsoft Fabric feedback
+  href: feedback.md  
 - name: Fabric adoption roadmap
   items: 
   - name: Introduction

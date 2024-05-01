@@ -1,13 +1,14 @@
 ---
 title: Create an event house (preview)
-description: Learn about how to create an event house for data storage in Real-Time Analytics.
+description: Learn about how to create an event house for data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/07/2024
+ms.date: 04/21/2024
 ms.search.form: Eventhouse
 ---
+
 # Create and manage an event house (preview)
 
 An event house allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Eventhouse overview (preview)](eventhouse.md).
@@ -28,16 +29,16 @@ In this article, you learn how to create an event house, add new databases to an
 1. Browse to the [admin portal](../admin/admin-center.md).
 1. In the **Tenant settings** tab, search for *Eventhouse*. For more information, see [About tenant settings](../admin/about-tenant-settings.md).
 1. Toggle the button for **Create Eventhouse (preview)** to **Enabled**. For more information, see [Tenant settings - Microsoft Fabric](../admin/tenant-settings-index.md).
-1. Select **Apply**. 
+1. Select **Apply**.
 
     :::image type="content" source="media/eventhouse/enable-admin-settings.png" alt-text="Screenshot of section of admin settings relating to enabling Eventhouse.":::
 
 ## Create an event house
 
-1. Browse to your workspace homepage in Real-Time Analytics.
+1. Browse to your workspace homepage in Real-Time Intelligence.
 1. Select **New** > **Eventhouse**.
 
-    :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating new Eventhouse item in Real-Time Analytics.":::
+    :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating new Eventhouse item in Real-Time Intelligence.":::
 
 1. Enter a name for the event house. Both an event house and its default child KQL database are created with the same name. The database name, like all items in Fabric, can be renamed at any time.
 
@@ -56,7 +57,7 @@ In this article, you learn how to create an event house, add new databases to an
 
     A window opens with details about all the databases in this event house.
 
-    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in Eventhouse in Real-Time Analytics.":::
+    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in Eventhouse in Real-Time Intelligence.":::
 
 1. Toggle between list and tile view using the buttons on the top right of the page.
 
@@ -79,18 +80,15 @@ In this section, you add a new KQL database to an existing event house. This dat
 
 [Minimum consumption](eventhouse.md#minimum-consumption) sets a minimum available capacity unit (CU) size for your event house.
 
-
-
 1. Select the Eventhouse from your list of items in the workspace.
 1. In the top right-hand side of the event house details page, select **Eventhouse settings** > **Minimum consumption**
 1. From the dropdown, select the size corresponding to the [minimum available CU](eventhouse.md#minimum-consumption) size you want to apply to this event house.
 
     The following table maps the size to the minimum [capacity units](../admin/service-admin-portal-capacity-settings.md) allotted to the event house:
-    
+
     [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
 
-    :::image type="content" source="media/eventhouse/guaranteed-availability.png" alt-text="Screenshot showing how to select the correct minimum consumption in Real-Time Analytics Eventhouse."  lightbox="media/eventhouse/guaranteed-availability.png":::
-
+    :::image type="content" source="media/eventhouse/guaranteed-availability.png" alt-text="Screenshot showing how to select the correct minimum consumption in Real-Time Intelligence Eventhouse."  lightbox="media/eventhouse/guaranteed-availability.png":::
 
 ## Delete an event house
 

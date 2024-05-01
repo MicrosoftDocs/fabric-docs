@@ -1,10 +1,10 @@
 items:
-- name: Real-Time Analytics documentation
+- name: Real-Time Intelligence documentation
   href: index.yml
 - name: Overview
   expanded: true
   items:
-  - name: What is Real-Time Analytics?
+  - name: What is Real-Time Intelligence?
     href: overview.md
   - name: Compare with Azure Data Explorer
     href: real-time-intelligence-compare.md
@@ -24,6 +24,18 @@ items:
       href: tutorial-5-query-data.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
+- name: User flows
+  items:
+  - name: "Discover and respond to events"
+    href: user-flow-1.md
+  - name: "Get and transform events from streaming sources"
+    href: user-flow-2.md
+  - name: "Discover streaming sources from Microsoft"
+    href: user-flow-3.md
+  - name: "Explore your data visually with Real-Time Dashboards"
+    href: user-flow-4.md
+  - name: "Trigger Fabric dataflows from the Real-time hub"
+    href: user-flow-5.md 
 - name: Get data
   items:
   - name: Get, process, and route events 
@@ -251,7 +263,7 @@ items:
     href: kql-database-consumption.md
 - name: Analyze and model data
   items:
-  - name: Copilot for Real-Time Analytics
+  - name: Copilot for Real-Time Intelligence
     href: ../get-started/copilot-real-time-analytics.md
   - name: KQL Queryset
     items:
@@ -310,11 +322,11 @@ items:
       href: ../data-activator/data-activator-get-data-power-bi.md
     - name: Get data from Eventstreams
       href: ../data-activator/data-activator-get-data-eventstreams.md        
-  - name: Create objects and triggers
+  - name: Create objects and alerts
     items:
     - name: Assign data to objects in Data Mode
       href: ../data-activator/data-activator-assign-data-objects.md    
-    - name: Create triggers in design mode
+    - name: Create alerts in design mode
       href: ../data-activator/data-activator-create-triggers-design-mode.md        
     - name: Detection conditions
       href: ../data-activator/data-activator-detection-conditions.md            
