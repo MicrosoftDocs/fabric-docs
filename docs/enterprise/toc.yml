@@ -11,6 +11,8 @@ items:
     href: buy-subscription.md
   - name: SKU considerations
     href: sku-considerations.md
+  - name: End a trial, close an account, cancel a subscription
+    href: fabric-close-end-cancel.md
 - name: Capacity operations
   items:
   - name: Understand your Azure bill
