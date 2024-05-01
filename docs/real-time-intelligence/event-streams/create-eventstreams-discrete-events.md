@@ -37,7 +37,7 @@ Fabric event streams enables you to build event-driven solutions for capturing s
 
 ## Connect discrete events to eventstreams
 
-In Fabric event streams, you can add a discrete event source into an eventstream and route those events to Real-Time hub. Then you can either transform these events in Fabric event streams or subscribe to them in Real-Time hub. In Real-Time hub, further actions include using Data Activator or creating alerts that execute Fabric job items, like Pipeline and Notebook.
+In Fabric event streams, you can add a discrete event source into an eventstream and route those events to Real-time hub. Then you can either transform these events in Fabric event streams or subscribe to them in Real-time hub. In Real-time hub, further actions include using Data Activator or creating alerts that execute Fabric job items, like Pipeline and Notebook.
 
 ### Prerequisite
 
@@ -65,9 +65,9 @@ To connect discrete events to an eventstream, take the following steps:
    - For Azure Blob Storage events, see [Add Azure Blob Storage events](add-source-azure-blob-storage.md).
    - For Fabric Workspace Item events, see [Add Fabric workspace item events](add-source-fabric-workspace.md).
 
-Once completed, the eventstream starts capturing discrete events as they occur. In **Real-Time hub**, you can find the events under **Fabric events**. In the right pane, you can set an alert to take further action.
+Once completed, the eventstream starts capturing discrete events as they occur. In **Real-time hub**, you can find the events under **Fabric events**. In the right pane, you can set an alert to take further action.
 
-![A screenshot of the Real-Time hub Fabric events tab and the Set alert pane.](media/create-eventstreams-discrete-events/set-alert.png)
+![A screenshot of the Real-time hub Fabric events tab and the Set alert pane.](media/create-eventstreams-discrete-events/set-alert.png)
 
 ## Related content
 
