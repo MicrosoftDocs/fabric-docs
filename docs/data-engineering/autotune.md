@@ -51,7 +51,7 @@ Autotune is available across all production regions but is disabled by default. 
 
 Autotune includes a built-in mechanism for monitoring performance and detecting performance regressions. For instance, if a query processes an unusually large amount of data, Autotune will automatically deactivate. It typically requires 20 to 25 iterations to learn and identify the optimal configuration.
 
-:::image type="content" source="media\autotune\enable-autotune.png" alt-text="Screenshot of enabling autotune."::: 
+:::image type="content" source="media\autotune\enable-autotune.png" alt-text="Screenshot of enabling autotune." lightbox="media\autotune\enable-autotune.png"::: 
 
 > [!NOTE]
 > The Autotune is compatible with [Fabric Runtime 1.1](./runtime-1-1.md) and [Runtime 1.2](./runtime-1-2.md). Autotune doesn't function when [the high concurrency mode](./high-concurrency-overview.md) or when the [private endpoint](./../security/security-managed-private-endpoints-overview.md) is enabled. However, autotune seamlessly integrates with autoscaling, regardless of its configuration.
