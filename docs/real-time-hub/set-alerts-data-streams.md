@@ -1,23 +1,23 @@
 ---
-title: Set alerts on streams in Real-time hub
-description: This article describes how to set alerts on streams in Real-time hub.
+title: Set alerts on streams in Real-Time hub
+description: This article describes how to set alerts on streams in Real-Time hub.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Set alerts on streams in Real-time hub
-This article describes how to set alerts on streams in Real-time hub.
+# Set alerts on streams in Real-Time hub
+This article describes how to set alerts on streams in Real-Time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
 ## Launch Set alert page for a data stream
 
-1. Navigate to the Real-time hub.
+1. Navigate to the Real-Time hub.
 1. Select a data stream whose parent is an eventstream. 
 
-    :::image type="content" source="./media/set-alerts-data-streams/select-data-stream.png" alt-text="Screenshot that shows Real-time hub with a data stream selected.":::
+    :::image type="content" source="./media/set-alerts-data-streams/select-data-stream.png" alt-text="Screenshot that shows Real-Time hub with a data stream selected.":::
 1. On the stream detail page, select **Set alert**. 
 
     :::image type="content" source="./media/set-alerts-data-streams/set-alert-button.png" alt-text="Screenshot that shows the selection of the Set alert button on the data stream detail page." lightbox="./media/set-alerts-data-streams/set-alert-button.png":::
