@@ -1,6 +1,6 @@
 ---
-title: Enhanced capabilities in Microsoft Fabric eventstreams
-description: Learn about the new public preview capabilities available in Fabric eventstreams.
+title: Enhanced capabilities in Microsoft Fabric event streams
+description: Learn about the new public preview capabilities available in Fabric event streams.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -9,9 +9,9 @@ ms.date: 04/22/2024
 ms.search.form: Source and Destination
 ---
 
-# Enhanced capabilities in Microsoft Fabric eventstreams
+# Enhanced capabilities in Microsoft Fabric event streams
 
-We're excited to announce a range of new enhancements in Microsoft Fabric eventstreams that are tailored to improve your development experience in building streaming applications. With [Real-time hub](../../real-time-hub/real-time-hub-overview.md) seamlessly integrated into Fabric eventstreams, you gain greater flexibility and control over your data in motion. Here's a brief overview of the latest features:
+We're excited to announce a range of new enhancements in Microsoft Fabric event streams that are tailored to improve your development experience in building streaming applications. With [Real-time hub](../../real-time-hub/real-time-hub-overview.md) seamlessly integrated into Fabric event streams, you gain greater flexibility and control over your data in motion. Here's a brief overview of the latest features:
 
 - [Edit Mode and Live View](edit-publish.md#edit-mode-and-live-view). Explore two distinct modes for visualizing and designing stream processing.
 
@@ -21,13 +21,13 @@ We're excited to announce a range of new enhancements in Microsoft Fabric events
 
 ## Preview issues and limitations
 
-Fabric eventstreams is currently in preview, and may encounter some known issues and limitations, including:
+Fabric event streams is currently in preview, and may encounter some known issues and limitations, including:
 
 - **Loss of eventstream changes**. Refreshing the page or switching Fabric items while in **Edit mode** might result in the loss of all changes made to your eventstream.
 
 - **Eventstreams might keep loading**. When you switch back to an eventstream from tabs in the Fabric left navigation pane, eventstreams might keep loading. Refreshing the current page solves this problem.
 
-- **Missing validation for Azure Event Hubs source**. If no data is being sent from your Event Hubs source to Fabric eventstreams, make sure the correct details, such as shared access key permission and consumer group, are entered for your Event Hubs configuration.
+- **Missing validation for Azure Event Hubs source**. If no data is being sent from your Event Hubs source to Fabric event streams, make sure the correct details, such as shared access key permission and consumer group, are entered for your Event Hubs configuration.
 
 - **No metric view for KQL Database destination**. Data Insight isn't available for KQL Database destinations at this time.
 

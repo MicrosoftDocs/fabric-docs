@@ -49,7 +49,7 @@ If you have an Azure event hub created with streaming data, follow these steps t
 1. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
 
    > [!NOTE]
-   > The eventstreams feature supports the ingestion of events from Azure Event Hubs in JSON, Avro, and CSV (with header) data formats.
+   > The event streams feature supports the ingestion of events from Azure Event Hubs in JSON, Avro, and CSV (with header) data formats.
 
 1. Select a **Consumer group** that can read the event data from your Azure event hub and then select **Add**.
 

@@ -13,7 +13,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to create Microsoft Fabric eventstreams for discrete events.
 
-When you develop applications for real-time analytics, you commonly encounter two types of events: discrete events and continuous events or streams. Microsoft Fabric Eventstreams can ingest and process both discrete and continuous events.
+When you develop applications for real-time analytics, you commonly encounter two types of events: discrete events and continuous events or streams. Microsoft Fabric event streams can ingest and process both discrete and continuous events.
 
 ## Understand discrete and continuous events
 
@@ -28,7 +28,7 @@ To build an efficient and scalable eventstream in Fabric, it's important to unde
 
 ## Supported discrete events
 
-Fabric Eventstreams enables you to build event-driven solutions for capturing system state changes or events in your Fabric data source. Fabric Eventstreams supports the following types of discrete events:
+Fabric event streams enables you to build event-driven solutions for capturing system state changes or events in your Fabric data source. Fabric event streams supports the following types of discrete events:
 
 |Discrete events|Description|
 |----|---------|
@@ -37,7 +37,7 @@ Fabric Eventstreams enables you to build event-driven solutions for capturing sy
 
 ## Connect discrete events to eventstreams
 
-In Fabric Eventstreams, you can add a discrete event source into an eventstream and route those events to Real-time hub. Then you can either transform these events in Fabric Eventstreams or subscribe to them in Real-time hub. In Real-time hub, further actions include using Data Activator or creating alerts that execute Fabric job items, like Pipeline and Notebook.
+In Fabric event streams, you can add a discrete event source into an eventstream and route those events to Real-time hub. Then you can either transform these events in Fabric event streams or subscribe to them in Real-time hub. In Real-time hub, further actions include using Data Activator or creating alerts that execute Fabric job items, like Pipeline and Notebook.
 
 ### Prerequisite
 

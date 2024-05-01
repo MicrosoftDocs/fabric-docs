@@ -103,20 +103,20 @@ available to all Fabric workloads.
 
 ### Connect to streaming data
 
-Eventstreams are the Fabric platform way to capture, transform, and
+Event streams are the Fabric platform way to capture, transform, and
 route high volumes of real-time events to various destinations with a
-no-code experience. Eventstreams support multiple data sources and data
+no-code experience. Event streams support multiple data sources and data
 destinations, including a wide range of connectors to external sources,
 for example: Apache Kafka clusters, database change data capture feeds,
 AWS streaming sources (Kinesis), and Google (GCP Pub/Sub).
 
 ### Process data streams
 
-By using the event processing capabilities in eventstreams, you can do
+By using the event processing capabilities in Event streams, you can do
 filtering, data cleansing, transformation, windowed aggregations, and
 dupe detection, to land the data in the shape you want. You can also use
 the content-based routing capabilities to send data to different
-destinations based on filters. Another feature, derived eventstreams,
+destinations based on filters. Another feature, derived event streams,
 lets you construct new streams as a result of transformations and/or
 aggregations that can be shared to consumers in Real-time hub.
 
@@ -168,7 +168,7 @@ advantages.
 
 ## Integrate with other Fabric experiences 
 
--   Route events from eventstreams to Fabric item destinations
+-   Route events from Event streams to Fabric item destinations
 -   Emit events from Fabric items into Real-time hub
 -   Data in OneLake can be accessed by Real-Time Intelligence in several
     ways:
@@ -190,5 +190,5 @@ advantages.
 
 -   Tutorial
 -   What is Real-time hub
--   What is Eventstreams
+-   What is Event streams
 -   User flows

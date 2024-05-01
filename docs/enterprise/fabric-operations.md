@@ -148,17 +148,17 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Analytics
 
-The Real-Time analytics experience contains operations for [Eventstreams](#event-streams) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time analytics experience contains operations for [Event streams](#event-streams) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
-#### Eventstreams
+#### Event streams
 
-You can find the consumption rates for eventstreams in [Monitor capacity consumption for Microsoft Fabric Eventstreams](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
+You can find the consumption rates for Event streams in [Monitor capacity consumption for Microsoft Fabric event streams](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
 
 | Operation                       | Description                               | Item         | Azure billing meter        | Type       |
 | ------------------------------- | ----------------------------------------- | ------------ | -------------------------- | ---------- |
-| Eventstream Per Hour            | Ingestion or processing for eventstream  | Eventstream | eventstream Capacity Usage CU               | Background |
-| Eventstream Data Traffic per GB | Data Ingress and Egress                   | Eventstream | eventstream Data Traffic per GB Capacity Usage CU | Background |
-| Eventstream Processor Per Hour  | ASA Processing                            | Eventstream | eventstreams Processor Capacity Usage CU    | Background |
+| Eventstream Per Hour            | Ingestion or processing for Event Stream  | Event Stream | eventstream Capacity Usage CU               | Background |
+| Eventstream Data Traffic per GB | Data Ingress and Egress                   | Event Stream | eventstream Data Traffic per GB Capacity Usage CU | Background |
+| Eventstream Processor Per Hour  | ASA Processing                            | Event Stream | eventstreams Processor Capacity Usage CU    | Background |
 
 #### KQL Database and KQL Queryset
 

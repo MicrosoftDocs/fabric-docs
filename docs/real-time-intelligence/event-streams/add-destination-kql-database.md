@@ -1,6 +1,6 @@
 ---
 title: Add KQL Database to an eventstream
-description: Learn how to add a KQL Database destination to Eventstream item with the Microsoft Fabric eventstreams feature.
+description: Learn how to add a KQL Database destination to Eventstream item with the Microsoft Fabric event streams feature.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu

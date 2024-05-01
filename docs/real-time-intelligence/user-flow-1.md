@@ -24,7 +24,7 @@ This user flow shows how a Data Engineer or Data Analyst can discover events in 
 1. Browse Real-time hub **Streams and tables** for available data streams.
 1. Filter for a stream by searching for a particular term. You can search on the item, parent name, owner, or workspace.
 1. View the details of the selected stream. You can see the stream information, related items, and profile of incoming and outgoing messages.
-1. Set an alert on the eventstream. Define the desired property, condition, and action to take.
+1. Set an alert on the event stream. Define the desired property, condition, and action to take.
 1. Save this alert as a Reflex item in Data Activator.
 
 ## Potential use cases

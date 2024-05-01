@@ -1,6 +1,6 @@
 ---
-title: Google Cloud Pub/Sub connector for Fabric eventstreams
-description: This include files has the common content for configuring Google Cloud Pub/Sub connector for Fabric eventstreams and Real-time hub. 
+title: Google Cloud Pub/Sub connector for Fabric event streams
+description: This include files has the common content for configuring Google Cloud Pub/Sub connector for Fabric event streams and Real-time hub. 
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include

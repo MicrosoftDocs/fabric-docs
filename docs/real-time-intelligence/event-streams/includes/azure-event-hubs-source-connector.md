@@ -1,6 +1,6 @@
 ---
-title: Azure Event Hubs connector for Fabric eventstreams
-description: This include files has the common content for configuring an Azure Event Hubs connector for Fabric eventstreams and Real-time hub. 
+title: Azure Event Hubs connector for Fabric event streams
+description: This include files has the common content for configuring an Azure Event Hubs connector for Fabric event streams and Real-time hub. 
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include

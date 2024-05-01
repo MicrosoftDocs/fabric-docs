@@ -25,7 +25,7 @@ Before you start, you must complete the following prerequisites:
 
 ## Supported sources
 
-The following sources are supported by Fabric eventstreams. Use links in the table to navigate to articles that provide more details about adding specific sources.
+The following sources are supported by Fabric event streams. Use links in the table to navigate to articles that provide more details about adding specific sources.
 
 | Sources          | Description |
 | --------------- | ---------- |

@@ -52,7 +52,7 @@ To design your event processing with the event processor editor:
 
          :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-insert-node-2.png" alt-text="Screenshot showing where to hover on nodes to insert a node." :::
 
-      2. Finally, you need to reconnect these nodes. Hover on the left edge of the eventstream node, and then select and drag the green circle to connect it to the **Manage fields** operator node. Follow the same process to connect the **Manage fields** operator node to the lakehouse node.
+      2. Finally, you need to reconnect these nodes. Hover on the left edge of the event stream node, and then select and drag the green circle to connect it to the **Manage fields** operator node. Follow the same process to connect the **Manage fields** operator node to the lakehouse node.
 
           :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-connecting.png" alt-text="Screenshot showing where to connect the nodes." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-connecting.png" :::
 

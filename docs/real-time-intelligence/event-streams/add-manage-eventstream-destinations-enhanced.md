@@ -21,7 +21,7 @@ Before you start, you must complete the following prerequisites:
 
 ## Supported destinations
 
-Fabric eventstreams with enhanced capabilities support the following destinations. Use links in the table to navigate to articles that provide more details about adding specific destinations.
+Fabric event streams with enhanced capabilities support the following destinations. Use links in the table to navigate to articles that provide more details about adding specific destinations.
 
 | Destinations          | Description |
 | --------------- | ---------- |
@@ -29,7 +29,7 @@ Fabric eventstreams with enhanced capabilities support the following destination
 | [KQL database](add-destination-kql-database-enhanced.md) | This destination enables you to ingest your real-time event data into a KQL database, where you can use the powerful Kusto Query Language (KQL) to query and analyze the data. With the data in the Kusto database, you can gain deeper insights into your event data and create rich reports and dashboards. You can choose between two ingestion modes: **Direct ingestion** and **Event processing before ingestion**.|
 | [Lakehouse](add-destination-lakehouse-enhanced.md) | This destination provides you with the ability to transform your real-time events before ingesting into your lakehouse. Real-time events convert into Delta Lake format and then stored in the designated lakehouse tables. It helps with your data warehousing scenario. To learn more about how to use the event processor for real-time data processing, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md).|
 | [Reflex](add-destination-reflex-enhanced.md) |This destination allows you to directly connect your real-time event data to a Reflex. Reflex is a type of intelligent agent that contains all the information necessary to connect to data, monitor for conditions, and act. When the data reaches certain thresholds or matches other patterns, Reflex automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.|
-| [Derived stream](add-destination-derived-stream.md) | Derived stream is a specialized type of destination within Fabric eventstreams that's created following the addition of a series of stream operations, such as Filter or Manage Fields. The derived stream represents the transformed default stream following stream processing. You can also route the derived stream to multiple destinations in Fabric. Once created, you can view the derived stream from the Real-time hub. |
+| [Derived stream](add-destination-derived-stream.md) | Derived stream is a specialized type of destination within Fabric event streams that's created following the addition of a series of stream operations, such as Filter or Manage Fields. The derived stream represents the transformed default stream following stream processing. You can also route the derived stream to multiple destinations in Fabric. Once created, you can view the derived stream from the Real-time hub. |
 
 ## Related content
 

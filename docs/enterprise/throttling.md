@@ -55,7 +55,7 @@ If you need to pay down your carry forward faster, you can increase your SKU siz
 
 While most Fabric products follow the previously mentioned throttling rules, there are some exceptions. 
 
-For example, Fabric Eventstreams have many operations that can run for years once they're started. Throttling new eventstream operations wouldn’t make sense, so instead, the amount of CU allocated to keeping the stream open is reduced until the capacity is in good standing again. 
+For example, Fabric event streams have many operations that can run for years once they're started. Throttling new event stream operations wouldn’t make sense, so instead, the amount of CU allocated to keeping the stream open is reduced until the capacity is in good standing again. 
 
 Another exception is Real-Time Analytics, which wouldn’t be real-time if operations were delayed by 20 seconds. As a result, Real-Time Analytics ignores the first stage of throttling with 20-second delays at 10 minutes of carry forward and waits until the rejection phase at 60 minutes of carry forward to begin throttling. This behavior ensures users can continue to enjoy real-time performance even during periods of high demand.
 

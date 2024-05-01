@@ -15,7 +15,7 @@ This article shows you how to edit and publish a Microsoft Fabric eventstream.
 
 ## Edit mode and Live view
 
-Fabric eventstreams offers two distinct modes, **Edit mode** and **Live view**, to provide flexibility and control over your data streams. If you create a new eventstream with enhanced capabilities enabled, you can modify your eventstreams in **Edit mode** and design stream processing operations for your data streams by using a no-code editor. Once you're done, you can publish your eventstreams and visualize how your eventstreams start streaming and processing data in **Live view**.
+Fabric event streams offers two distinct modes, **Edit mode** and **Live view**, to provide flexibility and control over your data streams. If you create a new eventstream with enhanced capabilities enabled, you can modify your eventstreams in **Edit mode** and design stream processing operations for your data streams by using a no-code editor. Once you're done, you can publish your eventstreams and visualize how your eventstreams start streaming and processing data in **Live view**.
 
 Here's an overview of everything you find in the two different modes:
 
@@ -39,7 +39,7 @@ Here's an overview of everything you find in the two different modes:
 
    ![A screenshot of creating a new eventstream.](media/edit-publish/new.png)
 
-1. On the next screen, select **Add external source** to stream your data to Fabric eventstreams.
+1. On the next screen, select **Add external source** to stream your data to Fabric event streams.
 
    ![A screenshot of selecting Add external source.](media/edit-publish/build.png)
 
@@ -79,6 +79,6 @@ The following steps show how you can add event processing operations and a desti
 
 ## Related content
 
-- [New capabilities in Microsoft Fabric eventstreams](new-capabilities.md)
+- [New capabilities in Microsoft Fabric event streams](new-capabilities.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)
 - [Route data streams based on content](route-events-based-on-content.md)

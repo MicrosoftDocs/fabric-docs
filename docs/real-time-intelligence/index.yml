@@ -37,15 +37,15 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What's Eventstreams?
+          - text: What's Event streams?
             url: event-streams/overview.md
       - linkListType: how-to-guide
         links:
-          - text: Create and manage eventstreams
+          - text: Create and manage event streams
             url:  event-streams/create-manage-an-eventstream.md
           - text: Process events using processor editor            
             url: event-streams/process-events-using-event-processor-editor.md
-          - text: Monitor eventstreams
+          - text: Monitor event streams
             url: event-streams/monitor.md
           - text: Transform and stream real-time events to Microsoft Fabric Lakehouse
             url:  event-streams/transform-and-stream-real-time-events-to-lakehouse.md

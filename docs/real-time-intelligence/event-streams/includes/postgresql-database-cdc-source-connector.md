@@ -1,6 +1,6 @@
 ---
-title: PostgreSQL CDC connector for Fabric eventstreams
-description: This include file has the common content for configuring a PostgreSQL Change Data Capture (CDC) connector for Fabric eventstreams and Real-time hub. 
+title: PostgreSQL CDC connector for Fabric event streams
+description: This include file has the common content for configuring a PostgreSQL Change Data Capture (CDC) connector for Fabric event streams and Real-time hub. 
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
@@ -26,7 +26,7 @@ ms.date: 05/21/2024
     1. For **Authentication kind**, select **Basic**. 
     
         > [!NOTE]
-        > Currently, Fabric eventstreams supports only **Basic** authentication.
+        > Currently, Fabric event streams supports only **Basic** authentication.
     1. Enter **Username** and **Password** for the database.   
     1. Select **Connect**.
    

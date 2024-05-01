@@ -25,7 +25,7 @@ In Microsoft Cost Management, your cost analysis and invoice show multiple meter
 | Data Warehouse Capacity Usage CU                                  | Represents the Synapse Data Warehouse usage on your capacity                                                            | GA |
 | Dataflows High Scale Compute Capacity Usage CU                    | Represents the Dataflows High Scale Compute used for staging items on your capacity                                     | GA |
 | Dataflows Standard Compute Capacity Usage CU                      | Represents the Dataflows Standard Compute usage on your capacity                                                        | GA |
-| eventstream Capacity Usage CU                                     | Represents the ingestion or processing usage for eventstreams on your capacity                                         | GA |
+| eventstream Capacity Usage CU                                     | Represents the ingestion or processing usage for Event Streams on your capacity                                         | GA |
 | eventstream Data Traffic per GB Capacity Usage CU                 | Represents the data ingress and egress usage on your capacity                                                           | GA |
 | eventstreams Processor Capacity Usage CU                          | Represents the ASA processing usage on your capacity                                                                    | GA |
 | KQL Database Capacity Usage CU                                    | Represents the KQL database up time usage on your capacity                                                              | GA |
