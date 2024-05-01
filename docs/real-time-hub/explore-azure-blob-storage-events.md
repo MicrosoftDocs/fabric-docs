@@ -7,8 +7,8 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Explore Azure blob storage events in Fabric Real-time hub
-Real-time hub expands Fabric with event-driven capabilities to support real-time data processing and analysis. This feature enables event-driven scenarios for various system events, including Fabric workspace item events and Azure blob storage events. By using System events in Fabric, you can gain access to real-time data streams that enable them to monitor and react to changes and events as they occur. 
+# Explore Azure blob storage events in Fabric Real-Time hub
+Real-Time hub expands Fabric with event-driven capabilities to support real-time data processing and analysis. This feature enables event-driven scenarios for various Fabric events, including Fabric workspace item events and Azure blob storage events. By using events in Fabric, you can gain access to real-time data streams that enable them to monitor and react to changes and events as they occur. 
 
 This article shows how to explore Azure blob storage events in Fabric Real-time hub. Azure blob storage events allow you to receive notifications when certain actions occur on your blobs. For example, you can receive a notification when a new blob is created, or an existing blob is modified. These events can be used to set alert on other actions or workflows, such as updating a database or sending a notification. This article provides the properties and schema for Azure blob storage events.  
 
