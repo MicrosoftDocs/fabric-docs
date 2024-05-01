@@ -19,7 +19,7 @@ ms.search.form: Get started
 ## Create a KQL database
 
 1. Browse to the workspace in which you want to create your database.
-1. On the bottom left experience switcher, select **Real-Time Analytics**. :::image type="icon" source="media/real-time-intelligence-tutorial/product-icon.png" border="false":::
+1. On the bottom left experience switcher, select **Real-Time Intelligence**. :::image type="icon" source="media/real-time-intelligence-tutorial/product-icon.png" border="false":::
 
 1. In the upper left corner, select **+ New > KQL Database**.
 1. Enter *NycTaxiDB* as the database name.

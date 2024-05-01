@@ -30,7 +30,7 @@ Specifically, you learn how to:
 
 ## 1- Create a KQL database
 
-1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
+1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Intelligence**.
 2. Select the **KQL Database** tile.
 
     :::image type="content" source="media/jupyter-notebook/kql-database-tile.png" alt-text="Screenshot of new KQL database tile in Real-Time Intelligence.":::
