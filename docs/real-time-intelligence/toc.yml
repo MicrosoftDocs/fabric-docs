@@ -70,14 +70,10 @@ items:
         href: event-streams/add-source-custom-app.md
       - name: Add a sample data source
         href: event-streams/add-source-sample-data.md              
-      - name: Add and manage an event source (preview)
-        href: event-streams/add-manage-eventstream-sources-enhanced.md
       - name: Custom endpoint
         href: event-streams/add-source-custom-app-enhanced.md
       - name: Sample data
         href: event-streams/add-source-sample-data-enhanced.md
-      - name: Azure Event Hubs
-        href: event-streams/add-source-azure-event-hubs-enhanced.md
       - name: Azure IoT Hub
         href: event-streams/add-source-azure-iot-hub-enhanced.md
       - name: Azure SQL Database Change Data Capture (preview)

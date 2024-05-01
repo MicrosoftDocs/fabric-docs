@@ -24,6 +24,9 @@ Eventstream not only allows you to stream data from Microsoft sources, but also 
 
 In this article, you learn about the event sources that you can add to an eventstream with enhanced capabilities that are in preview.
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
+
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** for your workspace with **Contributor** or higher permissions.
@@ -33,7 +36,7 @@ In this article, you learn about the event sources that you can add to an events
 
 Fabric event streams with enhanced capabilities support the following sources. Each article provides details and instructions for adding specific sources.
 
-- [Azure Event Hubs](add-source-azure-event-hubs-enhanced.md)
+- [Azure Event Hubs](add-source-azure-event-hubs.md)
 - [Azure IoT Hub](add-source-azure-iot-hub-enhanced.md)
 - [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
 - [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)

@@ -49,7 +49,7 @@ Other connectors:
 - [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
 - [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
 - [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
-- [Azure Event Hubs](add-source-azure-event-hubs-enhanced.md)
+- [Azure Event Hubs](add-source-azure-event-hubs.md)
 - [Confluent Kafka](add-source-confluent-kafka.md)
 - [Custom endpoint](add-source-custom-app-enhanced.md)
 - [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 

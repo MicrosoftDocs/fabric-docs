@@ -48,7 +48,7 @@ You can create an eventstream on the **Workspace** page, the **Real-Time Intelli
    :::image type="content" source="./media/create-manage-an-eventstream-enhanced/editor.png" alt-text="Screenshot showing the editor." lightbox="./media/create-manage-an-eventstream-enhanced/editor.png" :::
 
 ## Next step
-- [Add sources to the eventstream](./add-manage-eventstream-sources-enhanced.md)
+- [Add sources to the eventstream](./add-manage-eventstream-sources.md)
 - [Add destinations to the eventstream](./add-manage-eventstream-destinations-enhanced.md)
 
 # [Standard capabilities](#tab/standardcapabilities)
