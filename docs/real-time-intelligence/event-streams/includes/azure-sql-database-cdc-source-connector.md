@@ -22,22 +22,27 @@ ms.date: 05/21/2024
 
         :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connect.png" alt-text="Screenshot that shows the Connection settings section of the New connection page." ::: 
 1. Scroll down, and in the **Connection credentials** section, follow these steps.
-    1. For **Connection name**, enter a name for the connection. 
-    1. For **Authentication kind**, select **Basic**. 
-    
-        > [!NOTE]
-        > Currently, Fabric event streams supports only **Basic** authentication.
-    1. Enter **Username** and **Password** for the database.   
-    1. Select **Connect**.
-   
-      :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connection-credentials.png" alt-text="Screenshot that shows the Connection credentials section of the New connection page." ::: 
-    1. Select **Connect**.
-1. Now, on the **Connect** page, do these steps:
-    1. Enter the **name** of the **SQL table**.
-    1. For **Port**, Enter the port number (default is 1433). 
-    1. Select **Next**. 
+   - For **Connection name**, enter a name for the connection. 
+   - For **Authentication kind**, select **Basic**. 
 
-      :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connect-page-filled.png" alt-text="Screenshot that shows the Connect page of the Get events wizard filled." lightbox="./media/azure-sql-database-cdc-source-connector/connect-page-filled.png":::         
+     > [!NOTE]
+     > Currently, Fabric event streams supports only **Basic** authentication.
+
+   - Enter **Username** and **Password** for the database.
+
+1. Select **Connect**.
+
+      :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connection-credentials.png" alt-text="Screenshot that shows the Connection credentials section of the New connection page." ::: 
+
+1. Now, on the **Connect** page, enter the following information:
+
+   - Enter the name of the SQL **table(s)**.
+   - For **Port**, enter the port number or leave the default value of 1433.
+
+1. Select **Next**. 
+
+   :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connect-page-filled.png" alt-text="Screenshot that shows the Connect page of the Get events wizard filled." lightbox="./media/azure-sql-database-cdc-source-connector/connect-page-filled.png":::
+
 1. On the **Review and create** screen, review the summary, and then select **Add**.
 
       :::image type="content" source="./media/azure-sql-database-cdc-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page of the Get events wizard filled." lightbox="./media/azure-sql-database-cdc-source-connector/review-create-page.png":::         

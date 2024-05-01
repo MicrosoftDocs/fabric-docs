@@ -35,7 +35,7 @@ Here's an overview of everything you find in the two different modes:
 
 ## Create a new eventstream
 
-1. Switch your Power BI experience to **Real-time Analytics** and select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
+1. Switch your Power BI experience to **Real-Time Intelligence** and select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/edit-publish/new.png)
 

@@ -105,6 +105,8 @@ items:
   href: apply-sensitivity-labels.md
 - name: Delta Lake interoperability
   href: delta-lake-interoperability.md
+- name: Learn about Microsoft Fabric feedback
+  href: feedback.md  
 - name: Fabric adoption roadmap
   items: 
   - name: Introduction
