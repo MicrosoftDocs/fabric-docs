@@ -15,7 +15,7 @@ This article shows you how to create Microsoft Fabric eventstreams for discrete 
 
 When you develop applications for real-time analytics, you commonly encounter two types of events: discrete events and continuous events or streams. Microsoft Fabric event streams can ingest and process both discrete and continuous events.
 
-[!INCLUDE [enhanced-capabilities-preview-note](../includes/enhanced-capabilities-preview-note.md)]
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
 ## Understand discrete and continuous events
 

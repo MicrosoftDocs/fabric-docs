@@ -20,7 +20,7 @@ Before you start, you must complete the following prerequisite:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions.
 
-[!INCLUDE [enhanced-capabilities-preview-note](../includes/enhanced-capabilities-preview-note.md)]
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
 ## Create an eventstream
 
