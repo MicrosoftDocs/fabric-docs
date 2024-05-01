@@ -66,10 +66,7 @@ Be sure to [attach a lakehouse to the notebook](./tutorial-data-science-prepare-
 
 The Criteo AI Lab created the dataset. That dataset has 13M rows. Each row represents one user. Each row has 12 features, a treatment indicator, and two binary labels that include visit and conversion.
 
-| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
-|**&#124;**|**f0**|**&#124;**|**f1**|**&#124;**|**f2**|**&#124;**|**f3**|**&#124;**|**f4**|**&#124;**|**f5**|**&#124;**|**f6**|**&#124;**|**f7**|**&#124;**|**f8**|**&#124;**|**f9**|**&#124;**|**f10**|**&#124;**|**f11**|**&#124;**|**treatment**|**&#124;**|**conversion**|**&#124;**|**visit**|**&#124;**||
-|
+:::image type="content" source="./media/uplift-modeling/criteo-ai-lab-dataset-structure.png"  alt-text="Screenshot showing the Criteo AI Lab dataset structure." lightbox="./media/uplift-modeling/criteo-ai-lab-dataset-structure.png":::
 
 - **f0 - f11**: feature values (dense, floating values)
 - **treatment**: whether or not a user was randomly target for treatment (for example, advertising) (1 = treatment, 0 = control)
