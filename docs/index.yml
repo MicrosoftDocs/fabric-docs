@@ -190,14 +190,14 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Real-Time hub
+    - title: Real-time hub
 
       imageSrc: ./media/real-time-hub-icon.png
       links:
         - url: real-time-hub/real-time-hub-overview.md
-          text: What is Real-Time hub?
+          text: What is Real-time hub?
         - url: real-time-hub/get-started-real-time-hub.md
-          text: Bring your data to Real-Time hub
+          text: Bring your data to Real-time hub
         - url: real-time-hub/explore-data-streams.md
           text: Explore streams
         - url: real-time-hub/set-alerts-data-streams.md
@@ -270,12 +270,12 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Synapse Real-Time Analytics
+    - title: Real-Time Intelligence
 
       imageSrc: ./media/synapse-real-time-intelligence-icon.png
       links:
         - url: real-time-intelligence/overview.md
-          text: What is Real-Time Analytics?
+          text: What is Real-Time Intelligence?
         - url: real-time-intelligence/event-streams/overview.md
           text: What is Fabric event streams?
         - url: real-time-intelligence/create-database.md

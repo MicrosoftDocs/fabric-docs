@@ -1,6 +1,6 @@
 ---
 title: Access an existing KQL database
-description: Learn how to access an existing KQL database and optionally copy the query URI and the ingestion URI run queries or get data in Real-Time Analytics.
+description: Learn how to access an existing KQL database and optionally copy the query URI and the ingestion URI run queries or get data in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/11/2024
+ms.date: 04/21/2024
 ms.search.form: product-kusto
 ---
 # Access an existing KQL database

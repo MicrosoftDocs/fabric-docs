@@ -1,14 +1,14 @@
 ---
-title: Set alerts on Fabric workspace item events in Real-Time hub
-description: This article describes how to set alerts on Fabric workspace item events in Real-Time hub.
+title: Set alerts on Fabric workspace item events in Real-time hub
+description: This article describes how to set alerts on Fabric workspace item events in Real-time hub.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Set alerts on Fabric workspace item events in Real-Time hub
-This article describes how to set alerts on Fabric workspace item events in Real-Time hub.
+# Set alerts on Fabric workspace item events in Real-time hub
+This article describes how to set alerts on Fabric workspace item events in Real-time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -22,7 +22,7 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 ### From the events list
 
-1. In Real-Time hub, switch to the **Fabric events** tab. 
+1. In Real-time hub, switch to the **Fabric events** tab. 
 1. Move the mouse over **Fabric workspace item events**, and do one of the following steps: 
     - Select the **Alert** button 
     - Select **ellipsis (...)**, and select **Set alert**.

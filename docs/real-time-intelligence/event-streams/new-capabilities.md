@@ -11,11 +11,11 @@ ms.search.form: Source and Destination
 
 # Enhanced capabilities in Microsoft Fabric event streams
 
-We're excited to announce a range of new enhancements in Microsoft Fabric event streams that are tailored to improve your development experience in building streaming applications. With [Real-Time hub](../../real-time-hub/real-time-hub-overview.md) seamlessly integrated into Fabric event streams, you gain greater flexibility and control over your data in motion. Here's a brief overview of the latest features:
+We're excited to announce a range of new enhancements in Microsoft Fabric event streams that are tailored to improve your development experience in building streaming applications. With [Real-time hub](../../real-time-hub/real-time-hub-overview.md) seamlessly integrated into Fabric event streams, you gain greater flexibility and control over your data in motion. Here's a brief overview of the latest features:
 
 - [Edit Mode and Live View](edit-publish.md#edit-mode-and-live-view). Explore two distinct modes for visualizing and designing stream processing.
 
-- [Default and derived streams](create-default-derived-streams.md). Create a continuous flow of streams with the format you design, with an event processor that can be consumed later in Real-Time hub.
+- [Default and derived streams](create-default-derived-streams.md). Create a continuous flow of streams with the format you design, with an event processor that can be consumed later in Real-time hub.
 
 - [Data stream routing based on content](route-events-based-on-content.md). Transform and route your data streams anywhere within Fabric based on the data stream content you designed with the event processor.
 

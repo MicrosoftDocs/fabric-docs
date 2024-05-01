@@ -1,11 +1,11 @@
 ---
 title: Get data from Apache Flink
-description: Learn how to get data from Apache Flink in a KQL database in Real-Time Analytics.
+description: Learn how to get data from Apache Flink in a KQL database in Real-Time Intelligence.
 ms.reviewer: akshayd
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 02/15/2024
+ms.date: 04/21/2024
 ---
 # Get data from Apache Flink
 

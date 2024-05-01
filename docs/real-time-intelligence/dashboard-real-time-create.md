@@ -1,11 +1,11 @@
 ---
 title: Create a Real-Time Dashboard
-description: Learn how to visualize data with Real-Time dashboards
+description: Learn how to visualize data with Real-Time Dashboards
 ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.date: 02/21/2024
+ms.date: 04/21/2024
 ms.search.form: product-kusto, Real-Time Dashboard
 ---
 # Create a Real-Time Dashboard
@@ -30,7 +30,7 @@ The Real-Time Dashboard exists within the context of a workspace. A new Real-Tim
 1. Select **+New** > **Real-Time Dashboard**
 1. Enter a dashboard name and select **Create**.
 
-:::image type="content" source="media/real-time-dashboard/dashboard-new.png" alt-text="Screenshot of newly created Real-Time Dashboard in Real-Time Analytics in Microsoft Fabric.":::
+:::image type="content" source="media/real-time-dashboard/dashboard-new.png" alt-text="Screenshot of newly created Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::
 
 A new dashboard is created in your workspace.
 
@@ -41,7 +41,7 @@ Data sources are reusable references to a specific database in the same workspac
 1. Select the **Home** tab > **New data source**.
 1. In the **Data sources** pane, select **+ Add**.
 
-    :::image type="content" source="media/real-time-dashboard/new-data-source.png" alt-text="Screenshot of adding a new data source to a Real-Time Dashboard in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/real-time-dashboard/new-data-source.png" alt-text="Screenshot of adding a new data source to a Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::
 
 1. In the **Create new data source** pane:
     1. Enter a **Data source name**.
@@ -60,7 +60,7 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 
     1. Select **+ Add visual**.
 
-    :::image type="content" source="media/real-time-dashboard/query.png" alt-text="Screenshot of dashboard query in Real-Time Dashboards in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/real-time-dashboard/query.png" alt-text="Screenshot of dashboard query in Real-Time Dashboards in Real-Time Intelligence in Microsoft Fabric.":::
 
 1. In the **Visual formatting** tab, select **Visual type** to choose the type of visual. For more information on how to customize the visual, see [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md).
 1. Select **Apply changes** to pin the visual to the dashboard.
@@ -75,7 +75,7 @@ Pages are optional containers for tiles. You can use pages to organize tiles int
 
 1. On the **Pages** pane, select **+ Add page**.
 
-    :::image type="content" source="media/real-time-dashboard/new-page.png" alt-text="Screenshot of adding a page to a Real-Time Dashboard in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/real-time-dashboard/new-page.png" alt-text="Screenshot of adding a page to a Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::
 
 1. To name the page, select the vertical **More menu [...]** > **Rename page**.
 
@@ -98,7 +98,7 @@ You can view the query in either editing or viewing mode. Editing the underlying
 1. Select **Edit query**.
 1. Choose either **Existing KQL Queryset** or **New KQL Queryset**. Proceed to edit the query in the [KQL Queryset](kusto-query-set.md).
 
-    :::image type="content" source="media/dashboard-view-query/view-query-viewing-mode.png" alt-text="Screenshot of the viewing mode of Real-Time Dashboards view query with options to further edit in KQL Queryset in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/dashboard-view-query/view-query-viewing-mode.png" alt-text="Screenshot of the viewing mode of Real-Time Dashboards view query with options to further edit in KQL Queryset in Real-Time Intelligence in Microsoft Fabric.":::
 
 > [!NOTE]
 > Any edits made to the query using this flow won't be reflected in the original Real-Time Dashboard.

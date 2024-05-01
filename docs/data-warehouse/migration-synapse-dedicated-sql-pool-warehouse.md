@@ -22,7 +22,7 @@ This article details the strategy, considerations, and methods of migration of d
 
 ## Migration introduction
 
-As Microsoft introduced [Microsoft Fabric](../get-started/microsoft-fabric-overview.md), an all-in-one SaaS analytics solution for enterprises that offers a comprehensive suite of services, including [Data Factory](../data-factory/data-factory-overview.md), [Data Engineering](../data-engineering/data-engineering-overview.md), [Data Warehousing](../data-warehouse/data-warehousing.md), [Data Science](../data-science/data-science-overview.md), [Real-Time Analytics](../real-time-intelligence/overview.md), and [Power BI](/power-bi/fundamentals/power-bi-overview). 
+As Microsoft introduced [Microsoft Fabric](../get-started/microsoft-fabric-overview.md), an all-in-one SaaS analytics solution for enterprises that offers a comprehensive suite of services, including [Data Factory](../data-factory/data-factory-overview.md), [Data Engineering](../data-engineering/data-engineering-overview.md), [Data Warehousing](../data-warehouse/data-warehousing.md), [Data Science](../data-science/data-science-overview.md), [Real-Time Intelligence](../real-time-intelligence/overview.md), and [Power BI](/power-bi/fundamentals/power-bi-overview). 
 
 This article focuses on options for schema (DDL) migration, database code (DML) migration, and data migration. Microsoft offers several options, and here we discuss each option in detail and provide guidance on which of these options you should consider for your scenario. This article uses the TPC-DS industry benchmark for illustration and performance testing. Your actual result might vary depending on many factors including type of data, data types, width of tables, data source latency, etc.
 
