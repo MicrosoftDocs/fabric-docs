@@ -9,10 +9,11 @@ ms.date: 03/15/2024
 ms.search.form: Event Streams Overview
 ---
 
-# [Enhanced Capabilities (Preview)](#tab/enhancedcapabilities)
+# Create an eventstream in Microsoft Fabric
+This article describes how to create a Fabric eventstream. If you are using enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. 
 
-# Create an eventstream in Microsoft Fabric with enhanced capabilities (preview)
-This article describes how to create a Fabric eventstream with enhanced capabilities that are in preview.
+
+# [Enhanced Capabilities (Preview)](#tab/enhancedcapabilities)
 
 ## Prerequisites
 Before you start, you must complete the following prerequisite:
@@ -48,11 +49,13 @@ You can create an eventstream on the **Workspace** page, the **Real-Time Intelli
 - [Add sources to the eventstream](./add-manage-eventstream-sources-enhanced.md)
 - [Add destinations to the eventstream](./add-manage-eventstream-destinations-enhanced.md)
 
-# [StandardCapabilities](#tab/standardcapabilities)
-
-# Create an eventstream in Microsoft Fabric
+# [Standard Capabilities](#tab/standardcapabilities)
 
 The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
+
+> [!IMPORTANT]
+> Use this tab if you are using Fabric event streams without enhanced capabilities. If you are using enhanced capabilities, use the **Enhanced Capabilities** tab. 
+
 
 ## Prerequisites
 
