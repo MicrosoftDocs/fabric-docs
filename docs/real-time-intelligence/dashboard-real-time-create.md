@@ -69,6 +69,24 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 
 1. Select the **Save** icon.
 
+## Add tile from a queryset
+
+You can add tiles to your dashboard directly from kql queries written in a queryset.
+
+1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset)
+
+1. [Write a query](kusto-query-set.md#write-a-query)
+
+1. Select **pin to dashboard**.
+    :::image type="content" source="media/real-time-dashboard/queryset-pin-query.png" alt-text="Screenshot of the pin query to dashboard button in a queryset query.":::
+
+1. In the **Pin query to dashboard** window,
+    1. Select an existing dashboard or create a new dashboard.
+    1. Name your dashboard tile.
+    1. Select choose **Open dashboard after tile creation** to view your dashboard immediately after creation.
+    1. Select **Create**.
+        :::image type="content" source="media/real-time-dashboard/pin-query-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
+
 ## Add page
 
 Pages are optional containers for tiles. You can use pages to organize tiles into logical groups, such as by data source or by subject area. You can also use pages to create a dashboard with multiple views, such as a dashboard with a drillthrough from a summary page to a details page.
