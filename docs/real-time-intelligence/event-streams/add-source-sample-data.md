@@ -37,17 +37,19 @@ Follow these steps to add a sample data source:
 
    ![A screenshot of selecting Sample data to add to an existing eventstream.](media\add-source-sample-data-enhanced\add-sample-data.png)
 
-## Configure and connect to sample data
+1. On the **TridentStreaming_SampleData** screen, enter a **Source name**, select the source data you want under **Sample data**, and then select **Add**.
 
-[!INCLUDE [sample-data-source-connector](./includes/sample-data-source-connector.md)]
+   - **Bicycles**: Sample bicycles data with a preset schema that includes fields such as BikepointID, Street, Neighborhood, and Latitude.
+   - **Yellow Taxi**: Sample taxi data with a preset schema that includes fields such as pickup time, drop-off time, distance, and total fee.
+   - **Stock Market**: Sample data of a stock exchange with preset schema columns such as time, symbol, price, and volume.
 
-## Publish and visualize sample data
+   ![A screenshot showing the choices on the Sample data screen.](media\add-source-sample-data-enhanced\sample-sources.png)
 
-After you create the sample data source, you see it added to your eventstream on the canvas in **Edit mode**. To implement this newly added sample data, select **Publish**.
+1. After you create the sample data source, you see it added to your eventstream on the canvas in **Edit mode**. To implement this newly added sample data, select **Publish**.
 
-![A screenshot showing the eventstream in Edit mode, with the Publish button highlighted.](media\add-source-sample-data-enhanced\edit-mode.png)
+   ![A screenshot showing the eventstream in Edit mode, with the Publish button highlighted.](media\add-source-sample-data-enhanced\edit-mode.png)
 
-Once you complete these steps, sample data is available for visualization in **Live view**.
+Once you complete these steps, the sample data is available for visualization in **Live view**.
 
 ![A screenshot showing the eventstream in Live view.](media\add-source-sample-data-enhanced\live-view.png)
 

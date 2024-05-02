@@ -62,14 +62,10 @@ items:
       items:
       - name: Add and manage an event source
         href: event-streams/add-manage-eventstream-sources.md
-      - name: Add an Azure Event Hubs source
+      - name: Azure Event Hubs
         href: event-streams/add-source-azure-event-hubs.md
-      - name: Add an Azure IoT Hub source
+      - name: Azure IoT Hub
         href: event-streams/add-source-azure-iot-hub.md
-      - name: Add a custom app source
-        href: event-streams/add-source-custom-app.md
-      - name: Add a sample data source
-        href: event-streams/add-source-sample-data.md              
       - name: Custom endpoint
         href: event-streams/add-source-custom-app.md
       - name: Sample data

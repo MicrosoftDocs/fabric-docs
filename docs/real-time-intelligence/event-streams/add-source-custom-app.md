@@ -37,15 +37,13 @@ Follow these steps to add a sample data source:
 
    ![A screenshot of selecting Custom endpoint to add to an existing eventstream.](media\add-source-custom-app-enhanced\add-custom-app.png)
 
-## Configure and connect to custom app source
+1. On the **Custom endpoint** screen, enter a name for the custom source under **Source name**, and then select **Add**.
 
-[!INCLUDE [custom-app-source connector](./includes/custom-app-source-connector.md)]
+   ![A screenshot showing the Custom endpoint screen with the Add button highlighted.](media\add-source-custom-app-enhanced\add.png)
 
-## Publish and visualize custom app data
+1. After you create the custom app source, you see it added to your eventstream on the canvas in **Edit mode**. To implement this newly added custom app source data, select **Publish**.
 
-After you create the custom app source, you see it added to your eventstream on the canvas in **Edit mode**. To implement this newly added custom app source data, select **Publish**.
-
-![A screenshot showing the eventstream in Edit mode, with the Publish button highlighted.](media\add-source-custom-app-enhanced\edit-mode.png)
+   ![A screenshot showing the eventstream in Edit mode, with the Publish button highlighted.](media\add-source-custom-app-enhanced\edit-mode.png)
 
 Once you complete these steps, the custom app data is available for visualization in **Live view**.
 
