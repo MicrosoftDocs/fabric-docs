@@ -55,7 +55,7 @@ Microsoft Fabric offers the comprehensive set of analytics experiences designed 
 
 - **Data Warehouse** - Data Warehouse experience provides industry leading SQL performance and scale. It fully separates compute from storage, enabling independent scaling of both the components. Additionally, it natively stores data in the open Delta Lake format. For more information, see [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 
-- **Real-Time Intelligence** -  Real-time Intelligence enables the extraction of insights, visualization, and action on data in motion within an organization. It provides an end-to-end solution for event-driven scenarios, streaming data, and data logs, by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions. For more information, see [What is Real-Time Intelligence in Fabric?](../real-time-intelligence/overview.md)
+- **Real-Time Intelligence** -  Real-time Intelligence enables the extraction of insights, visualization, and action on data in motion within an organization. It provides an end-to-end solution for event-driven scenarios, streaming data, and data logs, by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions. For more information, see [What is Real-Time Intelligence in Fabric?](../real-time-intelligence/overview.md).
 
 - **Power BI** - Power BI is the world's leading Business Intelligence platform. It ensures that business owners can access all the data in Fabric quickly and intuitively to make better decisions with data. For more information, see [What is Power BI?](/power-bi/fundamentals/power-bi-overview)
 
