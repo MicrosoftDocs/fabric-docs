@@ -4,7 +4,7 @@ description: A known issue is posted where OneLake storage isn't billed for paus
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 02/02/2024
+ms.date: 04/30/2024
 ms.custom: known-issue-611
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-611
 
 Data stored in OneLake gets billed even when the capacity is paused. However, the storage billing isn't currently happening, and you're inadvertently not charged for storage while the capacity is paused.
 
-**Status:** Open
+**Status:** Fixed: April 25, 2024
 
 **Product Experience:** OneLake
 

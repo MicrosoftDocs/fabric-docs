@@ -1,5 +1,5 @@
 ---
-title: Semantic propagation with Sempy python library (preview)
+title: Semantic propagation with Sempy python library
 description: Learn how Sempy library supports propagation of metadata attached to semantic models on which you're operating.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -12,12 +12,10 @@ ms.date: 06/06/2023
 ms.search.form: semantic link
 ---
 
-# Semantic data propagation from semantic models (preview)
+# Semantic data propagation from semantic models
 
 When you read a semantic model into a [FabricDataFrame](semantic-link-overview.md#fabricdataframe-data-structure), semantic information such as metadata and annotations from the semantic model are automatically attached to the FabricDataFrame.
 In this article, you'll learn how the SemPy python library preserves annotations that are attached to your [semantic model's](/power-bi/connect-data/service-datasets-understand) tables and columns.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Semantic propagation for pandas users
 
@@ -57,6 +55,6 @@ For example, column aggregation strips the metadata.
 
 - [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link)
 - [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
-- [Tutorial: Analyze functional dependencies in a sample semantic model (preview)](tutorial-power-bi-dependencies.md)
-- [How to validate data with semantic link (preview)](semantic-link-validate-data.md)
-- [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)
+- [Tutorial: Analyze functional dependencies in a sample semantic model](tutorial-power-bi-dependencies.md)
+- [How to validate data with semantic link](semantic-link-validate-data.md)
+- [Explore and validate relationships in semantic models](semantic-link-validate-relationship.md)

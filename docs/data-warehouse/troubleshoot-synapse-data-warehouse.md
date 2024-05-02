@@ -1,10 +1,12 @@
 ---
 title: Troubleshoot the Warehouse
 description: Troubleshoot common issues in using Warehouse in Microsoft Fabric.
-author: xiaoyuMSFT
-ms.author: XiaoyuL
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: xiaoyul
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -15,7 +17,7 @@ ms.search.form: Monitoring # This article's title should not change. If so, cont
 ---
 # Troubleshoot the Warehouse
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This article provides guidance in troubleshooting common issues in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. 
 

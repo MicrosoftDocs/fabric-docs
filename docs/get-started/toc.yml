@@ -84,15 +84,15 @@ items:
 - name: Direct Lake
   items:
   - name: Direct Lake overview
-    href: directlake-overview.md
+    href: direct-lake-overview.md
   - name: Create a Lakehouse for Direct Lake
-    href: directlake-create-lakehouse.md
+    href: direct-lake-create-lakehouse.md
   - name: Specify a fixed identity
-    href: directlake-fixed-identity.md
+    href: direct-lake-fixed-identity.md
   - name: Analyze query processing
-    href: directlake-analyze-query-processing.md
+    href: direct-lake-analyze-query-processing.md
   - name: Direct Lake mode and PBI reporting
-    href: lakehouse-pbi-reporting.md
+    href: lakehouse-power-bi-reporting.md
 - name: Promote or certify items
   href: endorsement-promote-certify.md
 - name: Share items
@@ -101,6 +101,8 @@ items:
   href: apply-sensitivity-labels.md
 - name: Delta Lake interoperability
   href: delta-lake-interoperability.md
+- name: Learn about Microsoft Fabric feedback
+  href: feedback.md  
 - name: Fabric adoption roadmap
   items: 
   - name: Introduction
@@ -139,6 +141,16 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Apps and reports not available when editing scorecard metrics
+      href: known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md
+    - name: Semantic model export to OneLake fails for calculated columns in error state
+      href: known-issues/known-issue-693-semantic-model-export-onelake-fails-calculated-columns.md
+    - name: Shortcut data inaccessible if data is in a paused capacity
+      href: known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md
+    - name: Report Copilot button shows even though Copilot admin setting is off
+      href: known-issues/known-issue-690-report-copilot-button-shows-admin-setting-off.md
+    - name: Copilot and Azure OpenAI service capacity setting delegation postponed
+      href: known-issues/known-issue-689-copilot-service-capacity-setting-delegation-postponed.md
     - name: Copy visual as image for report and dashboard visuals is broken
       href: known-issues/known-issue-679-copy-visual-image-report-dashboard-visuals-broken.md
     - name: Git integrated workspaces incorrectly show status of Uncommitted

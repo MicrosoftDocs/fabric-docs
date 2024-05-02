@@ -1,12 +1,15 @@
 ---
 title: Data modeling in the default Power BI semantic model
 description: Learn how to model your data in the default Power BI semantic model in Microsoft Fabric.
-author: salilkanade
-ms.author: salilkanade
-ms.reviewer: wiassaf, sosivara
-ms.date: 01/25/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: salilkanade, sosivara
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
 ms.search.form: Model view # This article's title should not change. If so, contact engineering.
 ---
 # Model data in the default Power BI semantic model in Microsoft Fabric
@@ -71,7 +74,7 @@ A [measure](/power-bi/transform-model/desktop-measures) is a collection of stand
 
 1. To create a measure, select the **New Measure** button in the ribbon, as shown in the following image.
 
-    :::image type="content" source="media\default-power-bi-semantic-model\table-explorer-ribbon.png" alt-text="Screenshot showing the table explorer and where the new measure button appears on the ribbon." lightbox="media\default-power-bi-semantic-model\table-explorer-ribbon.png":::
+    :::image type="content" source="media/default-power-bi-semantic-model/table-explorer-ribbon.png" alt-text="Screenshot showing the table explorer and where the new measure button appears on the ribbon." lightbox="media/default-power-bi-semantic-model/table-explorer-ribbon.png":::
 
 1. Enter the measure into the formula bar and specify the table and the column to which it applies. The formula bar lets you enter your measure. For detailed information on measures, see [Tutorial: Create your own measures in Power BI Desktop](/power-bi/transform-model/desktop-tutorial-create-measures).
 
@@ -83,11 +86,11 @@ You can hide elements of your warehouse from downstream reporting by right-click
 
 Select **Hide** in **Report view** from the menu that appears to hide the item from downstream reporting.
 
-:::image type="content" source="media\default-power-bi-semantic-model\hide-report-view-menu.png" alt-text="Screenshot showing where to find the hide option in the context menu.":::
+:::image type="content" source="media/default-power-bi-semantic-model/hide-report-view-menu.png" alt-text="Screenshot showing where to find the hide option in the context menu.":::
 
 You can also hide the entire table and individual columns by using the **Model view** canvas options, as shown in the following image.
 
-:::image type="content" source="media\default-power-bi-semantic-model\model-view-canvas.png" alt-text="Screenshot showing the model view canvas options.":::
+:::image type="content" source="media/default-power-bi-semantic-model/model-view-canvas.png" alt-text="Screenshot showing the model view canvas options.":::
 
 ## Related content
 
