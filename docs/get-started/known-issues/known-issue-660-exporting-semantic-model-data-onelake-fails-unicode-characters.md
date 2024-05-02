@@ -4,7 +4,7 @@ description: A known issue is posted where exporting semantic model data to OneL
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/27/2024
+ms.date: 05/01/2024
 ms.custom: known-issue-660
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-660
 
 When using OneLake integration for semantic models, you can export the data in a semantic model to OneLake. If the semantic model contains table names or column names with unicode characters, the export doesn't work.
 
-**Status:** Open
+**Status:** Fixed: May 1, 2024
 
 **Product Experience:** OneLake
 

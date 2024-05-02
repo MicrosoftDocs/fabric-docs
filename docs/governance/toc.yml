@@ -9,6 +9,8 @@ items:
     href: ../security/index.yml
   - name: Admin documentation
     href: ../admin/index.yml
+  - name: Standards compliance
+    href: standards-compliance.md
 - name: Get started
   items:
   - name: Set up item certification
