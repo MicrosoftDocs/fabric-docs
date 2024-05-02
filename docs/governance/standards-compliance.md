@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: kadejo
 ms.service: fabric
 ms.topic: concept-article #Don't change
-ms.date: 04/29/2024
+ms.date: 05/02/2024
 
 #customer intent: As a Fabric administrator or decision maker, I want to learn about Fabric's adherence to compliance standards.
 
@@ -14,13 +14,13 @@ ms.date: 04/29/2024
 
 # Standards compliance in Microsoft Fabric
 
-This article describes Fabric's adherence to compliance standards and provides links to relevant resources. The target audience is Fabric administrators and others who need to know how and whether Fabric meets their organization's security, privacy, and reliability standards.
+This article describes Microsoft Fabric's adherence to compliance standards and provides links to relevant resources. The target audience is Fabric administrators and others who need to know how and whether Fabric meets their organization's security, privacy, and reliability standards.
 
 ## Introduction
 
 Adherence to compliance standards transcends mere rule-following. It represents a commitment to building software with a foundation of security, privacy, and quality. These frameworks, encompassing legal requirements, industry standards, and internal best practices, serve as guiding principles throughout the development process.
 
-The Fabric service is governed by the [Microsoft Online Services Terms](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31) and the [Microsoft Enterprise Privacy Statement](https://www.microsoft.com/privacystatement/OnlineServices/Default.aspx).
+Microsoft Fabric is governed by the [Microsoft Online Services Terms](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31) and the [Microsoft Enterprise Privacy Statement](https://www.microsoft.com/privacystatement/OnlineServices/Default.aspx).
 
 For the location of data processing, refer to the *Location of Data Processing* terms in the [Microsoft Online Services Terms](https://www.microsoftvolumelicensing.com/Downloader.aspx?DocumentId=9555) and to the [Data Protection Addendum](https://www.microsoft.com/download/details.aspx?id=101581).
 
@@ -50,4 +50,6 @@ For more compliance information, the [Microsoft Trust Center](https://www.micros
 
 ## Related content
 
-* Related content
+* [Fabric governance documentation](./governance/)
+* [Fabric security documentation](../security/)
+* [Fabric admin documentation](../admin/)
