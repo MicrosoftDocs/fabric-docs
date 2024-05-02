@@ -1,20 +1,20 @@
 ### YamlMime:Landing
 
 title: Real-Time Intelligence documentation in Microsoft Fabric
-summary: Gain quick access to data insights with just seconds of provisioning, automatic data streaming, indexing, and partitioning for any data source or format, and on-demand query generation and visualizations. Real-Time Intelligence lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
+summary:  Real-time Intelligence enables the extraction of insights, visualization, and action on data in motion within an organization. It provides an end-to-end solution for event-driven scenarios, streaming data, and data logs, by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions.
 
 metadata:
   title: Real-Time Intelligence in Microsoft Fabric documentation
-  description: Learn about Real-Time Intelligence, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis.
+  description: Learn about Real-Time Intelligence, an end-to-end solution for event-driven scenarios, streaming data, and data logs, by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: real-time-analytics
   ms.custom:
-    - ignite-2023
+    - build-2024
   ms.topic: landing-page
   ms.collection: collection
   author: YaelSchuster
   ms.author: yaschust
-  ms.date: 04/21/2024
+  ms.date: 05/21/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
