@@ -97,9 +97,9 @@ Additionally, shortcuts allow you to easily share data between users and applica
 
 ## Real-time hub - the unification of data streams
 
-Like OneLake, the real-time hub is a foundational location for data in motion.
+The real-time hub is a foundational location for data in motion.
 
-The real-time hub provides a single SaaS experience and tenant-wide logical place for streaming data-in-motion. The real-time hub lists all the [streams](../real-time-intelligence/event-streams/overview.md) and [KQL database](../real-time-intelligence/create-database.md) tables that customers can directly act on. Streams includes **Data streams**, **Microsoft sources** (for example, Azure Event Hubs, Azure IoT Hub, Azure SQL DB Change Data Capture (CDC), Azure Cosmos DB CDC, PostgreSQL DB CDC), and **Fabric events** (Fabric system events and external system events brought in from Azure, Microsoft 365, or other clouds).
+The real-time hub provides a single SaaS experience and tenant-wide logical place for streaming data-in-motion. The real-time hub lists all the [streams](../real-time-intelligence/event-streams/overview.md) and [KQL database](../real-time-intelligence/create-database.md) tables that customers can directly act on. Streams includes [**Data streams**](../real-time-intelligence/event-streams/create-manage-an-eventstream.md), **Microsoft sources** (for example, [Azure Event Hubs](../real-time-hub/add-source-azure-event-hubs.md), [Azure IoT Hub](../real-time-hub/add-source-azure-iot-hub.md), [Azure SQL DB Change Data Capture (CDC)](../real-time-hub/add-source-azure-sql-database-cdc.md), [Azure Cosmos DB CDC](../real-time-hub/add-source-azure-cosmos-db-cdc.md), and [PostgreSQL DB CDC](../real-time-hub/add-source-postgresql-database-cdc.md)), and [**Fabric events**](../real-time-intelligence/event-streams/add-source-fabric-workspace.md) (Fabric system events and external system events brought in from Azure, Microsoft 365, or other clouds).
 
 The real-time hub enables users to easily discover, ingest, manage, and consume data-in-motion from a wide variety of source so that they can collaborate and develop streaming applications within one place. For more information, see [What is the real-time hub?](../real-time-hub/real-time-hub-overview.md)
 
