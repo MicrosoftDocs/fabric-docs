@@ -55,7 +55,7 @@ Microsoft Fabric offers the comprehensive set of analytics experiences designed 
 
 - **Data Warehouse** - Data Warehouse experience provides industry leading SQL performance and scale. It fully separates compute from storage, enabling independent scaling of both the components. Additionally, it natively stores data in the open Delta Lake format. For more information, see [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 
-- **Real-Time Intelligence** - Observational data, which is collected from various sources such as apps, IoT devices, human interactions, and so many more. It's currently the fastest growing data category. This data is often semi-structured in formats like JSON or Text. It comes in at high volume, with shifting schemas. These characteristics make it hard for traditional data warehousing platforms to work with. Real-Time Intelligence is best in class engine for observational data analytics. For more information, see [What is Real-Time Intelligence in Fabric?](../real-time-intelligence/overview.md)
+- **Real-Time Intelligence** -  Real-time intelligence is a comprehensive service that enables the extraction of insights, visualization, and action on data in motion within an organization. It provides an end-to-end solution for event-driven scenarios, streaming data, and data logs, by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions. For more information, see [What is Real-Time Intelligence in Fabric?](../real-time-intelligence/overview.md)
 
 - **Power BI** - Power BI is the world's leading Business Intelligence platform. It ensures that business owners can access all the data in Fabric quickly and intuitively to make better decisions with data. For more information, see [What is Power BI?](/power-bi/fundamentals/power-bi-overview)
 
@@ -94,6 +94,12 @@ All the Microsoft Fabric compute experiences are prewired to OneLake, just like 
 OneLake is designed to allow instant mounting of existing PaaS storage accounts into OneLake with the [Shortcut](../onelake/onelake-shortcuts.md) feature. There's no need to migrate or move any of the existing data. Using shortcuts, you can access the data stored in Azure Data Lake Storage.
 
 Additionally, shortcuts allow you to easily share data between users and applications without moving or duplicating information. The shortcut capability extends to other storage systems, allowing you to compose and analyze data across clouds with transparent, intelligent caching that reduces egress costs and brings data closer to compute.
+
+### Real-time hub
+
+What OneLake is for data at rest, the real-time hub is for data in motion. It is a a single, tenant-wide, unified, logical place for streaming data-in-motion. The real-time hub enables users to easily discover, ingest, manage, and consume data-in-motion from a wide variety of sources. It lists all the streams and [KQL database](../real-time-intelligence/create-database.md) tables that customers can directly act on. It also gives easy access to ingest streaming data from Microsoft products and from Fabric events. Each user in the tenant can view and edit all the events or streams that they have access to. The real-time hub makes it so easy to collaborate and develop streaming applications within one place. 
+
+For more information, see [What is the real-time hub?](../real-time-hub/real-time-hub-overview.md)
 
 ## Fabric solutions for ISVs
 
