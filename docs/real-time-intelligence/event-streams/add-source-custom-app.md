@@ -63,7 +63,7 @@ In the Live view **Details** pane, you can see three categories: **Basic**, **Ke
 
 ![A screenshot showing the Keys information in the Details pane of the eventstream Live view.](media\add-source-custom-app-enhanced\details-event-keys.png)
 
-The connection string is an event hub-compatible connection string you can use in your application to receive events from this eventstream. The **Event hub** format is the default format for the connection string, and is compatible with the Azure Event Hubs SDK. You can use this format to connect to eventstreams by using the Event Hubs protocol.
+The connection string is an event hub-compatible string you can use in your application to receive events from this eventstream. The **Event hub** format is the default format for the connection string, and is compatible with the Azure Event Hubs SDK. You can use this format to connect to eventstreams by using the Event Hubs protocol.
 
 The following example shows what the connection string looks like in **Event hub** format:
 
@@ -109,7 +109,7 @@ If you want to connect your own application with an eventstream, you can add a c
    - **Keys**: Shows the connection string for your custom app, which you can copy and paste into your application.
    - **Sample code**: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstream.
 
-   For each tab (**Basic** / **Keys** / **Sample code**), you can also switch three protocol tabs: **Eventhub**, **AMQP, and **Kafka** to access diverse protocol formats information:
+   For each tab (**Basic** / **Keys** / **Sample code**), you can also switch three protocol tabs: **Eventhub**, **AMQP**, and **Kafka** to access diverse protocol formats information:
 
    The connection string is an event hub compatible connection string, and you can use it in your application to receive events from your eventstream. The connection string has multiple protocol formats, which you can switch and select in the Keys tab. The following example shows what the connection string looks like in Event Hubs format:
 
@@ -151,7 +151,7 @@ To add a destination to an eventstream, see the following articles:
 - [Route events to destinations ](add-manage-eventstream-destinations-enhanced.md)
 - [Custom app destination](add-destination-custom-app-enhanced.md)
 - [Derived stream destination](add-destination-derived-stream.md)
-- [KQL Database destination](add-destination-kql-database-enhanced.md
+- [KQL Database destination](add-destination-kql-database-enhanced.md)
 - [Lakehouse destination](add-destination-lakehouse-enhanced.md)
 - [Reflex destination](add-destination-reflex-enhanced.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
