@@ -1,5 +1,5 @@
 ---
-title: Microsoft Fabric workload architecture
+title: Microsoft Fabric add workload
 description: Learn how to add, remove, and use a workload from the workload hub.
 author: teberco
 ms.author: kesharab
