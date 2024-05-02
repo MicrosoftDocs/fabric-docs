@@ -9,7 +9,7 @@ ms.subservice: powerbi-premium
 ms.custom:
   - ignite-2023-fabric
 ms.topic: concept-article
-ms.date: 04/26/2024
+ms.date: 04/29/2024
 LocalizationGroup: Admin
 ---
 # Direct Lake
@@ -28,7 +28,10 @@ Direct Lake also supports [row-level security](../security/service-admin-object-
 
 ## Prerequisites
 
-Direct Lake is supported on Microsoft Fabric F SKUs only.
+Direct Lake is supported on Microsoft Premium (P) SKUs and Microsoft Fabric (F) SKUs only.
+
+> [!IMPORTANT]
+> For new customers, Direct Lake is supported on Microsoft Fabric (F) SKUs only. Existing customers can continue to use Direct Lake with Premium (P) SKUs, but transitioning to a Fabric capacity SKU is recommended. See the licensing announcement for more information about [Power BI Premium licensing](https://powerbi.microsoft.com/blog/important-update-coming-to-power-bi-premium-licensing/).
 
 ### Lakehouse
 

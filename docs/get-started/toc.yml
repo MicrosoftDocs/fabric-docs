@@ -101,6 +101,8 @@ items:
   href: apply-sensitivity-labels.md
 - name: Delta Lake interoperability
   href: delta-lake-interoperability.md
+- name: Learn about Microsoft Fabric feedback
+  href: feedback.md  
 - name: Fabric adoption roadmap
   items: 
   - name: Introduction
@@ -139,6 +141,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Apps and reports not available when editing scorecard metrics
+      href: known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md
+    - name: Semantic model export to OneLake fails for calculated columns in error state
+      href: known-issues/known-issue-693-semantic-model-export-onelake-fails-calculated-columns.md
     - name: Shortcut data inaccessible if data is in a paused capacity
       href: known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md
     - name: Report Copilot button shows even though Copilot admin setting is off

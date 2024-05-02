@@ -598,6 +598,11 @@ With MSSparkUtils' Lakehouse utilities, managing your Lakehouse artifacts become
 
 Feel free to explore these utilities and incorporate them into your Fabric workflows for seamless Lakehouse artifact management.
 
+
+## Known issue 
+
+When using runtime version above 1.2 and run ``` mssparkutils.help() ```, the listed **fabricClient**, **warehouse**, and **workspace** APIs are not supported for now, will be available in the further.
+
 ## Related content
 
 - [Library management](library-management.md)
