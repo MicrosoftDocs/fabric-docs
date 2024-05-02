@@ -30,6 +30,21 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
+Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-database-for-postgresql-cdc-as-a-source) section. 
+
+## Microsoft sources tab
+
+1. In Real-Time hub, switch to the **Microsoft sources** tab. 
+1. In the **Source** drop-down list, select **PostgreSQL (CDC)**. 
+1. For **Subscription**, select an **Azure subscription** that has the resource group with your Azure MySQL Database account. 
+1. For **Resource group**, select a **resource group** that has the database.
+1. For **Region**, select a location where your database is located. 
+1. Now, move the mouse over the name of the PostgreSQL Database CDC source that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button. 
+
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources tab with filters to show Azure MySQL CDC and the connect button." lightbox="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png":::
+
+    To configure connection information, use steps from the [Add Azure MySQL DB CDC as a source](#add-azure-database-for-postgresql-cdc-as-a-source) section. Skip the first step of selecting Azure MySQL DB CDC as a source type in the Get events wizard. 
+
 ## Add Azure Database for PostgreSQL CDC as a source
 
 1. On the **Select a data source** screen, select **Azure DB for PostgreSQL (CDC)**.
