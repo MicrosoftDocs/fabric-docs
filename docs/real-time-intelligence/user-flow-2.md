@@ -21,7 +21,7 @@ This user flow shows how a data engineer can load and transform events from a wi
 
 ## Steps
 
-1. Browse to the Real-time hub and select **GetEvents**.
+1. Browse to the Real-time hub and select **Get Events**.
 1. The supported connectors are shown. Choose a connector based on where your streaming source is located.
 1. Provide connections to the source, including credentials.
 1. Name the stream. A new eventstream  is created and data starts to flow in.
