@@ -3,7 +3,7 @@ title: Microsoft Fabric add workload
 description: Learn how to add, remove, and use a workload from the workload hub.
 author: teberco
 ms.author: kesharab
-ms.reviewer: teberco
+ms.reviewer: teddyberco
 ms.topic: concept
 ms.custom:
 ms.date: 05/02/2024
