@@ -43,7 +43,9 @@ While certifications typically occur after a product launch (Generally Available
 Compliance is a shared responsibility. To comply with laws and regulations, cloud service providers and their customers enter a shared responsibility to ensure that each does their part.
 
 * Compliance Offerings - [Compliance offerings for Microsoft 365, Azure, and other Microsoft services. | Microsoft Learn](/compliance/regulatory/offering-home)
+
 * Audit Reports - [Service Trust Portal Home Page (microsoft.com)](https://servicetrust.microsoft.com/ViewPage/HomePageVNext)
+
 * Compliance is a Shared Responsibility - [Shared responsibility in the cloud - Microsoft Azure | Microsoft Learn](/azure/security/fundamentals/shared-responsibility?toc=%2Fcompliance%2Fassurance%2Ftoc.json&bc=%2Fcompliance%2Fassurance%2Fbreadcrumb%2Ftoc.json)
 
 For more compliance information, the [Microsoft Trust Center](https://www.microsoft.com/trustcenter) is the primary resource for Fabric. For more information about compliance, see [Microsoft compliance offerings](/compliance/regulatory/offering-home).
