@@ -50,6 +50,6 @@ For more compliance information, the [Microsoft Trust Center](https://www.micros
 
 ## Related content
 
-* [Fabric governance documentation](./governance/index.md)
-* [Fabric security documentation](../security/index.md)
-* [Fabric admin documentation](../admin/index.md)
+* [Fabric governance documentation](./index.yml)
+* [Fabric security documentation](../security/index.yml)
+* [Fabric admin documentation](../admin/index.yml)
