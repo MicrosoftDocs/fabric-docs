@@ -43,10 +43,21 @@ Data sources are reusable references to a specific database in the same workspac
 
     :::image type="content" source="media/real-time-dashboard/new-data-source.png" alt-text="Screenshot of adding a new data source to a Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::
 
-1. In the **Create new data source** pane:
-    1. Enter a **Data source name**.
-    1. Select a **Database** from the drop-down list.
-1. Select **Create**.
+1. From the dropdown menu, select one of the following options:
+    * **OneLake data hub**: Use this option to add a KQL database as a data source.
+        1. In the **Create new data source** pane:
+            1. Enter a **Data source name**.
+            1. Select a **Database** from the drop-down list.
+        1. Select **Create**.
+    * **Azure Data Explorer**: Use this option to add an Azure Data Explore cluster as a data source.
+        1. Under **Connection URI**, enter the cluster URI.
+
+            To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI is the URI found in the Overview. To add a free sample cluster, specify "help" as the **Connection URI**.
+
+            :::image type="content" source="media/kusto-query-set/connect-to-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect cluster button is highlighted.":::
+
+        1. Under **Database**, select the dropdown menu to expand the list of databases in your cluster, and then select a database.
+        1. Select **Connect**.
   
 ## Add tile
 
