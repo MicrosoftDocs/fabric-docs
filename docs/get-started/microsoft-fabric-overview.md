@@ -95,11 +95,13 @@ OneLake is designed to allow instant mounting of existing PaaS storage accounts 
 
 Additionally, shortcuts allow you to easily share data between users and applications without moving or duplicating information. The shortcut capability extends to other storage systems, allowing you to compose and analyze data across clouds with transparent, intelligent caching that reduces egress costs and brings data closer to compute.
 
-### Real-time hub
+## Real-time hub - the unification of data streams
 
-What OneLake is for data at rest, the real-time hub is for data in motion. It is a a single, tenant-wide, unified, logical place for streaming data-in-motion. The real-time hub enables users to easily discover, ingest, manage, and consume data-in-motion from a wide variety of sources. It lists all the streams and [KQL database](../real-time-intelligence/create-database.md) tables that customers can directly act on. It also gives easy access to ingest streaming data from Microsoft products and from Fabric events. Each user in the tenant can view and edit all the events or streams that they have access to. The real-time hub makes it so easy to collaborate and develop streaming applications within one place. 
+Like OneLake, the real-time hub is a foundational location for data in motion.
 
-For more information, see [What is the real-time hub?](../real-time-hub/real-time-hub-overview.md)
+The real-time hub provides a single SaaS experience and tenant-wide logical place for streaming data-in-motion. The real-time hub lists all the [streams](../real-time-intelligence/event-streams/overview.md) and [KQL database](../real-time-intelligence/create-database.md) tables that customers can directly act on. Streams includes **Data streams**, **Microsoft sources** (for example, Azure Event Hubs, Azure IoT Hub, Azure SQL DB Change Data Capture (CDC), Azure Cosmos DB CDC, PostgreSQL DB CDC), and **Fabric events** (Fabric system events and external system events brought in from Azure, Microsoft 365, or other clouds).
+
+The real-time hub enables users to easily discover, ingest, manage, and consume data-in-motion from a wide variety of source so that they can collaborate and develop streaming applications within one place. For more information, see [What is the real-time hub?](../real-time-hub/real-time-hub-overview.md)
 
 ## Fabric solutions for ISVs
 
