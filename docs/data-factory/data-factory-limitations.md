@@ -18,13 +18,11 @@ For service level outages or degradation notifications, check [Microsoft Fabric 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
 - Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) and [event triggers](/azure/data-factory/how-to-create-custom-event-trigger) aren't yet available.
-- Pipelines don't support Continuous Integration and Continuous Delivery (CI/CD).
 - Connectors don't support OAuth, Azure key vault (AKV), and Managed System Identity (MSI).
 - Connectors can't use parameters.
 - GetMetaData activity can't have a source from Fabric KQL databases.
 - Script activity can't have a source from Fabric KQL databases.
 - Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and resource URI.
-- Custom activities aren't available in Fabric pipelines. Use Azure Batch activity instead.
 - Data pipelines are scoped to their workspace, and can't interact with items in other workspaces.
 - Pipelines can't use a managed VNet.
 - Web activity does not support service principal based authentication.
