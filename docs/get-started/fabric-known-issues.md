@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 04/30/2024
+ms.date: 05/01/2024
 ms.custom:
 ---
 
@@ -20,18 +20,20 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
-|  694  | Power BI | [Apps and reports not available when editing scorecard metrics](known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md) | April 30 2024 |
-|  693  | Power BI | [Semantic model export to OneLake fails for calculated columns in error state](known-issues/known-issue-693-semantic-model-export-onelake-fails-calculated-columns.md) | April 30 2024 |
+|  711  | Power BI | [Azure Analysis Services Pricing Tier scaling table doesn't show data](known-issues/known-issue-711-azure-analysis-services-table-not-show-data.md) | May 1, 2024 |
+|  710  | OneLake | [OneLake audit events don't show up in Microsoft 365 admin center](known-issues/known-issue-710-onelake-audit-events-not-show-microsoft-365-admin-center.md) | May 1, 2024 |
+|  709  | Data Factory | [Query folding indicators are incorrect for certain Power Query SDK based connectors](known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md) | May 1, 2024 |
+|  708  | Data Warehouse | [SQL endpoint and semantic model are orphaned when a lakehouse is deleted](known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md) | May 1, 2024 |
+|  702  | Data Factory | [SQL database mirror doesn't start when you create connection during mirror creation](known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md) | May 1, 2024 |
+|  694  | Power BI | [Apps and reports not available when editing scorecard metrics](known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md) | April 30, 2024 |
+|  693  | Power BI | [Semantic model export to OneLake fails for calculated columns in error state](known-issues/known-issue-693-semantic-model-export-onelake-fails-calculated-columns.md) | April, 30 2024 |
 |  701  | OneLake | [Shortcut data inaccessible if data is in a paused capacity](known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md) | April 25, 2024 |
 |  690  | Power BI | [Report Copilot button shows even though Copilot admin setting is off](known-issues/known-issue-690-report-copilot-button-shows-admin-setting-off.md) | April 25, 2024 |
 |  689  | Administration & Management | [Copilot and Azure OpenAI service capacity setting delegation postponed](known-issues/known-issue-689-copilot-service-capacity-setting-delegation-postponed.md) | April 25, 2024 |
-|  679  | Power BI | [Copy visual as image for report and dashboard visuals is broken](known-issues/known-issue-679-copy-visual-image-report-dashboard-visuals-broken.md) | April 11, 2024 |
-|  678  | Administration & Management | [Git integrated workspaces incorrectly show status of Uncommitted](known-issues/known-issue-678-git-integrated-workspaces-show-status-uncommitted.md) | April 11, 2024 |
 |  670  | Power BI | [Filled or bubble layers on Azure Maps visual doesn't render](known-issues/known-issue-670-filled-bubble-layers-azure-maps-visual-render.md) | April 11, 2024 |
 |  667  | Power BI | [Upload reports from OneDrive or SharePoint fails](known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md) | April 1, 2024 |
 |  664  | Data Factory | [Creating or opening a Dataflow Gen2 dataflow shows endless spinner](known-issues/known-issue-664-creating-opening-dataflow-gen2-shows-endless-spinner.md) | April 1, 2024 |
 |  663  | Data Factory | [Creating or opening a Dataflow Gen2 dataflow fails if capacity is inactive](known-issues/known-issue-663-creating-opening-dataflow-gen2-fails-capacity-inactive.md) | April 1, 2024 |
-|  660  | OneLake | [Exporting semantic model data to OneLake fails due to unicode characters](known-issues/known-issue-660-exporting-semantic-model-data-onelake-fails-unicode-characters.md) | March 28, 2024 |
 |  658  | Data Engineering | [PySpark import statements fail for .jar files installed through environment](known-issues/known-issue-658-pyspark-import-statements-fail-jar-files-installed.md) | March 28, 2024 |
 |  657  | OneLake | [Cross-region internal shortcuts don't work with SQL analytics endpoints](known-issues/known-issue-657-cross-region-internal-shortcuts-dont-work-sql-analytics-endpoints.md) | March 28, 2024 |
 |  647  | Data Engineering | [Library management updates with public python libraries time-out](known-issues/known-issue-647-library-management-updates-public-python-libraries-time-out.md) | March 14, 2024 |
@@ -44,7 +46,6 @@ Select the **Title** to view more information about that specific known issue.
 |  616  | OneLake | [Under-billing of OneLake storage for January 26 2024](known-issues/known-issue-616-under-billing-onelake-storage.md) | February 14, 2024 |
 |  597  | Data Factory   | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md) | November 6, 2023 |
 |  592  | Data Warehouse | [Relationships in the default semantic model get dropped](known-issues/known-issue-592-relationships-default-semantic-model-dropped.md)  | January 8, 2024 |
-|  581  | Administration & Management | [Product switcher and creation process inadvertently show Fabric experiences](known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md)  | December 15, 2023 |
 |  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 |
 |  552  | Power BI  |  [Autoscale not triggered by carry forward accumulated usage](known-issues/known-issue-552-autoscale-not-triggered-carry-forward-accumulated-usage.md)   | November 22, 2023  |
 |  549  | Data Warehouse | [Making model changes to a semantic model might not work](known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md)  | November 15, 2023 |
@@ -65,6 +66,10 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  679  | Power BI | [Copy visual as image for report and dashboard visuals is broken](known-issues/known-issue-679-copy-visual-image-report-dashboard-visuals-broken.md) | April 11, 2024 | Fixed: May 1, 2024 |
+|  678  | Administration & Management | [Git integrated workspaces incorrectly show status of Uncommitted](known-issues/known-issue-678-git-integrated-workspaces-show-status-uncommitted.md) | April 11, 2024 | Fixed: May 1, 2024 |
+|  660  | OneLake | [Exporting semantic model data to OneLake fails due to unicode characters](known-issues/known-issue-660-exporting-semantic-model-data-onelake-fails-unicode-characters.md) | March 28, 2024 | Fixed: May 1, 2024 |
+|  581  | Administration & Management | [Product switcher and creation process inadvertently show Fabric experiences](known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md)  | December 15, 2023 | Fixed: May 1, 2024 |
 |  665  | Power BI | [Currency format is unavailable in web modeling](known-issues/known-issue-665-currency-format-unavailable-web-modeling.md) | April 1, 2024 | Fixed: April 25, 2024 |
 |  611  | OneLake | [OneLake storage isn't billed for paused capacities](known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md) | February 2, 2024 | Fixed: April 25, 2024 |
 |  642  | Data Engineering | [Load Table public API response returns error](known-issues/known-issue-642-load-table-public-api-response-returns-error.md) | March 5, 2024 | Fixed: April 1, 2024 |
