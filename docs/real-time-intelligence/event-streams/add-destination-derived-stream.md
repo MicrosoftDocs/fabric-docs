@@ -27,11 +27,11 @@ To route event data to a derived stream destination, follow these steps to add t
 
    - Hover over the operator and select the **+** symbol, then select **Stream** as the destination.
 
-     ![Screenshot of adding the new stream by selecting the + symbol on the operator.](media/add-destination-derived-stream/.png)
+     ![Screenshot of adding the new stream by selecting the + symbol on the operator.](media/add-destination-derived-stream/select-stream.png)
 
    - Select **Destination** from the ribbon and select **Stream**. Then drag the new derived stream to connect it to the operator node.
 
-     ![Screenshot of adding the new stream by selecting Stream and connecting the new stream to the operator.](media/add-destination-derived-stream/.png)
+     ![Screenshot of adding the new stream by selecting Stream and connecting the new stream to the operator.](media/add-destination-derived-stream/select-stream-ribbon.png)
 
 1. On the **Derived Stream** screen, give the stream a name, specify the data format, and select **Save**.
 
@@ -43,11 +43,11 @@ To route event data to a derived stream destination, follow these steps to add t
 
 After you complete these steps, the derived stream appears on the canvas in **Live view**. You can view the **Details** pane. If you add a Reflex or custom endpoint destination after your derived **Stream** node, you can also see **Data Insights** and **Data Preview**.
 
-![Screenshot of the eventstream in Live view with the Details pane.](media/add-destination-derived-stream/.png)
+![Screenshot of the eventstream in Live view with the Details pane.](media/add-destination-derived-stream/live-view.png)
 
 You can also access this stream in Real-Time hub.
 
-![Screenshot of the derived eventstream listed in Real-Time hub.](media/add-destination-derived-stream/.png)
+![Screenshot of the derived eventstream listed in Real-Time hub.](media/add-destination-derived-stream/real-time-hub.png)
 
 ## Related content 
 
