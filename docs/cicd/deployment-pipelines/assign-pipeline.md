@@ -72,7 +72,7 @@ Pairing is the process by which an item in one stage of the deployment pipeline 
 Pairing can happen in one of two ways:
 </a>
 
-* Deployment: when items are copied from one stage to another using the **Deploy** button they're automatically paired.
+* Deployment: when an unpaired item is copied from one stage to another using the *Deploy* button, the previously unpaired item is automatically paired with the copy.
 * Assigning a workspace to a deployment stage: when a workspace is assigned to a deployment stage the deployment pipeline attempts to pair items. The pairing criteria are:
 
   * Item Name
