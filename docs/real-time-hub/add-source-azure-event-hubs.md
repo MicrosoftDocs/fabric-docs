@@ -53,8 +53,8 @@ Use instructions from the [Add an Azure event hub as a source](#add-an-azure-eve
 
     :::image type="content" source="./media/add-source-azure-event-hubs/new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/add-source-azure-event-hubs/new-connection-button.png":::     
 1. In the **Connection settings** section, do these steps:
-    1. Enter the name of the Event Hubs namespace.
-    1. Enter the name of the event hub.
+    1. Enter the **name of the Event Hubs namespace**.
+    1. Enter the **name of the event hub**.
 
         :::image type="content" source="./media/add-source-azure-event-hubs/select-namespace-event-hub.png" alt-text="Screenshot that shows the connection settings with Event Hubs namespace and the event hub specified." lightbox="./media/add-source-azure-event-hubs/select-namespace-event-hub.png":::
 1. In the **Connection credentials** section, do these steps:

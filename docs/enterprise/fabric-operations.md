@@ -146,9 +146,9 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 | XMLA read | XMLA read operations initiated by the user, for queries and discoveries  | Semantic model | Power BI Capacity Usage CU | Interactive |
 | XMLA write | A background XMLA write operation that changes the model  | Semantic model | Power BI Capacity Usage CU | Background |
 
-### Real-Time Analytics
+### Real-Time Intelligence
 
-The Real-Time analytics experience contains operations for [Event streams](#event-streams) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Event streams](#event-streams) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
 #### Event streams
 

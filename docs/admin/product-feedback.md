@@ -15,7 +15,7 @@ Product [feedback](../get-started/feedback.md) allows users to give Microsoft fe
 
 Product feedback is configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](about-tenant-settings.md).
 
-To disable or reenable product feedback, follow the following steps:
+To disable product feedback, follow the following steps:
 
 1. From the tenant settings, expand **Product feedback**.
 

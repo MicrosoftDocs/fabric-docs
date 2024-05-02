@@ -21,8 +21,9 @@ items:
     href: ../real-time-intelligence/user-flow-5.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json 
 - name: Get events and create data streams
   items:
+  - name: Supported sources
+    href: supported-sources.md
   - name: Microsoft sources
-    href: get-events-microsoft-sources.md
     items:
     - name: Azure Event Hubs
       href: add-source-azure-event-hubs.md
@@ -37,7 +38,6 @@ items:
     - name: Azure Cosmos DB Change Data Capture
       href: add-source-azure-cosmos-db-cdc.md
   - name: External sources 
-    href: get-events-external-sources.md
     items:
     - name: Google Cloud Pub/Sub
       href: add-source-google-cloud-pub-sub.md
@@ -47,14 +47,10 @@ items:
       href: add-source-confluent-kafka.md
   - name: Fabric events
     items:    
-    - name: Create streams for Fabric events
-      href: create-streams-fabric-events.md
-    - name: Get Azure blob storage events and create streams
+    - name: Get Azure Blob Storage events and create streams
       href: get-azure-blob-storage-events.md      
     - name: Create streams for Fabric workspace item events
       href: create-streams-fabric-workspace-item-events.md
-  - name: Create derived streams
-    href: ../real-time-intelligence/event-streams/create-default-derived-streams.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
 - name: Discover and manage data streams and events
   items:
   - name: Explore data streams
@@ -68,9 +64,10 @@ items:
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md    
   - name: Explore Fabric events
-    href: explore-fabric-events.md
     items:
-    - name: Explore Azure blob storage events
+    - name: Fabric events tab
+      href: explore-fabric-events.md    
+    - name: Explore Azure Blob Storage events
       href: explore-azure-blob-storage-events.md
     - name: Explore Fabric workspace item events
       href: explore-fabric-workspace-item-events.md
@@ -81,7 +78,7 @@ items:
   - name: Set alerts on Fabric events
 
     items:
-    - name: Set alerts on Azure blob storage events
+    - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
     - name: Set alerts on Fabric workspace item events
       href: set-alerts-fabric-workspace-item-events.md
