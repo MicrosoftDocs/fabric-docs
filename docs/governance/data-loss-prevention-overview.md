@@ -110,11 +110,11 @@ When a DLP policy detects an issue with an item:
 
 * If "user notification" is enabled in the policy, the item will be marked in Fabric with an icon that indicates that a DLP policy has detected an issue with the item. Selecting the icon brings up a hover card that provides an option to see more details in a side panel.
 
-    :::image type="content" source="./media/service-security-dlp-policies-for-power-bi-overview/power-bi-dlp-policy-tip-on-dataset.png" alt-text="Screenshot of policy tip badge on semantic model in lists.":::
+    :::image type="content" source="./media/data-loss-prevention-overview/power-bi-dlp-policy-tip-on-dataset.png" alt-text="Screenshot of policy tip badge on semantic model in lists.":::
 
     For semantic models, opening the details page will show a policy tip that explains the policy violation and how the type of sensitive information detected should be handled. Selecting **View all** opens a side panel with all the policy details.
 
-    :::image type="content" source="./media/service-security-dlp-policies-for-power-bi-overview/power-bi-dlp-policy-tip-in-dataset-details.png" alt-text="Screenshot of policy tip on semantic model details page.":::
+    :::image type="content" source="./media/data-loss-prevention-overview/power-bi-dlp-policy-tip-in-dataset-details.png" alt-text="Screenshot of policy tip on semantic model details page.":::
 
     >[!NOTE]
     > If you hide the policy tip, it doesn’t get deleted. It will appear the next time you visit the page.
@@ -123,13 +123,13 @@ When a DLP policy detects an issue with an item:
 
 * If alerts are enabled in the policy, an alert will be recorded on the data loss prevention **Alerts** page in the compliance portal, and (if configured) an email will be sent to administrators and/or specified users. The following image shows the **Alerts** page in the data loss prevention section of the compliance portal. To get to the **Alerts** page, in the compliance portal, expand the **Data loss prevention** solution and choose **Alerts**.
 
-    :::image type="content" source="./media/service-security-dlp-policies-for-power-bi-overview/power-bi-dlp-alerts-tab.png" alt-text="Screenshot of Alerts tab in the compliance portal.":::
+    :::image type="content" source="./media/data-loss-prevention-overview/power-bi-dlp-alerts-tab.png" alt-text="Screenshot of Alerts tab in the compliance portal.":::
 
 ## Monitor and manage policy alerts
 
 Log into the [Microsoft Purview compliance portal](https://go.microsoft.com/fwlink/p/?linkid=2077149), expand the **Data loss prevention** solution, and choose **Alerts**.
 
-:::image type="content" source="./media/service-security-dlp-policies-for-power-bi-overview/power-bi-dlp-alerts-tab.png" alt-text="Screenshot of D L P Alerts tab.":::
+:::image type="content" source="./media/data-loss-prevention-overview/power-bi-dlp-alerts-tab.png" alt-text="Screenshot of D L P Alerts tab.":::
 
 Select an alert to start drilling down to its details and to see management options.
 
