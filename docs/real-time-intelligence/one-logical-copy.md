@@ -1,5 +1,5 @@
 ---
-title: One logical copy (Preview)
+title: One logical copy
 description: Learn how to turn on KQL Database data availability in OneLake.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -8,9 +8,10 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/21/2024
+ms.date: 05/02/2024
 ---
-# One logical copy (Preview)
+
+# One logical copy
 
 You can create a one logical copy of KQL Database data by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
 
@@ -46,7 +47,7 @@ You can turn on **OneLake availability** either on a KQL database or table level
 
     :::image type="content" source="media/one-logical-copy/onelake-availability.png" alt-text="Screenshot of the Database details pane in Real-Time Intelligence showing an overview of the database with the edit OneLake availability option highlighted." lightbox="media/one-logical-copy/onelake-availability.png":::
 
-1. Turn on the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically. 
+1. Turn on the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically.
 
     :::image type="content" source="media/one-logical-copy/enable-data-copy.png" alt-text="Screenshot of the OneLake folder details window in Real-Time Intelligence in Microsoft Fabric. The option to expose data to OneLake is turned on.":::
 
@@ -57,7 +58,7 @@ You've turned on **OneLake availability** in your KQL database. You can now acce
 When you [turn on OneLake availability](#turn-on-onelake-availability) on a table, a delta log folder is created along with any corresponding JSON and parquet files. You can view the files that were made available in OneLake and their properties while remaining within Real-Time Intelligence.
 
 > [!IMPORTANT]
-> It might take up to a few hours for the files to appear after turning on **OneLake availability**.
+> It can take up to a few hours for the files to appear after turning on **OneLake availability**.
 
 * To view the files, hover over a table in the **Explorer** pane and then select the **More menu [...]** > **View files**.
 
@@ -70,25 +71,44 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
     1. Select the **_delta_log** folder.
     1. Select a file to view the table metadata and schema. The editor that opens is in read-only format.
 
+## Check latency
+
+When OneLake availability is turned on, the system checks your kql database for new data every few hours and then copies that data to the Delta lake files. You can monitor the latency of your data to determine how long ago new data was added to your Kusto table to determine around when your data will be copied next. To check the current latency run the following query:
+
+```kusto
+.show table * policy mirroring
+
+.show table Logs1 operations mirroring-status
+
+```
+
+A result of zero means that data was just copied. Results are measured from the last time data was copied. For more information about the .show table command, see [.show table details command](/azure/data-explorer/kusto/management/show-table-details-command?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric).
+ 
 ## Data types mapping
 
 ### Event house to Delta parquet data types mapping
 
  Event house data types are mapped to Delta Parquet data types using the following rules. For more information on Event house data types, see [Scalar data types](/azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric).
 
-| Event house Data Type | Delta Data Type 
-| --------------- | ----------------- 
-| `bool`     | `boolean` 
-| `datetime` | `timestamp OR date (for date-bound partition definitions)` 
-| `dynamic`  | `string` 
-| `guid` | `string`
-| `int` | `integer`
-| `long` | `long`
-| `real` | `double`
-| `string` | `string` 
-| `timespan` | `long`
-| `decimal` | `decimal(38,18)`
+| Event house Data Type | Delta Data Type |
+| --------------- | -----------------
+| `bool`     | `boolean` |
+| `datetime` | `timestamp OR date (for date-bound partition definitions)` |
+| `dynamic`  | `string` |
+| `guid` | `string` |
+| `int` | `integer` |
+| `long` | `long` |
+| `real` | `double` |
+| `string` | `string` |
+| `timespan` | `long` |
+| `decimal` | `decimal(38,18)` |
 
+## Partition OneLake files
+
+You can partition your OneLake files in cases of need.
+1. Use the command line In cases where 
+1. 
+For information about when to partition your OneLake files, see [When to partition tables on Azure Databricks](/azure/databricks/tables/partitions).
 
 ## Related content
 
