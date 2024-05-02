@@ -45,34 +45,34 @@ More connectors will be available soon during the private preview, and will reac
 ## Step by step walkthrough
 
 1. Log into the [DXT environment](https://dxt.powerbi.com).
-1. Select Copy job (preview).
+1. Select **Copy job (preview)**.
 
-   :::image type="content" source="media/copy-job/copy-job.png" alt-text="Screenshot showing where to select the Copy job (preview).":::
+   :::image type="content" source="media/copy-job/copy-job.png" lightbox="media/copy-job/copy-job.png" alt-text="Screenshot showing where to select the Copy job (preview).":::
 
-1. After providing a name for the job, you can connect to any of the support data stores and provide your credentials to connect.
+1. After providing a name for the job, you can connect to any of the supported data stores and provide your credentials to connect.
 
-   :::image type="content" source="media/copy-job/choose-data-source.png" alt-text="Screenshot showing where to choose the data source for your Copy job.":::
+   :::image type="content" source="media/copy-job/choose-data-source.png" lightbox="media/copy-job/choose-data-source.png" alt-text="Screenshot showing where to choose the data source for your Copy job.":::
 
 1. Next, select tables and columns to be copied.
 
-   :::image type="content" source="media/copy-job/select-tables-columns.png" alt-text="Screenshot showing where to select the tables and columns to be copied in the job.":::
+   :::image type="content" source="media/copy-job/select-tables-columns.png" lightbox="media/copy-job/select-tables-columns.png" alt-text="Screenshot showing where to select the tables and columns to be copied in the job.":::
 
 1. Select your destination store and provide its credentials.
 
-   :::image type="content" source="media/copy-job/select-destination-store.png" alt-text="Screenshot showing where to select the destination store for the copy job.":::
+   :::image type="content" source="media/copy-job/select-destination-store.png" lightbox="media/copy-job/select-destination-store.png" alt-text="Screenshot showing where to select the destination store for the copy job.":::
 
 1. Configure table mapping or column mapping if needed.
 
-   :::image type="content" source="media/copy-job/specify-mappings.png" alt-text="Screenshot showing where to specify table or column mappings for the job.":::
+   :::image type="content" source="media/copy-job/specify-mappings.png" lightbox="media/copy-job/specify-mappings.png" alt-text="Screenshot showing where to specify table or column mappings for the job.":::
 
-1. Select the copy mode, either full copy or incremental copy continuously.
+1. Select the copy mode, either **Full copy** or **Incremental copy continuously**.
 
 1. Select **Run** on the Home toolbar at the top of the editor to copy your data.
 
-   :::image type="content" source="media/copy-job/run-job.png" alt-text="Screenshot showing where to select Run to start the copy job.":::
+   :::image type="content" source="media/copy-job/run-job.png" lightbox="media/copy-job/run-job.png" alt-text="Screenshot showing where to select Run to start the copy job.":::
 
 1. Finally, check your destination store to validate the data was copied as expected.
 
-## Next steps
+## Related content
 
-Stay updated with the latest features and announcements related to Data Factory by following the [Azure Data Factory blog](https://azure.microsoft.com/blog/topics/data-factory/).
+Stay updated with the latest Data Factory features and announcements at the [Fabric Data Factory blog](https://blog.fabric.microsoft.com/en-us/blog/category/data-factory).
