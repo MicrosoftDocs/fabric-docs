@@ -1,6 +1,6 @@
 ---
 title: Create a Real-Time Dashboard
-description: Learn how to visualize data with Real-Time Dashboards
+description: Learn how to visualize data with Real-Time Dashboards.
 ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
@@ -12,7 +12,7 @@ ms.search.form: product-kusto, Real-Time Dashboard
 
 A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance.
 
-In this article, you learn how to create a new Real-Time Dashboard, add data sources, and add tiles to the dashboard. You will also learn how to enable auto refresh, use parameters, and export dashboards.
+In this article, you learn how to create a new Real-Time Dashboard, add data sources, and add tiles to the dashboard. You also learn how to enable auto refresh, use parameters, and export dashboards.
 
 > [!IMPORTANT]
 > Your data is secure. Dashboards and dashboard-related metadata about users are encrypted at rest using Microsoft-managed keys.
@@ -73,9 +73,9 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 
 You can add tiles to your dashboard directly from kql queries written in a queryset.
 
-1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset)
+1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 
-1. [Write a query](kusto-query-set.md#write-a-query)
+1. [Write a query](kusto-query-set.md#write-a-query).
 
 1. Select **pin to dashboard**.
     :::image type="content" source="media/real-time-dashboard/queryset-pin-query.png" alt-text="Screenshot of the pin query to dashboard button in a queryset query.":::
@@ -110,7 +110,7 @@ Parameters significantly improve dashboard rendering performance, and enable you
 You can view the query in either editing or viewing mode. Editing the underlying query of a tile is only possible in editing mode.
 
 1. On the tile you want to explore, select the **More menu [...]** > **View query**.
-    
+
     A pane opens with the query and results table.
 
 1. Select **Edit query**.
