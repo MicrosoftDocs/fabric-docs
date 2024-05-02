@@ -29,7 +29,7 @@ Each workload includes additional information describing workload capabilities a
 3. "Publisher support": Documentation, Certification page & Help links by the workload publisher.
 4. Videos and screenshots material by the publisher.
 
-# Adding and removing workloads
+## Adding and removing workloads
 Users, which were granted permission to add a workload by Fabric admin and are also capacity admins or allowed to assign capacities to workspaces can add workloads.
 
 1. Select add workload.
@@ -43,7 +43,7 @@ Added workloads can be added to more capacities or removed completely. Once the 
 To remove a workload first press "Manage capacities," deselect all capacities and press update.
 :::image type="content" source="./media/more-workloads-add/remove.png" alt-text="Remove workload":::
 
-# Using added workloads
+## Using added workloads
 
 Added workloads are now available under "My workloads" section and all workspace members with the relevant capacities assigned to them can now see the workload under "my workloads."
 To see only workloads added by the organization choose the "added by my organization" filter.
