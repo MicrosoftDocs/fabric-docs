@@ -37,9 +37,6 @@ To route event data to a derived stream destination, follow these steps to add t
 
    ![Screenshot of the Derived Stream screen with Save highlighted.](media/add-destination-derived-stream/derived-stream.png)
 
-   >[!NOTE]
-   > Only JSON format is valid for derived streams.
-
 1. After you create the derived stream, it appears in your eventstream on the canvas in **Edit mode**. You can continue processing your data by adding operations and destinations after the derived stream. To implement your changes, select **Publish**.
 
    ![Screenshot of the derived stream in Edit mode, with Publish highlighted.](media/add-destination-derived-stream/edit-mode.png)
