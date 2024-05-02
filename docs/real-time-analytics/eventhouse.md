@@ -48,7 +48,7 @@ The databases page of an Eventhouse shows you database information either in lis
 
 ## Minimum consumption
 
-Your event house is designed to optimize cost by suspending the service when not in use. To reactivate the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, use **Minimum consumption**. When activated, the service is always available at the selected minimum level, and you pay at least the minimum compute selected (or actual use) while no longer paying for premium storage. The specified compute is available to all the databases within the Eventhouse. The free premium storage alotted to the customer is limited, and corresponds to the minimum consumption levels as shown in the following table:
+Your event house is designed to optimize cost by suspending the service when not in use. To reactivate the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, use **Minimum consumption**. When activated, the service is always available at the selected minimum level, and you pay at least the minimum compute selected (or actual use) while no longer paying for premium storage. The specified compute is available to all the databases within the Eventhouse. The free premium storage allotted to the customer is limited, and corresponds to the minimum consumption levels as shown in the following table:
 
 [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
 
