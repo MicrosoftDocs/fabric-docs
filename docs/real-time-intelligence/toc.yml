@@ -71,9 +71,9 @@ items:
       - name: Add a sample data source
         href: event-streams/add-source-sample-data.md              
       - name: Custom endpoint
-        href: event-streams/add-source-custom-app-enhanced.md
+        href: event-streams/add-source-custom-app.md
       - name: Sample data
-        href: event-streams/add-source-sample-data-enhanced.md
+        href: event-streams/add-source-sample-data.md
       - name: Azure SQL Database Change Data Capture (preview)
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
       - name: PostgreSQL Database Change Data Capture (preview)
