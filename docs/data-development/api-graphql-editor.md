@@ -1,15 +1,15 @@
 ---
-title: Microsoft Fabric GraphQL API editor
-description: Learn about the Microsoft Fabric GraphQL API editor, including where to find the editor and what the editor screen looks like. 
+title: Microsoft Fabric API for GraphQL editor
+description: Learn about the Fabric API for GraphQL editor, including where to find the editor and what the editor screen looks like. 
 ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: conceptual
 ms.search.form: GraphQL query editor
-ms.date: 04/05/2024
+ms.date: 05/02/2024
 ---
 
-# GraphQL API editor
+# Fabric API for GraphQL editor
 
 > [!NOTE]
 > Microsoft Fabric API for GraphQL is in preview.
@@ -18,11 +18,11 @@ The Fabric API for GraphQL provides a graphical in-browser GraphQL development e
 
 To go to the API editor, navigate to the Data Development experience and select the **Query** button at the lower left corner of your Fabric portal screen.
 
-:::image type="content" source="media/graphql-api-editor/query-view-button.png" alt-text="Screenshot showing where the Query option appears next to the Fabric experience selector in the lower left corner.":::
+:::image type="content" source="media/api-graphql-editor/query-view-button.png" alt-text="Screenshot showing where the Query option appears next to the Fabric experience selector in the lower left corner.":::
 
 You can type code directly on the **Query** tab. Intellisense capabilities are available with a keyboard shortcut: CTRL + Space (Windows), or Command + Space (macOS).
 
-:::image type="content" source="media/graphql-api-editor/query-editor-intellisense.png" alt-text="Screenshot of the GraphQL API editor screen, which has a Query tab that is divided into Run, Query variables, and Results panes." lightbox="media/graphql-api-editor/query-editor-intellisense.png":::
+:::image type="content" source="media/api-graphql-editor/query-editor-intellisense.png" alt-text="Screenshot of the GraphQL API editor screen, which has a Query tab that is divided into Run, Query variables, and Results panes." lightbox="media/api-graphql-editor/query-editor-intellisense.png":::
 
 ## Development of queries and mutations
 
@@ -133,4 +133,4 @@ Variables make the mutation code cleaner, easier to read, test, and modify the p
 
 ## Related content
 
-- [Fabric GraphQL API schema view and Schema explorer](graphql-schema-view.md)
+- [Fabric API for GraphQL schema view and Schema explorer](graphql-schema-view.md)

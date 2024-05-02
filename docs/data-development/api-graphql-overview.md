@@ -1,12 +1,12 @@
 ---
-title: Microsoft Fabric GraphQL API overview
-description: Learn about the Microsoft Fabric GraphQL API, including supported data sources and how to expose them to a GraphQL item.
+title: Microsoft Fabric API for GraphQL overview
+description: Learn about the Microsoft Fabric API for GraphQL, including supported data sources and how to expose them to a GraphQL item.
 ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: overview
 ms.search.form: GraphQL API Overview
-ms.date: 04/05/2024
+ms.date: 05/02/2024
 ---
 
 # What is Microsoft Fabric API for GraphQL?
@@ -38,7 +38,7 @@ The Fabric API for GraphQL includes:
 
 ## Related content
 
-- [Create and add data to GraphQL API in Microsoft Fabric](get-started-graphql-api.md)
-- [Connect applications to Fabric GraphQL API](connect-apps-graphql-api.md)
-- [GraphQL API frequently asked questions](graphql-api-faq.md)
+- [Create an API for GraphQL and add data](get-started-api-graphql.md)
+- [Connect applications to Fabric API for GraphQL](connect-apps-api-graphql.md)
+- [Fabric GraphQL frequently asked questions](graphql-faq.md)
 - [GraphQL query language](https://graphql.org/learn)

@@ -1,15 +1,15 @@
 ---
-title: Fabric GraphQL API schema view and Schema explorer
-description: Learn about the Microsoft Fabric GraphQL API schema view and the Schema explorer pane, including how to modify objects.
+title: Fabric API for GraphQL schema view and Schema explorer
+description: Learn about the Fabric API for GraphQL schema view and the Schema explorer pane, including how to modify objects.
 ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: conceptual
 ms.search.form: GrpahQL schema view
-ms.date: 04/05/2024
+ms.date: 05/02/2024
 ---
 
-# GraphQL API Schema view and Schema explorer
+# Fabric API for GraphQL schema view and Schema explorer
 
 > [!NOTE]
 > Microsoft Fabric API for GraphQL is in preview.
@@ -18,14 +18,14 @@ The GraphQL schema defines the format of the data exposed in the API and it's ba
 
 ## Schema view
 
-You can access the Schema View by selecting "Schema" in the lower left. The view shows a text-based version of the GraphQL SDL with generated types, fields and operations.
+You can access the schema view by selecting **Schema** in the lower left. The view shows a text-based version of the GraphQL SDL with generated types, fields and operations.
 
 The following image is an example of the schema view, including an extensive list of objects available in this schema.
 
 > [!NOTE]
 > The Schema view is read only. You can only modify objects in the Schema explorer.
 
-:::image type="content" source="media/get-started-graphql-api/schema-view.png" alt-text="Screenshot of the GraphQL API schema view screen, which includes the Schema explorer in the left pane." lightbox="media/get-started-graphql-api/schema-view.png":::
+:::image type="content" source="media/get-started-api-graphql/schema-view.png" alt-text="Screenshot of the GraphQL API schema view screen, which includes the Schema explorer in the left pane." lightbox="media/get-started-api-graphql/schema-view.png":::
 
 ## Schema explorer
 
@@ -61,4 +61,4 @@ These options are available:
 
 ## Related content
 
-- [Fabric GraphQL API editor](graphql-api-editor.md)
+- [Fabric API for GraphQL editor](api-graphql-editor.md)

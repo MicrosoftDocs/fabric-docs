@@ -3,20 +3,20 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is GraphQL API?
-    href: graphql-api-overview.md
+  - name: What is API for GraphQL?
+    href: api-graphql-overview.md
 - name: Get started
   items:
-  - name: Create a GraphQL API
-    href: get-started-graphql-api.md
+  - name: Create an API for GraphQL
+    href: get-started-api-graphql.md
 - name: Concepts
   items:
-  - name: GraphQL API editor
-    href: graphql-api-editor.md
+  - name: API for GraphQL editor
+    href: api-graphql-editor.md
   - name: Schema view and explorer
     href: graphql-schema-view.md
   - name: Frequently asked questions
-    href: graphql-api-faq.md
+    href: graphql-faq.md
 - name: How-to guides
   items:
   - name: Manage relationships

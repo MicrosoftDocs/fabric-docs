@@ -1,11 +1,11 @@
 ---
 title: Microsoft Fabric GraphQL FAQ
-description: Find answers to frequently asked questions about Microsoft Fabric GraphQL API, which is currently in preview.
+description: Find answers to frequently asked questions about Microsoft Fabric API for GraphQL, which is currently in preview.
 ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: faq
-ms.date: 04/05/2024
+ms.date: 05/02/2024
 ---
 
 # Fabric GraphQL frequently asked questions
@@ -29,4 +29,4 @@ Yes, currently the Fabric API for GraphQL supports passthrough authentication. M
 
 ## Related content
 
-- [What is Microsoft Fabric GraphQL API?](graphql-api-overview.md)
+- [What is Microsoft Fabric API for GraphQL?](api-graphql-overview.md)

@@ -1,6 +1,6 @@
 ---
-title: Manage relationships in Fabric GraphQL API
-description: Learn how to manage relationships in Fabric GraphQL API, including how to create and delete relationships.
+title: Manage relationships in Fabric API for GraphQL
+description: Learn how to manage relationships in Fabric API for GraphQL, including how to create and delete relationships.
 ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
@@ -9,10 +9,10 @@ ms.search.form: GraphQL manage relationships
 ms.date: 04/05/2024
 ---
 
-# Manage relationships in GraphQL API
+# Manage relationships in Fabric API for GraphQL
 
 > [!NOTE]
-> Microsoft Fabric GraphQL API is in preview.
+> Microsoft Fabric API for GraphQL is in preview.
 
 One of the most powerful features in GraphQL is the ability to establish relationships across types.
 
@@ -41,4 +41,4 @@ You can delete a relationship from the **Manage relationships** screen by select
 
 ## Related content
 
-- [Fabric GraphQL API editor](graphql-api-editor.md)
+- [Fabric API for GraphQL editor](api-graphql-editor.md)
