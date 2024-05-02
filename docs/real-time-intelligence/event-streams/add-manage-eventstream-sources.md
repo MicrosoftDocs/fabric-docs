@@ -47,8 +47,8 @@ Fabric event streams with enhanced capabilities support the following sources. E
 - [Confluent Cloud Kafka](add-source-confluent-kafka.md)
 - [Fabric workspace events](add-source-fabric-workspace.md)
 - [Azure blob storage events](add-source-azure-blob-storage.md)
-- [Sample data](add-source-sample-data-enhanced.md)
-- [Custom endpoint](add-source-custom-app-enhanced.md) 
+- [Sample data](add-source-sample-data.md)
+- [Custom endpoint](add-source-custom-app.md) 
 
 ## Related content
 
