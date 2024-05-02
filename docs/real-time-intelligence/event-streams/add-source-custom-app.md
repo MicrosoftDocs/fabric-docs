@@ -144,7 +144,7 @@ To learn how to add other sources to an eventstream, see the following articles:
 - [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
 - [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
 - [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
-- [Sample data](add-source-sample-data-enhanced.md)
+- [Sample data](add-source-sample-data.md)
 
 To add a destination to an eventstream, see the following articles:
 

@@ -92,7 +92,7 @@ To learn how to add other sources to an eventstream, see the following articles:
 - [Azure IoT Hub](add-source-azure-iot-hub.md)
 - [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
 - [Confluent Kafka](add-source-confluent-kafka.md)
-- [Custom endpoint](add-source-custom-app-enhanced.md)
+- [Custom endpoint](add-source-custom-app.md)
 - [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
 - [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
 - [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
