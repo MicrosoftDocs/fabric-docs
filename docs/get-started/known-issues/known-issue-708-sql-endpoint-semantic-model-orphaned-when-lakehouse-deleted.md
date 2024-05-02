@@ -22,7 +22,7 @@ When a lakehouse is deleted, the associated SQL analytics endpoint and the defau
 
 ## Solutions and workarounds
 
-Once the fix for this issue is released, the orphaned items will be deleted automatically.
+Once the fix for this issue is released, the orphaned items are deleted automatically.
 
 ## Next steps
 
