@@ -82,7 +82,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Derived stream](add-destination-derived-stream.md)    
 - [KQL Database](add-destination-kql-database-enhanced.md)   
 - [Lakehouse](add-destination-lakehouse-enhanced.md)
-- [Reflex](add-destination-reflex-enhanced.md)
+- [Reflex](add-destination-reflex.md)
 
 To add a destination to the eventstream, see the following articles:     
 

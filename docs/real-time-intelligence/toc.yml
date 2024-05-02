@@ -99,7 +99,7 @@ items:
       - name: Lakehouse
         href: event-streams/add-destination-lakehouse-enhanced.md
       - name: Reflex
-        href: event-streams/add-destination-reflex-enhanced.md
+        href: event-streams/add-destination-reflex.md
       - name: Custom endpoint
         href: event-streams/add-destination-custom-app-enhanced.md
     - name: Process events using event processor

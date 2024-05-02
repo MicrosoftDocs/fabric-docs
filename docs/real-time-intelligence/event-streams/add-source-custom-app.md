@@ -151,5 +151,5 @@ To add a destination to an eventstream, see the following articles:
 - [Derived stream destination](add-destination-derived-stream.md)
 - [KQL Database destination](add-destination-kql-database-enhanced.md)
 - [Lakehouse destination](add-destination-lakehouse-enhanced.md)
-- [Reflex destination](add-destination-reflex-enhanced.md)
+- [Reflex destination](add-destination-reflex.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
