@@ -30,7 +30,13 @@ landingContent:
           - text: Real-Time Intelligence Tutorial
             url: tutorial-introduction.md
 
-
+  # Card 
+  - title: Real-time hub
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is the Real-time hub?
+            url: ../real-time-hub/real-time-hub-overview.md
 
   # Card 
   - title: Get data
