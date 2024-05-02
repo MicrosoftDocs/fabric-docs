@@ -1,0 +1,369 @@
+{
+  "redirections": [
+    {
+      "source_path_from_root": "/docs/context/context-rta.json.yml",
+      "redirect_url": "/fabric/context/context-rti.json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/index.yml",
+      "redirect_url": "/fabric/real-time-intelligence/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/access-database-copy-uri.md",
+      "redirect_url": "/fabric/real-time-intelligence/access-database-copy-uri",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/create-database.md",
+      "redirect_url": "/fabric/real-time-intelligence/create-database",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/create-empty-table.md",
+      "redirect_url": "/fabric/real-time-intelligence/create-empty-table",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/create-eventhouse.md",
+      "redirect_url": "/fabric/real-time-intelligence/create-eventhouse",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/create-functions.md",
+      "redirect_url": "/fabric/real-time-intelligence/create-functions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/create-powerbi-report.md",
+      "redirect_url": "/fabric/real-time-intelligence/create-powerbi-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/create-query-set.md",
+      "redirect_url": "/fabric/real-time-intelligence/create-query-set",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/customize-results.md",
+      "redirect_url": "/fabric/real-time-intelligence/customize-results",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/data-connectors/data-connectors.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-connectors/data-connectors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/data-management.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/data-policies.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-policies",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/database-shortcut.md",
+      "redirect_url": "/fabric/real-time-intelligence/database-shortcut",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/add-destination-custom-app.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-destination-custom-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/add-destination-kql-database.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-destination-kql-database",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/add-destination-lakehouse.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-destination-lakehouse",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/add-destination-reflex.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-destination-reflex",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/add-manage-eventstream-destinations.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-manage-eventstream-destinations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/add-manage-eventstream-sources.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-manage-eventstream-sources",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/add-source-azure-event-hubs.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-source-azure-event-hubs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/add-source-azure-iot-hub.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-source-azure-iot-hub",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/add-source-custom-app.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-source-custom-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/add-source-sample-data.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-source-sample-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/build-report-from-iot-hub.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/build-report-from-iot-hub",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/configure-settings.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/configure-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/create-manage-an-eventstream.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/create-manage-an-eventstream",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/get-data-from-eventstream-in-multiple-fabric-items.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/get-data-from-eventstream-in-multiple-fabric-items",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/includes/sources-destinations-note.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/includes/sources-destinations-note",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/manage-eventstream.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/manage-eventstream",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/monitor-capacity-consumption.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/monitor-capacity-consumption",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/monitor.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/monitor",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/overview.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/preview-data.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/preview-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/process-events-using-event-processor-editor.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/process-events-using-event-processor-editor",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/stream-real-time-events-from-custom-app-to-kusto.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/stream-real-time-events-from-custom-app-to-kusto",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/transform-and-stream-real-time-events-to-lakehouse.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/transform-and-stream-real-time-events-to-lakehouse",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/transform-sample-data-and-route-to-kql.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/transform-sample-data-and-route-to-kql",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/eventhouse.md",
+      "redirect_url": "/fabric/real-time-intelligence/eventhouse",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/get-data-amazon-s3.md",
+      "redirect_url": "/fabric/real-time-intelligence/get-data-amazon-s3",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/get-data-azure-storage.md",
+      "redirect_url": "/fabric/real-time-intelligence/get-data-azure-storage",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/get-data-event-hub.md",
+      "redirect_url": "/fabric/real-time-intelligence/get-data-event-hub",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/get-data-eventstream.md",
+      "redirect_url": "/fabric/real-time-intelligence/get-data-eventstream",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/get-data-flink.md",
+      "redirect_url": "/fabric/real-time-intelligence/get-data-flink",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/get-data-kafka.md",
+      "redirect_url": "/fabric/real-time-intelligence/get-data-kafka",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/get-data-local-file.md",
+      "redirect_url": "/fabric/real-time-intelligence/get-data-local-file",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/get-data-log4j2.md",
+      "redirect_url": "/fabric/real-time-intelligence/get-data-log4j2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/get-data-onelake.md",
+      "redirect_url": "/fabric/real-time-intelligence/get-data-onelake",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/ingestion-supported-formats.md",
+      "redirect_url": "/fabric/real-time-intelligence/ingestion-supported-formats",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/keyboard-shortcuts.md",
+      "redirect_url": "/fabric/real-time-intelligence/keyboard-shortcuts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/kql-database-consumption.md",
+      "redirect_url": "/fabric/real-time-intelligence/kql-database-consumption",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/kusto-query-set.md",
+      "redirect_url": "/fabric/real-time-intelligence/kusto-query-set",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/materialized-view.md",
+      "redirect_url": "/fabric/real-time-intelligence/materialized-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/notebooks.md",
+      "redirect_url": "/fabric/real-time-intelligence/notebooks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/one-logical-copy.md",
+      "redirect_url": "/fabric/real-time-intelligence/one-logical-copy",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/onelake-shortcuts.md",
+      "redirect_url": "/fabric/real-time-intelligence/onelake-shortcuts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/overview.md",
+      "redirect_url": "/fabric/real-time-intelligence/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/power-bi-data-connector.md",
+      "redirect_url": "/fabric/real-time-intelligence/power-bi-data-connector",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/python-plugin.md",
+      "redirect_url": "/fabric/real-time-intelligence/python-plugin",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/query-table.md",
+      "redirect_url": "/fabric/real-time-intelligence/query-table",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/realtime-analytics-compare.md",
+      "redirect_url": "/fabric/real-time-intelligence/real-time-intelligence-compare",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/sample-gallery.md",
+      "redirect_url": "/fabric/real-time-intelligence/sample-gallery",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/schema-best-practice.md",
+      "redirect_url": "/fabric/real-time-intelligence/schema-best-practice",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/spark-connector.md",
+      "redirect_url": "/fabric/real-time-intelligence/spark-connector",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/table-update-policy.md",
+      "redirect_url": "/fabric/real-time-intelligence/table-update-policy",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/tutorial-1-resources.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-1-resources",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/tutorial-2-event-streams.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-2-event-streams",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/tutorial-3-get-historical-data.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-get-historical-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/tutorial-4-explore.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-explore",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/tutorial-5-advanced-kql-query.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-advanced-kql-query",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/tutorial-6-build-report.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-build-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/tutorial-7-clean-up-resources.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-7-clean-up-resources",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/tutorial-introduction.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-introduction",
+      "redirect_document_id": false
+    }
+  ]
+}

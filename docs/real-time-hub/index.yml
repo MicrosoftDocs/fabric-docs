@@ -1,0 +1,74 @@
+### YamlMime:Landing
+
+title: Real-Time hub (preview) in Microsoft Fabric documentation
+summary: Microsoft Fabric Real-Time hub (preview) is a single, unified, logical storage for data in motion.
+
+metadata:
+  title: Real-Time hub in Microsoft Fabric documentation
+  description: Real-Time hub is a single, unified, logical storage for data in motion.
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice: onelake
+  ms.custom:
+    - build-2024
+  ms.topic: landing-page
+  ms.collection: collection # Optional; Remove if no collection is used.
+  author: spelluru
+  ms.author: spelluru
+  ms.date: 04/02/2024
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card 
+  - title: About Real-Time hub
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Real-Time hub?
+            url: real-time-hub-overview.md
+      - linkListType: get-started
+        links:
+          - text: Bring data into Real-Time hub
+            url: get-started-real-time-hub.md
+
+  # Card 
+  - title: Get events and create streams
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Supported sources
+            url: supported-sources.md
+          - text: Get Azure blob storage events
+            url: get-azure-blob-storage-events.md
+          - text: Create streams for Fabric workspace item events
+            url: create-streams-fabric-workspace-item-events.md
+
+
+  # Card 
+  - title: Discover and manage streams
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Explore streams
+            url: explore-data-streams.md
+          - text: View stream details
+            url: view-data-stream-details.md
+          - text: Preview streams
+            url: preview-data-streams.md
+          - text: Endorse streams
+            url: endorse-data-streams.md
+          - text: Explore Fabric events
+            url: explore-fabric-events.md
+
+  # Card 
+  - title: Consume events and streams
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+        - text: Set alerts on streams
+          url: set-alerts-data-streams.md
+        - text: Set alerts on Azure blob storage events
+          url: set-alerts-azure-blob-storage-events.md
+        - text: Set alerts on Fabric workspace item events
+          url: set-alerts-fabric-workspace-item-events.md

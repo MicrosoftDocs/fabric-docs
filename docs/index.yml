@@ -33,9 +33,9 @@ highlightedContent:
       itemType: overview
       url: security/security-overview.md
     # Card
-    - title: Join the Fabric Community Conference
-      itemType: whats-new
-      url: https://fabricconf.com/#!/
+    - title:  Choose a Fabric data store
+      itemType: concept
+      url: get-started/decision-guide-data-store.md
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
@@ -49,7 +49,7 @@ highlightedContent:
 conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   sections:
-    - title: Microsoft Fabric shared platform experiences # < 60 chars (Optional; Remove if not applicable.)
+    - title: Microsoft Fabric shared platform # < 60 chars (Optional; Remove if not applicable.)
       summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
@@ -154,7 +154,7 @@ conceptualContent:
             text: See more
 
 productDirectory:
-  title: Explore Microsoft Fabric experiences
+  title: Explore Microsoft Fabric
   summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
   items:
     # Card
@@ -187,6 +187,22 @@ productDirectory:
         - url: onelake/onelake-azure-synapse-analytics.md
           text: Integration with Azure Synapse Analytics
         - url: onelake/index.yml
+          text: See more
+
+    # Card
+    - title: Real-time hub
+
+      imageSrc: ./media/real-time-hub-icon.png
+      links:
+        - url: real-time-hub/real-time-hub-overview.md
+          text: What is Real-time hub?
+        - url: real-time-hub/get-started-real-time-hub.md
+          text: Bring your data to Real-time hub
+        - url: real-time-hub/explore-data-streams.md
+          text: Explore streams
+        - url: real-time-hub/set-alerts-data-streams.md
+          text: Set alerts on streams
+        - url: real-time-hub/index.yml
           text: See more
 
     # Card
@@ -254,19 +270,19 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Synapse Real-Time Analytics
+    - title: Real-Time Intelligence
 
-      imageSrc: ./media/synapse-real-time-analytics-icon.png
+      imageSrc: ./media/synapse-real-time-intelligence-icon.png
       links:
-        - url: real-time-analytics/overview.md
-          text: What is Real-Time Analytics?
-        - url: real-time-analytics/event-streams/overview.md
-          text: What is Event streams?
-        - url: real-time-analytics/create-database.md
+        - url: real-time-intelligence/overview.md
+          text: What is Real-Time Intelligence?
+        - url: real-time-intelligence/event-streams/overview.md
+          text: What is Fabric event streams?
+        - url: real-time-intelligence/create-database.md
           text: Create a database
-        - url: real-time-analytics/query-table.md
+        - url: real-time-intelligence/query-table.md
           text: Query with KQL
-        - url: real-time-analytics/index.yml
+        - url: real-time-intelligence/index.yml
           text: See more
 
     # Card
@@ -277,7 +293,7 @@ productDirectory:
         - url: data-activator/data-activator-introduction.md
           text: What is Data Activator?
         - url: data-activator/data-activator-get-data-eventstreams.md
-          text: Get data from Eventstreams
+          text: Get data from an eventstream
         - url: data-activator/data-activator-tutorial.md
           text: Create objects and triggers - Tutorial 
         - url: data-activator/index.yml
@@ -307,9 +323,9 @@ productDirectory:
         - url: /industry/sustainability/sustainability-data-solutions-overview
           text: What is Sustainability data solutions? 
         - url: /industry/healthcare/healthcare-data-solutions/overview
-          text: Healthcare data solutions in Microsoft Fabric
-        - url: /industry/retail/retail-data-solutions/deploy-retail-data-solutions
-          text: Deploy Retail data solutions
+          text: What is healthcare data solutions?
+        - url: /industry/healthcare/healthcare-data-explorer/overview
+          text: What is healthcare data explorer?
         - url: /industry/industry-data-solutions-fabric
           text: See more
 

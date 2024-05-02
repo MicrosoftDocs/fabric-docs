@@ -10,7 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 12/22/2023
+ms.date: 04/18/2024
 ---
 
 # OneLake shortcuts
@@ -45,7 +45,7 @@ When you create a shortcut in a KQL database, it appears in the **Shortcuts** fo
 
 ## Where can I access shortcuts?
 
-Any Fabric or non-Fabric service that can access data in OneLake can use shortcuts. Shortcuts are transparent to any service accessing data through the OneLake API. Shortcuts just appear as another folder in the lake. Spark, SQL, Real-Time Analytics, and Analysis Services can all use shortcuts when querying data.
+Any Fabric or non-Fabric service that can access data in OneLake can use shortcuts. Shortcuts are transparent to any service accessing data through the OneLake API. Shortcuts just appear as another folder in the lake. Spark, SQL, Real-Time Intelligence, and Analysis Services can all use shortcuts when querying data.
 
 ### Spark
 
@@ -73,7 +73,7 @@ SELECT TOP (100) *
 FROM [MyLakehouse].[dbo].[MyShortcut]
 ```
 
-### Real-Time Analytics
+### Real-Time Intelligence
 
 Shortcuts in KQL databases are recognized as external tables. To query the shortcut, use the `external_table` function of the Kusto Query Language.
 
@@ -125,6 +125,9 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 - **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
 - **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute
 - **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
+
+> [!NOTE]
+> You must have Hierarchical Namespaces enabled on your ADLS Gen 2 storage account.
 
 ### S3 shortcuts
 
@@ -201,7 +204,7 @@ Dataverse shortcuts use a delegated authorization model. In this model, the shor
 > [!NOTE]
 > Service Principals are currently not supported for Dataverse shortcut authorization.
 
-## Caching (Preview)
+## Caching
 Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24hrs it is purged from the cache. Individual files greater than 1GB in size are not cached.
 > [!NOTE]
 > Shortcut caching is currently only supported for GCS, S3 and S3 compatible shortcuts.
@@ -283,12 +286,11 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - The maximum number of shortcuts per Fabric item is 100,000. In this context, the term item refers to: apps, lakehouses, warehouses, reports, and more.
 - The maximum number of shortcuts in a single OneLake path is 10.
 - The maximum number of direct shortcuts to shortcut links is 5.
-- ADLS and S3 shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2).
+- ADLS and S3 shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2). For allowed characters, see [RFC 3968 section 2.3](https://www.rfc-editor.org/rfc/rfc3986#section-2.3).
 - OneLake shortcut names, parent paths, and target paths can't contain "%" or "+" characters.
 - Shortcuts don't support non-Latin characters.
 - Copy Blob API not supported for ADLS or S3 shortcuts.
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
-- OneLake shortcuts pointing to ADLS or S3 shortcuts isn't supported.
 - Additional shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models is not currently available.
 

@@ -1,10 +1,12 @@
 ---
 title: Workload management
 description: Learn how Microsoft manages data warehouse compute resources to service workloads.
-author: realAngryAnalytics
-ms.author: stevehow
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: stevehow
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -22,7 +24,7 @@ The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](incl
 
 The processing system is serverless in that backend compute capacity scales up and down autonomously to meet workload demands.
 
-:::image type="content" source="media\workload-management\sql-engine-diagram.svg" alt-text="Diagram of the SQL engine." lightbox="media\workload-management\sql-engine-diagram.svg":::
+:::image type="content" source="media/workload-management/sql-engine-diagram.svg" alt-text="Diagram of the SQL engine.":::
 
 When a query is submitted, the SQL frontend (FE) performs query optimization to determine the best plan based on the data size and complexity. Once the plan is generated, it is given to the Distributed Query Processing (DQP) engine. The DQP orchestrates distributed execution of the query by splitting it into smaller queries that are executed on backend compute nodes. Each small query is called a **task** and represents a distributed execution unit. It reads file(s) from [OneLake](../onelake/onelake-overview.md), joins results from other tasks, groups, or orders data retrieved from other tasks. For ingestion jobs, it also writes data to the proper destination tables.
 
@@ -32,7 +34,7 @@ When data is processed, results are returned to the SQL frontend for serving bac
 
 Backend compute capacity benefits from a fast provisioning architecture. Although there is no SLA on resource assignment, typically new nodes are acquired within a few seconds. As resource demand increases, new workloads use the scaled-out capacity. Scaling is an online operation and query processing goes uninterrupted.
 
-:::image type="content" source="media\workload-management\scaling-diagram.svg" alt-text="Diagram that shows fast provisioning of resources." lightbox="media\workload-management\scaling-diagram.svg":::
+:::image type="content" source="media/workload-management/scaling-diagram.svg" alt-text="Diagram that shows fast provisioning of resources.":::
 
 The system is fault tolerant and if a node becomes unhealthy, operations executing on the node are redistributed to healthy nodes for completion.
 
@@ -54,7 +56,7 @@ When pressure subsides, backend topology scales back down and releases resource 
 
 In the backend compute pool of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], loading activities are provided resource isolation from analytical workloads. This improves performance and reliability, as ingestion jobs can run on dedicated nodes that are optimized for ETL and do not compete with other queries or applications for resources.
 
-:::image type="content" source="media\workload-management\etl-isolation.svg" alt-text="Diagram that shows isolation of ingestion activities." lightbox="media\workload-management\etl-isolation.svg":::
+:::image type="content" source="media/workload-management/etl-isolation.svg" alt-text="Diagram that shows isolation of ingestion activities.":::
 
 ## Best practices
 
@@ -62,7 +64,7 @@ The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a 
 
 [OneLake shortcuts](../onelake/onelake-shortcuts.md) can be used to create read-only replicas of tables in other workspaces to distribute load across multiple SQL engines, creating an isolation boundary. This can effectively increase the maximum number of sessions performing read-only queries.
 
-:::image type="content" source="media\workload-management\workspace-isolation.svg" alt-text="Diagram that shows isolation of two workspaces, for example, the Finance and the Marketing workspace." lightbox="media\workload-management\workspace-isolation.svg":::
+:::image type="content" source="media/workload-management/workspace-isolation.svg" alt-text="Diagram that shows isolation of two workspaces, for example, the Finance and the Marketing workspace.":::
 
 ## Related content
 

@@ -1,19 +1,21 @@
 ---
 title: Delta Lake logs in Warehouse
 description: Learn how Warehouse in Microsoft Fabric publishes Delta Lake logs
-author: KevinConanMSFT
-ms.author: kecona
-ms.reviewer: wiassaf
-ms.date: 12/11/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: kecona
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
-# Delta Lake logs in Warehouse in Microsoft Fabric 
+# Delta Lake logs in Warehouse in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is built up open file formats. User tables are stored in parquet file format, and Delta Lake logs are published for all user tables.  
 
@@ -27,7 +29,7 @@ The following steps detail how to get the OneLake path from a table in a warehou
 
 1. In the **Object Explorer**, you find more options **(...)** on a selected table in the **Tables** folder. Select the **Properties** menu.
 
-   :::image type="content" source="media\query-delta-lake-logs\select-properties.png" alt-text="Screenshot showing where to find the Properties option on a selected table." lightbox="media\query-delta-lake-logs\select-properties.png":::
+   :::image type="content" source="media/query-delta-lake-logs/select-properties.png" alt-text="Screenshot showing where to find the Properties option on a selected table.":::
 
 1. On selection, the **Properties** pane shows the following information:
    1. Name
@@ -37,7 +39,7 @@ The following steps detail how to get the OneLake path from a table in a warehou
    1. Relative path
    1. [ABFS path](/azure/storage/blobs/data-lake-storage-introduction-abfs-uri)
 
-   :::image type="content" source="media\query-delta-lake-logs\properties-details.png" alt-text="Screenshot of the Properties pane." lightbox="media\query-delta-lake-logs\properties-details.png":::
+   :::image type="content" source="media/query-delta-lake-logs/properties-details.png" alt-text="Screenshot of the Properties pane." lightbox="media/query-delta-lake-logs/properties-details.png":::
 
 ## How to get Delta Lake logs path
 
@@ -49,7 +51,7 @@ You can locate Delta Lake logs via the following methods:
  
 - Delta Lake logs can be found in the `_delta_log` folder of each table through the OneLake Explorer  in Windows, as shown in the following screenshot.
 
-    :::image type="content" source="media/query-delta-lake-logs/onelake-explorer-delta-log.png" alt-text="A screenshot of the Windows OneLake Explorer, showing the path to the delta logs folder for the call_center table.":::
+    :::image type="content" source="media/query-delta-lake-logs/onelake-explorer-delta-log.png" alt-text="Screenshot of the Windows OneLake Explorer, showing the path to the delta logs folder for the call_center table." lightbox="media/query-delta-lake-logs/onelake-explorer-delta-log.png":::
 
 ## Limitations
 

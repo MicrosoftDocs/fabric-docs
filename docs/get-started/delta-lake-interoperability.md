@@ -41,7 +41,7 @@ Export Power BI semantic models into OneLake|Yes|N/A (not applicable)|Yes|No|Yes
 KQL databases|Yes|Yes|No|No<sup>*</sup>|Yes|Yes|Reader: 1<br/>Writer: 1|
 Eventstreams|No|No|No|No|Yes|N/A (not applicable)|Reader: 1<br/>Writer: 2|
 
-<sup>*</sup> KQL databases provide certain table maintenance capabilities such as [retention](../real-time-analytics/data-policies.md). Data is removed at the end of the retention period from OneLake. For more information, see [One Logical copy](../real-time-analytics/one-logical-copy.md).
+<sup>*</sup> KQL databases provide certain table maintenance capabilities such as [retention](../real-time-intelligence/data-policies.md). Data is removed at the end of the retention period from OneLake. For more information, see [One Logical copy](../real-time-intelligence/one-logical-copy.md).
 
 > [!NOTE]
 >
@@ -63,5 +63,5 @@ Currently, Fabric doesn't support these Delta Lake features:
 
 * [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 * Learn more about [Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md) in Fabric Lakehouse and Synapse Spark.
-* [Learn about Direct Lake in Power BI and Microsoft Fabric](/power-bi/enterprise/directlake-overview).
+* [Learn about Direct Lake in Power BI and Microsoft Fabric](direct-lake-overview.md).
 * Learn more about [querying tables from the Warehouse through its published Delta Lake Logs](../data-warehouse/query-delta-lake-logs.md).

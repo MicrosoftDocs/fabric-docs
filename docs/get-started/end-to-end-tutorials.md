@@ -24,7 +24,7 @@ The following table lists tutorials that span multiple Fabric experiences.
 |---------|---------|
 |[Lakehouse](../data-engineering/tutorial-lakehouse-introduction.md) | In this tutorial, you ingest, transform, and load the data of a fictional retail company, Wide World Importers, into the lakehouse and analyze sales data across various dimensions.  |
 |[Data Science](../data-science/tutorial-data-science-introduction.md)    |  In this tutorial, you explore, clean, and transform a taxicab trip semantic model, and build a machine learning model to predict trip duration at scale on a large semantic model.   |
-|[Real-Time Analytics](../real-time-analytics/tutorial-introduction.md)   | In this tutorial, you use the streaming and query capabilities of Real-Time Analytics to analyze the New York Yellow Taxi trip semantic model. You uncover essential insights into trip statistics, taxi demand across the boroughs of New York, and other related insights. |
+|[Real-Time Intelligence](../real-time-intelligence/tutorial-introduction.md)   | In this tutorial, you use the streaming and query capabilities of Real-Time Intelligence to analyze the New York Yellow Taxi trip semantic model. You uncover essential insights into trip statistics, taxi demand across the boroughs of New York, and other related insights. |
 |[Data warehouse](../data-warehouse/tutorial-introduction.md) |  In this tutorial, you build an end-to-end data warehouse for the fictional Wide World Importers company. You ingest data into data warehouse, transform it using T-SQL and pipelines, run queries, and build reports. |
 
 ## Experience-specific tutorials

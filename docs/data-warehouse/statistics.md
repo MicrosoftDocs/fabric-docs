@@ -1,10 +1,12 @@
 ---
 title: Statistics
 description: Learn how to use the statistics features.
-author: mstehrani
-ms.author: emtehran
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: emtehran
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -13,7 +15,7 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 ---
 # Statistics in Fabric data warehousing
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] uses a query engine to create an execution plan for a given SQL query. When you submit a query, the query optimizer tries to enumerate all possible plans and choose the most efficient candidate. To determine which plan would require the least overhead (I/O, CPU, memory), the engine needs to be able to evaluate the amount of work or rows that might be processed at each operator. Then, based on each plan's cost, it chooses the one with the least amount of estimated work. Statistics are objects that contain relevant information about your data, to allow query optimizer to estimate these costs.
 
@@ -76,7 +78,7 @@ The following T-SQL objects can also be used to check both manually created and 
 
 Whenever you issue a query and query optimizer requires statistics for plan exploration, [!INCLUDE [product-name](../includes/product-name.md)] will automatically create those statistics if they don't already exist. Once statistics have been created, query optimizer can utilize them in estimating the plan costs of the triggering query. In addition, if the query engine determines that existing statistics relevant to query no longer accurately reflect the data, those statistics will be automatically refreshed. Because these automatic operations are done synchronously, you can expect the query duration to include this time if the needed statistics do not yet exist or significant data changes have happened since the last statistics refresh. 
 
-### To verify automatic statistics at querytime
+### <a id="to-verify-automatic-statistics-at-querytime"></a> Verify automatic statistics at querytime
 
 There are various cases where you can expect some type of automatic statistics. The most common are histogram-based statistics, which are requested by the query optimizer for columns referenced in GROUP BYs, JOINs, DISTINCT clauses, filters (WHERE clauses), and ORDER BYs. For example, if you want to see the automatic creation of these statistics, a query will trigger creation if statistics for `COLUMN_NAME` do not yet exist. For example:
 
