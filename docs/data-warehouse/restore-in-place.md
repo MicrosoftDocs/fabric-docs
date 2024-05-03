@@ -83,7 +83,7 @@ To restore a warehouse in-place, choose a restore point and issue a restore comm
 
 ### Security
 
-- Any member of the Admin, Member, or Contributor [workspace roles](workspace-roles.md) can create and rename the user-defined restore points.
+- Any member of the Admin, Member, or Contributor [workspace roles](workspace-roles.md) can create, delete, or rename the user-defined restore points.
 - Only a member of the Admin [workspace role](workspace-roles.md) can perform a restore from a system-generated or user-defined restore point.
 
 ## Limitations
