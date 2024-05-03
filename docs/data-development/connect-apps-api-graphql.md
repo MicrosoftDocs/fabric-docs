@@ -14,19 +14,21 @@ ms.date: 05/02/2024
 > [!NOTE]
 > Microsoft Fabric API for GraphQL is in preview.
 
+To connect an application to an API for GraphQL, you get the API endpoint and paste the URI into the application.
+
 ## Prerequisites
 
-If you haven't created an API for GraphQL, follow the steps in [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
+Before you connect an application, you must create an API for GraphQL. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
 
 ## Obtain the API for GraphQL endpoint
 
-To connect your application to the API, first you must obtain the API endpoint:
+To obtain the API endpoint:
 
 1. Navigate to your API item in the Fabric portal.
 
 1. Select **Copy endpoint** on the API item's toolbar.
 
-   :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint.png" alt-text="Screenshot of the toolbar options of a API item.":::
+   :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint.png" alt-text="Screenshot of the toolbar options for an API item.":::
 
 1. In the **Copy link** screen, select **Copy**.
 
