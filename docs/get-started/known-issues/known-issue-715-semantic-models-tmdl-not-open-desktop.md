@@ -3,7 +3,7 @@ title: Known issue - Semantic models created with TMDL can't be opened in Deskto
 description: A known issue is posted where Semantic models created with TMDLand edited on the web can't be opened in Desktop.
 author: mihart
 ms.author: jessicamo
-ms.topic: troubleshooting  
+ms.topic: troubleshooting
 ms.date: 05/02/2024
 ms.custom: known-issue-715
 ---
