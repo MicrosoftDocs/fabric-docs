@@ -1,6 +1,6 @@
 ---
 title: Add a derived stream destination to an eventstream
-description: Learn how to add a derived stream destination to an eventstream with enhanced capabilities.
+description: Learn how to add a derived stream destination to an eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -9,9 +9,9 @@ ms.date: 05/02/2024
 ms.search.form: Source and Destination
 ---
 
-# Add a derived stream destination to an eventstream (preview)
+# Add a derived stream destination to an eventstream
 
-This article shows you how to add a derived stream destination to an eventstream with enhanced capabilities.
+This article shows you how to add a derived stream destination to an eventstream in Microsoft Fabric event streams.
 
 You can create a derived stream after doing operations like filtering and aggregating an eventstream. The derived stream is then ready for further consumption or analysis through the Real-Time hub. For more information about derived streams, see [Create default and derived Fabric eventstreams](create-default-derived-streams.md).
 
@@ -29,7 +29,7 @@ To route event data to a derived stream destination, follow these steps to add t
 
      ![Screenshot of adding the new stream by selecting the + symbol on the operator.](media/add-destination-derived-stream/select-stream.png)
 
-   - Select **Destination** from the ribbon and select **Stream**. Then drag the new derived stream to connect it to the operator node.
+   - Or, select **Destination** from the ribbon and select **Stream**. Then drag the new derived stream to connect it to the operator node.
 
      ![Screenshot of adding the new stream by selecting Stream and connecting the new stream to the operator.](media/add-destination-derived-stream/select-stream-ribbon.png)
 
@@ -41,7 +41,7 @@ To route event data to a derived stream destination, follow these steps to add t
 
    ![Screenshot of the derived stream in Edit mode, with Publish highlighted.](media/add-destination-derived-stream/edit-mode.png)
 
-After you complete these steps, the derived stream appears on the canvas in **Live view**. You can view the **Details** pane. If you add a Reflex or custom endpoint destination after your derived **Stream** node, you can also see **Data Insights** and **Data Preview**.
+After you complete these steps, the derived stream appears on the canvas in **Live view**, and you can view the **Details** pane. If you add a Reflex or custom endpoint destination after your derived **Stream** node, you can also see **Data insights** and **Data preview**.
 
 ![Screenshot of the eventstream in Live view with the Details pane.](media/add-destination-derived-stream/live-view.png)
 
@@ -54,7 +54,7 @@ You can also access this stream in Real-Time hub.
 To learn how to add other destinations to an eventstream, see the following articles: 
 
 - [Route events to destinations ](add-manage-eventstream-destinations-enhanced.md)
-- [Custom app destination](add-destination-custom-app-enhanced.md)
+- [Custom app destination](add-destination-custom-app.md)
 - [KQL Database destination](add-destination-kql-database-enhanced.md)
 - [Lakehouse destination](add-destination-lakehouse-enhanced.md)
 - [Reflex destination](add-destination-reflex.md)
