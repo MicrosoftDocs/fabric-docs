@@ -11,7 +11,7 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
 ms.search.form: Microsoft Spark utilities
-ms.date: 11/15/2023
+ms.date: 05/02/2024
 ---
 
 # Microsoft Spark Utilities (MSSparkUtils) for Fabric
@@ -121,6 +121,7 @@ This method moves a file or directory, and supports moves across file systems.
 
 ```python
 mssparkutils.fs.mv('source file or directory', 'destination directory', True) # Set the last parameter as True to firstly create the parent directory if it does not exist
+mssparkutils.fs.mv('source file or directory', 'destination directory', True, True) # Set the third parameter to True to firstly create the parent directory if it does not exist. Set the last parameter as True overwrite the updates.
 ```
 
 ### Write file
