@@ -22,15 +22,15 @@ Get started with the Fabric API for GraphQL by creating an API, then linking a d
 
 ## Creating an API for GraphQL
 
-Creating an API for GraphQL in Fabric is a straightforward process after which you're presented with a fully functional API to access your data in Fabric.
+To create an API for GraphQL:
 
-1. Navigate to Data Development in the Fabric portal with the switcher at the bottom of the navigation bar. The **Data Development** option looks like this:
+1. In the Fabric portal, select Data Development from the workload switcher at the bottom of the navigation bar. The **Data Development** option looks like this:
 
-   :::image type="content" source="media/get-started-api-graphql/navigation-pane-selector-data-app-dev.png" alt-text="Screenshot of the Data Development option in the Fabric switcher.":::
+   :::image type="content" source="media/get-started-api-graphql/switcher-data-app-dev.png" alt-text="Screenshot of the Data Development option in the workload switcher.":::
 
 1. Select **API for GraphQL (Preview)**.
 
-   :::image type="content" source="media/get-started-api-graphql/graphql-api-workspace-button.png" alt-text="Screenshot of the API tile, which you select to create a new API item.":::
+   :::image type="content" source="media/get-started-api-graphql/api-graphql-workspace-button.png" alt-text="Screenshot of the API tile, which you select to create a new API item.":::
 
    Alternatively, select **New** > **API for GraphQL (Preview)** from any workspace in Data Development.
 
@@ -40,31 +40,35 @@ Creating an API for GraphQL in Fabric is a straightforward process after which y
 
    :::image type="content" source="media/get-started-api-graphql/api-graphql-name.png" alt-text="Screenshot of the New API for GraphQL dialog box, showing where to enter the Name and select Create.":::
 
+You now have a fully functional API to access your data in Fabric.
+
 ## Connect to a data source and build your schema
 
-At this point the API is ready, however, it's not exposing any data. APIs for GraphQL are defined in a schema organized in terms of types and fields, in a strongly typed system. Fabric automatically generates the necessary GraphQL schema based on the data you chose to expose to GraphQL clients.
+At this point, the API is ready but it's not exposing any data. APIs for GraphQL are defined in a schema organized in terms of types and fields, in a strongly typed system. Fabric automatically generates the necessary GraphQL schema based on the data you choose to expose to GraphQL clients.
 
 1. In your new API, choose a data source to expose by choosing **Select data source**.
 
-   :::image type="content" source="media/get-started-api-graphql/add-data.png" alt-text="Screenshot of the Add data to API option.":::
+   :::image type="content" source="media/get-started-api-graphql/add-data.png" alt-text="Screenshot of the Select data source option.":::
 
-2. The OneLake data hub appears; choose the data source you want to connect to. For the following example, we chose a AdventureWorks SQL analytics endpoint linked to a mirrored database. Click on the **Filter** button to see only specific types of Fabric data sources or search by a specific keyword. When ready select **Connect** to proceed.
+1. The OneLake data hub appears; choose the data source you want to connect to. For the following example, we choose a AdventureWorks SQL analytics endpoint linked to a mirrored database. Select **Filter** to see only specific types of Fabric data sources, or search by a specific keyword. When you're ready, select **Connect**.
 
    :::image type="content" source="media/get-started-api-graphql/data-hub-choose-connect.png" alt-text="Screenshot of the OneLake data hub, showing available data source options for a workspace." lightbox="media/get-started-api-graphql/data-hub-choose-connect.png":::
 
-3. The **Get data** screen appears, where you can choose which objects you want exposed in your GraphQL schema.
+1. The **Get data** screen appears, where you can choose which objects you want exposed in your GraphQL schema.
 
    :::image type="content" source="media/get-started-api-graphql/get-data-choose-data.png" alt-text="Screenshot of the Get data screen showing the Choose data list." lightbox="media/get-started-api-graphql/get-data-choose-data.png":::
 
-4. Select the checkboxes next to the individual tables or stored procedures you want to expose in the API, or choose the checkbox with the data source name at the top to select all the objects in that folder. Click on the **Load** button to start the GraphQL schema generation process.
+1. Select the checkboxes next to the individual tables or stored procedures you want to expose in the API. To select all the objects in a folder, select the checkbox with the data source name at the top.
 
    :::image type="content" source="media/get-started-api-graphql/get-data-selected.png" alt-text="Screenshot of the Choose data list with a folder selected, which automatically selects all items inside that folder." lightbox="media/get-started-api-graphql/get-data-selected.png":::
 
-5. The schema is generated and you can start prototyping GraphQL queries  (read, list) or mutations (create, update, delete) to interact with your data.
+1. Select **Load** to start the GraphQL schema generation process.
+
+1. The schema is generated and you can start prototyping GraphQL queries  (read, list) or mutations (create, update, delete) to interact with your data.
 
    :::image type="content" source="media/get-started-api-graphql/api-editor.png" alt-text="Screenshot of the Schema explorer screen." lightbox="media/get-started-api-graphql/api-editor.png":::
 
-Your API for GraphQL is now ready to accept connections and requests. You can use the API editor to test and prototype GraphQL queries and the schema explorer to verify the data types and fields exposed in the API.
+Your API for GraphQL is now ready to accept connections and requests. You can use the API editor to test and prototype GraphQL queries and the Schema explorer to verify the data types and fields exposed in the API.
 
 ## Related content
 

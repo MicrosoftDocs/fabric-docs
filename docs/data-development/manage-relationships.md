@@ -18,7 +18,7 @@ One of the most powerful features in GraphQL is the ability to establish relatio
 
 ## Create a new relationship
 
-1. From the Schema explorer pane, select the ellipsis next to a type and select the **Manage relationships** option. The **Manage relationships** screen appears.
+1. From the **Schema explorer** pane, select the ellipsis next to a type and select the **Manage relationships** option. The **Manage relationships** screen appears.
 
    :::image type="content" source="media/manage-relationships/manage-relationships-start.png" alt-text="Screenshot of the Manage relationships screen, showing where to select the New relationship option.":::
 

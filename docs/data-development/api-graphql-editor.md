@@ -14,11 +14,11 @@ ms.date: 05/02/2024
 > [!NOTE]
 > Microsoft Fabric API for GraphQL is in preview.
 
-The Fabric API for GraphQL provides a graphical in-browser GraphQL development environment enabling an interactive playground to compose, test, and see the live results of your GraphQL queries and mutations.
+The Fabric API for GraphQL provides a graphical in-browser GraphQL development environment, which enables an interactive playground to compose, test, and see the live results of your GraphQL queries and mutations.
 
-To go to the API editor, navigate to Data Development and select the **Query** button at the lower left corner of your Fabric portal screen.
+To go to the API editor, navigate to Data Development and select **Query** at the lower left corner of your Fabric portal screen.
 
-:::image type="content" source="media/api-graphql-editor/query-view-button.png" alt-text="Screenshot showing where the Query option appears next to the switcher in the lower left corner.":::
+:::image type="content" source="media/api-graphql-editor/query-view-button.png" alt-text="Screenshot showing where the Query option appears in the lower left corner of the Fabric screen.":::
 
 You can type code directly on the **Query** tab. Intellisense capabilities are available with a keyboard shortcut: CTRL + Space (Windows), or Command + Space (macOS).
 
@@ -26,7 +26,7 @@ You can type code directly on the **Query** tab. Intellisense capabilities are a
 
 ## Development of queries and mutations
 
-Considering the following simple GraphQL schema defining a single `Post` type with queries to read a single post or list all posts, and mutations to create, update, or delete posts supporting all CRUDL use cases:
+Review the following short GraphQL schema, which defines a single `Post` type with queries to read a single post or list all posts. It also defines mutations to create, update, or delete posts supporting all CRUDL (create, read, update, delete, list) use cases.
 
 ```json
 type Post {
@@ -49,7 +49,7 @@ type Mutation {
 }
 ```
 
-We can read the data exposed via GraphQL using any query defined in the schema. For example, the `getPost` query should look like:
+You can read the data exposed via GraphQL using any query defined in the schema. The `getPost` query should look like the following example.
 
 ```json
 query MyQuery {
@@ -75,7 +75,7 @@ query MyQuery {
 }
 ```
 
-We write data using mutations like `createPost` to create a post with the required parameters:
+Write data using mutations like `createPost` to create a post with the required parameters.
 
 ```json
 mutation MyMutation {
@@ -105,7 +105,7 @@ mutation MyMutation {
 
 ## Query variables
 
-Use the **Query variables** pane on the right side of the **Query** tab to pass any parameters as variables to your queries or mutations. Variables work the same way as variables in any other programming language: each variable needs to be declared with a name that is used to access the value that is stored in it. Taking the previous mutation example, we can modified it slightly to leverage query variables:
+Use the **Query variables** pane on the right side of the **Query** tab to pass any parameters as variables to your queries or mutations. Variables work the same way as variables in any other programming language. Each variable needs to be declared with a name that is used to access the value stored in it. With the previous mutation example, you can modify it slightly to use query variables.
 
 ```json
 mutation MyMutation ($title: String!, $content: String!, $author: String!, $published: boolean){
@@ -118,7 +118,7 @@ mutation MyMutation ($title: String!, $content: String!, $author: String!, $publ
 }
 ```
 
-The variables should be defined in the pane as such:
+Define the variables in the pane like the following example.
 
 ```json
     {
@@ -129,7 +129,7 @@ The variables should be defined in the pane as such:
     }
 ```
 
-Variables make the mutation code cleaner, easier to read, test, and modify the parameters accordingly.
+Variables make the mutation code cleaner and easier to read, test, and modify the parameters.
 
 ## Related content
 
