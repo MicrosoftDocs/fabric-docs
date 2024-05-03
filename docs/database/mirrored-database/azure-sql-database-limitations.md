@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, imotiwala, sbahadur
-ms.date: 04/24/2024
+ms.date: 05/02/2024
 ms.service: fabric
 ms.topic: conceptual
 ms.custom:
@@ -74,6 +74,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
     - **image**
     - **text**/**ntext**
     - **xml** 
+    - **json**
     - **rowversion**/**timestamp**
     - **sql_variant**
     - User Defined Types (UDT)
