@@ -4,7 +4,7 @@ description: Learn about how to perform a restore in-place of a warehouse in Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.date: 04/24/2024
+ms.date: 05/03/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -83,8 +83,8 @@ To restore a warehouse in-place, choose a restore point and issue a restore comm
 
 ### Security
 
-- Any member of the [!INCLUDE [product-name](../includes/product-name.md)] Admin [workspace role](workspace-roles.md) can create user-defined restore points.
-- Any member of the [!INCLUDE [product-name](../includes/product-name.md)] Admin [workspace role](workspace-roles.md) can perform a restore from a system-generated or user-defined restore point.
+- Any member of the Admin, Member, or Contributor [workspace roles](workspace-roles.md) can create and rename the user-defined restore points.
+- Only a member of the Admin [workspace role](workspace-roles.md) can perform a restore from a system-generated or user-defined restore point.
 
 ## Limitations
 
