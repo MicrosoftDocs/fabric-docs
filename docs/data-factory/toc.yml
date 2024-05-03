@@ -699,6 +699,10 @@
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
     - name: Fabric Dataflows for ADF Mapping Data Flow users
       href: guide-to-dataflows-for-mapping-data-flow-users.md
+  - name: Best practices
+    items:
+    - name: Copy performance for SQL databases
+      href: copy-performance-sql-databases.md
   - name: FAQ and Troubleshooting
     items:
     - name: Frequently asked questions

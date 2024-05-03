@@ -1,14 +1,14 @@
 ---
-title: Copy activity performance with relational databases
-description: Learn about optimizing Copy activities for SQL databases.
+title: Copy activity performance with SQL databases
+description: Learn about settings and practices to optimize Data pipeline Copy activities for SQL databases in Data Factory for Microsoft Fabric.
 ms.reviewer: jonburchel
 ms.author: makromer
 author: kromerm
-ms.topic: how-to
+ms.topic: best-practice
 ms.date: 05/03/2024
 ---
 
-# Copy activity performance with relational databases
+# Copy activity performance with SQL databases
 
 In this article, we discuss techniques to help you to optimize Copy activity with a SQL database source, using an Azure SQL Database as a reference. We cover different aspects of optimization including data transfer speeds, cost, monitoring, ease of development, and balancing these various considerations for the best outcome.
 
