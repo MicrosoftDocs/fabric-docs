@@ -16,13 +16,13 @@ ms.date: 05/02/2024
 
 The Fabric API for GraphQL provides a graphical in-browser GraphQL development environment enabling an interactive playground to compose, test, and see the live results of your GraphQL queries and mutations.
 
-To go to the API editor, navigate to the Data Development experience and select the **Query** button at the lower left corner of your Fabric portal screen.
+To go to the API editor, navigate to Data Development and select the **Query** button at the lower left corner of your Fabric portal screen.
 
-:::image type="content" source="media/api-graphql-editor/query-view-button.png" alt-text="Screenshot showing where the Query option appears next to the Fabric experience selector in the lower left corner.":::
+:::image type="content" source="media/api-graphql-editor/query-view-button.png" alt-text="Screenshot showing where the Query option appears next to the switcher in the lower left corner.":::
 
 You can type code directly on the **Query** tab. Intellisense capabilities are available with a keyboard shortcut: CTRL + Space (Windows), or Command + Space (macOS).
 
-:::image type="content" source="media/api-graphql-editor/query-editor-intellisense.png" alt-text="Screenshot of the GraphQL API editor screen, which has a Query tab that is divided into Run, Query variables, and Results panes." lightbox="media/api-graphql-editor/query-editor-intellisense.png":::
+:::image type="content" source="media/api-graphql-editor/query-editor-intellisense.png" alt-text="Screenshot of the API editor screen, which has a Query tab that is divided into Run, Query variables, and Results panes." lightbox="media/api-graphql-editor/query-editor-intellisense.png":::
 
 ## Development of queries and mutations
 

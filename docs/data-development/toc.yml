@@ -22,7 +22,7 @@ items:
   - name: Manage relationships
     href: manage-relationships.md
   - name: Connect applications
-    href: connect-apps-graphql-api.md
+    href: connect-apps-api-graphql.md
   - name: Query multiple data sources
     href: multiple-data-sources.md
   

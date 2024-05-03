@@ -16,7 +16,7 @@ ms.date: 05/02/2024
 
 Microsoft Fabric API for GraphQL is a data access layer that allows for quick and efficient querying of multiple data sources leveraging a widely adopted and familiar API technology. The API allows you to abstract the specifics of backend data sources so you can concentrate on your application's logic, providing all the data a client needs in a single call. By using a simple query language and easy to manipulate result sets, GraphQL minimizes the time it takes for applications to access your data in Microsoft Fabric.
 
-## Expose data through the GraphQL API
+## Expose data through the API for GraphQL
 
 Exposing data sources to a GraphQL item in Microsoft Fabric is quick and easy. Select the data source you would like to expose and then indicate which objects within that data source you want to present through the API. Optionally, define any relationships between the fields that you choose. After you complete these steps, your API endpoint is ready to accept queries.
 
@@ -38,7 +38,7 @@ The Fabric API for GraphQL includes:
 
 ## Related content
 
-- [Create an API for GraphQL and add data](get-started-api-graphql.md)
+- [Create an API for GraphQL in Fabrid and add data](get-started-api-graphql.md)
 - [Connect applications to Fabric API for GraphQL](connect-apps-api-graphql.md)
 - [Fabric GraphQL frequently asked questions](graphql-faq.md)
 - [GraphQL query language](https://graphql.org/learn)

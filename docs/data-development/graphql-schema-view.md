@@ -23,9 +23,9 @@ You can access the schema view by selecting **Schema** in the lower left. The vi
 The following image is an example of the schema view, including an extensive list of objects available in this schema.
 
 > [!NOTE]
-> The Schema view is read only. You can only modify objects in the Schema explorer.
+> The schema view is read only. You can only modify objects in the Schema explorer.
 
-:::image type="content" source="media/get-started-api-graphql/schema-view.png" alt-text="Screenshot of the GraphQL API schema view screen, which includes the Schema explorer in the left pane." lightbox="media/get-started-api-graphql/schema-view.png":::
+:::image type="content" source="media/get-started-api-graphql/schema-view.png" alt-text="Screenshot of the API schema view screen, which includes the Schema explorer in the left pane." lightbox="media/get-started-api-graphql/schema-view.png":::
 
 ## Schema explorer
 
@@ -35,7 +35,7 @@ All the GraphQL types that are available from the objects you chose during the p
 
 :::image type="content" source="media/graphql-schema-view/schema-explorer-types.png" alt-text="Screenshot of the Schema explorer pane, showing the expanded list of types available under an example data source named SalesOrderDetail.":::
 
-In addition to types, the Fabric GraphQL API automatically generates queries and mutations for any new objects you choose to expose.
+In addition to types, the Fabric API for GraphQL automatically generates queries and mutations for any new objects you choose to expose.
 
 In our AdventureWorks example, expanding the list of queries shows the automatically generated queries for the data source.
 
@@ -54,9 +54,9 @@ You can use the Schema explorer to modify objects after the API creates them for
 These options are available:
 
 - **Update schema** - Allows you to update the schema with new objects from the data source.
-- **Rename** - Change the name of the object. PLEASE NOTE: This change **only** affects the GraphQL API schema, and has no effect on the original data source object from which it was derived.
+- **Rename** - Change the name of the object. PLEASE NOTE: This change **only** affects the API schema, and has no effect on the original data source object from which it was derived.
 - **Remove from schema** - Effectively deletes the object from the GraphQL schema so you can no longer reference it.
-- **Manage relationships** - Takes you to the relationship management experience. For more information, see [Manage relationships in Fabric GraphQL API](manage-relationships.md).
+- **Manage relationships** - Takes you to the relationship management experience. For more information, see [Manage relationships in Fabric API for GraphQL](manage-relationships.md).
 - **Properties** - Shows additional information about the object.
 
 ## Related content

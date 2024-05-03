@@ -22,9 +22,9 @@ To get the endpoint:
 
 1. Navigate to your API item in the Fabric portal.
 
-1. Select **Copy endpoint** on the GraphQL API item's toolbar.
+1. Select **Copy endpoint** on the API item's toolbar.
 
-   :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint.png" alt-text="Screenshot of the toolbar options of a GraphQL API item.":::
+   :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint.png" alt-text="Screenshot of the toolbar options of a API item.":::
 
 1. In the **Copy link** screen, Select **Copy**.
 

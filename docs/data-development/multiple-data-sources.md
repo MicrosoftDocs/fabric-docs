@@ -22,8 +22,8 @@ The following example shows a query that spans across both the **AdventureWorks*
 
 :::image type="content" source="media/multiple-data-sources/multi-data-source-query.png" alt-text="Screenshot of the editor screen, showing an example of a query that spans two data sources." lightbox="media/multiple-data-sources/multi-data-source-query.png":::
 
-This functionality can enhance the performance of your applications by reducing the number of round trips between your application and the GraphQL API.
+This functionality can enhance the performance of your applications by reducing the number of round trips between your application and the API for GraphQL.
 
 ## Related content
 
-- [Create an API for GraphQL and add data](get-started-api-graphql.md)
+- [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md)
