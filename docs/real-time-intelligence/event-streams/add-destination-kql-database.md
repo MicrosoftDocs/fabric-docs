@@ -49,7 +49,7 @@ Direct ingestion mode ingests your event data directly into the KQL database wit
 
    ![A screenshot of the eventstream with the Publish button highlighted.](media/add-destination-kql-database/edit-mode.png)
 
-1. In the KQL Database destination node, select **Configure**.
+1. In **Live view**, select **Configure** in the KQL Database destination node.
 
    ![A screenshot of the published eventstream with the Configure button in the KQL Database destination highlighted.](media/add-destination-kql-database/live-view.png)
 
@@ -62,23 +62,23 @@ Direct ingestion mode ingests your event data directly into the KQL database wit
 1. On the **Inspect the data** screen, you can:
 
    - Select a **Format** to preview how the data is sent to your KQL database.
-   - Select **Edit columns** to 
+   - Select **Edit columns** to configure the columns for your data.
    - Select **Advanced** to select events to include or choose mapping options.
 
    ![A screenshot of selecting a data format on the Inspect the data screen.](media/add-destination-kql-database/select-format.png)
 
 1. If you select **Edit columns**, on the **Edit columns** screen you can:
 
-   - **Add column**.
+   - Select **Add column** to add a column.
    - Select **Source** columns to map.
-   - Apply **Mapping transformations**.
-   - Change **Sample data**.
+   - Apply **Mapping transformation** to columns.
+   - Change **Sample data** values.
 
-   Then select **Apply** to return to the **Inspect the data** screen.
+   Then select **Apply**.
 
    ![A screenshot of the Edit columns screen.](media/add-destination-kql-database/edit-columns.png)
 
-1. When you're finished configuring the data, select **Finish**.
+1. When you're finished configuring the data, select **Finish** on the **Inspect the data** screen.
 
 1. On the **Summary** screen, review the details and status of your data ingestion, including the table with the schema you defined and the connection between the eventstream and the KQL database. Select **Close** to finalize the KQL database setup.
 

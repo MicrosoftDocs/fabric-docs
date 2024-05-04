@@ -36,7 +36,7 @@ To add a lakehouse destination to a default or derived eventstream, follow these
 
    ![A screenshot of the Add destination dropdown list with Lakehouse highlighted.](media/add-destination-lakehouse/add-destination.png)
 
-1. Connect the lakehouse to your stream node or operator.
+1. Connect the lakehouse node to your stream node or operator.
 
 1. On the **Lakehouse** configuration screen, complete the following information:
 
@@ -50,7 +50,7 @@ To add a lakehouse destination to a default or derived eventstream, follow these
 
 1. Select **Advanced**.
 
-1. Two ingestion modes are available for a lakehouse destination. Configure these modes to optimize how Fabric event streams writes to the lakehouse, based on your scenario.
+1. Two ingestion modes are available for a lakehouse destination. Based on your scenario, configure these modes to optimize how Fabric event streams writes to the lakehouse.
 
    - **Minimum rows** is the minimum number of rows that the lakehouse ingests in a single file. The minimum is 1 row, and the maximum is 2 million rows per file. The smaller the minimum number of rows, the more files the lakehouse creates during ingestion.
 
