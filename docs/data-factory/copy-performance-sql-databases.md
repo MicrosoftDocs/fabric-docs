@@ -119,9 +119,23 @@ Dynamic Range allows the service to intelligently generate queries against the s
   ```sql
   SELECT * FROM [dbo].[orders] WHERE [o_orderkey] > '4617187501' AND [o_orderkey] <= '4640625001'
   ```
-  
-- **Fabric Warehouse**
+
 - **Degree of copy parallelism**
+  
+  By default, _Auto_ is assigned for the **Degree of copy parallelism**. However, _Auto_ might not achieve the optimal number of parallel copies. **Parallel copies** correlates to the number of sessions established on the source database. By specifying too many parallel copies, the source database CPU is at risk of being overtaxed, leading to queries being in a suspended state.
+
+  In the original test case for **Dynamic range** using _Auto_, the service actually generated 251 parallel copies at runtime. By specifying a value in **Degree of copy parallelism**, you set the maximum number of parallel copies. This allows you to limit the number of concurrent sessions made to your source, allowing you to better control your resource management. In these test cases, by specifying 50 as the value, both total duration as well as source resource utilization improved.
+
+  | Destination | Partition Option | Degree of copy parallelism | Used Parallel Copies | Total Duration |
+  |-------------|------------------|----------------------------|----------------------|----------------|
+  | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
+  | Warehouse   | Dynamic Range    | 50                         | 50                   | 00:13:05       |
+
+  **Dynamic range** with a **Degree of parallel copies** can significantlyt improve performance. However, this requires either predefining the boundaries or allowing the service to determine the values at runtime, which can have a variable impact on total duration, depending on the DDL and data volume of the source table. In addition, this should also be paired with an understanding of how many parallel copies your source can handle. If the value is too high, there can be a negative impact on your source system and copy activity performance.
+
+  For more information on parallel copies refer to [Copy activity performance features: Parallel copy](/azure/data-factory/copy-activity-performance-features#parallel-copy)
+
+- **Fabric Warehouse**
 - **Fabric Lakehouse (Tables)**
 
 ##### Clustered index
