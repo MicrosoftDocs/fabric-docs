@@ -204,9 +204,29 @@ Parallel copies and total duration are a max value observed across all 50 copy a
 
 #### Physical partitions of table
 
+> [!NOTE]
+> When using physical partitions, the partition column and mechanism will be automatically determined based on your physical table definition.
+
+To leverage physical partitions of a table, the source table must be partitioned. To understand how the number of partitions impact performance, we created two partitioned tables, one with 8 partitions and the other with 85 partitions.
+
+The number of physical partitions limits the **Degree of copy parallelism**. While you can still limit the number by specifying a value less than the number of partitions, _Auto_ will always, at most, select the number of physical partitions present in the source table.  
+
 ##### Fabric Warehouse with physical partitions
 
+| Destination | Partition option | Degree of copy parallelism | Used parallel Copies | Total duration |
+|-------------|------------------|----------------------------|----------------------|----------------|
+| Fabric Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
+| Fabric Warehouse   | Physical         | Auto                       | 8                    | 00:26:29       |
+| Fabric Warehouse   | Physical         | Auto                       | 85                   | 00:08:31       |
+
 ##### Fabric Lakehouse (Tables) with physical partitions
+
+| Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
+|-------------|------------------|----------------------------|----------------------|----------------|
+| Fabric Lakehouse   | None             | Auto                       | 1                    | 02:10:37       |
+| Fabric Lakehouse   | Physical         | Auto                       | 8                    | 00:36:36       |
+| Fabric Lakehouse   | Physical         | Auto                       | 85                   | 00:12:21       |
+
 
 ### Isolation levels
 
