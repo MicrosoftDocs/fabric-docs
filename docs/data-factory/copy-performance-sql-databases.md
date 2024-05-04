@@ -146,11 +146,11 @@ Dynamic Range allows the service to intelligently generate queries against the s
 
 - **Fabric Lakehouse (Tables)**
 
-| Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
-|-------------|------------------|----------------------------|----------------------|----------------|
-| Lakehouse   | None             | Auto                       | 1                    | 02:23:21       |
-| Lakehouse   | Dynamic Range    | Auto                       | 251                  | 00:36:40       |
-| Lakehouse   | Dynamic Range    | 50                         | 50                   | 00:12:01       |
+  | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
+  |-------------|------------------|----------------------------|----------------------|----------------|
+  | Lakehouse   | None             | Auto                       | 1                    | 02:23:21       |
+  | Lakehouse   | Dynamic Range    | Auto                       | 251                  | 00:36:40       |
+  | Lakehouse   | Dynamic Range    | 50                         | 50                   | 00:12:01       |
 
 ##### Clustered index
 
@@ -158,19 +158,19 @@ Compared to a heap table, a table with a clustered key index on the column selec
 
 - **Fabric Warehouse**
 
-| Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
-|-------------|------------------|----------------------------|----------------------|----------------|
-| Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
-| Warehouse   | Dynamic Range    | Auto                       | 251                  | 00:09:02       |
-| Warehouse   | Dynamic Range    | 50                         | 50                   | 00:08:38       |
+  | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
+  |-------------|------------------|----------------------------|----------------------|----------------|
+  | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
+  | Warehouse   | Dynamic Range    | Auto                       | 251                  | 00:09:02       |
+  | Warehouse   | Dynamic Range    | 50                         | 50                   | 00:08:38       |
 
 - **Fabric Lakehouse (Tables)**
 
-| Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
-|-------------|------------------|----------------------------|----------------------|----------------|
-| Lakehouse   | None             | Auto                       | 1                    | 02:23:21       |
-| Lakehouse   | Dynamic Range    | Auto                       | 251                  | 00:06:44       |
-| Lakehouse   | Dynamic Range    | 50                         | 50                   | 00:06:34       |
+  | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
+  |-------------|------------------|----------------------------|----------------------|----------------|
+  | Lakehouse   | None             | Auto                       | 1                    | 02:23:21       |
+  | Lakehouse   | Dynamic Range    | Auto                       | 251                  | 00:06:44       |
+  | Lakehouse   | Dynamic Range    | 50                         | 50                   | 00:06:34       |
 
 #### Logical partitioning design
 
