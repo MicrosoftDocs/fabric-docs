@@ -136,16 +136,16 @@ Dynamic Range allows the service to intelligently generate queries against the s
 
   For more information on parallel copies, refer to [Copy activity performance features: Parallel copy](/azure/data-factory/copy-activity-performance-features#parallel-copy).
 
-- **Fabric Warehouse**
+##### Fabric Warehouse with dynamic range
 
-  By default, **Isolation level** isn't specified, and **Degree of parallelism** is set to _Auto_.
+By default, **Isolation level** isn't specified, and **Degree of parallelism** is set to _Auto_.
   
-  | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
-  |-------------|------------------|----------------------------|----------------------|----------------|
-  | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
-  | Warehouse   | Dynamic Range    | Auto                       | 251                  | 00:39:03       |
+| Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
+|-------------|------------------|----------------------------|----------------------|----------------|
+| Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
+| Warehouse   | Dynamic Range    | Auto                       | 251                  | 00:39:03       |
 
-- **Fabric Lakehouse (Tables)**
+##### Fabric Lakehouse (Tables)** with dynamic range
   
   | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
@@ -157,15 +157,15 @@ Dynamic Range allows the service to intelligently generate queries against the s
 
 Compared to a heap table, a table with a clustered key index on the column selected for the dynamic range’s partition column drastically improved performance and resource utilization, even when degree of copy parallelism was set to auto.
 
-- **Fabric Warehouse**
+###### Fabric Warehouse with clustered index
   
-  | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
-  |-------------|------------------|----------------------------|----------------------|----------------|
-  | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
-  | Warehouse   | Dynamic Range    | Auto                       | 251                  | 00:09:02       |
-  | Warehouse   | Dynamic Range    | 50                         | 50                   | 00:08:38       |
+| Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
+|-------------|------------------|----------------------------|----------------------|----------------|
+| Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
+| Warehouse   | Dynamic Range    | Auto                       | 251                  | 00:09:02       |
+| Warehouse   | Dynamic Range    | 50                         | 50                   | 00:08:38       |
 
-- **Fabric Lakehouse (Tables)**
+###### Fabric Lakehouse (Tables) with clustered index
   
 | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
 |-------------|------------------|----------------------------|----------------------|----------------|
@@ -181,19 +181,22 @@ This design was also used in this blog series: [Data pipeline performance improv
 This design generates many sub-date ranges. Then using a for each activity to iterate over the ranges, many copy activities are invoked to source data between the specified range. Within the for each activity, all of the copy activities run in parallel (up to the batch count maximum of 50) and have degree of copy parallelism set to “Auto”.  
 
 For the below examples, the partitioned date values were set to these values:
-•	Starting value: 1992-01-01
-•	Ending value: 1998-08-02
-•	Bucket Interval Days: 50
+
+- Starting value: 1992-01-01
+- Ending value: 1998-08-02
+- Bucket Interval Days: 50
+
 Parallel copies and total duration are a max value observed across all 50 copy activities that were created. Since all 50 ran in parallel, the max value for Total Duration is how long all copy activities took to finish in parallel.  
 
+##### Fabric Warehouse with logical partition design
 
-- **Fabric Warehouse**
-- **Fabric Lakehouse**
+##### Fabric Lakehouse (Tables) with logical partition design
 
 #### Physical partitions of table
 
-- **Fabric Warehouse**
-- **Fabric Lakehouse (Tables)**
+##### Fabric Warehouse with physical partitions
+
+##### Fabric Lakehouse (Tables) with physical partitions
 
 ### Isolation levels
 
@@ -205,8 +208,9 @@ Parallel copies and total duration are a max value observed across all 50 copy a
 
 #### Test cases
 
-- **Fabric Warehouse**
-- **Fabric Lakehouse (Tables)**
+##### Fabric Warehouse test cases
+
+##### Fabric Lakehouse (Tables) test cases
 
 ## Related content
 
