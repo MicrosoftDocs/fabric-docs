@@ -95,3 +95,48 @@ For a deeper understanding of ITO, refer to [Intelligent throughput optimization
 
 When your source is a relational database like Azure SQL database, in the **Advanced** section, you have the option to specify a **Partition option**. By default, this is set to _None_, with two additional options of _Physical partitions of table_ and _Dynamic Range_.
 
+#### Dynamic range
+
+##### Heap table
+  
+Dynamic Range allows the service to intelligently generate queries against the source. The number of queries generated is equal to the number of **Used parallel copies** the service selected at runtime. The **Degree of copy parallelism** and **Used parallel copies** are important to consider when optimizing the use of the **Dynamic range** partition option.
+
+- **Partition bounds**
+- **Fabric Warehouse**
+- **Degree of copy parallelism**
+- **Fabric Lakehouse (Tables)**
+
+##### Clustered index
+
+- **Fabric Warehouse**
+- **Fabric Lakehouse (Tables)**
+
+#### Logical partitioning design
+
+- **Fabric Warehouse**
+- **Fabric Lakehouse**
+
+#### Physical partitions of table
+
+- **Fabric Warehouse**
+- **Fabric Lakehouse (Tables)**
+
+### Isolation levels
+
+### ITO impact on capacity consumption
+
+### Summary
+
+#### Guidelines
+
+#### Test cases
+
+- **Fabric Warehouse**
+- **Fabric Lakehouse (Tables)**
+
+## Related content
+
+
+  
+  
+
