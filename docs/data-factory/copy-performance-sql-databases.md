@@ -102,6 +102,9 @@ When your source is a relational database like Azure SQL database, in the **Adva
 Dynamic Range allows the service to intelligently generate queries against the source. The number of queries generated is equal to the number of **Used parallel copies** the service selected at runtime. The **Degree of copy parallelism** and **Used parallel copies** are important to consider when optimizing the use of the **Dynamic range** partition option.
 
 - **Partition bounds**
+  
+    
+
 - **Fabric Warehouse**
 - **Degree of copy parallelism**
 - **Fabric Lakehouse (Tables)**
@@ -141,7 +144,7 @@ Dynamic Range allows the service to intelligently generate queries against the s
 - [Copy and transform data in Azure SQL Database](/azure/data-factory/connector-azure-sql-database?tabs=data-factory#parallel-copy-from-sql-database)
 - [Configure Azure SQL Database in a copy activity](connector-azure-sql-database-copy-activity.md)
 - [Microsoft Fabric Blog: Data Pipeline Performance Improvement Part 3 - Gaining more than 50% improvement for Historical Loads](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvement-part-3-gaining-more-than-50-improvement-for-historical-loads)
-- [Create partitioned tables and indexes]/sql/relational-databases/partitions/create-partitioned-tables-and-indexes?view=sql-server-ver16)
+- [Create partitioned tables and indexes](/sql/relational-databases/partitions/create-partitioned-tables-and-indexes?view=sql-server-ver16)
 
   
   
