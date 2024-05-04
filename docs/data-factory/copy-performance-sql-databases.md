@@ -325,4 +325,4 @@ Consider maintainability and developer effort. While leaving the default options
 - [Copy and transform data in Azure SQL Database](/azure/data-factory/connector-azure-sql-database?tabs=data-factory#parallel-copy-from-sql-database)
 - [Configure Azure SQL Database in a copy activity](connector-azure-sql-database-copy-activity.md)
 - [Create partitioned tables and indexes in Azure SQL Database](/sql/relational-databases/partitions/create-partitioned-tables-and-indexes)
-- Microsoft Fabric Blog [Data Pipeline Performance Improvement Part 3 - Gaining more than 50% improvement for Historical Loads](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvement-part-3-gaining-more-than-50-improvement-for-historical-loads)
+- Microsoft Fabric Blog: [Data pipeline performance improvement part 3 - Gaining more than 50% improvement for historical loads](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvement-part-3-gaining-more-than-50-improvement-for-historical-loads)
