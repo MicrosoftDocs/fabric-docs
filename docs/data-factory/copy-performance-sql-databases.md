@@ -72,7 +72,6 @@ The default settings are:
     :::image type="content" source="media/copy-performance-sql-databases/additional-settings.png" alt-text="Screenshot showing additional settings for the Azure SQL database.":::
 
 When we tested using the default settings, the service took over 2 hours per copy activity to load 1.5 billion records into each destination. These values form our reference point used to measure performance improvements. Before making changes, always evaluate baseline performance to create a reference point of comparison.
-
 |Destination  |Partition option  |Degree of copy parallelism  |Used parallel copies  |Total duration|
 |---------|---------|---------|---------|--------------|
 |Fabric Warehouse     |None         |Auto         |1         |02:23:21              |
@@ -102,6 +101,7 @@ When your source is a relational database like Azure SQL database, in the **Adva
 Dynamic Range allows the service to intelligently generate queries against the source. The number of queries generated is equal to the number of **Used parallel copies** the service selected at runtime. The **Degree of copy parallelism** and **Used parallel copies** are important to consider when optimizing the use of the **Dynamic range** partition option.
 
 - **Partition bounds**
+
   The Partition upper and lower bounds are optional fields that allow you to specify the partition stride. In these test cases, we predefined both the upper and lower bounds. If these fields aren't specified, the system incurs extra overhead in querying the source to determine the ranges. For optimal performance, obtain the boundaries beforehand, especially for one-time historical loads. 
 
   For more information reference the table in, the [Parallel copy from SQL database](/azure/data-factory/connector-azure-sql-database?tabs=data-factory#parallel-copy-from-sql-database) section of the Azure SQL Database connector article.
@@ -125,7 +125,6 @@ Dynamic Range allows the service to intelligently generate queries against the s
   By default, _Auto_ is assigned for the **Degree of copy parallelism**. However, _Auto_ might not achieve the optimal number of parallel copies. **Parallel copies** correlates to the number of sessions established on the source database. If too many parallel copies are generated, the source database CPU is at risk of being overtaxed, leading to queries being in a suspended state.
 
   In the original test case for **Dynamic range** using _Auto_, the service actually generated 251 parallel copies at runtime. By specifying a value in **Degree of copy parallelism**, you set the maximum number of parallel copies. This setting allows you to limit the number of concurrent sessions made to your source, allowing you to better control your resource management. In these test cases, by specifying 50 as the value, both total duration and source resource utilization improved.
-
   | Destination | Partition Option | Degree of copy parallelism | Used Parallel Copies | Total Duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
   | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
@@ -133,19 +132,17 @@ Dynamic Range allows the service to intelligently generate queries against the s
 
   **Dynamic range** with a **Degree of parallel copies** can significantly improve performance. However, using the setting requires either predefining the boundaries or allowing the service to determine the values at runtime. Allowing the service to determine the values at runtime can have a variable impact on total duration, depending on the DDL and data volume of the source table. In addition, this should also be paired with an understanding of how many parallel copies your source can handle. If the value is too high, source system and copy activity performance can be degraded.
 
-  For more information on parallel copies, refer to [Copy activity performance features: Parallel copy](/azure/data-factory/copy-activity-performance-features#parallel-copy)
+  For more information on parallel copies, refer to [Copy activity performance features: Parallel copy](/azure/data-factory/copy-activity-performance-features#parallel-copy).
 
 - **Fabric Warehouse**
 
   By default, **Isolation level** isn't specified, and **Degree of parallelism** is set to _Auto_.
-
   | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
   | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
   | Warehouse   | Dynamic Range    | Auto                       | 251                  | 00:39:03       |
 
 - **Fabric Lakehouse (Tables)**
-
   | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
   | Lakehouse   | None             | Auto                       | 1                    | 02:23:21       |
@@ -157,7 +154,6 @@ Dynamic Range allows the service to intelligently generate queries against the s
 Compared to a heap table, a table with a clustered key index on the column selected for the dynamic range’s partition column drastically improved performance and resource utilization, even when degree of copy parallelism was set to auto.
 
 - **Fabric Warehouse**
-
   | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
   | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
@@ -165,7 +161,6 @@ Compared to a heap table, a table with a clustered key index on the column selec
   | Warehouse   | Dynamic Range    | 50                         | 50                   | 00:08:38       |
 
 - **Fabric Lakehouse (Tables)**
-
   | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
   | Lakehouse   | None             | Auto                       | 1                    | 02:23:21       |
