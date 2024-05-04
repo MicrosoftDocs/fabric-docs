@@ -132,9 +132,9 @@ In the original test case for **Dynamic range** using _Auto_, the service actual
 | Fabric Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
 | Fabric Warehouse   | Dynamic Range    | 50                         | 50                   | 00:13:05       |
 
-**Dynamic range** with a **Degree of parallel copies** can significantly improve performance. However, using the setting requires either predefining the boundaries or allowing the service to determine the values at runtime. Allowing the service to determine the values at runtime can have a variable impact on total duration, depending on the DDL and data volume of the source table. In addition, this should also be paired with an understanding of how many parallel copies your source can handle. If the value is too high, source system and copy activity performance can be degraded.
+**Dynamic range** with a **Degree of parallel copies** can significantly improve performance. However, using the setting requires either predefining the boundaries or allowing the service to determine the values at runtime. Allowing the service to determine the values at runtime can affect total duration, depending on the DDL and data volume of the source table. In addition, allowing the service to determine the values at runtime should also be paired with an understanding of how many parallel copies your source can handle. If the value is too high, source system and copy activity performance can be degraded.
 
-For more information on parallel copies, refer to [Copy activity performance features: Parallel copy](/azure/data-factory/copy-activity-performance-features#parallel-copy).
+For more information on parallel copies, see [Copy activity performance features: Parallel copy](/azure/data-factory/copy-activity-performance-features#parallel-copy).
 
 ##### Fabric Warehouse with dynamic range
 
@@ -155,7 +155,7 @@ By default, **Isolation level** isn't specified, and **Degree of parallelism** i
 
 ##### Clustered index
 
-Compared to a heap table, a table with a clustered key index on the column selected for the dynamic range’s partition column drastically improved performance and resource utilization, even when degree of copy parallelism was set to auto.
+Compared to a heap table, a table with a clustered key index on the column selected for the dynamic range’s partition column drastically improved performance and resource utilization. This was true even when degree of copy parallelism was set to auto.
 
 ###### Fabric Warehouse with clustered index
   
@@ -175,10 +175,10 @@ Compared to a heap table, a table with a clustered key index on the column selec
 
 #### Logical partition design
 
-The logical partition design pattern is more advanced and requires additional developer effort. However, this design has been used in scenarios with strict data loading requirements. This design was originally developed to meet the needs of an on-premises Oracle database to load 180 GB of data in under 1.5 hours. The original design, using defaults of the copy activity, took over 65 hours. By using a Logical Partitioning Design, we get this under 1.5 hours.
+The logical partition design pattern is more advanced and requires more developer effort. However, this design is used in scenarios with strict data loading requirements. This design was originally developed to meet the needs of an on-premises Oracle database to load 180 GB of data in under 1.5 hours. The original design, using defaults of the copy activity, took over 65 hours. By using a Logical Partitioning Design, we see the same data transferred in under 1.5 hours.
 
-This design was also used in this blog series: [Data pipeline performance improvements Part 1: How to convert a time interval into seconds](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvements-part-1-how-to-convert-a-time-interval-dd-hhmmss-into-seconds)). This design is very good to emulate in your environment when you are loading large source tables and need optimal loading performance by using techniques like setting a data range to partition the source data reads. 
-This design generates many sub-date ranges. Then using a for each activity to iterate over the ranges, many copy activities are invoked to source data between the specified range. Within the for each activity, all of the copy activities run in parallel (up to the batch count maximum of 50) and have degree of copy parallelism set to “Auto”.  
+This design was also used in this blog series: [Data pipeline performance improvements Part 1: How to convert a time interval into seconds](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvements-part-1-how-to-convert-a-time-interval-dd-hhmmss-into-seconds)). This design is good to emulate in your environment when you're loading large source tables and need optimal loading performance by using techniques like setting a data range to partition the source data reads. 
+This design generates many subdate ranges. Then using a For-Each activity to iterate over the ranges, many copy activities are invoked to source data between the specified range. Within the For-Each activity, all of the copy activities run in parallel (up to the batch count maximum of 50) and have degree of copy parallelism set to _Auto_.  
 
 For the below examples, the partitioned date values were set to these values:
 
@@ -207,7 +207,7 @@ Parallel copies and total duration are a max value observed across all 50 copy a
 > [!NOTE]
 > When using physical partitions, the partition column and mechanism will be automatically determined based on your physical table definition.
 
-To leverage physical partitions of a table, the source table must be partitioned. To understand how the number of partitions impact performance, we created two partitioned tables, one with 8 partitions and the other with 85 partitions.
+To use physical partitions of a table, the source table must be partitioned. To understand how the number of partitions affect performance, we created two partitioned tables, one with 8 partitions and the other with 85 partitions.
 
 The number of physical partitions limits the **Degree of copy parallelism**. While you can still limit the number by specifying a value less than the number of partitions, _Auto_ will always, at most, select the number of physical partitions present in the source table.  
 
@@ -229,7 +229,7 @@ The number of physical partitions limits the **Degree of copy parallelism**. Whi
 
 ### Isolation levels
 
-Let’s compare how specifying different **Isolation level** settings affect performance. When specifying **Isolation level** with a **Degree of copy parallelism** set to _Auto_, the Copy activity is at risk of overtaxing the source system and failing. It is recommended to leave **Isolation level** as _None_ if you want to leave **Degree of copy parallelism** set to _Auto_.
+Let’s compare how specifying different **Isolation level** settings affect performance. When you select **Isolation level** with a **Degree of copy parallelism** set to _Auto_, the Copy activity is at risk of overtaxing the source system and failing. It's recommended to leave **Isolation level** as _None_ if you want to leave **Degree of copy parallelism** set to _Auto_.
 
 > [!NOTE]
 > Azure SQL Database defaults to the **Isolation level* [_Read_Committed_Snapshot_](/sql/t-sql/statements/set-transaction-isolation-level-transact-sql).
@@ -242,13 +242,13 @@ Let’s expand the test case for **Dynamic range** with **Degree of copy paralle
 | Read Uncommitted  | 00:13:46       | 89,280         | 81           | 76             |
 | Read Committed    | 00:25:34       | 97,560         | 81           | 76             |
 
-The **Isolation level** you choose for your database source queries would be more of a requirement rather than optimization path, however it is important to understand the differences in performance and Capacity Units consumption between each option.
+The **Isolation level** you choose for your database source queries would be more of a requirement rather than optimization path, however it's important to understand the differences in performance and Capacity Units consumption between each option.
 
-For more information on **Isolation level** refer to [IsolationLevel Enum](/dotnet/api/system.data.isolationlevel).
+For more information on Isolation level,** refer to [IsolationLevel Enum](/dotnet/api/system.data.isolationlevel).
 
 ### ITO and capacity consumption
 
-Similar to **Degree of parallel copies**, **Intelligent throughput optimization** (ITO) is another maximum value that can be set.  If you are optimizing for cost, ITO is a great setting to consider adjusting to meet your desired outcome.
+Similar to **Degree of parallel copies**, **Intelligent throughput optimization** (ITO) is another maximum value that can be set.  If you're optimizing for cost, ITO is a great setting to consider adjusting to meet your desired outcome.
 
 ITO Ranges:
 
@@ -259,7 +259,7 @@ ITO Ranges:
 | Balanced | 128 |
 | Maximum  | 256 |
 
-While the drop down allows for the above settings, we also allow for the use of custom values between 4 and 256.
+While the drop-down allows for the above settings, we also allow for the use of custom values between 4 and 256.
 
 > [!NOTE]
 > The actual number of ITO used can be found in the Copy activity output _usedDataIntegrationUnits_ field.
@@ -271,24 +271,24 @@ For the **Dynamic range** Heap test case where **Degree of parallel copies** was
 | Maximum (256) | 00:13:46       | 89,280         | 81           | 76             | Balanced (100)           |
 | 50            | 00:18:28       | 48,600         | 76           | 61             | Standard (48)            |
 
-By cutting the ITO by 50%, the total duration increased by 34%, however the service used 45.5% less Capacity Units. If you are not optimizing for improved **Total duration** and want to reduce the Capacity Units used, it would be beneficial to set the ITO to a lower value.
+By our cutting the ITO by 50%, the total duration increased by 34%, however the service used 45.5% less Capacity Units. If you aren't optimizing for improved **Total duration** and want to reduce the Capacity Units used, it would be beneficial to set the ITO to a lower value.
 
 ### Summary
 
-The charts below summarize the behavior of loading into both the Fabric Warehouse and Fabric Lakehouse tables. If the table has a physical partition, then leveraging the **Partition option**: _Physical partitions of table_ would be the most balanced approach for transfer duration, capacity units, and compute overhead on the source. This is especially ideal if you have additional sessions running against the database during the time of data movement. 
+The following charts summarize the behavior of loading into both the Fabric Warehouse and Fabric Lakehouse tables. If the table has a physical partition, then using the **Partition option**: _Physical partitions of table_ would be the most balanced approach for transfer duration, capacity units, and compute overhead on the source. This setting is especially ideal if you have more sessions running against the database during the time of data movement.
 
-If your table does not have physical partitions, you still have the option of using the **Partition option**: _Dynamic Range_. This would require a prior step to determine the upper and lower bounds, but it still provides significant improvements in transfer duration compared to the default options at the cost of a bit higher capacity consumption, source compute utilization, and the need to test for optimal **Degree of parallelism**.
+If your table doesn't have physical partitions, you still have the option of using the **Partition option**: _Dynamic Range_. This option would require a prior step to determine the upper and lower bounds, but it still provides significant improvements in transfer duration compared to the default options at the cost of a bit higher capacity consumption, source compute utilization, and the need to test for optimal **Degree of parallelism**.
 
-Another important factor to maximize performance of your copy jobs is to keep the data movement inside of a single cloud region. For example, data movement from a source and destination data store in US West, with a Data Factory in US West will outperform a copy job moving data from US West to US West.
+Another important factor to maximize performance of your copy jobs is to keep the data movement inside of a single cloud region. For example, data movement from a source and destination data store in US West, with a Data Factory in US West outperforms a copy job moving data from US East to US West.
 
-Finally, if speed is the most important aspect of optimization, having an optimized DDL of your source table is critical in leveraging physical partition options. For a non-partitioned table, try _Dynamic range_, and this is not fast enough, consider logical partitioning or a hybrid approach of logical partitioning plus _Dynamic range_ within the sub-boundaries.
+Finally, if speed is the most important aspect of optimization, having an optimized DDL of your source table is critical in using physical partition options. For a nonpartitioned table, try _Dynamic range_, and this setting isn't fast enough, consider logical partitioning or a hybrid approach of logical partitioning plus _Dynamic range_ within the subboundaries.
 
 #### Guidelines
 
 **Cost** Adjust Intelligent throughput optimization and Degree of Parallel Copies.
-**Speed** For partitioned tables, if there is a good number of partitions then use **Partition option**: _Physical partitions of tables_. Otherwise, if data is skewed or there is a limited number of partitions, consider leveraging _Dynamic range_. For heap and tables with indexes, leverage _Dynamic range_ in conjunction with **Degree of parallel copies** that would limit the number of suspended queries on your source. If you can predefine the partition upper/lower bounds, this will have additional performance improvements.
+**Speed** For partitioned tables, if there's a good number of partitions then use **Partition option**: _Physical partitions of tables_. Otherwise, if data is skewed or there's a limited number of partitions, consider using _Dynamic range_. For heap and tables with indexes, use _Dynamic range_ with **Degree of parallel copies** that would limit the number of suspended queries on your source. If you can predefine the partition upper/lower bounds, you can realize further performance improvements.
 
-Consider maintainability and developer effort. While leaving the default options take the longest time to move data, this might be the best option, especially if the source table’s DDL is unknown. This also provides reasonable Capacity Units consumption.
+Consider maintainability and developer effort. While leaving the default options take the longest time to move data, running with the defaults might be the best option, especially if the source table’s DDL is unknown. This also provides reasonable Capacity Units consumption.
 
 #### Test cases
 
