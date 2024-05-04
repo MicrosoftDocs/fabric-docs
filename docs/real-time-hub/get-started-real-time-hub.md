@@ -60,8 +60,8 @@ You can connect to data from both inside and outside of Fabric in a mere few ste
 
 It allows for easy connectivity to external data streams including Kafka connectors powered by Kafka Connect and Debezium connectors for fetching the Change Data Capture (CDC) streams. Connectivity to notification sources and discrete events is also included within Get events, this enables access to notification events from Azure and other clouds solutions including Amazon Web Services and Google Cloud Platform.  
 
-When you select **Get events** button on Real-Time hub, you see the **Get event** wizard. This wizard lets you create eventstreams for the Microsoft sources and Fabric events in the same way you can create by using content menus in the list view. In addition, the wizard also lets you create eventstreams for the following external sources. 
+Select **Get events** from the Real-Time hub and follow the prompts to complete the flow. Here's a full list of built-in sources inside Get events
 
-[!INCLUDE [external-sources](./includes/external-sources.md)]
+[!INCLUDE [supported-sources](./includes/supported-sources.md)]
 
-You can connect to these resources and create eventstreams that show up on the **Data streams** tab. Select a link for a source in the list to learn how to create an event stream for that source. Added data sources show up on the **Data streams** tab. Select a link for a source in the list to learn how to create an event stream for that source. 
+You can connect to these services and create eventstreams that show up on the **Data streams** tab. Select a link for a source in the list to learn how to create an event stream for that source. 
