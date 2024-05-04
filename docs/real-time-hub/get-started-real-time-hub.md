@@ -22,7 +22,7 @@ This article provides guidance on getting started with Fabric Real-Time hub.
     :::image type="content" source="./media/get-started-real-time-hub/hub-data-streams-tab.png" alt-text="Screenshot that shows the Fabric Real-Time hub with the default tab Data streams selected." lightbox="./media/get-started-real-time-hub/hub-data-streams-tab.png":::
 
 ## Data streams tab
-On the **Data streams** tab, you see streams and tables. Streams are the outputs from [Fabric eventstreams](../real-time-intelligence/event-streams/overview.md) and tables are from KQL databases that you have access to. 
+On the **Data streams** tab, you see streams and tables. Streams are the outputs from [Fabric eventstreams](../real-time-intelligence/event-streams/overview.md) and tables are from Kusto Query Language (KQL) databases that you have access to. 
 
 1. To **explore** streams and tables that you have access, use instructions from [Explore data streams](explore-data-streams.md). 
 1. To **view details** for a stream or a table, see [View data stream details](view-data-stream-details.md).
@@ -55,13 +55,13 @@ See following articles to learn how to **setup alerts** on Fabric events:
 - [Set alerts on Azure Blob Storage events](set-alerts-azure-blob-storage-events.md)
 - [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
 
-## Get events wizard
+## Get events 
+You can connect to data from both inside and outside of Fabric in a mere few steps using the **Get events experience** within Fabric, including Real-Time hub. Whether data is coming from new or existing sources, streams, or available events, the Get events experience allows you to connect to a wide range of event sources directly from Real-Time hub. 
+
+The enhanced experience allows for easy connectivity to external data streams including Camel Kafka connectors powered by Kafka connect and the Debezium connectors for fetching the Change Data Capture (CDC) streams. Connectivity to notification sources and discrete events is also included within Get events, this enables access to notification events from Azure and other clouds solutions including Amazon Web Services and Google Cloud Platform.  
+
 When you select **Get events** button on Real-Time hub, you see the **Get event** wizard. This wizard lets you create eventstreams for the Microsoft sources and Fabric events in the same way you can create by using content menus in the list view. In addition, the wizard also lets you create eventstreams for the following external sources. 
 
 [!INCLUDE [external-sources](./includes/external-sources.md)]
 
-You can connect to these resources and create eventstreams that show up on the **Data streams** tab. Select a link for a source in the list to learn how to create an event stream for that source. 
-
-
-
-
+You can connect to these resources and create eventstreams that show up on the **Data streams** tab. Select a link for a source in the list to learn how to create an event stream for that source. Added data sources show up on the **Data streams** tab. Select a link for a source in the list to learn how to create an event stream for that source. 
