@@ -8,7 +8,7 @@ ms.date: 05/21/2024
 ---
 
 # Consume data streams in Real-Time hub
-There are two types of data streams in Real-Time hub: **Stream** and **Table**. 
+There are two types of data streams in Real-Time hub: **Stream** and **Table**. This article shows how to consume streams and tables in Real-Time hub.
 
 ## Consume streams
 Here are a few ways to consume streams in Real-Time hub:
@@ -32,7 +32,7 @@ In Real-Time hub, when you create data streams to get events from the [supported
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
 ### Process using transformations in Fabric event streams
-After you open the eventstream in an editor, you can add transformations such as Aggregate, Expand, Filter, Group by, Manage fields, and Union, on the event data streaming into Fabric, and then send the output data from transformations into supported destinations. For more information about transformations, see [Supported transformation operations](../real-time-intelligence/event-streams/route-events-based-on-content?branch=release-build-fabric.md#supported-operations). 
+After you open the eventstream in an editor, you can add transformations such as Aggregate, Expand, Filter, Group by, Manage fields, and Union, on the event data streaming into Fabric, and then send the output data from transformations into supported destinations. For more information about transformations, see [Supported transformation operations](../real-time-intelligence/event-streams/route-events-based-on-content.md#supported-operations). 
 
 :::image type="content" source="./media/consume-data-streams/transform-operations.png" alt-text="Screenshot that shows the transformation operations available on a stream.":::
 
