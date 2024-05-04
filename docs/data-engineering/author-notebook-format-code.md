@@ -3,7 +3,7 @@ title: "Format code in Microsoft Fabric notebooks"
 description: "Learn how to extend a Microsoft Fabric notebook to use a PEP 8-compliant code formatter."
 author: peter-myers
 ms.author: v-myerspeter
-ms.reviewer: snehagunda
+ms.reviewer: snehagunda, arunsethia
 ms.topic: how-to
 ms.custom: fabric-cat
 ms.date: 10/30/2023

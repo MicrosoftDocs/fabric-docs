@@ -4,8 +4,8 @@ title: |
 description: Learn how to configure a mirrored database from Azure Cosmos DB in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa
-ms.date: 03/15/2024
+ms.reviewer: anithaa, wiassaf
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: tutorial
 no-loc: [Copilot]
@@ -23,7 +23,7 @@ In this tutorial, you configure a Fabric mirrored database from an Azure Cosmos 
 - An existing Azure Cosmos DB for NoSQL account.
   - If you don't have an Azure subscription, [Try Azure Cosmos DB for NoSQL free](https://cosmos.azure.com/try/).
   - If you have an existing Azure subscription, [create a new Azure Cosmos DB for NoSQL account](/azure/cosmos-db/nosql/quickstart-portal).
-- An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../../get-started/fabric-trial.md). Mirroring may not be available in some Fabric regions. For more information, see [supported regions.](azure-cosmos-db-limitations.md#supported-regions)
+- An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../../get-started/fabric-trial.md). Mirroring might not be available in some Fabric regions. For more information, see [supported regions.](azure-cosmos-db-limitations.md#supported-regions)
 - Enable Mirroring in your Fabric tenant or workspace. If the feature isn't already enabled, [enable mirroring in your Fabric tenant](enable-mirroring.md).
     - If you do not see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
 > [!TIP]
@@ -35,7 +35,7 @@ First, ensure that the source Azure Cosmos DB account is correctly configured to
 
 1. Navigate to your Azure Cosmos DB account in the [Azure portal](https://portal.azure.com).
 
-1. Ensure that continuous backup is enabled. If not enabled, follow the guide at [migrate an existing Azure Cosmos DB account to continuous backup](/azure/cosmos-db/migrate-continuous-backup) to enable continuous backup. This feature may not be available in some scenarios. For more information, see [database and account limitations](azure-cosmos-db-limitations.md#account-and-database-limitations).
+1. Ensure that continuous backup is enabled. If not enabled, follow the guide at [migrate an existing Azure Cosmos DB account to continuous backup](/azure/cosmos-db/migrate-continuous-backup) to enable continuous backup. This feature might not be available in some scenarios. For more information, see [database and account limitations](azure-cosmos-db-limitations.md#account-and-database-limitations).
 
 1. Ensure that the networking options are set to **public network access** for **all networks**. If not, follow the guide at [configure network access to an Azure Cosmos DB account](/azure/cosmos-db/how-to-configure-firewall#configure-ip-policy).
 
@@ -121,7 +121,7 @@ Now, use T-SQL to query your NoSQL data that is now stored in Fabric OneLake.
 
 1. Switch from **Mirrored Azure Cosmos DB** to **SQL analytics endpoint**.
 
-    :::image type="content" source="media/azure-cosmos-db-tutorial/switch-experience.png" alt-text="Screenshot of the selector to switch between experiences in the Fabric portal." lightbox="media/azure-cosmos-db-tutorial/switch-experience.png":::
+    :::image type="content" source="media/azure-cosmos-db-tutorial/switch-experience.png" alt-text="Screenshot of the selector to switch between items in the Fabric portal." lightbox="media/azure-cosmos-db-tutorial/switch-experience.png":::
 
 1. Each container in the source database should be represented in the SQL analytics endpoint as a warehouse table.
 

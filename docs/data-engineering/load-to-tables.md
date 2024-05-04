@@ -18,7 +18,7 @@ The [Lakehouse](lakehouse-overview.md) in Microsoft Fabric provides a feature to
 
 ## Load to Table capabilities overview
 
-Here's a list of features that we have enabled in the integrated load to table experience to provide our users with flexibility while increasing their productivity:
+Here's a list of features that we enabled in the integrated load to table experience to provide our users with flexibility while increasing their productivity:
 
 - **Supported file types:** This feature currently only supports loading PARQUET or CSV file types. File extension case doesn't matter.
 
@@ -26,13 +26,16 @@ Here's a list of features that we have enabled in the integrated load to table e
 
 - **Folder-level load:** You can load all files under a folder and its subfolders at once by selecting "Load to Delta Table" after clicking on a folder. This feature automatically traverses all files and loads them to a Delta Table. It's important to note that only files of the same type can be loaded at the same time to a table.
 
-- **Load to new and existing table:** User can choose to load their files and folders to a new table or an existing table of their choice. If they decide to choose to load to an existing table, they have the option to either append or overwrite their data in the table.
+- **Load to new and existing table:** User can choose to load their files and folders to a new table or an existing table of their choice. If they decide to choose to load to an existing table, they can either append or overwrite their data in the table.
 
-- **CSV Source file option:** For CSV files, we allow user to specify if their source file includes headers they would like to leverage as column names. Users can also specify a separator of their choice to override the default comma separator in place.
+- **CSV Source file option:** For CSV files, we allow user to specify if their source file includes headers they would like to use as column names. Users can also specify a separator of their choice to override the default comma separator in place.
 
 - **Loaded as Delta Tables:** Tables are always loaded using the Delta Lake table format with V-Order optimization enabled.
 
    :::image type="content" source="media\load-to-tables\load-to-tables-overview.gif" alt-text="Gif of overall load folder to table experience." lightbox="media\load-to-tables\load-to-tables-overview.gif":::
+
+> [!NOTE]
+> Currently, you cannot specify the table schema through the Lakehouse UI; you must use a notebook for that purpose.
 
 ## Validation guidelines and rules
 
@@ -44,7 +47,7 @@ The following standard applies to the Load to table experience:
 
 - Column names allow any English letter, upper or lower case, underscore (**```_```**), and characters in other language such as Chinese in UTF, length up to **32 characters**. Column names are validated during the load action. The Load to Delta algorithm replaces forbidden values with underbar (**```_```**). If no proper column name is achieved during validation, the load action fails.
 
-- For CSV files, separator can't be empty, be longer than **8 characters** or use any of the following characters: **```(```**, **```)```**, **```[```**, **```]```**,**```{```**, **```}```**, single quote (**```'```**), double quote (**```"```**), and white space.
+- For CSV files, separator can't be empty, can't be longer than **8 characters**, or use any of the following characters: **```(```**, **```)```**, **```[```**, **```]```**,**```{```**, **```}```**, single quote (**```'```**), double quote (**```"```**), and white space.
 
 ## Related content
 

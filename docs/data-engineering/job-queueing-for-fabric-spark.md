@@ -15,9 +15,16 @@ ms.date: 04/10/2024
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 Microsoft Fabric supports the queueing of background jobs when you have reached your Spark compute limits for your Fabric capacity. The job queueing system offers automatic retries for jobs that are added to the queue until they reach queue expiry. When users create a Microsoft Fabric capacity on Azure, they choose a capacity size based on the size of their analytics workload. 
-After purchasing the capacity, admins can create workspaces within the capacity in Microsoft Fabric. Spark jobs that run within these workspaces can use up to the maximum cores allocated for a given capacity, and once the max limit has been reached, the jobs are either throttled or queued. Learn more about the concurrency limits on Fabric Spark based on Fabric SKUs in Concurrency Limits on Fabric Spark. Learn more about the Spark concurrency limits [Spark Concurrency Limits in Microsoft Fabric](spark-job-concurrency-and-queueing.md)
+After purchasing the capacity, admins can create workspaces within the capacity in Microsoft Fabric. Spark jobs that run within these workspaces can use up to the maximum cores allocated for a given capacity, and once the max limit has been reached, the jobs are either throttled or queued.
 
-Job queueing is supported for Notebook jobs that are triggered by pipelines or through the scheduler, as well as for Spark job definitions. The queue operates in a First-In-First-Out (FIFO) manner, where jobs are added to the queue based on the time of their submission and are constantly retried and start executing when the capacity is freed up. 
+Learn more about the [Spark Concurrency Limits in Microsoft Fabric](spark-job-concurrency-and-queueing.md)
+
+Job queueing is supported for Notebook jobs that are triggered by pipelines or through the scheduler, as well as for Spark job definitions. Queueing is not supported for **interactive notebook jobs** and notebook jobs triggered through **notebook public API**.
+
+The queue operates in a First-In-First-Out (FIFO) manner, where jobs are added to the queue based on the time of their submission and are constantly retried and start executing when the capacity is freed up. 
+
+> [!NOTE]
+> Queueing of Spark jobs is not supported when your Fabric capacity is in its throttled state. All new jobs submitted will be rejected.
 
 :::image type="content" source="media\job-queueing-for-fabric-spark\job-queueing-animation.gif" alt-text="Animated illustration of the process of job queuing in Microsoft Fabric.":::
 
@@ -51,6 +58,8 @@ The following section lists various queue sizes for Spark workloads based on Mic
 
 > [!NOTE]
 > Queueing is not supported for Fabric trial capacities. Users would have to switch to a paid Fabric F or P SKU to use queueing for Spark jobs.
+
+Once the max queue limit has been reached for a Fabric capacity, the new jobs submitted will be throttled with a error message _[TooManyRequestsForCapacity] This spark job can't be run because you have hit a spark compute or API rate limit. To run this spark job, cancel an active Spark job through the Monitoring hub, choose a larger capacity SKU, or try again later. HTTP status code: 430 {Learn more} HTTP status code: 430_.
 
 ## Related content
 
