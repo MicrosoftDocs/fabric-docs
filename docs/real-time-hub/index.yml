@@ -40,6 +40,24 @@ landingContent:
           - text: Supported sources
             url: supported-sources.md
 
+
+
+  # Card 
+  - title: Discover and manage streams
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Explore streams
+            url: explore-data-streams.md
+          - text: View stream details
+            url: view-data-stream-details.md
+          - text: Preview streams
+            url: preview-data-streams.md
+          - text: Endorse streams
+            url: endorse-data-streams.md
+          - text: Explore Fabric events
+            url: explore-fabric-events.md
+
   # Card 
   - title: Microsoft sources
     linkLists:
@@ -80,22 +98,6 @@ landingContent:
           - text: Create streams for Fabric workspace item events
             url: create-streams-fabric-workspace-item-events.md
 
-
-  # Card 
-  - title: Discover and manage streams
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Explore streams
-            url: explore-data-streams.md
-          - text: View stream details
-            url: view-data-stream-details.md
-          - text: Preview streams
-            url: preview-data-streams.md
-          - text: Endorse streams
-            url: endorse-data-streams.md
-          - text: Explore Fabric events
-            url: explore-fabric-events.md
 
   # Card 
   - title: Consume events and streams
