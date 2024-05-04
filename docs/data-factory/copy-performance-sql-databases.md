@@ -17,7 +17,7 @@ In this article, we discuss techniques to help you to optimize Copy activity wit
 > [!NOTE]
 > The metrics included in this article are the results of test cases comparing and contrasting behavior across various capabilities, and are not formal engineering benchmarks. All test cases are moving data from East US 2 to West US 2 regions.  
 
-When starting with a Data pipeline Copy activity, it's important to understand the source and destination systems prior to development, understand what you are optimizing for, and understand how to monitor the source, destination, and Data pipeline for the best resource utilization, performance, and consumption.
+When starting with a Data pipeline Copy activity, it's important to understand the source and destination systems before starting development. You should state what you are optimizing for, and understand how to monitor the source, destination, and Data pipeline to achieve the best resource utilization, performance, and consumption.
 
 When sourcing from an Azure SQL Database, it's important to understand:
 
@@ -122,22 +122,22 @@ Dynamic Range allows the service to intelligently generate queries against the s
 
 - **Degree of copy parallelism**
   
-  By default, _Auto_ is assigned for the **Degree of copy parallelism**. However, _Auto_ might not achieve the optimal number of parallel copies. **Parallel copies** correlates to the number of sessions established on the source database. By specifying too many parallel copies, the source database CPU is at risk of being overtaxed, leading to queries being in a suspended state.
+  By default, _Auto_ is assigned for the **Degree of copy parallelism**. However, _Auto_ might not achieve the optimal number of parallel copies. **Parallel copies** correlates to the number of sessions established on the source database. If too many parallel copies are generated, the source database CPU is at risk of being overtaxed, leading to queries being in a suspended state.
 
-  In the original test case for **Dynamic range** using _Auto_, the service actually generated 251 parallel copies at runtime. By specifying a value in **Degree of copy parallelism**, you set the maximum number of parallel copies. This allows you to limit the number of concurrent sessions made to your source, allowing you to better control your resource management. In these test cases, by specifying 50 as the value, both total duration as well as source resource utilization improved.
+  In the original test case for **Dynamic range** using _Auto_, the service actually generated 251 parallel copies at runtime. By specifying a value in **Degree of copy parallelism**, you set the maximum number of parallel copies. This setting allows you to limit the number of concurrent sessions made to your source, allowing you to better control your resource management. In these test cases, by specifying 50 as the value, both total duration and source resource utilization improved.
 
   | Destination | Partition Option | Degree of copy parallelism | Used Parallel Copies | Total Duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
   | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
   | Warehouse   | Dynamic Range    | 50                         | 50                   | 00:13:05       |
 
-  **Dynamic range** with a **Degree of parallel copies** can significantlyt improve performance. However, this requires either predefining the boundaries or allowing the service to determine the values at runtime, which can have a variable impact on total duration, depending on the DDL and data volume of the source table. In addition, this should also be paired with an understanding of how many parallel copies your source can handle. If the value is too high, there can be a negative impact on your source system and copy activity performance.
+  **Dynamic range** with a **Degree of parallel copies** can significantly improve performance. However, using the setting requires either predefining the boundaries or allowing the service to determine the values at runtime. Allowing the service to determine the values at runtime can have a variable impact on total duration, depending on the DDL and data volume of the source table. In addition, this should also be paired with an understanding of how many parallel copies your source can handle. If the value is too high, source system and copy activity performance can be degraded.
 
-  For more information on parallel copies refer to [Copy activity performance features: Parallel copy](/azure/data-factory/copy-activity-performance-features#parallel-copy)
+  For more information on parallel copies, refer to [Copy activity performance features: Parallel copy](/azure/data-factory/copy-activity-performance-features#parallel-copy)
 
 - **Fabric Warehouse**
 
-  By default, **Isolation level** is not specified, and **Degree of parallelism** is set to _Auto_.
+  By default, **Isolation level** isn't specified, and **Degree of parallelism** is set to _Auto_.
 
   | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
