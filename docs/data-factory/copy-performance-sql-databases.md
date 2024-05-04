@@ -86,7 +86,7 @@ In this article, we will focus on total duration. Total duration encompasses add
 
 ITO determines the maximum amount of CPU, memory, and network resource allocation the activity can consume. If you set ITO to _Maximum_ (or 256), the service will select what it believes will allow for the most optimized throughput. For the purpose of this article, all test cases have ITO set to _Maximum_, although the service uses only what it requires and the actual value is lower than 256. 
 
-For a deeper understanding of ITO, refer to [Intelligent throughput optimization](copy-activity-performance-and-scalability-guide.md#intelligent-throughput-optimization)
+For a deeper understanding of ITO, refer to [Intelligent throughput optimization](/azure/data-factory/copy-activity-performance-and-scalability-guide#intelligent-throughput-optimization)
 
 > [!NOTE]
 > Staging is required when the Copy activity sink is Fabric Warehouse. Options such as **Degree of copy parallelism** and **Intelligent throughput optimization** only apply in that case from Source to Staging. Test cases to Lakehouse did not have staging enabled.
