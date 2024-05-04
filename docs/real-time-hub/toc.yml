@@ -78,7 +78,6 @@ items:
   - name: Set alerts on data streams
     href: set-alerts-data-streams.md
   - name: Set alerts on Fabric events
-
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md

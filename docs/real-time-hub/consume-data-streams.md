@@ -19,9 +19,15 @@ Here are a few ways to consume streams in Real-Time hub:
 
 In Real-Time hub, when you create data streams to get events from the [supported sources](supported-sources.md), an [eventstream](../real-time-intelligence/event-streams/overview.md) is created for you. You can open the eventstream associated with a data stream by using one of the following ways: 
 
-- At the end of creating this data stream, on the **Review and create** page, you see the **Open eventstream** link to open the eventstream associated with the data stream in an editor. 
-- On the **Data streams** tab, move the mouse over a data stream whose parent is an eventstream, and select the **Open** link, on select **... (ellipsis)**, and then select **Open eventstream**. 
-- Select a data stream whose parent is an eventstream on the **Data streams** tab to see a stream detail page. On this page, you can select **Open eventstream** link on the ribbon.  
+- **Get events** experience:
+
+    At the end of creating this data stream, on the **Review and create** page, you see the **Open eventstream** link to open the eventstream associated with the data stream in an editor. 
+- **Data streams** tab:
+
+    Move the mouse over a data stream whose parent is an eventstream, and select the **Open** link, on select **... (ellipsis)**, and then select **Open eventstream**. 
+- **Detail page**:
+
+    Select a data stream whose parent is an eventstream on the **Data streams** tab to see a stream detail page. On this page, you can select **Open eventstream** link on the ribbon.  
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -32,6 +38,20 @@ After you open the eventstream in an editor, you can add transformations such as
 
 ### Send output from data stream to KQL table and analyze it
 After you open an eventstream in the editor, you can [add a KQL database destination](../real-time-intelligence/event-streams/add-destination-kql-database.md). When data is output to a KQL table, you can run queries against the KQL table to analyze the data.
+
+1. After you open the eventstream, select **Edit** on the ribbon to enter into the edit mode. 
+
+    :::image type="content" source="./media/consume-data-streams/edit-button.png" alt-text="Screenshot that shows the selection of the Edit button on the ribbon." lightbox="./media/consume-data-streams/edit-button.png":::   
+1. Add a KQL Database destination. Select **Transform events or add destination** tile or **Transform events** on the ribbon, and then select **KQL Database**. 
+
+    :::image type="content" source="./media/consume-data-streams/add-destination-kql-database-menu.png" alt-text="Screenshot that shows the selection of the KQL Database in the list of destinations." lightbox="./media/consume-data-streams/add-destination-kql-database-menu.png":::   
+1. Configure the KQL Database destination by following instructions from [Add KQL Database destination to an eventstream](../real-time-intelligence/event-streams/add-destination-kql-database.md). 
+1. Wait for the data to be streamed into the KQL destination. Verify the status of streaming into the KQL database on the canvas. 
+1. Select the destination tile and switch to the **Details** tab in the bottom pagen.
+1. Select **Open item** to open the destination KQL database.
+
+    :::image type="content" source="./media/consume-data-streams/kql-database-destination.png" alt-text="Screenshot that shows the selection of the KQL Database tile on the canvas and a link to open KQL database in the Details pane at the bottom." lightbox="./media/consume-data-streams/kql-database-destination.png":::   
+1. Now, Run queries against the destination KQL table to analyze the data streaming into the KQL database. 
 
 ### Set alerts on data streams
 You can set alerts on a data stream whose parent is an eventstream. An alert has a condition to check, for example `is BikepointID is greater than 50`, and actions to take when the condition is satisfied on the incoming data. These actions can be sending an email, messaging in Teams, or running a Fabric item such as a data pipeline. For more information, see [Set alerts on data streams](set-alerts-data-streams.md).
