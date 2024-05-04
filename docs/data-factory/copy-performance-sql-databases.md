@@ -72,6 +72,7 @@ The default settings are:
     :::image type="content" source="media/copy-performance-sql-databases/additional-settings.png" alt-text="Screenshot showing additional settings for the Azure SQL database.":::
 
 When we tested using the default settings, the service took over 2 hours per copy activity to load 1.5 billion records into each destination. These values form our reference point used to measure performance improvements. Before making changes, always evaluate baseline performance to create a reference point of comparison.
+
 |Destination  |Partition option  |Degree of copy parallelism  |Used parallel copies  |Total duration|
 |---------|---------|---------|---------|--------------|
 |Fabric Warehouse     |None         |Auto         |1         |02:23:21              |
@@ -125,6 +126,7 @@ Dynamic Range allows the service to intelligently generate queries against the s
   By default, _Auto_ is assigned for the **Degree of copy parallelism**. However, _Auto_ might not achieve the optimal number of parallel copies. **Parallel copies** correlates to the number of sessions established on the source database. If too many parallel copies are generated, the source database CPU is at risk of being overtaxed, leading to queries being in a suspended state.
 
   In the original test case for **Dynamic range** using _Auto_, the service actually generated 251 parallel copies at runtime. By specifying a value in **Degree of copy parallelism**, you set the maximum number of parallel copies. This setting allows you to limit the number of concurrent sessions made to your source, allowing you to better control your resource management. In these test cases, by specifying 50 as the value, both total duration and source resource utilization improved.
+  
   | Destination | Partition Option | Degree of copy parallelism | Used Parallel Copies | Total Duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
   | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
@@ -137,12 +139,14 @@ Dynamic Range allows the service to intelligently generate queries against the s
 - **Fabric Warehouse**
 
   By default, **Isolation level** isn't specified, and **Degree of parallelism** is set to _Auto_.
+  
   | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
   | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
   | Warehouse   | Dynamic Range    | Auto                       | 251                  | 00:39:03       |
 
 - **Fabric Lakehouse (Tables)**
+  
   | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
   | Lakehouse   | None             | Auto                       | 1                    | 02:23:21       |
@@ -154,6 +158,7 @@ Dynamic Range allows the service to intelligently generate queries against the s
 Compared to a heap table, a table with a clustered key index on the column selected for the dynamic range’s partition column drastically improved performance and resource utilization, even when degree of copy parallelism was set to auto.
 
 - **Fabric Warehouse**
+  
   | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
   | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
@@ -161,13 +166,26 @@ Compared to a heap table, a table with a clustered key index on the column selec
   | Warehouse   | Dynamic Range    | 50                         | 50                   | 00:08:38       |
 
 - **Fabric Lakehouse (Tables)**
-  | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
-  |-------------|------------------|----------------------------|----------------------|----------------|
-  | Lakehouse   | None             | Auto                       | 1                    | 02:23:21       |
-  | Lakehouse   | Dynamic Range    | Auto                       | 251                  | 00:06:44       |
-  | Lakehouse   | Dynamic Range    | 50                         | 50                   | 00:06:34       |
+  
+| Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
+|-------------|------------------|----------------------------|----------------------|----------------|
+| Lakehouse   | None             | Auto                       | 1                    | 02:23:21       |
+| Lakehouse   | Dynamic Range    | Auto                       | 251                  | 00:06:44       |
+| Lakehouse   | Dynamic Range    | 50                         | 50                   | 00:06:34       |
 
-#### Logical partitioning design
+#### Logical partition design
+
+The logical partition design pattern is more advanced and requires additional developer effort. However, this design has been used in scenarios with strict data loading requirements. This design was originally developed to meet the needs of an on-premises Oracle database to load 180 GB of data in under 1.5 hours. The original design, using defaults of the copy activity, took over 65 hours. By using a Logical Partitioning Design, we get this under 1.5 hours.
+
+This design was also used in this blog series: [Data pipeline performance improvements Part 1: How to convert a time interval into seconds](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvements-part-1-how-to-convert-a-time-interval-dd-hhmmss-into-seconds)). This design is very good to emulate in your environment when you are loading large source tables and need optimal loading performance by using techniques like setting a data range to partition the source data reads. 
+This design generates many sub-date ranges. Then using a for each activity to iterate over the ranges, many copy activities are invoked to source data between the specified range. Within the for each activity, all of the copy activities run in parallel (up to the batch count maximum of 50) and have degree of copy parallelism set to “Auto”.  
+
+For the below examples, the partitioned date values were set to these values:
+•	Starting value: 1992-01-01
+•	Ending value: 1998-08-02
+•	Bucket Interval Days: 50
+Parallel copies and total duration are a max value observed across all 50 copy activities that were created. Since all 50 ran in parallel, the max value for Total Duration is how long all copy activities took to finish in parallel.  
+
 
 - **Fabric Warehouse**
 - **Fabric Lakehouse**
