@@ -62,8 +62,6 @@ It allows for easy connectivity to external data streams including Kafka connect
 
 Select **Get events** from the Real-Time hub and follow the prompts to complete the flow. Here's a full list of built-in sources inside Get events
 
-[!INCLUDE [microsoft-sources](./includes/microsoft-sources.md)]
-[!INCLUDE [external-sources](./includes/external-sources.md)]
-[!INCLUDE [discrete-event-sources](./includes/discrete-event-sources.md)]
+[!INCLUDE [supported-sources](./includes/supported-sources.md)]
 
 You can connect to these services and create eventstreams that show up on the **Data streams** tab. Select a link for a source in the list to learn how to create an event stream for that source. 
