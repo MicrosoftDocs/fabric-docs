@@ -20,8 +20,7 @@ If you want to use enhanced capabilities that are in preview, see the content in
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
-- A KQL database created in a Fabric **premium workspace**.
-- Access to the Fabric **premium workspace** where your KQL database is located with **Contributor** or higher permissions.
+- Access to a KQL database created in a Fabric **premium workspace** where you have **Contributor** or higher permissions.
 
 ##  Add a KQL database as a destination
 
@@ -34,7 +33,7 @@ Direct ingestion mode ingests your event data directly into the KQL database wit
 > [!IMPORTANT]
 > You can use **Direct ingestion** only for your default stream. Direct ingestion can't follow processing operators or derived streams. If you want to add a KQL Database destination after processing operators or derived streams, use **Event processing before ingestion** instead.
 
-1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon or the **Transform events or add destination** card on the canvas, and then select **KQL Database**. 
+1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon or select the **Transform events or add destination** card on the canvas, and then select **KQL Database**. 
 
    ![A screenshot of selecting KQL database in the Add destination dropdown list.](media/add-destination-kql-database/add-destination.png)
 
@@ -46,7 +45,7 @@ Direct ingestion mode ingests your event data directly into the KQL database wit
 
    ![A screenshot of the KQL Database configuration screen.](media/add-destination-kql-database/direct-ingestion.png)
 
-1. Proceed to configure the KQL Database data connection by selecting **Publish**.
+1. Connect the new KQL Database destination card to the output of your eventstream if not already connected, and then select **Publish**.
 
    ![A screenshot of the eventstream with the Publish button highlighted.](media/add-destination-kql-database/edit-mode.png)
 
@@ -54,13 +53,13 @@ Direct ingestion mode ingests your event data directly into the KQL database wit
 
    ![A screenshot of the published eventstream with the Configure button in the KQL Database destination highlighted.](media/add-destination-kql-database/live-view.png)
 
-1. Your KQL Database opens. On the left pane of the **Get data** screen, select an existing table of the KQL database or create a new one to route and ingest the data.
+1. Your KQL Database opens in the **Get data** screen. Select an existing table of the KQL database, or select **New table** to create a new one to route and ingest the data.
 
-1. Select **Next**.
+1. Provide a **Data connection name** or keep the name provided, and then select **Next**. It can take a few minutes to pull data from the eventstream.
 
-   ![A screenshot of selecting a table in the KQL Database, with the Next button highlighted.](media/add-destination-kql-database/select-table.png)
+   ![A screenshot of the Get data screen for the KQL Database destination, with the Next button highlighted.](media/add-destination-kql-database/select-table.png)
 
-1. On the **Inspect the data** screen, select a data format to preview how the data is sent to your KQL database..
+1. On the **Inspect the data** screen, select a data format to preview how the data is sent to your KQL database.
 
    ![A screenshot of selecting a data format on the Inspect the data screen.](media/add-destination-kql-database/select-format.png)
 
@@ -86,7 +85,7 @@ The event processing before ingestion mode processes your event data before inge
 
    ![A screenshot of selecting the + symbol for the operator output and selecting KQL Database.](media/add-destination-kql-database/select-kql.png)
 
-1. On the **KQL Database** screen, **Event processing before ingestion** should be selected. Complete the rest of the information about your KQL database, and then select **Save**.
+1. On the **KQL Database** screen, **Event processing before ingestion** should already be selected. Complete the rest of the information about your KQL database, and then select **Save**.
 
    ![A screenshot of the KQL Database configuration screen for Event processing before ingestion.](media/add-destination-kql-database/event-processing.png)
 
@@ -96,7 +95,7 @@ The event processing before ingestion mode processes your event data before inge
 
 Once you complete these steps, the eventstream with KQL Database destination is available for visualization in **Live view.**
 
-![A screenshot of the configured KQL Database event processing flow in Live view.](media/add-destination-kql-database/live-view-processed.png)
+![A screenshot of the configured KQL Database event processing flow in Live view.](media/add-destination-kql-database/live-view-finished.png)
 
 # [Standard capabilities](#tab/standardcapabilities)
 

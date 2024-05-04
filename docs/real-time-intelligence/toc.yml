@@ -88,33 +88,29 @@ items:
         href: event-streams/add-source-fabric-workspace.md
       - name: Azure Blob Storage events (preview)
         href: event-streams/add-source-azure-blob-storage.md
-    - name: Route events to destinations (preview)
+    - name: Add destinations to eventstreams (preview)
       items:
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations-enhanced.md      
       - name: Derived stream 
         href: event-streams/add-destination-derived-stream.md
       - name: KQL Database
-        href: event-streams/add-destination-kql-database-enhanced.md
+        href: event-streams/add-destination-kql-database.md
       - name: Lakehouse
-        href: event-streams/add-destination-lakehouse-enhanced.md
+        href: event-streams/add-destination-lakehouse.md
       - name: Reflex
         href: event-streams/add-destination-reflex-enhanced.md
       - name: Custom endpoint
         href: event-streams/add-destination-custom-app-enhanced.md
     - name: Process events using event processor
       href: event-streams/process-events-using-event-processor-editor.md
-    - name: Route events to destinations
+    - name: Add destinations to eventstreams
       items:
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations.md      
-      - name: Add a KQL Database destination
-        href: event-streams/add-destination-kql-database.md
-      - name: Add a lakehouse destination
-        href: event-streams/add-destination-lakehouse.md
       - name: Add a Reflex destination
         href: event-streams/add-destination-reflex.md
-      - name: Add a custom app destination
+      - name: Add a custom endpoint destination
         href: event-streams/add-destination-custom-app.md
     - name: Preview data
       href: event-streams/preview-data.md

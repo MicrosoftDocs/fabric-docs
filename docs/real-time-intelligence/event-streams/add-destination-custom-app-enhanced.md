@@ -80,7 +80,7 @@ You can choose the protocol format that suits your application needs and prefere
 To learn how to add other destinations to an eventstream, see the following articles:     
 
 - [Derived stream](add-destination-derived-stream.md)    
-- [KQL Database](add-destination-kql-database,md)   
+- [KQL Database](add-destination-kql-database.md)   
 - [Lakehouse](add-destination-lakehouse.md)
 - [Reflex](add-destination-reflex-enhanced.md)
 

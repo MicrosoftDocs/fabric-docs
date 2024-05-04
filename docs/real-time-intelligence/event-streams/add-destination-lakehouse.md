@@ -17,16 +17,18 @@ If you want to use enhanced capabilities that are in preview, see the content in
 
 # [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
 
-There is *schema enforcement* for writing data into a lakehouse table. All new writes to the table must be compatible with the target table's schema at write time, ensuring data quality.
-
-When output is written to a new delta table, the table schema is created based on the first record. All records of the output data are projected onto the schema of the existing table. If the incoming data has an added column compared to the existing table schema, the data writes to the table without including the extra column. Similarly, if the incoming data is missing a column compared to the existing table schema, the data writes to the table with the column's value set to null.
-
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
 - Access to the **premium workspace** where your lakehouse is located with **Contributor** or higher permissions.
 
 ## Add a lakehouse as a destination
+
+There is *schema enforcement* for writing data into a lakehouse destination table. All new writes to the table must be compatible with the target table's schema at write time, ensuring data quality.
+
+When output is written to a new delta table, the table schema is created based on the first record. All records of the output data are projected onto the schema of the existing table.
+
+If the incoming data has columns that aren't in the existing table schema, the extra columns aren't included in the data written to the table. Likewise, if the incoming data is missing columns that are in the existing table schema, the missing columns write to the table with the values set to `null`.
 
 To add a lakehouse destination to a default or derived eventstream, follow these steps.
 
@@ -48,11 +50,11 @@ To add a lakehouse destination to a default or derived eventstream, follow these
 
 1. Select **Advanced**.
 
-1. Two ingestion modes are available for a lakehouse destination. Configure these modes based on your scenario to optimize how Fabric event streams writes to the lakehouse.
+1. Two ingestion modes are available for a lakehouse destination. Configure these modes to optimize how Fabric event streams writes to the lakehouse, based on your scenario.
 
    - **Minimum rows** is the minimum number of rows that the lakehouse ingests in a single file. The minimum is 1 row, and the maximum is 2 million rows per file. The smaller the minimum number of rows, the more files the lakehouse creates during ingestion.
 
-   - **Maximum duration** is the maximum duration that the lakehouse takes to ingest a single file. The minimum is 1 minute and maximum is 2 hours. The longer the duration, more rows are ingested in a file.
+   - **Maximum duration** is the maximum duration that the lakehouse takes to ingest a single file. The minimum is 1 minute and maximum is 2 hours. The longer the duration, the more rows are ingested in a file.
 
    ![A screenshot of the Advanced section of the Lakehouse configuration screen.](media/add-destination-lakehouse/advanced-screen.png)
 
@@ -62,11 +64,7 @@ To add a lakehouse destination to a default or derived eventstream, follow these
 
    ![A screenshot of the stream and lakehouse destination in Edit mode with the Publish button highlighted.](media/add-destination-lakehouse/edit-mode.png)
 
-The lakehouse destination appears on the canvas in **Live view**, with a spinning status indicator. The system takes a few minutes to change the status to **Streaming**.
-
-Once you complete these steps, the lakehouse destination is available for visualization in **Live view**.
-
-A table optimization shortcut is available inside the lakehouse destination. This solution launches an Apache Spark job within a Notebook, which consolidates the small streaming files within the target lakehouse table.
+Once you complete these steps, the lakehouse destination is available for visualization in **Live view**. In the **Details** pane, you can select the **Optimize table in notebook** shortcut to launch an Apache Spark job within a Notebook, which consolidates the small streaming files within the target lakehouse table.
 
 ![A screenshot of the lakehouse destination and the table optimization button in Live view.](media/add-destination-lakehouse/live-view.png)
 
@@ -134,6 +132,6 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Route events to destinations](add-manage-eventstream-destinations-enhanced.md)
 - [Custom app destination](add-destination-custom-app.md)
 - [Derived stream destination](add-destination-derived-stream.md)
-- [KQL Database destination](add-destination-kql-database,md)
+- [KQL Database destination](add-destination-kql-database.md)
 - [Reflex destination](add-destination-reflex.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
