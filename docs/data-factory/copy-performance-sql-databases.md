@@ -10,7 +10,7 @@ ms.date: 05/03/2024
 
 # Copy activity performance with SQL databases
 
-In this article, we discuss techniques to help you to optimize Copy activity with an SQL database source, using an Azure SQL Database as a reference. We cover different aspects of optimization including data transfer speeds, cost, monitoring, ease of development, and balancing these various considerations for the best outcome.
+In this article, we discuss techniques to help you to optimize Copy activity with a SQL database source, using an Azure SQL Database as a reference. We cover different aspects of optimization including data transfer speeds, cost, monitoring, ease of development, and balancing these various considerations for the best outcome.
 
 ## Copy activity options
 
