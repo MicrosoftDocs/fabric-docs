@@ -63,13 +63,13 @@ The default settings are:
     - **Partition option** - _None_
     - **Isolation level** - _None_
 
-:::image type="content" source="media/copy-performance-sql-databases/source-settings.png" alt-text="Screenshot showing the data source settings for the Azure SQL database.":::
+    :::image type="content" source="media/copy-performance-sql-databases/source-settings.png" alt-text="Screenshot showing the data source settings for the Azure SQL database.":::
 
 - Advanced settings
     - **Intelligent throughput optimization** - _Auto_
     - **Degree of copy parallelism** - _Auto_
 
-:::image type="content" source="media/copy-performance-sql-databases/additional-settings.png" alt-text="Screenshot showing additional settings for the Azure SQL database.":::
+    :::image type="content" source="media/copy-performance-sql-databases/additional-settings.png" alt-text="Screenshot showing additional settings for the Azure SQL database.":::
 
 Using the default settings, the service took over 2 hours per copy activity to load 1.5 billion records into each destination. These values are the reference point used to measure performance improvements. Before making changes, always evaluate current performance to create a reference point of comparison.
 
