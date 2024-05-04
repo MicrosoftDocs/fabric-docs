@@ -158,9 +158,5 @@ Dynamic Range allows the service to intelligently generate queries against the s
 - [Copy activity performance and scalability guide](copy-activity-performance-and-scalability-guide.md)
 - [Copy and transform data in Azure SQL Database](/azure/data-factory/connector-azure-sql-database?tabs=data-factory#parallel-copy-from-sql-database)
 - [Configure Azure SQL Database in a copy activity](connector-azure-sql-database-copy-activity.md)
-- [Microsoft Fabric Blog: Data Pipeline Performance Improvement Part 3 - Gaining more than 50% improvement for Historical Loads](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvement-part-3-gaining-more-than-50-improvement-for-historical-loads)
-- [Create partitioned tables and indexes](/sql/relational-databases/partitions/create-partitioned-tables-and-indexes)
-
-  
-  
-
+- [Create partitioned tables and indexes in Azure SQL Database](/sql/relational-databases/partitions/create-partitioned-tables-and-indexes)
+- Microsoft Fabric Blog [Data Pipeline Performance Improvement Part 3 - Gaining more than 50% improvement for Historical Loads](https://blog.fabric.microsoft.com/en-us/blog/data-pipeline-performance-improvement-part-3-gaining-more-than-50-improvement-for-historical-loads)
