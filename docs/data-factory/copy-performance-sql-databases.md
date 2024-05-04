@@ -229,6 +229,23 @@ The number of physical partitions limits the **Degree of copy parallelism**. Whi
 
 ### Isolation levels
 
+Let’s compare how specifying different **Isolation level** settings affect performance. When specifying **Isolation level** with a **Degree of copy parallelism** set to _Auto_, the Copy activity is at risk of overtaxing the source system and failing. It is recommended to leave **Isolation level** as _None_ if you want to leave **Degree of copy parallelism** set to _Auto_.
+
+> [!NOTE]
+> Azure SQL Database defaults to the **Isolation level* [_Read_Committed_Snapshot_](/sql/t-sql/statements/set-transaction-isolation-level-transact-sql).
+
+Let’s expand the test case for **Dynamic range** with **Degree of copy parallelism** set to _50_ and see how **Isolation level** affects performance.
+
+| Isolation level   | Total duration | Capacity Units | DB Max CPU % | DB Max Session |
+|-------------------|----------------|----------------|--------------|----------------|
+| None (default)    | 00:14:23       | 93,960         | 70           | 76             |
+| Read Uncommitted  | 00:13:46       | 89,280         | 81           | 76             |
+| Read Committed    | 00:25:34       | 97,560         | 81           | 76             |
+
+The **Isolation level** you choose for your database source queries would be more of a requirement rather than optimization path, however it is important to understand the differences in performance and Capacity Units consumption between each option.
+
+For more information on **Isolation level** refer to [IsolationLevel Enum](/dotnet/api/system.data.isolationlevel).
+
 ### ITO and capacity consumption
 
 ### Summary
