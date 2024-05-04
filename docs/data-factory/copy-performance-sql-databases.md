@@ -248,15 +248,75 @@ For more information on **Isolation level** refer to [IsolationLevel Enum](/dotn
 
 ### ITO and capacity consumption
 
+Similar to **Degree of parallel copies**, **Intelligent throughput optimization** (ITO) is another maximum value that can be set.  If you are optimizing for cost, ITO is a great setting to consider adjusting to meet your desired outcome.
+
+ITO Ranges:
+
+| ITO      | Max Value |
+|----------|-----------|
+| Auto     | Not specified |
+| Standard | 64 |
+| Balanced | 128 |
+| Maximum  | 256 |
+
+While the drop down allows for the above settings, we also allow for the use of custom values between 4 and 256.
+
+> [!NOTE]
+> The actual number of ITO used can be found in the Copy activity output _usedDataIntegrationUnits_ field.
+
+For the **Dynamic range** Heap test case where **Degree of parallel copies** was set to _Auto_, the service selected _Balanced_ with an actual value of 100. Let’s see what happens when the ITO is cut in half by specifying a Custom Value of 50:
+
+| ITO specified | Total duration | Capacity Units | DB Max CPU % | DB Max Session | Use optimized throughput |
+|---------------|----------------|----------------|--------------|----------------|--------------------------|
+| Maximum (256) | 00:13:46       | 89,280         | 81           | 76             | Balanced (100)           |
+| 50            | 00:18:28       | 48,600         | 76           | 61             | Standard (48)            |
+
+By cutting the ITO by 50%, the total duration increased by 34%, however the service used 45.5% less Capacity Units. If you are not optimizing for improved **Total duration** and want to reduce the Capacity Units used, it would be beneficial to set the ITO to a lower value.
+
 ### Summary
 
+The charts below summarize the behavior of loading into both the Fabric Warehouse and Fabric Lakehouse tables. If the table has a physical partition, then leveraging the **Partition option**: _Physical partitions of table_ would be the most balanced approach for transfer duration, capacity units, and compute overhead on the source. This is especially ideal if you have additional sessions running against the database during the time of data movement. 
+
+If your table does not have physical partitions, you still have the option of using the **Partition option**: _Dynamic Range_. This would require a prior step to determine the upper and lower bounds, but it still provides significant improvements in transfer duration compared to the default options at the cost of a bit higher capacity consumption, source compute utilization, and the need to test for optimal **Degree of parallelism**.
+
+Another important factor to maximize performance of your copy jobs is to keep the data movement inside of a single cloud region. For example, data movement from a source and destination data store in US West, with a Data Factory in US West will outperform a copy job moving data from US West to US West.
+
+Finally, if speed is the most important aspect of optimization, having an optimized DDL of your source table is critical in leveraging physical partition options. For a non-partitioned table, try _Dynamic range_, and this is not fast enough, consider logical partitioning or a hybrid approach of logical partitioning plus _Dynamic range_ within the sub-boundaries.
+
 #### Guidelines
+
+**Cost** Adjust Intelligent throughput optimization and Degree of Parallel Copies.
+**Speed** For partitioned tables, if there is a good number of partitions then use **Partition option**: _Physical partitions of tables_. Otherwise, if data is skewed or there is a limited number of partitions, consider leveraging _Dynamic range_. For heap and tables with indexes, leverage _Dynamic range_ in conjunction with **Degree of parallel copies** that would limit the number of suspended queries on your source. If you can predefine the partition upper/lower bounds, this will have additional performance improvements.
+
+Consider maintainability and developer effort. While leaving the default options take the longest time to move data, this might be the best option, especially if the source table’s DDL is unknown. This also provides reasonable Capacity Units consumption.
 
 #### Test cases
 
 ##### Fabric Warehouse test cases
 
+| Partition option | Degree of copy parallelism | Used parallel copies | Total duration | Capacity Units | Max CPU % | Max Session Count |
+|------------------|----------------------------|----------------------|----------------|----------------|-----------|------------------|
+| None             | Auto                       | 1                    | 02:23:21       | 51,839         | < 1       | 2                |
+| Physical (8)     | Auto                       | 8                    | 00:26:29       | 49,320         | 3         | 10               |
+| Physical (85)    | Auto                       | 85                   | 00:08:31       | 108,000        | 15        | 83               |
+| Dynamic Range (Heap) | Auto                    | 242                  | 00:39:03       | 282,600        | 100       | 272              |
+| Dynamic Range (Heap) | 50                      | 50                   | 00:13:05       | 92,159         | 81        | 76               |
+| Dynamic Range (Clustered Index) | Auto         | 251                  | 00:09:02       | 64,080         | 9         | 277              |
+| Dynamic Range (Clustered Index) | 50           | 50                   | 00:08:38       | 55,440         | 10        | 77               |
+| Logical Design   | Auto                       | 1                    | 00:12:11       | 226,108        | 91        | 50               |
+
 ##### Fabric Lakehouse (Tables) test cases
+
+| Partition option        | Degree of copy parallelism | Used parallel copies | Total duration | Capacity Units | Max CPU % | Max Session Count |
+|-------------------------|----------------------------|----------------------|----------------|----------------|-----------|------------------|
+| None                    | Auto                       | 1                    | 02:10:37       | 47,520         | <1%       | 2                |
+| Physical (8)            | Auto                       | 8                    | 00:36:36       | 64,079         | 2         | 10               |
+| Physical (85)           | Auto                       | 85                   | 00:12:21       | 275,759        |           |                  |
+| Dynamic Range (Heap)    | Auto                       | 251                  | 00:36:12       | 280,080        | 100       | 276              |
+| Dynamic Range (Heap)    | 50                         | 50                   | 00:12:01       | 101,159        | 68        | 76               |
+| Dynamic Range (Clustered Index) | Auto                | 251                  | 00:06:44       | 59,760         | 11        | 276              |
+| Dynamic Range (Clustered Index) | 50                  | 50                   | 00:06:34       | 54,760         | 10        | 76               |
+| Logical Design          | Auto                       | 1                    | 00:09:14       | 164,908        | 82        | 50               |
 
 ## Related content
 
