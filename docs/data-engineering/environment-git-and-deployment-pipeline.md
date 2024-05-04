@@ -77,7 +77,8 @@ You can find the deploying status after setting up the pipeline successfully. Af
 
 > [!IMPORTANT]
 >
-> The **custom pool** is currently not supported in deployment pipeline. If the environment selects the custom pool, the configurations of **Compute** section in the destination environment are set with default values. Using deployment rules to specify different pool in new workspace will be included in upcoming release.
+> - The **custom pool** is currently not supported in deployment pipeline. If the environment selects the custom pool, the configurations of **Compute** section in the destination environment are set with default values. Under this circumstance, the environments keep showing diff even the deployment is done successfully.
+> - Using deployment rules to specify different pool in new workspace will be included in upcoming release.
 
 ## Related content
 
