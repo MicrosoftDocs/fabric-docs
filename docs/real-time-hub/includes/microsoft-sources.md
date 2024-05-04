@@ -7,8 +7,9 @@ ms.topic: include
 ms.date: 05/21/2024
 ---
 
-[!INCLUDE [microsoft-sources](microsoft-sources.md)]
-
-[!INCLUDE [external-sources](external-sources.md)]
-
-[!INCLUDE [discrete-event-sources](discrete-event-sources.md)]
+- [Azure Event Hubs](../add-source-azure-event-hubs.md)
+- [Azure IoT Hub](../add-source-azure-iot-hub.md)
+- [Azure SQL Database Change Data Capture (../CDC)](../add-source-azure-sql-database-cdc.md)
+- [Azure Database for PostgreSQL CDC](../add-source-postgresql-database-cdc.md)
+- [Azure Database for MySQL CDC](../add-source-mysql-database-cdc.md)
+- [Azure Cosmos DB CDC](../add-source-mysql-database-cdc.md)
