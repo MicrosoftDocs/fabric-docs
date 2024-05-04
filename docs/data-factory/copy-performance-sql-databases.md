@@ -43,3 +43,55 @@ Once you understand both your source and destination, you can use various option
 
 ## Source details: Azure SQL Database
 
+To provide concrete examples, we tested multiple scenarios, moving data from an Azure SQL Database into both Fabric Lakehouse (tables) and Fabric Warehouse tables. In these examples, we tested four source tables. All have the same schema and record count. One uses a heap, a second uses a clustered index, while the third and fourth use 8 and 85 partitions respectively. This example used a trial capacity (F64) in Microsoft Fabric (West US 2).
+
+- Service Tier: General Purpose
+- Compute Teir: Serverless
+- Hardware Configuration: Standard-series (Gen5)
+  - Max vCores: 80
+  - Min vCores 20
+- Record Count: 1,500,000,000
+- Region: East US 2
+
+## Default Evaluation
+
+Before setting the source **Partition option**, it is important to understand the default behavior of the Copy activity.
+
+The default settings are:
+
+- Source
+    - **Partition option** - _None_
+    - **Isolation level** - _None_
+
+:::image type="content" source="media/copy-performance-sql-databases/source-settings.png" alt-text="Screenshot showing the data source settings for the Azure SQL database.":::
+
+- Settings:
+    - **Intelligent throughput optimization** - _Auto_
+    - **Degree of copy parallelism** - _Auto_
+
+:::image type="content" source="media/copy-performance-sql-databases/additional-settings.png" alt-text="Screenshot showing additional settings for the Azure SQL database.":::
+
+Using the default settings, the service took over 2 hours per copy activity to load 1.5 billion records into each destination. These values are the reference point used to measure performance improvements. Before making changes, always evaluate current performance to create a reference point of comparison.
+
+|Destination  |Partition option  |Degree of copy parallelism  |Used parallel copies  |Total duration|
+|---------|---------|---------|---------|--------------|
+|Fabric Warehouse     |None         |Auto         |1         |02:23:21              |
+|Fabric Lakehouse     |None         |Auto         |1         |02:10:37              |
+
+In this article, we will focus on total duration. Total duration encompasses additional stages such as queue, pre-copy script, and transfer duration. For more information on these stages, refer to [Copy activity execution details](copy-activity-performance-troubleshooting.md#understand-copy-activity-execution-details). For an extensive overview of Copy activity properties for Azure SQL Database as the source, refer to [Azure SQL Database source properties](connector-azure-sql-database-copy-activity.md#source) for the Copy activity.
+
+## Settings
+
+### Intelligent throughput optimization (ITO)
+
+ITO determines the maximum amount of CPU, memory, and network resource allocation the activity can consume. If you set ITO to _Maximum_ (or 256), the service will select what it believes will allow for the most optimized throughput. For the purpose of this article, all test cases have ITO set to _Maximum_, although the service uses only what it requires and the actual value is lower than 256. 
+
+For a deeper understanding of ITO, refer to [Intelligent throughput optimization](copy-activity-performance-and-scalability-guide.md#intelligent-throughput-optimization)
+
+> [!NOTE]
+> Staging is required when the Copy activity sink is Fabric Warehouse. Options such as **Degree of copy parallelism** and **Intelligent throughput optimization** only apply in that case from Source to Staging. Test cases to Lakehouse did not have staging enabled.
+
+### Partition options
+
+When your source is a relational database like Azure SQL database, in the **Advanced** section, you have the option to specify a **Partition option**. By default, this is set to _None_, with two additional options of _Physical partitions of table_ and _Dynamic Range_.
+
