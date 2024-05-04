@@ -145,7 +145,7 @@ By default, **Isolation level** isn't specified, and **Degree of parallelism** i
 | Warehouse   | None             | Auto                       | 1                    | 02:23:21       |
 | Warehouse   | Dynamic Range    | Auto                       | 251                  | 00:39:03       |
 
-##### Fabric Lakehouse (Tables)** with dynamic range
+##### Fabric Lakehouse (Tables) with dynamic range
   
   | Destination | Partition option | Degree of copy parallelism | Used parallel copies | Total duration |
   |-------------|------------------|----------------------------|----------------------|----------------|
