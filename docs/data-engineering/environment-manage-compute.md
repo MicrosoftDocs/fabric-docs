@@ -4,10 +4,7 @@ description: A Fabric environment contains a collection of configurations, inclu
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: overview
-ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 05/01/2024
 ms.search.for: Manage Spark compute in Environment
 ---
 
@@ -16,9 +13,6 @@ ms.search.for: Manage Spark compute in Environment
 Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. It includes starter pools and custom pools.
 
 A Fabric environment contains a collection of configurations, including Spark compute properties that allow users to configure the Spark session after they're attached to notebooks and Spark jobs. With an environment, you have a flexible way to customize compute configurations for running your Spark jobs. In an environment, the compute section allows you to configure the Spark session level properties to customize the memory and cores of executors based on workload requirements.
-
-> [!IMPORTANT]
-> The Fabric environment feature is currently in PREVIEW.
 
 Workspace admins can enable or disable compute customizations with the **Customize compute configurations for items** switch in the **Pool** tab of the **Data Engineering/Science** section in the **Workspace settings** screen.
 

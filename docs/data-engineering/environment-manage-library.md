@@ -2,21 +2,15 @@
 title: Library management in Fabric environments
 description: Learn how to include public and custom libraries in Fabric environments.
 ms.author: shuaijunye
-author: shuaijunye
+author: ShuaijunYe
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 05/01/2024
 ms.search.for: Manage libraries in Environment
 ---
 
 # Library management in Fabric environments
 
 Microsoft Fabric environments provide flexible configurations for running your Spark jobs. Libraries provide reusable code that developers want to include in their work. Except for the built-in libraries that come with each Spark runtime, you can install public and custom libraries in your Fabric environments. And you can easily attach environments to your notebooks and Spark job definitions.
-
-> [!IMPORTANT]
-> The environment item in Microsoft Fabric is currently in PREVIEW.
 
 ## Public libraries
 
