@@ -227,7 +227,6 @@ The number of physical partitions limits the **Degree of copy parallelism**. Whi
 | Fabric Lakehouse   | Physical         | Auto                       | 8                    | 00:36:36       |
 | Fabric Lakehouse   | Physical         | Auto                       | 85                   | 00:12:21       |
 
-
 ### Isolation levels
 
 ### ITO and capacity consumption
