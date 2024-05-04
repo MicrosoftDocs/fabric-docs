@@ -24,7 +24,7 @@ If you want to use enhanced capabilities that are in preview, see the content in
 
 ## Add Reflex as a destination
 
-To exclusively add a Reflex destination to a default stream or a derived stream, follow these steps.
+To add a Reflex destination to a default stream or derived stream, follow these steps.
 
 1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon and select **Reflex** from the dropdown list.
 
