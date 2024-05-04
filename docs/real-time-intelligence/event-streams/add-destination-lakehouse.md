@@ -1,16 +1,76 @@
 ---
 title: Add a lakehouse destination to an eventstream
-description: Learn how to add a lakehouse destination to Eventstream item with the Microsoft Fabric event streams feature.
+description: Learn how to add a lakehouse destination to an eventstream in Microsoft Fabric event streams.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 04/03/2024
+ms.date: 05/03/2024
 ms.search.form: Source and Destination
 ---
 
 # Add a lakehouse destination to an eventstream
-This article shows you how to add a lakehouse as a destination to a Microsoft Fabric eventstream. 
+
+This article shows you how to add a lakehouse as a destination to an eventstream in Microsoft Fabric event streams.
+
+If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+
+# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+
+There is *schema enforcement* for writing data into a lakehouse table. All new writes to the table must be compatible with the target table's schema at write time, ensuring data quality.
+
+When output is written to a new delta table, the table schema is created based on the first record. All records of the output data are projected onto the schema of the existing table. If the incoming data has an added column compared to the existing table schema, the data writes to the table without including the extra column. Similarly, if the incoming data is missing a column compared to the existing table schema, the data writes to the table with the column's value set to null.
+
+## Prerequisites
+
+- Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
+- Access to the **premium workspace** where your lakehouse is located with **Contributor** or higher permissions.
+
+## Add a lakehouse as a destination
+
+To add a lakehouse destination to a default or derived eventstream, follow these steps.
+
+1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon and select **Lakehouse** from the dropdown list.
+
+   ![A screenshot of the Add destination dropdown list with Lakehouse highlighted.](media/add-destination-lakehouse/add-destination.png)
+
+1. Connect the lakehouse to your stream node or operator.
+
+1. On the **Lakehouse** configuration screen, complete the following information:
+
+   1. Enter a **Destination name**.
+   1. Select the **Workspace** that contains your lakehouse.
+   1. Select an existing **Lakehouse** from the workspace you specified.
+   1. Select an existing **Delta table**, or create a new one to receive data.
+   1. Select the **Input data format** that is sent to your lakehouse. The supported data formats are JSON, Avro, and CSV (with header).
+
+   ![A screenshot of the Lakehouse configuration screen.](media/add-destination-lakehouse/lakehouse-screen.png)
+
+1. Select **Advanced**.
+
+1. Two ingestion modes are available for a lakehouse destination. Configure these modes based on your scenario to optimize how Fabric event streams writes to the lakehouse.
+
+   - **Minimum rows** is the minimum number of rows that the lakehouse ingests in a single file. The minimum is 1 row, and the maximum is 2 million rows per file. The smaller the minimum number of rows, the more files the lakehouse creates during ingestion.
+
+   - **Maximum duration** is the maximum duration that the lakehouse takes to ingest a single file. The minimum is 1 minute and maximum is 2 hours. The longer the duration, more rows are ingested in a file.
+
+   ![A screenshot of the Advanced section of the Lakehouse configuration screen.](media/add-destination-lakehouse/advanced-screen.png)
+
+1. Select **Save**.
+
+1. To implement the newly added lakehouse destination, select **Publish**.
+
+   ![A screenshot of the stream and lakehouse destination in Edit mode with the Publish button highlighted.](media/add-destination-lakehouse/edit-mode.png)
+
+The lakehouse destination appears on the canvas in **Live view**, with a spinning status indicator. The system takes a few minutes to change the status to **Streaming**.
+
+Once you complete these steps, the lakehouse destination is available for visualization in **Live view**.
+
+A table optimization shortcut is available inside the lakehouse destination. This solution launches an Apache Spark job within a Notebook, which consolidates the small streaming files within the target lakehouse table.
+
+![A screenshot of the lakehouse destination and the table optimization button in Live view.](media/add-destination-lakehouse/live-view.png)
+
+# [Standard capabilities](#tab/standardcapabilities)
 
 ## Prerequisites
 
@@ -66,13 +126,14 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing where to select the modify and delete options for destinations on the canvas." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
 
+---
 ## Related content
 
-To learn how to add other destinations to an eventstream, see the following articles: 
-- [KQL Database](add-destination-kql-database.md)
-- [Reflex](add-destination-reflex.md)
-- [Custom app](add-destination-custom-app.md)
+To learn how to add other destinations to an eventstream, see the following articles:
 
-To add a destination to the eventstream, see the following articles: 
-- [Add and manage sources to an eventstream](./add-manage-eventstream-sources.md)
-- [Create and manage an eventstream](./create-manage-an-eventstream.md)
+- [Route events to destinations](add-manage-eventstream-destinations-enhanced.md)
+- [Custom app destination](add-destination-custom-app.md)
+- [Derived stream destination](add-destination-derived-stream.md)
+- [KQL Database destination](add-destination-kql-database,md)
+- [Reflex destination](add-destination-reflex.md)
+- [Create an eventstream](create-manage-an-eventstream.md)

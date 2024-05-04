@@ -1,16 +1,104 @@
 ---
-title: Add KQL Database to an eventstream
-description: Learn how to add a KQL Database destination to Eventstream item with the Microsoft Fabric event streams feature.
+title: Add a KQL Database destination to an eventstream
+description: Learn how to add a KQL Database destination to an eventstream in Microsoft Fabric event streams.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 04/03/2024
+ms.date: 05/03/2024
 ms.search.form: Source and Destination
 ---
 
-# Add KQL Database destination to an eventstream
-This article shows you how to add a KQL database as a destination to a Microsoft Fabric eventstream. 
+# Add a KQL Database destination to an eventstream
+
+This article shows you how to add a KQL database as a destination to an eventstream in Microsoft Fabric event streams.
+
+If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+
+# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+
+## Prerequisites
+
+- Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
+- A KQL database created in a Fabric **premium workspace**.
+- Access to the Fabric **premium workspace** where your KQL database is located with **Contributor** or higher permissions.
+
+##  Add a KQL database as a destination
+
+To add a KQL database as a destination, you can choose between two ingestion modes: **Direct ingestion** or **Event processing before ingestion**.
+
+### Direct ingestion mode
+
+Direct ingestion mode ingests your event data directly into the KQL database without any processing. You can use direct ingestion mode to add a KQL database destination to your default stream.
+
+> [!IMPORTANT]
+> You can use **Direct ingestion** only for your default stream. Direct ingestion can't follow processing operators or derived streams. If you want to add a KQL Database destination after processing operators or derived streams, use **Event processing before ingestion** instead.
+
+1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon or the **Transform events or add destination** card on the canvas, and then select **KQL Database**. 
+
+   ![A screenshot of selecting KQL database in the Add destination dropdown list.](media/add-destination-kql-database/add-destination.png)
+
+1. On the KQL Database screen, select **Direct ingestion**.
+
+1. Enter a **Destination name**, a **Workspace**, and a **KQL Database** from the selected workspace.
+
+1. Select **Save**.
+
+   ![A screenshot of the KQL Database configuration screen.](media/add-destination-kql-database/direct-ingestion.png)
+
+1. Proceed to configure the KQL Database data connection by selecting **Publish**.
+
+   ![A screenshot of the eventstream with the Publish button highlighted.](media/add-destination-kql-database/edit-mode.png)
+
+1. In the KQL Database destination node, select **Configure**.
+
+   ![A screenshot of the published eventstream with the Configure button in the KQL Database destination highlighted.](media/add-destination-kql-database/live-view.png)
+
+1. Your KQL Database opens. On the left pane of the **Get data** screen, select an existing table of the KQL database or create a new one to route and ingest the data.
+
+1. Select **Next**.
+
+   ![A screenshot of selecting a table in the KQL Database, with the Next button highlighted.](media/add-destination-kql-database/select-table.png)
+
+1. On the **Inspect the data** screen, select a data format to preview how the data is sent to your KQL database..
+
+   ![A screenshot of selecting a data format on the Inspect the data screen.](media/add-destination-kql-database/select-format.png)
+
+1. You can also **Edit column headers**, or select **Advanced** to choose other options.
+
+   ![A screenshot of the Edit column headers and Advanced options in the Inspect the data screen.](media/add-destination-kql-database/advanced.png)
+
+1. When you're finished configuring the data, select **Finish**.
+
+1. On the **Summary** screen, review the details and status of your data ingestion, including the table with the schema you defined and the connection between the eventstream and the KQL database. Select **Close** to finalize the setup of your KQL database.
+
+   ![A screenshot of the Summary screen with the Close button highlighted.](media/add-destination-kql-database/summary.png)
+
+You can now see the KQL Database destination on the canvas in **Live view**.
+
+![A screenshot of the configured KQL Database in Live view.](media/add-destination-kql-database/live-view-finished.png)
+
+### Event processing before ingestion
+
+The event processing before ingestion mode processes your event data before ingesting it into the KQL database. Use this mode if you apply operators such as filtering or aggregation to process the data before ingestion, or after a derived stream.
+
+1. In **Edit mode** for your eventstream, hover over an operator or derived stream, select **+**, and then select **KQL Database**.
+
+   ![A screenshot of selecting the + symbol for the operator output and selecting KQL Database.](media/add-destination-kql-database/select-kql.png)
+
+1. On the **KQL Database** screen, **Event processing before ingestion** should be selected. Complete the rest of the information about your KQL database, and then select **Save**.
+
+   ![A screenshot of the KQL Database configuration screen for Event processing before ingestion.](media/add-destination-kql-database/event-processing.png)
+
+1. To implement the newly added KQL Database destination, select **Publish**.
+
+   ![A screenshot of the eventstream in Edit mode with the KQL Database destination added.](media/add-destination-kql-database/edit-mode-processed.png)
+
+Once you complete these steps, the eventstream with KQL Database destination is available for visualization in **Live view.**
+
+![A screenshot of the configured KQL Database event processing flow in Live view.](media/add-destination-kql-database/live-view-processed.png)
+
+# [Standard capabilities](#tab/standardcapabilities)
 
 ## Prerequisites
 
@@ -81,7 +169,6 @@ To add a KQL database as a destination, you need to have a KQL database created 
 
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-push-mode.png" alt-text="Screenshot showing the new KQL database push mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-push-mode.png" :::
 
-
 ## Manage a destination
 
 **Edit/remove**: You can edit or remove an eventstream destination either through the navigation pane or canvas.
@@ -90,13 +177,15 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing where to select the modify and delete options for destinations on the canvas." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
 
+---
+
 ## Related content
 
-To learn how to add other destinations to an eventstream, see the following articles: 
-- [Lakehouse](add-destination-lakehouse.md)
-- [Reflex](add-destination-reflex.md)
-- [Custom app](add-destination-custom-app.md)
+To learn how to add other destinations to an eventstream, see the following articles:
 
-To add a destination to the eventstream, see the following articles: 
-- [Add and manage sources to an eventstream](./add-manage-eventstream-sources.md)
-- [Create and manage an eventstream](./create-manage-an-eventstream.md)
+- [Route events to destinations](add-manage-eventstream-destinations-enhanced.md)
+- [Custom app destination](add-destination-custom-app.md)
+- [Derived stream destination](add-destination-derived-stream.md)
+- [Lakehouse destination](add-destination-lakehouse.md)
+- [Reflex destination](add-destination-reflex.md)
+- [Create an eventstream](create-manage-an-eventstream.md)
