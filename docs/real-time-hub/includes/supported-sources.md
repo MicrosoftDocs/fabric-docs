@@ -8,6 +8,6 @@ ms.date: 05/21/2024
 ---
 
 
-[!INCLUDE [microsoft-sources](./includes/microsoft-sources.md)]
-[!INCLUDE [external-sources](./includes/external-sources.md)]
-[!INCLUDE [discrete-event-sources](./includes/discrete-event-sources.md)]
+[!INCLUDE [microsoft-sources](microsoft-sources.md)]
+[!INCLUDE [external-sources](external-sources.md)]
+[!INCLUDE [discrete-event-sources](discrete-event-sources.md)]
