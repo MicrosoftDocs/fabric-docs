@@ -65,7 +65,7 @@ The default settings are:
 
 :::image type="content" source="media/copy-performance-sql-databases/source-settings.png" alt-text="Screenshot showing the data source settings for the Azure SQL database.":::
 
-- Settings:
+- Advanced settings
     - **Intelligent throughput optimization** - _Auto_
     - **Degree of copy parallelism** - _Auto_
 
