@@ -61,6 +61,7 @@ ms.search.form: Get started
     1. From the **Built-in Date Time Function** dropdown, select **SYSTEM.Timestamp()**
     
         :::image type="content" source="media/tutorial/system-timestamp.png" alt-text="Screenshot showing the system timestamp selected in the event stream manage fields tile in Real-Time Intelligence.":::
+
     1. Enter *Timestamp* as the **Field name**.
     1. Select **Add**.
   1. Select **Done**.
@@ -97,4 +98,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 3: Set a trigger on your event stream](tutorial-3-set-trigger.md)
+> [Tutorial part 4: Query your streaming data](tutorial-3-query-data.md)

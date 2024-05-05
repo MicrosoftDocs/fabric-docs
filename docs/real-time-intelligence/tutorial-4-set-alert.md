@@ -15,11 +15,16 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data in the Real-Time Hub](tutorial-2-get-real-time-events.md).
 
+## Set an alert on the event stream
 
+1. From the left navigation bar, select **Real-Time hub**.
+1. Select the eventstream you created in the previous tutorial.
+    The eventstream details page opens.
+    
+    :::image type="content" source="media/tutorial/set-alert.png" alt-text="Screenshot of event streams details page and set alert selected." lightbox="media/tutorial/set-alert.png":::
 
-Click on the name of the eventstream to go to the details page 
-
-Click on Trigger Alert and setup an alert (exact logic TBD) 
+1. Select **Set alert**
+1. 
 
 
 ## Related content
