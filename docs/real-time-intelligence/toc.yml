@@ -14,16 +14,14 @@ items:
       href: tutorial-introduction.md
     - name: 1- Create resources
       href: tutorial-1-resources.md
-    - name: 2- Get data with Eventstream
-      href: tutorial-2-event-streams.md
-    - name: 3- Get historical data
-      href: tutorial-3-get-historical-data.md
-    - name: 4- Explore data with KQL and SQL
-      href: tutorial-4-explore.md
+    - name: 2- Get data in the Real-Time hub
+      href: tutorial-2-get-real-time-events.md
+    - name: 3- Set a trigger on your event stream
+      href: tutorial-3-set-trigger.md
+    - name: 4- Transform your data in Event streams
+      href: tutorial-4-transform.md
     - name: 5- Use advanced KQL queries
-      href: tutorial-5-advanced-kql-query.md
-    - name: 6- Build a Power BI report
-      href: tutorial-6-build-report.md
+      href: tutorial-5-query-data.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
 - name: User flows
@@ -36,59 +34,59 @@ items:
     href: user-flow-3.md
   - name: "Explore your data visually with Real-Time Dashboards"
     href: user-flow-4.md
-  - name: "Trigger Fabric dataflows from the Real-time hub"
+  - name: "Trigger Fabric dataflows from the Real-Time hub"
     href: user-flow-5.md 
 - name: Get data
   items:
-  - name: Get, process, and route events
+  - name: Get, process, and route events 
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
-    - name: New capabilities (preview)
+    - name: New capabilities 
       href: event-streams/new-capabilities.md
     - name: Create eventstreams 
       items: 
-      - name: Create an eventstream
-        href: event-streams/create-manage-an-eventstream.md
-      - name: Create default and derived streams (preview)
+      - name: Create an eventstream 
+        href: event-streams/create-manage-an-eventstream-enhanced.md
+      - name: Create default and derived streams
         href: event-streams/create-default-derived-streams.md
-      - name: Create eventstreams for discrete events (preview)
+      - name: Create eventstreams for discrete events
         href: event-streams/create-eventstreams-discrete-events.md
-      - name: Edit and publish eventstreams (preview)
+      - name: Edit and publish eventstreams
         href: event-streams/edit-publish.md
-      - name: Route events based on content (preview)
+      - name: Route events based on content
         href: event-streams/route-events-based-on-content.md
-    - name: Add sources to eventstreams
+    - name: Add sources to eventstreams 
       items:
-      - name: Add and manage an event source
-        href: event-streams/add-manage-eventstream-sources.md
-      - name: Azure Event Hubs
-        href: event-streams/add-source-azure-event-hubs.md
-      - name: Azure IoT Hub
-        href: event-streams/add-source-azure-iot-hub.md
+      - name: Add and manage an event source 
+        href: event-streams/add-manage-eventstream-sources-enhanced.md
       - name: Custom endpoint
-        href: event-streams/add-source-custom-app.md
+        href: event-streams/add-source-custom-app-enhanced.md
       - name: Sample data
-        href: event-streams/add-source-sample-data.md
-      - name: Azure SQL Database Change Data Capture (preview)
+        href: event-streams/add-source-sample-data-enhanced.md
+      - name: Azure Event Hubs
+        href: event-streams/add-source-azure-event-hubs-enhanced.md
+      - name: Azure IoT Hub
+        href: event-streams/add-source-azure-iot-hub-enhanced.md
+      - name: Azure SQL Database Change Data Capture
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
-      - name: PostgreSQL Database Change Data Capture (preview)
+      - name: PostgreSQL Database Change Data Capture
         href: event-streams/add-source-postgresql-database-change-data-capture.md
-      - name: MySQL Database Change Data Capture (preview)
+      - name: MySQL Database Change Data Capture
         href: event-streams/add-source-mysql-database-change-data-capture.md
-      - name: Azure Cosmos DB Change Data Capture (preview)
+      - name: Azure Cosmos DB Change Data Capture
         href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-      - name: Google Cloud Pub/Sub (preview)
+      - name: Google Cloud Pub/Sub
         href: event-streams/add-source-google-cloud-pub-sub.md
-      - name: Amazon Kinesis Data Streams (preview)
+      - name: Amazon Kinesis Data Streams
         href: event-streams/add-source-amazon-kinesis-data-streams.md
-      - name: Confluent Cloud Kafka (preview)
+      - name: Confluent Cloud Kafka
         href: event-streams/add-source-confluent-kafka.md
-      - name: Fabric workspace events (preview)
+      - name: Fabric workspace events
         href: event-streams/add-source-fabric-workspace.md
-      - name: Azure Blob Storage events (preview)
+      - name: Azure Blob Storage events
         href: event-streams/add-source-azure-blob-storage.md
-    - name: Route events to destinations (preview)
+    - name: Route events to destinations 
       items:
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations-enhanced.md      
@@ -102,12 +100,26 @@ items:
         href: event-streams/add-destination-reflex-enhanced.md
       - name: Custom endpoint
         href: event-streams/add-destination-custom-app-enhanced.md
+    - name: Create eventstreams
+      href: event-streams/create-manage-an-eventstream.md
+    - name: Add sources to eventstreams
+      items:
+      - name: Add and manage an event source
+        href: event-streams/add-manage-eventstream-sources.md
+      - name: Add an Azure Event Hubs source
+        href: event-streams/add-source-azure-event-hubs.md
+      - name: Add an Azure IoT Hub source
+        href: event-streams/add-source-azure-iot-hub.md
+      - name: Add a custom app source
+        href: event-streams/add-source-custom-app.md
+      - name: Add a sample data source
+        href: event-streams/add-source-sample-data.md
     - name: Process events using event processor
       href: event-streams/process-events-using-event-processor-editor.md
     - name: Route events to destinations
       items:
       - name: Add and manage a destination
-        href: event-streams/add-manage-eventstream-destinations.md
+        href: event-streams/add-manage-eventstream-destinations.md      
       - name: Add a KQL Database destination
         href: event-streams/add-destination-kql-database.md
       - name: Add a lakehouse destination
@@ -126,7 +138,7 @@ items:
         href: event-streams/configure-settings.md
     - name: Monitor eventstreams
       items:
-      - name: Monitor status and performance of eventstreams
+      - name: Monitor status and performance of eventstreams 
         href: event-streams/monitor.md
       - name: Monitor event streams capacity consumption
         href: event-streams/monitor-capacity-consumption.md
@@ -143,7 +155,7 @@ items:
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
   - name: Get data in a KQL Database
-    items:
+    items: 
     - name: Data formats
       href: ingestion-supported-formats.md
     - name: Schema optimization best practices
@@ -160,8 +172,6 @@ items:
       href: get-data-onelake.md
     - name: Get data from Eventstream
       href: get-data-eventstream.md
-    - name: Get data from Real-time hub (Preview)
-      href: get-data-real-time-hub.md
     - name: Configure KQL Database in a data pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
@@ -206,13 +216,13 @@ items:
         href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric
 - name: Store data
   items:
-  - name: Event house (preview)
+  - name: Event house 
     items:
-    - name: Event house overview (preview)
+    - name: Event house overview 
       href: eventhouse.md
-    - name: Create an event house (preview)
+    - name: Create an event house 
       href: create-eventhouse.md
-    - name: Manage and monitor an event house (preview)
+    - name: Manage and monitor an event house 
       href: manage-monitor-eventhouse.md
   - name: KQL Database
     items:
@@ -227,8 +237,8 @@ items:
       href: create-empty-table.md
     - name: Data management
       items:
-      - name: Data management overview
-        displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin
+      - name: Data management overview 
+        displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin 
         href: data-management.md
       - name: Change data policies
         href: data-policies.md
@@ -237,7 +247,7 @@ items:
       - name: Create materialized views
         href: materialized-view.md
       - name: Create stored functions
-        href: create-functions.md
+        href: create-functions.md 
       - name: Enable Python plugin
         href: python-plugin.md
     - name: Management commands
@@ -246,9 +256,9 @@ items:
       href: api/toc.yml
     - name: OneLake
       items:
-      - name: One logical copy (Preview)
+      - name: One logical copy 
         href: one-logical-copy.md
-      - name: Create OneLake shortcuts in a KQL database
+      - name: Create OneLake shortcuts in a KQL database 
         href: onelake-shortcuts.md
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
@@ -299,13 +309,13 @@ items:
     - name: Visualize data in a Power BI report
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
-      href: power-bi-data-connector.md
+      href: power-bi-data-connector.md   
 - name: Respond to data
   items:
   - name: What is Data Activator?
     href: ../data-activator/data-activator-introduction.md
   - name: Get started with Data Activator
-    href: ../data-activator/data-activator-get-started.md
+    href: ../data-activator/data-activator-get-started.md    
   - name: Data Activator tutorial using sample data
     href: ../data-activator/data-activator-tutorial.md
   - name: Get data in Data Activator
@@ -313,17 +323,17 @@ items:
     - name: Get data from Power BI
       href: ../data-activator/data-activator-get-data-power-bi.md
     - name: Get data from Eventstreams
-      href: ../data-activator/data-activator-get-data-eventstreams.md
+      href: ../data-activator/data-activator-get-data-eventstreams.md        
   - name: Create objects and alerts
     items:
     - name: Assign data to objects in Data Mode
-      href: ../data-activator/data-activator-assign-data-objects.md
+      href: ../data-activator/data-activator-assign-data-objects.md    
     - name: Create alerts in design mode
-      href: ../data-activator/data-activator-create-triggers-design-mode.md
+      href: ../data-activator/data-activator-create-triggers-design-mode.md        
     - name: Detection conditions
-      href: ../data-activator/data-activator-detection-conditions.md
+      href: ../data-activator/data-activator-detection-conditions.md            
     - name: Use custom actions to trigger Power Automate flows
-      href: ../data-activator/data-activator-trigger-power-automate-flows.md
+      href: ../data-activator/data-activator-trigger-power-automate-flows.md         
     - name: Data Activator limitations
       href: ../data-activator/data-activator-limitations.md
     - name: Troubleshoot errors

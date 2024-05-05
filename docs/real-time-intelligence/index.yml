@@ -46,7 +46,21 @@ landingContent:
             url: ../real-time-hub/explore-data-streams.md
           - text: Set alerts on streams
             url: ../real-time-hub/set-alerts-data-streams.md
-       
+
+    # Card 
+  - title: Visualize data
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Visualize data in a Real-Time dashboard
+            url: dashboard-real-time-create.md
+          - text: Customize Real-Time Dashboard visuals
+            url: dashboard-visuals-customize.md
+      - linkListType: how-to-guide
+        links:
+          - text: Visualize data in a Power BI report
+            url: create-powerbi-report.md
+
   # Card 
   - title: Get data
     linkLists:
@@ -84,8 +98,10 @@ landingContent:
         links:
           - text: Event house overview
             url: eventhouse.md
-          - text: Create an Event house
+          - text: Create an event house
             url: create-eventhouse.md 
+          - text: Manage and monitor an event house
+            url: manage-monitor-eventhouse.md
 
       - linkListType: how-to-guide
         links:
@@ -118,19 +134,7 @@ landingContent:
             url: spark-connector.md
 
 
-    # Card 
-  - title: Visualize data
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Visualize data in a Real-Time dashboard
-            url: dashboard-real-time-create.md
-          - text: Customize Real-Time Dashboard visuals
-            url: dashboard-visuals-customize.md
-      - linkListType: how-to-guide
-        links:
-          - text: Visualize data in a Power BI report
-            url: create-powerbi-report.md
+
           
   # Card 
   - title: Use Kusto Query Language (KQL)
