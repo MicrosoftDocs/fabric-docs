@@ -222,6 +222,23 @@ productDirectory:
           text: See more
 
     # Card
+    - title: Real-Time Intelligence
+
+      imageSrc: ./media/synapse-real-time-intelligence-icon.png
+      links:
+        - url: real-time-intelligence/overview.md
+          text: What is Real-Time Intelligence?
+        - url: real-time-intelligence/event-streams/overview.md
+          text: What is Fabric event streams?
+        - url: real-time-intelligence/create-database.md
+          text: Create a database
+        - url: real-time-intelligence/query-table.md
+          text: Query with KQL
+        - url: real-time-intelligence/index.yml
+          text: See more
+
+
+    # Card
     - title: Synapse Data Engineering
 
       imageSrc: ./media/synapse-data-engineering-icon.png
@@ -267,22 +284,6 @@ productDirectory:
         - url: data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md
           text: Migrate data into warehouse
         - url: data-warehouse/index.yml
-          text: See more
-
-    # Card
-    - title: Real-Time Intelligence
-
-      imageSrc: ./media/synapse-real-time-intelligence-icon.png
-      links:
-        - url: real-time-intelligence/overview.md
-          text: What is Real-Time Intelligence?
-        - url: real-time-intelligence/event-streams/overview.md
-          text: What is Fabric event streams?
-        - url: real-time-intelligence/create-database.md
-          text: Create a database
-        - url: real-time-intelligence/query-table.md
-          text: Query with KQL
-        - url: real-time-intelligence/index.yml
           text: See more
 
     # Card

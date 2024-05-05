@@ -37,7 +37,13 @@ landingContent:
         links:
           - text: What is the Real-Time hub?
             url: ../real-time-hub/real-time-hub-overview.md
-
+          - text: Bring your data to Real-Time hub
+            url: real-time-hub/get-started-real-time-hub.md
+          - text: Explore streams
+            url: ../real-time-hub/explore-data-streams.md
+          - text: Set alerts on streams
+            url: ../real-time-hub/set-alerts-data-streams.md
+       
   # Card 
   - title: Get data
     linkLists:
@@ -69,6 +75,11 @@ landingContent:
 # Card 
   - title: Store data
     linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Event house overview
+            url: eventhouse.md 
+
       - linkListType: how-to-guide
         links:
           - text: Create a KQL database
@@ -105,11 +116,11 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
+          - text: Visualize data in a Real-Time dashboard
+            url: dashboard-real-time-create.md
           - text: Visualize data in a Power BI report
             url: create-powerbi-report.md
-
-
-
+          
   # Card 
   - title: Use Kusto Query Language (KQL)
     linkLists:
