@@ -17,7 +17,7 @@ items:
     href: ../real-time-intelligence/user-flow-2.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Discover streaming sources from Microsoft
     href: ../real-time-intelligence/user-flow-3.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
-  - name: Trigger Fabric dataflows from the Real-Time Hub
+  - name: Trigger Fabric dataflows from the Real-Time hub
     href: ../real-time-intelligence/user-flow-5.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json 
 - name: Get events and create data streams
   items:
@@ -73,10 +73,11 @@ items:
       href: explore-fabric-workspace-item-events.md
 - name: Consume events and data streams
   items:
+  - name: Consume data streams
+    href: consume-data-streams.md
   - name: Set alerts on data streams
     href: set-alerts-data-streams.md
   - name: Set alerts on Fabric events
-
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
