@@ -19,8 +19,8 @@ ms.search.form: Get started
 ## Set an alert on the event stream
 
 1. From the left navigation bar, select **Real-Time hub**.
-1. Select the eventstream you created in the previous tutorial.
-    The eventstream details page opens.
+1. Select the event stream you created in the previous tutorial.
+    The event stream details page opens.
     
     :::image type="content" source="media/tutorial/set-alert.png" alt-text="Screenshot of event streams details page and set alert selected." lightbox="media/tutorial/set-alert.png":::
 
@@ -42,7 +42,7 @@ ms.search.form: Get started
 
 1. Select **Create**.
 
-    The alert is set and you will receive a notification in Teams when the condition is met.
+    The alert is set and you receive a notification in Teams when the condition is met.
 
 ## Related content
 
@@ -53,4 +53,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 4: Transform your data in Event streams](tutorial-4-transform.md)
+> 

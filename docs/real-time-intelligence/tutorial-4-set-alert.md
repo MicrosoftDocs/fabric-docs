@@ -1,6 +1,6 @@
 ---
 title: Real-Time Intelligence tutorial part 4- Set an alert on your event stream
-description: Learn how to set an alert on your Event stream in Real-Time Intelligence.
+description: Learn how to set an alert on your event stream in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -19,8 +19,8 @@ ms.search.form: Get started
 ## Set an alert on the event stream
 
 1. From the left navigation bar, select **Real-Time hub**.
-1. Select the eventstream you created in the previous tutorial.
-    The eventstream details page opens.
+1. Select the event stream you created in the previous tutorial.
+    The event stream details page opens.
     
     :::image type="content" source="media/tutorial/set-alert.png" alt-text="Screenshot of event streams details page and set alert selected." lightbox="media/tutorial/set-alert.png":::
 
@@ -42,7 +42,7 @@ ms.search.form: Get started
 
 1. Select **Create**.
 
-    The alert is set and you will receive a notification in Teams when the condition is met.
+    The alert is set and you'll receive a notification in Teams when the condition is met.
 
 ## Related content
 

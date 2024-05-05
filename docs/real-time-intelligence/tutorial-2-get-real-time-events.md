@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md).
 
-## Create an eventstream
+## Create an event stream
 
 1. From the navigation bar, select **Real-Time Hub**.
 1. Select **+ Get events**.
@@ -28,7 +28,7 @@ ms.search.form: Get started
 ### Sample data
 
 1. In **Source name**, enter *TutorialSource*.
-1. In **Sample data** select *Bicycles (Reflex compatible).
+1. In **Sample data** select *Bicycles (Reflex compatible)*.
 
 ### Stream details
 
@@ -37,22 +37,22 @@ ms.search.form: Get started
 
 ### Review and create
 
-1. Review the eventstream details and select **Create source**.
+1. Review the event stream details and select **Create source**.
 
-   A new eventstream named *TutorialEventstream* has been created with data flowing.
+   A new event stream named *TutorialEventstream* is created with data flowing.
 
 ## Transform events
 
-1. Select **Open Eventstream** from the notification that appears after creating the eventstream, or browse to the eventstream from the Real-time hub and select **Open Eventstream**.
-1. In the eventstream authoring canvas, select the eventstream tile in the center.
+1. Select **Open Eventstream** from the notification that appears after creating the event stream, or browse to the event stream from the Real-time hub and select **Open Eventstream**.
+1. In the event stream authoring canvas, select the event stream tile in the center.
 1. From the menu ribbon, select **Edit**.
 1. Select **Transform events** > **Manage fields**.
 
-    :::image type="content" source="media/tutorial/manage-fields.png" alt-text="Screenshot showing the edit window of eventstreams with transform events selected in Real-Time Intelligence in Microsoft Fabric.":::
+    :::image type="content" source="media/tutorial/manage-fields.png" alt-text="Screenshot showing the edit window of event streams with transform events selected in Real-Time Intelligence in Microsoft Fabric." lightbox="media/tutorial/manage-fields.png":::
 
      A new tile is created entitled *Managefields1*.
 
-1. On the left edge of the *Managefields* tile, select the green circle and drag it to the righthand edge of the *TutorialEventstream* tile. A line appears connecting the two tiles.
+1. On the left edge of the *Managefields* tile, select the green circle and drag it to the right-hand edge of the *TutorialEventstream* tile. A line appears, connecting the two tiles.
 1. Select the pencil icon on the *Managefields1* tile.
 1. In the **Manage fields** pane, do the following actions:
     1. In **Operation name**, enter *TutorialTransform*. 
@@ -75,23 +75,26 @@ ms.search.form: Get started
 
 1. Select the pencil icon on the *KQLDatabase1* tile.
 1. Enter the following information in the **KQL Database** pane:
-    1. In **Destination name**, enter *TutorialDestination*.
-    1. In **Workspace**, select the workspace in which you've created your resources in a previous step.
-    1. In **KQL Database**, select the database named *Tutorial*, which was created in a previous step.
-    1. In **Destination table** select **Create new**. For the table name, enter *TutorialTable*.
-    1. Leave **Input data format** as *JSON*.
-    1. Select **Save**.
-    1. Select **Publish**.
-    
-        :::image type="content" source="media/tutorial/kql-database-details.png" alt-text="Screenshot showing the KQL database destination pane in Real-Time Intelligence.":::
 
-The eventstream is now set up to transform events and send them to a KQL database.
+    :::image type="content" source="media/tutorial/kql-database-details.png" alt-text="Screenshot showing the KQL database destination pane in Real-Time Intelligence.":::
+
+    | Field | Value |
+    | **Destination name** | *TutorialDestination* |
+    | **Workspace** | Select the workspace in which you've created your resources. |
+    | **KQL Database** | *Tutorial* |
+    | **Destination table** | *Create new* - enter *TutorialTable* as table name |
+    | **Input data format** | *JSON* |  
+
+1. Select **Save**.
+1. Select **Publish**.
+
+The event stream is now set up to transform events and send them to a KQL database.
 
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
 
-* [Create and manage an eventstream](event-streams/create-manage-an-eventstream.md)
+* [Create and manage an event stream](event-streams/create-manage-an-eventstream.md)
 * [Add a sample data as a source](event-streams/add-source-sample-data.md#add-sample-data-as-a-source)
 * [Add a KQL database as a destination](event-streams/add-destination-kql-database.md)
 
