@@ -20,7 +20,7 @@ Event houses are specifically tailored to time-based, streaming events with stru
 
 Use an event house for any scenario that includes event-based data, for example, telemetry and log data, time series and IoT data, security and compliance logs, or financial records.
 
-While Eventhouse is in preview, you can create a standalone [KQL database](create-database.md), or a KQL database within an event house. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). [Data availability in OneLake](one-logical-copy.md) is enabled on a database or table level.
+While Event house is in preview, you can create a standalone [KQL database](create-database.md), or a KQL database within an event house. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). [Data availability in OneLake](one-logical-copy.md) is enabled on a database or table level.
 
 ## What information do I see in an event house?
 
@@ -37,7 +37,7 @@ The system overview page of an event house shows you the following information:
 
 For more information, see [View system overview details for an event house](manage-monitor-eventhouse.md#view-system-overview-details-for-an-event-house).
 
-The databases page of an Eventhouse shows you database information either in list or tile view. The following information about each database is displayed in tile view:
+The databases page of an event house shows you database information either in list or tile view. The following information about each database is displayed in tile view:
 
 * Database name
 * A graph of queries run over the past week

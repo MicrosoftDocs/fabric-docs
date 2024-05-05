@@ -12,7 +12,7 @@ ms.search.form: Eventhouse
 
 # Create and manage an event house (preview)
 
-An event house allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Eventhouse overview (preview)](eventhouse.md).
+An event house allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Event house overview (preview)](eventhouse.md).
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -40,7 +40,7 @@ In this article, you learn how to create an event house, add new databases to an
 1. Browse to your workspace homepage in Real-Time Intelligence.
 1. Select **New** > **Eventhouse**.
 
-    :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating new Eventhouse item in Real-Time Intelligence.":::
+    :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating a new event house item in Real-Time Intelligence.":::
 
 1. Enter a name for the event house. Both an event house and its default child KQL database are created with the same name. The database name, like all items in Fabric, can be renamed at any time.
 
@@ -49,7 +49,7 @@ In this article, you learn how to create an event house, add new databases to an
 
 1. The [database details](create-database.md#database-details) page opens for the default database in the newly created event house. To view all the databases in this event house or create new databases, select the **Eventhouse** menu item.
 
-    :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of choosing Eventhouse from database details page." lightbox="media/eventhouse/choose-eventhouse.png":::
+    :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of choosing an event house from database details page." lightbox="media/eventhouse/choose-eventhouse.png":::
 
 ## Delete an event house
 
@@ -62,5 +62,5 @@ When you delete an event house, both the event house and all its child KQL datab
 
 ## Related content
 
-* [Eventhouse overview (Preview)](eventhouse.md)
+* [Event house overview (preview)](eventhouse.md)
 * [Create a KQL database](create-database.md)

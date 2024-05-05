@@ -113,7 +113,7 @@ You can partition your OneLake files to improve query speed in cases of need. Fo
 * To partition your OneLake files use the following command:
 
 ( `.alter` | `.alter-merge`) `table` *TableName* `policy mirroring`
-[`partition` `by` `(`*Partitions*`)`] 
+[`partition` `by` `(`*Partitions*`)`]
 `dataformat` `=` `parquet`
 
 For information about the command parameters used to partition your files, see [Create and alter Azure Storage external tables](/azure/data-explorer/kusto/management/external-tables-azure-storage).
