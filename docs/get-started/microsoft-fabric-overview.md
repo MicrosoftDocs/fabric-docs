@@ -1,6 +1,6 @@
 ---
 title: What is Microsoft Fabric
-description: Microsoft Fabric is an all-in-one analytics solution that covers everything from data movement to data science, Real-Time Analytics, and business intelligence.
+description: Microsoft Fabric is an all-in-one analytics solution that covers everything from data movement to data science, real-time analytics, and business intelligence.
 ms.reviewer: sngun
 ms.author: gesaur
 author: gsaurer
@@ -11,13 +11,14 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
+  - build 2024
 ms.search.form: product-trident
-ms.date: 06/30/2023
+ms.date: 05/21/2024
 ---
 
 # What is Microsoft Fabric?
 
-Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, Real-Time Analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place.
+Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place.
 
 With Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs.
 
@@ -29,7 +30,7 @@ Microsoft Fabric brings together new and existing components from Power BI, Azur
 
 :::image type="content" source="media\microsoft-fabric-overview\saas-foundation.png" alt-text="Diagram of the software as a service foundation beneath the different experiences of Fabric.":::
 
-Fabric brings together experiences such as Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Analytics, and Power BI onto a shared SaaS foundation. This integration provides the following advantages:
+Fabric brings together experiences such as Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, and Power BI onto a shared SaaS foundation. This integration provides the following advantages:
 
 - Access to an extensive range of deeply integrated analytics in the industry.
 - Shared experiences across experiences that are familiar and easy to learn.
@@ -55,7 +56,7 @@ Microsoft Fabric offers the comprehensive set of analytics experiences designed 
 
 - **Data Warehouse** - Data Warehouse experience provides industry leading SQL performance and scale. It fully separates compute from storage, enabling independent scaling of both the components. Additionally, it natively stores data in the open Delta Lake format. For more information, see [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 
-- **Real-Time Analytics** - Observational data, which is collected from various sources such as apps, IoT devices, human interactions, and so many more. It's currently the fastest growing data category. This data is often semi-structured in formats like JSON or Text. It comes in at high volume, with shifting schemas. These characteristics make it hard for traditional data warehousing platforms to work with. Real-Time Analytics is best in class engine for observational data analytics. For more information, see [What is Real-Time Analytics in Fabric?](../real-time-analytics/overview.md)
+- **Real-Time Intelligence** -  Real-time Intelligence is an end-to-end solution for event-driven scenarios, streaming data, and data logs. It enables the extraction of insights, visualization, and action on data in motion by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions. The [Real-Time hub](#real-time-hub---the-unification-of-data-streams) in Real-Time Intelligence provides a wide variety of no-code connectors, converging into a catalog of organizational data that is protected, goverened, and integrated across Fabric. For more information, see [What is Real-Time Intelligence in Fabric?](../real-time-intelligence/overview.md).
 
 - **Power BI** - Power BI is the world's leading Business Intelligence platform. It ensures that business owners can access all the data in Fabric quickly and intuitively to make better decisions with data. For more information, see [What is Power BI?](/power-bi/fundamentals/power-bi-overview)
 
@@ -87,13 +88,21 @@ The following image shows the various Fabric items where data is stored. It's an
 
 Every developer and business unit in the tenant can instantly create their own workspaces in OneLake. They can ingest data into their own lakehouses, start processing, analyzing, and collaborating on the data, just like OneDrive in Office.
 
-All the Microsoft Fabric compute experiences are prewired to OneLake, just like the Office applications are prewired to use the organizational OneDrive. The experiences such as Data Engineering, Data Warehouse, Data Factory, Power BI, and Real-Time Analytics use OneLake as their native store. They don't need any extra configuration.
+All the Microsoft Fabric compute experiences are prewired to OneLake, just like the Office applications are prewired to use the organizational OneDrive. The experiences such as Data Engineering, Data Warehouse, Data Factory, Power BI, and Real-Time Intelligence use OneLake as their native store. They don't need any extra configuration.
 
 :::image type="content" source="media\microsoft-fabric-overview\workloads-access-data.png" alt-text="Diagram of different experiences all accessing the same OneLake data storage.":::
 
 OneLake is designed to allow instant mounting of existing PaaS storage accounts into OneLake with the [Shortcut](../onelake/onelake-shortcuts.md) feature. There's no need to migrate or move any of the existing data. Using shortcuts, you can access the data stored in Azure Data Lake Storage.
 
 Additionally, shortcuts allow you to easily share data between users and applications without moving or duplicating information. The shortcut capability extends to other storage systems, allowing you to compose and analyze data across clouds with transparent, intelligent caching that reduces egress costs and brings data closer to compute.
+
+## Real-Time hub - the unification of data streams
+
+The Real-Time hub is a foundational location for data in motion.
+
+The Real-Time hub provides a unified SaaS experience and tenant-wide logical place for all data-in-motion. The Real-Time hub lists all data in motion from all sources that customers can discover, ingest, manage, and consume and react upon, and contains both [streams](../real-time-intelligence/event-streams/overview.md) and [KQL database](../real-time-intelligence/create-database.md) tables. Streams includes [**Data streams**](../real-time-intelligence/event-streams/create-manage-an-eventstream.md), **Microsoft sources** (for example, [Azure Event Hubs](../real-time-hub/add-source-azure-event-hubs.md), [Azure IoT Hub](../real-time-hub/add-source-azure-iot-hub.md), [Azure SQL DB Change Data Capture (CDC)](../real-time-hub/add-source-azure-sql-database-cdc.md), [Azure Cosmos DB CDC](../real-time-hub/add-source-azure-cosmos-db-cdc.md), and [PostgreSQL DB CDC](../real-time-hub/add-source-postgresql-database-cdc.md)), and [**Fabric events**](../real-time-intelligence/event-streams/add-source-fabric-workspace.md) (Fabric system events and external system events brought in from Azure, Microsoft 365, or other clouds).
+
+The Real-Time hub enables users to easily discover, ingest, manage, and consume data-in-motion from a wide variety of source so that they can collaborate and develop streaming applications within one place. For more information, see [What is the Real-Time hub?](../real-time-hub/real-time-hub-overview.md)
 
 ## Fabric solutions for ISVs
 
