@@ -59,7 +59,7 @@ support of business and engineering processes.
 
 :::image type="content" source="media/overview/overview-schematic.png" alt-text="Diagram of the architecture of Real-Time Intelligence in Microsoft Fabric." lightbox="media/overview/overview-schematic.png" border="none":::
 
--   The Real-time hub serves as a centralized catalog within your organization. It facilitates easy access, addition, exploration, and data sharing. By expanding the range of data sources, it enables broader insights and visual clarity across various domains. Importantly, this hub ensures that data is not only available but also accessible to all, promoting quick decision-making and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
+-   The Real-Time hub serves as a centralized catalog within your organization. It facilitates easy access, addition, exploration, and data sharing. By expanding the range of data sources, it enables broader insights and visual clarity across various domains. Importantly, this hub ensures that data is not only available but also accessible to all, promoting quick decision-making and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
 
 -   Once you select a stream from your organization or connected to
     outside or internal sources, you can use the data consumption tools
@@ -81,8 +81,8 @@ support of business and engineering processes.
 
 ### Discover streaming data
 
-The Real-time hub is used to discover and manage your streaming data.
-Real-time hub events is a catalog of data in motion, and contains:
+The Real-Time hub is used to discover and manage your streaming data.
+Real-Time hub events is a catalog of data in motion, and contains:
 
 -   **Data streams:** All data streams that are actively running in
     Fabric, which you have access to.
@@ -95,7 +95,7 @@ Real-time hub events is a catalog of data in motion, and contains:
 -   **Fabric events**: Fabric workloads raise their own events, called
     system events, that let you react to changes or new items having
     been created. All system events that you can subscribe to from
-    Real-time hub, including Fabric system events and external
+    Real-Time hub, including Fabric system events and external
     system events brought in from Azure, Microsoft 365, or other clouds.
 
 This data is all presented in a readily consumable format and is
@@ -118,11 +118,11 @@ dupe detection, to land the data in the shape you want. You can also use
 the content-based routing capabilities to send data to different
 destinations based on filters. Another feature, derived event streams,
 lets you construct new streams as a result of transformations and/or
-aggregations that can be shared to consumers in Real-time hub.
+aggregations that can be shared to consumers in Real-Time hub.
 
 ### Store and analyze data
 
-While all Fabric data stores are compatible with Real-time hub, Event
+While all Fabric data stores are compatible with Real-Time hub, Event
 houses are the ideal storage solution for streaming data in Fabric. They're tailored to time-based, streaming events with
 structured, semi structured, and unstructured data. This data is
 automatically indexed and partitioned based on ingestion time, giving
@@ -157,7 +157,7 @@ which can have alerts built upon the data insights.
 
 Alerts monitor changing data and automatically take actions when
 patterns or conditions are detected. The data can be flowing in
-Real-time hub, or observed from a Kusto query or Power BI report. When
+Real-Time hub, or observed from a Kusto query or Power BI report. When
 certain conditions or logic is met, an action is then taken, such as
 alerting users, executing Fabric job items like a pipeline, or kicking
 off Power Automate workflows. The logic can be either a simply defined
@@ -169,7 +169,7 @@ advantages.
 ## Integrate with other Fabric experiences 
 
 -   Route events from Event streams to Fabric item destinations
--   Emit events from Fabric items into Real-time hub
+-   Emit events from Fabric items into Real-Time hub
 -   Data in OneLake can be accessed by Real-Time Intelligence in several
     ways:
     -   Data from OneLake can be queried from Real-Time Intelligence as
@@ -189,6 +189,6 @@ advantages.
 ##  Related content
 
 -   Tutorial
--   What is Real-time hub
+-   What is Real-Time hub
 -   What is Event streams
 -   User flows

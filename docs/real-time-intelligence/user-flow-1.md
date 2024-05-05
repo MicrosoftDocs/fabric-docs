@@ -13,15 +13,15 @@ ms.search.form: Get started
 ---
 # User flow 1: Discover and respond to events
 
-Real-time hub is used to discover and manage your streaming data in Fabric. You can search a catalog of data streams that are actively running in Fabric, choose a desired stream, and react to this data by setting alerts.
+Real-Time hub is used to discover and manage your streaming data in Fabric. You can search a catalog of data streams that are actively running in Fabric, choose a desired stream, and react to this data by setting alerts.
 
-This user flow shows how a Data Engineer or Data Analyst can discover events in Real-time hub and trigger actions on this event data.
+This user flow shows how a Data Engineer or Data Analyst can discover events in Real-Time hub and trigger actions on this event data.
 
 :::image type="content" source="media/user-flows/user-flow-1.png" alt-text="Schematic image showing the steps in user flow 1."  lightbox="media/user-flows/user-flow-1.png" border="false":::
 
 ## Steps
 
-1. Browse Real-time hub **Streams and tables** for available data streams.
+1. Browse Real-Time hub **Streams and tables** for available data streams.
 1. Filter for a stream by searching for a particular term. You can search on the item, parent name, owner, or workspace.
 1. View the details of the selected stream. You can see the stream information, related items, and profile of incoming and outgoing messages.
 1. Set an alert on the event stream. Define the desired property, condition, and action to take.

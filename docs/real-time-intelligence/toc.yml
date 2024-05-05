@@ -36,7 +36,7 @@ items:
     href: user-flow-3.md
   - name: "Explore your data visually with Real-Time Dashboards"
     href: user-flow-4.md
-  - name: "Trigger Fabric dataflows from the Real-time hub"
+  - name: "Trigger Fabric dataflows from the Real-Time hub"
     href: user-flow-5.md 
 - name: Get data
   items:
@@ -44,19 +44,19 @@ items:
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
-    - name: New capabilities (preview)
+    - name: New capabilities 
       href: event-streams/new-capabilities.md
     - name: Create eventstreams 
       items: 
       - name: Create an eventstream
         href: event-streams/create-manage-an-eventstream.md
-      - name: Create default and derived streams (preview)
+      - name: Create default and derived streams 
         href: event-streams/create-default-derived-streams.md
-      - name: Create eventstreams for discrete events (preview)
+      - name: Create eventstreams for discrete events 
         href: event-streams/create-eventstreams-discrete-events.md
-      - name: Edit and publish eventstreams (preview)
+      - name: Edit and publish eventstreams 
         href: event-streams/edit-publish.md
-      - name: Route events based on content (preview)
+      - name: Route events based on content 
         href: event-streams/route-events-based-on-content.md
     - name: Add sources to eventstreams
       items:
@@ -70,25 +70,25 @@ items:
         href: event-streams/add-source-custom-app.md
       - name: Sample data
         href: event-streams/add-source-sample-data.md
-      - name: Azure SQL Database Change Data Capture (preview)
+      - name: Azure SQL Database Change Data Capture 
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
-      - name: PostgreSQL Database Change Data Capture (preview)
+      - name: PostgreSQL Database Change Data Capture 
         href: event-streams/add-source-postgresql-database-change-data-capture.md
-      - name: MySQL Database Change Data Capture (preview)
+      - name: MySQL Database Change Data Capture 
         href: event-streams/add-source-mysql-database-change-data-capture.md
-      - name: Azure Cosmos DB Change Data Capture (preview)
+      - name: Azure Cosmos DB Change Data Capture 
         href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-      - name: Google Cloud Pub/Sub (preview)
+      - name: Google Cloud Pub/Sub 
         href: event-streams/add-source-google-cloud-pub-sub.md
-      - name: Amazon Kinesis Data Streams (preview)
+      - name: Amazon Kinesis Data Streams 
         href: event-streams/add-source-amazon-kinesis-data-streams.md
-      - name: Confluent Cloud Kafka (preview)
+      - name: Confluent Cloud Kafka 
         href: event-streams/add-source-confluent-kafka.md
-      - name: Fabric workspace events (preview)
+      - name: Fabric workspace events 
         href: event-streams/add-source-fabric-workspace.md
-      - name: Azure Blob Storage events (preview)
+      - name: Azure Blob Storage events 
         href: event-streams/add-source-azure-blob-storage.md
-    - name: Route events to destinations (preview)
+    - name: Route events to destinations 
       items:
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations-enhanced.md      
@@ -160,7 +160,7 @@ items:
       href: get-data-onelake.md
     - name: Get data from Eventstream
       href: get-data-eventstream.md
-    - name: Get data from Real-time hub (Preview)
+    - name: Get data from Real-Time hub 
       href: get-data-real-time-hub.md
     - name: Configure KQL Database in a data pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
@@ -206,13 +206,13 @@ items:
         href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rti&pivots=fabric
 - name: Store data
   items:
-  - name: Event house (preview)
+  - name: Event house 
     items:
-    - name: Event house overview (preview)
+    - name: Event house overview 
       href: eventhouse.md
-    - name: Create an event house (preview)
+    - name: Create an event house 
       href: create-eventhouse.md
-    - name: Manage and monitor an event house (preview)
+    - name: Manage and monitor an event house 
       href: manage-monitor-eventhouse.md
   - name: KQL Database
     items:
@@ -246,7 +246,7 @@ items:
       href: api/toc.yml
     - name: OneLake
       items:
-      - name: One logical copy (Preview)
+      - name: One logical copy 
         href: one-logical-copy.md
       - name: Create OneLake shortcuts in a KQL database
         href: onelake-shortcuts.md
@@ -334,6 +334,4 @@ items:
     href: kusto-query-language/toc.yml
   - name: Functions library
     href: functions-library/toc.yml
-
-
-
+    
