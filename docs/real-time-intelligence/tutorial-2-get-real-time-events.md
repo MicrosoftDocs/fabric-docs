@@ -35,11 +35,13 @@ ms.search.form: Get started
 1. Edit the **Eventstream name** by selecting the pencil icon and entering *TutorialEventstream*.
 1. Select **Next**.
 
+:::image type="content" source="media/tutorial/connect-source.png" alt-text="Screenshot of connect window in Real-Time hub.":::
+
 ### Review and create
 
 1. Review the event stream details and select **Create source**.
 
-   A new event stream named *TutorialEventstream* is created with data flowing.
+   A new event stream named *TutorialEventstream* is created.
 
 ## Transform events
 
