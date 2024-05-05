@@ -74,7 +74,7 @@ support of business and engineering processes.
     motion using visual tools, Natural Language and Copilot.
 
 -   These insights can be turned into actions with Data Activator, as
-    you set up Reflex triggers from various parts of Fabric to react to
+    you set up Reflex alerts from various parts of Fabric to react to
     data patterns or conditions in real-time.
 
 ##  How do you interact with the components of Real-Time Intelligence?
@@ -151,11 +151,11 @@ explorer to visualize their data as charts and tables. You can use
 visual cues to perform filtering and aggregation operations on query
 results and using a rich list of built-in visualizations. These insights
 can be viewed in Power BI Reports and Real-Time Dashboards, both of
-which can have triggers built upon the data insights.
+which can have alerts built upon the data insights.
 
 ### Trigger actions
 
-Triggers monitor changing data and automatically take actions when
+Alerts monitor changing data and automatically take actions when
 patterns or conditions are detected. The data can be flowing in
 Real-Time hub, or observed from a Kusto query or Power BI report. When
 certain conditions or logic is met, an action is then taken, such as

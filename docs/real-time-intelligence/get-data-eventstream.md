@@ -34,6 +34,8 @@ On the lower ribbon of your KQL database, either:
 
 * Select **Get Data** and then in the **Get data** window, select **Eventstream**.
 
+* From the **Get Data** drop down menu, under **Continuous**, select **Real-Time data hub** > **Existing Eventstream**.
+
     :::image type="content" source="media/get-data-eventstream/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-eventstream/select-data-source.png":::
 
 ## Configure
@@ -47,8 +49,8 @@ On the lower ribbon of your KQL database, either:
     :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-eventstream/configure-tab.png":::
 
     |**Setting** | **Description**|
-    |----|----|----|
-    | Workspace| The workspace in which your eventstream is located. Select a workspace from the dropdown.|
+    |----|----|
+    | Workspace| Your eventstream workspace location. Select a workspace from the dropdown.|
     | Eventstream Name| The name of your eventstream. Select an eventstream from the dropdown.|
     | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
     | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
@@ -59,31 +61,7 @@ On the lower ribbon of your KQL database, either:
 
 1. Select **Next**
 
-### Process event before ingestion in Eventstream
-
-The **Process event before ingestion in Eventstream** option enables you to process the data before it's ingested into the destination table. By selecting this option, the get data process seamlessly continues in Eventstream, with the destination table and data source details automatically populated.
-
-To process event before ingestion in Eventstream:
-
-1. On the **Configure** tab, select **Process event before ingestion in Eventstream**.
-
-1. In the **Process events in Eventstream** dialog box, select **Continue in Eventstream**.
-
-    > [!IMPORTANT]
-    > Selecting **Continue in Eventstream** ends the get data process in Real-Time Intelligence and continues in Eventstream with the destination table and data source details automatically populated.
-
-    :::image type="content" source="media/get-data-eventstream/configure-tab-process-event-in-eventstream.png" alt-text="Screenshot of the Process events in Eventstream dialog box." lightbox="media/get-data-eventstream/configure-tab-process-event-in-eventstream.png":::
-
-1. In Eventstream, select the **KQL Database** destination node, and in the **KQL Database** pane, verify that **Event processing before ingestion** is selected and that the destination details are correct.
-
-    :::image type="content" source="media/get-data-eventstream/process-event-in-eventstream.png" alt-text="Screenshot of the Process events in Eventstream page." lightbox="media/get-data-eventstream/process-event-in-eventstream.png":::
-
-1. Select **Open event processor** to configure the data processing and then select **Save**. For more information, see [Process event data with event processor editor](event-streams/process-events-using-event-processor-editor.md).
-1. Back in the **KQL Database** pane, select **Add** to complete the **KQL Database** destination node setup.
-1. Verify data is ingested into the destination table.
-
-> [!NOTE]
-> The process event before ingestion in Eventstream process is complete and the remaining steps in this article aren't required.
+[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
 
 ## Inspect
 
@@ -106,21 +84,7 @@ Optionally:
 
 [!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
 
-### Advanced options based on data type
-
-**Tabular (CSV, TSV, PSV)**:
-
-* If you're ingesting tabular formats in an *existing table*, you can select **Advanced** > **Keep table schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
-* To use the first row as column names, select  **Advanced** > **First row is column header**.
-
-    :::image type="content" source="media/get-data-eventstream/advanced-csv.png" alt-text="Screenshot of advanced CSV options.":::
-
-**JSON**:
-
-* To determine column division of JSON data, select **Advanced** > **Nested levels**, from 1 to 100.
-* If you select **Advanced** > **Skip JSON lines with errors**, the data is ingested in JSON format. If you leave this check box unselected, the data is ingested in multijson format.
-
-    :::image type="content" source="media/get-data-eventstream/advanced-json.png" alt-text="Screenshot of advanced JSON options.":::
+[!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
 
 ## Summary
 
