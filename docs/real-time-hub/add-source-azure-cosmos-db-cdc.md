@@ -39,7 +39,7 @@ The labels for the items you need to collect from the Azure portal vary dependin
     :::image type="content" source="media/add-source-azure-cosmos-db-cdc/endpoint.png" alt-text="A screenshot of the Endpoint and Primary key on the Azure Cosmos DB Connection strings page in the Azure portal.":::
 1. On the Azure portal **Overview** page for your Azure Cosmos DB account, note the **Database** and item **ID** you want to collect data for.
 
-    :::image type="content" source="media/add-source-azure-cosmos-db-change-data-capture/tables.png" alt-text="A screenshot of the Tables listing for an Azure Cosmos DB NoSQL API account.":::
+    :::image type="content" source="media/add-source-azure-cosmos-db-cdc/tables.png" alt-text="A screenshot of the Tables listing for an Azure Cosmos DB NoSQL API account.":::
 
 
 ## Get events from an Azure Cosmos DB CDC
