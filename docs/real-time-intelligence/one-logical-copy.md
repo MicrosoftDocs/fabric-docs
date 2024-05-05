@@ -27,7 +27,7 @@ The following table describes the behavior of your KQL database and tables when 
 
 | | Turned on|Turned off|
 |------|---------|--------|
-|**KQL Database**| - Existing tables aren't affected. New tables are made available in OneLake. <br/> - The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data that's removed from your KQL database at the end of the retention period is also removed from OneLake. | - Existing tables aren't affected. New tables won't be available in OneLake. |
+|**KQL Database**| - Existing tables aren't affected. New tables are made available in OneLake. <br/> - The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data removed from your KQL database at the end of the retention period is also removed from OneLake. | - Existing tables aren't affected. New tables won't be available in OneLake. |
 |**A table in KQL Database**| - New data is made available in OneLake. <br/> - Existing data isn't backfilled. <br/> - Data can't be deleted, truncated, or purged. <br/> - Table schema can't be altered and the table can't be renamed. | - New data isn't made available in OneLake. <br/> - Data can be deleted, truncated, or purged. <br/> - Table schema can be altered and the table can be renamed. <br/> - Data is soft deleted from OneLake.|
 
 > [!IMPORTANT]
@@ -104,7 +104,7 @@ Your KQL database is checked for new data to copy to the Delta Lake files every 
 
 `.show` `table` *tablename* `operations` `mirroring-status`
 
-A result of zero means that data was just copied. Results are measured from the last time data was copied. For more information about the .show table command, see [.show table details command](/azure/data-explorer/kusto/management/show-table-details-command?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric).
+A result of zero means that data was just copied. Results are measured from the last time data was copied. For more information about the `.show` `table` command, see [.show table details command](/azure/data-explorer/kusto/management/show-table-details-command?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric).
 
 ### Partition OneLake files
 
