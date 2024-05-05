@@ -1,0 +1,124 @@
+### YamlMime:Landing
+
+title: Real-Time Intelligence documentation in Microsoft Fabric
+summary: Gain quick access to data insights with just seconds of provisioning, automatic data streaming, indexing, and partitioning for any data source or format, and on-demand query generation and visualizations. Real-Time Intelligence lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
+
+metadata:
+  title: Real-Time Intelligence in Microsoft Fabric documentation
+  description: Learn about Real-Time Intelligence, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis.
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice: real-time-analytics
+  ms.custom:
+    - ignite-2023
+  ms.topic: landing-page
+  ms.collection: collection
+  author: YaelSchuster
+  ms.author: yaschust
+  ms.date: 04/21/2024
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+  # Card 
+  - title: About Real-Time Intelligence
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Real-Time Intelligence?
+            url: overview.md
+      - linkListType: get-started
+        links: 
+          - text: Real-Time Intelligence Tutorial
+            url: tutorial-introduction.md
+
+
+
+  # Card 
+  - title: Get data
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What's Event streams?
+            url: event-streams/overview.md
+      - linkListType: how-to-guide
+        links:
+          - text: Create and manage event streams
+            url:  event-streams/create-manage-an-eventstream.md
+          - text: Process events using processor editor            
+            url: event-streams/process-events-using-event-processor-editor.md
+          - text: Monitor event streams
+            url: event-streams/monitor.md
+          - text: Transform and stream real-time events to Microsoft Fabric Lakehouse
+            url:  event-streams/transform-and-stream-real-time-events-to-lakehouse.md
+      - linkListType: how-to-guide
+        links: 
+        - text: Get data from OneLake
+          url: get-data-onelake.md
+        - text: Get data from Azure storage
+          url: get-data-azure-storage.md
+        - text: Get data from Eventstream 
+          url: get-data-eventstream.md
+        - text: Get data from Amazon S3
+          url: get-data-amazon-s3.md
+
+# Card 
+  - title: Store data
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Create a KQL database
+            url: create-database.md
+          - text: Create an empty table
+            url: create-empty-table.md
+          - text: Manage a KQL database
+            url: data-management.md
+          - text: Create a shortcut to access data in OneLake
+            url: onelake-shortcuts.md
+
+
+  # Card 
+  - title: Analyze and model data
+    linkLists:
+       - linkListType: how-to-guide
+         links: 
+          - text: Query data in a KQL queryset
+            url:  kusto-query-set.md
+          - text: Customize results in the KQL Queryset results grid
+            url: customize-results.md
+          - text: Use example queries
+            url: query-table.md
+       - linkListType: how-to-guide
+         links:
+          - text: Use Fabric notebooks with data from a KQL database
+            url: notebooks.md
+          - text: Use a notebook with Apache Spark to query a KQL database
+            url: spark-connector.md
+
+
+    # Card 
+  - title: Visualize data
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Visualize data in a Power BI report
+            url: create-powerbi-report.md
+
+
+
+  # Card 
+  - title: Use Kusto Query Language (KQL)
+    linkLists:
+      - linkListType: overview
+        links:          
+          - text: Kusto Query Language (KQL) overview
+            url: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
+      - linkListType: learn
+        links:
+          - text: "Training module: Write your first query with Kusto Query Language"
+            url: /training/modules/write-first-query-kusto-query-language/
+          - text: "Training module: Gain insights from your data by using Kusto Query Language"
+            url: /training/modules/gain-insights-data-kusto-query-language/
+          - text: "Training module: Multi-table queries using Kusto Query Language"
+            url: /training/modules/multi-table-queries-with-kusto-query-language/
+
+
+                   
