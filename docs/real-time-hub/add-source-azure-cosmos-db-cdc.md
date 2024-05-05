@@ -17,6 +17,31 @@ This article describes how to add Azure Cosmos DB Change Data Capture (CDC) as a
 - Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
 - Access to an Azure Cosmos DB account and database.
 
+## Get connection details from the Azure portal
+
+The labels for the items you need to collect from the Azure portal vary depending on the API your Azure Cosmos DB account uses. You always need the endpoint URI, in a format like `https://<account>.<api>.azure.com:<port>/`, the Primary Key, and the Database name and item IDs you want to collect data for.
+
+### Azure Cosmos DB for NoSQL
+
+1. On the Azure portal page for your Azure Cosmos DB account, select **Keys** under **Settings** in the left navigation.
+1. On the **Keys** page, copy the **URI** and **Primary key** values to use for setting up the eventstream connection.
+
+    :::image type="content" source="media/add-source-azure-cosmos-db-cdc/uri.png" alt-text="A screenshot of the URI and Primary key on the Azure Cosmos DB Keys page in the Azure portal." lightbox="media/add-source-azure-cosmos-db-cdc/uri.png":::
+1. On the Azure portal **Overview** page for your Azure Cosmos DB account, note the **Database** and item **ID** you want to collect data for.
+
+    :::image type="content" source="media/add-source-azure-cosmos-db-cdc/containers.png" alt-text="A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account." lightbox="media/add-source-azure-cosmos-db-cdc/containers.png":::
+
+### Azure Cosmos DB for Table
+
+1. On the Azure portal page for your Azure Cosmos DB account, select **Connection strings** under **Settings** in the left navigation.
+1. On the **Connection strings** page, copy the **Endpoint** and **Primary key** values to use for setting up the eventstream connection.
+
+    :::image type="content" source="media/add-source-azure-cosmos-db-cdc/endpoint.png" alt-text="A screenshot of the Endpoint and Primary key on the Azure Cosmos DB Connection strings page in the Azure portal.":::
+1. On the Azure portal **Overview** page for your Azure Cosmos DB account, note the **Database** and item **ID** you want to collect data for.
+
+    :::image type="content" source="" alt-text="A screenshot of the Tables listing for an Azure Cosmos DB NoSQL API account.":::
+
+
 ## Get events from an Azure Cosmos DB CDC
 You can get events from an Azure Cosmos DB CDC into Real-Time hub in one of the ways:
 
@@ -46,6 +71,9 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
 1. On the **Select a data source** screen, select **Azure Cosmos DB (CDC)**.
 
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/select-azure-cosmos-db-cdc.png" alt-text="Screenshot that shows the Select a data source page with Azure Cosmos DB (CDC) selected.":::
+1. Select **Go to resource** link if you want to navigate to the Azure Cosmos DB account in the Azure portal. 
+
+    :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/go-to-resource.png" alt-text="Screenshot that shows the Connect page with **Go to resource** link highlighted." lightbox="./media/add-source-azure-cosmos-db-cdc/go-to-resource.png":::     
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-cosmos-db-cdc/new-connection-link.png"::: 

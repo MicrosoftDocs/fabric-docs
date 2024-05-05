@@ -21,7 +21,7 @@ The Azure MySQL Database Change Data Capture (CDC) connector allows you to captu
 
  ### Set up MySQL database 
 
-The Azure MySQL DB connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. For step-by-step instructions, see [Set up MySQL DB](../real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md#set-up-mysql-db).
+The Azure MySQL database connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. For step-by-step instructions, see [Set up MySQL DB](../real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md#set-up-mysql-db).
 
 ### Enable the binlog 
 You must enable binary logging for MySQL replication. The binary logs record transaction updates for replication tools to propagate changes. For example, Azure Database for MySQL. 
