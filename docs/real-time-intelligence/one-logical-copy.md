@@ -96,9 +96,9 @@ Your OneLake copy includes a `policy mirroring` table where you can define the m
 
 ## Check latency
 
-Your KQL database is checked for new data to copy to the Delta Lake files every few hours. You can monitor how long ago new data was added by checking your data latency. 
+Your KQL database is checked for new data to copy to the Delta Lake files every few hours. You can monitor how long ago new data was added by checking your data latency.
 
-* To check the current latency run the following query:
+To check the current latency run the following query:
 
 `.show` `table` `*` `policy mirroring`
 
@@ -110,7 +110,7 @@ A result of zero means that data was just copied. Results are measured from the 
 
 You can partition your OneLake files to improve query speed in cases of need. For information about when to partition your OneLake files, see [When to partition tables on Azure Databricks](/azure/databricks/tables/partitions). Each partition is represented as a separate column using the *PartitionName* listed in the *Partitions* list. This means your OneLake copy has more columns than your source table.
 
-* To partition your OneLake files use the following command:
+To partition your OneLake files use the following command:
 
 ( `.alter` | `.alter-merge`) `table` *TableName* `policy mirroring`
 [`partition` `by` `(`*Partitions*`)`]
