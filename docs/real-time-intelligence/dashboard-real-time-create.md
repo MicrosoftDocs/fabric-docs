@@ -80,7 +80,7 @@ You can add tiles to your dashboard directly from kql queries written in a query
 1. Select **Pin to dashboard**.
     :::image type="content" source="media/real-time-dashboard/queryset-pin-query.png" alt-text="Screenshot of the pin query to dashboard button in a queryset query.":::
 
-1. In the **Pin query to dashboard** window,
+1. In the **Pin query to dashboard** window, do the following:
     1. Select an existing dashboard or create a new dashboard.
     1. Name your dashboard tile.
     1. Optionally, select **Open dashboard after tile creation** to view your dashboard immediately after creation.
