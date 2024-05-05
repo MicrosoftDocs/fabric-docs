@@ -17,7 +17,7 @@ items:
     href: ../real-time-intelligence/user-flow-2.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Discover streaming sources from Microsoft
     href: ../real-time-intelligence/user-flow-3.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
-  - name: Trigger Fabric dataflows from the Real-Time Hub
+  - name: Trigger Fabric dataflows from the Real-Time hub
     href: ../real-time-intelligence/user-flow-5.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json 
 - name: Get events and create data streams
   items:
