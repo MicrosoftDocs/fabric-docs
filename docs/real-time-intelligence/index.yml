@@ -126,31 +126,25 @@ landingContent:
             url: customize-results.md
           - text: Use example queries
             url: query-table.md
-       - linkListType: how-to-guide
+       - linkListType: overview
+         links:          
+           - text: Kusto Query Language (KQL) overview
+             url: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
+       - linkListType: learn
          links:
-          - text: Use Fabric notebooks with data from a KQL database
-            url: notebooks.md
-          - text: Use a notebook with Apache Spark to query a KQL database
-            url: spark-connector.md
-
-
-
-          
-  # Card 
-  - title: Use Kusto Query Language (KQL)
-    linkLists:
-      - linkListType: overview
-        links:          
-          - text: Kusto Query Language (KQL) overview
-            url: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
-      - linkListType: learn
-        links:
           - text: "Training module: Write your first query with Kusto Query Language"
             url: /training/modules/write-first-query-kusto-query-language/
           - text: "Training module: Gain insights from your data by using Kusto Query Language"
             url: /training/modules/gain-insights-data-kusto-query-language/
           - text: "Training module: Multi-table queries using Kusto Query Language"
             url: /training/modules/multi-table-queries-with-kusto-query-language/
+       - linkListType: how-to-guide
+         links:
+          - text: Use Fabric notebooks with data from a KQL database
+            url: notebooks.md
+          - text: Use a notebook with Apache Spark to query a KQL database
+            url: spark-connector.md
+      
 
 
                    
