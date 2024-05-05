@@ -8,7 +8,7 @@ ms.date: 03/14/2024
 ---
 | Name                 | Minimum CUs | SSD capacity (GB) of free storage |
 | -----------          | ----------- | --------------------------------- |
-| Extra extra small    | 4.25        | 
+| Extra extra small    | 4.25        | 20                                |
 | Extra small          | 8.5         | 200                               |
 | Small                | 13          | 800                               |
 | Medium               | 18          | 3500-4000                         |
