@@ -26,6 +26,7 @@ ms.search.form: Get started
 
 1. Select **Set alert**
 1. A new pane opens. Fill in the following fields:
+
     | Field | Value |
     | --- | --- |
     | **Condition** |  |

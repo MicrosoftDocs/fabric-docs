@@ -79,6 +79,7 @@ ms.search.form: Get started
     :::image type="content" source="media/tutorial/kql-database-details.png" alt-text="Screenshot showing the KQL database destination pane in Real-Time Intelligence.":::
 
     | Field | Value |
+    | --- | --- |
     | **Destination name** | *TutorialDestination* |
     | **Workspace** | Select the workspace in which you've created your resources. |
     | **KQL Database** | *Tutorial* |
