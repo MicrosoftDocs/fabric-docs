@@ -55,7 +55,7 @@ landingContent:
         links:
         - text: Set alerts on streams
           url: set-alerts-data-streams.md
-        - text: Set alerts on Azure blob storage events
+        - text: Set alerts on Azure Blob Storage events
           url: set-alerts-azure-blob-storage-events.md
         - text: Set alerts on Fabric workspace item events
           url: set-alerts-fabric-workspace-item-events.md
@@ -95,7 +95,7 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Get Azure blob storage events
+          - text: Get Azure Blob Storage events
             url: get-azure-blob-storage-events.md
           - text: Create streams for Fabric workspace item events
             url: create-streams-fabric-workspace-item-events.md
