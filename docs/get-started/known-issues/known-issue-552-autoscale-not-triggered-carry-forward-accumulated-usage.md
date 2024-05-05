@@ -6,7 +6,7 @@ ms.author: jessicamo
 ms.topic: troubleshooting
 ms.service: powerbi
 ms.subservice: pbi-troubleshooting
-ms.date: 11/23/2023
+ms.date: 05/02/2024
 ms.custom: known-issue-552
 ---
 
@@ -23,7 +23,7 @@ Autoscale is a valuable mechanism to prevent capacity usage exceeding 100% and t
 
 **APPLIES TO:** ✔️ Power BI
 
-**Status:** Open
+**Status:** Fixed: May 2, 2024
 
 **Problem area:** Capacity Management
 

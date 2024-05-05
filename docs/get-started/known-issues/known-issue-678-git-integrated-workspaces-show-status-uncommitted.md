@@ -4,7 +4,7 @@ description: A known issue is posted where Git integrated workspaces incorrectly
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/11/2024
+ms.date: 05/01/2024
 ms.custom: known-issue-678
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-678
 
 You have a Git integrated workspace that was synced. However, in the workspace view, the Git status is 'Uncommitted.'
 
-**Status:** Open
+**Status:** Fixed: May 1, 2024
 
 **Product Experience:** Administration & Management
 

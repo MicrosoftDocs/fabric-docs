@@ -1,0 +1,28 @@
+items:
+- name: Data Development documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is API for GraphQL?
+    href: api-graphql-overview.md
+- name: Get started
+  items:
+  - name: Create an API for GraphQL
+    href: get-started-api-graphql.md
+- name: Concepts
+  items:
+  - name: API for GraphQL editor
+    href: api-graphql-editor.md
+  - name: Schema view and explorer
+    href: graphql-schema-view.md
+  - name: Frequently asked questions
+    href: graphql-faq.md
+- name: How-to guides
+  items:
+  - name: Manage relationships
+    href: manage-relationships.md
+  - name: Connect applications
+    href: connect-apps-api-graphql.md
+  - name: Query multiple data sources
+    href: multiple-data-sources.md
+  
