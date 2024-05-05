@@ -69,45 +69,67 @@ You've seen the shortcuts, now you're wondering about integration capabilities w
 
 With the **Develop on Fabric model** ISVs can build their products and services on top of Fabric or seamlessly embed Fabric's functionalities within their existing applications. It's a transition from basic integration to actively applying the capabilities Fabric offers. The main integration surface area is via REST APIs for various Fabric workloads. Here's a list of REST APIs available today.
 
-| Fabric Experience | API | Description |
+### Workspace
+
+| API | Description |
+|--|--|
+| [CRUD APIs for Workspace and Workspace Role Management](/rest/api/fabric/core/workspaces) | Create Workspace, Get Workspace details, Delete Workspace, Assign workspace to a capacity, Add a workspace role assignment. |
+
+### OneLake
+
+| API | Description |
+|--|--|
+| [Create Shortcut](/rest/api/fabric/) | Creates a new shortcut. |
+| [Delete Shortcut](/rest/api/fabric/) | Deletes the shortcut but doesn't delete destination storage folder. |
+| [Get Shortcut](/rest/api/fabric/) | Returns shortcut Properties. |
+| [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2) | ADLS Gen2 APIs to create and manage file systems, directories, and path. |
+
+### Real-Time Intelligence
+
+| Item | API | Description |
 |--|--|--|
-| Data Warehouse |  |  |
-|  | [Create Warehouse](/rest/api/fabric/core/items/create-item) | Creates a Data warehouse. |
-|  | [Get Warehouse](/rest/api/fabric/core/items/get-item) | Get Metadata about warehouse. |
-|  | Update Warehouse | Update an existing warehouse. |
-|  | Delete Warehouse | Delete an existing warehouse. |
-|  | List Warehouse | List warehouses in your workspace. |
-| [Data Engineering](../../data-engineering/lakehouse-api.md) |  |  |
-|  | Create Lakehouse | Creates Lakehouse along with SQL analytics endpoint. |
-|  | Update Lakehouse | Updates the name of a lakehouse and the SQL analytics endpoint. |
-|  | Delete Lakehouse | Deletes lakehouse and the associated SQL analytics endpoint. |
-|  | Get Properties | Gets the properties of a lakehouse and the SQL analytics endpoint. |
-|  | [List tables](/rest/api/fabric/lakehouse/tables/list-tables) | List tables in the lakehouse. |
-|  | [Table Load](/rest/api/fabric/lakehouse/tables/load-table) | Creates delta tables from CSV and parquet files and folders. |
-| OneLake |  |  |
-|  | [Create Shortcut](/rest/api/fabric/) | Creates a new shortcut. |
-|  | [Delete Shortcut](/rest/api/fabric/) | Deletes the shortcut but doesn't delete destination storage folder. |
-|  | [Get Shortcut](/rest/api/fabric/) | Returns shortcut Properties. |
-|  | [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2) | ADLS Gen2 APIs to create and manage file systems, directories, and path. |
-| Workspace |  |  |
-|  | [CRUD APIs for Workspace and Workspace Role Management](/rest/api/fabric/core/workspaces) | Create Workspace, Get Workspace details, Delete Workspace, Assign workspace to a capacity, Add a workspace role assignment. |
-| Fabric Data Factory | Coming soon |  |
-| Real-Time Intelligence | |  |
-| - Event House | Create Event house | Creates an event house. |
+| Event House | [Create Event house](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates an event house. |
 |  | Delete Event house | Deletes an existing event house. |
 |  | Get Event house | Get metadata about an event house. |
 |  | List Event house | List event houses in your workspace. |
 |  | Update Event house | Update an existing event house. |
-| - KQL Database | [Create KQL Database](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL database. |
+| KQL Database | [Create KQL Database](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL database. |
 |  | [Delete KQL Database](/rest/api/fabric/kqldatabase/items/delete-kql-database?tabs=HTTP) | Deletes an existing KQL database. |
 |  | [Get KQL Database](/rest/api/fabric/kqldatabase/items/get-kql-database?tabs=HTTP) | Get metadata about a KQL database. |
 |  | [List KQL Database](/rest/api/fabric/kqldatabase/items/list-kql-databases?tabs=HTTP) | List KQL databases in your workspace. |
 |  | [Update KQL Database](/rest/api/fabric/kqldatabase/items/update-kql-database?tabs=HTTP) | Update an existing KQL database. |
-| - KQL Queryset | [Create KQL Queryset](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL queryset. |
+| KQL Queryset | [Create KQL Queryset](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL queryset. |
 |  | [Delete KQL Queryset](/rest/api/fabric/kqlqueryset/items/delete-kql-queryset?tabs=HTTP) | Deletes an existing KQL queryset. |
 |  | [Get KQL Queryset](/rest/api/fabric/kqlqueryset/items/get-kql-queryset?tabs=HTTP) | Get metadata about a KQL queryset. |
 |  | [List KQL Queryset](/rest/api/fabric/kqlqueryset/items/list-kql-querysets?tabs=HTTP) | List KQL querysets in your workspace. |
 |  | [Update KQL Queryset](/rest/api/fabric/kqlqueryset/items/update-kql-queryset?tabs=HTTP) | Update an existing KQL queryset. |
+
+### Fabric Data Factory
+
+| API | Description |
+|--|--|
+| Coming soon |  |
+
+### Data Warehouse
+
+| API | Description |
+|--|--|
+| [Create Warehouse](/rest/api/fabric/core/items/create-item) | Creates a Data warehouse. |
+| [Get Warehouse](/rest/api/fabric/core/items/get-item) | Get Metadata about warehouse. |
+| Update Warehouse | Update an existing warehouse. |
+| Delete Warehouse | Delete an existing warehouse. |
+| List Warehouse | List warehouses in your workspace. |
+
+### Data Engineering
+
+| API | Description |
+|--|--|
+| Create Lakehouse | Creates Lakehouse along with SQL analytics endpoint. |
+| Update Lakehouse | Updates the name of a lakehouse and the SQL analytics endpoint. |
+| Delete Lakehouse | Deletes lakehouse and the associated SQL analytics endpoint. |
+| Get Properties | Gets the properties of a lakehouse and the SQL analytics endpoint. |
+| [List tables](/rest/api/fabric/lakehouse/tables/list-tables) | List tables in the lakehouse. |
+| [Table Load](/rest/api/fabric/lakehouse/tables/load-table) | Creates delta tables from CSV and parquet files and folders. |
 
 This section will be updated as more Fabric APIs become available.
 
