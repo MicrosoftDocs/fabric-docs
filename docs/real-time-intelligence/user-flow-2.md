@@ -31,7 +31,7 @@ This user flow shows how a data engineer can load and transform events from a wi
 1. Define data processing operations that transform the streaming data.
 1. Add a destination to the stream.
 
-    For detailed information and steps, see [Transformation operations](../real-time-hub/route-events-based-on-content#supported-operations) and [Add and manage destination](../real-time-hub/add-manage-eventstream-destinations.md). 
+    For detailed information and steps, see [Transformation operations](../real-time-hub/route-events-based-on-content.md#supported-operations) and [Add and manage destination](../event-streams/add-manage-eventstream-destinations.md). 
 
 ## Potential use cases
 
