@@ -1,6 +1,6 @@
 ---
 title: Launch Get events experiences
-description: Include file with instructions to launch the Get events experience in Fabric real-time hub.
+description: Include file with instructions to launch the Get events experience in Fabric Real-Time hub.
 author: spelluru
 ms.author: spelluru
 ms.topic: include

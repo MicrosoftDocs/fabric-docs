@@ -56,7 +56,7 @@ Different Fabric items have different permissions. To learn more about the permi
 
 * [Data science](../data-science/models-experiments-rbac.md)
 
-* [Real-Time Analytics](/azure/data-explorer/kusto/management/security-roles)
+* [Real-Time Intelligence](/azure/data-explorer/kusto/management/security-roles)
 
 ## Compute permissions
 
