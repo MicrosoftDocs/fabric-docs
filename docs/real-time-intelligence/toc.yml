@@ -22,6 +22,8 @@ items:
       href: tutorial-4-set-alert.md
     - name: 5- Create a Real-Time dashboard
       href: tutorial-5-create-dashboard.md
+    - name: 6- Create a Power BI report
+      href: tutorial-6-power-bi-report.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
 - name: User flows
