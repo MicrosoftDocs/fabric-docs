@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part  6- Create a Power BI report from your KQL queryset
+title: Real-Time Intelligence tutorial part  6- Create a Power BI report
 description: Learn how to create a Power BI report from your KQL queryset Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -11,7 +11,7 @@ ms.date: 05/21/2024
 ms.search.form: Get started
 #customer intent: I want to learn how to Create a Power BI report from your KQL queryset
 ---
-# Real-Time Intelligence tutorial part 6: Create a Power BI report from your KQL queryset
+# Real-Time Intelligence tutorial part 6: Create a Power BI report
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 5: Create a Real-Time dashboard](tutorial-5-create-dashboard.md).
