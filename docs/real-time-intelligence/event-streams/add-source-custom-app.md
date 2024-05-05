@@ -15,7 +15,7 @@ If you want to connect your own application with an eventstream, you can add a c
 
 If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
 ## Prerequisites
 
