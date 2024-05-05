@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
 title: Trigger Fabric dataflows from the Real-Time hub
+=======
+title: Real-Time Intelligence tutorial user flow 5- trigger Fabric dataflows from the Real-Time hub
+>>>>>>> bc2405ce30da236d4f37480d80f95f5431a50171
 description: Learn about Real-Time Intelligence tutorial user flow 5- Trigger Fabric dataflows from the Real-Time hub in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
