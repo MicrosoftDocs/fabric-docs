@@ -51,6 +51,9 @@ Use instructions from the [Add Azure SQL Database CDC as a source](#add-azure-sq
 1. On the **Select a data source** screen, select **Azure SQL DB (CDC)**.
 
    ![A screenshot of selecting Azure SQL DB (CDC).](media/add-source-azure-sql-database-cdc/select-external-source.png)
+1. On the **Connect** page, select **Go to resource** to navigate to the Azure SQL database. Take a note of the server name on the **Overview** page. It's in the following format: `myazuresqlserver.database.windows.net`. 
+
+    :::image type="content" source="./media/add-source-azure-sql-database-cdc/go-to-azure-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-sql-database-cdc/go-to-azure-resource.png":::               
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-sql-database-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-sql-database-cdc/new-connection-link.png"::: 
@@ -94,3 +97,5 @@ Use instructions from the [Add Azure SQL Database CDC as a source](#add-azure-sq
 
     For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
+## Next step
+The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md).

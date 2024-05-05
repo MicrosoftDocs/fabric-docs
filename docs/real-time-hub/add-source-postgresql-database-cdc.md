@@ -87,3 +87,6 @@ Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-d
 
     :::image type="content" source="./media/add-source-postgresql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream based on PostgreSQL Database CDC source." lightbox="./media/add-source-postgresql-database-cdc/review-create-success.png":::
 1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you as shown in the following image.
+
+## Next step
+The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md).

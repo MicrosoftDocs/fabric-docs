@@ -65,17 +65,6 @@ This article describes how to add Confluent Cloud Kafka as an event source in Fa
 
     For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
  
-
-## Related content
-
-- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
-- [Azure Cosmos DB Change Data Capture (CDC)](add-source-azure-cosmos-db-cdc.md)
-- [Azure Event Hubs](add-source-azure-event-hubs.md)
-- [Azure IoT Hub](add-source-azure-iot-hub.md)
-- [Azure SQL Database CDC](add-source-azure-sql-database-cdc.md)
-- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md)
-- [MySQL Database CDC](add-source-mysql-database-cdc.md)
-- [PostgreSQL Database CDC](add-source-postgresql-database-cdc.md)
-- [Azure Blob Storage events](get-azure-blob-storage-events.md)
-- [Fabric workspace event](create-streams-fabric-workspace-item-events.md)
+## Next step
+The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md).
 

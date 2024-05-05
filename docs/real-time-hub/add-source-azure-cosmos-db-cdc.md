@@ -98,3 +98,6 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream you just created." lightbox="./media/add-source-azure-cosmos-db-cdc/verify-data-stream.png":::
 
     For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+
+## Next step
+The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md).

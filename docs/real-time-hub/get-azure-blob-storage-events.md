@@ -61,9 +61,6 @@ On the **Get events** page, select **Azure Blob Storage events**.
 
     :::image type="content" source="./media/get-azure-blob-storage-events/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab with the generated stream." lightbox="./media/get-azure-blob-storage-events/verify-data-stream.png":::
 
+## Next step
+The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md).
 
-## Related content
-
-- [Set alerts on Azure Blob Storage events in Real-Time hub](set-alerts-azure-blob-storage-events.md)
-- - [Set alerts on Fabric Workspace item events in Real-Time hub](set-alerts-fabric-workspace-item-events.md)
-- [Create streams for Fabric workspace item events](create-streams-fabric-workspace-item-events.md)
