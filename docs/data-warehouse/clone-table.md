@@ -1,10 +1,12 @@
 ---
 title: Clone table
 description: Learn about table clones in Microsoft Fabric.
-author: ajagadish-24
-ms.author: ajagadish
-ms.reviewer: wiassaf
-ms.date: 03/04/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: ajagadish
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -114,14 +116,15 @@ For auditing or compliance purposes, zero copy clones can be easily used to crea
 - Table clones submitted before the retention period of seven days cannot be created.
 - Changes to the table schema prevent a clone from being created prior to the table schema change.
 
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)
+
 ## Related content
 
 - [Tutorial: Clone a table using T-SQL in Microsoft Fabric](tutorial-clone-table.md)
 - [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)
 - [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true)
 - [Query the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in Microsoft Fabric](query-warehouse.md)
-
-## Next step
-
-> [!div class="nextstepaction"]
-> [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)

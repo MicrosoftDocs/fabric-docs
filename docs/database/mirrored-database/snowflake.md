@@ -4,8 +4,8 @@ description: Learn about the mirrored databases from Snowflake in Microsoft Fabr
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
+ms.date: 04/24/2024
 ms.service: fabric
-ms.date: 03/20/2024
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -13,7 +13,7 @@ no-loc: [Copilot]
 
 # Mirroring Snowflake (Preview)
 
-[Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate existing your Snowflake warehouse data with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Snowflake data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
+[Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Snowflake warehouse data with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Snowflake data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
 For a tutorial on configuring your Snowflake database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake (Preview)](snowflake-tutorial.md).
 

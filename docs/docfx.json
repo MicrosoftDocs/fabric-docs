@@ -80,8 +80,8 @@
                 "governance/**/*.yml": "governance",
                 "onelake/**/*.md": "onelake",
                 "onelake/**/*.yml": "onelake",
-                "oneriver/**/*.md": "oneriver",
-                "oneriver/**/*.yml": "oneriver",
+                "real-time-hub/**/*.md": "real-time-analytics",
+                "real-time-hub/**/*.yml": "real-time-analytics",
                 "real-time-intelligence/**/*.md": "real-time-analytics",
                 "real-time-intelligence/**/*.yml": "real-time-analytics",
                 "security/**/*.md": "security",
@@ -108,8 +108,8 @@
                 "governance/**/*.yml": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=62ac7a81-45f9-ed11-8849-000d3a4ef41d",
                 "onelake/**/*.md": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=a81db3f3-43be-ed11-83ff-00224827e905",
                 "onelake/**/*.yml": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=a81db3f3-43be-ed11-83ff-00224827e905",
-                "oneriver/**/*.md": "https://ideas.fabric.microsoft.com/",
-                "oneriver/**/*.yml": "https://ideas.fabric.microsoft.com/",
+                "real-time-hub/**/*.md": "https://ideas.fabric.microsoft.com/",
+                "real-time-hub/**/*.yml": "https://ideas.fabric.microsoft.com/",
                 "real-time-intelligence/**/*.md": "https://ideas.fabric.microsoft.com/?forum=f2a1a698-503e-ed11-bba2-000d3a8b12b6&category=f4e6a6b3-6748-ed11-bba3-000d3a8b12b6",
                 "real-time-intelligence/**/*.yml": "https://ideas.fabric.microsoft.com/?forum=f2a1a698-503e-ed11-bba2-000d3a8b12b6&category=f4e6a6b3-6748-ed11-bba3-000d3a8b12b6",
                 "security/**/*.md": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=e94fbb29-45f9-ed11-8849-000d3a4ef41d",
@@ -136,8 +136,8 @@
                 "governance/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "onelake/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "onelake/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
-                "oneriver/**/*.md": "https://community.fabric.microsoft.com/powerbi",
-                "oneriver/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
+                "real-time-hub/**/*.md": "https://community.fabric.microsoft.com/powerbi",
+                "real-time-hub/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "real-time-intelligence/**/*.md": "https://community.fabric.microsoft.com/synapse",
                 "real-time-intelligence/**/*.yml": "https://community.fabric.microsoft.com/synapse",
                 "security/**/*.md": "https://community.fabric.microsoft.com/powerbi",
@@ -174,6 +174,13 @@
             }
         },
         "template": [],
-        "dest": "fabric-docs"
+        "dest": "fabric-docs",
+        "rules": {
+            "sensitive-language-sl": {
+                          "exclude": [
+                              "real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md"
+                          ]
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 ---
-title: Use example queries in Real-Time Analytics
-description: Learn how to use example queries to get an initial look at your data in Real-Time Analytics.
+title: Use example queries in Real-Time Intelligence
+description: Learn how to use example queries to get an initial look at your data in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 08/13/2023
+ms.date: 04/21/2024
 ms.search.form: product-kusto
 ---
 # Use example queries
@@ -34,7 +34,7 @@ To learn how to use example SQL queries, see [Example SQL queries](tutorial-4-ex
 
 1. Select a single query to populate the **Explore your data** window. The query will automatically run and display results.
 
-    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Explore your data window showing query results of example queries in Real-Time Analytics."  lightbox="media/query-table/run-query.png":::
+    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Explore your data window showing query results of example queries in Real-Time Intelligence."  lightbox="media/query-table/run-query.png":::
 
 ## Related content
 

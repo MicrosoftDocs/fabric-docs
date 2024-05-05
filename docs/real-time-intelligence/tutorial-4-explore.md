@@ -1,5 +1,5 @@
 ---
-title: Real-Time Analytics tutorial part 4- Explore your data with KQL and SQL
+title: Real-Time Intelligence tutorial part 4- Explore your data with KQL and SQL
 description: Learn how to explore your data using example KQL and SQL queries.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/28/2023
+ms.date: 04/21/2024
 ms.search.form: Get started
 ---
-# Real-Time Analytics tutorial part 4: Explore your data with KQL and SQL
+# Real-Time Intelligence tutorial part 4: Explore your data with KQL and SQL
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Get historical data](tutorial-3-get-historical-data.md).
@@ -32,7 +32,7 @@ The first step in data analysis is often to take a look at a subset of the data 
 
     The example opens in the **Explore your data** pane with the table context already populated. This first query uses the [take operator](/azure/data-explorer/kusto/query/takeoperator?context=/fabric/context/context&pivots=fabric) to return a sample number of records, and is useful to get a first look at the data structure and possible values. The autopopulated example queries are automatically run. You can see the query results in the results pane.
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/take-100.png" alt-text="Screenshot of first example query result in Synapse Real-Time Analytics in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/take-100.png":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/take-100.png" alt-text="Screenshot of first example query result in Synapse Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/take-100.png":::
 
 1. Return to the Explorer pane to select the next query, which uses the [where operator](/azure/data-explorer/kusto/query/whereoperator?context=/fabric/context/context&pivots=fabric) and [between operator](/azure/data-explorer/kusto/query/betweenoperator?context=/fabric/context/context&pivots=fabric) to return records ingested in the last 24 hours.
 
@@ -54,7 +54,7 @@ The first step in data analysis is often to take a look at a subset of the data 
 
 1. Select the final query in the list of example queries, which uses the [summarize operator](/azure/data-explorer/kusto/query/summarizeoperator?context=/fabric/context/context&pivots=fabric), [count operator](/azure/data-explorer/kusto/query/countoperator?context=/fabric/context/context&pivots=fabric), and [bin function](/azure/data-explorer/kusto/query/binfunction?context=/fabric/context/context&pivots=fabric) to return the number of ingestions per hour.
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/summarize-by-ingestion-time.png" alt-text="Screenshot of summarizing by ingestion time in Real-Time Analytics in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/summarize-by-ingestion-time.png":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/summarize-by-ingestion-time.png" alt-text="Screenshot of summarizing by ingestion time in Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/summarize-by-ingestion-time.png":::
 
 ## Example SQL queries
 

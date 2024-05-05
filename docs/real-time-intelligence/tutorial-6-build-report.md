@@ -1,5 +1,5 @@
 ---
-title: Real-Time Analytics tutorial part 6- Build a Power BI report
+title: Real-Time Intelligence tutorial part 6- Build a Power BI report
 description: Learn how to visualize your data in a Power BI report in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/28/2023
+ms.date: 04/21/2024
 ms.search.form: Get started
 ---
-# Real-Time Analytics tutorial part 6: Build a Power BI report
+# Real-Time Intelligence tutorial part 6: Build a Power BI report
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md).
@@ -43,14 +43,14 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
     * **Longitude** > **Longitude**
     * **Count** > **Bubble size**
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/create-power-bi-second-report.png" alt-text="Screenshot of creating second Power BI report in Synapse Real-Time Analytics in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/create-power-bi-second-report.png":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/create-power-bi-second-report.png" alt-text="Screenshot of creating second Power BI report in Synapse Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/create-power-bi-second-report.png":::
 
 ## Add a visualization
 
 1. Select the **Stacked Bar Chart** icon. :::image type="icon" source="media/real-time-intelligence-tutorial/stacked-bar-chart-icon.png" border="false":::
 1. Drag the **Borough** field to Y-Axis and **Count** to the X-axis
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/power-bi-second-visual.png" alt-text="Screenshot of adding second visualization to the Power BI report in Synapse Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/power-bi-second-visual.png" alt-text="Screenshot of adding second visualization to the Power BI report in Synapse Real-Time Intelligence in Microsoft Fabric.":::
 
 ## Save the Power BI report
 
@@ -59,7 +59,7 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
 1. Select **Continue**.
 1. Select **Open the file in Power BI to view, edit, and get a shareable link**.
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/open-in-power-BI.png" alt-text="Screenshot of opening in Power BI in Real-Time Analytics in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/open-in-power-BI.png":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/open-in-power-BI.png" alt-text="Screenshot of opening in Power BI in Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/open-in-power-BI.png":::
 
 ## Change refresh settings
 
@@ -67,7 +67,7 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
 1. In the **Visualizations** pane, select the paintbrush icon to **Format page**.
 1. Expand **Page Refresh**.
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/page-refresh-on.png" alt-text="Screenshot of page refresh details in Real-Time Analytics in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/page-refresh-on.png":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/page-refresh-on.png" alt-text="Screenshot of page refresh details in Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/page-refresh-on.png":::
 
 1. Toggle **Page Refresh** to **On** and set the refresh interval to 10 seconds.
 

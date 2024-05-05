@@ -1,6 +1,6 @@
 ---
-title: Real-Time Analytics tutorial part 2- Get data with Eventstream
-description: Learn how to stream data into your KQL database from Eventstream in Real-Time Analytics.
+title: Real-Time Intelligence tutorial part 2- Get data with Eventstream
+description: Learn how to stream data into your KQL database from Eventstream in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,23 +8,23 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/23/2023
+ms.date: 04/21/2024
 ms.search.form: Get started
 ---
-# Real-Time Analytics tutorial part 2: Get data with Eventstream
+# Real-Time Intelligence tutorial part 2: Get data with Eventstream
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md).
 
 ## Create an eventstream
 
-1. Return to the Real-Time Analytics home page. The **Home** icon directs you to the home page of the experience you're currently using.
+1. Return to the Real-Time Intelligence home page. The **Home** icon directs you to the home page of the experience you're currently using.
 
     :::image type="icon" source="media/real-time-intelligence-tutorial/home-icon.png" border="false":::
 
 1. Under **New**, select **Eventstream**.
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/new-eventstream.png" alt-text="Screenshot of new eventstream button in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/new-eventstream.png" alt-text="Screenshot of new eventstream button in Real-Time Intelligence in Microsoft Fabric.":::
 
 1. Enter *NyTaxiTripsEventstream* as the eventstream name and select  **Create**.
 
@@ -57,7 +57,7 @@ ms.search.form: Get started
 1. Select **+ New table**,  and enter *nyctaxitrips* as the table name.
 1. Under **Configure the data source**, review the default values. The **Data connection name** is made from the database name and the eventstream name.
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/source-tab.png" alt-text="Screenshot of source tab for event stream in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/source-tab.png" alt-text="Screenshot of source tab for event stream in Real-Time Intelligence in Microsoft Fabric.":::
 
     The incoming data source is uncompressed, so keep the **Compression** type as *None*.
 1. Select **Next** to inspect the data.
@@ -66,7 +66,7 @@ ms.search.form: Get started
 
 1. From the **Format** dropdown, select **JSON**.
 
-    :::image type="content" source="media/real-time-intelligence-tutorial/data-format-json.png" alt-text="Screenshot of Schema tab with data format JSON selected in Real-Time Analytics in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/data-format-json.png":::
+    :::image type="content" source="media/real-time-intelligence-tutorial/data-format-json.png" alt-text="Screenshot of Schema tab with data format JSON selected in Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-intelligence-tutorial/data-format-json.png":::
 
     Notice that the data preview refreshes and shows the data in columns with the data types automatically identified. Some of these data types need to be changed for later queries. The columns that appear in the preview can be manipulated by selecting the **down arrow** to the right of the column name.
 
