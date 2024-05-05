@@ -1,6 +1,6 @@
 ---
-title: Real-Time Intelligence tutorial part 4- Query your streaming data
-description: Learn how to Query your streaming data Real-Time Intelligence.
+title: Real-Time Intelligence tutorial part 3- Query streaming data in a KQL queryset
+description: Learn how to query your streaming data in a KQL queryset Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 04/18/2024
 ms.search.form: Get started
 ---
-# Real-Time Intelligence tutorial part 4: Query your streaming data
+# Real-Time Intelligence tutorial part 3: Query streaming data in a KQL queryset
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data in the Real-Time Hub](tutorial-2-get-real-time-events.md).
@@ -62,4 +62,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> 
+> [Tutorial part 4: Set an alert on your event stream](tutorial-4-set-alert.md)

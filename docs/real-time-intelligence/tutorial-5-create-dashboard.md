@@ -1,6 +1,6 @@
 ---
-title: Real-Time Intelligence tutorial part 4- Set an alert on your event stream
-description: Learn how to set an alert on your Event stream in Real-Time Intelligence.
+title: Real-Time Intelligence tutorial part 5 - Create a Real-Time dashboard
+description: Learn how to create a Real-Time dashboard in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -9,12 +9,12 @@ ms.custom:
   - build-2024
 ms.date: 05/21/2024
 ms.search.form: Get started
-#customer intent: I want to learn how to set an alert on my Event stream in Real-Time Intelligence.
+#customer intent: I want to learn how to create a Real-Time dashboard in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 4: Set an alert on your event stream
+# Real-Time Intelligence tutorial part 5: Create a Real-Time dashboard
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Query streaming data in a KQL queryset](tutorial-3-query-data.md).
+> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 3: Set a trigger on your event stream](tutorial-4-set-alert.md).
 
 ## Set an alert on the event stream
 
@@ -27,7 +27,7 @@ ms.search.form: Get started
 1. Select **Set alert**
 1. A new pane opens. Fill in the following fields:
     | Field | Value |
-    | --- | --- |
+    | --- | --- |    
     | **Condition** |  |
     | Check | On each event when |
     | Field | No_Empty_Docks |  
@@ -53,4 +53,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 5: Create a Real-Time dashboard](tutorial-5-create-dashboard.md)
+> [Tutorial part 4: Transform your data in Event streams](tutorial-4-transform.md)
