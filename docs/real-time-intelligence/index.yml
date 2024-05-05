@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
 title: Real-Time Intelligence documentation in Microsoft Fabric
-summary:  Real-time Intelligence enables the extraction of insights, visualization, and action on data in motion within an organization. It provides an end-to-end solution for event-driven scenarios, streaming data, and data logs, by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions.
+summary:  Real-time Intelligence is an end-to-end solution for event-driven scenarios, streaming data, and data logs. It enables the extraction of insights, visualization, and action on data in motion by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions.
 
 metadata:
   title: Real-Time Intelligence in Microsoft Fabric documentation
-  description: Learn about Real-Time Intelligence, an end-to-end solution for event-driven scenarios, streaming data, and data logs, by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions.
+  description: Learn about Real-Time Intelligence, an end-to-end solution for event-driven scenarios, streaming data, and data logs.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: real-time-analytics
   ms.custom:
