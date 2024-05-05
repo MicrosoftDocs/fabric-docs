@@ -1,5 +1,5 @@
 ---
-title: Get data from Real-Time hub (Public Preview)
+title: Get data from Real-Time hub (preview)
 description: Learn how to get data from Real-Time hub in a KQL database in Real-time Intelligence.
 ms.reviewer: aksdi
 ms.author: yaschust
@@ -12,7 +12,7 @@ ms.date: 04/18/2024
 ms.search.form: Get data in a KQL Database
 ---
 
-# Get data from Real-Time hub (Preview)
+# Get data from Real-Time hub (preview)
 
 In this article, you learn how to get events from Real-Time hub into either a new or existing table.
 
@@ -32,7 +32,7 @@ To get data from Real-Time hub, you need to select a Real-time stream from Real-
 
 On the lower ribbon of your KQL database, either:
 
-* From the **Get Data** dropdown menu, then under **Continuous**, select **Real-Time hub (Preview)**.
+* From the **Get Data** dropdown menu, then under **Continuous**, select **Real-Time hub (preview)**.
 
 * Select **Get Data** and then in the **Get data** window, select a stream from the Real-Time hub section.
 

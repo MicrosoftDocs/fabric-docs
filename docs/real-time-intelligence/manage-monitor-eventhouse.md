@@ -107,11 +107,11 @@ The databases page provides a summary of all the databases in the event house.
 
 1. From the **Eventhouse** explorer, select **Databases**.
 
-    :::image type="content" source="media/eventhouse/browse-databases.png" alt-text="Screenshot of Eventhouse pane with Browse all databases highlighted in a red box.":::'
+    :::image type="content" source="media/eventhouse/browse-databases.png" alt-text="Screenshot of an event house pane with Browse all databases highlighted in a red box.":::'
 
     A window opens with details about all the databases in this event house.
 
-    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in Eventhouse in Real-Time Intelligence.":::
+    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in an event house in Real-Time Intelligence.":::
 
 1. Toggle between list and tile view using the buttons on the top right of the page.
 

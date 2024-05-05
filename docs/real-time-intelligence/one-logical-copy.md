@@ -1,5 +1,5 @@
 ---
-title: One logical copy (Preview)
+title: One logical copy (preview)
 description: Learn how to turn on KQL Database data availability in OneLake.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -10,7 +10,7 @@ ms.custom:
   - ignite-2023
 ms.date: 04/21/2024
 ---
-# One logical copy (Preview)
+# One logical copy (preview)
 
 You can create a one logical copy of KQL Database data by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
 
