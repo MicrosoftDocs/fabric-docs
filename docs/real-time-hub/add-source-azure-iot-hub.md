@@ -53,7 +53,7 @@ Use instructions from the [Add an Azure IoT hub as a source](#add-an-azure-iot-h
     :::image type="content" source="./media/add-source-azure-iot-hub/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure IoT hub." lightbox="./media/add-source-azure-iot-hub/existing-connection.png":::    
 1. On the **Connect** page, select **Go to resource** to navigate to the Azure IoT hub. Take a note of the access key name and its value. 
 
-    :::image type="content" source="./media/add-source-azure-iot-hub/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-iot-hub/go-to-resource.png.png":::     
+    :::image type="content" source="./media/add-source-azure-iot-hub/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-iot-hub/go-to-resource.png":::     
 
     To get the access key name and value, follow these steps: 
     1. Navigate to the IoT Hub page for your Azure IoT hub in the Azure portal. 
