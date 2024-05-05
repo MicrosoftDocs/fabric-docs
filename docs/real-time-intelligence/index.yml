@@ -27,8 +27,11 @@ landingContent:
             url: overview.md
       - linkListType: get-started
         links: 
-          - text: Real-Time Intelligence Tutorial
+          - text: Compare with other Azure solutions
+            url: real-time-intelligence-compare.md
+          - text: Real-Time Intelligence tutorial
             url: tutorial-introduction.md
+    
 
   # Card 
   - title: Real-Time hub
@@ -55,14 +58,16 @@ landingContent:
         links:
           - text: Create and manage event streams
             url:  event-streams/create-manage-an-eventstream.md
-          - text: Process events using processor editor            
-            url: event-streams/process-events-using-event-processor-editor.md
+          - text: Create event streams for discrete events
+            url: event-streams/create-eventstreams-discrete-events.md
+          - text: Route data streams based on content           
+            url: event-streams/route-events-based-on-content.md
           - text: Monitor event streams
             url: event-streams/monitor.md
-          - text: Transform and stream real-time events to Microsoft Fabric Lakehouse
-            url:  event-streams/transform-and-stream-real-time-events-to-lakehouse.md
       - linkListType: how-to-guide
         links: 
+        - text: Get data from Real-Time hub 
+          url: get-data-real-time-hub.md
         - text: Get data from OneLake
           url: get-data-onelake.md
         - text: Get data from Azure storage
@@ -78,7 +83,9 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Event house overview
-            url: eventhouse.md 
+            url: eventhouse.md
+          - text: Create an Event house
+            url: create-eventhouse.md 
 
       - linkListType: how-to-guide
         links:
@@ -118,6 +125,10 @@ landingContent:
         links:
           - text: Visualize data in a Real-Time dashboard
             url: dashboard-real-time-create.md
+          - text: Customize Real-Time Dashboard visuals
+            url: dashboard-visuals-customize.md
+      - linkListType: how-to-guide
+        links:
           - text: Visualize data in a Power BI report
             url: create-powerbi-report.md
           
