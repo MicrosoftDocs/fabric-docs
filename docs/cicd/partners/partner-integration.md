@@ -7,7 +7,7 @@ author: mberdugo
 ms.topic: overview
 ms.custom: 
 ms.search.form: 
-ms.date: 11/15/2023
+ms.date: 05/05/2024
 ---
 
 # Microsoft Fabric Integration Pathways for ISVs
@@ -33,6 +33,12 @@ Here are a few ways to get you started with this model:
 - Once the data is in OneLake, explore locally using [OneLake File Explorer](../../onelake/onelake-file-explorer.md). OneLake file explorer seamlessly integrates OneLake with Windows File Explorer. This application automatically syncs all OneLake items that you have access to in Windows File Explorer. You can also use any other tool compatible with ADLS Gen2 like [Azure Storage Explorer](https://azure.microsoft.com/products/storage/storage-explorer).
 
 :::image type="content" source="media/partner-integration/onelake-apis.png" alt-text="Diagram showing how OneLake APIs interact with Fabric workloads.":::
+
+### Real-Time Intelligence APIs
+
+- Event house and KQL Databases support existing Azure Data Explorer APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Event houses. Learn more about [Azure Data Explorer REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
+- If you're using Databricks or Jupyter Notebooks you can utilize the Kusto Python Client Library to work with Kusto in Fabric. Learn more about [Kusto Pyton SDK](/azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context-rti&pivots=fabric).
+- You can utilize the existing [Microsoft Logic Apps](/azure/data-explorer/kusto/tools/logicapps), [Azure Data Factory](/azure/data-explorer/data-factory-integration), or [Microsoft Power Automate](/azure/data-explorer/flow) connectors to interact with your Event houses or KQL Databases.
 
 ### Data Factory in Fabric
 
@@ -63,30 +69,45 @@ You've seen the shortcuts, now you're wondering about integration capabilities w
 
 With the **Develop on Fabric model** ISVs can build their products and services on top of Fabric or seamlessly embed Fabric's functionalities within their existing applications. It's a transition from basic integration to actively applying the capabilities Fabric offers. The main integration surface area is via REST APIs for various Fabric workloads. Here's a list of REST APIs available today.
 
-| Fabric Experience   | API                                                   | Description                                                                                                                 |
-|---------------------|-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Data Warehouse      |                                                       |                                                                                                                             |
-|                     | [Create Warehouse](/rest/api/fabric/core/items/create-item)                                      | Creates a Data warehouse.                                                                                                    |
-|                     | [Get Warehouse](/rest/api/fabric/core/items/get-item)                                         | Get Metadata about warehouse.                                                                                                |
-|                     | Update Warehouse                                      | Update an existing warehouse.                                                                                              |
-|                     | Delete Warehouse                                      | Delete an existing warehouse.                                                                                                |
-|                     | List Warehouse                                        | List warehouses in your workspace.                                                                                           |
-| [Data Engineering](../../data-engineering/lakehouse-api.md)    |            |                                                                                                                             |
-|                     | Create Lakehouse                                      | Creates Lakehouse along with SQL analytics endpoint.                                                                        |
-|                     | Update Lakehouse                                      | Updates the name of a lakehouse and the SQL analytics endpoint.                                                             |
-|                     | Delete Lakehouse                                      | Deletes lakehouse and the associated SQL analytics endpoint.                                                                     | 
-|                     | Get Properties                                        | Gets the properties of a lakehouse and the SQL analytics endpoint.                                                                                                                        |
-|                     | [List tables](/rest/api/fabric/lakehouse/tables/list-tables)                                          | List tables in the lakehouse.                                                                                                                             |
-|                     | [Table Load](/rest/api/fabric/lakehouse/tables/load-table)                                            | Creates delta tables from CSV and parquet files and folders.                                                                |
-| OneLake             |                                                       |                                                                                                                             |
-|                     | [Create Shortcut](/rest/api/fabric/)   | Creates a new shortcut.                                                                                                     |
-|                     | [Delete Shortcut](/rest/api/fabric/)   | Deletes the shortcut but doesn't delete destination storage folder.                                                        |
-|                     | [Get Shortcut](/rest/api/fabric/)                                          | Returns shortcut Properties.                                                                                                |
-|                     | [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2)           | ADLS Gen2 APIs to create and manage file systems, directories, and path.                                                    |
-| Workspace           |                                                       |                                                                                                                             |
-|                     | [CRUD APIs for Workspace and Workspace Role Management](/rest/api/fabric/core/workspaces) | Create Workspace, Get Workspace details, Delete Workspace, Assign workspace to a capacity, Add a workspace role assignment. |
-| Fabric Data Factory | Coming soon                                           |                                                                                                                             |
-| Real Time Analytics | Coming Soon                                           |                                                                                                                             |
+| Fabric Experience | API | Description |
+|--|--|--|
+| Data Warehouse |  |  |
+|  | [Create Warehouse](/rest/api/fabric/core/items/create-item) | Creates a Data warehouse. |
+|  | [Get Warehouse](/rest/api/fabric/core/items/get-item) | Get Metadata about warehouse. |
+|  | Update Warehouse | Update an existing warehouse. |
+|  | Delete Warehouse | Delete an existing warehouse. |
+|  | List Warehouse | List warehouses in your workspace. |
+| [Data Engineering](../../data-engineering/lakehouse-api.md) |  |  |
+|  | Create Lakehouse | Creates Lakehouse along with SQL analytics endpoint. |
+|  | Update Lakehouse | Updates the name of a lakehouse and the SQL analytics endpoint. |
+|  | Delete Lakehouse | Deletes lakehouse and the associated SQL analytics endpoint. |
+|  | Get Properties | Gets the properties of a lakehouse and the SQL analytics endpoint. |
+|  | [List tables](/rest/api/fabric/lakehouse/tables/list-tables) | List tables in the lakehouse. |
+|  | [Table Load](/rest/api/fabric/lakehouse/tables/load-table) | Creates delta tables from CSV and parquet files and folders. |
+| OneLake |  |  |
+|  | [Create Shortcut](/rest/api/fabric/) | Creates a new shortcut. |
+|  | [Delete Shortcut](/rest/api/fabric/) | Deletes the shortcut but doesn't delete destination storage folder. |
+|  | [Get Shortcut](/rest/api/fabric/) | Returns shortcut Properties. |
+|  | [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2) | ADLS Gen2 APIs to create and manage file systems, directories, and path. |
+| Workspace |  |  |
+|  | [CRUD APIs for Workspace and Workspace Role Management](/rest/api/fabric/core/workspaces) | Create Workspace, Get Workspace details, Delete Workspace, Assign workspace to a capacity, Add a workspace role assignment. |
+| Fabric Data Factory | Coming soon |  |
+| Real-Time Intelligence | |  |
+| - Event House | Create Event house | Creates an event house. |
+|  | Delete Event house | Deletes an existing event house. |
+|  | Get Event house | Get metadata about an event house. |
+|  | List Event house | List event houses in your workspace. |
+|  | Update Event house | Update an existing event house. |
+| - KQL Database | [Create KQL Database](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL database. |
+|  | [Delete KQL Database](/rest/api/fabric/kqldatabase/items/delete-kql-database?tabs=HTTP) | Deletes an existing KQL database. |
+|  | [Get KQL Database](/rest/api/fabric/kqldatabase/items/get-kql-database?tabs=HTTP) | Get metadata about a KQL database. |
+|  | [List KQL Database](/rest/api/fabric/kqldatabase/items/list-kql-databases?tabs=HTTP) | List KQL databases in your workspace. |
+|  | [Update KQL Database](/rest/api/fabric/kqldatabase/items/update-kql-database?tabs=HTTP) | Update an existing KQL database. |
+| - KQL Queryset | [Create KQL Queryset](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL queryset. |
+|  | [Delete KQL Queryset](/rest/api/fabric/kqlqueryset/items/delete-kql-queryset?tabs=HTTP) | Deletes an existing KQL queryset. |
+|  | [Get KQL Queryset](/rest/api/fabric/kqlqueryset/items/get-queryset?tabs=HTTP) | Get metadata about a KQL queryset. |
+|  | [List KQL Queryset](/rest/api/fabric/kqlqueryset/items/list-querysets?tabs=HTTP) | List KQL querysets in your workspace. |
+|  | [Update KQL Queryset](/rest/api/fabric/kqlqueryset/items/update-queryset?tabs=HTTP) | Update an existing KQL queryset. |
 
 This section will be updated as more Fabric APIs become available.
 
