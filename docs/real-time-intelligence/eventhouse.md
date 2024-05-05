@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Conceptual
-ms.date: 04/21/2024
+ms.date: 05/23/2024
 ms.search.form: Eventhouse
 ---
 # Event house overview
