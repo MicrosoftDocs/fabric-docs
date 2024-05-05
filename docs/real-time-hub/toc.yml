@@ -24,7 +24,7 @@ items:
   - name: Supported sources
     href: supported-sources.md
   - name: Sample data source
-    href: add-source-sample-data-.md
+    href: add-source-sample-data.md
   - name: Microsoft sources
     items:
     - name: Azure Event Hubs
