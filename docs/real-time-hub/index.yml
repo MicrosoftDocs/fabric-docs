@@ -77,6 +77,8 @@ landingContent:
             url: add-source-mysql-database-cdc.md
           - text: Azure Cosmos DB CDC
             url: add-source-azure-cosmos-db-cdc.md
+          - text: Sample data sources
+            url: add-source-sample-data-.md
 
   # Card 
   - title: Create streams for external sources
