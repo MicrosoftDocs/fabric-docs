@@ -14,15 +14,15 @@ ms.search.form: Get started
 
 # User flow 3: Discover streaming sources from Microsoft
 
-The Real-time hub is used to discover and manage your streaming data in Fabric. If you're already using various Microsoft products that generate streaming data, you can easily bring these streams into Fabric without the need for complex configurations.
+The Real-Time hub is used to discover and manage your streaming data in Fabric. If you're already using various Microsoft products that generate streaming data, you can easily bring these streams into Fabric without the need for complex configurations.
 
-This user flow shows how an analyst can easily discover and use streaming data from Microsoft and Azure sources in the Real-time hub.
+This user flow shows how an analyst can easily discover and use streaming data from Microsoft and Azure sources in the Real-Time hub.
 
 :::image type="content" source="media/user-flows/user-flow-3.png" alt-text="Schematic image showing the steps in user flow 3." lightbox="media/user-flows/user-flow-3.png" border="false":::
 
 ## Steps
 
-1. Browse to the Real-time hub and select the **Microsoft sources** tab.
+1. Browse to the Real-Time hub and select the **Microsoft sources** tab.
 1. You see all the existing Microsoft sources that are generating events. Filter for the specific item that you want to bring into Fabric
 1. A wizard opens with most fields prepopulated. Validate these fields and select **Ok.**
 1. Define data processing operations that transform the streaming data.

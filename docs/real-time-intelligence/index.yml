@@ -31,11 +31,11 @@ landingContent:
             url: tutorial-introduction.md
 
   # Card 
-  - title: Real-time hub
+  - title: Real-Time hub
     linkLists:
       - linkListType: overview
         links:
-          - text: What is the Real-time hub?
+          - text: What is the Real-Time hub?
             url: ../real-time-hub/real-time-hub-overview.md
 
   # Card 
