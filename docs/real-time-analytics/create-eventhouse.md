@@ -9,7 +9,7 @@ ms.date: 04/07/2024
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to create an event house for data storage in Real-Time Analytics so that I can effectively manage my data.
 ---
-# Create and manage an event house (preview)
+# Create an event house (preview)
 
 An event house allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Eventhouse overview (preview)](eventhouse.md).
 
@@ -62,5 +62,6 @@ When you delete an event house, both the event house and all its child KQL datab
 
 ## Related content
 
-* [Eventhouse overview (Preview)](eventhouse.md)
+* [Eventhouse overview (preview)](eventhouse.md)
+* [Manage and monitor an event house (preview)](manage-monitor-eventhouse.md)
 * [Create a KQL database](create-database.md)
