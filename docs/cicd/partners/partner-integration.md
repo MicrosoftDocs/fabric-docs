@@ -105,9 +105,9 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 |  | [Update KQL Database](/rest/api/fabric/kqldatabase/items/update-kql-database?tabs=HTTP) | Update an existing KQL database. |
 | - KQL Queryset | [Create KQL Queryset](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL queryset. |
 |  | [Delete KQL Queryset](/rest/api/fabric/kqlqueryset/items/delete-kql-queryset?tabs=HTTP) | Deletes an existing KQL queryset. |
-|  | [Get KQL Queryset](/rest/api/fabric/kqlqueryset/items/get-queryset?tabs=HTTP) | Get metadata about a KQL queryset. |
-|  | [List KQL Queryset](/rest/api/fabric/kqlqueryset/items/list-querysets?tabs=HTTP) | List KQL querysets in your workspace. |
-|  | [Update KQL Queryset](/rest/api/fabric/kqlqueryset/items/update-queryset?tabs=HTTP) | Update an existing KQL queryset. |
+|  | [Get KQL Queryset](/rest/api/fabric/kqlqueryset/items/get-kql-queryset?tabs=HTTP) | Get metadata about a KQL queryset. |
+|  | [List KQL Queryset](/rest/api/fabric/kqlqueryset/items/list-kql-querysets?tabs=HTTP) | List KQL querysets in your workspace. |
+|  | [Update KQL Queryset](/rest/api/fabric/kqlqueryset/items/update-kql-queryset?tabs=HTTP) | Update an existing KQL queryset. |
 
 This section will be updated as more Fabric APIs become available.
 
