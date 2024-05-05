@@ -1,13 +1,13 @@
 ---
 title: Manage and monitor an Event house (preview)
-description: Learn how to manage and monitor an event house and gain insights from the system information in Real-Time Analytics.
+description: Learn how to manage and monitor an event house and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.date: 04/07/2024
 ms.search.form: Eventhouse
-#customer intent: As a user, I want to learn how to manage and monitor an event house so that I can effectively utilize Real-Time Analytics.
+#customer intent: As a user, I want to learn how to manage and monitor an event house so that I can effectively utilize Real-Time Intelligence.
 ---
 # Manage and monitor an event house (preview)
 
@@ -15,7 +15,7 @@ The Event house page serves as the central hub for all your interactions within 
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-In this article, you learn about how to manage and gain insights about an event house in Real-Time Analytics.
+In this article, you learn about how to manage and gain insights about an event house in Real-Time Intelligence.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ In this article, you learn about how to manage and gain insights about an event 
 
 ## Navigate to the Event house page
 
-1. Browse to your workspace homepage in Real-Time Analytics.
+1. Browse to your workspace homepage in Real-Time Intelligence.
 
 1. Select the event house from your list of items in the workspace.
 
@@ -53,7 +53,7 @@ Minimum consumption sets a minimum available capacity unit (CU) size for an even
 
     [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
 
-    :::image type="content" source="media/eventhouse/minimum-capacity.png" alt-text="Screenshot showing how to select the correct minimum consumption in Real-Time Analytics Event house.":::
+    :::image type="content" source="media/eventhouse/minimum-capacity.png" alt-text="Screenshot showing how to select the correct minimum consumption in Real-Time Intelligence Event house.":::
 
 ## Explorer pane
 
@@ -65,7 +65,7 @@ The system overview page provides a snapshot of the current state of the event h
 
 1. From the **Eventhouse** explorer, select **System overview**.
 
-    :::image type="content" source="media/eventhouse/system-overview.png" alt-text="Screenshot of the system overview page in Real-Time Analytics." lightbox="media/eventhouse/system-overview.png":::
+    :::image type="content" source="media/eventhouse/system-overview.png" alt-text="Screenshot of the system overview page in Real-Time Intelligence." lightbox="media/eventhouse/system-overview.png":::
 
     The system overview page displays the following information:
 
@@ -111,7 +111,7 @@ The databases page provides a summary of all the databases in the event house.
 
     A window opens with details about all the databases in this event house.
 
-    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in Eventhouse in Real-Time Analytics.":::
+    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in Eventhouse in Real-Time Intelligence.":::
 
 1. Toggle between list and tile view using the buttons on the top right of the page.
 
