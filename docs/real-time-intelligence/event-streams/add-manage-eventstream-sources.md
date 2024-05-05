@@ -16,7 +16,7 @@ ms.search.form: Source and Destination
 
 Once you have created an eventstream, you can connect it to various data sources and destinations. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
 Once you create an eventstream, you can connect it to various data sources and destinations.
 

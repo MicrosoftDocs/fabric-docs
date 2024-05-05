@@ -12,7 +12,7 @@ ms.search.form: Source and Destination
 # Add Azure IoT Hub source to an eventstream
 This article shows you how to add an Azure IoT Hub source to an eventstream. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
 ## Prerequisites 
 Before you start, you must complete the following prerequisites: 
