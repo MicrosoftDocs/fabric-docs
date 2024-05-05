@@ -79,7 +79,7 @@ Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-d
    ![A screenshot of selecting PostgreSQL DB (CDC).](media/add-source-postgresql-database-cdc/select-external-source.png)
 1. On the **Connect** page, select **Go to resource** to navigate to the Azure PostgreSQL database. Take a note of the server name on the **Overview** page. It's in the following format: `myazurepostgresqlserver.postgres.database.azure.com`. 
 
-    :::image type="content" source="./media/add-source-azure-postgresql-database-cdc/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-postgresql-database-cdc/go-to-resource.png":::     
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-postgresql-database-cdc/go-to-resource.png":::     
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="media/add-source-postgresql-database-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page for an Azure PostgreSQL database with New connection link highlighted.":::
