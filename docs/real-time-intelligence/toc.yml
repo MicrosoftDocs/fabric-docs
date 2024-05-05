@@ -17,11 +17,11 @@ items:
     - name: 2- Get data in the Real-Time hub
       href: tutorial-2-get-real-time-events.md
     - name: 3- Set a trigger on your event stream
-      href: tutorial-3-set-trigger.md
+      href: tutorial-3-get-historical-data.md
     - name: 4- Transform your data in Event streams
-      href: tutorial-4-transform.md
+      href: tutorial-4-explore.md
     - name: 5- Use advanced KQL queries
-      href: tutorial-5-query-data.md
+      href: tutorial-5-advanced-kql-query.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
 - name: User flows
@@ -47,7 +47,7 @@ items:
     - name: Create eventstreams 
       items: 
       - name: Create an eventstream 
-        href: event-streams/create-manage-an-eventstream-enhanced.md
+        href: event-streams/create-manage-an-eventstream.md
       - name: Create default and derived streams
         href: event-streams/create-default-derived-streams.md
       - name: Create eventstreams for discrete events
@@ -59,15 +59,15 @@ items:
     - name: Add sources to eventstreams 
       items:
       - name: Add and manage an event source 
-        href: event-streams/add-manage-eventstream-sources-enhanced.md
+        href: event-streams/add-manage-eventstream-sources.md
       - name: Custom endpoint
-        href: event-streams/add-source-custom-app-enhanced.md
+        href: event-streams/add-source-custom-app.md
       - name: Sample data
-        href: event-streams/add-source-sample-data-enhanced.md
+        href: event-streams/add-source-sample-data.md
       - name: Azure Event Hubs
-        href: event-streams/add-source-azure-event-hubs-enhanced.md
+        href: event-streams/add-source-azure-event-hubs.md
       - name: Azure IoT Hub
-        href: event-streams/add-source-azure-iot-hub-enhanced.md
+        href: event-streams/add-source-azure-iot-hub.md
       - name: Azure SQL Database Change Data Capture
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
       - name: PostgreSQL Database Change Data Capture
