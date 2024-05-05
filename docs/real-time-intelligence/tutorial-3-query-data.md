@@ -20,6 +20,9 @@ ms.search.form: Get started
 1. Browse to the KQL database you have created in a previous step, named *Tutorial*. 
 1. Verify that the data is flowing into the database by viewing the **Size** tile in the database details page. The values in this tile should be greater than zero.
 1. From the ribbon, select **New related item** and choose **KQL Queryset**.
+
+    :::image type="content" source="media/tutorial/new-queryset.png" alt-text="Screenshot of Tutorial database showing adding a new related item that is a KQL queryset.":::
+
 1. Enter the name for the KQL Queryset: *TutorialQueryset*.
 1. Select **Create**.
     A new KQL queryset is created and opens in the KQL Queryset editor. It is connected to the *Tutorial* database as a data source, and is prepopulated with several general queries.
@@ -30,26 +33,26 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
 
 1. In the query editor, enter the following query. Then press **Shift + Enter** to run the query.
 
-    ```kql
+    ```kusto
    TutorialTable
     | take 10
     ```
 
-    This query returns ten arbitrary records from the table. What information about the data can you see at a glance?
-1. Notice that one of the columns is named *No_Empty_Docks*. This column contains the number of empty docks at a bike station. This is a field you may be concerned with if you are tracking the availability of bikes at a station.
+    This query returns ten arbitrary records from the table. What information about the data can you see at a glance? Notice that one of the columns is named *No_Bikes*. This column contains the number of empty docks at a bike station. This is a field you may be concerned with if you are tracking the availability of bikes at a station.
 1. To see the data in a more visual way, use the **render** operator. Run the following query:
 
-    ```kql
+    ```kusto
     TutorialTable
-    | project Timestamp, No_Empty_Docks
-    | render timechart 
+    | where Neighbourhood == "Chelsea"
+    | project Timestamp, No_Bikes
+    | render timechart
     ```
 
-    This query creates a time chart that shows the number of empty docks at each timestamp for any station.
-     
+    This query creates a time chart that shows the number of bikes in the Chelsea neighborhood as a time chart.
+
     :::image type="content" source="media/tutorial/empty-docks-timechart.png" alt-text="Screenshot of empty docks timechart in Real-Time Intelligence.":::
 
-
+In the next step, you will set an alert on this field to notify you if the number of bikes falls below a certain threshold.
 
 ## Related content
 

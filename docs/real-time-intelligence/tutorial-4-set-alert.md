@@ -31,13 +31,13 @@ ms.search.form: Get started
     | --- | --- |
     | **Condition** |  |
     | Check | On each event when |
-    | Field | No_Empty_Docks |  
+    | Field | No_Bikes |  
     | Condition | Is less than |
     | Value | 5 |
     | **Action** |  **Message me in Teams**
     | **Save location** | | 
     | Workspace | The workspace in which you created resources|
-    | Item | Tutorial-reflex |
+    | Item | TutorialReflex |
 
     :::image type="content" source="media/tutorial/alert-logic.png" alt-text="Screenshot of Set alert pane in Real-Time Intelligence.":::
 

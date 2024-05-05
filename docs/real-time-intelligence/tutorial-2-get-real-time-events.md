@@ -48,14 +48,9 @@ ms.search.form: Get started
 1. Select **Open Eventstream** from the notification that appears after creating the event stream, or browse to the event stream from the Real-time hub and select **Open Eventstream**.
 1. In the event stream authoring canvas, select the event stream tile in the center.
 1. From the menu ribbon, select **Edit**.
-1. Select **Transform events** > **Manage fields**.
-
-    :::image type="content" source="media/tutorial/manage-fields.png" alt-text="Screenshot showing the edit window of event streams with transform events selected in Real-Time Intelligence in Microsoft Fabric." lightbox="media/tutorial/manage-fields.png":::
-
-     A new tile is created entitled *Managefields1*.
-
-1. On the left edge of the *Managefields* tile, select the green circle and drag it to the right-hand edge of the *TutorialEventstream* tile. A line appears, connecting the two tiles.
-1. Select the pencil icon on the *Managefields1* tile.
+1. Select the down arrow on the **Transform events or add destination** tile.  
+1. Select **Manage fields**. The tile is renamed to *Manage_fields*.
+1. Select the pencil icon on the *Manage_fields* tile.
 1. In the **Manage fields** pane, do the following actions:
     1. In **Operation name**, enter *TutorialTransform*. 
     1. Select **Add all fields**
