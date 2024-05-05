@@ -26,12 +26,12 @@ This user flow shows how an analyst can easily discover and use streaming data f
 1. You see all the existing Microsoft sources that are generating events. Filter for the specific item that you want to bring into Fabric
 1. A wizard opens with most fields prepopulated. Validate these fields and select **Ok.**
 
-    For detailed information and steps, use links from Microsoft sources section in the [Get events from supported sources](supported-sources.md) article.
+    For detailed information and steps, use links from Microsoft sources section in the [Get events from supported sources](../real-time-hub/supported-sources.md) article.
 1. Define data processing operations that transform the streaming data.
 1. Add a destination to the stream.
 1. Your Microsoft-based streaming data begins flowing into Fabric.
 
-    For detailed information and steps, see [Transformation operations](route-events-based-on-content#supported-operations) and [Add and manage destination](add-manage-eventstream-destinations.md). 
+    For detailed information and steps, see [Transformation operations](../real-time-hub/route-events-based-on-content#supported-operations) and [Add and manage destination](../real-time-hub/add-manage-eventstream-destinations.md). 
 
 ## Potential use cases
 

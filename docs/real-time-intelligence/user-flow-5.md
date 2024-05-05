@@ -26,11 +26,11 @@ This user flow shows how a data engineer or data analyst can trigger Fabric data
 1. Select the type of the event you want to explore. You can choose from Fabric Workspace item events or Azure Blob Storage events.
 1. In the detail view, you see detailed schemas of the system events are presented.
 
-    For more information about browsing Fabric events, see [Azure Blob Storage events](get-azure-blob-storage-events.md) and [Fabric workspace item events](create-streams-fabric-workspace-item-events.md).
+    For more information about browsing Fabric events, see [Azure Blob Storage events](../real-time-hub/get-azure-blob-storage-events.md) and [Fabric workspace item events](../real-time-hub/create-streams-fabric-workspace-item-events.md).
 1. Create a Reflex alert to act on desired events. You can further filter on events to act only when the desired rules are met. Actions include sending event information to a Teams chat message, to an email, kicking off a Power Automate workflow, or running a data pipeline.
 1. Save the Reflex item.
 
-    For more information on setting alerts for Fabric events, see [Set alerts on Azure Blob Storage events](set-alerts-azure-blob-storage-events.md) and [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md).
+    For more information on setting alerts for Fabric events, see [Set alerts on Azure Blob Storage events](../real-time-hub/set-alerts-azure-blob-storage-events.md) and [Set alerts on Fabric workspace item events](../real-time-hub/set-alerts-fabric-workspace-item-events.md).
 
 ## Potential use cases
 

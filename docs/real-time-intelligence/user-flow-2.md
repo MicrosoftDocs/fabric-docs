@@ -26,12 +26,12 @@ This user flow shows how a data engineer can load and transform events from a wi
 1. Provide connections to the source, including credentials.
 1. Name the stream. A new eventstream  is created and data starts to flow in.
 
-    For detailed information and steps, see [Get events from supported sources](supported-sources.md).
+    For detailed information and steps, see [Get events from supported sources](../real-time-hub/supported-sources.md).
 1. Open the newly created eventstream.
 1. Define data processing operations that transform the streaming data.
 1. Add a destination to the stream.
 
-    For detailed information and steps, see [Transformation operations](route-events-based-on-content#supported-operations) and [Add and manage destination](add-manage-eventstream-destinations.md). 
+    For detailed information and steps, see [Transformation operations](../real-time-hub/route-events-based-on-content#supported-operations) and [Add and manage destination](../real-time-hub/add-manage-eventstream-destinations.md). 
 
 ## Potential use cases
 
