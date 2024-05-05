@@ -1,5 +1,5 @@
 ---
-title: Manage and monitor an Event house (preview)
+title: Manage and monitor an Event house
 description: Learn how to manage and monitor an event house and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: shsagir
@@ -9,7 +9,7 @@ ms.date: 04/07/2024
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an event house so that I can effectively utilize Real-Time Intelligence.
 ---
-# Manage and monitor an event house (preview)
+# Manage and monitor an event house
 
 The Event house page serves as the central hub for all your interactions within the Event house environment. It's your gateway to seamlessly manage and monitor an event house, navigate through databases, and perform various Event house-related actions.
 
@@ -141,5 +141,5 @@ You can perform the following actions:
 
 ## Related content
 
-* [Eventhouse overview (preview)](eventhouse.md)
-* [Create an event house (preview)](create-eventhouse.md)
+* [Eventhouse overview](eventhouse.md)
+* [Create an event house](create-eventhouse.md)
