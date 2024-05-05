@@ -36,7 +36,7 @@ A new dashboard is created in your workspace.
 
 ## Add data source
 
-Data sources are reusable references to a specific database in the same workspace as the Real-Time Dashboard. Different tiles can be based on different data sources.
+A data source is a reusable reference to a database in an Azure Data Explorer cluster or a KQL database in the OneLake data hub. Different tiles can be based on different data sources.
 
 1. Select the **Home** tab > **New data source**.
 1. In the **Data sources** pane, select **+ Add**.
@@ -45,7 +45,7 @@ Data sources are reusable references to a specific database in the same workspac
 
 1. From the dropdown menu, select one of the following options:
 
-    To add a KQL database as a data source: s
+    To add a KQL database from OneLake data hub:
 
     1. Select **OneLake data hub**:
     1. In the **Create new data source** pane:
@@ -53,7 +53,7 @@ Data sources are reusable references to a specific database in the same workspac
         1. Select a **Database** from the drop-down list.
     1. Select **Create**.
 
-    To add an Azure Data Explore cluster as a data source:
+    To add a database from an Azure Data Explore cluster:
 
     1. Select **Azure Data Explorer**.
     1. Under **Connection URI**, enter the cluster URI.
@@ -64,7 +64,9 @@ Data sources are reusable references to a specific database in the same workspac
 
     1. Under **Database**, select the dropdown menu to expand the list of databases in your cluster, and then select a database.
     1. Select **Connect**.
-  
+
+After creating data sources, you can them from the **Data sources** pane. You can view the list of existing data sources, and select the pencil icon to edit a source, or select the **More [...]** menu to **Duplicate**, **Delete**, or move the parameter.
+
 ## Add tile
 
 Dashboard tiles use Kusto Query Language snippets to retrieve data and render visuals. Each tile/query can support a single visual.
