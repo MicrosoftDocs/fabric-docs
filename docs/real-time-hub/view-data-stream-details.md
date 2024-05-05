@@ -1,14 +1,14 @@
 ---
-title: View details of streams in Fabric Real-time hub
-description: This article shows how to view details of for streams in Fabric Real-time hub in either detail view or a table view.
+title: View details of streams in Fabric Real-Time hub
+description: This article shows how to view details of for streams in Fabric Real-Time hub in either detail view or a table view.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# View details of data streams in Fabric Real-time hub
-You can view details of a data stream by selecting the data stream in the **Data streams** tab of the **Real-time hub**.  
+# View details of data streams in Fabric Real-Time hub
+You can view details of a data stream by selecting the data stream in the **Data streams** tab of the **Real-Time hub**.  
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -31,9 +31,17 @@ In the **Stream metadata** section in the top-left corner, you see the following
 ### Stream profile section
 In the **Stream profile** section to the right, you can: 
 
-- See insights of the stream with following two metrics: **Incoming messages** and **Outgoing messages**. These insights help to understand data flowing through the stream. 
+- See insights of the stream with following metrics. These insights help to understand data flowing through the stream. 
+    - **Incoming messages**
+    - **Outgoing messages**
+    - **Incoming bytes**
+    - **Outgoing bytes**
+    
+    Select **... (ellipsis)** in the right corner of the **Insights** section. You can enable or disable viewing of these metrics. 
+    
+    :::image type="content" source="./media/view-data-stream-details/select-metrics.png" alt-text="Screenshot that shows Metrics selection popup window in the Stream profile section.":::    
 - Filter these insights based on time:  Last 6 hours, 12 hours, 24 hours, and 7 days. 
-- Preview the data in your stream by selecting **Preview data** link.
+- Preview the data in your stream by selecting **Preview data** link. The following sample image shows two metrics that were selected (Incoming messages and Outgoing messages).
 
     :::image type="content" source="./media/view-data-stream-details/stream-profile.png" alt-text="Screenshot that shows the Stream profile pane of the Stream detail view page.":::
 

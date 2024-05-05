@@ -14,10 +14,12 @@ ms.date: 03/20/2024
 
 Microsoft Fabric lets you pause and resume your capacity. When your capacity isn't operational, you can pause it to enable cost savings for your organization. Later, when you want to resume work on your capacity, you can reactivate it.
 
-When you pause your capacity, the remaining [cumulative overages and smoothed operations](../enterprise/throttling.md#balance-between-performance-and-reliability) on your capacity are summed, and added to your Azure bill. You can [monitor a paused capacity](monitor-paused-capacity.md) using the [Microsoft Fabric Capacity Metrics app](metrics-app.md).  
+When you pause your capacity, the remaining [cumulative overages and smoothed operations](../enterprise/throttling.md#balance-between-performance-and-reliability) on your capacity are summed, and added to your Azure bill. You can [monitor a paused capacity](monitor-paused-capacity.md) using the [Microsoft Fabric Capacity Metrics app](metrics-app.md).
+
+If your capacity is being [throttled](throttling.md), pausing it stops the throttling and returns your capacity to a healthy state immediately. This behavior enables you to pause your capacity as a self-service mechanism that ends throttling.
 
 > [!IMPORTANT]
-> Pausing a capacity can prevent Microsoft Fabric content from being available. Before you pause your capacity, make sure the capacity is not being used. Alternatively, if your capacity is being throttled, pausing stops throttling, and returns your capacity to a healthy state immediately. Therefore, pausing is a self-service mechanism to end throttling.
+> Pausing a capacity can prevent Microsoft Fabric content from being available. Before you pause your capacity, make sure the capacity is not being used.
 
 ## Prerequisites
 
@@ -25,12 +27,11 @@ To pause your capacity, you need:
 
 * An [F SKU capacity](buy-subscription.md#azure-skus)
 
-* To be a [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) with **all** of the following Azure RBAC role permissions
-
-1. Microsoft.Fabric/capacities/read
-2. Microsoft.Fabric/capacities/write
-3. Microsoft.Fabric/suspend/action
-4. Microsoft.Fabric/resume/action
+* To be a [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) with the following [Azure role-based access control](/azure/role-based-access-control/overview) (Azure RBAC) permissions:
+    * Microsoft.Fabric/capacities/read
+    * Microsoft.Fabric/capacities/write
+    * Microsoft.Fabric/suspend/action
+    * Microsoft.Fabric/resume/action
 
 ## Pause your capacity
 
