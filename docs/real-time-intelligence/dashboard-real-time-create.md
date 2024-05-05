@@ -65,7 +65,7 @@ A data source is a reusable reference to a database in an Azure Data Explorer cl
     1. Under **Database**, select the dropdown menu to expand the list of databases in your cluster, and then select a database.
     1. Select **Connect**.
 
-After creating data sources, you can them from the **Data sources** pane. You can view the list of existing data sources, and select the pencil icon to edit a source, or select the **More [...]** menu to **Duplicate**, **Delete**, or move the parameter.
+After creating one or more data sources, you can manage them from the **Data sources** pane. You can view the list of existing data sources, select the pencil icon to edit a source, or select the **More [...]** menu to **Duplicate**, **Delete**, or move the parameter.
 
 ## Add tile
 
