@@ -77,7 +77,7 @@ You can add tiles to your dashboard directly from kql queries written in a query
 
 1. [Write a query](kusto-query-set.md#write-a-query).
 
-1. Select **pin to dashboard**.
+1. Select **Pin to dashboard**.
     :::image type="content" source="media/real-time-dashboard/queryset-pin-query.png" alt-text="Screenshot of the pin query to dashboard button in a queryset query.":::
 
 1. In the **Pin query to dashboard** window,
