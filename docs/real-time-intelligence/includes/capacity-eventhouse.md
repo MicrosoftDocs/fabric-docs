@@ -1,6 +1,6 @@
 ---
-title: Include file for size of minimum CU and SSD capacity in Eventhouse for guaranteed availability in Microsoft Fabric
-description: Include file for size of minimum CU and SSD capacity in Eventhouse for guaranteed availability in Microsoft Fabric.
+title: Include file for size of minimum CU and SSD capacity in Event house for guaranteed availability in Microsoft Fabric
+description: Include file for size of minimum CU and SSD capacity in Event house for guaranteed availability in Microsoft Fabric.
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: include
