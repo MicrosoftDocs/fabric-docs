@@ -27,7 +27,7 @@ ms.search.form: Get started
 1. Select **Create**.
     A new KQL queryset is created and opens in the KQL Queryset editor. It is connected to the *Tutorial* database as a data source, and is prepopulated with several general queries.
 
-### Write your first query
+## Write a KQL query
 
 The name of the table you created in a previous step is *TutorialTable*. Use this (case-sensitive) name as the data source for your query.
 
@@ -39,6 +39,7 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
     ```
 
     This query returns ten arbitrary records from the table. What information about the data can you see at a glance? Notice that one of the columns is named *No_Bikes*. This column contains the number of empty docks at a bike station. This is a field you may be concerned with if you are tracking the availability of bikes at a station.
+
 1. To see the data in a more visual way, use the **render** operator. Run the following query:
 
     ```kusto

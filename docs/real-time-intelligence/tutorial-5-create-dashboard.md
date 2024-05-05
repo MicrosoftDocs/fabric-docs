@@ -71,4 +71,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> 
+> [Tutorial part 6: Create a Power BI report from your KQL queryset](tutorial-6-power-bi-report.md)
