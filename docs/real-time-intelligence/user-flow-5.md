@@ -20,6 +20,8 @@ This user flow shows how a data engineer or data analyst can trigger Fabric data
 
 :::image type="content" source="media/user-flows/user-flow-5.png" alt-text="Schematic image showing the steps in user flow 5." lightbox="media/user-flows/user-flow-5.png" border="false":::
 
+[!INCLUDE [preview-note](../real-time-hub/includes/preview-note.md)]
+
 ## Steps
 
 1. In Real-Time hub, select the **Fabric events** tab.
