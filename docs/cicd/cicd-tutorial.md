@@ -117,15 +117,19 @@ For more information about connecting to git, see [Connect a workspace to an Azu
 ## Step 4: Create a deployment pipeline
 
 In order to share this workspace with others and use it for various stages of testing and development, we need to create a deployment pipeline. You can read about how deployment pipelines work in [Introduction to deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md).
-To create a deployment pipeline and assign the workspace to the development stage, do the following:
+To create a deployment pipeline and assign the workspace to the development stage, do the following steps:
 
 1. From the workspace home page, select **Create deployment pipeline**.
 
    :::image type="content" source="media/cicd-tutorial/create-pipeline.png" alt-text="Screenshot of Create deployment pipeline.":::
 
-1. Name your pipeline *FoodSalesDP*, give it a description (optional) and select **Create**.
+1. Name your pipeline *FoodSalesDP*, give it a description (optional) and select **Next**.
 
    :::image type="content" source="media/cicd-tutorial/name-pipeline.png" alt-text="Screenshot of how to create a new pipeline with name.":::
+
+1. Accept the default three stages to your pipeline, and select **Create**.
+
+   :::image type="content" source="media/cicd-tutorial/customize-workspace.png" alt-text="Screenshot of three default stage of a deployment pipeline.":::
 
 1. Assign the FoodSalesWS workspace to the Development stage.
 
@@ -149,7 +153,7 @@ Now, deploy the content to the other stages of the pipeline.
 
    :::image type="content" source="media/cicd-tutorial/confirm-deploy.png" alt-text="Screenshot of Confirm deploy.":::
 
-   Notice the content of two stages are identical, since you deployed the entire content of the pipeline. This is indicated by the green check icon.
+   Notice the green check icon. This icon indicates that the content of the two stages is identical.
 
    :::image type="content" source="./media/cicd-tutorial/pipeline-compare-same.png" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they're the same.":::
 
@@ -161,7 +165,7 @@ Now, deploy the content to the other stages of the pipeline.
 
    :::image type="content" source="media/cicd-tutorial/refresh.png" alt-text="Screenshot of Refresh button.":::
 
-This deployment pipeline is shared by the entire team. Each team member can edit the semantic model and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
+The entire team shares the same deployment pipeline. Each team member can edit the semantic model and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
 
 For more information on deploying content, see [Deploy content](./deployment-pipelines/deploy-content.md).
 
@@ -169,23 +173,24 @@ For more information on deploying content, see [Deploy content](./deployment-pip
 
 In order to edit the workspace without interfering with other team members' changes, each team member creates their own isolated workspace to work in until they're ready to share their changes with the team.
 
-1. From the **Source control** menu, select **Branch out to a new workspace**.
+1. From the *branch* tab of the **Source control** menu, select **Branch out to a new workspace**.
 
     :::image type="content" source="media/cicd-tutorial/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
-1. Specify the following details about the branch you want to create:
+1. Specify the following details about the branch and workspace. The new branch is based on the *main* branch of the Git repo.
 
-   * New branch name (for this tutorial, name it *MyFoodEdits*)
-   * Based on (default is the current branch)
-   * New workspace name (for this tutorial, name it *My_FoodSales*)
+   * Branch name (for this tutorial, name it *MyFoodEdits*)
+   * Workspace name (for this tutorial, name it *My_FoodSales*)
 
    :::image type="content" source="media/cicd-tutorial/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
 
 1. Select **Branch out**.
 
+Fabric creates the new workspace and branch and connects it to Git. You're automatically taken to the new workspace. This might take a few minutes.
+
 ## Step 7: Edit the workspace
 
-Make changes to the workspace by creating, deleting, or editing an item. In this tutorial, we change the format of a semantic model column. You can edit the workspace in [Power BI Desktop](/power-bi/fundamentals/desktop-what-is-desktop) or [data model](/power-bi/transform-model/service-edit-data-models). In this tutorial, we edit the workspace from the data model.
+Once the branched out workspace is synced, you can make changes to the workspace by creating, deleting, or editing an item. In this tutorial, we change the format of a semantic model column. You can edit the workspace in [Power BI Desktop](/power-bi/fundamentals/desktop-what-is-desktop) or [data model](/power-bi/transform-model/service-edit-data-models). In this tutorial, we edit the workspace from the data model.
 
 1. From the semantic model workspace, select the semantic model ellipsis (three dots)  > **Open data model**.
 
@@ -236,6 +241,8 @@ In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#c
 
    :::image type="content" source="media/cicd-tutorial/complete-merge.png" alt-text="Screenshot of merge pull request.":::
 
+Once the branched out workspace is merged with the main branch of the Git repo, you can safely delete the workspace, if you want. It's not deleted automatically.
+
 ## Step 10: Update shared workspace
 
 Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-premium-workspace)) and refresh the page.  
@@ -278,7 +285,7 @@ When you’re satisfied with the changes, deploy the changes to the test and/or 
 In this tutorial, you learned how to use deployment pipelines along with Git integration to manage the lifecycle of an app, report, or other content in a workspace.  
 In particular, you learned how to:
 
-* Setup workspaces and add content for managing their lifecycle in Fabric.
+* Set up your workspaces and add content for managing their lifecycle in Fabric.
 * Apply Git best practices to work alone and collaborate with teammates on changes.
 * Combine Git and deployment pipelines for an efficient end to end release process.
 
