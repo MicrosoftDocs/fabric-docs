@@ -35,6 +35,9 @@ items:
     href: extensibility-frontend.md
   - name: Upload and manage a workload
     href: manage-workload.md
+  - name: Add and manage more workload
+    href: more-workload-add.md
+
 - name: Reference
   items:
   - name: REST APIs
