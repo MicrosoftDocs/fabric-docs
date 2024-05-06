@@ -58,7 +58,7 @@ For a developer who works in the web, the flow would be as follows:
 
 1. Select **Branch out**.
 
-Fabric creates the new workspace and branch and connects it to Git. You're automatically taken to the new workspace. 
+Fabric creates the new workspace and branch and connects it to Git. You're automatically taken to the new workspace.
 
 The workspace syncs with your feature branch, and becomes a copy of the Dev team's workspace, as illustrated. You can now work in this new isolated environment. This might take a few minutes.
 
