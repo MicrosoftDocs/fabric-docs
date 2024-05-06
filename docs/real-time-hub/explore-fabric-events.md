@@ -31,8 +31,8 @@ Here are the actions available on each event type group. When you move the mouse
 
 | Action | Description | 
 | ------ | ----------- | 
-| Create eventstream | This action creates an eventstream on the selected event type group with all Event types selected. |
-| Set alert | This action sets an alert on the selected event type group. |
+| Create eventstream | This action creates an eventstream on the selected event type group with all Event types selected. For more information, see [Get Azure Blob Storage events into Real-Time hub](get-azure-blob-storage-events.md). |
+| Set alert | This action sets an alert on the selected event type group. For more information, see [Set alerts on Azure Blob Storage accounts](set-alerts-azure-blob-storage-events.md). |
 
 :::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-actions.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub with actions highlighted." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-actions.png":::
 

@@ -61,6 +61,7 @@ Here are the actions available on resources in the **Microsoft sources** tab. Wh
 
 :::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-actions.png" alt-text="Screenshot that shows the actions available for resources on the Microsoft sources tab of the Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-microsoft-sources-actions.png":::
 
+For more information, see [Microsoft sources](supported-sources.md#microsoft-sources).
 
 ## Related content
 
