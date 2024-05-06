@@ -1,14 +1,14 @@
 ---
-title: Known issue - Semantic models created with TMDL can't be opened in Desktop
-description: A known issue is posted where Semantic models created with TMDLand edited on the web can't be opened in Desktop.
+title: Known issue - TMDL semantic models won't open in Desktop after web edited
+description: A known issue is posted where Semantic models created with TMDL won't open in Desktop after being edited in the service.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting
-ms.date: 05/02/2024
+ms.date: 05/06/2024
 ms.custom: known-issue-715
 ---
 
-# Known issue - Semantic models created with TMDL can't be opened in Desktop
+# Known issue - TMDL semantic models won't open in Desktop after web edited
 
 If you create a semantic model with Tabular Model Definition Language (TMDL), you can edit it on the web. If you try to open that semantic model in Power BI Desktop, the semantic model doesn't open. Power BI Desktop can't open the semantic model for editing because it doesn’t recognize the keyword **cultureInfo** due to a TMDL language update.
 
