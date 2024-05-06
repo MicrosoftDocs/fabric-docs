@@ -15,6 +15,8 @@ ms.custom: ''
 
 [//]: # "suparnap, miwehnia, natham are contacts for maintaining this list."
 
+This article contains the allowlist of the Power BI URLs required for interfacing with Power BI. For the Microsoft Fabric allowlist, see Add Fabric URLs to your allowlist.
+
 The Power BI service requires internet connectivity. The endpoints listed in the following tables should be reachable for customers who use the Power BI service. All endpoints in the Power BI service support HTTP/2.
 
 To use the Power BI service, you must be able to connect to the endpoints marked **required** in the tables in this article, and to any endpoints marked **required** on the linked sites. If the link to an external site refers to a specific section, you only need to review the endpoints in that section.
