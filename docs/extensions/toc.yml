@@ -8,7 +8,9 @@ items:
   - name: What are workloads?
     href: workloads.md  
   - name: Publish your workload
-    href: publish-workload.md  
+    href: publishing/publish-flow.md
+  - name: Publishing requirements
+    href: publishing/requirements.md
 - name: Get started
   items:
   - name: Set up your environment
