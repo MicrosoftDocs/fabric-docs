@@ -90,13 +90,13 @@ sections:
           * Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables from your semantic model. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your semantic model model works as it may result in data corruption in your visuals.
           
       - question: Why aren't some tiles displaying information after deployment?
-        answer: When you pin a tile to a dashboard, if the tile relies on an unsupported item (any item not on this [list](deployment-pipelines/understand-the-deployment-process.md#supported-items) is unsupported), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a semantic model you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.
+        answer: When you pin a tile to a dashboard, if the tile relies on an unsupported item (any item not on this [list](deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) is unsupported), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a semantic model you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.
 
   - name: Paginated reports
     questions:
       - question: Who's the owner of a deployed paginated report?
         answer: |
-          The owner of a deployed paginated report is the user who deployed the report.When you're deploying a paginated report for the first time, you become the owner of the report.
+          The owner of a deployed paginated report is the user who deployed the report. When you're deploying a paginated report for the first time, you become the owner of the report.
 
           If you're deploying a paginated report to a stage that already contains a copy of that paginated report, you overwrite the previous report and become its owner, instead of the previous owner. In such cases, you need credentials to the underlying data source, so that the data can be used in the paginated report.
 
