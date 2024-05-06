@@ -52,7 +52,7 @@ ms.search.form: Get started
 
 1. On the new **Chelsea bikes** tile, select the **Explore** icon :::image type="icon" source="media/tutorial/explore-icon.png" border="false":::.
 
-    :::image type="content" source="media/tutorial/add-aggregation.gif" alt-text="GIF of how to visually add and modify the query.":::
+    :::image type="content" source="media/tutorial/add-aggregation.gif" alt-text="GIF of how to visually add and modify the query." border="false":::
 
 1. Select **+ Add** > **Aggregation**.
 1. Select **+ Add grouping**.
