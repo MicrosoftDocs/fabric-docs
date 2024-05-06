@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 5: Create a Real-Time dashboard](tutorial-5-create-dashboard.md).
 
-A Power BI report is a multi-perspective view into a semantic model, with visuals that represent findings and insights from that semantic model. In this section, you create a new query that joins both semantic models, and use this query output to create a new Power BI report.
+A Power BI report is a multi-perspective view into a semantic model, with visuals that represent findings and insights from that semantic model. In this section, you use a KQL query output to create a new Power BI report.
 
 ## Build a Power BI report
 
@@ -24,7 +24,7 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
 
     ```kusto
     TutorialTable
-    | summarize arg_max(Timestamp, No_Bikes,  No_Empty_Docks) by BikepointID, Neighbourhood, Lat=todouble(Latitude), Lon=todouble(Longitude)
+    | summarize arg_max(Timestamp, No_Bikes,  No_Empty_Docks, Neighbourhood, Lat=todouble(Latitude), Lon=todouble(Longitude)) by BikepointID
     ```
 
 1. Select **Build Power BI report**. The Power BI report editor opens with the query result available as a data source named **Kusto Query Result**.
