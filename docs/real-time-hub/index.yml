@@ -29,21 +29,8 @@ landingContent:
             url: real-time-hub-overview.md
       - linkListType: get-started
         links:
-          - text: Bring data into Real-Time hub
+          - text: Get started with Real-Time hub
             url: get-started-real-time-hub.md
-
-  # Card 
-  - title: Get events and create streams
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Supported sources
-            url: supported-sources.md
-          - text: Get Azure blob storage events
-            url: get-azure-blob-storage-events.md
-          - text: Create streams for Fabric workspace item events
-            url: create-streams-fabric-workspace-item-events.md
-
 
   # Card 
   - title: Discover and manage streams
@@ -68,7 +55,49 @@ landingContent:
         links:
         - text: Set alerts on streams
           url: set-alerts-data-streams.md
-        - text: Set alerts on Azure blob storage events
+        - text: Set alerts on Azure Blob Storage events
           url: set-alerts-azure-blob-storage-events.md
         - text: Set alerts on Fabric workspace item events
           url: set-alerts-fabric-workspace-item-events.md
+
+  # Card 
+  - title: Create streams for Microsoft sources
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Azure Event Hubs
+            url: add-source-azure-event-hubs.md
+          - text: Azure IoT Hub
+            url: add-source-azure-iot-hub.md
+          - text: Azure SQL Database Change Data Capture (CDC)
+            url: add-source-azure-sql-database-cdc.md
+          - text: PostgreSQL Database CDC
+            url: add-source-postgresql-database-cdc.md
+          - text: MySQL Database CDC
+            url: add-source-mysql-database-cdc.md
+          - text: Azure Cosmos DB CDC
+            url: add-source-azure-cosmos-db-cdc.md
+
+  # Card 
+  - title: Create streams for external sources
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Google Cloud Pub/Sub
+            url: add-source-google-cloud-pub-sub.md
+          - text: Amazon Kinesis Data Streams
+            url: add-source-amazon-kinesis-data-streams.md
+          - text: Confluent Cloud Kafka
+            url: add-source-confluent-kafka.md
+
+  # Card 
+  - title: Create streams for Fabric events
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Get Azure Blob Storage events
+            url: get-azure-blob-storage-events.md
+          - text: Create streams for Fabric workspace item events
+            url: create-streams-fabric-workspace-item-events.md
+
+

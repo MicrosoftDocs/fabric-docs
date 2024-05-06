@@ -1,18 +1,17 @@
 ---
-title: Create an event house (preview)
+title: Create an event house
 description: Learn about how to create an event house for data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/21/2024
+ms.date: 05/23/2024
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to create an event house for data storage in Real-Time Analytics so that I can effectively manage my data.
 ---
+# Create an event house
 
-# Create and manage an event house (preview)
-
-An event house allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Event house overview (preview)](eventhouse.md).
+An event house allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Event house overview](eventhouse.md).
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -30,7 +29,7 @@ In this article, you learn how to create an event house, add new databases to an
 1. Browse to the [admin portal](../admin/admin-center.md).
 
 1. In the **Tenant settings** tab, search for *Eventhouse*. For more information, see [About tenant settings](../admin/about-tenant-settings.md).
-1. Toggle the button for **Create Eventhouse (preview)** to **Enabled**. For more information, see [Tenant settings - Microsoft Fabric](../admin/tenant-settings-index.md).
+1. Toggle the button for **Create Eventhouse** to **Enabled**. For more information, see [Tenant settings - Microsoft Fabric](../admin/tenant-settings-index.md).
 1. Select **Apply**.
 
     :::image type="content" source="media/eventhouse/enable-admin-settings.png" alt-text="Screenshot of section of admin settings relating to enabling Eventhouse.":::
@@ -62,5 +61,6 @@ When you delete an event house, both the event house and all its child KQL datab
 
 ## Related content
 
-* [Event house overview (preview)](eventhouse.md)
+* [Eventhouse overview](eventhouse.md)
+* [Manage and monitor an event house](manage-monitor-eventhouse.md)
 * [Create a KQL database](create-database.md)
