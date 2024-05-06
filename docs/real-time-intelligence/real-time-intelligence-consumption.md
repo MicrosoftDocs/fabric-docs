@@ -1,19 +1,19 @@
 ---
-title: KQL Database consumption
-description: Learn how to KQL databases consume capacity units in Real-Time Intelligence.
+title: Event house and KQL Database consumption
+description: Learn how event houses and KQL databases consume capacity units in Real-Time Intelligence.
 ms.reviewer: bwatts
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.date: 04/21/2024
-ms.search.form: KQL Database, Overview
+ms.search.form: Event house,KQL Database, Overview
 ---
-# KQL Database consumption
+# Event house and KQL Database consumption
 
-[KQL databases](create-database.md) operate on a fully managed Kusto engine. With a KQL database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs. This article explains compute usage reporting of the KQL databases in Microsoft Fabric, including [KustoUpTime](#kustouptime) and [storage](#monitor-onelake-storage).
+[Event houses](create-eventhouse.md) and [KQL databases](create-database.md) operate on a fully managed Kusto engine. With a Event house or KQL database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs. This article explains compute usage reporting of the KQL databases in Microsoft Fabric, including [KustoUpTime](#kustouptime) and [storage](#monitor-onelake-storage).
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
@@ -30,9 +30,16 @@ Capacity is a dedicated set of resources that is available at a given time to be
 
 ## KustoUpTime
 
-**KustoUpTime** is the number of seconds that your KQL database is active in relation to the number of virtual cores used by your database. An autoscale mechanism is used to determine the size of your KQL database. This mechanism ensures cost and performance optimization based on your usage pattern.
+**KustoUpTime for an event house** is the number of seconds that your event house is active in relation to the number of virtual cores used by your event house. An autoscale mechanism is used to determine the size of your event house. This mechanism ensures cost and performance optimization based on your usage pattern. An event house with multipe KQL databases attached to it only shows KustoUpTime for the event house item. You will not see usage for the KQL database sub-item.
+
+> For example, an event house with 4 KQL databases using 4 virtual cores that is active for 30 seconds will use 120 seconds of Capacity Units.
+
+**KustoUpTime for a KQL database** is the number of seconds that your KQL database is active in relation to the number of virtual cores used by your database. An autoscale mechanism is used to determine the size of your KQL database. This mechanism ensures cost and performance optimization based on your usage pattern.
 
 > For example, a database using 4 virtual cores that is active for 30 seconds will use 120 seconds of Capacity Units.
+
+> [!NOTE]
+> If your KQL database is a sub-item of an event house, the KustoUpTime is relfected in the event house item and the database item isn't shown in the list.
 
 ### Monitor KustoUpTime
 
@@ -41,22 +48,26 @@ You can monitor **KustoUpTime** with the [Microsoft Fabric Capacity Metric app](
 > [!NOTE]
 > You must be a capacity administrator to monitor capacity usage. For more information, see [Understand Microsoft Fabric admin roles](../admin/roles.md).
 
-The following image shows a sample compute page from monitoring a KQL database in the Fabric Capacity Metric app:
+The following image shows a sample compute page from monitoring capacity in the Fabric Capacity Metric app:
 
-:::image type="content" source="media/database-consumption/kusto-up-time.png" alt-text="Screenshot of uptime in Microsoft Fabric Capacity Metric app.":::
+:::image type="content" source="media/real-time-intelligence-consumption/kusto-up-time.png" alt-text="Screenshot of uptime in Microsoft Fabric Capacity Metric app." lightbox="media/real-time-intelligence-consumption/kusto-up-time.png":::
 
-Here are some insights you can take from the above example:
+Here are some insights you can take from the example:
 
-* The capacity being examined is called *democapacity*.
-* The capacity units for the selected day were used by several different workspaces, such as *Trident Real Time Analytics*, *Houston Event*, and others.
-* Selecting a single item, like the KQL database item on the top, breaks down the CU usage by operations.
-* The utilization graph, on the right side of the app, shows nearly 100% CU usage over time. This high utilization explains query throttling experienced by the user and indicates a need to increase the capacity units.
+* The capacity being examined is called *rtafielddemo*.
+* The capacity units for the selected day were used by a single workspaces called *RTA Field Demo*.
+* The *Items* view has been filtered to show both *Event house* and *KQL Database*.
+* Selecting a single item, such as an *Event house item*, breaks down the CU usage by operations.
+* The utilization graph, on the right side of the app, shows nearly 100% CU usage over time. This high utilization can explain query throttling experienced by users and indicates a need to increase the capacity units.
 
 ## Storage billing
 
 Storage is billed separately from your Fabric or Power BI Premium Capacity units. Data ingested into a KQL database is stored in two tiers of storage: OneLake Cache Storage, and OneLake Standard Storage.
 
 * **OneLake Cache Storage** is premium storage that is utilized to provide the fastest query response times. When you set the [cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context-rti&pivots=fabric), you affect this storage tier. For instance, if you typically query back seven days then you can set the cache retention to seven days for best performance. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) premium tier.
+
+> [!NOTE]
+> Enabling [minimum consumption](manage-monitor-eventhouse.md#enable-minimum-consumption) means that you aren't charged for *OneLake Cahce Storage*. When minimum capacity is set, the event house is always active resulting in 100% KustoUpTime.
 
 * **OneLake Standard Storage** is standard storage that is used to persist and store all queryable data. When you set the [retention policy](data-policies.md#data-retention-policy), you affect this storage tier. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) hot tier.
 
@@ -66,7 +77,7 @@ The [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md) allows 
 
 The following image shows a sample storage page from monitoring a KQL database in the Fabric Capacity Metric app:
 
-:::image type="content" source="media/database-consumption/fabric-capacity-metrics.png" alt-text="Screenshot of Fabric capacity metrics app with data from Real-Time Intelligence.":::
+:::image type="content" source="media/real-time-intelligence-consumption/fabric-capacity-metrics.png" alt-text="Screenshot of Fabric capacity metrics app with data from Real-Time Intelligence.":::
 
 ## Related content
 
