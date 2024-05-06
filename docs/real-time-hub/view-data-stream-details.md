@@ -49,12 +49,14 @@ In the **Stream profile** section to the right, you can:
 ### Actions available
 On the top of the stream details page, you can take the following actions on the stream: 
 
-- Preview data
-- Open eventstream
-- Endorse
-- Set alert.  
+| Action | Description |
+| ------ | ----------- |
+| Preview this data | Preview the data in the stream or derived stream. For more information, see [Preview data streams](preview-data-streams.md). |
+| Open eventstream | Open parent eventstream of the stream. After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md). |
+| Endorse | Endorse parent eventstream of the stream. For more information, see [Endorse data streams](endorse-data-streams.md). |
+| Set alert | The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). For more information, see [Set alerts on streams in Real-Time hub](set-alerts-data-streams.md). |
 
-    :::image type="content" source="./media/view-data-stream-details/stream-actions.png" alt-text="Screenshot that shows the actions available in the Stream detail view page." lightbox="./media/view-data-stream-details/stream-actions.png" :::
+:::image type="content" source="./media/view-data-stream-details/stream-actions.png" alt-text="Screenshot that shows the actions available in the Stream detail view page." lightbox="./media/view-data-stream-details/stream-actions.png" :::
 
 
 ### See what already exists section
@@ -90,10 +92,13 @@ In this section of the page, you see the amount of data in the table over time.
 ### Actions available
 On the top of the KQL table details page, you can take the following actions on the KQL table:
 
-- Open KQL database
-- Endorse 
+| Action | Description |
+| ------ | ----------- |
+| Open KQL Database | Open parent KQL Database of the KQL table. |
+| Endorse | Endorse parent KQL Database of the KQL table. For more information, see [Endorse data streams](endorse-data-streams.md). |
 
-    :::image type="content" source="./media/view-data-stream-details/kql-table-actions.png" alt-text="Screenshot that shows the actions available for a KQL table in the detail view page.":::
+
+:::image type="content" source="./media/view-data-stream-details/kql-table-actions.png" alt-text="Screenshot that shows the actions available for a KQL table in the detail view page.":::
 
 ### See what already exists section
 

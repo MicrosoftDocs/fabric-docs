@@ -15,6 +15,13 @@ This article shows you how to add a lakehouse as a destination to an eventstream
 
 If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
 
+> [!IMPORTANT]
+> There is *schema enforcement* for writing data into a lakehouse destination table. All new writes to the table must be compatible with the target table's schema at write time, ensuring data quality.
+> 
+> When output is written to a new delta table, the table schema is created based on the first record. All records of the output data are projected onto the schema of the existing table.
+> 
+> If the incoming data has columns that aren't in the existing table schema, the extra columns aren't included in the data written to the table. Likewise, if the incoming data is missing columns that are in the existing table schema, the missing columns write to the table with the values set to null.
+
 # [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
 
 ## Prerequisites
@@ -24,17 +31,11 @@ If you want to use enhanced capabilities that are in preview, see the content in
 
 ## Add a lakehouse as a destination
 
-There is *schema enforcement* for writing data into a lakehouse destination table. All new writes to the table must be compatible with the target table's schema at write time, ensuring data quality.
-
-When output is written to a new delta table, the table schema is created based on the first record. All records of the output data are projected onto the schema of the existing table.
-
-If the incoming data has columns that aren't in the existing table schema, the extra columns aren't included in the data written to the table. Likewise, if the incoming data is missing columns that are in the existing table schema, the missing columns write to the table with the values set to `null`.
-
 To add a lakehouse destination to a default or derived eventstream, follow these steps.
 
 1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon and select **Lakehouse** from the dropdown list.
 
-   ![A screenshot of the Add destination dropdown list with Lakehouse highlighted.](media/add-destination-lakehouse/add-destination.png)
+   :::image type="content" source="media/add-destination-lakehouse/add-destination.png" alt-text="A screenshot of the Add destination dropdown list with Lakehouse highlighted." lightbox="media/add-destination-lakehouse/add-destination.png":::
 
 1. Connect the lakehouse node to your stream node or operator.
 
@@ -46,7 +47,7 @@ To add a lakehouse destination to a default or derived eventstream, follow these
    1. Select an existing **Delta table**, or create a new one to receive data.
    1. Select the **Input data format** that is sent to your lakehouse. The supported data formats are JSON, Avro, and CSV (with header).
 
-   ![A screenshot of the Lakehouse configuration screen.](media/add-destination-lakehouse/lakehouse-screen.png)
+   ![A screenshot of the top part of the Lakehouse configuration screen.](media/add-destination-lakehouse/lakehouse-screen.png)
 
 1. Select **Advanced**.
 
@@ -62,11 +63,11 @@ To add a lakehouse destination to a default or derived eventstream, follow these
 
 1. To implement the newly added lakehouse destination, select **Publish**.
 
-   ![A screenshot of the stream and lakehouse destination in Edit mode with the Publish button highlighted.](media/add-destination-lakehouse/edit-mode.png)
+   :::image type="content" source="media/add-destination-lakehouse/edit-mode.png" alt-text="A screenshot of the stream and lakehouse destination in Edit mode with the Publish button highlighted." lightbox="media/add-destination-lakehouse/edit-mode.png":::
 
 Once you complete these steps, the lakehouse destination is available for visualization in **Live view**. In the **Details** pane, you can select the **Optimize table in notebook** shortcut to launch an Apache Spark job within a Notebook, which consolidates the small streaming files within the target lakehouse table.
 
-![A screenshot of the lakehouse destination and the table optimization button in Live view.](media/add-destination-lakehouse/live-view.png)
+:::image type="content" source="media/add-destination-lakehouse/live-view.png" alt-text="A screenshot of the lakehouse destination and the table optimization button in Live view." lightbox="media/add-destination-lakehouse/live-view.png":::
 
 # [Standard capabilities](#tab/standardcapabilities)
 
@@ -100,7 +101,7 @@ If you have a lakehouse created in your workspace, follow these steps to add the
 
       > [!NOTE]
       > The supported input event data formats are JSON, Avro, and CSV (with header).
-   1. **Event processing**: You can use the event processing editor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md). When you're done with the editor, select **Done** to return to the **Lakehouse** destination configuration screen.
+   1. **Event processing**: You can use the event processing editor to specify how the data should be processed before sending it to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md). When you're done with the editor, select **Done** to return to the **Lakehouse** destination configuration screen.
 
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" :::
 1. Two ingestion modes are available for a lakehouse destination. Select one of these modes to optimize how the Fabric event streams feature writes to the lakehouse based on your scenario.

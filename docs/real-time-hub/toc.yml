@@ -25,6 +25,8 @@ items:
     href: supported-sources.md
   - name: Microsoft sources
     items:
+    - name: Sample data source
+      href: add-source-sample-data.md
     - name: Azure Event Hubs
       href: add-source-azure-event-hubs.md
     - name: Azure IoT Hub
@@ -73,10 +75,11 @@ items:
       href: explore-fabric-workspace-item-events.md
 - name: Consume events and data streams
   items:
+  - name: Consume data streams
+    href: consume-data-streams.md
   - name: Set alerts on data streams
     href: set-alerts-data-streams.md
   - name: Set alerts on Fabric events
-
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md

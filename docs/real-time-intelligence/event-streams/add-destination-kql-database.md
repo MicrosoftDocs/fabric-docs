@@ -35,7 +35,7 @@ Direct ingestion mode ingests your event data directly into the KQL database wit
 
 1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon or select the **Transform events or add destination** card on the canvas, and then select **KQL Database**. 
 
-   ![A screenshot of selecting KQL database in the Add destination dropdown list.](media/add-destination-kql-database/add-destination.png)
+   :::image type="content" source="media/add-destination-kql-database/add-destination.png" alt-text="A screenshot of selecting KQL database in the Add destination dropdown list." lightbox="media/add-destination-kql-database/add-destination.png":::
 
 1. On the KQL Database screen, select **Direct ingestion**.
 
@@ -47,11 +47,11 @@ Direct ingestion mode ingests your event data directly into the KQL database wit
 
 1. Connect the new KQL Database destination card to the output of your eventstream if not already connected, and then select **Publish**.
 
-   ![A screenshot of the eventstream with the Publish button highlighted.](media/add-destination-kql-database/edit-mode.png)
+   :::image type="content" source="media/add-destination-kql-database/edit-mode.png" alt-text="A screenshot of the eventstream with the Publish button highlighted." lightbox="media/media/add-destination-kql-database/edit-mode.png":::
 
 1. In **Live view**, select **Configure** in the KQL Database destination node.
 
-   ![A screenshot of the published eventstream with the Configure button in the KQL Database destination highlighted.](media/add-destination-kql-database/live-view.png)
+   :::image type="content" source="media/add-destination-kql-database/live-view.png" alt-text="A screenshot of the published eventstream with the Configure button in the KQL Database destination highlighted." lightbox="media/add-destination-kql-database/live-view.png":::
 
 1. Your KQL Database opens in the **Get data** screen. Select an existing table of the KQL database, or select **New table** to create a new one to route and ingest the data.
 
@@ -63,9 +63,9 @@ Direct ingestion mode ingests your event data directly into the KQL database wit
 
    - Select a **Format** to preview how the data is sent to your KQL database.
    - Select **Edit columns** to configure the columns for your data.
-   - Select **Advanced** to select events to include or choose mapping options.
+   - Select **Advanced** to select events to include or to choose mapping options.
 
-   ![A screenshot of selecting a data format on the Inspect the data screen.](media/add-destination-kql-database/select-format.png)
+   :::image type="content" source="media/add-destination-kql-database/select-format.png" alt-text="A screenshot showing the data formats and Advanced options on the Inspect the data screen." lightbox="media/add-destination-kql-database/select-format.png":::
 
 1. If you select **Edit columns**, on the **Edit columns** screen you can:
 
@@ -76,17 +76,17 @@ Direct ingestion mode ingests your event data directly into the KQL database wit
 
    Then select **Apply**.
 
-   ![A screenshot of the Edit columns screen.](media/add-destination-kql-database/edit-columns.png)
+   :::image type="content" source="media/add-destination-kql-database/edit-columns.png" alt-text="A screenshot of the Edit columns screen." lightbox="media/add-destination-kql-database/edit-columns.png":::
 
 1. When you're finished configuring the data, select **Finish** on the **Inspect the data** screen.
 
 1. On the **Summary** screen, review the details and status of your data ingestion, including the table with the schema you defined and the connection between the eventstream and the KQL database. Select **Close** to finalize the KQL database setup.
 
-   ![A screenshot of the Summary screen with the Close button highlighted.](media/add-destination-kql-database/summary.png)
+   :::image type="content" source="media/add-destination-kql-database/summary.png" alt-text="A screenshot of the Summary screen with the Close button highlighted." lightbox="media/add-destination-kql-database/summary.png":::
 
 You can now see the KQL Database destination on the canvas in **Live view**.
 
-![A screenshot of the configured KQL Database in Live view.](media/add-destination-kql-database/live-view-finished.png)
+:::image type="content" source="media/add-destination-kql-database/live-view-finished.png" alt-text="A screenshot of the configured KQL Database destination in Live view." lightbox="media/add-destination-kql-database/live-view-finished.png":::
 
 ### Event processing before ingestion
 
@@ -94,7 +94,7 @@ The event processing before ingestion mode processes your event data before inge
 
 1. In **Edit mode** for your eventstream, hover over an operator or derived stream, select **+**, and then select **KQL Database**.
 
-   ![A screenshot of selecting the + symbol for the operator output and selecting KQL Database.](media/add-destination-kql-database/select-kql.png)
+   :::image type="content" source="media/add-destination-kql-database/select-kql.png" alt-text="A screenshot of selecting the + symbol for the operator output and selecting KQL Database." lightbox="media/add-destination-kql-database/select-kql.png":::
 
 1. On the **KQL Database** screen, **Event processing before ingestion** should already be selected. Complete the rest of the information about your KQL database, and then select **Save**.
 
@@ -102,11 +102,11 @@ The event processing before ingestion mode processes your event data before inge
 
 1. To implement the newly added KQL Database destination, select **Publish**.
 
-   ![A screenshot of the eventstream in Edit mode with the KQL Database destination added.](media/add-destination-kql-database/edit-mode-processed.png)
+   :::image type="content" source="media/add-destination-kql-database/edit-mode-processed.png" alt-text="A screenshot of the eventstream in Edit mode with the KQL Database destination added." lightbox="media/add-destination-kql-database/edit-mode-processed.png":::
 
 Once you complete these steps, the eventstream with KQL Database destination is available for visualization in **Live view.**
 
-![A screenshot of the configured KQL Database event processing flow in Live view.](media/add-destination-kql-database/live-view-processed.png)
+:::image type="content" source="media/add-destination-kql-database/live-view-processed.png" alt-text="A screenshot of the configured KQL Database event processing flow in Live view." lightbox="media/add-destination-kql-database/live-view-processed.png":::
 
 # [Standard capabilities](#tab/standardcapabilities)
 
@@ -167,11 +167,11 @@ To add a KQL database as a destination, you need to have a KQL database created 
 
       :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png" alt-text="Screenshot of the push mode event processor screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png":::
 
-   3. When you choose an existing Kusto table, schema validation between the current schema in this eventstream and the target KQL table will be performed. If the two schemas aren't matched, an error message is shown and reminds you to open event processor to adjust the schema in this eventstream accordingly.
+   3. When you choose an existing Kusto table, schema validation between the current schema in this eventstream and the target KQL table is performed. If the two schemas aren't matched, an error message is shown and reminds you to open event processor to adjust the schema in this eventstream accordingly.
 
       :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-error.png" alt-text="Screenshot of the push mode event processor error screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-error.png":::
 
-      When open the event processor, the detailed mismatch information is shown in Authoring error tab.
+      When you open the event processor, the detailed mismatch information is shown in Authoring error tab.
 
       :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png" alt-text="Screenshot of the push mode event processor mismatch information screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png":::
 

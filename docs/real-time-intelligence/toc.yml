@@ -88,34 +88,48 @@ items:
         href: event-streams/add-source-fabric-workspace.md
       - name: Azure Blob Storage events 
         href: event-streams/add-source-azure-blob-storage.md
+<<<<<<< HEAD
     - name: Add destinations to eventstreams (preview)
+=======
+    - name: Add destinations to eventstreams
+>>>>>>> 30bcc53d55b0f28634891627cab8935288a25f2c
       items:
-      - name: Add and manage a destination
-        href: event-streams/add-manage-eventstream-destinations-enhanced.md      
+      - name: Add and manage a destination (preview)
+        href: event-streams/add-manage-eventstream-destinations-enhanced.md
       - name: Derived stream 
         href: event-streams/add-destination-derived-stream.md
+<<<<<<< HEAD
       - name: KQL Database
         href: event-streams/add-destination-kql-database.md
       - name: Lakehouse
         href: event-streams/add-destination-lakehouse.md
+=======
+      - name: KQL Database (preview)
+        href: event-streams/add-destination-kql-database-enhanced.md
+      - name: Lakehouse (preview)
+        href: event-streams/add-destination-lakehouse-enhanced.md
+>>>>>>> 30bcc53d55b0f28634891627cab8935288a25f2c
       - name: Reflex
-        href: event-streams/add-destination-reflex-enhanced.md
+        href: event-streams/add-destination-reflex.md
       - name: Custom endpoint
-        href: event-streams/add-destination-custom-app-enhanced.md
+        href: event-streams/add-destination-custom-app.md
     - name: Process events using event processor
       href: event-streams/process-events-using-event-processor-editor.md
     - name: Add destinations to eventstreams
       items:
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations.md
-      - name: Add a KQL Database destination
+      - name: KQL Database
         href: event-streams/add-destination-kql-database.md
-      - name: Add a lakehouse destination
+      - name: Lakehouse
         href: event-streams/add-destination-lakehouse.md
+<<<<<<< HEAD
       - name: Add a Reflex destination
         href: event-streams/add-destination-reflex.md
       - name: Add a custom endpoint destination
         href: event-streams/add-destination-custom-app.md
+=======
+>>>>>>> 30bcc53d55b0f28634891627cab8935288a25f2c
     - name: Preview data
       href: event-streams/preview-data.md
     - name: Manage eventstreams
