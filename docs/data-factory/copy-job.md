@@ -67,7 +67,7 @@ More connectors will be available soon during the private preview, and will reac
 
 1. Select the copy mode, either **Full copy** or **Incremental copy continuously**.
 
-   :::image type="content" source="media/copy-performance-sql-databases/copy-job-settings.png" alt-text="Screenshot of the Copy job Settings page with the Copy data once option selected.":::
+   :::image type="content" source="media/copy-performance-sql-databases/copy-job-settings.png" alt-text="Screenshot of the Copy job Settings page with the Copy data once option selected." lightbox="media/copy-performance-sql-databases/copy-job-settings.png":::
 
 1. Select **Run** on the Home toolbar at the top of the editor to copy your data.
 
