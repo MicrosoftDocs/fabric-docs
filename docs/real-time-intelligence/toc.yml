@@ -14,7 +14,7 @@ items:
       href: tutorial-introduction.md
     - name: 1- Create resources
       href: tutorial-1-resources.md
-    - name: 2- Get data in the Real-Time Hub
+    - name: 2- Get data in the Real-Time hub
       href: tutorial-2-get-real-time-events.md
     - name: 3- Query streaming data in a KQL queryset
       href: tutorial-3-query-data.md

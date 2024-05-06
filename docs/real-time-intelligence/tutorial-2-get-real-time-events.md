@@ -18,7 +18,7 @@ ms.search.form: Get started
 
 ## Create an event stream
 
-1. From the navigation bar, select **Real-Time Hub**.
+1. From the navigation bar, select **Real-Time hub**.
 1. Select **+ Get events**.
     
     :::image type="content" source="media/tutorial/get-events.png" alt-text="Screenshot of Real-time hub with get events highlighted.":::
