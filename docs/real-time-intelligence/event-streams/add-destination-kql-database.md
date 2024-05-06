@@ -47,7 +47,7 @@ Direct ingestion mode ingests your event data directly into the KQL database wit
 
 1. Connect the new KQL Database destination card to the output of your eventstream if not already connected, and then select **Publish**.
 
-   :::image type="content" source="media/add-destination-kql-database/edit-mode.png" alt-text="A screenshot of the eventstream with the Publish button highlighted." lightbox="media/media/add-destination-kql-database/edit-mode.png":::
+   :::image type="content" source="media/add-destination-kql-database/edit-mode.png" alt-text="A screenshot of the eventstream with the Publish button highlighted." lightbox="media/add-destination-kql-database/edit-mode.png":::
 
 1. In **Live view**, select **Configure** in the KQL Database destination node.
 
