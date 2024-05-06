@@ -39,16 +39,16 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
     * **No_Bikes** > **Bubble size**
     * **Neighbourhood** > **Add drill-through fields here**
 
-    :::image type="content" source="media/tutorial/report-generated.png" alt-text="Screenshot of Power BI report generation window in Real-Time Intelligence.":::
+    :::image type="content" source="media/tutorial/report-generated.png" alt-text="Screenshot of Power BI report generation window in Real-Time Intelligence." lightbox="media/tutorial/report-generated.png":::
 
-1. In the report editr, select **Visualizations** > **Stacked column chart** icon.
+1. In the report editor, select **Visualizations** > **Stacked column chart** icon.
     :::image type="icon" source="media/tutorial/stacked-column-chart-icon.png" border="false":::
 1. Drag the following fields from **Data** > **Kusto Query Result** to the **Visualizations** pane.
     * **Neighbourhood** > **X-axis**
     * **No_Bikes** > **Y-axis**
     * **No_Empty_Docks** > **Y-axis**
 
-    :::image type="content" source="media/tutorial/second-visual-report.png" alt-text="Screenshot of adding the second visual, a column chart, to the report.":::
+    :::image type="content" source="media/tutorial/second-visual-report.png" alt-text="Screenshot of adding the second visual, a column chart, to the report." lightbox="media/tutorial/second-visual-report.png":::
 
 ### Save the report
 
