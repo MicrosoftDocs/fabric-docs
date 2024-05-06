@@ -8,7 +8,9 @@ items:
   - name: What are workloads?
     href: workloads.md  
   - name: Publish your workload
-    href: publish-workload.md  
+    href: publishing/publish-flow.md
+  - name: Publishing requirements
+    href: publishing/requirements.md
 - name: Get started
   items:
   - name: Set up your environment
@@ -33,6 +35,9 @@ items:
     href: extensibility-frontend.md
   - name: Upload and manage a workload
     href: manage-workload.md
+  - name: Add and manage more workload
+    href: more-workloads-add.md
+
 - name: Reference
   items:
   - name: REST APIs
