@@ -1,15 +1,15 @@
 ---
-title: Manage and monitor an Event house (preview)
+title: Manage and monitor an Event house
 description: Learn how to manage and monitor an event house and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: shsagir
 author: shsagir
 ms.topic: how-to
-ms.date: 04/07/2024
+ms.date: 05/23/2024
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an event house so that I can effectively utilize Real-Time Intelligence.
 ---
-# Manage and monitor an event house (preview)
+# Manage and monitor an event house
 
 The Event house page serves as the central hub for all your interactions within the Event house environment. It's your gateway to seamlessly manage and monitor an event house, navigate through databases, and perform various Event house-related actions.
 
@@ -22,11 +22,11 @@ In this article, you learn about how to manage and gain insights about an event 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [event house](create-eventhouse.md) in your workspace
 
-## Navigate to the Event house page
+## Navigate to an Event house page
 
 1. Browse to your workspace homepage in Real-Time Intelligence.
 
-1. Select the event house from your list of items in the workspace.
+1. Select an event house from your list of items in the workspace.
 
 :::image type="content" source="media/eventhouse/event-house-page.png" alt-text="Screenshot showing the main Event house page." lightbox="media/eventhouse/event-house-page.png":::
 
@@ -38,7 +38,7 @@ B. **Explorer pane**: The explorer pane provides an intuitive interface for navi
 
 C. **Main view area**: The main view area displays the system overview details for the event house.
 
-## Event house actions
+## Event house ribbon
 
 The Event house ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Event house. From here, you can refresh your main view and enable minimum consumption.
 
@@ -107,11 +107,11 @@ The databases page provides a summary of all the databases in the event house.
 
 1. From the **Eventhouse** explorer, select **Databases**.
 
-    :::image type="content" source="media/eventhouse/browse-databases.png" alt-text="Screenshot of Eventhouse pane with Browse all databases highlighted in a red box.":::'
+    :::image type="content" source="media/eventhouse/browse-databases.png" alt-text="Screenshot of an event house pane with Browse all databases highlighted in a red box.":::'
 
     A window opens with details about all the databases in this event house.
 
-    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in Eventhouse in Real-Time Intelligence.":::
+    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in an event house in Real-Time Intelligence.":::
 
 1. Toggle between list and tile view using the buttons on the top right of the page.
 
@@ -139,7 +139,7 @@ You can perform the following actions:
 * To ingest data into a database, hover over the desired database > select **More menu** [**...**] > **Get data** > select the desired ingest method. To learn more, see [data formats](ingestion-supported-formats.md) and the corresponding ingestion methods.
 * To delete a database, hover over the desired database > select **More menu** [**...**] > **Delete** > **Delete database**.
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [Create an Eventhouse](create-eventhouse.md)
+* [Eventhouse overview](eventhouse.md)
+* [Create an event house](create-eventhouse.md)
