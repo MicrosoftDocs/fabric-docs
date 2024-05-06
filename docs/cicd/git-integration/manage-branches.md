@@ -48,13 +48,19 @@ For a specific guidance on how to use the new Power BI Desktop file format in gi
 
 For a developer who works in the web, the flow would be as follows:
 
-1. Create a new workspace (or use an existing one you already use).
-1. Assign that workspace a Premium license.
-1. Go to [**Git integration**](./git-get-started.md#connect-a-workspace-to-an-azure-repo) in workspace settings, and specify the repo details.
-1. Under **Branch** drop-down, choose **+ New branch**, and branch it from the *main* (or *master*) branch.
-1. In **Git folder**, enter the name of the folder you want to sync to in your repo.
+1. From the *branch* tab of the **Source control** menu, select **Branch out to a new workspace**.
 
-   The workspace syncs with your feature branch, and becomes a copy of the Dev team's workspace, as illustrated. You can now work in this new isolated environment.
+    :::image type="content" source="media/manage-branches/branch-out.png" alt-text="Screenshot of source control branch out option.":::
+
+1. Specify the names of the branch and workspace. The new branch is based on the *main* branch of the Git repo.
+
+   :::image type="content" source="media/manage-branches/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
+
+1. Select **Branch out**.
+
+Fabric creates the new workspace and branch and connects it to Git. You're automatically taken to the new workspace. 
+
+The workspace syncs with your feature branch, and becomes a copy of the Dev team's workspace, as illustrated. You can now work in this new isolated environment. This might take a few minutes.
 
    :::image type="content" source="./media/manage-branches/branches-update-commit.png" alt-text="Diagram showing the workflow of commits.":::
 
