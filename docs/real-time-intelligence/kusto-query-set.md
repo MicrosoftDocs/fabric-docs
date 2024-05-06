@@ -102,7 +102,7 @@ You might want to copy or share the queries you create.
 
     |Action|Description|
     |--|--|
-    |Copy query | Copy the query text.
+    |Copy query | Copy the query text.|
     |Link to clipboard|Copy a deep link that can be used to run the query.|
     |Link and query to clipboard|Copy a link that can be used to run the query and the text of the query.|
     |Link, query and results to clipboard|Copy a link that can be used to run the query, the text of the query, and the results of the query.|
