@@ -61,7 +61,7 @@ Select the tab that corresponds with your desired database type.
 
 ----
 
- A list of tables associated with this database will appear below the database name.
+ A list of tables associated with this database appears below the database name.
 
 ## Write a query
 
@@ -117,9 +117,9 @@ Instead of simply copy-pasting the query output, you can also export the query r
 
 This is a one-time method to export a CSV file containing the query results.
 
-1. At the top of the query window, select the **Manage** tab.
+1. At the top of the query window, select the **Home** tab.
 
-    :::image type="content" source="media/kusto-query-set/export-csv.png" alt-text="Screenshot of the Manage tab of the KQL Queryset showing the highlighted option to export results to CSV.":::
+    :::image type="content" source="media/kusto-query-set/export-csv.png" alt-text="Screenshot of the Home tab of the KQL Queryset showing the highlighted option to export results to CSV.":::
 
 1. Select **Export results to CSV**.
 1. Save the CSV file locally.
@@ -131,7 +131,7 @@ To delete your KQL queryset:
 1. Select the workspace to which your KQL queryset is associated.
 1. Hover over the KQL queryset you wish to delete. Select **More [...]**, then select **Delete**.
 
-    :::image type="content" source="media/kusto-query-set/clean-up-query-set.png" alt-text="Screenshot of Microsoft Fabric workspace showing how to delete a KQL Queryset."  lightbox="media/kusto-query-set/clean-up-query-set.png":::
+    :::image type="content" source="media/kusto-query-set/clean-up-query-set.png" alt-text="Screenshot of Microsoft Fabric workspace showing how to delete a KQL queryset."  lightbox="media/kusto-query-set/clean-up-query-set.png":::
 
 ## Next step
 
