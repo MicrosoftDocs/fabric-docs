@@ -27,6 +27,33 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
 >[!NOTE]
 >Multiple tables CDC isn't supported.
 
+## Enable CDC in your Azure Database for PostgreSQL
+
+To enable CDC in your Azure Database for PostgreSQL, follow these steps based on your deployment type.
+
+### Azure Database for PostgreSQL single server
+
+1. Go to the **Replication** page on the Azure portal.
+1. Change the replication rule to **Logical**.
+
+    :::image type="content" source="media/add-source-postgresql-database-cdc/enable-cdc-single.png" alt-text="A screenshot of enabling CDC for a single server deployment.":::
+
+### Azure Database for PostgreSQL flexible server
+
+1. On your Azure Database for PostgreSQL flexible server page in the Azure portal, select **Server parameters** in the navigation menu.
+1. On the **Server parameters** page:
+
+   - Set **wal_level** to **logical**.
+   - Update the **max_worker_processes** to at least **16**.
+
+        :::image type="content" source="media/add-source-postgresql-database-cdc/enable-cdc-flexible.png" alt-text="A screenshot of enabling CDC for a flexible server deployment.":::
+1. Save the changes and restart the server.
+1. Confirm that your Azure Database for PostgreSQL flexible server instance allows public network traffic.
+1. Grant the admin user replication permissions by running the following SQL statement.
+
+   ```sql
+   ALTER ROLE <admin user> WITH REPLICATION;
+   ```
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
@@ -50,6 +77,9 @@ Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-d
 1. On the **Select a data source** screen, select **Azure DB for PostgreSQL (CDC)**.
 
    ![A screenshot of selecting PostgreSQL DB (CDC).](media/add-source-postgresql-database-cdc/select-external-source.png)
+1. On the **Connect** page, select **Go to resource** to navigate to the Azure PostgreSQL database. Take a note of the server name on the **Overview** page. It's in the following format: `myazurepostgresqlserver.postgres.database.azure.com`. 
+
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-postgresql-database-cdc/go-to-resource.png":::     
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="media/add-source-postgresql-database-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page for an Azure PostgreSQL database with New connection link highlighted.":::
@@ -85,5 +115,11 @@ Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-d
 
 1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected PostgreSQL Database CDC as a source. To close the wizard, select **Close** at the bottom of the page. 
 
-    :::image type="content" source="./media/add-source-postgresql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream based on PostgreSQL Database CDC source." lightbox="./media/add-source-postgresql-database-cdc/review-create-success.png":::
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create success page." lightbox="./media/add-source-postgresql-database-cdc/review-create-success.png":::
 1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you as shown in the following image.
+
+    :::image type="content" source="./media/add-source-postgresql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream based on PostgreSQL Database CDC source." lightbox="./media/add-source-postgresql-database-cdc/verify-data-stream.png":::
+
+
+## Next step
+The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md).

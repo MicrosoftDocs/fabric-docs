@@ -21,7 +21,7 @@ The Azure MySQL Database Change Data Capture (CDC) connector allows you to captu
 
  ### Set up MySQL database 
 
-The Azure MySQL DB connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. For information about granting the required permissions (`SHOW DATABASE` and `REPLICATION`) to the user, see [Debezium connector for MySQL :: Debezium Documentation](https://debezium.io/documentation/reference/1.9/connectors/mysql.html#mysql-creating-user).
+The Azure MySQL database connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. For step-by-step instructions, see [Set up MySQL DB](../real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md#set-up-mysql-db).
 
 ### Enable the binlog 
 You must enable binary logging for MySQL replication. The binary logs record transaction updates for replication tools to propagate changes. For example, Azure Database for MySQL. 
@@ -62,6 +62,9 @@ Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-
 1. On the **Select a data source** screen, select **MySQL DB (CDC)**.
 
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png" alt-text="Screenshot that shows the Select a data source page with Azure MySQL DB (CDC) selected." lightbox="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png":::
+1. On the **Connect** page, select **Go to resource** to navigate to the Azure PostgreSQL database. Take a note of the server name on the **Overview** page. It's in the following format: `mysqlserver.mysql.database.azure.com`. 
+
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-mysql-database-cdc/go-to-resource.png":::     
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-mysql-database-cdc/new-connection-link.png"::: 
@@ -99,3 +102,6 @@ Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-
 
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create page after successful creation of the source." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-success.png":::
 1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+
+## Next step
+The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md).

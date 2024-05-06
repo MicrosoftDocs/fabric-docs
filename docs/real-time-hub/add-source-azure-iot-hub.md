@@ -51,6 +51,17 @@ Use instructions from the [Add an Azure IoT hub as a source](#add-an-azure-iot-h
 1. If there's an existing connection to your Azure IoT hub, select that existing connection as shown in the following image, and then move on to the step to configure **Data format** in the following steps.
 
     :::image type="content" source="./media/add-source-azure-iot-hub/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure IoT hub." lightbox="./media/add-source-azure-iot-hub/existing-connection.png":::    
+1. On the **Connect** page, select **Go to resource** to navigate to the Azure IoT hub. Take a note of the access key name and its value. 
+
+    :::image type="content" source="./media/add-source-azure-iot-hub/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-iot-hub/go-to-resource.png":::     
+
+    To get the access key name and value, follow these steps: 
+    1. Navigate to the IoT Hub page for your Azure IoT hub in the Azure portal. 
+    1. On the **IoT Hub** page, select **Shared access policies** on the left navigation menu.
+    1. Select a **policy name** from the list. Note down the policy name.
+    1. Select the copy button next to the **Primary key**. 
+    
+        :::image type="content" source="./media/add-source-azure-iot-hub/access-key-value.png" alt-text="Screenshot that shows the access key for an Azure IoT Hub." lightbox="./media/add-source-azure-iot-hub/access-key-value.png":::                            
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-iot-hub/new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/add-source-azure-iot-hub/new-connection-button.png":::     
@@ -66,14 +77,6 @@ Use instructions from the [Add an Azure IoT hub as a source](#add-an-azure-iot-h
     1. Select **Connect** at the bottom of the page.1. 
         
         :::image type="content" source="./media/add-source-azure-iot-hub/connection-page-1.png" alt-text="Screenshot that shows the Connect page one for Azure IoT Hub connector." lightbox="./media/add-source-azure-iot-hub/connection-page-1.png":::
-
-        To get the access key name and value, follow these steps: 
-        1. Navigate to the IoT Hub page for your Azure IoT hub in the Azure portal. 
-        1. On the **IoT Hub** page, select **Shared access policies** on the left navigation menu.
-        1. Select a **policy name** from the list. Note down the policy name.
-        1. Select the copy button next to the **Primary key**. 
-    
-            :::image type="content" source="./media/add-source-azure-iot-hub/access-key-value.png" alt-text="Screenshot that shows the access key for an Azure IoT Hub." lightbox="./media/add-source-azure-iot-hub/access-key-value.png":::                        
 1. Now, on the **Connect** page of wizard, for **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the IoT hub. 
 1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure IoT hub. You can select from JSON, Avro, and CSV data formats, and then select Connect.
 1. In the **Stream details** section to the right, select the Fabric **workspace** where you want to save the eventstream that the Wizard is going to create. 
@@ -85,9 +88,6 @@ Use instructions from the [Add an Azure IoT hub as a source](#add-an-azure-iot-h
 1. On the **Review and create** page, review settings, and select **Create source**. 
 
     :::image type="content" source="./media/add-source-azure-iot-hub/review-create-page.png" alt-text="Screenshot that shows the Review and create page for Azure IoT Hub connector." lightbox="./media/add-source-azure-iot-hub/review-create-page.png":::        
-
-
-
 
 ## View data stream details
 
@@ -101,3 +101,5 @@ Use instructions from the [Add an Azure IoT hub as a source](#add-an-azure-iot-h
 
     For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
+## Next step
+The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md).
