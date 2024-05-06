@@ -11,17 +11,18 @@ ms.date: 05/06/2024
 
 # Add Fabric URLs to your allowlist
 
-This article lists the allowlist (also known as whitelist) of the Microsoft Fabric URLs required for interfacing with the Fabric workload.
+This article contains the allowlist (also known as whitelist) of the Microsoft Fabric URLs required for interfacing with Fabric workloads. For the Power BI allowlist, see [Add Power BI URLs to your allowlist](./power-bi-allow-list-urls.md).
 
 The URLs are divided into two categories: required and optional. The required URLs are necessary for the service to work correctly. The optional URLs are used for specific features that you might not use. To use Fabric, you must be able to connect to the endpoints marked required in the tables in this article, and to any endpoints marked required on the linked sites. If the link to an external site refers to a specific section, you only need to review the endpoints in that section. You can also add endpoints that are marked optional to allowlists for specific functionality to work.
 
 Fabric requires only TCP Port 443 to be opened for the listed endpoints.
 
-Wildcards (*) represent all levels under the root domain.
+The tables in this article use the following conventions:
 
-N/A is used when information isn't available.
+* Wildcards (*) represent all levels under the root domain.
+* N/A is used when information isn't available.
 
-The Destination(s) column lists domain names and links to external sites, which contain further endpoint information.
+The **Endpoint** column lists domain names and links to external sites, which contain further endpoint information.
 
 ## Fabric Platform Endpoints
 
@@ -42,9 +43,7 @@ The Destination(s) column lists domain names and links to external sites, which 
 |**Optional**: Regional Endpoints for DFS APIs |*\<region\>-onelake.dfs.fabric.microsoft.com||
 |**Optional**: Regional Endpoints for Blob APIs |*\<region\>-onelake.blob.fabric.microsoft.com||
 
-## Data Factory
-
-### Pipeline
+## Pipeline
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
@@ -57,22 +56,20 @@ The Destination(s) column lists domain names and links to external sites, which 
 |**Optional**: On-premesis data gateway pipelines|*.frontend.clouddatahub.net<br>(User can use service tag DataFactory or DataFactoryManagement)|TCP 443<br>|
 |For inbound connections|No specific endpoints other than the customer's data store endpoints required in pipelines and behinds the firewall.<br>(User can use service tag DataFactory, regional tag is supported, like DataFactory.WestUs)|
 
-### Dataflow
+## Dataflow
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |Write data||Port 443
 |Read data||Port 1433
 
-## Data Engineering
-
-### Lakehouse
+## Lakehouse
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |Inbound connections|https://cdn.jsdelivr.net/npm/monaco-editor*||
 
-### Notebook
+## Notebook
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
@@ -84,7 +81,7 @@ The Destination(s) column lists domain names and links to external sites, which 
 |**Required**: Notebooks UX|https://aznb-ame-prod.azureedge.net||
 |**Required**: Notebooks UX|https://*.notebooks.azuresandbox.ms||
 
-### Spark
+## Spark
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
@@ -93,6 +90,7 @@ The Destination(s) column lists domain names and links to external sites, which 
 |Inbound connections (library management for Conda)|local static endpoints for condaPackages||
 
 ## Data Warehouse
+
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |**Required**: Datamart SQL |datamart.fabric.microsoft.com|1433|
@@ -107,18 +105,13 @@ The Destination(s) column lists domain names and links to external sites, which 
 |Inbound connections (library management for PyPI)|https://pypi.org/*||
 |Inbound connections (library management for Conda)|local static endpoints for condaPackages||
 
-## Real-Time Intelligence
-
-### KQL Database
+## KQL Database
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 ||||
 
-
-## Data Activator
-
-### Eventstream
+## Eventstream
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
