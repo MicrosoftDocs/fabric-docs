@@ -1,12 +1,15 @@
 ---
 title: Data modeling in the default Power BI semantic model
 description: Learn how to model your data in the default Power BI semantic model in Microsoft Fabric.
-author: salilkanade
-ms.author: salilkanade
-ms.reviewer: wiassaf, sosivara
-ms.date: 01/25/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: salilkanade, sosivara
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
 ms.search.form: Model view # This article's title should not change. If so, contact engineering.
 ---
 # Model data in the default Power BI semantic model in Microsoft Fabric
@@ -41,7 +44,7 @@ The following table provides a description of the properties available when usin
 In Power BI, a semantic model is always required before any reports can be built, so the default Power BI semantic model enables quick reporting capabilities on top of the warehouse. Within the warehouse, a user can add warehouse objects - tables or views to their default Power BI semantic model. They can also add other semantic modeling properties, such as hierarchies and descriptions. These properties are then used to create the Power BI semantic model's tables. Users can also remove objects from the default Power BI semantic model.
 
 1. Open a warehouse in your Fabric workspace.
-1. Navigate to **Model view** by selecting the **Model view** icon at the bottom left of the window, as shown in the following image.
+1. Navigate to **Model view** by selecting the **Model view** icon.
 
 To add objects such as tables or views to the default Power BI semantic model, you have options:
 
@@ -67,11 +70,11 @@ To remove objects, a user can use the manually select button in the ribbon and:
 
 ## Create a measure
 
-A [measure](/power-bi/transform-model/desktop-measures) is a collection of standardized metrics. Similar to Power BI Desktop, the DAX editing experience in warehouse presents a rich editor complete with autocomplete for formulas (IntelliSense). The DAX editor enables you to easily develop measures right in warehouse, making it a more effective single source for business logic, semantics, and business critical calculations.
+A [measure](/power-bi/transform-model/desktop-measures) is a collection of standardized metrics. Similar to Power BI Desktop, the DAX editing experience in a warehouse presents a rich editor complete with autocomplete for formulas (IntelliSense). The DAX editor enables you to easily develop measures right in warehouse, making it a more effective single source for business logic, semantics, and business critical calculations.
 
 1. To create a measure, select the **New Measure** button in the ribbon, as shown in the following image.
 
-    :::image type="content" source="media\default-power-bi-semantic-model\table-explorer-ribbon.png" alt-text="Screenshot showing the table explorer and where the new measure button appears on the ribbon." lightbox="media\default-power-bi-semantic-model\table-explorer-ribbon.png":::
+    :::image type="content" source="media/default-power-bi-semantic-model/table-explorer-ribbon.png" alt-text="Screenshot showing the table explorer and where the new measure button appears on the ribbon." lightbox="media/default-power-bi-semantic-model/table-explorer-ribbon.png":::
 
 1. Enter the measure into the formula bar and specify the table and the column to which it applies. The formula bar lets you enter your measure. For detailed information on measures, see [Tutorial: Create your own measures in Power BI Desktop](/power-bi/transform-model/desktop-tutorial-create-measures).
 
@@ -83,11 +86,11 @@ You can hide elements of your warehouse from downstream reporting by right-click
 
 Select **Hide** in **Report view** from the menu that appears to hide the item from downstream reporting.
 
-:::image type="content" source="media\default-power-bi-semantic-model\hide-report-view-menu.png" alt-text="Screenshot showing where to find the hide option in the context menu.":::
+:::image type="content" source="media/default-power-bi-semantic-model/hide-report-view-menu.png" alt-text="Screenshot showing where to find the hide option in the context menu.":::
 
 You can also hide the entire table and individual columns by using the **Model view** canvas options, as shown in the following image.
 
-:::image type="content" source="media\default-power-bi-semantic-model\model-view-canvas.png" alt-text="Screenshot showing the model view canvas options.":::
+:::image type="content" source="media/default-power-bi-semantic-model/model-view-canvas.png" alt-text="Screenshot showing the model view canvas options.":::
 
 ## Related content
 

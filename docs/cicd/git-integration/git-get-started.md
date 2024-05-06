@@ -1,6 +1,6 @@
 ---
 title: Manage a workspace with Git.
-description: Learn how to connect a workspace to a Git repo and branch, commit changes and sync.
+description: Learn how to connect a workspace to a Git repository and branch, commit changes to the repo or workspace and sync.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
@@ -9,6 +9,8 @@ ms.date: 12/17/2023
 ms.custom:
   - build-2023
   - ignite-2023
+ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, Introduction to Git integration
+#customer intent: As a developer, I want to connect my workspace to a Git repo so that I can collaborate with others and leverage source control.
 ---
 
 # Manage a workspace with Git (preview)
