@@ -52,7 +52,7 @@ For more details about granting the required permissions to the user, see [Debez
 
 You must enable binary logging for MySQL replication. The binary logs record transaction updates for replication tools to propagate changes.
 
-1. On the Azure portal page for your Azure Cosmos DB account, select **Server parameters** under **Settings** in the left navigation.
+1. On the Azure portal page for your Azure Database for MySQL account, select **Server parameters** under **Settings** in the left navigation.
 
 1. On the **Server parameters** page, configure the following properties, and then select **Save**.
 
@@ -80,7 +80,7 @@ You see the Azure MySQL DB (CDC) source added to your eventstream in **Edit mode
 
    ![A screenshot of the added Azure MySQL DB CDC source in Edit mode with the Publish button highlighted.](media/add-source-mysql-database-change-data-capture/edit-mode.png)
 
-Select **Publish** to publish the changes and begin streaming Azure Cosmos DB CDC data to the eventstream.
+Select **Publish** to publish the changes and begin streaming Azure MySQL DB CDC data to the eventstream.
 
    ![A screenshot of the published eventstream with Azure MySQL DB CDC source in Live View.](media/add-source-mysql-database-change-data-capture/live-view.png)
 
