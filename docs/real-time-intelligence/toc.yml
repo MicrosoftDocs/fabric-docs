@@ -90,8 +90,6 @@ items:
         href: event-streams/add-source-azure-blob-storage.md
     - name: Add destinations to eventstreams
       items:
-      - name: Add and manage a destination (preview)
-        href: event-streams/add-manage-eventstream-destinations-enhanced.md
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations.md
       - name: Derived stream 

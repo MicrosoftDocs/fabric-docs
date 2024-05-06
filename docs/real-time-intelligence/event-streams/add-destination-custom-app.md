@@ -147,5 +147,5 @@ To learn how to add other destinations to an eventstream, see the following arti
 
 To add a destination to the eventstream, see the following articles:     
 
-- [Route events to destinations (preview)](add-manage-eventstream-destinations-enhanced.md)     
+- [Route events to destinations (preview)](add-manage-eventstream-destinations.md)     
 - [Create an eventstream (preview)](create-manage-an-eventstream.md)      

@@ -53,7 +53,7 @@ You can also access this stream in Real-Time hub.
 
 To learn how to add other destinations to an eventstream, see the following articles: 
 
-- [Route events to destinations ](add-manage-eventstream-destinations-enhanced.md)
+- [Route events to destinations ](add-manage-eventstream-destinations.md)
 - [Custom app destination](add-destination-custom-app.md)
 - [KQL Database destination](add-destination-kql-database.md)
 - [Lakehouse destination](add-destination-lakehouse.md)
