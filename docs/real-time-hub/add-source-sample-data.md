@@ -16,9 +16,11 @@ This article describes how to get events from sample data sources into Real-Time
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 
+[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
+
 ## Add sample data as a source
 
-1. On the **Select a data source** page, select **Confluent**. 
+1. On the **Select a data source** page, select **Sample data**. 
 
     :::image type="content" source="./media/add-source-sample-data/select-sample-data.png" alt-text="Screenshot that shows the selection of Sample data as the source type in the Get events wizard." lightbox="./media/add-source-sample-data/select-sample-data.png":::
 1. On the **Connect** page, enter a **name for the source**.
@@ -39,7 +41,7 @@ This article describes how to get events from sample data sources into Real-Time
 
 ## View data stream details
 
-1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Confluent Cloud Kafka source. To close the wizard, select **Close** at the bottom of the page. 
+1. On the **Review and create** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected sample data source. To close the wizard, select **Close** at the bottom of the page. 
 
     :::image type="content" source="./media/add-source-sample-data/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open eventstream and close the wizard. ":::                
 1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
