@@ -5,8 +5,8 @@ ms.reviewer: richin
 ms.author: monaberdugo
 author: mberdugo
 ms.topic: overview
-ms.custom: 
-ms.search.form: 
+ms.custom:
+ms.search.form:
 ms.date: 05/05/2024
 ---
 
@@ -36,9 +36,17 @@ Here are a few ways to get you started with this model:
 
 ### Real-Time Intelligence APIs
 
-- Event house and KQL Databases support existing Azure Data Explorer APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Event houses. Learn more about [Azure Data Explorer REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
-- If you're using Databricks or Jupyter Notebooks you can utilize the Kusto Python Client Library to work with Kusto in Fabric. Learn more about [Kusto Pyton SDK](/azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context-rti&pivots=fabric).
+Real-Time Intelligence streamlines data analysis and visualization, offering a centralized solution for immediate insights and actions on data in motion within an organization. It efficiently manages large volumes of data through robust querying, transformation, and storage capabilities.
+
+- Event houses are optimized for streaming data storage into KQL databases and enable advanced data processing, including filtering, cleansing, and aggregations. Event houses support existing Event house APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Event houses. Learn more about [REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
+- Event streams provide a no-code experience for capturing, transforming, and routing high-volume real-time events to various destinations. Learn more about [Event streams](../../real-time-intelligence/event-streams/overview.md) and [Event streams API](#real-time-intelligence).
+- If you're using Databricks or Jupyter Notebooks, you can utilize the Kusto Python Client Library to work with KQL databases in Fabric. Learn more about [Kusto Pyton SDK](/azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context-rti&pivots=fabric).
 - You can utilize the existing [Microsoft Logic Apps](/azure/data-explorer/kusto/tools/logicapps), [Azure Data Factory](/azure/data-explorer/data-factory-integration), or [Microsoft Power Automate](/azure/data-explorer/flow) connectors to interact with your Event houses or KQL Databases.
+- [Database shortcuts in Real-Time Analytics](../../real-time-intelligence/database-shortcut.md) are embedded references within an event house to a source database. The source database can either be a KQL Database in Real-Time Analytics or an Azure Data Explorer database. Shortcuts can be used for inplace sharing of data within the same tenant or across tenants. Learn more about managing [database shortcuts using the API](#real-time-intelligence).
+
+### Real-Time hub APIs
+
+The Real-Time hub is used to discover and manage your streaming data. Real-Time hub events is a catalog of data in motion, and contains data streams, Microsoft sources, and Fabric events.
 
 ### Data Factory in Fabric
 
@@ -54,6 +62,7 @@ Shortcuts in Microsoft OneLake allow you to unify your data across domains, clou
 
 - [Learn more about OneLake shortcuts](../../onelake/onelake-shortcuts.md)
 - [Learn more about OneLake, one copy](../../real-time-intelligence/one-logical-copy.md)
+- [Learn more about KQL database shortcuts](../../real-time-intelligence/database-shortcut.md)
 
 :::image type="content" source="media/partner-integration/multicloud-shortcuts.png" alt-text="Diagram showing multicloud shortcuts in OneLake.":::
 
@@ -93,16 +102,21 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 |  | Get Event house | Get metadata about an event house. |
 |  | List Event house | List event houses in your workspace. |
 |  | Update Event house | Update an existing event house. |
-| KQL Database | [Create KQL Database](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL database. |
-|  | [Delete KQL Database](/rest/api/fabric/kqldatabase/items/delete-kql-database?tabs=HTTP) | Deletes an existing KQL database. |
-|  | [Get KQL Database](/rest/api/fabric/kqldatabase/items/get-kql-database?tabs=HTTP) | Get metadata about a KQL database. |
-|  | [List KQL Database](/rest/api/fabric/kqldatabase/items/list-kql-databases?tabs=HTTP) | List KQL databases in your workspace. |
-|  | [Update KQL Database](/rest/api/fabric/kqldatabase/items/update-kql-database?tabs=HTTP) | Update an existing KQL database. |
-| KQL Queryset | [Create KQL Queryset](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL queryset. |
+| KQL Database | [Create KQL Database](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL database or KQL Database shortcuts. |
+|  | [Delete KQL Database](/rest/api/fabric/kqldatabase/items/delete-kql-database?tabs=HTTP) | Deletes an existing KQL database or KQL Database shortcuts. |
+|  | [Get KQL Database](/rest/api/fabric/kqldatabase/items/get-kql-database?tabs=HTTP) | Get metadata about a KQL database or KQL Database shortcuts. |
+|  | [List KQL Database](/rest/api/fabric/kqldatabase/items/list-kql-databases?tabs=HTTP) | List KQL databases in your workspace or KQL Database shortcuts. |
+|  | [Update KQL Database](/rest/api/fabric/kqldatabase/items/update-kql-database?tabs=HTTP) | Update an existing KQL database or KQL Database shortcuts. |
+| KQL Queryset | [Create KQL Queryset](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL queryset or KQL Database shortcuts. |
 |  | [Delete KQL Queryset](/rest/api/fabric/kqlqueryset/items/delete-kql-queryset?tabs=HTTP) | Deletes an existing KQL queryset. |
 |  | [Get KQL Queryset](/rest/api/fabric/kqlqueryset/items/get-kql-queryset?tabs=HTTP) | Get metadata about a KQL queryset. |
 |  | [List KQL Queryset](/rest/api/fabric/kqlqueryset/items/list-kql-querysets?tabs=HTTP) | List KQL querysets in your workspace. |
 |  | [Update KQL Queryset](/rest/api/fabric/kqlqueryset/items/update-kql-queryset?tabs=HTTP) | Update an existing KQL queryset. |
+| Event Stream | [Create Event Stream](/rest/api/fabric/eventstream/items/create-eventstream?tabs=HTTP) | Creates an event stream. |
+|  | [Delete Event Stream](/rest/api/fabric/eventstream/items/delete-eventstream?tabs=HTTP) | Deletes an existing event stream. |
+|  | [Get Event Stream](/rest/api/fabric/eventstream/items/get-eventstream?tabs=HTTP) | Get metadata about an event stream. |
+|  | [List Event Stream](/rest/api/fabric/eventstream/items/list-eventstreams?tabs=HTTP) | List event streams in your workspace. |
+|  | [Update Event Stream](/rest/api/fabric/eventstream/items/update-eventstream?tabs=HTTP) | Update an existing event stream. |
 
 ### Fabric Data Factory
 
