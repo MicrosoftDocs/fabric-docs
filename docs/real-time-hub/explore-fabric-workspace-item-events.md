@@ -33,14 +33,14 @@ At the top of the detail page, you see the following two actions.
 
 ## See what's using this category
 
-This section shows subscriptions using the event category. Here are the columns and their descriptions shown in the list. 
+This section shows the artifacts using Fabric workspace item events. Here are the columns and their descriptions shown in the list. 
 
 | Column | Description |
 | ------ | ------------ | 
-| Name | Name of the artifact/subscriber that subscribes to the event type group. |
-| Type | Artifact type – Reflex or eventstream |
+| Name | Name of the artifact that's using Fabric workspace item events. |
+| Type | Artifact type – Reflex or Eventstream |
 | Workspace | Workspace where the artifact lives. |
-| Source | Name of the source (Azure blob storage account) that the user subscribed to. |
+| Source | Name of the workspace that is source of the events. |
 
 ## Fabric workspace item events profile
 

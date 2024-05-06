@@ -33,14 +33,14 @@ At the top of the Azure blob storage events detail page, you see the following t
 
 ## See what's using this category
 
-This section shows subscriptions using the event category. Here are the columns and their descriptions shown in the list. 
+This section shows artifacts using Azure Blob Storage events. Here are the columns and their descriptions shown in the list. 
 
 | Column | Description |
 | ------ | ------------ | 
-| Name | Name of the artifact/subscriber that subscribes to the event type group. |
-| Type | Artifact type – Reflex or eventstream |
+| Name | Name of the artifact that's using Azure Blob Storage events. |
+| Type | Artifact type – Reflex or Eventstream |
 | Workspace | Workspace where the artifact lives. |
-| Source | Name of the source (Azure blob storage account) that the user subscribed to. |
+| Source | Name of the source (Azure Blob Storage account). |
 
 :::image type="content" source="./media/explore-azure-blob-storage-events/see-what-is-using.png" alt-text="Screenshot that shows the See what is using the section of the Azure blob storage events detail page." :::
 
