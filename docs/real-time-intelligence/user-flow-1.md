@@ -19,6 +19,8 @@ This user flow shows how a Data Engineer or Data Analyst can discover events in 
 
 :::image type="content" source="media/user-flows/user-flow-1.png" alt-text="Schematic image showing the steps in user flow 1." lightbox="media/user-flows/user-flow-1.png" border="false":::
 
+[!INCLUDE [preview-note](../real-time-hub/includes/preview-note.md)]
+
 ## Steps
 
 1. Browse  for available data streams: **streams and tables** in Real-Time hub. 
