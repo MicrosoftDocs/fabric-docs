@@ -13,7 +13,8 @@ ms.date: 05/06/2024
 
 This article contains the allowlist of the Microsoft Fabric URLs required for interfacing with Fabric workloads. For the Power BI allowlist, see [Add Power BI URLs to your allowlist](./power-bi-allow-list-urls.md).
 
-The URLs are divided into two categories: required and optional. The required URLs are necessary for the service to work correctly. The optional URLs are used for specific features that you might not use. To use Fabric, you must be able to connect to the endpoints marked required in the tables in this article, and to any endpoints marked required on the linked sites. If the link to an external site refers to a specific section, you only need to review the endpoints in that section. You can also add endpoints that are marked optional to allowlists for specific functionality to work.
+[THIS PARAGRAPH NEEDS REVIEW]
+The URLs are divided into two categories: required and optional. The required URLs are necessary for the service to work correctly. The optional URLs are used for specific features that you might not use. To use Fabric, you must be able to connect to the endpoints marked required in the tables in this article, and to any endpoints marked required on the linked sites. If the link to an external site refers to a specific section, you only need to review the endpoints in that section. You can also add endpoints that are marked optional to allowlists for specific functionality to work. 
 
 Fabric requires only TCP Port 443 to be opened for the listed endpoints.
 
