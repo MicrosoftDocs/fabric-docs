@@ -39,7 +39,7 @@ The following table describes the resource limitations for pipelines in Data Fac
 | External activities  like stored procedure, Web, Web Hook, and others | 3,000 | 3,000 |
 | Pipeline activities execute on integration runtime, including Lookup, GetMetadata, and Delete | 1,000 | 1,000 |
 | Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on | 200 | 200 |
-| Maximum activities per pipeline, which includes inner activities for containers | 80 | 120 (soft limit) |
+| Maximum activities per pipeline, which includes inner activities for containers | 80 | 120 |
 | Maximum parameters per pipeline | 50 | 50 |
 | ForEach items | 100,000 | 100,000 |
 | ForEach parallelism | 20 | 50 |
