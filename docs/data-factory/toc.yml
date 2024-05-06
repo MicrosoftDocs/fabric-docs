@@ -695,8 +695,10 @@
             href: data-workflows-hello-world.md
           # - name: Data workflows with dbt
           #   href: data-workflows-dbt.md
-          - name: Run ADF pipeline from Data workflows
+          - name: Orchestrate ADF pipeline with Data workflows
             href: data-workflows-run-adf-pipeline.md
+          - name: Orchestrate Azure Databricks job with Data workflows
+            href: data-workflows-run-databricks-job.md
 
   - name: FAQ and Troubleshooting
     items:
