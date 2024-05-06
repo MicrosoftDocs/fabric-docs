@@ -96,7 +96,7 @@ sections:
     questions:
       - question: Who's the owner of a deployed paginated report?
         answer: |
-          The owner of a deployed paginated report is the user who deployed the report.When you're deploying a paginated report for the first time, you become the owner of the report.
+          The owner of a deployed paginated report is the user who deployed the report. When you're deploying a paginated report for the first time, you become the owner of the report.
 
           If you're deploying a paginated report to a stage that already contains a copy of that paginated report, you overwrite the previous report and become its owner, instead of the previous owner. In such cases, you need credentials to the underlying data source, so that the data can be used in the paginated report.
 

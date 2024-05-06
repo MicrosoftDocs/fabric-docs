@@ -68,9 +68,9 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 Pairing is the process by which an item in one stage of the deployment pipeline is associated with the same item in the adjacent stage. Pairing is vital for correct deployments. If items aren't paired, even if they appear to be the same, they don't overwrite on a subsequent deployment.
 
-<a name="pairingrules">
+<a name="pairing-rules"></a>
+
 Pairing can happen in one of two ways:
-</a>
 
 * Deployment: when an unpaired item is copied from one stage to another using the *Deploy* button, the previously unpaired item is automatically paired with the copy.
 * Assigning a workspace to a deployment stage: when a workspace is assigned to a deployment stage the deployment pipeline attempts to pair items. The pairing criteria are:
@@ -91,7 +91,7 @@ Paired items appear on the same line in the pipeline content list. Items that ar
 
 ### Create nonpaired items with the same name
 
-There's no way to manually pair items except by following the pairing rules described in the [previous section](#pairingrules). Adding a new item to a workspace that's part of a pipeline, doesn't automatically pair it to an identical item in an adjacent stage. Thus, you can have identical items with the same name in adjacent workspaces that aren't paired.
+There's no way to manually pair items except by following the pairing rules described in the [previous section](#pairing-rules). Adding a new item to a workspace that's part of a pipeline, doesn't automatically pair it to an identical item in an adjacent stage. Thus, you can have identical items with the same name in adjacent workspaces that aren't paired.
 
 Here's an example of items that were added to the *Test* pipeline after it was assigned and therefore not paired with the identical item in the *Dev* pipeline:
 
