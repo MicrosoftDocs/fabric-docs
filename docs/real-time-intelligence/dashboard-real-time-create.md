@@ -36,37 +36,18 @@ A new dashboard is created in your workspace.
 
 ## Add data source
 
-A data source is a reusable reference to a database in an Azure Data Explorer cluster or a KQL database in the OneLake data hub. Different tiles can be based on different data sources.
+Data sources are reusable references to a specific database in the same workspace as the Real-Time Dashboard. Different tiles can be based on different data sources.
 
 1. Select the **Home** tab > **New data source**.
 1. In the **Data sources** pane, select **+ Add**.
 
     :::image type="content" source="media/real-time-dashboard/new-data-source.png" alt-text="Screenshot of adding a new data source to a Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::
 
-1. From the dropdown menu, select one of the following options:
-
-    To add a KQL database from OneLake data hub:
-
-    1. Select **OneLake data hub**:
-    1. In the **Create new data source** pane:
-        1. Enter a **Data source name**.
-        1. Select a **Database** from the drop-down list.
-    1. Select **Create**.
-
-    To add a database from an Azure Data Explore cluster:
-
-    1. Select **Azure Data Explorer**.
-    1. Under **Connection URI**, enter the cluster URI.
-
-        To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI is the URI found in the Overview. To add a free sample cluster, specify "help" as the **Connection URI**.
-
-        :::image type="content" source="media/kusto-query-set/connect-to-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect cluster button is highlighted.":::
-
-    1. Under **Database**, select the dropdown menu to expand the list of databases in your cluster, and then select a database.
-    1. Select **Connect**.
-
-After creating one or more data sources, you can manage them from the **Data sources** pane. You can view the list of existing data sources, select the pencil icon to edit a source, or select the **More [...]** menu to **Duplicate**, **Delete**, or move the parameter.
-
+1. In the **Create new data source** pane:
+    1. Enter a **Data source name**.
+    1. Select a **Database** from the drop-down list.
+1. Select **Create**.
+  
 ## Add tile
 
 Dashboard tiles use Kusto Query Language snippets to retrieve data and render visuals. Each tile/query can support a single visual.
@@ -97,14 +78,15 @@ You can add tiles to your dashboard directly from kql queries written in a query
 1. [Write a query](kusto-query-set.md#write-a-query).
 
 1. Select **Pin to dashboard**.
-    :::image type="content" source="media/real-time-dashboard/queryset-pin-query.png" alt-text="Screenshot of the pin query to dashboard button in a queryset query.":::
+
+    :::image type="content" source="media/real-time-dashboard/queryset-pin-query.png" alt-text="Screenshot of the pin query to dashboard button in a queryset query."  lightbox="media/real-time-dashboard/queryset-pin-query.png":::
 
 1. In the **Pin query to dashboard** window, do the following:
     1. Select an existing dashboard or create a new dashboard.
     1. Name your dashboard tile.
     1. Optionally, select **Open dashboard after tile creation** to view your dashboard immediately after creation.
     1. Select **Create**.
-    
+
         :::image type="content" source="media/real-time-dashboard/pin-query-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
 
 ## Add page
