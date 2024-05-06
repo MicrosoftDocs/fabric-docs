@@ -565,6 +565,8 @@
         href: connector-web-overview.md
       - name: Set up your connection
         href: connector-web.md
+  - name: Copy job (Preview)
+    href: copy-job.md
   - name: Data pipelines
     items:
     - name: Activities
