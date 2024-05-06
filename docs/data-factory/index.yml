@@ -71,6 +71,20 @@ landingContent:
           - text: Move data with copy assistant
             url: tutorial-move-data-lakehouse-copy-assistant.md
 
+  # Card
+  - title: Data gateway
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+        - text: What is an on-premises data gateway?
+          url: /data-integration/gateway/service-gateway-onprem?toc=/fabric/data-factory/toc.json
+        - text: On-premises data gateway FAQ
+          url: /data-integration/gateway/service-gateway-onprem-faq?toc=/fabric/data-factory/toc.json 
+        - text: What is a virtual network data gateway?
+          url: /data-integration/vnet/overview?toc=/fabric/data-factory/toc.json 
+        - text: Virtual network data gateway FAQ
+          url: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json 
+          
   # Card 
   - title: Working with dataflows
     linkLists:
