@@ -805,6 +805,10 @@
           href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json 
         - name: Download diagnostics logs
           href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json 
+  - name: Best practices
+    items:
+    - name: Copy performance for SQL databases
+      href: copy-performance-sql-databases.md          
   - name: FAQ and Troubleshooting
     items:
     - name: Frequently asked questions
