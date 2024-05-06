@@ -35,6 +35,8 @@ items:
       href: security-managed-private-endpoints-overview.md
     - name: Create managed private endpoints
       href: security-managed-private-endpoints-create.md
+    - name: Add Fabric URLs to your allowlist
+      href: fabric-allow-list-urls.md
     - name: Add Power BI URLs to your allowlist
       href: power-bi-allow-list-urls.md
     - name: Workspace identity
