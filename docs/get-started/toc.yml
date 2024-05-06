@@ -141,6 +141,20 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Semantic models created with TMDL can't be opened in Desktop
+      href: known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md
+    - name: Sign-in required when you browse to a secure embed URL
+      href: known-issues/known-issue-713-sign-in-required-browse-secure-embed-url.md
+    - name: Azure Analysis Services Pricing Tier scaling table doesn't show data
+      href: known-issues/known-issue-711-azure-analysis-services-table-not-show-data.md
+    - name: OneLake audit events don't show up in Microsoft 365 admin center
+      href: known-issues/known-issue-710-onelake-audit-events-not-show-microsoft-365-admin-center.md
+    - name: Query folding indicators are incorrect for certain Power Query SDK based connectors
+      href: known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md
+    - name: SQL database mirror doesn't start when you create connection during mirror creation
+      href: known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md
+    - name: SQL endpoint and semantic model are orphaned when a lakehouse is deleted
+      href: known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md
     - name: Apps and reports not available when editing scorecard metrics
       href: known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md
     - name: Semantic model export to OneLake fails for calculated columns in error state
