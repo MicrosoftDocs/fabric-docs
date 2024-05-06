@@ -1,6 +1,6 @@
 ---
-title: Get data from Real-time hub (Public Preview)
-description: Learn how to get data from Real-time hub in a KQL database in Real-time Intelligence.
+title: Get data from Real-Time hub (preview)
+description: Learn how to get data from Real-Time hub in a KQL database in Real-time Intelligence.
 ms.reviewer: aksdi
 ms.author: yaschust
 author: YaelSchuster
@@ -12,13 +12,13 @@ ms.date: 04/18/2024
 ms.search.form: Get data in a KQL Database
 ---
 
-# Get data from Real-time hub (Preview)
+# Get data from Real-Time hub (preview)
 
-In this article, you learn how to get events from Real-time hub into either a new or existing table.
+In this article, you learn how to get events from Real-Time hub into either a new or existing table.
 
 > [!NOTE]
-> Currently Real-time hub only supports eventstreams as a source.
-> Real-time hub is currently in preview.
+> Currently Real-Time hub only supports eventstreams as a source.
+> Real-Time hub is currently in preview.
 
 ## Prerequisites
 
@@ -28,17 +28,17 @@ In this article, you learn how to get events from Real-time hub into either a ne
 
 ## Source
 
-To get data from Real-time hub, you need to select a Real-time stream from Real-time data hub as your data source. You can select Real-time hub in the following ways:
+To get data from Real-Time hub, you need to select a Real-time stream from Real-time data hub as your data source. You can select Real-Time hub in the following ways:
 
 On the lower ribbon of your KQL database, either:
 
-* From the **Get Data** dropdown menu, then under **Continuous**, select **Real-time hub (Preview)**.
+* From the **Get Data** dropdown menu, then under **Continuous**, select **Real-Time hub (preview)**.
 
-* Select **Get Data** and then in the **Get data** window, select a stream from the Real-time hub section.
+* Select **Get Data** and then in the **Get data** window, select a stream from the Real-Time hub section.
 
-    :::image type="content" source="media/get-data-real-time-hub/select-data-source.png" alt-text="Screenshot of get data window with Real-time hub options." lightbox="media/get-data-real-time-hub/select-data-source.png":::
+    :::image type="content" source="media/get-data-real-time-hub/select-data-source.png" alt-text="Screenshot of get data window with Real-Time hub options." lightbox="media/get-data-real-time-hub/select-data-source.png":::
 
-* Select a data stream from the Real-time hub stream list.
+* Select a data stream from the Real-Time hub stream list.
 
 ## Configure
 

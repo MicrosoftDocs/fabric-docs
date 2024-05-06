@@ -15,7 +15,7 @@ To get a better understanding of how an eventstream works, you can use the out-o
 
 If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
 ## Prerequisites
 
@@ -104,9 +104,9 @@ To learn how to add other sources to an eventstream, see the following articles:
 To add a destination to an eventstream, see the following articles:
 
 - [Route events to destinations ](add-manage-eventstream-destinations-enhanced.md)
-- [Custom app destination](add-destination-custom-app-enhanced.md)
+- [Custom app destination](add-destination-custom-app.md)
 - [Derived stream destination](add-destination-derived-stream.md)
 - [KQL Database destination](add-destination-kql-database-enhanced.md)
 - [Lakehouse destination](add-destination-lakehouse-enhanced.md)
-- [Reflex destination](add-destination-reflex-enhanced.md)
+- [Reflex destination](add-destination-reflex.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
