@@ -271,7 +271,7 @@ For the **Dynamic range** Heap test case where **Degree of parallel copies** was
 | Maximum (256) | 00:13:46       | 89,280         | 81           | 76             | Balanced (100)           |
 | 50            | 00:18:28       | 48,600         | 76           | 61             | Standard (48)            |
 
-By our cutting the ITO by 50%, the total duration increased by 34%, however the service used 45.5% less Capacity Units. If you aren't optimizing for improved **Total duration** and want to reduce the Capacity Units used, it would be beneficial to set the ITO to a lower value.
+By cutting the ITO by 50%, the total duration increased by 34%, however the service used 45.5% less Capacity Units. If you aren't optimizing for improved **Total duration** and want to reduce the Capacity Units used, it would be beneficial to set the ITO to a lower value.
 
 ### Summary
 
