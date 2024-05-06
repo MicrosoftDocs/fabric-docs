@@ -71,7 +71,7 @@ The default settings are:
 
     :::image type="content" source="media/copy-performance-sql-databases/additional-settings.png" alt-text="Screenshot showing additional settings for the Azure SQL database.":::
 
-When we tested using the default settings, the service took over 2 hours per copy activity to load 1.5 billion records into each destination. These values form our reference point used to measure performance improvements. Before making changes, always evaluate baseline performance to create a reference point of comparison.
+For the purposes of setting an initial benchmark for future comparison, we used the default settings for a copy activity run that loaded 1.5 billion records into each destination and took a little over 2 hours per copy activity.
 
 |Destination  |Partition option  |Degree of copy parallelism  |Used parallel copies  |Total duration|
 |---------|---------|---------|---------|--------------|
