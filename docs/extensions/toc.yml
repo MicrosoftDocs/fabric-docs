@@ -36,7 +36,7 @@ items:
   - name: Upload and manage a workload
     href: manage-workload.md
   - name: Add and manage more workload
-    href: more-workload-add.md
+    href: more-workloads-add.md
 
 - name: Reference
   items:
