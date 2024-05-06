@@ -20,21 +20,48 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
 
 ## Build a Power BI report
 
-1. Copy and paste the following query into your KQL queryset. The output of this query is used as the semantic model for building the Power BI report.
+1. Copy and paste the following query into your KQL queryset. The output of this query is used as the semantic model for building the Power BI report. 
 
     ```kusto
     TutorialTable
-    | some query
+    | summarize arg_max(Timestamp, No_Bikes,  No_Empty_Docks) by BikepointID, Neighbourhood, Lat=todouble(Latitude), Lon=todouble(Longitude)
     ```
-    
+
 1. Select **Build Power BI report**. The Power BI report editor opens with the query result available as a data source named **Kusto Query Result**.
+
+### Add visualizations to the report
+
+1. In the report editor, select **Visualizations** > **Map** icon.
+     :::image type="icon" source="media/tutorial/map-icon.png" border="false":::
+1. Drag the following fields from **Data** > **Kusto Query Result** to the **Visualizations** pane.
+    * **Lat** > **Latitude**
+    * **Lon** > **Longitude**
+    * **No_Bikes** > **Bubble size**
+    * **Neighbourhood** > **Add drill-through fields here**
+
+    :::image type="content" source="media/tutorial/report-generated.png" alt-text="Screenshot of Power BI report generation window in Real-Time Intelligence.":::
+
+1. In the report editr, select **Visualizations** > **Stacked column chart** icon.
+    :::image type="icon" source="media/tutorial/stacked-column-chart-icon.png" border="false":::
+1. Drag the following fields from **Data** > **Kusto Query Result** to the **Visualizations** pane.
+    * **Neighbourhood** > **X-axis**
+    * **No_Bikes** > **Y-axis**
+    * **No_Empty_Docks** > **Y-axis**
+
+    :::image type="content" source="media/tutorial/second-visual-report.png" alt-text="Screenshot of adding the second visual, a column chart, to the report.":::
+
+### Save the report
+
+1. In the top left corner of the ribbon, select **File** > **Save**.
+1. Enter the name *TutuorialReport*. Choose your workspace, and set sensitivity as Public.
+1. Select **Continue**.
+1. Select **Open the file in Power BI to view, edit, and get a shareable link.**
 
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
 
 * [Visualize data in a Power BI report](create-powerbi-report.md)
-
 
 ## Next step
 
