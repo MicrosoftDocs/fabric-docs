@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/02/2024
+ms.date: 05/06/2024
 ms.custom:
 ---
 
@@ -20,7 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
-|  715  | Power BI | [Semantic models created with TMDL can't be opened in Desktop](known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md) | May 2, 2024 |
+|  715  | Power BI | [TMDL semantic models won't open in Desktop after web edited](known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md) | May 2, 2024 |
 |  713  | Power BI | [Sign-in required when you browse to a secure embed URL](known-issues/known-issue-713-sign-in-required-browse-secure-embed-url.md) | May 2, 2024 |
 |  711  | Power BI | [Azure Analysis Services Pricing Tier scaling table doesn't show data](known-issues/known-issue-711-azure-analysis-services-table-not-show-data.md) | May 1, 2024 |
 |  710  | OneLake | [OneLake audit events don't show up in Microsoft 365 admin center](known-issues/known-issue-710-onelake-audit-events-not-show-microsoft-365-admin-center.md) | May 1, 2024 |
