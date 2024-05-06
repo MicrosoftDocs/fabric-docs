@@ -8,20 +8,20 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 05/06/2024
 ms.search.form: Source and Destination
 ---
 
 # Add and manage a destination in an eventstream
 
-Once you have created an eventstream in Microsoft Fabric, you can route data to different destinations. The types of destinations that you can add to your eventstream are KQL Database, Lakehouse, Custom App and Reflex. See the [Supported destinations](#supported-destinations) section for details.
+After you create an eventstream in Microsoft Fabric, you can route the data to different destinations. For a list of destinations that you can add to your eventstream, see [Supported destinations](#supported-destinations).
 
 ## Prerequisites
 
 To add a destination to an eventstream, you need the following prerequisites:
 
 - Access to the Fabric **premium workspace** where the eventstream is located with **Contributor** or higher permissions.
-- For a KQL Database, lakehouse, or Reflex destination, access to the **premium workspace** where the destination is located with **Contributor** or higher permissions.
+- For a KQL Database, Lakehouse, or Reflex destination, access to the **premium workspace** where the destination is located with **Contributor** or higher permissions.
 
 ## Supported destinations
 
@@ -33,7 +33,7 @@ If you want to use enhanced capabilities that are in preview, see the content in
 
 | Destination          | Description |
 | --------------- | ---------- |
-| [Custom app](add-destination-custom-app.md) | With this destination, you can easily route your real-time events to a custom endpoint.You can connect your own applications to the eventstream and consume the event data in real time. This destination is useful when you want to egress real-time data to an external system outside Microsoft Fabric.|
+| [Custom app](add-destination-custom-app.md) | With this destination, you can easily route your real-time events to a custom endpoint. You can connect your own applications to the eventstream and consume the event data in real time. This destination is useful when you want to egress real-time data to an external system outside Microsoft Fabric.|
 | [KQL Database](add-destination-kql-database.md) | This destination lets you ingest your real-time event data into a KQL database, where you can use the powerful Kusto Query Language (KQL) to query and analyze the data. With the data in the Kusto database, you can gain deeper insights into your event data and create rich reports and dashboards. You can choose between two ingestion modes: **Direct ingestion** and **Event processing before ingestion**.|
 | [Lakehouse](add-destination-lakehouse.md) | This destination gives you the ability to transform your real-time events before ingesting them into your lakehouse. Real-time events convert into Delta Lake format and then store in the designated lakehouse tables. This destination supports data warehousing scenarios. To learn more about how to use the event processor for real-time data processing, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md).|
 | [Reflex](add-destination-reflex.md) |This destination lets you directly connect your real-time event data to a Reflex. Reflex is a type of intelligent agent that contains all the information necessary to connect to data, monitor for conditions, and act. When the data reaches certain thresholds or matches other patterns, Reflex automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.|
