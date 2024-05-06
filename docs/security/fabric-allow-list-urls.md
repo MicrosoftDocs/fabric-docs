@@ -48,13 +48,13 @@ The Destination(s) column lists domain names and links to external sites, which 
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|For outbound connections|||
+|**For outbound connections**|||
 |**Required**: Portal|*.powerbi.com|TCP 443|
 |**Required**: Backend APIs for Portal|*.pbidedicated.windows.net|TCP 443|
 |**Required**: cloud pipelines|No specific endpoint is required|N/A|
-|**Optional**: on-prem data gateway login|\*.login.windows.net<br>login.live.com<br>aadcdn.msauth.net<br>login.microsoftonline.com<br>\*.microsoftonline-p.com<br>[See the documentation for Adjust communication settings for the on-premises data gateway](/data-integration/gateway/service-gateway-communication#ports)|<br><br><br>TCP 443<br>TCP 443<br>|
-|**Optional**: on-prem data gateway communication|*.servicebus.windows.net|TCP 443<br>TCP 5671-5672<br>TCP 9350-9354|
-|**Optional**: on-prem data gateway pipelines|*.frontend.clouddatahub.net<br>(User can use service tag DataFactory or DataFactoryManagement)|TCP 443<br>|
+|**Optional**: On-premesis data gateway login|\*.login.windows.net<br>login.live.com<br>aadcdn.msauth.net<br>login.microsoftonline.com<br>\*.microsoftonline-p.com<br>[See the documentation for Adjust communication settings for the on-premises data gateway](/data-integration/gateway/service-gateway-communication#ports)|<br><br><br>TCP 443<br>TCP 443<br>|
+|**Optional**: On-premesis data gateway communication|*.servicebus.windows.net|TCP 443<br>TCP 5671-5672<br>TCP 9350-9354|
+|**Optional**: On-premesis data gateway pipelines|*.frontend.clouddatahub.net<br>(User can use service tag DataFactory or DataFactoryManagement)|TCP 443<br>|
 |For inbound connections|No specific endpoints other than the customer's data store endpoints required in pipelines and behinds the firewall.<br>(User can use service tag DataFactory, regional tag is supported, like DataFactory.WestUs)|
 
 ### Dataflow
@@ -64,19 +64,19 @@ The Destination(s) column lists domain names and links to external sites, which 
 |Write data||Port 443
 |Read data||Port 1433
 
-## Synapse Data Engineering
+## Data Engineering
 
 ### Lakehouse
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|inbound connections|https://cdn.jsdelivr.net/npm/monaco-editor*||
+|Inbound connections|https://cdn.jsdelivr.net/npm/monaco-editor*||
 
 ### Notebook
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|inbound connections (icons)|http://res.cdn.office.net/||
+|Inbound connections (icons)|http://res.cdn.office.net/||
 |**Required**: Notebook backend|https://*.pbidedicated.windows.net<br>wss://*.pbidedicated.windows.net<br>(HTTP/WebSocket)|
 |**Required**: Lakehouse backend|https://onelake.dfs.fabric.microsoft.com||
 |**Required**: Shared backend|https://*.analysis.windows.net||
@@ -92,7 +92,7 @@ The Destination(s) column lists domain names and links to external sites, which 
 |Inbound connections (library management for PyPI)|https://pypi.org/*||
 |Inbound connections (library management for Conda)|local static endpoints for condaPackages||
 
-## Synapse Data Warehouse
+## Data Warehouse
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |**Required**: Datamart SQL |datamart.fabric.microsoft.com|1433|
@@ -107,16 +107,19 @@ The Destination(s) column lists domain names and links to external sites, which 
 |Inbound connections (library management for PyPI)|https://pypi.org/*||
 |Inbound connections (library management for Conda)|local static endpoints for condaPackages||
 
-## Synapse RTA
+## Real-Time Intelligence
 
-### Kusto
+### KQL Database
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 ||||
 
 
+## Data Activator
+
 ### Eventstream
+
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |Customers can send/read events from Event stream in their custom app |sb://xxxxx.servicebus.windows.net|http: 443<br>amqp: 5672/5673<br>kafka: 9093|
