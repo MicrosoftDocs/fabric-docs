@@ -1,5 +1,5 @@
 ---
-title: Differences between Real-Time Intelligence and comparable Azure Solutions
+title: Differences between Real-Time Intelligence and comparable Azure solutions
 description: Learn about the differences between Real-Time Intelligence and comparable Azure Solutions.
 ms.reviewer: tzgitlin
 ms.author: shsagir
@@ -13,80 +13,77 @@ ms.custom:
 ms.date: 05/01/2024
 ms.search.form: Overview
 ---
-# What is the difference between Real-Time Intelligence and comparable Azure Solutions?
+# What is the difference between Real-Time Intelligence and comparable Azure solutions?
 
-As organizations have advanced their digital transformation goals, they have faced more and more data sources that produce time sensitive, highly detailed data points, events and signals in the form of (a) sensor data from physical assets such as plants, vehicles, towers, IoT/Edge devices, (b) change data capture (CDC) streams from databases that run their web and mobile applications for customers, (c) logs from their on-prem and cloud infrastructure and applications among other sources. These data streams are vital for organizations to close the digital feedback loop and better understand how their customers use and consume their physical and digital assets and how they can keep improving the value they offer to stay competitive in the market.
+As organizations progress in their digital transformation journey, they encounter an increasing number of data sources. These sources generate time-sensitive, intricate data points, events, and signals. This data can originate from various sources such as (a) sensor data from physical assets like plants, vehicles, towers, IoT/Edge devices, (b) change data capture (CDC) streams from databases powering customer-facing web and mobile applications, and (c) logs from on-premises and cloud infrastructure and applications, among others. These data streams are crucial for organizations to close the digital feedback loop, gain a deeper understanding of customer usage patterns of their physical and digital assets, and continually enhance the value they provide to maintain market competitiveness.
 
-This value realization demands building real-time data streaming architectures that use cloud based, on-prem data services in the areas of data capture, transport, operational transforms and analytical transforms. These are often built with a combination of products such as Azure Event Hubs, Azure IoT Hubs, Apache Kafka, Amazon Kinesis, IBM Message Queues, Google Pub/Sub. As this data arrives in the clouds, it goes through various stages of hot, warm and cold path processing and transformation and eventually lands in data stores such as Azure Data Explorer, Azure Synapse Analytics, Azure Data Lake Store Gen 2 before becoming ready for advanced analytics and AI apps. In terms of visualization, this data is delivered via tools such as Power BI, Grafana, Web or Mobile Apps, API endpoints.
+Realizing this value necessitates the construction of real-time data streaming architectures that leverage both cloud-based and on-premises data services for data capture, transport, operational transformations, and analytical transformations. These architectures are typically built using a mix of products such as Azure Event Hubs, Azure IoT Hubs, Apache Kafka, Amazon Kinesis, IBM Message Queues, and Google Pub/Sub. As the data arrives in the cloud, it undergoes various stages of processing and transformation, often referred to as hot, warm, and cold paths, before landing in data stores like Azure Data Explorer, Azure Synapse Analytics, and Azure Data Lake Store Gen 2. Once processed, this data is ready for advanced analytics and AI applications and can be visualized using tools like Power BI, Grafana, Web or Mobile Apps, and API endpoints.
 
-With the introduction of Real-Time Intelligence in Fabric, organizations have more than 1 implementation approach and architecture to realize their use cases requiring advanced analytics of streaming data. Microsoft Azure provides powerful capabilities for pro developers to design and implement architectures that require deep integration with other Azure based services, end-to-end automation, and deployment of the entire solution as a single, unified package. Real-Time Intelligence in Microsoft Fabric empowers citizen developers and business users to discover data streams in their organizations and compose their analytical solutions and apps. With out of the box integration with Azure IOT Hub, Azure Eventhub, Azure Data Explorer, Real-Time Intelligence enables extending Azure based architectures into Microsoft Fabric as well as composing net new solutions using existing or new data sources. Picture below shows Azure PaaS led reference architecture as well as Real-Time Intelligence reference architecture in realizing telemetry analytics use cases in a typical manufacturing/automotive organisations.
+The introduction of Real-Time Intelligence in Fabric offers organizations multiple implementation approaches and architectures for their use cases that require advanced analytics of streaming data. Microsoft Azure equips professional developers with robust capabilities to design and implement architectures that necessitate deep integration with other Azure services, end-to-end automation, and deployment of the entire solution as a unified package. Real-Time Intelligence in Microsoft Fabric enables citizen developers and business users to discover data streams within their organizations and build their analytical solutions and applications. With seamless integration with Azure IoT Hub, Azure Event Hubs, and Azure Data Explorer, Real-Time Intelligence facilitates the extension of Azure-based architectures into Microsoft Fabric and the creation of new solutions using existing or new data sources. The following diagram illustrates both Azure Platform as a service (PaaS) based solution architecture and Real-Time Intelligence solution architecture for telemetry analytics use cases in typical manufacturing/automotive organizations.
 
 For more information on Real-Time Intelligence, see [What is Real-Time Intelligence in Fabric?](overview.md).
 
-:::image type="content" source="media/real-time-intelligence-compare/compare-azure-paas-real-time-intelligence-architecture.png" alt-text="Diagram comparing Azure PAAS and Real-Time Intelligence architectures.":::
+:::image type="content" source="media/real-time-intelligence-compare/compare-azure-paas-real-time-intelligence-architecture.png" alt-text="Diagram comparing Azure PaaS solutions with Real-Time Intelligence architectures." lightbox="media/real-time-intelligence-compare/compare-azure-paas-real-time-intelligence-architecture.png":::
 
-Without a unified real-time platform such as Microsoft Fabric Real-Time Intelligence, organizations have had to spend significant budgets, manpower and resources in creating, integrating, deploying, maintaining and operating multitude of disparate cloud or non-cloud based products and silo'ed solutions, resulting in complex, fragile, hard to operate and maintain architectures. As a result of this complexity, organizations have been reluctant to invest in this value creation or have found the costs too high to afford a decent return on investment. End users have often demanded real-time insights into their business operations which is powered by this time sensitive, high granularity data but the complexity, fragility and cost have often been inhibitors for organizations to invest in building platforms that can infuse speed, agility and precision demanded by digital transformation.
+Historically, organizations allocated substantial budgets, workforce, and resources to develop, integrate, deploy, sustain, and manage a variety of disconnected cloud-based or on-premises products and isolated solutions. This has led to intricate, complex architectures that are challenging to operate and maintain. Consequently, organizations have hesitated to pursue such investments due to the complexity, or have deemed the costs too prohibitive to justify a satisfactory return on investment. Yet, the demand for real-time business operation insights, driven by immediate, high granularity data, has been consistent among end users.
 
-Real-Time Intelligence brings you the full power of real-time in Fabric, helping you gain valuable, actionable insights from your 1st and 3rd party data in real time. With Real-Time Intelligence, you gain:
+Real-Time Intelligence revolutionizes this landscape by harnessing the full potential of real-time capabilities within Fabric, enabling you to derive valuable, actionable insights from your first and third-party data instantaneously. With Real-Time Intelligence, you benefit from:
 
-- A complete SaaS solution – an end-to-end solution that helps you discover insights from your time-oriented data, and granting you the ability to ingest, transform, query, visualize and act on it in real time
+- **A comprehensive SaaS offering**: An all-encompassing solution that facilitates the discovery of insights from your time-sensitive data, allowing you to ingest, process, query, visualize, and act upon it in real-time.
+- **A centralized hub for your dynamic data**: A unified data estate for all your event data in motion, simplifying the ingestion, storage, and curation of fine-grained data from across your organization through the Real-Time Hub.
+- **Rapid solution development**: Empower team members of varying expertise to extract more value from data and quickly build solutions on top it for further business growth.
+- **Insights powered by real-time AI**: Scale manual monitoring and effortlessly initiate actions with ready-to-use, automated features that uncover hidden patterns, and fully leverage the Microsoft ecosystem to drive your business forward.
 
-- A single place for your data in motion – access a single data estate for all your event data in motion, using Real-Time Hub to make it easier to ingest, store and curate granular data from anywhere across your organization
+:::image type="content" source="media/real-time-intelligence-compare/real-time-intelligence-architecture.png" alt-text="Diagram showing the solution architecture using Real-Time Intelligence." lightbox="media/real-time-intelligence-compare/real-time-intelligence-architecture.png":::
 
-- Rapid solution development – empower employees of all skill levels with a range of experiences to better extract value from data and quickly build solutions on top of it for further business growth
-
-- Real-time AI insights – scale beyond human monitoring and easily drive actions with out-of-the-box, automated capabilities to discover unknown unknowns and leverage the full Microsoft ecosystem to drive your business forward
-
-:::image type="content" source="media/real-time-intelligence-compare/real-time-intelligence-architecture.png" alt-text="Diagram showing the solution architecture using Real-Time Intelligence.":::
-
-In this document, we are enlisting some points of consideration as you evaluate the fit-for-purpose implementation architecture for your streaming use cases:
+This article outlines key considerations for determining the most suitable implementation architecture tailored to your streaming use cases:
 
 ## Overall
 
-| Capability | Platform as a Service led solution | Fabric Real-time Intelligence led solution |
+| Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
-| Integration of services |Depends on integration compatibility between the services in scope of the architecture|One-click integration at each step of data ingestion, process, analyze, visualize and act|
-| Pro and citizen dev experience |More suitable for pro-developers |Pro-developers, citizen developers and business users can co-exist |
-| Low code/No-code |In Azure Stream Analytics, and in alerting layer with Logic Apps and Power Automate|Available in ingestion, analyze, visualize as well as act layer|
-| Consumption Model |Service dependent estimation, consumption and billing model|Uniform Fabric Capacity Unit led consumption and billing model |
+| **Integration of services** | Depends on integration compatibility between the services in scope of the architecture. | One-click integration at each step of data ingestion, process, analyze, visualize and act. |
+| **Pro and citizen dev experience** | More suitable for pro developers. | Pro developers, citizen developers, and business users can co-exist. |
+| **Low-code/No-code** | Available in Azure Stream Analytics, and for alerting layer in Logic Apps and Power Automate. | Available in ingestion, analyze, visualize, and the act layer. |
+| **Consumption Model** | Service dependent estimation, consumption, and billing model. | Uniform Fabric Capacity Unit consumption and billing model. |
 
 ## Ingest and process
 
-| Capability | Platform as a Service led solution | Fabric Real-time Intelligence led solution |
+| Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
-| Multi-cloud connectors |Azure Stream Analytics connects to Confluent Kafka. No connectors to read data from Amazon Kinesis or Google Pub/Sub |Native integration for Confluent Kafka, Amazon Kinesis, Google Pub/Sub|
-| Support for CDC streams | Requires deployment of additional services such as Debezium | Native integration for Azure CosmosDB, Postgresql, Azure SQL |
-| Support for protocols |Eventhub, AMQP, Kafka, MQTT | Eventhub, AMQP, Kafka, MQTT (coming soon) |
+| **Multi-cloud connectors** | Azure Stream Analytics connects to Confluent Kafka. No connectors to read data from Amazon Kinesis or Google Pub/Sub. | Native integration for Confluent Kafka, Amazon Kinesis, Google Pub/Sub. |
+| **Support for CDC streams** | Requires deployment of additional services such as Debezium. | Native integration for Azure CosmosDB, Postgresql, and Azure SQL. |
+| **Support for protocols** | Azure Event Hubs, AMQP, Kafka, and MQTT. | Azure Event Hubs, AMQP, Kafka. |
 
 ## Analyse & transform
 
-| Capability | Platform as a Service led solution | Fabric Real-time Intelligence led solution |
+| Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
-| Data profiling | Not available | Data profiling view of your real-time tables provides out of the box histograms and min-max ranges for each column |
-| Visual data exploration | Not available |Drag-drop features to visually analyse your real-time data |
-| Copilot experience | Azure Data Explorer cluster can be added as a source in Fabric KQL Queryset to leverage Copilot capabilities | Natively available |
-| Visualization (Microsoft tools) | Power BI, ADX Dashboards | Native one-click integration with PowerBI and Real-time Dashboard |
-| Built-in ML models | Anomaly Detection, Forecasting| Anomaly Detection, Forecasting |
-| Visualization (3rd party tools) | Grafana, Kibana, Matlab | Grafana, Kibana, Matlab can also be integrated with Fabric Eventhouse |
+| **Data profiling** | Not available | Data profiling view of your real-time tables provides out-of-the-box histograms and min-max ranges for each column. |
+| **Visual data exploration** | Not available | Drag-and-drop features to visually analyse your real-time data. |
+| **Copilot experience** | Azure Data Explorer cluster can be added as a source in Fabric KQL Queryset to leverage Copilot capabilities. | Natively available |
+| **Built-in ML models** | Anomaly detection, Forecasting | Anomaly detection, Forecasting |
+| **Visualization (Microsoft)** | Power BI, Azure Data Explorer dashboards | Native one-click integration with Power BI and Real-Time Dashboard |
+| **Visualization (Third party)** | Grafana, Kibana, Matlab. | Grafana, Kibana, Matlab can also be integrated with Event house. |
 
 ## Act
 
-| Capability | Platform as a Service led solution | Fabric Real-time Intelligence led solution |
+| Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
-| Driving business actions from insights | Requires usage of Azure Logic Apps or Power Automate or Azure Functions, Azure Monitor alerts | Natively available in Fabric using Reflex item in Data Activator with out of the box integration with Power BI Semantic Models, Eventstream and KQL queries |
-| Reactive system events | | Built-in events published through Real-Time Hub and use reflexes to automate data processes such as Pipelines and Notebooks |
-| Real-time Semantic Models | Not available or code-first solution using Logic Apps or Azure Functions | |
-| Built-in AI | Not available | Anomaly Detection (coming soon) |
-| Notification destinations | Depends on the connector portfolio of the service | Teams, Outlook and Power Automate connectors |
+| **Driving business actions from insights** | Requires Azure Logic Apps or Power Automate or Azure Functions, Azure Monitor alerts. | Natively available in Fabric using Reflex items in Data Activator with out-of-the-box integration with Power BI Semantic Models, Event stream, and KQL queries. |
+| **Reactive system events** | Not available | Built-in events published through Real-Time hub; Use reflex items to automate data processes, such as pipelines and notebooks. |
+| **Real-time Semantic Models** | Not available or code-first solution using Logic Apps or Azure Functions | Not available |
+| **Built-in AI** | Not available | Not available |
+| **Notification destinations** | Depends on the connector portfolio of the service. | Microsoft Teams, Microsoft Outlook, and Power Automate connectors. |
 
 ## Catalog
 
-| Capability | Platform as a Service led solution | Fabric Real-time Intelligence led solution |
+| Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
-| Unified catalog of data streams | Not available | Real-time hub of:<br />1. Data streams created by the users<br />2. Existing streams from Microsoft sources<br />3. Fabric system event streams |
-| Discovery of Microsoft data streams | Not available | Real-time Intelligence hub discovers data streams in your Azure tenant |
-| Capture and act on events from Azure Storage  Requires deploying Azure Event Grid, to act on events occurring in Azure Storage  Natively available in Fabric |Requires deploying Azure Event Grid, to act on events occurring in Azure Storage|Can be deployed from Fabric. An event grid resource is created in the same resource group as Azure Storage account.|
-| Capture and act on events from Fabric | Not applicable | Natively available in Fabric |
+| **Unified catalog of data streams** | Not available | Real-time hub:<br />1. Data streams created by the users<br />2. Existing streams from Microsoft sources<br />3. Fabric system event streams. |
+| **Discovery of Microsoft data streams** | Not available | Real-time Intelligence hub discovers data streams in your Azure tenant. |
+| **Capture and act on events from Azure Storage** | Requires deploying Azure Event Grid to act on events occurring in Azure Storage. | Can be deployed from Fabric. An event grid resource is created in the same resource group as the Azure Storage account. |
+| **Capture and act on events from Fabric** | Not applicable | Natively available in Fabric |
 
 ## Related content
 
