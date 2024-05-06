@@ -1,6 +1,6 @@
 ---
-title: Real-Time Intelligence tutorial part 2- Get data in the Real-Time Hub
-description: Learn how to get data in the Real-Time Hub in Real-Time Intelligence.
+title: Real-Time Intelligence tutorial part 2- Get data in the Real-Time hub
+description: Learn how to get data in the Real-Time hub in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -9,9 +9,9 @@ ms.custom:
   - build-2024
 ms.date: 05/21/2024
 ms.search.form: Get started
-# customer intent: I want to learn how to get data in the Real-Time Hub in Real-Time Intelligence.
+# customer intent: I want to learn how to get data in the Real-Time hub in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 2: Get data in the Real-Time Hub
+# Real-Time Intelligence tutorial part 2: Get data in the Real-Time hub
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md).
