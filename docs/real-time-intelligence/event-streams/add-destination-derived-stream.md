@@ -55,7 +55,7 @@ To learn how to add other destinations to an eventstream, see the following arti
 
 - [Route events to destinations ](add-manage-eventstream-destinations-enhanced.md)
 - [Custom app destination](add-destination-custom-app.md)
-- [KQL Database destination](add-destination-kql-database-enhanced.md)
-- [Lakehouse destination](add-destination-lakehouse-enhanced.md)
+- [KQL Database destination](add-destination-kql-database.md)
+- [Lakehouse destination](add-destination-lakehouse.md)
 - [Reflex destination](add-destination-reflex.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
