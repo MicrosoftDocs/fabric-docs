@@ -153,21 +153,9 @@ Since folders are considered part of the item’s name, items moved into a diffe
 
 * Deploying one item out of several in a folder also updates the structure of the items that aren't deployed in the target stage even though the items themselves aren't be deployed.
 
-## Supported items
-
-When you deploy content from one pipeline stage to another, the copied content can contain the following items:
-
-* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
-* Dataflows Gen1
-* Datamarts
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
-* [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
-* Reports (based on supported semantic models)
-* Semantic models (except for Direct Lake semantic models)
-* [Warehouses](../../data-warehouse/data-warehousing.md)
-
 ## Item properties copied during deployment
+
+For a list of supported items, see [Deployment pipelines supported items](./intro-to-deployment-pipelines.md#supported-items).
 
 During deployment, the following item properties are copied and overwrite the item properties at the target stage:
 
@@ -185,14 +173,14 @@ During deployment, the following item properties are copied and overwrite the it
 
 * Item relationships
 
-[Sensitivity labels](/power-bi/enterprise/service-security-sensitivity-label-overview) are copied *only* when one of the following conditions is met. If these conditions aren't met, sensitivity labels *are not* copied during deployment.
+* [Sensitivity labels](/power-bi/enterprise/service-security-sensitivity-label-overview) are copied *only* when one of the following conditions is met. If these conditions aren't met, sensitivity labels *are not* copied during deployment.
 
-* A new item is deployed, or an existing item is deployed to an empty stage.
+  * A new item is deployed, or an existing item is deployed to an empty stage.
 
     >[!NOTE]
     > In cases where default labeling is enabled on the tenant, and the default label is valid, if the item being deployed is a semantic model or dataflow, the label will be copied from the source item **only** if the label has protection. If the label is not protected, the default label will be applied to the newly created target semantic model or dataflow.
 
-* The source item has a label with protection and the target item doesn't. In such cases, a pop-up window asking for consent to override the target sensitivity label appears.
+  * The source item has a label with protection and the target item doesn't. In this case, a pop-up window asks for consent to override the target sensitivity label.
 
 ### Item properties that are not copied
 
@@ -383,7 +371,7 @@ This section lists most of the limitations in deployment pipelines.
 * [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) aren't supported as pipeline admins.
 * When you're deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment fails.
 * For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#considerations-and-limitations).
-* For a list of supported items, see [supported items](#supported-items). Any item not on the list isn't supported.
+* For a list of supported items, see [supported items](./intro-to-deployment-pipelines.md#supported-items). Any item not on the list isn't supported.
 * The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
 * Only Power BI items can be deployed to a workspace in a different capacity region. Other Fabric items can't be deployed to a workspace in a different capacity region.
 
