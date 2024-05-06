@@ -65,6 +65,8 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
+          - text: Sample data sources
+            url: add-source-sample-data.md
           - text: Azure Event Hubs
             url: add-source-azure-event-hubs.md
           - text: Azure IoT Hub

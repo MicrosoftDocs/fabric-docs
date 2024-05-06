@@ -25,6 +25,8 @@ items:
     href: supported-sources.md
   - name: Microsoft sources
     items:
+    - name: Sample data source
+      href: add-source-sample-data.md
     - name: Azure Event Hubs
       href: add-source-azure-event-hubs.md
     - name: Azure IoT Hub
