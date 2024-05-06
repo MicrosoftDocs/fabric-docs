@@ -36,17 +36,13 @@ Here are the supported Fabric workspace events:
 ## Create streams for Fabric workspace item events
 You can create streams for Fabric workspace item events in Real-Time hub using one of the ways:
 
-- Using the **Get events** experience
-- Using the **Fabric events** tab
+- [Using the **Get events** experience](#launch-get-events-experience)
+- [Using the **Fabric events** tab](#fabric-events-tab)
+
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-Use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section after you do the following step:
-
-On the **Get events** page, select **Fabric Workspace item events**.
-
-:::image type="content" source="./media/create-streams-fabric-workspace-item-events/select-fabric-workspace-item-events.png" alt-text="Screenshot that shows the Get events page with Fabric workspace item events selected.":::
-
+Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section.
 
 ## Fabric events tab
 
@@ -55,8 +51,13 @@ On the **Get events** page, select **Fabric Workspace item events**.
 
     :::image type="content" source="./media/create-streams-fabric-workspace-item-events/fabric-events-tab.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub.":::
 
+    Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section, but skip the first step of using the **Get events** page. 
+
 ## Configure and create an eventstream
 
+1. On the **Get events** page, select **Fabric Workspace item events**.
+
+    :::image type="content" source="./media/create-streams-fabric-workspace-item-events/select-fabric-workspace-item-events.png" alt-text="Screenshot that shows the Get events page with Fabric workspace item events selected.":::
 1. On the **Connect** page, for **Event types**, select the event types that you want to monitor. 
 
     :::image type="content" source="./media/create-streams-fabric-workspace-item-events/select-event-types.png" alt-text="Screenshot that shows the selection of Fabric event types on the Connect page." lightbox="./media/create-streams-fabric-workspace-item-events/select-event-types.png":::
