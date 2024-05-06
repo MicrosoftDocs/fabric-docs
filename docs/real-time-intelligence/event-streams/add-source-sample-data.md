@@ -103,7 +103,7 @@ To learn how to add other sources to an eventstream, see the following articles:
 
 To add a destination to an eventstream, see the following articles:
 
-- [Route events to destinations ](add-manage-eventstream-destinations-enhanced.md)
+- [Route events to destinations ](add-manage-eventstream-destinations.md)
 - [Custom app destination](add-destination-custom-app.md)
 - [Derived stream destination](add-destination-derived-stream.md)
 - [KQL Database destination](add-destination-kql-database.md)
