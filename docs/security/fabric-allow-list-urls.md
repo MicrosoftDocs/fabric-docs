@@ -52,9 +52,9 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |**Required**: Portal|*.powerbi.com|TCP 443|
 |**Required**: Backend APIs for Portal|*.pbidedicated.windows.net|TCP 443|
 |**Required**: Cloud pipelines|No specific endpoint is required|N/A|
-|**Optional**: On-premesis data gateway login|\*.login.windows.net<br>login.live.com<br>aadcdn.msauth.net<br>login.microsoftonline.com<br>\*.microsoftonline-p.com<br>[See the documentation for Adjust communication settings for the on-premises data gateway](/data-integration/gateway/service-gateway-communication#ports)|<br><br><br>TCP 443<br>TCP 443<br>|
-|**Optional**: On-premesis data gateway communication|*.servicebus.windows.net|TCP 443<br>TCP 5671-5672<br>TCP 9350-9354|
-|**Optional**: On-premesis data gateway pipelines|*.frontend.clouddatahub.net<br>(User can use service tag DataFactory or DataFactoryManagement)|TCP 443<br>|
+|**Optional**: On-premises data gateway login|\*.login.windows.net<br>login.live.com<br>aadcdn.msauth.net<br>login.microsoftonline.com<br>\*.microsoftonline-p.com<br>[See the documentation for Adjust communication settings for the on-premises data gateway](/data-integration/gateway/service-gateway-communication#ports)|<br><br><br>TCP 443<br>TCP 443<br>|
+|**Optional**: On-premises data gateway communication|*.servicebus.windows.net|TCP 443<br>TCP 5671-5672<br>TCP 9350-9354|
+|**Optional**: On-premises data gateway pipelines|*.frontend.clouddatahub.net<br>(User can use service tag DataFactory or DataFactoryManagement)|TCP 443<br>|
 |**For inbound connections**|No specific endpoints other than the customer's data store endpoints required in pipelines and behinds the firewall.<br>(User can use service tag DataFactory, regional tag is supported, like DataFactory.WestUs)|
 
 ## Dataflow
