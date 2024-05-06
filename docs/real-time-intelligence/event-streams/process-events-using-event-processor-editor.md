@@ -80,7 +80,7 @@ The Edit mode includes a canvas and lower pane where you can:
 - **Right editing** pane (two in the image): This pane allows you to configure the selected node or view stream name. 
 - **Bottom pane with data preview and authoring error tabs** (three in the image): In this pane, preview the test result in a selected node with Test result tab. The Authoring errors tab lists any incomplete or incorrect configuration in the operation nodes. 
 
-### Supported Node Types and Examples 
+### Supported node types and examples 
 
 Here are the destination types that support to add operators before ingestion: 
 
