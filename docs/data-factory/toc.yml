@@ -702,7 +702,7 @@
   - name: Data gateway
     items:
     - name: On-premises and VNet data gateways docs
-      href: /data-integration/gateway?toc=/fabric/data-factory/toc.json
+      href: /data-integration/gateway?toc=/fabric/data-factory/toc.json&bc=/fabric/breadcrumb/toc.json
       items:
       - name: On-premises data gateways docs
         items:
@@ -717,53 +717,53 @@
       - name: How to
         items:
         - name: "Install gateways"
-          href: /data-integration/gateway/service-gateway-install.md
+          href: /data-integration/gateway/service-gateway-install?toc=/fabric/data-factory/toc.json 
         - name: "Configure gateways"
           items:
           - name: "Use the on-premises data gateway app"
-            href: /data-integration/gateway/service-gateway-app.md
+            href: /data-integration/gateway/service-gateway-app?toc=/fabric/data-factory/toc.json 
           - name: "Configure proxy settings"
-            href: /data-integration/gateway/service-gateway-proxy.md
+            href: /data-integration/gateway/service-gateway-proxy?toc=/fabric/data-factory/toc.json 
           - name: "Step by step guide on configuring your proxy settings"
-            href: /data-integration/gateway/service-gateway-proxy-setup-guide.md
+            href: /data-integration/gateway/service-gateway-proxy-setup-guide?toc=/fabric/data-factory/toc.json 
           - name: "Change the gateway service account"
-            href: /data-integration/gateway/service-gateway-service-account.md
+            href: /data-integration/gateway/service-gateway-service-account?toc=/fabric/data-factory/toc.json 
           - name: "Set the data center region"
-            href: /data-integration/gateway/service-gateway-data-region.md
+            href: /data-integration/gateway/service-gateway-data-region?toc=/fabric/data-factory/toc.json 
           - name: "Set the Azure Relay"
-            href: /data-integration/gateway/service-gateway-azure-relay.md
+            href: /data-integration/gateway/service-gateway-azure-relay?toc=/fabric/data-factory/toc.json 
           - name: "Adjust communication settings"
-            href: /data-integration/gateway/service-gateway-communication.md
+            href: /data-integration/gateway/service-gateway-communication?toc=/fabric/data-factory/toc.json 
           - name: "Configure the gateway log file"
-            href: /data-integration/gateway/service-gateway-log-files.md
+            href: /data-integration/gateway/service-gateway-log-files?toc=/fabric/data-factory/toc.json 
           - name: "Adjust performance based on CPU"
-            href: /data-integration/gateway/service-gateway-performance-cpu.md
+            href: /data-integration/gateway/service-gateway-performance-cpu?toc=/fabric/data-factory/toc.json 
           - name: "Configure gateway disk space"
-            href: /data-integration/gateway/service-gateway-configure-disk-space.md
+            href: /data-integration/gateway/service-gateway-configure-disk-space?toc=/fabric/data-factory/toc.json 
           - name: "Configure tenant registration settings"
-            href: /data-integration/gateway/service-gateway-tenant-registration.md
+            href: /data-integration/gateway/service-gateway-tenant-registration?toc=/fabric/data-factory/toc.json 
         - name: "Manage gateways"
           items:
           - name: "Manage in a service"
-            href: /data-integration/gateway/service-gateway-manage.md
+            href: /data-integration/gateway/service-gateway-manage?toc=/fabric/data-factory/toc.json 
           - name: "Manage security roles"
-            href: /data-integration/gateway/manage-security-roles.md
+            href: /data-integration/gateway/manage-security-roles?toc=/fabric/data-factory/toc.json 
           - name: "Manage high availability clusters and load balancing"
-            href: /data-integration/gateway/service-gateway-high-availability-clusters.md
+            href: /data-integration/gateway/service-gateway-high-availability-clusters?toc=/fabric/data-factory/toc.json 
           - name: "Update an on-premises data gateway"
-            href: /data-integration/gateway/service-gateway-update.md
+            href: /data-integration/gateway/service-gateway-update?toc=/fabric/data-factory/toc.json 
           - name: "Migrate, restore, or take over a gateway"
-            href: /data-integration/gateway/service-gateway-migrate.md
+            href: /data-integration/gateway/service-gateway-migrate?toc=/fabric/data-factory/toc.json 
           - name: "Restart a gateway"
-            href: /data-integration/gateway/service-gateway-restart.md
+            href: /data-integration/gateway/service-gateway-restart?toc=/fabric/data-factory/toc.json 
           - name: "Change a recovery key"
-            href: /data-integration/gateway/service-gateway-recovery-key.md
+            href: /data-integration/gateway/service-gateway-recovery-key?toc=/fabric/data-factory/toc.json 
         - name: "Plan, scale, and maintain business-critical gateway clusters"
-          href: /data-integration/gateway/plan-scale-maintain.md
+          href: /data-integration/gateway/plan-scale-maintain?toc=/fabric/data-factory/toc.json 
         - name: "Troubleshoot the on-premises data gateway"
-          href: /data-integration/gateway/service-gateway-tshoot.md
+          href: /data-integration/gateway/service-gateway-tshoot?toc=/fabric/data-factory/toc.json 
         - name: "Monitor and optimize gateway performance"
-          href: /data-integration/gateway/service-gateway-performance.md
+          href: /data-integration/gateway/service-gateway-performance?toc=/fabric/data-factory/toc.json 
       - name: Reference
         items:
         - name: "PowerShell support for gateway clusters"
