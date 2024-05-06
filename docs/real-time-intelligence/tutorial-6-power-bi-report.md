@@ -57,11 +57,18 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
 1. Select **Continue**.
 1. Select **Open the file in Power BI to view, edit, and get a shareable link.**
 
+## Interact with the report
+
+When you open the Power BI report, you can add or edit visualizations. You can also interact with the visualizations. For example, selecting one of the *Neighborhood* columns on one visualization will highlight the values of that neighborhood in the other visualizations.
+
+:::image type="content" source="media/tutorial/cross-highlight.gif" alt-text="GIF showing how cross-highlighting works in Power BI report.":::
+
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
 
 * [Visualize data in a Power BI report](create-powerbi-report.md)
+* [Cross-filter and cross-highlight visuals](/power-bi/create-reports/power-bi-reports-filters-and-highlighting#cross-filter-and-cross-highlight-visuals)
 
 ## Next step
 
