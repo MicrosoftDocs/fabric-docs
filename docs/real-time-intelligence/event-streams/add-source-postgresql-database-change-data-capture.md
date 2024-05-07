@@ -21,6 +21,7 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - Registered user access in the PostgreSQL database.
+- Your PostgreSQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - CDC enabled in the PostgreSQL database.
 
   If you have Azure Database for PostgreSQL, follow the steps in the next section to enable CDC. For detailed information, see [Logical replication and logical decoding - Azure Database for PostgreSQL - Flexible Server](/azure/postgresql/flexible-server/concepts-logical).
@@ -76,7 +77,7 @@ To enable CDC in your Azure Database for PostgreSQL, follow these steps based on
 
 [!INCLUDE [postgresql-database-cdc-connector](./includes/postgresql-database-cdc-source-connector.md)]
 
-You can see the PostgreSQL DB CDC source added to your eventstream in **Edit mode**.
+You can see the PostgreSQL Database CDC source added to your eventstream in **Edit mode**.
 
 To implement this newly added PostgreSQL DB CDC source, select **Publish**. After you complete these steps, your PostgreSQL DB CDC source is available for visualization in the **Live view**.
 
