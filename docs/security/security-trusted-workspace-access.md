@@ -208,25 +208,54 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the storage account you want to access with Microsoft Fabric"
+            }
+        },
+        "sku": {
+            "type": "string",
+            "allowedValues": [
+                "Premium_LRS",
+                "Premium_ZRS",
+                "Standard_GRS",
+                "Standard_GZRS",
+                "Standard_LRS",
+                "Standard_RAGRS",
+                "Standard_RAGZRS",
+                "Standard_ZRS"
+            ],
+            "metadata": {
+                "description": "The SKU of the storage account. Make sure to match your current configuration so as to not change your replication behavior. "
+            }
+        },
+        "workspaceId": {
+            "type": "string",
+            "metadata": {
+                "description": "The resource ID for your Microsoft Fabric resource. Example: '/subscriptions/<00000000-0000-0000-0000-000000000000>/resourcegroups/<ResourceGroupName>/providers/Microsoft.Fabric/workspaces/<workspace-id>'"
+            }
+        }
+    },
     "resources": [
         {
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2023-01-01",
-            "name": "<storage account name>",
-            "id": "/subscriptions/<subscription id of storage account>/resourceGroups/<resource group name>/providers/Microsoft.Storage/storageAccounts/<storage account name>",
-            "location": "<region>",
+            "name": "[parameters('storageAccountName')]",
+            "location": "[resourceGroup().location]",
             "sku": {
-                "name": "Standard_RAGRS",
-                "tier": "Standard"
+                "name": "[parameters('sku')]"
             },
             "kind": "StorageV2",
             "properties": {
                 "networkAcls": {
                     "resourceAccessRules": [
                         {
-                            "tenantId": "<tenantid>",
-                            "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabric/providers/Microsoft.Fabric/workspaces/<workspace-id>"
-                        }]
+                            "tenantId": "[tenant().id]",
+                            "resourceId": "[parameters('workspaceId')]"
+                        }
+                    ]
                 }
             }
         }
