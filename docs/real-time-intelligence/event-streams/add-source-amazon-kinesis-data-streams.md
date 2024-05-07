@@ -9,11 +9,13 @@ ms.date: 04/24/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Amazon Kinesis Data Streams source to an eventstream
+# Add Amazon Kinesis Data Streams source to an eventstream (preview)
 
 This article shows you how to add Amazon Kinesis Data Streams source to an eventstream.
 
 [Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/) is a massively scalable, highly durable data ingestion and processing service optimized for streaming data. By integrating Amazon Kinesis Data Streams as a source within your eventstream, you can seamlessly process real-time data streams before routing them to multiple destinations within Fabric.
+
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
 ## Prerequisites
 

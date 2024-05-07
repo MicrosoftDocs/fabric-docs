@@ -21,6 +21,8 @@ If you want to use enhanced capabilities that are in preview, see the content in
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 ## Add sample data as a source
 
 Follow these steps to add a sample data source:

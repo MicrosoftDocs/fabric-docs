@@ -9,7 +9,7 @@ ms.date: 04/26/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Fabric workspace item events to an eventstream
+# Add Fabric workspace item events to an eventstream (preview)
 
 This article shows you how to add Fabric workspace item event source to an eventstream.
 
@@ -27,6 +27,8 @@ Fabric event streams supports the following Fabric workspace events:
 - Microsoft.Fabric.ItemDeleteFailed
 - Microsoft.Fabric.ItemReadSucceeded
 - Microsoft.Fabric.ItemReadFailed
+
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
 ## Prerequisites
 

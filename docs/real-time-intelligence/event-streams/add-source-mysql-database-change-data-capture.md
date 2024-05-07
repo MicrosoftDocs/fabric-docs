@@ -9,7 +9,7 @@ ms.date: 04/29/2024
 ms.search.form: Source and Destination
 ---
 
-# Add MySQL Database CDC source to an eventstream
+# Add MySQL Database CDC source to an eventstream (preview)
 
 >[!NOTE]
 >This article contains references to the term `SLAVE`, a term that Microsoft no longer uses. When the term is removed from the software, we'll remove it from this article.
@@ -18,6 +18,7 @@ This article shows you how to add an Azure Database for MySQL Change Data Captur
 
 You can specify the tables to monitor, and the eventstream records any future row-level changes to the tables. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations in Fabric for further processing or analysis.
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
 ## Prerequisites
 
