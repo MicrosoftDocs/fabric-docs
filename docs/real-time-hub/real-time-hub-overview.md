@@ -38,6 +38,9 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 
 A unified Get Events experience makes it effortless to connect from these sources into components in Real-Time hub like eventstream, KQL database, and Data Activator.  
 
+## Single copy of events/streams to be consumed by real-time analytics engines**
+As data flows into Real-Time hub, you can create a stream out of it. Once the stream is created, the data is stored in a canonical format. This format is universally accessible to all processing engines. No need for redundant copies of data. Real-Time hub ensures efficiency and consistency.
+
 ## Features
 
 - **Streams and tables**
@@ -52,9 +55,6 @@ A unified Get Events experience makes it effortless to connect from these source
 
     Events that are generated via Fabric artifacts and external sources, are made available in Fabric to support event-driven scenarios like real-time alerting and triggering downstream actions. You can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. Users can also send these events to other destinations via Fabric Event Streams. 
 
-- **Single copy of events/streams to be consumed by real-time analytics engines**
- 
-    As data flows into Real-Time hub, you can create a stream out of it. Once the stream is created, the data is stored in a canonical format. This format is universally accessible to all processing engines. No need for redundant copies of data. Real-Time hub ensures efficiency and consistency.
 
 ## Next step
 See [Get started with Real-Time hub.](get-started-real-time-hub.md)
