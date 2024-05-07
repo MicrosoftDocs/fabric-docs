@@ -699,6 +699,114 @@
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
     - name: Fabric Dataflows for ADF Mapping Data Flow users
       href: guide-to-dataflows-for-mapping-data-flow-users.md
+  - name: Data gateway
+    items:
+    - name: On-premises data gateways docs
+      items:
+      - name: "What is an on-premises data gateway?"
+        href: /data-integration/gateway/service-gateway-onprem?toc=/fabric/data-factory/toc.json
+      - name: Concepts
+        items:
+        - name: "On-premises data gateway architecture"
+          href: /data-integration/gateway/service-gateway-onprem-indepth?toc=/fabric/data-factory/toc.json         
+        - name: "On-premises data gateway FAQ"
+          href: /data-integration/gateway/service-gateway-onprem-faq?toc=/fabric/data-factory/toc.json
+      - name: How to
+        items:
+        - name: "Install gateways"
+          href: /data-integration/gateway/service-gateway-install?toc=/fabric/data-factory/toc.json 
+        - name: "Configure gateways"
+          items:
+          - name: "Use the on-premises data gateway app"
+            href: /data-integration/gateway/service-gateway-app?toc=/fabric/data-factory/toc.json 
+          - name: "Configure proxy settings"
+            href: /data-integration/gateway/service-gateway-proxy?toc=/fabric/data-factory/toc.json 
+          - name: "Step by step guide on configuring your proxy settings"
+            href: /data-integration/gateway/service-gateway-proxy-setup-guide?toc=/fabric/data-factory/toc.json 
+          - name: "Change the gateway service account"
+            href: /data-integration/gateway/service-gateway-service-account?toc=/fabric/data-factory/toc.json 
+          - name: "Set the data center region"
+            href: /data-integration/gateway/service-gateway-data-region?toc=/fabric/data-factory/toc.json 
+          - name: "Set the Azure Relay"
+            href: /data-integration/gateway/service-gateway-azure-relay?toc=/fabric/data-factory/toc.json 
+          - name: "Adjust communication settings"
+            href: /data-integration/gateway/service-gateway-communication?toc=/fabric/data-factory/toc.json 
+          - name: "Configure the gateway log file"
+            href: /data-integration/gateway/service-gateway-log-files?toc=/fabric/data-factory/toc.json 
+          - name: "Adjust performance based on CPU"
+            href: /data-integration/gateway/service-gateway-performance-cpu?toc=/fabric/data-factory/toc.json 
+          - name: "Configure gateway disk space"
+            href: /data-integration/gateway/service-gateway-configure-disk-space?toc=/fabric/data-factory/toc.json 
+          - name: "Configure tenant registration settings"
+            href: /data-integration/gateway/service-gateway-tenant-registration?toc=/fabric/data-factory/toc.json 
+        - name: "Manage gateways"
+          items:
+          - name: "Manage in a service"
+            href: /data-integration/gateway/service-gateway-manage?toc=/fabric/data-factory/toc.json 
+          - name: "Manage security roles"
+            href: /data-integration/gateway/manage-security-roles?toc=/fabric/data-factory/toc.json 
+          - name: "Manage high availability clusters and load balancing"
+            href: /data-integration/gateway/service-gateway-high-availability-clusters?toc=/fabric/data-factory/toc.json 
+          - name: "Update an on-premises data gateway"
+            href: /data-integration/gateway/service-gateway-update?toc=/fabric/data-factory/toc.json 
+          - name: "Migrate, restore, or take over a gateway"
+            href: /data-integration/gateway/service-gateway-migrate?toc=/fabric/data-factory/toc.json 
+          - name: "Restart a gateway"
+            href: /data-integration/gateway/service-gateway-restart?toc=/fabric/data-factory/toc.json 
+          - name: "Change a recovery key"
+            href: /data-integration/gateway/service-gateway-recovery-key?toc=/fabric/data-factory/toc.json 
+        - name: "Plan, scale, and maintain business-critical gateway clusters"
+          href: /data-integration/gateway/plan-scale-maintain?toc=/fabric/data-factory/toc.json 
+        - name: "Troubleshoot the on-premises data gateway"
+          href: /data-integration/gateway/service-gateway-tshoot?toc=/fabric/data-factory/toc.json 
+        - name: "Monitor and optimize gateway performance"
+          href: /data-integration/gateway/service-gateway-performance?toc=/fabric/data-factory/toc.json 
+      - name: Reference
+        items:
+        - name: "PowerShell support for gateway clusters"
+          href: /data-integration/gateway/service-gateway-powershell-support?toc=/fabric/data-factory/toc.json 
+      - name: Resources
+        items:
+        - name: "Supported monthly updates"
+          href: /data-integration/gateway/service-gateway-monthly-updates?toc=/fabric/data-factory/toc.json 
+    - name: Virtual network data gateways docs
+      items:
+      - name: "What is a virtual network data gateway?"
+        href: /data-integration/vnet/overview?toc=/fabric/data-factory/toc.json 
+      - name: Concepts
+        items:
+        - name: "What is a virtual network?"
+          href: /data-integration/vnet/what-is?toc=/fabric/data-factory/toc.json 
+        - name: Virtual network data gateway architecture
+          href: /data-integration/vnet/data-gateway-architecture?toc=/fabric/data-factory/toc.json 
+        - name: "Virtual network data gateways business model"
+          href: /data-integration/vnet/data-gateway-business-model?toc=/fabric/data-factory/toc.json 
+      - name: How to
+        items:
+        - name: Create virtual network data gateways
+          href: /data-integration/vnet/create-data-gateways?toc=/fabric/data-factory/toc.json 
+        - name: Manage virtual network data gateways
+          href: /data-integration/vnet/manage-data-gateways?toc=/fabric/data-factory/toc.json 
+        - name: Use virtual network data gateway in Fabric with Dataflows Gen 2
+          href: /data-integration/vnet/use-data-gateways-dfgen2-fabric?toc=/fabric/data-factory/toc.json 
+        - name: Use virtual network data gateway in Power BI
+          href: /data-integration/vnet/use-data-gateways-sources-power-bi?toc=/fabric/data-factory/toc.json 
+        - name: Use virtual network data gateway in Power Platform dataflows
+          href: /data-integration/vnet/data-gateway-power-platform-dataflows?toc=/fabric/data-factory/toc.json 
+        - name: Manage virtual network data gateway high availability and load balancing
+          href: /data-integration/vnet/high-availability-load-balancing?toc=/fabric/data-factory/toc.json 
+        - name: Manage virtual network security roles
+          href: /data-integration/vnet/manage-vnet-security-roles?toc=/fabric/data-factory/toc.json 
+        - name: Troubleshoot a virtual network data gateway network
+          href: /data-integration/vnet/troubleshoot-data-gateway?toc=/fabric/data-factory/toc.json 
+        - name: Virtual network data gateway FAQs
+          href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json 
+        - name: Download diagnostics logs
+          href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json 
+  - name: Best practices
+    items:
+    - name: Copy performance for SQL databases
+      href: copy-performance-sql-databases.md          
   - name: FAQ and Troubleshooting
     items:
     - name: Frequently asked questions
