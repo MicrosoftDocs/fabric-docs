@@ -59,22 +59,22 @@ items:
     items:
     - name: How to use end-to-end AI samples
       href: use-ai-samples.md
-    - name: Customer churn prediction
-      href: customer-churn.md
     - name: Book recommendation
       href: retail-recommend-model.md
+    - name: Customer churn prediction
+      href: customer-churn.md
     - name: Fraud detection
       href: fraud-detection.md
-    - name: Time series forecasting
-      href: time-series-forecasting.md
-    - name: Text (title genre) classification
-      href: title-genre-classification.md
-    - name: Uplift modeling
-      href: uplift-modeling.md
     - name: Machine failure prediction
       href: predictive-maintenance.md
     - name: Sales forecasting
       href: sales-forecasting.md
+    - name: Text (title genre) classification
+      href: title-genre-classification.md
+    - name: Time series forecasting
+      href: time-series-forecasting.md
+    - name: Uplift modeling
+      href: uplift-modeling.md
   - name: R tutorials
     items:
     - name: Customer churn
@@ -142,7 +142,7 @@ items:
 - name: Model scoring
   items:   
     - name: Direct Lake mode and PBI reporting
-      href: ../get-started/lakehouse-pbi-reporting.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+      href: ../get-started/lakehouse-power-bi-reporting.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Score models with PREDICT
       href: model-scoring-predict.md
 - name: Secure and manage ML items

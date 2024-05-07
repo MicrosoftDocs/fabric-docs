@@ -1,17 +1,19 @@
 ---
 title: Warehouse performance guidelines
 description: This article contains a list of performance guidelines for warehouse.
-author: XiaoyuMSFT
-ms.author: xiaoyul
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: xiaoyul
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
 ---
 # Synapse Data Warehouse in Microsoft Fabric performance guidelines
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 These are guidelines to help you understand performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. In this article, you'll find guidance and important articles to focus on. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is a SaaS platform where activities like workload management, concurrency, and storage management are managed internally by the platform. In addition to this internal performance management, you can still improve your performance by developing performant queries against well-designed warehouses.
 
@@ -19,9 +21,9 @@ These are guidelines to help you understand performance of your [!INCLUDE [fabri
 
 [Caching with local SSD and memory](caching.md) is automatic. The first 1-3 executions of a query perform noticeably slower than subsequent executions. If you are experiencing cold run performance issues, here are a couple of things you can do that can improve your cold run performance:
 
-- If the first run's performance is crucial, try manually creating statistics. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance. However, if the first run's performance is not critical, you may rely on automatic statistics that will be generated in the first query and will continue to be leveraged in subsequent runs (so long as underlying data does not change significantly).
+- If the first run's performance is crucial, try manually creating statistics. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance. However, if the first run's performance is not critical, you can rely on automatic statistics that will be generated in the first query and will continue to be leveraged in subsequent runs (so long as underlying data does not change significantly).
 
-- If using Power BI, use [Direct Lake](../get-started/lakehouse-pbi-reporting.md) mode where possible.
+- If using Power BI, use [Direct Lake](../get-started/lakehouse-power-bi-reporting.md) mode where possible.
  
 ## Metrics for monitoring performance
 
