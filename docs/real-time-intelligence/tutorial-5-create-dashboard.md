@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 4: Set an alert on your event stream](tutorial-4-set-alert.md).
 
-In this part of the tutorial, you'll learn how to create a Real-Time dashboard in Real-Time Intelligence. You'll create a KQL query, create a Real-Time dashboard, add a new tile to the dashboard, and explore the data visually by adding an aggregation.
+In this part of the tutorial, you learn how to create a Real-Time dashboard in Real-Time Intelligence. You create a KQL query, create a Real-Time dashboard, add a new tile to the dashboard, and explore the data visually by adding an aggregation.
 
 ## Create a Real-Time dashboard
 

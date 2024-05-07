@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md).
 
-In this part of the tutorial, you'll browse the Real-Time hub, create an event stream, transform events, and create a destination to send the transformed events to a KQL database.
+In this part of the tutorial, you browse the Real-Time hub, create an event stream, transform events, and create a destination to send the transformed events to a KQL database.
 
 ## Create an event stream
 

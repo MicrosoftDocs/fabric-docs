@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Query streaming data in a KQL queryset](tutorial-3-query-data.md).
 
-In this part of the tutorial, you'll learn how to set an alert on your event stream to receive a notification in Teams when the number of bikes falls below a certain threshold.
+In this part of the tutorial, you learn how to set an alert on your event stream to receive a notification in Teams when the number of bikes falls below a certain threshold.
 
 ## Set an alert on the event stream
 
@@ -45,7 +45,7 @@ In this part of the tutorial, you'll learn how to set an alert on your event str
 
 1. Select **Create**.
 
-    The alert is set and you'll receive a notification in Teams when the condition is met.
+    The alert is set and you receive a notification in Teams when the condition is met.
 
 ## Related content
 

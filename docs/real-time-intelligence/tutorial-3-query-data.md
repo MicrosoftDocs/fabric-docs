@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data in the Real-Time Hub](tutorial-2-get-real-time-events.md).
 
-In this part of the tutorial, you'll learn how to query your streaming data in a [KQL queryset](create-query-set.md). You'll create a KQL queryset, write a KQL query, and visualize the data in a time chart.
+In this part of the tutorial, you learn how to query your streaming data in a [KQL queryset](create-query-set.md). You create a KQL queryset, write a KQL query, and visualize the data in a time chart.
 
 ## Create a KQL queryset
 
@@ -28,7 +28,7 @@ In this part of the tutorial, you'll learn how to query your streaming data in a
 
 1. Enter the name for the KQL Queryset: *TutorialQueryset*.
 1. Select **Create**.
-    A new KQL queryset is created and opens in the KQL Queryset editor. It is connected to the *Tutorial* database as a data source, and is prepopulated with several general queries.
+    A new KQL queryset is created and opens in the KQL Queryset editor. It's connected to the *Tutorial* database as a data source, and is prepopulated with several general queries.
 
 ## Write a KQL query
 
@@ -41,7 +41,7 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
     | take 10
     ```
 
-    This query returns ten arbitrary records from the table. What information about the data can you see at a glance? Notice that one of the columns is named *No_Bikes*. This column contains the number of empty docks at a bike station. This is a field you may be concerned with if you are tracking the availability of bikes at a station.
+    This query returns 10 arbitrary records from the table. What information about the data can you see at a glance? Notice that one of the columns is named *No_Bikes*. This column contains the number of empty docks at a bike station. This is a field you may be concerned with if you're tracking the availability of bikes at a station.
 
 1. To see the data in a more visual way, use the **render** operator. Run the following query:
 
@@ -56,7 +56,7 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
 
     :::image type="content" source="media/tutorial/empty-docks-timechart.png" alt-text="Screenshot of empty docks timechart in Real-Time Intelligence.":::
 
-In the next step, you will set an alert on this field to notify you if the number of bikes falls below a certain threshold.
+In the next step, you'll set an alert on this field to notify you if the number of bikes falls below a certain threshold.
 
 ## Related content
 

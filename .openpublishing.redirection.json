@@ -361,6 +361,31 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-2-event-streams.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-2-get-real-time-events",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-get-historical-data.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-3-query-data",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-explore.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-4-set-alert",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-advanced-kql-queries.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-build-report.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-6-pwer-bi-report",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/data-factory/known-issue-gen1-admin-switch.md",
           "redirect_url": "/fabric/get-started/known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2",
           "redirect_document_id": false
