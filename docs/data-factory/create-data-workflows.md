@@ -119,7 +119,6 @@ Specify the git repository you want to sync your Data workflows with.
    :::image type="content" source="media/data-workflows/start-apache-airflow.png" alt-text="Screenshot to start Apache Airflow Project.":::
 
 ## Related Content
-## Related Content
 
 * [Install Private Package in Data workflows](data-workflows-install-private-package.md).
 * [Install Private Package in Data workflows](data-workflows-install-private-package.md).

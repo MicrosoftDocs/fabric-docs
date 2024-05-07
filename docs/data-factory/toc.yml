@@ -811,7 +811,6 @@
     items:
       - name: Concepts
         href: data-workflows-concepts.md
-        href: data-workflows-concepts.md
       - name: How-to
         items:
           - name: Install a Private Package

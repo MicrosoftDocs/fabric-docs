@@ -1,7 +1,6 @@
 ---
 title: Enable Azure Key Vault for Apache Airflow Backend
 description: This article explains how to enable Azure Key Vault as the secret backend in Data workflows.
-description: This article explains how to enable Azure Key Vault as the secret backend in Data workflows.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain

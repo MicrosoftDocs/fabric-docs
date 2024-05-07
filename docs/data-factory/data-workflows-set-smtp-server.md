@@ -1,7 +1,5 @@
 ---
-title: Set up SMTP server in Data workflows.
-description: This tutorial helps to set up smtp server in Data workflows.
-title: Set up SMTP server in Data workflows.
+title: Set up SMTP server in Data workflows
 description: This tutorial helps to set up smtp server in Data workflows.
 ms.reviewer: xupxhou
 ms.author: abnarain
@@ -10,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/25/2024
 ---
 
-# Set up SMTP Server in Data workflows.
+# Set up SMTP Server in Data workflows
 
 ## Introduction
 
@@ -31,9 +29,7 @@ To use email notifications and alerts, you need to set up a (Simple Mail Transfe
 * One or more email addresses that you want to receive the notifications and alerts. These can be your own email addresses, or the email addresses of your team members, stakeholders, or clients.
 
 ## Set up the environment variables
-## Set up the environment variables
 
-* Once you have the prerequisites, you can configure the Data workflows to use your SMTP server or service. Edit the `Airflow configurations` section, with the following fields:
 * Once you have the prerequisites, you can configure the Data workflows to use your SMTP server or service. Edit the `Airflow configurations` section, with the following fields:
 
     * **AIRFLOW__SMTP__SMTP_HOST**: The hostname or IP address of your SMTP server or service.
@@ -58,12 +54,11 @@ To use email notifications and alerts, you need to set up a (Simple Mail Transfe
 
     :::image type="content" source="media/data-workflows/airflow-smtp-configs.png" alt-text="Screenshot presents airflow configs for smtp.":::
 
+## Example: A DAG that sends an email on the DAG Failure
 
-## Example: A DAG that sends an email on the DAG Failure.
-
-    ```python
+ ```python
     from airflow import DAG
-    rom airflow.operators.bash_operator import BashOperator
+    from airflow.operators.bash_operator import BashOperator
     from airflow.utils.email import send_emailfrom datetime import datetime
 
 
@@ -88,10 +83,9 @@ To use email notifications and alerts, you need to set up a (Simple Mail Transfe
         )
 
     fail_task
+```
 
-    ```
-
-### Sample Email received from SMTP server.
+### Sample Email received from SMTP server
 
 The email contains the following information:
 * Number of Attempts
@@ -104,7 +98,5 @@ The email contains the following information:
     :::image type="content" source="media/data-workflows/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::
 
 ## Related Content
-## Related Content
 
-* Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).
 * Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).

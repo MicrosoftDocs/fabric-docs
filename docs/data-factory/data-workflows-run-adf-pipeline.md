@@ -30,11 +30,11 @@ To get started, you must complete the following prerequisites:
 
   :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
 
-- [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md)
+- [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md).
 
-- [Create the data pipeline in Azure Data Factory.](https://learn.microsoft.com/azure/data-factory/tutorial-copy-data-portal)
+- [Create the data pipeline in Azure Data Factory](/azure/data-factory/tutorial-copy-data-portal).
 
-- [Create the Service Principal](https://learn.microsoft.com/entra/identity-platform/howto-create-service-principal-portal).
+- [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal).
 
 - To run Azure Data Factory (ADF) pipeline, you add the service principal as a `contributor` to the ADF instance where you're running the pipeline.
 

@@ -8,8 +8,7 @@ ms.topic: how-to
 ms.date: 03/25/2024
 ---
 
-# Add a Kubernetes secret in Data workflows.
-# Add a Kubernetes secret in Data workflows.
+# Add a Kubernetes secret in Data workflows
 
 ## Introduction
 

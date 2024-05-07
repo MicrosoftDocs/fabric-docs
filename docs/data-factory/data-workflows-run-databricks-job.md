@@ -66,7 +66,7 @@ When you install "apache-airflow-providers-databricks" as a requirement in Data 
 
 2. Under Conn ID, locate databricks_default and select the Edit record button.
 
-3. Replace the value in the Host field with the workspace instance name of your Azure Databricks deployment, for example, https://adb-123456789.cloud.databricks.com.
+3. Replace the value in the Host field with the workspace instance name of your Azure Databricks deployment, for example, ```https://adb-123456789.cloud.databricks.com```.
 
 4. In the Password field, enter your Azure Databricks personal access token.
 
