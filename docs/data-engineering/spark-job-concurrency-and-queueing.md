@@ -68,7 +68,7 @@ Learn more about the default starter pool configurations based on the Fabric Cap
 
 ## Job level bursting 
 
-Admins can configure their Spark pools to utilize the max spark cores with burst factor available for the entire capacity. For example a workspace admin having their workspace attached to a F46 Fabric capacity can now configure their Spark pool (Starter pool or Custom pool) to 364 Spark VCores, where the max nodes of Starter pools can be set to 48 or admins can set up an XX Large node size pool with 6 max nodes. 
+Admins can configure their Spark pools to utilize the max spark cores with burst factor available for the entire capacity. For example a workspace admin having their workspace attached to a F64 Fabric capacity can now configure their Spark pool (Starter pool or Custom pool) to 384 Spark VCores, where the max nodes of Starter pools can be set to 48 or admins can set up an XX Large node size pool with 6 max nodes. 
 
 ## Related content
 
