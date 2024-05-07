@@ -36,19 +36,7 @@ In this article, you learn about the event sources that you can add to an events
 
 Fabric event streams with enhanced capabilities support the following sources. Each article provides details and instructions for adding specific sources.
 
-- [Azure Event Hubs](add-source-azure-event-hubs.md)
-- [Azure IoT Hub](add-source-azure-iot-hub.md)
-- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
-- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
-- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
-- [Azure Cosmos DB CDC](add-source-azure-cosmos-db-change-data-capture.md)
-- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md)
-- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
-- [Confluent Cloud Kafka](add-source-confluent-kafka.md)
-- [Fabric workspace events](add-source-fabric-workspace.md)
-- [Azure blob storage events](add-source-azure-blob-storage.md)
-- [Sample data](add-source-sample-data.md)
-- [Custom endpoint](add-source-custom-app.md) 
+[!INCLUDE [supported-sources](./includes/supported-sources-enhanced.md)]
 
 ## Related content
 
@@ -68,12 +56,6 @@ Before you start, you must complete the following prerequisites:
 
 The following sources are supported by Fabric event streams. Use links in the table to navigate to articles that provide more details about adding specific sources.
 
-| Sources          | Description |
-| --------------- | ---------- |
-| [Azure Event Hubs](add-source-azure-event-hubs.md) | If you have an Azure event hub, you can ingest event hub data into Microsoft Fabric using Eventstream.  |
-| [Azure IoT Hub](add-source-azure-iot-hub.md) | If you have an Azure IoT hub, you can ingest IoT data into Microsoft Fabric using Eventstream.  |
-| [Sample data](add-source-sample-data.md) | You can choose **Bicycles**, **Yellow Taxi**, or **Stock Market events** as a sample data source to test the data ingestion while setting up an eventstream. |
-| [Custom App](add-source-custom-app.md) | The custom app feature allows your applications or Kafka clients to connect to Eventstream using a connection string, enabling the smooth ingestion of streaming data into Eventstream. |
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

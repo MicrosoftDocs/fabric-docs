@@ -5,34 +5,47 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: overview
-ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.date: 12/05/2023
 ms.search.form: Event Streams Overview
 ---
 
 # Microsoft Fabric event streams - overview
+The event streams feature in the Microsoft Fabric **Real-Time Intelligence** experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an event stream, which is an instance of the **Eventstream** item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. 
 
-The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It's part of the **Real-Time Intelligence** experience. The **eventstream** item you create in the portal is an instance of Fabric event streams. When you create an eventstream, you add event data sources, routing destinations, and the event processor when you need the transformation.
+## Bring events into Fabric
+The event streams feature provides you with various source connectors to fetch event data from the various sources. There are more sources available when you enable **Enhanced capabilities** at the time of creating an event stream. 
 
-## Centralized place for event data
+# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
 
-Everything in Fabric event streams focuses on event data. Capturing, transforming, and routing event data are the essential capabilities of eventstreams. The feature has a scalable infrastructure that the Fabric platform manages on your behalf.
+[!INCLUDE [supported-sources-enhanced](./includes/supported-sources-enhanced.md)]
 
-## Various source connectors
+# [Standard capabilities](#tab/standardcapabilities)
 
-The event streams feature provides you with various source connectors to fetch event data from diverse sources, such as **Sample data**, **Azure Event Hubs** and **Azure IoT Hub**. It also offers **Custom App**, a connection endpoint that enables you to develop your own applications to push event data into your eventstreams with multiple protocols.
+[!INCLUDE [supported-sources](./includes/supported-sources.md)]
 
-## No-code experience
+---
 
-The drag and drop experience gives you an intuitive and easy way to create your event data processing, transforming, and routing logic without writing any code. An end-to-end data flow diagram in an eventstream can provide you with a comprehensive understanding of the data flow and organization.
+## Process events using no-code experience
+The drag and drop experience gives you an intuitive and easy way to create your event data processing, transforming, and routing logic without writing any code. An end-to-end data flow diagram in an event stream can provide you with a comprehensive understanding of the data flow and organization. The event processor editor is a no-code experience that allows you to drag and drop to design the event data processing logic. 
 
-## Multiple destinations
+[!INCLUDE [supported-transformations-enhanced](./includes/supported-transformations-enhanced.md)]
 
-The Fabric event streams feature supports sending data to diverse destinations, such as **Lakehouse**, **KQL Database**, **Reflex**, and **Custom App**. You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without interfering with each other.
+If you enabled **Enhanced capabilities** while creating an event stream, the transformation operations are supported for all destinations. If you didn't, the transformation operations are available only for the Lakehouse and KQL Database (event processing before ingestion) destinations. 
+
+## Route events to destinations
+The Fabric event streams feature supports sending data to the following supported destinations. 
+
+# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+
+[!INCLUDE [supported-destinations-enhanced](./includes/supported-destinations-enhanced.md)]
+
+# [Standard capabilities](#tab/standardcapabilities)
+
+[!INCLUDE [supported-destinations](./includes/supported-destinations.md)]
+
+---
+
+You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without interfering with each other.
 
 :::image type="content" source="./media/overview/eventstream-overview.png" alt-text="Screenshot showing an Eventstream item overview." lightbox="./media/overview/eventstream-overview.png" :::
 
