@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Get events from Azure Event Hubs into Real-Time hub
+# Get events from Azure Event Hubs into Real-Time hub (preview)
 This article describes how to get events from an Azure event hub into Real-Time hub. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]

@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# Explore Microsoft sources in Fabric Real-Time hub
+# Explore Microsoft sources in Fabric Real-Time hub (preview)
 When you navigate to Real-Time hub in Fabric, you see the following three tabs in the user interface (UI). This article covers the **Microsoft sources** tab. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]

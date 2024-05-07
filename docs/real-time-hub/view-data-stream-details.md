@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# View details of data streams in Fabric Real-Time hub
+# View details of data streams in Fabric Real-Time hub (preview)
 You can view details of a data stream by selecting the data stream in the **Data streams** tab of the **Real-Time hub**.  
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]

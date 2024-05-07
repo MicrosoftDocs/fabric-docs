@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# Add MySQL Database CDC as source in Real-Time hub
+# Add MySQL Database CDC as source in Real-Time hub (preview)
 This article describes how to add MySQL Database Change Data Capture (CDC) as an event source in Fabric Real-Time hub. 
 
 The Azure MySQL Database Change Data Capture (CDC) connector allows you to capture a snapshot of the current data in an Azure MySQL database. You specify the tables to be monitored and get alerted when any subsequent row-level changes to the tables. Once the changes are captured in a stream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis. 
