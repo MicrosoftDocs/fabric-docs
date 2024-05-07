@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/21/2024
+ms.date: 05/07/2024
 ms.search.form: KQL Database
 ---
 # Create a KQL database
@@ -23,9 +23,9 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
 ## Create a new KQL database
 
-1. Select **New** > **KQL Database**.
+1. In the Event house explorer, under **KQL Databases**, select **New database +**.
 
-    :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Real-Time Intelligence workspace that shows the dropdown menu of the ribbon button titled New. The entry titled KQL Database is highlighted.":::
+    :::image type="content" source="media/create-database/create-database.png" alt-text="Screenshot showing the event house KQL Databases section.":::
 
 1. Enter your database name, then select **Create**.
 
@@ -34,7 +34,7 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
     :::image type="content" source="media/create-database/new-database.png" alt-text="Screenshot of the New KQL Database window showing the database name. The Create button is highlighted.":::
 
-The KQL database has now been created within the context of the selected workspace.
+The KQL database is created within the context of the selected workspace.
 
 ## Database details
 
@@ -56,7 +56,7 @@ The main page of your KQL database shows an overview of the contents in your dat
 | | Compressed| Total size of compressed data.|
 | | Original size | Total size of uncompressed data.|
 | | Compression ratio | Compression ratio of the data.|
-|**Top tables**|  
+|**Top tables**|
 | | Name | Lists the names of tables in your database. Select a table to see more information.|
 | | Size | Database size in megabytes. The tables are listed in a descending order according to the data size.|
 |**Most active users**|
