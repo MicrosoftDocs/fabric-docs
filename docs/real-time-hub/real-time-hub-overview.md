@@ -52,11 +52,11 @@ In the world of data, Real-Time hub is never empty. Here's why:
 
 - **Fabric events as the nervous system**
 
-    When you perform CRUD (Create, Read, Update, Delete) actions on artifacts, these events are emitted as Fabric events within Real-Time hub. Much like a human nervous system, these events provide vital feedback. You can gauge whether your entire project is functioning correctly based on these events. Even when you visit Real-Time hub for the first time, you see these events. You can subscribe to them, gaining insights into the health and performance of your data ecosystem. 
+    When you perform CRUD (Create, Read, Update, Delete) actions on artifacts, these events are emitted as Fabric events within Real-Time hub. Much like a human nervous system, these events provide vital feedback. You can gauge whether your entire project is functioning correctly based on these events. Even when you visit Real-Time hub for the first time, you see these events. You can subscribe to them, gaining insights into the health and performance of your data ecosystem. Specifically, you can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. You can also send these events to other destinations via Fabric event streams.
 
 - **Single copy of events/streams to be consumed by real-time analytics engines**
  
     As data flows into Real-Time hub, you can create a stream out of it. Once the stream is created, the data is stored in a canonical format. This format is universally accessible to all processing engines. No need for redundant copies of data. Real-Time hub ensures efficiency and consistency.
 
 ## Next step
-See [Get started with Real-Time hub](get-started-real-time-hub.md)
+See [Get started with Real-Time hub.](get-started-real-time-hub.md)

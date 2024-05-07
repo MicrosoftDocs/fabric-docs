@@ -40,7 +40,6 @@ You can connect to these resources and create eventstreams that show up on the *
 
 ## Fabric events tab
 On the **Fabric events** tab, you see the following types of events. 
-
 [!INCLUDE [discrete-event-sources](./includes/discrete-event-sources.md)]
 
 To **explore Fabric events**, see [Explore Fabric events in Real-Time hub](explore-fabric-events.md).
