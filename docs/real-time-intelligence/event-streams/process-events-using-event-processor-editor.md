@@ -22,6 +22,8 @@ Before you start, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 ## Design the event processing with the editor 
 
 To perform stream processing operations on your data streams using a no-code editor, follow these steps: 
