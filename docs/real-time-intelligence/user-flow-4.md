@@ -1,6 +1,6 @@
 ---
 title: Real-Time Intelligence tutorial user flow 4- Explore your data visually with Real-Time Dashboards
-description: Learn about Real-Time Intelligence tutorial user flow 4- Explore your data visually with Real-Time Dashboards in Microsoft Fabric.
+description: Learn about Real-Time Intelligence tutorial user flow 4- Explore your data visually in Real-Time Dashboards in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -11,7 +11,7 @@ ms.date: 05/21/2024
 ms.search.form: Get started
 #customer intent: I want to learn how to explore my data visually with Real-Time Dashboards in Real-Time Intelligence.
 ---
-# User flow 4: Explore your data visually with Real-Time Dashboards
+# User flow 4: Explore your data visually in Real-Time Dashboards
 
 By visually drilling into data, you can identify trends, anomalies, and correlations that might not be immediately apparent. This exploration allows you to gain a more nuanced understanding of the data and optimize your operations, improve their products and services, and gain a competitive advantage.
 
