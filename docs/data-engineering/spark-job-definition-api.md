@@ -127,6 +127,7 @@ payload_data = {
 }
 
 # Make the POST request with Bearer authentication
+sjdCreateUrl = f"https://api.fabric.microsoft.com//v1/workspaces/{workspaceId}/items"
 response = requests.post(sjdCreateUrl, json=payload_data, headers=headers)
 
 ```
