@@ -13,7 +13,7 @@ ms.search.form: Event house,KQL Database, Overview
 ---
 # Event house and KQL Database consumption
 
-[Event houses](create-eventhouse.md) and [KQL databases](create-database.md) operate on a fully managed Kusto engine. With a Event house or KQL database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs. This article explains compute usage reporting of the KQL databases in Microsoft Fabric, including [KustoUpTime](#kustouptime) and [storage](#monitor-onelake-storage).
+[Event houses](create-eventhouse.md) and [KQL databases](create-database.md) operate on a fully managed Kusto engine. With an Event house or KQL database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs. This article explains compute usage reporting of the KQL databases in Microsoft Fabric, including [KustoUpTime](#kustouptime) and [storage](#monitor-onelake-storage).
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
@@ -30,7 +30,7 @@ Capacity is a dedicated set of resources that is available at a given time to be
 
 ## KustoUpTime
 
-**KustoUpTime for an event house** is the number of seconds that your event house is active in relation to the number of virtual cores used by your event house. An autoscale mechanism is used to determine the size of your event house. This mechanism ensures cost and performance optimization based on your usage pattern. An event house with multipe KQL databases attached to it only shows KustoUpTime for the event house item. You will not see usage for the KQL database sub-item.
+**KustoUpTime for an event house** is the number of seconds that your event house is active in relation to the number of virtual cores used by your event house. An autoscale mechanism is used to determine the size of your event house. This mechanism ensures cost and performance optimization based on your usage pattern. An event house with multiple KQL databases attached to it only shows KustoUpTime for the event house item. You will not see usage for the KQL database sub-item.
 
 > For example, an event house with 4 KQL databases using 4 virtual cores that is active for 30 seconds will use 120 seconds of Capacity Units.
 
@@ -55,7 +55,7 @@ The following image shows a sample compute page from monitoring capacity in the 
 Here are some insights you can take from the example:
 
 * The capacity being examined is called *rtafielddemo*.
-* The capacity units for the selected day were used by a single workspaces called *RTA Field Demo*.
+* The capacity units for the selected day were used by a single workspace called *RTA Field Demo*.
 * The *Items* view has been filtered to show both *Event house* and *KQL Database*.
 * Selecting a single item, such as an *Event house item*, breaks down the CU usage by operations.
 * The utilization graph, on the right side of the app, shows nearly 100% CU usage over time. This high utilization can explain query throttling experienced by users and indicates a need to increase the capacity units.
