@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.custom:
     - build-2023
     - ignite-2023
-ms.date: 04/11/2024
+ms.date: 05/07/2024
 ms.search.form: Deployment pipelines operations
 #customer intent: As a developer, I want to learn how to assign a workspace to a deployment pipeline so that I can manage my development process efficiently.
 ---
@@ -66,7 +66,7 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 ## Item pairing
 
-Pairing is the process by which an item in one stage of the deployment pipeline is associated with the same item in the adjacent stage. Pairing is vital for correct deployments. If items aren't paired, even if they appear to be the same, they don't overwrite on a subsequent deployment.
+Pairing is the process by which an item in one stage of the deployment pipeline is associated with the same item in the adjacent stage. If items aren't paired, even if they have the same name and type, they don't overwrite on a subsequent deployment.
 
 <a name="pairing-rules"></a>
 
