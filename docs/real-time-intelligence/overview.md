@@ -92,11 +92,7 @@ Real-Time hub events is a catalog of data in motion, and contains:
     for example: Azure Event Hubs, Azure IoT Hub, Azure SQL DB Change
     Data Capture (CDC), Azure Cosmos DB CDC, PostgreSQL DB CDC.
 
--   **Fabric events**: Fabric workloads raise their own events, called
-    system events, that let you react to changes or new items having
-    been created. All system events that you can subscribe to from
-    Real-Time hub, including Fabric system events and external
-    system events brought in from Azure, Microsoft 365, or other clouds.
+-   **Fabric events**: Event-driven capabilities support real-time notifications and data processing. You can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. You can also send these events to other destinations via Event streams. 
 
 This data is all presented in a readily consumable format and is
 available to all Fabric workloads.

@@ -26,10 +26,9 @@ Specifically, in this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
-> * Create a KQL database
-> * Enable data copy to OneLake
-> * Create an eventstream
-> * Stream data from Eventstream to your KQL database
+> * Set up your environment
+> * Create an event stream
+> * Stream data from event stream to your KQL database
 > * Get additional historical data
 > * Explore data with KQL and SQL
 > * Create a KQL queryset

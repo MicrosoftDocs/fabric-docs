@@ -34,7 +34,7 @@ items:
     href: user-flow-2.md
   - name: "Discover streaming sources from Microsoft"
     href: user-flow-3.md
-  - name: "Explore your data visually with Real-Time Dashboards"
+  - name: "Explore your data visually in Real-Time Dashboards"
     href: user-flow-4.md
   - name: "Trigger Fabric dataflows from the Real-Time hub"
     href: user-flow-5.md 
