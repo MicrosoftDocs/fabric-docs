@@ -15,6 +15,8 @@ The event streams feature in the Microsoft Fabric **Real-Time Intelligence** exp
 ## Bring events into Fabric
 The event streams feature provides you with various source connectors to fetch event data from the various sources. There are more sources available when you enable **Enhanced capabilities** at the time of creating an eventstream. 
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 # [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
 
 [!INCLUDE [supported-sources-enhanced](./includes/supported-sources-enhanced.md)]
@@ -51,6 +53,15 @@ You can attach multiple destinations in an eventstream to simultaneously receive
 
 > [!NOTE]
 > We recommend that you use the Microsoft Fabric event streams feature with at least 4 capacity units ([SKU](../../enterprise/licenses.md#capacity-license): F4)
+
+# Enhanced capabilities (preview)
+There are more features, sources, and destinations available when you enable the **Enhanced capabilities (preview)** option while creating an eventstream. Use the **Enhanced capabilities (preview)** and **Standard capabilties** tabs to learn about additional sources and destinations supported with the enhanced capabilities. 
+
+Here are a few other noteworthy features of Enhanced capabilities (preview):
+
+- [Edit Mode and Live View](edit-publish.md#edit-mode-and-live-view). Explore two distinct modes for visualizing and designing stream processing.
+- [Default and derived streams](create-default-derived-streams.md). Create a continuous flow of streams with the format you design, with an event processor that can be consumed later in Real-Time hub.
+- [Data stream routing based on content](route-events-based-on-content.md). Transform and route your data streams anywhere within Fabric based on the data stream content you designed with the event processor.
 
 ## Related content
 

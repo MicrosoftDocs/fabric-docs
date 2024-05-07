@@ -14,7 +14,7 @@ ms.search.form: Source and Destination
 
 # Add and manage an event source in an eventstream
 
-Once you have created an eventstream, you can connect it to various data sources and destinations. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+Once you have created an eventstream, you can connect it to various data sources and destinations. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
 # [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
