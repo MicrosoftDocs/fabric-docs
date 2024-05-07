@@ -25,7 +25,7 @@ A common use case for invoking Data Factory data pipelines is to trigger a pipel
 
 1. Select **Source** and then **Select events** to select the storage events you wish to listen to in the trigger.
 
-   :::image type="content" source="media/pipeline-storage-event-triggers/connect-azure-blob-storage-events.png" alt-text="Screenshot showing where to connect to Azure Blob Storage events for a Blob Storage account.":::
+   :::image type="content" source="media/pipeline-storage-event-triggers/connect-azure-blob-storage-events.png" lightbox="media/pipeline-storage-event-triggers/connect-azure-blob-storage-events.png" alt-text="Screenshot showing where to connect to Azure Blob Storage events for a Blob Storage account.":::
 
 1. Choose your Azure subscription and Blob Storage account.
 1. A new event stream object is created in your Fabric workspace, so be sure to select the correct workspace under **Stream details**.
