@@ -10,24 +10,12 @@ ms.custom:
 ms.date: 04/24/2024
 ms.search.form: Overview
 ---
----
-title: What is Real-Time Intelligence
-description: Learn about Real-Time Intelligence in Microsoft Fabric.
-ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
-ms.topic: overview
-ms.custom:
-  - build-2024
-ms.date: 04/24/2024
-ms.search.form: Overview
----
 # What is Real-Time Intelligence?
 
 Real-Time Intelligence is a powerful service that empowers everyone in
 your organization to extract insights and visualize their data in
 motion. It offers an end-to-end solution for event-driven scenarios,
-data streaming, and data logs. Whether dealing with gigabytes or
+streaming data, and data logs. Whether dealing with gigabytes or
 petabytes, all organizational data in motion converges in the Real-Time
 Hub. It seamlessly connects time-based data from various sources using
 no-code connectors, enabling immediate visual insights, geospatial
@@ -73,17 +61,16 @@ support of business and engineering processes.
 
 -   The Real-Time hub serves as a centralized catalog within your organization. It facilitates easy access, addition, exploration, and data sharing. By expanding the range of data sources, it enables broader insights and visual clarity across various domains. Importantly, this hub ensures that data is not only available but also accessible to all, promoting quick decision-making and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
 
--   Once you select a stream from your organization or connected to
-    outside or internal sources, you can use the data consumption tools
-    in Real-Time Intelligence to explore your data. The data consumption
-    tools use visual data exploration process and drill down on data
-    insights. You can access data that's new to you and easily
-    understand the data structure, patterns, anomalies, and forecasting
-    quantities and rates of data and act or make smart decision on top
-    of your data. Real-Time dashboards come equipped with out-of-the-box
-    interactions that simplify the process of understanding data, making
-    it accessible to anyone who wants to make decision based on data in
-    motion using visual tools, Natural Language and Copilot.
+- Once you select a stream from your organization or connected to
+outside or internal sources, you can use the data consumption tools
+in Real-Time Intelligence to explore your data. The data consumption
+tools use visual data exploration process and drill down on data
+insights. You can access data that's new to you and easily
+understand the data structure, patterns, anomalies, forecasting
+quantities, and data rates. Accordingly, you can act or make smart decision based on the data. Real-Time dashboards come equipped with out-of-the-box
+interactions that simplify the process of understanding data, making
+it accessible to anyone who wants to make decision based on data in
+motion using visual tools, Natural Language and Copilot.
 
 -   These insights can be turned into actions with Data Activator, as
     you set up Reflex alerts from various parts of Fabric to react to
