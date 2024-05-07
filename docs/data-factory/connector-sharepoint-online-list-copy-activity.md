@@ -18,12 +18,14 @@ This article outlines how to use the copy activity in a data pipeline to copy da
 ## Prerequisites
 
 1. The SharePoint List Online connector uses service principal authentication to connect to SharePoint. Follow these steps to set it up:
-2. First On your SharePoint tenant disable DisableCustomAppAuthentication through PowerShell.  
-`Install-Module -Name Microsoft.Online.SharePoint.PowerShell`  
-`Connect-SPOService -Url https://<your-domain>-admin.sharepoint.com`  
-`Set-SPOTenant -DisableCustomAppAuthentication $false`  
-`Disconnect-SPOService`
+1. On your SharePoint tenant, disable DisableCustomAppAuthentication through PowerShell.  
 
+   ```powershell
+   Install-Module -Name Microsoft.Online.SharePoint.PowerShell`  
+   Connect-SPOService -Url https://<your-domain>-admin.sharepoint.com`  
+   Set-SPOTenant -DisableCustomAppAuthentication $false`  
+   Disconnect-SPOService
+   ```
 
 1. Register an application with the Microsoft identity platform. To learn how, go to [Quickstart: Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app). Make note of these values, which you use to define the connection:
 
