@@ -6,7 +6,7 @@ ms.author: sngun
 author: snehagunda
 ms.topic: conceptual
 ms.search.form: GraphQL multiple data sources
-ms.date: 04/05/2024
+ms.date: 05/07/2024
 ---
 
 # Query multiple data sources in Fabric API for GraphQL
@@ -20,7 +20,7 @@ In Fabric API for GraphQL, you can expose many data sources through a single API
 
 The following example shows a query that spans across both the **AdventureWorks** and the **testsqldb2** data sources:
 
-:::image type="content" source="media/multiple-data-sources/multi-data-source-query.png" alt-text="Screenshot of the editor screen, showing an example of a query that spans two data sources." lightbox="media/multiple-data-sources/multi-data-source-query.png":::
+:::image type="content" source="media/multiple-data-sources-graphql/multi-data-source-query.png" alt-text="Screenshot of the editor screen, showing an example of a query that spans two data sources." lightbox="media/multiple-data-sources/multi-data-source-query.png":::
 
 This functionality can enhance the performance of your applications by reducing the number of round trips between your application and the API for GraphQL.
 

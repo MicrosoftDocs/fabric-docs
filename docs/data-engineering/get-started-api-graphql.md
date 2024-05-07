@@ -6,7 +6,7 @@ ms.author: sngun
 author: snehagunda
 ms.topic: how-to
 ms.search.form: Get started with GraphQL API
-ms.date: 05/02/2024
+ms.date: 05/07/2024
 ---
 
 # Create an API for GraphQL in Fabric and add data
