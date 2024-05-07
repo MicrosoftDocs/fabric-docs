@@ -69,11 +69,11 @@ Azure Blob Storage events are discrete events with clear start and end points. F
 
 Once the connection is created, you can see the Azure Blob Storage event source added to your eventstream in **Edit mode**. Note that the eventstream node in the editor doesn't have a default stream created. This is because the Blob Storage events are still in the form of discrete events and aren't yet converted to a stream or connected to the eventstream.
 
-1. Select **Publish** to publish the eventstream and capture the workspace events.
+1. Select **Publish** to publish the eventstream and start capturing your Azure Blob Storage events.
 
    ![A screenshot of the Azure Blob Storage events source added to the eventstream.](media/add-source-azure-blob-storage/edit.png)
 
-1. After you publish the changes, go to the **Fabric events** tab in **Real-Time hub** and select **Azure Blob Storage Events**. 
+1. After you publish the changes, go to the **Fabric events** tab in **Real-Time hub** and select **Azure Blob Storage Events**.
 
    ![A screenshot of selecting Azure Blob Storage Events under Fabric events in Real-Time hub.](media/add-source-azure-blob-storage/fabric-events.png)
 
