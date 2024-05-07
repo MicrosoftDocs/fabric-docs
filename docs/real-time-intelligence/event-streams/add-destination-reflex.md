@@ -13,7 +13,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to add Reflex destination to an eventstream.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
 # [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
 

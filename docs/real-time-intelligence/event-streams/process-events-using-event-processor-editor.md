@@ -12,7 +12,7 @@ ms.search.form: Event Processor
 # Process event data with event processor editor
 The event processor editor is a no-code experience that allows you to drag and drop to design the event data processing logic. This article describes how to use the editor to design your processing logic.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
 # [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 

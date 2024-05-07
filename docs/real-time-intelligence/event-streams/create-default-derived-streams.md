@@ -49,6 +49,6 @@ Once you create a new eventstream, you can add a source to the eventstream and t
 
 ## Related content
 
-- [New capabilities in Microsoft Fabric event streams](new-capabilities.md)
+- [Enhanced capabilities in Microsoft Fabric event streams](overview.md)
 - [Edit and publish an eventstream](edit-publish.md)
 - [Route data streams based on content](route-events-based-on-content.md)
