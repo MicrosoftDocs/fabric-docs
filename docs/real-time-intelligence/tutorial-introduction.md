@@ -26,7 +26,16 @@ Specifically, in this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
-> * TODO Enter checklist here
+> * Create an event house
+> * Enable OneLake availability
+> * Browse the Real-Time hub
+> * Get data in the Real-Time hub
+> * Transform events
+> * Publish an event stream
+> * Create a KQL query
+> * Create a Real-Time dashboard
+> * Explore data visually in the Real-Time dashboard
+> * Create a Power BI report from a KQL query
 
 ## Prerequisites
 

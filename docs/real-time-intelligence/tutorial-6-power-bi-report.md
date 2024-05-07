@@ -20,7 +20,7 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
 
 ## Build a Power BI report
 
-1. Copy and paste the following query into your KQL queryset. The output of this query is used as the semantic model for building the Power BI report. 
+1. Copy and paste the following query into your KQL queryset that was created in a previous step. The output of this query is used as the semantic model for building the Power BI report. 
 
     ```kusto
     TutorialTable
@@ -61,7 +61,7 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
 
 When you open the Power BI report, you can add or edit visualizations. You can also interact with the visualizations. For example, selecting one of the *Neighborhood* columns on one visualization will highlight the values of that neighborhood in the other visualizations.
 
-:::image type="content" source="media/tutorial/cross-highlight.gif" alt-text="GIF showing how cross-highlighting works in Power BI report." border="false":::
+:::image type="content" source="media/tutorial/cross-highlight.gif" alt-text="GIF showing how cross-highlighting works in Power BI report." border="false"  lightbox="media/tutorial/cross-highlight.gif":::
 
 ## Related content
 

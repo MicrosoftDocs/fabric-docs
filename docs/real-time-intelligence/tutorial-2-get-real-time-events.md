@@ -16,6 +16,8 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md).
 
+In this part of the tutorial, you'll browse the Real-Time hub, create an event stream, transform events, and create a destination to send the transformed events to a KQL database.
+
 ## Create an event stream
 
 1. From the navigation bar, select **Real-Time hub**.
@@ -46,8 +48,8 @@ ms.search.form: Get started
 ## Transform events
 
 1. Select **Open Eventstream** from the notification that appears after creating the event stream, or browse to the event stream from the Real-time hub and select **Open Eventstream**.
-1. In the event stream authoring canvas, select the event stream tile in the center.
 1. From the menu ribbon, select **Edit**.
+1. In the event stream authoring canvas, select the event stream tile in the center.
 1. Select the down arrow on the **Transform events or add destination** tile.  
 1. Select **Manage fields**. The tile is renamed to *Manage_fields*.
 1. Select the pencil icon on the *Manage_fields* tile.
@@ -56,12 +58,12 @@ ms.search.form: Get started
     1. Select **Add all fields**
     1. Select **+ Add field**.
     1. From the **Built-in Date Time Function** dropdown, select **SYSTEM.Timestamp()**
-    
+
         :::image type="content" source="media/tutorial/system-timestamp.png" alt-text="Screenshot showing the system timestamp selected in the event stream manage fields tile in Real-Time Intelligence.":::
 
     1. Enter *Timestamp* as the **Field name**.
     1. Select **Add**.
-  1. Select **Done**.
+1. Select **Done**.
 
 ## Create a destination
 

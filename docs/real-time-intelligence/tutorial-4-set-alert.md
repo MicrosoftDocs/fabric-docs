@@ -16,6 +16,8 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Query streaming data in a KQL queryset](tutorial-3-query-data.md).
 
+In this part of the tutorial, you'll learn how to set an alert on your event stream to receive a notification in Teams when the number of bikes falls below a certain threshold.
+
 ## Set an alert on the event stream
 
 1. From the left navigation bar, select **Real-Time hub**.
@@ -25,7 +27,7 @@ ms.search.form: Get started
     :::image type="content" source="media/tutorial/set-alert.png" alt-text="Screenshot of event streams details page and set alert selected." lightbox="media/tutorial/set-alert.png":::
 
 1. Select **Set alert**
-1. A new pane opens. Fill in the following fields:
+1. A new pane opens. Fill in the fields as follows:
 
     | Field | Value |
     | --- | --- |
@@ -37,7 +39,7 @@ ms.search.form: Get started
     | **Action** |  **Message me in Teams**
     | **Save location** | | 
     | Workspace | The workspace in which you created resources|
-    | Item | TutorialReflex |
+    | Item | Tutorial-Reflex |
 
     :::image type="content" source="media/tutorial/alert-logic.png" alt-text="Screenshot of Set alert pane in Real-Time Intelligence.":::
 

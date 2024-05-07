@@ -17,7 +17,7 @@ ms.search.form: Get started
 
 ## Clean up resources
 
-Once you're finished with the tutorial, you might want to delete all resources you created. You can delete TODO LIST ALL ITEMS and other items individually, or you can delete the entire workspace.
+Once you're finished with the tutorial, you might want to delete all resources you created. You can delete the event stream, event house, KQL queryset, Real-Time dashboard, and Power BI report items individually, or you can delete the entire workspace.
 
 1. Browse to the workspace in which you created the tutorial.
 1. In the ribbon, select the **More menu** [**...**] > **Workspace settings**.
