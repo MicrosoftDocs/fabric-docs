@@ -12,7 +12,6 @@ Real-Time hub is the single place for all data-in-motion across your entire orga
 
 - Single place for data-in-motion for the entire organization
 - Abundant connectors for simplified data ingestion
-- Real-Time hub is never empty
 - Single copy of events/streams for use with multiple real-time analytics engines
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -39,24 +38,23 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 
 A unified Get Events experience makes it effortless to connect from these sources into components in Real-Time hub like eventstream, KQL database, and Data Activator.  
 
-## Real-Time hub is never empty 
-In the world of data, Real-Time hub is never empty. Here's why: 
+## Single copy of events/streams to be consumed by real-time analytics engines
+As data flows into Real-Time hub, you can create a stream out of it. Once the stream is created, the data is stored in a canonical format. This format is universally accessible to all processing engines. No need for redundant copies of data. Real-Time hub ensures efficiency and consistency.
+
+## Features
 
 - **Streams and tables**
 
     For your running eventstreams and KQL databases, all the stream outputs from eventstreams and tables from KQL databases automatically show up in Real-Time hub. 
 
-- **Microsoft Product Integration**
+- **Integration with Microsoft sources**
 
-    Real-Time hub ensures that it’s never empty by listing all streaming resources from Microsoft products. Whether it’s Azure Event Hubs, Azure IoT Hub, or other services, users can seamlessly ingest data into Real-Time hub. 
+    Real-Time hub lists all streaming resources from Microsoft services. Whether it’s Azure Event Hubs, Azure IoT Hub, or other services, users can seamlessly ingest data into Real-Time hub. 
 
-- **Fabric events as the nervous system**
+- **Fabric events**
 
     Events that are generated via Fabric artifacts and external sources, are made available in Fabric to support event-driven scenarios like real-time alerting and triggering downstream actions. You can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. Users can also send these events to other destinations via Fabric Event Streams. 
 
-- **Single copy of events/streams to be consumed by real-time analytics engines**
- 
-    As data flows into Real-Time hub, you can create a stream out of it. Once the stream is created, the data is stored in a canonical format. This format is universally accessible to all processing engines. No need for redundant copies of data. Real-Time hub ensures efficiency and consistency.
 
 ## Next step
 See [Get started with Real-Time hub.](get-started-real-time-hub.md)
