@@ -8,11 +8,13 @@ items:
   - name: Security fundamentals
     href: security-fundamentals.md 
   - name: Permission model
-    href: permission-model.md       
+    href: permission-model.md  
   - name: Governance and compliance documentation
     href: ../governance/index.yml  
   - name: Admin documentation
-    href: ../admin/index.yml                               
+    href: ../admin/index.yml
+  - name: Security white paper
+    href: white-paper-landing-page.md                                            
 - name: Network security
   items:
   - name: Inbound
