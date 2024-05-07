@@ -10,12 +10,24 @@ ms.custom:
 ms.date: 04/24/2024
 ms.search.form: Overview
 ---
+---
+title: What is Real-Time Intelligence
+description: Learn about Real-Time Intelligence in Microsoft Fabric.
+ms.reviewer: tzgitlin
+ms.author: yaschust
+author: YaelSchuster
+ms.topic: overview
+ms.custom:
+  - build-2024
+ms.date: 04/24/2024
+ms.search.form: Overview
+---
 # What is Real-Time Intelligence?
 
 Real-Time Intelligence is a powerful service that empowers everyone in
 your organization to extract insights and visualize their data in
 motion. It offers an end-to-end solution for event-driven scenarios,
-streaming data, and data logs. Whether dealing with gigabytes or
+data streaming, and data logs. Whether dealing with gigabytes or
 petabytes, all organizational data in motion converges in the Real-Time
 Hub. It seamlessly connects time-based data from various sources using
 no-code connectors, enabling immediate visual insights, geospatial
