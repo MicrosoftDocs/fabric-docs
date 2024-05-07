@@ -6,7 +6,7 @@ ms.author: sngun
 author: snehagunda
 ms.topic: conceptual
 ms.search.form: GrpahQL schema view
-ms.date: 05/02/2024
+ms.date: 05/07/2024
 ---
 
 # Fabric API for GraphQL schema view and Schema explorer
@@ -56,7 +56,7 @@ The following options are available:
 - **Update schema** - Allows you to update the schema with new objects from the data source.
 - **Rename** - Changes the name of the object. PLEASE NOTE: This change **only** affects the API schema, and has no effect on the original data source object from which it was derived.
 - **Remove from schema** - Effectively deletes the object from the GraphQL schema so you can no longer reference it.
-- **Manage relationships** - Takes you to the relationship management experience. For more information, see [Manage relationships in Fabric API for GraphQL](manage-relationships.md).
+- **Manage relationships** - Takes you to the relationship management experience. For more information, see [Manage relationships in Fabric API for GraphQL](manage-relationships-graphql.md).
 - **Properties** - Shows additional information about the object.
 
 ## Related content

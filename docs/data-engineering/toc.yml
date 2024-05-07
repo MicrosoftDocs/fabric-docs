@@ -217,3 +217,21 @@ items:
       href: migrate-synapse-data-pipelines.md
     - name: Migrate Hive Metastore metadata
       href: migrate-synapse-hms-metadata.md
+- name: GraphQL
+  items:
+   - name: What is API for GraphQL?
+     href: api-graphql-overview.md
+   - name: Create an API for GraphQL
+     href: get-started-api-graphql.md
+   - name: API for GraphQL editor
+     href: api-graphql-editor.md
+   - name: Schema view and explorer
+     href: graphql-schema-view.md
+   - name: Frequently asked questions
+     href: graphql-faq.md
+   - name: Manage relationships
+     href: manage-relationships-graphql.md
+   - name: Connect applications
+     href: connect-apps-api-graphql.md
+   - name: Query multiple data sources
+     href: multiple-data-sources-graphql.md
