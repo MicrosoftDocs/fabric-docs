@@ -1,24 +1,26 @@
 ---
-title: Fabric task flows overview
-description: This article gives an overview of task flows and task flow terminology.
+title: Fabric task flow concepts
+description: This article describes the main task flow concepts.
 ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
-ms.topic: conceptual
-ms.date: 04/05/2024
+ms.topic: article-concept
+ms.date: 05/07/2024
 ---
 
-# What is a Fabric task flow?
+# Task flow concepts
 
 Fabric task flow is a workspace feature that enables you to build a visualization of the flow of work in the workspace. The task flow helps you understand how items are related and work together in your workspace, and makes it easier for you to navigate your workspace, even as it becomes more complex over time. Moreover, the task flow can help you standardize your team's work and keep your design and development work in sync to boost the team's collaboration and efficiency.
 
 Fabric provides a range of predefined, end-to-end task flows based on industry best practices that are intended to make it easier to get started with your project. In addition, you can customize the task flows to suit your specific needs and requirements. This enables you to create a tailored solution that meets your unique business needs and goals.
 
-## Terms
+## Task flow
 
-* **Task flow**: A task flow is a collection of connected tasks that represent relationships in a process or collection of processes that complete an end-to-end data solution. A workspace has one task flow. You can either build it from scratch or use one of Fabric's predefined task flows, which you can customize as desired.
+A task flow is a collection of connected tasks that represent relationships in a process or collection of processes that complete an end-to-end data solution. A workspace has one task flow. You can either build it from scratch or use one of Fabric's predefined task flows, which you can customize as desired.
 
-* **Task**: A task is a unit of process in the task flow. A task has recommended item types to help you select the appropriate items when building your solution. Tasks also help you navigate the items in the workspace.
+## Task
+
+A task is a unit of process in the task flow. A task has recommended item types to help you select the appropriate items when building your solution. Tasks also help you navigate the items in the workspace.
 
 ## Task types
 
