@@ -76,4 +76,8 @@ Deleting a task flow deletes all tasks, the task list, and any item assignments.
 
 Any items created will remain in the workspace, but you need to assign them to tasks in your new task flow.
 
-## Related content
+## Related concepts
+
+* [Task flow overview](./task-flow-overview.md)
+* [Task flow concepts](./task-flow-concepts.md)
+* [Manage tasks](./task-flow-work-with.md)

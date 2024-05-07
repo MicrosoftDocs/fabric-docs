@@ -4,7 +4,7 @@ description: This article describes the main task flow concepts.
 ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
-ms.topic: article-concept
+ms.topic: concept-article
 ms.date: 05/07/2024
 ---
 
@@ -115,3 +115,7 @@ To delete a connector or to update its start and end values, select the connecto
 :::image type="content" source="./media/task-flow-concepts/connector-details-pane.png" alt-text="Screenshot showing how to delete or edit a connector on the connector details pane.":::
 
 ## Related content
+
+* [Task flow overview](./task-flow-overview.md)
+* [Set up a task flow](./task-flow-create.md)
+* [Manage tasks](./task-flow-work-with.md)
