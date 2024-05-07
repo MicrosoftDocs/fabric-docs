@@ -38,7 +38,7 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 
 A unified Get Events experience makes it effortless to connect from these sources into components in Real-Time hub like eventstream, KQL database, and Data Activator.  
 
-## Single copy of events/streams to be consumed by real-time analytics engines**
+## Single copy of events/streams to be consumed by real-time analytics engines
 As data flows into Real-Time hub, you can create a stream out of it. Once the stream is created, the data is stored in a canonical format. This format is universally accessible to all processing engines. No need for redundant copies of data. Real-Time hub ensures efficiency and consistency.
 
 ## Features
