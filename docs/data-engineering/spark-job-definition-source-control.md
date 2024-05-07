@@ -33,7 +33,7 @@ The following image is an example of the file structure of each Spark job defini
 
 :::image type="content" source="media\spark-job-definition-source-control\spark-job-definition-repo-view.png" alt-text="Screenshot of sjd Git repo file structure." lightbox="media\spark-job-definition-source-control\spark-job-definition-repo-view.png":::
 
-When you commit the Spark job definition item to the repo, a git folder is created for each item and named according to this schema: \<Item name\> + "SparkJobDefinition". Don't rename the folder as it is used to track the item in the workspace. For example, if the item name is "sjd1", the git folder name would be "sjd1SparkJobDefinition.
+When you commit the Spark job definition item to the repo, a git folder is created for each item and named according to this schema: \<Item name\> + "SparkJobDefinition". Don't rename the folder as it is used to track the item in the workspace. For example, if the item name is "sjd1", the git folder name would be "sjd1SparkJobDefinition".
 
 There are two subfolders within the git folder. They are the *main* and the *reference*. The *main* folder contains the main definition file and the *reference* folder contains the reference file.
 
