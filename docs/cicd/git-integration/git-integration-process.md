@@ -98,7 +98,7 @@ On top of the screen is the Source control icon. It shows the number of items th
 
 When changes are made either to the workspace or the Git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control pane.
 
-The **Source control** pane has two tabs on the side. 
+The **Source control** pane has two tabs on the side.
 
 In the **Source control** pane, the **Changes** tab shows the number of items that were changed in the workspace and need to be committed to Git, and the **Updates** tab shows the number of items that were modified in the Git branch and need to be updated to the workspace.
 
