@@ -4,8 +4,8 @@ description: This article gives an overview of task flows and task flow terminol
 ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
-ms.topic: conceptual
-ms.date: 04/05/2024
+ms.topic: how-to
+ms.date: 05/07/2024
 ---
 
 # Manage tasks
@@ -36,13 +36,21 @@ To update or reset the task type for an existing task, simply select on the drop
 
 ## Add a task to the task flow
 
-To add more tasks to the canvas, open the **Add** dropdown menu and select the desired task type. 
+To add a task to the task flow canvas, open the **Add** dropdown menu and select the desired task type.
 
 :::image type="content" source="./media/task-flow-work-with/add-task.png" alt-text="Screenshot showing the Add dropdown menu on the task flow canvas." lightbox="./media/task-flow-work-with/add-task.png":::
 
-The task of the selected task type is added onto the canvas. You can update the name and description of the task as you did when you created the first task.  
+The task of the selected task type is added onto the canvas. You can update the name and description of the task as described in [Update task details and type](#update-task-details-and-type).
 
-Repeat the previous steps to add more tasks to the canvas.
+## Delete a task from the task flow
+
+To delete a task, select it, and then select the trash can icon in the task details pane that opens.
+
+:::image type="content" source="./media/task-flow-work-with/delete-task.png" alt-text="Screenshot showing how to delete a task.":::
+
+Alternatively, select the task flow canvas to open the task flow details pane. Then in the task flow details pane, hover over the task you want to delete in the Tasks list and select the trash can icon.
+
+:::image type="content" source="./media/task-flow-work-with/delete-task-via-task-flow-details-pane.png" alt-text="Screenshot showing how to delete a task from the task flow details pane.":::
 
 ## Connect tasks
 
@@ -73,16 +81,6 @@ Repeat these steps to add connectors between the other tasks.
 To delete a connector or to update its start and end values, select the connector. The **Connector details** side pane allows you to delete the connector or change its start and end values.
 
 :::image type="content" source="./media/task-flow-work-with/connector-details-pane.png" alt-text="Screenshot showing how to delete or edit a connector on the connector details pane.":::
-
-### Delete a task from the task flow
-
-To delete a task, select it, and then select the trash can icon in the task details pane that opens.
-
-:::image type="content" source="./media/task-flow-work-with/delete-task.png" alt-text="Screenshot showing how to delete a task.":::
-
-Alternatively, select the task flow canvas to open the task flow details pane. Then in the task flow details pane, hover over the task you want to delete in the Tasks list and select the trash can icon.
-
-:::image type="content" source="./media/task-flow-work-with/delete-task-via-task-flow-details-pane.png" alt-text="Screenshot showing how to delete a task from the task flow details pane.":::
 
 ## Assign items to a task
 
