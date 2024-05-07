@@ -169,17 +169,17 @@ advantages.
 
 -   Route events from Event streams to Fabric item destinations
 -   Emit events from Fabric items into Real-Time hub
--   Data in OneLake can be accessed by Real-Time Intelligence in several
-    ways:
-    -   Data from OneLake can be queried from Real-Time Intelligence as
+- Access data in OneLake from Real-Time Intelligence in several
+ways:
+-   Data from OneLake can be queried from Real-Time Intelligence as
         a shortcut.
     -   Data from OneLake can be loaded into Real-Time Intelligence.
     -   Data loaded into Real-Time Intelligence is reflected in OneLake
         as one logical copy.
--   Data loaded into Real-Time Intelligence can be used as the
-    underlying data for visualization in a Power BI report.
--   Data loaded into Real-Time Intelligence can be used for analysis in
-    Fabric Notebooks in Data Engineering.
+- Use the data loaded into Real-Time Intelligence as the
+underlying data for visualization in a Power BI report.
+- Use the data loaded into Real-Time Intelligence for analysis in
+Fabric Notebooks in Data Engineering.
 -   Trigger data pipeline actions in Data Factory
 -   Trigger data loading events using Dataflows
 -   Trigger actions from Power BI reports
