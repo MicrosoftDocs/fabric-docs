@@ -10,10 +10,10 @@ ms.search.form: Event Streams Overview
 ---
 
 # Microsoft Fabric event streams - overview
-The event streams feature in the Microsoft Fabric **Real-Time Intelligence** experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an event stream, which is an instance of the **Eventstream** item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. 
+The event streams feature in the Microsoft Fabric **Real-Time Intelligence** experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an eventstream, which is an instance of the **Eventstream** item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. 
 
 ## Bring events into Fabric
-The event streams feature provides you with various source connectors to fetch event data from the various sources. There are more sources available when you enable **Enhanced capabilities** at the time of creating an event stream. 
+The event streams feature provides you with various source connectors to fetch event data from the various sources. There are more sources available when you enable **Enhanced capabilities** at the time of creating an eventstream. 
 
 # [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
 
@@ -21,16 +21,16 @@ The event streams feature provides you with various source connectors to fetch e
 
 # [Standard capabilities](#tab/standardcapabilities)
 
-[!INCLUDE [supported-sources](./includes/supported-sources.md)]
+[!INCLUDE [supported-sources](./includes/supported-sources-standard.md)]
 
 ---
 
 ## Process events using no-code experience
-The drag and drop experience gives you an intuitive and easy way to create your event data processing, transforming, and routing logic without writing any code. An end-to-end data flow diagram in an event stream can provide you with a comprehensive understanding of the data flow and organization. The event processor editor is a no-code experience that allows you to drag and drop to design the event data processing logic. 
+The drag and drop experience gives you an intuitive and easy way to create your event data processing, transforming, and routing logic without writing any code. An end-to-end data flow diagram in an eventstream can provide you with a comprehensive understanding of the data flow and organization. The event processor editor is a no-code experience that allows you to drag and drop to design the event data processing logic. 
 
 [!INCLUDE [supported-transformations-enhanced](./includes/supported-transformations-enhanced.md)]
 
-If you enabled **Enhanced capabilities** while creating an event stream, the transformation operations are supported for all destinations. If you didn't, the transformation operations are available only for the Lakehouse and KQL Database (event processing before ingestion) destinations. 
+If you enabled **Enhanced capabilities** while creating an eventstream, the transformation operations are supported for all destinations. If you didn't, the transformation operations are available only for the Lakehouse and KQL Database (event processing before ingestion) destinations. 
 
 ## Route events to destinations
 The Fabric event streams feature supports sending data to the following supported destinations. 
@@ -41,7 +41,7 @@ The Fabric event streams feature supports sending data to the following supporte
 
 # [Standard capabilities](#tab/standardcapabilities)
 
-[!INCLUDE [supported-destinations](./includes/supported-destinations.md)]
+[!INCLUDE [supported-destinations](./includes/supported-destinations-standard.md)]
 
 ---
 
