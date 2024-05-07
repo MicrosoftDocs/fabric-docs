@@ -68,6 +68,8 @@ For more information about supported data sources for managed private endpoints 
 
 * **Workspace migration**: Workspace migration across capacities in different regions is unsupported.
 
+* **[OneLake shortcuts](/docs/onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints.
+
 These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.
 
 ## Related content
