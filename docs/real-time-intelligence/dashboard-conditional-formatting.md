@@ -1,5 +1,5 @@
 ---
-title: Apply conditional formatting in Real-Time Dashboard visuals (Preview)
+title: Apply conditional formatting in Real-Time Dashboard visuals (preview)
 description: Learn how to apply conditional formatting to Real-Time Dashboard visuals.
 ms.author: yaschust
 author: YaelSchuster
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/21/2023
 ---
 
-# Apply conditional formatting in Real-Time Dashboard visuals (Preview)
+# Apply conditional formatting in Real-Time Dashboard visuals (preview)
 
 Conditional formatting allows you to format the visual representation of data points based on their values, utilizing colors, tags, and icons. Conditional formatting can be applied either to a specific set of cells within a designated column or to entire rows.
 

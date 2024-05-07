@@ -272,17 +272,17 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
-    - name: Create a Real-Time Dashboard (Preview)
+    - name: Create a Real-Time Dashboard (preview)
       href: dashboard-real-time-create.md
-    - name: Explore data in Real-Time Dashboard tiles (Preview)
+    - name: Explore data in Real-Time Dashboard tiles (preview)
       href: dashboard-explore-data.md
-    - name: Customize Real-Time Dashboard visuals (Preview)
+    - name: Customize Real-Time Dashboard visuals (preview)
       href: dashboard-visuals-customize.md
-    - name: Apply conditional formatting in Real-Time Dashboards (Preview)
+    - name: Apply conditional formatting in Real-Time Dashboards (preview)
       href: dashboard-conditional-formatting.md
-    - name: Use parameters in Real-Time Dashboards (Preview)
+    - name: Use parameters in Real-Time Dashboards (preview)
       href: dashboard-parameters.md
-    - name: Real-Time Dashboard-specific visuals (Preview)
+    - name: Real-Time Dashboard-specific visuals (preview)
       href: dashboard-visuals.md
   - name: Power BI
     items:
