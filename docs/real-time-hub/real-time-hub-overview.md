@@ -8,10 +8,7 @@ ms.date: 05/21/2024
 ---
 
 # Introduction to Fabric Real-Time hub (preview)
-Real-Time hub is the single place for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with the hub. There are no extra steps needed to set up or manage it. Several key features of the hub are:
-
-- Single place for data-in-motion for the entire organization
-- Abundant connectors for simplified data ingestion
+Real-Time hub is the single place for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with the hub. There are no extra steps needed to set up or manage it. It also provides abundant connectors for simplified data ingestion into Fabric. This article explains these features in detail. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
@@ -37,7 +34,7 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 
 A unified Get Events experience makes it effortless to connect from these sources into components in Real-Time hub like eventstream, KQL database, and Data Activator.  
 
-## Features
+## Data integrations
 
 - **Streams and tables**
 
