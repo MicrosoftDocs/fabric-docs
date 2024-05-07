@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-## Process data streams using transformations in Fabric event streams
+# Process data streams using transformations in Fabric event streams
 The Get events experience, Microsoft sources tab, and Fabric events tab in Real-Time hub allow you to create streams for the supported sources. After you create these streams, you can process them, analyze them, and set alerts on them. This article explains how to process data streams using transformations supported in Fabric eventstreams. 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
