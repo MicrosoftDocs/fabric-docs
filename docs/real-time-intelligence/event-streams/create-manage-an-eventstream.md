@@ -49,7 +49,7 @@ You can create an eventstream on the **Workspace** page, the **Real-Time Intelli
 
 ## Next step
 - [Add sources to the eventstream](./add-manage-eventstream-sources.md)
-- [Add destinations to the eventstream](./add-manage-eventstream-destinations-enhanced.md)
+- [Add destinations to the eventstream](./add-manage-eventstream-destinations.md)
 
 # [Standard capabilities](#tab/standardcapabilities)
 

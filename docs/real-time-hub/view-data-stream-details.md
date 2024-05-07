@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# View details of data streams in Fabric Real-Time hub
+# View details of data streams in Fabric Real-Time hub (preview)
 You can view details of a data stream by selecting the data stream in the **Data streams** tab of the **Real-Time hub**.  
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -52,7 +52,7 @@ On the top of the stream details page, you can take the following actions on the
 | Action | Description |
 | ------ | ----------- |
 | Preview this data | Preview the data in the stream or derived stream. For more information, see [Preview data streams](preview-data-streams.md). |
-| Open eventstream | Open parent eventstream of the stream. After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md). |
+| Open eventstream | Open parent eventstream of the stream. After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. |
 | Endorse | Endorse parent eventstream of the stream. For more information, see [Endorse data streams](endorse-data-streams.md). |
 | Set alert | The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). For more information, see [Set alerts on streams in Real-Time hub](set-alerts-data-streams.md). |
 

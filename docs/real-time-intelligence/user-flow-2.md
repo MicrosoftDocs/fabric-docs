@@ -19,6 +19,8 @@ This user flow shows how a data engineer can load and transform events from a wi
 
 :::image type="content" source="media/user-flows/user-flow-2.png" alt-text="Schematic image showing the steps in user flow 2." border="false" lightbox="media/user-flows/user-flow-2.png":::
 
+[!INCLUDE [preview-note](../real-time-hub/includes/preview-note.md)]
+
 ## Steps
 
 1. Browse to the Real-Time hub and select **Get Events**.

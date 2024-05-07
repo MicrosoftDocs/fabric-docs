@@ -9,16 +9,20 @@ ms.date: 04/29/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Google Cloud Pub/Sub source to an eventstream
+# Add Google Cloud Pub/Sub source to an eventstream (preview)
 
 This article shows you how to add a Google Cloud Pub/Sub source to an eventstream. 
 
 Google Pub/Sub is a messaging service that enables you to publish and subscribe to streams of events. You can add Google Pub/Sub as a source to your eventstream to capture, transform, and route real-time events to various destinations in Fabric.
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - A Google Cloud account with the Pub/Sub service enabled and a role with the required permissions.
+- Your Google Cloud Pub/Sub source must be publicly accessible and not be behind a firewall or secured in a virtual network.
+
 
 ## Add Google Cloud Pub/Sub as a source
 

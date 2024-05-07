@@ -9,16 +9,19 @@ ms.date: 04/24/2024
 ms.search.form: Source and Destination
 ---
 
-# Add PostgreSQL Database CDC source to an eventstream
+# Add PostgreSQL Database CDC source to an eventstream (preview)
 
 This article shows you how to add a PostgreSQL Database Change Data Capture (CDC) source to an eventstream.
 
 The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in a PostgreSQL database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - Registered user access in the PostgreSQL database.
+- Your PostgreSQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - CDC enabled in the PostgreSQL database.
 
   If you have Azure Database for PostgreSQL, follow the steps in the next section to enable CDC. For detailed information, see [Logical replication and logical decoding - Azure Database for PostgreSQL - Flexible Server](/azure/postgresql/flexible-server/concepts-logical).
@@ -74,7 +77,7 @@ To enable CDC in your Azure Database for PostgreSQL, follow these steps based on
 
 [!INCLUDE [postgresql-database-cdc-connector](./includes/postgresql-database-cdc-source-connector.md)]
 
-You can see the PostgreSQL DB CDC source added to your eventstream in **Edit mode**.
+You can see the PostgreSQL Database CDC source added to your eventstream in **Edit mode**.
 
 To implement this newly added PostgreSQL DB CDC source, select **Publish**. After you complete these steps, your PostgreSQL DB CDC source is available for visualization in the **Live view**.
 

@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Add PostgreSQL Database CDC as source in Real-Time hub
+# Add PostgreSQL Database CDC as source in Real-Time hub (preview)
 This article describes how to add PostgreSQL Database Change Data Capture (CDC) as an event source in Fabric Real-Time hub. 
 
 The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in a PostgreSQL database. The connector then monitors and records any future row-level changes to this data. 
@@ -121,5 +121,9 @@ Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-d
     :::image type="content" source="./media/add-source-postgresql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream based on PostgreSQL Database CDC source." lightbox="./media/add-source-postgresql-database-cdc/verify-data-stream.png":::
 
 
-## Next step
-The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md).
+## Related content
+To learn about consuming data streams, see the following articles:
+
+- [Process data streams](process-data-streams-using-transformations.md)
+- [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
+- [Set alerts on data streams](set-alerts-data-streams.md)

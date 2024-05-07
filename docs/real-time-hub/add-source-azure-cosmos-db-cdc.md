@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Add Azure Cosmos DB CDC as source in Real-Time hub
+# Add Azure Cosmos DB CDC as source in Real-Time hub (preview)
 This article describes how to add Azure Cosmos DB Change Data Capture (CDC) as an event source in Fabric Real-Time hub. The Azure Cosmos DB Change Data Capture (CDC) source connector lets you capture a snapshot of the current data in an Azure Cosmos DB database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in a stream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -127,5 +127,9 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
 
     For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
-## Next step
-The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md).
+## Related content
+To learn about consuming data streams, see the following articles:
+
+- [Process data streams](process-data-streams-using-transformations.md)
+- [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
+- [Set alerts on data streams](set-alerts-data-streams.md)

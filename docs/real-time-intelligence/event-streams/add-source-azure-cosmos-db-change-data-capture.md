@@ -9,16 +9,19 @@ ms.date: 04/29/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Azure Cosmos DB CDC source to an eventstream
+# Add Azure Cosmos DB CDC source to an eventstream (preview)
 
 This article shows you how to add an Azure Cosmos DB Change Data Capture source to an eventstream. The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fabric event streams lets you capture a snapshot of the current data in an Azure Cosmos DB database.
 
 The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - Access to an Azure Cosmos DB account and database.
+- Your Azure Cosmos DB database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
 ## Get connection details from the Azure portal
 
@@ -62,7 +65,7 @@ The labels for the items you need to collect from the Azure portal vary dependin
 
 [!INCLUDE [azure-cosmos-db-connector](./includes/azure-cosmos-db-cdc-source-connector.md)]
 
-You see the Azure CosmosDB (CDC) source added to your eventstream in **Edit mode**.
+You see the Azure Cosmos DB (CDC) source added to your eventstream in **Edit mode**.
 
    ![A screenshot of the added Azure Cosmos DB CDC source in Edit mode with the Publish button highlighted.](media/add-source-azure-cosmos-db-change-data-capture/edit-mode.png)
 
