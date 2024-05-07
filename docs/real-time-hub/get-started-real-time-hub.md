@@ -7,19 +7,16 @@ ms.topic: quickstart
 ms.date: 05/21/2024
 ---
 
-# Get started with Fabric Real-Time hub
+# Get started with Fabric Real-Time hub (preview)
 Real-Time hub is the single estate for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with Real-Time hub, with no extra steps needed to set up or manages it. For detailed overview, see [Real-Time hub overview](real-time-hub-overview.md).
 
 This article provides guidance on getting started with Fabric Real-Time hub. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-## Launch Real-Time hub
+## Navigate to Real-Time hub
 
-1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/).
-1. Select **Real-Time hub** on the left navigation bar. 
-
-    :::image type="content" source="./media/get-started-real-time-hub/hub-data-streams-tab.png" alt-text="Screenshot that shows the Fabric Real-Time hub with the default tab Data streams selected." lightbox="./media/get-started-real-time-hub/hub-data-streams-tab.png":::
+[!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
 
 ## Data streams tab
 On the **Data streams** tab, you see streams and tables. Streams are the outputs from [Fabric eventstreams](../real-time-intelligence/event-streams/overview.md) and tables are from Kusto Query Language (KQL) databases that you have access to. 

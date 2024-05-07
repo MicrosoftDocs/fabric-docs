@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Get events from Azure Event Hubs into Real-Time hub
+# Get events from Azure Event Hubs into Real-Time hub (preview)
 This article describes how to get events from an Azure event hub into Real-Time hub. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -49,9 +49,21 @@ Use instructions from the [Add an Azure event hub as a source](#add-an-azure-eve
 1. If there's an existing connection to your Azure event hub, you select that existing connection as shown in the following image, and then move on to the step to configure **Data format** in the following steps.
 
     :::image type="content" source="./media/add-source-azure-event-hubs/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection to an Azure event hub." lightbox="./media/add-source-azure-event-hubs/existing-connection.png":::    
+1. On the **Connect** page, select **Go to resource** to navigate to the Azure Event Hubs namespace. Take a note of the access key name and its value. 
+
+    :::image type="content" source="./media/add-source-azure-event-hubs/go-to-azure-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-event-hubs/go-to-azure-resource.png":::     
+
+    To get the access key name and value, follow these steps: 
+
+    1. Navigate to your Azure Event Hubs namespace page in the Azure portal.
+    1. On the **Event Hubs Namespace** page, select **Shared access policies** on the left navigation menu.
+    1. Select the **access key** from the list. Note down the access key name.
+    1. Select the copy button next to the **Primary key**. 
+    
+        :::image type="content" source="./media/add-source-azure-event-hubs/event-hubs-access-key-value.png" alt-text="Screenshot that shows the access key for an Azure Event Hubs namespace." lightbox="./media/add-source-azure-event-hubs/event-hubs-access-key-value.png":::      
 1. On the **Connect** page, select **New connection**.
 
-    :::image type="content" source="./media/add-source-azure-event-hubs/new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/add-source-azure-event-hubs/new-connection-button.png":::     
+    :::image type="content" source="./media/add-source-azure-event-hubs/new-connection-button.png" alt-text="Screenshot that shows the Connect page with the New connection link highlighted." lightbox="./media/add-source-azure-event-hubs/new-connection-button.png":::     
 1. In the **Connection settings** section, do these steps:
     1. Enter the **name of the Event Hubs namespace**.
     1. Enter the **name of the event hub**.
@@ -65,14 +77,6 @@ Use instructions from the [Add an Azure event hub as a source](#add-an-azure-eve
     1. Select **Connect** at the bottom of the page.
         
         :::image type="content" source="./media/add-source-azure-event-hubs/connect-page-1.png" alt-text="Screenshot that shows the Connect page one for Azure Event Hubs connector." lightbox="./media/add-source-azure-event-hubs/connect-page-1.png":::
-
-        To get the access key name and value, follow these steps: 
-        1. Navigate to your Azure Event Hubs namespace page in the Azure portal.
-        1. On the **Event Hubs Namespace** page, select **Shared access policies** on the left navigation menu.
-        1. Select the **access key** from the list. Note down the access key name.
-        1. Select the copy button next to the **Primary key**. 
-
-            :::image type="content" source="./media/add-source-azure-event-hubs/event-hubs-access-key-value.png" alt-text="Screenshot that shows the access key for an Azure Event Hubs namespace." lightbox="./media/add-source-azure-event-hubs/event-hubs-access-key-value.png":::            
 1. Now, on the **Connect** page of wizard, for **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the event hub. 
 1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure event hub. You can select from JSON, Avro, and CSV (with header) data formats.  
 1. In the **Stream details** section to the right, select the Fabric **workspace** where you want to save the eventstream that the Wizard is going to create. 
@@ -95,4 +99,12 @@ Use instructions from the [Add an Azure event hub as a source](#add-an-azure-eve
     :::image type="content" source="./media/add-source-azure-event-hubs/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab of Real-Time hub with the stream you just created." lightbox="./media/add-source-azure-event-hubs/verify-data-stream.png":::
 
     For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+
+## Related content
+To learn about consuming data streams, see the following articles:
+
+- [Process data streams](process-data-streams-using-transformations.md)
+- [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
+- [Set alerts on data streams](set-alerts-data-streams.md)
+
 

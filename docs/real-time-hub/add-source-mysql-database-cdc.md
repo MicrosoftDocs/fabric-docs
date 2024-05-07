@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# Add MySQL Database CDC as source in Real-Time hub
+# Add MySQL Database CDC as source in Real-Time hub (preview)
 This article describes how to add MySQL Database Change Data Capture (CDC) as an event source in Fabric Real-Time hub. 
 
 The Azure MySQL Database Change Data Capture (CDC) connector allows you to capture a snapshot of the current data in an Azure MySQL database. You specify the tables to be monitored and get alerted when any subsequent row-level changes to the tables. Once the changes are captured in a stream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis. 
@@ -21,7 +21,7 @@ The Azure MySQL Database Change Data Capture (CDC) connector allows you to captu
 
  ### Set up MySQL database 
 
-The Azure MySQL DB connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. For information about granting the required permissions (`SHOW DATABASE` and `REPLICATION`) to the user, see [Debezium connector for MySQL :: Debezium Documentation](https://debezium.io/documentation/reference/1.9/connectors/mysql.html#mysql-creating-user).
+The Azure MySQL database connector uses the Debezium MySQL connector to capture changes in your MySQL Database. You must define a MySQL user with permissions on all databases that connector monitors. For step-by-step instructions, see [Set up MySQL DB](../real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md#set-up-mysql-db).
 
 ### Enable the binlog 
 You must enable binary logging for MySQL replication. The binary logs record transaction updates for replication tools to propagate changes. For example, Azure Database for MySQL. 
@@ -62,6 +62,9 @@ Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-
 1. On the **Select a data source** screen, select **MySQL DB (CDC)**.
 
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png" alt-text="Screenshot that shows the Select a data source page with Azure MySQL DB (CDC) selected." lightbox="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png":::
+1. On the **Connect** page, select **Go to resource** to navigate to the Azure PostgreSQL database. Take a note of the server name on the **Overview** page. It's in the following format: `mysqlserver.mysql.database.azure.com`. 
+
+    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/go-to-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-mysql-database-cdc/go-to-resource.png":::     
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-mysql-database-cdc/new-connection-link.png"::: 
@@ -99,3 +102,10 @@ Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-
 
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review and create page after successful creation of the source." lightbox="./media/add-source-azure-mysql-database-cdc/review-create-success.png":::
 1. In Real-Time hub, switch to the **Data streams** tab of Real-Time hub. Refresh the page. You should see the data stream created for you. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+
+## Related content
+To learn about consuming data streams, see the following articles:
+
+- [Process data streams](process-data-streams-using-transformations.md)
+- [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
+- [Set alerts on data streams](set-alerts-data-streams.md)

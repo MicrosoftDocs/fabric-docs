@@ -20,6 +20,8 @@ Before you start, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located. 
 - You need to have appropriate permission to get event hub's access keys. The event hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
 ## Add Azure Event Hubs as a source 
 If you have an Azure event hub created with streaming data, follow these steps to add an Azure event hub as your eventstream source: 
 

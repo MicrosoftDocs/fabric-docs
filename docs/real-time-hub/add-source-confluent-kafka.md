@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# Add Confluent Cloud Kafka as source in Real-Time hub
+# Add Confluent Cloud Kafka as source in Real-Time hub (preview)
 This article describes how to add Confluent Cloud Kafka as an event source in Fabric Real-Time hub. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -65,17 +65,10 @@ This article describes how to add Confluent Cloud Kafka as an event source in Fa
 
     For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
  
-
 ## Related content
+To learn about consuming data streams, see the following articles:
 
-- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
-- [Azure Cosmos DB Change Data Capture (CDC)](add-source-azure-cosmos-db-cdc.md)
-- [Azure Event Hubs](add-source-azure-event-hubs.md)
-- [Azure IoT Hub](add-source-azure-iot-hub.md)
-- [Azure SQL Database CDC](add-source-azure-sql-database-cdc.md)
-- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md)
-- [MySQL Database CDC](add-source-mysql-database-cdc.md)
-- [PostgreSQL Database CDC](add-source-postgresql-database-cdc.md)
-- [Azure Blob Storage events](get-azure-blob-storage-events.md)
-- [Fabric workspace event](create-streams-fabric-workspace-item-events.md)
+- [Process data streams](process-data-streams-using-transformations.md)
+- [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
+- [Set alerts on data streams](set-alerts-data-streams.md)
 

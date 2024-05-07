@@ -9,7 +9,7 @@ ms.date: 04/30/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Azure Blob Storage event source to an eventstream
+# Add Azure Blob Storage event source to an eventstream (preview)
 
 This article shows you how to add an Azure Blob Storage event source to an eventstream. An event is the smallest amount of information that fully describes something that happened in a system. Azure Blob Storage events are triggered when a client creates, replaces, or deletes a blob. Microsoft Fabric event streams allows you to link Blob Storage events to Fabric events in Real-Time hub.
 
@@ -31,6 +31,8 @@ Fabric event streams supports the following Blob Storage event types:
 |Microsoft.Storage.LifecyclePolicyCompleted       |Triggered when the actions defined by a lifecycle management policy are done.|
 
 For more details about available event types, see [Azure Blob Storage as Event Grid source](/azure/event-grid/event-schema-blob-storage).
+
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
 ## Unstreamed vs. streamed events
 

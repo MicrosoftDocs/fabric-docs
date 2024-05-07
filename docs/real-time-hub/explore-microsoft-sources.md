@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# Explore Microsoft sources in Fabric Real-Time hub
+# Explore Microsoft sources in Fabric Real-Time hub (preview)
 When you navigate to Real-Time hub in Fabric, you see the following three tabs in the user interface (UI). This article covers the **Microsoft sources** tab. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -61,6 +61,7 @@ Here are the actions available on resources in the **Microsoft sources** tab. Wh
 
 :::image type="content" source="./media/explore-data-streams/real-time-hub-microsoft-sources-actions.png" alt-text="Screenshot that shows the actions available for resources on the Microsoft sources tab of the Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-microsoft-sources-actions.png":::
 
+For more information, see [Microsoft sources](supported-sources.md#microsoft-sources).
 
 ## Related content
 

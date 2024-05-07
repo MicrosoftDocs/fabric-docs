@@ -9,20 +9,12 @@ items:
   items:
   - name: Get started with Real-Time hub
     href: get-started-real-time-hub.md
-- name: User flows
-  items:
-  - name: Discover and respond to events
-    href: ../real-time-intelligence/user-flow-1.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
-  - name: Get and transform events from streaming sources
-    href: ../real-time-intelligence/user-flow-2.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
-  - name: Discover streaming sources from Microsoft
-    href: ../real-time-intelligence/user-flow-3.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
-  - name: Trigger Fabric dataflows from the Real-Time hub
-    href: ../real-time-intelligence/user-flow-5.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json 
 - name: Get events and create data streams
   items:
   - name: Supported sources
     href: supported-sources.md
+  - name: Sample data source
+    href: add-source-sample-data.md
   - name: Microsoft sources
     items:
     - name: Azure Event Hubs
@@ -73,14 +65,29 @@ items:
       href: explore-fabric-workspace-item-events.md
 - name: Consume events and data streams
   items:
-  - name: Set alerts on data streams
-    href: set-alerts-data-streams.md
-  - name: Set alerts on Fabric events
-
+  - name: Consume data streams
+    items:
+    - name: Process data streams
+      href: process-data-streams-using-transformations.md
+    - name: Analyze data streams
+      href: analyze-data-streams-using-kql-table-queries.md    
+    - name: Set alerts on data streams
+      href: set-alerts-data-streams.md
+  - name: Consume Fabric events
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
     - name: Set alerts on Fabric workspace item events
       href: set-alerts-fabric-workspace-item-events.md
+- name: User flows
+  items:
+  - name: Discover and respond to events
+    href: ../real-time-intelligence/user-flow-1.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Get and transform events from streaming sources
+    href: ../real-time-intelligence/user-flow-2.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Discover streaming sources from Microsoft
+    href: ../real-time-intelligence/user-flow-3.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+  - name: Trigger Fabric dataflows from the Real-Time hub
+    href: ../real-time-intelligence/user-flow-5.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json 
     
     
