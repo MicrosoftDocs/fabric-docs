@@ -84,7 +84,7 @@ items:
         href: event-streams/add-source-amazon-kinesis-data-streams.md
       - name: Confluent Cloud Kafka 
         href: event-streams/add-source-confluent-kafka.md
-      - name: Fabric workspace events 
+      - name: Fabric Workspace Item events 
         href: event-streams/add-source-fabric-workspace.md
       - name: Azure Blob Storage events 
         href: event-streams/add-source-azure-blob-storage.md
