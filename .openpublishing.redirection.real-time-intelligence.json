@@ -1,8 +1,8 @@
 {
   "redirections": [
     {
-      "source_path_from_root": "/docs/context/context-rta.json.yml",
       "redirect_url": "/fabric/context/context-rti.json",
+      "source_path_from_root": "/docs/context/context-rta.json.yml",
       "redirect_document_id": false
     },
     {
@@ -252,7 +252,7 @@
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/kql-database-consumption.md",
-      "redirect_url": "/fabric/real-time-intelligence/kql-database-consumption",
+      "redirect_url": "/fabric/real-time-intelligence/real-time-intelligence-consumption",
       "redirect_document_id": false
     },
     {
@@ -364,6 +364,61 @@
       "source_path_from_root": "/docs/real-time-analytics/tutorial-introduction.md",
       "redirect_url": "/fabric/real-time-intelligence/tutorial-introduction",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/bring-events-to-fabric-from-event-hub.md",
+      "redirect_url": "/fabric/real-time-analytics/event-streams/transform-and-stream-real-time-events-to-lakehouse",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/onelake-shortcut.md",
+      "redirect_url": "/fabric/real-time-analytics/onelake-shortcuts",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/get-data-blob.md",
+      "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
+      "redirect_document_id": false
+    },
+    {
+      "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
+      "source_path_from_root": "/docs/real-time-analytics/get-data-blob-container.md",
+      "redirect_document_id": true
+    },
+    {
+      "redirect_url": "/fabric/real-time-analytics/data-policies",
+      "source_path_from_root": "/docs/real-time-analytics/data-retention-policy.md",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/transform-taxi-data-and-route-to-kql.md",
+      "redirect_url": "/fabric/real-time-analytics/event-streams/transform-sample-data-and-route-to-kql",
+      "redirect_document_id": false
+    },
+    {
+      "redirect_url": "/fabric/real-time-analytics/one-logical-copy",
+      "source_path_from_root": "/docs/real-time-analytics/onelake-mirroring.md",
+      "redirect_document_id": true
+    },
+    {
+      "redirect_url": "/fabric/real-time-analytics/notebooks",
+      "source_path_from_root": "/docs/real-time-analytics/jupyter-notebook.md",
+      "redirect_document_id": false
+    },
+    {
+      "redirect_url": "/fabric/real-time-analytics/event-streams/build-report-from-iot-hub",
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/build-real-time-dashboard-from-iot-hub.md",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/data-profile.md",
+      "redirect_url": "/fabric/real-time-analytics/create-database",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/kql-database-consumption.md",
+      "redirect_url": "/fabric/real-time-intelligence/real-time-intelligence-consumption",
+      "redirect_document_id": true
     }
   ]
 }
