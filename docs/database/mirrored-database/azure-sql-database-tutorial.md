@@ -19,7 +19,7 @@ ms.topic: tutorial
     - The source Azure SQL Database can be either a single database or a database in an elastic pool.
     - If you don't have an Azure SQL Database, [create a new single database](/azure/azure-sql/database/single-database-create-quickstart?view=azuresql-db&preserve-view=true&tabs=azure-portal). Use the [Azure SQL Database free offer](/azure/azure-sql/database/free-offer?view=azuresql-db&preserve-view=true) if you haven't already.
     - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing Fabric capacity (Power BI Premium Capacity will work as well). If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
 - [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md). 
 - Enable the Fabric tenant setting [Allow service principals to user Power BI APIs](../../admin/service-admin-portal-developer.md#allow-service-principals-to-use-power-bi-apis). To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
     - If you do not see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
