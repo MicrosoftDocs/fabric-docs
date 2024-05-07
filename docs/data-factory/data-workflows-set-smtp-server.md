@@ -10,8 +10,6 @@ ms.date: 03/25/2024
 
 # Set up SMTP Server in Data workflows
 
-## Introduction
-
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
@@ -52,7 +50,7 @@ To use email notifications and alerts, you need to set up a (Simple Mail Transfe
     | AIRFLOW__SMTP__SMTP_PORT        | 587                     |
     | AIRFLOW__SMTP__SMTP_MAIL_FROM   | your_email@gmail.com    |
 
-    :::image type="content" source="media/data-workflows/airflow-smtp-configs.png" alt-text="Screenshot presents airflow configs for smtp.":::
+    :::image type="content" source="media/data-workflows/airflow-smtp-configs.png" alt-text="Screenshot presents airflow configs for SMTP.":::
 
 ## Example: A DAG that sends an email on the DAG Failure
 

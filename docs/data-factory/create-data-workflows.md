@@ -12,8 +12,6 @@ ms.date: 03/25/2024
 
 # Quickstart: Create a Data workflows
 
-## Introduction
-
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
@@ -29,7 +27,7 @@ Data workflows provides a simple and efficient way to create and manage Apache A
 
    :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
 
-### Step 1: Create a Data workflows
+### Create a Data workflows
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Project (preview)
@@ -40,7 +38,7 @@ Data workflows provides a simple and efficient way to create and manage Apache A
 
 3. Give a suitable name to your project and Click on Create Button.
 
-### Step 2: Configure an Airflow Environment.
+### Configure an Airflow Environment.
 
 1. Click on 'Configure Airflow' Card.
 2. Specify the Apache Airflow environment configuration for your DAGs to run against. You can change these settings later as well.
@@ -55,9 +53,8 @@ Data workflows provides a simple and efficient way to create and manage Apache A
    * <strong>Enable Triggers:</strong> Allows the Airflow Tasks to run in deferrable mode.
 
 
-### Step 3: Synchronize your GitHub Repository
+### Synchronize your GitHub Repository
 
-Specify the git repository you want to sync your Data workflows with.
 Specify the git repository you want to sync your Data workflows with.
 
 1. Click on 'Sync with Git' Card, you are navigated to 'File Storage'.
@@ -112,13 +109,12 @@ Specify the git repository you want to sync your Data workflows with.
 |    |    └-- *.py
 ```
 
-### Step 4: Start Apache Airflow Environment
+### Start Apache Airflow Environment
 
-1. Click on Start Apache Airflow Environment to configure the Airflow Runtime. (It should take about 5 mins for the configuration).
+Click on Start Apache Airflow Environment to configure the Airflow Runtime. (It should take about 5 mins for the configuration).
 
-   :::image type="content" source="media/data-workflows/start-apache-airflow.png" alt-text="Screenshot to start Apache Airflow Project.":::
+:::image type="content" source="media/data-workflows/start-apache-airflow.png" alt-text="Screenshot to start Apache Airflow Project.":::
 
 ## Related Content
 
-* [Install Private Package in Data workflows](data-workflows-install-private-package.md).
-* [Install Private Package in Data workflows](data-workflows-install-private-package.md).
+* [Install Private Package in Data workflows](data-workflows-install-private-package.md)

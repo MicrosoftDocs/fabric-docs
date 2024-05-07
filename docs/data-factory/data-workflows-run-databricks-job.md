@@ -104,13 +104,13 @@ with DAG('databricks_dag',
 
    :::image type="content" source="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
-## Monitor the Data workflow DAG and run it from Apache Airflow UI.
+## Monitor the Data workflow DAG and run it from Apache Airflow UI
 
-1. After saving, the DAG files are automatically loaded into the Apache Airflow UI. To monitor them, select on the "Monitor in Apache Airflow" button.
+After saving, the DAG files are automatically loaded into the Apache Airflow UI. To monitor them, select on the "Monitor in Apache Airflow" button.
 
-   :::image type="content" source="media/data-workflows/monitor-dag.png" alt-text="Screenshot to monitor the Airflow DAG.":::
+:::image type="content" source="media/data-workflows/monitor-dag.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 
-   :::image type="content" source="media/data-workflows/loaded-adf-dag.png" alt-text="Screenshot to load Airflow DAG.":::
+:::image type="content" source="media/data-workflows/loaded-adf-dag.png" alt-text="Screenshot to load Airflow DAG.":::
 
 ## Related Content
 

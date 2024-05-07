@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 04/15/2023
 ---
 
-# Tutorial: Orchestrate ADF Pipeline with Data workflows
+# Tutorial: Orchestrate an Azure Data Factory (ADF) Pipeline with Data workflows
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
@@ -54,7 +54,7 @@ To get started, you must complete the following prerequisites:
 
    :::image type="content" source="media/data-workflows/adf-name-file.png" alt-text="Screenshot to name the DAG file." :::
 
-2. Once created, you'll be presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the `pipeline_name` argument with with the name of your ADF pipeline.
+2. Once created, you'll be presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the **pipeline_name** argument with the name of your ADF pipeline.
 
 ```python
 from datetime import datetime, timedelta
