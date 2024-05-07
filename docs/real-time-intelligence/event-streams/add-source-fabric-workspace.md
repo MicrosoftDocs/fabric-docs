@@ -49,19 +49,16 @@ Fabric event streams supports the following Fabric workspace events:
 
 [!INCLUDE [fabric-workspace-source-connector](includes/fabric-workspace-source-connector.md)]
 
-1. Once the connection is created, you can see the Fabric workspace item events source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and capture the workspace events.
+Once the connection is created, you can see the Fabric workspace item events source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and capture the workspace events.
 
-    ![A screenshot of the Fabric workspace item events source added to the eventstream.](media/add-source-fabric-workspace/fabric-workspace-item-events-edit.png)
+![A screenshot of the Fabric workspace item events source added to the eventstream.](media/add-source-fabric-workspace/fabric-workspace-item-events-edit.png)
 
-    Please note: Before proceeding with event transformation or routing, ensure that workspace events have been triggered and successfully sent to the eventstream.
+> [!NOTE]
+> Before proceeding with event transformation or routing, ensure that workspace events have been triggered and successfully sent to the eventstream.
 
-1. Once it's published, you can find the default stream representing the captured events in **Real-Time hub** on the **Fabric events** tab. Here you can set an alert or take other actions.
+If you want to transform the Fabric workspace events, open your eventstream and select **Edit** to enter **Edit mode**. Then you can add operations to transform the Fabric workspace events or route them to a destination such as Lakehouse.
 
-    ![A screenshot of the Fabric workspace item events page in Real-Time hub.](media/add-source-fabric-workspace/fabric-workspace-item-events.png)
-
-1. If you want to transform the Fabric workspace events, open your eventstream and select **Edit** to enter **Edit mode**. Then you can add operations to transform the Fabric workspace events or route them to a destination such as Lakehouse.
-
-    ![A screenshot of the Fabric workspace item events in Live view, where you can select Edit.](media/add-source-fabric-workspace/fabric-workspace-item-events-live.png)
+![A screenshot of the Fabric workspace item events in Live view, where you can select Edit.](media/add-source-fabric-workspace/fabric-workspace-item-events-live.png)
 
 ## Related content
 
