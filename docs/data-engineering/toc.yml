@@ -105,6 +105,8 @@ items:
       href: run-spark-job-definition.md
     - name: Spark job definition API tutorial
       href: spark-job-definition-api.md
+    - name: Spark job definition Git integration
+      href: spark-job-definition-source-control.md
   - name: Spark development
     items:
     - name: Spark utilities
