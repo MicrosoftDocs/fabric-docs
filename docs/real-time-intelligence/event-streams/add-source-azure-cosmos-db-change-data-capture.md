@@ -21,6 +21,7 @@ The connector then monitors and records any future row-level changes to this dat
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - Access to an Azure Cosmos DB account and database.
+- Your Azure Cosmos DB database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
 ## Get connection details from the Azure portal
 
@@ -64,7 +65,7 @@ The labels for the items you need to collect from the Azure portal vary dependin
 
 [!INCLUDE [azure-cosmos-db-connector](./includes/azure-cosmos-db-cdc-source-connector.md)]
 
-You see the Azure CosmosDB (CDC) source added to your eventstream in **Edit mode**.
+You see the Azure Cosmos DB (CDC) source added to your eventstream in **Edit mode**.
 
    ![A screenshot of the added Azure Cosmos DB CDC source in Edit mode with the Publish button highlighted.](media/add-source-azure-cosmos-db-change-data-capture/edit-mode.png)
 

@@ -93,6 +93,9 @@ Here are the destination types that support to add operators before ingestion:
 > [!NOTE]
 > For destinations that don't support pre-ingestion operator addition, you can first add a derived stream as the output of your operator. Then, append your intended destination to this derived stream. 
 
+:::image type="content" source="./media/process-events-using-event-processor-editor/unsupported-destination.png" alt-text="Screenshot showing the layout of Event processing editor with filter outputting to an unsupported destination." lightbox="./media/process-events-using-event-processor-editor/unsupported-destination.png":::        
+
+
 # [Standard capabilities](#tab/standardcapabilities)
 
 The event processor in a Lakehouse destination allows you to process your data before it's ingested into your lakehouse. 

@@ -24,10 +24,11 @@ You can specify the tables to monitor, and the eventstream records any future ro
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - Access to an instance of Azure Database for MySQL - Flexible Server.
+- Your MySQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
 ## Set up MySQL DB
 
-The Messaging Connector for Eventstream uses the Debezium MySQL connector to capture changes in your Azure Database for MySQL database. You must define a MySQL user with permissions on all databases that the Messaging Connector monitors.
+The connector uses the Debezium MySQL connector to capture changes in your Azure Database for MySQL database. You must define a MySQL user with permissions on all databases that the Messaging Connector monitors.
 
 1. At the `mysql` command prompt, create the MySQL user:
 
@@ -47,7 +48,7 @@ The Messaging Connector for Eventstream uses the Debezium MySQL connector to cap
    mysql> FLUSH PRIVILEGES;
    ```
 
-For more details about granting the required permissions to the user, see [Debezium connector for MySQL :: Debezium Documentation](https://debezium.io/documentation/reference/1.9/connectors/mysql.html#mysql-creating-user).
+For more information about granting the required permissions to the user, see [Debezium connector for MySQL :: Debezium Documentation](https://debezium.io/documentation/reference/1.9/connectors/mysql.html#mysql-creating-user).
 
 ## Enable the binlog
 
