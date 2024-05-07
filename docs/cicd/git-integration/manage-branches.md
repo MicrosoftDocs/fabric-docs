@@ -58,9 +58,9 @@ For a developer who works in the web, the flow would be as follows:
 
 1. Select **Branch out**.
 
-Fabric creates the new workspace and branch and connects it to Git. You're automatically taken to the new workspace.
+   Fabric creates the new workspace and branch and connects it to Git. You're automatically taken to the new workspace.
 
-The workspace syncs with your feature branch, and becomes a copy of the Dev team's workspace, as illustrated. You can now work in this new isolated environment. This might take a few minutes.
+   The workspace syncs with your feature branch, and becomes a copy of the Dev team's workspace, as illustrated. You can now work in this new isolated environment. This might take a few minutes.
 
    :::image type="content" source="./media/manage-branches/branches-update-commit.png" alt-text="Diagram showing the workflow of commits.":::
 
@@ -68,8 +68,6 @@ The workspace syncs with your feature branch, and becomes a copy of the Dev team
 1. When ready, create a PR to the *main* branch. The review and merge processes are done through Azure Repos based on the configuration your team defined for that repo.
 
 Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes.
-
-Alternatively, if you're already connected to a Git branch, you can branch out to a new branch by selecting **Branch out to a new workspace** from the Source control panel.
 
 ## Switch branches
 
