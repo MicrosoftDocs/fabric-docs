@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Get Fabric workspace item events in Real-Time hub
+# Get Fabric workspace item events in Real-Time hub (preview)
 This article describes how to get Fabric workspace item events as an eventstream in Fabric Real-Time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]

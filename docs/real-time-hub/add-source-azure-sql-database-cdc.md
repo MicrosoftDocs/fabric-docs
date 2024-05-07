@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Add Azure SQL Database Change Data Capture (CDC) as source in Real-Time hub
+# Add Azure SQL Database Change Data Capture (CDC) as source in Real-Time hub (preview)
 This article describes how to get events from Azure SQL Database Change Data Capture (CDC) into Fabric Real-Time hub. The Azure SQL Database CDC source connector allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]

@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Add Azure IoT Hub as source in Real-Time hub
+# Add Azure IoT Hub as source in Real-Time hub (preview)
 This article describes how to get events from an Azure IoT hub into Real-Time hub. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]

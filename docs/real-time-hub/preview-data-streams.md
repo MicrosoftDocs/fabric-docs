@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/03/2024
 ---
 
-# Preview streams in Fabric Real-Time hub
+# Preview streams in Fabric Real-Time hub (preview)
 Data preview provides you with a snapshot of your event data in your stream. You can visualize how the data flows through the data stream. There are two places from where you can preview data in stream.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
