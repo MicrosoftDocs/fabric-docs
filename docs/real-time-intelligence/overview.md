@@ -61,17 +61,16 @@ support of business and engineering processes.
 
 -   The Real-Time hub serves as a centralized catalog within your organization. It facilitates easy access, addition, exploration, and data sharing. By expanding the range of data sources, it enables broader insights and visual clarity across various domains. Importantly, this hub ensures that data is not only available but also accessible to all, promoting quick decision-making and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
 
--   Once you select a stream from your organization or connected to
-    outside or internal sources, you can use the data consumption tools
-    in Real-Time Intelligence to explore your data. The data consumption
-    tools use visual data exploration process and drill down on data
-    insights. You can access data that's new to you and easily
-    understand the data structure, patterns, anomalies, and forecasting
-    quantities and rates of data and act or make smart decision on top
-    of your data. Real-Time dashboards come equipped with out-of-the-box
-    interactions that simplify the process of understanding data, making
-    it accessible to anyone who wants to make decision based on data in
-    motion using visual tools, Natural Language and Copilot.
+- Once you select a stream from your organization or connected to
+outside or internal sources, you can use the data consumption tools
+in Real-Time Intelligence to explore your data. The data consumption
+tools use visual data exploration process and drill down on data
+insights. You can access data that's new to you and easily
+understand the data structure, patterns, anomalies, forecasting
+quantities, and data rates. Accordingly, you can act or make smart decision based on the data. Real-Time dashboards come equipped with out-of-the-box
+interactions that simplify the process of understanding data, making
+it accessible to anyone who wants to make decision based on data in
+motion using visual tools, Natural Language and Copilot.
 
 -   These insights can be turned into actions with Data Activator, as
     you set up Reflex alerts from various parts of Fabric to react to
@@ -170,17 +169,17 @@ advantages.
 
 -   Route events from Event streams to Fabric item destinations
 -   Emit events from Fabric items into Real-Time hub
--   Data in OneLake can be accessed by Real-Time Intelligence in several
-    ways:
-    -   Data from OneLake can be queried from Real-Time Intelligence as
+- Access data in OneLake from Real-Time Intelligence in several
+ways:
+-   Data from OneLake can be queried from Real-Time Intelligence as
         a shortcut.
     -   Data from OneLake can be loaded into Real-Time Intelligence.
     -   Data loaded into Real-Time Intelligence is reflected in OneLake
         as one logical copy.
--   Data loaded into Real-Time Intelligence can be used as the
-    underlying data for visualization in a Power BI report.
--   Data loaded into Real-Time Intelligence can be used for analysis in
-    Fabric Notebooks in Data Engineering.
+- Use the data loaded into Real-Time Intelligence as the
+underlying data for visualization in a Power BI report.
+- Use the data loaded into Real-Time Intelligence for analysis in
+Fabric Notebooks in Data Engineering.
 -   Trigger data pipeline actions in Data Factory
 -   Trigger data loading events using Dataflows
 -   Trigger actions from Power BI reports
