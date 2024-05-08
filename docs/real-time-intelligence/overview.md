@@ -158,8 +158,8 @@ advantages.
 
 ## Integrate with other Fabric experiences
 
-- Route events from Event streams to Fabric item destinations
-- Emit events from Fabric items into Real-Time hub
+- [Route events from event streams to Fabric item destinations](event-streams/route-events-based-on-content.md)
+- [Emit events from Fabric items into Real-Time hub](../real-time-hub/explore-fabric-workspace-item-events.md)
 - Access data in OneLake from Real-Time Intelligence in several
 ways:
 -   [Data from OneLake can be queried from Real-Time Intelligence as a shortcut](database-shortcut.md)
