@@ -34,6 +34,9 @@ In this part of the tutorial, you learn how to query your streaming data in a [K
 
 The name of the table you created in a previous step is *TutorialTable*. Use this (case-sensitive) name as the data source for your query.
 
+> [!TIP]
+> If you have a sufficient subscription, you can use the Copilot feature to help you write queries. Copilot provides queries based on data in your table and natural language prompts. For more information, see [Copilot for Real-Time Intelligence (preview)](../get-started/copilot-real-time-analytics.md)
+
 1. In the query editor, enter the following query. Then press **Shift + Enter** to run the query.
 
     ```kusto

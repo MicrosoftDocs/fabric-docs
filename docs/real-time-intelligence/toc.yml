@@ -10,7 +10,7 @@ items:
     href: real-time-intelligence-compare.md
   - name: End to end tutorial
     items:
-    - name: Tutorial - Introduction
+    - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
     - name: 1- Create resources
       href: tutorial-1-resources.md
