@@ -20,7 +20,7 @@ Each user in the tenant can view and edit all the events or streams that they ha
 
 :::image type="content" source="./media/real-time-hub-overview/hub-data-streams-tab.png" alt-text="Screenshot that shows the Real-Time hub page with the Data Streams tab selected." lightbox="./media/real-time-hub-overview/hub-data-streams-tab.png" :::
 
-## Numerous connectors to simplify data ingestion from anywhere  
+## Numerous connectors ingest data from wide variety of sources
 Real-Time hub has numerous out-of-box connectors that make it easy for you to ingest data into Microsoft Fabric from a wide variety of sources. Currently, the following connectors are supported: 
 
 | &nbsp; | &nbsp; |
