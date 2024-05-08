@@ -66,11 +66,11 @@ You can then explore your data without affecting the visualization shown in the 
 
     1. Select **+ Add** > **Aggregation**.
 
-        :::image type="content" source="media/dashboard-explore-data/add-aggregattion-select-type.png" alt-text="Screenshot of the aggregation dialog box showing how to select an aggregation type.":::
+        :::image type="content" source="media/dashboard-explore-data/add-aggregation-select-type.png" alt-text="Screenshot of the aggregation dialog box showing how to select an aggregation type.":::
 
     1. Select the filter **Operator** and **Display Name**, optionally add up to two columns to group by, and then select **Apply**. The visual, results, and KQL query update to reflect the new filter.
 
-        :::image type="content" source="media/dashboard-explore-data/add-aggregattion-select-options.png" alt-text="Screenshot of the aggregation dialog box showing how to select aggregation options.":::
+        :::image type="content" source="media/dashboard-explore-data/add-aggregation-select-options.png" alt-text="Screenshot of the aggregation dialog box showing how to select aggregation options.":::
 
 * From the **Visual type** dropdown, select other visual types to visualize your data in different ways.
 
