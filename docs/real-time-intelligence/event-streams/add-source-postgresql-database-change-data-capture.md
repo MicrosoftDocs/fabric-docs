@@ -79,6 +79,8 @@ To enable CDC in your Azure Database for PostgreSQL, follow these steps based on
 
 You can see the PostgreSQL Database CDC source added to your eventstream in **Edit mode**.
 
+:::image type="content" source="media/add-source-postgresql-database-cdc-connector/edit-view.png" alt-text="A screenshot of streaming PostgreSQL DB CDC source in Edit view." lightbox="media/add-source-postgresql-database-cdc-connector/edit-view.png":::
+
 To implement this newly added PostgreSQL DB CDC source, select **Publish**. After you complete these steps, your PostgreSQL DB CDC source is available for visualization in the **Live view**.
 
 ![A screenshot of streaming PostgreSQL DB CDC source in Live view.](media/add-source-postgresql-database-cdc-connector/live-view.png)

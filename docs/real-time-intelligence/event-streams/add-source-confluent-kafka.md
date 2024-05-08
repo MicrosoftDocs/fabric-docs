@@ -33,7 +33,12 @@ Confluent Cloud Kafka is a streaming platform offering powerful data streaming a
 
 You see that the Confluent Cloud Kafka source is added to your eventstream on the canvas in **Edit mode**. To implement this newly added Confluent Cloud Kafka source, select **Publish** on the ribbon. 
 
+:::image type="content" source="./media/add-source-confluent-kafka/edit-view.png" alt-text="Screenshot that shows Confluent Kafka source in Edit view" lightbox="./media/add-source-confluent-kafka/edit-view.png":::
+
 After you complete these steps, the Confluent Cloud Kafka source is available for visualization in **Live view**.
+
+:::image type="content" source="./media/add-source-confluent-kafka/live-view.png" alt-text="Screenshot that shows Confluent Kafka source in Live view" lightbox="./media/add-source-confluent-kafka/live-view.png":::
+
 
 ## Related content
 

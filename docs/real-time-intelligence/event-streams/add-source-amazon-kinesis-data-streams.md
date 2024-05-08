@@ -39,7 +39,12 @@ This article shows you how to add Amazon Kinesis Data Streams source to an event
 
 You can see the Amazon Kinesis Data Stream source added to your eventstream in **Edit mode**.
 
+:::image type="content" source="./media/add-source-amazon-kinesis-data-streams/edit-view.png" alt-text="Screenshot that shows Amazon Kinesis Data Streams source in Edit view" lightbox="./media/add-source-amazon-kinesis-data-streams/edit-view.png":::
+
 To implement this newly added Amazon Kinesis Data Stream source, select **Publish**. After you complete these steps, your Amazon Kinesis Data Stream source is available for visualization in the **Live view**.
+
+:::image type="content" source="./media/add-source-amazon-kinesis-data-streams/live-view.png" alt-text="Screenshot that shows Amazon Kinesis Data Streams source in Live view" lightbox="./media/add-source-amazon-kinesis-data-streams/live-view.png":::
+
 
 ## Related content
 
