@@ -54,10 +54,10 @@ Once a dataflow refresh is canceled, the dataflow's refresh history status is up
 
 ## Refresh limitations
 
-For Dataflow refreshes we have a couple of limitations in place:
+For dataflow refreshes, a couple of limitations are in place:
 
-1. Per dataflow you are only allowed to have 96 refreshes per 24 hours (roling window). When you exceed this limit you will receive an error in your refresh history and refreshes will resume after you are below the limit.
-2. If your scheduled dataflow refresh fails consecutively we will pause your dataflow refresh schedule and sent the owner of the dataflow an email. The rules are as follows:
+1. Per dataflow, you're only allowed to have 96 refreshes per 24 hours (rolling window). When you exceed this limit, you receive an error in your refresh history and refreshes resume after you are below the limit.
+2. If your scheduled dataflow refresh fails consecutively, we pause your dataflow refresh schedule and send the owner of the dataflow an email. The following rules apply in this case:
    - 72 hours (3 days)
      - 100% failure rate over 72 hours
      - Minimum of 6 refreshes (2 refreshes a day)
