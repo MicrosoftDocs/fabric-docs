@@ -54,9 +54,9 @@ landingContent:
       - linkListType: how-to-guide
         links:
         - text: Process data streams
-          url: process-data-streams.md
+          url: process-data-streams-using-transformations.md
         - text: Analyze data streams
-          url: analyze-data-streams.md
+          url: analyze-data-streams-using-kql-table-queries.md
         - text: Set alerts on streams
           url: set-alerts-data-streams.md
         - text: Set alerts on Azure Blob Storage events
