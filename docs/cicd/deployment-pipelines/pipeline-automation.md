@@ -11,7 +11,7 @@ ms.search.form: Deployment pipelines APIs, Automate deployment pipelines, Power 
 #customer intent: As a developer, I want to automate my deployment pipeline using APIs and Azure DevOps so that I can streamline the release process.
 ---
 
-# Automate your deployment pipeline by using APIs and Azure DevOps
+# Automate your deployment pipeline for Power BI items by using APIs
 
 The Microsoft Power BI [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Power BI content.
 
