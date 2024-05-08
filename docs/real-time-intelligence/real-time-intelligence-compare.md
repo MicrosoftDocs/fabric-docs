@@ -44,7 +44,7 @@ This article outlines key considerations for determining the most suitable imple
 |--|--|--|
 | **Integration of services** | Depends on integration compatibility between the services in scope of the architecture. | One-click integration at each step of data ingestion, process, analyze, visualize, and act. |
 | **Pro and citizen dev experience** | More suitable for pro developers. | Pro developers, citizen developers, and business users can coexist. |
-| **Low-code/No-code** | Available in Azure Stream Analytics, and for alerting layer in Logic Apps and Power Automate. | Available in ingestion, analyze, visualize, and the act layer. |
+| **Low-code/No-code** | Only available for transformation in Azure Stream Analytics and for creating alerts using Logics Apps or Power Automate. Pro development required for end to end implementation. | End-to-end implementation from ingestion to analyse to transform to visualize and act can be realized. |
 | **Consumption Model** | Service dependent estimation, consumption, and billing model. | Uniform Fabric Capacity Unit consumption and billing model. |
 
 ## Ingest and process
@@ -62,7 +62,7 @@ This article outlines key considerations for determining the most suitable imple
 | **Data profiling** | Not available | Data profiling view of your real-time tables provides out-of-the-box histograms and min-max ranges for each column. |
 | **Visual data exploration** | Not available | Drag-and-drop features to visually analyze your real-time data. |
 | **Copilot experience** | Azure Data Explorer cluster can be added as a source in Fabric KQL Queryset to use Copilot capabilities. | Natively available |
-| **Built-in ML models** | Anomaly detection, Forecasting | Anomaly detection, Forecasting |
+| **Built-in ML models** | Anomaly detection and forecasting models available. Pro development required to deploy anomaly detection and forecasting models. | Anomaly detection and forecasting models available. Business users can also apply anomaly detection models on incoming streaming data. |
 | **Visualization (Microsoft)** | Power BI, Azure Data Explorer dashboards | Native one-click integration with Power BI and Real-Time Dashboard |
 | **Visualization (Third party)** | Grafana, Kibana, Matlab. | Grafana, Kibana, Matlab can also be integrated with Event house. |
 
