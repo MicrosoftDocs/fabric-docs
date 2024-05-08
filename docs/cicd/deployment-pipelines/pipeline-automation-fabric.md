@@ -4,7 +4,7 @@ description: Learn how to automate your deployment pipeline, the Microsoft Fabri
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: concept-article
-ms.date: 11/02/2023
+ms.date: 05/08/2024
 #customer intent: As a developer, I want to automate my deployment pipeline using Fabric APIs so that I can streamline the release process.
 ---
 
@@ -91,7 +91,7 @@ When using the deployment pipelines APIs, consider the following limitations:
   * allowTakeOver
   * allowSkipTilesWithMissingPrerequisites
 
-  If you need one of these APIs, use Power BI API to deploy. However, these APIs only work for Power BI items.
+  If you need one of these APIs, use the [Power BI API](./pipeline-automation.md) to deploy. However, these APIs only work for Power BI items.
 
 ## Related content
 
