@@ -60,6 +60,9 @@ If you want to transform the Fabric workspace events, open your eventstream and 
 
 ![A screenshot of the Fabric workspace item events in Live view, where you can select Edit.](media/add-source-fabric-workspace/fabric-workspace-item-events-live.png)
 
+[!INCLUDE [known-issues-discrete-events](./includes/known-issues-discrete-events.md)]
+
+
 ## Related content
 
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)

@@ -112,6 +112,8 @@ After you link Azure Blob Storage events to Fabric events in Real-Time hub, you 
 
    ![A screenshot of the eventstream listed under Data streams in the Real-Time hub.](media/add-source-azure-blob-storage/hub.png)
 
+[!INCLUDE [known-issues-discrete-events](./includes/known-issues-discrete-events.md)]
+
 ## Related content
 
 - [Add Fabric workspace item events to an eventstream](add-source-fabric-workspace.md)
