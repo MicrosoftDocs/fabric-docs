@@ -1,5 +1,5 @@
 ---
-title: Fabric extensibility overview
+title: Microsoft Fabric Workload Development Kit overview
 description: Learn about building customized Fabric workloads. 
 author: mberdugo
 ms.author: monaberdugo
@@ -9,12 +9,9 @@ ms.custom:
 ms.date: 12/27/2023
 ---
 
-# Microsoft Fabric Software Developer Kit overview
+# Microsoft Fabric Workload Development Kit
 
 This guide covers everything you need to know to create your own custom Fabric workload for your organization.
-
-> [!NOTE]
-> The Fabric Workload SDK repository is currently in private preview and is subject to change. Keep in mind that there may be issues or missing documentation. We are working hard to ensure that the repository is as stable and reliable as possible, and we appreciate your patience and understanding.
 
 ## Trademarks
 
@@ -22,9 +19,9 @@ This project might contain trademarks or logos for projects, products, or servic
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
 
-## Introduction to Microsoft Fabric Workloads SDK
+## Introduction to Workload Development Kit
 
-The Microsoft Fabric Workloads SDK is a powerful tool designed to facilitate the integration of your applications within the Microsoft Fabric framework. This SDK is particularly useful for enterprise-level applications that require comprehensive analytics solutions.
+The Microsoft Fabric Workload Development Kit is a powerful tool designed to facilitate the integration of your applications within the Microsoft Fabric framework. This development kit is particularly useful for enterprise-level applications that require comprehensive analytics solutions.
 
 ## What are Workloads?
 
@@ -49,7 +46,7 @@ In essence, workloads offer Microsoft Partners a comprehensive solution for appl
 
 For more information please view the [monetization.md][Microsoft Fabric workload partner benefits]
 
-### Workload Extensibility Framework
+### Workload Development kit
 This is a robust mechanism designed to enhance the existing Fabric experience by integrating custom capabilities. The entire Fabric platform has been engineered with interoperability in mind, seamlessly incorporating workload capabilities. For instance, the item editor facilitates the creation of a native, consistent user experience by embedding the customer's workload within the context of a Fabric workspace item.
 
 ### Universal Compute Capacity
