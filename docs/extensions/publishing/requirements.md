@@ -64,8 +64,7 @@ Before [publishing your Software as a Service (SaaS) offer on the Azure Marketpl
 
 
 # Workload package requirements 
-Metadata must be identical in the Workload package manifest and the SaaS offer submission in Partner Center.
-Such as: Title, Summary and icon. Add all the assets of the Workload such as icons and screenshots under fe/assests directory.
+Metadata must be identical in the Workload package manifest and the SaaS offer submission in Partner Center. Such as: Title, Summary and icon. Add all the assets of the Workload such as icons and screenshots under fe/assests directory.
 Your [Workload package](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fmicrosoft%2FMicrosoft-Fabric-developer-sample%2Fblob%2Fmain%2FBackend%2Fdocs%2FNuget-Structure.md&data=05%7C02%7CRanin.Salameh%40microsoft.com%7Cd4afc3531dd24b9b0e4708dc6f48998a%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638507604807029314%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=UqrhN4HlCO9K4wVzXZve%2F2Z105iEQHSa0SrgS9K80TY%3D&reserved=0) should comply to both [Frontend manifest requirmenets](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/dev/idgoldfa/addProductDetailsSectionToManifest/Frontend/frontendManifest.md) and [Backend manifest requirmenets](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/README.md).
    
 
@@ -74,12 +73,12 @@ Your [Workload package](https://nam06.safelinks.protection.outlook.com/?url=http
 |--| -- |--| -- |
 | **SaaS in Azure Marketplace** | For your SaaS offer to be listed on Azure Marketplace, it must be primarily platform on Microsoft Azure. | SaaS submission, Azure Requirements, Functional | [More information about the SaaS Azure Requirements](https://learn.microsoft.com/legal/marketplace/certification-policies#10001-value-proposition-and-offer-requirements) |
 | **OneLake** | OneLake is the hard to store data within Fabric. Extensions need to integrate with it to store data in the standard formats supported by the platform that other services can take advantage of it. | Functional | [More information about the OneLake](https://learn.microsoft.com/fabric/onelake/onelake-overview) |
-| **Multi Tenant / Multi Region** | tbd |  |
+
 
 # Compliance requirements
 | **Requirement Category** | **Detailed Description** | **Applicable Domain**  | **Reference Links**  |
 |--| -- |--| -- |
-| **Publisher Attestation** | Publisher attestation should be listed on partner hosted website. The Publisher attestation document is a way for Workload developers to show customers how their app handles security, data, and compliance. It's a self-assessment where the Workload developer attested the Workload’s security attributes and data-handling practices. The Publisher attestation document should be hosted in the partner website. Publisher must add the link in the Workload metadata manifest under `supportLink`, feild `certification`. This link will also appear in the Workload product page in the Workload Hub | Compliance | |
+| **Publisher Attestation** | The Publisher attestation document is a way for Workload developers to show customers how their app handles security, data, and compliance. It's a self-assessment where the Workload developer attested the Workload’s security attributes and data-handling practices. The Publisher attestation document should be hosted on the partner website. Publisher must add the link in the Workload metadata manifest under `supportLink`, field `certification`. This link will also appear in the Workload product page in the Workload Hub | Compliance | |
 | **Terms & Conditions** | You need to provide your customers with Terms and conditions for the offer you provide on the platform. In these Terms you also need to highlight the compliancy aspects of your solution (for example, what happens to data at Rest vs. Transit. Where are the services available that you provide to Azure customers, ...)  | Compliance, SaaS Submission | [More information on Fabric Compliancy](https://learn.microsoft.com/fabric/governance/governance-compliance-overview) |
 | **ISO 27001:2013** | Your Fabric Workload must comply with ISO 27001:2013. | Compliance, Security |  |
 | **SOC 2 Type 2** | Your Fabric Workload should comply with SOC 2 Type 2. | Compliance, Security |  |
