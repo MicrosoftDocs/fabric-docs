@@ -44,7 +44,7 @@ This article outlines key considerations for determining the most suitable imple
 |--|--|--|
 | **Integration of services** | Depends on integration compatibility between the services in scope of the architecture. | One-click integration at each step of data ingestion, process, analyze, visualize, and act. |
 | **Pro and citizen dev experience** | More suitable for pro developers. | Pro developers, citizen developers, and business users can coexist. |
-| **Low-code/No-code** | Only available for transformation in Azure Stream Analytics and for creating alerts using Logics Apps or Power Automate. Pro development required for end to end implementation. | End-to-end implementation from ingestion to analyse to transform to visualize and act can be realized. |
+| **Low-code/No-code** | Only available for transformation in Azure Stream Analytics and for creating alerts using Logics Apps or Power Automate. Pro development required for end to end implementation. | End-to-end implementation from ingestion to analyze to transform to visualize and act can be realized. |
 | **Consumption Model** | Service dependent estimation, consumption, and billing model. | Uniform Fabric Capacity Unit consumption and billing model. |
 
 ## Ingest and process
@@ -80,7 +80,7 @@ This article outlines key considerations for determining the most suitable imple
 
 | Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
-| **Unified catalog of data streams** | Not available | Real-time hub:<br />1. Data streams created by the users<br />2. Existing streams from Microsoft sources<br />3. Fabric system event streams. |
+| **Unified catalog of data streams** | Not available | Real-time hub:<br />1. Data streams created by the users<br />2. Existing streams from Microsoft sources<br />3. Fabric system event streams |
 | **Discovery of Microsoft data streams** | Not available | Real-time Intelligence hub discovers data streams in your Azure tenant. |
 | **Capture and act on events from Azure Storage** | Requires deploying Azure Event Grid to act on events occurring in Azure Storage. | Can be deployed from Fabric. An Event Grid resource is created in the same resource group as the Azure Storage account. |
 | **Capture and act on events from Fabric** | Not applicable | Natively available in Fabric |
