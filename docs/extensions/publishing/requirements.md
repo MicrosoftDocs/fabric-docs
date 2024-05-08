@@ -1,8 +1,8 @@
 ---
 title: Fabric Workload Hub Validation Guidelines and Requirements
 description: Learn about the requirements for publishing Fabric workload.
-author: gesaur, rasala
-ms.author: gesaur, rasala
+author: rasala, gesaur
+ms.author: rasala, gesaur
 ms.reviewer: gesaur
 ms.topic: how-to
 ms.custom:
