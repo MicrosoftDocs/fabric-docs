@@ -89,4 +89,4 @@ We hope this guide helps you make the most of the Lakehouse explorer and its div
 
 - [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
 
-- [Create a OneLake shortcut](../real-time-analytics/onelake-shortcuts.md?tab=onelake-shortcut)
+- [Create a OneLake shortcut](../real-time-intelligence/onelake-shortcuts.md?tab=onelake-shortcut)
