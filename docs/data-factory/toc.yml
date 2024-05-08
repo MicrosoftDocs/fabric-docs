@@ -613,6 +613,8 @@
         href: semantic-model-refresh-activity.md
       - name: Set Variable Activity
         href: set-variable-activity.md
+      - name: Spark Job Definition activity
+        href: spark-job-definition-activity.md
       - name: Stored Procedure activity
         href: stored-procedure-activity.md
       - name: Switch activity
