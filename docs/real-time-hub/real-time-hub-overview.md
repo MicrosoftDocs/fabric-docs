@@ -20,7 +20,7 @@ Each user in the tenant can view and edit all the events or streams that they ha
 
 :::image type="content" source="./media/real-time-hub-overview/hub-data-streams-tab.png" alt-text="Screenshot that shows the Real-Time hub page with the Data Streams tab selected." lightbox="./media/real-time-hub-overview/hub-data-streams-tab.png" :::
 
-## Numerous connectors ingest data from wide variety of sources
+## Numerous connectors to ingest data from wide variety of sources
 Real-Time hub has numerous out-of-box connectors that make it easy for you to ingest data into Microsoft Fabric from a wide variety of sources. Currently, the following connectors are supported: 
 
 | &nbsp; | &nbsp; |
@@ -50,13 +50,11 @@ A unified **Get Events** experience makes it effortless to connect these sources
 ## Process, analyze, and act on data streams
 Real-Time hub allows you to create streams for the supported sources. After you create the streams, you can process them, analyze them, and set alerts on them.
 
-To **process** a stream, you open the parent eventstream in an editor, add transformations such as Aggregate, Expand, Filter, Group by, Manage fields, and Union, to transform or process the data that's streaming into Fabric, and then send the output data from transformations into supported destinations.
+- To **process** a stream, you open the parent eventstream in an editor, add transformations such as Aggregate, Expand, Filter, Group by, Manage fields, and Union, to transform or process the data that's streaming into Fabric, and then send the output data from transformations into supported destinations.
+- To **analyze** a stream, you open the eventstream associated with the data stream, add a KQL Database destination to send the data to a KQL table, and then open KQL database and run queries against the KQL table. To analyze a table in  Real-Time hub, you open the parent KQL database and run queries against the KQL table.
+- To **act** on streams or Fabric events, you set alerts based on conditions and specify actions to take when the conditions are met. 
 
-To **analyze** a stream, you open the eventstream associated with the data stream, add a KQL Database destination to send the data to a KQL table, and then open KQL database and run queries against the KQL table. To analyze a table in  Real-Time hub, you open the parent KQL database and run queries against the KQL table.
-
-To **act** on streams or Fabric events, you set alerts based on conditions and specify actions to take when the conditions are met. 
-
-:::image type="content" source="./media/real-time-hub-overview/real-time-hub.png" alt-text="Screenshot that shows the conceptual image of Real-Time hub architecture." lightbox="./media/real-time-hub-overview/real-time-hub.png" :::
+    :::image type="content" source="./media/real-time-hub-overview/real-time-hub.png" alt-text="Screenshot that shows the conceptual image of Real-Time hub architecture." lightbox="./media/real-time-hub-overview/real-time-hub.png" :::
 
 
 ## Next step
