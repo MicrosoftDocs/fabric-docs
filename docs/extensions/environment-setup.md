@@ -42,7 +42,7 @@ In the context of executing the workload SDK sample and building a workload, it'
 #### Tenant setting and development settings
 1. Fabric admins permission is required to be able to begin development and connect with your local machine to a Fabric capacity. Only developers with capacity admin permission can connect and register their workload on to a capacity. Frontend development doesn't require capacity admin permissions. 
 To enable a user to begin development include them under More Workloads->users can develop more workloads setting.
-:::image type="content" source="./media/environment-setup/environment-setup-tn.png" alt-text="Tenant settings":::
+:::image type="content" source="./media/environment-setup/environment-setup-ts.png" alt-text="Tenant settings":::
 1. After user is granted permission in the previous step **each** user can enable development mode for the development settings area under Fabric developer mode.
 :::image type="content" source="./media/environment-setup/environment-setup-devmode.png" alt-text="Tenant settings":::
 
