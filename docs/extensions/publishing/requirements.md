@@ -64,16 +64,10 @@ Before [publishing your Software as a Service (SaaS) offer on the Azure Marketpl
 
 
 # NuGet package requirements 
-1. Add all the assets of the workload such as icons, screenshots videos under fe/assests
-2. For more details about the https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/frontendManifest.md
+Meta data must be identical in the NuGet package manifest and the SaaS offer submission in Partner Center.
+Such as: Title, Summary and icon. Add all the assets of the workload such as icons and screenshots under fe/assests directory.
+Your NuGet package should comply to both [Frontend requirmenets](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/README.md) and [Backend requirmenets](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/README.md).
    
-
-3.  Meta data must be identical in the NuGet package manifest and the SaaS offer submission in Partner Center.
-Such as: Title, Summary, icon,...
-
-4. Frontend requirements 
-5. Backend requirements
-   * Backend information should be filed under be/
 
 # Technical requirements
 | **Requirement Category** | **Detailed Description** | **Applicable Domain**  | **Reference Links**  |
