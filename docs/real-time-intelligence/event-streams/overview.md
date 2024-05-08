@@ -41,6 +41,10 @@ The Fabric event streams feature supports sending data to the following supporte
 
 [!INCLUDE [supported-destinations-enhanced](./includes/supported-destinations-enhanced.md)]
 
+You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without interfering with each other.
+
+:::image type="content" source="./media/overview/multiple-destinations-enhanced.png" alt-text="Screenshot showing an Eventstream item overview." lightbox="./media/overview/multiple-destinations-enhanced.png" :::
+
 # [Standard capabilities](#tab/standardcapabilities)
 
 [!INCLUDE [supported-destinations](./includes/supported-destinations-standard.md)]
