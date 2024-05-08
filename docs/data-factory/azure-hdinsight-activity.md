@@ -34,7 +34,7 @@ To get started, you must complete the following prerequisites:
 
    - Creating the activity from the home screen card:
 
-     :::image type="content" source="media/azure-hdinsight-activity/create-activity-from-home-screen-card.png" lightbox="media/azure-hdinsight-activity/create-activity-from-home-screen-card.png" alt-text="Screenshot showing where to create a new Azure HDInsight ":::
+     :::image type="content" source="media/azure-hdinsight-activity/create-activity-from-home-screen-card.png" lightbox="media/azure-hdinsight-activity/create-activity-from-home-screen-card.png" alt-text="Screenshot showing where to create a new Azure HDInsight activity.":::
 
    - Creating the activity from the Activities bar:
   
