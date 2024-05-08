@@ -4,7 +4,7 @@ description: This article shows how to explore Microsoft sources in Fabric Real-
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
-ms.date: 04/03/2024
+ms.date: 05/21/2024
 ---
 
 # Explore Microsoft sources in Fabric Real-Time hub (preview)
