@@ -63,7 +63,10 @@ To cancel a free trial for your organization, [turn off recurring billing](/micr
 
 ### Manage an expired Premium subscription
 
-If a Premium subscription or capacity license expires, you have 30 days of full access to your capacity. After that, your content reverts to a shared capacity where it will continue to be accessible.  However, you can't view reports that are based on semantic models that are greater than 1 GB or reports that require Premium capacities to render.
+> [!NOTE]
+> Power BI Premium is transitioning to Microsoft Fabric. Power BI Premium is now part of Fabric. At the end of your current agreement with Microsoft, work with your Microsoft account representatives to migrate your P SKU purchase to an F SKU purchase. No immediate action is required. You can continue using your existing Power BI Premium capacity until the time of your next renewal. You can use Power BI in Fabric alongside all the other Fabric workloads. Because of this change, the Power BI Premium SKUs are being retired.
+
+If a Premium subscription or capacity license expires, you have 90 days of full access to your capacity. During these 90 days, migrate your workspaces to your new F SKU capacity without losing access to your existing work. However, once the workspace is reassigned, all currently active jobs are canceled. Rerun those jobs after migration. Migration doesn't impact scheduled jobs. If you don't migrate your workspaces, your content reverts to a shared capacity where it will continue to be accessible.  However, you can't view reports that are based on semantic models that are greater than 1 GB or reports that require Premium capacities to render.
 
 ### Manage an expired Power BI license
 
