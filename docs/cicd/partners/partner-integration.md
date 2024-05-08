@@ -20,7 +20,7 @@ ms.date: 05/05/2024
 
 The primary focus with Interop model is on enabling ISVs to integrate their solutions with the [OneLake Foundation](../../get-started/microsoft-fabric-overview.md). To Interop with Microsoft Fabric, we provide integration using REST APIs for OneLake, a multitude of connectors in Data Factory, shortcuts in OneLake, and database mirroring.
 
-:::image type="content" source="media/partner-integration/onelake-interop.png" alt-text="Figure showing four ways to interop with OneLake: APIs, Fabric Data Factory, Multicloud shortcuts, and database mirroring.":::
+:::image type="content" source="media/partner-integration/fabric-interop.png" alt-text="Figure showing four ways to interop with OneLake: APIs, Fabric Data Factory, Multicloud shortcuts, and database mirroring.":::
 
 Here are a few ways to get you started with this model:
 
@@ -39,7 +39,7 @@ Here are a few ways to get you started with this model:
 Real-Time Intelligence streamlines data analysis and visualization, offering a centralized solution for immediate insights and actions on data in motion within an organization. It efficiently manages large volumes of data through robust querying, transformation, and storage capabilities.
 
 - Event houses are specifically designed for streaming data, compatible with Real-Time Hub, and ideal for time-based events. Data is automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data that can be accessed in OneLake for use across Fabric's suite of experiences. Event houses support existing Event house APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Event houses. Learn more about [REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
-- Event streams serve as a centralized hub for capturing, transforming, and routing real-time events to various destinations, providing a seamless method for data ingestion into KQL databases. Learn more about [Event streams](../../real-time-intelligence/event-streams/overview.md) and [Event streams API](#real-time-intelligence).
+- Event streams enable you to bring real-time events from various sources and route them to various destinations, such as OneLake, KQL databases in event houses, and Data Activator. Learn more about [Event streams](../../real-time-intelligence/event-streams/overview.md) and [Event streams API](#real-time-intelligence).
 - If you're using Databricks or Jupyter Notebooks, you can utilize the Kusto Python Client Library to work with KQL databases in Fabric. Learn more about [Kusto Pyton SDK](/azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context-rti&pivots=fabric).
 - You can utilize the existing [Microsoft Logic Apps](/azure/data-explorer/kusto/tools/logicapps), [Azure Data Factory](/azure/data-explorer/data-factory-integration), or [Microsoft Power Automate](/azure/data-explorer/flow) connectors to interact with your Event houses or KQL Databases.
 - [Database shortcuts in Real-Time Analytics](../../real-time-intelligence/database-shortcut.md) are embedded references within an event house to a source database. The source database can either be a KQL Database in Real-Time Analytics or an Azure Data Explorer database. Shortcuts can be used for inplace sharing of data within the same tenant or across tenants. Learn more about managing [database shortcuts using the API](#real-time-intelligence).
