@@ -3,8 +3,8 @@ title: Limits and quotas in Microsoft Fabric mirrored databases from Azure Cosmo
 description: This article includes a list of limitations and quotas for Microsoft Fabric mirrored databases from Azure Cosmos DB.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa
-ms.date: 03/15/2024
+ms.reviewer: anithaa, wiassaf
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: limits-and-quotas
 ms.custom:
@@ -73,6 +73,7 @@ Here's a list of regions that support mirroring for Azure Cosmos DB:
     - Brazil South
     - Canada Central
     - Canada East
+    - Central US
     - East US
     - East US2
     - North Central US
@@ -123,7 +124,7 @@ Here's a list of regions that support mirroring for Azure Cosmos DB:
 
 ## Data explorer limitations
 
-- The Fabric data explorer experience is read-only. You can view existing containers, view items, and query items.
+- Fabric Data Explorer queries are read-only. You can view existing containers, view items, and query items.
 - You can't create or delete containers using the data explorer in Fabric.
 - You can't insert, modify, or delete items using the data explorer in Fabric.
 - You can avoid sharing the source database by only sharing the SQL analytics endpoint with other users for analytics.
@@ -140,7 +141,7 @@ Here's a list of regions that support mirroring for Azure Cosmos DB:
 ### Schema and data changes
 
 - Deleting and adding a similar container replaces the data in the warehouse tables with only the new container's data.
-- Changing the type of data in a property across multiple items cause the replicator to upcast the data where applicable. This behavior is in parity with the native delta experience. Any data that doesn't fit into the above criteria become a null type. For example, changing an array property to a string upcasts to a null type.
+- Changing the type of data in a property across multiple items cause the replicator to upcast the data where applicable. This behavior is in parity with the native delta experience. Any data that doesn't fit into the supported criteria become a null type. For example, changing an array property to a string upcasts to a null type.
 - Adding new properties to items cause mirroring to seamlessly detect the new properties and add corresponding columns to the warehouse table. If item properties are removed or missing, they have a null value for the corresponding record.
 - Replicating data using mirroring doesn't have a full-fidelity or well-defined schema. Mirroring automatically and continuously tracks property changes and data type (when allowed).
 

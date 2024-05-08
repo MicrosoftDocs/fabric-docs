@@ -70,6 +70,26 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
     1. Select the **_delta_log** folder.
     1. Select a file to view the table metadata and schema. The editor that opens is in read-only format.
 
+## Data types mapping
+
+### Event house to Delta parquet data types mapping
+
+ Event house data types are mapped to Delta Parquet data types using the following rules. For more information on Event house data types, see [Scalar data types](/azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric).
+
+| Event house Data Type | Delta Data Type 
+| --------------- | ----------------- 
+| `bool`     | `boolean` 
+| `datetime` | `timestamp OR date (for date-bound partition definitions)` 
+| `dynamic`  | `string` 
+| `guid` | `string`
+| `int` | `integer`
+| `long` | `long`
+| `real` | `double`
+| `string` | `string` 
+| `timespan` | `long`
+| `decimal` | `decimal(38,18)`
+
+
 ## Related content
 
 * To expose the data in OneLake, see [Create a shortcut in OneLake](../onelake/create-onelake-shortcut.md)

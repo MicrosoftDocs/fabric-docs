@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 03/12/2024
+ms.date: 04/14/2024
 ---
 
 # Security in Microsoft Fabric
@@ -71,6 +71,12 @@ With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts secur
 
 [Managed private endpoints](security-managed-private-endpoints-overview.md) allow secure connections to data sources such Azure SQL databases without exposing them to the public network or requiring complex network configurations.  
 
+#### Managed virtual networks
+
+[Managed virtual networks](security-managed-vnets-fabric-overview.md) are virtual networks that are created and managed by Microsoft Fabric for each Fabric workspace. Managed virtual networks provide network isolation for Fabric Spark workloads, meaning that the compute clusters are deployed in a dedicated network and are no longer part of the shared virtual network.
+
+Managed virtual networks also enable network security features such as managed private endpoints, and private link support for Data Engineering and Data Science items in Microsoft Fabric that use Apache Spark.
+
 #### Data gateway
 
 To connect to on-premises data sources or a data source that might be protected by a firewall or a virtual network, you can use one of these options:
@@ -89,7 +95,7 @@ Use [service Tags](security-service-tags.md) to ingest data without the use of d
 
 #### IP allowlists
 
-If you have data that doesn't reside in Azure, you can enable an IP allowlist on your organization's network to allow traffic to and from Fabric. An IP allowlist is useful if you need to get data from data sources that don't support service tags, such as Azure Data Lake Storage (ADLS) and on-premises data sources. With these shortcuts, you can get data without copying it into OneLake using a [Lakehouse SQL endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Direct Lake](/power-bi/enterprise/directlake-overview).
+If you have data that doesn't reside in Azure, you can enable an IP allowlist on your organization's network to allow traffic to and from Fabric. An IP allowlist is useful if you need to get data from data sources that don't support service tags, such as on-premises data sources. With these shortcuts, you can get data without copying it into OneLake using a [Lakehouse SQL endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Direct Lake](../get-started/direct-lake-overview.md).
 
 You can get the list of Fabric IPs from [Service tags on-premises](/azure/virtual-network/service-tags-overview#service-tags-on-premises). The list is available as a JSON file, or programmatically with REST APIs, PowerShell, and Azure Command-Line Interface (CLI).
 
@@ -130,11 +136,11 @@ You can [share Fabric items](../get-started/share-items.md) with users in your o
 
 ### Limit access
 
-You can limit viewer access to data using [Row-level security (RLS)](/power-bi/enterprise/service-admin-rls), [Column level security (CLS)](../data-warehouse/column-level-security.md) and [Object level security (OLS)](/power-bi/enterprise/service-admin-ols). With RLS, CLS and OLS, you can create user identities that have access to certain portions of your data, and limit SQL results returning only what the user's identity can access.
+You can limit viewer access to data using [row-level security (RLS)](service-admin-row-level-security.md), [column-level security (CLS)](../data-warehouse/column-level-security.md) and [object-level security (OLS)](service-admin-object-level-security.md). With RLS, CLS and OLS, you can create user identities that have access to certain portions of your data, and limit SQL results returning only what the user's identity can access.
 
 You can also add RLS to a DirectLake dataset. If you define security for both SQL and DAX, DirectLake falls back to DirectQuery for tables that have RLS in SQL. In such cases, DAX, or MDX results are limited to the user's identity.
 
-To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use direct dataset sharing or [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
+To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use direct dataset sharing or [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](../get-started/direct-lake-fixed-identity.md) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
 
 ## Protect data
 

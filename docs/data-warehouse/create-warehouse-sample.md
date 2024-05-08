@@ -1,10 +1,12 @@
 ---
 title: Create a Warehouse sample
 description: Learn how to create a sample Warehouse in Microsoft Fabric.
-author: prlangad
-ms.author: prlangad
-ms.reviewer: wiassaf
-ms.date: 02/21/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: prlangad
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -21,7 +23,7 @@ This article describes how to get started with sample [!INCLUDE [fabric-dw](incl
 
 ## How to create a new warehouse with sample data
 
-In this section, we walk you through the experience of creating a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with sample data.
+In this section, we walk you through creating a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with sample data.
 
 ### Create a warehouse sample using the Home hub
 

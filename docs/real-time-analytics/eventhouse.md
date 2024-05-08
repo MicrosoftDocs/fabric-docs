@@ -24,9 +24,20 @@ While Eventhouse is in preview, you can create a standalone [KQL database](creat
 
 ## What information do I see in an event house?
 
-The details page of an event house shows you database information either in list or tile view.
+The system overview page of an event house shows you the following information:
 
-The following information about each database is displayed in tile view:
+* Event house details
+* Running state of the event house
+* OneLake storage usage
+* OneLake storage usage by database
+* Compute usage
+* Compute usage by user
+* Most active databases
+* Recent events
+
+For more information, see [View system overview details for an event house](manage-monitor-eventhouse.md#view-system-overview-details-for-an-event-house).
+
+The databases page of an Eventhouse shows you database information either in list or tile view. The following information about each database is displayed in tile view:
 
 * Database name
 * A graph of queries run over the past week
@@ -37,11 +48,11 @@ The following information about each database is displayed in tile view:
 
 ## Minimum consumption
 
-Your event house is designed to optimize cost by suspending the service when not in use. To reactivate the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can’t tolerate this latency, use **Minimum consumption**. When activated, the service is always available at the selected minimum level, and you pay at least the minimum compute selected (or actual use) while no longer paying for premium storage. The specified compute is available to all the databases within the Eventhouse. The free premium storage allotted to the customer is limited, and corresponds to the minimum consumption levels as shown in the following table:
+Your event house is designed to optimize cost by suspending the service when not in use. To reactivate the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, use **Minimum consumption**. When activated, the service is always available at the selected minimum level, and you pay at least the minimum compute selected (or actual use) while no longer paying for premium storage. The specified compute is available to all the databases within the Eventhouse. The free premium storage allotted to the customer is limited, and corresponds to the minimum consumption levels as shown in the following table:
 
 [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
 
-For instructions on how to enable minimum consumption, see [Enable minimum consumption](create-eventhouse.md#enable-minimum-consumption).
+For instructions on how to enable minimum consumption, see [Enable minimum consumption](manage-monitor-eventhouse.md#enable-minimum-consumption).
 
 ## Next step
 

@@ -1,10 +1,12 @@
 ---
 title: Ingesting data into the warehouse
 description: Learn about the features that allow you to ingest data into your warehouse.
-author: periclesrocha
-ms.author: procha
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: procha
+ms.date: 05/01/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -13,7 +15,7 @@ ms.search.form: Ingesting data # This article's title should not change. If so, 
 ---
 # Ingest data into the Warehouse
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
  [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
 
@@ -70,7 +72,8 @@ INSERT INTO MyWarehouseTable
 SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 ```
 
-- Avoid ingesting data using singleton **INSERT** statements, as this causes poor performance on queries and updates. If singleton **INSERT** statements were used for data ingestion consecutively, we recommend creating a new table by using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT** patterns, dropping the original table, and then creating your table again from the table you created using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT**.
+- Avoid ingesting data using singleton **INSERT** statements, as this causes poor performance on queries and updates. If singleton **INSERT** statements were used for data ingestion consecutively, we recommend creating a new table by using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT** patterns, dropping the original table, and then creating your table again from the table you created using **CREATE TABLE AS SELECT (CTAS)**.
+  - Dropping your existing table impacts your semantic model, including any custom measures or customizations you may have made to the semantic model.
 - When working with external data on files, we recommend that files are at least 4 MB in size.
 - For large compressed CSV files, consider splitting your file into multiple files.
 - Azure Data Lake Storage (ADLS) Gen2 offers better performance than Azure Blob Storage (legacy). Consider using an ADLS Gen2 account whenever possible. 

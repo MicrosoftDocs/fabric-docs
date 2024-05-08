@@ -7,6 +7,7 @@ ms.reviewer: Pierre, Nimrod
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/02/2024
+ms.search.form: Git integration automation, Git integration APIs, Azure DevOps integration
 ---
 
 # Automate Git integration by using APIs and Azure DevOps

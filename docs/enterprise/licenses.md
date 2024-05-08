@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 03/24/2024
+ms.date: 04/14/2024
 ---
 
 # Microsoft Fabric concepts and licenses
@@ -82,6 +82,7 @@ The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU)
 | F16 | 16 | EM2/A2 | 2 |
 | F32 | 32 | EM3/A3 | 4 |
 | F64 | 64 | P1/A4 | 8 |
+| Trial | 64 | - | 8 |
 | F128 | 128 | P2/A5 | 16 |
 | F256 | 256 | P3/A6 | 32 |
 | F512 | 512 | P4/A7 | 64 |

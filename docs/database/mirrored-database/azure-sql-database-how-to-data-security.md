@@ -4,8 +4,8 @@ description: Learn about how to secure data in mirrored databases from Azure SQL
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
+ms.date: 04/24/2024
 ms.service: fabric
-ms.date: 02/29/2024
 ms.topic: how-to
 ---
 
@@ -19,9 +19,9 @@ This guide helps you establish data security in your mirrored Azure SQL Database
 
    To configure, go to your logical SQL Server in the Azure portal. Under **Security** the resource menu, select **Identity**. Under **System assigned managed identity**, select **Status** to **On**.
 
-   <!-- ![Screenshot of turning on the system assigned managed identity.](media/image2.png)-->
+   <!-- :::image type="content" source="media/image2.png" alt-text="Screenshot of turning on the system assigned managed identity."::: -->
 
-1. Fabric needs to connect to the Azure SQL database. For this purpose, create a dedicated database user with limited permissions, to follow the principle of least privilege. Create either a login with a strong password and connected user, or a contained database user with a strong password. Grant the **CONTROL** permission. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-tutorial.md).
+1. Fabric needs to connect to the Azure SQL database. For this purpose, create a dedicated database user with limited permissions, to follow the principle of least privilege. Create either a login with a strong password and connected user, or a contained database user with a strong password. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-tutorial.md).
 
 > [!IMPORTANT]
 > Any granular security established in the source database must be re-configured in the mirrored database in Microsoft Fabric.

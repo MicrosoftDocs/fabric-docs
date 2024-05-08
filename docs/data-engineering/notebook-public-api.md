@@ -36,7 +36,7 @@ These **Item management** actions are available for notebooks:
 |Get item definition |Gets the content of a notebook.|
 |List item | List all items in a workspace.|
 
-For more information, see [Items - REST API](/rest/api/fabric/).
+For more information, see [Items - REST API](/rest/api/fabric/core/items).
 
 The following **Job scheduler** actions are available for notebooks:
 
@@ -46,7 +46,7 @@ The following **Job scheduler** actions are available for notebooks:
 |Cancel Item Job Instance|Cancel notebook job run.|
 |Get Item Job Instance| Get notebook run status.|
 
-For more information, see [Job Scheduler](/rest/api/fabric/).
+For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
 ## Notebook REST API usage examples
 
@@ -197,7 +197,7 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/4b218778-e7a5-4d73-8187
 Retry-After: 60
 ```
 
-With `location`, you can use [Get Item Job Instance](/rest/api/fabric/) to view job status or use [Cancel Item Job Instance](/rest/api/fabric/) to cancel the current notebook run.
+With `location`, you can use [Get Item Job Instance](/rest/api/fabric/core/job-scheduler/get-item-job-instance) to view job status or use [Cancel Item Job Instance](/rest/api/fabric/core/job-scheduler/cancel-item-job-instance) to cancel the current notebook run.
 
 ## Related content
 

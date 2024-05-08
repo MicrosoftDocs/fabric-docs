@@ -83,7 +83,7 @@ Admins have control over Fabric settings and permissions across the platform. Yo
 
 ### Delegate admin rights
 
-To avoid becoming a bottleneck for every single setting in your organization, you can delegate many of the controls to Capacity, Workspace, and Domain administrators. Delegating settings allows your organization to have several admins with different levels of admin rights in multiple logical locations within your organization. For example, you can have three admins with access to all the settings in your organization, and another admin for each team in your organization. The team admin can control settings and permissions relevant for the team, at the capacity, workspace, or domain level, depending on the way your organization is set up. You can also have multiple levels of admins in your organization, depending on your organization's needs.
+To avoid becoming a bottleneck for every single setting in your organization, you can delegate many of the controls to Capacity, Workspace, and Domain administrators. [Delegating settings](../admin/delegate-settings.md) allows your organization to have several admins with different levels of admin rights in multiple logical locations within your organization. For example, you can have three admins with access to all the settings in your organization, and another admin for each team in your organization. The team admin can control settings and permissions relevant for the team, at the capacity, workspace, or domain level, depending on the way your organization is set up. You can also have multiple levels of admins in your organization, depending on your organization's needs.
 
 ### Enable Fabric settings
 

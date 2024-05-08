@@ -9,6 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 12/17/2023
+ms.search.form: Git integration supported items, Introduction to Git integration
 ---
 
 # Introduction to Git integration (preview)

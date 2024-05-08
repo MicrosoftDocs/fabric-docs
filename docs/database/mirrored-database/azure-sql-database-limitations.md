@@ -4,10 +4,11 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, imotiwala, sbahadur
+ms.date: 04/24/2024
 ms.service: fabric
-ms.date: 03/19/2024
 ms.topic: conceptual
-ms.custom: references_regions
+ms.custom:
+  - references_regions
 ---
 # Limitations in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)
 
@@ -31,7 +32,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
 - [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking) settings are not currently propagated from the source SQL database into Fabric.
 - To successfully configure Mirroring for Azure SQL Database, the principal used to connect to the source Azure SQL Database needs to be granted **CONTROL** or **db_owner** permissions.
 
-## Network and connectivity security 
+## Network and connectivity security
 
 - The source SQL server needs to enable [Allow public network access](/azure/azure-sql/database/connectivity-settings#change-public-network-access) and [Allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect.
 - System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled. After enablement, if SAMI is disabled or removed, the mirroring of Azure SQL Database to Fabric OneLake will fail.
@@ -45,7 +46,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
 - Cross-[Microsoft Entra](/entra/fundamentals/new-name) tenant data mirroring is not supported where an Azure SQL Database and the Fabric workspace are in separate tenants.  
 - Microsoft Purview Information Protection/sensitivity labels defined in Azure SQL Database are not cascaded and mirrored to Fabric OneLake.
 
-## Table level  
+## Table level
 
 - A table cannot be mirrored if it does not have a primary key rowstore clustered index.
     - A table using a primary key defined and used as nonclustered primary key cannot be mirrored.  
@@ -55,18 +56,18 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
 - Source tables that have any of the following features in use cannot be mirrored.
     - Temporal history tables and ledger history tables  
     - Always Encrypted  
-    - In-memory tables 
+    - In-memory tables
     - Graph  
     - External tables  
 - The following table-level data definition language (DDL) operations aren't allowed on source tables when they're enabled for Fabric SQL Database mirroring.  
     - Switch/Split/Merge partition
-    - Alter Primary Key  
-    - Drop Table  
-    - Truncate Table 
-    - Rename Table  
+    - Alter primary key  
+    - Drop table  
+    - Truncate table
+    - Rename table  
 - When there is DDL change, a complete data snapshot is restarted for the changed table, and data is reseeded.
 
-## Column level  
+## Column level
 
 - If the source table contains computed columns, these columns cannot be mirrored to Fabric OneLake.  
 - If the source table contains columns with unsupported data types, these columns cannot be mirrored to Fabric OneLake. The following data types are unsupported.
@@ -83,17 +84,17 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
     - Alter column  
     - Rename column (`sp_rename`)  
  
-## Warehouse limitations  
+## Warehouse limitations
 
 - Source schema hierarchy is not replicated to the mirrored database. Instead, source schema is flattened, and schema name is encoded into the mirrored database table name.  
 
-### Mirrored item limitations  
+### Mirrored item limitations
 
 - User needs to be a member of the Admin/Member role for the workspace to create SQL Database mirroring.  
 - Stopping mirroring disables mirroring completely.  
 - Starting mirroring reseeds all the tables, effectively starting from scratch.  
 
-#### SQL analytics endpoint limitations  
+#### SQL analytics endpoint limitations
 
 - The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience. See [SQL analytics endpoint limitations](../../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
 

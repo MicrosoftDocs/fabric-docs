@@ -51,6 +51,8 @@ items:
     href: onelake-azure-storage-explorer.md
   - name: Azure Databricks
     href: onelake-azure-databricks.md
+  - name: Databricks Unity Catalog
+    href: onelake-unity-catalog.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
   - name: PowerShell
@@ -75,6 +77,8 @@ items:
       href: ./security/how-to-secure-data-onelake-for-data-science.md
     - name: For Data Warehousing
       href: ./security/how-to-secure-data-onelake-for-data-warehousing.md
+    - name: For common data architectures
+      href: ./security/how-to-common-data-architectures.md
   - name: Plan for disaster recovery
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
