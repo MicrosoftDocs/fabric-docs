@@ -74,7 +74,7 @@ The Edit mode includes a canvas and lower pane where you can:
 - Preview test result in each of the processing nodes from beginning to end. 
 - Discover any authoring errors within the processing nodes.
 
-### Page layout
+### Editor layout
 
 :::image type="content" source="./media/process-events-using-event-processor-editor/layout-enhanced.png" alt-text="Screenshot showing the layout of Event processing editor for an eventstream with enhanced capabilities." lightbox="./media/process-events-using-event-processor-editor/layout-enhanced.png":::        
 
