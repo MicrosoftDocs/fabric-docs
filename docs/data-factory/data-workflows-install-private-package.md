@@ -10,8 +10,7 @@ ms.topic: how-to
 ms.date: 03/25/2024
 ---
 
-
-# Install a Private Package as a Requirement in Data workflows
+# Install a Private Package as a requirement in data workflows
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
@@ -22,7 +21,7 @@ This guide provides step-by-step instructions on installing `.whl` (Wheel) file,
 
 For illustration purpose, I create a simple custom operator as python package that can be imported as a module inside dag file.
 
-### Develop a custom operator to convert it to private package and an Apache Airflow Dag to test it.
+## Develop a custom operator and test with an Apache Airflow Dag
 
 1. Create a file `sample_operator.py` and convert it to Private Package. Refer to the guide: [Creating a package in python](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/modules_management.html#creating-a-package-in-python)
 
@@ -64,14 +63,14 @@ For illustration purpose, I create a simple custom operator as python package th
 
 3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Data workflows or you can use preconfigured repository(Install-Private-Package)[https://github.com/ambika-garg/Install-Private-Package-Fabric]
 
-### Add your package as a requirement.
+## Add your package as a requirement
 
 Add the package as a requirement under `Airflow requirements`. Use the format `/opt/airflow/git/<repoName>.git/<pathToPrivatePackage>`
 
 For example, if your private package is located at `/dags/test/private.whl` in a GitHub repo, add the requirement `/opt/airflow/git/<repoName>.git/dags/test/private.whl` to the Airflow environment.
 
-:::image type="content" source="media/data-workflows/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
+:::image type="content" source="media/data-workflows/private-package.png" lightbox="media/data-workflows/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
 
 ## Related Content
 
-* [Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md).
+[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)

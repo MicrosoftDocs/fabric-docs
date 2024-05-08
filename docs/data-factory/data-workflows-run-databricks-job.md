@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 04/15/2023
 ---
 
-# Tutorial: Orchestrate Azure Databricks ETL job with Data workflows
+# Tutorial: Orchestrate Azure Databricks ETL jobs with data workflows
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
@@ -30,7 +30,7 @@ To get started, you must complete the following prerequisites:
 
   2. Select Apply.
 
-  :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
+  :::image type="content" source="media/data-workflows/enable-tenant.png" lightbox="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
 
 - [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md)
 
@@ -44,7 +44,7 @@ To get started, you must complete the following prerequisites:
 
 3. Select "Apply," to save the changes.
 
-   :::image type="content" source="media/data-workflows/add-airflow-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
+   :::image type="content" source="media/data-workflows/add-airflow-requirement.png" lightbox="media/data-workflows/add-airflow-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
 
 ## Create an Azure Databricks personal access token for Apache Airflow connection
 
@@ -60,9 +60,9 @@ To get started, you must complete the following prerequisites:
 
 When you install "apache-airflow-providers-databricks" as a requirement in Data workflows environment, a default connection for Azure Databricks is configured by default in Apache Airflow Connections list. Update the connection to connect to your workspace using the personal access token you created previously:
 
-1. Select on the "View Airflow connections" to see list of all the connections configured.
+1. Select on the "View Airflow connections" to see a list of all the connections configured.
 
-   :::image type="content" source="media/data-workflows/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
+   :::image type="content" source="media/data-workflows/view-apache-airflow-connection.png" lightbox="media/data-workflows/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
 2. Under Conn ID, locate databricks_default and select the Edit record button.
 
@@ -76,7 +76,7 @@ When you install "apache-airflow-providers-databricks" as a requirement in Data 
 
 1. Start by selecting the "New DAG File" card. Then, assign a name to the file and select the "Create".
 
-2. Once created, you are presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the `job_id` argument with the Azure Databricks Job ID.
+1. Once created, you are presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the `job_id` argument with the Azure Databricks Job ID.
 
 ```python
 from airflow import DAG
@@ -100,18 +100,18 @@ with DAG('databricks_dag',
   )
 ```
 
-3. Select on "Save," to save the file.
+1. Select on "Save," to save the file.
 
-   :::image type="content" source="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
+   :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
 ## Monitor the Data workflow DAG and run it from Apache Airflow UI
 
 After saving, the DAG files are automatically loaded into the Apache Airflow UI. To monitor them, select on the "Monitor in Apache Airflow" button.
 
-:::image type="content" source="media/data-workflows/monitor-dag.png" alt-text="Screenshot to monitor the Airflow DAG.":::
+:::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 
-:::image type="content" source="media/data-workflows/loaded-adf-dag.png" alt-text="Screenshot to load Airflow DAG.":::
+:::image type="content" source="media/data-workflows/loaded-adf-directed-acyclic-graph.png" alt-text="Screenshot to load Airflow DAG.":::
 
 ## Related Content
 
-- Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).
+[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)

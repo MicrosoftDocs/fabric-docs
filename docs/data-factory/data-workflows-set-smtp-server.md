@@ -1,5 +1,5 @@
 ---
-title: Set up SMTP server in Data workflows
+title: Set up SMTP server in data workflows
 description: This tutorial helps to set up smtp server in Data workflows.
 ms.reviewer: xupxhou
 ms.author: abnarain
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/25/2024
 ---
 
-# Set up SMTP Server in Data workflows
+# Set up SMTP Server in data workflows
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
@@ -50,7 +50,7 @@ To use email notifications and alerts, you need to set up a (Simple Mail Transfe
     | AIRFLOW__SMTP__SMTP_PORT        | 587                     |
     | AIRFLOW__SMTP__SMTP_MAIL_FROM   | your_email@gmail.com    |
 
-    :::image type="content" source="media/data-workflows/airflow-smtp-configs.png" alt-text="Screenshot presents airflow configs for SMTP.":::
+    :::image type="content" source="media/data-workflows/airflow-smtp-configurations.png" lightbox="media/data-workflows/airflow-smtp-configurations.png" alt-text="Screenshot presents airflow confiurations for SMTP.":::
 
 ## Example: A DAG that sends an email on the DAG Failure
 
@@ -93,8 +93,8 @@ The email contains the following information:
 * Host: Host Name of Data workflows
 * Mark success: Link that redirects to the Failed DAG state.
 
-    :::image type="content" source="media/data-workflows/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::
+    :::image type="content" source="media/data-workflows/airflow-email.png" lightbox="media/data-workflows/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::
 
 ## Related Content
 
-* Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).
+[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)

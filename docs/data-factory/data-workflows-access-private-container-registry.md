@@ -1,5 +1,5 @@
 ---
-title: Add a Kubernetes secret to pull an image from a private container registry.
+title: Add a Kubernetes secret to pull an image from a private container registry
 description: This article explains how to add a Kubernetes secret to pull a custom image from a private container registry.
 ms.reviewer: xupxhou
 ms.author: abnarain
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/25/2024
 ---
 
-# Add a Kubernetes secret in Data workflows
+# Add a Kubernetes secret in data workflows
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow.</br>[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
@@ -22,15 +22,15 @@ This article shows how to add a Kubernetes secret in Apache Airflow environment 
 
 1. Navigate to the `Environment configuration` page by clicking on `Configure Airflow`.
 2. Under `Kubernetes secrets` section, click on `New` button.
-:::image type="content" source="media/data-workflows/K8s-new-secret.png" alt-text="Screenshot that shows button to add new K8s secret." :::
+:::image type="content" source="media/data-workflows/kubernetes-new-secret.png" lightbox="media/data-workflows/kubernetes-new-secret.png" alt-text="Screenshot that shows button to add new Kubernetes secret." :::
 3. Fill out the fields that appear in Dialog box:
     * <strong>Name</strong>: Name of the Kubernetes secret.
-    * <strong>Namespace</strong>: The namespace to run within kubernetes. By default: Fill the field as `adf`.
+    * <strong>Namespace</strong>: The namespace to run within Kubernetes. By default: Fill the field as `adf`.
     * <strong>Secret type</strong>: Choose the type of the secret between the values: `Private registry credential` and `Basic auth credential`.
     * <strong>Registry server url</strong>: URL of your private container registry, for example, ```\registry_name\>.azurecr.io```.
     * <strong>Username</strong>: Username of your private container registry.
     * <strong>Password</strong>: Password to access the private container registry.
-:::image type="content" source="media/data-workflows/K8s-new-secret-form.png" alt-text="Screenshot that shows form to add new K8s secret." :::
+:::image type="content" source="media/data-workflows/kubernetes-new-secret-form.png" lightbox="media/data-workflows/kubernetes-new-secret-form.png" alt-text="Screenshot that shows form to add new Kubernetes secret." :::
 4. Once all the fields are filled, click on the `Create` button to finalize the creation of the Kubernetes secret.
 
 ### A sample DAG using stored Kubernetes secret to pull a custom image from ACR.
@@ -39,7 +39,7 @@ This article shows how to add a Kubernetes secret in Apache Airflow environment 
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
-from kubernetes.client import models as k8s
+from kubernetes.client import models as kubernetes
 
 default_args = {
     "retries": 1,
@@ -54,21 +54,19 @@ dag = DAG(
     default_args=default_args,
 )
 
-acr_k8s = KubernetesPodOperator(
+acr_kubernetes = KubernetesPodOperator(
     task_id="task-one",
     namespace="adf",
     image="<docker_image_you_wish_to_launch>",
-    image_pull_secrets=[k8s.V1LocalObjectReference("<stored_k8s_password")],
+    image_pull_secrets=[kubernetes.V1LocalObjectReference("<stored_kubernetes_password")],
     cmds=["echo", "10"],
     labels={"foo": "bar"},
     name="private-image-pod",
     in_cluster=True,
     dag=dag,
 )
-
 ```
-
 
 ## Related Content
 
-* Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).
+[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)

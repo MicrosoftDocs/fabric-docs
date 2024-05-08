@@ -1,6 +1,6 @@
 ---
 title: Orchestrate Azure Data Factory Pipeline with Data workflows
-description: Learn to run data factory pipeline in Data workflows
+description: Learn to run data factory pipeline in Data workflows.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 04/15/2023
 ---
 
-# Tutorial: Orchestrate an Azure Data Factory (ADF) Pipeline with Data workflows
+# Tutorial: Orchestrate an Azure Data Factory (ADF) Pipelines with data workflows
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
@@ -28,7 +28,7 @@ To get started, you must complete the following prerequisites:
 
   2. Click Apply.
 
-  :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
+  :::image type="content" source="media/data-workflows/enable-tenant.png" lightbox="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
 
 - [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md).
 
@@ -46,13 +46,13 @@ To get started, you must complete the following prerequisites:
 
 3. Click "Apply," to save the changes.
 
-   :::image type="content" source="media/data-workflows/add-airflow-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
+   :::image type="content" source="media/data-workflows/add-airflow-requirement.png" lightbox="media/data-workflows/add-airflow-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
 
 ## Create Apache Airflow DAG
 
 1. Start by selecting the "New DAG File" card. Then, assign a name to the file and click the "Create" button.
 
-   :::image type="content" source="media/data-workflows/adf-name-file.png" alt-text="Screenshot to name the DAG file." :::
+   :::image type="content" source="media/data-workflows/adf-name-file.png" lightbox="media/data-workflows/adf-name-file.png" alt-text="Screenshot to name the DAG file." :::
 
 2. Once created, you'll be presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the **pipeline_name** argument with the name of your ADF pipeline.
 
@@ -86,29 +86,25 @@ with DAG(
 
 3. Click on "Save," to save the file.
 
-   :::image type="content" source="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
+   :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
 ## Create an Apache Airflow connection to connect with Azure Data Factory
 
 1. Click on the "View Airflow connections" to see list of all the connections configured and to set up a new one.
 
-   :::image type="content" source="media/data-workflows/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
+   :::image type="content" source="media/data-workflows/view-apache-airflow-connection.png" lightbox="media/data-workflows/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
 2. Click on ‘+’ -> Select Connection type: Azure Data Factory -> Fill out the fields: Connection ID, Client ID, Secret, Tenant ID, Subscription ID, Resource group name, Factory name.
 
 3. Click "Save" button.
 
-## Monitor the Data workflow DAG and run it from Apache Airflow UI.
+## Monitor the Data workflow DAG and run it from Apache Airflow UI
 
-1. After saving, the DAG files are automatically loaded into the Apache Airflow UI. To monitor them, click on the "Monitor in Apache Airflow" button.
+The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on "Monitor in Apache Airflow" button.
 
-   :::image type="content" source="media/data-workflows/monitor-dag.png" alt-text="Screenshot to monitor the Airflow DAG.":::
-1. The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on "Monitor in Apache Airflow" button.
-
-   :::image type="content" source="media/data-workflows/monitor-dag.png" alt-text="Screenshot to monitor the Airflow DAG.":::
-
-:::image type="content" source="media/data-workflows/loaded-adf-dag.png" alt-text="Screenshot to load Airflow DAG.":::
+:::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" lightbox="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
+:::image type="content" source="media/data-workflows/loaded-adf-directed-acyclic-graph.png" lightbox="media/data-workflows/loaded-adf-directed-acyclic-graph.png" alt-text="Screenshot to load Airflow DAG.":::
 
 ## Related Content
 
-- Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).
+Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md)

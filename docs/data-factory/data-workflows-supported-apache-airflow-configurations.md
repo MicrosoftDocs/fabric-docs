@@ -15,6 +15,8 @@ ms.date: 04/24/2024
 
 In Data workflows, Apache Airflow configurations can be integrated with the platform's runtime as key-value pairs. While the `airflow.cfg` isn't directly accessible in the UI, users can override these configurations via the UI's "Airflow Configuration overrides" section, retaining access to other `airflow.cfg` settings. Developers have the flexibility to override most Apache Airflow configurations within Data workflows, `except for those explicitly outlined in a provided table`.
 
+## Airflow configurations reference
+
 For more information on Apache Airflow configurations, see [Configuration Reference](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html).
 
 The following table contains the list of configurations that don't support overrides.
@@ -54,4 +56,4 @@ The following table contains the list of configurations that don't support overr
 
 ## Related Content
 
-* Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).
+[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)

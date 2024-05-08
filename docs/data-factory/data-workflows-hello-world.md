@@ -45,11 +45,11 @@ To get started, you must complete the following prerequisite:
 
 1. Click on "New DAG file" card -> give the name to the file and Click on "Create" button.
 
-   :::image type="content" source="media/data-workflows/name-dag-file.png" alt-text="Screenshot to name the DAG file.":::
+   :::image type="content" source="media/data-workflows/name-directed-acyclic-graph-file.png" alt-text="Screenshot to name the DAG file.":::
 
 2. A boilerplate DAG code is presented to you. You can edit the file as per your requirements.
 
-   :::image type="content" source="media/data-workflows/boilerplate-dag.png" alt-text="Screenshot presents boilerplate DAG file in Microsoft Fabric.":::
+   :::image type="content" source="media/data-workflows/boilerplate-directed-acyclic-graph.png" alt-text="Screenshot presents boilerplate DAG file in Microsoft Fabric.":::
 
 3. Click on "Save icon".
 
@@ -59,11 +59,10 @@ To get started, you must complete the following prerequisite:
 
 1. The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on the "Monitor in Apache Airflow" button.
 
-    :::image type="content" source="media/data-workflows/monitor-dag.png" alt-text="Screenshot to monitor the Airflow DAG.":::
+    :::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 
-    :::image type="content" source="media/data-workflows/dag-in-ui.png" alt-text="Screenshot presents the loaded Airflow DAG.":::
-
+    :::image type="content" source="media/data-workflows/directed-acyclic-graph-in-ui.png" alt-text="Screenshot presents the loaded Airflow DAG.":::
 
 ## Related Content
 
-* Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md).
+[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)
