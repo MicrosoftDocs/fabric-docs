@@ -1,11 +1,9 @@
 items:
 - name: Microsoft Fabric Workload Development Kit documentation
   href: index.yml
-- name: Microsoft Fabric Workload Development Kit overview
+- name: Development Kit overview
   href: dev-kit-overview.md
   items:
-  - name: Introduction to Microsoft Fabric Workloads SDK
-    href: dev-kit-overview.md#introduction-to-workload-development-kit  
   - name: Microsoft Fabric workload partner benefits
     href: monetization.md
   - name: Publish your workload
