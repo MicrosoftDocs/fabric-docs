@@ -59,7 +59,11 @@ To cancel a free trial for your organization, [turn off recurring billing](/micr
 
 ### Cancel your Power BI subscription
 
-[Cancel your Power BI subscription](/microsoft-365/commerce/subscriptions/cancel-your-subscription) by turning off recurring billing in the Microsoft 365 admin center. The subscription remains active until it expires. Only the Global or someone with Billing permissions can cancel the subscription. Remember to ask users to save their data. 
+[Cancel your Power BI subscription](/microsoft-365/commerce/subscriptions/cancel-your-subscription) in the Microsoft 365 admin center. Either select **Billing** > **Your products** > **Subscription status** > **Cancel subscription** or turn off recurring billing. The subscription remains active until it expires. Only the Global administrator or someone with billing permissions can cancel the subscription. Remember to ask users to save their data. 
+
+### Manage an expired Premium subscription
+
+If a Premium subscription or capacity license expires, you have 30 days of full access to your capacity. After that, your content reverts to a shared capacity where it will continue to be accessible.  However, you can't view reports that are based on semantic models that are greater than 1 GB or reports that require Premium capacities to render.
 
 ### Manage an expired Power BI license
 
