@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
 title: Real-Time hub (preview) in Microsoft Fabric documentation
-summary: Microsoft Fabric Real-Time hub (preview) is a single, unified, logical storage for data in motion.
+summary: Microsoft Fabric Real-Time hub (preview) is single, tenant-wide, unified, logical place for streaming data-in-motion.
 
 metadata:
   title: Real-Time hub in Microsoft Fabric documentation
-  description: Real-Time hub is a single, unified, logical storage for data in motion.
+  description: Microsoft Fabric Real-Time hub (preview) is single, tenant-wide, unified, logical place for streaming data-in-motion.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: onelake
   ms.custom:
