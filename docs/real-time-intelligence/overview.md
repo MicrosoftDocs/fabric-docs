@@ -117,15 +117,10 @@ aggregations that can be shared to consumers in Real-Time hub.
 
 ### Store and analyze data
 
-While all Fabric data stores are compatible with Real-Time hub, Event
-houses are the ideal storage solution for streaming data in Fabric. They're tailored to time-based, streaming events with
-structured, semi structured, and unstructured data. This data is
-automatically indexed and partitioned based on ingestion time, giving
-you incredibly fast and complex analytic querying capabilities on
-high-granularity data. Data stored in Event houses can be made available
-in OneLake for consumption by other Fabric experiences.
+Event houses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. This data is
+automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data. Data stored in event houses can be made available in OneLake for consumption by other Fabric experiences.
 
-The indexed, partitioned data stored in Event houses is ready for
+The indexed, partitioned data stored in event houses is ready for
 lightning-fast query using various code, low-code, or no-code
 options in Fabric. Data can be queried in native KQL (Kusto Query
 Language) or using T-SQL in the KQL queryset. The Kusto copilot, along
@@ -161,29 +156,22 @@ period, or the results of complex logic defined by a KQL query. Data
 Activator turns your event-driven insights into actionable business
 advantages.
 
-## Integrate with other Fabric experiences 
+## Integrate with other Fabric experiences
 
--   Route events from Event streams to Fabric item destinations
--   Emit events from Fabric items into Real-Time hub
+- Route events from Event streams to Fabric item destinations
+- Emit events from Fabric items into Real-Time hub
 - Access data in OneLake from Real-Time Intelligence in several
 ways:
--   Data from OneLake can be queried from Real-Time Intelligence as
-        a shortcut.
-    -   Data from OneLake can be loaded into Real-Time Intelligence.
-    -   Data loaded into Real-Time Intelligence is reflected in OneLake
-        as one logical copy.
-- Use the data loaded into Real-Time Intelligence as the
-underlying data for visualization in a Power BI report.
-- Use the data loaded into Real-Time Intelligence for analysis in
-Fabric Notebooks in Data Engineering.
--   Trigger data pipeline actions in Data Factory
--   Trigger data loading events using Dataflows
--   Trigger actions from Power BI reports
--   Trigger actions from Fabric notebooks
+-   [Data from OneLake can be queried from Real-Time Intelligence as a shortcut](database-shortcut.md)
+    -  [ Data from OneLake can be loaded into Real-Time Intelligence](get-data-onelake.md)
+    -   [Data loaded into Real-Time Intelligence is reflected in OneLake as one logical copy](one-logical-copy.md)
+- [Use the data loaded into Real-Time Intelligence as the underlying data for visualization in a Power BI report](create-powerbi-report.md)
+- [Use the data loaded into Real-Time Intelligence for analysis in Fabric Notebooks in Data Engineering](notebooks.md)
+- [Trigger actions from Power BI reports](../data-activator/data-activator-get-data-power-bi.md)
 
 ##  Related content
 
--   Tutorial
--   What is Real-Time hub
--   What is Event streams
--   User flows
+- [End-to-end tutorial](tutorial-introduction.md)
+- [What is Real-Time hub](../real-time-hub/real-time-hub-overview.md)
+- [What is Event streams](event-streams/overview.md)
+- [User flows](user-flow-1.md)
