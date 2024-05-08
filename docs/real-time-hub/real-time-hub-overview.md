@@ -24,8 +24,8 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 
 | &nbsp; | &nbsp; |
 | ------ | ------- |
-| Streaming data from other clouds | <ul><li>Google Pub/Sub</li><li>Amazon Kinesis Data Streams</li> |
-| Kafka Clusters | <ul><li>Confluent, On-premises, or in the cloud</li></ul> |
+| Streaming data from other clouds | <ul><li>Google Cloud Pub/Sub</li><li>Amazon Kinesis Data Streams</li> |
+| Kafka Clusters | <ul><li>Confluent Cloud Kafka</li></ul> |
 | Database Change Data Capture (CDC) feeds | <ul><li>Azure SQL Database CDC</li><li>PostgreSQL Database CDC</li><li>Azure Cosmos DB CDC</li><li>MySQL Database CDC</li> |
 | Microsoft streaming sources | <ul><li>Azure Event Hubs</li><li>IoT hubs</li></ul> |
 | Fabric events | <ul><li>Azure storage account events</li><li>Fabric workspace item events <br/>(automatically generated)</li></ul> |
