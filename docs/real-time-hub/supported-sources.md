@@ -28,7 +28,7 @@ Real-Time hub supports the following types of discrete events:
 [!INCLUDE [discrete-event-sources](./includes/discrete-event-sources.md)]
 
 ## Sample data
-You can also use [Sample data sources](../add-source-sample-data.md) available in Real-Time hub.
+You can also use [Sample data sources](add-source-sample-data.md) available in Real-Time hub.
 
 ## Related content
 Real-Time hub also allows you to set alerts based on events and specify actions to take when the events happen. 
