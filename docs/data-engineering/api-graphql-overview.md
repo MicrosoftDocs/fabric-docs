@@ -6,7 +6,7 @@ ms.author: sngun
 author: snehagunda
 ms.topic: overview
 ms.search.form: GraphQL API Overview
-ms.date: 05/02/2024
+ms.date: 05/07/2024
 ---
 
 # What is Microsoft Fabric API for GraphQL?

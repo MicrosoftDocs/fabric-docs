@@ -6,7 +6,7 @@ ms.author: sngun
 author: snehagunda
 ms.topic: how-to
 ms.search.form: Connecting applications to GraphQL
-ms.date: 05/02/2024
+ms.date: 05/07/2024
 ---
 
 # Connect applications to Fabric API for GraphQL
@@ -38,4 +38,4 @@ To obtain the API endpoint:
 
 ## Related content
 
-- [Query multiple data sources in Fabric API for GraphQL](multiple-data-sources.md)
+- [Query multiple data sources in Fabric API for GraphQL](multiple-data-sources-graphql.md)

@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: faq
-ms.date: 05/02/2024
+ms.date: 05/07/2024
 ---
 
 # Fabric GraphQL frequently asked questions

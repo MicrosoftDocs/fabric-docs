@@ -13,7 +13,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to add a lakehouse as a destination to an eventstream in Microsoft Fabric event streams.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
 > [!IMPORTANT]
 > There is *schema enforcement* for writing data into a lakehouse destination table. All new writes to the table must be compatible with the target table's schema at write time, ensuring data quality.

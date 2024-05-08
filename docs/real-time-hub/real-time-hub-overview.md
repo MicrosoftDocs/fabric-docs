@@ -8,26 +8,19 @@ ms.date: 05/21/2024
 ---
 
 # Introduction to Fabric Real-Time hub (preview)
-Real-Time hub is the single place for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with the hub. There are no extra steps needed to set up or manage it. Several key features of the hub are:
-
-- Single place for data-in-motion for the entire organization
-- Abundant connectors for simplified data ingestion
-- Real-Time hub is never empty
-- Single copy of events/streams for use with multiple real-time analytics engines
+Real-Time hub is the single place for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with the hub. There are no extra steps needed to set up or manage it. It also provides abundant connectors for simplified data ingestion into Fabric. This article explains these features in detail. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
 ## Single place for data-in-motion across your organization 
-Real-Time hub is to data-in-motion, what [OneLake](../onelake/onelake-overview.md) is for data-at-rest; a single, tenant-wide, unified, logical place for streaming data-in-motion.   
+Real-Time hub is single, tenant-wide, unified, logical place for streaming data-in-motion. It enables you to easily discover, ingest, manage, and consume data-in-motion from a wide variety of sources. It lists all the streams and Kusto Query Language (KQL) tables that you can directly act on. It also gives you an easy way to ingest streaming data from Microsoft products and Fabric events.  
 
-The Real-Time hub enables users to easily discover, ingest, manage, and consume data-in-motion from a wide variety of sources. It lists all the streams and Kusto Query Language (KQL) tables that customers can directly act on. It also gives easy access to ingest streaming data from Microsoft products and from Fabric events.  
-
-Each user in the tenant can view and edit all the events/streams that they have access to. Real-Time hub makes it so easy to collaborate and develop streaming applications within one place.  
+Each user in the tenant can view and edit all the events or streams that they have access to. Real-Time hub makes it so easy to collaborate and develop streaming applications within one place.  
 
 :::image type="content" source="./media/real-time-hub-overview/hub-data-streams-tab.png" alt-text="Screenshot that shows the Real-Time hub page with the Data Streams tab selected." lightbox="./media/real-time-hub-overview/hub-data-streams-tab.png" :::
 
 ## Numerous connectors to simplify data ingestion from anywhere  
-Real-Time hub has numerous out-of-box connectors that make it easy for you to ingest data into Microsoft Fabric from a wide variety of sources. To start with, the following connectors are supported: 
+Real-Time hub has numerous out-of-box connectors that make it easy for you to ingest data into Microsoft Fabric from a wide variety of sources. Currently, the following connectors are supported: 
 
 | &nbsp; | &nbsp; |
 | ------ | ------- |
@@ -37,26 +30,22 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 | Microsoft streaming sources | <ul><li>Azure Event Hubs</li><li>IoT hubs</li></ul> |
 | Fabric events | <ul><li>Azure storage account events</li><li>Fabric workspace item events <br/>(automatically generated)</li></ul> |
 
-A unified Get Events experience makes it effortless to connect from these sources into components in Real-Time hub like eventstream, KQL database, and Data Activator.  
+A unified **Get Events** experience makes it effortless to connect these sources to components in Real-Time hub like eventstream, KQL database, and Data Activator.  
 
-## Real-Time hub is never empty 
-In the world of data, Real-Time hub is never empty. Here's why: 
+## Data integrations
 
 - **Streams and tables**
 
     For your running eventstreams and KQL databases, all the stream outputs from eventstreams and tables from KQL databases automatically show up in Real-Time hub. 
 
-- **Microsoft Product Integration**
+- **Integration with Microsoft sources**
 
-    Real-Time hub ensures that it’s never empty by listing all streaming resources from Microsoft products. Whether it’s Azure Event Hubs, Azure IoT Hub, or other services, users can seamlessly ingest data into Real-Time hub. 
+    Real-Time hub lists all streaming resources from Microsoft services. Whether it’s Azure Event Hubs, Azure IoT Hub, or other services, you can seamlessly ingest data into Real-Time hub. 
 
-- **Fabric events as the nervous system**
+- **Fabric events**
 
-    When you perform CRUD (Create, Read, Update, Delete) actions on artifacts, these events are emitted as Fabric events within Real-Time hub. Much like a human nervous system, these events provide vital feedback. You can gauge whether your entire project is functioning correctly based on these events. Even when you visit Real-Time hub for the first time, you see these events. You can subscribe to them, gaining insights into the health and performance of your data ecosystem. 
+    Events that are generated via Fabric artifacts and external sources, are made available in Fabric to support event-driven scenarios like real-time alerting and triggering downstream actions. You can monitor and react to events including Fabric workspace item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. Users can also send these events to other destinations via Fabric Event Streams. 
 
-- **Single copy of events/streams to be consumed by real-time analytics engines**
- 
-    As data flows into Real-Time hub, you can create a stream out of it. Once the stream is created, the data is stored in a canonical format. This format is universally accessible to all processing engines. No need for redundant copies of data. Real-Time hub ensures efficiency and consistency.
 
 ## Next step
-See [Get started with Real-Time hub](get-started-real-time-hub.md)
+See [Get started with Real-Time hub.](get-started-real-time-hub.md)

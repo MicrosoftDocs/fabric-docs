@@ -44,8 +44,6 @@ items:
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
-    - name: New capabilities 
-      href: event-streams/new-capabilities.md
     - name: Create eventstreams 
       items: 
       - name: Create an eventstream

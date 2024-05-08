@@ -9,6 +9,26 @@ items:
   items:
   - name: Get started with Real-Time hub
     href: get-started-real-time-hub.md
+- name: Tutorials
+  items:
+  - name: End to end tutorial
+    items:
+    - name: Tutorial - Introduction
+      href: ../real-time-intelligence/tutorial-introduction.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+    - name: 1- Create resources
+      href: ../real-time-intelligence/tutorial-1-resources.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+    - name: 2- Get data in the Real-Time hub
+      href: ../real-time-intelligence/tutorial-2-get-real-time-events.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+    - name: 3- Query streaming data in a KQL queryset
+      href: ../real-time-intelligence/tutorial-3-query-data.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+    - name: 4- Set an alert on your event stream
+      href: ../real-time-intelligence/tutorial-4-set-alert.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+    - name: 5- Create a Real-Time dashboard
+      href: ../real-time-intelligence/tutorial-5-create-dashboard.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+    - name: 6- Create a Power BI report
+      href: ../real-time-intelligence/tutorial-6-power-bi-report.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
+    - name: 7- Clean up resources
+      href: ../real-time-intelligence/tutorial-7-clean-up-resources.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json  
 - name: Get events and create data streams
   items:
   - name: Supported sources

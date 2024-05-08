@@ -209,7 +209,7 @@ Parallel copies and total duration are a max value observed across all 50 copy a
 
 To use physical partitions of a table, the source table must be partitioned. To understand how the number of partitions affect performance, we created two partitioned tables, one with 8 partitions and the other with 85 partitions.
 
-The number of physical partitions limits the **Degree of copy parallelism**. While you can still limit the number by specifying a value less than the number of partitions, _Auto_ will always, at most, select the number of physical partitions present in the source table.  
+The number of physical partitions limits the **Degree of copy parallelism**. You can still limit the number by specifying a value less than the number of partitions.
 
 ##### Fabric Warehouse with physical partitions
 

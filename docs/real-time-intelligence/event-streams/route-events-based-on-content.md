@@ -55,6 +55,6 @@ To transform and route your data stream based on content, follow the steps at [E
 
 ## Related content
 
-- [New capabilities in Microsoft Fabric event streams](new-capabilities.md)
+- [New capabilities in Microsoft Fabric event streams](overview.md)
 - [Edit and publish an eventstream](edit-publish.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)
