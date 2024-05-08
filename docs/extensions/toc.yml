@@ -1,12 +1,11 @@
 items:
-- name: Extensibility documentation
+- name: Microsoft Fabric Workload Development Kit documentation
   href: index.yml
-- name: Overview
+- name: Development Kit overview
+  href: dev-kit-overview.md
   items:
-  - name: Extensibility overview
-    href: extensibility-overview.md
-  - name: What are workloads?
-    href: workloads.md  
+  - name: Microsoft Fabric workload partner benefits
+    href: monetization.md
   - name: Publish your workload
     href: publishing/publish-flow.md
   - name: Publishing requirements
@@ -24,7 +23,9 @@ items:
   - name: Workload architecture
     href: architecture.md
   - name: Workload environment
-    href: workload-environment.md                       
+    href: workload-environment.md
+  - name: Web app deployment (todo)
+    href: Web app deployment 1st half.md                  
 - name: Tutorials
   items: 
   - name: Authentication setup guide
@@ -37,6 +38,8 @@ items:
     href: manage-workload.md
   - name: Add and manage more workload
     href: more-workloads-add.md
+  - name: Web app deployment implementation (todo)
+    href: Web app deployment 1st half.md
 
 - name: Reference
   items:
