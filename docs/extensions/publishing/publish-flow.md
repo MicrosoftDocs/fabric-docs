@@ -61,7 +61,7 @@ The SaaS offer linked to the Fabric Workload must meet all requirements defined 
 
 
 ### 3.1. Link your SaaS offer to Workload package
-The SaaS offer must be live in Azure Marketplace and has at least one public plan. The Workload package manifest should completely and accurately define the public SaaS URL linked to the Workload manifest. In the _licnese_ field under the _supportLink_ section add the public SaaS link offer linked to your Workload. 
+The SaaS offer must be live in Azure Marketplace and has at least one public plan. The Workload package manifest should completely and accurately define the public SaaS URL linked to the Workload manifest. In the `licnese` field under the `supportLink` section add the public SaaS link offer linked to your Workload. 
 
 ## Step 4 Reach out to our Workload Fabric Team
 Once you have a public SaaS link in Azure Marketplace and the Workload complies with the [requirements.](./requirements.md),
