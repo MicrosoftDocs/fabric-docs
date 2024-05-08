@@ -22,7 +22,7 @@ If you want to use enhanced capabilities that are in preview, see the content in
 > 
 > If the incoming data has columns that aren't in the existing table schema, the extra columns aren't included in the data written to the table. Likewise, if the incoming data is missing columns that are in the existing table schema, the missing columns write to the table with the values set to null.
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
 ## Prerequisites
 
