@@ -71,6 +71,9 @@ Once completed, the eventstream starts capturing discrete events as they occur. 
 
 ![A screenshot of the Real-Time hub Fabric events tab and the Set alert pane.](media/create-eventstreams-discrete-events/set-alert.png)
 
+
+[!INCLUDE [known-issues-discrete-events](./includes/known-issues-discrete-events.md)]
+
 ## Related content
 
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
