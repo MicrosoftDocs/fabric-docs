@@ -22,34 +22,13 @@ This project might contain trademarks or logos for projects, products, or servic
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
 
-<!---
-## Table of contents
-
-- [Introduction](#introduction)
-  - [What is Fabric](#what-is-fabric)
-  - [What are Workloads](#what-are-workloads)
-  - [What a Workload Offers](#what-a-workload-offers)
-  - [Workloads Use Cases Examples](#workloads-use-cases-examples)
-- [Build Your Own Workloads](#build-your-own-workloads)
-  - [Introducing Workloads](#introducing-workloads)
-  - [Fabric Workload Diagram](#fabric-workload-diagram)
-- [Getting started with Frontend only](#getting-started-with-frontend-only)
-  - [Prerequisites](#frontend-prerequisites)
-  - [Frontend Guides](#frontend-guides)
-  - [Getting Started with Workload Backend](#getting-started-with-the-workload-backend)
-  - [Prerequisites](#backend-prerequisites)
-  - [Backend Guide](#workload-be-guide)
-  - [Resources](#resources)
-- [Publication Process (TBD)](#publication)
---->
-
 ## Introduction to Microsoft Fabric Workloads SDK
 
 The Microsoft Fabric Workloads SDK is a powerful tool designed to facilitate the integration of your applications within the Microsoft Fabric framework. This SDK is particularly useful for enterprise-level applications that require comprehensive analytics solutions.
 
 ## What are Workloads?
 
-In the context of Microsoft Fabric, 'workloads' refer to the components of your application that are integrated within the Fabric framework. These workloads enhance the usability of your service within the familiar Fabric workspace, eliminating the need to leave the Fabric environment for different services.
+In Microsoft Fabric, workloads are the components of your application that are integrated within the Fabric framework. These workloads enhance the usability of your service within the familiar Fabric workspace, eliminating the need to leave the Fabric environment for different services.
 
 Workloads increase user engagement and improve your application’s discoverability in the Fabric store, supporting compelling business models. The Fabric workspace includes various components, known as Fabric items, which handle the storage, analysis, and presentation of your data.
 
@@ -67,6 +46,9 @@ The Microsoft Fabric Workloads SDK offers tools and interfaces to manage these w
 Moreover, the monetization aspect of workloads opens up new avenues for revenue generation. By understanding and utilizing the Universal Compute Capacity, Microsoft Entra ID authentication process, and the Workload Extensibility Framework, you can maximize the financial potential of your workloads.
 
 In essence, workloads offer Microsoft Partners a comprehensive solution for application integration, analytics, and monetization within the Microsoft Fabric ecosystem.
+
+For more information please view the [monetization.md][Microsoft Fabric workload partner benefits]
+
 ### Workload Extensibility Framework
 This is a robust mechanism designed to enhance the existing Fabric experience by integrating custom capabilities. The entire Fabric platform has been engineered with interoperability in mind, seamlessly incorporating workload capabilities. For instance, the item editor facilitates the creation of a native, consistent user experience by embedding the customer's workload within the context of a Fabric workspace item.
 
@@ -75,6 +57,7 @@ Fabric comes equipped with a diverse array of compute engines, enabling customer
 
 ### Authentication
 Fabric workloads integrate with Microsoft [Entra Id](https://learn.microsoft.com/en-us/entra/fundamentals/whatis) for authentication and authorization. All interactions between workloads and other Fabric or Azure components necessitate proper authentication support for incoming and outgoing requests, ensuring correct generation and validation of tokens.
+For more information please view the [authentication-overview.md][Workload authentication]
 
 ### Fabric Permission Model
 This represents user permissions pertaining to the workspace and specific items. It is utilized to inherit user permissions and applied as part of provisioning resources (see [Roles in workspaces in Power BI - Power BI | Microsoft Learn](https://learn.microsoft.com/power-bi/collaborate-share/service-roles-new-workspaces)).
@@ -98,116 +81,6 @@ These are workloads that manage and store data. They can provide APIs to query a
 
 These are data visualization applications that are entirely based on existing Fabric data items. They allow for the creation of dynamic and interactive visual representations of your data. Power BI reports or dashboards serve as excellent examples of this type of workload.
 
-## Build Your Own Workloads
-
-This chapter covers the basic concepts and components of Fabric, and a dive into the step-by-step process of creating a workload. We cover everything from setting up your environment, to configuring your workload, to deploying and managing it. In the following sections, we introduce the key components of our system and provide an overview of the architecture. These components work together to create a robust and flexible platform for your development needs.
-
-> [!NOTE]
-> Before proceeding with the guide, ensure that you have these tools installed and properly configured. If you don’t have these tools installed, you can find installation instructions on their respective official websites.
-
-### Fabric Workload Diagram
-
-The following diagram is a high-level overview of how workloads function within the Fabric architecture. It depicts the interaction and flow between various components.
-
-* The workload Backend (BE) handles data processing, storage, and management. It validates Microsoft Entra ID tokens before processing them and interacts with external Azure services, such as Lakehouse.
-* The workload Frontend (FE) offers a user interface for job creation, authoring, management, and execution.
-* User interactions via the FE initiates request to the BE, either directly or indirectly via the Fabric Backend (Fabric BE).
-
-For more detailed diagrams depicting the communication and authentication of the various components, see the [BE Authentication and Security](#authentication-and-security) and the [Authentication Overview](./authentication-overview.md) diagrams.
-
-:::image type="content" source="./media/extensibility-overview/architecture-flow-overview.png" alt-text="Diagram of ISV end to end architecture flow.":::
-
-#### Frontend (FE)
-
-The frontend serves as the base of the user experience (UX) and behavior. operating within an iframe in the Fabric portal. And provides the Fabric partner with a specific user interface experience, including an item editor. The extension client SDK equips the necessary interfaces, APIs, and bootstrap functions to transform a regular web app into a Micro Frontend web app that operates seamlessly within the Fabric portal.
-
-#### Backend (BE)
-
-The backend is the powerhouse for data processing and metadata storage. It employs CRUD operations to create and manage workload items along with metadata, and executes jobs to populate data in storage. The communication bridge between the frontend and backend is established through public APIs.
-
-This overview provides a snapshot of our architectural system. For a more detailed understanding of the project configuration, guidelines, and getting started, refer to the additional content referenced in their respective areas.
-
-#### Lakehouse Integration
-
-Our architecture is designed to integrate flawlessly with Lakehouse, enabling operations such as saving, reading, and fetching data. This interaction is facilitated through Azure Relay and the Fabric SDK, ensuring secure and authenticated communication.
-
-#### Authentication and Security
-
-We employ Microsoft Entra ID (formerly Azure AD) for robust and secure authentication, ensuring that all interactions within the architecture are authorized and secure. For a complete introduction to the workload authentication as displayed in the diagram above, refer to the following authentication documents:
-
-1. [Workload Authentication - Setup Guide](./authentication-setup.md)
-1. [Workload Authentication - Architecture Overview](./authentication-overview.md)
-1. [Workload Authentication - Implementation Guide](./backend-authentication.md)
-
-## Getting started with Frontend only
-
-### Frontend prerequisites
-
-There are a few prerequisites that you need to install on your system. These tools are used throughout the guide, so it’s important to ensure that you have them set up correctly.
-
-* [Git](https://github.com/join) - A distributed version control system that we use to manage and track changes to our project.
-
-* [NPM (Node Package Manager)](https://www.npmjs.com/) - This is the default package manager for Node.js. Use it to manage and share the packages that you use in your project.
-
-* [Node.js](https://nodejs.org/en/download/) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. We’ll use this to run our server-side JavaScript code.
-
-* [Webpack](https://webpack.js.org/) - A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
-
-* [Webpack CLI](https://webpack.js.org/api/cli/) - The command line interface for Webpack. This allows us to use Webpack from the command line.
-This guide outlines the setup for development workload sample in Fabric tenant. It involves enabling the workload feature and Developer mode in the designated tenant. It assumes you have Node.js and npm installed, and walks you through the entire process of running a locally hosted workload frontend.
-
-When executing the workload SDK sample and building a workload, industry best practice is to use a dedicated development tenant. This practice ensures an isolated environment, minimizing the risk of inadvertent disruptions or modifications to production systems. It also provides an extra layer of security, safeguarding production data from potential exposure or compromise. 
-
-### Frontend Guides
-
-* [FE Quick Setup guide](./extensibility-frontend.md#prerequisites): A fast and straightforward way to add and test the sample Frontend (FE) workload to your Fabric capacity. It’s perfect for those who want to quickly see the workload in action.
-
-* [FE Deep Dive guide](./extensibility-frontend.md#package-structure): A comprehensive guide walks you through the process of customizing the sample workload. It’s ideal if you want to tailor the workload to your specific needs.
-The UX workload frontend, a standard web app, uses an extension client SDK to operate within the Fabric portal, providing workload-Specific UI experiences. This SDK can be installed in Angular or React applications, with React recommended for compatibility with the Fluent UI library. The package also includes a UX workload Sample implementation built on Fluent UI, designed for React. Alongside the web app, workloads must provide a UX workload Frontend Manifest, a JSON resource containing essential information about the workload. This combination allows workloads to integrate their web applications within the Fabric portal, ensuring a consistent user experience.
-
-> [!NOTE]
->
-> * Both the FE Quick Setup and the FE Deep Dive guides can be found in the [FE Readme](./extensibility-frontend.md).
-> * Before customizing the sample workload, implement the Frontend (FE) authentication token as outlined in the [Authentication Guide](./authentication-setup.md#configuring-your-workload-local-manifest-and-acquiring-a-token-for-your-application-frontend).
-
-## Getting Started with the Workload Backend
-
-This section walks you through how to set up and configure the workload BE. Fabric developer sample project is built on the .NET 7 framework and utilizes various tools and packages to deliver a high-performance backend solution.
-
-### Backend prerequisites
-
-Before proceeding with the project setup, ensure the following tools and packages are installed and configured:
-
-* [.NET 7.0 SDK](https://dotnet.microsoft.com/download/visual-studio-sdks)
-* [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) - Note that .NET 6.0 or higher in Visual Studio 2019 isn't supported.
-* [NuGet Package Manager](https://www.nuget.org/)
-* The workload BE has dependencies on the following Azure SDK packages:
-
-  * Azure.Core
-  * Azure.Identity
-  * Azure.Storage.Files.DataLake
-  * Microsoft Identity package
-
-#### Workload BE Guide
-
-With the prerequisites in place, you can proceed with the project configuration. The rest of your guide can follow from here. This includes cloning the project, setting up the workload configuration, and generating a manifest package file. Remember to update the necessary fields in the configuration files to match your setup. To get started with a step-by-step guide, refer to our [Backend Workload Configuration Guide](./backend-authentication.md).
-
-## Resources
-
-Here are all the resources included and referenced. These documents provide additional information and can serve as a reference:
-
-* [Authentication Overview](./authentication-overview.md)
-* [Authentication Setup Guide](./authentication-setup.md)
-* [Authentication JavaScript API](./authentication-javascript-api.md)
-* [Backend Configuration Guide](./extensibility-backend.md))
-* [Frontend Configuration Guide](./extensibility-frontend.md)
-* [Frontend Manifest](./frontend-manifest.md)
-* [Backend API Requests Authentication Overview](./backend-authentication.md)
-* [Monitoring Hub Configuration Guide](./monitoring-hub.md)
-
-## Publication
-
-The publication process is currently unavailable. We understand the importance of this and are working diligently to make it accessible. We appreciate your patience and assure you that it will be added shortly. Stay tuned for updates.
 
 ## Considerations and Limitations
 
