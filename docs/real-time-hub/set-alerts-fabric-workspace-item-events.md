@@ -45,6 +45,8 @@ On the **Set alert** page, follow these steps:
     
         :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/select-workspace.png" alt-text="Screenshot that shows the Connect page for Fabric workspace item events with a Fabric workspace selected." lightbox="./media/set-alerts-fabric-workspace-item-events/select-workspace.png":::
     1. In the **Set filters** section, select **+ Filter** to a filter based on a field.
+
+        :::image type="content" source="./media/set-alerts-fabric-workspace-item-events/set-filter.png" alt-text="Screenshot that shows setting of a filter in the Get events wizard for Fabric workspace item events.":::        
     1. Select **Next**. 
     1. On the **Review and create** page, review the settings, and select **Save**. 
     
