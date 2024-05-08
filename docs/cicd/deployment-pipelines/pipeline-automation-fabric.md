@@ -14,7 +14,7 @@ The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) to
 
 [!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
-Use the [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipelines) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:
+Use the [deployment pipelines Fabric REST APIs](/rest/api/fabric/core/deployment-pipelines) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:
 
 * Integrate Fabric into familiar DevOps tools such as Azure DevOps or GitHub Actions.
 
