@@ -69,7 +69,7 @@ The SaaS offer must be live in Azure Marketplace and has at least one public pla
 ## Step 4 Reach out to our Workload Fabric Team
 Once you have a public SaaS link in Azure Marketplace and the NuGet packge and workload complies with the above requirements, 
 reach out to our team for opting in to the public preview
-mailto: FabricWorkloadSubmission@microsoft.com
+mailto: fabric_wdt_submission@service.microsoft.com
 Include in your email:
 * Workload extension package
 > [!NOTE]
@@ -78,6 +78,7 @@ Either the publisher of SaaS offer shoud be the same publisher who reach out to 
 ## Step 5 Preview and publish your workload
 After your package passed validation you'll receive an email from the team, and you'll be able to preview your workload with specific tenants or publicly publish it to all tenants through the "Workload" page in the admin portal that will be available only for ISVs who passed validation and out in to PuPr.
 [??? Should we add a screenshot???]
-[???? Explain about versioning: when should they update the version, when should they update the Nuget or SaaS offer??]
+
+If you are willing to update any of the common metadata such as description, title and screenshots you should resubmit your SaaS offer and update the data in both; nuget package and the SaaS offer. Otherwise changes in metadata available only in package manifest requires only a new submission of new nuget package. 
    
     
