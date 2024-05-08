@@ -36,7 +36,7 @@ This flow is useful for a variety of scenarios across all industries. Here are j
 
 * **Automotive:** An analyst in a vehicle telematics company searches for events about their fleet of trucks. They create an alert that sends them an email whenever truck fuel pressure drops, so that they can schedule maintenance.
 * **Retail:** The manager of an e-commerce site tracks orders placed by each user to limit fraud/bot traffic. They set up an alert looking for anomalies such as many orders being placed in quick succession, or orders placed by the same user from different locations at the same time, and start a workflow to verify the user's identity.
-* **Manufacturing:** A plant manager monitors the the machine in a factory. They set up an alert to notify them about expected maintenance on each machine. They also use the data to improve quality and throughput.
+* **Manufacturing:** A plant manager monitors the machine in a factory. They set up an alert to notify them about expected maintenance on each machine. They also use the data to improve quality and throughput.
 * **Finance and Insurance:** A financial analyst uses real-time data for fraud detection. They also use the data to improve operational efficiency.
 * **Energy and Utilities:** An energy company uses real-time data to monitor station data, and detect energy leakage. They also use the data for failure monitoring and predictive maintenance.
 * **Logistics:** A logistics company uses real-time data to monitor the location of their vehicles and optimize routes. They also use the data for warehouse management and inventory tracking.
