@@ -19,6 +19,10 @@ This user flow shows how an insights explorer can use a Real-Time Dashboard to u
 
 :::image type="content" source="media/user-flows/user-flow-4.png" alt-text="Schematic image showing the steps in user flow 4." lightbox="media/user-flows/user-flow-4.png" border="false":::
 
+The following animated image shows how one might explore data visually in a Real-Time dashboard:
+
+:::image type="content" source="media/tutorial/add-aggregation.gif" alt-text="GIF of how to visually add and modify the query." border="false":::
+
 ## Steps
 
 1. In a Real-Time dashboard, select the desired tile and then explore data.
