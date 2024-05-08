@@ -13,16 +13,14 @@ Real-Time hub is the single place for all data-in-motion across your entire orga
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
 ## Single place for data-in-motion across your organization 
-Real-Time hub is to data-in-motion, what [OneLake](../onelake/onelake-overview.md) is for data-at-rest; a single, tenant-wide, unified, logical place for streaming data-in-motion.   
+Real-Time hub is single, tenant-wide, unified, logical place for streaming data-in-motion. It enables you to easily discover, ingest, manage, and consume data-in-motion from a wide variety of sources. It lists all the streams and Kusto Query Language (KQL) tables that you can directly act on. It also gives you an easy way to ingest streaming data from Microsoft products and Fabric events.  
 
-The Real-Time hub enables users to easily discover, ingest, manage, and consume data-in-motion from a wide variety of sources. It lists all the streams and Kusto Query Language (KQL) tables that customers can directly act on. It also gives easy access to ingest streaming data from Microsoft products and from Fabric events.  
-
-Each user in the tenant can view and edit all the events/streams that they have access to. Real-Time hub makes it so easy to collaborate and develop streaming applications within one place.  
+Each user in the tenant can view and edit all the events or streams that they have access to. Real-Time hub makes it so easy to collaborate and develop streaming applications within one place.  
 
 :::image type="content" source="./media/real-time-hub-overview/hub-data-streams-tab.png" alt-text="Screenshot that shows the Real-Time hub page with the Data Streams tab selected." lightbox="./media/real-time-hub-overview/hub-data-streams-tab.png" :::
 
 ## Numerous connectors to simplify data ingestion from anywhere  
-Real-Time hub has numerous out-of-box connectors that make it easy for you to ingest data into Microsoft Fabric from a wide variety of sources. To start with, the following connectors are supported: 
+Real-Time hub has numerous out-of-box connectors that make it easy for you to ingest data into Microsoft Fabric from a wide variety of sources. Currently, the following connectors are supported: 
 
 | &nbsp; | &nbsp; |
 | ------ | ------- |
@@ -32,7 +30,7 @@ Real-Time hub has numerous out-of-box connectors that make it easy for you to in
 | Microsoft streaming sources | <ul><li>Azure Event Hubs</li><li>IoT hubs</li></ul> |
 | Fabric events | <ul><li>Azure storage account events</li><li>Fabric workspace item events <br/>(automatically generated)</li></ul> |
 
-A unified Get Events experience makes it effortless to connect from these sources into components in Real-Time hub like eventstream, KQL database, and Data Activator.  
+A unified **Get Events** experience makes it effortless to connect these sources to components in Real-Time hub like eventstream, KQL database, and Data Activator.  
 
 ## Data integrations
 
@@ -42,11 +40,11 @@ A unified Get Events experience makes it effortless to connect from these source
 
 - **Integration with Microsoft sources**
 
-    Real-Time hub lists all streaming resources from Microsoft services. Whether it’s Azure Event Hubs, Azure IoT Hub, or other services, users can seamlessly ingest data into Real-Time hub. 
+    Real-Time hub lists all streaming resources from Microsoft services. Whether it’s Azure Event Hubs, Azure IoT Hub, or other services, you can seamlessly ingest data into Real-Time hub. 
 
 - **Fabric events**
 
-    Events that are generated via Fabric artifacts and external sources, are made available in Fabric to support event-driven scenarios like real-time alerting and triggering downstream actions. You can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. Users can also send these events to other destinations via Fabric Event Streams. 
+    Events that are generated via Fabric artifacts and external sources, are made available in Fabric to support event-driven scenarios like real-time alerting and triggering downstream actions. You can monitor and react to events including Fabric workspace item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. Users can also send these events to other destinations via Fabric Event Streams. 
 
 
 ## Next step
