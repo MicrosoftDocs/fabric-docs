@@ -4,7 +4,7 @@ description: This article shows how to view details of for streams in Fabric Rea
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
-ms.date: 04/03/2024
+ms.date: 05/21/2024
 ---
 
 # View details of data streams in Fabric Real-Time hub (preview)

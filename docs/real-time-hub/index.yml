@@ -14,7 +14,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: spelluru
   ms.author: spelluru
-  ms.date: 04/02/2024
+  ms.date: 05/21/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -53,6 +53,10 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
+        - text: Process data streams
+          url: process-data-streams.md
+        - text: Analyze data streams
+          url: analyze-data-streams.md
         - text: Set alerts on streams
           url: set-alerts-data-streams.md
         - text: Set alerts on Azure Blob Storage events
