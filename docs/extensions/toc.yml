@@ -1,11 +1,11 @@
 items:
-- name: Extensibility documentation
+- name: Microsoft Fabric Workload Development Kit documentation
   href: index.yml
-- name: Extensibility overview
-  href: extensibility-overview.md
+- name: Microsoft Fabric Workload Development Kit overview
+  href: dev-kit-overview.md
   items:
   - name: Introduction to Microsoft Fabric Workloads SDK
-    href: extensibility-overview.md#introduction-to-microsoft-fabric-workloads-sdk  
+    href: dev-kit-overview.md#introduction-to-workload-development-kit  
   - name: Microsoft Fabric workload partner benefits
     href: monetization.md
   - name: Publish your workload
