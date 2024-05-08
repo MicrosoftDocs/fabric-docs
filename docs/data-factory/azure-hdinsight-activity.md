@@ -16,7 +16,7 @@ The Azure HDInsight activity in Data Factory for Microsoft Fabric allows you to 
 - Invoke a MapReduce program
 - Execute Pig queries
 - Execute a Spark program
-- Execute an Hadoop Stream program
+- Execute a Hadoop Stream program
 
 This article provides a step-by-step walkthrough that describes how to create an Azure HDInsight activity using the Data Factory interface.
 
@@ -67,31 +67,31 @@ To configure settings for your HDInsight cluster, first choose its **Type** from
 
 #### Hive
 
-If you choose _Hive_ for **Type**, the activity executes a Hive query. You can optionally specify the **Script connection** referencing a storage account that holds the Hive type. By default, the storage connection you specified in the **HDI Cluster** tab are used. You need to specify the **File path** to be executed on Azure HDInsight. Optionally, you can specify additional configurations in the **Advanced** section, **Debug information**, **Query timeout**, **Arguments**, **Parameters**, and **Variables**.
+If you choose _Hive_ for **Type**, the activity executes a Hive query. You can optionally specify the **Script connection** referencing a storage account that holds the Hive type. By default, the storage connection you specified in the **HDI Cluster** tab are used. You need to specify the **File path** to be executed on Azure HDInsight. Optionally, you can specify more configurations in the **Advanced** section, **Debug information**, **Query timeout**, **Arguments**, **Parameters**, and **Variables**.
 
 :::image type="content" source="media/azure-hdinsight-activity/hive-cluster-type.png" alt-text="Screenshot showing the cluster type of Hive.":::
 
 #### Map Reduce
 
-If you choose _Map Reduce_ for **Type** the activity invokes a Map Reduce program. You can optionally specify inthe Jar connection referencing a storage account that holds the Map Reduce type. By default, the storage connection you specified in the HDI Cluster tab will be used. You will need to specify the **Class name** and **File path** to be executed on Azure HDInsight. Optionally you can specify additional configuration details, such as importing Jar libraries, debug information, arguments, and parameters under the **Advanced** section.
+If you choose _Map Reduce_ for **Type**, the activity invokes a Map Reduce program. You can optionally specify in the Jar connection referencing a storage account that holds the Map Reduce type. By default, the storage connection you specified in the HDI Cluster tab is used. You need to specify the **Class name** and **File path** to be executed on Azure HDInsight. Optionally you can specify more configuration details, such as importing Jar libraries, debug information, arguments, and parameters under the **Advanced** section.
 
 :::image type="content" source="media/azure-hdinsight-activity/map-reduce-cluster-type.png" alt-text="Screenshot showing the selection of Map Reduce for the HDInsight cluster type.":::
 
 #### Pig
 
-If you choose _Pig_ for **Type** the activity invokes a Pig query. You can optionally specify the **Script connection** setting that references the storage account that holds the Pig type. By default, the storage connection that you specified in the HDI Cluster tab will be used. You will need to specify the **File path** to be executed on Azure HDInsight. Optionally you can specify additional configurations, such as debug information, arguments, parameters, and variables under the **Advanced** section.
+If you choose _Pig_ for **Type**, the activity invokes a Pig query. You can optionally specify the **Script connection** setting that references the storage account that holds the Pig type. By default, the storage connection that you specified in the HDI Cluster tab is used. You need to specify the **File path** to be executed on Azure HDInsight. Optionally you can specify more configurations, such as debug information, arguments, parameters, and variables under the **Advanced** section.
 
 :::image type="content" source="media/azure-hdinsight-activity/pig-cluster-type.png" alt-text="Screenshot showing the selection of the Pig type for the HDInsight cluster.":::
 
 #### Spark
 
-If you choose _Spark_ for **Type** the activity invokes a Spark program. Select either _Script_ or _Jar_ for the **Spark type**. You can optionally specify the **Job connection** referencing the storage account that holds the Spark type. By default, the storage connection you specified in the HDI Cluster tab will be used. You will need to specify the **File path** to be executed on Azure HDInsight. Optionally you can specify additional configurations, such as class name, proxy user, debug information, arguments, and spark configuration under the Advanced section.
+If you choose _Spark_ for **Type**, the activity invokes a Spark program. Select either _Script_ or _Jar_ for the **Spark type**. You can optionally specify the **Job connection** referencing the storage account that holds the Spark type. By default, the storage connection you specified in the HDI Cluster tab is used. You need to specify the **File path** to be executed on Azure HDInsight. Optionally you can specify more configurations, such as class name, proxy user, debug information, arguments, and spark configuration under the Advanced section.
 
 :::image type="content" source="media/azure-hdinsight-activity/spark-cluster-type.png" alt-text="Screenshot showing the selection of the Spark type for the HDInsight cluster.":::
 
 #### Streaming
 
-If you choose _Streaming_ for **Type** the activitty invokes a Streaming program. Specify the **Mapper** and **Reducer** names, and you can optionally specify the **File connection** referencing the storage account that holds the Streaming type. By default, the storage connection that you specified in the HDI Cluster tab will be used. You will need to specify the **File path for Mapper** and and **File path for Reducer** to be executed on Azure HDInsight. Include the **Input** and **Output** options as well for the WASB path. Optionally you can specify additional configurations, such as debug information, arguments, and parameters under the Advanced section.
+If you choose _Streaming_ for **Type**, the activity invokes a Streaming program. Specify the **Mapper** and **Reducer** names, and you can optionally specify the **File connection** referencing the storage account that holds the Streaming type. By default, the storage connection that you specified in the HDI Cluster tab is used. You need to specify the **File path for Mapper** and **File path for Reducer** to be executed on Azure HDInsight. Include the **Input** and **Output** options as well for the WASB path. Optionally you can specify more configurations, such as debug information, arguments, and parameters under the Advanced section.
 
 :::image type="content" source="media/azure-hdinsight-activity/streaming-cluster-type.png" alt-text="Screenshot showing the selection of the Streaming type for the HDInsight cluster.":::
 
@@ -105,7 +105,7 @@ If you choose _Streaming_ for **Type** the activitty invokes a Streaming program
 | combiner        | Specifies the name of the combiner executable                                                                                           | No       |
 | file connection | Reference to an Azure Storage Linked Service used to store the Mapper, Combiner, and Reducer programs to be executed.                   | No       |
 |                 | Only Azure Blob Storage and ADLS Gen2 connections are supported here. If you don't specify this connection, the storage connection defined in the HDInsight connection is used. |          |
-| filePath        | Provide an array of path to the Mapper, Combiner, and Reducer programs stored in the Azure Storage referred by file connection.         | Yes      |
+| filePath        | Provide an array of path to the Mapper, Combiner, and Reducer programs stored in the Azure Storage referred to by the file connection.         | Yes      |
 | input           | Specifies the WASB path to the input file for the Mapper.                                                                               | Yes      |
 | output          | Specifies the WASB path to the output file for the Reducer.                                                                             | Yes      |
 | getDebugInfo    | Specifies when the log files are copied to the Azure Storage used by HDInsight cluster (or) specified by scriptLinkedService.          | No       |
