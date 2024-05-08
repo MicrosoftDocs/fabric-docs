@@ -91,6 +91,7 @@ The same information regarding completed, failed, and canceled queries from Quer
 - Queries that are initially executed in the warehouse may take up to 7 minutes to show up in Query activity. Once there’s more activity within the Warehouse, the queries populate much more quickly.  
 - Historical queries can take up to 15 minutes to appear in Query activity depending on the concurrent workload being executed.
 - Only the top 10,000 rows can be shown in the Query runs and Query insights tabs for the given filter selections.  
+- An "Invalid object name queryinsights.exec_requests_history" error may occur if Query activity is immediately opened after a new warehouse is created due to the underlying system views not yet generated. Please wait a couple minutes and refresh the page to resolve the error. 
 
 ## Next steps
 - [Billing and utilization reporting in Synapse Data Warehouse](usage-reporting.md)
