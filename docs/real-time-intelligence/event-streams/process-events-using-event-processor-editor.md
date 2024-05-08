@@ -283,6 +283,14 @@ The following table shows the results of changing the data type using manage fie
 
 Use the Union transformation to connect two or more nodes and add events that shared fields (with the same name and data type) into one table. Fields that don't match are dropped and not included in the output.
 
+### Join
+Use the **Join** transformation to combine events from two inputs based on the field pairs that you select. If you don't select a field pair, the join is based on time by default. The default is what makes this transformation different from a batch one.
+
+As with regular joins, you have options for your join logic:
+
+- **Inner join**: Include only records from both tables where the pair matches.
+- **Left outer join**: Include all records from the left (first) table and only the records from the second one that match the pair of fields. If there's no match, the fields from the second input are blank.
+
 ## Related content
 
 - [Add and manage destinations in an eventstream](./add-manage-eventstream-destinations.md).
