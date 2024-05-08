@@ -12,6 +12,9 @@ Real-Time hub is the single place for all data-in-motion across your entire orga
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
+:::image type="content" source="./media/real-time-hub-overview/real-time-hub.png" alt-text="Screenshot that shows the conceptual image of Real-Time hub architecture." lightbox="./media/real-time-hub-overview/real-time-hub.png" :::
+
+
 ## Single place for data-in-motion across your organization 
 Real-Time hub is single, tenant-wide, unified, logical place for streaming data-in-motion. It enables you to easily discover, ingest, manage, and consume data-in-motion from a wide variety of sources. It lists all the streams and Kusto Query Language (KQL) tables that you can directly act on. It also gives you an easy way to ingest streaming data from Microsoft products and Fabric events.  
 
