@@ -48,7 +48,7 @@ Before [publishing your Software as a Service (SaaS) offer on the Azure Marketpl
 
 | **Requirement Category** | **Detailed Description** | **Applicable Domain**  | **Reference Links**  |
 |--|--|--|--|
-| **Engineering Contact** | Engineering contact email domain must match the email domain of the publisher who reaches our team with the Workload package (step number 4 in the publishing flow article) |  SaaS submission | [??? Add a link to the flow article????] | 
+| **Engineering Contact** | Engineering contact email domain must match the email domain of the publisher who reaches our team with the Workload package (step number 4 in the publishing flow article) |  SaaS submission | | 
 | **Title Accuracy** | Must have accurate and descriptive title, including the seller’s name. If the offer is promoted on another website both titles should match.	| SaaS submission, Workload package metadata | [More information about the title](https://learn.microsoft.com/legal/marketplace/certification-policies#10011-title)  |
 | **Concise Summary** | The summary appears in the Azure commercial marketplace search results and must be limited to 100 characters, and effectively convey the essence of the SaaS offer. | SaaS submission, Workload package metadata | [More information about the summary](https://learn.microsoft.com/legal/marketplace/certification-policies#10012-summary) |
 | **Comprehensive Description** | The description should comprehensively detail any limitations, conditions, or exceptions to the functionality, features, and deliverables. It must articulate the value proposition and requirements clearly and distinctly represent the product. For non-English content, the description must start or end with the phrase, "This application is available in [languages]." | SaaS submission, Workload package metadata | [More information about the description](https://learn.microsoft.com/legal/marketplace/certification-policies#10013-description) |
@@ -59,14 +59,14 @@ Before [publishing your Software as a Service (SaaS) offer on the Azure Marketpl
 | **Inappropraie content** | Customers expect offers to be free of inappropriate, harmful, or offensive content. | SaaS Submission, Workload package metadata, Legal Compliance| [More information about content](https://learn.microsoft.com/legal/marketplace/certification-policies#10010-inappropriate-content) |
 | **Security** | Customers want to be confident that offers are safe and secure. Your offer must not jeopardize or compromise user, Azure service, or related services or systems security. If your offer collects credit card information, or uses a third-party payment processor that collects credit card information, the payment processing must meet the current PCI Data Security Standard (PCI DSS). | SaaS Submission, Security Compliance | [More Information about Security](https://learn.microsoft.com/legal/marketplace/certification-policies#10011-security) |
 | **Authentication and fulfillment APIs for translatable SaaS through Microsoft** | Your offer must support Entra AAD SSO for marketplace activation and independent transactions, and must be integrated with the SaaS Fulfilment APIs. | SaaS Submission | [More information about the authentication options](https://learn.microsoft.com/legal/marketplace/certification-policies#10003-authentication-options) and [fulfillment and metering APIs](https://learn.microsoft.com/legal/marketplace/certification-policies#10004-saas-fulfillment-and-metering-apis) |
-| **Advertising** | Fabric Workload may not include advertising. | non-Functional | [???]|
+| **Advertising** | Fabric Workload may not include advertising. | non-Functional | |
 
 
 
-# NuGet package requirements 
-Meta data must be identical in the NuGet package manifest and the SaaS offer submission in Partner Center.
+# Workload package requirements 
+Metadata must be identical in the Workload package manifest and the SaaS offer submission in Partner Center.
 Such as: Title, Summary and icon. Add all the assets of the Workload such as icons and screenshots under fe/assests directory.
-Your NuGet package should comply to both [Frontend requirmenets](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/README.md) and [Backend requirmenets](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/README.md).
+Your [Workload package](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fmicrosoft%2FMicrosoft-Fabric-developer-sample%2Fblob%2Fmain%2FBackend%2Fdocs%2FNuget-Structure.md&data=05%7C02%7CRanin.Salameh%40microsoft.com%7Cd4afc3531dd24b9b0e4708dc6f48998a%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638507604807029314%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=UqrhN4HlCO9K4wVzXZve%2F2Z105iEQHSa0SrgS9K80TY%3D&reserved=0) should comply to both [Frontend requirmenets](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/dev/idgoldfa/addProductDetailsSectionToManifest/Frontend/frontendManifest.md) and [Backend requirmenets](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/README.md).
    
 
 # Technical requirements
