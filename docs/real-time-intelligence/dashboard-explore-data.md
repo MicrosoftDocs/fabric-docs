@@ -24,21 +24,21 @@ This exploration can provide additional insights into your data, enhancing your 
 
 1. Within your workspace, select a Real-Time Dashboard.
 
-1. On the tile that you'd like to explore, select the **More menu [...]** > **Explore data**.
+1. On the tile that you'd like to explore, select the **Explore data** icon.
 
-    // **TODO: ADD IMAGE OF TILE SHOWING HOW TO OPEN THE EXPLORE DATA WINDOW**
+    :::image type="content" source="media/dashboard-explore-data/select-explore-data-icon.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data icon highlighted.":::
 
 ## Explore data
 
 When you open the explore data window, you start with the same visualization as shown in the tile.
 
-// **TODO: ADD IMAGE OF EXPLORE DATA WINDOW SHOWING PIE CHART**
+:::image type="content" source="media/dashboard-explore-data/explore-data-areas.png" alt-text="Screenshot of a Real-Time Dashboard explore data window with the different areas highlighted." lightbox="media/dashboard-explore-data/explore-data-areas.png":::
 
 In the explore data window, you see the following areas:
 
-A. **Filters bar**: Shows filters and aggregations from the original query, added filters and aggregations, and the refresh data button.
+A. **Filter and aggregations bar**: Shows filters and aggregations from the original query, added filters and aggregations, and the refresh data button.
 
-B. **Chart pane**: Shows the visualization of the query data.
+B. **Visual pane**: Shows the visualization of the query data.
 
 C. **Results pane**: Show the tabular results of the query data and the query in the **Results** and **KQL** tabs respectively.
 
@@ -48,43 +48,41 @@ You can then explore your data without affecting the visualization shown in the 
 
 * In the filters bar, you can remove, add, and modify filters and aggregations from the query.
 
-    // **TODO: ADD IMAGE OF FILTERS BAR SHOWING ORIGINAL AND ADDED FILTER/AGGREGATIONS**
-
     Filters that came from the original tile query can't be modified and can only be removed in reverse order. You can add your own filters and aggregations, which you can later modify or remove as you explore.
 
     To add a filter:
 
     1. Select **+ Add**.
 
-    1. Find and select the column you'd like to filer.
+    1. Find and select the column you'd like to filter.
 
-    // **TODO: ADD IMAGE OF ADD FILTER COLUMN SELECTION**
+        :::image type="content" source="media/dashboard-explore-data/add-filter-select-column.png" alt-text="Screenshot of the filter dialog box showing how to select a column.":::
 
     1. Select the filter **Operator** and **Value**, and then select **Apply**. The visual, results, and KQL query update to reflect the new filter.
 
-    // **TODO: ADD IMAGE OF DEFINE FILTER POPUP**
+        :::image type="content" source="media/dashboard-explore-data/add-filter-select-operator-and-value.png" alt-text="Screenshot of the filter dialog box showing how to select an operator and a value.":::
 
     To add an aggregation:
 
     1. Select **+ Add** > **Aggregation**.
 
-    // **TODO: ADD IMAGE OF ADD AGGREGATION SELECTION**
+        :::image type="content" source="media/dashboard-explore-data/add-aggregattion-select-type.png" alt-text="Screenshot of the aggregation dialog box showing how to select an aggregation type.":::
 
     1. Select the filter **Operator** and **Display Name**, optionally add up to two columns to group by, and then select **Apply**. The visual, results, and KQL query update to reflect the new filter.
 
-    // **TODO: ADD IMAGE OF DEFINE AGGREGATION POPUP**
+        :::image type="content" source="media/dashboard-explore-data/add-aggregattion-select-options.png" alt-text="Screenshot of the aggregation dialog box showing how to select aggregation options.":::
 
-* From the **Visual type** dropdown, select other chart types to visualize your data in different ways.
+* From the **Visual type** dropdown, select other visual types to visualize your data in different ways.
 
-    // **TODO: ADD IMAGE OF BAR CHART**
+    :::image type="content" source="media/dashboard-explore-data/select-visual-type.png" alt-text="Screenshot of the visual pane, showing the drop down selector options.":::
 
 * Select the **Results** and **KQL** tabs to view the tabular query results and the underlying query respectively. As you explore, you see the changes you make updated in these tabs.
 
-    // **TODO: ADD IMAGE OF KQL TAB**
+    :::image type="content" source="media/dashboard-explore-data/query-pane.png" alt-text="Schreenshot of the query pane, showing the query for the visual.":::
 
 * In the **Columns** pane, you can browse the table schema by looking at the columns or finding a particular column. You can also choose columns to see their top values, value distributions, and sample values depending on their data type, as follows:
 
-    // **TODO: ADD IMAGE OF COLUMNS PANE**
+    :::image type="content" source="media/dashboard-explore-data/columns-pane.png" alt-text="Screenshot of the Columns pane, showing the columns with their metadata.":::
 
     <!-- // **QUESTION: @MICHAL, @GABI -- TOOK A GUESS HERE THAT IT'S LIKE DATA PROFILE, PLEASE CONFIRM**
 
