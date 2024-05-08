@@ -44,6 +44,8 @@ Real-Time Intelligence streamlines data analysis and visualization, offering a c
 - You can utilize the existing [Microsoft Logic Apps](/azure/data-explorer/kusto/tools/logicapps), [Azure Data Factory](/azure/data-explorer/data-factory-integration), or [Microsoft Power Automate](/azure/data-explorer/flow) connectors to interact with your Event houses or KQL Databases.
 - [Database shortcuts in Real-Time Analytics](../../real-time-intelligence/database-shortcut.md) are embedded references within an event house to a source database. The source database can either be a KQL Database in Real-Time Analytics or an Azure Data Explorer database. Shortcuts can be used for inplace sharing of data within the same tenant or across tenants. Learn more about managing [database shortcuts using the API](#real-time-intelligence).
 
+:::image type="content" source="media/partner-integration/real-time-intelligence-apis.png" alt-text="Diagram showing how Real-Time Intelligence APIs interact with Fabric workloads.":::
+
 ### Data Factory in Fabric
 
 - Data Pipelines boast an **extensive set of connectors**, enabling ISVs to effortlessly connect to a myriad of data stores. Whether you're interfacing traditional databases or modern cloud-based solutions, our connectors ensure a smooth integration process. [Connector overview](../../data-factory/connector-overview.md).
