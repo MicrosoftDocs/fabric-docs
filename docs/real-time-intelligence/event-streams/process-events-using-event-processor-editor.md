@@ -262,7 +262,7 @@ The **Manage fields** transformation allows you to add, remove, change data type
 
 Furthermore, you can add a new field with the built-in functions to aggregate the data from upstream. (Currently, the built-in functions we support are some functions in **String Functions**, **Date and Time Functions**, and **Mathematical Functions**. To find them, search on "built-in.")
 
-:::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field-build-in-functions.png" alt-text="Screenshot showing the Manage field build-in functions." :::
+:::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field-build-in-functions.png" alt-text="Screenshot showing the Manage field built-in functions." :::
 
 The following table shows the results of changing the data type using manage fields. The columns represent the original data types, and the rows represent the target data type.
 
