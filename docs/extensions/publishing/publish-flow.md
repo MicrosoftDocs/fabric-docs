@@ -41,7 +41,7 @@ To submit your Fabric, you must be enrolled with [Partner Center](https://learn.
 
 ### 3.1. Create a SaaS offer
 Once you have a Partner Center account follow these [steps](https://learn.microsoft.com/partner-center/marketplace/create-new-saas-offer) to create a SaaS offer.
-If your already have an exting SaaS offer in Azure Marketplace, you don't need to create a new one. Follow these steps to connect your SaaS offer with Fabric Hub. ***????????????????????????***
+If your already have an exting SaaS offer in Azure Marketplace, you don't need to create a new one. Just make sure the SaaS offer metadata and the nuget package package meta data are identical and that the you comply to the SaaS offer requirmenets.
 Choose the configuration based on your solution and business model presences. For instance if you already have a transacatbility model choose the option "No, I would prefer to only list my offer through the marketplace and process transactions independently".
 Choosing both options at the same time:
 "Yes, I would like to sell through Microsoft and have Microsoft host transactions on my behalf" and "Yes, I would like Microsoft to manage customer licenses on my behalf" will create a SaaS offer in [AppSource](https://appsource.microsoft.com/) storefront and not [Azure Marketplace](https://azuremarketplace.microsoft.com/home) therefore this combination isn't allowed. Having a SaaS offer in both AppSource and Azure Marketplace is allowed.
