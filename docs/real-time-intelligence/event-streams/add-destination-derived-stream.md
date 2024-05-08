@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
-# Add a derived stream destination to an eventstream
+# Add a derived stream destination to an eventstream (preview)
 
 This article shows you how to add a derived stream destination to an eventstream in Microsoft Fabric event streams.
 
