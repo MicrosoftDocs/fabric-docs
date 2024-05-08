@@ -17,7 +17,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Introduction to the Real-Time Intelligence tutorial](tutorial-introduction.md).
 
-In this part of the tutorial, you create an [event house](eventhouse.md), which automatically creates a child KQL database, and enable OneLake availability.
+In this part of the tutorial, you set up the environment. Specifically, you create an [event house](eventhouse.md), which automatically creates a child KQL database, and then you enable OneLake availability.
 
 ## Create an event house
 

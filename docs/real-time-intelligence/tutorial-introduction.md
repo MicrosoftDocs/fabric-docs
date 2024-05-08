@@ -20,18 +20,17 @@ In this tutorial, you'll learn how to set up and use the main features of Real-T
 
 ## Scenario
 
-The sample data you'll use in this tutorial is a set of bicycle data, containing information about bike ID, location, timestamp, and more. You'll learn how to set up resources, ingest data, visualize the data to extract insights, and respond to the data.
+The sample data you'll use in this tutorial is a set of bicycle data, containing information about bike ID, location, timestamp, and more. You'll learn how to set up resources, ingest data, set alerts on the data, and visualize the data to extract insights.
 
 Specifically, in this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
-> * Create an event house
-> * Enable OneLake availability
-> * Browse the Real-Time hub
+> * Set up your environment
 > * Get data in the Real-Time hub
 > * Transform events
 > * Publish an event stream
+> * Set an alert on the event stream
 > * Create a KQL query
 > * Create a Real-Time dashboard
 > * Explore data visually in the Real-Time dashboard
