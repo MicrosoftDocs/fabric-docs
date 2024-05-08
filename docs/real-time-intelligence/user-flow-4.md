@@ -13,11 +13,15 @@ ms.search.form: Get started
 ---
 # User flow 4: Explore your data visually in Real-Time Dashboards
 
-By visually drilling into data, you can identify trends, anomalies, and correlations that might not be immediately apparent. This exploration allows you to gain a more nuanced understanding of the data and optimize your operations, improve their products and services, and gain a competitive advantage.
+By visually drilling into data, you can identify trends, anomalies, and correlations that might not be immediately apparent. You can use dashboards to perform this exploration to gain a more nuanced understanding of the data and optimize your operations, improve their products and services, and gain a competitive advantage. In some cases, you are interacting with a dashboard and want to explore the data in more detail. The visual exploration feature in Real-Time dashboards allows you to interact with the data in a no-code experience, enabling you to aggregate, and filter the data to extract insights and identify actions to take.
 
 This user flow shows how an insights explorer can use a Real-Time Dashboard to understand real world high granularity data, extract insights, visually drill into specific activities, and identify actions to take.
 
 :::image type="content" source="media/user-flows/user-flow-4.png" alt-text="Schematic image showing the steps in user flow 4." lightbox="media/user-flows/user-flow-4.png" border="false":::
+
+The following animated image shows how one might explore data visually in a Real-Time dashboard:
+
+:::image type="content" source="media/tutorial/add-aggregation.gif" alt-text="GIF of how to visually add and modify the query." border="false":::
 
 ## Steps
 

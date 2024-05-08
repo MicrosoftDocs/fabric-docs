@@ -24,7 +24,7 @@ This user flow shows how a Data Engineer or Data Analyst can discover events in 
 ## Steps
 
 1. Browse  for available data streams: **streams and tables** in Real-Time hub. 
-1. Filter for a stream by searching for a particular term. You can search on the item, parent name, owner, or workspace. 
+1. Filter for a stream by searching for a particular term. You can search on the stream or table name, parent name, owner, or workspace. 
 
     For detailed steps and information, see [Explore data streams](../real-time-hub/explore-data-streams.md).
 1. View the details of the selected stream. You can see the stream information, related items, and profile of incoming and outgoing messages. For more information, see [View data stream details](../real-time-hub/view-data-stream-details.md).
