@@ -22,16 +22,16 @@ Use the [deployment pipelines Fabric REST APIs](/rest/api/fabric/core/deployment
 
 * Deploy multiple pipelines at the same time.
 
-* Cascade depending on pipeline deployments. If you have content that's connected across pipelines, you can make sure some pipelines are deployed before others.
+* Cascade depending on pipeline deployments. If you have content connected across pipelines, you can make sure some pipelines are deployed before others.
 
 ## Prerequisites
 
-To work with deployment pipeline APIs you need the following:
+To work with deployment pipeline APIs, you need the following prerequisites:
 
 * The same [prerequisites you need to use deployment pipelines](./get-started-with-deployment-pipelines.md#prerequisites).
 * A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see Fabric API quickstart.
 
-You can use the REST APIs without PowerShell, but the scripts in this article use PowerShell. To run the scripts, you need to install the following:
+You can use the REST APIs without PowerShell, but the scripts in this article use PowerShell. To run the scripts, you need to install the following programs:
 
 * [PowerShell](/powershell/scripting/install/installing-powershell)
 * [Azure PowerShell Az module](/powershell/azure/install-azure-powershell)
@@ -55,7 +55,7 @@ The [deployment pipelines Fabric REST APIs](/rest/api/fabric/core/deployment-pip
 
 You can also use other [Fabric REST API](/rest/api/fabric/) calls, to complete related operations.
 
-## Powershell examples
+## PowerShell examples
 
 You can use the following PowerShell scripts to understand how to perform several automation processes. To view or copy the text in a PowerShell sample, use the links in this section.
 
@@ -85,7 +85,7 @@ When using the deployment pipelines APIs, consider the following limitations:
 * All limitations that apply for deployment pipeline, apply when using the APIs. For more information, see [Deployment pipelines best practices](./understand-the-deployment-process.md#considerations-and-limitations).
 * *Dataflows* are currently not supported. Customers using dataflows can use the [Power BI APIs](./pipeline-automation.md).
 * Service principals are only supported for Power BI items.
-* Not all deployment options available in the Power BI APIs are available in Fabric. The following APIs are not available in Fabric's Deploy stage content API:
+* Not all deployment options available in the Power BI APIs are available in Fabric. The following APIs *aren't* available in Fabric's Deploy stage content API:
 
   * allowPurgeData
   * allowTakeOver
