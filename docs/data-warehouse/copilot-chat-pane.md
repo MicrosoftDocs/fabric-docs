@@ -43,7 +43,7 @@ The supported capabilities of interacting through chat include:
 ## Get started
 
 1. To open the Copilot chat pane, select the **Copilot** ribbon in the button.
-    :::image type="content" source="media/copilot-chat-pane/copilot-button.png" alt-text="Screenshot from the Fabric portal showing the Copilot button in the ribbon":::
+    :::image type="content" source="media/copilot-chat-pane/copilot-button.png" alt-text="Screenshot from the Fabric portal showing the Copilot button in the ribbon.":::
 
 1. The chat pane offers helpful starter prompts to get started and familiar with Copilot. Select any option to ask Copilot a question. The **Ask a question** button provides example questions that are tailored specifically to your warehouse.
 
