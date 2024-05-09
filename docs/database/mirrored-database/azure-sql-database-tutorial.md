@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
-ms.date: 04/24/2024
+ms.date: 05/09/2024
 ms.service: fabric
 ms.topic: tutorial
 ---
@@ -30,10 +30,11 @@ ms.topic: tutorial
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL logical server
 
-The System Assigned Managed Identity (SAMI) of your Azure SQL logical server needs to be enabled.
+The System Assigned Managed Identity (SAMI) of your Azure SQL logical server needs to be enabled, and must be the primary identity.
 
 1. To configure or verify that the SAMI is enabled, go to your logical SQL Server in the Azure portal. Under **Security** in the resource menu, select **Identity**.
 1. Under **System assigned managed identity**, select **Status** to **On**.
+1. The SAMI must be the primary identity. Verify the SAMI is the primary identity with the following T-SQL query: `SELECT * FROM sys.dm_server_managed_identities;`
 
     <!-- :::image type="content" source="media/image2.png" alt-text="Screenshot of turning on the system assigned managed identity."::: -->
 

@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, imotiwala, sbahadur
-ms.date: 04/24/2024
+ms.date: 05/09/2024
 ms.service: fabric
 ms.topic: conceptual
 ms.custom:
@@ -36,8 +36,11 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
 
 - The source SQL server needs to enable [Allow public network access](/azure/azure-sql/database/connectivity-settings#change-public-network-access) and [Allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect.
 - System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled. After enablement, if SAMI is disabled or removed, the mirroring of Azure SQL Database to Fabric OneLake will fail.
+    - The SAMI must be the primary identity. Verify the SAMI is the primary identity with the following: `SELECT * FROM sys.dm_server_managed_identities;`
 - User Assigned Managed Identity (UAMI) is not supported.
-- Do not remove Azure SQL Database service principal name (SPN) contributor permissions on Fabric mirrored database item. 
+    - If you add a UAMI, it will become the primary identity, replacing the SAMI as primary. This will cause replication to fail.
+        - To resolve, remove the UAMI. <!--, or use the [REST API to change the SAMI to be the primary identity](/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity-create-server?view=azuresql-db&preserve-view=true&tabs=rest-api). -->
+- Do not remove Azure SQL Database service principal name (SPN) contributor permissions on Fabric mirrored database item.
    - If you accidentally remove the SPN permission, Mirroring Azure SQL database will not function as expected. No new data can be mirrored from the source database.
        - If you remove Azure SQL database SPN permissions or permissions are not set up correctly, use the following steps.
            1. Add the SPN as a user by selecting the "..." ellipses option on the mirrored database item.
