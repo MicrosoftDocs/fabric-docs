@@ -120,4 +120,4 @@ Learn how to create and save a new stored procedure to transform data.
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a query with the visual query builder](tutorial-visual-query.md)
+> [Tutorial: Time travel using T-SQL at statement level](tutorial-time-travel.md)
