@@ -97,7 +97,7 @@ Alternatively, select the connector to open the connector details side pane, the
 
 ### Change connector start and end points or direction
 
-To change a connector's start and end values, or switch it's direction:
+To change a connector's start and end values, or switch its direction:
 
 1. Select the connector to open the connector details side pane.
 
