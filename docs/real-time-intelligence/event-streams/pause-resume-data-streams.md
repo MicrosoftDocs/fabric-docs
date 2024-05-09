@@ -22,6 +22,7 @@ Here are the data sources that currently support Traffic Pause and Resume:
 * **Destinations**: Lakehouse, KQL Database (with Event Processor)
 
 The following table outlines the description of different node statuses:
+
 | Node Status | Description |
 | --- | --- |
 | Active | Data source is currently active and data is flowing in or out of Eventstream. |
