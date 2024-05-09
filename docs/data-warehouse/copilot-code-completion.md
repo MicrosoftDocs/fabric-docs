@@ -17,7 +17,15 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
+Copilot for Data Warehouse provides intelligent autocomplete-style code suggestions to simplify your coding experience. As you start writing T-SQL code or comments in the editor, Copilot for Data Warehouse leverages your warehouse schema and query tab context to complement the existing IntelliSense with inline code suggestions. The completions can come in varied lengths - sometimes the completion of the current line, and sometimes a whole new block of code. The code completions support all types of queries -- DQL, DML, and DDL. You can accept all or part of a suggestion or keep typing to ignore the suggestions. It can also generate alternative suggestions for you to pick.
 
+## Prerequisites
+
+- Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details.
+
+## How can code completions help you?
+
+Code completion enhances your productivity and workflow in Copilot for Data Warehouse by reducing the cognitive load of writing SQL code. It accelerates code writing, prevents syntax errors and typos, and improves code quality. It provides helpful, context-rich suggestions directly within the query editor. Whether you're new to or experienced with SQL, code completion helps you save time and energy with writing SQL code, and focus on designing, optimizing, and testing your warehouse.
 
 
 
