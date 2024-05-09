@@ -16,7 +16,7 @@ With a Fabric trial capacity, you get the following features:
 
 * Full access to all of the Fabric workloads and features. There are a few key Fabric features that aren't available on trial capacities. These include [Co-Pilot](/fabric/get-started/copilot-faq-fabric), [Trusted workspace access](../security/security-trusted-workspace-access.md), and [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview).
 * OneLake storage up to 1 TB.
-* One trial capacity per request. Additional trial capacities can be requested until a maximum, set by Microsoft, is met.  
+* One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.  
 * The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity. 
 
 Creating and collaborating in Fabric includes:
@@ -67,7 +67,7 @@ In some situations, your Fabric administrator [enables Microsoft Fabric for the 
 
 ## Share trial capacities
 
-Each trial includes one trial capacity per request. Additional trial capacities can be requested. Each trial capacity can be shared with other users. The person who initiated the trial is automatically assigned the Trial Capacity administrator role. If you're the Capacity administrator, you can assign workspaces to the trial capacity two different ways. 
+Each trial includes one capacity per trial. Additional capacity trials can be started. Each trial capacity can be shared with other users. The person who initiated the trial is automatically assigned the Trial Capacity administrator role. If you're the Capacity administrator, you can assign workspaces to the trial capacity two different ways. 
 
 - [Use the Admin center **Capacity settings**](give-access-workspaces.md). All users with access to those workspaces are now able to use that trial capacity. The Fabric administrator can edit **Capacity settings** as well.
 - [Use Workspace settings](create-workspaces.md).  
@@ -124,7 +124,7 @@ If you do see the **Start trial** button in your Account manager:
 
 - You might not be able to start a trial if your tenant exhausted its limit of trial capacities. If that is the case, you have the following options:
 
-  - Request another trial capacity user to share their trial capacity workspace with you. [Give users access to workspaces](give-access-workspaces.md)
+  - Ask another trial capacity user to share their trial capacity workspace with you. [Give users access to workspaces](give-access-workspaces.md)
   - [Purchase a Fabric capacity from Azure](https://portal.azure.com/) by performing a search for *Microsoft Fabric*.
   - To increase tenant trial capacity limits, [reach out to your Fabric administrator](#look-up-the-trial-capacity-administrator) to create a Microsoft support ticket.
 
