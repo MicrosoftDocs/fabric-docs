@@ -74,6 +74,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
     - **image**
     - **text**/**ntext**
     - **xml** 
+    - **json**
     - **rowversion**/**timestamp**
     - **sql_variant**
     - User Defined Types (UDT)
