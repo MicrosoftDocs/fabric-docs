@@ -82,35 +82,43 @@ Alternatively, select the connector to open the connector details side pane, the
 
 ### Change connector start and end points or direction
 
-To change a connector's start and end values, or switch it's direction,  select the connector to open the connector details side pane. In the side pane, change the start and end values as desired, or select **Swap** to change connector direction.
+To change a connector's start and end values, or switch it's direction:
 
-:::image type="content" source="./media/task-flow-work-with/connector-edit-swap.png" alt-text="Screenshot showing how to edit connector start and end points or change connector direction on the connector details pane.":::
+1. Select the connector to open the connector details side pane.
+
+1. In the side pane, change the start and end values as desired, or select **Swap** to change connector direction.
+
+    :::image type="content" source="./media/task-flow-work-with/connector-edit-swap.png" alt-text="Screenshot showing how to edit connector start and end points or change connector direction on the connector details pane.":::
 
 ## Assign items to a task
 
-Once the task flow is set up, you can assign items to individual tasks for logically structuring and organizing your work. You can create a new item or assign items that already exist in the workspace.
+You can assign items to individual tasks for logically structuring and organizing your work. You can create a new item to be assigned to the task, or you can assign items that already exist in the workspace.
 
 ### Create a new item for a task
 
-To create a new item for a specific task, select **+ New item** on the task. On the **Create an item** pane that opens, the recommended item types for the task are displayed by default. Choose one of the recommended types. If you don't see the item type you want, change the **Display** selector from *Recommended items* to *All items*. Choose the item type you want.
+To create a new item for a specific task:
 
-:::image type="content" source="./media/task-flow-work-with/create-item-for-task.png" alt-text="Screenshot showing how to create a new item for a task.":::
+1. Select **+ New item** on the task.
 
-Once the item is created, the item count on the task shows that the task has had an item assigned to it, and the item shows up in the items list. Note that the task column in the item list indicates the task the item is assigned to, if any. 
+    :::image type="content" source="./media/task-flow-work-with/create-item-for-task.png" alt-text="Screenshot showing how to create a new item for a task.":::
 
-:::image type="content" source="./media/task-flow-work-with/new-item-assigned-to-task.png" alt-text="Screenshot showing a new item in the items list and the incremented item count on the task." lightbox="./media/task-flow-work-with/new-item-assigned-to-task.png":::
+1. On the **Create an item** pane that opens, the recommended item types for the task are displayed by default. Choose one of the recommended types.
+
+    If you don't see the item type you want, change the **Display** selector from *Recommended items* to *All items*, and then choose the item type you want.
 
 ### Assign existing items to a task
 
-To attach existing items to a task, select the clip icon on the task.
+To attach existing items to a task:
 
-:::image type="content" source="./media/task-flow-work-with/assign-existing-task-clip-icon.png" alt-text="Screenshot showing the assign existing items clip icon.":::
+1. select the clip icon on the task.
 
-In the **Assign item** dialog box that opens, hover over item you want to assign to the task and mark the checkbox. You can assign more than one item. When done choosing the items you want to assign to the task, choose **Select** to attach the selected items to the task.
+    :::image type="content" source="./media/task-flow-work-with/assign-existing-task-clip-icon.png" alt-text="Screenshot showing the assign existing items clip icon.":::
 
-:::image type="content" source="./media/task-flow-work-with/assign-existing-item-dialog.png" alt-text="Screenshot showing the Assign item dialog.":::
+1. In the **Assign item** dialog box that opens, hover over item you want to assign to the task and mark the checkbox. You can assign more than one item. When done choosing the items you want to assign to the task, choose **Select** to attach the selected items to the task.
 
-The items you selected items are assigned to the task and listed in the items list.
+    :::image type="content" source="./media/task-flow-work-with/assign-existing-item-dialog.png" alt-text="Screenshot showing the Assign item dialog.":::
+
+The items you selected items are assigned to the task.
 
 ### Detach items from tasks
 
