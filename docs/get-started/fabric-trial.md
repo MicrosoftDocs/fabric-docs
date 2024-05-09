@@ -15,11 +15,8 @@ Microsoft Fabric is provided free of charge when you sign up for the Fabric tria
 With a Fabric trial, you get the following features:
 
 * Full access to all of the Fabric workloads and features.
-
 * OneLake storage up to 1 TB.
-
-* One trial capacity per request. Additional trial capacities can be requested until a maximum, set by Microsoft, is met. The person making the request becomes the Capacity administrator for that capacity. 
-
+* One trial capacity per request. Additional trial capacities can be requested until a maximum, set by Microsoft, is met.  
 * The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity. 
 
 Creating and collaborating in Fabric includes:
@@ -69,7 +66,7 @@ In some situations, your Fabric administrator has [enabled Microsoft Fabric for 
 
 ## Share trial capacities
 
-Each trial includes up to 5 trial capacities. Each trial capacity can be shared with other users. The person who initiated the trial is automatically assigned the Trial Capacity administrator role. If you're the Capacity administrator, you can assign workspaces to the trial capacity two different ways. 
+Each trial includes several trial capacities. Each trial capacity can be shared with other users. The person who initiated the trial is automatically assigned the Trial Capacity administrator role. If you're the Capacity administrator, you can assign workspaces to the trial capacity two different ways. 
 
 - [Use the Admin center **Capacity settings**](give-access-workspaces.md). All users with access to those workspaces are now able to use that trial capacity. The Fabric administrator can do this as well.
 - [Use Workplace settings](create-workspaces.md).  
