@@ -102,7 +102,7 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 
  Delta primitive data types are mapped to Event house scalar data types using the following rules. For more information on Event house data types, see [Scalar data types](/azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric).
 
-| Delta Type | Eventhouse Scalar Data Type 
+| Delta Type | Event house Scalar Data Type 
 | --------------- | ----------------- 
 | `string`     | `string` 
 | `long` | `long` 

@@ -7,9 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Explore Fabric workspace item events in Fabric Real-Time hub
-Real-Time hub expands Fabric with event-driven capabilities to support real-time data processing and analysis. This feature enables event-driven scenarios for various Fabric events, including Fabric workspace item events and Azure blob storage events. By using events in Fabric, you can gain access to real-time data streams that enable them to monitor and react to changes and events as they occur. 
-
+# Explore Fabric workspace item events in Fabric Real-Time hub (preview)
 Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items, such as when a new artifact is created, or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -35,14 +33,14 @@ At the top of the detail page, you see the following two actions.
 
 ## See what's using this category
 
-This section shows subscriptions using the event category. Here are the columns and their descriptions shown in the list. 
+This section shows the artifacts using Fabric workspace item events. Here are the columns and their descriptions shown in the list. 
 
 | Column | Description |
 | ------ | ------------ | 
-| Name | Name of the artifact/subscriber that subscribes to the event type group. |
-| Type | Artifact type – Reflex or eventstream |
+| Name | Name of the artifact that's using Fabric workspace item events. |
+| Type | Artifact type – Reflex or Eventstream |
 | Workspace | Workspace where the artifact lives. |
-| Source | Name of the source (Azure blob storage account) that the user subscribed to. |
+| Source | Name of the workspace that is source of the events. |
 
 ## Fabric workspace item events profile
 

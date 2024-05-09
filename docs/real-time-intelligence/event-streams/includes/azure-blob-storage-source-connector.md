@@ -1,12 +1,12 @@
 ---
 title: Azure Blob Storage connector for Fabric event streams
-description: This include file has the common content for configuring Azure Blob Storage connector for Fabric event streams and Real-time hub. 
+description: This include file has the common content for configuring Azure Blob Storage connector for Fabric event streams and Real-Time hub. 
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
 ms.custom:
   - build-2024
-ms.date: 04/30/2024
+ms.date: 05/21/2024
 ---
 
 1. On the **Select a data source** screen, select **Azure Blob Storage events**.

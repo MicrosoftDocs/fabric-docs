@@ -5,20 +5,22 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 04/03/2024
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
 # Add Azure Event Hubs source to an eventstream
-This article shows you how to add an Azure Event Hubs source to an eventstream.  If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+This article shows you how to add an Azure Event Hubs source to an eventstream.  If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
 ## Prerequisites 
 Before you start, you must complete the following prerequisites: 
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located. 
 - You need to have appropriate permission to get event hub's access keys. The event hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
+
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
 ## Add Azure Event Hubs as a source 
 If you have an Azure event hub created with streaming data, follow these steps to add an Azure event hub as your eventstream source: 

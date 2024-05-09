@@ -7,9 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Explore Azure blob storage events in Fabric Real-Time hub
-Real-Time hub expands Fabric with event-driven capabilities to support real-time data processing and analysis. This feature enables event-driven scenarios for various Fabric events, including Fabric workspace item events and Azure blob storage events. By using events in Fabric, you can gain access to real-time data streams that enable them to monitor and react to changes and events as they occur. 
-
+# Explore Azure blob storage events in Fabric Real-Time hub (preview)
 This article shows how to explore Azure blob storage events in Fabric Real-Time hub. Azure blob storage events allow you to receive notifications when certain actions occur on your blobs. For example, you can receive a notification when a new blob is created, or an existing blob is modified. These events can be used to set alert on other actions or workflows, such as updating a database or sending a notification. This article provides the properties and schema for Azure blob storage events.  
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -35,14 +33,14 @@ At the top of the Azure blob storage events detail page, you see the following t
 
 ## See what's using this category
 
-This section shows subscriptions using the event category. Here are the columns and their descriptions shown in the list. 
+This section shows artifacts using Azure Blob Storage events. Here are the columns and their descriptions shown in the list. 
 
 | Column | Description |
 | ------ | ------------ | 
-| Name | Name of the artifact/subscriber that subscribes to the event type group. |
-| Type | Artifact type – Reflex or eventstream |
+| Name | Name of the artifact that's using Azure Blob Storage events. |
+| Type | Artifact type – Reflex or Eventstream |
 | Workspace | Workspace where the artifact lives. |
-| Source | Name of the source (Azure blob storage account) that the user subscribed to. |
+| Source | Name of the source (Azure Blob Storage account). |
 
 :::image type="content" source="./media/explore-azure-blob-storage-events/see-what-is-using.png" alt-text="Screenshot that shows the See what is using the section of the Azure blob storage events detail page." :::
 

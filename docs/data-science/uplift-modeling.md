@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/03/2024
+ms.date: 04/29/2024
 #customer intent: As a data scientist, I want to build an uplift model so I can estimate causal impact.
 ---
 
@@ -17,6 +17,8 @@ ms.date: 04/03/2024
 This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow, in [!INCLUDE [product-name](../includes/product-name.md)]. You learn how to create, train, and evaluate uplift models and apply uplift modeling techniques.
 
 ## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
 * Familiarity with [Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
 * A lakehouse for this notebook, to store data for this example. For more information, visit [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks)
@@ -64,7 +66,7 @@ Be sure to [attach a lakehouse to the notebook](./tutorial-data-science-prepare-
 
 The Criteo AI Lab created the dataset. That dataset has 13M rows. Each row represents one user. Each row has 12 features, a treatment indicator, and two binary labels that include visit and conversion.
 
-**f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 treatment conversion**
+:::image type="content" source="./media/uplift-modeling/criteo-ai-lab-dataset-structure.png"  alt-text="Screenshot showing the Criteo AI Lab dataset structure." lightbox="./media/uplift-modeling/criteo-ai-lab-dataset-structure.png":::
 
 - **f0 - f11**: feature values (dense, floating values)
 - **treatment**: whether or not a user was randomly target for treatment (for example, advertising) (1 = treatment, 0 = control)

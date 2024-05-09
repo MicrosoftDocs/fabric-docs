@@ -5,15 +5,15 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 03/15/2024
+ms.date: 05/21/2024
 ms.search.form: Event Streams Overview
 ---
 
 # Create an eventstream in Microsoft Fabric
-This article describes how to create a Fabric eventstream. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+This article describes how to create a Fabric eventstream. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
 ## Prerequisites
 Before you start, you must complete the following prerequisite:
@@ -49,7 +49,7 @@ You can create an eventstream on the **Workspace** page, the **Real-Time Intelli
 
 ## Next step
 - [Add sources to the eventstream](./add-manage-eventstream-sources.md)
-- [Add destinations to the eventstream](./add-manage-eventstream-destinations-enhanced.md)
+- [Add destinations to the eventstream](./add-manage-eventstream-destinations.md)
 
 # [Standard capabilities](#tab/standardcapabilities)
 

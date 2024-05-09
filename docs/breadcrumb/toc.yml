@@ -9,6 +9,9 @@ items:
   - name: Data Factory
     tocHref: /fabric/data-factory/
     topicHref: /fabric/data-factory/index
+  - name: Data Integration
+    tocHref: /data-integration/
+    topicHref: /fabric/data-factory/index
   - name: Data Science
     tocHref: /fabric/data-science/
     topicHref: /fabric/data-science/index
@@ -18,7 +21,7 @@ items:
   - name: OneLake
     tocHref: /fabric/onelake/
     topicHref: /fabric/onelake/index
-  - name: Real-time hub
+  - name: Real-Time hub
     tocHref: /fabric/real-time-hub/
     topicHref: /fabric/real-time-hub/index
   - name: Real-Time Intelligence
@@ -37,7 +40,7 @@ items:
   - name: Real-Time Intelligence
     tocHref: /azure/data-explorer/
     topicHref: /fabric/real-time-intelligence/index
-  - name: Real-time hub
+  - name: Real-Time hub
     tocHref: /fabric/real-time-hub/
     topicHref: /fabric/real-time-hub/index
   - name: Microsoft Fabric Security

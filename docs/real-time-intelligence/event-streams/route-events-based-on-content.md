@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: conceptual
-ms.date: 04/22/2024
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
@@ -45,7 +45,7 @@ The supported destinations are:
 
 - **Custom App:** With this destination, you can easily route your real-time events to a custom application. This destination lets you connect your own applications to the eventstream and consume the event data in real time. It's useful when you want to egress real-time data to an external system outside Microsoft Fabric.
 
-- **Stream**: This destination represents the default raw eventstream transformed by a series of operations, also called a derived stream. Once created, you can view the stream from the Real-time hub.
+- **Stream**: This destination represents the default raw eventstream transformed by a series of operations, also called a derived stream. Once created, you can view the stream from the Real-Time hub.
 
 The following example shows how three distinct Fabric eventstream destinations can serve separate functions for a single data stream source. One KQL database is designated for storing raw data, a second KQL database is for retaining filtered data streams, and the Lakehouse is used for storing aggregated values.
 
@@ -55,6 +55,6 @@ To transform and route your data stream based on content, follow the steps at [E
 
 ## Related content
 
-- [New capabilities in Microsoft Fabric event streams](new-capabilities.md)
+- [New capabilities in Microsoft Fabric event streams](overview.md)
 - [Edit and publish an eventstream](edit-publish.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)
