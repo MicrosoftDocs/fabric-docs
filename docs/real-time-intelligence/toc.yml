@@ -6,7 +6,7 @@ items:
   items:
   - name: What is Real-Time Intelligence?
     href: overview.md
-  - name: Compare with Azure Data Explorer
+  - name: Differences between Real-Time Intelligence and comparable Azure solutions
     href: real-time-intelligence-compare.md
   - name: End to end tutorial
     items:
