@@ -16,7 +16,15 @@ This tutorial gives you an overview of creating, configuring, and using an envir
 
 ## Create an environment
 
-You can find the standard entry points of creating new environments in the Fabric **Data Engineering/Data Science** homepage, workspace **New** section and the Creation hub. You can also find the entry point of creating new environment when you select environment for your notebook, Spark job definition and the workspace setting.
+There are multiple entry points of creating new environments.
+
+- Standard entry point
+
+    In the creation hub or the **New** section of your workspace, you can find the option of creating new environment like other Fabric items.
+
+- Create during selection
+
+    When you select the environment for your notebook, Spark job definition and the workspace default, you can find the option to create new environment.
 
 ## Configure an environment
 
