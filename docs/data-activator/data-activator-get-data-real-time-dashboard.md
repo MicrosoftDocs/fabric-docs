@@ -1,7 +1,7 @@
 ---
 title: Create Data Activator alerts from a Real-Time Dashboard
 description: Learn how to create a Data Activator alert from a Real-Time Dashboard.
-author: jameshutton
+author: jamesdhutton
 ms.author: jameshutton
 ms.topic: concept
 ms.custom: 
@@ -19,7 +19,7 @@ You can use Data Activator to trigger notifications when conditions are met on d
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [Real-Time Dashboard](../real-time-intelligence/create-real-time-dashboard.md) with at least one tile displaying data
+* A [Real-Time Dashboard](../real-time-intelligence/dashboard-real-time-create.md) with at least one tile displaying data
 
 ## Select Set alert on a tile in your Real-Time Dashboard
 
