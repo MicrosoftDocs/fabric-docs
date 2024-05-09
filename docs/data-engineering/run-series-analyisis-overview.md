@@ -32,7 +32,7 @@ The Run Series Analysis feature is designed for performance tuning and optimizat
 
 ### Examples of a run series analysis 
 
-Here is an example of Run Series Analysis from a Notebook Pipeline Activity run instances. You can view the duration trend for this run series. Each vertical bar represents an instance of the Notebook activity run, with the height indicating the run duration. If a bar is marked in red, it means an anomaly has been detected for that run instance. You can click each run instance to view more detailed information and zoom in or out for a specific time window.
+Here is an example of Run Series Analysis from a Notebook run instances. You can view the duration trend for this run series. Each vertical bar represents an instance of the Notebook activity run, with the height indicating the run duration. If a bar is marked in red, it means an anomaly has been detected for that run instance. You can click each run instance to view more detailed information and zoom in or out for a specific time window.
 
 :::image type="content" source="media\run-series-analyisis-overview\examples-of-a-run-series-analysis.png" alt-text="Screenshot showing examples of a run series analysis." lightbox="media\run-series-analyisis-overview\examples-of-a-run-series-analysis.png":::
 
