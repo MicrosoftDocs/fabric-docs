@@ -54,6 +54,16 @@ items:
   items: 
   - name: Connectivity
     href: connectivity.md
+- name: Copilot for Data Warehouse
+  items:
+  - name: Overview of Copilot for Data Warehouse
+    href: copilot.md
+  - name: Use the Copilot chat pane
+    href: copilot-chat-pane.md
+  - name: Use code completions
+    href: copilot-code-completion.md
+  - name: Use quick actions
+    href: copilot-quick-action.md
 - name: Design and Develop
   items:
   - name: Better together - the lakehouse and warehouse
