@@ -70,7 +70,7 @@ In some situations, your Fabric administrator [enables Microsoft Fabric for the 
 Each trial includes one trial capacity per request. Additional trial capacities can be requested. Each trial capacity can be shared with other users. The person who initiated the trial is automatically assigned the Trial Capacity administrator role. If you're the Capacity administrator, you can assign workspaces to the trial capacity two different ways. 
 
 - [Use the Admin center **Capacity settings**](give-access-workspaces.md). All users with access to those workspaces are now able to use that trial capacity. The Fabric administrator can edit **Capacity settings** as well.
-- [Use Workplace settings](create-workspaces.md).  
+- [Use Workspace settings](create-workspaces.md).  
 
     :::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
