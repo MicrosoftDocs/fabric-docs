@@ -101,4 +101,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Real-Time Intelligence tutorial part 3: Query streaming data in a KQL queryset](tutorial-3-query-data.md)
+> [Tutorial part 3: Set an alert on your event stream](tutorial-3-set-alert.md)
