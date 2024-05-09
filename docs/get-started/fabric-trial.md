@@ -31,7 +31,7 @@ Although you don't actually receive a new license, the actions that you can perf
 
 ## Existing Power BI users
 
-If you're an existing Power BI user, you can skip to [Start the Fabric capacity trial](#start-the-fabric-trial).  
+If you're an existing Power BI user, you can skip to [Start the Fabric capacity trial](#start-the-fabric-capacity-trial).  
 
 ## Users who are new to Power BI
 
