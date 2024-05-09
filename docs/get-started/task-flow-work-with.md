@@ -18,7 +18,7 @@ This article describes how to work with tasks. The target audience is data analy
 
 To create or edit the task flow, and to create items in the workspace via the task flow, you need to be an Admin, Member, or Contributor in the workspace.
 
-Admins, Members, Contributors, and Vistors can use the task flow to filter the items list.
+Admins, Members, Contributors, and Vistors can use the task flow to [filter the items list](#navigate-items-with-the-task-flow).
 
 ## Task controls
 
