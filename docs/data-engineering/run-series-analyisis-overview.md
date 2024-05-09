@@ -16,13 +16,13 @@ The Apache Spark run series automatically categorizes your Spark applications ba
 
 The run series analysis feature offers the following key capabilities:
 
-- **Autotune analysis:** Use the run series analysis to compare autotune outcomes, view the Spark application performance, examine run-time breakdowns, and review auto-tuned Spark SQL query configurations.
+- **Autotune analysis:** Use the run series analysis to compare autotune outcomes, view the Spark application performance, examine run-time breakdowns, and review autotuned Spark SQL query configurations.
 
 - **Run Series Comparison:** Compare the notebook run duration with past runs, and evaluate the input and output data to understand the reasons behind prolonged run durations.
 
 - **Outlier detection and analysis:** Detect and analyze outliers in the run series to identify potential causes.
 
-- **Detailed run instance view:** Select a specific run instance to get detailed information on it's time distribution. These details be used to identify opportunities for performance enhancement, as well as the corresponding Spark configurations.
+- **Detailed run instance view:** Select a specific run instance to get detailed information on it's time distribution. These details be used to identify opportunities for performance enhancement, and the corresponding Spark configurations.
 
 ## When to use run series analysis?
 
@@ -30,7 +30,7 @@ The run series analysis feature is designed for performance tuning and optimizat
 
 ### Examples of a run series analysis 
 
-Here is an example of run series analysis from a notebook run instances. You can view the duration trend for this run series. Each vertical bar represents an instance of the notebook activity run, with the height indicating the run duration. Red bars indicate anomalies detected for that run instance. You can select each run instance to view more detailed information and zoom in or out for a specific time window.
+Here's an example of run series analysis from a notebook run instance. You can view the duration trend for this run series. Each vertical bar represents an instance of the notebook activity run, with the height indicating the run duration. Red bars indicate anomalies detected for that run instance. You can select each run instance to view more detailed information and zoom in or out for a specific time window.
 
 :::image type="content" source="media\run-series-analyisis-overview\examples-of-a-run-series-analysis.png" alt-text="Screenshot showing examples of a run series analysis." lightbox="media\run-series-analyisis-overview\examples-of-a-run-series-analysis.png":::
 
