@@ -176,7 +176,7 @@ To delete a task:
 1. Select the task to open the [task details pane](#task-controls).
 
 1. Select the trash can icon.
-1. 
+
 Alternatively,
 
 1. Select the task flow canvas to open the task flow details pane.
@@ -213,7 +213,7 @@ To delete a task flow:
 Deleting a task flow removes all tasks, the task list, and any item assignments, and resets the task flow to its original default empty state.
 
 > [!NOTE]
-> Items that were assigned to tasks in the deleted task flow remain in the workspace, but you when you create a new task flow, you will need to assign them to the tasks in the new flow.
+> Items that were assigned to tasks in the deleted task flow remain in the workspace. When you create a new task flow, you need to assign them to the tasks in the new flow.
 
 ## Related concepts
 
