@@ -1,6 +1,6 @@
 ---
-title: Run Series Analysis overview
-description: The Spark Run Series automatically classifies your Spark applications from your recurring Pipeline activities, or manual Notebook runs, or Spark Job runs from the same Notebook or Spark Job Definition into respective run series.
+title: What is Spark run series analysis?
+description: The Apache Spark run series automatically categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs from the same notebook or Spark job definition.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
@@ -10,36 +10,33 @@ ms.date: 05/09/2024
 ms.search.form: run_series_analysis
 ---
 
-# Run Series Analysis overview 
+# What is Spark run series analysis? 
 
-## What is the feature of spark run Series analysis? 
+The Apache Spark run series automatically categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs from the same notebook or Spark job definition. The run series feature illustrates the duration trend and data input or output  trend for each Spark application instance. It automatically scans the run series, detects anomalies, and provides detailed views for individual Spark applications.
 
-The Spark Run Series automatically classifies your Spark applications from your recurring Pipeline activities, or manual Notebook runs, or Spark Job runs from the same Notebook or Spark Job Definition into respective run series. The Run Series feature visualizes the duration trend for each Spark application instance, along with the corresponding data input and output trendline for Spark applications in the run series. It also auto-scans the run series and detects whether there are any anomalous Spark application runs. This feature enables you to view details for a particular Spark application. 
+The run series analysis feature offers the following key capabilities:
 
-The Run Series Analysis feature offers the following key capabilities. 
+- **Autotune analysis:** Use the run series analysis to compare autotune outcomes, view the Spark application performance, examine run-time breakdowns, and review autotuned Spark SQL query configurations.
 
-- **Autotune analysis:** You can leverage the Run Series Analysis feature to compare and analyze the outcomes of Autotune, view the performance of each Spark application, examine the time execution breakdown for each run, and observe the auto-tuned configuration values for Spark SQL queries. 
+- **Run Series Comparison:** Compare the notebook run duration with past runs, and evaluate the input and output data to understand the reasons behind prolonged run durations.
 
-- **Run Series Comparison:** You can compare the duration of a Notebook run with that of previous runs and evaluate the input and output data to understand the reasons behind prolonged run durations.
+- **Outlier detection and analysis:** Detect and analyze outliers in the run series to identify potential causes.
 
-- **Outlier Detection and Analysis:** The system can detect outliers in the run series and analyze them to pinpoint potential contributing factors.
-
-- **Detailed Run Instance View:** Clicking on a specific run instance provides detailed information on time distribution, which can be used to identify opportunities for performance enhancement, as well as the corresponding Spark configurations.
+- **Detailed run instance view:** Select a specific run instance to get detailed information on it's time distribution. These details be used to identify opportunities for performance enhancement, and the corresponding Spark configurations.
 
 ## When to use run series analysis?
 
-The Run Series Analysis feature is designed for performance tuning and optimization. If you're uncertain about the health of production jobs, you can use this feature, which automatically scans production jobs from different run series and performs health analysis. If you'd like to optimize a long-running job, the Run Series Analysis feature lets you compare it with other jobs, and assists you identify performance bottlenecks and optimization opportunities. Additionally, you can use this feature to view the output of Autotune and ensure optimal performance. 
+The run series analysis feature is designed for performance tuning and optimization. If you're uncertain about the health of production jobs, you can use this feature. It automatically scans production jobs from different run series and performs health analysis. If you'd like to optimize a long-running job, you can compare it with other jobs, identify performance bottlenecks, and optimization opportunities. Additionally, you can use this feature to view the output of autotune and ensure optimal performance.
 
 ### Examples of a run series analysis 
 
-Here is an example of Run Series Analysis from a Notebook run instances. You can view the duration trend for this run series. Each vertical bar represents an instance of the Notebook activity run, with the height indicating the run duration. If a bar is marked in red, it means an anomaly has been detected for that run instance. You can click each run instance to view more detailed information and zoom in or out for a specific time window.
+Here's an example of run series analysis from a notebook run instance. You can view the duration trend for this run series. Each vertical bar represents an instance of the notebook activity run, with the height indicating the run duration. Red bars indicate anomalies detected for that run instance. You can select each run instance to view more detailed information and zoom in or out for a specific time window.
 
 :::image type="content" source="media\run-series-analyisis-overview\examples-of-a-run-series-analysis.png" alt-text="Screenshot showing examples of a run series analysis." lightbox="media\run-series-analyisis-overview\examples-of-a-run-series-analysis.png":::
 
+### Access to the spark run series analysis
 
-### How to access to the spark run series analysis?
-
-You can access the run series analysis feature through the monitoring hub's historical view, the notebook or spark job definition's recent runs panel, or the spark application monitoring detail page. 
+You can access the run series analysis feature through the monitoring hub's historical view, the notebook or spark job definition's recent runs panel, or from the spark application monitoring detail page. 
 
 :::image type="content" source="media\run-series-analyisis-overview\how-to-access-to-the-spar-run-series-analysis.png" alt-text="Screenshot showing how to access to the spark run series analysis." lightbox="media\run-series-analyisis-overview\how-to-access-to-the-spar-run-series-analysis.png":::
 
