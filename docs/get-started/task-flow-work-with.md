@@ -14,7 +14,7 @@ When you select a task, the side panel displays the task details.
 
 :::image type="content" source="./media/task-flow-work-with/task-details-pane.png" alt-text="Screenshot explaining the task details pane.":::
 
-There are five parts in the Task details pane:
+There are five parts in the task details pane:
 
 1. Task name. A good task name should identify the task and provide a clear indication of its intended use.
 1. Number of items assigned to the task.
@@ -22,29 +22,27 @@ There are five parts in the Task details pane:
 1. Task type. By configuring and selecting task type, the specific category of the recommended items are different. [QUESTION: I don't understand this sentence very well.]
 1. Item recommendation: The list of items recommended for the task. The list of recommended items varies depending on the selected task type.
 
-## Update task details and type
+## Change task details and type
 
-When you add a task, the task type and its associated description are assigned as the default name and description of the task. You can update the task name and description by selecting **Edit**.
+To change the task name or description, or to chenge the task's type, first select the task on the canvas to open the task details side pane.
 
-:::image type="content" source="./media/task-flow-work-with/edit-task-name-description.png" alt-text="Screenshot showing how to edit the task name and description in the task details pane.":::
+:::image type="content" source="./media/task-flow-work-with/change-task-name-description-type.png" alt-text="Screenshot showing how to edit the task name and description in the task details pane.":::
 
-You can switch the task to another task type by choosing another type from the **Task type** dropdown menu.
+To change the task's name or description, select **Edit** in the task details side pane. Save your changes when done.
 
-:::image type="content" source="./media/task-flow-work-with/task-change-type.png" alt-text="Screenshot showing how to change task type in the task details pane.":::
-
-To update or reset the task type for an existing task, simply select on the dropdown menu and choose a new type. [QUESTION: This doesn't seem to be true.]
+To change the task type, open the **Task type** dropdown menu and choose the new desired task type. Changing the task type doesn't change the task name or description. Consider changing these fields to suit the new task type.
 
 ## Add a task to the task flow
 
-To add a task to the task flow canvas, open the **Add** dropdown menu and select the desired task type.
+To add a new task to the task flow canvas, open the **Add** dropdown menu and select the desired task type.
 
 :::image type="content" source="./media/task-flow-work-with/add-task.png" alt-text="Screenshot showing the Add dropdown menu on the task flow canvas." lightbox="./media/task-flow-work-with/add-task.png":::
 
-The task of the selected task type is added onto the canvas. You can update the name and description of the task as described in [Update task details and type](#update-task-details-and-type).
+The task of the selected task type is added onto the canvas. The name and description of the new task are the default name and description of the task type. Consider [changing the name and description](#change-task-details-and-type) of the new task to better describe its purpose in the work flow.
 
 ## Delete a task from the task flow
 
-To delete a task, select it, and then select the trash can icon in the task details pane that opens.
+To delete a task, select it to open the task details side pane, and then select the trash can icon.
 
 :::image type="content" source="./media/task-flow-work-with/delete-task.png" alt-text="Screenshot showing how to delete a task.":::
 
