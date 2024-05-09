@@ -62,7 +62,7 @@ Next, you need to create a way for the Fabric service to connect to your Azure S
 #### Use a contained database user
 
 1. Connect to the Azure SQL database your plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [Azure Data Studio](/azure-data-studio/download-azure-data-studio).
-1. Create a [contained database user with password](/sql/relational-databases/security/contained-database-users-making-your-database-portable?view=azuresqldb-current&preserve-view=true), and grant the **CONTROL** permission to the contained daabase user with the following T-SQL script:
+1. Create a [contained database user with password](/sql/relational-databases/security/contained-database-users-making-your-database-portable?view=azuresqldb-current&preserve-view=true), and grant the **CONTROL** permission to the contained database user with the following T-SQL script:
 
     ```sql
     CREATE USER fabric_user WITH PASSWORD = '<strong password>';
@@ -73,7 +73,7 @@ Next, you need to create a way for the Fabric service to connect to your Azure S
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
-1. Navigate to the **Create** pane..
+1. Navigate to the **Create** pane.
     <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Workspace creation."::: -->
 1. Select the **Create** icon.  
     <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Create button."::: -->
