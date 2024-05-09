@@ -1,5 +1,5 @@
 ---
-title: Run Series Analysis Overview
+title: Run Series Analysis overview
 description: The Spark Run Series automatically classifies your Spark applications from your recurring Pipeline activities, or manual Notebook runs, or Spark Job runs from the same Notebook or Spark Job Definition into respective run series.
 ms.reviewer: snehagunda
 ms.author: jejiang
@@ -10,7 +10,7 @@ ms.date: 05/09/2024
 ms.search.form: run_series_analysis
 ---
 
-# Run Series Analysis Overview 
+# Run Series Analysis overview 
 
 ## What is the feature of spark run Series analysis? 
 
