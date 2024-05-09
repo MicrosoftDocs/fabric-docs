@@ -42,10 +42,29 @@ If you're experiencing mirroring problems, perform the following database level 
 
 1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
+## Managed identity
+
+The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled and must be the primary identity. After enablement, if SAMI is disabled or removed, the mirroring of Azure SQL Database to Fabric OneLake will fail.
+
+The SAMI must be the primary identity. Verify the SAMI is the primary identity with the following: `SELECT * FROM sys.dm_server_managed_identities;`
+
+User Assigned Managed Identity (UAMI) is not supported. If you add a UAMI, it becomes the primary identity, replacing the SAMI as primary. This causes replication to fail. To resolve:
+- Remove the UAMI.
+<!-- - Use the [REST API to change the SAMI to be the primary identity](/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity-create-server?view=azuresql-db&preserve-view=true&tabs=rest-api). -->
+
+## SPN permissions
+
+Do not remove Azure SQL Database service principal name (SPN) contributor permissions on Fabric mirrored database item.
+
+If you accidentally remove the SPN permission, Mirroring Azure SQL database will not function as expected. No new data can be mirrored from the source database.
+
+If you remove Azure SQL database SPN permissions or permissions are not set up correctly, use the following steps.
+
+1. Add the SPN as a user by selecting the "..." ellipses option on the mirrored database item.
+1. Select the **Manage Permissions** option.
+1. Enter the name of the Azure SQL Database logical server name. Provide **Read** and **Write** permissions.
+
 ## Related content
 
-- [What is Mirroring in Fabric?](overview.md)
-- [Monitor Fabric mirrored database replication](monitor.md)
-- [Troubleshoot Fabric mirrored databases](troubleshooting.md)
-- [Model data in the default Power BI semantic model in Microsoft Fabric](/fabric/data-warehouse/model-default-power-bi-dataset)
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-tutorial.md)
+- [Limitations in Microsoft Fabric](../../data-warehouse/limitations.md)
+- [Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric (Preview)](azure-sql-database-mirroring-faq.yml)

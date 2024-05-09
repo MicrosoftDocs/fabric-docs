@@ -154,3 +154,4 @@ additionalContent: |
 
   - [What is Mirroring in Fabric?](overview.md)
   - [Azure SQL Database Mirroring in Microsoft Fabric](azure-sql-database.md)
+  - [Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-troubleshoot.md).
