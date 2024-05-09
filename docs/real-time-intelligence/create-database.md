@@ -34,7 +34,7 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
     :::image type="content" source="media/create-database/new-database.png" alt-text="Screenshot of the New KQL Database window showing the database name. The Create button is highlighted.":::
 
-The KQL database is created within the context of the selected workspace.
+The KQL database is created within the context of the selected event house.
 
 ## Database details
 
