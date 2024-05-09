@@ -45,7 +45,7 @@ Enable Apache Airflow in your Tenant.
 1. Click on 'Configure Airflow' Card.
 2. Specify the Apache Airflow environment configuration for your DAGs to run against. You can change these settings later as well.
 
-   :::image type="content" source="media/data-workflows/configure-airflow-env.png" lightbox="media/data-workflows/configure-airflow-env.png" alt-text="Screenshot to configure Apache Airflow Project.":::
+   :::image type="content" source="media/data-workflows/configure-airflow-environment.png" lightbox="media/data-workflows/configure-airflow-environment.png" alt-text="Screenshot to configure Apache Airflow Project.":::
 
    * <strong>Compute Node Size:</strong> The size of the compute node you want your Airflow environment to run on.
    * <strong>Enable Autoscale:</strong> Allow your Airflow environment to scale nodes up or down as needed.

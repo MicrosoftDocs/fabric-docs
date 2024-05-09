@@ -35,7 +35,7 @@ To get started, you must complete the following prerequisite:
 
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Project (preview)
 
-   :::image type="content" source="media/data-workflows/more-options.png" alt-text="Screenshot shows click on more options.":::
+   :::image type="content" source="media/data-workflows/more-options.png" lightbox="media/data-workflows/more-options.png" alt-text="Screenshot shows click on more options.":::
 
    :::image type="content" source="media/data-workflows/apache-airflow-project.png" alt-text="Screenshot to select Data Workflow.":::
 
@@ -49,11 +49,11 @@ To get started, you must complete the following prerequisite:
 
 2. A boilerplate DAG code is presented to you. You can edit the file as per your requirements.
 
-   :::image type="content" source="media/data-workflows/boilerplate-directed-acyclic-graph.png" alt-text="Screenshot presents boilerplate DAG file in Microsoft Fabric.":::
+   :::image type="content" source="media/data-workflows/boilerplate-directed-acyclic-graph.png" lightbox="media/data-workflows/boilerplate-directed-acyclic-graph.png" alt-text="Screenshot presents boilerplate DAG file in Microsoft Fabric.":::
 
 3. Click on "Save icon".
 
-   :::image type="content" source="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
+   :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
 ### Monitor your Data workflow DAG in Apache Airflow UI
 
