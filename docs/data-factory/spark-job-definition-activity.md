@@ -42,7 +42,7 @@ To get started, you must complete the following prerequisites:
 
 Select the **Settings** tab in the activity properties pane, then select the Fabric Workspace that contains the Spark Job Definition you would like to run.
 
-:::image type="content" source="../docs/data-factory/media/spark-job-definition-activity/spark-job-definition-settings.png" alt-text="Screenshot showing the Settings tab of the Spark Job Definition properties pages in the pipeline editor window.":::
+:::image type="content" source="media/spark-job-definition-activity/spark-job-definition-settings.png" alt-text="Screenshot showing the Settings tab of the Spark Job Definition properties pages in the pipeline editor window.":::
 
 ## Known limitations
 
