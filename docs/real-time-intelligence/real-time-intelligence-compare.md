@@ -51,7 +51,7 @@ This article outlines key considerations for determining the most suitable imple
 
 | Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
-| **Multi-cloud connectors** | Azure Stream Analytics connects to Confluent Kafka. No connectors to read data from Amazon Kinesis or Google Pub/Sub. | Native integration for Confluent Kafka, Amazon Kinesis, Google Pub/Sub. |
+| **Multicloud connectors** | Azure Stream Analytics connects to Confluent Kafka. No connectors to read data from Amazon Kinesis or Google Pub/Sub. | Native integration for Confluent Kafka, Amazon Kinesis, Google Pub/Sub. |
 | **Support for CDC streams** | Requires deployment of other services such as Debezium. | Native integration for Azure Cosmos DB, Postgresql, and Azure SQL. |
 | **Support for protocols** | Azure Event Hubs, AMQP, Kafka, and MQTT. | Azure Event Hubs, AMQP, Kafka. |
 

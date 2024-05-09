@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 04/23/2024
+ms.date: 05/21/2024
 ms.topic: whats-new
 ms.custom:
   - ignite-2023
@@ -320,6 +320,7 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
 |May 2024|**Copilot for Data Warehouse**|[Copilot for Data Warehouse (preview)](../data-warehouse/copilot.md) is now available, offering [the Copilot chat pane](../data-warehouse/copilot-chat-pane.md), [quick actions](../data-warehouse/copilot-quick-action.md), and [code completions](../data-warehouse/copilot-code-completion.md). |
+|May 2024|**Warehouse queries with time travel**|Warehouse in Microsoft Fabric offers the capability to [query the historical data as it existed in the past](../data-warehouse/time-travel.md) at the statement level. The ability to query a data from a specific timestamp is known in the data warehousing industry as *time travel*.|
 |April 2024|**Fabric Warehouse in ADF copy activity**|You can now [connect to your Fabric Warehouse from an Azure Data Factory/Synapse pipeline](https://blog.fabric.microsoft.com/blog/9613/preview?preview=true#post-9613-_Toc164428685). You can find this new connector when creating a new source or sink destination in your copy activity, in the Lookup activity, Stored Procedure activity, Script activity, and Get Metadata activity. |
 |April 2024|**Git integration**|[Git integration for the Warehouse](https://blog.fabric.microsoft.com/blog/9613/preview?preview=true#post-9613-_Toc164428653) allows you to check in the changes of your Warehouse to an Azure DevOps Git repository as a SQL database project. |
 |April 2024|**Partition elimination**|[Partition elimination](https://blog.fabric.microsoft.com/blog/9613/preview?preview=true#post-9613-_Toc164428655) is a performance improvement for tables with a large number of files. The SQL analytics endpoint of a Lakehouse uses partition elimination to read data from only those partitions that are relevant to the query. Recent improvements have boosted performance even more when queries are aimed at a few partitions in a table that has many files.|

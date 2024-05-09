@@ -49,7 +49,7 @@ Get the following information from Google Cloud:
     1. Download the JSON file and copy all the JSON content as the **Service account key**. 
     
         > [!NOTE]
-        The JSON file can be downloaded only once. 
+        > The JSON file can be downloaded only once. 
 
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
