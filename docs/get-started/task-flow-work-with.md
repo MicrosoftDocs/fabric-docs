@@ -5,7 +5,7 @@ ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 05/07/2024
+ms.date: 05/09/2024
 ---
 
 # Manage tasks
@@ -94,6 +94,9 @@ To change a connector's start and end values, or switch it's direction:
 
 Once a task has been placed on the canvas, you can assign items to it help logically structuring and organizing your work. You can [create new items to be assign to the task](#create-a-new-item-for-a-task), or you can [assign items that already exist in the workspace](#assign-existing-items-to-a-task).
 
+> [!NOTE]
+> An item can only be assigned to a single task. It can't be assigned to multiple tasks.
+
 ### Create a new item for a task
 
 To create a new item for a specific task:
@@ -118,44 +121,61 @@ To attach existing items to a task:
 
     :::image type="content" source="./media/task-flow-work-with/assign-existing-item-dialog.png" alt-text="Screenshot showing the Assign item dialog.":::
 
-The items you selected items are assigned to the task.
+The items you selected items are assigned to the task. In the item list, task assignments are shown in the **Task** column.
 
-### Detach items from tasks
+### Unassign items from tasks
 
-You can detach items from a selected task or detach items from all tasks.
+You can unassign items from a selected task or from multiple tasks.
 
 > [!NOTE]
-> Detaching items from tasks does not remove the items from the workspace.
+> Detaching items from tasks **does not** remove the items from the workspace.
 
-#### Detach items from a task
+#### Unassign items from a task
 
-To unassign items from a task, first select the task you want to remove the items from. This filters the item list to show just the items that are assigned to the task. Next, in the item list, hover over the items you want to unassign and then mark the checkboxes that appear. Finally, on the workspace toolbar, choose **Unassign from task**.
+To unassign items from a task:
+
+1. Select the task you want to unassign the items from. This filters the item list to show just the items that are assigned to the task.
+
+1. In the item list, hover over the items you want to unassign and mark the checkboxes that appear.
+
+1. On the workspace toolbar, choose **Unassign from task** (or **Unassign from all tasks**, if you've selected multiple items).
 
 :::image type="content" source="./media/task-flow-work-with/unassign-items-from-task.png" alt-text="Screenshot illustrating how to unassign items from a task.":::
 
-#### Detach items from all tasks
+#### Unassign items from multiple tasks
 
-You can also detach multiple items that are attached to different tasks at once.
+To unassign items from multiple tasks:
 
-To unassign multiple items from multiple tasks, select **Clear all** at the top of the items list to clear all filters so that all items in the workspace are visible. Next hover over the items you want to unassign and mark the checkboxes. When you've finished making your selections, select **Unassign from all tasks** in the workspace toolbar.
+1. Select **Clear all** at the top of the items list to clear all filters so that you can see all the items in the workspace. Note that items that are assigned to tasks list the task name in the **Task** column.
+
+1. Hover over the items you want to unassign and mark the checkboxes.
+
+1. When you've finished making your selections, select **Unassign from all tasks** in the workspace toolbar.
 
 :::image type="content" source="./media/task-flow-work-with/unassign-items-from-all-tasks.png" alt-text="Screenshot showing how to unassign items from all tasks." lightbox="./media/task-flow-work-with/unassign-items-from-all-tasks.png":::
 
-[QUESTION: Can an item only be assigned to one task at a time?]
-
 ## Delete a task
 
-To delete a task, select it to open the task details side pane, and then select the trash can icon.
+To delete a task:
 
-:::image type="content" source="./media/task-flow-work-with/delete-task.png" alt-text="Screenshot showing how to delete a task.":::
+1. Select the task to open the [task details side pane](#manage-tasks).
 
-Alternatively, select the task flow canvas to open the task flow details pane. Then in the task flow details pane, hover over the task you want to delete in the Tasks list and select the trash can icon.
+1. Select the trash can icon.
+1. 
+Alternatively,
 
-:::image type="content" source="./media/task-flow-work-with/delete-task-via-task-flow-details-pane.png" alt-text="Screenshot showing how to delete a task from the task flow details pane.":::
+1. Select the task flow canvas to open the task flow details pane.
 
-## Navigate items with task flows
+1. In the task flow details pane, hover over the task you want to delete in the Tasks list and select the trash can icon.
 
-With items assigned to the tasks, you can use the task flow to quickly understand how items in the workspace work together and get a clear view of your work in the workspace.
+    :::image type="content" source="./media/task-flow-work-with/delete-task-via-task-flow-details-pane.png" alt-text="Screenshot showing how to delete a task from the task flow details pane.":::
+
+> [!NOTE]
+> Deleting a task does not delete the items assigned to it. They remain in the workspace.
+
+## Navigate items with the task flow
+
+With items assigned to tasks in a task flow, you can use the task flow to quickly understand how the items in the workspace work together, and get a clear picture of your work in the workspace.
 
 * For each item that you see in the items list, you can see the item type and what task it's assigned to, if any.
 
@@ -165,21 +185,20 @@ With items assigned to the tasks, you can use the task flow to quickly understan
 
     :::image type="content" source="./media/task-flow-work-with/filter-item-list.png" alt-text="Screenshot illustrating how to filter the item list by selecting a task.":::
 
-[QUESTION: Can you clarify what you mean by "understand how they work together, and "get a clear view of your work in the workspace. To mean, I understand that selecting a task filters the items to those items that are in the task. Can you state more precisely how this helps you understand your work?] 
-
 ## Delete a task flow
 
-Deleting the task flow will only delete all the tasks and any associations between the items and the tasks.
+To delete a task flow:
 
-[QWESTION: What do you mean by "associations between the items and the tasks? Do you mean assignments?]
+1. Select a blank area of the canvas to display the task flow details pane.
 
-To delete a task flow, first select a blank area of the canvas to display the task flow pane. Next, select the trash icon to delete the task flow.
+1. Select the trash icon to delete the task flow.
 
 :::image type="content" source="./media/task-flow-work-with/delete-task-flow.png" alt-text="Screenshot showing how to delete a task flow.":::
 
-Deleting a task flow deletes all tasks, the task list, and any item assignments.
+Deleting a task flow removes all tasks, the task list, and any item assignments, and resets the task flow to its original default empty state.
 
-Any items created will remain in the workspace, but you need to assign them to tasks in your new task flow.
+> [!NOTE]
+> Items that were assigned to tasks in the deleted task flow remain in the workspace, but you when you create a new task flow, you will need to assign them to the tasks in the new flow.
 
 ## Related concepts
 
