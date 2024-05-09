@@ -14,9 +14,11 @@ When you select a task, the side panel displays the task details.
 
 :::image type="content" source="./media/task-flow-work-with/task-details-side-pane.png" alt-text="Screenshot explaining the task details pane.":::
 
-1. [Delete task](#delete-tasks)
+1. [Delete task](#delete-a-task)
 1. [Edit task name and description](#edit-task-name-and-description)
 1. [Change task type](#change-task-type)
+1. [Create new item for task](#create-a-new-item-for-a-task)
+1. [Assign existing items to task](#assign-existing-items-to-a-task)
 
 ## Add a task 
 
@@ -24,7 +26,7 @@ To add a new task to the task flow canvas, open the **Add** dropdown menu and se
 
 :::image type="content" source="./media/task-flow-work-with/add-task.png" alt-text="Screenshot showing the Add dropdown menu on the task flow canvas." lightbox="./media/task-flow-work-with/add-task.png":::
 
-The task of the selected task type is added onto the canvas. The name and description of the new task are the default name and description of the task type. Consider [changing the name and description](#change-task-details-and-type) of the new task to better describe its purpose in the work flow. A good task name should identify the task and provide a clear indication of its intended use.
+The task of the selected task type is added onto the canvas. The name and description of the new task are the default name and description of the task type. Consider [changing the name and description](#edit-task-name-and-description) of the new task to better describe its purpose in the work flow. A good task name should identify the task and provide a clear indication of its intended use.
 
 ## Edit task name and description
 
@@ -45,23 +47,24 @@ To change a task to a different type:
 > [!NOTE]
 > Changing the task type doesn't change the task name or description. Consider changing these fields to suit the new task type.
 
+## Arrange tasks on the canvas
+
+Part of building a task flow is arranging the tasks in the proper order. To arrange the tasks, select and drag each task to the desired position in the task flow.
+
+> [!TIP]
+> When you move tasks around on the canvas, they stay in the place where you put them. However, due to a known issue, when you add a new task to the canvas, any unconnected tasks will move back to their default positions. Therefore, to safeguard your arrangement of tasks, it's highly recommended to connect them all with connectors before adding any new tasks to the canvas.
+
 ## Connect tasks
 
-[NOTE: Add note or important bubble to inform that connectors don't do any acutual data connections - they are graphic representations of the flow of tasks only.]
+Connectors show the  logical flow of work. They don't make or indicate any actual data connections - they are graphic representations of the flow of tasks only.
 
-[NOTE: Add tip: arrange the tasks on the canvas they way you want them to appear before connecting them. Connected tasks maintain their arrangement when you add new tasks to the canvas. Unconnected tasks get rearranged vertically every time you add a new task.]
+### Add a connector
 
-Up this point, the tasks are arranged vertically and separately on the canvas.
-
-To illustrate the flow of work, you can connect the tasks. To connect two tasks, select the edge of the starting task and drag to an edge of the next task.
+To connect two tasks, select the edge of the starting task and drag to an edge of the next task.
 
 :::image type="content" source="./media/task-flow-work-with/connecting-two-tasks-select-drag.png" alt-text="Screenshot showing how to create a connector via select and drag.":::
 
-The connector appears between the two tasks.
-
-:::image type="content" source="./media/task-flow-work-with/connector-between-two-tasks.png" alt-text="Screenshot showing a connector between two tasks.":::
-
-Alternatively, you can select **Add** > **Connector**.
+Alternatively, you can select **Add** > **Connector** from the **Add** dropdown on the canvas.
 
 :::image type="content" source="./media/task-flow-work-with/connecting-two-tasks-add-menu.png" alt-text="Screenshot showing how to create a connector using the add menu.":::
 
@@ -69,17 +72,25 @@ Then, in the **Add connector** dialog, select the start and end tasks, then sele
 
 :::image type="content" source="./media/task-flow-work-with/connecting-two-tasks-add-connector-dialog.png" alt-text="Screenshot showing how to specify the start and end tasks in the add connector dialog.":::
 
-Repeat these steps to add connectors between the other tasks.
+### Delete a connector
 
-To delete a connector or to update its start and end values, select the connector. The **Connector details** side pane allows you to delete the connector or change its start and end values.
+To delete a connector, select it and press **Enter**.
 
-:::image type="content" source="./media/task-flow-work-with/connector-details-pane.png" alt-text="Screenshot showing how to delete or edit a connector on the connector details pane.":::
+Alternatively, select the connector to open the connector details side pane, then select the trash can icon.
+
+:::image type="content" source="./media/task-flow-work-with/connector-delete.png" alt-text="Screenshot showing how to delete a connector on the connector details pane.":::
+
+### Change connector start and end points or direction
+
+To change a connector's start and end values, or switch it's direction,  select the connector to open the connector details side pane. In the side pane, change the start and end values as desired, or select **Swap** to change connector direction.
+
+:::image type="content" source="./media/task-flow-work-with/connector-edit-swap.png" alt-text="Screenshot showing how to edit connector start and end points or change connector direction on the connector details pane.":::
 
 ## Assign items to a task
 
 Once the task flow is set up, you can assign items to individual tasks for logically structuring and organizing your work. You can create a new item or assign items that already exist in the workspace.
 
-### Create an new item for a task
+### Create a new item for a task
 
 To create a new item for a specific task, select **+ New item** on the task. On the **Create an item** pane that opens, the recommended item types for the task are displayed by default. Choose one of the recommended types. If you don't see the item type you want, change the **Display** selector from *Recommended items* to *All items*. Choose the item type you want.
 
@@ -89,7 +100,7 @@ Once the item is created, the item count on the task shows that the task has had
 
 :::image type="content" source="./media/task-flow-work-with/new-item-assigned-to-task.png" alt-text="Screenshot showing a new item in the items list and the incremented item count on the task." lightbox="./media/task-flow-work-with/new-item-assigned-to-task.png":::
 
-### Attach existing items to a task
+### Assign existing items to a task
 
 To attach existing items to a task, select the clip icon on the task.
 
@@ -110,7 +121,7 @@ You can detach items from a selected task or detach items from all tasks.
 
 #### Detach items from a task
 
-To unassign items from a task, first select the task you want to remove the items from. This filters the item list to show just the items that are assigned to the task. Next, in the item list, hover over the items you want to unassign and then mark the checkboxes that apppear. Finally, on the workspace toolbar, choose **Unassign from task**.
+To unassign items from a task, first select the task you want to remove the items from. This filters the item list to show just the items that are assigned to the task. Next, in the item list, hover over the items you want to unassign and then mark the checkboxes that appear. Finally, on the workspace toolbar, choose **Unassign from task**.
 
 :::image type="content" source="./media/task-flow-work-with/unassign-items-from-task.png" alt-text="Screenshot illustrating how to unassign items from a task.":::
 
@@ -138,7 +149,7 @@ Alternatively, select the task flow canvas to open the task flow details pane. T
 
 With items assigned to the tasks, you can use the task flow to quickly understand how items in the workspace work together and get a clear view of your work in the workspace.
 
-* For each item that you see in the items list, you can see the item type as well as what task it is assigned to, if any.
+* For each item that you see in the items list, you can see the item type and what task it's assigned to, if any.
 
     :::image type="content" source="./media/task-flow-work-with/navigate-with-task-flow.png" alt-text="Screenshot illustrating how to use the task flow to navigate the item list.":::
 
@@ -146,7 +157,7 @@ With items assigned to the tasks, you can use the task flow to quickly understan
 
     :::image type="content" source="./media/task-flow-work-with/filter-item-list.png" alt-text="Screenshot illustrating how to filter the item list by selecting a task.":::
 
-[QUESTION: Can you clarify what you mean by "understand how they work together, and "get a clear view of your work in the workspace. To mean, I understand that selecting a task filters the items to those that are in the task. Can you state more precisely how this helps you understand your work?] 
+[QUESTION: Can you clarify what you mean by "understand how they work together, and "get a clear view of your work in the workspace. To mean, I understand that selecting a task filters the items to those items that are in the task. Can you state more precisely how this helps you understand your work?] 
 
 ## Delete a task flow
 
