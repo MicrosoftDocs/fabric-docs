@@ -14,7 +14,7 @@ ms.search.form: Get started
 # Real-Time Intelligence tutorial part 4: Query streaming data in a KQL queryset
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data in the Real-Time Hub](tutorial-2-get-real-time-events.md).
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Set an alert on your event stream](tutorial-3-set-alert.md).
 
 In this part of the tutorial, you learn how to query your streaming data in a [KQL queryset](create-query-set.md). You create a KQL queryset, write a KQL query, and visualize the data in a time chart.
 

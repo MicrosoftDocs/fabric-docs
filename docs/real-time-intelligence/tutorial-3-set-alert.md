@@ -56,4 +56,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 3: Query streaming data in a KQL queryset](tutorial-4-query-data.md)
+> [Tutorial part 4: Query streaming data in a KQL queryset](tutorial-4-query-data.md)
