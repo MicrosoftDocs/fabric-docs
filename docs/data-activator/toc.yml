@@ -12,7 +12,7 @@ items:
   - name: Get data from Power BI
     href: data-activator-get-data-power-bi.md
   - name: Create alerts from a Real-Time Dashboard
-    url: data-activator-get-data-real-time-dashboard.md    
+    href: data-activator-get-data-real-time-dashboard.md    
   - name: Get data from Eventstreams
     href: data-activator-get-data-eventstreams.md        
 - name: Create objects and triggers

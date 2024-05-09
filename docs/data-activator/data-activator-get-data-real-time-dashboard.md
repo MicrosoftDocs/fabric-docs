@@ -30,7 +30,7 @@ To begin creating a trigger from a Real-Time Dashboard:
 1. Choose a tile on the Real-Time Dashboard for Data Activator to monitor.
 1. Select the **More menu (...)** at the top-right of the tile, and select **Set Alert**. You can also use the *Set Alert* button in the Real-Time Dashboard toolbar.
 
-:::image type="content" source="media/data-activator-get-data/data-activator-get-data-06.png" alt-text="Screenshot showing how to add an alert from a tile":::
+:::image type="content" source="media/data-activator-get-data/data-activator-get-data-06.png" alt-text="Screenshot showing how to add an alert from a tile.":::
 
 ## Define alert conditions
 
