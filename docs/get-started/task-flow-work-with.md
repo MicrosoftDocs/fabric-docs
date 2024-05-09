@@ -20,19 +20,20 @@ To create or edit the task flow, and to create items in the workspace via the ta
 
 Admins, Members, Contributors, and Vistors can use the task flow to filter the items list.
 
-## Task contols
+## Task controls
 
 Much of the work with tasks is accomplished either in the task pane details pane or via controls on the task card  or on the task flow canvas.
 
-When you select a task, the side panel displays the task details.
+Select a task to display the task details side pane. The following image shows the main controls for working with tasks.
 
 :::image type="content" source="./media/task-flow-work-with/task-details-side-pane.png" alt-text="Screenshot explaining the task details pane.":::
 
-1. [Delete task](#delete-a-task)
+1. [Add task](#add-a-task) or [connector](#connect-tasks)
 1. [Edit task name and description](#edit-task-name-and-description)
 1. [Change task type](#change-task-type)
 1. [Create new item for task](#create-a-new-item-for-a-task)
 1. [Assign existing items to task](#assign-existing-items-to-a-task)
+1. [Delete task](#delete-a-task)
 
 ## Add a task 
 
@@ -106,7 +107,7 @@ To change a connector's start and end values, or switch it's direction:
 
 ## Assign items to a task
 
-Once a task has been placed on the canvas, you can assign items to it help logically structuring and organizing your work. You can [create new items to be assign to the task](#create-a-new-item-for-a-task), or you can [assign items that already exist in the workspace](#assign-existing-items-to-a-task).
+Once a task has been placed on the canvas, you can assign items to it to help structuring and organize your work. You can [create new items to be assign to the task](#create-a-new-item-for-a-task), or you can [assign items that already exist in the workspace](#assign-existing-items-to-a-task).
 
 > [!NOTE]
 > An item can only be assigned to a single task. It can't be assigned to multiple tasks.
