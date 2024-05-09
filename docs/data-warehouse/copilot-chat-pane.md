@@ -38,7 +38,7 @@ The supported capabilities of interacting through chat include:
 
 ## Prerequisites
 
-[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
+[!INCLUDE [copilot-include](../includes/copilot-include.md)]
 
 ## Get started
 

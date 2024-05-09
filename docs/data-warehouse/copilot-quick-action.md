@@ -31,7 +31,7 @@ Copilot leverages information about your warehouse schema, query tab contents, a
 
 ## Prerequisites
 
-[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
+[!INCLUDE [copilot-include](../includes/copilot-include.md)]
 
 ## Get started
 

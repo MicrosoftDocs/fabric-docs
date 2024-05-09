@@ -19,8 +19,6 @@ ms.custom:
 
 Microsoft Copilot for Synapse Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. It integrates seamlessly with your Fabric warehouse, providing intelligent insights to help you along each step of the way in your T-SQL explorations.
 
-[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
-
 ## Introduction to Copilot for Data Warehouse
 
 Copilot for Data Warehouse utilizes table and view names, column names, primary key, and foreign key metadata to generate T-SQL code. Copilot for Data Warehouse does not use data in tables to generate T-SQL suggestions.
@@ -42,7 +40,6 @@ There are three ways to interact with Copilot in the Fabric Warehouse editor.
     - **Explain:** Copilot can provide natural language explanations of your SQL query and warehouse schema in comments format.
     - **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios can include incorrect/unsupported T-SQL code, wrong spellings, and more. Copilot will also provide comments that explain the changes and suggest SQL best practices.
     - [How to: Use Copilot quick actions for Synapse Data Warehouse](copilot-quick-action.md)
-    
 
 ## Use Copilot effectively
 
@@ -61,6 +58,10 @@ Here are some tips for maximizing productivity with Copilot.
     - `Show all agents who sell properties in California`
     - `Show agents who have listed more than two properties for sale`
     - `Show the rank of each agent by property sales and show name, total sales, and rank`
+
+## Enable Copilot
+
+[!INCLUDE [copilot-include](../includes/copilot-include.md)]
 
 ## What should I know to use Copilot responsibly?
 

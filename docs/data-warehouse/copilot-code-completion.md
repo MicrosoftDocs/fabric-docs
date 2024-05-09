@@ -23,7 +23,7 @@ As you start writing T-SQL code or comments in the editor, Copilot for Data Ware
 
 ## Prerequisites
 
-[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
+[!INCLUDE [copilot-include](../includes/copilot-include.md)]
 
 ## How can code completions help you?
 
