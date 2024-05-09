@@ -38,7 +38,7 @@ If you're experiencing mirroring problems, perform the following database level 
     1. In the Fabric portal, select the "..." ellipses option on the mirrored database item.
     1. Select the **Manage Permissions** option.
     1. Confirm that the Azure SQL logical server name shows with Read, Write permissions.
-    1. Ensure that AppId that shows up matches the id of the SAMI of the logical SQL server.
+    1. Ensure that AppId that shows up matches the ID of the SAMI of your Azure SQL Database logical server.
 
 1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
