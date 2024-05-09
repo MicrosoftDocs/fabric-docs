@@ -110,7 +110,7 @@ items:
         href: event-streams/manage-eventstream.md
       - name: Configure settings
         href: event-streams/configure-settings.md
-      - name: Configure settings
+      - name: Pause and resume data streams
         href: event-streams/pause-resume-data-streams.md
     - name: Monitor eventstreams
       items:
