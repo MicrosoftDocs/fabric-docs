@@ -41,7 +41,7 @@ Here is an example of Run Series Analysis from a Notebook Pipeline Activity run 
 
 You can access the run series analysis feature through the monitoring hub's historical view, the notebook or spark job definition's recent runs panel, or the spark application monitoring detail page. 
 
-:::image type="content" source="media\run-series-analyisis-overview\how-to-access-to-the-spar-run-series-analysis.png" alt-text="Screenshot showing examples of a run series analysis." lightbox="media\run-series-analyisis-overview\how-to-access-to-the-spar-run-series-analysis.png":::
+:::image type="content" source="media\run-series-analyisis-overview\how-to-access-to-the-spar-run-series-analysis.png" alt-text="Screenshot showing how to access to the spark run series analysis." lightbox="media\run-series-analyisis-overview\how-to-access-to-the-spar-run-series-analysis.png":::
 
 ## Related content
 
