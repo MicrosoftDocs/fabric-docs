@@ -14,7 +14,7 @@ There are two types of data streams in Real-Time hub: **Stream** and **Table**. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-## Analyze streams from the data streams tab
+## Analyze streams
 To analyze a stream whose parent is an eventstream, do the following steps:
 
 1. Open the eventstream associated with the data stream in Real-Time hub.
@@ -53,7 +53,7 @@ After you open an eventstream in the editor, you can [add a KQL database destina
     :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/kql-database-destination.png" alt-text="Screenshot that shows the selection of the KQL Database tile on the canvas and a link to open KQL database in the Details pane at the bottom." lightbox="./media/analyze-data-streams-using-kql-table-queries/kql-database-destination.png":::   
 1. Now, Run queries against the destination KQL table to analyze the data streaming into the KQL database. 
 
-## Analyze tables from the data streams tab
+## Analyze tables
 
 You can open the KQL database that's associated with a table by using one of the following ways: 
 

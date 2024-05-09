@@ -5,14 +5,14 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 05/21/2024
 ms.search.form: Event Processor
 ---
 
 # Process event data with event processor editor
 The event processor editor is a no-code experience that allows you to drag and drop to design the event data processing logic. This article describes how to use the editor to design your processing logic.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
 # [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
@@ -74,7 +74,7 @@ The Edit mode includes a canvas and lower pane where you can:
 - Preview test result in each of the processing nodes from beginning to end. 
 - Discover any authoring errors within the processing nodes.
 
-### Page layout
+### Editor layout
 
 :::image type="content" source="./media/process-events-using-event-processor-editor/layout-enhanced.png" alt-text="Screenshot showing the layout of Event processing editor for an eventstream with enhanced capabilities." lightbox="./media/process-events-using-event-processor-editor/layout-enhanced.png":::        
 
@@ -92,6 +92,9 @@ Here are the destination types that support to add operators before ingestion:
 
 > [!NOTE]
 > For destinations that don't support pre-ingestion operator addition, you can first add a derived stream as the output of your operator. Then, append your intended destination to this derived stream. 
+
+:::image type="content" source="./media/process-events-using-event-processor-editor/unsupported-destination.png" alt-text="Screenshot showing the layout of Event processing editor with filter outputting to an unsupported destination." lightbox="./media/process-events-using-event-processor-editor/unsupported-destination.png":::        
+
 
 # [Standard capabilities](#tab/standardcapabilities)
 
@@ -259,7 +262,7 @@ The **Manage fields** transformation allows you to add, remove, change data type
 
 Furthermore, you can add a new field with the built-in functions to aggregate the data from upstream. (Currently, the built-in functions we support are some functions in **String Functions**, **Date and Time Functions**, and **Mathematical Functions**. To find them, search on "built-in.")
 
-:::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field-build-in-functions.png" alt-text="Screenshot showing the Manage field build-in functions." :::
+:::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field-build-in-functions.png" alt-text="Screenshot showing the Manage field built-in functions." :::
 
 The following table shows the results of changing the data type using manage fields. The columns represent the original data types, and the rows represent the target data type.
 
@@ -279,6 +282,14 @@ The following table shows the results of changing the data type using manage fie
 ### Union
 
 Use the Union transformation to connect two or more nodes and add events that shared fields (with the same name and data type) into one table. Fields that don't match are dropped and not included in the output.
+
+### Join
+Use the **Join** transformation to combine events from two inputs based on the field pairs that you select. If you don't select a field pair, the join is based on time by default. The default is what makes this transformation different from a batch one.
+
+As with regular joins, you have options for your join logic:
+
+- **Inner join**: Include only records from both tables where the pair matches.
+- **Left outer join**: Include all records from the left (first) table and only the records from the second one that match the pair of fields. If there's no match, the fields from the second input are blank.
 
 ## Related content
 

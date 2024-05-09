@@ -13,7 +13,7 @@ ms.search.form: Get started
 ---
 # Get and transform events from streaming sources
 
-The Real-Time hub is used to discover and manage your streaming data in Fabric. Ingesting streaming data with the Real-Time hub is the first step in seamlessly integrating your data in Fabric, which, in turn, empowers analysts to extract real-time insights from the data. The rich set of available connectors ensures that regardless of your streaming source, you can effortlessly import data into Fabric. 
+The Real-Time hub is used to discover and manage your streaming data in Fabric. Ingesting streaming data with the Real-Time hub is the first step in seamlessly integrating your data in Fabric, which, in turn, empowers analysts to extract real-time insights from the data. The rich set of available connectors ensures that regardless of your streaming source, you can effortlessly import data into Fabric.
 
 This user flow shows how a data engineer can load and transform events from a wide variety of streaming sources into the Real-Time hub. 
 
@@ -34,6 +34,20 @@ This user flow shows how a data engineer can load and transform events from a wi
 1. Add a destination to the stream.
 
     For detailed information and steps, see [Transformation operations](./event-streams/route-events-based-on-content.md#supported-operations) and [Add and manage destination](./event-streams/add-manage-eventstream-destinations.md). 
+
+## Supported connectors
+
+### Microsoft sources
+
+[!INCLUDE [microsoft-sources](../real-time-hub/includes/microsoft-sources.md)]
+
+### External sources
+
+[!INCLUDE [external-sources](../real-time-hub/includes/external-sources.md)]
+
+### Discrete events
+
+[!INCLUDE [discrete-event-sources](../real-time-hub/includes/discrete-event-sources.md)]
 
 ## Potential use cases
 

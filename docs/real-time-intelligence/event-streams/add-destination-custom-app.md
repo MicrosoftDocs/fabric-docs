@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 05/03/2024
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
@@ -13,9 +13,9 @@ ms.search.form: Source and Destination
 
 This article shows you how to add a custom app destination to an eventstream in Microsoft Fabric event streams.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
 ## Prerequisites  
 Before you start, you must complete the following prerequisites:  

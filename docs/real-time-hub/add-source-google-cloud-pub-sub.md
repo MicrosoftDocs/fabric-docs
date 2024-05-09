@@ -4,7 +4,7 @@ description: This article describes how to get events from Google Cloud Pub/Sub 
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.date: 04/03/2024
+ms.date: 05/21/2024
 ---
 
 # Get events from Google Cloud Pub/Sub into Real-Time hub (preview)
@@ -49,7 +49,7 @@ Get the following information from Google Cloud:
     1. Download the JSON file and copy all the JSON content as the **Service account key**. 
     
         > [!NOTE]
-        The JSON file can be downloaded only once. 
+        > The JSON file can be downloaded only once. 
 
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]

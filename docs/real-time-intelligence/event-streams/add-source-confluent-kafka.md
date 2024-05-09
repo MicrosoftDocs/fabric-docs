@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 04/03/2024
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
@@ -18,8 +18,9 @@ Confluent Cloud Kafka is a streaming platform offering powerful data streaming a
 
 ## Prerequisites 
 
-- Get access to the Fabric premium workspace with Contributor or above permissions. 
+- Access to the Fabric premium workspace with Contributor or above permissions. 
 - A Confluent Cloud Kafka cluster and an API Key. 
+- Your Confluent Cloud Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
 ## Add Confluent Cloud Kafka as a source 
 
@@ -32,7 +33,12 @@ Confluent Cloud Kafka is a streaming platform offering powerful data streaming a
 
 You see that the Confluent Cloud Kafka source is added to your eventstream on the canvas in **Edit mode**. To implement this newly added Confluent Cloud Kafka source, select **Publish** on the ribbon. 
 
+:::image type="content" source="./media/add-source-confluent-kafka/edit-view.png" alt-text="Screenshot that shows Confluent Kafka source in Edit view." lightbox="./media/add-source-confluent-kafka/edit-view.png":::
+
 After you complete these steps, the Confluent Cloud Kafka source is available for visualization in **Live view**.
+
+:::image type="content" source="./media/add-source-confluent-kafka/live-view.png" alt-text="Screenshot that shows Confluent Kafka source in Live view." lightbox="./media/add-source-confluent-kafka/live-view.png":::
+
 
 ## Related content
 
