@@ -92,7 +92,7 @@ To change a connector's start and end values, or switch it's direction:
 
 ## Assign items to a task
 
-You can assign items to individual tasks for logically structuring and organizing your work. You can create a new item to be assigned to the task, or you can assign items that already exist in the workspace.
+Once a task has been placed on the canvas, you can assign items to it help logically structuring and organizing your work. You can [create new items to be assign to the task](#create-a-new-item-for-a-task), or you can [assign items that already exist in the workspace](#assign-existing-items-to-a-task).
 
 ### Create a new item for a task
 
@@ -110,7 +110,7 @@ To create a new item for a specific task:
 
 To attach existing items to a task:
 
-1. select the clip icon on the task.
+1. Select the clip icon on the task.
 
     :::image type="content" source="./media/task-flow-work-with/assign-existing-task-clip-icon.png" alt-text="Screenshot showing the assign existing items clip icon.":::
 
