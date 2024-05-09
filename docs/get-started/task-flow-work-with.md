@@ -107,7 +107,7 @@ To change a connector's start and end values, or switch its direction:
 
 ## Assign items to a task
 
-Once a task has been placed on the canvas, you can assign items to it to help structuring and organize your work. You can [create new items to be assign to the task](#create-a-new-item-for-a-task), or you can [assign items that already exist in the workspace](#assign-existing-items-to-a-task).
+Once a task has been placed on the canvas, you can assign items to it to help structure and organize your work. You can [create new items to be assign to the task](#create-a-new-item-for-a-task), or you can [assign items that already exist in the workspace](#assign-existing-items-to-a-task).
 
 > [!NOTE]
 > An item can only be assigned to a single task. It can't be assigned to multiple tasks.
@@ -132,7 +132,7 @@ To attach existing items to a task:
 
     :::image type="content" source="./media/task-flow-work-with/assign-existing-task-clip-icon.png" alt-text="Screenshot showing the assign existing items clip icon.":::
 
-1. In the **Assign item** dialog box that opens, hover over item you want to assign to the task and mark the checkbox. You can assign more than one item. When done choosing the items you want to assign to the task, choose **Select** to attach the selected items to the task.
+1. In the **Assign item** dialog box that opens, hover over item you want to assign to the task and mark the checkbox. You can assign more than one item. When you're done choosing the items you want to assign to the task, choose **Select** to attach the selected items to the task.
 
     :::image type="content" source="./media/task-flow-work-with/assign-existing-item-dialog.png" alt-text="Screenshot showing the Assign item dialog.":::
 
