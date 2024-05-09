@@ -581,6 +581,8 @@
         href: azure-batch-activity.md
       - name: Azure Databricks activity
         href: azure-databricks-activity.md
+      - name: Azure HDInsight activity
+        href: azure-hdinsight-activity.md
       - name: Azure Machine Learning activity
         href: azure-machine-learning-activity.md
       - name: Copy activity
