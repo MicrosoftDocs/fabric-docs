@@ -14,7 +14,7 @@ Microsoft Fabric is provided free of charge when you sign up for the Microsoft F
 
 With a Fabric trial capacity, you get the following features:
 
-* Full access to all of the Fabric workloads and features.
+* Full access to all of the Fabric workloads and features. There are a few key Fabric features that aren't available on trial capacities. These include [Co-Pilot](/fabric/get-started/copilot-faq-fabric), [Trusted workspace access](../security/security-trusted-workspace-access.md), and [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview).
 * OneLake storage up to 1 TB.
 * One trial capacity per request. Additional trial capacities can be requested until a maximum, set by Microsoft, is met.  
 * The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity. 
@@ -27,6 +27,7 @@ Creating and collaborating in Fabric includes:
 When you start a Fabric trial, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You don't have access to your capacity until you put something into it. To begin using your Fabric trial capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity using the *Trial* license mode, and then all the items in that workspace are saved and executed in that capacity.
 
 Although you don't actually receive a new license, the actions that you can perform and the features that you can user are similar to [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) during the trial. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a PPU license. There are a few key PPU features that aren't available on trial capacities. These include [Co-Pilot](/fabric/get-started/copilot-faq-fabric), [Trusted workspace access](../security/security-trusted-workspace-access.md), and [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview). 
+
 
 ## Existing Power BI users
 
