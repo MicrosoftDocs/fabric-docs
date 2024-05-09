@@ -22,9 +22,9 @@ Admins, Members, Contributors, and Vistors can use the task flow to [filter the 
 
 ## Task controls
 
-Much of the work with tasks is accomplished either in the task pane details pane or via controls on the task card  or on the task flow canvas.
+Much of the work with tasks is accomplished either in the task details pane or via controls on the task card or on the task flow canvas.
 
-Select a task to display the task details side pane. The following image shows the main controls for working with tasks.
+Select a task to display the task details pane. The following image shows the main controls for working with tasks.
 
 :::image type="content" source="./media/task-flow-work-with/task-details-side-pane.png" alt-text="Screenshot explaining the task details pane.":::
 
@@ -47,7 +47,7 @@ The task of the selected task type is added onto the canvas. The name and descri
 
 To edit a task's name or description:
 
-1. Select the task on the canvas to open the [task details side pane](#task-controls).
+1. Select the task on the canvas to open the [task details pane](#task-controls).
 
 2. Select **Edit** and change the name and description fields as desired. When done, select **Save**.
 
@@ -55,7 +55,7 @@ To edit a task's name or description:
 
 To change a task to a different type:
 
-1. Select the task on the canvas to open the [task details side pane](#task-controls).
+1. Select the task on the canvas to open the [task details pane](#task-controls).
 
 1. Open the **Task type** dropdown menu and choose the new desired task type.
 
@@ -91,7 +91,7 @@ Then, in the **Add connector** dialog, select the start and end tasks, then sele
 
 To delete a connector, select it and press **Enter**.
 
-Alternatively, select the connector to open the connector details side pane, then select the trash can icon.
+Alternatively, select the connector to open the connector details pane, then select the trash can icon.
 
 :::image type="content" source="./media/task-flow-work-with/connector-delete.png" alt-text="Screenshot showing how to delete a connector on the connector details pane.":::
 
@@ -99,9 +99,9 @@ Alternatively, select the connector to open the connector details side pane, the
 
 To change a connector's start and end values, or switch its direction:
 
-1. Select the connector to open the connector details side pane.
+1. Select the connector to open the connector details pane.
 
-1. In the side pane, change the start and end values as desired, or select **Swap** to change connector direction.
+1. In the details pane, change the start and end values as desired, or select **Swap** to change connector direction.
 
     :::image type="content" source="./media/task-flow-work-with/connector-edit-swap.png" alt-text="Screenshot showing how to edit connector start and end points or change connector direction on the connector details pane.":::
 
@@ -173,7 +173,7 @@ To unassign items from multiple tasks:
 
 To delete a task:
 
-1. Select the task to open the [task details side pane](#task-controls).
+1. Select the task to open the [task details pane](#task-controls).
 
 1. Select the trash can icon.
 1. 
