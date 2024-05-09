@@ -1,14 +1,28 @@
 ---
-title: Manage tasks
+title: Work with task flow tasks
 description: This show how to add, delete, change, and connect tasks, and also how to assign items to tasks.
 ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
 ms.date: 05/09/2024
+
+#customer intent: As a data analytics solution architect, I need to know to create tasks so that I can build a task flow that illustrates my project and that engineers can use to guide and facilitate their work on the project. As an engineer, I want to understand how to use task to organize and facilitate my work.
 ---
 
-# Manage tasks
+# Work with tasks
+
+This article describes how to work with tasks. The target audience is data analytics solution architects who are designing a data analytics solution, and engineers who need to know how to use task flows to facilitate their work.
+
+## Prerequisites
+
+To create or edit the task flow, and to create items in the workspace via the task flow, you need to be an Admin, Member, or Contributor in the workspace.
+
+Admins, Members, Contributors, and Vistors can use the task flow to filter the items list.
+
+## Task contols
+
+Much of the work with tasks is accomplished either in the task pane details pane or via controls on the task card  or on the task flow canvas.
 
 When you select a task, the side panel displays the task details.
 
@@ -32,7 +46,7 @@ The task of the selected task type is added onto the canvas. The name and descri
 
 To edit a task's name or description:
 
-1. Select the task on the canvas to open the [task details side pane](#manage-tasks).
+1. Select the task on the canvas to open the [task details side pane](#task-contols).
 
 2. Select **Edit** and change the name and description fields as desired. When done, select **Save**.
 
@@ -40,7 +54,7 @@ To edit a task's name or description:
 
 To change a task to a different type:
 
-1. Select the task on the canvas to open the [task details side pane](#manage-tasks).
+1. Select the task on the canvas to open the [task details side pane](#task-contols).
 
 1. Open the **Task type** dropdown menu and choose the new desired task type.
 
@@ -158,7 +172,7 @@ To unassign items from multiple tasks:
 
 To delete a task:
 
-1. Select the task to open the [task details side pane](#manage-tasks).
+1. Select the task to open the [task details side pane](#task-contols).
 
 1. Select the trash can icon.
 1. 
