@@ -30,11 +30,11 @@ To get started, you must complete the following prerequisites:
 
    - Creating the activity from the Activities bar:
   
-     :::image type="content" source="media/spark-job-definition-activity/create-activity-from-activities-bar.png" alt-text="Screenshot showing where to create a new Spark Job Definition activity from the Activities bar in the pipeline editor window.":::
+     :::image type="content" source="media/spark-job-definition-activity/create-activity-from-activities-bar.png" lightbox="media/spark-job-definition-activity/create-activity-from-activities-bar.png" alt-text="Screenshot showing where to create a new Spark Job Definition activity from the Activities bar in the pipeline editor window.":::
 
 1. Select the new Spark Job Definition activity on the pipeline editor canvas if it isn't already selected.
 
-   :::image type="content" source="media/spark-job-definition-activity/spark-job-definition-activity.png" alt-text="Screenshot showing the Spark Job Definition activity on the pipeline editor canvas.":::
+   :::image type="content" source="media/spark-job-definition-activity/spark-job-definition-activity.png" lightbox="media/spark-job-definition-activity/spark-job-definition-activity.png" alt-text="Screenshot showing the Spark Job Definition activity on the pipeline editor canvas.":::
 
    Refer to the [General settings](activity-overview.md#general-settings) guidance to configure the options found in the **General settings** tab.
 
@@ -49,8 +49,8 @@ Select the **Settings** tab in the activity properties pane, then select the Fab
 Current limitations in the Spark Job Definition activity for Fabric Data Factory are listed here. This section is subject to change.
 
 - We currently don't support creating a new Spark Job Definition activity within the activity (under Settings)
-- Parameterization support isn't available yet.
-- Although we support monitoring the activity via the output tab, you aren't able to monitor the Spark Job Definition at a more granular level yet. For example, links to the monitoring page, status, duration, and previous Spark Job Definition runs aren't available directly in the Data Factory. However, you can see more granular details in the [Spark Job Definition monitoring page](../data-engineering/monitor-spark-job-definitions.md). Accessing the Spark Job monitoring page via the pipeline monitoring output will be coming soon.
+- Parameterization support isn't available.
+- Although we support monitoring the activity via the output tab, you aren't able to monitor the Spark Job Definition at a more granular level yet. For example, links to the monitoring page, status, duration, and previous Spark Job Definition runs aren't available directly in the Data Factory. However, you can see more granular details in the [Spark Job Definition monitoring page](../data-engineering/monitor-spark-job-definitions.md).
 
 ## Save and run or schedule the pipeline
 
