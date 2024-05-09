@@ -27,6 +27,11 @@ Copilot for Data Warehouse provides intelligent autocomplete-style code suggesti
 
 Code completion enhances your productivity and workflow in Copilot for Data Warehouse by reducing the cognitive load of writing SQL code. It accelerates code writing, prevents syntax errors and typos, and improves code quality. It provides helpful, context-rich suggestions directly within the query editor. Whether you're new to or experienced with SQL, code completion helps you save time and energy with writing SQL code, and focus on designing, optimizing, and testing your warehouse.
 
+## Key capabilities
+
+- **Auto-complete partially written queries**: Copilot can provide context-aware SQL code suggestions or completions for your partially written SQL query.
+- **Generate suggestions from comments**: You can guide Copilot using comments that describe your code logic and purpose, using natural language. Leave the comment (using `--`) at the beginning of the query and Copilot will generate the corresponding query.
+
 
 
 ## Related content
