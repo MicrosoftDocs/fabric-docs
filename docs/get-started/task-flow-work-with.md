@@ -47,7 +47,7 @@ The task of the selected task type is added onto the canvas. The name and descri
 
 To edit a task's name or description:
 
-1. Select the task on the canvas to open the [task details side pane](#task-contols).
+1. Select the task on the canvas to open the [task details side pane](#task-controls).
 
 2. Select **Edit** and change the name and description fields as desired. When done, select **Save**.
 
@@ -55,7 +55,7 @@ To edit a task's name or description:
 
 To change a task to a different type:
 
-1. Select the task on the canvas to open the [task details side pane](#task-contols).
+1. Select the task on the canvas to open the [task details side pane](#task-controls).
 
 1. Open the **Task type** dropdown menu and choose the new desired task type.
 
@@ -173,7 +173,7 @@ To unassign items from multiple tasks:
 
 To delete a task:
 
-1. Select the task to open the [task details side pane](#task-contols).
+1. Select the task to open the [task details side pane](#task-controls).
 
 1. Select the trash can icon.
 1. 
