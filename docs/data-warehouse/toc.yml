@@ -61,9 +61,9 @@ items:
   - name: Use the Copilot chat pane
     href: copilot-chat-pane.md
   - name: Use code completions
-    href: copilot-code-completions.md
+    href: copilot-code-completion.md
   - name: Use quick actions
-    href: copilot-quick-actions.md
+    href: copilot-quick-action.md
 - name: Design and Develop
   items:
   - name: Better together - the lakehouse and warehouse
