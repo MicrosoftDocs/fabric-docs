@@ -164,10 +164,10 @@ advantages.
 ways:
 -   [Data from OneLake can be queried from Real-Time Intelligence as a shortcut](database-shortcut.md)
     -  [ Data from OneLake can be loaded into Real-Time Intelligence](get-data-onelake.md)
-    -   [Data loaded into Real-Time Intelligence is reflected in OneLake as one logical copy](one-logical-copy.md)
+    -  [Data loaded into Real-Time Intelligence is reflected in OneLake as one logical copy](one-logical-copy.md)
 - [Use the data loaded into Real-Time Intelligence as the underlying data for visualization in a Power BI report](create-powerbi-report.md)
 - [Use the data loaded into Real-Time Intelligence for analysis in Fabric Notebooks in Data Engineering](notebooks.md)
-- [Trigger actions from Power BI reports](../data-activator/data-activator-get-data-power-bi.md)
+
 
 ##  Related content
 

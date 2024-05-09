@@ -79,7 +79,7 @@
       href: tutorial-end-to-end-dataflow.md
     - name: Module 3 - Automate and send notification
       href: tutorial-end-to-end-integration.md
-    - name: SAP CDC to Fabric Onelake using ADF
+    - name: SAP CDC to Fabric OneLake using ADF
       href: change-data-capture-from-sap-to-onelake-with-azure-data-factory.md
   - name: Connectors
     items:
@@ -207,7 +207,7 @@
         href: connector-azure-sql-database.md
       - name: Configure in a data pipeline copy activity
         href: connector-azure-sql-database-copy-activity.md
-    - name: Azure SQL Database Managed Instance
+    - name: Azure SQL Managed Instance
       items:
       - name: Overview
         href: connector-azure-sql-database-managed-instance-overview.md
@@ -581,6 +581,8 @@
         href: azure-batch-activity.md
       - name: Azure Databricks activity
         href: azure-databricks-activity.md
+      - name: Azure HDInsight activity
+        href: azure-hdinsight-activity.md
       - name: Azure Machine Learning activity
         href: azure-machine-learning-activity.md
       - name: Copy activity
@@ -615,8 +617,10 @@
         href: script-activity.md
       - name: Semantic model refresh activity
         href: semantic-model-refresh-activity.md
-      - name: Set Variable Activity
+      - name: Set Variable activity
         href: set-variable-activity.md
+      - name: Spark Job Definition activity
+        href: spark-job-definition-activity.md
       - name: Stored Procedure activity
         href: stored-procedure-activity.md
       - name: Switch activity
