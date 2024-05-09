@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Explore streams in Fabric Real-Time hub
+# Explore streams in Fabric Real-Time hub (preview)
 When you navigate to Real-Time hub in Fabric, you can view all the data streams that are present in Fabric. There are three tabs in the hub. This article covers the **Data streams** tab of the Real-Time hub. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -59,7 +59,7 @@ Here are the actions available on streams from eventstreams in the Data streams 
 | Action | Description |
 | ------ | ----------- |
 | Preview this data | Preview the data in the stream or derived stream. For more information, see [Preview data streams](preview-data-streams.md). |
-| Open eventstream | Open parent eventstream of the stream. After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md). |
+| Open eventstream | Open parent eventstream of the stream. After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. |
 | Endorse | Endorse parent eventstream of the stream. For more information, see [Endorse data streams](endorse-data-streams.md). |
 
 :::image type="content" source="./media/explore-data-streams/real-time-hub-data-streams-actions.png" alt-text="Screenshot that shows the actions available on streams in the Data streams tab of Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-data-streams-actions.png":::

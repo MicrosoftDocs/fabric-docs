@@ -13,8 +13,6 @@ ms.search.form: Eventhouse
 
 An event house allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Event house overview](eventhouse.md).
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
 In this article, you learn how to create an event house, add new databases to an event house, and delete an event house.
 
 ## Prerequisites

@@ -10,20 +10,20 @@ items:
     href: real-time-intelligence-compare.md
   - name: End to end tutorial
     items:
-    - name: Tutorial - Introduction
+    - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
     - name: 1- Create resources
       href: tutorial-1-resources.md
-    - name: 2- Get data with Eventstream
-      href: tutorial-2-event-streams.md
-    - name: 3- Get historical data
-      href: tutorial-3-get-historical-data.md
-    - name: 4- Explore data with KQL and SQL
-      href: tutorial-4-explore.md
-    - name: 5- Use advanced KQL queries
-      href: tutorial-5-advanced-kql-query.md
-    - name: 6- Build a Power BI report
-      href: tutorial-6-build-report.md
+    - name: 2- Get data in the Real-Time hub
+      href: tutorial-2-get-real-time-events.md
+    - name: 3- Query streaming data in a KQL queryset
+      href: tutorial-3-query-data.md
+    - name: 4- Set an alert on your event stream
+      href: tutorial-4-set-alert.md
+    - name: 5- Create a Real-Time dashboard
+      href: tutorial-5-create-dashboard.md
+    - name: 6- Create a Power BI report
+      href: tutorial-6-power-bi-report.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
 - name: User flows
@@ -34,7 +34,7 @@ items:
     href: user-flow-2.md
   - name: "Discover streaming sources from Microsoft"
     href: user-flow-3.md
-  - name: "Explore your data visually with Real-Time Dashboards"
+  - name: "Explore your data visually in Real-Time Dashboards"
     href: user-flow-4.md
   - name: "Trigger Fabric dataflows from the Real-Time hub"
     href: user-flow-5.md 
@@ -44,8 +44,6 @@ items:
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
-    - name: New capabilities 
-      href: event-streams/new-capabilities.md
     - name: Create eventstreams 
       items: 
       - name: Create an eventstream
@@ -84,34 +82,26 @@ items:
         href: event-streams/add-source-amazon-kinesis-data-streams.md
       - name: Confluent Cloud Kafka 
         href: event-streams/add-source-confluent-kafka.md
-      - name: Fabric workspace events 
+      - name: Fabric Workspace Item events 
         href: event-streams/add-source-fabric-workspace.md
       - name: Azure Blob Storage events 
         href: event-streams/add-source-azure-blob-storage.md
     - name: Add destinations to eventstreams
       items:
-      - name: Add and manage a destination (preview)
-        href: event-streams/add-manage-eventstream-destinations-enhanced.md
+      - name: Add and manage a destination
+        href: event-streams/add-manage-eventstream-destinations.md
       - name: Derived stream 
         href: event-streams/add-destination-derived-stream.md
-      - name: KQL Database (preview)
-        href: event-streams/add-destination-kql-database-enhanced.md
-      - name: Lakehouse (preview)
-        href: event-streams/add-destination-lakehouse-enhanced.md
+      - name: KQL Database
+        href: event-streams/add-destination-kql-database.md
+      - name: Lakehouse
+        href: event-streams/add-destination-lakehouse.md
       - name: Reflex
         href: event-streams/add-destination-reflex.md
       - name: Custom endpoint
         href: event-streams/add-destination-custom-app.md
     - name: Process events using event processor
       href: event-streams/process-events-using-event-processor-editor.md
-    - name: Add destinations to eventstreams
-      items:
-      - name: Add and manage a destination
-        href: event-streams/add-manage-eventstream-destinations.md
-      - name: KQL Database
-        href: event-streams/add-destination-kql-database.md
-      - name: Lakehouse
-        href: event-streams/add-destination-lakehouse.md
     - name: Preview data
       href: event-streams/preview-data.md
     - name: Manage eventstreams
@@ -248,7 +238,7 @@ items:
         href: onelake-shortcuts.md
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
-    href: kql-database-consumption.md
+    href: real-time-intelligence-consumption.md
 - name: Analyze and model data
   items:
   - name: Copilot for Real-Time Intelligence
@@ -280,15 +270,17 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
-    - name: Create a Real-Time Dashboard
+    - name: Create a Real-Time Dashboard (preview)
       href: dashboard-real-time-create.md
-    - name: Customize Real-Time Dashboard visuals
+    - name: Explore data in Real-Time Dashboard tiles (preview)
+      href: dashboard-explore-data.md
+    - name: Customize Real-Time Dashboard visuals (preview)
       href: dashboard-visuals-customize.md
-    - name: Apply conditional formatting in Real-Time Dashboards
+    - name: Apply conditional formatting in Real-Time Dashboards (preview)
       href: dashboard-conditional-formatting.md
-    - name: Use parameters in Real-Time Dashboards
+    - name: Use parameters in Real-Time Dashboards (preview)
       href: dashboard-parameters.md
-    - name: Real-Time Dashboard-specific visuals
+    - name: Real-Time Dashboard-specific visuals (preview)
       href: dashboard-visuals.md
   - name: Power BI
     items:

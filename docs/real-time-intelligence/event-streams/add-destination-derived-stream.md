@@ -5,11 +5,11 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 05/02/2024
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
-# Add a derived stream destination to an eventstream
+# Add a derived stream destination to an eventstream (preview)
 
 This article shows you how to add a derived stream destination to an eventstream in Microsoft Fabric event streams.
 
@@ -53,9 +53,9 @@ You can also access this stream in Real-Time hub.
 
 To learn how to add other destinations to an eventstream, see the following articles: 
 
-- [Route events to destinations ](add-manage-eventstream-destinations-enhanced.md)
+- [Route events to destinations ](add-manage-eventstream-destinations.md)
 - [Custom app destination](add-destination-custom-app.md)
-- [KQL Database destination](add-destination-kql-database-enhanced.md)
-- [Lakehouse destination](add-destination-lakehouse-enhanced.md)
+- [KQL Database destination](add-destination-kql-database.md)
+- [Lakehouse destination](add-destination-lakehouse.md)
 - [Reflex destination](add-destination-reflex.md)
 - [Create an eventstream](create-manage-an-eventstream.md)

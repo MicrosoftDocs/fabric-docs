@@ -4,10 +4,10 @@ description: This article describes supported sources such as Azure Event Hubs a
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.date: 04/03/2024
+ms.date: 05/21/2024
 ---
 
-# Supported sources for Fabric Real-Time hub
+# Supported sources for Fabric Real-Time hub (preview)
 This article provides a list of sources that Real-Time hub supports. The Real-Time hub enables you to get events from these sources and create data streams in Fabric. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -26,6 +26,9 @@ This article provides a list of sources that Real-Time hub supports. The Real-Ti
 Real-Time hub supports the following types of discrete events:
 
 [!INCLUDE [discrete-event-sources](./includes/discrete-event-sources.md)]
+
+## Sample data
+You can also use [Sample data sources](add-source-sample-data.md) available in Real-Time hub.
 
 ## Related content
 Real-Time hub also allows you to set alerts based on events and specify actions to take when the events happen. 

@@ -20,6 +20,8 @@ This user flow shows how an analyst can easily discover and use streaming data f
 
 :::image type="content" source="media/user-flows/user-flow-3.png" alt-text="Schematic image showing the steps in user flow 3." lightbox="media/user-flows/user-flow-3.png" border="false":::
 
+[!INCLUDE [preview-note](../real-time-hub/includes/preview-note.md)]
+
 ## Steps
 
 1. Browse to the Real-Time hub and select the **Microsoft sources** tab.
