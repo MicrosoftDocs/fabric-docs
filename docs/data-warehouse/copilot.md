@@ -39,7 +39,10 @@ There are three ways to interact with Copilot in the Fabric Warehouse editor.
 - **Code completions**: Start writing T-SQL in the SQL query editor and Copilot will automatically generate a code suggestion to help complete your query. The **Tab** key accepts the code suggestion, or keep typing to ignore the suggestion.
     - [How to: Use Copilot code completion for Synapse Data Warehouse](copilot-code-completion.md)
 - **Quick Actions**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
+    - **Explain:** Copilot can provide natural language explanations of your SQL query and warehouse schema in comments format.
+    - **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios can include incorrect/unsupported T-SQL code, wrong spellings, and more. Copilot will also provide comments that explain the changes and suggest SQL best practices.
     - [How to: Use Copilot quick actions for Synapse Data Warehouse](copilot-quick-action.md)
+    
 
 ## Use Copilot effectively
 
