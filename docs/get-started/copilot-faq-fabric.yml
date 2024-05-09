@@ -75,7 +75,7 @@ sections:
         answer: |
           Copilot is not yet enabled for Data Factory.
 
-  - name: Real-Time Analytics
+  - name: Real-Time Intelligence
     questions:
       - question: |
           Does Copilot respond to multiple questions in a conversation?

@@ -45,7 +45,7 @@ When you create a shortcut in a KQL database, it appears in the **Shortcuts** fo
 
 ## Where can I access shortcuts?
 
-Any Fabric or non-Fabric service that can access data in OneLake can use shortcuts. Shortcuts are transparent to any service accessing data through the OneLake API. Shortcuts just appear as another folder in the lake. Spark, SQL, Real-Time Analytics, and Analysis Services can all use shortcuts when querying data.
+Any Fabric or non-Fabric service that can access data in OneLake can use shortcuts. Shortcuts are transparent to any service accessing data through the OneLake API. Shortcuts just appear as another folder in the lake. Spark, SQL, Real-Time Intelligence, and Analysis Services can all use shortcuts when querying data.
 
 ### Spark
 
@@ -73,7 +73,7 @@ SELECT TOP (100) *
 FROM [MyLakehouse].[dbo].[MyShortcut]
 ```
 
-### Real-Time Analytics
+### Real-Time Intelligence
 
 Shortcuts in KQL databases are recognized as external tables. To query the shortcut, use the `external_table` function of the Kusto Query Language.
 
