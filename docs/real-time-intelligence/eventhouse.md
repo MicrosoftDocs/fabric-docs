@@ -18,6 +18,8 @@ Event houses are specifically tailored to time-based, streaming events with stru
 
 Use an event house for any scenario that includes event-based data, for example, telemetry and log data, time series and IoT data, security and compliance logs, or financial records.
 
+While Event house is in preview, you can create a standalone [KQL database](create-database.md), or a KQL database within an event house. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). [Data availability in OneLake](one-logical-copy.md) is enabled on a database or table level.
+
 ## What information do I see in an event house?
 
 The system overview page of an event house shows you the following information:
@@ -44,7 +46,7 @@ The databases page of an event house shows you database information either in li
 
 ## Minimum consumption
 
-Your event house is designed to optimize cost by suspending the service when not in use. To reactivate the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, use **Minimum consumption**. When activated, the service is always available at the selected minimum level, and you pay at least the minimum compute selected (or actual use) while no longer paying for premium storage. The specified compute is available to all the databases within the Eventhouse. The free premium storage allotted to the customer is limited, and corresponds to the minimum consumption levels as shown in the following table:
+Your event house is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, use **Minimum consumption**. This enables the service to be available at all times, but at a selected minimum level. You pay for the minimum compute level you select, or your actual consumption when your compute level is above the minimum set. The specified compute is available to all the databases within the event house. A limited premium storage is included in the service, and corresponds to the minimum consumption levels shown in the following table:
 
 [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
 
