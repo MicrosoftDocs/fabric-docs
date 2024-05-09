@@ -16,15 +16,12 @@ The Pause and Resume features in Eventstream give you a full control over your d
 * **Activate/Deactivate All**: Quickly pause and resume all data traffic flowing in and out of Eventstream using the Activate All and Deactivate All options on the menu bar.
 * **Toggle Switch Button**: Each node has a toggle switch button, allowing you to activate or deactivate the data streaming from or to selected sources and destinations.
 
-The following sources and destinations currently support Traffic Pause and Resume:
+Here are the data sources that currently support Traffic Pause and Resume:
 
-| Node Type | Supported Nodes |
-| --- | --- |
-| Source | Sample data, Azure Event Hubs, Azure IoT Hub |
-| Destination | Lakehouse, KQL Database (with Event Processor) |
+* **Sources**: Sample data, Azure Event Hubs, Azure IoT Hub
+* **Destinations**: Lakehouse, KQL Database (with Event Processor)
 
-Here's the description of different node statuses:
-
+The following table outlines the description of different node statuses:
 | Node Status | Description |
 | --- | --- |
 | Active | Data source is currently active and data is flowing in or out of Eventstream. |
