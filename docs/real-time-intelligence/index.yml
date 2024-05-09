@@ -136,10 +136,6 @@ landingContent:
          links:
           - text: "Training module: Write your first query with Kusto Query Language"
             url: /training/modules/write-first-query-kusto-query-language/
-          - text: "Training module: Gain insights from your data by using Kusto Query Language"
-            url: /training/modules/gain-insights-data-kusto-query-language/
-          - text: "Training module: Multi-table queries using Kusto Query Language"
-            url: /training/modules/multi-table-queries-with-kusto-query-language/
        - linkListType: how-to-guide
          links:
           - text: Use Fabric notebooks with data from a KQL database
@@ -147,7 +143,6 @@ landingContent:
           - text: Use a notebook with Apache Spark to query a KQL database
             url: spark-connector.md
       
-
 
   # Card 
   - title: Respond to data
