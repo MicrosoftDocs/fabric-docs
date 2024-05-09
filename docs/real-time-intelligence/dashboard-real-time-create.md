@@ -71,7 +71,7 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 
 ## Add tile from a queryset
 
-You can add tiles to your dashboard directly from kql queries written in a queryset.
+You can add tiles to your dashboard directly from KQL queries written in a queryset.
 
 1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 
