@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 3- Query streaming data in a KQL queryset
+title: Real-Time Intelligence tutorial part 4- Query streaming data in a KQL queryset
 description: Learn how to query your streaming data in a KQL queryset Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -11,7 +11,7 @@ ms.date: 04/18/2024
 ms.search.form: Get started
 #customer intent: I want to learn how to query my streaming data in a KQL queryset in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 3: Query streaming data in a KQL queryset
+# Real-Time Intelligence tutorial part 4: Query streaming data in a KQL queryset
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data in the Real-Time Hub](tutorial-2-get-real-time-events.md).
@@ -20,7 +20,7 @@ In this part of the tutorial, you learn how to query your streaming data in a [K
 
 ## Create a KQL queryset
 
-1. Browse to the KQL database you have created in a previous step, named *Tutorial*. 
+1. Browse to the KQL database you have created in a previous step, named *Tutorial*.
 1. Verify that the data is flowing into the database by viewing the **Size** tile in the database details page. The values in this tile should be greater than zero.
 1. From the ribbon, select **New related item** and choose **KQL Queryset**.
 
@@ -40,7 +40,7 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
 1. In the query editor, enter the following query. Then press **Shift + Enter** to run the query.
 
     ```kusto
-   TutorialTable
+    TutorialTable
     | take 10
     ```
 
@@ -59,8 +59,6 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
 
     :::image type="content" source="media/tutorial/empty-docks-timechart.png" alt-text="Screenshot of empty docks timechart in Real-Time Intelligence.":::
 
-In the next step, you'll set an alert on this field to notify you if the number of bikes falls below a certain threshold.
-
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
@@ -72,4 +70,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 4: Set an alert on your event stream](tutorial-4-set-alert.md)
+> [Tutorial part 5: Create a Real-Time dashboard](tutorial-5-create-dashboard.md)

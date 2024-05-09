@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 4- Set an alert on your event stream
+title: Real-Time Intelligence tutorial part 3- Set an alert on your event stream
 description: Learn how to set an alert on your event stream in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -11,10 +11,10 @@ ms.date: 05/21/2024
 ms.search.form: Get started
 #customer intent: I want to learn how to set an alert on my Event stream in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 4: Set an alert on your event stream
+# Real-Time Intelligence tutorial part 3: Set an alert on your event stream
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Query streaming data in a KQL queryset](tutorial-3-query-data.md).
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data in the Real-Time hub](tutorial-2-get-real-time-events.md).
 
 In this part of the tutorial, you learn how to set an alert on your event stream to receive a notification in Teams when the number of bikes falls below a certain threshold.
 
@@ -56,4 +56,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 5: Create a Real-Time dashboard](tutorial-5-create-dashboard.md)
+> [Tutorial part 3: Query streaming data in a KQL queryset](tutorial-4-query-data.md)
