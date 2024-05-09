@@ -10,33 +10,33 @@ ms.search.for: Fabric environment Git integration and deployment pipeline
 
 # Environment Git integration and deployment pipeline
 
-This article describe how to use Git integration and deployment pipeline for environment in Microsoft Fabric.
+This article describes how to use Git integration and deployment pipelines for environment in Microsoft Fabric.
 
-## Git integration for environment
+## Git integration for Microsoft Fabric environment
 
-Microsoft Fabric provides the Git integration ability for developers. With Git, you can backup and version the work, revert the item to previous stages as needed and collaborate with others or work alone using Git branches.
+Microsoft Fabric supports Git integration, allowing developers to backup, control versions, revert to previous stages, and collaborate on their work using Git branches.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 > [!NOTE]
 >
-> - Currently, only Libraries and Spark compute, which includes Spark runtime, are supported through Git.
-> - The Git integration is manipulating with the **staging state** of the environment, meaning that the published and saved configurations are both checking in Git.
-> - The changes from Git to environment item in portal need to **publish** to become effective. It's recommend to perform a publish after updating the environment from Git to ensure the effectiveness of the configuration.
-> - If you prefer code-first experience, you can use [Publish API of environment](environment-public-APIs.md#make-the-changes-effective) to publish the changes from Git without triggering publish through UI.
-> - Each commit has up to 150 MB as upper limit. The custom library, which size is larger than 150 MB is currently not supported through Git.
+> - Currently, Git supports only Libraries and Spark compute, including Spark runtime.
+> - The Git integration manages the **staging state** of the environment, ensuring that both published and saved configurations are synced with Git.
+> - To apply changes made in Git to the environment, they must be published. It's recommended to publish after updating the environment from Git to ensure the effectiveness of the configuration.
+> - For a code-first experience, you can use the [Publish API of environment](environment-public-APIs.md#make-the-changes-effective) to publish changes from Git without using the UI.
+> - Each commit has as upper limit of 150 MB. Custom libraries larger than 150 MB aren't currently supported through Git.
 
 ### Connect the Fabric workspace to an Azure DevOps repository
 
-If you are the admin of the workspace, you can set-up the connection in **Source control** section at the workspace setting. Learn more on [Manage a workspace with Git](../cicd/git-integration/git-get-started.md).
+If you are the admin of a workspace, navigate to the workspace settings, and set-up the connection in **Source control** section. To learn more, see [Manage a workspace with Git](../cicd/git-integration/git-get-started.md).
 
-After connecting successfully, your can find the items including the environments syncing with the repo.
+After connecting, you can find items including the environments syncing with the repo.
 
 :::image type="content" source="media\environment-git-and-deployment-pipeline\env-git-connected-to-repo.png" alt-text="Screenshot of successfully connecting the workspace to an Azure DevOps repo":::
 
 ### Local representation of an environment in Git
 
-Within the item root folder, environments are structured with a **Libraries** folder containing **PublicLibraries** and **CustomLibraries** sub-folders, alongside the **Setting** folder.
+In the item root folder, environments are organized with a **Libraries** folder that contains **PublicLibraries** and **CustomLibraries** sub-folders, along with the **Setting** folder.
 
 :::image type="content" source="media\environment-git-and-deployment-pipeline\env-git-representation.png" alt-text="Screenshot of the local representation of the environment in Git":::
 
@@ -46,7 +46,7 @@ When you commit an environment to Git, the **public library** section is transfo
 
 :::image type="content" source="media\environment-git-and-deployment-pipeline\env-git-representation-public-library.png" alt-text="Screenshot of the public library local representation of the environment in Git":::
 
-You can update the public library by editing the YAML representation. Like the experience in the portal, you can specify a library from PyPI and conda. You can specify the library with expected version, a version range or without version. The system can help to determine a version that is compatible with other dependencies in your environment. By deleting the YAML file, you can clear all the existing public libraries.
+You can update the public library by editing the YAML representation. Just like the portal experience, you can specify a library from PyPI and conda. You can specify the library with expected version, a version range or without version. The system can help you determine a version that is compatible with other dependencies in your environment. To clear all the existing public libraries, delete the YAML file.
 
 You can update the custom library by adding new files or deleting existing files directly.
 
@@ -77,7 +77,8 @@ You can find the deploying status after setting up the pipeline successfully. Af
 
 > [!IMPORTANT]
 >
-> - The **custom pool** is currently not supported in deployment pipeline. If the environment selects the custom pool, the configurations of **Compute** section in the destination environment are set with default values. Under this circumstance, the environments keep showing diff even the deployment is done successfully.
+> - The **custom pool** is currently not supported in deployment pipeline. If the environment selects the custom pool, the configurations of **Compute** section in the destination environment are set with default values. In 
+ this case, the environments keep showing different versions even the deployment is done successfully.
 > - Using deployment rules to specify different pool in new workspace will be included in upcoming release.
 
 ## Related content

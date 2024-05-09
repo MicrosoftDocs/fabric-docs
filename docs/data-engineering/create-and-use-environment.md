@@ -20,7 +20,7 @@ You can find the standard entry points of creating new environments in the Fabri
 
 ## Configure an environment
 
-There are three major components in an environment, which are Spark compute including Spark runtime, libraries, and resource. Spark compute and libraries are the configurations that needs publishing to be effective while the resources is a shared storage that can be manipulated in real-time. See [Save and publish changes](create-and-use-environment.md#save-and-publish-changes) section for more details.
+There are three major components in an environment, which are Spark compute that includes Spark runtime, libraries, and resource. The Spark compute and libraries configurations are required for the publishing to be effective, while resources are a shared storage that can change in real-time. See [Save and publish changes](create-and-use-environment.md#save-and-publish-changes) section for more details.
 
 ### Configure Spark compute
 
@@ -41,7 +41,7 @@ Except for the built-in libraries provided by each Spark runtime, the Fabric env
 
 ### Resources
 
-The Resources section in environment facilitates the ability to manage small resources during the development phase. When files are uploaded to the environment, they become accessible from various notebooks once they are attached to the same environment. For more information, see [Manage the resources in Fabric environment](environment-manage-resources.md)
+The Resources section in environment facilitates the ability to manage small resources during the development phase. Files uploaded to the environment are accessible across notebooks when attached. For more information, see [Manage the resources in Fabric environment](environment-manage-resources.md)
 
 ### Save and publish changes
 
@@ -51,14 +51,14 @@ In the **Home** tab of environment ribbon, you can easily find two buttons calle
 
 You will also see a banner prompting this two button when there are pending changes in the the Libraries and Spark compute sections, they have the same functionalities with the ones in the ribbon.
 
-- The unsaved changes will be lost if you refresh or leave the browser page. You can click the **Save** button to make sure the changes are recorded before leaving. Saving doesn't make the configurations effective but caching them in the system.
-- **Publish** is the button to make the changes in Libraries and Spark compute becomes effective. The **Pending changes** page appears after clicking Publish, this page allows you have a final review before publishing. After you select **Publish all**, the Fabric environment starts to proceed the configuration and gets they ready to use.This process may take a while, particularly when library changes are included.
-- If you want to cancel an ongoing publish, click the **View progress** in the banner and you will find the **Cancel** button.
-- A notification appears when the publishing is done. Error notification appears when the process encounters issues.
+- The unsaved changes are lost if you refresh or leave the browser open. Select the **Save** button to make sure your changes are recorded before leaving. Saving doesn't apply the configuration but caches them in the system.
+- Select **Publish** to apply the changes to Libraries and Spark compute. The **Pending changes** page will appear for final review before publishing. Next select **Publish all** to initiate configuration in the Fabric environment. This process may take some time, especially if library changes are involved.
+- To cancel a publishing process, select **View progress** in the banner and **Cancel** the operation.
+- A notification appears upon publishing completion. An error notification occurs if there are any issues during the process.
 
 > [!NOTE]
-> An environment accepts one publish at a time, no further changes can be made in Libraries or Spark compute section when there is an on-going publish.
-> Publishing doesn't impact adding/deleting/editing the files and folders in **Resources**. The actions to manage resources are in real-time, publish doesn't block changes in Resources section.
+> An environment accepts only one publish at a time. No further changes can be made to the libraries or the Spark compute section during an ongoing publish.
+> Publishing doesn't impact adding, deleting, or editing the files and folders in **Resources** section. The actions to manage resources are in real-time, publish doesn't block changes in resources section.
 
 ## Attach an environment
 
@@ -100,9 +100,9 @@ Microsoft Fabric supports sharing an item with different level of permissions.
 
 :::image type="content" source="media\environment-introduction\env-sharing.gif" alt-text="Screen recording of showing how to share an environment.":::
 
-When you share an environment item, recipients automatically receive **Read permission**. With this permission, they can explore the environment’s configurations and attach it to notebooks or Spark jobs. To ensure smooth code execution, remember to grant the Read permission of attached environment when sharing your notebooks and Spark job definitions.
+When you share an environment item, recipients automatically receive **Read permission**. With this permission, they can explore the environment’s configurations and attach it to notebooks or Spark jobs. For smooth code execution, ensure to grant read permissions for attached environments when sharing notebooks and Spark job definitions.
 
-Furthermore, you have the option to share the environment with Share and Edit permissions. Users with **Share permission** can continue sharing the environment with others, with their existing permissions. Meanwhile, recipients with **Edit permission** can update the environment’s content.
+Additionally, you can share the environment with **Share** and **Edit** permissions. Users with **Share permission** can continue sharing the environment with others. Meanwhile, recipients with **Edit permission** can update the environment’s content.
 
 ## Related content
 
