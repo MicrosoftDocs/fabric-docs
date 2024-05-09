@@ -105,6 +105,8 @@ items:
       href: run-spark-job-definition.md
     - name: Spark job definition API tutorial
       href: spark-job-definition-api.md
+    - name: Spark job definition Git integration
+      href: spark-job-definition-source-control.md
   - name: Spark development
     items:
     - name: Spark utilities
@@ -125,6 +127,8 @@ items:
     items:
     - name: Apache Spark monitoring overview
       href: spark-monitoring-overview.md
+    - name: Run Series Analysis Overview
+      href: run-series-analyisis-overview.md
     - name: Apache Spark Advisor
       href: spark-advisor-introduction.md
     - name: Monitoring hub - Browse Spark applications
