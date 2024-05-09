@@ -145,6 +145,7 @@ There are several considerations to keep in mind while working with private endp
     * Required for the Data Engineering and Data Science experiences:
 
         * `http://res.cdn.office.net/`
+        * `https://aznbcdn.notebooks.azure.net/` 
         * `https://pypi.org/*` (for example, `https://pypi.org/pypi/azure-storage-blob/json`) 
         * local static endpoints for condaPackages 
         * `https://cdn.jsdelivr.net/npm/monaco-editor*`
