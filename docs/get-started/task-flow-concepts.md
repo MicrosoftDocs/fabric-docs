@@ -5,22 +5,22 @@ ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: concept-article
-ms.date: 05/07/2024
+ms.date: 05/09/2024
 ---
 
 # Task flow concepts
 
+This article describes the main concepts of the task flows feature in Microsoft Fabric. It's intended audience is data analytics solutions architects who want to use task flows to help them build a visualization of their project to help data engineers understand and implement the project, and data engineers who want to use task flows to faciliate their work.
+
 Fabric task flow is a workspace feature that enables you to build a visualization of the flow of work in the workspace. The task flow helps you understand how items are related and work together in your workspace, and makes it easier for you to navigate your workspace, even as it becomes more complex over time. Moreover, the task flow can help you standardize your team's work and keep your design and development work in sync to boost the team's collaboration and efficiency.
 
-Fabric provides a range of predefined, end-to-end task flows based on industry best practices that are intended to make it easier to get started with your project. In addition, you can customize the task flows to suit your specific needs and requirements. This enables you to create a tailored solution that meets your unique business needs and goals.
+Fabric provides a range of predefined, end-to-end task flows based on industry best practices that are intended to make it easier to get started with your project. You can customize these task flows to suit your specific needs and requirements, and you can also build your own task flow from scratch. These capabilites enable you to create a tailored solution that meets your unique business needs and goals.
 
 ## Task flow
 
-A task flow is a collection of connected tasks that represent relationships in a process or collection of processes that complete an end-to-end data solution. A workspace has one task flow. You can either build it from scratch or use one of Fabric's predefined task flows, which you can customize as desired.
+A task flow is a collection of connected tasks that represents relationships in a process or collection of processes that make up an end-to-end data solution. A workspace has one task flow. You can either build it from scratch or use one of Fabric's predefined task flows, which you can customize as desired.
 
-pen the workspace. You'll see that the workspace view is split between the task flow, where you'll build your task flow, and the item list, which shows you the items in the workspace. A moveable separator allows you adjust the size of the views.
-
-The task flow itself is split between the canvas, which will hold the visualization of your work flow, and a side panel that contains information and controls to help you build the task flow. The contents of the side panel changes according to what is selected in the canvas.
+The task flow is split between the canvas, which holds the visualization of your work flow, and a side panel that contains information and controls to help you build the task flow. The contents of the side panel changes according to what is selected in the canvas.
 
 When no task flow has been configured, an empty default task flow entitled **Get started with a task flow** is there. To start building a task flow, you can either select a task flow from one of predesigned task flows or add a task to start building one yourself.
 
