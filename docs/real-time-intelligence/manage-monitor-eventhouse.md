@@ -13,8 +13,6 @@ ms.search.form: Eventhouse
 
 The Event house page serves as the central hub for all your interactions within the Event house environment. It's your gateway to seamlessly manage and monitor an event house, navigate through databases, and perform various Event house-related actions.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
 In this article, you learn about how to manage and gain insights about an event house in Real-Time Intelligence.
 
 ## Prerequisites

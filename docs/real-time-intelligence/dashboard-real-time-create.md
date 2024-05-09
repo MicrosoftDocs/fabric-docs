@@ -1,6 +1,6 @@
 ---
-title: Create a Real-Time Dashboard
-description: Learn how to visualize data with Real-Time Dashboards
+title: Create a Real-Time Dashboard (preview)
+description: Learn how to visualize data with Real-Time dashboards
 ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 04/21/2024
 ms.search.form: product-kusto, Real-Time Dashboard
 ---
-# Create a Real-Time Dashboard
+# Create a Real-Time Dashboard (preview)
 
 A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance.
 
@@ -215,3 +215,4 @@ You can update an existing dashboard, or restore a previous version, as follows:
 * [Use parameters in Real-Time Dashboards](dashboard-parameters.md)
 * [Real-Time Dashboard-specific visuals](dashboard-visuals.md)
 * [Apply conditional formatting in Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
+* [Create Data Activator alerts from a Real-Time Dashboard](../data-activator/data-activator-get-data-real-time-dashboard.md)

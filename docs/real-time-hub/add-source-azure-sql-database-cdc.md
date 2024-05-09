@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Add Azure SQL Database Change Data Capture (CDC) as source in Real-Time hub
+# Add Azure SQL Database Change Data Capture (CDC) as source in Real-Time hub (preview)
 This article describes how to get events from Azure SQL Database Change Data Capture (CDC) into Fabric Real-Time hub. The Azure SQL Database CDC source connector allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -51,6 +51,9 @@ Use instructions from the [Add Azure SQL Database CDC as a source](#add-azure-sq
 1. On the **Select a data source** screen, select **Azure SQL DB (CDC)**.
 
    ![A screenshot of selecting Azure SQL DB (CDC).](media/add-source-azure-sql-database-cdc/select-external-source.png)
+1. On the **Connect** page, select **Go to resource** to navigate to the Azure SQL database. Take a note of the server name on the **Overview** page. It's in the following format: `myazuresqlserver.database.windows.net`. 
+
+    :::image type="content" source="./media/add-source-azure-sql-database-cdc/go-to-azure-resource.png" alt-text="Screenshot that shows the Connect page with Go to resource link highlighted." lightbox="./media/add-source-azure-sql-database-cdc/go-to-azure-resource.png":::               
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-sql-database-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-sql-database-cdc/new-connection-link.png"::: 
@@ -94,3 +97,9 @@ Use instructions from the [Add Azure SQL Database CDC as a source](#add-azure-sq
 
     For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
+## Related content
+To learn about consuming data streams, see the following articles:
+
+- [Process data streams](process-data-streams-using-transformations.md)
+- [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
+- [Set alerts on data streams](set-alerts-data-streams.md)

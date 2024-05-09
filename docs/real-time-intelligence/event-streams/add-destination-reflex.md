@@ -13,9 +13,9 @@ ms.search.form: Source and Destination
 
 This article shows you how to add Reflex destination to an eventstream.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
 ## Prerequisites
 
@@ -85,9 +85,9 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 
 To learn how to add other destinations to an eventstream, see the following articles: 
 
-- [Route events to destinations](add-manage-eventstream-destinations-enhanced.md)
+- [Route events to destinations](add-manage-eventstream-destinations.md)
 - [Custom app destination](add-destination-custom-app.md)
 - [Derived stream destination](add-destination-derived-stream.md)
-- [KQL Database destination](add-destination-kql-database-enhanced.md)
-- [Lakehouse destination](add-destination-lakehouse-enhanced.md)
+- [KQL Database destination](add-destination-kql-database.md)
+- [Lakehouse destination](add-destination-lakehouse.md)
 - [Create an eventstream](create-manage-an-eventstream.md)

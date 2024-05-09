@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/21/2024
 ---
 
-# Get Fabric workspace item events in Real-Time hub
+# Get Fabric workspace item events in Real-Time hub (preview)
 This article describes how to get Fabric workspace item events as an eventstream in Fabric Real-Time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
@@ -36,17 +36,13 @@ Here are the supported Fabric workspace events:
 ## Create streams for Fabric workspace item events
 You can create streams for Fabric workspace item events in Real-Time hub using one of the ways:
 
-- Using the **Get events** experience
-- Using the **Fabric events** tab
+- [Using the **Get events** experience](#launch-get-events-experience)
+- [Using the **Fabric events** tab](#fabric-events-tab)
+
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-Use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section after you do the following step:
-
-On the **Get events** page, select **Fabric Workspace item events**.
-
-:::image type="content" source="./media/create-streams-fabric-workspace-item-events/select-fabric-workspace-item-events.png" alt-text="Screenshot that shows the Get events page with Fabric workspace item events selected.":::
-
+Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section.
 
 ## Fabric events tab
 
@@ -55,8 +51,13 @@ On the **Get events** page, select **Fabric Workspace item events**.
 
     :::image type="content" source="./media/create-streams-fabric-workspace-item-events/fabric-events-tab.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub.":::
 
+    Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section, but skip the first step of using the **Get events** page. 
+
 ## Configure and create an eventstream
 
+1. On the **Get events** page, select **Fabric Workspace item events**.
+
+    :::image type="content" source="./media/create-streams-fabric-workspace-item-events/select-fabric-workspace-item-events.png" alt-text="Screenshot that shows the Get events page with Fabric workspace item events selected.":::
 1. On the **Connect** page, for **Event types**, select the event types that you want to monitor. 
 
     :::image type="content" source="./media/create-streams-fabric-workspace-item-events/select-event-types.png" alt-text="Screenshot that shows the selection of Fabric event types on the Connect page." lightbox="./media/create-streams-fabric-workspace-item-events/select-event-types.png":::
@@ -82,3 +83,10 @@ On the **Get events** page, select **Fabric Workspace item events**.
 1. Confirm that you see the stream you created. 
 
     :::image type="content" source="./media/create-streams-fabric-workspace-item-events/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab with the generated stream." lightbox="./media/create-streams-fabric-workspace-item-events/verify-data-stream.png":::
+
+## Related content
+To learn about consuming data streams, see the following articles:
+
+- [Process data streams](process-data-streams-using-transformations.md)
+- [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
+- [Set alerts on data streams](set-alerts-data-streams.md)
