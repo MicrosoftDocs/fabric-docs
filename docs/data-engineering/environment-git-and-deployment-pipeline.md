@@ -59,10 +59,6 @@ The Spark compute section is transformed into the YAML representation as well. W
 
 :::image type="content" source="media\environment-git-and-deployment-pipeline\env-git-representation-spark-compute.png" alt-text="Screenshot of the Spark compute local representation of the environment in Git":::
 
-> [!NOTE]
->
-> The pool information doesn't appear if the environment uses the **Starter pool**. If you want to use a **custom pool** in the environment, you can add the ***instance_pool_id*** section with the expected pool ID in the YAML file.
-
 ## Deployment pipeline for environment
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
