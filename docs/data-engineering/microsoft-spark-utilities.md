@@ -11,7 +11,7 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
 ms.search.form: Microsoft Spark utilities
-ms.date: 11/15/2023
+ms.date: 05/02/2024
 ---
 
 # Microsoft Spark Utilities (MSSparkUtils) for Fabric
@@ -121,6 +121,7 @@ This method moves a file or directory, and supports moves across file systems.
 
 ```python
 mssparkutils.fs.mv('source file or directory', 'destination directory', True) # Set the last parameter as True to firstly create the parent directory if it does not exist
+mssparkutils.fs.mv('source file or directory', 'destination directory', True, True) # Set the third parameter to True to firstly create the parent directory if it does not exist. Set the last parameter to True to overwrite the updates.
 ```
 
 ### Write file
@@ -267,6 +268,10 @@ The execution result from the root notebook is as follows:
 > [!NOTE]
 > - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
 > - The upper limitation of notebook activities in ``` msspakrutils.notebook.runMultiple() ``` is **50, having more than 50 notebook activities may have stability and performance issues due to compute resource usage**. If you still want to use more notebook activities in the API, you can set the spark settings '*spark.notebookutils.runmultiple.limit*' to a larger value as a workaround. You can set the spark properties in attached Environment or using [%%configure](author-execute-notebook.md#spark-session-configuration-magic-command) command.
+> - If you want to use more than 50 notebook activities, to avoid the snapshot and progress bar content size exceed the total Notebook content size upper limits, we recommend you to run the below command to disable the rich UX features. 
+>   ```scala
+>   com.microsoft.spark.notebook.common.Configs.notebookRunSnapshotEnabled = false
+>   ```
 
 ### Exit a notebook
 
