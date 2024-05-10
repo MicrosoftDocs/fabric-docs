@@ -55,7 +55,25 @@ Select the task flow that best fits your project needs and then choose **Select*
 > [!NOTE]
 > Selecting a predefined task flow just places the tasks involved in the task flow on the canvas and indicates the connections between them. It is just a graphical representation - no actual items or data connections are created at this point.
 
-## Task
+## Tasks
+
+XXX
+
+### What is a task
+
+A task is a unit of process in the task flow. It represents a particular set of activities within the overall process. It is a more abstract, higher-level representation than an item. For instance, the task of visualizing data is more than just creating a report – it could include creating dashboards, scorecards, paginated reports, etc.
+
+### What benefits to tasks provide
+
+Tasks make it easier to visualize where in the solution the various processes are, and how these sets of processes are related to each other. In addition, tasks provide functionality that helps the engineering teams working on the project to get their work done. For instance, each type of task recommends the items that are relevant to the activities involved in that task, and makes it easy for the engineers to find or create those items. Tasks can also be used to filter the workspace items list, making it easier for engineers to find the items in the workspace that are involved in the task they are working – this can be quite a challenge in complex data analytics projects where multiple teams might be working on dozens of items in the same workspace.
+
+### Main components
+
+Task is represented by a card on the task flow canvas. Once a task is placed on the canvas, you can drag and drop it to where it needs to go. From the card you can assign new and existing items to the task. When you select the task, you open the task details pane, which provides information and functionality.
+
+Image
+
+
 
 A task is a unit of process in the task flow. A task has recommended item types to help you select the appropriate items when building your solution. Tasks also help you navigate the items in the workspace.
 
