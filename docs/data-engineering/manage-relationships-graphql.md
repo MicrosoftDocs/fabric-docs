@@ -37,17 +37,17 @@ One of the most powerful features in GraphQL is the ability to establish relatio
 
 ## One-to-many (1:N) and many-to-many (M:N) relationships
 
-To create a one-to-many (1:N) relationship, for instance, between **Product** and **Order**, where each product can be associated with multiple orders, select **One to many** as the cardinality. This reflects the idea that a single product can be linked to multiple orders but each order is linked to only one product.
+To create a one-to-many (1:N) relationship, for instance, between **Product** and **Order**, where each product can be associated with multiple orders, select **One to many** as the cardinality. This relationship reflects the idea that a single product can be linked to multiple orders but each order is linked to only one product.
 
-For a many-to-many (M:N) relationship, such as between **Books** and **Authors**, where a book can have multiple authors and an author can have multiple books, choose **Many to Many** as the cardinality. You will need to have a linkintg type in your schema to accommodate this kind of relationship.
+For a many-to-many (M:N) relationship, such as between **Books** and **Authors**, where a book can have multiple authors and an author can have multiple books, choose **Many to Many** as the cardinality. You need to have a linking type in your schema to accommodate this kind of relationship.
 
-The **New relationship** dialog will show you an additional set of pickers when you choose **Many-to-many** as the cardinality. In the example of **Books** and **Authors**, you would select a linking type such as **BooksAuthors**, and fields such as **BookId** and **AuthorId** as the linking from and to fields.
+The **New relationship** dialog shows you another set of pickers when you choose **Many-to-many** as the cardinality. In the example of **Books** and **Authors**, you would select a linking type such as **BooksAuthors**, and fields such as **BookId** and **AuthorId** as the linking from and to fields.
 
 ![alt text](media/manage-relationships-graphql/many-to-many-linking.png)
 
 ## Considerations for many-to-many relationships
 
-If your linking type contains one or more fields that are not referenced as **From field(s)** or **To field(s)**, API for GraphQL will automatically generate four one-to-many relationships, as follows:
+If your linking type contains one or more fields that aren't referenced as **From field(s)** or **To field(s)**, API for GraphQL automatically generates four one-to-many relationships, as follows:
 
 - A one-to-many relationship from the **From type** to the **Linking type**
 - A one-to-many relationship from the **Linking type** to the **From type**
