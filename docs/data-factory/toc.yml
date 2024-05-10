@@ -45,7 +45,7 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
-    - name: Create a Data workflows
+    - name: Create a Data workflow
       href: create-data-workflows.md
     - name: Operationalize Data Factory
       href: transform-data.md
