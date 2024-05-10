@@ -66,7 +66,7 @@ Next, you need to create a way for the Fabric service to connect to your Azure S
 
     ```sql
     CREATE USER fabric_user WITH PASSWORD = '<strong password>';
-    GRANT CONTROL TO fabric_login;
+    GRANT CONTROL TO fabric_user;
     ```
 
 ## Create a mirrored Azure SQL Database
