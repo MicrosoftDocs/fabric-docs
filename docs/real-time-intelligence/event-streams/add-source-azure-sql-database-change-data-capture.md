@@ -26,8 +26,8 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 - CDC enabled on your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
 
 >[!NOTE]
->- Mirroring shouldn't be enabled in your database.
->- Multiple tables CDC isn't supported.
+> Mirroring shouldn't be enabled in your database.
+
 
 ## Add Azure SQL Database CDC as a source
 
