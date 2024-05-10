@@ -28,8 +28,6 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
 
   For other PostgreSQL databases, see [Debezium connector for PostgreSQL :: Debezium Documentation](https://debezium.io/documentation/reference/stable/connectors/postgresql.html#setting-up-postgresql).
 
->[!NOTE]
->Multiple tables CDC isn't supported.
 
 ## Enable CDC in your Azure Database for PostgreSQL
 
