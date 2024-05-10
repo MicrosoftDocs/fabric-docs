@@ -39,7 +39,7 @@ The following properties are **required**:
 
 - **Connection**: Select an Azure Cosmos DB for MongoDB connection from the connection list. If no connection exists, then create a new Azure Cosmos DB for MongoDB connection by selecting **More** at the bottom of the connection list.
 - **Database**: Select your database from the drop-down list.
-- **Collection name**: Specify the name of the Azure Cosmos DB collection. You can select the collection from the drop-down list or select **Edit** to enter it manually. 
+- **Collection name**: Specify the name of the Azure Cosmos DB collection. You can select the collection from the drop-down list. 
 
 Under **Advanced**, you can specify the following fields:
 
@@ -62,7 +62,7 @@ The following properties are **required**:
 
 - **Connection**: Select an Azure Cosmos DB for MongoDB connection from the connection list. If no connection exists, then create a new Azure Cosmos DB for MongoDB connection by selecting **More** at the bottom of the connection list.
 - **Database**: Select your database from the drop-down list.
-- **Collection name**: Specify the name of the Azure Cosmos DB collection. You can select the collection from the drop-down list or select **Edit** to enter it manually. 
+- **Collection name**: Specify the name of the Azure Cosmos DB collection. You can select the collection from the drop-down list. 
 
 Under **Advanced**, you can specify the following fields:
 
