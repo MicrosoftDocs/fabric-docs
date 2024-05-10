@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
-ms.date: 04/24/2024
+ms.date: 05/09/2024
 ms.service: fabric
 ms.topic: tutorial
 ---
@@ -20,7 +20,7 @@ ms.topic: tutorial
     - If you don't have an Azure SQL Database, [create a new single database](/azure/azure-sql/database/single-database-create-quickstart?view=azuresql-db&preserve-view=true&tabs=azure-portal). Use the [Azure SQL Database free offer](/azure/azure-sql/database/free-offer?view=azuresql-db&preserve-view=true) if you haven't already.
     - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
-- [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md). 
+- [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md).
 - Enable the Fabric tenant setting [Allow service principals to user Power BI APIs](../../admin/service-admin-portal-developer.md#allow-service-principals-to-use-power-bi-apis). To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
     - If you do not see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
 - Networking requirements for Fabric to access your Azure SQL Database:
@@ -30,10 +30,11 @@ ms.topic: tutorial
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL logical server
 
-The System Assigned Managed Identity (SAMI) of your Azure SQL logical server needs to be enabled.
+The System Assigned Managed Identity (SAMI) of your Azure SQL logical server needs to be enabled, and must be the primary identity.
 
 1. To configure or verify that the SAMI is enabled, go to your logical SQL Server in the Azure portal. Under **Security** in the resource menu, select **Identity**.
 1. Under **System assigned managed identity**, select **Status** to **On**.
+1. The SAMI must be the primary identity. Verify the SAMI is the primary identity with the following T-SQL query: `SELECT * FROM sys.dm_server_managed_identities;`
 
     <!-- :::image type="content" source="media/image2.png" alt-text="Screenshot of turning on the system assigned managed identity."::: -->
 
@@ -61,18 +62,18 @@ Next, you need to create a way for the Fabric service to connect to your Azure S
 #### Use a contained database user
 
 1. Connect to the Azure SQL database your plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [Azure Data Studio](/azure-data-studio/download-azure-data-studio).
-1. Create a [contained database user with password](/sql/relational-databases/security/contained-database-users-making-your-database-portable?view=azuresqldb-current&preserve-view=true), and grant the **CONTROL** permission to the contained daabase user with the following T-SQL script:
+1. Create a [contained database user with password](/sql/relational-databases/security/contained-database-users-making-your-database-portable?view=azuresqldb-current&preserve-view=true), and grant the **CONTROL** permission to the contained database user with the following T-SQL script:
 
     ```sql
     CREATE USER fabric_user WITH PASSWORD = '<strong password>';
-    GRANT CONTROL TO fabric_login;
+    GRANT CONTROL TO fabric_user;
     ```
 
 ## Create a mirrored Azure SQL Database
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
-1. Navigate to the **Create** pane..
+1. Navigate to the **Create** pane.
     <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Workspace creation."::: -->
 1. Select the **Create** icon.  
     <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Create button."::: -->
