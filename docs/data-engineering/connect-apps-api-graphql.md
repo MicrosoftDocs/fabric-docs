@@ -18,6 +18,8 @@ To connect an application to an API for GraphQL, you get the API endpoint and pa
 
 ## Prerequisites
 
+Currently API for GraphQL requires applications to use Microsoft Entra for authentication. Your application need to be registered and configured adequately to perform API calls against Fabric. For more information, see [Create a Microsoft Entra app in Azure](https://learn.microsoft.com/en-us/rest/api/fabric/articles/get-started/create-entra-app).
+
 Before you connect an application, you must create an API for GraphQL. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
 
 ## Obtain the API for GraphQL endpoint
@@ -34,7 +36,7 @@ To obtain the API endpoint:
 
    :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint-link.png" alt-text="Screenshot of the Copy link dialog screen, showing where to select Copy.":::
 
-1. You can now paste the endpoint URI in your application.
+1. You can now paste the endpoint URI in your application, and begin to send API requests to it. 
 
 ## Related content
 

@@ -164,3 +164,23 @@ landingContent:
             url: environment-manage-library.md
           - text: Migrate the existing workspace libraries and Spark properties to an environment
             url: environment-workspace-migration.md
+
+   # Card 
+  - title: API for GraphQL
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Fabric API for GraphQL?
+            url: api-graphql-overview.md
+      - linkListType: get-started
+        links:
+          - text: Create an API for GraphQL and add data
+            url: get-started-api-graphql.md
+      - linkListType: how-to-guide
+        links:
+          - text: Manage relationships
+            url: manage-relationships.md
+          - text: Connect applications
+            url: connect-apps-api-graphql.md
+          - text: Query multiple data sources
+            url: multiple-data-sources.md           

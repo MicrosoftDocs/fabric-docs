@@ -221,7 +221,7 @@ items:
       href: migrate-synapse-data-pipelines.md
     - name: Migrate Hive Metastore metadata
       href: migrate-synapse-hms-metadata.md
-- name: GraphQL
+- name: API for GraphQL
   items:
    - name: What is API for GraphQL?
      href: api-graphql-overview.md

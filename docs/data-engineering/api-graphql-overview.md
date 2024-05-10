@@ -32,7 +32,10 @@ Currently, the following supported data sources can be exposed through the Fabri
 
 The Fabric API for GraphQL includes:
 
+- Automatic data source schema discovery.
 - Automatic generation of queries and mutations.
+- Automatic generation of resolvers.
+- Support for views for SQL databases and data warehouses.
 - Support for stored procedures for SQL databases and data warehouses.
 - Support for multiple data sources with corresponding fan-out queries.
 
