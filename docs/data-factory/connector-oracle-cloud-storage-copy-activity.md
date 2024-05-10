@@ -49,7 +49,7 @@ For **General** tab configuration, go to [General](activity-overview.md#general-
 
 The following properties are supported for Oracle Cloud Storage on the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-oracle-cloud-storage/oracle-cloud-storage-source.png" alt-text="Screenshot showing source tab and the list of properties.":::
+:::image type="content" source="./media/connector-oracle-cloud-storage/oracle-cloud-storage-source.png" alt-text="Screenshot that shows the Source tab and the list of properties.":::
 
 The following properties are *required*:
 
@@ -62,7 +62,7 @@ The following properties are *required*:
         - **Bucket**: Specify the Oracle Cloud Storage bucket name. It's required.
         - **Prefix**: Prefix for the Oracle Cloud Storage key name under the specified bucket to filter source Oracle Cloud Storage files. Oracle Cloud Storage keys whose names start with `given_bucket/this_prefix` are selected. It utilizes Oracle Cloud Storage's service-side filter, which provides better performance than a wildcard filter.
     
-            :::image type="content" source="./media/connector-oracle-cloud-storage/prefix.png" alt-text="Screenshot that shows how to configure a Prefix file path type.":::
+            :::image type="content" source="./media/connector-oracle-cloud-storage/prefix.png" alt-text="Screenshot that shows how to configure Prefix file path type.":::
     
     - **Wildcard file path**: Specify the **Bucket** and **Wildcard paths**.
         - **Bucket**: Specify the Oracle Cloud Storage bucket name. It's required.
@@ -70,14 +70,14 @@ The following properties are *required*:
     
           **Allowed wildcards are**: `*` (matches zero or more characters) and `?` (matches zero or a single character). Use `^` to escape if your folder name has a wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-oracle-cloud-storage?tabs=data-factory#folder-and-file-filter-examples).
 
-          :::image type="content" source="./media/connector-oracle-cloud-storage/wildcard-paths.png" alt-text="Screenshot that shows how to configure a wildcard file path.":::
+          :::image type="content" source="./media/connector-oracle-cloud-storage/wildcard-paths.png" alt-text="Screenshot that shows how to configure Wildcard file path.":::
 
             - **Wildcard folder path**: Specify the folder path with wildcard characters under the specified bucket to filter source folders.
             - **Wildcard file name**: Specify the file name with wildcard characters under the specified bucket and folder path (or wildcard folder path) to filter source files.
 
     - **List of files**: Specify the **Folder path** and **Path to file list** to indicate to copy a specified file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured. For more examples, go to [File list examples](/azure/data-factory/connector-oracle-cloud-storage?tabs=data-factory#file-list-examples).
 
-       :::image type="content" source="./media/connector-oracle-cloud-storage/list-of-files.png" alt-text="Screenshot showing how to configure List of files.":::
+       :::image type="content" source="./media/connector-oracle-cloud-storage/list-of-files.png" alt-text="Screenshot that shows how to configure List of files.":::
 
         - **Folder path**: Specify the path to the folder under the specified bucket. It's required.
         - **Path to file list**: Specify the path of the text file that includes a list of files you want to copy.
@@ -93,9 +93,9 @@ Under **Advanced**, you can specify the following fields:
 
   When **Start time (UTC)** has a datetime value but **End time (UTC)** is NULL, it means the files whose last modified attribute is greater than or equal to the datetime value are selected. When **End time (UTC)** has a datetime value but **Start time (UTC)** is NULL, it means the files whose last modified attribute is less than the datetime value are selected. The properties can be NULL, which means no file attribute filter is applied to the data.
 
-- **Enable partition discovery**: Specify whether to parse the partitions from the file path and add them as other source columns. It's not selected by default and not supported when you use binary file format.
+- **Enable partitions discovery**: Specify whether to parse the partitions from the file path and add them as other source columns. It's not selected by default and not supported when you use binary file format.
 
-  - **Partition root path**: When partition discovery is enabled, specify the absolute root path to read partitioned folders as data columns.
+  - **Partitions root path**: When partition discovery is enabled, specify the absolute root path to read partitioned folders as data columns.
 
     If it's not specified, by default:
     - When you use a file path or list of files on source, the partition root path is the path that you configured.
@@ -107,9 +107,9 @@ Under **Advanced**, you can specify the following fields:
     - If you specify the partition root path as `root/folder/year=2020`, the copy activity generates two more columns, month and day. These columns have the values "08" and "27," respectively, in addition to the columns inside the files.
     - If the partition root path isn't specified, no extra column is generated.
 
-    :::image type="content" source="./media/connector-oracle-cloud-storage/enable-partition-discovery.png" alt-text="Screenshot that shows Enable partition discovery.":::
+    :::image type="content" source="./media/connector-oracle-cloud-storage/enable-partition-discovery.png" alt-text="Screenshot that shows Enable partitions discovery.":::
 
-- **Max concurrent connection**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
+- **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 - **Additional columns**: Add more data columns to store the source files' relative path or static value. Expression is supported for the latter.
 
 ### Mapping
@@ -140,8 +140,8 @@ The following table contains more information about the copy activity in Oracle 
 | **Prefix** | The prefix for the Oracle Cloud Storage key name under the specified bucket to filter source Oracle Cloud Storage files. | \<your prefix> |No|prefix|
 |For **Wildcard file path** |||||
 | **Bucket** | The Oracle Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|
-| **Wildcard Folder Path** | The folder path with wildcard characters under the specified bucket to filter source folders. | \<your folder path with wildcard characters> |No|wildcardFolderPath |
-| **Wildcard Filename** | The file name with wildcard characters under the specified bucket and folder path (or wildcard folder path) to filter source files. | \<your file name with wildcard characters> |Yes|wildcardFileName |
+| **Wildcard folder path** | The folder path with wildcard characters under the specified bucket to filter source folders. | \<your folder path with wildcard characters> |No|wildcardFolderPath |
+| **Wildcard file name** | The file name with wildcard characters under the specified bucket and folder path (or wildcard folder path) to filter source files. | \<your file name with wildcard characters> |Yes|wildcardFileName |
 |For **List of files** |||||
 | **Bucket** | The Oracle Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|
 | **Directory** |The path to the folder under the specified bucket. | \<your folder name> |No|folderpath|
@@ -149,10 +149,10 @@ The following table contains more information about the copy activity in Oracle 
 ||||||
 | **File format** | The file format for your source data. For information on different file formats, refer to articles in [Supported format](#supported-format).  | / | Yes | / |
 |**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. When this checkbox is selected, and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination.| selected (default) or unselect |No |recursive|
-| **Filter by last modified** | The files with the last modified time in the range [Start time, End time) are filtered for further processing. The time is applied to the UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped, which means no file attribute filter is applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
-| **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as other source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
-| **Partition root path** | When partition discovery is enabled, specify the absolute root path to read partitioned folders as data columns. | < your partition root path > | No | partitionRootPath |
-|**Max concurrent connection** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
+| **Filter by last modified** | The files with the last modified time in the range [**Start time**, **End time**) are filtered for further processing. The time is applied to the UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped, which means no file attribute filter is applied. This property doesn't apply when you configure your file path type as **List of files**.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
+| **Enable partitions discovery** | Indicates whether to parse the partitions from the file path and add them as other source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
+| **Partitions root path** | When partition discovery is enabled, specify the absolute root path to read partitioned folders as data columns. | < your partition root path > | No | partitionRootPath |
+|**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 | **Additional columns** | Add other data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
 ## Related content
