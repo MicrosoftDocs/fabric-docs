@@ -37,7 +37,7 @@ Fabric integrates workloads such as Data Engineering, Data Factory, Data Science
 - Unified data lake storage that preserves data in its original location while using your preferred analytics tools.
 - Centralized administration and governance across all experiences.
 
-Fabric seamlessly integrates data and services, , enabling unified management, governance, and discovery. It ensures security for items, data, and row-level access. You can centrally configure core enterprise capabilities. Permissions are automatically applied across all the underlying services. Additionally, data sensitivity labels inherit automatically across the items in the suite. Governance is powered by Purview which is built into Fabric. 
+Fabric seamlessly integrates data and services, , enabling unified management, governance, and discovery. It ensures security for items, data, and row-level access. You can centrally configure core enterprise capabilities. Permissions are automatically applied across all the underlying services. Additionally, data sensitivity labels inherit automatically across the items in the suite. Governance is powered by Purview which is built into Fabric.
 
 Fabric allows creators to concentrate on producing their best work, freeing them from the need to integrate, manage, or even understand the underlying infrastructure.
 
