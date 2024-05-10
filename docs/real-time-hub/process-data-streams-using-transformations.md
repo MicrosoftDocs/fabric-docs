@@ -1,6 +1,6 @@
 ---
-title: Consume data streams in Real-Time hub
-description: This article describes how to consume data streams in Real-Time hub. Process using transformations in eventstreams, add KQL destination to send it to a KQL table and analyze it, and set alerts. 
+title: Process data streams in Real-Time hub
+description: This article describes how to process data streams in Real-Time hub. Process using transformations in eventstreams, add KQL destination to send it to a KQL table and analyze it, and set alerts. 
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
