@@ -12,7 +12,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.search.form: product-trident
-ms.date: 02/22/2024
+ms.date: 05/10/2024
 ---
 
 # What is Microsoft Fabric?
@@ -27,7 +27,7 @@ Microsoft Fabric integrates separate components into a cohesive stack. Instead o
 
 Microsoft Fabric is built on a foundation of Software as a Service (SaaS). It combines both new and existing components from Power BI, Azure Synapse Analytics, Azure Data Factory, and more services into a unified environment. These components are then tailored into customized user experiences.
 
-:::image type="content" source="media\microsoft-fabric-overview\saas-foundation.png" alt-text="Diagram of the software as a service foundation beneath the different experiences of Fabric.":::
+:::image type="content" source="media\microsoft-fabric-overview\fabric-architecture.png" alt-text="Diagram of the software as a service foundation beneath the different experiences of Fabric." lightbox="media\microsoft-fabric-overview\fabric-architecture.png":::
 
 Fabric integrates workloads such as Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, Data Activator, Industry solutions, and Power BI into a shared SaaS foundation. Each of these experiences are tailored for distinct user roles like data engineers, scientists, or warehousing professionals, and they serve a specific task. The entire Fabric stack has AI integration and it accelerates the data journey. These workloads work together seemlessly and provide the following advantages:
 
@@ -91,7 +91,7 @@ Every developer and business unit in the tenant can easily create their own work
 
 Fabric automatically connects all compute experiences to OneLake, similar to the connection between Office applications and an organizational OneDrive. Fabric experiences, including Data Engineering, Data Warehouse, Data Factory, Power BI, and Real-Time Analytics, all use OneLake as their native store. They don't need any extra configuration.
 
-:::image type="content" source="media\microsoft-fabric-overview\workloads-access-data.png" alt-text="Diagram of different Fabric experiences all accessing the same OneLake data storage.":::
+:::image type="content" source="media\microsoft-fabric-overview\onelake-architecture.png" alt-text="Diagram of different Fabric experiences all accessing the same OneLake data storage." lightbox="media\microsoft-fabric-overview\onelake-architecture.png":::
 
 OneLake allows instant mounting of your existing Platform as a Service (PaaS) storage accounts into OneLake with the [Shortcut](../onelake/onelake-shortcuts.md) feature. You don't need to migrate or move any of your existing data. Using shortcuts, you can access the data stored in your Azure Data Lake Storage.
 
