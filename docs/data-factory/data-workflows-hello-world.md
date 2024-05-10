@@ -19,11 +19,11 @@ In this tutorial, you'll run a hello-world DAG in Data workflows. This tutorial 
 
 To get started, you must complete the following prerequisite:
 
-- Enable Apache Airflow in your Tenant.
+- Enable Data workflows in your Tenant.
   > [!NOTE]
   > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
 
-    1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow projects (preview)' section.
+    1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Data workflows (preview)' section.
 
     2. Click Apply.
 
@@ -33,7 +33,7 @@ To get started, you must complete the following prerequisite:
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 
-2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Project (preview)
+2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Data workflows (preview)
 
    :::image type="content" source="media/data-workflows/more-options.png" lightbox="media/data-workflows/more-options.png" alt-text="Screenshot shows click on more options.":::
 

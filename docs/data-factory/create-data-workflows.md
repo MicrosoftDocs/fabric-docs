@@ -19,12 +19,12 @@ Data workflows provides a simple and efficient way to create and manage Apache A
 
 ## Prerequisites
 
-Enable Apache Airflow in your Tenant.
+- Enable Data workflows in your Tenant.
 
 > [!NOTE]
 > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
 
-1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow projects (preview)' section.
+1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Data workflows (preview)' section.
 2. Select **Apply**.
 
 :::image type="content" source="media/data-workflows/enable-tenant.png" lightbox="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
@@ -32,90 +32,36 @@ Enable Apache Airflow in your Tenant.
 ### Create a Data workflows
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
-2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Project (preview)
+
+2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Data workflows (preview)
 
    :::image type="content" source="media/data-workflows/more-options.png" lightbox="media/data-workflows/more-options.png" alt-text="Screenshot shows click on more options.":::
 
-   :::image type="content" source="media/data-workflows/apache-airflow-project.png" lightbox="media/data-workflows/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow Project.":::
+   :::image type="content" source="media/data-workflows/apache-airflow-project.png" alt-text="Screenshot to select Data Workflow.":::
 
-3. Give a suitable name to your project and Click on Create Button.
+3. Give a suitable name to your project and click on the "Create" button.
 
-### Configure an Airflow Environment
+### Create a DAG File
 
-1. Click on 'Configure Airflow' Card.
-2. Specify the Apache Airflow environment configuration for your DAGs to run against. You can change these settings later as well.
+1. Click on "New DAG file" card -> give the name to the file and Click on "Create" button.
 
-   :::image type="content" source="media/data-workflows/configure-airflow-environment.png" lightbox="media/data-workflows/configure-airflow-environment.png" alt-text="Screenshot to configure Apache Airflow Project.":::
+   :::image type="content" source="media/data-workflows/name-directed-acyclic-graph-file.png" alt-text="Screenshot to name the DAG file.":::
 
-   * <strong>Compute Node Size:</strong> The size of the compute node you want your Airflow environment to run on.
-   * <strong>Enable Autoscale:</strong> Allow your Airflow environment to scale nodes up or down as needed.
-   * <strong>Environment variables:</strong> You can use this key value store within Airflow to store and retrieve arbitrary content or settings.
-   * <strong>Configuration Overrides:</strong> You can override any Airflow configurations that you set in airflow.cfg. Examples are name: AIRFLOW__VAR__FOO and value: BAR. For more information, see Airflow configurations.
-   * <strong>Kubernetes secrets:</strong> You can create a custom Kubernetes secret for your Airflow environment. An example is Private registry credentials to pull images for KubernetesPodOperator.
-   * <strong>Enable Triggers:</strong> Allows the Airflow Tasks to run in deferrable mode.
+2. A boilerplate DAG code is presented to you. You can edit the file as per your requirements.
 
+   :::image type="content" source="media/data-workflows/boilerplate-directed-acyclic-graph.png" lightbox="media/data-workflows/boilerplate-directed-acyclic-graph.png" alt-text="Screenshot presents boilerplate DAG file in Microsoft Fabric.":::
 
-### Synchronize your GitHub Repository
+3. Click on "Save icon".
 
-Specify the git repository you want to sync your Data workflows with.
+   :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
-1. Click on 'Sync with Git' Card, you are navigated to 'File Storage'.
+### Monitor your Data workflow DAG in Apache Airflow UI
 
-:::image type="content" source="media/data-workflows/git-sync.png" lightbox="media/data-workflows/git-sync.png" alt-text="Screenshot to synchronize GitHub repository.":::
+1. The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on the "Monitor in Apache Airflow" button.
 
-2. Fill out the following fields:
+    :::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 
-* <strong>Git service type</strong>: Supported service types:
-    * GitHub
-    * ADO: Azure DevOps
-    * GitLab
-    * BitBucket
-
-* <strong>Git Credential type</strong>: Supported credential types:
-    * None: Choose this credential type, if the repository is public.
-    * Personal Access token: A personal access token from the Git service used to authenticate with repository.
-      * Fill out the fields:
-         * Username: Username of GitHub.
-         * Personal Access token
-    * Service Principal: Select this credential when you choose Git Service as Azure Devops:
-        * Fill out the fields:
-            * Service principal app ID: Client ID of your Service Principal that has access to Azure Devops Repository.
-            * Service principal secret: Client secret with access to Azure DevOps repository.
-            * Service principal tenant ID: Tenant ID of your Service Principal.
-
-* <strong>Repo</strong>: The clone URL to the repository you want to sync.
-* <strong>Branch</strong>: Name of the repository’s branch you want to sync.
-
-3. Click on 'Apply'.
-
-#### Supported Git Repository Structure
-
-```
-|── dags/
-|   |-- *.py
-|-- plugins
-|    |-- executors/
-|    |   ├-- __init__.py
-|    |   └-- *.py
-|    |-- hooks/
-|    |   ├-- __init__.py
-|    |   └-- *.py
-|    |-- operators/
-|    |   ├-- __init__.py
-|    |   └-- *.py
-|    |-- transfers/
-|    |   ├-- __init__.py
-|    |   └-- *.py
-|    |-- triggers/
-|    |    ├-- __init__.py
-|    |    └-- *.py
-```
-
-### Start Apache Airflow Environment
-
-Click on Start Apache Airflow Environment to configure the Airflow Runtime. (It should take about 5 mins for the configuration).
-
-:::image type="content" source="media/data-workflows/start-apache-airflow.png" lightbox="media/data-workflows/start-apache-airflow.png" alt-text="Screenshot to start Apache Airflow Project.":::
+    :::image type="content" source="media/data-workflows/directed-acyclic-graph-in-ui.png" alt-text="Screenshot presents the loaded Airflow DAG.":::
 
 ## Related Content
 

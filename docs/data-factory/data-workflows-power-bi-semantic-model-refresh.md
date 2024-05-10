@@ -1,6 +1,6 @@
 ---
-title: Orchestrate Azure Databricks job with Data workflows
-description: Learn to run Azure Databricks job with Data workflows.
+title: Refresh Power BI semantic model with Data workflows
+description: Learn to refresh Power BI semantic model with Data workflows.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 04/15/2023
 ---
 
-# Tutorial: Orchestrate Azure Databricks ETL jobs with data workflows
+# Tutorial: Refresh Power BI semantic model with Data workflows
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
 This tutorial outlines the integration of Azure Databricks and Data workflows (powered by Apache Airflow) for orchestrating data pipelines. Job orchestration is crucial for managing complex workflows, ensuring data accuracy, and optimizing processing efficiency. Azure Databricks is a powerful analytics platform built on the top of Apache Spark, while Apache Airflow offers robust workflow management capabilities. Combining these tools enables seamless coordination of tasks, from data ingestion to transformation and analysis. The Apache Airflow Azure Databricks connection lets you take advantage of the optimized Spark engine offered by Azure Databricks with the scheduling features of Apache Airflow.
 
-In this tutorial, you build an Apache Airflow DAG to trigger the Azure Databricks job with the Data workflows.
+In this tutorial, you'll learn how to build an Apache Airflow DAG to trigger the Power BI semantic model refresh from Data Workflows.
 
 ## Prerequisites
 
@@ -32,72 +32,71 @@ To get started, you must complete the following prerequisites:
 
   :::image type="content" source="media/data-workflows/enable-tenant.png" lightbox="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
+- You must have an Admin account of Power BI.
+
+- Create the [Service Principal](/entra/identity-platform/howto-create-service-principal-portal). You need to add your service principal as the Contributor in your Power BI workspace.
+
 - [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md)
 
-- [Create a basic ETL pipeline with Databricks](https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html)
+- [Create a semantic model in Power BI](https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html)
 
 ## Add Apache Airflow requirement
 
 1. Navigate to "Settings" and select "Environment Configuration".
 
-2. Under "Apache Airflow Requirements", include "[apache-airflow-providers-databricks](https://airflow.apache.org/docs/apache-airflow-providers-databricks/stable/index.html)".
+2. Under "Apache Airflow Requirements", include "[airflow-powerbi-plugin](https://pypi.org/project/airflow-powerbi-plugin/)".
 
 3. Select "Apply," to save the changes.
 
    :::image type="content" source="media/data-workflows/databricks-add-requirement.png" lightbox="media/data-workflows/databricks-add-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
 
-## Create an Azure Databricks personal access token for Apache Airflow connection
-
-1. In your Azure Databricks workspace, select your Azure Databricks username in the top bar, and then select Settings from the drop-down.
-2. Select Developer.
-3. Next to Access tokens, select Manage.
-4. Select Generate new token.
-5. (Optional) Enter a comment that helps you to identify this token in the future, and change the token’s default lifetime of 90 days. To create a token with no lifetime (not recommended), leave the Lifetime (days) box empty (blank).
-6. Select Generate.
-7. Copy the displayed token to a secure location, and then select Done.
-
-## Create an Apache Airflow connection to connect with Azure Databricks workspace
-
-When you install "apache-airflow-providers-databricks" as a requirement in Data workflows environment, a default connection for Azure Databricks is configured by default in Apache Airflow Connections list. Update the connection to connect to your workspace using the personal access token you created previously:
+## Create an Apache Airflow connection to connect with Power BI workspace
 
 1. Select on the "View Airflow connections" to see a list of all the connections configured.
 
    :::image type="content" source="media/data-workflows/view-apache-airflow-connection.png" lightbox="media/data-workflows/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
-2. Under Conn ID, locate databricks_default and select the Edit record button.
+2. Add the new connection, use `Generic` connection type. Store the following fields:
+    * <strong>Connection Id:</strong> The Connection Id.
+    * <strong>Connection Type:</strong>Generic
+    * <strong>Login:</strong>The Client Id of your service principal.
+    * <strong>Password:</strong>The Client secret of your service principal.
+    * <strong>Extra:</strong>{"tenantId": The Tenant Id of your service principal.}
 
-3. Replace the value in the Host field with the workspace instance name of your Azure Databricks deployment, for example, ```https://adb-123456789.cloud.databricks.com```.
-
-4. In the Password field, enter your Azure Databricks personal access token.
-
-5. Select Save.
+3. Select Save.
 
 ## Create Apache Airflow DAG
 
 1. Start by selecting the "New DAG File" card. Then, assign a name to the file and select the "Create".
 
-1. Once created, you are presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the `job_id` argument with the Azure Databricks Job ID.
+1. Once created, you are presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the `dataset_id` and `workspace_id` argument with the Power BI semantic model Id and workspace Id respectively.
 
 ```python
+from datetime import datetime
+# The DAG object
 from airflow import DAG
-from airflow.providers.databricks.operators.databricks import DatabricksRunNowOperator
-from airflow.utils.dates import days_ago
+from airflow.operators.bash import BashOperator
+from airflow_powerbi_plugin.operators.powerbi import PowerBIDatasetRefreshOperator
 
-default_args = {
-  'owner': 'airflow'
-}
-
-with DAG('databricks_dag',
-  start_date = days_ago(2),
-  schedule_interval = "@hourly",
-  default_args = default_args
+with DAG(
+        dag_id='refresh_dataset_powerbi',
+        schedule_interval=None,
+        start_date=datetime(2023, 8, 7),
+        catchup=False,
+        concurrency=20,
 ) as dag:
 
- transform_data = DatabricksRunNowOperator(
-    task_id = 'transform_data',
-    databricks_conn_id = 'databricks_default',
-    job_id ="<JOB_ID>>"
-  )
+    # [START howto_operator_powerbi_refresh_dataset]
+    dataset_refresh = PowerBIDatasetRefreshOperator(
+        powerbi_conn_id= "powerbi_default",
+        task_id="sync_dataset_refresh",
+        dataset_id="<dataset_id>,
+        group_id="<workspace_id>",
+    )
+    # [END howto_operator_powerbi_refresh_dataset]
+
+    dataset_refresh
+
 ```
 
 1. Select on "Save," to save the file.

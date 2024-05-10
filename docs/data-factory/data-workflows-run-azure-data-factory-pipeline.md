@@ -19,12 +19,12 @@ In this tutorial, you'll build an Apache Airflow DAG to orchestrate the ADF pipe
 
 To get started, you must complete the following prerequisites:
 
-- Enable Apache Airflow in your Tenant.
+- Enable Data workflows in your Tenant.
 
   > [!NOTE]
   > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow projects (preview)" section.
+  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Data workflows (preview)" section.
 
   2. Click Apply.
 
