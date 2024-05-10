@@ -10,9 +10,13 @@ ms.date: 05/09/2024
 ms.search.form: run_series_analysis
 ---
 
-# What is Spark run series analysis? 
+# Run Series Analysis Overview 
 
-The Apache Spark run series automatically categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs from the same notebook or Spark job definition. The run series feature illustrates the duration trend and data input or output  trend for each Spark application instance. It automatically scans the run series, detects anomalies, and provides detailed views for individual Spark applications.
+The Apache Spark run series automatically categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs from the same notebook or Spark job definition.
+
+## What is Spark run series analysis? 
+
+The run series feature illustrates the duration trend and data input or output  trend for each Spark application instance. It automatically scans the run series, detects anomalies, and provides detailed views for individual Spark applications.
 
 The run series analysis feature offers the following key capabilities:
 
