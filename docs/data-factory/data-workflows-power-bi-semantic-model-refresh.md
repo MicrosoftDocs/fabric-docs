@@ -103,6 +103,34 @@ with DAG(
 
    :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
+# Create a plugin file for Power BI (Optional)
+
+If you wish to enable an external monitoring link to Power BI from the Airflow UI, follow these steps:
+
+1. Create a new file under the 'Plugins' folder.
+2. Paste the contents provided below into the file.
+```python
+from airflow.plugins_manager import AirflowPlugin
+
+from airflow_powerbi_plugin.hooks.powerbi import PowerBIHook
+from airflow_powerbi_plugin.operators.powerbi import PowerBILink
+
+# Defining the plugin class
+class AirflowExtraLinkPlugin(AirflowPlugin):
+    """
+    PowerBI plugin.
+    """
+
+    name = "powerbi_plugin"
+    operator_extra_links = [
+        PowerBILink(),
+    ]
+    hooks= [
+        PowerBIHook,
+    ]
+```
+3. Upon completion, you will observe the DAG loaded with the external monitoring link to the Power BI semantic model refresh.
+
 ## Monitor the Data workflow DAG and run it from Apache Airflow UI
 
 After you click on save, files are automatically loaded into the Apache Airflow UI. To monitor them, select on the "Monitor in Apache Airflow" button.
