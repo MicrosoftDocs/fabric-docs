@@ -65,21 +65,21 @@ Fabric offers a comprehensive set of analytics experiences designed to work toge
 
 Microsoft Fabric enables organizations and individuals to turn large and complex data repositories into actionable workloads and analytics, and is an implementation of data mesh architecture. For more information, see [What is a data mesh?](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh)
 
-## OneLake and the unification of lakehouses
+## OneLake: The unification of lakehouses
 
-The Microsoft Fabric platform unifies the OneLake and Lakehouse architecture across an enterprise.
+The Microsoft Fabric platform unifies the OneLake and lakehouse architecture across an enterprise.
 
 ### OneLake
 
-A data lake is the foundation on which all the Fabric services are built. Microsoft Fabric Lake is also known as [OneLake](../onelake/onelake-overview.md). OneLake is built into the Fabric service and provides a unified location to store all organizational data where the experiences operate.
+A data lake is the foundation on which all the Fabric workloads are built. Microsoft Fabric Lake is also known as [OneLake](../onelake/onelake-overview.md). OneLake is built into the Fabric platform and provides a unified location to store all organizational data where the workloads operate.
 
-OneLake is built on ADLS (Azure Data Lake Storage) Gen2. It provides a single SaaS experience and a tenant-wide store for data that serves both professional and citizen developers. OneLake simplifies Fabric experiences, eliminating the need for users to understand any infrastructure concepts such as resource groups, RBAC (Role-Based Access Control), Azure Resource Manager, redundancy, or regions. Users don't even need an Azure account.
+OneLake is built on ADLS (Azure Data Lake Storage) Gen2. It provides a single SaaS experience and a tenant-wide store for data that serves both professional and citizen developers. OneLake simplifies Fabric experiences by eliminating the need for you to understand infrastructure concepts such as resource groups, RBAC (Role-Based Access Control), Azure Resource Manager, redundancy, or regions. You don't need an Azure account to use Fabric.
 
-OneLake eliminates problematic data silos, which individual developers often create when they provision and configure their own isolated storage accounts. Instead, OneLake provides a single, unified storage system for all developers. This system streamlines discovery and data sharing, and OneLake centrally and uniformly enforces compliance with policy and security settings. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
+OneLake eliminates data silos, which individual developers often create when they provision and configure their own isolated storage accounts. Instead, OneLake provides a single, unified storage system for all developers. It ensures easy data discovery, sharing, and uniform enforcement of policy and security settings. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
 
-### Organizational structure of OneLake and lakehouses
+### OneLake and lakehouse data hierarchy
 
-OneLake is hierarchical in nature to simplify management across your organization. Microsoft Fabric includes OneLake and there's no requirement for any up-front provisioning. There's only one OneLake per tenant and it provides a single-pane-of-glass file-system namespace that spans across users, regions, and clouds. OneLake divides data into manageable containers for easy handling.
+OneLake is hierarchical in nature to simplify management across your organization. Microsoft Fabric includes OneLake and there's no requirement for any up-front provisioning. There's only one OneLake per tenant and it provides a single-pane-of-glass file-system namespace that spans across users, regions, and clouds. OneLake organizes data into manageable containers for easy handling.
 
 The tenant maps to the root of OneLake and is at the top level of the hierarchy. You can create any number of workspaces, which you can think of as folders, within a tenant.
 
