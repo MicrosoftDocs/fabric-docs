@@ -17,7 +17,7 @@ ms.date: 05/07/2024
 In Fabric API for GraphQL, you can expose many data sources through a single API item. This feature allows you to issue a single query that retrieves data across multiple data sources.
 
 > [!NOTE]
-> A multi-data source request fans out individual requests to data sources.
+> A multi-data source request fans out individual requests to data sources. You cannot create relationships across types that span multiple data sources.
 
 ## Query example
 
