@@ -1,6 +1,6 @@
 ---
-title: Create a Data workflows project in Microsoft Fabric
-description: This tutorial helps you create a Data workflows in Microsoft Fabric.
+title: Synchronize your code from an existing Git repo
+description: This tutorial helps you Synchronize your code from an existing Git repo.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: nabhishek
@@ -10,12 +10,13 @@ ms.topic: quickstart
 ms.date: 03/25/2024
 ---
 
-# Quickstart: Create a Data workflow
+# Synchronize your code from an existing GitHub repository
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-Data workflows provides a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease. In this quickstart, you create your first Data workflow and run a Directed Acyclic Graph (DAG) to familiarize yourself with the environment and functionalities of Data workflows.
+Data workflows provides a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease. It provides you the two methods to store your Data worklows files. In this article, you learn to synchronize your code from an existing GitHub repository.  
+
 
 ## Prerequisites
 

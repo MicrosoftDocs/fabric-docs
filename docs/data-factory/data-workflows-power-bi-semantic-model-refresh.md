@@ -52,16 +52,16 @@ To get started, you must complete the following prerequisites:
 
 ## Create an Apache Airflow connection to connect with Power BI workspace
 
-1. Select on the "View Airflow connections" to see a list of all the connections configured.
+1. Select on the "View Airflow connections" to see a list of all the connections are configured.
 
    :::image type="content" source="media/data-workflows/view-apache-airflow-connection.png" lightbox="media/data-workflows/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
-2. Add the new connection, use `Generic` connection type. Store the following fields:
-    * <strong>Connection Id:</strong> The Connection Id.
+2. Add the new connection. You may use `Generic` connection type. Store the following fields:
+    * <strong>Connection ID:</strong> The Connection ID.
     * <strong>Connection Type:</strong>Generic
-    * <strong>Login:</strong>The Client Id of your service principal.
+    * <strong>Login:</strong>The Client ID of your service principal.
     * <strong>Password:</strong>The Client secret of your service principal.
-    * <strong>Extra:</strong>{"tenantId": The Tenant Id of your service principal.}
+    * <strong>Extra:</strong>{"tenantId": The Tenant ID of your service principal.}
 
 3. Select Save.
 
@@ -69,7 +69,7 @@ To get started, you must complete the following prerequisites:
 
 1. Start by selecting the "New DAG File" card. Then, assign a name to the file and select the "Create".
 
-1. Once created, you are presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the `dataset_id` and `workspace_id` argument with the Power BI semantic model Id and workspace Id respectively.
+1. Once created, you're presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the `dataset_id` and `workspace_id` argument with the Power BI semantic model ID and workspace ID respectively.
 
 ```python
 from datetime import datetime
@@ -105,7 +105,7 @@ with DAG(
 
 ## Monitor the Data workflow DAG and run it from Apache Airflow UI
 
-After saving, the DAG files are automatically loaded into the Apache Airflow UI. To monitor them, select on the "Monitor in Apache Airflow" button.
+After you click on save, files are automatically loaded into the Apache Airflow UI. To monitor them, select on the "Monitor in Apache Airflow" button.
 
 :::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 
