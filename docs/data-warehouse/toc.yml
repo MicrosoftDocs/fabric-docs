@@ -173,6 +173,9 @@ items:
       - name: Secure data 
         displayName: Securing data in mirrored Azure SQL Database
         href: ../database/mirrored-database/azure-sql-database-how-to-data-security.md
+      - name: Troubleshoot
+        displayName: Troubleshoot mirrored Azure SQL Database
+        href: ../database/mirrored-database/azure-sql-database-troubleshoot.md
       - name: Limitations
         displayName: Limitations in mirrored Azure SQL Database
         href: ../database/mirrored-database/azure-sql-database-limitations.md
