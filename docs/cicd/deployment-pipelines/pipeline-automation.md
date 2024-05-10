@@ -1,5 +1,5 @@
 ---
-title: Automate deployment pipelines with APIs For Power BI items
+title: Automate deployment pipelines with APIs for Power BI items
 description: Learn how to automate your deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs and Azure DevOps.
 author: data-goblin
 ms.author: v-kurtbuhler
@@ -16,7 +16,7 @@ ms.search.form: Deployment pipelines APIs, Automate deployment pipelines, Power 
 The Microsoft Power BI [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Power BI content.
 
 > [!NOTE]
-> The deployment pipelines APIs listed here only apply to Power BI items. For a Fabric APIs see the [Fabric API documentation](pipeline-automation-fabric.md).
+> The deployment pipelines APIs listed here only apply to Power BI items. For Fabric APIs, see the [Fabric API documentation](pipeline-automation-fabric.md).
 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
 
