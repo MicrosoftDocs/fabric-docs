@@ -138,14 +138,14 @@ To assign existing items to a task:
 
 The items you selected items are assigned to the task. In the item list, task assignments are shown in the **Task** column.
 
-### Unassign items from tasks
+## Unassign items from tasks
 
 You can unassign items from a selected task or from multiple tasks.
 
 > [!NOTE]
 > Unassigning items from tasks **does not** remove the items from the workspace.
 
-#### Unassign items from a task
+### Unassign items from a task
 
 To unassign items from a task:
 
@@ -157,7 +157,7 @@ To unassign items from a task:
 
 :::image type="content" source="./media/task-flow-work-with/unassign-items-from-task.png" alt-text="Screenshot illustrating how to unassign items from a task.":::
 
-#### Unassign items from multiple tasks
+### Unassign items from multiple tasks
 
 To unassign items from multiple tasks:
 
