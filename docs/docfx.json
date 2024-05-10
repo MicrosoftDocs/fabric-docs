@@ -64,6 +64,8 @@
                 "cicd/**/*.yml": "cicd",
                 "data-engineering/**/*.md": "data-engineering",
                 "data-engineering/**/*.yml": "data-engineering",
+                "data-activator/**/*.md": "data-activator",
+                "data-activator/**/*.yml": "data-activator",
                 "data-factory/**/*.md": "data-factory",
                 "data-factory/**/*.yml": "data-factory",
                 "data-science/**/*.md": "data-science",

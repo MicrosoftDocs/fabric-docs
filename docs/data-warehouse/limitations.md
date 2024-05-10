@@ -1,10 +1,12 @@
 ---
 title: Limitations
 description: This article contains a list of current limitations in Microsoft Fabric.
-author: joannapea
-ms.author: joanpo
-ms.reviewer: wiassaf
-ms.date: 02/08/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: joanpo
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -14,7 +16,7 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This artic
 ---
 # Limitations in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article details the current limitations in [!INCLUDE [product-name](../includes/product-name.md)].
 
@@ -39,15 +41,6 @@ For more limitations in specific areas, see:
 - [Tables](tables.md#limitations)
 - [Transactions](transactions.md#limitations)
 - [Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
-
-## Regional availability
-
-The following Azure regions are currently not supported for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)]:
-   - West India
-   - UAE Central
-   - Poland
-   - Israel
-   - Italy
 
 ## Limitations of the SQL analytics endpoint
 

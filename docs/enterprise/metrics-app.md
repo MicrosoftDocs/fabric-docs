@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 02/18/2024
+ms.date: 04/07/2024
 ---
 
 # What is the Microsoft Fabric Capacity Metrics app?

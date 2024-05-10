@@ -1,22 +1,28 @@
 ---
-title: Visualize data with Apache Spark and Python
-description: Create rich data visualizations by using Apache Spark and Python
+title: Analyze data with Apache Spark and Python
+description: In this article, learn how to create rich data visualizations by using Apache Spark and Python in Microsoft Fabric.
 ms.reviewer: mopeakande
 author: midesa
 ms.author: midesa
-ms.topic: overview
+ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/24/2023
+ms.date: 04/16/2024
 ms.search.form: Python Language
+#customer intent: As a data analyst, I want to learn to perform data analysis by using Azure Open Datasets and Apache Spark to create useful visualizations.
 ---
 
 # Analyze data with Apache Spark and Python
 
-In this tutorial, you'll learn how to perform exploratory data analysis by using Azure Open Datasets and Apache Spark. 
+In this article, you learn how to perform exploratory data analysis by using Azure Open Datasets and Apache Spark. This article analyzes the New York City taxi dataset. The data is available through Azure Open Datasets. This subset of the dataset contains information about yellow taxi trips: information about each trip, the start and end time and locations, the cost, and other interesting attributes.
 
-In particular, we'll analyze the [New York City (NYC) Taxi](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/) dataset. The data is available through Azure Open Datasets. This subset of the dataset contains information about yellow taxi trips: information about each trip, the start and end time and locations, the cost, and other interesting attributes.
+In this article, you:
+
+> [!div class="checklist"]
+> - Download and prepare data
+> - Analyze data
+> - Visualize data
   
 ## Prerequisites
 
@@ -24,11 +30,14 @@ In particular, we'll analyze the [New York City (NYC) Taxi](https://azure.micros
 
 ## Download and prepare the data
 
+To start, download the [New York City (NYC) Taxi](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/) dataset and prepare the data.
+
 1. Create a notebook by using PySpark. For instructions, see [Create a notebook](../../data-engineering/how-to-use-notebook.md).
+
    > [!Note]
    > Because of the PySpark kernel, you don't need to create any contexts explicitly. The Spark context is automatically created for you when you run the first code cell.
 
-2. In this tutorial, we'll use several different libraries to help us visualize the dataset. To do this analysis, import the following libraries:
+2. In this article, you use several different libraries to help visualize the dataset. To do this analysis, import the following libraries:
 
    ```python
    import matplotlib.pyplot as plt
@@ -36,7 +45,7 @@ In particular, we'll analyze the [New York City (NYC) Taxi](https://azure.micros
    import pandas as pd
    ```
 
-3. Because the raw data is in a Parquet format, you can use the Spark context to pull the file into memory as a DataFrame directly. Create a Spark DataFrame by retrieving the data via the Open Datasets API. Here, we use the Spark DataFrame *schema on read* properties to infer the datatypes and schema.
+3. Because the raw data is in Parquet format, you can use the Spark context to pull the file into memory as a DataFrame directly. Use the Open Datasets API to retrieve the data and create a Spark DataFrame. To infer the datatypes and schema, use the Spark DataFrame *schema on read* properties.
 
     ```python
     from azureml.opendatasets import NycTlcYellow
@@ -49,7 +58,7 @@ In particular, we'll analyze the [New York City (NYC) Taxi](https://azure.micros
     df = spark.createDataFrame(nyc_tlc_pd)
     ```
 
-4. After the data is read, we'll want to do some initial filtering to clean the dataset. We might remove unneeded columns and add columns that extract important information. In addition, we'll filter out anomalies within the dataset.
+4. After the data is read, do some initial filtering to clean the dataset. You might remove unneeded columns and add columns that extract important information. In addition, you can filter out anomalies within the dataset.
 
    ```python
    # Filter the dataset 
@@ -69,14 +78,14 @@ In particular, we'll analyze the [New York City (NYC) Taxi](https://azure.micros
 
 ## Analyze data
 
-As a data analyst, you have a wide range of tools available to help you extract insights from the data. In this part of the tutorial, we'll walk through a few useful tools available within [!INCLUDE [product-name](../../includes/product-name.md)] notebooks. In this analysis, we want to understand the factors that yield higher taxi tips for our selected period.
+As a data analyst, you have a wide range of tools available to help you extract insights from the data. In this part of the article, learn about a few useful tools available within [!INCLUDE [product-name](../../includes/product-name.md)] notebooks. In this analysis, you want to understand the factors that yield higher taxi tips for the selected period.
 
 ### Apache Spark SQL Magic
 
-First, we'll perform exploratory data analysis by Apache Spark SQL and magic commands with the [!INCLUDE [product-name](../../includes/product-name.md)] notebook. After we have our query, we'll visualize the results by using the built-in ```chart options``` capability.
+First, do exploratory data analysis by using Apache Spark SQL and magic commands with the [!INCLUDE [product-name](../../includes/product-name.md)] notebook. After you have the query, visualize the results by using the built-in `chart options` capability.
 
-1. Within your notebook, create a new cell and copy the following code. By using this query, we want to understand how the average tip amounts have changed over the period we've selected. This query will also help us identify other useful insights, including the minimum/maximum tip amount per day and the average fare amount.
-   
+1. In the notebook, create a new cell and copy the following code. By using this query, you can understand how the average tip amounts change over the period you select. This query also helps you identify other useful insights, including the minimum/maximum tip amount per day and the average fare amount.
+
    ```sql
    %%sql
    SELECT 
@@ -90,13 +99,13 @@ First, we'll perform exploratory data analysis by Apache Spark SQL and magic com
    ORDER BY day_of_month ASC
    ```
 
-2. After our query finishes running, we can visualize the results by switching to the chart view. This example creates a line chart by specifying the ```day_of_month``` field as the key and ```avgTipAmount``` as the value. After you've made the selections, select **Apply** to refresh your chart.
+2. After your query finishes running, you can visualize the results by switching to the chart view. This example creates a line chart by specifying the `day_of_month` field as the key and `avgTipAmount` as the value. After you make the selections, select **Apply** to refresh your chart.
 
 ## Visualize data
 
-In addition to the built-in notebook charting options, you can use popular open-source libraries to create your own visualizations. In the following examples, we'll use Seaborn and Matplotlib. These are commonly used Python libraries for data visualization.
+In addition to the built-in notebook charting options, you can use popular open-source libraries to create your own visualizations. In the following examples, use Seaborn and Matplotlib, which are commonly used Python libraries for data visualization.
 
-1. To make development easier and less expensive, we'll downsample the dataset. We'll use the built-in Apache Spark sampling capability. In addition, both Seaborn and Matplotlib require a Pandas DataFrame or NumPy array. To get a Pandas DataFrame, use the ```toPandas()``` command to convert the DataFrame.
+1. To make development easier and less expensive, downsample the dataset. Use the built-in Apache Spark sampling capability. In addition, both Seaborn and Matplotlib require a Pandas DataFrame or NumPy array. To get a Pandas DataFrame, use the `toPandas()` command to convert the DataFrame.
 
    ```python
    # To make development easier, faster, and less expensive, downsample for now
@@ -106,7 +115,7 @@ In addition to the built-in notebook charting options, you can use popular open-
    sampled_taxi_pd_df = sampled_taxi_df.toPandas()
    ```
 
-1. We  want to understand the distribution of tips in our dataset. We'll use Matplotlib to create a histogram that shows the distribution of tip amount and count. Based on the distribution, we can see that tips are skewed toward amounts less than or equal to $10.
+1. You can understand the distribution of tips in the dataset. Use Matplotlib to create a histogram that shows the distribution of tip amount and count. Based on the distribution, you can see that tips are skewed toward amounts less than or equal to $10.
 
    ```python
    # Look at a histogram of tips by count by using Matplotlib
@@ -119,9 +128,9 @@ In addition to the built-in notebook charting options, you can use popular open-
    plt.show()
    ```
 
-   ![Screenshot of histogram of tips.](../media/python-visualization/histogram.png)
+   :::image type="content" source="../media/python-visualization/histogram.png" alt-text="Screenshot of histogram that shows tip amount distribution.":::
 
-1. Next, we want to understand the relationship between the tips for a given trip and the day of the week. Use Seaborn to create a box plot that summarizes the trends for each day of the week. 
+1. Next, try to understand the relationship between the tips for a given trip and the day of the week. Use Seaborn to create a box plot that summarizes the trends for each day of the week.
 
    ```python
    # View the distribution of tips by day of week using Seaborn
@@ -133,9 +142,9 @@ In addition to the built-in notebook charting options, you can use popular open-
 
    ```
 
-   ![Graph that shows the distribution of tips per day.](../media/python-visualization/data-analyst-tutorial-per-day.png)
+   :::image type="content" source="../media/python-visualization/data-analyst-tutorial-per-day.png" alt-text="Graph that shows the distribution of tips per day.":::
 
-4. Another hypothesis of ours might be that there's a positive relationship between the number of passengers and the total taxi tip amount. To verify this relationship, run the following code to generate a box plot that illustrates the distribution of tips for each passenger count.
+1. Another hypothesis might be that there's a positive relationship between the number of passengers and the total taxi tip amount. To verify this relationship, run the following code to generate a box plot that illustrates the distribution of tips for each passenger count.
 
    ```python
    # How many passengers tipped by various amounts 
@@ -147,10 +156,11 @@ In addition to the built-in notebook charting options, you can use popular open-
    plt.suptitle('')
    plt.show()
    ```
-   ![Graph that shows a box whisker plot.](../media/python-visualization/box-whisker-plot.png)
 
-5. Last, we want to understand the relationship between the fare amount and the tip amount. Based on the results, we can see that there are several observations where people don't tip. However, we also see a positive relationship between the overall fare and tip amounts.
-   
+   :::image type="content" source="../media/python-visualization/box-whisker-plot.png" alt-text="Graph that shows a box whisker plot of tip amount by passenger count.":::
+
+1. Last, explore the relationship between the fare amount and the tip amount. Based on the results, you can see that there are several observations where people don't tip. However, there's a positive relationship between the overall fare and tip amounts.
+
    ```python
    # Look at the relationship between fare and tip amounts
 
@@ -163,9 +173,9 @@ In addition to the built-in notebook charting options, you can use popular open-
    plt.show()
    ```
 
-   ![Screenshot of scatter plot of tip amount.](../media/python-visualization/scatter.png)
+   :::image type="content" source="../media/python-visualization/scatter.png" alt-text="Screenshot of scatter plot of tip amount.":::
 
 ## Related content
 
-- Learn how to use the Pandas API on Apache Spark: [Pandas API on Apache Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html)
+- [Pandas API on Apache Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html)
 - [Python in-line installation](../../data-engineering/library-management.md#python-in-line-installation)

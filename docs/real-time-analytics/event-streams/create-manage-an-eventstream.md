@@ -1,20 +1,15 @@
 ---
-title: Create and manage an eventstream in Microsoft Fabric
-description: This article describes how to create and manage an eventstream item with Microsoft Fabric event streams feature.
+title: Create an eventstream in Microsoft Fabric
+description: This article describes how to create an eventstream item with Microsoft Fabric event streams feature.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 03/15/2024
 ms.search.form: Event Streams Overview
 ---
 
-# Create and manage an eventstream in Microsoft Fabric
+# Create an eventstream in Microsoft Fabric
 
 The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
 
@@ -46,21 +41,9 @@ You can create an eventstream on the **Workspace** page, the **Real-Time Analyti
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-naming.png" alt-text="Screenshot showing where to enter the eventstream name on the New Eventstream screen." :::
 
-1. Creation of the new eventstream in your workspace may take a few seconds. Once it’s done, you're directed to the main editor where you can add sources and destinations to your eventstream. See the [Main editor](#main-editor-for-eventstreams) section for details.
+1. Creation of the new eventstream in your workspace can take a few seconds. After the eventstream is created, you're directed to the main editor where you can add sources and destinations to your eventstream. See the [Main editor](#main-editor-for-eventstreams) section for details.
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-completed.png" alt-text="Screenshot showing the eventstream creation completed." lightbox="./media/create-manage-an-eventstream/eventstream-creation-completed.png" :::
-
-## Manage an eventstream
-
-After you create an eventstream, you can edit and manage the eventstream in your workspace.
-
-- **Delete**: Delete the eventstream from your workspace.
-- **Settings**: Change the eventstream name, edit the sensitivity, and set the endorsement to Certified or Promoted Power BI content.
-- **Add to Favorites**: Add the eventstream to the **Home** > **Favorites** tab.
-- **View lineage**: See an overview of where all the data comes from and goes to.
-- **View details**: View detailed information about your eventstream.
-
-    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-management.png" alt-text="Screenshot showing the eventstream management." lightbox="./media/create-manage-an-eventstream/eventstream-management.png" :::
 
 ## Main editor for eventstreams
 
@@ -78,5 +61,6 @@ The following screenshot shows an eventstream with its source and destination co
 
 ## Related content
 
+- To learn how to configure an eventstream and more, see [Manage an eventstream](manage-eventstream.md).
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)

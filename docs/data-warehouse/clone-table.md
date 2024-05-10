@@ -1,10 +1,12 @@
 ---
 title: Clone table
 description: Learn about table clones in Microsoft Fabric.
-author: ajagadish-24
-ms.author: ajagadish
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: ajagadish
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -76,6 +78,8 @@ Due to its autonomous existence, both the original source and the clones can be 
 The objects described here are included in the table clone:
 
 - The clone table inherits object-level SQL security from the source table of the clone. As the [workspace roles](workspace-roles.md) provide read access by default, [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) permission can be set on the table clone if desired.
+  
+- The clone table inherits the [row-level security (RLS)](row-level-security.md) and [dynamic data masking](dynamic-data-masking.md) from the source of the clone table.
 
 - The clone table inherits all attributes that exist at the source table, whether the clone was created within the same schema or across different schemas in a warehouse.
 
@@ -110,8 +114,13 @@ For auditing or compliance purposes, zero copy clones can be easily used to crea
 - Clone table is not supported on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - Clone of a warehouse or schema is currently not supported.
 - Table clones submitted before the retention period of seven days cannot be created.
-- Cloned tables do not currently inherit [row-level security](row-level-security.md) or dynamic data masking.
 - Changes to the table schema prevent a clone from being created prior to the table schema change.
+
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)
 
 ## Related content
 
@@ -119,8 +128,3 @@ For auditing or compliance purposes, zero copy clones can be easily used to crea
 - [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)
 - [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true)
 - [Query the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in Microsoft Fabric](query-warehouse.md)
-
-## Next step
-
-> [!div class="nextstepaction"]
-> [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)

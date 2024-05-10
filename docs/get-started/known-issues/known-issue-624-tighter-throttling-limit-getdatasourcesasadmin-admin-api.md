@@ -4,7 +4,7 @@ description: A known issue is posted where Tighter throttling limit for GetDatas
 author: mihart
 ms.author: mihart
 ms.topic: troubleshooting 
-ms.date: 02/14/2024
+ms.date: 03/14/2024
 ms.custom: known-issue-624
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-624
 
 In our ongoing efforts to enhance the performance and reliability of admin APIs, we recently implemented new throttling limits based on historical usage data. However, it's now apparent that the introduction of a new throttling limit, set at 50 calls per hour for the GetDatasourcesAsAdmin API, is overly restrictive for quite a few customers. We're actively addressing this issue by reverting to our previous throttling mechanism, where calls are queued rather than rejected. This interim solution ensures smoother operation while we determine a new throttling limit that accommodates all intended use cases for this API.
 
-**Status:** Open
+**Status:** Fixed: March 14, 2024
 
 **Product Experience:** Administration & Management
 

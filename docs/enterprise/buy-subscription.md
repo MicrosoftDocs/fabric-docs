@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/18/2023
+ms.date: 05/01/2024
 ---
 
 # Buy a Microsoft Fabric subscription
@@ -32,7 +32,9 @@ Azure SKUs, also known as F SKUs, are the recommended capacities for Microsoft F
 
 Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
-* Pay as you go with no time commitment.
+* Pay-as-you-go with no time commitment.
+
+* A [capacity reservation](/azure/cost-management-billing/reservations/fabric-capacity). This feature allows you to reserve a capacity for a specific period of time, and save money on your Azure bill. A reserved capacity is no longer charged at the pay-as-you-go rates.
 
 * You can [scale your capacity](scale-capacity.md) up or down using the Azure portal.
 

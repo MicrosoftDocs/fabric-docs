@@ -1,19 +1,21 @@
 ---
 title: Data warehouse tutorial - transform data using a stored procedure
 description: In this tutorial step, learn how to create and save a new stored procedure to transform data.
-ms.reviewer: wiassaf
-ms.author: scbradl
-author: bradleyschacht
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: scbradl
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
 ---
 
 # Tutorial: Transform data using a stored procedure
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Learn how to create and save a new stored procedure to transform data.
 
@@ -21,7 +23,7 @@ Learn how to create and save a new stored procedure to transform data.
 
 1. From the **Home** tab of the ribbon, select **New SQL query**.
 
-   :::image type="content" source="media\tutorial-transform-data\select-new-query.png" alt-text="Screenshot of the ribbon of the Home tab, showing where to select New SQL query.":::
+   :::image type="content" source="media/tutorial-transform-data/select-new-query.png" alt-text="Screenshot of the ribbon of the Home tab, showing where to select New SQL query.":::
 
 1. In the query editor, paste the following code to create the stored procedure `dbo.populate_aggregate_sale_by_city`. This stored procedure will create and load the `dbo.aggregate_sale_by_date_city` table in a later step.
 
@@ -76,7 +78,7 @@ Learn how to create and save a new stored procedure to transform data.
 
 1. To save this query for reference later, right-click on the query tab, and select **Rename**.
 
-   :::image type="content" source="media\tutorial-transform-data\query-tab-select-rename.png" alt-text="Screenshot of the tabs in the editor screen, showing where to right-click on the query and select Rename.":::
+   :::image type="content" source="media/tutorial-transform-data/query-tab-select-rename.png" alt-text="Screenshot of the tabs in the editor screen, showing where to right-click on the query and select Rename.":::
 
 1. Type **Create Aggregate Procedure** to change the name of the query.
 
@@ -86,11 +88,11 @@ Learn how to create and save a new stored procedure to transform data.
 
 1. Select the **refresh** button on the ribbon.
 
-   :::image type="content" source="media\tutorial-transform-data\refresh-option-ribbon.png" alt-text="Screenshot of the Home ribbon, showing where to select the Refresh button.":::
+   :::image type="content" source="media/tutorial-transform-data/refresh-option-ribbon.png" alt-text="Screenshot of the Home ribbon, showing where to select the Refresh button.":::
 
 1. In the **Object explorer**, verify that you can see the newly created stored procedure by expanding the **StoredProcedures** node under the `dbo` schema.
 
-   :::image type="content" source="media\tutorial-transform-data\explorer-expand-node.png" alt-text="Screenshot of the Explorer pane, showing where to expand the StoredProcedures node to find your newly created procedure.":::
+   :::image type="content" source="media/tutorial-transform-data/explorer-expand-node.png" alt-text="Screenshot of the Explorer pane, showing where to expand the StoredProcedures node to find your newly created procedure.":::
 
 1. From the **Home** tab of the ribbon, select **New SQL query**.
 
@@ -113,7 +115,7 @@ Learn how to create and save a new stored procedure to transform data.
 
 1. In the **Object explorer**, load the data preview to validate the data loaded successfully by selecting on the `aggregate_sale_by_city` table in the **Explorer**.
 
-   :::image type="content" source="media\tutorial-transform-data\validate-loaded-data.png" alt-text="Screenshot of the Explorer pane next to a Data preview screen that lists the data loaded into the selected table.":::
+   :::image type="content" source="media/tutorial-transform-data/validate-loaded-data.png" alt-text="Screenshot of the Explorer pane next to a Data preview screen that lists the data loaded into the selected table.":::
 
 ## Next step
 

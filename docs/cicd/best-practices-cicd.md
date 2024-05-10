@@ -73,7 +73,7 @@ A production database should always be stable and available. It's best not to ov
 
 ### Use parameters for configurations that will change between stages
 
-Whenever possible, add [parameters](./deployment-pipelines/understand-the-deployment-process.md#auto-binding-and-parameters) to any definition that might change between dev/test/prod stages. Using parameters helps you change the definitions easily when you move your changes to production. While there’s still no unified way to manage parameters in Fabric, we recommend using it on items that support any type of parameterization.
+Whenever possible, add [parameters](./deployment-pipelines/understand-the-deployment-process.md#autobinding-and-parameters) to any definition that might change between dev/test/prod stages. Using parameters helps you change the definitions easily when you move your changes to production. While there’s still no unified way to manage parameters in Fabric, we recommend using it on items that support any type of parameterization.
 Parameters have different uses, such as defining connections to data sources, or to internal items in Fabric. They can also be used to make changes to queries, filters, and the text displayed to users.  
 In deployment pipelines, you can configure parameter rules to set different values for each deployment stage.
 
@@ -209,7 +209,7 @@ Make sure that you set production deployment rules for data sources and paramete
 
 ### Update the production app
 
-Deployment in a pipeline updates the workspace content, but it can also update the associated app through the [deployment pipelines API](./deployment-pipelines/pipeline-automation.md). It's not possible to update the app through the UI. You need to update the app manually. If you use an app for content distribution, don’t forget to update the app after deploying to production so that end users are immediately able to use the latest version.
+Deployment in a pipeline through the UI updates the workspace content. To update the associated app, use the [deployment pipelines API](./deployment-pipelines/pipeline-automation.md). It's not possible to update the app through the UI. If you use an app for content distribution, don’t forget to update the app after deploying to production so that end users are immediately able to use the latest version.
 
 ### Deploying into production using Git branches
 

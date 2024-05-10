@@ -34,7 +34,7 @@ To view sensitivity label settings for your organization, visit the [Microsoft P
 
 When this setting is enabled, Power BI semantic models that connect to sensitivity-labeled data in supported data sources can inherit those labels, so that the data remains classified and secure when brought into Power BI.
 
-To learn more about sensitivity label inheritance from data sources, see [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources).
+To learn more about sensitivity label inheritance from data sources, see [Sensitivity label inheritance from data sources](../governance/service-security-sensitivity-label-inheritance-from-data-sources.md).
 
 ## Automatically apply sensitivity labels to downstream content
 
@@ -53,7 +53,7 @@ To learn more, see [Relaxations to accommodate automatic labeling scenarios](/po
 When this setting is enabled, users can't generate a sharing link for **People in your organization** for content with protection settings in the sensitivity label.
 
 > [!NOTE]
-> This setting is disabled if you haven't enabled both the **Allow users to apply sensitivity labels for Power BI content** setting and the **Allow shareable links to grant access to everyone in your organization** setting.
+> This setting is disabled if you haven't enabled both the **Allow users to apply sensitivity labels for Power BI content** setting and the **Allow shareable links to grant access to everyone in your organization** setting. Additionally, this setting only applies to sharing via **People in your organization** links; it does not apply to sharing of Apps to the entire organization.
 
 Sensitivity labels with protection settings include encryption or content markings. For example, your organization might have a *Highly Confidential* label that includes encryption and applies a *Highly Confidential* watermark to content with this label. Therefore, when this tenant setting is enabled and a report has a sensitivity label with protection settings, then users can't create sharing links for **People in your organization**:
 
@@ -61,7 +61,7 @@ Sensitivity labels with protection settings include encryption or content markin
 
 To learn more about protection settings for sensitivity labels, see [Restrict access to content by using sensitivity labels to apply encryption](/microsoft-365/compliance/encryption-sensitivity-labels).
 
-## Users with co-author permissions can edit encrypted PBIX files (preview)
+## Increase the number of users who can edit and republish encrypted PBIX files (preview)
 
 When enabled, users with [restrictive sensitivity permissions](#restrictive-sensitivity-permissions) on an encrypted sensitivity label can open, edit, publish, and republish PBIX files protected by that label, with [restrictions](#restrictions) (provided that the appropriate [preview feature switch](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions) in Power BI Desktop is on).
 
@@ -88,7 +88,7 @@ The following are the restrictions that apply to users with restrictive sensitiv
 
 These restrictions ensure that protection is preserved and control of protection settings remains with users that have higher permission levels.
 
-If a user tries to perform one of the restricted actions, they will see a warning informing them that they do not have the required permissions. If the **Users with co-author permissions can edit encrypted PBIX files (preview)** feature switch is enabled on the tenant, the user should check to see that the **[Less elevated user support](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions)** preview feature switch in their Power BI Desktop app is on.
+If a user tries to perform one of the restricted actions, they will see a warning informing them that they do not have the required permissions. If the **Increase the number of users who can edit and republish encrypted PBIX files (preview)** feature switch is enabled on the tenant, the user should check to see that the **[Less elevated user support](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions)** preview feature switch in their Power BI Desktop app is on.
 
 For more information, see [Protected sensitivity labels in Fabric and Power BI](../governance/protected-sensitivity-labels.md).
 

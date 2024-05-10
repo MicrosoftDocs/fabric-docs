@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: product-trident, Manage your workspace
-ms.date: 12/04/2023
+ms.date: 03/26/2024
 ---
 
 # Workspaces
@@ -18,7 +18,7 @@ ms.date: 12/04/2023
 
 Ready to get started? Read [Create a workspace](create-workspaces.md).
 
-:::image type="content" source="media/workspaces/fabric-workspace-page.png" alt-text="Screenshot showing a workspace." lightbox="media/workspaces/fabric-workspace-page.png":::
+:::image type="content" source="media/workspaces/fabric-workspace-page.png" alt-text="Screenshot showing a workspace with folders." lightbox="media/workspaces/fabric-workspace-page.png":::
 
 ## Work with workspaces
 
@@ -26,11 +26,11 @@ Here are some useful tips about working with workspaces.
 
 - **Pin workspaces** to the top of the workspace flyout list to quickly access your favorite workspaces. Read more about [pin workspaces](create-workspaces.md#pin-workspaces).
 - **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer. Read more about [workspace roles](roles-workspaces.md).
+- **Create folders in the workspace**: Organize and manage artifacts in the workspace. Read more about [creating folders in workspaces](workspaces-folders.md).
 - **Navigate to current workspace** from anywhere by selecting the icon on left nav pane. Read more about [current workspace](#current-workspace) in this article.
 - **Workspace settings**: As workspace admin, you can update and manage your workspace configurations in [workspace settings](#workspace-settings).
 - **Manage a workspace in Git**: Git integration in Microsoft Fabric enables Pro developers to integrate their development processes, tools, and best practices straight into the Fabric platform. Learn how to [manage a workspace with Git](../cicd/git-integration/git-get-started.md).
 - **Contact list**: Specify who receives notification about workspace activity. Read more about [workspace contact lists](#workspace-contact-list) in this article.
-
 
 ## Current workspace
 
@@ -102,6 +102,9 @@ As an admin for a workspace, you can delete it. When you delete the workspace, e
 In the Workspace settings pane, select **Other** > **Remove this workspace**.
 
 :::image type="content" source="media/workspaces/remove-workspace.png" alt-text="Screenshot showing deleting workspace." lightbox="media/workspaces/remove-workspace.png":::
+
+> [!WARNING]
+> If the workspace you're deleting has a workspace identity, that workspace identity will be irretrievably lost. In some scenarios this could cause Fabric items relying on the workspace identity for trusted workspace access or authentication to break. For more information, see [Delete a workspace identity](../security/workspace-identity.md#deleting-the-identity).
 
 ## Administering and auditing workspaces
 

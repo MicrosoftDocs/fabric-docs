@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 05/23/2023
+ms.date: 03/06/2024
 ms.search.form: Create lakehouse
 ---
 
@@ -56,6 +56,13 @@ There are a few ways you can get started with the creation process:
 
 > [!NOTE]
 > The lakehouse will be created under the current workspace you are in.
+
+## Delete a lakehouse
+
+To delete a lakehouse, navigate to **OneLake data hub** and find your lakehouse. select the **...** next to the lakehouse name and select **Delete**. The lakehouse and its associated SQL analytics endpoint and semantic model are deleted. 
+
+> [!NOTE]
+> A lakehouse can't be deleted if it's referenced elsewhere, for example, in a pipeline or within a real time analytics workflow.
 
 ## Related content
 

@@ -5,10 +5,7 @@ ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
 ms.topic: overview
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 03/19/2024
 ms.search.form: Pipeline Activity Overview
 ---
 
@@ -102,7 +99,7 @@ The general settings will always include **Name** and **Description** fields for
 |(Advanced properties) Secure input |The number of seconds between each retry attempt. |
 
 > [!NOTE]
-> There is a default limit of maximum 40 activities per pipeline, which includes inner activities for containers.
+> There is a default soft limit of maximum 80 activities per pipeline, which includes inner activities for containers.
 
 ## Related content
 

@@ -103,6 +103,9 @@ items:
         displayName: SQL Server, MySQL, PostgreSQL, Cosmos DB
       - name: Query a SQL external table
         href: /azure/data-explorer/kusto/management/external-sql-tables-query?context=/fabric/context/context-rta&pivots=fabric
+      - name: Apply row-level security to SQL external tables
+        displayName: RLS, SQL server
+        href: /azure/data-explorer/kusto/management/row-level-security-external-sql?context=/fabric/context/context-rta&pivots=fabric
     - name: .drop external table command
       href: /azure/data-explorer/kusto/management/drop-external-table?context=/fabric/context/context-rta&pivots=fabric
     - name: .show external table command
@@ -173,8 +176,20 @@ items:
       displayName: show materialized view details
       href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-show-details-command?context=/fabric/context/context-rta&pivots=fabric
   - name: Stored query results
-    displayName: .set stored query, .show stored query, .drop stored query
-    href: /azure/data-explorer/kusto/management/stored-query-results?context=/fabric/context/context-rta&pivots=fabric
+    items:
+    - name: Stored query results
+      displayName: .set stored query, .show stored query, .drop stored query
+      href: /azure/data-explorer/kusto/management/stored-query-results?context=/fabric/context/context-rta&pivots=fabric
+    - name: .set stored query results command
+      displayName: .set stored query result, .set-or-replace stored_query_result,
+        .set-or-replace stored query result
+      href: /azure/data-explorer/kusto/management/set-stored-query-result-command?context=/fabric/context/context-rta&pivots=fabric
+    - name: .show stored_query_result command
+      displayName: .show stored query result, .show stored_query_results
+      href: /azure/data-explorer/kusto/management/show-stored-query-result-command?context=/fabric/context/context-rta&pivots=fabric
+    - name: .drop stored_query_result command
+      displayName: .drop stored query result, .drop stored_query_results
+      href: /azure/data-explorer/kusto/management/drop-stored-query-result-command?context=/fabric/context/context-rta&pivots=fabric
   - name: Columns
     items:
     - name: Columns management
@@ -534,6 +549,10 @@ items:
     - name: Update policy
       href: /azure/data-explorer/kusto/management/update-policy?context=/fabric/context/context-rta&pivots=fabric
       displayName: SQL triggers
+    - name: Update policy scenarios
+      href: /azure/data-explorer/kusto/management/update-policy-common-scenarios?context=/fabric/context/context-rta&pivots=fabric
+    - name: 'Tutorial: Route data using table update policies'
+      href: /azure/data-explorer/kusto/management/update-policy-tutorial?context=/fabric/context/context-rta&pivots=fabric
     - name: .alter table policy update command
       href: /azure/data-explorer/kusto/management/alter-table-update-policy-command?context=/fabric/context/context-rta&pivots=fabric
       displayName: .alter table update policy

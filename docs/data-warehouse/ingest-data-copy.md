@@ -1,10 +1,12 @@
 ---
 title: Ingest data into your Warehouse using the COPY statement
 description: Follow steps to ingest data into a Warehouse with the COPY statement in Microsoft Fabric.
-author: periclesrocha
-ms.author: procha
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: procha
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -14,7 +16,7 @@ ms.search.form: Ingesting data
 
 # Ingest data into your Warehouse using the COPY statement
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 The COPY statement is the primary way to ingest data into [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables. COPY performs high high-throughput data ingestion from an external Azure storage account, with the flexibility to configure source file format options, a location to store rejected rows, skipping header rows, and other options. 
 
@@ -31,7 +33,7 @@ Before you use the COPY statement, the destination table needs to be created. To
 
 1. Switch to the **Home** tab and select **New SQL query**.
 
-    :::image type="content" source="media\ingest-data-copy\new-sql-query.png" alt-text="Screenshot of the top section of the user's workspace showing the New SQL query button." lightbox="media\ingest-data-copy\new-sql-query.png":::
+    :::image type="content" source="media/ingest-data-copy/new-sql-query.png" alt-text="Screenshot of the top section of the user's workspace showing the New SQL query button." lightbox="media/ingest-data-copy/new-sql-query.png":::
 
 1. To create the table used as the destination in this tutorial, run the following code:
     
@@ -93,7 +95,7 @@ WITH (
 );
 ```
 
-## Checking the results
+## <a id="checking-the-results"></a> Check the results
 
 The COPY statement completes by ingesting 4,766,736 rows into your new table. You can confirm the operation ran successfully by running a query that returns the total number of rows in your table:
 

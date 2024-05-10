@@ -338,6 +338,9 @@ items:
     displayName: materialized view materialized-view
   - name: Query results cache
     href: /azure/data-explorer/kusto/query/query-results-cache?context=/fabric/context/context-rta&pivots=fabric
+  - name: stored_query_result()
+    href: /azure/data-explorer/kusto/query/stored-query-result-function?context=/fabric/context/context-rta&pivots=fabric
+    displayName: stored query result
   - name: table()
     href: /azure/data-explorer/kusto/query/table-function?context=/fabric/context/context-rta&pivots=fabric
   - name: toscalar()
@@ -1400,8 +1403,8 @@ items:
       href: /azure/data-explorer/kusto/query/time-series-analysis?context=/fabric/context/context-rta&pivots=fabric
     - name: Anomaly detection and forecasting
       href: /azure/data-explorer/kusto/query/anomaly-detection?context=/fabric/context/context-rta&pivots=fabric
-    - name: Machine learning
-      href: /azure/data-explorer/kusto/query/machine-learning-clustering?context=/fabric/context/context-rta&pivots=fabric
+    - name: Anomaly diagnosis for root cause analysis
+      href: /azure/data-explorer/kusto/query/anomaly-diagnosis?context=/fabric/context/context-rta&pivots=fabric
   - name: make-series operator
     href: /azure/data-explorer/kusto/query/make-series-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: series_abs()

@@ -1,8 +1,8 @@
 ---
 title: Filter activity
 description: Learn how to add a Filter activity to a pipeline and use it to filter data.
-author: chez-charlie
-ms.author: chez
+author: kromerm
+ms.author: makromer
 ms.reviewer: jburchel
 ms.topic: how-to
 ms.custom:
