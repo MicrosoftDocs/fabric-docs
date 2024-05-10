@@ -103,7 +103,7 @@ with DAG(
 
    :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
-# Create a plugin file for Power BI (Optional)
+## Create a plugin file for Power BI (Optional)
 
 If you wish to enable an external monitoring link to Power BI from the Airflow UI, follow these steps:
 
