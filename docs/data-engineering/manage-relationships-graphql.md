@@ -52,7 +52,7 @@ If your linking type contains one or more fields that are not referenced as **Fr
 - A one-to-many relationship from the **From type** to the **Linking type**
 - A one-to-many relationship from the **Linking type** to the **From type**
 - A one-to-many relationship from the **To type** to the **Linking type**
-- A one-to-many relationship from the **Linking type** to the **To type** 
+- A one-to-many relationship from the **Linking type** to the **To type**
 
 These allow you to reference the *unlinked* fields in the **Linking type** in any queries or mutations, while also allowing queries/mutations that reference the relationships in any direction.
 
