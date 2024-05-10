@@ -56,6 +56,16 @@ You can save your query as a view on which data load is enabled using the **Save
 
 :::image type="content" source="media/visual-query-editor/save-as-view.png" alt-text="Screenshot showing how to use Save as view menu in visual query editor." lightbox="media/visual-query-editor/save-as-view.png":::
 
+#### View SQL
+
+The View SQL feature allows you to see the SQL query based on the applied steps of your visual query. You also have the capability to edit the SQL query from this feature in the query editor by clicking on **Edit SQL script**.
+
+:::image type="content" source="media/visual-query-editor/view-sql-editable-script.gif" alt-text="GIF showing the View SQL feature in visual query editor." lightbox="media/visual-query-editor/view-sql-editable-script.gif":::
+
+When writing queries that are joining two or more tables  using the **Merge queries** action, the query that has load enabled will be reflected in the SQL script. To specify which table’s query should be shown in the SQL script, click on the context menu and select **Enable load**. Expand the table’s columns that got merged in the results to see the steps reflected in the SQL script.
+
+:::image type="content" source="media/visual-query-editor/enable-load.png" alt-text="Screenshot showing the Enable Load option in the context menu." lightbox="media/visual-query-editor/enable-load.png":::
+
 #### Save as table
 
 You can use **Save as table** to save your query results into a table for the query with load enabled. Select the warehouse in which you would like to save results, select schema that you have access to create tables and provide table name to load results into the table using [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) statement. When table is successfully created, it appears in the **Explorer**.
@@ -75,6 +85,9 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 - In the visual query editor, you can only run DQL (Data Query Language) or read-only [SELECT](/sql/t-sql/queries/select-transact-sql?view=fabric&preserve-view=true) statements. DDL or DML statements are not supported.
 - Only a subset of Power Query operations that support Query folding are currently supported.
 - Visualize Results currently does not support SQL queries with an ORDER BY clause. 
+- For viewing the SQL script joining two or more tables, only the table with load enabled selected will show the corresponding SQL script. 
+- There are certain steps that the View SQL feature does not support in which a banner in the visual query editor will indicate stating “The query is not supported as a warehouse view, since it cannot be fully translated to SQL”. Refer to [Query folding indicators in Power Query](power-query/step-folding-indicators) for more information.
+
 
 ## Related content
 
