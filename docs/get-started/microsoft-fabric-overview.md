@@ -23,7 +23,7 @@ With Fabric, you don't need to assemble different services from multiple vendors
 
 Microsoft Fabric integrates separate components into a cohesive stack. Instead of relying on different databases or data warehouses, you can centralize data storage with OneLake. AI capabilities are seamlessly embedded within Fabric, eliminating the need for manual integration. With Fabric, you can easily transition your raw data into actionable insights for business users.
 
-## SaaS foundation
+## Unification with SaaS foundation
 
 Microsoft Fabric is built on a foundation of Software as a Service (SaaS). It combines both new and existing components from Power BI, Azure Synapse Analytics, Azure Data Factory, and more services into a unified environment. These components are then tailored into customized user experiences.
 
