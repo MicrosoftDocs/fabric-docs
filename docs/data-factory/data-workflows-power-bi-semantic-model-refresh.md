@@ -108,7 +108,9 @@ with DAG(
 If you wish to enable an external monitoring link to Power BI from the Airflow UI, follow these steps:
 
 1. Create a new file under the 'plugins' folder.
+
 2. Paste the contents provided below into the file.
+
 ```python
 from airflow.plugins_manager import AirflowPlugin
 
@@ -129,6 +131,7 @@ class AirflowExtraLinkPlugin(AirflowPlugin):
         PowerBIHook,
     ]
 ```
+
 3. Upon completion, you will observe the DAG loaded with the external monitoring link to the Power BI semantic model refresh.
 
 ## Monitor the Data workflow DAG and run it from Apache Airflow UI
