@@ -11,37 +11,37 @@ ms.date: 05/09/2024
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Fabric Spark employs the optimistic job admission technique to determine the minimum number of cores that a Spark job requires. This process applies to interactive or batch jobs from notebooks, lakehouses, or Spark job definitions, and is based on the minimum node setting of the Spark pool you choose as the compute option in the workspace settings or environment attached to those items. If Spark finds available cores in the Fabric capacity linked to the workspace, Spark accepts the job, and it begins to run. Jobs start with their minimum node setting and can request a scale-up within their maximum node limits, depending on the job stages. If the total cores used by all the jobs currently running and using the Fabric capacity is less than the maximum burst cores assigned for that capacity, the job admission and throttling layer on Fabric Spark allows the job to scale up.
+Fabric Spark utilizes the optimistic job admission technique to determine the minimum core requirement for Spark jobs. This process is applicable to interactive or batch jobs from notebooks, lakehouses, or Spark job definitions. It relies on the minimum node setting of the chosen Spark pool in the workspace settings or attached environment. If available cores are found in the Fabric capacity linked to the workspace, the job is accepted and commences execution. Jobs initiate with their minimum node setting and can scale up within their maximum node limits as per job stages. If the total cores used by running jobs utilizing the Fabric capacity is below the maximum burst cores assigned, the job admission and throttling layer on Fabric Spark permits the job to scale up.
 
 For more information, see [Concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md).
 
 ## How does optimistic job admission work?
 
-In Fabric, starter pools (which are the default compute option for any workspace) come preconfigured with a minimum of one node. For custom pools, you can set the minimum nodes for to a value based on your workload requirements. Spark jobs tend to grow and reduce in compute requirements. If you enable the autoscaling option, requirements are based on different job stages during execution, within the minimum and maximum nodes. Based on the cores available out of the maximum cores in a Fabric capacity, optimistic job admission uses the minimum cores for every job submitted to evaluate and admit the job for execution. After a job is admitted, and during the stages of its execution, each job tries to grow based on its maximum nodes due to the job's compute demand. If the overall cores being used by Spark are still within the burst limits of total cores allocated for the Fabric capacity, Spark approves the scale-up request.
+In Fabric, starter pools come with a default minimum of one node, while custom pools allow you to set minimum nodes based on workload needs. Autoscaling adjusts compute requirements for Spark jobs during execution stages, within the configured minimum and maximum nodes. Optimistic job admission evaluates job submissions based on available cores, and executes them with minimum cores. Jobs attempt to grow based on maximum allocated nodes during execution. Scale-up requests are approved if total Spark cores used are within allocated capacity limits.
 
 > [!NOTE]
-> If utilization has reached the maximum limit and there are no available cores within the total limit for the Fabric capacity, the scale-up request is denied. Other active running jobs must finish or be canceled to release the unavailable cores.
+> If usage reaches the maximum limit and all cores within the total capacity for Fabric are in use, any scale-up requests will be denied. Active jobs must either finish or be canceled to free up cores.
 
 ## How does this affect job concurrency?
 
-The minimum core requirement for each job determines if the job can be accepted. If the capacity is fully utilized and has no cores left that can meet the minimum core requirements of the job, the job is rejected. Rejected interactive notebook jobs and lakehouse operations throw this error: *HTTP Response code 430: Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later.* Batch jobs are queued and processed automatically when the cores are freed.
+TThe minimum core requirement for each job determines if the job can be accepted. If the capacity is fully utilized and has no cores left  to fulfill a job's minimum core needs, the job is rejected. Interactive notebook jobs or Lakehouse operations will be blocked with an error message *Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later*. Batch jobs are queued and executed once cores become available.
 
-For example, consider a scenario where you're using a Fabric F32 capacity. Assuming all jobs submitted are using the default starter pool configuration, without optimistic job admission, the capacity allows a maximum concurrency of three jobs. The capacity sets this limit because the jobs reserve the maximum number of cores for each job, based on the maximum node configuration.
+For example, consider a scenario with a user utilizing the Fabric F32 capacity SKU. Assuming all jobs use the default starter pool setup without optimistic job admission, the capacity would support a maximum concurrency of three jobs. The maximum number of cores per job are allocated according to the max nodes configuration.
 
 :::image type="content" source="media/job-admission-and-management/reserved-job-admission-overview.png" alt-text="Screenshot showing the job concurrency without optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/reserved-job-admission-overview.png":::
 
-In the same configuration **with** optimistic job admission, the capacity allows 24 jobs to be admitted and start executing with their minimum node configuration during a maximum concurrency scenario. The capacity allows this limit because the jobs are admitted accounting for eight SparkVCores (one minimum node configuration of size Medium).
+With optimistic job admission with same capacity as above, 24 jobs can be admitted and executed using their minimum node configuration during maximum concurrency scenario. Because each job requires 8 Spark VCores where one minimum node configuration is of size medium.
 
 :::image type="content" source="media/job-admission-and-management/job-admission.gif" alt-text="Screenshot showing the job concurrency with optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/job-admission.gif":::
 
-## Spark autoscale
+## Scale jobs with Spark autoscale
 
-When you enable Spark autoscale for Spark pools, jobs start executing with their minimum node configuration and can request more nodes during runtime. These requests go through the job admission control, which approves requests and allows jobs to scale to their maximum limits based on the total available cores on Spark. Rejected autoscale requests don't affect active running jobs; they continue to run with their current configuration until more cores become available.
+When you enable autoscale for Spark pools, jobs exuecute with their minimum node configuration. During runtime, scaling may occur. These requests go through the job admission control. Approved requests scale up to the maximum limits based on total available cores. Rejected requests don't affect active jobs; they continue to run with their current configuration until cores become available.
 
 :::image type="content" source="media/job-admission-and-management/job-scale-up.gif" alt-text="Screenshot showing a job scaling up with optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/job-scale-up.gif":::
 
 > [!NOTE]
-> If you want a job to have the total cores reserved for it based on its maximum node configuration, which would ensure the scale-up, you can turn off autoscale and set the maximum nodes to the desired value (within the permitted limits based on your Fabric capacity SKU). When the job doesn't have a minimum core requirement, it gets accepted and starts running when cores are free in your Fabric capacity. The job has the total cores reserved for it, ensuring the job scales up to the total cores you configured. If the capacity is fully used, the job either slows down (if it’s a notebook interactive job), or is queued and automatically retried as the cores become available.
+> To ensure maximum core allocation for a job according to its max nodes configuration, disable autoscale and set the max nodes within Fabric capacity SKU. In this case, since the job has no minimum core requirement, it will start running once free cores are available, scaling up to the configured total. If capacity is fully used, notebook interactive jobs may slow down or queued. Queued jobs are automatically retried as cores become available.
 
 ## Related content
 
