@@ -30,7 +30,7 @@ To get started, you must complete the following prerequisites:
 
   2. Select Apply.
 
-  :::image type="content" source="media/data-workflows/enable-tenant.png" lightbox="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+  :::image type="content" source="media/data-workflows/enable-dataworkflow-tenant.png" lightbox="media/data-workflows/enable-dataworkflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - You must have an Admin account of Power BI.
 
@@ -107,7 +107,7 @@ with DAG(
 
 If you wish to enable an external monitoring link to Power BI from the Airflow UI, follow these steps:
 
-1. Create a new file under the 'Plugins' folder.
+1. Create a new file under the 'plugins' folder.
 2. Paste the contents provided below into the file.
 ```python
 from airflow.plugins_manager import AirflowPlugin

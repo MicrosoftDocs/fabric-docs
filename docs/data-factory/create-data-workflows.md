@@ -27,7 +27,7 @@ Data workflows provides a simple and efficient way to create and manage Apache A
 1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Data workflows (preview)' section.
 2. Select **Apply**.
 
-:::image type="content" source="media/data-workflows/enable-tenant.png" lightbox="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+:::image type="content" source="media/data-workflows/enable-dataworkflow-tenant.png" lightbox="media/data-workflows/enable-dataworkflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 ### Create a Data workflows
 

@@ -27,7 +27,7 @@ To get started, you must complete the following prerequisite:
 
     2. Click Apply.
 
-        :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
+        :::image type="content" source="media/data-workflows/enable-dataworkflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-dataworkflow-tenant.png":::
 
 ### Create a Data workflows
 

@@ -28,7 +28,7 @@ To get started, you must complete the following prerequisites:
 
   2. Click Apply.
 
-  :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
+  :::image type="content" source="media/data-workflows/enable-dataworkflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-dataworkflow-tenant.png":::
 
 - [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md).
 
