@@ -12,13 +12,13 @@ ms.date: 05/09/2024
 
 # Work with tasks
 
-This article describes how to work with tasks. The target audience is data analytics solution architects who are designing a data analytics solution, and engineers who need to know how to use task flows to facilitate their work.
+This article describes how to work with tasks. The target audience is data analytics solution architects who are designing a data analytics solution, engineers who need to know how to use task flows to facilitate their work, and others who want to use the task flow to filter the item list to help navigate and understand the workspace.
 
 ## Prerequisites
 
 To create or edit the task flow, and to create items in the workspace via the task flow, you need to be an Admin, Member, or Contributor in the workspace.
 
-Admins, Members, Contributors, and Vistors can use the task flow to [filter the items list](#navigate-items-with-the-task-flow).
+Admins, Members, Contributors, and Viewers can use the task flow to [filter the items list](#navigate-items-with-the-task-flow).
 
 ## Task controls
 
@@ -126,13 +126,13 @@ To create a new item for a specific task:
 
 ### Assign existing items to a task
 
-To attach existing items to a task:
+To assign existing items to a task:
 
 1. Select the clip icon on the task.
 
     :::image type="content" source="./media/task-flow-work-with/assign-existing-task-clip-icon.png" alt-text="Screenshot showing the assign existing items clip icon.":::
 
-1. In the **Assign item** dialog box that opens, hover over item you want to assign to the task and mark the checkbox. You can assign more than one item. When you're done choosing the items you want to assign to the task, choose **Select** to attach the selected items to the task.
+1. In the **Assign item** dialog box that opens, hover over item you want to assign to the task and mark the checkbox. You can assign more than one item. When you're done choosing the items you want to assign to the task, choose **Select** to assign the selected items to the task.
 
     :::image type="content" source="./media/task-flow-work-with/assign-existing-item-dialog.png" alt-text="Screenshot showing the Assign item dialog.":::
 
@@ -143,7 +143,7 @@ The items you selected items are assigned to the task. In the item list, task as
 You can unassign items from a selected task or from multiple tasks.
 
 > [!NOTE]
-> Detaching items from tasks **does not** remove the items from the workspace.
+> Unassigning items from tasks **does not** remove the items from the workspace.
 
 #### Unassign items from a task
 
