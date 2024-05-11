@@ -10,13 +10,20 @@ ms.date: 05/07/2024
 
 # Set up a task flow in a workspace
 
-Open the workspace. You'll see that the workspace view is split between the task flow, where you'll build your task flow, and the item list, which shows you the items in the workspace. A moveable separator allows you adjust the size of the views.
+This article descibes how to start building a task flow, starting either from scratch or with one of Fabric's predefined task flows. It targets data analytics solution architects and others who want to create a visualization of a data project.
 
-The task flow itself is split between the canvas, which will hold the visualization of your work flow, and a side panel that contains information and controls to help you build the task flow. The contents of the side panel changes according to what is selected in the canvas.
 
-When no task flow has been configured, an empty default task flow entitled **Get started with a task flow** is there. To start building a task flow, you can either select a task flow from one of predesigned task flows or add a task to start building one yourself.
+## Open the workspace
 
-The following image shows how the workspace looks before a task flow has been configured and before any items have been created in the workspace. 
+Navigate to the workspace where you want to create your task flow and open **List view**.
+
+You'll see that the workspace view is split between the task flow, where you'll build your task flow, and the item list, which shows you the items in the workspace. A moveable separator bar allows you to adjust the size of the views. You can also collapse the task flow if you want to get it out of the way.
+
+The task flow itself is split between the canvas, which will hold the visualization of your work flow, and a side pane that contains information and controls to help you build the task flow. The contents of the side pane changes according to what is selected in the canvas.
+
+When no task flow has been configured, an empty default task flow entitled **Get started with a task flow** is there. To start building your task flow, you can either select one of the predesigned task flows or add a task to start building one from scratch.
+
+The following image shows what the workspace looks like before a task flow has been configured.
 
 :::image type="content" source="./media/task-flow-create/task-flow-initial-state.png" alt-text="Screenshot showing the initial empty state of a task flow." lightbox="./media/task-flow-create/task-flow-initial-state.png"::: 
 
