@@ -215,6 +215,16 @@ Deleting a task flow removes all tasks, the task list, and any item assignments,
 > [!NOTE]
 > Items that were assigned to tasks in the deleted task flow remain in the workspace. When you create a new task flow, you need to assign them to the tasks in the new flow.
 
+## Select a new predefined taskflow
+
+At any point, you can choose to apply one of the predefined task flows to the canvas.
+
+To select one of the predefined task flows:
+
+1. Open the **Add** dropdown on the canvas and choose **Select task flow**. The predefined task flows pane will open.
+
+1. Choose one of the predefined task flows and the select **Select**. If there already is a task flow on the canvas, you'll be asked whether to overwrite the current task flow or to append the predefined task flow to the curent task flow.
+
 ## Related concepts
 
 * [Task flow overview](./task-flow-overview.md)

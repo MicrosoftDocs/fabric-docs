@@ -29,19 +29,21 @@ The following image shows what the workspace looks like before a task flow has b
 
 1. List view selector
 1. Task flow canvas
-1. Task flow details
-1. Resize taskflow
-1. Collapse/Expand task flow
+1. Task flow details pane
+1. Resize bar
+1. Show/hide task flow
 1. Items list
 
 ## Start with a predesigned task flow
 
-On the default task flow, choose **Select a task flow**. The side panel lists ten predesigned task flows provided by Microsoft. Each predefined task flow has a a brief description of its use case. When you select a flow, you'll see a more detailed description of the task flow and how it's used, and also the workloads and item types that the task flow requires.
+On the empty default task flow, choose **Select a task flow**.
+
+The side pane lists ten predesigned task flows provided by Microsoft. Each predefined task flow has a a brief description of its use case. When you select a flow, you'll see a more detailed description of the task flow and how it's used, and also the workloads and item types that the task flow requires.
 
 :::image type="content" source="./media/task-flow-create/task-flow-predesigned-panel.png" alt-text="Screenshot showing the task flow side panel of a predesigned task flow." lightbox="./media/task-flow-create/task-flow-predesigned-panel.png":::
 
-1. Task flow name.
-1. Brief description of the task flow use case.
+1. List of predesigned task flows.
+1. Name of selected predesigned task flow.
 1. Number of tasks in the task flow.
 1. Detailed description of the task flow and how it's used.
 1. The workloads that the task flow typically requires.
@@ -51,48 +53,38 @@ Select the task flow that best fits your project needs and then choose **Select*
 
 :::image type="content" source="./media/task-flow-create/task-flow-predefined-task-flow-applied.png" alt-text="Screenshot showing a predefined task flow selected and applied to canvas." lightbox="./media/task-flow-create/task-flow-predefined-task-flow-applied.png":::
 
-* The task flow canvas provides a graphic view of the tasks and all interactions of the task flow. [QUESTION: what do we mean by "all interactions"?]
+The task flow canvas provides a graphic view of the tasks and how they are connected logically.
 
-* The side panel shows detailed information about the task flow, including task flow name, description, total number of tasks in the task flow, and a list of those tasks. You can change the task flow name and description in the task flow details pane by selecting **Edit** .
+The side panel shows detailed information about the task flow, including
+* Task flow name
+* Task flow description
+* Total number of tasks in the task flow
+* A list of the tasks in the task flow.
 
-* The items list shows all the items and folders in the workspace, including those items that are attached to tasks in the task flow. When you select a task in the task flow, the items list is filtered to show just the items that are attached to the selected task. In the preceding illustration, the items list is empty because no items have been created yet.
+It's recommended that you change the task flow name and description to something meaningful that enables others to better understand what the task is all about. To change the name and description, select **Edit**. For more information, see [Edit task name and description](./task-flow-work-with.md#edit-task-name-and-description).
+
+The items list shows all the items and folders in the workspace, including those items that are attached to tasks in the task flow. When you select a task in the task flow, the items list is filtered to show just the items that are attached to the selected task.
 
 > [!NOTE]
 > Selecting a predefined task flow just places the tasks involved in the task flow on the canvas and indicates the connections between them. It is just a graphical representation - no actual items or data connections are created at this point.
 
-### Select a new predefined taskflow
-
-On the canvas, choose **Add** > **Select task flow**.
+After you've added the predefined task flow to the canvas, you can start modifying it to suit your needs. See [Working with taskflows](./task-flow-work-with.md) for details.
 
 ## Start with a custom task flow
 
-If you already have a clear idea of what the structure of your task flow needs to be, or if none of the predesigned task flows fit your needs, you can build a custom task flow.
+If you already have a clear idea of what the structure of your task flow needs to be, or if none of the predesigned task flows fit your needs, you can build a custom task flow from scratch.
 
-First, select **Edit** in the task flow side panel and provide a name and description for your task flow to help other members of this workspace understand the task flow and your project.
+First, select **Edit** in the task flow side pand and provide a name and description for your task flow to help other members of this workspace understand the task flow and your project.
 
 Next, on the task flow canvas select **Add a task** and choose a task type.
 
 :::image type="content" source="./media/task-flow-create/task-flow-add-initial-task.png" alt-text="Screenshot illustrating renaming a task flow and adding an initial task." lightbox="./media/task-flow-create/task-flow-add-initial-task.png":::
 
-The task appears on the canvas. Note that the side panel now shows the task details.
+The task appears on the canvas. Note that the side pane now shows the task details.
 
 :::image type="content" source="./media/task-flow-create/task-flow-initial-task.png" alt-text="Screenshot showing the first task added to the canvas." lightbox="./media/task-flow-create/task-flow-initial-task.png":::
 
-You can continue to add other tasks to the canvas, as well as manage tasks and link tasks together. These topics are discussed in more detail in the following sections.
-
-## Delete a task flow
-
-Deleting the task flow will only delete all the tasks and any associations between the items and the tasks.
-
-[QWESTION: What do you mean by "associations between the items and the tasks? Do you mean assignments?]
-
-To delete a task flow, first select a blank area of the canvas to display the task flow pane. Next, select the trash icon to delete the task flow.
-
-:::image type="content" source="./media/task-flow-create/delete-task-flow.png" alt-text="Screenshot showing how to delete a task flow.":::
-
-Deleting a task flow deletes all tasks, the task list, and any item assignments.
-
-Any items created will remain in the workspace, but you need to assign them to tasks in your new task flow.
+You can continue to add other tasks to the canvas, as well as manage tasks and link tasks together. For more information about this topics, see [Working with task flows](./task-flow-work-with.md).
 
 ## Related concepts
 
