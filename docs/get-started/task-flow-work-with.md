@@ -200,7 +200,7 @@ With items assigned to tasks in a task flow, you can use the task flow to quickl
 
     :::image type="content" source="./media/task-flow-work-with/filter-item-list.png" alt-text="Screenshot illustrating how to filter the item list by selecting a task.":::
 
-## Select a new predefined taskflow
+## Select a new predefined task flow
 
 At any point, you can choose to apply one of the predefined task flows to the canvas.
 
