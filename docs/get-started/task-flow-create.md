@@ -34,7 +34,7 @@ You'll see that the workspace view is split between the task flow, where you'll 
 
 The task flow itself is split between the canvas, which will hold the visualization of your work flow, and a side pane that contains information and controls to help you build the task flow. The contents of the side pane changes according to what is selected in the canvas.
 
-When no task flow has been configured, an empty default task flow entitled **Get started with a task flow** is there. To start building your task flow, you can either select one of the predesigned task flows or add a task to start building one from scratch.
+When no task flow has been configured, an empty default task flow entitled **Get started with a task flow** is there. To start building your task flow, you can either [select one of the predesigned task flows](#start-with-a-predesigned-task-flow) or [add a task to start building one from scratch](#start-with-a-custom-task-flow).
 
 ## Start with a predesigned task flow
 
