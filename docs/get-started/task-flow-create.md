@@ -94,5 +94,4 @@ You can continue to add more tasks to the canvas. You'll also have to perform ot
 ## Related concepts
 
 * [Task flow overview](./task-flow-overview.md)
-* [Task flow concepts](./task-flow-concepts.md)
-* [Manage tasks](./task-flow-work-with.md)
+* [Work with tasks](./task-flow-work-with.md)

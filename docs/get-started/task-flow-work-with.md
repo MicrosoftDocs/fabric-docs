@@ -239,5 +239,4 @@ Deleting a task flow removes all tasks, the task list, and any item assignments,
 ## Related concepts
 
 * [Task flow overview](./task-flow-overview.md)
-* [Task flow concepts](./task-flow-concepts.md)
 * [Set up a task flow](./task-flow-create.md)

@@ -4,8 +4,9 @@ description: This article gives an overview of task flows and task flow terminol
 ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
-ms.topic: conceptual
-ms.date: 04/05/2024
+ms.topic: concept-article
+ms.date: 05/11/2024
+#customer intent: As a data analytics solutions architect, or as a data engineer, I want to learn about task flows and how they can help facilitate the completion of a complex data analytics solution.
 ---
 
 # What is a Fabric task flow?
