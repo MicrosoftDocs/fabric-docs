@@ -89,9 +89,7 @@ The task appears on the canvas. Note that the side pane now shows the task detai
 
 When you add a task to the task flow, it has a default name and description. It's recommended to provide a meaningful name and description to help others understand the task's purpose and use. To update the task name and description, select **Edit** in the task details pane. For more information, see [Edit task flow details](./task-flow-work-with.md#edit-task-name-and-description).
 
-You can continue to add more tasks to the canvas. You'll also have to [connect the tasks](./task-flow-work-with.md#connect-tasks), [assign items to the tasks](./task-flow-work-with.md#assign-items-to-a-task), etc. For more information, see [Working with task flows](./task-flow-work-with.md).
-
-After you've added the predefined task flow to the canvas, you can start modifying it to suit your needs - [arranging the tasks on the canvas](./task-flow-work-with.md#arrange-tasks-on-the-canvas), [updating task names and descriptions](./task-flow-work-with.md#edit-task-name-and-description), [assigning items to tasks](./task-flow-work-with.md#assign-items-to-a-task), etc. For more information, see [Working with task flows](./task-flow-work-with.md).
+You can continue to add more tasks to the canvas. You'll also have to perform other actions, such as [arranging the tasks on the canvas](./task-flow-work-with.md#arrange-tasks-on-the-canvas), [connecting the tasks](./task-flow-work-with.md#connect-tasks), [assigning items to the tasks](./task-flow-work-with.md#assign-items-to-a-task), etc. For more information, see [Working with task flows](./task-flow-work-with.md).
 
 ## Related concepts
 
