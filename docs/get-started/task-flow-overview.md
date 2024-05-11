@@ -28,7 +28,7 @@ Each workspace has one task flow. The task flow occupies the upper part of works
 
 Key concepts to know when working with a task flow are described in the following sections.
 
-### Task flows
+### Task flow
 
 A task flow is a collection of connected tasks that represent relationships in a process or collection of processes that complete an end-to-end data solution. A workspace has one task flow. You can either build it from scratch or use one of Fabric's predefined task flows, which you can customize as desired.
 
