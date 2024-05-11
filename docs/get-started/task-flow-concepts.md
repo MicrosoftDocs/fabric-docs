@@ -36,7 +36,7 @@ A task is a unit of process in the task flow. A task has recommended item types 
 
 ## Connectors
 
-Connectors are arrows that represent logical connections between the tasks in the task flow. They do not represent the flow of data, and they do not accomplish any actual connection.
+Connectors are arrows that represent logical connections between the tasks in the task flow. They do not represent the flow of data, and they do not create any actual data connections.
 
 ## Related content
 
