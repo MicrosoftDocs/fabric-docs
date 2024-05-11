@@ -64,7 +64,7 @@ The side pane now shows detailed information about the task flow you selected, i
 * Total number of tasks in the task flow.
 * A list of the tasks in the task flow.
 
-It's recommended that you change the task flow name and description to something meaningful that enables others to better understand what the task is all about. To change the name and description, select **Edit** in the task flow side pane. For more information, see [Edit task flow details](./task-flow-work-with.md#edit-task-flow-details).
+It's recommended that you change the task flow name and description to something meaningful that enables others to better understand what the task flow is all about. To change the name and description, select **Edit** in the task flow side pane. For more information, see [Edit task flow details](./task-flow-work-with.md#edit-task-flow-details).
 
 The items list shows all the items and folders in the workspace, including those items that are assigned to tasks in the task flow. When you select a task in the task flow, the items list is filtered to show just the items that are assigned to the selected task.
 
@@ -77,7 +77,7 @@ After you've added the predefined task flow to the canvas, you can start modifyi
 
 If you already have a clear idea of what the structure of your task flow needs to be, or if none of the predesigned task flows fit your needs, you can build a custom task flow from scratch.
 
-First, select **Edit** in the task flow side pane and provide a name and description for your task flow to help other members of this workspace understand the task flow and your project.
+First, select **Edit** in the task flow side pane and provide a name and description for your task flow to help other members of the workspace understand your project and the task flow you're creating.
 
 Next, on the task flow canvas, select **Add a task** and choose a task type.
 
@@ -87,7 +87,11 @@ The task appears on the canvas. Note that the side pane now shows the task detai
 
 :::image type="content" source="./media/task-flow-create/task-flow-initial-task.png" alt-text="Screenshot showing the first task added to the canvas." lightbox="./media/task-flow-create/task-flow-initial-task.png":::
 
-You can continue to add other tasks to the canvas, as well as manage tasks and link tasks together. For more information about these topics, see [Working with task flows](./task-flow-work-with.md).
+When you add a task to the task flow, it has a default name and description. It's recommended to provide a meaningful name and description to help others understand the task's purpose and use. To update the task name and description, select **Edit** in the task details pane. For more information, see [Edit task flow details](./task-flow-work-with.md#edit-task-name-and-description).
+
+You can continue to add more tasks to the canvas. You'll also have to [connect the tasks](./task-flow-work-with.md#connect-tasks), [assign items to the tasks](./task-flow-work-with.md#assign-items-to-a-task), etc. For more information, see [Working with task flows](./task-flow-work-with.md).
+
+After you've added the predefined task flow to the canvas, you can start modifying it to suit your needs - [arranging the tasks on the canvas](./task-flow-work-with.md#arrange-tasks-on-the-canvas), [updating task names and descriptions](./task-flow-work-with.md#edit-task-name-and-description), [assigning items to tasks](./task-flow-work-with.md#assign-items-to-a-task), etc. For more information, see [Working with task flows](./task-flow-work-with.md).
 
 ## Related concepts
 
