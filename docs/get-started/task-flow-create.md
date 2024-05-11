@@ -25,7 +25,14 @@ When no task flow has been configured, an empty default task flow entitled **Get
 
 The following image shows what the workspace looks like before a task flow has been configured.
 
-:::image type="content" source="./media/task-flow-create/task-flow-initial-state.png" alt-text="Screenshot showing the initial empty state of a task flow." lightbox="./media/task-flow-create/task-flow-initial-state.png"::: 
+:::image type="content" source="./media/task-flow-create/task-flow-initial-state.png" alt-text="Screenshot showing the initial empty state of a task flow." lightbox="./media/task-flow-create/task-flow-initial-state.png":::
+
+1. List view selector
+1. Task flow canvas
+1. Task flow details
+1. Resize taskflow
+1. Collapse/Expand task flow
+1. Items list
 
 ## Start with a predesigned task flow
 
