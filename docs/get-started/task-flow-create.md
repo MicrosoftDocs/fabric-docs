@@ -30,7 +30,7 @@ Navigate to the workspace where you want to create your task flow and open **Lis
 1. Show/hide task flow
 1. Items list
 
-You'll see that the workspace view is split between the task flow, where you'll build your task flow, and the item list, which shows you the items in the workspace. A moveable separator bar allows you to adjust the size of the views. You can also collapse the task flow if you want to get it out of the way.
+You'll see that the workspace view is split between the task flow, where you'll build your task flow, and the items list, which shows you the items in the workspace. A moveable separator bar allows you to adjust the size of the views. You can also hide the task flow if you want to get it out of the way.
 
 The task flow itself is split between the canvas, which will hold the visualization of your work flow, and a side pane that contains information and controls to help you build the task flow. The contents of the side pane changes according to what is selected in the canvas.
 
@@ -40,7 +40,7 @@ When no task flow has been configured, an empty default task flow entitled **Get
 
 On the empty default task flow, choose **Select a task flow**.
 
-The side pane lists the predesigned task flows provided by Microsoft. Each predefined task flow has a brief description of its use case. When you select a flow, you'll see a more detailed description of the task flow and how it's used, and also the workloads and item types that the task flow requires.
+The side pane lists the predesigned task flows provided by Microsoft. Each predefined task flow has a brief description of its use case. When you select one of the flows, you'll see a more detailed description of the flow and how it's used, and also the workloads and item types that the flow requires.
 
 :::image type="content" source="./media/task-flow-create/task-flow-predesigned-panel.png" alt-text="Screenshot showing the task flow side panel of a predesigned task flow." lightbox="./media/task-flow-create/task-flow-predesigned-panel.png":::
 
@@ -57,17 +57,14 @@ Select the task flow that best fits your project needs and then choose **Select*
 
 The task flow canvas provides a graphic view of the tasks and how they're connected logically.
 
-The side panel shows detailed information about the task flow, including:
+The side pane now shows detailed information about the task flow you selected, including:
 
-* Task flow name
-
-* Task flow description
-
-* Total number of tasks in the task flow
-
+* Task flow name.
+* Task flow description.
+* Total number of tasks in the task flow.
 * A list of the tasks in the task flow.
 
-It's recommended that you change the task flow name and description to something meaningful that enables others to better understand what the task is all about. To change the name and description, select **Edit**. For more information, see [Edit task name and description](./task-flow-work-with.md#edit-task-name-and-description).
+It's recommended that you change the task flow name and description to something meaningful that enables others to better understand what the task is all about. To change the name and description, select **Edit** in the task flow side pane. For more information, see [Edit task flow details](./task-flow-work-with.md#edit-task-flow-details).
 
 The items list shows all the items and folders in the workspace, including those items that are attached to tasks in the task flow. When you select a task in the task flow, the items list is filtered to show just the items that are attached to the selected task.
 

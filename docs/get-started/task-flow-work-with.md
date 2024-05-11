@@ -49,7 +49,7 @@ To edit a task's name or description:
 
 1. Select the task on the canvas to open the [task details pane](#task-controls).
 
-2. Select **Edit** and change the name and description fields as desired. When done, select **Save**.
+1. Select **Edit** and change the name and description fields as desired. When done, select **Save**.
 
 ## Change task type
 
@@ -200,6 +200,27 @@ With items assigned to tasks in a task flow, you can use the task flow to quickl
 
     :::image type="content" source="./media/task-flow-work-with/filter-item-list.png" alt-text="Screenshot illustrating how to filter the item list by selecting a task.":::
 
+## Select a new predefined taskflow
+
+At any point, you can choose to apply one of the predefined task flows to the canvas.
+
+To select one of the predefined task flows:
+
+1. Open the **Add** dropdown on the canvas and choose **Select task flow**. The predefined task flows pane will open.
+
+1. Choose one of the predefined task flows and the select **Select**. If there already is a task flow on the canvas, you'll be asked whether to overwrite the current task flow or to append the predefined task flow to the curent task flow.
+
+## Edit task flow details
+
+To edit the task flow name or description:
+
+1. Open the task flow details pane by selecting the task flow canvas.
+
+1. Select **Edit** and change the name and description fields as desired. When done, select **Save**.
+
+> [!NOTE]
+> A good task flow name and description should help others understand the intended purpose and use of the task flow.
+
 ## Delete a task flow
 
 To delete a task flow:
@@ -214,16 +235,6 @@ Deleting a task flow removes all tasks, the task list, and any item assignments,
 
 > [!NOTE]
 > Items that were assigned to tasks in the deleted task flow remain in the workspace. When you create a new task flow, you need to assign them to the tasks in the new flow.
-
-## Select a new predefined taskflow
-
-At any point, you can choose to apply one of the predefined task flows to the canvas.
-
-To select one of the predefined task flows:
-
-1. Open the **Add** dropdown on the canvas and choose **Select task flow**. The predefined task flows pane will open.
-
-1. Choose one of the predefined task flows and the select **Select**. If there already is a task flow on the canvas, you'll be asked whether to overwrite the current task flow or to append the predefined task flow to the curent task flow.
 
 ## Related concepts
 
