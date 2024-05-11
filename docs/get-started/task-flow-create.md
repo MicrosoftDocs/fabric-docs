@@ -46,6 +46,10 @@ Select the task flow that best fits your project needs and then choose **Select*
 > [!NOTE]
 > Selecting a predefined task flow just places the tasks involved in the task flow on the canvas and indicates the connections between them. It is just a graphical representation - no actual items or data connections are created at this point.
 
+### Select a new predefined taskflow
+
+On the canvas, choose **Add** > **Select task flow**.
+
 ## Start with a custom task flow
 
 If you already have a clear idea of what the structure of your task flow needs to be, or if none of the predesigned task flows fit your needs, you can build a custom task flow.
