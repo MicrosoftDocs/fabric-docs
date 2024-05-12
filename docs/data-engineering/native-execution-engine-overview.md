@@ -114,6 +114,8 @@ library(SparkR)
 sparkR.conf("spark.gluten.enabled", "true")
 ```
 
+---
+
 ## Enabling on the environmental level 
 
 You can enable the Native Execution Engine across all jobs and notebooks associated with your environment ensures uniform performance enhancement: 
