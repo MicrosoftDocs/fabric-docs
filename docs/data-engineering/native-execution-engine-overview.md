@@ -123,11 +123,10 @@ You can enable the Native Execution Engine across all jobs and notebooks associa
 2. Go to Spark properties 
 3. Add Spark properties as presented on the screenshot 
 
-| Property              | Value                                                |
-| --------------------- | ---------------------------------------------------- |
-| spark.gluten.enabled  | true                                                 |
+|        Property       |                         Value                        |
+|:---------------------:|:----------------------------------------------------:|
+|  spark.gluten.enabled |                         true                         |
 | spark.shuffle.manager | org.apache.spark.shuffle.sort.ColumnarShuffleManager |
-
 
 [//]: # ( TODO)
 :::image type="content" source="media\native\" alt-text="TBD" lightbox="media\native\":::
