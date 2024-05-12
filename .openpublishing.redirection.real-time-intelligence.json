@@ -96,8 +96,8 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/real-time-analytics/event-streams/manage-monitor-eventhouse.md",
-      "redirect_url": "/fabric/real-time-intelligence/event-streams/manage-monitor-eventhouse",
+      "source_path_from_root": "/docs/real-time-analytics/manage-monitor-eventhouse.md",
+      "redirect_url": "/fabric/real-time-intelligence/manage-monitor-eventhouse",
       "redirect_document_id": false
     },
     {
