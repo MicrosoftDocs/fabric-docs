@@ -11,6 +11,8 @@ ms.date: 05/23/2024
 
 The explore data feature enables you to delve deeper into the data presented in any Real-Time Dashboard. If the information you're seeking isn't readily available on the dashboard, this feature allows you to extend your exploration beyond the data displayed in the tiles, potentially uncovering new insights.
 
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
 Even if a dashboard is shared with you and you only have viewer permissions, you can still explore it. The exploration process begins with viewing the data and its corresponding visualization as they appear on the tile. From there, you can further explore the data by adding or removing filters and aggregations, and viewing your results using different visualizations, all without needing any knowledge of the Kusto Query Language.
 
 This exploration can provide additional insights into your data, enhancing your understanding and decision-making capabilities.
