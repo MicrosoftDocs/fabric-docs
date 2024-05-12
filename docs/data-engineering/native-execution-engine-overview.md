@@ -23,17 +23,17 @@ This documentation provides you with detailed steps on how to enable and effecti
 
 ## When to Use the Native Execution Engine 
 
-The Native Execution Engine offers a solution for running queries on large-scale data sets, optimizing performance by leveraging the native capabilities of underlying data sources and minimizing the overhead typically associated with data movement and serialization in traditional Spark environments. While it supports a variety of operators and data types—including rollup hash aggregate, broadcast nested loop join (BNLJ), and precise timestamp formats—it's important to recognize its optimal use cases to fully benefit from its capabilities. 
+The Native Execution Engine offers a solution for running queries on large-scale data sets, optimizing performance by using the native capabilities of underlying data sources and minimizing the overhead typically associated with data movement and serialization in traditional Spark environments. While it supports various operators and data types—including rollup hash aggregate, broadcast nested loop join (BNLJ), and precise timestamp formats—it's important to recognize its optimal use cases to fully benefit from its capabilities. 
 
 Key scenarios where the Native Execution Engine excels: 
-* The engine is particularly effective when working with data in Parquet and Delta formats, which it can process natively and efficiently. 
+* The engine is effective when working with data in Parquet and Delta formats, which it can process natively and efficiently. 
 * Queries that involve intricate transformations and aggregations benefit significantly from the columnar processing and vectorization capabilities of the engine.  
-* The performance enhancement is most notable in scenarios where the queries do not trigger the fallback mechanism by avoiding unsupported features or expressions. 
+* The performance enhancement is most notable in scenarios where the queries don't trigger the fallback mechanism by avoiding unsupported features or expressions. 
 * The engine is well-suited for queries that are computationally intensive rather than simple or I/O-bound. 
 
 
 ## Enable the Native Execution Engine
-To leverage the full capabilities of the Native Execution Engine in Microsoft Fabric, during the preview phase, specific configurations are necessary. This section provides a detailed guide on activating this feature for individual notebooks or Spark Job Definitions (SJDs), as well as universally across your environment. 
+To use the full capabilities of the Native Execution Engine in Microsoft Fabric, during the preview phase, specific configurations are necessary. This section provides a detailed guide on activating this feature for individual notebooks or Spark Job Definitions (SJDs), and universally across your environment. 
 
 > [!IMPORTANT]
 > The Native Execution Engine currently supports the latest GA runtime version, which is [Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md). 
@@ -52,7 +52,7 @@ To enable the Native Execution Engine for a single notebook or SJD, you must inc
 } 
 ```
 
-For Notebooks-insert the required configuration commands in the first cell. For SJDs-include the configurations in the first line of your Spark job definition. 
+For Notebooks-insert the required configuration commands in the first cell. For SJDs-include the configurations in the frontline of your Spark job definition. 
 
 :::image type="content" source="media\native\enable.jpg" alt-text="Screenshot showcasing how to enable the Native Execution Engine inside the notebook." lightbox="media\native\enable.jpg":::
 
@@ -83,7 +83,7 @@ When enabled at the environmental level, the Native Execution Engine setting is 
 
 ### Control on the query level
 
-You can disable the Native Execution Engine for specific queries, particularly if they involve operators that are not currently supported (review [limitations](./native-execution-engine-overview.md#limitations)). To do this, simply set the Spark configuration spark.gluten.enabled to false for the specific cell containing your query. 
+You can disable the Native Execution Engine for specific queries, particularly if they involve operators that aren't currently supported (review [limitations](./native-execution-engine-overview.md#limitations)). To do this, set the Spark configuration spark.gluten.enabled to false for the specific cell containing your query. 
 
 # [Spark SQL](#tab/sparksql)
 
@@ -171,7 +171,7 @@ Alternatively, you can execute the df.explain() command in your notebook to view
 
 ### Fallback Mechanism 
 
-It’s important to be aware that in some instances, the Native Execution Engine may not be able to execute a query due to reasons such as unsupported features. In these cases, the operation fallbacks to the traditional Spark engine. This fallback mechanism ensures that there is no interruption to your workflow. 
+Note that in some instances, the Native Execution Engine may not be able to execute a query due to reasons such as unsupported features. In these cases, the operation fallbacks to the traditional Spark engine. This fallback mechanism ensures that there's no interruption to your workflow. 
 
 :::image type="content" source="media\native\fallback.jpg" alt-text="Screenshot showcasing the fallback mechanism." lightbox="media\native\fallback.jpg":::
 
@@ -183,11 +183,11 @@ It’s important to be aware that in some instances, the Native Execution Engine
 
 While the Native Execution Engine enhances performance for Apache Spark jobs, note its current preview-related limitations. 
 
-* The engine does not support partitioned writing for Delta tables. Some Delta-specific operations are not supported, including merge operations, checkpoint scans, and deletion vectors.
-* Certain Spark features and expressions are not compatible with the Native Execution Engine, such as user-defined functions (UDFs) and the array contains function as well as Spark Structured Streaming.
-* Scans from storage solutions that utilize private endpoints are not supported.
+* The engine does not support partitioned writing for Delta tables. Some Delta-specific operations aren't supported, including merge operations, checkpoint scans, and deletion vectors.
+* Certain Spark features and expressions aren't compatible with the Native Execution Engine, such as user-defined functions (UDFs) and the array contains function as well as Spark Structured Streaming.
+* Scans from storage solutions that utilize private endpoints aren't supported.
 * The engine fallbacks to the traditional Spark engine when user code *jar libraries that are used and uploaded to executors.
-* Native doesn't support ANSI mode, so it is looking and once ANSI mode is enabled it fallbacks to Vanilla Spark.
+* Native doesn't support ANSI mode, so it's looking and once ANSI mode is enabled it fallbacks to Vanilla Spark.
 
 
 > [!NOTE]
