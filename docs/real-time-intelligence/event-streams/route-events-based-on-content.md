@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: conceptual
-ms.date: 04/22/2024
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
@@ -55,6 +55,6 @@ To transform and route your data stream based on content, follow the steps at [E
 
 ## Related content
 
-- [New capabilities in Microsoft Fabric event streams](new-capabilities.md)
+- [New capabilities in Microsoft Fabric event streams](overview.md)
 - [Edit and publish an eventstream](edit-publish.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)

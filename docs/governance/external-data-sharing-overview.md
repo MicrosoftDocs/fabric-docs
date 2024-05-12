@@ -4,7 +4,7 @@ description: "This article describes the external data sharing feature in Micros
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.date: 04/18/2024
+ms.date: 05/05/2024
 
 #customer intent: As a Fabric administrator, data creator, or data consumer, I want to learn about sharing data stored in OneLake from one tenant to another, so that data doesn't have to be copied when it is shared.
 ---
@@ -56,12 +56,6 @@ With this understanding in mind, be aware of the following:
 ## Considerations and limitations
 
 * **Shortcuts:** Shortcuts contained in folders that are shared via external data sharing won't resolve in the consumer tenant.
-
-* **Billing:** The cost of read operations is billed to the data provider.
-
-* **[Security]** **Invitations:** External data share invitation can be forwarded to other users within the same tenant and can be accepted more than once. Any user with permission to access the lakehouse in which the share was accepted will be able to read the data.
-
-* **[Security]** **Admin control:** The tenant admin switch that specifies which users can accept external data shares is enforced via the user interface.
 
 ## Related content
 

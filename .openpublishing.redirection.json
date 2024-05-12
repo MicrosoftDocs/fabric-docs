@@ -131,11 +131,6 @@
           "redirect_document_id": true
         },
         {
-          "source_path_from_root": "/docs/real-time-analytics/event-streams/bring-events-to-fabric-from-event-hub.md",
-          "redirect_url": "/fabric/real-time-analytics/event-streams/transform-and-stream-real-time-events-to-lakehouse",
-          "redirect_document_id": false
-        },
-        {
           "source_path_from_root": "/docs/admin/admin-switch.md",
           "redirect_url": "/fabric/admin/fabric-switch",
           "redirect_document_id": false
@@ -144,11 +139,6 @@
           "source_path_from_root": "/docs/admin/service-admin-portal-content-pack-app.md",
           "redirect_url": "/fabric/admin/service-admin-portal-app",
           "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/onelake-shortcut.md",
-          "redirect_url": "/fabric/real-time-analytics/onelake-shortcuts",
-          "redirect_document_id": true
         },
         {
           "source_path_from_root": "/docs/data-factory/known-issues.md",
@@ -168,16 +158,6 @@
         {
           "source_path_from_root": "/docs/data-factory/known-issue-staging-artifact.md",
           "redirect_url": "/fabric/data-factory/known-issue-staging-item",
-          "redirect_document_id": true
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/get-data-blob.md",
-          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/get-data-blob-container.md",
-          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
           "redirect_document_id": true
         },
         {
@@ -234,11 +214,6 @@
           "source_path_from_root": "/docs/data-warehouse/get-started-lakehouse-sql-endpoint.md",
           "redirect_url": "/fabric/data-warehouse/get-started-lakehouse-sql-analytics-endpoint",
           "redirect_document_id": true
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/data-retention-policy.md",
-          "redirect_url": "/fabric/real-time-analytics/data-policies",
-          "redirect_document_id": false
         },
         {
           "source_path_from_root": "/docs/data-factory/connector-lakehouse-dataflows.md",
@@ -331,16 +306,6 @@
           "redirect_document_id": false
         },
         {
-          "source_path_from_root": "/docs/real-time-analytics/event-streams/transform-taxi-data-and-route-to-kql.md",
-          "redirect_url": "/fabric/real-time-analytics/event-streams/transform-sample-data-and-route-to-kql",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/onelake-mirroring.md",
-          "redirect_url": "/fabric/real-time-analytics/one-logical-copy",
-          "redirect_document_id": true
-        },
-        {
           "source_path_from_root": "/docs/security/az-resiliency.md",
           "redirect_url": "/azure/reliability/reliability-fabric",
           "redirect_document_id": false
@@ -351,14 +316,34 @@
           "redirect_document_id": false
         },
         {
-          "source_path_from_root": "/docs/real-time-analytics/jupyter-notebook.md",
-          "redirect_url": "/fabric/real-time-analytics/notebooks",
-          "redirect_document_id": false
-        },
-        {
           "source_path_from_root": "/docs/data-factory/known-issue-inprogress-refresh-history.md",
           "redirect_url": "/fabric/get-started/known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-2-event-streams.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-2-get-real-time-events",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-get-historical-data.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-3-query-data",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-explore.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-4-set-alert",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-advanced-kql-queries.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-build-report.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-6-power-bi-report",
+          "redirect_document_id": true
         },
         {
           "source_path_from_root": "/docs/data-factory/known-issue-gen1-admin-switch.md",
@@ -384,11 +369,6 @@
           "source_path_from_root": "/docs/data-factory/known-issue-staging-item.md",
           "redirect_url": "/fabric/data-factory/data-factory-known-issues",
           "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/event-streams/build-real-time-dashboard-from-iot-hub.md",
-          "redirect_url": "/fabric/real-time-analytics/event-streams/build-report-from-iot-hub",
-          "redirect_document_id": true
         },
         {
           "source_path_from_root": "/docs/data-science/python-guide/python-library-management.md",
@@ -509,11 +489,6 @@
           "source_path_from_root": "/docs/onelake/fabric-and-onelake-security.md",
           "redirect_url": "/fabric/onelake/security/fabric-onelake-security",
           "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/data-profile.md",
-          "redirect_url": "/fabric/real-time-analytics/create-database",
-          "redirect_document_id": false
-        }   
+        }
     ]
 }

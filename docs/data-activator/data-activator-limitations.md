@@ -51,6 +51,28 @@ Data activator also supports the following map visuals. Data activator only supp
 * Azure Map
 * Arc GIS map
 
+## Supported Real-Time Dashboard tiles
+
+Data Activator supports only the following tile types in Real-Time Dashboards:
+
+* Time chart
+* Column chart
+* Area chart
+* Line chart
+* Stat
+* Multi stat
+* Pie Chart
+
+Additionally, for a tile to be supported by Data Activator:
+* The data in the tile must not be static
+* The data in the tile must be based on a KQL query
+* The tile must have at most one time range
+* The tile must be filtered by one of the pre-defined time ranges; custom time ranges are not supported
+* The tile must not contain time series data (for example, data created using the *make-series* KQL operator
+
+  
+
+
 
 ## Allowed recipients of email alerts
 

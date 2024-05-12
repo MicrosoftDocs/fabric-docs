@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 05/01/2024
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
@@ -13,13 +13,15 @@ ms.search.form: Source and Destination
 
 If you want to connect your own application with an eventstream, you can add a custom endpoint source. Then you can send data to the eventstream from your own application with the connection endpoint displayed as the custom endpoint. This article shows you how to add a custom app source to an eventstream.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
 # [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
 
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)] 
 
 ## Add custom app data as a source
 
@@ -146,10 +148,10 @@ To learn how to add other sources to an eventstream, see the following articles:
 
 To add a destination to an eventstream, see the following articles:
 
-- [Route events to destinations ](add-manage-eventstream-destinations-enhanced.md)
-- [Custom app destination](add-destination-custom-app-enhanced.md)
+- [Route events to destinations ](add-manage-eventstream-destinations.md)
+- [Custom app destination](add-destination-custom-app.md)
 - [Derived stream destination](add-destination-derived-stream.md)
-- [KQL Database destination](add-destination-kql-database-enhanced.md)
-- [Lakehouse destination](add-destination-lakehouse-enhanced.md)
-- [Reflex destination](add-destination-reflex-enhanced.md)
+- [KQL Database destination](add-destination-kql-database.md)
+- [Lakehouse destination](add-destination-lakehouse.md)
+- [Reflex destination](add-destination-reflex.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
