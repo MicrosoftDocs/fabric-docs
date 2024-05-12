@@ -11,7 +11,7 @@ ms.date: 5/12/2024
 
 # Native Execution Engine for Fabric Spark
 
-The Native Execution Engine is a groundbreaking enhancement for Apache Spark job executions on Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. Designed for seamless integration, it requires no code modifications and avoids vendor lock-in. It supports Apache Spark APIs and is compatible with Runtime 1.2 (Spark 3.4), and works with both Parquet and Delta formats. Regardless of the data's location within OneLake or if accessed via shortcuts, the Native Execution Engine is engineered to maximize efficiency and performance. 
+The Native Execution Engine is a groundbreaking enhancement for Apache Spark job executions on Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. Designed for seamless integration, it requires no code modifications and avoids vendor lock-in. **It supports Apache Spark APIs and is compatible with Runtime 1.2 (Spark 3.4), and works with both Parquet and Delta formats. Regardless of the data's location within OneLake or if accessed via shortcuts, the Native Execution Engine is engineered to maximize efficiency and performance.** 
 
 The Native Execution Engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to 4x faster performance compared to traditional OSS Spark as validated by the TPC-DS 1TB benchmark. This engine is adept at managing a wide array of data processing scenarios—ranging from routine data ingestion, batch jobs, and ETL tasks to complex data science analytics and responsive interactive queries. Users benefit from not only accelerated processing times but also from heightened throughput, optimized resource utilization.
 
@@ -35,6 +35,9 @@ Key scenarios where the Native Execution Engine excels:
 ## Enable the Native Execution Engine
 To leverage the full capabilities of the Native Execution Engine in Microsoft Fabric, during the preview phase, specific configurations are necessary. This section provides a detailed guide on activating this feature for individual notebooks or Spark Job Definitions (SJDs), as well as universally across your environment. 
 
+> [!IMPORTANT]
+> The Native Execution Engine currently supports the latest GA runtime version, which is [Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md). 
+
 ### Enable for individual notebook or SJD 
 
 To enable the Native Execution Engine for a single notebook or SJD, you must incorporate the necessary configurations at the beginning of your execution script: 
@@ -51,8 +54,7 @@ To enable the Native Execution Engine for a single notebook or SJD, you must inc
 
 For Notebooks-insert the required configuration commands in the first cell. For SJDs-include the configurations in the first line of your Spark job definition. 
 
-[//]: # ( TODO)
-:::image type="content" source="media\native\" alt-text="TBD" lightbox="media\native\":::
+:::image type="content" source="media\native\enable.jpg" alt-text="Screenshot showcasing how to enable the Native Execution Engine inside the notebook." lightbox="media\native\enable.jpg":::
 
 
 The Native Execution Engine is integrated with custom pools, meaning that enabling this feature initiates a new session, typically taking up to two minutes to start.
@@ -60,6 +62,26 @@ The Native Execution Engine is integrated with custom pools, meaning that enabli
 > [!IMPORTANT]
 > Configuration of the Native Execution Engine must be done prior to the initiation of the Spark session. Once the Spark session starts, "spark.shuffle.manager" setting become immutable and cannot be changed. Ensure that these configurations are set within the %%configure block in notebooks or in the Spark session builder for SJDs. 
 
+
+### Enable on the environmental level 
+
+You can enable the Native Execution Engine across all jobs and notebooks associated with your environment ensures uniform performance enhancement: 
+1. Navigate to your environment settings. 
+2. Go to Spark properties 
+3. Add Spark properties as presented on the screenshot 
+
+|        Property       |                         Value                        |
+|:---------------------:|:----------------------------------------------------:|
+|  spark.gluten.enabled |                         true                         |
+| spark.shuffle.manager | org.apache.spark.shuffle.sort.ColumnarShuffleManager |
+
+:::image type="content" source="media\native\enable-env.jpg" alt-text="Screenshot showcasing how to enable the Native Execution Engine inside the environment item." lightbox="media\native\enable-env.jpg":::
+
+
+When enabled at the environmental level, the Native Execution Engine setting is inherited by all subsequent jobs and notebooks. This inheritance ensures that any new sessions or resources created under this environment automatically benefit from the enhanced execution capabilities. 
+
+
+### Control on the query level
 
 You can disable the Native Execution Engine for specific queries, particularly if they involve operators that are not currently supported (review [limitations](./native-execution-engine-overview.md#limitations)). To do this, simply set the Spark configuration spark.gluten.enabled to false for the specific cell containing your query. 
 
@@ -94,6 +116,9 @@ sparkR.conf("spark.gluten.enabled", "false")
 
 ---
 
+:::image type="content" source="media\native\disable.jpg" alt-text="Screenshot showcasing how to disable the Native Execution Engine inside the notebook." lightbox="media\native\disable.jpg":::
+
+
 After executing the query in which the Native Execution Engine is disabled, ensure you re-enable it for subsequent cells by setting spark.gluten.enabled to true. This is necessary because Spark executes code cells sequentially:
 
 # [Spark SQL](#tab/sparksql)
@@ -127,24 +152,6 @@ sparkR.conf("spark.gluten.enabled", "true")
 
 ---
 
-### Enable on the environmental level 
-
-You can enable the Native Execution Engine across all jobs and notebooks associated with your environment ensures uniform performance enhancement: 
-1. Navigate to your environment settings. 
-2. Go to Spark properties 
-3. Add Spark properties as presented on the screenshot 
-
-|        Property       |                         Value                        |
-|:---------------------:|:----------------------------------------------------:|
-|  spark.gluten.enabled |                         true                         |
-| spark.shuffle.manager | org.apache.spark.shuffle.sort.ColumnarShuffleManager |
-
-[//]: # ( TODO)
-:::image type="content" source="media\native\" alt-text="TBD" lightbox="media\native\":::
-
-
-When enabled at the environmental level, the Native Execution Engine setting is inherited by all subsequent jobs and notebooks. This inheritance ensures that any new sessions or resources created under this environment automatically benefit from the enhanced execution capabilities. 
-
 
 ## Identify operations executed by the Native Execution Engine 
 There are several methods to determine if an operator in your Apache Spark job was processed using the Native Execution Engine. The following sections will guide you through the various steps to effectively check this. 
@@ -153,23 +160,23 @@ There are several methods to determine if an operator in your Apache Spark job w
 
 Access the Spark UI or Spark History Server to locate the query you need to inspect. In the query plan displayed within the interface, look for any node names that end with the suffix "Transformer." This indicates that the operation has been executed by the Native Execution Engine. For instance, nodes might be labeled as "RollUpHashAggregateTransformer", “ProjectExecTransformer”, “BroadcastHashJoinExecTransformer”, “ShuffledHashJoinExecTransformer” or "BroadcastNestedLoopJoinExecTransformer". 
 
-[//]: # ( TODO)
-:::image type="content" source="media\native\" alt-text="TBD" lightbox="media\native\":::
+:::image type="content" source="media\native\sparkui.jpg" alt-text="Screenshot showcasing how to check DAG visualization for the single stage and see a new stage that end with the suffix Transformer, what indicated that it comes from, Native Execution Engine." lightbox="media\native\sparkui.jpg":::
+
 
 ### Using DataFrame Explain 
 
 Alternatively, you can execute the df.explain() command in your notebook to view the execution plan. Within this output, look for the same "Transformer" suffixes. This method provides a straightforward way to confirm whether specific operations are being handled by the Native Execution Engine. 
  
-[//]: # ( TODO)
-:::image type="content" source="media\native\" alt-text="TBD" lightbox="media\native\":::
+:::image type="content" source="media\native\dfdetails.jpg" alt-text="Screenshot showcasing how to check physical plan for your query and see that the query was executed by Native Execution Engine." lightbox="media\native\dfdetails.jpg":::
 
 ### Fallback Mechanism 
 
 It’s important to be aware that in some instances, the Native Execution Engine may not be able to execute a query due to reasons such as unsupported features. In these cases, the operation will fallback to the traditional Spark engine. This fallback mechanism ensures that there is no interruption to your workflow. 
 
+:::image type="content" source="media\native\fallback.jpg" alt-text="Screenshot showcasing the fallback mechanism." lightbox="media\native\fallback.jpg":::
 
-[//]: # ( TODO)
-:::image type="content" source="media\native\" alt-text="TBD" lightbox="media\native\":::
+
+:::image type="content" source="media\native\logs.jpg" alt-text=""Screenshot showcasing how to check logs associated with the fallback mechanism." lightbox="media\native\logs.jpg":::
 
 
 ## Limitations
@@ -180,7 +187,7 @@ While the Native Execution Engine enhances performance for Apache Spark jobs, it
 * Certain Spark features and expressions are not compatible with the Native Execution Engine, such as user-defined functions (UDFs) and the array contains function as well as Spark Structured Streaming.
 * Scans from storage solutions that utilize private endpoints are not supported.
 * The engine will fall back to the traditional Spark engine when user code *jar libraries that are used and uploaded to executors.
-* Native doesn't support ANSI mode, so it is looking and once ANSI mode is enabled it will fall back to Vanilla Spark. 
+* Native doesn't support ANSI mode, so it is looking and once ANSI mode is enabled it will fall back to Vanilla Spark.
 
 
 > [!NOTE]
