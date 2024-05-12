@@ -35,7 +35,7 @@ Key scenarios where the Native Execution Engine excels:
 ## Enable the Native Execution Engine
 To leverage the full capabilities of the Native Execution Engine in Microsoft Fabric, during the preview phase, specific configurations are necessary. This section provides a detailed guide on activating this feature for individual notebooks or Spark Job Definitions (SJDs), as well as universally across your environment. 
 
-## Enabling for individual Notebook or SJD 
+### Enable for individual notebook or SJD 
 
 To enable the Native Execution Engine for a single notebook or SJD, you must incorporate the necessary configurations at the beginning of your execution script: 
 
@@ -127,7 +127,7 @@ sparkR.conf("spark.gluten.enabled", "true")
 
 ---
 
-## Enabling on the environmental level 
+### Enable on the environmental level 
 
 You can enable the Native Execution Engine across all jobs and notebooks associated with your environment ensures uniform performance enhancement: 
 1. Navigate to your environment settings. 
