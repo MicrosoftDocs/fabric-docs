@@ -22,7 +22,8 @@ The name of the item directory is `<item name>.<item type>` followed by the item
 
 :::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of Git directory containing items.":::
 
-Once created, Git integration never changes the name of a directory. Even if you change the name of the item, the directory name stays the same. If you manually change the name of an item directory, make sure to take the item's dependencies into account. For example, if you change the name of a semantic model then you should make sure to update the name in the report that uses that semantic model.
+* Once created, Git integration never changes the name of a directory. Even if you change the name of the item, the directory name stays the same.
+* If you manually change the name of an item directory, make sure to take the item's dependencies into account. For example, if you change the name of a semantic model then you should make sure to update the name in the report that uses that semantic model.
 
 ## Directory content
 
