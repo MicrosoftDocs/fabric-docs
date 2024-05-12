@@ -1,5 +1,5 @@
 ---
-title: One logical copy (preview)
+title: One logical copy
 description: Learn how to turn on KQL Database data availability in OneLake.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -8,13 +8,11 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/21/2024
+ms.date: 05/21/2024
 ---
-# One logical copy (preview)
+# One logical copy
 
 You can create a one logical copy of KQL Database data by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 Delta Lake is a unified data lake table format that achieves seamless data access across all compute engines in Microsoft Fabric. For more information on Delta Lake, see [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake).
 
@@ -76,19 +74,18 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
 
  Event house data types are mapped to Delta Parquet data types using the following rules. For more information on Event house data types, see [Scalar data types](/azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric).
 
-| Event house Data Type | Delta Data Type 
-| --------------- | ----------------- 
-| `bool`     | `boolean` 
-| `datetime` | `timestamp OR date (for date-bound partition definitions)` 
-| `dynamic`  | `string` 
-| `guid` | `string`
-| `int` | `integer`
-| `long` | `long`
-| `real` | `double`
-| `string` | `string` 
-| `timespan` | `long`
-| `decimal` | `decimal(38,18)`
-
+| Event house data type | Delta data type |
+| --------------- | -----------------|
+| `bool`     | `boolean` |
+| `datetime` | `timestamp OR date (for date-bound partition definitions)` |
+| `dynamic`  | `string` |
+| `guid` | `string`|
+| `int` | `integer`|
+| `long` | `long` |
+| `real` | `double`|
+| `string` | `string` |
+| `timespan` | `long`|
+| `decimal` | `decimal(38,18)`|
 
 ## Related content
 
