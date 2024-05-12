@@ -1,11 +1,11 @@
 ---
 title: Set up a task flow
-description: This article shows how to set up a task flow both from scratch and by using one of Fabric's predesigned task flows.
+description: This article shows how to set up a task flow, both from scratch and by using one of Fabric's predesigned task flows.
 ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 05/11/2024
+ms.date: 05/13/2024
 #customer intent: As a data analytics solutions architect, I want to get started using a task flow to design my data analytics solution.
 ---
 
@@ -34,7 +34,14 @@ You'll see that the workspace view is split between the task flow, where you'll 
 
 The task flow itself is split between the canvas, which will hold the visualization of your work flow, and a side pane that contains information and controls to help you build the task flow. The contents of the side pane changes according to what is selected in the canvas.
 
-When no task flow has been configured, an empty default task flow entitled **Get started with a task flow** is there. To start building your task flow, you can either [select one of the predesigned task flows](#start-with-a-predesigned-task-flow) or [add a task to start building one from scratch](#start-with-a-custom-task-flow).
+When no task flow has been configured, an empty default task flow entitled **Get started with a task flow** is there. To build your task flow, you need to:
+
+* Add tasks to the task flow canvas. This would typically be done by data project architect.
+* Arrange the tasks on the task flow canvas in such a way that illustrates the logic of the project. This would typically be done by the data project architect.
+* Connect the tasks to show the logical structure of the project. This would be typically done by the architect of the data project.
+* Assign items in the workspace to the tasks in the workflow. This work could be done either by the data project architect or by the engineers working on the project.
+
+To get started, you can either [select one of the predesigned task flows](#start-with-a-predesigned-task-flow) or [add a task to start building one from scratch](#start-with-a-custom-task-flow).
 
 ## Start with a predesigned task flow
 
