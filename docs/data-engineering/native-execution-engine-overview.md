@@ -18,7 +18,18 @@ The Native Execution Engine significantly elevates query performance while minim
 This documentation will provide you with detailed steps on how to enable and effectively use the Native Execution Engine for your Spark applications on Microsoft Fabric.  
 
 > [!NOTE]
-> The Native Execution Engine is currently in a preview stage. To learn more, see the [limitations and notes](./native-execution-engine-overview.md#limitations).
+> The Native Execution Engine is currently in a preview stage. To learn more, see the [limitations](./native-execution-engine-overview.md#limitations).
+
+
+## When to Use the Native Execution Engine 
+
+The Native Execution Engine offers a solution for running queries on large-scale data sets, optimizing performance by leveraging the native capabilities of underlying data sources and minimizing the overhead typically associated with data movement and serialization in traditional Spark environments. While it supports a variety of operators and data types—including rollup hash aggregate, broadcast nested loop join (BNLJ), and precise timestamp formats—it's important to recognize its optimal use cases to fully benefit from its capabilities. 
+
+Key scenarios where the Native Execution Engine excels: 
+* The engine is particularly effective when working with data in Parquet and Delta formats, which it can process natively and efficiently. 
+* Queries that involve intricate transformations and aggregations benefit significantly from the columnar processing and vectorization capabilities of the engine.  
+* The performance enhancement is most notable in scenarios where the queries do not trigger the fallback mechanism by avoiding unsupported features or expressions. 
+* The engine is well-suited for queries that are computationally intensive rather than simple or I/O-bound. 
 
 
 ## Enable the Native Execution Engine
@@ -159,17 +170,6 @@ It’s important to be aware that in some instances, the Native Execution Engine
 
 [//]: # ( TODO)
 :::image type="content" source="media\native\" alt-text="TBD" lightbox="media\native\":::
-
-
-## When to Use the Native Execution Engine 
-
-The Native Execution Engine offers a solution for running queries on large-scale data sets, optimizing performance by leveraging the native capabilities of underlying data sources and minimizing the overhead typically associated with data movement and serialization in traditional Spark environments. While it supports a variety of operators and data types—including rollup hash aggregate, broadcast nested loop join (BNLJ), and precise timestamp formats—it's important to recognize its optimal use cases to fully benefit from its capabilities. 
-
-Key scenarios where the Native Execution Engine excels: 
-* The engine is particularly effective when working with data in Parquet and Delta formats, which it can process natively and efficiently. 
-* Queries that involve intricate transformations and aggregations benefit significantly from the columnar processing and vectorization capabilities of the engine.  
-* The performance enhancement is most notable in scenarios where the queries do not trigger the fallback mechanism by avoiding unsupported features or expressions. 
-* The engine is well-suited for queries that are computationally intensive rather than simple or I/O-bound. 
 
 
 ## Limitations
