@@ -24,6 +24,7 @@ Ready to get started? Read [Create a workspace](create-workspaces.md).
 
 Here are some useful tips about working with workspaces.
 
+- **Set up a task flow for the workspace** to organize your data project and to help other understand and work on your project. Read more about [task flows](./task-flow-overview.md).
 - **Pin workspaces** to the top of the workspace flyout list to quickly access your favorite workspaces. Read more about [pin workspaces](create-workspaces.md#pin-workspaces).
 - **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer. Read more about [workspace roles](roles-workspaces.md).
 - **Create folders in the workspace**: Organize and manage artifacts in the workspace. Read more about [creating folders in workspaces](workspaces-folders.md).
@@ -34,9 +35,19 @@ Here are some useful tips about working with workspaces.
 
 ## Current workspace
 
-After you select and open to a workspace, this workspace becomes your current workspace. You can quickly navigate to it from anywhere by selecting the workspace icon from left nav pane.
+After you select and open a workspace, this workspace becomes your current workspace. You can quickly navigate to it from anywhere by selecting the workspace icon from left nav pane.
 
 ![Screenshot of current workspace in left nav pane.](media/workspaces/current-workspace-icon-left-nav.png)
+
+## Workspace features
+
+Header: Contains the workspace title and brief description, and links for creating deployment pipelines and apps, managing workspace access, and opening the workspace settings pane.
+Toolbar: Contains tools for adding folders and items, uploading files, searching and filtering, and switching views. 
+Main view
+
+
+
+
 
 ## Workspace settings
 

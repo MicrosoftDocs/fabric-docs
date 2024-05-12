@@ -1,5 +1,5 @@
 ---
-title: Overview of task flows
+title: Task flows overview
 description: This article gives an overview of task flows and task flow terminology.
 ms.reviewer: liud
 ms.author: painbar
@@ -10,7 +10,7 @@ ms.date: 05/11/2024
 #customer intent: As a data analytics solutions architect, or as a data engineer, I want to learn about task flows and how they can help facilitate the completion of a complex data analytics solution. 
 
 ---
-# Overview of task flows in Microsoft Fabric
+# Task flows in Microsoft Fabric
 
 This article describes the task flows feature in Microsoft Fabric. Its target audience is data analytics solution architects who want to use a task flow to build a visual representation of their project, and engineers who are working on the project and want to use the task flow to facilitate their work.
 
@@ -46,9 +46,9 @@ Each task has a task type that classifies the task based on its key capabilities
 | **General** | Create a customized task for your project needs that you can assign available item types to. |
 | **Get data** | Ingest both batch and real-time data into a single location within your Fabric workspace. |
 | **Store data** | Organize, query, and store your ingested data in an easily retrievable format. |
-| **Prepare data** | Prepare your data for analysis or modeling by addressing issues with the data, such as duplicates, missing values, formatting, etc. |
-| **Analyze and train data** | Analyze and use your newly structured data to build and train machine learning models to make decisions and predictions. |
-| **Track data** | Take actions, such as sending automated emails or notifications, about the insights that your data provides. |
+| **Prepare data** | Clean, transform, extract, and load your data for analysis and modeling tasks. |
+| **Analyze and train data** | Propose hypotheses, train models, and explore your data to make decisions and predictions. |
+| **Track data** | Monitor your streaming or nearly real-time operational data, and make decisions based on gained insights. |
 | **Visualize data** | Present your data as rich visualizations and insights that can be shared with others. |
 
 ### Connector

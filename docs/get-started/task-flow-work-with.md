@@ -1,16 +1,16 @@
 ---
-title: Work with task flow tasks
-description: This show how to add, delete, change, and connect tasks, and also how to assign items to tasks.
+title: Work with task flows
+description: This show how to work with the task flow - add tasks, assign items to tasks, connect tasks, etc.
 ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 05/09/2024
+ms.date: 05/12/2024
 
 #customer intent: As a data analytics solution architect, I need to know to create tasks so that I can build a task flow that illustrates my project and that engineers can use to guide and facilitate their work on the project. As an engineer, I want to understand how to use task to organize and facilitate my work.
 ---
 
-# Work with tasks
+# Work with task flows
 
 This article describes how to work with tasks. The target audience is data analytics solution architects who are designing a data analytics solution, engineers who need to know how to use task flows to facilitate their work, and others who want to use the task flow to filter the item list to help navigate and understand the workspace.
 
@@ -199,6 +199,9 @@ With items assigned to tasks in a task flow, you can use the task flow to quickl
 * When you select a task, the items list is filtered to show only the items that are assigned to that task.
 
     :::image type="content" source="./media/task-flow-work-with/filter-item-list.png" alt-text="Screenshot illustrating how to filter the item list by selecting a task.":::
+
+    > [!NOTE]
+    > Selecting a task filters the current items list only - it doesn't show items from subfolders.
 
 ## Select a new predefined task flow
 
