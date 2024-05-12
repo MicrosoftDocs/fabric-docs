@@ -38,8 +38,8 @@ When no task flow has been configured, an empty default task flow entitled **Get
 
 * Add tasks to the task flow canvas. This would typically be done by data project architect.
 * Arrange the tasks on the task flow canvas in such a way that illustrates the logic of the project. This would typically be done by the data project architect.
-* Connect the tasks to show the logical structure of the project. This would be typically done by the architect of the data project.
-* Assign items in the workspace to the tasks in the workflow. This work could be done either by the data project architect or by the engineers working on the project.
+* Connect the tasks to show the logical structure of the project. This would typically be done by the data project architect.
+* Assign items to the tasks in the workflow. This work could be done by either the data project architect or the engineers working on the project.
 
 To get started, you can either [select one of the predesigned task flows](#start-with-a-predesigned-task-flow) or [add a task to start building one from scratch](#start-with-a-custom-task-flow).
 
