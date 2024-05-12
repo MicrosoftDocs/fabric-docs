@@ -173,20 +173,20 @@ For more information on deploying content, see [Deploy content](./deployment-pip
 
 In order to edit the workspace without interfering with other team members' changes, each team member creates their own isolated workspace to work in until they're ready to share their changes with the team.
 
-1. From the *branch* tab of the **Source control** menu, select **Branch out to a new workspace**.
+1. From the *branch* tab of the **Source control** menu, select **Branch out to new workspace**.
 
-    :::image type="content" source="media/cicd-tutorial/branch-out.png" alt-text="Screenshot of source control branch out option.":::
+    :::image type="content" source="./media/cicd-tutorial/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
-1. Specify the following details about the branch and workspace. The new branch is based on the *main* branch of the Git repo.
+1. Specify the following details about the branch and workspace. The new branch is automatically created based on the branch connected to the current workspace.
 
    * Branch name (for this tutorial, name it *MyFoodEdits*)
    * Workspace name (for this tutorial, name it *My_FoodSales*)
 
-   :::image type="content" source="media/cicd-tutorial/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
+   :::image type="content" source="./media/cicd-tutorial/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
 
 1. Select **Branch out**.
 
-Fabric creates the new workspace and branch and connects it to Git. You're automatically taken to the new workspace. This might take a few minutes.
+Fabric creates the new workspace and branch. You're automatically taken to the new workspace. This might take a few minutes.
 
 ## Step 7: Edit the workspace
 
@@ -239,9 +239,9 @@ In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#c
 
 1. [Merge the pull request](/azure/devops/repos/git/complete-pull-requests#complete-a-pull-request).
 
-   :::image type="content" source="media/cicd-tutorial/complete-merge.png" alt-text="Screenshot of merge pull request.":::
+   :::image type="content" source="media/cicd-tutorial/complete-merge.png" alt-text="Screenshot of merge pull request interface.":::
 
-Once the branched out workspace is merged with the main branch of the Git repo, you can safely delete the workspace, if you want. It's not deleted automatically.
+Once the changes have been merged to the main branch, you can safely delete the workspace, if you want. It's not deleted automatically.
 
 ## Step 10: Update shared workspace
 

@@ -15,7 +15,7 @@ ms.custom:
 
 This article explains basic Git concepts and the process of integrating Git with your Microsoft Fabric workspace.
 
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
+[INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 ## Permissions
 
@@ -88,19 +88,32 @@ As long as you’re connected, the following information appears at the bottom o
 
 :::image type="content" source="./media/git-integration-process/sync-info.png" alt-text="Screenshot of sync information that appears on the bottom of the screen when connected to Git.":::
 
-## Commits and updates
-
 ### Source control pane
 
-On top of the screen is the Source control icon. It shows the number of items that are different in the workspace and Git branch. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
+On top of the screen is the **Source control** icon. It shows the number of items that are different in the workspace and Git branch. When changes are made either to the workspace or the Git branch, the number is updated. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
 
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 
-When changes are made either to the workspace or the Git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control pane.
+Select the Source control icon to open the **Source control** pane.
 
 The **Source control** pane has two tabs on the side.
 
-In the **Source control** pane, the **Changes** tab shows the number of items that were changed in the workspace and need to be committed to Git, and the **Updates** tab shows the number of items that were modified in the Git branch and need to be updated to the workspace.
+- [Branches](#branch-out)
+- [Commits and updates](#commits-and-updates)
+
+### Branch out
+
+The Branch tab of the Source control panel enables you to create a new Git branch quickly.
+
+:::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="{alt-text}":::
+
+### Commits and updates
+
+When changes are made either to the workspace or the Git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control pane.
+
+The **Commit and update** pane has two tabs.
+
+The **Changes** tab shows the number of items that were changed in the workspace and need to be committed to Git. The **Updates** tab shows the number of items that were modified in the Git branch and need to be updated to the workspace.
 
 In each tab, the changed items are listed with an icon indicating the status:
 
@@ -152,6 +165,13 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
   - Contains any of the following characters: `"`, `/`, `:`, `<`, `>`, `\\`, `*`, `?`, `|`
 
   The logical ID (Guid) is added as a prefix before the type, when naming the folder in Git.
+
+### Branching out limitations
+
+- When branching out, a new folder is created and the settings from the original folder aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
+- Only [Git supported items](./intro-to-git-integration.md#supported-items) are available in the new workspace.
+- The related branches list only shows branches and workspaces you have permission to view.
+
 
 ### Sync and commit limitations
 

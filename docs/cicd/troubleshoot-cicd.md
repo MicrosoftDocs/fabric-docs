@@ -102,6 +102,12 @@ To understand the considerations and limitations of various lifecycle management
 **Cause**: You can only connect to Git repos if you have a valid Premium license. If your license expired or you change your license to a license that doesn't include Git integration, you won't be able to connect to that repo anymore. This applies to trial licenses as well.  
 **Solution**: Disconnect from Git and work without source control, or purchase a Premium license.
 
+#### Branching out: I don't see the branch I want to connect to
+
+**Description of problem**: I don't see the branch I want to connect to in the branching out tab of the **Source control** panel.  
+**Cause**: The branching out list only shows branches that you have permission to view.  
+**Solution**: Check that the branch you want exists and that you have permission to view it. If not, ask the owner of the branch to give you permission See [Branch limitations](./git-integration/git-integration-process.md#branching-out-limitations) for more information.
+
 ### Commit issues
 
 #### The Commit button is disabled

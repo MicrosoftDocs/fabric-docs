@@ -48,19 +48,19 @@ For a specific guidance on how to use the new Power BI Desktop file format in gi
 
 For a developer who works in the web, the flow would be as follows:
 
-1. From the *branch* tab of the **Source control** menu, select **Branch out to a new workspace**.
+1. From the *branch* tab of the **Source control** menu, select **Branch out to new workspace**.
 
-    :::image type="content" source="media/manage-branches/branch-out.png" alt-text="Screenshot of source control branch out option.":::
+    :::image type="content" source="./media/manage-branches/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
-1. Specify the names of the branch and workspace. The new branch is based on the *main* branch of the Git repo.
+1. Specify the names of the branch and workspace. The new branch created based on the branch connected to the current workspace.
 
-   :::image type="content" source="media/manage-branches/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
+   :::image type="content" source="./media/manage-branches/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
 
 1. Select **Branch out**.
 
-   Fabric creates the new workspace and branch and connects it to Git. You're automatically taken to the new workspace.
+   Fabric creates the new workspace and branch. You're automatically taken to the new workspace.
 
-   The workspace syncs with your feature branch, and becomes a copy of the Dev team's workspace, as illustrated. You can now work in this new isolated environment. This might take a few minutes.
+   The workspace syncs with your feature branch, and becomes an isolated environment to work in, as illustrated. You can now work in this new isolated environment. This might take a few minutes.
 
    :::image type="content" source="./media/manage-branches/branches-update-commit.png" alt-text="Diagram showing the workflow of commits.":::
 
@@ -85,7 +85,7 @@ To switch between branches, follow these steps:
 
 If you have any unsaved changes in the workspace, they will be lost if you switch branches without saving them first. Select **Cancel** to go back and save your changes before switching branches.
 
-    :::image type="content" source="media/manage-branches/switch-branch-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to switch branches.":::
+     :::image type="content" source="media/manage-branches/switch-branch-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to switch branches.":::
 
 ## Related content
 
