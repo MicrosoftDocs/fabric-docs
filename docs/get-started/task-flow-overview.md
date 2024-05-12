@@ -55,7 +55,7 @@ Each task has a task type that classifies the task based on its key capabilities
 
 Connectors are arrows that represent logical connections between the tasks in the task flow. They don't represent the flow of data, nor do they create any actual data connections.
 
-:::image type="content" source="./media/task-flow-overview/task-flow-connector.png" alt-text="Screenshot showing connectors in a task flow.":::
+:::image type="content" source="./media/task-flow-overview/task-flow-connector.png" alt-text="Screenshot showing connectors in a task flow." lightbox="./media/task-flow-overview/task-flow-connector.png":::
 
 ## Considerations and limitations
 
