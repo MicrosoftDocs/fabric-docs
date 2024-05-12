@@ -32,6 +32,8 @@ Key scenarios where the Native Execution Engine excels:
 * The engine is well-suited for queries that are computationally intensive rather than simple or I/O-bound. 
 
 
+Check all operators and functions supported by the Native Execution Engine on [Apache Gluten website](https://github.com/apache/incubator-gluten/blob/main/docs/velox-backend-support-progress.md).
+
 ## Enable the Native Execution Engine
 To use the full capabilities of the Native Execution Engine in Microsoft Fabric, during the preview phase, specific configurations are necessary. This section provides a detailed guide on activating this feature for individual notebooks or Spark Job Definitions (SJDs), and universally across your environment. 
 
