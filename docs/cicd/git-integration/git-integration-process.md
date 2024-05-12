@@ -88,7 +88,7 @@ As long as you’re connected, the following information appears at the bottom o
 
 :::image type="content" source="./media/git-integration-process/sync-info.png" alt-text="Screenshot of sync information that appears on the bottom of the screen when connected to Git.":::
 
-### Source control pane
+## Source control pane
 
 On top of the screen is the **Source control** icon. It shows the number of items that are different in the workspace and Git branch. When changes are made either to the workspace or the Git branch, the number is updated. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
 
