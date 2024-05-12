@@ -14,13 +14,11 @@ ms.custom: build-2023
 
 Items in Microsoft Fabric are stored in a folder. The folder containing the item can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items. Each item in the folder is represented in its own subdirectory.
 
-
-
 ## Directory name
 
-When you save an item in Git, Git integration automatically creates a directory for that item. 
+When you save an item in Git, Git integration automatically creates a directory for that item.
 
-The name of the item directory is `<item name>.<item type>` followed by the item type. If that name isn't available, the the name of the item's logical ID (GUID) is used followed by the item type.
+The name of the item directory is `<item name>.<item type>` followed by the item type. If that name isn't available, the name of the item's logicalID (GUID) is used followed by the item type.
 
 :::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of Git directory containing items.":::
 
@@ -80,7 +78,7 @@ For more information about semantic model folders and a complete list of their c
 
 In addition to the item definition files, each item directory contains one or two automatically generated system files, depending on which version you're using:
 
-- A version 1 directory contains [item.metadata.json](#metadata-file) and [item.config.json](#config-file). When using V1, both files must be in the directory.
+- A version 1 directory contains [item.metadata.json](#metadata-file) and [item.config.json](#config-file). With V1, both files must be in the directory.
 - A version 2 directory contains [.platform](#platform-file). This file includes the content of both item.metadata.json and item.config.json files. If you have this file, you can't have the other two files. If you're using version 1 and you commit changes, your system files are automatically updated to this version.
 
 >[!NOTE]
@@ -117,7 +115,7 @@ The `.platform` file contains the following attributes:
 
 #### [Version 1](#tab/v1)
 
-IF you're using version 1, you have two files in each item directory:
+If you're using version 1, each item directory has two files:
 
 - [item.metadata.json](#metadata-file)
 - [item.config.json](#config-file)
