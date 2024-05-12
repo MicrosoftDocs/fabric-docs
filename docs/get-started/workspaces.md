@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: product-trident, Manage your workspace
-ms.date: 03/26/2024
+ms.date: 05/13/2024
 ---
 
 # Workspaces
@@ -45,8 +45,8 @@ A workspace consists of a header, a toolbar, and a view area. There are two view
 
 :::image type="content" source="./media/workspaces/workspace-layout.png" alt-text="Screenshot showing the layout of the workspace - header, toolbar, and view area." lightbox="./media/workspaces/workspace-layout.png":::
 
-1. **Header**: The header contains the name and brief description of the workspaces, and also links other functionality. 
-1. **Toolbar**: The toolbar contains controls for adding items to the workspace and uploading files. It also contains a search box and filter, and list view and lineage view selectors.
+1. **Header**: The header contains the name and brief description of the workspace, and also links to other functionality. 
+1. **Toolbar**: The toolbar contains controls for adding items to the workspace and uploading files. It also contains a search box, filter, and the list view and lineage view selectors.
 1. **List view and lineage view selectors**: The list view and lineage view selectors enable you to choose which view you want to see in the view area.
 1. **View area**: The view area displays either list view or lineage view.
 
