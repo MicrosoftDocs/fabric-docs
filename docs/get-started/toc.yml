@@ -23,7 +23,7 @@ items:
     href: task-flow-overview.md
   - name: Set up a task flow
     href: task-flow-create.md
-  - name: Work with tasks
+  - name: Work with task flows
     href: task-flow-work-with.md
 - name: Decision guides
   items:
