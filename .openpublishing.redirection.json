@@ -526,7 +526,7 @@
           "redirect_document_id": false
         },
         {
-          "source_path_from_root": "/docs/cicd/manage-workspace-content.md",
+          "source_path_from_root": "docs/cicd/manage-workspace-content.md",
           "redirect_url": "/fabric/cicd/understand-the-deployment-process",
           "redirect_document_id": false
         }  
