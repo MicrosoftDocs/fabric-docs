@@ -59,7 +59,7 @@ You can also use other [Fabric REST API](/rest/api/fabric/) calls, to complete r
 
 You can use the following PowerShell scripts to understand how to perform several automation processes. To view or copy the text in a PowerShell sample, use the links in this section.
 
-* [Deploy all](https://microsofteur-my.sharepoint.com/:u:/g/personal/lialezra_microsoft_com/EelWAzYXIkxGgQChiuqE7PYBRYRlFL8mCV93Wx0CsjBTyA?e=h8S89e)
+* [Deploy all](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/DeploymentPipelines-DeployAll.ps1)
 
   Provide the following information:
 
@@ -68,7 +68,7 @@ You can use the following PowerShell scripts to understand how to perform severa
   * Target stage name
   * Deployment notes (optional)
 
-* [Selective deploy](https://microsofteur-my.sharepoint.com/:u:/g/personal/lialezra_microsoft_com/EdZ4KzPPEMxGk0abRZ-0uuQBv7O73CSJo0YGgdBJcRiQ8Q?e=MKpMFy)
+* [Selective deploy](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/DeploymentPipelines-SelectiveDeploy.ps1)
 
   Provide the following information:
 
