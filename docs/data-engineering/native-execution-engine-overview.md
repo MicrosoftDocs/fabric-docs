@@ -13,9 +13,9 @@ ms.date: 5/12/2024
 
 The Native Execution Engine is a groundbreaking enhancement for Apache Spark job executions on Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. Designed for seamless integration, it requires no code modifications and avoids vendor lock-in. **It supports Apache Spark APIs and is compatible with Runtime 1.2 (Spark 3.4), and works with both Parquet and Delta formats. Regardless of the data's location within OneLake or if accessed via shortcuts, the Native Execution Engine is engineered to maximize efficiency and performance.** 
 
-The Native Execution Engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to 4x faster performance compared to traditional OSS Spark as validated by the TPC-DS 1TB benchmark. This engine is adept at managing a wide array of data processing scenarios—ranging from routine data ingestion, batch jobs, and ETL tasks to complex data science analytics and responsive interactive queries. Users benefit from not only accelerated processing times but also from heightened throughput, optimized resource utilization.
+The Native Execution Engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to 4x faster performance compared to traditional OSS (Open source software) Spark as validated by the TPC-DS 1 TB benchmark. This engine is adept at managing a wide array of data processing scenarios—ranging from routine data ingestion, batch jobs, and ETL tasks to complex data science analytics and responsive interactive queries. Users benefit from not only accelerated processing times but also from heightened throughput, optimized resource utilization.
 
-This documentation will provide you with detailed steps on how to enable and effectively use the Native Execution Engine for your Spark applications on Microsoft Fabric.  
+This documentation provides you with detailed steps on how to enable and effectively use the Native Execution Engine for your Spark applications on Microsoft Fabric.  
 
 > [!NOTE]
 > The Native Execution Engine is currently in a preview stage. To learn more, see the [limitations](./native-execution-engine-overview.md#limitations).
@@ -154,13 +154,13 @@ sparkR.conf("spark.gluten.enabled", "true")
 
 
 ## Identify operations executed by the Native Execution Engine 
-There are several methods to determine if an operator in your Apache Spark job was processed using the Native Execution Engine. The following sections will guide you through the various steps to effectively check this. 
+There are several methods to determine if an operator in your Apache Spark job was processed using the Native Execution Engine.
 
 ### Using the Spark UI and Spark History Server 
 
-Access the Spark UI or Spark History Server to locate the query you need to inspect. In the query plan displayed within the interface, look for any node names that end with the suffix "Transformer." This indicates that the operation has been executed by the Native Execution Engine. For instance, nodes might be labeled as "RollUpHashAggregateTransformer", “ProjectExecTransformer”, “BroadcastHashJoinExecTransformer”, “ShuffledHashJoinExecTransformer” or "BroadcastNestedLoopJoinExecTransformer". 
+Access the Spark UI or Spark History Server to locate the query you need to inspect. In the query plan displayed within the interface, look for any node names that end with the suffix 'Transformer'. This indicates that the operation has been executed by the Native Execution Engine. For instance, nodes might be labeled as 'RollUpHashAggregateTransformer', 'ProjectExecTransformer', 'BroadcastHashJoinExecTransformer', 'ShuffledHashJoinExecTransformer' or 'BroadcastNestedLoopJoinExecTransformer'. 
 
-:::image type="content" source="media\native\sparkui.jpg" alt-text="Screenshot showcasing how to check DAG visualization for the single stage and see a new stage that end with the suffix Transformer, what indicated that it comes from, Native Execution Engine." lightbox="media\native\sparkui.jpg":::
+:::image type="content" source="media\native\sparkui.jpg" alt-text="Screenshot showcasing how to check DAG visualization that end with the suffix Transformer, what indicated that it comes from, Native Execution Engine." lightbox="media\native\sparkui.jpg":::
 
 
 ### Using DataFrame Explain 
@@ -171,23 +171,23 @@ Alternatively, you can execute the df.explain() command in your notebook to view
 
 ### Fallback Mechanism 
 
-It’s important to be aware that in some instances, the Native Execution Engine may not be able to execute a query due to reasons such as unsupported features. In these cases, the operation will fallback to the traditional Spark engine. This fallback mechanism ensures that there is no interruption to your workflow. 
+It’s important to be aware that in some instances, the Native Execution Engine may not be able to execute a query due to reasons such as unsupported features. In these cases, the operation fallbacks to the traditional Spark engine. This fallback mechanism ensures that there is no interruption to your workflow. 
 
 :::image type="content" source="media\native\fallback.jpg" alt-text="Screenshot showcasing the fallback mechanism." lightbox="media\native\fallback.jpg":::
 
 
-:::image type="content" source="media\native\logs.jpg" alt-text=""Screenshot showcasing how to check logs associated with the fallback mechanism." lightbox="media\native\logs.jpg":::
+:::image type="content" source="media\native\logs.jpg" alt-text="Screenshot showcasing how to check logs associated with the fallback mechanism." lightbox="media\native\logs.jpg":::
 
 
 ## Limitations
 
-While the Native Execution Engine enhances performance for Apache Spark jobs, it is important to be aware of its current preview-related limitations. 
+While the Native Execution Engine enhances performance for Apache Spark jobs, note its current preview-related limitations. 
 
 * The engine does not support partitioned writing for Delta tables. Some Delta-specific operations are not supported, including merge operations, checkpoint scans, and deletion vectors.
 * Certain Spark features and expressions are not compatible with the Native Execution Engine, such as user-defined functions (UDFs) and the array contains function as well as Spark Structured Streaming.
 * Scans from storage solutions that utilize private endpoints are not supported.
-* The engine will fall back to the traditional Spark engine when user code *jar libraries that are used and uploaded to executors.
-* Native doesn't support ANSI mode, so it is looking and once ANSI mode is enabled it will fall back to Vanilla Spark.
+* The engine fallbacks to the traditional Spark engine when user code *jar libraries that are used and uploaded to executors.
+* Native doesn't support ANSI mode, so it is looking and once ANSI mode is enabled it fallbacks to Vanilla Spark.
 
 
 > [!NOTE]
