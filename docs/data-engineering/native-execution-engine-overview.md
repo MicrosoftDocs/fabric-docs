@@ -103,7 +103,7 @@ spark.conf.set('spark.gluten.enabled', 'false')
 
 ```scala
 %%spark  
-spark.conf.set('spark.gluten.enabled', 'false')   
+spark.conf.set("spark.gluten.enabled", 'false')   
 ```
 
 # [SparkR](#tab/sparkr)
@@ -139,7 +139,7 @@ spark.conf.set('spark.gluten.enabled', 'true')
 
 ```scala
 %%spark  
-spark.conf.set('spark.gluten.enabled', 'true')   
+spark.conf.set("spark.gluten.enabled", "true")   
 ```
 
 # [SparkR](#tab/sparkr)
