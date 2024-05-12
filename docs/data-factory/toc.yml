@@ -806,7 +806,9 @@
         - name: Manage virtual network security roles
           href: /data-integration/vnet/manage-vnet-security-roles?toc=/fabric/data-factory/toc.json 
         - name: Troubleshoot a virtual network data gateway network
-          href: /data-integration/vnet/troubleshoot-data-gateway?toc=/fabric/data-factory/toc.json 
+          href: /data-integration/vnet/troubleshoot-data-gateway?toc=/fabric/data-factory/toc.json
+        - name: Virtual network data gateway best practices
+          href: /data-integration/vnet/vnet-best-practices?toc=/fabric/data-factory/toc.json
         - name: Virtual network data gateway FAQs
           href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json 
         - name: Download diagnostics logs
