@@ -54,7 +54,7 @@ A workspace consists of a header, a toolbar, and a view area. There are two view
 
 List view is divided into the task flow and the items list.
 
-:::image type="content" source="./media/workspaces/workspace-list-view.png" alt-text="Screenshot showing the layout of list view and it's controls.":::
+:::image type="content" source="./media/workspaces/workspace-list-view.png" alt-text="Screenshot showing the layout of list view and its controls." lightbox="./media/workspaces/workspace-list-view.png":::
 
 1. **Task flow**: The task flow is where you can create or view a graphical representation of  your data project. The task flow shows the logical flow of the project - it doesn't show the flow of data. Read more about [task flows](./task-flow-overview.md).
 1. **Items list**: The items list is where you see the items and folders in the workspace. If you have tasks in the task flow, you can filter the items list by selecting the tasks.
