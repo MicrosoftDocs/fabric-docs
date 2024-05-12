@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/02/2024
+ms.date: 05/21/2024
 ---
 
 # One logical copy
@@ -77,8 +77,8 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
 
  Event house data types are mapped to Delta Parquet data types using the following rules. For more information on Event house data types, see [Scalar data types](/azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric).
 
-| Event house Data Type | Delta Data Type |
-| --------------- | -----------------
+| Event house data type | Delta data type |
+| --------------- | -----------------|
 | `bool`     | `boolean` |
 | `datetime` | `timestamp OR date (for date-bound partition definitions)` |
 | `dynamic`  | `string` |
@@ -98,25 +98,15 @@ Your OneLake copy includes a `policy mirroring` table where you can define the m
 
 Your KQL database is checked for new data to copy to the Delta Lake files every few hours. You can monitor how long ago new data was added by checking your data latency.
 
-To check the current latency run the following query:
+To check the current latency use the [.show table details command](/azure/data-explorer/kusto/management/show-table-details-command?context=/fabric/context/context-rta&pivots=fabric) to display `policy mirroring` for all tables (`*`) and the `mirroring-status` of the `operations` table.
 
-`.show` `table` `*` `policy mirroring`
-
-`.show` `table` *tablename* `operations` `mirroring-status`
-
-A result of zero means that data was just copied. Results are measured from the last time data was copied. For more information about the `.show` `table` command, see [.show table details command](/azure/data-explorer/kusto/management/show-table-details-command?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric).
+A result of zero means that data was just copied. Results are measured from the last time data was copied.
 
 ### Partition OneLake files
 
 You can partition your OneLake files to improve query speed in cases of need. For information about when to partition your OneLake files, see [When to partition tables on Azure Databricks](/azure/databricks/tables/partitions). Each partition is represented as a separate column using the *PartitionName* listed in the *Partitions* list. This means your OneLake copy has more columns than your source table.
 
-To partition your OneLake files use the following command:
-
-( `.alter` | `.alter-merge`) `table` *TableName* `policy mirroring`
-[`partition` `by` `(`*Partitions*`)`]
-`dataformat` `=` `parquet`
-
-For information about the command parameters used to partition your files, see [Create and alter Azure Storage external tables](/azure/data-explorer/kusto/management/external-tables-azure-storage).
+To partition your OneLake files use the [Create and alter Azure Storage external tables](/azure/data-explorer/kusto/management/external-tables-azure-storage?context=/fabric/context/context-rta&pivots=fabric) command to partition the `policy mirroring` table by *parquet* `dataformat`. Use `.alter` or `.alter-merge` commands.
 
 ## Related content
 
