@@ -1,6 +1,6 @@
 ---
 title: Git integration process
-description: Understand how Microsoft Fabric interacts with Git on Azure Repos.
+description: Understand how Microsoft Fabric interacts with Git on Azure Repos, what permissions are needed, and how to sync.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
