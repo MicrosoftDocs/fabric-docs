@@ -524,6 +524,11 @@
           "source_path_from_root": "/docs/real-time-analytics/data-profile.md",
           "redirect_url": "/fabric/real-time-analytics/create-database",
           "redirect_document_id": false
-        }   
+        },
+        {
+          "source_path_from_root": "/docs/cicd/manage-workspace-content.md",
+          "redirect_url": "/fabric/cicd/understand-the-deployment-process",
+          "redirect_document_id": false
+        }  
     ]
 }
