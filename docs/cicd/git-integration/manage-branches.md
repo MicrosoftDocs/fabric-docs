@@ -85,7 +85,7 @@ To switch between branches, follow these steps:
 
 If you have any unsaved changes in the workspace, they will be lost if you switch branches without saving them first. Select **Cancel** to go back and save your changes before switching branches.
 
-     :::image type="content" source="media/manage-branches/switch-branch-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to switch branches.":::
+:::image type="content" source="media/manage-branches/switch-branch-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to switch branches.":::
 
 ## Related content
 
