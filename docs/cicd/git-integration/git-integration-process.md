@@ -107,6 +107,8 @@ The Branch tab of the Source control panel enables you to create a new Git branc
 
 :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="{alt-text}":::
 
+See [Branching out limitations](#branching-out-limitations) for more information.
+
 ### Commits and updates
 
 When changes are made either to the workspace or the Git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control pane.

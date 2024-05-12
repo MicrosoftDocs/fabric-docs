@@ -69,6 +69,8 @@ For a developer who works in the web, the flow would be as follows:
 
 Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes.
 
+See [branching out limitations](./git-integration-process.md#branching-out-limitations) for more information.
+
 ## Switch branches
 
 If your workspace is connected to a Git branch and you want to switch to another branch, you can do so quickly from the **Source control** panel without disconnecting and reconnecting.  
