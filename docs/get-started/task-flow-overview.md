@@ -67,4 +67,4 @@ Connectors are arrows that represent logical connections between the tasks in th
 ## Related content
 
 * [Set up a task flow](./task-flow-create.md)
-* [Work with tasks](./task-flow-work-with.md)
+* [Work with task flows](./task-flow-work-with.md)
