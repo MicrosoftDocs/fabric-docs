@@ -5,7 +5,7 @@ ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: concept-article
-ms.date: 05/11/2024
+ms.date: 05/13/2024
 
 #customer intent: As a data analytics solutions architect, or as a data engineer, I want to learn about task flows and how they can help facilitate the completion of a complex data analytics solution. 
 
@@ -55,10 +55,12 @@ Each task has a task type that classifies the task based on its key capabilities
 
 Connectors are arrows that represent logical connections between the tasks in the task flow. They don't represent the flow of data, nor do they create any actual data connections.
 
+:::image type="content" source="./media/task-flow-overview/task-flow-connector.png" alt-text="Screenshot showing connectors in a task flow.":::
+
 ## Considerations and limitations
 
 * The positioning of tasks on the task flow canvas is persistent. However, due to a known issue, when a new task is added to the canvas, all tasks that aren't connected to another task will return to their default position. Therefore, whenever possible, it's recommended to connect all tasks before adding a new task.
-* Creation of Report and Dataflow Gen2 from tasks aren't supported in task flows.
+* Creating of reports and Dataflow Gen2 from tasks isn't supported in task flows.
 * Creating paginated reports and semantic models from the task flow isn't supported.
 * Creating reports from a task is supported only if a published semantic model is picked. 
 

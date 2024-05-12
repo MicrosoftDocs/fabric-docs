@@ -101,4 +101,4 @@ You can continue to [add more tasks to the canvas](./task-flow-work-with.md#add-
 ## Related concepts
 
 * [Task flow overview](./task-flow-overview.md)
-* [Work with tasks](./task-flow-work-with.md)
+* [Work with task flows](./task-flow-work-with.md)
