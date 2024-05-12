@@ -96,6 +96,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/real-time-analytics/event-streams/manage-monitor-eventhouse.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/manage-monitor-eventhouse",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/real-time-analytics/event-streams/add-manage-eventstream-sources.md",
       "redirect_url": "/fabric/real-time-intelligence/event-streams/add-manage-eventstream-sources",
       "redirect_document_id": false
