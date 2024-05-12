@@ -9,6 +9,9 @@ items:
   - name: Data Factory
     tocHref: /fabric/data-factory/
     topicHref: /fabric/data-factory/index
+  - name: Data Integration
+    tocHref: /data-integration/
+    topicHref: /fabric/data-factory/index
   - name: Data Science
     tocHref: /fabric/data-science/
     topicHref: /fabric/data-science/index

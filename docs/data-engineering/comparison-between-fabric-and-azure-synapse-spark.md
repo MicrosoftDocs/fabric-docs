@@ -27,8 +27,8 @@ The following table compares Azure Synapse Spark and Fabric Spark across differe
 | Data | Primary storage (ADLS Gen2) <br>Data residency (cluster/region based) | Primary storage ([OneLake](../onelake/onelake-overview.md)) <br>Data residency (capacity/region based) |
 | Metadata | Internal Hive Metastore (HMS) <br>External HMS (using Azure SQL DB) | Internal HMS ([lakehouse](lakehouse-overview.md)) <br>-|
 | Connections | Connector type (linked services) <br>[Data sources](/azure/synapse-analytics/spark/apache-spark-secure-credentials-with-tokenlibrary) <br>Data source conn. with workspace identity | Connector type (DMTS) <br>[Data sources](/power-query/connectors/) <br> - |
-| Security | RBAC and access control <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed VNet (network isolation) <br>Synapse workspace identity<br>Data Exfiltration Protection (DEP) <br>Service tags <br>Key Vault (via mssparkutils/ linked service) | [RBAC and access control](../get-started/roles-workspaces.md) <br> - <br> [Private Links](../security/security-private-links-overview.md) <br> [Managed VNet](../security/security-managed-vnets-fabric-overview.md) <br> [Workspace identity](../security/workspace-identity.md) <br>- <br>[Service tags](../security/security-service-tags.md) <br>Key Vault (via [mssparkutils](microsoft-spark-utilities.md)) |
-| DevOps | Azure DevOps integration <br>CI/CD (no built-in support) | [Azure DevOps integration](../cicd/git-integration/intro-to-git-integration.md) (notebook)<br> [Deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md) (notebook) |
+| Security | RBAC and access control <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed VNet (network isolation) <br>Synapse workspace identity<br>Data Exfiltration Protection (DEP) <br>Service tags <br>Key Vault (via mssparkutils/ linked service) | [RBAC and access control](../get-started/roles-workspaces.md) <br> [OneLake RBAC](../onelake/security/data-access-control-model.md) <br> [Private Links](../security/security-private-links-overview.md) <br> [Managed VNet](../security/security-managed-vnets-fabric-overview.md) <br> [Workspace identity](../security/workspace-identity.md) <br>- <br>[Service tags](../security/security-service-tags.md) <br>Key Vault (via [mssparkutils](microsoft-spark-utilities.md)) |
+| DevOps | Azure DevOps integration <br>CI/CD (no built-in support) | [Azure DevOps integration](../cicd/git-integration/intro-to-git-integration.md)<br> [Deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md) |
 | Developer experience | IDE integration (IntelliJ) <br>Synapse Studio UI <br>Collaboration (workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE integration ([VS Code](setup-vs-code-extension.md)) <br>Fabric UI <br>Collaboration (workspaces and sharing) <br>- <br>[API](/rest/api/fabric/)/SDK <br>[mssparkutils](microsoft-spark-utilities.md) |
 | Logging and monitoring | Spark Advisor <br>Built-in monitoring pools and jobs (through Synapse Studio) <br>Spark history server <br>Prometheus/Grafana <br>Log Analytics <br>Storage Account <br>Event Hubs | [Spark Advisor](spark-advisor-introduction.md) <br>Built-in monitoring pools and jobs (through [Monitoring hub](browse-spark-applications-monitoring-hub.md)) <br>[Spark history server](apache-spark-history-server.md) <br>- <br>- <br>- <br>- |
 | Business continuity and disaster recovery (BCDR) | BCDR (data) ADLS Gen2 | [BCDR (data) OneLake](../onelake/onelake-disaster-recovery.md) |
@@ -40,8 +40,6 @@ Considerations and limitations:
 - **Workload level RBAC**: Fabric supports four different workspace roles. Fore more information, see [Roles in workspaces in Microsoft Fabric](../get-started/roles-workspaces.md).
 
 - **Managed identity**: Currently, Fabric doesn't support running notebooks and Spark job definitions using the workspace identity or managed identity for Azure KeyVault in notebooks.
-
-- **Git integration**: Fabric supports [Git integration](../cicd/git-integration/intro-to-git-integration.md) for notebooks using Azure repos.
 
 - **CI/CD**: You can use the Fabric API/SDK and [deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
 
@@ -60,7 +58,7 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 | -- | -- | -- |
 | Live pool (pre-warm instances) | - | Yes, Starter pools |
 | Custom pool| Yes | Yes |
-| Spark versions (runtime) | 2.4, 3.1, 3.2, 3.3, 3.4 | 3.3, 3.4 |
+| Spark versions (runtime) | 2.4, 3.1, 3.2, 3.3, 3.4 | 3.3, 3.4, 3.5 (experimental) |
 | Autoscale | Yes | Yes |
 | Dynamic allocation of executors | Yes, up to 200 | Yes, based on capacity |
 | Adjustable node sizes | Yes, 3-200 | Yes, 1-based on capacity |
@@ -76,7 +74,7 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 | Intelligent cache | Yes | Yes |
 | API/SDK support | Yes | No |
 
-- **Runtime**: Fabric doesn't support Spark 2.4, 3.1, and 3.2 versions. Fabric Spark supports Spark 3.3 with Delta 2.2 within [Runtime 1.1](runtime-1-1.md) and Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md).
+- **Runtime**: Fabric doesn't support Spark 2.4, 3.1, and 3.2 versions. Fabric Spark supports Spark 3.3 with Delta 2.2 within [Runtime 1.1](runtime-1-1.md), Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md) and Spark 3.5 with Delta 3.0 within [Runtime 1.3](runtime-1-3.md).
 
 - **Autoscale**: In Azure Synapse Spark, the pool can scale up to 200 nodes regardless of the node size. In Fabric, the maximum number of nodes is subjected to node size and provisioned capacity. See the following example for the F64 SKU.
 
