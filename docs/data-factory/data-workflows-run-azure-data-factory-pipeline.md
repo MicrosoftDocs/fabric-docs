@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 04/15/2023
 ---
 
-# Tutorial: Orchestrate an Azure Data Factory (ADF) Pipelines with data workflows
+# Tutorial: Orchestrate an Azure Data Factory (ADF) Pipeline with data workflows
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
@@ -19,16 +19,16 @@ In this tutorial, you'll build an Apache Airflow DAG to orchestrate the ADF pipe
 
 To get started, you must complete the following prerequisites:
 
-- Enable Apache Airflow in your Tenant.
+- Enable Data workflows in your Tenant.
 
   > [!NOTE]
   > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow projects (preview)" section.
+  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Data workflows (preview)" section.
 
   2. Click Apply.
 
-  :::image type="content" source="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-tenant.png":::
+  :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-data-workflow-tenant.png":::
 
 - [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md).
 
@@ -107,4 +107,4 @@ The saved dag files are loaded in the Apache Airflow UI. You can monitor them by
 
 ## Related Content
 
-Quickstart: [Create a Data workflows](../data-factory/create-data-workflows.md)
+Quickstart: [Create a Data workflow](../data-factory/create-data-workflows.md)

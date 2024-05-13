@@ -45,9 +45,7 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
-    - name: Create a Data workflows
-      href: create-data-workflows.md
-    - name: Create a Data workflows
+    - name: Create a Data workflow
       href: create-data-workflows.md
     - name: Operationalize Data Factory
       href: transform-data.md
@@ -819,7 +817,9 @@
         href: data-workflows-concepts.md
       - name: How-to
         items:
-          - name: Install a Private Package
+          - name: Synchronize your code from an existing Git repo
+            href: data-workflows-sync-git-repo.md
+          - name: Install a private package
             href: data-workflows-install-private-package.md
           - name: Enable Azure Key Vault as Secret Backend
             href: data-workflows-enable-azure-key-vault.md
@@ -837,6 +837,8 @@
             href: data-workflows-run-azure-data-factory-pipeline.md
           - name: Orchestrate Azure Databricks job with Data workflows
             href: data-workflows-run-databricks-job.md
+          - name: Power BI Semantic Model Refresh
+            href: data-workflows-power-bi-semantic-model-refresh.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases

@@ -21,16 +21,16 @@ In this tutorial, you build an Apache Airflow DAG to trigger the Azure Databrick
 
 To get started, you must complete the following prerequisites:
 
-- Enable Apache Airflow in your Tenant.
+- Enable Data workflows in your Tenant.
 
   > [!NOTE]
   > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow projects (preview)" section.
+  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Data workflows (preview)" section.
 
   2. Select Apply.
 
-  :::image type="content" source="media/data-workflows/enable-tenant.png" lightbox="media/data-workflows/enable-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+  :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md)
 
@@ -44,7 +44,7 @@ To get started, you must complete the following prerequisites:
 
 3. Select "Apply," to save the changes.
 
-   :::image type="content" source="media/data-workflows/add-airflow-requirement.png" lightbox="media/data-workflows/add-airflow-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
+   :::image type="content" source="media/data-workflows/databricks-add-requirement.png" lightbox="media/data-workflows/databricks-add-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
 
 ## Create an Azure Databricks personal access token for Apache Airflow connection
 
@@ -110,8 +110,6 @@ After saving, the DAG files are automatically loaded into the Apache Airflow UI.
 
 :::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 
-:::image type="content" source="media/data-workflows/loaded-adf-directed-acyclic-graph.png" alt-text="Screenshot to load Airflow DAG.":::
-
 ## Related Content
 
-[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)
+[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)
