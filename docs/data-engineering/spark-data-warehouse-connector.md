@@ -31,9 +31,9 @@ synapsesql(tableName:String="<Part 1.Part 2. Part 3>") => org.apache.spark.sql.D
 ```
 ### Read data within the same workspace
 > [!NOTE]
-> To use the connector, run these import statements at the beginning of your notebook or before you start using the connector. 
-> `import com.microsoft.spark.fabric.tds.implicits.read.FabricSparkTDSImplicits._`
-`import org.apache.spark.sql.functions._`
+> To use the connector, run these import statements at the beginning of your notebook or before you start using the connector. \
+> `import com.microsoft.spark.fabric.tds.implicits.read.FabricSparkTDSImplicits._`\
+`import org.apache.spark.sql.functions._`\
 The following code is an example to read data from a table or view in a Spark dataframe:
 ```scala
 val df = spark.read.synapsesql("<warehouse/lakeshouse name>.<schema name>.<table or view name>")
@@ -88,7 +88,7 @@ Upon completion, the read response snippet is displayed in the cell's output. Fa
 * Pushed down optimization is currently not implemented.
 * This connector retains the usage signature like the one shipped with Synapse Spark for consistency. However, it is not backward compatible to connect and work with Synapse Dedicated SQL pool. 
 ## Related content
-•	[Apache Spark runtime in Fabric](runtime.md)
-•	[Apache Spark monitoring overview](spark-monitoring-overview.md) 
-•	[Security for data warehousing](../data-warehouse/security.md)
-•	[SQL granular permissions](../data-warehouse/sql-granular-permissions.md)
+* [Apache Spark runtime in Fabric](runtime.md)
+* [Apache Spark monitoring overview](spark-monitoring-overview.md) 
+* [Security for data warehousing](../data-warehouse/security.md)
+* [SQL granular permissions](../data-warehouse/sql-granular-permissions.md)
