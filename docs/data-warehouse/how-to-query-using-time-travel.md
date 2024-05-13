@@ -7,11 +7,11 @@ ms.reviewer: ajagadish # Microsoft alias
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: how-to
-ms.date: 05/08/2024
+ms.date: 05/12/2024
 ---
 # How to: Query using time travel at the statement level
 
-In Microsoft Fabric, the capability to [time travel](time-travel.md) unlocks the ability to query the prior versions of data without the need to generate multiple data copies, thereby saving on storage costs. This article describes how to query warehouse tables using time travel at the statement level, using the T-SQL [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) and the [FOR TIMESTAMP AS OF](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#for-timestamp) syntax.
+In Microsoft Fabric, the capability to [time travel](time-travel.md) unlocks the ability to query the prior versions of data without the need to generate multiple data copies, saving on storage costs. This article describes how to query warehouse tables using time travel at the statement level, using the T-SQL [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) and the [FOR TIMESTAMP AS OF](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#for-timestamp) syntax.
 
 Warehouse tables can be queried up to a retention period of seven calendar days using the `OPTION` clause, providing the date format `yyyy-MM-ddTHH:mm:ss[.fff]`.
 
@@ -42,21 +42,21 @@ SELECT Sales.StockItemKey,
 Sales.Description, 
 CAST (Sales.Quantity AS int)) AS SoldQuantity, 
 c.Customer
-FROM [dbo].[fact_sale] AS Sales,[dbo].[dimension_customer] AS c
-WHERE Sales.CustomerKey = c.CustomerKey
-GROUP BY Sales.StockItemKey, Sales.Description, c.Customer
+FROM [dbo].[fact_sale] AS Sales INNER JOIN [dbo].[dimension_customer] AS c
+ON Sales.CustomerKey = c.CustomerKey
+GROUP BY Sales.StockItemKey, Sales.Description, Sales.Quantity, c.Customer
 ORDER BY Sales.StockItemKey
 OPTION (FOR TIMESTAMP AS OF '2024-05-02T20:44:13.700');
 ```
 
 ### Time travel in a stored procedure
 
-Stored procedures are a set of SQL statements that are precompiled and stored so that it can be used repeatedly. The [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) can be declared once in the stored procedure, and the results of the stored procedure will reflect the state of data at the timestamp specified in the query.
+Stored procedures are a set of SQL statements that are precompiled and stored so that it can be used repeatedly. The [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) can be declared once in the stored procedure, and the result set reflects the state of all tables at the timestamp specified.
 
-The `FOR TIMESTAMP AS OF` clause cannot accept a variable, as values in the `OPTION` clause must be deterministic. You can use [sp_executesql](/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql?view=fabric&preserve-view=true) to pass a strongly-typed datetime to the stored procedure. This simple example passes a variable timestamp, converting the datetime to the necessary format with [date style 126](/sql/t-sql/functions/cast-and-convert-transact-sql?view=fabric&preserve-view=true#date-and-time-styles).
+The `FOR TIMESTAMP AS OF` clause cannot directly accept a variable, as values in this `OPTION` clause must be deterministic. You can use [sp_executesql](/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql?view=fabric&preserve-view=true) to pass a strongly typed **datetime** value to the stored procedure. This simple example passes a variable and converts the **datetime** parameter to the necessary format with [date style 126](/sql/t-sql/functions/cast-and-convert-transact-sql?view=fabric&preserve-view=true#date-and-time-styles).
 
 ```sql
-CREATE PROCEDURE [dbo].[populate_aggregate_sale_by_cities] (@pointInTime DATETIME)
+CREATE PROCEDURE [dbo].[sales_by_city] (@pointInTime DATETIME)
 AS
 BEGIN
 DECLARE @selectForTimestampStatement NVARCHAR(4000);
@@ -65,25 +65,34 @@ DECLARE @pointInTimeLiteral VARCHAR(33);
 SET @pointInTimeLiteral = CONVERT(VARCHAR(33), @pointInTime, 126);
 SET @selectForTimestampStatement = '
 SELECT *
-    FROM [dbo].[FactSales] 
+    FROM [dbo].[fact_sale] 
     OPTION (FOR TIMESTAMP AS OF ''' + @pointInTimeLiteral + ''')';
  
     EXEC sp_executesql @selectForTimestampStatement
 END
---Execute the stored procedure
 ```
 
-Then, you can call the stored procedure and pass in a dynamic timestamp.
+Then, you can call the stored procedure and pass in a variable as a strongly typed parameter. For example:
 
 ```sql
+--Execute the stored procedure
+DECLARE @pointInTime DATETIME;
+SET @pointInTime = '2024-05-10T22:56:15.457';
+EXEC dbo.sales_by_city @pointInTime;
+```
+
+Or, for example:
+
+```sql
+--Execute the stored procedure
 DECLARE @pointInTime DATETIME;
 SET @pointInTime = DATEADD(dd, -7, GETDATE())
-EXEC dbo.populate_aggregate_sale_by_cities @pointInTime
+EXEC dbo.sales_by_city @pointInTime;
 ```
 
 ### Time travel in a view
 
-Views represent a saved query that dynamically retrieves data from one or more tables whenever the view is queried. The [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) can be used to query the views so that the results will reflect the state of data at the timestamp specified in the query.
+Views represent a saved query that dynamically retrieves data from one or more tables whenever the view is queried. The [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) can be used to query the views so that the results reflect the state of data at the timestamp specified in the query.
 
 ```sql
 --Create View
