@@ -1,5 +1,5 @@
 ---
-title: Task flows overview
+title: Task flows overview (preview)
 description: This article gives an overview of task flows and task flow terminology.
 ms.reviewer: liud
 ms.author: painbar
@@ -10,7 +10,7 @@ ms.date: 05/13/2024
 #customer intent: As a data analytics solutions architect, or as a data engineer, I want to learn about task flows and how they can help facilitate the completion of a complex data analytics solution. 
 
 ---
-# Task flows in Microsoft Fabric
+# Task flows in Microsoft Fabric (preview)
 
 This article describes the task flows feature in Microsoft Fabric. Its target audience is data analytics solution architects who want to use a task flow to build a visual representation of their project, and engineers who are working on the project and want to use the task flow to facilitate their work.
 

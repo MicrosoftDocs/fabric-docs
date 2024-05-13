@@ -1,5 +1,5 @@
 ---
-title: Work with task flows
+title: Work with task flows (preview)
 description: This show how to work with the task flow - add tasks, assign items to tasks, connect tasks, etc.
 ms.reviewer: liud
 ms.author: painbar
@@ -10,7 +10,7 @@ ms.date: 05/13/2024
 #customer intent: As a data analytics solution architect, I need to know to create tasks so that I can build a task flow that illustrates my project and that engineers can use to guide and facilitate their work on the project. As an engineer, I want to understand how to use task to organize and facilitate my work.
 ---
 
-# Work with task flows
+# Work with task flows (preview)
 
 This article describes how to work with tasks. The target audience is data analytics solution architects who are designing a data analytics solution, engineers who need to know how to use task flows to facilitate their work, and others who want to use the task flow to filter the item list to help navigate and understand the workspace.
 
