@@ -1,5 +1,5 @@
 ---
-title: Data pipelines storage event triggers in Data Factory
+title: Data pipelines storage event triggers in Data Factory (Preview)
 description: This article describes how data pipelines storage event triggers work in Data Factory for Microsoft Fabric.
 author: kromerm
 ms.author: makromer
@@ -7,11 +7,14 @@ ms.topic: concept-article
 ms.date: 05/06/2024
 ---
 
-# Data pipelines storage event triggers in Data Factory
+# Data pipelines storage event triggers in Data Factory (Preview)
 
 ## Introduction
 
 A common use case for invoking Data Factory data pipelines is to trigger a pipeline upon file events like file arrival and file delete. For customers moving from Azure Data Factory (ADF) to Microsoft Fabric, using ADLS/Blog storage events is common. New Fabric users not previously familiar with ADF might generally use file events from OneLake. Triggers in Fabric Data Factory use Fabric platform capabilities including event streams and Reflex triggers. Inside of the Fabric Data Factory pipeline design canvas, there's a Trigger button to create a Reflex trigger for your pipeline, or you can create the trigger directly from the Data Activator experience.
+
+> [!NOTE]
+> Storage event triggers are currently in public preview.
 
 ## How to set storage event triggers on a pipeline
 
