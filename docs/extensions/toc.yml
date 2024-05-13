@@ -6,30 +6,32 @@ items:
   items:
   - name: Microsoft Fabric workload partner benefits
     href: monetization.md
-  - name: Publish you workload
-    items: 
-    - name: Overview
-      href: publish-workload-flow.md
-    - name: Publishing flow
-      href: publish-workload-flow.md
-    - name: Validation Guidelines and Requirements
-      href: publish-workload-requirements.md
-- name: Get started
-  items:
-  - name: Set up your environment
-    href: environment-setup.md
-  - name: QuickStart - Run a workload sample
-    href: quickstart-sample.md
-- name: Conceptual
-  items:
-  - name: Authentication overview
-    href: authentication-overview.md
-  - name: Workload architecture
-    href: architecture.md
-  - name: Workload environment
-    href: workload-environment.md
-  - name: Web app deployment (todo)
-    href: Web app deployment 1st half.md                  
+- name: Develop a workload
+  items: 
+  - name: Get started
+    items:
+    - name: Set up your environment
+      href: environment-setup.md
+    - name: QuickStart - Run a workload sample
+      href: quickstart-sample.md
+  - name: Conceptual
+    items:
+    - name: Authentication overview
+      href: authentication-overview.md
+    - name: Workload architecture
+      href: architecture.md
+    - name: Workload environment
+      href: workload-environment.md
+    - name: Web app deployment (todo)
+      href: Web app deployment 1st half.md   
+- name: Publish a workload
+  items: 
+  - name: Overview
+    href: publish-workload-overview.md
+  - name: Publishing flow
+    href: publish-workload-flow.md
+  - name: Validation Guidelines and Requirements
+    href: publish-workload-requirements.md      
 - name: Tutorials
   items: 
   - name: Authentication setup guide
@@ -44,7 +46,6 @@ items:
     href: more-workloads-add.md
   - name: Web app deployment implementation (todo)
     href: Web app deployment 1st half.md
-
 - name: Reference
   items:
   - name: REST APIs
