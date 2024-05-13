@@ -38,6 +38,19 @@ The Fabric API for GraphQL includes:
 - Support for views for SQL databases and data warehouses.
 - Support for stored procedures for SQL databases and data warehouses.
 - Support for multiple data sources with corresponding fan-out queries.
+- Ability to create one-to-one, one-to-many, and many-to-many relationships.
+- Ability to select individual objects to be exposed from a data source.
+- Ability to expose specific columns from data source tables.
+
+## Interactive editing experience
+
+API for GraphQL includes an editor where you can easily develop and test your queries or mutations. Some of the capabilities of the editor include:
+
+- A results pane to visualize the output of queries or mutations
+- Support for query or mutation parameters
+- Intellisense with support for GraphQL syntax and schema object names
+- 
+
 
 ## Related content
 
