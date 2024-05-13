@@ -645,6 +645,8 @@
           href: expression-language.md
       - name: Data pipeline runs
         href: pipeline-runs.md
+      - name: Storage event triggers (Preview)
+        href: pipeline-storage-event-triggers.md
     - name: How-to
       items:
       - name: How to use pipeline sample templates
