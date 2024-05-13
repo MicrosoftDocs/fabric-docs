@@ -20,11 +20,11 @@ You always have the option to close your account, cancel your subscription, or e
 
 ## Fabric: close, cancel, end
 
-With Microsoft Fabric, you can end a Fabric trial, cancel a capacity subscription, and close a Fabric account. 
+With Microsoft Fabric, you can end a Fabric capacty trial, cancel a capacity subscription, and close a Fabric account. 
 
 ### End a Fabric trial
 
-The Fabric trial lasts 60 days. [End a Fabric trial](../get-started/fabric-trial.md#end-a-fabric-trial) explains what happens when a trial ends, expires, or is canceled. Use this article to find helpful information on how to save your data whether you upgrade or not.  
+The Fabric trial capacity lasts 60 days. [End a Fabric caacity trial](../get-started/fabric-trial.md#end-a-fabric-trial) explains what happens when a trial ends, expires, or is canceled. Use this article to find helpful information on how to save your data whether you upgrade or not.  
 
 ### Cancel a capacity subscription
 
