@@ -43,7 +43,7 @@ You can access the monitor run series from the spark application **monitoring de
 
 In the **Spark runns** graph, you can view the duration trend of this runn series. Each vertical bar represents an instance of the Notebook/Spark job definition activity run, and its height indicates the run duration. You can also click on each running instance to view more detailed information and zoom in or out on specific time windows.
     
-:::image type="content" source="media\apache-spark-monitor-run-series\spark-running-graph.png" alt-text="Screenshot showing the spark running graph." lightbox="media\apache-spark-monitor-run-series\spark-running-graph.png"::
+:::image type="content" source="media\apache-spark-monitor-run-series\spark-running-graph.png" alt-text="Screenshot showing the spark running graph." lightbox="media\apache-spark-monitor-run-series\spark-running-graph.png":::
 
 - Duration
 - Duration(Anomaly)
@@ -52,15 +52,15 @@ In the **Spark runns** graph, you can view the duration trend of this runn serie
 
 Select the color icon to select or unselect the corresponding content in all graph.
 
-:::image type="content" source="media\apache-spark-monitor-run-series\color-icon-to-select-or-unselect.png" alt-text="Screenshot showing the color icon to select or unselect." lightbox="media\apache-spark-monitor-run-series\color-icon-to-select-or-unselect.png"::
+:::image type="content" source="media\apache-spark-monitor-run-series\color-icon-to-select-or-unselect.png" alt-text="Screenshot showing the color icon to select or unselect." lightbox="media\apache-spark-monitor-run-series\color-icon-to-select-or-unselect.png":::
 
 When you select an instance of the notebook/spark job definition activity run in the graph, the instance's **Duration time distribution**, **Executors execution distribution**, and **Spark configuration** are detailed at the bottom of the graph.
 
-:::image type="content" source="media\apache-spark-monitor-run-series\selected-run.png" alt-text="Screenshot showing the selected run.png." lightbox="media\apache-spark-monitor-run-series\selected-run.png"::
+:::image type="content" source="media\apache-spark-monitor-run-series\selected-run.png" alt-text="Screenshot showing the selected run.png." lightbox="media\apache-spark-monitor-run-series\selected-run.png":::
 
 If the bar is marked red, an exception has been detected for that run instance. You can view these information: **Total duration**, **Expected duration** and **Potential causes** for this instance in the Anomalies panel.
 
-:::image type="content" source="media\apache-spark-monitor-run-series\anomalies-panel.png" alt-text="Screenshot showing the anomalies panel.png." lightbox="media\apache-spark-monitor-run-series\anomalies-panel.png"::
+:::image type="content" source="media\apache-spark-monitor-run-series\anomalies-panel.png" alt-text="Screenshot showing the anomalies panel.png." lightbox="media\apache-spark-monitor-run-series\anomalies-panel.png":::
 
 
     
