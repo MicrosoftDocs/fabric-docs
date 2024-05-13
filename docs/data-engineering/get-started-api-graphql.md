@@ -24,15 +24,15 @@ Get started with the Fabric API for GraphQL by creating an API, then linking a d
 
 To create an API for GraphQL:
 
-1. In the Fabric portal, select Data Development from the workload switcher at the bottom of the navigation bar. The **Data Engineering** option looks like this:
+1. In the Fabric portal, select Data Engineering from the workload switcher at the bottom of the navigation bar. If you are in the Fabric home, you can also select the Data Engineering card.
 
-   :::image type="content" source="media/get-started-api-graphql/switcher-data-eng.png" alt-text="Screenshot of the Data Development option in the workload switcher.":::
+   :::image type="content" source="media/get-started-api-graphql/switcher-data-eng.png" alt-text="Screenshot of the Data Engineering option in the workload switcher.":::
 
 1. Select **API for GraphQL (Preview)**.
 
    :::image type="content" source="media/get-started-api-graphql/api-graphql-workspace-button.png" alt-text="Screenshot of the API tile, which you select to create a new API item.":::
 
-   Alternatively, select **New** > **API for GraphQL (Preview)** from any workspace in Data Development.
+   Alternatively, select **New** > **API for GraphQL (Preview)** from any workspace in Data Engineering.
 
    :::image type="content" source="media/get-started-api-graphql/workspace-new-api-graphql.png" alt-text="Screenshot of the workspace toolbar, showing where to select the New option.":::
 
