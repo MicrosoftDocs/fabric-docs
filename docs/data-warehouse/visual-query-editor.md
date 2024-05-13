@@ -88,8 +88,7 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 - Only a subset of Power Query operations that support Query folding are currently supported.
 - Visualize Results currently does not support SQL queries with an `ORDER BY` clause.
 - For viewing the SQL script joining two or more tables, only the table with load enabled selected will show the corresponding SQL script.
-- There are certain steps that the View SQL feature does not support in which a banner in the visual query editor will indicate stating "The query is not supported as a warehouse view, since it cannot be fully translated to SQL". For more information, see [Query folding indicators in Power Query](power-query/step-folding-indicators).
-
+- There are certain steps that the View SQL feature does not support in which a banner in the visual query editor will indicate stating "The query is not supported as a warehouse view, since it cannot be fully translated to SQL". For more information, see [Query folding indicators in Power Query](/power-query/step-folding-indicators).
 
 ## Related content
 
