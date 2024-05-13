@@ -646,7 +646,7 @@
       - name: Data pipeline runs
         href: pipeline-runs.md
       - name: Storage event trigggers (Preview)
-        href: pipline-storage-event-triggers.md
+        href: pipeline-storage-event-triggers.md
     - name: How-to
       items:
       - name: How to use pipeline sample templates
