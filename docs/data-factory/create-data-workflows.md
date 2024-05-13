@@ -55,6 +55,19 @@ Data workflows provides a simple and efficient way to create and manage Apache A
 
    :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
+### Run a DAG
+
+1. Begin by clicking on the "Run DAG" button.
+
+   :::image type="content" source="media/data-workflows/run-dag.png" alt-text="Screenshot to run the DAG from data workflows UI." lightbox="media/data-workflows/run-dag.png":::
+
+2. Once initiated, a notification will promptly appear indicating the DAG is running.
+
+3. To monitor the progress of the DAG run, simply click on "View Details" within the notification center. This action will redirect you to the Apache Airflow UI, where you can conveniently track the status and details of the DAG run.
+
+   :::image type="content" source="media/data-workflows/notification-to-run-dag.png" alt-text="Screenshot to navigate to Apache Airflow UI from notification center." lightbox="media/data-workflows/notification-to-run-dag.png":::
+
+
 ### Monitor your Data workflow DAG in Apache Airflow UI
 
 1. The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on the "Monitor in Apache Airflow" button.
