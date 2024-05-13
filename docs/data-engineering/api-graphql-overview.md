@@ -27,6 +27,7 @@ Currently, the following supported data sources can be exposed through the Fabri
 - Microsoft Fabric Data Warehouse
 - Microsoft Fabric Lakehouse via SQL Analytics Endpoint
 - Microsoft Fabric Mirrored Databases via SQL Analytics Endpoint
+- Datamarts
 
 ## Features
 
