@@ -12,7 +12,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.search.form: product-trident
-ms.date: 05/10/2024
+ms.date: 05/13/2024
 ---
 
 # What is Microsoft Fabric?
@@ -29,7 +29,7 @@ Microsoft Fabric is built on a foundation of Software as a Service (SaaS). It co
 
 :::image type="content" source="media\microsoft-fabric-overview\fabric-architecture.png" alt-text="Diagram of the software as a service foundation beneath the different experiences of Fabric." lightbox="media\microsoft-fabric-overview\fabric-architecture.png":::
 
-Fabric integrates workloads such as Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, Data Activator, Industry solutions, and Power BI into a shared SaaS foundation. Each of these experiences is tailored for distinct user roles like data engineers, scientists, or warehousing professionals, and they serve a specific task. The entire Fabric stack has AI integration and it accelerates the data journey. These workloads work together seemlessly and provide the following advantages:
+Fabric integrates workloads such as Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Analytics, Data Activator, Industry solutions, and Power BI into a shared SaaS foundation. Each of these experiences is tailored for distinct user roles like data engineers, scientists, or warehousing professionals, and they serve a specific task. The entire Fabric stack has AI integration and it accelerates the data journey. These workloads work together seemlessly and provide the following advantages:
 
 - Access to an extensive range of deeply integrated analytics in the industry.
 - Shared experiences across experiences that are familiar and easy to learn.
@@ -55,13 +55,13 @@ Fabric offers a comprehensive set of analytics experiences designed to work toge
 
 - **Industry Solutions** - Fabric provides industry-specific data solutions that address unique industry needs and challenges, and include data management, analytics, and decision-making. For more information, see [Industry Solutions in Microsoft Fabric](/industry/industry-data-solutions-fabric).
 
-- **Real-Time Intelligence** - Real-Time Intelligence is a managed big data analytics platform optimized for streaming and time-series data. Everyone in your organization can extract insights and visualize their data in motion. It offers an end-to-end solution for event-driven scenarios, streaming data, and data logs. Whether dealing with gigabytes or petabytes, all organizational data in motion converges in the Real-Time Hub. For more information, see [What is Real-Time Analytics in Fabric?](../real-time-analytics/overview.md)
-
 - **Synapse Data Engineering** - Synapse Data Engineering provides a Spark platform with great authoring experiences.  It enables you to create, manage, and optimize infrastructures for collecting, storing, processing, and analyzing vast data volumes.  Fabric Spark's integration with Data Factory allows you to schedule and orchestrate notebooks and Spark jobs. For more information, see [What is Data engineering in Microsoft Fabric?](../data-engineering/data-engineering-overview.md)
 
 - **Synapse Data Science** - Synapse Data Science enables you to build, deploy, and operationalize machine learning models from Fabric. It integrates with Azure Machine Learning to provide built-in experiment tracking and model registry. Data scientists can enrich organizational data with predictions and business analysts can integrate those predictions into their BI reports, allowing a shift from descriptive to predictive insights. For more information, see [What is Data science in Microsoft Fabric?](../data-science/data-science-overview.md)
 
 - **Synapse Data Warehouse** - Synapse Data Warehouse provides industry leading SQL performance and scale. It separates compute from storage, enabling independent scaling of both components. Additionally, it natively stores data in the open Delta Lake format. For more information, see [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
+
+- **Synapse Real-Time Analytics** - Real-Time Analytics is a managed big data analytics platform optimized for streaming and time-series data. Everyone in your organization can extract insights and visualize their data in motion. It offers an end-to-end solution for event-driven scenarios, streaming data, and data logs. Whether dealing with gigabytes or petabytes, all organizational data in motion converges in the Real-Time Hub. For more information, see [What is Real-Time Analytics in Fabric?](../real-time-analytics/overview.md)
 
 Microsoft Fabric enables organizations and individuals to turn large and complex data repositories into actionable workloads and analytics, and is an implementation of data mesh architecture. For more information, see [What is a data mesh?](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh)
 
