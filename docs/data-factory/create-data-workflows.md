@@ -59,13 +59,13 @@ Data workflows provide a simple and efficient way to create and manage Apache Ai
 
 1. Begin by clicking on the "Run DAG" button.
 
-   :::image type="content" source="media/data-workflows/run-d-a-g.png" alt-text="Screenshot to run the DAG from data workflows UI." lightbox="media/data-workflows/run-d-a-g.png":::
+   :::image type="content" source="media/data-workflows/run-directed-acyclic-graph.png" alt-text="Screenshot to run the DAG from data workflows UI." lightbox="media/data-workflows/run-directed-acyclic-graph.png":::
 
 2. Once initiated, a notification will promptly appear indicating the DAG is running.
 
 3. To monitor the progress of the DAG run, simply click on "View Details" within the notification center. This action will redirect you to the Apache Airflow UI, where you can conveniently track the status and details of the DAG run.
 
-   :::image type="content" source="media/data-workflows/notification-to-run-d-a-g.png" alt-text="Screenshot to navigate to Apache Airflow UI from notification center." lightbox="media/data-workflows/notification-to-run-d-a-g.png":::
+   :::image type="content" source="media/data-workflows/notification-to-run-directed-acyclic-graph.png" alt-text="Screenshot to navigate to Apache Airflow UI from notification center." lightbox="media/data-workflows/notification-to-run-directed-acyclic-graph.png":::
 
 
 ### Monitor your Data workflow DAG in Apache Airflow UI
