@@ -1,5 +1,5 @@
 ---
-title: Load data into your Lakehouse with a notebook
+title: Load data into your lakehouse with a notebook
 description: Learn how to use a notebook to load data into your lakehouse with either an existing notebook or a new one.
 ms.reviewer: snehagunda
 ms.author: qixwang
@@ -11,7 +11,7 @@ ms.custom:
 ms.date: 05/23/2023
 ---
 
-# Use a notebook to load data into your Lakehouse
+# Use a notebook to load data into your lakehouse
 
 In this tutorial, learn how to read/write data into your lakehouse with a notebook.Spark API and Pandas API are supported to achieve this goal.
 
