@@ -1,0 +1,56 @@
+items:
+- name: Microsoft Fabric Workload Development Kit documentation
+  href: index.yml
+- name: Development Kit overview
+  href: dev-kit-overview.md
+  items:
+  - name: Microsoft Fabric workload partner benefits
+    href: monetization.md
+- name: Develop a workload
+  items: 
+  - name: Get started
+    items:
+    - name: Set up your environment
+      href: environment-setup.md
+    - name: QuickStart - Run a workload sample
+      href: quickstart-sample.md
+  - name: Conceptual
+    items:
+    - name: Authentication overview
+      href: authentication-overview.md
+    - name: Workload architecture
+      href: architecture.md
+    - name: Workload environment
+      href: workload-environment.md
+    - name: Web app deployment (todo)
+      href: Web app deployment 1st half.md   
+- name: Publish a workload
+  items: 
+  - name: Overview
+    href: publish-workload-overview.md
+  - name: Publishing flow
+    href: publish-workload-flow.md
+  - name: Validation Guidelines and Requirements
+    href: publish-workload-requirements.md      
+- name: Tutorials
+  items: 
+  - name: Authentication setup guide
+    href: authentication-setup.md    
+  - name: Backend configuration guide
+    href: extensibility-backend.md        
+  - name: Frontend configuration guide
+    href: extensibility-frontend.md
+  - name: Upload and manage a workload
+    href: manage-workload.md
+  - name: Add and manage more workload
+    href: more-workloads-add.md
+  - name: Web app deployment implementation (todo)
+    href: Web app deployment 1st half.md
+- name: Reference
+  items:
+  - name: REST APIs
+    href: https://review.learn.microsoft.com/en-us/rest/api/fabric/workload/workloadapi/jobs?branch=drafts%2ffeatures%2fworkloadsapi&tabs=HTTP
+  - name: Client-side APIs
+    href: https://review.learn.microsoft.com/en-us/javascript/api/overview/fabric-extensibility-overview?view=fabric-extensibility-js-latest&branch=smoke-test
+  - name: Samples
+    href: https://github.com/microsoft/fabric-samples
