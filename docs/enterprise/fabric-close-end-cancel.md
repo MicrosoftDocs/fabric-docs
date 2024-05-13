@@ -1,5 +1,5 @@
 ---
-title: Fabric and Power BI: end, close, cancel
+title: Fabric and Power BI, end, close, cancel
 description: Learn how to end a trial, cancel a subscription, and close an account in Fabric and Power BI. 
 author: mihart
 ms.author: mihart
