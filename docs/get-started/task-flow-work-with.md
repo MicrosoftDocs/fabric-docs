@@ -211,7 +211,7 @@ To select one of the predefined task flows:
 
 1. Open the **Add** dropdown on the canvas and choose **Select task flow**. The predefined task flows pane will open.
 
-1. Choose one of the predefined task flows and the select **Select**. If there already is a task flow on the canvas, you'll be asked whether to overwrite the current task flow or to append the predefined task flow to the curent task flow.
+1. Choose one of the predefined task flows and the select **Select**. If there already is a task flow on the canvas, you'll be asked whether to overwrite the current task flow or to append the predefined task flow to the current task flow.
 
 ## Edit task flow details
 
