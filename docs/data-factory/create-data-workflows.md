@@ -1,6 +1,6 @@
 ---
-title: Create a Data workflows project in Microsoft Fabric
-description: This tutorial helps you create a Data workflows in Microsoft Fabric.
+title: Create a Data workflow project in Microsoft Fabric
+description: This tutorial helps you create a Data workflow in Microsoft Fabric.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: nabhishek
@@ -15,7 +15,7 @@ ms.date: 03/25/2024
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-Data workflows provides a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease. In this quickstart, you create your first Data workflow and run a Directed Acyclic Graph (DAG) to familiarize yourself with the environment and functionalities of Data workflows.
+Data workflows provide a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease. In this quickstart, you create your first Data workflow and run a Directed Acyclic Graph (DAG) to familiarize yourself with the environment and functionalities of Data workflows.
 
 ## Prerequisites
 
@@ -27,9 +27,9 @@ Data workflows provides a simple and efficient way to create and manage Apache A
 1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Data workflows (preview)' section.
 2. Select **Apply**.
 
-:::image type="content" source="media/data-workflows/enable-dataworkflow-tenant.png" lightbox="media/data-workflows/enable-dataworkflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+:::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
-### Create a Data workflows
+### Create a Data workflow
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 
@@ -59,18 +59,18 @@ Data workflows provides a simple and efficient way to create and manage Apache A
 
 1. Begin by clicking on the "Run DAG" button.
 
-   :::image type="content" source="media/data-workflows/run-dag.png" alt-text="Screenshot to run the DAG from data workflows UI." lightbox="media/data-workflows/run-dag.png":::
+   :::image type="content" source="media/data-workflows/run-d-a-g.png.png" alt-text="Screenshot to run the DAG from data workflows UI." lightbox="media/data-workflows/run-d-a-g.png.png":::
 
 2. Once initiated, a notification will promptly appear indicating the DAG is running.
 
 3. To monitor the progress of the DAG run, simply click on "View Details" within the notification center. This action will redirect you to the Apache Airflow UI, where you can conveniently track the status and details of the DAG run.
 
-   :::image type="content" source="media/data-workflows/notification-to-run-dag.png" alt-text="Screenshot to navigate to Apache Airflow UI from notification center." lightbox="media/data-workflows/notification-to-run-dag.png":::
+   :::image type="content" source="media/data-workflows/notification-to-run-d-a-g.png" alt-text="Screenshot to navigate to Apache Airflow UI from notification center." lightbox="media/data-workflows/notification-to-run-d-a-g.png":::
 
 
 ### Monitor your Data workflow DAG in Apache Airflow UI
 
-1. The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on the "Monitor in Apache Airflow" button.
+The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on the "Monitor in Apache Airflow" button.
 
     :::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 

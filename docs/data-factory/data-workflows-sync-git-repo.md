@@ -15,7 +15,7 @@ ms.date: 03/25/2024
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-Data workflows provides a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease. It provides you the two methods to store your Data worklows files. In this article, you learn to synchronize your code from an existing GitHub repository.  
+Data workflows provide a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease. It provides you the two methods to store your Data worklows files. In this article, you learn to synchronize your code from an existing GitHub repository.  
 
 
 ## Prerequisites
@@ -28,9 +28,9 @@ Data workflows provides a simple and efficient way to create and manage Apache A
 1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Data workflows (preview)' section.
 2. Select **Apply**.
 
-:::image type="content" source="media/data-workflows/enable-dataworkflow-tenant.png" lightbox="media/data-workflows/enable-dataworkflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+:::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
-### Create a Data workflows
+### Create a Data Workflow
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Data workflows (preview)
@@ -56,7 +56,7 @@ Data workflows provides a simple and efficient way to create and manage Apache A
    * <strong>Enable Triggers:</strong> Allows the Airflow Tasks to run in deferrable mode.
 
 
-### Synchronize your GitHub Repository
+### Synchronize Your GitHub Repository
 
 Specify the git repository you want to sync your Data workflows with.
 

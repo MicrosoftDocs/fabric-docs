@@ -30,7 +30,7 @@ To get started, you must complete the following prerequisites:
 
   2. Select Apply.
 
-  :::image type="content" source="media/data-workflows/enable-dataworkflow-tenant.png" lightbox="media/data-workflows/enable-dataworkflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+  :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md)
 
@@ -112,4 +112,4 @@ After saving, the DAG files are automatically loaded into the Apache Airflow UI.
 
 ## Related Content
 
-[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)
+[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)

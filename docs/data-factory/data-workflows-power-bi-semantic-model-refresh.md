@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 04/15/2023
 ---
 
-# Tutorial: Refresh Power BI semantic model with Data workflows
+# Tutorial: Refresh Power BI Semantic Model with Data Workflows
 
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
@@ -30,7 +30,7 @@ To get started, you must complete the following prerequisites:
 
   2. Select Apply.
 
-  :::image type="content" source="media/data-workflows/enable-dataworkflow-tenant.png" lightbox="media/data-workflows/enable-dataworkflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+  :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - You must have an Admin account of Power BI.
 
@@ -69,7 +69,7 @@ To get started, you must complete the following prerequisites:
 
 1. Start by selecting the "New DAG File" card. Then, assign a name to the file and select the "Create".
 
-1. Once created, you're presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the `dataset_id` and `workspace_id` argument with the Power BI semantic model ID and workspace ID respectively.
+2. Once created, you're presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the `dataset_id` and `workspace_id` argument with the Power BI semantic model ID and workspace ID respectively.
 
 ```python
 from datetime import datetime
@@ -99,7 +99,7 @@ with DAG(
 
 ```
 
-1. Select on "Save," to save the file.
+3. Select on "Save," to save the file.
 
    :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
@@ -134,7 +134,7 @@ class AirflowExtraLinkPlugin(AirflowPlugin):
 
 3. Upon completion, you will observe the DAG loaded with the external monitoring link to the Power BI semantic model refresh.
 
-## Monitor the Data workflow DAG and run it from Apache Airflow UI
+## Monitor the data workflow DAG and run it from Apache Airflow UI
 
 After you click on save, files are automatically loaded into the Apache Airflow UI. To monitor them, select on the "Monitor in Apache Airflow" button.
 
@@ -142,4 +142,4 @@ After you click on save, files are automatically loaded into the Apache Airflow 
 
 ## Related Content
 
-[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)
+[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)

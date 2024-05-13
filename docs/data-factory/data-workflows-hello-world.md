@@ -27,9 +27,9 @@ To get started, you must complete the following prerequisite:
 
     2. Click Apply.
 
-        :::image type="content" source="media/data-workflows/enable-dataworkflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-dataworkflow-tenant.png":::
+        :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-data-workflow-tenant.png":::
 
-### Create a Data workflows
+### Create a Data workflow
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 
@@ -65,4 +65,4 @@ To get started, you must complete the following prerequisite:
 
 ## Related Content
 
-[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)
+[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)
