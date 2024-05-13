@@ -77,7 +77,7 @@ You can enable the Native Execution Engine across all jobs and notebooks associa
 |  spark.gluten.enabled |                         true                         |
 | spark.shuffle.manager | org.apache.spark.shuffle.sort.ColumnarShuffleManager |
 
-:::image type="content" source="media\native\enable-env.jpg" alt-text="Screenshot showcasing how to enable the Native Execution Engine inside the environment item." lightbox="media\native\enable-env.jpg":::
+:::image type="content" source="media\native\enable-environment.jpg" alt-text="Screenshot showcasing how to enable the Native Execution Engine inside the environment item." lightbox="media\native\enable-environment.jpg":::
 
 
 When enabled at the environmental level, the Native Execution Engine setting is inherited by all subsequent jobs and notebooks. This inheritance ensures that any new sessions or resources created under this environment automatically benefit from the enhanced execution capabilities. 
@@ -162,14 +162,14 @@ There are several methods to determine if an operator in your Apache Spark job w
 
 Access the Spark UI or Spark History Server to locate the query you need to inspect. In the query plan displayed within the interface, look for any node names that end with the suffix 'Transformer'. This indicates that the operation has been executed by the Native Execution Engine. For instance, nodes might be labeled as 'RollUpHashAggregateTransformer', 'ProjectExecTransformer', 'BroadcastHashJoinExecTransformer', 'ShuffledHashJoinExecTransformer' or 'BroadcastNestedLoopJoinExecTransformer'. 
 
-:::image type="content" source="media\native\sparkui.jpg" alt-text="Screenshot showcasing how to check DAG visualization that end with the suffix Transformer, what indicated that it comes from, Native Execution Engine." lightbox="media\native\sparkui.jpg":::
+:::image type="content" source="media\native\spark-ui.jpg" alt-text="Screenshot showcasing how to check DAG visualization that end with the suffix Transformer, what indicated that it comes from, Native Execution Engine." lightbox="media\native\spark-ui.jpg":::
 
 
 ### Using DataFrame Explain 
 
 Alternatively, you can execute the df.explain() command in your notebook to view the execution plan. Within this output, look for the same "Transformer" suffixes. This method provides a straightforward way to confirm whether specific operations are being handled by the Native Execution Engine. 
  
-:::image type="content" source="media\native\dfdetails.jpg" alt-text="Screenshot showcasing how to check physical plan for your query and see that the query was executed by Native Execution Engine." lightbox="media\native\dfdetails.jpg":::
+:::image type="content" source="media\native\df-details.jpg" alt-text="Screenshot showcasing how to check physical plan for your query and see that the query was executed by Native Execution Engine." lightbox="media\native\df-details.jpg":::
 
 ### Fallback Mechanism 
 
