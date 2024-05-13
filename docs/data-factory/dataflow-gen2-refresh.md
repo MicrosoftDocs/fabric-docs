@@ -1,8 +1,8 @@
 ---
 title: Dataflow Gen2 refresh
 description: Explanation of what a dataflow refresh is, including on-demand and scheduled refresh.
-author: bensack
-ms.author: bensack
+author: Luitwieler
+ms.author: jeluitwi
 ms.service: fabric
 ms.topic: concept-article #Required; leave this attribute/value as-is.
 ms.date: 2/1/2024
@@ -64,6 +64,9 @@ For dataflow refreshes, a couple of limitations are in place:
    - 168 hours (1 week)
      - 100% failure rate over 168 hours
      - Minimum of 5 refreshes (1 refresh a day)
+3. A single evaluation of a query has a limit of 8 hours.
+4. Total refresh time of a single refresh of a dataflow is limited to a max of 24 hours.
+5. Per dataflow you can have a maximum of 50 staged queries, or queries with output destination, or combination of both. 
 
 ### Refresh cancelation implications to output data
 
