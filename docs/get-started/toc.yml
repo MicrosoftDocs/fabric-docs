@@ -17,6 +17,14 @@ items:
   items:
   - name: End-to-end tutorials
     href: end-to-end-tutorials.md
+- name: Task flows
+  items:
+  - name: Task flow overview
+    href: task-flow-overview.md
+  - name: Set up a task flow
+    href: task-flow-create.md
+  - name: Work with task flows
+    href: task-flow-work-with.md
 - name: Decision guides
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
@@ -141,6 +149,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: OneLake under-reports transactions in the Other category
+      href: known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md
+    - name: Response times when composing SQL queries slower than expected
+      href: known-issues/known-issue-716-response-times-composing-sql-queries-slower.md
     - name: TMDL semantic models won't open in Desktop after web edited
       href: known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md
     - name: Sign-in required when you browse to a secure embed URL

@@ -54,7 +54,7 @@ The following properties are **required**:
 - **Connection**:  Select an Azure Files connection from the connection list. If no connection exists, then create a new Azure Files connection by selecting **New**.
 - **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, **List of files** as your file path type. The configuration of each setting is:
 
-  - **File path**: If you choose this type, the data can be copied from the folder/file path specified previously.
+  - **File path**: If you choose this type, the data can be copied from the folder/file path specified.
 
   - **Prefix**: Prefix for the file name under the specified file share to filter source files. Files with name starting with `fileshare_in_connection/this_prefix` are selected. It utilizes the service-side filter for Azure Files, which provides better performance than a wildcard filter.
 

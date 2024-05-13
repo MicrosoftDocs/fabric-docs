@@ -129,7 +129,7 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a memb
 
 ## Folders in deployment pipelines (preview)
 
-[Folders](./manage-workspace-content.md) in a workspace enable users to efficiently organize and manage workspace items in a familiar way.
+Folders enable users to efficiently organize and manage workspace items in a familiar way.
 When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
 
 ### Folders representation
