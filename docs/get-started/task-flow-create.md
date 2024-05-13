@@ -36,10 +36,10 @@ The task flow itself is split between the canvas, which will hold the visualizat
 
 When no task flow has been configured, an empty default task flow entitled **Get started with a task flow** is there. To build your task flow, you need to:
 
-* Add tasks to the task flow canvas. This would typically be done by data project architect.
-* Arrange the tasks on the task flow canvas in such a way that illustrates the logic of the project. This would typically be done by the data project architect.
-* Connect the tasks to show the logical structure of the project. This would typically be done by the data project architect.
-* Assign items to the tasks in the workflow. This work could be done by either the data project architect or the engineers working on the project.
+* Add tasks to the task flow canvas.
+* Arrange the tasks on the task flow canvas in such a way that illustrates the logic of the project.
+* Connect the tasks to show the logical structure of the project.
+* Assign items to the tasks in the workflow.
 
 To get started, you can either [select one of the predesigned task flows](#start-with-a-predesigned-task-flow) or [add a task to start building one from scratch](#start-with-a-custom-task-flow).
 
