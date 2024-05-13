@@ -1,8 +1,8 @@
 ---
 title: Spark connector for Fabric Data Warehouse
 description: Learn how to use the Spark connector for Fabric Data Warehouse access and work with data from the warehouse and SQL analytics endpoint of the lakehouse.
-author: KesemSharabi
-ms.author: kesharab
+author: ms-arali
+ms.author: arali
 ms.topic: how-to
 ms.date: 05/10/2024
 ---
