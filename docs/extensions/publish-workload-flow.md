@@ -10,7 +10,7 @@ ms.date: 04/17/2024
 ---
 
 # Intro
-This document is about publishing a workload extension to Fabric Hub. To learn more about Fabric and workloads [find these article](https://review.learn.microsoft.com/en-us/fabric/extensions/extensibility-overview?branch=release-extensibility#introduction).
+This document is about publishing a workload extension to Fabric Hub. To learn more about Fabric and workloads [find these article](./dev-kit-overview.md).
 
 The Fabric Workload Hub serves as a marketplace. Users can browse, explore, and manage workloads within Fabric. Workloads are categorized into two groups: Core Fabric workloads and those developed by Microsoft partners.
 
@@ -35,14 +35,14 @@ In order to pass all validation checks and display it publicly in the Fabric Wor
 ## Step 3: Create an Azure  Marketplace Listing 
 
 ### Prerequisite
-To submit your Fabric, you must be enrolled with [Partner Center](https://learn.microsoft.com/partner-center/overview). If you're not yet enrolled, [Open a developer account in Partner Center](https://learn.microsoft.com/azure/marketplace/create-account).
+To submit your Fabric, you must be enrolled with [Partner Center](/partner-center/overview). If you're not yet enrolled, [Open a developer account in Partner Center]/azure/marketplace/create-account).
 
 ### 3.1. Create a SaaS offer
-Once you have a Partner Center account follow these [steps](https://learn.microsoft.com/partner-center/marketplace/create-new-saas-offer) to create a SaaS offer.
+Once you have a Partner Center account follow these [steps](/partner-center/marketplace/create-new-saas-offer) to create a SaaS offer.
 If your already have an exting SaaS offer in Azure Marketplace, you don't need to create a new one. Just make sure the SaaS offer metadata in Partner center and the Workload package metadata you created, are identical and that the you comply to the SaaS offer [requirements.](./publish-workload-requirements.md), then add the SaaS offer public link to the metadata as described in in section 3.1 in this article.
 Choose the configuration based on your solution and business model presences. For instance if you already have a transacatbility model choose the option "No, I would prefer to only list my offer through the marketplace and process transactions independently".
 
-The SaaS offer linked to the Fabric Workload must meet all requirements defined in [100 General](https://learn.microsoft.com/legal/marketplace/certification-policies#100-general) and [1000 Software as a Service (SaaS)](https://learn.microsoft.com/legal/marketplace/certification-policies#1000-software-as-a-service-saas) Find more information about the SaaS [requirements.](./publish-workload-requirements.md). 
+The SaaS offer linked to the Fabric Workload must meet all requirements defined in [100 General](/legal/marketplace/certification-policies#100-general) and [1000 Software as a Service (SaaS)](/legal/marketplace/certification-policies#1000-software-as-a-service-saas) Find more information about the SaaS [requirements.](./publish-workload-requirements.md). 
 
 > [!NOTE]
 > Your SaaS offer must have [Azure Marketplace](https://azuremarketplace.microsoft.com/home) storefront entry. Having both [AppSource](https://appsource.microsoft.com/) and Azure Marketplace is also allowed. However, the offer setup combination of "Yes, I would like to sell through Microsoft and have Microsoft host transactions on my behalf" and "Yes, I would like Microsoft to manage customer licenses on my behalf" will create a SaaS offer in AppSource only, therefore it is not supported. 
