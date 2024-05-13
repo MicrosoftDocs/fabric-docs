@@ -15,10 +15,8 @@ The native execution engine is a groundbreaking enhancement for Apache Spark job
 
 The native execution engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to four times faster performance compared to traditional OSS (open source software) Spark, as validated by the TPC-DS 1TB benchmark. The engine is adept at managing a wide array of data processing scenarios, ranging from routine data ingestion, batch jobs, and ETL (extract, transform, load) tasks, to complex data science analytics and responsive interactive queries. Users benefit from accelerated processing times, heightened throughput, and optimized resource utilization.
 
-This documentation provides you with detailed steps on how to enable and effectively use the native execution engine for your Spark applications on Microsoft Fabric.
-
 > [!NOTE]
-> The native execution engine is currently in preview . For more information, see the current [limitations](#limitations).
+> The native execution engine is currently in preview. For more information, see the current [limitations](#limitations).
 
 ## When to use the native execution engine
 
@@ -29,18 +27,18 @@ The native execution engine offers a solution for running queries on large-scale
 - Performance enhancement is most notable in scenarios where the queries don't trigger the fallback mechanism by avoiding unsupported features or expressions.
 - The engine is well-suited for queries that are computationally intensive, rather than simple or I/O-bound.
 
-For information on the operators and functions supported by the native execution engine, see the [Apache Gluten website](https://github.com/apache/incubator-gluten/blob/main/docs/velox-backend-support-progress.md).
+For information on the operators and functions supported by the native execution engine, see [Apache Gluten documentation](https://github.com/apache/incubator-gluten/blob/main/docs/velox-backend-support-progress.md).
 
 ## Enable the native execution engine
 
-To use the full capabilities of the native execution engine in Microsoft Fabric, during the preview phase, specific configurations are necessary. This section provides a detailed guide on activating this feature for individual notebooks or Spark Job Definitions (SJDs), and universally across your environment.
+To use the full capabilities of the native execution engine during the preview phase, specific configurations are necessary. The following procedures show how to activate this feature for notebooks, Spark job definitions, and entire environments.
 
 > [!IMPORTANT]
 > The native execution engine currently supports the latest GA runtime version, which is [Runtime 1.2 (Apache Spark 3.4, Delta Lake 2.4)](./runtime-1-2.md).
 
-### Enable for individual notebook or SJD
+### Enable for a notebook or Spark job definition
 
-To enable the native execution engine for a single notebook or SJD, you must incorporate the necessary configurations at the beginning of your execution script:
+To enable the native execution engine for a single notebook or Spark job definition, you must incorporate the necessary configurations at the beginning of your execution script:
 
 ```json
 %%configure 
@@ -59,7 +57,7 @@ For notebooks, insert the required configuration commands in the first cell. For
 The native execution engine is integrated with custom pools, meaning that enabling this feature initiates a new session, typically taking up to two minutes to start.
 
 > [!IMPORTANT]
-> Configuration of the native execution engine must be done prior to the initiation of the Spark session. Once the Spark session starts, "spark.shuffle.manager" setting become immutable and cannot be changed. Ensure that these configurations are set within the %%configure block in notebooks or in the Spark session builder for SJDs.
+> Configuration of the native execution engine must be done prior to the initiation of the Spark session. After the Spark session starts, the `spark.shuffle.manager` setting becomes immutable and can't be changed. Ensure that these configurations are set within the `%%configure` block in notebooks or in the Spark session builder for Spark job definitions.
 
 ### Enable at the environment level
 
