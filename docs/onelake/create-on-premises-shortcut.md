@@ -12,7 +12,7 @@ ms.date: 05/21/2024
 
 # Create shortcuts to on-premises data
 
-With OneLake Shortcuts, you can create virtual references to bring together data from a variety sources across clouds, regions, systems, and domains – all with no data movement or duplication. By using an Fabric on-premises data gateway (OPDG), you can now also create shortcuts to on-premises data sources, such as S3 compatible storage hosted on-premises. With this feature, you can also create shortcuts or other network-restricted data sources, such as Amazon S3 or Google Clouds Storage buckets configured behind a firewall or Virtual Private Cloud (VPC).
+With OneLake Shortcuts, you can create virtual references to bring together data from a variety sources across clouds, regions, systems, and domains – all with no data movement or duplication. By using a Fabric on-premises data gateway (OPDG), you can now also create shortcuts to on-premises data sources, such as S3 compatible storage hosted on-premises. With this feature, you can also create shortcuts or other network-restricted data sources, such as Amazon S3 or Google Clouds Storage buckets configured behind a firewall or Virtual Private Cloud (VPC).
 
 On-premises data gateways are software agents that you install on a Windows machine and configure to connect to your data endpoints. By selecting an OPDG when creating a shortcut, you can establish network connectivity between OneLake and your data source. 
 
@@ -52,7 +52,7 @@ Review the instructions for creating an Amazon S3, Google Cloud Storage, or S3 c
 
 During shortcut creation, select your on-premises data gateway (OPDG) in the **Data gateway** dropdown field.
 
-  :::image type="content" source="media\create-on-prem-shortcut\data-gateway-dropdown.png" alt-text="Screenshot showing where to select an on-premises data gateway during OneLake shortcut creation.":::
+  :::image type="content" source="media\create-on-premises-shortcut\data-gateway-dropdown.png" alt-text="Screenshot showing where to select an on-premises data gateway during OneLake shortcut creation.":::
 
 > [!NOTE]
 > If you do not see your OPDG in the **Data gateway** dropdown field and someone else created the gateway, ask them to share the gateway with you from the **Manage connections and gateways** interface.
