@@ -37,7 +37,7 @@ In this document, we show you how to install and use these on-premises data gate
   * Identify a physical or virtual machine that:
     * Has network connectivity to your storage endpoint. This article explains how you can confirm this connectivity before creating your shortcut.
     *	Allows you to install software.
-  *	Follow [the instructions to install a **standard** On-premises Data Gateway](../data-integration/gateway/service-gateway-install.md#download-and-install-a-standard-gateway) on the machine you identified. Be sure to install the latest version.
+  *	Follow [the instructions to install a **standard** On-premises Data Gateway](https://learn.microsoft.com/data-integration/gateway/service-gateway-install#download-and-install-a-standard-gateway) on the machine you identified. Be sure to install the latest version.
   *	If your storage endpoint uses a self-signed certificate for HTTPS connections, be sure to trust this certificate on the machine hosting your gateway.
 
 ## Check connectivity from gateway host
@@ -61,7 +61,7 @@ During shortcut creation, select your on-premises data gateway (OPDG) in the **D
 
 If you encounter any connectivity issues during shortcut creation, try the following troubleshooting steps.
 
-* As needed, ensure the machine hosting your gateway can connect to your storage endpoint. [Follow the steps to check connectivity.](#Check-connectivity-from-gateway-host)
+* As needed, ensure the machine hosting your gateway can connect to your storage endpoint. [Follow the steps to check connectivity.](#check-connectivity-from-gateway-host)
 *	If you're using HTTPS and need to use a self-signed certificate, ensure the machine hosting your gateway trusts the certificate. You may need to install the self-signed certificate on the machine.
 
 ## Related content
