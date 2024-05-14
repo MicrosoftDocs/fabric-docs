@@ -1,6 +1,6 @@
 ---
-title: Run Series Job Analysis Public Preview 
-description: The Spark Run Series automatically classifies your Spark applications from your recurring Pipeline activities, or manual Notebook runs, or Spark Job runs from the same Notebook or Spark Job Definition into respective run series
+title: Monitor run series
+description: The Spark run series categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs.
 author: jejiang
 ms.author: jejiang
 ms.topic: overview 
@@ -11,37 +11,42 @@ ms.search.form: Monitor run series
 
 # Monitor run series
 
-The Spark Run Series automatically classifies your Spark applications from your recurring Pipeline activities, or manual Notebook runs, or Spark Job runs from the same Notebook or Spark Job Definition into respective run series. The Run Series feature visualizes the duration trend for each Spark application instance, along with the corresponding data input and output trendline for Spark applications in the run series. It also auto-scans the run series and detects whether there are any anomalous Spark application runs. This feature enables you to view details for a particular Spark application.
+The Spark run series automatically classifies the following into respective run series:
 
-## Access the monitor run series
+* Your Spark applications from your recurring pipeline activities, or manual notebook runs. 
+* Spark job runs from the same notebook or Spark job definition into respective run series. 
 
-You can access the monitor run series from the **monitoring hub's historical view**:
+The run series feature visually represents the duration trend for each Spark application instance along with the corresponding data input and output trendline for Spark applications. It also auto-scans the run series and detects whether there are any anomalous Spark application runs. This feature enables you to view details for a particular Spark application.
 
-1. Open the Microsoft Fabric and go to monitoring hub page.
-2. Select an **Spark job definition** \ **notebook** and expand its more options drop-down list, then click on **historical runs**.
-3. Select the job you want to view and expand more options, then click on **monitor run series**.
+## Access the monitor run series feature
+
+You can access the monitor run series feature from the **Monitoring hub's historical view**:
+
+1. Open the Microsoft Fabric portal and go to **Monitoring hub** menu.
+2. Open your Spark job definition or notebook and expand its **More options** drop-down list and then select **Historical runs**.
+3. Select the job you want to view and expand **More options**, then select **Monitor run series**.
 
     :::image type="content" source="media\apache-spark-monitor-run-series\access-run-series-from-historica-view.png" alt-text="Screenshot showing access run series from historica view." lightbox="media\apache-spark-monitor-run-series\access-run-series-from-historica-view.png" border="true":::
 
-You can access the monitor run series from the notebook or spark job definition's **recent runs** panel:
+You can access the monitor run series feature from the notebook or spark job definition's **Recent runs** panel:
 
 1. Open the Microsoft Fabric homepage and select a workspace where you want to view the job.
-2. Selecting **Spark job definition** \ **notebook item context** menu shows the recent run option.
+2. Selecting **Spark job definition** or **Notebook item context** menu shows the recent run option.
 3. Select **Recent runs**.
-4. select an application and expand its more options drop-down list, then click on **monitor run series**.
+4. select an application and expand its **More options** drop-down list and then select **Monitor run series**.
 
     :::image type="content" source="media\apache-spark-monitor-run-series\access-run-series-from-recent-run.png" alt-text="Screenshot showing access run series from recent run." lightbox="media\apache-spark-monitor-run-series\access-run-series-from-recent-run.png" border="true":::
 
-You can access the monitor run series from the spark application **monitoring detail** page:
+You can access the monitor run series feature from the spark application **Monitoring detail** page:
 
 1. Go to the Apache Spark application monitoring details page.
-2. Click on **monitor run series** in page.
+2. Select the **Monitor run series** option.
 
     :::image type="content" source="media\apache-spark-monitor-run-series\access-run-series-from-monitoring-details.png" alt-text="Screenshot showing access run series from the spark application monitoring detail page." lightbox="media\apache-spark-monitor-run-series\access-run-series-from-monitoring-details.png" border="true":::
 
 ## View spark application performance
 
-In the **Spark runns** graph, you can view the duration trend of this runn series. Each vertical bar represents an instance of the Notebook/Spark job definition activity run, and its height indicates the run duration. You can also click on each running instance to view more detailed information and zoom in or out on specific time windows.
+In the **Spark runs** graph, you can view the duration trend of this run series. Each vertical bar represents an instance of the Notebook/Spark job definition activity run, and its height indicates the run duration. You can also click on each running instance to view more detailed information and zoom in or out on specific time windows.
     
 :::image type="content" source="media\apache-spark-monitor-run-series\spark-running-graph.png" alt-text="Screenshot showing the spark running graph." lightbox="media\apache-spark-monitor-run-series\spark-running-graph.png" border="true":::
 

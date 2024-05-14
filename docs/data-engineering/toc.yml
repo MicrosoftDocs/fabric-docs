@@ -141,7 +141,7 @@ items:
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
-    - name: Monitor Run Series
+    - name: Monitor run series
       href: apache-spark-monitor-run-series.md
     - name: Navigate the Apache Spark history server
       href: apache-spark-history-server.md  
