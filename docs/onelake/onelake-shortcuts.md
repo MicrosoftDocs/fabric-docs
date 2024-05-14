@@ -25,7 +25,7 @@ Shortcuts are objects in OneLake that point to other storage locations. The loca
 
 ## Where can I create shortcuts?
 
-You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases. Furthermore, the shortcuts you create within these items can point to other OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3 storage accounts, or Dataverse. You can even [create shortcuts to on-premises or network-restricted locations](create-on-prem-shortcut.md) with the use of the Fabric on-premises data gateway (OPDG).
+You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases. Furthermore, the shortcuts you create within these items can point to other OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3 storage accounts, or Dataverse. You can even [create shortcuts to on-premises or network-restricted locations](create-on-premises-shortcut.md) with the use of the Fabric on-premises data gateway (OPDG).
 
 You can use the Fabric UI to create shortcuts interactively, and you can use the [REST API](onelake-shortcuts-rest-api.md) to create shortcuts programmatically.
 
