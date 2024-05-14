@@ -17,7 +17,7 @@ Fabric workspaces that access a storage account with trusted workspace access ne
 To limit and protect access to firewall-enabled storage accounts from certain Fabric workspaces, you can set up resource instance rule to allow access from specific Fabric workspaces.
 
 > [!NOTE]
-> Trusted workspace access is currently in public preview. Fabric workspace identity can only be created in workspaces associated with a Fabric capacity (F64 or higher). For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+> Trusted workspace access in OneLake shortcuts and data pipelines is currently in public preview. Fabric workspace identity can only be created in workspaces associated with a Fabric capacity (F64 or higher). For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 
 This article shows you how to:
 
@@ -26,6 +26,8 @@ This article shows you how to:
 * [Create a OneLake shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse that connects to a trusted-workspace-access enabled Azure Data Lake Gen 2 storage account.
 
 * [Create a data pipeline](#create-a-data-pipeline-to-a-storage-account-with-trusted-workspace-access) to connect directly to a firewall-enabled Azure Data Lake Gen 2 account that has trusted workspace access enabled.
+  
+* Use the T-SQL COPY statement to ingest data into your Warehouse from a firewall-enabled Azure Data Lake Gen 2 account that has trusted workspace access enabled.
 
 ## Configure trusted workspace access in ADLS Gen2
 
@@ -52,7 +54,7 @@ You can configure specific Fabric workspaces to access your storage account base
 
 :::image type="content" source="./media/security-trusted-workspace-access/resource-instance-rule.png" alt-text="Screenshot showing configured resource instance rule." lightbox="./media/security-trusted-workspace-access/resource-instance-rule.png":::
 
-Here's an example of a resource instance rule that can be created through ARM template:
+Here's an example of a resource instance rule that can be created through ARM template. A sample ARM template is also provided at the end of this document.
 
 ```
 "resourceAccessRules": [
@@ -76,13 +78,15 @@ A Contributor on the storage account (an Azure RBAC role) can configure resource
 
 ## How to use trusted workspace access in Fabric
 
-There are currently two ways to use trusted workspace access to access your data from Fabric in a secure manner:
+There are currently three ways to use trusted workspace access to access your data from Fabric in a secure manner:
 
 * You can [create a new ADLS shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse to start analyzing your data with Spark, SQL, and Power BI.
 
 * You can [create a data pipeline](#create-a-data-pipeline-to-a-storage-account-with-trusted-workspace-access) that leverages trusted workspace access to directly access a firewall-enabled Azure Data Lake Gen 2 account.
+  
+* You can use a T-SQL Copy statement that leverages trusted workspace access to ingest data into a Fabric warehouse.
 
-The following sections show you how to use these two methods.
+The following sections show you how to use these methods.
 
 ### Create a OneLake shortcut to storage account with trusted workspace access
 
@@ -186,6 +190,11 @@ With the workspace identity configured in Fabric and trusted access enabled in y
    :::image type="content" source="./media/security-trusted-workspace-access/review-save.png" alt-text="Screenshot showing the review-and-save-screen.png" lightbox="./media/security-trusted-workspace-access/review-save.png":::
 
 1. When the pipeline status changes from *Queued* to *Succeeded*, go to the lakehouse and verify that the data tables were created.
+
+### Use the T-SQL COPY statement to ingest data into a warehouse 
+
+With the workspace identity configured in Fabric and trusted access enabled in your ADLS Gen2 storage account, you can use the [Copy statement](docs/t-sql/statements/copy-into-transact-sql.md) to ingest data into your Fabric warehouse. Once the data is ingested into the warehouse, then you can start analyzing your data with SQL and Power BI. 
+
 
 ### Restrictions and Considerations
 
