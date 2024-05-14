@@ -38,8 +38,7 @@ To decide which data ingestion option to use, you can use the following criteria
 - Use **cross-warehouse ingestion** for code-rich experiences to create new tables with source data within the same workspace. For more information, see [Ingest data using Transact-SQL](ingest-data-tsql.md) and [Write a cross-database query](query-warehouse.md#write-a-cross-database-query).
 
 > [!NOTE]
-> The COPY statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports only data sources on Azure storage accounts, with authentication using to Shared Access Signature (SAS), Storage Account Key (SAK), or accounts with public access. For other limitations, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
-
+> The COPY statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports only data sources on Azure storage accounts, OneLake sources are currently not supported.
 ## Supported data formats and sources
 Data ingestion for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers a vast number of data formats and sources you can use. Each of the options outlined includes its own list of supported data connector types and data formats. 
 
