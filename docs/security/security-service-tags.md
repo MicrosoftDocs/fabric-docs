@@ -25,7 +25,7 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 | EventHub | Azure Event Hubs | Outbound | Yes | Yes |
 | Power BI | Power BI and Microsoft Fabric | Both | No | Yes |
 | PowerQueryOnline | Power Query Online | Both | No | Yes |
-| KustoAnalytics | Real-Time Analytics | Both | No | No |
+| KustoAnalytics | Real-Time Intelligence | Both | No | No |
 
 ## Use service tags
 
