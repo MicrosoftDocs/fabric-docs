@@ -453,6 +453,12 @@
         href: connector-odbc-overview.md
       - name: Set up your connection
         href: connector-odbc.md
+    - name: Oracle
+      items:
+      - name: Oracle - Overview
+        href: connector-oracle-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-oracle-copy-activity.md
     - name: Oracle Cloud Storage
       items:
       - name: Oracle Cloud Storage - Overview
