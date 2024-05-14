@@ -26,7 +26,7 @@ You can access the monitor run series feature from the **Monitoring hub's histor
 2. Open your Spark job definition or notebook and expand its **More options** drop-down list and then select **Historical runs**.
 3. Select the job you want to view and expand **More options**, then select **Monitor run series**.
 
-    :::image type="content" source="media\apache-spark-monitor-run-series\access-run-series-from-historica-view.png" alt-text="Screenshot showing access run series from historical view." lightbox="media\apache-spark-monitor-run-series\access-run-series-from-historica-view.png" border="true":::
+    :::image type="content" source="media\apache-spark-monitor-run-series\access-run-series-from-historical-view.png" alt-text="Screenshot showing access run series from historical view." lightbox="media\apache-spark-monitor-run-series\access-run-series-from-historical-view.png" border="true":::
 
 You can access the monitor run series feature from the notebook or spark job definition's **Recent runs** panel:
 
