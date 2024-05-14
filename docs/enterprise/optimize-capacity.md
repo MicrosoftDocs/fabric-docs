@@ -104,7 +104,7 @@ Here are some points to consider to help minimize compute.
 - The Spark pool can only be configured to use the maximum number of vCores supported by the SKU. However, you can scale out data engineering workloads by accepting parallel Spark jobs within SKU limits. This approach is commonly known as _burst factor_, and it's enabled by default for Spark workloads at the capacity level. For more information, see [Concurrency throttling and queueing](../data-engineering/spark-job-concurrency-and-queueing.md#concurrency-throttling-and-queueing).
 - Active Spark sessions can accrue CU utilization on a capacity. For this reason, it's important to stop active Spark sessions when not in use. Note that the default Spark session expiration time is set to 20 minutes. Users can change the session timeout in a notebook or the Spark job definition.
 
-### Synapse Real-Time Analytics
+### Real-Time Intelligence
 
 KQL database CU consumption is calculated based on the number of seconds the database is active and the number of vCores used. For example, when your database uses four vCores and is active for 10 minutes, you'll consume 2,400 (4 x 10 x 60) seconds of CU.
 
