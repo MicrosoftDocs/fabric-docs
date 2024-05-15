@@ -9,27 +9,55 @@ ms.custom:
 ms.date: 12/25/2023
 ---
 
-# Workload environment
+## Introducing Workloads
+This chatper we will introduce the key components of our system and provide an overview of the architecture. These components work together to create a robust and flexible platform for your development needs. Let’s delve into these components and their roles within our architecture.
 
-[user story 242743](https://dev.azure.com/msft-skilling/Content/_workitems/edit/242723)
+### Fabric Workload Architecture
 
-Admin settings
+* handles data processing, storage, and management. It validates Entra ID tokens before processing them and interacts with external Azure services, such as Lakehouse.
+* The workload Frontend (FE) offers a user interface for job creation, authoring, management, and execution.
+* User interactions via the FE initiates request to the BE, either directly or indirectly via the Fabric Backend (Fabric BE).
 
-## Local
+For more detailed diagrams depicting the communication and authentication of the various components see the [BE Authentication and Security](Backend/README.md#authentication-and-security) and the [Authentication Overview](Authentication/overview.md#authentication-overview) diagrams.
 
-Scope of affect (frontend user scope, backend capacity scope)
-Test - Cloud (tenant) mode
-Workload management - Admin settings
-Upload and Add
+#### Frontend (FE)
+The frontend serves as the base of the user experience (UX) and behavior. operating within an iframe in the Fabric portal. And provides the Fabric partner with a specific user interface experience, including an item editor. The extension client SDK equips the necessary interfaces, APIs, and bootstrap functions to transform a regular web app into a Micro Frontend web app that operates seamlessly within the Fabric portal.
 
-## Cloud
+#### Backend (BE)
+The backend is the powerhouse for data processing and metadata storage. It employs CRUD operations to create and manage workload items along with metadata, and executes jobs to populate data in storage. The communication bridge between the frontend and backend is established through public APIs.
 
-Scope of affect (frontend user scope, backend capacity scope)
-Test - Cloud (tenant) mode
-Workload management - Admin settings
-Upload and Add
+The workloads can run in two environments: local and cloud. In local (devmode), the workload runs on the developer’s machine, with API calls managed by the DevGateway utility. This utility also handles workload registration with Fabric. In cloud mode, the workload runs on the partner services, with API calls made directly to an HTTPS endpoint.
 
-## Related content
+### Development environment
+During the development cycle testing a workload on a non production tenant can be done in two mode, local (devmode) and cloud mode (tenant mode). For more information please see the relevant document.
+Note that for each dev mode, there is a different package that is created when building the BE solution in Visual Studio.
+- Dev mode workload package - When building the BE solution in Visual Studio, use the Debug parameter to create a BE nuget package, which can be loaded in to the Fabric tenant using the DevGateWay application.
+![Placeholder for Dev Mode Diagram](#)
 
-* [Fabric extensibility overview](extensibility-overview.md)
-* [Fabric extensibility backend](extensibility-backend.md)
+- Cloud mode workload package - When building the BE solution in Visual Studio, use the Release parameter to create a standalone workload package (BE and FE), this will package can be uploaded to tenant directly.
+![Placeholder for Cloud Mode Diagram](#)
+
+#### Local development mode (devmode)
+The workload backend (BE) operates on the developer's machine. Workload API calls are transmitted via Azure Relay, with the workload's side of the Azure Relay channel managed by a specialized command-line utility, DevGateway. Workload Control API calls are sent directly from the workload to Fabric, bypassing the Azure Relay channel. The DevGateway utility also oversees the registration of the local development instance of the workload with Fabric, within a specific capacity context. This ensures the workload's availability across all workspaces assigned to that capacity. Upon termination of the DevGateway utility, the registration of the workload instance is automatically rescinded. For more information see [Backend Overview](/Backend/README.md)
+
+##### DevMode schema
+![Placeholder for DevMode Schema Diagram](#)
+
+##### DevMode BE schema
+![Placeholder for DevMode BE Schema Diagram](#)
+
+#### Cloud development mode (cloudmode)
+The workload backend (BE) operates within the partner's services. Workload API calls are made directly to the HTTPS endpoint, as specified in the workload manifest. In this scenario, the DevGateway utility is not required. The registration of the workload with Fabric is accomplished by uploading the workload nuget package to Fabric and subsequently activating the workload for the tenant. For more information see [Upload and Test in Cloud Mode](/UploadAndTestGuide.md)
+
+##### CloudMode schema
+![Placeholder for CloudMode Schema Diagram](#)
+
+#### Lakehouse Integration
+Our architecture is designed to integrate flawlessly with Lakehouse, enabling operations such as saving, reading, and fetching data. This interaction is facilitated through Azure Relay and the Fabric SDK, ensuring secure and authenticated communication.
+
+#### Authentication and Security
+We employ Entra ID (formerly AAD) for robust and secure authentication, ensuring that all interactions within the architecture are authorized and secure. For a complete introduction to the workload authentication as displayed in the diagram above, please refer to the authentication documents.:
+1. [Workload Authentication - Setup Guide](Authentication/Setup.md)
+2. [Workload Authentication - Architecture Overview ](Authentication/overview.md)
+3. [Workload Authentication - Implementation Guide](BACKENDAUTH.md)
+
