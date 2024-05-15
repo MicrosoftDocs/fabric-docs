@@ -30,7 +30,7 @@ When you create a trial, make sure that the users are aware of their status at a
 
 Monetization for Fabric workloads created by partners takes place in the [Azure Marketplace](/marketplace/azure-marketplace-overview). You can find a detailed guide on how to publish a workload in [publish workload flow](publish-workload-flow.md).
 
-As a partner, you define the [listing type](https://learn.microsoft.com/en-us/partner-center/marketplace/plan-saas-offer#listing-options) you want to provide. A popular listing type is *Contact me* as it allows you to support customers who want to buy your workload from the Azure Marketplace.
+As a partner, you define the [listing type](/partner-center/marketplace/plan-saas-offer#listing-options) you want to provide. A popular listing type is *Contact me* as it allows you to support customers who want to buy your workload from the Azure Marketplace.
 
 To sell the workload using [SaaS billing](/partner-center/marketplace/plan-saas-offer#saas-billing) and to learn how to list your workload in the marketplace, see [private offers](/marketplace/private-offers-in-azure-marketplace).
 

@@ -4,7 +4,7 @@ items:
 - name: Development Kit overview
   href: dev-kit-overview.md
   items:
-  - name: Microsoft Fabric workload partner benefits
+  - name: Monetize your workload
     href: monetization.md
   - name: Publish your workload
     href: publish-workload-flow.md
