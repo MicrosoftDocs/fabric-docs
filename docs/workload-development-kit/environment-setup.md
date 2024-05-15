@@ -12,50 +12,62 @@ ms.date: 05/21/2024
 # Set up your environment
 
 ## Prerequisites
+
 The following steps are required before getting started with workload development.
 
 ### [Git](https://git-scm.com/downloads)
+
 A distributed version control system that we use to manage and track changes to our project.
 
 ### [npm (Node Package Manager)](https://www.npmjs.com/get-npm)
+
 Default package manager for Node.js used to manage and share the packages that you use in your project.
 
 ### [Node.js](https://nodejs.org/en/download/)
+
 An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. We'll use this to run our server-side JavaScript code.
 
 ### [Webpack](https://webpack.js.org/guides/installation/)
+
 A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
 
 ### [Webpack CLI](https://webpack.js.org/api/cli/)
+
 The command line interface for Webpack. This allows us to use Webpack from the command line.
 
 ### [DevGateway](https://www.microsoft.com/en-us/download/details.aspx?id=105993)
-**In local mode only** is required to allow the workload backend, which is locally hosted, to communicate with the tenant, the workload operates on the developer's machine. Workload API calls from Fabric to the workload are channeled through Azure Relay, with the workload's side of the Azure Relay channel managed by the DevGateway command-line utility. Workload Control API calls are made directly from the workload to Fabric, not requiring the Azure Relay channel. The DevGateway utility also manages the registration of the workload's local (development) instance with Fabric within a specific capacity context, making the workload accessible in all workspaces assigned to that capacity. Note that terminating the DevGateway utility automatically removes the workload instance registration.
 
-### Create 
+**In local mode only** is required to allow the workload backend, which is locally hosted, to communicate with the tenant. The workload operates on the developer's machine. Workload API calls from Fabric to the workload are channeled through Azure Relay, with the workload's side of the Azure Relay channel managed by the DevGateway command-line utility. Workload control API calls are made directly from the workload to Fabric, not requiring the Azure Relay channel. The DevGateway utility also manages the registration of the workload's local (development) instance with Fabric within a specific capacity context, making the workload accessible in all workspaces assigned to that capacity.
+
+> [!NOTE]
+> Terminating the DevGateway utility automatically removes the workload instance registration.
+
+## Create your environment
+
+Follow the stages below to create your environment.
 
 ### Workload environment authentication
 
-Setting up workload access to Fabric tenant, requires configuration of Microsoft Entra ID for your workload application. It's necessary to ensure secure access and operation of your application's data plane API.
+Setting up workload access to Fabric tenant requires configuration of Microsoft Entra ID for your workload application. Microsoft Entra ID is necessary to ensure secure access and operation of your application's data plane API.
 
 Key steps include:
 
-1. **Adding Scopes for Data Plane API**: These scopes represent groups of operations exposed by your data plane API. Four example scopes are provided in the backend sample, covering read and write operations for workload items and lakehouse files.
+1. **Adding scopes for data plane API**: These scopes represent groups of operations exposed by your data plane API. Four example scopes are provided in the backend sample, covering read and write operations for workload items and Lakehouse files.
 
-2. **Preauthorizing the Fabric Client Application**: The Fabric client application needs to be preauthorized for the scopes you've defined. This ensures it can perform the necessary operations on your workload items and lakehouse files.
+1. **Preauthorizing the Fabric client application**: The Fabric client application needs to be preauthorized for the scopes you've defined. This ensures it can perform the necessary operations on your workload items and Lakehouse files.
 
-3. **Generating a Secret for Your Application**: This secret is used to secure your application and will be used when configuring the backend sample.
+1. **Generating a secret for your application**: This secret is used to secure your application and will be used when configuring the backend sample.
 
-4. **Adding Optional Claim 'idtyp'**: This claim is added to the access token and is used for identity purposes.
+1. **Adding optional claim 'idtyp'**: This claim is added to the access token and is used for identity purposes.
 
-These steps are required when setting up the workload, For a detailed guide on how to perform these steps, please refer to the [authentication setup guide](./authentication-tutorial.md).
-
-
+These steps are required when setting up the workload, For a detailed guide on how to perform these steps, see [Authentication setup](./authentication-tutorial.md).
 
 ### Authentication JavaScript API
-Fabric frontend offers a javascript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID - before working with authentication JS API make sure you go over the [Setup](./Setup.md) documentation.
+
+Fabric frontend offers a JavaScript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. Before working with the authentication JavaScript API make sure you go over the [authentication JavaScript API](./authentication-javascript-api.md) documentation.
 
 #### API
+
 `acquireAccessToken(params: AcquireAccessTokenParams): Promise<AccessToken>;`  
 `export interface AcquireAccessTokenParams {`  
 `    additionalScopesToConsent?: string[];`  
@@ -63,24 +75,32 @@ Fabric frontend offers a javascript API for Fabric workloads to acquire a token 
 `}`
 
 The API returns an AccessToken object that contains the token itself and an expiry date for the token.
+
 To call the API in the Frontend sample - simply create a sample item and scroll down and select **Navigate to Authentication page**, from there you can select **Get access Token** and you'll receive a token back.
-![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/219cf870-56cd-4f94-bc8a-60961bd2df7b)
+
+:::image type="content" source="/.media/environment-setup/javascript-api-authentication-get-token.png" alt-text="Screenshot showing getting token for JavaScript API authentication.":::
 
 #### Consents  
-To understand why consents are required, review [User and admin consent in Microsoft Entra ID
-](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/user-admin-consent-overview).  
-**Please note that consents are required for CRUD/Jobs to work and to acquire tokens across tenants**.
+
+To understand why consents are required, review [User and admin consent in Microsoft Entra ID](/entra/identity/enterprise-apps/user-admin-consent-overview).  
+
+> [!NOTE]
+> Consents are required for CRUD/Jobs to work and to acquire tokens across tenants.
 
 #### How do consents work in Fabric workloads?
-To grant a consent for a specific application, Fabric FE creates an [MSAL](https://www.npmjs.com/package/@azure/msal-browser) instance configured with the workload's application ID and asks for a token for the provided scopes (additionalScopesToConsent - see AcquireAccessTokenParams).
+
+To grant a consent for a specific application, Fabric FE creates an [MSAL](https://www.npmjs.com/package/@azure/msal-browser) instance configured with the workload's application ID and asks for a token for the provided scope (additionalScopesToConsent - see AcquireAccessTokenParams).
+
 When asking for a token with the workload application for a specific scope, Microsoft Entra ID will display a popup consent in case it's missing, and then redirect the popup window to the **redirect URI** configured in the application.
 
- Typically the redirect URI is in the same domain as the page that requested the token so the page can access the popup and close it.  
-In our case, it's not in the same domain since Fabric is requesting the token and the redirect URI of the workload isn't in the Fabric domain, so when the consent dialog opens it needs to be closed manually after redirect - we don't use the code returned in the redirectUri hence we just autoclose it (when Microsoft Entra ID redirects the popup to the redirect URI it simply closes).  
+Typically the redirect URI is in the same domain as the page that requested the token so the page can access the popup and close it.
+
+In our case, it's not in the same domain since Fabric is requesting the token and the redirect URI of the workload isn't in the Fabric domain, so when the consent dialog opens, it needs to be closed manually after redirect - we don't use the code returned in the redirectUri, and hence we just autoclose it (when Microsoft Entra ID redirects the popup to the redirect URI, it closes).  
 You can see the code/configuration of the redirect Uri in [index.ts](../Frontend//src//index.ts) file.
 
-Here's an example of a consent popup for our app "my workload app" and its dependencies (storage and Power BI) that we configured when going over [Setup](./Setup.md):  
-![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/bbed9d85-fb26-4db0-8997-6ba7263aa7a8)
+Here's an example of a consent popup for our app "my workload app" and its dependencies (storage and Power BI) that we configured when going over [the authentication set up](./authentication-tutorial.md):  
+
+:::image type="content" source=""/.media/environment-setup/environment-setup-consent-popup.png" alt-text="Screenshot of the consent popup.":::
 
 We'll see how to work with consents when we talk about AcquireAccessTokenParams.
 
