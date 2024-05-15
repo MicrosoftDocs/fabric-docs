@@ -10,16 +10,16 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 12/22/2023
+ms.date: 05/09/2024
 ---
 
 # OneLake shortcuts
 
-Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds, and accounts by creating a single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can directly connect to your existing data sources such as Azure, Amazon Web Services (AWS), and OneLake through a unified namespace. OneLake manages all permissions and credentials, so you don't need to separately configure each Fabric experience to connect to each data source. Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
+Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds, and accounts by creating a single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can directly connect to your existing data sources such as Azure, Amazon Web Services (AWS), and OneLake through a unified namespace. OneLake manages all permissions and credentials, so you don't need to separately configure each Fabric workload to connect to each data source. Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
 
 ## What are shortcuts?
 
-Shortcuts are objects in OneLake that point to other storage locations. The location can be internal or external to OneLake. The location that a shortcut points to is known as the target path of the shortcut. The location where the shortcut appears is known as the shortcut path. Shortcuts appear as folders in OneLake and any experience or service that has access to OneLake can use them. Shortcuts behave like symbolic links. They're an independent object from the target. If you delete a shortcut, the target remains unaffected. If you move, rename, or delete a target path, the shortcut can break.
+Shortcuts are objects in OneLake that point to other storage locations. The location can be internal or external to OneLake. The location that a shortcut points to is known as the target path of the shortcut. The location where the shortcut appears is known as the shortcut path. Shortcuts appear as folders in OneLake and any workload or service that has access to OneLake can use them. Shortcuts behave like symbolic links. They're an independent object from the target. If you delete a shortcut, the target remains unaffected. If you move, rename, or delete a target path, the shortcut can break.
 
 :::image type="content" source="media\onelake-shortcuts\shortcut-connects-other-location.png" alt-text="Diagram showing how a shortcut connects files and folders stored in other locations." lightbox="media\onelake-shortcuts\shortcut-connects-other-location.png":::
 
@@ -204,7 +204,7 @@ Dataverse shortcuts use a delegated authorization model. In this model, the shor
 > [!NOTE]
 > Service Principals are currently not supported for Dataverse shortcut authorization.
 
-## Caching (Preview)
+## Caching
 Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24hrs it is purged from the cache. Individual files greater than 1GB in size are not cached.
 > [!NOTE]
 > Shortcut caching is currently only supported for GCS, S3 and S3 compatible shortcuts.
@@ -286,12 +286,11 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - The maximum number of shortcuts per Fabric item is 100,000. In this context, the term item refers to: apps, lakehouses, warehouses, reports, and more.
 - The maximum number of shortcuts in a single OneLake path is 10.
 - The maximum number of direct shortcuts to shortcut links is 5.
-- ADLS and S3 shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2).
+- ADLS and S3 shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2). For allowed characters, see [RFC 3968 section 2.3](https://www.rfc-editor.org/rfc/rfc3986#section-2.3).
 - OneLake shortcut names, parent paths, and target paths can't contain "%" or "+" characters.
 - Shortcuts don't support non-Latin characters.
 - Copy Blob API not supported for ADLS or S3 shortcuts.
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
-- OneLake shortcuts pointing to ADLS or S3 shortcuts isn't supported.
 - Additional shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models is not currently available.
 

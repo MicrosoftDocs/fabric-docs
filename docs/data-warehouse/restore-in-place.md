@@ -1,10 +1,12 @@
 ---
 title: Restore in-place of a warehouse from a restore point
 description: Learn about how to perform a restore in-place of a warehouse in Microsoft Fabric.
-author: ajagadish-24
-ms.author: ajagadish
-ms.reviewer: wiassaf
-ms.date: 12/11/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: ajagadish
+ms.date: 05/03/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.search.form: Warehouse Restore # This article's title should not change. If so, contact engineering.
 ---
@@ -25,7 +27,7 @@ Restore in-place is an essential part of data recovery that allows restoration o
 
 ## What are restore points?
 
-Restore points are recovery points of the warehouse created by copying only the metadata, while referencing the data files in OneLake. The metadata is copied while the underlying data of the warehouse stored as parquet files are not copied. These restore points can be used to recover the warehouse as of prior point in time.
+Restore points are recovery points of the warehouse created by copying only the metadata, while referencing the data files in OneLake. The metadata is copied while the underlying data of the warehouse stored as parquet files aren't copied. These restore points can be used to recover the warehouse as of prior point in time.
 
 ### System-generated restore points
 
@@ -35,11 +37,11 @@ System-generated restore points are created throughout the day, and are availabl
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports an eight-hour recovery point objective (RPO).
 
-<!-- To see when the last restore point started, execute the query below on your warehouse via the [Fabric portal SQL query editor](sql-query-editor.md). Refer to the top (most recent) row. -->
+<!-- To see when the last restore point started, execute the following query on your warehouse via the [Fabric portal SQL query editor](sql-query-editor.md). Refer to the top (most recent) row. -->
 
-If the warehouse is paused, system-generated restore points cannot be created unless and until the warehouse is resumed. It is recommended to create a [user-defined restore point](#user-defined-restore-points) before pausing the warehouse. Before a warehouse is dropped, a system-generated restore point is not automatically created.
+If the warehouse is paused, system-generated restore points can't be created unless and until the warehouse is resumed. You should create a [user-defined restore point](#user-defined-restore-points) before pausing the warehouse. Before a warehouse is dropped, a system-generated restore point isn't automatically created.
 
-System-generated restore points cannot be deleted, as the restore points are used to maintain SLAs for recovery.
+System-generated restore points can't be deleted, as the restore points are used to maintain service level agreements (SLAs) for recovery.
 
 ### User-defined restore points
 
@@ -47,7 +49,7 @@ System-generated restore points cannot be deleted, as the restore points are use
 
 Any number of user-defined restore points aligned with your specific business or organizational recovery strategy can be created. User-defined restore points are available for seven calendar days and are automatically deleted on your behalf after the expiry of the retention period.
 
-Currently, you can trigger the user-defined restore point creation through any of publicly available REST API tools. <!-- For an example, see the tutorial [Create user-defined restore points](tutorial-restore-in-place-warehouse.md#create-user-defined-restore-points). --> For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/).
+Currently, you can trigger the user-defined restore point creation through any of publicly available REST API tools. <!-- For an example, see the tutorial [Create user-defined restore points](tutorial-restore-in-place-warehouse.md#create-user-defined-restore-points). --> For an example, you can [use the non-Microsoft POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/).
 
 ### Restore point retention
 
@@ -55,11 +57,11 @@ Details for restore point retention periods:
 
 - [!INCLUDE [fabric-dw](includes/fabric-dw.md)] deletes both the system-generated and user-defined restore point at the expiry of the seven calendar day retention period.
 - The age of a restore point is measured by the absolute calendar days from the time the restore point is taken, including when the [!INCLUDE [product-name](../includes/product-name.md)] capacity is paused.
-- System-generated and user-generated restore points cannot be created when the [!INCLUDE [product-name](../includes/product-name.md)] capacity is paused. The creation of a restore point fails when the fabric capacity gets paused while the restore point creation is in progress.
+- System-generated and user-generated restore points can't be created when the [!INCLUDE [product-name](../includes/product-name.md)] capacity is paused. The creation of a restore point fails when the fabric capacity gets paused while the restore point creation is in progress.
 - If a restore point is generated and then the capacity remains paused for more than seven days before being resumed, the restore point remains in existence until a total of 42 system-generated restore points are reached.
-- At any point in time, [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is guaranteed to be able to store up to 42 system-generated restore points as long as these restore points have not reached the seven day retention period.
+- At any point in time, [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is guaranteed to be able to store up to 42 system-generated restore points as long as these restore points haven't reached the seven day retention period.
 - All the user-defined restore points that are created for the warehouse is guaranteed to be stored until the default retention period of seven calendar days.
-- System- and user-generated restore points reside within OneLake, and are not visible to the users. It can be listed through the publicly available REST API tools.
+- System- and user-generated restore points reside within OneLake, and aren't visible to the users. It can be listed through the publicly available REST API tools.
 
 ## Recovery point and restore costs
 
@@ -77,18 +79,18 @@ When you restore, the current warehouse is *replaced* with the restored warehous
 
 Each restore point references a UTC timestamp when the restore point was created.
 
-To restore a warehouse in-place, choose a restore point and issue a restore command. If you encounter Error 5064 after requesting a restore, resubmit the restore again. For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/). 
+To restore a warehouse in-place, choose a restore point and issue a restore command. If you encounter Error 5064 after requesting a restore, resubmit the restore again. For an example, you can [use the non-Microsoft POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/). 
 
 ### Security
 
-- Any member of the [!INCLUDE [product-name](../includes/product-name.md)] Admin [workspace role](workspace-roles.md) can create user-defined restore points.
-- Any member of the [!INCLUDE [product-name](../includes/product-name.md)] Admin [workspace role](workspace-roles.md) can perform a restore from a system-generated or user-defined restore point.
+- Any member of the Admin, Member, or Contributor [workspace roles](workspace-roles.md) can create, delete, or rename the user-defined restore points.
+- Only a member of the Admin [workspace role](workspace-roles.md) can perform a restore from a system-generated or user-defined restore point.
 
 ## Limitations
 
-- A recovery point cannot be restored to create a new warehouse with a different name, either within or across the [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
-- Restore points cannot be retained beyond the default seven day retention period. This retention period is not currently configurable.
-- The ability to perform restore in-place either through UX or through T-SQL is currently not supported, currently only supported via API call. <!-- For an example, see [Tutorial: Restore a Warehouse using REST API in Microsoft Fabric](tutorial-restore-in-place-warehouse.md). --> For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/).
+- A recovery point can't be restored to create a new warehouse with a different name, either within or across the [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
+- Restore points can't be retained beyond the default seven day retention period. This retention period isn't currently configurable.
+- The ability to perform restore in-place either through UX or through T-SQL is currently not supported, currently only supported via API call. <!-- For an example, see [Tutorial: Restore a Warehouse using REST API in Microsoft Fabric](tutorial-restore-in-place-warehouse.md). --> For an example, you can [use the non-Microsoft POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/).
     - Currently, only the publicly available REST APIs provide the following functionalities of a restore in-place.
         - Creation of user-defined restore points
         - List of the system-generated and user-defined restore points

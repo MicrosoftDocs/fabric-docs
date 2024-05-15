@@ -4,7 +4,9 @@ description: This article details the strategy, considerations, and methods of m
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: arturv, johoang
-ms.date: 11/15/2023
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
@@ -256,7 +258,7 @@ This Data Pipeline accepts a parameter `SchemaName`, which allows you to specify
 
 In the **Default value** field, enter  a comma-delimited list of table schema indicating which schemas to migrate: `'dbo','tpch'` to provide two schemas, `dbo` and `tpch`.
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Data Pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated. ":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Data Pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated.":::
 
 ##### Pipeline design: Lookup activity
 
@@ -271,7 +273,7 @@ In the **Settings** tab:
 
     This expression within the LookUp Activity generates a SQL statement to query the system views to retrieve a list of schemas and tables. References the SchemaName parameter to allow for filtering on SQL schemas. The Output of this is an Array of SQL schema and tables that will be used as input into the ForEach Activity.
 
-    Use the below code to return a list of all user tables with their schema name. 
+    Use the following code to return a list of all user tables with their schema name.
 
     ```json
     @concat('
@@ -295,7 +297,7 @@ For the ForEach Loop, configure the following options in the **Settings** tab:
 - Set **Batch count** to `50`, limiting the maximum number of concurrent iterations.
 - The Items field needs to use dynamic content to reference the output of the LookUp Activity. Use the following code snippet: `@activity('Get List of Source Objects').output.value`
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-settings-foreach-loop-items.png" alt-text="A screenshot showing the ForEach Loop Activity's settings tab.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-settings-foreach-loop-items.png" alt-text="Screenshot showing the ForEach Loop Activity's settings tab.":::
  
 ##### Pipeline design: Copy Activity inside the ForEach Loop
 
@@ -318,7 +320,7 @@ In the **Destination** tab:
     - Schema refers to the current iteration's field, SchemaName with the snippet: `@item().SchemaName`
     - Table is referencing TableName with the snippet: `@item().TableName`
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-foreach-copy-activity-destination.png" alt-text="Screenshot from Data Factory showing the Destination tab of the Copy Activity inside each ForEach Loop.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-foreach-copy-activity-destination.png" alt-text="Screenshot from Data Factory showing the Destination tab of the Copy Activity inside each ForEach Loop." lightbox="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-foreach-copy-activity-destination.png":::
 
 ##### Pipeline design: Sink
 

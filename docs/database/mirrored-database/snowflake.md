@@ -4,8 +4,8 @@ description: Learn about the mirrored databases from Snowflake in Microsoft Fabr
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
+ms.date: 04/24/2024
 ms.service: fabric
-ms.date: 03/20/2024
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -13,7 +13,7 @@ no-loc: [Copilot]
 
 # Mirroring Snowflake (Preview)
 
-[Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate existing your Snowflake warehouse data with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Snowflake data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
+[Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Snowflake warehouse data with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Snowflake data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
 For a tutorial on configuring your Snowflake database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake (Preview)](snowflake-tutorial.md).
 
@@ -23,7 +23,7 @@ With Mirroring in Fabric, you don't need to piece together different services fr
 
 ## What analytics experiences are built in?
 
-Mirrored databases are an item in the **Fabric Synapse Data Warehousing** experience distinct from the **Warehouse** and **SQL analytics endpoint** items.
+Mirrored databases are an item in **Fabric Synapse Data Warehousing** distinct from the **Warehouse** and **SQL analytics endpoint**.
 
 :::image type="content" source="media/snowflake/fabric-mirroring-snowflake.svg" alt-text="Diagram of Fabric Database Mirroring for Snowflake.":::
 
@@ -71,7 +71,7 @@ There are Snowflake compute and cloud query costs when data is being mirrored: v
   - Although there aren't any compute charges for behind the scenes tasks such as authoring, metadata queries, access control, showing data changes, and even DDL queries, there are cloud costs associated with these queries.
   - Depending on what type of Snowflake edition you have, you will be charged for the corresponding credits for any cloud services costs.
 
-In the following screenshot, you can see the virtual warehouse compute and cloud services compute costs for the associated Snowflake database that is being mirrored into Fabric. In this scenario, majority of the cloud services compute costs (in yellow) are coming from data change queries based on the points mentioned above. The virtual warehouse compute charges (in blue) are coming strictly from the data changes are being read from Snowflake and mirrored into Fabric.
+In the following screenshot, you can see the virtual warehouse compute and cloud services compute costs for the associated Snowflake database that is being mirrored into Fabric. In this scenario, majority of the cloud services compute costs (in yellow) are coming from data change queries based on the points mentioned previously. The virtual warehouse compute charges (in blue) are coming strictly from the data changes are being read from Snowflake and mirrored into Fabric.
 
   :::image type="content" source="media/snowflake/snowflake-costs-graph.png" alt-text="Screenshot of Snowflake costs graph." lightbox="media/snowflake/snowflake-costs-graph.png":::
 

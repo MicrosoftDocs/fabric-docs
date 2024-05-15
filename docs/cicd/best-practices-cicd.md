@@ -73,7 +73,7 @@ A production database should always be stable and available. It's best not to ov
 
 ### Use parameters for configurations that will change between stages
 
-Whenever possible, add [parameters](./deployment-pipelines/understand-the-deployment-process.md#auto-binding-and-parameters) to any definition that might change between dev/test/prod stages. Using parameters helps you change the definitions easily when you move your changes to production. While there’s still no unified way to manage parameters in Fabric, we recommend using it on items that support any type of parameterization.
+Whenever possible, add [parameters](./deployment-pipelines/understand-the-deployment-process.md#autobinding-and-parameters) to any definition that might change between dev/test/prod stages. Using parameters helps you change the definitions easily when you move your changes to production. While there’s still no unified way to manage parameters in Fabric, we recommend using it on items that support any type of parameterization.
 Parameters have different uses, such as defining connections to data sources, or to internal items in Fabric. They can also be used to make changes to queries, filters, and the text displayed to users.  
 In deployment pipelines, you can configure parameter rules to set different values for each deployment stage.
 

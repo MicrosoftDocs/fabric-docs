@@ -7,7 +7,7 @@ author: yuturchi
 ms.topic: conceptual
 ms.custom:
   - onelake-data-access-public-preview-april-2024
-ms.date: 4/1/2024
+ms.date: 05/09/2024
 ---
 
 # Role-based access control (RBAC)
@@ -22,7 +22,7 @@ OneLake RBAC restricts data access for users with Workspace **Viewer** or read a
 
 ## How to create RBAC roles
 
-You can define and manage OneLake RBAC roles using Lakehouse experience.
+You can define and manage OneLake RBAC roles through your lakehouse data access settings.
 
 Learn more in [Get Started with Data Access Roles](../security/get-started-data-access-roles.md).
 
@@ -283,7 +283,7 @@ In Microsoft Fabric, when the user creates a lakehouse, the system also provisio
 
 | **Default Semantic Model Permission** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can see schema in Semantic Model?** | **Can read data in Semantic Model?** |
 |----------|----------|----------|--------------|-------------|
-| Read  | No by default, use OneLake RBAC to grant access. | No | No | Yes by default. Can be restricted with [Power BI Object-level Security](/power-bi/enterprise/service-admin-ols?tabs=table) and [Power BI Row-Level security](/power-bi/enterprise/service-admin-rls)  |
+| Read  | No by default, use OneLake RBAC to grant access. | No | No | Yes by default. Can be restricted with [Power BI object-level security](../../security/service-admin-object-level-security.md?tabs=table) and [Power BI row-level security](../../security/service-admin-row-level-security.md)  |
 | Build | Yes by default. Use OneLake RBAC to restrict the access. | Yes | Yes | Yes |
 | Write | Yes | Yes | Yes | Yes |
 | Reshare |  N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own |
@@ -294,7 +294,7 @@ When user shares a lakehouse, they grant other users or a group of users access 
 
 When someone shares a lakehouse, they can also grant access to the SQL endpoint and associated default semantic model.
 
-:::image type="content" source=".\media\lakehouse-sharing.png" alt-text="A snapshot showing the Lakehouse user experience of sharing data.":::
+:::image type="content" source=".\media\lakehouse-sharing.png" alt-text="A screenshot of the lakehouse Grant people access screen.":::
 
 | **Sharing Option** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** | **Can view and build Semantic Models?** |
 |----------|----------|----------|----------|-----|

@@ -4,23 +4,22 @@ description: Learn about mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo
+ms.date: 04/24/2024
 ms.service: fabric
-ms.date: 04/01/2024
 ms.topic: overview
-ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
 
 # What is Mirroring in Fabric?
 
-As a data replication experience, Mirroring in Fabric is a low-cost and low-latency solution to bring data from various systems together into a single analytics platform. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, and Snowflake.
+As a data replication solution, Mirroring in Fabric is a low-cost and low-latency solution to bring data from various systems together into a single analytics platform. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, and Snowflake.
 
 With the most up-to-date data in a queryable format in OneLake, you can now use all the different services in Fabric, such as running analytics with Spark, executing notebooks, data engineering, visualizing through Power BI Reports, and more.
 
 Mirroring in Fabric allows users to enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs. Built for openness and collaboration between Microsoft, and technology solutions that can read the open-source Delta Lake table format, Mirroring is a low-cost and low-latency turnkey solution that allows you to create a replica of your data in OneLake which can be used for all your analytical needs.
 
-The Delta tables can then be used in every Fabric experience, allow users to accelerate their journey into Fabric.
+The Delta tables can then be used everywhere Fabric, allowing users to accelerate their journey into Fabric.
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -39,10 +38,10 @@ Accessing and working with this data today requires complex ETL (Extract Transfo
 
 Mirroring in Fabric provides an easy experience to speed the time-to-value for insights and decisions, and to break down data silos between technology solutions:
 
-- Near real time replication of data into a SaaS data-lake, with built-in analytics experiences built-in for BI and AI
+- Near real time replication of data into a SaaS data-lake, with built-in analytics built-in for BI and AI
    <!-- - **[Coming Soon]** The ability to edit and work with the data sources you love without leaving Fabric, enabling additional productivity for no code and pro code developers.-->
 
-   <!-- ![Mirroring Fabric - Diagram](media/mirroring-fabric-diagram.png)-->
+   <!-- :::image type="content" source="media/mirroring-fabric-diagram.png" alt-text="Mirroring Fabric - Diagram."::: -->
 
 The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level. To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
 
@@ -74,7 +73,7 @@ Mirroring is enabled by creating a secure connection to your operational data so
 
 The following are core tenets of Mirroring:
 
-- Enabling Mirroring in Fabric is simple and intuitive, without having the need to create any more complex ETL pipelines, allocate other compute resources, and manage data movement.
+- Enabling Mirroring in Fabric is simple and intuitive, without having the need to create complex ETL pipelines, allocate other compute resources, and manage data movement.
 
 - Mirroring in Fabric is a fully managed service, so you don't have to worry about hosting, maintaining, or managing replication of the mirrored connection.
 
@@ -84,7 +83,7 @@ Sharing enables ease of access control and management, while security controls l
 
 By sharing, users grant other users or a group of users access to a mirrored database without giving access to the workspace and the rest of its items. When someone shares a mirrored database, they also grant access to the SQL analytics endpoint and associated default semantic model.
 
-Access the Sharing dialog with the **Share** button next to the mirrored database name in the **Workspace** view. Shared mirrored databases can be found through **Data Hub** or the **Shared with Me** section in Microsoft Fabric.
+Access the Sharing dialog with the **Share** button next to the mirrored database name in the **Workspace** view. Shared mirrored databases can be found through **OneLake Data hub** or the **Shared with Me** section in Microsoft Fabric.
 
 For more information, see [Share your warehouse and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md).
 
@@ -103,7 +102,7 @@ ON Affiliation.AffiliationId = Contoso.RecordTypeID;
 
 ## Data Engineering with your mirrored database data
 
-Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and high-quality. From the [Fabric Data Engineering](../../data-engineering/data-engineering-overview.md) experience, you can:
+Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and high-quality. From [Fabric Data Engineering](../../data-engineering/data-engineering-overview.md), you can:
 
 - Create and manage your data as Spark using a lakehouse
 - Design pipelines to copy data into your lakehouse
@@ -112,13 +111,13 @@ Microsoft Fabric provides various data engineering capabilities to ensure that y
 
 ## Data Science with your mirrored database data
 
-Microsoft Fabric offers Data Science experiences to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
+Microsoft Fabric offers Synapse Data Science to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
 
-Microsoft Fabric users can access the [Data Science experience](../../data-science/data-science-overview.md). From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
+Microsoft Fabric users can access [Data Science workloads](../../data-science/data-science-overview.md). From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 
 ## Related content
 
 - [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
 - [Model data in the default Power BI semantic model in Microsoft Fabric](../../data-warehouse/model-default-power-bi-dataset.md)
 - [What is the SQL analytics endpoint for a Lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake](/power-bi/enterprise/directlake-overview)
+- [Direct Lake](../../get-started/direct-lake-overview.md)

@@ -70,9 +70,9 @@ You can find more information in these articles:
 
 * [Row-level security in Fabric data warehousing](../data-warehouse/row-level-security.md)
 
-* [Row-level security (RLS) with Power BI](/power-bi/enterprise/service-admin-rls)
+* [Row-level security (RLS) with Power BI](service-admin-row-level-security.md)
 
-* [Object level security (OLS)](/power-bi/enterprise/service-admin-ols)
+* [Object-level security (OLS)](service-admin-object-level-security.md)
 
 ## Examples
 

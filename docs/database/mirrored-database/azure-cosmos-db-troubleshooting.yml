@@ -56,7 +56,7 @@ sections:
         answer: |
           Replication could be working and you're observing a transient error if Azure Cosmos DB is throttling requests from Fabric. Additionally, there might be a limitation of mirroring with Azure Cosmos DB causing this issue. For more information, see [Azure Cosmos DB mirroring limitations](azure-cosmos-db-limitations.md).
           
-          Refresh the experience and determine if the problem is automatically resolved. Also, you can stop and start replication. If none of these options work, [open a support ticket](/power-bi/support/service-support-options).
+          Refresh the Fabric portal and determine if the problem is automatically resolved. Also, you can stop and start replication. If none of these options work, [open a support ticket](/power-bi/support/service-support-options).
       - question: |
           How can I be sure Fabric is replicating data from Azure Cosmos DB?
         answer: |

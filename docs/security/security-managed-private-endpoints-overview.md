@@ -34,12 +34,13 @@ For more information about supported data sources for managed private endpoints 
 
 * **Managed private endpoints**: Managed private endpoints are supported only for Fabric trial capacity and Fabric capacities F64 or higher.
 
-* * **Tenant Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported Fabric Tenant home regions results in errors. These unsupported Tenant home regions include
+* **Tenant Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported Fabric Tenant home regions results in errors. These unsupported Tenant home regions include
   
 | Region         |
 |----------------|
 | Central US     |
 | Israel Central |
+| Switzerland West |
 | Italy North    |
 | West India     |
 | Mexico Central |
@@ -52,6 +53,7 @@ For more information about supported data sources for managed private endpoints 
 | Region         |
 |----------------|
 | Central US     |
+| Switzerland West |
 | Italy North    |
 | Qatar Central  |
 | West India     |
@@ -65,6 +67,8 @@ For more information about supported data sources for managed private endpoints 
 * **Spark job resilience**: To prevent Spark job failures or errors, migrate workspaces with managed private endpoints to Fabric capacity SKUs of F64 or higher.
 
 * **Workspace migration**: Workspace migration across capacities in different regions is unsupported.
+
+* **[OneLake shortcuts](../onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints.
 
 These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.
 

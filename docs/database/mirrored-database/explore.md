@@ -4,7 +4,7 @@ description: Learn how to explore data in your mirrored databases using Microsof
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, anithaa
-ms.date: 03/13/2024
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: conceptual
 ---
@@ -56,14 +56,14 @@ In Microsoft Fabric, [Power BI datasets are a semantic model](../../data-warehou
 
 The default Power BI dataset inherits all relationships between entities defined in the model view and infers them as Power BI dataset relationships, when objects are enabled for BI (Power BI Reports). Inheriting the mirrored database's business logic allows a warehouse developer or BI analyst to decrease the time to value toward building a useful semantic model and metrics layer for analytical business intelligence (BI) reports in Power BI, Excel, or external tools like Tableau, that read the XMLA format. For more information, see [Data modeling in the default Power BI dataset](../../data-warehouse/model-default-power-bi-dataset.md).
 
-A well-defined data model is instrumental in driving your analytics and reporting experiences. In a SQL analytics endpoint in Microsoft Fabric, you can easily [build and change your data model](../../data-warehouse/data-modeling-defining-relationships.md) with a few simple steps in our visual editor. Modeling the mirrored database item is possible by setting primary and foreign key constraints and setting identity columns on the model view within the SQL analytics endpoint page in the Fabric portal. After you navigate the model view, you can do this in a visual entity relationship diagram. The diagram allows you to drag and drop tables to infer how the objects relate to one another. Lines visually connecting the entities infer the type of physical relationships that exist.
+A well-defined data model is instrumental in driving your analytics and reporting workloads. In a SQL analytics endpoint in Microsoft Fabric, you can easily [build and change your data model](../../data-warehouse/data-modeling-defining-relationships.md) with a few simple steps in our visual editor. Modeling the mirrored database item is possible by setting primary and foreign key constraints and setting identity columns on the model view within the SQL analytics endpoint page in the Fabric portal. After you navigate the model view, you can do this in a visual entity relationship diagram. The diagram allows you to drag and drop tables to infer how the objects relate to one another. Lines visually connecting the entities infer the type of physical relationships that exist.
 
 ## Create a report
 
 Create a report directly from the semantic model (default) in three different ways:
 
 - SQL analytics endpoint editor in the ribbon
-- Data hub in the navigation bar
+- **Data** pane in the navigation bar
 - Semantic model (default) in the workspace
 
 For more information, see [Create reports in the Power BI](../../data-warehouse/reports-power-bi-service.md).
@@ -73,4 +73,4 @@ For more information, see [Create reports in the Power BI](../../data-warehouse/
 - [What is Mirroring in Fabric?](overview.md)
 - [Model data in the default Power BI semantic model in Microsoft Fabric](../../data-warehouse/model-default-power-bi-dataset.md)
 - [What is the SQL analytics endpoint for a Lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake](/power-bi/enterprise/directlake-overview)
+- [Direct Lake](../../get-started/direct-lake-overview.md)

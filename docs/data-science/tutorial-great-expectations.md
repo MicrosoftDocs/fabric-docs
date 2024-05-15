@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Validate data using SemPy and Great Expectations (GX) (preview)"
+title: "Tutorial: Validate data using SemPy and Great Expectations (GX)"
 description: Illustrates how to use SemPy together with Great Expectations to perform data validation on Power BI semantic models.
 ms.reviewer: sgilley
 ms.author: taniaarya
@@ -13,8 +13,6 @@ ms.date: 11/14/2023
 # Tutorial: Validate data using SemPy and Great Expectations (GX)
 
 In this tutorial, you learn how to use SemPy together with [Great Expectations](https://greatexpectations.io/) (GX) to perform data validation on Power BI semantic models.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 This tutorial shows you how to:
 
@@ -387,8 +385,8 @@ For example, in a new notebook, attach the same lakehouse and use `context = gx.
 
 Check out other tutorials for semantic link / SemPy:
 
-- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Analyze functional dependencies in a sample semantic model (preview)](tutorial-power-bi-dependencies.md)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
-- [Tutorial: Discover relationships in a semantic model, using semantic link (preview)](tutorial-power-bi-relationships.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link (preview)](tutorial-relationships-detection.md)
+- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Analyze functional dependencies in a sample semantic model](tutorial-power-bi-dependencies.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
+- [Tutorial: Discover relationships in a semantic model, using semantic link](tutorial-power-bi-relationships.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link](tutorial-relationships-detection.md)

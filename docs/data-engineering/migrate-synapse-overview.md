@@ -1,7 +1,7 @@
 ---
 title: Migrating from Azure Synapse Spark to Fabric
 description: Learn about key considerations on migrating from Azure Synapse Spark to Fabric.
-ms.reviewer: snehagunda
+ms.reviewer: snehagunda, abguroo
 ms.author: aimurg
 author: murggu
 ms.topic: conceptual

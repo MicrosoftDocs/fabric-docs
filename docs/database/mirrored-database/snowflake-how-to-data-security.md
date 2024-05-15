@@ -4,8 +4,8 @@ description: Learn about data security in mirrored databases from Snowflake in M
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
+ms.date: 04/24/2024
 ms.service: fabric
-ms.date: 02/29/2024
 ms.topic: how-to
 ---
 
