@@ -52,6 +52,19 @@ Once a dataflow refresh is canceled, the dataflow's refresh history status is up
 
 :::image type="content" source="media/concept-dataflow-refresh/canceled-dataflow-refresh-history.png" alt-text="Screenshot showing the dataflows refresh history view for a canceled dataflow refresh.":::
 
+## Refresh limitations
+
+For dataflow refreshes, a couple of limitations are in place:
+
+1. Per dataflow, you're only allowed to have 96 refreshes per 24 hours (rolling window). When you exceed this limit, you receive an error in your refresh history and refreshes resume after you are below the limit.
+2. If your scheduled dataflow refresh fails consecutively, we pause your dataflow refresh schedule and send the owner of the dataflow an email. The following rules apply in this case:
+   - 72 hours (3 days)
+     - 100% failure rate over 72 hours
+     - Minimum of 6 refreshes (2 refreshes a day)
+   - 168 hours (1 week)
+     - 100% failure rate over 168 hours
+     - Minimum of 5 refreshes (1 refresh a day)
+
 ### Refresh cancelation implications to output data
 
 A dataflow refresh can be stopped via cancel refresh feature or if a failure occurred during processing of the dataflow's queries. Different outcomes can be observed depending on the type of destination and when refresh was stopped. Here are the possible outcomes, for the two types of data destination for a query:

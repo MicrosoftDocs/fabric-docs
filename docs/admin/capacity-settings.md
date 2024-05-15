@@ -124,7 +124,7 @@ To create a new Power BI Embedded with an EM SKU, follow these steps:
 
 # [Trial](#tab/trial)
 
-To create a new Trial capacity, see [Microsoft Fabric trial](../get-started/fabric-trial.md#start-the-fabric-trial).
+To create a new Trial capacity, see [Microsoft Fabric trial](../get-started/fabric-trial.md#start-the-fabric-capacity-trial).
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -216,7 +216,7 @@ To add or remove admins in a Power BI Embedded capacity, follow these steps:
 
 # [Trial](#tab/trial)
 
-A [trial capacity](../get-started/fabric-trial.md#start-the-fabric-trial) is assigned to the user who signed up for the trial. To add or remove admins in a Trial capacity, follow these steps:
+A [trial capacity](../get-started/fabric-trial.md#start-the-fabric-capacity-trial) is assigned to the user who signed up for the trial. To add or remove admins in a Trial capacity, follow these steps:
 
 1. In the **Capacity settings** page, select **Trial**.
 
