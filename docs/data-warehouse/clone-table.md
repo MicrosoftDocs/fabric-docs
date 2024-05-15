@@ -4,7 +4,7 @@ description: Learn about table clones in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.date: 04/24/2024
+ms.date: 05/03/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -22,8 +22,11 @@ ms.search.form: Warehouse Clone table # This article's title should not change. 
 - Table clones provide consistent reporting and zero-copy duplication of data for analytical workloads and machine learning modeling and testing.
 - Table clones provide the capability of data recovery in the event of a failed release or data corruption by retaining the previous state of data.
 - Table clones help to create historical reports that reflect the state of data as it existed as of a specific point-in-time in the past.
+- Table clones at a specific point in time can preserve the state of data at specific business points in time.
 
 You can use the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL commands to create a table clone. For a tutorial, see [Tutorial: Clone table using T-SQL](tutorial-clone-table.md) or [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md).
+
+You can also query data in a warehouse as it appeared in the past, using the T-SQL `OPTION` syntax. For more information, see [Query data as it existed in the past](time-travel.md).
 
 ## What is zero-copy clone?
 
@@ -39,17 +42,17 @@ Clone of a table can be created based on either:
 
 - **Current point-in-time:** The clone is based on the present state of the table.
 
-- **Previous point-in-time:** The clone is based on a point-in-time up to seven days in the past. The table clone contains the data as it appeared at a desired past point in time. The new table is created with a timestamp based on UTC.
-
-For examples, see [Clone table as of past point-in-time](tutorial-clone-table-portal.md#clone-table-as-of-past-point-in-time) or [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true).
-
-There is no limit on the number of clones created both within and across schemas.
+- **Previous point-in-time:** The clone is based on a point-in-time up to seven days in the past. The table clone contains the data as it appeared at a desired past point in time. In the industry, this feature is known as "time travel". The new table is created with a timestamp based on UTC. For examples, see [Clone table as of past point-in-time](tutorial-clone-table-portal.md#clone-table-as-of-past-point-in-time) or [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true).
 
 You can also clone a group of tables at once. This can be useful for cloning a group of related tables at the same past point in time. For an example, see [Clone multiple tables at once](tutorial-clone-table-portal.md#clone-multiple-tables-at-once).
+
+You can also query data from tables as they existed in the past, using the [Time travel](time-travel.md) feature in Warehouse.
 
 ### Retention of data history
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] automatically preserves and maintains the data history for seven calendar days, allowing for clones to be made at a point in time. All inserts, updates, and deletes made to the data warehouse are retained for seven calendar days.
+
+There is no limit on the number of clones created both within and across schemas.
 
 ### Separate and independent
 
@@ -114,8 +117,7 @@ For auditing or compliance purposes, zero copy clones can be easily used to crea
 - Clone table is not supported on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - Clone of a warehouse or schema is currently not supported.
 - Table clones submitted before the retention period of seven days cannot be created.
-- Changes to the table schema prevent a clone from being created prior to the table schema change.
-
+- Changes to the table schema prevent a clone from being created before to the table schema change.
 
 ## Next step
 
@@ -125,6 +127,6 @@ For auditing or compliance purposes, zero copy clones can be easily used to crea
 ## Related content
 
 - [Tutorial: Clone a table using T-SQL in Microsoft Fabric](tutorial-clone-table.md)
-- [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)
 - [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true)
 - [Query the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in Microsoft Fabric](query-warehouse.md)
+- [Query data as it existed in the past](time-travel.md)
