@@ -66,9 +66,9 @@ To set up the front end of the sample project, follow these steps:
     * **Manifests** - location of the frontend manifest file
     * **node_modules** - the sample workload is shipped with preinstalled SDK packages - under `@trident` -  as their NPM package isn't yet publically available
     * **src** - Workload code:
-      * **index.ts** - main initialization file, `boostrap`-ing the `index.worker` and `index.ui` IFrames - *detailed below*
+      * **index.ts** - main initialization file, `boostrap` the `index.worker` and `index.ui` IFrames - *detailed below*
       * **App.tsx** - routing of paths to pages, for example - `/sample-workload-editor` is routed to the `SampleWorkloadEditor` function under `components`
-      * **assets** - location for images(`svg`, `jpg`, `png`, etc), that can be referenced in the **Manifest** and be shown in the UI. For example, `assets/github.svg` is set in the manifest as the Product's icon.
+      * **assets** - location for images(`svg`, `jpg`, `png`, etc.), that can be referenced in the **Manifest** and be shown in the UI. For example, `assets/github.svg` is set in the manifest as the Product's icon.
       * **components** - location of the actual UI code - the Editor view, and other views that are used by the sample (Ribbon, Authentication page, Panel, etc.)
       * **controller** - the Controller that calls the SDK APIs
       * **models** - the contracts and models used by the UI itself and for communication with the boilerplate's backend
@@ -76,7 +76,7 @@ To set up the front end of the sample project, follow these steps:
       * `webpack.config.js` - configuration of the local Node.js server
       * `manifest.reader.js` - reading the manifest file
 
-1. **Install**. Notice existing packages under `node_modules` !
+1. **Install**. Notice theexisting packages under `node_modules`
 
     Under the repository folder, go to `Frontend` and run **npm install**  
 
@@ -93,7 +93,7 @@ To set up the front end of the sample project, follow these steps:
    <repository folder>\Frontend> npm start
    ```
 
-   This starts a **local** Node.js server (using `webpack`), that Microsoft Fabric connects to when in Development Mode.
+   This command starts a **local** Node.js server (using `webpack`), that Microsoft Fabric connects to when in Development Mode.
 
    Refer to the localhost server notes for port details that appear after it starts.
    The current port is `60006`.
@@ -120,7 +120,7 @@ To run a typical *Hello World* test scenario:
 
    :::image type="content" source="./media/extensibility-frontend/product-switcher.png" alt-text="Screenshot of the Product Switcher Example Image.":::
 
-1. Select the **Sample Workload** and navigate the user to the Sample workload Home page. The upper section presents the Create Experience:
+1. Select the **Sample Workload** and navigate the user to the Sample workload Home page. The upper section presents the *Create* Experience:
 
    :::image type="content" source="./media/extensibility-frontend/create-card.png" alt-text="Screenshot of the Create Card image on the sample extension home page.":::
 
@@ -140,7 +140,7 @@ Most of the available SDK functionality is either wired to the button actions, o
 For example:
 
 * The *Execute Action* calls the `action.execute()` API with an action named *sample.Action*. The action's functionality is to show a notification.
-* Select *Save* on the Ribbon to call the `dialog.open()` API, which opens a dialog where a user provides a name and saves the item in Fabric (this is further explored in the [CRUD section](#crud-operations)).
+* Select *Save* on the Ribbon to call the `dialog.open()` API, which opens a dialog where a user provides a name and saves the item in Fabric (this dialog is further explored in the [CRUD section](#crud-operations)).
 * *Get Theme Settings* button shows a list of Fabric's theme configurations (via the `theme.get()` API).
 
 The Sample Workload UI is hosted in a Fabric `iframe` that we can see when we examine the page's DOM:
@@ -164,7 +164,7 @@ if (url.pathname?.startsWith(redirectUriPath)) {
 Every Fabric Workload app needs to support being loaded in two modes:
 
 * **UI mode**: Am app in UI mode is loaded in visible IFrames and listens for its own route changes to render corresponding UI components, including pages, panels, dialogs, and so on.
-* **Worker mode**: An app in worker mode runs in an invisible IFrame, which is mainly used to receive commands sent from the outside world and respond to them.
+* **Worker mode**: An app in worker mode runs in an invisible IFrame, which is primarily used to receive commands sent from the outside world and respond to them.
 `@trident/extension-client-3p` provides a `bootstrap()` method to simplify the initialization steps. The bootstrap() method internally detects whether the current app is loaded in UI mode or worker mode, and then calls the appropriate initialization method (initializeUI or initializeWorker). After the initialization is complete, bootstrap() notifies Fabric micro-frontend framework of the initialization success or failure.
 
 ```javascript
@@ -179,7 +179,7 @@ bootstrap({
 ### index.worker
 
 This is the main `onAction` registration. It handles events sent from the Fabric host, which are themselves triggered by executed *actions*.
-These actions can be either sent by the workload itself to Fabric, and then called-back into the `onAction` handler, or they can be initiated by the Fabric host. For example, when clicking on *Create Sample Item - Frontend Only*, Fabric triggers the action 'open.createSampleWorkloadFrontendOnly', and the onAction handler initiates the opening of the workload main UI page, as seen in the following code.
+These actions can be sent either by the workload itself to Fabric, and then called-back into the `onAction` handler, or they can be initiated by the Fabric host. For example, when clicking on *Create Sample Item - Frontend Only*, Fabric triggers the action 'open.createSampleWorkloadFrontendOnly', and the onAction handler initiates the opening of the workload main UI page, as seen in the following code.
 The current workspace `objectId` is passed into the frontend-only experience as well.
 
 ```javascript
@@ -211,7 +211,7 @@ The following diagram describes how an action is invoked and handled:
 
 ### index.ui
 
-The `initialize()` function renders the React DOM where the `App` function is embedded. To invoke the API calls, pass the `extensionClient` SDK handle which is used throughout the code.
+The `initialize()` function renders the React DOM where the `App` function is embedded. To invoke the API calls, pass the `extensionClient` SDK handle, which is used throughout the code.
 The `FluentProvider` class ensures style consistency across the various FluentUI controls.
 
  ```react
@@ -312,7 +312,7 @@ A sample call to `create`, as implemented when saving the workload item for the 
 ```
 
 Our sample implementation stores the created item inside the `artifactItem`.
-The item will be created under the *currently selected workspace*. Therefore the workspace must be assigned to the capacity that is configured by the backend configuration, as detailed in the backend docs.
+The item is created under the *currently selected workspace*. Therefore the workspace must be assigned to the capacity that is configured by the backend configuration, as detailed in the backend docs.
 Any attempt to create an item under a noncompatible workspace fails.
 
 * The `onCreateFabricItem` callback in the backend blocks the *CREATE* call - a failure there causes the operation to fail and no item is created in Fabric. See backend's debugging/TSG documentation.
@@ -343,7 +343,7 @@ Updated an existing item with `artifactCrud.updateArtifact`. The Workload payloa
 
 #### DELETE
 
-Call the delete operation either from Fabric's Workspace view (as a general action available for all items), or via an explicit call from the Workload to `artifactCrud.deleteArtifact`.
+Call the *delete* operation either from Fabric's Workspace view (as a general action available for all items), or via an explicit call from the Workload to `artifactCrud.deleteArtifact`.
 Both calls go through the Workload backend's `onDeleteItem` callback.
 
 ### Authentication
