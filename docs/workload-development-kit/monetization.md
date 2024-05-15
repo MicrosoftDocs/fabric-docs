@@ -1,52 +1,49 @@
 ---
 title: Fabric extensibility monetization
-description: Learn about how you can monetize your workload in Fabric.
-author: gesaur
-ms.author: gesaur
-ms.reviewer: gesaur
-ms.topic: how-to
+description: Learn about how you can monetize your workload in Microsoft Fabric by publishing your workload to the Fabric Workload Hub.
+author: KesemSharabi
+ms.author: kesharab
+ms.topic: concept
 ms.custom:
-ms.date: 05/06/2024
+ms.date: 05/15/2024
 ---
 
+# Monetize your workload
 
-# Overview
-
-Within this chapter we are providing an overivew how partners can monetize their workload within the Fabric platform. Monetization does not only include the purchasing of a concrete Workload. Within Fabric there are different pesonas that need to work togtehter to get access to a new workload within an organization. This already shows that it is a journey for our customers that they need to be guided through.
-
+With the Microsoft Fabric Workload Development Kit, you can develop Fabric workloads and publish them to the Fabric Workload Hub. Publishing your workload allows you to make it available to Fabric users, and monetize on it.
 
 ## Workload hub
 
-The journey of a user that searches for new functionallity within Fabric starts in the workload hub. There they can brows existing as well as new workloads they are interested in. Here each workload has an overview page that provides users with additional information about the workload (e.g. description, publisher name, pricing and terms and conditions.)
+A user that searches for new functionality within Microsoft Fabric is likely to review the workload hub. In the workload hub, you can browse existing workloads. Each workload has an overview page that provides additional information about the workload and includes information such as workload description, publisher name, pricing, and terms and conditions.
 
-For workload provides it is important to provide rich and accurate information about the workload they are providing to users. As a first step users can start trials and the purchasing process right out of the workload page. 
+When you create a workload, it's important to provide rich and accurate information about the workload to interest users browsing the workload hub. Users can start trials or purchase your workload directly from the workload page.
 
 ## Trials
 
-We expect our partners to provide an out of the box trial experience for users within Fabric. Users are expecting this to get familar with the offer and understand what the workload they are trying can do. This Trial is available immediately to customers and does not need any addtional deployment steps or communication with the workload provider. After the user has added the workload to their tenant or capcity they can immediately start working with the new items. 
-Trial experiences are not directly bound to [Fabric Trials](../get-started/fabric-trial.md). Partners can decide on the type of trial they want to provide to their users. Those trials can be tenant, user or metrics based. It is up to the partner to define the limits of a trial and also enforce them within their [backend](./extensibility-backend.md).
+We expect our partners to provide an out of the box trial experience for users within Fabric. Trials are a good way for users to get familiar with your offer and understand what the workload can do. Trials should be available immediately to customers without any deployment steps or communication with the workload provider. After the user added the workload to their tenant, they can immediately start working with the new items.
 
-One requirement for trials is that users are always aware of their current status. Further information on design guidelines can be found [here](./monetization.md#UX guidelines)
+Trial experiences aren't directly bound to [Fabric Trials](../get-started/fabric-trial.md). Partners can decide on the type of trial they want to provide. Trials can be tenant, user, or metrics based. It's up to the you to define the limits of the trial and enforce them within the workload's [backend](./extensibility-backend.md).
 
-## Workload purchasing 
+When you create a trial, make sure that the users are aware of their status at any given time.
 
-Monetization for Fabric workloads that partners are building happens over the Azuer Marketplace. Within the [publish workload](./publish-workload.md) flow you can find a in-dept documentation how you can publish a new workload as a [SaaS Offer](https://learn.microsoft.com/en-us/marketplace/purchase-saas-offer-in-azure-portal) in the portal. This is the basis for customers to start the purchasing flow. Further information on the Azure Markeptlace can be found [here](https://learn.microsoft.com/en-us/marketplace/azure-marketplace-overview). 
+## Workload purchasing
 
-Within the Marketplace it is up to the partner to define the [listing type](https://learn.microsoft.com/en-us/partner-center/marketplace/plan-saas-offer#listing-options) they want to provide. Most of our partners are deciding on a Contact me listing as users need to have certain righs to purchase within the Azuer Markeplace. 
+Monetization for Fabric workloads created by partners takes place in the [Azure Marketplace](/marketplace/azure-marketplace-overview). You can find a detailed guide on how to publish a workload in [publish workload flow](publish-workload-flow.md).
 
-Some partners want to leverage the capability to Sell the workload through Microsoft. To get more information on how tis could work take a closer look to [SaaS billing](https://learn.microsoft.com/en-us/partner-center/marketplace/plan-saas-offer#saas-billing) and how you can list [private offers](https://learn.microsoft.com/en-us/marketplace/private-offers-in-azure-marketplace) in the marketplace.  
+As a partner, you define the [listing type](https://learn.microsoft.com/en-us/partner-center/marketplace/plan-saas-offer#listing-options) you want to provide. A popular listing type is *Contact me* as it allows you to support customers who want to buy your workload from the Azure Marketplace.
 
-If you already have a Markeplace offer and you don't want to monitize the workload seperately, you can also leverage your existing listing in the Markeplace. 
-Typically only certain groups within a customer are allowed to purchase components in the Azuer Marketplace. This is the reason why a contact me 
+To sell the workload using [SaaS billing](/partner-center/marketplace/plan-saas-offer#saas-billing) and to learn how to list your workload in the marketplace, see [private offers](/marketplace/private-offers-in-azure-marketplace).
 
+If you already have a marketplace offer and you don't want to monetize your workload separately, you can use your existing listing in the marketplace.
 
-## Workload activation 
+## Workload license status
 
-Because there are several ways how workloads can be purchased it's up to the partner to communicate the updated license status to their [extension backend](./extensibility-backend.md). This can be done over the Partner l[anding page](https://learn.microsoft.com/en-us/partner-center/marketplace/azure-ad-transactable-saas-landing-page) in the case of a transactable offer, or leveraging a special dialog as part of the item flow in case of Bring your own license. Futher information on how to structure such experiences within the [extensibility frontend](./extensibility-frontend.md) can be found in the chapter [UX guidelines](./monetization.md#UX guidelines)
+It's up to you as a partner to communicate the updated license status to your [extension backend](extensibility-backend.md). Depending on your offer, use one of these methods to show the license status.
 
+* **Transactable offer** - Your [marketplace landing page](/partner-center/marketplace/azure-ad-transactable-saas-landing-page).
 
-# UX guidelines
+* **Your own license** - A special dialog as part of the item flow.
 
-You can find addtional informaton on the UX guidelines in the Figma files located here: @@@
+## Related content
 
-
+* [Microsoft Fabric Workload Development Kit](dev-kit-overview.md)
