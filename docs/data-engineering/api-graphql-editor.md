@@ -6,7 +6,7 @@ ms.author: sngun
 author: snehagunda
 ms.topic: conceptual
 ms.search.form: GraphQL query editor
-ms.date: 05/07/2024
+ms.date: 05/21/2024
 ---
 
 # Fabric API for GraphQL editor
@@ -18,7 +18,7 @@ The Fabric API for GraphQL provides a graphical in-browser GraphQL development e
 
 To go to the editor, open the API for GraphQL item in Fabric and select **Query** at the lower left corner of your portal screen.
 
-:::image type="content" source="media/api-graphql-editor/query-view-button.png" alt-text="Screenshot showing where the Query option appears in the lower left corner of the Fabric screen.":::
+:::image type="content" source="media/api-graphql-editor/query-view-button.png" alt-text="Screenshot showing where the Query option appears in the lower left corner of the Fabric screen." lightbox="media/api-graphql-editor/query-view-button.png":::
 
 You can type code directly on the **Query** tab. Intellisense capabilities are available with a keyboard shortcut: CTRL + Space (Windows), or Command + Space (macOS).
 

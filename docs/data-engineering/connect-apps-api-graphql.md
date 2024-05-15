@@ -6,7 +6,7 @@ ms.author: sngun
 author: snehagunda
 ms.topic: how-to
 ms.search.form: Connecting applications to GraphQL
-ms.date: 05/07/2024
+ms.date: 05/21/2024
 ---
 
 # Connect applications to Fabric API for GraphQL
