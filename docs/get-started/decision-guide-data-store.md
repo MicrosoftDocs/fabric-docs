@@ -38,7 +38,7 @@ Use this reference guide and the example scenarios to help you choose a data sto
 
 <a name=eventhouse></a>
 > [!NOTE]
-> Eventhouse is a workspace for multiple KQL databases. KQL Database is generally available, whereas Eventhouse is in preview. For more information, see [Eventhouse overview (preview)](../real-time-analytics/eventhouse.md).
+> Eventhouse is a workspace for multiple KQL databases. KQL Database is generally available, whereas Eventhouse is in preview. For more information, see [Eventhouse overview (preview)](../real-time-intelligence/eventhouse.md).
 
 ## Scenarios
 
@@ -74,4 +74,4 @@ Daisy decides to use a **KQL Database** because of its scalability, quick respon
 - [Create a warehouse in Microsoft Fabric](../data-warehouse/create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
 - [Introduction to Power BI datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
-- [Create a KQL database](../real-time-analytics/create-database.md)
+- [Create a KQL database](../real-time-intelligence/create-database.md)

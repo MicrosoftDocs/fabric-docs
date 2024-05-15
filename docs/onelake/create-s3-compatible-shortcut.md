@@ -15,6 +15,8 @@ In this article, you learn how to create an S3 compatible shortcut inside a Fabr
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
 ## Prerequisites
 
 - If you don't have a lakehouse, create one by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).

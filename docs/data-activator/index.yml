@@ -38,6 +38,11 @@ landingContent:
         links:
           - text: Get data from Eventstreams
             url: data-activator-get-data-eventstreams.md
+      - linkListType: overview
+        links:
+          - text: Create alerts from a Real-Time Dashboard
+            url: data-activator-get-data-real-time-dashboard.md
+            
 
   - title: Create objects and triggers
     linkLists:
