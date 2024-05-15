@@ -56,6 +56,7 @@ Data activator also supports the following map visuals. Data activator only supp
 Data Activator supports only the following tile types in Real-Time Dashboards:
 
 * Time chart
+* Bar chart
 * Column chart
 * Area chart
 * Line chart
@@ -64,15 +65,14 @@ Data Activator supports only the following tile types in Real-Time Dashboards:
 * Pie Chart
 
 Additionally, for a tile to be supported by Data Activator:
+
 * The data in the tile must not be static
 * The data in the tile must be based on a KQL query
 * The tile must have at most one time range
 * The tile must be filtered by one of the pre-defined time ranges; custom time ranges are not supported
-* The tile must not contain time series data (for example, data created using the *make-series* KQL operator
+* The tile must not contain time series data (for example, data created using the *make-series* KQL operator)
 
-  
-
-
+ For more information, see [Limitations on charts with a time axis](data-activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
 
 ## Allowed recipients of email alerts
 
