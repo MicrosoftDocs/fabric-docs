@@ -33,7 +33,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Go to **Source** tab to configure your copy activity source. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-azure-cosmosdb-for-mongodb/azure-cosmosdb-for-mongodb-source.png" alt-text="Screenshot showing source tab and the list of properties." :::
+:::image type="content" source="./media/connector-azure-cosmos-db-for-mongodb/azure-cosmos-db-for-mongodb-source.png" alt-text="Screenshot showing source tab and the list of properties." :::
 
 The following properties are **required**:
 
@@ -48,15 +48,15 @@ Under **Advanced**, you can specify the following fields:
     - **project**: Specifies the fields to return in the documents for projection. To return all fields in the matching documents, omit this parameter.
     - **sort**: Specifies the order in which the query returns matching documents. Go to [cursor.sort()](https://www.mongodb.com/docs/manual/reference/method/cursor.sort/#cursor.sort) for more information.
     - **limit**: Specifies the maximum number of documents the server returns. Go to [cursor.limit()](https://www.mongodb.com/docs/manual/reference/method/cursor.limit/#cursor.limit) for more information.
-    - **skip**: Specifies the number of documents to skip and from where Azure Cosmos DB for MongoDB begins to return results. Go to [cursor.skip()](https://www.mongodb.com/docs/manual/reference/method/cursor.skip/#cursor.skip) for more information.
-- **Batch size**: Specifies the number of documents to return in each batch of the response from Azure Cosmos DB for MongoDB instance. In most cases, modifying the batch size will not affect the user or the application. 
+    - **skip**: Specifies the number of documents to skip and from where MongoDB begins to return results. Go to [cursor.skip()](https://www.mongodb.com/docs/manual/reference/method/cursor.skip/#cursor.skip) for more information.
+- **Batch size**: Specifies the number of documents to return in each batch of the response from MongoDB instance. In most cases, modifying the batch size will not affect the user or the application. Azure Cosmos DB limits each batch cannot exceed 40MB in size, which is the sum of the **Batch size** number of documents' size, so decrease this value if your document size being large. The default value is 100.
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ### Destination
 
 Go to **Destination** tab to configure your copy activity destination. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-azure-cosmosdb-for-mongodb/azure-cosmosdb-for-mongodb-destination.png" alt-text="Screenshot showing destination tab and the list of properties.":::
+:::image type="content" source="./media/connector-azure-cosmos-db-for-mongodb/azure-cosmos-db-for-mongodb-destination.png" alt-text="Screenshot showing destination tab and the list of properties.":::
 
 The following properties are **required**:
 
@@ -73,7 +73,7 @@ Under **Advanced**, you can specify the following fields:
     > [!Note]
     > The service automatically generates an `_id` for a document if an `_id` isn't specified either in the original document or by column mapping. This means that you must ensure that, for **Upsert** to work as expected, your document has an ID.
 
-- **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan.
+- **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan and the default value is 00:30:00 (30 minutes).
 
 - **Write batch size**: This property controls the size of documents to write in each batch. You can try increasing the value to improve performance and decreasing the value if your document size being large. The default value is 10,000.
 
@@ -98,7 +98,7 @@ The following table contains more information about the copy activity in Azure C
 |**Collection name**|The name of the Azure Cosmos DB collection.|< your collection >|Yes|collection|
 |**Filter**|The selection filter using query operators. To return all documents in a collection, omit this parameter or pass an empty document ({}).|< your selection filter >|No|filter|
 |**Cursor methods**|The way that the underlying query is executed.|• **project**<br>• **sort**<br>• **limit**<br>• **skip**|No|cursorMethods:<br>• project<br>• sort<br>• limit<br>• skip|
-|**Batch size**|The number of documents to return in each batch of the response from Azure Cosmos DB for MongoDB instance.|< your write batch size ><br>(the default is 100)|No|batchSize|
+|**Batch size**|The number of documents to return in each batch of the response from MongoDB instance. In most cases, modifying the batch size will not affect the user or the application. Azure Cosmos DB limits each batch cannot exceed 40MB in size, which is the sum of the **Batch size** number of documents' size, so decrease this value if your document size being large. The default value is 100.|< your write batch size ><br>(the default is 100)|No|batchSize|
 |**Additional columns**|Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No|additionalColumns:<br>• name<br>• value|
 
 ### Destination information
@@ -114,4 +114,4 @@ The following table contains more information about the copy activity in Azure C
 
 ## Related content
 
-- [Azure Cosmos DB for MongoDB overview](connector-azure-cosmosdb-mongodb-overview.md)
+- [Azure Cosmos DB for MongoDB overview](connector-azure-cosmos-db-for-mongodb-overview.md)
