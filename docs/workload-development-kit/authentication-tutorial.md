@@ -21,7 +21,7 @@ To work with authentication in Fabric, follow this guide.
 
 ## Azure storage service provisioning
 
-This sample demonstrates how to store and read data from and to lakehouses. This requires generating tokens for the Azure Storage service in OBO flows. To generate tokens, users need to consent to the application using Azure Storage. in order to consent, Azure Storage needs to be provisioned in the tenant.
+This sample demonstrates how to store and read data from and to lakehouses. This requires generating tokens for the Azure Storage service in OBO flows. To generate tokens, users need to consent to the application using Azure Storage. In order to consent, Azure Storage needs to be provisioned in the tenant.
 
 To make sure Azure Storage is provisioned in the tenant:
 
@@ -31,7 +31,7 @@ To make sure Azure Storage is provisioned in the tenant:
 
     :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
-If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id).If not, a tenant admin needs to provision it.
+If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id). If not, a tenant admin needs to provision it.
 
 Ask your tenant admin to open **Windows PowerShell** as administrator and run the following script:
   
@@ -48,8 +48,8 @@ To work with authentication, you need an application registered in Microsoft Ent
 
 1. Apply the following configurations to your application:
 
-   * Make the application a multi-tenant app.
-   * For dev applications, configure the redirect URI as `http://localhost:60006/close` with SPA platform. This is required for our consent support. You can add other redirect URIs as desired.
+   * Make the application a multitenant app.
+   * For dev applications, configure the redirect URI as `http://localhost:60006/close` with SPA platform. This configuration is required for our consent support. You can add other redirect URIs as desired.
   
    > [!NOTE]
    >
@@ -60,13 +60,13 @@ To work with authentication, you need an application registered in Microsoft Ent
 
 1. Change the *Application ID URI* for your application. Go to **Manage** > **Expose an API**, and edit the Application ID URI for your app:
 
-   For the development scenario, the Application ID URI should start with: `api://localdevinstance/<Workload publisher's tenant ID in lower case (the tenant ID of the user used in Fabric to run the sample)>/<Name of your workload>` and an optional sub-path at the end that starts with `/` (see examples).
+   For the development scenario, the Application ID URI should start with: `api://localdevinstance/<Workload publisher's tenant ID in lower case (the tenant ID of the user used in Fabric to run the sample)>/<Name of your workload>` and an optional subpath at the end that starts with `/` (see examples).
 
    Where:
 
-   * The workload name name is exactly as it's specified in the manifest.
+   * The workload name is exactly as it's specified in the manifest.
    * The ID URI doesn't end with a slash.
-   * At the end of the *ID URI* there can be an optional sub-path consisting of a string of English lower or upper case letters, numbers, and dashes, up to 36 characters.
+   * At the end of the *ID URI* there can be an optional subpath consisting of a string of English lower or upper case letters, numbers, and dashes, up to 36 characters.
 
    > [!TIP]
    > For help finding the tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
@@ -86,15 +86,15 @@ To work with authentication, you need an application registered in Microsoft Ent
 
 ### Add a scope for CRUD/jobs
 
-To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and add *Fabric service application* to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric. To do this:
+To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and add *Fabric service application* to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
 
-1. Under **Expose an API**, select **Add a scope**, name the scope *FabricWorkloadControl* and provide the necessary details for it (this scope is needed for communication between the Fabric backend and the workload backend. It's validated in the workload backend).
+1. Under **Expose an API**, select **Add a scope**. Name the scope *FabricWorkloadControl* and provide the necessary details for it.
 
 1. Under **Authorized client applications**, select **Add a client application**. Add `00000009-0000-0000-c000-000000000000` (Fabric service application) and select your scope.
 
 ### Add scopes for data plane API
 
-Additional scopes need to be registered to represent groups of operations exposed by the data plane API.
+Other scopes need to be registered to represent groups of operations exposed by the data plane API.
 In the backend sample, we provide four examples. You can see them in [Backend/src/Constants/scopes.cs](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Constants/Scopes.cs). The scopes are:
 
 * `Item1.Read.All`: Used for reading workload items
@@ -118,7 +118,7 @@ Under **Certificates & secrets**, select the **Secrets** tab and add a secret. G
 
 ### Add optional claim 'idtyp'
 
-Under **Token configuration**, select **Add optional claim**, choose **Access token** and add idtyp.
+Under **Token configuration**, select **Add optional claim**. Choose **Access token** and add idtyp.
 
 :::image type="content" source="./media/authentication-tutorial/add-claim-idtyp.png" alt-text="Screenshot showing adding claim idtyp." lightbox="./media/authentication-tutorial/add-claim-idtyp.png":::
 

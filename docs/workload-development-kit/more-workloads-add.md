@@ -57,6 +57,7 @@ To see all workspaces where the workload can be used, select the workload and th
 The first time using a workload each user needs to consent to the Microsoft Entra ID application. Tenant admins can also consent on behalf of the organization by accessing or creating the workload's item type.
 
 To consent to Microsoft Entra ID application, follow these steps:
+
 1. Navigate to the workload's item type.
 2. Select on the "Consent" button.
 3. Review the permissions requested by the application.
