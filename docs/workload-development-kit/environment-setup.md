@@ -100,7 +100,7 @@ You can see the code/configuration of the redirect Uri in [index.ts](../Frontend
 
 Here's an example of a consent popup for our app "my workload app" and its dependencies (storage and Power BI) that we configured when going over [the authentication set up](./authentication-tutorial.md):  
 
-:::image type="content" source=""/.media/environment-setup/environment-setup-consent-popup.png" alt-text="Screenshot of the consent popup.":::
+:::image type="content" source="/.media/environment-setup/environment-setup-consent-popup.png" alt-text="Screenshot of the consent popup.":::
 
 We'll see how to work with consents when we talk about AcquireAccessTokenParams.
 
