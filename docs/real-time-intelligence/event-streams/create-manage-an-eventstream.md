@@ -7,6 +7,7 @@ author: xujxu
 ms.topic: how-to
 ms.date: 05/21/2024
 ms.search.form: Event Streams Overview
+zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Create an eventstream in Microsoft Fabric
