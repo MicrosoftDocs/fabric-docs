@@ -96,6 +96,7 @@ When asking for a token with the workload application for a specific scope, Micr
 Typically the redirect URI is in the same domain as the page that requested the token so the page can access the popup and close it.
 
 In our case, it's not in the same domain since Fabric is requesting the token and the redirect URI of the workload isn't in the Fabric domain, so when the consent dialog opens, it needs to be closed manually after redirect - we don't use the code returned in the redirectUri, and hence we just autoclose it (when Microsoft Entra ID redirects the popup to the redirect URI, it closes).  
+
 You can see the code/configuration of the redirect Uri in [index.ts](../Frontend//src//index.ts) file.
 
 Here's an example of a consent popup for our app "my workload app" and its dependencies (storage and Power BI) that we configured when going over [the authentication set up](./authentication-tutorial.md):  
@@ -104,21 +105,26 @@ Here's an example of a consent popup for our app "my workload app" and its depen
 
 We'll see how to work with consents when we talk about AcquireAccessTokenParams.
 
-#### Another way to grant consents in the Home tenant (Optional)
-To get a consent in the home tenant of the application, you can ask your tenant admin to grant a consent for the whole tenant using this url (Insert your tenant ID and the client ID):  
-https://login.microsoftonline.com/{tenantId}/adminconsent?client_id={clientId}
+#### Another way to grant consents in the home tenant (optional)
 
+To get a consent in the home tenant of the application, you can ask your tenant admin to grant a consent for the whole tenant using this url (insert your tenant ID and the client ID):  
+
+`https://login.microsoftonline.com/{tenantId}/adminconsent?client_id={clientId}`
 
 #### AcquireAccessTokenParams
+
 When calling acquireAccessToken JS API, we can provide two parameters:  
 
 * additionalScopesToConsent: Additional scopes to ask for a consent for, for example reconsent scenarios.
-* claimsForConditionalAccessPolicy: Claims returned from Microsoft Entry ID when OBO flows fail, for example OBO requires multifactor authentication.
+
+* claimsForConditionalAccessPolicy: Claims returned from Microsoft Entry ID when OBO flows fail. For example, OBO requires multifactor authentication.
 
 Let's review these two parameters and see what to provide when calling acquireAccessToken.
 
 #### additionalScopesToConsent
+
 Here's what to provide in additionalScopesToConsent when calling acquireAccessToken:
+
 Scenario | 1. Acquiring a token to call the Workload BE | 2. Crud/JOBS operation fails | 3. OBO flow for scope 'https://analysis.windows.net/powerbi/api/Workspace.Read.All/' fails with consent required error 
 --- | --- | --- | --- 
 AdditionalScopesToConsent | null | ['.default'] | ['https://analysis.windows.net/powerbi/api/Workspace.Read.All'] 
