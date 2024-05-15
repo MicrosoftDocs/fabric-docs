@@ -1,36 +1,35 @@
----
-title: Microsoft Fabric API for GraphQL FAQ
-description: Find answers to frequently asked questions about Microsoft Fabric API for GraphQL, which is currently in preview.
-ms.reviewer: sngun
-ms.author: sngun
-author: snehagunda
-ms.topic: faq
-ms.date: 05/21/2024
----
+### YamlMime:FAQ
+metadata:
+  title: Microsoft Fabric API for GraphQL FAQ
+  description: Find answers to frequently asked questions about Microsoft Fabric API for GraphQL, which is currently in preview.
+  author: snehagunda
+  ms.author: sngun
+  ms.topic: faq
+  ms.date: 05/21/2024
 
-# Fabric API for GraphQL frequently asked questions
+title: Fabric API for GraphQL frequently asked questions
+summary: |
+  Find answers to commonly asked Fabric API for GraphQL questions.
 
-> [!NOTE]
-> Microsoft Fabric API for GraphQL is in preview.
+  > [!NOTE]
+  > Microsoft Fabric API for GraphQL is in preview.
 
-Find answers to commonly asked Fabric API for GraphQL questions.
+sections:
+  - name: Microsoft Fabric API for GraphQL FAQ
+    questions:
+      - question: What GraphQL operations are supported in Fabric API for GraphQL?
+        answer: Only GraphQL queries (read) and mutations (write) are supported at this time.
 
-## What GraphQL operations are supported in Fabric API for GraphQL?
+      - question: How can I view and edit resolvers in Fabric API for GraphQL?
+        answer: Resolvers are logic used to resolve fields in the GraphQL and perform operations with data residing in the data sources. Fabric automatically generates resolvers whenever you attach a new data source or select new objects to be exposed from an existing data source. Currently, you cannot customize resolvers.
 
-Only GraphQL queries (read) and mutations (write) are supported at this time.
+      - question: Does the API for GraphQL client application require access to the data source in order to perform queries or mutations?
+        answer: Yes, currently the Fabric API for GraphQL supports passthrough authentication.
 
-## How can I view and edit resolvers in Fabric API for GraphQL?
+      - question: How do I open a support ticket for API for GraphQL?
+        answer: To get help from Microsoft Support on any issue related to Fabric API for GraphQL, please visit our [Fabric Support site](https://support.fabric.microsoft.com/en-US/support/) and choose the **Data Engineering** option.
 
-Resolvers are logic used to resolve fields in the GraphQL and perform operations with data residing in the data sources. Fabric automatically generates resolvers whenever you attach a new data source or select new objects to be exposed from an existing data source. Currently, you cannot customize resolvers.
+additionalContent: |
+    ## Related content
 
-## Does the API for GraphQL client application require access to the data source in order to perform queries or mutations?
-
-Yes, currently the Fabric API for GraphQL supports passthrough authentication.
-
-## How do I open a support ticket for API for GraphQL?
-
-To get help from Microsoft Support on any issue related to Fabric API for GraphQL, please visit our [Fabric Support site](https://support.fabric.microsoft.com/en-US/support/) and choose the **Data Engineering** option.
-
-## Related content
-
-- [What is Microsoft Fabric API for GraphQL?](api-graphql-overview.md)
+    [What is Microsoft Fabric API for GraphQL?](api-graphql-overview.md)
