@@ -7,6 +7,8 @@ author: xujxu
 ms.topic: how-to
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add a custom app destination to an eventstream
