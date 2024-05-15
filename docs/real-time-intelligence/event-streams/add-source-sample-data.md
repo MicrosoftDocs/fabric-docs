@@ -7,6 +7,8 @@ author: alexlzx
 ms.topic: how-to
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add a sample data source to an eventstream
@@ -15,7 +17,7 @@ To get a better understanding of how an eventstream works, you can use the out-o
 
 If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
-# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
+::: zone pivot="enhanced-capabilities"  
 
 ## Prerequisites
 
@@ -55,7 +57,39 @@ Once you complete these steps, the sample data is available for visualization in
 
 ![A screenshot showing the eventstream in Live view.](media\add-source-sample-data-enhanced\live-view.png)
 
-# [Standard capabilities](#tab/standardcapabilities)
+## Related content 
+
+To learn how to add other sources to an eventstream, see the following articles:
+
+- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
+- [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
+- [Azure Event Hubs](add-source-azure-event-hubs.md)
+- [Azure IoT Hub](add-source-azure-iot-hub.md)
+- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
+- [Confluent Kafka](add-source-confluent-kafka.md)
+- [Custom endpoint](add-source-custom-app.md)
+- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
+- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
+- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
+- [Azure Blob Storage events](add-source-azure-blob-storage.md)
+- [Fabric workspace event](add-source-fabric-workspace.md) 
+
+To add a destination to an eventstream, see the following articles:
+
+- [Route events to destinations ](add-manage-eventstream-destinations.md)
+- [Custom app destination](add-destination-custom-app.md)
+- [Derived stream destination](add-destination-derived-stream.md)
+- [KQL Database destination](add-destination-kql-database.md)
+- [Lakehouse destination](add-destination-lakehouse.md)
+- [Reflex destination](add-destination-reflex.md)
+- [Create an eventstream](create-manage-an-eventstream.md)
+
+
+::: zone-end
+
+::: zone pivot="standard-capabilities"
+
+
 
 ## Prerequisites
 
@@ -84,24 +118,13 @@ To verify if the sample data is added successfully, select **Data preview** in t
 
 :::image type="content" source="./media/add-manage-eventstream-sources/sample-data-source-completed.png" alt-text="Screenshot showing the sample data source." lightbox="./media/add-manage-eventstream-sources/sample-data-source-completed.png":::
 
----
-
 ## Related content 
 
 To learn how to add other sources to an eventstream, see the following articles:
 
-- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
-- [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
 - [Azure Event Hubs](add-source-azure-event-hubs.md)
 - [Azure IoT Hub](add-source-azure-iot-hub.md)
-- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
-- [Confluent Kafka](add-source-confluent-kafka.md)
 - [Custom endpoint](add-source-custom-app.md)
-- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
-- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
-- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
-- [Azure Blob Storage events](add-source-azure-blob-storage.md)
-- [Fabric workspace event](add-source-fabric-workspace.md) 
 
 To add a destination to an eventstream, see the following articles:
 
@@ -112,3 +135,6 @@ To add a destination to an eventstream, see the following articles:
 - [Lakehouse destination](add-destination-lakehouse.md)
 - [Reflex destination](add-destination-reflex.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
+
+
+::: zone-end

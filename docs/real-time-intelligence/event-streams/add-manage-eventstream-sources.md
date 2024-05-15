@@ -10,13 +10,15 @@ ms.custom:
   - ignite-2023
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add and manage an event source in an eventstream
 
 Once you have created an eventstream, you can connect it to various data sources and destinations. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
-# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
+::: zone pivot="enhanced-capabilities"  
 
 Once you create an eventstream, you can connect it to various data sources and destinations.
 
@@ -43,7 +45,9 @@ Fabric event streams with enhanced capabilities support the following sources. E
 - [Create and manage an eventstream](./create-manage-an-eventstream.md)
 - [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)
 
-# [Standard capabilities](#tab/standardcapabilities)
+::: zone-end
+
+::: zone pivot="standard-capabilities"
 
 ## Prerequisites
 
@@ -74,4 +78,4 @@ The following sources are supported by Fabric event streams. Use links in the ta
 - [Create and manage an eventstream](./create-manage-an-eventstream.md)
 - [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)
 
----
+::: zone-end
