@@ -8,4 +8,4 @@ ms.date: 05/21/2024
 ---
 
 > [!NOTE]
-> If you want to use enhanced capabilities that are in preview, select **Enhanced Capabilities**  at the top. Otherwise, select **Standard Capabilities**. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](../overview.md).
+> If you want to use enhanced capabilities that are in preview, select **Enhanced Capabilities** at the top. Otherwise, select **Standard Capabilities**. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](../overview.md).
