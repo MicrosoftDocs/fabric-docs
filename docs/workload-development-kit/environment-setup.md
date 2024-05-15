@@ -64,7 +64,7 @@ These steps are required when setting up the workload, For a detailed guide on h
 
 ### Authentication JavaScript API
 
-Fabric frontend offers a JavaScript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. Before working with the authentication JavaScript API make sure you go over the [authentication JavaScript API](./authentication-javascript-api.md) documentation.
+Fabric frontend offers a JavaScript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. Before working with the authentication JavaScript API, make sure you go over the [authentication JavaScript API](./authentication-javascript-api.md) documentation.
 
 #### API
 
@@ -78,7 +78,7 @@ The API returns an AccessToken object that contains the token itself and an expi
 
 To call the API in the Frontend sample - simply create a sample item and scroll down and select **Navigate to Authentication page**, from there you can select **Get access Token** and you'll receive a token back.
 
-:::image type="content" source="/.media/environment-setup/javascript-api-authentication-get-token.png" alt-text="Screenshot showing getting token for JavaScript API authentication.":::
+:::image type="content" source="./media/environment-setup/javascript-api-authentication-get-token.png" alt-text="Screenshot showing getting token for JavaScript API authentication.":::
 
 #### Consents  
 
@@ -91,7 +91,7 @@ To understand why consents are required, review [User and admin consent in Micro
 
 To grant a consent for a specific application, Fabric FE creates an [MSAL](https://www.npmjs.com/package/@azure/msal-browser) instance configured with the workload's application ID and asks for a token for the provided scope (additionalScopesToConsent - see AcquireAccessTokenParams).
 
-When asking for a token with the workload application for a specific scope, Microsoft Entra ID will display a popup consent in case it's missing, and then redirect the popup window to the **redirect URI** configured in the application.
+When asking for a token with the workload application for a specific scope, Microsoft Entra ID displays a popup consent in case it's missing, and then redirect the popup window to the **redirect URI** configured in the application.
 
 Typically the redirect URI is in the same domain as the page that requested the token so the page can access the popup and close it.
 
@@ -149,7 +149,7 @@ This is used when facing OBO failures in the workload BE because of some conditi
 
 OBO failures because of conditional access policies return a string called "claims". This string should be sent to the workload frontend where the frontend should ask for a token and pass the claim as claimsForConditionalAccessPolicy.
 
-For more information, see [Handling multi-factor auth (MFA), conditional access and incremental consent](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#handling-multi-factor-auth-mfa-c).
+For more information, see [Handling multi-factor auth (MFA), conditional access, and incremental consent](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#handling-multi-factor-auth-mfa-c).
 
 Refer to AuthenticationService (../Backend/src/Services/AuthenticationService.cs) AddBearerClaimToResponse usage in the backend sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies.
 
@@ -169,7 +169,7 @@ In the context of executing the workload SDK sample and building a workload, it'
 
 1. After the user has been granted permission in the previous step, **each** user can enable development mode for the development settings area under Fabric developer mode.
 
-   :::image type="content" source="./media/environment-setup/environment-setup-devmode.png" alt-text="Screenshot of turn on Workloads Developer Mode.":::
+   :::image type="content" source="./media/environment-setup/environment-setup-devmode.png" alt-text="Screenshot of turning on Workloads Developer Mode.":::
 
 ## Related content
 
