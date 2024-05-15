@@ -19,9 +19,9 @@ The Oracle connector is supported in Data Factory for [!INCLUDE [product-name](.
 
 Data Factory in Microsoft Fabric doesn't currently support the Oracle connector in Dataflow Gen2.
 
-## Support in Data pipeline
+## Support in data pipelines
 
-The Oracle connector supports the following capabilities in Data pipeline:
+The Oracle connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
@@ -29,4 +29,4 @@ The Oracle connector supports the following capabilities in Data pipeline:
 | **Lookup activity** | On-premises | Basic |
 | **Script activity** | On-premises | Basic |
 
-To learn more about the copy activity configuration for Oracle in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-oracle-copy-activity.md).
+To learn more about the copy activity configuration for Oracle in data pipelines, go to [Configure Oracle in a copy activity](connector-oracle-copy-activity.md).
