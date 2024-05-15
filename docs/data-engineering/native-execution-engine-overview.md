@@ -6,7 +6,7 @@ ms.author: eskot
 author: ekote
 ms.topic: conceptual
 ms.custom:
-ms.date: 5/13/2024
+ms.date: 05/21/2024
 ---
 
 # Native execution engine for Fabric Spark
