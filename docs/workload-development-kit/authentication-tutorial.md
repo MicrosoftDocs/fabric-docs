@@ -29,7 +29,7 @@ To make sure Azure Storage is provisioned in the tenant:
 1. Go to **Microsoft Entra ID** > **Enterprise applications**
 1. In the filters, choose **application type = all aplications**. The application ID starts with e406a681-f3d4-42a8-90b6-c2b029497af1
 
-    :::image type="content" source="./media/authentication-setup/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-setup/azure-storage-provisioning.png":::
+    :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
 If you see the Azure Storage application, you're set! If not, a tenant admin needs to provision it. To do so, ask your tenant admin to perform the following:
   
@@ -54,7 +54,7 @@ You need to apply the following configurations to your application:
 > [!NOTE]
 > The redirect URI should be a URI that simply closes the page when navigating to it. The URI `http://localhost:60006/close` is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/src/index.ts) (If you change it, make sure it matches the one configured for your application).
 
-:::image type="content" source="./media/authentication-setup/register-application.png" alt-text="Screenshot of application registration UI." lightbox="./media/authentication-setup/register-application.png":::
+:::image type="content" source="./media/authentication-tutorial/register-application.png" alt-text="Screenshot of application registration UI." lightbox="./media/authentication-tutorial/register-application.png":::
 
 > [!NOTE]
 > You can configure the redirect URI after creating the application under **Manage** > **Authentication**.
@@ -107,13 +107,13 @@ You need to preauthorize `871c010f-5e61-4fb1-83ac-98610a7e9110` (the Fabric clie
 
 Here's how your "Expose an API" section should look like in your application (in this example, the ID URI is `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`):
 
-:::image type="content" source="./media/authentication-setup/expose-api-section.png" alt-text="Screenshot showing how your Expose an API section should look." lightbox="./media/authentication-setup/expose-api-section.png":::
+:::image type="content" source="./media/authentication-tutorial/expose-api-section.png" alt-text="Screenshot showing how your Expose an API section should look." lightbox="./media/authentication-tutorial/expose-api-section.png":::
 
 ### Generate a secret for your applicaiton
 
 Under **Certificates & secrets**, click on Secrets tab and add a secret. Call it whatever you want and save it aside. We will use this secret when configuring our BE sample.
 
-:::image type="content" source="./media/authentication-setup/generate-secrets-dialog.png" alt-text="Screenshot of generate secrets dialog.":::
+:::image type="content" source="./media/authentication-tutorial/generate-secrets-dialog.png" alt-text="Screenshot of generate secrets dialog.":::
 
 ### Add optional claim 'idtyp'
 
@@ -121,13 +121,13 @@ Under **Token configuration**, select **Add optional claim**, choose **Access to
 
 ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/8a098482-e1b2-4346-9929-6352fb89846d)
 
-:::image type="content" source="./media/authentication-setup/add-claim-idtyp.png" alt-text="Screenshot showing adding claim idtyp." lightbox="./media/authentication-setup/add-claim-idtyp.png":::
+:::image type="content" source="./media/authentication-tutorial/add-claim-idtyp.png" alt-text="Screenshot showing adding claim idtyp." lightbox="./media/authentication-tutorial/add-claim-idtyp.png":::
 
 ### Add API permissions
 
 Under ***API permissions**, add the desired permissions for your application. For the backend sample, you need to add Storage user_impersonation (for OneLake APIs) and Power BI Workspace.Read.all (for workload control APIs):
 
-:::image type="content" source="./media/authentication-setup/add-api-permissions.png" alt-text="Screenshot showing adding API permissions." lightbox="./media/authentication-setup/add-api-permissions.png":::
+:::image type="content" source="./media/authentication-tutorial/add-api-permissions.png" alt-text="Screenshot showing adding API permissions." lightbox="./media/authentication-tutorial/add-api-permissions.png":::
 
 ### Make sure your application is set to work with auth token v1
 
@@ -144,7 +144,7 @@ In the Backend sample, go to [src/appsettings.json](https://github.com/microsoft
 
 Next, you need to configure your workloadManifest.xml. Go to [src/Packages/manifest/files/WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/WorkloadManifest.xml) and configure your `AppId`, `redirectUri` and `ResourceId` (ID URI) under **AADApps**.
 
-:::image type="content" source="./media/authentication-setup/configure-workload-manifest-xml.png" alt-text="Screenshot showing configuration of workload manifest xml file.":::
+:::image type="content" source="./media/authentication-tutorial/configure-workload-manifest-xml.png" alt-text="Screenshot showing configuration of workload manifest xml file.":::
 
 ## Configuring your workload local manifest and acquiring a token for your application (FrontEnd)
 
@@ -160,7 +160,7 @@ Under "extension", add
 }
 ```
 
-:::image type="content" source="./media/authentication-setup/configure-local-workload-manifest-xml.png" alt-text="Screenshot showing configuration of local workload manifest xml file.":::
+:::image type="content" source="./media/authentication-tutorial/configure-local-workload-manifest-xml.png" alt-text="Screenshot showing configuration of local workload manifest xml file.":::
 
 ## Ask for a token and consent the application
 
@@ -169,11 +169,11 @@ Under "extension", add
   
 Run the frontend sample and create a sample item. Scroll down until you see the Navigate to authentication page button and select it to go to the authentication section, which looks like this:
 
-:::image type="content" source="./media/authentication-setup/configured-authentication-section.png" alt-text="Screenshot showing the configured authentication section." lightbox="./media/authentication-setup/configured-authentication-section.png":::
+:::image type="content" source="./media/authentication-tutorial/configured-authentication-section.png" alt-text="Screenshot showing the configured authentication section." lightbox="./media/authentication-tutorial/configured-authentication-section.png":::
 
 Check **Request initial consent** and select the get access token button. This should trigger a consent for your application:
 
-:::image type="content" source="./media/authentication-setup/initial-consent.png" alt-text="Screenshot showing permissions request dialog for initial consent.":::
+:::image type="content" source="./media/authentication-tutorial/initial-consent.png" alt-text="Screenshot showing permissions request dialog for initial consent.":::
 
 Note that this consent includes the dependencies you added earlier under [Add API Permissions](#add-api-permissions).
 
