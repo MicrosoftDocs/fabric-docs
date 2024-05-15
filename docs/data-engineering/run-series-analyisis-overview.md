@@ -6,11 +6,11 @@ ms.author: jejiang
 author: jejiang
 ms.topic: overview
 ms.custom:
-ms.date: 05/09/2024
+ms.date: 05/21/2024
 ms.search.form: run_series_analysis
 ---
 
-# Run Series Analysis Overview 
+# Apache Spark run Series Analysis Overview 
 
 The Apache Spark run series automatically categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs from the same notebook or Spark job definition.
 
