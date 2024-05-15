@@ -6,15 +6,14 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: fabric
 ms.topic: conceptual
-ms.date: 05/06/2024
+ms.date: 05/16/2024
 ---
 
 # Add Fabric URLs to your allowlist
 
 This article contains the allowlist of the Microsoft Fabric URLs required for interfacing with Fabric workloads. For the Power BI allowlist, see [Add Power BI URLs to your allowlist](./power-bi-allow-list-urls.md).
 
-[THIS PARAGRAPH NEEDS REVIEW]
-The URLs are divided into two categories: required and optional. The required URLs are necessary for the service to work correctly. The optional URLs are used for specific features that you might not use. To use Fabric, you must be able to connect to the endpoints marked required in the tables in this article, and to any endpoints marked required on the linked sites. If the link to an external site refers to a specific section, you only need to review the endpoints in that section. You can also add endpoints that are marked optional to allowlists for specific functionality to work. 
+The URLs are divided into two categories: required and optional. The required URLs are necessary for the service to work correctly. The optional URLs are used for specific features that you might not use. To use Fabric, you must be able to connect to the endpoints marked required in the tables in this article, and to any endpoints marked required on the linked sites. If the link to an external site refers to a specific section, you only need to review the endpoints in that section. You can also add endpoints that are marked optional to allowlists for specific functionality to work.
 
 Fabric requires only TCP Port 443 to be opened for the listed endpoints.
 
@@ -30,19 +29,21 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |**Required**: Portal|*.fabric.microsoft.com|TCP 443|
+<!--
 |CRUD Artifact APIs|||
 |PATCH Artifact API|||
 |Schedule CRUD|||
 |Monitoring Hub API |||
 |Lineage & Capacity endpoint|||
+-->
 
 ## OneLake
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |For OneLake access for DFS APIs (default Onelake endpoint) |*.onelake.dfs.fabric.microsoft.com|Port 1443|
-|Onelake endpoint for calling Blob APIs|*.onelake.blob.fabric.microsoft.com||
-|**Optional**: Regional Endpoints for DFS APIs |*\<region\>-onelake.dfs.fabric.microsoft.com||
-|**Optional**: Regional Endpoints for Blob APIs |*\<region\>-onelake.blob.fabric.microsoft.com||
+|Onelake endpoint for calling Blob APIs|*.onelake.blob.fabric.microsoft.com|TCP 443|
+|**Optional**: Regional Endpoints for DFS APIs |*\<region\>-onelake.dfs.fabric.microsoft.com|TCP 443|
+|**Optional**: Regional Endpoints for Blob APIs |*\<region\>-onelake.blob.fabric.microsoft.com|TCP 443|
 
 ## Pipeline
 
@@ -57,38 +58,40 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |**Optional**: On-premises data gateway pipelines|*.frontend.clouddatahub.net<br>(User can use service tag DataFactory or DataFactoryManagement)|TCP 443<br>|
 |**For inbound connections**|No specific endpoints other than the customer's data store endpoints required in pipelines and behinds the firewall.<br>(User can use service tag DataFactory, regional tag is supported, like DataFactory.WestUs)|
 
+<!--
 ## Dataflow
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |Write data||Port 443
 |Read data||Port 1433
+-->
 
 ## Lakehouse
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|Inbound connections|https://cdn.jsdelivr.net/npm/monaco-editor*||
+|Inbound connections|https://cdn.jsdelivr.net/npm/monaco-editor*|N/A|
 
 ## Notebook
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|Inbound connections (icons)|http://res.cdn.office.net/||
-|**Required**: Notebook backend|https://*.pbidedicated.windows.net<br>wss://*.pbidedicated.windows.net<br>(HTTP/WebSocket)|
-|**Required**: Lakehouse backend|https://onelake.dfs.fabric.microsoft.com||
-|**Required**: Shared backend|https://*.analysis.windows.net||
-|**Required**: DE/DS extension UX|https://pbides.powerbi.com||
-|**Required**: Notebooks UX|https://aznb-ame-prod.azureedge.net||
-|**Required**: Notebooks UX|https://*.notebooks.azuresandbox.ms||
+|Inbound connections (icons)|http://res.cdn.office.net/|N/A|
+|**Required**: Notebook backend|https://\*.pbidedicated.windows.net<br>wss://\*.pbidedicated.windows.net<br>(HTTP/WebSocket)|N/A|
+|**Required**: Lakehouse backend|https://onelake.dfs.fabric.microsoft.com|N/A|
+|**Required**: Shared backend|https://*.analysis.windows.net|N/A|
+|**Required**: DE/DS extension UX|https://pbides.powerbi.com|N/A|
+|**Required**: Notebooks UX|https://aznb-ame-prod.azureedge.net|N/A|
+|**Required**: Notebooks UX|https://*.notebooks.azuresandbox.ms|N/A|
 
 ## Spark
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|Inbound connections (icons)|http://res.cdn.office.net/||
-|Inbound connections (library management for PyPI)|https://pypi.org/*||
-|Inbound connections (library management for Conda)|local static endpoints for condaPackages||
+|Inbound connections (icons)|http://res.cdn.office.net/|N/A|
+|Inbound connections (library management for PyPI)|https://pypi.org/*|N/A|
+|Inbound connections (library management for Conda)|local static endpoints for condaPackages|N/A|
 
 ## Data Warehouse
 
@@ -103,14 +106,16 @@ The **Endpoint** column lists domain names and links to external sites, which co
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|Inbound connections (library management for PyPI)|https://pypi.org/*||
-|Inbound connections (library management for Conda)|local static endpoints for condaPackages||
+|Inbound connections (library management for PyPI)|https://pypi.org/*|N/A|
+|Inbound connections (library management for Conda)|local static endpoints for condaPackages|N/A|
 
 ## KQL Database
 
+<!--
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 ||||
+-->
 
 ## Eventstream
 
@@ -120,5 +125,4 @@ The **Endpoint** column lists domain names and links to external sites, which co
 
 ## Related content
 
-* [Security fundamentals](../security/security-fundamentals.md)
-* [Microsoft Fabric licenses](../enterprise/licenses.md)
+* [Add Power BI URLs to allowlist](./power-bi-allow-list-urls.md)
