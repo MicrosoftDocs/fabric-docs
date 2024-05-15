@@ -35,7 +35,7 @@ Configure the admin portal as follows:
 
    :::image type="content" source="./media/quickstart-sample/settings-admin-portal.png" alt-text="Screenshot showing how to get to the Fabric Admin portal.":::
 
-1. Enable **Workload extensions (preview)**. You can enable it for the entire organization or specific groups.
+1. In the **Additional workloads (preview)** section, enable the **Capacity admins and contributors can add and remove additional workloads** tenant setting. You can enable it for the entire organization or specific groups.
 
 ### Set up the sample project
 
@@ -56,13 +56,13 @@ Configure the admin portal as follows:
 
 1. **Start the local server**: Launch a local Node.js server using `webpack` by running:
 
-  ```typescript
+   ```typescript
    npm start
    ```
 
    The server typically runs on port `60006`. Confirm that the server is operational by accessing `127.0.0.1:60006/manifests` and checking the `localWorkloadManifest.json` manifest file.
 
-1. **Enable frontend developer mode**: In Fabric, go to *Developer Settings* and activate the *Frontend Developer mode*. This setting allows connections to your local server and persists across browser sessions.
+1. **Enable frontend developer mode**: In the tenant settings in the admin portal, under the **Additional workloads (preview)** section, and activate the **Capacity admins can develop additional workloads.** tenant setting. This setting allows connections to your local server and persists across browser sessions.
 
 ### Run a sample workload
 
