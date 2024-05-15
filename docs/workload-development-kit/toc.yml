@@ -38,9 +38,9 @@ items:
     href: azure-webapp-deployment-tutorial.md
 - name: Reference
   items:
-  - name: REST APIs
-    href: https://review.learn.microsoft.com/en-us/rest/api/fabric/workload/workloadapi/jobs?branch=drafts%2ffeatures%2fworkloadsapi&tabs=HTTP
-  - name: Client-side APIs
-    href: https://review.learn.microsoft.com/en-us/javascript/api/overview/fabric-extensibility-overview?view=fabric-extensibility-js-latest&branch=smoke-test
+#  - name: REST APIs
+#    href: https://review.learn.microsoft.com/en-us/rest/api/fabric/workload/workloadapi/jobs?branch=drafts%2ffeatures%2fworkloadsapi&tabs=HTTP
+#  - name: Client-side APIs
+#    href: https://review.learn.microsoft.com/en-us/javascript/api/overview/fabric-extensibility-overview?view=fabric-extensibility-js-latest&branch=smoke-test
   - name: Samples
     href: https://github.com/microsoft/fabric-samples
