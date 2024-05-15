@@ -12,7 +12,9 @@ zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add Azure IoT Hub source to an eventstream
-This article shows you how to add an Azure IoT Hub source to an eventstream. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
+This article shows you how to add an Azure IoT Hub source to an eventstream. 
+
+[!INCLUDE [select-view](./includes/select-view.md)]
 
 ::: zone pivot="enhanced-capabilities"  
 

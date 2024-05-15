@@ -15,7 +15,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 If you want to connect your own application with an eventstream, you can add a custom endpoint source. Then you can send data to the eventstream from your own application with the connection endpoint displayed as the custom endpoint. This article shows you how to add a custom app source to an eventstream.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
+[!INCLUDE [select-view](./includes/select-view.md)]
 
 ::: zone pivot="enhanced-capabilities"  
 

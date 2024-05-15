@@ -29,7 +29,7 @@ To add a destination to an eventstream, you need the following prerequisites:
 
 Fabric event streams supports the following destinations. Use links in the table to navigate to articles about how to add specific destinations.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
+[!INCLUDE [select-view](./includes/select-view.md)]
 
 ::: zone pivot="enhanced-capabilities"  
 

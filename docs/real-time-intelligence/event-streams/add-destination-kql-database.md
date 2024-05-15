@@ -13,9 +13,9 @@ ms.search.form: Source and Destination
 
 This article shows you how to add a KQL database as a destination to an eventstream in Microsoft Fabric event streams.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
+[!INCLUDE [select-view](./includes/select-view.md)]
 
-# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
+::: zone pivot="enhanced-capabilities"  
 
 ## Prerequisites
 
@@ -108,7 +108,23 @@ Once you complete these steps, the eventstream with KQL Database destination is 
 
 :::image type="content" source="media/add-destination-kql-database/live-view-processed.png" alt-text="A screenshot of the configured KQL Database event processing flow in Live view." lightbox="media/add-destination-kql-database/live-view-processed.png":::
 
-# [Standard capabilities](#tab/standardcapabilities)
+
+## Related content
+
+To learn how to add other destinations to an eventstream, see the following articles:
+
+- [Route events to destinations](add-manage-eventstream-destinations.md)
+- [Custom app destination](add-destination-custom-app.md)
+- [Derived stream destination](add-destination-derived-stream.md)
+- [Lakehouse destination](add-destination-lakehouse.md)
+- [Reflex destination](add-destination-reflex.md)
+- [Create an eventstream](create-manage-an-eventstream.md)
+
+
+::: zone-end
+
+::: zone pivot="standard-capabilities"
+
 
 ## Prerequisites
 
@@ -187,15 +203,14 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing where to select the modify and delete options for destinations on the canvas." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
 
----
-
 ## Related content
 
 To learn how to add other destinations to an eventstream, see the following articles:
 
 - [Route events to destinations](add-manage-eventstream-destinations.md)
 - [Custom app destination](add-destination-custom-app.md)
-- [Derived stream destination](add-destination-derived-stream.md)
 - [Lakehouse destination](add-destination-lakehouse.md)
 - [Reflex destination](add-destination-reflex.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
+
+::: zone-end

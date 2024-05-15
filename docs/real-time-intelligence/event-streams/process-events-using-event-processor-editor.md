@@ -12,9 +12,10 @@ ms.search.form: Event Processor
 # Process event data with event processor editor
 The event processor editor is a no-code experience that allows you to drag and drop to design the event data processing logic. This article describes how to use the editor to design your processing logic.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
+[!INCLUDE [select-view](./includes/select-view.md)]
 
-# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
+::: zone pivot="enhanced-capabilities"  
+
 
 ## Prerequisites
 
@@ -96,7 +97,10 @@ Here are the destination types that support to add operators before ingestion:
 :::image type="content" source="./media/process-events-using-event-processor-editor/unsupported-destination.png" alt-text="Screenshot showing the layout of Event processing editor with filter outputting to an unsupported destination." lightbox="./media/process-events-using-event-processor-editor/unsupported-destination.png":::        
 
 
-# [Standard capabilities](#tab/standardcapabilities)
+::: zone-end
+
+::: zone pivot="standard-capabilities"
+
 
 The event processor in a Lakehouse destination allows you to process your data before it's ingested into your lakehouse. 
 
@@ -178,7 +182,7 @@ The screen layout is like the main editor. It consists of three sections, shown 
 
 1. **Bottom pane with data preview and authoring error tabs**: In this pane, preview the data in a selected node with **Data preview** tab. The **Authoring errors** tab lists any incomplete or incorrect configuration in the operation nodes.
 
----
+::: zone-end 
 
 
 ### Authoring errors
@@ -294,4 +298,5 @@ As with regular joins, you have options for your join logic:
 ## Related content
 
 - [Add and manage destinations in an eventstream](./add-manage-eventstream-destinations.md).
+
 
