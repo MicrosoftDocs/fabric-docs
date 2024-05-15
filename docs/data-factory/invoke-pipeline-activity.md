@@ -7,7 +7,7 @@ author: kromerm
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 05/15/2024
 ---
 
 # Use the Invoke pipeline activity to run another pipeline
@@ -49,6 +49,12 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 Select the **Settings** tab, and choose an existing pipeline from the **Invoked pipeline** dropdown, or use the **+ New** button to create a new pipeline directly. You can choose to wait on completion, or continue directly, in which case the invoked pipeline executes in parallel with activities following it within the parent pipeline's execution flow.
 
 :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-settings.png" alt-text="Screenshot showing the Invoke pipeline activity settings tab, highlighting the tab.":::
+
+* Connection: Each invoke pipeline activity requires a Connection object that is stored in the secure Fabric credentials store. This connection object stores your user token associated with your Fabric workspace. If you have not yet created a new invoke pipeline activity, you will be required to create a new connection object first before you can use the activity.
+  
+* Workspace: Choose the Fabric workspace where the target pipeline is located that you wish to invoke from your parent pipeline.
+
+:::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-new-001.png" alt-text="Screenshot showing the pipeline editor window with the Invoke pipeline activity workspace and connection selection.":::
 
 ## Save and run or schedule the pipeline
 
