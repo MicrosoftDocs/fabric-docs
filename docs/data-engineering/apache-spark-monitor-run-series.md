@@ -4,7 +4,7 @@ description: The Spark run series categorizes your Spark applications based on r
 author: jejiang
 ms.author: jejiang
 ms.topic: overview 
-ms.date: 05/08/2024
+ms.date: 05/21/2024
 ms.custom:  template-howto
 ms.search.form: Monitor run series
 ---
