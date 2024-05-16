@@ -44,15 +44,15 @@ An example of such communication is writing to a Lakehouse file. This is done wi
 
 If you plan on communicating with services using a Subject token, make sure you're familiar with [On behalf of flows](/entra/identity-platform/v2-oauth2-on-behalf-of-flow).
 
-Refer to [Authentication tutorial](./authentication-tutorial.md) to setup your environment to work with authentication.
+Refer to [Authentication tutorial](./authentication-tutorial.md) to set up your environment to work with authentication.
 
 ## How to work with tokens
 
 1. Your frontend should ask for a token `extensionClient.auth.acquireAccessToken({});`. You can use this token to authenticate with your backend.
 
-2. If you wish to access some resource, you should send your token to the BE and try to exchange it using an OBO flow for that resource. You can also use the token recieved from control APIs (CRUD/Jobs) and try to exchange it for that resource.
+2. If you wish to access some resource, you should send your token to the BE and try to exchange it using an OBO flow for that resource. You can also use the token received from control APIs (CRUD/Jobs) and try to exchange it for that resource.
 
-3. If the exchange fails for consent reasons, you should notify your FE and call `extensionClient.auth.acquireAccessToken({additionalScopesToConsent:[resource]});` and try the proccess again.
+3. If the exchange fails for consent reasons, you should notify your FE and call `extensionClient.auth.acquireAccessToken({additionalScopesToConsent:[resource]});` and try the process again.
 
 4. If the exchange fails for MFA reasons, you should notify your FE along with the claim received when tying to exchange and call `extensionClient.auth.acquireAccessToken({claimsForConditionalAccessPolicy:claims});`.
    
@@ -75,7 +75,7 @@ Fabric frontend offers a JavaScript API for Fabric workloads to acquire a token 
 
 The API returns an AccessToken object that contains the token itself and an expiry date for the token.
 
-To call the API in the Frontend sample - simply create a sample item and scroll down and select **Navigate to Authentication page**, from there you can select **Get access Token** and you'll receive a token back.
+To call the API in the Frontend sample, create a sample item and scroll down and select **Navigate to Authentication page**, from there you can select **Get access Token** and you'll receive a token back.
 
 :::image type="content" source="./media/authentication-concept/javascript-api-authentication-get-token.png" alt-text="Screenshot showing getting token for JavaScript API authentication.":::
 
@@ -152,7 +152,7 @@ For more information, see [Handling multi-factor auth (MFA), conditional access,
 
 Refer to AuthenticationService the file *AuthenticationService.cs*, AddBearerClaimToResponse usage in the backend sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies. The *AuthenticationService.cs* file can be found in the [Microsoft-Fabric-workload-development-sample](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), under the backend folder.
 
-For a detailed explanation of the authentication process and implentation, please refer to the [Backend authentication and authorization overview](./backend-authentication.md). It covers the purpose and use of the `SubjectAndAppToken`, including its validation, the user context it provides, and its role in inter-service communication. The document also outlines the main authentication checks performed for the `SubjectAndAppToken`, such as validation and parsing of the authorization header value, Entra token properties validation, and `appToken` properties validation. It includes links to the relevant methods in the codebase for further reference. A sample `appToken` with its claims is also provided for better understanding.
+For a detailed explanation of the authentication process and implementation, refer to the [Backend authentication and authorization overview](./backend-authentication.md). It covers the purpose and use of the `SubjectAndAppToken`, including its validation, the user context it provides, and its role in inter-service communication. The document also outlines the main authentication checks performed for the `SubjectAndAppToken`, such as validation and parsing of the authorization header value, Entra token properties validation, and `appToken` properties validation. It includes links to the relevant methods in the codebase for further reference. A sample `appToken` with its claims is also provided for better understanding.
 
 ## Related content
 
