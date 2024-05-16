@@ -10,6 +10,7 @@ ms.date: 05/21/2024
 ---
 
 # Introducing workloads
+
 This chatper we will introduce the key components of our system and provide an overview of the architecture. These components work together to create a robust and flexible platform for your development needs. Let’s delve into these components and their roles within our architecture.
 
 ### Fabric Workload Architecture
