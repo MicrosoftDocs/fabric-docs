@@ -37,9 +37,12 @@ The SDK provides a sample UI with the following features:
 
    In this package, the manifest is located in the [Frontend Manifest file](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/Manifests/localWorkloadManifest.json) and a detailed description can be found in the [frontend manifest](./frontend-manifest.md).
 
+<!--
 The following diagram shows how Fabric uses the Manifest to read the workload's metadata and behavior and how it embeds the workload's web app inside Fabric's iFrame.
 
 :::image type="content" source="./media/extensibility-frontend/devx-diagram.png" alt-text="Diagram showing an example of how DEVX interacts with Fabric.":::``
+
+-->
 
 ## Step 1: Enable Workload Extensions in Fabric
 
@@ -205,9 +208,11 @@ The current workspace `objectId` is passed into the frontend-only experience as 
     });
 ```
 
+<!--
 The following diagram describes how an action is invoked and handled:
 
 :::image type="content" source="./media/extensibility-frontend/actions.png" alt-text="Diagram of actions invocation and handling.":::
+-->
 
 ### index.ui
 
