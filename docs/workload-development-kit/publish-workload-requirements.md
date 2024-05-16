@@ -94,5 +94,5 @@ The following table lists additional requirements for your workload offer.
 
 * [Microsoft Fabric Workload Development Kit](dev-kit-overview.md)
 
-* [Commercial marketplace certification policies](https://learn.microsoft.com/en-us/legal/marketplace/certification-policies)
+* [Commercial marketplace certification policies](/legal/marketplace/certification-policies)
 
