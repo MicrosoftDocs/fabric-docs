@@ -67,7 +67,7 @@ The nav pane is there when you open Home and remains there as you open other are
 
 ### Remove icons from the nav pane
 
-You can delete icons from the nav pane for product you don't think you need. You can always add them back later. 
+You can delete icons from the nav pane for products you don't think you need. You can always add them back later.
 
 - To remove an icon, right-click the icon and select **Unpin**.
 
