@@ -97,4 +97,4 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 
 ## Related Content
 
-[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)
+[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)

@@ -12,6 +12,8 @@ ms.date: 02/21/2023
 
 Conditional formatting allows you to format the visual representation of data points based on their values, utilizing colors, tags, and icons. Conditional formatting can be applied either to a specific set of cells within a designated column or to entire rows.
 
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
 For each visual, you have the flexibility to define one or more conditional formatting rules. In cases where multiple rules conflict, the last rule defined takes precedence over any previous ones.
 
 ## Prerequisites

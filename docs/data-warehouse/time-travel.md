@@ -7,7 +7,7 @@ ms.reviewer: ajagadish
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
-ms.date: 05/08/2024
+ms.date: 05/12/2024
 ---
 # Query data as it existed in the past
 
@@ -27,8 +27,6 @@ Warehouse in Microsoft Fabric offers the capability to query historical data as 
 
 Time travel in a data warehouse is a low-cost and efficient capability to quickly query prior versions of data.
 
-User tables are stored in [OneLake](../onelake/onelake-overview.md) as versioned parquet files that are [immutable storage in a write once, read many (WORM) state](/azure/storage/blobs/immutable-storage-overview). This facilitates the reliable preservation the past versions of data that can be queried.
-
 Microsoft Fabric currently allows retrieval of past states of data in the following ways:
 
 - [At the statement level with FOR TIMESTAMP AS OF](#time-travel-with-the-for-timestamp-as-of-t-sql-command)
@@ -36,9 +34,9 @@ Microsoft Fabric currently allows retrieval of past states of data in the follow
 
 ### Time travel with the FOR TIMESTAMP AS OF T-SQL command
 
-Within a Warehouse item, tables can be queried using the [OPTION FOR TIMESTAMP AS OF](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#for-timestamp) T-SQL syntax to retrieve data at past points in time. This affects the entire statement, including all joined warehouse tables.
+Within a Warehouse item, tables can be queried using the [OPTION FOR TIMESTAMP AS OF](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#for-timestamp) T-SQL syntax to retrieve data at past points in time. The `FOR TIMESTAMP AS OF` clause affects the entire statement, including all joined warehouse tables.
 
-The results obtained from the time travel queries are inherently read-only. Write operations such as [INSERT](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true), [UPDATE](/sql/t-sql/queries/update-transact-sql?view=fabric&preserve-view=true) and [DELETE](/sql/t-sql/statements/delete-transact-sql?view=fabric&preserve-view=true) cannot occur while utilizing the [FOR TIMESTAMP AS OF query hint](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true).
+The results obtained from the time travel queries are inherently read-only. Write operations such as [INSERT](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true), [UPDATE](/sql/t-sql/queries/update-transact-sql?view=fabric&preserve-view=true), and [DELETE](/sql/t-sql/statements/delete-transact-sql?view=fabric&preserve-view=true) cannot occur while utilizing the [FOR TIMESTAMP AS OF query hint](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true).
 
 Use the [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) to specify [the FOR TIMESTAMP AS OF query hint](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true). Queries return data exactly as it existed at the timestamp, specified as `YYYY-MM-DDTHH:MM:SS[.fff]`. For example:
 
@@ -59,7 +57,7 @@ For samples, see [How to: Query using time travel](how-to-query-using-time-trave
 In Microsoft Fabric, a warehouse automatically preserves and maintains various versions of the data, up to a **default retention period of seven calendar days**. This allows the ability to query tables as of any prior point-in-time. All inserts, updates, and deletes made to the data warehouse are retained. The retention automatically begins from the moment the warehouse is created. Expired files are automatically deleted after the retention threshold.
 
 - Currently, a `SELECT` statement with the `FOR TIMESTAMP AS OF` query hint returns the *latest* version of table schema.
-- Any records that are deleted in a table are available to be queried as they existed prior to deletion, if the deletion is within the retention period.
+- Any records that are deleted in a table are available to be queried as they existed before deletion, if the deletion is within the retention period.
 - Any modifications made to the schema of a table, including but not limited to adding or removing columns from the table, cannot be queried before the schema change. Similarly, dropping and recreating a table with the same data removes its history.
 
 ## Time travel scenarios
@@ -90,7 +88,7 @@ Time travel streamlines auditing and compliance procedures by empowering auditor
 
 #### Machine learning models
 
-Time travel capabilities helps in reproducing the results of machine learning models by facilitating analysis of historical data and simulating real-world scenarios. This enhances the overall reliability of the models so that accurate data driven decisions can be made.
+Time travel capabilities help in reproducing the results of machine learning models by facilitating analysis of historical data and simulating real-world scenarios. This enhances the overall reliability of the models so that accurate data driven decisions can be made.
 
 #### Design considerations
 
@@ -108,11 +106,12 @@ Any user who has **Admin**, **Member**, **Contributor**, or **Viewer** [workspac
 
 - Supply at most three digits of fractional seconds in the timestamp. If you supply more precision, you receive the error message `An error occurred during timestamp conversion. Please provide a timestamp in the format yyyy-MM-ddTHH:mm:ss[.fff]. Msg 22440, Level 16, State 1, Code line 29`.
 - Currently, only the Coordinated Universal Time (UTC) time zone is used for time travel.
-- Currently, seven days is the data retention for time travel queries.
-- `FOR TIMESTAMP AS OF` values in the `OPTION` clause must be deterministic, so cannot be parameterized.
+- Currently, the data retention for time travel queries is seven days.
+- `FOR TIMESTAMP AS OF` values in the `OPTION` clause must be deterministic. For an example of parameterization, see [Time travel in a stored procedure](how-to-query-using-time-travel.md#time-travel-in-a-stored-procedure).
 - Time travel is not supported for the SQL analytics endpoint of the Lakehouse.
-- The `OPTION FOR TIMESTAMP AS OF` syntax can only be used in queries which begin with `SELECT` statement. Queries such as `INSERT INTO SELECT` and `CREATE TABLE AS SELECT` cannot be used along with the `OPTION FOR TIMESTAMP AS OF`. Consider instead the ability to [Clone a warehouse table](clone-table.md) at a point in time.
+- The `OPTION FOR TIMESTAMP AS OF` syntax can only be used in queries that begin with `SELECT` statement. Queries such as `INSERT INTO SELECT` and `CREATE TABLE AS SELECT` cannot be used along with the `OPTION FOR TIMESTAMP AS OF`. Consider instead the ability to [Clone a warehouse table](clone-table.md) at a point in time.
 - View definitions cannot contain the `OPTION FOR TIMESTAMP AS OF` syntax. The view can be queried with the `SELECT .. FROM <view> ... OPTION FOR TIMESTAMP AS OF` syntax. However, you cannot query past data from tables in a view from before the view was created.
+- `FOR TIMESTAMP AS OF` syntax for time travel is not currently supported in Power BI Desktop Direct query mode or the **Explore this data** option.
 
 ## Next step
 

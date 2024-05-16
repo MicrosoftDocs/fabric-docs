@@ -85,6 +85,8 @@ items:
           href: runtime-1-2.md
         - name: Runtime 1.1 (Spark 3.3)
           href: runtime-1-1.md
+    - name: Native Execution Engine
+      href: native-execution-engine-overview.md
     - name: High Concurrency mode
       href: high-concurrency-overview.md
     - name: Autotune Spark configuration
@@ -127,7 +129,7 @@ items:
     items:
     - name: Apache Spark monitoring overview
       href: spark-monitoring-overview.md
-    - name: Run Series Analysis Overview
+    - name: Run series analysis overview
       href: run-series-analyisis-overview.md
     - name: Apache Spark Advisor
       href: spark-advisor-introduction.md
@@ -141,6 +143,8 @@ items:
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
+    - name: Monitor run series
+      href: apache-spark-monitor-run-series.md
     - name: Navigate the Apache Spark history server
       href: apache-spark-history-server.md  
     - name: Monitor Spark capacity consumption
@@ -221,7 +225,7 @@ items:
       href: migrate-synapse-data-pipelines.md
     - name: Migrate Hive Metastore metadata
       href: migrate-synapse-hms-metadata.md
-- name: GraphQL
+- name: API for GraphQL
   items:
    - name: What is API for GraphQL?
      href: api-graphql-overview.md

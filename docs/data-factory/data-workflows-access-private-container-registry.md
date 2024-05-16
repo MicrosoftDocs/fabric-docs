@@ -69,4 +69,4 @@ acr_kubernetes = KubernetesPodOperator(
 
 ## Related Content
 
-[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)
+[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)

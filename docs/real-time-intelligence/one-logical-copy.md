@@ -8,14 +8,11 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/21/2024
+ms.date: 05/15/2024
 ---
-
 # One logical copy
 
 You can create a one logical copy of KQL Database data by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 Delta Lake is a unified data lake table format that achieves seamless data access across all compute engines in Microsoft Fabric. For more information on Delta Lake, see [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake).
 
@@ -92,11 +89,15 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
 
 ## Access mirroring policy
 
-Your OneLake copy includes a `policy mirroring` table where you can define the mirroring policies. You can use this table to monitor your data latency and partition your files.
+By default, when **OneLake availability** is turned on, a mirroring policy is set as `IsEnabled=true`. You can use the policy to monitor data latency and alter it to partition your files.
 
-## Check latency
+> [!NOTE]
+> If you deactivate **OneLake availability** the mirroring policy will be set to `false` rather than revert to a `null` state.
 
-Your KQL database is checked for new data to copy to the Delta Lake files every few hours. You can monitor how long ago new data was added by checking your data latency.
+### Check latency
+
+Eventhouse can delay write operations for up to a few hours if there isn’t sufficient data to create optimal Parquet files. This ensures that the files are not only efficient in size but also adhere to the best practices recommended for Delta.
+You can monitor how long ago new data was added in the lake by checking your data latency.
 
 To check the current latency use the [.show table details command](/azure/data-explorer/kusto/management/show-table-details-command?context=/fabric/context/context-rta&pivots=fabric) to display `policy mirroring` for all tables (`*`) and the `mirroring-status` of the `operations` table.
 

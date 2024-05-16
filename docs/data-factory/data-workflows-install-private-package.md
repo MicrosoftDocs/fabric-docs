@@ -73,4 +73,4 @@ For example, if your private package is located at `/dags/test/private.whl` in a
 
 ## Related Content
 
-[Quickstart: Create a Data workflows](../data-factory/create-data-workflows.md)
+[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)
