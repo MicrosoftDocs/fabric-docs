@@ -10,7 +10,7 @@ ms.custom: known-issue-710
 
 # Known issue - OneLake audit events don't show up in Microsoft 365 admin center
 
-The basic audit events for OneLake aren't showing up in the Microsoft 365 admin center from April 21, 2024 through May 5, 2024.
+The audit events for OneLake aren't showing up in the Microsoft 365 admin center from April 21, 2024 through May 5, 2024.
 
 **Status:** Fixed: May 13, 2024
 
@@ -22,7 +22,7 @@ The Microsoft 365 admin center shows no rows for OneLake events between April 21
 
 ## Solutions and workarounds
 
-Starting May 5, 2024, you can see basic audit events for OneLake.
+Starting May 5, 2024, you can see audit events for OneLake.
 
 ## Next steps
 
