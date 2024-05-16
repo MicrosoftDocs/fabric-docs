@@ -83,7 +83,7 @@ After integrating jobs into your items in the backend, users can start running j
 * Entry Points:
    * Context menu -> Schedule
    
-        :::image type="content" source="./media/monitoring-hub/fabric-scheduler-menu.png" alt-text="Screenshot showing the Schedule option in the Fabric scheduler menu.":::
+    :::image type="content" source="./media/monitoring-hub/fabric-scheduler-menu.png" alt-text="Screenshot showing the Schedule option in the Fabric scheduler menu.":::
 
     *  Using `extensionClient.artifactSettings.open`, where the selected settings ID is 'Schedule'.
 
