@@ -18,7 +18,7 @@ The recommended flow for item creation in Fabric UI is
 1. Create an "empty" item.
 1. Edit and save the new item.
 
-This process can be divided into four phases, which are described in details in the following sections:
+This process can be divided into the following phases:
 
 1. [Create an empty item](#create-an-empty-item)
 1. [Load the item](#load-the-item)
