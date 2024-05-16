@@ -129,9 +129,9 @@ To set up the boilerplate sample project on your local machine, follow these ste
 
 1. Clone the Boilerplate: `git clone https://github.com/microsoft/Microsoft-Fabric-developer-sample.git`
 1. Open the solution in **Visual Studio 2022**.
-1. Set up an app registration by following instructions on the Authentication [guide](../Authentication/Setup.md). Ensure that both your Frontend and Backend projects have the necessary setup described in the guide. Microsoft Entra is employed for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
+1. Set up an app registration by following instructions on the Authentication [guide](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Authentication/Setup.md). Ensure that both your Frontend and Backend projects have the necessary setup described in the guide. Microsoft Entra is employed for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
   
-1. Update the One Lake DFS Base URL: Depending on your Fabric environment, you can update the `OneLakeDFSBaseURL` within the **src\Constants\ folder. The default is `onelake.dfs.fabric.microsoft.com` but this can be updated to reflect the environment you are on. More information on the DFS paths can be found [here](https://learn.microsoft.com/en-us/fabric/onelake/onelake-access-api)
+1. Update the One Lake DFS Base URL: Depending on your Fabric environment, you can update the `OneLakeDFSBaseURL` within the **src\Constants** folder. The default is `onelake.dfs.fabric.microsoft.com` but this can be updated to reflect the environment you are on. More information on the DFS paths can be found [in the One Lake documentation](../onelake/onelake-access-api.md)
 
 1. Setup Workload Configuration
 
@@ -185,7 +185,7 @@ To set up the boilerplate sample project on your local machine, follow these ste
 
 ### Code generation
 
-We use the workload Boilerplate C# ASP.NET Core sample to explain how to build a workload with REST APIs. Starts with generating server stubs and contract classes based on the Workload API [Swagger specification](./src/Contracts/FabricAPI/Workload/swagger.json). You can generate them using any of several Swagger code generation tools. Our Boilerplate sample uses [NSwag](https://github.com/RicoSuter/NSwag). The sample contains GenerateServerStub.cmd command line script, which wraps NSwag code generator. The script takes a single parameter, which is a full path to NSwag installation directory. It also expects to find the Swagger definition file (*swagger.json*) and configuration file (*nswag.json*) next to it.
+We use the workload Boilerplate C# ASP.NET Core sample to explain how to build a workload with REST APIs. Starts with generating server stubs and contract classes based on the Workload API [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json). You can generate them using any of several Swagger code generation tools. Our Boilerplate sample uses [NSwag](https://github.com/RicoSuter/NSwag). The sample contains GenerateServerStub.cmd command line script, which wraps NSwag code generator. The script takes a single parameter, which is a full path to NSwag installation directory. It also expects to find the Swagger definition file (*swagger.json*) and configuration file (*nswag.json*) next to it.
 
 Executing this script produces a C# file *WorkloadAPI_Generated.cs*. The contents of this file can be logically divided into three parts, as follows.
 
@@ -439,15 +439,15 @@ The debugger pause execution at the specified breakpoints, enabling you to exami
 
 If you try to run the Sample to make changes on the backend be sure you are in a named workspace, and not in the default *My Workspace*. Otherwise, you might get this error:
 
-    ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/62876278/80ada389-0070-45ed-be6f-f500d08939c5)
+:::image type="content" source="./media/extensibility-backend/copy-item.png" alt-text="Screenshot of UI for naming a sample workload item.":::
 
 1. Switch to a named workspace and leave the default - My workspace. For example, the image is trying to access the testbeapi:
 
-   ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/62876278/4b3b5965-facc-403d-9ef1-3d0bc17d4af3)
+    :::image type="content" source="./media/extensibility-backend/sample-workload.png" alt-text="Screenshot of UI for creating sample workload.":::
 
-1. From the correct workspace, load the sample workload and proceed with the tests: 
+1. From the correct workspace, load the sample workload and proceed with the tests:
 
-    ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/62876278/eb27a0a4-c52a-4e89-88ab-4972c6e95fba)
+    :::image type="content" source="./media/extensibility-backend/create-sample-workload.png" alt-text="Screenshot of UI for creating sample workload item.":::
 
 ## Contribute
 
@@ -461,5 +461,5 @@ We welcome contributions to this project. If you find any issues or want to add 
 
 ## Related content
 
-* [Fabric extensibility overview](dev-kit-overview.md)
-* [Fabric extensibility frontend](dev-kit-frontend.md)
+* [Workload development kit overview](dev-kit-overview.md)
+* [Workload development kit frontend](extensibility-frontend.md)
