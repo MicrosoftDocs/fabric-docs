@@ -38,7 +38,7 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 
 :::image type="content" source="media/fabric-home/fabric-home-numbered.png" alt-text="Screenshot of the left navigation menu with Knowledge center selected":::
 
-1. The left navigation pane (nav pane) for your product experience links you to different views of your items and to creator resources. You can remove items from the left nav to suit your workflow.
+1. The left navigation pane (nav pane) for your product experience links you to different views of your items and to creator resources. You can [remove icons from the left nav](#remove-icons-from-the-nav-pane) to suit your workflow.
 1. The selector for switching product experiences.
 1. The top menu bar for orienting yourself in [!INCLUDE [product-name](../includes/product-name.md)], finding items, help, and sending Microsoft feedback. The [**Account manager**](#find-your-account-and-license-information) control is a critical icon for looking up your account information and managing your Fabric trial. 
 1. Options for creating new items.  
@@ -73,7 +73,7 @@ You can delete icons from the nav pane for product you don't think you need. You
 
     :::image type="content" source="media/fabric-home/unpin-icon.png" alt-text="Screenshot showing the Unpin option to remove an item from the left nav.":::
 
-### Add icons back to the nave pane
+### Add icons back to the nav pane
 
 You can add an icon back if you decide you need it.
 
