@@ -40,9 +40,6 @@ Note that for each dev mode, there is a different package that is created when b
 #### Local development mode (devmode)
 The workload backend (BE) operates on the developer's machine. Workload API calls are transmitted via Azure Relay, with the workload's side of the Azure Relay channel managed by a specialized command-line utility, DevGateway. Workload Control API calls are sent directly from the workload to Fabric, bypassing the Azure Relay channel. The DevGateway utility also oversees the registration of the local development instance of the workload with Fabric, within a specific capacity context. This ensures the workload's availability across all workspaces assigned to that capacity. Upon termination of the DevGateway utility, the registration of the workload instance is automatically rescinded. For more information see [Fabric extensibility backend boilerplate](./extensibility-backend.md)
 
-##### DevMode schema
-![Placeholder for DevMode Schema Diagram](#)
-
 ##### DevMode BE schema
 ![Placeholder for DevMode BE Schema Diagram](#)
 
@@ -50,7 +47,7 @@ The workload backend (BE) operates on the developer's machine. Workload API call
 The workload backend (BE) operates within the partner's services. Workload API calls are made directly to the HTTPS endpoint, as specified in the workload manifest. In this scenario, the DevGateway utility is not required. The registration of the workload with Fabric is accomplished by uploading the workload nuget package to Fabric and subsequently activating the workload for the tenant. For more information see [Manage a workload in Fabric](./manage-workload.md)
 
 ##### CloudMode schema
-![Placeholder for CloudMode Schema Diagram](#)
+![Placeholder for CloudMode BE Schema Diagram](#)
 
 #### Lakehouse Integration
 Our architecture is designed to integrate flawlessly with Lakehouse, enabling operations such as saving, reading, and fetching data. This interaction is facilitated through Azure Relay and the Fabric SDK, ensuring secure and authenticated communication.
