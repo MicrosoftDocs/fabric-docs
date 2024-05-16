@@ -20,7 +20,7 @@ It's recommended that you become familiar with the [Microsoft identity platform]
 
 ## Flows
 
-:::image type="content" source="./media/authentication-overview/authentication-diagram.png" alt-text="Screenshot showing the extensibility authentication flow.":::
+:::image type="content" source="./media/authentication-concept/authentication-diagram.png" alt-text="Screenshot showing the extensibility authentication flow.":::
 
 ### 1. From workload FE to workload BE
 
@@ -30,37 +30,43 @@ For information on how to acquire a token in the workload FE, read [Authenticati
 
 ### 2. From Fabric BE to workload BE
 
-An example of such communication is Create workload item. This communication is done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see [Backend authentication and authorization overview](./backend-authentication.md) to learn more about this token).
+An example of such communication is Create workload item. This communication is done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see the [Backend authentication and authorization overview](./backend-authentication.md) to learn more about this token).
 
 For this communication to work, the user using this communication must give consent to the Entra application.
 
 ### 3. From workload BE to Fabric BE
 
-This is done with a SubjectAndApp for workload control APIs (for example, ResolveItemPermissions), or with a Subject token (for other Fabric APIs).
+This is done with a SubjectAndApp token for workload control APIs (for example, ResolveItemPermissions), or with a Subject token (for other Fabric APIs).
 
 ### 4. From workload BE to external services
 
-An example of such communication is writing to a lakehouse file. This is done with Subject token or an App token, depending on the API.
+An example of such communication is writing to a Lakehouse file. This is done with Subject token or an App token, depending on the API.
 
 If you plan on communicating with services using a Subject token, make sure you're familiar with [On behalf of flows](/entra/identity-platform/v2-oauth2-on-behalf-of-flow).
 
 Refer to [Authentication tutorial](./authentication-tutorial.md) to setup your environment to work with authentication.
 
-# How to work with tokens
-1. Your frontend should ask for a token `extensionClient.auth.acquireAccessToken({});`, you can use this token to authenticate with your backend.
-2. If you wish to access some resource, you should send your token to the BE and try to exchange it using OBO flow for that resourcce, you can also use the token recieved from control APIs (CRUD/Jobs) and try to exchange it for that resource.
+## How to work with tokens
+
+1. Your frontend should ask for a token `extensionClient.auth.acquireAccessToken({});`. You can use this token to authenticate with your backend.
+
+2. If you wish to access some resource, you should send your token to the BE and try to exchange it using an OBO flow for that resource. You can also use the token recieved from control APIs (CRUD/Jobs) and try to exchange it for that resource.
+
 3. If the exchange fails for consent reasons, you should notify your FE and call `extensionClient.auth.acquireAccessToken({additionalScopesToConsent:[resource]});` and try the proccess again.
-4. If the exchange fails for MFA reasons, you should notify your FE along with the claim recieved when tying to exchange and call `extensionClient.auth.acquireAccessToken({claimsForConditionalAccessPolicy:claims});`
+
+4. If the exchange fails for MFA reasons, you should notify your FE along with the claim received when tying to exchange and call `extensionClient.auth.acquireAccessToken({claimsForConditionalAccessPolicy:claims});`.
    
-   See below example:  
-   https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow#error-response-example
+   For examples, see: [Error response example](/entra/identity-platform/v2-oauth2-on-behalf-of-flow#error-response-example).
 
-**Note**: The token you recieve when acquiring a token in the frontend is not related to additionalScopesToConsent you pass, meaning once the user consents you can use any token you recieved from `extensionClient.auth.acquireAccessToken` for your OBO flow.
+> [!NOTE]
+> The token you recieve when acquiring a token in the frontend is not related to additionalScopesToConsent you pass. This means that once the user consents, you can use any token you received from `extensionClient.auth.acquireAccessToken` for your OBO flow.
 
-# Authentication Frontend APIs
-Fabric frontend offers a javascript API for Fabric workloads to acquire a token for their application in Microsoft Entra Id - before working with authentication JS API make sure you go over the [Setup](./Setup.md) documentation.
+## Authentication frontend APIs
 
-## API
+The Fabric frontend offers a JavaScript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. Before working with the authentication JS API, review [Authentication JavaScript API](./authentication-javascript-api.md).
+
+### API
+
 `acquireAccessToken(params: AcquireAccessTokenParams): Promise<AccessToken>;`  
 `export interface AcquireAccessTokenParams {`  
 `    additionalScopesToConsent?: string[];`  
@@ -68,10 +74,13 @@ Fabric frontend offers a javascript API for Fabric workloads to acquire a token 
 `}`
 
 The API returns an AccessToken object which contains the token itself and an expiry date for the token.
-To call the API in the Frontend sample - simply create a sample item and scroll down and click on "Navigate to Authentication page", from there you can click on "get access Token" and you will recieve a token back.
-![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/219cf870-56cd-4f94-bc8a-60961bd2df7b)
+
+To call the API in the frontend sample, create a sample item, scroll down, and select **Navigate to Authentication page**. From there, you can click on **Get access Token**, and you'll receive a token back.
+
+:::image type="content" source="./media/authentication-concept/get-access-token.png" alt-text="Screenshot of getting an access token.":::
 
 # Consents  
+
 To understand why consents are required, please go over [User and admin consent in Microsoft Entra ID
 ](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/user-admin-consent-overview).  
 **Please note that consents are required for CRUD/Jobs to work and to acquire tokens across tenants**.
