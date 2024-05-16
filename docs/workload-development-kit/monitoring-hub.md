@@ -28,7 +28,7 @@ To enable job support, the item must specify the types of jobs it supports. Add 
 | *JobStatusPullingInterval* | If specified, Fabric pulls the job status and properties from the workload at the specified interval in minutes. | This value should be greater than 0 and less than 6. If not specified, the time interval changes with the job runs.
 |*ArtifactJobTypes*| A list of job types with the specified properties. | - *Name*: The name of the job type, which is fully customizable by the ISV. <br> - *EnabledForUser*: true/false to enable/disable the job type. <br> - *MaxConsecutiveFailuresCount* (optional): Disable scheduled jobs if there are N consecutive failed scheduled jobs.
 
-For an example of how the `JobScheduler` property is defined in our sample item definition, see to [WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/files/WorkloadManifest.xml).
+<!-- For an example of how the `JobScheduler` property is defined in our sample item definition, see [WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/files/WorkloadManifest.xml). -->
 
 ### Step 2: Implement `IFabricItemsJobsHandler`
 
@@ -65,7 +65,7 @@ public enum FabricItemJobStatus
 
 Once your workload implements `IFabricItemsJobsHandler`, register this class in program.cs, for example: `services.AddSingleton<IFabricItemsJobsHandler, FabricItemsJobsHandler>();`.
 
-For an example of how to implement this class  refer to [FabricItemsJobsHandler.cs](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Backend/src/FabricItemsJobsHandler.cs).
+<!--For an example of how to implement this class, see [FabricItemsJobsHandler.cs](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Backend/src/FabricItemsJobsHandler.cs).-->
 
 ## Frontend
 
@@ -119,7 +119,7 @@ Add a new 'schedule' entry to the artifact settings property in the frontend man
 * `artifactJobType`: Artifact job type defined in artifact job definition XML file.
 * `refreshType`: Specifies the display of the refresh button. There are three types: use "Refresh" and "Run" to enable refresh button and display name, set "None" to disable the refresh button.
 
-For an example of these frontend manifest properties, refer to [localWorkloadManifest.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/Manifests/localWorkloadManifest.json).
+<!--For an example of these frontend manifest properties, refer to [localWorkloadManifest.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/Manifests/localWorkloadManifest.json).-->
 
 #### Jobs JavaScript APIs
 
@@ -151,7 +151,7 @@ To add your artifact to the filter pane, define a new property in the artifact F
 :::image type="content" source="./media/monitoring-hub/monitoring-hub-quick-actions.png" alt-text="Screenshot showing jobs quick actions buttons in the monitoring hub.":::
 
 There's a set of operations that user can execute against a job, such as cancel, retry, and get details.
- 
+
 The workload team decides which one they want to enable by setting the `artifactJobConfig` property in the artifact Frontend manifest. If not set, the icons won't be visible.
 
 For example, the config we added to our sample artifact that supports all job actions is shown below.
@@ -187,9 +187,9 @@ When the workload team registers the action for detailed information, Fabric exp
 
 Currently, key value pairs in plain text or hyperlink is supported.
 
-* For an example of this frontend manifest properties, see [localWorkloadManifest.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/Manifests/localWorkloadManifest.json).
+<!--* For an example of this frontend manifest properties, see [localWorkloadManifest.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/Manifests/localWorkloadManifest.json).
 
-* For an example of handling the job actions, see [index.worker.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/src/index.worker.ts) and search for actions starting with 'artifact.job'.
+* For an example of handling the job actions, see [index.worker.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/src/index.worker.ts) and search for actions starting with 'artifact.job'.-->
 
 ### Recent runs
 
@@ -231,4 +231,8 @@ As part of our UI workload sample, we added a section in the artifact ribbon ded
 
 :::image type="content" source="./media/monitoring-hub/artifact-tab.png" alt-text="Screenshot showing the artifact tab in the Fabric UI.":::
 
-For an example of how this ribbon was implemented, see [ArtifactTabToolbar.tsx](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/src/components/SampleWorkloadRibbon/ArtifactTabToolbar.tsx).
+<!--For an example of how this ribbon was implemented, see [ArtifactTabToolbar.tsx](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/src/components/SampleWorkloadRibbon/ArtifactTabToolbar.tsx).-->
+
+## Related links
+
+* [Use the Monitoring hub](../admin/monitoring-hub.md)
