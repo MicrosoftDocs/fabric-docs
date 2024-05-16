@@ -29,7 +29,7 @@ Follow these steps to publish your workload to the Fabric Workload Hub.
 
 1. Using your Partner Center account, [create a SaaS offer](/partner-center/marketplace/create-new-saas-offer) in the Azure Marketplace. If you already have an existing SaaS offer in the Azure Marketplace, ensure that the SaaS offer metadata in Partner Center and the workload package metadata you created are identical.
 
-    Your SaaS offer must have an [Azure Marketplace](https://azuremarketplace.microsoft.com/home) storefront entry. you can have both [AppSource](https://appsource.microsoft.com/) and Azure Marketplace offers. However, the offer setup combination of *Yes, I would like to sell through Microsoft and have Microsoft host transactions on my behalf* and *Yes, I would like Microsoft to manage customer licenses on my behalf* creates a SaaS offer in AppSource only, and isn't supported.
+    Your SaaS offer must have an [Azure Marketplace](https://azuremarketplace.microsoft.com/home) storefront entry. You can have both [AppSource](https://appsource.microsoft.com/) and Azure Marketplace offers. However, the offer setup combination of *Yes, I would like to sell through Microsoft and have Microsoft host transactions on my behalf* and *Yes, I would like Microsoft to manage customer licenses on my behalf* creates a SaaS offer in AppSource only, and isn't supported.
 
 2. Review your SaaS offer's metadata. Your metadata should match across the Fabric workload package manifest, the SaaS offer setup in Partner Center, and the SaaS listing in Azure Marketplace. Metadata includes but isn't limited to:
     * Icons
@@ -40,9 +40,9 @@ Follow these steps to publish your workload to the Fabric Workload Hub.
 
 3. In the `license` field under the `supportLink` section add the public SaaS link offer linked to your workload. The SaaS offer must be live in Azure Marketplace with at least one public plan. The workload package manifest must accurately define the public SaaS URL linked to the workload manifest.
 
-4. Reach out to our Workload Fabric Team to opt into the public preview. Send an email to `fabric_wdt_submission@service.microsoft.com` and include the workload package in your email. The publisher of the SaaS offer should be the same publisher who sends the email, or the email domain of the engineering contact in the SaaS offer should match the email domain of the publisher reaching out to us with the workload package.
+4. Reach out to our Workload Fabric Team to opt into the public preview. Send an email to fabric_wdt_submission@service.microsoft.com and include the workload package in your email. The publisher of the SaaS offer should be the same publisher who sends the email, or the email domain of the engineering contact in the SaaS offer should match the email domain of the publisher reaching out to us with the workload package.
 
-5. After your package passed validation you receive an email from the team, and you'll be able to preview your workload with specific tenants or publicly publish it to all tenants through the *workloads* page in the admin portal. The *workloads* page is only available if you passed validation.
+5. After your package passes validation you receive an email from the team, and you'll be able to preview your workload with specific tenants or publicly publish it to all tenants through the *workloads* page in the admin portal. The *workloads* page is only available if you passed validation.
 
 6. Update the metadata that needs to be duplicated, such as your workload description, title, and screenshots. Resubmit your SaaS offer and update the metadata in both the workload package manifest and the SaaS offer metadata in Partner Center. Changes in metadata available only in the workload package manifest require only a resubmission of a new workload package.
 
