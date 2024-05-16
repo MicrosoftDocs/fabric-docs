@@ -16,7 +16,7 @@ The native execution engine is a groundbreaking enhancement for Apache Spark job
 The native execution engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to four times faster performance compared to traditional OSS (open source software) Spark, as validated by the TPC-DS 1TB benchmark. The engine is adept at managing a wide array of data processing scenarios, ranging from routine data ingestion, batch jobs, and ETL (extract, transform, load) tasks, to complex data science analytics and responsive interactive queries. Users benefit from accelerated processing times, heightened throughput, and optimized resource utilization.
 
 > [!NOTE]
-> The native execution engine is currently in preview. For more information, see the current [limitations](#limitations).
+> The native execution engine is currently in public preview. For more information, see the current [limitations](#limitations). **At this stage of the preview, there is no additional cost associated with using it.**
 
 ## When to use the native execution engine
 
