@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/25/2023
+ms.date: 05/15/2024
 ---
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
@@ -38,7 +38,7 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 
 :::image type="content" source="media/fabric-home/fabric-home-numbered.png" alt-text="Screenshot of the left navigation menu with Knowledge center selected":::
 
-1. The left navigation pane (nav pane) for your product experience links you to different views of your items and to creator resources. 
+1. The left navigation pane (nav pane) for your product experience links you to different views of your items and to creator resources. You can remove items from the left nav to suit your workflow.
 1. The selector for switching product experiences.
 1. The top menu bar for orienting yourself in [!INCLUDE [product-name](../includes/product-name.md)], finding items, help, and sending Microsoft feedback. The [**Account manager**](#find-your-account-and-license-information) control is a critical icon for looking up your account information and managing your Fabric trial. 
 1. Options for creating new items.  
@@ -64,6 +64,22 @@ In the bottom section of the nav pane is where you find and open your workspaces
     - Whenever you create a new item, it's added to the open workspace.  
 
 The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product experience nav pane includes **Home**, **Browse**, **OneLake data hub**, **Create**, and  **Workspaces**.
+
+### Remove icons from the nav pane
+
+You can delete icons from the nav pane for product you don't think you need. You can always add them back later. 
+
+- To remove an icon, right-click the icon and select **Unpin**.
+
+    :::image type="content" source="media/fabric-home/unpin-icon.png" alt-text="Screenshot showing the Unpin option to remove an item from the left nav.":::
+
+### Add icons back to the nave pane
+
+You can add an icon back if you decide you need it.
+
+- Select **More ...**, then select the icon you want to return to the left nav.
+
+    :::image type="content" source="media/fabric-home/more-menu-add-icon-back.png" alt-text="Screenshot showing how to add an item back to the left nav.":::
 
 ### Find and open workspaces
 
