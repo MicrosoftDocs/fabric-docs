@@ -8,7 +8,6 @@ ms.topic: how-to
 ms.custom:
 ms.date: 02/06/2024
 ---
-
 # Onboard to the Fabric monitoring hub
 
 The monitoring hub is the centralized monitoring center designed for Fabric users to track item background jobs. For more information about the monitoring hub, see [Monitoring hub](../admin/monitoring-hub.md).
@@ -31,7 +30,7 @@ To enable job support, the item must specify the types of jobs it supports. Add 
 
 For an example of how the `JobScheduler` property is defined in our sample item definition, see to [WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/files/WorkloadManifest.xml).
 
-### Step 2: Implement 'IFabricItemsJobsHandler'
+### Step 2: Implement `IFabricItemsJobsHandler`
 
 Our SDK provides an abstract class that your workloads need to implement in order to support jobs. Currently, this class has three methods you need to implement:
 
@@ -64,7 +63,7 @@ public enum FabricItemJobStatus
 }
 ```
 
-Once your workload implements IFabricItemsJobsHandler, register this class in program.cs, for example, `services.AddSingleton<IFabricItemsJobsHandler, FabricItemsJobsHandler>();`.
+Once your workload implements `IFabricItemsJobsHandler`, register this class in program.cs, for example: `services.AddSingleton<IFabricItemsJobsHandler, FabricItemsJobsHandler>();`.
 
 For an example of how to implement this class  refer to [FabricItemsJobsHandler.cs](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Backend/src/FabricItemsJobsHandler.cs).
 
@@ -72,11 +71,10 @@ For an example of how to implement this class  refer to [FabricItemsJobsHandler.
 
 ### Run a job in the Fabric UI
 
-After integrating jobs into your items in the backend, users can start running jobs. Currently, there are two ways to run jobs in Fabric:
+After integrating jobs into your items in the backend, users can start running jobs. There are two ways to run jobs in Fabric:
 
 * **Unattended Scheduled Job:** Defined by the user to run at regular intervals using shared Fabric scheduler experience. 
-
-* **On-demand using Workload UI with Extension Client SDK:** 
+* **On-demand using Workload UI with Extension Client SDK:**
 
 #### Fabric scheduler experience from the UI
 
@@ -127,12 +125,12 @@ For an example of these frontend manifest properties, refer to [localWorkloadMan
 
 In addition to unattended scheduled jobs, a workload can run a job on demand or even start a scheduled job on demand. We provide a set of APIs as part of our extension client:
 
-* **Scheduled Jobs APIs:**
+* **Scheduled jobs APIs:**
     * `getArtifactScheduledJobs(objectId: string): Promise<ArtifactSchedule>`
     * `createArtifactScheduledJobs(createArtifactScheduledJobs: CreateArtifactScheduleParams): Promise<ArtifactSchedule>`
     * `updateArtifactScheduledJobs(updateArtifactScheduleParams: UpdateArtifactScheduleParams): Promise<ArtifactSchedule>`
 
-* **Specific Job Instance APIs:**
+* **Specific job instance APIs:**
     * `runArtifactJob(jobParams: RunArtifactJobParams): Promise<ArtifactJobInstance>`
     * `cancelArtifactJob(jobParams: CancelArtifactJobParams): Promise<CancelArtifactJobResult>`
     * `getArtifactJobHistory(getHistoryParams: GetArtifactJobHistoryParams): Promise<ArtifactJobHistory>`
@@ -142,11 +140,11 @@ In addition to unattended scheduled jobs, a workload can run a job on demand or 
 
 ### Integration with the monitoring hub
 
-Once the data is ready, the artifact jobs automatically show up in the monitoring hub. The next step is to add your artifact type to the filter pane and config and implement available actions that a user can take against the jobs.
+Once the data is ready, the artifact jobs automatically show up in the monitoring hub. The next step is to add your artifact type to the filter pane and configure and implement available actions that a user can take against the jobs.
 
 #### Enable your artifact in the monitoring hub filter pane
 
-To add your artifact to the filter pane, you just need to define a new property in the artifact Frontend manifest: '"supportedInMonitoringHub": true'.
+To add your artifact to the filter pane, define a new property in the artifact Frontend manifest: '"supportedInMonitoringHub": true'.
 
 #### Integrate with job quick actions
 
@@ -189,9 +187,9 @@ When the workload team registers the action for detailed information, Fabric exp
 
 Currently, key value pairs in plain text or hyperlink is supported.
 
-For an example of this frontend manifest properties, see [localWorkloadManifest.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/Manifests/localWorkloadManifest.json).
+* For an example of this frontend manifest properties, see [localWorkloadManifest.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/Manifests/localWorkloadManifest.json).
 
-For an example of handling the job actions, see [index.worker.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/src/index.worker.ts) and search for actions starting with 'artifact.job'.
+* For an example of handling the job actions, see [index.worker.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/src/index.worker.ts) and search for actions starting with 'artifact.job'.
 
 ### Recent runs
 
@@ -207,7 +205,7 @@ Entry Points:
 
 **Onboarding**
 
-**Step 1: Add recentRuns Context Menu Item**
+**Step 1: Add `recentRuns` Context Menu Item**
 
 In order to show the recent runs button in the artifact menu, add a new entry into the 'contextMenuItems' property in the artifact frontend manifest, like this:
 
@@ -217,9 +215,9 @@ In order to show the recent runs button in the artifact menu, add a new entry in
 }
 ```
 
-**Step 2: Add artifact recentRun settings**
+**Step 2: Add artifact `recentRun` settings**
 
-Add a new 'recentRun' entry to the artifact settings property in the frontend manifest.
+Add a new `recentRun` entry to the artifact settings property in the frontend manifest.
 
 ```json
 "recentRun": {
@@ -232,7 +230,5 @@ Add a new 'recentRun' entry to the artifact settings property in the frontend ma
 As part of our UI workload sample, we added a section in the artifact ribbon dedicated to jobs.
 
 :::image type="content" source="./media/monitoring-hub/artifact-tab.png" alt-text="Screenshot showing the artifact tab in the Fabric UI.":::
-
-![artiafctTab](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/26460388/751b6b86-7cd3-46ad-97d9-42d83e27d79d)
 
 For an example of how this ribbon was implemented, see [ArtifactTabToolbar.tsx](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/src/components/SampleWorkloadRibbon/ArtifactTabToolbar.tsx).
