@@ -101,18 +101,6 @@ To learn how to add other sources to an eventstream, see the following articles:
 - [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
 - [Sample data](add-source-sample-data.md)
 
-To add a destination to an eventstream, see the following articles:
-
-- [Route events to destinations ](add-manage-eventstream-destinations.md)
-- [Custom app destination](add-destination-custom-app.md)
-- [Derived stream destination](add-destination-derived-stream.md)
-- [KQL Database destination](add-destination-kql-database.md)
-- [Lakehouse destination](add-destination-lakehouse.md)
-- [Reflex destination](add-destination-reflex.md)
-- [Create an eventstream](create-manage-an-eventstream.md)
-
-
-
 ::: zone-end
 
 ::: zone pivot="standard-capabilities"
@@ -170,15 +158,6 @@ To learn how to add other sources to an eventstream, see the following articles:
 - [Azure Event Hubs](add-source-azure-event-hubs.md)
 - [Azure IoT Hub](add-source-azure-iot-hub.md)
 - [Sample data](add-source-sample-data.md)
-
-To add a destination to an eventstream, see the following articles:
-
-- [Route events to destinations ](add-manage-eventstream-destinations.md)
-- [Custom app destination](add-destination-custom-app.md)
-- [KQL Database destination](add-destination-kql-database.md)
-- [Lakehouse destination](add-destination-lakehouse.md)
-- [Reflex destination](add-destination-reflex.md)
-- [Create an eventstream](create-manage-an-eventstream.md)
 
 ::: zone-end
 

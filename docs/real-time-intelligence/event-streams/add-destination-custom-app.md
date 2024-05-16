@@ -91,12 +91,6 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Lakehouse](add-destination-lakehouse.md)
 - [Reflex](add-destination-reflex.md)
 
-To add a destination to the eventstream, see the following articles:     
-
-- [Route events to destinations (preview)](add-manage-eventstream-destinations.md)     
-- [Create an eventstream (preview)](create-manage-an-eventstream.md)      
-
-
 ::: zone-end
 
 ::: zone pivot="standard-capabilities"
@@ -159,10 +153,5 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [KQL Database](add-destination-kql-database.md)   
 - [Lakehouse](add-destination-lakehouse.md)
 - [Reflex](add-destination-reflex.md)
-
-To add a destination to the eventstream, see the following articles:     
-
-- [Route events to destinations (preview)](add-manage-eventstream-destinations.md)     
-- [Create an eventstream (preview)](create-manage-an-eventstream.md)      
 
 ::: zone-end

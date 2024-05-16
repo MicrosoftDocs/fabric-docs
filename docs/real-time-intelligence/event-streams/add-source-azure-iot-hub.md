@@ -52,7 +52,7 @@ After you complete these steps, the Azure IoT hub is available for visualization
 
 ## Related content
 
-Other connectors:
+To learn how to add other sources to an eventstream, see the following articles: 
 
 - [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
 - [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
@@ -132,9 +132,5 @@ To learn how to add other sources to an eventstream, see the following articles:
 - [Azure Event Hubs](add-source-azure-event-hubs.md)
 - [Sample data](add-source-sample-data.md)
 - [Custom app](add-source-custom-app.md)
-
-To add a destination to the eventstream, see the following articles: 
-- [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)
-- [Create and manage an eventstream](./create-manage-an-eventstream.md)
 
 ::: zone-end
