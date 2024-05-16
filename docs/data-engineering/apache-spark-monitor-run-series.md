@@ -67,10 +67,6 @@ If the bar is marked red, an exception has been detected for that run instance. 
 
 :::image type="content" source="media\apache-spark-monitor-run-series\anomalies-panel.png" alt-text="Screenshot showing the anomalies panel.png." lightbox="media\apache-spark-monitor-run-series\anomalies-panel.png" border="true":::
 
-
-    
-
-
 ## Next steps
 
 - [Run Series Analysis Overview](run-series-analyisis-overview.md)

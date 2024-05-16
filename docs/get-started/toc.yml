@@ -89,6 +89,8 @@ items:
       href: copilot-notebooks-chat-magics.md
     - name: Use the Copilot chat panel
       href: copilot-notebooks-chat-pane.md
+  - name: Copilot for Data Warehouse
+    href: ../data-warehouse/copilot.md
   - name: Copilot for Real-Time Intelligence
     href: copilot-real-time-analytics.md
   - name: Copilot in Fabric Consumption

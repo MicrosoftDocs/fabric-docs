@@ -234,7 +234,7 @@ items:
    - name: Schema view and explorer
      href: graphql-schema-view.md
    - name: Frequently asked questions
-     href: graphql-faq.md
+     href: graphql-faq.yml
    - name: Manage relationships
      href: manage-relationships-graphql.md
    - name: Connect applications
