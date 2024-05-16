@@ -28,7 +28,9 @@ To enable job support, the item must specify the types of jobs it supports. Add 
 | *JobStatusPullingInterval* | If specified, Fabric pulls the job status and properties from the workload at the specified interval in minutes. | This value should be greater than 0 and less than 6. If not specified, the time interval changes with the job runs.
 |*ArtifactJobTypes*| A list of job types with the specified properties. | - *Name*: The name of the job type, which is fully customizable by the ISV. <br> - *EnabledForUser*: true/false to enable/disable the job type. <br> - *MaxConsecutiveFailuresCount* (optional): Disable scheduled jobs if there are N consecutive failed scheduled jobs.
 
-<!-- For an example of how the `JobScheduler` property is defined in our sample item definition, see [WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/files/WorkloadManifest.xml). -->
+<!-- For an example of how the `JobScheduler` property is defined in our sample item definition, see the WorkloadManifest.xml that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo, under the *manifest* folder. 
+
+](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/files/WorkloadManifest.xml). -->
 
 ### Step 2: Implement `IFabricItemsJobsHandler`
 
