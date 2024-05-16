@@ -69,7 +69,7 @@ The nav pane is there when you open Home and remains there as you open other are
 
 You can delete icons from the nav pane for products you don't think you need. You can always add them back later.
 
-- To remove an icon, right-click the icon and select **Unpin**.
+To remove an icon, right-click the icon and select **Unpin**.
 
     :::image type="content" source="media/fabric-home/unpin-icon.png" alt-text="Screenshot showing the Unpin option to remove an item from the left nav.":::
 
@@ -77,7 +77,7 @@ You can delete icons from the nav pane for products you don't think you need. Yo
 
 You can add an icon back if you decide you need it.
 
-- Select **More ...**, then select the icon you want to return to the left nav.
+Select **More ...**, then select the icon you want to return to the left nav.
 
     :::image type="content" source="media/fabric-home/more-menu-add-icon-back.png" alt-text="Screenshot showing how to add an item back to the left nav.":::
 
