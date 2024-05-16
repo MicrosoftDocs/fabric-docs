@@ -22,6 +22,12 @@ items:
     href: authentication-concept.md
   - name: Workload environment
     href: workload-environment.md
+  - name: Item lifecycle
+    href: item-lifecycle.md
+  - name: Monitoring hub
+    href: monitoring-hub.md
+  - name: Working with customer data
+    href: fabric-data-plane.md
 - name: Tutorials
   items: 
   - name: Add and manage more workloads
@@ -30,9 +36,9 @@ items:
     href: manage-workload.md
   - name: Authentication
     href: authentication-tutorial.md    
-  - name: Frontend configuration guide
+  - name: Frontend implementation guide
     href: extensibility-frontend.md
-  - name: Workload CRUD configuration guide
+  - name: Backend implementation guide
     href: extensibility-backend.md
   - name: Azure web app deployment
     href: azure-webapp-deployment-tutorial.md
@@ -43,4 +49,4 @@ items:
 #  - name: Client-side APIs
 #    href: https://review.learn.microsoft.com/en-us/javascript/api/overview/fabric-extensibility-overview?view=fabric-extensibility-js-latest&branch=smoke-test
   - name: Samples
-    href: https://github.com/microsoft/fabric-samples
+    href: https://github.com/microsoft/Microsoft-Fabric-workload-development-sample

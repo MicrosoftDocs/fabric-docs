@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: muliwienrib
 ms.topic: how-to
 ms.custom:
-ms.date: 01/29/2024
+ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how to authenticate a customized Fabric workload so that I can create customized user experiences.
 ---
 
