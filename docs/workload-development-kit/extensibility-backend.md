@@ -441,7 +441,7 @@ If you try to run the Sample to make changes on the backend be sure you are in a
 
 :::image type="content" source="./media/extensibility-backend/copy-item.png" alt-text="Screenshot of UI for naming a sample workload item.":::
 
-1. Switch to a named workspace and leave the default - My workspace. For example, the image is trying to access the testbeapi:
+1. Switch to a named workspace and leave the default *My workspace*:
 
     :::image type="content" source="./media/extensibility-backend/sample-workload.png" alt-text="Screenshot of UI for creating sample workload.":::
 
