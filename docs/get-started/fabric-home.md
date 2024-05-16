@@ -71,7 +71,7 @@ You can delete icons from the nav pane for products you don't think you need. Yo
 
 To remove an icon, right-click the icon and select **Unpin**.
 
-    :::image type="content" source="media/fabric-home/unpin-icon.png" alt-text="Screenshot showing the Unpin option to remove an item from the left nav.":::
+:::image type="content" source="media/fabric-home/unpin-icon.png" alt-text="Screenshot showing the Unpin option to remove an item from the left nav.":::
 
 ### Add icons back to the nav pane
 
@@ -79,7 +79,7 @@ You can add an icon back if you decide you need it.
 
 Select **More ...**, then select the icon you want to return to the left nav.
 
-    :::image type="content" source="media/fabric-home/more-menu-add-icon-back.png" alt-text="Screenshot showing how to add an item back to the left nav.":::
+:::image type="content" source="media/fabric-home/more-menu-add-icon-back.png" alt-text="Screenshot showing how to add an item back to the left nav.":::
 
 ### Find and open workspaces
 
