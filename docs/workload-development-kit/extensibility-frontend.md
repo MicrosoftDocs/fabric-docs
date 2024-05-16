@@ -1,5 +1,5 @@
 ---
-title: Fabric extensibility frontend
+title: Fabric workload development kit frontend
 description: Learn how to edit files in the developer sample repo to build the frontend of a customized Fabric workload.
 author: mberdugo
 ms.author: monaberdugo
