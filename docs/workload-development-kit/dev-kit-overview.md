@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: muliwienrib
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/15/2024
+ms.date: 05/21/2024
 ---
 
 # Microsoft Fabric Workload Development Kit

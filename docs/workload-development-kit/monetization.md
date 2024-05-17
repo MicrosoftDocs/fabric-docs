@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
 ms.custom:
-ms.date: 05/15/2024
+ms.date: 05/21/2024
 ---
 
 # Monetize your workload

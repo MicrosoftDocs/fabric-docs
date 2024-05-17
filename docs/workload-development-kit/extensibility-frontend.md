@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: muliwienrib
 ms.topic: how-to
 ms.custom:
-ms.date: 05/15/2024
+ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how to build the frontend of a customized Fabric workload so that I can create customized user experiences.
 ---
 
@@ -35,7 +35,7 @@ The SDK provides a sample UI with the following features:
 
    The UX Workload Frontend Manifest is a JSON resource that the ISV provides. It contains essential information about the workload, such as the URL of the workload web app, and various UI details like the display name of the ISV item and associated icons. It also enables the ISV to customize what happens when users interact with their items in the Fabric portal.
 
-   In this package, the manifest is located in the [Frontend Manifest file](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/Manifests/localWorkloadManifest.json) and a detailed description can be found in the [frontend manifest](./frontend-manifest.md).
+   In this package, the manifest is located in the [Frontend Manifest file](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/Manifests/localWorkloadManifest.json) and a detailed description can be found in the frontend manifest file.
 
 <!--
 The following diagram shows how Fabric uses the Manifest to read the workload's metadata and behavior and how it embeds the workload's web app inside Fabric's iFrame.

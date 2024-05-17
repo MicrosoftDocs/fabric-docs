@@ -4,7 +4,7 @@ description: Learn about the guidelines and requirements for publishing a Micros
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 05/16/2024
+ms.date: 05/21/2024
 ---
 
 # Workload validation
@@ -47,7 +47,7 @@ The requirements for the workload package metadata and the SaaS submission offer
 
 Metadata such as title, summary, and icon, must be identical in the Workload package manifest and the SaaS offer submission in Partner Center. Add all the assets of the workload such as icons and screenshots under `fe/assests` directory.
 
-Your workload package has to comply with the [frontend](frontend-manifest.md) and [backend](extensibility-backend.md) manifest requirements.
+Your workload package has to comply with the frontend and [backend](extensibility-backend.md) manifest requirements.
 
 ## Technical requirements
 
