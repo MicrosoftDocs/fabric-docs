@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: muliwienrib
 ms.topic: how-to
 ms.custom:
-ms.date: 02/06/2024
+ms.date: 05/21/2024
 ---
 # Onboard to the Fabric monitoring hub
 

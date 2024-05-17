@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: muliwienrib
 ms.topic: how-to
 ms.custom:
-ms.date: 12/25/2023
+ms.date: 05/21/2024
 ---
 
 # Frontend manifest

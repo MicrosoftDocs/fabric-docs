@@ -4,7 +4,7 @@ description: Learn about the guidelines and requirements for publishing a Micros
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 05/16/2024
+ms.date: 05/21/2024
 ---
 
 # Workload validation

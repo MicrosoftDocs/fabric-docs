@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 05/16/2024
+ms.date: 05/21/2024
 # customer intent: As an ISV I want to publish my workload to the Fabric Workload Hub so that I can make it available to customers.
 ---
 
