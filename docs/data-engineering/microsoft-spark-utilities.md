@@ -191,7 +191,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 :::image type="content" source="media\microsoft-spark-utilities\run-snapshot.png" alt-text="Screenshot of a snapshot example." lightbox="media\microsoft-spark-utilities\run-snapshot.png":::
 
-Fabric notebook also supports referencing notebooks across multiple workspaces by specifying another workspace ID.
+Fabric notebook also supports referencing notebooks across multiple workspaces by specifying another *workspace ID*.
 
 ```python
 mssparkutils.notebook.run("notebook name", <timeoutSeconds>, <parameterMap>, <workspaceId>)
