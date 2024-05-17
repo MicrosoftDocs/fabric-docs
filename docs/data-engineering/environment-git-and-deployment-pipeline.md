@@ -23,7 +23,7 @@ Microsoft Fabric supports Git integration, allowing developers to backup, contro
 > - Currently, Git supports only Libraries and Spark compute, including Spark runtime.
 > - The Git integration manages the **staging state** of the environment, ensuring that both published and saved configurations are synced with Git.
 > - To apply changes made in Git to the environment, they must be published. It's recommended to publish after updating the environment from Git to ensure the effectiveness of the configuration.
-> - For a code-first experience, you can use the [Publish API of environment](environment-public-APIs.md#make-the-changes-effective) to publish changes from Git without using the UI.
+> - For a code-first experience, you can use the [Publish API of environment](environment-public-api.md#make-the-changes-effective) to publish changes from Git without using the UI.
 > - Each commit has as upper limit of 150 MB. Custom libraries larger than 150 MB aren't currently supported through Git.
 
 ### Connect the Fabric workspace to an Azure DevOps repository

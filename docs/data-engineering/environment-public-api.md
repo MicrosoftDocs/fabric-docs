@@ -111,7 +111,7 @@ By specifying the full library file name with the type suffix, you can delete on
 > [!NOTE]
 >
 > - If you specify `environment.yml` as the file to be deleted, you are removing all public libraries.
-> - If you want to remove a subset of existing public library, please use the [upload library](environment-public-APIs.md#uploading-the-libraries) instead and upload an *environment.yml* that contains only the expected libraries. The uploaded *environment.yml* replaces the existing public library section entirely.
+> - If you want to remove a subset of existing public library, please use the [upload library](environment-public-api.md#uploading-the-libraries) instead and upload an *environment.yml* that contains only the expected libraries. The uploaded *environment.yml* replaces the existing public library section entirely.
 
 - Sample requests
 
