@@ -90,6 +90,18 @@ Folder names must follow certain naming conventions:
     >
     > If you create items from the home page or the **Create** hub, items are created in the root level of the workspace.
 
+## Publish to folder (preview)
+
+With folders in workspaces, you can create a hierarchical structure for organizing and managing your items. You can now publish your Power BI reports to specific folders in your workspace. 
+
+When you publish a report, you can choose the specific workspace and folder for your report, seen below. 
+
+    :::image type="content" source="media/workspaces-folders/publish-folder-select-folder.png" alt-text="Screenshot showing selecting a folder for where a report gets pulbished." lightbox="media/workspaces-folders/publish-folder-select-folder.png":::
+
+To publish reports to specific folders in the service, make sure the "Publish dialogs support folder selection" setting is enabled in the Preview features tab in the options menu. 
+   
+    :::image type="content" source="media/workspaces-folders/publish-folder-dialog.png" alt-text="Screenshot showing the "Publish dialogs support folder selection" as selected." lightbox="media/workspaces-folders/publish-folder-dialog.png":::
+    
 ## Rename a folder
 
 1. Select the context (**...**) menu, then select **Rename**.
