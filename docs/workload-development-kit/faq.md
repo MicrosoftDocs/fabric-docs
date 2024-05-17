@@ -45,7 +45,7 @@ You can choose how you want to structure the trial experience. If you want to pr
 
 ### What business model should I choose for my SaaS offer?
 
-This really depends on your offer. The Azure Marketplace provides different ways to monetize your offer (for example, per user, per your own metric, flat fee, ...). In the end, you want to optimize your business model to the needs of your customer. Further information can be found at [SaaS Pricing Models](/partner-center/marketplace/plan-saas-offer.md#saas-pricing-models).
+This really depends on your offer. The Azure Marketplace provides different ways to monetize your offer (for example, per user, per your own metric, flat fee, ...). In the end, you want to optimize your business model to the needs of your customer. Further information can be found at [SaaS Pricing Models](/partner-center/marketplace/plan-saas-offer#saas-pricing-models).
 
 ### What can I do to support my existing customers in Fabric? 
 
@@ -53,7 +53,7 @@ You can choose if you want to offer the fabric capability to your customers as p
 
 ### I don't have an Azure Marketplace SaaS offer. Where can I get started?
 
-Further information can be found here: [Plan a Saas offer for the commercial marketplace](/partner-center/marketplace/plan-saas-offer.md).
+Further information can be found here: [Plan a Saas offer for the commercial marketplace](/partner-center/marketplace/plan-saas-offer).
 
 <!--
 ## Fabric Workload Submission 

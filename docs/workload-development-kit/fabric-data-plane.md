@@ -26,9 +26,9 @@ Before you can begin using the Fabric REST APIs, you need to authenticate using 
 
 The Fabric Extensibility SDK provides a method for acquiring an access token in the workload frontend. This client token must be passed to the workload backend and exchanged using the on-behalf-of flow for a token with the necessary scopes to access your desired resource, such as OneLake. For example, in order to access and read from a Lakehouse, a user must have authorized the application to make API calls on their behalf using the Azure Storage user_impersonation permission. Then, the access token must be obtained with the delegated scope `https://storage.azure.com/user_impersonation` in order to use Azure Storage. 
 
-For examples of token authentication, please refer to the Microsoft Fabric Developer Sample.
+For examples of token authentication, please refer to the [Microsoft Fabric Developer kit sample](https://go.microsoft.com/fwlink/?linkid=2272254).
 
-More details on how to obtain a token can be found in the [Fabric API reference documentation](https://go.microsoft.com/fwlink/?linkid=2271986). 
+More details on how to obtain a token can be found in the [Microsoft Fabric Workload Development REST API documentation](https://go.microsoft.com/fwlink/?linkid=2271986). 
 
 ### Reading data
 
@@ -46,8 +46,8 @@ Alternatively, you can use other Fabric workloads to write data to the platform.
 
 Fabric REST APIs also provide you with a way to access the different properties of items. For example, querying the [Get Lakehouse API](/rest/api/fabric/lakehouse/items/get-lakehouse?tabs=HTTP) provides you with the metadata for a certain Lakehouse, including useful properties such as OneLake paths and the SQL connection string.
 
-For implementation examples, please refer to the [Workload development kit](./index.yml).
+For implementation examples, please refer to the [Microsoft Fabric Workload Development kit](./index.yml).
 
 ## Related content
 
-* [Microsoft Fabric Workload Development Kit](./dev-kit-overview.md)
+* [Microsoft Fabric Workload Development Kit](./index.yml)
