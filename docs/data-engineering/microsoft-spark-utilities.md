@@ -191,9 +191,20 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 :::image type="content" source="media\microsoft-spark-utilities\run-snapshot.png" alt-text="Screenshot of a snapshot example." lightbox="media\microsoft-spark-utilities\run-snapshot.png":::
 
+Fabric notebook also supports referencing notebooks across multiple workspaces by specifying another workspace ID.
+
+```python
+mssparkutils.notebook.run("notebook name", <timeoutSeconds>, <parameterMap>, <workspaceId>)
+```
+
+For example:
+
+```python
+mssparkutils.notebook.run("Sample1", 90, {"input": 20 }, "fe0a6e2a-a909-4aa3-a698-0a651de790aa")
+```
+
 > [!NOTE]
 >
-> - Currently, Fabric notebook only supports referencing notebooks within a workspace.
 > - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `mssparkutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
 
 ### Reference run multiple notebooks in parallel
