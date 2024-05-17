@@ -92,15 +92,15 @@ Folder names must follow certain naming conventions:
 
 ## Publish to folder (preview)
 
-With folders in workspaces, you can create a hierarchical structure for organizing and managing your items. You can now publish your Power BI reports to specific folders in your workspace. 
+You can now publish your Power BI reports to specific folders in your workspace. 
 
 When you publish a report, you can choose the specific workspace and folder for your report, seen below. 
 
 :::image type="content" source="media/workspaces-folders/publish-folder-select-folder.png" alt-text="Screenshot showing selecting a folder for where a report gets pulbished." lightbox="media/workspaces-folders/publish-folder-select-folder.png":::
 
-To publish reports to specific folders in the service, make sure the "Publish dialogs support folder selection" setting is enabled in the Preview features tab in the options menu. 
+To publish reports to specific folders in the service, make sure the **Publish dialogs support folder selection** setting is enabled in the Preview features tab in the options menu. 
 
-:::image type="content" source="media/workspaces-folders/publish-folder-dialog.png" alt-text="Screenshot showing selecting a folder for where a report gets pulbished." lightbox="media/workspaces-folders/publish-folder-dialog.png":::
+:::image type="content" source="media/workspaces-folders/publish-folder-dialog.png" alt-text="Screenshot showing selecting publish dialogs support folder selection box." lightbox="media/workspaces-folders/publish-folder-dialog.png":::
     
 ## Rename a folder
 
@@ -145,6 +145,8 @@ Currently folders inherit the permissions of the workspace where they're located
 - If you trigger item creation from the home page, create hub and industry solution, items are created at the root level of workspaces.
 - In a workspace page, `Filter` and `Filter by keywords` only apply to items at the current level.
 - Git doesn't support workspace folders yet.
+- If folders **is enabled** in the Power BI service but **not enabled** in Power BI Desktop, republishing a report that is in a nested folder will replace the report in the nested folder.
+- If Power BI Desktop folders **is enabled** in Power BI Desktop, but **not enabled** in the Service and you publish to a nested folder, the report will be published to the general workspace. 
 
 ## Related content
 
