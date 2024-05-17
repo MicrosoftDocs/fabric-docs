@@ -67,7 +67,7 @@ Under **Advanced**, you can specify the following fields:
     If you select **Dynamic range**:
     - **Partition column name**: Specify the name of the source column in **integer type** that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column.
 
-      If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section.
+      If you use a query to retrieve the source data, hook `?AdfRangePartitionColumnName` in the WHERE clause. For an example, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section.
 
     - **Partition upper bound**: Specify maximum value of the partition column to copy data out.
 
@@ -80,8 +80,6 @@ Under **Advanced**, you can specify the following fields:
       :::image type="content" source="./media/connector-oracle/dynamic-range.png" alt-text="Screenshot showing the configuration when you select Dynamic range." lightbox="./media/connector-oracle/dynamic-range.png":::
 
 - **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120 minutes. If a parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes).
-
-    :::image type="content" source="./media/connector-oracle/query-timeout.png" alt-text="Screenshot showing Query timeout settings.":::
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
@@ -124,7 +122,7 @@ You are suggested to enable parallel copy with data partitioning especially when
 | Full load from large table, with physical partitions.        | **Partition option**: Physical partitions of table. <br><br/>During execution, the service automatically detects the physical partitions, and copies data by partitions. |
 | Full load from large table, without physical partitions, while with an integer column for data partitioning. | **Partition options**: Dynamic range partition.<br>**Partition column**: Specify the column used to partition data. If not specified, the primary key column is used.|
 |Load a large amount of data by using a custom query, with physical partitions. | **Partition options**: Physical partitions of table.<br>**Query**: `SELECT * FROM <TABLENAME> PARTITION("?AdfTabularPartitionName") WHERE <your_additional_where_clause>`. <br><br>**Partition name**: Specify the partition name(s) to copy data from. If not specified, the service automatically detects the physical partitions on the table you specified in the Oracle data. <br>During execution, the service replaces `?AdfTabularPartitionName` with the actual partition name, and sends to Oracle.|
-| Load a large amount of data by using a custom query, without physical partitions, while with an integer column for data partitioning. | **Partition options**: Dynamic range partition.<br>**Query**: `SELECT * FROM <TABLENAME> WHERE ?DfDynamicRangePartitionCondition <= ?AdfRangePartitionUpbound AND ?DfDynamicRangePartitionCondition >= ?AdfRangePartitionLowbound AND <your_additional_where_clause>`.<br>**Partition column**: Specify the column used to partition data. You can partition against the column with integer data type.<br>**Partition upper bound** and **partition lower bound**: Specify if you want to filter against partition column to retrieve data only between the lower and upper range.<br><br>During execution, the service replaces `?AdfRangePartitionColumnName`, `?AdfRangePartitionUpbound`, and `?AdfRangePartitionLowbound` with the actual column name and value ranges for each partition, and sends to Oracle. <br>For example, if your partition column "ID" is set with the lower bound as 1 and the upper bound as 80, with parallel copy set as 4, the service retrieves data by 4 partitions. Their IDs are between [1,20], [21, 40], [41, 60], and [61, 80], respectively.`|
+| Load a large amount of data by using a custom query, without physical partitions, while with an integer column for data partitioning. | **Partition options**: Dynamic range partition.<br>**Query**: `SELECT * FROM <TABLENAME> WHERE ?AdfRangePartitionColumnName <= ?AdfRangePartitionUpbound AND ?AdfRangePartitionColumnName >= ?AdfRangePartitionLowbound AND <your_additional_where_clause>`.<br>**Partition column**: Specify the column used to partition data. You can partition against the column with integer data type.<br>**Partition upper bound** and **partition lower bound**: Specify if you want to filter against partition column to retrieve data only between the lower and upper range.<br><br>During execution, the service replaces `?AdfRangePartitionColumnName`, `?AdfRangePartitionUpbound`, and `?AdfRangePartitionLowbound` with the actual column name and value ranges for each partition, and sends to Oracle. <br>For example, if your partition column "ID" is set with the lower bound as 1 and the upper bound as 80, with parallel copy set as 4, the service retrieves data by 4 partitions. Their IDs are between [1,20], [21, 40], [41, 60], and [61, 80], respectively.`|
 
 > [!TIP]
 > When copying data from a non-partitioned table, you can use "Dynamic range" partition option to partition against an integer column. If your source data doesn't have such type of column, you can leverage [ORA_HASH]( https://docs.oracle.com/database/121/SQLRF/functions136.htm) function in source query to generate a column and use it as partition column.
@@ -140,16 +138,20 @@ The following tables contain more information about the copy activity in Oracle.
 |**Connection** |Your connection to the source data store.|\<your Oracle connection> |Yes|connection|
 |**Use query** |The way to read data from Oracle. Apply **Table** to read data from the specified table or apply **Query** to read data using SQL queries.|• **Table** <br>• **Query** |Yes |/|
 | *For **Table*** |  |  |  |  |
-| **schema name** | Name of the schema. |< your schema name >  | No for source, Yes for sink | schema |
-| **table name** | Name of the table. | < your table name > | No for source, Yes for sink |table |
+| **schema name** | Name of the schema. |< your schema name >  | No | schema |
+| **table name** | Name of the table. | < your table name > | No |table |
 | *For **Query*** |  |  |  |  |
-| **Query** | Use the custom SQL query to read data. An example is `SELECT * FROM MyTable`. When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section. |  < SQL queries > |No | oracleReaderQuery|
+| **Query** | Use the custom SQL query to read data. An example is `SELECT * FROM MyTable`. <br>When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section. |  < SQL queries > |No | oracleReaderQuery|
 |  |  |  |  |  |
-|**Partition option** |The data partitioning options used to load data from Oracle. |• None (default)<br>• Physical partitions of table<br>• Dynamic range |No |partitionOption:<br>•None <br>•PhysicalPartitionsOfTable<br>• DynamicRange|
+|**Partition option** |The data partitioning options used to load data from Oracle. |• **None** (default)<br>• **Physical partitions of table**<br>• **Dynamic range** |No |/|
+| *For **Physical partitions of table*** |  |  |  |  |
 | **Partition names** | The list of physical partitions that needs to be copied. If you use a query to retrieve the source data, hook `?AdfTabularPartitionName` in the WHERE clause.  | < your partition names > | No | partitionNames |
-| **Partition column name** | Specify the name of the source column in **integer type** that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column.<br>If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section. | < your partition column names > | No | partitionColumnName |
+|  |  |  |  |  |
+| *For **Dynamic range*** |  |  |  |  |
+| **Partition column name** | Specify the name of the source column in **integer type** that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column.<br>If you use a query to retrieve the source data, hook `?AdfRangePartitionColumnName` in the WHERE clause. For an example, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section. | < your partition column names > | No | partitionColumnName |
 | **Partition upper bound** | Specify maximum value of the partition column to copy data out. If you use a query to retrieve the source data, hook `?AdfRangePartitionUpbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle](#parallel-copy-from-oracle) section. | < your partition upper bound > | No | partitionUpperBound |
 | **Partition lower bound** | Specify the minimum value of the partition column to copy data out. If you use a query to retrieve the source data, hook `?AdfRangePartitionLowbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle](#parallel-copy-from-oracle) section. | < your partition lower bound > | No | partitionLowerBound |
+|  |  |  |  |  |
 |**Query timeout** |The timeout for query command execution, default is 120 minutes. |timespan |No |queryTimeout|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
@@ -158,7 +160,9 @@ The following tables contain more information about the copy activity in Oracle.
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 | **Connection** |Your connection to the destination data store.|\<your Oracle connection>|Yes|connection|
-| **Table** |Your destination data table.| \<name of your destination table\> |Yes |schema <br> table|
+| **Table** |Your destination data table.| \<name of your destination table\> |Yes |/|
+| **schema name** | Name of the schema. |< your schema name >  | Yes | schema |
+| **table name** | Name of the table. | < your table name > | Yes |table |
 | **Pre-copy script** | A SQL query for the copy activity to execute before you write data into Oracle in each run. You can use this property to clean up the preloaded data. | < your pre-copy script > | No | preCopyScript |
 | **Write batch timeout** | The wait time for the batch insert operation to complete before it times out. | timespan | No | writeBatchTimeout |
 | **Write batch size** | The number of rows to insert into the SQL table per batch. | integer<br>(the default is 10,000) | No | writeBatchSize |
