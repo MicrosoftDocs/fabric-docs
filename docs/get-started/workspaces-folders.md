@@ -146,7 +146,8 @@ Currently folders inherit the permissions of the workspace where they're located
 - In a workspace page, `Filter` and `Filter by keywords` only apply to items at the current level.
 - Git doesn't support workspace folders yet.
 - If folders **is enabled** in the Power BI service but **not enabled** in Power BI Desktop, republishing a report that is in a nested folder will replace the report in the nested folder.
-- If Power BI Desktop folders **is enabled** in Power BI Desktop, but **not enabled** in the Service and you publish to a nested folder, the report will be published to the general workspace. 
+- If Power BI Desktop folders **is enabled** in Power BI Desktop, but **not enabled** in the Service and you publish to a nested folder, the report will be published to the general workspace.
+- When publishing reports to folders, report names must be unique throughout an entire workspace, regardless of it's location. Therefore, when publishing a report to a workspace that has another report with the same name in a different folder, the report will publish to the location of the already existing report. If you want to move the report to a new folder location in the workspace you will need to make this change in the Power BI Service. 
 
 ## Related content
 
