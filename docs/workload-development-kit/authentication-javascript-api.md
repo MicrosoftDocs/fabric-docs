@@ -1,5 +1,5 @@
 ---
-title: Overview of Fabric extensibility authentication JavaScript API
+title: Overview of Fabric workload authentication JavaScript API
 description: Learn how to use JavaScript APIs to authenticate a customized Fabric workload.
 author: paulinbar
 ms.author: painbar
@@ -11,7 +11,7 @@ ms.date: 01/29/2024
 
 # Authentication JavaScript API
 
-Fabric frontend offers a Javascript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. Before working with authentication JS API, make sure you review the [authentication JavaScript API](./authentication-javascript-api.md) documentation.
+Fabric frontend offers a JavaScript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. Before working with authentication JS API, make sure you review the [authentication JavaScript API](./authentication-javascript-api.md) documentation.
 
 ## API
 
@@ -25,7 +25,7 @@ export interface AcquireAccessTokenParams {
 
 The API returns an AccessToken object that contains the token itself and an expiry date for the token.
 
-To call the API in the Frontend sample, create a sample item and then scroll down and click on **Navigate to Authentication page**. From there you can click on **Get access token** and you'll receive a token back.
+To call the API in the Frontend sample, create a sample item and then scroll down and select **Navigate to Authentication page**. From there you can select **Get access token** to receive a token back.
 
 :::image type="content" source="./media/authentication-api/authentication.png" alt-text="Screenshot showing authentication section.":::
 
@@ -45,7 +45,7 @@ When asking for a token with the workload application for a specific scope, Micr
 
 Typically the redirect URI is in the same domain as the page that requested the token, so the page can access the popup and close it.
   
-In our case, it's not in the same domain since Fabric is requesting the token and the redirect URI of the workload is not in the Fabric domain. So when the consent dialog opens, it needs to be closed manually after redirect. We don't use the code returned in the redirectUri, hence we just auto-close it (when Microsoft Entra ID redirects the popup to the redirect URI it simply closes).
+In our case, it's not in the same domain, since Fabric is requesting the token and the redirect URI of the workload isn't in the Fabric domain. So when the consent dialog opens, it needs to be closed manually after redirect. We don't use the code returned in the redirectUri, hence we just autoclose it (when Microsoft Entra ID redirects the popup to the redirect URI it simply closes).
   
 You can see the code/configuration of the redirect Uri in the [index.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/staging/Frontend/src/index.ts) file.
 
@@ -57,7 +57,7 @@ We'll see how to work with consents when we talk about [AcquireAccessTokenParams
 
 ### Another way to grant consents in the home tenant (optional)
 
-To get a consent in the home tenant of the application, you can ask your tenant admin to grant a consent for the whole tenant using this a URL in this format (insert your own tenant ID and the client ID):
+To get a consent in the home tenant of the application, you can ask your tenant admin to grant a consent for the whole tenant using a URL in the following format (insert your own tenant ID and the client ID):
 
 `https://login.microsoftonline.com/{tenantId}/adminconsent?client_id={clientId}`
 
@@ -65,8 +65,8 @@ To get a consent in the home tenant of the application, you can ask your tenant 
 
 When calling the acquireAccessToken JS API, we can provide two parameters:  
 
-* *additionalScopesToConsent*: Additional scopes to ask for a consent for, for example re-consent scenarios.
-* *claimsForConditionalAccessPolicy*: Claims returned from Entra ID when OBO flows fail, for example OBO requires Multi Factor Authentication.
+* *additionalScopesToConsent*: Other scopes to ask for a consent for, for example reconsent scenarios.
+* *claimsForConditionalAccessPolicy*: Claims returned from Microsoft Entra ID when OBO flows fail, for example OBO requires multifactor authentication.
 
 Let's review these two parameters and see what to provide when calling acquireAccessToken.
 
@@ -82,7 +82,7 @@ AdditionalScopesToConsent | null | ['.default'] | ['https://analysis.windows.net
 
     * If the user's in the home tenant of the application, the workload will be able to acquire a token without granting any consent.
 
-    * If the user is in another tenant, they'll need to grant consent (or have the admin of the tenant grant consent to the app) before the workload can receive a token.
+    * If the user is in another tenant, they need to grant consent (or have the admin of the tenant grant consent to the app) before the workload can receive a token.
 
 2. Crud/Jobs JS API fail: If these operations fail, the workload must ask for a token with ['.default'] as additionalScopesToConsent. This trigger's a consent for the dependencies of the application (the configured API Permissions in our app). For more information, see [authentication setup](./authentication-tutorial.md).
 
@@ -96,6 +96,6 @@ If the OBO flow in the workload BE fails with a consent required error for a spe
 
 This parameter is used when facing OBO failures in the workload BE because of some conditional access policy that has been configured on the tenant.
 
-OBO failures because of conditional access policies return a string called "claims". This string should be sent to the workload FE where the FE should ask for a token and pass the claim as claimsForConditionalAccessPolicy. For more information, see [Handling multi-factor auth (MFA), conditional access and incremental consent](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#handling-multi-factor-auth-mfa-c).
+OBO failures because of conditional access policies return a string called "claims." This string should be sent to the workload FE where the FE should ask for a token and pass the claim as claimsForConditionalAccessPolicy. For more information, see [Handling multi-factor auth (MFA), conditional access, and incremental consent](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#handling-multi-factor-auth-mfa-c).
 
 Refer to [AuthenticationService](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/staging/Backend/src/Services/AuthenticationService.cs) AddBearerClaimToResponse usage in the BE sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies.
