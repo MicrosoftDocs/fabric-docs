@@ -27,4 +27,4 @@ The Azure Cosmos DB for MongoDB connector supports the following capabilities in
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None <br>On-premises | Basic |
 
-To learn more about the copy activity configuration for Azure Cosmos DB for MongoDB in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-cosmos-db-for-mongodb-copy-activity.md).
+To learn more about the copy activity configuration for Azure Cosmos DB for MongoDB in data pipelines, go to [Configure Azure Cosmos DB for MongoDB in a copy activity](connector-azure-cosmos-db-for-mongodb-copy-activity.md).
