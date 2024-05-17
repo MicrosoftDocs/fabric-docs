@@ -26,7 +26,7 @@ Before you can begin using the Fabric REST APIs, you need to authenticate using 
 
 The Fabric Extensibility SDK provides a method for acquiring an access token in the workload frontend. This client token must be passed to the workload backend and exchanged using the on-behalf-of flow for a token with the necessary scopes to access your desired resource, such as OneLake. For example, in order to access and read from a Lakehouse, a user must have authorized the application to make API calls on their behalf using the Azure Storage user_impersonation permission. Then, the access token must be obtained with the delegated scope `https://storage.azure.com/user_impersonation` in order to use Azure Storage. 
 
-For examples of token authentication, please refer to the [Microsoft Fabric Developer kit sample](https://go.microsoft.com/fwlink/?linkid=2272254).
+For examples of token authentication, please refer to the Microsoft Fabric Developer kit sample.
 
 More details on how to obtain a token can be found in the [Microsoft Fabric Workload Development REST API documentation](https://go.microsoft.com/fwlink/?linkid=2271986). 
 

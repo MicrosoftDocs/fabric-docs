@@ -40,9 +40,9 @@ The main authentication checks performed for the SubjectAndAppToken are:
 
 * **Validation and parsing of the authorization header value**: This is done in the [FetchSubjectAndAppTokenTokenFromHeader](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L102) method. The token must start with the "SubjectAndAppToken1.0" prefix and include two tokens - `subjectToken` and `appToken`.
 
-* **Entra token properties validation**: Both `subjectToken` and `appToken` are validated for common AAD token properties in the [ValidateAadTokenCommon](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L102) method. These properties include token signature, token lifetime, token audience (workload app audience), and token version (1.0) and issuer.
+* **Entra token properties validation**: Both `subjectToken` and `appToken` are validated for common Microsoft Entra token properties in the [ValidateAadTokenCommon](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L102) method. These properties include token signature, token lifetime, token audience (workload app audience), and token version (1.0) and issuer.
 
-* **appToken properties validation**: The `appToken` should not have an `scp` claim but should have an `idtyp` claim with *app* as the value. We also check that `tid` claim in the workload publisher tenant ID.
+* **appToken properties validation**: The `appToken` shouldn't have an `scp` claim but should have an `idtyp` claim with *app* as the value. We also check that `tid` claim in the workload publisher tenant ID.
 
     Sample appToken claims:
 
@@ -67,7 +67,7 @@ The main authentication checks performed for the SubjectAndAppToken are:
     }
     ```
 
-* **subjectToken properties validation**: Ensure that the subjectToken includes an `scp` claim with the `FabricWorkloadControl` scope, that there is no `idtyp` claim present in the token, and that it has same `appid` as in the `appToken`.
+* **subjectToken properties validation**: Ensure that the subjectToken includes an `scp` claim with the `FabricWorkloadControl` scope, that there's no `idtyp` claim present in the token, and that it has same `appid` as in the `appToken`.
 
     Sample subjectToken claims:
 
@@ -118,15 +118,15 @@ Workload control APIs are special Fabric APIs that support workloads with their 
 
 When coming from the workload, the included tokens are:
 
-* `subjectToken`: This is a user-delegated token (obtained through the OBO flow) representing the user on whose behalf the operation is being performed. Fabric will verify that the user has the required permissions to perform the needed action.
+* `subjectToken`: This is a user-delegated token (obtained through the OBO flow) representing the user on whose behalf the operation is being performed. Fabric verifies that the user has the required permissions to perform the needed action.
 
-* `appToken`: This is a token specific to the workload application. Fabric will check that this is token is from the Entra app of the workload that the relevant Fabric item belongs to and that is on the workload publisher's tenant.
+* `appToken`: This is a token specific to the workload application. Fabric checks that this is token is from the Entra app of the workload that the relevant Fabric item belongs to and that is on the workload publisher's tenant.
 
 See the `ValidatePermissions` method in [AuthorizationHandler](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthorizationHandler.cs).
 
 ### Public APIs
 
-For calling public Fabric APIs, the workload should acquire a standard Entra ID OBO token with the relevant API scopes and pass it as a bearer token in the request's authorization header.
+For calling public Fabric APIs, the workload should acquire a standard Microsoft Entra OBO token with the relevant API scopes and pass it as a bearer token in the request's authorization header.
 
 See [FabricExtensionController](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Controllers/FabricExtensionController.cs).
 
