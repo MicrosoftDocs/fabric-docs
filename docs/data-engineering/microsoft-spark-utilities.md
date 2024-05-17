@@ -205,6 +205,7 @@ mssparkutils.notebook.run("Sample1", 90, {"input": 20 }, "fe0a6e2a-a909-4aa3-a69
 
 > [!NOTE]
 >
+> - Currently, we only support workspace runtime version above 1.2 when referencing notebooks across workspaces.
 > - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `mssparkutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
 
 ### Reference run multiple notebooks in parallel
