@@ -25,7 +25,7 @@ In the **Act** card for the trigger that's monitoring your chosen condition, you
 
 :::image type="content" source="media/data-activator-trigger-fabric-items/data-activator-trigger-fabric-items-01.png" alt-text="Screenshot showing Fabric item from list of triggers.":::
 
-Once you select **Fabric item** the **Act** card allows you to choose a workspace and and item to execute, as shown in the following image:
+Once you select **Fabric item** the **Act** card allows you to choose a workspace and an item to execute, as shown in the following image:
 
 :::image type="content" source="media/data-activator-trigger-fabric-items/data-activator-trigger-fabric-items-02.png" alt-text="Screenshot showing Act card to choose a workspace and item.":::
 
