@@ -131,7 +131,7 @@ If the self-help answers don't resolve your issue, scroll to the bottom of the H
 
 ### Find your account and license information
 
-Information about your account and license is available from the Account manager. Select the tiny photo from the upper right corner of [!INCLUDE [product-name](../includes/product-name.md)] to open your Account manager. 
+Information about your account and license is available from the Account manager. Select the tiny photo from the upper-right corner of [!INCLUDE [product-name](../includes/product-name.md)] to open your Account manager. 
 
 :::image type="content" source="media/fabric-home/fabric-home-me.png" alt-text="Screenshot showing the Account manager expanded.":::
 
@@ -140,7 +140,7 @@ For more information about licenses and trials, see [Licenses](../enterprise/lic
 
 ### Find notifications, settings, and feedback
 
-In the upper right corner of Home are several helpful icons. Take time to explore your **Notifications center**, **Settings**, and **Feedback** options. The **?** icon displays your [Help and search options](#find-help-and-support) and the [**Account manager** icon](#find-your-account-and-license-information) displays information about your account and license. Both of these features are described in detail earlier in this article.
+In the upper-right corner of Home are several helpful icons. Take time to explore your **Notifications center**, **Settings**, and **Feedback** options. The **?** icon displays your [Help and search options](#find-help-and-support) and the [**Account manager** icon](#find-your-account-and-license-information) displays information about your account and license. Both of these features are described in detail earlier in this article.
 
 ### Find what you need on your Home canvas
 
