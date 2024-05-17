@@ -40,31 +40,44 @@ The following properties are **required**:
 - **Connection**:  Select an Oracle connection from the connection list. If no connection exists, then create a new Oracle connection by selecting **More** at the bottom of the connection list.
 - **Use query**: Select from **Table** or **Query**.
     - If you select **Table**:
-      - **Table**: Specify the name of the table in the Oracle to read data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name manually.
+      - **Table**: Specify the name of the table in the Oracle to read data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name.
 
         :::image type="content" source="./media/connector-oracle/use-query-table.png" alt-text="Screenshot showing Use query - Table." :::
 
     - If you select **Query**:
       - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`.
+        
+        When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section.
 
         :::image type="content" source="./media/connector-oracle/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::
 
 Under **Advanced**, you can specify the following fields:
 
-- **Partition option**: Specify the data partitioning options used to load data from Oracle. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from an Oracle is controlled by **Degree of copy parallelism** in copy activity settings tab.
+- **Partition option**: Specifies the data partitioning options used to load data from Oracle. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from an Oracle is controlled by **Degree of copy parallelism** in copy activity settings tab.
 
-  - **None**: Choose this setting to not use a partition.
-    :::image type="content" source="./media/connector-oracle/partition-option-1.png" alt-text="Screenshot showing Partition option settings." lightbox="./media/connector-oracle/partition-option-1.png":::
-  - **Physical partitions of table**: When you use a physical partition, the partition column and mechanism are automatically determined based on your physical table definition.
-    :::image type="content" source="./media/connector-oracle/partition-option-2.png" alt-text="Screenshot showing the configuration when you select Physical partitions of table." lightbox="./media/connector-oracle/partition-option-2.png":::
-    **Partition names**: Specify the list of physical partitions that needs to be copied.
-    If you use a query to retrieve the source data, hook `?AdfTabularPartitionName` in the WHERE clause. For an example, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section.
-  - **Dynamic range**: When you use a query with parallel enabled, the range partition parameter(`?DfDynamicRangePartitionCondition`) is needed. Sample query: `SELECT * FROM <TableName> WHERE ?DfDynamicRangePartitionCondition`.
-    :::image type="content" source="./media/connector-oracle/partition-option-3.png" alt-text="Screenshot showing the configuration when you select Dynamic range." lightbox="./media/connector-oracle/partition-option-3.png":::
+    If you select **None**, you choose not to use partition.
+
+    If you select **Physical partitions of table**:
+    - **Partition names**: Specify the list of physical partitions that needs to be copied.
+
+        If you use a query to retrieve the source data, hook `?AdfTabularPartitionName` in the WHERE clause. For an example, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section.
+
+        :::image type="content" source="./media/connector-oracle/physical-partitions-of-table.png" alt-text="Screenshot showing the configuration when you select Physical partitions of table." lightbox="./media/connector-oracle/physical-partitions-of-table.png":::
+
+    If you select **Dynamic range**:
     - **Partition column name**: Specify the name of the source column in **integer type** that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column.
-         If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section.
-    - **Partition upper bound**: Specify maximum value of the partition column to copy data out. If you use a query to retrieve the source data, hook `?AdfRangePartitionUpbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle](#parallel-copy-from-oracle) section.
-    - **Partition lower bound**: Specify the minimum value of the partition column to copy data out. If you use a query to retrieve the source data, hook `?AdfRangePartitionLowbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle](#parallel-copy-from-oracle) section.
+
+      If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section.
+
+    - **Partition upper bound**: Specify maximum value of the partition column to copy data out.
+
+      If you use a query to retrieve the source data, hook `?AdfRangePartitionUpbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle](#parallel-copy-from-oracle) section.
+
+    - **Partition lower bound**: Specify the minimum value of the partition column to copy data out.
+  
+      If you use a query to retrieve the source data, hook `?AdfRangePartitionLowbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle](#parallel-copy-from-oracle) section.
+
+      :::image type="content" source="./media/connector-oracle/dynamic-range.png" alt-text="Screenshot showing the configuration when you select Dynamic range." lightbox="./media/connector-oracle/dynamic-range.png":::
 
 - **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120 minutes. If a parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes).
 
@@ -81,7 +94,7 @@ The following properties are supported for Oracle under the **Destination** tab 
 The following properties are **required**:
 
 - **Connection:** Select an Oracle connection from the connection list. If the connection doesn't exist, then create a new Oracle connection by selecting **More** at the bottom of the connection list.
-- **Table**: Select the table in your database from the drop-down list. Or check **Enter manually** to enter the schema and table name manually.
+- **Table**: Select the table in your database from the drop-down list. Or check **Enter manually** to enter the schema and table name.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -92,7 +105,7 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). If you choose Binary as your file format, mapping won't be supported.
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
 ### Settings
 
@@ -126,8 +139,12 @@ The following tables contain more information about the copy activity in Oracle.
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the source data store.|\<your Oracle connection> |Yes|connection|
 |**Use query** |The way to read data from Oracle. Apply **Table** to read data from the specified table or apply **Query** to read data using SQL queries.|• **Table** <br>• **Query** |Yes |/|
-| **Table** | Name of the table in the Oracle. | < table name > | No | tableName |
-| **Query** | Use the custom SQL query to read data. For example: `SELECT * FROM MyTable`. | < SQL queries > | No | query |
+| *For **Table*** |  |  |  |  |
+| **schema name** | Name of the schema. |< your schema name >  | No for source, Yes for sink | schema |
+| **table name** | Name of the table. | < your table name > | No for source, Yes for sink |table |
+| *For **Query*** |  |  |  |  |
+| **Query** | Use the custom SQL query to read data. An example is `SELECT * FROM MyTable`. When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section. |  < SQL queries > |No | oracleReaderQuery|
+|  |  |  |  |  |
 |**Partition option** |The data partitioning options used to load data from Oracle. |• None (default)<br>• Physical partitions of table<br>• Dynamic range |No |partitionOption:<br>•None <br>•PhysicalPartitionsOfTable<br>• DynamicRange|
 | **Partition names** | The list of physical partitions that needs to be copied. If you use a query to retrieve the source data, hook `?AdfTabularPartitionName` in the WHERE clause.  | < your partition names > | No | partitionNames |
 | **Partition column name** | Specify the name of the source column in **integer type** that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column.<br>If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Oracle](#parallel-copy-from-oracle) section. | < your partition column names > | No | partitionColumnName |
