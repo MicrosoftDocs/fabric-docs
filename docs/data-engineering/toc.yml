@@ -181,6 +181,12 @@ items:
     href: environment-manage-compute.md
   - name: Manage libraries in environments
     href: environment-manage-library.md
+  - name: Environment Git integration and deployment pipeline
+    href: environment-git-and-deployment-pipeline.md
+  - name: Manage the environment through public APIs
+    href: environment-public-api.md
+  - name: Manage the resources in Fabric environment
+    href: environment-manage-resources.md
   - name: Migrate the existing workspace libraries and Spark properties
     href: environment-workspace-migration.md
 - name: VS Code integration 

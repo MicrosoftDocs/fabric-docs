@@ -160,5 +160,11 @@ landingContent:
             url: environment-manage-compute.md
           - text: Manage libraries in environments
             url: environment-manage-library.md
+          - text: Environment Git integration and deployment pipeline
+            url: environment-git-and-deployment-pipeline.md
+          - text: Manage the environment through public APIs
+            url: environment-public-api.md
+          - text: Manage the resources in Fabric environment
+            url: environment-manage-resources.md
           - text: Migrate the existing workspace libraries and Spark properties to an environment
             url: environment-workspace-migration.md

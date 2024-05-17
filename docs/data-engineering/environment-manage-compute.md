@@ -30,7 +30,7 @@ As a user, you can select a pool for the environment from the list of pools avai
 
 After you select a pool in the **Compute** section, you can tune the cores and memory for the executors within the bounds of the node sizes and limits of the selected pool.
 
-For example: You select a custom pool with node size of large, which is 16 Spark Vcores, as the environment pool. You can then choose the driver/executor core to be either 4, 8 or 16, based on your job level requirement. For the memory allocated to driver and executors, you can choose 28 g, 56 g, or 112 g, which are all within the bounds of a large node memory limit.
+For example: You select a custom pool with node size of large, which is 16 Spark vCores, as the environment pool. You can then choose the driver/executor core to be either 4, 8 or 16, based on your job level requirement. For the memory allocated to driver and executors, you can choose 28 g, 56 g, or 112 g, which are all within the bounds of a large node memory limit.
 
 :::image type="content" source="media\environment-introduction\env-cores-selection.png" alt-text="Screenshot showing where to select the number of cores in the environment Compute section.":::
 

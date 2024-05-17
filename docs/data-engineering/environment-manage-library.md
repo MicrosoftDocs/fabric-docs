@@ -27,7 +27,7 @@ To add a new public library, select a source and specify the name and version of
 
 ### Add public libraries in a batch
 
-Environments support uploading the YAML file to manage multiple public libraries in a batch. The content of the YAML are extracted and appended in the public library list.
+Environments support uploading the YAML file to manage multiple public libraries in a batch. The contents of the YAML are extracted and appended in the public library list.
 
 > [!NOTE]
 > The custom conda channels in YAML file are currently not supported. Only the libraries from PyPI and conda are recognized.

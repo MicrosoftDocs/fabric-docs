@@ -1,6 +1,6 @@
 ---
 title: Manage the resources in Fabric environment
-description: The Resources section in Fabric environment enable small resources management. Learn how to use the resources folder in the development lifecycle.
+description: The Resources section in Fabric environment enables small resources management. Learn how to use the resources folder in the development lifecycle.
 ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to

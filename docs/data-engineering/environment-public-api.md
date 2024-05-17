@@ -91,7 +91,7 @@ Before adding/deleting library, you can use the get published libraries API to c
 
 #### Uploading the libraries
 
-The APIs for uploading staging library accepts one file at a time. The supported file types are *.whl*, *.jar*, *.tar.gz*, *.py* and *environment.yml* for public library. You can specify the file via the multipart/form-data content-type.
+The API for uploading staging library accepts one file at a time. The supported file types are *.whl*, *.jar*, *.tar.gz*, *.py* and *environment.yml* for public library. You can specify the file via the multipart/form-data content-type.
 
 > [!NOTE]
 >
@@ -125,7 +125,7 @@ You can use the update staging Spark compute to manage the Spark compute.
 
 #### Check the published Spark compute for the environment
 
-Before change the configurations for the environment, you can use the get published Spark compute API to check what Spark compute configurations are currently effective.
+Before changing the configurations for the environment, you can use the get published Spark compute API to check what Spark compute configurations are currently effective.
 
 - Sample request
 
@@ -161,7 +161,7 @@ Before change the configurations for the environment, you can use the get publis
 
 You can update the Spark runtime, switch to another pool, refine compute configuration and add/remove Spark properties through editing the request body of this API.
 
-If you want to remove an existing Spark property, you need specify the value as `null` with the key that you want to remove, as showing in the following example.
+If you want to remove an existing Spark property, you need to specify the value as `null` with the key that you want to remove, as showing in the following example.
 
 - Sample request
 
@@ -195,7 +195,7 @@ Using the following sets of APIs to publish the changes.
 
 #### Prepare for a publish
 
-The environment can accept one publish at a time. Before publish your environment, you can validate the status of the environment and have a final review of the staging changes. Once the environment is publish successfully, all configurations in the staging state becomes effective.
+The environment can accept one publish at a time. Before publishing your environment, you can validate the status of the environment and have a final review of the staging changes. Once the environment is published successfully, all configurations in the staging state become effective.
 
 - **Step 1: get the metadata of the environment**
 
