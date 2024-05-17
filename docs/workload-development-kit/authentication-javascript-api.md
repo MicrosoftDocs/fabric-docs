@@ -49,7 +49,7 @@ In our case, it's not in the same domain since Fabric is requesting the token an
   
 You can see the code/configuration of the redirect Uri in the [index.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/staging/Frontend/src/index.ts) file.
 
-Here's an example of a consent popup for our app "my workload app" and its dependencies (storage and Power BI) that we configured when going over [authentication setup](./authentication-setup.md):
+Here's an example of a consent popup for our app "my workload app" and its dependencies (storage and Power BI) that we configured when going over [authentication setup](./authentication-tutorial.md):
 
 :::image type="content" source="./media/authentication-api/permissions-requested-dialog.png" alt-text="Screenshot of Permissions required dialog.":::
 
@@ -84,7 +84,7 @@ AdditionalScopesToConsent | null | ['.default'] | ['https://analysis.windows.net
 
     * If the user is in another tenant, they'll need to grant consent (or have the admin of the tenant grant consent to the app) before the workload can receive a token.
 
-2. Crud/Jobs JS API fail: If these operations fail, the workload must ask for a token with ['.default'] as additionalScopesToConsent. This trigger's a consent for the dependencies of the application (the configured API Permissions in our app). For more information, see [authentication setup](./authentication-setup.md).
+2. Crud/Jobs JS API fail: If these operations fail, the workload must ask for a token with ['.default'] as additionalScopesToConsent. This trigger's a consent for the dependencies of the application (the configured API Permissions in our app). For more information, see [authentication setup](./authentication-tutorial.md).
 
 3. OBO flow for a specific scope fails with consent required error:
 

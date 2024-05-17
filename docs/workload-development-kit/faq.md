@@ -1,16 +1,20 @@
 ---
 title: FAQ for extensibility certification 
 description: Learn how to certify and publish a workload over the Fabric extensibility platform.
-author: gesaur,rasala
-ms.author: gesaur,rasala
-ms.reviewer: gesaur, rasala
+author: KesemSharabi
+ms.author: kesharab
+ms.reviewer: gesaur
 ms.topic: how-to
 ms.custom:
-ms.date: 04/17/2024
+ms.date: 05/21/2024
 ---
 
-# General
-## I have a question that is not answered below, where can i get help?
+# Frequently asked questions
+
+This article contains frequently asked questions relating to the Microsoft Workload Development kit.
+
+## General
+### I have a question that is not answered below, where can i get help?
 Please reach out to [Fabric workload dev support](mailto:ILDCWLSupport@microsoft.com)
 
 # Fabric Workload Design
