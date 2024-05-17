@@ -96,7 +96,7 @@ You can now publish your Power BI reports to specific folders in your workspace.
 
 When you publish a report, you can choose the specific workspace and folder for your report, seen below. 
 
-:::image type="content" source="media/workspaces-folders/publish-folder-select-folder.png" alt-text="Screenshot showing selecting a folder for where a report gets pulbished." lightbox="media/workspaces-folders/publish-folder-select-folder.png":::
+:::image type="content" source="media/workspaces-folders/publish-folder-select-folder.png" alt-text="Screenshot showing selecting a folder for where a report gets published." lightbox="media/workspaces-folders/publish-folder-select-folder.png":::
 
 To publish reports to specific folders in the service, make sure the **Publish dialogs support folder selection** setting is enabled in the Preview features tab in the options menu. 
 
