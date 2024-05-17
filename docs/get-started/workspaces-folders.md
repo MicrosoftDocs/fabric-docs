@@ -99,7 +99,7 @@ When you publish a report, you can choose the specific workspace and folder for 
 :::image type="content" source="media/workspaces-folders/publish-folder-select-folder.png" alt-text="Screenshot showing selecting a folder for where a report gets pulbished." lightbox="media/workspaces-folders/publish-folder-select-folder.png":::
 
 To publish reports to specific folders in the service, make sure the "Publish dialogs support folder selection" setting is enabled in the Preview features tab in the options menu. 
-   
+
 :::image type="content" source="media/workspaces-folders/publish-folder-dialog.png" alt-text="Screenshot showing the "Publish dialogs support folder selection" as selected." lightbox="media/workspaces-folders/publish-folder-dialog.png":::
     
 ## Rename a folder
