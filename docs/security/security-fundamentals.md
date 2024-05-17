@@ -120,7 +120,8 @@ The Fabric service follows the Security Development Lifecycle (SDL), which consi
 For more information about Fabric security, see the following resources.
 
 - [Security in Microsoft Fabric](security-overview.md)
-- [Fabric and OneLake security](../onelake/security/fabric-onelake-security.md)
-- [Microsoft Fabric licenses](../enterprise/licenses.md)
-- Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).
-- Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).
+- [Microsoft Fabric end-to-end security scenario](security-scenario.md)
+- [OneLake security overview](../onelake/security/fabric-onelake-security.md)
+- [Microsoft Fabric concepts and licenses](../enterprise/licenses.md)
+- Questions? Try asking the [Microsoft Fabric community](https://community.fabric.microsoft.com/).
+- Suggestions? [Contribute ideas to improve Microsoft Fabric](https://ideas.fabric.microsoft.com/).
