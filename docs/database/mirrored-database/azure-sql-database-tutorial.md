@@ -30,7 +30,7 @@ ms.topic: tutorial
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL logical server
 
-The System Assigned Managed Identity (SAMI) of your Azure SQL logical server needs to be enabled, and must be the primary identity.
+The System Assigned Managed Identity (SAMI) of your Azure SQL logical server needs to be enabled, and must be the primary identity. SAMI is needed to be enabled for SQL Database to publish the data in Fabric OneLake using its managed identity.
 
 1. To configure or verify that the SAMI is enabled, go to your logical SQL Server in the Azure portal. Under **Security** in the resource menu, select **Identity**.
 1. Under **System assigned managed identity**, select **Status** to **On**.
@@ -40,7 +40,7 @@ The System Assigned Managed Identity (SAMI) of your Azure SQL logical server nee
 
 ### Database principal for Fabric
 
-Next, you need to create a way for the Fabric service to connect to your Azure SQL Database. You can accomplish this one of two ways, with a [login and mapped database user](#use-a-login-and-mapped-database-user), or a [contained database user](#use-a-contained-database-user):
+Next, you need to create a way for the Fabric service to connect to your Azure SQL Database. You will need to connect using the SQL login from Fabric to initiate connection between SQL Database and Fabric to enable Mirroring. You can accomplish this one of two ways, with a [login and mapped database user](#use-a-login-and-mapped-database-user), or a [contained database user](#use-a-contained-database-user):
 
 #### Use a login and mapped database user
 
@@ -57,6 +57,7 @@ Next, you need to create a way for the Fabric service to connect to your Azure S
 
     ```sql
     CREATE USER fabric_user FOR LOGIN fabric_login;
+    GRANT CONTROL TO fabric_user;
     ```
 
 #### Use a contained database user
