@@ -74,6 +74,30 @@ You can find more information in these articles:
 
 * [Object-level security (OLS)](service-admin-object-level-security.md)
 
+## OneLake permissions (data access roles)
+
+OneLake has its own permissions for governing access to files and folders in OneLake through [OneLake data access roles.](../onelake/security/get-started-data-access-roles.md) OneLake data access roles allow users to create custom roles within a lakehouse and to grant read permissions only to the specified folders when accessing OneLake. For each OneLake role, users can assign users, security groups or grant an automatic assignment based on the workspace role.
+
+Learn more about [OneLake Data Access Control Model](https://learn.microsoft.com/en-us/fabric/onelake/security/data-access-control-model) and view the how to guides.
+
+* [How to secure a lakehouse for Data Science teams](../onelake/security/how-to-secure-data-onelake-for-data-science.md)
+
+* [How to secure a lakehouse for Data Warehousing teams](../onelake/security/how-to-secure-data-onelake-for-data-warehousing.md)
+
+* [How to secure data for common data architectures](../onelake/security/how-to-common-data-architectures.md)
+
+## Order of operation
+
+Each level of security Fabric evaluates sequentially to determine if a user has access to data. Security rules such as [Microsoft Information Protection policies](../get-started/apply-sensitivity-labels.md) evaluate at a given level to allow or disallow access. A user must have access to all of these layers in order to access data. The order of operation when evaluating Fabric security is:
+
+1. Entra authentication: is the user able to authenticate to the Microsoft Entra tenant?
+2. Fabric access: is the user authorized to access Microsoft Fabric? This could be a workspace or an individual item.
+3. Data security: is the user authorized to see the table or file they are requesting?
+
+A diagram view of this order is as follows.
+
+:::image type="content" source=".\media\permission-model\order-of-precedence.png" alt-text="Diagram showing the order in which security is evaluated, which is: Entra authentication, then Microsoft Fabric access, then data security.":::
+
 ## Examples
 
 This sections provides two examples of how permissions can be set up in Fabric.
@@ -106,6 +130,31 @@ Let's say that Marta has a viewer role in the workspace where the report is stor
 If Veronica doesn't want Marta to view the report, removing Marta's item permissions from the report isn't enough. Veronica also needs to remove Marta's viewer permissions from the workspace. Without the workspace viewer permissions, Marta won't be able to see that the report exists because she won't be able to access the workspace. Marta will also not be able to use the link to the report, because she doesn't have access to the report.
 
 Now that Marta doesn't have a workspace viewer role, if Veronica decides to share the report with her again, Marta will be able to view it using the link Veronica shares with her, without having access to the workspace.
+
+### Example 3: Power BI App permissions
+
+When sharing Power BI reports, you often want your recipients to only have access to the reports and not to items in the workspace. For this you can use [Power BI apps](https://learn.microsoft.com/en-us/power-bi/consumer/end-user-apps) or share reports directly with users. This will only give them access to the reports but not to any items in the workspace.
+
+Furthermore you can limit viewer access to data using [Row-level security (RLS)](https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-rls), with RLS you can create roles that have access to certain portions of your data, and limit results returning only what the user's identity can access.
+
+This works fine when using Import models as the data is imported in the semantic model and the recipients will automatically have access to this as part of the app. For DirectLake the report will read the data directly from the Lakehouse and the report recipient will need to have access to these files in the lake. You can do this in several ways:
+
+* Give ReadData permission on the Lakehouse directly: [Lakehouse sharing and permission management - Microsoft Fabric | Microsoft Learn](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sharing)
+* [Switch the data source credential](https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
+
+As RLS is defined in the Semantic Model the data will be read and then security will be applied making sure RLS is always applied.
+
+When defining any security like RLS or OLS in SQL in Warehouse that are based on the same tables DirectLake will automatically fall back to DirectQuery. If you do not want this default fallback behaviour, you can create a new Lakehouse using shortcuts to the tables in the original Lakehouse and not define RLS or OLS in SQL on the new Lakehouse. This way you can make sure DirectLake will not fall back to DirectQuery.
+
+### Example 4: Control plane and Data plane permissions
+
+There is a distinction between permissions set at the Control Plane level (Workspace or Item level) and those set at the Data Plane level (Warehouse, Lakehouse, etc.). Write access granted at the Control Plane level will also extend to write access at the Data Plane level. However, users with read permissions at the Control Plane level might also have the ability to write on the Data Plane through compute engine security.
+
+For instance, Nat has the Item read permission on the warehouse item named "Sales." This permission allows Nat to connect to the warehouse and execute metadata queries. However, Nat could also be given specific compute engine security permissions at the Data Plane level.
+
+In our scenario, Nat could be added to the "db_owner" role in the warehouse, granting her the ability to create tables and write in the Data Plane, even if she was not granted this ability at the Control Plane level.
+
+In summary, while permissions granted at the Control Plane level often dictate access at the Data Plane level, additional compute engine security permissions can provide users with expanded capabilities in the Data Plane, potentially allowing them to perform actions not explicitly permitted at the Control Plane level.
 
 ## Related content
 

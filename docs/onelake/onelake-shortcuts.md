@@ -218,34 +218,9 @@ To enable caching for shortcuts, open the **Workspace settings** panel. Choose t
 
 ADLS and S3 shortcut authorization is delegated by using cloud connections. When you create a new ADLS or S3 shortcut, you either create a new connection or select an existing connection for the data source. Setting a connection for a shortcut is a bind operation. Only users with permission on the connection can perform the bind operation. If you don't have permissions on the connection, you can't create new shortcuts using that connection.
 
-## Permissions
+## Shortcut security
 
-A combination of the permissions in the shortcut path and the target path governs the permissions for shortcuts. When a user accesses a shortcut, the most restrictive permission of the two locations is applied. Therefore, a user that has read/write permissions in the lakehouse but only read permissions in the shortcut target can't write to the shortcut target path. Likewise, a user that only has read permissions in the lakehouse but read/write in the shortcut target also can't write to the shortcut target path.
-
-## Workspace roles
-
-The following table shows the shortcut-related permissions for each workspace role. For more information, see [Workspace roles](..\get-started\roles-workspaces.md).
-
-| **Capability** | **Admin** | **Member** | **Contributor** | **Viewer** |
-|---|---|---|---|---|
-| **Create a shortcut** | Yes<sup>1</sup> | Yes<sup>1</sup> | Yes<sup>1</sup> | - |
-| **Read file/folder content of shortcut** | Yes<sup>2</sup> | Yes<sup>2</sup> | Yes<sup>2</sup> | - |
-| **Write to shortcut target location** | Yes<sup>3</sup> | Yes<sup>3</sup> | Yes<sup>3</sup> | - |
-| **Read data from shortcuts in table section of the lakehouse via TDS endpoint** | Yes | Yes | Yes | Yes |
-
-<sup>1</sup> Users must have a role that provides write permission the shortcut location and at least read permission in the target location.
-
-<sup>2</sup> Users must have a role that provides read permission both in the shortcut location and the target location.
-
-<sup>3</sup> Users must have a role that provides write permission both in the shortcut location and the target location.
-
-## OneLake data access roles (preview)
-
-[OneLake data access roles](./security/get-started-data-access-roles.md) is a new feature that enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, and assign them to users or groups. The access permissions determine what folders users see when accessing the lake view of the data, either through the lakehouse UX, notebooks, or OneLake APIs. For items with the preview feature enabled, OneLake data access roles also determine a user's access to a shortcut.
-
-Users in the Admin, Member, and Contributor roles have full access to read data from a shortcut regardless of the OneLake data access roles defined. However they still need access on both the source and target of the shortcut as mentioned in [Workspace roles](./security/get-started-security.md#workspace-permissions).
-
-Users in the Viewer role or that had a lakehouse shared with them directly have access restricted based on if the user has access through a OneLake data access role. For more information on the access control model with shortcuts, see [Data Access Control Model in OneLake.](./security/data-access-control-model.md#shortcuts)
+Shortcuts require certain permissions to manage and use. [OneLake shortcut security](./onelake-shortcut-security.md) looks at the permissions required to create shortcuts and access data using them.
 
 ## How do shortcuts handle deletions?
 
