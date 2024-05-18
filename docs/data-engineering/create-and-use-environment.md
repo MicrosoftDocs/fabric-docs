@@ -106,7 +106,7 @@ The **Environment** menu appears in both the notebook and Spark job definition H
 
 Microsoft Fabric supports sharing an item with different level of permissions.
 
-:::image type="content" source="media\environment-introduction\env-sharing.png" alt-text="Screenshot of showing how to share an environment.":::
+:::image type="content" source="media\environment-introduction\environment-sharing.png" alt-text="Screenshot of showing how to share an environment.":::
 
 When you share an environment item, recipients automatically receive **Read permission**. With this permission, they can explore the environment’s configurations and attach it to notebooks or Spark jobs. For smooth code execution, ensure to grant read permissions for attached environments when sharing notebooks and Spark job definitions.
 

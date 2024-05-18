@@ -32,19 +32,19 @@ If you are the admin of a workspace, navigate to the workspace settings, and set
 
 After connecting, you can find items including the environments syncing with the repo.
 
-:::image type="content" source="media\environment-git-and-deployment-pipeline\env-git-connected-to-repo.png" alt-text="Screenshot of successfully connecting the workspace to an Azure DevOps repo.":::
+:::image type="content" source="media\environment-git-and-deployment-pipeline\environment-git-connected-to-repo.png" alt-text="Screenshot of successfully connecting the workspace to an Azure DevOps repo.":::
 
 ### Local representation of an environment in Git
 
 In the item root folder, environments are organized with a **Libraries** folder that contains **PublicLibraries** and **CustomLibraries** sub-folders, along with the **Setting** folder.
 
-:::image type="content" source="media\environment-git-and-deployment-pipeline\env-git-representation.png" alt-text="Screenshot of the local representation of the environment in Git.":::
+:::image type="content" source="media\environment-git-and-deployment-pipeline\environment-git-representation.png" alt-text="Screenshot of the local representation of the environment in Git.":::
 
 #### Libraries
 
 When you commit an environment to Git, the **public library** section is transformed into its YAML representation. Additionally, the **custom library** is committed along with its source file.
 
-:::image type="content" source="media\environment-git-and-deployment-pipeline\env-git-representation-public-library.png" alt-text="Screenshot of the public library local representation of the environment in Git.":::
+:::image type="content" source="media\environment-git-and-deployment-pipeline\environment-git-representation-public-library.png" alt-text="Screenshot of the public library local representation of the environment in Git.":::
 
 You can update the public library by editing the YAML representation. Just like the portal experience, you can specify a library from PyPI and conda. You can specify the library with expected version, a version range or without version. The system can help you determine a version that is compatible with other dependencies in your environment. To clear all the existing public libraries, delete the YAML file.
 
@@ -57,7 +57,7 @@ You can update the custom library by adding new files or deleting existing files
 
 The Spark compute section is transformed into the YAML representation as well. Within this YAML file, you can switch the attached **pool**, fine-tune **compute configurations**, manage **Spark properties**, and select the desired **Spark runtime**.
 
-:::image type="content" source="media\environment-git-and-deployment-pipeline\env-git-representation-spark-compute.png" alt-text="Screenshot of the Spark compute local representation of the environment in Git.":::
+:::image type="content" source="media\environment-git-and-deployment-pipeline\environment-git-representation-spark-compute.png" alt-text="Screenshot of the Spark compute local representation of the environment in Git.":::
 
 ## Deployment pipeline for environment
 
@@ -67,7 +67,7 @@ Fabric’s deployment pipelines simplify the process of delivering modified cont
 
 You can set up a deployment pipeline by assigning the workspaces with different phases. Learn more on [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
 
-:::image type="content" source="media\environment-git-and-deployment-pipeline\env-deployment-pipeline.png" alt-text="Screenshot of deploying environment in deployment pipeline.":::
+:::image type="content" source="media\environment-git-and-deployment-pipeline\environment-deployment-pipeline.png" alt-text="Screenshot of deploying environment in deployment pipeline.":::
 
 You can find the deploying status after setting up the pipeline successfully. After clicking the **Deploy** button with environment selected, all contents of the environment are deployed to the destination workspaces. The status of the original environment is preserved in this process, meaning the published configurations stay in published state and require no extra publishing.
 
