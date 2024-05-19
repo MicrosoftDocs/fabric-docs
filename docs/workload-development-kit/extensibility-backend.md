@@ -163,9 +163,9 @@ To set up the boilerplate sample project on your local machine, follow these ste
 1. Build to ensure your project can access the required dependencies for compilation and execution.
 1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application located in *Backend\DevGateway*. Sign in with a user that has **capacity admin privileges** to the capacity you defined in workload-dev-mode.json (CapacityGuid). Upon the initialization of the workload, an authentication prompt appears.
 
-   ![signIn](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/573bb83a-1c54-4baf-bf52-0aca1e72bc21)
+   :::image type="content" source="./media/extensibility-backend/sign-in.png" alt-text="Screenshot of Microsoft sign in page.":::
 
-   After authentication, external workloads establish communication with the Fabric backend through Azure Relay. This process involves relay registration and communication management, facilitated by a designated Proxy node. Furthermore, the package containing the workload manifest is uploaded and published.
+   After authentication, external workloads establish communication with the Fabric back-end through Azure Relay. This process involves relay registration and communication management, facilitated by a designated Proxy node. Furthermore, the package containing the workload manifest is uploaded and published.
 
    At this stage, Fabric has knowledge of the workload, encompassing its allocated capacity.
 
@@ -173,13 +173,11 @@ To set up the boilerplate sample project on your local machine, follow these ste
 
    If you don't get any errors, then the connection is established, registration is successfully executed, and the workload manifest was systematically uploaded.
 
-   ![devgetway](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/139851206/548ea235-07f3-461d-b312-c9a01aa967a1)
+   :::image type="content" source="./media/extensibility-backend/no-errors.png" alt-text="Screenshot of connection loading without any errors.":::
 
 1. Change your startup project in Visual Studio to the *Boilerplate* project and select **Run**.
 
-    ![Run](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/16da53ad-013a-4382-b6cd-51acc4352c52)
-
-    ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/139851206/1e3fe360-28d1-4471-aded-8d69f00a8cfd)
+    :::image type="content" source="./media/extensibility-backend/boilerplate.png" alt-text="Screenshot of UI for startup project in Visual Studio.":::
 
 ## Working with the Boilerplate
 
@@ -427,7 +425,7 @@ When troubleshooting various operations, you can set breakpoints in the code to 
 
 The debugger pause execution at the specified breakpoints, enabling you to examine variables, step through code, and identify issues.
 
-![BPCreate](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/106332b5-3240-4a31-9b6b-dcc440cced36)
+:::image type="content" source="./media/extensibility-backend/debugger.png" alt-text="Screenshot of sample program with breakpoints for debugging.":::
 
 ## Workspace
 

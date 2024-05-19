@@ -106,53 +106,9 @@ We'll see how to work with consents when we talk about AcquireAccessTokenParams.
 
 ### Another way to grant consents in the home tenant (optional)
 
-To get a consent in the home tenant of the application, you can ask your tenant admin to grant a consent for the whole tenant using this url (insert your tenant ID and the client ID):  
+Refer to the [Javascript API documentation](./authentication-javascript-api.md#another-way-to-grant-consents-in-the-home-tenant-optional) for more information on how to grant consents in the home tenant of the application using the following url (insert your tenant ID and the client ID):  
 
 `https://login.microsoftonline.com/{tenantId}/adminconsent?client_id={clientId}`
-
-### AcquireAccessTokenParams
-
-When calling acquireAccessToken JS API, we can provide two parameters:  
-
-* additionalScopesToConsent: Additional scopes to ask for a consent for, for example reconsent scenarios.
-
-* claimsForConditionalAccessPolicy: Claims returned from Microsoft Entry ID when OBO flows fail. For example, OBO requires multifactor authentication.
-
-Let's review these two parameters and see what to provide when calling acquireAccessToken.
-
-### additionalScopesToConsent
-
-Here's what to provide in additionalScopesToConsent when calling acquireAccessToken:
-
-Scenario | 1. Acquiring a token to call the Workload BE | 2. Crud/JOBS operation fails | 3. OBO flow for scope 'https://analysis.windows.net/powerbi/api/Workspace.Read.All/' fails with consent required error 
---- | --- | --- | --- 
-AdditionalScopesToConsent | null | ['.default'] | ['https://analysis.windows.net/powerbi/api/Workspace.Read.All'] 
-
-1. Acquiring a token to call the back-end workload: When you want to acquire a token to call your back-end workload, call acquireAccessToken without providing any additionalScopesToConsent.
- 
-   * If the user is in the home tenant of the application, the workload will be able to acquire a token without granting any consent.
-
-   * If the user is in another tenant, he'll need to grant consent (or have the admin of the tenant grant consent to the app) before the workload can receive a token.
-
-2. Crud/Jobs JS API fail: If these operations fail, the workload must ask for a token with ['.default'] as additionalScopesToConsent. This triggers a consent for the dependencies of the application (the configured API Permissions in our APP. See the [authentication setup](./authentication-tutorial.md) for more info).
-
-3. OBO flow for a specific scope fails with consent required error:
-
-   :::image type="content" source="./media/authentication-concept/obo-consent-required-error.png" alt-text="Screenshot showing OBO consent required error.":::
-
-   If the OBO flow in the workload back-end fails with a consent required error for a specific scope/s, the workload back-end must inform the front-end to call acquireAccessToken API with those scope/s.  
-
-### claimsForConditionalAccessPolicy
-
-This is used when facing OBO failures in the workload BE because of some conditional access policy that has been configured on the tenant.
-
-OBO failures because of conditional access policies return a string called "claims". This string should be sent to the workload front-end where the front-end should ask for a token and pass the claim as claimsForConditionalAccessPolicy.
-
-For more information, see [Handling multi-factor auth (MFA), conditional access, and incremental consent](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#handling-multi-factor-auth-mfa-c).
-
-Refer to AuthenticationService the file *AuthenticationService.cs*, AddBearerClaimToResponse usage in the back-end sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies. The *AuthenticationService.cs* file can be found in the [Microsoft-Fabric-workload-development-sample](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), under the back-end folder.
-
-For a detailed explanation of the authentication process and implementation, refer to the [Back-end authentication and authorization overview](./backend-authentication.md). It covers the purpose and use of the `SubjectAndAppToken`, including its validation, the user context it provides, and its role in inter-service communication. The document also outlines the main authentication checks performed for the `SubjectAndAppToken`, such as validation and parsing of the authorization header value, Entra token properties validation, and `appToken` properties validation. It includes links to the relevant methods in the codebase for further reference. A sample `appToken` with its claims is also provided for better understanding.
 
 ## Related content
 
