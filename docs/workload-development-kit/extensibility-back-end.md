@@ -38,9 +38,9 @@ The workload development kit architecture integrates seamlessly with Lakehouse, 
 
 Entra ID is used for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
 
-[This overview](./dev-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, guidelines, and getting started, see the respective sections in this [README](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/README.md).
+[Th development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, guidelines, and getting started, see the respective sections in this [README](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/README.md).
 
-:::image type="content" source="./media/extensibility-backend/overview.png" alt-text="Diagram showing how Fabric SDK integrated into Fabric.":::
+:::image type="content" source="./media/extensibility-back-end/overview.png" alt-text="Diagram showing how Fabric SDK integrated into Fabric.":::
 
 The frontend establishes communication with the Fabric frontend portal via an IFrame. The portal, in turn, interacts with the Fabric backend by making calls to its exposed public APIs.
 
@@ -439,15 +439,15 @@ The debugger pause execution at the specified breakpoints, enabling you to exami
 
 If you try to run the Sample to make changes on the backend be sure you are in a named workspace, and not in the default *My Workspace*. Otherwise, you might get this error:
 
-:::image type="content" source="./media/extensibility-backend/copy-item.png" alt-text="Screenshot of UI for naming a sample workload item.":::
+:::image type="content" source="./media/extensibility-back-end/copy-item.png" alt-text="Screenshot of UI for naming a sample workload item.":::
 
 1. Switch to a named workspace and leave the default *My workspace*:
 
-    :::image type="content" source="./media/extensibility-backend/sample-workload.png" alt-text="Screenshot of UI for creating sample workload.":::
+    :::image type="content" source="./media/extensibility-back-end/sample-workload.png" alt-text="Screenshot of UI for creating sample workload.":::
 
 1. From the correct workspace, load the sample workload and proceed with the tests:
 
-    :::image type="content" source="./media/extensibility-backend/create-sample-workload.png" alt-text="Screenshot of UI for creating sample workload item.":::
+    :::image type="content" source="./media/extensibility-back-end/create-sample-workload.png" alt-text="Screenshot of UI for creating sample workload item.":::
 
 ## Contribute
 
@@ -461,5 +461,6 @@ We welcome contributions to this project. If you find any issues or want to add 
 
 ## Related content
 
-* [Workload development kit overview](dev-kit-overview.md)
-* [Workload development kit frontend](extensibility-frontend.md)
+* [Workload development kit overview](development-kit-overview.md)
+
+* [Workload development kit frontend](extensibility-front-end.md)

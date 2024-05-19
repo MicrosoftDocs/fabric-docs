@@ -23,7 +23,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is Microsoft Fabric Workload Development Kit?
-            url: dev-kit-overview.md     
+            url: development-kit-overview.md     
           - text: Monetize your workload
             url: monetization.md                 
 
@@ -49,9 +49,9 @@ landingContent:
         - text: Set up authentication
           url: authentication-tutorial.md    
         - text: Front-end implementation guide
-          url: extensibility-frontend.md
+          url: extensibility-front-end.md
         - text: Back-end implementation guide
-          url: extensibility-backend.md
+          url: extensibility-back-end.md
         - text: Azure web app deployment tutorial
           url: azure-webapp-deployment-tutorial.md  
 

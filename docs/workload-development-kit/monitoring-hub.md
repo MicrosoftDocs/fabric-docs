@@ -89,9 +89,9 @@ After integrating jobs into your items in the backend, users can start running j
 
     :::image type="content" source="./media/monitoring-hub/fabric-scheduler-set.png" alt-text="Screenshot showing Fabric scheduler settings.":::
 
-    1. Last success refresh time and next refresh time
-    1. Refresh button
-    1. Artifact schedule settings
+    * Last success refresh time and next refresh time
+    * Refresh button
+    * Artifact schedule settings
 
 **Onboarding**
 
@@ -199,7 +199,7 @@ Entry Points:
 
 * **Context menu** > **Recent runs**
 
-    :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="{alt-text}":::
+    :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="Screenshot of the recent runs option in the in the menu. ":::
 
 * Using `extensionClient.artifactRecentRuns.open`.
 

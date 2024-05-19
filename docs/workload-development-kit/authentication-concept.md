@@ -26,11 +26,11 @@ It's recommended that you become familiar with the [Microsoft identity platform]
 
 An example of such communication is any data plane API. This communication is done with a Subject token (Delegated token).
 
-For information on how to acquire a token in the workload FE, read [Authentication API](./authentication-javascript-api.md). In addition, make sure you go over token validation in the [Backend authentication and authorization overview](./backend-authentication.md).
+For information on how to acquire a token in the workload FE, read [Authentication API](./authentication-javascript-api.md). In addition, make sure you go over token validation in the [Backend authentication and authorization overview](back-end-authentication.md).
 
 ### 2. From Fabric BE to workload BE
 
-An example of such communication is Create workload item. This communication is done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see the [Backend authentication and authorization overview](./backend-authentication.md) to learn more about this token).
+An example of such communication is Create workload item. This communication is done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see the [Backend authentication and authorization overview](back-end-authentication.md) to learn more about this token).
 
 For this communication to work, the user using this communication must give consent to the Entra application.
 
@@ -152,10 +152,10 @@ For more information, see [Handling multi-factor auth (MFA), conditional access,
 
 Refer to AuthenticationService the file *AuthenticationService.cs*, AddBearerClaimToResponse usage in the backend sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies. The *AuthenticationService.cs* file can be found in the [Microsoft-Fabric-workload-development-sample](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample), under the backend folder.
 
-For a detailed explanation of the authentication process and implementation, refer to the [Backend authentication and authorization overview](./backend-authentication.md). It covers the purpose and use of the `SubjectAndAppToken`, including its validation, the user context it provides, and its role in inter-service communication. The document also outlines the main authentication checks performed for the `SubjectAndAppToken`, such as validation and parsing of the authorization header value, Entra token properties validation, and `appToken` properties validation. It includes links to the relevant methods in the codebase for further reference. A sample `appToken` with its claims is also provided for better understanding.
+For a detailed explanation of the authentication process and implementation, refer to the [Backend authentication and authorization overview](back-end-authentication.md). It covers the purpose and use of the `SubjectAndAppToken`, including its validation, the user context it provides, and its role in inter-service communication. The document also outlines the main authentication checks performed for the `SubjectAndAppToken`, such as validation and parsing of the authorization header value, Entra token properties validation, and `appToken` properties validation. It includes links to the relevant methods in the codebase for further reference. A sample `appToken` with its claims is also provided for better understanding.
 
 ## Related content
 
-* [Backend authentication and authorization overview](./backend-authentication.md)
+* [Backend authentication and authorization overview](back-end-authentication.md)
 * [Authentication JavaScript API](./authentication-javascript-api.md)
 * [Authentication setup](./authentication-tutorial.md)

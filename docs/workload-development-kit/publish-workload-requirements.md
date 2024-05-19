@@ -47,7 +47,7 @@ The requirements for the workload package metadata and the SaaS submission offer
 
 Metadata such as title, summary, and icon, must be identical in the Workload package manifest and the SaaS offer submission in Partner Center. Add all the assets of the workload such as icons and screenshots under `fe/assests` directory.
 
-Your workload package has to comply with the frontend and [backend](extensibility-backend.md) manifest requirements.
+Your workload package has to comply with the frontend and [backend](extensibility-back-end.md) manifest requirements.
 
 ## Technical requirements
 
@@ -92,7 +92,7 @@ The following table lists additional requirements for your workload offer.
 
 ## Related content
 
-* [Microsoft Fabric Workload Development Kit](dev-kit-overview.md)
+* [Microsoft Fabric Workload Development Kit](development-kit-overview.md)
 
 * [Commercial marketplace certification policies](/legal/marketplace/certification-policies)
 
