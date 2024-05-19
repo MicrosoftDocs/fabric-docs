@@ -199,7 +199,7 @@ Entry Points:
 
 * **Context menu** > **Recent runs**
 
-    :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="{alt-text}":::
+    :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="Screenshot showing the Recent runs option in the monitoring hub.":::
 
 * Using `extensionClient.artifactRecentRuns.open`.
 

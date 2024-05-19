@@ -11,6 +11,8 @@ ms.date: 05/21/2024
 
 # Set up your environment
 
+This article shows you how to set up an environment for your work with the Microsoft Fabric Workload Development Kit. 
+
 ## Prerequisites
 
 The following steps are required before getting started with workload development.
