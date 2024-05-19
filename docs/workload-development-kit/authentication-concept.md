@@ -88,7 +88,7 @@ To understand why consents are required, review [User and admin consent in Micro
 
 ### How do consents work in Fabric workloads?
 
-To grant a consent for a specific application, Fabric FE creates an [MSAL](https://www.npmjs.com/package/@azure/msal-browser) instance configured with the workload's application ID and asks for a token for the provided scope.
+To grant a consent for a specific application, Fabric FE creates an [MSAL](https://www.npmjs.com/package/@azure/msal-browser) instance configured with the workload's application ID and asks for a token for the provided scope (additionalScopesToConsent - see [AcquireAccessTokenParams](./authentication-javascript-api.md#acquireaccesstokenparams)). 
 
 When asking for a token with the workload application for a specific scope, Microsoft Entra ID displays a popup consent in case it's missing, and then redirect the popup window to the **redirect URI** configured in the application.
 
