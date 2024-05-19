@@ -163,7 +163,7 @@ To set up the boilerplate sample project on your local machine, follow these ste
 1. Build to ensure your project can access the required dependencies for compilation and execution.
 1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application located in *Backend\DevGateway*. Sign in with a user that has **capacity admin privileges** to the capacity you defined in workload-dev-mode.json (CapacityGuid). Upon the initialization of the workload, an authentication prompt appears.
 
-   :::image type="content" source="./media/extensibility-backend/sign-in.png" alt-text="Screenshot of Microsoft sign in page.":::
+   :::image type="content" source="./media/extensibility-back-end/sign-in.png" alt-text="Screenshot of Microsoft sign in page.":::
 
    After authentication, external workloads establish communication with the Fabric back-end through Azure Relay. This process involves relay registration and communication management, facilitated by a designated Proxy node. Furthermore, the package containing the workload manifest is uploaded and published.
 
@@ -173,11 +173,11 @@ To set up the boilerplate sample project on your local machine, follow these ste
 
    If you don't get any errors, then the connection is established, registration is successfully executed, and the workload manifest was systematically uploaded.
 
-   :::image type="content" source="./media/extensibility-backend/no-errors.png" alt-text="Screenshot of connection loading without any errors.":::
+   :::image type="content" source="./media/extensibility-back-end/no-errors.png" alt-text="Screenshot of connection loading without any errors.":::
 
 1. Change your startup project in Visual Studio to the *Boilerplate* project and select **Run**.
 
-    :::image type="content" source="./media/extensibility-backend/boilerplate.png" alt-text="Screenshot of UI for startup project in Visual Studio.":::
+    :::image type="content" source="./media/extensibility-back-end/boilerplate.png" alt-text="Screenshot of UI for startup project in Visual Studio.":::
 
 ## Working with the Boilerplate
 
@@ -425,7 +425,7 @@ When troubleshooting various operations, you can set breakpoints in the code to 
 
 The debugger pause execution at the specified breakpoints, enabling you to examine variables, step through code, and identify issues.
 
-:::image type="content" source="./media/extensibility-backend/debugger.png" alt-text="Screenshot of sample program with breakpoints for debugging.":::
+:::image type="content" source="./media/extensibility-back-end/debugger.png" alt-text="Screenshot of sample program with breakpoints for debugging.":::
 
 ## Workspace
 
