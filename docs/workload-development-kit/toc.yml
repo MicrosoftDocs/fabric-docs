@@ -1,23 +1,36 @@
 items:
 - name: Microsoft Fabric Workload Development Kit documentation
   href: index.yml
-- name: Development Kit overview
-  href: dev-kit-overview.md
+- name: Overview
   items:
-  - name: Monetize your workload
-    href: monetization.md
-  - name: Publish your workload
-    href: publish-workload-flow.md
-  - name: Publishing requirements
-    href: publish-workload-requirements.md
+  - name: Development Kit overview
+    href: dev-kit-overview.md
+  - name: Workload validation
+    href: publish-workload-requirements.md    
 - name: Get started
   items:
   - name: Set up your environment
     href: environment-setup.md
   - name: QuickStart - Run a workload sample
     href: quickstart-sample.md
+- name: Tutorials
+  items:
+  - name: Add and manage more workloads
+    href: more-workloads-add.md
+  - name: Upload and manage a workload
+    href: manage-workload.md
+  - name: Authentication
+    href: authentication-tutorial.md    
+  - name: Front-end implementation guide
+    href: extensibility-frontend.md
+  - name: Back-end implementation guide
+    href: extensibility-backend.md
+  - name: Azure web app deployment
+    href: azure-webapp-deployment-tutorial.md    
 - name: Concept
   items:
+  - name: Monetize your workload
+    href: monetization.md  
   - name: Authentication
     href: authentication-concept.md
   - name: Workload environment
@@ -28,25 +41,21 @@ items:
     href: monitoring-hub.md
   - name: Working with customer data
     href: fabric-data-plane.md
-- name: Tutorials
-  items: 
-  - name: Add and manage more workloads
-    href: more-workloads-add.md
-  - name: Upload and manage a workload
-    href: manage-workload.md
-  - name: Authentication
-    href: authentication-tutorial.md    
-  - name: Frontend implementation guide
-    href: extensibility-frontend.md
-  - name: Backend implementation guide
-    href: extensibility-backend.md
-  - name: Azure web app deployment
-    href: azure-webapp-deployment-tutorial.md
+  - name: Publish your workload
+    href: publish-workload-flow.md
+- name: Authentication
+  items:
+  - name: Back-end authentication
+    href: backend-authentication.md
+  - name: Authentication JavaScript API
+    href: authentication-javascript-api.md          
 - name: Reference
   items:
+   - name: Frequently asked questions
+     href: faq.md 
 #  - name: REST APIs
 #    href: https://review.learn.microsoft.com/en-us/rest/api/fabric/workload/workloadapi/jobs?branch=drafts%2ffeatures%2fworkloadsapi&tabs=HTTP
 #  - name: Client-side APIs
 #    href: https://review.learn.microsoft.com/en-us/javascript/api/overview/fabric-extensibility-overview?view=fabric-extensibility-js-latest&branch=smoke-test
-  - name: Samples
-    href: https://github.com/microsoft/Microsoft-Fabric-workload-development-sample
+   - name: Samples
+     href: https://github.com/microsoft/Microsoft-Fabric-workload-development-sample
