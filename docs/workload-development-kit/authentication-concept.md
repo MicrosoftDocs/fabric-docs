@@ -20,7 +20,8 @@ It's recommended that you become familiar with the [Microsoft identity platform]
 
 ## Flows
 
-:::image type="content" source="./media/authentication-concept/authentication-diagram.png" alt-text="Screenshot showing the extensibility authentication flow.":::
+<!--:::image type="content" source="./media/authentication-concept/authentication-diagram.png" alt-text="Screenshot showing the extensibility authentication flow.":::
+-->
 
 1. From workload front-end to workload back-end
 
