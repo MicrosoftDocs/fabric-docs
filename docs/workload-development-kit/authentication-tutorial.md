@@ -14,7 +14,7 @@ ms.date: 05/21/2024
 In order to be able to work with authentication, you need to setup its three component parts:
 
 * [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication) (formerly Azure AD App)
-* [Frontend sample](./extensibility-frontend.md)
+* [Frontend sample](./extensibility-front-end.md)
 * [Backend sample](./extensibility-backend.md)
 
 To work with authentication in Fabric, follow this guide.

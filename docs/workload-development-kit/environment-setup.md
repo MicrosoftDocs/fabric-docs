@@ -66,7 +66,7 @@ These steps are required when setting up the workload, For a detailed guide on h
 
 ### Web app (cloud mode only)
 
-Cloud mode (in conjunction to local machine mode) workload deployment requires setting up a web app domain for the Frontend (FE) and Backend (BE). These must be subdomains of the resource ID with a maximum of one more segment. The reply URL host domain should be the same as the FE host domain. For more information, see [Creating and deploying the boilerplate backend web app](./azure-webapp-deployment-tutorial.md).
+Cloud mode (in conjunction to local machine mode) workload deployment requires setting up a web app domain for the Frontend (FE) and Backend (BE). These must be subdomains of the resource ID with a maximum of one more segment. The reply URL host domain should be the same as the FE host domain. For more information, see [Creating and deploying the boilerplate backend web app](./azure-web-app-deployment-tutorial.md).
 
 ### Setting up a Fabric development tenant
 
