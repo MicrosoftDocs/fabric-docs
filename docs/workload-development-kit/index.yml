@@ -49,11 +49,11 @@ landingContent:
         - text: Set up authentication
           url: authentication-tutorial.md    
         - text: Front-end implementation guide
-          url: extensibility-frontend.md
+          url: extensibility-front-end.md
         - text: Back-end implementation guide
           url: extensibility-backend.md
         - text: Azure web app deployment tutorial
-          url: azure-webapp-deployment-tutorial.md  
+          url: azure-web-app-deployment-tutorial.md  
 
   # Card 
   - title: Concepts

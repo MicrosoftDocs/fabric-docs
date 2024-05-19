@@ -22,11 +22,11 @@ items:
   - name: Authentication
     href: authentication-tutorial.md    
   - name: Front-end implementation guide
-    href: extensibility-frontend.md
+    href: extensibility-front-end.md
   - name: Back-end implementation guide
     href: extensibility-backend.md
   - name: Azure web app deployment
-    href: azure-webapp-deployment-tutorial.md    
+    href: azure-web-app-deployment-tutorial.md    
 - name: Concept
   items:
   - name: Monetize your workload

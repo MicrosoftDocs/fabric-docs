@@ -454,4 +454,4 @@ We welcome contributions to this project. If you find any issues or want to add 
 ## Related content
 
 * [Workload development kit overview](dev-kit-overview.md)
-* [Workload development kit frontend](extensibility-frontend.md)
+* [Workload development kit frontend](extensibility-front-end.md)
