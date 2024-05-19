@@ -16,7 +16,7 @@ The recommended flow for item creation in Fabric UI is
 1. Create an "empty" item.
 1. Edit and save the new item.
 
-:::image type="content" source="media/item-lifecycle/part-1.png" alt-text="Schematic representation of the first part of item life cycle management in Microsoft Fabric.":::
+:::image type="content" source="media/item-lifecycle/part-1.png" alt-text="Schematic representation of the first part of item life cycle management in Microsoft Fabric." lightbox="media/item-lifecycle/part-1.png":::
 
 This process can be divided into the following phases:
 
@@ -24,7 +24,7 @@ This process can be divided into the following phases:
 1. [Load the item](#load-the-item)
 1. [Edit the item](#edit-the-item)
 
-:::image type="content" source="media/item-lifecycle/part-2.png" alt-text="Schematic representation of the second part of item life cycle management in Microsoft Fabric.":::
+:::image type="content" source="media/item-lifecycle/part-2.png" alt-text="Schematic representation of the second part of item life cycle management in Microsoft Fabric." source="media/item-lifecycle/part-2.png":::
 
 When the user selects a button to create an item of any type, Fabric FE (Portal) code needs to load the corresponding item editor.
 Fabric FE makes an API call to Fabric BE to fetch the required information, including the source URL, the Microsoft Entra ID application details, and the workload BE URL, all corresponding to the current context. Once this information is available, an item is created. Typically the item loads its static resources like HTML, JavaScript, CSS, and images from CDN. We recommend using multi-region CDN deployment and to configure name resolution so that the source URL will resolve to the CDN server that is physically closest to the current location of the browser.
