@@ -44,7 +44,7 @@ During the development cycle, testing a workload on a nonproduction tenant can b
 
 - **Dev mode workload package**: When building the BE solution in Visual Studio, use the Debug parameter to create a BE NuGet package, which can be loaded in to the Fabric tenant using the DevGateWay application.
 
-:::image type="content" source="./media/workload-environment/dev-mode-diagram.png" alt-text="Diagram of the dev mode architecture." lightbox="./media/workload-environment/dev-mode-diagram.png":::
+:::image type="content" source="./media/workload-environment/developer-mode-diagram.png" alt-text="Diagram of the developer mode architecture." lightbox="./media/workload-environment/developer-mode-diagram.png":::
 
 - **Cloud mode workload package**: When building the BE solution in Visual Studio, use the Release parameter to create a standalone workload package (BE and FE). This package can be uploaded to tenant directly.
 
@@ -56,7 +56,7 @@ The workload backend (BE) operates on the developer's machine. Workload API call
 
 #### DevMode BE schema
 
-:::image type="content" source="./media/workload-environment/dev-mode-back-end-schema-diagram.png" alt-text="Diagram of the dev mode be schema architecture." lightbox="./media/workload-environment/dev-mode-back-end-schema-diagram.png":::
+:::image type="content" source="./media/workload-environment/developer-mode-back-end-schema-diagram.png" alt-text="Diagram of the dev mode be schema architecture." lightbox="./media/workload-environment/developer-mode-back-end-schema-diagram.png":::
 
 ### Cloud development mode (cloud mode)
 
