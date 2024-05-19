@@ -25,10 +25,10 @@ In the **More workloads** section, workloads published by Microsoft & Partners c
 
 Each workload includes additional information describing workload capabilities and other information including the following:
 
-1. **Item Type**: A list of items this workload can create.
-1. **Compatible with**: which items are integrated with by the workload.
-1. **Publisher support**: Documentation, Certification page & Help links by the workload publisher.
-1. Videos and screenshots material by the publisher.
+* **Item Type**: A list of items this workload can create.
+* **Compatible with**: which items are integrated with by the workload.
+* **Publisher support**: Documentation, Certification page & Help links by the workload publisher.
+* Videos and screenshots material by the publisher.
 
 ## Adding and removing workloads
 
