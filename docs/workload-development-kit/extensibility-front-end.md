@@ -113,7 +113,7 @@ To set up the front end of the sample project, follow these steps:
    Go to **Developer Settings** --> **Fabric Developer Mode** and refresh of the page.
    This setting is persisted in the current browser.
 
-   :::image type="content" source="./media/extensibility-front-end/dev-mode.png" alt-text="A screenshot of the Fabric Developer mode switch.":::
+   :::image type="content" source="./media/extensibility-front-end/developer-mode.png" alt-text="Screenshot of a product switcher example in developer mode.":::
 
 ### Example of usage
 

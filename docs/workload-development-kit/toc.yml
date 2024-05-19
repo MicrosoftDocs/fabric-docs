@@ -26,7 +26,7 @@ items:
   - name: Back-end implementation guide
     href: extensibility-back-end.md
   - name: Azure web app deployment
-    href: azure-webapp-deployment-tutorial.md    
+    href: azure-web-app-deployment-tutorial.md    
 - name: Concept
   items:
   - name: Monetize your workload

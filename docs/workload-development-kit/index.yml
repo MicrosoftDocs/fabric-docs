@@ -53,7 +53,7 @@ landingContent:
         - text: Back-end implementation guide
           url: extensibility-back-end.md
         - text: Azure web app deployment tutorial
-          url: azure-webapp-deployment-tutorial.md  
+          url: azure-web-app-deployment-tutorial.md  
 
   # Card 
   - title: Concepts

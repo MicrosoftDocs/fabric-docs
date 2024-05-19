@@ -56,6 +56,5 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 
 ## Related content
 
-* [Fabric extensibility frontend](extensibility-front-end.md)
-
-* [Fabric extensibility backend](extensibility-back-end.md)
+* [Fabric extensibility front end](extensibility-front-end.md)
+* [Fabric extensibility back end](extensibility-back-end.md)

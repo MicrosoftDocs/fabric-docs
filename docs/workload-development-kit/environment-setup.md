@@ -66,7 +66,7 @@ These steps are required when setting up the workload, For a detailed guide on h
 
 ### Web app (cloud mode only)
 
-Cloud mode (in conjunction to local machine mode) workload deployment requires setting up a web app domain for the Frontend (FE) and Backend (BE). These must be subdomains of the resource ID with a maximum of one more segment. The reply URL host domain should be the same as the FE host domain. For more information, see [Creating and deploying the boilerplate backend web app](./azure-webapp-deployment-tutorial.md).
+Cloud mode (in conjunction to local machine mode) workload deployment requires setting up a web app domain for the Frontend (FE) and Backend (BE). These must be subdomains of the resource ID with a maximum of one more segment. The reply URL host domain should be the same as the FE host domain. For more information, see [Creating and deploying the boilerplate backend web app](./azure-web-app-deployment-tutorial.md).
 
 ### Setting up a Fabric development tenant
 
@@ -78,9 +78,11 @@ In the context of executing the workload SDK sample and building a workload, it'
 
    To enable a user to begin development, include them in the **Capacity admins can develop additional workloads** tenant setting.
 
+   :::image type="content" source="./media/environment-setup/environment-setup-tenant-settings.png" alt-text="Screenshot of Additional workloads tenant settings.":::
+
 1. After the user has been granted permission in the previous step, **each** user can enable development mode for the development settings area under Fabric developer mode.
 
-   :::image type="content" source="./media/environment-setup/environment-setup-devmode.png" alt-text="Screenshot of turning on Workloads Developer Mode.":::
+   :::image type="content" source="./media/environment-setup/environment-setup-developer-mode.png" alt-text="Screenshot of turning on Workloads Developer Mode.":::
 
 ## Related content
 

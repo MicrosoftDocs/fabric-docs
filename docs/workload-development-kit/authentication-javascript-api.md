@@ -72,25 +72,25 @@ Let's review these two parameters and see what to provide when calling acquireAc
 
 ### additionalScopesToConsent
 
-Here's what to provide in additionalScopesToConsent when calling acquireAccessToken:
+Here's what to provide in *additionalScopesToConsent* when calling `acquireAccessToken` in the following scenarios:
 
-Scenario | 1. Acquiring a token to call the workload BE | 2. Crud/JOBS operation fails | 3. OBO flow for scope `https://analysis.windows.net/powerbi/api/Workspace.Read.All/` fails with a consent required error
---- | --- | --- | --- 
-AdditionalScopesToConsent | null | ['.default'] | ['https://analysis.windows.net/powerbi/api/Workspace.Read.All'] 
+**Scenario 1**: Acquiring a token to call the back-end workload: *AdditionalScopesToConsent* is null.
 
-1. Acquiring a token to call the BE Workload: When you want to acquire a token to call your BE workload, call acquireAccessToken without providing any additionalScopesToConsent.
+When you want to acquire a token to call your back-end workload, call `acquireAccessToken` without providing any *additionalScopesToConsent*.
 
-    * If the user's in the home tenant of the application, the workload will be able to acquire a token without granting any consent.
+* If the user is in the home tenant of the application, the workload can acquire a token without granting any consent.
 
-    * If the user is in another tenant, they need to grant consent (or have the admin of the tenant grant consent to the app) before the workload can receive a token.
+* If the user is in another tenant, they need to grant consent (or have the admin of the tenant grant consent to the app) before the workload can receive a token.
 
-2. Crud/Jobs JS API fail: If these operations fail, the workload must ask for a token with ['.default'] as additionalScopesToConsent. This trigger's a consent for the dependencies of the application (the configured API Permissions in our app). For more information, see [authentication setup](./authentication-tutorial.md).
+**Scenario 2**: Crud/Jobs JS API fail: *AdditionalScopesToConsent* is default.
 
-3. OBO flow for a specific scope fails with consent required error:
+If these operations fail, the workload must ask for a token with ['.default'] as *additionalScopesToConsent*. This triggers a consent for the dependencies of the application (the configured API Permissions in our APP. See the [authentication setup](./authentication-tutorial.md) for more info).
 
-    :::image type="content" source="./media/authentication-api/consent-required-error.png" alt-text="Screenshot of consent required error.":::
+**Scenario 3**. OBO flow for a specific scope fails with consent required error: *AdditionalScopesToConsent* is 'https://analysis.windows.net/powerbi/api/Workspace.Read.All`
 
-If the OBO flow in the workload BE fails with a consent required error for a specific scope/s, the workload backend must inform the frontend to call acquireAccessToken API with those scope/s.  
+:::image type="content" source="./media/authentication-concept/obo-consent-required-error.png" alt-text="Screenshot showing OBO consent required error.":::
+
+If the OBO flow in the workload back-end fails with a consent required error for a specific scope or scopes, the workload back-end must inform the front-end to call `acquireAccessToken` API with those scopes.
 
 ### claimsForConditionalAccessPolicy
 

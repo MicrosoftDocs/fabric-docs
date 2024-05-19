@@ -56,7 +56,7 @@ The workload backend (BE) operates on the developer's machine. Workload API call
 
 #### DevMode BE schema
 
-:::image type="content" source="./media/workload-environment/dev-mode-be-schema-diagram.png" alt-text="Diagram of the dev mode be schema architecture." lightbox="./media/workload-environment/dev-mode-be-schema-diagram.png":::
+:::image type="content" source="./media/workload-environment/dev-mode-back-end-schema-diagram.png" alt-text="Diagram of the dev mode be schema architecture." lightbox="./media/workload-environment/dev-mode-back-end-schema-diagram.png":::
 
 ### Cloud development mode (cloud mode)
 
@@ -64,7 +64,7 @@ The workload backend (BE) operates within the partner's services. Workload API c
 
 #### CloudMode BE schema
 
-:::image type="content" source="./media/workload-environment/cloud-mode-be-schema-diagram.png" alt-text="Diagram of the cloud mode BE schema architecture." lightbox="./media/workload-environment/cloud-mode-be-schema-diagram.png":::
+:::image type="content" source="./media/workload-environment/cloud-mode-back-end-schema-diagram.png" alt-text="Diagram of the cloud mode BE schema architecture." lightbox="./media/workload-environment/cloud-mode-back-end-schema-diagram.png":::
 
 ### Lakehouse Integration
 
