@@ -2,8 +2,8 @@
 title: Move data from Oracle to Fabric Lakehouse via pipeline and on-premises data gateway
 description: Learn how to move data from Oracle to Fabric Lakehouse via pipeline and on-premises data gateway.
 ms.reviewer: jonburchel
-ms.author: lrtoyou1223
-author: lle-msft
+ms.author: lle
+author: lrtoyou1223
 ms.topic: tutorial
 ms.custom:
   - build-2023
