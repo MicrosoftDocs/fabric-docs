@@ -4,7 +4,7 @@ items:
 - name: Overview
   items:
   - name: Development Kit overview
-    href: dev-kit-overview.md
+    href: development-kit-overview.md
   - name: Workload validation
     href: publish-workload-requirements.md    
 - name: Get started
@@ -24,7 +24,7 @@ items:
   - name: Front-end implementation guide
     href: extensibility-front-end.md
   - name: Back-end implementation guide
-    href: extensibility-backend.md
+    href: extensibility-back-end.md
   - name: Azure web app deployment
     href: azure-web-app-deployment-tutorial.md    
 - name: Concept
@@ -46,7 +46,7 @@ items:
 - name: Authentication
   items:
   - name: Back-end authentication
-    href: backend-authentication.md
+    href: back-end-authentication.md
   - name: Authentication JavaScript API
     href: authentication-javascript-api.md          
 - name: Reference

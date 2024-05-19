@@ -14,8 +14,8 @@ ms.date: 05/21/2024
 In order to be able to work with authentication, you need to setup its three component parts:
 
 * [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication) (formerly Azure AD App)
-* [Frontend sample](./extensibility-front-end.md)
-* [Backend sample](./extensibility-backend.md)
+* [Front-end sample](./extensibility-front-end.md)
+* [Back-end sample](./extensibility-back-end.md)
 
 To work with authentication in Fabric, follow this guide.
 
@@ -112,7 +112,7 @@ Here's how your *Expose an API* section should look in your application. In this
 
 ### Generate a secret for your application
 
-Under **Certificates & secrets**, select the **Secrets** tab and add a secret. Give it any name you want and save it. Use this secret when configuring the [backend sample](./extensibility-backend.md).
+Under **Certificates & secrets**, select the **Secrets** tab and add a secret. Give it any name you want and save it. Use this secret when configuring the [backend sample](extensibility-back-end.md).
 
 :::image type="content" source="./media/authentication-tutorial/generate-secrets-dialog.png" alt-text="Screenshot of generate secrets dialog.":::
 

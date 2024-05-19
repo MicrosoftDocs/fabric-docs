@@ -26,11 +26,11 @@ It's recommended that you become familiar with the [Microsoft identity platform]
 
    An example of such communication is any data plane API. This communication is done with a Subject token (Delegated token).
 
-   For information on how to acquire a token in the workload front-end, read [Authentication API](./authentication-javascript-api.md). In addition, make sure you go over token validation in the [Back-end authentication and authorization overview](./backend-authentication.md).
+For information on how to acquire a token in the workload FE, read [Authentication API](./authentication-javascript-api.md). In addition, make sure you go over token validation in the [Back-end authentication and authorization overview](back-end-authentication.md).
 
 1. From Fabric back-end to workload back-end
 
-   An example of such communication is Create workload item. This communication is done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see the [Back-end authentication and authorization overview](./backend-authentication.md) to learn more about this token).
+   An example of such communication is Create workload item. This communication is done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see the [Back-end authentication and authorization overview](back-end-authentication.md) to learn more about this token).
 
    For this communication to work, the user using this communication must give consent to the Entra application.
 
@@ -112,6 +112,6 @@ Refer to the [Javascript API documentation](./authentication-javascript-api.md#a
 
 ## Related content
 
-* [Back-end authentication and authorization overview](./backend-authentication.md)
+* [Back-end authentication and authorization overview](./back-end-authentication.md)
 * [Authentication JavaScript API](./authentication-javascript-api.md)
 * [Authentication setup](./authentication-tutorial.md)

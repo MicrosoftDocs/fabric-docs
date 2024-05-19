@@ -35,7 +35,7 @@ In this section, you can find a few examples of use cases to help you understand
 
 * **Data Job** - Data jobs are one of the most common scenarios. They involve extracting data from [OneLake](../onelake/onelake-overview.md), performing data operations, and then writing the results back to OneLake. These jobs can be integrated with Fabric’s data scheduling capabilities and executed as background tasks. An example of this type of workload is a data pipelines notebook.
 
-* **Data store** - Workloads that manage and store data. They can provide APIs to query and write data, serving as a robust and flexible data management solution. Examples for these kind of workloads include Microsoft Fabric [lakehouse](../data-engineering/lakehouse-overview.md) and [Cosmos DB](/azure/cosmos-db/introduction).
+* **Data store** - Workloads that manage and store data. They can provide APIs to query and write data, serving as a robust and flexible data management solution. Examples for this kind of workload include Microsoft Fabric [lakehouse](../data-engineering/lakehouse-overview.md) and [Cosmos DB](/azure/cosmos-db/introduction).
 
 * **Data visualization** - Data visualization applications that are entirely based on existing Fabric data items. They allow the creation of dynamic and interactive visual representations of your data. [Power BI reports](/power-bi/consumer/end-user-reports) and [dashboards](/power-bi/create-reports/service-dashboards) serve as excellent examples of this type of workload.
 
@@ -56,5 +56,5 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 
 ## Related content
 
-* [Fabric extensibility frontend](extensibility-front-end.md)
-* [Fabric extensibility backend](extensibility-backend.md)
+* [Fabric extensibility front end](extensibility-front-end.md)
+* [Fabric extensibility back end](extensibility-back-end.md)

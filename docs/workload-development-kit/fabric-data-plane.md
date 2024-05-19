@@ -46,7 +46,7 @@ Alternatively, you can use other Fabric workloads to write data to the platform.
 
 Fabric REST APIs also provide you with a way to access the different properties of items. For example, querying the [Get Lakehouse API](/rest/api/fabric/lakehouse/items/get-lakehouse?tabs=HTTP) provides you with the metadata for a certain Lakehouse, including useful properties such as OneLake paths and the SQL connection string.
 
-For implementation examples, please refer to the [Microsoft Fabric Workload Development kit](./index.yml).
+For implementation examples, please refer to the [Microsoft Fabric Workload Development Kit](./index.yml).
 
 ## Related content
 

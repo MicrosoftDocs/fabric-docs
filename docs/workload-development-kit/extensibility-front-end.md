@@ -40,7 +40,7 @@ The SDK provides a sample UI with the following features:
 <!--
 The following diagram shows how Fabric uses the Manifest to read the workload's metadata and behavior and how it embeds the workload's web app inside Fabric's iFrame.
 
-:::image type="content" source="./media/extensibility-frontend/devx-diagram.png" alt-text="Diagram showing an example of how DEVX interacts with Fabric.":::``
+:::image type="content" source="./media/extensibility-front-end/devx-diagram.png" alt-text="Diagram showing an example of how DEVX interacts with Fabric.":::``
 
 -->
 
@@ -48,7 +48,7 @@ The following diagram shows how Fabric uses the Manifest to read the workload's 
 
 The tenant administrator has to enable this feature in the Admin Portal. It can be enabled for the entire organization or for specific groups within the organization by enabling the switch *Workload extensions (preview)*.
 
-:::image type="content" source="./media/extensibility-frontend/tenant-switch.png" alt-text="Screenshot of the workloads extensions tenant switch.":::
+:::image type="content" source="./media/extensibility-front-end/tenant-switch.png" alt-text="Screenshot of the workloads extensions tenant switch.":::
 
 ## Step 2: Set up the frontend
 
@@ -113,7 +113,7 @@ To set up the front end of the sample project, follow these steps:
    Go to **Developer Settings** --> **Fabric Developer Mode** and refresh of the page.
    This setting is persisted in the current browser.
 
-   :::image type="content" source="./media/extensibility-frontend/developer-mode.png" alt-text="Screenshot of a product switcher example in developer mode.":::
+   :::image type="content" source="./media/extensibility-front-end/developer-mode.png" alt-text="Screenshot of a product switcher example in developer mode.":::
 
 ### Example of usage
 
@@ -121,15 +121,15 @@ To run a typical *Hello World* test scenario:
 
 1. Start the local server and enable *Dev Mode*. The menu at the left bottom corner should show the new Sample Workload:
 
-   :::image type="content" source="./media/extensibility-frontend/product-switcher.png" alt-text="Screenshot of the Product Switcher Example Image.":::
+   :::image type="content" source="./media/extensibility-front-end/product-switcher.png" alt-text="Screenshot of the Product Switcher Example Image.":::
 
 1. Select the **Sample Workload** and navigate the user to the Sample workload Home page. The upper section presents the *Create* Experience:
 
-   :::image type="content" source="./media/extensibility-frontend/create-card.png" alt-text="Screenshot of the Create Card image on the sample extension home page.":::
+   :::image type="content" source="./media/extensibility-front-end/create-card.png" alt-text="Screenshot of the Create Card image on the sample extension home page.":::
 
 1. Select the *Sample Workload* card to open the Sample Workload's UI within Fabric:
 
-   :::image type="content" source="./media/extensibility-frontend/sample-editor.png" alt-text="Screenshot of the[Main Sample UI image interface.":::
+   :::image type="content" source="./media/extensibility-front-end/sample-editor.png" alt-text="Screenshot of the[Main Sample UI image interface.":::
 
 Explore the various controls to see Fabric's ExtensionClient API (SDK) capabilities:
 
@@ -148,7 +148,7 @@ For example:
 
 The Sample Workload UI is hosted in a Fabric `iframe` that we can see when we examine the page's DOM:
 
-:::image type="content" source="./media/extensibility-frontend/iframe-dom.png" alt-text="Screenshot of the IFrame embedding image.":::
+:::image type="content" source="./media/extensibility-front-end/iframe-dom.png" alt-text="Screenshot of the IFrame embedding image.":::
 
 ## Step 3: Dive into the code
 
@@ -211,7 +211,7 @@ The current workspace `objectId` is passed into the frontend-only experience as 
 <!--
 The following diagram describes how an action is invoked and handled:
 
-:::image type="content" source="./media/extensibility-frontend/actions.png" alt-text="Diagram of actions invocation and handling.":::
+:::image type="content" source="./media/extensibility-front-end/actions.png" alt-text="Diagram of actions invocation and handling.":::
 -->
 
 ### index.ui
@@ -299,7 +299,7 @@ An example with `notification.open()` API:
 ### CRUD operations
 
 While a frontend-only development scenario is easily supported, the full end-to-end developer experience requires saving, reading, and editing existing workload items.
-The [Fabric extensibility backend boilerplate](./extensibility-backend.md) describes in detail how to set up and use the backend side.
+The [Fabric extensibility backend boilerplate](extensibility-back-end.md) describes in detail how to set up and use the backend side.
 
 Once the backend is up and running, and the `Fabric.WorkloadSample.SampleWorkloadArtifact` type is **registered in Fabric**, you can perform CRUD operations on this type.
 The following operations are exposed via [ArtifactCrud API](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/node_modules/@trident/extension-client-3p/src/lib/apis/artifact-crud-api.d.ts) inside `ExtensionClientAPI`.
@@ -340,7 +340,7 @@ When you select an existing Sample Workload item in the workspace view, Fabric n
 
 When you invoke `artifactCrud.getArtifact`, data is loaded from Fabric's backend, along with data from the Workload backend, and is loaded into the `artifactItem` object of the opened GUI.
 
-:::image type="content" source="./media/extensibility-frontend/items-in-workspace.png" alt-text="Screenshot of opening existing items in the workspace.":::
+:::image type="content" source="./media/extensibility-front-end/items-in-workspace.png" alt-text="Screenshot of opening existing items in the workspace.":::
 
 #### UPDATE
 
@@ -369,7 +369,7 @@ Both calls go through the Workload backend's `onDeleteItem` callback.
 
 To see the Worker and UI IFrames, open the **Source** tab of the browser's DevTools (<kbd>F12</kbd>).
 
-:::image type="content" source="./media/extensibility-frontend/debugging.png" alt-text="Screenshot of debugging files in VS code.":::
+:::image type="content" source="./media/extensibility-front-end/debugging.png" alt-text="Screenshot of debugging files in VS code.":::
 
 You can place a breakpoint both in the Worker IFrame and see the main `switch` on the incoming Action. You can also debug the UI IFrame, for example, the code inside `SampleWorkloadEditor`.
 
@@ -422,5 +422,6 @@ The following APIs are supported:
 
 ## Related content
 
-* [Development kit overview](dev-kit-overview.md)
-* [Backend configuration guide](extensibility-backend.md)
+* [Development kit overview](development-kit-overview.md)
+
+* [Backend configuration guide](extensibility-back-end.md)
