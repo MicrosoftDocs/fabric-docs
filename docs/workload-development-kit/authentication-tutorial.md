@@ -13,9 +13,9 @@ ms.date: 05/21/2024
 
 In order to be able to work with authentication, you need to setup its three component parts:
 
-1. [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication) (formerly Azure AD App)
-1. [Frontend sample](./extensibility-frontend.md)
-1. [Backend sample](./extensibility-backend.md)
+* [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication) (formerly Azure AD App)
+* [Frontend sample](./extensibility-frontend.md)
+* [Backend sample](./extensibility-backend.md)
 
 To work with authentication in Fabric, follow this guide.
 
@@ -88,9 +88,9 @@ To work with authentication, you need an application registered in Microsoft Ent
 
 To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and add *Fabric service application* to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
 
-1. Under **Expose an API**, select **Add a scope**. Name the scope *FabricWorkloadControl* and provide the necessary details for it.
+* Under **Expose an API**, select **Add a scope**. Name the scope *FabricWorkloadControl* and provide the necessary details for it.
 
-1. Under **Authorized client applications**, select **Add a client application**. Add `00000009-0000-0000-c000-000000000000` (Fabric service application) and select your scope.
+* Under **Authorized client applications**, select **Add a client application**. Add `00000009-0000-0000-c000-000000000000` (Fabric service application) and select your scope.
 
 ### Add scopes for data plane API
 

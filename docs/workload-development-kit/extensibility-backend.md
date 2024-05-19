@@ -389,8 +389,6 @@ Original exception: AADSTS7000215: Invalid client secret provided. Ensure the se
 
 **Resolution**: Make sure you have the correct client secret in *appsettings.json*.
 
---------------------------------
-
 #### Error during artifact creation due to missing admin consent
 
 **Error**:
@@ -402,15 +400,11 @@ In the artifact editor, navigate to the bottom and select **Navigate to Authenti
 Under **Scopes** write *.default* and select **Get Access token**.
 Approve consent in the popped-up dialog.
 
---------------------------------
-
 #### Artifact creation fails due to capacity selection
 
 **Error**: PriorityPlacement: There are no available core services for priority placement only 'name','guid','workload-name'.
 
 **Resolution**: You might be using a user that only has access to Trial capacity. Make sure you're using a capacity that you have access to.
-
---------------------------------
 
 #### File creation failure with 404 (NotFound) error
 
