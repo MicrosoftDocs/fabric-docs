@@ -76,9 +76,11 @@ In the context of executing the workload SDK sample and building a workload, it'
 
    To enable a user to begin development, include them in the **Capacity admins can develop additional workloads** tenant setting.
 
+   :::image type="content" source="./media/environment-setup/environment-setup-tenant-settings.png" alt-text="Screenshot of Additional workloads tenant settings.":::
+
 1. After the user has been granted permission in the previous step, **each** user can enable development mode for the development settings area under Fabric developer mode.
 
-   :::image type="content" source="./media/environment-setup/environment-setup-devmode.png" alt-text="Screenshot of turning on Workloads Developer Mode.":::
+   :::image type="content" source="./media/environment-setup/environment-setup-developer-mode.png" alt-text="Screenshot of turning on Workloads Developer Mode.":::
 
 ## Related content
 
