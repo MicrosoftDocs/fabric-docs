@@ -651,6 +651,8 @@
         href: script-activity-email-output.md
       - name: Copy activity performance and scalability guide
         href: copy-activity-performance-and-scalability-guide.md
+      - name: Use the modern get data experience for pipelines
+        href: modern-get-data-experience-pipeline.md
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
