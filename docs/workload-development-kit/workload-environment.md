@@ -42,7 +42,7 @@ During the development cycle, testing a workload on a nonproduction tenant can b
 > [!NOTE]
 > For each dev mode, a different package is created when building the BE solution in Visual Studio.
 
-- **Dev mode workload package**: When building the BE solution in Visual Studio, use the Debug parameter to create a BE NuGet package, which can be loaded in to the Fabric tenant using the DevGateWay application.
+- **Dev mode workload package**: When building the back end solution in Visual Studio, use the Debug parameter to create a BE NuGet package, which can be loaded in to the Fabric tenant using the DevGateWay application.
 
 :::image type="content" source="./media/workload-environment/developer-mode-diagram.png" alt-text="Diagram of the developer mode architecture." lightbox="./media/workload-environment/developer-mode-diagram.png":::
 
