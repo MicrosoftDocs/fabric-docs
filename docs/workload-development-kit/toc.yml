@@ -1,15 +1,12 @@
 items:
 - name: Microsoft Fabric Workload Development Kit documentation
   href: index.yml
-- name: Development Kit overview
-  href: dev-kit-overview.md
+- name: Overview
   items:
-  - name: Monetize your workload
-    href: monetization.md
-  - name: Publish your workload
-    href: publish-workload-flow.md
-  - name: Publishing requirements
-    href: publish-workload-requirements.md
+  - name: Development Kit overview
+    href: development-kit-overview.md
+  - name: Workload validation
+    href: publish-workload-requirements.md    
 - name: Get started
   items:
   - name: Set up your environment
@@ -18,8 +15,16 @@ items:
     href: quickstart-sample.md
 - name: Concept
   items:
+  - name: Monetize your workload
+    href: monetization.md  
   - name: Authentication
-    href: authentication-concept.md
+    items:
+    - name: Authentication overview
+      href: authentication-concept.md
+    - name: Back-end authentication
+      href: back-end-authentication.md
+    - name: Authentication JavaScript API
+      href: authentication-javascript-api.md         
   - name: Workload environment
     href: workload-environment.md
   - name: Item lifecycle
@@ -28,25 +33,29 @@ items:
     href: monitoring-hub.md
   - name: Working with customer data
     href: fabric-data-plane.md
+  - name: Publish your workload
+    href: publish-workload-flow.md
 - name: Tutorials
-  items: 
+  items:
   - name: Add and manage more workloads
     href: more-workloads-add.md
   - name: Upload and manage a workload
     href: manage-workload.md
-  - name: Authentication
+  - name: Set up authentication
     href: authentication-tutorial.md    
-  - name: Frontend implementation guide
-    href: extensibility-frontend.md
-  - name: Backend implementation guide
-    href: extensibility-backend.md
+  - name: Front-end implementation guide
+    href: extensibility-front-end.md
+  - name: Back-end implementation guide
+    href: extensibility-back-end.md
   - name: Azure web app deployment
-    href: azure-webapp-deployment-tutorial.md
+    href: azure-web-app-deployment-tutorial.md    
 - name: Reference
   items:
-#  - name: REST APIs
-#    href: https://review.learn.microsoft.com/en-us/rest/api/fabric/workload/workloadapi/jobs?branch=drafts%2ffeatures%2fworkloadsapi&tabs=HTTP
-#  - name: Client-side APIs
-#    href: https://review.learn.microsoft.com/en-us/javascript/api/overview/fabric-extensibility-overview?view=fabric-extensibility-js-latest&branch=smoke-test
-  - name: Samples
-    href: https://github.com/microsoft/Microsoft-Fabric-workload-development-sample
+   - name: Frequently asked questions
+     href: faq.md 
+   - name: REST APIs
+     href: https://go.microsoft.com/fwlink/?linkid=2271986
+   - name: Client-side APIs
+     href: https://go.microsoft.com/fwlink/?linkid=2271989
+   - name: Samples
+     href: https://github.com/microsoft/Microsoft-Fabric-workload-development-sample

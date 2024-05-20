@@ -16,7 +16,7 @@ This [Microsoft Fabric developer sample repository](https://github.com/microsoft
 
 ## Frontend
 
-The frontend is where you manage the user experience (UX) and behavior. It communicates with the Fabric frontend portal via an IFrame, facilitating seamless interaction with the user.
+The frontend is where you manage the user experience (UX) and behavior. It communicates with the Fabric frontend portal via an iFrame, facilitating seamless interaction with the user.
 
 ## Backend
 
@@ -36,16 +36,16 @@ The workload development kit architecture integrates seamlessly with Lakehouse, 
 
 ## Authentication and security
 
-Entra ID is used for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
+Microsoft Entra ID is used for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
 
-[This overview](./dev-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, guidelines, and getting started, see the respective sections in this [README](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/README.md).
+[Th development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, guidelines, and getting started, see the respective sections in this [README](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/README.md).
 
-:::image type="content" source="./media/extensibility-backend/overview.png" alt-text="Diagram showing how Fabric SDK integrated into Fabric.":::
+:::image type="content" source="./media/extensibility-back-end/overview.png" alt-text="Diagram showing how Fabric SDK integrated into Fabric.":::
 
-The frontend establishes communication with the Fabric frontend portal via an IFrame. The portal, in turn, interacts with the Fabric backend by making calls to its exposed public APIs.
+The frontend establishes communication with the Fabric frontend portal via an iFrame. The portal, in turn, interacts with the Fabric backend by making calls to its exposed public APIs.
 
 For interactions between the backend development box and the Fabric backend, the Azure Relay serves as a conduit. Additionally, the backend development box seamlessly integrates with Lakehouse, performing operations such as saving, reading, and fetching data from this resource.
-The communication is facilitated by using Azure Relay and the Fabric Software Development Kit (SDK) installed on the BE development box.
+The communication is facilitated by using Azure Relay and the Fabric Software Development Kit (SDK) installed on the back end development box.
 
 The authentication for all communication within these components is ensured through Microsoft Entra. Entra provides a secure and authenticated environment for the interactions between the frontend, backend, Azure Relay, Fabric SDK, and Lakehouse.
 
@@ -145,7 +145,7 @@ To set up the boilerplate sample project on your local machine, follow these ste
      * \<RedirectUri>: Redirect URIs. This can be found in your app registration that you created under 'Authentication' section.
      * \<ResourceId>: Audience for the incoming Entra tokens. This information can be found in your app registration that you created under 'Expose an API' section.
    * In the src/appsettings.json file, update the following fields to match your configuration:
-     * PublisherTenantId: The Id of the workload publisher tenant.
+     * PublisherTenantId: The ID of the workload publisher tenant.
      * ClientId: Client ID (AppId) of the workload Entra application.
      * ClientSecret: The secret for the workload Entra application.
      * Audience: Audience for incoming Entra tokens. This information can be found in your app registration that you created under "Expose an API" section. This is also referred to as the Application ID URI.
@@ -154,7 +154,7 @@ To set up the boilerplate sample project on your local machine, follow these ste
    To generate a manifest package file, build Fabric_Extension_BE_Boilerplate. This runs a three step process to generate the manifest package file:
 
    1. Trigger *Fabric_Extension_BE_Boilerplate_WorkloadManifestValidator.exe* on *workloadManifest.xml* in *Packages\manifest\files*. You can find the code of the validation process in *\workloadManifestValidator* directory. if the validation fails, an error file is generated.
-   1. If an error file exists, the build fails with *WorkloadManifest validation error*. Double click on the error in VS studio to see the error file.
+   1. If an error file exists, the build fails with *WorkloadManifest validation error*. Double select on the error in VS studio to see the error file.
    1. After successful validation, pack the *WorkloadManifest.xml* and *FrontendManifest.json* files into ManifestPackage.1.0.0.nupkg. The resulting package is in **src\bin\Debug**.
 
    Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-dev-mode.json configuration file.
@@ -163,9 +163,9 @@ To set up the boilerplate sample project on your local machine, follow these ste
 1. Build to ensure your project can access the required dependencies for compilation and execution.
 1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application located in *Backend\DevGateway*. Sign in with a user that has **capacity admin privileges** to the capacity you defined in workload-dev-mode.json (CapacityGuid). Upon the initialization of the workload, an authentication prompt appears.
 
-   ![signIn](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/573bb83a-1c54-4baf-bf52-0aca1e72bc21)
+   :::image type="content" source="./media/extensibility-back-end/sign-in.png" alt-text="Screenshot of Microsoft sign in page.":::
 
-   After authentication, external workloads establish communication with the Fabric backend through Azure Relay. This process involves relay registration and communication management, facilitated by a designated Proxy node. Furthermore, the package containing the workload manifest is uploaded and published.
+   After authentication, external workloads establish communication with the Fabric back-end through Azure Relay. This process involves relay registration and communication management, facilitated by a designated Proxy node. Furthermore, the package containing the workload manifest is uploaded and published.
 
    At this stage, Fabric has knowledge of the workload, encompassing its allocated capacity.
 
@@ -173,13 +173,11 @@ To set up the boilerplate sample project on your local machine, follow these ste
 
    If you don't get any errors, then the connection is established, registration is successfully executed, and the workload manifest was systematically uploaded.
 
-   ![devgetway](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/139851206/548ea235-07f3-461d-b312-c9a01aa967a1)
+   :::image type="content" source="./media/extensibility-back-end/no-errors.png" alt-text="Screenshot of connection loading without any errors.":::
 
 1. Change your startup project in Visual Studio to the *Boilerplate* project and select **Run**.
 
-    ![Run](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/16da53ad-013a-4382-b6cd-51acc4352c52)
-
-    ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/139851206/1e3fe360-28d1-4471-aded-8d69f00a8cfd)
+    :::image type="content" source="./media/extensibility-back-end/boilerplate.png" alt-text="Screenshot of UI for startup project in Visual Studio.":::
 
 ## Working with the Boilerplate
 
@@ -341,7 +339,7 @@ namespace Fabric_Extension_BE_Boilerplate.Contracts.FabricAPI.Workload
 ```
 
 > [!NOTE]
-> The "payload" sent to the workload is generated by the client. It could be the item editor iframe or Fabric Automation REST API. The client is responsible for sending the correct payload and matching the item type. The workload is responsible for verification. Fabric treats this payload as an opaque object and only transfers it from the client to the workload. Similarly, for a payload returned by the workload to the client, it is workload's and client's responsibility to handle the payload correctly.
+> The "payload" sent to the workload is generated by the client. It could be the item editor iFrame or Fabric Automation REST API. The client is responsible for sending the correct payload and matching the item type. The workload is responsible for verification. Fabric treats this payload as an opaque object and only transfers it from the client to the workload. Similarly, for a payload returned by the workload to the client, it is workload's and client's responsibility to handle the payload correctly.
 
 For example, this code shows how the Boilerplate sample Item1 implementation handles that:
 
@@ -389,8 +387,6 @@ Original exception: AADSTS7000215: Invalid client secret provided. Ensure the se
 
 **Resolution**: Make sure you have the correct client secret in *appsettings.json*.
 
---------------------------------
-
 #### Error during artifact creation due to missing admin consent
 
 **Error**:
@@ -402,15 +398,11 @@ In the artifact editor, navigate to the bottom and select **Navigate to Authenti
 Under **Scopes** write *.default* and select **Get Access token**.
 Approve consent in the popped-up dialog.
 
---------------------------------
-
 #### Artifact creation fails due to capacity selection
 
 **Error**: PriorityPlacement: There are no available core services for priority placement only 'name','guid','workload-name'.
 
 **Resolution**: You might be using a user that only has access to Trial capacity. Make sure you're using a capacity that you have access to.
-
---------------------------------
 
 #### File creation failure with 404 (NotFound) error
 
@@ -433,21 +425,21 @@ When troubleshooting various operations, you can set breakpoints in the code to 
 
 The debugger pause execution at the specified breakpoints, enabling you to examine variables, step through code, and identify issues.
 
-![BPCreate](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/106332b5-3240-4a31-9b6b-dcc440cced36)
+:::image type="content" source="./media/extensibility-back-end/debugger.png" alt-text="Screenshot of sample program with breakpoints for debugging.":::
 
 ## Workspace
 
 If you try to run the Sample to make changes on the backend be sure you are in a named workspace, and not in the default *My Workspace*. Otherwise, you might get this error:
 
-:::image type="content" source="./media/extensibility-backend/copy-item.png" alt-text="Screenshot of UI for naming a sample workload item.":::
+:::image type="content" source="./media/extensibility-back-end/copy-item.png" alt-text="Screenshot of UI for naming a sample workload item.":::
 
 1. Switch to a named workspace and leave the default *My workspace*:
 
-    :::image type="content" source="./media/extensibility-backend/sample-workload.png" alt-text="Screenshot of UI for creating sample workload.":::
+    :::image type="content" source="./media/extensibility-back-end/sample-workload.png" alt-text="Screenshot of UI for creating sample workload.":::
 
 1. From the correct workspace, load the sample workload and proceed with the tests:
 
-    :::image type="content" source="./media/extensibility-backend/create-sample-workload.png" alt-text="Screenshot of UI for creating sample workload item.":::
+    :::image type="content" source="./media/extensibility-back-end/create-sample-workload.png" alt-text="Screenshot of UI for creating sample workload item.":::
 
 ## Contribute
 
@@ -461,5 +453,5 @@ We welcome contributions to this project. If you find any issues or want to add 
 
 ## Related content
 
-* [Workload development kit overview](dev-kit-overview.md)
-* [Workload development kit frontend](extensibility-frontend.md)
+* [Workload development kit overview](development-kit-overview.md)
+* [Workload development kit front end](extensibility-front-end.md)

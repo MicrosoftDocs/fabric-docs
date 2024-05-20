@@ -22,7 +22,7 @@ When you create a workload, it's important to provide rich and accurate informat
 
 We expect our partners to provide an out of the box trial experience for users within Fabric. Trials are a good way for users to get familiar with your offer and understand what the workload can do. Trials should be available immediately to customers without any deployment steps or communication with the workload provider. After the user added the workload to their tenant, they can immediately start working with the new items.
 
-Trial experiences aren't directly bound to [Fabric Trials](../get-started/fabric-trial.md). Partners can decide on the type of trial they want to provide. Trials can be tenant, user, or metrics based. It's up to the you to define the limits of the trial and enforce them within the workload's [backend](./extensibility-backend.md).
+Trial experiences aren't directly bound to [Fabric Trials](../get-started/fabric-trial.md). Partners can decide on the type of trial they want to provide. Trials can be tenant, user, or metrics based. It's up to you to define the limits of the trial and enforce them within the workload's [back end](extensibility-back-end.md).
 
 When you create a trial, make sure that the users are aware of their status at any given time.
 
@@ -38,7 +38,7 @@ If you already have a marketplace offer and you don't want to monetize your work
 
 ## Workload license status
 
-It's up to you as a partner to communicate the updated license status to your [extension backend](extensibility-backend.md). Depending on your offer, use one of these methods to show the license status.
+It's up to you as a partner to communicate the updated license status to your [extension backend](extensibility-back-end.md). Depending on your offer, use one of these methods to show the license status.
 
 * **Transactable offer** - Your [marketplace landing page](/partner-center/marketplace/azure-ad-transactable-saas-landing-page).
 
@@ -46,4 +46,4 @@ It's up to you as a partner to communicate the updated license status to your [e
 
 ## Related content
 
-* [Microsoft Fabric Workload Development Kit](dev-kit-overview.md)
+* [Microsoft Fabric Workload Development Kit](development-kit-overview.md)

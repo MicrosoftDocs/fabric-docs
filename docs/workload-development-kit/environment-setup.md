@@ -1,6 +1,6 @@
 ---
 title: Set up your Microsoft Fabric development environment
-description: Learn how to set up your Microsoft Fabric workload development kit environment so that you can start developing your workloads.
+description: Learn how to set up your Microsoft Fabric Workload Development Kit environment so that you can start developing your workloads.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: muliwienrib
@@ -10,6 +10,8 @@ ms.date: 05/21/2024
 ---
 
 # Set up your environment
+
+This article is aimed at developers who are looking to build a workload using the Microsoft Fabric Workload Development Kit. The article will guide you through the process of setting up your development environment so that you can start building your workload.
 
 ## Prerequisites
 
@@ -35,7 +37,7 @@ A static module bundler for modern JavaScript applications. It helps to bundle J
 
 The command line interface for Webpack. This allows us to use Webpack from the command line.
 
-### [DevGateway](https://www.microsoft.com/en-us/download/details.aspx?id=105993)
+### [DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516)
 
 **In local mode only** is required to allow the workload backend, which is locally hosted, to communicate with the tenant. The workload operates on the developer's machine. Workload API calls from Fabric to the workload are channeled through Azure Relay, with the workload's side of the Azure Relay channel managed by the DevGateway command-line utility. Workload control API calls are made directly from the workload to Fabric, not requiring the Azure Relay channel. The DevGateway utility also manages the registration of the workload's local (development) instance with Fabric within a specific capacity context, making the workload accessible in all workspaces assigned to that capacity.
 
@@ -64,7 +66,7 @@ These steps are required when setting up the workload, For a detailed guide on h
 
 ### Web app (cloud mode only)
 
-Cloud mode (in conjunction to local machine mode) workload deployment requires setting up a web app domain for the Frontend (FE) and Backend (BE). These must be subdomains of the resource ID with a maximum of one more segment. The reply URL host domain should be the same as the FE host domain. For more information, see [Creating and deploying the boilerplate backend web app](./azure-webapp-deployment-tutorial.md).
+Cloud mode (in conjunction to local machine mode) workload deployment requires setting up a web app domain for the Frontend (FE) and Backend (BE). These must be subdomains of the resource ID with a maximum of one more segment. The reply URL host domain should be the same as the FE host domain. For more information, see [Creating and deploying the boilerplate backend web app](./azure-web-app-deployment-tutorial.md).
 
 ### Setting up a Fabric development tenant
 
@@ -76,9 +78,11 @@ In the context of executing the workload SDK sample and building a workload, it'
 
    To enable a user to begin development, include them in the **Capacity admins can develop additional workloads** tenant setting.
 
+   :::image type="content" source="./media/environment-setup/environment-setup-tenant-settings.png" alt-text="Screenshot of Additional workloads tenant settings.":::
+
 1. After the user has been granted permission in the previous step, **each** user can enable development mode for the development settings area under Fabric developer mode.
 
-   :::image type="content" source="./media/environment-setup/environment-setup-devmode.png" alt-text="Screenshot of turning on Workloads Developer Mode.":::
+   :::image type="content" source="./media/environment-setup/environment-setup-developer-mode.png" alt-text="Screenshot of turning on Workloads Developer Mode.":::
 
 ## Related content
 

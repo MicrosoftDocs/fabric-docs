@@ -14,7 +14,7 @@ ms.date: 05/21/2024
 
 [This Fabric developer sample](https://github.com/microsoft/Microsoft-Fabric-developer-sample.git) serves as a guide for integrating a custom UX Workload with Microsoft Fabric. This project enables developers to seamlessly integrate their own UI components and behaviors into Fabric's runtime environment, enabling rapid experimentation and customization. Developers can use the Fabric Extensibility framework to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with Independent Software Vendor (ISV) capabilities. For example, the item editor allows creating a native, consistent user experience by embedding ISV’s frontend in the context of a Fabric workspace item.
 
-The UX Workload Frontend is a standard web app ([React](https://react.dev/)) that incorporates our extension client SDK, a standard NPM package, to enable its functionality.
+The UX Workload Frontend is a standard web app ([React](https://react.dev/)) that incorporates our extension client SDK, a standard npm package, to enable its functionality.
 The ISV hosts and runs it inside an `<iframe>` in the Fabric portal. It presents ISV-specific UI experiences such as an item editor.
 The SDK provides all the necessary interfaces, APIs, and bootstrap functions required to transform a regular web app into a Micro Frontend web app that operates seamlessly within the Fabric portal.
 
@@ -40,7 +40,7 @@ The SDK provides a sample UI with the following features:
 <!--
 The following diagram shows how Fabric uses the Manifest to read the workload's metadata and behavior and how it embeds the workload's web app inside Fabric's iFrame.
 
-:::image type="content" source="./media/extensibility-frontend/devx-diagram.png" alt-text="Diagram showing an example of how DEVX interacts with Fabric.":::``
+:::image type="content" source="./media/extensibility-front-end/devx-diagram.png" alt-text="Diagram showing an example of how DEVX interacts with Fabric.":::``
 
 -->
 
@@ -48,7 +48,7 @@ The following diagram shows how Fabric uses the Manifest to read the workload's 
 
 The tenant administrator has to enable this feature in the Admin Portal. It can be enabled for the entire organization or for specific groups within the organization by enabling the switch *Workload extensions (preview)*.
 
-:::image type="content" source="./media/extensibility-frontend/tenant-switch.png" alt-text="Screenshot of the workloads extensions tenant switch.":::
+:::image type="content" source="./media/extensibility-front-end/tenant-switch.png" alt-text="Screenshot of the workloads extensions tenant switch.":::
 
 ## Step 2: Set up the frontend
 
@@ -56,20 +56,16 @@ To set up the front end of the sample project, follow these steps:
 
 1. **Verify** that `Node.js` and `npm` are installed and that the `npm` version is at least **9** (If not, install **latest** `Node.js` and `npm`)
 
-1. **Clone** the repository:
-
-   ```console
-   git clone https://github.com/microsoft/Microsoft-Fabric-developer-sample.git
-   ```
+1. **Clone** the repository: Clone the repository found here: https://go.microsoft.com/fwlink/?linkid=2272254 
 
     <a name="package-structure"></a>
     This is the package directory layout, with a description of the essential components and resources:
 
     * **docs** - SDK documentation, images
     * **Manifests** - location of the frontend manifest file
-    * **node_modules** - the sample workload is shipped with preinstalled SDK packages - under `@trident` -  as their NPM package isn't yet publically available
+    * **node_modules** - the sample workload is shipped with preinstalled SDK packages - under `@trident` -  as their npm package isn't yet publically available
     * **src** - Workload code:
-      * **index.ts** - main initialization file, `boostrap` the `index.worker` and `index.ui` IFrames - *detailed below*
+      * **index.ts** - main initialization file, `boostrap` the `index.worker` and `index.ui` iFrames - *detailed below*
       * **App.tsx** - routing of paths to pages, for example - `/sample-workload-editor` is routed to the `SampleWorkloadEditor` function under `components`
       * **assets** - location for images(`svg`, `jpg`, `png`, etc.), that can be referenced in the **Manifest** and be shown in the UI. For example, `assets/github.svg` is set in the manifest as the Product's icon.
       * **components** - location of the actual UI code - the Editor view, and other views that are used by the sample (Ribbon, Authentication page, Panel, etc.)
@@ -79,7 +75,7 @@ To set up the front end of the sample project, follow these steps:
       * `webpack.config.js` - configuration of the local Node.js server
       * `manifest.reader.js` - reading the manifest file
 
-1. **Install**. Notice theexisting packages under `node_modules`
+1. **Install**. Notice the existing packages under `node_modules`
 
     Under the repository folder, go to `Frontend` and run **npm install**  
 
@@ -113,7 +109,7 @@ To set up the front end of the sample project, follow these steps:
    Go to **Developer Settings** --> **Fabric Developer Mode** and refresh of the page.
    This setting is persisted in the current browser.
 
-   :::image type="content" source="./media/extensibility-frontend/dev-mode.png" alt-text="Product Switcher Example ImageEnable developer mode.":::
+   :::image type="content" source="./media/extensibility-front-end/developer-mode.png" alt-text="Screenshot of a product switcher example in developer mode.":::
 
 ### Example of usage
 
@@ -121,15 +117,15 @@ To run a typical *Hello World* test scenario:
 
 1. Start the local server and enable *Dev Mode*. The menu at the left bottom corner should show the new Sample Workload:
 
-   :::image type="content" source="./media/extensibility-frontend/product-switcher.png" alt-text="Screenshot of the Product Switcher Example Image.":::
+   :::image type="content" source="./media/extensibility-front-end/product-switcher.png" alt-text="Screenshot of the Product Switcher Example Image.":::
 
 1. Select the **Sample Workload** and navigate the user to the Sample workload Home page. The upper section presents the *Create* Experience:
 
-   :::image type="content" source="./media/extensibility-frontend/create-card.png" alt-text="Screenshot of the Create Card image on the sample extension home page.":::
+   :::image type="content" source="./media/extensibility-front-end/create-card.png" alt-text="Screenshot of the Create Card image on the sample extension home page.":::
 
 1. Select the *Sample Workload* card to open the Sample Workload's UI within Fabric:
 
-   :::image type="content" source="./media/extensibility-frontend/sample-editor.png" alt-text="Screenshot of the[Main Sample UI image interface.":::
+   :::image type="content" source="./media/extensibility-front-end/sample-editor.png" alt-text="Screenshot of the[Main Sample UI image interface.":::
 
 Explore the various controls to see Fabric's ExtensionClient API (SDK) capabilities:
 
@@ -148,7 +144,7 @@ For example:
 
 The Sample Workload UI is hosted in a Fabric `iframe` that we can see when we examine the page's DOM:
 
-:::image type="content" source="./media/extensibility-frontend/iframe-dom.png" alt-text="Screenshot of the IFrame embedding image.":::
+:::image type="content" source="./media/extensibility-front-end/iframe-dom.png" alt-text="Screenshot of the iFrame embedding image.":::
 
 ## Step 3: Dive into the code
 
@@ -166,8 +162,8 @@ if (url.pathname?.startsWith(redirectUriPath)) {
 
 Every Fabric Workload app needs to support being loaded in two modes:
 
-* **UI mode**: Am app in UI mode is loaded in visible IFrames and listens for its own route changes to render corresponding UI components, including pages, panels, dialogs, and so on.
-* **Worker mode**: An app in worker mode runs in an invisible IFrame, which is primarily used to receive commands sent from the outside world and respond to them.
+* **UI mode**: Am app in UI mode is loaded in visible iFrames and listens for its own route changes to render corresponding UI components, including pages, panels, dialogs, and so on.
+* **Worker mode**: An app in worker mode runs in an invisible iFrame, which is primarily used to receive commands sent from the outside world and respond to them.
 `@trident/extension-client-3p` provides a `bootstrap()` method to simplify the initialization steps. The bootstrap() method internally detects whether the current app is loaded in UI mode or worker mode, and then calls the appropriate initialization method (initializeUI or initializeWorker). After the initialization is complete, bootstrap() notifies Fabric micro-frontend framework of the initialization success or failure.
 
 ```javascript
@@ -211,7 +207,7 @@ The current workspace `objectId` is passed into the frontend-only experience as 
 <!--
 The following diagram describes how an action is invoked and handled:
 
-:::image type="content" source="./media/extensibility-frontend/actions.png" alt-text="Diagram of actions invocation and handling.":::
+:::image type="content" source="./media/extensibility-front-end/actions.png" alt-text="Diagram of actions invocation and handling.":::
 -->
 
 ### index.ui
@@ -299,7 +295,7 @@ An example with `notification.open()` API:
 ### CRUD operations
 
 While a frontend-only development scenario is easily supported, the full end-to-end developer experience requires saving, reading, and editing existing workload items.
-The [Fabric extensibility backend boilerplate](./extensibility-backend.md) describes in detail how to set up and use the backend side.
+The [Fabric extensibility backend boilerplate](extensibility-back-end.md) describes in detail how to set up and use the backend side.
 
 Once the backend is up and running, and the `Fabric.WorkloadSample.SampleWorkloadArtifact` type is **registered in Fabric**, you can perform CRUD operations on this type.
 The following operations are exposed via [ArtifactCrud API](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/node_modules/@trident/extension-client-3p/src/lib/apis/artifact-crud-api.d.ts) inside `ExtensionClientAPI`.
@@ -340,7 +336,7 @@ When you select an existing Sample Workload item in the workspace view, Fabric n
 
 When you invoke `artifactCrud.getArtifact`, data is loaded from Fabric's backend, along with data from the Workload backend, and is loaded into the `artifactItem` object of the opened GUI.
 
-:::image type="content" source="./media/extensibility-frontend/items-in-workspace.png" alt-text="Screenshot of opening existing items in the workspace.":::
+:::image type="content" source="./media/extensibility-front-end/items-in-workspace.png" alt-text="Screenshot of opening existing items in the workspace.":::
 
 #### UPDATE
 
@@ -354,7 +350,7 @@ Both calls go through the Workload backend's `onDeleteItem` callback.
 ### Authentication
 
  In the sample workload editor, there's a section that lets you navigate to the authentication section.
- Before you use authentication API, configure an Entra app Entra ID.
+ Before you use authentication API, configure an Entra app Microsoft Entra ID.
  In localWorkloadManifest.json, configure your Entra config under "extension":
 
 ```json
@@ -367,11 +363,11 @@ Both calls go through the Workload backend's `onDeleteItem` callback.
 
 ## Step 4: Debug
 
-To see the Worker and UI IFrames, open the **Source** tab of the browser's DevTools (<kbd>F12</kbd>).
+To see the Worker and UI iFrames, open the **Source** tab of the browser's DevTools (<kbd>F12</kbd>).
 
-:::image type="content" source="./media/extensibility-frontend/debugging.png" alt-text="Screenshot of debugging files in VS code.":::
+:::image type="content" source="./media/extensibility-front-end/debugging.png" alt-text="Screenshot of debugging files in VS Code.":::
 
-You can place a breakpoint both in the Worker IFrame and see the main `switch` on the incoming Action. You can also debug the UI IFrame, for example, the code inside `SampleWorkloadEditor`.
+You can place a breakpoint both in the Worker iFrame and see the main `switch` on the incoming Action. You can also debug the UI iFrame, for example, the code inside `SampleWorkloadEditor`.
 
 ## Fluent UI controls
 
@@ -422,5 +418,6 @@ The following APIs are supported:
 
 ## Related content
 
-* [Development kit overview](dev-kit-overview.md)
-* [Backend configuration guide](extensibility-backend.md)
+* [Development kit overview](development-kit-overview.md)
+
+* [Backend configuration guide](extensibility-back-end.md)

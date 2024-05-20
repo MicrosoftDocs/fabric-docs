@@ -11,11 +11,11 @@ ms.date: 05/21/2024
 
 # Authentication setup
 
-In order to be able to work with authentication, you need to setup its three component parts:
+In order to be able to work with authentication, you need to set up its three component parts:
 
-1. [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication) (formerly Azure AD App)
-1. [Frontend sample](./extensibility-frontend.md)
-1. [Backend sample](./extensibility-backend.md)
+* [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication) (formerly Azure AD App)
+* [Front-end sample](./extensibility-front-end.md)
+* [Back-end sample](./extensibility-back-end.md)
 
 To work with authentication in Fabric, follow this guide.
 
@@ -88,9 +88,9 @@ To work with authentication, you need an application registered in Microsoft Ent
 
 To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and add *Fabric service application* to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
 
-1. Under **Expose an API**, select **Add a scope**. Name the scope *FabricWorkloadControl* and provide the necessary details for it.
+* Under **Expose an API**, select **Add a scope**. Name the scope *FabricWorkloadControl* and provide the necessary details for it.
 
-1. Under **Authorized client applications**, select **Add a client application**. Add `00000009-0000-0000-c000-000000000000` (Fabric service application) and select your scope.
+* Under **Authorized client applications**, select **Add a client application**. Add `00000009-0000-0000-c000-000000000000` (Fabric service application) and select your scope.
 
 ### Add scopes for data plane API
 
@@ -112,7 +112,7 @@ Here's how your *Expose an API* section should look in your application. In this
 
 ### Generate a secret for your application
 
-Under **Certificates & secrets**, select the **Secrets** tab and add a secret. Give it any name you want and save it. Use this secret when configuring the [backend sample](./extensibility-backend.md).
+Under **Certificates & secrets**, select the **Secrets** tab and add a secret. Give it any name you want and save it. Use this secret when configuring the [backend sample](extensibility-back-end.md).
 
 :::image type="content" source="./media/authentication-tutorial/generate-secrets-dialog.png" alt-text="Screenshot of generate secrets dialog.":::
 
@@ -137,7 +137,7 @@ Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null
 1. In the Backend sample, go to [src/appsettings.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/appsettings.json) and configure the settings:
 
    * `PublisherTenantId`: The tenant ID of the publisher  
-   * `ClientId`: Your application ID (you can find it in Entra ID under overview).  
+   * `ClientId`: Your application ID (you can find it in Microsoft Entra ID under overview).  
    * `ClientSecret`: The [secret you created](#generate-a-secret-for-your-application) when configuring the Entra app.  
    * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id) in the Entra app.  
 
