@@ -182,6 +182,10 @@ While the native execution engine enhances performance for Apache Spark jobs, no
 - The engine falls back to the traditional Spark engine when user code `jar` libraries are used and uploaded to executors.
 - The engine doesn't support ANSI mode, so it searches, and once ANSI mode is enabled, it falls back to vanilla Spark.
 
+
+When using date filters in queries, it is essential to ensure that the data types on both sides of the comparison match to avoid performance issues. Mismatched data types may not bring query execution boost and may require explicit casting. Always ensure that the data types of the left-hand side (LHS) and right-hand side (RHS) of a comparison are identical, as mismatched types will not always be automatically cast. If a type mismatch is unavoidable, use explicit casting to match the data types, such as `CAST(order_date AS DATE) = '2024-05-20'`. Queries with mismatched data types that require casting will not be accelerated by Native Execution Engine, so ensuring type consistency is crucial for maintaining performance. For example, instead of `order_date = '2024-05-20'` where `order_date` is `DATETIME` and the string is `DATE`, explicitly cast `order_date` to `DATE` to ensure consistent data types and improve performance. 
+
+
 > [!NOTE]
 > The native execution engine is currently in preview and your insights are important to us. We invite you to share your feedback and the outcomes of your evaluation directly with our product team. Please fill out the [feedback form](https://forms.office.com/r/zuZaK9cuLm). We look forward to your valuable input and are eager to discuss your findings in detail.
 
