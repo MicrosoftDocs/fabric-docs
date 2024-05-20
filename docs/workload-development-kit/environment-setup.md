@@ -37,7 +37,7 @@ A static module bundler for modern JavaScript applications. It helps to bundle J
 
 The command line interface for Webpack. This allows us to use Webpack from the command line.
 
-### [DevGateway](https://www.microsoft.com/en-us/download/details.aspx?id=105993)
+### [DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516)
 
 **In local mode only** is required to allow the workload backend, which is locally hosted, to communicate with the tenant. The workload operates on the developer's machine. Workload API calls from Fabric to the workload are channeled through Azure Relay, with the workload's side of the Azure Relay channel managed by the DevGateway command-line utility. Workload control API calls are made directly from the workload to Fabric, not requiring the Azure Relay channel. The DevGateway utility also manages the registration of the workload's local (development) instance with Fabric within a specific capacity context, making the workload accessible in all workspaces assigned to that capacity.
 

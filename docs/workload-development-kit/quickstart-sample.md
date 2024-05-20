@@ -22,6 +22,7 @@ Before you begin, ensure that you have the following installed on your system:
 * [Node.js](https://nodejs.org).
 * [npm](https://www.npmjs.com/).
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/).
+* [Fabric Workload DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516S)
 
 ## Step-by-step guide
 
@@ -39,11 +40,7 @@ Configure the admin portal as follows:
 
 ### Set up the sample project
 
-1. **Clone the repository**: Use the following command to clone the sample project repository:
-
-   ```typescript
-   git clone https://github.com/microsoft/Microsoft-Fabric-developer-sample.git
-   ```
+1. **Clone the repository**: Clone the repository found here: https://go.microsoft.com/fwlink/?linkid=2272254
 
 1. **Install dependencies**: Navigate to the `Frontend` directory in the cloned repository and execute the following command:
 
@@ -51,16 +48,13 @@ Configure the admin portal as follows:
    npm install
    ```
 
-   > [!IMPORTANT]
-   >The repository includes packages under `node_modules/@trident` that aren't available yet on public npm feeds. Don't delete these packages, as it will make the repository unusable.
-
 1. **Start the local server**: Launch a local Node.js server using `webpack` by running:
 
    ```typescript
    npm start
    ```
 
-   The server typically runs on port `60006`. Confirm that the server is operational by accessing `127.0.0.1:60006/manifests` and checking the `localWorkloadManifest.json` manifest file.
+   The server typically runs on port `60006`. Confirm that the server is operational by accessing `127.0.0.1:60006/manifests` and checking the *.env.dev* configuration file in the the front-end folder.
 
 1. **Enable frontend developer mode**: In the tenant settings in the admin portal, under the **Additional workloads (preview)** section, and activate the **Capacity admins can develop additional workloads.** tenant setting. This setting allows connections to your local server and persists across browser sessions.
 
@@ -72,11 +66,7 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
 
 ### Prepare the development environment
 
-1. **Clone the boilerplate**: Clone the boilerplate project:
-
-   ```typescript
-   git clone https://github.com/microsoft/Microsoft-Fabric-developer-sample.git
-   ```
+1. **Clone the boilerplate**: Clone the boilerplate project found here: https://go.microsoft.com/fwlink/?linkid=2272254
 
 1. **Open the solution**: Open the solution in Visual Studio *2022* to ensure compatibility with net7.
 
@@ -102,6 +92,12 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
       * *ClientSecret*: The secret for the workload Microsoft Entra application.
       * *Audience*: The audience for incoming Microsoft Entra tokens can be found in your app registration that you created under "Expose an API" section. This is also referred to as the Application ID URI.
  
+1. **Configure the WorkloadManifest.xml file**: Configure the *WorkloadManifest.xml* file with the following Microsoft Entra application details:
+
+   * *AppID*
+   * *ResourceID*
+   * *RedirectURI*
+
 1. **Generate manifest package**: Build the solution to create the manifest package file, which includes validating and packing the necessary XML and JSON files.
 
    * Trigger Fabric_Extension_BE_Boilerplate_WorkloadManifestValidator.exe on workloadManifest.xml in Packages\manifest\files\ (you can find the code of the validation process in the \workloadManifestValidator directory). If validation fails, an error file is generated specifying the failed validation.
