@@ -54,7 +54,7 @@ Configure the admin portal as follows:
    npm start
    ```
 
-   The server typically runs on port `60006`. Confirm that the server is operational by accessing `127.0.0.1:60006/manifests` and checking the *.env.dev* configuration file in the the front-end folder.
+   The server typically runs on port `60006`. Confirm that the server is operational by accessing `127.0.0.1:60006/manifests` and checking the *.env.dev* configuration file in the front-end folder.
 
 1. **Enable frontend developer mode**: In the tenant settings in the admin portal, under the **Additional workloads (preview)** section, and activate the **Capacity admins can develop additional workloads.** tenant setting. This setting allows connections to your local server and persists across browser sessions.
 
