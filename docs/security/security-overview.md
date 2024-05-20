@@ -159,8 +159,9 @@ As an [administrator in Fabric](../admin/admin-overview.md), you get to control 
 Using various tools, admins can also [monitor](../admin/admin-overview.md#monitor) key Fabric aspects such as capacity consumption.
 
 ## Audit Logs
-If you would like to view your audit logs, you may follow the instructions [here](../admin/track-user-activities.md) You may also refer [here] (../admin/operation-list.md) to see what all activities are available for searching in the audit logs.
-Please note that there was an internal issue causing OneLake audit events not to be shown in the M365 Admin center from 4/21 through 5/6. You may request this data if need be through support channels.
+To view your audit logs, follow the instructions in [Track user activities in Microsoft Fabric](../admin/track-user-activities.md). You can also refer to the [Operation list](../admin/operation-list.md) to see which activities are available for searching in the audit logs.
+
+Note that an internal issue caused OneLake audit events to not be shown in the Microsoft 365 Admin center from 4/21 through 5/6. You can request this data if need be through support channels.
 
 ## Capabilities
 
