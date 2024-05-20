@@ -14,7 +14,7 @@ ms.date: 05/21/2024
 
 [This Fabric developer sample](https://github.com/microsoft/Microsoft-Fabric-developer-sample.git) serves as a guide for integrating a custom UX Workload with Microsoft Fabric. This project enables developers to seamlessly integrate their own UI components and behaviors into Fabric's runtime environment, enabling rapid experimentation and customization. Developers can use the Fabric Extensibility framework to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with Independent Software Vendor (ISV) capabilities. For example, the item editor allows creating a native, consistent user experience by embedding ISV’s frontend in the context of a Fabric workspace item.
 
-The UX Workload Frontend is a standard web app ([React](https://react.dev/)) that incorporates our extension client SDK, a standard NPM package, to enable its functionality.
+The UX Workload Frontend is a standard web app ([React](https://react.dev/)) that incorporates our extension client SDK, a standard npm package, to enable its functionality.
 The ISV hosts and runs it inside an `<iframe>` in the Fabric portal. It presents ISV-specific UI experiences such as an item editor.
 The SDK provides all the necessary interfaces, APIs, and bootstrap functions required to transform a regular web app into a Micro Frontend web app that operates seamlessly within the Fabric portal.
 
@@ -56,20 +56,16 @@ To set up the front end of the sample project, follow these steps:
 
 1. **Verify** that `Node.js` and `npm` are installed and that the `npm` version is at least **9** (If not, install **latest** `Node.js` and `npm`)
 
-1. **Clone** the repository:
-
-   ```console
-   git clone https://github.com/microsoft/Microsoft-Fabric-developer-sample.git
-   ```
+1. **Clone** the repository: Clone the repository found here: https://go.microsoft.com/fwlink/?linkid=2272254 
 
     <a name="package-structure"></a>
     This is the package directory layout, with a description of the essential components and resources:
 
     * **docs** - SDK documentation, images
     * **Manifests** - location of the frontend manifest file
-    * **node_modules** - the sample workload is shipped with preinstalled SDK packages - under `@trident` -  as their NPM package isn't yet publically available
+    * **node_modules** - the sample workload is shipped with preinstalled SDK packages - under `@trident` -  as their npm package isn't yet publically available
     * **src** - Workload code:
-      * **index.ts** - main initialization file, `boostrap` the `index.worker` and `index.ui` IFrames - *detailed below*
+      * **index.ts** - main initialization file, `boostrap` the `index.worker` and `index.ui` iframes - *detailed below*
       * **App.tsx** - routing of paths to pages, for example - `/sample-workload-editor` is routed to the `SampleWorkloadEditor` function under `components`
       * **assets** - location for images(`svg`, `jpg`, `png`, etc.), that can be referenced in the **Manifest** and be shown in the UI. For example, `assets/github.svg` is set in the manifest as the Product's icon.
       * **components** - location of the actual UI code - the Editor view, and other views that are used by the sample (Ribbon, Authentication page, Panel, etc.)
@@ -79,7 +75,7 @@ To set up the front end of the sample project, follow these steps:
       * `webpack.config.js` - configuration of the local Node.js server
       * `manifest.reader.js` - reading the manifest file
 
-1. **Install**. Notice theexisting packages under `node_modules`
+1. **Install**. Notice the existing packages under `node_modules`
 
     Under the repository folder, go to `Frontend` and run **npm install**  
 
@@ -148,7 +144,7 @@ For example:
 
 The Sample Workload UI is hosted in a Fabric `iframe` that we can see when we examine the page's DOM:
 
-:::image type="content" source="./media/extensibility-front-end/iframe-dom.png" alt-text="Screenshot of the IFrame embedding image.":::
+:::image type="content" source="./media/extensibility-front-end/iframe-dom.png" alt-text="Screenshot of the Iframe embedding image.":::
 
 ## Step 3: Dive into the code
 
@@ -166,8 +162,8 @@ if (url.pathname?.startsWith(redirectUriPath)) {
 
 Every Fabric Workload app needs to support being loaded in two modes:
 
-* **UI mode**: Am app in UI mode is loaded in visible IFrames and listens for its own route changes to render corresponding UI components, including pages, panels, dialogs, and so on.
-* **Worker mode**: An app in worker mode runs in an invisible IFrame, which is primarily used to receive commands sent from the outside world and respond to them.
+* **UI mode**: Am app in UI mode is loaded in visible Iframes and listens for its own route changes to render corresponding UI components, including pages, panels, dialogs, and so on.
+* **Worker mode**: An app in worker mode runs in an invisible Iframe, which is primarily used to receive commands sent from the outside world and respond to them.
 `@trident/extension-client-3p` provides a `bootstrap()` method to simplify the initialization steps. The bootstrap() method internally detects whether the current app is loaded in UI mode or worker mode, and then calls the appropriate initialization method (initializeUI or initializeWorker). After the initialization is complete, bootstrap() notifies Fabric micro-frontend framework of the initialization success or failure.
 
 ```javascript
@@ -367,11 +363,11 @@ Both calls go through the Workload backend's `onDeleteItem` callback.
 
 ## Step 4: Debug
 
-To see the Worker and UI IFrames, open the **Source** tab of the browser's DevTools (<kbd>F12</kbd>).
+To see the Worker and UI iframes, open the **Source** tab of the browser's DevTools (<kbd>F12</kbd>).
 
-:::image type="content" source="./media/extensibility-front-end/debugging.png" alt-text="Screenshot of debugging files in VS code.":::
+:::image type="content" source="./media/extensibility-front-end/debugging.png" alt-text="Screenshot of debugging files in VS Code.":::
 
-You can place a breakpoint both in the Worker IFrame and see the main `switch` on the incoming Action. You can also debug the UI IFrame, for example, the code inside `SampleWorkloadEditor`.
+You can place a breakpoint both in the Worker iframe and see the main `switch` on the incoming Action. You can also debug the UI iframe, for example, the code inside `SampleWorkloadEditor`.
 
 ## Fluent UI controls
 
