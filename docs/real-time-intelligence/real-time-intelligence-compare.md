@@ -10,6 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
+  - build-2024
 ms.date: 05/01/2024
 ms.search.form: Overview
 ---

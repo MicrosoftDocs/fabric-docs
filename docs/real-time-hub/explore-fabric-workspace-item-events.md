@@ -1,9 +1,11 @@
 ---
 title: Explore Fabric workspace item events in Fabric Real-Time hub
-description: This article shows how to explore Fabric workspace item events in Fabric Real-Time hub. 
+description: This article shows how to explore Fabric workspace item events in Fabric Real-Time hub.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
@@ -91,5 +93,3 @@ The `data` object has the following properties:
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
-
-

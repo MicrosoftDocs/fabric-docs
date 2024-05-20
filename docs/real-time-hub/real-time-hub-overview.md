@@ -1,9 +1,11 @@
 ---
 title: Introduction to Microsoft Fabric Real-Time hub
-description: This article describes what Real-Time hub in Microsoft Fabric is and how it can be used in near-realtime scenarios. 
+description: This article describes what Real-Time hub in Microsoft Fabric is and how it can be used in near-realtime scenarios.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: overview
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 

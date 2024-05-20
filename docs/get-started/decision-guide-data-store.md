@@ -8,6 +8,7 @@ ms.topic: quickstart
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
 ms.date: 09/18/2023
 ---
 
