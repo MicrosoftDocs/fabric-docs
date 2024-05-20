@@ -23,23 +23,23 @@ It's recommended that you become familiar with the [Microsoft identity platform]
 <!--:::image type="content" source="./media/authentication-concept/authentication-diagram.png" alt-text="Screenshot showing the extensibility authentication flow.":::
 -->
 
-1. From workload front-end to workload back-end
+* From workload front-end to workload back-end
 
    An example of such communication is any data plane API. This communication is done with a Subject token (Delegated token).
 
-For information on how to acquire a token in the workload FE, read [Authentication API](./authentication-javascript-api.md). In addition, make sure you go over token validation in the [Back-end authentication and authorization overview](back-end-authentication.md).
+   For information on how to acquire a token in the workload FE, read [Authentication API](./authentication-javascript-api.md). In addition, make sure you go over token validation in the [Back-end authentication and authorization overview](back-end-authentication.md).
 
-1. From Fabric back-end to workload back-end
+* From Fabric back-end to workload back-end
 
    An example of such communication is Create workload item. This communication is done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see the [Back-end authentication and authorization overview](back-end-authentication.md) to learn more about this token).
 
    For this communication to work, the user using this communication must give consent to the Entra application.
 
-1. From workload back-end to Fabric back-end
+* From workload back-end to Fabric back-end
 
    This is done with a SubjectAndApp token for workload control APIs (for example, ResolveItemPermissions), or with a Subject token (for other Fabric APIs).
 
-1. From workload back-end to external services
+* From workload back-end to external services
 
    An example of such communication is writing to a Lakehouse file. This is done with Subject token or an App token, depending on the API.
 
@@ -60,7 +60,7 @@ If the exchange fails for MFA reasons, notify your front-end along with the clai
    For examples, see: [Error response example](/entra/identity-platform/v2-oauth2-on-behalf-of-flow#error-response-example).
 
 > [!NOTE]
-> The token you recieve when acquiring a token in the front-end is not related to additionalScopesToConsent you pass. This means that once the user consents, you can use any token you received from `extensionClient.auth.acquireAccessToken` for your OBO flow.
+> The token you receive when acquiring a token in the front-end is not related to additionalScopesToConsent you pass. This means that once the user consents, you can use any token you received from `extensionClient.auth.acquireAccessToken` for your OBO flow.
 
 ## Authentication JavaScript API
 
@@ -107,7 +107,7 @@ We'll see how to work with consents when we talk about AcquireAccessTokenParams.
 
 ### Another way to grant consents in the home tenant (optional)
 
-Refer to the [Javascript API documentation](./authentication-javascript-api.md#another-way-to-grant-consents-in-the-home-tenant-optional) for more information on how to grant consents in the home tenant of the application using the following url (insert your tenant ID and the client ID):  
+Refer to the [JavaScript API documentation](./authentication-javascript-api.md#another-way-to-grant-consents-in-the-home-tenant-optional) for more information on how to grant consents in the home tenant of the application using the following url (insert your tenant ID and the client ID):  
 
 `https://login.microsoftonline.com/{tenantId}/adminconsent?client_id={clientId}`
 
