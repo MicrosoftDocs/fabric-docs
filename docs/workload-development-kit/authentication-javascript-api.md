@@ -11,7 +11,7 @@ ms.date: 05/21/2024
 
 # Authentication JavaScript API
 
-Fabric frontend offers a JavaScript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. Before working with authentication JS API, make sure you review the [authentication JavaScript API](./authentication-javascript-api.md) documentation.
+The Fabric front end offers a JavaScript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. This article describes this API. 
 
 ## API
 
