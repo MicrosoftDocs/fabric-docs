@@ -5,8 +5,9 @@ metadata:
   author: snehagunda
   ms.author: sngun
   ms.topic: faq
+  ms.custom:
+    - build-2024
   ms.date: 05/21/2024
-
 title: Fabric API for GraphQL frequently asked questions
 summary: |
   Find answers to commonly asked Fabric API for GraphQL questions.

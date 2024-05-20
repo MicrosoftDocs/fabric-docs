@@ -2,6 +2,8 @@
 title: What are Data Workflows?
 description: Learn about when to use Data Workflows, basic concepts and supported regions.
 ms.topic: conceptual
+ms.custom:
+  - build-2024
 author: nabhishek
 ms.author: abnarain
 ms.date: 04/16/2024
@@ -65,4 +67,3 @@ Data Workflows in Data Factory for Microsoft Fabric offer a range of powerful fe
 ## Related Content
 
 * Quickstart: [Create a Data workflow](../data-factory/create-data-workflows.md).
-

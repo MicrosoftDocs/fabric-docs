@@ -5,6 +5,8 @@ ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: overview
+ms.custom:
+  - build-2024
 ms.search.form: GraphQL API Overview
 ms.date: 05/21/2024
 ---

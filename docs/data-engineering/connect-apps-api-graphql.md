@@ -5,6 +5,8 @@ ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.search.form: Connecting applications to GraphQL
 ms.date: 05/21/2024
 ---

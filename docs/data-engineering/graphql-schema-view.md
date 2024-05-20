@@ -5,6 +5,8 @@ ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: conceptual
+ms.custom:
+  - build-2024
 ms.search.form: GrpahQL schema view
 ms.date: 05/21/2024
 ---

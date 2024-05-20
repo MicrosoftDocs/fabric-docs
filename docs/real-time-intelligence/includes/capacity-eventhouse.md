@@ -4,6 +4,8 @@ description: Include file for size of minimum CU and SSD capacity in Event house
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: include
+ms.custom:
+  - build-2024
 ms.date: 03/14/2024
 ---
 | Name                 | Minimum CUs | SSD capacity (GB) of free storage |

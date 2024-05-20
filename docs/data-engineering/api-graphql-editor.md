@@ -1,10 +1,12 @@
 ---
 title: Microsoft Fabric API for GraphQL editor
-description: Learn about the Fabric API for GraphQL editor, including where to find the editor and what the editor screen looks like. 
+description: Learn about the Fabric API for GraphQL editor, including where to find the editor and what the editor screen looks like.
 ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: conceptual
+ms.custom:
+  - build-2024
 ms.search.form: GraphQL query editor
 ms.date: 05/21/2024
 ---

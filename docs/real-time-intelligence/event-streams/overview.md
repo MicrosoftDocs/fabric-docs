@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: overview
+ms.custom:
+  - build-2024
 ms.date: 12/05/2023
 ms.search.form: Event Streams Overview
 ---

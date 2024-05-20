@@ -4,6 +4,8 @@ description: This article describes how to set alerts on Azure Blob Storage even
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 

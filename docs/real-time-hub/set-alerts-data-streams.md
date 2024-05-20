@@ -4,6 +4,8 @@ description: This article describes how to set alerts on streams in Real-Time hu
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
@@ -48,6 +50,3 @@ On the **Set alert** page, follow these steps:
 
 - [Set alerts for Azure blob storage events](set-alerts-azure-blob-storage-events.md)
 - [Set alerts for Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
-
-
-
