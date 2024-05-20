@@ -65,7 +65,7 @@ To set up the front end of the sample project, follow these steps:
     * **Manifests** - location of the frontend manifest file
     * **node_modules** - the sample workload is shipped with preinstalled SDK packages - under `@trident` -  as their npm package isn't yet publically available
     * **src** - Workload code:
-      * **index.ts** - main initialization file, `boostrap` the `index.worker` and `index.ui` iframes - *detailed below*
+      * **index.ts** - main initialization file, `boostrap` the `index.worker` and `index.ui` iFrames - *detailed below*
       * **App.tsx** - routing of paths to pages, for example - `/sample-workload-editor` is routed to the `SampleWorkloadEditor` function under `components`
       * **assets** - location for images(`svg`, `jpg`, `png`, etc.), that can be referenced in the **Manifest** and be shown in the UI. For example, `assets/github.svg` is set in the manifest as the Product's icon.
       * **components** - location of the actual UI code - the Editor view, and other views that are used by the sample (Ribbon, Authentication page, Panel, etc.)
@@ -144,7 +144,7 @@ For example:
 
 The Sample Workload UI is hosted in a Fabric `iframe` that we can see when we examine the page's DOM:
 
-:::image type="content" source="./media/extensibility-front-end/iframe-dom.png" alt-text="Screenshot of the Iframe embedding image.":::
+:::image type="content" source="./media/extensibility-front-end/iframe-dom.png" alt-text="Screenshot of the iFrame embedding image.":::
 
 ## Step 3: Dive into the code
 
@@ -162,8 +162,8 @@ if (url.pathname?.startsWith(redirectUriPath)) {
 
 Every Fabric Workload app needs to support being loaded in two modes:
 
-* **UI mode**: Am app in UI mode is loaded in visible Iframes and listens for its own route changes to render corresponding UI components, including pages, panels, dialogs, and so on.
-* **Worker mode**: An app in worker mode runs in an invisible Iframe, which is primarily used to receive commands sent from the outside world and respond to them.
+* **UI mode**: Am app in UI mode is loaded in visible iFrames and listens for its own route changes to render corresponding UI components, including pages, panels, dialogs, and so on.
+* **Worker mode**: An app in worker mode runs in an invisible iFrame, which is primarily used to receive commands sent from the outside world and respond to them.
 `@trident/extension-client-3p` provides a `bootstrap()` method to simplify the initialization steps. The bootstrap() method internally detects whether the current app is loaded in UI mode or worker mode, and then calls the appropriate initialization method (initializeUI or initializeWorker). After the initialization is complete, bootstrap() notifies Fabric micro-frontend framework of the initialization success or failure.
 
 ```javascript
@@ -350,7 +350,7 @@ Both calls go through the Workload backend's `onDeleteItem` callback.
 ### Authentication
 
  In the sample workload editor, there's a section that lets you navigate to the authentication section.
- Before you use authentication API, configure an Entra app Entra ID.
+ Before you use authentication API, configure an Entra app Microsoft Entra ID.
  In localWorkloadManifest.json, configure your Entra config under "extension":
 
 ```json
@@ -363,11 +363,11 @@ Both calls go through the Workload backend's `onDeleteItem` callback.
 
 ## Step 4: Debug
 
-To see the Worker and UI iframes, open the **Source** tab of the browser's DevTools (<kbd>F12</kbd>).
+To see the Worker and UI iFrames, open the **Source** tab of the browser's DevTools (<kbd>F12</kbd>).
 
 :::image type="content" source="./media/extensibility-front-end/debugging.png" alt-text="Screenshot of debugging files in VS Code.":::
 
-You can place a breakpoint both in the Worker iframe and see the main `switch` on the incoming Action. You can also debug the UI iframe, for example, the code inside `SampleWorkloadEditor`.
+You can place a breakpoint both in the Worker iFrame and see the main `switch` on the incoming Action. You can also debug the UI iFrame, for example, the code inside `SampleWorkloadEditor`.
 
 ## Fluent UI controls
 
