@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: fabric
 ms.topic: conceptual
-ms.date: 05/16/2024
+ms.date: 05/21/2024
 ---
 
 # Add Fabric URLs to your allowlist
