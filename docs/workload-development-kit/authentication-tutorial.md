@@ -11,7 +11,7 @@ ms.date: 05/21/2024
 
 # Authentication setup
 
-In order to be able to work with authentication, you need to setup its three component parts:
+In order to be able to work with authentication, you need to set up its three component parts:
 
 * [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication) (formerly Azure AD App)
 * [Front-end sample](./extensibility-front-end.md)
@@ -137,7 +137,7 @@ Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null
 1. In the Backend sample, go to [src/appsettings.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/appsettings.json) and configure the settings:
 
    * `PublisherTenantId`: The tenant ID of the publisher  
-   * `ClientId`: Your application ID (you can find it in Entra ID under overview).  
+   * `ClientId`: Your application ID (you can find it in Microsoft Entra ID under overview).  
    * `ClientSecret`: The [secret you created](#generate-a-secret-for-your-application) when configuring the Entra app.  
    * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id) in the Entra app.  
 
