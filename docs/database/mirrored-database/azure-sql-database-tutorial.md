@@ -42,7 +42,7 @@ The System Assigned Managed Identity (SAMI) of your Azure SQL logical server mus
 
 Next, you need to create a way for the Fabric service to connect to your Azure SQL Database.
 
-You can accomplish this one of two ways, with a [login and mapped database user](#use-a-login-and-mapped-database-user), or a [contained database user](#use-a-contained-database-user):
+You can accomplish this with a [login and mapped database user](#use-a-login-and-mapped-database-user).
 
 #### Use a login and mapped database user
 
@@ -75,16 +75,6 @@ You can accomplish this one of two ways, with a [login and mapped database user]
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
     GRANT CONTROL TO [bob@contoso.com];
-    ```
-
-#### Use a contained database user
-
-1. Connect to the Azure SQL database you plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [Azure Data Studio](/azure-data-studio/download-azure-data-studio).
-1. Create a [contained database user with password](/sql/relational-databases/security/contained-database-users-making-your-database-portable?view=azuresqldb-current&preserve-view=true), and grant the **CONTROL** permission to the contained database user with the following T-SQL script:
-
-    ```sql
-    CREATE USER fabric_user WITH PASSWORD = '<strong password>';
-    GRANT CONTROL TO fabric_user;
     ```
 
 ## Create a mirrored Azure SQL Database
