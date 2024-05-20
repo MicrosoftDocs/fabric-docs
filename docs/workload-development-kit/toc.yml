@@ -13,20 +13,6 @@ items:
     href: environment-setup.md
   - name: QuickStart - Run a workload sample
     href: quickstart-sample.md
-- name: Tutorials
-  items:
-  - name: Add and manage more workloads
-    href: more-workloads-add.md
-  - name: Upload and manage a workload
-    href: manage-workload.md
-  - name: Set up authentication
-    href: authentication-tutorial.md    
-  - name: Front-end implementation guide
-    href: extensibility-front-end.md
-  - name: Back-end implementation guide
-    href: extensibility-back-end.md
-  - name: Azure web app deployment
-    href: azure-web-app-deployment-tutorial.md    
 - name: Concept
   items:
   - name: Monetize your workload
@@ -49,13 +35,27 @@ items:
     href: fabric-data-plane.md
   - name: Publish your workload
     href: publish-workload-flow.md
+- name: Tutorials
+  items:
+  - name: Add and manage more workloads
+    href: more-workloads-add.md
+  - name: Upload and manage a workload
+    href: manage-workload.md
+  - name: Set up authentication
+    href: authentication-tutorial.md    
+  - name: Front-end implementation guide
+    href: extensibility-front-end.md
+  - name: Back-end implementation guide
+    href: extensibility-back-end.md
+  - name: Azure web app deployment
+    href: azure-web-app-deployment-tutorial.md    
 - name: Reference
   items:
    - name: Frequently asked questions
      href: faq.md 
-#  - name: REST APIs
-#    href: https://review.learn.microsoft.com/en-us/rest/api/fabric/workload/workloadapi/jobs?branch=drafts%2ffeatures%2fworkloadsapi&tabs=HTTP
-#  - name: Client-side APIs
-#    href: https://review.learn.microsoft.com/en-us/javascript/api/overview/fabric-extensibility-overview?view=fabric-extensibility-js-latest&branch=smoke-test
+   - name: REST APIs
+     href: https://go.microsoft.com/fwlink/?linkid=2271986
+   - name: Client-side APIs
+     href: https://go.microsoft.com/fwlink/?linkid=2271989
    - name: Samples
      href: https://github.com/microsoft/Microsoft-Fabric-workload-development-sample
