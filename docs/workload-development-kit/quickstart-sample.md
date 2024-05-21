@@ -22,7 +22,7 @@ Before you begin, ensure that you have the following installed on your system:
 * [Node.js](https://nodejs.org).
 * [npm](https://www.npmjs.com/).
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/).
-* [Fabric Workload DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516S)
+* [Fabric Workload DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516)
 
 ## Step-by-step guide
 
