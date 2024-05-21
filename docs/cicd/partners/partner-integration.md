@@ -90,4 +90,4 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 The **Microsoft Fabric Workload Development Kit** offers a comprehensive toolkit for developers to integrate applications into the Microsoft Fabric workload hub. This integration allows for the addition of new capabilities directly within the Fabric workspace, enhancing the analytics journey for users. It provides developers and ISVs with a new avenue to reach customers, delivering both familiar and new experiences, and leveraging existing data applications. Fabric admins gain the ability to manage access to the workload hub, enabling it for the entire tenant or assigning it with specific scope to control access within the organization.
 
 - [Learn more about Microsoft Fabric Workload Development Kit](https://aka.ms/FabricWorkloaddevelopmentkitblog)
-- [Get started with building your first workload](https://learn.microsoft.com/en-us/fabric/workload-development-kit/)
+- [Get started with building your first workload](../../workload-development-kit/development-kit-overview.md)
