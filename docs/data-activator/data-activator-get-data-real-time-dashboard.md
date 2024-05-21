@@ -72,7 +72,7 @@ Later in the day of 3 January, more items get sold. The chart updates to reflect
 |------------|---------------------|
 |1 January   |20
 |2 January   |18
-|3 January   |15 *(Note: changed from earlier in the day)*
+|3 January   |15 *(changed from earlier in the day)*
 
 Data Activator **ignores the changed value**, because it has already read a value of 10 earlier in the day.
 
