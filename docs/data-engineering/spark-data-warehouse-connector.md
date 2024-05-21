@@ -15,7 +15,7 @@ The Spark Connector for Fabric Data Warehouse (DW) enables Spark developers and 
    * Further, it upholds security models such as Object Level Security (OLS), Row Level Security (RLS), Column Level Security (CLS)) defined at the SQL engine level while accessing a table or view. 
    * The connector comes preinstalled within Fabric Runtime, eliminating the need for separate installation.
 > [!NOTE]
-> Currently this connector supports data retrieval from SQL endpoints of Fabric DW and lakehouse items. 
+> The Spark connector for Fabric Data Warehouse is currently in public preview. For more information, see the [current limitations](spark-data-warehouse-connector.md#current-limitations).  
 ## Authentication 
 Microsoft Entra ID based authentication is an integrated authentication approach. Users sign in to the Microsoft Fabric workspace, and their credentials are automatically passed to the SQL engine for authentication and authorization. The credentials are auto mapped, and the user isn't required to provide specific configuration options.
 ### Permissions
@@ -83,6 +83,7 @@ df.write.format("delta").saveAsTable("<Lakehouse table name>")
 ## Troubleshoot
 Upon completion, the read response snippet is displayed in the cell's output. Failure in the current cell will also cancel subsequent cell executions of the notebook. Detailed error information is available in the Spark Application Logs.
 ## Current limitations
+* Currently this connector supports data retrieval from Fabric DW and SQL endpoints of lakehouse items.
 * Supports Scala only. 
 * Custom query or query pass-through is currently not supported.
 * Pushed down optimization is currently not implemented.
