@@ -197,7 +197,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 > [!NOTE]
 >
-> - The cross-workspace reference notebook is supported by runtime version 1.2 and above.
+> - The cross-workspace reference notebook is supported by **runtime version 1.2 and above**.
 > - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `mssparkutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
 
 ### Reference run multiple notebooks in parallel
