@@ -161,7 +161,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - **Visualize results** currently does not support SQL queries with an `ORDER BY` clause.
 
-- T-SQL statements that use the T-SQL `OPTION` syntax are not currently supported in the **Explore this data** or **Visualize results** options.
+- T-SQL statements that use the T-SQL `OPTION` syntax are not currently supported in the **Explore this data** or **Visualize results** options with DirectQuery mode. The workaround is to create visualizations in Power BI Desktop using **Import** mode. 
 
 - The following table summarizes the expected behavior will not match with [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio):
 
