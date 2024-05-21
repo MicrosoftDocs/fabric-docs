@@ -4,7 +4,7 @@ description: A known issue is posted where the Azure Analysis Services Pricing T
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/01/2024
+ms.date: 05/16/2024
 ms.custom: known-issue-711
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-711
 
 You can normally view Azure Analysis Services available capacity SKU and pricing data in the Azure portal. During creation of a new Azure Analysis Services resource, you can see the data by selecting the **View full pricing details** link from the **Pricing Tier** selection header. When attempting to modify the SKU of an existing Azure Analysis Services resource, you can see the data by selecting the **Pricing Tier (Scale QPUs)** option under the **Scale** menu. Normally, you see a table of SKU and pricing data; however, you now see a blank table.
 
-**Status:** Open
+**Status:** Fixed: May 16, 2024
 
 **Product Experience:** Power BI
 

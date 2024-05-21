@@ -1,5 +1,5 @@
 ---
-title: Workspaces
+title: Workspaces in Microsoft Fabric and Power BI
 description: Learn about workspaces, which are collections of items such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
 author: maggiesMSFT
 ms.author: maggies
@@ -9,12 +9,14 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: product-trident, Manage your workspace
+#customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
 ms.date: 05/13/2024
+
 ---
 
-# Workspaces
+# Workspaces in Microsoft Fabric and Power BI
 
-*Workspaces* are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports. This article describes workspaces, how to manage access to them, and what settings are available.
+*Workspaces* are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports, and to create task flows. This article describes workspaces, how to manage access to them, and what settings are available.
 
 Ready to get started? Read [Create a workspace](create-workspaces.md).
 
@@ -26,6 +28,7 @@ Here are some useful tips about working with workspaces.
 
 - **Set up a task flow for the workspace** to organize your data project and to help others understand and work on your project. Read more about [task flows](./task-flow-overview.md).
 - **Pin workspaces** to the top of the workspace flyout list to quickly access your favorite workspaces. Read more about [pin workspaces](create-workspaces.md#pin-workspaces).
+
 - **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer. Read more about [workspace roles](roles-workspaces.md).
 - **Create folders in the workspace**: Organize and manage artifacts in the workspace. Read more about [creating folders in workspaces](workspaces-folders.md).
 - **Navigate to current workspace** from anywhere by selecting the icon on left nav pane. Read more about [current workspace](#current-workspace) in this article.
