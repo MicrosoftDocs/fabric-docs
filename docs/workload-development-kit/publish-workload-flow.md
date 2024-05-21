@@ -1,5 +1,5 @@
 ---
-title: Publish a workload to the Fabric Workload Hub
+title: Publish a workload to the Fabric Workload Hub (preview)
 description: Learn how to publish a workload you created using the Microsoft Fabric Workload Development Kit, to the Fabric Workload Hub.
 author: KesemSharabi
 ms.author: kesharab
@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 # customer intent: As an ISV I want to publish my workload to the Fabric Workload Hub so that I can make it available to customers.
 ---
 
-# Publish a workload to the Fabric Workload Hub
+# Publish a workload to the Fabric Workload Hub (preview)
 
 Learn how to publish a workload you created using the Microsoft Fabric Workload Development Kit, to the Fabric Workload Hub. The Fabric Workload Hub is a marketplace where users can browse, explore, and manage workloads within Fabric. Workloads are categorized into two groups: Core Fabric workloads and workloads developed by Microsoft partners.
 

@@ -1,5 +1,5 @@
 ---
-title: Fabric workload development kit backend workload
+title: Fabric workload development kit backend workload (preview)
 description: Learn about building the backend of a customized Fabric workload application using the Fabric extensions.
 author: mberdugo
 ms.author: monaberdugo
@@ -10,7 +10,7 @@ ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how to build the backend of a customized Fabric workload so that I can create customized user experiences.
 ---
 
-# Fabric extensibility backend boilerplate
+# Fabric extensibility backend boilerplate (preview)
 
 This [Microsoft Fabric developer sample repository](https://github.com/microsoft/Microsoft-Fabric-developer-sample) serves as a starting point for building applications that require integration with various services, including Workload and Lakehouse. This guide helps you set up the environment and configure the necessary components to get started. This article outlines the key components and outlines their roles in the architecture.
 

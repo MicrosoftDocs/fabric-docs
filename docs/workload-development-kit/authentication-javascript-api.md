@@ -1,5 +1,5 @@
 ---
-title: Overview of Fabric workload authentication JavaScript API
+title: Overview of Fabric workload authentication JavaScript API (preview)
 description: Learn how to use JavaScript APIs to authenticate a customized Fabric workload.
 author: paulinbar
 ms.author: painbar
@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-# Authentication JavaScript API
+# Authentication JavaScript API (preview)
 
 The Fabric front end offers a JavaScript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. This article describes this API. 
 

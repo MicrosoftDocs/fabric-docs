@@ -1,5 +1,5 @@
 ---
-title: Microsoft Fabric workload environment
+title: Microsoft Fabric workload environment (preview)
 description: Learn about the Microsoft Fabric workload environment and how it's configured on your local machine and on the cloud.
 author: KesemSharabi
 ms.author: kesharab
@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-# Introducing workloads
+# Introducing workloads (preview)
 
 This chapter introduces the key components of our system and provides an overview of the architecture. These components work together to create a robust and flexible platform for your development needs. Let’s delve into these components and their roles within our architecture.
 

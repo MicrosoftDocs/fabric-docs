@@ -1,5 +1,5 @@
 ---
-title: Fabric workload development kit frontend
+title: Fabric workload development kit frontend (preview)
 description: Learn how to edit files in the developer sample repo to build the frontend of a customized Fabric workload.
 author: mberdugo
 ms.author: monaberdugo
@@ -10,7 +10,7 @@ ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how to build the frontend of a customized Fabric workload so that I can create customized user experiences.
 ---
 
-# Fabric workload development kit frontend
+# Fabric workload development kit frontend (preview)
 
 [This Fabric developer sample](https://github.com/microsoft/Microsoft-Fabric-developer-sample.git) serves as a guide for integrating a custom UX Workload with Microsoft Fabric. This project enables developers to seamlessly integrate their own UI components and behaviors into Fabric's runtime environment, enabling rapid experimentation and customization. Developers can use the Fabric Extensibility framework to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with Independent Software Vendor (ISV) capabilities. For example, the item editor allows creating a native, consistent user experience by embedding ISV’s frontend in the context of a Fabric workspace item.
 
