@@ -1,16 +1,24 @@
 ---
 title: Explore Azure blob storage events in Fabric Real-Time hub
-description: This article shows how to explore Azure blob storage events in Fabric Real-Time hub. 
+description: This article shows how to explore Azure blob storage events in Fabric Real-Time hub.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
-# Explore Azure blob storage events in Fabric Real-Time hub
+# Explore Azure blob storage events in Fabric Real-Time hub (preview)
+[!INCLUDE [preview-note](./includes/preview-note.md)]
+
 This article shows how to explore Azure blob storage events in Fabric Real-Time hub. Azure blob storage events allow you to receive notifications when certain actions occur on your blobs. For example, you can receive a notification when a new blob is created, or an existing blob is modified. These events can be used to set alert on other actions or workflows, such as updating a database or sending a notification. This article provides the properties and schema for Azure blob storage events.  
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
+
+> [!NOTE]
+> Consuming Fabric events via eventstream or Data Activator isn't supported if the capacity region of the eventstream or Data Activator is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
+
 
 ## View Azure blob storage events detail page
 
@@ -33,14 +41,14 @@ At the top of the Azure blob storage events detail page, you see the following t
 
 ## See what's using this category
 
-This section shows subscriptions using the event category. Here are the columns and their descriptions shown in the list. 
+This section shows artifacts using Azure Blob Storage events. Here are the columns and their descriptions shown in the list. 
 
 | Column | Description |
 | ------ | ------------ | 
-| Name | Name of the artifact/subscriber that subscribes to the event type group. |
-| Type | Artifact type – Reflex or eventstream |
+| Name | Name of the artifact that's using Azure Blob Storage events. |
+| Type | Artifact type – Reflex or Eventstream |
 | Workspace | Workspace where the artifact lives. |
-| Source | Name of the source (Azure blob storage account) that the user subscribed to. |
+| Source | Name of the source (Azure Blob Storage account). |
 
 :::image type="content" source="./media/explore-azure-blob-storage-events/see-what-is-using.png" alt-text="Screenshot that shows the See what is using the section of the Azure blob storage events detail page." :::
 
@@ -101,5 +109,3 @@ The `data` object has the following properties:
 ## Related content
 
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md)
-
-

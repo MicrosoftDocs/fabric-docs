@@ -5,20 +5,27 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 04/24/2024
+ms.custom:
+  - build-2024
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Amazon Kinesis Data Streams source to an eventstream
+# Add Amazon Kinesis Data Streams source to an eventstream (preview)
 
 This article shows you how to add Amazon Kinesis Data Streams source to an eventstream.
 
 [Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/) is a massively scalable, highly durable data ingestion and processing service optimized for streaming data. By integrating Amazon Kinesis Data Streams as a source within your eventstream, you can seamlessly process real-time data streams before routing them to multiple destinations within Fabric.
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
+[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
+
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - An Amazon Web Services (AWS) account with the Kinesis Data Streams service enabled.
+- Your Amazon Kinesis data stream must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
 ## Add Amazon Kinesis Data Streams as a source
 
@@ -36,7 +43,12 @@ This article shows you how to add Amazon Kinesis Data Streams source to an event
 
 You can see the Amazon Kinesis Data Stream source added to your eventstream in **Edit mode**.
 
+:::image type="content" source="./media/add-source-amazon-kinesis-data-streams/edit-view.png" alt-text="Screenshot that shows Amazon Kinesis Data Streams source in Edit view." lightbox="./media/add-source-amazon-kinesis-data-streams/edit-view.png":::
+
 To implement this newly added Amazon Kinesis Data Stream source, select **Publish**. After you complete these steps, your Amazon Kinesis Data Stream source is available for visualization in the **Live view**.
+
+:::image type="content" source="./media/add-source-amazon-kinesis-data-streams/live-view.png" alt-text="Screenshot that shows Amazon Kinesis Data Streams source in Live view." lightbox="./media/add-source-amazon-kinesis-data-streams/live-view.png":::
+
 
 ## Related content
 

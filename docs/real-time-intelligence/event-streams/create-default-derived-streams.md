@@ -5,7 +5,9 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 04/22/2024
+ms.custom:
+  - build-2024
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
@@ -49,6 +51,6 @@ Once you create a new eventstream, you can add a source to the eventstream and t
 
 ## Related content
 
-- [New capabilities in Microsoft Fabric event streams](new-capabilities.md)
+- [Enhanced capabilities in Microsoft Fabric event streams](overview.md)
 - [Edit and publish an eventstream](edit-publish.md)
 - [Route data streams based on content](route-events-based-on-content.md)

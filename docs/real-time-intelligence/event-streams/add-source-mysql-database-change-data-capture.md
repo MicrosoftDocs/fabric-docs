@@ -5,11 +5,13 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 04/29/2024
+ms.custom:
+  - build-2024
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
 
-# Add MySQL Database CDC source to an eventstream
+# Add MySQL Database CDC source to an eventstream (preview)
 
 >[!NOTE]
 >This article contains references to the term `SLAVE`, a term that Microsoft no longer uses. When the term is removed from the software, we'll remove it from this article.
@@ -18,15 +20,19 @@ This article shows you how to add an Azure Database for MySQL Change Data Captur
 
 You can specify the tables to monitor, and the eventstream records any future row-level changes to the tables. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations in Fabric for further processing or analysis.
 
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
+[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - Access to an instance of Azure Database for MySQL - Flexible Server.
+- Your MySQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
 ## Set up MySQL DB
 
-The Messaging Connector for Eventstream uses the Debezium MySQL connector to capture changes in your Azure Database for MySQL database. You must define a MySQL user with permissions on all databases that the Messaging Connector monitors.
+The connector uses the Debezium MySQL connector to capture changes in your Azure Database for MySQL database. You must define a MySQL user with permissions on all databases that the Messaging Connector monitors.
 
 1. At the `mysql` command prompt, create the MySQL user:
 
@@ -46,13 +52,13 @@ The Messaging Connector for Eventstream uses the Debezium MySQL connector to cap
    mysql> FLUSH PRIVILEGES;
    ```
 
-For more details about granting the required permissions to the user, see [Debezium connector for MySQL :: Debezium Documentation](https://debezium.io/documentation/reference/1.9/connectors/mysql.html#mysql-creating-user).
+For more information about granting the required permissions to the user, see [Debezium connector for MySQL :: Debezium Documentation](https://debezium.io/documentation/reference/1.9/connectors/mysql.html#mysql-creating-user).
 
 ## Enable the binlog
 
 You must enable binary logging for MySQL replication. The binary logs record transaction updates for replication tools to propagate changes.
 
-1. On the Azure portal page for your Azure Cosmos DB account, select **Server parameters** under **Settings** in the left navigation.
+1. On the Azure portal page for your Azure Database for MySQL account, select **Server parameters** under **Settings** in the left navigation.
 
 1. On the **Server parameters** page, configure the following properties, and then select **Save**.
 
@@ -80,7 +86,7 @@ You see the Azure MySQL DB (CDC) source added to your eventstream in **Edit mode
 
    ![A screenshot of the added Azure MySQL DB CDC source in Edit mode with the Publish button highlighted.](media/add-source-mysql-database-change-data-capture/edit-mode.png)
 
-Select **Publish** to publish the changes and begin streaming Azure Cosmos DB CDC data to the eventstream.
+Select **Publish** to publish the changes and begin streaming Azure MySQL DB CDC data to the eventstream.
 
    ![A screenshot of the published eventstream with Azure MySQL DB CDC source in Live View.](media/add-source-mysql-database-change-data-capture/live-view.png)
 

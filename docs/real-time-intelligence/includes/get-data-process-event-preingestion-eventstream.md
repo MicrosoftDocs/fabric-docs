@@ -4,7 +4,7 @@ description: Include file for the Edit column heading in the Get data hub in Rea
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: include
-ms.custom: build-2023
+ms.custom: build-2023, build-2024
 ms.date: 04/21/2024
 ---
 ### Process event before ingestion in Eventstream

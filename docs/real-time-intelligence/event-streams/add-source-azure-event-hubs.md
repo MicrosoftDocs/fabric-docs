@@ -5,20 +5,26 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 04/03/2024
+ms.date: 05/21/2024
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add Azure Event Hubs source to an eventstream
-This article shows you how to add an Azure Event Hubs source to an eventstream.  If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+This article shows you how to add an Azure Event Hubs source to an eventstream. 
 
-# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
+[!INCLUDE [select-view](./includes/select-view.md)]
+
+::: zone pivot="enhanced-capabilities"  
 
 ## Prerequisites 
 Before you start, you must complete the following prerequisites: 
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located. 
 - You need to have appropriate permission to get event hub's access keys. The event hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
+
+[!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
 ## Add Azure Event Hubs as a source 
 If you have an Azure event hub created with streaming data, follow these steps to add an Azure event hub as your eventstream source: 
@@ -45,7 +51,7 @@ After you complete these steps, the Azure event hub is available for visualizati
 
 ## Related content
 
-Other connectors:
+To learn how to add other sources to an eventstream, see the following articles: 
 
 - [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
 - [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
@@ -58,9 +64,13 @@ Other connectors:
 - [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
-- [Fabric workspace event](add-source-fabric-workspace.md)
+- [Fabric workspace events](add-source-fabric-workspace.md)
 
-# [Standard capabilities](#tab/standardcapabilities)
+
+::: zone-end
+
+::: zone pivot="standard-capabilities"
+
 
 ## Prerequisites
 
@@ -114,8 +124,4 @@ To learn how to add other sources to an eventstream, see the following articles:
 - [Sample data](add-source-sample-data.md)
 - [Custom app](add-source-custom-app.md)
 
-To add a destination to the eventstream, see the following articles: 
-- [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)
-- [Create and manage an eventstream](./create-manage-an-eventstream.md)
-
----
+::: zone-end

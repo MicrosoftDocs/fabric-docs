@@ -1,16 +1,24 @@
 ---
 title: Explore Fabric workspace item events in Fabric Real-Time hub
-description: This article shows how to explore Fabric workspace item events in Fabric Real-Time hub. 
+description: This article shows how to explore Fabric workspace item events in Fabric Real-Time hub.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
-# Explore Fabric workspace item events in Fabric Real-Time hub
-Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items, such as when a new artifact is created, or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
+# Explore Fabric workspace item events in Fabric Real-Time hub (preview)
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
+
+Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items, such as when a new artifact is created, or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
+
+
+> [!NOTE]
+> - Consuming Fabric events via eventstream or Data Activator isn't supported if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
+> - While consuming Fabric workspace item events, make sure that the capacity region of consuming eventstream or Data Activator is the same as the Tenant home region.
 
 ## View Fabric workspace item events detail page
 
@@ -33,14 +41,14 @@ At the top of the detail page, you see the following two actions.
 
 ## See what's using this category
 
-This section shows subscriptions using the event category. Here are the columns and their descriptions shown in the list. 
+This section shows the artifacts using Fabric workspace item events. Here are the columns and their descriptions shown in the list. 
 
 | Column | Description |
 | ------ | ------------ | 
-| Name | Name of the artifact/subscriber that subscribes to the event type group. |
-| Type | Artifact type – Reflex or eventstream |
+| Name | Name of the artifact that's using Fabric workspace item events. |
+| Type | Artifact type – Reflex or Eventstream |
 | Workspace | Workspace where the artifact lives. |
-| Source | Name of the source (Azure blob storage account) that the user subscribed to. |
+| Source | Name of the workspace that is source of the events. |
 
 ## Fabric workspace item events profile
 
@@ -91,5 +99,3 @@ The `data` object has the following properties:
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
-
-

@@ -1,16 +1,20 @@
 ---
-title: Use parameters in Real-Time Dashboards
+title: Use parameters in Real-Time Dashboards (preview)
 description: Learn how to use parameters in Real-Time Dashboards.
 ms.author: yaschust
 author: YaelSchuster
 ms.reviewer: gabil
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 02/21/2023
 ---
 
-# Use parameters in Real-Time Dashboards
+# Use parameters in Real-Time Dashboards (preview)
 
 Parameters are used as building blocks for filters in Real-Time Dashboards. They're managed in the dashboard scope, and can be added to queries to filter the data presented by the underlying visual. A query can use one or more parameters.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 This document describes the creation and use of parameters and linked filters in dashboards. Parameters can be used to filter dashboard visuals either by selecting [parameter values in the filter bar](#use-parameters-in-your-query) or by using [cross-filters](#cross-filters-parameters).
 

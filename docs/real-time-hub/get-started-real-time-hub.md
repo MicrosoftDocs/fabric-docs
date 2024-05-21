@@ -1,13 +1,15 @@
 ---
 title: Get started with Fabric Real-Time hub
-description: This article shows how to get started with Fabric Real-Time hub. 
+description: This article shows how to get started with Fabric Real-Time hub.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: quickstart
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
-# Get started with Fabric Real-Time hub
+# Get started with Fabric Real-Time hub (preview)
 Real-Time hub is the single estate for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with Real-Time hub, with no extra steps needed to set up or manages it. For detailed overview, see [Real-Time hub overview](real-time-hub-overview.md).
 
 This article provides guidance on getting started with Fabric Real-Time hub. 
@@ -40,7 +42,6 @@ You can connect to these resources and create eventstreams that show up on the *
 
 ## Fabric events tab
 On the **Fabric events** tab, you see the following types of events. 
-
 [!INCLUDE [discrete-event-sources](./includes/discrete-event-sources.md)]
 
 To **explore Fabric events**, see [Explore Fabric events in Real-Time hub](explore-fabric-events.md).

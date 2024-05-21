@@ -4,15 +4,23 @@ description: This article shows how to explore Fabric events in Fabric Real-Time
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
-# Explore Fabric events in Fabric Real-Time hub
+# Explore Fabric events in Fabric Real-Time hub (preview)
+
+[!INCLUDE [preview-note](./includes/preview-note.md)]
 When you navigate to Real-Time hub in Fabric, you see the following three tabs in the user interface (UI). This article covers the **Fabric events** tab. 
 
 :::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-tab.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-tab.png":::
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+
+
+> [!NOTE]
+> - Consuming Fabric events via eventstream or Data Activator isn't supported if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
+> - While consuming Fabric workspace item events, make sure that the capacity region of consuming eventstream or Data Activator is the same as the Tenant home region.
 
 ### Columns
 Fabric events have the following columns: 
@@ -41,5 +49,3 @@ Here are the actions available on each event type group. When you move the mouse
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md)
 - [Get Fabric workspace item events](create-streams-fabric-workspace-item-events.md)
-
-

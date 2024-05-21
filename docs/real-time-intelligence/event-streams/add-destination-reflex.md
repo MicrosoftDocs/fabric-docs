@@ -7,15 +7,18 @@ author: xujxu
 ms.topic: how-to
 ms.date: 05/02/2024
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add a Reflex destination to an eventstream
 
 This article shows you how to add Reflex destination to an eventstream.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Enhanced capabilities](new-capabilities.md).
+[!INCLUDE [select-view](./includes/select-view.md)]
 
-# [Enhanced capabilities (Preview)](#tab/enhancedcapabilities)
+::: zone pivot="enhanced-capabilities"  
+
 
 ## Prerequisites
 
@@ -44,7 +47,22 @@ Once you complete these steps, the Reflex destination is available for visualiza
 
 ![A screenshot of the Reflex destination available for visualization in Live view.](media/add-destination-reflex-enhanced/live-view.png)
 
-# [Standard capabilities](#tab/standardcapabilities)
+
+## Related content 
+
+To learn how to add other destinations to an eventstream, see the following articles: 
+
+- [Route events to destinations](add-manage-eventstream-destinations.md)
+- [Custom app destination](add-destination-custom-app.md)
+- [Derived stream destination](add-destination-derived-stream.md)
+- [KQL Database destination](add-destination-kql-database.md)
+- [Lakehouse destination](add-destination-lakehouse.md)
+- [Create an eventstream](create-manage-an-eventstream.md)
+
+
+::: zone-end
+
+::: zone pivot="standard-capabilities"
 
 ## Prerequisites
 
@@ -79,15 +97,15 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing where to select the modify and delete options for destinations on the canvas." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
 
----
 
 ## Related content 
 
 To learn how to add other destinations to an eventstream, see the following articles: 
 
-- [Route events to destinations](add-manage-eventstream-destinations-enhanced.md)
+- [Route events to destinations](add-manage-eventstream-destinations.md)
 - [Custom app destination](add-destination-custom-app.md)
-- [Derived stream destination](add-destination-derived-stream.md)
-- [KQL Database destination](add-destination-kql-database-enhanced.md)
-- [Lakehouse destination](add-destination-lakehouse-enhanced.md)
+- [KQL Database destination](add-destination-kql-database.md)
+- [Lakehouse destination](add-destination-lakehouse.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
+
+::: zone-end 

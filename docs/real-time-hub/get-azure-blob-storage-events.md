@@ -4,11 +4,15 @@ description: This article describes how to get Azure Blob Storage events as an e
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
 # Get Azure Blob Storage events into Real-Time hub (preview)
 This article describes how to get Azure Blob Storage events into Fabric Real-Time hub. 
+
+[!INCLUDE [preview-note](./includes/preview-note.md)]
 
 An event is the smallest amount of information that fully describes something has happened in a system. Azure Blob Storage events are triggered when a client creates, replaces, deletes a blob, etc. By using the Real-Time hub, you can convert these events into continuous data streams and transform them before routing them to various destinations in Fabric. 
 
@@ -29,7 +33,8 @@ The following Blob Storage event types are supported:
 
 For more information about available event types, see [Azure Blob Storage as Event Grid source](/azure/event-grid/event-schema-blob-storage).
 
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+> [!NOTE]
+> Consuming Fabric events via eventstream isn't supported if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
 
 ## Prerequisites 
 
@@ -81,6 +86,9 @@ Now, use instructions from the [Configure and create an eventstream](#configure-
 
     :::image type="content" source="./media/get-azure-blob-storage-events/verify-data-stream.png" alt-text="Screenshot that shows the Data streams tab with the generated stream." lightbox="./media/get-azure-blob-storage-events/verify-data-stream.png":::
 
-## Next step
-The eventstream has a stream output on which you can [set alerts](set-alerts-data-streams.md). After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md?branch=release-build-fabric#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. For more information, see [Consume data streams](consume-data-streams.md).
+## Related content
+To learn about consuming data streams, see the following articles:
 
+- [Process data streams](process-data-streams-using-transformations.md)
+- [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
+- [Set alerts on data streams](set-alerts-data-streams.md)

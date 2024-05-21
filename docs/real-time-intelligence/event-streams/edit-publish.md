@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 04/22/2024
 ms.search.form: Source and Destination
 ---
@@ -81,6 +83,6 @@ The following steps show how you can add event processing operations and a desti
 
 ## Related content
 
-- [New capabilities in Microsoft Fabric event streams](new-capabilities.md)
+- [New capabilities in Microsoft Fabric event streams](overview.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)
 - [Route data streams based on content](route-events-based-on-content.md)

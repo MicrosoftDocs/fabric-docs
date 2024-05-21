@@ -4,15 +4,17 @@ description: This article describes how to set alerts on streams in Real-Time hu
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
-# Set alerts on streams in Real-Time hub
+# Set alerts on streams in Real-Time hub (preview)
 This article describes how to set alerts on streams in Real-Time hub.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-## Launch Set alert page for a data stream
+## Launch Set alert page
 
 1. Navigate to the Real-Time hub.
 1. Select a data stream whose parent is an eventstream. 
@@ -42,12 +44,9 @@ On the **Set alert** page, follow these steps:
     1. For **Workspace**, select the workspace where you want to save the alert. 
     1. For **Reflex item**, select an existing Reflex item or create a Reflex item for this alert. 
     
-        :::image type="content" source="./media/set-alerts-data-streams/save-location.png" alt-text="Screenshot that shows the Save location details of an alert." lightbox="./media/set-alerts-data-streams/save-location.png":::
+        :::image type="content" source="./media/set-alerts-data-streams/save-location.png" alt-text="Screenshot that shows the location details of an alert." lightbox="./media/set-alerts-data-streams/save-location.png":::
 
 ## Related content
 
 - [Set alerts for Azure blob storage events](set-alerts-azure-blob-storage-events.md)
 - [Set alerts for Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
-
-
-
