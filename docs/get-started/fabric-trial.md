@@ -17,7 +17,7 @@ Microsoft Fabric is provided free of charge when you sign up for the Fabric tria
 
 When you start a Fabric trial, you get the following features:
 
-* [F64 F SKU subscription](../enterprise/licenses.md#microsoft-fabric-license-types) with full access to all of the Fabric workloads and features.
+* [A capacity with 64 capacity units](../enterprise/licenses.md#microsoft-fabric-license-types.md#capacity-license) that you can use to access all of the Fabric workloads and features.
 
 * OneLake storage up to 1 TB. 
 
