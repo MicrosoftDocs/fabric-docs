@@ -21,7 +21,7 @@ When you start a Fabric trial, you get the following features:
 
 * OneLake storage up to 1 TB. 
 
-* One trial capacity. The person starting the trial becomes the Capacity administrator for that trial capacity. Additional trial capacities are available. The maximum number of capacities available per tenant is determined by Microsoft.
+* The ability to assign workspaces to the trial capacity
 
 * The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity. 
 
