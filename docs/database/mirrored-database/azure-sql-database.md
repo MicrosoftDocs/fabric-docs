@@ -4,8 +4,8 @@ description: Learn about the mirrored databases from Azure SQL Database in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
+ms.date: 05/09/2024
 ms.service: fabric
-ms.date: 03/20/2024
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -67,3 +67,4 @@ The source Azure SQL Database can be either a single database or a database in a
 - [How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-how-to-data-security.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-limitations.md)
 - [Monitor Fabric mirrored database replication](monitor.md)
+- [Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-troubleshoot.md)

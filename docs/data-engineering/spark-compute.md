@@ -54,11 +54,11 @@ Possible custom pool configurations for F64 based on the previous example:
 
 | Fabric capacity SKU | Capacity units | Spark VCores | Node size | Max number of nodes |
 |--|--|--|--|--|
-| F64 | 64 | 128 | Small | 32 |
-| F64 | 64 | 128 | Medium | 16 |
-| F64 | 64 | 128 | Large | 8 |
-| F64 | 64 | 128 | X-Large | 4 |
-| F64 | 64 | 128 | XX-Large | 2 |
+| F64 | 64 | 384 | Small | 96 |
+| F64 | 64 | 384 | Medium | 48 |
+| F64 | 64 | 384 | Large | 24 |
+| F64 | 64 | 384 | X-Large | 12 |
+| F64 | 64 | 384 | XX-Large | 6 |
 
 > [!NOTE]
 > To create custom pools, you need **admin** permissions for the workspace. And the Microsoft Fabric capacity admin must grant permissions to allow workspace admins to size their custom Spark pools. To learn more, see [Get started with custom Spark pools in Fabric](create-custom-spark-pools.md)

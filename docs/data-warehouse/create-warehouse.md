@@ -1,10 +1,12 @@
 ---
 title: Create a Warehouse
 description: Learn how to create a Warehouse in Microsoft Fabric.
-author: prlangad
-ms.author: prlangad
-ms.reviewer: wiassaf
-ms.date: 03/18/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: prlangad
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023

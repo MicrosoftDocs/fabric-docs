@@ -4,8 +4,8 @@ title: |
 description: Query nested Azure Cosmos DB JSON data in a mirrored database within Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa
-ms.date: 03/17/2024
+ms.reviewer: anithaa, wiassaf
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: how-to
 ---

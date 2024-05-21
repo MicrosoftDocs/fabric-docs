@@ -80,6 +80,14 @@ Inline commands support Python libraries and R libraries.
 
 The Python interpreter restarts to apply the change of libraries. Any variables defined before you run the command cell are lost. We strongly recommend that you put all the commands for adding, deleting, or updating Python packages at the beginning of your notebook.
 
+The inline commands for managing Python libraries are disabled in notebook pipeline run by default. If you want to enable `%pip install` for pipeline, add "_inlineInstallationEnabled" as bool parameter equals True in the notebook activity parameters.
+
+:::image type="content" source="media\environment-lm\library-management-enable-pip-in-pipeline.png" alt-text="Screenshot showing the the configuration of enabling pip install for notebook pipeline run.":::
+
+> [!NOTE]
+>
+> The `%pip install` may lead to inconsistent results from time to time. It's recommended to install library in an environment and use it in the pipeline.
+
 We recommend `%pip` instead of `!pip`. `!pip` is an IPython built-in shell command, which has the following limitations:
 
 - `!pip` only installs a package on the driver node, not executor nodes.
@@ -173,16 +181,19 @@ To install an R feed library:
 
 ### Manage Jar libraries through inline installation
 
-The *.jar* files are support at notebook sessions with following command. The following code cell is using Notebook built-in folder as an example.
+The *.jar* files are support at notebook sessions with following command.
 
 ```Scala
 %%configure -f
 {
     "conf": {
-        "spark.jars": "{mssparkutils.nbResPath}/builtin/jar_file_name.jar"
+        "spark.jars": "abfss://<<Lakehouse prefix>>.dfs.fabric.microsoft.com/<<path to JAR file>>/<<JAR file name>>.jar",
     }
-}       
+}        
 ```
+
+The code cell is using Lakehouse's storage as an example. At the notebook explorer, you can copy the full file ABFS path and replace in the code.
+:::image type="content" source="media\environment-lm\library-management-get-ABFS-path.png" alt-text="Screenshot of get the ABFS path.":::
 
 ## Related content
 
