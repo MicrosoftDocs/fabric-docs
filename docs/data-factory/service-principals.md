@@ -1,8 +1,8 @@
 ---
 title: Service principal support in Data Factory 
 description: Learn about how to use the service principal authentication type to access your data sources.
-author: ptyx507x
-ms.author: miescobar
+author: nikkiwaghani
+ms.author: nikkiwaghani
 ms.reviewer: dougklo
 ms.topic: conceptual
 ms.date: 1/16/2024
