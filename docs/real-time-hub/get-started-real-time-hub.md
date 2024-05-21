@@ -1,9 +1,11 @@
 ---
 title: Get started with Fabric Real-Time hub
-description: This article shows how to get started with Fabric Real-Time hub. 
+description: This article shows how to get started with Fabric Real-Time hub.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: quickstart
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 

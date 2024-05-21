@@ -5,8 +5,10 @@ ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.search.form: Get started with GraphQL API
-ms.date: 05/07/2024
+ms.date: 05/21/2024
 ---
 
 # Create an API for GraphQL in Fabric and add data
@@ -18,7 +20,7 @@ Get started with the Fabric API for GraphQL by creating an API, then linking a d
 
 ## Prerequisites
 
-- Premium capacity in Fabric
+- Fabric Premium or Trial capacity
 - Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for API for GraphQL (Preview)
 
 ## Creating an API for GraphQL

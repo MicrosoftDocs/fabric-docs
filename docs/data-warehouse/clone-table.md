@@ -10,6 +10,7 @@ ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
+  - build-2024
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 # Clone table in Microsoft Fabric

@@ -8,6 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
+  - build-2024
 ms.date: 04/21/2024
 ms.search.form: Event house,KQL Database, Overview
 ---

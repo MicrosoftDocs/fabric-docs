@@ -4,6 +4,8 @@ description: This article shows how to explore Fabric events in Fabric Real-Time
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
@@ -41,5 +43,3 @@ Here are the actions available on each event type group. When you move the mouse
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md)
 - [Get Fabric workspace item events](create-streams-fabric-workspace-item-events.md)
-
-

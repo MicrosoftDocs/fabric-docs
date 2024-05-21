@@ -5,8 +5,10 @@ ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: conceptual
+ms.custom:
+  - build-2024
 ms.search.form: GraphQL multiple data sources
-ms.date: 05/07/2024
+ms.date: 05/21/2024
 ---
 
 # Query multiple data sources in Fabric API for GraphQL

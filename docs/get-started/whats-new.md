@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
 ms.date: 05/21/2024
 ms.topic: whats-new
+ms.custom:
+  - build-2024
 no-loc: [Copilot]
 ---
 # What's new in Microsoft Fabric?
@@ -286,6 +288,8 @@ This section summarizes recent improvements and features for [Real-Time Intellig
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|May 2024|**Real-Time hub preview**| Real-Time hub is single, tenant-wide, unified, logical place for streaming data-in-motion. It enables you to easily discover, ingest, manage, and consume data-in-motion from a wide variety of sources. It lists all the streams and Kusto Query Language (KQL) tables that you can directly act on. It also gives you an easy way to ingest streaming data from Microsoft products and Fabric events. For more information, see [Real-Time hub overview](../real-time-hub/real-time-hub-overview.md). |
+|May 2024|**Event streams - enhanced capabilities preview**| The preview of enhanced capabilities supports many new sources - Google Cloud Pub/Sub, Amazon Kinesis Data Streams, Confluent Cloud Kafka, Azure SQL Database Change Data Capture (CDC), PostgreSQL Database CDC, MySQL Database CDC, Azure Cosmos DB CDC, Azure Blob Storage events, and Fabric workspace item events, and a new Stream destination. It supports two distinct modes, Edit mode and Live view, in the visual designer. It also supports routing based on content in data streams. For more information, see [What is Fabric event streams](../real-time-intelligence/event-streams/overview.md).  |
 |April 2024|**Kusto Cache consumption preview**|The [preview of Kusto Cache consumption](https://blog.fabric.microsoft.com/blog/9304?ft=All) means that you will start seeing billable consumption of the OneLake Cache Data Stored meter from the KQL Database and Eventhouse items. For more information, see [KQL Database consumption](../real-time-analytics/kql-database-consumption.md).|
 |April 2024|**Pause and Resume in Eventstream preview**| The [Pause and Resume feature](https://blog.fabric.microsoft.com/blog/9613/preview?preview=true#post-9613-_Toc164428672) enables you to pause data streaming from various sources and destinations within Eventstream. You can then resume data streaming seamlessly from the paused time or a customized time, ensuring no data loss. |
 |March 2024|**Fabric Real-Time Intelligence Integrates with Newly Announced Database Watcher for Azure SQL**|Users of Azure SQL can use the [Database Watcher monitoring solution with Microsoft Fabric](https://blog.fabric.microsoft.com/blog/9613/preview?preview=true#post-9613-_Toc164428673). [Database Watcher for Azure SQL (preview)](/azure/azure-sql/database-watcher-overview) provides advanced monitoring capabilities, and can integrate with [Eventhouse KQL database](../real-time-analytics/eventhouse.md). |
