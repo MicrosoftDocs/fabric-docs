@@ -5,7 +5,11 @@ items:
   items:
   - name: Development Kit overview
     href: development-kit-overview.md
-  - name: Workload validation
+  - name: Monetize your workload
+    href: monetization.md  
+  - name: Publish your workload
+    href: publish-workload-flow.md
+  - name: Workload certification
     href: publish-workload-requirements.md    
 - name: Get started
   items:
@@ -15,8 +19,6 @@ items:
     href: quickstart-sample.md
 - name: Concept
   items:
-  - name: Monetize your workload
-    href: monetization.md  
   - name: Authentication
     items:
     - name: Authentication overview
@@ -33,8 +35,6 @@ items:
     href: monitoring-hub.md
   - name: Working with customer data
     href: fabric-data-plane.md
-  - name: Publish your workload
-    href: publish-workload-flow.md
 - name: Tutorials
   items:
   - name: Add and manage more workloads
