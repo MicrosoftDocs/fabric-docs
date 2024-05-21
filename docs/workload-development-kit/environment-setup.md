@@ -1,5 +1,5 @@
 ---
-title: Set up your Microsoft Fabric development environment
+title: Set up your Microsoft Fabric development environment (preview)
 description: Learn how to set up your Microsoft Fabric Workload Development Kit environment so that you can start developing your workloads.
 author: mberdugo
 ms.author: monaberdugo
@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-# Set up your environment
+# Set up your environment (preview)
 
 This article is aimed at developers who are looking to build a workload using the Microsoft Fabric Workload Development Kit. The article will guide you through the process of setting up your development environment so that you can start building your workload.
 

@@ -1,5 +1,5 @@
 ---
-title: Fabric extensibility authentication setup
+title: Fabric extensibility authentication setup (preview)
 description: Learn how to set up the authorization for a customized Fabric workload.
 author: paulinbar
 ms.author: painbar
@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-# Authentication setup
+# Authentication setup (preview)
 
 In order to be able to work with authentication, you need to set up its three component parts:
 
