@@ -1,5 +1,5 @@
 ---
-title: Fabric extensibility backend authentication
+title: Fabric extensibility backend authentication (preview)
 description: Learn about building the backend authentication of a customized Fabric workload.
 author: paulinbar
 ms.author: painbar
@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-# Backend authentication and authorization overview
+# Backend authentication and authorization overview (preview)
 
 The Fabric developer workload sample has the following authentication flows on the backend side.
 

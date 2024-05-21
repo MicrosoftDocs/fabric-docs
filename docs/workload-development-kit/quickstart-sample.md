@@ -1,5 +1,5 @@
 ---
-title: Quick start - Run a sample workload
+title: Quick start - Run a sample workload (preview)
 description: Create a Microsoft Fabric workload using a sample workload and the instructions in this quickstart tutorial.
 author: mberdugo
 ms.author: monaberdugo
@@ -10,7 +10,7 @@ ms.date: 05/21/2024
 # Customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
-# Quick start: Run a workload sample
+# Quick start: Run a workload sample (preview)
 
 This quick start guide shows you how to create and run a Microsoft Fabric workload using a sample workload.
 
