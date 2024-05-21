@@ -19,6 +19,8 @@ This article shows you how to add Amazon Kinesis Data Streams source to an event
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
+[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
+
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.

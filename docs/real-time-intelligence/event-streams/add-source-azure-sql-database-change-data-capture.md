@@ -19,6 +19,9 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
+[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
+
+
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.

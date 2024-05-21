@@ -6,6 +6,7 @@ ms.author: anboisve
 ms.topic: how-to
 ms.custom:
   - build-2024
+  - references_regions
 ms.date: 05/21/2024
 ---
 
