@@ -10,11 +10,12 @@ metadata:
   ms.subservice: data-engineering
   ms.custom:
     - ignite-2023
+    - build-2024
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 05/23/2023
+  ms.date: 05/21/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -65,6 +66,25 @@ landingContent:
             url: notebook-source-control-deployment.md
           - text: Use MSSparkUtils in notebook
             url: microsoft-spark-utilities.md
+  # Card 
+  - title: API for GraphQL
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Fabric API for GraphQL?
+            url: api-graphql-overview.md
+      - linkListType: get-started
+        links:
+          - text: Create an API for GraphQL and add data
+            url: get-started-api-graphql.md
+      - linkListType: how-to-guide
+        links:
+          - text: Manage relationships
+            url: manage-relationships-graphql.md
+          - text: Connect applications
+            url: connect-apps-api-graphql.md
+          - text: Query multiple data sources
+            url: multiple-data-sources-graphql.md      
   # Card 
   - title: Delta Lake
     linkLists:
@@ -132,7 +152,6 @@ landingContent:
             url: microsoft-spark-utilities.md
           - text: Configure capacity settings
             url: capacity-settings-management.md
-
   # Card 
   - title: VS Code integration
     linkLists:
@@ -148,7 +167,6 @@ landingContent:
             url: explore-lakehouse-with-vs-code.md
           - text: Develop notebook from VS Code web experience
             url: author-notebook-with-vs-code-web.md
-
   # Card 
   - title: Get started with environment
     linkLists:
@@ -163,4 +181,4 @@ landingContent:
           - text: Manage libraries in environments
             url: environment-manage-library.md
           - text: Migrate the existing workspace libraries and Spark properties to an environment
-            url: environment-workspace-migration.md
+            url: environment-workspace-migration.md   
