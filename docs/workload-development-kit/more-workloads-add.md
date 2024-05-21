@@ -13,7 +13,7 @@ ms.date: 05/21/2024
 
 The workload hub is a central location where you can view all the workloads available in Fabric. Each workload in Fabric has its own item type associated with it. The item types can be created in Fabric workspaces. To access the workload hub, navigate to the workload from the left navigation menu.
 
-:::image type="content" source="./media/more-workloads-add/workload-hub.png" alt-text="Screenshot of the Workload Hub.":::
+:::image type="content" source="./media/more-workloads-add/workload-hub.png" alt-text="Screenshot of the Workload Hub." lightbox="./media/more-workloads-add/workload-hub.png":::
 
 All the workloads available under the **My Workloads** tab can be used and applied in your analytical projects. You can start generating items and performing various operations on them.
 
