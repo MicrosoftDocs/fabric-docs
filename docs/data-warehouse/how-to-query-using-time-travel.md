@@ -1,5 +1,5 @@
 ---
-title: "How to: Query using time travel at the statement level"
+title: "How to: Query using time travel at the statement level (preview)"
 description: Learn from samples and examples of querying a warehouse using time travel at the statement level.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
