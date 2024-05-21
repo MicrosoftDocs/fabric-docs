@@ -179,11 +179,13 @@ This method references a notebook and returns its exit value. You can run nestin
 mssparkutils.notebook.run("notebook name", <timeoutSeconds>, <parameterMap>, <workspaceId>)
 ```
 
-Examples:
+For example:
 
 ```python
 mssparkutils.notebook.run("Sample1", 90, {"input": 20 })
 ```
+
+Fabric notebook also supports referencing notebooks across multiple workspaces by specifying the *workspace ID*.
 
 ```python
 mssparkutils.notebook.run("Sample1", 90, {"input": 20 }, "fe0a6e2a-a909-4aa3-a698-0a651de790aa")
