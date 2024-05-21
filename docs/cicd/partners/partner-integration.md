@@ -1,14 +1,13 @@
 ---
 title: Microsoft Fabric ISV Partner integration with Fabric
-description:  Fabric ISV Partner Ecosystem enables ISVs to use a streamlined solution that's easy to connect, onboard, and operate.
+description:  Fabric ISV Partner Ecosystem enables ISVs to use a streamlined solution that’s easy to connect, onboard, and operate.
 ms.reviewer: richin
 ms.author: monaberdugo
 author: mberdugo
 ms.topic: overview
-ms.custom:
-  - build-2024
-ms.search.form:
-ms.date: 05/05/2024
+ms.custom: 
+ms.search.form: 
+ms.date: 11/15/2023
 ---
 
 # Microsoft Fabric Integration Pathways for ISVs
@@ -35,18 +34,6 @@ Here are a few ways to get you started with this model:
 
 :::image type="content" source="media/partner-integration/onelake-apis.png" alt-text="Diagram showing how OneLake APIs interact with Fabric workloads.":::
 
-### Real-Time Intelligence APIs
-
-Real-Time Intelligence streamlines data analysis and visualization, offering a centralized solution for immediate insights and actions on data in motion within an organization. It efficiently manages large volumes of data through robust querying, transformation, and storage capabilities.
-
-- Event houses are specifically designed for streaming data, compatible with Real-Time Hub, and ideal for time-based events. Data is automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data that can be accessed in OneLake for use across Fabric's suite of experiences. Event houses support existing Event house APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Event houses. Learn more about [REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
-- Event streams enable you to bring real-time events from various sources and route them to various destinations, such as OneLake, KQL databases in event houses, and Data Activator. Learn more about [event streams](../../real-time-intelligence/event-streams/overview.md) and [event streams API](#real-time-intelligence-apis).
-- If you're using Databricks or Jupyter Notebooks, you can utilize the Kusto Python Client Library to work with KQL databases in Fabric. Learn more about [Kusto Python SDK](/azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context-rti&pivots=fabric).
-- You can utilize the existing [Microsoft Logic Apps](/azure/data-explorer/kusto/tools/logicapps), [Azure Data Factory](/azure/data-explorer/data-factory-integration), or [Microsoft Power Automate](/azure/data-explorer/flow) connectors to interact with your Event houses or KQL Databases.
-- [Database shortcuts in Real-Time Analytics](../../real-time-intelligence/database-shortcut.md) are embedded references within an event house to a source database. The source database can either be a KQL Database in Real-Time Analytics or an Azure Data Explorer database. Shortcuts can be used for inplace sharing of data within the same tenant or across tenants. Learn more about managing [database shortcuts using the API](#real-time-intelligence-apis).
-
-:::image type="content" source="media/partner-integration/real-time-intelligence-apis.png" alt-text="Diagram showing how Real-Time Intelligence APIs interact with Fabric workloads.":::
-
 ### Data Factory in Fabric
 
 - Data Pipelines boast an [extensive set of connectors](../../data-factory/pipeline-support.md), enabling ISVs to effortlessly connect to a myriad of data stores. Whether you're interfacing traditional databases or modern cloud-based solutions, our connectors ensure a smooth integration process. [Connector overview](../../data-factory/connector-overview.md).
@@ -60,8 +47,7 @@ Real-Time Intelligence streamlines data analysis and visualization, offering a c
 Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds, and accounts by creating a single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can directly point to your existing data sources such as OneLake in different tenant, [Azure Data Lake Storage (ADLS) Gen2](../../onelake/create-adls-shortcut.md), [Amazon S3 storage accounts](../../onelake/create-s3-shortcut.md), [Google Cloud Storage(GCS)](../../onelake/create-gcs-shortcut.md), [S3 Compatible data sources](../../onelake/create-s3-compatible-shortcut.md) and [Dataverse](/power-apps/maker/data-platform/azure-synapse-link-view-in-fabric) through a unified namespace. OneLake presents ISVs with a transformative data access solution, seamlessly bridging integration across diverse domains and cloud platforms.
 
 - [Learn more about OneLake shortcuts](../../onelake/onelake-shortcuts.md)
-- [Learn more about OneLake, one copy](../../real-time-intelligence/one-logical-copy.md)
-- [Learn more about KQL database shortcuts](../../real-time-intelligence/database-shortcut.md)
+- [Learn more about OneLake, one copy](../../real-time-analytics/one-logical-copy.md)
 
 :::image type="content" source="media/partner-integration/multicloud-shortcuts.png" alt-text="Diagram showing multicloud shortcuts in OneLake.":::
 
