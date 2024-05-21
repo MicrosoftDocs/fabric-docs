@@ -7,6 +7,7 @@ ms.reviewer: 'guptamaya'
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
+  - build-2024
 ms.topic: conceptual
 ms.date: 01/16/2024
 no-loc: [Copilot]
@@ -132,7 +133,6 @@ Privacy, security, and responsible use for:
 - [Copilot for Power BI (preview)](copilot-power-bi-privacy-security.md)
 - [Copilot for Data Factory (preview)](copilot-data-factory-privacy-security.md)
 - [Copilot for Data Science (preview)](copilot-data-science-privacy-security.md)
-- [Copilot for Real-Time Analytics (preview)](copilot-real-time-analytics.md)
 
 ## Notes by release
 
