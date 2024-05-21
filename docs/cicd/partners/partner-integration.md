@@ -111,11 +111,11 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 |  | [Get KQL Queryset](/rest/api/fabric/kqlqueryset/items/get-kql-queryset?tabs=HTTP) | Get metadata about a KQL queryset. |
 |  | [List KQL Queryset](/rest/api/fabric/kqlqueryset/items/list-kql-querysets?tabs=HTTP) | List KQL querysets in your workspace. |
 |  | [Update KQL Queryset](/rest/api/fabric/kqlqueryset/items/update-kql-queryset?tabs=HTTP) | Update an existing KQL queryset. |
-| Event stream | [Create event stream](/rest/api/fabric/eventstream/items/create-eventstream?tabs=HTTP) | Creates an event stream. |
-|  | [Delete event stream](/rest/api/fabric/eventstream/items/delete-eventstream?tabs=HTTP) | Deletes an existing event stream. |
-|  | [Get event stream](/rest/api/fabric/eventstream/items/get-eventstream?tabs=HTTP) | Get metadata about an event stream. |
-|  | [List event stream](/rest/api/fabric/eventstream/items/list-eventstreams?tabs=HTTP) | List event streams in your workspace. |
-|  | [Update event stream](/rest/api/fabric/eventstream/items/update-eventstream?tabs=HTTP) | Update an existing event stream. |
+| Event stream | [Create Event stream](/rest/api/fabric/eventstream/items/create-eventstream?tabs=HTTP) | Creates an event stream. |
+|  | [Delete Event stream](/rest/api/fabric/eventstream/items/delete-eventstream?tabs=HTTP) | Deletes an existing event stream. |
+|  | [Get Event stream](/rest/api/fabric/eventstream/items/get-eventstream?tabs=HTTP) | Get metadata about an event stream. |
+|  | [List Event stream](/rest/api/fabric/eventstream/items/list-eventstreams?tabs=HTTP) | List event streams in your workspace. |
+|  | [Update Event stream](/rest/api/fabric/eventstream/items/update-eventstream?tabs=HTTP) | Update an existing event stream. |
 
 ### Fabric Data Factory
 
