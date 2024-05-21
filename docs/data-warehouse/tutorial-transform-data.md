@@ -11,6 +11,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
 ---
 
 # Tutorial: Transform data using a stored procedure

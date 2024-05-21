@@ -7,6 +7,8 @@ ms.reviewer: ajagadish
 ms.date: 05/03/2024
 ms.service: fabric
 ms.subservice: data-warehouse
+ms.custom:
+  - build-2024
 ms.topic: conceptual
 ms.search.form: Warehouse Restore # This article's title should not change. If so, contact engineering.
 ---
@@ -104,4 +106,3 @@ To restore a warehouse in-place, choose a restore point and issue a restore comm
 - [Clone table in Microsoft Fabric](clone-table.md)
 - [Query data as it existed in the past](time-travel.md)
 - [Microsoft Fabric disaster recovery guide](../security/disaster-recovery-guide.md)
-

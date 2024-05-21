@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: wenyang
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/09/2024
 ms.search.form: Pause and Resume
 ---

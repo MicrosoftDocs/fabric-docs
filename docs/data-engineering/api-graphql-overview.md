@@ -5,8 +5,10 @@ ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: overview
+ms.custom:
+  - build-2024
 ms.search.form: GraphQL API Overview
-ms.date: 05/07/2024
+ms.date: 05/21/2024
 ---
 
 # What is Microsoft Fabric API for GraphQL?
@@ -55,5 +57,5 @@ API for GraphQL includes an editor where you can easily develop and test your qu
 
 - [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md)
 - [Connect applications to Fabric API for GraphQL](connect-apps-api-graphql.md)
-- [Fabric GraphQL frequently asked questions](graphql-faq.md)
+- [Fabric GraphQL frequently asked questions](graphql-faq.yml)
 - [GraphQL query language](https://graphql.org/learn)

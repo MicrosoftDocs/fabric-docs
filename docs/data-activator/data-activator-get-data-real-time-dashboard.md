@@ -4,7 +4,8 @@ description: Learn how to create a Data Activator alert from a Real-Time Dashboa
 author: jamesdhutton
 ms.author: jameshutton
 ms.topic: concept
-ms.custom: 
+ms.custom:
+  - build-2024
 ms.date: 05/08/2024
 ---
 

@@ -4,7 +4,8 @@ description: Learn about Data Activator limitations.
 author: davidiseminger
 ms.author: davidi
 ms.topic: concept
-ms.custom: 
+ms.custom:
+  - build-2024
 ms.search.form: product-reflex
 ms.date: 01/04/2024
 ---
@@ -112,4 +113,3 @@ Data Activator imposes the following limits on the number of trigger actions tha
 You can also learn more about Microsoft Fabric:
 
 * [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
-

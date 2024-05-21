@@ -4,6 +4,8 @@ description: This article describes how to get Fabric workspace item events as a
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
@@ -27,6 +29,9 @@ Here are the supported Fabric workspace events:
 - Microsoft.Fabric.ItemReadSucceeded
 - Microsoft.Fabric.ItemReadFailed
 
+> [!NOTE]
+> - Consuming Fabric events via eventstream isn't supported if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
+> - While consuming Fabric workspace item events, make sure that the capacity region of consuming eventstream is the same as the Tenant home region. 
 
 ## Prerequisites 
 

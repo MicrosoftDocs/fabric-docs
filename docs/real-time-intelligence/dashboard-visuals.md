@@ -5,6 +5,8 @@ ms.author: yaschust
 author: YaelSchuster
 ms.reviewer: gabil
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 02/21/2024
 ---
 # Real-Time Dashboard-specific visuals (preview)

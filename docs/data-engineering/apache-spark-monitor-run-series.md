@@ -1,17 +1,17 @@
 ---
-title: Monitor run series
+title: Monitor Apache Spark run series
 description: The Spark run series categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs.
 author: jejiang
 ms.author: jejiang
-ms.topic: overview 
-ms.date: 05/08/2024
-ms.custom:  template-howto
+ms.topic: overview
+ms.date: 05/21/2024
+ms.custom: template-howto, build-2024
 ms.search.form: Monitor run series
 ---
 
-# Monitor run series
+# Monitor Apache Spark run series
 
-The Spark run series automatically classifies the following into respective run series:
+The Apache Spark run series automatically classifies the following into respective run series:
 
 * Your Spark applications from your recurring pipeline activities, or manual notebook runs. 
 * Spark job runs from the same notebook or Spark job definition into respective run series. 
@@ -66,10 +66,6 @@ When you select an instance of the notebook/spark job definition activity run in
 If the bar is marked red, an exception has been detected for that run instance. You can view these information: **Total duration**, **Expected duration** and **Potential causes** for this instance in the Anomalies panel.
 
 :::image type="content" source="media\apache-spark-monitor-run-series\anomalies-panel.png" alt-text="Screenshot showing the anomalies panel.png." lightbox="media\apache-spark-monitor-run-series\anomalies-panel.png" border="true":::
-
-
-    
-
 
 ## Next steps
 

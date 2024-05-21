@@ -5,6 +5,8 @@ ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/09/2024
 ms.search.form: product-kusto, Real-Time Dashboard
 ---
