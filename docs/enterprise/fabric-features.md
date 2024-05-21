@@ -1,13 +1,13 @@
 ---
-title: Microsoft Fabric features
+title: Microsoft Fabric parity
 description: Learn which Fabric features are available to you depending on your subscription. The article lists features according to SKUs.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 04/14/2024
+ms.date: 05/21/2024
 ---
 
-# Microsoft Fabric features
+# Microsoft Fabric feature parity
 
 Microsoft Fabric is a cloud based platform with a rich set of features. The availability of these features depends on the subscription you have. This article lists a few key Fabric features according to [SKU](licenses.md#capacity-license) type.
 
@@ -25,10 +25,9 @@ The following table lists the features available according to the SKUs.
 | [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)                  | &#x2705;      | &#x274C; | &#x274C; |
 | [Private links for secure access to Fabric](../security/security-private-links-overview.md)              | &#x2705;      | &#x274C; | &#x274C; |
 | [Data exfiltration protection](/azure/synapse-analytics/security/workspace-data-exfiltration-protection) | &#x2705;      | &#x274C; | &#x274C; |
-| CMK at Workspace Level                                                                                   | &#x2705;      | &#x274C; | &#x274C; |
 | [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)                             | &#x2705;      | &#x274C; | &#x274C; |
 | [Pause and resume your capacity](pause-resume.md)                                                        | &#x2705;      | &#x274C; | &#x274C; |
-| Pay-As-You-Go Resizing                                                                                   | &#x2705;      | &#x274C; | &#x274C; |
+| [Pause and resume your capacity](pause-resume.md) (Pay-As-You-Go)                                                                                            | &#x2705;      | &#x274C; | &#x274C; |
 
 ## Related content
 
