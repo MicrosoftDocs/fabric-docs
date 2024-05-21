@@ -9,15 +9,18 @@ ms.custom:
   - build-2024
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add custom app source to an eventstream
 
 If you want to connect your own application with an eventstream, you can add a custom endpoint source. Then you can send data to the eventstream from your own application with the connection endpoint displayed as the custom endpoint. This article shows you how to add a custom app source to an eventstream.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
+[!INCLUDE [select-view](./includes/select-view.md)]
 
-# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
+::: zone pivot="enhanced-capabilities"  
+
 
 ## Prerequisites
 
@@ -83,7 +86,28 @@ Other than **Event hub**, the other two protocol format tabs you can select in t
 
 You can choose the protocol format that suits your application needs and preferences. Select these tabs in the **Details** pane to get customized **Keys** and **Sample code**. Copy and paste the connection strings from the **Keys** section into your application. Refer to or copy and paste the provided sample code to send or receive events by using the different protocols.
 
-# [Standard capabilities](#tab/standardcapabilities)
+## Related content 
+
+To learn how to add other sources to an eventstream, see the following articles:
+
+- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
+- [Azure Blob Storage events](add-source-azure-blob-storage.md)
+- [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
+- [Azure Event Hubs](add-source-azure-event-hubs.md)
+- [Azure IoT Hub](add-source-azure-iot-hub.md)
+- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
+- [Confluent Kafka](add-source-confluent-kafka.md)
+- [Fabric workspace event](add-source-fabric-workspace.md) 
+- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
+- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
+- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
+- [Sample data](add-source-sample-data.md)
+
+::: zone-end
+
+::: zone pivot="standard-capabilities"
+
+
 
 ## Prerequisites
 
@@ -129,31 +153,13 @@ If you want to connect your own application with an eventstream, you can add a c
 
    You can choose the protocol format that suits your application needs and preferences, and copy and paste the connection string into your application. You can also refer to or copy the sample code that we provide in the Sample code tab, which shows how to send or receive events using different protocols.
 
----
-
 ## Related content 
 
 To learn how to add other sources to an eventstream, see the following articles:
 
-- [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
-- [Azure Blob Storage events](add-source-azure-blob-storage.md)
-- [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
 - [Azure Event Hubs](add-source-azure-event-hubs.md)
 - [Azure IoT Hub](add-source-azure-iot-hub.md)
-- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
-- [Confluent Kafka](add-source-confluent-kafka.md)
-- [Fabric workspace event](add-source-fabric-workspace.md) 
-- [Google Cloud Pub/Sub](add-source-google-cloud-pub-sub.md) 
-- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
-- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
 - [Sample data](add-source-sample-data.md)
 
-To add a destination to an eventstream, see the following articles:
+::: zone-end
 
-- [Route events to destinations ](add-manage-eventstream-destinations.md)
-- [Custom app destination](add-destination-custom-app.md)
-- [Derived stream destination](add-destination-derived-stream.md)
-- [KQL Database destination](add-destination-kql-database.md)
-- [Lakehouse destination](add-destination-lakehouse.md)
-- [Reflex destination](add-destination-reflex.md)
-- [Create an eventstream](create-manage-an-eventstream.md)

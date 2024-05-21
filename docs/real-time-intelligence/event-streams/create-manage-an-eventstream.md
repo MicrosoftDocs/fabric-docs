@@ -7,13 +7,14 @@ author: xujxu
 ms.topic: how-to
 ms.date: 05/21/2024
 ms.search.form: Event Streams Overview
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Create an eventstream in Microsoft Fabric
 This article describes how to create a Fabric eventstream. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
 
-
-# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
+::: zone pivot="enhanced-capabilities"  
 
 ## Prerequisites
 Before you start, you must complete the following prerequisite:
@@ -51,7 +52,9 @@ You can create an eventstream on the **Workspace** page, the **Real-Time Intelli
 - [Add sources to the eventstream](./add-manage-eventstream-sources.md)
 - [Add destinations to the eventstream](./add-manage-eventstream-destinations.md)
 
-# [Standard capabilities](#tab/standardcapabilities)
+::: zone-end
+
+::: zone pivot="standard-capabilities"
 
 The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
 
@@ -111,4 +114,4 @@ The following screenshot shows an eventstream with its source and destination co
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
 
----
+::: zone-end
