@@ -4,6 +4,7 @@ description: This article describes how to add PostgreSQL Database Change Data C
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
+ms.custom: references_regions
 ms.custom:
   - build-2024
 ms.date: 05/21/2024
