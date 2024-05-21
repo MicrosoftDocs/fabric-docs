@@ -1,5 +1,5 @@
 ---
-title: Fabric Workload Hub validation guidelines and requirements
+title: Fabric Workload Hub validation guidelines and requirements (preview)
 description: Learn about the guidelines and requirements for publishing a Microsoft Fabric workload to the Workload Hub.
 author: KesemSharabi
 ms.author: kesharab
@@ -7,7 +7,7 @@ ms.topic: concept
 ms.date: 05/21/2024
 ---
 
-# Workload validation
+# Workload certification (preview)
 
 This article describes the requirements that are needed for a custom workload to be listed in the Microsoft Fabric Workload Hub. Make sure your workload complies with these requirements before you submit your workload for publication.
 

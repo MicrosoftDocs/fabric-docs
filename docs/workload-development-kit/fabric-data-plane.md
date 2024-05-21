@@ -1,5 +1,5 @@
 ---
-title: Work with customer data in Microsoft Fabric
+title: Work with customer data in Microsoft Fabric (preview)
 description: Learn about how to work with customer data in Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
@@ -10,7 +10,7 @@ ms.date: 05/21/2024
 #customer intent:
 ---
 
-# Work with customer data in Fabric 
+# Work with customer data in Fabric  (preview)
 
 [Microsoft Fabric OneLake](../onelake/index.yml) is a unified, logical data lake for the entire organization, designed to be the single place for all analytics data. It comes automatically with every Microsoft Fabric tenant and is built on top of Azure Data Lake Storage (ADLS) Gen2. OneLake supports any type of file, structured or unstructured, and stores all tabular data in Delta Parquet format. It allows for collaboration across different business groups by providing a single data lake that is governed by default with distributed ownership for collaboration within a tenant's boundaries. Workspaces within a tenant enable different parts of the organization to distribute ownership and access policies, and all data in OneLake is accessed through data items such as [Lakehouses and Warehouses](../data-warehouse/data-warehousing.md).
 

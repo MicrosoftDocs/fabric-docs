@@ -1,5 +1,5 @@
 ---
-title: Item lifecycle
+title: Item lifecycle (preview)
 description: Learn about item lifecycle in Microsoft Fabric.
 author: mberdugo
 ms.author: monaberdugo
@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.custom:
 ms.date: 05/21/2024
 ---
-# Item life cycle
+# Item life cycle (preview)
 
 The recommended flow for item creation in Fabric UI is
 
