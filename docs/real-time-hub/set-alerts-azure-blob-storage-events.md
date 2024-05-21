@@ -14,6 +14,9 @@ This article describes how to set alerts on Azure Blob Storage events in Real-Ti
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
+> [!NOTE]
+> Consuming Fabric events via eventstream isn't supported if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
+
 ## Launch the Set alert page 
 
 Do steps from one of the following sections, which opens a side panel where you can configure the following options:

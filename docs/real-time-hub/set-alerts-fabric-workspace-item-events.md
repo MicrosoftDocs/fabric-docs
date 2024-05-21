@@ -14,6 +14,10 @@ This article describes how to set alerts on Fabric workspace item events in Real
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
+> [!NOTE]
+> - Consuming Fabric events via eventstream isn't supported if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
+> - While consuming Fabric workspace item events, make sure that the capacity region of consuming eventstream is the same as the Tenant home region. 
+
 ## Launch the Set alert page 
 
 Do steps from one of the following sections, which opens a side panel where you can configure the following options:

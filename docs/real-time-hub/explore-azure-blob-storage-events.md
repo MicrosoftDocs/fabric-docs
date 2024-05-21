@@ -14,6 +14,10 @@ This article shows how to explore Azure blob storage events in Fabric Real-Time 
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
+> [!NOTE]
+> Consuming Fabric events via eventstream or Data Activator isn't supported if the capacity region of the eventstream or Data Activator is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
+
+
 ## View Azure blob storage events detail page
 
 1. In **Real-Time hub**, switch to the **Fabric events** tab. 

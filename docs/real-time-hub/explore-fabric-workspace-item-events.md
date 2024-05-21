@@ -14,6 +14,10 @@ Fabric workspace item events allow you to receive notification when certain acti
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
+> [!NOTE]
+> - Consuming Fabric events via eventstream or Data Activator isn't supported if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
+> - While consuming Fabric workspace item events, make sure that the capacity region of consuming eventstream or Data Activator is the same as the Tenant home region.
+
 ## View Fabric workspace item events detail page
 
 1. In **Real-Time hub**, switch to the **Fabric events** tab. 
