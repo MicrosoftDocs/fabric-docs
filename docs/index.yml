@@ -96,6 +96,12 @@ conceptualContent:
             - url: /rest/api/fabric/
               itemType: reference
               text: REST APIs
+
+            - url: workload-development-kit/development-kit-overview.md
+              itemType: concept
+              text: Microsoft Workload Development Kit
+
+
             - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
               itemType: concept
               text: Deployment pipelines
