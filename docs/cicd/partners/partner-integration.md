@@ -17,11 +17,11 @@ ms.date: 05/05/2024
 
 :::image type="content" source="media/partner-integration/integrate-fabric.png" alt-text="Figure showing the three pathways to integrate with Fabric: Interop, Develop Apps, and Build a Fabric workload.":::
 
-## Interop with Fabric
+## Interop with Fabric OneLake
 
-The primary focus with Interop model is on enabling ISVs to integrate their solutions with the [OneLake Foundation](../../get-started/microsoft-fabric-overview.md). To Interop with Microsoft Fabric, we provide integration using REST APIs for OneLake, a multitude of connectors in Data Factory, shortcuts in OneLake, and database mirroring.
+The primary focus with Interop model is on enabling ISVs to integrate their solutions with the [OneLake Foundation](../../get-started/microsoft-fabric-overview.md). To Interop with Microsoft Fabric, we provide integration using a multitude of connectors in Data Factory, REST APIs for OneLake, shortcuts in OneLake, database mirroring and data sharing across Fabric tenants.
 
-:::image type="content" source="media/partner-integration/fabric-interop.png" alt-text="Figure showing four ways to interop with OneLake: APIs, Fabric Data Factory, Multicloud shortcuts, and database mirroring.":::
+:::image type="content" source="media/partner-integration/onelake-interop.png" alt-text="Figure showing five ways to interop with OneLake: APIs, Fabric Data Factory, Multicloud shortcuts, data sharing and database mirroring.":::
 
 Here are a few ways to get you started with this model:
 
@@ -49,7 +49,7 @@ Real-Time Intelligence streamlines data analysis and visualization, offering a c
 
 ### Data Factory in Fabric
 
-- Data Pipelines boast an **extensive set of connectors**, enabling ISVs to effortlessly connect to a myriad of data stores. Whether you're interfacing traditional databases or modern cloud-based solutions, our connectors ensure a smooth integration process. [Connector overview](../../data-factory/connector-overview.md).
+- Data Pipelines boast an [extensive set of connectors](../../data-factory/pipeline-support.md), enabling ISVs to effortlessly connect to a myriad of data stores. Whether you're interfacing traditional databases or modern cloud-based solutions, our connectors ensure a smooth integration process. [Connector overview](../../data-factory/connector-overview.md).
 - With our supported Dataflow Gen2 connectors, ISVs can harness the power of Fabric Data Factory to manage complex data workflows. This feature is especially beneficial for ISVs looking to streamline data processing and transformation tasks. [Dataflow Gen2 connectors in Microsoft Fabric](../../data-factory/dataflow-support.md).
 - For a full list of capabilities supported by Data Factory in Fabric checkout this [Data Factory in Fabric Blog](https://blog.fabric.microsoft.com/blog/introducing-data-factory-in-microsoft-fabric?ft=All).
 
@@ -57,7 +57,7 @@ Real-Time Intelligence streamlines data analysis and visualization, offering a c
 
 ### Multicloud Shortcuts
 
-Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds, and accounts by creating a single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can directly point to your existing data sources such as OneLake in different tenant, [Azure Data Lake Storage (ADLS) Gen2](../../onelake/create-adls-shortcut.md), [Amazon S3 storage accounts](../../onelake/create-s3-shortcut.md), and [Dataverse](/power-apps/maker/data-platform/azure-synapse-link-view-in-fabric) through a unified namespace. OneLake presents ISVs with a transformative data access solution, seamlessly bridging integration across diverse domains and cloud platforms.
+Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds, and accounts by creating a single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can directly point to your existing data sources such as OneLake in different tenant, [Azure Data Lake Storage (ADLS) Gen2](../../onelake/create-adls-shortcut.md), [Amazon S3 storage accounts](../../onelake/create-s3-shortcut.md), [Google Cloud Storage(GCS)](../../onelake/create-gcs-shortcut.md), [S3 Compatible data sources](../../onelake/create-s3-compatible-shortcut.md) and [Dataverse](/power-apps/maker/data-platform/azure-synapse-link-view-in-fabric) through a unified namespace. OneLake presents ISVs with a transformative data access solution, seamlessly bridging integration across diverse domains and cloud platforms.
 
 - [Learn more about OneLake shortcuts](../../onelake/onelake-shortcuts.md)
 - [Learn more about OneLake, one copy](../../real-time-intelligence/one-logical-copy.md)
@@ -65,9 +65,17 @@ Shortcuts in Microsoft OneLake allow you to unify your data across domains, clou
 
 :::image type="content" source="media/partner-integration/multicloud-shortcuts.png" alt-text="Diagram showing multicloud shortcuts in OneLake.":::
 
+### Data Sharing
+
+This is one of the anticipated feature that we launced earlier this month under public preview. Data Sharing allows Fabric users to share data across different Fabric tenants without duplicating it. This feature enhances collaboration by enabling data to be shared "in-place" from OneLake storage locations as read-only, accessible through various Fabric computation engines, including SQL,Spark, KQL and semantic models. Users must enable this feature in both the sharing and receiving tenants to start utilizing it. The process includes selecting data within the OneLake data hub or workspace, configuring sharing settings, and sending an invitation to the intended recipient.
+
+- [Learn more about Data Sharing](../../governance/external-data-sharing-overview.md)
+
+:::image type="content" source="media/partner-integration/data-sharing.png" alt-text="Diagram showing data sharing in Fabric.":::
+
 ### Database Mirroring
 
-You've seen the shortcuts, now you're wondering about integration capabilities with external databases and warehouses. Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from any database or data warehouse into the Data warehousing experience in Microsoft Fabric. Mirror is all in near real-time thus giving users immediate access to changes in the source. You can learn more about mirroring and the supported databases at [Introducing Mirroring in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/introducing-mirroring-in-microsoft-fabric/).
+You’ve seen the shortcuts, now you’re wondering about integration capabilities with external databases and warehouses. Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from any database or data warehouse into the Data warehousing experience in Microsoft Fabric. Mirror is all in near real-time thus giving users immediate access to changes in the source. You can learn more about mirroring and the supported databases [here](../../database/mirrored-database/overview.md).
 
 :::image type="content" source="media/partner-integration/database-mirroring.png" alt-text="Diagram of database mirroring.":::
 
@@ -75,80 +83,25 @@ You've seen the shortcuts, now you're wondering about integration capabilities w
 
 :::image type="content" source="media/partner-integration/develop-on-fabric.png" alt-text="Diagram showing how to build apps on Fabric.":::
 
-With the **Develop on Fabric model** ISVs can build their products and services on top of Fabric or seamlessly embed Fabric's functionalities within their existing applications. It's a transition from basic integration to actively applying the capabilities Fabric offers. The main integration surface area is via REST APIs for various Fabric workloads. Here's a list of REST APIs available today.
+With the **Develop on Fabric model** ISVs can build their products and services on top of Fabric or seamlessly embed Fabric's functionalities within their existing applications. It's a transition from basic integration to actively applying the capabilities Fabric offers. The main integration surface area is via REST APIs for various Fabric workloads. Here's a subset of REST APIs grouped by the Fabric experience, for a complete list refer to the [Fabric REST API documentation](/rest/api/fabric/articles/).
 
-### Workspace
-
-| API | Description |
-|--|--|
-| [CRUD APIs for Workspace and Workspace Role Management](/rest/api/fabric/core/workspaces) | Create Workspace, Get Workspace details, Delete Workspace, Assign workspace to a capacity, Add a workspace role assignment. |
-
-### OneLake
-
-| API | Description |
-|--|--|
-| [Create Shortcut](/rest/api/fabric/) | Creates a new shortcut. |
-| [Delete Shortcut](/rest/api/fabric/) | Deletes the shortcut but doesn't delete destination storage folder. |
-| [Get Shortcut](/rest/api/fabric/) | Returns shortcut Properties. |
-| [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2) | ADLS Gen2 APIs to create and manage file systems, directories, and path. |
-
-### Real-Time Intelligence
-
-| Item | API | Description |
-|--|--|--|
-| Event house | [Create event house](/rest/api/fabric/eventhouse/items/create-eventhouse?tabs=HTTP) | Creates an event house. |
-|  | [Delete event house](/rest/api/fabric/eventhouse/items/delete-eventhouse?tabs=HTTP) | Deletes an existing event house. |
-|  | [Get event house](/rest/api/fabric/eventhouse/items/get-eventhouse?tabs=HTTP) | Get metadata about an event house. |
-|  | [List event house](/rest/api/fabric/eventhouse/items/list-eventhouses?tabs=HTTP) | List event houses in your workspace. |
-|  | [Update event house](/rest/api/fabric/eventhouse/items/update-eventhouse?tabs=HTTP) | Update an existing event house. |
-| KQL Database | [Create KQL Database](/rest/api/fabric/kqldatabase/items/create-kql-database?tabs=HTTP) | Creates a KQL database or KQL Database shortcuts. |
-|  | [Delete KQL Database](/rest/api/fabric/kqldatabase/items/delete-kql-database?tabs=HTTP) | Deletes an existing KQL database or KQL Database shortcuts. |
-|  | [Get KQL Database](/rest/api/fabric/kqldatabase/items/get-kql-database?tabs=HTTP) | Get metadata about a KQL database or KQL Database shortcuts. |
-|  | [List KQL Database](/rest/api/fabric/kqldatabase/items/list-kql-databases?tabs=HTTP) | List KQL databases in your workspace or KQL Database shortcuts. |
-|  | [Update KQL Database](/rest/api/fabric/kqldatabase/items/update-kql-database?tabs=HTTP) | Update an existing KQL database or KQL Database shortcuts. |
-| KQL Queryset | [Create KQL Queryset](/rest/api/fabric/core/items/create-item?tabs=HTTP) | Creates a KQL queryset or KQL Database shortcuts. |
-|  | [Delete KQL Queryset](/rest/api/fabric/kqlqueryset/items/delete-kql-queryset?tabs=HTTP) | Deletes an existing KQL queryset. |
-|  | [Get KQL Queryset](/rest/api/fabric/kqlqueryset/items/get-kql-queryset?tabs=HTTP) | Get metadata about a KQL queryset. |
-|  | [List KQL Queryset](/rest/api/fabric/kqlqueryset/items/list-kql-querysets?tabs=HTTP) | List KQL querysets in your workspace. |
-|  | [Update KQL Queryset](/rest/api/fabric/kqlqueryset/items/update-kql-queryset?tabs=HTTP) | Update an existing KQL queryset. |
-| Event stream | [Create Event stream](/rest/api/fabric/eventstream/items/create-eventstream?tabs=HTTP) | Creates an event stream. |
-|  | [Delete Event stream](/rest/api/fabric/eventstream/items/delete-eventstream?tabs=HTTP) | Deletes an existing event stream. |
-|  | [Get Event stream](/rest/api/fabric/eventstream/items/get-eventstream?tabs=HTTP) | Get metadata about an event stream. |
-|  | [List Event stream](/rest/api/fabric/eventstream/items/list-eventstreams?tabs=HTTP) | List event streams in your workspace. |
-|  | [Update Event stream](/rest/api/fabric/eventstream/items/update-eventstream?tabs=HTTP) | Update an existing event stream. |
-
-### Fabric Data Factory
-
-| API | Description |
-|--|--|
-| Coming soon |  |
-
-### Data Warehouse
-
-| API | Description |
-|--|--|
-| [Create Warehouse](/rest/api/fabric/core/items/create-item) | Creates a Data warehouse. |
-| [Get Warehouse](/rest/api/fabric/core/items/get-item) | Get Metadata about warehouse. |
-| Update Warehouse | Update an existing warehouse. |
-| Delete Warehouse | Delete an existing warehouse. |
-| List Warehouse | List warehouses in your workspace. |
-
-### Data Engineering
-
-| API | Description |
-|--|--|
-| Create Lakehouse | Creates Lakehouse along with SQL analytics endpoint. |
-| Update Lakehouse | Updates the name of a lakehouse and the SQL analytics endpoint. |
-| Delete Lakehouse | Deletes lakehouse and the associated SQL analytics endpoint. |
-| Get Properties | Gets the properties of a lakehouse and the SQL analytics endpoint. |
-| [List tables](/rest/api/fabric/lakehouse/tables/list-tables) | List tables in the lakehouse. |
-| [Table Load](/rest/api/fabric/lakehouse/tables/load-table) | Creates delta tables from CSV and parquet files and folders. |
-
-This section will be updated as more Fabric APIs become available.
+| Fabric Experience | API |
+|-------------------|-----|
+| Data Warehouse    | - [Warehouse](/rest/api/fabric/warehouse/items)<br> - [Mirrored Warehouse](/rest/api/fabric/mirroredwarehouse/items)|
+| Data Engineering    | - [Lakehouse](/rest/api/fabric/lakehouse/items)<br> - [Spark](/rest/api/fabric/spark/custom-pools)<br> - [Spark Job Definition](/rest/api/fabric/sparkjobdefinition/items)<br> - [Tables](/rest/api/fabric/lakehouse/tables)<br> - [Jobs](/rest/api/fabric/lakehouse/background-jobs)|
+| Data Factory    | - [DataPipeline](/rest/api/fabric/datapipeline/items)<br> |
+| Real Time Analytics    | - [Eventstream](/rest/api/fabric/eventstream/items)<br> - [KQL Database](/rest/api/fabric/kqldatabase/items)<br> - [KQL Queryset](/rest/api/fabric/kqlqueryset/items)<br> |
+| Data Science    | - [Notebook](/rest/api/fabric/notebook/items)<br> - [ML Experiment](/rest/api/fabric/mlexperiment/items)<br> - [ML Model](/rest/api/fabric/mlmodel/items)<br> |
+| OneLake    | - [Shortcut](/rest/api/fabric/core/onelake-shortcuts)<br> - [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2)<br> |
+| Power BI    | - [Report](/rest/api/fabric/report/items)<br> - [Dashboard](/rest/api/fabric/dashboard/items)<br> - [Semantic Model](/rest/api/fabric/semanticmodel/items)<br>|
 
 ## Build a Fabric Workload
 
 :::image type="content" source="media/partner-integration/fabric-workload.png" alt-text="Diagram showing how to create your own fabric workload.":::
 
-Build a Fabric Workload model is designed to equip ISVs with the tools and platform capabilities required to craft customized workloads and experiences on Fabric. It enables ISVs to tailor their offerings to deliver their value proposition while leveraging the Fabric ecosystem by combining the best of both the worlds.
-We're working closely with select design partners for this integration path and it's currently available by invitation only.
+**Build a Fabric Workload** model is designed to empower ISVs (Independent Software Vendors) to create custom workloads and experiences on the Fabric platform. It provides ISVs with the necessary tools and capabilities to align their offerings with the Fabric ecosystem, optimizing the combination of their unique value propositions with Fabric's extensive capabilities.
+
+The **Microsoft Fabric Workload Development Kit** offers a comprehensive toolkit for developers to integrate applications into the Microsoft Fabric workload hub. This integration allows for the addition of new capabilities directly within the Fabric workspace, enhancing the analytics journey for users. It provides developers and ISVs with a new avenue to reach customers, delivering both familiar and new experiences, and leveraging existing data applications. Fabric admins gain the ability to manage access to the workload hub, enabling it for the entire tenant or assigning it with specific scope to control access within the organization.
+
+- [Learn more about Microsoft Fabric Workload Development Kit](https://aka.ms/FabricWorkloaddevelopmentkitblog)
+- [Get started with building your first workload](../../workload-development-kit/development-kit-overview.md)
