@@ -20,7 +20,7 @@ Get started with the Fabric API for GraphQL by creating an API, then linking a d
 
 ## Prerequisites
 
-- Premium capacity in Fabric
+- Fabric Premium or Trial capacity
 - Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for API for GraphQL (Preview)
 
 ## Creating an API for GraphQL
