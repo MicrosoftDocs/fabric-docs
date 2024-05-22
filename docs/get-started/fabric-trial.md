@@ -27,7 +27,8 @@ Creating and collaborating in Fabric includes:
 - Sharing Fabric items, such as semantic models, warehouses, and notebooks, and collaborating on them with other Fabric users.
 - Creating analytics solutions using Fabric items.
 
-> [!NOTE] - One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
+> [!NOTE]
+> One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
 
 When you start a Fabric capacity trial, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You don't have access to your capacity until you put something into it. To begin using your Fabric trial capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you.
 
