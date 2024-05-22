@@ -23,7 +23,7 @@ The primary focus with Interop model is on enabling ISVs to integrate their solu
 
 :::image type="content" source="media/partner-integration/onelake-interop.png" alt-text="Figure showing different ways to interop with OneLake: APIs, Fabric Data Factory, Real-Time Intelligence, Multicloud shortcuts, data sharing, and database mirroring.":::
 
-Here are a few ways to get you started with this model:
+The following sections describe some of the ways you can get started with this model.
 
 ### OneLake APIs
 
