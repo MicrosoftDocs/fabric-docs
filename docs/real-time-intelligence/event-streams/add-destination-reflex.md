@@ -25,6 +25,8 @@ This article shows you how to add Reflex destination to an eventstream.
 - Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
 - If you already have a Reflex you want to use, access to the **premium workspace** where your Reflex is located with **Contributor** or higher permissions.
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
 ## Add Reflex as a destination
 
 To add a Reflex destination to a default stream or derived stream, follow these steps.

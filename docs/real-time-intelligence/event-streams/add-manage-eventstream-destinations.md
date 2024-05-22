@@ -45,9 +45,9 @@ Fabric event streams supports the following destinations. Use links in the table
 [!INCLUDE [supported-destinations](./includes/supported-destinations-standard.md)]
 
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ::: zone-end
+
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 
 ## Manage a destination

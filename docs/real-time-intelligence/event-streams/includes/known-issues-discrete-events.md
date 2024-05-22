@@ -9,9 +9,9 @@ ms.custom:
 ms.date: 05/21/2024
 ---
 
-## Known issues
+## Known limitations
 
 - Currently, error messages aren't available when an error occurs on discrete events sources.
-- Currently, the Data Preview feature isn't available for discrete events. 
+- Currently, the Data Preview feature isn't available for discrete events sources. 
 
 

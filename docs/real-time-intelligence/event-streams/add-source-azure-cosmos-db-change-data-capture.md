@@ -27,6 +27,9 @@ The connector then monitors and records any future row-level changes to this dat
 - Access to an Azure Cosmos DB account and database.
 - Your Azure Cosmos DB database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
+
 ## Get connection details from the Azure portal
 
 The labels for the items you need to collect from the Azure portal vary depending on the API your Azure Cosmos DB account uses. You always need the endpoint URI, in a format like `https://<account>.<api>.azure.com:<port>/`, the Primary Key, and the Database name and item IDs you want to collect data for.
