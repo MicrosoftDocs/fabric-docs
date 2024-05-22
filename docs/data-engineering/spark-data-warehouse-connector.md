@@ -18,7 +18,7 @@ The Spark connector for Microsoft Fabric data warehouses enables Spark developer
 * The connector comes preinstalled within the Fabric runtime, which eliminates the need for separate installation.
 
 > [!NOTE]
-> The Spark connector for Microsoft Fabric data warehouses is currently in preview. For more information, see the [current limitations](spark-data-warehouse-connector.md#current-limitations) later in this article.  
+> The connector is currently in preview. For more information, see the [current limitations](spark-data-warehouse-connector.md#current-limitations) later in this article.  
 
 ## Authentication
 
@@ -26,7 +26,7 @@ Microsoft Entra authentication is an integrated authentication approach. Users s
 
 ### Permissions
 
-To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the data warehouse or SQL analytics endpoint (item level). They also require granular object-level permissions to read data from specific tables or views. To learn more, see [Security for data warehousing in Microsoft Fabric](../data-warehouse/security.md).
+To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the data warehouse or SQL analytics endpoint (item level). Users also need granular object-level permissions to read data from specific tables or views. To learn more, see [Security for data warehousing in Microsoft Fabric](../data-warehouse/security.md).
 
 ## Code templates and examples
 
@@ -44,8 +44,8 @@ synapsesql(tableName:String="<Part 1.Part 2.Part 3>") => org.apache.spark.sql.Da
 
 ### Read data within the same workspace
 
-> [!NOTE]
-> To use the connector, run these import statements at the beginning of your notebook or before you start using the connector:
+> [!IMPORTANT]
+> Run these import statements at the beginning of your notebook or before you start using the connector:
 >
 > `import com.microsoft.spark.fabric.tds.implicits.read.FabricSparkTDSImplicits._`
 >
