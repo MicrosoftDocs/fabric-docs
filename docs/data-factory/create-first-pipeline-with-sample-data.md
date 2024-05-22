@@ -85,7 +85,7 @@ In this session, you start to build your first pipeline by following below steps
 
 ## Run and schedule your data pipeline
 
-1. If you didn't choose to **Save + run** on the **Review + save** page of the **Copy data assistant**, wwitch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
+1. If you didn't choose to **Save + run** on the **Review + save** page of the **Copy data assistant**, switch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" lightbox="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
 
