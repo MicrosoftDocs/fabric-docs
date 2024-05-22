@@ -21,7 +21,7 @@ ms.date: 05/22/2024
 
 The primary focus with Interop model is on enabling ISVs to integrate their solutions with the [OneLake Foundation](../../get-started/microsoft-fabric-overview.md). To Interop with Microsoft Fabric, we provide integration using a multitude of connectors in Data Factory and in Real-Time Intelligence, REST APIs for OneLake, shortcuts in OneLake, data sharing across Fabric tenants, and database mirroring.
 
-:::image type="content" source="media/partner-integration/onelake-interop.png" alt-text="Figure showing different ways to interop with OneLake: APIs, Fabric Data Factory, Real-Time Intelligence, Multicloud shortcuts, data sharing and database mirroring.":::
+:::image type="content" source="media/partner-integration/onelake-interop.png" alt-text="Figure showing different ways to interop with OneLake: APIs, Fabric Data Factory, Real-Time Intelligence, Multicloud shortcuts, data sharing, and database mirroring.":::
 
 Here are a few ways to get you started with this model:
 
@@ -39,11 +39,11 @@ Here are a few ways to get you started with this model:
 
 Real-Time Intelligence streamlines data analysis and visualization, offering a centralized solution for immediate insights and actions on data in motion within an organization. It efficiently manages large volumes of data through robust querying, transformation, and storage capabilities.
 
-- Event houses are specifically designed for streaming data, compatible with Real-Time Hub, and ideal for time-based events. Data is automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data that can be accessed in OneLake for use across Fabric's suite of experiences. Event houses support existing Event house APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Event houses. Learn more about [REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
-- Event streams enable you to bring real-time events from various sources and route them to various destinations, such as OneLake, KQL databases in event houses, and Data Activator. Learn more about [event streams](../../real-time-intelligence/event-streams/overview.md) and [event streams API](#real-time-intelligence).
+- Event houses are specifically designed for streaming data, compatible with Real-Time hub, and ideal for time-based events. Data is automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data that can be accessed in OneLake for use across Fabric's suite of experiences. Event houses support existing Event house APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Event houses. Learn more about [REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
+- Event streams enable you to bring real-time events from various sources and route them to various destinations, such as OneLake, KQL databases in event houses, and Data Activator. Learn more about [event streams](../../real-time-intelligence/event-streams/overview.md) and [event streams API](#develop-on-fabric).
 - If you're using Databricks or Jupyter Notebooks, you can utilize the Kusto Python Client Library to work with KQL databases in Fabric. Learn more about [Kusto Python SDK](/azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context-rti&pivots=fabric).
 - You can utilize the existing [Microsoft Logic Apps](/azure/data-explorer/kusto/tools/logicapps), [Azure Data Factory](/azure/data-explorer/data-factory-integration), or [Microsoft Power Automate](/azure/data-explorer/flow) connectors to interact with your Event houses or KQL Databases.
-- [Database shortcuts in Real-Time Analytics](../../real-time-intelligence/database-shortcut.md) are embedded references within an event house to a source database. The source database can either be a KQL Database in Real-Time Analytics or an Azure Data Explorer database. Shortcuts can be used for inplace sharing of data within the same tenant or across tenants. Learn more about managing [database shortcuts using the API](#real-time-intelligence).
+- [Database shortcuts in Real-Time Intelligence](../../real-time-intelligence/database-shortcut.md) are embedded references within an event house to a source database. The source database can either be a KQL Database in Real-Time Intelligence or an Azure Data Explorer database. Shortcuts can be used for in place sharing of data within the same tenant or across tenants. Learn more about managing [database shortcuts using the API](#develop-on-fabric).
 
 :::image type="content" source="media/partner-integration/real-time-intelligence-apis.png" alt-text="Diagram showing how Real-Time Intelligence APIs interact with Fabric workloads.":::
 
@@ -67,7 +67,7 @@ Shortcuts in Microsoft OneLake allow you to unify your data across domains, clou
 
 ### Data sharing
 
-Data Sharing allows Fabric users to share data across different Fabric tenants without duplicating it. This feature enhances collaboration by enabling data to be shared "in-place" from OneLake storage locations. The data is shared as read-only, accessible through various Fabric computation engines, including SQL,Spark, KQL and semantic models. To use this feature, it must enabled in both the sharing and receiving tenants. The process includes selecting data within the OneLake data hub or workspace, configuring sharing settings, and sending an invitation to the intended recipient.
+Data Sharing allows Fabric users to share data across different Fabric tenants without duplicating it. This feature enhances collaboration by enabling data to be shared "in-place" from OneLake storage locations. The data is shared as read-only, accessible through various Fabric computation engines, including SQL, Spark, KQL, and semantic models. To use this feature, Fabric admins must enable it in both the sharing and receiving tenants. The process includes selecting data within the OneLake data hub or workspace, configuring sharing settings, and sending an invitation to the intended recipient.
 
 - [Learn more about Data Sharing](../../governance/external-data-sharing-overview.md)
 
@@ -75,7 +75,7 @@ Data Sharing allows Fabric users to share data across different Fabric tenants w
 
 ### Database mirroring
 
-You've seen the shortcuts, now you're wondering about integration capabilities with external databases and warehouses. Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from any database or data warehouse into the Data warehousing experience in Microsoft Fabric. Mirror is all in near real-time thus giving users immediate access to changes in the source. Learn more about [mirroring and the supported databases](../../database/mirrored-database/overview.md).
+Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from external databases or data warehouse into the data warehousing experience in Microsoft Fabric. Mirroring is all in near real-time giving users immediate access to changes in the source. Learn more about [mirroring and the supported databases](../../database/mirrored-database/overview.md).
 
 :::image type="content" source="media/partner-integration/database-mirroring.png" alt-text="Diagram showing database mirroring in Fabric.":::
 
