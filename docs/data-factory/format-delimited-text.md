@@ -77,9 +77,7 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 
 - **Null value**: Specifies the string representation of null value. The default value is empty string.
 
-Under **Advanced** settings in **Source** tab, further delimited text format related property are shown up.
-
-- **Skip line count**: Indicates the number of nonempty rows to skip when reading data from input files. If both **Skip line count** and **First row as header** are specified, the lines are skipped first, and then the header information is read from the input file.
+Under **Advanced** settings in **Source** tab, other delimited text format related properties are exposed.
 
 ### Delimited text format as destination
 

@@ -176,13 +176,19 @@ run(path: String, timeoutSeconds: int, arguments: Map): String -> This method ru
 This method references a notebook and returns its exit value. You can run nesting function calls in a notebook interactively or in a pipeline. The notebook being referenced runs on the Spark pool of the notebook that calls this function.
 
 ```python
-mssparkutils.notebook.run("notebook name", <timeoutSeconds>, <parameterMap>)
+mssparkutils.notebook.run("notebook name", <timeoutSeconds>, <parameterMap>, <workspaceId>)
 ```
 
 For example:
 
 ```python
 mssparkutils.notebook.run("Sample1", 90, {"input": 20 })
+```
+
+Fabric notebook also supports referencing notebooks across multiple workspaces by specifying the *workspace ID*.
+
+```python
+mssparkutils.notebook.run("Sample1", 90, {"input": 20 }, "fe0a6e2a-a909-4aa3-a698-0a651de790aa")
 ```
 
 You can open the snapshot link of the reference run in the cell output. The snapshot captures the code run results and allows you to easily debug a reference run.
@@ -193,7 +199,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 > [!NOTE]
 >
-> - Currently, Fabric notebook only supports referencing notebooks within a workspace.
+> - The cross-workspace reference notebook is supported by **runtime version 1.2 and above**.
 > - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `mssparkutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
 
 ### Reference run multiple notebooks in parallel
