@@ -7,7 +7,7 @@ author: mberdugo
 ms.topic: overview
 ms.custom: 
 ms.search.form: 
-ms.date: 11/15/2023
+ms.date: 05/22/2024
 ---
 
 # Microsoft Fabric Integration Pathways for ISVs
@@ -47,7 +47,7 @@ Here are a few ways to get you started with this model:
 Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds, and accounts by creating a single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can directly point to your existing data sources such as OneLake in different tenant, [Azure Data Lake Storage (ADLS) Gen2](../../onelake/create-adls-shortcut.md), [Amazon S3 storage accounts](../../onelake/create-s3-shortcut.md), [Google Cloud Storage(GCS)](../../onelake/create-gcs-shortcut.md), [S3 Compatible data sources](../../onelake/create-s3-compatible-shortcut.md) and [Dataverse](/power-apps/maker/data-platform/azure-synapse-link-view-in-fabric) through a unified namespace. OneLake presents ISVs with a transformative data access solution, seamlessly bridging integration across diverse domains and cloud platforms.
 
 - [Learn more about OneLake shortcuts](../../onelake/onelake-shortcuts.md)
-- [Learn more about OneLake, one copy](../../real-time-analytics/one-logical-copy.md)
+- [Learn more about OneLake one logical copy](../../real-time-intelligence/one-logical-copy.md)
 
 :::image type="content" source="media/partner-integration/multicloud-shortcuts.png" alt-text="Diagram showing multicloud shortcuts in OneLake.":::
 
@@ -76,7 +76,7 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 | Data Warehouse    | - [Warehouse](/rest/api/fabric/warehouse/items)<br> - [Mirrored Warehouse](/rest/api/fabric/mirroredwarehouse/items)|
 | Data Engineering    | - [Lakehouse](/rest/api/fabric/lakehouse/items)<br> - [Spark](/rest/api/fabric/spark/custom-pools)<br> - [Spark Job Definition](/rest/api/fabric/sparkjobdefinition/items)<br> - [Tables](/rest/api/fabric/lakehouse/tables)<br> - [Jobs](/rest/api/fabric/lakehouse/background-jobs)|
 | Data Factory    | - [DataPipeline](/rest/api/fabric/datapipeline/items)<br> |
-| Real Time Analytics    | - [Eventstream](/rest/api/fabric/eventstream/items)<br> - [KQL Database](/rest/api/fabric/kqldatabase/items)<br> - [KQL Queryset](/rest/api/fabric/kqlqueryset/items)<br> |
+| Real Time Intelligence    | - [Event house](/rest/api/fabric/eventhouse/items)<br> - [KQL Database](/rest/api/fabric/kqldatabase/items)<br> - [KQL Queryset](/rest/api/fabric/kqlqueryset/items)<br> - [Event stream](/rest/api/fabric/eventstream/items)|
 | Data Science    | - [Notebook](/rest/api/fabric/notebook/items)<br> - [ML Experiment](/rest/api/fabric/mlexperiment/items)<br> - [ML Model](/rest/api/fabric/mlmodel/items)<br> |
 | OneLake    | - [Shortcut](/rest/api/fabric/core/onelake-shortcuts)<br> - [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2)<br> |
 | Power BI    | - [Report](/rest/api/fabric/report/items)<br> - [Dashboard](/rest/api/fabric/dashboard/items)<br> - [Semantic Model](/rest/api/fabric/semanticmodel/items)<br>|
