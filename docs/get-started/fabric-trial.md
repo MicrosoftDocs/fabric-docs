@@ -101,7 +101,7 @@ If you're a Capacity administrator or a tenant admin, you can view, verify, or c
 
 ## Look up the trial Capacity administrator
 
-Contact your Capacity administrator to request access to a trial capacity or to check whether your organization has the Fabric tenant setting enabled. Use the Admin portal to look up your Capacity administrator. 
+Contact your Capacity administrator to request access to a trial capacity or to check whether your organization has the Fabric tenant setting enabled. Ask your Fabric administrator to use the Admin portal to look up your Capacity administrator. 
 
 From the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select *Capacity settings** and then choose the **Trial** tab. 
 
