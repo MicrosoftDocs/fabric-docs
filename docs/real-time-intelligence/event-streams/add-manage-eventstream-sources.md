@@ -42,6 +42,9 @@ Fabric event streams with enhanced capabilities support the following sources. E
 
 [!INCLUDE [supported-sources](./includes/supported-sources-enhanced.md)]
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
+
 ## Related content
 
 - [Create and manage an eventstream](./create-manage-an-eventstream.md)

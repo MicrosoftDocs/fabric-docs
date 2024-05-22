@@ -27,6 +27,9 @@ To get a better understanding of how an eventstream works, you can use the out-o
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
+
 ## Add sample data as a source
 
 Follow these steps to add a sample data source:

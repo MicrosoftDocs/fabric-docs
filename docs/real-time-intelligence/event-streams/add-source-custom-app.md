@@ -28,6 +28,8 @@ If you want to connect your own application with an eventstream, you can add a c
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)] 
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
 ## Add custom endpoint data as a source
 
 Follow these steps to add a custom endpoint source:

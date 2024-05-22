@@ -35,6 +35,8 @@ Here's the list of operations supported for real-time data processing:
 
 - **Union**: Connect two or more data streams with shared fields of the same name and data type into one data stream. Fields that don't match are dropped.
 
+- **Join**: Combine data from two streams based on a matching condition between them.
+
 ## Supported destinations
 
 The supported destinations are:
