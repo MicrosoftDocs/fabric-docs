@@ -14,7 +14,7 @@ LocalizationGroup: Get started
 
 # Close your account, cancel your subscription, end your trial
 
-You always have the option to close your account, cancel your subscription, or end your trial. Each of these actions has a different set of procedures and considerations. 
+You or your admin have the option to close your account, cancel your subscription, or end your trial. Each of these actions has a different set of procedures and considerations. 
 
 #### [Fabric](#tab/fabric)
 
@@ -22,9 +22,9 @@ You always have the option to close your account, cancel your subscription, or e
 
 With Microsoft Fabric, you can end a Fabric capacty trial, cancel a capacity subscription, and close a Fabric account. 
 
-### End a Fabric trial
+### End a Fabric capacity trial
 
-The Fabric trial capacity lasts 60 days. [End a Fabric caacity trial](../get-started/fabric-trial.md#end-a-fabric-trial) explains what happens when a trial ends, expires, or is canceled. Use this article to find helpful information on how to save your data whether you upgrade or not.  
+The Fabric trial capacity lasts 60 days. [End a Fabric capacity trial](../get-started/fabric-trial.md#end-a-fabric-trial) explains what happens when a trial ends, expires, or is canceled. Use this article to find helpful information on how to save your data whether you upgrade or not.  
 
 ### Cancel a capacity subscription
 
@@ -36,7 +36,7 @@ Certain administrators can turn off Fabric for an entire organization or for a s
 
 ### Delete a Fabric capacity and Fabric trial capacity
 
-The Capacity admin can delete Fabric capacities using the Fabric admin portal. Fabric items in workspaces assigned to the capacity become unusable unless the workspaces are assigned to a different capacity within seven days. To learn more, see [Delete a capacity](../admin/capacity-settings.md#delete-a-capacity) and 
+The Capacity administrator can delete Fabric capacities using the Fabric admin portal. Fabric items in workspaces assigned to the capacity become unusable unless the workspaces are assigned to a different capacity within seven days. To learn more, see [Delete a capacity](../admin/capacity-settings.md#delete-a-capacity) and 
 [Fabric capacity deletion.](../admin/service-admin-portal-capacity-settings.md#fabric-capacity-deletion)
 
 ### Close your Fabric account
