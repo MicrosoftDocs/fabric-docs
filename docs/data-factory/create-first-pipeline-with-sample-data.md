@@ -71,7 +71,7 @@ In this session, you start to build your first pipeline by following below steps
 
 1. Configure and map your source data to the destination Lakehouse table. Select **Tables** for the **Root folder** and **Load to a new table** for **Load settings**. Provide a **Table** name and select **Next**.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/configure-lakehouse-tables.png" alt-text="Screenshot showing the Connect to data destination page of the Copy data assistant with Tables selected and a table name for the sample data provided.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/configure-lakehouse-tables.png" lightbox="media/create-first-pipeline-with-sample-data/configure-lakehouse-tables.png" alt-text="Screenshot showing the Connect to data destination page of the Copy data assistant with Tables selected and a table name for the sample data provided.":::
 
 ### Step 4: Review and create your copy activity
 
@@ -87,11 +87,11 @@ In this session, you start to build your first pipeline by following below steps
 
 1. If you didn't choose to **Save + run** on the **Review + save** page of the **Copy data assistant**, wwitch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" lightbox="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
 
 1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas. Select link for the activity name in your output to view the run details.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details-button.png" alt-text="Screenshot showing the Output tab of the pipeline run in-progress with the Details button highlighted in the run status.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details-button.png" lightbox="media/create-first-pipeline-with-sample-data/run-details-button.png" alt-text="Screenshot showing the Output tab of the pipeline run in-progress with the Details button highlighted in the run status.":::
 
 1. The run details show how much data was read and written and various other details about the run.
 
