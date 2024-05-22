@@ -35,12 +35,12 @@ Although you don't actually receive a new license, the actions that you can perf
 
 ## Existing Power BI users
 
-If you're an existing Power BI user, you can skip to [Start the Fabric trial](#start-the-fabric-trial).  
+If you're an existing Power BI user, you can skip to [Start the Fabric trial](#start-the-fabric-capacity-trial).  
 
 ## Users who are new to Power BI
 
 The Fabric trial requires a per-user Power BI license. Navigate to [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com) to sign up for a Fabric (Free) license. Once you have the free license, you can [begin participating in the Fabric capacity trial](#start-the-fabric-capacity-trial).  
-=======
+
 You may already have a license and not realize it. For example, some versions of Microsoft 365 include a Fabric (Free) or Power BI Pro license. Open Fabric (app.fabric.microsoft.com) and select your Account manager to see if you already have a license, and which license it is. Read on to see how to open your Account manager. 
 
 ## Start the Fabric capacity trial
