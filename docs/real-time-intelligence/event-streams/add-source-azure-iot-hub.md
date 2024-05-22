@@ -26,6 +26,9 @@ Before you start, you must complete the following prerequisites:
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
+
 ## Add Azure IoT Hub as a source 
 Follow these steps to add an Azure IoT hub as your eventstream source: 
 
