@@ -104,14 +104,14 @@ Here are the destination types that support to add operators before ingestion:
 ::: zone pivot="standard-capabilities"
 
 
-The event processor in a Lakehouse destination allows you to process your data before it's ingested into your lakehouse. 
+The event processor in Lakehouse and KQL Database (Event processing before ingestion) allows you to process your data before it's ingested into your destination. 
 
 ## Prerequisites
 
 Before you start, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
-- Get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse is located.
+- Get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse or KQL Database is located.
 
 ## Design the event processing with the editor
 
