@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihirwagle
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/24/2024
+ms.date: 05/21/2024
 ---
 
 # Microsoft Fabric trial capacity
