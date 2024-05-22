@@ -13,9 +13,9 @@ zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-group
 zone_pivot_groups: event-streams-standard-enhanced
 ---
 
-# Add custom app source to an eventstream
+# Add custom endpoint source to an eventstream
 
-If you want to connect your own application with an eventstream, you can add a custom endpoint source. Then you can send data to the eventstream from your own application with the connection endpoint displayed as the custom endpoint. This article shows you how to add a custom app source to an eventstream.
+If you want to connect your own application with an eventstream, you can add a custom endpoint (former custom app) source. Then you can send data to the eventstream from your own application with the connection endpoint displayed as the custom endpoint (former custom app). This article shows you how to add a custom endpoint (former custom app) source to an eventstream.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
@@ -28,19 +28,21 @@ If you want to connect your own application with an eventstream, you can add a c
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)] 
 
-## Add custom app data as a source
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
-Follow these steps to add a sample data source:
+## Add custom endpoint data as a source
+
+Follow these steps to add a custom endpoint source:
 
 1. To create a new eventstream, select **Eventstream** from the **Home** screen. Make sure the **Enhanced Capabilities (preview)** option is enabled.
 
    ![A screenshot of creating a new eventstream.](media/external-sources/new-eventstream.png)
 
-1. To add custom app source, on the get-started page, select **Use custom endpoint**.
+1. To add custom endpoint source, on the get-started page, select **Use custom endpoint**.
 
    ![A screenshot of selecting Use custom endpoint.](media/external-sources/use-custom-endpoint.png)
 
-   Or, if you already have a published eventstream and want to add custom app data as a source, switch to **Edit** mode. Then select **Add source** in the ribbon, and select **Custom endpoint**.
+   Or, if you already have a published eventstream and want to add custom endpoint data as a source, switch to **Edit** mode. Then select **Add source** in the ribbon, and select **Custom endpoint**.
 
    ![A screenshot of selecting Custom endpoint to add to an existing eventstream.](media\add-source-custom-app-enhanced\add-custom-app.png)
 
@@ -48,11 +50,11 @@ Follow these steps to add a sample data source:
 
    ![A screenshot showing the Custom endpoint screen with the Add button highlighted.](media\add-source-custom-app-enhanced\add.png)
 
-1. After you create the custom app source, you see it added to your eventstream on the canvas in **Edit mode**. To implement this newly added custom app source data, select **Publish**.
+1. After you create the custom endpoint source, you see it added to your eventstream on the canvas in **Edit mode**. To implement this newly added custom app source data, select **Publish**.
 
    ![A screenshot showing the eventstream in Edit mode, with the Publish button highlighted.](media\add-source-custom-app-enhanced\edit-mode.png)
 
-Once you complete these steps, the custom app data is available for visualization in **Live view**.
+Once you complete these steps, the custom endpoint data is available for visualization in **Live view**.
 
 ![A screenshot showing the eventstream in Live view.](media\add-source-custom-app-enhanced\live-view.png)
 

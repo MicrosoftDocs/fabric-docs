@@ -34,7 +34,7 @@ The drag and drop experience gives you an intuitive and easy way to create your 
 
 [!INCLUDE [supported-transformations-enhanced](./includes/supported-transformations-enhanced.md)]
 
-If you enabled **Enhanced capabilities** while creating an eventstream, the transformation operations are supported for all destinations. If you didn't, the transformation operations are available only for the Lakehouse and KQL Database (event processing before ingestion) destinations. 
+If you enabled **Enhanced capabilities** while creating an eventstream, the transformation operations are supported for all destinations (with derived stream acting as an intermediate bridge for some destinations, like Custom endpoint, Reflex). If you didn't, the transformation operations are available only for the Lakehouse and KQL Database (event processing before ingestion) destinations. 
 
 ## Route events to destinations
 The Fabric event streams feature supports sending data to the following supported destinations. 

@@ -111,11 +111,9 @@ The **Endpoint** column lists domain names and links to external sites, which co
 
 ## KQL Database
 
-<!--
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-||||
--->
+||https://*.z[0-9].kusto.fabric.microsoft.com||
 
 ## Eventstream
 

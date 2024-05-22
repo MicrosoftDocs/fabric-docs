@@ -102,7 +102,7 @@ The following screenshot shows an eventstream with its source and destination co
 
 :::image type="content" source="./media/main-editor/eventstream-main-editor.png" alt-text="Screenshot showing an eventstream item overview." lightbox="./media/main-editor/eventstream-main-editor.png" :::
 
-1. **Ribbon**: The ribbon menu provides source and destination options.
+1. **Ribbon**: The ribbon menu provides source and destination options, complemented by **Activate all** and **Deactivate all** buttons.
 2. **Data navigation pane**: This pane allows you to navigate the sources and destinations.
 3. **Canvas and diagram view**: This pane provides graphical representation of the entire eventstream topology, from the sources to the destinations. Each source or destination appears as a tile (node) in the canvas.
 4. **Configuration and modification pane**: This pane allows you to configure or modify a specific source or destination.

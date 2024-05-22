@@ -37,6 +37,9 @@ Fabric event streams supports the following Fabric workspace events:
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - A Fabric workspace with events you want to track.
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
+
 ## Add Fabric Workspace Item events as source
 
 1. Select **Eventstream** to create a new eventstream. Make sure the **Enhanced Capabilities (preview)** option is enabled.
