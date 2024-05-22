@@ -20,7 +20,7 @@ With one Fabric trial capacity, you get the following features:
 
 - Full access to all of the Fabric workloads and features. There are a few key Fabric features that aren't available on trial capacities. These include Co-Pilot, Trusted workspace access, and Managed private endpoints.
 - OneLake storage up to 1 TB.
--The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity.
+- The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity.
 
 Creating and collaborating in Fabric includes:
 - Creating [Workspaces](workspaces.md) (folders) for projects that support Fabric capabilities.
