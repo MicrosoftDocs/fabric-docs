@@ -24,7 +24,9 @@ This article shows you how to add a custom endpoint (former custom app) destinat
 ## Prerequisites  
 Before you start, you must complete the following prerequisites:  
 
-- Get access to a premium workspace with Contributor or above permissions where your eventstream is located.  
+- Get access to a premium workspace with Contributor or above permissions where your eventstream is located.
+
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add a custom endpoint as a destination  
 If you want to route event data to your app, you can add a custom endpoint as your eventstream destination. Follow these steps to add a custom endpoint destination: 

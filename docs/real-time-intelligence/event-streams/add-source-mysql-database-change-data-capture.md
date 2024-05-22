@@ -30,6 +30,9 @@ You can specify the tables to monitor, and the eventstream records any future ro
 - Access to an instance of Azure Database for MySQL - Flexible Server.
 - Your MySQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
+
 ## Set up MySQL DB
 
 The connector uses the Debezium MySQL connector to capture changes in your Azure Database for MySQL database. You must define a MySQL user with permissions on all databases that the Messaging Connector monitors.
