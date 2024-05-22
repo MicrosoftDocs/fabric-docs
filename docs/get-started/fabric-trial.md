@@ -16,11 +16,10 @@ Microsoft Fabric is provided free of charge when you sign up for the Microsoft F
 > [!NOTE]
 > If you're ready to purchase Fabric, visit the [Purchase Fabric page.](../enterprise/buy-subscription.md)
 
-With a Fabric trial capacity, you get the following features:
+With one Fabric trial capacity, you get the following features:
 
 - Full access to all of the Fabric workloads and features. There are a few key Fabric features that aren't available on trial capacities. These include Co-Pilot, Trusted workspace access, and Managed private endpoints.
 - OneLake storage up to 1 TB.
-- One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
 -The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity.
 
 Creating and collaborating in Fabric includes:
@@ -28,6 +27,7 @@ Creating and collaborating in Fabric includes:
 - Sharing Fabric items, such as semantic models, warehouses, and notebooks, and collaborating on them with other Fabric users.
 - Creating analytics solutions using Fabric items.
 
+> [!NOTE] - One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
 
 When you start a Fabric capacity trial, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You don't have access to your capacity until you put something into it. To begin using your Fabric trial capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you.
 
