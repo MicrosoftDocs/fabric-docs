@@ -1,15 +1,15 @@
 ---
-title: Spark Connector for Fabric Data Warehouse
-description: Learn how to use the Spark Connector for Fabric Data Warehouse to access and work with data from a warehouse and the SQL analytics endpoint of a lakehouse.
+title: Spark connector for Microsoft Fabric data warehouses
+description: Learn how to use a Spark connector to access and work with data from a Microsoft Fabric warehouse and the SQL analytics endpoint of a lakehouse.
 author: ms-arali
 ms.author: arali
 ms.topic: how-to
 ms.date: 05/10/2024
 ---
 
-# Spark Connector for Fabric Data Warehouse
+# Spark connector for Microsoft Fabric data warehouses
 
-The Spark Connector for Fabric Data Warehouse enables Spark developers and data scientists to access and work with data from a Microsoft Fabric data warehouse and the SQL analytics endpoint of a lakehouse. The connector offers the following capabilities:
+The Spark connector for Microsoft Fabric data warehouses enables Spark developers and data scientists to access and work with data from a data warehouse and the SQL analytics endpoint of a lakehouse. The connector offers the following capabilities:
 
 * You can work with data from both the data warehouse and the SQL analytics endpoint from the same workspace or across multiple workspaces.
 * The SQL engine's endpoint is automatically discovered based on workspace context.
@@ -18,7 +18,7 @@ The Spark Connector for Fabric Data Warehouse enables Spark developers and data 
 * The connector comes preinstalled within the Fabric runtime, which eliminates the need for separate installation.
 
 > [!NOTE]
-> The Spark Connector for Fabric Data Warehouse is currently in preview. For more information, see the [current limitations](spark-data-warehouse-connector.md#current-limitations) later in this article.  
+> The Spark connector for Microsoft Fabric data warehouses is currently in preview. For more information, see the [current limitations](spark-data-warehouse-connector.md#current-limitations) later in this article.  
 
 ## Authentication
 
