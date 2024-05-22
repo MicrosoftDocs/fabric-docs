@@ -25,7 +25,7 @@ Of course, you can start with a blank pipeline canvas and add activities directl
 
 With this option, the copy data assistant provides a guided copy wizard to easily ingest data from any supported sources to any supported destination.
 
-:::image type="content" source="media/pipeline-landing-page/copy-data-assistant.png" alt-text="Screenshot showing the Copy data assistant.":::
+:::image type="content" source="media/pipeline-landing-page/copy-data-assistant.png" lightbox="media/pipeline-landing-page/copy-data-assistant.png" alt-text="Screenshot showing the Copy data assistant.":::
 
 ## Practice with sample data
 
