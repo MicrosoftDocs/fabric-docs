@@ -3,7 +3,7 @@ title: "Implement medallion lakehouse architecture in Microsoft Fabric"
 description: "Learn how you can implement a lakehouse in Microsoft Fabric."
 author: peter-myers
 ms.author: v-myerspeter
-ms.reviewer: wiassaf
+ms.reviewer: wiassaf, arali
 ms.topic: conceptual
 ms.date: 11/15/2023
 ms.custom:

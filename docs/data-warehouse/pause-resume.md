@@ -1,10 +1,12 @@
 ---
 title: Pause and resume in Synapse Data Warehouse
 description: Learn more about the pause and resume capacity for data warehousing in Fabric.
-author: sowmi93
-ms.author: sosivara
-ms.reviewer: wiassaf
-ms.date: 11/21/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sosivara
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023

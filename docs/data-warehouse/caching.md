@@ -1,10 +1,12 @@
 ---
 title: Caching in Fabric data warehousing
 description: Learn more about caching in Synapse Data Warehouse in Microsoft Fabric.
-author: filippopovic
-ms.author: fipopovi
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: fipopovi
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: overview
 ms.custom:
   - ignite-2023
@@ -12,7 +14,7 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 ---
 # Caching in Fabric data warehousing
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Retrieving data from the data lake is crucial input/output (IO) operation with substantial implications for query performance. In [!INCLUDE [product-name](../includes/product-name.md)], Synapse Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. Additionally, it intelligently minimizes the need for remote storage reads by leveraging local caches.
 
@@ -29,7 +31,7 @@ There are two types of caches that are described later in this article:
 
 As the query accesses and retrieves data from storage, it performs a transformation process that transcodes the data from its original file-based format into highly optimized structures in in-memory cache. 
 
-:::image type="content" source="media\caching\populating-in-memory-cache.png" alt-text="A diagram displaying how the in-memory cache is populated.":::
+:::image type="content" source="media/caching/populating-in-memory-cache.png" alt-text="Diagram displaying how the in-memory cache is populated.":::
 
 Data in cache is organized in a compressed columnar format optimized for analytical queries. Each column of data is stored together, separate from the others, allowing for better compression since similar data values are stored together, leading to reduced memory footprint. When queries need to perform operations on a specific column like aggregates or filtering, the engine can work more efficiently since it doesn't have to process unnecessary data from other columns.
 
@@ -41,11 +43,11 @@ This approach is especially beneficial for analytical workloads where queries in
 
 Certain datasets are too large to be accommodated within an in-memory cache. To sustain rapid query performance for these datasets, Warehouse utilizes disk space as a complementary extension to the in-memory cache. Any information that is loaded into the in-memory cache is also serialized to the SSD cache.
 
-:::image type="content" source="media\caching\populating-in-memory-and-ssd-cache.png" alt-text="A diagram displaying how in-memory and SSD cache are populated.":::
+:::image type="content" source="media/caching/populating-in-memory-and-ssd-cache.png" alt-text="Diagram displaying how in-memory and SSD cache are populated.":::
 
 Given that the in-memory cache has a smaller capacity compared to the SSD cache, data that is removed from the in-memory cache remains within the SSD cache for an extended period. When subsequent query requests this data, it is retrieved from the SSD cache into the in-memory cache at a significantly quicker rate than if fetched from remote storage, ultimately providing you with more consistent query performance.
 
-:::image type="content" source="media\caching\populating-in-memory-cache-from-ssd-cache.png" alt-text="A diagram displaying how in-memory cache is populated from SSD cache.":::
+:::image type="content" source="media/caching/populating-in-memory-cache-from-ssd-cache.png" alt-text="Diagram displaying how in-memory cache is populated from SSD cache.":::
 
 ## Cache management
 

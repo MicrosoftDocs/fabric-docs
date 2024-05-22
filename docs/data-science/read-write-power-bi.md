@@ -17,8 +17,6 @@ ms.search.form: Read write powerbi
 In this article, you'll learn how to read data and metadata and evaluate measures in semantic models using the SemPy python library in Microsoft Fabric.
 You'll also learn how to write data that semantic models can consume.
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
@@ -227,7 +225,7 @@ All Spark SQL commands can be executed in Python, R, and Scala. The semantic lin
     ```
 
    > [!TIP]
-   > The semantic link (preview) Spark native connector is pre-installed on Fabric and does **not** require that you install the `SemPy` Python library.
+   > The semantic link Spark native connector is pre-installed on Fabric and does **not** require that you install the `SemPy` Python library.
    > You can configure multiple Power BI workspaces by adding multiple catalog entries (e.g. spark.sql.catalog.my_pbi).
 
 1. List tables of all semantic models in the workspace, using PySpark.
@@ -322,6 +320,6 @@ By using Power BI, the *ForecastTable* table can be added to a composite semanti
 ## Related content
 
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
-- [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)
-- [How to validate data with semantic link (preview)](semantic-link-validate-data.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
+- [Explore and validate relationships in semantic models](semantic-link-validate-relationship.md)
+- [How to validate data with semantic link](semantic-link-validate-data.md)

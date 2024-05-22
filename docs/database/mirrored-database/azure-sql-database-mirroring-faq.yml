@@ -59,15 +59,8 @@ sections:
               ```sql
               SELECT * FROM sys.dm_change_feed_log_scan_sessions 
               ```
-           1. If the `sys.dm_change_feed_log_scan_sessions` DMV doesn't show any progress on processing incremental changes, execute the following T-SQL query to check if there are any problems reported:
-              ```sql
-              SELECT * FROM sys.dm_change_feed_errors;
-              ```
-           1. If there aren't any issues reported, execute the following stored procedure to review the current configuration of the mirrored Azure SQL Database. Confirm it was properly enabled.
-              ```sql
-              exec sp_help_change_feed;
-              ```
-              The key columns to look for here are the `table_name` and `state`. Any value besides `4` indicates a potential problem. 
+
+           For troubleshooting steps, see [Troubleshoot Fabric mirrored databases from Azure SQL Database](azure-sql-database-troubleshoot.md).
 
       - question: |
           How to enable System assigned managed identity (SAMI) on SQL Server? 
@@ -161,3 +154,4 @@ additionalContent: |
 
   - [What is Mirroring in Fabric?](overview.md)
   - [Azure SQL Database Mirroring in Microsoft Fabric](azure-sql-database.md)
+  - [Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-troubleshoot.md).

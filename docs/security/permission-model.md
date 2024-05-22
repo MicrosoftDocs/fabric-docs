@@ -4,6 +4,8 @@ description: Learn how permissions work in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
+ms.custom:
+  - build-2024
 ms.date: 03/18/2024
 ---
 
@@ -56,7 +58,7 @@ Different Fabric items have different permissions. To learn more about the permi
 
 * [Data science](../data-science/models-experiments-rbac.md)
 
-* [Real-Time Analytics](/azure/data-explorer/kusto/management/security-roles)
+* [Real-Time Intelligence](/azure/data-explorer/kusto/management/security-roles)
 
 ## Compute permissions
 
@@ -70,9 +72,9 @@ You can find more information in these articles:
 
 * [Row-level security in Fabric data warehousing](../data-warehouse/row-level-security.md)
 
-* [Row-level security (RLS) with Power BI](/power-bi/enterprise/service-admin-rls)
+* [Row-level security (RLS) with Power BI](service-admin-row-level-security.md)
 
-* [Object level security (OLS)](/power-bi/enterprise/service-admin-ols)
+* [Object-level security (OLS)](service-admin-object-level-security.md)
 
 ## Examples
 

@@ -1,10 +1,12 @@
 ---
 title: How to observe Synapse Data Warehouse utilization trends
 description: Learn how to use the Fabric Capacity Metrics app to observe Microsoft Fabric Synapse Data Warehouse utilization trends.
-author: sowmi93
-ms.author: sosivara
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sosivara
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -13,7 +15,7 @@ ms.search.form: Warehouse billing and utilization
 
 # How to: Observe Synapse Data Warehouse utilization trends
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Learn how to observe trends and spikes in your data warehousing workload in Microsoft Fabric using the Microsoft Fabric Capacity Metrics app. 
 
@@ -41,14 +43,14 @@ Use the timepoint graph to identify a range of activity where CU utilization was
 
 The following animated image walks through several steps you can use to drill through utilization, throttling, and overage information. For more information, visit [Throttling in Microsoft Fabric](../enterprise/throttling.md).
 
-:::image type="content" source="media/how-to-observe-utilization/metrics-app-throttling.gif" alt-text="An animated gif of the Metrics app showing the drill through steps.":::
+:::image type="content" source="media/how-to-observe-utilization/metrics-app-throttling.gif" alt-text="An animated gif of the Metrics app showing the drill through steps." lightbox="media/how-to-observe-utilization/metrics-app-throttling.gif":::
 
 1. Select the **Utilization** tab in timepoint explore graph to identify the timepoint at which capacity utilization exceeded more than what was purchased. The yellow dotted line provides visibility into upper SKU limit. The upper SKU limit is based on the SKU purchased along with the enablement of autoscale, if the capacity has autoscale enabled.
 1. Select the **Throttling** tab and go to the **Background rejection** section, which is most applicable for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] requests. In the previous sample animated image, observe that on October 16, 2023 at 12:57 PM, all background requests in the capacity were throttled. The 100% line represents the maximum limit based on the Fabric SKU purchased.
 1. Select the **Overages** tab. This graph gives an overview of the debt that is being collected and carry forwarded across time periods.
     - Add % (Green): When the capacity overloads and starts adding to debt bucket.
     - Burndown % (Blue): When the debt starts burning down and overall capacity utilization falls below 100%.
-    - Cumulative % (Red): Represents the total overall debt at timepoints. This needs to be burnt down eventually.
+    - Cumulative % (Red): Represents the total overall debt at timepoints. This needs to be burned down eventually.
 1. In the **Utilization**, **Throttling**, or **Overages** tabs, select a specific timepoint to enable the **Explore** button for further drill through analysis. 
 1. Select **Explore**. The new page provides tables to explore details of both interactive and background operations. The page shows some background operations that are not occurring at that time, due to the 24-hour smoothing logic. In the previous animated image, operations are displayed between October 15 12:57 PM to October 16 12:57 PM, because of the background operations still being smoothed at the selected timepoint.
 1. In the **Background operations** table, you can also identify users, operations, start/stop times, durations that consumed the most CUs.

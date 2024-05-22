@@ -120,7 +120,8 @@ There are several considerations to keep in mind while working with private endp
 
 * Customers can't connect to Fabric resources in multiple tenants from a single VNet, but rather only the last tenant to set up Private Link.
 
-* Private link does not support in Trial capacity. 
+* Private link does not support in Trial capacity. When accessing Fabric via Private Link traffic, trial capacity will not work.
+  
 * Any uses of external images or themes aren't available when using a private link environment.
 
 * Each private endpoint can be connected to one tenant only.  You can't set up a private link to be used by more than one tenant.
@@ -145,6 +146,7 @@ There are several considerations to keep in mind while working with private endp
     * Required for the Data Engineering and Data Science experiences:
 
         * `http://res.cdn.office.net/`
+        * `https://aznbcdn.notebooks.azure.net/` 
         * `https://pypi.org/*` (for example, `https://pypi.org/pypi/azure-storage-blob/json`) 
         * local static endpoints for condaPackages 
         * `https://cdn.jsdelivr.net/npm/monaco-editor*`

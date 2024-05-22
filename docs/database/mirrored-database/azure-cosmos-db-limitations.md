@@ -4,7 +4,7 @@ description: This article includes a list of limitations and quotas for Microsof
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 04/09/2024
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: limits-and-quotas
 ms.custom:

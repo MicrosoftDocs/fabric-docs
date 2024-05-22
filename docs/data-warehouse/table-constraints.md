@@ -1,10 +1,12 @@
 ---
 title: Primary, foreign, and unique keys
 description: Learn more about table constraints support using Warehouse in Microsoft Fabric.
-author: KevinConanMSFT
-ms.author: kecona
-ms.reviewer: wiassaf, xiaoyul
-ms.date: 03/05/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: kecona, xiaoyul
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -13,7 +15,7 @@ ms.search.form: Warehouse design and development # This article's title should n
 ---
 # Primary keys, foreign keys, and unique keys in Warehouse in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Learn about table constraints in [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], including the primary key, foreign keys, and unique keys.
 

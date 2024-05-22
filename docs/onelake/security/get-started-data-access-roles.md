@@ -6,7 +6,7 @@ ms.author: aamerril
 author: aamerril
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/21/2024
+ms.date: 05/09/2024
 ---
 
 # Get started with OneLake data access roles (preview)
@@ -18,7 +18,7 @@ OneLake data access roles for folders is a new feature that enables you to apply
 Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that aren't part of a data access role see no data in that lakehouse.
 
 > [!NOTE]
-> Data access role security ONLY applies to users accessing OneLake directly. Fabric items such as SQL Endpoint, Semantic models, and Warehouses have their own security models and access OneLake through a delegated identity. This means users can see different items in each experience if they are given access to multiple items.
+> Data access role security ONLY applies to users accessing OneLake directly. Fabric items such as SQL Endpoint, Semantic models, and Warehouses have their own security models and access OneLake through a delegated identity. This means users can see different items in each workload if they are given access to multiple items.
 
 ## How to opt in
 
