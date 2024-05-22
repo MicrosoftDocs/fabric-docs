@@ -36,7 +36,7 @@ Although you don't actually receive a new license, the actions that you can perf
 
 ## Existing Power BI users
 
-If you're an existing Power BI user, you can skip to [Start the Fabric trial](#start-the-fabric-capacity-trial).  
+If you're an existing Power BI user, you can skip to [Start the Fabric trial](#start-the-fabric-capacity-trial). If you are already enrolled in a Power BI trial, you won't see the option to **Start trial" in your Account manager. Instead, open Fabric and attempt to use a feature that requires a Fabric capacity. You'll be prompted to start a Fabric trial capacity. 
 
 ## Users who are new to Power BI
 
