@@ -252,7 +252,7 @@ items:
 - name: Analyze and model data
   items:
   - name: Copilot for Real-Time Intelligence
-    href: ../get-started/copilot-real-time-analytics.md
+    href: ../get-started/copilot-real-time-intelligence.md
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
