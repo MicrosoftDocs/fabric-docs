@@ -43,7 +43,7 @@ To get started, you must complete the following prerequisites:
 
 In this session, you start to build your first pipeline by following below steps about copying from a sample dataset provided by pipeline into Lakehouse.
 
-### Step 1: Start with the Copy assistant
+### Step 1: Start with the Copy data assistant
 
 1. After selecting **Copy data assistant** on the canvas,  the **Copy assistant** tool will be opened to get started.
 
