@@ -1,33 +1,32 @@
 ---
-title: Microsoft Fabric parity
+title: Microsoft Fabric features by SKU
 description: Learn which Fabric features are available to you depending on your subscription. The article lists features according to SKUs.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 05/21/2024
+ms.date: 05/22/2024
 ---
 
-# Microsoft Fabric feature parity
+# Microsoft Fabric features by SKU
 
-Microsoft Fabric is a cloud based platform with a rich set of features. The availability of these features depends on the subscription you have. This article lists a few key Fabric features according to [SKU](licenses.md#capacity-license) type.
+Microsoft Fabric is a cloud based platform with a rich set of features. The availability of these features depends on the subscription you have. This article lists key Fabric features according to [SKU](licenses.md#capacity-license) type.
 
 ## Features list
 
-The following table lists the features available according to the SKUs.
+The following table lists Fabric features according to SKU type. The table lists features that are only supported in specific SKUs. None of these features are supported when using a [trial capacity](../get-started/fabric-trial.md).
 
-| Feature                                                                                                  | F SKU         | P SKUs   | Trial    |
-|----------------------------------------------------------------------------------------------------------|---------------|----------|----------|
-| [Bring your own key for Power BI](/power-bi/enterprise/service-encryption-byok)                          | &#x2705;      | &#x2705; | &#x274C; |
-| [Copilot](../get-started/copilot-fabric-overview.md)                                                     | F64 or higher | &#x2705; | &#x274C; |
-| [Workspace identity](../security/workspace-identity.md)                                                  | F64 or higher | &#x2705; | &#x274C; |
-| [Power BI Autoscale](/power-bi/enterprise/service-premium-auto-scale)                                    | &#x274C;      | &#x2705; | &#x274C; |
-| [Trusted workspace access](../security/security-trusted-workspace-access.md)                             | &#x2705;      | &#x274C; | &#x274C; |
-| [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)                  | &#x2705;      | &#x274C; | &#x274C; |
-| [Private links for secure access to Fabric](../security/security-private-links-overview.md)              | &#x2705;      | &#x274C; | &#x274C; |
-| [Data exfiltration protection](/azure/synapse-analytics/security/workspace-data-exfiltration-protection) | &#x2705;      | &#x274C; | &#x274C; |
-| [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)                             | &#x2705;      | &#x274C; | &#x274C; |
-| [Pause and resume your capacity](pause-resume.md)                                                        | &#x2705;      | &#x274C; | &#x274C; |
-| [Pause and resume your capacity](pause-resume.md) (Pay-As-You-Go)                                                                                            | &#x2705;      | &#x274C; | &#x274C; |
+| Feature                                                                                                  | F SKU         | P SKUs   |
+|----------------------------------------------------------------------------------------------------------|---------------|----------|
+| [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)                             | &#x2705;      | &#x274C; |
+| [Bring your own key for Power BI](/power-bi/enterprise/service-encryption-byok)                          | &#x2705;      | &#x2705; |
+| [Copilot](../get-started/copilot-fabric-overview.md)                                                     | F64 or higher | &#x2705; |
+| [Data exfiltration protection](/azure/synapse-analytics/security/workspace-data-exfiltration-protection) | &#x2705;      | &#x274C; |
+| [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)                  | &#x2705;      | &#x274C; |
+| [Pause and resume your capacity](pause-resume.md)                                                        | &#x2705;      | &#x274C; |
+| [Power BI Autoscale](/power-bi/enterprise/service-premium-auto-scale)                                    | &#x274C;      | &#x2705; |
+| [Scale a capacity](scale-capacity.md)                                                                    | &#x2705;      | &#x274C; |
+| [Trusted workspace access](../security/security-trusted-workspace-access.md)                             | &#x2705;      | &#x274C; |
+| [Workspace identity](../security/workspace-identity.md)                                                  | F64 or higher | &#x2705; |
 
 ## Related content
 
