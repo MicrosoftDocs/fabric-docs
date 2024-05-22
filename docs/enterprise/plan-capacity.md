@@ -49,7 +49,7 @@ Follow these steps to estimate the size of the capacity you need. We recommend t
 
 ## Purchase considerations
 
-Capacities are [priced hourly or monthly](https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/).
+Capacities are [priced hourly or monthly](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 ## Related content
 
