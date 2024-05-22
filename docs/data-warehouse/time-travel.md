@@ -1,5 +1,5 @@
 ---
-title: Time travel in Warehouse within Microsoft Fabric
+title: Time travel in Warehouse within Microsoft Fabric (preview)
 description: Learn how to Query data as it existed in the past with time travel in Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -9,13 +9,13 @@ ms.subservice: data-warehouse
 ms.custom:
   - build-2024
 ms.topic: conceptual
-ms.date: 05/12/2024
+ms.date: 05/21/2024
 ---
-# Query data as it existed in the past
+# Query data as it existed in the past (preview)
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-Warehouse in Microsoft Fabric offers the capability to query historical data as it existed in the past. The ability to query a data from a specific timestamp is known in the data warehousing industry as *time travel*.
+Warehouse in Microsoft Fabric offers the capability to query historical data as it existed in the past. The ability to query a data from a specific timestamp is known in the data warehousing industry as *time travel*. This feature is currently in preview.
 
 - Time travel facilitates stable reporting by maintaining the consistency and accuracy of data over time.
 - Time travel enables historical trend analysis by querying across various past points in time, and helps anticipate the future trends.
