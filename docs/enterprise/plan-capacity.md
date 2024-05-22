@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 
 # Plan your capacity size
 
-[Capacity](licenses.md#capacity) planning is the process of estimating the resources needed to run Microsoft Fabric efficiently. Capacity planning helps you avoid performance issues, such as slow queries, timeouts, or throttling, and optimize your spending, by choosing the right [capacity SKU](licenses.md#capacity-license).
+[Capacity](licenses.md#capacity) planning is the process of estimating the resources needed to run Microsoft Fabric efficiently. Capacity planning helps you avoid performance issues, such as slow queries, timeouts, or throttling. Capacity planning can also help you optimize your spending, by choosing the right [capacity SKU](licenses.md#capacity-license).
 
 ## Understand how consumption is calculated
 
@@ -43,11 +43,11 @@ Follow these steps to estimate the size of the capacity you need. We recommend t
     * **SKU card** - Shows the current SKU you're using.
     * **Capacity CU card** - Shows the number of CUs you're using.
 
-5. [scale up](scale-capacity.md) your capacity so that it covers your utilization.
+5. [Scale up](scale-capacity.md) your capacity so that it covers your utilization.
 
 6. Review the [utilization](metrics-app-compute-page.md#utilization) visual to ensure that your usage is within the capacity limits.
 
-## Purchase considerations
+## Considerations
 
 Capacities are [priced hourly or monthly](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
