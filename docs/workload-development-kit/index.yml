@@ -84,9 +84,9 @@ landingContent:
     linkLists:
       - linkListType: reference
         links:  
-#       - text: REST APIs
-#         url: https://review.learn.microsoft.com/en-us/rest/api/fabric/workload/workloadapi/jobs?branch=drafts%2ffeatures%2fworkloadsapi&tabs=HTTP
-#       - text: Client-side APIs
-#         href: https://review.learn.microsoft.com/en-us/javascript/api/overview/fabric-extensibility-overview?view=fabric-extensibility-js-latest&branch=smoke-test
+        - text: REST APIs
+          url: https://go.microsoft.com/fwlink/?linkid=2271986
+        - text: Client-side APIs
+          url: https://go.microsoft.com/fwlink/?linkid=2271989
         - text: Samples
           url: https://github.com/microsoft/Microsoft-Fabric-workload-development-sample                           
