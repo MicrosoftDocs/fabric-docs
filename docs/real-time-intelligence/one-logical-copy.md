@@ -97,17 +97,15 @@ By default, when **OneLake availability** is turned on, a mirroring policy is se
 ### Check latency
 
 Eventhouse can delay write operations for up to a few hours if there isn’t sufficient data to create optimal Parquet files. This ensures that the files are not only efficient in size but also adhere to the best practices recommended for Delta.
-You can monitor how long ago new data was added in the lake by checking your data latency.
+You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rta&pivots=fabric).
 
-To check the current latency use the [.show table details command](/azure/data-explorer/kusto/management/show-table-details-command?context=/fabric/context/context-rta&pivots=fabric) to display `policy mirroring` for all tables (`*`) and the `mirroring-status` of the `operations` table.
-
-A result of zero means that data was just copied. Results are measured from the last time data was copied.
+When `Latency` results in 00:00:00, data was just added. Results are measured from the last time data was added.
 
 ### Partition OneLake files
 
 You can partition your OneLake files to improve query speed in cases of need. For information about when to partition your OneLake files, see [When to partition tables on Azure Databricks](/azure/databricks/tables/partitions). Each partition is represented as a separate column using the *PartitionName* listed in the *Partitions* list. This means your OneLake copy has more columns than your source table.
 
-To partition your OneLake files use the [Create and alter Azure Storage external tables](/azure/data-explorer/kusto/management/external-tables-azure-storage?context=/fabric/context/context-rta&pivots=fabric) command to partition the `policy mirroring` table by *parquet* `dataformat`. Use `.alter` or `.alter-merge` commands.
+To partition your OneLake files use the [.alter-merge table policy mirroring command](/azure/data-explorer/kusto/management/alter-merge-mirroring-policy-command?context=/fabric/context/context-rta&pivots=fabric).
 
 ## Related content
 
