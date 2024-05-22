@@ -1,6 +1,6 @@
 ---
 title: Plan your capacity size
-description: Learn how to plan your Microsoft Fabric capacity size using the the Microsoft Fabric capacity metrics app.
+description: Learn how to plan your Microsoft Fabric capacity size using the Microsoft Fabric capacity metrics app.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
@@ -15,7 +15,7 @@ ms.date: 05/21/2024
 
 The [capacity SKU](licenses.md#capacity-license) table shows the number of Capacity Units (CUs) per SKU. To understand how the SKU's compute power translates to your usage, use the [capacity metrics app](metrics-app-compute-page.md). The app shows consumption in intervals of 30 seconds. Multiply the number of CUs in the SKU table by 30 to get the number of CUs used in 30 seconds.
 
-| SKU | Capacity Units (CU) | 30 second CU use |
+| SKU | Capacity Units (CU) | 30-second CU use |
 |--|--|--|
 | F2 | 2 | 60 |
 | F4 | 4 | 120 |
@@ -31,11 +31,21 @@ The [capacity SKU](licenses.md#capacity-license) table shows the number of Capac
 
 ## Estimate your capacity size
 
-Follow these steps to estimate the size of the capacity you need.
+Follow these steps to estimate the size of the capacity you need. We recommend that you evaluate the use of a specific Fabric workload, such as [Power BI](/power-bi/enterprise/service-premium-what-is), [Spark](../data-engineering/spark-compute.md), or a [Data Warehouse](../data-warehouse/data-warehousing.md).
 
 1. Create a [trial capacity](../get-started/fabric-trial.md).
 
-2. 
+2. In the [capacity metrics app](metrics-app-compute-page.md), review the [utilization](metrics-app-compute-page.md#utilization) visual.
+
+3. If your capacity usage exceeds the trial capacity utilization limit, locate the timepoint where your capacity usage exceeded its utilization limit, and drill down to the [timepoint page](metrics-app-timepoint-page.md).
+
+4. To understand which SKU you need, review these [top row visuals](metrics-app-timepoint-page.md#top-row-visuals).
+    * **SKU card** - Shows the current SKU you're using.
+    * **Capacity CU card** - Shows the number of CUs you're using.
+
+5. [scale up](scale-capacity.md) your capacity so that it covers your utilization.
+
+6. Review the [utilization](metrics-app-compute-page.md#utilization) visual to ensure that your usage is within the capacity limits.
 
 ## Purchase considerations
 
