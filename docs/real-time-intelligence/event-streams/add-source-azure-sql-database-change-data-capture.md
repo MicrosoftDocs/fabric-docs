@@ -33,6 +33,8 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 >[!NOTE]
 > Mirroring shouldn't be enabled in your database.
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
 
 ## Add Azure SQL Database CDC as a source
 

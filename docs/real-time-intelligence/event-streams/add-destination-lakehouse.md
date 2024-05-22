@@ -32,6 +32,8 @@ This article shows you how to add a lakehouse as a destination to an eventstream
 - Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
 - Access to the **premium workspace** where your lakehouse is located with **Contributor** or higher permissions.
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
 ## Add a lakehouse as a destination
 
 To add a lakehouse destination to a default or derived eventstream, follow these steps.

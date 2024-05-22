@@ -26,6 +26,8 @@ This article shows you how to add a KQL database as a destination to an eventstr
 - Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
 - Access to a KQL database created in a Fabric **premium workspace** where you have **Contributor** or higher permissions.
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
 ##  Add a KQL database as a destination
 
 To add a KQL database as a destination, you can choose between two ingestion modes: **Direct ingestion** or **Event processing before ingestion**.
