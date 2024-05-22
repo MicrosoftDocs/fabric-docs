@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 05/23/2024
+ms.date: 05/22/2024
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to create an event house for data storage in Real-Time Analytics so that I can effectively manage my data.
 ---
@@ -47,6 +47,14 @@ In this article, you learn how to create an event house, add new databases to an
 1. The [database details](create-database.md#database-details) page opens for the default database in the newly created event house. To view all the databases in this event house or create new databases, select the **Eventhouse** menu item.
 
     :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of choosing an event house from database details page." lightbox="media/eventhouse/choose-eventhouse.png":::
+
+## Rename an event house
+
+1. Browse to the event house item in your workspace.
+1. Click on the name of the event house in the top left corner.
+1. Enter a new name for the event house.
+
+    :::image type="content" source="media/eventhouse/rename.png" alt-text="Screenshot of renaming an event house.":::
 
 ## Delete an event house
 

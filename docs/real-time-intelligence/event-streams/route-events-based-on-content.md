@@ -45,7 +45,7 @@ The supported destinations are:
 
 - **Reflex**: This destination lets you directly connect your real-time event data to a Reflex. Reflex is a type of intelligent agent that contains all the information necessary to connect to data, monitor conditions, and act. When the data reaches certain thresholds or matches other patterns, Reflex automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
-- **Custom App:** With this destination, you can easily route your real-time events to a custom application. This destination lets you connect your own applications to the eventstream and consume the event data in real time. It's useful when you want to egress real-time data to an external system outside Microsoft Fabric.
+- **Custom endpoint (former custom app):** With this destination, you can easily route your real-time events to a custom application. This destination lets you connect your own applications to the eventstream and consume the event data in real time. It's useful when you want to egress real-time data to an external system outside Microsoft Fabric.
 
 - **Stream**: This destination represents the default raw eventstream transformed by a series of operations, also called a derived stream. Once created, you can view the stream from the Real-Time hub.
 
