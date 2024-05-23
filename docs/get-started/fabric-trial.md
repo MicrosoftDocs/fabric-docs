@@ -34,11 +34,11 @@ When you start a Fabric capacity trial, your trial [capacity](../enterprise/lice
 
 To begin using your Fabric trial capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you.
 
-Although you don't actually receive a new license, the actions that you can perform and the features that you can user are similar to [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq] during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users is also upgraded. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a PPU license. 
+Although you don't actually receive a new license, the actions that you can perform and the features that you can user are similar to [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq] during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a PPU license. 
 
 ## Existing Power BI users
 
-If you're an existing Power BI user, you can skip to [Start the Fabric trial](#start-the-fabric-capacity-trial). If you're already enrolled in a Power BI trial, you won't see the option to **Start trial" in your Account manager. Instead, open Fabric and attempt to use a feature that requires a Fabric capacity. Fabric will prompt you to start a Fabric trial capacity. 
+If you're an existing Power BI user, you can skip to [Start the Fabric trial](#start-the-fabric-capacity-trial). If you're already enrolled in a Power BI trial, you don't see the option to **Start trial" in your Account manager. Instead, open Fabric and attempt to use a feature that requires a Fabric capacity. Fabric prompts you to start a Fabric trial capacity. 
 
 ## Users who are new to Power BI
 
@@ -104,13 +104,13 @@ If you're a Capacity administrator or a tenant admin, you can view, verify, or c
 
 Contact your Capacity administrator to request access to a trial capacity or to check whether your organization has the Fabric tenant setting enabled. Ask your Fabric administrator to use the Admin portal to look up your Capacity administrator. 
 
-If you are the capacity or Fabric administrator, from the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select *Capacity settings** and then choose the **Trial** tab. 
+If you're the capacity or Fabric administrator, from the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select *Capacity settings** and then choose the **Trial** tab. 
 
 :::image type="content" source="media/fabric-trial/fabric-admin.png" alt-text="Screenshot of Admin center showing the Capacity settings screen.":::
 
 ## End a Fabric trial
 
-End a Fabric capacity trail by cancelling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial, individual users don't have this ability. All licenses return to their original versions. You will no longer have the equivalent of a PPU license. If you want to retain your data ad continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. For more information, see [Cancelling, expiring, and closing](../enterprise/fabric-close-end-cancel.md).
+End a Fabric capacity trail by canceling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial but ndividual users don't have this ability. All licenses return to their original versions. You no longer have the equivalent of a PPU license. If you want to retain your data ad continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. For more information, see [Canceling, expiring, and closing](../enterprise/fabric-close-end-cancel.md).
 
 ### The trial expires 
 
@@ -124,7 +124,7 @@ Only the capacity administrator can cancel the Fabric capacity trial.
 
 ### Cancel the Fabric trial - Capacity admins
 
-To cancel your free Fabric trial capacity, open your Account Manager and select **Cancel trial**. Once cancelled, Microsoft can't extend the Fabric capacity trial and you may not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. You can also [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. If your have workspaces with Fabric items, assign those workspaces to the new trial or purchased capacity within seven days.
+To cancel your free Fabric trial capacity, open your Account Manager and select **Cancel trial**. Once canceled, Microsoft can't extend the Fabric capacity trial, and you may not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. You can also [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. If your have workspaces with Fabric items, assign those workspaces to the new trial or purchased capacity within seven days.
 
 :::image type="content" source="media/fabric-trial/cancel-trial.png" alt-text="Screenshot of the Cancel trial button in Account manager.":::
 
