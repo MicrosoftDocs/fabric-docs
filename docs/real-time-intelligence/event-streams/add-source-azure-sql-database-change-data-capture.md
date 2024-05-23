@@ -7,7 +7,7 @@ author: alexlzx
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 05/23/2024
 ms.search.form: Source and Destination
 ---
 
@@ -21,20 +21,48 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 
 [!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
-
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - A running Azure SQL server with an Azure SQL database.
 - Your Azure SQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
-- Membership in the **sysadmin** fixed server role for the SQL Server, and **db_owner** role on the database.
-- CDC enabled on your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
+- Enabled CDC in your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
 
->[!NOTE]
-> Mirroring shouldn't be enabled in your database.
+Note that you must not enable mirroring in your Azure SQL database.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
+## Enable CDC in your Azure SQL Database
+
+1. Go to the Azure portal, open your Azure SQL database, and select **Query editor**. Choose an authentication method to log in.
+
+    ![A screenshot of opening Azure SQL database.](media/add-source-azure-sql-database-change-data-capture/open-azure-sqldb.png)
+
+2. Execute the following SQL commands to create a table and enable CDC in your database:
+
+    ```sql
+    CREATE TABLE [dbo].[cdcTest]
+    (
+       [Id] UNIQUEIDENTIFIER NOT NULL,
+       [Message] NVARCHAR(512) NOT NULL,
+       [Age] INT NOT NULL,
+       PRIMARY KEY CLUSTERED ([Id] ASC)
+    );
+    
+    EXEC sys.sp_cdc_enable_db;
+    GO
+    
+    EXEC sys.sp_cdc_enable_table
+       @source_schema = N'dbo',
+       @source_name   = N'cdcTest',
+       @role_name     = NULL, 
+       @supports_net_changes = 1
+    GO
+    ```
+
+3. If the query executes successfully, CDC is enabled in your Azure SQL database.
+
+    ![A screenshot of enabling Azure SQL CDC.](media/add-source-azure-sql-database-change-data-capture/run-query.png)
 
 ## Add Azure SQL Database CDC as a source
 

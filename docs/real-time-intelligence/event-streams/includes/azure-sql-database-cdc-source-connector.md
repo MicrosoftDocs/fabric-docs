@@ -1,12 +1,12 @@
 ---
 title: Azure SQL Database CDC connector for Fabric event streams
 description: This include file has the common content for configuring an Azure SQL Database Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub. 
-ms.author: xujiang1
-author: xujxu 
+ms.author: zhenxilin
+author: alexlzx 
 ms.topic: include
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 05/23/2024
 ---
 
 1. On the **Select a data source** screen, select **Azure SQL DB (CDC)**.
@@ -20,10 +20,11 @@ ms.date: 05/21/2024
    - **Server:** Enter the Azure SQL server name from the Azure portal.
    - **Database:** Enter the Azure SQL database name from the Azure portal.
 
-        :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connect.png" alt-text="Screenshot that shows the Connection settings section of the New connection page." ::: 
+        :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connect.png" alt-text="Screenshot that shows the Connection settings section of the New connection page." :::
+
 1. Scroll down, and in the **Connection credentials** section, follow these steps.
-   - For **Connection name**, enter a name for the connection. 
-   - For **Authentication kind**, select **Basic**. 
+   - For **Connection name**, enter a name for the connection.
+   - For **Authentication kind**, select **Basic**.
 
      > [!NOTE]
      > Currently, Fabric event streams supports only **Basic** authentication.
@@ -32,14 +33,14 @@ ms.date: 05/21/2024
 
 1. Select **Connect**.
 
-      :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connection-credentials.png" alt-text="Screenshot that shows the Connection credentials section of the New connection page." ::: 
+      :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connection-credentials.png" alt-text="Screenshot that shows the Connection credentials section of the New connection page." :::
 
 1. Now, on the **Connect** page, enter the following information:
 
-   - Enter the name of the SQL **table(s)**.
+   - Select **All tables** or enter the name of the SQL **table(s)** separated by comma, for example, dbo.table1, dbo.table2.
    - For **Port**, enter the port number or leave the default value of 1433.
 
-1. Select **Next**. 
+1. Select **Next**.
 
    :::image type="content" source="./media/azure-sql-database-cdc-source-connector/connect-page-filled.png" alt-text="Screenshot that shows the Connect page of the Get events wizard filled." lightbox="./media/azure-sql-database-cdc-source-connector/connect-page-filled.png":::
 
