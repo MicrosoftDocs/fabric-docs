@@ -48,6 +48,8 @@ Compliance is a shared responsibility. To comply with laws and regulations, clou
 
 * Compliance is a Shared Responsibility - [Shared responsibility in the cloud - Microsoft Azure | Microsoft Learn](/azure/security/fundamentals/shared-responsibility?toc=%2Fcompliance%2Fassurance%2Ftoc.json&bc=%2Fcompliance%2Fassurance%2Fbreadcrumb%2Ftoc.json)
 
+* Azure compliance - [Azure - Compliance Offerings](https://azurecompliance)
+
 For more compliance information, the [Microsoft Trust Center](https://www.microsoft.com/trustcenter) is the primary resource for Fabric. For more information about compliance, see [Microsoft compliance offerings](/compliance/regulatory/offering-home).
 
 ## Related content
