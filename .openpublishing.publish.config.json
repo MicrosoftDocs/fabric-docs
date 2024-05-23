@@ -9,20 +9,24 @@
       "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content"
+        "Conceptual": "Content",
+        "ZonePivotGroups": "Toc"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "redirection_files": [
+        ".openpublishing.redirection.real-time-intelligence.json"
+      ]
     }
   ],
   "notification_subscribers": [
     "sngun@microsoft.com",
     "cl-github-maintainer@microsoft.com",
-    " kfollis@microsoft.com"
+    "kfollis@microsoft.com"
   ],
   "sync_notification_subscribers": [
     "sngun@microsoft.com",
-    " kfollis@microsoft.com"
+    "kfollis@microsoft.com"
   ],
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/fabric-docs",

@@ -9,6 +9,7 @@ ms.service: fabric
 ms.topic: conceptual
 ms.custom:
   - references_regions
+  - build-2024
 ---
 # Limitations in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)
 
@@ -69,15 +70,15 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
     - **image**
     - **text**/**ntext**
     - **xml** 
+    - **json**
     - **rowversion**/**timestamp**
     - **sql_variant**
     - User Defined Types (UDT)
     - **geometry**
     - **geography**
 - Column names for a SQL table cannot contain spaces nor the following characters: `space` `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
-- The following column level data definition language (DDL) operations aren't supported on source tables when they're enabled for Fabric SQL Database mirroring.  
-    - Alter column  
-    - Rename column (`sp_rename`)  
+- The following column level data definition language (DDL) operation is not yet supported on source tables that are being actively mirrored.
+    - Rename column (`sp_rename`)
  
 ## Warehouse limitations
 
