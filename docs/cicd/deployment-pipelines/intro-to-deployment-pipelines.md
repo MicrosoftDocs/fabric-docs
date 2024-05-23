@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/28/2023
+ms.date: 05/23/2024
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 ---
 
@@ -37,6 +37,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (based on supported semantic models)
+* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
 * Semantic models (except for Direct Lake semantic models)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
 
