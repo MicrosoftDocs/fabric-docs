@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: kadejo
 ms.service: fabric
 ms.topic: concept-article #Don't change
-ms.date: 05/02/2024
+ms.date: 05/23/2024
 
 #customer intent: As a Fabric administrator or decision maker, I want to learn about Fabric's adherence to compliance standards.
 
@@ -48,7 +48,7 @@ Compliance is a shared responsibility. To comply with laws and regulations, clou
 
 * Compliance is a Shared Responsibility - [Shared responsibility in the cloud - Microsoft Azure | Microsoft Learn](/azure/security/fundamentals/shared-responsibility?toc=%2Fcompliance%2Fassurance%2Ftoc.json&bc=%2Fcompliance%2Fassurance%2Fbreadcrumb%2Ftoc.json)
 
-* Azure compliance - [Azure - Compliance Offerings](https://azurecompliance)
+* Azure compliance - [Azure - Compliance Offerings](https://aka.ms/azurecompliance)
 
 For more compliance information, the [Microsoft Trust Center](https://www.microsoft.com/trustcenter) is the primary resource for Fabric. For more information about compliance, see [Microsoft compliance offerings](/compliance/regulatory/offering-home).
 
