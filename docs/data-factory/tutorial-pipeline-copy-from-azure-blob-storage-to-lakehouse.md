@@ -13,7 +13,7 @@ ms.date: 11/15/2023
 
 # Copy from Azure Blob Storage to Lakehouse
 
-In this tutorial, you'll build a data pipeline to move a CSV file from an input folder of an Azure Blob Storage source to a Lakehouse destination. 
+In this tutorial, you build a data pipeline to move a CSV file from an input folder of an Azure Blob Storage source to a Lakehouse destination. 
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ To get started, you must complete the following prerequisites:
 
   :::image type="content" source="media/create-first-pipeline/create-resource-group.png" alt-text="Screenshot of Project details screen.":::
 
-  Then an Azure Blob Storage will be created and [moviesDB2.csv](https://github.com/kromerm/adfdataflowdocs/blob/master/sampledata/moviesDB2.csv) will be uploaded to the input folder of the created Azure Blob Storage.
+  Then an Azure Blob Storage is created and [moviesDB2.csv](https://github.com/kromerm/adfdataflowdocs/blob/master/sampledata/moviesDB2.csv) uploaded to the input folder of the created Azure Blob Storage.
 
   :::image type="content" source="media/create-first-pipeline/azure-blob-storage.png" alt-text="Screenshot showing where new storage appears in folder.":::
 
@@ -46,7 +46,7 @@ To get started, you must complete the following prerequisites:
 
 ## Copy data using the Copy Assistant
 
-In this session, you'll start to build a data pipeline by using the following steps. These steps copy a CSV file from an input folder of an Azure Blob Storage to a Lakehouse destination using the copy assistant.
+In this session, you start to build a data pipeline by using the following steps. These steps copy a CSV file from an input folder of an Azure Blob Storage to a Lakehouse destination using the copy assistant.
 
 ### Step 1: Start with copy assistant
 
@@ -64,7 +64,7 @@ In this session, you'll start to build a data pipeline by using the following st
 
    :::image type="content" source="media/create-first-pipeline/create-connection-to-data.png" alt-text="Screenshot showing where to select New connection." lightbox="media/create-first-pipeline/create-connection-to-data.png":::
 
-   1. After selecting **Create new connection** with your storage account specified, you only need to fill in **Authentication kind**. In this demo, we will choose **Account key** but you can choose other **Authentication kind** depending on your preference.
+   1. After selecting **Create new connection** with your storage account specified, you only need to fill in **Authentication kind**. In this demo, we choose **Account key** but you can choose other **Authentication kind** depending on your preference.
 
       :::image type="content" source="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/copy-data-connect-to-data-source.png" lightbox="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/copy-data-connect-to-data-source.png" alt-text="Screenshot showing the Connect to data source screen of the copy data assistant.":::
 
@@ -94,13 +94,13 @@ In this session, you'll start to build a data pipeline by using the following st
 
    :::image type="content" source="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/review-and-create-copy-activity.png" lightbox="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/review-and-create-copy-activity.png" alt-text="Screenshot showing the Review + create screen in the Copy data assistant dialog.":::
 
-1. Once finished, the copy activity will then be added to your data pipeline canvas and run directly if you left the **Start data transfer immediately** checkbox selected. All settings including advanced settings to this copy activity are available under the tabs below when it's selected.
+1. Once finished, the copy activity is added to your data pipeline canvas and run directly if you left the **Start data transfer immediately** checkbox selected.
 
    :::image type="content" source="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/copy-activity.png" lightbox="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/copy-activity.png" alt-text="Screenshot showing the finished Copy activity.":::
 
 ## Run and schedule your data pipeline
 
-1. If you did not leave the **Start data transfer immediately** checkbox on the **Review + create** page, switch to the **Home** tab and select **Run**. Then select **Save and Run**.
+1. If you didn't leave the **Start data transfer immediately** checkbox on the **Review + create** page, switch to the **Home** tab and select **Run**. Then select **Save and Run**.
 
    :::image type="content" source="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/run-copy-activity.png" lightbox="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/run-copy-activity.png" alt-text="Screenshot showing the Copy activity's Run button on the Home tab.":::
 
@@ -114,7 +114,7 @@ In this session, you'll start to build a data pipeline by using the following st
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details.png" alt-text="Screenshot showing the Copy data details dialog.":::
 
-1. You can also schedule the pipeline to run with a specific frequency as required. Below is the sample to schedule the pipeline to run every 15 minutes.
+1. You can also schedule the pipeline to run with a specific frequency as required. The following example shows how to schedule the pipeline to run every 15 minutes.
 
    :::image type="content" source="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/schedule-configuration.png" lightbox="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/schedule-configuration.png" alt-text="Screenshot showing the schedule configuration dialog.":::
 
