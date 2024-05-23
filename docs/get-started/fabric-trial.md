@@ -110,7 +110,7 @@ If you are the capacity or Fabric administrator, from the upper right corner of 
 
 ## End a Fabric trial
 
-End a Fabric capacity trail by cancelling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial, individual users don't have this ability. All licenses return to their original versions. You will no longer have the equivalent of a PPU license. For more information, see [Cancelling, expiring, and closing](../enterprise/fabric-close-end-cancel.md).
+End a Fabric capacity trail by cancelling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial, individual users don't have this ability. All licenses return to their original versions. You will no longer have the equivalent of a PPU license. If you want to retain your data ad continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. For more information, see [Cancelling, expiring, and closing](../enterprise/fabric-close-end-cancel.md).
 
 ### The trial expires 
 
@@ -124,7 +124,7 @@ Only the capacity administrator can cancel the Fabric capacity trial.
 
 ### Cancel the Fabric trial - Capacity admins
 
-To cancel your free Fabric trial capacity, open your Account Manager and select **Cancel trial**. Once cancelled, Microsoft can't extend the Fabric capacity trial and you may not be able to start a new trial using your same user ID. Instead, you can start a new Fabric capacity trial using a different user as the capacity admin. You can also [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. If your have workspaces with Fabric items, assign those workspaces to the new trial capacity within seven days.
+To cancel your free Fabric trial capacity, open your Account Manager and select **Cancel trial**. Once cancelled, Microsoft can't extend the Fabric capacity trial and you may not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. You can also [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. If your have workspaces with Fabric items, assign those workspaces to the new trial or purchased capacity within seven days.
 
 :::image type="content" source="media/fabric-trial/cancel-trial.png" alt-text="Screenshot of the Cancel trial button in Account manager.":::
 
