@@ -649,6 +649,8 @@
         href: pipeline-storage-event-triggers.md
     - name: How-to
       items:
+      - name: Use the pipeline landing page
+        href: pipeline-landing-page.md
       - name: How to use pipeline sample templates
         href: templates.md
       - name: Monitor data pipeline runs
