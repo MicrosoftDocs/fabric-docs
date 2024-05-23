@@ -1,6 +1,6 @@
 ---
 title: Configure Oracle Cloud Storage in a copy activity
-description: This article explains how to copy data by using Oracle Cloud Storage in Azure Data Factory in Microsoft Fabric.
+description: This article explains how to copy data by using Oracle Cloud Storage in Data Factory in Microsoft Fabric.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -104,7 +104,7 @@ Under **Advanced**, you can specify the following fields:
 
     For example, assuming that you configure the path as `root/folder/year=2020/month=08/day=27`:
 
-    - If you specify the partition root path as `root/folder/year=2020`, the copy activity generates two more columns, month and day. These columns have the values "08" and "27," respectively, in addition to the columns inside the files.
+    - If you specify the partition root path as `root/folder/year=2020`, the copy activity generates two more columns, month and day. These columns have the values "08" and "27" respectively, in addition to the columns inside the files.
     - If the partition root path isn't specified, no extra column is generated.
 
     :::image type="content" source="./media/connector-oracle-cloud-storage/enable-partition-discovery.png" alt-text="Screenshot that shows Enable partitions discovery.":::
@@ -126,23 +126,23 @@ The following table contains more information about the copy activity in Oracle 
 
 ### Source information
 
-|Name |Description |Value|Required |JSON script property |
+|**Name** |**Description** |**Value**|**Required** |**JSON script property** |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your Oracle Cloud Storage connection> |Yes|connection|
 | **File path type** | The file path type used to get source data. | • **File path**<br>• **Prefix**<br>• **Wildcard file path**<br>• **List of files**| Yes |/ |
-|For **File path** |||||
+|*For **File path*** |||||
 | **Bucket** | The Oracle Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|
 | **Directory** |The path to the folder under the specified bucket. | \<your folder name> |No|folderpath|
 | **File name** |The file name under the specified bucket and folder path. | \<your file name> |No|fileName|
-|For **Prefix** |||||
+|*For **Prefix*** |||||
 | **Bucket** | The Oracle Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|
 | **Prefix** | The prefix for the Oracle Cloud Storage key name under the specified bucket to filter source Oracle Cloud Storage files. | \<your prefix> |No|prefix|
-|For **Wildcard file path** |||||
+|*For **Wildcard file path*** |||||
 | **Bucket** | The Oracle Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|
 | **Wildcard folder path** | The folder path with wildcard characters under the specified bucket to filter source folders. | \<your folder path with wildcard characters> |No|wildcardFolderPath |
 | **Wildcard file name** | The file name with wildcard characters under the specified bucket and folder path (or wildcard folder path) to filter source files. | \<your file name with wildcard characters> |Yes|wildcardFileName |
-|For **List of files** |||||
+|*For **List of files*** |||||
 | **Bucket** | The Oracle Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|
 | **Directory** |The path to the folder under the specified bucket. | \<your folder name> |No|folderpath|
 | **Path to file list** | Indicates to copy a specified file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > | No | fileListPath |
