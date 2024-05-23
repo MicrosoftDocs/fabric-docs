@@ -18,10 +18,10 @@ OneLake usage is defined by data stored and the number of transactions. This pag
 ## Storage
 
 OneLake storage is billed at a pay-as-you-go rate per GB of data used. Static Storage does NOT consume Fabric Capacity Units (CUs) like transactions. Fabric items like Lakehouse and Datawarehouse  consume OneLake Storage. Data stored in OneLake for PowerBI import Semantic models will be FREE. PowerBI data not in OneLake will continue to be FREE. In the case of Mirrored data, data up to the included capacity will be FREE, and beyond that will be charged. For more information about pricing, see the [Fabric pricing](
-/pricing/details/microsoft-fabric.md).
+/azure/pricing/details/microsoft-fabric).
 You may visualize your OneLake storage usage in the Fabric Capacity Metrics app in the Storage tab. Here, you have 2 columns called billable storage and current Storage. Billable storage will show the impact of adding and deleting data over the month.  Because the total charge for data stored is not taken on one day in the month, but continuously throughout the month.  You can estimate the monthly price as the billable storage (GB) multiplied by the price per Gb per month.  So if you stored 1 TB of data on day 1 and then deleted it before day 2, you would see on day one the 1 TB/30days = 33 GB, then for the rest of the days you would see a flat line at 33 GB because no new data was added.  Then your monthly bill would be equivalent to you storing 33 GB for the month.  If you stored 1 TB on day 1 and then did not delete it, then everyday would add 33 GB until the last day you see 1 TB.
 
-For more information about monitoring usage, see the [Metrics app](/enterprise/metrics-app-storage-page.md)
+For more information about monitoring usage, see the [Metrics app](../enterprise/metrics-app-storage-page.md)
 
 
 ## Transactions
