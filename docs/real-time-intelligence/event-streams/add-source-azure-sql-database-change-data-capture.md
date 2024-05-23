@@ -38,29 +38,21 @@ Note that you must not enable mirroring in your Azure SQL database.
 
     ![A screenshot of opening Azure SQL database.](media/add-source-azure-sql-database-change-data-capture/open-azure-sqldb.png)
 
-2. Execute the following SQL commands to create a table and enable CDC in your database:
+2. Execute the following SQL commands to enable CDC in your database:
 
     ```sql
-    CREATE TABLE [dbo].[cdcTest]
-    (
-       [Id] UNIQUEIDENTIFIER NOT NULL,
-       [Message] NVARCHAR(512) NOT NULL,
-       [Age] INT NOT NULL,
-       PRIMARY KEY CLUSTERED ([Id] ASC)
-    );
-    
+    -- Enable Database for CDC
     EXEC sys.sp_cdc_enable_db;
-    GO
     
+    -- Enable CDC for a table using a gating role option
     EXEC sys.sp_cdc_enable_table
-       @source_schema = N'dbo',
-       @source_name   = N'cdcTest',
-       @role_name     = NULL, 
-       @supports_net_changes = 1
+        @source_schema = N'dbo',
+        @source_name   = N'MyTable',
+        @role_name     = NULL
     GO
     ```
 
-3. If the query executes successfully, CDC is enabled in your Azure SQL database.
+3. After the query executes successfully, you have enabled CDC in your Azure SQL database.
 
     ![A screenshot of enabling Azure SQL CDC.](media/add-source-azure-sql-database-change-data-capture/run-query.png)
 
