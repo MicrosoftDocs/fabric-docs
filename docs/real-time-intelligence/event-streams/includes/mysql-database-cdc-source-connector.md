@@ -20,7 +20,7 @@ ms.date: 05/21/2024
    - **Server:** The server address of your Azure Database for MySQL database, for example *my-mysql-server.mysql.database.azure.com*.
    - **Database:** The database name, for example *my_database*.
    - **Connection name**: Automatically generated, or you can enter a new name for this connection.
-   - **Username** and **Password**: Enter the credentials for your Azure Database for MySQL database. Make sure you enter the **Server admin login name.**
+   - **Username** and **Password**: Enter the credentials for your Azure Database for MySQL database. Make sure you enter the **server admin  account** or the [**user account created with required privileges granted**](../add-source-mysql-database-change-data-capture.md#set-up-mysql-db).
 
    ![A screenshot of the connection settings for Azure MySQL DB (CDC).](media/mysql-database-cdc-source-connector/connect.png)
 
