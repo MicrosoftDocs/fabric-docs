@@ -287,8 +287,10 @@ items:
     href: semantic-link-semantic-propagation.md
   - name: Semantic functions
     href: semantic-link-semantic-functions.md
-  - name: Read from Power BI and write data usable by Power BI
-    href: read-write-power-bi.md
+  - name: Read and write semantic models using python
+    href: read-write-power-bi-python.md
+  - name: Read and write semantic models using Spark
+    href: read-write-power-bi-spark.md
   - name: Explore and validate functional dependencies in your data
     href: semantic-link-validate-data.md
   - name: Explore and validate relationships in datasets
