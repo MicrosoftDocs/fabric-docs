@@ -144,7 +144,7 @@ The tiles at the top of the Purview hub provide access to Purview documentation 
 ## Considerations and limitations
 
 The following users can't access the Purview hub:
-* Free users (a PowerBI Pro license is required)
+* Free users (a Power BI Pro or Premium Per User (PPU) license is required)
 * Guest users
 
 ## Related content
