@@ -27,8 +27,8 @@ You see the environment publish hang and time out if you have one of the followi
 
 You have a few options to work around this issue:
 
-- Use [Fabric Runtime 1.3](/fabric/data-engineering/runtime-1-3)
-- Install the same library using the PyPI feed or move the library under the pip section in the env.yml file
+- Use [Fabric Runtime 1.3](/fabric/data-engineering/runtime-1-3).
+- Install the same library using the PyPI feed or move the library under the pip section in the env.yml file.
 - Install the same library from conda using and [in-line session install, example %conda install](/fabric/data-engineering/library-management#in-line-installation), if you're using a Notebook.
 
 ## Next steps
