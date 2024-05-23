@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/16/2024
+ms.date: 05/23/2024
 ms.custom:
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  728  | Data Engineering | [Environment doesn't work when runtime version is changed to Runtime 1.1](known-issues/known-issue-728-environment-not-work-runtime-version-changed-1-1.md) | May 23, 2024 |
+|  724  | OneLake | [Shortcuts to a firewall-enabled ADLS stop working if lakehouse is shared](known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md) | May 23, 2024 |
+|  717  | Data Factory | [known-issue-717-west-india-region-not support-on-premises-gateway-pipelines.md](known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
 |  722  | Data Warehouse | [Delta tables don't appear in SQL Analytics Endpoint Object Explorer](known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md) | May 16, 2024 |
 |  721  | Data Engineering | [Spark session doesn't start when managed virtual network's capacity moved](known-issues/known-issue-721-spark-session-managed-virtual-network-capacity-moved.md) | May 16, 2024 |
 |  718  | OneLake | [OneLake under-reports transactions in the Other category](known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 |
@@ -46,7 +49,6 @@ Select the **Title** to view more information about that specific known issue.
 |  602  | Power BI | [Dataflow Gen1 refresh fails in premium workspaces connecting to Azure Cosmos DB](known-issues/known-issue-602-dataflow-gen1-premium-workspaces-azure-cosmos-db.md) | February 27, 2024 |
 |  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 |
 |  618  | Data Warehouse | [Using an inactive SQL analytics endpoint can show old data](known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md) | February 14, 2024 |
-|  616  | OneLake | [Under-billing of OneLake storage for January 26 2024](known-issues/known-issue-616-under-billing-onelake-storage.md) | February 14, 2024 |
 |  597  | Data Factory   | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md) | November 6, 2023 |
 |  592  | Data Warehouse | [Relationships in the default semantic model get dropped](known-issues/known-issue-592-relationships-default-semantic-model-dropped.md)  | January 8, 2024 |
 |  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 |
@@ -68,6 +70,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  616  | OneLake | [Under-billing of OneLake storage for January 26 2024](known-issues/known-issue-616-under-billing-onelake-storage.md) | February 14, 2024 | Fixed: May 23, 2024 |
 |  711  | Power BI | [Azure Analysis Services Pricing Tier scaling table doesn't show data](known-issues/known-issue-711-azure-analysis-services-table-not-show-data.md) | May 1, 2024 | Fixed: May 16, 2024 |
 |  690  | Power BI | [Report Copilot button shows even though Copilot admin setting is off](known-issues/known-issue-690-report-copilot-button-shows-admin-setting-off.md) | April 25, 2024 | Fixed: May 16, 2024 |
 |  710  | OneLake | [OneLake audit events don't show up in Microsoft 365 admin center](known-issues/known-issue-710-onelake-audit-events-not-show-microsoft-365-admin-center.md) | May 1, 2024 | Fixed: May 13, 2024 |
@@ -78,8 +81,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  581  | Administration & Management | [Product switcher and creation process inadvertently show Fabric experiences](known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md)  | December 15, 2023 | Fixed: May 1, 2024 |
 |  665  | Power BI | [Currency format is unavailable in web modeling](known-issues/known-issue-665-currency-format-unavailable-web-modeling.md) | April 1, 2024 | Fixed: April 25, 2024 |
 |  611  | OneLake | [OneLake storage isn't billed for paused capacities](known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md) | February 2, 2024 | Fixed: April 25, 2024 |
-|  642  | Data Engineering | [Load Table public API response returns error](known-issues/known-issue-642-load-table-public-api-response-returns-error.md) | March 5, 2024 | Fixed: April 1, 2024 |
-|  650  | Data Factory | [ParquetSharpNative error in dataflow refresh using a gateway](known-issues/known-issue-650-parquetsharpnative-error-dataflow-refresh-using-gateway.md) | March 14, 2024 | Fixed: March 20, 2024 |
 
 ## Related content
 

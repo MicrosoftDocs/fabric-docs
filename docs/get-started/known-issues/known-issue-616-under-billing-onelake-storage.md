@@ -4,7 +4,7 @@ description: A known issue is posted where OneLake storage is under-billing for 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 02/14/2024
+ms.date: 05/23/2024
 ms.custom: known-issue-616
 ---
 
@@ -14,7 +14,7 @@ From January 26, 2024 4:00 AM through 8:00 PM UTC, there was an outage where One
 
 **Status:** Open
 
-**Product Experience:** OneLake
+**Product Experience:** Fixed: May 23, 2024
 
 ## Symptoms
 
