@@ -52,19 +52,6 @@ All Spark SQL commands can be executed in Python, R, and Scala. The semantic lin
 > [!TIP]
 > Since Power BI tables and measures are exposed as regular Spark tables, they can be joined with other Spark data sources in a single query.
 
-1. Configure Spark to use the Power BI Spark native connector:
-
-    ```Python
-    spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
-
-    # Optionally, configure the workspace ID for the Power BI catalog
-    # spark.conf.set("spark.sql.catalog.pbi.workspace", "<your-workspace-id>")
-    ```
-
-   > [!TIP]
-   > The semantic link Spark native connector is pre-installed on Fabric and does **not** require that you install the `SemPy` Python library.
-   > You can configure multiple Power BI workspaces by adding multiple catalog entries (e.g. spark.sql.catalog.my_pbi).
-
 1. List tables of all semantic models in the workspace, using PySpark.
 
     ```python
