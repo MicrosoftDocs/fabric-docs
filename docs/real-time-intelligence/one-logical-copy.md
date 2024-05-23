@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/15/2024
+ms.date: 05/23/2024
 ---
 # One logical copy
 
@@ -99,7 +99,7 @@ By default, when **OneLake availability** is turned on, a mirroring policy is se
 Eventhouse can delay write operations for up to a few hours if there isn’t sufficient data to create optimal Parquet files. This ensures that the files are not only efficient in size but also adhere to the best practices recommended for Delta.
 You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rta&pivots=fabric).
 
-When `Latency` results in 00:00:00, data was just added. Results are measured from the last time data was added.
+When *Latency* results in 00:00:00, data was just added. Results are measured from the last time data was added.
 
 ### Partition OneLake files
 
