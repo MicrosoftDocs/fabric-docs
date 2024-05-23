@@ -33,7 +33,7 @@ The following sections describe some of the ways you can get started with this m
 - To take full advantage of what the Delta Lake storage format can do for you, review and understand the format, table optimization, and V-Order. [Delta Lake table optimization and V-Order](../../data-engineering/delta-optimization-and-v-order.md).
 - Once the data is in OneLake, explore locally using [OneLake File Explorer](../../onelake/onelake-file-explorer.md). OneLake file explorer seamlessly integrates OneLake with Windows File Explorer. This application automatically syncs all OneLake items that you have access to in Windows File Explorer. You can also use any other tool compatible with ADLS Gen2 like [Azure Storage Explorer](https://azure.microsoft.com/products/storage/storage-explorer).
 
-:::image type="content" source="media/partner-integration/onelake-apis.png" alt-text="Diagram showing how OneLake APIs interact with Fabric workloads.":::
+:::image type="content" source="media/partner-integration/onelake-apis.png" alt-text="Diagram showing how OneLake APIs interact with Fabric workloads." lightbox="media/partner-integration/onelake-apis.png":::
 
 ### Real-Time Intelligence APIs
 
@@ -45,7 +45,7 @@ Real-Time Intelligence streamlines data analysis and visualization, offering a c
 - You can utilize the existing [Microsoft Logic Apps](/azure/data-explorer/kusto/tools/logicapps), [Azure Data Factory](/azure/data-explorer/data-factory-integration), or [Microsoft Power Automate](/azure/data-explorer/flow) connectors to interact with your Event houses or KQL Databases.
 - [Database shortcuts in Real-Time Intelligence](../../real-time-intelligence/database-shortcut.md) are embedded references within an event house to a source database. The source database can either be a KQL Database in Real-Time Intelligence or an Azure Data Explorer database. Shortcuts can be used for in place sharing of data within the same tenant or across tenants. Learn more about managing [database shortcuts using the API](#develop-on-fabric).
 
-:::image type="content" source="media/partner-integration/real-time-intelligence-apis.png" alt-text="Diagram showing how Real-Time Intelligence APIs interact with Fabric workloads.":::
+:::image type="content" source="media/partner-integration/real-time-intelligence-apis.png" alt-text="Diagram showing how Real-Time Intelligence APIs interact with Fabric workloads." lightbox="media/partner-integration/real-time-intelligence-apis.png":::
 
 ### Data Factory in Fabric
 
@@ -53,7 +53,7 @@ Real-Time Intelligence streamlines data analysis and visualization, offering a c
 - With our supported Dataflow Gen2 connectors, ISVs can harness the power of Fabric Data Factory to manage complex data workflows. This feature is especially beneficial for ISVs looking to streamline data processing and transformation tasks. [Dataflow Gen2 connectors in Microsoft Fabric](../../data-factory/dataflow-support.md).
 - For a full list of capabilities supported by Data Factory in Fabric checkout this [Data Factory in Fabric Blog](https://blog.fabric.microsoft.com/blog/introducing-data-factory-in-microsoft-fabric?ft=All).
 
-:::image type="content" source="media/partner-integration/fabric-data-factory.png" alt-text="Screenshot of the Fabric Data Factory interface.":::
+:::image type="content" source="media/partner-integration/fabric-data-factory.png" alt-text="Screenshot of the Fabric Data Factory interface." lightbox="media/partner-integration/fabric-data-factory.png":::
 
 ### Multicloud shortcuts
 
@@ -63,7 +63,7 @@ Shortcuts in Microsoft OneLake allow you to unify your data across domains, clou
 - [Learn more about OneLake one logical copy](../../real-time-intelligence/one-logical-copy.md)
 - [Learn more about KQL database shortcuts](../../real-time-intelligence/database-shortcut.md)
 
-:::image type="content" source="media/partner-integration/multicloud-shortcuts.png" alt-text="Diagram showing multicloud shortcuts in OneLake.":::
+:::image type="content" source="media/partner-integration/multicloud-shortcuts.png" alt-text="Diagram showing multicloud shortcuts in OneLake." lightbox="media/partner-integration/multicloud-shortcuts.png":::
 
 ### Data sharing
 
@@ -71,17 +71,17 @@ Data Sharing allows Fabric users to share data across different Fabric tenants w
 
 - [Learn more about Data Sharing](../../governance/external-data-sharing-overview.md)
 
-:::image type="content" source="media/partner-integration/data-sharing.png" alt-text="Diagram showing data sharing in Fabric.":::
+:::image type="content" source="media/partner-integration/data-sharing.png" alt-text="Diagram showing data sharing in Fabric." lightbox="media/partner-integration/data-sharing.png":::
 
 ### Database mirroring
 
 Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from external databases or data warehouse into the data warehousing experience in Microsoft Fabric. Mirroring is all in near real-time giving users immediate access to changes in the source. Learn more about [mirroring and the supported databases](../../database/mirrored-database/overview.md).
 
-:::image type="content" source="media/partner-integration/database-mirroring.png" alt-text="Diagram showing database mirroring in Fabric.":::
+:::image type="content" source="media/partner-integration/database-mirroring.png" alt-text="Diagram showing database mirroring in Fabric." lightbox="media/partner-integration/database-mirroring.png":::
 
 ## Develop on Fabric
 
-:::image type="content" source="media/partner-integration/develop-on-fabric.png" alt-text="Diagram showing how to build apps on Fabric.":::
+:::image type="content" source="media/partner-integration/develop-on-fabric.png" alt-text="Diagram showing how to build apps on Fabric." lightbox="media/partner-integration/develop-on-fabric.png":::
 
 With the **Develop on Fabric model** ISVs can build their products and services on top of Fabric or seamlessly embed Fabric's functionalities within their existing applications. It's a transition from basic integration to actively applying the capabilities Fabric offers. The main integration surface area is via REST APIs for various Fabric workloads. The following table shows a subset of REST APIs grouped by the Fabric experience. For a complete list, see the [Fabric REST API documentation](/rest/api/fabric/articles/).
 
@@ -97,7 +97,7 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 
 ## Build a Fabric workload
 
-:::image type="content" source="media/partner-integration/fabric-workload.png" alt-text="Diagram showing how to create your own fabric workload.":::
+:::image type="content" source="media/partner-integration/fabric-workload.png" alt-text="Diagram showing how to create your own fabric workload." lightbox="media/partner-integration/fabric-workload.png":::
 
 **Build a Fabric workload** model is designed to empower ISVs to create custom workloads and experiences on the Fabric platform. It provides ISVs with the necessary tools and capabilities to align their offerings with the Fabric ecosystem, optimizing the combination of their unique value propositions with Fabric's extensive capabilities.
 
