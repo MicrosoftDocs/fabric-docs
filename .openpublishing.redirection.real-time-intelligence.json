@@ -424,6 +424,16 @@
       "source_path_from_root": "/docs/real-time-intelligence/kql-database-consumption.md",
       "redirect_url": "/fabric/real-time-intelligence/real-time-intelligence-consumption",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/get-started/copilot-real-time-analytics.md",
+      "redirect_url": "/fabric/get-started/copilot-real-time-intelligence",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/get-started/copilot-real-time-analytics-privacy-security.md",
+      "redirect_url": "/fabric/get-started/copilot-real-time-intelligence-privacy-security",
+      "redirect_document_id": true
     }
   ]
 }

@@ -1,14 +1,15 @@
 ---
 title:  Fabric decision guide - choose a data store
-description: Review a reference table and some quick scenarios to help in choosing whether to use a data warehouse, lakehouse, Power BI Datamart, or KQL Database for your data in Fabric.
-ms.reviewer: sngun
-ms.author: scbradl
+description: Review a reference table and some quick scenarios to help in choosing whether to use a warehouse, lakehouse, Power BI Datamart, or KQL Database for your data in Fabric.
 author: bradleyschacht
+ms.author: scbradl
+ms.reviewer: sngun, wiassaf
 ms.topic: quickstart
+ms.date: 05/21/2024
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/18/2023
+  - build-2024
 ---
 
 # Microsoft Fabric decision guide: choose a data store
@@ -17,7 +18,7 @@ Use this reference guide and the example scenarios to help you choose a data sto
 
 ## Data store properties
 
-| | **Data warehouse** | **Lakehouse** | **Power BI Datamart**  | **KQL Database** ([**Eventhouse**](#eventhouse)) |
+| | **Warehouse** | **Lakehouse** | **Power BI Datamart**  | **KQL Database** ([**Eventhouse**](#eventhouse)) |
 |---|:---:|:---:|:---:|:---:|
 | **Data volume** | Unlimited | Unlimited | Up to 100 GB | Unlimited |
 | **Type of data** | Structured | Unstructured,semi-structured,structured | Structured | Unstructured, semi-structured, structured |
@@ -29,7 +30,7 @@ Use this reference guide and the example scenarios to help you choose a data sto
 | **Multi-table transactions** | Yes | No | No | Yes, for multi-table ingestion. See [update policy](/azure/data-explorer/kusto/management/updatepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric#the-update-policy-object).|
 | **Primary development interface** | SQL scripts | Spark notebooks,Spark job definitions | Power BI | KQL Queryset, KQL Database |
 | **Security** | Object level (table, view, function, stored procedure, etc.), column level, row level, DDL/DML, dynamic data masking | Row level, table level (when using T-SQL), none for Spark | Built-in RLS editor | Row-level Security |
-| **Access data via shortcuts** | Yes (indirectly through the lakehouse) | Yes | No | Yes |
+| **Access data via shortcuts** | Yes, through a lakehouse using three-part names | Yes | No | Yes |
 | **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No | Yes |
 | **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;query across lakehouses (including shortcuts using Spark) | No | Yes, query across KQL Databases, lakehouses, and warehouses with shortcuts |
 | **Advanced analytics** |  |  |  |Time Series native elements, Full geospatial storing and query capabilities |
@@ -48,7 +49,9 @@ Review these scenarios for help with choosing a data store in Fabric.
 
 Susan, a professional developer, is new to Microsoft Fabric. They are ready to get started cleaning, modeling, and analyzing data but need to decide to build a data warehouse or a lakehouse. After review of the details in the previous table, the primary decision points are the available skill set and the need for multi-table transactions.
 
-Susan has spent many years building data warehouses on relational database engines, and is familiar with SQL syntax and functionality. Thinking about the larger team, the primary consumers of this data are also skilled with SQL and SQL analytical tools. Susan decides to use a **data warehouse**, which allows the team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data.
+Susan has spent many years building data warehouses on relational database engines, and is familiar with SQL syntax and functionality. Thinking about the larger team, the primary consumers of this data are also skilled with SQL and SQL analytical tools. Susan decides to use a **data warehouse**, which allows the team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data. 
+
+Susan creates a new lakehouse. Using the Fabric portal, creates shortcuts to the external data tables and places them in the `/Tables` folder. Susan now can write T-SQL queries that reference shortcuts to query Delta Lake data in the lakehouse. The shortcuts automatically appear as tables in the SQL analytics endpoint and can be queried with T-SQL using three-part names.
 
 ### Scenario 2
 

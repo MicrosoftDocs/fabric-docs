@@ -8,8 +8,11 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add and manage a destination in an eventstream
@@ -27,20 +30,25 @@ To add a destination to an eventstream, you need the following prerequisites:
 
 Fabric event streams supports the following destinations. Use links in the table to navigate to articles about how to add specific destinations.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
+[!INCLUDE [select-view](./includes/select-view.md)]
 
-# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
+::: zone pivot="enhanced-capabilities"  
 
 [!INCLUDE [supported-destinations](./includes/supported-destinations-enhanced.md)]
 
-# [Standard capabilities](#tab/standardcapabilities)
+
+::: zone-end
+
+::: zone pivot="standard-capabilities"
+
 
 [!INCLUDE [supported-destinations](./includes/supported-destinations-standard.md)]
 
 
+::: zone-end
+
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
----
 
 ## Manage a destination
 

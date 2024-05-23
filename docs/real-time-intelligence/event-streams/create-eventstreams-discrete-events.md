@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
@@ -23,7 +25,7 @@ To build an efficient and scalable eventstream in Fabric, it's important to unde
 
 - **Discrete events**, often referred to as notification events, are individual occurrences that happen at specific points in time. Each event is independent of others and has a clear start and end point. Examples of discrete events include users placing orders on a website or making changes to a database.
 
-- **Continuous events** or streams represent a continuous flow or stream of data over time. Unlike discrete events, continuous events don't have distinct start or end points. Instead, they represent a steady and ongoing stream of data, often with no predefined boundaries. Examples include sensor data from IoT devices, stock market ticker data, or social media posts in a real-time feed.
+- **Continuous events** or **streams** represent a continuous flow or stream of data over time. Unlike discrete events, continuous events don't have distinct start or end points. Instead, they represent a steady and ongoing stream of data, often with no predefined boundaries. Examples include sensor data from IoT devices, stock market ticker data, or social media posts in a real-time feed.
 
 >[!NOTE]
 >It's recommended to have either discrete event sources or continuous event (stream) sources, not a mix of both, in one eventstream.

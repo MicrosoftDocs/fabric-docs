@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
@@ -20,11 +22,16 @@ You can specify the tables to monitor, and the eventstream records any future ro
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
+[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
+
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - Access to an instance of Azure Database for MySQL - Flexible Server.
 - Your MySQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
 
 ## Set up MySQL DB
 

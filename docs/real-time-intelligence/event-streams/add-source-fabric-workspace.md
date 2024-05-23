@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
@@ -34,6 +36,9 @@ Fabric event streams supports the following Fabric workspace events:
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
 - A Fabric workspace with events you want to track.
+
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
 
 ## Add Fabric Workspace Item events as source
 

@@ -7,6 +7,7 @@ ms.reviewer: 'guptamaya'
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
+  - build-2024
 ms.topic: conceptual
 ms.date: 02/07/2024
 no-loc: [Copilot]

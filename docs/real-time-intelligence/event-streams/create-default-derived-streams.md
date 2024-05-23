@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
@@ -25,7 +27,7 @@ The integration of the Real-Time hub feature within Fabric event streams further
 
   - **Default stream**. Every Fabric event streams item comes with a default stream that's automatically generated once a streaming source is added to the eventstream. It represents the raw events coming from the streaming source. You can transform and route the default stream to multiple destinations in Fabric. You can view the default stream from the Real-Time hub.
 
-  - **Derived stream** is a specialized type of destination within Fabric event streams that's created following the addition of a series of stream operations, such as **Filter** or **Manage Fields**. The derived stream represents the transformed default stream following stream processing. You can also route the derived stream to multiple destinations in Fabric. Once created, you can view the derived stream from the Real-Time hub.
+  - **Derived stream** is a specialized type of destination within Fabric event streams that's created following the addition of a series of stream operations, such as **Filter** or **Manage Fields**. The derived stream represents the transformed default stream following stream processing. You can also route the streaming data in derived stream to multiple destinations in Fabric. Once created, it’s ready for further consumption or analysis by other users in the organization through the Real-Time hub.
 
 ## Create a default stream
 

@@ -4,6 +4,8 @@ description: This article describes supported sources such as Azure Event Hubs a
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 

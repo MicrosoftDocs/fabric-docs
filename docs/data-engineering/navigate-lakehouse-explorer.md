@@ -8,6 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
 ms.date: 04/12/2023
 ms.search.form: Lakehouse Explorer
 ---

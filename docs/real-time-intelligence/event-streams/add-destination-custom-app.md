@@ -5,22 +5,28 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-streams-standard-enhanced
 ---
 
-# Add a custom app destination to an eventstream
+# Add a custom endpoint destination to an eventstream
 
-This article shows you how to add a custom app destination to an eventstream in Microsoft Fabric event streams.
+This article shows you how to add a custom endpoint (former custom app) destination to an eventstream in Microsoft Fabric event streams.
 
-If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced capabilities** tab. Otherwise, use the content in the **Standard capabilities** tab. For information about the enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
+[!INCLUDE [select-view](./includes/select-view.md)]
 
-# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
+::: zone pivot="enhanced-capabilities"  
 
 ## Prerequisites  
 Before you start, you must complete the following prerequisites:  
 
-- Get access to a premium workspace with Contributor or above permissions where your eventstream is located.  
+- Get access to a premium workspace with Contributor or above permissions where your eventstream is located.
+
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add a custom endpoint as a destination  
 If you want to route event data to your app, you can add a custom endpoint as your eventstream destination. Follow these steps to add a custom endpoint destination: 
@@ -81,8 +87,17 @@ The **Kafka** format is compatible with the Apache Kafka protocol, which is a po
 
 You can choose the protocol format that suits your application needs and preferences, and copy and paste the connection string into your application. You can also refer to or copy the sample code that we provide in the Sample code tab, which shows how to send or receive events using different protocols.    
 
+## Related content
+To learn how to add other destinations to an eventstream, see the following articles:     
 
-# [Standard capabilities](#tab/standardcapabilities)
+- [Derived stream](add-destination-derived-stream.md)    
+- [KQL Database](add-destination-kql-database.md)   
+- [Lakehouse](add-destination-lakehouse.md)
+- [Reflex](add-destination-reflex.md)
+
+::: zone-end
+
+::: zone pivot="standard-capabilities"
 
 ## Prerequisites
 Before you start, you must complete the following prerequisites:
@@ -135,17 +150,12 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing where to select the modify and delete options for destinations on the canvas." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
 
----
 
 ## Related content
 To learn how to add other destinations to an eventstream, see the following articles:     
 
-- [Derived stream](add-destination-derived-stream.md)    
 - [KQL Database](add-destination-kql-database.md)   
 - [Lakehouse](add-destination-lakehouse.md)
 - [Reflex](add-destination-reflex.md)
 
-To add a destination to the eventstream, see the following articles:     
-
-- [Route events to destinations (preview)](add-manage-eventstream-destinations.md)     
-- [Create an eventstream (preview)](create-manage-an-eventstream.md)      
+::: zone-end

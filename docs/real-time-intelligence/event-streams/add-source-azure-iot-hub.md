@@ -7,12 +7,16 @@ author: alexlzx
 ms.topic: how-to
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add Azure IoT Hub source to an eventstream
-This article shows you how to add an Azure IoT Hub source to an eventstream. If you want to use enhanced capabilities that are in preview, see the content in the **Enhanced Capabilities** tab. Otherwise, use the content in the **Standard Capabilities** tab. For information about enhanced capabilities that are in preview, see [Introduction to Fabric event streams](overview.md).
+This article shows you how to add an Azure IoT Hub source to an eventstream. 
 
-# [Enhanced capabilities (preview)](#tab/enhancedcapabilities)
+[!INCLUDE [select-view](./includes/select-view.md)]
+
+::: zone pivot="enhanced-capabilities"  
 
 ## Prerequisites 
 Before you start, you must complete the following prerequisites: 
@@ -21,6 +25,9 @@ Before you start, you must complete the following prerequisites:
 - You need to have appropriate permission to get IoT hub's access keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
 
 ## Add Azure IoT Hub as a source 
 Follow these steps to add an Azure IoT hub as your eventstream source: 
@@ -48,7 +55,7 @@ After you complete these steps, the Azure IoT hub is available for visualization
 
 ## Related content
 
-Other connectors:
+To learn how to add other sources to an eventstream, see the following articles: 
 
 - [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
 - [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
@@ -63,7 +70,12 @@ Other connectors:
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
 
-# [Standard capabilities](#tab/standardcapabilities)
+
+::: zone-end
+
+::: zone pivot="standard-capabilities"
+
+
 
 ## Prerequisites
 
@@ -124,8 +136,4 @@ To learn how to add other sources to an eventstream, see the following articles:
 - [Sample data](add-source-sample-data.md)
 - [Custom app](add-source-custom-app.md)
 
-To add a destination to the eventstream, see the following articles: 
-- [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)
-- [Create and manage an eventstream](./create-manage-an-eventstream.md)
-
----
+::: zone-end

@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 04/22/2024
 ms.search.form: Source and Destination
 ---
@@ -25,13 +27,13 @@ Here's an overview of everything you find in the two different modes:
 
 - Any changes made within Edit mode aren't implemented until you choose to publish them, ensuring you have full control over the development process of your eventstreams.
 
-- There's no risk of test data being streamed to your eventstreams. This mode is designed to provide a secure environment for testing without affecting your actual data streams.
+- There's no risk of test data being streamed to your eventstreams or destinations. This mode is designed to provide a secure environment for testing without affecting your actual data streams.
 
 - If you make changes to an existing eventstream, those changes aren't implemented until you publish the eventstream.
 
 **Live view:**
 
-- You can visualize how your eventstreams receive, transform, and route your events to various destinations after you publish the changes.
+- You can visualize how your eventstreams receive, transform, and route your events from sources to various destinations after you publish the changes.
 
 - You can pause the flow of data on any selected sources and destinations, providing you with more control over your data streams.
 

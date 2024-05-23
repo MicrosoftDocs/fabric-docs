@@ -4,7 +4,7 @@ description: A known issue is posted where the report Copilot button shows even 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/25/2024
+ms.date: 05/16/2024
 ms.custom: known-issue-690
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-690
 
 Even if the tenant admin setting **Users can use a preview of Copilot and other features powered by Azure OpenAI** is turned off, the Copilot button still appears on reports. You can select the button to open the pane, but the pane shows an error and Copilot can't be used.
 
-**Status:** Open
+**Status:** Fixed: May 16, 2024
 
 **Product Experience:** Power BI
 

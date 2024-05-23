@@ -4,7 +4,8 @@ description: Learn how to create a Data Activator alert from a Real-Time Dashboa
 author: jamesdhutton
 ms.author: jameshutton
 ms.topic: concept
-ms.custom: 
+ms.custom:
+  - build-2024
 ms.date: 05/08/2024
 ---
 
@@ -50,6 +51,37 @@ When your trigger is ready, you'll receive a notification with a link to your tr
 * Define a more complex alert condition than is possible in the *Set alert* pane.
 
 For information on how to edit triggers in Data Activator, see [Create triggers in design mode](data-activator-create-triggers-design-mode.md) .
+
+## Limitations on charts with a time axis
+
+If you have a chart with a time axis in Power BI or in a Real-Time Dashboard, then Data Activator will read the measure value exactly once for each point on the time axis. If the measure value for a given time point changes after Data Activator reads it, then Data Activator will ignore the changed value.
+
+### Limitation example
+
+The following example illustrates this limitation. In this example, a chart shows number of items sold over time. Data Activator first reads the chart in the morning of 3 January. At this time, the chart shows 10 items sold so far for 3 January:
+
+|Date        | Number of items sold
+|------------|---------------------|
+|1 January   |20
+|2 January   |18
+|3 January   |10
+
+Later in the day of 3 January, more items get sold. The chart updates to reflect this, and the number of items sold for 3 January now reads 15:
+
+|Date        | Number of items sold
+|------------|---------------------|
+|1 January   |20
+|2 January   |18
+|3 January   |15 *(changed from earlier in the day)*
+
+Data Activator **ignores the changed value**, because it has already read a value of 10 earlier in the day.
+
+### How to work around this limitation
+
+The most common reason that a measure value can change over time is that the most recent point on the time axis is subject to change. The worked example above is an example of this situation: since the most recent point on the time axis represents the current date, the number of sales can increase throughout the day. The number of items sold on previous days never change, because these dates are in the past. When this situation occurs, there are two ways you can work around it:
+
+1. **Exclude the current date/time from the chart**: you can add a relative time filter to your chart to exclude the current date or time from your chart. That way, Data Activator will see values only once they are final and no longer subject to change.
+1. **Use a card or KPI visual to track the value for the current date**: the limitation described here only applies to charts with a time axis. So if you want to alert on values for the current date or time, then you can use a KPI or card visual that shows the value for the current date or time. For example, you could have a KPI visual that displays "sales so far for today". Data Activator will be able to read and respond to changes in this value throughout the day.
 
 ## Related content
 

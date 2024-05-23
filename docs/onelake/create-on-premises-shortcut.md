@@ -7,16 +7,17 @@ author: matt1883
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
 # Create shortcuts to on-premises data
 
-With OneLake Shortcuts, you can create virtual references to bring together data from a variety sources across clouds, regions, systems, and domains – all with no data movement or duplication. By using a Fabric on-premises data gateway (OPDG), you can now also create shortcuts to on-premises data sources, such as S3 compatible storage hosted on-premises. With this feature, you can also create shortcuts or other network-restricted data sources, such as Amazon S3 or Google Clouds Storage buckets configured behind a firewall or Virtual Private Cloud (VPC).
+With OneLake Shortcuts, you can create virtual references to bring together data from a variety sources across clouds, regions, systems, and domains – all with no data movement or duplication. By using a Fabric on-premises data gateway (OPDG), you can now also create shortcuts to on-premises data sources, such as S3 compatible storage hosted on-premises. With this feature, you can also create shortcuts to other network-restricted data sources, such as Amazon S3 or Google Clouds Storage buckets configured behind a firewall or Virtual Private Cloud (VPC).
 
 On-premises data gateways are software agents that you install on a Windows machine and configure to connect to your data endpoints. By selecting an OPDG when creating a shortcut, you can establish network connectivity between OneLake and your data source. 
 
-This feature is available for Amazon S3, Google Cloud Storage, and S3 compatible shortcuts.
+This feature is available for Amazon S3, Google Cloud Storage, and S3 compatible shortcuts. You can use this feature in any Fabric-enabled workspace.
 
 In this document, we show you how to install and use these on-premises data gateways to create shortcuts to on-premises or network-restricted data.
 
@@ -24,6 +25,7 @@ In this document, we show you how to install and use these on-premises data gate
 
 ## Prerequisites
 
+* Create or identify a Fabric lakehouse that will contain your shortcut(s).
 * Identify the endpoint URL associated with your Amazon S3, Google Cloud Storage, or S3 compatible location.
   * For S3 compatible, the endpoint is the URL for the service, not a specific bucket. For example:
     * `https://mys3api.contoso.com`

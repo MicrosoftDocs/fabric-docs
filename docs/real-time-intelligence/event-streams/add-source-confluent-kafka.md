@@ -5,6 +5,8 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ms.search.form: Source and Destination
 ---
@@ -16,11 +18,16 @@ Confluent Cloud Kafka is a streaming platform offering powerful data streaming a
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
 
+[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
+
 ## Prerequisites 
 
 - Access to the Fabric premium workspace with Contributor or above permissions. 
 - A Confluent Cloud Kafka cluster and an API Key. 
 - Your Confluent Cloud Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.
+
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
 
 ## Add Confluent Cloud Kafka as a source 
 

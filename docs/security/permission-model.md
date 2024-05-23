@@ -4,6 +4,8 @@ description: Learn how permissions work in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
+ms.custom:
+  - build-2024
 ms.date: 03/18/2024
 ---
 

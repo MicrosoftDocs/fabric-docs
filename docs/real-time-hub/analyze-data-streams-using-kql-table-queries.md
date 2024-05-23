@@ -1,9 +1,11 @@
 ---
 title: Analyze data streams in Real-Time hub
-description: This article describes how to analyze data streams in Real-Time hub. Process using transformations in eventstreams, add KQL destination to send it to a KQL table and analyze it. 
+description: This article describes how to analyze data streams in Real-Time hub. Process using transformations in eventstreams, add KQL destination to send it to a KQL table and analyze it.
 author: ajetasin
 ms.author: ajetasi
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 05/21/2024
 ---
 
@@ -65,5 +67,3 @@ You can open the KQL database that's associated with a table by using one of the
     :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/open-kql-database-detail.png" alt-text="Screenshot that shows the Open KQL Database links for a stream of type Table from the detail view." :::   
 
 After you open the table, you can run queries against the tables in the database. 
-
-

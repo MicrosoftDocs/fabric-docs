@@ -7,6 +7,8 @@ ms.reviewer: ajagadish
 ms.date: 05/03/2024
 ms.service: fabric
 ms.subservice: data-warehouse
+ms.custom:
+  - build-2024
 ms.topic: how-to
 ---
 # Tutorial: Time travel using T-SQL at statement level (preview)

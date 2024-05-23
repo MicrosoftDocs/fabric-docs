@@ -1,9 +1,12 @@
 ---
 title: Add Confluent Cloud Kafka as source in Real-Time hub
-description: This article describes how to add Confluent Cloud Kafka as an event source in Fabric Real-Time hub. 
+description: This article describes how to add Confluent Cloud Kafka as an event source in Fabric Real-Time hub.
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
+ms.custom:
+  - build-2024
+  - references_regions
 ms.date: 05/21/2024
 ---
 
@@ -71,4 +74,3 @@ To learn about consuming data streams, see the following articles:
 - [Process data streams](process-data-streams-using-transformations.md)
 - [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
-
