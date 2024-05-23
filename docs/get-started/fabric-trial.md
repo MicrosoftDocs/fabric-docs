@@ -110,7 +110,7 @@ If you're the capacity or Fabric administrator, from the upper right corner of F
 
 ## End a Fabric trial
 
-End a Fabric capacity trail by canceling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial but ndividual users don't have this ability. All licenses return to their original versions. You no longer have the equivalent of a PPU license. If you want to retain your data ad continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. For more information, see [Canceling, expiring, and closing](../enterprise/fabric-close-end-cancel.md).
+End a Fabric capacity trail by canceling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial but ndividual users don't have this ability. All licenses return to their original versions. You no longer have the equivalent of a PPU license. If you want to retain your data ad continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. <!-- For more information, see [Canceling, expiring, and closing](../enterprise/fabric-close-end-cancel.md). -->
 
 ### The trial expires 
 
