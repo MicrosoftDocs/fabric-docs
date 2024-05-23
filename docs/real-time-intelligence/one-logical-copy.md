@@ -89,10 +89,10 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
 
 ## Access mirroring policy
 
-By default, when **OneLake availability** is turned on, a mirroring policy is set as `IsEnabled=true`. You can use the policy to monitor data latency and alter it to partition your files.
+By default, when **OneLake availability** is turned on, a mirroring policy is enabled (`IsEnabled=true`). You can use the policy to [monitor data latency](#check-latency) or alter it to [partition your files](#partition-onelake-files).
 
 > [!NOTE]
-> If you deactivate **OneLake availability** the mirroring policy will be set to `false` rather than revert to a `null` state.
+> If you turn off **OneLake availability**, the mirroring policy's `IsEnabled` property is set to *false* (`IsEnabled=false`).
 
 ### Check latency
 
