@@ -36,7 +36,7 @@ Note that you must not enable mirroring in your Azure SQL database.
 
 1. Go to the Azure portal, open your Azure SQL database, and select **Query editor**. Choose an authentication method to log in.
 
-    ![A screenshot of opening Azure SQL database.](media/add-source-azure-sql-database-change-data-capture/open-azure-sqldb.png)
+    :::image type="content" source="./media/add-source-azure-sql-database-change-data-capture/open-azure-sqldb.png" alt-text="A screenshot of opening Azure SQL database." lightbox="./media/add-source-azure-sql-database-change-data-capture/open-azure-sqldb.png":::
 
 2. Execute the following SQL commands to enable CDC in your database:
 
@@ -54,7 +54,7 @@ Note that you must not enable mirroring in your Azure SQL database.
 
 3. After the query executes successfully, you have enabled CDC in your Azure SQL database.
 
-    ![A screenshot of enabling Azure SQL CDC.](media/add-source-azure-sql-database-change-data-capture/run-query.png)
+    :::image type="content" source="./media/add-source-azure-sql-database-change-data-capture/run-query.png" alt-text="A screenshot of enabling Azure SQL CDC." lightbox="./media/add-source-azure-sql-database-change-data-capture/run-query.png":::
 
 ## Add Azure SQL Database CDC as a source
 
