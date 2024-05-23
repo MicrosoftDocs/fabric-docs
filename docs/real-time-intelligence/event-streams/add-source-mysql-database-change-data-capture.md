@@ -37,8 +37,8 @@ You can specify the tables to monitor, and the eventstream records any future ro
 
 The connector uses the Debezium MySQL connector to capture changes in your Azure Database for MySQL database. You must define a MySQL user with appropriate privileges on all databases where the Messaging Connector can capture the changes from. You can directly use the **admin user** to connect to the database which normally has the appropriate privileges already as below. or you can follow the below steps to create a new user 
 
->[!NOTE]
->The new user or admin and the corresponding password will be used to connect to database later inside Eventstream. 
+> [!NOTE]
+> The new user or admin account and the corresponding password will be used to connect to database later inside Eventstream. 
 
 1. At the `mysql` command prompt, create the MySQL user:
 
