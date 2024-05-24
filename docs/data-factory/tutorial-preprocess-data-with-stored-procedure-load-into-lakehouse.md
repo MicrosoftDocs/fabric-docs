@@ -110,7 +110,7 @@ In this section, we use a Script activity to run the stored procedure created in
 
 1. Review the summary on the final page of the Copy assistant. Uncheck the **Start data transfer immediately** checkbox and then select **OK**.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/review-summary.png" alt-text="Screenshot showing the summary page of the Copy assistant with details of the configured connections.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/review-summary.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/review-summary.png" alt-text="Screenshot showing the summary page of the Copy assistant with details of the configured connections.":::
 
 1. After you select **OK**, the new Copy activity will be added onto the pipeline canvas.
 
@@ -126,11 +126,11 @@ In this section, we use a Script activity to run the stored procedure created in
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/run-pipeline.png" alt-text="Screenshot showing the pipeline Run button.":::
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Save and run button for the pipeline.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" lightbox="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Save and run button for the pipeline.":::
 
 1. After the pipeline successfully runs, you can view the details for more information. Select the link with your Copy activity name to see it's run details.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-pipeline-run-details-button.png" alt-text="Screenshot showing the view pipeline run details button.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-pipeline-run-details-button.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-pipeline-run-details-button.png" alt-text="Screenshot showing the view pipeline run details button.":::
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/run-details.png" alt-text="Screenshot showing the run details for the pipeline.":::
 
@@ -140,7 +140,7 @@ In this section, we use a Script activity to run the stored procedure created in
 
 1. Select the table SynapseNamesTable to view the dat loaded into Lakehouse.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-lakehouse-table.png" alt-text="Screenshot showing the results in the SynapseNamesTable in Lakehouse.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-lakehouse-table.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-lakehouse-table.png" alt-text="Screenshot showing the results in the SynapseNamesTable in Lakehouse.":::
 
 ## Related content
 
