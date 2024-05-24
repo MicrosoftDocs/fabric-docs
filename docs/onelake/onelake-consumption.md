@@ -17,7 +17,12 @@ OneLake usage is defined by data stored and the number of transactions. This pag
 
 ## Storage
 
-OneLake storage is billed at a pay-as-you-go rate per GB of data used. Static Storage does NOT consume Fabric Capacity Units (CUs). For more information about pricing, see the [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+OneLake storage is billed at a pay-as-you-go rate per GB of data used. Static Storage does NOT consume Fabric Capacity Units (CUs). Fabric items like Lakehouse and Datawarehouse  consume OneLake Storage. Data stored in OneLake for Power BI import Semantic models are FREE. Power BI data not in OneLake continues to be FREE. For Mirrored data, data up to the included capacity is FREE, and beyond that is charged. For more information about pricing, see the [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+
+You may visualize your OneLake storage usage in the Fabric Capacity Metrics app in the Storage tab. Here, you have two columns called billable storage and current Storage. Billable storage shows the cumulative data over the month. Because the total charge for data stored isn't taken on one day in the month, but on a pro-rated basis throughout the month. You can estimate the monthly price as the billable storage (GB) multiplied by the price per Gb per month. So, if you stored 1 TB of data on day 1 and then deleted it before day 2, you would see on day one the 1 TB/30days = 33 GB. No additional storage is reported and you'll thus see just 33 GB for the month. However, if you stored 1 TB on day 1 and then didn't delete the data, then everyday would add 33 GB until the last day when you'll see 1 TB.
+
+:::image type="content" source="media\onelake-consumption\storage.png" alt-text="Diagram showing how OneLake storage is viewed in Fabric Metrics app." lightbox="media\onelake-consumption\storage.png":::
+
 You can track storage usage in the Fabric Capacity Metrics app. For more information about monitoring usage, see the [Metrics app Storage page](../enterprise/metrics-app-storage-page.md).
 
 ## Transactions
@@ -31,8 +36,8 @@ This table defines CU consumption when OneLake data is accessed using most appli
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
-| **OneLake Read via Redirect** | OneLake Read via Redirect | Every 4MB, per 10,000 | 104 CU seconds |
-| **OneLake Write via Redirect** | OneLake Write via Redirect | Every 4MB, per 10,000 | 1626 CU seconds |
+| **OneLake Read via Redirect** | OneLake Read via Redirect | Every 4 MB, per 10,000 | 104 CU seconds |
+| **OneLake Write via Redirect** | OneLake Write via Redirect | Every 4 MB, per 10,000 | 1626 CU seconds |
 | **OneLake Iterative Read via Redirect** | OneLake Iterative Read via Redirect | Per 10,000 | 1626 CU seconds |
 | **OneLake Iterative Write via Redirect** | OneLake Iterative Write via Redirect | Per 100 | 1300 CU seconds |
 | **OneLake Other Operations via Redirect** | OneLake Other Operations via Redirect | Per 10,000 | 104 CU seconds |
@@ -41,8 +46,8 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
-| **OneLake Read via Proxy** | OneLake Read via Proxy | Every 4MB, per 10,000 | 306 CU seconds |
-| **OneLake Write via Proxy** | OneLake Write via Proxy | Every 4MB, per 10,000 | 2650 CU seconds |
+| **OneLake Read via Proxy** | OneLake Read via Proxy | Every 4 MB, per 10,000 | 306 CU seconds |
+| **OneLake Write via Proxy** | OneLake Write via Proxy | Every 4 MB, per 10,000 | 2650 CU seconds |
 | **OneLake Iterative Read via Proxy** | OneLake Iterative Read via Proxy | Per 10,000 | 4798 CU seconds |
 | **OneLake Iterative Write via Proxy** | OneLake Iterative Write via Proxy | Per 100 | 2117.95 CU seconds |
 | **OneLake Other Operations** | OneLake Other Operations | Per 10,000 | 306 CU seconds |
