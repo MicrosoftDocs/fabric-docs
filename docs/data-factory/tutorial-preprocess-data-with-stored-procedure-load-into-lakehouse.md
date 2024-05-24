@@ -82,7 +82,7 @@ In this section, we use a Script activity to run the stored procedure created in
 
 1. Select **Copy data** from the **Activities** toolbar and then select **Use copy assistant**, or use the **Copy data assistant** card on the pipeline landing page, to start the **Copy data assistant**.
 
-   :::image type="content" source="media/copy-data-activity/use-copy-assistant.png" alt-text="Screenshot showing the Use copy assistant button under Copy data.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/use-copy-assistant.png" alt-text="Screenshot showing the Use copy assistant button under Copy data.":::
 
 1. Enter _Synapse_ in the search filter and select **Azure Synapse Analytics (SQL DW)** for  data source, and then select **Next**.
 
