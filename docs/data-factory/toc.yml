@@ -845,6 +845,8 @@
             href: data-workflows-run-databricks-job.md
           - name: Power BI Semantic Model Refresh
             href: data-workflows-power-bi-semantic-model-refresh.md
+          - name: Orchestrate DBT jobs with Data workflows
+            href: data-workflows-dbt-fabric.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases
