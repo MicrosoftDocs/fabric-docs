@@ -31,4 +31,4 @@ The following table lists Fabric features according to SKU type. The table lists
 ## Related content
 
 * [Microsoft Fabric concepts and licenses](licenses.md)
-* [Microrosoft Fabric operations](fabric-operations.md)
+* [Microsoft Fabric operations](fabric-operations.md)
