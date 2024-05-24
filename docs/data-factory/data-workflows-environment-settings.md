@@ -22,7 +22,7 @@ The following table contains the list the properties of both the pools.
 |Property  |Starter Pool  |Custom Pool
 |---------|---------|------|
 |Default Setting|Yes, Enabled by default|No, Needs to be configured|
-|Size|Default Compute Node Size: Large|Offers flexibility in size; You can configure 'Compute node size', 'Extra nodes', 'Enable autoscale'|
+|Size|Default Compute Node Size: Large|Offers flexibility in size; You can configure 'Compute node size,' 'Extra nodes,' 'Enable autoscale'|
 |Initialization Behavior|Automatically starts|Starts in the stopped stage| 
 |Resume Behavior|Instantaneous|Takes up to 5 minutes|
 |TTL(Time to live)|Shuts down after 20 minutes of inactivity on Airflow Environment | Won't automatically pause |
@@ -33,7 +33,7 @@ The following table contains the list the properties of both the pools.
 
 1. Go to your workspace settings.
 2. In the 'Data Factory' section, click on 'Data Workflow Settings'.
-3. You'll find that the Default Data Workflow Setting is currently set to Starter Pool. To switch to a Custom Pool, expand the dropdown menu labeled 'Default Data Workflow Setting' and select 'New Pool'.
+3. You'll find that the Default Data Workflow Setting is currently set to Starter Pool. To switch to a Custom Pool, expand the dropdown menu labeled 'Default Data Workflow Setting' and select 'New Pool.'
 
     :::image type="content" source="media/data-workflows/data-workflow-run-time-settings.png" lightbox="media/data-workflows/data-workflow-run-time-settings.png" alt-text="Screenshot shows data workflows run time settings.":::
 
@@ -41,7 +41,7 @@ The following table contains the list the properties of both the pools.
     - Name: Give a suitable name to your pool.
     - Compute node size: The size of compute node you want to run your environment on. You can choose the value `Large` and `Small`.
     - Enable autoscale: The min and max number of nodes you want your environment to scale to.
-    - Extra nodes: Add additional nodes to your compute environment.
+    - Extra nodes: Add more nodes to your compute environment.
 
     :::image type="content" source="media/data-workflows/new-custom-pool.png" lightbox="media/data-workflows/new-custom-pool.png" alt-text="Screenshot shows custom pool settings in data workflow.":::
 
