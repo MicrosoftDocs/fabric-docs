@@ -8,7 +8,8 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/13/2024
+  - build-2024
+ms.date: 04/12/2023
 ms.search.form: Lakehouse Explorer
 ---
 
@@ -89,4 +90,4 @@ We hope this guide helps you make the most of the Lakehouse explorer and its div
 
 - [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
 
-- [Create a OneLake shortcut](../real-time-analytics/onelake-shortcuts.md?tab=onelake-shortcut)
+- [Create a OneLake shortcut](../real-time-intelligence/onelake-shortcuts.md?tab=onelake-shortcut)

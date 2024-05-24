@@ -77,6 +77,8 @@ items:
       href: copilot-data-science-privacy-security.md
     - name: Responsible use in Power BI
       href: copilot-power-bi-privacy-security.md
+    - name: Responsible use in Real-Time Intelligence
+      href: copilot-real-time-intelligence-privacy-security.md
   - name: Copilot for Data Factory
     href: copilot-fabric-data-factory.md
   - name: Copilot for Data Science and Data Engineering
@@ -87,6 +89,10 @@ items:
       href: copilot-notebooks-chat-magics.md
     - name: Use the Copilot chat panel
       href: copilot-notebooks-chat-pane.md
+  - name: Copilot for Data Warehouse
+    href: ../data-warehouse/copilot.md
+  - name: Copilot for Real-Time Intelligence
+    href: copilot-real-time-intelligence.md
   - name: Copilot in Fabric Consumption
     href: copilot-fabric-consumption.md
 - name: Direct Lake
@@ -149,6 +155,16 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Environment doesn't work when runtime version is changed to Runtime 1.1
+      href: known-issues/known-issue-728-environment-not-work-runtime-version-changed-1-1.md
+    - name: Shortcuts to a firewall-enabled ADLS stop working if lakehouse is shared
+      href: known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md
+    - name: West India region doesn't support on-premises data gateway for data pipelines
+      href: known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md
+    - name: Delta tables don't appear in SQL Analytics Endpoint Object Explorer
+      href: known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md
+    - name: Spark session doesn't start when managed virtual network's capacity moved
+      href: known-issues/known-issue-721-spark-session-managed-virtual-network-capacity-moved.md
     - name: OneLake under-reports transactions in the Other category
       href: known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md
     - name: Response times when composing SQL queries slower than expected

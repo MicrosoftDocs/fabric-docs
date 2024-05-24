@@ -39,7 +39,8 @@ Data transformation activity | Compute environment
 [Dataflow Gen2](dataflows-gen2-overview.md) | Compute manager by Microsoft Fabric
 [Delete data](delete-data-activity.md) | Compute manager by Microsoft Fabric
 [Fabric Notebook](notebook-activity.md) | Apache Spark clusters managed by Microsoft Fabric
-Fabric Spark job definition (coming soon) | Apache Spark clusters managed by Microsoft Fabric
+[HDInsight activity](azure-hdinsight-activity.md) | Apache Spark clusters managed by Microsoft Fabric 
+[Spark Job Definition](spark-job-definition-activity.md) | Apache Spark clusters managed by Microsoft Fabric
 [Stored Procedure](stored-procedure-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 [SQL script](script-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 
