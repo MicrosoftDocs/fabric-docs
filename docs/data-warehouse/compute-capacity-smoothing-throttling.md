@@ -1,10 +1,12 @@
 ---
 title: Smoothing and throttling in Fabric Data Warehousing
 description: Learn about smoothing and throttling principles applicable for data warehousing in Microsoft Fabric.
-author: sowmi93
-ms.author: sosivara
-ms.reviewer: wiassaf
-ms.date: 11/21/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sosivara
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -20,7 +22,7 @@ This article is specific to data warehousing workloads in Microsoft Fabric. For 
 
 ## Compute capacity
 
-Capacity forms the foundation in Microsoft Fabric and provides the computing power that drives all Fabric workload experiences. Based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across Fabric. You can review the CUs for each SKU at [Capacity and SKUs](../enterprise/licenses.md#capacity-license).
+Capacity forms the foundation in Microsoft Fabric and provides the computing power that drives all Fabric workloads. Based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across Fabric. You can review the CUs for each SKU at [Capacity and SKUs](../enterprise/licenses.md#capacity-license).
 
 ## Smoothing
 
@@ -80,13 +82,13 @@ A capacity administrator can recover from a throttling situation by:
 
 Capacity administrators can view overload information and drilldown further via [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
 
-:::image type="content" source="media/compute-capacity-smoothing-throttling/metrics-app-throttling.gif" alt-text="An animated image showing the capabilities of the Fabric Capacity Metrics app.":::
+:::image type="content" source="media/compute-capacity-smoothing-throttling/metrics-app-throttling.gif" alt-text="An animated image showing the capabilities of the Fabric Capacity Metrics app." lightbox="media/compute-capacity-smoothing-throttling/metrics-app-throttling.gif":::
 
 For a walkthrough of the app, visit [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md).
 
 ### Utilization tab
 
-This tab shows utilization of resources compared to capacity purchased. 100% of utilization represents the full throughput of a capacity SKU and is shared by all Fabric experiences. This is represented by the yellow dotted line. Selecting a specific timepoint in the graph enables the **Explore** button, which opens a detailed drill through page.
+This tab shows utilization of resources compared to capacity purchased. 100% of utilization represents the full throughput of a capacity SKU and is shared by all Fabric workloads. This is represented by the yellow dotted line. Selecting a specific timepoint in the graph enables the **Explore** button, which opens a detailed drill through page.
 
 ### Throttling tab
 
@@ -98,6 +100,11 @@ In the **Background rejection** section, utilization exceeding the 100% line is 
 
 The **Overages** tab provides a visual history of any overutilization of capacity, including carry forward, cumulative, and burndown of utilization. For more information, refer to [Throttling in Microsoft Fabric](../enterprise/throttling.md) and [Overages in the Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md#overages).
 
+## Next step
+
+> [!div class="nextstepaction"]
+> [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)
+
 ## Related content
 
 - [Billing and utilization reporting in Synapse Data Warehouse](usage-reporting.md)
@@ -108,8 +115,3 @@ The **Overages** tab provides a visual history of any overutilization of capacit
 - [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
 - [Burstable capacity in Fabric data warehousing](burstable-capacity.md)
 - [Pause and resume in Fabric data warehousing](pause-resume.md)
-
-## Next step
-
-> [!div class="nextstepaction"]
-> [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)

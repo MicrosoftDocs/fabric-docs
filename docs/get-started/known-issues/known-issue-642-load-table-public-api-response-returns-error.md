@@ -4,7 +4,7 @@ description: A known issue is posted where the Load Table public API response re
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/05/2024
+ms.date: 04/01/2024
 ms.custom: known-issue-642
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-642
 
 If you use the [Lakehouse Load Table public API](/rest/api/fabric/lakehouse/tables/load-table?tabs=HTTP) to retrieve the operation status URL, the response sends a '404-NotFound' error.
 
-**Status:** Open
+**Status:** Fixed: April 1, 2024
 
 **Product Experience:** Data Engineering
 

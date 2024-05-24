@@ -4,10 +4,12 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, imotiwala, sbahadur
+ms.date: 05/09/2024
 ms.service: fabric
-ms.date: 03/19/2024
 ms.topic: conceptual
-ms.custom: references_regions
+ms.custom:
+  - references_regions
+  - build-2024
 ---
 # Limitations in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)
 
@@ -21,7 +23,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
 - Each user workload varies. During initial snapshot, there might be more resource usage on the source database, for both CPU and IOPS (input/output operations per second, to read the pages). Table updates/delete operations can lead to increased log generation. Learn more on how to [monitor resources for your Azure SQL Database](/azure/azure-sql/database/monitor-tune-overview?view=azuresql-db&preserve-view=true#azure-sql-database-and-azure-sql-managed-instance-resource-monitoring).
 - The replicator engine monitors each table for changes independently. If there are no updates in a source table, the replicator engine starts to back off with an exponentially increasing duration for that table, up to an hour. The same can occur if there is a transient error, preventing data refresh. The replicator engine will automatically resume regular polling after updated data is detected.
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently cannot be replicated.
-  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over will be determined by taking the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list will not be mirrored over.
+  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list will not be mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
 
 ## Permissions in the source database
@@ -31,21 +33,16 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
 - [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking) settings are not currently propagated from the source SQL database into Fabric.
 - To successfully configure Mirroring for Azure SQL Database, the principal used to connect to the source Azure SQL Database needs to be granted **CONTROL** or **db_owner** permissions.
 
-## Network and connectivity security 
+## Network and connectivity security
 
 - The source SQL server needs to enable [Allow public network access](/azure/azure-sql/database/connectivity-settings#change-public-network-access) and [Allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect.
-- System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled. After enablement, if SAMI is disabled or removed, the mirroring of Azure SQL Database to Fabric OneLake will fail.
-- User Assigned Managed Identity (UAMI) is not supported.
-- Do not remove Azure SQL Database service principal name (SPN) contributor permissions on Fabric mirrored database item. 
-   - If you accidentally remove the SPN permission, Mirroring Azure SQL database will not function as expected. No new data can be mirrored from the source database.
-       - If you remove Azure SQL database SPN permissions or permissions are not set up correctly, use the following steps.
-           1. Add the SPN as a user by selecting the "..." ellipses option on the mirrored database item.
-           1. Select the **Manage Permissions** option.
-           1. Enter the name of the Azure SQL Database logical server name. Provide **Read** and **Write** permissions.
+- System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled and must be the primary identity.
+- Do not remove Azure SQL Database service principal name (SPN) contributor permissions on Fabric mirrored database item.
 - Cross-[Microsoft Entra](/entra/fundamentals/new-name) tenant data mirroring is not supported where an Azure SQL Database and the Fabric workspace are in separate tenants.  
 - Microsoft Purview Information Protection/sensitivity labels defined in Azure SQL Database are not cascaded and mirrored to Fabric OneLake.
+- For troubleshooting, see [Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-troubleshoot.md).
 
-## Table level  
+## Table level
 
 - A table cannot be mirrored if it does not have a primary key rowstore clustered index.
     - A table using a primary key defined and used as nonclustered primary key cannot be mirrored.  
@@ -55,45 +52,45 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
 - Source tables that have any of the following features in use cannot be mirrored.
     - Temporal history tables and ledger history tables  
     - Always Encrypted  
-    - In-memory tables 
+    - In-memory tables
     - Graph  
     - External tables  
 - The following table-level data definition language (DDL) operations aren't allowed on source tables when they're enabled for Fabric SQL Database mirroring.  
     - Switch/Split/Merge partition
-    - Alter Primary Key  
-    - Drop Table  
-    - Truncate Table 
-    - Rename Table  
+    - Alter primary key  
+    - Drop table  
+    - Truncate table
+    - Rename table  
 - When there is DDL change, a complete data snapshot is restarted for the changed table, and data is reseeded.
 
-## Column level  
+## Column level
 
 - If the source table contains computed columns, these columns cannot be mirrored to Fabric OneLake.  
 - If the source table contains columns with unsupported data types, these columns cannot be mirrored to Fabric OneLake. The following data types are unsupported.
     - **image**
     - **text**/**ntext**
     - **xml** 
+    - **json**
     - **rowversion**/**timestamp**
     - **sql_variant**
     - User Defined Types (UDT)
     - **geometry**
     - **geography**
 - Column names for a SQL table cannot contain spaces nor the following characters: `space` `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
-- The following column level data definition language (DDL) operations aren't supported on source tables when they're enabled for Fabric SQL Database mirroring.  
-    - Alter column  
-    - Rename column (`sp_rename`)  
+- The following column level data definition language (DDL) operation is not yet supported on source tables that are being actively mirrored.
+    - Rename column (`sp_rename`)
  
-## Warehouse limitations  
+## Warehouse limitations
 
 - Source schema hierarchy is not replicated to the mirrored database. Instead, source schema is flattened, and schema name is encoded into the mirrored database table name.  
 
-### Mirrored item limitations  
+### Mirrored item limitations
 
 - User needs to be a member of the Admin/Member role for the workspace to create SQL Database mirroring.  
 - Stopping mirroring disables mirroring completely.  
 - Starting mirroring reseeds all the tables, effectively starting from scratch.  
 
-#### SQL analytics endpoint limitations  
+#### SQL analytics endpoint limitations
 
 - The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience. See [SQL analytics endpoint limitations](../../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
 
@@ -153,5 +150,6 @@ The following are the Fabric regions that support Mirroring for Azure SQL Databa
 - [What is Mirroring in Fabric?](overview.md)
 - [Monitor Fabric mirrored database replication](monitor.md)
 - [Troubleshoot Fabric mirrored databases](troubleshooting.md)
+- [Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-troubleshoot.md).
 - [Model data in the default Power BI semantic model in Microsoft Fabric](/fabric/data-warehouse/model-default-power-bi-dataset)
 - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-tutorial.md)

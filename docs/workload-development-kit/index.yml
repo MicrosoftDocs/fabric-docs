@@ -1,0 +1,92 @@
+### YamlMime:Landing
+
+title: Microsoft Fabric Workload Development Kit documentation
+summary: Learn to use the Microsoft Fabric Development Kit to develop your own Fabric workload.
+
+metadata:
+  title: Microsoft Fabric Workload Development Kit
+  description: A landing page for Microsoft Fabric Workload Development Kit documentation
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: governance
+  ms.topic: landing-page # Required
+  author: paulinbar
+  ms.author: painbar
+  ms.date: 12/25/2023
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+
+  # Card 
+  - title: About Microsoft Fabric Workload Development Kit
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Microsoft Fabric Workload Development Kit?
+            url: development-kit-overview.md     
+          - text: Monetize your workload
+            url: monetization.md                 
+
+  # Card 
+  - title: Get started
+    linkLists:
+      - linkListType: quickstart
+        links:
+        - text: Set up your environment
+          url: environment-setup.md
+        - text: QuickStart - Run a workload sample
+          url: quickstart-sample.md
+
+  # Card 
+  - title: Tutorials
+    linkLists:
+      - linkListType: get-started
+        links:
+        - text: Add and manage more workloads
+          url: more-workloads-add.md
+        - text: Upload and manage a workload
+          url: manage-workload.md
+        - text: Set up authentication
+          url: authentication-tutorial.md    
+        - text: Front-end implementation guide
+          url: extensibility-front-end.md
+        - text: Back-end implementation guide
+          url: extensibility-back-end.md
+        - text: Azure web app deployment tutorial
+          url: azure-web-app-deployment-tutorial.md  
+
+  # Card 
+  - title: Concepts
+    linkLists:
+      - linkListType: architecture
+        links:
+        - text: Workload environment
+          url: workload-environment.md
+        - text: Item lifecycle
+          url: item-lifecycle.md
+        - text: Monitoring hub
+          url: monitoring-hub.md
+        - text: Working with customer data
+          url: fabric-data-plane.md
+
+  # Card 
+  - title: Authentication
+    linkLists:
+      - linkListType: concept
+        links:
+        - text: Authentication overview
+          url: authentication-concept.md
+        - text: Authentication JavaScript API
+          url: authentication-javascript-api.md
+
+  # Card 
+  - title: APIs and samples
+    linkLists:
+      - linkListType: reference
+        links:  
+        - text: REST APIs
+          url: https://go.microsoft.com/fwlink/?linkid=2271986
+        - text: Client-side APIs
+          url: https://go.microsoft.com/fwlink/?linkid=2271989
+        - text: Samples
+          url: https://github.com/microsoft/Microsoft-Fabric-workload-development-sample                           

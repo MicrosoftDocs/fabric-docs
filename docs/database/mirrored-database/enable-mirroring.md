@@ -4,7 +4,7 @@ description: Learn how to enable Mirroring in your Fabric tenant.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 03/18/2024
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: how-to
 ---

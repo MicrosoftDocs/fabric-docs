@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/29/2024
+ms.date: 03/31/2024
 ---
 
 # Operation list
@@ -84,10 +84,6 @@ The following operations are available in the audit logs.
 | Create Goal Value Categories | CreateGoalValueCategories |  |
 | Create Hierarchy Goal Value | CreateHierarchyGoalValue |  |
 | Create Hierarchy Note | CreateHierarchyNote |  |
-| Create Lakehouse File | CreateLakehouseFile |  |
-| Create Lakehouse Folder | CreateLakehouseFolder |  |
-| Create Lakehouse Shortcut Link | CreateLakehouseShortcutLink |  |
-| Create Lakehouse Table | CreateLakehouseTable |  |
 | Create Link Goals | CreateLinkGoals |  |
 | Create Notebook Resource | CreateNotebookResource | Create resources in notebook. |
 | Create Org App | CreateOrgApp |  |
@@ -146,8 +142,6 @@ The following operations are available in the audit logs.
 | Delete Group Workspace | DeleteGroupWorkspace |  |
 | Delete Hierarchy Goal Value | DeleteHierarchyGoalValue |  |
 | Delete Hierarchy Note | DeleteHierarchyNote |  |
-| Delete Lakehouse File | DeleteLakehouseFile |  |
-| Delete Lakehouse Folder | DeleteLakehouseFolder |  |
 | Delete Lakehouse Table | DeleteLakehouseTable |  |
 | Delete Link Goals | DeleteLinkGoals |  |
 | Delete Model Version | DeleteModelVersion |  |
@@ -200,9 +194,6 @@ The following operations are available in the audit logs.
 | Download Notebook Resource | DownloadNotebookResource | Delete resources in notebook. |
 | Download Spark App Log | DownloadSparkAppLog |  |
 | Downloaded Power BI report | DownloadReport |  |
-| Drop Lakehouse File | DropLakehouseFile |  |
-| Drop Lakehouse Folder | DropLakehouseFolder |  |
-| Drop Lakehouse Table | DropLakehouseTable |  |
 | Edit Artifact Endorsement | EditArtifactEndorsement |  |
 | Edit mounted warehouse endorsements | EditMountedWarehouseEndorsement | Generated when mounted warehouse endorsements are edited |
 | Edit Report Description | EditReportDescription |  |
@@ -387,8 +378,6 @@ The following operations are available in the audit logs.
 | Removed user from Power BI gateway cluster datasource | RemoveGatewayClusterDatasourceUser |  |
 | Removed workspace from a capacity | RemoveWorkspacesFromCapacity |  |
 | Rename Datamart | RenameDatamart |  |
-| Rename Lakehouse File | RenameLakehouseFile |  |
-| Rename Lakehouse Folder | RenameLakehouseFolder |  |
 | Rename Lakehouse Table | RenameLakehouseTable |  |
 | Rename Report | RenameReport | Rename Report is a report activity, which is generated on renaming the name of a Power BI Report through its settings |
 | Rename Warehouse | RenameWarehouse |  |

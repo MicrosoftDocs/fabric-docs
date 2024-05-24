@@ -34,7 +34,7 @@ To view sensitivity label settings for your organization, visit the [Microsoft P
 
 When this setting is enabled, Power BI semantic models that connect to sensitivity-labeled data in supported data sources can inherit those labels, so that the data remains classified and secure when brought into Power BI.
 
-To learn more about sensitivity label inheritance from data sources, see [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources).
+To learn more about sensitivity label inheritance from data sources, see [Sensitivity label inheritance from data sources](../governance/service-security-sensitivity-label-inheritance-from-data-sources.md).
 
 ## Automatically apply sensitivity labels to downstream content
 
@@ -53,7 +53,7 @@ To learn more, see [Relaxations to accommodate automatic labeling scenarios](/po
 When this setting is enabled, users can't generate a sharing link for **People in your organization** for content with protection settings in the sensitivity label.
 
 > [!NOTE]
-> This setting is disabled if you haven't enabled both the **Allow users to apply sensitivity labels for Power BI content** setting and the **Allow shareable links to grant access to everyone in your organization** setting.
+> This setting is disabled if you haven't enabled both the **Allow users to apply sensitivity labels for Power BI content** setting and the **Allow shareable links to grant access to everyone in your organization** setting. Additionally, this setting only applies to sharing via **People in your organization** links; it does not apply to sharing of Apps to the entire organization.
 
 Sensitivity labels with protection settings include encryption or content markings. For example, your organization might have a *Highly Confidential* label that includes encryption and applies a *Highly Confidential* watermark to content with this label. Therefore, when this tenant setting is enabled and a report has a sensitivity label with protection settings, then users can't create sharing links for **People in your organization**:
 

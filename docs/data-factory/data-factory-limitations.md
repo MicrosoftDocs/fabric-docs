@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 02/15/2024
+ms.date: 04/26/2024
 ---
 
 # Data Factory limitations overview
@@ -18,17 +18,15 @@ For service level outages or degradation notifications, check [Microsoft Fabric 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
 - Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) and [event triggers](/azure/data-factory/how-to-create-custom-event-trigger) aren't yet available.
-- Pipelines don't support Continuous Integration and Continuous Delivery (CI/CD).
 - Connectors don't support OAuth, Azure key vault (AKV), and Managed System Identity (MSI).
 - Connectors can't use parameters.
 - GetMetaData activity can't have a source from Fabric KQL databases.
 - Script activity can't have a source from Fabric KQL databases.
 - Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and resource URI.
-- Custom activities aren't available in Fabric pipelines. Use Azure Batch activity instead.
 - Data pipelines are scoped to their workspace, and can't interact with items in other workspaces.
-- The on-premises data gateway can be used with Dataflow Gen2 to ingest on-premises data now. You can orchestrate on-premises data ingestion with a data flow activity in the pipeline.
 - Pipelines can't use a managed VNet.
 - Web activity does not support service principal based authentication.
+- Pipeline scheduling options currently include only by the minute, hourly, daily, and weekly. 
 
 ## Data pipeline resource limits
 
@@ -41,7 +39,7 @@ The following table describes the resource limitations for pipelines in Data Fac
 | External activities  like stored procedure, Web, Web Hook, and others | 3,000 | 3,000 |
 | Pipeline activities execute on integration runtime, including Lookup, GetMetadata, and Delete | 1,000 | 1,000 |
 | Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on | 200 | 200 |
-| Maximum activities per pipeline, which includes inner activities for containers | 40 | 40 |
+| Maximum activities per pipeline, which includes inner activities for containers | 80 | 120 |
 | Maximum parameters per pipeline | 50 | 50 |
 | ForEach items | 100,000 | 100,000 |
 | ForEach parallelism | 20 | 50 |
@@ -61,7 +59,6 @@ The following table describes the resource limitations for pipelines in Data Fac
 
 The following list describes the limitations for Dataflow Gen2 in Data Factory in Microsoft Fabric.
 
-- Data Factory Fast Copy isn't yet available.
 - Data destination to Lakehouse:
   - Spaces or special characters aren't supported in column or table names.
   - Duration and binary columns aren't supported while authoring Dataflow Gen2 dataflows.
@@ -76,18 +73,18 @@ The following table indicates the supported data types in specific storage locat
 
 | **Supported data types per storage location:**  | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output |
 |-------------------------------------------------|--------------------------|-----------------------|----------------------------|------------------------------|------------------------------|
-| Action                                          | No                       | No                    | No                         | No                           | No                           |
-| Any                                             | No                       | No                    | No                         | No                           | No                           |
-| Binary                                          | No                       | No                    | No                         | No                           | No                           |
-| Currency                                        | Yes                      | Yes                   | Yes                        | Yes                          | No                           |
-| DateTimeZone                                    | Yes                      | Yes                   | Yes                        | No                           | No                           |
-| Duration                                        | No                       | No                    | Yes                        | No                           | No                           |
-| Function                                        | No                       | No                    | No                         | No                           | No                           |
-| None                                            | No                       | No                    | No                         | No                           | No                           |
-| Null                                            | No                       | No                    | No                         | No                           | No                           |
-| Time                                            | Yes                      | Yes                   | No                         | Yes                          | Yes                          |
-| Type                                            | No                       | No                    | No                         | No                           | No                           |
-| Structured (List, Record, Table)                | No                       | No                    | No                         | No                           | No                           |
+| Action| No| No | No  | No    | No    |
+| Any   | No| No | No  | No    | No    |
+| Binary| No| No | No  | No    | No    |
+| Currency | Yes   | Yes| Yes | Yes   | No    |
+| DateTimeZone| Yes   | Yes| Yes | No    | No    |
+| Duration | No| No | Yes | No    | No    |
+| Function | No| No | No  | No    | No    |
+| None  | No| No | No  | No    | No    |
+| Null  | No| No | No  | No    | No    |
+| Time  | Yes   | Yes| No  | No   | No   |
+| Type  | No| No | No  | No    | No    |
+| Structured (List, Record, Table)| No| No | No  | No    | No    |
 
 ## Related content
 

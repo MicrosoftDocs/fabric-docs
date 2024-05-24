@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 05/09/2024
 ---
 
 # Bring your data to OneLake with Lakehouse
@@ -19,7 +19,7 @@ This tutorial is a quick guide to creating a lakehouse and getting started with 
 
 1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/).
 
-1. Switch to the Data Engineering experience using the experience switcher icon at the lower left corner of your homepage.
+1. Switch to Data Engineering using the workload switcher icon at the lower left corner of your homepage.
 
 1. Select **Workspaces** from the left-hand menu.
 

@@ -1,6 +1,6 @@
 ---
-title: OneLake Disaster Recovery
-description: How to plan for disaster recovery of your OneLake data in Microsoft Fabric.
+title: OneLake Disaster Recovery and Data Protection
+description: How to plan for disaster recovery and data protection of your OneLake data in Microsoft Fabric.
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to
@@ -26,7 +26,9 @@ For a comprehensive understanding of the end-to-end experience, see [Fabric BCDR
 
 ## Soft delete for OneLake files
 
-OneLake soft delete protects individual files from accidental deletion by retaining files for a default retention period before it's permanently deleted. Currently the default is 28 days, but it's subject to change. All soft-deleted data is billed at the same rate as active data.
+OneLake soft delete protects individual files from accidental deletion by retaining files for a default retention period before it's permanently deleted. The current default is 28 days but starting May 2024 we are transitioning to a 7 day default retention period, so new workspaces will have this updated period. All soft-deleted data is billed at the same rate as active data.
+
+You can restore files and folders using Blob REST APIs, Azure Storage SDKs, and the PowerShell Az.Storage module.  Learn how to list and undelete files using these [PowerShell instructions](/azure/storage/blobs/soft-delete-blob-manage#restore-soft-deleted-blobs-and-directories-by-using-powershell) and how to connect to [OneLake with PowerShell](../onelake/onelake-powershell.md#connect-to-onelake-with-azure-powershell).  
 
 ## Related content
 

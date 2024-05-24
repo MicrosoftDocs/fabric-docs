@@ -4,8 +4,8 @@ title: |
 description: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview).
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa
-ms.date: 03/15/2024
+ms.reviewer: anithaa, wiassaf
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: how-to
 ---
@@ -73,7 +73,7 @@ Use Lakehouse to further extend the number of tools you can use to analyze your 
 
 ## Write back using Spark
 
-Finally, you can use Spark and Python code to write data back to your source Azure Cosmos DB account from notebooks in Fabric. You may want to do this to write back analytical results to Cosmos DB, which can then be using as serving plane for OLTP applications.  
+Finally, you can use Spark and Python code to write data back to your source Azure Cosmos DB account from notebooks in Fabric. You might want to do this to write back analytical results to Cosmos DB, which can then be using as serving plane for OLTP applications.  
 
 1. Create four code cells within your notebook.
 
