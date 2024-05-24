@@ -13,19 +13,19 @@ ms.date: 04/24/2024
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-Data workflows offers the two types of the environment settings i.e Starter pool and Custom pool. This article outlines each setting and suggests ideal scenarios for their respective usage.
+Data workflow offers the two types of the environment settings, i.e.Starter pool and Custom pool. This article outlines each setting and suggests ideal scenarios for their respective usage.
 
 ## Starter Pool and Custom Pool
 
-The following table contains the list the propertie of both the pools.
+The following table contains the list the properties of both the pools.
 
 |Property  |Starter Pool  |Custom Pool
 |---------|---------|------|
 |Default Setting|Yes, Enabled by default|No, Needs to be configured|
 |Size|Default Compute Node Size: Large|Offers flexibility in size; You can configure 'Compute node size', 'Extra nodes', 'Enable autoscale'|
 |Initialization Behavior|Automatically starts|Starts in the stopped stage| 
-|Resume Behaviour|Instantenous|Takes up to 5 minutes|
-|TTL|Shuts down after 20 minutes of inactivity on Airflow Environment | Will not automatically pause |
+|Resume Behavior|Instantaneous|Takes up to 5 minutes|
+|TTL(Time to live)|Shuts down after 20 minutes of inactivity on Airflow Environment | Won't automatically pause |
 |Ideal Scenario| Developer Environment| Production Environment|
 
 
@@ -39,8 +39,8 @@ The following table contains the list the propertie of both the pools.
 
 4. Customize the following properties according to your needs:
     - Name: Give a suitable name to your pool.
-    - Compute node size: The size of compute node you want to run your Apache Apache environmet on. You can choose the value `Large` and `Small`.
-    - Enable autoscale: The min and max amount of nodes you want your environment to scale to.
+    - Compute node size: The size of compute node you want to run your environment on. You can choose the value `Large` and `Small`.
+    - Enable autoscale: The min and max number of nodes you want your environment to scale to.
     - Extra nodes: Add additional nodes to your compute environment.
 
     :::image type="content" source="media/data-workflows/new-custom-pool.png" lightbox="media/data-workflows/new-custom-pool.png" alt-text="Screenshot shows custom pool settings in data workflow.":::
@@ -50,4 +50,4 @@ The following table contains the list the propertie of both the pools.
 
 ## Related Content
 
-[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)
+[Quickstart: Create a Data workflow.](../data-factory/create-data-workflows.md)
