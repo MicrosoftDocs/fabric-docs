@@ -26,3 +26,6 @@ The Oracle connector supports the following capabilities in data pipelines:
 | **Script activity** | On-premises | Basic |
 
 To learn more about the copy activity configuration for Oracle in data pipelines, go to [Configure Oracle in a copy activity](connector-oracle-copy-activity.md).
+
+> [!NOTE]
+>To use Oracle connector in date pipelines, please install [Oracle Client for Microsoft Tools (OCMT)](https://www.oracle.com/database/technologies/appdev/ocmt.html) on the computer running on-premises data gateway.
