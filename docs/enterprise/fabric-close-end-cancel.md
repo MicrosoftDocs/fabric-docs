@@ -52,7 +52,11 @@ If you signed up for a Fabric trial capacity, you can cancel that trial. Open yo
 
 #### [Admin](#tab/admin)
 
-## Capacity trial
+## Fabric: close, cancel, end
+
+With Microsoft Fabric, you can end a Fabric capacty trial, cancel a capacity subscription, and close a Fabric account. 
+
+## Fabric trial capacity
 
 Fabric trial capacities can be canceled, be deleted, be purchased, and expire. 
 
@@ -65,13 +69,16 @@ The Fabric trial capacity lasts 60 days. [Cancel a Fabric capacity trial](../get
 The Capacity administrator can delete Fabric capacities using the Fabric admin portal. Fabric items in workspaces assigned to the capacity become unusable unless the workspaces are assigned to a different Fabric capacity within seven days. To learn more, see [Delete a capacity](../admin/capacity-settings.md#delete-a-capacity) and 
 [Fabric capacity deletion.](../admin/service-admin-portal-capacity-settings.md#fabric-capacity-deletion)
 
-## Buy a Fabric trial capacity
+### Buy a Fabric trial capacity
 
 You can [purchase a Fabric capacity](buy-subscription.md) at any time. You don't have to wait for your trial to end. 
 
-### Manage an expired license
+### Migrate an expiring P SKU capacity
 
-When a paid license passes its expiration date, you have a grace period for repurchasing the license. To learn more about expired licenses, see [Power BI license expiration.](/power-bi/enterprise/service-admin-licensing-organization#power-bi-license-expiration)
+> [!NOTE]
+> Power BI Premium is transitioning to Microsoft Fabric. Power BI Premium is now part of Fabric. At the end of your current agreement with Microsoft, work with your Microsoft account representatives to migrate your P SKU purchase to an F SKU purchase. No immediate action is required. You can continue using your existing Power BI Premium capacity until the time of your next renewal. You can use Power BI in Fabric alongside all the other Fabric workloads. Because of this change, the Power BI Premium SKUs are being retired.
+
+If a Premium subscription or capacity license expires, you have 90 days of full access to your capacity. During these 90 days, migrate your workspaces to your new F SKU capacity without losing access to your existing work. However, once the workspace is reassigned, all currently active jobs are canceled. Rerun those jobs after migration. Migration doesn't impact scheduled jobs. If you don't migrate your workspaces, your content reverts to a shared capacity where it will continue to be accessible.  However, you can't view reports that are based on semantic models that are greater than 1 GB or reports that require Premium capacities to render.
 
 ## Subscriptions
 
@@ -79,7 +86,9 @@ Fabric and Power BI subscriptions can be canceled in several different ways. The
 
 ### Cancel a capacity subscription
 
-Cancel a P SKU or EM SKU capacity subscription in the Microsoft 365 admin portal. If you're within your grace period, use **Cancel subscription.** If you're outside the grace period, turn off recurring billing. See [Cancel your subscription in the Microsoft 365 admin center.](/microsoft-365/commerce/subscriptions/cancel-your-subscription)
+Cancel a P SKU or EM SKU capacity subscription in the Microsoft 365 admin portal. If you're within your grace period, select **Billing** > **Your products** > **Subscription status** > **Cancel subscription** . If you're outside the grace period, turn off recurring billing. See [Cancel your subscription in the Microsoft 365 admin center.](/microsoft-365/commerce/subscriptions/cancel-your-subscription)
+
+The subscription remains active until it expires. Only the Global administrator or someone with billing permissions can cancel the subscription. Remember to ask users to save their data. 
 
 Cancel an A SKU subscription in Azure. For more information, see [xxxx](yyyy).
 
@@ -87,50 +96,28 @@ Cancel an A SKU subscription in Azure. For more information, see [xxxx](yyyy).
 
 <Mihir to write>
 
-### Expiring P SKUs
+## Disable Fabric
 
-## Fabric: close, cancel, end
+Fabric administrators can turn off Fabric for an entire organization,individuals, and security groups. See [Can I disable Microsoft Fabric?](../admin/fabric-switch.md#can-i-disable-microsoft-fabric). At the tenant level, the Fabric admin uses the Admin portal **Settings.** The Fabric administrator can also delegate a Capacity administrator to disable Fabric at the capacity level using the Admin portal **Capacity settings.**
 
-With Microsoft Fabric, you can end a Fabric capacty trial, cancel a capacity subscription, and close a Fabric account. 
-
-
-
-### Disable Fabric
-
-Certain administrators can turn off Fabric for an entire organization or for a specific capacity. See [Can I disable Microsoft Fabric?](../admin/fabric-switch.md#can-i-disable-microsoft-fabric)
+## Licenses
+If a Fabric (Free) license was assigned by a Global or Billing administrator, they can use the Admin portal to remover users' free licenses. The steps are the same as [Close your Power BI account.](#close-your-power-bi-account) If a Capacity administrator got the license themselves, they can use the Admin portal to XYZ. If a paid license (Pro or PPU) expires, you have a grace period for repurchasing. For more information, see [xxx](yyy).
 
 
+### Manage an expired license
 
-### Close your Fabric account
+When a paid license passes its expiration date, you have a grace period for repurchasing the license. To learn more about expired licenses, see [Power BI license expiration.](/power-bi/enterprise/service-admin-licensing-organization#power-bi-license-expiration)
 
-Administrators can use the Microsoft 365 admin portal to remove a user's Fabric (Free) license. The steps are the same as [Close your Power BI account.](#close-your-power-bi-account)
+### Cancel a Power BI trial
 
+The method for canceling a Power BI trial depends on how the trial was started. 
 
-
-## Power BI service: close, cancel, end
-
-With the Power BI service, you can end a trial of a paid license, cancel a subscription, or close your account. 
-
-
-
-### Cancel your Power BI subscription
-
-[Cancel your Power BI subscription](/microsoft-365/commerce/subscriptions/cancel-your-subscription) in the Microsoft 365 admin center. Either select **Billing** > **Your products** > **Subscription status** > **Cancel subscription** or turn off recurring billing. The subscription remains active until it expires. Only the Global administrator or someone with billing permissions can cancel the subscription. Remember to ask users to save their data. 
-
-### Manage an expired Premium subscription
-
-> [!NOTE]
-> Power BI Premium is transitioning to Microsoft Fabric. Power BI Premium is now part of Fabric. At the end of your current agreement with Microsoft, work with your Microsoft account representatives to migrate your P SKU purchase to an F SKU purchase. No immediate action is required. You can continue using your existing Power BI Premium capacity until the time of your next renewal. You can use Power BI in Fabric alongside all the other Fabric workloads. Because of this change, the Power BI Premium SKUs are being retired.
-
-If a Premium subscription or capacity license expires, you have 90 days of full access to your capacity. During these 90 days, migrate your workspaces to your new F SKU capacity without losing access to your existing work. However, once the workspace is reassigned, all currently active jobs are canceled. Rerun those jobs after migration. Migration doesn't impact scheduled jobs. If you don't migrate your workspaces, your content reverts to a shared capacity where it will continue to be accessible.  However, you can't view reports that are based on semantic models that are greater than 1 GB or reports that require Premium capacities to render.
-
-
-
-
+- If a user started a Power BI trial of a paid license, the only way to cancel that trial is if an administrator submits a Support ticket.
+- To cancel a free organizational trial, the Global or Billing administrator can turn off recurring billing. 
 
 ### Close your Power BI account
 
-If you don't want to use Power BI any longer, close your Power BI account. After you close your account, you can't sign in to Power BI. Also, as it states in the data retention policy in the [Power BI Service Agreement](https://azure.microsoft.com/support/legal/subscription-agreement/), Power BI deletes any customer data you uploaded or created.
+If you don't want to use Power BI any longer, close your Power BI license account. After you close your account, you can't sign in to Power BI. Also, as it states in the data retention policy in the [Power BI Service Agreement](https://azure.microsoft.com/support/legal/subscription-agreement/), Power BI deletes any customer data you uploaded or created.
 
 If you signed up for Power BI as an individual, you can close your account from the **Settings** screen.
 
@@ -151,5 +138,3 @@ If your organization signed you up for Power BI, contact your admin. Ask them to
 ![Screenshot of the close account message for Managed Users.](media/fabric-close-end-cancel/close-account-managed.png)
 
 ---
-
-To cancel a free trial for your organization, [turn off recurring billing](/microsoft-365/commerce/subscriptions/renew-your-subscription). You must be a Global or Billing administrator to manage billing. 
