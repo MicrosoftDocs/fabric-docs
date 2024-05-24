@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/23/2024
+ms.date: 05/24/2024
 ms.custom:
 ---
 
@@ -20,6 +20,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  726  | Data Factory | [Pipeline using XML format copy gets stuck](known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 |
+|  723  | Data Warehouse | [Azure SQL Database change data doesn't propagate to mirror](known-issues/known-issue-723-sql-azure-database-change-data-not-propagate-mirror.md) | May 24, 2024 |
 |  728  | Data Engineering | [Environment doesn't work when runtime version is changed to Runtime 1.1](known-issues/known-issue-728-environment-not-work-runtime-version-changed-1-1.md) | May 23, 2024 |
 |  724  | OneLake | [Shortcuts to a firewall-enabled ADLS stop working if lakehouse is shared](known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md) | May 23, 2024 |
 |  717  | Data Factory | [known-issue-717-west-india-region-not support-on-premises-gateway-pipelines.md](known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
