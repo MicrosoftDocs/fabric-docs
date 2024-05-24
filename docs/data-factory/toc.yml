@@ -641,7 +641,7 @@
         href: tutorial-incremental-copy-data-warehouse-lakehouse.md        
       - name: Load data to Lakehouse using partition
         href: tutorial-lakehouse-partition.md  
-      - name: Move data from Oracle to Fabric Lakehouse via Pipeline and On-premises Data Gateway
+      - name: Move data from Oracle to Fabric Lakehouse via pipeline and on-premises data gateway
         href: tutorial-move-data-from-oracle-to-lakehouse-pipeline.md
   - name: Dataflows
     items:

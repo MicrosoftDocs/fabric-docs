@@ -57,15 +57,15 @@ In this session, you start to build your data pipeline by following below steps 
 
    :::image type="content" source="media/copy-data-activity/configure-source-connection-in-pipeline-new.png" alt-text="Screenshot showing where to create a connection." lightbox="media/copy-data-activity/configure-source-connection-in-pipeline-new.png":::
 
-   1. Choose the data source type from the pop-up window. Select **Oracle Database**, and then select **Continue**.
+   a. Choose the data source type from the pop-up window. Select **Oracle Database**, and then select **Continue**.
    
    :::image type="content" source="media/copy-data-activity/oracle-datasource.png" alt-text="Screenshot showing how to select the data source." lightbox="media/copy-data-activity/oracle-datasource.png":::
 
-   1. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-data-stores-in-data-pipeline).
+   b. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-data-stores-in-data-pipeline).
    
       :::image type="content" source="media/copy-data-activity/configure-connection-details-new.png" alt-text="Screenshot showing New connection page." lightbox="media/copy-data-activity/configure-connection-details-new.png":::
 
-    1. Specify a table to be copied. Select **Preview data** to preview your source table. You can also use **Query** and **Stored procedure** to read data from your source.
+    c. Specify a table to be copied. Select **Preview data** to preview your source table. You can also use **Query** and **Stored procedure** to read data from your source.
 
 ### Configure your destination under the destination tab
 
@@ -85,7 +85,7 @@ After completing the configuration of your data pipeline, run the data pipeline 
 
 1. Switch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
 
-    :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/save-and-run.png" alt-text="Screenshot of saving and running activity.":::
+    :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/save-and-run.png" alt-text="Screenshot of saving and running activity." lightbox="media/tutorial-move-data-lakehouse-pipeline/save-and-run.png":::
 
 1. You can monitor the running process and check the results on the **Output** tab below the data pipeline canvas. Select the run details button (with the glasses icon highlighted) to view the run details.
 
