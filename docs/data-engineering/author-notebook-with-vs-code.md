@@ -8,13 +8,13 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/08/2023
+ms.date: 05/13/2024
 ms.search.form: VSCodeExtension
 ---
 
 # Create and manage Microsoft Fabric notebooks in Visual Studio Code
 
-The Visual Studio (VS) Code extension for Synapse fully supports the CRUD (create, read, update, and delete) notebook experience in Fabric. The extension also supports synchronization between local and remote workspaces; when you synchronize changes, you can address any conflicts or differences between your local and remote workspace.
+The Visual Studio (VS) Code extension for Synapse fully supports the CRUD (create, read, update, and delete) notebook operations in Fabric. The extension also supports synchronization between local and remote workspaces; when you synchronize changes, you can address any conflicts or differences between your local and remote workspace.
 
 With this extension, you can also run notebooks onto the remote Fabric Spark compute.
 
@@ -125,5 +125,5 @@ By selecting the kernel **synapse-spark-kernel** shipped with this extension, yo
 
 ## Related content
 
-- [Spark Job Definition experience in VS Code](author-sjd-with-vs-code.md)
-- [Explore lakehouse from VS Code](explore-lakehouse-with-vs-code.md)
+- [Create and manage Apache Spark job definitions in Visual Studio Code](author-sjd-with-vs-code.md)
+- [Explore Microsoft Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)

@@ -155,6 +155,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Pipeline using XML format copy gets stuck
+      href: known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md
+    - name: Azure SQL Database change data doesn't propagate to mirror
+      href: known-issues/known-issue-723-sql-azure-database-change-data-not-propagate-mirror.md
     - name: Environment doesn't work when runtime version is changed to Runtime 1.1
       href: known-issues/known-issue-728-environment-not-work-runtime-version-changed-1-1.md
     - name: Shortcuts to a firewall-enabled ADLS stop working if lakehouse is shared
