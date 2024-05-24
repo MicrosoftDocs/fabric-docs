@@ -4,12 +4,12 @@ description: Learn which Fabric features are available to you depending on your 
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 05/22/2024
+ms.date: 05/24/2024
 ---
 
 # Microsoft Fabric features by SKU
 
-Microsoft Fabric is a cloud based platform with a rich set of features. The availability of these features depends on the subscription you have. This article lists key Fabric features according to [SKU](licenses.md#capacity-license) type.
+Microsoft Fabric is a cloud-based platform with a rich set of features. The availability of these features depends on the subscription you have. This article lists key Fabric features according to [SKU](licenses.md#capacity-license) type.
 
 ## Features list
 
@@ -17,17 +17,18 @@ The following table lists Fabric features according to SKU type. The table lists
 
 | Feature                                                                                                  | F SKU         | P SKUs   |
 |----------------------------------------------------------------------------------------------------------|---------------|----------|
-| [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)                             | &#x2705;      | &#x274C; |
-| [Bring your own key for Power BI](/power-bi/enterprise/service-encryption-byok)                          | &#x2705;      | &#x2705; |
 | [Copilot](../get-started/copilot-fabric-overview.md)                                                     | F64 or higher | &#x2705; |
-| [Data exfiltration protection](/azure/synapse-analytics/security/workspace-data-exfiltration-protection) | &#x2705;      | &#x274C; |
-| [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)                  | &#x2705;      | &#x274C; |
-| [Pause and resume your capacity](pause-resume.md)                                                        | &#x2705;      | &#x274C; |
-| [Power BI Autoscale](/power-bi/enterprise/service-premium-auto-scale)                                    | &#x274C;      | &#x2705; |
-| [Scale a capacity](scale-capacity.md)                                                                    | &#x2705;      | &#x274C; |
-| [Trusted workspace access](../security/security-trusted-workspace-access.md)                             | &#x2705;      | &#x274C; |
 | [Workspace identity](../security/workspace-identity.md)                                                  | F64 or higher | &#x2705; |
+| [Trusted workspace access](../security/security-trusted-workspace-access.md)                             | &#x2705;      | &#x274C; |
+| [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)                  | &#x2705;      | &#x274C; |
+| [Data exfiltration protection](/azure/synapse-analytics/security/workspace-data-exfiltration-protection) | &#x2705;      | &#x274C; |
+| [Power BI Autoscale](/power-bi/enterprise/service-premium-auto-scale)                                    | &#x274C;      | &#x2705; |
+| [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)                             | &#x2705;      | &#x274C; |
+| [Pause and resume your capacity](pause-resume.md)                                                        | &#x2705;      | &#x274C; |
+| [On-demand resizing](scale-capacity.md)                                                                  | &#x2705;      | &#x274C; |
+| [Bring your own key for Power BI](/power-bi/enterprise/service-encryption-byok)                          | &#x2705;      | &#x2705; |
 
 ## Related content
 
 * [Microsoft Fabric concepts and licenses](licenses.md)
+* [Microrosoft Fabric operations](fabric-operations.md)
