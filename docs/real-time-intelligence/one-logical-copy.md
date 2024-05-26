@@ -1,5 +1,5 @@
 ---
-title: One logical copy
+title: Eventhouse OneLake Availability
 description: Learn how to turn on KQL Database data availability in OneLake.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -10,9 +10,9 @@ ms.custom:
   - ignite-2023
 ms.date: 05/23/2024
 ---
-# One logical copy
+# Eventhouse OneLake Availability
 
-You can create a one logical copy of KQL Database data by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
+You can create a one logical copy of Eventhouse KQL Database data by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
 
 Delta Lake is a unified data lake table format that achieves seamless data access across all compute engines in Microsoft Fabric. For more information on Delta Lake, see [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake).
 
@@ -20,7 +20,7 @@ In this article, you learn how to turn on availability of KQL Database data in O
 
 ## How it works
 
-The following table describes the behavior of your KQL database and tables when you  turn on or turn off **OneLake availability**.
+The following table describes the behavior of your KQL database and tables when you turn on or turn off **OneLake availability**.
 
 | | Turned on|Turned off|
 |------|---------|--------|
@@ -68,28 +68,9 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
     1. Select the **_delta_log** folder.
     1. Select a file to view the table metadata and schema. The editor that opens is in read-only format.
 
-## Data types mapping
-
-### Event house to Delta parquet data types mapping
-
- Event house data types are mapped to Delta Parquet data types using the following rules. For more information on Event house data types, see [Scalar data types](/azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric).
-
-| Event house data type | Delta data type |
-| --------------- | -----------------|
-| `bool`     | `boolean` |
-| `datetime` | `timestamp OR date (for date-bound partition definitions)` |
-| `dynamic`  | `string` |
-| `guid` | `string` |
-| `int` | `integer` |
-| `long` | `long` |
-| `real` | `double` |
-| `string` | `string` |
-| `timespan` | `long` |
-| `decimal` | `decimal(38,18)` |
-
 ## Access mirroring policy
 
-By default, when **OneLake availability** is turned on, a mirroring policy is set as `IsEnabled=true`. You can use the policy to monitor data latency and alter it to partition your files.
+By default, when **OneLake availability** is turned on, a mirroring policy is enabled (`IsEnabled=true`). You can use the policy to [monitor data latency](#check-latency) or alter it to [partition your files](#partition-onelake-files).
 
 > [!NOTE]
 > If you deactivate **OneLake availability** the mirroring policy will be set to `false` rather than revert to a `null` state.
