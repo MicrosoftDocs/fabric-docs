@@ -1,6 +1,6 @@
 ---
 title: Microsoft Fabric features by SKU
-description: Learn which Fabric features are available to you depending on your subscription. The article lists features according to SKUs.
+description: Learn which Fabric features are available to you depending on the capacity type. The article lists features according to SKUs by capacity type.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
@@ -9,7 +9,7 @@ ms.date: 05/24/2024
 
 # Microsoft Fabric features by SKU
 
-Microsoft Fabric is a cloud-based platform with a rich set of features. The availability of these features depends on the subscription you have. This article lists key Fabric features according to [SKU](licenses.md#capacity-license) type.
+Microsoft Fabric is a cloud-based platform with a rich set of features. The availability of these features depends on the SKU and capacity type. This article lists key Fabric features according to [SKU](licenses.md#capacity-license) type.
 
 ## Features list
 
