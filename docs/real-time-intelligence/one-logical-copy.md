@@ -73,20 +73,20 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
 By default, when **OneLake availability** is turned on, a mirroring policy is enabled (`IsEnabled=true`). You can use the policy to [monitor data latency](#check-latency) or alter it to [partition your files](#partition-onelake-files).
 
 > [!NOTE]
-> If you deactivate **OneLake availability** the mirroring policy will be set to `false` rather than revert to a `null` state.
+> If you turn off **OneLake availability**, the mirroring policy's `IsEnabled` property is set to *false* (`IsEnabled=false`).
 
 ### Check latency
 
 Eventhouse can delay write operations for up to a few hours if there isn’t sufficient data to create optimal Parquet files. This ensures that the files aren't only efficient in size but also adhere to the best practices recommended for Delta.
 You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rta&pivots=fabric).
 
-When *Latency* results in 00:00:00, data was just added. Results are measured from the last time data was added.
+Results are measured from the last time data was added. When *Latency* results in 00:00:00, data was just added.
 
 ### Partition OneLake files
 
-You can partition your OneLake files to improve query speed in cases of need. For information about when to partition your OneLake files, see [When to partition tables on Azure Databricks](/azure/databricks/tables/partitions). Each partition is represented as a separate column using the *PartitionName* listed in the *Partitions* list. This means your OneLake copy has more columns than your source table.
+You can partition your OneLake files to improve query speed. For information about when to partition your OneLake files, see [When to partition tables on Azure Databricks](/azure/databricks/tables/partitions). Each partition is represented as a separate column using the *PartitionName* listed in the *Partitions* list. This means your OneLake copy has more columns than your source table.
 
-To partition your OneLake files use the [.alter-merge table policy mirroring command](/azure/data-explorer/kusto/management/alter-merge-mirroring-policy-command?context=/fabric/context/context-rta&pivots=fabric).
+To partition your OneLake files, use the [.alter-merge table policy mirroring](/azure/data-explorer/kusto/management/alter-merge-mirroring-policy-command?context=/fabric/context/context-rta&pivots=fabric) command.
 
 ## Related content
 
