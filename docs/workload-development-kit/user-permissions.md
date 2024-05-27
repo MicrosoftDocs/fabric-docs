@@ -16,7 +16,7 @@ User permissions are used to control which user can access data in Microsoft Fab
 
 This table lists the permissions for internal users in the Microsoft Fabric Workload Development Kit.
 
-|  | Viewer | Contributor | Member | Admin |
+| Operation | Viewer | Contributor | Member | Admin |
 |--|--|--|--|--|
 | See the workload list | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | Create a New item | N/A | &#x2705; | &#x2705; | &#x2705; |
@@ -33,11 +33,11 @@ This table lists the permissions for internal users in the Microsoft Fabric Work
 
 This table lists the permissions for external users in the Microsoft Fabric Workload Development Kit.
 
-|  | Viewer | Contributor | Member | Admin |
+| Operation | Viewer | Contributor | Member | Admin |
 |--|--|--|--|--|
 | See the workload list |&#x2705;|&#x2705;|&#x2705;|&#x2705;|
-| Create a New item |N/A|&#x2705;|&#x2705;|&#x2705;|
-| Read item (Open item) |&#x2705;|&#x2705;|&#x2705;|&#x2705;|
+| Create a new item |N/A|&#x2705;|&#x2705;|&#x2705;|
+| Read item (open item) |&#x2705;|&#x2705;|&#x2705;|&#x2705;|
 | Update item |N/A|&#x2705;|&#x2705;|&#x2705;|
 | Delete item |N/A|&#x2705;|&#x2705;|&#x2705;|
 | Run jobs |&#x274C;|&#x2705;|&#x2705;|&#x2705;|
