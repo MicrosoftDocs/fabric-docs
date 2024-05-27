@@ -25,7 +25,7 @@ As a Microsoft partner, applying the power of workloads within the Microsoft Fab
 
 The Microsoft Fabric Workloads SDK offers tools and interfaces to manage these workloads effectively, streamlining your analytics processes. This integration not only simplifies the development process but also enhances the analytics capabilities of your enterprise.
 
-Moreover, the [monetization](monetization.md) aspect of workloads opens up new avenues for revenue generation. By understanding and utilizing the Universal Compute Capacity, Microsoft Entra ID authentication process, and the Workload Extensibility Framework, you can maximize the financial potential of your workloads.
+Moreover, the [monetization](monetization.md) aspect of workloads opens up new avenues for revenue generation. By understanding and utilizing the Universal Compute Capacity, Microsoft Entra ID authentication process, and the Workload Development Kit Framework, you can maximize the financial potential of your workloads.
 
 In essence, workloads offer Microsoft Partners a comprehensive solution for application integration, analytics, and monetization within the Microsoft Fabric ecosystem.
 
@@ -56,5 +56,5 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 
 ## Related content
 
-* [Fabric extensibility front end](extensibility-front-end.md)
-* [Fabric extensibility back end](extensibility-back-end.md)
+* [Fabric Workload Development Kit front end](extensibility-front-end.md)
+* [Fabric Workload Development Kit back end](extensibility-back-end.md)
