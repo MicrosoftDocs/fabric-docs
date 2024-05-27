@@ -187,7 +187,7 @@ When the workload team registers the action for detailed information, Fabric exp
 
 Currently, key value pairs in plain text or hyperlink is supported.
 
-* For an example of this frontend manifest properties, see localWorkloadManifest.json that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo, under the *manifest* folder.
+* For an example of this frontend manifest property, see localWorkloadManifest.json that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo, under the *manifest* folder.
 
 * For an example of handling the job actions, see index.worker.ts that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo, and search for actions starting with 'artifact.job'.
 
