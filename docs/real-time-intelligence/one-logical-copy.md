@@ -1,6 +1,6 @@
 ---
 title: Event house OneLake Availability
-description: Learn how to turn on Event house KQL Database data availability in OneLake.
+description: Learn how to turn on KQL Database data availability in OneLake.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -12,7 +12,7 @@ ms.date: 05/23/2024
 ---
 # Event house OneLake Availability
 
-You can create a one logical copy of Event house KQL Database data by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
+You can create a one logical copy of KQL database data by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
 
 Delta Lake is a unified data lake table format that achieves seamless data access across all compute engines in Microsoft Fabric. For more information on Delta Lake, see [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake).
 
