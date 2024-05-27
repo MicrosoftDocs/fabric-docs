@@ -1,6 +1,6 @@
 ---
-title: Fabric extensibility monitoring hub (preview)
-description: Learn about the Fabric extensibility monitoring hub.
+title: Fabric Workload Development Kit monitoring hub (preview)
+description: Learn about the Fabric Workload Development Kit monitoring hub.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: muliwienrib

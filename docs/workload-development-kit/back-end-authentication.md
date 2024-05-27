@@ -1,5 +1,5 @@
 ---
-title: Fabric extensibility backend authentication (preview)
+title: Fabric Workload Development Kit backend authentication (preview)
 description: Learn about building the backend authentication of a customized Fabric workload.
 author: paulinbar
 ms.author: painbar
