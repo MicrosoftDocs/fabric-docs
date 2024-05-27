@@ -1,10 +1,12 @@
 ---
 title: Share your warehouse and manage permissions
 description: Learn how to share your warehouse in Microsoft Fabric and manage its user permissions.
-author: jacindaeng
-ms.author: jacindaeng
-ms.reviewer: wiassaf
-ms.date: 12/05/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: jacindaeng
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -13,7 +15,7 @@ ms.search.form: Warehouse roles and permissions # This article's title should no
 ---
 # Share your warehouse and manage permissions
 
-**Applies to:** [!INCLUDE[fabric-dw-and-mirrored-db](includes/applies-to-version/fabric-dw-and-mirrored-db.md)]
+**Applies to:** [!INCLUDE [fabric-dw-and-mirrored-db](includes/applies-to-version/fabric-dw-and-mirrored-db.md)]
 
 Sharing is a convenient way to provide users read access to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] for downstream consumption. Sharing allows downstream users in your organization to consume a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using SQL, Spark, or Power BI. You can customize the level of permissions that the shared recipient is granted to provide the appropriate level of access.
 
@@ -26,11 +28,11 @@ After identifying the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] you would li
 
 The following animated gif reviews the steps to select a warehouse to share, select the permissions to assign, and then finally **Grant** the permissions to another user.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\share-warehouse.gif" alt-text="An animated gif showing interaction with the Fabric portal where a user shares a warehouse in Microsoft Fabric with another user." lightbox="media\share-warehouse-manage-permissions\share-warehouse.gif" :::
+:::image type="content" source="media/share-warehouse-manage-permissions/share-warehouse.gif" alt-text="An animated gif showing interaction with the Fabric portal where a user shares a warehouse in Microsoft Fabric with another user." lightbox="media/share-warehouse-manage-permissions/share-warehouse.gif":::
 
-You can share your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from the OneLake Data Hub or the Synapse Data Warehouse by choosing **Share** from quick action, as highlighted in the following image.
+You can share your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from the **OneLake data hub** or Warehouse item by choosing **Share** from quick action, as highlighted in the following image.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\share-warehouse-data-hub.png" alt-text="Screenshot showing how to share a warehouse in the OneLake Data Hub page." lightbox="media\share-warehouse-manage-permissions\share-warehouse-data-hub.png":::
+:::image type="content" source="media/share-warehouse-manage-permissions/share-warehouse-data-hub.png" alt-text="Screenshot showing how to share a warehouse in the OneLake data hub page." lightbox="media/share-warehouse-manage-permissions/share-warehouse-data-hub.png":::
 
 ## Share a Warehouse
 
@@ -53,11 +55,11 @@ Here's more detail about each of the permissions provided:
 
 When the shared recipient receives the email, they can select **Open** and navigate to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] Data Hub page.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\recipient-open-shared-warehouse.png" alt-text="A screenshot showing the shared user's email notification of a shared warehouse." lightbox="media\share-warehouse-manage-permissions\recipient-open-shared-warehouse.png":::
+:::image type="content" source="media/share-warehouse-manage-permissions/recipient-open-shared-warehouse.png" alt-text="Screenshot showing the shared user's email notification of a shared warehouse." lightbox="media/share-warehouse-manage-permissions/recipient-open-shared-warehouse.png":::
 
 Depending on the level of access the shared recipient has been granted, the shared recipient is now able to connect to the [!INCLUDE [fabric-se](includes/fabric-se.md)], query the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], build reports, or read data through Spark.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\share-see-what-already-exists.png" alt-text="A screenshot from the Fabric portal showing the 'See what already exists' page of the shared warehouse." lightbox="media\share-warehouse-manage-permissions\share-see-what-already-exists.png":::
+:::image type="content" source="media/share-warehouse-manage-permissions/share-see-what-already-exists.png" alt-text="Screenshot from the Fabric portal showing the 'See what already exists' page of the shared warehouse." lightbox="media/share-warehouse-manage-permissions/share-see-what-already-exists.png":::
 
 ### ReadData permissions
 
@@ -65,7 +67,7 @@ With **ReadData** permissions, the shared recipient can open the [!INCLUDE [fabr
 
 For example, in the following screenshot, a user with **ReadData** permissions can query the warehouse.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\readdata-read-only-editor.png" alt-text="A screenshot from the Fabric portal show a user can query a shared warehouse." lightbox="media\share-warehouse-manage-permissions\readdata-read-only-editor.png" :::
+:::image type="content" source="media/share-warehouse-manage-permissions/readdata-read-only-editor.png" alt-text="Screenshot from the Fabric portal show a user can query a shared warehouse." lightbox="media/share-warehouse-manage-permissions/readdata-read-only-editor.png":::
 
 ### ReadAll permissions
 
@@ -73,7 +75,7 @@ A shared recipient with **ReadAll** permissions can find the [Azure Blob File Sy
 
 For example, in the following screenshot, a user with **ReadAll** permissions can query the data in `FactSale` with a Spark query in a new notebook.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\table-spark-open-new-notebook.png" alt-text="A screenshot from the Fabric portal where a user opens a Spark notebook to query the Warehouse shortcut." lightbox="media\share-warehouse-manage-permissions\table-spark-open-new-notebook.png" :::
+:::image type="content" source="media/share-warehouse-manage-permissions/table-spark-open-new-notebook.png" alt-text="Screenshot from the Fabric portal where a user opens a Spark notebook to query the Warehouse shortcut.":::
 
 ### Build permissions
 
@@ -81,7 +83,7 @@ With **Build** permissions, the shared recipient can create reports on top of th
 
 For example, in the following screenshot a user with **Build** permissions can start to **Auto-create** a Power BI report based on the shared warehouse.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\visualize-this-data-auto-create.png" alt-text="An screenshot showing interaction with the Fabric portal, where a user can autocreate a report on the shared warehouse." lightbox="media\share-warehouse-manage-permissions\visualize-this-data-auto-create.png" :::
+:::image type="content" source="media/share-warehouse-manage-permissions/visualize-this-data-auto-create.png" alt-text="An screenshot showing interaction with the Fabric portal, where a user can autocreate a report on the shared warehouse." lightbox="media/share-warehouse-manage-permissions/visualize-this-data-auto-create.png":::
 
 ## Manage permissions
 
@@ -89,20 +91,20 @@ The **Manage permissions** page shows the list of users who have been given acce
 
 If you are an Admin or Member, go to your workspace and select **More options**. Then, select **Manage permissions**.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\manage-permissions-workspace.png" alt-text="Screenshot showing a user selecting Manage permissions in the warehouse context menu." lightbox="media\share-warehouse-manage-permissions\manage-permissions-workspace.png":::
+:::image type="content" source="media/share-warehouse-manage-permissions/manage-permissions-workspace.png" alt-text="Screenshot showing a user selecting Manage permissions in the warehouse context menu." lightbox="media/share-warehouse-manage-permissions/manage-permissions-workspace.png":::
 
 For users who were provided workspace roles, it shows the corresponding user, workspace role and permissions. Admin, Member and contributors have read/write access to items in this workspace. Viewers have **ReadData** permissions and can query all tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in that workspace. Item permissions **Read**, **ReadData**, and **ReadAll** can be provided to users.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\manage-permissions-page.png" alt-text="Screenshot showing the Manage permissions page of the Warehouse in the Fabric portal." lightbox="media\share-warehouse-manage-permissions\manage-permissions-page.png":::
+:::image type="content" source="media/share-warehouse-manage-permissions/manage-permissions-page.png" alt-text="Screenshot showing the Manage permissions page of the Warehouse in the Fabric portal." lightbox="media/share-warehouse-manage-permissions/manage-permissions-page.png":::
 
-You can choose to add or remove permissions using the "Manage permissions" experience:
+You can choose to add or remove permissions using **Manage permissions**:
 
 - **Remove access** removes all item permissions.
 - **Remove ReadData** removes the **ReadData** permissions.
 - **Remove ReadAll** removes **ReadAll** permissions.
 - **Remove build** removes **Build** permissions on the corresponding default semantic model.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\remove-readall-manage-permissions.png" alt-text="Screenshot showing a user removing the ReadAll permission of a shared recipient." lightbox="media\share-warehouse-manage-permissions\remove-readall-manage-permissions.png":::
+:::image type="content" source="media/share-warehouse-manage-permissions/remove-readall-manage-permissions.png" alt-text="Screenshot showing a user removing the ReadAll permission of a shared recipient." lightbox="media/share-warehouse-manage-permissions/remove-readall-manage-permissions.png":::
 
 ## Limitations
 
@@ -116,7 +118,7 @@ You can choose to add or remove permissions using the "Manage permissions" exper
 - Shared recipients do not have permission to reshare a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 - If a report built on top of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is shared with another recipient, the shared recipient needs more permissions to access the report. This depends on the mode of [access to the semantic model by Power BI](semantic-models.md):
   - If accessed through [Direct query mode](/power-bi/connect-data/service-dataset-modes-understand#directquery-mode) then **ReadData** permissions (or [granular SQL permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-  - If accessed through [Direct lake mode](/power-bi/enterprise/directlake-overview), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Direct Lake mode is the default connection type for semantic models that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source. For more information, see [Direct Lake mode](semantic-models.md#direct-lake-mode). 
+  - If accessed through [Direct lake mode](../get-started/direct-lake-overview.md), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Direct Lake mode is the default connection type for semantic models that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source. For more information, see [Direct Lake mode](semantic-models.md#direct-lake-mode). 
   - If accessed through [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode) then no additional permissions are needed.
   - Currently, sharing a warehouse directly with a SPN is not supported. 
 

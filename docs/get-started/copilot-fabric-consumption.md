@@ -6,6 +6,7 @@ author: ruixinxu
 ms.topic: how-to
 ms.custom:
 ms.date: 02/01/2024
+no-loc: [Copilot]
 ---
 
 # Copilot in Fabric (preview) consumption

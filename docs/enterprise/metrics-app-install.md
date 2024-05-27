@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/31/2023
+ms.date: 05/20/2024
 ---
 
 # Install the Microsoft Fabric capacity metrics app
@@ -140,6 +140,16 @@ To install the app in a government cloud environment, use one of these links. Yo
 ### Considerations and limitations
 
 OneLake isn't supported in Government Community Cloud (GCC).
+
+### Troubleshooting
+
+After installing the app, if it's not showing data or can't refresh, follow these steps:
+
+1. Delete the old app.
+
+2. Reinstall the latest version of the app.
+
+3. Update the semantic model credentials.
 
 ## Related content
 

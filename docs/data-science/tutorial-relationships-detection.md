@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Discover relationships in the _Synthea_ dataset using semantic link (preview)'
+title: 'Tutorial: Discover relationships in the _Synthea_ dataset using semantic link'
 description: This article shows how to detect relationships in the public _Synthea_ dataset, using semantic link.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -12,11 +12,9 @@ ms.date: 09/27/2023
 ---
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/relationships_detection_tutorial.ipynb -->
 
-# Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link (preview)
+# Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link
 
-This tutorial illustrates how to detect relationships in the public _Synthea_ dataset, using semantic link (preview).
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+This tutorial illustrates how to detect relationships in the public _Synthea_ dataset, using semantic link.
 
 When you're working with new data or working without an existing data model, it can be helpful to discover relationships automatically. This relationship detection can help you to:
 
@@ -320,9 +318,9 @@ The simple baseline example was a convenient learning and troubleshooting tool. 
 
 Check out other tutorials for semantic link / SemPy:
 
-- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Analyze functional dependencies in a sample semantic model (preview)](tutorial-power-bi-dependencies.md)
-- [Tutorial: Discover relationships in a semantic model, using semantic link (preview)](tutorial-power-bi-relationships.md)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
+- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Analyze functional dependencies in a sample semantic model](tutorial-power-bi-dependencies.md)
+- [Tutorial: Discover relationships in a semantic model, using semantic link](tutorial-power-bi-relationships.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 
 <!-- nbend -->

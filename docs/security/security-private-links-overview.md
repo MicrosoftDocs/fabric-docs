@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
-ms.date: 03/11/2024
+ms.date: 04/04/2024
 ---
 
 # Private links for secure access to Fabric (preview)
@@ -85,8 +85,8 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 
 When you connect to Pipeline via private link, you can use the data pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize data pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
 
-### ML Model and Experiment
-ML Model and Experiment supports private link. 
+### ML Model, Experiment, and AI skill
+ML Model, Experiment and AI skill supports private link. 
 
 ### Power BI
 
@@ -120,7 +120,8 @@ There are several considerations to keep in mind while working with private endp
 
 * Customers can't connect to Fabric resources in multiple tenants from a single VNet, but rather only the last tenant to set up Private Link.
 
-* Private link does not support in Trial capacity. 
+* Private link does not support in Trial capacity. When accessing Fabric via Private Link traffic, trial capacity will not work.
+  
 * Any uses of external images or themes aren't available when using a private link environment.
 
 * Each private endpoint can be connected to one tenant only.  You can't set up a private link to be used by more than one tenant.
@@ -145,6 +146,7 @@ There are several considerations to keep in mind while working with private endp
     * Required for the Data Engineering and Data Science experiences:
 
         * `http://res.cdn.office.net/`
+        * `https://aznbcdn.notebooks.azure.net/` 
         * `https://pypi.org/*` (for example, `https://pypi.org/pypi/azure-storage-blob/json`) 
         * local static endpoints for condaPackages 
         * `https://cdn.jsdelivr.net/npm/monaco-editor*`

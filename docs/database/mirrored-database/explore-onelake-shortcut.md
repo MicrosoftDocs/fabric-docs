@@ -4,7 +4,7 @@ description: Learn how to access your mirrored database from Lakehouse and Spark
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, anithaa
-ms.date: 03/13/2024
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: how-to
 ---

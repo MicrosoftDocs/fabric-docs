@@ -1,10 +1,12 @@
 ---
 title: Query the SQL analytics endpoint or Warehouse
 description: Learn more about options to write TSQL queries on the SQL analytics endpoint or Warehouse in Microsoft Fabric.
-author: prlangad
-ms.author: prlangad
-ms.reviewer: wiassaf, kecona
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: prlangad, kecona
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -15,7 +17,7 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 ---
 # Query the SQL analytics endpoint or Warehouse in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
 
 To get started with this tutorial, check the following prerequisites:
 
@@ -35,29 +37,29 @@ To get started with this tutorial, check the following prerequisites:
 
 1. Open a **New SQL query** window. 
 
-   :::image type="content" source="media\query-warehouse\new-sql-query.png" alt-text="Screenshot showing where to select New SQL query in the ribbon." lightbox="media\query-warehouse\new-sql-query.png":::
+   :::image type="content" source="media/query-warehouse/new-sql-query.png" alt-text="Screenshot showing where to select New SQL query in the ribbon." lightbox="media/query-warehouse/new-sql-query.png":::
 
 1. A new tab appears for you to write a SQL query.
 
-   :::image type="content" source="media\query-warehouse\sql-query-tab.png" alt-text="Screenshot of a new query tab in the SQL query editor the Fabric portal." lightbox="media\query-warehouse\sql-query-tab.png":::
+   :::image type="content" source="media/query-warehouse/sql-query-tab.png" alt-text="Screenshot of a new query tab in the SQL query editor the Fabric portal." lightbox="media/query-warehouse/sql-query-tab.png":::
 
 1. Write a SQL query and run it.
 
-   :::image type="content" source="media\query-warehouse\write-sql-query.png" alt-text="Screenshot of a writing a SQL query." lightbox="media\query-warehouse\write-sql-query.png":::
+   :::image type="content" source="media/query-warehouse/write-sql-query.png" alt-text="Screenshot of a writing a SQL query." lightbox="media/query-warehouse/write-sql-query.png":::
 
 ## Run a new query in Visual query editor
 
 1. Open a **New visual query** window.
 
-   :::image type="content" source="media\query-warehouse\new-visual-query.png" alt-text="Screenshot showing where to select New visual query in the ribbon." lightbox="media\query-warehouse\new-visual-query.png":::
+   :::image type="content" source="media/query-warehouse/new-visual-query.png" alt-text="Screenshot showing where to select New visual query in the ribbon." lightbox="media/query-warehouse/new-visual-query.png":::
 
 1. A new tab appears for you to create a visual query.
 
-   :::image type="content" source="media\query-warehouse\visual-query-tab.png" alt-text="Screenshot of a new query tab in the visual query editor of the Fabric portal." lightbox="media\query-warehouse\visual-query-tab.png":::
+   :::image type="content" source="media/query-warehouse/visual-query-tab.png" alt-text="Screenshot of a new query tab in the visual query editor of the Fabric portal." lightbox="media/query-warehouse/visual-query-tab.png":::
 
 1. Drag and drop tables from the object **Explorer** to **Visual query editor** window to create a query.
 
-   :::image type="content" source="media\query-warehouse\drag-drop-visual-query.png" alt-text="Screenshot of a creating a new visual query." lightbox="media\query-warehouse\drag-drop-visual-query.png":::
+   :::image type="content" source="media/query-warehouse/drag-drop-visual-query.png" alt-text="Screenshot of a creating a new visual query." lightbox="media/query-warehouse/drag-drop-visual-query.png":::
 
 ## Write a cross-database query
 
@@ -67,7 +69,7 @@ There are several ways you can write cross-database queries within the same [!IN
 
 1. Add [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) from your current active workspace to object **Explorer** using **+ Warehouses** action. When you select [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) from the dialog, it gets added into the object **Explorer** for referencing when writing a SQL query or creating Visual query.
 
-   :::image type="content" source="media\query-warehouse\add-warehouses.png" alt-text="Screenshot showing how to use add warehouses in object explorer." lightbox="media\query-warehouse\add-warehouses.png":::
+   :::image type="content" source="media/query-warehouse/add-warehouses.png" alt-text="Screenshot showing how to use add warehouses in object explorer." lightbox="media/query-warehouse/add-warehouses.png":::
 
 1. You can reference the table from added databases using three-part naming. In the following example, use the three-part name to refer to `ContosoSalesTable` in the added database `ContosoLakehouse`.
 
@@ -106,7 +108,7 @@ There are several ways you can write cross-database queries within the same [!IN
 
 1. You can drag and drop tables from added databases to **Visual query editor** to create a cross-database query.
 
-   :::image type="content" source="media\query-warehouse\cross-warehouse-query-visual-query-editor.png" alt-text="Screenshot of a cross-database query in visual query editor." lightbox="media\query-warehouse\cross-warehouse-query-visual-query-editor.png":::
+   :::image type="content" source="media/query-warehouse/cross-warehouse-query-visual-query-editor.png" alt-text="Screenshot of a cross-database query in visual query editor." lightbox="media/query-warehouse/cross-warehouse-query-visual-query-editor.png":::
 
 ## Select Top 100 Rows from the Explorer
 
@@ -114,11 +116,11 @@ There are several ways you can write cross-database queries within the same [!IN
 
 1. Right-click on the table that you would like to query and select **Select TOP 100 rows**.
 
-   :::image type="content" source="media\query-warehouse\select-top-100-rows.png" alt-text="Screenshot showing where to select the Select Top 100 Rows option in the right-click menu." lightbox="media\query-warehouse\select-top-100-rows.png":::
+   :::image type="content" source="media/query-warehouse/select-top-100-rows.png" alt-text="Screenshot showing where to select the Select Top 100 Rows option in the right-click menu." lightbox="media/query-warehouse/select-top-100-rows.png":::
 
 1. Once the script is automatically generated, select the **Run** button to run the script and see the results.
 
-   :::image type="content" source="media\query-warehouse\select-top-run.png" alt-text="Screenshot showing results of select top 100 rows." lightbox="media\query-warehouse\select-top-run.png":::
+   :::image type="content" source="media/query-warehouse/select-top-run.png" alt-text="Screenshot showing results of select top 100 rows." lightbox="media/query-warehouse/select-top-run.png":::
 
 > [!NOTE]
 > At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.

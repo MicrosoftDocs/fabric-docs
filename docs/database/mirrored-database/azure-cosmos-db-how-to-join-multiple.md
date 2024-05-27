@@ -4,8 +4,8 @@ title: |
 description: Join multiple Azure Cosmos DB databases together using mirrored databases in Microsoft Fabric.
 author: seesharprun
 ms.author: sidandrews
-ms.reviewer: anithaa
-ms.date: 03/17/2024
+ms.reviewer: anithaa, wiassaf
+ms.date: 04/24/2024
 ms.service: fabric
 ms.topic: how-to
 ---
@@ -54,7 +54,7 @@ Now, use the SQL analytics endpoint to create a query across two mirrored databa
 
 1. Switch from **Mirrored Azure Cosmos DB** to **SQL analytics endpoint**.
 
-    :::image type="content" source="media/azure-cosmos-db-how-to-join-multiple/switch-experience.png" alt-text="Screenshot of the selector to switch between experiences in the Fabric portal." lightbox="media/azure-cosmos-db-how-to-join-multiple/switch-experience.png":::
+    :::image type="content" source="media/azure-cosmos-db-how-to-join-multiple/switch-experience.png" alt-text="Screenshot of the selector to switch between items in the Fabric portal." lightbox="media/azure-cosmos-db-how-to-join-multiple/switch-experience.png":::
 
 1. In the menu, select **+ Warehouses**. Select the SQL analytics endpoint item for the other mirrored database.
 
