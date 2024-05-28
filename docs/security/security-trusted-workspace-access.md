@@ -1,14 +1,14 @@
 ---
-title: Trusted workspace access in Microsoft Fabric (preview)
+title: Trusted workspace access in Microsoft Fabric
 description: Learn how to configure and use trusted workspace access to securely access your Azure Data Lake Gen2 storage accounts from Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/04/2024
+ms.date: 05/30/2024
 ---
 
-# Trusted workspace access (preview)
+# Trusted workspace access
 
 Fabric allows you to access firewall-enabled Azure Data Lake Storage (ADLS) Gen2 accounts in a secure manner. Fabric workspaces that have a workspace identity can securely access ADLS Gen2 accounts with public network access enabled from selected virtual networks and IP addresses. You can limit ADLS Gen2 access to specific Fabric workspaces.
 
@@ -17,7 +17,7 @@ Fabric workspaces that access a storage account with trusted workspace access ne
 To limit and protect access to firewall-enabled storage accounts from certain Fabric workspaces, you can set up resource instance rule to allow access from specific Fabric workspaces.
 
 > [!NOTE]
-> Trusted workspace access in OneLake shortcuts and data pipelines is currently in public preview. Fabric workspace identity can only be created in workspaces associated with a Fabric capacity (F64 or higher). For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+> Trusted workspace access is **generally available**. Fabric workspace identity can only be created in workspaces associated with a Fabric capacity (F64 or higher). For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 
 This article shows you how to:
 
