@@ -201,7 +201,7 @@ with DAG(
 
 3. You can now see the new table named 'nyc_trip_count.sql' created in your Fabric data warehouse.
 
-:::image type="content" source="media/data-workflows/run-directed-acyclic-graph.png" lightbox="media/data-workflows/run-directed-acyclic-graph.png.png" alt-text="Screenshot shows run dag.":::
+:::image type="content" source="media/data-workflows/run-directed-acyclic-graph.png" lightbox="media/data-workflows/run-directed-acyclic-graph.png" alt-text="Screenshot shows run dag.":::
 
 ## Related Content
 
