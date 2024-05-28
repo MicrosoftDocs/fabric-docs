@@ -62,7 +62,11 @@ If the workspace or Git directory has unsupported items, it can still be connect
 
 ## Considerations and limitations
 
-* Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant is supported.  
+* Currently, the following Git providers are supported:
+
+  * [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant are supported.
+  * [GitHub](https://github.com/)
+
 * If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).  
 * Azure DevOps **on-prem** isn't supported.
 * Sovereign clouds aren't supported.

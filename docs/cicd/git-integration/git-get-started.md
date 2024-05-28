@@ -44,7 +44,9 @@ Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/
     > If you don't see the Workspace settings icon, select the ellipsis (three dots) then workspace settings.
     > :::image type="content" source="./media/git-get-started/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed from ellipsis.":::
 
-1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
+1. Select **Git integration**.
+
+1. You’re automatically signed into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
 
     :::image type="content" source="./media/git-get-started/workspace-settings.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
 
@@ -164,6 +166,8 @@ The actions you can take on a workspace depend on the permissions you have in bo
   - Manually changing the item definition file. These changes are valid, but might be different than if done through the editors. For example, if you rename a semantic model column in Git and import this change to the workspace, the next time you commit changes to the semantic model, the *bim* file will register as changed and the modified column pushed to the back of the `columns` array. This is because the AS engine that generates the *bim* files pushes renamed columns to the end of the array. This change doesn't affect the way the item operates.
   
   - Committing a file that uses *CRLF* line breaks. The service uses *LF* (line feed) line breaks. If you had item files in the Git repo with *CRLF* line breaks, when you commit from the service these files are changed to *LF*. For example, if you open a report in desktop, save the *.pbip* project and upload it to Git using *CRLF*.
+
+- In GitHub, the commit size is limited to 100 MB.
 
 - If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the Git integration feature.
 
