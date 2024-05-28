@@ -825,7 +825,7 @@
         items:
           - name: Synchronize your code from an existing Git repo
             href: data-workflows-sync-git-repo.md
-          - name: Data workflow workspace settings
+          - name: Data workflows workspace settings
             href: data-workflows-workspace-settings.md
           - name: Install a private package
             href: data-workflows-install-private-package.md

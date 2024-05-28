@@ -49,7 +49,7 @@ To get started, you must complete the following prerequisites:
 
 ## Create a Fabric warehouse.
 
-1. To create a warehouse, navigate to your workspace, select + New and then select Warehouse to create a warehouse.
+1. To create a warehouse, navigate to your workspace, select `+ New` and then select Warehouse.
 
 2. Once initialized, you can load data into your warehouse
 
