@@ -4,6 +4,8 @@ description: Learn how to assign and unassign a workspace to a deployment pipeli
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: leebenjamin
+ms.service: fabric
+ms.subservice: pbi-deployment-pipeline
 ms.topic: how-to
 ms.custom:
     - build-2023

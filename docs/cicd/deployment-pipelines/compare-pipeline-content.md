@@ -3,6 +3,8 @@ title: Compare content in different stages before deployment
 description: Learn how to compare the content of the source stage and target stage before deployment with the Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
+ms.service: fabric
+ms.subservice: pbi-deployment-pipeline
 ms.topic: how-to
 ms.custom:
   - build-2023

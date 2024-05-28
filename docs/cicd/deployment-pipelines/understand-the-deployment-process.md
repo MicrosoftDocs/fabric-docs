@@ -4,6 +4,8 @@ description: Understand how deployment pipelines, the Fabric Application lifecyc
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Lee
+ms.service: fabric
+ms.subservice: pbi-deployment-pipeline
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/14/2024
