@@ -24,6 +24,6 @@ If you are in the West India region, you don't see the option to select the on-p
 
 Use a tenant in a region other than **West India**.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

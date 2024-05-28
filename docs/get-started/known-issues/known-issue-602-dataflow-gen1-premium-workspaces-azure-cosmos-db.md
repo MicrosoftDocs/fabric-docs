@@ -27,6 +27,6 @@ There are two possible workarounds:
 - Move your dataflow from Dataflow Gen1 to Dataflow Gen2
 - Move your dataflow to a workspace assigned to a Pro capacity
 
-## Next steps
+## Related content
 
 - [About known issues](/power-bi/troubleshoot/known-issues/power-bi-known-issues)

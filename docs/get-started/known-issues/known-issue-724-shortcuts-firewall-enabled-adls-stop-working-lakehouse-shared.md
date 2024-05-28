@@ -24,6 +24,6 @@ You have a lakehouse that contains an ADLS Gen2 shortcut, where the ADLS Gen2 st
 
 Don't share the lakehouse with viewers or users outside of the workspace.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

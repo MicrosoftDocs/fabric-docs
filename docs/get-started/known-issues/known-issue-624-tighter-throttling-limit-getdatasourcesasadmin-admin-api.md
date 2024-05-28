@@ -24,7 +24,7 @@ You receive a return code 429 (too many requests) after hitting the limit of 50 
 
 While we work on refining the throttling limits for the GetDatasourcesAsAdmin API, we understand the importance of providing viable alternatives for our users. As a temporary workaround, we recommend using our scanner APIs to access all datasource information for your tenant. The scanner APIs offer a robust solution for retrieving datasets and related datasource information. For more information, please refer to [Admin - WorkspaceInfo GetScanResult REST API](/rest/api/power-bi/admin/workspace-info-get-scan-result). We acknowledge that this workaround might not fully replicate the functionality of the affected API. However, we believe it serves as a practical solution until we finalize a new throttling limit that effectively caters to all use cases. Thank you for your patience and understanding as we navigate through this process.
 
-## Next steps
+## Related content
 
 - [About Admin - WorkspaceInfo GetScanResult REST API](/rest/api/power-bi/admin/workspace-info-get-scan-result)
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

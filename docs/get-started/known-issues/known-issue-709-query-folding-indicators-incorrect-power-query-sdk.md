@@ -24,6 +24,6 @@ On the editing experience of Power Query Online, the correct query folding indic
 
 There are no workarounds available as of now. This issue doesn't affect the user queries as it is only an issue with the query folding indicator, but not the execution of the query itself.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

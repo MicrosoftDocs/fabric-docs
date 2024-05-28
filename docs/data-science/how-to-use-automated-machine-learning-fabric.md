@@ -382,7 +382,7 @@ print('Best roc_auc on validation data: {0:.4g}'.format(1-automl.best_loss))
 print('Training duration of best run: {0:.4g} s'.format(automl.best_config_train_time))
 ```
 
-## Next steps
+## Related content
 
 * [Learn about AutoML in Fabric](../data-science/automated-machine-learning-fabric.md)
 * [Visualize the results of your AutoML trial](../data-science/tuning-automated-machine-learning-visualizations.md)
