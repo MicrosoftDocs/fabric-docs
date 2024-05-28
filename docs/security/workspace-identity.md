@@ -80,8 +80,8 @@ In the future, workspace admins will be able to enable the use of workspace iden
 
 Fabric administrators can view the workspace identities created in their tenant in the Admin portal. 
 
-1. Navigate to Fabric identities tab in Admin portal.
-1. Select a workspace identity and select **Details**.
+1. Navigate to the Fabric identities tab in the Admin portal.
+1. Select a workspace identity, and then select **Details**.
 1. In the Details tab, you can view additional information related to the workspace identity.
 1. You can also delete a workspace identity.
    > [!NOTE]
