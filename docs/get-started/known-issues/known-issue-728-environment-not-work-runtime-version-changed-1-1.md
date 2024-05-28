@@ -24,6 +24,6 @@ If you update the Fabric Runtime of an environment item to Runtime 1.1 and updat
 
 No workarounds at this time. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

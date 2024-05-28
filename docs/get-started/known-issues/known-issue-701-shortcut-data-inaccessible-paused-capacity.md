@@ -24,6 +24,6 @@ You can't access the data using a shortcut if the workspace that contains the da
 
 The only workaround is to resume the capacity that is hosting the data.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

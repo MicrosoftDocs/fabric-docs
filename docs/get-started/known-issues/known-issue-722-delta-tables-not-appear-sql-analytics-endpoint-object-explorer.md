@@ -24,6 +24,6 @@ Delta tables aren't loaded into the SQL Analytics Endpoint Object Explorer and l
 
 No workarounds at this time. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)
