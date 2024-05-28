@@ -13,7 +13,7 @@ ms.date: 04/24/2024
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-You can configure and manage the runtime settings of Apache Airflow for Data workflows, as well as the default Apache Airflow runtime for the workspace. Data workflow offers the two types of the environment settings, i.e.Starter pool and Custom pool. You have the option to use the automatically created starter pool or create custom pools for workspaces. If the setting for customizing compute configurations for items is disabled, this pool will be used for all environments within this workspace. Starter pools offer an instant Apache Airflow runtime, which is automatically deprovisioned when not in use. On the other hand, custom pools provide more flexibility and offer an always-on Apache Airflow runtime. This article outlines each setting and suggests ideal scenarios for their respective usage.
+You can configure and manage the runtime settings of Apache Airflow for Data workflows and the default Apache Airflow runtime for the workspace. Data workflow offers the two types of the environment settings, i.e. Starter pool and Custom pool. You have the option to use the automatically created starter pool or create custom pools for workspaces. If the setting for customizing compute configurations for items is disabled, this pool is used for all environments within this workspace. Starter pools offer an instant Apache Airflow runtime, which is automatically deprovisioned when not in use. On the other hand, custom pools provide more flexibility and offer an always-on Apache Airflow runtime. This article outlines each setting and suggests ideal scenarios for their respective usage.
 
 ## Starter Pool and Custom Pool
 
@@ -41,7 +41,7 @@ The following table contains the list the properties of both the pools.
     - Name: Give a suitable name to your pool.
     - Compute node size: The size of compute node you want to run your environment on. You can choose the value `Large` for running complex or production DAGs and `Small` for running simpler Directed Acyclic Graphs (DAGs).
     - Enable autoscale: This feature allows your Apache Airflow pool to scale nodes up or down as needed.
-    - Extra nodes: Additional nodes enable the pool to run more DAGs concurrently. Each additional node provides the capacity to run 3 more workers.
+    - Extra nodes: Additional nodes enable the pool to run more DAGs concurrently. Each additional node provides the capacity to run three more workers.
 
     :::image type="content" source="media/data-workflows/new-custom-pool.png" lightbox="media/data-workflows/new-custom-pool.png" alt-text="Screenshot shows custom pool settings in data workflow.":::
 
