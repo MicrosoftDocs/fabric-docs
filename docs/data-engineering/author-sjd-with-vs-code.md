@@ -8,13 +8,13 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/08/2023
+ms.date: 05/13/2024
 ms.search.form: VSCodeExtension
 ---
 
 # Create and manage Apache Spark job definitions in Visual Studio Code
 
-The Visual Studio (VS) Code extension for Synapse fully supports the CURD (create, update, read, and delete) Spark job definition experience in Fabric. After you create a Spark job definition, you can upload more referenced libraries, submit a request to run the Spark job definition, and check the run history.
+The Visual Studio (VS) Code extension for Synapse fully supports the CURD (create, update, read, and delete) Spark job definition operations in Fabric. After you create a Spark job definition, you can upload more referenced libraries, submit a request to run the Spark job definition, and check the run history.
 
 ## Create a Spark job definition
 
@@ -109,5 +109,5 @@ You can edit the detail properties of Spark job definitions, such as command-lin
 
 ## Related content
 
-- [Explore lakehouse in VS Code](explore-lakehouse-with-vs-code.md)
-- [Notebook experience in VS Code](author-notebook-with-vs-code.md)
+- [Explore Microsoft Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)
+- [Create and manage Microsoft Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)

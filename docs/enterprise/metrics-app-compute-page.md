@@ -7,6 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
 ms.date: 02/21/2024
 no-loc: [Copilot]
 ---
@@ -214,6 +215,6 @@ The table in this section lists the optional fields that you can add to the matr
 
 * [Understand the metrics app storage page](metrics-app-storage-page.md)
 * [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
-* [KQL Database consumption](../real-time-analytics/kql-database-consumption.md)
+* [KQL Database consumption](../real-time-intelligence/kql-database-consumption.md)
 * [Monitor Spark capacity consumption](../data-engineering/monitor-spark-capacity-consumption.md)
 * [Data Factory pricing](../data-factory/pricing-overview.md)

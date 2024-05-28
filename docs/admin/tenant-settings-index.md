@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/04/2024
+ms.date: 05/26/2024
 ---
 
 # Tenant settings index
@@ -18,12 +18,13 @@ This article lists all Fabric tenant settings, along with a brief description of
 |------|-------|
 |[Data Activator (preview)](../data-activator/data-activator-get-started.md)|Turn on Data Activator Preview to allow users to define a specific set of conditions about their data, and then receive notifications when those conditions are met. After they receive notifications, users can take action to correct the change in conditions. This setting can be managed at both the tenant and the capacity levels. Data Activator is currently available in  [these regions](https://go.microsoft.com/fwlink/?linkid=2250213). When you turn on Data Activator, you agree to the  [Data Activator Preview terms](https://go.microsoft.com/fwlink/?linkid=2244647).  [Learn More](https://go.microsoft.com/fwlink/?linkid=2237360)|
 |[Users can create Fabric items](fabric-switch.md)|Users can use production-ready features to create Fabric items. Turning off this setting doesn't impact users’ ability to create Power BI items. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2247554)|
-|Users can create Fabric environments to save and apply Spark settings (preview)|In Synapse Data Engineering and Data Science, users can select specific Spark runtimes, configure compute resources, and install libraries, and then save their choices as an environment. Environments can be attached to workspaces, notebooks, and Spark job definitions.|
 |[Sustainability solutions (preview)](/industry/sustainability/sustainability-data-solutions-overview)|Turn on this setting to give your tenant users the permission to deploy the Sustainability solutions (preview) and its associated capabilities.  [Learn More](https://aka.ms/learn-about-sustainability-solutions)|
 |Retail data solutions (preview)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://go.microsoft.com/fwlink/?linkid=2263806)|
 |Healthcare data solutions (preview)|Use advanced AI analytics to help generate new insights, enhance patient care, and improve outcomes.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2248375)|
-|[Create Eventhouse (preview)](../real-time-analytics/eventhouse.md)|Users in the organization can use Eventhouse|
+|[Users can create and use data workflows (preview)](../data-factory/create-data-workflows.md)|Data workflows are powered by Apache Airflow and offer an integrated Apache Airflow runtime environment, enabling users to author, execute, and schedule Python DAGs. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://aka.ms/fabricairflowintrodoc)|
+|Users can create Real-Time Dashboards (preview)|Users can create Real-Time Dashboards that are natively integrated with KQL databases using Kusto Query Language (KQL). This fully integrated dashboard experience provides improved query and visualization performance, and easier data exploration.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2258931)|
 |[Database Mirroring (preview)](../database/mirrored-database/overview.md)|Users can connect to and continuously replicate data from an external database into Fabric OneLake via Delta tables. Once in OneLake, users can operationalize the data (i.e., run analytics with Spark, execute notebooks, visualize through Power BI Reports, etc.). This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2261406)|
+|[Product Feedback](../get-started/feedback.md)|This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. Microsoft will use this feedback to help improve product features and services. User participation is voluntary.  [Learn More](https://aka.ms/fabric-feedback-learnmore)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 
@@ -143,8 +144,8 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Allow visuals created using the Power BI SDK](/power-bi/admin/organizational-visuals#visuals-from-appsource-or-a-file)|Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the "Organizational visuals" page are not affected by this setting.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2121300)|
 |[Add and use certified visuals only (block uncertified)](/power-bi/admin/organizational-visuals#certified-power-bi-visuals)|Users in the organization with permissions to add and use visuals can add and use certified visuals only. Visuals allowed in the "Organizational visuals" page are not affected by this setting, regardless of certification.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2036068)|
 |[Allow downloads from custom visuals](/power-bi/admin/organizational-visuals#export-data-to-file)|Enabling this setting will let custom visuals download any information available to the visual (such as summarized data and visual configuration) upon user consent. It is not affected by download restrictions applied in your organization's Export and sharing settings.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2185233&amp;clcid=0x409)|
-|[Custom visuals can get users' Microsoft Entra access tokens](./organizational-visuals.md#obtain-microsoft-entra-access-token)|Custom visuals can get the Microsoft Entra access tokens of signed-in users.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2236555)|
-|[Allow access to the browser's local storage](./organizational-visuals.md#obtain-microsoft-entra-access-token)|When this setting is on, custom visuals can store information on the user's browser's local storage.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2195648)|
+|[Custom visuals can get users' Microsoft Entra access tokens](./organizational-visuals.md#appsource-custom-visuals-sso)|Custom visuals can get the Microsoft Entra access tokens of signed-in users.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2236555)|
+|[Allow access to the browser's local storage](./organizational-visuals.md#appsource-custom-visuals-sso)|When this setting is on, custom visuals can store information on the user's browser's local storage.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2195648)|
 
 ## [R and Python visuals settings](service-admin-portal-r-python-visuals.md)
 
@@ -288,6 +289,13 @@ This article lists all Fabric tenant settings, along with a brief description of
 |------|-------|
 |[Users can use a preview of Copilot and other features powered by Azure OpenAI](../get-started/copilot-fabric-overview.md#enable-copilot)|When this setting is enabled, users can access a preview and use preview features powered by Azure OpenAI, including Copilot. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262239)<br><br>For customers in the EU Data Boundary, this setting adheres to Microsoft Fabric's EU Data Boundary commitments.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262243)<br><br>By enabling this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241).|
 |[Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](../get-started/copilot-fabric-overview.md#enable-copilot)|This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of EU Data Boundary and US.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262085)<br><br>When this setting is enabled, data sent to Azure OpenAI can be processed outside your capacity's geographic boundary or national cloud boundary. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262242)<br><br>By enabling this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241).|
+
+## Additional workloads (preview)
+
+| Setting name | Description |
+|------|-------|
+|[Capacity admins and contributors can add and remove additional workloads](../workload-development-kit/environment-setup.md#tenant-setting-and-development-settings)|Capacity admins or individuals granted Contributor permissions in Capacity settings can add and remove additional workloads in capacities. If a workload is removed, users will no longer be able to work with items created with the workload.<br><br>When users interact with a workload, their data and access tokens, including name and email, are sent to the publisher. Sensitivity labels and protection settings including encryption aren't applied to items created with workloads.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268082)|
+|[Capacity admins can develop additional workloads](../workload-development-kit/environment-setup.md#tenant-setting-and-development-settings)|Capacity admins can develop additional workloads. Turn on to allow developers connect to capacity with a local machine development environment. Turning off this feature will prevent developers from connecting to the Fabric capacity.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268434)|
 
 ## Related content
 

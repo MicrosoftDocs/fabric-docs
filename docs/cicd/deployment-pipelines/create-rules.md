@@ -3,6 +3,8 @@ title: Create deployment rules for Fabric's Application lifecycle management (AL
 description: Learn how to create rules to simplify deploying content with Fabric's Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
   - build-2023

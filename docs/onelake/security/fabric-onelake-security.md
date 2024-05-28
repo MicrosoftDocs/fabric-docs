@@ -6,6 +6,7 @@ ms.author: yuturchi
 author: yuturchi
 ms.topic: conceptual
 ms.custom:
+  - build-2024
 ms.date: 04/01/2024
 ---
 
@@ -35,7 +36,7 @@ Learn more about engine-specific granular data security:
 - [Data warehousing Security](../../data-warehouse/security.md)
 - [Power BI Security](/power-bi/enterprise/service-admin-power-bi-security)
 - [Data Factory - Set up you Lakehouse Connection](../../data-factory/connector-lakehouse-overview.md)
-- [Real-Time Analytics Row-Level Security](/azure/data-explorer/kusto/management/row-level-security-policy)
+- [Real-Time Intelligence Row-Level Security](/azure/data-explorer/kusto/management/row-level-security-policy)
 
 ## OneLake data access roles (Preview)
 
