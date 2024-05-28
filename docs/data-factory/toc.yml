@@ -91,19 +91,19 @@
       href: service-principals.md
     - name: Access database
       items:
-      - name: Overview
+      - name: Access database - Overview
         href: connector-access-database-overview.md
       - name: Set up your connection
         href: connector-access-database.md
     - name: Amazon RDS for SQL Server
       items:
-      - name: Overview
+      - name: Amazon RDS for SQL Server - Overview
         href: connector-amazon-rds-for-sql-server-overview.md
       - name: Configure in data pipeline Copy activity
         href: connector-amazon-rds-for-sql-server-copy-activity.md
     - name: Amazon Redshift
       items:
-      - name: Overview
+      - name: Amazon Redshift - Overview
         href: connector-amazon-redshift-overview.md
       - name: Set up your connection
         href: connector-amazon-redshift.md
@@ -111,7 +111,7 @@
         href: connector-amazon-redshift-copy-activity.md
     - name: Amazon S3
       items:
-      - name: Overview
+      - name: Amazon S3 - Overview
         href: connector-amazon-s3-overview.md
       - name: Set up your connection
         href: connector-amazon-s3.md
@@ -119,19 +119,19 @@
         href: connector-amazon-s3-copy-activity.md
     - name: Amazon S3 Compatible
       items:
-      - name: Overview
+      - name: Amazon S3 Compatible - Overview
         href: connector-amazon-s3-compatible-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-amazon-s3-compatible-copy-activity.md
     - name: Azure Analysis Services
       items:
-      - name: Overview
+      - name: Azure Analysis Services - Overview
         href: connector-azure-analysis-services-overview.md
       - name: Set up your connection
         href: connector-azure-analysis-services.md
     - name: Azure Blob Storage
       items:
-      - name: Overview
+      - name: Azure Blob Storage - Overview
         href: connector-azure-blob-storage-overview.md
       - name: Set up your connection
         href: connector-azure-blob-storage.md
@@ -145,7 +145,7 @@
         href: connector-azure-search-copy-activity.md
     - name: Azure Cosmos DB for NoSQL
       items:
-      - name: Overview
+      - name: Azure Cosmos DB for NoSQL - Overview
         href: connector-azure-cosmosdb-for-nosql-overview.md
       - name: Set up your connection
         href: connector-azure-cosmosdb-for-nosql.md
@@ -153,7 +153,7 @@
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
     - name: Azure Data Explorer (Kusto)
       items:
-      - name: Overview
+      - name: Azure Data Explorer (Kusto) - Overview
         href: connector-azure-data-explorer-overview.md
       - name: Set up your connection
         href: connector-azure-data-explorer.md
@@ -161,13 +161,13 @@
         href: connector-azure-data-explorer-copy-activity.md
     - name: Azure Data Lake Storage Gen1
       items:
-      - name: Overview
+      - name: Azure Data Lake Storage Gen1 - Overview
         href: connector-azure-data-lake-storage-gen1-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-azure-data-lake-storage-gen1-copy-activity.md
     - name: Azure Data Lake Storage Gen2
       items:
-      - name: Overview
+      - name: Azure Data Lake Storage Gen2 - Overview
         href: connector-azure-data-lake-storage-gen2-overview.md
       - name: Set up your connection
         href: connector-azure-data-lake-storage-gen2.md
@@ -175,13 +175,13 @@
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
     - name: Azure Database for PostgreSQL
       items:
-      - name: Overview
+      - name: Azure Database for PostgreSQL - Overview
         href: connector-azure-database-for-postgresql-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-azure-database-for-postgresql-copy-activity.md
     - name: Azure Databricks
       items:
-      - name: Overview
+      - name: Azure Databricks - Overview
         href: connector-azure-databricks-overview.md
       - name: Set up your connection
         href: connector-azure-databricks.md
@@ -193,13 +193,13 @@
         href: connector-azure-files-copy-activity.md 
     - name: Azure HDInsight on AKS Trino
       items:
-      - name: Overview
+      - name: Azure HDInsight on AKS Trino - Overview
         href: connector-azure-hdinsight-on-aks-trino-overview.md
       - name: Set up your connection
         href: connector-azure-hdinsight-on-aks-trino.md
     - name: Azure SQL database
       items:
-      - name: Overview
+      - name: Azure SQL database - Overview
         href: connector-azure-sql-database-overview.md
       - name: Set up your connection
         href: connector-azure-sql-database.md
@@ -207,13 +207,13 @@
         href: connector-azure-sql-database-copy-activity.md
     - name: Azure SQL Managed Instance
       items:
-      - name: Overview
+      - name: Azure SQL Managed Instance - Overview
         href: connector-azure-sql-database-managed-instance-overview.md
       - name: Configure in data pipeline Copy activity
         href: connector-azure-sql-database-managed-instance-copy-activity.md
     - name: Azure Synapse Analytics
       items:
-      - name: Overview
+      - name: Azure Synapse Analytics - Overview
         href: connector-azure-synapse-analytics-overview.md
       - name: Set up your connection
         href: connector-azure-synapse-analytics.md
@@ -221,7 +221,7 @@
         href: connector-azure-synapse-analytics-copy-activity.md
     - name: Azure Table Storage
       items:
-      - name: Overview
+      - name: Azure Table Storage - Overview
         href: connector-azure-table-storage-overview.md
       - name: Set up your connection
         href: connector-azure-table-storage.md
@@ -229,31 +229,31 @@
         href: connector-azure-table-storage-copy-activity.md
     - name: CloudBluePSA
       items:
-      - name: Overview
+      - name: CloudBluePSA - Overview
         href: connector-cloudbluepsa-overview.md
       - name: Set up your connection
         href: connector-cloudbluepsa.md
     - name: Common Data Service (Legacy)
       items:
-      - name: Overview
+      - name: Common Data Service (Legacy) - Overview
         href: connector-common-data-service-legacy-overview.md
       - name: Set up your connection
         href: connector-common-data-service-legacy.md
     - name: Databricks
       items:
-      - name: Overview
+      - name: Databricks - Overview
         href: connector-databricks-overview.md
       - name: Set up your connection
         href: connector-databricks.md
     - name: Dataflows (Power Platform)
       items:
-      - name: Overview
+      - name: Dataflows (Power Platform) - Overview
         href: connector-dataflows-overview.md
       - name: Set up your connection
         href: connector-dataflows.md
     - name: Dataverse
       items:
-      - name: Overview
+      - name: Dataverse - Overview
         href: connector-dataverse-overview.md
       - name: Set up your connection
         href: connector-dataverse.md
@@ -261,7 +261,7 @@
         href: connector-dataverse-copy-activity.md
     - name: Data Warehouse
       items:
-      - name: Overview
+      - name: Data Warehouse - Overview
         href: connector-data-warehouse-overview.md
       - name: Set up your connection
         href: connector-data-warehouse.md
@@ -275,19 +275,19 @@
         href: connector-dynamics-ax-copy-activity.md 
     - name: Dynamics CRM
       items:
-      - name: Overview
+      - name: Dynamics CRM - Overview
         href: connector-dynamics-crm-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-dynamics-crm-copy-activity.md
     - name: FHIR
       items:
-      - name: Overview
+      - name: FHIR - Overview
         href: connector-fhir-overview.md
       - name: Set up your connection
         href: connector-fhir.md
     - name: Folder
       items:
-      - name: Overview
+      - name: Folder - Overview
         href: connector-folder-overview.md
       - name: Set up your connection
         href: connector-folder.md
@@ -333,13 +333,13 @@
           href: format-xml.md
     - name: FTP
       items:
-      - name: Overview
+      - name: FTP - Overview
         href: connector-ftp-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-ftp-copy-activity.md
     - name: Google Analytics
       items:
-      - name: Overview
+      - name: Google Analytics - Overview
         href: connector-google-analytics-overview.md
       - name: Set up your connection
         href: connector-google-analytics.md
@@ -353,7 +353,7 @@
         href: connector-google-bigquery-copy-activity.md        
     - name: Google Cloud Storage
       items:
-      - name: Overview
+      - name: Google Cloud Storage - Overview
         href: connector-google-cloud-storage-overview.md
       - name: Set up your connection
         href: connector-google-cloud-storage.md
@@ -361,13 +361,13 @@
         href: connector-google-cloud-storage-copy-activity.md
     - name: Hive LLAP
       items:
-      - name: Overview
+      - name: Hive LLAP - Overview
         href: connector-hive-llap-overview.md
       - name: Set up your connection
         href: connector-hive-llap.md
     - name: HTTP
       items:
-      - name: Overview
+      - name: HTTP - Overview
         href: connector-http-overview.md
       - name: Set up your connection
         href: connector-http.md
@@ -375,19 +375,19 @@
         href: connector-http-copy-activity.md
     - name: IBM DB2 database
       items:
-      - name: Overview
+      - name: IBM DB2 database - Overview
         href: connector-ibm-db2-database-overview.md
       - name: Set up your connection
         href: connector-ibm-db2-database.md
     - name: Impala
       items:
-      - name: Overview
+      - name: Impala - Overview
         href: connector-impala-overview.md
       - name: Set up your connection
         href: connector-impala.md
     - name: KQL database
       items:
-      - name: Overview
+      - name: KQL database - Overview
         href: connector-kql-database-overview.md
       - name: Set up your connection
         href: connector-kql-database.md
@@ -395,7 +395,7 @@
         href: connector-kql-database-copy-activity.md
     - name: Lakehouse
       items:
-      - name: Overview
+      - name: Lakehouse - Overview
         href: connector-lakehouse-overview.md
       - name: Set up your connection
         href: connector-lakehouse.md
@@ -403,7 +403,7 @@
         href: connector-lakehouse-copy-activity.md
     - name: Microsoft 365
       items:
-      - name: Overview
+      - name: Microsoft 365 - Overview
         href: connector-microsoft-365-overview.md
       - name: Set up your connection
         href: connector-microsoft-365.md
@@ -411,25 +411,25 @@
         href: connector-microsoft-365-copy-activity.md
     - name: Microsoft Exchange Online
       items:
-      - name: Overview
+      - name: Microsoft Exchange Online - Overview
         href: connector-microsoft-exchange-online-overview.md
       - name: Set up your connection
         href: connector-microsoft-exchange-online.md
     - name: MongoDB
       items:
-      - name: Overview
+      - name: MongoDB - Overview
         href: connector-mongodb-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-mongodb-copy-activity.md
     - name: MongoDB Atlas
       items:
-      - name: Overview
+      - name: MongoDB Atlas - Overview
         href: connector-mongodb-atlas-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-mongodb-atlas-copy-activity.md
     - name: MongoDB Atlas SQL (Beta)
       items:
-      - name: Overview
+      - name: MongoDB Atlas SQL (Beta) - Overview
         href: connector-mongodb-atlas-sql-overview.md
       - name: Set up your connection
         href: connector-mongodb-atlas-sql.md
@@ -443,7 +443,7 @@
         href: connector-mysql-database-copy-activity.md
     - name: OData
       items:
-      - name: Overview
+      - name: OData - Overview
         href: connector-odata-overview.md
       - name: Set up your connection
         href: connector-odata.md
@@ -451,7 +451,7 @@
         href: connector-odata-copy-activity.md
     - name: Odbc
       items:
-      - name: Overview
+      - name: Odbc - Overview
         href: connector-odbc-overview.md
       - name: Set up your connection
         href: connector-odbc.md
@@ -469,13 +469,13 @@
         href: connector-oracle-cloud-storage-copy-activity.md
     - name: Palantir Foundry
       items:
-      - name: Overview
+      - name: Palantir Foundry - Overview
         href: connector-palantir-foundry-overview.md
       - name: Set up your connection
         href: connector-palantir-foundry.md
     - name: PostgreSQL database
       items:
-      - name: Overview
+      - name: PostgreSQL database - Overview
         href: connector-postgresql-overview.md
       - name: Set up your connection
         href: connector-postgresql.md
@@ -483,7 +483,7 @@
         href: connector-postgresql-copy-activity.md
     - name: REST
       items:
-      - name: Overview
+      - name: REST - Overview
         href: connector-rest-overview.md
       - name: Set up your connection
         href: connector-rest.md
@@ -491,55 +491,55 @@
         href: connector-rest-copy-activity.md
     - name: Salesforce objects
       items:
-      - name: Overview
+      - name: Salesforce objects - Overview
         href: connector-salesforce-objects-overview.md
       - name: Set up your connection
         href: connector-salesforce-objects.md
     - name: Salesforce reports
       items:
-      - name: Overview
+      - name: Salesforce reports - Overview
         href: connector-salesforce-reports-overview.md
       - name: Set up your connection
         href: connector-salesforce-reports.md
     - name: SAP BW Application Server
       items:
-      - name: Overview
+      - name: SAP BW Application Server - Overview
         href: connector-sap-bw-application-server-overview.md
       - name: Set up your connection
         href: connector-sap-bw-application-server.md
     - name: SAP BW Message Server
       items:
-      - name: Overview
+      - name: SAP BW Message Server - Overview
         href: connector-sap-bw-message-server-overview.md
       - name: Set up your connection
         href: connector-sap-bw-message-server.md
     - name: SAP HANA database
       items:
-      - name: Overview
+      - name: SAP HANA database - Overview
         href: connector-sap-hana-overview.md
       - name: Set up your connection
         href: connector-sap-hana.md
     - name: SFTP
       items:
-      - name: Overview
+      - name: SFTP - Overview
         href: connector-sftp-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-sftp-copy-activity.md
     - name: SharePoint folder
       items:
-      - name: Overview
+      - name: SharePoint folder - Overview
         href: connector-sharepoint-folder-overview.md
       - name: Set up your connection
         href: connector-sharepoint-folder.md
     - name: SharePoint list
       items:
-      - name: Overview
+      - name: SharePoint list - Overview
         href: connector-sharepoint-list-overview.md
       - name: Set up your connection
         href: connector-sharepoint-list.md
     - name: SharePoint online list
       items:
-      - name: Overview
+      - name: SharePoint online list - Overview
         href: connector-sharepoint-online-list-overview.md
       - name: Set up your connection
         href: connector-sharepoint-online-list.md
@@ -547,7 +547,7 @@
         href: connector-sharepoint-online-list-copy-activity.md
     - name: Snowflake
       items:
-      - name: Overview
+      - name: Snowflake - Overview
         href: connector-snowflake-overview.md
       - name: Set up your connection
         href: connector-snowflake.md
@@ -555,7 +555,7 @@
         href: connector-snowflake-copy-activity.md
     - name: SQL Server database
       items:
-      - name: Overview
+      - name: SQL Server database - Overview
         href: connector-sql-server-database-overview.md
       - name: Set up your connection
         href: connector-sql-server-database.md
@@ -563,13 +563,13 @@
         href: connector-sql-server-copy-activity.md
     - name: Teradata database
       items:
-      - name: Overview
+      - name: Teradata database - Overview
         href: connector-teradata-database-overview.md
       - name: Set up your connection
         href: connector-teradata-database.md
     - name: Web API/Web page
       items:
-      - name: Overview
+      - name: Web API/Web page - Overview
         href: connector-web-overview.md
       - name: Set up your connection
         href: connector-web.md
@@ -686,7 +686,9 @@
       - name: Incrementally load data from Data Warehouse to Lakehouse
         href: tutorial-incremental-copy-data-warehouse-lakehouse.md
       - name: Load data to Lakehouse using partition
-        href: tutorial-lakehouse-partition.md
+        href: tutorial-lakehouse-partition.md  
+      - name: Move data from Oracle to Fabric Lakehouse via pipeline and on-premises data gateway
+        href: tutorial-move-data-from-oracle-to-lakehouse-pipeline.md
   - name: Dataflows
     items:
     - name: Concepts
