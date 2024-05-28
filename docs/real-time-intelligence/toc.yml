@@ -292,6 +292,8 @@ items:
       href: dashboard-parameters.md
     - name: Real-Time Dashboard-specific visuals (preview)
       href: dashboard-visuals.md
+    - name: Create alerts from a Real-Time Dashboard
+      href: ../data-activator/data-activator-get-data-real-time-dashboard.md    
   - name: Power BI
     items:
     - name: Visualize data in a Power BI report
