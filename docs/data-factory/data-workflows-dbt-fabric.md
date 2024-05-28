@@ -19,10 +19,10 @@ ms.date: 05/24/2024
 
 The [DBT](https://www.getdbt.com/product/what-is-dbt), short for "Data Build Tool," is an open-source command-line interface (CLI) that revolutionizes data transformation and modeling within data warehouses. It addresses a critical challenge of managing complex SQL code in a structured and maintainable way in data pipelines. DBT empowers data teams to build robust, reliable, and testable data transformations that form the core of their analytical pipelines. When integrated with Apache Airflow, a popular workflow management system, DBT becomes a powerful tool for orchestrating data transformations. Airflow's scheduling and task management capabilities allow data teams to automate DBT runs, ensuring regular data updates and maintaining a consistent flow of high-quality data for analysis and reporting. This combined approach, using DBT's transformation expertise with Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
 
-This tutorial will guide you through orchestrating DBT jobs within an Airflow environment in Data Workflows. We walk you through the following steps:
+This tutorial guides you through orchestrating DBT jobs within an Airflow environment in Data Workflows. We walk you through the following steps:
 
-1. Create a DBT project in Data Workflows to transform the data in warehouse.
-2. Create an Apache Airflow DAG to orchestrate DBT jobs.
+1. Create a DBT project in Data Workflows.
+2. To orchestrate DBT jobs, create an Apache Airflow DAG.
 3. Run and Monitor the DAG run.
 
 
@@ -41,9 +41,9 @@ To get started, you must complete the following prerequisites:
 
   :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
-- [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal). Add the service prinipal as the `Contributor` in the workspace where you will create data warehouse.
+- [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal). Add the service prinipal as the `Contributor` in the workspace where you create data warehouse.
 
-- If you don't have one, [Create a Fabric warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse). Ingest the sample data into the warehouse using data pipeline. For this tutorial, we'll use the <strong>NYC Taxi-Green</strong> sample.
+- If you don't have one, [Create a Fabric warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse). Ingest the sample data into the warehouse using data pipeline. For this tutorial, we use the <strong>NYC Taxi-Green</strong> sample.
 
 - [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md)
 
@@ -124,7 +124,7 @@ models:
         materialized: view
 ```
 
-2.3 Create the `models` folder with `nyc_trip_count.sql` file in dbt folder. For this tutorial, we will create the sample model that creates the table showing number of trips per day per vendor. Copy the following contents of the file.
+2.3 Create the `models` folder with `nyc_trip_count.sql` file in dbt folder. For this tutorial, we create the sample model that creates the table showing number of trips per day per vendor. Copy the following contents of the file.
 ```SQL
 with new_york_taxis as (
     select * from nyctlc
@@ -192,10 +192,10 @@ with DAG(
 ```
 
 ## Run and Monitor the DAGs.
-1. To see your DAGs loaded in the Apache Airflow UI, Click on Monitor in Apache Airflow.
-2. Run the DAG from Airflow UI.
-
+1. Run the DAG from Data workflows.
 :::image type="content" source="media/data-workflows/dbt_successful.png" lightbox="media/data-workflows/dbt_successful.png" alt-text="Screenshot shows successful dbt dag.":::
+
+2. To see your DAGs loaded in the Apache Airflow UI, Click on Monitor in Apache Airflow.
 
 3. You can now see the new table named 'nyc_trip_count.sql' created in your Fabric data warehouse.
 
