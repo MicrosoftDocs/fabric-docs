@@ -1,14 +1,14 @@
 ---
-title: Overview of managed private endpoints for Microsoft Fabric (preview)
+title: Overview of managed private endpoints for Microsoft Fabric
 description: Learn about managed private endpoints for Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/06/2024
+ms.date: 05/30/2024
 ---
 
-# Overview of managed private endpoints for Fabric (preview)
+# Overview of managed private endpoints for Fabric
 
 Managed private endpoints are feature that allows secure and private access to data sources from Fabric Spark workloads.
 
