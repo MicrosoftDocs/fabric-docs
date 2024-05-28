@@ -41,7 +41,7 @@ mlflow.autolog(
 
 ### Supported frameworks
 
-Autologging supports a wide range of machine learning frameworks, including TensorFlow, PyTorch, Scikit-learn, and XGBoost. Autologging can capture a variety of metrics, including accuracy, loss, and F1 score, as well as custom metrics you define. To learn more about the framework-specific properties that autologging captures, see the [MLflow documentation](https://mlflow.org/docs/latest/tracking.html#automatic-logging).
+Autologging supports a wide range of machine learning frameworks, including TensorFlow, PyTorch, Scikit-learn, and XGBoost. Autologging can capture various metrics, including accuracy, loss, F1 score, and custom metrics you define. To learn more about the framework-specific properties that autologging captures, see the [MLflow documentation](https://mlflow.org/docs/latest/tracking.html#automatic-logging).
 
 ## Customization
 
@@ -103,7 +103,7 @@ To enable or disable [!INCLUDE [product-name](../data-science/includes/fabric-ds
 
    :::image type="content" source="./media/machine-learning-experiment/autologging-workspace-setting.png" alt-text="Screenshot of the Synapse Data Science page with Workspace settings highlighted." lightbox="./media/machine-learning-experiment/autologging-workspace-setting.png":::
 
-1. On the **Workspace settings** screen, expand **Data Engineering/Science** on the left and select **Spark settings**.
+1. On the **Workspace settings** screen, expand **Data Engineering/Science** at left and select **Spark settings**.
 
 1. Under **Spark settings**, set **Customize compute configurations for items** to **On** or **Off**, and then select **Save**.
 
