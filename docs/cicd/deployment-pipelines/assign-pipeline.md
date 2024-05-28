@@ -105,6 +105,8 @@ If two or more items in the workspace to be paired have the same name, type and 
 
 ## Considerations and limitations
 
+Only workspaces that can be assigned to a pipeline appear in the dropdown list. A workspace can be assigned to a pipeline stage if the following conditions apply:
+
 * You must be an admin of the workspace.
 
 * The workspace can't be assigned to any other pipeline.
