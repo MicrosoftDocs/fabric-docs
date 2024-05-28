@@ -361,7 +361,7 @@ Response 202: (No body)
 
 - Service Principal Auth (SPN) is currenty not supported
 
-## Next steps
+## Related content
 
 - [REST API - Items](/rest/api/fabric/core/items)
 - [Use the Fabric Monitoring hub](/admin/monitoring-hub.md)

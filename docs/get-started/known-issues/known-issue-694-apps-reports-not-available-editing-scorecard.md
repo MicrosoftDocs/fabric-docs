@@ -37,6 +37,6 @@ Otherwise:
 1. Select **Enter** key to reload your Power BI.
 1. Go back to your scorecard where you see the apps in the dialog.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

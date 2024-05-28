@@ -52,7 +52,7 @@ The cost of Fabric Capacity Units can vary depending on the region. Regardless o
 
 Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s Release Notes or Microsoft Fabric Blog. If any change to a Copilot in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use Copilot in Fabric, customers can use the cancellation options available for the chosen payment method.
 
-## Next steps
+## Related content
 
 - [Overview of Copilot in Fabric (preview)](./copilot-fabric-overview.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
