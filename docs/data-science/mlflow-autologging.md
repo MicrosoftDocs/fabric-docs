@@ -13,7 +13,7 @@ ms.date: 05/28/2024
 
 # Autologging in [!INCLUDE [product-name](../includes/product-name.md)]
 
-This article describes autologging in [!INCLUDE [product-name](../includes/product-name.md)]. [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training.
+[!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training. This article describes autologging for [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 Autologging extends [MLflow Tracking](https://mlflow.org/docs/latest/tracking.html#automatic-logging) capabilities and is deeply integrated into the [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience. Autologging can capture various metrics, including accuracy, loss, F1 score, and custom metrics you define. By using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without manual tracking.
 
@@ -85,7 +85,7 @@ You can update the autologging configuration to track added metrics, parameters,
       mlflow.log_metric("metric name", 20)
     ```
 
-### Enable or disable autologging for the workspace
+## Workspace settings
 
 Workspace administrators can enable or disable [!INCLUDE [product-name](../includes/product-name.md)] autologging for all notebooks and sessions in their workspace by using the workspace settings. To enable or disable [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] autologging:
 
