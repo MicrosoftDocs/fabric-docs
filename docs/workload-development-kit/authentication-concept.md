@@ -1,5 +1,5 @@
 ---
-title: Overview of Fabric extensibility authentication (preview)
+title: Overview of Fabric Workload Development Kit authentication (preview)
 description: This article describes how to use tokens to authenticate and validate for a customized Fabric workload.
 author: paulinbar
 ms.author: painbar
@@ -20,7 +20,7 @@ It's recommended that you become familiar with the [Microsoft identity platform]
 
 ## Flows
 
-<!--:::image type="content" source="./media/authentication-concept/authentication-diagram.png" alt-text="Screenshot showing the extensibility authentication flow.":::
+<!--:::image type="content" source="./media/authentication-concept/authentication-diagram.png" alt-text="Screenshot showing the Workload Development Kit authentication flow.":::
 -->
 
 * From workload front-end to workload back-end

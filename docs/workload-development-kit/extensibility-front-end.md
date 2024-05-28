@@ -12,7 +12,7 @@ ms.date: 05/21/2024
 
 # Fabric workload development kit frontend (preview)
 
-[This Fabric developer sample](https://github.com/microsoft/Microsoft-Fabric-developer-sample.git) serves as a guide for integrating a custom UX Workload with Microsoft Fabric. This project enables developers to seamlessly integrate their own UI components and behaviors into Fabric's runtime environment, enabling rapid experimentation and customization. Developers can use the Fabric Extensibility framework to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with Independent Software Vendor (ISV) capabilities. For example, the item editor allows creating a native, consistent user experience by embedding ISV’s frontend in the context of a Fabric workspace item.
+[This Fabric developer sample](https://github.com/microsoft/Microsoft-Fabric-developer-sample.git) serves as a guide for integrating a custom UX Workload with Microsoft Fabric. This project enables developers to seamlessly integrate their own UI components and behaviors into Fabric's runtime environment, enabling rapid experimentation and customization. Developers can use the Fabric development kit's framework to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with Independent Software Vendor (ISV) capabilities. For example, the item editor allows creating a native, consistent user experience by embedding ISV’s frontend in the context of a Fabric workspace item.
 
 The UX Workload Frontend is a standard web app ([React](https://react.dev/)) that incorporates our extension client SDK, a standard npm package, to enable its functionality.
 The ISV hosts and runs it inside an `<iframe>` in the Fabric portal. It presents ISV-specific UI experiences such as an item editor.
@@ -295,7 +295,7 @@ An example with `notification.open()` API:
 ### CRUD operations
 
 While a frontend-only development scenario is easily supported, the full end-to-end developer experience requires saving, reading, and editing existing workload items.
-The [Fabric extensibility backend boilerplate](extensibility-back-end.md) describes in detail how to set up and use the backend side.
+The [Back-end implementation guide](extensibility-back-end.md) describes in detail how to set up and use the backend side.
 
 Once the backend is up and running, and the `Fabric.WorkloadSample.SampleWorkloadArtifact` type is **registered in Fabric**, you can perform CRUD operations on this type.
 The following operations are exposed via [ArtifactCrud API](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/node_modules/@trident/extension-client-3p/src/lib/apis/artifact-crud-api.d.ts) inside `ExtensionClientAPI`.

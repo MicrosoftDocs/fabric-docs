@@ -76,6 +76,17 @@ In the future, workspace admins will be able to enable the use of workspace iden
 > [!WARNING]
 > Modifying or deleting the service principal or app registration in Azure is not recommended, as it will cause Fabric items relying on workspace identity to stop working.
 
+### Administer the workspace identity in Fabric
+
+Fabric administrators can view the workspace identities created in their tenant in the Admin portal. 
+
+1. Navigate to the Fabric identities tab in the Admin portal.
+1. Select a workspace identity, and then select **Details**.
+1. In the Details tab, you can view additional information related to the workspace identity.
+1. You can also delete a workspace identity.
+   > [!NOTE]
+   > Workspace identities cannot be restored after deletion.
+   
 ### Administer the workspace identity in Purview
 
 You can view the audit events generated upon the creation and deletion of workspace identity in Purview Audit Log. To access the log
