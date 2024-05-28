@@ -55,9 +55,9 @@ mlflow.autolog(disable=True)
 
 ## Customization
 
-To customize logging behavior, use the [mlflow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.autolog) configuration. This configuration provides parameters to enable model logging, collect input samples, configure warnings, or enable logging for user-specified content.
+To customize logging behavior, you can use the [mlflow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.autolog) configuration. This configuration provides parameters to enable model logging, collect input samples, configure warnings, or enable logging for added content that you specify.
 
-You can update the autologging configuration to track added metrics, parameters, files, and metadata in runs that MLflow creates. To update the configuration:
+To update the MLflow autologging configuration to track custom metrics, parameters, files, and metadata that you specify:
 
 1. Update the [mlflow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.autolog) call to set `exclusive=False`.
 
@@ -73,7 +73,7 @@ You can update the autologging configuration to track added metrics, parameters,
     )
     ```
 
-1. Use the MLflow tracking APIs to add [parameters](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.log_param) and [metrics](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.log_metric). The following example code logs your custom metrics and parameters while also letting you use autologging to capture more properties.
+1. Use the MLflow tracking APIs to add your [parameters](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.log_param) and [metrics](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.log_metric). The following example code enables logging custom properties and also logs your added custom metrics and parameters.
 
     ```python
     import mlflow
