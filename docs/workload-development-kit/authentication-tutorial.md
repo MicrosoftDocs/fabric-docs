@@ -1,5 +1,5 @@
 ---
-title: Fabric extensibility authentication setup (preview)
+title: Fabric Workload Development Kit authentication setup (preview)
 description: Learn how to set up the authorization for a customized Fabric workload.
 author: paulinbar
 ms.author: painbar
