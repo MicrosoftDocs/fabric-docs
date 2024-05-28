@@ -95,7 +95,7 @@ There's no way to manually pair items except by following the pairing rules desc
 
 Here's an example of items that were added to the *Test* pipeline after it was assigned and therefore not paired with the identical item in the *Dev* pipeline:
 
-:::image type="content" source="./media/assign-pipeline/non-paired-items.png" alt-text="Screenshot showing adjacent stages with non-paired items with identical names and types listed on the different lines.":::
+:::image type="content" source="./media/assign-pipeline/non-paired-items.png" alt-text="Screenshot showing adjacent stages with nonpaired items with identical names and types listed on the different lines.":::
 
 ### Multiple items with the same name and type in a workspace
 
@@ -107,11 +107,11 @@ If two or more items in the workspace to be paired have the same name, type and 
 
 * You must be an admin of the workspace.
 
-* The workspace isn't assigned to any other pipeline.
+* The workspace can't be assigned to any other pipeline.
 
 * The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md).
 
-* To assign a workspace, you need at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace member permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
+* You need at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace member permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
 
 * You can't assign a workspace with [Power BI samples](/power-bi/create-reports/sample-datasets) to a pipeline stage.
 
