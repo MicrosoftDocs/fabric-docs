@@ -1,14 +1,14 @@
 ---
-title: About private Links for secure access to Fabric (preview)
+title: About private Links for secure access to Fabric
 description: Learn about the Azure private link feature to provide secure access to Fabric using Azure Networking private endpoints. Data is sent privately instead of over the internet.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
-ms.date: 04/04/2024
+ms.date: 05/30/2024
 ---
 
-# Private links for secure access to Fabric (preview)
+# Private links for secure access to Fabric
 
 You can use private links to provide secure access for data traffic in Fabric. Azure Private Link and Azure Networking private endpoints are used to send data traffic privately using Microsoft's backbone network infrastructure instead of going across the internet.
 
@@ -114,7 +114,7 @@ To enable these capabilities in Desktop, admins can configure [service tags](/az
 
 There are several considerations to keep in mind while working with private endpoints in Fabric:
 
-* Fabric supports up to 200 capacities in a tenant where Private Link is enabled.
+* Fabric supports up to 450 capacities in a tenant where Private Link is enabled.
 
 * Tenant migration is blocked when Private Link is turned on in the Fabric admin portal.
 
