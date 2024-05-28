@@ -3,6 +3,7 @@ title: Assign a workspace to a deployment pipeline
 description: Learn how to assign and unassign a workspace to a deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: leebenjamin
 ms.topic: how-to
 ms.custom:
     - build-2023
@@ -104,6 +105,8 @@ If two or more items in the workspace to be paired have the same name, type and 
 :::image type="content" source="./media/assign-pipeline/pairing-failure.png" alt-text="Screenshot of a workspace assignment failing because there's more than one item with the same name and type.":::
 
 ## Considerations and limitations
+
+Only workspaces that can be assigned to a pipeline appear in the dropdown list. A workspace can be assigned to a pipeline stage if the following conditions apply:
 
 * You must be an admin of the workspace.
 
