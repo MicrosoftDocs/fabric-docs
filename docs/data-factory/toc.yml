@@ -825,8 +825,8 @@
         items:
           - name: Synchronize your code from an existing Git repo
             href: data-workflows-sync-git-repo.md
-          - name: Data workflow environment settings
-            href: data-workflows-environment-settings.md
+          - name: Data workflow workspace settings
+            href: data-workflows-workspace-settings.md
           - name: Install a private package
             href: data-workflows-install-private-package.md
           - name: Enable Azure Key Vault as Secret Backend
