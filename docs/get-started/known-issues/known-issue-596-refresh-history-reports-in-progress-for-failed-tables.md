@@ -26,6 +26,6 @@ Failed dataflows show in progress refresh history for some tables, while it's no
 
 Retry to refresh the dataflow again and check the refresh history.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

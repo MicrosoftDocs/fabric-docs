@@ -24,7 +24,7 @@ Customers can't delegate the enablement of Copilot and the Azure OpenAI service 
 
 No workarounds at this time. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [Copilot in MS Fabric: Soon available to more users in your organization](https://blog.fabric.microsoft.com/blog/exciting-updates-for-copilot-in-microsoft-fabric)
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

@@ -54,7 +54,7 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 
 - Deployment rules in Deployment Pipelines (built-in Fabric CI/CD) aren't yet supported.
 
-## Next steps
+## Related content
 
 - [Introduction to deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md)
 - [Understand the deployment process](../cicd/deployment-pipelines/understand-the-deployment-process.md)

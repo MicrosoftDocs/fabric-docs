@@ -24,6 +24,6 @@ In a PySpark session, the import library statement fails with a **Class not foun
 
 To work around this issue, you can use the following command to install the library in Notebook session: `%%configure -f { "conf": { "spark.jars": <>", } }` Alternatively, you can switch from a PySpark to a Scala session if applicable.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

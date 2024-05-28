@@ -27,6 +27,6 @@ Even when the tenant switch is off, the Copilot button still shows in the follow
 
 To work around the issue, ignore the Copilot button. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)
