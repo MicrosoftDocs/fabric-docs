@@ -55,9 +55,9 @@ If Azure Private Link is properly configured and **Block public Internet access*
 
 ## Private Link in Fabric experiences
 
-### Onelake
+### OneLake
 
-Onelake supports Private Link. You can explore Onelake in the Fabric portal or from any machine within your established VNet using via OneLake file explorer, Azure Storage Explorer, PowerShell, and more.
+OneLake supports Private Link. You can explore OneLake in the Fabric portal or from any machine within your established virtual network using via OneLake file explorer, Azure Storage Explorer, PowerShell, and more.
 
 Direct calls using OneLake regional endpoints don't work via private link to Fabric. For more information about connecting to OneLake and regional endpoints, see [How do I connect to OneLake?](../onelake/onelake-access-api.md).
 
@@ -86,7 +86,7 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 When you connect to Pipeline via private link, you can use the data pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize data pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
 
 ### ML Model, Experiment, and AI skill
-ML Model, Experiment and AI skill supports private link. 
+ML Model, Experiment, and AI skill supports private link. 
 
 ### Power BI
 
@@ -106,7 +106,7 @@ Other Fabric items, such as KQL Database, and EventStream, don’t currently sup
 
 ### Microsoft Purview Information Protection
 
-Microsoft Purview Information Protection doesn't currently support Private Link. This means that in Power BI Desktop running in an isolated network, the **Sensitivity** button will be grayed out, label information won't appear, and decryption of *.pbix* files will fail.
+Microsoft Purview Information Protection doesn't currently support Private Link. This means that in Power BI Desktop running in an isolated network, the **Sensitivity** button is grayed out, label information won't appear, and decryption of *.pbix* files will fail.
 
 To enable these capabilities in Desktop, admins can configure [service tags](/azure/virtual-network/service-tags-overview) for the underlying services that support Microsoft Purview Information Protection, Exchange Online Protection (EOP), and Azure Information Protection (AIP). Make sure you understand the implications of using service tags in a private links isolated network.
 
@@ -120,7 +120,7 @@ There are several considerations to keep in mind while working with private endp
 
 * Customers can't connect to Fabric resources in multiple tenants from a single VNet, but rather only the last tenant to set up Private Link.
 
-* Private link does not support in Trial capacity. When accessing Fabric via Private Link traffic, trial capacity will not work.
+* Private link doesn't support in Trial capacity. When accessing Fabric via Private Link traffic, trial capacity won't work.
   
 * Any uses of external images or themes aren't available when using a private link environment.
 
