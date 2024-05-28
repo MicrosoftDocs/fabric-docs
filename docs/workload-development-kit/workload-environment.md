@@ -52,7 +52,7 @@ During the development cycle, testing a workload on a nonproduction tenant can b
 
 ### Local development mode (devmode)
 
-The workload backend (BE) operates on the developer's machine. Workload API calls are transmitted via Azure Relay, with the workload's side of the Azure Relay channel managed by a specialized command-line utility, DevGateway. Workload control API calls are sent directly from the workload to Fabric, bypassing the Azure Relay channel. The DevGateway utility also oversees the registration of the local development instance of the workload with Fabric, within the context of a specific capacity. This ensures the workload's availability across all workspaces assigned to that capacity. Upon termination of the DevGateway utility, the registration of the workload instance is automatically rescinded. For more information, see [Fabric extensibility backend boilerplate](extensibility-back-end.md).
+The workload backend (BE) operates on the developer's machine. Workload API calls are transmitted via Azure Relay, with the workload's side of the Azure Relay channel managed by a specialized command-line utility, DevGateway. Workload control API calls are sent directly from the workload to Fabric, bypassing the Azure Relay channel. The DevGateway utility also oversees the registration of the local development instance of the workload with Fabric, within the context of a specific capacity. This ensures the workload's availability across all workspaces assigned to that capacity. Upon termination of the DevGateway utility, the registration of the workload instance is automatically rescinded. For more information, see [Back-end implementation guide](extensibility-back-end.md).
 
 #### DevMode BE schema
 
