@@ -4,7 +4,7 @@ description: Learn how to use deployment pipelines, the Fabric Application lifec
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
-ms.subservice: pbi-deployment-pipeline
+ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
   - intro-get-started

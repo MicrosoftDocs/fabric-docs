@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Lee
 ms.service: fabric
-ms.subservice: pbi-deployment-pipeline
+ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/14/2024

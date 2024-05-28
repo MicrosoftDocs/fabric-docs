@@ -4,7 +4,7 @@ description: Learn how the history feature works in the deployment pipelines, th
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
-ms.subservice: pbi-deployment-pipeline
+ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
   - build-2023

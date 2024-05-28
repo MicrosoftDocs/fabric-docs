@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: leebenjamin
 ms.service: fabric
-ms.subservice: pbi-deployment-pipeline
+ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
     - build-2023

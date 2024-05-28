@@ -4,7 +4,7 @@ description: An introduction to deployment pipelines the Fabric Application life
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
-ms.subservice: pbi-deployment-pipeline
+ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
   - build-2023

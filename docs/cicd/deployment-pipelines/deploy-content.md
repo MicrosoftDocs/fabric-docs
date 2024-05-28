@@ -4,7 +4,7 @@ description: Learn how to deploy content to an empty or to nonempty stage using 
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
-ms.subservice: pbi-deployment-pipeline
+ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
   - build-2023

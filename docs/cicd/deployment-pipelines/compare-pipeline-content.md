@@ -4,7 +4,7 @@ description: Learn how to compare the content of the source stage and target sta
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
-ms.subservice: pbi-deployment-pipeline
+ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
   - build-2023

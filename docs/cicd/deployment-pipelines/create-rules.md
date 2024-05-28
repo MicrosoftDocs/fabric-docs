@@ -4,7 +4,7 @@ description: Learn how to create rules to simplify deploying content with Fabric
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
-ms.subservice: pbi-deployment-pipeline
+ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
   - build-2023

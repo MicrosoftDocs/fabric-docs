@@ -4,7 +4,7 @@ description: Learn how to automate your deployment pipeline, the Microsoft Fabri
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
-ms.subservice: pbi-deployment-pipeline
+ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
   - ignite-2023
