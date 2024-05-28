@@ -1,14 +1,14 @@
 ---
-title: Create and use managed private endpoints in Microsoft Fabric (preview)
+title: Create and use managed private endpoints in Microsoft Fabric
 description: Learn how to create and use managed private endpoints in Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom:
-ms.date: 02/28/2024
+ms.date: 05/30/2024
 ---
 
-# Create and  use managed private endpoints (preview)
+# Create and  use managed private endpoints
 
 Users with admin permissions to a Microsoft Fabric workspace can create, view, and delete managed private endpoints from the Fabric portal through the workspace settings.
 
@@ -136,7 +136,6 @@ Microsoft Fabric supports over 25 data sources to connect to using managed priva
 | Azure Key Vault | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}|
 | Azure Data Explorer (Kusto) | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Kusto/clusters/{cluster-name}|
 | Azure Machine Learning | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}|
-| Application Gateway | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/applicationGateways/{gateway-name}|
 | Private Link Service | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/privateLinkServices/{service-name}|
 | Microsoft Purview | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Purview/accounts/{account-name}|
 | Azure Search | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Search/searchServices/{service-name}|
@@ -150,6 +149,8 @@ Microsoft Fabric supports over 25 data sources to connect to using managed priva
 | Azure Synapse Analytics | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Synapse/workspaces/{workspace-name}|
 | Azure Synapse Analytics (Artifacts) | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Synapse/workspaces/{workspace-name}|
 | Azure Functions | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{function-app-name}|
+| Azure Event Hub | /subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/Microsoft.EventHub/namespaces/{namespace-name}
+| Azure IoT Hub | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Devices/IotHubs/{iothub-name}
 
 ## Related content
 
