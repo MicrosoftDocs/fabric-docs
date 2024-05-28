@@ -179,9 +179,8 @@ In some instances, the native execution engine might not be able to execute a qu
 While the native execution engine enhances performance for Apache Spark jobs, note its current limitations.
 
 - The engine doesn't support partitioned writing for Delta tables. Some Delta-specific operations aren't supported, including merge operations, checkpoint scans, and deletion vectors.
-- Certain Spark features and expressions aren't compatible with the native execution engine, such as user-defined functions (UDFs) and the `array contains` function, as well as Spark structured streaming.
+- Certain Spark features and expressions aren't compatible with the native execution engine, such as user-defined functions (UDFs) and the `array contains` function, as well as Spark structured streaming. Usage of these incompatible operations or functions as part of an imported library will also cause fallback to the Spark engine.
 - Scans from storage solutions that utilize private endpoints aren't supported.
-- The engine falls back to the traditional Spark engine when user code `jar` libraries are used and uploaded to executors.
 - The engine doesn't support ANSI mode, so it searches, and once ANSI mode is enabled, it falls back to vanilla Spark.
 
 
