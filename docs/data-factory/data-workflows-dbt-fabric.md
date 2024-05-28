@@ -17,13 +17,15 @@ ms.date: 05/24/2024
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-The [DBT](https://www.getdbt.com/product/what-is-dbt), short for "Data Build Tool," is an open-source command-line interface (CLI) that revolutionizes data transformation and modeling within data warehouses. It addresses a critical challenge of managing complex SQL code in a structured and maintainable way in data pipelines. DBT empowers data teams to build robust, reliable, and testable data transformations that form the core of their analytical pipelines. When integrated with Apache Airflow, a popular workflow management system, DBT becomes a powerful tool for orchestrating data transformations. Airflow's scheduling and task management capabilities allow data teams to automate DBT runs, ensuring regular data updates and maintaining a consistent flow of high-quality data for analysis and reporting. This combined approach, using DBT's transformation expertise with Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
-
 This tutorial guides you through orchestrating DBT jobs within an Airflow environment in Data Workflows. We walk you through the following steps:
 
 1. Create a DBT project in Data Workflows.
 2. To orchestrate DBT jobs, create an Apache Airflow DAG.
 3. Run and Monitor the DAG run.
+
+## Introduction
+
+The [DBT](https://www.getdbt.com/product/what-is-dbt), short for "Data Build Tool," is an open-source command-line interface (CLI) that revolutionizes data transformation and modeling within data warehouses. It addresses a critical challenge of managing complex SQL code in a structured and maintainable way in data pipelines. DBT empowers data teams to build robust, reliable, and testable data transformations that form the core of their analytical pipelines. When integrated with Apache Airflow, a popular workflow management system, DBT becomes a powerful tool for orchestrating data transformations. Airflow's scheduling and task management capabilities allow data teams to automate DBT runs, ensuring regular data updates and maintaining a consistent flow of high-quality data for analysis and reporting. This combined approach, using DBT's transformation expertise with Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
 
 
 ## Prerequisites
@@ -43,7 +45,7 @@ To get started, you must complete the following prerequisites:
 
 - [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal). Add the service prinipal as the `Contributor` in the workspace where you create data warehouse.
 
-- If you don't have one, [Create a Fabric warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse). Ingest the sample data into the warehouse using data pipeline. For this tutorial, we use the <strong>NYC Taxi-Green</strong> sample.
+- If you don't have one, [Create a Fabric warehouse](../data-warehouse/create-warehouse.md). Ingest the sample data into the warehouse using data pipeline. For this tutorial, we use the <strong>NYC Taxi-Green</strong> sample.
 
 - [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md)
 
@@ -199,7 +201,7 @@ with DAG(
 
 3. You can now see the new table named 'nyc_trip_count.sql' created in your Fabric data warehouse.
 
-:::image type="content" source="media/data-workflows/run-directed-acyclic-graph.png.png" lightbox="media/data-workflows/run-directed-acyclic-graph.png.png" alt-text="Screenshot shows run dag.":::
+:::image type="content" source="media/data-workflows/run-directed-acyclic-graph.png" lightbox="media/data-workflows/run-directed-acyclic-graph.png.png" alt-text="Screenshot shows run dag.":::
 
 ## Related Content
 
