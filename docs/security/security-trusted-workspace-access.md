@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/27/2024
+ms.date: 05/30/2024
 ---
 
 # Trusted workspace access
