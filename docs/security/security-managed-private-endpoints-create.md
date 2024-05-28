@@ -121,7 +121,8 @@ Now that the connection has been established, next step is to create a data fram
 
 ## Supported data sources
 
-Microsoft Fabric supports over 25 data sources to connect to using managed private endpoints. Users need to specify the resource identifier, which can be found in the **Properties** settings page of their data source in the Azure portal.
+Microsoft Fabric supports over 26 data sources to connect to using managed private endpoints. Users need to specify the resource identifier, which can be found in the **Properties** settings page of their data source in the Azure portal.
+Ensure resource ID format is followed as below. 
 
 | Service| Resource ID Format|
 |:-----------|:--------------|
