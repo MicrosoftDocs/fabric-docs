@@ -55,15 +55,15 @@ In this session, you start to build your data pipeline by following below steps 
 
 1. Create a new connection to your data source.
 
-   :::image type="content" source="media/copy-data-activity/configure-source-connection-in-pipeline-new.png" alt-text="Screenshot showing where to create a connection." lightbox="media/copy-data-activity/configure-source-connection-in-pipeline-new.png":::
+   :::image type="content" source="media/copy-data-activity/configure-source-connection-in-pipeline-new.png" alt-text="Screenshot showing where to create a connection.":::
 
    a. Choose the data source type from the pop-up window. Select **Oracle Database**, and then select **Continue**.
    
-   :::image type="content" source="media/copy-data-activity/oracle-datasource.png" alt-text="Screenshot showing how to select the data source." lightbox="media/copy-data-activity/oracle-datasource.png":::
+   :::image type="content" source="media/copy-data-activity/oracle-datasource.png" alt-text="Screenshot showing how to select the data source.":::
 
    b. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-data-stores-in-data-pipeline).
    
-      :::image type="content" source="media/copy-data-activity/configure-connection-details-new.png" alt-text="Screenshot showing New connection page." lightbox="media/copy-data-activity/configure-connection-details-new.png":::
+      :::image type="content" source="media/copy-data-activity/configure-connection-details-new.png" alt-text="Screenshot showing New connection page.":::
 
     c. Specify a table to be copied. Select **Preview data** to preview your source table. You can also use **Query** and **Stored procedure** to read data from your source.
 
@@ -73,7 +73,7 @@ In this session, you start to build your data pipeline by following below steps 
 
 1. Choose to use **Lakehouse** in **Workspace data store type**. Select **+ New**, and it navigates you to the Lakehouse creation page. Specify your Lakehouse name and then select **Create**.
    
-    :::image type="content" source="media/copy-data-activity/create-lakehouse-new.png" alt-text="Screenshot showing Lakehouse creation." lightbox="media/copy-data-activity/create-lakehouse-new.png":::
+    :::image type="content" source="media/copy-data-activity/create-lakehouse-new.png" alt-text="Screenshot showing Lakehouse creation.":::
 
 1. Specify a table or set up the file path to define the file or folder as the destination. Here select **Tables** and specify a table to write data.
 
