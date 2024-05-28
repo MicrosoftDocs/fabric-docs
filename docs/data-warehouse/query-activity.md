@@ -58,7 +58,7 @@ The same information regarding running queries can also be found [using dynamic 
 
 ## Query insights
 
-On the Query insights page, you can see a list of long running queries and frequently run queries to help determine any trends within your warehouse's queries.
+On the **Query insights** page, you can see a list of long running queries and frequently run queries to help determine any trends within your warehouse's queries.
 
 For each query in the **Long running queries** insight, the following details are provided:
 
