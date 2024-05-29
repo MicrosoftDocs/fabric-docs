@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.topic: concept-article #Don't change
-ms.date: 05/10/2024
+ms.date: 05/29/2024
 #customer intent: As a Fabric administrator or as a security or governance admin, I want to know what diagnostic query text storage is and what its implications are for data privacy and security.
 ---
 
