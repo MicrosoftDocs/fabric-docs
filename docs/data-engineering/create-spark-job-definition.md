@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/11/2023
+ms.date: 05/13/2024
 ms.search.form: Create Spark Job Definition,spark_job_definition
 ---
 
@@ -37,7 +37,7 @@ There are a few ways you can get started with the creation process:
 
   :::image type="content" source="media\create-spark-job-definition\spark-job-definition-card.png" alt-text="Screenshot showing where to select the Spark job definition card.":::
 
-- **Workspace view**: You can also create a Spark job definition through the **Workspace** view when you are in the **Data Engineering** experience by using the **New** dropdown menu.
+- **Workspace view**: You can also create a Spark job definition through the **Workspace** in **Data Engineering** by using the **New** dropdown menu.
 
   :::image type="content" source="media\create-spark-job-definition\data-engineering-new.png" alt-text="Screenshot showing where to select Spark job definition in the New menu.":::
 

@@ -37,6 +37,8 @@ items:
       href: security-managed-private-endpoints-overview.md
     - name: Create managed private endpoints
       href: security-managed-private-endpoints-create.md
+    - name: Add Fabric URLs to your allowlist
+      href: fabric-allow-list-urls.md
     - name: Add Power BI URLs to your allowlist
       href: power-bi-allow-list-urls.md
     - name: Workspace identity
@@ -61,4 +63,7 @@ items:
     href: /azure/reliability/reliability-fabric?toc=/fabric/security/toc.json&bc=/fabric/breadcrumb/toc.json
   - name: Disaster recovery guides by experience
     href: experience-specific-guidance.md
-    
+- name: Guidance
+  items:
+  - name: End-to-end security scenario
+    href: security-scenario.md

@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.reviewer: mopeakande
+ms.reviewer: ssalgado
 author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023

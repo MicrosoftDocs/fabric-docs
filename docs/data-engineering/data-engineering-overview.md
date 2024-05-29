@@ -11,7 +11,7 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 04/25/2024
+ms.date: 05/13/2024
 ---
 
 # What is Data engineering in Microsoft Fabric?
@@ -50,7 +50,7 @@ You can use Data Engineering in Microsoft Fabric free of charge when you sign up
 
 ## Related content
 
-Get started with the Data Engineering experience:
+Get started with Data Engineering:
 
 - To learn more about lakehouses, see [What is a lakehouse in Microsoft Fabric?](lakehouse-overview.md)
 - To get started with a lakehouse, see [Create a lakehouse in Microsoft Fabric](create-lakehouse.md).

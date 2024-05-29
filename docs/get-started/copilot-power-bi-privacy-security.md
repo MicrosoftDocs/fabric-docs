@@ -30,6 +30,7 @@ The article [Privacy, security, and responsible use for Copilot (preview)](copil
   - Suggested topics.
   - A report outline: for example, what each page in the report will be about, and how many pages it will create.
   - The visuals for the individual pages.
+  - Visuals in response to requests for data from the semantic model underlying the report (preview). 
 
 ## Limitations of Copilot for Power BI
 
@@ -40,6 +41,7 @@ Here are the current limitations of Copilot for Power BI:
 - Copilot can't make layout changes. For example, if you tell Copilot to resize the visuals, or to align all the visuals perfectly, it won't work.
 - Copilot can't understand complex intent. For example, suppose you frame a prompt like this: "Generate a report to show incidents by team, incident type, owner of the incident, and do this for only 30 days." This prompt is complex, and Copilot will probably generate irrelevant visuals.
 - Copilot doesn't produce a message for the skills that it doesn't support. For example, if you ask Copilot to edit or add a slicer, it won't complete the instruction successfully as mentioned above. Unfortunately, it won't give an error message either.
+- To answer data questions from the semantic model, Copilot requires that Q&A be enabled in the semantic model's dataset settings. 
 
 ## Data use in Copilot for Power BI
 
