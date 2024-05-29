@@ -609,6 +609,11 @@
           "source_path_from_root": "/docs/extensions/workloads.md",
           "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-warehouse/query-activity.md",
+          "redirect_url": "/fabric/data-warehouse/monitoring-overview",
+          "redirect_document_id": false
         }  
     ]
 }
