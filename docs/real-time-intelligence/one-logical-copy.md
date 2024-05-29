@@ -81,9 +81,6 @@ By default, when **OneLake availability** is turned on, a mirroring policy is en
 
 Event house can delay write operations for up to a few hours if there isn’t sufficient data to create optimal Parquet files. The delay ensures that the files aren't only efficient in size but also adhere to the best practices recommended for Delta.
 You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rta&pivots=fabric).
-## Access mirroring policy
-
-By default, when **OneLake availability** is turned on, a mirroring policy is enabled (`IsEnabled=true`). You can use the policy to [monitor data latency](#check-latency) or alter it to [partition delta tables](#partition-delta-tables). For more information, see [Mirroring policy](/azure/data-explorer/kusto/management/mirroring-policy?context=/fabric/context/context-rta&pivots=fabric).
 
 Results are measured from the last time data was added. When *Latency* results in 00:00:00, all the data in the event house KQL database is available in lake.
 
