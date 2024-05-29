@@ -6,6 +6,7 @@ ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 04/25/2024
 ms.custom: known-issue-689
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Known issue - Copilot and Azure OpenAI service capacity setting delegation postponed
