@@ -24,9 +24,9 @@ When you try to open the Reflex item, you receive an error similar to: `We could
 
 To work around the issue, follow these steps:
 
-- 1. Open parent eventstream of the stream
-- 1. Select the reflex output node of that eventstream
-- 1. Select **Open item** in bottom pane
+1. Open parent eventstream of the stream.
+1. Select the reflex output node of that eventstream.
+1. Select **Open item** in bottom pane.
 
 ## Next steps
 
