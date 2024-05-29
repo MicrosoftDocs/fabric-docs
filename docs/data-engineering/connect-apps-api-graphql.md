@@ -107,6 +107,10 @@ import { LogLevel } from "@azure/msal-browser";
  * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
  */
 
+export const graphqlConfig = {
+    graphqlEndpoint: "`Enter_the_GraphQL_Endpoint_Here"
+};
+
 export const msalConfig = {
     auth: {
         clientId: "Enter_the_Application_Id_Here",
@@ -167,13 +171,14 @@ export const graphConfig = {
     - `authority` - This is composed of two parts:
         - The *Instance* is endpoint of the cloud provider. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
         - The *Tenant ID* is the identifier of the tenant where the application is registered. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
-1. Save the file.
-2. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
+    - `graphQLEndpoint` - The Fabric API for GraphQL endpoint. Replace `Enter_the_GraphQL_Endpoint_Here` value with the GraphQL API endpoint recorded earlier.
+4. Save the file.
+5. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
 
 ```javascript
 import React, { useState } from 'react';
 import { PageLayout } from './components/PageLayout';
-import { loginRequest } from './authConfig';
+import { loginRequest, graphqlConfig } from './authConfig';
 import { ProfileData } from './components/ProfileData';
 import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from '@azure/msal-react';
 import './App.css';
@@ -199,17 +204,16 @@ const ProfileContent = () => {
   }
 
 async function callGraphQL(accessToken) {
-  const  = "Enter_the_GraphQL_Endpoint_Here";
   const query = `query {
     publicholidays (filter: {countryRegionCode: {eq:"US"}, date: {gte: "2024-01-01T00:00:00.000Z", lte: "2024-12-31T00:00:00.000Z"}}) {
       items {
-        countryOrRegiongraphQLEndpoint
+        countryOrRegion
         holidayName
         date
       }
     }
   }`;
-  fetch(graphQLEndpoint, {
+  fetch(graphqlConfig.graphqlEndpoint, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -270,11 +274,9 @@ export default function App() {
 }
 ```
 
-6. Replace the `graphQLEndpoint` value with the GraphQL API endpoint recorded earlier.
+3. Save the file.
 
-7. Save the file.
-
-8. Finally, under the *src/components* folder, open the *ProfileData.jsx* file and replace the contents of the file with the following code snippet:
+2. Finally, under the *src/components* folder, open the *ProfileData.jsx* file and replace the contents of the file with the following code snippet:
 
 ```javascript
 import React from "react";
