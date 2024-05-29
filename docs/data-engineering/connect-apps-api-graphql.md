@@ -16,17 +16,17 @@ ms.date: 05/21/2024
 > [!NOTE]
 > Microsoft Fabric API for GraphQL is in preview.
 
-To connect an application to an API for GraphQL, you need three important pieces of information: a **Client ID**, your **Tenant ID**, and your **GraphQL endpoint address** in Fabric. In the following sections we showcase how to create and retrieve all the details you need and how to access your API using a sample application.
+To connect an application to an API for GraphQL, you need three important pieces of information: a **Client ID**, your **Tenant ID**, and your **GraphQL endpoint address** in Fabric. In the following sections, we showcase how to create and retrieve all the details you need and how to access your API using a sample application.
 
 ## Prerequisites
 
 Currently API for GraphQL requires applications to use Microsoft Entra for authentication. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app).
 
-Before you connect an application, you must create an API for GraphQL. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
+Before you connect an application, you must have a valid API for GraphQL in Fabric. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
 
 ## Create a Microsoft Entra app
 
-In the following steps we'll showcase how to configure support for a ReactJS application in Entra.
+In the following steps, we showcase how to configure support for a ReactJS application in Entra.
 
 1. Sign in to the [Azure portal](https://ms.portal.azure.com/#allservices).
 
@@ -44,27 +44,30 @@ In the following steps we'll showcase how to configure support for a ReactJS app
 
    * (Optional) **Redirect URI** - Enter a URI if needed.
 
-5. Select **Register**. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they'll be required later.
-6. From the *Manage* list, select **API permissions** and click on **Add permission**. 
-7. Add the **PowerBI Service**, click on **Delegated permissions** and select the **Workspace.ReadWrite.All** permission. Make sure Admin Consent is not required. 
-8. Back to the *Manage* list, select **Authentication**, click on **Add a platform** and select **Single-page application**.
+5. Select **Register**. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they're required later.
+6. From the *Manage* list, select **API permissions**, then **Add permission**. 
+7. Add the **PowerBI Service**, select **Delegated permissions**, and select the **Workspace.ReadWrite.All** permission. Make sure Admin Consent isn't required. 
+8. Back to the *Manage* list, select **Authentication**, select **Add a platform**, then select **Single-page application**.
 9. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with PKCE](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow). Click the **Configure** button to save your changes. 
 10. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
 
-## Setting up a sample Fabric API for GraphQL for application access
+## Setting up a sample GraphQL API in Fabric for application access
 
-In this example we'll create a GraphQL API based on sample Lakehouse data.
+In this example, we create a GraphQL API to expose sample Lakehouse data to clients.
 
 1. In the Fabric portal, select **Data Engineering** from the workload switcher at the bottom of the navigation bar. If you are in the Fabric home, you can also select the **Data Engineering** card.
-2. Select **Use a sample** and, under **Lakehouse**, click on **Public holidays** to automatically create a new Lakehouse with public holidays data.
+
+:::image type="content" source="media/get-started-api-graphql/switcher-data-engineering.png" alt-text="Screenshot of the Fabric workload switcher.":::
+
+2. In the Data Engineering experience, select **Use a sample** and, under **Lakehouse**, select **Public holidays** to automatically create a new Lakehouse with public holidays data.
 
 :::image type="content" source="media/connect-apps-api-graphql/sample-lakehouse.png" alt-text="Screenshot on selecting the sample data Lakehouse option.":::
 
-1. Following the steps from [Create an API for GraphQL](get-started-api-graphql.md), create a new GraphQL API and select the Lakehouse you just created. Add the public holidays table so the table is exposed to API clients.
+3. Following the steps from [Create an API for GraphQL](get-started-api-graphql.md), create a new GraphQL API and select the Lakehouse you created. Add the public holidays table to expose the data to API clients.
 
 :::image type="content" source="media/connect-apps-api-graphql/add-data-to-graphql.png" alt-text="Screenshot of adding the sample Lakehouse as GraphQL data source.":::
 
-1. Test the GraphQL API in the API editor using the following sample query. It's the same query we'll use in our client application:
+4. Test the GraphQL API in the [API editor](api-graphql-editor.md) using the following sample query. It's the same query we use in our React client application:
 
 ```json
 query {
@@ -86,11 +89,11 @@ query {
 
    :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint-link.png" alt-text="Screenshot of the Copy link dialog screen, showing where to select Copy.":::
 
-1. Like the **Client ID** and **Tenant ID** from the Entra app recorded earlier, copy the endpoint URI as it'll be required later.
+1. As the **Client ID** and **Tenant ID** from the Entra app recorded earlier, copy the endpoint URI as it's required later.
 
 ## Configuring a sample React app to access the public holidays Fabric API for GraphQL
 
-1. We'll use an existing React app as a starting point. Follow all the steps on the tutorial [Create a React single-page application and prepare it for authentication](https://learn.microsoft.com/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code) to create a React project with Entra authentication already configured, including additional files that are required to be added to the folder structure.
+1. We use an existing React app as a starting point. Follow all the steps on the tutorial [Create a React single-page application and prepare it for authentication](https://learn.microsoft.com/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code) to create a React project with Entra authentication already configured, including additional files and folders required to be added to the project structure. We only need to change three files to adapt the app for our GraphQL use case.
 2. In the *src* folder, open the *authConfig.js* file and replace the contents of the file with the following code snippet:
 
 ```javascript
@@ -149,7 +152,7 @@ export const msalConfig = {
 };
 
 /**
- * Scopes you add here will be prompted for user consent during sign-in.
+ * Scopes you add here will be prompted for user consent during sign-in. 
  * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
  * For more information about OIDC scopes, visit: 
  * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
@@ -172,7 +175,7 @@ export const graphConfig = {
     - `authority` - This is composed of two parts:
         - The *Instance* is endpoint of the cloud provider. Check with the different available endpoints in [National clouds](https://learn.microsoft.com/entra/identity-platform/authentication-national-cloud#azure-ad-authentication-endpoints).
         - The *Tenant ID* is the identifier of the tenant where the application is registered. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
-    - `graphQLEndpoint` - The Fabric API for GraphQL endpoint. Replace `Enter_the_GraphQL_Endpoint_Here` value with the GraphQL API endpoint recorded earlier.
+    - `graphQLEndpoint` - The Fabric API for GraphQL endpoint. Replace `Enter_the_GraphQL_Endpoint_Here` with the GraphQL API endpoint recorded earlier.
 4. Save the file.
 5. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
 
@@ -312,19 +315,19 @@ export const ProfileData = (props) => {
 ```
 
 9. Save the final file.
-10. In your terminal application of choice, go the root of the React project and execute the command `npm start` to test the application.
+10. In your terminal application of choice, go the root folder of the React project and execute the command `npm start` to test the application locally.
 11. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](https://learn.microsoft.com/entra/identity-platform/tutorial-single-page-app-react-call-api#call-the-microsoft-graph-api-from-the-application) to authenticate.
 11. After signing in, click on the button **Query Fabric API for GraphQL Data**.
 
 :::image type="content" source="media/connect-apps-api-graphql/test-react-app.png" alt-text="Screenshot of the React sample app after sign in":::
 
-12. A successful authorized request to the GraphQL API in Fabric returns the data from the Lakehouse to our React client application:
+12. A successful authenticated request to the GraphQL API in Fabric returns the data from GraphQL query to the Lakehouse in our React client application:
 
 :::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the React sample app after receiving the GraphQL request.":::
 
 ## Related content
 
-- [Create a React single-page application and prepare it for authentication](https://learn.microsoft.com/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code)
 - [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app)
 - [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md)
+- [Create a React single-page application and prepare it for authentication](https://learn.microsoft.com/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code)
 - [Query multiple data sources in Fabric API for GraphQL](multiple-data-sources-graphql.md)
