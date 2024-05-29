@@ -138,7 +138,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 | Semantic model on-demand refresh | A background Semantic model refresh initiated by the user, using the service, REST APIs, or public XMLA endpoints  | Semantic model | Power BI Capacity Usage CU | Background |
 | Semantic model scheduled refresh | A scheduled background semantic model refresh, performed by the service, REST APIs, or public XMLA endpoints  | Semantic model | Power BI Capacity Usage CU | Background |
 | Full report email subscription | A PDF or PowerPoint copy of an entire Power BI report, attached to an [email subscription](/power-bi/collaborate-share/end-user-subscribe)  | Report | Power BI Capacity Usage CU | Background |
-| Interactive query | Queries initiated by an on-demand data request from a user. For example, loading a model when opening a report, or user interaction with a report | Semantic model | Power BI Capacity Usage CU | Interactive |
+| Interactive query | Queries initiated by an on-demand data request. For example, loading a model when opening a report, user interaction with a report , or querying a dataset before rendering.| Semantic model | Power BI Capacity Usage CU | Interactive |
 | PublicApiExport | A Power BI report exported with the [export report to file](/power-bi/developer/embedded/export-to) REST API | Report | Power BI Capacity Usage CU | Background |
 | Render | A Power BI paginated report exported with the [export paginated report to file](/power-bi/developer/embedded/export-paginated-report) REST API  | Paginated report | Power BI Capacity Usage CU | Background |
 | Render | A Power BI paginated report viewed in Power BI service   | Paginated report | Power BI Capacity Usage CU | Interactive |
