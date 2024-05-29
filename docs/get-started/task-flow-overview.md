@@ -5,7 +5,7 @@ ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: concept-article
-ms.date: 05/13/2024
+ms.date: 05/29/2024
 
 #customer intent: As a data analytics solutions architect, or as a data engineer, I want to learn about task flows and how they can help facilitate the completion of a complex data analytics solution. 
 
@@ -13,6 +13,9 @@ ms.date: 05/13/2024
 # Task flows in Microsoft Fabric (preview)
 
 This article describes the task flows feature in Microsoft Fabric. Its target audience is data analytics solution architects who want to use a task flow to build a visual representation of their project, and engineers who are working on the project and want to use the task flow to facilitate their work.
+
+> [!NOTE]
+> If you don't need the task flow, you can hide it using the control at the right-hand side of the horizontal bar that separates the task flow from the items list. See [#5 on this illustration](./task-flow-create.md#open-the-workspace)
 
 ## Overview
 
