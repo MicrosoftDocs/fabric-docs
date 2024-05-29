@@ -38,9 +38,9 @@ For more information about supported data sources for managed private endpoints 
   
 | Region         |
 |----------------|
-| Central US     |
+| West Central US |
 | Israel Central |
-| Switzerland West |
+| Switzerland West | 
 | Italy North    |
 | West India     |
 | Mexico Central |
@@ -52,7 +52,7 @@ For more information about supported data sources for managed private endpoints 
   
 | Region         |
 |----------------|
-| Central US     |
+| West Central US |
 | Switzerland West |
 | Italy North    |
 | Qatar Central  |
