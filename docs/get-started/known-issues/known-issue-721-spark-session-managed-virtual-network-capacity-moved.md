@@ -24,6 +24,6 @@ When you try to run a Spark job, the Spark job fails and you receive an error. T
 
 We're fixing the issue in batches. This article will be updated when the fix is released to all regions.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

@@ -27,6 +27,6 @@ Change data from Azure SQL Database isn't propagated to the Fabric mirrored data
 
 You can try to restart the data propagation by starting and stopping the mirror. If restarting doesn't fix the issue, contact Microsoft support.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)
