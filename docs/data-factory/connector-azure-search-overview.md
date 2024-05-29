@@ -9,7 +9,6 @@ ms.custom:
   - template-how-to
   - build-2023
   - ignite-2023
-ms.collection: ce-skilling-ai-copilot
 ---
 
 # Azure AI Search connector overview
