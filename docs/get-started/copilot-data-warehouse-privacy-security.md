@@ -12,7 +12,7 @@ ms.collection: ce-skilling-ai-copilot
 ---
 # Privacy, security, and responsible use of Copilot for Data Warehouse (preview)
 
-**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
 
 In this article we answer questions about [Microsoft Copilot for Synapse Data Warehouse](../data-warehouse/copilot.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For more information on Copilot in Fabric, see [Privacy, security, and responsible use for Copilot in Microsoft Fabric (preview)](copilot-privacy-security.md).
 
