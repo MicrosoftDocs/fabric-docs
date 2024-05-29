@@ -133,10 +133,11 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 - Direct Query and composite models on Power BI Datasets and Analysis Services aren't supported at this time.
 - DirectLake semantic models aren’t supported at this time.
 - Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git diff after each refresh.
+- The workspace folder structure isn't reflected in the Git repository. Workspace items in folders are exported to the root directory.
 
 ## Workspace limitations
 
-Only the workspace admin can manage the connections to the [Azure Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.
+- Only the workspace admin can manage the connections to the [Azure Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
 Once connected, anyone with [permission](#permissions) can work in the workspace.
 
 ### Branch and folder limitations

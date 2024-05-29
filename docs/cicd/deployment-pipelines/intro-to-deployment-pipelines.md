@@ -40,7 +40,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (based on supported semantic models)
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
-* Semantic models (except for Direct Lake semantic models)
+* Semantic models (except for DirectLake semantic models)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
 
 ## Pipeline structure
