@@ -15,14 +15,11 @@ ms.custom:
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to the Fabric Lakehouse. By default, data is written to Lakehouse Table in V-Order, and you can go to [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order) for more information.
 
->[!Note]
->Reader version 1 and writer version 2 are supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
-
 ## Supported format
 
 Lakehouse supports the following file formats. Refer to each article for format-based settings.
 
-- Avro format
+- [Avro format](format-avro.md)
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
@@ -40,6 +37,8 @@ For the configuration of each tab under copy activity, go to the following secti
 - [Destination](#destination)
 - [Mapping](#mapping)
 - [Settings](#settings)
+
+Reader version 1 and writer version 2 are supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
 
 ### General
 
