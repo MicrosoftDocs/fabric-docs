@@ -23,7 +23,7 @@ To improve support and provide more effective troubleshooting, Microsoft might s
 
 ## Privacy and security
 
-In compliance with Microsoft's stringent data protection standards, stored query text is securely handled within Fabric and retained for a limited period of time (less than 30 days). The data is used for approved investigations only. To prevent unauthorized use, access is strictly controlled and monitored. It can also be protected by [Customer Lockbox for Microsoft Azure](../security/security-lockbox.md) if that feature is enabled.
+In compliance with Microsoft's stringent data protection standards, stored query text is securely handled within Fabric and retained for a limited period of time (less than 30 days). The data is used for approved investigations only. To prevent unauthorized use, access is strictly controlled and monitored. Access can also be protected by [Customer Lockbox for Microsoft Azure](../security/security-lockbox.md) if that feature is enabled.
 
 ## Disabling diagnostic query text storage
 
