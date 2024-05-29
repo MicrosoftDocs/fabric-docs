@@ -4,6 +4,8 @@ description: This article describes the format of items in Microsoft Fabric's Gi
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: concept-article
 ms.date: 05/12/2024
 ms.custom: build-2023
