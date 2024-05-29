@@ -13,7 +13,7 @@ ms.date: 05/21/2024
 
 ## Understand how consumption is calculated
 
-The [capacity SKU](licenses.md#capacity-license) table shows the number of Capacity Units (CUs) per SKU. To understand how the SKU's compute power translates to your usage, use the [capacity metrics app](metrics-app-compute-page.md). The app shows consumption in intervals of 30 seconds. Multiply the number of CUs in the SKU table by 30 to get the number of CUs used in 30 seconds.
+The [capacity SKU](licenses.md#capacity-license) table shows the number of Capacity Units (CUs) per SKU. To understand how the SKU's compute power translates to your usage, use the [capacity metrics app](metrics-app-compute-page.md). The app uses the same 30-second evaluation period that's used by the capacity platform when measuring consumption. Multiply the number of CUs in the SKU table by 30 to get the number of CUs used in 30 seconds.
 
 | SKU | Capacity Units (CU) | 30-second CU use |
 |--|--|--|
