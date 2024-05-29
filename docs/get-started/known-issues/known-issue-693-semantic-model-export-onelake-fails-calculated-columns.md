@@ -25,6 +25,6 @@ If you didn't previously export the semantic model, you don't see the data in On
 
 To work around this issue, fix the DAX expression that left the columns in an error state.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

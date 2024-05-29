@@ -24,6 +24,6 @@ When a lakehouse is deleted, the associated SQL analytics endpoint and the defau
 
 Once the fix for this issue is released, the orphaned items are deleted automatically.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

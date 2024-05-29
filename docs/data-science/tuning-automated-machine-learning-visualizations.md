@@ -219,6 +219,6 @@ Here is the resulting plot:
 
 [![Graph of hyperparameter importance plot.](./media/model-training/hyperparameter-importance-plot.png)](./media/model-training/hyperparameter-importance-plot.png#lightbox)
 
-## Next steps
+## Related content
 
 * [Tune a SynapseML Spark LightGBM model](../data-science/how-to-tune-lightgbm-flaml.md)

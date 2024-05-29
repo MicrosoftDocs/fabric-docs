@@ -24,6 +24,6 @@ The Microsoft 365 admin center shows no rows for OneLake events between April 21
 
 Starting May 5, 2024, you can see audit events for OneLake.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

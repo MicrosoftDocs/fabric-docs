@@ -89,7 +89,7 @@ This tutorial helps you learn how to load data to Lakehouse using partition in a
             
     Similarly, if you add three columns to partition the table, you will get the second level folder partitioned by the third column added.
         
-## Next steps
+## Related content
 
 Next, advance to learn more about copy from Azure Blob Storage to Lakehouse.
 
