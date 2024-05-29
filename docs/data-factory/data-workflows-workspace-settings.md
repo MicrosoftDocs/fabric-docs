@@ -19,14 +19,13 @@ You can configure and manage the runtime settings of Apache Airflow for Data wor
 
 The following table contains the list the properties of both the pools.
 
-|Property  |Starter Pool  |Custom Pool
+|Property  |Starter Pool (Default)  |Custom Pool
 |---------|---------|------|
-|Default|Default pool for workspace|Needs to be configured|
-|Size|Default Compute Node Size: Large|Offers flexibility in size; You can configure 'Compute node size,' 'Extra nodes,' 'Enable autoscale'|
-|Initialization Behavior|Automatically starts|Starts in the stopped stage| 
-|Resume Behavior|Instantaneous|Takes up to 5 minutes|
-|TTL(Time to live)|Shuts down after 20 minutes of inactivity on Airflow Environment | Won't automatically pause |
-|Ideal Scenario| Developer Environment| Production Environment|
+|Size|Compute Node Size: Large|Offers flexibility in size; You can configure 'Compute node size,' 'Extra nodes,' 'Enable autoscale'|
+|Startup latency|Instantaneous|Starts in the stopped stage| 
+|Resume latency|Takes up to 5 minutes|Takes up to 5 minutes|
+|Pool uptime behavior|Shuts down after 20 minutes of inactivity on Airflow Environment | Always on until manually paused|
+|Suggested Environments| Developer| Production|
 
 
 ## Configure Custom Pool
