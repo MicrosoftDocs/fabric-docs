@@ -82,7 +82,7 @@ When you're working in a workspace that's either new or doesn't have the library
 
 :::image type="content" source="media\environment-introduction\env-workspace-setting-default.png" alt-text="Screenshot of the Workspace settings Set default environment screen.":::
 
-Workspace admins can define the default experience for entire workspaces. The values configured here are effective for notebooks and Spark job definitions that attach to **Workspace Settings**.
+Workspace admins can define the default workload for entire workspaces. The values configured here are effective for notebooks and Spark job definitions that attach to **Workspace Settings**.
 :::image type="content" source="media\environment-introduction\env-workspace-setting-in-code-artifact.png" alt-text="Screenshot of Workspace configuration effective range.":::
 
 The **Set default environment** toggle can enhance the user experience. By default, this toggle is set to **Off**. If there's no default Spark property or library required as the workspace default, admins can define the Spark runtime in this circumstance. However, if an admin wants to prepare a default Spark compute and libraries for the workspace, they can switch the toggle to **On** and easily attach an environment as the workspace default. This option makes all configurations in the environment effective as the **Workspace Settings**.

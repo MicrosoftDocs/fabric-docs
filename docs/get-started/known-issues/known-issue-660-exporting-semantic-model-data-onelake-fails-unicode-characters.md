@@ -24,6 +24,6 @@ If you didn't previously export the semantic model, you don't see the data in On
 
 To work around this issue, you can deactivate the export or change the table and column names to not contain any unicode characters.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

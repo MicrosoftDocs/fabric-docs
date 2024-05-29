@@ -8,7 +8,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/24/2024
+ms.date: 05/13/2024
 ms.search.form: VSCodeExtension
 ---
 
@@ -89,5 +89,5 @@ Once you have a workspace, choose it by selecting the **Select Workspace** optio
 
 In this overview, you get a basic understanding of how to install and set up the Synapse VS Code extension. The next articles explain how to develop your notebooks and Spark job definitions locally in VS Code.
 
-- To get started with notebooks, see [Microsoft Fabric notebook experience in VS Code](author-notebook-with-vs-code.md).
-- To get started with Spark job definitions, see [Spark job definition experience in VS Code](author-sjd-with-vs-code.md).
+- To get started with notebooks, see [Create and manage Microsoft Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md).
+- To get started with Spark job definitions, see [Create and manage Apache Spark job definitions in Visual Studio Code](author-sjd-with-vs-code.md).

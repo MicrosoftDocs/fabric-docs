@@ -77,7 +77,7 @@ Additionally, for a tile to be supported by Data Activator:
 
 ## Allowed recipients of email alerts
 
-Each recipient of email alerts must be an internal email address, which means the recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email alerts to be sent to either external email addresses nor guest email addresses.
+Each recipient of email alerts must be an internal email address, which means the recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email alerts to be sent to either external email addresses nor guest email addresses. In addition, the email domain of any email alert recipients must match the email domain of the alert owner.
 
 ## Maximum data throughput for Eventstreams data
 

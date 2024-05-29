@@ -15,6 +15,8 @@ The native execution engine is a groundbreaking enhancement for Apache Spark job
 
 The native execution engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to four times faster performance compared to traditional OSS (open source software) Spark, as validated by the TPC-DS 1TB benchmark. The engine is adept at managing a wide array of data processing scenarios, ranging from routine data ingestion, batch jobs, and ETL (extract, transform, load) tasks, to complex data science analytics and responsive interactive queries. Users benefit from accelerated processing times, heightened throughput, and optimized resource utilization.
 
+The Native Execution Engine is based on two key OSS components: [Velox](https://github.com/facebookincubator/velox), a C++ database acceleration library introduced by Meta, and [Apache Gluten (incubating)](https://github.com/apache/incubator-gluten), a middle layer responsible for offloading JVM-based SQL engines’ execution to native engines introduced by Intel.
+
 > [!NOTE]
 > The native execution engine is currently in public preview. For more information, see the current [limitations](#limitations). **At this stage of the preview, there is no additional cost associated with using it.**
 
@@ -177,9 +179,8 @@ In some instances, the native execution engine might not be able to execute a qu
 While the native execution engine enhances performance for Apache Spark jobs, note its current limitations.
 
 - The engine doesn't support partitioned writing for Delta tables. Some Delta-specific operations aren't supported, including merge operations, checkpoint scans, and deletion vectors.
-- Certain Spark features and expressions aren't compatible with the native execution engine, such as user-defined functions (UDFs) and the `array contains` function, as well as Spark structured streaming.
+- Certain Spark features and expressions aren't compatible with the native execution engine, such as user-defined functions (UDFs) and the `array contains` function, as well as Spark structured streaming. Usage of these incompatible operations or functions as part of an imported library will also cause fallback to the Spark engine.
 - Scans from storage solutions that utilize private endpoints aren't supported.
-- The engine falls back to the traditional Spark engine when user code `jar` libraries are used and uploaded to executors.
 - The engine doesn't support ANSI mode, so it searches, and once ANSI mode is enabled, it falls back to vanilla Spark.
 
 

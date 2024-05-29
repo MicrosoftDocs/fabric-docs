@@ -27,6 +27,8 @@ Google Pub/Sub is a messaging service that enables you to publish and subscribe 
 - A Google Cloud account with the Pub/Sub service enabled and a role with the required permissions.
 - Your Google Cloud Pub/Sub source must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
 
 ## Add Google Cloud Pub/Sub as a source
 

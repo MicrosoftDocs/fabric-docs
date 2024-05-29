@@ -245,6 +245,8 @@ items:
     href: caching.md
 - name: Monitor the warehouse
   items:
+  - name: Monitoring overview
+    href: monitoring-overview.md
   - name: Monitor using Capacity Metrics app
     href: usage-reporting.md
     displayName: Billing, usage reporting
@@ -252,6 +254,8 @@ items:
     href: monitor-using-dmv.md
   - name: Query insights
     href: query-insights.md
+  - name: Query activity
+    href: query-activity.md
   - name: How to
     items:    
       - name: Observe utilization trends

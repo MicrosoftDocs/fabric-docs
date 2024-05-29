@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 03/06/2024
+ms.date: 05/13/2024
 ms.search.form: Create lakehouse
 ---
 
@@ -34,7 +34,7 @@ There are a few ways you can get started with the creation process:
 
 1. **Workspace** view
 
-   - You can also create a lakehouse through the workspace view when you are on the **Data Engineering** experience by using the **New** dropdown menu.
+   - You can also create a lakehouse through the workspace view in **Data Engineering** by using the **New** dropdown menu.
 
    :::image type="content" source="media\create-lakehouse\new-lakehouse-menu.png" alt-text="Screenshot showing the Lakehouse option in the New menu.":::
 
@@ -68,6 +68,6 @@ To delete a lakehouse, navigate to **OneLake data hub** and find your lakehouse.
 
 Now that you have successfully created your Lakehouse, learn more about:
 
-- Different ways to load data in Lakehouse, see [Get data experience for Lakehouse](load-data-lakehouse.md)
+- Different ways to load data in Lakehouse, see [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md)
 
 - Exploring your lakehouse explorer, see [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md)

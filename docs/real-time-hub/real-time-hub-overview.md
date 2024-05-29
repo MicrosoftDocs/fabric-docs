@@ -59,5 +59,6 @@ Real-Time hub allows you to create streams for the supported sources. After you 
     :::image type="content" source="./media/real-time-hub-overview/real-time-hub.png" alt-text="Screenshot that shows the conceptual image of Real-Time hub architecture." lightbox="./media/real-time-hub-overview/real-time-hub.png" :::
 
 
-## Next step
+## Related content
+
 See [Get started with Real-Time hub.](get-started-real-time-hub.md)

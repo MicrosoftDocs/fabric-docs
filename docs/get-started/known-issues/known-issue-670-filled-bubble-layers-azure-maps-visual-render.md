@@ -45,6 +45,6 @@ To fix the issue in Power BI Desktop:
 1. Select **Bypass Geocoding Cache**
 1. Select **Ok** to close the dialog
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

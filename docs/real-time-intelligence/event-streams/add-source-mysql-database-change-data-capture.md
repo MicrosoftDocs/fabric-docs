@@ -30,20 +30,26 @@ You can specify the tables to monitor, and the eventstream records any future ro
 - Access to an instance of Azure Database for MySQL - Flexible Server.
 - Your MySQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
+
 ## Set up MySQL DB
 
-The connector uses the Debezium MySQL connector to capture changes in your Azure Database for MySQL database. You must define a MySQL user with permissions on all databases that the Messaging Connector monitors.
+The connector uses the Debezium MySQL connector to capture changes in your Azure Database for MySQL database. You must define a MySQL user with appropriate privileges on all databases where the Messaging Connector can capture the changes from. You can directly use the **admin user** to connect to the database which normally has the appropriate privileges already as below. or you can follow the below steps to create a new user 
+
+> [!NOTE]
+> The new user or admin account and the corresponding password will be used to connect to database later inside Eventstream. 
 
 1. At the `mysql` command prompt, create the MySQL user:
 
    ```
-   mysql> CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+   mysql> CREATE USER 'user'@'%' IDENTIFIED BY 'password';
    ```
 
-1. Grant the required permissions to the user:
+1. Grant the required privileges to the user:
 
    ```
-   mysql> GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'user'@'localhost';
+   mysql> GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'user'@'%';
    ```
 
 1. Finalize the user's permissions:
@@ -52,7 +58,14 @@ The connector uses the Debezium MySQL connector to capture changes in your Azure
    mysql> FLUSH PRIVILEGES;
    ```
 
-For more information about granting the required permissions to the user, see [Debezium connector for MySQL :: Debezium Documentation](https://debezium.io/documentation/reference/1.9/connectors/mysql.html#mysql-creating-user).
+To confirm if the user or admin has the required privileges granted, run the below command and then the required privileges in step#2 above should be shown.
+
+```
+SHOW GRANTS FOR user;
+```
+
+
+For more information about granting the required permissions to the user, see [Debezium connector for MySQL :: Debezium Documentation](https://debezium.io/documentation/reference/stable/connectors/mysql.html#mysql-creating-user).
 
 ## Enable the binlog
 
