@@ -1,5 +1,6 @@
 ---
 title: Event house OneLake Availability
+title: Event house OneLake Availability
 description: Learn how to turn on KQL Database data availability in OneLake.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -25,6 +26,8 @@ The following table describes the behavior of your KQL database and tables when 
 
 | | Turned on|Turned off|
 |------|---------|--------|
+|**KQL Database**| - Existing tables aren't affected. New tables are made available in OneLake. <br/> - The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data removed from your KQL database at the end of the retention period is also removed from OneLake. | - Existing tables aren't affected. New tables won't be available in OneLake. |
+|**KQL Database**| - Existing tables aren't affected. New tables are made available in OneLake. <br/> - The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data removed from your KQL database at the end of the retention period is also removed from OneLake. | - Existing tables aren't affected. New tables won't be available in OneLake. |
 |**KQL Database**| - Existing tables aren't affected. New tables are made available in OneLake. <br/> - The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data removed from your KQL database at the end of the retention period is also removed from OneLake. | - Existing tables aren't affected. New tables won't be available in OneLake. |
 |**KQL Database**| - Existing tables aren't affected. New tables are made available in OneLake. <br/> - The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data removed from your KQL database at the end of the retention period is also removed from OneLake. | - Existing tables aren't affected. New tables won't be available in OneLake. |
 |**A table in KQL Database**| - New data is made available in OneLake. <br/> - Existing data isn't backfilled. <br/> - Data can't be deleted, truncated, or purged. <br/> - Table schema can't be altered and the table can't be renamed. | - New data isn't made available in OneLake. <br/> - Data can be deleted, truncated, or purged. <br/> - Table schema can be altered and the table can be renamed. <br/> - Data is soft deleted from OneLake.|
@@ -70,6 +73,17 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
     1. Select the **_delta_log** folder.
     1. Select a file to view the table metadata and schema. The editor that opens is in read-only format.
 
+## Access mirroring policy
+
+By default, when **OneLake availability** is turned on, a mirroring policy is enabled (`IsEnabled=true`). You can use the policy to [monitor data latency](#check-latency) or alter it to [partition delta tables](#partition-delta-tables). For more information, see [Mirroring policy](/azure/data-explorer/kusto/management/mirroring-policy?context=/fabric/context/context-rta&pivots=fabric).
+
+> [!NOTE]
+> If you turn off **OneLake availability**, the mirroring policy's `IsEnabled` property is set to *false* (`IsEnabled=false`).
+
+### Check latency
+
+Event house can delay write operations for up to a few hours if there isn’t sufficient data to create optimal Parquet files. The delay ensures that the files aren't only efficient in size but also adhere to the best practices recommended for Delta.
+You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rta&pivots=fabric).
 ## Access mirroring policy
 
 By default, when **OneLake availability** is turned on, a mirroring policy is enabled (`IsEnabled=true`). You can use the policy to [monitor data latency](#check-latency) or alter it to [partition delta tables](#partition-delta-tables). For more information, see [Mirroring policy](/azure/data-explorer/kusto/management/mirroring-policy?context=/fabric/context/context-rta&pivots=fabric).
