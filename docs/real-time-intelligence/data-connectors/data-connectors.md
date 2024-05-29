@@ -25,6 +25,7 @@ The following table summarizes the available data connectors, tools, and integra
 | [Azure Event Hubs](#azure-event-hubs) | **Ingestion** | :heavy_check_mark: | First party | Messaging |
 | [Azure Functions](#azure-functions) | **Export**<br />**Ingestion** |  | First party | Workflow integrations |
 | [Azure Stream Analytics](#azure-stream-analytics) | **Ingestion** | :heavy_check_mark: | First party | Event processing |
+| [Cribl Stream](#cribl-stream) | **Ingestion** | :heavy_check_mark: | [CRIBL INFO Open source](https://github.com/Azure/logstash-output-kusto/) | integrations |
 | [Logstash](#logstash) | **Ingestion** |  | [Open source](https://github.com/Azure/logstash-output-kusto/) | Logs |
 | [NLog](#nlog) | **Ingestion** | :heavy_check_mark: | [Open source](https://github.com/Azure/azure-kusto-nlog-sink) | Telemetry, Logs, Metrics |
 | [Open Telemetry](#open-telemetry) | **Ingestion** | :heavy_check_mark: | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs |
@@ -129,16 +130,27 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Event processing
 * **Documentation:** [Get data from Azure Stream Analytics](/azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rti&pivots=fabric)
 
+### Cribl Stream
+
+[Cribl stream](https://docs.cribl.io/stream/) collects and processes machine data and allows you to process machine data into a database for later analysis.
+
+* **Functionality:** Ingestion
+* **Ingestion type supported:** Batching, Streaming
+* **Use cases:** Machine data processing
+* **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
+* **Repository:** Microsoft Azure - https://github.com/Azure/logstash-output-kusto/
+* **Documentation:** [Get data from Cribl](/azure/data-explorer/ingest-data-cribl?context=/fabric/context/context-rti&pivots=fabric)
+
 ### Logstash
 
-[The Logstash plugin](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric) enables you to process events from Logstash into an Azure Data Explorer database for later analysis.
+[The Logstash plugin](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric) enables you to process events from Logstash into a database for later analysis.
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching
 * **Use cases:** Logs
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/logstash-output-kusto/
-* **Documentation:** [Get data from Logstash](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data from Logstash](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabriccontext-rti&pivots=fabric)
 * **Community Blog:** [How to migrate from Elasticsearch to Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/how-to-migrate-from-elasticsearch-to-azure-data-explorer/ba-p/1621539/)
 
 ### NLog
@@ -149,7 +161,6 @@ NLog is a flexible and free logging platform for various .NET platforms, includi
 * **Ingestion type supported:** Batching, Streaming
 * **Use cases:** Telemetry, Logs, Metrics
 * **Underlying SDK:** [.NET](/azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/context-rti&pivots=fabric)
-* **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-nlog-sink
 * **Documentation:** [Get data with the NLog sink](/azure/data-explorer/nlog-sink?context=/fabric/context/context-rti&pivots=fabric)
 * **Community Blog:** [Getting started with NLog sink and Azure Data Explorer](https://aka.ms/adx-docs-nlog-blog)
 
