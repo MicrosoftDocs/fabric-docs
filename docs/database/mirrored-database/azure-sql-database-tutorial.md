@@ -25,8 +25,9 @@ ms.topic: tutorial
     - If you do not see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
 - Networking requirements for Fabric to access your Azure SQL Database:
     - Currently, Mirroring doesn't support Azure SQL Database logical servers behind an Azure Virtual Network or private networking. If you have your Azure SQL logical server behind a private network, you can't enable Azure SQL Database mirroring.
-    - Currently, you must update your Azure SQL logical server firewall rules to [Allow public network access](/azure/azure-sql/database/connectivity-settings#change-public-network-access). You can perform this change via the Azure portal, Azure PowerShell, and Azure CLI.
-    - You must enable the [Allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) option to connect to your Azure SQL Database logical server. You can make this change in the **Networking** section of Azure SQL logical server in the Azure portal.
+    - Currently, you must either do one of the following:
+        1) Update your Azure SQL logical server firewall rules to [Allow public network access](/azure/azure-sql/database/connectivity-settings#change-public-network-access). You can perform this change via the Azure portal, Azure PowerShell, and Azure CLI. Or
+        2) You must enable the [Allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) option to connect to your Azure SQL Database logical server. You can make this change in the **Networking** section of Azure SQL logical server in the Azure portal.
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL logical server
 
