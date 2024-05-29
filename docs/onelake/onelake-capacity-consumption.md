@@ -23,6 +23,10 @@ If you're a capacity admin, you can view your storage consumption in the [Fabric
  
  :::image type="content" source="media\onelake-capacity-consumption\onelake-storage.png" alt-text="Diagram showing how OneLake storage is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-storage.png":::
 
+ In the below image you have two columns called billable storage and current Storage. Billable storage shows the cumulative data over the month. Because the total charge for data stored isn't taken on one day in the month, but on a pro-rated basis throughout the month. You can estimate the monthly price as the billable storage (GB) multiplied by the price per Gb per month. So, if you stored 1 TB of data on day 1 and then deleted it before day 2, you would see on day one the 1 TB/30days = 33 GB. No additional storage is reported and you'll thus see just 33 GB for the month. However, if you stored 1 TB on day 1 and then didn't delete the data, then everyday would add 33 GB until the last day when you'll see 1 TB.
+
+:::image type="content" source="media\onelake--capacity-consumption\storage.png" alt-text="Diagram showing how OneLake storage is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\storage.png":::
+
  ## OneLake Compute
 Requests to OneLake, such as reading, writing, or listing, consumes your Fabric capacity. OneLake follows similar [mapping](/azure/storage/blobs/map-rest-apis-transaction-categories) of APIs to operations like ADLS. The CU consumption per each type of operation can be viewed in the Fabric Capacity Metrics app. In our example, the file upload resulted in a write transaction that consumed 127.46 CU Seconds of Fabric Capacity. This consumption is reported as "OneLake Write via Proxy" in the operation name in Capacity Metrics App.
 Now let’s read this data using a Fabric notebook. You consume 1.39 CU Seconds of read transactions. This consumption is reported as "OneLake Read via Redirect" in the Metrics app.
