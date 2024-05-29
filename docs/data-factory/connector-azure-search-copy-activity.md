@@ -9,6 +9,7 @@ ms.custom:
   - template-how-to
   - build-2023
   - ignite-2023
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Configure Azure AI Search in copy activity
