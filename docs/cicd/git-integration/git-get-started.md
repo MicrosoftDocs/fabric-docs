@@ -4,6 +4,8 @@ description: Learn how to connect a workspace to a Git repository and branch, co
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: how-to
 ms.date: 12/17/2023
 ms.custom:

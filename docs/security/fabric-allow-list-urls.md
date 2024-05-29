@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: fabric
 ms.topic: conceptual
-ms.date: 05/21/2024
+ms.date: 05/28/2024
 ---
 
 # Add Fabric URLs to your allowlist
@@ -84,6 +84,8 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |**Required**: DE/DS extension UX|https://pbides.powerbi.com|N/A|
 |**Required**: Notebooks UX|https://aznb-ame-prod.azureedge.net|N/A|
 |**Required**: Notebooks UX|https://*.notebooks.azuresandbox.ms|N/A|
+|**Required**: Notebooks UX|https://content.powerapps.com|N/A|
+|**Required**: Notebooks UX|https://aznbcdn.notebooks.azure.net|N/A|
 
 ## Spark
 
@@ -119,7 +121,7 @@ The **Endpoint** column lists domain names and links to external sites, which co
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|Customers can send/read events from Event stream in their custom app |sb://xxxxx.servicebus.windows.net|http: 443<br>amqp: 5672/5673<br>kafka: 9093|
+|Customers can send/read events from Event stream in their custom app |sb://*.servicebus.windows.net|http: 443<br>amqp: 5672/5673<br>kafka: 9093|
 
 ## Related content
 

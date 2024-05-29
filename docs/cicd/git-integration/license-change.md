@@ -4,6 +4,8 @@ description: Understand what happens to your got connection when your license pe
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: conceptual 
 ms.date: 08/24/2023
 ms.custom: build-2023

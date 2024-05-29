@@ -24,6 +24,6 @@ You can try to copy a visual in a report or dashboard by selecting the **Copy vi
 
 Rather than use the **Copy visual as image** option, you can use your operating system screenshot tools to capture screenshots of report and dashboard visuals.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

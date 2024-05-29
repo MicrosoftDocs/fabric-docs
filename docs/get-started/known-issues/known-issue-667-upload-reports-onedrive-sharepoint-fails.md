@@ -24,6 +24,6 @@ When opening the file picker, you see an error message similar to "Connection wa
 
 To work around this issue, you can add or replace the language URL parameter with `language=en-us` in the browser URL.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

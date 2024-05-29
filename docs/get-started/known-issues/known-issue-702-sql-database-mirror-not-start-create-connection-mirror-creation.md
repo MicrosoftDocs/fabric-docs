@@ -27,6 +27,6 @@ There are two workarounds:
 1. If the mirror artifact isn't yet created, create the SQL connection using the **Manage connections and gateways** page, instead of creating the SQL connection during the creation of the mirror artifact.
 1. If the mirror artifact is already created and you face this issue, go to the **Manage connections and gateways** page and edit the SQL connection.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

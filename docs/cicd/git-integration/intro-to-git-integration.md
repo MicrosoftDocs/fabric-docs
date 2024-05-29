@@ -4,6 +4,8 @@ description: An introduction to Git integration the Fabric Application lifecycle
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
   - build-2023
