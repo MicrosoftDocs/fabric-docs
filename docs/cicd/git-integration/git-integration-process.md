@@ -4,6 +4,8 @@ description: Understand how Microsoft Fabric interacts with Git on Azure Repos.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: conceptual
 ms.date: 11/15/2023
 ms.custom:

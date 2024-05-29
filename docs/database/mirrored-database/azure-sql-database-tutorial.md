@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
-ms.date: 05/09/2024
+ms.date: 05/21/2024
 ms.service: fabric
 ms.topic: tutorial
 ---
@@ -30,7 +30,7 @@ ms.topic: tutorial
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL logical server
 
-The System Assigned Managed Identity (SAMI) of your Azure SQL logical server needs to be enabled, and must be the primary identity.
+The System Assigned Managed Identity (SAMI) of your Azure SQL logical server must be enabled, and must be the primary identity, to publish data to Fabric OneLake.
 
 1. To configure or verify that the SAMI is enabled, go to your logical SQL Server in the Azure portal. Under **Security** in the resource menu, select **Identity**.
 1. Under **System assigned managed identity**, select **Status** to **On**.
@@ -40,16 +40,26 @@ The System Assigned Managed Identity (SAMI) of your Azure SQL logical server nee
 
 ### Database principal for Fabric
 
-Next, you need to create a way for the Fabric service to connect to your Azure SQL Database. You can accomplish this one of two ways, with a [login and mapped database user](#use-a-login-and-mapped-database-user), or a [contained database user](#use-a-contained-database-user):
+Next, you need to create a way for the Fabric service to connect to your Azure SQL Database.
+
+You can accomplish this with a [login and mapped database user](#use-a-login-and-mapped-database-user).
 
 #### Use a login and mapped database user
 
 1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/azure-data-studio/download-azure-data-studio). Connect to the `master` database.
-1. Execute the following script to create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following in the `master` database:
+1. Create a server login and assign the appropriate permissions.
+    - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following in the `master` database:
 
     ```sql
     CREATE LOGIN fabric_login WITH PASSWORD = '<strong password>';
     ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER fabric_login;
+    ```
+
+    - Or, create a Microsoft Entra ID authenticated login from an existing account. Run the following in the `master` database:
+
+    ```sql
+    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
+    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
     ```
 
 1. Connect to the Azure SQL database your plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [Azure Data Studio](/azure-data-studio/download-azure-data-studio).
@@ -57,16 +67,14 @@ Next, you need to create a way for the Fabric service to connect to your Azure S
 
     ```sql
     CREATE USER fabric_user FOR LOGIN fabric_login;
+    GRANT CONTROL TO fabric_user;
     ```
-
-#### Use a contained database user
-
-1. Connect to the Azure SQL database your plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [Azure Data Studio](/azure-data-studio/download-azure-data-studio).
-1. Create a [contained database user with password](/sql/relational-databases/security/contained-database-users-making-your-database-portable?view=azuresqldb-current&preserve-view=true), and grant the **CONTROL** permission to the contained database user with the following T-SQL script:
+    
+    Or,
 
     ```sql
-    CREATE USER fabric_user WITH PASSWORD = '<strong password>';
-    GRANT CONTROL TO fabric_login;
+    CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
+    GRANT CONTROL TO [bob@contoso.com];
     ```
 
 ## Create a mirrored Azure SQL Database
@@ -84,9 +92,9 @@ Next, you need to create a way for the Fabric service to connect to your Azure S
 
 ## Connect to your Azure SQL Database
 
-The following steps guide you through the process of creating the connection to your Azure SQL Database:
+To enable Mirroring, you will need to connect to the Azure SQL logical server from Fabric to initiate connection between SQL Database and Fabric. The following steps guide you through the process of creating the connection to your Azure SQL Database:
 
-1. Select **Azure SQL Database** under **New connection** or select an existing connection.  
+1. Under **New connection**, select **Azure SQL Database** or select an existing connection.  
     <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of New connection panel."::: -->
 
 1. If you selected **New connection**, enter the connection details to the Azure SQL Database.

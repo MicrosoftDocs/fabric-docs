@@ -27,6 +27,6 @@ If you have this issue, you could see one of two symptoms:
 
 If you receive the '404-NotFound' error, wait until the fix is released. If you receive the LakehouseOperationFailed error message, you can safely ignore the error.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

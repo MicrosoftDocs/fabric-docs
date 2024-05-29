@@ -24,6 +24,6 @@ Visuals in a Power BI report using the Denodo connector in DirectQuery mode migh
 
 To work around this issue, you can restart Power BI Desktop or restart the on-premises data gateway. Once you restart either application, the visuals render successfully. If you choose not to restart either application, you can wait for at least 20 minutes, and the report reverts back to normal.
 
-## Next steps
+## Related content
 
 - [About known issues](/power-bi/troubleshoot/known-issues/power-bi-known-issues)

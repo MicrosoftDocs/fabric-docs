@@ -19,10 +19,10 @@ The Oracle Cloud Storage connector is supported in Data Factory for [!INCLUDE [p
 
 The Oracle Cloud Storage connector supports the following capabilities in data pipelines:
 
-| Supported capabilities | Gateway | Authentication |
+| **Supported capabilities** | **Gateway** | **Authentication** |
 | --- | --- | ---|
 | **Copy activity (source/-)** | None |Access Key |
-| **Lookup activity** | None | Access Key | 
+| **Lookup activity** | None | Access Key |
 | **GetMetadata activity** | None| Access Key |
 | **Delete activity** | None | Access Key |
 

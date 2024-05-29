@@ -4,7 +4,8 @@ description: Learn about Data Activator limitations.
 author: davidiseminger
 ms.author: davidi
 ms.topic: concept
-ms.custom: 
+ms.custom:
+  - build-2024
 ms.search.form: product-reflex
 ms.date: 01/04/2024
 ---
@@ -51,10 +52,32 @@ Data activator also supports the following map visuals. Data activator only supp
 * Azure Map
 * Arc GIS map
 
+## Supported Real-Time Dashboard tiles
+
+Data Activator supports only the following tile types in Real-Time Dashboards:
+
+* Time chart
+* Bar chart
+* Column chart
+* Area chart
+* Line chart
+* Stat
+* Multi stat
+* Pie Chart
+
+Additionally, for a tile to be supported by Data Activator:
+
+* The data in the tile must not be static
+* The data in the tile must be based on a KQL query
+* The tile must have at most one time range
+* The tile must be filtered by one of the pre-defined time ranges; custom time ranges are not supported
+* The tile must not contain time series data (for example, data created using the *make-series* KQL operator)
+
+ For more information, see [Limitations on charts with a time axis](data-activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
 
 ## Allowed recipients of email alerts
 
-Each recipient of email alerts must be an internal email address, which means the recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email alerts to be sent to either external email addresses nor guest email addresses.
+Each recipient of email alerts must be an internal email address, which means the recipient must belong to the organization that owns the Fabric tenant. Data Activator doesn't allow email alerts to be sent to either external email addresses nor guest email addresses. In addition, the email domain of any email alert recipients must match the email domain of the alert owner.
 
 ## Maximum data throughput for Eventstreams data
 
@@ -90,4 +113,3 @@ Data Activator imposes the following limits on the number of trigger actions tha
 You can also learn more about Microsoft Fabric:
 
 * [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
-

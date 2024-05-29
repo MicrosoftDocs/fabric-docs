@@ -36,22 +36,34 @@ items:
     href: tutorial-clone-table.md
   - name: 7. Transform data using stored procedure
     href: tutorial-transform-data.md
-  - name: 8. Create queries with visual query builder
+  - name: 8. Time travel using T-SQL
+    href: tutorial-time-travel.md
+  - name: 9. Create queries with visual query builder
     href: tutorial-visual-query.md
-  - name: 9. Analyze data with a notebook
+  - name: 10. Analyze data with a notebook
     href: tutorial-analyze-data-notebook.md
-  - name: 10. Create queries with the SQL query editor
+  - name: 11. Create queries with the SQL query editor
     href: tutorial-sql-cross-warehouse-query-editor.md
-  - name: 11. Create Power BI reports
+  - name: 12. Create Power BI reports
     href: tutorial-power-bi-report.md
-  - name: 12. Build a report from the OneLake data hub
+  - name: 13. Build a report from the OneLake data hub
     href: tutorial-build-report-onelake-data-hub.md
-  - name: 13. Clean up resources
+  - name: 14. Clean up resources
     href: tutorial-clean-up.md        
 - name: Connect to the warehouse
   items: 
   - name: Connectivity
     href: connectivity.md
+- name: Copilot for Data Warehouse
+  items:
+  - name: Overview of Copilot for Data Warehouse
+    href: copilot.md
+  - name: Use the Copilot chat pane
+    href: copilot-chat-pane.md
+  - name: Use code completions
+    href: copilot-code-completion.md
+  - name: Use quick actions
+    href: copilot-quick-action.md
 - name: Design and Develop
   items:
   - name: Better together - the lakehouse and warehouse
@@ -132,6 +144,12 @@ items:
     href: data-preview.md
   - name: Query Delta Lake logs
     href: query-delta-lake-logs.md
+  - name: Query data as it existed in the past
+    href: time-travel.md
+    displayName: Time travel
+  - name: "How to: Query using time travel"
+    href: how-to-query-using-time-travel.md
+    displayName: Query using time travel
 - name: Data recovery
   items:
   - name: Restore in-place
@@ -227,6 +245,8 @@ items:
     href: caching.md
 - name: Monitor the warehouse
   items:
+  - name: Monitoring overview
+    href: monitoring-overview.md
   - name: Monitor using Capacity Metrics app
     href: usage-reporting.md
     displayName: Billing, usage reporting
@@ -234,6 +254,8 @@ items:
     href: monitor-using-dmv.md
   - name: Query insights
     href: query-insights.md
+  - name: Query activity
+    href: query-activity.md
   - name: How to
     items:    
       - name: Observe utilization trends

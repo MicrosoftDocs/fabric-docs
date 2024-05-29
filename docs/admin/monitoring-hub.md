@@ -4,7 +4,7 @@ description: Understand the Microsoft Fabric Monitoring hub and the information 
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 01/29/2024
+ms.date: 05/26/2024
 ---
 
 # Use the Monitoring hub
@@ -29,7 +29,7 @@ The monitoring hub displays activities for these Fabric items:
 
 ## View the monitoring hub display
 
-To open the Monitoring hub, Select **Monitoring hub** from the navigation pane. The monitoring hub displays information in a table form. Fabric activities are displayed according to their start time, with the newest activities at the top of the table. Each Fabric item displays a maximum of 100 activities. History is kept for 30 days and can be viewed using the *Historical view* option.
+To open the Monitoring hub, In Fabric, select **Monitoring hub** from the navigation pane. The monitoring hub displays information in a table form. Fabric activities are displayed according to their start time, with the newest activities at the top of the table. Each Fabric item displays a maximum of 100 activities. History is kept for 30 days and can be viewed using the *Historical view* option.
 
 ## Interact with the monitoring hub
 
