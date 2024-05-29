@@ -58,13 +58,13 @@ In this example we'll create a GraphQL API based on sample Lakehouse data.
 1. In the Fabric portal, select **Data Engineering** from the workload switcher at the bottom of the navigation bar. If you are in the Fabric home, you can also select the **Data Engineering** card.
 2. Select **Use a sample** and, under **Lakehouse**, click on **Public holidays** to automatically create a new Lakehouse with public holidays data.
 
-:::image type="content" source="media/connect-apps-api-graphql/sample-lakehouse.png" alt-text="Screenshot of the sample data Lakehouse option.":::
+:::image type="content" source="media/connect-apps-api-graphql/sample-lakehouse.png" alt-text="Screenshot on selecting the sample data Lakehouse option.":::
 
-3. Following the steps from [Create an API for GraphQL](get-started-api-graphql), create a new GraphQL API and select the Lakehouse you just created. Add the public holidays table so the table is exposed to API clients.
+1. Following the steps from [Create an API for GraphQL](get-started-api-graphql.md), create a new GraphQL API and select the Lakehouse you just created. Add the public holidays table so the table is exposed to API clients.
 
-:::image type="content" source="media/connect-apps-api-graphql/add-data-to-graphql.png" alt-text="Screenshot of the sample data Lakehouse option.":::
+:::image type="content" source="media/connect-apps-api-graphql/add-data-to-graphql.png" alt-text="Screenshot of adding the sample Lakehouse as GraphQL data source.":::
 
-4. Test the GraphQL API in the API editor using the following sample query. It's the same query we'll use in our client application:
+1. Test the GraphQL API in the API editor using the following sample query. It's the same query we'll use in our client application:
 
 ```json
 query {
@@ -90,7 +90,7 @@ query {
 
 ## Configuring a sample React app to access the public holidays Fabric API for GraphQL
 
-1. We'll use an existing React app as a starting point. Follow all the steps on the tutorial [Create a React single-page application and prepare it for authentication](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code) to create a React project with Entra authentication already configured, including additional files that are required to be added to the folder structure.
+1. We'll use an existing React app as a starting point. Follow all the steps on the tutorial [Create a React single-page application and prepare it for authentication](https://learn.microsoft.com/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code) to create a React project with Entra authentication already configured, including additional files that are required to be added to the folder structure.
 2. In the *src* folder, open the *authConfig.js* file and replace the contents of the file with the following code snippet:
 
 ```javascript
@@ -166,6 +166,7 @@ export const graphConfig = {
     graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
 };
 ```
+
 3. Replace the following values with the values from the Microsoft Entra admin center.
     - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered Entra application.
     - `authority` - This is composed of two parts:
@@ -312,18 +313,18 @@ export const ProfileData = (props) => {
 
 9. Save the final file.
 10. In your terminal application of choice, go the root of the React project and execute the command `npm start` to test the application.
-11. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-single-page-app-react-call-api#call-the-microsoft-graph-api-from-the-application) to authenticate.
+11. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](https://learn.microsoft.com/entra/identity-platform/tutorial-single-page-app-react-call-api#call-the-microsoft-graph-api-from-the-application) to authenticate.
 11. After signing in, click on the button **Query Fabric API for GraphQL Data**.
 
-:::image type="content" source="media/connect-apps-api-graphql/test-react-app.png" alt-text="Screenshot of the Copy link dialog screen, showing where to select Copy.":::
+:::image type="content" source="media/connect-apps-api-graphql/test-react-app.png" alt-text="Screenshot of the React sample app after sign in":::
 
 12. A successful authorized request to the GraphQL API in Fabric returns the data from the Lakehouse to our React client application:
 
-:::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the Copy link dialog screen, showing where to select Copy.":::
+:::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the React sample app after receiving the GraphQL request.":::
 
 ## Related content
 
-- [Create a React single-page application and prepare it for authentication](https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code)
+- [Create a React single-page application and prepare it for authentication](https://learn.microsoft.com/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code)
 - [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app)
 - [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md)
 - [Query multiple data sources in Fabric API for GraphQL](multiple-data-sources-graphql.md)
