@@ -48,7 +48,11 @@ Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/
 
 1. Select **Git integration**.
 
-1. You’re automatically signed into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
+1. Select your Git provider. Currently, Azure DevOps and GitHub are supported.
+
+    :::image type="content" source="./media/git-get-started/select-git-provider.png" alt-text="Screenshot of workspace settings window with choice of DevOps or GitHub to select.":::
+
+1. If you select Azure DevOps, you’re automatically signed into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
 
     :::image type="content" source="./media/git-get-started/workspace-settings.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
 
