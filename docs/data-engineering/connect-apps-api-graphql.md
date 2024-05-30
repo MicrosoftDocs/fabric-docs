@@ -314,7 +314,7 @@ export const ProfileData = (props) => {
 )};
 ```
 
-9. Save the final file.
+9. Save all the file changes.
 10. In your terminal application of choice, go the root folder of the React project and execute the command `npm start` to test the application locally.
 11. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](https://learn.microsoft.com/entra/identity-platform/tutorial-single-page-app-react-call-api#call-the-microsoft-graph-api-from-the-application) to authenticate.
 11. After signing in, click on the button **Query Fabric API for GraphQL Data**.
