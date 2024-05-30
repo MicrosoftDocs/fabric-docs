@@ -210,6 +210,10 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * Resource instance rules for Fabric workspaces must be created through ARM templates. Resource instance rules created through the Azure portal UI aren't supported.
 * Pre-existing shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
 
+### Troubleshooting issues with trusted workspace access
+
+If a shortcut in a lakehouse that targets a firewall-protected ADLS Gen2 storage account becomes inaccessible, it might be because the lakehouse has been shared with a user who doesn't have an admin, member, or contributor role in the workspace where the lakehouse resides. This is a [known issue](../get-started/known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md). The remedy is not to share the lakehouse with users who don't have an admin, member, or contributor role in the workspace.
+
 ### ARM template sample
 
 ```json
