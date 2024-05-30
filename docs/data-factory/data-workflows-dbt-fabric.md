@@ -188,7 +188,7 @@ dbt_fabric_dag = DbtDag(
 
 :::image type="content" source="media/data-workflows/run-directed-acyclic-graph.png" lightbox="media/data-workflows/run-directed-acyclic-graph.png" alt-text="Screenshot shows run dag.":::
 
-1. To see your DAGs loaded in the Apache Airflow UI, Click on `Monitor in Apache Airflow.`
+1. To see your dag loaded in the Apache Airflow UI, Click on `Monitor in Apache Airflow.`
 
 :::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" lightbox="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot shows how to monitor dbt dag.":::
 
@@ -196,7 +196,7 @@ dbt_fabric_dag = DbtDag(
 
 ## Validate your data.
 
-1. After a successful run, to validate your data you can see the new table named 'nyc_trip_count.sql' created in your Fabric data warehouse.
+1. After a successful run, to validate your data, you can see the new table named 'nyc_trip_count.sql' created in your Fabric data warehouse.
 
 :::image type="content" source="media/data-workflows/dbt_successful.png" lightbox="media/data-workflows/dbt_successful.png" alt-text="Screenshot shows successful dbt dag.":::
 
