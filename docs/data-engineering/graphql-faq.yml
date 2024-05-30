@@ -25,13 +25,13 @@ sections:
         answer: Microsoft Fabric API for GraphQL is a managed service that enables you to create a GraphQL API in seconds to access data from your data sources such as Microsoft Fabric Data Warehouses, Microsoft Fabric Lakehouses, and Microsoft Fabric Mirrored Databases. It provides a unified API layer for querying and mutating data from these supported data sources. Fabric API for GraphQL is currently in preview.
       
       - question: What GraphQL operations are supported in Fabric API for GraphQL?
-        answer: Only GraphQL queries (read) and mutations (write) are supported currently. Data sources exposed via SQL Analytics Endpoints are read-only thus only supporting Queries. 
+        answer: Only GraphQL queries (read) and mutations (write) are supported currently. Data sources exposed via SQL Analytics Endpoints are read-only thus only supporting Queries. In case of Data Warehouses, a primary key needs to be defined for Mutations to be automatically generated.
       
       - question: How can I view and edit resolvers in Fabric API for GraphQL?
         answer: Resolvers are GraphQL components that provide the business logic to resolve fields in the API and perform operations with data residing in the data sources. Fabric automatically generates resolvers whenever you attach a new data source or select new objects to be exposed from an existing data source. Currently, you cannot customize resolvers. For customized business logic in API for GraphQL, you can create a stored procedure in the data source and expose it in the GraphQL API.
 
       - question: Does the API for GraphQL client application require access to the data source in order to perform queries or mutations?
-        answer: GraphQL requires applications to use Microsoft Entra for authentication. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app).
+        answer: GraphQL requires applications to use Microsoft Entra for authentication. Your application needs to be registered and configured adequately to perform API calls against Fabric. The app registered in Entra requires "Item.Execute.All" permissions for the PowerBI service, which will provide passthrough access for both the GraphQL API and the data source. For more information, see [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app).
 
       - question: How do I open a support ticket for API for GraphQL?
         answer: To get help from Microsoft Support on any issue related to Fabric API for GraphQL, please visit our [Fabric Support site](https://support.fabric.microsoft.com/en-US/support/) and choose the **Data Engineering** option.

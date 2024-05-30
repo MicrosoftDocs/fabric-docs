@@ -46,7 +46,7 @@ In the following steps, we showcase how to configure support for a ReactJS appli
 
 5. Select **Register**. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they're required later.
 6. From the *Manage* list, select **API permissions**, then **Add permission**. 
-7. Add the **PowerBI Service**, select **Delegated permissions**, and select the **Workspace.ReadWrite.All** permission. Make sure Admin consent isn't required. 
+7. Add the **PowerBI Service**, select **Delegated permissions**, and select the **Item.Execute.All** permission. Make sure Admin consent isn't required. 
 8. Back to the *Manage* list, select **Authentication**, select **Add a platform**, then select **Single-page application**.
 9. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with PKCE](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow). Click the **Configure** button to save your changes. 
 10. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
@@ -173,7 +173,7 @@ export const graphConfig = {
 3. Replace the following values with the values from the Microsoft Entra admin center.
     - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered Entra application.
     - `authority` - This is composed of two parts:
-        - The *Instance* is endpoint of the cloud provider. Check with the different available endpoints in [National clouds](https://learn.microsoft.com/entra/identity-platform/authentication-national-cloud#azure-ad-authentication-endpoints).
+        - The *Instance* is endpoint of the cloud provider. Check with the different available endpoints in [National clouds](entra/identity-platform/authentication-national-cloud#azure-ad-authentication-endpoints).
         - The *Tenant ID* is the identifier of the tenant where the application is registered. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
     - `graphQLEndpoint` - The Fabric API for GraphQL endpoint. Replace `Enter_the_GraphQL_Endpoint_Here` with the GraphQL API endpoint recorded earlier.
 4. Save the file.
@@ -187,13 +187,15 @@ import { ProfileData } from './components/ProfileData';
 import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from '@azure/msal-react';
 import './App.css';
 import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 
 /**
 * Renders information about the signed-in user or a button to retrieve data about the user
 */
 const ProfileContent = () => {
   const { instance, accounts } = useMsal();
-  let [graphqlData, setGraphqlData] = useState(null);
+  const [graphqlData, setGraphqlData] = useState(null);
+  const [display, setDisplay] = useState(false);
 
   function RequestGraphQL() {
       // Silently acquires an access token which is then attached to a request for GraphQL data
@@ -208,6 +210,7 @@ const ProfileContent = () => {
   }
 
 async function callGraphQL(accessToken) {
+  setDisplay(true);
   const query = `query {
     publicholidays (filter: {countryRegionCode: {eq:"US"}, date: {gte: "2024-01-01T00:00:00.000Z", lte: "2024-12-31T00:00:00.000Z"}}) {
       items {
@@ -238,8 +241,17 @@ async function callGraphQL(accessToken) {
           {graphqlData ? (
               <ProfileData graphqlData={graphqlData} />
           ) : (
-              <Button variant="secondary" onClick={RequestGraphQL}>
-                  Query Fabric API for GraphQL Data
+              <Button variant="primary" onClick={RequestGraphQL}>
+                  Query Fabric API for GraphQL Data 
+                  {display ? (
+                        <Spinner
+                            as="span"
+                            animation="border"
+                            size="sm"
+                            role="status"
+                            aria-hidden="true"
+                        />
+                    ) : null}
               </Button>
           )}
       </>
