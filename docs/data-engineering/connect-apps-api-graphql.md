@@ -40,7 +40,7 @@ In the following steps, we showcase how to configure support for a ReactJS appli
 
    * **Name** - Enter a name for your application.
 
-   * **Supported account types** - Select the accounts you want your app to supported.
+   * **Supported account types** - Select the accounts you want your app to support.
 
    * (Optional) **Redirect URI** - Enter a URI if needed.
 
