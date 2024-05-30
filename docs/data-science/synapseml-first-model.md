@@ -1,5 +1,5 @@
 ---
-title: Build a SynapseML model
+title: Build a model with SynapseML
 description: Get a quick introduction to building a machine learning model with SynapseML.
 ms.topic: how-to
 ms.custom:
@@ -11,19 +11,22 @@ ms.author: jessiwang
 ms.date: 05/30/2024
 ---
 
-# Build a SynapseML model
+# Build a model with SynapseML
 
-This article describes how to build a machine learning model by using SynapseML, and demonstrates how SynapseML can simplify complex machine learning tasks. You use SynapseML to create a small ML training pipeline that includes a featurization stage and a LightGBM regression stage. The pipeline predicts ratings based on review text from a dataset of book reviews. Finally, you see how SynapseML simplifies using prebuilt models to solve ML problems.
+This article describes how to build a machine learning model by using SynapseML, and demonstrates how SynapseML can simplify complex machine learning tasks. You use SynapseML to create a small ML training pipeline that includes a featurization stage and a LightGBM regression stage. The pipeline predicts ratings based on review text from a dataset of book reviews. Finally, you see how SynapseML can simplify using prebuilt models to solve ML problems.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-- [Create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
-- Attach your notebook to a lakehouse. To add an existing lakehouse or create a new one, expand **Lakehouses** under **Explorer** at left, and then select **Add**.
-- Get an Azure AI services key by following the instructions in [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).
-- [Create an Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) and add the Azure AI services key to the key vault as a secret.
-- Make a note of your key vault name and secret name. You need this information to transform data later in this article.
+## Prepare resources
+Create the tools and resources you need to build the model and pipeline.
+
+1. [Create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+1. Attach your notebook to a lakehouse. To add an existing lakehouse or create a new one, expand **Lakehouses** under **Explorer** at left, and then select **Add**.
+1. Get an Azure AI services key by following the instructions in [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).
+1. [Create an Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) and add your Azure AI services key to the key vault as a secret.
+1. Make a note of your key vault name and secret name. You need this information to run the one-step transform later in this article.
 
 ## Set up the environment
 In your notebook, import SynapseML libraries and initialize your Spark session.
