@@ -100,9 +100,27 @@ ML Model, Experiment, and AI skill supports private link.
 
 * If your organization is using Azure Private Link in Fabric, modern usage metrics reports will contain partial data (only Report Open events). A current limitation when transferring client information over private links prevents Fabric from capturing Report Page Views and performance data over private links. If your organization had enabled the **Azure Private Link** and **Block Public Internet Access** tenant settings in Fabric, the refresh for the dataset fails and the usage metrics report doesn't show any data.
 
+### Event house
+
+Event house supports Private Link, allowing secure data ingestion and querying from your Azure Virtual Network via a private link. You can ingest data from various sources, including Azure Storage accounts, local files, and Dataflow Gen2. Streaming ingestion ensures immediate data availability. Additionally, you can utilize KQL queries or Spark to access data within an event house.
+
+Limitations:
+
+* Ingesting data from OneLake isn't supported.
+* Creating a shortcut to an event house isn't possible.
+* Connecting to an event house in a data pipeline isn't possible.
+* Ingesting data using queued ingestion isn't supported.
+* Data connectors relying on queued ingestion aren't supported.
+* Querying an event house using T-SQL isn't possible.
+
 ### Other Fabric items
 
-Other Fabric items, such as KQL Database, and EventStream, don’t currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+Other Fabric items, such as Event stream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+
+<!--### Other Fabric items
+
+Other Fabric items, such as KQL Database, and Event stream, don’t currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+-->
 
 ### Microsoft Purview Information Protection
 
