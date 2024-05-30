@@ -38,8 +38,6 @@ For the configuration of each tab under copy activity, go to the following secti
 - [Mapping](#mapping)
 - [Settings](#settings)
 
-Reader version 1 and writer version 2 are supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
-
 ### General
 
 For the **General** tab configuration, go to [General](activity-overview.md#general-settings).
@@ -66,6 +64,8 @@ The following properties are **required**:
       - **Timestamp**: Specify to query an older snapshot by timestamp.
       - **Version**: Specify to query an older snapshot by version.
       - **Additional columns**: Add additional data columns to the store source files' relative path or static value. Expression is supported for the latter.
+      
+    Reader version 1 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
 
   - If you select **Files**:
     - **File path type**: You can choose **File path**, **Wildcard file path**, or **List of files** as your file path type. The following list describes the configuration of each setting：
@@ -126,6 +126,8 @@ The following properties are **required**:
           - **Enable Partition**: This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".
             - **Partition column name**: Select from the destination columns in schemas mapping. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
       - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
+
+    Writer version 2 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
 
   - If you select **Files**:
     - **File path**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
