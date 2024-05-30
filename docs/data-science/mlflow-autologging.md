@@ -97,6 +97,8 @@ import mlflow
 mlflow.autolog(disable=True)
 ```
 
+#### Disable autologging for all notebooks and sessions
+
 Workspace administrators can enable or disable [!INCLUDE [product-name](../includes/product-name.md)] autologging for all notebooks and sessions in their workspace by using the workspace settings. To enable or disable [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] autologging:
 
 1. In your [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] workspace, select **Workspace settings**.
