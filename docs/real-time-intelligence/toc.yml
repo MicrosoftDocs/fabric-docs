@@ -242,8 +242,8 @@ items:
       href: api/toc.yml
     - name: OneLake
       items:
-      - name: One logical copy 
-        href: one-logical-copy.md
+      - name: Event house OneLake availability 
+        href: event-house-onelake-availability.md
       - name: Create OneLake shortcuts in a KQL database
         href: onelake-shortcuts.md
   - name: Resource consumption

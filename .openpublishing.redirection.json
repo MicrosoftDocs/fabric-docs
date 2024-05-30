@@ -336,6 +336,11 @@
           "redirect_document_id": true
         },
         {
+          "source_path_from_root": "/docs/real-time-intelligence/one-logical-copy.md",
+          "redirect_url": "/fabric/real-time-intelligence/event-house-onelake-availability",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-get-historical-data.md",
           "redirect_url": "/fabric/real-time-intelligence/tutorial-3-set-alert",
           "redirect_document_id": true
