@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/22/2024
+ms.date: 04/14/2024
 ---
 
 # Fabric domains
@@ -61,9 +61,16 @@ For information about how to specify an image for a domain, see [Specify a domai
 
 ### Default domain
 
-A default domain is a domain that has been specified as the default domain for specific users and/or security groups. This means that when these users/security groups create a new workspace, or when they update an unassigned workspace they're an admin of, that workspace will automatically be assigned to that domain. These users/security groups generally automatically become domain contributors of the workspaces that are assigned in this manner.
+A default domain is a domain that has been defined as the default domain for specified users and/or security groups. When you define a domain as the default domain for specified users and/or security groups, the following happens:
 
-For information about specifying a default domain, see [Specify a default domain](#specify-a-default-domain).
+1. The system scans the organization's workspaces. When it finds a workspace whose admin is a specified user or member of a specified security group:
+    * If the workspace already has a domain assignment, it is preserved. The default domain doesn't override the current assignment.
+    * If the workspace is unassigned, it is assigned to the default domain.
+1. After this, whenever a specified user or member of a specified security group creates a new workspace, it is assigned to the default domain.
+
+The specified users and/or members of the specified security groups generally automatically become domain contributors of workspaces that are assigned in this manner.
+
+For information about defining a domain as a default domain, see [Define the domain as a default domain](#define-the-domain-as-a-default-domain).
 
 ## Create a domain
 
@@ -149,7 +156,7 @@ The domain settings side pane has the following tabs:
 * [Image](#specify-a-domain-image): Specify domain image
 * [Admins](#specify-domain-admins): Specify domain admins
 * [Contributors](#specify-domain-contributors): Specify domain contributors
-* [Default domain](#specify-a-default-domain): Set up domain as a default domain
+* [Default domain](#define-the-domain-as-a-default-domain): Set up domain as a default domain
 * [Delegated settings](#delegate-settings-to-the-domain-level): Override tenant-level settings
 
 > [!NOTE]
@@ -201,16 +208,16 @@ Select **Contributors** and then specify who can assign workspaces to the domain
 >[!NOTE]
 > For domain contributors to be able to associate their workspaces with their domains, they must have an admin role in the workspaces they are trying to associate with the domain.
 
-### Specify a default domain
+### Define the domain as a default domain
 
-To specify a domain as a default domain, you must be a Fabric admin or a domain admin of the domain.
+To define a domain as a default domain, you must be a Fabric admin or a domain admin of the domain.
 
-Select **Default domain** and specify users and/or security groups. When the specified users and/or security groups create new workspaces, or update unassigned workspaces, those workspaces will automatically be assigned to the domain.
+Select **Default domain** and specify users and/or security groups. When you add people to the default domain list, unassigned workspaces they're admins of, and new workspaces they create, will automatically be assigned to the domain. For a detailed description of the process, see [Default domain](#default-domain).
 
 :::image type="content" source="./media/domains/domain-specify-default-domain.png" alt-text="Screenshot showing default domain specification section.":::
 
 > [!Note]
-> The users/security groups specified in the default domain definition generally automatically become domain contributors of the workspaces that get assigned to the domain via the default domain mechanism.
+> The users and/or members of the security groups specified in the default domain definition generally automatically become domain contributors of the workspaces that get assigned to the domain via the default domain mechanism.
 
 ### Delegate settings to the domain level
 
@@ -234,10 +241,15 @@ For descriptions of the things you need to set, see [Set up certification](../ad
 
 ## Microsoft Fabric REST Admin APIs for domains
 
-Most of the actions available from the UI are available through the Fabric REST Admin APIs for domains. For more information, see [Domains API reference](/rest/api/fabric/admin/domains)
+Most of the actions available from the UI are available through the Fabric REST Admin APIs for domains. For more information, see [Domains API reference](/rest/api/fabric/admin/domains).
+
+## Track user activity on domains
+
+Whenever a domain is created, edited, or deleted, that activity is recorded in the audit log for Fabric. You can track these activities in the unified audit log or in the Fabric activity log. For information about the information in the Fabric auditing schema that's specific to domains, see [Audit schema for domains](./domains-audit-schema.md).
 
 ## Related content
 
 * [Domain management tenant settings](../admin/service-admin-portal-domain-management-settings.md)
 * [Microsoft Fabric REST Admin APIs for domains](/rest/api/fabric/admin/domains)
+* [Audit schema for domains](./domains-audit-schema.md)
 * [Admin role in workspaces](../get-started/roles-workspaces.md)

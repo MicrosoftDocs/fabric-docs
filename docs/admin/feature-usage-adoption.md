@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 03/05/2024
+ms.date: 03/24/2024
 ---
 
-# Feature usage and adoption report
+# Feature usage and adoption report (preview)
 
 The Feature Usage and Adoption report provides a comprehensive analysis of usage and adoption of different features in your Microsoft Fabric tenant. As a Fabric administrator, you can share this report with others in your organization. You can also share the report's semantic model, and use it to customize the report, or build a new report that relies on the same data.
 
@@ -57,6 +57,8 @@ To view the details of a specific activity, drill through to the [Activity Detai
 2. Select *Drill through*.
 
 3. Select *Activity Details*.
+
+:::image type="content" source="./media/feature-usage-adoption/analysis-drill-through-option.gif" alt-text="Image shows drill through option use case from Analysis to Details page.":::
 
 Continuing the example from the [Activity Overview](#activity-overview-page) page, you turn to the Analysis page to understand why in December, the *sales and marketing* capacity has almost five times more activities than any other capacity. Using the *Date* fields, you filter the results for December. By reviewing the *Decomposition tree*, you see that almost all of the activities are for viewing a Power BI report. You decide to drill through to the [Activity details](#activity-details-page) page to understand which report is being extensively viewed.
 
@@ -127,4 +129,3 @@ This section lists the report's considerations and limitations.
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
 
 * [Admin overview](microsoft-fabric-admin.md)
-

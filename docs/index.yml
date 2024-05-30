@@ -10,6 +10,7 @@ metadata:
   ms.service: fabric
   ms.custom:
     - ignite-2023
+    - build-2024
   ms.topic: hub-page
   ms.collection: collection
   author: SnehaGunda
@@ -33,9 +34,9 @@ highlightedContent:
       itemType: overview
       url: security/security-overview.md
     # Card
-    - title: Join the Fabric Community Conference
-      itemType: whats-new
-      url: https://fabricconf.com/#!/
+    - title:  Choose a Fabric data store
+      itemType: concept
+      url: get-started/decision-guide-data-store.md
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
@@ -49,7 +50,7 @@ highlightedContent:
 conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   sections:
-    - title: Microsoft Fabric shared platform experiences # < 60 chars (Optional; Remove if not applicable.)
+    - title: Microsoft Fabric shared platform # < 60 chars (Optional; Remove if not applicable.)
       summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
@@ -95,6 +96,12 @@ conceptualContent:
             - url: /rest/api/fabric/
               itemType: reference
               text: REST APIs
+
+            - url: workload-development-kit/development-kit-overview.md
+              itemType: concept
+              text: Microsoft Workload Development Kit
+
+
             - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
               itemType: concept
               text: Deployment pipelines
@@ -154,7 +161,7 @@ conceptualContent:
             text: See more
 
 productDirectory:
-  title: Explore Microsoft Fabric experiences
+  title: Explore Microsoft Fabric
   summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
   items:
     # Card
@@ -190,6 +197,22 @@ productDirectory:
           text: See more
 
     # Card
+    - title: Real-Time hub
+
+      imageSrc: ./media/real-time-hub-icon.png
+      links:
+        - url: real-time-hub/real-time-hub-overview.md
+          text: What is Real-Time hub?
+        - url: real-time-hub/get-started-real-time-hub.md
+          text: Bring your data to Real-Time hub
+        - url: real-time-hub/explore-data-streams.md
+          text: Explore streams
+        - url: real-time-hub/set-alerts-data-streams.md
+          text: Set alerts on streams
+        - url: real-time-hub/index.yml
+          text: See more
+
+    # Card
     - title: Data Factory
 
       imageSrc: ./media/data-factory-icon.png
@@ -204,6 +227,23 @@ productDirectory:
           text: Explore connectors
         - url: data-factory/index.yml
           text: See more
+
+    # Card
+    - title: Real-Time Intelligence
+
+      imageSrc: ./media/synapse-real-time-intelligence-icon.png
+      links:
+        - url: real-time-intelligence/overview.md
+          text: What is Real-Time Intelligence?
+        - url: real-time-intelligence/event-streams/overview.md
+          text: What is Fabric event streams?
+        - url: real-time-intelligence/create-database.md
+          text: Create a database
+        - url: real-time-intelligence/query-table.md
+          text: Query with KQL
+        - url: real-time-intelligence/index.yml
+          text: See more
+
 
     # Card
     - title: Synapse Data Engineering
@@ -254,22 +294,6 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Synapse Real-Time Analytics
-
-      imageSrc: ./media/synapse-real-time-analytics-icon.png
-      links:
-        - url: real-time-analytics/overview.md
-          text: What is Real-Time Analytics?
-        - url: real-time-analytics/event-streams/overview.md
-          text: What is Event streams?
-        - url: real-time-analytics/create-database.md
-          text: Create a database
-        - url: real-time-analytics/query-table.md
-          text: Query with KQL
-        - url: real-time-analytics/index.yml
-          text: See more
-
-    # Card
     - title: Data Activator
 
       imageSrc: ./media/data-activator-icon.png
@@ -277,7 +301,7 @@ productDirectory:
         - url: data-activator/data-activator-introduction.md
           text: What is Data Activator?
         - url: data-activator/data-activator-get-data-eventstreams.md
-          text: Get data from Eventstreams
+          text: Get data from an eventstream
         - url: data-activator/data-activator-tutorial.md
           text: Create objects and triggers - Tutorial 
         - url: data-activator/index.yml
@@ -307,9 +331,9 @@ productDirectory:
         - url: /industry/sustainability/sustainability-data-solutions-overview
           text: What is Sustainability data solutions? 
         - url: /industry/healthcare/healthcare-data-solutions/overview
-          text: Healthcare data solutions in Microsoft Fabric
-        - url: /industry/retail/retail-data-solutions/deploy-retail-data-solutions
-          text: Deploy Retail data solutions
+          text: What is healthcare data solutions?
+        - url: /industry/manufacturing/manufacturing-data-solutions/overview-manufacturing-data-solutions
+          text: What is manufacturing data solutions?
         - url: /industry/industry-data-solutions-fabric
           text: See more
 

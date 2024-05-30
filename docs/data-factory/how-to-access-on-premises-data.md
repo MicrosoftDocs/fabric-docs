@@ -40,9 +40,6 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
    :::image type="content" source="media/how-to-access-on-premises-data/create-new-dataflow.png" alt-text="Screenshot showing a demo workspace with the new Dataflow Gen2 option highlighted.":::
 
-   > [!NOTE]
-   > Please be aware that the Fabric pipeline currently does not offer support for on-premises data sources. However, you can implement a workaround by initially transferring the data to a cloud storage using a Dataflow Gen2.
-
 1. Add a new source to the dataflow and select the connection established in the previous step.
 
    :::image type="content" source="media/how-to-access-on-premises-data/connect-data-source.png" lightbox="media/how-to-access-on-premises-data/connect-data-source.png" alt-text="Screenshot showing the Connect to data source dialog in a Dataflow Gen2 with an on-premises source selected.":::
@@ -67,6 +64,9 @@ Now you've created a Dataflow Gen2 to load data from an on-premises data source 
 
    :::image type="content" source="media/how-to-access-on-premises-data/create-pipeline.png" alt-text="Screenshot showing how to create a new data pipeline.":::
 
+> [!NOTE]
+> You need to configure the firewall to allow outbound connections ***.frontend.clouddatahub.net**  from the gateway for Fabric pipeline capabilities. 
+
 1. From the Home tab of the pipeline editor, select **Copy data** and then **Use copy assistant**. Add a new source to the activity in the assistant's **Choose data source** page, then select the connection established in the previous step.
 
    :::image type="content" source="media/how-to-access-on-premises-data/choose-data-source.png" lightbox="media/how-to-access-on-premises-data/choose-data-source.png" alt-text="Screenshot showing where to choose a new data source from the Copy data activity.":::
@@ -80,6 +80,41 @@ Now you've created a Dataflow Gen2 to load data from an on-premises data source 
    :::image type="content" source="media/how-to-access-on-premises-data/run-pipeline.png" lightbox="media/how-to-access-on-premises-data/run-pipeline.png" alt-text="Screenshot showing where to run the pipeline in the pipeline editor window.":::
 
 Now you've created and ran a pipeline to load data from an on-premises data source into a cloud destination.
+
+These are the connectors currently supported by Fabric Pipeline when utilizing an on-premises data gateway:
+- ADLS Gen1 for Cosmos Structured Stream
+- ADLS Gen2 for Cosmos Structured Stream
+- Amazon S3
+- Amazon S3 Compatible Storage
+- Amazon RDS for SQL Server
+- Azure Blob Storage
+- Azure Cosmos DB (SQL API)
+- Azure Database for PostgreSQL
+- Azure Data Explorer
+- Azure Data Lake Storage Gen2
+- Azure SQL Database
+- Azure SQL Managed Instance
+- Azure Synapse Analytics
+- Azure Table Storage
+- Dataverse
+- DB2
+- Dynamics 365
+- Dynamics CRM
+- Microsoft Fabric Warehouse
+- File System
+- FTP
+- Generic HTTP
+- Generic OData
+- Generic ODBC
+- Google Cloud Storage
+- KQL Database
+- Microsoft Fabric Lakehouse
+- MongoDB
+- MongoDB Atlas
+- SAP HANA
+- SFTP
+- SharePoint Online List
+- SQL Server
 
 ## Related content
 

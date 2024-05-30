@@ -34,13 +34,41 @@ For more information about supported data sources for managed private endpoints 
 
 * **Managed private endpoints**: Managed private endpoints are supported only for Fabric trial capacity and Fabric capacities F64 or higher.
 
-* **Regional Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported capacity regions results in errors.
+* **Tenant Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported Fabric Tenant home regions results in errors. These unsupported Tenant home regions include
+  
+| Region         |
+|----------------|
+| West Central US |
+| Israel Central |
+| Switzerland West | 
+| Italy North    |
+| West India     |
+| Mexico Central |
+| Qatar Central  |
+| Spain Central  |
+
+
+* **Capacity Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported capacity regions results in errors. These unsupported regions include 
+  
+| Region         |
+|----------------|
+| West Central US |
+| Switzerland West |
+| Italy North    |
+| Qatar Central  |
+| West India     |
+| France South   |
+| Germany North  |
+| Japan West     |
+| Korea South    |
+| Southafrica West |
+| UAE Central    |
 
 * **Spark job resilience**: To prevent Spark job failures or errors, migrate workspaces with managed private endpoints to Fabric capacity SKUs of F64 or higher.
 
-* **Managed VNet association**: Deleting the last managed private endpoint does not result in the deletion of the managed virtual network (VNet) associated with the workspace, and prevents the activation of starter pools.
-
 * **Workspace migration**: Workspace migration across capacities in different regions is unsupported.
+
+* **[OneLake shortcuts](../onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints.
 
 These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.
 

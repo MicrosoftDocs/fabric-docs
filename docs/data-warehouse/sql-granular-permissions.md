@@ -1,19 +1,21 @@
 ---
 title: SQL granular permissions
 description: Learn about providing granular permissions via SQL in the warehouse.
-ms.author: cynotebo
-author: cynotebo
-ms.reviewer: wiassaf, stwynant
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: cynotebo, stwynant
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 02/12/2024
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 
 # SQL granular permissions in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 When the default permissions provided by assignment to workspace roles or granted through item permissions are insufficient, standard SQL constructs are available for more granular control.
 

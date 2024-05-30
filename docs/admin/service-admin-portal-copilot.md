@@ -12,6 +12,7 @@ ms.custom:
 ms.topic: how-to
 ms.date: 02/07/2024
 LocalizationGroup: Administration
+no-loc: [Copilot]
 ---
 
 # Copilot tenant settings (preview)
