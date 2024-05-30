@@ -33,6 +33,6 @@ You can set Microsoft Defender to exclude these vulnerabilities. The CVE-2023-53
 
 Future Power BI Desktop releases will contain OpenSSL 3.0.13 to fix these issues.
 
-## Next steps
+## Related content
 
 - [About known issues](/power-bi/troubleshoot/known-issues/power-bi-known-issues)

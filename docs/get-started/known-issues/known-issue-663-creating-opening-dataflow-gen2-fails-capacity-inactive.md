@@ -24,6 +24,6 @@ When you create a new Dataflow Gen2 dataflow or open an existing Dataflow Gen2 d
 
 To prevent the error message, have a capacity administration unpause the capacity. Wait for a few minutes before trying to create or edit the dataflow again.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

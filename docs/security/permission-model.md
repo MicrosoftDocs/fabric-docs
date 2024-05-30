@@ -4,6 +4,8 @@ description: Learn how permissions work in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
+ms.custom:
+  - build-2024
 ms.date: 03/18/2024
 ---
 
@@ -56,7 +58,7 @@ Different Fabric items have different permissions. To learn more about the permi
 
 * [Data science](../data-science/models-experiments-rbac.md)
 
-* [Real-Time Analytics](/azure/data-explorer/kusto/management/security-roles)
+* [Real-Time Intelligence](/azure/data-explorer/kusto/management/security-roles)
 
 ## Compute permissions
 

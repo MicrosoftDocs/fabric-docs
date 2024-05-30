@@ -6,6 +6,8 @@ ms.author: mahi
 author: Matt1883
 ms.search.form: Shortcuts
 ms.topic: how-to
+ms.custom:
+  - build-2024
 ms.date: 3/26/2024
 ---
 
@@ -14,6 +16,8 @@ ms.date: 3/26/2024
 In this article, you learn how to create an S3 compatible shortcut inside a Fabric lakehouse.
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

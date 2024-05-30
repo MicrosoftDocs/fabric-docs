@@ -269,7 +269,7 @@ The next step is to access Fabric privately, from the virtual machine you create
 
     :::image type="content" source="./media/security-private-links-use/nslookup-powershell.png" alt-text="Screenshot showing IP addresses returned in PowerShell." lightbox="./media/security-private-links-use/nslookup-powershell.png":::
 
-1. Open the browser and go to *app.fabric.com* to access Fabric privately.
+1. Open the browser and go to *app.fabric.microsoft.com* to access Fabric privately.
 
 ### Step 8. Disable public access for Fabric
 
