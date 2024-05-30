@@ -31,6 +31,8 @@ items:
     href: create-s3-compatible-shortcut.md
   - name: Create a Google Cloud Storage shortcut
     href: create-gcs-shortcut.md
+  - name: Create shortcuts to on-premises data
+    href: create-on-premises-shortcut.md
   - name: Shortcut security
     href: onelake-shortcut-security.md
   - name: Access OneLake shortcuts in a Spark notebook
