@@ -46,7 +46,7 @@ In the following steps, we showcase how to configure support for a ReactJS appli
 
 5. Select **Register**. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they're required later.
 6. From the *Manage* list, select **API permissions**, then **Add permission**. 
-7. Add the **PowerBI Service**, select **Delegated permissions**, and select the **Workspace.ReadWrite.All** permission. Make sure Admin Consent isn't required. 
+7. Add the **PowerBI Service**, select **Delegated permissions**, and select the **Workspace.ReadWrite.All** permission. Make sure Admin consent isn't required. 
 8. Back to the *Manage* list, select **Authentication**, select **Add a platform**, then select **Single-page application**.
 9. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with PKCE](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow). Click the **Configure** button to save your changes. 
 10. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
