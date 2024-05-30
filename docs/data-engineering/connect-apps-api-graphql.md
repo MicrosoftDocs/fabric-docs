@@ -329,5 +329,5 @@ export const ProfileData = (props) => {
 
 - [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app)
 - [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md)
-- [Create a React single-page application and prepare it for authentication](https://learn.microsoft.com/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code)
+- [Create a React single-page application and prepare it for authentication](/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code)
 - [Query multiple data sources in Fabric API for GraphQL](multiple-data-sources-graphql.md)
