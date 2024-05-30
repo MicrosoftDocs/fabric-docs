@@ -26,20 +26,14 @@ The Microsoft Fabric Capacity Metrics app provides visibility into capacity usag
 
 ## Dynamic management views (DMVs)
 
-Users can get insights about their live connections, sessions, and requests by querying a set of dynamic management views (DMVs) with T-SQL. For more information, see [Monitor connections, sessions, and requests using DMVs](query-activity.md).
+Users can get insights about their live connections, sessions, and requests by querying a set of dynamic management views (DMVs) with T-SQL. For more information, see [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md).
 
 ## Query insights
 
 Query Insights provides historical query data for completed, failed, canceled queries along with aggregated insights to help you tune your query performance. For more information, see [Query insights in Fabric data warehousing](query-insights.md).
 
-## Query activity
-
-Users are provided a one-stop view of their running and completed queries in an easy-to-use interface, without having to run T-SQL. For more information, see [Monitor your running and completed queries using Query activity](query-activity.md).  
-
-
 ## Related content
 
 - [Billing and utilization reporting in Synapse Data Warehouse](usage-reporting.md)
-- [Monitor connections, sessions, and requests using DMVs](query-activity.md)
-- [Monitor your running and completed queries using Query activity](query-activity.md)
+- [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 - [Query insights in Fabric data warehousing](query-insights.md)
