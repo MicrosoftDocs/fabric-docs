@@ -23,7 +23,7 @@ To start, you must complete the following prerequisites:
 - Install an on-premises data gateway in your local environment. You can get more details about how to install and configure an on-premises data gateway here: [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install)
 
 > [!NOTE] 
-> Fabric pipeline activities can only be executed by a version of the on-premises data gateway that is 3000.214.1 or higher.
+> Fabric pipeline activities can only be executed by a version of the on-premises data gateway that is 3000.222.5 or higher.
 
 - Install 64-bit Oracle Client for Microsoft Tools (OCMT) on the computer running on-premises data gateway. You can download OCMT from the [Oracle Client for Microsoft Tools page](https://www.oracle.com/database/technologies/appdev/ocmt.html).
 
