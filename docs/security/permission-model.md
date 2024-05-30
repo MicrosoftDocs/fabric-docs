@@ -88,11 +88,11 @@ Learn more about [OneLake Data Access Control Model](https://learn.microsoft.com
 
 ## Order of operation
 
-Each level of security Fabric evaluates sequentially to determine if a user has access to data. Security rules such as [Microsoft Information Protection policies](../get-started/apply-sensitivity-labels.md) evaluate at a given level to allow or disallow access. A user must have access to all of these layers in order to access data. The order of operation when evaluating Fabric security is:
+Fabric has three different security levels, and a user must have access at each level in order to access the data. Each level evaluates sequentially to determine if a user has access. Security rules such as [Microsoft Information Protection policies](../get-started/apply-sensitivity-labels.md) evaluate at a given level to allow or disallow access. The order of operation when evaluating Fabric security is:
 
-1. Entra authentication: is the user able to authenticate to the Microsoft Entra tenant?
-2. Fabric access: is the user authorized to access Microsoft Fabric? This could be a workspace or an individual item.
-3. Data security: is the user authorized to see the table or file they are requesting?
+1. Entra authentication: Checks if the user is able to authenticate to the Microsoft Entra tenant.
+2. Fabric access: Checks if the user can access Microsoft Fabric.
+3. Data security: Checks if the user can perform the requested action on a table or file.
 
 A diagram view of this order is as follows.
 
@@ -133,28 +133,26 @@ Now that Marta doesn't have a workspace viewer role, if Veronica decides to shar
 
 ### Example 3: Power BI App permissions
 
-When sharing Power BI reports, you often want your recipients to only have access to the reports and not to items in the workspace. For this you can use [Power BI apps](https://learn.microsoft.com/en-us/power-bi/consumer/end-user-apps) or share reports directly with users. This will only give them access to the reports but not to any items in the workspace.
+When sharing Power BI reports, you often want your recipients to only have access to the reports and not to items in the workspace. For this you can use [Power BI apps](https://learn.microsoft.com/en-us/power-bi/consumer/end-user-apps) or share reports directly with users.
 
 Furthermore you can limit viewer access to data using [Row-level security (RLS)](https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-rls), with RLS you can create roles that have access to certain portions of your data, and limit results returning only what the user's identity can access.
 
-This works fine when using Import models as the data is imported in the semantic model and the recipients will automatically have access to this as part of the app. For DirectLake the report will read the data directly from the Lakehouse and the report recipient will need to have access to these files in the lake. You can do this in several ways:
+This works fine when using Import models as the data is imported in the semantic model and the recipients have access to this as part of the app. With DirectLake the report reads the data directly from the Lakehouse and the report recipient needs to have access to these files in the lake. You can do this in several ways:
 
-* Give ReadData permission on the Lakehouse directly: [Lakehouse sharing and permission management - Microsoft Fabric | Microsoft Learn](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sharing)
+* Give `ReadData` [permission on the Lakehouse directly.](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sharing)
 * [Switch the data source credential](https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
 
-As RLS is defined in the Semantic Model the data will be read and then security will be applied making sure RLS is always applied.
+Because RLS is defined in the Semantic Model the data will be read first and then the rows will be filtered.
 
-When defining any security like RLS or OLS in SQL in Warehouse that are based on the same tables DirectLake will automatically fall back to DirectQuery. If you do not want this default fallback behaviour, you can create a new Lakehouse using shortcuts to the tables in the original Lakehouse and not define RLS or OLS in SQL on the new Lakehouse. This way you can make sure DirectLake will not fall back to DirectQuery.
+If any security is defined in the SQL endpoint that the report is built on, the queries automatically fall back to DirectQuery mode. If you do not want this default fallback behaviour, you can create a new Lakehouse using shortcuts to the tables in the original Lakehouse and not define RLS or OLS in SQL on the new Lakehouse.
 
-### Example 4: Control plane and Data plane permissions
+### Example 4: Difference between control plane and data plane permissions
 
-There is a distinction between permissions set at the Control Plane level (Workspace or Item level) and those set at the Data Plane level (Warehouse, Lakehouse, etc.). Write access granted at the Control Plane level will also extend to write access at the Data Plane level. However, users with read permissions at the Control Plane level might also have the ability to write on the Data Plane through compute engine security.
+There are two categories of permissions in Fabric: control plane and data plane. Control plane permissions are the Fabric Workspace and Item level permissions. These enable actions in Fabric such as viewing or creating an item. Data plane permissions are those that give access to view or write data. In general, write access granted at the control plane level will also extend to write access at the data plane level. However, users with read permissions at the control plane level might also have the ability to write on the data plane through compute engine security.
 
-For instance, Nat has the Item read permission on the warehouse item named "Sales." This permission allows Nat to connect to the warehouse and execute metadata queries. However, Nat could also be given specific compute engine security permissions at the Data Plane level.
+For instance, Nat has the item read permission on the warehouse item named _Sales_. This permission allows Nat to connect to the warehouse and execute metadata queries. If Nat needs to create new tables in the _Sales_ warehouse, she can be added to the "db_owner" role in the warehouse, granting her the ability to create tables and write data.
 
-In our scenario, Nat could be added to the "db_owner" role in the warehouse, granting her the ability to create tables and write in the Data Plane, even if she was not granted this ability at the Control Plane level.
-
-In summary, while permissions granted at the Control Plane level often dictate access at the Data Plane level, additional compute engine security permissions can provide users with expanded capabilities in the Data Plane, potentially allowing them to perform actions not explicitly permitted at the Control Plane level.
+In summary, while permissions granted at the control plane level often dictate access at the data plane level, additional compute engine security permissions can provide users with expanded capabilities, potentially allowing them to perform actions not explicitly permitted at the control plane level.
 
 ## Related content
 
