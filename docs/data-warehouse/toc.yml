@@ -252,6 +252,8 @@ items:
     displayName: Billing, usage reporting
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
+  - name: Query activity
+    href: query-activity.md
   - name: Query insights
     href: query-insights.md
   - name: How to
