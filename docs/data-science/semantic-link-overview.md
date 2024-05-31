@@ -61,11 +61,16 @@ Semantic link is a powerful tool that enables business analysts to use data effe
 
 ## FabricDataFrame data structure
 
-[FabricDataFrame](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) is the primary data structure that semantic link uses to propagate semantic information from semantic models into the Data Science environment.`FabricDataFrame` subclasses the [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage.
+[FabricDataFrame](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) is the primary data structure that semantic link uses to propagate semantic information from semantic models into the Data Science environment.
 
 :::image type="content" source="media/semantic-link-overview/semantic-link-overview-fabric-dataframes.png" alt-text="A diagram that shows data flow from connectors to semantic models to FabricDataFrame to semantic functions." lightbox="media/semantic-link-overview/semantic-link-overview-fabric-dataframes.png" border="false":::
 
-The `FabricDataFrame` class supports all pandas operations, and exposes semantic functions and the [add-measure](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures) method that let you use Power BI measures in your data science work.
+The `FabricDataFrame` class:
+
+- Supports all pandas operations.
+- Subclasses the [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage.
+- Exposes semantic functions.
+- Supports the [add-measure](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures) method that let you use Power BI measures in data science work.
 
 ## Related content
 
