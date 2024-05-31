@@ -4,7 +4,7 @@ description: Learn more about utilization reporting for the data warehouse, incl
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
-ms.date: 04/24/2024
+ms.date: 05/31/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -20,6 +20,8 @@ ms.search.form: Warehouse billing and utilization
 The article explains compute usage reporting of the Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)], which includes read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
+
+For more information about monitoring current and historical query activity, see [Monitor in Fabric Data warehouse overview](monitoring-overview.md).
 
 ## Capacity
 
@@ -122,3 +124,4 @@ Consider the following usage reporting nuances:
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
 - [Understand the metrics app compute page](../enterprise/metrics-app-compute-page.md)
 - [Pause and resume in Fabric data warehousing](pause-resume.md)
+- [Monitor in Fabric Data warehouse overview](monitoring-overview.md)
