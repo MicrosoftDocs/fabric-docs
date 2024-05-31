@@ -49,7 +49,7 @@ Once you have installed the app, select the **Warehouse** from the **Select item
 
 ### Warehouse operation categories
 
-You can analyze universal compute capacity usage by workload category, across the tenant. Usage is tracked by total Capacity Unit Seconds (CU(s)). The table displayed shows aggregated usage across the last 14 days.
+You can analyze universal compute capacity usage by workload category, across the tenant. Usage is tracked by total Capacity Unit Seconds (CUs). The table displayed shows aggregated usage across the last 14 days.
 
 Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] rollup under **Warehouse** in the Metrics app, as they both use SQL compute. The operation categories seen in this view are:
 
@@ -107,7 +107,7 @@ Consider the following usage reporting nuances:
 
 - Cross database reporting: When a T-SQL query joins across multiple warehouses (or across a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and a [!INCLUDE [fabric-se](includes/fabric-se.md)]), usage is reported against the originating resource.
 - Queries on system catalog views and dynamic management views are billable queries.
-- **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the statement execution duration and might not include the complete end-to-end duration for rendering results back to the web application like the [SQL Query Editor](sql-query-editor.md) or client applications like [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) and [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio).
+- **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the statement execution duration. Duration might not include the complete end-to-end duration for rendering results back to the web application like the [SQL Query Editor](sql-query-editor.md) or client applications like [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) and [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio).
 
 ## Next step
 
@@ -124,4 +124,4 @@ Consider the following usage reporting nuances:
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
 - [Understand the metrics app compute page](../enterprise/metrics-app-compute-page.md)
 - [Pause and resume in Fabric data warehousing](pause-resume.md)
-- [Monitor in Fabric Data warehouse overview](monitoring-overview.md)
+- [Monitor Fabric Data warehouse](monitoring-overview.md)

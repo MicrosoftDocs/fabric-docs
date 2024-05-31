@@ -5,14 +5,14 @@ author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
 ms.date: 05/31/2024
-ms.topic: conceptual
+ms.topic: overview
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
-# Monitor in Fabric Data warehouse overview
+# Monitor Fabric Data warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Monitoring the usage and activity is crucial for ensuring that the data warehouse operates efficiently.
+Monitoring the usage and activity is crucial for ensuring that your warehouse operates efficiently.
 
 Fabric provides a set of tools to help you:
 
