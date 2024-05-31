@@ -13,7 +13,7 @@ ms.date: 05/30/2024
 
 # Build a model with SynapseML
 
-This article describes how to build a machine learning model by using SynapseML, and demonstrates how SynapseML can simplify complex machine learning tasks. You use SynapseML to create a small ML training pipeline that includes a featurization stage and a LightGBM regression stage. The pipeline predicts ratings based on review text from a dataset of book reviews. Finally, you see how SynapseML can simplify using prebuilt models to solve ML problems.
+This article describes how to build a machine learning model by using SynapseML, and demonstrates how SynapseML can simplify complex machine learning tasks. You use SynapseML to create a small ML training pipeline that includes a featurization stage and a LightGBM regression stage. The pipeline predicts ratings based on review text from a dataset of book reviews. You also see how to use SynapseML to simplify using prebuilt models to solve ML problems.
 
 ## Prerequisites
 
