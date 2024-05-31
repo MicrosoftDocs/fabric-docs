@@ -141,7 +141,7 @@ Furthermore you can limit viewer access to data using [Row-level security (RLS)]
 
 This works fine when using Import models as the data is imported in the semantic model and the recipients have access to this as part of the app. With DirectLake the report reads the data directly from the Lakehouse and the report recipient needs to have access to these files in the lake. You can do this in several ways:
 
-* Give `ReadData` [permission on the Lakehouse directly.](../data-engineering/lakehouse-sharing)
+* Give `ReadData` [permission on the Lakehouse directly.](../data-engineering/lakehouse-sharing.md)
 * [Switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
 
 Because RLS is defined in the Semantic Model the data will be read first and then the rows will be filtered.
