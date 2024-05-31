@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 05/21/2024
+ms.date: 05/30/2024
 ms.topic: whats-new
 ms.custom:
   - build-2024
@@ -30,6 +30,7 @@ This section includes articles and announcements for users new to Microsoft Fabr
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|May 2024|**Power BI: Subscriptions, licenses, and trials**|Information on Power BI implementation planning and [key considerations for planning subscriptions, licenses, and trials for Power BI and Fabric](/power-bi/guidance/powerbi-implementation-planning-subscriptions-licenses-trials).|
 |May 2024|**Register for the Microsoft Build: Microsoft Fabric Cloud Skills Challenge**|Starting May 21, 2024, sign up for the [Microsoft Build: Microsoft Fabric Cloud Skills Challenge](/training/challenges?id=094443ef-321d-449c-96ef-2ffe6dcf9489) and prepare for Exam DP-600 and upskill to the Fabric Analytics Engineer Associate certification.|
 |March 2024|**Microsoft Fabric is now HIPAA compliant**| We're excited to announce that Microsoft Fabric, our all-in-one analytics solution for enterprises, has achieved new [certifications for HIPAA and ISO 27017, ISO 27018, ISO 27001, ISO 27701](https://blog.fabric.microsoft.com/blog/microsoft-fabric-is-now-hipaa-compliant/). |
 |March 2024|**Exam DP-600 is now available**| [Exam DP-600](/credentials/certifications/exams/dp-600/) is now available, leading to the [Microsoft Certified: Fabric Analytics Engineer Associate certification](/credentials/certifications/fabric-analytics-engineer-associate/). The [Fabric Career Hub](https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabric_updateblog_clp) can help you learn quickly and get certified. |
