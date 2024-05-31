@@ -22,7 +22,7 @@ To connect an application to an API for GraphQL, you need three important pieces
 
 * Currently API for GraphQL requires applications to use Microsoft Entra for authentication. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app).
   
-* The authenticated user calling the API needs to be a workspace member with a Contributor role. For more information, see [Give users access to workspaces](fabric/get-started/give-access-workspaces).
+* The authenticated user calling the API needs to be a workspace member where both the API and data source items are located with a Contributor role. For more information, see [Give users access to workspaces](fabric/get-started/give-access-workspaces).
 
 * Before you connect an application, you must have an API for GraphQL in Fabric. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
 
@@ -172,14 +172,16 @@ export const graphConfig = {
 };
 ```
 
+As you can see in the code above, it's important to use the correct scope to access the application. In our case `https://analysis.windows.net/powerbi/api/.default` or `https://analysis.windows.net/powerbi/api/Item.Execute.All`.
+
 3. Replace the following values with the values from the Microsoft Entra admin center.
     - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered Entra application.
     - `authority` - This is composed of two parts:
         - The *Instance* is endpoint of the cloud provider. Check with the different available endpoints in [National clouds](entra/identity-platform/authentication-national-cloud#azure-ad-authentication-endpoints).
         - The *Tenant ID* is the identifier of the tenant where the application is registered. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
     - `graphQLEndpoint` - The Fabric API for GraphQL endpoint. Replace `Enter_the_GraphQL_Endpoint_Here` with the GraphQL API endpoint recorded earlier.
-4. Save the file.
-5. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
+2. Save the file.
+3. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
 
 ```javascript
 import React, { useState } from 'react';
