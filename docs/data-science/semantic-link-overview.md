@@ -1,6 +1,6 @@
 ---
 title: What is semantic link?
-description: Get an overview of semantic link, which lets you connect semantic models with Synapse Data Science in Microsoft Fabric.
+description: Get an overview of semantic link, which lets you connect semantic models and Synapse Data Science in Microsoft Fabric.
 ms.reviewer: mopeakande
 ms.author: marcozo
 author: eisber
