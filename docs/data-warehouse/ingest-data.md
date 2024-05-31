@@ -4,7 +4,7 @@ description: Learn about the features that allow you to ingest data into your wa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
-ms.date: 04/24/2024
+ms.date: 05/01/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -38,8 +38,7 @@ To decide which data ingestion option to use, you can use the following criteria
 - Use **cross-warehouse ingestion** for code-rich experiences to create new tables with source data within the same workspace. For more information, see [Ingest data using Transact-SQL](ingest-data-tsql.md) and [Write a cross-database query](query-warehouse.md#write-a-cross-database-query).
 
 > [!NOTE]
-> The COPY statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports only data sources on Azure storage accounts, with authentication using to Shared Access Signature (SAS), Storage Account Key (SAK), or accounts with public access. For other limitations, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
-
+> The COPY statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports only data sources on Azure storage accounts, OneLake sources are currently not supported.
 ## Supported data formats and sources
 Data ingestion for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers a vast number of data formats and sources you can use. Each of the options outlined includes its own list of supported data connector types and data formats. 
 
@@ -72,7 +71,8 @@ INSERT INTO MyWarehouseTable
 SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 ```
 
-- Avoid ingesting data using singleton **INSERT** statements, as this causes poor performance on queries and updates. If singleton **INSERT** statements were used for data ingestion consecutively, we recommend creating a new table by using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT** patterns, dropping the original table, and then creating your table again from the table you created using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT**.
+- Avoid ingesting data using singleton **INSERT** statements, as this causes poor performance on queries and updates. If singleton **INSERT** statements were used for data ingestion consecutively, we recommend creating a new table by using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT** patterns, dropping the original table, and then creating your table again from the table you created using **CREATE TABLE AS SELECT (CTAS)**.
+  - Dropping your existing table impacts your semantic model, including any custom measures or customizations you may have made to the semantic model.
 - When working with external data on files, we recommend that files are at least 4 MB in size.
 - For large compressed CSV files, consider splitting your file into multiple files.
 - Azure Data Lake Storage (ADLS) Gen2 offers better performance than Azure Blob Storage (legacy). Consider using an ADLS Gen2 account whenever possible. 

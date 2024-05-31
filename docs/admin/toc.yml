@@ -28,7 +28,9 @@ items:
   - name: Understand Fabric admin roles
     href: roles.md 
   - name: Service interruption notifications      
-    href: service-interruption-notifications.md   
+    href: service-interruption-notifications.md
+  - name: Diagnostic query text storage
+    href: query-text-storage.md
 - name: Monitor and manage Fabric
   expanded: false
   items:

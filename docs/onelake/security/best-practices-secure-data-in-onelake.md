@@ -7,7 +7,7 @@ author: aamerril
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 05/09/2024
 ---
 
 # Best practices for OneLake security
@@ -22,9 +22,9 @@ Least privilege access is a fundamental security principle in computer science t
 
 - Use [OneLake data access roles (preview)](../security/get-started-security.md) to restrict access to folders and tables within a lakehouse for access through OneLake APIs or Spark notebooks. This feature allows for access to be given to only select items in a lakehouse.
 
-## Secure by experience
+## Secure by workload
 
-Fabric allows for granting users access to specific data experiences through item permissions, compute permissions, and OneLake data access roles (preview). Securing by experience is a principle that restricts user access to only the necessary Fabric experience the user needs to do their job and configuring access in that experience to the least privileged. There are three main experiences for OneLake where this is relevant: Spark/OneLake access, SQL Endpoints, and Semantic Models.
+Fabric allows for granting users access to specific data workloads through item permissions, compute permissions, and OneLake data access roles (preview). Securing by workload is a principle that restricts user access to only the necessary Fabric workload the user needs to do their job and configuring access in that workload to the least privileged. There are three main workloads for OneLake where this is relevant: Spark/OneLake access, SQL Endpoints, and Semantic Models.
 
 **Spark/OneLake access**
 This path is used for querying data through notebooks, moving data via pipelines, or creating shortcuts to reference data from other lakehouses. To configure security for these users, share the lakehouse to those users. Then use OneLake data access roles (preview) to control the specific folders that the users require read access to. If a user needs write access, they'll need to be added to the Admin, Member, or Contributor workspace role. Users in a write role can't have read restrictions applied to them when accessing OneLake.

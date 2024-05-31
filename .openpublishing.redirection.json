@@ -1,6 +1,11 @@
 {
     "redirections": [
       {
+        "source_path_from_root": "/docs/data-science/read-write-power-bi.md",
+        "redirect_url": "/fabric/data-science/read-write-power-bi-python",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-science/tutorial-data-science-data-cleanse.md",
         "redirect_url": "/fabric/data-science/tutorial-data-science-explore-notebook",
         "redirect_document_id": false
@@ -19,7 +24,7 @@
         "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-oneLake-table-folder-not-removed.md",
         "redirect_url": "/fabric/get-started/fabric-known-issues",
         "redirect_document_id": false
-      },      
+      },
       {
         "source_path_from_root": "/docs/get-started/known-issues/known-issue-471-embedded-setup-tool-isnt-responsive.md",
         "redirect_url": "/fabric/get-started/fabric-known-issues",
@@ -131,11 +136,6 @@
           "redirect_document_id": true
         },
         {
-          "source_path_from_root": "/docs/real-time-analytics/event-streams/bring-events-to-fabric-from-event-hub.md",
-          "redirect_url": "/fabric/real-time-analytics/event-streams/transform-and-stream-real-time-events-to-lakehouse",
-          "redirect_document_id": false
-        },
-        {
           "source_path_from_root": "/docs/admin/admin-switch.md",
           "redirect_url": "/fabric/admin/fabric-switch",
           "redirect_document_id": false
@@ -144,11 +144,6 @@
           "source_path_from_root": "/docs/admin/service-admin-portal-content-pack-app.md",
           "redirect_url": "/fabric/admin/service-admin-portal-app",
           "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/onelake-shortcut.md",
-          "redirect_url": "/fabric/real-time-analytics/onelake-shortcuts",
-          "redirect_document_id": true
         },
         {
           "source_path_from_root": "/docs/data-factory/known-issues.md",
@@ -171,16 +166,6 @@
           "redirect_document_id": true
         },
         {
-          "source_path_from_root": "/docs/real-time-analytics/get-data-blob.md",
-          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/get-data-blob-container.md",
-          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
-          "redirect_document_id": true
-        },
-        { 
           "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
           "redirect_document_id": false
@@ -210,7 +195,7 @@
           "redirect_url": "/fabric/data-factory/metrics-app-compute-page.md",
           "redirect_document_id": false
         },
-        {                  
+        {
           "source_path_from_root": "/docs/data-factory/connector-azure-cosmosdb-for-nosql-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-azure-cosmosdb-for-nosql",
           "redirect_document_id": false
@@ -234,11 +219,6 @@
           "source_path_from_root": "/docs/data-warehouse/get-started-lakehouse-sql-endpoint.md",
           "redirect_url": "/fabric/data-warehouse/get-started-lakehouse-sql-analytics-endpoint",
           "redirect_document_id": true
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/data-retention-policy.md",
-          "redirect_url": "/fabric/real-time-analytics/data-policies",
-          "redirect_document_id": false
         },
         {
           "source_path_from_root": "/docs/data-factory/connector-lakehouse-dataflows.md",
@@ -286,6 +266,11 @@
           "redirect_document_id": true
         },
         {
+          "source_path_from_root": "/docs/extensions/publish-workload-flow.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },  
+        {
           "source_path_from_root": "/docs/data-factory/connector-sharepoint-online-list-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-sharepoint-online-list",
           "redirect_document_id": false
@@ -331,16 +316,6 @@
           "redirect_document_id": false
         },
         {
-          "source_path_from_root": "/docs/real-time-analytics/event-streams/transform-taxi-data-and-route-to-kql.md",
-          "redirect_url": "/fabric/real-time-analytics/event-streams/transform-sample-data-and-route-to-kql",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/onelake-mirroring.md",
-          "redirect_url": "/fabric/real-time-analytics/one-logical-copy",
-          "redirect_document_id": true
-        },
-        {
           "source_path_from_root": "/docs/security/az-resiliency.md",
           "redirect_url": "/azure/reliability/reliability-fabric",
           "redirect_document_id": false
@@ -351,14 +326,34 @@
           "redirect_document_id": false
         },
         {
-          "source_path_from_root": "/docs/real-time-analytics/jupyter-notebook.md",
-          "redirect_url": "/fabric/real-time-analytics/notebooks",
-          "redirect_document_id": false
-        },
-        {
           "source_path_from_root": "/docs/data-factory/known-issue-inprogress-refresh-history.md",
           "redirect_url": "/fabric/get-started/known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-2-event-streams.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-2-get-real-time-events",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-get-historical-data.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-3-set-alert",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-explore.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-4-query-data",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-advanced-kql-queries.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-build-report.md",
+          "redirect_url": "/fabric/real-time-intelligence/tutorial-6-power-bi-report",
+          "redirect_document_id": true
         },
         {
           "source_path_from_root": "/docs/data-factory/known-issue-gen1-admin-switch.md",
@@ -384,11 +379,6 @@
           "source_path_from_root": "/docs/data-factory/known-issue-staging-item.md",
           "redirect_url": "/fabric/data-factory/data-factory-known-issues",
           "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/event-streams/build-real-time-dashboard-from-iot-hub.md",
-          "redirect_url": "/fabric/real-time-analytics/event-streams/build-report-from-iot-hub",
-          "redirect_document_id": true
         },
         {
           "source_path_from_root": "/docs/data-science/python-guide/python-library-management.md",
@@ -511,19 +501,114 @@
           "redirect_document_id": false
         },
         {
-          "source_path_from_root": "/docs/get-started/copilot-real-time-analytics.md",
-          "redirect_url": "/fabric/get-started/copilot-fabric-overview",
+          "source_path_from_root": "/docs/cicd/deployment-pipelines/manage-workspace-content.md",
+          "redirect_url": "/fabric/cicd/deployment-pipelines/understand-the-deployment-process",
           "redirect_document_id": false
         },
         {
-          "source_path_from_root": "/docs/get-started/copilot-real-time-analytics-privacy-security.md",
-          "redirect_url": "/fabric/get-started/copilot-fabric-overview",
+          "source_path_from_root": "/docs/extensions/architecture.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
           "redirect_document_id": false
         },
         {
-          "source_path_from_root": "/docs/real-time-analytics/data-profile.md",
-          "redirect_url": "/fabric/real-time-analytics/create-database",
+          "source_path_from_root": "/docs/extensions/authentication-javascript-api.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
           "redirect_document_id": false
-        }   
+        },
+        {
+          "source_path_from_root": "/docs/extensions/authentication-overview.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/authentication-setup.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/backend-authentication.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/dev-kit-overview.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/environment-setup.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/extensibility-backend.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/extensibility-frontend.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/faq.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/frontend-manifest.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/index.yml",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/manage-workload.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/monetization.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/monitoring-hub.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/more-workloads-add.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/publish-workload-overview.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/publish-workload-requirements.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/quickstart-sample.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/workload-environment.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/extensions/workloads.md",
+          "redirect_url": "/fabric/get-started/microsoft-fabric-overview",
+          "redirect_document_id": false
+        }
     ]
 }

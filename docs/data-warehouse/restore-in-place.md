@@ -4,9 +4,11 @@ description: Learn about how to perform a restore in-place of a warehouse in Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.date: 04/24/2024
+ms.date: 05/03/2024
 ms.service: fabric
 ms.subservice: data-warehouse
+ms.custom:
+  - build-2024
 ms.topic: conceptual
 ms.search.form: Warehouse Restore # This article's title should not change. If so, contact engineering.
 ---
@@ -21,6 +23,8 @@ ms.search.form: Warehouse Restore # This article's title should not change. If s
 - Restore in-place helps to quickly roll back the changes to prior state, due failed database release or migration.
 
 Restore in-place is an essential part of data recovery that allows restoration of the warehouse to a prior known good state. A restore overwrites the existing warehouse, using restore points from the existing warehouse.
+
+You can also query data in a warehouse as it appeared in the past, using the T-SQL `OPTION` syntax. For more information, see [Query data as it existed in the past](time-travel.md).
 
 > [!NOTE]
 > The restore points and restore in place features are currently in preview.
@@ -49,7 +53,7 @@ System-generated restore points can't be deleted, as the restore points are used
 
 Any number of user-defined restore points aligned with your specific business or organizational recovery strategy can be created. User-defined restore points are available for seven calendar days and are automatically deleted on your behalf after the expiry of the retention period.
 
-Currently, you can trigger the user-defined restore point creation through any of publicly available REST API tools. <!-- For an example, see the tutorial [Create user-defined restore points](tutorial-restore-in-place-warehouse.md#create-user-defined-restore-points). --> For an example, you can [use the non-Microsoft POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/).
+Currently, you can trigger the user-defined restore point creation through any of publicly available REST API tools. <!-- For an example, see the tutorial [Create user-defined restore points](tutorial-restore-in-place-warehouse.md#create-user-defined-restore-points). -->
 
 ### Restore point retention
 
@@ -79,12 +83,12 @@ When you restore, the current warehouse is *replaced* with the restored warehous
 
 Each restore point references a UTC timestamp when the restore point was created.
 
-To restore a warehouse in-place, choose a restore point and issue a restore command. If you encounter Error 5064 after requesting a restore, resubmit the restore again. For an example, you can [use the non-Microsoft POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/). 
+To restore a warehouse in-place, choose a restore point and issue a restore command. If you encounter Error 5064 after requesting a restore, resubmit the restore again.
 
 ### Security
 
-- Any member of the [!INCLUDE [product-name](../includes/product-name.md)] Admin [workspace role](workspace-roles.md) can create user-defined restore points.
-- Any member of the [!INCLUDE [product-name](../includes/product-name.md)] Admin [workspace role](workspace-roles.md) can perform a restore from a system-generated or user-defined restore point.
+- Any member of the Admin, Member, or Contributor [workspace roles](workspace-roles.md) can create, delete, or rename the user-defined restore points.
+- Only a member of the Admin [workspace role](workspace-roles.md) can perform a restore from a system-generated or user-defined restore point.
 
 ## Limitations
 
@@ -100,4 +104,5 @@ To restore a warehouse in-place, choose a restore point and issue a restore comm
 ## Related content
 
 - [Clone table in Microsoft Fabric](clone-table.md)
+- [Query data as it existed in the past](time-travel.md)
 - [Microsoft Fabric disaster recovery guide](../security/disaster-recovery-guide.md)

@@ -17,12 +17,14 @@ In this notebook, we build a program to forecast time series data that has seaso
 
 ## Prerequisites
 
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
 * Familiarity with [Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md).
 * A lakehouse to store data for this example. For more information, see [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 ## Follow along in a notebook
 
-You can follow along in a notebook one of two ways: 
+You can follow along in a notebook one of two ways:
 
 - Open and run the built-in notebook in the Synapse Data Science experience.
 - Upload your notebook from GitHub to the Synapse Data Science experience.

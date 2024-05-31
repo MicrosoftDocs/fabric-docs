@@ -59,22 +59,22 @@ items:
     items:
     - name: How to use end-to-end AI samples
       href: use-ai-samples.md
-    - name: Customer churn prediction
-      href: customer-churn.md
     - name: Book recommendation
       href: retail-recommend-model.md
+    - name: Customer churn prediction
+      href: customer-churn.md
     - name: Fraud detection
       href: fraud-detection.md
-    - name: Time series forecasting
-      href: time-series-forecasting.md
-    - name: Text (title genre) classification
-      href: title-genre-classification.md
-    - name: Uplift modeling
-      href: uplift-modeling.md
     - name: Machine failure prediction
       href: predictive-maintenance.md
     - name: Sales forecasting
       href: sales-forecasting.md
+    - name: Text (title genre) classification
+      href: title-genre-classification.md
+    - name: Time series forecasting
+      href: time-series-forecasting.md
+    - name: Uplift modeling
+      href: uplift-modeling.md
   - name: R tutorials
     items:
     - name: Customer churn
@@ -98,7 +98,7 @@ items:
   - name: Explore and transform Spark data with Data Wrangler (Preview)
     href: data-wrangler-spark.md
   - name: Read from Power BI and write data usable by Power BI
-    href: read-write-power-bi.md
+    href: read-write-power-bi-python.md
   - name: Explore and validate functional dependencies in your data
     href: semantic-link-validate-data.md
   - name: Explore and validate relationships in datasets
@@ -287,8 +287,10 @@ items:
     href: semantic-link-semantic-propagation.md
   - name: Semantic functions
     href: semantic-link-semantic-functions.md
-  - name: Read from Power BI and write data usable by Power BI
-    href: read-write-power-bi.md
+  - name: Read and write semantic models using python
+    href: read-write-power-bi-python.md
+  - name: Read and write semantic models using Spark
+    href: read-write-power-bi-spark.md
   - name: Explore and validate functional dependencies in your data
     href: semantic-link-validate-data.md
   - name: Explore and validate relationships in datasets

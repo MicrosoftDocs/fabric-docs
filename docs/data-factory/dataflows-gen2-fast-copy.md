@@ -92,7 +92,7 @@ When you directly load the query to an output destination, only Lakehouse destin
 1. Publish the dataflow.
 1. Check after refresh completed to confirm fast copy was used.
 
-## Next steps
+## Related content
 
 - [Dataflows Gen2 Overview](dataflows-gen2-overview.md)
 - [Monitor Dataflows Gen2](dataflows-gen2-monitor.md)
