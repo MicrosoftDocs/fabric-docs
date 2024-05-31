@@ -3,7 +3,7 @@ title: Secure and manage OneLake shortcuts
 description: Understand security for OneLake shortcuts
 ms.reviewer: trolson
 ms.author: aamerril
-author: Aaron Merrill
+author: aamerril
 ms.search.form: Shortcuts
 ms.topic: conceptual
 ms.custom:

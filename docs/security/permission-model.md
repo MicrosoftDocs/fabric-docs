@@ -80,7 +80,7 @@ You can find more information in these articles:
 
 OneLake has its own permissions for governing access to files and folders in OneLake through [OneLake data access roles.](../onelake/security/get-started-data-access-roles.md) OneLake data access roles allow users to create custom roles within a lakehouse and to grant read permissions only to the specified folders when accessing OneLake. For each OneLake role, users can assign users, security groups or grant an automatic assignment based on the workspace role.
 
-Learn more about [OneLake Data Access Control Model](https://learn.microsoft.com/en-us/fabric/onelake/security/data-access-control-model) and view the how to guides.
+Learn more about [OneLake Data Access Control Model](../onelake/security/data-access-control-model.md) and view the how to guides.
 
 * [How to secure a lakehouse for Data Science teams](../onelake/security/how-to-secure-data-onelake-for-data-science.md)
 
@@ -135,14 +135,14 @@ Now that Marta doesn't have a workspace viewer role, if Veronica decides to shar
 
 ### Example 3: Power BI App permissions
 
-When sharing Power BI reports, you often want your recipients to only have access to the reports and not to items in the workspace. For this you can use [Power BI apps](https://learn.microsoft.com/en-us/power-bi/consumer/end-user-apps) or share reports directly with users.
+When sharing Power BI reports, you often want your recipients to only have access to the reports and not to items in the workspace. For this you can use [Power BI apps](/power-bi/consumer/end-user-apps) or share reports directly with users.
 
-Furthermore you can limit viewer access to data using [Row-level security (RLS)](https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-rls), with RLS you can create roles that have access to certain portions of your data, and limit results returning only what the user's identity can access.
+Furthermore you can limit viewer access to data using [Row-level security (RLS)](/power-bi/enterprise/service-admin-rls), with RLS you can create roles that have access to certain portions of your data, and limit results returning only what the user's identity can access.
 
 This works fine when using Import models as the data is imported in the semantic model and the recipients have access to this as part of the app. With DirectLake the report reads the data directly from the Lakehouse and the report recipient needs to have access to these files in the lake. You can do this in several ways:
 
-* Give `ReadData` [permission on the Lakehouse directly.](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sharing)
-* [Switch the data source credential](https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
+* Give `ReadData` [permission on the Lakehouse directly.](../data-engineering/lakehouse-sharing)
+* [Switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
 
 Because RLS is defined in the Semantic Model the data will be read first and then the rows will be filtered.
 
