@@ -36,7 +36,7 @@ Semantic link helps you preserve domain knowledge about data semantics in a stan
 
 The semantic link data flow starts with semantic models that contain data and semantic information. Semantic link bridges the gap between Power BI and the Data Science experience.
 
-:::image type="content" source="media/semantic-link-overview/data-flow-with-semantic-link.png" alt-text="A diagram that shows data flow from Power BI to notebooks in Synapse Data Science and back to Power BI." border: "false":::
+:::image type="content" source="media/semantic-link-overview/data-flow-with-semantic-link.png" alt-text="A diagram that shows data flow from Power BI to notebooks in Synapse Data Science and back to Power BI." border="false":::
 
 Semantic link uses semantic models from Power BI in the Data Science experience to do tasks such as in-depth statistical analysis and predictive modeling with machine learning techniques. You can use Apache Spark to store the output of your data science work in [OneLake](../onelake/onelake-overview.md), and ingest it into Power BI by using [Direct Lake](../get-started/direct-lake-overview.md).
 
@@ -44,8 +44,8 @@ Semantic link uses semantic models from Power BI in the Data Science experience 
 
 Semantic models serve as single [tabular object models](/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo) that provide reliable sources for semantic definitions such as Power BI measures. Semantic link connects to semantic models in the following ecosystems, making it easy for data scientists to work in the system they're most familiar with.
 
-- For Python [pandas](https://pandas.pydata.org/) through the [SemPy Python library](/python/api/semantic-link-sempy/).
-- For [Apache Spark](https://spark.apache.org/) through the **Spark native connector**. This implementation supports various languages, including PySpark, Spark SQL, R, and Scala.
+- For Python [pandas](https://pandas.pydata.org/), through the [SemPy Python library](/python/api/semantic-link-sempy/).
+- For [Apache Spark](https://spark.apache.org/), through the **Spark native connector**. This implementation supports various languages, including PySpark, Spark SQL, R, and Scala.
 
 ## Applications of semantic information
 
@@ -63,7 +63,7 @@ Semantic link is a powerful tool that enables business analysts to use data effe
 
 [FabricDataFrame](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) is the primary data structure that semantic link uses to propagate semantic information from semantic models into the Data Science environment.`FabricDataFrame` subclasses the [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage.
 
-:::image type="content" source="media/semantic-link-overview/semantic-link-overview-fabric-dataframes.png" alt-text="A diagram that shows data flow from connectors to semantic models to FabricDataFrame to semantic functions." lightbox="media/semantic-link-overview/semantic-link-overview-fabric-dataframes.png" border: "false":::
+:::image type="content" source="media/semantic-link-overview/semantic-link-overview-fabric-dataframes.png" alt-text="A diagram that shows data flow from connectors to semantic models to FabricDataFrame to semantic functions." lightbox="media/semantic-link-overview/semantic-link-overview-fabric-dataframes.png" border="false":::
 
 The `FabricDataFrame` class supports all pandas operations, and exposes semantic functions and the [add-measure](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures) method that let you use Power BI measures in your data science work.
 
