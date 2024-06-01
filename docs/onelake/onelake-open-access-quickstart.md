@@ -74,4 +74,4 @@ Before you start, you must have:
 
 ## Related content
 
-- [Transform data with Spark and query with SQL](onelake-onecopy-quickstart.md)
+- [Transform data with Apache Spark and query with SQL](onelake-onecopy-quickstart.md)
