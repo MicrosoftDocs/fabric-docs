@@ -79,7 +79,7 @@ Now you've created a Dataflow Gen2 to load data from an on-premises data source 
 
    :::image type="content" source="media/how-to-access-on-premises-data/run-pipeline.png" lightbox="media/how-to-access-on-premises-data/run-pipeline.png" alt-text="Screenshot showing where to run the pipeline in the pipeline editor window.":::
 
-Now you've created and ran a pipeline to load data from an on-premises data source into a cloud destination.
+Now you've created and ran a pipeline to load data from an on-premises data source into a cloud destination. 
 
 
 ## Related content
