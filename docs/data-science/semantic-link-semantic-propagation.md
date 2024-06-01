@@ -1,6 +1,6 @@
 ---
 title: Semantic propagation with SemPy Python library
-description: Learn how Sempy library supports propagation of metadata attached to semantic models you're operating on.
+description: Learn how SemPy library supports propagation of metadata attached to semantic models you're operating on.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: marcozo
@@ -14,27 +14,27 @@ ms.search.form: semantic link
 
 # Semantic data propagation with SemPy
 
-When you read a [semantic model](/power-bi/connect-data/service-datasets-understand) into a [FabricDataFrame](semantic-link-overview.md#fabricdataframe-data-structure), semantic information such as metadata and annotations from the semantic model are automatically attached to the FabricDataFrame. In this article, you learn how the SemPy Python library preserves annotations that are attached to a semantic model's tables and columns.
+When you read a [semantic model](/power-bi/connect-data/service-datasets-understand) into a [FabricDataFrame](semantic-link-overview.md#fabricdataframe-data-structure), semantic information such as metadata and annotations from the semantic model are automatically attached to the FabricDataFrame structure. In this article, you learn how the SemPy Python library preserves and propagates annotations that are attached to a semantic model's tables and columns.
 
 ## Semantic propagation for pandas users
 
-The [SemPy Python library](/python/api/semantic-link-sempy) is part of the semantic link feature and serves [pandas](https://pandas.pydata.org/) users. SemPy supports the operations that pandas lets you perform on your data.
+The [SemPy Python library](/python/api/semantic-link-sempy) is part of the semantic link feature and serves [pandas](https://pandas.pydata.org/) users. SemPy supports all pandas data operations.
 
-SemPy also lets you propagate semantic data from semantic models you're operating on. By propagating semantic data, you can preserve annotations that are attached to tables and columns in the semantic model when you do operations like slicing, merges, and concatenation.
+SemPy also lets you propagate semantic data from semantic models that you're using. By propagating semantic data, you can preserve annotations that are attached to tables and columns in the semantic model when you do operations like slicing, merges, and concatenation.
 
 You can create a [FabricDataFrame data structure](semantic-link-overview.md#fabricdataframe-data-structure) in either of two ways:
 
 - You can read a table or the output of a [measure](/power-bi/transform-model/desktop-measures) from a semantic model into a FabricDataFrame.
 
-  When you read from a semantic model into a FabricDataFrame, the metadata from Power BI automatically *hydrates*, or populates, the FabricDataFrame. The semantic information from the semantic model's tables or measures are preserved in the FabricDataFrame.
+  When you read from a semantic model into a FabricDataFrame, the metadata from Power BI automatically *hydrates*, or populates, the FabricDataFrame. The semantic information from the model's tables or measures is preserved in the FabricDataFrame.
 
 - You can use in-memory data to create the FabricDataFrame, just as you do for pandas DataFrames.
 
-  When you create a FabricDataFrame from in-memory data, you need to supply the name of a semantic model that the FabricDataFrame can pull metadata information from.
+  When you create a FabricDataFrame from in-memory data, you need to supply the name of the semantic model that the FabricDataFrame can pull metadata information from.
 
 How semantic data is preserved varies, depending on factors like the operations you're doing and the order of the FabricDataFrames you're operating on.
 
-### Semantic propagation with merge operation
+### Semantic propagation with merge
 
 When you merge two FabricDataFrames, the order of the DataFrames determines how SemPy propagates semantic information.
 
