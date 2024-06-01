@@ -38,13 +38,13 @@ How semantic data is preserved varies, depending on factors like the operations 
 
 When you merge two FabricDataFrames, the order of the DataFrames determines how SemPy propagates semantic information.
 
-- If both FabricDataFrames are annotated, the table-level metadata of the left FabricDataFrame takes precedence. The same rule applies to individual columns. The column annotations in the left FabricDataFrame take precedence over the column annotations in the right DataFrame.
+- If both FabricDataFrames are annotated, the table-level metadata of the first FabricDataFrame takes precedence. The same rule applies to individual columns. The column annotations in the first FabricDataFrame take precedence over the column annotations in the second DataFrame.
 
 - If only one FabricDataFrame is annotated, SemPy uses its metadata. The same rule applies to individual columns. SemPy uses the column annotations present in the annotated FabricDataFrame.
 
 ### Semantic propagation with concatenation
 
-When you concatenate multiple FabricDataFrames, SemPy copies the metadata from the first FabricDataFrame that matches each column name. If there are multiple matches and the metadata isn't the same, SemPy issues a warning.
+When you concatenate multiple FabricDataFrames, SemPy copies the metadata from the first FabricDataFrame column that matches each column name. If there are multiple matches and the metadata isn't the same, SemPy issues a warning.
 
 You can also propagate concatenations of FabricDataFrames with regular pandas DataFrames by placing the FabricDataFrame first.
 
