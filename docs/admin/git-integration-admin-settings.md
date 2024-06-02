@@ -37,6 +37,8 @@ Enable this setting to allow all users, or a specific group or users, to export 
 
 :::image type="content" source="./media/git-integration-admin-settings/multi-geo-switch.png" alt-text="Screenshot of multi geo switch.":::
 
+This feature is not supported for GitHub.
+
 ## Users can export workspace items with applied sensitivity labels to Git repositories (Preview)
 
 Sensitivity labels aren't included when exporting an item. Therefore, the Fabric admin can choose whether to block the export of items that have sensitivity labels, or to allow it even though the sensitivity label won't be included.
