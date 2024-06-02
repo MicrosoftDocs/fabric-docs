@@ -1,14 +1,14 @@
 ---
-title: About private Links for secure access to Fabric (preview)
+title: About private Links for secure access to Fabric
 description: Learn about the Azure private link feature to provide secure access to Fabric using Azure Networking private endpoints. Data is sent privately instead of over the internet.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
-ms.date: 03/11/2024
+ms.date: 05/30/2024
 ---
 
-# Private links for secure access to Fabric (preview)
+# Private links for secure access to Fabric
 
 You can use private links to provide secure access for data traffic in Fabric. Azure Private Link and Azure Networking private endpoints are used to send data traffic privately using Microsoft's backbone network infrastructure instead of going across the internet.
 
@@ -55,9 +55,9 @@ If Azure Private Link is properly configured and **Block public Internet access*
 
 ## Private Link in Fabric experiences
 
-### Onelake
+### OneLake
 
-Onelake supports Private Link. You can explore Onelake in the Fabric portal or from any machine within your established VNet using via OneLake file explorer, Azure Storage Explorer, PowerShell, and more.
+OneLake supports Private Link. You can explore OneLake in the Fabric portal or from any machine within your established virtual network using via OneLake file explorer, Azure Storage Explorer, PowerShell, and more.
 
 Direct calls using OneLake regional endpoints don't work via private link to Fabric. For more information about connecting to OneLake and regional endpoints, see [How do I connect to OneLake?](../onelake/onelake-access-api.md).
 
@@ -85,8 +85,8 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 
 When you connect to Pipeline via private link, you can use the data pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize data pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
 
-### ML Model and Experiment
-ML Model and Experiment supports private link. 
+### ML Model, Experiment, and AI skill
+ML Model, Experiment, and AI skill supports private link. 
 
 ### Power BI
 
@@ -100,13 +100,31 @@ ML Model and Experiment supports private link.
 
 * If your organization is using Azure Private Link in Fabric, modern usage metrics reports will contain partial data (only Report Open events). A current limitation when transferring client information over private links prevents Fabric from capturing Report Page Views and performance data over private links. If your organization had enabled the **Azure Private Link** and **Block Public Internet Access** tenant settings in Fabric, the refresh for the dataset fails and the usage metrics report doesn't show any data.
 
+### Event house
+
+Event house supports Private Link, allowing secure data ingestion and querying from your Azure Virtual Network via a private link. You can ingest data from various sources, including Azure Storage accounts, local files, and Dataflow Gen2. Streaming ingestion ensures immediate data availability. Additionally, you can utilize KQL queries or Spark to access data within an event house.
+
+Limitations:
+
+* Ingesting data from OneLake isn't supported.
+* Creating a shortcut to an event house isn't possible.
+* Connecting to an event house in a data pipeline isn't possible.
+* Ingesting data using queued ingestion isn't supported.
+* Data connectors relying on queued ingestion aren't supported.
+* Querying an event house using T-SQL isn't possible.
+
 ### Other Fabric items
 
-Other Fabric items, such as KQL Database, and EventStream, don’t currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+Other Fabric items, such as Event stream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+
+<!--### Other Fabric items
+
+Other Fabric items, such as KQL Database, and Event stream, don’t currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+-->
 
 ### Microsoft Purview Information Protection
 
-Microsoft Purview Information Protection doesn't currently support Private Link. This means that in Power BI Desktop running in an isolated network, the **Sensitivity** button will be grayed out, label information won't appear, and decryption of *.pbix* files will fail.
+Microsoft Purview Information Protection doesn't currently support Private Link. This means that in Power BI Desktop running in an isolated network, the **Sensitivity** button is grayed out, label information won't appear, and decryption of *.pbix* files will fail.
 
 To enable these capabilities in Desktop, admins can configure [service tags](/azure/virtual-network/service-tags-overview) for the underlying services that support Microsoft Purview Information Protection, Exchange Online Protection (EOP), and Azure Information Protection (AIP). Make sure you understand the implications of using service tags in a private links isolated network.
 
@@ -114,13 +132,14 @@ To enable these capabilities in Desktop, admins can configure [service tags](/az
 
 There are several considerations to keep in mind while working with private endpoints in Fabric:
 
-* Fabric supports up to 200 capacities in a tenant where Private Link is enabled.
+* Fabric supports up to 450 capacities in a tenant where Private Link is enabled.
 
 * Tenant migration is blocked when Private Link is turned on in the Fabric admin portal.
 
 * Customers can't connect to Fabric resources in multiple tenants from a single VNet, but rather only the last tenant to set up Private Link.
 
-* Private link does not support in Trial capacity. 
+* Private link doesn't support in Trial capacity. When accessing Fabric via Private Link traffic, trial capacity won't work.
+  
 * Any uses of external images or themes aren't available when using a private link environment.
 
 * Each private endpoint can be connected to one tenant only.  You can't set up a private link to be used by more than one tenant.
@@ -145,6 +164,7 @@ There are several considerations to keep in mind while working with private endp
     * Required for the Data Engineering and Data Science experiences:
 
         * `http://res.cdn.office.net/`
+        * `https://aznbcdn.notebooks.azure.net/` 
         * `https://pypi.org/*` (for example, `https://pypi.org/pypi/azure-storage-blob/json`) 
         * local static endpoints for condaPackages 
         * `https://cdn.jsdelivr.net/npm/monaco-editor*`

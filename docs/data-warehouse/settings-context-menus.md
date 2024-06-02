@@ -1,10 +1,12 @@
 ---
 title: Warehouse settings and context menus
-description: Learn about context menus and settings in the warehouse experience.
-author: prlangad
-ms.author: prlangad
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+description: Learn about context menus and settings in Synapse Data Warehouse in Microsoft Fabric.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: prlangad
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -13,7 +15,7 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This artic
 ---
 # Warehouse settings and context menus
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Settings are accessible from the context menu or from the Settings icon in the ribbon when you open the item. There are some key differences in the actions you can take in settings depending on if you're interacting with the SQL analytics endpoint or a data warehouse.
 
@@ -23,7 +25,7 @@ This section describes and explains the settings options available based on the 
 
 The following image shows the warehouse settings menu.
 
-:::image type="content" source="media\settings-context-menus\menu-select-settings.png" alt-text="Screenshot showing where to select Settings in the context menu." lightbox="media\settings-context-menus\menu-select-settings.png":::
+:::image type="content" source="media/settings-context-menus/menu-select-settings.png" alt-text="Screenshot showing where to select Settings in the context menu.":::
 
 The following table is a list of settings available for each warehouse.
 
@@ -48,14 +50,13 @@ The following table shows settings for the default Power BI semantic model.
 | **Server settings** | The XMLA connection string of the default semantic model. |
 | **Endorsement and discovery** | Endorse the default semantic model independently from warehouse and make it discoverable in your org. |
 
-
 ## Context menus
 
-*Applies to:* [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+*Applies to:* [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 Warehouse offers an easy experience to create reports and access supported actions using its context menus.
 
-:::image type="content" source="media\settings-context-menus\warehouse-context-menu.png" alt-text="Screenshot showing the warehouse context menu." lightbox="media\settings-context-menus\warehouse-context-menu.png":::
+:::image type="content" source="media/settings-context-menus/warehouse-context-menu.png" alt-text="Screenshot showing the warehouse context menu.":::
 
 The following table describes the warehouse context menu options:
 

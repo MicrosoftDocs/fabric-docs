@@ -1,17 +1,24 @@
 ---
-title: Automate your deployment pipeline by using APIs and Azure DevOps
+title: Automate deployment pipelines with APIs for Power BI items
 description: Learn how to automate your deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs and Azure DevOps.
-author: data-goblin
-ms.author: v-kurtbuhler
-ms.topic: conceptual
+author: mberdugo
+ms.author: monaberdugo
+ms.service: fabric
+ms.subservice: cicd
+ms.topic: concept-article
 ms.custom:
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 05/02/2024
+ms.search.form: Deployment pipelines APIs, Automate deployment pipelines, Power BI automation tools, Azure DevOps 
+#customer intent: As a developer, I want to automate my deployment pipeline using APIs and Azure DevOps so that I can streamline the release process.
 ---
 
-# Automate your deployment pipeline by using APIs and Azure DevOps
+# Automate your deployment pipeline for Power BI items by using APIs
 
-The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Fabric content.
+The Microsoft Power BI [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Power BI content.
+
+> [!NOTE]
+> The deployment pipelines APIs listed here only apply to Power BI items. For Fabric APIs, see the [Fabric API documentation](pipeline-automation-fabric.md).
 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
 
@@ -27,12 +34,9 @@ You can use the [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pip
 
 * Deploy multiple pipelines at the same time.
 
-* Cascade depending on pipeline deployments. If you have content that's connected across pipelines, you can make sure some pipelines are deployed before others.
+* Cascade depending on pipeline deployments. If you have content connected across pipelines, you can make sure some pipelines are deployed before others.
 
 ## Deployment pipelines API functions
-
-> [!NOTE]
-> The deployment pipelines APIs currently only work for Power BI items.
 
 The [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pipelines) allow you to perform the following functions:
 
@@ -46,7 +50,7 @@ The [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pipelines) allo
 
 * **Manage pipeline users** - [Delete pipeline user](/rest/api/power-bi/pipelines/delete-pipeline-user) lets you remove a user from a pipeline.  [Update pipeline user](/rest/api/power-bi/pipelines/update-pipeline-user) allows you to add a user to your pipeline.
 
-### Which deployments are supported by the APIs?
+### Which deployment types do the APIs support?
 
 The APIs support the following deployment types:
 
@@ -56,7 +60,7 @@ The APIs support the following deployment types:
 
 * **Backward deploy** - Deploys new  items to the previous stage. Backward deployment only works if the items that are deployed don't already exist in the target stage. For this operation, use either the [Deploy all](/rest/api/power-bi/pipelines/deployall) or the [Selective deploy](/rest/api/power-bi/pipelines/selectivedeploy) APIs, with `isBackwardDeployment` set to `True`.
 
-* **Update App** - As part of the deployment API call, you can update the content of the app that's related to that stage. Updated items are automatically available to your end users, after a deployment has completed. For this operation, use either the [Deploy all](/rest/api/power-bi/pipelines/deployall) or the [Selective deploy](/rest/api/power-bi/pipelines/selectivedeploy) APIs, with [PipelineUpdateAppSettings](/rest/api/power-bi/pipelines/selectivedeploy#pipelineupdateappsettings).
+* **Update App** - As part of the deployment API call, you can update the content of the app related to that stage. Updated items are automatically available to your end users, after a deployment is complete. For this operation, use either the [Deploy all](/rest/api/power-bi/pipelines/deployall) or the [Selective deploy](/rest/api/power-bi/pipelines/selectivedeploy) APIs, with [PipelineUpdateAppSettings](/rest/api/power-bi/pipelines/selectivedeploy#pipelineupdateappsettings).
 
 ## Before you begin
 
@@ -84,7 +88,7 @@ After you add the [Power BI automation tools](https://marketplace.visualstudio.c
 
 * **Service principal** (recommended) - This connection authenticates by using a [service principal](/power-bi/developer/embedded/embed-service-principal) and requires the Microsoft Entra app’s secret and application ID. When you use this option, verify that the [service admin settings](/power-bi/developer/embedded/embed-service-principal#step-3---enable-the-power-bi-service-admin-settings) for the service principal are enabled.
 
-* **Username and password** – Configured as a generic service connection with a username and a password. This connection method doesn’t support multi-factor authentication. We recommend that you use the service principal connection method because it doesn’t require storing user credentials on Azure DevOps.
+* **Username and password** – Configured as a generic service connection with a username and a password. This connection method doesn’t support multifactor authentication. We recommend that you use the service principal connection method because it doesn’t require storing user credentials on Azure DevOps.
 
 >[!NOTE]
 >The Power BI automation tools extension uses an Azure DevOps service connection to store credentials. For more information, see [How we store your credentials for Azure DevOps Services](/azure/devops/organizations/security/credential-storage).

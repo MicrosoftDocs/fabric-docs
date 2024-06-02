@@ -11,6 +11,7 @@ ms.custom:
   - ignite-2023-fabric
 ms.date: 11/15/2023
 ms.search.form:
+no-loc: [Copilot]
 ---
 
 # AI services in Fabric (preview)

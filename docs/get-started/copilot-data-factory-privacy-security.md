@@ -9,6 +9,7 @@ ms.custom:
   - ignite-2023-fabric
 ms.topic: conceptual
 ms.date: 01/16/2024
+no-loc: [Copilot]
 ---
 
 # Privacy, security, and responsible use of Copilot for Data Factory (preview)

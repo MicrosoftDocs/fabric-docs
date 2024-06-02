@@ -1,8 +1,8 @@
 ---
 title: Switch activity
 description: Learn how to add a Switch activity to a pipeline and use it to look up data from a data source.
-author: chez-charlie
-ms.author: chez
+author: kromerm
+ms.author: makromer
 ms.reviewer: jburchel
 ms.topic: how-to
 ms.custom:

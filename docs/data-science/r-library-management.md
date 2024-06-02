@@ -8,15 +8,13 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/23/2023
+ms.date: 03/22/2024
 ms.search.form: R Language
 ---
 
 # R library management
 
-
 Libraries provide reusable code that you might want to include in your programs or projects for [!INCLUDE [product-name](../includes/product-name.md)] Spark.
-
 
 
 [!INCLUDE [product-name](../includes/product-name.md)] supports an R runtime with many popular open-source R packages, including TidyVerse, preinstalled. When a Spark instance starts, these libraries are included automatically and available to be used immediately in notebooks or Spark job definitions. 
@@ -31,13 +29,13 @@ There are two types of libraries you may want to include based on your scenario:
 
 There are two levels of packages installed on [!INCLUDE [product-name](../includes/product-name.md)]:
 
-- **Workspace**: Workspace-level installation defines the working environment for the entire workspace. The libraries installed at the workspace level are available for all Notebooks and SJDs under this workspace. Update the workspace libraries when you want to set up the shared environment for all items in a workspace.
+- **Environment**: Manage libraries through an [environment](../data-engineering/create-and-use-environment.md) to reuse the same set of libraries across multiple notebooks or jobs.
 
 - **Session** : A session-level installation creates an environment for a specific notebook session. The change of session-level libraries isn't persisted between sessions. 
 
 Summarizing the current available R library management behaviors: 
 
-|Library Type |Workspace-level installation |Session-level installation |
+|Library Type |Environment installation |Session-level installation |
 |---------------|---------------|---------------|
 |R Feed (CRAN)|Not Supported| Supported|
 |R Custom |Supported| Supported|
@@ -47,30 +45,6 @@ Summarizing the current available R library management behaviors:
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
 
-## Workspace-level R library management 
-
-Manage your custom libraries at the workspace-level in workspace settings. Currently R supports only custom libraries in the workspace settings.
-
-
-1. Select your workspace.
-1. Select **Workspace settings** at the top of the page.
-
-    :::image type="content" source="media/r-library-management/workspace-settings.png" alt-text="Screenshot shows the location of Workspace settings.":::
-
-1. Select **Data Engineering/Science** → **Library management**.
-1. Select the tab for **Custom libraries**.
-
-> [!NOTE] 
->- Only the workspace admin has permission to update the workspace level settings. 
->- Managing R feed libraries in workspace settings is currently not supported.
-
-Install and manage your custom R packages, that is, _.tar.gz_ in the **Custom libraries** section.
-
-* **Upload**: Select the **Upload** button and select your package from your local directory.  Then select **Apply** to add the package to the workspace.  The library management module helps you handle potential conflicts and required dependencies in your custom libraries.
-
-* **Remove**: If a custom library is no longer useful for your Spark applications, use the trash button to remove it.
-
-* **Review and apply changes**: When changes are pending, go to the **Pending changes** panel to review them or cancel a change.
 
 ## Session-level R libraries
 
@@ -232,6 +206,8 @@ sdf_len(sc, 5) %>%
 ```
 
 ## Related content
+
+- [Create, configure, and use an environment in Microsoft Fabric](../data-engineering/create-and-use-environment.md)
 
 Learn more about the R functionalities:
 

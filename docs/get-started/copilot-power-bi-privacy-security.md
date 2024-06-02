@@ -1,5 +1,5 @@
 ---
-title: "Privacy, security, and responsible use for Copilot in Power BI (preview)"
+title: "Privacy, security, and responsible use for Copilot in Power BI"
 description: Learn about privacy, security, and responsible use for Copilot for Power BI in Microsoft Fabric.
 author: maggiesMSFT
 ms.author: maggies
@@ -9,15 +9,16 @@ ms.custom:
   - ignite-2023-fabric
 ms.topic: conceptual
 ms.date: 01/16/2024
+no-loc: [Copilot]
 ---
 
-# Privacy, security, and responsible use for Copilot in Power BI (preview)
+# Privacy, security, and responsible use for Copilot in Power BI
 
-With Copilot and other generative AI features in preview, Power BI brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Power BI and the other workloads.
+With Copilot and other generative AI features, Power BI brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Power BI and the other workloads.
 
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
-The article [Privacy, security, and responsible use for Copilot (preview)](copilot-privacy-security.md) provides an overview of Copilot in Fabric. Read on for details about Copilot for Power BI.
+The article [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md) provides an overview of Copilot in Fabric. Read on for details about Copilot for Power BI.
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
@@ -29,6 +30,7 @@ The article [Privacy, security, and responsible use for Copilot (preview)](copil
   - Suggested topics.
   - A report outline: for example, what each page in the report will be about, and how many pages it will create.
   - The visuals for the individual pages.
+  - Visuals in response to requests for data from the semantic model underlying the report. 
 
 ## Limitations of Copilot for Power BI
 
@@ -39,6 +41,7 @@ Here are the current limitations of Copilot for Power BI:
 - Copilot can't make layout changes. For example, if you tell Copilot to resize the visuals, or to align all the visuals perfectly, it won't work.
 - Copilot can't understand complex intent. For example, suppose you frame a prompt like this: "Generate a report to show incidents by team, incident type, owner of the incident, and do this for only 30 days." This prompt is complex, and Copilot will probably generate irrelevant visuals.
 - Copilot doesn't produce a message for the skills that it doesn't support. For example, if you ask Copilot to edit or add a slicer, it won't complete the instruction successfully as mentioned above. Unfortunately, it won't give an error message either.
+- To answer data questions from the semantic model, Copilot requires that Q&A be enabled in the semantic model's dataset settings. 
 
 ## Data use in Copilot for Power BI
 
