@@ -41,7 +41,7 @@ Enable this setting to allow all users, or a specific group or users, to export 
 
 Sensitivity labels aren't included when exporting an item. Therefore, the Fabric admin can choose whether to block the export of items that have sensitivity labels, or to allow it even though the sensitivity label won't be included.
 
-Enable this setting to allow all users, or a specific group of users, to export items without their sensitivity labels.
+Enable this setting to `allow all users, or a specific group of users, to export items without their sensitivity labels.
 
 :::image type="content" source="./media/git-integration-admin-settings/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of sensitivity labels switch.":::
 

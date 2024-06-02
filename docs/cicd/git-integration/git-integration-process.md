@@ -17,8 +17,6 @@ ms.custom:
 
 This article explains basic Git concepts and the process of integrating Git with your Microsoft Fabric workspace.
 
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
-
 ## Permissions
 
 - In order to use Git integration, your organization's administrator must [enable it](../../admin/git-integration-admin-settings.md) by your organization's administrator.
@@ -90,9 +88,14 @@ As long as you’re connected, the following information appears at the bottom o
 
 :::image type="content" source="./media/git-integration-process/sync-info.png" alt-text="Screenshot of sync information that appears on the bottom of the screen when connected to Git.":::
 
-## Commits and updates
+## Source control pane
 
-### Source control pane
+The source control pane has three tabs on the side:
+
+- [Commits and updates](#commits-and-updates)
+- [Account details](#account-details)
+
+### Commits and updates
 
 On top of the screen is the Source control icon. It shows the number of items that are different in the workspace and Git branch. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
 
@@ -111,18 +114,33 @@ In each tab, the changed items are listed with an icon indicating the status:
 
 :::image type="content" source="./media/git-integration-process/source-control-panel-items.png" alt-text="Screenshot of the source control panel showing the status of the changed items.":::
 
-### Commit
+#### Commit
 
 - When there's more than one item to commit, you can select which items to commit to the Git branch.
 - If there were updates made to the Git branch, commits are disabled until you update your workspace.
 
-### Update
+#### Update
 
 - Unlike *commit* and *undo*, the *Update* command always updates the entire branch and syncs to the most recent commit. You can’t select specific items to update.
 - If changes were made in the workspace and in the Git branch *on the same item*, updates are disabled until the [conflict is resolved](./conflict-resolution.md).
 
 Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git).
 Read more about the update process and how to [resolve conflicts](./conflict-resolution.md).
+
+### Account details
+
+The Account details tab shows details of the GitHub or Azure DevOps account that the workspace is connected to.
+
+GitHub account details include:
+
+- Configured credentials
+- Git repository
+- Branch
+
+Azure DevOps account details include:
+
+- Repository
+- Branch
 
 ## Considerations and limitations
 
@@ -134,6 +152,7 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 - DirectLake semantic models aren’t supported at this time.
 - Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git diff after each refresh.
 - The workspace folder structure isn't reflected in the Git repository. Workspace items in folders are exported to the root directory.
+- GitHub doesn't support exports to different geographical regions. Even if [cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) is enabled.
 
 ## Workspace limitations
 
