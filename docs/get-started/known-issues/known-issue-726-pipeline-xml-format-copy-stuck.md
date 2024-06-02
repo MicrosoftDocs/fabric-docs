@@ -24,6 +24,6 @@ The copy activity doesn't fail; it runs endlessly until it hits a timeout or is 
 
 No workarounds at this time. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

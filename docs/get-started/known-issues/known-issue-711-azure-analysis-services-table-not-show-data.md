@@ -24,6 +24,6 @@ The normal pricing tier table displays the message **No results** under the **SK
 
 You can use this [alternate URL for the Azure portal](https://portal.azure.com/?feature.removePolyfills=false) to view the SKU and pricing data.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

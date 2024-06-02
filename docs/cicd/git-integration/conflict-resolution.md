@@ -4,6 +4,8 @@ description: Learn how to resolve conflicts when using Fabric's Git integration 
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: how-to
 ms.date: 10/16/2023
 ms.custom:

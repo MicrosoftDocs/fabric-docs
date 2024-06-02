@@ -24,6 +24,6 @@ You see an unexpected data type in the lakehouse after running a dataflow.
 
 No workarounds at this time. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

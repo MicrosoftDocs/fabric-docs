@@ -1,5 +1,5 @@
 ---
-title: "Privacy, security, and responsible use for Copilot in Power BI (preview)"
+title: "Privacy, security, and responsible use for Copilot in Power BI"
 description: Learn about privacy, security, and responsible use for Copilot for Power BI in Microsoft Fabric.
 author: maggiesMSFT
 ms.author: maggies
@@ -12,13 +12,13 @@ ms.date: 01/16/2024
 no-loc: [Copilot]
 ---
 
-# Privacy, security, and responsible use for Copilot in Power BI (preview)
+# Privacy, security, and responsible use for Copilot in Power BI
 
-With Copilot and other generative AI features in preview, Power BI brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Power BI and the other workloads.
+With Copilot and other generative AI features, Power BI brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Power BI and the other workloads.
 
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
-The article [Privacy, security, and responsible use for Copilot (preview)](copilot-privacy-security.md) provides an overview of Copilot in Fabric. Read on for details about Copilot for Power BI.
+The article [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md) provides an overview of Copilot in Fabric. Read on for details about Copilot for Power BI.
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
@@ -30,7 +30,7 @@ The article [Privacy, security, and responsible use for Copilot (preview)](copil
   - Suggested topics.
   - A report outline: for example, what each page in the report will be about, and how many pages it will create.
   - The visuals for the individual pages.
-  - Visuals in response to requests for data from the semantic model underlying the report (preview). 
+  - Visuals in response to requests for data from the semantic model underlying the report. 
 
 ## Limitations of Copilot for Power BI
 

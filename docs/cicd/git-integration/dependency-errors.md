@@ -4,6 +4,8 @@ description: Learn how to resolve dependency errors when using Fabric's git inte
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Dan Weinstein
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
   - ignite-2023

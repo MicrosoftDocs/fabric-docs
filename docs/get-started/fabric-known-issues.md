@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/24/2024
+ms.date: 05/31/2024
 ms.custom:
 ---
 
@@ -20,11 +20,17 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  749  | Power BI | [Tenant migrations paused for June 2024](known-issues/known-issue-749-tenant-migrations-paused-june-2024.md) | May 31, 2024 |
+|  732  | Data Engineering | [Shortcut creation on a lakehouse preview table takes long time](known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md) | May 31, 2024 |
+|  743  | Power BI | [Semantic models in Desktop sometimes fail in March 2024 and later versions](known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md) | May 30, 2024 |
+|  730  | Real-Time Intelligence | [Real-Time hub **Set alert** doesn't work for derived streams](known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md) | May 29, 2024 |
+|  729  | Real-Time Intelligence | [Opening a reflex for a stream in Real-Time hub doesn't work](known-issues/known-issue-729-opening-reflex-stream-real-time-hub-not-work.md) | May 29, 2024 |
+|  742  | Power BI | [Virtual network data gateway service interruption](known-issues/known-issue-742-virtual-network-data-gateway-service-interruption.md) | May 28, 2024 |
 |  726  | Data Factory | [Pipeline using XML format copy gets stuck](known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 |
 |  723  | Data Warehouse | [Azure SQL Database change data doesn't propagate to mirror](known-issues/known-issue-723-sql-azure-database-change-data-not-propagate-mirror.md) | May 24, 2024 |
 |  728  | Data Engineering | [Environment doesn't work when runtime version is changed to Runtime 1.1](known-issues/known-issue-728-environment-not-work-runtime-version-changed-1-1.md) | May 23, 2024 |
 |  724  | OneLake | [Shortcuts to a firewall-enabled ADLS stop working if lakehouse is shared](known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md) | May 23, 2024 |
-|  717  | Data Factory | [known-issue-717-west-india-region-not support-on-premises-gateway-pipelines.md](known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
+|  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
 |  722  | Data Warehouse | [Delta tables don't appear in SQL Analytics Endpoint Object Explorer](known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md) | May 16, 2024 |
 |  721  | Data Engineering | [Spark session doesn't start when managed virtual network's capacity moved](known-issues/known-issue-721-spark-session-managed-virtual-network-capacity-moved.md) | May 16, 2024 |
 |  718  | OneLake | [OneLake under-reports transactions in the Other category](known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 |

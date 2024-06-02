@@ -24,6 +24,6 @@ You won't see billing of OneLake Storage for From January 26, 2024 4:00 AM throu
 
 There are no solutions or workarounds to this issue.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)
