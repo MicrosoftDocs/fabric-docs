@@ -1,5 +1,5 @@
 ---
-title: "Privacy, security, and responsible use for Copilot in Power BI (preview)"
+title: "Privacy, security, and responsible use for Copilot in Power BI"
 description: Learn about privacy, security, and responsible use for Copilot for Power BI in Microsoft Fabric.
 author: maggiesMSFT
 ms.author: maggies
@@ -12,7 +12,7 @@ ms.date: 06/02/2024
 no-loc: [Copilot]
 ---
 
-# Privacy, security, and responsible use for Copilot in Power BI (preview)
+# Privacy, security, and responsible use for Copilot in Power BI
 
 In this article, learn how [Microsoft Copilot for Power BI](/power-bi/create-reports/copilot-introduction) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.  With Copilot and other generative AI features in preview, Power BI brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Power BI and the other workloads.
 

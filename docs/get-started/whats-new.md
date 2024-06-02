@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 05/21/2024
+ms.date: 05/30/2024
 ms.topic: whats-new
 ms.custom:
   - build-2024
@@ -30,6 +30,7 @@ This section includes articles and announcements for users new to Microsoft Fabr
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|May 2024|**Power BI: Subscriptions, licenses, and trials**|Information on Power BI implementation planning and [key considerations for planning subscriptions, licenses, and trials for Power BI and Fabric](/power-bi/guidance/powerbi-implementation-planning-subscriptions-licenses-trials).|
 |May 2024|**Register for the Microsoft Build: Microsoft Fabric Cloud Skills Challenge**|Starting May 21, 2024, sign up for the [Microsoft Build: Microsoft Fabric Cloud Skills Challenge](/training/challenges?id=094443ef-321d-449c-96ef-2ffe6dcf9489) and prepare for Exam DP-600 and upskill to the Fabric Analytics Engineer Associate certification.|
 |March 2024|**Microsoft Fabric is now HIPAA compliant**| We're excited to announce that Microsoft Fabric, our all-in-one analytics solution for enterprises, has achieved new [certifications for HIPAA and ISO 27017, ISO 27018, ISO 27001, ISO 27701](https://blog.fabric.microsoft.com/blog/microsoft-fabric-is-now-hipaa-compliant/). |
 |March 2024|**Exam DP-600 is now available**| [Exam DP-600](/credentials/certifications/exams/dp-600/) is now available, leading to the [Microsoft Certified: Fabric Analytics Engineer Associate certification](/credentials/certifications/fabric-analytics-engineer-associate/). The [Fabric Career Hub](https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabric_updateblog_clp) can help you learn quickly and get certified. |
@@ -291,6 +292,7 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|May 2024|**Monitor Warehouse tools**|You can [Monitor Synapse Data Warehouse](../data-warehouse/monitoring-overview.md) activity with a variety of tools, including: [Billing and utilization reporting in Synapse Data Warehouse](../data-warehouse/usage-reporting.md), [monitor connections, sessions, and requests using DMVs](../data-warehouse/monitor-using-dmv.md), [Query activity](../data-warehouse/query-activity.md), and [Query insights](../data-warehouse/query-insights.md).|
 |May 2024|**Copilot for Data Warehouse**|[Copilot for Data Warehouse (preview)](../data-warehouse/copilot.md) is now available, offering [the Copilot chat pane](../data-warehouse/copilot-chat-pane.md), [quick actions](../data-warehouse/copilot-quick-action.md), and [code completions](../data-warehouse/copilot-code-completion.md). |
 |May 2024|**Warehouse queries with time travel (preview)**|Warehouse in Microsoft Fabric offers the capability to [query the historical data as it existed in the past](../data-warehouse/time-travel.md) at the statement level, currently in preview. The ability to [query data from a specific timestamp](https://blog.fabric.microsoft.com/blog/unlocking-insights-through-time-time-travel-in-fabric-warehouse/) is known in the data warehousing industry as *time travel*.|
 |May 2024|**COPY INTO enhancements**|`COPY INTO` now supports Microsoft Entra ID authentication and access to firewall protected storage via the trusted workspace functionality. For more information, see [COPY INTO enhancements](https://blog.fabric.microsoft.com/blog/microsoft-fabric-may-2024-update/#post-11444-_Toc167109045) and [COPY INTO (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).|

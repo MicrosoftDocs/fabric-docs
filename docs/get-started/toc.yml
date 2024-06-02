@@ -157,6 +157,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Tenant migrations paused for June 2024
+      href: known-issues/known-issue-749-tenant-migrations-paused-june-2024.md
+    - name: Shortcut creation on a lakehouse preview table takes long time
+      href: known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md
+    - name: Semantic models in Desktop sometimes fail in March 2024 and later versions
+      href: known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md
     - name: Real-Time hub Set alert doesn't work for derived streams
       href: known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md
     - name: Opening a reflex for a stream in Real-Time hub doesn't work

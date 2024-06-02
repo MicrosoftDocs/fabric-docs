@@ -1,5 +1,5 @@
 ---
-title: Set up and use private links for secure access to Fabric (Preview)
+title: Set up and use private links for secure access to Fabric
 description: Learn how to set up and use private links to provide secure access to Fabric.
 author: paulinbar
 ms.author: painbar
@@ -234,8 +234,6 @@ The next step is to create a private endpoint for Fabric.
 
 1. Select **Create**.
 
-> [!NOTE]
-> If you have an existing Power BI private endpoint, it may not work for Fabric items. Currently, you need to create a new private endpoint to get support for Fabric items.
 
 ### Step 6. Connect to a VM using Bastion
 
