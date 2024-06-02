@@ -151,6 +151,12 @@
         href: connector-azure-cosmosdb-for-nosql.md
       - name: Configure in a data pipeline copy activity
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
+    - name: Azure Cosmos DB for MongoDB
+      items:
+      - name: Azure Cosmos DB for MongoDB - Overview
+        href: connector-azure-cosmos-db-for-mongodb-overview.md
+      - name: Configure in a data pipeline copy activity
+        href: connector-azure-cosmos-db-for-mongodb-copy-activity.md
     - name: Azure Data Explorer (Kusto)
       items:
       - name: Azure Data Explorer (Kusto) - Overview

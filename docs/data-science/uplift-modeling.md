@@ -2,8 +2,8 @@
 title: 'Tutorial: Create, train, and evaluate an uplift model'
 description: This tutorial describes creation, training, and evaluation of uplift models and application of uplift modeling techniques.
 ms.reviewer: franksolomon
-ms.author: narsam
-author: narmeens
+ms.author: amjafari
+author: amhjf
 ms.topic: tutorial
 ms.custom:
   - build-2023

@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/29/2024
+ms.date: 05/31/2024
 ms.custom:
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  749  | Power BI | [Tenant migrations paused for June 2024](known-issues/known-issue-749-tenant-migrations-paused-june-2024.md) | May 31, 2024 |
+|  732  | Data Engineering | [Shortcut creation on a lakehouse preview table takes long time](known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md) | May 31, 2024 |
+|  743  | Power BI | [Semantic models in Desktop sometimes fail in March 2024 and later versions](known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md) | May 30, 2024 |
 |  730  | Real-Time Intelligence | [Real-Time hub **Set alert** doesn't work for derived streams](known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md) | May 29, 2024 |
 |  729  | Real-Time Intelligence | [Opening a reflex for a stream in Real-Time hub doesn't work](known-issues/known-issue-729-opening-reflex-stream-real-time-hub-not-work.md) | May 29, 2024 |
 |  742  | Power BI | [Virtual network data gateway service interruption](known-issues/known-issue-742-virtual-network-data-gateway-service-interruption.md) | May 28, 2024 |
