@@ -4,7 +4,7 @@ description: Learn about privacy, security, and responsible use of Copilot for W
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
-ms.date: 05/29/2024
+ms.date: 06/02/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -14,9 +14,11 @@ ms.collection: ce-skilling-ai-copilot
 
 **Applies to:** [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
 
-In this article we answer questions about [Microsoft Copilot for Synapse Data Warehouse](../data-warehouse/copilot.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For more information on Copilot in Fabric, see [Privacy, security, and responsible use for Copilot in Microsoft Fabric (preview)](copilot-privacy-security.md).
+In this article, learn how [Microsoft Copilot for Synapse Data Warehouse](../data-warehouse/copilot.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For more information on Copilot in Fabric, see [Privacy, security, and responsible use for Copilot in Microsoft Fabric (preview)](copilot-privacy-security.md).
 
 With Copilot for Data Warehouse in Microsoft Fabric and other generative AI features, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in your warehouse and other workloads.
+
+For considerations and limitations, see [Limitations](../data-warehouse/copilot.md#limitations-of-copilot-for-data-warehouse).
 
 ## Data use of Copilot for Data Warehouse
 
@@ -43,7 +45,5 @@ The team also invested in additional harm mitigation, including technological ap
 
 ## Related content
 
-- [Microsoft Copilot for Synapse Data Warehouse](../data-warehouse/copilot.md)
-- [What is Microsoft Fabric?](microsoft-fabric-overview.md)
-- [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
 - [Privacy, security, and responsible use for Copilot in Microsoft Fabric (preview)](copilot-privacy-security.md)
+- [Microsoft Copilot for Synapse Data Warehouse](../data-warehouse/copilot.md)

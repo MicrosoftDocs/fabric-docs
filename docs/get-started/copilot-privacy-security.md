@@ -9,7 +9,7 @@ ms.custom:
   - ignite-2023-fabric
   - build-2024
 ms.topic: conceptual
-ms.date: 01/16/2024
+ms.date: 06/02/2024
 no-loc: [Copilot]
 ---
 
@@ -130,13 +130,11 @@ Before you use Copilot, keep in mind the limitations of Copilot:
 
 Privacy, security, and responsible use for:
 
-- [Copilot for Power BI (preview)](copilot-power-bi-privacy-security.md)
 - [Copilot for Data Factory (preview)](copilot-data-factory-privacy-security.md)
 - [Copilot for Data Science (preview)](copilot-data-science-privacy-security.md)
-
-## Notes by release
-
-Additional information for future releases or feature updates will appear here.
+- [Copilot for Data Warehouse (preview)](copilot-data-warehouse-privacy-security.md)
+- [Copilot for Power BI (preview)](copilot-power-bi-privacy-security.md)
+- [Copilot for Real-Time Intelligence (preview)](copilot-real-time-intelligence-privacy-security.md)
 
 ## Related content
 

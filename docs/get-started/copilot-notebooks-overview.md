@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 01/16/2024
+ms.date: 06/02/2024
 ms.search.form: Data Science Overview
 no-loc: [Copilot]
 ---
@@ -77,6 +77,17 @@ Copilot responds with the relevant information if you added the lakehouse to the
 - Use the chat magics library to configure settings about Copilot, including privacy settings. The default sharing mode is designed to maximize the context sharing Copilot has access to, so limiting the information provided to copilot can directly and significantly impact the relevance of its responses.
 - When Copilot first launches, it offers a set of helpful prompts that can help you get started. They can help kickstart your conversation with Copilot. To refer to prompts later, you can use the sparkle button at the bottom of the chat panel.
 - You can "drag" the sidebar of the copilot chat to expand the chat panel, to view code more clearly or for readability of the outputs on your screen.
+
+## Limitations
+
+Copilot features in the Data Science experience are currently scoped to notebooks. These features include the Copilot chat pane, IPython magic commands that can be used within a code cell, and automatic code suggestions as you type in a code cell. Copilot can also read Power BI semantic models using an integration of semantic link.
+
+Copilot has two key intended uses:
+
+  - One, you can ask Copilot to examine and analyze data in your notebook (for example, by first loading a DataFrame and then asking Copilot about data inside the DataFrame).
+  - Two, you can ask Copilot to generate a range of suggestions about your data analysis process, such as what predictive models might be relevant, code to perform different types of data analysis, and documentation for a completed notebook.
+
+Keep in mind that code generation with fast-moving or recently released libraries may include inaccuracies or fabrications.
 
 ## Related content
 
