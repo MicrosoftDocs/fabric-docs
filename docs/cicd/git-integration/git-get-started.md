@@ -19,7 +19,7 @@ ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, I
 
 This article walks you through the following basic tasks in Microsoft Fabric’s Git integration tool:
 
-- [Connect to a Git repo](#connect-a-workspace-to-an-azure-repo)
+- [Connect to a Git repo](#connect-a-workspace-to-a-git-repo)
 - [Commit changes](#commit-changes-to-git)
 - [Update from Git](#update-workspace-from-git)
 - [Disconnect from Git](#disconnect-a-workspace-from-git)
