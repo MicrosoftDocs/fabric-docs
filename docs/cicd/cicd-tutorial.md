@@ -112,7 +112,7 @@ After you connect, the Workspace displays information about source control that 
 
 Now the workspace is synced with the main branch of your Git repo making it easy to keep track of changes.
 
-For more information about connecting to git, see [Connect a workspace to an Azure repo](git-integration/git-get-started.md#connect-a-workspace-to-an-azure-repo).
+For more information about connecting to git, see [Connect a workspace to an Azure repo](git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo).
 
 ## Step 4: Create a deployment pipeline
 

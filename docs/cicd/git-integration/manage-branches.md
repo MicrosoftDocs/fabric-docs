@@ -50,7 +50,7 @@ For a developer who works in the web, the flow would be as follows:
 
 1. Create a new workspace (or use an existing one you already use).
 1. Assign that workspace a Premium license.
-1. Go to [**Git integration**](./git-get-started.md#connect-a-workspace-to-an-azure-repo) in workspace settings, and specify the repo details.
+1. Go to [**Git integration**](./git-get-started.md#connect-a-workspace-to-a-git-repo) in workspace settings, and specify the repo details.
 1. Under **Branch** drop-down, choose **Create a new branch**, and branch it from the *main* branch.
 1. In **Git folder**, enter the name of the folder you want to sync to in your repo.
 
