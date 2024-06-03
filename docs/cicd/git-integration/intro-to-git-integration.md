@@ -72,8 +72,6 @@ The following limitations apply:
 ### Azure DevOps limitations(#tab/azure-devops)
 
 * If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).  
-* Azure DevOps **on-prem** isn't supported.
-* Sovereign clouds aren't supported.
 
 ### GitHub limitations(#tab/github)
 
