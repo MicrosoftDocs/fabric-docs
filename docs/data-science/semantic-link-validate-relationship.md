@@ -14,11 +14,11 @@ ms.search.form: semantic link
 
 # Explore relationships in semantic models and dataframes
 
-In this article, you learn to use Python SemPy library semantic link functions to discover and validate relationships in your Power BI semantic models and pandas DataFrames.
+In this article, you learn to use Python SemPy semantic link functions to discover and validate relationships in your Power BI semantic models and pandas DataFrames.
 
 In data science and machine learning, it's important to understand the structure and relationships within your data. Power BI is a powerful tool that allows you to model and visualize your data.
 
-To gain more insights or build machine learning models, you can dive deeper into a semantic model's structure by using the Python SemPy library functions. Data scientists and business analysts can list, visualize, and validate relationships in Power BI semantic models, or find and validate relationships in pandas DataFrames.
+To gain more insights or build machine learning models, you can dive deeper into a semantic model's structure by using the SemPy library modules. Data scientists and business analysts can list, visualize, and validate relationships in Power BI semantic models, or find and validate relationships in pandas DataFrames.
 
 ## Prerequisites
 
@@ -27,10 +27,10 @@ To gain more insights or build machine learning models, you can dive deeper into
 1. [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 - For Spark 3.4 and above, semantic link is available in the default runtime when using Fabric, and there's no need to install it.
-- For Spark 3.3 or below, or to update to the latest version of semantic link, run the following the command:
+- For Spark 3.3 or below, or to update to the latest version of semantic link, run the following command:
   ```python
   %pip install -U semantic-link
-```
+  ```
 
 ## Use SemPy functions in semantic models
 
@@ -73,7 +73,7 @@ relationships = fabric.list_relationships("my_dataset")
 plot_relationship_metadata(relationships)
 ```
 
-In the preceding code, the `list_relationships` function retrieves the relationships in the *my_dataset* semantic model, and the `plot_relationship_metadata` function creates a graph to visualize the relationships. You can customize the graph by specifying which columns to include and how to handle missing keys, and by providing more graphviz attributes.
+In the preceding code, the `list_relationships` function retrieves the relationships in the *my_dataset* semantic model, and the `plot_relationship_metadata` function creates a graph to visualize the relationships. You can customize the graph by specifying which columns to include and how to handle missing keys, and by providing more [graphviz](https://pypi.org/project/graphviz/) attributes.
 
 ### Validate relationships in semantic models
 
@@ -105,7 +105,7 @@ By using the `list_relationship_violations` function, you can ensure that your s
 
 ## Use SemPy functions in pandas DataFrames
 
-The `list_relationships`, `plot_relationship_metadata` and `list_relationship_violations` functions in the `sempy.fabric` module are powerful tools for exploring relationships in semantic models. You can also use functions in the `sempy.relationships` module to help discover relationships imported from other data sources in pandas DataFrames.
+The `list_relationships`, `plot_relationship_metadata`, and `list_relationship_violations` functions in the `sempy.fabric` module are powerful tools for exploring relationships in semantic models. You can also use functions in the `sempy.relationships` module to help discover relationships imported from other data sources in pandas DataFrames.
 
 ### Find relationships in pandas DataFrames
 
