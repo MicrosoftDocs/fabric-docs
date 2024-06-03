@@ -12,9 +12,9 @@ ms.date: 06/03/2024
 ms.search.form: semantic link
 ---
 
-# Power BI connectivity with semantic link and Microsoft Fabric
+# Power BI connectivity with semantic link
 
-Power BI connectivity is at the core of semantic link. This article describes the ways that semantic link provides connectivity to semantic models for users of the Python pandas and Apache Spark ecosystems.
+Power BI connectivity is at the core of semantic link in Microsoft Fabric. This article describes the ways that semantic link provides connectivity to semantic models for users of the Python pandas and Apache Spark ecosystems.
 
 A semantic model usually represents a high data standard that's the result of upstream data processing and refinement. Business analysts can use semantic models to:
 
