@@ -36,7 +36,7 @@ On the lower ribbon of your KQL database, either:
 
 * From the **Get Data** drop down menu, under **Continuous**, select **Real-Time data hub** > **Existing Eventstream**.
 
-    :::image type="content" source="media/get-data-eventstream/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-eventstream/select-data-source.png":::
+    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
 
 ## Configure
 

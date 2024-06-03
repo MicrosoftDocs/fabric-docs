@@ -31,7 +31,7 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Amazon S3**.
 
-    :::image type="content" source="media/get-data-amazon-s3/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-amazon-s3/select-data-source.png":::
+    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
 
 ## Configure
 
