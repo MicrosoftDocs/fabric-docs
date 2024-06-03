@@ -1,5 +1,5 @@
 ---
-title: Manage a workspace with Git.
+title: Get stated with Git integration
 description: Learn how to connect a workspace to a Git repository and branch, commit changes to the repo or workspace and sync.
 author: mberdugo
 ms.author: monaberdugo
@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
-ms.date: 12/17/2023
+ms.date: 06/03/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -185,7 +185,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
   
   - Committing a file that uses *CRLF* line breaks. The service uses *LF* (line feed) line breaks. If you had item files in the Git repo with *CRLF* line breaks, when you commit from the service these files are changed to *LF*. For example, if you open a report in desktop, save the *.pbip* project and upload it to Git using *CRLF*.
 
-- In GitHub, the commit size is limited to 100 MB.
+- The commit size is limited to 100 MB for GitHub and 125 MB for DevOps.
 
 - If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the Git integration feature.
 

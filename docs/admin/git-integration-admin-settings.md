@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.custom:
-ms.date: 01/24/2024
+ms.date: 06/03/2024
 ---
 
 # Git integration tenant settings
@@ -24,7 +24,7 @@ For information about how to get to and use tenant settings, see [About tenant s
 
 Users can synchronize a workspace with a git repository, edit their workspace, and update their git repos using the git integration tool. You can enable git integration for the entire organization, or for a specific group. Turn off this setting to prevent users from syncing workspace items with their Git repositories.
 
-:::image type="content" source="./media/git-integration-admin-settings/enable-git-integration-switch.png" alt-text="Screenshot of git integration switch.":::
+:::image type="content" source="./media/git-integration-admin-settings/enable-git-integration-switch.png" alt-text="Screenshot of the Git integration switch.":::
 
 To learn more, see [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md).
 
@@ -35,7 +35,7 @@ To get started with Git integration, see [Manage a workspace with Git](../cicd/g
 If a workspace capacity is in one geographic location (for example, Central US) while the Azure DevOps repo is in another location (for example, West Europe), the Fabric admin can decide whether to allow users to commit metadata (or perform other git actions) to another geographical location. Only the metadata of the item is exported. Item data and user related information are not exported.  
 Enable this setting to allow all users, or a specific group or users, to export metadata to other geographical locations.
 
-:::image type="content" source="./media/git-integration-admin-settings/multi-geo-switch.png" alt-text="Screenshot of multi geo switch.":::
+:::image type="content" source="./media/git-integration-admin-settings/multi-geo-switch.png" alt-text="Screenshot of the multi geo switch enabled.":::
 
 This feature is not supported for GitHub.
 
