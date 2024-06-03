@@ -72,15 +72,15 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 4. Test the GraphQL API in the [API editor](api-graphql-editor.md) using the following sample query. It's the same query we use in our React client application:
 
 ```json
-query {
-  publicholidays (filter: {countryRegionCode: {eq:"US"}, date: {gte: "2024-01-01T00:00:00.000Z", lte: "2024-12-31T00:00:00.000Z"}}) {
-    items {
-      countryOrRegion
-      holidayName
-      date
+    query {
+      publicholidays (filter: {countryRegionCode: {eq:"US"}, date: {gte: "2024-01-01T00:00:00.000Z", lte: "2024-12-31T00:00:00.000Z"}}) {
+        items {
+          countryOrRegion
+          holidayName
+          date
+        }
+      }
     }
-  }
-}
 ```
 
 5. Select **Copy endpoint** on the API item's toolbar.
@@ -99,77 +99,77 @@ query {
 2. In the *src* folder, open the *authConfig.js* file and replace the contents of the file with the following code snippet:
 
 ```javascript
-/*
- * Copyright (c) Microsoft Corporation. All rights reserved.
- * Licensed under the MIT License.
- */
-
-import { LogLevel } from "@azure/msal-browser";
-
-/**
- * Configuration object to be passed to MSAL instance on creation. 
- * For a full list of MSAL.js configuration parameters, visit:
- * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
- */
-
-export const graphqlConfig = {
-    graphqlEndpoint: "`Enter_the_GraphQL_Endpoint_Here"
-};
-
-export const msalConfig = {
-    auth: {
-        clientId: "Enter_the_Application_Id_Here",
-        authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here",
-        redirectUri: "http://localhost:3000",
-    },
-    cache: {
-        cacheLocation: "sessionStorage", // This configures where your cache will be stored
-        storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
-    },
-    system: {	
-        loggerOptions: {	
-            loggerCallback: (level, message, containsPii) => {	
-                if (containsPii) {		
-                    return;		
-                }		
-                switch (level) {
-                    case LogLevel.Error:
-                        console.error(message);
-                        return;
-                    case LogLevel.Info:
-                        console.info(message);
-                        return;
-                    case LogLevel.Verbose:
-                        console.debug(message);
-                        return;
-                    case LogLevel.Warning:
-                        console.warn(message);
-                        return;
-                    default:
-                        return;
+    /*
+     * Copyright (c) Microsoft Corporation. All rights reserved.
+     * Licensed under the MIT License.
+     */
+    
+    import { LogLevel } from "@azure/msal-browser";
+    
+    /**
+     * Configuration object to be passed to MSAL instance on creation. 
+     * For a full list of MSAL.js configuration parameters, visit:
+     * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
+     */
+    
+    export const graphqlConfig = {
+        graphqlEndpoint: "`Enter_the_GraphQL_Endpoint_Here"
+    };
+    
+    export const msalConfig = {
+        auth: {
+            clientId: "Enter_the_Application_Id_Here",
+            authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here",
+            redirectUri: "http://localhost:3000",
+        },
+        cache: {
+            cacheLocation: "sessionStorage", // This configures where your cache will be stored
+            storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
+        },
+        system: {	
+            loggerOptions: {	
+                loggerCallback: (level, message, containsPii) => {	
+                    if (containsPii) {		
+                        return;		
+                    }		
+                    switch (level) {
+                        case LogLevel.Error:
+                            console.error(message);
+                            return;
+                        case LogLevel.Info:
+                            console.info(message);
+                            return;
+                        case LogLevel.Verbose:
+                            console.debug(message);
+                            return;
+                        case LogLevel.Warning:
+                            console.warn(message);
+                            return;
+                        default:
+                            return;
+                    }	
                 }	
             }	
-        }	
-    }
-};
-
-/**
- * Scopes you add here will be prompted for user consent during sign-in. 
- * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
- * For more information about OIDC scopes, visit: 
- * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
- */
-export const loginRequest = {
-    scopes: ["https://analysis.windows.net/powerbi/api/.default"]
-};
-
-/**
- * Add here the scopes to request when obtaining an access token for MS Graph API. For more information, see:
- * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/resources-and-scopes.md
- */
-export const graphConfig = {
-    graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
-};
+        }
+    };
+    
+    /**
+     * Scopes you add here will be prompted for user consent during sign-in. 
+     * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
+     * For more information about OIDC scopes, visit: 
+     * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+     */
+    export const loginRequest = {
+        scopes: ["https://analysis.windows.net/powerbi/api/.default"]
+    };
+    
+    /**
+     * Add here the scopes to request when obtaining an access token for MS Graph API. For more information, see:
+     * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/resources-and-scopes.md
+     */
+    export const graphConfig = {
+        graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
+    };
 ```
 
 As you can see in the code above, it's important to use the correct scope to access the application. In our case `https://analysis.windows.net/powerbi/api/.default` or `https://analysis.windows.net/powerbi/api/Item.Execute.All`.
@@ -184,114 +184,114 @@ As you can see in the code above, it's important to use the correct scope to acc
 3. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
 
 ```javascript
-import React, { useState } from 'react';
-import { PageLayout } from './components/PageLayout';
-import { loginRequest, graphqlConfig } from './authConfig';
-import { ProfileData } from './components/ProfileData';
-import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from '@azure/msal-react';
-import './App.css';
-import Button from 'react-bootstrap/Button';
-import Spinner from 'react-bootstrap/Spinner';
-
-/**
-* Renders information about the signed-in user or a button to retrieve data about the user
-*/
-const ProfileContent = () => {
-  const { instance, accounts } = useMsal();
-  const [graphqlData, setGraphqlData] = useState(null);
-  const [display, setDisplay] = useState(false);
-
-  function RequestGraphQL() {
-      // Silently acquires an access token which is then attached to a request for GraphQL data
-      instance
-          .acquireTokenSilent({
-              ...loginRequest,
-              account: accounts[0],
-          })
-          .then((response) => {
-              callGraphQL(response.accessToken).then((response) => setGraphqlData(response));
-          });
-  }
-
-async function callGraphQL(accessToken) {
-  setDisplay(true);
-  const query = `query {
-    publicholidays (filter: {countryRegionCode: {eq:"US"}, date: {gte: "2024-01-01T00:00:00.000Z", lte: "2024-12-31T00:00:00.000Z"}}) {
-      items {
-        countryOrRegion
-        holidayName
-        date
+    import React, { useState } from 'react';
+    import { PageLayout } from './components/PageLayout';
+    import { loginRequest, graphqlConfig } from './authConfig';
+    import { ProfileData } from './components/ProfileData';
+    import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from '@azure/msal-react';
+    import './App.css';
+    import Button from 'react-bootstrap/Button';
+    import Spinner from 'react-bootstrap/Spinner';
+    
+    /**
+    * Renders information about the signed-in user or a button to retrieve data about the user
+    */
+    const ProfileContent = () => {
+      const { instance, accounts } = useMsal();
+      const [graphqlData, setGraphqlData] = useState(null);
+      const [display, setDisplay] = useState(false);
+    
+      function RequestGraphQL() {
+          // Silently acquires an access token which is then attached to a request for GraphQL data
+          instance
+              .acquireTokenSilent({
+                  ...loginRequest,
+                  account: accounts[0],
+              })
+              .then((response) => {
+                  callGraphQL(response.accessToken).then((response) => setGraphqlData(response));
+              });
       }
-    }
-  }`;
-  fetch(graphqlConfig.graphqlEndpoint, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${accessToken}`,
-          },
-          body: JSON.stringify({ 
-              query: query
+    
+    async function callGraphQL(accessToken) {
+      setDisplay(true);
+      const query = `query {
+        publicholidays (filter: {countryRegionCode: {eq:"US"}, date: {gte: "2024-01-01T00:00:00.000Z", lte: "2024-12-31T00:00:00.000Z"}}) {
+          items {
+            countryOrRegion
+            holidayName
+            date
+          }
+        }
+      }`;
+      fetch(graphqlConfig.graphqlEndpoint, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${accessToken}`,
+              },
+              body: JSON.stringify({ 
+                  query: query
+              })
           })
-      })
-      .then((res) => res.json())
-      .then((result) => setGraphqlData(result));
-}
-
-  return (
-      <>
-          <h5 className="card-title">Welcome {accounts[0].name}</h5>
-          <br/>
-          {graphqlData ? (
-              <ProfileData graphqlData={graphqlData} />
-          ) : (
-              <Button variant="primary" onClick={RequestGraphQL}>
-                  Query Fabric API for GraphQL Data 
-                  {display ? (
-                        <Spinner
-                            as="span"
-                            animation="border"
-                            size="sm"
-                            role="status"
-                            aria-hidden="true"
-                        />
-                    ) : null}
-              </Button>
-          )}
-      </>
-  );
-};
-
-/**
-* If a user is authenticated the ProfileContent component above is rendered. Otherwise a message indicating a user is not authenticated is rendered.
-*/
-const MainContent = () => {
-  return (
-      <div className="App">
-          <AuthenticatedTemplate>
-              <ProfileContent />
-          </AuthenticatedTemplate>
-
-          <UnauthenticatedTemplate>
-              <h5>
-                  <center>
-                      Please sign-in to see your profile information.
-                  </center>
-              </h5>
-          </UnauthenticatedTemplate>
-      </div>
-  );
-};
-
-export default function App() {
-  return (
-      <PageLayout>
-          <center>
-              <MainContent />
-          </center>
-      </PageLayout>
-  );
-}
+          .then((res) => res.json())
+          .then((result) => setGraphqlData(result));
+    }
+    
+      return (
+          <>
+              <h5 className="card-title">Welcome {accounts[0].name}</h5>
+              <br/>
+              {graphqlData ? (
+                  <ProfileData graphqlData={graphqlData} />
+              ) : (
+                  <Button variant="primary" onClick={RequestGraphQL}>
+                      Query Fabric API for GraphQL Data 
+                      {display ? (
+                            <Spinner
+                                as="span"
+                                animation="border"
+                                size="sm"
+                                role="status"
+                                aria-hidden="true"
+                            />
+                        ) : null}
+                  </Button>
+              )}
+          </>
+      );
+    };
+    
+    /**
+    * If a user is authenticated the ProfileContent component above is rendered. Otherwise a message indicating a user is not authenticated is rendered.
+    */
+    const MainContent = () => {
+      return (
+          <div className="App">
+              <AuthenticatedTemplate>
+                  <ProfileContent />
+              </AuthenticatedTemplate>
+    
+              <UnauthenticatedTemplate>
+                  <h5>
+                      <center>
+                          Please sign-in to see your profile information.
+                      </center>
+                  </h5>
+              </UnauthenticatedTemplate>
+          </div>
+      );
+    };
+    
+    export default function App() {
+      return (
+          <PageLayout>
+              <center>
+                  <MainContent />
+              </center>
+          </PageLayout>
+      );
+    }
 ```
 
 3. Save the file.
@@ -299,35 +299,35 @@ export default function App() {
 2. Finally, under the *src/components* folder, open the *ProfileData.jsx* file and replace the contents of the file with the following code snippet:
 
 ```javascript
-import React from "react";
-import ListGroup from 'react-bootstrap/ListGroup'; 
-import Table from 'react-bootstrap/Table';
-/**
- * Renders information about the user obtained from MS Graph 
- * @param props
- */
-export const ProfileData = (props) => {
-  const holidays = props.graphqlData.data.publicholidays.items;
-  return (
-    <Table striped bordered hover responsive>
-    <thead>
-      <tr>
-        <th>Country</th>
-        <th>Holiday</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      {holidays.map((item,i) => (
-      <tr key={i}>
-        <td>{item.countryOrRegion}</td>
-        <td>{item.holidayName}</td>
-        <td>{item.date}</td>
-      </tr>
-      ))}
-      </tbody>
-    </Table>
-)};
+    import React from "react";
+    import ListGroup from 'react-bootstrap/ListGroup'; 
+    import Table from 'react-bootstrap/Table';
+    /**
+     * Renders information about the user obtained from MS Graph 
+     * @param props
+     */
+    export const ProfileData = (props) => {
+      const holidays = props.graphqlData.data.publicholidays.items;
+      return (
+        <Table striped bordered hover responsive>
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Holiday</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {holidays.map((item,i) => (
+          <tr key={i}>
+            <td>{item.countryOrRegion}</td>
+            <td>{item.holidayName}</td>
+            <td>{item.date}</td>
+          </tr>
+          ))}
+          </tbody>
+        </Table>
+    )};
 ```
 
 9. Save all the file changes.
