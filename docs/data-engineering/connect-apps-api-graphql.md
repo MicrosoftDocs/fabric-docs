@@ -50,7 +50,7 @@ In the following steps, we showcase how to configure support for a ReactJS appli
 6. From the *Manage* list, select **API permissions**, then **Add permission**. 
 7. Add the **PowerBI Service**, select **Delegated permissions**, and select the **Item.Execute.All** permission. Make sure Admin consent isn't required. 
 8. Back to the *Manage* list, select **Authentication**, select **Add a platform**, then select **Single-page application**.
-9. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with PKCE](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow). Click the **Configure** button to save your changes. 
+9. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. 
 10. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
 
 ## Setting up a sample GraphQL API in Fabric for application access
