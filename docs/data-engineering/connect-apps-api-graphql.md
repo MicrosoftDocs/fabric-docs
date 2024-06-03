@@ -93,7 +93,7 @@ query {
 
 1. As the **Client ID** and **Tenant ID** from the Entra app recorded earlier, copy the endpoint URI as it's required later.
 
-## Configuring a sample React app to access the public holidays Fabric API for GraphQL
+## Configure a React app to access the public holidays API
 
 1. We use an existing React app as a starting point. Follow all the steps on the tutorial [Create a React single-page application and prepare it for authentication](/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code) to create a React project with Entra authentication already configured, including additional files and folders required to be added to the project structure. We only need to change three files to adapt the app for our GraphQL use case.
 2. In the *src* folder, open the *authConfig.js* file and replace the contents of the file with the following code snippet:
