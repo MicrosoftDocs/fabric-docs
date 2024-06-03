@@ -3,7 +3,7 @@ title: Get data for Data Activator from Eventstreams
 description: Learn how to get data from Eventstreams for use in Data Activator.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.date: 11/16/2023
 ---

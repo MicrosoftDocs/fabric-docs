@@ -3,7 +3,7 @@ title: Troubleshooting errors in Data Activator
 description: Learn the meaning of errors in Data Activator and how to fix them
 author: jamesdhutton
 ms.author: jameshutton
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.date: 11/16/2023
 ---
