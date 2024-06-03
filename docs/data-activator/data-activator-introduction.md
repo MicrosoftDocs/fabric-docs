@@ -3,7 +3,7 @@ title: Introduction to Data Activator
 description: Learn about Data Activator and how it works.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom:
   - ignite-2023
 ms.search.form: product-reflex

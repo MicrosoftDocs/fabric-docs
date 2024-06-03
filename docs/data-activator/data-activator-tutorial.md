@@ -3,7 +3,7 @@ title: Data Activator tutorial using sample data
 description: Learn how Data Activator works using sample data.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.date: 03/22/2024
 ---
