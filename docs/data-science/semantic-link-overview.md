@@ -8,7 +8,7 @@ reviewer: msakande
 ms.topic: overview
 ms.custom:
   - ignite-2023
-ms.date: 05/31/2024
+ms.date: 06/03/2024
 ms.search.form: semantic link
 ---
 
@@ -70,7 +70,7 @@ The `FabricDataFrame` class:
 - Supports all pandas operations.
 - Subclasses the [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage.
 - Exposes semantic functions.
-- Supports the [add-measure](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures) method that let you use Power BI measures in data science work.
+- Supports the [add-measure](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures) method that lets you use Power BI measures in data science work.
 
 ## Related content
 
