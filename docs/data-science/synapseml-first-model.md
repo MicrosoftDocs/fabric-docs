@@ -8,7 +8,7 @@ ms.custom:
 ms.reviewer: ssalgado
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/30/2024
+ms.date: 06/03/2024
 ---
 
 # Build a model with SynapseML
@@ -81,7 +81,7 @@ display(model.transform(test))
 Alternatively, for these kinds of tasks that have a prebuilt solution, you can use SynapseML's integration with Azure AI services to transform your data in one step. Run the following code, replacing `<secret-name>` with the name of your Azure AI Services key secret and `<key-vault-name>` with the name of your key vault.
 
 ```python
-from synapse.ml.cognitive import TextSentiment
+from synapse.ml.services import TextSentiment
 from synapse.ml.core.platform import find_secret
 
 model = TextSentiment(
