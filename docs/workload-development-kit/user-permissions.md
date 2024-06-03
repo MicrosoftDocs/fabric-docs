@@ -3,7 +3,7 @@ title: Microsoft Fabric Workload Development Kit user permissions
 description: Learn about the Microsoft Fabric Workload Development Kit user permissions and review a list of permissions for internal and external users.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept
+ms.topic: concept-article
 ms.custom:
 ms.date: 05/27/2024
 ---
