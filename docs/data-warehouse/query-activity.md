@@ -8,11 +8,11 @@ ms.date: 05/28/2024
 ms.topic: conceptual
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
-# Monitor your running and completed queries using Query activity
+# Monitor your running and completed T-SQL queries using Query activity
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Monitoring SQL queries is essential for monitoring and troubleshooting performance of your Fabric warehouse, and also for maintaining the efficiency of the warehouse. With Query activity, you have a one-stop view of all running and historical queries along with a list of long-running and frequently run queries without having to run any T-SQL code. You can use Query activity ensure that queries aren't taking longer than expected to execute and are completing successfully.
+Monitoring SQL queries is essential for monitoring and troubleshooting performance of your Fabric warehouse, and also for maintaining the efficiency of the warehouse. With Query activity, you have a one-stop view of all running and historical T-SQL queries along with a list of long-running and frequently run queries without having to run any T-SQL code. You can use Query activity ensure that queries aren't taking longer than expected to execute and are completing successfully.
 
 ## Prerequisites
 
@@ -89,7 +89,6 @@ The same information regarding completed, failed, and canceled queries from Quer
 
 ## Limitations
 
-- Queries that are initially executed in the warehouse might take up to seven minutes to show up in Query activity. Once there's more activity within the Warehouse, the queries populate much more quickly.  
 - Historical queries can take up to 15 minutes to appear in Query activity depending on the concurrent workload being executed.
 - Only the top 10,000 rows can be shown in the Query runs and Query insights tabs for the given filter selections.  
 - An "Invalid object name queryinsights.exec_requests_history" error might occur if Query activity is opened immediately after a new warehouse is created, due to the underlying system views not yet generated. As a workaround, wait two minutes, then refresh the page.
