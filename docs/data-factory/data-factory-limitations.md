@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 04/26/2024
+ms.date: 06/03/2024
 ---
 
 # Data Factory limitations overview
@@ -17,7 +17,7 @@ For service level outages or degradation notifications, check [Microsoft Fabric 
 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
-- Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) and [event triggers](/azure/data-factory/how-to-create-custom-event-trigger) aren't yet available.
+- Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) isn't yet available.
 - Connectors don't support OAuth, Azure key vault (AKV), and Managed System Identity (MSI).
 - Connectors can't use parameters.
 - GetMetaData activity can't have a source from Fabric KQL databases.
