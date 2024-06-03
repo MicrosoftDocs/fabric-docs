@@ -25,8 +25,8 @@ The Google Cloud Storage connector supports the following capabilities in data p
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Basic |
-| **Lookup activity** | None | Basic |
+| **Copy activity (source/destination)** | None <br> On-premises | Basic |
+| **Lookup activity** | None <br> On-premises | Basic |
 
 To learn about how to connect to HTTP data in data pipelines, go to [Set up your HTTP connection](connector-http.md#set-up-your-connection-in-a-data-pipeline).
 
