@@ -16,13 +16,13 @@ ms.search.form: semantic link
 
 Power BI connectivity is at the core of semantic link in Microsoft Fabric. This article describes the ways that semantic link provides connectivity to semantic models for users of the Python pandas and Apache Spark ecosystems.
 
-A semantic model usually represents a high data standard that's the result of upstream data processing and refinement. Business analysts can use semantic models to:
+A semantic model usually represents a high data standard that's the result of upstream data processing and refinement. Business analysts can:
 
-- Encode their domain knowledge and business logic into Power BI measures.
-- Create Power BI reports from semantic models.
+- Encode domain knowledge and business logic into Power BI measures.
+- Create Power BI reports by using semantic models.
 - Use these reports to drive business decisions.
 
-When data scientists try to duplicate business logic in code languages or environments, it can lead to critical errors. Semantic link bridges the gap between the semantic models and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience. Semantic link reduces data mismatch and provides a way for business analysts and data scientists to collaborate seamlessly.
+When data scientists working with the same semantic models try to duplicate business logic in different code environments or languages, critical errors can result. Semantic link bridges the gap between semantic models and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience. Semantic link reduces data mismatch and provides a way for business analysts and data scientists to collaborate seamlessly.
 
 Semantic link offers connectivity to:
 
@@ -31,7 +31,7 @@ Semantic link offers connectivity to:
 
 ## SemPy Python library for pandas users
 
-The [SemPy Python library](/python/api/semantic-link/overview-semantic-link) is part of the semantic link feature and serves pandas users. SemPy functionality includes data retrieval from [tables](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-read-table), [computation of measures](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-measure), and [execution of DAX queries](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-dax) and metadata.
+The [SemPy Python library](/python/api/semantic-link/overview-semantic-link) is part of the semantic link feature and serves pandas users. SemPy functionality includes data retrieval from [tables](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-read-table), [computation of measures](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-measure), and [execution of Data Analysis Expressions (DAX) queries](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-dax) and metadata.
 
 - For Spark 3.4 and above, semantic link is available in the default runtime when using Fabric, and there's no need to install it.
 
@@ -39,7 +39,7 @@ The [SemPy Python library](/python/api/semantic-link/overview-semantic-link) is 
 
    ``` python
    %pip install -U semantic-link
-   ``` 
+   ```
 
 SemPy also extends pandas DataFrames with added metadata propagated from the Power BI data source, including:
 
@@ -137,9 +137,7 @@ display(df)
 
 ---
 
-Power BI measures are accessible through the virtual `_Metrics` table to bridge relational Spark SQL with multidimensional Power BI.
-
-In the following example, `Total Revenue` and `Revenue Budget` are measures defined in the `Sales Dataset` semantic model, and the other columns are dimensions. Aggregation functions like `AVG` are ignored for measures and are present only to provide consistency with SQL.
+Power BI measures are accessible through the virtual `_Metrics` table to bridge relational Spark SQL with multidimensional Power BI. In the following example, `Total Revenue` and `Revenue Budget` are measures defined in the `Sales Dataset` semantic model, and the other columns are dimensions. Aggregation functions like `AVG` are ignored for measures and are present only to provide consistency with SQL.
 
 The connector supports predicate push down of computations like `Customer[State] in ('CA', 'WA')` from Spark expressions into the Power BI engine, which enables use of the Power BI optimized engine.
 
@@ -160,7 +158,7 @@ GROUP BY
 
 ## Data augmentation with Power BI measures
 
-The `add_measure` operation is a powerful feature of semantic link that lets you augment data with measures from semantic models. This operation is available only in the SemPy Python library and isn't supported by the Spark native connector. For more information on the `add_measure` method, see [add_measure](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe#sempy-fabric-fabricdataframe-add-measure) in the `FabricDataFrame` class documentation.
+The `add_measure` operation is a powerful feature of semantic link that lets you augment data with measures from semantic models. This operation is available only in the SemPy Python library and isn't supported in the Spark native connector. For more information on the `add_measure` method, see [add_measure](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe#sempy-fabric-fabricdataframe-add-measure) in the `FabricDataFrame` class documentation.
 
 To use the SemPy Python library, install it in your notebook kernel by running the following code in a notebook cell:
 
@@ -170,7 +168,7 @@ To use the SemPy Python library, install it in your notebook kernel by running t
 from sempy.fabric import FabricDataFrame
 ```
 
-The following code example assumes an existing FabricDataFrame with data that you want to augment with measures from a semantic model.
+The following code example assumes you have an existing FabricDataFrame with data that you want to augment with measures from a semantic model.
 
 ```python
 df = FabricDataFrame({
