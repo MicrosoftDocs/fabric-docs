@@ -11,11 +11,11 @@ ms.date: 06/03/2024
 
 ---
 
-# Audit schema for sensitivity labels in Power BI
+# Audit schema for sensitivity labels in Fabric
 
-Whenever a sensitivity label on a semantic model, report, dashboard, or dataflow is applied, changed, or removed, that activity is recorded in the audit log for Power BI. You can track these activities in the unified audit log or in the Power BI activity log. For more information, see [Track user activities in Power BI](../admin/service-admin-auditing.md).
+Whenever a sensitivity label on a Fabric item is applied, changed, or removed, that activity is recorded in the audit log for Fabric, where you can track it. For information about tracking activites in the audit log, see [Track user activities in Microsoft Fabric](../admin/track-user-activities.md).
 
-This article documents the information in the Power BI auditing schema that's specific to sensitivity labels. It covers the following activity keys:
+This article documents the information in the Fabric auditing schema that's specific to sensitivity labels. It covers the following activity keys:
 
 * SensitivityLabelApplied
 * SensitivityLabelChanged
@@ -60,7 +60,7 @@ This field gives more detail about what caused the action to take place.
 |0|None|There are no other details.|
 |3|AutoByInheritance|The label change took place as a result of an automatically triggered inheritance process.|
 |4|AutoByDeploymentPipeline|The label change took place automatically as a result of the deployment pipeline process.|
-|5|PublicAPI|The label change action was performed by one of the following Power BI public admin REST APIs: [setLabels](/rest/api/power-bi/admin/information-protection-set-labels-as-admin), [removeLabels](/rest/api/power-bi/admin/information-protection-remove-labels-as-admin).|
+|5|PublicAPI|The label change action was performed by one of the following Fabric public admin REST APIs: [setLabels](/rest/api/power-bi/admin/information-protection-set-labels-as-admin), [removeLabels](/rest/api/power-bi/admin/information-protection-remove-labels-as-admin).|
 
 ## LabelEventType
 
