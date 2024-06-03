@@ -3,7 +3,7 @@ title: Microsoft Fabric features by SKU
 description: Learn which Fabric features are available to you depending on the capacity type. The article lists features according to SKUs by capacity type.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept
+ms.topic: conceptual
 ms.date: 05/24/2024
 ---
 
