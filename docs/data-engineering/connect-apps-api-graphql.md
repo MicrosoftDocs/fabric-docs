@@ -53,7 +53,7 @@ In the following steps, we showcase how to configure support for a ReactJS appli
 9. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. 
 10. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
 
-## Setting up a sample GraphQL API in Fabric for application access
+## Setup a sample GraphQL API for application access
 
 In this example, we create a GraphQL API to expose sample Lakehouse data to clients.
 
