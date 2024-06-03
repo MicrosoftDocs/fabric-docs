@@ -32,11 +32,11 @@ In the following steps, we showcase how to configure support for a ReactJS appli
 
 1. Sign in to the [Azure portal](https://ms.portal.azure.com/#allservices).
 
-2. Search for and select **Microsoft Entra ID**.
+1. Search for and select **Microsoft Entra ID**.
 
-3. From the *Manage* list, select **App registration**.
+1. From the *Manage* list, select **App registration**.
 
-4. Select **New registration**.
+1. Select **New registration**.
 
 1. Fill in the required information:
 
@@ -46,12 +46,12 @@ In the following steps, we showcase how to configure support for a ReactJS appli
 
    * (Optional) **Redirect URI** - Enter a URI if needed.
 
-5. Select **Register**. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they're required later.
-6. From the *Manage* list, select **API permissions**, then **Add permission**. 
-7. Add the **PowerBI Service**, select **Delegated permissions**, and select the **Item.Execute.All** permission. Make sure Admin consent isn't required. 
-8. Back to the *Manage* list, select **Authentication**, select **Add a platform**, then select **Single-page application**.
-9. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. 
-10. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
+1. Select **Register**. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they're required later.
+1. From the *Manage* list, select **API permissions**, then **Add permission**. 
+1. Add the **PowerBI Service**, select **Delegated permissions**, and select the **Item.Execute.All** permission. Make sure Admin consent isn't required. 
+1. Back to the *Manage* list, select **Authentication**, select **Add a platform**, then select **Single-page application**.
+1. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. 
+1. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
 
 ## Setup a sample GraphQL API for application access
 
@@ -61,15 +61,15 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 :::image type="content" source="media/get-started-api-graphql/switcher-data-engineering.png" alt-text="Screenshot of the Fabric workload switcher.":::
 
-2. In the Data Engineering experience, select **Use a sample** and, under **Lakehouse**, select **Public holidays** to automatically create a new Lakehouse with public holidays data.
+1. In the Data Engineering experience, select **Use a sample** and, under **Lakehouse**, select **Public holidays** to automatically create a new Lakehouse with public holidays data.
 
    :::image type="content" source="media/connect-apps-api-graphql/sample-lakehouse.png" alt-text="Screenshot on selecting the sample data Lakehouse option.":::
 
-3. Following the steps from [Create an API for GraphQL](get-started-api-graphql.md), create a new GraphQL API and select the Lakehouse you created. Add the public holidays table to let the clients access this data.
+1. Following the steps from [Create an API for GraphQL](get-started-api-graphql.md), create a new GraphQL API and select the Lakehouse you created. Add the public holidays table to let the clients access this data.
 
    :::image type="content" source="media/connect-apps-api-graphql/add-data-to-graphql.png" alt-text="Screenshot of adding the sample Lakehouse as GraphQL data source.":::
 
-4. Test the GraphQL API in the [API editor](api-graphql-editor.md) using the following sample query. It's the same query we use in our React client application:
+1. Test the GraphQL API in the [API editor](api-graphql-editor.md) using the following sample query. It's the same query we use in our React client application:
 
    ```json
     query {
@@ -83,7 +83,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     }
    ```
 
-5. Select **Copy endpoint** on the API item's toolbar.
+1. Select **Copy endpoint** on the API item's toolbar.
 
    :::image type="content" source="media/connect-apps-api-graphql/copy-endpoint.png" alt-text="Screenshot of the toolbar options for an API item.":::
 
@@ -96,7 +96,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 ## Configure a React app to access the public holidays API
 
 1. We use an existing React app as a starting point. Follow all the steps on the tutorial [Create a React single-page application and prepare it for authentication](/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code) to create a React project with Entra authentication already configured, including additional files and folders required to be added to the project structure. We only need to change three files to adapt the app for our GraphQL use case.
-2. In the *src* folder, open the *authConfig.js* file and replace the contents of the file with the following code snippet:
+1. In the *src* folder, open the *authConfig.js* file and replace the contents of the file with the following code snippet:
 
    ```javascript
     /*
@@ -172,16 +172,17 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     };
    ```
 
-   As you can see in the code above, it's important to use the correct scope to access the application. In our case `https://analysis.windows.net/powerbi/api/.default` or `https://analysis.windows.net/powerbi/api/Item.Execute.All`.
+   As you can see in the code above, it's important to use the correct scope to access the application. In our case `https://analysis.windows.net/powerbi/api/.default` or 
+   `https://analysis.windows.net/powerbi/api/Item.Execute.All`.
 
-3. Replace the following values with the values from the Microsoft Entra admin center.
+1. Replace the following values with the values from the Microsoft Entra admin center.
     - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered Entra application.
     - `authority` - This is composed of two parts:
         - The *Instance* is endpoint of the cloud provider. Check with the different available endpoints in [National clouds](entra/identity-platform/authentication-national-cloud#azure-ad-authentication-endpoints).
         - The *Tenant ID* is the identifier of the tenant where the application is registered. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
     - `graphQLEndpoint` - The Fabric API for GraphQL endpoint. Replace `Enter_the_GraphQL_Endpoint_Here` with the GraphQL API endpoint recorded earlier.
-2. Save the file.
-3. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
+1. Save the file.
+1. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
 
    ```javascript
     import React, { useState } from 'react';
@@ -294,9 +295,9 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     }
    ```
 
-3. Save the file.
+1. Save the file.
 
-2. Finally, under the *src/components* folder, open the *ProfileData.jsx* file and replace the contents of the file with the following code snippet:
+1. Finally, under the *src/components* folder, open the *ProfileData.jsx* file and replace the contents of the file with the following code snippet:
 
    ```javascript
     import React from "react";
@@ -330,14 +331,14 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     )};
    ```
 
-9. Save all the file changes.
-10. In your terminal application of choice, go the root folder of the React project and execute the command `npm start` to test the application locally.
-11. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](/entra/identity-platform/tutorial-single-page-app-react-call-api#call-the-microsoft-graph-api-from-the-application) to authenticate.
-11. After signing in, click on the button **Query Fabric API for GraphQL Data**.
+1. Save all the file changes.
+1. In your terminal application of choice, go the root folder of the React project and execute the command `npm start` to test the application locally.
+1. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](/entra/identity-platform/tutorial-single-page-app-react-call-api#call-the-microsoft-graph-api-from-the-application) to authenticate.
+1. After signing in, click on the button **Query Fabric API for GraphQL Data**.
 
    :::image type="content" source="media/connect-apps-api-graphql/test-react-app.png" alt-text="Screenshot of the React sample app after sign in":::
 
-12. A successful authenticated request to the GraphQL API in Fabric returns the data from GraphQL query to the Lakehouse in our React client application:
+1. A successful authenticated request to the GraphQL API in Fabric returns the data from GraphQL query to the Lakehouse in our React client application:
 
    :::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the React sample app after receiving the GraphQL request.":::
 
