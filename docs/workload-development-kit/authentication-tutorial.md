@@ -147,7 +147,7 @@ Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null
 
 ## Configure the workload local manifest and acquire a token for your application (frontend)
 > [!NOTE]
-> This step is only applicable for the devmode secnario.
+> This step is only applicable to the devmode scenario.
 
 After configuring your application, add the following configurations to the `devAADAppConfig` section of the `Frontend/.env.dev` configuration file located in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254):
 
