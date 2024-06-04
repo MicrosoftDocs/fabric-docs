@@ -30,8 +30,8 @@ Identify the downstream consumers of your data products and grant access accordi
 
 | User | Fabric items |
 | ---- | --- |
-| [Data scientists](#data-scientists) | Spark notebooks or lakehouse |
-| [Data engineers](#data-engineers) | Spark notebooks, data flows, or pipelines |
+| [Data scientists](#data-scientists) | Apache Spark notebooks or lakehouse |
+| [Data engineers](#data-engineers) | Apache Spark notebooks, data flows, or pipelines |
 | [Business analysts](#business-analysts) | SQL Endpoint |
 | [Report creators](#report-creators) | Semantic models |
 | [Report consumers](#report-consumers) | Power BI reports |
@@ -44,7 +44,7 @@ Identify the downstream consumers and grant access according to the minimum perm
 
 | User | Fabric items |
 | ---- | --- |
-| [Data scientists](#data-scientists) | Spark notebooks or lakehouse |
+| [Data scientists](#data-scientists) | Apache Spark notebooks or lakehouse |
 | [Business analysts](#business-analysts) | SQL Endpoint |
 | [Report creators](#report-creators) | Semantic models |
 | [Report consumers](#report-consumers) | Power BI reports |
@@ -62,7 +62,7 @@ Workspace role assignments follow the same guidelines for both hub and spoke and
 
 ### Data scientists
 
-Data scientists need access to data in a lakehouse to consume through Spark. For _data mesh_ and _hub and spoke_, the Spark users consume data from a separate workspace than the one the data resides in. This allows data scientists to have access to create models and experiments without adding clutter to the workspace that holds the data. Data scientists can also use other non-Spark services that connect directly to the OneLake data paths, such as Azure Databricks or Dremio.
+Data scientists need access to data in a lakehouse to consume through Apache Spark. For _data mesh_ and _hub and spoke_, the Spark users consume data from a separate workspace than the one the data resides in. This allows data scientists to have access to create models and experiments without adding clutter to the workspace that holds the data. Data scientists can also use other non-Spark services that connect directly to the OneLake data paths, such as Azure Databricks or Dremio.
 
 To provision access for data scientists, use the share button to share the lakehouse. Select the **Read all Apache Spark** box in the dialog. For lakehouses with [OneLake data access roles](.\get-started-data-access-roles.md) enabled, give the same users access by adding them to a OneLake data access role. Using OneLake data access roles gives finer-grained access to the data. Data engineers can then create [shortcuts](../onelake-shortcuts.md) to select tables or folders in a lakehouse.
 
