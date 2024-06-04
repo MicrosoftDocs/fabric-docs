@@ -24,6 +24,6 @@ You see a spinner for a long time (more than a minute) when trying to create or 
 
 You can refresh the page and retry to open or edit the dataflow.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

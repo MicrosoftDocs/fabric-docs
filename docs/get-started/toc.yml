@@ -17,6 +17,14 @@ items:
   items:
   - name: End-to-end tutorials
     href: end-to-end-tutorials.md
+- name: Task flows
+  items:
+  - name: Task flow overview
+    href: task-flow-overview.md
+  - name: Set up a task flow
+    href: task-flow-create.md
+  - name: Work with task flows
+    href: task-flow-work-with.md
 - name: Decision guides
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
@@ -69,6 +77,8 @@ items:
       href: copilot-data-science-privacy-security.md
     - name: Responsible use in Power BI
       href: copilot-power-bi-privacy-security.md
+    - name: Responsible use in Real-Time Intelligence
+      href: copilot-real-time-intelligence-privacy-security.md
   - name: Copilot for Data Factory
     href: copilot-fabric-data-factory.md
   - name: Copilot for Data Science and Data Engineering
@@ -79,6 +89,10 @@ items:
       href: copilot-notebooks-chat-magics.md
     - name: Use the Copilot chat panel
       href: copilot-notebooks-chat-pane.md
+  - name: Copilot for Data Warehouse
+    href: ../data-warehouse/copilot.md
+  - name: Copilot for Real-Time Intelligence
+    href: copilot-real-time-intelligence.md
   - name: Copilot in Fabric Consumption
     href: copilot-fabric-consumption.md
 - name: Direct Lake
@@ -141,6 +155,36 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Tenant migrations paused for June 2024
+      href: known-issues/known-issue-749-tenant-migrations-paused-june-2024.md
+    - name: Shortcut creation on a lakehouse preview table takes long time
+      href: known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md
+    - name: Semantic models in Desktop sometimes fail in March 2024 and later versions
+      href: known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md
+    - name: Real-Time hub Set alert doesn't work for derived streams
+      href: known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md
+    - name: Opening a reflex for a stream in Real-Time hub doesn't work
+      href: known-issues/known-issue-729-opening-reflex-stream-real-time-hub-not-work.md
+    - name: Virtual network data gateway service interruption
+      href: known-issues/known-issue-742-virtual-network-data-gateway-service-interruption.md
+    - name: Pipeline using XML format copy gets stuck
+      href: known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md
+    - name: Azure SQL Database change data doesn't propagate to mirror
+      href: known-issues/known-issue-723-sql-azure-database-change-data-not-propagate-mirror.md
+    - name: Environment doesn't work when runtime version is changed to Runtime 1.1
+      href: known-issues/known-issue-728-environment-not-work-runtime-version-changed-1-1.md
+    - name: Shortcuts to a firewall-enabled ADLS stop working if lakehouse is shared
+      href: known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md
+    - name: West India region doesn't support on-premises data gateway for data pipelines
+      href: known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md
+    - name: Delta tables don't appear in SQL Analytics Endpoint Object Explorer
+      href: known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md
+    - name: Spark session doesn't start when managed virtual network's capacity moved
+      href: known-issues/known-issue-721-spark-session-managed-virtual-network-capacity-moved.md
+    - name: OneLake under-reports transactions in the Other category
+      href: known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md
+    - name: Response times when composing SQL queries slower than expected
+      href: known-issues/known-issue-716-response-times-composing-sql-queries-slower.md
     - name: TMDL semantic models won't open in Desktop after web edited
       href: known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md
     - name: Sign-in required when you browse to a secure embed URL

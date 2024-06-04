@@ -4,26 +4,26 @@ description: A known issue is posted where OneLake audit events don't show up in
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/01/2024
+ms.date: 05/16/2024
 ms.custom: known-issue-710
 ---
 
 # Known issue - OneLake audit events don't show up in Microsoft 365 admin center
 
-The basic audit events for OneLake aren't showing up in the Microsoft 365 admin center since April 21, 2024.
+The audit events for OneLake aren't showing up in the Microsoft 365 admin center from April 21, 2024 through May 5, 2024.
 
-**Status:** Open
+**Status:** Fixed: May 13, 2024
 
 **Product Experience:** OneLake
 
 ## Symptoms
 
-The Microsoft 365 admin center shows no rows for OneLake events.
+The Microsoft 365 admin center shows no rows for OneLake events between April 21, 2024 and May 5, 2024.
 
 ## Solutions and workarounds
 
-No workarounds at this time. This article will be updated when the fix is released.
+Starting May 5, 2024, you can see audit events for OneLake.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

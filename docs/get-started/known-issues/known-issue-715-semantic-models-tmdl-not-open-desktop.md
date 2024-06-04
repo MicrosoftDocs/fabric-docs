@@ -24,6 +24,6 @@ When you try to open the semantic model in Power BI Desktop or export using Fabr
 
 To manually fix the issue, open each of the TMDL files. Rename the **culture** TMDL object type name from **cultureInfo** to **culture**.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues) 

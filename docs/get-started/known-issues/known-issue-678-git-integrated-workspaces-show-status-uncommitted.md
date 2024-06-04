@@ -27,6 +27,6 @@ To correct the status, follow these steps:
 1. Commit all changes from workspaces into Git. If conflicts are created, you can resolve manually.
 1. Undo all changes in the workspace. Open all reports in the March version of Power BI Desktop, commit changes, and then sync Git into all workspaces.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

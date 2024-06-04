@@ -24,6 +24,6 @@ You can't change your column's or measure's **Format** value to **Currency**. Th
 
 If you're working within Power BI, you can work around this issue by making the change in Power BI Desktop. You can download the .pbix file, make the change in Power BI Desktop, and then upload the .pbix file back to the service. If you're working in a data warehouse, lakehouse, or datamart, you can work around this issue by using the XMLA endpoint to make the change.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

@@ -3,10 +3,11 @@ title: Understand the metrics app storage page
 description: Learn how to read the Microsoft Fabric Capacity metrics app's storage page.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: how to
+ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
 ms.date: 02/21/2024
 ---
 
@@ -86,7 +87,7 @@ The storage page displays Fabric items that are in the selected capacity. The fo
   |---------------------|-------------|
   | Data Activator      | Reflex      |
   | Lakehouse           | Lakehouse   |
-  | Real-Time Analytics | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
+  | Real-Time Intelligence | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
 
 ## Related content
 

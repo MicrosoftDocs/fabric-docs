@@ -3,6 +3,8 @@ title: Automate deployment pipeline by using Fabric APIs
 description: Learn how to automate your deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool, by using Fabric APIs.
 author: mberdugo
 ms.author: monaberdugo
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: concept-article
 ms.date: 05/09/2024
 #customer intent: As a developer, I want to automate my deployment pipeline using Fabric APIs so that I can streamline the release process.
@@ -59,7 +61,7 @@ You can also use other [Fabric REST API](/rest/api/fabric/) calls, to complete r
 
 You can use the following PowerShell scripts to understand how to perform several automation processes. To view or copy the text in a PowerShell sample, use the links in this section.
 
-* [Deploy all](https://microsofteur-my.sharepoint.com/:u:/g/personal/lialezra_microsoft_com/EelWAzYXIkxGgQChiuqE7PYBRYRlFL8mCV93Wx0CsjBTyA?e=h8S89e)
+* [Deploy all](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/DeploymentPipelines-DeployAll.ps1)
 
   Provide the following information:
 
@@ -68,7 +70,7 @@ You can use the following PowerShell scripts to understand how to perform severa
   * Target stage name
   * Deployment notes (optional)
 
-* [Selective deploy](https://microsofteur-my.sharepoint.com/:u:/g/personal/lialezra_microsoft_com/EdZ4KzPPEMxGk0abRZ-0uuQBv7O73CSJo0YGgdBJcRiQ8Q?e=MKpMFy)
+* [Selective deploy](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/DeploymentPipelines-SelectiveDeploy.ps1)
 
   Provide the following information:
 

@@ -18,7 +18,7 @@ This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](inc
 
 This tutorial covers these steps:
 
-[!div class="checklist"]
+> [!div class="checklist"]
 > * Install custom libraries
 > * Load the data
 > * Understand and process the data with exploratory data analysis, and show the use of the Fabric Data Wrangler feature
