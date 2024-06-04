@@ -157,7 +157,7 @@ After configuring your application, add the following configurations to the `ext
 }
 ```
 
-:::image type="content" source="./media/authentication-tutorial/configure-local-workload-manifest-xml.png" alt-text="Screenshot showing configuration of local workload manifest xml file.":::
+:::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot showing configuration of local workload manifest xml file.":::
 
 ## Ask for a token and consent the application
 
