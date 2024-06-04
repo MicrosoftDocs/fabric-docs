@@ -95,10 +95,8 @@ You can fit much information in this option. If you find that the AI consistentl
 
 ## Next step -or- Related content
 
-> [!div class="nextstepaction"] <!--
+> [!div class="nextstepaction"]
 > [Next sequential article title](./how-to-create-ai-skill.md)
-
--->
 
 -or-
 
