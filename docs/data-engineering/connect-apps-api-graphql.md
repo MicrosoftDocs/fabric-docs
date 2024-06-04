@@ -53,7 +53,7 @@ In the following steps, we showcase how to configure support for a ReactJS appli
 1. For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. 
 1. Back to **Authorization**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
 
-## Setup a sample GraphQL API for application access
+## Set up a sample GraphQL API for application access
 
 In this example, we create a GraphQL API to expose sample Lakehouse data to clients.
 
@@ -157,7 +157,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
      * Scopes you add here will be prompted for user consent during sign-in. 
      * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
      * For more information about OIDC scopes, visit: 
-     * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+     * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
      */
     export const loginRequest = {
         scopes: ["https://analysis.windows.net/powerbi/api/.default"]
@@ -336,7 +336,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 1. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](/entra/identity-platform/tutorial-single-page-app-react-call-api#call-the-microsoft-graph-api-from-the-application) to authenticate.
 1. After signing in, click on the button **Query Fabric API for GraphQL Data**.
 
-   :::image type="content" source="media/connect-apps-api-graphql/test-react-app.png" alt-text="Screenshot of the React sample app after sign in":::
+   :::image type="content" source="media/connect-apps-api-graphql/test-react-app.png" alt-text="Screenshot of the React sample app after sign in.":::
 
 1. A successful authenticated request to the GraphQL API in Fabric returns the data from GraphQL query to the Lakehouse in our React client application:
 
