@@ -156,6 +156,10 @@ X_res, y_res = sm.fit_resample(X_train, y_train)
 new_train = pd.concat([X_res, y_res], axis=1)
 ```
 
+> [!TIP]
+> You can safely ignore the MLflow warning message that appears when you run this cell. 
+> If you see a **ModuleNotFoundError** message, you missed running the first cell in this notebook, which installs the `imblearn` library.  You need to install this library each time you restart the notebook. Go back and re-run all the cells starting with the first cell in this notebook.
+
 ### Model training
 
 * Train the model using Random Forest with maximum depth of 4 and 4 features
