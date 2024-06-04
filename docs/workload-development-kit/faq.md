@@ -18,7 +18,7 @@ This article contains frequently asked questions relating to the Microsoft Workl
 ### I have a question that isn't answered in this FAQ, where can I get help?
 
 Please search and post to [Microsoft-Fabric-workload-development-sample/discussions](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/discussions) 
-or [Microsoft-Fabric-workload-development-sample/issues](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/issues) so these can be addressed by our team. 
+or [Microsoft-Fabric-workload-development-sample/issues](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/issues) so these can be addressed by the Fabric team. 
 
 ## Fabric Workload Design
 
