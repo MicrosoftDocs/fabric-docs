@@ -24,13 +24,15 @@ To gain more insights or build machine learning models, you can dive deeper into
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 - For Spark 3.4 and above, semantic link is available in the default runtime when using Fabric, and there's no need to install it.
+
 - For Spark 3.3 or below, or to update to the latest version of semantic link, run the following command:
   ```python
   %pip install -U semantic-link
   ```
 
-1. In the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)], create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
-1. [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+- In the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)], create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+
+- [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 ## Use SemPy functions in semantic models
 
@@ -46,7 +48,7 @@ The `list_relationships` function in the `sempy.fabric` module returns a list of
 
 This function works by using semantic link to provide annotated DataFrames. The DataFrames include the necessary metadata to understand the relationships within the semantic model. The annotated DataFrames make it easy to analyze the semantic model's structure and use it in machine learning models or other data analysis tasks.
 
-To use the `list_relationships` function, you first import the `sempy.fabric` module. Then, you call the function by using the name or UUID of your Power BI semantic model, as shown in the following example:
+To use the `list_relationships` function, you first import the `sempy.fabric` module. Then you call the function by using the name or UUID of your Power BI semantic model, as shown in the following example:
 
 ```python
 import sempy.fabric as fabric
@@ -99,7 +101,7 @@ fabric.list_relationship_violations(tables)
 
 The preceding code calls the `list_relationship_violations` function with a dictionary that contains the _Sales_, _Products_, and _Customers_ tables from the _my_dataset_ semantic model. The function returns a pandas DataFrame with one row per relationship violation, allowing you to easily identify and address any issues within your semantic model.
 
-You can customize the function by specifying how to handle missing keys, defining the number of missing keys to report, and setting a coverage threshold. By using the `list_relationship_violations` function, you can ensure that your semantic model is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
+You can customize the function by setting a coverage threshold, specifying how to handle missing keys, and defining the number of missing keys to report. By using the `list_relationship_violations` function, you can ensure that your semantic model is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
 
 ## Use SemPy functions in pandas DataFrames
 
@@ -142,7 +144,7 @@ list_relationship_violations(tables, relationships)
 
 The preceding code calls the `list_relationship_violations` function with a list of three pandas DataFrames, `df_sales`, `df_products`, and `df_customers`, plus the relationships DataFrame from the `find_relationships` function. The `list_relationship_violations` function returns a pandas DataFrame with one row per relationship violation, allowing you to easily identify and address any issues within your data.
 
-You can customize the function by specifying how to handle missing keys, defining the number of missing keys to report, and setting a coverage threshold. By using the `list_relationship_violations` function with pandas DataFrames, you can ensure that your data is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
+You can customize the function by setting a coverage threshold, specifying how to handle missing keys, and defining the number of missing keys to report. By using the `list_relationship_violations` function with pandas DataFrames, you can ensure that your data is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
 
 ## Related content
 
