@@ -18,7 +18,7 @@ The following table lists Fabric features according to SKU type. The table lists
 | Feature                                                                                                  | F SKU         | P SKUs   |
 |----------------------------------------------------------------------------------------------------------|:-------------:|:--------:|
 | [Copilot](../get-started/copilot-fabric-overview.md)                                                     | F64 or higher | &#x2705; |
-| [Workspace identity](../security/workspace-identity.md)                                                  | F64 or higher | &#x2705; |
+| [Workspace identity](../security/workspace-identity.md)                                                  | F64 or higher | &#x274C; |
 | [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)                  | F64 or higher | &#x274C; |
 | [Trusted workspace access](../security/security-trusted-workspace-access.md)                             | F64 or higher | &#x274C; |
 | [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)                             | &#x2705;      | &#x274C; |
