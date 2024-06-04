@@ -1,5 +1,5 @@
 ---
-title: Concept: AI Skill Creation
+title: Concept: AI Skill Creation (preview)
 titleSuffix: AI Skill Creation
 description: Learn how to create an AI Skill that can answer questions about data.
 author: IAmGrootel
@@ -63,6 +63,6 @@ The AI Skill is currently in public preview and has defined limitations. Future 
 
 ## Related content
 
-- [Related article title](link.md)
-- [Related article title](link.md)
+- [AI Skill Scenario](link.md)
+- [Create an AI Skill](link.md)
 - [Related article title](link.md)

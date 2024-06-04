@@ -1,5 +1,5 @@
 ---
-title: Create an AI Skill
+title: Create an AI Skill (preview)
 description: Learn how to create an AI Skill
 author: IAmGrootel
 ms.author: avangrootel
@@ -100,8 +100,8 @@ You can fit much information in this option. If you find that the AI consistentl
 
 -or-
 
-* [Related article title](link.md)
-* [Related article title](link.md)
+- [AI Skill Creation](link.md)
+- [Create an AI Skill](link.md)
 * [Related article title](link.md)
 
 <!-- Optional: Next step or Related content - H2

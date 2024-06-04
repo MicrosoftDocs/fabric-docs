@@ -144,8 +144,8 @@ Share the AI Skill with your colleagues and have them try it out. You'll soon be
 
 ## Related content
 
-- [Related article title](link.md)
-- [Related article title](link.md)
+- [AI Skill Creation](link.md)
+- [Create an AI Skill](link.md)
 - [Related article title](link.md)
 
 <!-- Optional: Related content - H2
