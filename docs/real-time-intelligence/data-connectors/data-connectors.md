@@ -25,7 +25,7 @@ The following table summarizes the available data connectors, tools, and integra
 | [Azure Event Hubs](#azure-event-hubs) | **Ingestion** | :heavy_check_mark: | First party | Messaging |
 | [Azure Functions](#azure-functions) | **Export**<br />**Ingestion** |  | First party | Workflow integrations |
 | [Azure Stream Analytics](#azure-stream-analytics) | **Ingestion** | :heavy_check_mark: | First party | Event processing |
-| [Cribl Stream](#cribl-stream) | **Ingestion** | :heavy_check_mark: | [CRIBL INFO Open source](https://github.com/Azure/logstash-output-kusto/) | integrations |
+| [Cribl Stream](#cribl-stream) | **Ingestion** | :heavy_check_mark: | First party | Telemetry, Logs, Metrics, Machine data |
 | [Logstash](#logstash) | **Ingestion** |  | [Open source](https://github.com/Azure/logstash-output-kusto/) | Logs |
 | [NLog](#nlog) | **Ingestion** | :heavy_check_mark: | [Open source](https://github.com/Azure/azure-kusto-nlog-sink) | Telemetry, Logs, Metrics |
 | [Open Telemetry](#open-telemetry) | **Ingestion** | :heavy_check_mark: | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs |
@@ -137,8 +137,6 @@ The following table summarizes the available connectors and their capabilities:
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming
 * **Use cases:** Machine data processing
-* **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
-* **Repository:** Microsoft Azure - https://github.com/Azure/logstash-output-kusto/
 * **Documentation:** [Get data from Cribl](/azure/data-explorer/ingest-data-cribl?context=/fabric/context/context-rti&pivots=fabric)
 
 ### Logstash
