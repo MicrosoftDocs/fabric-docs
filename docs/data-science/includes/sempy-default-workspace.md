@@ -6,12 +6,12 @@ ms.author: mopeakande
 ms.topic: include
 ms.custom:
   - ignite-2023
-ms.date: 07/14/2023
+ms.date: 06/03/2024
 ---
 
-Your notebook, semantic model (Power BI dataset), and [Lakehouse](/fabric/data-engineering/lakehouse-overview) can be located in the same workspace or in different workspaces. By default, SemPy tries to access your semantic model from:
+Your notebook, Power BI dataset semantic model, and [lakehouse](/fabric/data-engineering/lakehouse-overview) can be located in the same workspace or in different workspaces. By default, SemPy tries to access your semantic model from:
 
-- the workspace of your Lakehouse, if you've attached a Lakehouse to your notebook.
-- the workspace of your notebook, if there's no Lakehouse attached.
+- The workspace of your lakehouse, if you attached a lakehouse to your notebook.
+- The workspace of your notebook, if there's no lakehouse attached.
 
-If your semantic model isn't located in the default workspace that SemPy tries to access, you must specify the workspace of your semantic model when you call a SemPy method.
+If your semantic model isn't located in either of these workspaces, you must specify the workspace of your semantic model when you call a SemPy method.

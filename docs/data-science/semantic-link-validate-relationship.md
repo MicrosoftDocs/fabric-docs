@@ -14,7 +14,7 @@ ms.search.form: semantic link
 
 # Explore relationships in semantic models and dataframes
 
-In this article, you learn to use Python SemPy semantic link functions to discover and validate relationships in your Power BI semantic models and pandas DataFrames.
+In this article, you learn to use the Python SemPy semantic link functions to discover and validate relationships in your Power BI semantic models and pandas DataFrames.
 
 In data science and machine learning, it's important to understand the structure and relationships within your data. Power BI is a powerful tool that allows you to model and visualize your data.
 
@@ -23,18 +23,18 @@ To gain more insights or build machine learning models, you can dive deeper into
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
-1. In the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)], create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
-1. [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
-
 - For Spark 3.4 and above, semantic link is available in the default runtime when using Fabric, and there's no need to install it.
 - For Spark 3.3 or below, or to update to the latest version of semantic link, run the following command:
   ```python
   %pip install -U semantic-link
   ```
 
+1. In the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)], create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+1. [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+
 ## Use SemPy functions in semantic models
 
-You can use the following functions from the `sempy.fabric` module in Power BI semantic models:
+You can use the following `sempy.fabric` functions in Power BI semantic models:
 
 - `list_relationship` to list relationships
 - `plot_relationship_metadata` to visualize relationships
@@ -61,9 +61,9 @@ The preceding code calls the `list_relationships` function with a Power BI seman
 
 ### Visualize relationships in semantic models
 
-The `plot_relationship_metadata` function helps you visualize relationships in a semantic model so you can gain a better understanding of the model's structure. This function creates a graph that displays the connections between tables and columns. The graph makes it easier to understand the semantic model's structure and the relationship of how different elements.
+The `plot_relationship_metadata` function helps you visualize relationships in a semantic model so you can gain a better understanding of the model's structure. This function creates a graph that displays the connections between tables and columns. The graph makes it easier to understand the semantic model's structure and the relationship of the different elements.
 
-The following code shows how to use the `plot_relationship_metadata` function:
+The following example shows how to use the `plot_relationship_metadata` function:
 
 ```python
 import sempy.fabric as fabric
@@ -73,15 +73,15 @@ relationships = fabric.list_relationships("my_dataset")
 plot_relationship_metadata(relationships)
 ```
 
-In the preceding code, the `list_relationships` function retrieves the relationships in the *my_dataset* semantic model, and the `plot_relationship_metadata` function creates a graph to visualize the relationships. You can customize the graph by specifying which columns to include and how to handle missing keys, and by providing more [graphviz](https://pypi.org/project/graphviz/) attributes.
+In the preceding code, the `list_relationships` function retrieves the relationships in the *my_dataset* semantic model, and the `plot_relationship_metadata` function creates a graph to visualize the relationships. You can customize the graph by defining which columns to include, specifying how to handle missing keys, and providing more [graphviz](https://pypi.org/project/graphviz/) attributes.
 
 ### Validate relationships in semantic models
 
-Now that you have a better understanding of the relationships in your semantic model, you can use the `list_relationship_violations` function to validate these relationships and identify any potential issues or inconsistencies.
+Now that you have a better understanding of the relationships in your semantic model, you can use the `list_relationship_violations` function to validate these relationships and identify any potential issues or inconsistencies. The `list_relationship_violations` function helps you validate the content of your tables to ensure that they match the relationships defined in your semantic model.
 
-The `list_relationship_violations` function helps you validate the content of your tables to ensure that they match the relationships defined in your semantic model. By using this function, you can identify inconsistencies with the specified relationship multiplicity. You can address any issues before they impact your data analysis or machine learning models.
+By using this function, you can identify inconsistencies with the specified relationship multiplicity. You can address any issues before they impact your data analysis or machine learning models.
 
-To use the `list_relationship_violations` function, you first import the `sempy.fabric` module and read the tables from your semantic model. Then you call the function with a dictionary that maps table names to the DataFrames with table content.
+To use the `list_relationship_violations` function, first you import the `sempy.fabric` module and read the tables from your semantic model. Then you call the function with a dictionary that maps table names to the DataFrames with table content.
 
 The following example code shows how to list relationship violations:
 
@@ -99,9 +99,7 @@ fabric.list_relationship_violations(tables)
 
 The preceding code calls the `list_relationship_violations` function with a dictionary that contains the _Sales_, _Products_, and _Customers_ tables from the _my_dataset_ semantic model. The function returns a pandas DataFrame with one row per relationship violation, allowing you to easily identify and address any issues within your semantic model.
 
-You can customize the function by specifying how to handle missing keys, defining the number of missing keys to report, and setting a coverage threshold.
-
-By using the `list_relationship_violations` function, you can ensure that your semantic model is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
+You can customize the function by specifying how to handle missing keys, defining the number of missing keys to report, and setting a coverage threshold. By using the `list_relationship_violations` function, you can ensure that your semantic model is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
 
 ## Use SemPy functions in pandas DataFrames
 
@@ -109,7 +107,7 @@ The `list_relationships`, `plot_relationship_metadata`, and `list_relationship_v
 
 ### Find relationships in pandas DataFrames
 
-The `find_relationships` function in the `sempy.relationship` module helps data scientists and business analysts discover potential relationships within a list of pandas DataFrames. By using this function, you can identify possible connections between tables and columns, allowing you to better understand the structure of your data and how different elements are related.
+The `find_relationships` function in the `sempy.relationships` module helps data scientists and business analysts discover potential relationships within a list of pandas DataFrames. By using this function, you can identify possible connections between tables and columns, allowing you to better understand the structure of your data and how different elements are related.
 
 The following example code shows how to find relationships in pandas DataFrames:
 
@@ -127,11 +125,11 @@ You can customize the function by specifying a coverage threshold, a name simila
 
 ### List relationship violations in pandas DataFrames
 
-After you discover potential relationships with your pandas DataFrames by using the `find_relationships` function, you can use the `list_relationship_violations` function to validate these relationships and identify any potential issues or inconsistencies.
+After you discover potential relationships with your pandas DataFrames by using the `find_relationships` function, you can use the `list_relationship_violations` function to validate these relationships and identify any potential issues or inconsistencies. The `list_relationship_violations` function helps you validate the content of your tables and ensure that they match the discovered relationships.
 
-The `list_relationship_violations` function helps you validate the content of your tables and ensure that they match the discovered relationships. By using this function, you can identify inconsistencies with the specified relationship multiplicity. You can address any issues before they impact your data analysis or machine learning models.
+By using this function, you can identify inconsistencies with the specified relationship multiplicity. You can address any issues before they impact your data analysis or machine learning models.
 
-The following example code shows how to find relationship violations in a pandas DataFrame:
+The following example code shows how to find relationship violations in pandas DataFrames:
 
 ```python
 from sempy.relationships import find_relationships, list_relationship_violations
@@ -144,9 +142,7 @@ list_relationship_violations(tables, relationships)
 
 The preceding code calls the `list_relationship_violations` function with a list of three pandas DataFrames, `df_sales`, `df_products`, and `df_customers`, plus the relationships DataFrame from the `find_relationships` function. The `list_relationship_violations` function returns a pandas DataFrame with one row per relationship violation, allowing you to easily identify and address any issues within your data.
 
-You can customize the function by specifying how to handle missing keys, defining the number of missing keys to report, and setting a coverage threshold.
-
-By using the `list_relationship_violations` function with pandas DataFrames, you can ensure that your data is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
+You can customize the function by specifying how to handle missing keys, defining the number of missing keys to report, and setting a coverage threshold. By using the `list_relationship_violations` function with pandas DataFrames, you can ensure that your data is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
 
 ## Related content
 
