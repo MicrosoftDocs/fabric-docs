@@ -1,6 +1,6 @@
 ---
 title:  Fabric decision guide - choose a data store
-description: Review a reference table and some quick scenarios to help in choosing whether to use a warehouse, lakehouse, Power BI Datamart, or KQL Database for your data in Fabric.
+description: Review a reference table and some quick scenarios to help in choosing whether to use a warehouse, lakehouse, Power BI Datamart, or event house for your data in Fabric.
 author: bradleyschacht
 ms.author: scbradl
 ms.reviewer: sngun, wiassaf
@@ -18,7 +18,7 @@ Use this reference guide and the example scenarios to help you choose a data sto
 
 ## Data store properties
 
-| | **Warehouse** | **Lakehouse** | **Power BI Datamart**  | **KQL Database** ([**Eventhouse**](#eventhouse)) |
+| | **Warehouse** | **Lakehouse** | **Power BI Datamart**  | **Event house** |
 |---|:---:|:---:|:---:|:---:|
 | **Data volume** | Unlimited | Unlimited | Up to 100 GB | Unlimited |
 | **Type of data** | Structured | Unstructured,semi-structured,structured | Structured | Unstructured, semi-structured, structured |
@@ -36,10 +36,6 @@ Use this reference guide and the example scenarios to help you choose a data sto
 | **Advanced analytics** |  |  |  |Time Series native elements, Full geospatial storing and query capabilities |
 | **Advanced formatting support** |  |  |  | Full indexing for free text and semi-structured data like JSON |
 | **Ingestion latency**|  |  |  | Queued ingestion, Streaming ingestion has a couple of seconds latency |
-
-<a name=eventhouse></a>
-> [!NOTE]
-> Eventhouse is a workspace for multiple KQL databases. KQL Database is generally available, whereas Eventhouse is in preview. For more information, see [Eventhouse overview (preview)](../real-time-intelligence/eventhouse.md).
 
 ## Scenarios
 
@@ -69,7 +65,7 @@ Ash works with business analysts familiar with Power BI and Microsoft Office, an
 
 Daisy is business analyst experienced with using Power BI to analyze supply chain bottlenecks for a large global retail chain. They need to build a scalable data solution that can handle billions of rows of data and can be used to build dashboards and reports that can be used to make business decisions. The data comes from plants, suppliers, shippers, and other sources in various structured, semi-structured, and unstructured formats.
 
-Daisy decides to use a **KQL Database** because of its scalability, quick response times, advanced analytics capabilities including time series analysis, geospatial functions, and fast direct query mode in Power BI. Queries can be executed using Power BI and KQL to compare between current and previous periods, quickly identify emerging problems, or provide geo-spatial analytics of land and maritime routes.
+Daisy decides to use an **event house** because of its scalability, quick response times, advanced analytics capabilities including time series analysis, geospatial functions, and fast direct query mode in Power BI. Queries can be executed using Power BI and KQL to compare between current and previous periods, quickly identify emerging problems, or provide geo-spatial analytics of land and maritime routes.
 
 ## Related content
 
@@ -77,4 +73,4 @@ Daisy decides to use a **KQL Database** because of its scalability, quick respon
 - [Create a warehouse in Microsoft Fabric](../data-warehouse/create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
 - [Introduction to Power BI datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
-- [Create a KQL database](../real-time-intelligence/create-database.md)
+- [Create an event house](../real-time-intelligence/create-eventhouse.md)
