@@ -22,8 +22,8 @@ Are you ready to have conversations about your data? You can create AI experienc
 ## Prerequisites
 
 - An F64 Fabric capacity or higher.
-- [Copilot tenant switch](../admin/service-admin-portal-copilot) is enabled.
-- [Cross-Geo sharing for AI](../admin/service-admin-portal-copilot) is enabled, if relevant.
+- [Copilot tenant switch](../admin/service-admin-portal-copilot.md) is enabled.
+- [Cross-Geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
 - A Warehouse or Lakehouse with data.
 
 ## Creating and configuring an AI Skill
@@ -95,8 +95,10 @@ You can fit much information in this option. If you find that the AI consistentl
 
 ## Next step -or- Related content
 
-> [!div class="nextstepaction"]
-> [Next sequential article title](link.md)
+> [!div class="nextstepaction"] <!--
+> [Next sequential article title](./how-to-create-ai-skill.md)
+
+-->
 
 -or-
 

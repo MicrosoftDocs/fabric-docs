@@ -25,8 +25,8 @@ With the Fabric AI Skill, you can make data more accessible to your colleagues. 
 **A concept article typically does not have a prerequisites block**
 
 - An F64 Fabric capacity or higher.
-- [Copilot tenant switch](../admin/service-admin-portal-copilot) is enabled.
-- [Cross-Geo sharing for AI](../admin/service-admin-portal-copilot) is enabled, if relevant.
+- [Copilot tenant switch](../admin/service-admin-portal-copilot.md) is enabled.
+- [Cross-Geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
 - A Warehouse or Lakehouse in Fabric with tables of data you want to access.
 
 ## How the AI Skill works
