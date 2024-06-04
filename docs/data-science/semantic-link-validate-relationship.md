@@ -23,14 +23,14 @@ Data scientists and business analysts can use SemPy functions to list, visualize
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
-1. For Spark 3.4 and above, semantic link is available in the default runtime when using Fabric, and there's no need to install it. For Spark 3.3 or below, or to update to the latest version of semantic link, run the following command:
-   ```python
-   %pip install -U semantic-link
-   ```
+- For Spark 3.4 and above, semantic link is available in the default runtime when using Fabric, and there's no need to install it. For Spark 3.3 or below, or to update to the latest version of semantic link, run the following command:
+  ```python
+  %pip install -U semantic-link
+  ```
 
-1. In the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)], create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+- In the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)], create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 
-1. [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+- [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 ## Use SemPy functions in semantic models
 
