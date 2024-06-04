@@ -157,13 +157,13 @@
         },    
         {
           "source_path_from_root": "/docs/data-factory/metrics-app-storage-page.md",
-          "redirect_url": "/fabric/enterprise/metrics-app-onelake-page",
+          "redirect_url": "/fabric/enterprise/metrics-app-storage-page",
           "redirect_document_id": false
         },
         {
           "source_path_from_root": "/docs/data-factory/metrics-app-compute-page.md",
-          "redirect_url": "/fabric/enterprise/metrics-app-overview-page",
+          "redirect_url": "/fabric/enterprise/metrics-app-compute-page",
           "redirect_document_id": false
-        }               
+        }
     ]
 }
