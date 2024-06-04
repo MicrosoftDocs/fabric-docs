@@ -8,12 +8,12 @@ ms.custom:
 ms.reviewer: ssalgado
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 06/03/2024
+ms.date: 06/04/2024
 ---
 
 # Build a model with SynapseML
 
-This article describes how to build a machine learning model by using SynapseML, and demonstrates how SynapseML can simplify complex machine learning tasks. You use SynapseML to create a small ML training pipeline that includes a featurization stage and a LightGBM regression stage. The pipeline predicts ratings based on review text from a dataset of book reviews. You also see how to use SynapseML to simplify using prebuilt models to solve ML problems.
+This article describes how to build a machine learning model by using SynapseML, and demonstrates how SynapseML can simplify complex machine learning tasks. You use SynapseML to create a small machine learning training pipeline that includes a featurization stage and a LightGBM regression stage. The pipeline predicts ratings based on review text from a dataset of book reviews. You also see how SynapseML can simplify the use of prebuilt models to solve machine learning problems.
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ spark = SparkSession.builder.getOrCreate()
 ```
 
 ## Load a dataset
-Load a public dataset and split it into train and test sets.
+Load your dataset and split it into train and test sets.
 
 ```python
 train, test = (
@@ -65,7 +65,7 @@ from synapse.ml.lightgbm import LightGBMRegressor
 model = Pipeline(
     stages=[
         TextFeaturizer(inputCol="text", outputCol="features"),
-        LightGBMRegressor(featuresCol="features", labelCol="rating"),
+        LightGBMRegressor(featuresCol="features", labelCol="rating", dataTransferMode="bulk")
     ]
 ).fit(train)
 ```
@@ -78,7 +78,10 @@ display(model.transform(test))
 ```
 
 ## Use Azure AI services to transform data in one step
-Alternatively, for these kinds of tasks that have a prebuilt solution, you can use SynapseML's integration with Azure AI services to transform your data in one step. Run the following code, replacing `<secret-name>` with the name of your Azure AI Services key secret and `<key-vault-name>` with the name of your key vault.
+Alternatively, for these kinds of tasks that have a prebuilt solution, you can use SynapseML's integration with Azure AI services to transform your data in one step. Run the following code with these replacements:
+
+- Replace `<secret-name>` with the name of your Azure AI Services key secret.
+- Replace `<key-vault-name>` with the name of your key vault.
 
 ```python
 from synapse.ml.services import TextSentiment
@@ -87,7 +90,7 @@ from synapse.ml.core.platform import find_secret
 model = TextSentiment(
     textCol="text",
     outputCol="sentiment",
-    subscriptionKey=find_secret("<secret-name>", "<key-vault-name>"),
+    subscriptionKey=find_secret("<secret-name>", "<key-vault-name>")
 ).setLocation("eastus")
 
 display(model.transform(test))
