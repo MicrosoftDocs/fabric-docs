@@ -66,17 +66,19 @@ The following Git providers are supported:
 
 * [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant are supported.
 * [GitHub](https://github.com/)
+* [GitHub Enterprise](https://github.com/enterprise)
 
 The following limitations apply:
 
-### Azure DevOps limitations(#tab/azure-devops)
+### [Azure DevOps limitations](#tab/azure-devops)
 
-* If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).  
+* The Azure repo must use the *same tenant* as the Fabric tenant.
+* If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
+* Sovereign clouds aren't supported.
 
-### GitHub limitations(#tab/github)
+### [GitHub limitations](#tab/github)
 
 * The workspace and Git repo must be in the same geographical region.
-* Sovereign clouds aren't supported.
 
 ---
 

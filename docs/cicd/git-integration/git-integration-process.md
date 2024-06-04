@@ -51,7 +51,7 @@ The following table describes the permissions needed to perform various common o
 
 Only a workspace admin can connect a workspace to Azure Repos, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help with connecting.
 
-When you [connect a workspace to Git](./git-get-started.md#connect-a-workspace-to-an-azure-repo), Fabric syncs between the two locations so they have the same content. During this initial sync, if either the workspace or Git branch is empty while the other has content, the content is copied from the nonempty location to the empty one.
+When you [connect a workspace to Git](./git-get-started.md#connect-a-workspace-to-a-git-repo), Fabric syncs between the two locations so they have the same content. During this initial sync, if either the workspace or Git branch is empty while the other has content, the content is copied from the nonempty location to the empty one.
 If both the workspace and Git branch have content, you have to decide which direction the sync should go.
 
 - If you commit your workspace to the Git branch, all supported workspace content is exported to Git and overwrites the current Git content.
