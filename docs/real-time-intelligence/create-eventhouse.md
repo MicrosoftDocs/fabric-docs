@@ -24,7 +24,7 @@ In this article, you learn how to create an event house, add new databases to an
 1. Browse to your workspace homepage in Real-Time Intelligence.
 1. Select **New** > **Eventhouse**.
 
-    :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating a new event house item in Real-Time Intelligence.":::
+    :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating a new event house item in Real-Time Intelligence." lightbox="media/eventhouse/new-eventhouse.png"::::::
 
 1. Enter a name for the event house. Both an event house and its default child KQL database are created with the same name. The database name, like all items in Fabric, can be renamed at any time.
 
@@ -41,7 +41,7 @@ In this article, you learn how to create an event house, add new databases to an
 
     :::image type="content" source="media/eventhouse/add-database.png" alt-text="Screenshot showing the selector to add a new database.":::
 
-1. Give your new database a name, and select **Create**.
+1. Enter a database name, and select **Create**.
 
     :::image type="content" source="media/eventhouse/name-new-database.png" alt-text="Screenshot showing the pop-up box to name your new database.":::
 
