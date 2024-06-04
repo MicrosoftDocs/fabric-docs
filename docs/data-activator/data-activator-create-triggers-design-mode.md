@@ -3,7 +3,7 @@ title: Create Data Activator triggers in design mode
 description: Learn how to create triggers in design mode for Data Activator.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.search.form: Data Activator Design Mode
 ms.date: 11/16/2023

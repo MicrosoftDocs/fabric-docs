@@ -51,12 +51,12 @@ You can turn on **OneLake availability** either on a KQL database or table level
 
 You turned on **OneLake availability** in your KQL database. You can now access all the new data added to your database at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
 
+> [!IMPORTANT]
+> It can take up to a few hours for the files to appear after turning on **OneLake availability**. For more information, see [Check latency](#check-latency).
+
 ## View files
 
 When you [turn on OneLake availability](#turn-on-onelake-availability) on a table, a delta log folder is created along with any corresponding JSON and parquet files. You can view the files that were made available in OneLake and their properties while remaining within Real-Time Intelligence.
-
-> [!IMPORTANT]
-> It can take up to a few hours for the files to appear after turning on **OneLake availability**.
 
 * To view the files, hover over a table in the **Explorer** pane and then select the **More menu [...]** > **View files**.
 

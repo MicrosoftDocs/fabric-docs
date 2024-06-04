@@ -3,7 +3,7 @@ title: Data Activator limitations
 description: Learn about Data Activator limitations.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom:
   - build-2024
 ms.search.form: product-reflex

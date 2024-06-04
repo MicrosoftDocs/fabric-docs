@@ -63,7 +63,7 @@ Within the SAS policy pane, take note of the following four fields. You might wa
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Event Hubs**.
 
-    :::image type="content" source="media/get-data-event-hub/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-event-hub/select-data-source.png":::
+    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
 
 ## Configure
 
