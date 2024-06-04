@@ -146,18 +146,20 @@ Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null
    :::image type="content" source="./media/authentication-tutorial/configure-workload-manifest-xml.png" alt-text="Screenshot showing configuration of workload manifest xml file.":::
 
 ## Configure the workload local manifest and acquire a token for your application (frontend)
+> [!NOTE]
+> This step is only applicable for the devmode secnario.
 
-After configuring your application, add the following configurations to the `extension` section of the [local workload manifest](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/Manifests/localWorkloadManifest.json):
+After configuring your application, add the following configurations to the `devAADAppConfig` section of the `Frontend/.env.dev` configuration file located in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254):
 
 ```json
 "devAADAppConfig": {  
-     "audience": "", // The ID URI configured in your application for developer scenario  
-     "redirectUri": "http://localhost:60006/close", // or the path you configured in index.ts  
-     "appId": "" // your app ID  
+    "DEV_AAD_CONFIG_AUDIENCE": "", // The ID URI configured in your application for developer scenario
+    "DEV_AAD_CONFIG_REDIRECT_URI": "http://localhost:60006/close", // or the path you configured in index.ts
+    "DEV_AAD_CONFIG_APPID": "" // your app Id
 }
 ```
 
-:::image type="content" source="./media/authentication-tutorial/configure-local-workload-manifest-xml.png" alt-text="Screenshot showing configuration of local workload manifest xml file.":::
+:::image type="content" source="./media/authentication-tutorial/configure-local-workload-manifest-xml.png" alt-text="Screenshot showing configuration of .env.dev file.":::
 
 ## Ask for a token and consent the application
 
