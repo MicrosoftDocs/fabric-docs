@@ -342,6 +342,10 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
    :::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the React sample app after receiving the GraphQL request.":::
 
+## Other languages
+
+You can find more sample code to connect to your API for GraphQL in the [Microsoft Fabric Samples GitHub repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL).
+
 ## Related content
 
 - [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app)
