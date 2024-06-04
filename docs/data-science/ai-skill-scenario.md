@@ -25,7 +25,7 @@ This article shows how to configure an AI Skill on the AdventureWorks dataset.
 
 **This seems to reference a lakehouse. It should describe the steps required to create that lakehouse.**
 
-To follow along, you can download the data from [this resource](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms) and upload it to a Warehouse or Lakehouse on Fabric. Here, we use AdventureWorksDW2012.bak.
+To follow along, you can download the data from [this resource](/sql/samples/adventureworks-install-configure) and upload it to a Warehouse or Lakehouse on Fabric. Here, we use AdventureWorksDW2012.bak.
 
 Select the lakehouse you created.
 
@@ -144,9 +144,8 @@ Share the AI Skill with your colleagues and have them try it out. You'll soon be
 
 ## Related content
 
-- [AI Skill Creation](link.md)
-- [Create an AI Skill](link.md)
-- [Related article title](link.md)
+- [How to Create an AI Skill](how-to-create-ai-skill.md)
+- [AI Skill Concept](concept-ai-skill.md)
 
 <!-- Optional: Related content - H2
 

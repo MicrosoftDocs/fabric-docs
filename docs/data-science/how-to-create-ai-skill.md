@@ -1,5 +1,5 @@
 ---
-title: Create an AI Skill (preview)
+title: How to Create an AI Skill (preview)
 description: Learn how to create an AI Skill
 author: IAmGrootel
 ms.author: avangrootel
@@ -22,8 +22,8 @@ Are you ready to have conversations about your data? You can create AI experienc
 ## Prerequisites
 
 - An F64 Fabric capacity or higher.
-- [Copilot tenant switch](https://learn.microsoft.com/en-us/fabric/admin/service-admin-portal-copilot) enabled.
-- [Cross-Geo sharing for AI](https://learn.microsoft.com/en-us/fabric/admin/service-admin-portal-copilot) enabled, if relevant.
+- [Copilot tenant switch](../admin/service-admin-portal-copilot) is enabled.
+- [Cross-Geo sharing for AI](../admin/service-admin-portal-copilot) is enabled, if relevant.
 - A Warehouse or Lakehouse with data.
 
 ## Creating and configuring an AI Skill
@@ -100,9 +100,8 @@ You can fit much information in this option. If you find that the AI consistentl
 
 -or-
 
-- [AI Skill Creation](link.md)
-- [Create an AI Skill](link.md)
-* [Related article title](link.md)
+- [AI Skill Scenario](ai-skill-scenario.md)
+- [AI Skill Concept](concept-ai-skill.md)
 
 <!-- Optional: Next step or Related content - H2
 

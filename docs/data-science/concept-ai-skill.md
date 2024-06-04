@@ -1,5 +1,5 @@
 ---
-title: Concept: AI Skill Creation (preview)
+title: AI Skill Creation (preview)
 titleSuffix: AI Skill Creation
 description: Learn how to create an AI Skill that can answer questions about data.
 author: IAmGrootel
@@ -25,9 +25,8 @@ With the Fabric AI Skill, you can make data more accessible to your colleagues. 
 **A concept article typically does not have a prerequisites block**
 
 - An F64 Fabric capacity or higher.
-- [Copilot tenant switch]) is enabled.
-- [Copilot tenant switch](https://learn.microsoft.com/en-us/fabric/admin/service-admin-portal-copilot) is enabled.
-- [Cross-Geo sharing for AI](https://learn.microsoft.com/en-us/fabric/admin/service-admin-portal-copilot) is enabled, if relevant.
+- [Copilot tenant switch](../admin/service-admin-portal-copilot) is enabled.
+- [Cross-Geo sharing for AI](../admin/service-admin-portal-copilot) is enabled, if relevant.
 - A Warehouse or Lakehouse in Fabric with tables of data you want to access.
 
 ## How the AI Skill works
@@ -63,6 +62,5 @@ The AI Skill is currently in public preview and has defined limitations. Future 
 
 ## Related content
 
-- [AI Skill Scenario](link.md)
-- [Create an AI Skill](link.md)
-- [Related article title](link.md)
+- [AI Skill Scenario](ai-skill-scenario.md)
+- [How to Create an AI Skill](how-to-create-ai-skill.md)
