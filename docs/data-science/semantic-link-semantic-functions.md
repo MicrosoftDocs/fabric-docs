@@ -8,23 +8,23 @@ author: eisber
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 06/03/2024
+ms.date: 06/04/2024
 ms.search.form: semantic link
 ---
 
 # Semantic functions
 
-This article describes semantic functions, and how they can help data scientists and data engineers discover functions that are relevant to the FabricDataFrame they're working on.
+This article describes semantic functions, and how they can help data scientists and data engineers discover functions that are relevant to the FabricDataFrame or FabricSeries they're working on.
 
-Semantic functions are part of the Microsoft Fabric semantic link feature.
+Semantic functions are part of the Microsoft Fabric semantic link feature. For Spark 3.4 and above, semantic link is available in the default Fabric runtime, and you don't need to install it.
 
-- For Spark 3.4 and above, semantic link is available in the default Fabric runtime, and you don't need to install it. For Spark 3.3 or below, or to update to the most recent version of semantic link, run the following command:
+For Spark 3.3 or below, or to update to the most recent version of semantic link, run the following command to install the Python semantic link (SemPy) library:
 
-  ```python
-  %pip install -U semantic-link
-  ```
+```python
+%pip install -U semantic-link
+```
 
-[FabricDataFrame](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) dynamically exposes semantic functions based on logic defined by each function. Each semantic function uses information about the data types, metadata such as Power BI data categories, and data in a FabricDataFrame to determine its relevance to the particular data you're working on. For example, the `is_holiday` function appears in the autocomplete suggestions when you work on a FabricDataFrame that contains both a datetime column and a country column.
+[FabricDataFrame](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) dynamically exposes semantic functions based on logic defined by each function. Each function uses information about the data types, metadata such as Power BI data categories, and data in a FabricDataFrame to determine its relevance to the particular data you're working on. For example, the `is_holiday` function appears in the autocomplete suggestions when you work on a FabricDataFrame that contains both a datetime column and a country column.
 
 Semantic functions are automatically discovered when annotated with the `@semantic_function` decorator. You can think of semantic functions as being like [C# extension methods](/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) applied to the DataFrame concept.
 
@@ -34,7 +34,7 @@ Semantic functions are available in the autocomplete suggestions when you work w
 
 :::image type="content" source="media/semantic-link-semantic-functions/semantic-functions.png" alt-text="Screenshot of semantic functions in autocomplete suggestions." lightbox="media/semantic-link-semantic-functions/semantic-functions.png":::
 
-The following code example manually specifies the metadata for the FabricDataFrame:
+The following code example manually specifies the metadata for a FabricDataFrame:
 
 ```python
 from sempy.fabric import FabricDataFrame
@@ -53,7 +53,7 @@ df_geo = df.to_geopandas(lat_col="lat", long_col="long")
 df_geo.explore()
 ```
 
-Alternatively, you could read from a semantic model into a FabricDataFrame, and the metadata would be autopopulated.
+Alternatively, if you read from a semantic model into a FabricDataFrame, the metadata is autopopulated.
 
 ```Python
 from sempy.fabric import FabricDataFrame
@@ -71,18 +71,18 @@ df_geo.explore()
 
 ## Built-in semantic functions
 
-The SemPy Python library provides a set of built-in, out-of-the-box semantic functions, including:
+The SemPy Python library provides a set of semantic functions out of the box, which include the following built-in functions:
 
-- `is_holiday(...)`, which uses the [holidays](https://pypi.org/project/holidays/) Python package to return `true` if the date is a holiday in the given country.
-- `to_geopandas(...)`, which converts a FabricDataFrame to a [GeoPandas](https://geopandas.org/en/stable/) GeoDataFrame.
-- `parse_phonenumber(...)`, which uses the [phone numbers](https://pypi.org/project/phonenumbers/) Python package to parse a phone number into its components.
-- `validators`, which uses the [validators](https://pypi.org/project/validators/) Python package to validate common data types like email and credit card numbers.
+- `is_holiday(...)` uses the [holidays](https://pypi.org/project/holidays/) Python package to return `true` if the date is a holiday in the given country.
+- `to_geopandas(...)` converts a FabricDataFrame to a [GeoPandas](https://geopandas.org/en/stable/) GeoDataFrame.
+- `parse_phonenumber(...)` uses the [phonenumbers](https://pypi.org/project/phonenumbers/) Python package to parse a phone number into its components.
+- `validators` uses the [validators](https://pypi.org/project/validators/) Python package to validate common data types like email and credit card numbers.
 
 ## Custom semantic functions
 
-Semantic functions are built for extensibility. You can define your own semantic functions within your notebook or as separate Python modules.
+Semantic functions are designed for extensibility. You can define your own semantic functions within your notebook or as separate Python modules.
 
-To use a semantic function outside of a notebook, declare the semantic function within the `sempy.functions` module. The following code example shows the definition of a semantic function `_is_capital` that returns `true` if a city is the capital of a country.
+To use a semantic function outside of a notebook, declare the semantic function within the `sempy.functions` module. The following code example shows the definition of a semantic function `is_capital` that returns `true` if a city is the capital of a country.
 
 ```python
 from sempy.fabric import FabricDataFrame, FabricSeries
@@ -107,7 +107,7 @@ In the preceding code example:
 
 - The `col_country` and `col_city` parameters are annotated with `CountryMatcher` and `CityMatcher` respectively. This annotation allows the semantic function to be automatically discovered in a FabricDataFrame that has the corresponding metadata.
 - Calling the function also supplies standard data types such as `str`, `int`, `float`, and `datetime` to define required input columns.
-- The type annotation of the first parameter `df` shows that the function is applicable to a FabricDataFrame rather than a FabricSeries.
+- The type annotation of the first parameter `df` shows that the function is applicable to a FabricDataFrame rather than a [FabricSeries](/python/api/semantic-link-sempy/sempy.fabric.fabricseries).
 
 ## Related content
 
