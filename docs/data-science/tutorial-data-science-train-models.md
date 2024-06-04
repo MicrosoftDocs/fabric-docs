@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 10/16/2023
+ms.date: 06/04/2024
 ---
 
 # Tutorial Part 3: Train and register a machine learning model
