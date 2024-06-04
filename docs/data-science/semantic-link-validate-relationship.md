@@ -16,7 +16,7 @@ ms.search.form: semantic link
 
 In this article, you learn to use the Python SemPy semantic link functions to discover and validate relationships in your Power BI semantic models and pandas DataFrames.
 
-In data science and machine learning, it's important to understand the structure and relationships within your data. Power BI is a powerful tool that allows you to model and visualize these structures and relationships. To gain more insights or build machine learning models, you can dive deeper into a semantic model by using the semantic link functions in the SemPy library modules.
+In data science and machine learning, it's important to understand the structure and relationships within your data. Power BI is a powerful tool that allows you to model and visualize these structures and relationships. To gain more insights or build machine learning models, you can dive deeper by using the semantic link functions in the SemPy library modules.
 
 Data scientists and business analysts can use SemPy functions to list, visualize, and validate relationships in Power BI semantic models, or find and validate relationships in pandas DataFrames.
 
@@ -119,13 +119,15 @@ tables = [df_sales, df_products, df_customers]
 find_relationships(tables)
 ```
 
-The preceding code calls the `find_relationships` function with a list of three Pandas DataFrames: `df_sales`, `df_products`, and `df_customers`. The function returns a pandas DataFrame with one row per potential relationship, letting you easily explore and analyze the relationships within your data.
+The preceding code calls the `find_relationships` function with a list of three Pandas DataFrames: `df_sales`, `df_products`, and `df_customers`. You can customize the function by specifying a coverage threshold, a name similarity threshold, a list of relationships to exclude, and whether to include many-to-many relationships.
 
-You can customize the function by specifying a coverage threshold, a name similarity threshold, a list of relationships to exclude, and whether to include many-to-many relationships.
+The function returns a pandas DataFrame with one row per potential relationship, letting you easily explore and analyze the relationships within your data.
 
 ### List relationship violations in pandas DataFrames
 
-After you discover potential relationships in your pandas DataFrames by using the `find_relationships` function, you can use the `list_relationship_violations` function to validate these relationships and identify any potential issues or inconsistencies. The `list_relationship_violations` function validates the content of your tables to ensure that they match the discovered relationships. By using this function to identify inconsistencies with the specified relationship multiplicity, you can address any issues before they impact your data analysis or machine learning models.
+After you discover potential relationships in your pandas DataFrames by using the `find_relationships` function, you can use the `list_relationship_violations` function to validate these relationships and identify any potential issues or inconsistencies.
+
+The `list_relationship_violations` function validates the content of your tables to ensure that they match the discovered relationships. By using this function to identify inconsistencies with the specified relationship multiplicity, you can address any issues before they impact your data analysis or machine learning models.
 
 The following example code shows how to find relationship violations in pandas DataFrames:
 
