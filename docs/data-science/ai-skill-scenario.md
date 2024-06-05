@@ -175,10 +175,6 @@ You can manually add examples, but you can also upload them from a json file. Th
 
 We added both instructions and examples to the AI Skill. As we continue testing, we might want to add more examples and instructions to improve the AI Skill even further. It's important to work with your colleagues, to see if you provided examples and instructions that cover the kinds of questions they want to ask!
 
-## Share the AI Skill
-
-Share the AI Skill with your colleagues and have them try it out. You'll soon be able to connect the AI Skill with Microsoft Copilot Studio and other platforms. The AI Skill then becomes consumable from outside of Microsoft Fabric.
-
 ## Related content
 
 - [How to Create an AI Skill](how-to-create-ai-skill.md)

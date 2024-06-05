@@ -40,10 +40,10 @@ The technology behind the AI Skill and the Fabric Copilots is similar. They both
 
 ## Limitations
 
-The AI Skill is currently in public preview and has defined limitations. Future releases will address most of these limitations. Provide us with feedback about the features that matter most to you.
+The AI Skill is currently in public preview and has limitations.
 
 - The AI Skill might return incorrect answers. You should test the AI Skill with your colleagues to verify that it answers questions as expected. If it makes mistakes, provide it with more examples and instructions.
-- We currently only support t-SQL on Warehouses and Lakehouses. Future releases will support other data sources, for example Semantic Models, Kusto databases and other query languages.
+- We currently only support t-SQL on Warehouses and Lakehouses.
 - You can't use the AI Skill to access unstructured data, for example .pdf, .docx or .txt files.
 - At this time, you can only select a single Warehouse or a single Lakehouse.
 - The AI Skill isn't conversational. Every question must be fully self-contained. It doesn't remember earlier questions.
