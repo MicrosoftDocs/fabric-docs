@@ -6,6 +6,10 @@ items:
   items:
   - name: Best practices for schema management
     href: /azure/data-explorer/kusto/management/management-best-practices?context=/fabric/context/context-rti&pivots=fabric
+  - name: Clusters
+    items:
+    - name: .execute cluster script command
+      href: /azure/data-explorer/kusto/management/execute-cluster-script?context=/fabric/context/context-rti&pivots=fabric
   - name: Databases
     href: /azure/data-explorer/kusto/management/databases?context=/fabric/context/context-rti&pivots=fabric
     items:
@@ -96,14 +100,14 @@ items:
           href: /azure/data-explorer/kusto/management/external-table-mapping-show?context=/fabric/context/context-rti&pivots=fabric
       - name: .show external table artifacts command
         href: /azure/data-explorer/kusto/management/show-external-table-artifacts?context=/fabric/context/context-rti&pivots=fabric
-    - name: SQL external tables
+    - name: Azure SQL external tables
       items:
-      - name: Create and alter SQL external tables
+      - name: Create and alter Azure SQL external tables
         href: /azure/data-explorer/kusto/management/external-sql-tables?context=/fabric/context/context-rti&pivots=fabric
         displayName: SQL Server, MySQL, PostgreSQL, Cosmos DB
-      - name: Query a SQL external table
+      - name: Query an Azure SQL external table
         href: /azure/data-explorer/kusto/management/external-sql-tables-query?context=/fabric/context/context-rti&pivots=fabric
-      - name: Apply row-level security to SQL external tables
+      - name: Apply row-level security to Azure SQL external tables
         displayName: RLS, SQL server
         href: /azure/data-explorer/kusto/management/row-level-security-external-sql?context=/fabric/context/context-rti&pivots=fabric
     - name: .drop external table command
@@ -410,6 +414,28 @@ items:
     - name: .show table policy merge command
       href: /azure/data-explorer/kusto/management/show-table-merge-policy-command?context=/fabric/context/context-rti&pivots=fabric
       displayName: .show table merge policy
+  - name: Mirroring
+    items:
+    - name: Mirroring policy
+      href: /azure/data-explorer/kusto/management/mirroring-policy?context=/fabric/context/context-rti&pivots=fabric
+    - name: .alter merge policy mirroring command
+      href: /azure/data-explorer/kusto/management/alter-merge-mirroring-policy-command?context=/fabric/context/context-rti&pivots=fabric
+      displayName: .alter-merge mirroring policy
+    - name: .delete table policy mirroring command
+      href: /azure/data-explorer/kusto/management/delete-table-mirroring-policy-command?context=/fabric/context/context-rti&pivots=fabric
+      displayName: .delete table mirroring policy
+    - name: .show table policy mirroring command
+      href: /azure/data-explorer/kusto/management/show-table-mirroring-policy-command?context=/fabric/context/context-rti&pivots=fabric
+      displayName: .show table mirroring policy
+    - name: .show table mirroring operations command
+      href: /azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rti&pivots=fabric
+      displayName: .show table mirroring operations
+    - name: .show table mirroring operations exported artifacts command
+      href: /azure/data-explorer/kusto/management/show-table-mirroring-operations-exported-artifacts?context=/fabric/context/context-rti&pivots=fabric
+      displayName: .Show table mirroring operations exported artifacts
+    - name: .show table mirroring operations failures command
+      href: /azure/data-explorer/kusto/management/show-table-mirroring-operations-failures?context=/fabric/context/context-rti&pivots=fabric
+      displayName: show table mirroring operations failures
   - name: Partitioning
     items:
     - name: Partitioning policy
