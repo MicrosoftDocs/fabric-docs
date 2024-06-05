@@ -57,7 +57,7 @@ You turned on **OneLake availability** in your KQL database. You can now access 
 
 Event house offers a robust mechanism that intelligently batches incoming data streams into one or more Parquet files, structured for analysis. Batching data streams is important when dealing with trickling data. Writing many small Parquet files into the lake can be inefficient resulting in higher costs and poor performance.
 
-Event house's adaptive mechanism can delay write operations for up to a few hours if there isn’t enough data to create optimal Parquet files. This ensures files that are efficient in size and adherence to Delta best practices. The Event house batching mechanism ensures that the Parquet files are primed for analysis and balances the need for prompt data availability with cost and performance considerations.
+Event house's adaptive mechanism can delay write operations for up to a few hours if there isn’t enough data to create optimal Parquet files. This ensures Parquet files are optimal in size and adhere to Delta Lake best practices. The Event house adaptive mechanism ensures that the Parquet files are primed for analysis and balances the need for prompt data availability with cost and performance considerations.
 
 You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rta&pivots=fabric).
 
@@ -65,7 +65,7 @@ Results are measured from the last time data was added. When *Latency* results i
 
 ## View files
 
-When you [turn on OneLake availability](#turn-on-onelake-availability) on a table, a delta log folder is created along with any corresponding JSON and parquet files. You can view the files that were made available in OneLake and their properties while remaining within Real-Time Intelligence.
+When you [turn on OneLake availability](#turn-on-onelake-availability) on a table, a delta log folder is created along with any corresponding JSON and Parquet files. You can view the files that were made available in OneLake and their properties while remaining within Real-Time Intelligence.
 
 * To view the files, hover over a table in the **Explorer** pane and then select the **More menu [...]** > **View files**.
 
