@@ -59,7 +59,7 @@ Event house offers a robust mechanism that intelligently batches incoming data s
 
 Event house's adaptive mechanism can delay write operations for up to a few hours if there isn’t enough data to create optimal Parquet files. This ensures Parquet files are optimal in size and adhere to Delta Lake best practices. The Event house adaptive mechanism ensures that the Parquet files are primed for analysis and balances the need for prompt data availability with cost and performance considerations.
 
-You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rta&pivots=fabric).
+You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rti&pivots=fabric).
 
 Results are measured from the last time data was added. When *Latency* results in 00:00:00, all the data in the KQL database is available in OneLake.
 
@@ -80,7 +80,7 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
 
 ## Access mirroring policy
 
-By default, when **OneLake availability** is turned on, a  [mirroring policy](/azure/data-explorer/kusto/management/mirroring-policy?context=/fabric/context/context-rta&pivots=fabric) is enabled. You can use the policy to monitor [data latency](#adaptive-behavior) or alter it to [partition delta tables](#partition-delta-tables).
+By default, when **OneLake availability** is turned on, a  [mirroring policy](/azure/data-explorer/kusto/management/mirroring-policy?context=/fabric/context/context-rti&pivots=fabric) is enabled. You can use the policy to monitor [data latency](#adaptive-behavior) or alter it to [partition delta tables](#partition-delta-tables).
 
 > [!NOTE]
 > If you turn off **OneLake availability**, the mirroring policy's `IsEnabled` property is set to *false* (`IsEnabled=false`).
@@ -89,7 +89,7 @@ By default, when **OneLake availability** is turned on, a  [mirroring policy](/a
 
 You can partition your delta tables to improve query speed. For information about when to partition your OneLake files, see [When to partition tables](/azure/databricks/tables/partitions). Each partition is represented as a separate column using the *PartitionName* listed in the *Partitions* list. This means your OneLake copy has more columns than your source table.
 
-To partition your delta tables, use the [.alter-merge table policy mirroring](/azure/data-explorer/kusto/management/alter-merge-mirroring-policy-command?context=/fabric/context/context-rta&pivots=fabric) command.
+To partition your delta tables, use the [.alter-merge table policy mirroring](/azure/data-explorer/kusto/management/alter-merge-mirroring-policy-command?context=/fabric/context/context-rti&pivots=fabric) command.
 
 ## Related content
 
