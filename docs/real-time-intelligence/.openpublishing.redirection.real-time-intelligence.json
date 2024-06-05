@@ -402,7 +402,7 @@
     },
     {
       "redirect_url": "/fabric/real-time-analytics/one-logical-copy",
-      "source_path_from_root": "/docs/real-time-analytics/onelake-mirroring.md",
+      "source_path_from_root": "/docs/real-time-analytics/event-house-onelake-availability.md",
       "redirect_document_id": true
     },
     {

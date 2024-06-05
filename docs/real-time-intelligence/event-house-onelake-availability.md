@@ -80,7 +80,7 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
 
 ## Access mirroring policy
 
-By default, when **OneLake availability** is turned on, a [mirroring policy](/azure/data-explorer/kusto/management/mirroring-policy?context=/fabric/context/context-rta&pivots=fabric) is enabled. You can use the policy to monitor [data latency](#adaptive-behaviour) or alter it to [partition delta tables](#partition-delta-tables).
+By default, when **OneLake availability** is turned on, a  [mirroring policy](/azure/data-explorer/kusto/management/mirroring-policy?context=/fabric/context/context-rta&pivots=fabric) is enabled. You can use the policy to monitor [data latency](#adaptive-behavior) or alter it to [partition delta tables](#partition-delta-tables).
 
 > [!NOTE]
 > If you turn off **OneLake availability**, the mirroring policy's `IsEnabled` property is set to *false* (`IsEnabled=false`).
