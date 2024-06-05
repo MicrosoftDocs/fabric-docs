@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 10/16/2023
+ms.date: 06/04/2024
 ---
 
 # Tutorial Part 3: Train and register a machine learning model
@@ -59,6 +59,9 @@ You'll access SMOTE using the `imblearn` library. Install it now using the in-li
 # Install imblearn for SMOTE using pip
 %pip install imblearn
 ```
+
+> [!IMPORTANT]
+> Run this install     each time you restart the notebook.
 
 When you install a library in a notebook, it's only available for the duration of the notebook session and not in the workspace. If you restart the notebook, you'll need to install the library again.
 
@@ -156,6 +159,10 @@ X_res, y_res = sm.fit_resample(X_train, y_train)
 new_train = pd.concat([X_res, y_res], axis=1)
 ```
 
+> [!TIP]
+> You can safely ignore the MLflow warning message that appears when you run this cell. 
+> If you see a **ModuleNotFoundError** message, you missed running the first cell in this notebook, which installs the `imblearn` library.  You need to install this library each time you restart the notebook. Go back and re-run all the cells starting with the first cell in this notebook.
+
 ### Model training
 
 * Train the model using Random Forest with maximum depth of 4 and 4 features
@@ -225,9 +232,13 @@ The experiment runs are automatically saved in the experiment artifact that can 
 
 To view your experiments:
 1. On the left panel, select your workspace.
+1. On the top right, filter to show only experiments, to make it easier to find the experiment you're looking for.
+
+    :::image type="content" source="media/tutorial-data-science-train-models/filter-workspace.png" alt-text="Screenshot shows the workspace with the experiments filter selected." lightbox="media/tutorial-data-science-train-models/filter-workspace.png":::
+
 1. Find and select the experiment name, in this case _bank-churn-experiment_. If you don't see the experiment in your workspace, refresh your browser.
 
-:::image type="content" source="media/tutorial-data-science-train-models/experiment-runs.png" alt-text="Screenshot shows the experiment page for the bank-churn-experiment." lightbox="media/tutorial-data-science-train-models/experiment-runs.png" :::
+    :::image type="content" source="media/tutorial-data-science-train-models/experiment-runs.png" alt-text="Screenshot shows the experiment page for the bank-churn-experiment." lightbox="media/tutorial-data-science-train-models/experiment-runs.png" :::
 
 ## Assess the performances of the trained models on the validation dataset
 

@@ -79,7 +79,7 @@ In the latter scenario, if you intend to pass parameters from the data pipeline,
 - The notebook works with Unity Catalog external Delta tables. If you’re using multiple Cloud storage locations for your Unity Catalog tables, i.e. more than one ADLS Gen2, the recommendation is to run the notebook separately by each Cloud connection.
 - Unity Catalog managed Delta tables, views, materialized views, streaming tables and non-Delta tables are not supported.
 - Changes to Unity Catalog table schemas like add / delete columns are reflected automatically in the shortcuts. However, some updates like Unity Catalog table rename and deletion require a notebook resync / rerun. This is considered by `fab_consider_dbx_uc_table_changes` parameter.
-- For writing scenarios, using the same storage layer across different compute engines can result in unintended consequences. Be sure to grasp the implications when using different Spark compute engines and runtime versions.
+- For writing scenarios, using the same storage layer across different compute engines can result in unintended consequences. Be sure to grasp the implications when using different Apache Spark compute engines and runtime versions.
 
 
 ## Related content

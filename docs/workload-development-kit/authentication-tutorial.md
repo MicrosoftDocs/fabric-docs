@@ -134,26 +134,32 @@ Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null
 
 ## Configuring your workload (Backend)
 
-1. In the Backend sample, go to [src/appsettings.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/appsettings.json) and configure the settings:
+1. In the Backend sample, go to `src/appsettings.json` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure the settings:
 
    * `PublisherTenantId`: The tenant ID of the publisher  
    * `ClientId`: Your application ID (you can find it in Microsoft Entra ID under overview).  
    * `ClientSecret`: The [secret you created](#generate-a-secret-for-your-application) when configuring the Entra app.  
    * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id) in the Entra app.  
 
-1. Configure your *workloadManifest.xml*. Go to [src/Packages/manifest/files/WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/WorkloadManifest.xml) and configure your `AppId`, `redirectUri` and `ResourceId` (ID URI) under **AADApps**.
-
-   :::image type="content" source="./media/authentication-tutorial/configure-workload-manifest-xml.png" alt-text="Screenshot showing configuration of workload manifest xml file.":::
-
+1. Configure your *workloadManifest.xml*. Go to `src/Packages/manifest/files/WorkloadManifest.xml` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure your `AppId`, `redirectUri` and `ResourceId` (ID URI) under **AADApps**.
+```
+<AADApp>
+    <AppId>YourApplicationId</AppId>
+    <RedirectUri>YourRedirectUri</RedirectUri>
+    <ResourceId>YourResourceId</ResourceId>
+</AADApp>
+```
 ## Configure the workload local manifest and acquire a token for your application (frontend)
+> [!NOTE]
+> This step is only applicable to the devmode scenario.
 
-After configuring your application, add the following configurations to the `extension` section of the [local workload manifest](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/Manifests/localWorkloadManifest.json):
+After configuring your application, add the following configurations to the `devAADAppConfig` section of the `Frontend/.env.dev` configuration file located in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254):
 
 ```json
 "devAADAppConfig": {  
-     "audience": "", // The ID URI configured in your application for developer scenario  
-     "redirectUri": "http://localhost:60006/close", // or the path you configured in index.ts  
-     "appId": "" // your app ID  
+    "DEV_AAD_CONFIG_AUDIENCE": "", // The ID URI configured in your application for developer scenario
+    "DEV_AAD_CONFIG_REDIRECT_URI": "http://localhost:60006/close", // or the path you configured in index.ts
+    "DEV_AAD_CONFIG_APPID": "" // your app Id
 }
 ```
 
