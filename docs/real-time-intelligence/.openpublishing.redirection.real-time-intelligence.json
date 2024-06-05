@@ -401,12 +401,12 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/fabric/real-time-analytics/one-logical-copy.md",
+      "source_path_from_root": "/docs/real-time-analytics/one-logical-copy.md",
       "redirect_url": "/fabric/real-time-intelligence/event-house-onelake-availability",
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/fabric/real-time-intelligence/one-logical-copy.md",
+      "source_path_from_root": "/docs/real-time-intelligence/one-logical-copy.md",
       "redirect_url": "/fabric/real-time-intelligence/event-house-onelake-availability",
       "redirect_document_id": false
     },
