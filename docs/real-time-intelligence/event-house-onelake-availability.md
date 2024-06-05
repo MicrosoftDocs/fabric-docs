@@ -29,6 +29,8 @@ The following table describes the behavior of your KQL database and tables when 
 |**A table in KQL Database**| - New data is made available in OneLake. <br/> - Existing data isn't backfilled. <br/> - Data can't be deleted, truncated, or purged. <br/> - Table schema can't be altered and the table can't be renamed. | - New data isn't made available in OneLake. <br/> - Data can be deleted, truncated, or purged. <br/> - Table schema can be altered and the table can be renamed. <br/> - Data is soft deleted from OneLake.|
 
 > [!IMPORTANT]
+> It can take up to a few hours for the data to appear in OneLake. For more information, see [Adaptive behavior](#adaptive-behavior).
+>
 > There's no additional storage cost to turn on **OneLake availability**. For more information, see [resource consumption](kql-database-consumption.md#storage-billing).
 
 ## Prerequisites
@@ -51,8 +53,15 @@ You can turn on **OneLake availability** either on a KQL database or table level
 
 You turned on **OneLake availability** in your KQL database. You can now access all the new data added to your database at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
 
-> [!IMPORTANT]
-> It can take up to a few hours for the files to appear after turning on **OneLake availability**. For more information, see [Check latency](#check-latency).
+## Adaptive behavior
+
+Event house offers a robust mechanism that intelligently batches incoming data streams into one or more Parquet files, structured for analysis. Batching data streams is important when dealing with trickling data. Writing many small Parquet files into the lake can be inefficient resulting in higher costs and poor performance.
+
+Event house's adaptive mechanism can delay write operations for up to a few hours if there isn’t enough data to create optimal Parquet files. This ensures files that are efficient in size and adherence to Delta best practices. The Event house batching mechanism ensures that the Parquet files are primed for analysis and balances the need for prompt data availability with cost and performance considerations.
+
+You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rta&pivots=fabric).
+
+Results are measured from the last time data was added. When *Latency* results in 00:00:00, all the data in the KQL database is available in OneLake.
 
 ## View files
 
@@ -71,17 +80,10 @@ When you [turn on OneLake availability](#turn-on-onelake-availability) on a tabl
 
 ## Access mirroring policy
 
-By default, when **OneLake availability** is turned on, a [mirroring policy](/azure/data-explorer/kusto/management/mirroring-policy?context=/fabric/context/context-rta&pivots=fabric) is enabled. You can use the policy to [monitor data latency](#check-latency) or alter it to [partition delta tables](#partition-delta-tables).
+By default, when **OneLake availability** is turned on, a [mirroring policy](/azure/data-explorer/kusto/management/mirroring-policy?context=/fabric/context/context-rta&pivots=fabric) is enabled. You can use the policy to monitor [data latency](#adaptive-behaviour) or alter it to [partition delta tables](#partition-delta-tables).
 
 > [!NOTE]
 > If you turn off **OneLake availability**, the mirroring policy's `IsEnabled` property is set to *false* (`IsEnabled=false`).
-
-### Check latency
-
-Event house can delay write operations for up to a few hours if there isn’t sufficient data to create optimal Parquet files. The delay ensures that the files aren't only efficient in size but also adhere to the best practices recommended for Delta.
-You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rta&pivots=fabric).
-
-Results are measured from the last time data was added. When *Latency* results in 00:00:00, all the data in the KQL database is available in OneLake.
 
 ### Partition delta tables
 
