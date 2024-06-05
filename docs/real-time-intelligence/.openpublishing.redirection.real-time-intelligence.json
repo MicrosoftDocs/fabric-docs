@@ -401,9 +401,14 @@
       "redirect_document_id": false
     },
     {
-      "redirect_url": "/fabric/real-time-analytics/one-logical-copy",
+      "redirect_url": "/fabric/real-time-analytics/event-house-onelake-availability",
+      "source_path_from_root": "/fabric/real-time-analytics/one-logical-copy.md",
+      "redirect_document_id": false
+    },
+    {
+      "redirect_url": "/fabric/real-time-analytics/event-house-onelake-availability",
       "source_path_from_root": "/docs/real-time-analytics/event-house-onelake-availability.md",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "redirect_url": "/fabric/real-time-analytics/notebooks",
