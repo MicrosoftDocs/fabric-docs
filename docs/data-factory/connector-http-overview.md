@@ -21,11 +21,11 @@ Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't c
 
 ## Support in data pipelines
 
-The Google Cloud Storage connector supports the following capabilities in data pipelines:
+The HTTP connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | Basic |
+| **Copy activity (source/-)** | None <br> On-premises | Basic |
 | **Lookup activity** | None <br> On-premises | Basic |
 
 To learn about how to connect to HTTP data in data pipelines, go to [Set up your HTTP connection](connector-http.md#set-up-your-connection-in-a-data-pipeline).
