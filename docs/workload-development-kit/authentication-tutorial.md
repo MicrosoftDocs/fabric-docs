@@ -163,7 +163,7 @@ After configuring your application, add the following configurations to the `dev
 }
 ```
 
-:::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot showing configuration of local workload manifest xml file.":::
+:::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot that shows the configuration of a .env.dev file.":::
 
 ## Ask for a token and consent the application
 
