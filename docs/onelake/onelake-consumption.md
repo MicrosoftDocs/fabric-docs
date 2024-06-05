@@ -27,12 +27,12 @@ You can track storage usage in the Fabric Capacity Metrics app. For more informa
 
 ## Transactions
 
-Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. OneLake data can be accessed from applications running inside of Fabric environments, such as Fabric Spark. OneLake can also be accessed from applications running outside of Fabric environments such as via APIs. How the data in OneLake is accessed has a bearing on how many CUs are consumed.
+Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. OneLake data can be accessed from applications running inside of Fabric environments, such as Fabric for Apache Spark. OneLake can also be accessed from applications running outside of Fabric environments such as via APIs. How the data in OneLake is accessed has a bearing on how many CUs are consumed.
 OneLake uses the same mappings as ADLS to classify the operation to the category as [here](/azure/storage/blobs/map-rest-apis-transaction-categories).
 
 ### Operation types
 
-This table defines CU consumption when OneLake data is accessed using most applications running inside of Fabric environments such as Fabric Spark and Fabric pipelines.
+This table defines CU consumption when OneLake data is accessed using most applications running inside of Fabric environments such as Fabric for Apache Spark and Fabric pipelines.
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
@@ -72,7 +72,7 @@ When Disaster Recovery option is enabled for a given capacity, write operations 
 
 ### Disaster recovery operation types
 
-This table defines CU consumption when OneLake data is accessed using most applications running inside of Fabric environments when disaster recovery is enabled. For example, Fabric Spark and Fabric pipelines.
+This table defines CU consumption when OneLake data is accessed using most applications running inside of Fabric environments when disaster recovery is enabled. For example, Fabric for Apache Spark and Fabric pipelines.
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 |---|---|---|---|

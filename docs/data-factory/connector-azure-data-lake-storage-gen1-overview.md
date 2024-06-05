@@ -22,9 +22,9 @@ The Azure Data Lake Storage Gen1 connector supports the following capabilities i
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Service principal |
-| **Lookup activity** | None | Service principal |
-| **GetMetadata activity** | None | Service principal|
-| **Delete data activity** | None | Service principal|
+| **Copy activity (source/destination)** | None <br> On-premises | Service principal |
+| **Lookup activity** | None <br> On-premises | Service principal |
+| **GetMetadata activity** | None <br> On-premises | Service principal|
+| **Delete data activity** | None <br> On-premises | Service principal|
 
 To learn more about the copy activity configuration for Azure Data Lake Storage Gen1 in Data pipeline, go to [Configure in a data pipeline copy activity](connector-azure-data-lake-storage-gen1-copy-activity.md).
