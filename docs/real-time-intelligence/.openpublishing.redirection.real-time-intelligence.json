@@ -400,6 +400,10 @@
       "redirect_url": "/fabric/real-time-analytics/event-streams/transform-sample-data-and-route-to-kql",
       "redirect_document_id": false
     },
+    "redirect_url": "/fabric/real-time-analytics/event-house-onelake-availability",
+      "source_path_from_root": "/docs/real-time-analytics/onelake-mirroring.md",
+      "redirect_document_id": true
+    },
     {
       "redirect_url": "/fabric/real-time-analytics/event-house-onelake-availability",
       "source_path_from_root": "/fabric/real-time-analytics/one-logical-copy.md",
