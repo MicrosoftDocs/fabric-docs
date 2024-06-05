@@ -25,10 +25,10 @@ The Amazon S3 connector supports the following capabilities in Data pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Basic |
-| **Lookup activity** | None | Basic |
-| **GetMetadata activity** | None | Basic |
-| **Delete activity** | None | Basic |
+| **Copy activity (source/destination)** | None <br> On-premises | Basic |
+| **Lookup activity** | None <br> On-premises | Basic |
+| **GetMetadata activity** | None <br> On-premises | Basic |
+| **Delete activity** | None <br> On-premises | Basic |
 
 To learn about how to connect to Amazon S3 data in Data pipeline, go to [Set up your Amazon S3 connection](connector-amazon-s3.md#set-up-your-connection-in-a-data-pipeline).
 
