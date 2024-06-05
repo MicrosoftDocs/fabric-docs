@@ -59,7 +59,7 @@ Follow these steps to start your Fabric capacity trial.
 > [!NOTE]
 > If the Account manager already displays **Trial status**, you may already have a **Power BI trial** in progress.  In this case, attempt to use a Fabric feature to generate a prompt to start a Fabric trial capacity too.  For more information, see [x](#other-ways-to-start-a-microsoft-fabric-trial).
 
-    :::image type="content" source="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
+:::image type="content" source="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
 
 5. If prompted, agree to the terms and then select **Start trial**.
 
