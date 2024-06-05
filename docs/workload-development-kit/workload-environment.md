@@ -67,13 +67,13 @@ The frontend section contains .json files detailing the product and items for th
 
 ##### Key Components:
 - `Product.json` - The main manifest for your product's frontend, which must be named precisely for Fabric's verification.
-- `assets` folder - Stores all .svg icons no`icon1.svg`, `icon2.svg`, `...` used by the frontend.
+- `assets` folder - Stores all .svg icons `icon1.svg`, `icon2.svg`, `...` used by the frontend.
 
 #### Mandatory Structure Compliance
 
 The structure, including specific subfolder names ('BE', 'FE', 'assets'), is mandatory and enforced by Fabric for all upload scenarios, including test and development packages. The structure is specified in the `.nuspec` files found in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) under the `./src/Packages/manifest/ManifestPackage` directory.
 
-During the development cycle, testing a workload on a nonproduction tenant can be done in two modes, local (devmode) and cloud mode (tenant mode). For more information, see the relevant document.
+During the development cycle, testing a workload on a nonproduction tenant can be done in two modes, local (devmode) and cloud mode (tenant mode).
 
 ### Local development mode (devmode)
 
@@ -108,3 +108,5 @@ We use Microsoft Entra ID (formerly Azure Active Directory) for robust and secur
 ## Related content
 
 * [Item lifecycle](./item-lifecycle.md)
+* [Set up your environment](./environment-setup.md)
+* [Manage a workload in Fabric](./manage-workload.md)
