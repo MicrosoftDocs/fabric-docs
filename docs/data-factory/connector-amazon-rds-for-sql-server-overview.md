@@ -18,9 +18,9 @@ The Amazon RDS for SQL Server connector supports the following capabilities in D
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Basic |
-| **Lookup activity** | None | Basic |
-| **GetMetadata activity** | None | Basic |
-| **Stored procedure activity** | None | Basic |
+| **Copy activity (source/-)** | None <br> On-premises | Basic |
+| **Lookup activity** | None <br> On-premises | Basic |
+| **GetMetadata activity** | None <br> On-premises | Basic |
+| **Stored procedure activity** | None <br> On-premises | Basic |
 
 To learn more about the copy activity configuration for Amazon RDS for SQL Server in Data pipeline, go to [Configure in a data pipeline copy activity](connector-amazon-rds-for-sql-server-copy-activity.md).
