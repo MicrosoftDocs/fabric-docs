@@ -1,5 +1,5 @@
 ---
-title: Configure Spark autotune
+title: Configure autotune for Apache Spark
 description: Learn how autotune automatically adjusts Apache Spark configurations, minimizing workload execution time and optimizing performance.
 ms.reviewer: snehagunda
 ms.author: eskot
@@ -20,7 +20,7 @@ Autotune automatically adjusts Apache Spark configuration to speed up workload e
 
 ## Query tuning
 
-Autotune configures three Spark settings for each of your queries separately:
+Autotune configures three Apache Spark settings for each of your queries separately:
 - `spark.sql.shuffle.partitions` - Sets the partition count for data shuffling during joins or aggregations. The default value is 200.
 - `spark.sql.autoBroadcastJoinThreshold` - Sets the maximum table size in bytes that is broadcasted to all worker nodes when join operation is executed. The default value is 10 MB.
 - `spark.sql.files.maxPartitionBytes` - Defines the maximum number of bytes to pack into a single partition when reading files. Works for Parquet, JSON, and ORC file-based sources. Default is 128 MB.
@@ -30,9 +30,9 @@ Autotune configures three Spark settings for each of your queries separately:
 > Autotune query tuning examines individual queries and builds a distinct ML model for each query. It specifically targets:
 > - Repetitive queries
 > - Long-running queries (those with more than 15 seconds of execution)
-> - Spark SQL API queries (excluding those written in the RDD API, which are very rare), but we optimize all queries regardless the language (Scala, PySpark, R, Spark SQL)
+> - Apache Spark SQL API queries (excluding those written in the RDD API, which are very rare), but we optimize all queries regardless the language (Scala, PySpark, R, Spark SQL)
 >
-> This feature is compatible with notebooks, Spark Job Definitions, and pipelines. The benefits vary based on the complexity of the query, the methods used, and the structure. Extensive testing has shown that the greatest advantages are realized with queries related to exploratory data analysis—such as reading data, running joins, aggregations, and sorting.
+> This feature is compatible with notebooks, Apache Spark job definitions, and pipelines. The benefits vary based on the complexity of the query, the methods used, and the structure. Extensive testing has shown that the greatest advantages are realized with queries related to exploratory data analysis, such as reading data, running joins, aggregations, and sorting.
 
 :::image type="content" source="media\autotune\execution-over-time.png" alt-text="Screenshot of execution time with autotune Enabled."::: 
 
@@ -56,7 +56,7 @@ Autotune includes a built-in mechanism for monitoring performance and detecting 
 > [!NOTE]
 > The Autotune is compatible with [Fabric Runtime 1.1](./runtime-1-1.md) and [Runtime 1.2](./runtime-1-2.md). Autotune doesn't function when [the high concurrency mode](./high-concurrency-overview.md) or when the [private endpoint](./../security/security-managed-private-endpoints-overview.md) is enabled. However, autotune seamlessly integrates with autoscaling, regardless of its configuration.
 
-You can control Autotune through Spark Settings for your respective Spark notebook or Spark Job Definition code. To disable Autotune, execute the following commands as the first cell (notebook) or line of the code (SJD).
+You can control Autotune through Spark settings for your respective Spark notebook or Spark job definition code. To disable Autotune, execute the following commands as the first cell (notebook) or line of the code (SJD).
 
 # [Spark SQL](#tab/sparksql)
 
@@ -91,7 +91,7 @@ sparkR.conf("spark.ms.autotune.enabled", "false")
 
 ## Case study
 
-When executing a Spark query, autotune creates a customized ML model dedicated to optimizing the query's execution. It analyzes query patterns and resource needs. Consider an initial query filtering a dataset based on a specific attribute, such as a country. While this example uses geographic filtering, the principle applies universally to any attribute or operation within the query:
+When executing an Apache Spark query, autotune creates a customized ML model dedicated to optimizing the query's execution. It analyzes query patterns and resource needs. Consider an initial query filtering a dataset based on a specific attribute, such as a country. While this example uses geographic filtering, the principle applies universally to any attribute or operation within the query:
 
 ```python
 %%pyspark
@@ -146,4 +146,4 @@ Autotune has undergone extensive testing to ensure its effectiveness and safety:
 User data is exclusively used to enhance your workload's performance, with robust protections to prevent misuse or exposure of sensitive information.
 
 ## Related content
-- [Concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md)
+- [Concurrency limits and queueing in Apache Spark for Microsoft Fabric](spark-job-concurrency-and-queueing.md)
