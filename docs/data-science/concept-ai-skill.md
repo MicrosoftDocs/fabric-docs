@@ -20,22 +20,15 @@ With the Fabric AI Skill, you can make data more accessible to your colleagues. 
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-## Prerequisites
-
-**A concept article typically does not have a prerequisites block**
-
-- An F64 Fabric capacity or higher.
-- [Copilot tenant switch](../admin/service-admin-portal-copilot.md) is enabled.
-- [Cross-Geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
-- A Warehouse or Lakehouse in Fabric with tables of data you want to access.
-
 ## How the AI Skill works
 
 The AI Skill relies on Generative AI - specifically, Large Language Models (LLMs). These LLMs can generate queries, for example, SQL queries, based on a given schema and a question. The system sends a question in the AI Skill, information about the selected data (including the table and column names, and the data types found in the tables) to the LLM. Next, it requests generation of a SQL query that answers the question. We parse the generated query to first ensure that it doesn't change the data in any way, and then execute that query. Finally, we show the query execution results.
 
 ## Configuring the AI Skill
 
-The AI Skill is a creator experience. You should expect to handle some necessary configuration steps before the AI Skill works properly. An AI Skill can often provide out-of-the-box answers to reasonable questions, but could provide incorrect answers for your specific situation. The incorrect answers typically happen because the AI is missing context about your specific company, setup, or definition of key terms. To solve the problem, provide it with instructions and example question-query pairs. You can use these powerful techniques to guide the AI to the right answers. Over time, we expect that it will become easier to provide information to the AI.
+Think of the AI Skill similarly as you think about PowerBI Reports. First you set up the Report, and then you share the Report with your colleagues who can consume it to get their data insights. The AI Skill works the same; you need to set it up first and then share it with your colleagues.
+
+You should expect to handle some necessary configuration steps before the AI Skill works properly. An AI Skill can often provide out-of-the-box answers to reasonable questions, but could provide incorrect answers for your specific situation. The incorrect answers typically happen because the AI is missing context about your company, setup, or definition of key terms. To solve the problem, provide the AI with instructions and example question-query pairs. You can use these powerful techniques to guide the AI to the right answers. 
 
 ## Difference between an AI Skill and a Copilot
 
