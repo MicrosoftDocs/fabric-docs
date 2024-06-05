@@ -55,14 +55,15 @@ The [AIsample - Fraud Detection.ipynb](https://github.com/microsoft/fabric-sampl
 
 ## Step 1: Install custom libraries
 
-For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install a library.
+For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install libraries.
 
-* Use the inline installation capabilities (`%pip` or `%conda`) of your notebook to install a library, in your current notebook only
-* Install a library directly in your workspace, so that all notebooks in your workspace can use that library
+* Use the inline installation capabilities (`%pip` or `%conda`) of your notebook to install a library, in your current notebook only.
+* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
 
-For more information about library installation, see [Install Python libraries](use-ai-samples.md#install-python-libraries).
+For this tutorial, use `%pip install` to install the `imblearn` library in your notebook. 
 
-For this tutorial, use `%pip install` to install the `imblearn` library in your notebook. The PySpark kernel restarts after `%pip install` runs, so you should install the needed library before you run any other notebook cells:
+> [!NOTE]
+> The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before you run any other cells.
 
 ```python
 # Use pip to install imblearn
@@ -244,9 +245,9 @@ In this section, you first explore the raw data and high-level statistics. Then,
 
 Here, you train a LightGBM model to classify the fraud transactions. You train a LightGBM model on both the imbalanced dataset and the balanced dataset. Then, you compare the performance of both models.
 
-### Prepare training and testing datasets
+### Prepare training and test datasets
 
-Before training, split the data into the training and testing datasets:
+Before training, split the data into the training and test datasets:
 
 ```python
 # Split the dataset into training and testing sets
@@ -260,7 +261,7 @@ feature_cols = [c for c in df_pd.columns.tolist() if c not in [TARGET_COL]]
 
 The `imblearn` library uses the Synthetic Minority Oversampling Technique (SMOTE) approach to address the problem of imbalanced classification. Imbalanced classification happens when too few examples of the minority class are available, for a model to effectively learn the decision boundary. SMOTE is the most widely used approach to synthesize new samples for the minority class.
 
-Apply SMOTE only to the training dataset, instead of the testing dataset. When you score the model with the test data, you need an approximation of the model performance on unseen data in production. For a valid approximation, your test data relies on the original imbalanced distribution to represent production data as closely as possible.
+Apply SMOTE only to the training dataset, instead of the test dataset. When you score the model with the test data, you need an approximation of the model performance on unseen data in production. For a valid approximation, your test data relies on the original imbalanced distribution to represent production data as closely as possible.
 
 ```python
 # Apply SMOTE to the training data

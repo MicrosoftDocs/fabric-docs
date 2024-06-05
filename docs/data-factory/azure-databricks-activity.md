@@ -50,13 +50,19 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. Select the **Cluster** tab. Then you can choose an existing or create a new **Azure Databricks connection**, and then pick a **new job cluster**, an **existing interactive cluster**, or an **existing instance pool**.
 1. Depending on what you pick for the cluster, fill out the corresponding fields as presented.
-    1. Under **new job cluster** and **existing instance pool**, you also have the ability to configure the number of **workers** and enable **spot instances**.
+    - Under **new job cluster** and **existing instance pool**, you also have the ability to configure the number of **workers** and enable **spot instances**.
 1. You can also specify additional cluster settings, such as **Cluster policy**, **Spark configuration**, **Spark environment variables**, and **custom tags**, as required for the cluster you are connecting to. **Databricks init scripts** and **Cluster Log destination path** can also be added under the additional cluster settings.
 
     > [!NOTE]
-    > All advanced cluster properties and dynamic expressions supported in the Azure Data Factory Azure Databricks linked service are now also supported in the Azure Databricks activity in Microsoft Fabric under the ‘Additional cluster configuration’ section in the UI. As these properties are now included within the activity UI, they can be easily used with an expression (dynamic content) without the need for the Advanced JSON specification in the Azure Data Factory Azure Databricks linked service.
+    > All advanced cluster properties and dynamic expressions supported in the Azure Data Factory Azure Databricks linked service are now also supported in the Azure Databricks activity in Microsoft Fabric under the ‘Additional cluster configuration’ section in the UI. As these properties are now included within the activity UI; they can be easily used with an expression (dynamic content) without the need for the Advanced JSON specification in the Azure Data Factory Azure Databricks linked service.
 
     :::image type="content" source="media/azure-databricks-activity/databricks-activity-cluster.png" alt-text="Screenshot showing the Cluster settings tab of the Azure Databricks activity.":::
+
+1. The Azure Databricks Activity now also supports **Cluster Policy and Unity Catalog support**.
+    - Under advanced settings, you have the option to choose the **Cluster Policy** so you can specify which cluster configurations are permitted.
+    - Also, under advanced settings, you have the option to configure the **Unity Catalog Access Mode** for added security.
+
+    :::image type="content" source="media/azure-databricks-activity/databricks-activity-policy-uc-support.png" alt-text="Screenshot showing the policy ID and Unity Catalog support under Cluster settings tab of the Azure Databricks activity.":::
 
 ### Configuring settings
 
@@ -108,4 +114,4 @@ After you configure any other activities required for your pipeline, switch to t
 
 ## Related content
 
-- [How to monitor pipeline runs](monitor-pipeline-runs.md)
+[How to monitor pipeline runs](monitor-pipeline-runs.md)

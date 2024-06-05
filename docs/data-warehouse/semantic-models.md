@@ -1,10 +1,12 @@
 ---
 title: Default Power BI semantic models
 description: Learn more about default Power BI semantic models in Microsoft Fabric.
-author: chuckles22
-ms.author: chweb
-ms.reviewer: wiassaf, salilkanade
-ms.date: 01/25/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: chweb, salilkanade
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -15,7 +17,7 @@ ms.search.form: Default semantic model overview # This article's title should no
 
 # Default Power BI semantic models in Microsoft Fabric
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
 
 In [!INCLUDE [product-name](../includes/product-name.md)], Power BI semantic models are a logical description of an analytical domain, with metrics, business friendly terminology, and representation, to enable deeper analysis. This semantic model is typically a star schema with facts that represent a domain, and dimensions that allow you to analyze, or slice and dice the domain to drill down, filter, and calculate different analyses. With the semantic model, the semantic model is created automatically for you, and the aforementioned business logic gets inherited from the parent lakehouse or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] respectively, jump-starting the downstream analytics experience for business intelligence and analysis with an item in [!INCLUDE [product-name](../includes/product-name.md)] that is managed, optimized, and kept in sync with no user intervention. 
 
@@ -38,7 +40,7 @@ For more on Power BI, see [Power BI guidance](/power-bi/guidance/).
 
 ## Direct Lake mode
 
-[Direct Lake](/power-bi/enterprise/directlake-overview) mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of loading parquet-formatted files directly from a data lake, without having to query a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and without having to import or duplicate data into a Power BI semantic model. This native integration brings a unique mode of accessing the data from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], called Direct Lake.  
+[Direct Lake](../get-started/direct-lake-overview.md) mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of loading parquet-formatted files directly from a data lake, without having to query a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and without having to import or duplicate data into a Power BI semantic model. This native integration brings a unique mode of accessing the data from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], called Direct Lake.  
 
 Direct Lake provides the most performant query and reporting experience. Direct Lake is a fast path to load the data from the data lake straight into the Power BI engine, ready for analysis.
 
@@ -64,11 +66,11 @@ If you want to change this default behavior, you can:
 
 1. Manually enable the **Sync the default Power BI semantic model** setting for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] in the workspace. This will restart the background sync that will incur some [consumption costs](../onelake/onelake-consumption.md).
 
-    :::image type="content" source="media/semantic-models/default-on.png" alt-text="Screenshot from the Fabric portal showing the setting Sync the default Power BI semantic model is enabled.":::
+    :::image type="content" source="media/semantic-models/default-on.png" alt-text="Screenshot from the Fabric portal showing the setting Sync the default Power BI semantic model is enabled." lightbox="media/semantic-models/default-on.png":::
 
 1. Manually pick tables and views to be added to semantic model through **Manage default Power BI semantic model** in the ribbon or info bar.
 
-    :::image type="content" source="media/semantic-models/default-manage.png" alt-text="Screenshot from the Fabric portal showing the default Manage the semantic model page, and the ability to manually pick more tables.":::
+    :::image type="content" source="media/semantic-models/default-manage.png" alt-text="Screenshot from the Fabric portal showing the default Manage the semantic model page, and the ability to manually pick more tables." lightbox="media/semantic-models/default-manage.png":::
 
 > [!NOTE]
 > In case you are not using the default Power BI semantic model for reporting purposes, manually disable the **Sync the default Power BI semantic model** setting to avoid adding objects automatically. The setting update will ensure that background sync will not get triggered and save on [Onelake consumption costs](../onelake/onelake-consumption.md).
@@ -87,7 +89,7 @@ The default layout for BI-enabled tables persists in the user session and is gen
 
 To access default Power BI semantic models, go to your workspace, and find the semantic model that matches the name of the desired Lakehouse. The default Power BI semantic model follows the naming convention of the Lakehouse.
 
-   :::image type="content" source="media\semantic-models\find-semantic-models.png" alt-text="Screenshot showing where to find a semantic model." lightbox="media\semantic-models\find-semantic-models.png":::
+   :::image type="content" source="media/semantic-models/find-semantic-models.png" alt-text="Screenshot showing where to find a semantic model." lightbox="media/semantic-models/find-semantic-models.png":::
 
 To load the semantic model, select the name of the semantic model.
 
@@ -113,7 +115,7 @@ The **New Power BI semantic model** button inherits the default semantic model's
 
 To create a Power BI semantic model from a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], follow these steps:
 
-1. Go to the **Data Warehouse** experience in the Fabric portal.
+1. Go to **Data Warehouse** in the Fabric portal.
 
 1. Open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Switch to the **Reporting** ribbon.
 

@@ -9,6 +9,161 @@
             "source_path_from_root": "/docs/data-factory/whats-new.md",
             "redirect_url": "/fabric/get-started/whats-new?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric",
             "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/dataflow-gen2-limitations.md",
+            "redirect_url": "/fabric/data-factory/data-factory-limitations",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/pipeline-limitations.md",
+            "redirect_url": "/fabric/data-factory/data-factory-limitations",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/pipeline-resource-limits.md",
+            "redirect_url": "/fabric/data-factory/data-factory-limitations",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/copy-job.md",
+            "redirect_url": "/fabric/data-factory/copy-data-activity",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
+            "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/move-data-lakehouse-copy-assistant.md",
+            "redirect_url": "/fabric/data-factory/tutorial-move-data-lakehouse-copy-assistant",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/known-issues.md",
+            "redirect_url": "/fabric/data-factory/data-factory-limitations",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/known-issue-staging-artifact.md",
+            "redirect_url": "/fabric/data-factory/known-issue-staging-item",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
+            "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/connector-amazon-s3-dataflows.md",
+            "redirect_url": "/fabric/data-factory/connector-amazon-s3",
+            "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-azure-cosmosdb-for-nosql-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-cosmosdb-for-nosql",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-azure-data-lake-storage-gen2-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-data-lake-storage-gen2",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-dataflow.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-sql-database",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-lakehouse-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-lakehouse",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-sharepoint-online-list-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-sharepoint-online-list",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-odata-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-odata",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-google-cloud-storage-dataflow.md",
+          "redirect_url": "/fabric/data-factory/connector-google-cloud-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-http-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-http",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-kusto-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-data-explorer",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-rest-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-rest",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gateway.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-publish-dataflow.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-template.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/known-issue-inprogress-refresh-history.md",
+            "redirect_url": "/fabric/get-started/known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/known-issue-gen1-admin-switch.md",
+            "redirect_url": "/fabric/get-started/known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/known-issue-failed-to-publish-dataflow-gen2.md",
+            "redirect_url": "/fabric/get-started/known-issues/known-issue-598-failed-to-publish-dataflow-gen2",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/known-issue-gateway-refreshes.md",
+            "redirect_url": "/fabric/data-factory/gateway-considerations-output-destinations#evaluation-time-outs",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/known-issue-lineage-view-edit.md",
+            "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/known-issue-staging-item.md",
+            "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+            "redirect_document_id": false
+        },    
+        {
+          "source_path_from_root": "/docs/data-factory/metrics-app-storage-page.md",
+          "redirect_url": "/fabric/enterprise/metrics-app-storage-page",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/metrics-app-compute-page.md",
+          "redirect_url": "/fabric/enterprise/metrics-app-compute-page",
+          "redirect_document_id": false
         }
     ]
 }

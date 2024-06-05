@@ -11,7 +11,7 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
 ms.search.form: Microsoft Spark utilities
-ms.date: 11/15/2023
+ms.date: 05/02/2024
 ---
 
 # Microsoft Spark Utilities (MSSparkUtils) for Fabric
@@ -121,6 +121,7 @@ This method moves a file or directory, and supports moves across file systems.
 
 ```python
 mssparkutils.fs.mv('source file or directory', 'destination directory', True) # Set the last parameter as True to firstly create the parent directory if it does not exist
+mssparkutils.fs.mv('source file or directory', 'destination directory', True, True) # Set the third parameter to True to firstly create the parent directory if it does not exist. Set the last parameter to True to overwrite the updates.
 ```
 
 ### Write file
@@ -167,18 +168,27 @@ exit(value: String): void -> This method lets you exit a notebook with a value.
 run(path: String, timeoutSeconds: int, arguments: Map): String -> This method runs a notebook and returns its exit value.
 ```
 
+> [!NOTE]
+> Notebook utilities aren't applicable for Apache Spark job definitions (SJD).
+
 ### Reference a notebook
 
 This method references a notebook and returns its exit value. You can run nesting function calls in a notebook interactively or in a pipeline. The notebook being referenced runs on the Spark pool of the notebook that calls this function.
 
 ```python
-mssparkutils.notebook.run("notebook name", <timeoutSeconds>, <parameterMap>)
+mssparkutils.notebook.run("notebook name", <timeoutSeconds>, <parameterMap>, <workspaceId>)
 ```
 
 For example:
 
 ```python
 mssparkutils.notebook.run("Sample1", 90, {"input": 20 })
+```
+
+Fabric notebook also supports referencing notebooks across multiple workspaces by specifying the *workspace ID*.
+
+```python
+mssparkutils.notebook.run("Sample1", 90, {"input": 20 }, "fe0a6e2a-a909-4aa3-a698-0a651de790aa")
 ```
 
 You can open the snapshot link of the reference run in the cell output. The snapshot captures the code run results and allows you to easily debug a reference run.
@@ -189,10 +199,13 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 > [!NOTE]
 >
-> - Currently, Fabric notebook only supports referencing notebooks within a workspace.
+> - The cross-workspace reference notebook is supported by **runtime version 1.2 and above**.
 > - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `mssparkutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
 
 ### Reference run multiple notebooks in parallel
+
+> [!IMPORTANT]
+> This feature is in [preview](../get-started/preview.md).
 
 The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the compute resources are shared by the reference notebook runs.
 
@@ -251,12 +264,20 @@ DAG = {
         }
     ]
 }
-mssparkutils.notebook.runMultiple(DAG)
-
+mssparkutils.notebook.runMultiple(DAG, {"displayDAGViaGraphviz": False})
 ```
 
+The execution result from the root notebook is as follows:
+
+:::image type="content" source="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png" alt-text="Screenshot of reference a list of notebooks with parameters." lightbox="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png":::
+
 > [!NOTE]
-> The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
+> - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
+> - The upper limitation of notebook activities in ``` msspakrutils.notebook.runMultiple() ``` is **50, having more than 50 notebook activities may have stability and performance issues due to compute resource usage**. If you still want to use more notebook activities in the API, you can set the spark settings '*spark.notebookutils.runmultiple.limit*' to a larger value as a workaround. You can set the spark properties in attached Environment or using [%%configure](author-execute-notebook.md#spark-session-configuration-magic-command) command.
+> - If you want to use more than 50 notebook activities, to avoid the snapshot and progress bar content size exceed the total Notebook content size upper limits, we recommend you to run the below command to disable the rich UX features. 
+>   ```scala
+>   com.microsoft.spark.notebook.common.Configs.notebookRunSnapshotEnabled = false
+>   ```
 
 ### Exit a notebook
 
@@ -338,7 +359,7 @@ mssparkutils.credentials.help()
 
 ```console
 getToken(audience, name): returns AAD token for a given audience, name (optional)
-getSecret(akvName, secret): returns AKV secret for a given akvName, secret key
+getSecret(keyvault_endpoint, secret_name): returns secret for a given Key Vault and secret name
 ```
 
 ### Get token
@@ -358,10 +379,10 @@ mssparkutils.credentials.getToken('audience Key')
 
 ### Get secret using user credentials
 
-getSecret returns an Azure Key Vault secret for a given Azure Key Vault name, secret name, and linked service name using user credentials.
+getSecret returns an Azure Key Vault secret for a given Azure Key Vault endpoint and secret name using user credentials.
 
 ```python
-mssparkutils.credentials.getSecret('azure key vault name','secret name')
+mssparkutils.credentials.getSecret('https://<name>.vault.azure.net/', 'secret name')
 ```
 
 ## File mount and unmount
@@ -420,22 +441,22 @@ mssparkutils.fs.mount(
 > ```python
 > from notebookutils import mssparkutils
 > ```
->
-> Mount parameters:
->
-> - fileCacheTimeout: Blobs will be cached in the local temp folder for 120 seconds by default. During this time, blobfuse will not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, in order to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
-> - timeout: The mount operation timeout is 120 seconds by default. The parameter could be set to change the default timeout time. When there are too many executors or when mount times out, we recommend increasing the value.
->
-> You can use these parameters like this:
->
-> ```python
-> mssparkutils.fs.mount(
->    "abfss://mycontainer@<accountname>.dfs.core.windows.net",
->    "/test",
->    {"fileCacheTimeout": 120, "timeout": 120}
-> )
-> ```
->
+
+Mount parameters:
+- fileCacheTimeout: Blobs will be cached in the local temp folder for 120 seconds by default. During this time, blobfuse will not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, in order to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
+- timeout: The mount operation timeout is 120 seconds by default. The parameter could be set to change the default timeout time. When there are too many executors or when mount times out, we recommend increasing the value.
+
+You can use these parameters like this:
+
+```python
+mssparkutils.fs.mount(
+   "abfss://mycontainer@<accountname>.dfs.core.windows.net",
+   "/test",
+   {"fileCacheTimeout": 120, "timeout": 120}
+)
+```
+
+> [!NOTE]
 > For security reasons, we recommended you don't store credentials in code. To further protect your credentials, we will redact your secret in notebook output. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
 
 ### How to mount a lakehouse
@@ -520,6 +541,78 @@ mssparkutils.fs.unmount("/test")
 - The unmount mechanism isn't automatic. When the application run finishes, to unmount the mount point and release the disk space, you need to explicitly call an unmount API in your code. Otherwise, the mount point will still exist in the node after the application run finishes.
 
 - Mounting an ADLS Gen1 storage account isn't supported.
+
+
+## Lakehouse utilities
+
+`mssparkutils.lakehouse` provides utilities specifically tailored for managing Lakehouse artifacts. These utilities empower users to create, retrieve, update, and delete Lakehouse artifacts effortlessly.
+
+> [!NOTE]
+> Lakehouse APIs are only supported on Runtime version 1.2+.
+
+### Overview of methods
+
+Below is an overview of the available methods provided by `mssparkutils.lakehouse`:
+
+```python
+# Create a new Lakehouse artifact
+create(name: String, description: String = "", workspaceId: String = ""): Artifact
+
+# Retrieve a Lakehouse artifact
+get(name: String, workspaceId: String = ""): Artifact
+
+# Update an existing Lakehouse artifact
+update(name: String, newName: String, description: String = "", workspaceId: String = ""): Artifact
+
+# Delete a Lakehouse artifact
+delete(name: String, workspaceId: String = ""): Boolean
+
+# List all Lakehouse artifacts
+list(workspaceId: String = ""): Array[Artifact]
+```
+
+### Usage examples
+
+To utilize these methods effectively, consider the following usage examples:
+
+#### Creating a Lakehouse artifact
+
+```python
+artifact = mssparkutils.lakehouse.create("artifact_name", "Description of the artifact", "optional_workspace_id")
+```
+
+#### Retrieving a Lakehouse Artifact
+```python
+artifact = mssparkutils.lakehouse.get("artifact_name", "optional_workspace_id")
+```
+
+#### Updating a Lakehouse artifact
+```python
+updated_artifact = mssparkutils.lakehouse.update("old_name", "new_name", "Updated description", "optional_workspace_id")
+```
+
+#### Deleting a Lakehouse artifact
+```python
+is_deleted = mssparkutils.lakehouse.delete("artifact_name", "optional_workspace_id")
+```
+
+#### Listing Lakehouse artifacts
+```python
+artifacts_list = mssparkutils.lakehouse.list("optional_workspace_id")
+```
+
+### Additional information
+
+For more detailed information about each method and its parameters, utilize the `mssparkutils.lakehouse.help("methodName")` function.
+
+With MSSparkUtils' Lakehouse utilities, managing your Lakehouse artifacts becomes more efficient and integrated into your Fabric pipelines, enhancing your overall data management experience.
+
+Feel free to explore these utilities and incorporate them into your Fabric workflows for seamless Lakehouse artifact management.
+
+
+## Known issue 
+
+When using runtime version above 1.2 and run ``` mssparkutils.help() ```, the listed **fabricClient**, **warehouse**, and **workspace** APIs are not supported for now, will be available in the further.
 
 ## Related content
 

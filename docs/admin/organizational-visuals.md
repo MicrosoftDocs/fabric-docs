@@ -31,7 +31,7 @@ These settings allow you to control the following actions for Power BI visuals i
 * [Allow access to certified Power BI visuals only](#certified-power-bi-visuals)
 * [Allow downloads from custom visuals onto your storage device](#export-data-to-file)
 * [Allow custom visuals to store data on the user's local machine](#local-storage)
-* [Obtain Microsoft Entra access token](#obtain-microsoft-entra-access-token)
+* [Obtain Microsoft Entra access token](#appsource-custom-visuals-sso)
 
 ### Visuals from AppSource or a file
 
@@ -65,7 +65,7 @@ UI changes to tenant settings apply only to the Power BI service. To enable user
 
 ### Certified Power BI visuals
 
-[Certified Power BI visuals](/power-bi/developer/visuals/power-bi-custom-visuals-certified) are visuals that meet the Microsoft Power BI team [code requirements](/power-bi/developer/visuals/power-bi-custom-visuals-certified#certification-requirements). They're tested to verify that they don't access external services or resources and that they follow secure coding patterns and guidelines.
+[Certified Power BI visuals](/power-bi/developer/visuals/power-bi-custom-visuals-certified) are visuals that meet the Microsoft Power BI team [code requirements](/power-bi/developer/visuals/power-bi-custom-visuals-certified#certification-requirements) and testing. The tests performed are designed to check that the visual doesn't access external services or resources. However, Microsoft isn't the author of third-party custom visuals, and we advise customers to contact the author directly to verify the functionality of these visuals.
 
 When this setting is enabled, only certified Power BI visuals render in your organization's reports and dashboards. Power BI visuals from AppSource or files that aren't certified return an error message. This setting is disabled by default and doesn't apply to visuals in your [organizational store](/power-bi/developer/visuals/power-bi-custom-visuals#organizational-store).
 
@@ -137,11 +137,11 @@ To enable the local storage setting, follow these steps:
 
 4. Select **Apply**.
 
-### Obtain Microsoft Entra access token
+### AppSource Custom Visuals SSO
 
-When this setting is enabled, visuals can obtain [Microsoft Entra ID (formerly known as Azure Active Directory) access tokens](/entra/identity/authentication/concept-authentication-oath-tokens) for the signed-in users using the [Authentication API](/graph/api/resources/authenticationmethods-overview). The setting is disabled by default and applies to all Appsource visuals, including those managed by your organizational store.
+When this setting is enabled, AppSource Custom Visuals can obtain  [Microsoft Entra ID (formerly known as Azure Active Directory) access tokens](/entra/identity/authentication/concept-authentication-oath-tokens) with restricted audiences for signed-in users, utilizing the [Authentication API](/graph/api/resources/authenticationmethods-overview). These tokens contain personal information such as the user's name and email address. Custom Visuals can send these tokens across different regions and compliance boundaries, and it is their full responsibility to handle the tokens they possess. The setting is disabled by default and applies to all AppSource Custom Visuals, including those managed by your organizational store.
 
-:::image type="content" source="./media/organizational-visuals/authentication-setting.png" alt-text="Screenshot of authentication switch.":::
+:::image type="content" source="./media/organizational-visuals/authentication-setting.png" alt-text="Screenshot of authentication switch found in tenant settings.":::
 
 1. Expand the **Allow custom visuals to get user Microsoft Entra access tokens** settings.
 

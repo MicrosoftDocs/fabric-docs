@@ -25,9 +25,9 @@ The FTP connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Anonymous<br>Basic |
-| **Lookup activity** | None | Anonymous<br>Basic |
-| **GetMetadata activity** | None | Anonymous<br>Basic |
-| **Delete activity** | None | Anonymous<br>Basic |
+| **Copy activity (source/-)** | None <br> On-premises | Anonymous<br>Basic |
+| **Lookup activity** | None <br> On-premises | Anonymous<br>Basic |
+| **GetMetadata activity** | None <br> On-premises | Anonymous<br>Basic |
+| **Delete activity** | None <br> On-premises | Anonymous<br>Basic |
 
 To learn more about the copy activity configuration for FTP in data pipelines, go to [Configure in a data pipeline copy activity](connector-ftp-copy-activity.md).

@@ -14,7 +14,9 @@ ms.date: 09/27/2023
 
 # Create an Amazon S3 shortcut
 
-In this article, you learn how to create an Amazon S3 shortcut inside a Fabric lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+In this article, you learn how to create an Amazon S3 shortcut inside a Fabric lakehouse.
+
+For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
 
 ## Prerequisites
 
@@ -34,7 +36,7 @@ In this article, you learn how to create an Amazon S3 shortcut inside a Fabric l
 
 [!INCLUDE [amazon-s3-shortcut](../includes/amazon-s3-shortcut.md)]
 
-The lakehouse automatically refreshes. The shortcut appears under **Files** in the **Explorer** pane.
+The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 
@@ -42,3 +44,4 @@ The lakehouse automatically refreshes. The shortcut appears under **Files** in t
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
 - [Create an Azure Data Lake Storage Gen2 shortcut](create-adls-shortcut.md)
+- [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)

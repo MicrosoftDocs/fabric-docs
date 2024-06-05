@@ -1,0 +1,120 @@
+### YamlMime:FAQ
+metadata:
+  title: "Frequently asked questions for Mirroring Snowflake in Microsoft Fabric (Preview)"
+  description: This article answers frequently asked questions about Mirroring Snowflake in Microsoft Fabric (Preview).
+  author: WilliamDAssafMSFT
+  ms.author: wiassaf
+  ms.reviewer: imotiwala, maprycem
+  ms.service: fabric
+  ms.topic: faq
+  ms.date: 03/14/2024
+title: "Frequently asked questions for Mirroring Snowflake in Microsoft Fabric (Preview)"
+summary: |
+  This article answers frequently asked questions about Mirroring Snowflake in Microsoft Fabric.
+
+sections:
+  - name: Features and capabilities
+    questions:
+    - question: |
+        Is there a staging or landing zone for Snowflake? If so, is it outside of OneLake?
+      answer: 
+        For Snowflake, we do use a landing zone to store both the snapshot and change data into OneLake, to improve performance as we're converting these files in the landing zones into delta vertiparquet.
+    - question: |
+        Can views, transient or external tables be replicated?
+      answer:
+        Currently, only replicating regular tables are supported.
+    - question: |
+        How do I manage connections?
+      answer: 
+        Select the settings cog, then select on **Manage connection and gateways**. You can also delete existing connections from this page.
+
+  - name: Cost efficiency
+    questions: 
+    - question: | 
+        What should I do to avoid or reduce Snowflake costs?
+      answer: 
+        Implement Snowflake budgets, use limits on credits, or use dedicated a smaller Snowflake instance based on requirements.
+    - question: |  
+        What are the Fabric compute costs associated with Mirroring?
+      answer:
+        During the current preview, there's no cost for Mirroring or storing mirrored data in Fabric. If you are querying the data, compute will be charged based on the Capacity that you have in Fabric. Cost of the source Snowflake warehouse is separate from Fabric Mirroring.
+    - question: |
+        How are ingress fees handled?
+      answer: 
+        Fabric doesn't charge for Ingress fees into OneLake for Mirroring.
+    - question: |
+        How are egress fees handled?
+      answer: 
+        If hosted outside of Azure, refer to Snowflake and your cloud documentation for egress costs. If hosted in Azure but in a different region from your Fabric capacity, data egress will be charged. If hosted in Azure in the same region, there is no data egress.
+  - name: Performance
+    questions:
+    - question: |  
+        How long does the initial replication take?
+      answer:
+        It depends on the size of the data that is being brought in. 
+    - question: |
+        How long does it take to replicate inserts/updates/deletes?
+      answer:
+        Near real-time latency.
+    - question: |
+        Will the Power BI reports use direct lake mode?
+      answer: 
+        Yes, tables are all v-ordered delta tables.
+
+  - name: Troubleshoot Mirroring Snowflake in Microsoft Fabric
+    questions:
+      - question: |
+          What are the replication statuses? 
+        answer: 
+          See [Monitor Fabric Mirror replication](monitor.md).
+      - question: |
+          Can Snowflake Mirroring be accessed through the Power BI Gateway or behind a firewall? 
+        answer: 
+          Currently, access through the Power BI Gateway or behind a firewall is unsupported.
+      - question: |
+          What does starting the Mirroring do?
+        answer: 
+          The data from source tables will be reinitialized. Each time you stop and start, the entire table is fetched again.
+      - question: |
+          What happens it deselect a table from Mirroring?
+        answer: 
+          We stop Mirroring that specific table and delete it from OneLake.
+      - question: |
+          If I delete the Mirror does it affect the source mirrored database?
+        answer: 
+          No, we just remove the streaming tables.
+      - question: |
+          Can I Mirror the same database multiple times?
+        answer:
+          Yes, you can, but you shouldn't need to. Once the data is in Fabric, it can be shared from there.
+      - question: |
+          Can I Mirror specific tables from my source database?
+        answer: 
+          Yes, specific tables can be selected during Mirroring configuration.
+
+  - name: Data governance
+    questions:
+      - question: |
+          Is data ever leaving the customers Fabric tenant?
+        answer:
+          No.
+      - question: |
+          Is data staged outside of a customer environment?
+        answer: 
+          No, data isn't staged outside of customer environment, it's staged in the customer's OneLake.
+
+  - name: Licensing
+    questions:
+      - question: |
+          What are licensing options for Fabric Mirroring? 
+        answer:
+          A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../../enterprise/licenses.md).
+
+additionalContent: |
+
+  ## Related content
+
+  - [What is Mirroring in Fabric?](overview.md)
+  - [Snowflake connector overview](../../data-factory/connector-snowflake-overview.md)
+
+

@@ -1,10 +1,12 @@
 ---
 title: User audit logs for Microsoft Fabric Synapse Data Warehouse
 description: Learn about auditing user activity on Microsoft Fabric data warehousing in Microsoft Purview and PowerShell.
-author: jacindaeng
-ms.author: jacindaeng
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: jacindaeng
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -12,11 +14,11 @@ ms.search.form: Monitoring # This article's title should not change. If so, cont
 ---
 # User audit logs for Microsoft Fabric Data [!INCLUDE [fabric-dw](includes/fabric-dw.md)]
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 To track user activity for meeting regulatory compliance and records managements requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell. You can use user audit logs to identify who is taking what action on your Fabric items.
 
-For more information on how to access user audit logs, visit [Track user activities in Power BI](/power-bi/enterprise/service-admin-auditing#use-the-audit-log).
+For more information on how to access user audit logs, visit [Track user activities in Microsoft Fabric](../admin/track-user-activities.md).
 
 ## Permissions
 

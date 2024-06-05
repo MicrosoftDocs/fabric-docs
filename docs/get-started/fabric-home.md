@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/25/2023
+ms.date: 05/15/2024
 ---
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
@@ -23,7 +23,7 @@ On Home, you see items that you create and that you have permission to use. Thes
 
 In [!INCLUDE [product-name](../includes/product-name.md)], the term *item* refers to: apps, lakehouses, warehouses, reports, and more. Your items are accessible and viewable in [!INCLUDE [product-name](../includes/product-name.md)], and often the best place to start working in [!INCLUDE [product-name](../includes/product-name.md)] is from **Home**. However, once you've created at least one new workspace, been granted access to a workspace, or you've added an item to **My workspace**, you might find it more convenient to navigate directly to a workspace. One way to navigate to a workspace is by using the nav pane and workspace selector.
 
-:::image type="content" source="media/fabric-home/fabric-home-data-science-workspace.png" alt-text="Screenshot showing sample Home for the Data Science experience.":::
+:::image type="content" source="media/fabric-home/fabric-home-data-science-workspace.png" alt-text="Screenshot showing sample Home for the Data Science experience." lightbox="media/fabric-home/fabric-home-data-science-workspace.png":::
 
 To open **Home**, select it from the top of your left navigation pane. 
 
@@ -36,9 +36,9 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 > [!NOTE]
 > **Power BI Home** is different from the other product experiences. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
 
-:::image type="content" source="media/fabric-home/fabric-home-numbered.png" alt-text="Screenshot of the left navigation menu with Knowledge center selected":::
+:::image type="content" source="media/fabric-home/fabric-home-numbered.png" alt-text="Screenshot of the left navigation menu with Knowledge center selected." lightbox="media/fabric-home/fabric-home-numbered.png":::
 
-1. The left navigation pane (nav pane) for your product experience links you to different views of your items and to creator resources. 
+1. The left navigation pane (nav pane) for your product experience links you to different views of your items and to creator resources. You can [remove icons from the left nav](#remove-icons-from-the-nav-pane) to suit your workflow.
 1. The selector for switching product experiences.
 1. The top menu bar for orienting yourself in [!INCLUDE [product-name](../includes/product-name.md)], finding items, help, and sending Microsoft feedback. The [**Account manager**](#find-your-account-and-license-information) control is a critical icon for looking up your account information and managing your Fabric trial. 
 1. Options for creating new items.  
@@ -54,7 +54,7 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 
 ### Use the navigation pane
 
-:::image type="content" source="media/fabric-home/fabric-nav-pane.png" alt-text="Screenshot of the nav pane for Data factory.":::        
+:::image type="content" source="media/fabric-home/fabric-nav-pane.png" alt-text="Screenshot of the nav pane for Data factory.":::
 
 Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. Notice that **My workspace** is the active workspace. The options in your nav pane depend on the product experience you've selected. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
 
@@ -64,6 +64,22 @@ In the bottom section of the nav pane is where you find and open your workspaces
     - Whenever you create a new item, it's added to the open workspace.  
 
 The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product experience nav pane includes **Home**, **Browse**, **OneLake data hub**, **Create**, and  **Workspaces**.
+
+### Remove icons from the nav pane
+
+You can delete icons from the nav pane for products you don't think you need. You can always add them back later.
+
+To remove an icon, right-click the icon and select **Unpin**.
+
+:::image type="content" source="media/fabric-home/unpin-icon.png" alt-text="Screenshot showing the Unpin option to remove an item from the left nav.":::
+
+### Add icons back to the nav pane
+
+You can add an icon back if you decide you need it.
+
+Select **More ...**, then select the icon you want to return to the left nav.
+
+:::image type="content" source="media/fabric-home/more-menu-add-icon-back.png" alt-text="Screenshot showing how to add an item back to the left nav.":::
 
 ### Find and open workspaces
 
@@ -95,7 +111,7 @@ Select the Help icon (**?**) to open and use the contextual Help pane and to sea
 
 Leave the Help pane open as you work, and use the suggested topics to learn how to use [!INCLUDE [product-name](../includes/product-name.md)] features and terminology. Or, select the **X** to close the Help pane and save screen space. 
 
-:::image type="content" source="media/fabric-home/fabric-home-help-contextual.png" alt-text="Screenshot of the Help pane with Recent selected in Data factory.":::
+:::image type="content" source="media/fabric-home/fabric-home-help-contextual.png" alt-text="Screenshot of the Help pane with Recent selected in Data factory." lightbox="media/fabric-home/fabric-home-help-contextual.png":::
 
 The Help pane is also a great place to search for answers to your questions. Type your question or keywords in the **Search** field. 
 
@@ -115,7 +131,7 @@ If the self-help answers don't resolve your issue, scroll to the bottom of the H
 
 ### Find your account and license information
 
-Information about your account and license is available from the Account manager. Select the tiny photo from the upper right corner of [!INCLUDE [product-name](../includes/product-name.md)] to open your Account manager. 
+Information about your account and license is available from the Account manager. Select the tiny photo from the upper-right corner of [!INCLUDE [product-name](../includes/product-name.md)] to open your Account manager. 
 
 :::image type="content" source="media/fabric-home/fabric-home-me.png" alt-text="Screenshot showing the Account manager expanded.":::
 
@@ -124,13 +140,13 @@ For more information about licenses and trials, see [Licenses](../enterprise/lic
 
 ### Find notifications, settings, and feedback
 
-In the upper right corner of Home are several helpful icons. Take time to explore your **Notifications center**, **Settings**, and **Feedback** options. The **?** icon displays your [Help and search options](#find-help-and-support) and the [**Account manager** icon](#find-your-account-and-license-information) displays information about your account and license. Both of these features are described in detail earlier in this article.
+In the upper-right corner of Home are several helpful icons. Take time to explore your **Notifications center**, **Settings**, and **Feedback** options. The **?** icon displays your [Help and search options](#find-help-and-support) and the [**Account manager** icon](#find-your-account-and-license-information) displays information about your account and license. Both of these features are described in detail earlier in this article.
 
 ### Find what you need on your Home canvas
 
 The final section of Home is the center area, called the **canvas**. The content of your canvas updates as you select different items. By default, the Home canvas displays options for creating new items, recommended items, recents, favorites, and content that has been shared with you. If you've selected the **Show less** view, the **New** section of the canvas is collapsed. 
 
-:::image type="content" source="media/fabric-home/fabric-show-less.png" alt-text="{alt-text}":::
+:::image type="content" source="media/fabric-home/fabric-show-less.png" alt-text="Screenshot of the center area of the Home page, the canvas.":::
 
 When you create a new item, it's saved in your **My workspace** unless you've selected a workspace from **Workspaces**. To learn more about creating items in workspaces, see [create workspaces](create-workspaces.md).
 

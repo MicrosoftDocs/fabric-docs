@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a text classification model'
 description: This tutorial demonstrates training and evaluating a text classification model by using a sample dataset of metadata for digitized books.
-ms.reviewer: franksolomon
+ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
@@ -54,9 +54,12 @@ The sample **Title genre classification** notebook accompanies this tutorial.
 
 ## Step 1: Install custom libraries
 
-For machine learning model development or ad-hoc data analysis, you might need to install a custom library for your Apache Spark session. Use `%pip install` or `%conda install` for that installation. You can also install the required libraries into the workspace. Navigate to **Library management** in the workspace settings.
+For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install libraries.
 
-For the classification model, use the wordcloud library to represent the word frequency in text, where the size of a word represents its frequency. For this tutorial, use `%pip install` to install wordcloud.
+* Use the inline installation capabilities (`%pip` or `%conda`) of your notebook to install a library, in your current notebook only.
+* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
+
+For the classification model, use the `wordcloud` library to represent the word frequency in text, where the size of a word represents its frequency. For this tutorial, use `%pip install` to install `wordcloud` in your notebook.
 
 > [!NOTE]
 > The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before you run any other cells.
@@ -299,7 +302,7 @@ display(vec_df.limit(20))
 
 With the data in place, define the model. In this section, you train a logistic regression model to classify the vectorized text.
 
-### Prepare training and testing datasets
+### Prepare training and test datasets
 
 ```python
 # Split the dataset into training and testing
@@ -356,7 +359,7 @@ crossval = CrossValidator(
 
 ### Evaluate the model
 
-We can evaluate the models on the testing dataset, to compare them. A well trained model should demonstrate high performance, on the relevant metrics, when run against the validation and testing datasets.
+We can evaluate the models on the test dataset, to compare them. A well trained model should demonstrate high performance, on the relevant metrics, when run against the validation and test datasets.
 
 ```python
 def evaluate(model, df):
@@ -380,7 +383,7 @@ with mlflow.start_run(run_name="lr"):
     best_index = 0
     for idx, model in enumerate(models.subModels[0]):
         with mlflow.start_run(nested=True, run_name=f"lr_{idx}") as run:
-            print("\nEvaluating on testing data:")
+            print("\nEvaluating on test data:")
             print(f"subModel No. {idx + 1}")
             prediction, log_metric = evaluate(model, test_df)
 

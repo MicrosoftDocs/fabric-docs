@@ -23,7 +23,7 @@ Some of the end-to-end AI samples require other libraries for machine learning m
 
 ### Install with inline installation capabilities
 
-Use the [inline installation capabilities](python-guide/python-library-management.md#in-line-installation) - for example, `%pip` or `%conda` - in your notebook, to install new libraries. This option installs the libraries only in the current notebook, and not in the workspace. Use this code to install a library. Replace `<library name>` with the name of your library: `imblearn` or `wordcloud`.
+Use the [Python inline installation capabilities](../data-engineering/library-management.md#python-in-line-installation)- for example, `%pip` or `%conda` - in your notebook, to install new libraries. This option installs the libraries only in the current notebook, and not in the workspace. Use this code to install a library. Replace `<library name>` with the name of your library: `imblearn` or `wordcloud`.
 
 ```python
 # Use pip to install libraries
@@ -33,14 +33,12 @@ Use the [inline installation capabilities](python-guide/python-library-managemen
 %conda install <library name>
 ```
 
-### Install directly in your workspace
+### Set default libraries for the workspace
 
-You can install libraries in your [current workspace](../get-started/workspaces.md#current-workspace) to make them available for use in any notebooks in the workspace.
+To make your libraries available for use in any notebooks in the workspace, you can use a [Fabric environment](https://aka.ms/fabric/create-environment) for that purpose. You can create an environment, install the library in it, and then your __workspace admin__ can attach the environment to the workspace as its default environment. For more information on setting an environment as the workspace default, see [Admin sets default libraries for the workspace](../data-engineering/library-management.md#scenario-1-admin-sets-default-libraries-for-the-workspace).
 
 > [!IMPORTANT]
-> Only your workspace admin has permissions to update the workspace-level settings.
-
-For more information about workspace library installation, see [Install workspace libraries](python-guide/python-library-management.md#install-workspace-libraries).
+> Library management at the workspace setting is no longer supported. You can follow ["Migrate workspace libraries and Spark properties to a default environment"](../data-engineering/environment-workspace-migration.md) to migrate existing workspace libraries to an environment and attach it as the workspace default.
 
 ## Follow tutorials to create machine learning models
 

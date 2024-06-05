@@ -103,6 +103,7 @@ ChatGPT and GPT-4 models are language models that are optimized for conversation
 
 -   `gpt-35-turbo`
 -   `gpt-35-turbo-16k`
+-   `gpt-4`
 
 ``` python
 from pyspark.sql import Row
@@ -135,7 +136,7 @@ chat_df = spark.createDataFrame(
 
 chat_completion = (
     OpenAIChatCompletion()
-    .setDeploymentName("gpt-35-turbo-16k") # deploymentName could be one of {gpt-35-turbo, gpt-35-turbo-16k}
+    .setDeploymentName("gpt-35-turbo-16k") # deploymentName could be one of {gpt-35-turbo, gpt-35-turbo-16k, gpt-4}
     .setMessagesCol("messages")
     .setErrorCol("error")
     .setOutputCol("chat_completions")

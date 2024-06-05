@@ -4,6 +4,8 @@ description: Learn how to resolve conflicts when using Fabric's Git integration 
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: how-to
 ms.date: 10/16/2023
 ms.custom:
@@ -73,4 +75,4 @@ If you're not sure what changes were made and which version to choose and don’
 ## Related content
 
 - [Manually update after a failed update](./partial-update.md)
-- [Lifecycle management Frequently asked questions](../faq.md)
+- [Lifecycle management Frequently asked questions](../faq.yml)

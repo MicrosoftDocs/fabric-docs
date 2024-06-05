@@ -3,24 +3,25 @@ title: Get started using deployment pipelines, the Fabric Application lifecycle 
 description: Learn how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
-  - contperf-fy21q1
   - intro-get-started
   - build-2023
   - ignite-2023
-ms.date: 11/26/2023
+ms.date: 04/14/2024
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
 # Get started with deployment pipelines
 
-This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. We recommend reading the [deployment pipelines introduction](intro-to-deployment-pipelines.md) and understanding [which items can be deployed](./understand-the-deployment-process.md#supported-items) before you proceed.
+This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. We recommend reading the [deployment pipelines introduction](intro-to-deployment-pipelines.md) and understanding [which items can be deployed](./intro-to-deployment-pipelines.md#supported-items) before you proceed.
 
 You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) training module, which shows you step by step how to create a deployment pipeline.
 
 >[!NOTE]
->In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](../faq.md#what-type-of-capacity-do-i-need) for the pipeline's workspaces.
+>In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](../faq.yml#what-type-of-capacity-do-i-need) for the pipeline's workspaces.
 
 ## Prerequisites
 
@@ -106,19 +107,17 @@ You can have as many public stages as you want, or none at all. To change the pu
 
 When you finished working with content in one pipeline stage, you can deploy it to the next stage. Deploying content to another stage is often done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production, but you can deploy in any direction. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
-Deployment pipelines offer three options when it comes to deploying your content:
+Deployment pipelines offer two options when it comes to deploying your content:
 
 * [Full deployment](deploy-content.md#deploy-all-content) - Deploy all your content to the target stage.
 
 * [Selective deployment](deploy-content.md#selective-deployment) - Select which content to deploy to the target stage.
 
-* [Backwards deployment](deploy-content.md#backwards-deployment) - Deploy your content to a previous stage in the pipeline.
-
 After you choose how to deploy your content, you can [Review your deployment and leave a note](deploy-content.md#review-your-deployment-and-leave-a-note).
 
 ## Step 5 - Deploy content from one stage to another
 
-Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. Items with the same name and type are overwritten. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
+Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](./assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
 To deploy content to the next stage in the deployment pipeline, select the deploy button at the bottom of the stage.
 
@@ -132,7 +131,7 @@ To examine the differences between the two pipelines before you deploy, see [com
 
 When you're working in a deployment pipeline, different stages may have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
-When you deploy content between pipeline stages, configuring deployment rules enables you to allow changes to content, while keeping some settings intact. For example, if you want a semantic model in a production stage to point to a production database, you can define a rule for this. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production, will inherit the value as defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
+When you deploy content between pipeline stages, configuring deployment rules enables you to allow changes to content while keeping some settings intact. For example, if you want a semantic model in a production stage to point to a production database, you can define a rule for this. Define the rule in the production stage under the appropriate semantic model. Once a rule is defined or changed, you need to redeploy the content. The deployed content will inherit the value defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
 
 [Read about how to define deployment rules.](create-rules.md)
 

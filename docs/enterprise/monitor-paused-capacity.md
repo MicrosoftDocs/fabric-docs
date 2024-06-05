@@ -5,12 +5,12 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 01/22/2024
+ms.date: 02/12/2024
 ---
 
 # Monitor a paused capacity
 
-To monitor [paused capacities](pause-resume.md), use the [Microsoft Fabric Capacity Metrics app](metrics-app.md).
+To monitor [paused capacities](pause-resume.md), use the latest version of the [Microsoft Fabric Capacity Metrics app](metrics-app.md).
 
 ## View the paused capacity events
 
@@ -35,6 +35,12 @@ You can find out what's the percentage of [carry forward](throttling.md#carry-fo
 3. Hover over the SKU card. A tooltip displays the remaining cumulative carry forward percent.
 
 :::image type="content" source="media/monitor-paused-capacity/sku-card-hover.png" alt-text="Screenshot showing a tooltip that lists the remaining cumulative carry forward percent when you hover over the S K U card in the timepoint page in the Microsoft Fabric capacity metrics app.":::
+
+## Considerations and limitations
+
+* After you pause a capacity, the timepoint of the paused capacity in the [timepoint page](metrics-app-timepoint-page.md), is displayed 30 seconds after the capacity was paused. This timepoint includes all of your capacity’s reconciled consumption.
+
+* When pausing a capacity, the timepoint prior to the timepoint the capacity was paused at, is cancelled and doesn't appear in the [compute page](metrics-app-compute-page.md). For example, if you paused your capacity at 13:00:00, the 12:29:30 timepoint will not exist.
 
 ## Related content
 

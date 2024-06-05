@@ -7,6 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
 ms.date: 01/07/2024
 ---
 
@@ -109,12 +110,14 @@ Access to data varies according to the Microsoft Fabric experience your request 
     * Delete usage metrics v2 package
     * Delete admin monitoring folder
 
-* **Real-Time Analytics** - The Real-Time Analytics engineer will have access to the data in the KQL database that's linked to your request.
+* **Real-Time Intelligence** - The Real-Time Intelligence engineer will have access to the data in the KQL database that's linked to your request.
 
 * **Data Engineering** - The Data Engineering engineer will have access to the following Spark logs linked to your request:
     * Driver logs
     * Event logs
     * Executor logs
+ 
+* **Data Factory** - The Data Factory engineer will have access to data pipeline definitions linked to your request, if permission is granted.
 
 ## Related content
 
