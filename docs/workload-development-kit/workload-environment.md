@@ -37,33 +37,6 @@ The workloads can run in two environments: local and cloud. In local (devmode), 
 
 ## Development environment
 
-### Workload NuGet package structure
-
-The Workload is packaged as a NuGet package, combining backend (BE) and frontend (FE) components. The structure adheres to specific naming conventions and is enforced by Fabric for consistency across upload scenarios.
-The NuGet package designed to represent Workloads is structured to include both backend (BE) and frontend (FE) components.
-
-#### Backend (BE) Structure
-
-The BE segment comprises XML files that define the Workload and its associated Items, which are essential for registration within the Fabric system.
-
-##### Key Components:
-- **`WorkloadManifest.xml`**: The critical manifest file for your Workload, required to have this exact name for Fabric's verification.
-- **`Item1.xml`, `Item2.xml`, ...**: Manifests for individual Items with flexible naming, following the XML format.
-
-#### Frontend (FE) Structure
-
-The FE section contains JSON files detailing the Product and Items for the frontend, along with an 'assets' directory for icons.
-
-##### Key Components:
-- **`Product.json`**: The main manifest for your product's frontend, which must be named precisely for Fabric's verification.
-- **`assets`** folder: Stores all SVG icons (`icon1.svg`, `icon2.svg`, ...) used by the frontend.
-
-#### Mandatory Structure Compliance
-
-The structure, including specific subfolder names ('BE', 'FE', 'assets'), is mandatory and enforced by Fabric for all upload scenarios, including test and development packages. The structure is specified in the `.nuspec` files found in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) under the `./src/Packages/manifest/ManifestPackage` directory.
-
-During the development cycle, testing a workload on a nonproduction tenant can be done in two modes, local (devmode) and cloud mode (tenant mode). For more information, see the relevant document.
-
 > [!NOTE]
 > For each dev mode, a different package is created when building the BE solution in Visual Studio.
 
@@ -74,6 +47,33 @@ During the development cycle, testing a workload on a nonproduction tenant can b
 - **Cloud mode workload package**: When building the BE solution in Visual Studio, use the Release parameter to create a standalone workload package (BE and FE). This package can be uploaded to tenant directly.
 
 :::image type="content" source="./media/workload-environment/cloud-mode-diagram.png" alt-text="Diagram of the cloud mode architecture." lightbox="./media/workload-environment/cloud-mode-diagram.png":::
+
+### Workload NuGet package structure
+
+The workload is packaged as a NuGet package, combining backend and frontend components. The structure adheres to specific naming conventions and is enforced by Fabric for consistency across upload scenarios.
+The NuGet package designed to represent workloads is structured to include both backend and frontend components.
+
+#### Backend Structure
+
+The backend segment comprises XML files that define the Workload and its associated Items, which are essential for registration within the Fabric system.
+
+##### Key Components:
+- `WorkloadManifest.xml` - The workload configuration file, required to have this exact name for Fabric's verification.
+- `Item1.xml`, `Item2.xml`, `...` - Manifests for individual items with flexible naming, following the XML format.
+
+#### Frontend structure
+
+The frontend section contains .json files detailing the product and items for the frontend, along with an 'assets' directory for icons.
+
+##### Key Components:
+- `Product.json` - The main manifest for your product's frontend, which must be named precisely for Fabric's verification.
+- `assets` folder - Stores all .svg icons no`icon1.svg`, `icon2.svg`, `...` used by the frontend.
+
+#### Mandatory Structure Compliance
+
+The structure, including specific subfolder names ('BE', 'FE', 'assets'), is mandatory and enforced by Fabric for all upload scenarios, including test and development packages. The structure is specified in the `.nuspec` files found in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) under the `./src/Packages/manifest/ManifestPackage` directory.
+
+During the development cycle, testing a workload on a nonproduction tenant can be done in two modes, local (devmode) and cloud mode (tenant mode). For more information, see the relevant document.
 
 ### Local development mode (devmode)
 
