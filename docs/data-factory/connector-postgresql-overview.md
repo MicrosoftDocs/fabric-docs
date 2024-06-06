@@ -26,7 +26,7 @@ The PostgreSQL database connector supports the following capabilities in Data pi
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Basic |
+| **Copy activity (source/-)** | None | Basic |
 | **Lookup activity** | None | Basic |
 
 To learn more about the copy activity configuration for PostgreSQL database in Data pipeline, go to [Configure in a data pipeline copy activity](connector-postgresql-copy-activity.md).
