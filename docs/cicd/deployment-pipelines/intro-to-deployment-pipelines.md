@@ -69,7 +69,7 @@ You can decide how many stages you want in your deployment pipeline. There can b
 
 ## Item pairing
 
-Pairing is the process by which an item (such as reports, dashboards, and semantic models) in one stage of the deployment pipeline is associated with the same item in the adjacent stage. Pairing occurs when you assign a workspace to a deployment stage or when you deploy content from one stage to another. Pairing is vital for correct deployments. If items aren't paired, even if they appear to be the same, they won't overwrite on a subsequent deployment.
+Pairing is the process by which an item (such as reports, dashboards, and semantic models) in one stage of the deployment pipeline is associated with the same item in the adjacent stage. Pairing occurs when you assign a workspace to a deployment stage or when you deploy content from one stage to another. It's important to understand how pairing works in order to ensure that the correct items are copied or overwritten when moving from one stage to another. If items aren't paired, even if they appear to be the same (have the same name, type, and folder), they won't overwrite on a subsequent deployment.
 
 * Items in the same folder with the same name and type are automatically paired when the workspace is assigned or items are deployed.
 * Items that are paired remain paired even if you change their names. Therefore, paired items can have different names.
