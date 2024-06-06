@@ -44,8 +44,6 @@ Like other standard Fabric items creation processes, you can create a new AI Ski
 
 :::image type="content" source="./media/how-to-create-ai-skill/create-ai-skill.png" alt-text="Screenshot showing creation of an AI Skill." lightbox="./media/how-to-create-ai-skill/create-ai-skill.png":::
 
-You just created your first AI Skill!
-
 ## Selecting your data
 
 After you create an AI Skill, you select a data source - either a Data Warehouse or a Lakehouse - on the next screen. Select the Warehouse or Lakehouse, and then select "Connect."
@@ -63,13 +61,13 @@ should work, as shown in this screenshot:
 
 :::image type="content" source="./media/how-to-create-ai-skill/ask.png" alt-text="Screenshot showing a question for an AI Skill." lightbox="./media/how-to-create-ai-skill/ask.png":::
 
-Questions like
-
+Questions like:
 - "Why is our factory productivity lower in Q2 2024?"
+- "What is the root cause of our sales spike?"
 
 are out of scope.
 
-When you ask a question, the system uses your credentials to fetch the schema. Based on that question, the additional information you provided (see "Providing Examples" and "Providing Instructions" later on), and the schema, the system then constructs a prompt. This prompt is the text that is sent to an AI, which generates multiple SQL queries. After generation of the SQL queries, we parse them to ensure that they only query the data. Additionally, we verify that they don't create, update, delete, or otherwise change your data in any way. We then extract the best query candidate from the list of generated queries, and make some basic repairs on the best AI-generated query. Finally, with your credentials, we once again execute the query, and return the result set to you.
+When you ask a question, the system uses your credentials to fetch the schema. Based on that question, the additional information you provided (see the sections on "Providing Examples" and "Providing Instructions" below), and the schema, the system then constructs a prompt. This prompt is the text that is sent to an AI, which generates multiple SQL queries. After generation of the SQL queries, we parse them to ensure that they only query the data. Additionally, we verify that they don't create, update, delete, or otherwise change your data in any way. We then extract the best query candidate from the list of generated queries, and make some basic repairs on the best AI-generated query. Finally, with your credentials, we once again execute the query, and return the result set to you.
 
 ## Changing the data source
 
@@ -79,19 +77,21 @@ To switch to another Lakehouse or Warehouse, select the arrows near the top of t
 
 ## Providing examples
 
-Ideally, you can steer the AI with the AI Skill, so that the AI answers your questions in the way you expect. One technique is to provide examples to the AI. In generative AI, we refer to this as Few Shot Learning. Here, you give the AI access to query/question pairs. The next time you ask a question, you'll find the most relevant questions in the set of questions that you provided. These questions, together with the corresponding SQL query you provided, give background to the AI as it generates the SQL.
+In Fabric you can configure the AI Skill so that the AI answers your questions in the way you expect. One technique is to provide examples to the AI. In generative AI, we refer to this as Few Shot Learning. Here, you give the AI access to query/question pairs. The next time you ask a question, the AI will find the most relevant questions in the set of questions that you provided. These questions, together with the corresponding SQL query you provided, give background to the AI as it generates the SQL.
 
 If you find that the AI doesn't generate the right queries, you can provide more examples.
 
-<todo - provide an image>
+To provide examples you can select the edit button under the "Example SQL Queries" on the right hand side
+
+:::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-examples.png":::
 
 ## Providing instructions
 
-To steer the AI, you can provide instructions in the "Notes for the Model" textbox as another option. Here, you can write instructions in English, and the AI will try its best to use those instructions to generate SQL.
+Another technique you can use to steer the AI are instructions. You can provide these in the "Notes for the Model" textbox. Here, you can write instructions in English, and the AI will use those instructions when it generates SQL.
 
-You can fit much information in this option. If you find that the AI consistently misinterprets certain words or acronyms, you can provide definitions of terms in this section.
+If you find that the AI consistently misinterprets certain words or acronyms, you can provide definitions of terms in this section.
 
-<todo - add an image>
+:::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png" alt-text="Screenshot showing where you can edit the instructions you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png":::
 
 ## Next step -or- Related content
 

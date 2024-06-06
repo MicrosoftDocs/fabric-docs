@@ -19,15 +19,54 @@ This article shows how to configure an AI Skill on the AdventureWorks dataset.
 
 ## Prerequisites
 
-- **TBD**
+- An F64 Fabric capacity or higher.
+- [Copilot tenant switch](../admin/service-admin-portal-copilot.md) is enabled.
+- [Cross-Geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
+
+## Create a Lakehouse with Adventure Works DW
+First we will create a Lakehouse and populate it with the data that we need.
+
+If you already have an instance of Adventure Works DW in a Warehouse or Lakehouse, you can skip this step. If not, we will create a Lakehouse from a Notebook and use the Notebook to populate the Lakehouse with the data.
+
+**Step 1:** Create a new Notebook in the workspace you want to create your AI Skill in.
+**Step 2:** Add an existing Lakehouse or a new Lakehouse by clicking the "+ Data sources" button in the Explorer pane on the left. 
+**Step 3:** Add the below code in the top cell.
+
+```python
+import pandas as pd
+from tqdm.auto import tqdm
+base = "https://synapseaisolutionsa.blob.core.windows.net/public/AdventureWorks"
+
+# load list of tables
+df_tables = pd.read_csv(f"{base}/adventureworks.csv", names=["table"])
+
+for table in (pbar := tqdm(df_tables['table'].values)):
+    pbar.set_description(f"Uploading {table} to lakehouse")
+
+    # download
+    df = pd.read_parquet(f"{base}/{table}.parquet")
+
+    # save as lakehouse table
+    spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)
+```
+
+**Step 4:** press run all.
+
+:::image type="content" source="./media/ai-skill-scenario/notebook-run-all.png" alt-text="Screenshot showing a notebook with the Adventure Works upload code." lightbox="./media/ai-skill-scenario/notebook-run-all.png":::
+
+After a few minutes your Lakehouse will be populated with the necessary data.
+
+## Create an AI Skill
+
+Create a new AI Skill by navigating to the Data Science Experience, and clicking the "AI Skill" item.
+
+:::image type="content" source="./media/ai-skill-scenario/create-first-ai-skill.png" alt-text="Screenshot showing where to create AI Skills." lightbox="./media/ai-skill-scenario/create-first-ai-skill.png":::
+
+Once you have provided a name, you will have created an AI Skill.
 
 ## Select the data
 
-**This seems to reference a lakehouse. It should describe the steps required to create that lakehouse.**
-
-To follow along, you can download the data from [this resource](/sql/samples/adventureworks-install-configure) and upload it to a Warehouse or Lakehouse on Fabric. Here, we use AdventureWorksDW2012.bak.
-
-Select the lakehouse you created.
+Select the Lakehouse you created and press "Connect". After you have done so, you will need to select the tables you want the AI Skill to have access to.
 
 We'll use these tables:
 
@@ -48,7 +87,7 @@ When you first ask the AI Skill questions with the listed tables selected, the A
 
 - "Long-Sleeve Logo Jersey, L"
 
-However, the SQL query does things we don't want. First, it only looks at the FactResellerSales table. It ignores the FactInternetSales table. Second, it orders the products by order quantity, when we really care about total sales revenue associated with the product, as shown in this screenshot:
+However, the SQL query does things we do not want. First, it only looks at the FactResellerSales table. It ignores the FactInternetSales table. Second, it orders the products by order quantity, when we really care about total sales revenue associated with the product, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/most-sold-ai-skill-first-question.png" alt-text="Screenshot showing the first example AI Skill highest sales product question." lightbox="./media/ai-skill-scenario/most-sold-ai-skill-first-question.png":::
 
@@ -97,7 +136,7 @@ If you copy this text into the Notes for the model textbox, the AI will refer to
 
 In addition to instructions, examples serve as another effective way to guide the AI. If you have questions that your AI Skill often receives, or questions that require complex joins, consider adding examples for them.
 
-For example, if we ask the question: "**How many active customers did we have June 1st, 2010**", some valid SQL is generated, as shown in this screenshot:
+For example, if we ask the question: "**How many active customers did we have June 1st, 2013**", some valid SQL is generated, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/active-customer-ai-skill-first-question.png" alt-text="Screenshot showing the first example AI Skill active customer count question." lightbox="./media/ai-skill-scenario/active-customer-ai-skill-first-question.png":::
 
@@ -107,11 +146,9 @@ Part of the problem is that we never defined an "active customer." More instruct
 
 :::image type="content" source="./media/ai-skill-scenario/examples-ai-skill-sql-query.png" alt-text="Screenshot showing an example AI Skill SQL query." lightbox="./media/ai-skill-scenario/examples-ai-skill-sql-query.png":::
 
-If we then repeat the question, we get an improved answer!
+If we then repeat the question, we get an improved answer.
 
-TODO
-
-To add instructions to the model, you can try something like: "**active customers are defined as customers that have made at least two purchases in the last 6 months**".
+:::image type="content" source="./media/ai-skill-scenario/active-customer-ai-skill-second-question.png" alt-text="Screenshot showing the second example AI Skill active customer count question." lightbox="./media/ai-skill-scenario/active-customer-ai-skill-second-question.png":::
 
 You can manually add examples, but you can also upload them from a json file. This helps when you have many SQL queries that you want to place in one file for a single upload, instead of manually uploading the queries one by one. For our setup, we'll use these examples:
 
@@ -134,13 +171,9 @@ You can manually add examples, but you can also upload them from a json file. Th
 }
 ```
 
-## Test (**and revise?**) the AI Skill
+## Test and revise the AI Skill
 
 We added both instructions and examples to the AI Skill. As we continue testing, we might want to add more examples and instructions to improve the AI Skill even further. It's important to work with your colleagues, to see if you provided examples and instructions that cover the kinds of questions they want to ask!
-
-## Share the AI Skill
-
-Share the AI Skill with your colleagues and have them try it out. You'll soon be able to connect the AI Skill with Microsoft Copilot Studio and other platforms. The AI Skill then becomes consumable from outside of Microsoft Fabric.
 
 ## Related content
 
