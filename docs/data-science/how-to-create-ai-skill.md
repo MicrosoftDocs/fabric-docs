@@ -31,10 +31,10 @@ Are you ready to have conversations about your data? You can create AI experienc
 Creation and configuration of an AI Skill on Fabric involves these steps:
 
 1. Create a new AI Skill
-2. Select your data
-3. Ask the questions
-4. Provide examples
-5. Provide instructions
+1. Select your data
+1. Ask the questions
+1. Provide examples
+1. Provide instructions
 
 It's a straightforward process, and you can begin testing the AI Skill resources in minutes.
 
