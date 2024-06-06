@@ -90,7 +90,7 @@ As long as you’re connected, the following information appears at the bottom o
 
 :::image type="content" source="./media/git-integration-process/sync-info.png" alt-text="Screenshot of sync information that appears on the bottom of the screen when connected to Git.":::
 
-## Source control 
+## Source control
 
 On top of the screen is the **Source control** icon. It shows the number of items that are different in the workspace and Git branch. When changes are made either to the workspace or the Git branch, the number is updated. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
 
@@ -137,13 +137,13 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 
 The *Branch* tab of the Source control panel enables you to do any of the following actions:
 
-- Checkout a new (must be workspace admin)
-- Switch branches (must be workspace admin)
-- [Create a new Git branch quickly](./manage-branches.md#develop-using-another-workspace) (any role)
+- **Checkout a new branch** (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
+- **Switch branches** (must be workspace admin): Changes the Git connection in the current workspace. This overrides the content of the workspace with the content of the branch.
+- [**Branch out to new workspace**](./manage-branches.md#develop-using-another-workspace) (any role): Creates a new workspace and new branch based on the last commit of the branch connected to the current workspace. It connects to the new workspace and new branch.
 
 :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
 
-The *Branch* tab also has a list of related workspaces you can select and switch to. A related branch is one with the same properties as the current branch, such as the same workspace, directory, and branch name.
+The *Branch* tab also has a list of related workspaces you can select and switch to. A related workspace is one with the same connection properties as the current branch, such as the same organization, project, repository, and git folder.
 
 :::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
 
