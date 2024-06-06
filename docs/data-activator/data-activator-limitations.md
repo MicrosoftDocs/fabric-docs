@@ -3,7 +3,7 @@ title: Data Activator limitations
 description: Learn about Data Activator limitations.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom:
   - build-2024
 ms.search.form: product-reflex
@@ -22,6 +22,7 @@ Data Activator is subject to the following limitations and considerations.
 Data activator has the following general limitations:
 
 * Creation of an alert for a report using Dynamic M parameter isn't currently supported
+* Creating alerts from the Fabric or Power BI Capacity Metrics app isn't currently supported
 
 ## Supported Power BI visuals
 

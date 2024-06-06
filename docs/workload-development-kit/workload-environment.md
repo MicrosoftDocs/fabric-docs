@@ -4,7 +4,7 @@ description: Learn about the Microsoft Fabric workload environment and how it's 
 author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: muliwienrib
-ms.topic: concept
+ms.topic: conceptual
 ms.custom:
 ms.date: 05/21/2024
 ---

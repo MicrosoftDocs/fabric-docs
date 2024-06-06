@@ -4,7 +4,7 @@ description: Learn how to add, remove, and use a workload from the workload hub.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: teddyberco
-ms.topic: concept
+ms.topic: conceptual
 ms.custom:
 ms.date: 05/21/2024
 ---
