@@ -39,7 +39,7 @@ The SharePoint Online List uses ACS to acquire the access token to grant access 
 
 You need to enable ACS to acquire the access token. Take the following steps:  
 
-1. Download [SharePoint Online Management Shell](https://www.microsoft.com/download/details.aspx?id=35588#:~:text=The%20SharePoint%20Online%20Management%20Shell%20has%20a%20new,and%20saving%20the%20file%20to%20your%20hard%20disk.), and ensure that you have a tenant admin account. 
+1. Download [SharePoint Online Management Shell](https://www.microsoft.com/download/details.aspx?id=35588#:~:text=The%20SharePoint%20Online%20Management%20Shell%20has%20a%20new,and%20saving%20the%20file%20to%20your%20hard%20disk), and ensure that you have a tenant admin account. 
 1. Run the following command in the SharePoint Online Management Shell. Replace `<tenant name>` with your tenant name and add `-admin` after it.  
 
    ```powershell
