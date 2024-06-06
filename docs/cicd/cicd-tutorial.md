@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
-ms.date: 04/14/2024
+ms.date: 06/04/2024
 ---
 
 # Tutorial: Lifecycle management in Fabric
@@ -173,7 +173,7 @@ For more information on deploying content, see [Deploy content](./deployment-pip
 
 In order to edit the workspace without interfering with other team members' changes, each team member creates their own isolated workspace to work in until they're ready to share their changes with the team.
 
-1. From the *branch* tab of the **Source control** menu, select **Branch out to new workspace**.
+1. Go to the *branch* tab of the **Source control** menu, and select **Branch out to new workspace**.
 
     :::image type="content" source="./media/cicd-tutorial/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 

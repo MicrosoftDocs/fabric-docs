@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: conceptual
-ms.date: 05/29/2024
+ms.date: 06/04/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -100,16 +100,8 @@ Select the Source control icon to open the **Source control** pane.
 
 The **Source control** pane has two tabs on the side.
 
-- [Branches](#branch-out)
 - [Commits and updates](#commits-and-updates)
-
-### Branch out
-
-The Branch tab of the Source control panel enables you to create a new Git branch quickly.
-
-:::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="{alt-text}":::
-
-See [Branching out limitations](#branching-out-limitations) for more information.
+- [Branches](#branch-out)
 
 ### Commits and updates
 
@@ -128,18 +120,34 @@ In each tab, the changed items are listed with an icon indicating the status:
 
 :::image type="content" source="./media/git-integration-process/source-control-panel-items.png" alt-text="Screenshot of the source control panel showing the status of the changed items.":::
 
-### Commit
+#### Commit
 
-- When there's more than one item to commit, you can select which items to commit to the Git branch.
+- Items in the workspace that were changed are listed in the *Changes* tab. When there's more than one changed item, you can select which items to commit to the Git branch.
 - If there were updates made to the Git branch, commits are disabled until you update your workspace.
 
-### Update
+#### Update
 
 - Unlike *commit* and *undo*, the *Update* command always updates the entire branch and syncs to the most recent commit. You can’t select specific items to update.
 - If changes were made in the workspace and in the Git branch *on the same item*, updates are disabled until the [conflict is resolved](./conflict-resolution.md).
 
 Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git).
 Read more about the update process and how to [resolve conflicts](./conflict-resolution.md).
+
+### Branch out
+
+The *Branch* tab of the Source control panel enables you to do any of the following actions:
+
+- Checkout a new (must be workspace admin)
+- Switch branches (must be workspace admin)
+- [Create a new Git branch quickly](./manage-branches.md#develop-using-another-workspace) (any role)
+
+:::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
+
+The *Branch* tab also has a list of related workspaces you can select and switch to. A related branch is one with the same properties as the current branch, such as the same workspace, directory, and branch name.
+
+:::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
+
+See [Branching out limitations](#branching-out-limitations) for more information.
 
 ## Considerations and limitations
 
@@ -173,10 +181,9 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 
 ### Branching out limitations
 
-- When branching out, a new folder is created and the settings from the original folder aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
+- When branching out, a new workspace is created and the settings from the original folder aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
 - Only [Git supported items](./intro-to-git-integration.md#supported-items) are available in the new workspace.
 - The related branches list only shows branches and workspaces you have permission to view.
-
 
 ### Sync and commit limitations
 
