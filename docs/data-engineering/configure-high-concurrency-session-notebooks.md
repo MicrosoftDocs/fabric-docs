@@ -4,7 +4,7 @@ description: Learn how to configure and run high concurrency mode to reuse sessi
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
-ms.topic: concepts
+ms.topic: conceptual
 ms.custom:
   - ignite-2023
 ms.date: 07/16/2023
