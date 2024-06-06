@@ -63,7 +63,7 @@ Connectors are arrows that represent logical connections between the tasks in th
 ## Considerations and limitations
 
 * The positioning of tasks on the task flow canvas is persistent. However, due to a known issue, when a new task is added to the canvas, all tasks that aren't connected to another task will return to their default position. Therefore, whenever possible, it's recommended to connect all tasks before adding a new task.
-* Creating paginated reports and semantic models from a task isn't supported.
+* Creating paginated reports, dataflows Gen1, and semantic models from a task isn't supported.
 * Creating reports from a task is supported only if a published semantic model is picked. 
 
 ## Related content
