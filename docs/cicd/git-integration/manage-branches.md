@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: conceptual
-ms.date: 04/14/2024
+ms.date: 06/06/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -36,7 +36,7 @@ The workflow for developers using a client tool like Power BI Desktop should loo
 1. Open the project in Power BI Desktop using the local copy of the *PBIProj*.
 1. Make changes and save the updated files locally. [Commit](/azure/devops/repos/git/gitquickstart#commit-your-work) to the local repo.
 1. When ready, [push](/azure/devops/repos/git/pushing) the branch and commits to the remote repo.
-1. Test the changes against other items or more data by connecting the new branch to a separate workspace, and uploading the semantic model and reports using the *update all* button in the source control pane. Do any tests or configuration changes there before merging into the *main* branch.
+1. Test the changes against other items or more data by connecting the new branch to a separate workspace, and uploading the semantic model and reports using the *update all* button in the source control panel. Do any tests or configuration changes there before merging into the *main* branch.
 
    If no tests are required in the workspace, the developer can merge changes directly into the *main* branch, without the need for another workspace.
 

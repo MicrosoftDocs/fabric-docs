@@ -90,24 +90,24 @@ As long as you’re connected, the following information appears at the bottom o
 
 :::image type="content" source="./media/git-integration-process/sync-info.png" alt-text="Screenshot of sync information that appears on the bottom of the screen when connected to Git.":::
 
-## Source control pane
+## Source control 
 
 On top of the screen is the **Source control** icon. It shows the number of items that are different in the workspace and Git branch. When changes are made either to the workspace or the Git branch, the number is updated. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
 
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 
-Select the Source control icon to open the **Source control** pane.
+Select the Source control icon to open the **Source control** panel.
 
-The **Source control** pane has two tabs on the side.
+The **Source control** panel has two tabs on the side.
 
 - [Commits and updates](#commits-and-updates)
 - [Branches](#branch-out)
 
 ### Commits and updates
 
-When changes are made either to the workspace or the Git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control pane.
+When changes are made either to the workspace or the Git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control panel.
 
-The **Commit and update** pane has two tabs.
+The **Commit and update** panel has two tabs.
 
 The **Changes** tab shows the number of items that were changed in the workspace and need to be committed to Git. The **Updates** tab shows the number of items that were modified in the Git branch and need to be updated to the workspace.
 
