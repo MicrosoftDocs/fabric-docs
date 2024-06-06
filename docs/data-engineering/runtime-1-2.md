@@ -32,52 +32,8 @@ Microsoft Fabric Runtime 1.2 comes with a collection of default level packages, 
 Apache Spark 3.4.0 is the fifth release in the 3.x line. This release, driven by the open-source community, resolved over 2,600 Jira tickets. It introduces a Python client for Spark Connect, enhances Structured Streaming with async progress tracking and Python stateful processing. It expands Pandas API coverage with NumPy input support, simplifies migration from traditional data warehouses through ANSI compliance and new built-in functions. It also improves development productivity and debuggability with memory profiling. Additionally, Runtime 1.2 is based on Apache Spark 3.4.1, a maintenance release focused on stability fixes.
 
 ### Key highlights
-*   Implement support for DEFAULT values for columns in tables ([SPARK-38334](https://issues.apache.org/jira/browse/SPARK-38334))
-*   Support TIMESTAMP WITHOUT TIMEZONE data type ([SPARK-35662](https://issues.apache.org/jira/browse/SPARK-35662))
-*   Support "Lateral Column Alias References" ([SPARK-27561](https://issues.apache.org/jira/browse/SPARK-27561))
-*   Harden SQLSTATE usage for error classes ([SPARK-41994](https://issues.apache.org/jira/browse/SPARK-41994))
-*   Enable Bloom filter Joins by default ([SPARK-38841](https://issues.apache.org/jira/browse/SPARK-38841))
-*   Better Spark UI scalability and Driver stability for large applications ([SPARK-41053](https://issues.apache.org/jira/browse/SPARK-41053))
-*   Async Progress Tracking in Structured Streaming ([SPARK-39591](https://issues.apache.org/jira/browse/SPARK-39591))
-*   Python Arbitrary Stateful Processing in Structured Streaming ([SPARK-40434](https://issues.apache.org/jira/browse/SPARK-40434))
-*   Pandas API coverage improvements ([SPARK-42882](https://issues.apache.org/jira/browse/SPARK-42882)) and NumPy input support in PySpark ([SPARK-39405](https://issues.apache.org/jira/browse/SPARK-39405))
-*   Provide a memory profiler for PySpark user-defined functions ([SPARK-40281](https://issues.apache.org/jira/browse/SPARK-40281))
-*   Implement PyTorch Distributor ([SPARK-41589](https://issues.apache.org/jira/browse/SPARK-41589))
-*   Publish SBOM (software bill of materials) artifacts ([SPARK-41893](https://issues.apache.org/jira/browse/SPARK-41893))
-*   Implement support for DEFAULT values for columns in tables ([SPARK-38334](https://issues.apache.org/jira/browse/SPARK-38334))
-*   Support parameterized SQL ([SPARK-41271](https://issues.apache.org/jira/browse/SPARK-41271), [SPARK-42702](https://issues.apache.org/jira/browse/SPARK-42702))
-*   Implement support for DEFAULT values for columns in tables ([SPARK-38334](https://issues.apache.org/jira/browse/SPARK-38334))
-*   Add Dataset.as(StructType) ([SPARK-39625](https://issues.apache.org/jira/browse/SPARK-39625))
-*   Support parameterized SQL ([SPARK-41271](https://issues.apache.org/jira/browse/SPARK-41271), [SPARK-42702](https://issues.apache.org/jira/browse/SPARK-42702))
-*   Add unpivot / melt ([SPARK-38864](https://issues.apache.org/jira/browse/SPARK-38864), [SPARK-39876](https://issues.apache.org/jira/browse/SPARK-39876))
-*   Support "lateral column alias references" ([SPARK-27561](https://issues.apache.org/jira/browse/SPARK-27561))
-*   Support result offset clause ([SPARK-28330](https://issues.apache.org/jira/browse/SPARK-28330), [SPARK-39159](https://issues.apache.org/jira/browse/SPARK-39159))
-*   Support Timestamp without time zone data type ([SPARK-35662](https://issues.apache.org/jira/browse/SPARK-35662))
-*   Support scalar subquery in time travel ([SPARK-39306](https://issues.apache.org/jira/browse/SPARK-39306))
-*   Make Catalog API be compatible with 3-layer-namespace ([SPARK-39235](https://issues.apache.org/jira/browse/SPARK-39235))
-*   Support timestamp in seconds for TimeTravel using Dataframe options ([SPARK-39633](https://issues.apache.org/jira/browse/SPARK-39633))
-*   Add SparkSession.config(Map) ([SPARK-40163](https://issues.apache.org/jira/browse/SPARK-40163))
-*   Support changing session catalog’s default database ([SPARK-35242](https://issues.apache.org/jira/browse/SPARK-35242))
-*   Protobuf support for Spark - from\_protobuf AND to\_protobuf ([SPARK-40654](https://issues.apache.org/jira/browse/SPARK-40654))
-*   Add WHEN NOT MATCHED BY SOURCE clause to MERGE INTO ([SPARK-40921](https://issues.apache.org/jira/browse/SPARK-40921))
-*   Relax ordering constraint for CREATE TABLE column options ([SPARK-40944](https://issues.apache.org/jira/browse/SPARK-40944))
-*   SQL Equivalent for Dataframe overwrite command ([SPARK-40956](https://issues.apache.org/jira/browse/SPARK-40956))
-*   Support Generate with no required child output to host outer references ([SPARK-41441](https://issues.apache.org/jira/browse/SPARK-41441))
-*   ORDER BY ALL ([SPARK-41637](https://issues.apache.org/jira/browse/SPARK-41637))
-*   GROUP BY ALL ([SPARK-41635](https://issues.apache.org/jira/browse/SPARK-41635))
-*   Add flatMapSortedGroups and cogroupSorted ([SPARK-38591](https://issues.apache.org/jira/browse/SPARK-38591))
-*   Support subqueries with correlated non-equality predicates ([SPARK-36114](https://issues.apache.org/jira/browse/SPARK-36114))
-*   Support subqueries with correlation through UNION/INTERSECT/EXCEPT ([SPARK-36124](https://issues.apache.org/jira/browse/SPARK-36124))
-*   Fix the OOM error can’t be reported when AQE (adaptive query execution) on ([SPARK-42290](https://issues.apache.org/jira/browse/SPARK-42290))
-*   Fix the trim logic didn't handle ASCII control characters correctly ([SPARK-44383](https://issues.apache.org/jira/browse/SPARK-44383))
-*   Dataframe.joinWith outer-join should return a null value for unmatched row ([SPARK-37829](https://issues.apache.org/jira/browse/SPARK-37829))
-*   Use the utils to get the switch for dynamic allocation used in local checkpoint ([SPARK-42421](https://issues.apache.org/jira/browse/SPARK-42421))
-*   Add CapturedException to utils ([SPARK-42078](https://issues.apache.org/jira/browse/SPARK-42078))
-*   Support SELECT DEFAULT with ORDER BY, LIMIT, OFFSET for INSERT source relation ([SPARK-43071](https://issues.apache.org/jira/browse/SPARK-43071))
-*   Python client for Spark Connect ([SPARK-39375](https://issues.apache.org/jira/browse/SPARK-39375))
 
-Read the full version of the release notes for a specific Apache Spark version by visiting both [Spark 3.4.0](https://spark.apache.org/releases/spark-release-3-4-0.html) and [Spark 3.4.1](https://spark.apache.org/releases/spark-release-3-4-1.html). 
-
+Read the full version of the release notes for a specific Apache Spark version by visiting both [Spark 3.4.0](https://spark.apache.org/releases/spark-release-3-4-0.html) and [Spark 3.4.1](https://spark.apache.org/releases/spark-release-3-4-1.html).
 
 ### New custom query optimizations
 
@@ -87,13 +43,14 @@ Encountering a 404 error with the message 'Operation failed: The specified path 
 
 To access this feature, enable the `spark.sql.enable.concurrentWrites` feature flag, which is enabled by default starting from Runtime 1.2 (Spark 3.4). While this feature is also available in other Spark 3 versions, it isn't enabled by default. This feature doesn't support parallel execution of INSERT OVERWRITE queries where each concurrent job overwrites data on different partitions of the same table dynamically. For this purpose, Spark offers an alternative feature, which can be activated by configuring the `spark.sql.sources.partitionOverwriteMode` setting to [dynamic](https://spark.apache.org/docs/3.4.0/configuration.html#:~:text=spark.sql.sources.partitionOverwriteMode).
 
-
 #### Smart reads, which skip files from failed jobs
+
 In the current Spark committer system, when an insert into a table job fails but some tasks succeed, the files generated by the successful tasks coexist with files from the failed job. This coexistence can cause confusion for users as it becomes challenging to distinguish between files belonging to successful and unsuccessful jobs. Moreover, when one job reads from a table while another is inserting data concurrently into the same table, the reading job might access uncommitted data. If a write job fails, the reading job could process incorrect data.
 
 The `spark.sql.auto.cleanup.enabled` flag controls our new feature, addressing this issue. When enabled, Spark automatically skips reading files that haven't been committed when it performs `spark.read` or selects queries from a table. Files written before enabling this feature continue to be read as usual.
 
 Here are the visible changes:
+
 * All files now include a `tid-{jobID}` identifier in their filenames.
 *  Instead of the `_success` marker typically created in the output location upon successful job completion, a new `_committed_{jobID}` marker is generated. This marker associates successful Job IDs with specific filenames. 
 * We introduced a new SQL command that users can run periodically to manage storage and clean up uncommitted files. The syntax for this command is as follows:
@@ -102,52 +59,9 @@ Here are the visible changes:
   In this syntax, `path/to/dir` represents the location URI where cleanup is required, and `number` is a double type value representing the retention period. The default retention period is set to seven days.
 * We introduced a new configuration option called `spark.sql.deleteUncommittedFilesWhileListing`, which is set to `false` by default. Enabling this option results in the automatic deletion of uncommitted files during reads, but this scenario might slow down read operations. It's recommended to manually run the cleanup command when the cluster is idle instead of enabling this flag.
 
-
 ## Migration guide from Runtime 1.1 to Runtime 1.2
 
-When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, powered by Apache Spark 3.4, review [the official migration guide](https://spark.apache.org/docs/3.4.0/migration-guide.html). Here are the key highlights:
-
-#### Core
-*   Since Spark 3.4, Spark driver owns `PersistentVolumnClaim`s and try to reuse if they're not assigned to live executors. To restore the behavior before Spark 3.4, you can set `spark.kubernetes.driver.ownPersistentVolumeClaim` to `false` and `spark.kubernetes.driver.reusePersistentVolumeClaim` to `false`.
-*   Since Spark 3.4, Spark driver tracks shuffle data when dynamic allocation is enabled without shuffle service. To restore the behavior before Spark 3.4, you can set `spark.dynamicAllocation.shuffleTracking.enabled` to `false`.
-*   Since Spark 3.4, Spark tries to decommission cached RDD (resilient distributed dataset) and shuffle blocks if both `spark.decommission.enabled` and `spark.storage.decommission.enabled` are true. To restore the behavior before Spark 3.4, you can set both `spark.storage.decommission.rddBlocks.enabled` and `spark.storage.decommission.shuffleBlocks.enabled` to `false`.
-*   Since Spark 3.4, Spark uses RocksDB store if `spark.history.store.hybridStore.enabled` is true. To restore the behavior before Spark 3.4, you can set `spark.history.store.hybridStore.diskBackend` to `LEVELDB`. 
-#### PySpark
-*   In Spark 3.4, the schema of an array column is inferred by merging the schemas of all elements in the array. To restore the previous behavior where the schema is only inferred from the first element, you can set `spark.sql.pyspark.legacy.inferArrayTypeFromFirstElement.enabled` to `true`.
-*   In Spark 3.4, when using the Pandas on Spark API `Groupby.apply`, if the return type of the `func` parameter isn't specified and `compute.shortcut_limit` is set to 0, the number of sampling rows are automatically set to 2. This adjustment ensures that there are always at least two sampling rows to maintain accurate schema inference.
-*   In Spark 3.4, if Pandas on Spark API `Index.insert` is out of bounds, it raises IndexError with `index {} is out of bounds for axis 0 with size {}` to follow pandas 1.4 behavior.
-*   In Spark 3.4, the series name is preserved in Pandas on Spark API `Series.mode` to align with pandas 1.4 behavior.
-*   In Spark 3.4, the Pandas on Spark API `Index.__setitem__`  first checks `value` type is `Column` type to avoid raising unexpected `ValueError` in `is_list_like` like Can't convert column into bool: use ‘&’ for ‘and’, ‘|’ for ‘or’, ‘~’ for ‘not’ when building DataFrame boolean expressions..
-*   In Spark 3.4, the Pandas on Spark API `astype('category')` also refreshes `categories.dtype` according to original data `dtype` to follow pandas 1.4 behavior.
-*   In Spark 3.4, the Pandas on Spark API supports group by positional indexing in `GroupBy.head` and `GroupBy.tail` to follow pandas 1.4. Negative arguments now work correctly and result in ranges relative to the end and start of each group. Previously, negative arguments returned empty frames.
-*   In Spark 3.4, the infer schema process of `groupby.apply` in Pandas on Spark, will first infer the pandas type to ensure the accuracy of the pandas `dtype` as much as possible.
-*   In Spark 3.4, the `Series.concat` sort parameter is respected to follow pandas 1.4 behaviors.
-*   In Spark 3.4, the `DataFrame.__setitem__` makes a copy and replace pre-existing arrays, which will NOT be over-written to follow pandas 1.4 behaviors.
-*   In Spark 3.4, the `SparkSession.sql` and the Pandas on Spark API `sql` got the new parameter `args`, which provides binding of named parameters to their SQL literals.
-*   In Spark 3.4, Pandas API on Spark follows for the pandas 2.0, and some APIs were deprecated or removed in Spark 3.4 according to the changes made in pandas 2.0.  Refer to the \[release notes of pandas\]([https://pandas.pydata.org/docs/dev/whatsnew/](https://pandas.pydata.org/docs/dev/whatsnew/)) for more details.
-
-#### SQL, datasets and dataframe
-* Since Spark 3.4, INSERT INTO commands with explicit column list comprising fewer columns than the target table automatically adds the corresponding default values for the remaining columns (or NULL for any column lacking an explicitly assigned default value). In Spark 3.3 or earlier, these commands would fail, returning errors reporting that the number of provided columns doesn't match the number of columns in the target table. Disabling `spark.sql.defaultColumn.useNullsForMissingDefaultValues` restores the previous behavior.
-*   Since Spark 3.4, Number or Number(\*) from Teradata is treated as Decimal(38,18). In Spark 3.3 or earlier, Number or Number(\*) from Teradata is treated as Decimal(38, 0), in which case the fractional part is removed.
-*   Since Spark 3.4, v1 database, table, permanent view and function identifier includes ‘spark\_catalog’ as the catalog name if database is defined, for example, a table identifier is: `spark_catalog.default.t`. To restore the legacy behavior, set `spark.sql.legacy.v1IdentifierNoCatalog` to `true`.
-*   Since Spark 3.4, when ANSI SQL mode(configuration `spark.sql.ansi.enabled`) is on, Spark SQL always returns NULL result on getting a map value with a nonexisting key. In Spark 3.3 or earlier, there's an error.
-*   Since Spark 3.4, the SQL CLI `spark-sql` doesn't print the prefix `Error in query:` before the error message of `AnalysisException`.
-*   Since Spark 3.4, `split` function ignores trailing empty strings when `regex` parameter is empty.
-*   Since Spark 3.4, the `to_binary` function throws error for a malformed `str` input. Use `try_to_binary` to tolerate malformed input and return NULL instead.
-    *   Valid `Base64` string should include symbols from in `base64` alphabet (A-Za-z0-9+/), optional padding (`=`), and optional whitespaces. Whitespaces are skipped in conversion except when they're preceded by padding symbols. If padding is present, it should conclude the string and follow rules described in RFC 4648 § 4.
-    *   Valid hexadecimal strings should include only allowed symbols (0-9A-Fa-f).
-    *   Valid values for `fmt` are case-insensitive `hex`, `base64`, `utf-8`, `utf8`.
-*   Since Spark 3.4, Spark throws only `PartitionsAlreadyExistException` when it creates partitions but some of them exist already. In Spark 3.3 or earlier, Spark can throw either `PartitionsAlreadyExistException` or `PartitionAlreadyExistsException`.
-*   Since Spark 3.4, Spark validates for partition spec in ALTER PARTITION to follow the behavior of `spark.sql.storeAssignmentPolicy`, which can cause an exception if type conversion fails, e.g. `ALTER TABLE .. ADD PARTITION(p='a')` if column `p` is int type. To restore the legacy behavior, set `spark.sql.legacy.skipTypeValidationOnAlterPartition` to `true`.
-*   Since Spark 3.4, vectorized readers are enabled by default for the nested data types (array, map, and struct). To restore the legacy behavior, set `spark.sql.orc.enableNestedColumnVectorizedReader` and `spark.sql.parquet.enableNestedColumnVectorizedReader` to `false`.
-*   Since Spark 3.4, `BinaryType` isn't supported in CSV datasource. In Spark 3.3 or earlier, users can write binary columns in CSV datasource, but the output content in CSV files is `Object.toString()`, which is meaningless; meanwhile, if users read CSV tables with binary columns, Spark throws an `Unsupported type: binary` exception.
-*   Since Spark 3.4, bloom filter joins are enabled by default. To restore the legacy behavior, set `spark.sql.optimizer.runtime.bloomFilter.enabled` to `false`.
-
-#### Structured Streaming
-*   Since Spark 3.4, `Trigger.Once` is deprecated, and users are encouraged to migrate from `Trigger.Once` to `Trigger.AvailableNow`. Refer [SPARK-39805](https://issues.apache.org/jira/browse/SPARK-39805) for more details.
-*   Since Spark 3.4, the default value of configuration for Kafka offset fetching (`spark.sql.streaming.kafka.useDeprecatedOffsetFetching`) is changed from `true` to `false`. The default no longer relies consumer group based scheduling, which affects the required ACL. For more information, see [Structured Streaming Kafka Integration](https://spark.apache.org/docs/3.4.0/structured-streaming-kafka-integration.html#offset-fetching).
-    
-
+When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, powered by Apache Spark 3.4, review [the official migration guide](https://spark.apache.org/docs/3.4.0/migration-guide.html).
 
 ## New features and improvements of Delta Lake 2.4
 [Delta Lake](https://delta.io/) is an [open source project](https://github.com/delta-io/delta) that enables building a lakehouse architecture on top of data lakes. Delta Lake provides [ACID transactions](https://docs.delta.io/2.4.0/concurrency-control.html), scalable metadata handling, and unifies [streaming](https://docs.delta.io/2.4.0/delta-streaming.html) and [batch](https://docs.delta.io/2.4.0/delta-batch.html) data processing on top of existing data lakes.
@@ -160,27 +74,7 @@ Specifically, Delta Lake offers:
 *   [Time travel](https://docs.delta.io/2.4.0/delta-batch.html#-deltatimetravel): Data versioning enables rollbacks, full historical audit trails, and reproducible machine learning experiments.
 *   [Upserts](https://docs.delta.io/2.4.0/delta-update.html#-delta-merge) and [deletes](https://docs.delta.io/2.4.0/delta-update.html#-delta-delete): Supports merge, update, and delete operations to enable complex use cases like change-data-capture, slowly changing dimension (SCD) operations, streaming upserts, and so on.
 
-
-### The key features in this release are as follows
-
-*   Support for [Apache Spark 3.4](https://spark.apache.org/releases/spark-release-3-4-0.html).
-*   [Support](https://github.com/delta-io/delta/issues/1591) writing [Deletion Vectors](https://github.com/delta-io/delta/blob/master/PROTOCOL.md#deletion-vectors) for the `DELETE` command. Previously, when deleting rows from a Delta table, any file with at least one matching row would be rewritten. With Deletion Vectors these expensive rewrites can be avoided. See [What are deletion vectors?](https://docs.delta.io/2.4.0/delta-deletion-vectors.html) for more details.
-*   Support for all write operations on tables with Deletion Vectors enabled.
-*   [Support](https://github.com/delta-io/delta/commit/9fac2e6af313b28bf9cd3961aa5dec8ea27a2e7b) `PURGE` to remove Deletion Vectors from the current version of a Delta table by rewriting any data files with deletion vectors. See the [documentation](https://docs.delta.io/2.4.0/delta-deletion-vectors.html#apply-changes-with-reorg-table) for more details.
-*   [Support](https://github.com/delta-io/delta/issues/1701) reading Change Data Feed for tables with Deletion Vectors enabled.
-*   [Support](https://github.com/delta-io/delta/commit/7c352e9a0bf4b348a60ca040f9179171d2db5f0d) `REPLACE WHERE` expressions in SQL to selectively overwrite data. Previously “replaceWhere” options were only supported in the DataFrameWriter APIs.
-*   [Support](https://github.com/delta-io/delta/commit/c53e95c71f25e62871a3def8771be9eb5ca27a2e) `WHEN NOT MATCHED BY SOURCE` clauses in SQL for the Merge command.
-*   [Support](https://github.com/delta-io/delta/commit/422a670bc6b232e451db83537dcad34a5de97b67) omitting generated columns from the column list for SQL `INSERT INTO` queries. Delta  automatically generates the values for any unspecified generated columns.
-*   [Support](https://github.com/delta-io/delta/pull/1626) the `TimestampNTZ` data type added in Spark 3.3. Using `TimestampNTZ` requires a Delta protocol upgrade; see the [documentation](https://docs.delta.io/2.4.0/versioning.html) for more information.
-*   [Allow](https://github.com/delta-io/delta/commit/303d640a) changing the column type of a `char` or `varchar` column to a compatible type in the `ALTER TABLE` command. The new behavior is the same as in Apache Spark and allows upcasting from `char` or `varchar` to `varchar` or `string`.
-*   [Block](https://github.com/delta-io/delta/commit/579a3151db611c5049e5ca04a32fc6cccb77448b) using `overwriteSchema` with dynamic partition overwrite. This scenario can corrupt the table as not all the data can be removed, and the schema of the newly written partitions can't match the schema of the unchanged partitions.
-*   [Return](https://github.com/delta-io/delta/commit/83513484) an empty `DataFrame` for Change Data Feed reads when there are no commits within the timestamp range provided. Previously an error would be thrown.
-*   [Fix](https://github.com/delta-io/delta/commit/5ab678db) a bug in Change Data Feed reads for records created during the ambiguous hour when daylight savings occur.
-*   [Fix](https://github.com/delta-io/delta/commit/28148976) a bug where querying an external Delta table at the root of an S3 bucket would throw an error.
-*   [Remove](https://github.com/delta-io/delta/commit/81c7a58e) leaked internal Spark metadata from the Delta log to make any affected tables readable again.
-
 Read the full version of the release notes for [Delta Lake 2.4](https://github.com/delta-io/delta/releases/tag/v2.4.0).
-
 
 ## Default level packages for Java/Scala libraries
 
