@@ -12,7 +12,7 @@ ms.date: 06/06/2024
 ---
 # Task flows in Microsoft Fabric (preview)
 
-This article describes the task flows feature in Microsoft Fabric. Its target audience is data analytics solution architects who want to use a task flow to build a visual representation of their project, and engineers who are working on the project and want to use the task flow to facilitate their work.
+This article describes the task flows feature in Microsoft Fabric. Its target audience is data analytics solution architects who want to use a task flow to build a visual representation of their project, engineers who are working on the project and want to use the task flow to facilitate their work, and others who want to use the task flow to filter the item list to help navigate and understand the workspace.
 
 ## Overview
 
