@@ -37,7 +37,7 @@ Read the full version of the release notes for a specific Apache Spark version b
 
 ## New features and improvements - Delta Lake 2.2
 
-Check the source and full release notes on [GitHub at delta-io/delta](https://github.com/delta-io/delta/releases/tag/v2.2.0).
+Check the source and full release notes at [Delta Lake 2.2.0](https://github.com/delta-io/delta/releases/tag/v2.2.0).
 
 ## Default-level packages for Java/Scala
 
