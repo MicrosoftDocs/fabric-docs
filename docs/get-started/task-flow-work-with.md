@@ -37,7 +37,7 @@ Select a task to display the task details pane. The following image shows the ma
 
 ## Resize or hide the taskflow
 
-To resize the task flow, drag the resize bar on the horizonatal separator up or down.
+To resize the task flow, drag the resize bar on the horizontal separator up or down.
 
 To show/hide the task flow, select the show/hide control at the right side of the separator.
 
