@@ -4,7 +4,7 @@ description: Learn how to explore data solutions efficiently using the data pipe
 ms.reviewer: jonburchel
 ms.author: xupzhou
 author: PennyZhou-MSFT
-ms.topic: concepts
+ms.topic: conceptual
 ms.date: 05/21/2024
 ---
 
