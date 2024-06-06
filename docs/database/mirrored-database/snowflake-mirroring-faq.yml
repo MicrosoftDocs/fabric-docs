@@ -76,7 +76,7 @@ sections:
         answer: 
           The data from source tables will be reinitialized. Each time you stop and start, the entire table is fetched again.
       - question: |
-          What happens it if I deselect a table from Mirroring?
+          What happens if I deselect a table from Mirroring?
         answer: 
           We stop Mirroring that specific table and delete it from OneLake.
       - question: |
