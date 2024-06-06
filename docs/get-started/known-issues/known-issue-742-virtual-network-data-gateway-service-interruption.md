@@ -4,7 +4,7 @@ description: A known issue is posted where there's a virtual network data gatewa
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/28/2024
+ms.date: 06/06/2024
 ms.custom: known-issue-742
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-742
 
 We're performing a data migration for the service backing virtual network (Vnet) data gateways to improve the security. The migration is tentatively scheduled to occur between May 28, 2024 and May 31, 2024.
 
-**Status:** Open
+**Status:** Fixed: June 6, 2024
 
 **Product Experience:** Power BI
 

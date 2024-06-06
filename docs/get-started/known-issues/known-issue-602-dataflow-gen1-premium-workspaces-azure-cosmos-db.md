@@ -4,7 +4,7 @@ description: A known issue is posted where a Dataflow Gen1 refresh fails in prem
 author: mihart
 ms.author: mihart
 ms.topic: troubleshooting
-ms.date: 02/27/2024
+ms.date: 06/06/2024
 ms.custom: known-issue-602
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-602
 
 In this scenario, you have a Dataflow Gen1 dataflow that resides in a workspace assigned to a Premium or Fabric capacity or are moving the residing workspace from a Pro capacity to a Premium or Fabric capacity. The dataflow uses an Azure Cosmos DB connection and you receive refresh or connection failures.
 
-**Status:** Open
+**Status:** Fixed: June 6, 2024
 
 **Product Experience:** Power BI
 
