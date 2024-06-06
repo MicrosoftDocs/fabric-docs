@@ -63,7 +63,11 @@ When you select an instance of the notebook/Spark job definition activity run in
 
 :::image type="content" source="media\apache-spark-monitor-run-series\selected-run.png" alt-text="Screenshot showing the selected run.png." lightbox="media\apache-spark-monitor-run-series\selected-run.png" border="true":::
 
-If the bar is marked red, an exception has been detected for that run instance. You can view these information: **Total duration**, **Expected duration** and **Potential causes** for this instance in the Anomalies panel.
+**Focus mode** lets you expand a visual to see more details. Maybe you have a visual that is a little crowded and you want to zoom in on it. This function is a perfect use of focus mode.
+
+:::image type="content" source="media\apache-spark-monitor-run-series\focus-mode.png" alt-text="Screenshot showing the focus mode." lightbox="media\apache-spark-monitor-run-series\focus-mode.png" border="true":::
+
+If the bar is marked red, an exception has been detected for that run instance. You can view the following information: **Total duration**, **Expected duration**, and **Potential causes** for this instance in the Anomalies panel.
 
 :::image type="content" source="media\apache-spark-monitor-run-series\anomalies-panel.png" alt-text="Screenshot showing the anomalies panel.png." lightbox="media\apache-spark-monitor-run-series\anomalies-panel.png" border="true":::
 
