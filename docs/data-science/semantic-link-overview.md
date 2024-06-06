@@ -1,6 +1,6 @@
 ---
 title: What is semantic link?
-description: Get an overview of semantic link, which lets you connect semantic models and Synapse Data Science in Microsoft Fabric.
+description: Get an overview of semantic link, which lets you connect semantic models to Synapse Data Science in Microsoft Fabric.
 ms.reviewer: mopeakande
 ms.author: marcozo
 author: eisber
@@ -8,7 +8,7 @@ reviewer: msakande
 ms.topic: overview
 ms.custom:
   - ignite-2023
-ms.date: 06/04/2024
+ms.date: 06/05/2024
 ms.search.form: semantic link
 ---
 
@@ -38,7 +38,7 @@ The semantic link data flow starts with semantic models that contain data and se
 
 :::image type="content" source="media/semantic-link-overview/data-flow-with-semantic-link.png" alt-text="A diagram that shows data flow from Power BI to notebooks in Synapse Data Science and back to Power BI." border="false":::
 
-Semantic link uses semantic models from Power BI in the Synapse Data Science experience to do tasks such as in-depth statistical analysis and predictive modeling with machine learning techniques. You can store the output of your data science work into [OneLake](../onelake/onelake-overview.md) by using Apache Spark, and ingest the stored output into Power BI by using [Direct Lake](../get-started/direct-lake-overview.md).
+Semantic link allows you to use semantic models from Power BI in the Synapse Data Science experience to perform tasks such as in-depth statistical analysis and predictive modeling with machine learning techniques. You can store the output of your data science work into [OneLake](../onelake/onelake-overview.md) by using Apache Spark, and ingest the stored output into Power BI by using [Direct Lake](../get-started/direct-lake-overview.md).
 
 ## Power BI connectivity
 
@@ -51,7 +51,7 @@ A semantic model serves as a single [tabular object model](/analysis-services/to
 
 Semantic information in data includes Power BI [data categories](/power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables, and hierarchical information.
 
-These data categories comprise metadata that semantic link propagates into the Data Science environment to enable new experiences and maintain data lineage.
+These data categories comprise metadata that semantic link propagates into the Synapse Data Science environment to enable new experiences and maintain data lineage.
 
 Some example applications of semantic link include:
 
