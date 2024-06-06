@@ -25,7 +25,7 @@ Fabric provides a range of predefined, end-to-end task flows based on industry b
 Each workspace has one task flow. The task flow occupies the upper part of workspace list view. It consists of a canvas where you can build the visualization of your data analytics project, and a side pane where you can see and edit details about the task flow, tasks, and connectors.
 
 > [!NOTE]
-> You can [resize or hide the task flow](./task-flow-work-with.md#showhide-the-taskflow) using the controls on the horizontal separator bar.
+> You can [resize or hide the task flow](./task-flow-work-with.md#resize-or-hide-the-taskflow) using the controls on the horizontal separator bar.
 
 ## Key concepts
 
