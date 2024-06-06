@@ -67,7 +67,7 @@ When you select an instance of the notebook/spark job definition activity run in
 
 :::image type="content" source="media\apache-spark-monitor-run-series\focus-mode.png" alt-text="Screenshot showing the focus mode." lightbox="media\apache-spark-monitor-run-series\focus-mode.png" border="true":::
 
-If the bar is marked red, an exception has been detected for that run instance. You can view these information: **Total duration**, **Expected duration** and **Potential causes** for this instance in the Anomalies panel.
+If the bar is marked red, an exception has been detected for that run instance. You can view the following information: **Total duration**, **Expected duration**, and **Potential causes** for this instance in the Anomalies panel.
 
 :::image type="content" source="media\apache-spark-monitor-run-series\anomalies-panel.png" alt-text="Screenshot showing the anomalies panel.png." lightbox="media\apache-spark-monitor-run-series\anomalies-panel.png" border="true":::
 
