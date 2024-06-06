@@ -4,12 +4,12 @@ description: Learn how event houses and KQL databases consume capacity units in 
 ms.reviewer: bwatts
 ms.author: shsagir
 author: shsagir
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
-ms.date: 04/21/2024
+ms.date: 06/06/2024
 ms.search.form: Event house,KQL Database, Overview
 ---
 # Event house and KQL Database consumption

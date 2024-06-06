@@ -4,8 +4,8 @@ description: Learn about event house data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
-ms.topic: Conceptual
-ms.date: 05/23/2024
+ms.topic: concept-article
+ms.date: 06/06/2024
 ms.search.form: Eventhouse
 ---
 # Event house overview
