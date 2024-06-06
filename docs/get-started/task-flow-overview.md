@@ -14,9 +14,6 @@ ms.date: 06/06/2024
 
 This article describes the task flows feature in Microsoft Fabric. Its target audience is data analytics solution architects who want to use a task flow to build a visual representation of their project, and engineers who are working on the project and want to use the task flow to facilitate their work.
 
-> [!NOTE]
-> If you don't need the task flow, you can hide it using the control at the right-hand side of the horizontal bar that separates the task flow from the items list. See [#5 on this illustration](./task-flow-create.md#open-the-workspace)
-
 ## Overview
 
 Fabric task flow is a workspace feature that enables you to build a visualization of the flow of work in the workspace. The task flow helps you understand how items are related and work together in your workspace, and makes it easier for you to navigate your workspace, even as it becomes more complex over time. Moreover, the task flow can help you standardize your team's work and keep your design and development work in sync to boost the team's collaboration and efficiency.
