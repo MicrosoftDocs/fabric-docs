@@ -35,11 +35,13 @@ Select a task to display the task details pane. The following image shows the ma
 1. [Assign existing items to task](#assign-existing-items-to-a-task)
 1. [Delete task](#delete-a-task)
 
-## Show/hide the taskflow
+## Resize or hide the taskflow
 
-If you don't need the task flow, or want to get it out of the way, select the Show/Hide control at the right side of the horizontal separator bar.
+To resize the task flow, drag the resize bar on the horizonatal separator up or down.
 
-:::image type="content" source="./media/task-flow-work-with/show-hide-task-flow-control.png" alt-text="Screenshot showing the Show/Hide control at the right side of the horizontal separation bar.":::
+To show/hide the task flow, select the show/hide control at the right side of the separator.
+
+:::image type="content" source="./media/task-flow-work-with/resize-show-hide-task-flow-controls.png" alt-text="Screenshot showing the Show/Hide control at the right side of the horizontal separation bar.":::
 
 ## Add a task 
 
