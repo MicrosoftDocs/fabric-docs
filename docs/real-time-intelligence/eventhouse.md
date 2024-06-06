@@ -33,7 +33,7 @@ The system overview page of an eventhouse shows you the following information:
 * Most active databases
 * Recent events
 
-For more information, see [View system overview details for an eventhouse](manage-monitor-eventhouse.md#view-system-overview-details-for-an-event-house).
+For more information, see [View system overview details for an eventhouse](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse).
 
 The databases page of an eventhouse shows you database information either in list or tile view. The following information about each database is displayed in tile view:
 
