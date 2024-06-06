@@ -41,7 +41,7 @@ To resize the task flow, drag the resize bar on the horizonatal separator up or 
 
 To show/hide the task flow, select the show/hide control at the right side of the separator.
 
-:::image type="content" source="./media/task-flow-work-with/resize-show-hide-task-flow-controls.png" alt-text="Screenshot showing the Show/Hide control at the right side of the horizontal separation bar.":::
+:::image type="content" source="./media/task-flow-work-with/resize-show-hide-task-flow-controls.png" alt-text="Screenshot showing the Show/Hide control at the right side of the horizontal separation bar." lightbox="./media/task-flow-work-with/resize-show-hide-task-flow-controls.png" border="false":::
 
 ## Add a task 
 
