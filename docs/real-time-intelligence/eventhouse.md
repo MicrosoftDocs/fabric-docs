@@ -1,5 +1,5 @@
 ---
-title: Event house overview
+title: Eventhouse overview
 description: Learn about event house data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
