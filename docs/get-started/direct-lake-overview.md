@@ -24,7 +24,7 @@ On the other hand, with import mode, performance can be better because the data 
 
 Direct Lake mode eliminates the import requirement by loading the data directly from OneLake. Unlike DirectQuery, there's no translation from DAX or MDX to other query languages or query execution on other database systems, yielding performance similar to import mode. Because there's no explicit import process, it's possible to pick up any changes at the data source as they occur, combining the advantages of both DirectQuery and import modes while avoiding their disadvantages. Direct Lake mode can be the ideal choice for analyzing very large models and models with frequent updates at the data source.
 
-Direct Lake also supports [row-level security](../security/service-admin-object-level-security.md) and [object-level](../security/service-admin-row-level-security.md) security so users only see the data they have permission to see.
+Direct Lake also supports [Power BI row-level security](../security/service-admin-object-level-security.md) and [object-level](../security/service-admin-row-level-security.md) security so users only see the data they have permission to see.
 
 ## Prerequisites
 
@@ -188,6 +188,8 @@ For example, a warehouse administrator can grant a user SELECT permissions on a 
 - By design, only tables in the semantic model derived from tables in a Lakehouse or Warehouse support Direct Lake mode. Although tables in the model can be derived from SQL views in the Lakehouse or Warehouse, queries using those tables will fall back to DirectQuery mode.
 
 - Direct Lake semantic model tables can only be derived from tables and views from a single Lakehouse or Warehouse.
+
+- Queries using [row-level security](https://learn.microsoft.com/en-us/fabric/data-warehouse/row-level-security) against tables in the warehouse (including the Lakehouse SQL analytics endpoint) will fall back to DirectQuery mode.
 
 - Direct Lake tables can't currently be mixed with other table types, such as Import, DirectQuery, or Dual, in the same model. Composite models are currently not supported.
 
