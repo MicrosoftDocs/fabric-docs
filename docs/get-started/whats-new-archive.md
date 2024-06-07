@@ -10,6 +10,7 @@ ms.custom:
   - ignite-2023
   - build-2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 # What's new in Microsoft Fabric? archive
 

@@ -11,6 +11,7 @@ ms.custom:
 ms.topic: conceptual
 ms.date: 06/03/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Overview of Copilot in Fabric
