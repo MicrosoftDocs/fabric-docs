@@ -25,11 +25,11 @@ The Azure SQL Database connector supports the following capabilities in data pip
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | --- |
-| **Copy activity (Source/Destination)** | None | Basic<br>OAuth2<br>Service principal |
-| **Lookup activity** | None | Basic<br>OAuth2<br>Service principal |
-| **GetMetadata activity** | None | Basic<br>OAuth2<br>Service principal |
-| **Script activity** | None | Basic<br>OAuth2<br>Service principal |
-| **Stored procedure activity** | None | Basic<br>OAuth2<br>Service principal |
+| **Copy activity (Source/Destination)** | None <br> On-premises | Basic<br>OAuth2<br>Service principal |
+| **Lookup activity** | None <br> On-premises | Basic<br>OAuth2<br>Service principal |
+| **GetMetadata activity** | None <br> On-premises | Basic<br>OAuth2<br>Service principal |
+| **Script activity** | None <br> On-premises | Basic<br>OAuth2<br>Service principal |
+| **Stored procedure activity** | None <br> On-premises | Basic<br>OAuth2<br>Service principal |
 
 To learn about how to connect to Azure SQL Database in data pipelines, go to [Set up your Azure SQL Database connection](connector-azure-sql-database.md#set-up-your-connection-in-a-data-pipeline).
 

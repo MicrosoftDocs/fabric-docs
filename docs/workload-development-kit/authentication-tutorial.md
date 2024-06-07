@@ -134,17 +134,21 @@ Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null
 
 ## Configuring your workload (Backend)
 
-1. In the Backend sample, go to [src/appsettings.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/appsettings.json) and configure the settings:
+1. In the Backend sample, go to `src/appsettings.json` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure the settings:
 
    * `PublisherTenantId`: The tenant ID of the publisher  
    * `ClientId`: Your application ID (you can find it in Microsoft Entra ID under overview).  
    * `ClientSecret`: The [secret you created](#generate-a-secret-for-your-application) when configuring the Entra app.  
    * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id) in the Entra app.  
 
-1. Configure your *workloadManifest.xml*. Go to [src/Packages/manifest/files/WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/WorkloadManifest.xml) and configure your `AppId`, `redirectUri` and `ResourceId` (ID URI) under **AADApps**.
-
-   :::image type="content" source="./media/authentication-tutorial/configure-workload-manifest-xml.png" alt-text="Screenshot showing configuration of workload manifest xml file.":::
-
+1. Configure your *workloadManifest.xml*. Go to `src/Packages/manifest/files/WorkloadManifest.xml` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure your `AppId`, `redirectUri` and `ResourceId` (ID URI) under **AADApps**.
+```
+<AADApp>
+    <AppId>YourApplicationId</AppId>
+    <RedirectUri>YourRedirectUri</RedirectUri>
+    <ResourceId>YourResourceId</ResourceId>
+</AADApp>
+```
 ## Configure the workload local manifest and acquire a token for your application (frontend)
 > [!NOTE]
 > This step is only applicable to the devmode scenario.
@@ -159,7 +163,7 @@ After configuring your application, add the following configurations to the `dev
 }
 ```
 
-:::image type="content" source="./media/authentication-tutorial/configure-local-workload-manifest-xml.png" alt-text="Screenshot showing configuration of .env.dev file.":::
+:::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot that shows the configuration of a .env.dev file.":::
 
 ## Ask for a token and consent the application
 

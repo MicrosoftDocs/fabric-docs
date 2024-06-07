@@ -98,11 +98,11 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Event house overview
+          - text: Eventhouse overview
             url: eventhouse.md
-          - text: Create an event house
+          - text: Create an eventhouse
             url: create-eventhouse.md 
-          - text: Manage and monitor an event house
+          - text: Manage and monitor an eventhouse
             url: manage-monitor-eventhouse.md
 
       - linkListType: how-to-guide

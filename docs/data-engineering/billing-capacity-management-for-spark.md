@@ -1,6 +1,6 @@
 ---
-title: Billing and utilization reporting in Fabric Spark
-description: Learn about the billing, capacity utilization, and utilization reporting for Spark that powers Data Engineering and Science experiences in Microsoft Fabric.
+title: Billing and utilization reporting in Apache Spark for Fabric
+description: Learn about the billing, capacity utilization, and utilization reporting for Apache Spark that powers Data Engineering and Science experiences in Microsoft Fabric.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
@@ -10,23 +10,23 @@ ms.custom:
   - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
-# Billing and utilization reporting for Spark in Microsoft Fabric
+# Billing and utilization reporting for Apache Spark in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-This article explains the compute utilization and reporting for Spark which powers the Synapse Data Engineering and Science workloads in Microsoft Fabric. The compute utilization includes lakehouse operations like table preview, load to delta, notebook runs from the interface, scheduled runs, runs triggered by notebook steps in the pipelines, and spark job definition runs. 
+This article explains the compute utilization and reporting for ApacheSpark which powers the Synapse Data Engineering and Science workloads in Microsoft Fabric. The compute utilization includes lakehouse operations like table preview, load to delta, notebook runs from the interface, scheduled runs, runs triggered by notebook steps in the pipelines, and Apache Spark job definition runs. 
 
 Like other experiences in Microsoft Fabric, Data Engineering also uses the capacity associated with a workspace to run these job and your overall capacity charges appear in the Azure portal under your [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview) subscription. To learn more about Fabric billing, see [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
 ## Fabric capacity
 
 You as a user could purchase a Fabric capacity from Azure by specifying using an Azure subscription. The size of the capacity determines the amount of computation power available. 
-For Fabric Spark every CU purchased translates to 2 Spark VCores. For example if you purchase a Fabric capacity F128, this translates to 256 SparkVCores. A Fabric capacity is shared across all the workspaces added to it and in which the total spark compute allowed gets shared across all the jobs submitted from all the workspaces associated to a capacity. 
-To understand about the different SKUs, cores allocation and throttling on Spark, visit [Understand Spark throttling and queueing](spark-job-concurrency-and-queueing.md).
+For Apache Spark for Fabric, every CU purchased translates to 2 Apache Spark VCores. For example if you purchase a Fabric capacity F128, this translates to 256 SparkVCores. A Fabric capacity is shared across all the workspaces added to it and in which the total Apache Spark compute allowed gets shared across all the jobs submitted from all the workspaces associated to a capacity. 
+To understand about the different SKUs, cores allocation and throttling on Spark, see [Concurrency limits and queueing in Apache Spark for Microsoft Fabric](spark-job-concurrency-and-queueing.md).
 
 ## Spark compute configuration and purchased capacity
 
-Fabric Spark compute offers two options when it comes to compute configuration. 
+Apache Spark compute for Fabric offers two options when it comes to compute configuration. 
 
 1. **Starter pools**: These default pools are fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker. When it comes to billing and capacity consumption, you're charged when you start executing your notebook or Spark job definition or lakehouse operation. You aren't charged for the time the clusters are idle in the pool.
 
@@ -55,10 +55,10 @@ The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provid
 
 Once you have installed the app, select the item type **Notebook**,**Lakehouse**,**Spark Job Definition** from the **Select item kind:** dropdown list. The **Multi metric ribbon chart** chart can now be adjusted to a desired timeframe to understand the usage from all these selected items.
 
-All Spark related operations are classified as [background operations](../enterprise/fabric-operations.md#background-operations). Capacity consumption from Spark is displayed under a Notebook, a Spark Job Definition, or a Lakehouse, and is aggregated by operation name and item. For example: If you run a notebook job, you can see the notebook run, the CUs used by the notebook (Total Spark VCores/2 as 1 CU gives 2 Spark VCores), duration the job has taken in the report. 
+All Spark related operations are classified as [background operations](../enterprise/fabric-operations.md#background-operations). Capacity consumption from Spark is displayed under a notebook, a Spark job definition, or a lakehouse, and is aggregated by operation name and item. For example: If you run a notebook job, you can see the notebook run, the CUs used by the notebook (Total Spark VCores/2 as 1 CU gives 2 Spark VCores), duration the job has taken in the report. 
 
 :::image type="content" source="media\monitor-spark-capacity-consumption\items-report.png" alt-text="Screenshot showing items report." lightbox="media\monitor-spark-capacity-consumption\items-report.png":::
-To understand more about Spark capacity usage reporting, visit [Understand Spark Capacity consumption using Capacity Metrics App](monitor-spark-capacity-consumption.md)
+To understand more about Spark capacity usage reporting, see [Monitor Apache Spark capacity consumption](monitor-spark-capacity-consumption.md)
 
 ## Billing example
 
@@ -67,7 +67,7 @@ Consider the following scenario:
 * There is a Capacity C1 which hosts a Fabric Workspace W1 and this Workspace contains Lakehouse LH1 and Notebook NB1. 
   * Any Spark operation that the notebook(NB1) or lakehouse(LH1) performs is reported against the capacity C1. 
 
-* Extending this example to a scenario where there is another Capacity C2 which hosts a Fabric Workspace W2 and lets say that this Workspace contains a Spark Job Definition (SJD1) and Lakehouse (LH2). 
+* Extending this example to a scenario where there is another Capacity C2 which hosts a Fabric Workspace W2 and lets say that this Workspace contains a Spark job definition (SJD1) and Lakehouse (LH2). 
 
   * If the Spark Job Definition (SDJ2) from Workspace (W2) reads data from lakehouse (LH1) the usage is reported against the Capacity C2 which is associated with the Workspace (W2) hosting the item.
   * If the Notebook (NB1) performs a read operation from Lakehouse(LH2), the capacity consumption is reported against the Capacity C1 which is powering the workspace W1 that hosts the notebook item. 
@@ -75,6 +75,6 @@ Consider the following scenario:
 ## Related content
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-overview.md)
-* [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+* [Apache Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
 * [Install the Premium metrics app](/power-bi/enterprise/service-premium-install-app)
 * [Use the Premium metrics app](/power-bi/enterprise/service-premium-metrics-app)

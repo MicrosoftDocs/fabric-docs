@@ -13,7 +13,7 @@ ms.search.form: KQL Database
 ---
 # Create a KQL database
 
-In Real-Time Intelligence, you interact with your data in the context of [event houses](eventhouse.md), databases, and tables. A single workspace can hold multiple Eventhouses, an event house can hold multiple databases, and each database can hold multiple tables.
+In Real-Time Intelligence, you interact with your data in the context of [eventhouses](eventhouse.md), databases, and tables. A single workspace can hold multiple Eventhouses, an eventhouse can hold multiple databases, and each database can hold multiple tables.
 
 In this article, you learn how to create a new KQL database. Once your KQL database has data, you can proceed to query your data using Kusto Query Language in a KQL queryset.
 
@@ -23,9 +23,9 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
 ## Create a new KQL database
 
-1. In the Event house explorer, under **KQL Databases**, select **New database +**.
+1. In the Eventhouse explorer, under **KQL Databases**, select **New database +**.
 
-    :::image type="content" source="media/create-database/create-database.png" alt-text="Screenshot showing the event house KQL Databases section.":::
+    :::image type="content" source="media/create-database/create-database.png" alt-text="Screenshot showing the eventhouse KQL Databases section.":::
 
 1. Enter your database name, then select **Create**.
 
@@ -34,7 +34,7 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
     :::image type="content" source="media/create-database/new-database.png" alt-text="Screenshot of the New KQL Database window showing the database name. The Create button is highlighted.":::
 
-The KQL database is created within the context of the selected event house.
+The KQL database is created within the context of the selected eventhouse.
 
 ## Database details
 
