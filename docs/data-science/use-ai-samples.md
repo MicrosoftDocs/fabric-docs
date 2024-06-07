@@ -11,6 +11,7 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
 ms.date: 01/22/2024
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Use end-to-end AI samples in Microsoft Fabric

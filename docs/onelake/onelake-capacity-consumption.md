@@ -23,6 +23,10 @@ If you're a capacity admin, you can view your storage consumption in the [Fabric
  
  :::image type="content" source="media\onelake-capacity-consumption\onelake-storage.png" alt-text="Diagram showing how OneLake storage is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-storage.png":::
 
+ In the below image, you have two columns called billable storage and current Storage. Billable storage shows the cumulative data over the month. Because the total charge for data stored isn't taken on one day in the month, but on a pro-rated basis throughout the month. You can estimate the monthly price as the billable storage (GB) multiplied by the price per Gb per month. So, if you stored 1 TB of data on day 1 and then deleted it before day 2, you would see on day one the 1 TB/30days = 33 GB. No extra storage is reported and just 33 GB is reported for the month. However, if you stored 1 TB on day 1 and then didn't delete the data, then everyday would add 33 GB until the last day when you see 1 TB in the billable storage.
+
+:::image type="content" source="media\onelake-capacity-consumption\storage.png" alt-text="Diagram shows billable and current storage difference." lightbox="media\onelake-capacity-consumption\storage.png":::
+
  ## OneLake Compute
 Requests to OneLake, such as reading, writing, or listing, consumes your Fabric capacity. OneLake follows similar [mapping](/azure/storage/blobs/map-rest-apis-transaction-categories) of APIs to operations like ADLS. The CU consumption per each type of operation can be viewed in the Fabric Capacity Metrics app. In our example, the file upload resulted in a write transaction that consumed 127.46 CU Seconds of Fabric Capacity. This consumption is reported as "OneLake Write via Proxy" in the operation name in Capacity Metrics App.
 Now let’s read this data using a Fabric notebook. You consume 1.39 CU Seconds of read transactions. This consumption is reported as "OneLake Read via Redirect" in the Metrics app.
@@ -32,7 +36,7 @@ Refer to the [OneLake consumption page](../onelake/onelake-consumption.md) to le
 
 To understand more about the various terminologies on the metrics app, refer to [Understand the metrics app compute page - Microsoft Fabric](../enterprise/metrics-app-compute-page.md).
 
-You may be wondering, how do shortcuts impact my OneLake usage? In the above scenario, both storage and compute are billed to Capacity1. Now, let’s say you have a second capacity Capacity2, that contains Workspace2. You create a lakehouse and create a shortcut to the parquet file you uploaded in workspace1. You create a notebook to query the parquet file. As Capacity2 accesses the data, the compute or transaction cost for this read operation consumes CU from Capacity2. The storage continues to be billed to Capacity1. 
+You may be wondering, how do shortcuts affect my OneLake usage? In the above scenario, both storage and compute are billed to Capacity1. Now, let’s say you have a second capacity Capacity2, that contains Workspace2. You create a lakehouse and create a shortcut to the parquet file you uploaded in workspace1. You create a notebook to query the parquet file. As Capacity2 accesses the data, the compute or transaction cost for this read operation consumes CU from Capacity2. The storage continues to be billed to Capacity1. 
  
 :::image type="content" source="media\onelake-capacity-consumption\shortcut-billing.jpg" alt-text="Diagram showing how shortcut billing is done per capacity." lightbox="media\onelake-capacity-consumption\shortcut-billing.jpg":::
 
@@ -40,4 +44,4 @@ What if you pause the capacity? Let’s say Capacity2 is paused and Capacity1 is
 
 At any point, if your CU consumption exceeds your capacity limit, your capacity is throttled. Transactions may be rejected or delayed for a given window of time when capacity is throttled. Here's more about [throttling](../enterprise/throttling.md).
 
-We encourage you to start Fabric’s 60-day free trial to explore OneLake and other Fabric features. You may also refer to our [Fabric forum](https://community.fabric.microsoft.com/t5/Forums/ct-p/ac_forums) if you have more questions.
+We encourage you to start Fabric’s 60-day free trial to explore OneLake and other Fabric features. For more questions, please refer to our [Fabric forum](https://community.fabric.microsoft.com/t5/Forums/ct-p/ac_forums).
