@@ -94,7 +94,7 @@ Monitoring and debugging are often a non-trivial task when you are running multi
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-high-concurrency-mode.png" alt-text="Screenshot showing the all related notebooks for high concurrency session in the monitoring detail view." lightbox="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-high-concurrency-mode.png":::
 
-## limitations
+## Limitations
 
 * Currently when high concurrency mode is enabled, you can't install packages at the session level using magic commands.
 
