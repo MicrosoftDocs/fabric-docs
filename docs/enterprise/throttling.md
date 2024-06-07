@@ -80,7 +80,7 @@ Since utilization exceeding 100% doesn't automatically mean throttling, you need
 
 To view a visual history of any overutilization of capacity, including carryforward, cumulative, and burndown of utilization data, go to the [Overages tab](metrics-app-compute-page.md#overages). You can change the overages visual scale to display 10 minutes, 60 minutes, and 24 hours. Carryforward only takes into account billable operations.
 
-:::image type="content" source="media/fabric-cross-filter-overages.gif" alt-text="Animation that shows overage over time." lightbox="media/fabric-cross-filter-overages.gif":::
+:::image type="content" source="media/fabric-cross-filter-overages.gif" alt-text="Animation that shows overages over time." lightbox="media/fabric-cross-filter-overages.gif":::
 
 The Microsoft Fabric Capacity Metrics app drilldown allows admins to see operations that were rejected during a throttling event. There's limited information about these operations as they were never allowed to start. The admin can see the product, user, operation ID, and time the request was submitted. When a request is rejected, end users receive an error message that asks them to try again later.
 
