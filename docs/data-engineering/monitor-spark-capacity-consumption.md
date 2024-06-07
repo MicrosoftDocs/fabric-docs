@@ -44,7 +44,7 @@ There are some Spark capacity consumption activities that aren't reported in the
 
 ## Capacity consumption reports
 
-All Spark related operations are classified as [background operations](/power-bi/enterprise/service-premium-smoothing). Capacity consumption from Spark is displayed under a notebook, a Spark job definition, or a lakehouse, and is aggregated by operation name and item.
+All Spark related operations are classified as [background operations](../enterprise/fabric-operations.md#background-operations). Capacity consumption from Spark is displayed under a notebook, a Spark job definition, or a lakehouse, and is aggregated by operation name and item.
 
 :::image type="content" source="media\monitor-spark-capacity-consumption\items-report.png" alt-text="Screenshot showing items report." lightbox="media\monitor-spark-capacity-consumption\items-report.png":::
 
