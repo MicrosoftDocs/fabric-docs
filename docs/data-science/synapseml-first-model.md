@@ -9,6 +9,7 @@ ms.reviewer: ssalgado
 author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 06/02/2023
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Build your first SynapseML model

@@ -7,7 +7,7 @@ author: alexlzx
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 06/06/2024
 ms.search.form: Source and Destination
 ---
 
@@ -31,6 +31,10 @@ Fabric event streams supports the following Fabric workspace events:
 - Microsoft.Fabric.ItemReadFailed
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
+> [!NOTE]
+> This source is not supported in the following regions of your workspace capacity: **West US 3**, **West India**, **South Central US**.
+
 
 ## Prerequisites
 

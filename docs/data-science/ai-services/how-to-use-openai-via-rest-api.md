@@ -10,6 +10,7 @@ ms.custom:
   - ignite-2023-fabric
 ms.date: 11/15/2023
 ms.search.form:
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Use Azure OpenAI in Fabric with REST API (preview)
