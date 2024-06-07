@@ -4,7 +4,7 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/30/2024
+ms.date: 06/06/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -46,20 +46,21 @@ For the **General** tab configuration, go to [General](activity-overview.md#gene
 
 The following properties are supported for Lakehouse under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-lakehouse/source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-lakehouse/source.png":::
+:::image type="content" source="./media/connector-lakehouse/lakehouse-source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-lakehouse/source.png":::
 
 The following properties are **required**:
 
-- **Data store type**: Select **Workspace**.
-- **Workspace data store type**: Select **Lakehouse** from the data store type list.
-- **Lakehouse**: Select an existing Lakehouse from the workspace. If none exists, then create a new Lakehouse by selecting **New**. If you use **Add dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
+- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Oracle connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
 
     :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
 
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
 
   - If you select **Tables**:
-    - **Table name**: Choose an existing table from the table list or specify a table name as the source.
+    - **Table name**: Choose an existing table from the table list or specify a table name as the source. You can see the table name with schema in the list when you apply a  Lakehouse with schemas in the connection.
+    
+      :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
+
     - Under **Advanced**, you can specify the following fields:
       - **Timestamp**: Specify to query an older snapshot by timestamp.
       - **Version**: Specify to query an older snapshot by version.
@@ -99,25 +100,22 @@ The following properties are **required**:
 
 The following properties are supported for Lakehouse under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-lakehouse/destination.png" alt-text="Screenshot showing destination tab." lightbox="./media/connector-lakehouse/destination.png":::
+:::image type="content" source="./media/connector-lakehouse/lakehouse-destination.png" alt-text="Screenshot showing destination tab." lightbox="./media/connector-lakehouse/destination.png":::
 
 The following properties are **required**:
 
-- **Data store type**: Select **Workspace**.
-- **Workspace data store type**: Select **Lakehouse** from the data store type list.
-- **Lakehouse**: Select an existing Lakehouse from the workspace. If none exists, then create a new Lakehouse by selecting **New**. If you use **Add dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
+- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Oracle connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
 
     :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
 
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
 
   - If you select **Tables**:
-    - **Table name**: Choose an existing table from the table list or specify a table name as the destination.
+    - **Table name**: Choose an existing table from the table list or specify a table name as the destination. Or you can select **New** to create a new table. When you apply Lakehouse with schemas in the connection, you can create a table with schema here.
 
       :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
 
     - Under **Advanced**, you can specify the following fields:
-      - **Max rows per file**: Specify the maximum rows per file when writing data into Lakehouse.
       - **Table actions**: Specify the operation against the selected table.
         - **Append**: Append new values to existing table.
           - **Enable Partition**: This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".
@@ -139,11 +137,12 @@ The following properties are **required**:
 
     - **File format**: Select your file format from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
     - Under **Advanced**, you can specify the following fields:
-      - **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose **Add Dynamic content**, **None**, **Flatten hierarchy**, or **Preserve hierarchy** as your copy behavior. The configuration of each setting is：
-        - **Add dynamic content**: To specify an expression for a property value, select **Add dynamic content**. This field opens the expression builder where you can build expressions from supported system variables, activity output, functions, and user-specified variables or parameters. For more information about the expression language, go to [Expressions and functions](/azure/data-factory/control-flow-expression-language-functions).
-        - **None**: Choose this selection to not use any copy behavior.
+      - **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose **Flatten hierarchy**, **Merge files**, **Preserve hierarchy**, or **Add Dynamic content** as your copy behavior. The configuration of each setting is：
         - **Flatten hierarchy**: All files from the source folder are in the first level of the destination folder. The destination files have autogenerated names.
+        - **Merge files**: Merges all files from the source folder to one file. If the file name is specified, the merged file name is the specified name. Otherwise, it's an auto-generated file name.
+        
         - **Preserve hierarchy**: Preserves the file hierarchy in the target folder. The relative path of a source file to the source folder is identical to the relative path of a target file to the target folder.
+        - **Add dynamic content**: To specify an expression for a property value, select **Add dynamic content**. This field opens the expression builder where you can build expressions from supported system variables, activity output, functions, and user-specified variables or parameters. For more information about the expression language, go to [Expressions and functions](/azure/data-factory/control-flow-expression-language-functions).
 
           :::image type="content" source="./media/connector-lakehouse/copy-behavior.png" alt-text="Screenshot showing copy behavior." lightbox="./media/connector-lakehouse/copy-behavior.png":::
 
@@ -183,22 +182,20 @@ The following tables contain more information about a copy activity in Lakehouse
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace**|Yes|/|
-|**Workspace data store type** |The section to select your workspace data store type.|**Lakehouse**|Yes|type|
-|**Lakehouse** | The Lakehouse that you use as source.|\<your Lakehouse>|Yes |workspaceId<br>artifactId|
-|**Root folder** |The type of the root folder.|* **Tables**<br>* **Files** |No|rootFolder:<br>Table or Files|
+|**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>artifactId|
+|**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |No|rootFolder:<br>Table or Files|
 |**Table name** |The name of the table to read data.|\<table name> |Yes when you select **Tables** in **Root folder** |table <br>*(under `typeProperties` -> `source` -> `typeProperties`)*|
 |**Timestamp** | The timestamp to query an older snapshot.| \<timestamp>|No |timestampAsOf |
 |**Version** |The version to query an older snapshot.| \<version>|No |versionAsOf|
-|**Additional columns** | Additional data columns to store source files' relative path or static value. Expression is supported for the latter.| * Name<br>* Value|No |additionalColumns:<br>* name<br>* value |
-|**File path type** |The type of the file path that you use. |* **File path**<br>* **Wildcard file path**<br> * **List of files** |Yes|/ |
-|**File path** |Copy from the path to a folder/file under source data store. Apply when choosing **File path** in **File path type**.| \<file path>|Yes when choosing **File path**|* folderPath<br>* fileName |
-|**Wildcard paths** |The folder path with wildcard characters under the source data store configured to filter source folders. Apply when choosing **Wildcard file path** in **File path type**.| \<wildcard paths> |Yes when choosing **Wildcard file path**|* wildcardFolderPath<br>* wildcardFileName |
-|**Folder path** |Points to a folder that includes files you want to copy. Apply when choosing **List of files** in **File path type**.|\<folder path> |No|folderPath |
-|**Path to file list** |Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured. Apply when choosing **List of files** in **File path type**.|\<path to file list> |No| fileListPath|
+|**Additional columns** | Additional data columns to store source files' relative path or static value. Expression is supported for the latter.| • Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
+|**File path type** |The type of the file path that you use. |• **File path**<br>• **Wildcard file path**<br> • **List of files** |Yes when you select **Files** in **Root folder**|/ |
+|**File path** |Copy from the path to a folder/file under source data store.| \<file path>|Yes when choosing **File path**|• folderPath<br>• fileName |
+|**Wildcard paths** |The folder path with wildcard characters under the source data store configured to filter source folders.| \<wildcard paths> |Yes when choosing **Wildcard file path**|• wildcardFolderPath<br>• wildcardFileName |
+|**Folder path** |Points to a folder that includes files you want to copy. |\<folder path> |No|folderPath |
+|**Path to file list** |Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured.|\<path to file list> |No| fileListPath|
 |**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder. This setting is disabled when a single file is selected.| select or unselect |No | recursive:<br>true or false|
-|**File format**|The format of the file that you use.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextReadSettings|
-|**Filter by last modified**|The files with last modified time in the range [Start time, End time) will be filtered for further processing.<br><br> The time is applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`.<br><br>This property can be skipped which means no file attribute filter is applied. This property doesn't apply when you configure your file path type as **List of files**.|* **Start time**<br>* **End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
+| **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes when you select **Files** in **Root folder** | / |
+|**Filter by last modified**|The files with last modified time in the range [Start time, End time) will be filtered for further processing.<br><br> The time is applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`.<br><br>This property can be skipped which means no file attribute filter is applied. This property doesn't apply when you configure your file path type as **List of files**.|• **Start time**<br>• **End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
 |**Enable partition discovery**|Whether to parse the partitions from the file path and add them as extra source columns.| Selected or unselected |No| enablePartitionDiscovery: <br> true or false (default)|
 |**Partition root path**|The absolute partition root path to read partitioned folders as data columns.| \<your partition root path\> |No| partitionRootPath|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. A value is needed only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
@@ -207,19 +204,18 @@ The following tables contain more information about a copy activity in Lakehouse
 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace**|Yes|/|
-|**Workspace data store type** |The section to select your workspace data store type.|**Lakehouse**|Yes|type|
-|**Lakehouse** | The Lakehouse that you use as destination.|\<your Lakehouse>|Yes |workspaceId<br>artifactId|
-|**Root folder** |The type of the root folder.|* **Tables**<br>* **Files** |Yes | rootFolder:<br>Table or Files|
-|**Table name** |The name of the table to which you want to write data. |\<your table name> |Yes when you select **Tables** in **Root folder** | table <br>*(under `typeProperties` -> `sink` -> `typeProperties`)*|
-|**Max rows per file** |When writing data into a folder, you can choose to write to multiple files and specify the max rows per file.|\<max rows per flie> |No |maxRowsPerFile|
-|**Table action**| Append new values to an existing table or overwrite the existing data and schema in the table using the new values.|* **Append**<br>* **Overwrite**|No|tableActionOption:<br>Append or Overwrite|
+|**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>artifactId|
+|**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |Yes | rootFolder:<br>Table or Files|
+|**Table name** |The name of the table to which you want to write data to. |\<your table name> |Yes when you select **Tables** in **Root folder** | table <br>*(under `typeProperties` -> `sink` -> `typeProperties`)*|
+|**Table action**| Append new values to an existing table or overwrite the existing data and schema in the table using the new values.|• **Append**<br>• **Overwrite**|No|tableActionOption:<br>Append or OverwriteSchema|
+|**Enable partitions**|This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".| Selected or unselected |No| partitionOption: <br> PartitionByKey or None|
+|**Partition columns**|The destination columns in schemas mapping.| \<your partition columns\> |No| partitionNameList|
+|**File path**|Write data to the path to a folder/file under destination data store.|\<file path>|No|• folderPath<br>• fileName|
+| **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes when you select **Files** in **Root folder** | / |
+|**Copy behavior** | The copy behavior defined when the source is files from a file-based data store.|• **Flatten hierarchy**<br>• **Merge files**<br>• **Preserve hierarchy**<br>• **Add dynamic content** |No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
-|**File path**|Write data to the path to a folder/file under destination data store.|\<file path>|No|* folderPath<br>* fileName|
-|**File format**|The format of the file that you use. |\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextWriteSettings|
-|**Copy behavior** | The copy behavior defined when the source is files from a file-based data store.|* **Add dynamic content**<br>* **None**<br>* **Flatten hierarchy**<br>* **Preserve hierarchy**|No |copyBehavior:<br><br><br>* FlattenHierarchy<br>* PreserveHierarchy|
 |**Block size (MB)** |The block size in MB used to write data to Lakehouse. Allowed value is between 4 MB and 100 MB.|\<block size\>|No|blockSizeInMB|
-|**Metadata** |The custom metadata set when copying to a destination.|* `$$LASTMODIFIED`<br>* Expression<br>* Static value|No |metadata|
+|**Metadata** |The custom metadata set when copying to a destination.|• `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
 ## Related content
 
