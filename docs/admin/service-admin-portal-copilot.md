@@ -13,6 +13,7 @@ ms.topic: how-to
 ms.date: 02/07/2024
 LocalizationGroup: Administration
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Copilot tenant settings (preview)
