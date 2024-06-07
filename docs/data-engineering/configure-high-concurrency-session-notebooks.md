@@ -7,7 +7,7 @@ author: santhoshravindran7
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 07/16/2023
+ms.date: 06/07/2024
 ---
 
 # Configure high concurrency mode for Fabric notebooks
@@ -93,6 +93,10 @@ Monitoring and debugging are often a non-trivial task when you are running multi
 1. In the case of high concurrency session, users could identify the jobs and its associated logs from different notebooks using the **Related notebook** tab, which shows the notebook from which that job has been run.
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-high-concurrency-mode.png" alt-text="Screenshot showing the all related notebooks for high concurrency session in the monitoring detail view." lightbox="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-high-concurrency-mode.png":::
+
+## limitations
+
+* Currently when high concurrency mode is enabled, you can't install packages at the session level using magic commands.
 
 ## Related content
 
