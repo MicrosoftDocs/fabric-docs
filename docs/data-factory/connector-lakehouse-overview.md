@@ -4,7 +4,7 @@ description: This article explains the overview of using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 06/07/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -26,6 +26,7 @@ The Lakehouse connector supports the following capabilities in data pipelines:
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None <br> On-premises | User Auth |
+| **Lookup activity** | None <br> On-premises | User Auth |
 | **Delete activity** | None <br> On-premises | User Auth |
 
 To learn about the copy activity configuration for a Lakehouse in data pipelines, go to [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md).
