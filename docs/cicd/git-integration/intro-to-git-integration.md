@@ -78,7 +78,7 @@ The following limitations apply:
 
 ### [GitHub limitations](#tab/github)
 
-* The workspace and Git repo must be in the same geographical region.
+* GitHub can't enforce [cross-geo validations](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview)).
 
 ---
 

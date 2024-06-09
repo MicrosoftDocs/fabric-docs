@@ -34,7 +34,9 @@ It’s recommended to read the [overview of Git integration](./intro-to-git-inte
 
 ## Connect a workspace to a Git repo
 
-Only a workspace admin can connect a workspace to a repository, but once connected, anyone with [permission](#permissions) can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to an Azure Repo, follow these steps:
+### Connect to a Git repo
+
+Only a workspace admin can connect a workspace to a repository, but once connected, anyone with [permission](#permissions) can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to an Azure  or GitHub Repo, follow these steps:
 
 1. Sign into Fabric and navigate to the workspace you want to connect with.
 
@@ -52,32 +54,36 @@ Only a workspace admin can connect a workspace to a repository, but once connect
 
     :::image type="content" source="./media/git-get-started/select-git-provider.png" alt-text="Screenshot of workspace settings window with choice of DevOps or GitHub to select.":::
 
-1. If you select Azure DevOps, select **Connect** to automatically sign into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
+     -  If you select Azure DevOps, select **Connect** to automatically sign into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
 
-    :::image type="content" source="./media/git-get-started/devops-connect.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
+     :::image type="content" source="./media/git-get-started/devops-connect.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
 
-1. If you select GitHub, you need to sign in to your GitHub account. Select **Add account** if it's your first time signing in from Fabric, or select one of the accounts listed. After you sign in, select **Authorize** to allow Fabric to access your GitHub account.
+     - If you select GitHub, you need to sign in to your GitHub account. Select **Add account** if it's your first time signing in from Fabric, or select one of the accounts listed. After you sign in, select **Authorize** to allow Fabric to access your GitHub account.
 
-    :::image type="content" source="./media/git-get-started/github-first-connect.png" alt-text="Screenshot of GitHub integration window without any existing accounts to select.":::
+     :::image type="content" source="./media/git-get-started/github-first-connect.png" alt-text="Screenshot of GitHub integration window without any existing accounts to select.":::
 
-    You need to [Authorize](https://docs.github.com/authentication/keeping-your-account-and-data-secure/about-authentication-to-github) your GitHub user the first time you connect to GitHub. Provide the following information:
+     You need to [Authorize](https://docs.github.com/authentication/keeping-your-account-and-data-secure/about-authentication-to-github) your GitHub user the first time you connect to GitHub. Provide the following information:
 
-    * *Display name* - must be unique for each user
-    * *Personal access token* - [your classic or fine-grained personal access token](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
-    * *URL* (optional) - If you don't enter a URL, you can connect to any repo you have access to. If you enter a URL, you can only connect to repos in that organization.
+         - *Display name* - must be unique for each user
+         - *Personal access token* - [your classic or fine-grained personal access token](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+         - *URL* (optional) - If you don't enter a URL, you can connect to any repo you have access to. If you enter a URL, you can only connect to this repository.
 
-    :::image type="content" source="./media/git-get-started/github-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
+       :::image type="content" source="./media/git-get-started/github-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
+
+### Connect to a workspace
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
     > [!NOTE]
     > You can only connect a workspace to one branch and one folder at a time.
 
-    - [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
-    - [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
+    - [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)(Azure only)
+    - [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)(Azure only)
     - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project). If you connected to GitHub using a scoped token, you can only connect to that repository.
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
     - Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content will be created in the root folder. You can only connect to one folder at a time.)
+
+    :::image type="content" source="./media/git-get-started/github-connect-branch.png" alt-text="Screenshot to GitHub connection.":::
 
 1. Select **Connect and sync**.
 
@@ -173,7 +179,7 @@ Only a workspace admin can disconnect a workspace from an Azure Repo. If you’r
 
 ## Permissions
 
-The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps. For a more detailed discussion of permissions, see [Permissions](./git-integration-process.md#permissions).
+The actions you can take on a workspace depend on the permissions you have in both the workspace and the Git repo. For a more detailed discussion of permissions, see [Permissions](./git-integration-process.md#permissions).
 
 ## Considerations and limitations
 
