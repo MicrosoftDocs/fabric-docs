@@ -21,7 +21,10 @@ With the _Require fast copy_ option enabled, the dataflow refresh is cancelled i
 
 - You must have a Fabric capacity.
 - For file data, files are in .csv or parquet format of at least 100 MB, and stored in an Azure Data Lake Storage (ADLS) Gen2 or a Blob storage account.
-- For Azure SQL DB, 1 million rows or more of data in the data source.
+- For database including Azure SQL DB and PostgreSQL, 5 million rows or more of data in the data source.
+
+> [!NOTE]
+> You can bypass the threshold to force Fast Copy by selecting "Require fast copy" setting.
 
 ## Connector support
 

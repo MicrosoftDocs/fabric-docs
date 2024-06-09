@@ -276,11 +276,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/real-time-analytics/one-logical-copy.md",
-      "redirect_url": "/fabric/real-time-intelligence/one-logical-copy",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/real-time-analytics/onelake-shortcuts.md",
       "redirect_url": "/fabric/real-time-intelligence/onelake-shortcuts",
       "redirect_document_id": false
@@ -401,9 +396,19 @@
       "redirect_document_id": false
     },
     {
-      "redirect_url": "/fabric/real-time-analytics/one-logical-copy",
       "source_path_from_root": "/docs/real-time-analytics/onelake-mirroring.md",
-      "redirect_document_id": true
+      "redirect_url": "/fabric/real-time-intelligence/event-house-onelake-availability",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-analytics/one-logical-copy.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-house-onelake-availability",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/one-logical-copy.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-house-onelake-availability",
+      "redirect_document_id": false
     },
     {
       "redirect_url": "/fabric/real-time-analytics/notebooks",
@@ -433,6 +438,31 @@
     {
       "source_path_from_root": "/docs/get-started/copilot-real-time-analytics-privacy-security.md",
       "redirect_url": "/fabric/get-started/copilot-real-time-intelligence-privacy-security",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-2-event-streams.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-2-get-real-time-events",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-get-historical-data.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-set-alert",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-explore.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-query-data",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-advanced-kql-queries.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-build-report.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-power-bi-report",
       "redirect_document_id": true
     }
   ]

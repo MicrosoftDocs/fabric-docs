@@ -53,7 +53,7 @@ The following items are currently supported:
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces))
-* Semantic models (except push datasets, live connections, model v1, and semantic models [created from the Data warehouse/lakehouse](../../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).)
+* Semantic models (except push datasets, live connections to Analysis Services, model v1).
 * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md)
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
 * [Warehouses](../../data-warehouse/data-warehousing.md)

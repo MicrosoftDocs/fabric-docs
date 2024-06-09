@@ -148,8 +148,7 @@ Azure DevOps account details include:
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be at least as strong as the authentication method for Azure DevOps. For example, if Azure DevOps requires multifactor authentication, Power BI needs to require multifactor authentication as well.
-- Direct Query and composite models on Power BI Datasets and Analysis Services aren't supported at this time.
-- DirectLake semantic models aren’t supported at this time.
+- Power BI Datasets connected to Analysis Services aren't supported at this time.
 - Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git diff after each refresh.
 - The workspace folder structure isn't reflected in the Git repository. Workspace items in folders are exported to the root directory.
 - GitHub doesn't support exports to different geographical regions. Even if [cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) is enabled.

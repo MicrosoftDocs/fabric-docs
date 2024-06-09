@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/27/2023
+ms.date: 06/04/2024
 ---
 
 # Connecting to Microsoft OneLake
@@ -58,7 +58,7 @@ For quick, ad-hoc testing of OneLake using direct API calls, here's a simple exa
    > OneLake only supports tokens in the `Storage` audience. In the following example, we set the audience through the `ResourceTypeName` parameter.
 
   ```powershell
-  az login --allow-no-subscriptions
+  Connect-AzAccount
   $testToken = Get-AzAccessToken -ResourceTypeName Storage
   $testToken.Token | Set-Clipboard
   ```

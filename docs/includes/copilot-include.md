@@ -8,6 +8,7 @@ ms.custom:
   - build-2024
 ms.date: 05/09/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 - Your administrator needs to enable the tenant switch before you start using Copilot. For more information, see [Copilot tenant settings](../admin/service-admin-portal-copilot.md).

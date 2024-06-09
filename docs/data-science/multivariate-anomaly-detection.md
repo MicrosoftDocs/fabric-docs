@@ -9,6 +9,7 @@ ms.reviewer: fsolomon
 author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 01/24/2024
+ms.collection: ce-skilling-ai-copilot
 ---
 # Recipe: Azure AI services - Multivariate Anomaly Detection
 
