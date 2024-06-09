@@ -55,7 +55,7 @@ The NuGet package designed to represent workloads is structured to include both 
 
 #### Backend Structure
 
-The backend segment comprises XML files that define the Workload and its associated Items, which are essential for registration within the Fabric system.
+The backend segment comprises .xml files that define the workload and its associated items, which are essential for registration with Fabric.
 
 ##### Key Components:
 - `WorkloadManifest.xml` - The workload configuration file, required to have this exact name for Fabric's verification.
