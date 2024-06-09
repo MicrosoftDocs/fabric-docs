@@ -46,7 +46,7 @@ The following diagram shows how Fabric uses the Manifest to read the workload's 
 
 ## Step 1: Enable Workload Extensions in Fabric
 
-The tenant administrator has to enable this feature in the Admin Portal. It can be enabled for the entire organization or for specific groups within the organization by enabling the switch *Workload extensions (preview)*.
+The tenant administrator has to enable the workload development feature in the Admin Portal. It can be enabled for the entire organization or for specific groups within the organization by enabling the tenant switch *Capacity admins can develop additional workloads*.
 
 :::image type="content" source="./media/extensibility-front-end/tenant-switch.png" alt-text="Screenshot of the workloads extensions tenant switch.":::
 
