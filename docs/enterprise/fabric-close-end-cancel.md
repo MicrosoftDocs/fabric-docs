@@ -18,7 +18,7 @@ You or your admin have options to close your account, cancel your subscription, 
 
 #### [End user](#tab/enduser)
 
-Most canceling, closing, and expiry is handled by an administrator. But there are some tasks that you can do as an end user. This is especially true if you signed up as an individual and your account or subscription isn't managed by your organization. 
+Most canceling, closing, and expiry is handled by an administrator. But there are some tasks that you can do as an end user. Being able to do these tasks yourself is possible if you signed up as an individual and your account or subscription isn't managed by your organization. 
 
 ## Cancel a Power BI license trial
 
@@ -101,7 +101,7 @@ Cancel an A SKU subscription in Azure.
 Fabric administrators can turn off Fabric for an entire organization, individuals, and security groups. See [Can I disable Microsoft Fabric?](../admin/fabric-switch.md#can-i-disable-microsoft-fabric). At the tenant level, the Fabric admin uses the Admin portal **Settings.** The Fabric administrator can also delegate a Capacity administrator to disable Fabric at the capacity level using the Admin portal **Capacity settings.**
 
 ## Licenses
-If a Fabric (Free) license was assigned by a Global or Billing administrator, they can use the Admin portal to remover users' free licenses. The steps are the same as [Close your Power BI account.](#close-your-power-bi-account) If a Capacity administrator got the license themselves, they can use the Admin portal to remove that license. If a paid license (Pro or PPU) expires, you have a grace period for repurchasing.  
+If a Global or Billing administrator assigned the Fabric (Free) license, they can use the Admin portal to remover users' free licenses. The steps are the same as [Close your Power BI account.](#close-your-power-bi-account) If a Capacity administrator got the license themselves, they can use the Admin portal to remove that license. If a paid license expires you have a grace period for repurchasing.  
 
 ### Manage an expired license
 
