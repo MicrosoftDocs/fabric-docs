@@ -42,7 +42,7 @@ Connect-AzureAD
 New-AzureADServicePrincipal -AppId e406a681-f3d4-42a8-90b6-c2b029497af1
 ```
 
-## Configure your application in Microsoft Entra ID - Manual
+## Configure your application in Microsoft Entra ID manually 
 
 To work with authentication, you need an application registered in Microsoft Entra ID. If you don't have an application registered, follow [this guide](/entra/identity-platform/quickstart-register-app#register-an-application) to create a new application.
 
@@ -132,12 +132,12 @@ Under ***API permissions**, add the desired permissions for your application. Fo
 
 Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null or "1".
 
-## Configuring Your Application in Microsoft Entra Identity - Automatic script
+## Configuring Your Application in Microsoft Entra Identity automaticlly using a script
 
 For a streamlined setup of your application in Microsoft Entra Identity, you may opt to utilize an automated PowerShell script. Follow the steps below to configure your application:
 
 1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2.](https://learn.microsoft.com/en-us/cli/azure/).
-2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1. You will be prompted to sign in; please do so with the credentials of the user account under which you intend to create the application.
+2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1. You will be prompted to sign-in using the credentials of the user account under which you intend to create the application.
 3. **Provide Required Information**: When prompted, enter the desired name for your application, the workload name (prefixed with "Org."), and your tenant ID.
 
 Upon successful execution of the script, it will output all necessary details to configure your workload. Additionally, it will provide a direct URL to your application and an administrative consent URL for tenant-wide application authorization.
