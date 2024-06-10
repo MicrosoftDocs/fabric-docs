@@ -76,7 +76,7 @@ To ensure uniform performance enhancement, enable the native execution engine ac
 | spark.gluten.enabled | true |
 | spark.shuffle.manager | org.apache.spark.shuffle.sort.ColumnarShuffleManager |
 
-:::image type="content" source="media\native\enable-environment.jpg" alt-text="Screenshot showing how to enable the native execution engine inside the environment item." lightbox="media\native\enable-environment.jpg":::
+:::image type="content" source="media\native\enable-environment.png" alt-text="Screenshot showing how to enable the native execution engine inside the environment item." lightbox="media\native\enable-environment.png":::
 
 When enabled at the environment level, all subsequent jobs and notebooks inherit the setting. This inheritance ensures that any new sessions or resources created in the environment automatically benefit from the enhanced execution capabilities.
 
