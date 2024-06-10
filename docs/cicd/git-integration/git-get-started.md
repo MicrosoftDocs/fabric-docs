@@ -54,21 +54,28 @@ Only a workspace admin can connect a workspace to a repository, but once connect
 
     :::image type="content" source="./media/git-get-started/select-git-provider.png" alt-text="Screenshot of workspace settings window with choice of DevOps or GitHub to select.":::
 
-     -  If you select Azure DevOps, select **Connect** to automatically sign into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
+### [Azure Connect](#tab Azure)
 
-         :::image type="content" source="./media/git-get-started/devops-connect.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
+If you select Azure DevOps, select **Connect** to automatically sign into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
 
-     - If you select GitHub, you need to sign in to your GitHub account. Select **Add account** if it's your first time signing in from Fabric, or select one of the accounts listed. After you sign in, select **Authorize** to allow Fabric to access your GitHub account.
+:::image type="content" source="./media/git-get-started/devops-connect.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
 
-         :::image type="content" source="./media/git-get-started/github-first-connect.png" alt-text="Screenshot of GitHub integration window without any existing accounts to select.":::
+### [GitHub Connect](#tab GitHub)
 
-         You need to [Authorize](https://docs.github.com/authentication/keeping-your-account-and-data-secure/about-authentication-to-github) your GitHub user the first time you connect to GitHub. Provide the following information:
+If you select GitHub, you need to sign in to your GitHub account.  
+Select **Add account** if it's your first time signing in from Fabric, or select one of the accounts listed. After you sign in, select **Authorize** to allow Fabric to access your GitHub account.
 
-         - *Display name* - must be unique for each user
-         - *Personal access token* - [your classic or fine-grained personal access token](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
-         - *URL* (optional) - If you don't enter a URL, you can connect to any repo you have access to. If you enter a URL, you can only connect to this repository.
+:::image type="content" source="./media/git-get-started/github-first-connect.png" alt-text="Screenshot of GitHub integration window without any existing accounts to select.":::
 
-         :::image type="content" source="./media/git-get-started/github-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
+If it's the first time connecting, you need to [Authorize](https://docs.github.com/authentication/keeping-your-account-and-data-secure/about-authentication-to-github) your GitHub user. Provide the following information:
+
+- *Display name* - must be unique for each user
+- *Personal access token* - [your classic or fine-grained personal access token](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+- *URL* (optional) - If you don't enter a URL, you can connect to any repo you have access to. If you enter a URL, you can only connect to this repository.
+
+:::image type="content" source="./media/git-get-started/github-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
+
+---
 
 ### Connect to a workspace
 
@@ -83,9 +90,17 @@ Only a workspace admin can connect a workspace to a repository, but once connect
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
     - Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content will be created in the root folder. You can only connect to one folder at a time.)
 
+#### [GitHub Branch Connect](#tab GitHub)
+
     :::image type="content" source="./media/git-get-started/github-connect-branch.png" alt-text="Screenshot to GitHub connection.":::
 
-1. Select **Connect and sync**.
+#### [Azure branch Connect](#tab Azure)
+
+    :::image type="content" source="./media/git-get-started/azure-connect-branch.png" alt-text="Screenshot to Azure connection.":::
+
+---
+
+Select **Connect and sync**.
 
 During the initial sync, if either the workspace or Git branch is empty, content is copied from the nonempty location to the empty one. If both the workspace and Git branch have content, you’re asked which direction the sync should go. For more information on this initial sync, see [Connect and sync](git-integration-process.md#connect-and-sync).
 
