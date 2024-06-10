@@ -4,7 +4,7 @@ description: Learn how to plan your Microsoft Fabric capacity size using the Mic
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
-ms.date: 05/21/2024
+ms.date: 06/10/2024
 ---
 
 # Plan your capacity size
@@ -37,7 +37,7 @@ Follow these steps to estimate the size of the capacity you need. We recommend t
 
 2. In the [capacity metrics app](metrics-app-compute-page.md), review the [utilization](metrics-app-compute-page.md#utilization) visual.
 
-3. If your capacity usage exceeds the trial capacity utilization limit, locate the timepoint where your capacity usage exceeded its utilization limit, and drill down to the [timepoint page](metrics-app-timepoint-page.md).
+3. Locate the timepoint you'd like to adjust as part of the your capacity resize, and drill down to the [timepoint page](metrics-app-timepoint-page.md).
 
 4. To understand which SKU you need, review these [top row visuals](metrics-app-timepoint-page.md#top-row-visuals).
     * **SKU card** - Shows the current SKU you're using.
