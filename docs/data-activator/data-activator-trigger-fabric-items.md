@@ -3,7 +3,7 @@ title: Trigger Fabric items
 description: Understand how to trigger Fabric items with Data Activator.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.date: 05/21/2024
 ---

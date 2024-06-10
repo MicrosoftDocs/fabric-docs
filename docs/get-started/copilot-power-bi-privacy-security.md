@@ -10,6 +10,7 @@ ms.custom:
 ms.topic: conceptual
 ms.date: 06/02/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Privacy, security, and responsible use for Copilot in Power BI

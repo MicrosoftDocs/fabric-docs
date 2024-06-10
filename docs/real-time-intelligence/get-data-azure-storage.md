@@ -30,7 +30,7 @@ In this article, you learn how to get data from Azure storage (ADLS Gen2 contain
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Azure storage**.
 
-    :::image type="content" source="media/get-data-azure-storage/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-azure-storage/select-data-source.png":::
+    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
 
 ## Configure
 

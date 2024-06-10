@@ -157,6 +157,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Previous Eventstream UX loads instead of new UX
+      href: known-issues/known-issue-736-previous-eventstream-ux-loads-instead-new-ux.md
+    - name: Custom endpoint or Reflex destination on derived stream keeps loading
+      href: known-issues/known-issue-734-custom-endpoint-reflex-destination-derived-stream-keeps-loading.md
+    - name: Sample data doesn’t flow after destination later added into eventstream
+      href: known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md
     - name: Tenant migrations paused for June 2024
       href: known-issues/known-issue-749-tenant-migrations-paused-june-2024.md
     - name: Shortcut creation on a lakehouse preview table takes long time

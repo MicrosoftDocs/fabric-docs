@@ -7,7 +7,7 @@ author: alexlzx
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 06/06/2024
 ms.search.form: Source and Destination
 ---
 
@@ -35,6 +35,10 @@ Fabric event streams supports the following Blob Storage event types:
 For more details about available event types, see [Azure Blob Storage as Event Grid source](/azure/event-grid/event-schema-blob-storage).
 
 [!INCLUDE [enhanced-capabilities-preview-note](./includes/enhanced-capabilities-preview-note.md)]
+
+> [!NOTE]
+> This source is not supported in the following regions of your workspace capacity: **West US 3**, **West India**, **South Central US**.
+
 
 ## Unstreamed vs. streamed events
 

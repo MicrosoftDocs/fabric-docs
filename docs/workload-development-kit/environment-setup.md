@@ -4,7 +4,7 @@ description: Learn how to set up your Microsoft Fabric Workload Development Kit 
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: muliwienrib
-ms.topic: how to
+ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024
 ---

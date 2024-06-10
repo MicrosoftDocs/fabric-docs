@@ -1290,8 +1290,6 @@ items:
     href: /azure/data-explorer/kusto/query/make-graph-operator?context=/fabric/context/context-rti&pivots=fabric
   - name: graph-match
     href: /azure/data-explorer/kusto/query/graph-match-operator?context=/fabric/context/context-rti&pivots=fabric
-  - name: graph-merge
-    href: /azure/data-explorer/kusto/query/graph-merge-operator?context=/fabric/context/context-rti&pivots=fabric
   - name: graph-to-table
     href: /azure/data-explorer/kusto/query/graph-to-table-operator?context=/fabric/context/context-rti&pivots=fabric
 - name: Geospatial

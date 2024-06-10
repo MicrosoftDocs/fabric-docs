@@ -3,7 +3,7 @@ title: Install the Microsoft Fabric capacity metrics app
 description: Learn how to install the Microsoft Fabric capacity metrics app.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: how to
+ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
