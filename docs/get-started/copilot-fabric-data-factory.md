@@ -73,7 +73,7 @@ With Dataflow Gen2, you can:
 
     :::image type="content" source="media/copilot-fabric-data-factory/copilot-undo-action.png" alt-text="Screenshot showing the undo button." lightbox="media/copilot-fabric-data-factory/copilot-undo-action.png":::
  
-1. To leverage the power of Azure Open AI when creating or transforming your data, ask Copilot to create sample data by typing this text:
+1. To leverage the power of Azure OpenAI when creating or transforming your data, ask Copilot to create sample data by typing this text:
 
     ```Create a new query with sample data that lists all the Microsoft OS versions and the year they were released```
 
