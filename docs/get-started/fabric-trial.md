@@ -54,18 +54,18 @@ Follow these steps to start your Fabric capacity trial.
 
     :::image type="content" source="media/fabric-trial/fabric-home-page.png" alt-text="Screenshot of the Microsoft Fabric homepage with the Account manager outlined in red.":::
 
-3. In the Account manager, select **Start trial**. If you don't see the *Start trial* button, trials might be disabled for your tenant.
+1. In the Account manager, select **Start trial**. If you don't see the *Start trial* button, trials might be disabled for your tenant.
 
 > [!NOTE]
-> If the Account manager already displays **Trial status**, you may already have a **Power BI trial** in progress.  In this case, attempt to use a Fabric feature to generate a prompt to start a Fabric trial capacity too.  For more information, see [x](#other-ways-to-start-a-microsoft-fabric-trial).
+> If the Account manager already displays **Trial status**, you may already have a **Power BI trial** in progress.  In this case, attempt to use a Fabric feature to generate a prompt to start a Fabric trial capacity too.  For more information, see [Start using Fabric](#other-ways-to-start-a-microsoft-fabric-trial).
 
 :::image type="content" source="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
 
-5. If prompted, agree to the terms and then select **Start trial**.
+1. If prompted, agree to the terms and then select **Start trial**.
 
-6. Once your trial capacity is ready, you receive a confirmation message. Select **Got it** to begin working in Fabric. You're now the Capacity administrator for that trial capacity. To learn how to share your trial capacity using workspaces, see [Share trial capacities](#share-trial-capacities)
+1. Once your trial capacity is ready, you receive a confirmation message. Select **Got it** to begin working in Fabric. You're now the Capacity administrator for that trial capacity. To learn how to share your trial capacity using workspaces, see [Share trial capacities](#share-trial-capacities)
 
-7. Open your Account manager again. Notice the heading for **Trial status**. Your Account manager keeps track of the number of days remaining in your trial. You also see the countdown in your Fabric menu bar when you work in a product workload.
+1. Open your Account manager again. Notice the heading for **Trial status**. Your Account manager keeps track of the number of days remaining in your trial. You also see the countdown in your Fabric menu bar when you work in a product workload.
 
     :::image type="content" source="media/fabric-trial/trial-status-me-control.png" alt-text="Screenshot of the Microsoft Fabric trial status.":::
 
@@ -104,13 +104,13 @@ If you're a Capacity administrator or a tenant admin, you can view, verify, or c
 
 Contact your Capacity administrator to request access to a trial capacity or to check whether your organization has the Fabric tenant setting enabled. Ask your Fabric administrator to use the Admin portal to look up your Capacity administrator. 
 
-If you're the capacity or Fabric administrator, from the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select *Capacity settings** and then choose the **Trial** tab. 
+If you're the capacity or Fabric administrator, from the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select **Capacity settings** and then choose the **Trial** tab. 
 
 :::image type="content" source="media/fabric-trial/fabric-admin.png" alt-text="Screenshot of Admin center showing the Capacity settings screen.":::
 
 ## End a Fabric trial
 
-End a Fabric capacity trail by canceling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial but ndividual users don't have this ability. All licenses return to their original versions. You no longer have the equivalent of a PPU license. If you want to retain your data ad continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. <!-- For more information, see [Canceling, expiring, and closing](../enterprise/fabric-close-end-cancel.md). -->
+End a Fabric capacity trail by canceling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial but individual users don't have this ability. All licenses return to their original versions. You no longer have the equivalent of a PPU license. If you want to retain your data and continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. <!-- For more information, see [Canceling, expiring, and closing](../enterprise/fabric-close-end-cancel.md). -->
 
 ### The trial expires 
 
@@ -124,7 +124,7 @@ Only the capacity administrator can cancel the Fabric capacity trial.
 
 ### Cancel the Fabric trial - Capacity admins
 
-To cancel your free Fabric trial capacity, open your Account Manager and select **Cancel trial**. Once canceled, Microsoft can't extend the Fabric capacity trial, and you may not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. You can also [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. If your have workspaces with Fabric items, assign those workspaces to the new trial or purchased capacity within seven days.
+To cancel your free Fabric trial capacity, open your Account Manager and select **Cancel trial**. Once canceled, Microsoft can't extend the Fabric capacity trial, and you may not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. You can also [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. If you have workspaces with Fabric items, assign those workspaces to the new trial or purchased capacity within seven days.
 
 :::image type="content" source="media/fabric-trial/cancel-trial.png" alt-text="Screenshot of the Cancel trial button in Account manager.":::
 
@@ -133,8 +133,6 @@ When you cancel a free Fabric capacity trial, the trial capacity, with all of it
 - Create workspaces that support Fabric capabilities.
 - Share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
 - Create analytics solutions using these Fabric items.
- 
-    ![image](https://github.com/mihart/fabric-docs-pr/assets/4922988/ad0426d6-efff-4bd3-8563-da2df31279dc)
 
 
 ## Considerations and limitations
