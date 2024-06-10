@@ -81,7 +81,7 @@ sections:
         answer: |
           In certain user experiences, you may encounter system artifacts not intended for interaction. It's best to disregard these artifacts, as they'll eventually be removed from the Get Data experiences in the future.
 
-  - name: ADF/Synapse pipelines future support and migration path
+  - name: ADF/Synapse pipelines support and migration path
     questions:
       - question: |
           What is the future of Azure Data Factory (ADF) and Synapse Pipelines? 
