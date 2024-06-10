@@ -92,11 +92,11 @@ If it's the first time connecting, you need to [Authorize](https://docs.github.c
 
 #### [GitHub Branch Connect](#tab/GitHub)
 
-    :::image type="content" source="./media/git-get-started/github-connect-branch.png" alt-text="Screenshot to GitHub connection.":::
+:::image type="content" source="./media/git-get-started/github-connect-branch.png" alt-text="Screenshot to GitHub connection.":::
 
 #### [Azure branch Connect](#tab/Azure)
 
-    :::image type="content" source="./media/git-get-started/azure-connect-branch.png" alt-text="Screenshot to Azure connection.":::
+:::image type="content" source="./media/git-get-started/azure-connect-branch.png" alt-text="Screenshot to Azure connection.":::
 
 ---
 
