@@ -1,8 +1,8 @@
 ---
 title: Dataflow Gen2 refresh
 description: Explanation of what a dataflow refresh is, including on-demand and scheduled refresh.
-author: bensack
-ms.author: bensack
+author: Luitwieler
+ms.author: jeluitwi
 ms.service: fabric
 ms.topic: concept-article #Required; leave this attribute/value as-is.
 ms.date: 2/1/2024
@@ -56,7 +56,7 @@ Once a dataflow refresh is canceled, the dataflow's refresh history status is up
 
 For dataflow refreshes, a couple of limitations are in place:
 
-1. Per dataflow, you're only allowed to have 96 refreshes per 24 hours (rolling window). When you exceed this limit, you receive an error in your refresh history and refreshes resume after you are below the limit.
+1. Per dataflow, you're only allowed to have 150 refreshes per 24 hours (rolling window). When you exceed this limit, you receive an error in your refresh history and refreshes resume after you are below the limit.
 2. If your scheduled dataflow refresh fails consecutively, we pause your dataflow refresh schedule and send the owner of the dataflow an email. The following rules apply in this case:
    - 72 hours (3 days)
      - 100% failure rate over 72 hours

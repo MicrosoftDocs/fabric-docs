@@ -17,7 +17,7 @@ ms.date: 03/25/2024
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-Data workflows provide a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease. In this quickstart, you create your first Data workflow and run a Directed Acyclic Graph (DAG) to familiarize yourself with the environment and functionalities of Data workflows.
+Data workflows provide a simple and efficient way to create and manage Apache Airflow environments, enabling you to run your data workflows at scale with ease. In this quickstart, you create your first Data workflow and run a Directed Acyclic Graph (DAG) to familiarize yourself with the environment and functionalities of Data workflows.
 
 ## Prerequisites
 

@@ -155,6 +155,22 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Previous Eventstream UX loads instead of new UX
+      href: known-issues/known-issue-736-previous-eventstream-ux-loads-instead-new-ux.md
+    - name: Custom endpoint or Reflex destination on derived stream keeps loading
+      href: known-issues/known-issue-734-custom-endpoint-reflex-destination-derived-stream-keeps-loading.md
+    - name: Sample data doesn’t flow after destination later added into eventstream
+      href: known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md
+    - name: Tenant migrations paused for June 2024
+      href: known-issues/known-issue-749-tenant-migrations-paused-june-2024.md
+    - name: Shortcut creation on a lakehouse preview table takes long time
+      href: known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md
+    - name: Semantic models in Desktop sometimes fail in March 2024 and later versions
+      href: known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md
+    - name: Real-Time hub Set alert doesn't work for derived streams
+      href: known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md
+    - name: Opening a reflex for a stream in Real-Time hub doesn't work
+      href: known-issues/known-issue-729-opening-reflex-stream-real-time-hub-not-work.md
     - name: Virtual network data gateway service interruption
       href: known-issues/known-issue-742-virtual-network-data-gateway-service-interruption.md
     - name: Pipeline using XML format copy gets stuck

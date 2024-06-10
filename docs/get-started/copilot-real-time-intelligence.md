@@ -9,6 +9,7 @@ ms.custom:
   - build-2024
 ms.date: 03/28/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 # Copilot for Real-Time Intelligence (preview)
 

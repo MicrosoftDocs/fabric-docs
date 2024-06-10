@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/26/2024
+ms.date: 06/08/2024
 ---
 
 # Tenant settings index
@@ -160,6 +160,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics)|Users in the organization can see usage metrics for dashboards, reports and semantic models that they have appropriate permissions to.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2152884)|
 |[Per-user data in usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics#exclude-user-information-from-usage-metrics-reports)|Usage metrics for content creators will expose display names and email addresses of users who are accessing content.|
 |[Azure Log Analytics connections for workspace administrators](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure)|NO DESCRIPTION IN UI|
+|[Microsoft can store query text to aid in support investigations](./query-text-storage.md)|Query text for some items, including semantic models, is securely stored for usage during support investigations. Turn off this setting to stop the service from storing query text.<br><br>Turning off this setting might negatively impact Microsoft's ability to provide support for the Fabric service.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262696)|
 
 ## [Dashboard settings](service-admin-portal-dashboard.md)
 

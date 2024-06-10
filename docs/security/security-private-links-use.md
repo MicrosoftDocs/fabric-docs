@@ -1,5 +1,5 @@
 ---
-title: Set up and use private links for secure access to Fabric (Preview)
+title: Set up and use private links for secure access to Fabric
 description: Learn how to set up and use private links to provide secure access to Fabric.
 author: paulinbar
 ms.author: painbar
@@ -234,8 +234,6 @@ The next step is to create a private endpoint for Fabric.
 
 1. Select **Create**.
 
-> [!NOTE]
-> If you have an existing Power BI private endpoint, it may not work for Fabric items. Currently, you need to create a new private endpoint to get support for Fabric items.
 
 ### Step 6. Connect to a VM using Bastion
 
@@ -312,6 +310,9 @@ The following video shows how to connect a mobile device to Fabric, using privat
 > [!VIDEO https://www.youtube.com/embed/-3yFtlZBpqs]
 
 More questions? [Ask the Fabric Community](https://community.fabric.microsoft.com/).
+
+## Disable Private Link
+In case you want to disable private link setting, please ensure all the private endpoints you created and the corresponding private DNS zone are deleted before disabling private link setting. If your VNet has private endpoint set up but the private link is disabled, connections from this VNet may fail.
 
 ## Related content
 

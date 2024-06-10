@@ -7,6 +7,7 @@ ms.reviewer: jessiwang
 author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 06/28/2023
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Azure OpenAI for big data

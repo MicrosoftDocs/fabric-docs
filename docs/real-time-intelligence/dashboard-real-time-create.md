@@ -7,7 +7,7 @@ ms.author: yaschust
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/09/2024
+ms.date: 06/04/2024
 ms.search.form: product-kusto, Real-Time Dashboard
 ---
 # Create a Real-Time Dashboard (preview)
@@ -25,6 +25,19 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with data
+
+## Enable tenant settings in the admin portal
+
+> [!IMPORTANT]
+> This step must be completed by the tenant admin.
+
+1. Browse to the [admin portal](../admin/admin-center.md).
+
+1. In the **Tenant settings** tab, search for *Real-Time Dashboards*. For more information, see [About tenant settings](../admin/about-tenant-settings.md).
+1. Toggle the button for **Create Real-Time Dashboards** to **Enabled**. For more information, see [Tenant settings - Microsoft Fabric](../admin/tenant-settings-index.md).
+1. Select **Apply**.
+
+:::image type="content" source="media/real-time-dashboard/enable-tenant-settings.png" alt-text="Screenshot of enabling tenant settings for Real-Time Dashboards.":::
 
 ## Create a new dashboard
 
