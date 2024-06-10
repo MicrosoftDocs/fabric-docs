@@ -5,7 +5,7 @@ author: bradleyschacht
 ms.author: scbradl
 ms.reviewer: sngun, wiassaf
 ms.topic: quickstart
-ms.date: 05/21/2024
+ms.date: 06/10/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -33,9 +33,6 @@ Use this reference guide and the example scenarios to help you choose a data sto
 | **Access data via shortcuts** | Yes, through a lakehouse using three-part names | Yes | No | Yes |
 | **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No | Yes |
 | **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables; query across lakehouses (including shortcuts using Spark) | No | Yes, query across KQL Databases, lakehouses, and warehouses with shortcuts |
-| **Advanced analytics** |  |  |  |Time Series native elements, Full geospatial storing and query capabilities |
-| **Advanced formatting support** |  |  |  | Full indexing for free text and semi-structured data like JSON |
-| **Ingestion latency**|  |  |  | Queued ingestion, Streaming ingestion has a couple of seconds latency |
 
 ## Scenarios
 

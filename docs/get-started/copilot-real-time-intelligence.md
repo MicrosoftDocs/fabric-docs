@@ -7,7 +7,7 @@ ms.reviewer: mibar
 ms.topic: conceptual
 ms.custom:
   - build-2024
-ms.date: 03/28/2024
+ms.date: 06/02/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -23,6 +23,10 @@ Copilot for Real-Time Intelligence is an advanced AI tool designed to help you e
 * Read or write access to a [KQL queryset](../real-time-analytics/create-query-set.md)
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
+
+## Capabilities of Copilot for Real-Time Intelligence
+
+Copilot for Real-Time Intelligence lets you effortlessly translate natural language queries into Kusto Query Language (KQL). The copilot acts as a bridge between everyday language and KQL's technical intricacies, and in doing so removes adoption barriers for citizen data scientists. By harnessing OpenAI's advanced language understanding, this feature allows you to submit business questions in a familiar, natural language format, which are then converted into KQL queries. Copilot accelerates productivity by simplifying the query creation process with a user-friendly and efficient approach to data analysis.
 
 ## Access the Real-Time Intelligence Copilot
 
@@ -48,7 +52,11 @@ Here are some tips that can help improve the accuracy of the KQL queries generat
 * State the task precisely, and avoid ambiguity. Imaging you shared the natural language prompt with few KQL experts from your team without adding oral instructions - would they be able to generate the correct query?
 * Supply any relevant information that can help the model to generate the most accurate query. If you can, specify tables, operators or functions that are critical to the query.
 * Prepare your database:
-    Add docstring properties to describe common tables and columns. This might be redundant for descriptive names (for example, timestamp) but is critical to describe tables or columns with meaningless names. You don’t have to add docstring to tables or columns that are rarely used. For more information, see [.alter table column-docstrings command](/azure/data-explorer/kusto/management/alter-column-docstrings?context=/fabric/context/context-rta&pivots=fabric).
+    Add docstring properties to describe common tables and columns. This might be redundant for descriptive names (for example, timestamp) but is critical to describe tables or columns with meaningless names. You don't have to add docstring to tables or columns that are rarely used. For more information, see [.alter table column-docstrings command](/azure/data-explorer/kusto/management/alter-column-docstrings?context=/fabric/context/context-rta&pivots=fabric).
+
+### Limitations
+
+Complex and long user input might be misunderstood by Copilot, resulting in potentially inaccurate or misleading suggested KQL queries. User input that directs to database entities that aren't KQL Database tables or materialized views (for example KQL function), may result in potentially inaccurate or misleading suggested KQL queries. More than 10,000 concurrent users within an org will probably fail or result in major performance hit.
 
 ## Related content
 
