@@ -45,7 +45,8 @@ To enable the native execution engine for a single notebook or Spark job definit
 ```json
 %%configure 
 { 
-   "conf": { 
+   "conf": {
+       "spark.native.enabled": "true", 
        "spark.gluten.enabled": "true", 
        "spark.shuffle.manager": "org.apache.spark.shuffle.sort.ColumnarShuffleManager" 
    } 
@@ -54,7 +55,7 @@ To enable the native execution engine for a single notebook or Spark job definit
 
 For notebooks, insert the required configuration commands in the first cell. For Spark job definitions, include the configurations in the frontline of your Spark job definition.
 
-:::image type="content" source="media\native\enable.jpg" alt-text="Screenshot showcasing how to enable the native execution engine inside the notebook." lightbox="media\native\enable.jpg":::
+:::image type="content" source="media\native\enable.png" alt-text="Screenshot showcasing how to enable the native execution engine inside the notebook." lightbox="media\native\enable.png":::
 
 The native execution engine is integrated with custom pools, meaning that enabling this feature initiates a new session, typically taking up to two minutes to start.
 
@@ -73,6 +74,7 @@ To ensure uniform performance enhancement, enable the native execution engine ac
 
 | Property | Value |
 |:-:|:-:|
+| spark.native.enabled | true |
 | spark.gluten.enabled | true |
 | spark.shuffle.manager | org.apache.spark.shuffle.sort.ColumnarShuffleManager |
 
@@ -82,12 +84,13 @@ When enabled at the environment level, all subsequent jobs and notebooks inherit
 
 ### Control on the query level
 
-You can disable the native execution engine for specific queries, particularly if they involve operators that aren't currently supported (see [limitations](#limitations)). To disable, set the Spark configuration spark.gluten.enabled to false for the specific cell containing your query.
+The mechanisms to enable the Native Execution Engine at the tenant, workspace, and environment levels, seamlessly integrated with the UI, are under active development. In the meantime, you can disable the native execution engine for specific queries, particularly if they involve operators that aren't currently supported (see [limitations](#limitations)). To disable, set the Spark configuration spark.gluten.enabled to false for the specific cell containing your query.
 
 # [Spark SQL](#tab/sparksql)
 
 ```sql
 %%sql 
+SET spark.native.enabled=FALSE 
 SET spark.gluten.enabled=FALSE 
 ```
 
@@ -95,6 +98,7 @@ SET spark.gluten.enabled=FALSE
 
 ```python
 %%pyspark
+spark.conf.set('spark.native.enabled', 'false')   
 spark.conf.set('spark.gluten.enabled', 'false')   
 ```
 
@@ -102,6 +106,7 @@ spark.conf.set('spark.gluten.enabled', 'false')
 
 ```scala
 %%spark  
+spark.conf.set("spark.native.enabled", 'false')   
 spark.conf.set("spark.gluten.enabled", 'false')   
 ```
 
@@ -110,6 +115,7 @@ spark.conf.set("spark.gluten.enabled", 'false')
 ```r
 %%sparkr
 library(SparkR)
+sparkR.conf("spark.native.enabled", "false")
 sparkR.conf("spark.gluten.enabled", "false")
 ```
 
@@ -123,6 +129,7 @@ After executing the query in which the native execution engine is disabled, you 
 
 ```sql
 %%sql 
+SET spark.native.enabled=TRUE 
 SET spark.gluten.enabled=TRUE 
 ```
 
@@ -130,6 +137,7 @@ SET spark.gluten.enabled=TRUE
 
 ```python
 %%pyspark
+spark.conf.set('spark.native.enabled', 'true')   
 spark.conf.set('spark.gluten.enabled', 'true')   
 ```
 
@@ -137,6 +145,7 @@ spark.conf.set('spark.gluten.enabled', 'true')
 
 ```scala
 %%spark  
+spark.conf.set("spark.native.enabled", "true")   
 spark.conf.set("spark.gluten.enabled", "true")   
 ```
 
@@ -145,6 +154,7 @@ spark.conf.set("spark.gluten.enabled", "true")
 ```r
 %%sparkr
 library(SparkR)
+sparkR.conf("spark.native.enabled", "true")
 sparkR.conf("spark.gluten.enabled", "true")
 ```
 
