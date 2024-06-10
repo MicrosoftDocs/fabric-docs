@@ -37,7 +37,7 @@ Follow these steps to estimate the size of the capacity you need. We recommend t
 
 2. In the [capacity metrics app](metrics-app-compute-page.md), review the [utilization](metrics-app-compute-page.md#utilization) visual.
 
-3. Locate the timepoint you'd like to adjust as part of the your capacity resize, and drill down to the [timepoint page](metrics-app-timepoint-page.md).
+3. Locate the timepoint you'd like to adjust as part of the capacity resize, and drill down to the [timepoint page](metrics-app-timepoint-page.md).
 
 4. To understand which SKU you need, review these [top row visuals](metrics-app-timepoint-page.md#top-row-visuals).
     * **SKU card** - Shows the current SKU you're using.
