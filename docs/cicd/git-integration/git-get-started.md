@@ -54,13 +54,13 @@ Only a workspace admin can connect a workspace to a repository, but once connect
 
     :::image type="content" source="./media/git-get-started/select-git-provider.png" alt-text="Screenshot of workspace settings window with choice of DevOps or GitHub to select.":::
 
-### [Azure Connect](#tab Azure)
+### [Azure Connect](#tab/Azure)
 
 If you select Azure DevOps, select **Connect** to automatically sign into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
 
 :::image type="content" source="./media/git-get-started/devops-connect.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
 
-### [GitHub Connect](#tab GitHub)
+### [GitHub Connect](#tab/GitHub)
 
 If you select GitHub, you need to sign in to your GitHub account.  
 Select **Add account** if it's your first time signing in from Fabric, or select one of the accounts listed. After you sign in, select **Authorize** to allow Fabric to access your GitHub account.
@@ -90,11 +90,11 @@ If it's the first time connecting, you need to [Authorize](https://docs.github.c
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
     - Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content will be created in the root folder. You can only connect to one folder at a time.)
 
-#### [GitHub Branch Connect](#tab GitHub)
+#### [GitHub Branch Connect](#tab/GitHub)
 
     :::image type="content" source="./media/git-get-started/github-connect-branch.png" alt-text="Screenshot to GitHub connection.":::
 
-#### [Azure branch Connect](#tab Azure)
+#### [Azure branch Connect](#tab/Azure)
 
     :::image type="content" source="./media/git-get-started/azure-connect-branch.png" alt-text="Screenshot to Azure connection.":::
 
