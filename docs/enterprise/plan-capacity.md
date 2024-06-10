@@ -3,7 +3,7 @@ title: Plan your capacity size
 description: Learn how to plan your Microsoft Fabric capacity size using the Microsoft Fabric capacity metrics app.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: how to
+ms.topic: how-to
 ms.date: 06/10/2024
 ---
 
