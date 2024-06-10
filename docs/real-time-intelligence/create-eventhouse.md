@@ -1,41 +1,41 @@
 ---
-title: Create an event house
-description: Learn about how to create an event house for data storage in Real-Time Intelligence.
+title: Create an eventhouse
+description: Learn about how to create an eventhouse for data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.date: 06/04/2024
 ms.search.form: Eventhouse
-#customer intent: As a user, I want to learn how to create an event house for data storage in Real-Time Analytics so that I can effectively manage my data.
+#customer intent: As a user, I want to learn how to create an eventhouse for data storage in Real-Time Analytics so that I can effectively manage my data.
 ---
-# Create an event house
+# Create an eventhouse
 
-An event house allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Event house overview](eventhouse.md).
+An eventhouse allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Eventhouse overview](eventhouse.md).
 
-In this article, you learn how to create an event house, add new databases to an event house, rename, and delete an event house.
+In this article, you learn how to create an eventhouse, add new databases to an eventhouse, rename, and delete an eventhouse.
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 
-## Create an event house
+## Create an eventhouse
 
 1. Browse to your workspace homepage in Real-Time Intelligence.
 1. Select **New** > **Eventhouse**.
 
-    :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating a new event house item in Real-Time Intelligence." lightbox="media/eventhouse/new-eventhouse.png"::::::
+    :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating a new eventhouse item in Real-Time Intelligence." lightbox="media/eventhouse/new-eventhouse.png"::::::
 
-1. Enter a name for the event house. Both an event house and its default child KQL database are created with the same name. The database name, like all items in Fabric, can be renamed at any time.
+1. Enter a name for the eventhouse. Both an eventhouse and its default child KQL database are created with the same name. The database name, like all items in Fabric, can be renamed at any time.
 
     > [!NOTE]
-    > The event house name can contain alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
+    > The eventhouse name can contain alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
-1. The [system overview](manage-monitor-eventhouse.md#view-system-overview-details-for-an-event-house) opens in the main view area of the newly created event house.
+1. The [system overview](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse) opens in the main view area of the newly created eventhouse.
 
     :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of system overview in the main view area." lightbox="media/eventhouse/choose-eventhouse.png":::
 
-## Add a new database to an event house
+## Add a new database to an eventhouse
 
 1. From the explorer, select the **New database** [**+**].
 
@@ -51,25 +51,25 @@ In this article, you learn how to create an event house, add new databases to an
 
 To learn more about creating KQL databases, see [Create a KQL database](create-database.md).
 
-## Rename an event house
+## Rename an eventhouse
 
-1. Browse to the event house item in your workspace.
-1. Click on the name of the event house in the top left corner.
-1. Enter a new name for the event house.
+1. Browse to the eventhouse item in your workspace.
+1. Click on the name of the eventhouse in the top left corner.
+1. Enter a new name for the eventhouse.
 
-    :::image type="content" source="media/eventhouse/rename.png" alt-text="Screenshot of renaming an event house.":::
+    :::image type="content" source="media/eventhouse/rename.png" alt-text="Screenshot of renaming an eventhouse.":::
 
-## Delete an event house
+## Delete an eventhouse
 
-When you delete an event house, both the event house and all its child KQL databases are deleted forever.
+When you delete an eventhouse, both the eventhouse and all its child KQL databases are deleted forever.
 
-1. Browse to the event house item in your workspace.
+1. Browse to the eventhouse item in your workspace.
 1. Select **More menu** [**...**] > **Delete**.
 
-    :::image type="content" source="media/eventhouse/delete-eventhouse.png" alt-text="Screenshot of deleting an event house.":::
+    :::image type="content" source="media/eventhouse/delete-eventhouse.png" alt-text="Screenshot of deleting an eventhouse.":::
 
 ## Related content
 
 * [Eventhouse overview](eventhouse.md)
-* [Manage and monitor an event house](manage-monitor-eventhouse.md)
+* [Manage and monitor an eventhouse](manage-monitor-eventhouse.md)
 * [Create a KQL database](create-database.md)
