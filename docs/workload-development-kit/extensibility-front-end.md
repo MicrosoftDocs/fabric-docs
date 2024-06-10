@@ -298,7 +298,7 @@ While a frontend-only development scenario is easily supported, the full end-to-
 The [Back-end implementation guide](extensibility-back-end.md) describes in detail how to set up and use the backend side.
 
 Once the backend is up and running, and the `Org.WorkloadSample.SampleWorkloadItem` type is **registered in Fabric**, you can perform CRUD operations on this type.
-The following operations are exposed via [ArtifactCrud API](https://learn.microsoft.com/en-us/javascript/api/@ms-fabric/workload-client/artifactcrudapi?view=fabric-extensibility-js-latest).
+The following operations are exposed via [ArtifactCrud API](/javascript/api/@ms-fabric/workload-client/artifactcrudapi).
 
 #### CREATE
 
