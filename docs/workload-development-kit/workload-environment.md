@@ -53,11 +53,11 @@ The workloads can run in two environments: local and cloud. In local (devmode), 
 The workload is packaged as a NuGet package, combining backend and frontend components. The structure adheres to specific naming conventions and is enforced by Fabric for consistency across upload scenarios.
 The NuGet package designed to represent workloads is structured to include both backend and frontend components.
 
-#### Backend Structure
+#### Backend structure
 
 The backend segment comprises .xml files that define the workload and its associated items, which are essential for registration with Fabric.
 
-##### Key Components:
+##### Key components
 - `WorkloadManifest.xml` - The workload configuration file, required to have this exact name for Fabric's verification.
 - `Item1.xml`, `Item2.xml`, `...` - Manifests for individual items with flexible naming, following the XML format.
 
@@ -65,11 +65,11 @@ The backend segment comprises .xml files that define the workload and its associ
 
 The frontend section contains .json files detailing the product and items for the frontend, along with an 'assets' directory for icons.
 
-##### Key Components:
+##### Key components
 - `Product.json` - The main manifest for your product's frontend, which must be named precisely for Fabric's verification.
 - `assets` folder - Stores all .svg icons `icon1.svg`, `icon2.svg`, `...` used by the frontend.
 
-#### Mandatory Structure Compliance
+#### Mandatory structure compliance
 
 The structure, including specific subfolder names ('BE', 'FE', 'assets'), is mandatory and enforced by Fabric for all upload scenarios, including test and development packages. The structure is specified in the `.nuspec` files found in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) under the `./src/Packages/manifest/ManifestPackage` directory.
 
