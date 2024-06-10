@@ -90,11 +90,11 @@ Cancel a P SKU or EM SKU capacity subscription in the Microsoft 365 admin portal
 
 The subscription remains active until it expires. Only the Global administrator or someone with billing permissions can cancel the subscription. Remember to ask users to save their data. 
 
-Cancel an A SKU subscription in Azure. For more information, see [xxxx](yyyy).
+Cancel an A SKU subscription in Azure.  
 
-### Cancel a paid Fabric capacity subscription
+<!-- ### Cancel a paid Fabric capacity subscription
 
-<Mihir to write>
+<Mihir to write> -->
 
 ## Disable Fabric
 
