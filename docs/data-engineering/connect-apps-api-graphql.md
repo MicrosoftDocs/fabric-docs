@@ -344,7 +344,8 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 ## Other languages
 
-You can find more sample code to connect to your API for GraphQL in the [Microsoft Fabric Samples GitHub repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL).
+
+Find C#, Python, and other language samples for connecting to your GraphQL API in the [Microsoft Fabric Samples GitHub repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL).
 
 ## Related content
 
