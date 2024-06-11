@@ -53,6 +53,10 @@ Here are some tips that can help improve the accuracy of the KQL queries generat
 * Supply any relevant information that can help the model to generate the most accurate query. If you can, specify tables, operators or functions that are critical to the query.
 * Prepare your database:
     Add docstring properties to describe common tables and columns. This might be redundant for descriptive names (for example, timestamp) but is critical to describe tables or columns with meaningless names. You don't have to add docstring to tables or columns that are rarely used. For more information, see [.alter table column-docstrings command](/azure/data-explorer/kusto/management/alter-column-docstrings?context=/fabric/context/context-rta&pivots=fabric).
+* To improve Copilot results, select either the **like** or **dislike** icon to submit your comments in the Submit feedback form.
+
+> [!NOTE]
+> The Submit feedback form submits the name of the database, it's url, the copilot query, and any freetext response you include in the feedback submission.
 
 ### Limitations
 
