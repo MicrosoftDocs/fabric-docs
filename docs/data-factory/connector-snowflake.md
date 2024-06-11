@@ -23,7 +23,7 @@ The Snowflake database connector supports the following authentication types for
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Snowflake| √ | √ |
-|Microsoft account| n/a | √ |
+|Microsoft account| √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 
