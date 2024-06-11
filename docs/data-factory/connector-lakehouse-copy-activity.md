@@ -46,7 +46,7 @@ For the **General** tab configuration, go to [General](activity-overview.md#gene
 
 The following properties are supported for Lakehouse under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-lakehouse/lakehouse-source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-lakehouse/source.png":::
+:::image type="content" source="./media/connector-lakehouse/lakehouse-source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-lakehouse/lakehouse-source.png":::
 
 The following properties are **required**:
 
@@ -100,7 +100,7 @@ The following properties are **required**:
 
 The following properties are supported for Lakehouse under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-lakehouse/lakehouse-destination.png" alt-text="Screenshot showing destination tab." lightbox="./media/connector-lakehouse/destination.png":::
+:::image type="content" source="./media/connector-lakehouse/lakehouse-destination.png" alt-text="Screenshot showing destination tab." lightbox="./media/connector-lakehouse/lakehouse-destination.png":::
 
 The following properties are **required**:
 
