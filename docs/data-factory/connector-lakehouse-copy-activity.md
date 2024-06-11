@@ -50,7 +50,7 @@ The following properties are supported for Lakehouse under the **Source** tab of
 
 The following properties are **required**:
 
-- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Oracle connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
+- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Lakehouse connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
 
     :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
 
@@ -104,7 +104,7 @@ The following properties are supported for Lakehouse under the **Destination** t
 
 The following properties are **required**:
 
-- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Oracle connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
+- **Connection**: Select a Lakehouse connection from the connection list. If no connection exists, then create a new Lakehouse connection by selecting **More** at the bottom of the connection list. If you apply **Use dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
 
     :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
 
