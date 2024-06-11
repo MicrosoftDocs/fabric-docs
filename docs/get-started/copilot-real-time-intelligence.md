@@ -7,7 +7,7 @@ ms.reviewer: mibar
 ms.topic: conceptual
 ms.custom:
   - build-2024
-ms.date: 06/02/2024
+ms.date: 06/11/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -60,7 +60,7 @@ Here are some tips that can help improve the accuracy of the KQL queries generat
 
 ### Limitations
 
-Complex and long user input might be misunderstood by Copilot, resulting in potentially inaccurate or misleading suggested KQL queries. User input that directs to database entities that aren't KQL Database tables or materialized views (for example KQL function), may result in potentially inaccurate or misleading suggested KQL queries. More than 10,000 concurrent users within an org will probably fail or result in major performance hit.
+Complex and long user input might be misunderstood by Copilot, resulting in potentially inaccurate or misleading suggested KQL queries. User input that directs to database entities that aren't KQL Database tables or materialized views (for example KQL function), might result in potentially inaccurate or misleading suggested KQL queries. More than 10,000 concurrent users within an org will probably fail or result in major performance hit.
 
 ## Related content
 
