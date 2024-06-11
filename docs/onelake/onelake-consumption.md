@@ -23,12 +23,11 @@ You may visualize your OneLake storage usage in the Fabric Capacity Metrics app 
 
 ## Transactions
 
-Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. OneLake data can be accessed from applications running inside of Fabric environments, such as Fabric for Apache Spark. OneLake can also be accessed from applications running outside of Fabric environments such as via APIs. How the data in OneLake is accessed has a bearing on how many CUs are consumed.
-OneLake uses the same mappings as ADLS to classify the operation to the category as [here](/azure/storage/blobs/map-rest-apis-transaction-categories).
+Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. OneLake uses the same mappings as ADLS to classify the operation to the category as [here](/azure/storage/blobs/map-rest-apis-transaction-categories).
 
 ### Operation types
 
-This table defines CU consumption when OneLake data is accessed using most applications running inside of Fabric environments such as Fabric for Apache Spark and Fabric pipelines.
+This table defines CU consumption when OneLake data is accessed using applications that redirect certain requests. Redirection is an implementation that reduces consumption of OneLake compute.
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
@@ -38,7 +37,7 @@ This table defines CU consumption when OneLake data is accessed using most appli
 | **OneLake Iterative Write via Redirect** | OneLake Iterative Write via Redirect | Per 100 | 1300 CU seconds |
 | **OneLake Other Operations via Redirect** | OneLake Other Operations via Redirect | Per 10,000 | 104 CU seconds |
 
-This table defines CU consumption when OneLake data is accessed using applications running outside of Fabric environments. For example, custom applications using Azure Data Lake Storage (ADLS) APIs or OneLake file explorer.
+This table defines CU consumption when OneLake data is accessed using applications that proxy requests.
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
@@ -64,11 +63,11 @@ When disaster recovery is enabled, the data in OneLake gets geo-replicated. Thus
 
 ## Disaster recovery transactions
 
-When Disaster Recovery option is enabled for a given capacity, write operations consume higher capacity units.
+When disaster recovery is enabled for a given capacity, write operations consume higher capacity units.
 
 ### Disaster recovery operation types
 
-This table defines CU consumption when OneLake data is accessed using most applications running inside of Fabric environments when disaster recovery is enabled. For example, Fabric for Apache Spark and Fabric pipelines.
+This table defines CU consumption when disaster recovery is enabled and OneLake data is accessed using applications that redirect certain requests.  Redirection is an implementation that reduces consumption of OneLake compute.
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 |---|---|---|---|
@@ -78,7 +77,7 @@ This table defines CU consumption when OneLake data is accessed using most appli
 | **OneLake BCDR Iterative Write via Redirect** | OneLake BCDR Iterative Write via Redirect | Per 100 | 2730 CU seconds |
 | **OneLake BCDR Other Operations Via Redirect** | OneLake BCDR Other Operations Via Redirect | Per 10,000 | 104 CU seconds |
 
-This table defines CU consumption when OneLake data is accessed using applications running outside of Fabric environments when disaster recovery is enabled. For example, custom applications using Azure Data Lake Storage (ADLS) APIs or OneLake file explorer.
+This table defines CU consumption when disaster recovery is enabled and OneLake data is accessed using applications that proxy requests.
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 |---|---|---|---|
