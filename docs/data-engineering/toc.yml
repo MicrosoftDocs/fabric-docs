@@ -45,6 +45,8 @@ items:
     href: navigate-lakehouse-explorer.md
   - name: Lakehouse SQL analytics endpoint
     href: lakehouse-sql-analytics-endpoint.md
+  - name: Lakehouse schemas
+    href: lakehouse-schemas.md
   - name: Git and deployment pipelines
     href: lakehouse-git-deployment-pipelines.md
   - name: Lakehouse REST API
