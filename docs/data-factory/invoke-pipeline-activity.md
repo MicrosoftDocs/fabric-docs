@@ -50,7 +50,11 @@ Select the **Settings** tab, and choose an existing pipeline from the **invoke p
 
 :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-settings.png" alt-text="Screenshot showing the Invoke pipeline activity settings tab, highlighting the tab.":::
 
-* Connection: Each **invoke pipeline activity** requires a Connection object that is stored in the secure Fabric credentials store. This connection object stores your user token associated with your Fabric workspace. If you have not yet created a new **invoke pipeline activity**, you will be required to create a new connection object first before you can use the activity.
+   > [!NOTE]
+   > Connection, upgrade, and calling across workspace features are currently on hold pending bug fixes and will be released later in CY24
+
+
+* Connection: Each **invoke pipeline activity** requires a Connection object that is stored in the secure Fabric credentials store. This connection object stores your user token associated with your Fabric workspace. If you haven't yet created a new **invoke pipeline activity**, you'll be required to create a new connection object first before you can use the activity.
   
 * Workspace: Choose the Fabric workspace where the target pipeline is located that you wish to invoke from your parent pipeline.
 
