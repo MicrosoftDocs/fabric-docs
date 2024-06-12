@@ -18,8 +18,9 @@ Microsoft Fabric is provided free of charge when you sign up for a Microsoft Fab
 
 With one Fabric trial capacity, you get the following features:
 
-- Full access to all of the Fabric workloads and features. There are a few key Fabric features that aren't available on trial capacities. These include Co-Pilot, Trusted workspace access, and Managed private endpoints.
+- Full access to all of the Fabric workloads and features. There are a few key Fabric features that aren't available on trial capacities. These include [Copilot](/fabric/get-started/copilot-faq-fabric), [Trusted workspace access](../security/security-trusted-workspace-access.md), and [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview).
 - OneLake storage up to 1 TB.
+- One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
 - The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity.
 
 Creating and collaborating in Fabric includes:

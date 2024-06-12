@@ -36,6 +36,10 @@ Environments support uploading the YAML file to manage multiple public libraries
 
 Enter keywords in the search box on the **Public Libraries** page, to filter the list of public libraries and find the one you need.
 
+### Update public libraries
+
+When updating an existing public library, you can view all available versions by clicking the version drop-down.
+
 ### Delete public libraries
 
 The trash option for each library appears when you hover over the corresponding row. Alternatively, you can delete multiple public libraries by selecting them and then selecting **Delete** on the ribbon.
