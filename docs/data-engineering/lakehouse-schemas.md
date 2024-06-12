@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 06/31/2024
+ms.date: 06/28/2024
 ms.search.form: Lakehouse schemas
 ---
 
@@ -54,7 +54,10 @@ When you look at a schema enabled lakehouse in Notebook object explorer, you see
 Use the namespace "workspace.lakehouse.schema.table” to refer to tables in your code. This way, you can join tables from different workspaces if the user who runs the code has permission to access the tables.
 
 ```sql
-SELECT * FROM hr.hrm.employees as employees INNER JOIN corporate.company.departments as departments ON employees.deptno = departments.deptno;
+SELECT * 
+    FROM hr.hrm.employees as employees 
+    INNER JOIN corporate.company.departments as departments
+    ON employees.deptno = departments.deptno;
 ```
 
 > [!IMPORTANT]
@@ -63,3 +66,8 @@ SELECT * FROM hr.hrm.employees as employees INNER JOIN corporate.company.departm
 ## Public preview Spark limitations
 
 ## Related content
+
+- [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md).
+- [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md).
+- [Options to get data into the Lakehouse](load-data-lakehouse.md)
+- [Learn more about shortcuts](../onelake/onelake-shortcuts.md)
