@@ -14,7 +14,7 @@ AutoML (Automated Machine Learning) is a collection of methods and tools that au
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-In Fabric, data scientists can use ```flaml.AutoML``` to automate their machine learning tasks.
+In Fabric, data scientists can use `flaml.AutoML` to automate their machine learning tasks.
 
 AutoML can help ML professionals and developers from different sectors to:
 
@@ -25,17 +25,17 @@ AutoML can help ML professionals and developers from different sectors to:
 
 ## AutoML workflow
 
-```flaml.AutoML``` is a class for AutoML based on the task. It can be used as a Scikit-learn style estimator with the usual fit and predict methods.
+`flaml.AutoML` is a class for AutoML based on the task. It can be used as a Scikit-learn style estimator with the usual fit and predict methods.
 
 To start an AutoML trial, users only need to provide the training data and the task type. With the integrated MLflow experiences in Fabric, users can also examine the different runs that were attempted in the trial to see how the final model was chosen.
 
 ## Training data
 
-In Fabric, users can pass the following input types to the AutoML ```fit``` function:
+In Fabric, users can pass the following input types to the AutoML `fit` function:
 
-- Numpy Array: When the input data is stored in a Numpy array, it is passed to ```fit()``` as X_train and y_train.
-- Pandas dataframe: When the input data is stored in a Pandas dataframe, it is passed to ```fit()``` either as X_train and y_train, or as dataframe and label.
-- Pandas on Spark dataframe: When the input data is stored as a Spark dataframe, it can be converted into a Pandas on Spark dataframe using ```to_pandas_on_spark()``` and then passed to ```fit()``` as a dataframe and label.
+- Numpy Array: When the input data is stored in a Numpy array, it is passed to `fit()` as X_train and y_train.
+- Pandas dataframe: When the input data is stored in a Pandas dataframe, it is passed to `fit()` either as X_train and y_train, or as dataframe and label.
+- Pandas on Spark dataframe: When the input data is stored as a Spark dataframe, it can be converted into a Pandas on Spark dataframe using `to_pandas_on_spark()` and then passed to `fit()` as a dataframe and label.
 
     ```python
     from flaml.automl.spark.utils import to_pandas_on_spark
@@ -45,7 +45,7 @@ In Fabric, users can pass the following input types to the AutoML ```fit``` func
 
 ## Machine learning problem
 
-Users can specify the machine learning task using the ```task``` argument. There are a variety of supported machine learning tasks, including:
+Users can specify the machine learning task using the `task` argument. There are a variety of supported machine learning tasks, including:
 
 - Classification: The main goal of classification models is to predict which categories new data will fall into based on learnings from its training data. Common classification examples include fraud detection, handwriting recognition, and object detection.
 - Regression: Regression models predict numerical output values based on independent predictors. In regression, the objective is to help establish the relationship among those independent predictor variables by estimating how one variable impacts the others. For example, automobile price based on features like, gas mileage, safety rating, etc.
@@ -72,13 +72,13 @@ To learn more about these configurations, you can visit the [documentation on co
 
 ### Optimization metric
 
-During training, the AutoML function will create a number of trials which will try different algorithms and parameters. The AutoML tool will iterate through ML algorithms and hyperparameters. In this process, each iteration will a model with a training score. The better the score for the metric you want to optimize for, the better the model is considered to "fit" your data. The optimization metric is specified via the ```metric``` argument. It can be either a string which refers to a built-in metric, or a user-defined function.
+During training, the AutoML function will create a number of trials which will try different algorithms and parameters. The AutoML tool will iterate through ML algorithms and hyperparameters. In this process, each iteration will a model with a training score. The better the score for the metric you want to optimize for, the better the model is considered to "fit" your data. The optimization metric is specified via the `metric` argument. It can be either a string which refers to a built-in metric, or a user-defined function.
 
 [AutoML optimization metrics](https://microsoft.github.io/FLAML/docs/Use-Cases/Task-Oriented-AutoML#optimization-metric)
 
 ### Parallel tuning
 
-In some cases, you may want to expedite your AutoML trial by using Apache Spark to parallelize your training. For Spark clusters, by default, FLAML will launch one trial per executor. You can also customize the number of concurrent trials by using the ```n_concurrent_trials``` argument.
+In some cases, you may want to expedite your AutoML trial by using Apache Spark to parallelize your training. For Spark clusters, by default, FLAML will launch one trial per executor. You can also customize the number of concurrent trials by using the `n_concurrent_trials` argument.
 
 ```python
 automl.fit(X_train, y_train, n_concurrent_trials=4, use_spark=True)
@@ -153,18 +153,18 @@ AutoML in Fabric supports the following models:
 
 ## Visualize results
 
-The ```flaml.visualization``` module provides utility functions for plotting the optimization process using Plotly. By leveraging Plotly, users can interactively explore their AutoML experiment results. To use these plotting functions, simply provide your optimized ```flaml.AutoML``` or ```flaml.tune.tune.ExperimentAnalysis``` object as an input.
+The `flaml.visualization` module provides utility functions for plotting the optimization process using Plotly. By leveraging Plotly, users can interactively explore their AutoML experiment results. To use these plotting functions, simply provide your optimized `flaml.AutoML` or `flaml.tune.tune.ExperimentAnalysis` object as an input.
 
 You can use the following functions within your notebook:
 
-- ```plot_optimization_history```: Plot optimization history of all trials in the experiment.
-- ```plot_feature_importance```: Plot importance for each feature in the dataset.
-- ```plot_parallel_coordinate```: Plot the high-dimensional parameter relationships in the experiment.
-- ```plot_contour```: Plot the parameter relationship as contour plot in the experiment.
-- ```plot_edf```: Plot the objective value EDF (empirical distribution function) of the experiment.
-- ```plot_timeline```: Plot the timeline of the experiment.
-- ```plot_slice```: Plot the parameter relationship as slice plot in a study.
-- ```plot_param_importance```: Plot the hyperparameter importance of the experiment.
+- `plot_optimization_history`: Plot optimization history of all trials in the experiment.
+- `plot_feature_importance`: Plot importance for each feature in the dataset.
+- `plot_parallel_coordinate`: Plot the high-dimensional parameter relationships in the experiment.
+- `plot_contour`: Plot the parameter relationship as contour plot in the experiment.
+- `plot_edf`: Plot the objective value EDF (empirical distribution function) of the experiment.
+- `plot_timeline`: Plot the timeline of the experiment.
+- `plot_slice`: Plot the parameter relationship as slice plot in a study.
+- `plot_param_importance`: Plot the hyperparameter importance of the experiment.
 
 ## Related content
 
