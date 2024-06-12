@@ -33,8 +33,6 @@ The following table indicates that to determine Dataflow Gen2 execution costs, e
 |Standard Compute     | Based on each mashup engine query execution duration in seconds.         | 16 CUs per hour         | Per Dataflow Gen2 item        |
 |High Scale Dataflows Compute     | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds.         | 6 CUs per hour         | Per workspace        |
 
-> [!NOTE]
-> It isn't currently possible to cancel a Dataflow Gen2 run, but we will add this capability by January, 2024.
 
 ## Changes to Microsoft Fabric workload consumption rate
 
