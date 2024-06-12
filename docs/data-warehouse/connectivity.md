@@ -3,8 +3,8 @@ title: Connectivity to data warehousing
 description: Follow steps to connect SSMS to data warehousing in your Microsoft Fabric workspace.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: salilkanade
-ms.date: 04/24/2024
+ms.reviewer: salilkanade, jacinda-eng
+ms.date: 06/12/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -145,7 +145,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], a [!INCLUDE [fabric-d
 
 - SQL Authentication is not supported.
 - Multiple Active Result Sets (MARS) is unsupported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
-- If you receive this error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This issue can be caused if the workspace has too many warehouses/SQL analytics endpoints, if the user is part of too many Entra groups, or a combination of the two. We recommend having 40 or less warehouses or SQL analytics endpoint per workspace to prevent this error. If the issue persists, please contact support.
+- If you receive this error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This issue can be caused if the workspace has too many warehouses/SQL analytics endpoints, if the user is part of too many Entra groups, or a combination of the two. We recommend having 40 or fewer warehouses and SQL analytics endpoint per workspace to prevent this error. If the issue persists, please contact support.
 - Linked server connections from SQL Server are not supported.
 
 ## Related content
