@@ -5,6 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
+ms.collection: ce-skilling-ai-copilot
 ms.date: 06/08/2024
 ---
 
