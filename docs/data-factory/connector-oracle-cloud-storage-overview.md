@@ -19,11 +19,11 @@ The Oracle Cloud Storage connector is supported in Data Factory for [!INCLUDE [p
 
 The Oracle Cloud Storage connector supports the following capabilities in data pipelines:
 
-| Supported capabilities | Gateway | Authentication |
+| **Supported capabilities** | **Gateway** | **Authentication** |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None |Access Key |
-| **Lookup activity** | None | Access Key | 
-| **GetMetadata activity** | None| Access Key |
-| **Delete activity** | None | Access Key |
+| **Copy activity (source/-)** | None <br> On-premises |Access Key |
+| **Lookup activity** | None <br> On-premises | Access Key |
+| **GetMetadata activity** | None <br> On-premises | Access Key |
+| **Delete activity** | None <br> On-premises | Access Key |
 
 To learn about the copy activity configuration for Oracle Cloud Storage in data pipelines, go to [Configure Oracle Cloud Storage in a copy activity](connector-oracle-cloud-storage-copy-activity.md).

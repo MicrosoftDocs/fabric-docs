@@ -4,7 +4,7 @@ description: A known issue is posted where the Copilot and Azure OpenAI service 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/25/2024
+ms.date: 06/11/2024
 ms.custom: known-issue-689
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -13,7 +13,7 @@ ms.collection: ce-skilling-ai-copilot
 
 Since April 19, you see the ability to delegate the enablement of Copilot and the Azure OpenAI service at capacity levels from the tenant setting admin portal. However, the delegation doesn't work until late May.
 
-**Status:** Open
+**Status:**  Fixed: June 11, 2024
 
 **Product Experience:** Administration & Management
 
@@ -25,7 +25,7 @@ Customers can't delegate the enablement of Copilot and the Azure OpenAI service 
 
 No workarounds at this time. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [Copilot in MS Fabric: Soon available to more users in your organization](https://blog.fabric.microsoft.com/blog/exciting-updates-for-copilot-in-microsoft-fabric)
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

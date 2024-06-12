@@ -10,6 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
+  - build-2024
 ms.date: 05/09/2024
 ---
 
@@ -25,7 +26,7 @@ Shortcuts are objects in OneLake that point to other storage locations. The loca
 
 ## Where can I create shortcuts?
 
-You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases. Furthermore, the shortcuts you create within these items can point to other OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3 storage accounts, or Dataverse.
+You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases. Furthermore, the shortcuts you create within these items can point to other OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3 storage accounts, or Dataverse. You can even [create shortcuts to on-premises or network-restricted locations](create-on-premises-shortcut.md) with the use of the Fabric on-premises data gateway (OPDG).
 
 You can use the Fabric UI to create shortcuts interactively, and you can use the [REST API](onelake-shortcuts-rest-api.md) to create shortcuts programmatically.
 
@@ -45,11 +46,11 @@ When you create a shortcut in a KQL database, it appears in the **Shortcuts** fo
 
 ## Where can I access shortcuts?
 
-Any Fabric or non-Fabric service that can access data in OneLake can use shortcuts. Shortcuts are transparent to any service accessing data through the OneLake API. Shortcuts just appear as another folder in the lake. Spark, SQL, Real-Time Analytics, and Analysis Services can all use shortcuts when querying data.
+Any Fabric or non-Fabric service that can access data in OneLake can use shortcuts. Shortcuts are transparent to any service accessing data through the OneLake API. Shortcuts just appear as another folder in the lake. Apache Spark, SQL, Real-Time Intelligence, and Analysis Services can all use shortcuts when querying data.
 
-### Spark
+### Apache Spark
 
-Spark notebooks and Spark jobs can use shortcuts that you create in OneLake. Relative file paths can be used to directly read data from shortcuts. Additionally, if you create a shortcut in the **Tables** section of the lakehouse and it is in the Delta format, you can read it as a managed table using Spark SQL syntax.
+Apache Spark notebooks and Apache Spark jobs can use shortcuts that you create in OneLake. Relative file paths can be used to directly read data from shortcuts. Additionally, if you create a shortcut in the **Tables** section of the lakehouse and it is in the Delta format, you can read it as a managed table using Apache Spark SQL syntax.
 
 ```python
 df = spark.read.format("delta").load("Tables/MyShortcut")
@@ -73,7 +74,7 @@ SELECT TOP (100) *
 FROM [MyLakehouse].[dbo].[MyShortcut]
 ```
 
-### Real-Time Analytics
+### Real-Time Intelligence
 
 Shortcuts in KQL databases are recognized as external tables. To query the shortcut, use the `external_table` function of the Kusto Query Language.
 

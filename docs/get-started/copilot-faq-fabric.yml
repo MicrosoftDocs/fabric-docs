@@ -8,6 +8,7 @@ metadata:
   ms.custom:
     - ignite-2023
     - ignite-2023-fabric
+    - build-2024
   ms.topic: faq
   ms.date: 01/16/2024
   no-loc: [Copilot]
@@ -76,7 +77,7 @@ sections:
         answer: |
           Copilot is not yet enabled for Data Factory.
 
-  - name: Real-Time Analytics
+  - name: Real-Time Intelligence
     questions:
       - question: |
           Does Copilot respond to multiple questions in a conversation?
@@ -95,7 +96,7 @@ sections:
         answer: |
           The Copilot-generated query runs against the database that the KQL queryset is connected to. If you want to change the database, you can do so in the KQL queryset.
 additionalContent: |
-  ## Next steps
+  ## Related content
 
   - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
   - [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md)

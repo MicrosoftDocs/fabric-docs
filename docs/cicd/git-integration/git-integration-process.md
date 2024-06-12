@@ -4,8 +4,10 @@ description: Understand how Microsoft Fabric interacts with Git on Azure Repos.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: conceptual
-ms.date: 11/15/2023
+ms.date: 05/29/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -19,8 +21,8 @@ This article explains basic Git concepts and the process of integrating Git with
 
 ## Permissions
 
-- In order to use Git integration, [it has to be enabled](../../admin/git-integration-admin-settings.md) by your organization's administrator.
-- If the workspace and repo are in two different regions, cross-geo export must be enabled by the tenant admin. For more information, see [Users can export items to Git repositories in other geographical locations](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
+- In order to use Git integration, your organization's administrator must [enable it](../../admin/git-integration-admin-settings.md) by your organization's administrator.
+- If the workspace and repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 - The actions you can take on a workspace depend on the [permissions](#azure-devops-permissions) you have in both the workspace and Azure DevOps.
 
 ### Azure DevOps permissions
@@ -28,7 +30,7 @@ This article explains basic Git concepts and the process of integrating Git with
 The following list shows what different workspace roles can do depending on their Azure DevOps permissions:
 
 - **Admin**: Can perform any operation on the workspace, limited only by their Azure DevOps role.
-- **Member/Contributor**: Once connected to a workspace, a member/contributor can commit and update changes, depending on their Azure DevOps role. For actions related to the workspace connection (for example, connect, disconnect, or switch branches) seek help from an Admin.
+- **Member/Contributor**: Once they connect to a workspace, a member/contributor can commit and update changes, depending on their Azure DevOps role. For actions related to the workspace connection (for example, connect, disconnect, or switch branches) seek help from an Admin.
 - **Viewer**: Can't perform any actions. The viewer can't see any Git related information in the workspace.
 
 ### Permissions needed for common operations
@@ -127,14 +129,14 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 ### General limitations
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
-- The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be at least as strong as the authentication method for Azure DevOps. For example, if Azure DevOps requires multi-factor authentication, Power BI needs to require multi-factor authentication as well.
-- Direct Query and composite models on Power BI Datasets and Analysis Services aren't supported at this time.
-- DirectLake semantic models aren’t supported at this time.
+- The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be at least as strong as the authentication method for Azure DevOps. For example, if Azure DevOps requires multifactor authentication, Power BI needs to require multifactor authentication as well.
+- Power BI Datasets connected to Analysis Services aren't supported at this time.
 - Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git diff after each refresh.
+- The workspace folder structure isn't reflected in the Git repository. Workspace items in folders are exported to the root directory.
 
 ## Workspace limitations
 
-Only the workspace admin can manage the connections to the [Azure Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.
+- Only the workspace admin can manage the connections to the [Azure Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
 Once connected, anyone with [permission](#permissions) can work in the workspace.
 
 ### Branch and folder limitations

@@ -166,6 +166,6 @@ You can use the following functions within your notebook:
 - ```plot_slice```: Plot the parameter relationship as slice plot in a study.
 - ```plot_param_importance```: Plot the hyperparameter importance of the experiment.
 
-## Next steps
+## Related content
 
 - [Visualize AutoML results](./tuning-automated-machine-learning-visualizations.md)

@@ -53,7 +53,7 @@ At this point, you have a lakehouse running on top of OneLake. Next, add some da
 
 1. Select the More icon (**…**) for the file you uploaded and select **Properties** from the menu.
 
-   The **Properties** screen shows the various details for the file, including the URL and Azure Blob File System (ABFS) path for use with Notebooks. You can copy the ABFS into a Fabric Notebook to query the data using Spark. To learn more about notebooks in Fabric, see [Explore the data in your lakehouse with a notebook](..\data-engineering\lakehouse-notebook-explore.md).
+   The **Properties** screen shows the various details for the file, including the URL and Azure Blob File System (ABFS) path for use with Notebooks. You can copy the ABFS into a Fabric Notebook to query the data using Apache Spark. To learn more about notebooks in Fabric, see [Explore the data in your lakehouse with a notebook](..\data-engineering\lakehouse-notebook-explore.md).
 
 You've now created your first lakehouse with data stored in OneLake.
 

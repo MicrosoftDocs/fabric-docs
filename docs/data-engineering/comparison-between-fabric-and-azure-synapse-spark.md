@@ -178,7 +178,7 @@ Notebooks and Spark job definitions are primary code items for developing Apache
 
 - **mssparkutils**: Because DMTS connections aren't supported in Fabric yet, only ```getToken``` and ```getSecret``` are supported for now in Fabric for ```mssparkutils.credentials```. ```mssparkutils.env``` isn't supported yet.
 
-- **Notebooks resources**: The Fabric notebook experience provides a Unix-like file system to help you manage your folders and files. For more information, see [How to use Microsoft Fabric notebooks](how-to-use-notebook.md).
+- **Notebooks resources**: Fabric notebooks provide a Unix-like file system to help you manage your folders and files. For more information, see [How to use Microsoft Fabric notebooks](how-to-use-notebook.md).
 
 - **Collaborate**: The Fabric notebook is a collaborative item that supports multiple users editing the same notebook. For more information, see [How to use Microsoft Fabric notebooks](how-to-use-notebook.md).
 

@@ -1,0 +1,42 @@
+### YamlMime:FAQ
+metadata:
+  title: "Microsoft Fabric API for GraphQL FAQ"
+  description: Find answers to frequently asked questions about Microsoft Fabric API for GraphQL, which is currently in preview.
+  author: snehagunda
+  ms.author: sngun
+  ms.topic: faq
+  ms.custom:
+    - build-2024
+  ms.date: 05/21/2024
+title: Fabric API for GraphQL frequently asked questions
+summary: |
+  Find answers to commonly asked Fabric API for GraphQL questions.
+
+  > [!NOTE]
+  > Microsoft Fabric API for GraphQL is in preview.
+
+sections:
+  - name: Microsoft Fabric API for GraphQL FAQ
+    questions:
+      - question: What is GraphQL?
+        answer: GraphQL is an open source query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API with a strongly typed system, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools. 
+      
+      - question: What is Microsoft Fabric API for GraphQL?
+        answer: Microsoft Fabric API for GraphQL is a managed service that enables you to create a GraphQL API in seconds to access data from your data sources such as Microsoft Fabric Data Warehouses, Microsoft Fabric Lakehouses, and Microsoft Fabric Mirrored Databases. It provides a unified API layer for querying and mutating data from these supported data sources. Fabric API for GraphQL is currently in preview.
+      
+      - question: What GraphQL operations are supported in Fabric API for GraphQL?
+        answer: Only GraphQL queries (read) and mutations (write) are supported currently. Data sources exposed via SQL Analytics Endpoints are read-only thus only supporting Queries. In case of Data Warehouses, a primary key needs to be defined for Mutations to be automatically generated.
+      
+      - question: How can I view and edit resolvers in Fabric API for GraphQL?
+        answer: Resolvers are GraphQL components that provide the business logic to resolve fields in the API and perform operations with data residing in the data sources. Fabric automatically generates resolvers whenever you attach a new data source or select new objects to be exposed from an existing data source. Currently, it's not possible to customize resolvers. For customized business logic in API for GraphQL, you can create a stored procedure in the data source and expose it in the GraphQL API.
+
+      - question: Does the API for GraphQL client application require access to the data source in order to perform queries or mutations?
+        answer: API for GraphQL requires applications to use Microsoft Entra for authentication. Your client application must be registered and configured adequately to perform API calls against Fabric. The app registered in Entra requires *Item.Execute.All* API permissions for the Power BI service. For more information, see [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app). In addition to Entra, the authenticated user in the app calling the GraphQL API must be a workspace member with a *contributor role* where both the API and data source items are located. For more information, see [Give users access to workspaces](../get-started/give-access-workspaces.md). Service Principals are not supported currently. You can find an end-to-end example with sample code at [Connect Applications](connect-apps-api-graphql.md).
+
+      - question: How do I open a support ticket for API for GraphQL?
+        answer: To get help from Microsoft Support on any issue related to Fabric API for GraphQL, visit our [Fabric Support site](https://support.fabric.microsoft.com/en-US/support/) and choose the **Data Engineering** option.
+
+additionalContent: |
+    ## Related content
+
+    [What is Microsoft Fabric API for GraphQL?](api-graphql-overview.md)

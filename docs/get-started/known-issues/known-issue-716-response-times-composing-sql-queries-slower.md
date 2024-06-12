@@ -24,6 +24,6 @@ The response from the SQL query editor is slower than expected.
 
 The current workaround is to utilize client tools such as SQL Server Management Studio or Azure Data Studio.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

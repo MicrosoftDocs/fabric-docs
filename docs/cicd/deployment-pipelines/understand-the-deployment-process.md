@@ -4,6 +4,8 @@ description: Understand how deployment pipelines, the Fabric Application lifecyc
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Lee
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/14/2024
@@ -228,6 +230,9 @@ With deployment pipelines, you can make updates to a semantic model with increme
 
 To understand how incremental refresh behaves with dataflows, see [why do I see two data sources connected to my dataflow after using dataflow rules?](/power-bi/create-reports/deployment-pipelines-troubleshooting#why-do-i-see-two-data-sources-connected-to-my-dataflow-after-using-dataflow-rules-)
 
+> [!NOTE]
+> Incremental refresh settings aren't copied in Gen 1.
+
 #### Activating incremental refresh in a pipeline
 
 To enable incremental refresh, [configure it in Power BI Desktop](/power-bi/connect-data/incremental-refresh-overview), and then publish your semantic model. After you publish, the incremental refresh policy is similar across the pipeline, and can be authored only in Power BI Desktop.
@@ -390,6 +395,8 @@ This section lists most of the limitations in deployment pipelines.
 * Deployment is **not** supported on a semantic model that uses Native query and DirectQuery together and auto binding is engaged on the DirectQuery data source.
 
 ### Dataflow limitations
+
+* Incremental refresh settings aren't copied in Gen 1.
 
 * When you're deploying a dataflow to an empty stage, deployment pipelines creates a new workspace and sets the dataflow storage to a Fabric blob storage. Blob storage is used even if the source workspace is configured to use Azure data lake storage Gen2 (ADLS Gen2).
 

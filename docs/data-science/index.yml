@@ -12,8 +12,8 @@ metadata:
     - ignite-2023
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: s-polly #Required; your GitHub user alias, with correct capitalization.
-  ms.author: scottpolly #Required; microsoft alias of author; optional team alias.
+  author: sdgilley #Required; your GitHub user alias, with correct capitalization.
+  ms.author: sgilley #Required; microsoft alias of author; optional team alias.
   ms.date: 04/25/2023 #Required; mm/dd/yyyy format.
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -152,7 +152,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Read from Power BI and write data consumable by Power BI
-            url: read-write-power-bi.md
+            url: read-write-power-bi-python.md
           - text: Detect, explore, and validate functional dependencies in your data
             url: semantic-link-validate-data.md
           - text: Explore and validate relationships in semantic models
