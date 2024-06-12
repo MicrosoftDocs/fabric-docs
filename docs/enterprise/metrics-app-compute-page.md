@@ -10,6 +10,7 @@ ms.custom:
   - build-2024
 ms.date: 02/21/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Understand the metrics app compute page
