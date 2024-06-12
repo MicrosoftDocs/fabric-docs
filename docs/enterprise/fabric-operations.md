@@ -10,6 +10,7 @@ ms.custom:
   - ignite-2023-fabric
 ms.date: 03/10/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Fabric operations

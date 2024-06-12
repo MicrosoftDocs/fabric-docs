@@ -7,6 +7,7 @@ ms.reviewer: rymajidi, sngun
 ms.date: 05/09/2024
 ms.topic: whats-new
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 # What's new in Microsoft Fabric?
 

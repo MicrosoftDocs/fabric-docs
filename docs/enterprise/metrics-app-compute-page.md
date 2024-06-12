@@ -9,6 +9,7 @@ ms.custom:
   - ignite-2023
 ms.date: 02/21/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Understand the metrics app compute page

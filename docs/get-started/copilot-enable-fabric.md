@@ -10,6 +10,7 @@ ms.custom:
 ms.topic: conceptual
 ms.date: 04/23/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Enable Copilot in Fabric and Power BI (preview)

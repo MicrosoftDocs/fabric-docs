@@ -6,6 +6,7 @@ ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 04/25/2024
 ms.custom: known-issue-690
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Known issue - Report Copilot button shows even though Copilot admin setting is off

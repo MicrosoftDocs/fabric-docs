@@ -6,6 +6,7 @@ ms.author: jessicamo
 ms.topic: troubleshooting    
 ms.date: 05/13/2024
 ms.custom:
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Fabric known issues

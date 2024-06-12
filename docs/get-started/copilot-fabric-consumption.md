@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.custom:
 ms.date: 02/01/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Copilot in Fabric (preview) consumption

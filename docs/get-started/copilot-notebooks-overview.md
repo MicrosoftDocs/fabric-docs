@@ -13,6 +13,7 @@ ms.custom:
 ms.date: 01/16/2024
 ms.search.form: Data Science Overview
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 # Overview of Copilot for Data Science and Data Engineering (preview)
 
