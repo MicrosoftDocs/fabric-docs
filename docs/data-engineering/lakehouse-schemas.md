@@ -67,7 +67,7 @@ SELECT *
 
 ## Related content
 
-- [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md).
-- [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md).
+- [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md)
+- [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)
 - [Options to get data into the Lakehouse](load-data-lakehouse.md)
 - [Learn more about shortcuts](../onelake/onelake-shortcuts.md)
