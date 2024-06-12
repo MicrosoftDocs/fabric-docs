@@ -95,7 +95,7 @@ Follow these steps to set up your copy activity.
 
 2. Switch to **Table view** to view the data in table.
 
-   :::image type="content" source="media/tutorial-move-data-lakehouse-copy-assistant/view-table-output-13.png" alt-text="Screenshot showing where to switch to Table view.":::
+   :::image type="content" source="media/tutorial-move-data-lakehouse-copy-assistant/view-table-output.png" alt-text="Screenshot showing where to switch to Table view.":::
 
    > [!Note]
    > Currently data lands into Lakehouse Tables folders (a managed area) in Delta format only. Those files will be automatically registered as a table and be visible under Table view from Lakehouse portal.
