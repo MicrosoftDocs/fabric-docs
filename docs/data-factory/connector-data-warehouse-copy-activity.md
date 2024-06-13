@@ -129,6 +129,8 @@ When your source data is not natively compatible with COPY command, enable data 
 
 To use staged copy, go to **Settings** tab and select **Enable staging**. You can choose **Workspace** to use auto-created staging storage within Fabric. For **External**, Azure Blob Storage and Azure Data Lake Storage Gen2 are supported as the external staging storage. You need to create an Azure Blob Storage or Azure Data Lake Storage Gen2 connection first, and then select the connection from the drop-down list to use the staging storage.
 
+Please note that we need to ensure IP ranged of Data Warehouse has been whitelisted correctly on staging storage.
+
 ### Mapping
 
 For the **Mapping** tab configuration, if you don't apply Data Warehouse with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
