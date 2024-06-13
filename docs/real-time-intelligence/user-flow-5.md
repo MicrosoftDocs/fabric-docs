@@ -1,5 +1,5 @@
 ---
-title: Trigger alerts based on Fabric events in Real-Time hub
+title: Set alerts based on Fabric events in Real-Time hub
 description: Describes a scenario that shows how you can create a Reflex alert based on Fabric events (Azure Blob Storage events and Fabric Workspace item events) in Real-Time hub.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -9,12 +9,12 @@ ms.custom:
   - build-2024
 ms.date: 05/21/2024
 ms.search.form: Get started
-#customer intent: I want to learn how to trigger alerts based on Fabric events from the Real-Time hub.
+#customer intent: I want to learn how to set alerts based on Fabric events from the Real-Time hub.
 ---
 
-# Trigger alerts based on Fabric events in Real-Time hub
+# Set alerts based on Fabric events in Real-Time hub
 
-You can create alerts based on Fabric events (Azure Blob Storage events and Fabric Workspace item events) from event streams. This alert can be configured to do one of the following actions: 
+You can create alerts based on Fabric events (Azure Blob Storage events and Fabric Workspace item events) from event streams. The alert can be configured with one of the following actions: 
 
 - Send an email
 - Send a Teams message
