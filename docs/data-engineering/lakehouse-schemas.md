@@ -21,11 +21,11 @@ Lakehouse supports the creation of custom schemas. Schemas allow you to group yo
 
 To enable schema support for your lakehouse, check the box next to **Lakehouse schemas (PublicPreview)** when you create it.
 
-:::image type="content" source="media\lakehouse-schemas\newlakehouse.png" alt-text="Screenshot showing the new lakehouse dialog." lightbox="media\lakehouse-schemas\newlakehouse.png":::
+:::image type="content" source="media\lakehouse-schemas\newlakehouse.png" alt-text="Screenshot showing the new lakehouse dialog.":::
 
 Once your lakehouse is ready, you can find a default schema named **dbo** under **Tables**. This schema is always there and can't be changed or removed. To make a new schema, hover over **Tables**, select on **…**, and choose **New schema**. After typing your schema name and clicking **Create**, you'll see your schema listed under **Tables** in alphabetical order.
 
-:::image type="content" source="media\lakehouse-schemas\newschema.png" alt-text="Screenshot showing the new lakehouse schema dialog." lightbox="media\lakehouse-schemas\newschema.png":::
+:::image type="content" source="media\lakehouse-schemas\newschema.png" alt-text="Screenshot showing the new lakehouse schema dialog.":::
 
 
 ## Storing tables in lakehouse schemas
@@ -38,7 +38,7 @@ df.write.mode("Overwrite").saveAsTable("contoso.sales")
 
 You can use Lakehouse Explorer to arrange your tables and drag and drop table names to different schemas.
 
-:::image type="content" source="media\lakehouse-schemas\movetables.gif" alt-text="Animation of moving tables between schemas." lightbox="media\lakehouse-schemas\movetables.gif":::
+:::image type="content" source="media\lakehouse-schemas\movetables.gif" alt-text="Animation of moving tables between schemas.":::
 
 > [!IMPORTANT]
 > If you change the table, you also need to change items that uses that table, such as notebook code or dataflows, so that they use the right schema.
@@ -72,7 +72,21 @@ SELECT *
 > [!IMPORTANT]
 > Make sure you join tables only from lakehouses that have schemas enabled. Joining tables from lakehouses that don’t have schemas enabled won’t work.
 
-## Public preview Spark limitations
+## Public preview limitations
+
+
+| Unsupported Features/ Functionality | Notes |
+|-|-|
+| Git (CI/CD)	| Git integration is not supported. Exporting schema enabled Lakehouse would export as a non-schema Lakehouse. Hence, only non-schema Lakehouses are imported.|
+| Non-Delta, Managed Table Schema	| Getting schema for managed, non-Delta formatted tables (e.g. CSV) is not supported. The customer would need to work around by using Spark. Expanding these tables will not show any schema information in the UX. |
+| External Spark Tables	| External Spark Table operations (e.g. discovery, getting schema, etc.) are not supported. These tables will be unidentified in the UX. |
+| Public API	| Public APIs (List Tables, Load Table, exposing defaultSchema extended property etc.) are not supported for schema enabled Lakehouse. Existing public APIs called on a schema enabled Lakehouse will throw a user error. Item properties for a schema enabled Lakehouse will not include the new defaultSchema property. |
+| Table Maintenance	| Not supported and is not shown in the UX explorer |
+| Update Table Properties	 | Not supported and is not shown in the UX explorer |
+| Spark based Table Preview with Spark 3.5	| Previewing a table using Spark 3.5 runtime is not supported. A user error will be shown. |
+| Spark based Table Preview with workspace name containing special characters	| Previewing a Lakehouse schema table belonging to a workspace with special characters (e.g. space, slashes) using Spark is not supported. A user error will be shown. |
+| Migration	| Migration of existing non-schema Lakehouses to schema Lakehouses is not supported yet. |
+
 
 ## Related content
 
