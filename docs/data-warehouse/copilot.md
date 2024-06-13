@@ -4,7 +4,7 @@ description: Learn more about Microsoft Copilot for Synapse Data Warehouse in Mi
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
-ms.date: 05/08/2024
+ms.date: 05/29/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -70,12 +70,17 @@ Microsoft is committed to ensuring that our AI systems are guided by our [AI pri
 
 Copilot features in Fabric are built to meet the Responsible AI Standard, which means that they're reviewed by multidisciplinary teams for potential harms, and then refined to include mitigations for those harms.
 
-Before you use Copilot, keep in mind the limitations of Copilot:
+For more information, see [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../get-started/copilot-data-warehouse-privacy-security.md).
 
+## Limitations of Copilot for Data Warehouse
+
+Here are the current limitations of Copilot for Data Warehouse:
+
+- Copilot doesn't understand previous inputs and can't undo changes after a user commits a change when authoring, either via user interface or the chat pane. For example, you can't ask Copilot to "Undo my last 5 inputs." However, users can still use the existing user interface options to delete unwanted changes or queries.
+- Copilot can't make changes to existing SQL queries. For example, if you ask Copilot to edit a specific part of an existing query, it doesn't work.
+- Copilot may produce inaccurate results when the intent is to evaluate data. Copilot only has access to the warehouse schema, none of the data inside.
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before using them in your work.
 - People who are able to meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
-
-For more information, see [Privacy, security, and responsible use for Copilot in Microsoft Fabric (preview)](../get-started/copilot-privacy-security.md).
 
 ## Related content
 
