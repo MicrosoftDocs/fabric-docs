@@ -4,7 +4,7 @@ description: Learn how to include public and custom libraries in Fabric environm
 ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
-ms.date: 05/01/2024
+ms.date: 06/12/2024
 ms.search.for: Manage libraries in Environment
 ---
 
@@ -38,7 +38,7 @@ Enter keywords in the search box on the **Public Libraries** page, to filter the
 
 ### Update public libraries
 
-When updating an existing public library, you can view all available versions by clicking the version drop-down.
+To update the version of an existing public library, navigate to your envronment and open the **Public libraries** or **Custom libraries**. Choose the required library, select the version drop-down, and update its version.
 
 ### Delete public libraries
 
