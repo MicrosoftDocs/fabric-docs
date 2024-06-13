@@ -84,7 +84,7 @@ To read data from semantic models:
     > [!NOTE]
     >- Data is retrieved using XMLA and therefore requires at least [XMLA read-only](/power-bi/enterprise/service-premium-connect-tools) to be enabled.
     >- The amount of data that's retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and by the Spark driver node (see [node sizes](../data-engineering/spark-compute.md#node-sizes)) that's running the notebook.
-    >- All requests use low priority to minimize the impact on Microsoft Azure Analysis Services performance and are billed as [interactive requests](/power-bi/enterprise/service-premium-interactive-background-operations).
+    >- All requests use low priority to minimize the impact on Microsoft Azure Analysis Services performance and are billed as [interactive requests](../enterprise/fabric-operations.md#interactive-operations).
 
 2. Evaluate the _Total Revenue_ measure per customer's state and date.
 
@@ -100,7 +100,7 @@ To read data from semantic models:
     >- By default, data is **not** retrieved using XMLA and therefore doesn't require XMLA read-only to be enabled.
     >- Furthermore, the data is **not** subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
     >- The amount of data that's retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and by the Spark driver node (see [node sizes](../data-engineering/spark-compute.md#node-sizes)) that's running the notebook.
-    >- All requests are billed as [interactive requests](/power-bi/enterprise/service-premium-interactive-background-operations).
+    >- All requests are billed as [interactive requests](../enterprise/fabric-operations.md#interactive-operations).
 
 3. You can add filters to the measure calculation by specifying a list of values that can be in a particular column.
 
