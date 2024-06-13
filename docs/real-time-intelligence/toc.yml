@@ -36,7 +36,7 @@ items:
     href: user-flow-3.md
   - name: "Explore your data visually in Real-Time Dashboards"
     href: user-flow-4.md
-  - name: "Trigger Fabric dataflows from the Real-Time hub"
+  - name: "Set alerts based on Fabric events"
     href: user-flow-5.md 
 - name: Get data
   items:
