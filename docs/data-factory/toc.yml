@@ -179,6 +179,12 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in data pipeline copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+    - name: Azure Database for MySQL
+      items:
+      - name: Azure Database for MySQL - Overview
+        href: connector-azure-database-for-mysql-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-azure-database-for-mysql-copy-activity.md
     - name: Azure Database for PostgreSQL
       items:
       - name: Azure Database for PostgreSQL - Overview
