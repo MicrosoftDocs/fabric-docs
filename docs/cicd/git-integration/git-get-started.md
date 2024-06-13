@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
-ms.date: 06/03/2024
+ms.date: 06/13/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -90,13 +90,13 @@ If it's the first time connecting, you need to [Authorize](https://docs.github.c
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
     - Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content will be created in the root folder. You can only connect to one folder at a time.)
 
-#### [GitHub Branch Connect](#tab/GitHub)
-
-:::image type="content" source="./media/git-get-started/github-connect-branch.png" alt-text="Screenshot to GitHub connection.":::
-
 #### [Azure branch Connect](#tab/Azure)
 
 :::image type="content" source="./media/git-get-started/azure-connect-branch.png" alt-text="Screenshot to Azure connection.":::
+
+#### [GitHub Branch Connect](#tab/GitHub)
+
+:::image type="content" source="./media/git-get-started/github-connect-branch.png" alt-text="Screenshot to GitHub connection.":::
 
 ---
 

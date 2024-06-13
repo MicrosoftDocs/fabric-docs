@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.custom:
-ms.date: 06/03/2024
+ms.date: 06/13/2024
 ---
 
 # Git integration tenant settings
@@ -38,7 +38,7 @@ Enable this setting to allow all users, or a specific group or users, to export 
 :::image type="content" source="./media/git-integration-admin-settings/multi-geo-switch.png" alt-text="Screenshot of the multi geo switch enabled.":::
 
 > [!NOTE]
-> This restriction is not enforced items connected to GitHub.
+> This restriction is not enforced on items connected to GitHub.
 
 ## Users can export workspace items with applied sensitivity labels to Git repositories (Preview)
 

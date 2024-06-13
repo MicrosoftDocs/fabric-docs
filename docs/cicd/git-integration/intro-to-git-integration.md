@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 06/03/2024
+ms.date: 06/13/2024
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -78,7 +78,7 @@ The following limitations apply:
 
 ### [GitHub limitations](#tab/github)
 
-* GitHub can't enforce [cross-geo validations](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview)).
+* GitHub can't enforce [cross-geo validations](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 
 ---
 
