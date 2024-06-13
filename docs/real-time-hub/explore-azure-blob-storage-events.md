@@ -84,6 +84,9 @@ An event has the following top-level data:
 | `id` | string | Unique identifier for the event. | `00000000-0000-0000-0000-000000000000` |
 | `data` | object | Blob storage event data. | `{{Data object}}` |
 | `specversion` | string | CloudEvents schema specification version. | `1.0` |
+| `fabricsource` | string | ID of the Fabric eventstream for the Azure Blob Storage event source. | `/tenants/00000000-0000-0000-0000-000000000000/workspaces/00000000-0000-0000-0000-000000000000/items/00000000-0000-0000-0000-000000000000` |
+| `fabricsubject` | string | ID of the event link for the Azure Blob Storage event source. | `eventLinks/00000000-0000-0000-0000-000000000000` |
+
 
 The `data` object has the following properties: 
 
