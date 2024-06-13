@@ -21,11 +21,11 @@ Lakehouse supports the creation of custom schemas. Schemas allow you to group yo
 
 To enable schema support for your lakehouse, check the box next to **Lakehouse schemas (PublicPreview)** when you create it.
 
-:::image type="content" source="media\lakehouse-schemas\newlakehouse.png" alt-text="Screenshot showing the new lakehouse dialog." lightbox="media\lakehouse-schema\newlakehouse.png":::
+:::image type="content" source="media\lakehouse-schemas\newlakehouse.png" alt-text="Screenshot showing the new lakehouse dialog." lightbox="media\lakehouse-schemas\newlakehouse.png":::
 
 Once your lakehouse is ready, you can find a default schema named **dbo** under **Tables**. This schema is always there and can't be changed or removed. To make a new schema, hover over **Tables**, select on **…**, and choose **New schema**. After typing your schema name and clicking **Create**, you'll see your schema listed under **Tables** in alphabetical order.
 
-:::image type="content" source="media\lakehouse-schemas\newschema.png" alt-text="Screenshot showing the new lakehouse schema dialog." lightbox="media\lakehouse-schema\newschema.png":::
+:::image type="content" source="media\lakehouse-schemas\newschema.png" alt-text="Screenshot showing the new lakehouse schema dialog." lightbox="media\lakehouse-schemas\newschema.png":::
 
 
 ## Storing tables in lakehouse schemas
@@ -38,7 +38,7 @@ df.write.mode("Overwrite").saveAsTable("contoso.sales")
 
 You can use Lakehouse Explorer to arrange your tables and drag and drop table names to different schemas.
 
-:::image type="content" source="media\lakehouse-schemas\movetables.gif" alt-text="Animation of moving tables between schemas." lightbox="media\lakehouse-schema\movetables.gif":::
+:::image type="content" source="media\lakehouse-schemas\movetables.gif" alt-text="Animation of moving tables between schemas." lightbox="media\lakehouse-schemas\movetables.gif":::
 
 > [!IMPORTANT]
 > If you change the table, you also need to change items that uses that table, such as notebook code or dataflows, so that they use the right schema.
