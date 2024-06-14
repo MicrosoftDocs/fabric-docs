@@ -36,7 +36,7 @@ There are three kinds of endorsement: **promotion** and **certification**, and *
 * **Master data**: Master data indicates that the data in the item is a core source of organizational data.
 
     > [!NOTE]
-    > Master data endorsement hasn't been fully rolled out and is currently disabled for all tenants. It will be fully available in early July 2024.
+    > Master data endorsement is currently disabled for all tenants. It will available in early July 2024.
 
 The following image illustrates how endorsed, promoted, and certified semantic models are clearly identified when you're searching for an item.
 
