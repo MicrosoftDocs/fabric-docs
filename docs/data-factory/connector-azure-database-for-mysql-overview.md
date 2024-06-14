@@ -15,13 +15,13 @@ ms.custom:
 
 The Azure Database for MySQL connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Data pipeline
+## Support in data pipelines
 
-The Azure Database for MySQL connector supports the following capabilities in Data pipeline:
+The Azure Database for MySQL connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None <br>On-premises | Basic |
 | **Lookup activity** | None <br>On-premises | Basic |
 
-To learn more about the copy activity configuration for Azure Database for MySQL in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-azure-database-for-mysql-copy-activity.md).
+To learn more about the copy activity configuration for Azure Database for MySQL in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-database-for-mysql-copy-activity.md).
