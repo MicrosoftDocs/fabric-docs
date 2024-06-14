@@ -67,11 +67,11 @@ By default, Copilot has access to the following data types:
 
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
+## Overview
+
 This article provides answers to common questions related to business data security and privacy to help your organization get started with Copilot in Fabric. The article [Privacy, security, and responsible use for Copilot in Power BI (preview)](copilot-power-bi-privacy-security.md) provides an overview of Copilot in Power BI. Read on for details about Copilot for Fabric.
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
-
-## Overview
 
 ### Your business data is secure
 
