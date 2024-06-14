@@ -32,9 +32,11 @@ The connector then monitors and records any future row-level changes to this dat
 
 ## Get connection details from the Azure portal
 
-The labels for the items you need to collect from the Azure portal vary depending on the API your Azure Cosmos DB account uses. You always need the endpoint URI, in a format like `https://<account>.<api>.azure.com:<port>/`, the Primary Key, and the Database name and item IDs you want to collect data for.
+The labels for the items you need to collect from the Azure portal are shown in the steps below. You always need the endpoint URI, in a format like `https://<account>.<api>.azure.com:<port>/`, the Primary Key, and the Database name and item IDs you want to collect data for.
 
-### Azure Cosmos DB for NoSQL
+> [!NOTE]
+> Azure Cosmos DB for NoSQL CDC is using the [**Latest version mode**](https://learn.microsoft.com/azure/cosmos-db/nosql/change-feed-modes?tabs=latest-version#latest-version-change-feed-mode) of [Azure Cosmos DB Change feed](https://learn.microsoft.com/azure/cosmos-db/change-feed). It captures the changes to records in the latest version. Note that Deletions are't captured with this mode.  
+
 
 1. On the Azure portal page for your Azure Cosmos DB account, select **Keys** under **Settings** in the left navigation.
 
@@ -46,17 +48,6 @@ The labels for the items you need to collect from the Azure portal vary dependin
 
    ![A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account.](media/add-source-azure-cosmos-db-change-data-capture/containers.png)
 
-### Azure Cosmos DB for Table
-
-1. On the Azure portal page for your Azure Cosmos DB account, select **Connection strings** under **Settings** in the left navigation.
-
-1. On the **Connection strings** page, copy the **Endpoint** and **Primary key** values to use for setting up the eventstream connection.
-
-   ![A screenshot of the Endpoint and Primary key on the Azure Cosmos DB Connection strings page in the Azure portal.](media/add-source-azure-cosmos-db-change-data-capture/endpoint.png)
-
-1. On the Azure portal **Overview** page for your Azure Cosmos DB account, note the **Database** and item **ID** you want to collect data for.
-
-   ![A screenshot of the Tables listing for an Azure Cosmos DB NoSQL API account.](media/add-source-azure-cosmos-db-change-data-capture/tables.png)
 
 ## Add Azure Cosmos DB (CDC) as a source
 
