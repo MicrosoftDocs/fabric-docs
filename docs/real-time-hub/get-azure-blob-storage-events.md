@@ -33,8 +33,7 @@ The following Blob Storage event types are supported:
 
 For more information about available event types, see [Azure Blob Storage as Event Grid source](/azure/event-grid/event-schema-blob-storage).
 
-> [!NOTE]
-> Consuming Fabric events via eventstream is **not supported** if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3, West Europe, West India. 
+[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
 ## Prerequisites 
 
