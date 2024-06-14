@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/15/2023
+ms.date: 06/14/2024
 ---
 
 # Endorsement
 
 Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. Identifying trustworthy, authoritative items can be difficult. Endorsement is a way to make it easier for users to find the high-quality items they need. Endorsed items are clearly labeled, both in Fabric and in other places where users look for Fabric items (such for Power BI semantic models in Excel). Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists.
 
-There are two kinds of endorsement: **promotion** and **certification**.
+There are three kinds of endorsement: **promotion** and **certification**, and **master data**.
 
 * **Promotion**: Promotion enables users to highlight items that they think are valuable, worthwhile, and ready for others to use. It encourages the collaborative spread of content within the organization.
 
@@ -32,6 +32,11 @@ There are two kinds of endorsement: **promotion** and **certification**.
 
     > [!NOTE]
     > Certification enablement and configuration can be delegated to domain administrators, making it possible to specify a different set of reviewers for each domain. For more information, see [Set up item certification](../admin/endorsement-setup.md).
+
+* **Master data**: Master data indicates that the data in the item is a core source of organizational data.
+
+    > [!NOTE]
+    > Master data endorsement is currently disabled for all tenants. It will available in early July 2024.
 
 The following image illustrates how endorsed, promoted, and certified semantic models are clearly identified when you're searching for an item.
 
