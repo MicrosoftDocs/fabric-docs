@@ -7,6 +7,7 @@ ms.reviewer: mopeakande
 author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 11/15/2023
+ms.collection: ce-skilling-ai-copilot
 ---
 # Azure AI services in SynapseML with bring your own key
 

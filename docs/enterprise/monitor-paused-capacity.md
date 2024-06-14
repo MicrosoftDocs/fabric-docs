@@ -24,15 +24,15 @@ The spike provides an indication that your capacity was paused. You can hover ov
 
 :::image type="content" source="media/monitor-paused-capacity/suspended-capacity.png" alt-text="Screenshot showing a card that lists a suspended capacity in the utilization tab in the Microsoft Fabric capacity metrics app.":::
 
-## View carry forward operations
+## View carryforward operations
 
-You can find out what's the percentage of [carry forward](throttling.md#carry-forward-capacity-usage-reduction) operations that your capacity had when it was paused.
+You can find out what's the percentage of [carryforward](throttling.md#carryforward-capacity-usage-reduction) operations that your capacity had when it was paused.
 
 1. Locate the paused capacity timepoint by reviewing the spike in the utilization visual.
 
 2. Right-click the paused capacity's timepoint, and drill through to the [Timepoint Detail](metrics-app-timepoint-page.md) page.
 
-3. Hover over the SKU card. A tooltip displays the remaining cumulative carry forward percent.
+3. Hover over the SKU card. A tooltip displays the remaining cumulative carryforward percent.
 
 :::image type="content" source="media/monitor-paused-capacity/sku-card-hover.png" alt-text="Screenshot showing a tooltip that lists the remaining cumulative carry forward percent when you hover over the S K U card in the timepoint page in the Microsoft Fabric capacity metrics app.":::
 

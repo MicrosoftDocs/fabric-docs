@@ -40,7 +40,7 @@ In this example, we'll update a row, and show how to easily query the previous v
     INNER JOIN
         [dbo].[fact_sale] AS FS ON DC.[CustomerKey] = FS.[CustomerKey]
     GROUP BY
-        FS. [Customer Key],
+        FS.[CustomerKey],
         DC.[Customer]
     ORDER BY
         TotalSalesAmount DESC;

@@ -65,7 +65,7 @@ This article outlines key considerations for determining the most suitable imple
 | **Copilot experience** | Azure Data Explorer cluster can be added as a source in Fabric KQL Queryset to use Copilot capabilities. | Natively available |
 | **Built-in ML models** | Anomaly detection and forecasting models available. Pro development required to deploy anomaly detection and forecasting models. | Anomaly detection and forecasting models available. Business users can also apply anomaly detection models on incoming streaming data. |
 | **Visualization (Microsoft)** | Power BI, Azure Data Explorer dashboards | Native one-click integration with Power BI and Real-Time Dashboard |
-| **Visualization (Third party)** | Grafana, Kibana, Matlab. | Grafana, Kibana, Matlab can also be integrated with Event house. |
+| **Visualization (Third party)** | Grafana, Kibana, Matlab. | Grafana, Kibana, Matlab can also be integrated with Eventhouse. |
 
 ## Act
 

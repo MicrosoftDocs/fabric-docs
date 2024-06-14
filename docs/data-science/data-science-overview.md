@@ -3,7 +3,7 @@ title: Data science in Microsoft Fabric
 description: Learn about the Data science machine learning resources, including models, experiments, and notebooks.
 author: nelgson
 ms.author: negust
-ms.reviewer: franksolomon
+ms.reviewer: sgilley
 ms.topic: overview
 ms.custom:
   - build-2023

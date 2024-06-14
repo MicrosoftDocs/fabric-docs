@@ -75,6 +75,8 @@ items:
       href: copilot-data-factory-privacy-security.md
     - name: Responsible use in Data Science
       href: copilot-data-science-privacy-security.md
+    - name: Responsible use in Data Warehouse
+      href: copilot-data-warehouse-privacy-security.md
     - name: Responsible use in Power BI
       href: copilot-power-bi-privacy-security.md
     - name: Responsible use in Real-Time Intelligence
@@ -155,6 +157,22 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Pipeline Web activity through on-premises data gateway doesn't support SPN authentication
+      href: known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md
+    - name: Cross region shortcuts don't show data
+      href: known-issues/known-issue-752-cross-region-shortcuts-not-show-data.md
+    - name: Eventstreams paused for more than two hours don't show data
+      href: known-issues/known-issue-740-eventstreams-paused-two-hours-not-show-data.md
+    - name: Previous Eventstream UX loads instead of new UX
+      href: known-issues/known-issue-736-previous-eventstream-ux-loads-instead-new-ux.md
+    - name: Custom endpoint or Reflex destination on derived stream keeps loading
+      href: known-issues/known-issue-734-custom-endpoint-reflex-destination-derived-stream-keeps-loading.md
+    - name: Sample data doesn’t flow after destination later added into eventstream
+      href: known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md
+    - name: Tenant migrations paused for June 2024
+      href: known-issues/known-issue-749-tenant-migrations-paused-june-2024.md
+    - name: Shortcut creation on a lakehouse preview table takes long time
+      href: known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md
     - name: Semantic models in Desktop sometimes fail in March 2024 and later versions
       href: known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md
     - name: Real-Time hub Set alert doesn't work for derived streams

@@ -1,5 +1,5 @@
 ---
-title: Overview of Copilot in Fabric and Power BI (preview)
+title: Overview of Copilot in Fabric
 description: Learn about Copilot in Fabric and Power BI, which brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
 author: maggiesMSFT
 ms.author: maggies
@@ -9,11 +9,12 @@ ms.custom:
   - ignite-2023-fabric
   - build-2024
 ms.topic: conceptual
-ms.date: 02/07/2024
+ms.date: 06/03/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
-# Overview of Copilot in Fabric and Power BI (preview)
+# Overview of Copilot in Fabric
 
 Copilot and other generative AI features in preview bring new ways to transform and analyze data, generate insights, and create visualizations and reports in Microsoft Fabric and Power BI.
 
