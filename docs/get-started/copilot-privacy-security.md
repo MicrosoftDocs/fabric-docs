@@ -19,7 +19,7 @@ With Copilot for data science in Microsoft Fabric and other generative AI featur
 
 In this article, learn how  and the AI skill item \keep your business data secure and adhere to privacy requirements, and how you and your organization can use these generative AI features responsibly. This article expands on the foundational information in Privacy, security, and responsible use for Copilot (preview). The AI skill uses the same general process and underlying Azure OpenAI service models as Copilot in Fabric.
 
-For details, intended uses, and limitations of these features, read about Copilot for data science and the AI skill. 
+For details, intended uses, and limitations of these features, continue reading about Copilot for data science and the AI skill. 
 
 ## Data use in Copilot for data science
 
@@ -36,21 +36,21 @@ By default, Copilot has access to the following data types:
 
 ## Data use in AI skills
 
-The AI skill only has access to the data that you provide. It makes use of the schema (table name and column name), as well as the Notes for the model that you provide in the UI.
+- The AI skill only has access to the data that you provide. It makes use of the schema (table name and column name), as well as the Notes for the model that you provide in the UI.
 
-The AI skill only ever have access to data that the questioner has access to. If you use the AI skill, your credentials are used to access the underlying database. If you don't have access to the underlying data, the AI doesn't either. This limitation holds true when you publish the AI skill to other destinations, such as Copilot for Microsoft 365 or Microsoft Copilot Studio.
+- The AI skill only ever have access to data that the questioner has access to. If you use the AI skill, your credentials are used to access the underlying database. If you don't have access to the underlying data, the AI doesn't either. This limitation holds true when you publish the AI skill to other destinations, such as Copilot for Microsoft 365 or Microsoft Copilot Studio.
 
 ## Evaluation of Copilot for data science
 
-The product team has tested Copilot to see how well the system performs within the context of notebooks, and whether AI responses are insightful and useful.
+- The product team has tested Copilot to see how well the system performs within the context of notebooks, and whether AI responses are insightful and useful.
 
-The team also invested in additional harms mitigations, including technological approaches to focusing Copilot's output on topics related to data science.
+- The team also invested in additional harms mitigations, including technological approaches to focusing Copilot's output on topics related to data science.
 
 ## Evaluation of the AI skill
 
-The product team has tested the AI skill on a variety of public and private benchmarks for SQL tasks to ascertain the quality of SQL queries.
+- The product team has tested the AI skill on a variety of public and private benchmarks for SQL tasks to ascertain the quality of SQL queries.
 
-The team also invested in additional harms mitigations, including technological approaches to focusing the AI skill’s output on the context of the chosen data sources.
+- The team also invested in additional harms mitigations, including technological approaches to focusing the AI skill’s output on the context of the chosen data sources.
 
 ## Tips for working with Copilot for data science
 
@@ -62,6 +62,8 @@ The team also invested in additional harms mitigations, including technological 
 
 - Make sure your column names are descriptive. Instead of using column names like "C1" or "ActCu," use "ActiveCustomer" or "IsCustomerActive." This is the most effective way to get more reliable queries out of the AI.
 - Make use of the Notes for the model in the configuration panel in the UI. If the SQL queries that the AI skill generates are incorrect, you can provide instructions to the model in plain English to improve upon future queries. The system makes use of these instructions with every query. Short and direct instructions are best.
+
+## Start using Copilot in Fabric
 
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
