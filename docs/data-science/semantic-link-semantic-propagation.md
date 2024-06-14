@@ -12,7 +12,7 @@ ms.date: 06/06/2024
 ms.search.form: semantic link
 ---
 
-# # Semantic data propagation from semantic models
+# Semantic data propagation from semantic models
 
 When you read a [semantic model](/power-bi/connect-data/service-datasets-understand) into a [FabricDataFrame](semantic-link-overview.md#fabricdataframe-data-structure), semantic information such as metadata and annotations from the semantic model are automatically attached to the FabricDataFrame.
 In this article, you learn how the SemPy Python library preserves annotations that are attached to a semantic model's tables and columns.
