@@ -44,12 +44,12 @@ The [deployment pipelines Fabric REST APIs](/rest/api/fabric/core/deployment-pip
 
 * [Get Deployment Pipeline](/rest/api/fabric/core/deployment-pipelines/get-deployment-pipeline): Returns information about the specified deployment pipeline.
 * [List Deployment Pipelines](/rest/api/fabric/core/deployment-pipelines/list-deployment-pipelines): Returns a list of deployment pipelines that the user has access to.
-* [Get Deployment Pipeline Stages](/rest/api/fabric/core/deployment-pipelines/get-deployment-pipeline-stages): Returns the stages of the specified deployment, including its ID, display name, description, and whether the stage is public or not.
-* [Get Deployment Pipeline Stage Items](/rest/api/fabric/core/deployment-pipelines/get-deployment-pipeline-stage-items): Returns the supported items from the workspace assigned to the specified stage of the specified deployment pipeline.
+* [List Deployment Pipeline Stages](/rest/api/fabric/core/deployment-pipelines/list-deployment-pipeline-stages): Returns the stages of the specified deployment, including its ID, display name, description, and whether the stage is public or not.
+* [List Deployment Pipeline Stage Items](/rest/api/fabric/core/deployment-pipelines/list-deployment-pipeline-stage-items): Returns the supported items from the workspace assigned to the specified stage of the specified deployment pipeline.
 * [Deploy Stage Content](/rest/api/fabric/core/deployment-pipelines/deploy-stage-content): Deploys items from the specified stage of the specified deployment pipeline.
 
   * Use this API to deploy all items or to select specific items to deploy. If no specific items are selected, all items are deployed.
-  * To find the relevant stage ID to deploy, use the [Get Deployment Pipeline Stages](/rest/api/fabric/core/deployment-pipelines/get-deployment-pipeline-stages) API.
+  * To find the relevant stage ID to deploy, use the [List Deployment Pipeline Stages](/rest/api/fabric/core/deployment-pipelines/list-deployment-pipeline-stages) API.
   * This API is integrated with the [Long Running Operations APIs](/rest/api/fabric/core/long-running-operations) to monitor the deployment status.
 
     * Get the operation state to see if the operation is complete with the [Get Long Running  - Get Operation state](/rest/api/fabric/core/long-running-operations/get-operation-state) API.
