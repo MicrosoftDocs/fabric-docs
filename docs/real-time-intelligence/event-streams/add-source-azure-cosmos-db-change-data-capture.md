@@ -35,7 +35,7 @@ The connector then monitors and records any future row-level changes to this dat
 The labels for the items you need to collect from the Azure portal are shown in the steps below. You always need the endpoint URI, in a format like `https://<account>.<api>.azure.com:<port>/`, the Primary Key, and the Database name and item IDs you want to collect data for.
 
 > [!NOTE]
-> Azure Cosmos DB for NoSQL CDC is using the [**Latest version mode**](https://learn.microsoft.com/azure/cosmos-db/nosql/change-feed-modes?tabs=latest-version#latest-version-change-feed-mode) of [Azure Cosmos DB Change feed](https://learn.microsoft.com/azure/cosmos-db/change-feed). It captures the changes to records in the latest version. Note that Deletions are't captured with this mode.  
+> Azure Cosmos DB for NoSQL CDC is using the [**Latest version mode**](/cosmos-db/nosql/change-feed-modes?tabs=latest-version#latest-version-change-feed-mode) of [Azure Cosmos DB Change feed](/cosmos-db/change-feed). It captures the changes to records in the latest version. Note that Deletions are't captured with this mode.  
 
 
 1. On the Azure portal page for your Azure Cosmos DB account, select **Keys** under **Settings** in the left navigation.
