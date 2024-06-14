@@ -4,7 +4,7 @@ description: A known issue is posted where a semantic model export to OneLake fa
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/30/2024
+ms.date: 06/11/2024
 ms.custom: known-issue-693
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-693
 
 When using OneLake integration for semantic models, you can export the data in a semantic model to OneLake. If the semantic model contains a calculated column or a calculated table column in an error state (for example, due to a bad DAX expression), the table might fail to export data to OneLake.
 
-**Status:** Open
+**Status:** Fixed: June 11, 2024
 
 **Product Experience:** Power BI
 

@@ -90,8 +90,8 @@ The mechanisms to enable the Native Execution Engine at the tenant, workspace, a
 
 ```sql
 %%sql 
-SET spark.native.enabled=FALSE 
-SET spark.gluten.enabled=FALSE 
+SET spark.native.enabled=FALSE; 
+SET spark.gluten.enabled=FALSE; 
 ```
 
 # [PySpark](#tab/pyspark)
@@ -129,8 +129,8 @@ After executing the query in which the native execution engine is disabled, you 
 
 ```sql
 %%sql 
-SET spark.native.enabled=TRUE 
-SET spark.gluten.enabled=TRUE 
+SET spark.native.enabled=TRUE; 
+SET spark.gluten.enabled=TRUE; 
 ```
 
 # [PySpark](#tab/pyspark)

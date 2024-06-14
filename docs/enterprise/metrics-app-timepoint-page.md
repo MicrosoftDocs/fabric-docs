@@ -13,7 +13,7 @@ no-loc: [Copilot]
 
 # Understand the metrics app timepoint page
 
-All the operations in your capacity are ranked according to their compute impact. The compute impact of all your capacity operations is what we call capacity usage, and it's measured using capacity units (CUs). Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to your capacity's usage.
+All the operations in your capacity are ranked according to their compute impact. The compute impact of all your capacity operations is what we call capacity usage, and it's measured using capacity units (CUs). Use this page to understand which [*interactive* and *background*](fabric-operations.md#interactive-and-background-operations) operations contributed the most to your capacity's usage.
 
 Scheduled and manual refresh workflows can trigger multiple internal operations in the backend service. For example, refreshes sometimes perform automatic retries if a temporary error occurred. These operations might be recorded in the app using different activity IDs. Each activity ID is represented as a row in the table. When reviewing the table, take into consideration that several rows may indicate a single action that triggers multiple operations, each with its own activity ID.
 
@@ -60,9 +60,9 @@ This section describes the operations of the visuals in the top row of the timep
 
 ## Interactive operations for timerange
 
-A table showing every [interactive operations](/power-bi/enterprise/service-premium-interactive-background-operations) that contributed Capacity units (CUs) usage in the viewed timepoint. It fetches the top 100k records based on capacity units. Once an interactive operation completes, all of the CU seconds used by it get attributed to the timepoint window.
+A table showing every [interactive operations](fabric-operations.md#interactive-operations) that contributed capacity units (CUs) usage in the viewed timepoint. It fetches the top 100k records based on capacity units. Once an interactive operation completes, all of the CU seconds used by it get attributed to the timepoint window.
 
-Start and end times may occur before or after the displayed time period, due to [background](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) [smoothing](/power-bi/enterprise/service-premium-smoothing) operations.
+Start and end times may occur before or after the displayed time period, due to [background](fabric-operations.md#background-operations) [smoothing](throttling.md) operations.
 
 * **Workspace** - The workspace the item belongs to.
 
@@ -115,7 +115,7 @@ Start and end times may occur before or after the displayed time period, due to 
 
 ## Background operations for timerange
 
-A table showing every background operation that contributed Capacity Unit(CU) usage to the viewed timepoint. It fetches the top 100k records based on capacity units. Every background operation that completed within the last 24 hours (defined as a window of 2,880 intervals, each lasting 30 seconds) contributes a small portion of its total usage to the CU value. This means that a background operation that completed the previous day can contribute some CU activity to determine if the capacity is in overload. For more information see [performance smoothing](/power-bi/enterprise/service-premium-smoothing).
+A table showing every background operation that contributed Capacity Unit(CU) usage to the viewed timepoint. It fetches the top 100k records based on capacity units. Every background operation that completed within the last 24 hours (defined as a window of 2,880 intervals, each lasting 30 seconds) contributes a small portion of its total usage to the CU value. This means that a background operation that completed the previous day can contribute some CU activity to determine if the capacity is in overload. For more information see [the Fabric throttling policy](throttling.md).
 
 All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations-for-timerange) table.
 
