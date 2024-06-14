@@ -4,7 +4,7 @@ description: This article provides information about how to create an Amazon S3 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 02/22/2024
+ms.date: 06/13/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -21,7 +21,7 @@ The Amazon S3 connector supports the following authentication types for copy and
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Access key| √| n/a|
+|Access Key| √| n/a|
 
 ## Set up your connection in Dataflow Gen2
 
