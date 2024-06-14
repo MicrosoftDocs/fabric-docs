@@ -44,17 +44,15 @@ The `list_relationships` function retrieves a list of all relationships found wi
 
 The function uses semantic link, to provide annotated DataFrames that include the necessary metadata to understand the relationships within the semantic model. You can then analyze the semantic model structure, and use it in your machine learning models or other data analysis tasks.
 
-To use the `list_relationships` function, first import the `sempy.fabric` module. Then, you can call the function with the name or UUID of your Power BI semantic model as shown in this code sample:
+To use the `list_relationships` function, first import the `sempy.fabric` module. Then, you can call the function with the name or UUID of your Power BI semantic model as shown in this code sample. Here, a Power BI semantic model called *my_dataset* calls the `list_relationships` function. The function returns a pandas DataFrame with one row per relationship, and you can then easily explore and analyze the relationships within the semantic model:
 
 ```python
 import sempy.fabric as fabric
 fabric.list_relationships("my_dataset")
 ```
 
-In this code sample, a Power BI semantic model called *my_dataset* calls the `list_relationships` function. The function returns a pandas DataFrame with one row per relationship, and you can then easily explore and analyze the relationships within the semantic model.
-
 > [!TIP]
-> [!INCLUDE [sempy-default-workspace](/includes/sempy-default-workspace.md)]
+> [!INCLUDE [sempy-default-workspace](includes/sempy-default-workspace.md)]
 
 ## Visualize relationships in a semantic model
 
