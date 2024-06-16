@@ -13,7 +13,7 @@ ms.search.form: Source and Destination
 
 # Add Azure Cosmos DB CDC source to an eventstream (preview)
 
-This article shows you how to add an Azure Cosmos DB Change Data Capture source to an eventstream. The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fabric event streams lets you capture a snapshot of the current data in an Azure Cosmos DB database.
+This article shows you how to add an Azure Cosmos DB (**Azure Cosmos DB for NoSQL**) Change Data Capture source to an eventstream. The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fabric event streams lets you capture a snapshot of the current data in an Azure Cosmos DB database.
 
 The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
@@ -24,17 +24,19 @@ The connector then monitors and records any future row-level changes to this dat
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
-- Access to an Azure Cosmos DB account and database.
-- Your Azure Cosmos DB database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Access to an **Azure Cosmos DB for NoSQL** account and database.
+- Your Azure Cosmos DB for NoSQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 
 ## Get connection details from the Azure portal
 
-The labels for the items you need to collect from the Azure portal vary depending on the API your Azure Cosmos DB account uses. You always need the endpoint URI, in a format like `https://<account>.<api>.azure.com:<port>/`, the Primary Key, and the Database name and item IDs you want to collect data for.
+The labels for the items you need to collect from the Azure portal are shown in the steps below. You always need the endpoint URI, in a format like `https://<account>.<api>.azure.com:<port>/`, the Primary Key, and the Database name and item IDs you want to collect data for.
 
-### Azure Cosmos DB for NoSQL
+> [!NOTE]
+> Azure Cosmos DB for NoSQL CDC is using the [**Latest Version Mode**](/azure/cosmos-db/nosql/change-feed-modes?tabs=latest-version#latest-version-change-feed-mode) of [Azure Cosmos DB Change Feed](/azure/cosmos-db/change-feed). It captures the changes to records in the latest version. Note that Deletions are't captured with this mode.  
+
 
 1. On the Azure portal page for your Azure Cosmos DB account, select **Keys** under **Settings** in the left navigation.
 
@@ -46,17 +48,6 @@ The labels for the items you need to collect from the Azure portal vary dependin
 
    ![A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account.](media/add-source-azure-cosmos-db-change-data-capture/containers.png)
 
-### Azure Cosmos DB for Table
-
-1. On the Azure portal page for your Azure Cosmos DB account, select **Connection strings** under **Settings** in the left navigation.
-
-1. On the **Connection strings** page, copy the **Endpoint** and **Primary key** values to use for setting up the eventstream connection.
-
-   ![A screenshot of the Endpoint and Primary key on the Azure Cosmos DB Connection strings page in the Azure portal.](media/add-source-azure-cosmos-db-change-data-capture/endpoint.png)
-
-1. On the Azure portal **Overview** page for your Azure Cosmos DB account, note the **Database** and item **ID** you want to collect data for.
-
-   ![A screenshot of the Tables listing for an Azure Cosmos DB NoSQL API account.](media/add-source-azure-cosmos-db-change-data-capture/tables.png)
 
 ## Add Azure Cosmos DB (CDC) as a source
 

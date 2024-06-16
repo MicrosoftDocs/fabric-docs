@@ -7,6 +7,7 @@ ms.reviewer: mopeakande
 author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 12/12/2023
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Use Azure AI services with SynapseML in Microsoft Fabric

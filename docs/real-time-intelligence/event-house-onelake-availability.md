@@ -1,5 +1,5 @@
 ---
-title: Event house OneLake Availability
+title: Eventhouse OneLake Availability
 description: Learn how to turn on KQL Database data availability in OneLake.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -11,9 +11,9 @@ ms.custom:
 ms.date: 06/03/2024
 ---
 
-# Event house OneLake Availability
+# Eventhouse OneLake Availability
 
-You can create a one logical copy of KQL database data in an event house by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
+You can create a one logical copy of KQL database data in an eventhouse by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
 
 Delta Lake is a unified data lake table format that achieves seamless data access across all compute engines in Microsoft Fabric. For more information on Delta Lake, see [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake).
 
@@ -55,9 +55,9 @@ You turned on **OneLake availability** in your KQL database. You can now access 
 
 ## Adaptive behavior
 
-Event house offers a robust mechanism that intelligently batches incoming data streams into one or more Parquet files, structured for analysis. Batching data streams is important when dealing with trickling data. Writing many small Parquet files into the lake can be inefficient resulting in higher costs and poor performance.
+Eventhouse offers a robust mechanism that intelligently batches incoming data streams into one or more Parquet files, structured for analysis. Batching data streams is important when dealing with trickling data. Writing many small Parquet files into the lake can be inefficient resulting in higher costs and poor performance.
 
-Event house's adaptive mechanism can delay write operations for up to a few hours if there isn’t enough data to create optimal Parquet files. This ensures Parquet files are optimal in size and adhere to Delta Lake best practices. The Event house adaptive mechanism ensures that the Parquet files are primed for analysis and balances the need for prompt data availability with cost and performance considerations.
+Eventhouse's adaptive mechanism can delay write operations for up to a few hours if there isn’t enough data to create optimal Parquet files. This ensures Parquet files are optimal in size and adhere to Delta Lake best practices. The Eventhouse adaptive mechanism ensures that the Parquet files are primed for analysis and balances the need for prompt data availability with cost and performance considerations.
 
 You can monitor how long ago new data was added in the lake by checking your data latency using the [.show table mirroring operations command](/azure/data-explorer/kusto/management/show-table-mirroring-operations-command?context=/fabric/context/context-rti&pivots=fabric).
 

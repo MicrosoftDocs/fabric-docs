@@ -36,7 +36,7 @@ items:
     href: user-flow-3.md
   - name: "Explore your data visually in Real-Time Dashboards"
     href: user-flow-4.md
-  - name: "Trigger Fabric dataflows from the Real-Time hub"
+  - name: "Set alerts based on Fabric events"
     href: user-flow-5.md 
 - name: Get data
   items:
@@ -202,13 +202,13 @@ items:
       href: ../data-activator/data-activator-get-data-eventstreams.md
 - name: Store data
   items:
-  - name: Event house 
+  - name: Eventhouse 
     items:
-    - name: Event house overview 
+    - name: Eventhouse overview 
       href: eventhouse.md
-    - name: Create an event house 
+    - name: Create an eventhouse 
       href: create-eventhouse.md
-    - name: Manage and monitor an event house 
+    - name: Manage and monitor an eventhouse 
       href: manage-monitor-eventhouse.md
   - name: KQL Database
     items:
@@ -242,7 +242,7 @@ items:
       href: api/toc.yml
     - name: OneLake
       items:
-      - name: Event house OneLake availability 
+      - name: Eventhouse OneLake availability 
         href: event-house-onelake-availability.md
       - name: Create OneLake shortcuts in a KQL database
         href: onelake-shortcuts.md
