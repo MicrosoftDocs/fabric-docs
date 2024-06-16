@@ -1,34 +1,34 @@
 ---
 title: How to train models with scikit-learn
-description: Learn how to train models with scikit-learn, a popular open-source machine learning framework that's frequently used for supervised and unsupervised learning.
-ms.reviewer: ssalgado
+description: Learn how to train models with scikit-learn, a popular open-source machine learning framework frequently used for supervised and unsupervised learning.
+ms.reviewer: franksolomon
 ms.author: negust
 author: nelgson
 ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/23/2023
+ms.date: 06/13/2024
 ms.search.form: Train models with scikit-learn
 ---
 
 # How to train models with scikit-learn in Microsoft Fabric
 
-Scikit-learn ([scikit-learn.org](https://scikit-learn.org)) is a popular, open-source machine learning framework. It's frequently used for supervised and unsupervised learning. It also provides various tools for model fitting, data preprocessing, model selection, model evaluation, and more.  
+([Scikit-learn](https://scikit-learn.org)) is a popular, open-source machine learning framework. Scikit-learn is frequently used for supervised and unsupervised learning. It also provides tools for model fitting, data preprocessing, model selection, model evaluation, and more.
 
-
-
-In this section, we'll go through an example of how you can train and track the iterations of your Scikit-Learn model.
+This section presents an example that shows how to train and track the iterations of your Scikit-Learn model.
 
 ## Install scikit-learn
 
-To get started with scikit-learn, you must ensure that it's installed within your notebook. You can install or upgrade the version of scikit-learn on your environment using the following command:
+First, you must verify that scikit-learn is installed within your notebook. You can install or upgrade the version of scikit-learn on your environment with this command:
 
 ```shell
 %pip install scikit-learn
 ```
 
-Next, we'll create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
+## Set up the machine learning experiment
+
+Create a machine learning experiment using the MLFLow API. The MLflow **set_experiment()** API creates a new machine learning experiment if it doesn't already exist.
 
 ```python
 import mlflow
@@ -38,7 +38,7 @@ mlflow.set_experiment("sample-sklearn")
 
 ## Train a scikit-learn model
 
-After the experiment has been created, we'll create a sample dataset and create a logistic regression model. We'll also start a MLflow run and track the metrics, parameters, and final logistic regression model. Once we've generated the final model, we'll also save the resulting model for additional tracking.
+After creation of the experiment, we'll create a sample dataset and create a logistic regression model. We'll start an MLflow run, and track the metrics, parameters, and final logistic regression model. Once we generate the final model, we'll save the resulting model for more tracking.
 
 ```python
 import mlflow.sklearn
@@ -75,7 +75,7 @@ with mlflow.start_run() as run:
 
 ## Load and evaluate the model on a sample dataset
 
-Once the model is saved, it can also be loaded for inferencing. To do this, we'll load the model and run the inference on a sample dataset.
+Once we save the model, we can load it for inferencing. To do this, we'll load the model and run the inference on a sample dataset.
 
 ```python
 # Inference with loading the logged model

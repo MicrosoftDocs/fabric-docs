@@ -10,6 +10,7 @@ ms.custom:
   - build-2024
 ms.date: 02/21/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Understand the metrics app compute page
@@ -52,11 +53,11 @@ The utilization chart displays the following elements:
 
 * **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30-second period. This column refers to billable operations.
 
-    [*Background*](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) operations cover backend processes that aren't directly triggered by users, such as data refreshes.
+    [*Background*](fabric-operations.md#background-operations) operations cover backend processes that aren't directly triggered by users, such as data refreshes.
 
 * **Interactive %** - Red columns represent the percent of CU consumption used during interactive operations in a 30-second period. This column refers to billable operations.
 
-    [*Interactive*](/power-bi/enterprise/service-premium-interactive-background-operations#interactive-operations) operations cover a wide range of resources triggered by users. These operations are associated with interactive page loads.
+    [*Interactive*](fabric-operations.md#interactive-operations) operations cover a wide range of resources triggered by users. These operations are associated with interactive page loads.
 
 * **Background non-billable %** - Baby blue columns represent the percent of CU consumption used during preview background operations in a 30-second period.
 
@@ -134,7 +135,7 @@ Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-rib
 * *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multi metric ribbon chart's x-axis.
 
 >[!NOTE]
->Peak is calculated as the highest number of seconds from both [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations.
+>Peak is calculated as the highest number of seconds from both [*interactive* and *background*](fabric-operations.md#interactive-and-background-operations) operations.
 
 To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, select a timepoint you want to explore and then select **Explore**.
 

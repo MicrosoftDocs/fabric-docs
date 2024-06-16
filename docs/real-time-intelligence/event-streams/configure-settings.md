@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 03/15/2024
+ms.date: 06/11/2024
 ms.search.form: Event Streams Overview
 ---
 
@@ -31,7 +31,7 @@ For the **event throughput** setting, you can select the throughput rate for inc
 :::image type="content" source="./media/create-manage-an-eventstream/throughput-setting.png" alt-text="Screenshot that shows the throughput setting for an event stream.":::
 
 > [!NOTE]
-> Pause the node before you update the throughput setting and reactivate the node. 
+> Pause all source and destination nodes within the eventstream before you update the throughput setting and reactivate all nodes. 
 
 ## Endorsement setting
 On the **Endorsement** tab of the **Settings** page, you can promote or endorse or recommended the eventstream for others to use. For more information on endorsement, see [Endorsement](/fabric/governance/endorsement-overview).

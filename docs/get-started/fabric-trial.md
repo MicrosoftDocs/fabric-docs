@@ -18,8 +18,9 @@ Microsoft Fabric is provided free of charge when you sign up for a Microsoft Fab
 
 With one Fabric trial capacity, you get the following features:
 
-- Full access to all of the Fabric workloads and features. There are a few key Fabric features that aren't available on trial capacities. These include Co-Pilot, Trusted workspace access, and Managed private endpoints.
+- Full access to all of the Fabric workloads and features. There are a few key Fabric features that aren't available on trial capacities. These include [Copilot](/fabric/get-started/copilot-faq-fabric), [Trusted workspace access](../security/security-trusted-workspace-access.md), and [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview).
 - OneLake storage up to 1 TB.
+- One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
 - The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity.
 
 Creating and collaborating in Fabric includes:
@@ -30,7 +31,7 @@ Creating and collaborating in Fabric includes:
 > [!NOTE]
 > One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
 
-When you start a Fabric capacity trial, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You get the equivalent of an F64 capacity but there are a few key features that aren't available on trial capacities. These include [Co-Pilot](/fabric/get-started/copilot-faq-fabric), [Trusted workspace access](../security/security-trusted-workspace-access.md), and [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview). 
+When you start a Fabric capacity trial, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You get the equivalent of an F64 capacity but there are a few key features that aren't available on trial capacities. These include [Copilot](/fabric/get-started/copilot-faq-fabric), [Trusted workspace access](../security/security-trusted-workspace-access.md), and [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview). 
 
 To begin using your Fabric trial capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you.
 
