@@ -86,6 +86,8 @@ items:
     href: transactions.md 
   - name: Warehouse settings and context menus
     href: settings-context-menus.md
+  - name: Analyze with range bands
+    href: analyze-range-bands.md
 - name: Dimensional modeling
   items:
   - name: Overview

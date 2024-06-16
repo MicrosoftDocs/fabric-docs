@@ -257,6 +257,8 @@ The following diagram depicts the before and after state of a salesperson dimens
 Consider the following SCD type 2 historical tracking attributes.
 
 ```sql
+CREATE TABLE d_Salesperson
+(
     <…>
 
     --Historical tracking attributes (SCD type 2)
@@ -267,6 +269,7 @@ Consider the following SCD type 2 historical tracking attributes.
     RecIsCurrent BIT NOT NULL,
 
     <…>
+);
 ```
 
 Here are the purposes of the historical tracking attributes.
