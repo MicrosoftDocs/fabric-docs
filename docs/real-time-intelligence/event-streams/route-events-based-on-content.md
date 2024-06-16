@@ -4,10 +4,10 @@ description: Learn how events can be routed based on content in the data receive
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 06/06/2024
 ms.search.form: Source and Destination
 ---
 
