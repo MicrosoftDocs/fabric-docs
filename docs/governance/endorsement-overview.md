@@ -17,7 +17,7 @@ Organizations often have large numbers of Microsoft Fabric items available for s
 There are two kinds of endorsement: **promotion** and **certification**. See the following sections for details.
 
 > [!NOTE]
-> A third type of endorsement, *master data* is scheduled for public preview release in July 2024. Currently, it might appear as a disabled option in some tenants, but it can't be used. At public preview, master data endorsement will be available on all tenants. In the meantime, see the [release plans](release-plan/admin-governance#fabric-items-master-data) for more information about master data.
+> A third type of endorsement, *master data* is scheduled for public preview release in July 2024. Currently, it might appear as a disabled option in some tenants, but it can't be used. At public preview, master data endorsement will be available on all tenants. In the meantime, see the [release plans](../release-plan/admin-governance.md#fabric-items-master-data) for more information about master data.
 
 ## Promotion
 
