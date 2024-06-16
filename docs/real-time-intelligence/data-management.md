@@ -4,13 +4,13 @@ description: Learn how to manage your data in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2023
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 04/21/2024
+ms.date: 06/06/2024
 ms.search.form: Manage data in a KQL Database
 ---
 

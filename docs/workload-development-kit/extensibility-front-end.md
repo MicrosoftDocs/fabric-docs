@@ -297,8 +297,8 @@ An example with `notification.open()` API:
 While a frontend-only development scenario is easily supported, the full end-to-end developer experience requires saving, reading, and editing existing workload items.
 The [Back-end implementation guide](extensibility-back-end.md) describes in detail how to set up and use the backend side.
 
-Once the backend is up and running, and the `Fabric.WorkloadSample.SampleWorkloadArtifact` type is **registered in Fabric**, you can perform CRUD operations on this type.
-The following operations are exposed via [ArtifactCrud API](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/node_modules/@trident/extension-client-3p/src/lib/apis/artifact-crud-api.d.ts) inside `ExtensionClientAPI`.
+Once the backend is up and running, and the `Org.WorkloadSample.SampleWorkloadItem` type is **registered in Fabric**, you can perform CRUD operations on this type.
+The following operations are exposed via [ArtifactCrud API](/javascript/api/@ms-fabric/workload-client/artifactcrudapi).
 
 #### CREATE
 
@@ -327,7 +327,7 @@ When you select an existing Sample Workload item in the workspace view, Fabric n
 ```json
 "artifacts": [
   {
-   "name": "Fabric.WorkloadSample.SampleWorkloadArtifact",
+   "name": "Org.WorkloadSample.SampleWorkloadItem",
    "editor": {
     "extension": "Fabric.WorkloadSample",
     "path": "/sample-workload-editor"

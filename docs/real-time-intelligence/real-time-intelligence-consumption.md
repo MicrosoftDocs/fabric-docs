@@ -4,7 +4,7 @@ description: Learn how eventhouses and KQL databases consume capacity units in R
 ms.reviewer: bwatts
 ms.author: shsagir
 author: shsagir
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
