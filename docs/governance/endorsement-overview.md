@@ -27,7 +27,7 @@ Any content owner, or any member with write permissions the item, can simply pro
 
 [Learn how to promote your items](../get-started/endorsement-promote-certify.md#promote-items).
 
-### Certification
+## Certification
 
 Certification means that the item meets the organization's quality standards and can be regarded as reliable and authoritative, and is ready for use across the organization.
 
