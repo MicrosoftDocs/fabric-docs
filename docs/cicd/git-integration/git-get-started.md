@@ -36,7 +36,7 @@ It’s recommended to read the [overview of Git integration](./intro-to-git-inte
 
 ### Connect to a Git repo
 
-Only a workspace admin can connect a workspace to a repository, but once connected, anyone with [permission](#permissions) can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to an Azure  or GitHub Repo, follow these steps:
+Only a workspace admin can connect a workspace to a repository, but once connected, anyone with [permission](](./git-integration-process.md#permissions) can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to an Azure  or GitHub Repo, follow these steps:
 
 1. Sign into Fabric and navigate to the workspace you want to connect with.
 
@@ -79,22 +79,31 @@ If it's the first time connecting, you need to [Authorize](https://docs.github.c
 
 ### Connect to a workspace
 
+#### [Azure branch Connect](#tab/Azure)
+
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
     > [!NOTE]
     > You can only connect a workspace to one branch and one folder at a time.
 
-    - [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)(Azure only)
-    - [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)(Azure only)
+    - [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
+    - [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
     - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project). If you connected to GitHub using a scoped token, you can only connect to that repository.
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
     - Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content will be created in the root folder. You can only connect to one folder at a time.)
 
-#### [Azure branch Connect](#tab/Azure)
-
 :::image type="content" source="./media/git-get-started/azure-connect-branch.png" alt-text="Screenshot to Azure connection.":::
 
 #### [GitHub Branch Connect](#tab/GitHub)
+
+1. From the dropdown menu, specify the following details about the branch you want to connect to:
+
+    > [!NOTE]
+    > You can only connect a workspace to one branch and one folder at a time.
+
+    - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project). If you connected to GitHub using a scoped token, you can only connect to that repository.
+    - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
+    - Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content will be created in the root folder. You can only connect to one folder at a time.)
 
 :::image type="content" source="./media/git-get-started/github-connect-branch.png" alt-text="Screenshot to GitHub connection.":::
 

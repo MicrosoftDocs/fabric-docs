@@ -17,9 +17,15 @@ To access the Git integration feature, you need one of the following:
 - [Power BI Premium license](/power-bi/enterprise/service-premium-what-is). A Power BI premium license supports all Power BI items only.
 - [Fabric capacity](/fabric/enterprise/licenses#capacity-and-skus). A Fabric capacity is required to use all supported Fabric items.
 
-In addition, your organization’s administrator has to [enable the **Users can create Fabric items** tenant switch](/fabric/admin/about-tenant-settings#how-to-get-to-the-tenant-settings) from the Admin portal.
+In addition, the following [tenant switches](/fabric/admin/about-tenant-settings) must be enabled from the Admin portal:
 
-:::image type="content" source="/fabric/includes/media/github-prereqs/fabric-switch.png" alt-text="Screenshot of Fabric switch enabled.":::
+- [**Users can create Fabric items**](/fabric/admin/fabric-switch)
+- One of the following Git permission switches:
+
+  - [**Users can synchronize workspace items with their Git repositories**](/fabric/admin/git-integration-admin-settings#users-can-synchronize-workspace-items-with-their-git-repositories-preview) - for Azure Git users
+  - [**Users can synchronize workspace items with GitHub repositories**](/fabric/admin/git-integration-admin-settings#users-can-synchronize-workspace-items-with-github-repositories-preview) - for GitHub users
+
+These switches can be enabled by the tenant admin, capacity admin, or workspace admin, depending on your organization's settings.
 
 ## Git prerequisites
 
