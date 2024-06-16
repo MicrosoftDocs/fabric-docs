@@ -63,7 +63,7 @@ In general, data is brought from transactional systems or line-of-business appli
 
 ## Data model
 
-While the WWI dimensional model contains numerous fact tables, for this tutorial, we use the *Sale* fact table and its correlated dimensions. The following example illustrates the WWI data model:
+While the WWI dimensional model contains numerous [fact tables](../data-warehouse/dimensional-modeling-fact-tables.md), for this tutorial, we use the *Sale* fact table and its correlated dimensions. The following example illustrates the WWI data model:
 
 :::image type="content" source="media\tutorial-lakehouse-introduction\model-sale-fact-table.png" alt-text="Diagram of the Sale Fact table and related dimensions for this tutorial's data model.":::
 
