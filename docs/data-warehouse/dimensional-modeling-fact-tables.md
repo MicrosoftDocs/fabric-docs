@@ -17,7 +17,7 @@ ms.custom: fabric-cat
 
 [!INCLUDE [dimensional-modeling-series](includes/dimensional-modeling-series.md)]
 
-This article provides you with guidance and best practices for designing **fact** tables in a dimensional model. It specifically focuses on implementing a dimensional model inside a warehouse. [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in Microsoft Fabric](data-warehousing.md) is an experience that supports many T-SQL capabilities, like creating tables and managing data in tables. So, you're in complete control of creating your dimensional model tables and loading them with data.
+This article provides you with guidance and best practices for designing **fact** tables in a dimensional model. It provides practical guidance for [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in Microsoft Fabric](data-warehousing.md), which is an experience that supports many T-SQL capabilities, like creating tables and managing data in tables. So, you're in complete control of creating your dimensional model tables and loading them with data.
 
 > [!NOTE]
 > In this article, the term _data warehouse_ refers to an enterprise data warehouse, which delivers comprehensive integration of critical data across the organization. In contrast, the standalone term _warehouse_ refers to a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)], which is a software as a service (SaaS) relational database offering that you can use to implement a data warehouse. For clarity, in this article the latter is mentioned as _Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)]_.
@@ -29,25 +29,25 @@ In a dimensional model, a fact table stores measurements associated with observa
 
 Fact tables include measures, which are typically numeric columns, like sales order quantity. Analytic queries summarize measures (by using sum, count, average, and other functions) within the context of dimension filters and groupings.
 
-Fact tables also include dimension keys, which determine the _dimensionality_ of the facts. The dimension key values determine the _granularity_ of the facts, which is the atomic level by which facts are defined. For example, an order date key in a sales fact table sets the granularity of the facts at date level, while a target date key in a sales target fact table could set the granularity at quarter level.
+Fact tables also include dimension keys, which determine the _dimensionality_ of the facts. The dimension key values determine the _granularity_ of the facts, which is the atomic level by which facts are defined. For example, an order date dimension key in a sales fact table sets the granularity of the facts at date level, while a target date dimension key in a sales target fact table could set the granularity at quarter level.
 
 > [!NOTE]
-> While it's possible to store facts at a higher granularity, it's not easy to split out measure values to lower levels of granularity. Sheer data volumes, together with analytic requirements, might provide valid reason to store higher granularity facts but at the expense of detailed analysis.
+> While it's possible to store facts at a higher granularity, it's not easy to split out measure values to lower levels of granularity (if required). Sheer data volumes, together with analytic requirements, might provide valid reason to store higher granularity facts but at the expense of detailed analysis.
 
-To easily identify fact tables, you typically prefix them with `f_` or `Fact_`.
+To easily identify fact tables, you typically prefix their names with `f_` or `Fact_`.
 
 ## Fact table structure
 
-To describe the structure of a fact table, consider the following example of a sales fact table named `f_Sales`. This example applies good design practices, and each of the groups of columns are described in the following sections.
+To describe the structure of a fact table, consider the following example of a sales fact table named `f_Sales`. This example applies good design practices. Each of the groups of columns are described in the following sections.
 
 ```sql
 CREATE TABLE f_Sales
 (
-    --Dimension keys 
-    OrderDate_Date_FK INT,
-    ShipDate_Date_FK INT,
-    Product_FK INT
-    Salesperson_FK INT
+    --Dimension keys
+    OrderDate_Date_FK INT NOT NULL,
+    ShipDate_Date_FK INT NOT NULL,
+    Product_FK INT NOT NULL,
+    Salesperson_FK INT NOT NULL,
     <…>
     
     --Attributes
@@ -69,17 +69,18 @@ CREATE TABLE f_Sales
 
 ### Primary key
 
-As is the case in this example, the sample fact table doesn't have a [primary key](table-constraints.md) column. That's because it doesn't usually serve a useful purpose, and it would unnecessarily increase the table storage size. A primary key is often implied by the set of dimension keys and attributes.
+As is the case in the example, the sample fact table doesn't have a [primary key](table-constraints.md). That's because it doesn't typically serve a useful purpose, and it would unnecessarily increase the table storage size. A primary key is often implied by the set of dimension keys and attributes.
 
 ### Dimension keys
 
-The sample fact table has various _dimension keys_, which determine the dimensionality of the fact table. Dimension keys are references to the surrogate keys or higher-level attributes in the related dimensions.
+The sample fact table has various _dimension keys_, which determine the dimensionality of the fact table. Dimension keys are references to the surrogate keys (or higher-level attributes) in the related dimensions.
 
-It's an unusual fact table that doesn't include at least one date dimension key.
+> [!NOTE]
+> It's an unusual fact table that doesn't include at least one date dimension key.
 
 A fact table can reference a dimension multiple times. In this case, it's known as a [role-playing dimension](dimensional-modeling-dimension-tables.md#role-playing-dimensions). In this example, the fact table has the `OrderDate_Date_FK` and `ShipDate_Date_FK` dimension keys. Each dimension key represents a distinct _role_, yet there's only one physical date dimension.
 
-It's a good practice to set each dimension key as NOT NULL. During the fact table load, you can use [special dimension members](dimensional-modeling-dimension-tables.md#special-dimension-members) to represent missing, unknown, N/A, or error states.
+It's a good practice to set each dimension key as `NOT NULL`. During the fact table load, you can use [special dimension members](dimensional-modeling-dimension-tables.md#special-dimension-members) to represent missing, unknown, N/A, or error states (if necessary).
 
 ### Attributes
 
@@ -87,15 +88,15 @@ The sample fact table has two _attributes_. Attributes provide additional inform
 
 ### Measures
 
-The sample fact table also has _measures_, like the `Quantity` column. Measure columns are typically numeric and commonly additive (meaning they can be summed, among other aggregations). For more information, see [Measure types](#measure-types) later in this article.
+The sample fact table also has _measures_, like the `Quantity` column. Measure columns are typically numeric and commonly additive (meaning they can be summed, and summarized by using other aggregations). For more information, see [Measure types](#measure-types) later in this article.
 
 ### Audit attributes
 
-The sample fact table also has various _audit attributes_. Audit attributes are optional. They allow you to track when and how fact records were created or modified, and they can include diagnostic or troubleshooting information raised during the Extract, Transform, and Load (ETL) processes. For example, you'll want to track who (or what process) updated a row, and when. Audit attributes can help diagnose a challenging problem, like when an ETL process stops unexpectedly.
+The sample fact table also has various _audit attributes_. Audit attributes are optional. They allow you to track when and how fact records were created or modified, and they can include diagnostic or troubleshooting information raised during Extract, Transform, and Load (ETL) processes. For example, you'll want to track who (or what process) updated a row, and when. Audit attributes can also help diagnose a challenging problem, like when an ETL process stops unexpectedly.
 
 ## Fact table size
 
-Fact tables vary in size. Their size is related to the dimensionality, granularity, number of measures, and amount of history. In comparison to dimensions, fact tables are more narrow (fewer columns) but big or even immense in terms of rows (in excess of billions).
+Fact tables vary in size. Their size corresponds to the dimensionality, granularity, number of measures, and amount of history. In comparison to dimension tables, fact tables are more narrow (fewer columns) but big _or even immense_ in terms of rows (in excess of billions).
 
 ## Fact design concepts
 
@@ -117,19 +118,19 @@ Typically, transaction fact tables store facts at the lowest possible level of g
 
 #### Periodic snapshot fact tables
 
-A _periodic snapshot fact_ table stores measurements at a predefined time, or specific intervals. They provide a summary of key metrics or performance indicators over time, and so they're useful for trend analysis and monitoring change over time. Measures are always [semi-additive](#semi-additive-measures) (described later).
+A _periodic snapshot fact_ table stores measurements at a predefined time, or specific intervals. It provides a summary of key metrics or performance indicators over time, and so it's useful for trend analysis and monitoring change over time. Measures are always [semi-additive](#semi-additive-measures) (described later).
 
 An inventory fact table is a good example of a periodic snapshot table. It's loaded every day with the end-of-day stock balance of every product.
 
-Periodic snapshot tables can be used instead of a transaction fact table when recording large volumes of transactions is expensive and doesn't support any useful analytic requirement. For example, there might be millions of stock movements in a day (which could be stored in a transaction fact table), but your analysis is only concerned with trends of daily stock levels.
+Periodic snapshot tables can be used instead of a transaction fact table when recording large volumes of transactions is expensive, and it doesn't support any useful analytic requirement. For example, there might be millions of stock movements in a day (which could be stored in a transaction fact table), but your analysis is only concerned with trends of end-of-day stock levels.
 
 #### Accumulating snapshot fact tables
 
-An _accumulating snapshot fact_ table stores measurements that accumulate across a well-defined period or workflow. They often record the state of a business process at distinct stages or milestones, which might take days, weeks, or even months to complete.
+An _accumulating snapshot fact_ table stores measurements that accumulate across a well-defined period or workflow. It often records the state of a business process at distinct stages or milestones, which might take days, weeks, or even months to complete.
 
 A fact row is loaded soon after the first event in a process, and then the row is updated in a predictable sequence every time a milestone event occurs. Updates continue until the process completes.
 
-Accumulating snapshot fact table have multiple date dimension keys, each representing a milestone event. Some dimension keys might record a [N/A state](dimensional-modeling-dimension-tables.md#special-dimension-members) until the process arrives at a certain milestone. Measures typically record durations. Durations between milestones can be valuable insights into a business workflow or assembly process, for example.
+Accumulating snapshot fact table have multiple date dimension keys, each representing a milestone event. Some dimension keys might record a [N/A state](dimensional-modeling-dimension-tables.md#special-dimension-members) until the process arrives at a certain milestone. Measures typically record durations. Durations between milestones can provide valuable insight into a business workflow or assembly process.
 
 ### Measure types
 
@@ -145,21 +146,25 @@ A _semi-additive measure_ can be summed across certain dimensions only.
 
 Here are some examples of semi-additive measures.
 
-- Any measure in a periodic snapshot fact table can't be summed across other time periods. For example, you wouldn't sum the age of an inventory item sampled nightly, but you could sum the age of all inventory items on a shelf, each night.
+- Any measure in a periodic snapshot fact table can't be summed across other time periods. For example, you shouldn't sum the age of an inventory item sampled nightly, but you could sum the age of all inventory items on a shelf, each night.
 - A stock balance measure in an inventory fact table can't be summed across other products.
 - Sales revenue in a sales fact table that has a currency dimension key can't be summed across currencies.
 
 #### Non-additive measures
 
-A _non-additive measure_ can't be summed across any dimension. One example is a temperature reading, which by its nature doesn't make sense to add to other readings. Other examples include rates, like unit prices, and ratios. However, it's considered a better practice to store the values used to compute the ratio, which allows the ratio to be calculated if needed. For example, a discount percentage of a sales fact could be stored as a discount amount measure (to be divided by the sales revenue measure). Or, the age of an inventory item on the shelf wouldn't be summed over time, but you might observe a trend in the average age of inventory items. While some measures can't be summed, they're still valid measures. They can be aggregated by using count, distinct count, minimum, maximum, average, and others. Also, non-additive measures can become additive when they're used in calculations. For example, unit price multiplied by order quantity produces sales revenue, which is additive.
+A _non-additive measure_ can't be summed across any dimension. One example is a temperature reading, which by its nature doesn't make sense to add to other readings.
+
+Other examples include rates, like unit prices, and ratios. However, it's considered a better practice to store the values used to compute the ratio, which allows the ratio to be calculated if needed. For example, a discount percentage of a sales fact could be stored as a discount amount measure (to be divided by the sales revenue measure). Or, the age of an inventory item on the shelf shouldn't be summed over time, but you might observe a trend in the average age of inventory items.
+
+While some measures can't be summed, they're still valid measures. They can be aggregated by using count, distinct count, minimum, maximum, average, and others. Also, non-additive measures can become additive when they're used in calculations. For example, unit price multiplied by order quantity produces sales revenue, which is additive.
 
 ### Factless fact tables
 
-When a fact table doesn't have any measure columns, it's called a _factless fact table_. A factless fact table typically records events or occurrences, like students attending class. From an analytics perspective, a measurement can be achieved by counting fact rows.
+When a fact table doesn't contain any measure columns, it's called a _factless fact table_. A factless fact table typically records events or occurrences, like students attending class. From an analytics perspective, a measurement can be achieved by counting fact rows.
 
 ### Aggregate fact tables
 
-An _aggregate fact table_ represents a rollup of a base fact table to a lower dimensionality and/or higher grain. Its purpose is to accelerate query performance for commonly queried dimensions.
+An _aggregate fact table_ represents a rollup of a base fact table to a lower dimensionality and/or higher granularity. Its purpose is to accelerate query performance for commonly queried dimensions.
 
 > [!NOTE]
 > A Power BI semantic model can generate [user-defined aggregations](/power-bi/transform-model/aggregations-advanced) to achieve the same result, or use the data warehouse aggregate fact table by using [DirectQuery storage mode](/power-bi/transform-model/aggregations-advanced#storage-modes).
