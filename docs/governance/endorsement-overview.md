@@ -7,36 +7,40 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 06/14/2024
+ms.date: 06/16/2024
 ---
 
 # Endorsement
 
 Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. Identifying trustworthy, authoritative items can be difficult. Endorsement is a way to make it easier for users to find the high-quality items they need. Endorsed items are clearly labeled, both in Fabric and in other places where users look for Fabric items (such for Power BI semantic models in Excel). Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists.
 
-There are three kinds of endorsement: **promotion** and **certification**, and **master data**.
+There are two kinds of endorsement: **promotion** and **certification**. See the following sections for details.
 
-* **Promotion**: Promotion enables users to highlight items that they think are valuable, worthwhile, and ready for others to use. It encourages the collaborative spread of content within the organization.
+> [!NOTE]
+> A third type of endorsement, *master data* is scheduled for public preview release in July 2024. Currently, it might appear as a disabled option in some tenants, but it can't be used. At public preview, master data endorsement will be available on all tenants. In the meantime, see the [release plans](release-plan/admin-governance#fabric-items-master-data) for more information about master data.
 
-    Any content owner, or any member with write permissions the item, can simply promote the item when they think it's good enough for sharing.
+## Promotion
 
-    [Learn how to promote your items](../get-started/endorsement-promote-certify.md#promote-items).
+Promotion enables users to highlight items that they think are valuable, worthwhile, and ready for others to use. It encourages the collaborative spread of content within the organization.
 
-* **Certification**: Certification means that the item meets the organization's quality standards and can be regarded as reliable and authoritative, and is ready for use across the organization.
+Any content owner, or any member with write permissions the item, can simply promote the item when they think it's good enough for sharing.
 
-    Only a [select group of reviewers (defined by the Fabric administrator)](../admin/endorsement-setup.md) is authorized to certify items. Item owners who wish to see their item certified and aren't authorized to certify it themselves need to follow their organization's guidelines about getting it certified.
+[Learn how to promote your items](../get-started/endorsement-promote-certify.md#promote-items).
 
-    Learn how to [certify items](../get-started/endorsement-promote-certify.md#certify-items) or [request certification](../get-started/../get-started/endorsement-promote-certify.md#request-item-certification).
+### Certification
 
-    **Certification is available only if a Fabric administrator has [enabled and configured](../admin/endorsement-setup.md) it for your organization**.
+Certification means that the item meets the organization's quality standards and can be regarded as reliable and authoritative, and is ready for use across the organization.
 
-    > [!NOTE]
-    > Certification enablement and configuration can be delegated to domain administrators, making it possible to specify a different set of reviewers for each domain. For more information, see [Set up item certification](../admin/endorsement-setup.md).
+Only a [select group of reviewers (defined by the Fabric administrator)](../admin/endorsement-setup.md) is authorized to certify items. Item owners who wish to see their item certified and aren't authorized to certify it themselves need to follow their organization's guidelines about getting it certified.
 
-* **Master data**: Master data indicates that the data in the item is a core source of organizational data.
+Learn how to [certify items](../get-started/endorsement-promote-certify.md#certify-items) or [request certification](../get-started/../get-started/endorsement-promote-certify.md#request-item-certification).
 
-    > [!NOTE]
-    > Master data endorsement is currently disabled for all tenants. It will available in early July 2024.
+**Certification is available only if a Fabric administrator has [enabled and configured](../admin/endorsement-setup.md) it for your organization**.
+
+> [!NOTE]
+> Certification enablement and configuration can be delegated to domain administrators, making it possible to specify a different set of reviewers for each domain. For more information, see [Set up item certification](../admin/endorsement-setup.md).
+
+## How is endorsement represented
 
 The following image illustrates how endorsed, promoted, and certified semantic models are clearly identified when you're searching for an item.
 
