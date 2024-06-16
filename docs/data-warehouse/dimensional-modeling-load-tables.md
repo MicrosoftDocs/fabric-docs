@@ -68,7 +68,7 @@ Staging source data can help support data loading and transformation requirement
 Data in staging tables should never be made available to business users. It's only relevant to the ETL process.
 
 > [!NOTE]
-> When your data is stored in a [Fabric lakehouse](../data-engineering/lakehouse-overview.md), it might not be necessary to stage its data in the warehouse. If it implements a [medallion architecture](../fabric/onelake/onelake-medallion-lakehouse-architecture.md), you could source its data from either the bronze, silver, or gold layer.
+> When your data is stored in a [Fabric lakehouse](../data-engineering/lakehouse-overview.md), it might not be necessary to stage its data in the warehouse. If it implements a [medallion architecture](../onelake/onelake-medallion-lakehouse-architecture.md), you could source its data from either the bronze, silver, or gold layer.
 
 We recommend that you create a schema in the warehouse, possibly named `staging`. Staging tables should resemble the source tables as closely as possible in terms of column names and data types. The contents of each table should be removed at the start of the ETL process.
 
@@ -137,7 +137,7 @@ Consider logging:
 
 Processing a dimension table involves synchronizing the data warehouse data with the source systems. Source data is first transformed and prepared for loading into its dimension table. This data is then matched with the existing dimension table data by joining on the business keys. It's then possible to determine whether the source data represents new or modified data. When the dimension table requires a slowly changing dimension (SCD) Type 1, changes are applied by updating the existing dimension table rows. When the table requires Type 2 changes, the existing version is expired and a new version is inserted.
 
-:::image type="content" source="media/dimensional-modeling-load-tables/load-dimension-table.svg" alt-text="Diagram shows a flow that describes how new and changed source rows are loaded to a dimension table, as described in the previous paragraph." border="false":::
+:::image type="content" source="media/dimensional-modeling-load-tables/process-dimension-table.svg" alt-text="Diagram shows a flow that describes how new and changed source rows are loaded to a dimension table, as described in the previous paragraph." border="false":::
 
 For example:
 
@@ -209,7 +209,7 @@ If a dimension key lookup fails, it could indicate an integrity issue with the s
 
 Another approach, relevant when there's confidence that the [natural key](dimensional-modeling-dimension-tables.md#natural-keys) is valid, is to insert a new dimension member and then store its surrogate key value. For more information, see [Inferred dimension members](#inferred-dimension-members) later in this section.
 
-:::image type="content" source="media/dimensional-modeling-load-tables/load-fact-table.svg" alt-text="Diagram shows a flow that describes how new source rows are loaded to a fact table, as described in the previous paragraph." border="false":::
+:::image type="content" source="media/dimensional-modeling-load-tables/process-fact-table.svg" alt-text="Diagram shows a flow that describes how new source rows are loaded to a fact table, as described in the previous paragraph." border="false":::
 
 Whenever possible, a fact table should be loaded incrementally, meaning that new facts are detected and inserted.
 
