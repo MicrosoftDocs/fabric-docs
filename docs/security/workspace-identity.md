@@ -78,7 +78,7 @@ In the future, workspace admins will be able to enable the use of workspace iden
 
 ### Administer the workspace identity in Fabric
 
-Fabric administrators can administer the workspace identities created in their tenant in the Admin portal.
+Fabric administrators can administer the workspace identities created in their tenant on the [Fabric identities tab](../admin/fabric-identities-manage.md) in the admin portal.
 
 1. Navigate to the **Fabric identities** tab in the Admin portal.
 1. Select a workspace identity, and then select **Details**.
@@ -86,8 +86,6 @@ Fabric administrators can administer the workspace identities created in their t
 1. You can also delete a workspace identity.
    > [!NOTE]
    > Workspace identities cannot be restored after deletion. Be sure to review the consequences of deleting a workspace identity described in [Delete a workspace identity](#delete-a-workspace-identity).
-
-For more information about the Fabric identities tab, see [Manage Fabric identities](../admin/fabric-identities-manage.md).
    
 ### Administer the workspace identity in Purview
 
@@ -154,3 +152,4 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 ## Related content
 
 * [Trusted workspace access](security-trusted-workspace-access.md)
+* [Fabric identities](../admin/fabric-identities-manage.md)
