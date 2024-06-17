@@ -19,7 +19,7 @@ On the **Fabric identities** tab, you see a list of all the Fabric identities in
 
 :::image type="content" source="./media/fabric-identities-manage/fabric-identities-tab.png" alt-text="Screenshot showing the Fabric identities tab in the Fabric admin portal." lightbox="./media/fabric-identities-manage/fabric-identities-tab.png":::
 
-The columns of the list of identities are described below
+The columns of the list of identities are described following table.
 
 | Column | Description |
 | --------- | --------- |
@@ -38,11 +38,11 @@ The columns of the list of identities are described below
 |:------------------------------|:---------------------------------------------------------------------------------|
 | Workspace name                | The name of the workspace associated with the identity.                          |
 | State                         | The state of the identity.                                                       |
-| State changed date            | The date lf the last change of state of the identity.                            |
+| State changed date            | The date of the last change of state of the identity.                            |
 | Service principal ID          | The ID of the service principal associated with the identity.                    |
 | Application ID                | The ID of the application associated with the identity.                          |
 | Tenant ID                     | The ID of the tenant the identity is defined in.                                 |
-| Role                          | The role that is assigned to the service principal accociated with the identity. |
+| Role                          | The role that is assigned to the service principal associated with the identity. |
 | Allowed in untrusted contexts |                                                                                  |
 
 ## Delete an identity
