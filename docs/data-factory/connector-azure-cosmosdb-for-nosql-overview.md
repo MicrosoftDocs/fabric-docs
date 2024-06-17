@@ -25,8 +25,8 @@ The Azure Cosmos DB for NoSQL connector supports the following capabilities in d
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Key |
-| **Lookup activity** | None | Key |
+| **Copy activity (source/destination)** | None <br> On-premises | Key |
+| **Lookup activity** | None <br> On-premises | Key |
 
 To learn about how to connect to Azure Cosmos DB for NoSQL in data pipelines, go to [Set up your Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md#set-up-your-connection-in-a-data-pipeline).
 

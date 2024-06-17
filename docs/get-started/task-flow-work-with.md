@@ -5,7 +5,7 @@ ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 05/13/2024
+ms.date: 06/06/2024
 
 #customer intent: As a data analytics solution architect, I need to know to create tasks so that I can build a task flow that illustrates my project and that engineers can use to guide and facilitate their work on the project. As an engineer, I want to understand how to use task to organize and facilitate my work.
 ---
@@ -34,6 +34,14 @@ Select a task to display the task details pane. The following image shows the ma
 1. [Create new item for task](#create-a-new-item-for-a-task)
 1. [Assign existing items to task](#assign-existing-items-to-a-task)
 1. [Delete task](#delete-a-task)
+
+## Resize or hide the taskflow
+
+To resize the task flow, drag the resize bar on the horizontal separator up or down.
+
+To show/hide the task flow, select the show/hide control at the right side of the separator.
+
+:::image type="content" source="./media/task-flow-work-with/resize-show-hide-task-flow-controls.png" alt-text="Screenshot showing the Show/Hide control at the right side of the horizontal separation bar." lightbox="./media/task-flow-work-with/resize-show-hide-task-flow-controls.png" border="false":::
 
 ## Add a task 
 
