@@ -8,7 +8,7 @@ author: eisber
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 06/04/2024
+ms.date: 06/17/2024
 ms.search.form: semantic link
 ---
 
@@ -16,21 +16,23 @@ ms.search.form: semantic link
 
 This article describes semantic functions and how they can help data scientists and data engineers discover functions that are relevant to the FabricDataFrame or FabricSeries they're working on. Semantic functions are part of the Microsoft Fabric semantic link feature.
 
-For Spark 3.4 and above, semantic link is available in the default Fabric runtime, and you don't need to install it. For Spark 3.3 or below, or to update to the most recent version of semantic link, run the following command to install the Python semantic link (SemPy) library:
+For Spark 3.4, semantic link is available in the default Fabric runtime, but the `semantic-link-functions` package that includes the semantic function logic needs to be installed manually. To update to the most recent version of the Python semantic link (SemPy) library, run the following command:
 
 ```python
 %pip install -U semantic-link
 ```
 
-[FabricDataFrame](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) dynamically exposes semantic functions based on logic each function defines. For example, the `is_holiday` function appears in the autocomplete suggestions when you work on a FabricDataFrame that contains both a datetime column and a country column.
+A [FabricDataFrame](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) dynamically exposes semantic functions based on the logic each function defines.
+For example, the `is_holiday` function appears in the autocomplete suggestions when you work on a FabricDataFrame that contains both a datetime column and a country column.
 
-Each semantic function uses information about the data, data types, and metadata (like Power BI data categories) in the FabricDataFrame to determine its relevance to the particular data you're working on.
+Each semantic function uses information about the data, data types, and metadata (like Power BI data categories) in the FabricDataFrame or FabricSeries to determine its relevance to the particular data you're working on.
 
-Semantic functions are automatically discovered when annotated with the `@semantic_function` decorator. You can think of semantic functions as being like [C# extension methods](/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) applied to the DataFrame concept.
+Semantic functions are automatically discovered when annotated with the `@semantic_function` decorator.
+You can think of semantic functions as being like [C# extension methods](/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) applied to the DataFrame concept.
 
 ## Semantic functions autocomplete suggestions
 
-Semantic functions are available in the autocomplete suggestions when you work with a FabricDataFrame. Use Ctrl+Space to trigger autocomplete.
+Semantic functions are available in the autocomplete suggestions when you work with a FabricDataFrame or FabricSeries. Use Ctrl+Space to trigger autocomplete.
 
 :::image type="content" source="media/semantic-link-semantic-functions/semantic-functions.png" alt-text="Screenshot of semantic functions in autocomplete suggestions." lightbox="media/semantic-link-semantic-functions/semantic-functions.png":::
 
@@ -71,7 +73,7 @@ df_geo.explore()
 
 ## Built-in semantic functions
 
-The SemPy Python library provides a set of semantic functions out of the box, which include the following built-in functions:
+The SemPy Python library provides a set of built-in semantic functions that are available out of the box. These built-in functions include:
 
 - `is_holiday(...)` uses the [holidays](https://pypi.org/project/holidays/) Python package to return `true` if the date is a holiday in the given country.
 - `to_geopandas(...)` converts a FabricDataFrame to a [GeoPandas](https://geopandas.org/en/stable/) GeoDataFrame.
@@ -82,7 +84,7 @@ The SemPy Python library provides a set of semantic functions out of the box, wh
 
 Semantic functions are designed for extensibility. You can define your own semantic functions within your notebook or as separate Python modules.
 
-To use a semantic function outside of a notebook, declare the semantic function within the `sempy.functions` module. The following code example shows the definition of a semantic function `is_capital` that returns `true` if a city is the capital of a country.
+To use a semantic function outside of a notebook, declare the semantic function within the `sempy.functions` module. The following code example shows the definition of a semantic function `_is_capital` that returns `true` if a city is the capital of a country.
 
 ```python
 from sempy.fabric import FabricDataFrame, FabricSeries
@@ -105,7 +107,7 @@ def _is_capital(df: FabricDataFrame, col_country: str, col_city: str) -> FabricS
 
 In the preceding code example:
 
-- The `col_country` and `col_city` parameters are annotated with `CountryMatcher` and `CityMatcher` respectively. This annotation allows the semantic function to be automatically discovered in a FabricDataFrame that has the corresponding metadata.
+- The `col_country` and `col_city` parameters are annotated with `CountryMatcher` and `CityMatcher`, respectively. This annotation allows the semantic function to be automatically discovered when working with a FabricDataFrame that has the corresponding metadata.
 - Calling the function also supplies standard data types such as `str`, `int`, `float`, and `datetime` to define required input columns.
 - The type annotation of the first parameter `df` shows that the function is applicable to a FabricDataFrame rather than a [FabricSeries](/python/api/semantic-link-sempy/sempy.fabric.fabricseries).
 
@@ -114,4 +116,4 @@ In the preceding code example:
 - [SemPy functions package](/python/api/semantic-link-sempy/sempy.functions)
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
 - [Power BI connectivity with semantic link](semantic-link-power-bi.md)
-- [Semantic link propagation from semantic models](semantic-link-semantic-propagation.md)
+- [Semantic data propagation from semantic models](semantic-link-semantic-propagation.md)
