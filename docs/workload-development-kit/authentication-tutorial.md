@@ -31,7 +31,7 @@ To make sure Azure Storage is provisioned in the tenant:
 
     :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
-If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-automaticlly-using-a-script-manually). If not, a tenant admin needs to provision it.
+If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-manually). If not, a tenant admin needs to provision it.
 
 Ask your tenant admin to open **Windows PowerShell** as administrator and run the following script:
   
@@ -159,7 +159,7 @@ This example demonstrates how to use the `CreateDevAADApp.ps1` script with comma
    * `PublisherTenantId`: The tenant ID of the publisher  
    * `ClientId`: Your application ID (you can find it in Microsoft Entra ID under overview).  
    * `ClientSecret`: The [secret you created](#generate-a-secret-for-your-application) when configuring the Entra app.  
-   * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id-automaticlly-using-a-script-manually) in the Entra app.  
+   * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id-manually) in the Entra app.  
 
 1. Configure your *workloadManifest.xml*. Go to `src/Packages/manifest/files/WorkloadManifest.xml` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure your `AppId`, `redirectUri` and `ResourceId` (ID URI) under **AADApps**.
 ```
