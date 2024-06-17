@@ -1,6 +1,6 @@
 ---
-title: Monitor Spark capacity consumption
-description: Learn how to monitor Spark capacity consumption.
+title: Monitor Apache Spark capacity consumption
+description: Learn how to monitor Apache Spark capacity consumption.
 ms.reviewer: snehagunda
 author: jejiang
 ms.author: jejiang
@@ -12,9 +12,9 @@ ms.date: 11/15/2023
 ms.search.form: Monitor Spark capacity consumption
 ---
 
-# Monitor Spark capacity consumption
+# Monitor Apache Spark capacity consumption
 
-The purpose of this article is to offer guidance for admins who want to monitor activities in the capacities they manage. By utilizing the Spark capacity consumption reports available in the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), admins can gain insights into the billable Spark capacity consumption for items, including Lakehouse, Notebook, and Spark job definitions. Some Spark capacity consumption activities aren't reported in the app.
+The purpose of this article is to offer guidance for admins who want to monitor activities in the capacities they manage. By utilizing the Apache Spark capacity consumption reports available in the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), admins can gain insights into the billable Spark capacity consumption for items, including Lakehouse, Notebook, and Apache Spark job definitions. Some Spark capacity consumption activities aren't reported in the app.
 
 ## Spark capacity consumption reported
 
@@ -25,7 +25,7 @@ The following operations from lakehouses, notebooks, and Spark job definitions a
 | **Lakehouse operations** | Lakehouse | Users preview table in the Lakehouse explorer. |
 | **Lakehouse table load** | Lakehouse | Users load delta table in the Lakehouse explorer. |
 | **Notebook run** | Synapse Notebook | Synapse Notebook runs manually by users. |
-| **Notebook HC run** | Synapse Notebook | Synapse Notebook runs under the high concurrency Spark session. |
+| **Notebook HC run** | Synapse Notebook | Synapse Notebook runs under the high concurrency Apache Spark session. |
 | **Notebook scheduled run** | Synapse Notebook | Synapse Notebook runs triggered by notebook scheduled events. |
 | **Notebook pipeline run** | Synapse Notebook | Synapse Notebook runs triggered by pipeline. |
 | **Notebook VS Code run** | Synapse Notebook | Synapse Notebook runs in VS Code. |
@@ -44,7 +44,7 @@ There are some Spark capacity consumption activities that aren't reported in the
 
 ## Capacity consumption reports
 
-All Spark related operations are classified as [background operations](/power-bi/enterprise/service-premium-smoothing). Capacity consumption from Spark is displayed under a notebook, a Spark job definition, or a lakehouse, and is aggregated by operation name and item.
+All Spark related operations are classified as [background operations](../enterprise/fabric-operations.md#background-operations). Capacity consumption from Spark is displayed under a notebook, a Spark job definition, or a lakehouse, and is aggregated by operation name and item.
 
 :::image type="content" source="media\monitor-spark-capacity-consumption\items-report.png" alt-text="Screenshot showing items report." lightbox="media\monitor-spark-capacity-consumption\items-report.png":::
 

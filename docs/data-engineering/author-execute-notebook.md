@@ -68,11 +68,11 @@ You can use multiple languages in a notebook by specifying the language magic co
 
 | **Magic command** | **Language** | **Description** |
 |---|---|---|
-| %%pyspark | Python | Execute a **Python** query against Spark Context. |
-| %%spark | Scala | Execute a **Scala** query against Spark Context. |
-| %%sql | SparkSQL | Execute a **SparkSQL** query against Spark Context. |
-| %%html | Html | Execute a **HTML** query against Spark Context. |
-| %%sparkr | R | Execute a **R** query against Spark Context. |
+| %%pyspark | Python | Execute a **Python** query against Apache Spark Context. |
+| %%spark | Scala | Execute a **Scala** query against Apache Spark Context. |
+| %%sql | SparkSQL | Execute a **SparkSQL** query against Apache Spark Context. |
+| %%html | Html | Execute a **HTML** query against Apache Spark Context. |
+| %%sparkr | R | Execute a **R** query against Apache Spark Context. |
 
 ### IDE-style IntelliSense
 
@@ -88,13 +88,13 @@ The IntelliSense features are at different levels of maturity for different lang
 | SparkR | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 
 > [!NOTE]
-> You must have an active Spark session to use IntelliSense code completion.
+> You must have an active Apache Spark session to use IntelliSense code completion.
 
 ### Code snippets
 
 Fabric notebooks provide code snippets that help you easily write commonly used code patterns, like:
 
-- Reading data as a Spark DataFrame
+- Reading data as an Apache Spark DataFrame
 - Drawing charts with Matplotlib
 
 Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellisense) mixed with other suggestions. The code snippet contents align with the code cell language. You can see available snippets by typing **Snippet**. You can also type any keyword to see a list of relevant snippets. For example, if you type **read**, you see the list of snippets to read data from various data sources.
@@ -298,9 +298,9 @@ A step-by-step cell execution status is displayed beneath the cell to help you s
 
 :::image type="content" source="media\author-execute-notebook\cell-run-status.png" alt-text="Screenshot showing an example of cell run status details." lightbox="media\author-execute-notebook\cell-run-status.png":::
 
-### Inline Spark job indicator
+### Inline Apache Spark job indicator
 
-The Fabric notebook is Spark based. Code cells are executed on the Spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar that appears to help you understand the job execution status. The number of tasks per each job or stage helps you to identify the parallel level of your Spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
+The Fabric notebook is Apache Spark based. Code cells are executed on the Apache Spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar that appears to help you understand the job execution status. The number of tasks per each job or stage helps you to identify the parallel level of your Spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
 
 You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you with useful suggestions to help refine and debug the code.
 
@@ -439,7 +439,7 @@ When assigning parameter values, you can use the [pipeline expression language](
 
 ## Spark session configuration magic command
 
-You can personalize your Spark session with the magic command **%%configure**. Fabric notebook supports customized vCores, Memory of the Driver and Executor, Spark properties, mount points, pool, and the default lakehouse of the notebook session. They can be used in both interactive notebook and pipeline notebook activities. We recommend that you run the **%%configure** command at the beginning of your notebook, or you must restart the Spark session to make the settings take effect.
+You can personalize your Spark session with the magic command **%%configure**. Fabric notebook supports customized vCores, Memory of the Driver and Executor, Apache Spark properties, mount points, pool, and the default lakehouse of the notebook session. They can be used in both interactive notebook and pipeline notebook activities. We recommend that you run the **%%configure** command at the beginning of your notebook, or you must restart the Spark session to make the settings take effect.
 
 ```json
 %%configure

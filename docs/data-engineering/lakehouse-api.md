@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 06/12/2024
 ms.search.form: lakehouse api
 ---
 
@@ -28,7 +28,9 @@ The Microsoft Fabric Rest API provides service endpoint for the CRUD operation o
 
 ## Prerequisites
 
-Microsoft Fabric Rest API defines a unified endpoint for operations. The endpoint is `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items`. The placeholders `{workspaceId}` and `{lakehouseId}` should be replaced with the appropriate values when issuing the commands exemplified in this article.
+* To use the Fabric REST API, you first need to [get a Microsoft Entra token for Fabric service](/rest/api/fabric/articles/get-started/fabric-api-quickstart). Then use that token in the authorization header of the API call.
+
+* Microsoft Fabric Rest API defines a unified endpoint for operations. The endpoint is `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items`. The placeholders `{workspaceId}` and `{lakehouseId}` should be replaced with the appropriate values when issuing the commands exemplified in this article.
 
 ## Lakehouse CRUD
 

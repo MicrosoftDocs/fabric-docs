@@ -12,6 +12,7 @@ ms.custom:
 ms.date: 11/15/2023
 ms.search.form:
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # AI services in Fabric (preview)

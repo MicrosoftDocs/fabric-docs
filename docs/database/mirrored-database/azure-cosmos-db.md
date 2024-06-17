@@ -9,6 +9,7 @@ ms.service: fabric
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Mirroring Azure Cosmos DB (Preview)

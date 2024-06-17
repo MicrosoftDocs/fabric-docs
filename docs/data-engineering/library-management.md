@@ -87,6 +87,7 @@ The inline commands for managing Python libraries are disabled in notebook pipel
 > [!NOTE]
 >
 > The `%pip install` may lead to inconsistent results from time to time. It's recommended to install library in an environment and use it in the pipeline.
+> In notebook reference runs, inline commands for managing Python libraries are not supported. To ensure the correctness of execution, it is recommended to remove these inline commands from the referenced notebook.
 
 We recommend `%pip` instead of `!pip`. `!pip` is an IPython built-in shell command, which has the following limitations:
 
