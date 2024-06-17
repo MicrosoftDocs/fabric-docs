@@ -86,6 +86,8 @@ Fabric administrators can administer the workspace identities created in their t
 1. You can also delete a workspace identity.
    > [!NOTE]
    > Workspace identities cannot be restored after deletion. Be sure to review the consequences of deleting a workspace identity described in [Delete a workspace identity](#delete-a-workspace-identity).
+
+For more information about the Fabric identities tab, see [Manage Fabric identities](../admin/fabric-identities-manage.md).
    
 ### Administer the workspace identity in Purview
 
