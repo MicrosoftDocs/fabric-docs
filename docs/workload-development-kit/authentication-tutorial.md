@@ -132,17 +132,17 @@ Under ***API permissions**, add the desired permissions for your application. Fo
 
 Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null or "1".
 
-## Configuring Your Application in Microsoft Entra Identity automaticlly using a script
+## Configure your application in Microsoft Entra Identity automatically by using a script
 
-For a streamlined setup of your application in Microsoft Entra Identity, you may opt to utilize an automated PowerShell script. Follow the steps below to configure your application:
+For a streamlined setup of your application in Microsoft Entra Identity, you can opt to use an automated PowerShell script. Follow these steps to configure your application:
 
 1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2.](/cli/azure/).
-2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1. You will be prompted to sign-in using the credentials of the user account under which you intend to create the application.
+2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1). You will be prompted to sign in by using the credentials of the user account under which you intend to create the application.
 3. **Provide Required Information**: When prompted, enter the desired name for your application, the workload name (prefixed with "Org."), and your tenant ID.
 
 Upon successful execution of the script, it will output all necessary details to configure your workload. Additionally, it will provide a direct URL to your application and an administrative consent URL for tenant-wide application authorization.
 
-### Example of Usage
+### Example of usage
 
 To create an application named "myWorkloadApp" with the workload name "Org.Myworkload" for the specified tenant, run the following command in PowerShell:
 
