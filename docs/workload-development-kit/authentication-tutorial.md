@@ -31,7 +31,7 @@ To make sure Azure Storage is provisioned in the tenant:
 
     :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
-If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id). If not, a tenant admin needs to provision it.
+If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-automaticlly-using-a-script-manually). If not, a tenant admin needs to provision it.
 
 Ask your tenant admin to open **Windows PowerShell** as administrator and run the following script:
   
@@ -136,7 +136,7 @@ Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null
 
 For a streamlined setup of your application in Microsoft Entra Identity, you may opt to utilize an automated PowerShell script. Follow the steps below to configure your application:
 
-1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2.](https://learn.microsoft.com/en-us/cli/azure/).
+1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2.](/cli/azure/).
 2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1. You will be prompted to sign-in using the credentials of the user account under which you intend to create the application.
 3. **Provide Required Information**: When prompted, enter the desired name for your application, the workload name (prefixed with "Org."), and your tenant ID.
 
@@ -159,7 +159,7 @@ This example demonstrates how to use the `CreateDevAADApp.ps1` script with comma
    * `PublisherTenantId`: The tenant ID of the publisher  
    * `ClientId`: Your application ID (you can find it in Microsoft Entra ID under overview).  
    * `ClientSecret`: The [secret you created](#generate-a-secret-for-your-application) when configuring the Entra app.  
-   * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id) in the Entra app.  
+   * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id-automaticlly-using-a-script-manually) in the Entra app.  
 
 1. Configure your *workloadManifest.xml*. Go to `src/Packages/manifest/files/WorkloadManifest.xml` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure your `AppId`, `redirectUri` and `ResourceId` (ID URI) under **AADApps**.
 ```
