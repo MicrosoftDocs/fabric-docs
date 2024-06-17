@@ -74,7 +74,7 @@ Inbound OneLake communication also enforces TLS 1.2 and negotiates to TLS 1.3, w
 
 ## Private links
 
-Fabric doesn’t currently support private link access to OneLake data via non-Fabric products and Spark.
+Fabric doesn’t currently support private link access to OneLake data via non-Fabric products and Apache Spark.
 
 ## Allow apps running outside of Fabric to access data via OneLake
 

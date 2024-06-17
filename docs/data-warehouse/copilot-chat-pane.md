@@ -12,6 +12,7 @@ ms.custom:
   - build-2024
   - build-2024-dataai
   - build-2024-fabric
+ms.collection: ce-skilling-ai-copilot
 ---
 # How to: Use the Copilot chat pane for Synapse Data Warehouse
 

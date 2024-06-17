@@ -15,9 +15,7 @@ ms.date: 05/21/2024
 This article describes how to set alerts on Azure Blob Storage events in Real-Time hub.
 
 
-
-> [!NOTE]
-> Consuming Fabric events via eventstream isn't supported if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
+[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
 ## Launch the Set alert page 
 

@@ -4,7 +4,7 @@ description: A known issue is posted where creating or opening a Dataflow Gen2 d
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/01/2024
+ms.date: 06/11/2024
 ms.custom: known-issue-664
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-664
 
 You aren't able to create a new or open an existing Dataflow Gen2 dataflow. Instead, you see a spinner for a long time and then see an error message.
 
-**Status:** Open
+**Status:** Fixed: June 11, 2024
 
 **Product Experience:** Data Factory
 

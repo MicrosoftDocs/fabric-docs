@@ -4,8 +4,8 @@ description: This article discusses best practices for schema design in Azure Da
 ms.reviewer: avnera
 ms.author: yaschust
 author: YaelSchuster
-ms.topic: conceptual
-ms.date: 01/09/2024
+ms.topic: concept-article
+ms.date: 06/06/2024
 ---
 # Schema optimization best practices
 
