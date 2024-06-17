@@ -23,6 +23,9 @@ To enable schema support for your lakehouse, check the box next to **Lakehouse s
 
 :::image type="content" source="media\lakehouse-schemas\newlakehouse.png" alt-text="Screenshot showing the new lakehouse dialog.":::
 
+> [!IMPORTANT]
+> Preview limitation requires workspace name contain only alphanumeric characters. If special characters will be used in workspace names some of Lakehouse features won't work.
+
 Once your lakehouse is ready, you can find a default schema named **dbo** under **Tables**. This schema is always there and can't be changed or removed. To make a new schema, hover over **Tables**, select on **…**, and choose **New schema**. After typing your schema name and clicking **Create**, you'll see your schema listed under **Tables** in alphabetical order.
 
 :::image type="content" source="media\lakehouse-schemas\newschema.png" alt-text="Screenshot showing the new lakehouse schema dialog.":::
@@ -40,12 +43,14 @@ You can use Lakehouse Explorer to arrange your tables and drag and drop table na
 
 :::image type="content" source="media\lakehouse-schemas\movetables.gif" alt-text="Animation of moving tables between schemas.":::
 
-> [!IMPORTANT]
+> [!CAUTION]
 > If you change the table, you also need to change items that uses that table, such as notebook code or dataflows, so that they use the right schema.
 
 ## Bringing multiple tables with schema shortcut
 
 To reference multiple Delta tables from other Fabric lakehouse or external storage, use schema shortcut that displays all tables under the chosen schema or folder. Any changes to the tables in the source location also appear in the schema. To create a schema shortcut, hover over **Tables**, select on **…**, and choose **New schema shortcut**. Then select a schema on another lakehouse, or a folder with Delta tables on your external storage like Azure Data Lake Storage (ADLS) Gen2. That creates a new schema with your referenced tables.
+
+:::image type="content" source="media\lakehouse-schemas\schemashortcut.png" alt-text="Screenshot showing the new lakehouse schema shortcut.":::
 
 ## Accessing lakehouse schemas for Power BI reporting
 
@@ -74,18 +79,19 @@ SELECT *
 
 ## Public preview limitations
 
+Below listed unsupported features/functionalities are for current release of public preview. They'll be resolved in the coming releases before General Availability.
 
 | Unsupported Features/ Functionality | Notes |
 |-|-|
-| Git (CI/CD)	| Git integration is not supported. Exporting schema enabled Lakehouse would export as a non-schema Lakehouse. Hence, only non-schema Lakehouses are imported.|
-| Non-Delta, Managed Table Schema	| Getting schema for managed, non-Delta formatted tables (e.g. CSV) is not supported. The customer would need to work around by using Spark. Expanding these tables will not show any schema information in the UX. |
-| External Spark Tables	| External Spark Table operations (e.g. discovery, getting schema, etc.) are not supported. These tables will be unidentified in the UX. |
-| Public API	| Public APIs (List Tables, Load Table, exposing defaultSchema extended property etc.) are not supported for schema enabled Lakehouse. Existing public APIs called on a schema enabled Lakehouse will throw a user error. Item properties for a schema enabled Lakehouse will not include the new defaultSchema property. |
-| Table Maintenance	| Not supported and is not shown in the UX explorer |
-| Update Table Properties	 | Not supported and is not shown in the UX explorer |
-| Spark based Table Preview with Spark 3.5	| Previewing a table using Spark 3.5 runtime is not supported. A user error will be shown. |
-| Spark based Table Preview with workspace name containing special characters	| Previewing a Lakehouse schema table belonging to a workspace with special characters (e.g. space, slashes) using Spark is not supported. A user error will be shown. |
-| Migration	| Migration of existing non-schema Lakehouses to schema Lakehouses is not supported yet. |
+| Git (CI/CD)	| Git integration isn't supported. Exporting schema enabled Lakehouse would export as a nonschema Lakehouse. Hence, only nonschema Lakehouses are imported.|
+| Non-Delta, Managed Table Schema	| Getting schema for managed, non-Delta formatted tables (for example, CSV) isn't supported. Expanding these tables in Lakehouse Explorer doesn't show any schema information in the UX. |
+| External Spark Tables	| External Spark Table operations (for example, discovery, getting schema, etc.) aren't supported. These tables are unidentified in the UX. |
+| Public API	| Public APIs (List Tables, Load Table, exposing defaultSchema extended property etc.) aren't supported for schema enabled Lakehouse. Existing public APIs called on a schema enabled Lakehouse results an error. |
+| Table Maintenance	| Not supported. |
+| Update Table Properties	 | Not supported. |
+| Spark 3.5	| Spark 3.5 runtime isn't supported |
+| Workspace name containing special characters	| Workspace with special characters (for example, space, slashes) isn't supported. A user error is shown. |
+| Migration	| Migration of existing nonschema Lakehouses to schema Lakehouses isn't supported. |
 
 
 ## Related content
