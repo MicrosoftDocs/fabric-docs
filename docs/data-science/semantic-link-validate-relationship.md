@@ -14,7 +14,7 @@ ms.search.form: semantic link
 
 # Explore and validate relationships in semantic models and dataframes
 
-In this article, you learn to use the Python SemPy semantic link functions to discover and validate relationships in your Power BI semantic models and pandas DataFrames.
+In this article, you learn to use the SemPy semantic link functions to discover and validate relationships in your Power BI semantic models and pandas DataFrames.
 
 In data science and machine learning, it's important to understand the structure and relationships within your data. Power BI is a powerful tool that allows you to model and visualize these structures and relationships. To gain more insights or build machine learning models, you can dive deeper by using the semantic link functions in the SemPy library modules.
 
@@ -32,15 +32,7 @@ Data scientists and business analysts can use SemPy functions to list, visualize
 
 - [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
-## Use SemPy functions in semantic models
-
-You can use the following `sempy.fabric` functions in Power BI semantic models:
-
-- `list_relationship` to list relationships
-- `plot_relationship_metadata` to visualize relationships
-- `list_relationship_violations` to validate relationships and find issues
-
-### List relationships in semantic models
+## List relationships in semantic models
 
 The `list_relationships` function in the `sempy.fabric` module returns a list of all relationships found in a Power BI semantic model. The list helps you understand the structure of your data and how different tables and columns are connected.
 
