@@ -13,24 +13,57 @@ ms.date: 06/16/2024
 
 # Manage Fabric identities
 
-As a Fabric administrator, you can govern the Fabric identities that exist in your organization on the **Fabric identities** tab in the Admin portal. For information about how to get to and use the Admin portal, see [How to get to the admin portal](./admin-center.md#how-to-get-to-the-admin-portal).
+As a Fabric administrator, you can govern the Fabric identities that exist in your organization on the **Fabric identities** tab in the admin portal. For information about how to get to and use the admin portal, see [How to get to the admin portal](./admin-center.md#how-to-get-to-the-admin-portal).
 
-On the **Fabric** tab, you see a list of all the Fabric identities in your tenant.
+On the **Fabric identities** tab, you see a list of all the Fabric identities in your tenant.
 
-The columns of the list of workspaces are described below
+:::image type="content" source="./media/fabric-identities-manage/fabric-identities-tab.png" alt-text="Screenshot showing the Fabric identities tab in the Fabric admin portal." lightbox="./media/fabric-identities-manage/fabric-identities-tab.png":::
+
+The columns of the list of identities are described below
 
 | Column | Description |
 | --------- | --------- |
-| **Name** | The name given to the workspace. |
-| **Description** | The information that is given in the description field of the workspace settings. |
-| **Type** | The type of workspace. There are two types of workspaces:<br>![Screenshot of app workspace icon.](./media/portal-workspaces/app-workspace-icon.png) **Workspace** (also known as "app workspace")<br>![Screenshot of personal workspace icon in the list of workspaces table explanation.](./media/portal-workspaces/personal-workspace-icon.png) **Personal Group** ("My workspaces")|
-| **State** | The state lets you know if the workspace is available for use. There are five states, **Active**, **Orphaned**, **Deleted**, **Removing**, and **Not found**. For more information, see [Workspace states](#workspace-states). |
-| **Capacity name** | Name given to the workspace's capacity. |
-| **Capacity SKU Tier** | The type of license used for the workspace's capacity. Capacity SKU Tiers include **Premium** and **Premium Per User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Premium](/power-bi/enterprise/service-admin-premium-manage). |
-| **Upgrade status** | The upgrade status lets you know if the workspace is eligible for a Microsoft Fabric upgrade. |
+| **Name** | The name of the identity. |
+| **Service principal ID** | The ID of the service principal associated with the identity. |
+| **State** | The state of the identity. See [workspace identity state values](../security/workspace-identity.md#identity-details).|
+| **Workspace** | The workspace ID. |
 
-The table columns on the **Workspaces** tab correspond to the properties returned by the [admin Rest API](/rest/api/power-bi/admin) for workspaces. Personal workspaces are of type **PersonalGroup**, all other workspaces are of type **Workspace**. For more information, see [Workspaces](../get-started/workspaces.md).
+## View identity details
+
+1. Select the radio button of the identity whose details you wish to view.
+
+1. Select **Details** on the ribbon that appears. The **Details** side pane opens displaying the identity's details.
+
+| Field                         | Description                                                                      |
+|:------------------------------|:---------------------------------------------------------------------------------|
+| Workspace name                | The name of the workspace associated with the identity.                          |
+| State                         | The state of the identity.                                                       |
+| State changed date            | The date lf the last change of state of the identity.                            |
+| Service principal ID          | The ID of the service principal associated with the identity.                    |
+| Application ID                | The ID of the application associated with the identity.                          |
+| Tenant ID                     | The ID of the tenant the identity is defined in.                                 |
+| Role                          | The role that is assigned to the service principal accociated with the identity. |
+| Allowed in untrusted contexts |                                                                                  |
+
+## Delete an identity
+
+> [!CAUTION]
+> Deleting a workspace identity breaks any Fabric item relying on that identity for trusted workspace access or authentication. Deleted identities can't be restored.
+
+To delete an identity:
+
+1. Select the radio button of the identity you want to delete.
+
+1. Select **Delete** on the ribbon that appears.
+
+## Refresh the identities list
+
+Select **Refresh** in the ribbon to refresh the list of identities.
+
+## Export the identities list as a .csv file
+
+Select Export on the ribbon to download the list of identities as a *.csv* file.
 
 ## Related content
 
-* [About the admin portal](admin-center.md)
+* [Workspace identity](../security/workspace-identity.md)
