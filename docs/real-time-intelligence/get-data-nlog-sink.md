@@ -44,7 +44,6 @@ This service principal will be the identity used by the connector to write data 
 
 [!INCLUDE [entra-service-principal](../entra-service-principal.md)]
 
-
 1. Using your Azure Data Explorer cluster, follow steps 1-7 in [Create a Microsoft Entra application registration in Azure Data Explorer](provision-azure-ad-app.md).
 1. Save the following values to be used in later steps:
     * Application (client) ID
