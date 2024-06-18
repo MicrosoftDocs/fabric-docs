@@ -1,26 +1,24 @@
 ---
 title: How to train models with PyTorch
-description: Learn how to train models with PyTorch, a framework that’s frequently used for applications such as computer vision and natural language processing.
-ms.reviewer: ssalgado
+description: Learn how to train models with PyTorch, a framework often used for applications such as computer vision and natural language processing.
+ms.reviewer: franksolomon
 ms.author: negust
 author: nelgson
 ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/23/2023
+ms.date: 06/13/2024
 ms.search.form: Train models with PyTorch
 ---
 
 # How to train models with PyTorch in Microsoft Fabric
 
-[PyTorch](https://pytorch.org/) is a machine learning framework based on the Torch library. It's frequently used for applications such as computer vision and natural language processing. In this article, we go through an example of how you train and track the iterations of your PyTorch model.
-
-
+The [PyTorch](https://pytorch.org/) machine learning framework is based on the Torch library. PyTorch is often used for computer vision and natural language processing applications. This article presents an example of how to train and track the iterations of your PyTorch model.
 
 ## Install PyTorch
 
-To get started with PyTorch, you must ensure that it's installed within your notebook. You can install or upgrade the version of PyTorch on your environment using the following command:
+To get started with PyTorch, you must verify that it's installed within your notebook. You can install or upgrade the version of PyTorch on your environment with this command:
 
 ```shell
 %pip install torch
@@ -28,7 +26,7 @@ To get started with PyTorch, you must ensure that it's installed within your not
 
 ## Set up the machine learning experiment
 
-Next, you create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API creates a new machine learning experiment if it doesn't already exist.
+Create a machine learning experiment using the MLFLow API. The MLflow **set_experiment()** API creates a new machine learning experiment if it doesn't already exist.
 
 ```python
 import mlflow
@@ -38,7 +36,7 @@ mlflow.set_experiment("sample-pytorch")
 
 ## Train and evaluate a Pytorch model
 
-After the experiment has been created, the code below loads the MNSIT dataset, generates our test and training datasets, and creates a training function.
+After creation of the experiment, the next code sample loads the MNSIT dataset, generates our test and training datasets, and creates a training function.
 
 ```python
 import os
@@ -49,7 +47,6 @@ import torchvision.datasets as dset
 import torchvision.transforms as transforms
 import torch.nn.functional as F
 import torch.optim as optim
-
 
 ## load mnist dataset
 root = "/tmp/mnist"
@@ -159,7 +156,7 @@ with mlflow.start_run() as run:
     print(f"Model URI: {model_uri}")
 ```
 
-The code above creates a run with the specified parameters and logs the run within the sample-pytorch experiment. This snippet creates a new model called sample-pytorch.  
+This code creates a run with the specified parameters, and it logs the run within the sample-pytorch experiment. The code snippet creates a new model called sample-pytorch.  
 
 ## Load and evaluate the model
 
@@ -190,5 +187,5 @@ for batch_idx, (x, target) in enumerate(test_loader):
 
 ## Related content
 
-- Learn about [machine learning models](machine-learning-model.md).
-- Learn about [machine learning experiments](machine-learning-experiment.md).
+- Learn about [machine learning models](machine-learning-model.md)
+- Learn about [machine learning experiments](machine-learning-experiment.md)
