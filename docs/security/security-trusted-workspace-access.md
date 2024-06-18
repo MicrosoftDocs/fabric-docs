@@ -100,7 +100,8 @@ The following sections show you how to use these methods.
 * Configure a [resource instance rule](#resource-instance-rule) for the storage account.
 
 > [!NOTE]
-> Preexisting shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
+>- Preexisting shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
+>- You must use the dfs url ID for the storage account. Ex: https://StorageAccountName.dfs.core.windows.net
 
 #### Steps
 
