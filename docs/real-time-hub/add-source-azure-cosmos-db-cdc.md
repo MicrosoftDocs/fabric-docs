@@ -73,8 +73,7 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
    
             :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/connection-credentials.png" alt-text="Screenshot that shows the Connection credentials section of the New connection page." ::: 
 1. Now, on the **Connect** page, do these steps:
-    1. Specify the **Container ID** of the container in your Azure Cosmos DB account. 
-    1. 
+    1. Specify the **Container ID** of the container in your Azure Cosmos DB account.     1. 
     1. In the **Stream details** section to the right, select the Fabric **workspace** where you want to save the eventstream that the Wizard is going to create. 
     1. For **eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected Azure Cosmos DB CDC as a source.
     1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **Data streams** tab of Real-Time hub when the wizard finishes. 
