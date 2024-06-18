@@ -8,6 +8,7 @@ reviewer: avangrootel
 ms.service: AISkill
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
 ms.date: 06/05/2024
+ms.collection: ce-skilling-ai-copilot
 
 ---
 

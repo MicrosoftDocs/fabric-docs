@@ -9,6 +9,7 @@ reviewer: avangrootel
 ms.service: AISkill
 ms.topic: concept-article #Don't change; maybe should change to "conceptual".
 ms.date: 06/05/2024
+ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As a Data Analyst, I want to create an AI skill so that I can make it easier for me and my colleagues to get answers from data.
 
