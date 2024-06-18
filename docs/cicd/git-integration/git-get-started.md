@@ -1,5 +1,5 @@
 ---
-title: Get stated with Git integration
+title: Get started with Git integration
 description: Learn how to connect a workspace to a Git repository and branch, commit changes to the repo or workspace and sync.
 author: mberdugo
 ms.author: monaberdugo
@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
-ms.date: 06/13/2024
+ms.date: 06/18/2024
 ms.custom:
   - build-2023
   - ignite-2023
