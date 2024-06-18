@@ -30,7 +30,7 @@ In the modern experience of Data Factory in Fabric, there are some different fea
 |Triggers |Schedules (other triggers are in progress) |Fabric can use the schedule to automatically run pipeline. We are adding more triggers supported by ADF in Microsoft Fabric.  |
 |Publish |Save, Run |For pipeline in Fabric, you don’t need to publish to save the content. Instead, you can use Save button to save the content directly. When you click Run button, it will save the content before running pipeline. |
 |Autoresolve and Azure Integration runtime |Not Applicable |In Fabric, we don’t have the concept of Integration runtime. |
-|Self-hosted integration runtimes |On-premises Data Gateway(in design) |The capability in Fabric is still in progress of design. |
+|Self-hosted integration runtimes |On-premises Data Gateway |On-premises Data Gateway enables access to on-premises data via the Fabric Data Factory. Details are in [How to access on-premises data sources in Data Factory for Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-factory/how-to-access-on-premises-data). |
 |Azure-SSIS integration runtimes |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design. |
 |MVNet and Private End Point |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design.|
 |Expression language |Expression language |Expression language is similar in ADF and Fabric. |
