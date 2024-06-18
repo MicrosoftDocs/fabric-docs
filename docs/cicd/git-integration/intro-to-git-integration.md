@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 06/13/2024
+ms.date: 06/18/2024
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -70,15 +70,18 @@ The following Git providers are supported:
 
 The following limitations apply:
 
+* Sovereign clouds aren't supported.
+
 ### [Azure DevOps limitations](#tab/azure-devops)
 
 * The Azure repo must use the *same tenant* as the Fabric tenant.
 * If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
-* Sovereign clouds aren't supported.
+* The commit size is limited to 125 MB.
 
 ### [GitHub limitations](#tab/github)
 
 * GitHub can't enforce [cross-geo validations](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
+* The commit size is limited to 100 MB.
 
 ---
 
