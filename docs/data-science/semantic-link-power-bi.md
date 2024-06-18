@@ -148,12 +148,12 @@ SELECT
     AVG(Total Revenue),
     AVG(Revenue Budget)
 FROM
-    pbi.Sales Dataset._Metrics
+    pbi.`Sales Dataset`.`_Metrics`
 WHERE
-    Customer[State] in ('CA', 'WA')
+    `Customer[State]` in ('CA', 'WA')
 GROUP BY
-    Customer[Country/Region],
-    Industry[Industry]
+    `Customer[Country/Region]`,
+    `Industry[Industry]`
 ```
 
 ## Data augmentation with Power BI measures
