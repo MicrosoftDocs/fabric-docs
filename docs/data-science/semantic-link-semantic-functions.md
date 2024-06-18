@@ -16,7 +16,7 @@ ms.search.form: semantic link
 
 This article describes semantic functions and how they can help data scientists and data engineers discover functions that are relevant to the FabricDataFrame or FabricSeries they're working on. Semantic functions are part of the Microsoft Fabric semantic link feature.
 
-For Spark 3.4, semantic link is available in the default Fabric runtime, but the `semantic-link-functions` package that includes the semantic function logic needs to be installed manually. To update to the most recent version of the Python semantic link (SemPy) library, run the following command:
+For Spark 3.4 and above, the semantic link core package is available in the default Fabric runtime, but the semantic-link-functions package that includes the semantic function logic (such as `is_holiday`) needs to be installed manually. To update to the most recent version of the Python semantic link (SemPy) library, run the following command:
 
 ```python
 %pip install -U semantic-link
