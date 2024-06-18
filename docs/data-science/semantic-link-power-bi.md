@@ -145,8 +145,8 @@ The connector supports predicate push down of computations like `Customer[State]
 SELECT
     `Customer[Country/Region]`,
     `Industry[Industry]`,
-    `AVG(Total Revenue)`,
-    `AVG(Revenue Budget)`
+    AVG(`Total Revenue`),
+    AVG(`Revenue Budget`)
 FROM
     pbi.`Sales Dataset`.`_Metrics`
 WHERE
