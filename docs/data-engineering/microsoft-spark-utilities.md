@@ -18,6 +18,12 @@ ms.date: 05/02/2024
 
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can use MSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. The MSSparkUtils package is available in PySpark (Python) Scala, SparkR notebooks, and Fabric pipelines.
 
+> [!NOTE]
+>
+> - MsSparkUtils was officially renamed to NotebookUtils, the existing code are backward compatible and won't cause breaking change, however we do recommend you to upgrade to
+*notebookutils* as the *mssparkutils* namespace will be retired in the future.
+> - NotebookUtils only works on **Spark 3.4(Runtime v1.2) and above**, all the upcoming new features will be supported only with *notebookutils* namespace. 
+
 ## File system utilities
 
 *mssparkutils.fs* provides utilities for working with various file systems, including Azure Data Lake Storage (ADLS) Gen2 and Azure Blob Storage. Make sure you configure access to [Azure Data Lake Storage Gen2](/azure/storage/blobs/data-lake-storage-introduction) and [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) appropriately.
