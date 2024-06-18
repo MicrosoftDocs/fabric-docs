@@ -139,7 +139,7 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 
 ### Branch out
 
-The *Branch* tab of the Source control panel enables you to do any of the following actions:
+The *Branches* tab of the Source control panel enables you to do any of the following actions:
 
 - **Checkout a new branch** (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
 - **Switch branches** (must be workspace admin): Changes the Git connection in the current workspace. This overrides the content of the workspace with the content of the branch.
@@ -147,7 +147,7 @@ The *Branch* tab of the Source control panel enables you to do any of the follow
 
 :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
 
-The *Branch* tab also has a list of related workspaces you can select and switch to. A related workspace is one with the same connection properties as the current branch, such as the same organization, project, repository, and git folder.
+The *Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one with the same connection properties as the current branch, such as the same organization, project, repository, and git folder.
 
 :::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
 
