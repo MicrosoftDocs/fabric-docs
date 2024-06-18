@@ -1,7 +1,7 @@
 ---
-title: AI Skill Creation (preview)
-titleSuffix: AI Skill Creation
-description: Learn how to create an AI Skill that can answer questions about data.
+title: AI skill Creation (preview)
+titleSuffix: AI skill Creation
+description: Learn how to create an AI skill that can answer questions about data.
 author: IAmGrootel
 ms.author: avangrootel
 ms.reviewer: franksolomon
@@ -10,50 +10,50 @@ ms.service: AISkill
 ms.topic: concept-article #Don't change; maybe should change to "conceptual".
 ms.date: 06/05/2024
 
-#customer intent: As a Data Analyst, I want to create an AI Skill so that I can make it easier for me and my colleagues to get answers from data.
+#customer intent: As a Data Analyst, I want to create an AI skill so that I can make it easier for me and my colleagues to get answers from data.
 
 ---
 
-# AI Skill concepts (preview)
+# AI skill concepts (preview)
 
-With the Fabric AI Skill, you can make data more accessible to your colleagues. You can configure a Generative AI system to generate queries that answer questions about your data. After you configure the AI Skill, you can share it with your colleagues, who can then ask their questions in plain English. Based on their questions, the AI generates queries over your data that answer those questions.
+With the Fabric AI skill, you can make data more accessible to your colleagues. You can configure a Generative AI system to generate queries that answer questions about your data. After you configure the AI skill, you can share it with your colleagues, who can then ask their questions in plain English. Based on their questions, the AI generates queries over your data that answer those questions.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-## How the AI Skill works
+## How the AI skill works
 
-The AI Skill relies on Generative AI - specifically, Large Language Models (LLMs). These LLMs can generate queries, for example, SQL queries, based on a given schema and a question. The system sends a question in the AI Skill, information about the selected data (including the table and column names, and the data types found in the tables) to the LLM. Next, it requests generation of a SQL query that answers the question. We parse the generated query to first ensure that it doesn't change the data in any way, and then execute that query. Finally, we show the query execution results.
+The AI skill relies on Generative AI - specifically, Large Language Models (LLMs). These LLMs can generate queries, for example, SQL queries, based on a given schema and a question. The system sends a question in the AI skill, information about the selected data (including the table and column names, and the data types found in the tables) to the LLM. Next, it requests generation of a SQL query that answers the question. We parse the generated query to first ensure that it doesn't change the data in any way, and then execute that query. Finally, we show the query execution results.
 
-## Configuring the AI Skill
+## Configuring the AI skill
 
-Think of the AI Skill similarly as you think about PowerBI Reports. First you set up the Report, and then you share the Report with your colleagues who can consume it to get their data insights. The AI Skill works the same; you need to set it up first and then share it with your colleagues.
+Think of the AI skill similarly as you think about PowerBI Reports. First you set up the Report, and then you share the Report with your colleagues who can consume it to get their data insights. The AI skill works the same; you need to set it up first and then share it with your colleagues.
 
-You should expect to handle some necessary configuration steps before the AI Skill works properly. An AI Skill can often provide out-of-the-box answers to reasonable questions, but could provide incorrect answers for your specific situation. The incorrect answers typically happen because the AI is missing context about your company, setup, or definition of key terms. To solve the problem, provide the AI with instructions and example question-query pairs. You can use these powerful techniques to guide the AI to the right answers. 
+You should expect to handle some necessary configuration steps before the AI skill works properly. An AI skill can often provide out-of-the-box answers to reasonable questions, but could provide incorrect answers for your specific situation. The incorrect answers typically happen because the AI is missing context about your company, setup, or definition of key terms. To solve the problem, provide the AI with instructions and example question-query pairs. You can use these powerful techniques to guide the AI to the right answers. 
 
-## Difference between an AI Skill and a Copilot
+## Difference between an AI skill and a Copilot
 
-The technology behind the AI Skill and the Fabric Copilots is similar. They both use Generative AI to reason over data. However, they have some key differences:
+The technology behind the AI skill and the Fabric Copilots is similar. They both use Generative AI to reason over data. However, they have some key differences:
 
-1. **Configuration:** The AI Skill empowers you to configure the AI to behave the way you need. You can provide it with instructions and examples that tune it to your specific use case. A Fabric Copilot doesn't offer this configuration flexibility.
+1. **Configuration:** The AI skill empowers you to configure the AI to behave the way you need. You can provide it with instructions and examples that tune it to your specific use case. A Fabric Copilot doesn't offer this configuration flexibility.
 
-1. **Use Case**: A Copilot can help you do your work on Fabric. It can help you generate Notebook code or Data Warehouse queries. In contrast, the AI Skill operates independently, and you can eventually connect it to Microsoft Teams and other areas outside of Fabric.
+1. **Use Case**: A Copilot can help you do your work on Fabric. It can help you generate Notebook code or Data Warehouse queries. In contrast, the AI skill operates independently, and you can eventually connect it to Microsoft Teams and other areas outside of Fabric.
 
 ## Limitations
 
-The AI Skill is currently in public preview and has limitations.
+The AI skill is currently in public preview and has limitations.
 
-- The AI Skill might return incorrect answers. You should test the AI Skill with your colleagues to verify that it answers questions as expected. If it makes mistakes, provide it with more examples and instructions.
+- The AI skill might return incorrect answers. You should test the AI skill with your colleagues to verify that it answers questions as expected. If it makes mistakes, provide it with more examples and instructions.
 - We currently only support t-SQL on Warehouses and Lakehouses.
-- You can't use the AI Skill to access unstructured data, for example .pdf, .docx or .txt files.
+- You can't use the AI skill to access unstructured data, for example .pdf, .docx or .txt files.
 - At this time, you can only select a single Warehouse or a single Lakehouse.
-- The AI Skill isn't conversational. Every question must be fully self-contained. It doesn't remember earlier questions.
+- The AI skill isn't conversational. Every question must be fully self-contained. It doesn't remember earlier questions.
 - It blocks non-English language questions or instructions.
-- You can't connect the AI Skill to Fabric Copilots, Microsoft Teams, or other experiences outside of Fabric.
-- You can't change the LLM that the AI Skill uses.
-- The AI Skill loses accuracy if you use nondescriptive column names.
-- The AI Skill loses accuracy if you use large schemas with dozens of tables.
+- You can't connect the AI skill to Fabric Copilots, Microsoft Teams, or other experiences outside of Fabric.
+- You can't change the LLM that the AI skill uses.
+- The AI skill loses accuracy if you use nondescriptive column names.
+- The AI skill loses accuracy if you use large schemas with dozens of tables.
 
 ## Related content
 
-- [AI Skill Scenario](ai-skill-scenario.md)
-- [How to Create an AI Skill](how-to-create-ai-skill.md)
+- [AI skill scenario](ai-skill-scenario.md)
+- [How to create an AI skill](how-to-create-ai-skill.md)
