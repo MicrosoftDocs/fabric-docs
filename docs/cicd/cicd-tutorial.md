@@ -186,7 +186,7 @@ In order to avoid editing the shared workspace and interfering with other team m
 
 1. Select **Branch out**.
 
-Fabric creates the new workspace and syncs it to the new branch. This might take a few minutes. Once it's synced, you're automatically taken to the new workspace.
+Fabric creates the new workspace and syncs it to the new branch. You're automatically taken to the new workspace, but the sync might take a few minutes.
 
 ## Step 7: Edit the workspace
 

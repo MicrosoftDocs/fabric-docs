@@ -48,7 +48,7 @@ The following table describes the permissions needed to perform various common o
 | Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow   |
 | Commit workspace changes to Git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit  |
 | Create new Git branch from within Fabric                             | Admin                                                                                     | Role=Write<br/>Create branch=Allow            |
-| Branch out                                                           | Admin, Member, Contributor                                                                | Read=Allow<br/>Create branch=Allow            |
+| Branch out to a new workspace                                            | Admin, Member, Contributor                                                                | Read=Allow<br/>Create branch=Allow            |
 
 ## Connect and sync
 
@@ -110,7 +110,8 @@ When changes are made either to the workspace or the Git branch, the source cont
 
 The **Commit and update** panel has two tabs.
 
-The **Changes** tab shows the number of items that were changed in the workspace and need to be committed to Git. The **Updates** tab shows the number of items that were modified in the Git branch and need to be updated to the workspace.
+The **Changes** tab shows the number of items that were changed in the workspace and need to be committed to Git.  
+The **Updates** tab shows the number of items that were modified in the Git branch and need to be updated to the workspace.  
 
 In each tab, the changed items are listed with an icon indicating the status:
 
@@ -118,6 +119,8 @@ In each tab, the changed items are listed with an icon indicating the status:
 - :::image type="icon" source="./media/git-integration-process/modified-icon.png"::: modified
 - :::image type="icon" source="./media/git-integration-process/deleted-icon.png" ::: deleted
 - :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: conflict
+
+The Refresh button :::image type="icon" source="./media/git-integration-process/refresh-icon.png"::: on top of the panel updates the list of changes and updates.
 
 :::image type="content" source="./media/git-integration-process/source-control-panel-items.png" alt-text="Screenshot of the source control panel showing the status of the changed items.":::
 
@@ -181,12 +184,12 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 
 ### Branching out limitations
 
-- All workspace, branch and folder limitations apply when branching out to a new workspace.
-- When branching out, a new workspace is created and the settings from the original folder aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
+- Branch out requires permissions listed in [permissions table](#permissions-needed-for-common-operations).
+- There must be an available capacity for this action.
+- All [workspace](./intro-to-git-integration.md#considerations-and-limitations) and [branch naming limitations](#branch-and-folder-limitations) apply when branching out to a new workspace.
+- When branching out, a new workspace is created and the settings from the original workspace aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
 - Only [Git supported items](./intro-to-git-integration.md#supported-items) are available in the new workspace.
 - The related branches list only shows branches and workspaces you have permission to view.
-- There must be enough available capacity for this action.
-- Requires permissions listed in [permissions table](#permissions-needed-for-common-operations).
 - [Git integration](../../admin/git-integration-admin-settings.md) must be enabled.
 
 ### Sync and commit limitations
