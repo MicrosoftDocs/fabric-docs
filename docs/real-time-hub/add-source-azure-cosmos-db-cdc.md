@@ -11,39 +11,13 @@ ms.date: 05/21/2024
 ---
 
 # Add Azure Cosmos DB CDC as source in Real-Time hub (preview)
-This article describes how to add Azure Cosmos DB Change Data Capture (CDC) as an event source in Fabric Real-Time hub. The Azure Cosmos DB Change Data Capture (CDC) source connector lets you capture a snapshot of the current data in an Azure Cosmos DB database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in a stream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
+This article describes how to add **Azure Cosmos DB for NoSQL** Change Data Capture (CDC) as an event source in Fabric Real-Time hub. 
+
+The Azure Cosmos DB Change Data Capture (CDC) source connector lets you capture a snapshot of the current data in an Azure Cosmos DB database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in a stream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
 [!INCLUDE [preview-note](./includes/preview-note.md)]
 
-## Prerequisites 
-
-- Get access to the Fabric **premium** workspace with **Contributor** or above permissions. 
-- Access to an Azure Cosmos DB account and database.
-
-## Get connection details from the Azure portal
-
-The labels for the items you need to collect from the Azure portal vary depending on the API your Azure Cosmos DB account uses. You always need the endpoint URI, in a format like `https://<account>.<api>.azure.com:<port>/`, the Primary Key, and the Database name and item IDs you want to collect data for.
-
-### Azure Cosmos DB for NoSQL
-
-1. On the Azure portal page for your Azure Cosmos DB account, select **Keys** under **Settings** in the left navigation.
-1. On the **Keys** page, copy the **URI** and **Primary key** values to use for setting up the eventstream connection.
-
-    :::image type="content" source="media/add-source-azure-cosmos-db-cdc/uri.png" alt-text="A screenshot of the URI and Primary key on the Azure Cosmos DB Keys page in the Azure portal." lightbox="media/add-source-azure-cosmos-db-cdc/uri.png":::
-1. On the Azure portal **Overview** page for your Azure Cosmos DB account, note the **Database** and item **ID** you want to collect data for.
-
-    :::image type="content" source="media/add-source-azure-cosmos-db-cdc/containers.png" alt-text="A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account." lightbox="media/add-source-azure-cosmos-db-cdc/containers.png":::
-
-### Azure Cosmos DB for Table
-
-1. On the Azure portal page for your Azure Cosmos DB account, select **Connection strings** under **Settings** in the left navigation.
-1. On the **Connection strings** page, copy the **Endpoint** and **Primary key** values to use for setting up the eventstream connection.
-
-    :::image type="content" source="media/add-source-azure-cosmos-db-cdc/endpoint.png" alt-text="A screenshot of the Endpoint and Primary key on the Azure Cosmos DB Connection strings page in the Azure portal.":::
-1. On the Azure portal **Overview** page for your Azure Cosmos DB account, note the **Database** and item **ID** you want to collect data for.
-
-    :::image type="content" source="media/add-source-azure-cosmos-db-cdc/tables.png" alt-text="A screenshot of the Tables listing for an Azure Cosmos DB NoSQL API account.":::
-
+[!INCLUDE [azure-cosmos-db-cdc-source-prerequisites-connection-details](../real-time-intelligence/event-streams/includes/azure-cosmos-db-cdc-source-prerequisites-connection-details.md)]
 
 ## Get events from an Azure Cosmos DB CDC
 You can get events from an Azure Cosmos DB CDC into Real-Time hub in one of the ways:
@@ -80,17 +54,9 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-cosmos-db-cdc/new-connection-link.png"::: 
-1. In the **Connection settings** section, specify the **Cosmos DB endpoint**. 
+1. In the **Connection settings** section, specify the **Cosmos DB endpoint**. Enter the URI or endpoint for your Cosmos DB account that you copied from the Azure portal.
 
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/connection-settings.png" alt-text="Screenshot that shows the Connection settings section of the New connection page." ::: 
-
-    To get the endpoint URI for the Cosmos DB endpoint, follow these steps:
-    1. Navigate to the Cosmos DB account in the Azure portal. 
-    1. Select **Keys** under **Settings** on the left navigation menu.
-    1. To copy the URI to the clipboard, select the **Copy** button next to the **URI**. 
-    1. To copy the primary key for the Azure Cosmos DB account, select the **Show** button for the **PRIMARY KEY**, and the select the **Copy** button. 
-
-        :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/uri-access-key.png" alt-text="Screenshot that shows how to get the URI for the Azure Cosmos DB endpoint." ::: 
 1. Expand **Advanced options**, and follow these steps:
     1. For **Number of retries**, specify the maximum number of times the connector should retransmit a request to the Cosmos DB database if the request fails from a recoverable error. 
     1. For **Enable AVERAGE function pass down**, specify whether the connector should pass down of the AVG aggregate function to the Cosmos DB database. 
@@ -107,8 +73,7 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
    
             :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/connection-credentials.png" alt-text="Screenshot that shows the Connection credentials section of the New connection page." ::: 
 1. Now, on the **Connect** page, do these steps:
-    1. Specify the **Container ID** of the container in your Azure Cosmos DB account. 
-    1. 
+    1. Specify the **Container ID** of the container in your Azure Cosmos DB account.     1. 
     1. In the **Stream details** section to the right, select the Fabric **workspace** where you want to save the eventstream that the Wizard is going to create. 
     1. For **eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected Azure Cosmos DB CDC as a source.
     1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **Data streams** tab of Real-Time hub when the wizard finishes. 
