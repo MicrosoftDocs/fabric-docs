@@ -144,7 +144,7 @@ There are several considerations to keep in mind while working with private endp
 
 * Each private endpoint can be connected to one tenant only.  You can't set up a private link to be used by more than one tenant.
 
-* **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. VNet data gateways will work.
+* **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. VNet data gateways will work. [Learn more](https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-install#:~:text=When%20private%20link%20is%20enabled%2C%20disable,enable%20the%20Azure%20Private%20Link%20property.).
 
  * **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The gateway doesn't work properly when Private Link is enabled. A potential workaround is to disable the **Azure Private Link** tenant setting, configure the gateway in a remote region (a region other than the recommended region), then re-enable Azure Private Link. After Private Link is re-enabled, the gateway in the remote region won't use private links.
 
