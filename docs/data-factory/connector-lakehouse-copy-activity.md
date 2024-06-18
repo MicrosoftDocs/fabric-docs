@@ -57,7 +57,7 @@ The following properties are **required**:
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
 
   - If you select **Tables**:
-    - **Table name**: Choose an existing table from the table list or specify a table name as the source. You can see the table name with schema in the list when you apply a  Lakehouse with schemas in the connection.
+    - **Table name**: Choose an existing table from the table list or specify a table name as the source. Or you can select **New** to create a new table. When you apply Lakehouse with schemas in the connection, you can create a new table with schema and see the table name with schema in the table list.
     
       :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
 
@@ -111,7 +111,7 @@ The following properties are **required**:
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
 
   - If you select **Tables**:
-    - **Table name**: Choose an existing table from the table list or specify a table name as the destination. Or you can select **New** to create a new table. When you apply Lakehouse with schemas in the connection, you can create a table with schema here.
+    - **Table name**: Choose an existing table from the table list or specify a table name as the destination. Or you can select **New** to create a new table. When you apply Lakehouse with schemas in the connection, you can create a new table with schema and see the table name with schema in the table list.
 
       :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
 
