@@ -54,17 +54,9 @@ Use instructions from the [Add Azure Cosmos DB CDC as a source](#add-azure-cosmo
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Get events wizard with the **New connection** link highlighted." lightbox="./media/add-source-azure-cosmos-db-cdc/new-connection-link.png"::: 
-1. In the **Connection settings** section, specify the **Cosmos DB endpoint**. 
+1. In the **Connection settings** section, specify the **Cosmos DB endpoint**. Enter the URI or endpoint for your Cosmos DB account that you copied from the Azure portal.
 
     :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/connection-settings.png" alt-text="Screenshot that shows the Connection settings section of the New connection page." ::: 
-
-    To get the endpoint URI for the Cosmos DB endpoint, follow these steps:
-    1. Navigate to the Cosmos DB account in the Azure portal. 
-    1. Select **Keys** under **Settings** on the left navigation menu.
-    1. To copy the URI to the clipboard, select the **Copy** button next to the **URI**. 
-    1. To copy the primary key for the Azure Cosmos DB account, select the **Show** button for the **PRIMARY KEY**, and the select the **Copy** button. 
-
-        :::image type="content" source="./media/add-source-azure-cosmos-db-cdc/uri-access-key.png" alt-text="Screenshot that shows how to get the URI for the Azure Cosmos DB endpoint." ::: 
 1. Expand **Advanced options**, and follow these steps:
     1. For **Number of retries**, specify the maximum number of times the connector should retransmit a request to the Cosmos DB database if the request fails from a recoverable error. 
     1. For **Enable AVERAGE function pass down**, specify whether the connector should pass down of the AVG aggregate function to the Cosmos DB database. 
