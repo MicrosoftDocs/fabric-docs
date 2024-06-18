@@ -108,12 +108,12 @@ The **Source control** panel has two tabs on the side.
 
 When changes are made either to the workspace or the Git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control panel.
 
-The **Commit and update** panel has two tabs.
+The **Commit and update** panel has two sections.
 
-The **Changes** tab shows the number of items that were changed in the workspace and need to be committed to Git.  
-The **Updates** tab shows the number of items that were modified in the Git branch and need to be updated to the workspace.  
+**Changes** shows the number of items that were changed in the workspace and need to be committed to Git.  
+**Updates** shows the number of items that were modified in the Git branch and need to be updated to the workspace.  
 
-In each tab, the changed items are listed with an icon indicating the status:
+In each section, the changed items are listed with an icon indicating the status:
 
 - :::image type="icon" source="./media/git-integration-process/new-icon.png"::: new
 - :::image type="icon" source="./media/git-integration-process/modified-icon.png"::: modified
@@ -126,7 +126,7 @@ The Refresh button :::image type="icon" source="./media/git-integration-process/
 
 #### Commit
 
-- Items in the workspace that were changed are listed in the *Changes* tab. When there's more than one changed item, you can select which items to commit to the Git branch.
+- Items in the workspace that were changed are listed in the *Changes* section. When there's more than one changed item, you can select which items to commit to the Git branch.
 - If there were updates made to the Git branch, commits are disabled until you update your workspace.
 
 #### Update

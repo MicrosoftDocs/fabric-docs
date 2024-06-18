@@ -50,7 +50,7 @@ For a specific guidance on how to use the new Power BI Desktop file format in gi
 
 For a developer who works in the web, the flow would be as follows:
 
-1. From the *branch* tab of the **Source control** menu, select **Branch out to new workspace**.
+1. From the *Branches* tab of the **Source control** menu, select **Branch out to new workspace**.
 
     :::image type="content" source="./media/manage-branches/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
@@ -79,7 +79,7 @@ If your workspace is connected to a Git branch and you want to switch to another
 When you switch branches, the workspace syncs with the new branch and all items in the workspace are overridden. If there are different versions of the same item in each branch, the item is replaced. If an item is in the old branch, but not the new one, it gets deleted.
 To switch between branches, follow these steps:
 
-1. From the *branch* tab of the **Source control** menu, select **Checkout new branch**.
+1. From the *Branches* tab of the **Source control** menu, select **Checkout new branch**.
 
     :::image type="content" source="media/manage-branches/checkout-new-branch.png" alt-text="Screenshot of source control checkout a new branch option.":::
 
