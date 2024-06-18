@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: conceptual
-ms.date: 06/04/2024
+ms.date: 06/18/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -47,7 +47,8 @@ The following table describes the permissions needed to perform various common o
 | See workspace 'Git status'                                           | Admin, Member, Contributor                                                                | Read=Allow                                    |
 | Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow   |
 | Commit workspace changes to Git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit  |
-| Create new Git branch from within Fabric                             | Admin                                                                                     | Role=Write<br/>Create branch=Allow                                    |
+| Create new Git branch from within Fabric                             | Admin                                                                                     | Role=Write<br/>Create branch=Allow            |
+| Branch out                                                           | Admin, Member, Contributor                                                                | Read=Allow<br/>Create branch=Allow            |
 
 ## Connect and sync
 
@@ -180,9 +181,13 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 
 ### Branching out limitations
 
+- All workspace, branch and folder limitations apply when branching out to a new workspace.
 - When branching out, a new workspace is created and the settings from the original folder aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
 - Only [Git supported items](./intro-to-git-integration.md#supported-items) are available in the new workspace.
 - The related branches list only shows branches and workspaces you have permission to view.
+- There must be enough available capacity for this action.
+- Requires permissions listed in [permissions table](#permissions-needed-for-common-operations).
+- [Git integration](../../admin/git-integration-admin-settings.md) must be enabled.
 
 ### Sync and commit limitations
 
