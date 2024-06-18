@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB CDC - prerequisites and connection details
-description: This include file has the prerequisites for adding an Azure Cosmos DB Change Data Capture (CDC) source and information on getting connection details. .
+description: This include file has the prerequisites for adding an Azure Cosmos DB Change Data Capture (CDC) source and information on getting connection details.
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
@@ -16,7 +16,7 @@ ms.date: 06/18/2024
 
 ## Get connection details from the Azure portal
 
-The labels for the items you need to collect from the Azure portal are shown in the steps below. You always need the endpoint URI, in a format like `https://<account>.<api>.azure.com:<port>/`, the Primary Key, and the Database name and item IDs you want to collect data for.
+The labels for the items you need to collect from the Azure portal are shown in the following steps. You always need the endpoint URI, in a format like `https://<account>.<api>.azure.com:<port>/`, the Primary Key, and the Database name and item IDs you want to collect data for.
 
 > [!NOTE]
 > Azure Cosmos DB for NoSQL CDC is using the [**Latest Version Mode**](/azure/cosmos-db/nosql/change-feed-modes?tabs=latest-version#latest-version-change-feed-mode) of [Azure Cosmos DB Change Feed](/azure/cosmos-db/change-feed). It captures the changes to records in the latest version. Note that Deletions are't captured with this mode.  
