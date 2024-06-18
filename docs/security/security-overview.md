@@ -161,8 +161,6 @@ Using various tools, admins can also [monitor](../admin/admin-overview.md#monito
 ## Audit Logs
 To view your audit logs, follow the instructions in [Track user activities in Microsoft Fabric](../admin/track-user-activities.md). You can also refer to the [Operation list](../admin/operation-list.md) to see which activities are available for searching in the audit logs.
 
-Note that an internal issue caused OneLake audit events to not be shown in the Microsoft 365 Admin center from 4/21 through 5/6. You can request this data if need be through support channels.
-
 ## Capabilities
 
 Review this section for a list of some of the security features available in Microsoft Fabric.
