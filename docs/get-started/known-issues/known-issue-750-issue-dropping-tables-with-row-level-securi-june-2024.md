@@ -1,8 +1,8 @@
 ---
 title: Known issue - Issue dropping tables with Row Level Security 
-description: In the SQL Endpoint, if there is a change to the table schema or the table is being dropped,   we drop the table in the SQL Endpoint and any relationships.
+description: In the SQL Endpoint, if there is a change to the table schema or the table is being dropped, we drop the table in the SQL Endpoint and any relationships.
 If the table is altered, we recreate the table with its relationships.
-The table drop is blocked if there are any functions (for example, used in row level security) on the tables.   The function needs to be dropped first.
+The table drop is blocked if there are any functions (for example, used in row level security) on the tables. The function needs to be dropped first.
 author: LorenzoBonati
 ms.author: LorenzoBonati
 ms.topic: troubleshooting  
