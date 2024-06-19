@@ -19,15 +19,9 @@ ms.date: 05/24/2024
 >
 > [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-This tutorial walks you through transforming the data in Fabric warehouse using dbt within an Airflow environment in Data Workflows. We'll go through the following steps:
-
-1. Create a dbt project in Data Workflows.
-2. To orchestrate dbt jobs, create an Apache Airflow DAG.
-3. Run and Monitor the DAG run.
-
 ## Introduction
 
-The [dbt](https://www.getdbt.com/product/what-is-dbt), short for "Data Build Tool," is an open-source command-line interface (CLI) that revolutionizes data transformation and modeling within data warehouses. It addresses a critical challenge of managing complex SQL code in a structured and maintainable way in data pipelines. dbt empowers data teams to build robust, reliable, and testable data transformations that form the core of their analytical pipelines. When integrated with Apache Airflow, a popular workflow management system, dbt becomes a powerful tool for orchestrating data transformations. Airflow's scheduling and task management capabilities allow data teams to automate dbt runs, ensuring regular data updates and maintaining a consistent flow of high-quality data for analysis and reporting. This combined approach, using dbt's transformation expertise with Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
+The [dbt](https://www.getdbt.com/product/what-is-dbt), short for "Data Build Tool," is an open-source command-line interface (CLI) that revolutionizes data transformation and modeling within data warehouses. It addresses a critical challenge of managing complex SQL code in a structured and maintainable way in data pipelines. dbt empowers data teams to build robust, reliable, and testable data transformations that form the core of their analytical pipelines. When integrated with Apache Airflow, a popular workflow management system, dbt becomes a powerful tool for orchestrating data transformations. Airflow's scheduling and task management capabilities allow data teams to automate dbt runs. It ensures regular data updates and maintains a consistent flow of high-quality data for analysis and reporting. This combined approach, using dbt's transformation expertise with Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
 
 ## Prerequisites
 
@@ -52,10 +46,10 @@ To get started, you must complete the following prerequisites:
 
 ## Transform the data stored in Fabric warehouse using dbt
 
-In this section, we will walk through the following steps:
+This section walks you through the following steps:
 
 1. [Specify the requirements.](#specify-the-requirements)
-2. [Create a DBT project in Fabric managed storage](#create-a-dbt-project-in-fabric-managed-storage).
+2. [Create a dbt project in Fabric managed storage](#create-a-dbt-project-in-fabric-managed-storage).
 3. [Create an Apache Airflow DAG to orchestrate dbt jobs](#create-an-apache-airflow-dag-to-orchestrate-dbt-jobs)
 
 ### [Specify the requirements](#specify-the-requirements)
@@ -70,7 +64,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
   dbt-fabric==1.5.0
 ```
 
-### [Create a DBT project in Fabric managed storage](#create-a-dbt-project-in-fabric-managed-storage)
+### [Create a dbt project in Fabric managed storage](#create-a-dbt-project-in-fabric-managed-storage)
 
 1. In this section, we create a sample dbt project in the Data workflows for the dataset `nyc_taxi_green` with the following directory structure.
 
