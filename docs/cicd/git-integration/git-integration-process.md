@@ -139,17 +139,21 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 
 ### Branch out
 
-The *Branches* tab of the Source control panel enables you to do any of the following actions:
+The *Branches* tab of the Source control panel enables you to manage your branches and perform branch related actions. It has two main sections:
 
-- **Checkout a new branch** (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
-- **Switch branches** (must be workspace admin): Changes the Git connection in the current workspace. This overrides the content of the workspace with the content of the branch.
-- [**Branch out to new workspace**](./manage-branches.md#develop-using-another-workspace) (any role): Creates a new workspace and new branch based on the last commit of the branch connected to the current workspace. It connects to the new workspace and new branch.
+- **Actions you can take on the current branch**:
 
-:::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
+  - *Checkout a new branch* (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
+  - [*Branch out to new workspace*](./manage-branches.md#develop-using-another-workspace) (any role): Creates a new workspace and new branch based on the last commit of the branch connected to the current workspace. It connects to the new workspace and new branch.
 
-The *Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one with the same connection properties as the current branch, such as the same organization, project, repository, and git folder.
+  :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
 
-:::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
+- **Related branches**.  
+   The *Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one with the same connection properties as the current branch, such as the same organization, project, repository, and git folder.  
+   This allows you to navigate to workspaces connected to other branches related to the context of your current work, without having to look for them in your list of Fabric workspaces.  
+   Click on an item in the list to open the relevant workspace.
+
+  :::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
 
 See [Branching out limitations](#branching-out-limitations) for more information.
 
