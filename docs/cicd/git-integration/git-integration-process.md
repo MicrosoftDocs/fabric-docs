@@ -6,11 +6,12 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 06/13/2024
 ms.custom:
   - build-2023
   - ignite-2023
+#customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
 
 # Basic concepts in Git integration
