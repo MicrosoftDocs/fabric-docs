@@ -17,6 +17,8 @@ no-loc: [Copilot]
 
 For a tutorial on configuring your Azure SQL Database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-tutorial.md).
 
+To learn more and watch demos of Mirroring Azure SQL Database in Fabric see the [Data Exposed episode(https://youtu.be/vyKos_LZ6ck)].
+
 ## Why use Mirroring in Fabric?
 
 With Mirroring in Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs, and built for openness and collaboration between Microsoft, Azure SQL Database, and the 1000s of technology solutions that can read the open-source Delta Lake table format.
