@@ -81,9 +81,9 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
 
 1. Create the folder named `nyc_taxi_green` in the `dags` folder with `profiles.yml` file. This folder contains all the files required for dbt project.
 
-:::image type="content" source="media/data-workflows/dbt-profiles.png" lightbox="media/data-workflows/dbt-profiles.png" alt-text="Screenshot shows create files for the dbt project.":::
+   :::image type="content" source="media/data-workflows/dbt-profiles.png" lightbox="media/data-workflows/dbt-profiles.png" alt-text="Screenshot shows create files for the dbt project.":::
 
-3. Copy the following contents into the `profiles.yml`. This configuration file contains database connection details and profiles used by dbt.
+1. Copy the following contents into the `profiles.yml`. This configuration file contains database connection details and profiles used by dbt.
    Update the placeholder values and save the file.
 
 1. ```yaml
@@ -158,11 +158,11 @@ models:
    select * from final
    ```
 
-:::image type="content" source="media/data-workflows/dbt-models.png" lightbox="media/data-workflows/dbt-models.png" alt-text="Screenshot shows models for the dbt project.":::
+   :::image type="content" source="media/data-workflows/dbt-models.png" lightbox="media/data-workflows/dbt-models.png" alt-text="Screenshot shows models for the dbt project.":::
 
 ### [Create an Apache Airflow DAG to orchestrate dbt jobs](#create-an-apache-airflow-dag-to-orchestrate-dbt-jobs)
 
-- Create the file named `my_cosmos_dag.py` in `dags` folder and Paste the following contents in it.
+Create the file named `my_cosmos_dag.py` in `dags` folder and Paste the following contents in it.
 
 ```python
  import os
