@@ -26,12 +26,12 @@ This article shows how to configure an AI skill on the AdventureWorks dataset.
 
 ## Create a Lakehouse with "Adventure Works DW"
 
-First we create a Lakehouse and populate it with the data that we need.
+First create a Lakehouse and populate it with the necessary data.
 
-If you already have an instance of Adventure Works DW in a Warehouse or Lakehouse, you can skip this step. If not, we'll create a Lakehouse from a Notebook and use the Notebook to populate the Lakehouse with the data.
+If you already have an instance of Adventure Works DW in a Warehouse or Lakehouse, you can skip this step. If not, create a Lakehouse from a Notebook, and use the Notebook to populate the Lakehouse with the data.
 
-**Step 1:** Create a new Notebook in the workspace you want to create your AI skill in.
-**Step 2:** Add an existing Lakehouse or a new Lakehouse by clicking the "+ Data sources" button in the Explorer pane on the left. 
+**Step 1:** Create a new Notebook in the workspace where you want to create your AI skill.
+**Step 2:** Select the "+ Data sources" button in the left nav of the Explorer pane, to add an existing Lakehouse or create a new Lakehouse.
 **Step 3:** Add the below code in the top cell.
 
 ```python
@@ -56,21 +56,21 @@ for table in (pbar := tqdm(df_tables['table'].values)):
 
 :::image type="content" source="./media/ai-skill-scenario/notebook-run-all.png" alt-text="Screenshot showing a notebook with the Adventure Works upload code." lightbox="./media/ai-skill-scenario/notebook-run-all.png":::
 
-After a few minutes, your Lakehouse is populated with the necessary data.
+After a few minutes, the Lakehouse is populated with the necessary data.
 
 ## Create an AI skill
 
-Create a new AI skill by navigating to the Data Science Experience, and clicking the "AI skill" item.
+To create a new AI skill, navigate to the Data Science Experience, and select the "AI skill" item.
 
 :::image type="content" source="./media/ai-skill-scenario/create-first-ai-skill.png" alt-text="Screenshot showing where to create AI skills." lightbox="./media/ai-skill-scenario/create-first-ai-skill.png":::
 
-Provide a name and you'll have created an AI skill.
+Provide a name to create an AI skill.
 
 ## Select the data
 
-Select the Lakehouse you created and press "Connect". After you'll need to select the tables you want the AI skill to have access to.
+Select the Lakehouse you created, and select "Connect". You must then select the tables you want the AI skill to have available access.
 
-For this exercise we use these tables:
+This exercise uses these tables:
 
 - DimCustomer
 - DimDate
@@ -89,20 +89,20 @@ When you first ask the AI skill questions with the listed tables selected, the A
 
 - "Long-Sleeve Logo Jersey, L"
 
-However, the SQL query does things we don't want. First, it only looks at the FactResellerSales table. It ignores the FactInternetSales table. Second, it orders the products by order quantity, when we really care about total sales revenue associated with the product, as shown in this screenshot:
+However, the SQL query needs some improvement. First, it only looks at the FactResellerSales table. It ignores the FactInternetSales table. Second, it orders the products by order quantity, when total sales revenue associated with the product is the most important consideration, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/most-sold-ai-skill-first-question.png" alt-text="Screenshot showing the first example AI skill highest sales product question." lightbox="./media/ai-skill-scenario/most-sold-ai-skill-first-question.png":::
 
-We can improve the query generation if we provide instructions. Here, we might try something like:
+To improve the query generation, provide some instructions, as shown in these examples:
 
 - Whenever I ask about "the most sold" products or items, the metric of interest is total sales revenue, and not order quantity.
 - The primary table to use is the FactInternetSales. Only use FactResellerSales if explicitly asked about resales or when asked about total sales.
 
-If we repeat the question, we get a different answer: "Mountain-200 Black, 46" as shown in this screenshot:
+Asking the question again returns a different answer: "Mountain-200 Black, 46" as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/most-sold-ai-skill-second-question.png" alt-text="Screenshot showing the second example AI skill highest sales product question." lightbox="./media/ai-skill-scenario/most-sold-ai-skill-second-question.png":::
 
-If we examine the corresponding SQL, we find that it indeed draws from the FactInternetSales table, and that it sorts by the sum of the sales amount. The AI followed our instructions!
+The corresponding SQL indeed draws from the FactInternetSales table, and it sorts by the sum of the sales amount. The AI followed our instructions!
 
 As you continue to experiment with queries, you should add more instructions.
 
@@ -130,7 +130,7 @@ For our scenario, we'll use this set of instructions:
 - Normalize sales figures using DimCurrency for comparisons involving different currencies.
 - Use ORDER BY clauses to sort results by the metric of interest (for example, sales revenue, total orders).
 - ListPrice in DimProduct is the suggested selling price, while the UnitPrice in FactInternetSales and FactResellerSales is the actual price at which each unit was sold. For most use cases on revenue, the unit price should be used.
-- We rank top resellers by sales amount.
+- Rank top resellers by sales amount.
 
 If you copy this text into the Notes for the model textbox, the AI will refer to these instructions when it generates its SQL queries.
 
@@ -138,21 +138,21 @@ If you copy this text into the Notes for the model textbox, the AI will refer to
 
 In addition to instructions, examples serve as another effective way to guide the AI. If you have questions that your AI skill often receives, or questions that require complex joins, consider adding examples for them.
 
-For example, if we ask the question: "**How many active customers did we have June 1st, 2013**", some valid SQL is generated, as shown in this screenshot:
+For example, the question: "**How many active customers did we have June 1st, 2013**" generates some valid SQL, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/active-customer-ai-skill-first-question.png" alt-text="Screenshot showing the first example AI skill active customer count question." lightbox="./media/ai-skill-scenario/active-customer-ai-skill-first-question.png":::
 
 However, it isn't a good answer.
 
-Part of the problem is that we never defined an "active customer." More instructions in the Notes to the model textbox might help, but here we know that users will frequently ask this question. Therefore, we should make sure that the AI handles the question correctly. The relevant query is moderately complex, so we should provide an example, as shown in this screenshot:
+Part of the problem is that "active customer" does not have a formal definition. More instructions in the Notes to the model textbox might help, but users will frequently ask this question. Therefore, make sure that the AI handles the question correctly. The relevant query is moderately complex, so provide an example, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/examples-ai-skill-sql-query.png" alt-text="Screenshot showing an example AI skill SQL query." lightbox="./media/ai-skill-scenario/examples-ai-skill-sql-query.png":::
 
-If we then repeat the question, we get an improved answer.
+A repeat of the question returns an improved answer.
 
 :::image type="content" source="./media/ai-skill-scenario/active-customer-ai-skill-second-question.png" alt-text="Screenshot showing the second example AI skill active customer count question." lightbox="./media/ai-skill-scenario/active-customer-ai-skill-second-question.png":::
 
-You can manually add examples, but you can also upload them from a json file. Providing examples from a file is helpful when you have many SQL queries that you want to upload all at once, instead of manually uploading the queries one by one. For this exercise, we use these examples:
+You can manually add examples, but you can also upload them from a json file. Providing examples from a file is helpful when you have many SQL queries that you want to upload all at once, instead of manually uploading the queries one by one. For this exercise, use these examples:
 
 ```json
     {
@@ -175,7 +175,7 @@ You can manually add examples, but you can also upload them from a json file. Pr
 
 ## Test and revise the AI skill
 
-We added both instructions and examples to the AI skill. As we continue testing, we might want to add more examples and instructions to improve the AI skill even further. It's important to work with your colleagues, to see if you provided examples and instructions that cover the kinds of questions they want to ask!
+Both instructions and examples were added to the AI skill. As testing proceeds, more examples and instructions can improve the AI skill even further. It's important to work with your colleagues, to see if you provided examples and instructions that cover the kinds of questions they want to ask!
 
 ## Related content
 
