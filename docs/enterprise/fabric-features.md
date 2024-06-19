@@ -4,7 +4,7 @@ description: Learn which Fabric features are available to you depending on the c
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.date: 05/24/2024
+ms.date: 06/19/2024
 ---
 
 # Microsoft Fabric features by SKU
@@ -25,6 +25,7 @@ The following table lists Fabric features according to SKU type. The table lists
 | [Pause and resume your capacity](pause-resume.md)                                                        | &#x2705;      | &#x274C; |
 | [On-demand resizing](scale-capacity.md)                                                                  | &#x2705;      | &#x274C; |
 | [Bring your own key for Power BI](/power-bi/enterprise/service-encryption-byok)                          | &#x2705;      | &#x2705; |
+| [Private links](../security/security-private-links-overview.md)                                          | &#x2705;      | &#x2705; |
 
 ## Related content
 
