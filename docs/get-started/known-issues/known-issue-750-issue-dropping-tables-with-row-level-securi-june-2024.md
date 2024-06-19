@@ -32,4 +32,4 @@ The current limitation is in place until SQL DW supports Alter table.
 
 ## Next steps
 
-- [About known issues](https://support.fabric.microsoft.com/known-issues)
+- This is only a temporary issue until we support alter table Q3, [What's new and planned for Synapse Data Warehouse in Microsoft Fabric - Microsoft Fabric | Microsoft Learn](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fen-gb%2Ffabric%2Frelease-plan%2Fdata-warehouse&data=05%7C02%7Clbonati%40microsoft.com%7Cf689f753b8ca4b215e0a08dc8c66b88a%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638539620017846135%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=1G4sSJsHqJKa0T2aOEE482kXYiBTbfQYH%2BSOisrJXD4%3D&reserved=0)
