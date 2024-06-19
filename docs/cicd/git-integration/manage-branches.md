@@ -62,7 +62,7 @@ For a developer who works in the web, the flow would be as follows:
 
    Fabric creates the new workspace and branch. You're automatically taken to the new workspace.
 
-   The workspace syncs with your feature branch, and becomes an isolated environment to work in, as illustrated. You can now work in this new isolated environment. This might take a few minutes.
+   The workspace syncs with your feature branch, and becomes an isolated environment to work in, as illustrated. You can now work in this new isolated environment. This might take a few minutes. See troubleshooting tips for more information on [branching out](../troubleshoot-cicd.md#branching-out-i-dont-see-the-branch-i-want-to-connect-to).
 
    :::image type="content" source="./media/manage-branches/branches-update-commit.png" alt-text="Diagram showing the workflow of commits.":::
 
