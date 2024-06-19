@@ -7,7 +7,7 @@ ms.reviewer: franksolomon
 reviewer: avangrootel
 ms.service: AI skill
 ms.topic: how-to #Don't change
-ms.date: 06/05/2024
+ms.date: 06/19/2024
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As an Analyst, I want to create an AI skill that relies on generative AI, that my colleagues and I can use to have conversations about our data.
