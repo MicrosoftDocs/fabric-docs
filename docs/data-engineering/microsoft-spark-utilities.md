@@ -609,6 +609,15 @@ With MSSparkUtils' Lakehouse utilities, managing your Lakehouse artifacts become
 
 Feel free to explore these utilities and incorporate them into your Fabric workflows for seamless Lakehouse artifact management.
 
+## Runtime utilities
+
+### Show the session context info
+
+With ``` mssparkutils.runtime.context ``` you can get the context information of the current live session, including the notebook name, default lakehouse, workspace info, if it's a pipeline run, etc.
+
+```python
+mssparkutils.runtime.context
+```
 
 ## Known issue 
 

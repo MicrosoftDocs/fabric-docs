@@ -9,8 +9,9 @@ ms.custom:
   - ignite-2023-fabric
   - build-2024
 ms.topic: conceptual
-ms.date: 06/03/2024
+ms.date: 06/17/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Overview of Copilot in Fabric
@@ -54,7 +55,7 @@ The article [Privacy, security, and responsible use for Copilot (preview)](copil
 
 Copilot features in Fabric are built to meet the Responsible AI Standard, which means that they're reviewed by multidisciplinary teams for potential harms, and then refined to include mitigations for those harms.  
 
-Before you use Copilot, your admin needs to enable Copilot in Fabric. See the article [Overview of Copilot in Fabric (preview)](copilot-fabric-overview.md) for details. Also, keep in mind the limitations of Copilot:
+Before you use Copilot, your admin needs to enable Copilot in Fabric. See the article [Overview of Copilot in Fabric](copilot-fabric-overview.md) for details. Also, keep in mind the limitations of Copilot:
 
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before using them in your work.
 - Reviews of outputs should be done by people who are able to meaningfully evaluate the content's accuracy and appropriateness.

@@ -54,7 +54,7 @@ To submit a request to run the Spark job definition from VS Code:
 
    :::image type="content" source="media\vscode\submit-sjd-run.png" alt-text="Screenshot of VS Code Explorer, showing where to select Run Spark Job.":::
 
-1. After you submit the request, a new Spark Application appears in the **Runs** node in the Explorer list. You can cancel the running job by selecting the **Cancel Spark Job** option.
+1. After you submit the request, a new Apache Spark application appears in the **Runs** node in the Explorer list. You can cancel the running job by selecting the **Cancel Spark Job** option.
 
    :::image type="content" source="media\vscode\cancel-sjd-run.png" alt-text="Screenshot of VS Code Explorer with the new Spark application listed under the Runs node, and showing where to find the Cancel Spark Job option.":::
 

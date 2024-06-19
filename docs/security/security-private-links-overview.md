@@ -100,18 +100,18 @@ ML Model, Experiment, and AI skill supports private link.
 
 * If your organization is using Azure Private Link in Fabric, modern usage metrics reports will contain partial data (only Report Open events). A current limitation when transferring client information over private links prevents Fabric from capturing Report Page Views and performance data over private links. If your organization had enabled the **Azure Private Link** and **Block Public Internet Access** tenant settings in Fabric, the refresh for the dataset fails and the usage metrics report doesn't show any data.
 
-### Event house
+### Eventhouse
 
-Event house supports Private Link, allowing secure data ingestion and querying from your Azure Virtual Network via a private link. You can ingest data from various sources, including Azure Storage accounts, local files, and Dataflow Gen2. Streaming ingestion ensures immediate data availability. Additionally, you can utilize KQL queries or Spark to access data within an event house.
+Eventhouse supports Private Link, allowing secure data ingestion and querying from your Azure Virtual Network via a private link. You can ingest data from various sources, including Azure Storage accounts, local files, and Dataflow Gen2. Streaming ingestion ensures immediate data availability. Additionally, you can utilize KQL queries or Spark to access data within an eventhouse.
 
 Limitations:
 
 * Ingesting data from OneLake isn't supported.
-* Creating a shortcut to an event house isn't possible.
-* Connecting to an event house in a data pipeline isn't possible.
+* Creating a shortcut to an eventhouse isn't possible.
+* Connecting to an eventhouse in a data pipeline isn't possible.
 * Ingesting data using queued ingestion isn't supported.
 * Data connectors relying on queued ingestion aren't supported.
-* Querying an event house using T-SQL isn't possible.
+* Querying an eventhouse using T-SQL isn't possible.
 
 ### Other Fabric items
 
@@ -144,7 +144,7 @@ There are several considerations to keep in mind while working with private endp
 
 * Each private endpoint can be connected to one tenant only.  You can't set up a private link to be used by more than one tenant.
 
-* **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. VNet data gateways will work.
+* **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. VNet data gateways will work. For more information, see [these considerations](https://learn.microsoft.com/data-integration/gateway/service-gateway-install#:~:text=When%20private%20link%20is%20enabled%2C%20disable,enable%20the%20Azure%20Private%20Link%20property.).
 
  * **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The gateway doesn't work properly when Private Link is enabled. A potential workaround is to disable the **Azure Private Link** tenant setting, configure the gateway in a remote region (a region other than the recommended region), then re-enable Azure Private Link. After Private Link is re-enabled, the gateway in the remote region won't use private links.
 

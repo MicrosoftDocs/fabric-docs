@@ -4,7 +4,7 @@ description: A known issue is posted where creating or opening a Dataflow Gen2 d
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/01/2024
+ms.date: 06/06/2024
 ms.custom: known-issue-663
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-663
 
 When creating a new or opening an existing Dataflow Gen2 dataflow, you might see the error message: "Something went wrong. Please try again." If the dataflow is in a workspace associated with an inactive capacity, the error message applies to this known issue.
 
-**Status:** Open
+**Status:** Fixed: June 6, 2024
 
 **Product Experience:** Data Factory
 

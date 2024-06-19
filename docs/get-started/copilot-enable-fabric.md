@@ -8,8 +8,9 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.topic: conceptual
-ms.date: 06/03/2024
+ms.date: 06/17/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Enable Copilot in Fabric

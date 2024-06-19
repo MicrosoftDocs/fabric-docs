@@ -9,6 +9,7 @@ ms.custom:
   - ignite-2023-fabric
 ms.date: 01/16/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 #CustomerIntent: As a data scientist, data engineer, or business analyst using notebooks in Microsoft Fabric, I want to understand the capabilities of the Chat-magics library to enhance my notebook interactions.
 ---
 # Overview of Chat-magics in Microsoft Fabric Notebooks

@@ -117,10 +117,10 @@ aggregations that can be shared to consumers in Real-Time hub.
 
 ### Store and analyze data
 
-Event houses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. This data is
-automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data. Data stored in event houses can be made available in OneLake for consumption by other Fabric experiences.
+Eventhouses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. This data is
+automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data. Data stored in eventhouses can be made available in OneLake for consumption by other Fabric experiences.
 
-The indexed, partitioned data stored in event houses is ready for
+The indexed, partitioned data stored in eventhouses is ready for
 lightning-fast query using various code, low-code, or no-code
 options in Fabric. Data can be queried in native KQL (Kusto Query
 Language) or using T-SQL in the KQL queryset. The Kusto copilot, along

@@ -309,7 +309,7 @@ Body:
 { 
   "executionData": { 
     "parameters": {
-      "param_waitsec": 10" 
+      "param_waitsec": "10" 
     } 
   } 
 }
