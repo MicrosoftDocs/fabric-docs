@@ -36,7 +36,7 @@ When you start a Fabric capacity trial, your trial [capacity](../enterprise/lice
 
 To begin using your Fabric trial capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you.
 
-Although you don't actually receive a new license, the actions that you can perform and the features that you can use are similar to [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq] during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a Premium Per User (PPU) license. 
+Although you don't actually receive a new license, the actions that you can perform and the features that you can use are similar to [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq) during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a Premium Per User (PPU) license. 
 
 ## Existing Power BI users
 
