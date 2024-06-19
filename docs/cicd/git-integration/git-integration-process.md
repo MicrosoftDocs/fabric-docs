@@ -102,7 +102,7 @@ Select the Source control icon to open the **Source control** panel.
 The **Source control** panel has two tabs on the side.
 
 - [Commits and updates](#commits-and-updates)
-- [Branches](#branch-out)
+- [Branches](#branches)
 
 ### Commits and updates
 
@@ -137,14 +137,14 @@ The Refresh button :::image type="icon" source="./media/git-integration-process/
 Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git).
 Read more about the update process and how to [resolve conflicts](./conflict-resolution.md).
 
-### Branch out
+### Branches
 
 The *Branches* tab of the Source control panel enables you to manage your branches and perform branch related actions. It has two main sections:
 
 - **Actions you can take on the current branch**:
 
-  - *Checkout a new branch* (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
   - [*Branch out to new workspace*](./manage-branches.md#develop-using-another-workspace) (any role): Creates a new workspace and new branch based on the last commit of the branch connected to the current workspace. It connects to the new workspace and new branch.
+  - *Checkout a new branch* (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
 
   :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
 
