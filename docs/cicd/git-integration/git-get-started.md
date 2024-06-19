@@ -67,10 +67,10 @@ Select **Add account** if it's your first time signing in from Fabric, or select
 
 :::image type="content" source="./media/git-get-started/github-first-connect.png" alt-text="Screenshot of GitHub integration window without any existing accounts to select.":::
 
-If it's the first time connecting, you need to [Authorize](https://docs.github.com/authentication/keeping-your-account-and-data-secure/about-authentication-to-github) your GitHub user. Provide the following information:
+If it's the first time connecting, you need to <a href="https://docs.github.com/authentication/keeping-your-account-and-data-secure/about-authentication-to-github" target="_blank">Authorize</a> your GitHub user. Provide the following information:
 
 - *Display name* - must be unique for each user
-- *Personal access token* - [your classic or fine-grained personal access token](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+- *Personal access token* - <a href="https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" target="_blank">your classic or fine-grained personal access token</a>
 - *URL* (optional) - If you don't enter a URL, you can connect to any repo you have access to. If you enter a URL, you can only connect to this repository.
 
 :::image type="content" source="./media/git-get-started/github-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
@@ -103,7 +103,7 @@ If it's the first time connecting, you need to [Authorize](https://docs.github.c
 
     - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project). If you connected to GitHub using a scoped token, you can only connect to that repository.
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
-    - Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content will be created in the root folder. You can only connect to one folder at a time.)
+    - Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content is created in the root folder. You can only connect to one folder at a time.)
 
 :::image type="content" source="./media/git-get-started/github-connect-branch.png" alt-text="Screenshot to GitHub connection.":::
 
@@ -138,7 +138,7 @@ To commit your changes to the Git branch, follow these steps:
 
    :::image type="content" source="./media/git-get-started/commit-changes.png" alt-text="Screenshot of source control window with two changes selected to commit.":::
 
-After the changes are committed, the items that were committed are removed from the list, and the workspace will point to the new commit that it's synced to.
+After the changes are committed, the items that were committed are removed from the list, and the workspace will point to the new commit that it synced to.
 
 :::image type="content" source="./media/git-get-started/no-changes.png" alt-text="Screenshot of source control window stating that there are no changes to commit.":::
 
@@ -207,7 +207,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
-- During the *Commit to Git* process, the Fabric service deletes any files *inside the item folder* that aren't part of the item definition. Unrelated files not in an item folder are not deleted.
+- During the *Commit to Git* process, the Fabric service deletes any files *inside the item folder* that aren't part of the item definition. Unrelated files not in an item folder aren't deleted.
 
 - After you commit changes, you might notice some unexpected changes to the item that you didn't make. These changes are semantically insignificant and can happen for several reasons. For example:
 
