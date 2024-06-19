@@ -20,7 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
-|  750  | Data Warehouse | [Issue dropping tables with Row Level Security](known-issues/known-issue-750-issue-dropping-tables-with-row-level-security-june-2024.md) | May 31, 2024 |
+|  750  | Data Warehouse | [Issue dropping tables with Row Level Security](known-issues/known-issue-750-issue-dropping-tables-with-row-level-security.md) | June 19, 2024 |
 |  749  | Power BI | [Tenant migrations paused for June 2024](known-issues/known-issue-749-tenant-migrations-paused-june-2024.md) | May 31, 2024 |
 |  732  | Data Engineering | [Shortcut creation on a lakehouse preview table takes long time](known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md) | May 31, 2024 |
 |  743  | Power BI | [Semantic models in Desktop sometimes fail in March 2024 and later versions](known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md) | May 30, 2024 |
