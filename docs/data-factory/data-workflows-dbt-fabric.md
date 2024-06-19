@@ -59,34 +59,34 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
 - [astronomer-cosmos](https://www.astronomer.io/cosmos/): This package is used to run your dbt core projects as Apache Airflow dags and Task groups.
 - [dbt-fabric](https://pypi.org/project/dbt-fabric/): This package is used to create dbt project, which can then be deployed to a [Fabric Synapse Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup)
 
-```bash
-  astronomer-cosmos==1.0.3
-  dbt-fabric==1.5.0
-```
+1. ```bash
+   astronomer-cosmos==1.0.3
+   dbt-fabric==1.5.0
+   ```
 
 ### [Create a dbt project in Fabric managed storage](#create-a-dbt-project-in-fabric-managed-storage)
 
 1. In this section, we create a sample dbt project in the Data workflows for the dataset `nyc_taxi_green` with the following directory structure.
 
-   ```bash
-     dags
-     |-- my_cosmos_dag.py
-     |-- nyc_taxi_green
-     |  |-- profiles.yml
-     |  |-- dbt_project.yml
-     |  |-- models
-     |  |   |-- nyc_trip_count.sql
-     |  |-- target
+1. ```bash
+   dags
+   |-- my_cosmos_dag.py
+   |-- nyc_taxi_green
+   |  |-- profiles.yml
+   |  |-- dbt_project.yml
+   |  |-- models
+   |  |   |-- nyc_trip_count.sql
+   |  |-- target
    ```
 
-2. Create the folder named `nyc_taxi_green` in the `dags` folder with `profiles.yml` file. This folder contains all the files required for dbt project.
+1. Create the folder named `nyc_taxi_green` in the `dags` folder with `profiles.yml` file. This folder contains all the files required for dbt project.
 
-   :::image type="content" source="media/data-workflows/dbt-profiles.png" lightbox="media/data-workflows/dbt-profiles.png" alt-text="Screenshot shows create files for the dbt project.":::
+:::image type="content" source="media/data-workflows/dbt-profiles.png" lightbox="media/data-workflows/dbt-profiles.png" alt-text="Screenshot shows create files for the dbt project.":::
 
 3. Copy the following contents into the `profiles.yml`. This configuration file contains database connection details and profiles used by dbt.
    Update the placeholder values and save the file.
 
-   ```yaml
+1. ```yaml
    config:
      partial_parse: true
    nyc_taxi_green:
@@ -106,88 +106,88 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
          client_secret: <Client Secret of your service principal>
    ```
 
-4. Create the `dbt_project.yml` file and copy the following contents. This file specifies the project-level configuration.
+1. Create the `dbt_project.yml` file and copy the following contents. This file specifies the project-level configuration.
 
-   ```yaml
-   name: "nyc_taxi_green"
+```yaml
+name: "nyc_taxi_green"
 
-   config-version: 2
-   version: "0.1"
+config-version: 2
+version: "0.1"
 
-   profile: "nyc_taxi_green"
+profile: "nyc_taxi_green"
 
-   model-paths: ["models"]
-   seed-paths: ["seeds"]
-   test-paths: ["tests"]
-   analysis-paths: ["analysis"]
-   macro-paths: ["macros"]
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+analysis-paths: ["analysis"]
+macro-paths: ["macros"]
 
-   target-path: "target"
-   clean-targets:
-     - "target"
-     - "dbt_modules"
-     - "logs"
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
+  - "logs"
 
-   require-dbt-version: [">=1.0.0", "<2.0.0"]
+require-dbt-version: [">=1.0.0", "<2.0.0"]
 
-   models:
-     nyc_taxi_green:
-       materialized: table
-   ```
+models:
+  nyc_taxi_green:
+    materialized: table
+```
 
-5. Create the `models` folder in the `nyc_taxi_green` folder. For this tutorial, we create the sample model in the file named `nyc_trip_count.sql` that creates the table showing number of trips per day per vendor. Copy the following contents in the file.
+1. Create the `models` folder in the `nyc_taxi_green` folder. For this tutorial, we create the sample model in the file named `nyc_trip_count.sql` that creates the table showing number of trips per day per vendor. Copy the following contents in the file.
 
-   ```SQL
-     with new_york_taxis as (
-         select * from nyctlc
-     ),
-     final as (
-       SELECT
+1. ```SQL
+   with new_york_taxis as (
+       select * from nyctlc
+   ),
+   final as (
+     SELECT
+       vendorID,
+       CAST(lpepPickupDatetime AS DATE) AS trip_date,
+       COUNT(*) AS trip_count
+     FROM
+         [contoso-data-warehouse].[dbo].[nyctlc]
+     GROUP BY
          vendorID,
-         CAST(lpepPickupDatetime AS DATE) AS trip_date,
-         COUNT(*) AS trip_count
-       FROM
-           [contoso-data-warehouse].[dbo].[nyctlc]
-       GROUP BY
-           vendorID,
-           CAST(lpepPickupDatetime AS DATE)
-       ORDER BY
-           vendorID,
-           trip_date;
-     )
-     select * from final
+         CAST(lpepPickupDatetime AS DATE)
+     ORDER BY
+         vendorID,
+         trip_date;
+   )
+   select * from final
    ```
 
-   :::image type="content" source="media/data-workflows/dbt-models.png" lightbox="media/data-workflows/dbt-models.png" alt-text="Screenshot shows models for the dbt project.":::
+:::image type="content" source="media/data-workflows/dbt-models.png" lightbox="media/data-workflows/dbt-models.png" alt-text="Screenshot shows models for the dbt project.":::
 
 ### [Create an Apache Airflow DAG to orchestrate dbt jobs](#create-an-apache-airflow-dag-to-orchestrate-dbt-jobs)
 
 - Create the file named `my_cosmos_dag.py` in `dags` folder and Paste the following contents in it.
 
-  ```python
-    import os
-    from pathlib import Path
-    from datetime import datetime
-    from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
+```python
+ import os
+ from pathlib import Path
+ from datetime import datetime
+ from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
 
-    DEFAULT_DBT_ROOT_PATH = Path(__file__).parent.parent / "dags" / "nyc_taxi_green"
-    DBT_ROOT_PATH = Path(os.getenv("DBT_ROOT_PATH", DEFAULT_DBT_ROOT_PATH))
-    profile_config = ProfileConfig(
-        profile_name="nyc_taxi_green",
-        target_name="fabric-dev",
-        profiles_yml_filepath=DBT_ROOT_PATH / "profiles.yml",
-    )
+ DEFAULT_DBT_ROOT_PATH = Path(__file__).parent.parent / "dags" / "nyc_taxi_green"
+ DBT_ROOT_PATH = Path(os.getenv("DBT_ROOT_PATH", DEFAULT_DBT_ROOT_PATH))
+ profile_config = ProfileConfig(
+     profile_name="nyc_taxi_green",
+     target_name="fabric-dev",
+     profiles_yml_filepath=DBT_ROOT_PATH / "profiles.yml",
+ )
 
-    dbt_fabric_dag = DbtDag(
-        project_config=ProjectConfig(DBT_ROOT_PATH,),
-        operator_args={"install_deps": True},
-        profile_config=profile_config,
-        schedule_interval="@daily",
-        start_date=datetime(2023, 9, 10),
-        catchup=False,
-        dag_id="dbt_fabric_dag",
-    )
-  ```
+ dbt_fabric_dag = DbtDag(
+     project_config=ProjectConfig(DBT_ROOT_PATH,),
+     operator_args={"install_deps": True},
+     profile_config=profile_config,
+     schedule_interval="@daily",
+     start_date=datetime(2023, 9, 10),
+     catchup=False,
+     dag_id="dbt_fabric_dag",
+ )
+```
 
 ## Run your DAG
 
