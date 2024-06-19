@@ -101,7 +101,7 @@ The following sections show you how to use these methods.
 
 > [!NOTE]
 >- Preexisting shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
->- You must use the dfs url ID for the storage account. Ex: https://StorageAccountName.dfs.core.windows.net
+>- You must use the dfs url ID for the storage account. Ex: `https://StorageAccountName.dfs.core.windows.net`
 
 #### Steps
 
