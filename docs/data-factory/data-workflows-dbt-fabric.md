@@ -68,7 +68,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
 
 1. In this section, we create a sample dbt project in the Data workflows for the dataset `nyc_taxi_green` with the following directory structure.
 
-1. ```bash
+```bash
    dags
    |-- my_cosmos_dag.py
    |-- nyc_taxi_green
@@ -77,36 +77,36 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
    |  |-- models
    |  |   |-- nyc_trip_count.sql
    |  |-- target
-   ```
+```
 
-1. Create the folder named `nyc_taxi_green` in the `dags` folder with `profiles.yml` file. This folder contains all the files required for dbt project.
+2. Create the folder named `nyc_taxi_green` in the `dags` folder with `profiles.yml` file. This folder contains all the files required for dbt project.
 
    :::image type="content" source="media/data-workflows/dbt-profiles.png" lightbox="media/data-workflows/dbt-profiles.png" alt-text="Screenshot shows create files for the dbt project.":::
 
-1. Copy the following contents into the `profiles.yml`. This configuration file contains database connection details and profiles used by dbt.
+3. Copy the following contents into the `profiles.yml`. This configuration file contains database connection details and profiles used by dbt.
    Update the placeholder values and save the file.
 
-1. ```yaml
-   config:
-     partial_parse: true
-   nyc_taxi_green:
-     target: fabric-dev
-     outputs:
-       fabric-dev:
-         type: fabric
-         driver: "ODBC Driver 18 for SQL Server"
-         server: <sql endpoint of your data warehouse>
-         port: 1433
-         database: "<name of the database>"
-         schema: dbo
-         threads: 4
-         authentication: ServicePrincipal
-         tenant_id: <Tenant ID of your service principal>
-         client_id: <Client ID of your service principal>
-         client_secret: <Client Secret of your service principal>
-   ```
+```yaml
+config:
+  partial_parse: true
+nyc_taxi_green:
+  target: fabric-dev
+  outputs:
+    fabric-dev:
+      type: fabric
+      driver: "ODBC Driver 18 for SQL Server"
+      server: <sql endpoint of your data warehouse>
+      port: 1433
+      database: "<name of the database>"
+      schema: dbo
+      threads: 4
+      authentication: ServicePrincipal
+      tenant_id: <Tenant ID of your service principal>
+      client_id: <Client ID of your service principal>
+      client_secret: <Client Secret of your service principal>
+```
 
-1. Create the `dbt_project.yml` file and copy the following contents. This file specifies the project-level configuration.
+5. Create the `dbt_project.yml` file and copy the following contents. This file specifies the project-level configuration.
 
 ```yaml
 name: "nyc_taxi_green"
@@ -135,9 +135,9 @@ models:
     materialized: table
 ```
 
-1. Create the `models` folder in the `nyc_taxi_green` folder. For this tutorial, we create the sample model in the file named `nyc_trip_count.sql` that creates the table showing number of trips per day per vendor. Copy the following contents in the file.
+6. Create the `models` folder in the `nyc_taxi_green` folder. For this tutorial, we create the sample model in the file named `nyc_trip_count.sql` that creates the table showing number of trips per day per vendor. Copy the following contents in the file.
 
-1. ```SQL
+```SQL
    with new_york_taxis as (
        select * from nyctlc
    ),
@@ -156,9 +156,9 @@ models:
          trip_date;
    )
    select * from final
-   ```
+```
 
-   :::image type="content" source="media/data-workflows/dbt-models.png" lightbox="media/data-workflows/dbt-models.png" alt-text="Screenshot shows models for the dbt project.":::
+:::image type="content" source="media/data-workflows/dbt-models.png" lightbox="media/data-workflows/dbt-models.png" alt-text="Screenshot shows models for the dbt project.":::
 
 ### [Create an Apache Airflow DAG to orchestrate dbt jobs](#create-an-apache-airflow-dag-to-orchestrate-dbt-jobs)
 
