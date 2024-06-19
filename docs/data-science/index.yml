@@ -90,6 +90,22 @@ landingContent:
             url: mlflow-autologging.md 
 
 # Card 
+  - title: AI with SynapseML
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Your First SynapseML Model
+            url: synapseml-first-model.md
+          - text: Install another version of SynapseML
+            url: install-synapseml.md
+      - linkListType: how-to-guide
+        links:
+          - text: Use OpenAI for big data with SynapseML
+            url: open-ai.md
+          - text: Use AI Services with SynapseML
+            url: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
+
+# Card 
   - title: Using semantic link 
     linkLists:
       - linkListType: overview
@@ -105,21 +121,6 @@ landingContent:
           - text: Explore and validate relationships in semantic models
             url: semantic-link-validate-relationship.md
 
-# Card 
-  - title: Using SynapseML
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: Your First SynapseML Model
-            url: synapseml-first-model.md
-          - text: Install another version of SynapseML
-            url: install-synapseml.md
-      - linkListType: how-to-guide
-        links:
-          - text: Use OpenAI for big data with SynapseML
-            url: open-ai.md
-          - text: Use AI Services with SynapseML
-            url: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
 
 # Card
   - title: Reference docs     
