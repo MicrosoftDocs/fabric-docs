@@ -202,11 +202,11 @@ The following tables contain more information about a copy activity in Lakehouse
 |:---|:---|:---|:---|:---|
 |**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>artifactId|
 |**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |No|rootFolder:<br>Table or Files|
-|**Table name** |The name of the table that you want to read data. |\<your table name> |Yes when you select **Tables** in **Root folder** | *(under `typeProperties` -> `source` -> `typeProperties`)*<br>table  |
+|**Table name** |The name of the table that you want to read data. |\<your table name> |Yes when you select **Tables** in **Root folder** | table  |
 |**Table** |The name of the table with a schema that you want to read data when you apply Lakehouse with schemas as the connection. |\<your table with a schema> |Yes when you select **Tables** in **Root folder** | / |
 | *For **Table*** |  |  |  |  |
-|**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | *(under `typeProperties` -> `source` -> `typeProperties`)*<br>schema |
-|**table name** |The name of the table. |\<your table name> |Yes | *(under `typeProperties` -> `source` -> `typeProperties`)*<br>table |
+|**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | *(under `source` -> `datasetSettings` -> `typeProperties`)*<br>schema |
+|**table name** |The name of the table. |\<your table name> |Yes | table |
 |  |  |  |  |  |
 |**Timestamp** | The timestamp to query an older snapshot.| \<timestamp>|No |timestampAsOf |
 |**Version** |The version to query an older snapshot.| \<version>|No |versionAsOf|
@@ -229,17 +229,17 @@ The following tables contain more information about a copy activity in Lakehouse
 |:---|:---|:---|:---|:---|
 |**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>artifactId|
 |**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |Yes | rootFolder:<br>Table or Files|
-|**Table name** |The name of the table that you want to write data to. |\<your table name> |Yes when you select **Tables** in **Root folder** | *(under `typeProperties` -> `sink` -> `typeProperties`)*<br>table |
+|**Table name** |The name of the table that you want to write data to. |\<your table name> |Yes when you select **Tables** in **Root folder** | table |
 |**Table** |The name of the table with a schema that you want to write data to when you apply Lakehouse with schemas as the connection. |\<your table with a schema> |Yes when you select **Tables** in **Root folder** | / |
 | *For **Table*** |  |  |  |  |
-|**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*). |No | *(under `typeProperties` -> `sink` -> `typeProperties`)*<br>schema |
-|**table name** |The name of the table. |\<your table name> |Yes | *(under `typeProperties` -> `sink` -> `typeProperties`)*<br>table |
+|**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | *(under `sink` -> `datasetSettings` -> `typeProperties`)*<br>schema |
+|**table name** |The name of the table. |\<your table name> |Yes | table |
 |  |  |  |  |  |
 |**Table action**| Append new values to an existing table or overwrite the existing data and schema in the table using the new values.|• **Append**<br>• **Overwrite**|No|tableActionOption:<br>Append or OverwriteSchema|
 |**Enable partitions**|This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".| Selected or unselected |No| partitionOption: <br> PartitionByKey or None|
 |**Partition columns**|The destination columns in schemas mapping.| \<your partition columns\> |No| partitionNameList|
 |**File path**|Write data to the path to a folder/file under destination data store.|\<file path>|No|• folderPath<br>• fileName|
-| **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes when you select **Files** in **Root folder** | / |
+| **File format** | The file format for your destination data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes when you select **Files** in **Root folder** | / |
 |**Copy behavior** | The copy behavior defined when the source is files from a file-based data store.|• **Flatten hierarchy**<br>• **Merge files**<br>• **Preserve hierarchy**<br>• **Add dynamic content** |No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
 |**Block size (MB)** |The block size in MB used to write data to Lakehouse. Allowed value is between 4 MB and 100 MB.|\<block size\>|No|blockSizeInMB|
