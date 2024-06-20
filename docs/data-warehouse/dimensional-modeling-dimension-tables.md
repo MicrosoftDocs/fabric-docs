@@ -82,8 +82,7 @@ A surrogate key column is a recommended practice, even when a natural key (descr
 
 The sample dimension table also has a _natural key_, which is named `EmployeeID`. A natural key is the key stored in the source system. It allows relating the dimension data to its source system, which is typically done by an Extract, Load, and Transform (ETL) process to load the dimension table. Sometimes a natural key is called a _business key_, and its values might be meaningful to business users.
 
-> [!NOTE]
-> Sometimes dimensions don't have a natural key. That could be the case for your [date dimension](#date-dimension) or lookup dimensions, or when you generate dimension data by normalizing a flat file.
+Sometimes dimensions don't have a natural key. That could be the case for your [date dimension](#date-dimension) or lookup dimensions, or when you generate dimension data by normalizing a flat file.
 
 ### Dimension attributes
 
@@ -92,17 +91,15 @@ A sample dimension table also has _dimension attributes_, like the `FirstName` c
 > [!TIP]
 > A good way to determine which dimensions and attributes you need is to find the right people and ask the right questions. Specifically, stay alert for the mention of the word _by_. For example, when someone says they need to analyze sales _by_ salesperson, _by_ month, and _by_ product category, they're telling you that they need dimensions that have those attributes.
 
-> [!NOTE]
-> If you plan to create a [Direct Lake semantic model](../get-started/direct-lake-overview.md), you should include all possible columns required for filtering and grouping as dimension attributes. That's because Direct Lake semantic models don't support calculated columns.
+If you plan to create a [Direct Lake semantic model](../get-started/direct-lake-overview.md), you should include all possible columns required for filtering and grouping as dimension attributes. That's because Direct Lake semantic models don't support calculated columns.
 
 ### Foreign keys
 
 The sample dimension table also has a _foreign key_, which is named `SalesRegion_FK`. Other dimension tables can reference a foreign key, and their presence in a dimension table is a special case. It indicates that the table is related to another dimension table, meaning that it might form part of a [snowflake dimension](#snowflake-dimensions) or it's related to an [outrigger dimension](#outrigger-dimensions).
 
-> [!NOTE]
-> Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] [supports foreign key constraints](table-constraints.md#table-constraints) but they can't be enforced. Therefore, it's important that your ETL process tests for integrity between related tables when data is loaded.  
->
-> It's still a good idea to create foreign keys. One good reason to create unenforced foreign keys is to allow modeling tools, like Power BI Desktop, to automatically detect and create relationships between tables in the semantic model.
+Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] [supports foreign key constraints](table-constraints.md#table-constraints) but they can't be enforced. Therefore, it's important that your ETL process tests for integrity between related tables when data is loaded.  
+
+It's still a good idea to create foreign keys. One good reason to create unenforced foreign keys is to allow modeling tools, like Power BI Desktop, to automatically detect and create relationships between tables in the semantic model.
 
 ### Historical tracking attributes
 
@@ -318,7 +315,7 @@ The date (or calendar) dimension is the most common dimension used for analysis.
 > [!IMPORTANT]
 > A date dimension shouldn't include a grain that extends to time of day. If time of day analysis is required, you should have both a date dimension and a [time dimension](#time-dimension) (described next). Fact tables that store time of day facts should have two foreign keys, one to each of these dimensions.
 
-The natural key of the date dimension should use the **date** data type. The surrogate key should store the date by using `YYYYMMDD` format and the **int** data type. This accepted practice should be the only exception (alongside the time dimension) when the surrogate key value has meaning and is human readable. Storing `YYYYMMDD` as an **int** data type isn't only efficient and sorted numerically, but it also conforms to the unambiguous International Standards Organization (ISO) 8601 date format.
+The natural key of the date dimension should use the **date** data type. The surrogate key should store the date by using `YYYYMMDD` format and the **int** data type. This accepted practice should be the only exception (alongside the time dimension) when the surrogate key value has meaning and is human readable. Storing `YYYYMMDD` as an **int** data type is not only efficient and sorted numerically, but it also conforms to the unambiguous International Standards Organization (ISO) 8601 date format.
 
 Here are some common attributes to include in a date dimension.
 
