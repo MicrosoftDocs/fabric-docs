@@ -102,7 +102,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
           client_secret: <Client Secret of your service principal>
     ```
 
-5. Create the `dbt_project.yml` file and copy the following contents. This file specifies the project-level configuration.
+4. Create the `dbt_project.yml` file and copy the following contents. This file specifies the project-level configuration.
 
     ```yaml
     name: "nyc_taxi_green"
@@ -131,7 +131,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
         materialized: table
     ```
 
-6. Create the `models` folder in the `nyc_taxi_green` folder. For this tutorial, we create the sample model in the file named `nyc_trip_count.sql` that creates the table showing number of trips per day per vendor. Copy the following contents in the file.
+5. Create the `models` folder in the `nyc_taxi_green` folder. For this tutorial, we create the sample model in the file named `nyc_trip_count.sql` that creates the table showing number of trips per day per vendor. Copy the following contents in the file.
 
     ```SQL
        with new_york_taxis as (
