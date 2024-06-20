@@ -194,12 +194,7 @@ Only a workspace admin can disconnect a workspace from an Azure Repo. If you’r
 1. Go to **Workspace settings**
 1. Select **Git integration**
 1. Select **Disconnect workspace**
-
-    :::image type="content" source="media/git-get-started/disconnect-workspace.png" alt-text="Screenshot of workspace settings screen with disconnect workspace option.":::
-
 1. Select **Disconnect** again to confirm.
-
-    :::image type="content" source="media/git-get-started/disconnect-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to disconnect.":::
 
 ## Permissions
 
