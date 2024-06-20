@@ -33,19 +33,19 @@ Git integration is currently supported for Azure DevOps and GitHub. To use Git i
 
 ### [Azure DevOps](#tab/azure-devops)
 
-- An active Azure account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
+- An active Azure account registered to the same user that is using the Fabric workspace. <a href="https://azure.microsoft.com/products/devops/" target="_blank">Create a free account</a>.
 - Access to an existing repository.
 
 ### [GitHub](#tab/github)
 
-- An active GitHub account. [Create a GitHub account](https://docs.github.com)
-- *One* of the following [personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens):
+- An active GitHub account. <a href="https://docs.github.com" target="_blank">Create a GitHub account</a>.
+- *One* of the following <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"_blank">personal access tokens</a>:
 
-  - A [fine-grained token](https://github.com/settings/personal-access-tokens/new) (recommended) with **Contents** read and write permission under the repository permissions:
+  - A <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">fine-grained token</a> (recommended) with **Contents** read and write permission under the repository permissions:
   
     :::image type="content" source="/fabric/includes/media/github-prereqs/fine-grained-token.png" alt-text="Screenshot of GitHub token permissions.":::
 
-  - A [classic token](https://github.com/settings/tokens/new) with repo scopes enabled:
+  - A <a href="https://github.com/settings/tokens/new" target="_blank">Create a GitHub classic token</a> with repo scopes enabled:
 
     :::image type="content" source="/fabric/includes/media/github-prereqs/classic-token.png" alt-text="Screenshot of GitHub classic token scopes.":::
 
