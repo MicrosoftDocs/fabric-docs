@@ -34,6 +34,36 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
    :::image type="content" source="media/how-to-access-on-premises-data/new-connection-details.png" alt-text="Screenshot showing the New connection dialog with On-premises selected.":::
 
+   Available connection types supported for on-premises connections are:
+
+   - Active Directory
+   - Adobe Analytics
+   - Analysis Services
+   - Azure Blob Storage
+   - Azure Data Lake Storage Gen2
+   - Azure Table Storage
+   - Essbase
+   - Fle
+   - Folder
+   - Google Analytics
+   - IBM DB2
+   - IBM Informix Database
+   - MySQL
+   - OData
+   - ODBC
+   - OLE DB
+   - Oracle
+   - PostgreSQL
+   - Salesforce
+   - SAP Business Warehouse Message Server
+   - SAP Business Warehouse Server
+   - SAP HANA
+   - SharePoint
+   - SQL Server
+   - Sybase
+   - Teradata
+   - Web
+
 ## Connect your on-premises data source to a Dataflow Gen2 in Data Factory for Microsoft Fabric
 
 1. Go to your workspace and create a Dataflow Gen2.
