@@ -51,6 +51,10 @@ After you create an AI skill, select a data source - either a Data Warehouse or 
 
 The left nav populates with the available tables in the selected data source. Use the checkboxes to make a table available or unavailable to the AI. You must select at least one table before you can ask the AI skill your questions.
 
+> [!NOTE]
+> Make sure to use descriptive column names. Instead of using column names like “C1” or “ActCu,” use “ActiveCustomer” or “IsCustomerActive.” This is the most effective way to get more reliable queries out of the AI.
+> Use the Notes for the model in the UI configuration panel. If the AI skill generates incorrect T-SQL queries, you can provide instructions to the model in plain English to improve future queries. The system will use these instructions with every query. Short and direct instructions work best.
+
 ## Asking questions
 
 Once you select the data, you can start asking questions. The system handles questions that a single query can answer. This means that questions like
@@ -67,7 +71,7 @@ These questions are out of scope:
 - "Why is our factory productivity lower in Q2 2024?"
 - "What is the root cause of our sales spike?"
 
-When you ask a question, the system uses your credentials to fetch the schema. Based on that question, the additional information you provided (see the sections on "Providing Examples" and "Providing Instructions" below), and the schema, the system then constructs a prompt. This prompt is the text that is sent to an AI, which generates multiple SQL queries. After generation of the SQL queries, study them to ensure that they only query the data. Additionally, verify that they don't create, update, delete, or otherwise change your data in any way. Then, extract the best query candidate from the list of generated queries, and make some basic repairs on the best AI-generated query. Finally, with your credentials, re-execute the query, and return the result set to you.
+When you ask a question, the system uses your credentials to fetch the schema. Based on that question, the additional information you provided (see the sections on "Providing Examples" and "Providing Instructions" below), and the schema, the system then constructs a prompt. This prompt is the text that is sent to an AI, which generates multiple SQL queries. After generation of the SQL queries, study them to ensure that they only query the data. Additionally, verify that they don't create, update, delete, or otherwise change your data in any way. Then, extract the best query candidate from the list of generated queries, and make any needed basic repairs on the best AI-generated query. Finally, with your credentials, re-execute the query, and return the result set to you.
 
 ## Changing the data source
 
