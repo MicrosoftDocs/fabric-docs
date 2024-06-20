@@ -195,8 +195,8 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
 
 ## Validate your data
 
-After a successful run, to validate your data, you can see the new table named 'nyc_trip_count.sql' created in your Fabric data warehouse.
-:::image type="content" source="media/data-workflows/dbt-successful.png" lightbox="media/data-workflows/dbt-successful.png" alt-text="Screenshot shows successful dbt dag.":::
+- After a successful run, to validate your data, you can see the new table named 'nyc_trip_count.sql' created in your Fabric data warehouse.
+  :::image type="content" source="media/data-workflows/dbt-successful.png" lightbox="media/data-workflows/dbt-successful.png" alt-text="Screenshot shows successful dbt dag.":::
 
 ## Related content
 
