@@ -45,6 +45,8 @@ Git integration is currently supported for Azure DevOps and GitHub. To use Git i
   
     :::image type="content" source="/fabric/includes/media/github-prereqs/fine-grained-token.png" alt-text="Screenshot of GitHub token permissions.":::
 
+    To use this token with GitHub Enterprise, follow <a href="https://github.blog/2022-10-18-introducing-fine-grained-personal-access-tokens-for-github/" target="_blank">these directions</a>.
+  
   - A <a href="https://github.com/settings/tokens/new" target="_blank">Create a GitHub classic token</a> with repo scopes enabled:
 
     :::image type="content" source="/fabric/includes/media/github-prereqs/classic-token.png" alt-text="Screenshot of GitHub classic token scopes.":::
