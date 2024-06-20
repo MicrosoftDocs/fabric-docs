@@ -157,7 +157,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
   
   ### [Create an Apache Airflow DAG to orchestrate dbt jobs](#create-an-apache-airflow-dag-to-orchestrate-dbt-jobs)
 
-  Create the file named `my_cosmos_dag.py` in `dags` folder and Paste the following contents in it.
+  - Create the file named `my_cosmos_dag.py` in `dags` folder and Paste the following contents in it.
   
     ```python
      import os
