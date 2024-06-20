@@ -154,6 +154,9 @@ The following tables contain more information about the copy activity in Snowfla
 
 ### Destination
 
+> [!NOTE]
+> While non-Azure Snowflake instances are supported for source, only Azure Snowflake instances are currently supported for [Snowflake destinations](connector-snowflake.md#direct-copy-from-snowflake) (also referred to as sinks in Azure Data Factory).
+
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.| **External** |Yes|/|
