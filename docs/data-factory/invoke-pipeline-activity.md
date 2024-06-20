@@ -22,6 +22,9 @@ To get started, you must complete the following prerequisites:
 - A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 - A workspace is created.
 
+> [!NOTE]
+> Currently, only pipelines within the same workspace can be orchestrated with the Invoke pipeline activity. 
+
 ## Add an **invoke pipeline activity** to a pipeline with UI
 
 To use an **invoke pipeline activity** in a pipeline, complete the following steps:
