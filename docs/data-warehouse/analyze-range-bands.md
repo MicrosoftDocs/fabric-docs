@@ -4,7 +4,7 @@ description: "Learn how to analyze Microsoft Fabric Warehouse data with range ba
 author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: wiassaf
-ms.date: 06/16/2024
+ms.date: 06/21/2024
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---

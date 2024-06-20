@@ -4,7 +4,7 @@ description: "Learn about dimension tables in Microsoft Fabric Warehouse."
 author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: wiassaf, drubiolo, chweb
-ms.date: 06/16/2024
+ms.date: 06/21/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -213,6 +213,8 @@ Here are the most common SCD types.
 - **Type 3:** Track limited history with attributes.
 
 It's possible that a dimension could support both SCD type 1 and SCD type 2 changes.
+
+SCD type 3 isn't commonly used, in part due to the fact that it's difficult to use in a semantic model. Consider carefully whether an SCD type 2 approach would be a better fit.
 
 > [!TIP]
 > If you anticipate a _rapidly changing dimension_, which is a dimension that has an attribute that changes frequently, consider adding that attribute to the [fact table](dimensional-modeling-fact-tables.md) instead. If the attribute is numeric, like the product price, you can add it as a measure in the fact table. If the attribute is a text value, you can create a dimension based on all text values and add its dimension key to the fact table.

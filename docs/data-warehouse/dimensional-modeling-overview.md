@@ -4,7 +4,7 @@ description: "Learn about dimensional modeling in Microsoft Fabric Warehouse."
 author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: wiassaf, drubiolo, chweb
-ms.date: 06/16/2024
+ms.date: 06/21/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -55,7 +55,7 @@ However, in specific circumstances it might not be the best approach. For exampl
 
 You should approach the creation of a data warehouse and the design of a dimension model as a serious and important undertaking. That's because the data warehouse is a core component of your data platform. It should form a solid foundation that supports analytics and reporting—and therefore decision making—for your entire organization.
 
-To this end, your data warehouse should strive to store quality, conformed, and historically accurate data as a _single version of the truth_. It should deliver understandable and navigable data with fast performance, and enforce permissions so that the right data can only ever be accessed by the right people. Stive to design your data warehouse for resilience, allowing it to adapt to change as your requirements evolve.
+To this end, your data warehouse should strive to store quality, conformed, and historically accurate data as a _single version of the truth_. It should deliver understandable and navigable data with fast performance, and enforce permissions so that the right data can only ever be accessed by the right people. Strive to design your data warehouse for resilience, allowing it to adapt to change as your requirements evolve.
 
 The successful implementation of a data warehouse depends on good planning. For information about strategic and tactical considerations, and action items that lead to the successful adoption of Fabric and your data warehouse, see the [Microsoft Fabric adoption roadmap](/power-bi/guidance/fabric-adoption-roadmap).
 

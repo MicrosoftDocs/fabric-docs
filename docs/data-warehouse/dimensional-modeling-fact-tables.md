@@ -4,7 +4,7 @@ description: "Learn about fact tables in Microsoft Fabric Warehouse."
 author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: wiassaf, drubiolo, chweb
-ms.date: 06/16/2024
+ms.date: 06/21/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual

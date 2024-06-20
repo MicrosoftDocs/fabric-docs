@@ -4,7 +4,7 @@ description: "Learn about loading tables in a dimensional model in Microsoft Fab
 author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: wiassaf, drubiolo, chweb
-ms.date: 06/16/2024
+ms.date: 06/21/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -177,6 +177,10 @@ When [SCD type 2](dimensional-modeling-dimension-tables.md#scd-type-2) changes a
 1. If the table includes _last modified date_ and _last modified by_ columns, set the current date and process that made the modifications.
 1. Insert new members that have the start date validity column set to the end date validity column value (used to update the prior version) and has the current version flag set to `TRUE`.
 1. If the table includes _created date_ and _created by_ columns, set the current date and process that made the insertions.
+
+#### SCD type 3
+
+When [SCD type 3](dimensional-modeling-dimension-tables.md#scd-type-3) changes are detected, update the attributes by using similar logic to [processing SCD type 1](#scd-type-1).
 
 ### Dimension member deletions
 
