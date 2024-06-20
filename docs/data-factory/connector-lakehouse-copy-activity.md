@@ -62,13 +62,11 @@ The following properties are **required**:
 
       :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
 
-      :::image type="content" source="./media/connector-lakehouse/new-table.png" alt-text="Screenshot showing creating a new table.":::  
 
-    - **Table**: When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the source. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default one.
+
+    - **Table**: When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the source. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default schema.
 
       :::image type="content" source="./media/connector-lakehouse/table-name-with-schema.png" alt-text="Screenshot showing table name with schema.":::  
-
-      :::image type="content" source="./media/connector-lakehouse/new-table-with-schema.png" alt-text="Screenshot showing creating a new table with schema.":::   
 
     - Under **Advanced**, you can specify the following fields:
       - **Timestamp**: Specify to query an older snapshot by timestamp.
@@ -124,13 +122,10 @@ The following properties are **required**:
 
       :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
 
-      :::image type="content" source="./media/connector-lakehouse/new-table.png" alt-text="Screenshot showing creating a new table.":::  
 
-    - **Table**: When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the destination. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default one.
+    - **Table**: When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the destination. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default schema.
 
       :::image type="content" source="./media/connector-lakehouse/table-name-with-schema.png" alt-text="Screenshot showing table name with schema.":::  
-
-      :::image type="content" source="./media/connector-lakehouse/new-table-with-schema.png" alt-text="Screenshot showing creating a new table with schema.":::   
 
 
     - Under **Advanced**, you can specify the following fields:
