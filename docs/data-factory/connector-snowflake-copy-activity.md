@@ -27,7 +27,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 ### General
 
-Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
+Refer to the [**General** settings](/azure/data-factory/activity-overview#general-settings) guidance to configure the **General** settings tab.
 
 ### Source
 
