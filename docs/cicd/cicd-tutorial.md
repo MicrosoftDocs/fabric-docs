@@ -86,7 +86,7 @@ You can now create a deployment pipeline.
 This workspace is shared by the entire team and each member of the team can edit it. By connecting this workspace to git, you can keep track of all the changes and revert back to previous versions if necessary. When all the changes are merged into this shared branch, the workspace is deployed to production using the deployment pipeline.  
 Read more about version control with Git in [Introduction to Git integration](./git-integration/intro-to-git-integration.md).
 
-Let's connect this workspace to the main branch of your Azure repo so all team members can edit it and create pull requests. If you're using a GitHub repo, follow the directions in [Connect a workspace to a GitHub repo](./git-integration/git-get-started.md#connect-to-a-git-repo&tabs=github).
+Let's connect this workspace to the main branch of your Azure repo so all team members can edit it and create pull requests. If you're using a GitHub repo, follow the directions in [Connect a workspace to a GitHub repo](./git-integration/git-get-started.md#connect-to-a-git-repo).
 
 1. Select the ellipsis (three dots) then **Workspace settings**.
 
