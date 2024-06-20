@@ -38,8 +38,8 @@ Git integration is currently supported for Azure DevOps and GitHub. To use Git i
 
 ### [GitHub](#tab/github)
 
-- An active GitHub account. <a href="https://docs.github.com" target="_blank">Create a GitHub account</a>.
-- *One* of the following <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"_blank">personal access tokens</a>:
+- An active GitHub account. <a href="https://github.com" target="_blank">Create a GitHub account</a>.
+- *One* of the following <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" target="_blank">personal access tokens</a>:
 
   - A <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">fine-grained token</a> (recommended) with **Contents** read and write permission under the repository permissions:
   
