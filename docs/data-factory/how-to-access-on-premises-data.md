@@ -43,7 +43,7 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
    - Azure Data Lake Storage Gen2
    - Azure Table Storage
    - Essbase
-   - Fle
+   - File
    - Folder
    - Google Analytics
    - IBM DB2
