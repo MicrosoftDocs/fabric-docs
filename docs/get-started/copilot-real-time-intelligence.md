@@ -28,6 +28,8 @@ Copilot for Real-Time Intelligence is an advanced AI tool designed to help you e
 
 Copilot for Real-Time Intelligence lets you effortlessly translate natural language queries into Kusto Query Language (KQL). The copilot acts as a bridge between everyday language and KQL's technical intricacies, and in doing so removes adoption barriers for citizen data scientists. By harnessing OpenAI's advanced language understanding, this feature allows you to submit business questions in a familiar, natural language format, which are then converted into KQL queries. Copilot accelerates productivity by simplifying the query creation process with a user-friendly and efficient approach to data analysis.
 
+[![Screenshot of copilot use in KQL queryset in Real-Time Intelligence.](media/copilot-real-time-intelligence/real-time-copilot.png)](media/copilot-real-time-intelligence/real-time-copilot.png#lightbox)
+
 ## Access the Real-Time Intelligence Copilot
 
 1. To access Copilot for Real-Time Intelligence, navigate to a new or existing KQL queryset.
