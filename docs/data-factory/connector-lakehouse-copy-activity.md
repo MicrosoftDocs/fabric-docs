@@ -57,9 +57,18 @@ The following properties are **required**:
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
 
   - If you select **Tables**:
-    - **Table name**: Choose an existing table from the table list or specify a table name as the source. Or you can select **New** to create a new table. When you apply Lakehouse with schemas in the connection, you can create a new table with schema and see the table name with schema in the table list.
-    
+      
+    - **Table name**: Choose an existing table from the table list or specify a table name as the source. Or you can select **New** to create a new table. 
+
       :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
+
+      :::image type="content" source="./media/connector-lakehouse/new-table.png" alt-text="Screenshot showing creating a new table.":::  
+
+    - **Table**: When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the source. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default one.
+
+      :::image type="content" source="./media/connector-lakehouse/table-name-with-schema.png" alt-text="Screenshot showing table name with schema.":::  
+
+      :::image type="content" source="./media/connector-lakehouse/new-table-with-schema.png" alt-text="Screenshot showing creating a new table with schema.":::   
 
     - Under **Advanced**, you can specify the following fields:
       - **Timestamp**: Specify to query an older snapshot by timestamp.
@@ -111,9 +120,18 @@ The following properties are **required**:
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
 
   - If you select **Tables**:
-    - **Table name**: Choose an existing table from the table list or specify a table name as the destination. Or you can select **New** to create a new table. When you apply Lakehouse with schemas in the connection, you can create a new table with schema and see the table name with schema in the table list.
+    - **Table name**: Choose an existing table from the table list or specify a table name as the destination. Or you can select **New** to create a new table. 
 
       :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
+
+      :::image type="content" source="./media/connector-lakehouse/new-table.png" alt-text="Screenshot showing creating a new table.":::  
+
+    - **Table**: When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the destination. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default one.
+
+      :::image type="content" source="./media/connector-lakehouse/table-name-with-schema.png" alt-text="Screenshot showing table name with schema.":::  
+
+      :::image type="content" source="./media/connector-lakehouse/new-table-with-schema.png" alt-text="Screenshot showing creating a new table with schema.":::   
+
 
     - Under **Advanced**, you can specify the following fields:
       - **Table actions**: Specify the operation against the selected table.
@@ -184,7 +202,12 @@ The following tables contain more information about a copy activity in Lakehouse
 |:---|:---|:---|:---|:---|
 |**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>artifactId|
 |**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |No|rootFolder:<br>Table or Files|
-|**Table name** |The name of the table to read data.|\<table name> |Yes when you select **Tables** in **Root folder** |table <br>*(under `typeProperties` -> `source` -> `typeProperties`)*|
+|**Table name** |The name of the table that you want to read data. |\<your table name> |Yes when you select **Tables** in **Root folder** | *(under `typeProperties` -> `source` -> `typeProperties`)*<br>table  |
+|**Table** |The name of the table with a schema that you want to read data when you apply Lakehouse with schemas as the connection. |\<your table with a schema> |Yes when you select **Tables** in **Root folder** | / |
+| *For **Table*** |  |  |  |  |
+|**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | *(under `typeProperties` -> `source` -> `typeProperties`)*<br>schema |
+|**table name** |The name of the table. |\<your table name> |Yes | *(under `typeProperties` -> `source` -> `typeProperties`)*<br>table |
+|  |  |  |  |  |
 |**Timestamp** | The timestamp to query an older snapshot.| \<timestamp>|No |timestampAsOf |
 |**Version** |The version to query an older snapshot.| \<version>|No |versionAsOf|
 |**Additional columns** | Additional data columns to store source files' relative path or static value. Expression is supported for the latter.| • Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
@@ -206,7 +229,12 @@ The following tables contain more information about a copy activity in Lakehouse
 |:---|:---|:---|:---|:---|
 |**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>artifactId|
 |**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |Yes | rootFolder:<br>Table or Files|
-|**Table name** |The name of the table to which you want to write data to. |\<your table name> |Yes when you select **Tables** in **Root folder** | table <br>*(under `typeProperties` -> `sink` -> `typeProperties`)*|
+|**Table name** |The name of the table that you want to write data to. |\<your table name> |Yes when you select **Tables** in **Root folder** | *(under `typeProperties` -> `sink` -> `typeProperties`)*<br>table |
+|**Table** |The name of the table with a schema that you want to write data to when you apply Lakehouse with schemas as the connection. |\<your table with a schema> |Yes when you select **Tables** in **Root folder** | / |
+| *For **Table*** |  |  |  |  |
+|**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*). |No | *(under `typeProperties` -> `sink` -> `typeProperties`)*<br>schema |
+|**table name** |The name of the table. |\<your table name> |Yes | *(under `typeProperties` -> `sink` -> `typeProperties`)*<br>table |
+|  |  |  |  |  |
 |**Table action**| Append new values to an existing table or overwrite the existing data and schema in the table using the new values.|• **Append**<br>• **Overwrite**|No|tableActionOption:<br>Append or OverwriteSchema|
 |**Enable partitions**|This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".| Selected or unselected |No| partitionOption: <br> PartitionByKey or None|
 |**Partition columns**|The destination columns in schemas mapping.| \<your partition columns\> |No| partitionNameList|
