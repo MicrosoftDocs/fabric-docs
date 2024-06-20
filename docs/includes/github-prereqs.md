@@ -39,7 +39,6 @@ Git integration is currently supported for Azure DevOps and GitHub. To use Git i
 ### [GitHub](#tab/github)
 
 - An active GitHub account. <a href="https://docs.github.com" target="_blank">Create a GitHub account</a>.
-- [GitHub switch](/fabric/admin/git-integration-admin-settings#users-can-sync-workspace-items-with-github-repositories-preview) must be enabled by the tenant admin, capacity admin, or workspace admin.
 - *One* of the following <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"_blank">personal access tokens</a>:
 
   - A <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">fine-grained token</a> (recommended) with **Contents** read and write permission under the repository permissions:

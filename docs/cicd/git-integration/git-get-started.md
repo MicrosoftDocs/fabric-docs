@@ -71,7 +71,7 @@ If it's the first time connecting, you need to <a href="https://docs.github.com/
 
 - *Display name* - must be unique for each user
 - *Personal access token* - <a href="https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" target="_blank">your classic or fine-grained personal access token</a>
-- *URL* (optional) - If you don't enter a URL, you can connect to any repo you have access to. If you enter a URL, you can only connect to this repository.
+- *Repository URL* (optional) - If you don't enter a URL, you can connect to any repo you have access to. If you enter a URL, you can only connect to this repository.
 
 :::image type="content" source="./media/git-get-started/github-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
 
