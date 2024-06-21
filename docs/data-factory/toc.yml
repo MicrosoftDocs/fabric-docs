@@ -151,6 +151,12 @@
         href: connector-azure-cosmosdb-for-nosql.md
       - name: Configure in a data pipeline copy activity
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
+    - name: Azure Cosmos DB for MongoDB
+      items:
+      - name: Azure Cosmos DB for MongoDB - Overview
+        href: connector-azure-cosmos-db-for-mongodb-overview.md
+      - name: Configure in a data pipeline copy activity
+        href: connector-azure-cosmos-db-for-mongodb-copy-activity.md
     - name: Azure Data Explorer (Kusto)
       items:
       - name: Azure Data Explorer (Kusto) - Overview
@@ -833,6 +839,8 @@
         items:
           - name: Synchronize your code from an existing Git repo
             href: data-workflows-sync-git-repo.md
+          - name: Data workflows workspace settings
+            href: data-workflows-workspace-settings.md
           - name: Install a private package
             href: data-workflows-install-private-package.md
           - name: Enable Azure Key Vault as Secret Backend
@@ -853,6 +861,8 @@
             href: data-workflows-run-databricks-job.md
           - name: Power BI Semantic Model Refresh
             href: data-workflows-power-bi-semantic-model-refresh.md
+          - name: Transform data using dbt
+            href: data-workflows-dbt-fabric.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases

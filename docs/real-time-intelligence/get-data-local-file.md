@@ -29,7 +29,7 @@ In this article, you learn how to get data from a local file into either a new o
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Local file**.
 
-    :::image type="content" source="media/get-data-file/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-file/select-data-source.png":::
+    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
 
 ## Configure
 

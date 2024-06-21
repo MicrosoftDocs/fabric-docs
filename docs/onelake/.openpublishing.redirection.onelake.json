@@ -1,0 +1,24 @@
+{
+    "redirections": [
+        {
+            "source_path_from_root": "/docs/onelake/onelake-shortcuts-rest-api.md",
+            "redirect_url": "/rest/api/fabric/core/onelake-shortcuts",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/get-started-security.md",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/onelake-security.md",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/fabric-and-onelake-security.md",
+            "redirect_url": "/fabric/onelake/security/fabric-onelake-security",
+            "redirect_document_id": false
+        }   
+    ]
+}

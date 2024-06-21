@@ -4,8 +4,8 @@ description: Learn about the various data and compression formats supported by R
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
-ms.topic: conceptual
-ms.date: 04/21/2024
+ms.topic: concept-article
+ms.date: 06/06/2024
 ---
 
 # Data formats supported by Real-Time Intelligence

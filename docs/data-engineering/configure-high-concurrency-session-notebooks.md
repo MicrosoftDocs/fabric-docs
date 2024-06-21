@@ -4,10 +4,10 @@ description: Learn how to configure and run high concurrency mode to reuse sessi
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
-ms.topic: concepts
+ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 07/16/2023
+ms.date: 06/07/2024
 ---
 
 # Configure high concurrency mode for Fabric notebooks
@@ -22,7 +22,14 @@ If you already have a High Concurrency session running, you could attach noteboo
 > The high concurrency mode-based session sharing is always within a single user boundary.
 > The notebooks need to have matching spark configurations, should be part of the same workspace, share the same default lakehouse and libraries to share a single spark session.
 
-:::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-sharing-conditions-definition.png" alt-text="Animation showing sharing conditions for high concurrency session for notebooks.":::
+## Session sharing conditions
+
+For notebooks to share a single Spark session, they must:
+
+* Be run by the same user.
+* Have the same default lakehouse. Notebooks without a default lakehouse can share sessions with other notebooks that don't have a default lakehouse.
+* Have the same Spark compute configurations.
+* Have the same library packages. You can have different inline library installations as part of notebook cells and still share the session with notebooks having different library dependencies.
 
 ## Configure high concurrency mode
 

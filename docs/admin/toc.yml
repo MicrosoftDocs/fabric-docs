@@ -56,6 +56,8 @@ items:
     href: service-admin-portal-capacity-settings.md
   - name: Manage embed codes
     href: service-admin-portal-embed-codes.md
+  - name: Manage Fabric identities
+    href: fabric-identities-manage.md
   - name: Manage featured content
     href: service-admin-portal-featured-content.md
   - name: Manage organizational visuals

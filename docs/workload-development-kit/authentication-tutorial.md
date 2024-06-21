@@ -31,7 +31,7 @@ To make sure Azure Storage is provisioned in the tenant:
 
     :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
-If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id). If not, a tenant admin needs to provision it.
+If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-manually). If not, a tenant admin needs to provision it.
 
 Ask your tenant admin to open **Windows PowerShell** as administrator and run the following script:
   
@@ -42,7 +42,7 @@ Connect-AzureAD
 New-AzureADServicePrincipal -AppId e406a681-f3d4-42a8-90b6-c2b029497af1
 ```
 
-## Configure your application in Microsoft Entra ID
+## Configure your application in Microsoft Entra ID manually 
 
 To work with authentication, you need an application registered in Microsoft Entra ID. If you don't have an application registered, follow [this guide](/entra/identity-platform/quickstart-register-app#register-an-application) to create a new application.
 
@@ -132,32 +132,58 @@ Under ***API permissions**, add the desired permissions for your application. Fo
 
 Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null or "1".
 
+## Configure your application in Microsoft Entra Identity automatically by using a script
+
+For a streamlined setup of your application in Microsoft Entra Identity, you can opt to use an automated PowerShell script. Follow these steps to configure your application:
+
+1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2.](/cli/azure/).
+2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1). You will be prompted to sign in by using the credentials of the user account under which you intend to create the application.
+3. **Provide Required Information**: When prompted, enter the desired name for your application, the workload name (prefixed with "Org."), and your tenant ID.
+
+Upon successful execution of the script, it will output all necessary details to configure your workload. Additionally, it will provide a direct URL to your application and an administrative consent URL for tenant-wide application authorization.
+
+### Example of usage
+
+To create an application named "myWorkloadApp" with the workload name "Org.Myworkload" for the specified tenant, run the following command in PowerShell:
+
+```powershell
+powershell .\CreateDevAADApp.ps1 -applicationName "myWorkloadApp" -workloadName "Org.Myworkload" -tenantId "cb1f79ad-7930-43c0-8d84-c1bf8d15c8c7"
+```
+
+This example demonstrates how to use the `CreateDevAADApp.ps1` script with command-line arguments to automate the application setup process. The provided tenant ID is an example and should be replaced with your actual tenant ID.
+
 ## Configuring your workload (Backend)
 
-1. In the Backend sample, go to [src/appsettings.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/appsettings.json) and configure the settings:
+1. In the Backend sample, go to `src/appsettings.json` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure the settings:
 
    * `PublisherTenantId`: The tenant ID of the publisher  
    * `ClientId`: Your application ID (you can find it in Microsoft Entra ID under overview).  
    * `ClientSecret`: The [secret you created](#generate-a-secret-for-your-application) when configuring the Entra app.  
-   * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id) in the Entra app.  
+   * `Audience`: The [ID URI we configured](#configure-your-application-in-microsoft-entra-id-manually) in the Entra app.  
 
-1. Configure your *workloadManifest.xml*. Go to [src/Packages/manifest/files/WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/WorkloadManifest.xml) and configure your `AppId`, `redirectUri` and `ResourceId` (ID URI) under **AADApps**.
-
-   :::image type="content" source="./media/authentication-tutorial/configure-workload-manifest-xml.png" alt-text="Screenshot showing configuration of workload manifest xml file.":::
-
+1. Configure your *workloadManifest.xml*. Go to `src/Packages/manifest/files/WorkloadManifest.xml` file in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) and configure your `AppId`, `redirectUri` and `ResourceId` (ID URI) under **AADApps**.
+```
+<AADApp>
+    <AppId>YourApplicationId</AppId>
+    <RedirectUri>YourRedirectUri</RedirectUri>
+    <ResourceId>YourResourceId</ResourceId>
+</AADApp>
+```
 ## Configure the workload local manifest and acquire a token for your application (frontend)
+> [!NOTE]
+> This step is only applicable to the devmode scenario.
 
-After configuring your application, add the following configurations to the `extension` section of the [local workload manifest](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/Manifests/localWorkloadManifest.json):
+After configuring your application, add the following configurations to the `devAADAppConfig` section of the `Frontend/.env.dev` configuration file located in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254):
 
 ```json
 "devAADAppConfig": {  
-     "audience": "", // The ID URI configured in your application for developer scenario  
-     "redirectUri": "http://localhost:60006/close", // or the path you configured in index.ts  
-     "appId": "" // your app ID  
+    "DEV_AAD_CONFIG_AUDIENCE": "", // The ID URI configured in your application for developer scenario
+    "DEV_AAD_CONFIG_REDIRECT_URI": "http://localhost:60006/close", // or the path you configured in index.ts
+    "DEV_AAD_CONFIG_APPID": "" // your app Id
 }
 ```
 
-:::image type="content" source="./media/authentication-tutorial/configure-local-workload-manifest-xml.png" alt-text="Screenshot showing configuration of local workload manifest xml file.":::
+:::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot that shows the configuration of a .env.dev file.":::
 
 ## Ask for a token and consent the application
 
