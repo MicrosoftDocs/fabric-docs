@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.topic: how-to
-ms.date: 06/16/2024
+ms.date: 06/21/2024
 
 #customer intent: As a Fabric administrator, I want understand what's on the Fabric identities tab so that I can monitor and govern all the Fabric identities in my organization.
 
@@ -24,7 +24,7 @@ The columns of the list of identities are described in following table.
 | Column | Description |
 | --------- | --------- |
 | **Name** | The name of the identity. |
-| **Service principal ID** | The ID of the service principal associated with the identity. |
+| **Service principal ID** | The object ID of the Enterprise application that is associated with the identity in Microsoft Entra. |
 | **State** | The state of the identity. See [workspace identity state values](../security/workspace-identity.md#identity-details).|
 | **Workspace** | The workspace ID. |
 
@@ -34,16 +34,16 @@ The columns of the list of identities are described in following table.
 
 1. Select **Details** on the ribbon that appears. The **Details** side pane opens displaying the identity's details.
 
-| Field                             | Description                                           |
-|:----------------------------------|:------------------------------------------------------|
-| **Workspace name**                |                                                       |
-| **State**                         | The state of the identity.                            |
-| **State changed date**            | The date of the last change of state of the identity. |
-| **Service principal ID**          |                                                       |
-| **Application ID**                |                                                       |
-| **Tenant ID**                     | The ID of the tenant the identity is defined in.      |
-| **Role**                          |                                                       |
-| **Allowed in untrusted contexts** |                                                       |
+| Field                             | Description                                                                                               |
+|:----------------------------------|:----------------------------------------------------------------------------------------------------------|
+| **Workspace name**                | The name of the workspace the identity is associated with.                                                |
+| **State**                         | The state of the identity.                                                                                |
+| **State changed date**            | The date of the last change of state of the identity.                                                     |
+| **Service principal ID**          | The object ID of the Enterprise application that is associated with the identity in Microsoft Entra.      |
+| **Application ID**                | The application ID of the Enterprise application that is associated with the identity in Microsoft Entra. |
+| **Tenant ID**                     | The ID of the tenant the identity is defined in.                                                          |
+| **Role**                          | The workspace role the identity has been assigned.                                                                                                         |
+| **Allowed in untrusted contexts** | Not applicable.                                                                                           |
 
 ## Delete an identity
 
