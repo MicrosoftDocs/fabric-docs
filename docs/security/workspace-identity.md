@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/30/2024
+ms.date: 06/21/2024
 ---
 
 # Workspace identity
@@ -29,7 +29,7 @@ You must be a workspace admin to be able to create and manage a workspace identi
 1. Select the **Workspace identity** tab.
 1. Select the **+ Workspace identity** button.
 
-When the workspace identity has been created, the tab displays the workspace identity details, the list of authorized users, and allows you to make it possible to use the identity with customer-provided endpoints and custom code.
+When the workspace identity has been created, the tab displays the workspace identity details and the list of authorized users.
 
 :::image type="content" source="./media/workspace-identity/workspace-identity-details.png" alt-text="Screenshot showing workspace identity details." lightbox="./media/workspace-identity/workspace-identity-details.png":::
 
