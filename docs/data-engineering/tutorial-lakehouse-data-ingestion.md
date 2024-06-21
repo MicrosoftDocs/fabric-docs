@@ -13,7 +13,7 @@ ms.date: 05/01/2024
 
 # Lakehouse tutorial: Ingest data into the lakehouse
 
-In this tutorial, you ingest more dimensional and fact tables from the Wide World Importers (WWI) into the lakehouse.
+In this tutorial, you ingest more dimensional and [fact tables](../data-warehouse/dimensional-modeling-fact-tables.md) from the Wide World Importers (WWI) into the lakehouse.
 
 ## Prerequisites
 
