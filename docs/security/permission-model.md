@@ -96,10 +96,6 @@ Fabric has three different security levels, and a user must have access at each 
 2. Fabric access: Checks if the user can access Microsoft Fabric.
 3. Data security: Checks if the user can perform the requested action on a table or file.
 
-A diagram view of this order is as follows.
-
-:::image type="content" source=".\media\permission-model\order-of-precedence.png" alt-text="Diagram showing the order in which security is evaluated, which is: Entra authentication, then Microsoft Fabric access, then data security.":::
-
 ## Examples
 
 This sections provides two examples of how permissions can be set up in Fabric.
