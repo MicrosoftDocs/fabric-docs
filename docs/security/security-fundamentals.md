@@ -99,11 +99,11 @@ For more information, see [Fabric and OneLake security](../onelake/security/fabr
 
 [Workspaces](../get-started/workspaces.md) represent the primary security boundary for data stored in OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace by assigning users to [workspace roles](../get-started/roles-workspaces.md).
 
-For more information, see [Fabric and OneLake security (Workspace security)](../onelake/security/fabric-onelake-security.md#fabric-data-security).
+For more information, see [Fabric and OneLake security (Workspace security)](../onelake/security/fabric-onelake-security.md).
 
 ### Item security
 
-Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/security/fabric-onelake-security.md#fabric-data-security) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
+Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/security/fabric-onelake-security.md) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
 
 ## Compliance resources
 
