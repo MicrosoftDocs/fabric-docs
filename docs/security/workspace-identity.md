@@ -69,8 +69,6 @@ Workspace identity can be [created and deleted by workspace admins](#create-and-
 
 Currently, workspace identity isn't supported for authentication to target resources in connections. Authentication to target resources in connections will be supported in the future. Admins, members, and contributors will be able to use workspace identity in authentication in connections in the future.
 
-In the future, workspace admins will be able to enable the use of workspace identity in connections in custom code such as Spark notebooks and in data pipelines with customer-provided endpoints. Examples include data pipelines with web activity, and webhook activity.
-
 [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or users with higher roles can view, modify, and delete the service principal and app registration associated with the workspace identity in Azure.
 
 > [!WARNING]
