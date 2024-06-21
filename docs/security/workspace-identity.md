@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/30/2024
+ms.date: 06/21/2024
 ---
 
 # Workspace identity
@@ -29,7 +29,7 @@ You must be a workspace admin to be able to create and manage a workspace identi
 1. Select the **Workspace identity** tab.
 1. Select the **+ Workspace identity** button.
 
-When the workspace identity has been created, the tab displays the workspace identity details, the list of authorized users, and allows you to make it possible to use the identity with customer-provided endpoints and custom code.
+When the workspace identity has been created, the tab displays the workspace identity details and the list of authorized users.
 
 :::image type="content" source="./media/workspace-identity/workspace-identity-details.png" alt-text="Screenshot showing workspace identity details." lightbox="./media/workspace-identity/workspace-identity-details.png":::
 
@@ -68,8 +68,6 @@ The following sections describe who can use the workspace identity, and how you 
 Workspace identity can be [created and deleted by workspace admins](#create-and-manage-a-workspace-identity). The workspace identity has the workspace contributor role on the workspace.
 
 Currently, workspace identity isn't supported for authentication to target resources in connections. Authentication to target resources in connections will be supported in the future. Admins, members, and contributors will be able to use workspace identity in authentication in connections in the future.
-
-In the future, workspace admins will be able to enable the use of workspace identity in connections in custom code such as Spark notebooks and in data pipelines with customer-provided endpoints. Examples include data pipelines with web activity, and webhook activity.
 
 [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or users with higher roles can view, modify, and delete the service principal and app registration associated with the workspace identity in Azure.
 
