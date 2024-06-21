@@ -43,7 +43,7 @@ To route event data to a derived stream destination, follow these steps to add t
 
    ![Screenshot of the derived stream in Edit mode, with Publish highlighted.](media/add-destination-derived-stream/edit-mode.png)
 
-After you complete these steps, the derived stream appears on the canvas in **Live view**, and you can view the **Details** pane. If you add a Reflex or custom endpoint destination after your derived **Stream** node, you can also see **Data insights** and **Data preview**.
+After you complete these steps, the derived stream appears on the canvas in **Live view**, and you can view the **Details**, **Data preview** and **Data insights** in the lower pane.
 
 ![Screenshot of the eventstream in Live view with the Details pane.](media/add-destination-derived-stream/live-view.png)
 
