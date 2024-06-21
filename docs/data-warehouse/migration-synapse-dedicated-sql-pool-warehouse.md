@@ -243,7 +243,7 @@ The two previous options are great data migration options for *smaller* database
 
 #### Recommended use
 
-You can continue to use Data Factory to convert your schema (DDL). Using the Copy Wizard, you can select the specific table or **All tables**. By design, this migrates the schema and data in one step, extracting the schema without any rows, using the a false condition, `TOP 0` in the query statement.
+You can continue to use Data Factory to convert your schema (DDL). Using the Copy Wizard, you can select the specific table or **All tables**. By design, this migrates the schema and data in one step, extracting the schema without any rows, using the false condition, `TOP 0` in the query statement.
 
 The following code sample covers schema (DDL) migration with Data Factory.
 
@@ -427,7 +427,7 @@ For ingestion into Fabric Warehouse, use COPY INTO or Fabric Data Factory, depen
 
 Several factors to note so that you can design your process for maximum performance:
 
-- With Fabric, there isn't any resource contention loading multiple tables from ADLS to Fabric Warehouse concurrently. As a result, there is no performance degradation loading parallel threads. The maximum ingestion throughput will only be limited by the compute power of your Fabric capacity.
+- With Fabric, there isn't any resource contention when loading multiple tables from ADLS to Fabric Warehouse concurrently. As a result, there is no performance degradation when loading parallel threads. The maximum ingestion throughput will only be limited by the compute power of your Fabric capacity.
 - Fabric workload management provides separation of resources allocated for load and query. There's no resource contention while queries and data loading executed at the same time.
 
 ## Related content

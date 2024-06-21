@@ -4,7 +4,7 @@ ms.author: v-myerspeter
 ms.date: 06/16/2024
 ms.service: fabric
 ms.subservice: data-warehouse
-ms.topic: conceptual
+ms.topic: include
 ms.custom: fabric-cat
 ---
 > [!NOTE]

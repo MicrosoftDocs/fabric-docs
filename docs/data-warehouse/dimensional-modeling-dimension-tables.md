@@ -29,7 +29,7 @@ In a dimensional model, a dimension table describes an entity relevant to your b
 
 ## Dimension table structure
 
-To describe the structure of a dimension table, consider the following example of a salesperson dimension table named `d_Salesperson`. This example applies good design practices. Each of the groups of columns are described in the following sections.
+To describe the structure of a dimension table, consider the following example of a salesperson dimension table named `d_Salesperson`. This example applies good design practices. Each of the groups of columns is described in the following sections.
 
 ```sql
 CREATE TABLE d_Salesperson
@@ -225,7 +225,7 @@ SCD type 1 changes overwrite the existing dimension row because there's no need 
 
 The following diagram depicts the before and after state of a salesperson dimension member where their phone number has changed.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/scd-type-1.svg" alt-text="Diagram shows the structure of the salesperson dimension table, and the before and after values for a changed phone number for a single salesperson." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/slowly-changing-dimension-type-1.svg" alt-text="Diagram shows the structure of the salesperson dimension table, and the before and after values for a changed phone number for a single salesperson." border="false":::
 
 This SCD type doesn't preserve historical perspective because the existing row is updated. That means SCD type 1 changes can result in different higher-level aggregations. For example, if a salesperson is assigned to a different sales region, a SCD type 1 change would overwrite the dimension row. The rollup of salespeople historic sales results to region would then produce a different outcome because it now uses the new current sales region. It's as if that salesperson was always assigned to the new sales region.
 
@@ -244,14 +244,14 @@ It's important to understand that the granularity of related fact tables isn't a
 
 The following diagram depicts the before and after state of a salesperson dimension member where their sales region has changed. Because the organization wants to analyze salespeople effort by the region they're assigned to, it triggers an SCD type 2 change.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/scd-type-2.svg" alt-text="Diagram shows the structure of the salesperson dimension table, which includes 'start date', 'end date', and 'is current' columns." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/slowly-changing-dimension-type-2.svg" alt-text="Diagram shows the structure of the salesperson dimension table, which includes 'start date', 'end date', and 'is current' columns." border="false":::
 
 > [!TIP]
 > When a dimension table supports SCD type 2 changes, you should include a label attribute that describes the member and the version. Consider an example when the salesperson Lynn Tsoflias from Adventure Works changes assignment from the Australian sales region to the United Kingdom sales region. The label attribute for the first version could read "Lynn Tsoflias (Australia)" and the label attribute for the new, current version could read "Lynn Tsoflias (United Kingdom)." If helpful, you might include the validity dates in the label too.  
 >
 > You should balance the need for historic accuracy versus usability and efficiency. Try to avoid having too many SCD type 2 changes on a dimension table because it can result in an overwhelming number of versions that might make it difficult for analysts to comprehend.  
 >
-> Also, too many versions could also indicate that a changing attribute might be better stored in the fact table. Extending the earlier example, if sales region changes were frequent, the sales region could be stored as a dimension key in the fact table rather than implementing a SCD type 2.
+> Also, too many versions could indicate that a changing attribute might be better stored in the fact table. Extending the earlier example, if sales region changes were frequent, the sales region could be stored as a dimension key in the fact table rather than implementing an SCD type 2.
 
 Consider the following SCD type 2 historical tracking attributes.
 
@@ -291,7 +291,7 @@ For example, if a salesperson is assigned to a different sales region, an SCD ty
 
 The following diagram depicts the before and after state of a salesperson dimension member where their sales region has changed. Because the organization wants to determine any previous sales region assignment, it triggers an SCD type 3 change.
 
-:::image type="content" source="media/dimensional-modeling-dimension-tables/scd-type-3.svg" alt-text="Diagram shows the structure of the salesperson dimension table, which contains a 'previous sales region' and 'previous sales region end date' columns." border="false":::
+:::image type="content" source="media/dimensional-modeling-dimension-tables/slowly-changing-dimension-type-3.svg" alt-text="Diagram shows the structure of the salesperson dimension table, which contains a 'previous sales region' and 'previous sales region end date' columns." border="false":::
 
 ### Special dimension members
 

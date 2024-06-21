@@ -38,7 +38,7 @@ To easily identify fact tables, you typically prefix their names with `f_` or `F
 
 ## Fact table structure
 
-To describe the structure of a fact table, consider the following example of a sales fact table named `f_Sales`. This example applies good design practices. Each of the groups of columns are described in the following sections.
+To describe the structure of a fact table, consider the following example of a sales fact table named `f_Sales`. This example applies good design practices. Each of the groups of columns is described in the following sections.
 
 ```sql
 CREATE TABLE f_Sales
