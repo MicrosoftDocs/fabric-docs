@@ -1,3 +1,4 @@
+---
 title: Tenant settings index
 description: Index to Fabric tenant settings.
 author: paulinbar
