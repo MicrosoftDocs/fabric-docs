@@ -7,12 +7,12 @@ ms.reviewer: NimrodShalit
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
-ms.date: 07/12/2023
+ms.date: 06/18/2024
 ---
 
 # Tutorial: Lifecycle management in Fabric
 
-This tutorial takes you through the whole process of loading data into your workspace, and using deployment pipelines together with Git integration to collaborate with others in the development, testing, and publication of your data and reports.
+In this tutorial, you go through the whole process of loading data into your workspace, and using deployment pipelines together with Git integration to collaborate with others in the development, testing, and publication of your data and reports.
 
 ## Prerequisites
 
@@ -31,12 +31,12 @@ To create a new workspace and assign it a license:
 
 1. From the left navigation bar of the **Power BI** experience, select **Workspaces > + New workspace**.
 
-   :::image type="content" source="media/cicd-tutorial/create-workspace.png" alt-text="Screenshot of Create workspace.":::
+   :::image type="content" source="media/cicd-tutorial/create-workspace.png" alt-text="Screenshot of Create workspace user interface.":::
 
 1. Name the workspace **FoodSalesWS**.
 1. (Optional) Add a description.
 
-   :::image type="content" source="media/cicd-tutorial/name-workspace.png" alt-text="Screenshot of new workspace with name.":::
+   :::image type="content" source="media/cicd-tutorial/name-workspace.png" alt-text="Screenshot of new workspace with name. The name is FoodSalesWS.":::
 
 1. Expand the **Advanced** section to reveal **License mode**.
 1. Select either **Trial** or **Premium capacity**.
@@ -53,7 +53,7 @@ You can upload content from OneDrive, SharePoint, or a local file. In this tutor
 
 1. From the top menu bar, select **Upload > Browse**.
 
-   :::image type="content" source="media/cicd-tutorial/upload-data.png" alt-text="Screenshot of Upload menu.":::
+   :::image type="content" source="media/cicd-tutorial/upload-data.png" alt-text="Screenshot of Upload menu user interface.":::
 
 1. Browse to the location of the **FoodSales.pbix** file you [downloaded earlier](#prerequisites), or load your own sample semantic model and report.
 
@@ -67,7 +67,7 @@ Before you create a deployment pipeline, you need to set the credentials. This s
 
 1. Go to **Settings > Power BI settings**.
 
-   :::image type="content" source="media/cicd-tutorial/settings.png" alt-text="Screenshot of Settings menu.":::
+   :::image type="content" source="media/cicd-tutorial/settings.png" alt-text="Screenshot of Settings menu user interface.":::
 
 1. Select **Semantic models > Data source credentials > Edit credentials**.
 
@@ -117,19 +117,23 @@ For more information about connecting to git, see [Connect a workspace to an Azu
 ## Step 4: Create a deployment pipeline
 
 In order to share this workspace with others and use it for various stages of testing and development, we need to create a deployment pipeline. You can read about how deployment pipelines work in [Introduction to deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md).
-To create a deployment pipeline and assign the workspace to the development stage, do the following:
+To create a deployment pipeline and assign the workspace to the development stage, do the following steps:
 
 1. From the workspace home page, select **Create deployment pipeline**.
 
    :::image type="content" source="media/cicd-tutorial/create-pipeline.png" alt-text="Screenshot of Create deployment pipeline.":::
 
-1. Name your pipeline *FoodSalesDP*, give it a description (optional) and select **Create**.
+1. Name your pipeline *FoodSalesDP*, give it a description (optional) and select **Next**.
 
-   :::image type="content" source="media/cicd-tutorial/name-pipeline.png" alt-text="Screenshot of new pipeline with name.":::
+   :::image type="content" source="media/cicd-tutorial/name-pipeline.png" alt-text="Screenshot of how to create a new pipeline with name.":::
+
+1. Accept the default three stages to your pipeline, and select **Create**.
+
+   :::image type="content" source="media/cicd-tutorial/customize-workspace.png" alt-text="Screenshot of three default stage of a deployment pipeline.":::
 
 1. Assign the FoodSalesWS workspace to the Development stage.
 
-   :::image type="content" source="media/cicd-tutorial/assign-workspace.png" alt-text="Screenshot of Assign workspace.":::
+   :::image type="content" source="media/cicd-tutorial/assign-workspace.png" alt-text="Screenshot of how to assign a workspace.":::
 
 The development stage of the deployment pipeline shows one semantic model, one report, and one dashboard. The other stages are empty.
 
@@ -149,7 +153,11 @@ Now, deploy the content to the other stages of the pipeline.
 
    :::image type="content" source="media/cicd-tutorial/confirm-deploy.png" alt-text="Screenshot of Confirm deploy.":::
 
+<<<<<<< HEAD
    The green check icon indicates that the contents of the two stages are identical, since you deployed the entire content of the pipeline.
+=======
+   Notice the green check icon. This icon indicates that the content of the two stages is identical.
+>>>>>>> 73baf9fea4cd181063ea939a65c8cd988fd69eb5
 
    :::image type="content" source="./media/cicd-tutorial/pipeline-compare-same.png" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they're the same.":::
 
@@ -161,39 +169,43 @@ Now, deploy the content to the other stages of the pipeline.
 
    :::image type="content" source="media/cicd-tutorial/refresh.png" alt-text="Screenshot of Refresh button.":::
 
+<<<<<<< HEAD
 The entire team shares this deployment pipeline. Each team member can edit the semantic model and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
+=======
+The entire team shares the same deployment pipeline. Each team member can edit the semantic model and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
+>>>>>>> 73baf9fea4cd181063ea939a65c8cd988fd69eb5
 
 For more information on deploying content, see [Deploy content](./deployment-pipelines/deploy-content.md).
 
 ## Step 6: Create an isolated workspace
 
-In order to edit the workspace without interfering with other team members' changes, each team member creates their own isolated workspace to work in until they're ready to share their changes with the team.
+In order to avoid editing the shared workspace and interfering with other team members' changes, each team member should create their own isolated workspace to work in until they're ready to share their changes with the team.
 
-1. Create a new workspace like you did in [Step 1](#step-1-create-a-premium-workspace).
+1. From the *branch* tab of the **Source control** menu, select the down arrow next to the current branch name, and select **Branch out to new workspace**.
 
-   :::image type="content" source="./media/cicd-tutorial/isolated-workspace.png" alt-text="Screenshot of workspace with new workspace link displayed.":::
+    :::image type="content" source="./media/cicd-tutorial/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
-1. Connect this new workspace to a new branch of the Git repo:
+1. Specify the following details about the branch and workspace. The new branch is automatically created based on the branch connected to the current workspace.
 
-   From the dropdown menu, specify the following details about the branch you want to connect to:
+   * Branch name (for this tutorial, name it *MyFoodEdits*)
+   * Workspace name (for this tutorial, name it *My_FoodSales*)
 
-   * [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
-   * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
-   * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
-   * Select **+ New Branch** to create a new branch.
-   * Name the new branch *MyFoodEdits*, branch it from *main* (or *master*), and Select **Create**.
-   * The folder in the repo where the *.pbix* file located.
+   :::image type="content" source="./media/cicd-tutorial/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
 
-    :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
+1. Select **Branch out**.
 
+<<<<<<< HEAD
 1. Select **Connect and sync**.
 
 The new workspace now contains the content of the Git repo folder. Notice it doesn't contain the *.pbix* file. Since *.pbix* files are unsupported, this file wasn't copied to the Git repo when we synced.  
 Use this workspace to make changes to the semantic model and report until you're ready to share them with your team.
+=======
+Fabric creates the new workspace and syncs it to the new branch. You're automatically taken to the new workspace, but the sync might take a few minutes.
+>>>>>>> 73baf9fea4cd181063ea939a65c8cd988fd69eb5
 
 ## Step 7: Edit the workspace
 
-Make changes to the workspace by creating, deleting, or editing an item. In this tutorial, we change the format of a semantic model column. You can edit the workspace in [Power BI Desktop](/power-bi/fundamentals/desktop-what-is-desktop) or [data model](/power-bi/transform-model/service-edit-data-models). In this tutorial, we edit the workspace from the data model.
+Once the branched out workspace is synced, you can make changes to the workspace by creating, deleting, or editing an item. In this tutorial, we change the format of a semantic model column. You can edit the workspace in [Power BI Desktop](/power-bi/fundamentals/desktop-what-is-desktop) or [data model](/power-bi/transform-model/service-edit-data-models). In this tutorial, we edit the workspace from the data model.
 
 1. From the semantic model workspace, select the semantic model ellipsis (three dots)  > **Open data model**.
 
@@ -224,7 +236,7 @@ The source control icon now shows `1` because one item in the workspace was chan
 1. Select the item to commit and add an optional message.
 1. Select **Commit**.
 
-   :::image type="content" source="media/cicd-tutorial/commit-changes.png" alt-text="Screenshot of committing changes.":::
+   :::image type="content" source="media/cicd-tutorial/commit-changes.png" alt-text="Screenshot of committing changes user interface.":::
 
 The Git status of the semantic model changes to *Synced* and the workspace and Git repo are in sync.
 
@@ -234,7 +246,7 @@ In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#c
 
 1. Select **Create a pull request**.
 
-   :::image type="content" source="media/cicd-tutorial/create-pull-request.png" alt-text="Screenshot of create pull request.":::
+   :::image type="content" source="media/cicd-tutorial/create-pull-request.png" alt-text="Screenshot of create pull request user interface.":::
 
 1. Provide a title, description, and any other information you want for the pull request. Then select **Create**.
 
@@ -242,7 +254,9 @@ In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#c
 
 1. [Merge the pull request](/azure/devops/repos/git/complete-pull-requests#complete-a-pull-request).
 
-   :::image type="content" source="media/cicd-tutorial/complete-merge.png" alt-text="Screenshot of merge pull request.":::
+   :::image type="content" source="media/cicd-tutorial/complete-merge.png" alt-text="Screenshot of merge pull request interface.":::
+
+Once the changes have been merged to the main branch, you can safely delete the workspace, if you want. It's not deleted automatically.
 
 ## Step 10: Update shared workspace
 
@@ -255,7 +269,7 @@ The source control icon now shows 1 because one item in the Git repo was changed
 
 1. Select **Update all**.
 
-   :::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of update workspace.":::
+   :::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of the update workspace user interface.":::
 
 The Git status of the semantic model changes to *Synced* and the workspace is synced with the *main* Git branch.
 
@@ -271,7 +285,7 @@ The Git status of the semantic model changes to *Synced* and the workspace is sy
 
 1. Select the down arrow > **Review Changes** to view the changes. The **Change Review** screen shows the difference between the semantic models in the two stages.
 
-   :::image type="content" source="media/cicd-tutorial/change-review.png" alt-text="Screenshot of change review.":::
+   :::image type="content" source="media/cicd-tutorial/change-review.png" alt-text="Screenshot of change review user interface.":::
 
 1. Review the changes and close the window.
 
@@ -286,7 +300,7 @@ When you’re satisfied with the changes, deploy the changes to the test and/or 
 In this tutorial, you learned how to use deployment pipelines along with Git integration to manage the lifecycle of an app, report, or other content in a workspace.  
 In particular, you learned how to:
 
-* Setup workspaces and add content for managing their lifecycle in Fabric.
+* Set up your workspaces and add content for managing their lifecycle in Fabric.
 * Apply Git best practices to work alone and collaborate with teammates on changes.
 * Combine Git and deployment pipelines for an efficient end to end release process.
 

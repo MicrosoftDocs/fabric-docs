@@ -58,7 +58,7 @@ The following items are currently supported:
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
 
-If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pane but you can't commit or update them.
+If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control panel but you can't commit or update them.
 
 ## Considerations and limitations
 
