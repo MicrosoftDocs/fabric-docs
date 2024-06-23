@@ -154,15 +154,7 @@ Now, deploy the content to the other stages of the pipeline.
 
    :::image type="content" source="media/cicd-tutorial/confirm-deploy.png" alt-text="Screenshot of Confirm deploy.":::
 
-<<<<<<< HEAD
-<<<<<<< HEAD
    The green check icon indicates that the contents of the two stages are identical, since you deployed the entire content of the pipeline.
-=======
-   Notice the green check icon. This icon indicates that the content of the two stages is identical.
->>>>>>> 73baf9fea4cd181063ea939a65c8cd988fd69eb5
-=======
-   The green check icon indicates that the contents of the two stages are identical, since you deployed the entire content of the pipeline.
->>>>>>> cc9d772e9f2fa85a4c30fa1d996881e21b39169f
 
    :::image type="content" source="./media/cicd-tutorial/pipeline-compare-same.png" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they're the same.":::
 
@@ -174,15 +166,7 @@ Now, deploy the content to the other stages of the pipeline.
 
    :::image type="content" source="media/cicd-tutorial/refresh.png" alt-text="Screenshot of Refresh button.":::
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 The entire team shares this deployment pipeline. Each team member can edit the semantic model and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
-=======
-The entire team shares the same deployment pipeline. Each team member can edit the semantic model and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
->>>>>>> 73baf9fea4cd181063ea939a65c8cd988fd69eb5
-=======
-The entire team shares this deployment pipeline. Each team member can edit the semantic model and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
->>>>>>> cc9d772e9f2fa85a4c30fa1d996881e21b39169f
 
 For more information on deploying content, see [Deploy content](./deployment-pipelines/deploy-content.md).
 
@@ -203,19 +187,12 @@ In order to avoid editing the shared workspace and interfering with other team m
 
 1. Select **Branch out**.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. Select **Connect and sync**.
+
+Fabric creates the new workspace and syncs it to the new branch. You're automatically taken to the new workspace, but the sync might take a few minutes.
 
 The new workspace now contains the content of the Git repo folder. Notice it doesn't contain the *.pbix* file. Since *.pbix* files are unsupported, this file wasn't copied to the Git repo when we synced.  
 Use this workspace to make changes to the semantic model and report until you're ready to share them with your team.
-=======
-Fabric creates the new workspace and syncs it to the new branch. You're automatically taken to the new workspace, but the sync might take a few minutes.
->>>>>>> 73baf9fea4cd181063ea939a65c8cd988fd69eb5
-=======
-The new workspace now contains the content of the Git repo folder. Notice it doesn't contain the *.pbix* file. Since *.pbix* files are unsupported, this file wasn't copied to the Git repo when we synced.  
-Use this workspace to make changes to the semantic model and report until you're ready to share them with your team.
->>>>>>> cc9d772e9f2fa85a4c30fa1d996881e21b39169f
 
 ## Step 7: Edit the workspace
 
