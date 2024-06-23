@@ -17,8 +17,8 @@ For a complete list of data connectors, see [Data connectors overview](connector
 
 * .NET SDK 6.0 or later
 * An Azure subscription. Create a [free Azure account](https://azure.microsoft.com/free/).
-* A [KQL database in Microsoft Fabric](/fabric/real-time-analytics/create-database).
-* A target table in your database. See [Create a table in Real-Time Analytics](/fabric/real-time-analytics/create-empty-table)
+* A [KQL database in Microsoft Fabric](create-database.md). Copy the URI of this database using the instructions in [Access an existing KQL database](access-database-copy-uri.md).
+* A [KQL queryset](kusto-query-set.md). This will be referred to as your query environment.
 
 ## Set up your environment
 
@@ -32,8 +32,6 @@ Add the [NLog.Azure.Kusto](https://aka.ms/adx-docs-nlog-nuget) NuGet package. Us
 Install-Package NLog.Azure.Kusto
 ```
 
-<a name='create-an-azure-ad-app-registration'></a>
-
 ### Create a Microsoft Entra app registration
 
 Microsoft Entra application authentication is used for applications that need to access the platform without a user present. To get data using the NLog connector, you need to create and register a Microsoft Entra service principal, and then authorize this principal to get data from a database.
@@ -44,19 +42,14 @@ This service principal will be the identity used by the connector to write data 
 
 [!INCLUDE [entra-service-principal](../entra-service-principal.md)]
 
-1. Using your Azure Data Explorer cluster, follow steps 1-7 in [Create a Microsoft Entra application registration in Azure Data Explorer](provision-azure-ad-app.md).
-1. Save the following values to be used in later steps:
+Save the following values to be used in later steps:
     * Application (client) ID
     * Directory (tenant) ID
     * Client secret key value
 
-<a name='grant-the-azure-ad-app-permissions'></a>
-
 ### Grant the Microsoft Entra app permissions
 
-1. In the query tab of the [web UI](https://dataexplorer.azure.com/), connect to your cluster. For more information on how to connect, see [Add clusters](web-query-data.md#add-clusters).
-1. Browse to the database in which you want to ingest data.
-1. Run the following management command, replacing the placeholders. Replace *DatabaseName* with the name of the target database and *ApplicationID* with the previously saved value. This command grants the app the [database ingestor](kusto/management/access-control/role-based-access-control.md) role. For more information, see [Manage database security roles](kusto/management/manage-database-security-roles.md).
+1. In your query environment, run the following management command, replacing the placeholders. Replace *DatabaseName* with the name of the target database and *ApplicationID* with the previously saved value. This command grants the app the [database ingestor](kusto/management/access-control/role-based-access-control.md) role. For more information, see [Manage database security roles](kusto/management/manage-database-security-roles.md).
 
     ```kusto
     .add database <DatabaseName> ingestors ('aadapp=<ApplicationID>') 'Azure Data Explorer App Registration'
@@ -67,32 +60,26 @@ This service principal will be the identity used by the connector to write data 
 
 ### Create a table and ingestion mapping
 
-Create a target table for the incoming data.
+Create an [empty table](create-empty-table.md) as the target table for the incoming data.
 
-* In your query editor, run the following [table creation command](kusto/management/create-table-command.md), replacing the placeholder *TableName* with the name of the target table:
-
-    ```kusto
-    .create table <TableName> (Timestamp:datetime, Level:string, Message:string, FormattedMessage:dynamic, Exception:string, Properties:dynamic)
-    ```
-
-## Add the Azure Data Explorer target configuration to your app
+## Add the target configuration to your app
 
 Use the following steps to:
 
-* Add the Azure Data Explorer target configuration
+* Add the target configuration
 * Build and run the app
 
-1. Add the Azure Data Explorer target in your NLog configuration file.
+1. Add the target in your NLog configuration file.
 
     ```xml
     <targets>
-        <target name="adxtarget" xsi:type="ADXTarget"
-        IngestionEndpointUri="<ADX connection string>"
-        Database="<ADX database name>"
-        TableName="<ADX table name>"
-        ApplicationClientId="<AAD App clientId>"
-        ApplicationKey="<AAD App key>"
-        Authority="<AAD tenant id>"
+        <target name="targettable" xsi:type="TargetTable"
+        IngestionEndpointUri="<Connection string>"
+        Database="<Database name>"
+        TableName="<Table name>"
+        ApplicationClientId="<Entra App clientId>"
+        ApplicationKey="<Entra App key>"
+        Authority="<Entra tenant id>"
         />
     </targets>
 
@@ -102,9 +89,9 @@ Use the following steps to:
     </rules>
     ```
 
-    For more options, see [Azure Data Explorer Nlog connector](https://github.com/Azure/azure-kusto-nlog-sink).
+    For more options, see [Nlog connector](https://github.com/Azure/azure-kusto-nlog-sink).
 
-1. Send data to Azure Data Explorer using the NLog sink. For example:
+1. Send data using the NLog sink. For example:
 
     ```csharp
     logger.Info("Processed {@Position} in {Elapsed:000} ms.", position, elapsedMs);
@@ -115,7 +102,7 @@ Use the following steps to:
 
 1. Build and run the app. For example, if you're using Visual Studio, press F5.
 
-1. Verify that the data is in your cluster. In the [web UI](https://dataexplorer.azure.com/), run the following query replacing the placeholder with the name of the table that used earlier:
+1. Verify that the data is in your cluster. In your query environment, run the following query replacing the placeholder with the name of the table that you used earlier:
 
     ```kusto
     <TableName>
@@ -136,7 +123,7 @@ Use the sample log generator app as an example showing how to configure and use 
 
     | Variable | Description |
     |---|---|
-    | *INGEST_ENDPOINT* | The ingest URI for your cluster in the format *https://ingest-\<cluster>.\<region>.kusto.windows.net*. |
+    | *INGEST_ENDPOINT* | The ingest URI for your data target. You have copied this URI in the [prerequisites](#prerequisites). |
     | *DATABASE* | The case-sensitive name of the target database. |
     | *APP_ID* | Application client ID required for authentication. You saved this value in [Create a Microsoft Entra App registration](#create-an-azure-ad-app-registration). |
     | *APP_KEY* | Application key required for authentication. You saved this value in [Create a Microsoft Entra App registration](#create-an-azure-ad-app-registration). |
