@@ -58,7 +58,7 @@ Only a workspace admin can connect a workspace to a repository, but once connect
 
     :::image type="content" source="./media/git-get-started/select-git-provider.png" alt-text="Screenshot of workspace settings window with choice of DevOps or GitHub to select.":::
 
-### [Azure Connect](#tab/Azure)
+### [Azure DevOps Connect](#tab/Azure)
 
 If you select Azure DevOps, select **Connect** to automatically sign into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
 
@@ -83,7 +83,7 @@ If it's the first time connecting, you need to <a href="https://docs.github.com/
 
 ### Connect to a workspace
 
-#### [Azure branch Connect](#tab/Azure)
+#### [Azure DevOps branch Connect](#tab/Azure)
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
@@ -193,7 +193,7 @@ After the update is completed successfully, the status of the items changes to *
 
 ## Disconnect a workspace from Git
 
-Only a workspace admin can disconnect a workspace from an Azure Repo. If you’re not an admin, ask your admin for help with disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
+Only a workspace admin can disconnect a workspace from an Git Repo. If you’re not an admin, ask your admin for help with disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
 
 1. Go to **Workspace settings**
 1. Select **Git integration**
