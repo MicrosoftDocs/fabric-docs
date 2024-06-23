@@ -1,11 +1,10 @@
----
 title: Tenant settings index
 description: Index to Fabric tenant settings.
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-									 
+ms.collection: ce-skilling-ai-copilot
 ms.date: 06/23/2024
 ---
 
