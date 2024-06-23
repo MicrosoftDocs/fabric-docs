@@ -7,12 +7,17 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 <<<<<<< HEAD
+<<<<<<< HEAD
 ms.topic: concept-article
 ms.date: 06/13/2024
 =======
 ms.topic: conceptual
 ms.date: 06/18/2024
 >>>>>>> 73baf9fea4cd181063ea939a65c8cd988fd69eb5
+=======
+ms.topic: concept-article
+ms.date: 06/13/2024
+>>>>>>> cc9d772e9f2fa85a4c30fa1d996881e21b39169f
 ms.custom:
   - build-2023
   - ignite-2023
@@ -96,6 +101,9 @@ As long as you’re connected, the following information appears at the bottom o
 :::image type="content" source="./media/git-integration-process/sync-info.png" alt-text="Screenshot of sync information that appears on the bottom of the screen when connected to Git.":::
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> cc9d772e9f2fa85a4c30fa1d996881e21b39169f
 ## Source control pane
 
 The source control pane has three tabs on the side:
@@ -106,11 +114,14 @@ The source control pane has three tabs on the side:
 ### Commits and updates
 
 On top of the screen is the Source control icon. It shows the number of items that are different in the workspace and Git branch. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
+<<<<<<< HEAD
 =======
 ## Source control
 
 On top of the screen is the **Source control** icon. It shows the number of items that are different in the workspace and Git branch. When changes are made either to the workspace or the Git branch, the number is updated. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
 >>>>>>> 73baf9fea4cd181063ea939a65c8cd988fd69eb5
+=======
+>>>>>>> cc9d772e9f2fa85a4c30fa1d996881e21b39169f
 
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 

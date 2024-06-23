@@ -8,10 +8,14 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
 <<<<<<< HEAD
+<<<<<<< HEAD
 ms.date: 06/18/2024
 =======
 ms.date: 06/06/2024
 >>>>>>> 73baf9fea4cd181063ea939a65c8cd988fd69eb5
+=======
+ms.date: 06/18/2024
+>>>>>>> cc9d772e9f2fa85a4c30fa1d996881e21b39169f
 ms.custom:
   - build-2023
   - ignite-2023
