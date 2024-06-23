@@ -37,23 +37,23 @@ Use the following steps to manage the Data Engineering/Science settings for Micr
    
 4. Create Capacity Pools : In the **Pool List** section, by clicking on the **Add** option, you can create a Custom pool for your Fabric Capacity.
 
-:::image type="content" source="media\capacity-settings-management\capacity-settings-pool-list" alt-text="Screenshot showing the pool list section in Admin Portal settings.":::
+:::image type="content" source="media\capacity-settings-management\capacity-settings-pool-list.png" alt-text="Screenshot showing the pool list section in Admin Portal settings.":::
 
 5. You are navigated to the Pool creation section, where you specify the Pool name, Node family, select the Node size and set the Min and Max nodes for your custom pool, enable/disable autoscale, and dynamic allocation of executors.
 
-:::image type="content" source="media\capacity-settings-management\capacity-pools-creation" alt-text="Screenshot showing the pool creation section in Admin Portal settings.":::
+:::image type="content" source="media\capacity-settings-management\capacity-pools-creation.png" alt-text="Screenshot showing the pool creation section in Admin Portal settings.":::
 
 6. Click Create and Save the settings.
 
-:::image type="content" source="media\capacity-settings-management\capacity-settings-pool-creation" alt-text="Screenshot showing the capacity pools saved in Admin Portal settings.":::
+:::image type="content" source="media\capacity-settings-management\capacity-settings-pool-creation.png" alt-text="Screenshot showing the capacity pools saved in Admin Portal settings.":::
 
 7. Now the newly created Capacity pool is available as a Compute option in the Pool Selection menu in all the workspaces attached to this Fabric capacity.
   
-:::image type="content" source="media\capacity-settings-management\capacity-pools-workspace-pool-options" alt-text="Screenshot showing the capacity pools listed  in Pool list within Workspace settings.":::
+:::image type="content" source="media\capacity-settings-management\capacity-pools-workspace-pool-options.png" alt-text="Screenshot showing the capacity pools listed  in Pool list within Workspace settings.":::
 
 8. You can also view the created capacity pool as a compute option in the environment item within the workspaces.
 
-:::image type="content" source="media\capacity-settings-management\capacity-pools-environment-compute-options" alt-text="Screenshot showing the capacity pools listed  in Pool list within Environment compute settings.":::
+:::image type="content" source="media\capacity-settings-management\capacity-pools-environment-compute-options.png" alt-text="Screenshot showing the capacity pools listed  in Pool list within Environment compute settings.":::
 
 9. This provides additional administrative controls to manage compute governance for your Spark compute in Microsoft Fabric. As a capacity admin, you can create Pools for workspaces and disable workspace-level customization, which would prevent workspace admins from creating custom pools.
 
