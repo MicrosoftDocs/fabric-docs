@@ -32,10 +32,8 @@ Use the following steps to manage the Data Engineering/Science settings for Micr
 3. You are navigated to the capacities detail pane, where you can view the usage and other admin controls for your capacity. Navigate to the **Data Engineering/Science Settings** section and select **Open Spark Compute**. Configure the following parameters:
 
    * **Customized workspace pools:** You can restrict or democratize compute customization to workspace admins by enabling or disabling this option. Enabling this option allows workspace admins to create, update, or delete workspace level custom spark pools. Additionally, it allows you to resize them based on the compute requirements within the maximum cores limit of a capacity.
-
-   :::image type="content" source="media\capacity-settings-management\capacity-settings-sections.png" alt-text="Screenshot showing different sections in spark compute settings.":::
    
-4. Create Capacity Pools : In the **Pool List** section, by clicking on the **Add** option, you can create a Custom pool for your Fabric Capacity.
+4. Create Capacity Pools (Public Preview) : In the **Pool List** section, by clicking on the **Add** option, you can create a Custom pool for your Fabric Capacity.
 
 :::image type="content" source="media\capacity-settings-management\capacity-settings-pool-list.png" alt-text="Screenshot showing the pool list section in Admin Portal settings.":::
 
