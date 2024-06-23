@@ -18,7 +18,7 @@ sections:
       - question: How do I use the RBAC roles to configure my Spark workspace settings? 
         answer: Use the **Manage Access** menu to add **Admin** permissions for specific users, distribution groups, or security groups. You can also use this menu to make changes to the workspace and to grant access to add, modify, or delete the Spark workspace settings.
 
-      - question: Are the changes made to the Spark properties at the workspace level apply to the active notebook sessions or scheduled Spark jobs?
+      - question: Are the changes made to the Spark properties at the environment level apply to the active notebook sessions or scheduled Spark jobs?
         answer: When you make a configuration change at the workspace level, it's not applied to active Spark sessions. This includes batch or notebook based sessions. You must start a new notebook or a batch session after saving the new configuration settings for the settings to take effect.
 
       - question: Can I configure the node family, Spark runtime, and Spark properties at a capacity level?
@@ -27,17 +27,14 @@ sections:
       - question: Can I choose different node families for different notebooks and Spark job definitions in my workspace?
         answer: Currently, you can only select Memory Optimized based node family for the entire workspace. 
 
-      - question: What versions of Spark are supported?
-        answer: Currently, Spark version 3.3 is the only supported version. Additional versions will be available in the upcoming release.
-
       - question: Can I configure these settings at a notebook level?
-        answer: Currently, the Spark administration settings are only available at the workspace and capacity level
-
+        answer: Yes, you can use %%configure to customize properties at the Spark session level in Notebooks
+        
       - question: Can I configure the minimum and maximum number of nodes for the selected node family?
-        answer: Currently, node limit configuration isn't available. This capability will be enabled in future releases.
-
+        answer: Yes, you can choose the min and max nodes based on the allowed max burst limits of the Fabric capacity linked to the Fabric workspace. 
+        
       - question: Can I enable Autoscaling for the Spark Pools in a memory optimized or hardware accelerated GPU based node family?
-        answer: Autoscaling isn't currently available. This capability will be enabled in future releases.
+        answer: Autoscaling is available for Spark pools and enabling that allows the system to automatically scale up the compute based on the job stages during runtime. GPUs are currently unavailable. This capability will be enabled in future releases.
 
       - question: Is Intelligent Caching for the Spark Pools supported or enabled by default for a workspace?
         answer: Intelligent Caching is enabled by default for the Spark pools for all workspaces.
