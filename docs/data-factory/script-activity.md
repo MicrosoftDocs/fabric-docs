@@ -13,7 +13,7 @@ ms.date: 11/15/2023
 
 # How to use Script activity
 
-In this article, you learn how to add a new Script activity, add a new connection, and configure script content.
+In this article, you learn how to add a new SQL Script activity, add a new connection, and configure script content. The Script activity can be used to execute both query and non-query SQL scripts against a back end SQL Azure or on-premises SQL instance.
 
 ## Prerequisites
 

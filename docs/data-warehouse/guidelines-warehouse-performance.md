@@ -74,10 +74,9 @@ Consider using [CTAS (Transact-SQL)](/sql/t-sql/statements/create-table-as-selec
 
 If you're using client applications, make sure you're using [!INCLUDE [product-name](../includes/product-name.md)] in a region that's close to your client computer. Client application examples include Power BI Desktop, SQL Server Management Studio, and Azure Data Studio.
 
+## Utilize star schema data design
 
-## Utilize Star Schema data design
-
-A [star schema](/power-bi/guidance/star-schema) organizes data into fact and dimension tables. A star schema design facilitates analytical processing by de-normalizing the data from highly normalized OLTP systems, ingesting transactional data, and enterprise master data into a common, cleansed, and verified data structure that minimizes JOINS at query time, reduces the number of rows read and facilitates aggregations and grouping processing.
+A [star schema](dimensional-modeling-overview.md#star-schema-design) organizes data into [fact tables](dimensional-modeling-fact-tables.md) and [dimension tables](dimensional-modeling-dimension-tables.md). It facilitates analytical processing by denormalizing the data from highly normalized OLTP systems, ingesting transactional data, and enterprise master data into a common, cleansed, and verified data structure that minimizes joins at query time, reduces the number of rows read and facilitates aggregations and grouping processing.
 
 For more [!INCLUDE [fabric-dw](includes/fabric-dw.md)] design guidance, see [Tables in data warehousing](tables.md).
 
