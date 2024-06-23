@@ -83,16 +83,17 @@ You can now create a deployment pipeline.
 
 ## Step 3: Connect the team's development workspace to git
 
-The entire team shares this workspace and each member of the team can edit it. By connecting this workspace to git, you can keep track of all the changes and revert back to previous versions if necessary. When all the changes are merged into this shared branch, the workspace is deployed to production using the deployment pipeline.  
+The entire team shares this workspace and each member of the team can edit it. By connecting this workspace to git, you can keep track of all the changes and revert back to previous versions if necessary. When all the changes are merged into this shared branch, deploy this workspace to production using the deployment pipeline.  
 Read more about version control with Git in [Introduction to Git integration](./git-integration/intro-to-git-integration.md).
 
-Let's connect this workspace to the main branch of your Azure repo so all team members can edit it and create pull requests. If you're using a GitHub repo, follow the directions in [Connect a workspace to a GitHub repo](./git-integration/git-get-started.md#connect-to-a-git-repo).
+Let's connect this workspace to the main branch of your Git repo so all team members can edit it and create pull requests. Follow these steps if you're using an Azure DevOps repo. If you're using a GitHub repo, follow the directions in [Connect a workspace to a GitHub repo](./git-integration/git-get-started.md#connect-to-a-git-repo).
 
-1. Select the ellipsis (three dots) then **Workspace settings**.
+1. Go to **Workspace settings** in the top right corner.
+1. Select **Git integration**.
+1. Select **Azure DevOps**.
+    You’re automatically signed into the Azure Repos account registered to the Microsoft Entra user signed into the workspace.
 
-   :::image type="content" source="./media/cicd-tutorial/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed.":::
-
-1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Microsoft Entra user signed into the workspace.
+    :::image type="content" source="./media/cicd-tutorial/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed.":::
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 

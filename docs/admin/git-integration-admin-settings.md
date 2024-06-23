@@ -22,7 +22,8 @@ For information about how to get to and use tenant settings, see [About tenant s
 
 ## Users can synchronize workspace items with their Git repositories (Preview)
 
-Users can synchronize a workspace with an Azure Git repository, edit their workspace, and update their Git repos using the Git integration tool. You can enable Git integration for the entire organization, or for a specific group. Turn off this setting to prevent users from syncing workspace items with their Git repositories.
+Users can synchronize a workspace with an Azure Git repository, edit their workspace, and update their Git repos using the Git integration tool. You can enable Git integration for the entire organization, or for a specific group.  
+This switch is **enabled** by default. Disabled it to prevent users from syncing workspace items with their Git repositories.
 
 :::image type="content" source="./media/git-integration-admin-settings/enable-git-integration-switch.png" alt-text="Screenshot of the Git integration switch.":::
 
@@ -52,7 +53,8 @@ Learn more about [sensitivity labels](../get-started/apply-sensitivity-labels.md
 
 ## Users can sync workspace items with GitHub repositories (Preview)
 
-Users can synchronize a workspace with their GitHub repository, edit their workspace, and update their GitHub repos using the Git integration tool. You can enable Git integration for the entire organization, or for a specific group. This switch is off by default. Turn it on to allow users to sync workspace items with their Git repositories.
+Users can synchronize a workspace with their GitHub repository, edit their workspace, and update their GitHub repos using the Git integration tool. You can enable Git integration for the entire organization, or for a specific group.  
+This switch is **disabled** by default. Enable it to allow users to sync workspace items with their Git repositories.
 
 :::image type="content" source="./media/git-integration-admin-settings/enable-github-integration-switch.png" alt-text="Screenshot of the GitHub integration switch.":::
 
