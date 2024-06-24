@@ -30,26 +30,26 @@ The Oracle database connector supports the following authentication types for co
 - To use Oracle database connector, install Oracle Client for Microsoft Tools (OCMT) on the computer running on-premises data gateway. Here are the steps:
 
     1. Download 64-bit OCMT from the [Oracle Client for Microsoft Tools page](https://www.oracle.com/database/technologies/appdev/ocmt.html).
-    1. Double click the downloaded .exe to begin the install process.
-        1. Click the **Next** button.
+    1. Open the downloaded .exe to begin the install process.
+        1. Select the **Next** button.
 
-            :::image type="content" source="./media/connector-oracle-database/start-install.png" alt-text="Screenshot showing the new connection page.":::
+            :::image type="content" source="./media/connector-oracle-database/start-install.png" alt-text="Screenshot showing the install start page.":::
 
         1. Choose the **Default** Oracle Client setup type.
 
-            :::image type="content" source="./media/connector-oracle-database/setup-type-default.png" alt-text="Screenshot showing the new connection page.":::
+            :::image type="content" source="./media/connector-oracle-database/setup-type-default.png" alt-text="Screenshot showing the Oracle Client setup type page.":::
 
-        1. Enter the **Destination Folder** where the Oracle Client will be installed on your machine.
+        1. Enter the **Destination Folder** on your machine where the Oracle Client will be installed.
         
-            :::image type="content" source="./media/connector-oracle-database/choose-destination-location.png" alt-text="Screenshot showing the new connection page.":::        
+            :::image type="content" source="./media/connector-oracle-database/choose-destination-location.png" alt-text="Screenshot showing the Choose Destination Location page.":::        
 
         1. Enter the directory where ODP.NET can find its Oracle Client configuration files.
 
-            :::image type="content" source="./media/connector-oracle-database/oracle-configuration-file-directory.png" alt-text="Screenshot showing the new connection page."::: 
+            :::image type="content" source="./media/connector-oracle-database/oracle-configuration-file-directory.png" alt-text="Screenshot showing the Oracle Configuration File Directory page."::: 
 
-        1. Click the **Install** button to proceed.
+        1. Select the **Install** button to proceed.
 
-            :::image type="content" source="./media/connector-oracle-database/click-install.png" alt-text="Screenshot showing the new connection page."::: 
+            :::image type="content" source="./media/connector-oracle-database/click-install.png" alt-text="Screenshot showing the Install page."::: 
 
 ## Set up your connection in a data pipeline
 
@@ -75,7 +75,7 @@ In the **Connect data source** pane, specify the following field:
 
 ### Step 2:  Select and set your authentication
 
-Under **Authentication kind**, select your authentication kind from the drop-down list and complete the related configuration. The Oracle database connector supports the following authentication types:
+Under **Authentication kind**, select your authentication kind from the drop-down list and complete the related configuration. The Oracle database connector supports the following authentication type:
 
 - [Basic](#basic-authentication)
 

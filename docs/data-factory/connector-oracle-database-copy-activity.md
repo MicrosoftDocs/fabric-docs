@@ -47,7 +47,7 @@ The following properties are **required**:
     - If you select **Query**:
       - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`.
         
-        When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle) section.
+        When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section.
 
         :::image type="content" source="./media/connector-oracle-database/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::
 
@@ -60,22 +60,22 @@ Under **Advanced**, you can specify the following fields:
     If you select **Physical partitions of table**:
     - **Partition names**: Specify the list of physical partitions that needs to be copied.
 
-        If you use a query to retrieve the source data, hook `?DfTabularPartitionName` in the WHERE clause. For an example, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle) section.
+        If you use a query to retrieve the source data, hook `?DfTabularPartitionName` in the WHERE clause. For an example, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section.
 
         :::image type="content" source="./media/connector-oracle-database/physical-partitions-of-table.png" alt-text="Screenshot showing the configuration when you select Physical partitions of table." lightbox="./media/connector-oracle-database/physical-partitions-of-table.png":::
 
     If you select **Dynamic range**:
     - **Partition column name**: Specify the name of the source column in **integer type** that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column.
 
-      If you use a query to retrieve the source data, hook `?DfRangePartitionColumnName` in the WHERE clause. For an example, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle) section.
+      If you use a query to retrieve the source data, hook `?DfRangePartitionColumnName` in the WHERE clause. For an example, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section.
 
     - **Partition upper bound**: Specify maximum value of the partition column to copy data out.
 
-      If you use a query to retrieve the source data, hook `?DfRangePartitionUpbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle database](#parallel-copy-from-oracle) section.
+      If you use a query to retrieve the source data, hook `?DfRangePartitionUpbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section.
 
     - **Partition lower bound**: Specify the minimum value of the partition column to copy data out.
   
-      If you use a query to retrieve the source data, hook `?DfRangePartitionLowbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle database](#parallel-copy-from-oracle) section.
+      If you use a query to retrieve the source data, hook `?DfRangePartitionLowbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section.
 
       :::image type="content" source="./media/connector-oracle-database/dynamic-range.png" alt-text="Screenshot showing the configuration when you select Dynamic range." lightbox="./media/connector-oracle-database/dynamic-range.png":::
 
