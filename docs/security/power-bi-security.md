@@ -26,7 +26,7 @@ In most scenarios, Azure Storage is utilized to persist the data of Power BI art
 
 All data persisted by Power BI is encrypted by default using Microsoft-managed keys. Customer data stored in Azure SQL Databases is fully encrypted using [Azure SQL's Transparent Data Encryption (TDE)](/azure/sql-database/transparent-data-encryption-azure-sql) technology. Customer data stored in Azure storage is encrypted using [Azure Storage Encryption](/azure/storage/common/storage-service-encryption).
 
-Optionally, organizations can utilize Power BI Premium to use their own keys to encrypt data at rest that is imported into a semantic model. This approach is often described as bring your own key (BYOK). Utilizing BYOK helps ensure that even in case of a service operator error, customer data won't be exposed – something that can't easily be achieved using transparent service-side encryption. See [Bring your own encryption keys for Power BI for more information](https://learn.microsoft.com/en-us/power-bi/enterprise/service-encryption-byok).
+Optionally, organizations can utilize Power BI Premium to use their own keys to encrypt data at rest that is imported into a semantic model. This approach is often described as bring your own key (BYOK). Utilizing BYOK helps ensure that even in case of a service operator error, customer data won't be exposed – something that can't easily be achieved using transparent service-side encryption. See [Bring your own encryption keys for Power BI for more information](/power-bi/enterprise/service-encryption-byok).
 
 Power BI semantic models allow for various data source connection modes that determine whether the data source data is persisted in the service or not.
 
