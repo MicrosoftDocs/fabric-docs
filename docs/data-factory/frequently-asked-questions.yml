@@ -82,7 +82,7 @@ sections:
           In certain user experiences, you may encounter system artifacts not intended for interaction. It's best to disregard these artifacts, as they'll eventually be removed from the Get Data experiences in the future.
       - question: |
           My refresh failed with the error message "The dataflow refresh failed due to insufficient permissions for accesing staging artifacts." What should I do?
-         answer: |
+        answer: |
           This error message indicates that the user who created the first dataflow in the workspace hasn't logged in to Fabric for more than 90 days or has left the organization. To resolve this issue, the user mentioned in the error message should log in to Fabric. If the user has left the organization, please [open a support ticket](/power-bi/support/service-support-options).
 
   - name: ADF/Synapse pipelines support and migration path
