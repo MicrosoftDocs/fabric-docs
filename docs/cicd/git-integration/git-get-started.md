@@ -44,10 +44,6 @@ Only a workspace admin can connect a workspace to a repository, but once connect
 
     :::image type="content" source="./media/git-get-started/workspace-settings-new.png" alt-text="Screenshot of workspace with workspace settings icon displayed on top.":::
 
-    > [!NOTE]
-    > If you don't see the Workspace settings icon, select the ellipsis (three dots) then workspace settings.
-    > :::image type="content" source="./media/git-get-started/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed from ellipsis.":::
-
 1. Select **Git integration**.
 
 1. Select your Git provider. Currently, Azure DevOps and GitHub are supported.
