@@ -108,8 +108,8 @@ from azure.identity import DefaultAzureCredential
 
 # Set your account, workspace, and item path here
 ACCOUNT_NAME = "onelake"
-WORKSPACE_NAME = "<myWorkspace>"
-DATA_PATH = "<myLakehouse>.Lakehouse/Files/<path>"
+WORKSPACE_NAME = "<myWorkspaceId>/<myLakehouseId>"
+DATA_PATH = "<myLakehouseId>.Lakehouse/Files/<path>"
 
 def main():
     #Create a service client using the default Azure credential
