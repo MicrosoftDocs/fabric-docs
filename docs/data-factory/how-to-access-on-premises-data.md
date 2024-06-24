@@ -24,6 +24,9 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
    :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup-after-sign-in.png" alt-text="Screenshot showing the on-premises data gateway setup after the user signed in.":::
 
+> [!NOTE]
+> An on-premises data gateway of version higher than or equal to 3000.214.2 is required to support Fabric pipelines.
+
 ## Create a connection for your on-premises data source
 
 1. Navigate to the [admin portal](https://app.powerbi.com) and select the settings button (an icon that looks like a gear) at the top right of the page. Then choose **Manage connections and gateways** from the dropdown menu that appears.
