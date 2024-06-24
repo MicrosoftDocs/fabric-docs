@@ -187,6 +187,21 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 | Spark job scheduled run | Synapse batch job runs triggered by notebook scheduled events   | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job pipeline run  | Synapse batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job VS Code run   | Synapse Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
+  
+### API for GraphQL
+
+GraphQL operations represent the requests performed on API for GraphQL items by API clients. The usage for each operation consisting of the time processing a GraphQL request/response is reported in CU processing time in seconds at the rate of ten CUs per hour.
+
+| Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
+| ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
+| Query    | Compute charge for all generated GraphQL queries (reads) and mutations (writes) by clients within a GraphQL API     | GraphQL | API for GraphQL Query Capacity Usage CU      | Interactive |
+
+
+
+
+
+
+
 
 ## Related content
 
