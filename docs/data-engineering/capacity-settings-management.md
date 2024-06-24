@@ -33,7 +33,9 @@ Use the following steps to manage the Data Engineering/Science settings for Micr
 
    * **Customized workspace pools:** You can restrict or democratize compute customization to workspace admins by enabling or disabling this option. Enabling this option allows workspace admins to create, update, or delete workspace level custom spark pools. Additionally, it allows you to resize them based on the compute requirements within the maximum cores limit of a capacity.
    
-4. Create Capacity Pools (**Public Preview**) : In the **Pool List** section, by clicking on the **Add** option, you can create a Custom pool for your Fabric Capacity.
+## Capacity Pools for Data Engineering and Data Science in Microsoft Fabric (**Public Preview**) 
+
+In the **Pool List** section of Spark Settings, by clicking on the **Add** option, you can create a Custom pool for your Fabric Capacity.
 
 :::image type="content" source="media\capacity-settings-management\capacity-settings-pool-list.png" alt-text="Screenshot showing the pool list section in Admin Portal settings.":::
 
