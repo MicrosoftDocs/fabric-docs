@@ -5,16 +5,18 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/04/2024
+ms.date: 06/24/2024
 ---
 
 # Protect inbound traffic
 
-Inbound traffic is traffic coming into Fabric from the internet. This article explains the differences between the two ways to protect inbound traffic in Microsoft Fabric. Use this article to decide which method is best for your organization.
+Inbound traffic is traffic coming into Fabric from the internet. This article explains the differences between the two ways to protect inbound traffic in Microsoft Fabric, *private links* and *Entra Conditional Access*. Use this article to decide which method is best for your organization.
 
-* **Entra Conditional Access** - When a user authenticates access is determined based on a set of policies that might include IP address, location, and managed devices.
+* **Private links** (Option 1, Customer Vnet) - Fabric uses a private IP address from your virtual network. The endpoint allows users in your network to communicate with Fabric over the private IP address using private links.
 
-* **Private links** - Fabric uses a private IP address from your virtual network. The endpoint allows users in your network to communicate with Fabric over the private IP address using private links.
+* **Entra Conditional Access** - (Option 2, User) - When a user authenticates access is determined based on a set of policies that might include IP address, location, and managed devices.
+
+:::image type="content" source="media/protect-inbound-traffic/protect-inbound-traffic.png" alt-text="A diagram showing two authentication methods for inbound traffic into Fabric, Vnets and Entra ID.":::
 
 Once traffic enters Fabric, it gets authenticated by Microsoft Entra ID, which is the same authentication method used by Microsoft 365, OneDrive, and Dynamics 365. Microsoft Entra ID authentication allows users to securely connect to cloud applications from any device and any network, whether they’re at home, remote, or in their corporate office.
 
