@@ -25,8 +25,7 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
    :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup-after-sign-in.png" alt-text="Screenshot showing the on-premises data gateway setup after the user signed in.":::
 
 > [!NOTE]
-> An on-premises data gateway of version higher than or equal to 3000.214.2 is required to support the Fabric Pipeline. 
-
+> An on-premises data gateway of version higher than or equal to 3000.214.2 is required to support Fabric pipelines.
 
 ## Create a connection for your on-premises data source
 
