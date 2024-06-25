@@ -167,7 +167,7 @@
         },
         {
           "source_path_from_root": "/docs/data-factory/connector-oracle-overview.md",
-          "redirect_url": "/fabric/data-factory/connector-oracle-database",
+          "redirect_url": "/fabric/data-factory/connector-oracle-database-overview",
           "redirect_document_id": false
         },
         {

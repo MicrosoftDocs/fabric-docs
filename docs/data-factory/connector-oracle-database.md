@@ -39,7 +39,7 @@ The Oracle database connector supports the following authentication types for co
 
             :::image type="content" source="./media/connector-oracle-database/setup-type-default.png" alt-text="Screenshot showing the Oracle Client setup type page.":::
 
-        1. Enter the **Destination Folder** on your machine where the Oracle Client will be installed.
+        1. Enter the **Destination Folder** where the Oracle Client will be installed on your machine.
         
             :::image type="content" source="./media/connector-oracle-database/choose-destination-location.png" alt-text="Screenshot showing the Choose Destination Location page.":::        
 
