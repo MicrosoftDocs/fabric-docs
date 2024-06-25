@@ -15,7 +15,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 # Add a custom endpoint destination to an eventstream
 
-This article shows you how to add a custom endpoint (former custom app) destination to an eventstream in Microsoft Fabric event streams.
+This article shows you how to add a custom endpoint (custom app in standard capability) destination to an eventstream in Microsoft Fabric event streams.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
