@@ -1,16 +1,17 @@
 ---
 title: Git integration branches
-description: Learn how to use Git branches to work in your own isolated environment.
+description: Learn how to use Git branches to work in your own isolated environment and improve collaboration with your team.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/06/2024
 ms.custom:
   - build-2023
   - ignite-2023
+#customer intent: As a developer, I want to learn how to use Git branches in Fabric so that I can work in my own isolated environment.
 ---
 
 # Manage branches in Microsoft Fabric workspaces
@@ -25,6 +26,8 @@ The Fabric workspace is a shared environment that accesses live items. Any chang
 To work with branches using Git integration, first connect the shared development team’s workspace to a single shared branch. For example, if your team uses one shared workspace, connect it to the *main* branch in your team’s repository, and sync between the workspace and the repo. If your team’s workflow has multiple shared branches like *Dev/Test/Prod* branches, each branch can be connected to a different workspace.
 
 Then, each developer can choose the isolated environment in which to work.
+
+[!INCLUDE [prerequisites](../../includes/github-prereqs.md)]
 
 ## Develop using client tools
 

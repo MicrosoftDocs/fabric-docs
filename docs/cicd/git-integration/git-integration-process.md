@@ -65,6 +65,16 @@ If you don’t select which content to sync, you can’t continue to work.
 
 :::image type="content" source="./media/git-integration-process/sync-direction-continue.png" alt-text="Screenshot notification that you can't continue working until workspace is synced.":::
 
+### Connect to a shared workspace
+
+If you try connecting to a workspace that someone else created and shared, you might get the following message:
+
+:::image type="content" source="./media/git-integration-process/sign-into-git.png" alt-text="Screenshot of error message telling yo to sign in to a Git account.":::
+
+Go to the **Accounts** tab on the right side of the Source control panel, choose an account, and connect to it.
+
+:::image type="content" source="./media/git-integration-process/connect.png" alt-text="Screenshot of Accounts tab with user connecting to a GitHub account.":::
+
 ### Git status
 
 After you connect, the workspace displays a *Git status* column that indicates the sync state of each item in the workspace in relation to the items in the remote branch.

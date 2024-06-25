@@ -28,6 +28,13 @@ ms.date: 06/25/2024
 
 ---
 
+### GitHub Enterprise limitations
+
+The following GitHub Enterprise settings aren't supported:
+
+- IP allow list
+- Private networking
+
 ### Workspace limitations
 
 - Only the workspace admin can manage the connections to the [Azure Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  

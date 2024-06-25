@@ -75,6 +75,8 @@ If it's the first time connecting, you need to <a href="https://docs.github.com/
 
 ### Connect to a workspace
 
+If you're connecting to a GitHub branch that someone else created and shared, follow the instructions for [Connecting to a shared workspace](./git-integration-process.md#connect-to-a-shared-workspace).
+
 #### [Azure DevOps branch Connect](#tab/Azure)
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
