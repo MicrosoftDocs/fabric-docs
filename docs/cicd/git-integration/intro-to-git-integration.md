@@ -43,6 +43,13 @@ Before you enable Git integration, make sure you understand the following possib
 * <a href="https://github.com/customer-terms/github-data-protection-agreement" target="_blank">GitHub Data protection agreement</a>
 * <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Microsoft privacy statement</a>
 <!--- * [Microsoft services agreement](https://www.microsoft.com/servicesagreement/default.aspx) -->
+## Supported Git providers
+
+The following Git providers are supported:
+
+* [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant are supported.
+* [GitHub](https://github.com/)
+* [GitHub Enterprise](https://github.com/enterprise)
 
 ## Supported items
 
@@ -61,14 +68,6 @@ The following items are currently supported:
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control panel but you can't commit or update them.
 
 ## Considerations and limitations
-
-The following Git providers are supported:
-
-* [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant are supported.
-* [GitHub](https://github.com/)
-* [GitHub Enterprise](https://github.com/enterprise)
-
-The following limitations apply:
 
 * Sovereign clouds aren't supported.
 

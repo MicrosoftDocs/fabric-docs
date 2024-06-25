@@ -156,6 +156,7 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 * Git integration using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
 * Service principal isn't supported.
+* Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git *diff* after each refresh.
 
 ## Related content
 
