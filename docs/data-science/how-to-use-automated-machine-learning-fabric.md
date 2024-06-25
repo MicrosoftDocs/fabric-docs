@@ -226,7 +226,7 @@ from sklearn.metrics import roc_auc_score
 
 with mlflow.start_run(run_name="default") as run:
     # Create a LightGBMClassifier model with specified settings
-    model = LightGBMClassifier(objective="binary", featuresCol="features", labelCol="Exited")
+    model = LightGBMClassifier(objective="binary", featuresCol="features", labelCol="Exited", dataTransferMode="bulk")
     
     # Fit the model to the training data
     model = model.fit(train_data)
