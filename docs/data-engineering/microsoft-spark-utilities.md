@@ -281,11 +281,12 @@ The execution result from the root notebook is as follows:
 > - The upper limitation of notebook activities in ``` msspakrutils.notebook.runMultiple() ``` is **50, having more than 50 notebook activities may have stability and performance issues due to compute resource usage**. If you still want to use more notebook activities in the API, you can set the spark settings ``` spark.notebookutils.runmultiple.limit ``` to a larger value as a workaround. You can set the spark properties in attached Environment or using [%%configure](author-execute-notebook.md#spark-session-configuration-magic-command) command.
 >   ```python
 >   %%configure
+>   %%configure
 >   {
->     "conf": {          
+>       "conf": {          
 >           "spark.notebookutils.runmultiple.limit": "100" 
->        }
->    } 
+>       }
+>   }
 >   ```
 > - If you want to use more than 50 notebook activities, to avoid the snapshot and progress bar content size exceed the total Notebook content size upper limits, we recommend you to run the below command to disable the rich UX features. 
 >   ```scala
