@@ -190,7 +190,7 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
   
 ### API for GraphQL
 
-GraphQL operations represent the requests performed on API for GraphQL items by API clients. The usage for each operation consisting of the time processing a GraphQL request/response is reported in CU processing time in seconds at the rate of ten CUs per hour.
+GraphQL operations are made up of requests performed on API for GraphQL items by API clients. The usage for each operation consisting of the time processing a GraphQL request/response is reported in CU processing time in seconds at the rate of ten CUs per hour.
 
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
