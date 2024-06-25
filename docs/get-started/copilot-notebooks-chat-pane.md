@@ -12,7 +12,7 @@ no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 #CustomerIntent: As a Data Scientist, or Data engineer, I want to use Copilot for Data Science and Data Engineering to increase my productivity and help answer questions I have about my data to use with notebooks.
 ---
-# Use the Copilot for Data Science and Data Engineering chat panel
+# Use the Copilot for Data Science and Data Engineering chat panel (preview)
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
