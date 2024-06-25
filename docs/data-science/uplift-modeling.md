@@ -262,7 +262,7 @@ mlflow.autolog(exclusive=False)
 
 ```python
 classifier = (
-    LightGBMClassifier()
+    LightGBMClassifier(dataTransferMode="bulk")
     .setFeaturesCol("features")  # Set the column name for features
     .setNumLeaves(10)  # Set the number of leaves in each decision tree
     .setNumIterations(100)  # Set the number of boosting iterations
