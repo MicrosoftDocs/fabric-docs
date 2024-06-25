@@ -198,6 +198,9 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
+ [!INCLUDE [limitations](../../includes/git-limitations.md)]
+
+<!---
 - During the *Commit to Git* process, the Fabric service deletes any files *inside the item folder* that aren't part of the item definition. Unrelated files not in an item folder aren't deleted.
 
 - After you commit changes, you might notice some unexpected changes to the item that you didn't make. These changes are semantically insignificant and can happen for several reasons. For example:
@@ -209,6 +212,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 - The commit size is limited to 100 MB for GitHub and 125 MB for DevOps.
 
 - If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the Git integration feature.
+--->
 
 ## Related content
 

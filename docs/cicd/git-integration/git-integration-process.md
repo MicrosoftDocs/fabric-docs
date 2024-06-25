@@ -184,6 +184,8 @@ See [Branching out limitations](#branching-out-limitations) for more information
 
 ## Considerations and limitations
 
+[!INCLUDE [limitations](../../includes/git-limitations.md)]
+<!---
 ### General limitations
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
@@ -231,6 +233,7 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 - Duplicating names isn't allowed – even if Power BI allows it, the update, commit, or undo action fails.
 - B2B isn’t supported.
 - [Conflict resolution](./conflict-resolution.md) is partially done in Git.
+--->
 
 ## Related content
 

@@ -69,6 +69,9 @@ If the workspace or Git directory has unsupported items, it can still be connect
 
 ## Considerations and limitations
 
+[!INCLUDE [limitations](../../includes/git-limitations.md)]
+
+<!---
 * Sovereign clouds aren't supported.
 
 ### [Azure DevOps limitations](#tab/azure-devops)
@@ -83,6 +86,7 @@ If the workspace or Git directory has unsupported items, it can still be connect
 * The commit size is limited to 100 MB.
 
 ---
+--->
 
 ## Related content
 
