@@ -68,7 +68,7 @@ You can use **Save as table** to save your query results into a table. Select th
 
 The **Open in Excel** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to work with the results in Microsoft Excel on your local computer.
 
-   :::image type="content" source="media/sql-query-editor/open-in-excel-popup.png" alt-text="Screenshot showing how to use Open in Excel file menu." lightbox="media/sql-query-editor/download-excel-file-query.png":::
+   :::image type="content" source="media/sql-query-editor/open-in-excel-popup.png" alt-text="Screenshot showing how to use Open in Excel file menu." lightbox="media/sql-query-editor/open-in-excel-popup.png":::
 
 Follow these steps to work with the Excel file locally:
 
@@ -84,7 +84,7 @@ Once you have successfully signed in, you'll see the data presented in the sprea
 
 #### Explore this data (preview)
 
-**Explore this data (preview)** provides the capability to perform ad hoc exploration of your query results. With this feature, you can launch a side-by-side matrix and visual view to better understand any trends or patterns behind your query results before diving into building a full Power BI report. To learn more, visit [Explore your data in the Power BI service (preview)](power-bi/consumer/explore-data-service)
+**Explore this data (preview)** provides the capability to perform ad hoc exploration of your query results. With this feature, you can launch a side-by-side matrix and visual view to better understand any trends or patterns behind your query results before diving into building a full Power BI report. For more information, see [Explore your data in the Power BI service (preview)](/power-bi/consumer/explore-data-service).
 
 #### Visualize results
 
