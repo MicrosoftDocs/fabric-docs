@@ -30,7 +30,7 @@ The Oracle database connector supports the following authentication types for co
 - To use Oracle database connector, install Oracle Client for Microsoft Tools (OCMT) on the computer running on-premises data gateway. Here are the steps:
 
     1. Download 64-bit OCMT from the [Oracle Client for Microsoft Tools page](https://www.oracle.com/database/technologies/appdev/ocmt.html).
-    1. Open the downloaded .exe to begin the install process.
+    1. Open the downloaded .exe to start the installation.
         1. Select the **Next** button.
 
             :::image type="content" source="./media/connector-oracle-database/start-install.png" alt-text="Screenshot showing the install start page.":::
@@ -47,7 +47,7 @@ The Oracle database connector supports the following authentication types for co
 
             :::image type="content" source="./media/connector-oracle-database/oracle-configuration-file-directory.png" alt-text="Screenshot showing the Oracle Configuration File Directory page."::: 
 
-        1. Select the **Install** button to proceed.
+        1. Select **Install** button to proceed.
 
             :::image type="content" source="./media/connector-oracle-database/click-install.png" alt-text="Screenshot showing the Install page."::: 
 
