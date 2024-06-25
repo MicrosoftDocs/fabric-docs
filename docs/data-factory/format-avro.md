@@ -22,12 +22,15 @@ Avro format is supported for the following activities and connectors as a source
 | Category | Connector/Activity |
 |---|---|
 | **Supported connector** | [Amazon S3](connector-amazon-s3-copy-activity.md) |
+|  | [Amazon S3 Compatible](connector-amazon-s3-compatible-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
+|  | [Azure Files](connector-azure-files-copy-activity.md)|
 |  | [FTP](connector-ftp-copy-activity.md) |
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) |
 |  | [HTTP](connector-http-copy-activity.md)|
+|  | [Oracle Cloud Storage](connector-oracle-cloud-storage-copy-activity.md)|
 |  | [SFTP](connector-sftp-copy-activity.md) |
 | **Supported activity** | [Copy activity (source/destination)](copy-data-activity.md) |
 |  | [Lookup activity](lookup-activity.md) |
