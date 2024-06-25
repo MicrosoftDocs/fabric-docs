@@ -31,7 +31,7 @@ The Oracle database connector supports the following authentication types for co
 
     1. Download 64-bit OCMT from the [Oracle Client for Microsoft Tools page](https://www.oracle.com/database/technologies/appdev/ocmt.html).
     1. Open the downloaded .exe to start the installation.
-        1. Select the **Next** button.
+        1. Select **Next** button.
 
             :::image type="content" source="./media/connector-oracle-database/start-install.png" alt-text="Screenshot showing the install start page.":::
 
