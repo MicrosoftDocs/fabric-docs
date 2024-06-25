@@ -124,6 +124,7 @@ def train(alpha, learningRate, numLeaves, numIterations, train_data=train_data_s
             numLeaves=numLeaves,
             labelCol="target",
             numIterations=numIterations,
+            dataTransferMode="bulk"
         )
 
         # Train the model on the training data
