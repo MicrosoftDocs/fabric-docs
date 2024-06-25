@@ -4,7 +4,7 @@ description: This article explains how to configure Avro format in the data pipe
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 06/25/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -29,7 +29,7 @@ Avro format is supported for the following activities and connectors as a source
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) |
 |  | [HTTP](connector-http-copy-activity.md)|
 |  | [SFTP](connector-sftp-copy-activity.md) |
-| **Supported activity** | [Copy activity](copy-data-activity.md) |
+| **Supported activity** | [Copy activity (source/destination)](copy-data-activity.md) |
 |  | [Lookup activity](lookup-activity.md) |
 |  | [GetMetadata activity](get-metadata-activity.md) |
 |  | [Delete activity](delete-data-activity.md) |

@@ -4,7 +4,7 @@ description: This article explains how to configure XML format in the data pipel
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 06/25/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -29,7 +29,7 @@ XML format is supported for the following activities and connectors as source.
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) | 
 |  | [HTTP](connector-http-copy-activity.md)| 
 |  | [SFTP](connector-sftp-copy-activity.md) | 
-| **Supported activity** | [Copy activity](copy-data-activity.md) |
+| **Supported activity** | [Copy activity (source/-)](copy-data-activity.md) |
 |  | [Lookup activity](lookup-activity.md) |
 |  | [GetMetadata activity](get-metadata-activity.md) |
 |  | [Delete activity](delete-data-activity.md) | 
