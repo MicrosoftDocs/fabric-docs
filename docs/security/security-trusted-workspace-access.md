@@ -211,6 +211,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * Trusted workspace access only works when public access is enabled from selected virtual networks and IP addresses.
 * Resource instance rules for Fabric workspaces must be created through ARM templates. Resource instance rules created through the Azure portal UI aren't supported.
 * Pre-existing shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
+* If your organization has an Entra Conditional access policy for workload identities that includes all service principals, then trusted workspace access won't work. In such instances, you need to exclude specific Fabric workspace identities from the Conditional access policy for workload identities.
 
 ### Troubleshooting issues with trusted workspace access
 
