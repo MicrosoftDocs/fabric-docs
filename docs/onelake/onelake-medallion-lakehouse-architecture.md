@@ -36,7 +36,7 @@ You can use OneLake to:
 
 - **Remove silos and reduce management effort.** All organizational data is stored, managed, and [secured](./security/fabric-onelake-security.md) within one data lake resource. Because OneLake is provisioned with your Fabric tenant, there are no more resources to provision or manage.
 - **Reduce data movement and duplication.** The objective of OneLake is to store only one copy of data. Fewer copies of data results in fewer data movement processes, and that leads to efficiency gains and reduction in complexity. If necessary, you can create a [shortcut](onelake-shortcuts.md) to reference data stored in other locations, rather than copying it to OneLake.
-- **Use with multiple analytical engines.** The data in OneLake is stored in an open format. That way, the data can be queried by various analytical engines, including Analysis Services (used by Power BI), T-SQL, and Spark. Other non-Fabric applications can use APIs and SDKs to [access OneLake](onelake-access-api.md) as well.
+- **Use with multiple analytical engines.** The data in OneLake is stored in an open format. That way, the data can be queried by various analytical engines, including Analysis Services (used by Power BI), T-SQL, and Apache Spark. Other non-Fabric applications can use APIs and SDKs to [access OneLake](onelake-access-api.md) as well.
 
 For more information, see [OneLake, the OneDrive for data](onelake-overview.md).
 
@@ -50,8 +50,8 @@ For more information, see [What is a lakehouse in Microsoft Fabric?](../data-eng
 
 When you create a lakehouse in Fabric, two physical storage locations are provisioned automatically for tables and files.
 
-- **Tables** is a managed area for hosting tables of all formats in Spark (CSV, Parquet, or Delta). All tables, whether automatically or explicitly created, are recognized as tables in the lakehouse. Also, any Delta tables, which are Parquet data files with a file-based transaction log, are recognized as tables as well.
-- **Files** is an unmanaged area for storing data in any file format. Any Delta files stored in this area aren't automatically recognized as tables. If you want to create a table over a Delta Lake folder in the unmanaged area, you'll need to explicitly create a [shortcut](onelake-shortcuts.md) or an external table with a location that points to the unmanaged folder that contains the Delta Lake files in Spark.
+- **Tables** is a managed area for hosting tables of all formats in Apache Spark (CSV, Parquet, or Delta). All tables, whether automatically or explicitly created, are recognized as tables in the lakehouse. Also, any Delta tables, which are Parquet data files with a file-based transaction log, are recognized as tables as well.
+- **Files** is an unmanaged area for storing data in any file format. Any Delta files stored in this area aren't automatically recognized as tables. If you want to create a table over a Delta Lake folder in the unmanaged area, you'll need to explicitly create a [shortcut](onelake-shortcuts.md) or an external table with a location that points to the unmanaged folder that contains the Delta Lake files in Apache Spark.
 
 The main distinction between the managed area (tables) and the unmanaged area (files) is the automatic table discovery and registration process. This process runs over any folder created in the managed area only, but not in the unmanaged area.
 
@@ -84,7 +84,7 @@ Medallion architecture consists of three distinct layers (or zones).
 
 - **Bronze:** Also known as the _raw zone_, this first layer stores source data in its original format. The data in this layer is typically append-only and immutable.
 - **Silver:** Also known as the _enriched zone_, this layer stores data sourced from the bronze layer. The raw data has been cleansed and standardized, and it's now structured as tables (rows and columns). It might also be integrated with other data to provide an enterprise view of all business entities, like customer, product, and others.
-- **Gold:** Also known as the _curated zone_, this final layer stores data sourced from the silver layer. The data is refined to meet specific downstream business and analytics requirements. Tables typically conform to [star schema design](/power-bi/guidance/star-schema), which supports the development of data models that are optimized for performance and usability.
+- **Gold:** Also known as the _curated zone_, this final layer stores data sourced from the silver layer. The data is refined to meet specific downstream business and analytics requirements. Tables typically conform to [star schema design](../data-warehouse/dimensional-modeling-overview.md#star-schema-design), which supports the development of data models that are optimized for performance and usability.
 
 > [!IMPORTANT]
 > Because a Fabric lakehouse represents a single zone, you create one lakehouse for each of the three zones.
@@ -113,7 +113,7 @@ While you can create all lakehouses in a single Fabric workspace, we recommend t
 
 For the bronze zone, we recommend that you store the data in its original format, or use Parquet or Delta Lake. Whenever possible, keep the data in its original format. If the source data is from OneLake, Azure Data Lake Store Gen2 (ADLS Gen2), Amazon S3, or Google, create a [shortcut](onelake-shortcuts.md) in the bronze zone instead of copying the data across.
 
-For the silver and gold zones, we recommend that you use Delta tables because of the extra capabilities and performance enhancements they provide. Fabric standardizes on Delta Lake format, and by default every engine in Fabric writes data in this format. Further, these engines use V-Order write-time optimization to the Parquet file format. That optimization enables extremely fast reads by Fabric compute engines, such as Power BI, SQL, Spark, and others. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
+For the silver and gold zones, we recommend that you use Delta tables because of the extra capabilities and performance enhancements they provide. Fabric standardizes on Delta Lake format, and by default every engine in Fabric writes data in this format. Further, these engines use V-Order write-time optimization to the Parquet file format. That optimization enables extremely fast reads by Fabric compute engines, such as Power BI, SQL, Apache Spark, and others. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
 
 Lastly, today many organizations face massive growth in data volumes, together with an increasing need to organize and manage that data in a logical way while facilitating more targeted and efficient use and governance. That can lead you to establish and manage a decentralized or federated data organization with governance.
 

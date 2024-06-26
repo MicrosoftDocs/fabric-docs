@@ -31,6 +31,8 @@ items:
     href: workload-environment.md
   - name: Item lifecycle
     href: item-lifecycle.md
+  - name: User permissions
+    href: user-permissions.md    
   - name: Monitoring hub
     href: monitoring-hub.md
   - name: Working with customer data

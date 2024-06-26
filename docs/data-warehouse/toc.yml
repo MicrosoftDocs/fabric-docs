@@ -86,6 +86,18 @@ items:
     href: transactions.md 
   - name: Warehouse settings and context menus
     href: settings-context-menus.md
+  - name: Analyze with range bands
+    href: analyze-range-bands.md
+- name: Dimensional modeling
+  items:
+  - name: Overview
+    href: dimensional-modeling-overview.md
+  - name: Dimension tables
+    href: dimensional-modeling-dimension-tables.md
+  - name: Fact tables
+    href: dimensional-modeling-fact-tables.md
+  - name: Load tables
+    href: dimensional-modeling-load-tables.md
 - name: Load data into the warehouse
   items:
   - name: Ingesting data into the warehouse
@@ -245,11 +257,15 @@ items:
     href: caching.md
 - name: Monitor the warehouse
   items:
+  - name: Monitoring overview
+    href: monitoring-overview.md
   - name: Monitor using Capacity Metrics app
     href: usage-reporting.md
     displayName: Billing, usage reporting
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
+  - name: Query activity
+    href: query-activity.md
   - name: Query insights
     href: query-insights.md
   - name: How to

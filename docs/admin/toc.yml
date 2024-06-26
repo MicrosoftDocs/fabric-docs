@@ -28,7 +28,9 @@ items:
   - name: Understand Fabric admin roles
     href: roles.md 
   - name: Service interruption notifications      
-    href: service-interruption-notifications.md   
+    href: service-interruption-notifications.md
+  - name: Diagnostic query text storage
+    href: query-text-storage.md
 - name: Monitor and manage Fabric
   expanded: false
   items:
@@ -54,6 +56,8 @@ items:
     href: service-admin-portal-capacity-settings.md
   - name: Manage embed codes
     href: service-admin-portal-embed-codes.md
+  - name: Manage Fabric identities
+    href: fabric-identities-manage.md
   - name: Manage featured content
     href: service-admin-portal-featured-content.md
   - name: Manage organizational visuals

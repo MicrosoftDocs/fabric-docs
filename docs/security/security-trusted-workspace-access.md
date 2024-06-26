@@ -1,14 +1,14 @@
 ---
-title: Trusted workspace access in Microsoft Fabric (preview)
+title: Trusted workspace access in Microsoft Fabric
 description: Learn how to configure and use trusted workspace access to securely access your Azure Data Lake Gen2 storage accounts from Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/04/2024
+ms.date: 05/30/2024
 ---
 
-# Trusted workspace access (preview)
+# Trusted workspace access
 
 Fabric allows you to access firewall-enabled Azure Data Lake Storage (ADLS) Gen2 accounts in a secure manner. Fabric workspaces that have a workspace identity can securely access ADLS Gen2 accounts with public network access enabled from selected virtual networks and IP addresses. You can limit ADLS Gen2 access to specific Fabric workspaces.
 
@@ -17,7 +17,7 @@ Fabric workspaces that access a storage account with trusted workspace access ne
 To limit and protect access to firewall-enabled storage accounts from certain Fabric workspaces, you can set up resource instance rule to allow access from specific Fabric workspaces.
 
 > [!NOTE]
-> Trusted workspace access in OneLake shortcuts and data pipelines is currently in public preview. Fabric workspace identity can only be created in workspaces associated with a Fabric capacity (F64 or higher). For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+> Trusted workspace access is **generally available**. Fabric workspace identity can only be created in workspaces associated with a Fabric capacity (F64 or higher). For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 
 This article shows you how to:
 
@@ -100,7 +100,8 @@ The following sections show you how to use these methods.
 * Configure a [resource instance rule](#resource-instance-rule) for the storage account.
 
 > [!NOTE]
-> Preexisting shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
+>- Preexisting shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
+>- You must use the DFS URL ID for the storage account. Here's an example: `https://StorageAccountName.dfs.core.windows.net`
 
 #### Steps
 
@@ -209,6 +210,10 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * Trusted workspace access only works when public access is enabled from selected virtual networks and IP addresses.
 * Resource instance rules for Fabric workspaces must be created through ARM templates. Resource instance rules created through the Azure portal UI aren't supported.
 * Pre-existing shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
+
+### Troubleshooting issues with trusted workspace access
+
+If a shortcut in a lakehouse that targets a firewall-protected ADLS Gen2 storage account becomes inaccessible, it might be because the lakehouse has been shared with a user who doesn't have an admin, member, or contributor role in the workspace where the lakehouse resides. This is a [known issue](../get-started/known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md). The remedy is not to share the lakehouse with users who don't have an admin, member, or contributor role in the workspace.
 
 ### ARM template sample
 

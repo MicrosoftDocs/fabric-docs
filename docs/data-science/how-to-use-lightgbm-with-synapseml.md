@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.reviewer: mopeakande
+ms.reviewer: ssalgado
 author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
@@ -90,7 +90,7 @@ In this section, you'll use LightGBM to build a classification model for predict
     from synapse.ml.lightgbm import LightGBMClassifier
     
     model = LightGBMClassifier(
-        objective="binary", featuresCol="features", labelCol="Bankrupt?", isUnbalance=True
+        objective="binary", featuresCol="features", labelCol="Bankrupt?", isUnbalance=True, dataTransferMode="bulk"
     )
     ```
 

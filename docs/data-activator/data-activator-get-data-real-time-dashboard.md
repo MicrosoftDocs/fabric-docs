@@ -3,7 +3,7 @@ title: Create Data Activator alerts from a Real-Time Dashboard
 description: Learn how to create a Data Activator alert from a Real-Time Dashboard.
 author: jamesdhutton
 ms.author: jameshutton
-ms.topic: concept
+ms.topic: conceptual
 ms.custom:
   - build-2024
 ms.date: 05/08/2024

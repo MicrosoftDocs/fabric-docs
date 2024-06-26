@@ -4,11 +4,13 @@ description: An introduction to Git integration the Fabric Application lifecycle
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/17/2023
+ms.date: 05/23/2024
 ms.search.form: Git integration supported items, Introduction to Git integration
 ---
 
@@ -53,9 +55,12 @@ The following items are currently supported:
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces))
-* Semantic models (except push datasets, live connections, model v1, and semantic models [created from the Data warehouse/lakehouse](../../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).)
+* Semantic models (except push datasets, live connections to Analysis Services, model v1).
+* [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md)
+* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
+* [Warehouses](../../data-warehouse/data-warehousing.md)
 
-If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pane but you can't commit or update them.
+If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control panel but you can't commit or update them.
 
 ## Considerations and limitations
 

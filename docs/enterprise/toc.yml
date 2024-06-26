@@ -5,12 +5,16 @@ items:
   items:
   - name: Microsoft Fabric licenses
     href: licenses.md
+  - name: Microsoft Fabric features
+    href: fabric-features.md    
 - name: Get started
   items:
   - name: Buy a Microsoft Fabric subscription
     href: buy-subscription.md
   - name: SKU considerations
     href: sku-considerations.md
+  - name: End a trial, close an account, cancel a subscription
+    href: fabric-close-end-cancel.md
 - name: Capacity operations
   items:
   - name: Understand your Azure bill
@@ -36,6 +40,8 @@ items:
     - name: Understand the metrics app storage page
       href: metrics-app-storage-page.md
     - name: Understand the metrics app timepoint page
-      href: metrics-app-timepoint-page.md    
+      href: metrics-app-timepoint-page.md
+    - name: Plan your capacity size
+      href: plan-capacity.md    
     - name: Monitor a paused capacity
       href: monitor-paused-capacity.md                 

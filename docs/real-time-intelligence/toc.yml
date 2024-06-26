@@ -36,7 +36,7 @@ items:
     href: user-flow-3.md
   - name: "Explore your data visually in Real-Time Dashboards"
     href: user-flow-4.md
-  - name: "Trigger Fabric dataflows from the Real-Time hub"
+  - name: "Set alerts based on Fabric events"
     href: user-flow-5.md 
 - name: Get data
   items:
@@ -202,13 +202,13 @@ items:
       href: ../data-activator/data-activator-get-data-eventstreams.md
 - name: Store data
   items:
-  - name: Event house 
+  - name: Eventhouse 
     items:
-    - name: Event house overview 
+    - name: Eventhouse overview 
       href: eventhouse.md
-    - name: Create an event house 
+    - name: Create an eventhouse 
       href: create-eventhouse.md
-    - name: Manage and monitor an event house 
+    - name: Manage and monitor an eventhouse 
       href: manage-monitor-eventhouse.md
   - name: KQL Database
     items:
@@ -242,8 +242,8 @@ items:
       href: api/toc.yml
     - name: OneLake
       items:
-      - name: One logical copy 
-        href: one-logical-copy.md
+      - name: Eventhouse OneLake availability 
+        href: event-house-onelake-availability.md
       - name: Create OneLake shortcuts in a KQL database
         href: onelake-shortcuts.md
   - name: Resource consumption
@@ -252,6 +252,7 @@ items:
 - name: Analyze and model data
   items:
   - name: Copilot for Real-Time Intelligence
+    displayName: KQL queryset, kusto query language, natural language
     href: ../get-started/copilot-real-time-intelligence.md
   - name: KQL Queryset
     items:
@@ -280,18 +281,21 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
-    - name: Create a Real-Time Dashboard (preview)
+    - name: Create a Real-Time Dashboard 
       href: dashboard-real-time-create.md
-    - name: Explore data in Real-Time Dashboard tiles (preview)
+    - name: Explore data in Real-Time Dashboard tiles 
       href: dashboard-explore-data.md
-    - name: Customize Real-Time Dashboard visuals (preview)
+    - name: Customize Real-Time Dashboard visuals 
       href: dashboard-visuals-customize.md
-    - name: Apply conditional formatting in Real-Time Dashboards (preview)
+    - name: Apply conditional formatting in Real-Time Dashboards 
       href: dashboard-conditional-formatting.md
-    - name: Use parameters in Real-Time Dashboards (preview)
+    - name: Use parameters in Real-Time Dashboards 
       href: dashboard-parameters.md
-    - name: Real-Time Dashboard-specific visuals (preview)
+    - name: Real-Time Dashboard-specific visuals 
       href: dashboard-visuals.md
+    - name: Create alerts from a Real-Time Dashboard
+      displayName: trigger, data activator, reflex
+      href: ../data-activator/data-activator-get-data-real-time-dashboard.md    
   - name: Power BI
     items:
     - name: Visualize data in a Power BI report
@@ -301,16 +305,20 @@ items:
 - name: Respond to data
   items:
   - name: What is Data Activator?
+    displayName: trigger, data activator, reflex
     href: ../data-activator/data-activator-introduction.md
   - name: Get started with Data Activator
+    displayName: trigger, data activator, reflex
     href: ../data-activator/data-activator-get-started.md
   - name: Data Activator tutorial using sample data
+    displayName: reflex, trigger
     href: ../data-activator/data-activator-tutorial.md
   - name: Get data in Data Activator
     items:
     - name: Get data from Power BI
       href: ../data-activator/data-activator-get-data-power-bi.md
     - name: Create alerts from a Real-Time Dashboard
+      displayName: alert, trigger, data activator, reflex
       href: ../data-activator/data-activator-get-data-real-time-dashboard.md    
     - name: Get data from Eventstreams
       href: ../data-activator/data-activator-get-data-eventstreams.md
@@ -319,6 +327,7 @@ items:
     - name: Assign data to objects in Data Mode
       href: ../data-activator/data-activator-assign-data-objects.md
     - name: Create alerts in design mode
+      displayName: alert, trigger, data activator, reflex
       href: ../data-activator/data-activator-create-triggers-design-mode.md
     - name: Detection conditions
       href: ../data-activator/data-activator-detection-conditions.md
@@ -327,6 +336,7 @@ items:
     - name: Data Activator limitations
       href: ../data-activator/data-activator-limitations.md
     - name: Troubleshoot errors
+      displayName: data activator, trigger, reflex, faq
       href: ../data-activator/data-activator-troubleshooting.md
 - name: KQL reference
   items:

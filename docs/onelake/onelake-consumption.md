@@ -17,32 +17,32 @@ OneLake usage is defined by data stored and the number of transactions. This pag
 
 ## Storage
 
-OneLake storage is billed at a pay-as-you-go rate per GB of data used. Static Storage does NOT consume Fabric Capacity Units (CUs). For more information about pricing, see the [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
-You can track storage usage in the Fabric Capacity Metrics app. For more information about monitoring usage, see the [Metrics app Storage page](../enterprise/metrics-app-storage-page.md).
+OneLake storage is billed at a pay-as-you-go rate per GB of data used. Static Storage does NOT consume Fabric Capacity Units (CUs). Fabric items like Lakehouse and Datawarehouse  consume OneLake Storage. Data stored in OneLake for Power BI import Semantic models are FREE. Power BI data not in OneLake continues to be FREE as stated in the [premium per user page](/power-bi/enterprise/service-premium-per-user-faq#considerations-and-limitations). For Mirrored data, data up to the included capacity is FREE, and beyond that is charged. For more information about pricing, see the [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+
+You may visualize your OneLake storage usage in the Fabric Capacity Metrics app in the Storage tab. For more information about monitoring usage, see the [Metrics app Storage page](../enterprise/metrics-app-storage-page.md). To understand OneLake consumption more, see the [OneLake Capacity Consumption page](../onelake/onelake-capacity-consumption.md)
 
 ## Transactions
 
-Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. OneLake data can be accessed from applications running inside of Fabric environments, such as Fabric Spark. OneLake can also be accessed from applications running outside of Fabric environments such as via APIs. How the data in OneLake is accessed has a bearing on how many CUs are consumed.
-OneLake uses the same mappings as ADLS to classify the operation to the category as [here](/azure/storage/blobs/map-rest-apis-transaction-categories).
+Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. OneLake uses the same mappings as ADLS to classify the operation to the category as [here](/azure/storage/blobs/map-rest-apis-transaction-categories).
 
 ### Operation types
 
-This table defines CU consumption when OneLake data is accessed using most applications running inside of Fabric environments such as Fabric Spark and Fabric pipelines.
+This table defines CU consumption when OneLake data is accessed using applications that redirect certain requests. Redirection is an implementation that reduces consumption of OneLake compute.
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
-| **OneLake Read via Redirect** | OneLake Read via Redirect | Every 4MB, per 10,000 | 104 CU seconds |
-| **OneLake Write via Redirect** | OneLake Write via Redirect | Every 4MB, per 10,000 | 1626 CU seconds |
+| **OneLake Read via Redirect** | OneLake Read via Redirect | Every 4 MB, per 10,000 | 104 CU seconds |
+| **OneLake Write via Redirect** | OneLake Write via Redirect | Every 4 MB, per 10,000 | 1626 CU seconds |
 | **OneLake Iterative Read via Redirect** | OneLake Iterative Read via Redirect | Per 10,000 | 1626 CU seconds |
 | **OneLake Iterative Write via Redirect** | OneLake Iterative Write via Redirect | Per 100 | 1300 CU seconds |
 | **OneLake Other Operations via Redirect** | OneLake Other Operations via Redirect | Per 10,000 | 104 CU seconds |
 
-This table defines CU consumption when OneLake data is accessed using applications running outside of Fabric environments. For example, custom applications using Azure Data Lake Storage (ADLS) APIs or OneLake file explorer.
+This table defines CU consumption when OneLake data is accessed using applications that proxy requests.
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
-| **OneLake Read via Proxy** | OneLake Read via Proxy | Every 4MB, per 10,000 | 306 CU seconds |
-| **OneLake Write via Proxy** | OneLake Write via Proxy | Every 4MB, per 10,000 | 2650 CU seconds |
+| **OneLake Read via Proxy** | OneLake Read via Proxy | Every 4 MB, per 10,000 | 306 CU seconds |
+| **OneLake Write via Proxy** | OneLake Write via Proxy | Every 4 MB, per 10,000 | 2650 CU seconds |
 | **OneLake Iterative Read via Proxy** | OneLake Iterative Read via Proxy | Per 10,000 | 4798 CU seconds |
 | **OneLake Iterative Write via Proxy** | OneLake Iterative Write via Proxy | Per 100 | 2117.95 CU seconds |
 | **OneLake Other Operations** | OneLake Other Operations | Per 10,000 | 306 CU seconds |
@@ -63,11 +63,11 @@ When disaster recovery is enabled, the data in OneLake gets geo-replicated. Thus
 
 ## Disaster recovery transactions
 
-When Disaster Recovery option is enabled for a given capacity, write operations consume higher capacity units.
+When disaster recovery is enabled for a given capacity, write operations consume higher capacity units.
 
 ### Disaster recovery operation types
 
-This table defines CU consumption when OneLake data is accessed using most applications running inside of Fabric environments when disaster recovery is enabled. For example, Fabric Spark and Fabric pipelines.
+This table defines CU consumption when disaster recovery is enabled and OneLake data is accessed using applications that redirect certain requests.  Redirection is an implementation that reduces consumption of OneLake compute.
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 |---|---|---|---|
@@ -77,7 +77,7 @@ This table defines CU consumption when OneLake data is accessed using most appli
 | **OneLake BCDR Iterative Write via Redirect** | OneLake BCDR Iterative Write via Redirect | Per 100 | 2730 CU seconds |
 | **OneLake BCDR Other Operations Via Redirect** | OneLake BCDR Other Operations Via Redirect | Per 10,000 | 104 CU seconds |
 
-This table defines CU consumption when OneLake data is accessed using applications running outside of Fabric environments when disaster recovery is enabled. For example, custom applications using Azure Data Lake Storage (ADLS) APIs or OneLake file explorer.
+This table defines CU consumption when disaster recovery is enabled and OneLake data is accessed using applications that proxy requests.
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 |---|---|---|---|

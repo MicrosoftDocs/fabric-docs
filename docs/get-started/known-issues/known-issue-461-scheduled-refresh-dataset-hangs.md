@@ -6,7 +6,7 @@ ms.author: anirmale
 ms.topic: troubleshooting  
 ms.service: powerbi
 ms.subservice: pbi-troubleshooting
-ms.date: 07/27/2023
+ms.date: 06/06/2024
 ms.custom: known-issue-461
 ---
 
@@ -16,7 +16,7 @@ Scheduled refreshes of datasets connected to dataflows may hang intermittently a
 
 **APPLIES TO:** ✔️ Power BI
 
-**Status:** Open
+**Status:** Fixed: June 6, 2024
 
 **Problem area:** Create and Author Data
 

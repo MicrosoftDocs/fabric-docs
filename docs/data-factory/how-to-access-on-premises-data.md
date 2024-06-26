@@ -24,6 +24,9 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
    :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup-after-sign-in.png" alt-text="Screenshot showing the on-premises data gateway setup after the user signed in.":::
 
+> [!NOTE]
+> An on-premises data gateway of version higher than or equal to 3000.214.2 is required to support Fabric pipelines.
+
 ## Create a connection for your on-premises data source
 
 1. Navigate to the [admin portal](https://app.powerbi.com) and select the settings button (an icon that looks like a gear) at the top right of the page. Then choose **Manage connections and gateways** from the dropdown menu that appears.
@@ -33,6 +36,36 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 1. On the **New connection** dialog that appears, select **On-premises** and then provide your gateway cluster, along with the associated resource type and relevant information.
 
    :::image type="content" source="media/how-to-access-on-premises-data/new-connection-details.png" alt-text="Screenshot showing the New connection dialog with On-premises selected.":::
+
+   Available connection types supported for on-premises connections are:
+
+   - Active Directory
+   - Adobe Analytics
+   - Analysis Services
+   - Azure Blob Storage
+   - Azure Data Lake Storage Gen2
+   - Azure Table Storage
+   - Essbase
+   - File
+   - Folder
+   - Google Analytics
+   - IBM DB2
+   - IBM Informix Database
+   - MySQL
+   - OData
+   - ODBC
+   - OLE DB
+   - Oracle
+   - PostgreSQL
+   - Salesforce
+   - SAP Business Warehouse Message Server
+   - SAP Business Warehouse Server
+   - SAP HANA
+   - SharePoint
+   - SQL Server
+   - Sybase
+   - Teradata
+   - Web
 
 ## Connect your on-premises data source to a Dataflow Gen2 in Data Factory for Microsoft Fabric
 
@@ -79,44 +112,11 @@ Now you've created a Dataflow Gen2 to load data from an on-premises data source 
 
    :::image type="content" source="media/how-to-access-on-premises-data/run-pipeline.png" lightbox="media/how-to-access-on-premises-data/run-pipeline.png" alt-text="Screenshot showing where to run the pipeline in the pipeline editor window.":::
 
-Now you've created and ran a pipeline to load data from an on-premises data source into a cloud destination.
+Now you've created and ran a pipeline to load data from an on-premises data source into a cloud destination. 
 
-These are the connectors currently supported by Fabric Pipeline when utilizing an on-premises data gateway:
-- ADLS Gen1 for Cosmos Structured Stream
-- ADLS Gen2 for Cosmos Structured Stream
-- Amazon S3
-- Amazon S3 Compatible Storage
-- Amazon RDS for SQL Server
-- Azure Blob Storage
-- Azure Cosmos DB (SQL API)
-- Azure Database for PostgreSQL
-- Azure Data Explorer
-- Azure Data Lake Storage Gen2
-- Azure SQL Database
-- Azure SQL Managed Instance
-- Azure Synapse Analytics
-- Azure Table Storage
-- Dataverse
-- DB2
-- Dynamics 365
-- Dynamics CRM
-- Microsoft Fabric Warehouse
-- File System
-- FTP
-- Generic HTTP
-- Generic OData
-- Generic ODBC
-- Google Cloud Storage
-- KQL Database
-- Microsoft Fabric Lakehouse
-- MongoDB
-- MongoDB Atlas
-- SAP HANA
-- SFTP
-- SharePoint Online List
-- SQL Server
 
 ## Related content
 
+- [Connector overview](connector-overview.md)
 - [On-premises data gateway considerations for output destinations](gateway-considerations-output-destinations.md)
 - [Known issues with the on-premises data gateway](known-issue-gateway.md)

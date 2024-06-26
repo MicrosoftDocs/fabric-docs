@@ -15,6 +15,8 @@ The native execution engine is a groundbreaking enhancement for Apache Spark job
 
 The native execution engine significantly elevates query performance while minimizing operational costs. It delivers a remarkable speed enhancement, achieving up to four times faster performance compared to traditional OSS (open source software) Spark, as validated by the TPC-DS 1TB benchmark. The engine is adept at managing a wide array of data processing scenarios, ranging from routine data ingestion, batch jobs, and ETL (extract, transform, load) tasks, to complex data science analytics and responsive interactive queries. Users benefit from accelerated processing times, heightened throughput, and optimized resource utilization.
 
+The Native Execution Engine is based on two key OSS components: [Velox](https://github.com/facebookincubator/velox), a C++ database acceleration library introduced by Meta, and [Apache Gluten (incubating)](https://github.com/apache/incubator-gluten), a middle layer responsible for offloading JVM-based SQL engines’ execution to native engines introduced by Intel.
+
 > [!NOTE]
 > The native execution engine is currently in public preview. For more information, see the current [limitations](#limitations). **At this stage of the preview, there is no additional cost associated with using it.**
 
@@ -43,7 +45,8 @@ To enable the native execution engine for a single notebook or Spark job definit
 ```json
 %%configure 
 { 
-   "conf": { 
+   "conf": {
+       "spark.native.enabled": "true", 
        "spark.gluten.enabled": "true", 
        "spark.shuffle.manager": "org.apache.spark.shuffle.sort.ColumnarShuffleManager" 
    } 
@@ -52,7 +55,7 @@ To enable the native execution engine for a single notebook or Spark job definit
 
 For notebooks, insert the required configuration commands in the first cell. For Spark job definitions, include the configurations in the frontline of your Spark job definition.
 
-:::image type="content" source="media\native\enable.jpg" alt-text="Screenshot showcasing how to enable the native execution engine inside the notebook." lightbox="media\native\enable.jpg":::
+:::image type="content" source="media\native\enable.png" alt-text="Screenshot showcasing how to enable the native execution engine inside the notebook." lightbox="media\native\enable.png":::
 
 The native execution engine is integrated with custom pools, meaning that enabling this feature initiates a new session, typically taking up to two minutes to start.
 
@@ -71,28 +74,31 @@ To ensure uniform performance enhancement, enable the native execution engine ac
 
 | Property | Value |
 |:-:|:-:|
+| spark.native.enabled | true |
 | spark.gluten.enabled | true |
 | spark.shuffle.manager | org.apache.spark.shuffle.sort.ColumnarShuffleManager |
 
-:::image type="content" source="media\native\enable-environment.jpg" alt-text="Screenshot showing how to enable the native execution engine inside the environment item." lightbox="media\native\enable-environment.jpg":::
+:::image type="content" source="media\native\enable-environment.png" alt-text="Screenshot showing how to enable the native execution engine inside the environment item." lightbox="media\native\enable-environment.png":::
 
 When enabled at the environment level, all subsequent jobs and notebooks inherit the setting. This inheritance ensures that any new sessions or resources created in the environment automatically benefit from the enhanced execution capabilities.
 
 ### Control on the query level
 
-You can disable the native execution engine for specific queries, particularly if they involve operators that aren't currently supported (see [limitations](#limitations)). To disable, set the Spark configuration spark.gluten.enabled to false for the specific cell containing your query.
+The mechanisms to enable the Native Execution Engine at the tenant, workspace, and environment levels, seamlessly integrated with the UI, are under active development. In the meantime, you can disable the native execution engine for specific queries, particularly if they involve operators that aren't currently supported (see [limitations](#limitations)). To disable, set the Spark configuration spark.gluten.enabled to false for the specific cell containing your query.
 
 # [Spark SQL](#tab/sparksql)
 
 ```sql
 %%sql 
-SET spark.gluten.enabled=FALSE 
+SET spark.native.enabled=FALSE; 
+SET spark.gluten.enabled=FALSE; 
 ```
 
 # [PySpark](#tab/pyspark)
 
 ```python
 %%pyspark
+spark.conf.set('spark.native.enabled', 'false')   
 spark.conf.set('spark.gluten.enabled', 'false')   
 ```
 
@@ -100,7 +106,8 @@ spark.conf.set('spark.gluten.enabled', 'false')
 
 ```scala
 %%spark  
-spark.conf.set("spark.gluten.enabled", "false")
+spark.conf.set("spark.native.enabled", "false")   
+spark.conf.set("spark.gluten.enabled", "false")   
 ```
 
 # [SparkR](#tab/sparkr)
@@ -108,6 +115,7 @@ spark.conf.set("spark.gluten.enabled", "false")
 ```r
 %%sparkr
 library(SparkR)
+sparkR.conf("spark.native.enabled", "false")
 sparkR.conf("spark.gluten.enabled", "false")
 ```
 
@@ -121,13 +129,15 @@ After executing the query in which the native execution engine is disabled, you 
 
 ```sql
 %%sql 
-SET spark.gluten.enabled=TRUE 
+SET spark.native.enabled=TRUE; 
+SET spark.gluten.enabled=TRUE; 
 ```
 
 # [PySpark](#tab/pyspark)
 
 ```python
 %%pyspark
+spark.conf.set('spark.native.enabled', 'true')   
 spark.conf.set('spark.gluten.enabled', 'true')   
 ```
 
@@ -135,6 +145,7 @@ spark.conf.set('spark.gluten.enabled', 'true')
 
 ```scala
 %%spark  
+spark.conf.set("spark.native.enabled", "true")   
 spark.conf.set("spark.gluten.enabled", "true")   
 ```
 
@@ -143,6 +154,7 @@ spark.conf.set("spark.gluten.enabled", "true")
 ```r
 %%sparkr
 library(SparkR)
+sparkR.conf("spark.native.enabled", "true")
 sparkR.conf("spark.gluten.enabled", "true")
 ```
 
@@ -177,11 +189,9 @@ In some instances, the native execution engine might not be able to execute a qu
 While the native execution engine enhances performance for Apache Spark jobs, note its current limitations.
 
 - The engine doesn't support partitioned writing for Delta tables. Some Delta-specific operations aren't supported, including merge operations, checkpoint scans, and deletion vectors.
-- Certain Spark features and expressions aren't compatible with the native execution engine, such as user-defined functions (UDFs) and the `array_contains` function, as well as Spark structured streaming.
+- Certain Spark features and expressions aren't compatible with the native execution engine, such as user-defined functions (UDFs) and the `array_contains` function, as well as Spark structured streaming. Usage of these incompatible operations or functions as part of an imported library will also cause fallback to the Spark engine.
 - Scans from storage solutions that utilize private endpoints aren't supported.
-- The engine falls back to the traditional Spark engine when user code `jar` libraries are used and uploaded to executors.
 - The engine doesn't support ANSI mode, so it searches, and once ANSI mode is enabled, it falls back to vanilla Spark.
-
 
 When using date filters in queries, it is essential to ensure that the data types on both sides of the comparison match to avoid performance issues. Mismatched data types may not bring query execution boost and may require explicit casting. Always ensure that the data types of the left-hand side (LHS) and right-hand side (RHS) of a comparison are identical, as mismatched types will not always be automatically cast. If a type mismatch is unavoidable, use explicit casting to match the data types, such as `CAST(order_date AS DATE) = '2024-05-20'`. Queries with mismatched data types that require casting will not be accelerated by Native Execution Engine, so ensuring type consistency is crucial for maintaining performance. For example, instead of `order_date = '2024-05-20'` where `order_date` is `DATETIME` and the string is `DATE`, explicitly cast `order_date` to `DATE` to ensure consistent data types and improve performance. 
 

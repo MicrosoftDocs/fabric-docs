@@ -3,11 +3,13 @@ title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/28/2023
+ms.date: 05/23/2024
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 ---
 
@@ -37,7 +39,8 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (based on supported semantic models)
-* Semantic models (except for Direct Lake semantic models)
+* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
+* Semantic models (except for DirectLake semantic models)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
 
 ## Pipeline structure
@@ -50,13 +53,13 @@ You can decide how many stages you want in your deployment pipeline. There can b
 
 * **<a name="test"></a>Test**
 
-    After you've made all the needed changes to your content, you're ready to enter the test stage. Upload the modified content so it can be moved to this test stage. Here are three examples of what can be done in the test environment:
+    After you make all the needed changes to your content, you're ready to enter the test stage. Upload the modified content so it can be moved to this test stage. Here are three examples of what can be done in the test environment:
 
   * Share content with testers and reviewers
 
   * Load and run tests with larger volumes of data
 
-  * Test your app to see how it will look for your end users
+  * Test your app to see how it looks for your end users
 
 * **<a name="production"></a>Production**
 
@@ -66,11 +69,11 @@ You can decide how many stages you want in your deployment pipeline. There can b
 
 ## Item pairing
 
-Pairing is the process by which an item (such as reports, dashboards, and semantic models) in one stage of the deployment pipeline is associated with the same item in the adjacent stage. Pairing occurs when you assign a workspace to a deployment stage or when you deploy content from one stage to another. Pairing is vital for correct deployments. If items aren't paired, even if they appear to be the same, they won't overwrite on a subsequent deployment.
+Pairing is the process by which an item (such as reports, dashboards, and semantic models) in one stage of the deployment pipeline is associated with the same item in the adjacent stage. Pairing occurs when you assign a workspace to a deployment stage or when you deploy content from one stage to another. It's important to understand how pairing works in order to ensure that the correct items are copied or overwritten when moving from one stage to another. If items aren't paired, even if they appear to be the same (have the same name, type, and folder), they won't overwrite on a subsequent deployment.
 
 * Items in the same folder with the same name and type are automatically paired when the workspace is assigned or items are deployed.
-* Paired items remain paired even if you change their names. Therefore, you can have paired items with different names.
-* Items added after the workspace is assigned to a pipeline are not automatically paired. Therefore, you can have identical items in adjacent workspaces that aren't paired.
+* Items that are paired remain paired even if you change their names. Therefore, paired items can have different names.
+* Items added after the workspace is assigned to a pipeline aren't automatically paired. Therefore, you can have identical items in adjacent workspaces that aren't paired.
 
 For more information about items pairing and how it works, see [Item pairing](./assign-pipeline.md#item-pairing).
 
@@ -80,7 +83,7 @@ When you deploy content from the source stage to a target stage, paired items ar
 
 :::image type="content" source="media/intro-to-deployment-pipelines/replaced-content.png" alt-text="A screenshot of the replaced content warning displayed when a deployment is about to cause changes to items in the stage you're deploying to.":::
 
-You can learn more about [which item properties are copied to the next stage](understand-the-deployment-process.md#item-properties-copied-during-deployment), and which properties are not copied, in [Understand the deployment process](understand-the-deployment-process.md#item-properties-that-are-not-copied).
+You can learn more about [which item properties are copied to the next stage](understand-the-deployment-process.md#item-properties-copied-during-deployment), and which properties aren't copied, in [Understand the deployment process](understand-the-deployment-process.md#item-properties-that-are-not-copied).
 
 ## Automation
 

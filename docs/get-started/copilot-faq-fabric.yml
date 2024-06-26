@@ -12,6 +12,7 @@ metadata:
   ms.topic: faq
   ms.date: 01/16/2024
   no-loc: [Copilot]
+  ms.collection: ce-skilling-ai-copilot
 title: "Copilot for Microsoft Fabric and Power BI: FAQ"
 summary: |
   This article answers frequently asked questions about Copilot for Microsoft Fabric and Power BI.
@@ -95,7 +96,7 @@ sections:
         answer: |
           The Copilot-generated query runs against the database that the KQL queryset is connected to. If you want to change the database, you can do so in the KQL queryset.
 additionalContent: |
-  ## Next steps
+  ## Related content
 
   - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
   - [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md)

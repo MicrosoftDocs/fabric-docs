@@ -4,7 +4,7 @@ description: Learn more about utilization reporting for the data warehouse, incl
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
-ms.date: 04/24/2024
+ms.date: 05/31/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -20,6 +20,8 @@ ms.search.form: Warehouse billing and utilization
 The article explains compute usage reporting of the Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)], which includes read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
+
+For more information about monitoring current and historical query activity, see [Monitor in Fabric Data warehouse overview](monitoring-overview.md).
 
 ## Capacity
 
@@ -47,7 +49,7 @@ Once you have installed the app, select the **Warehouse** from the **Select item
 
 ### Warehouse operation categories
 
-You can analyze universal compute capacity usage by workload category, across the tenant. Usage is tracked by total Capacity Unit Seconds (CU(s)). The table displayed shows aggregated usage across the last 14 days.
+You can analyze universal compute capacity usage by workload category, across the tenant. Usage is tracked by total Capacity Unit Seconds (CUs). The table displayed shows aggregated usage across the last 14 days.
 
 Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] rollup under **Warehouse** in the Metrics app, as they both use SQL compute. The operation categories seen in this view are:
 
@@ -65,7 +67,7 @@ This graph in the Microsoft Fabric Capacity Metrics app shows utilization of res
 
 :::image type="content" source="media/usage-reporting/throttling-explore.png" alt-text="Screenshot of the explore button in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/throttling-explore.png":::
 
-In general, similar to Power BI, [operations are classified either as interactive or background](/power-bi/enterprise/service-premium-interactive-background-operations#operation-list), and denoted by color. Most operations in **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. Classifying data warehousing as background reduces the frequency of peaks of CU utilization from triggering [throttling](compute-capacity-smoothing-throttling.md#throttling).
+In general, similar to Power BI, [operations are classified either as interactive or background](../enterprise/fabric-operations.md#interactive-and-background-operations), and denoted by color. Most operations in **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. Classifying data warehousing as background reduces the frequency of peaks of CU utilization from triggering [throttling](compute-capacity-smoothing-throttling.md#throttling).
 
 ### Timepoint drill through graph
 
@@ -105,7 +107,7 @@ Consider the following usage reporting nuances:
 
 - Cross database reporting: When a T-SQL query joins across multiple warehouses (or across a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and a [!INCLUDE [fabric-se](includes/fabric-se.md)]), usage is reported against the originating resource.
 - Queries on system catalog views and dynamic management views are billable queries.
-- **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the statement execution duration and might not include the complete end-to-end duration for rendering results back to the web application like the [SQL Query Editor](sql-query-editor.md) or client applications like [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) and [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio).
+- **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the statement execution duration. Duration might not include the complete end-to-end duration for rendering results back to the web application like the [SQL Query Editor](sql-query-editor.md) or client applications like [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) and [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio).
 
 ## Next step
 
@@ -122,3 +124,4 @@ Consider the following usage reporting nuances:
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
 - [Understand the metrics app compute page](../enterprise/metrics-app-compute-page.md)
 - [Pause and resume in Fabric data warehousing](pause-resume.md)
+- [Monitor Fabric Data warehouse](monitoring-overview.md)

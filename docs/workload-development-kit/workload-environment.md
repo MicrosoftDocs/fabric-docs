@@ -4,7 +4,7 @@ description: Learn about the Microsoft Fabric workload environment and how it's 
 author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: muliwienrib
-ms.topic: concept
+ms.topic: conceptual
 ms.custom:
 ms.date: 05/21/2024
 ---
@@ -37,8 +37,6 @@ The workloads can run in two environments: local and cloud. In local (devmode), 
 
 ## Development environment
 
-During the development cycle, testing a workload on a nonproduction tenant can be done in two modes, local (devmode) and cloud mode (tenant mode). For more information, see the relevant document.
-
 > [!NOTE]
 > For each dev mode, a different package is created when building the BE solution in Visual Studio.
 
@@ -50,9 +48,36 @@ During the development cycle, testing a workload on a nonproduction tenant can b
 
 :::image type="content" source="./media/workload-environment/cloud-mode-diagram.png" alt-text="Diagram of the cloud mode architecture." lightbox="./media/workload-environment/cloud-mode-diagram.png":::
 
+### Workload NuGet package structure
+
+The workload is packaged as a NuGet package, combining backend and frontend components. The structure adheres to specific naming conventions and is enforced by Fabric for consistency across upload scenarios.
+The NuGet package designed to represent workloads is structured to include both backend and frontend components.
+
+#### Backend structure
+
+The backend segment comprises .xml files that define the workload and its associated items, which are essential for registration with Fabric.
+
+##### Key components
+- `WorkloadManifest.xml` - The workload configuration file, required to have this exact name for Fabric's verification.
+- `Item1.xml`, `Item2.xml`, `...` - Manifests for individual items with flexible naming, following the XML format.
+
+#### Frontend structure
+
+The frontend section contains .json files detailing the product and items for the frontend, along with an 'assets' directory for icons.
+
+##### Key components
+- `Product.json` - The main manifest for your product's frontend, which must be named precisely for Fabric's verification.
+- `assets` folder - Stores all .svg icons `icon1.svg`, `icon2.svg`, `...` used by the frontend.
+
+#### Mandatory structure compliance
+
+The structure, including specific subfolder names ('BE', 'FE', 'assets'), is mandatory and enforced by Fabric for all upload scenarios, including test and development packages. The structure is specified in the `.nuspec` files found in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254) under the `./src/Packages/manifest/ManifestPackage` directory.
+
+During the development cycle, testing a workload on a nonproduction tenant can be done in two modes, local (devmode) and cloud mode (tenant mode).
+
 ### Local development mode (devmode)
 
-The workload backend (BE) operates on the developer's machine. Workload API calls are transmitted via Azure Relay, with the workload's side of the Azure Relay channel managed by a specialized command-line utility, DevGateway. Workload control API calls are sent directly from the workload to Fabric, bypassing the Azure Relay channel. The DevGateway utility also oversees the registration of the local development instance of the workload with Fabric, within the context of a specific capacity. This ensures the workload's availability across all workspaces assigned to that capacity. Upon termination of the DevGateway utility, the registration of the workload instance is automatically rescinded. For more information, see [Fabric extensibility backend boilerplate](extensibility-back-end.md).
+The workload backend (BE) operates on the developer's machine. Workload API calls are transmitted via Azure Relay, with the workload's side of the Azure Relay channel managed by a specialized command-line utility, DevGateway. Workload control API calls are sent directly from the workload to Fabric, bypassing the Azure Relay channel. The DevGateway utility also oversees the registration of the local development instance of the workload with Fabric, within the context of a specific capacity. This ensures the workload's availability across all workspaces assigned to that capacity. Upon termination of the DevGateway utility, the registration of the workload instance is automatically rescinded. For more information, see [Back-end implementation guide](extensibility-back-end.md).
 
 #### DevMode BE schema
 
@@ -83,3 +108,5 @@ We use Microsoft Entra ID (formerly Azure Active Directory) for robust and secur
 ## Related content
 
 * [Item lifecycle](./item-lifecycle.md)
+* [Set up your environment](./environment-setup.md)
+* [Manage a workload in Fabric](./manage-workload.md)
