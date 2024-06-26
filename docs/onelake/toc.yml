@@ -30,9 +30,11 @@ items:
   - name: Create an Amazon S3 compatible shortcut
     href: create-s3-compatible-shortcut.md
   - name: Create a Google Cloud Storage shortcut
-    href: create-gcs-shortcut.md  
+    href: create-gcs-shortcut.md
   - name: Create shortcuts to on-premises data
     href: create-on-premises-shortcut.md
+  - name: Shortcut security
+    href: onelake-shortcut-security.md
   - name: Access OneLake shortcuts in an Apache Spark notebook
     href: access-onelake-shortcuts.md
   - name: Use shortcuts REST API
