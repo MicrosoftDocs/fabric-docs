@@ -8,7 +8,7 @@ ms.custom:
 ms.reviewer: ssalgado
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/08/2023
+ms.date: 06/25/2024
 ---
 # What is LightGBM?
 
