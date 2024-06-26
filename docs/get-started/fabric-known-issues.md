@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 06/20/2024
+ms.date: 06/26/2024
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -21,6 +21,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  764  | Power BI | [New card and reference label tabular layout content hidden or truncated](known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md) | June 26, 2024 |
+|  762  | Power BI | [Python and R visuals don't work in Fabric capacity](known-issues/known-issue-762-python-r-visuals-not-work-capacity.md) | June 26, 2024 |
 |  761  | Power BI | [Report Builder can't sign in to the service for some clouds](known-issues/known-issue-761-report-builder-not-sign-in-service-some-clouds.md) | June 20, 2024 |
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
 |  755  | Real-Time Intelligence | [Real-Time hub **Set Alert** fails on prior version of an eventstream](known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md) | June 20, 2024 |
