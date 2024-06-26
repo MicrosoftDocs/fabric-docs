@@ -69,18 +69,18 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 ## Item pairing
 
-Pairing is the process by which an item in one stage of the deployment pipeline is associated with the same item in the adjacent stage. If items aren't paired, even if they have the same name and type, the item in the target stage isn't overwritten.
+Pairing is the process by which an item in one stage of the deployment pipeline is associated with the same item in the adjacent stage. If items aren't paired, even if they have the same name and type, the item in the target stage isn't overwritten during a deploy. A deploy of an unpaired item is known as a clean deploy and creates a copy of that item in the adjacent stage.
 
 <a name="pairing-rules"></a>
 
 Pairing can happen in one of two ways:
 
-* **Deployment**: when an unpaired item is copied from one stage to another using the *Deploy* button, the previously unpaired item is automatically paired with the copy.
+* **Deployment**: when an unpaired item is copied from one stage to another using the *Deploy* button, a copy of the item is created in the next stage and paired with the item being deployed.
 * **Assigning a workspace to a deployment stage**: when a workspace is assigned to a deployment stage the deployment pipeline attempts to pair items. The pairing criteria are:
 
   * Item Name
   * Item Type
-  * Folder Location
+  * Folder Location (used as a tie breaker when a stage contains duplicate items (two or more items with the same name and type)
 
   If a single item in each stage has the same name and type then pairing occurs. If there's more than one item in a stage that has the same name and type, then items are paired if they're in the same folder. If the folders aren't the same, pairing fails.
 
