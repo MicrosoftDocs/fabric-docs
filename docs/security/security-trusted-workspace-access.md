@@ -199,10 +199,11 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 ### Restrictions and Considerations
 
 * Trusted workspace access is only supported for workspaces in Fabric capacities (F64 or higher).
-* You can only use trusted workspace access in OneLake shortcuts and data pipelines. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md). 
+* You can only use trusted workspace access in OneLake shortcuts, data pipelines, and the T-SQL COPY statement. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md). 
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity lower than F64, trusted workspace access will stop working after an hour.
 * Pre-existing shortcuts created before October 10, 2023 don't support trusted workspace access.
 * Connections for trusted workspace access can't be created or modified in **Manage connections and gateways**.
+* Connections to firewall-enabled Storage accounts will have have the status *Offline* in Manage connections and gateways.
 * If you reuse connections that support trusted workspace access in Fabric items other than shortcuts and pipelines, or in other workspaces, they might not work.
 * Only *organizational account* or *service principal* must be used for authentication to storage accounts for trusted workspace access.
 * Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.
@@ -210,6 +211,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * Trusted workspace access only works when public access is enabled from selected virtual networks and IP addresses.
 * Resource instance rules for Fabric workspaces must be created through ARM templates. Resource instance rules created through the Azure portal UI aren't supported.
 * Pre-existing shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
+* If your organization has an Entra Conditional access policy for workload identities that includes all service principals, then trusted workspace access won't work. In such instances, you need to exclude specific Fabric workspace identities from the Conditional access policy for workload identities.
 
 ### Troubleshooting issues with trusted workspace access
 
@@ -228,10 +230,6 @@ If a shortcut in a lakehouse that targets a firewall-protected ADLS Gen2 storage
             "name": "<storage account name>",
             "id": "/subscriptions/<subscription id of storage account>/resourceGroups/<resource group name>/providers/Microsoft.Storage/storageAccounts/<storage account name>",
             "location": "<region>",
-            "sku": {
-                "name": "Standard_RAGRS",
-                "tier": "Standard"
-            },
             "kind": "StorageV2",
             "properties": {
                 "networkAcls": {
