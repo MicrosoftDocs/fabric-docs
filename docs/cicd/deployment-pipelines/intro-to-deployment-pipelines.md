@@ -1,16 +1,17 @@
 ---
 title: Overview of Fabric deployment pipelines
-description: An introduction to deployment pipelines the Fabric Application lifecycle management (ALM) tool
+description: An introduction to deployment pipelines in the Fabric Application lifecycle management (ALM) tool. Learn which items can be deployed, the structure of a pipeline, and how to pair items.
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 06/26/2024
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
+#customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
 
 # Introduction to deployment pipelines
