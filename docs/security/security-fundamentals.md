@@ -35,7 +35,7 @@ The architectural diagram depicts the following concepts.
 
 2. Authentication is handled by Microsoft Entra ID, [previously known as Azure Active Directory](/entra/fundamentals/new-name), which is the cloud-based identity and access management service that authenticates the user or [service principal](/entra/identity-platform/app-objects-and-service-principals?tabs=browser#service-principal-object) and manages access to Fabric.
 
-3. The web front end receives user requests and facilitates login. It also routes requests and serves front-end content to the user.
+3. The web front end receives user requests and facilitates sign-in. It also routes requests and serves front-end content to the user.
 
 4. The metadata platform stores tenant metadata, which can include customer data. Fabric services query this platform on demand in order to retrieve authorization information and to authorize and validate user requests. It's located in the tenant home region.
 
