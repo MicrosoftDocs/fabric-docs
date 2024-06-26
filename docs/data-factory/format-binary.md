@@ -27,12 +27,13 @@ Binary format is supported for the following activities and connectors as source
 |  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md) |
 |  | [Azure Files](connector-azure-files-copy-activity.md)|
+|  | File system |
 |  | [FTP](connector-ftp-copy-activity.md) |
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) |
 |  | [HTTP](connector-http-copy-activity.md)|
 |  | [Oracle Cloud Storage](connector-oracle-cloud-storage-copy-activity.md)|
 |  | [SFTP](connector-sftp-copy-activity.md) |
-| **Supported activity** | [Copy activity (source/destination)](copy-data-activity.md) |
+| **Supported activity** | [Copy activity](copy-data-activity.md) (source/destination) |
 |  | [GetMetadata activity](get-metadata-activity.md) |
 |  | [Delete activity](delete-data-activity.md) |
 
