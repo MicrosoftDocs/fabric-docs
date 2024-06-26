@@ -12,7 +12,7 @@ ms.date: 04/01/2024
 
 # Secure Data with Fabric, Compute Engines, and OneLake
 
-Fabric offers a [multi-layer security model](../../security/permission-model.md) that provides both simplicity and flexibility in managing data access. Security can be set for an entire workspace, for individual items, or through granular permissions in each Fabric engine. OneLake has its own security considerations that are outlined in this document.
+Fabric offers a [multi-layer security model](../../security/permission-model.md) for managing data access. Security can be set for an entire workspace, for individual items, or through granular permissions in each Fabric engine. OneLake has its own security considerations that are outlined in this document.
 
 ## OneLake data access roles (Preview)
 

@@ -24,7 +24,7 @@ To ensure clarity around the components of a shortcut this document uses the fol
 
 ## Create and delete shortcuts
 
-To create a shortcut a user needs to have Write permission on the Fabric Item where the shortcut is being created. (the shortcut path) In addition, the user needs Read access to the data the shortcut is pointing to. (the target path) Shortcuts to external sources may require certain permissions in the external system. The [What are shortcuts?](./onelake-shortcuts.md) article has the full list of shortcut types and required permissions.
+To create a shortcut a user needs to have Write permission on the Fabric Item where the shortcut is being created. In addition, the user needs Read access to the data the shortcut is pointing to. Shortcuts to external sources may require certain permissions in the external system. The [What are shortcuts?](./onelake-shortcuts.md) article has the full list of shortcut types and required permissions.
 
 | **Capability** | **Permission on shortcut path** | **Permission on target path** |
 |---|---|---|---|---|
