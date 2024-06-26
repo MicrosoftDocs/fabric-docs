@@ -51,7 +51,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Dataflow Gen2:** Dataflows provide a low-code interface for ingesting data from hundreds of data sources and transforming your data. Dataflows in Fabric are referred to as Dataflow Gen2. Dataflow Gen1 exists in Power BI. Dataflow Gen2 offers extra capabilities compared to Dataflows in Azure Data Factory or Power BI. You can't upgrade from Gen1 to Gen2. For more information, see [Dataflows](../data-factory/data-factory-overview.md#dataflows) in the Data Factory overview.
 
-- **Trigger:** An automation capability in Azure Data Factory that initiates pipelines based on specific conditions, such as schedules or data availability.
+- **Trigger:** An automation capability in Data Factory that initiates pipelines based on specific conditions, such as schedules or data availability.
 
 ## Synapse Data Science
 
