@@ -101,6 +101,11 @@ sections:
           Can I mirror only specific tables from my Azure SQL database? 
         answer: 
           Yes, specific tables can be selected during Mirroring configuration.
+
+      - question: |
+          What happens to Mirroring in an event of planned or unplanned Geo failover? 
+        answer: 
+          Mirroring is disabled in an event of Geo failover whether planned or unplanned as there are potential data loss scenarios. Please create a new mirror and configure to point to the new SQL Server and database to reinitiate the mirroring.
   - name: Security
     questions:
       - question: |
