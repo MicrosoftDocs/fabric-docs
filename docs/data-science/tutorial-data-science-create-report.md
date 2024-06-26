@@ -94,7 +94,7 @@ Now add a few measures to the semantic model:
     1. To determine the churn rate for Germany, replace `Measure =` in the formula bar with:
 
         ```python
-        Germany Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_Germany] = 1)
+        Germany Churn = CALCULATE(AVERAGE(customer_churn_test_predictions[predictions]),FILTER(customer_churn_test_predictions, customer_churn_test_predictions[Geography_Germany] = TRUE()))
         ```
 
         This filters the rows down to the ones with Germany as their geography (Geography_Germany equals one).
@@ -106,13 +106,13 @@ Now add a few measures to the semantic model:
     * Spain's churn rate:
 
         ```python
-        Spain Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_Spain] = 1)
+        Spain Churn = CALCULATE(AVERAGE(customer_churn_test_predictions[predictions]),FILTER(customer_churn_test_predictions, customer_churn_test_predictions[Geography_Spain] = TRUE()))
         ```
 
     * France's churn rate:
 
         ```python
-        France Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_France] = 1)
+        France Churn = CALCULATE(AVERAGE(customer_churn_test_predictions[predictions]),FILTER(customer_churn_test_predictions, customer_churn_test_predictions[Geography_France] = TRUE()))
         ```
 
 ## Create new report
