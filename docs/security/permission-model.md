@@ -121,7 +121,7 @@ Wingtip also has a quarterly report that lists its sales income per sales member
 
 When you share an item, or change its permissions, workspace roles don't change. The example in this section shows how workspace and item permissions interact.
 
-Veronica and Marta work together. Veronica is the owner of a report she wants's to share with Marta. If Veronica shares the report with Marta, Marta will be able to access it regardless of the workspace role she has.
+Veronica and Marta work together. Veronica is the owner of a report she wants to share with Marta. If Veronica shares the report with Marta, Marta will be able to access it regardless of the workspace role she has.
 
 Let's say that Marta has a viewer role in the workspace where the report is stored. If Veronica decides to remove Marta's item permissions from the report, Marta will still be able to view the report in the workspace. Marta will also be able to open the report from the workspace and view its content. This is because Marta has view permissions to the workspace.
 
