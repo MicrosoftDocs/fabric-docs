@@ -106,8 +106,8 @@ spark.conf.set('spark.gluten.enabled', 'false')
 
 ```scala
 %%spark  
-spark.conf.set("spark.native.enabled", 'false')   
-spark.conf.set("spark.gluten.enabled", 'false')   
+spark.conf.set("spark.native.enabled", "false")   
+spark.conf.set("spark.gluten.enabled", "false")   
 ```
 
 # [SparkR](#tab/sparkr)
@@ -189,10 +189,9 @@ In some instances, the native execution engine might not be able to execute a qu
 While the native execution engine enhances performance for Apache Spark jobs, note its current limitations.
 
 - The engine doesn't support partitioned writing for Delta tables. Some Delta-specific operations aren't supported, including merge operations, checkpoint scans, and deletion vectors.
-- Certain Spark features and expressions aren't compatible with the native execution engine, such as user-defined functions (UDFs) and the `array contains` function, as well as Spark structured streaming. Usage of these incompatible operations or functions as part of an imported library will also cause fallback to the Spark engine.
+- Certain Spark features and expressions aren't compatible with the native execution engine, such as user-defined functions (UDFs) and the `array_contains` function, as well as Spark structured streaming. Usage of these incompatible operations or functions as part of an imported library will also cause fallback to the Spark engine.
 - Scans from storage solutions that utilize private endpoints aren't supported.
 - The engine doesn't support ANSI mode, so it searches, and once ANSI mode is enabled, it falls back to vanilla Spark.
-
 
 When using date filters in queries, it is essential to ensure that the data types on both sides of the comparison match to avoid performance issues. Mismatched data types may not bring query execution boost and may require explicit casting. Always ensure that the data types of the left-hand side (LHS) and right-hand side (RHS) of a comparison are identical, as mismatched types will not always be automatically cast. If a type mismatch is unavoidable, use explicit casting to match the data types, such as `CAST(order_date AS DATE) = '2024-05-20'`. Queries with mismatched data types that require casting will not be accelerated by Native Execution Engine, so ensuring type consistency is crucial for maintaining performance. For example, instead of `order_date = '2024-05-20'` where `order_date` is `DATETIME` and the string is `DATE`, explicitly cast `order_date` to `DATE` to ensure consistent data types and improve performance. 
 

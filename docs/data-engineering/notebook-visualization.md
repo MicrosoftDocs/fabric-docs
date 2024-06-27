@@ -34,7 +34,7 @@ The output of SQL statement appears in the rendered table view by default.
 
 1. **Table** view is rendered by default when using _display()_ command.
 1. You can profile your dataframe by clicking on **Inspect** button. It provides the summarized data distribution and showing statistics of each column. 
-1. Each card in the "Inspect" side pane maps to a column of the dataframke, you can view more details by clicking on the card or selecting a column in the table.
+1. Each card in the "Inspect" side pane maps to a column of the dataframe, you can view more details by clicking on the card or selecting a column in the table.
 1. You can view the cell details by clicking on the cell of the table. This is useful when the dataframe contains long string type of contents.
 1. You can specify the row count of the table view, the default value is **1000**, Notebook support to view and profile **10000** rows of a dataframe at most.
 

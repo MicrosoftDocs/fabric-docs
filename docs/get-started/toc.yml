@@ -157,6 +157,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: New card and reference label tabular layout content hidden or truncated
+      href: known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md
+    - name: Python and R visuals don't work in Fabric capacity
+      href: known-issues/known-issue-762-python-r-visuals-not-work-capacity.md
     - name: Report Builder can't sign in to the service for some clouds
       href: known-issues/known-issue-761-report-builder-not-sign-in-service-some-clouds.md
     - name: Copy activity from Oracle to lakehouse fails for Number data type
