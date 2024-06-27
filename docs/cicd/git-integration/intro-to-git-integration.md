@@ -35,12 +35,12 @@ The integration with source control is on a workspace level. Developers can vers
 
 ## Privacy information
 
-Before you enable Git integration, make sure you understand the following possible privacy concerns:
+Before you enable Git integration, make sure you review the following privacy statements:
 
+* <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Microsoft privacy statement</a>
 * [Azure DevOps Services Data protection overview](/azure/devops/organizations/security/data-protection)
 * <a href="https://github.com/customer-terms/github-data-protection-agreement" target="_blank">GitHub Data protection agreement</a>
-* <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Microsoft privacy statement</a>
-<!--- * [Microsoft services agreement](https://www.microsoft.com/servicesagreement/default.aspx) -->
+
 ## Supported Git providers
 
 The following Git providers are supported:

@@ -23,7 +23,7 @@ For information about how to get to and use tenant settings, see [About tenant s
 ## Users can synchronize workspace items with their Git repositories (Preview)
 
 Users can synchronize a workspace with an Azure Git repository, edit their workspace, and update their Git repos using the Git integration tool. You can enable Git integration for the entire organization, or for a specific group.  
-This switch is **enabled** by default. Disabled it to prevent users from syncing workspace items with their Git repositories.
+This switch is **enabled** by default. Disable it to prevent users from syncing workspace items with their Git repositories.
 
 :::image type="content" source="./media/git-integration-admin-settings/enable-git-integration-switch.png" alt-text="Screenshot of the Git integration switch.":::
 

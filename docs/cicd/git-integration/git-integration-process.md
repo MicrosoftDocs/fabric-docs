@@ -21,18 +21,18 @@ This article explains basic Git concepts and the process of integrating Git with
 ## Permissions
 
 - In order to use Git integration, your organization's administrator must [enable it](../../admin/git-integration-admin-settings.md) by your organization's administrator.
-- If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview). This doesn't apply to GitHub.
-- The actions you can take on a workspace depend on the [permissions](#azure-devops-permissions) you have in both the workspace and Azure DevOps.
+- If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview). This restriction doesn't apply to GitHub.
+- The actions you can take on a workspace depend on the permissions you have in both the workspace and Git, as listed in the next sections.
 
-### Azure DevOps permissions
+### Git permissions
 
-The following list shows what different workspace roles can do depending on their Azure DevOps permissions:
+The following list shows what different workspace roles can do depending on their permissions in their Git repo:
 
 - **Admin**: Can perform any operation on the workspace, limited only by their Azure DevOps role.
 - **Member/Contributor**: Once they connect to a workspace, a member/contributor can commit and update changes, depending on their Azure DevOps role. For actions related to the workspace connection (for example, connect, disconnect, or switch branches) seek help from an Admin.
 - **Viewer**: Can't perform any actions. The viewer can't see any Git related information in the workspace.
 
-### Permissions needed for common operations
+### Fabric permissions needed for common operations
 
 The following table describes the permissions needed to perform various common operations:
 
@@ -102,26 +102,16 @@ As long as you’re connected, the following information appears at the bottom o
 
 ## Source control pane
 
-The source control pane has three tabs on the side:
-
-- [Commits and updates](#commits-and-updates)
-- [Account details](#account-details)
-
-### Commits and updates
-
-On top of the screen is the Source control icon. It shows the number of items that are different in the workspace and Git branch. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
-
-## Source control
-
 On top of the screen is the **Source control** icon. It shows the number of items that are different in the workspace and Git branch. When changes are made either to the workspace or the Git branch, the number is updated. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
 
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 
 Select the Source control icon to open the **Source control** panel.
 
-The **Source control** panel has two tabs on the side.
+The source control pane has three tabs on the side:
 
 - [Commits and updates](#commits-and-updates)
+- [Account details](#account-details)
 - [Branches](#branches)
 
 ### Commits and updates
