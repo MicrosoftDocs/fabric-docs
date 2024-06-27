@@ -38,7 +38,7 @@ By default, Copilot has access to the following data types:
 
 - The AI skill only has access to the data that you provide. It makes use of the schema (table name and column name), as well as the Notes for the model that you provide in the UI.
 
-- The AI skill only ever have access to data that the questioner has access to. If you use the AI skill, your credentials are used to access the underlying database. If you don't have access to the underlying data, the AI doesn't either. This limitation holds true when you publish the AI skill to other destinations, such as Copilot for Microsoft 365 or Microsoft Copilot Studio.
+- The AI skill only ever has access to data that the questioner has access to. If you use the AI skill, your credentials are used to access the underlying database. If you don't have access to the underlying data, the AI doesn't either. This limitation holds true when you publish the AI skill to other destinations, such as Copilot for Microsoft 365 or Microsoft Copilot Studio.
 
 ## Evaluation of Copilot for data science
 
@@ -82,7 +82,7 @@ This article provides answers to common questions related to business data secur
 ### Check Copilot outputs before you use them
 
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before you use them in your work.
-- People who can meaningfully evaluate the content's accuracy and appropriateness should reviews the outputs.
+- People who can meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
 - Today, Copilot features work best in the English language. Other languages may not perform as well.
 
 > [!IMPORTANT]
