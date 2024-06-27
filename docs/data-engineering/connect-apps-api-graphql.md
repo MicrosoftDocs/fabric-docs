@@ -175,7 +175,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
    As you can see in the code above, it's important to use the correct scope to access the application. In our case `https://analysis.windows.net/powerbi/api/Item.Execute.All` and 
    `https://analysis.windows.net/powerbi/api/Datamart.ReadWrite.All`.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Scopes might change during Microsoft Fabric API for GraphQL preview.
 
 1. Replace the following values with the values from the Microsoft Entra admin center.
