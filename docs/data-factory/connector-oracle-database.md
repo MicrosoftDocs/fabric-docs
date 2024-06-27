@@ -60,7 +60,7 @@ Browse to the **Connect data source** for the Data Factory pipeline to configure
 You have two ways to browse to this page:
 
 - In copy assistant, browse to this page after selecting the connector.
-- In pipeline, browse to this page after selecting **More** in Connection section and selecting the connector.
+- In a data pipeline, browse to this page after selecting **More** in Connection section and selecting the connector.
 
 ### Step 1: Specify the server, connection, connection name and data gateway
 
@@ -94,23 +94,23 @@ Select **Create**. Your creation is successfully tested and saved if all the cre
 
 The following table contains connector properties that are supported in pipeline copy.
 
-|Name|Description|Required|Property|Copy|
-|:---|:---|:---:|:---|:---:|
-|**Server**|The Oracle net service name, full connect descriptor or Easy Connect Plus connection string.|Yes||✓|
-|**Connection**| Whether to create a new connection or use the existing one.|Yes||✓|
-|**Connection name**|A name for your connection.|Yes||✓|
-|**Data gateway**|The data gateway used for the connection.|Yes||✓|
-|**Authentication**|Go to [Authentication](#authentication) |Yes||Go to [Authentication](#authentication)|
+|Name|Description|Required|Copy|
+|:---|:---|:---:|:---|
+|**Server**|The Oracle net service name, full connect descriptor or Easy Connect Plus connection string.|Yes|✓|
+|**Connection**| Whether to create a new connection or use the existing one.|Yes|✓|
+|**Connection name**|A name for your connection.|Yes|✓|
+|**Data gateway**|The data gateway used for the connection.|Yes|✓|
+|**Authentication**|Go to [Authentication](#authentication) |Yes|Go to [Authentication](#authentication)|
 
 ### Authentication
 
 The following table contains properties for the supported authentication type.
 
-|Name|Description|Required|Property|Copy|
-|:---|:---|:---:|:---|:---:|
-|**Basic**||||✓|
-|- User name |The Oracle database user name.|Yes |||
-|- Password |The Oracle database password.|Yes |||
+|Name|Description|Required|Copy|
+|:---|:---|:---:|:---|
+|**Basic**|||✓|
+|- User name |The Oracle database user name.|Yes ||
+|- Password |The Oracle database password.|Yes ||
 
 ## Related content
 
