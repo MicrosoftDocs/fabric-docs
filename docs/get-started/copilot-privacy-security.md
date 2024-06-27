@@ -9,7 +9,7 @@ ms.custom:
   - ignite-2023-fabric
   - build-2024
 ms.topic: conceptual
-ms.date: 06/17/2024
+ms.date: 06/27/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -98,7 +98,7 @@ In general, these features are designed to generate natural language, code, or o
 
 (b) [grounding data](#grounding) that the feature has access to.
 
-For example, Power BI, Data Factory, and data science offer Copilot chats where you can ask questions and get responses that are contextualized on your data. Copilot for Power BI can also create reports and other visualizations. Copilot for Data Factory can transform your data and explain what steps it has applied. data science offers Copilot features outside of the chat pane, such as custom IPython magic commands in notebooks. Copilot chats may be added to other experiences in Fabric, along with other features that are powered by Azure OpenAI under the hood.
+For example, Power BI, Data Factory, and data science offer Copilot chats where you can ask questions and get responses that are contextualized on your data. Copilot for Power BI can also create reports and other visualizations. Copilot for Data Factory can transform your data and explain what steps it has applied. Data science offers Copilot features outside of the chat pane, such as custom IPython magic commands in notebooks. Copilot chats may be added to other experiences in Fabric, along with other features that are powered by Azure OpenAI under the hood.
 
 This information is sent to Azure OpenAI Service, where it's processed and an output is generated. Therefore, data processed by Azure OpenAI can include:  
 
