@@ -1,13 +1,13 @@
 ---
 title: Git integration process
-description: Understand how Microsoft Fabric interacts with Git on Azure Repos.
+description: Understand how Microsoft Fabric interacts with Git on Azure Repos, what permissions are needed, and how to sync.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: conceptual
-ms.date: 05/29/2024
+ms.date: 06/18/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -47,7 +47,8 @@ The following table describes the permissions needed to perform various common o
 | See workspace 'Git status'                                           | Admin, Member, Contributor                                                                | Read=Allow                                    |
 | Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow   |
 | Commit workspace changes to Git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit  |
-| Create new Git branch from within Fabric                             | Admin                                                                                     | Role=Write<br/>Create branch=Allow                                    |
+| Create new Git branch from within Fabric                             | Admin                                                                                     | Role=Write<br/>Create branch=Allow            |
+| Branch out to a new workspace                                            | Admin, Member, Contributor                                                                | Read=Allow<br/>Create branch=Allow            |
 
 ## Connect and sync
 
@@ -61,7 +62,7 @@ If both the workspace and Git branch have content, you have to decide which dire
 
 :::image type="content" source="./media/git-integration-process/git-sync-direction.png" alt-text="Screenshot of dialog asking which direction to sync if both Git and the workspace have content.":::
 
-If you don’t select which content to sync, you can’t continue to work until you do so:
+If you don’t select which content to sync, you can’t continue to work.
 
 :::image type="content" source="./media/git-integration-process/sync-direction-continue.png" alt-text="Screenshot notification that you can't continue working until workspace is synced.":::
 
@@ -90,39 +91,71 @@ As long as you’re connected, the following information appears at the bottom o
 
 :::image type="content" source="./media/git-integration-process/sync-info.png" alt-text="Screenshot of sync information that appears on the bottom of the screen when connected to Git.":::
 
-## Commits and updates
+## Source control
 
-### Source control pane
-
-On top of the screen is the Source control icon. It shows the number of items that are different in the workspace and Git branch. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
+On top of the screen is the **Source control** icon. It shows the number of items that are different in the workspace and Git branch. When changes are made either to the workspace or the Git branch, the number is updated. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
 
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 
-When changes are made either to the workspace or the Git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control pane.
+Select the Source control icon to open the **Source control** panel.
 
-In the **Source control** pane, the **Changes** tab shows the number of items that were changed in the workspace and need to be committed to Git, and the **Updates** tab shows the number of items that were modified in the Git branch and need to be updated to the workspace.
+The **Source control** panel has two tabs on the side.
 
-In each tab, the changed items are listed with an icon indicating the status:
+- [Commits and updates](#commits-and-updates)
+- [Branches](#branches)
+
+### Commits and updates
+
+When changes are made either to the workspace or the Git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control panel.
+
+The **Commit and update** panel has two sections.
+
+**Changes** shows the number of items that were changed in the workspace and need to be committed to Git.  
+**Updates** shows the number of items that were modified in the Git branch and need to be updated to the workspace.  
+
+In each section, the changed items are listed with an icon indicating the status:
 
 - :::image type="icon" source="./media/git-integration-process/new-icon.png"::: new
 - :::image type="icon" source="./media/git-integration-process/modified-icon.png"::: modified
 - :::image type="icon" source="./media/git-integration-process/deleted-icon.png" ::: deleted
 - :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: conflict
 
+The Refresh button :::image type="icon" source="./media/git-integration-process/refresh-icon.png"::: on top of the panel updates the list of changes and updates.
+
 :::image type="content" source="./media/git-integration-process/source-control-panel-items.png" alt-text="Screenshot of the source control panel showing the status of the changed items.":::
 
-### Commit
+#### Commit
 
-- When there's more than one item to commit, you can select which items to commit to the Git branch.
+- Items in the workspace that were changed are listed in the *Changes* section. When there's more than one changed item, you can select which items to commit to the Git branch.
 - If there were updates made to the Git branch, commits are disabled until you update your workspace.
 
-### Update
+#### Update
 
 - Unlike *commit* and *undo*, the *Update* command always updates the entire branch and syncs to the most recent commit. You can’t select specific items to update.
 - If changes were made in the workspace and in the Git branch *on the same item*, updates are disabled until the [conflict is resolved](./conflict-resolution.md).
 
 Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git).
 Read more about the update process and how to [resolve conflicts](./conflict-resolution.md).
+
+### Branches
+
+The *Branches* tab of the Source control panel enables you to manage your branches and perform branch related actions. It has two main sections:
+
+- **Actions you can take on the current branch**:
+
+  - [*Branch out to new workspace*](./manage-branches.md#develop-using-another-workspace) (any role): Creates a new workspace and new branch based on the last commit of the branch connected to the current workspace. It connects to the new workspace and new branch.
+  - *Checkout a new branch* (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
+
+  :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
+
+- **Related branches**.  
+   The *Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one with the same connection properties as the current branch, such as the same organization, project, repository, and git folder.  
+   This allows you to navigate to workspaces connected to other branches related to the context of your current work, without having to look for them in your list of Fabric workspaces.  
+   Click on an item in the list to open the relevant workspace.
+
+  :::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
+
+See [Branching out limitations](#branching-out-limitations) for more information.
 
 ## Considerations and limitations
 
@@ -152,6 +185,16 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
   - Contains any of the following characters: `"`, `/`, `:`, `<`, `>`, `\\`, `*`, `?`, `|`
 
   The logical ID (Guid) is added as a prefix before the type, when naming the folder in Git.
+
+### Branching out limitations
+
+- Branch out requires permissions listed in [permissions table](#permissions-needed-for-common-operations).
+- There must be an available capacity for this action.
+- All [workspace](./intro-to-git-integration.md#considerations-and-limitations) and [branch naming limitations](#branch-and-folder-limitations) apply when branching out to a new workspace.
+- When branching out, a new workspace is created and the settings from the original workspace aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
+- Only [Git supported items](./intro-to-git-integration.md#supported-items) are available in the new workspace.
+- The related branches list only shows branches and workspaces you have permission to view.
+- [Git integration](../../admin/git-integration-admin-settings.md) must be enabled.
 
 ### Sync and commit limitations
 

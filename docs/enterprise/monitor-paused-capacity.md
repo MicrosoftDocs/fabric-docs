@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 02/12/2024
+ms.date: 06/14/2024
 ---
 
 # Monitor a paused capacity
@@ -30,22 +30,20 @@ You can find out what's the percentage of [carryforward](throttling.md#carryforw
 
 1. Locate the paused capacity timepoint by reviewing the spike in the utilization visual.
 
-2. Right-click the paused capacity's timepoint, and drill through to the [Timepoint Detail](metrics-app-timepoint-page.md) page.
+2. Right-click the paused capacity's timepoint and drill through to the [Timepoint Detail](metrics-app-timepoint-page.md) page.
 
 3. Hover over the SKU card. A tooltip displays the remaining cumulative carryforward percent.
 
-:::image type="content" source="media/monitor-paused-capacity/sku-card-hover.png" alt-text="Screenshot showing a tooltip that lists the remaining cumulative carry forward percent when you hover over the S K U card in the timepoint page in the Microsoft Fabric capacity metrics app.":::
+:::image type="content" source="media/monitor-paused-capacity/sku-card-hover.png" alt-text="Screenshot showing a tooltip that lists the remaining cumulative carry forward percent when you hover over the S K U card on the Timepoint page in the Microsoft Fabric capacity metrics app.":::
 
 ## Considerations and limitations
 
-* After you pause a capacity, the timepoint of the paused capacity in the [timepoint page](metrics-app-timepoint-page.md), is displayed 30 seconds after the capacity was paused. This timepoint includes all of your capacity’s reconciled consumption.
+* When you pause a capacity, the timepoint of the paused capacity is displayed on the [Timepoint page](metrics-app-timepoint-page.md) 30 seconds afterward. This timepoint includes all of your capacity’s reconciled consumption.
 
-* When pausing a capacity, the timepoint prior to the timepoint the capacity was paused at, is cancelled and doesn't appear in the [compute page](metrics-app-compute-page.md). For example, if you paused your capacity at 13:00:00, the 12:29:30 timepoint will not exist.
+* When you pause a capacity, the timepoint preceding the timepoint at which the capacity was paused is canceled and doesn't appear on the [Compute page](metrics-app-compute-page.md). For example, if you pause your capacity at 13:00:00, the 12:29:30 timepoint won't exist.
 
 ## Related content
 
 * [Scale your capacity](scale-capacity.md)
-
-* [Understand the metrics app compute page](metrics-app-compute-page.md)
-
-* [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
+* [Understand the Metrics app Compute page](metrics-app-compute-page.md)
+* [Understand the Metrics app Timepoint page](metrics-app-timepoint-page.md)

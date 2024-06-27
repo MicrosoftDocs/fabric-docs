@@ -4,7 +4,7 @@ description: Learn how to use the SQL query editor.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad, jacindaeng
-ms.date: 05/13/2024
+ms.date: 06/25/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: how-to
@@ -38,6 +38,8 @@ The SQL query editor provides a text editor to write queries using T-SQL. To acc
 
    :::image type="content" source="media/sql-query-editor/new-sql-query-dropdown-templates.png" alt-text="Screenshot showing where to find the New query menu on the Data preview view ribbon.":::
 
+As you work on your SQL query, the queries are automatically saved every few seconds. A "saving" indicator appears in your query tab to indicate that your query is being saved.
+
 ### View query results
 
 Once you've written the T-SQL query, select **Run** to execute the query.
@@ -46,7 +48,7 @@ The **Results** preview is displayed in the **Results** section. If number of ro
 
 The status bar indicates the query status, duration of the run and number of rows and columns returned in results.
 
-To enable **Save as view**, **Save as table**, **Download Excel file**, and **Visualize results** menus, highlight the SQL statement containing `SELECT` statement in the SQL query editor.
+To enable **Save as view**, **Save as table**, **Open in Excel**, **Explore this data (preview)**, and **Visualize results** menus, highlight the SQL statement containing `SELECT` statement in the SQL query editor.
 
    :::image type="content" source="media/sql-query-editor/editor-commands.png" alt-text="Screenshot of the query editor window. Command buttons are boxed in red." lightbox="media/sql-query-editor/editor-commands.png":::
 
@@ -62,11 +64,11 @@ You can use **Save as table** to save your query results into a table. Select th
 
    :::image type="content" source="media/sql-query-editor/save-as-table.png" alt-text="Screenshot showing how to use Save as table menu.":::
 
-#### Download Excel file
+#### Open in Excel 
 
-The **Download Excel file** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to work with the results in Microsoft Excel on your local computer.
+The **Open in Excel** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to work with the results in Microsoft Excel on your local computer.
 
-   :::image type="content" source="media/sql-query-editor/download-excel-file-query.png" alt-text="Screenshot showing how to use Download Excel file menu." lightbox="media/sql-query-editor/download-excel-file-query.png":::
+   :::image type="content" source="media/sql-query-editor/open-in-excel-popup.png" alt-text="Screenshot showing how to use Open in Excel file menu." lightbox="media/sql-query-editor/open-in-excel-popup.png":::
 
 Follow these steps to work with the Excel file locally:
 
@@ -75,18 +77,20 @@ Follow these steps to work with the Excel file locally:
    :::image type="content" source="media/sql-query-editor/native-database-query.png" alt-text="Screenshot from Microsoft Excel showing the Native Database Query dialog." lightbox="media/sql-query-editor/native-database-query.png":::
 
 1. Select **Run**.
-1. Authenticate your account with one of the available methods (Windows, Database, or Microsoft account). Select **Connect**.
+1. Authenticate your account with the Microsoft account option. Select **Connect**.
    :::image type="content" source="media/sql-query-editor/sql-server-database-authentication.png" alt-text="Screenshot from Microsoft Excel showing the SQL Server database dialog." lightbox="media/sql-query-editor/sql-server-database-authentication.png":::
 
 Once you have successfully signed in, you'll see the data presented in the spreadsheet.
+
+#### Explore this data (preview)
+
+**Explore this data (preview)** provides the capability to perform ad hoc exploration of your query results. With this feature, you can launch a side-by-side matrix and visual view to better understand any trends or patterns behind your query results before diving into building a full Power BI report. For more information, see [Explore your data in the Power BI service (preview)](/power-bi/consumer/explore-data-service).
 
 #### Visualize results
 
 **Visualize results** allows you to create reports from your query results within the SQL query editor.
 
    :::image type="content" source="media/sql-query-editor/visualize-results-query.png" alt-text="Screenshot showing how to use Visualize results menu." lightbox="media/sql-query-editor/visualize-results-query.png":::
-
-As you work on your SQL query, the queries are automatically saved every few seconds. A "saving" indicator appears in your query tab at the bottom to indicate that your query is being saved.
 
 #### Multiple result sets
 

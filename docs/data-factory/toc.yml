@@ -179,6 +179,12 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in data pipeline copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+    - name: Azure Database for MySQL
+      items:
+      - name: Azure Database for MySQL - Overview
+        href: connector-azure-database-for-mysql-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-azure-database-for-mysql-copy-activity.md
     - name: Azure Database for PostgreSQL
       items:
       - name: Azure Database for PostgreSQL - Overview
@@ -839,6 +845,8 @@
         items:
           - name: Synchronize your code from an existing Git repo
             href: data-workflows-sync-git-repo.md
+          - name: Data workflows workspace settings
+            href: data-workflows-workspace-settings.md
           - name: Install a private package
             href: data-workflows-install-private-package.md
           - name: Enable Azure Key Vault as Secret Backend
@@ -859,6 +867,8 @@
             href: data-workflows-run-databricks-job.md
           - name: Power BI Semantic Model Refresh
             href: data-workflows-power-bi-semantic-model-refresh.md
+          - name: Transform data using dbt
+            href: data-workflows-dbt-fabric.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases

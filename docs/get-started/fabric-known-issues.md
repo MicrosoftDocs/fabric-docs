@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 06/11/2024
+ms.date: 06/26/2024
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -21,6 +21,11 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  764  | Power BI | [New card and reference label tabular layout content hidden or truncated](known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md) | June 26, 2024 |
+|  762  | Power BI | [Python and R visuals don't work in Fabric capacity](known-issues/known-issue-762-python-r-visuals-not-work-capacity.md) | June 26, 2024 |
+|  761  | Power BI | [Report Builder can't sign in to the service for some clouds](known-issues/known-issue-761-report-builder-not-sign-in-service-some-clouds.md) | June 20, 2024 |
+|  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
+|  755  | Real-Time Intelligence | [Real-Time hub **Set Alert** fails on prior version of an eventstream](known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md) | June 20, 2024 |
 |  753  | Data Factory | [Pipeline Web activity through on-premises data gateway doesn't support SPN authentication](known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md) | June 11, 2024 |
 |  752  | OneLake | [Cross region shortcuts don't show data](known-issues/known-issue-752-cross-region-shortcuts-not-show-data.md) | June 11, 2024 |
 |  740  | Real-Time Intelligence | [Eventstreams paused for more than two hours don't show data](known-issues/known-issue-740-eventstreams-paused-two-hours-not-show-data.md) | June 11, 2024 |
@@ -38,7 +43,6 @@ Select the **Title** to view more information about that specific known issue.
 |  724  | OneLake | [Shortcuts to a firewall-enabled ADLS stop working if lakehouse is shared](known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md) | May 23, 2024 |
 |  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
 |  722  | Data Warehouse | [Delta tables don't appear in SQL Analytics Endpoint Object Explorer](known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md) | May 16, 2024 |
-|  721  | Data Engineering | [Spark session doesn't start when managed virtual network's capacity moved](known-issues/known-issue-721-spark-session-managed-virtual-network-capacity-moved.md) | May 16, 2024 |
 |  718  | OneLake | [OneLake under-reports transactions in the Other category](known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 |
 |  716  | Data Warehouse | [Response times when composing SQL queries slower than expected](known-issues/known-issue-716-response-times-composing-sql-queries-slower.md) | May 13, 2024 |
 |  715  | Power BI | [TMDL semantic models won't open in Desktop after web edited](known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md) | May 2, 2024 |
@@ -73,6 +77,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  721  | Data Engineering | [Spark session doesn't start when managed virtual network's capacity moved](known-issues/known-issue-721-spark-session-managed-virtual-network-capacity-moved.md) | May 16, 2024 | Fixed: June 20, 2024 |
 |  713  | Power BI | [Sign-in required when you browse to a secure embed URL](known-issues/known-issue-713-sign-in-required-browse-secure-embed-url.md) | May 2, 2024 | Fixed: June 11, 2024 |
 |  694  | Power BI | [Apps and reports not available when editing scorecard metrics](known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md) | April 30, 2024 | Fixed: June 11, 2024 |
 |  693  | Power BI | [Semantic model export to OneLake fails for calculated columns in error state](known-issues/known-issue-693-semantic-model-export-onelake-fails-calculated-columns.md) | April 30, 2024 | Fixed: June 11, 2024 |
@@ -88,13 +93,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  711  | Power BI | [Azure Analysis Services Pricing Tier scaling table doesn't show data](known-issues/known-issue-711-azure-analysis-services-table-not-show-data.md) | May 1, 2024 | Fixed: May 16, 2024 |
 |  690  | Power BI | [Report Copilot button shows even though Copilot admin setting is off](known-issues/known-issue-690-report-copilot-button-shows-admin-setting-off.md) | April 25, 2024 | Fixed: May 16, 2024 |
 |  710  | OneLake | [OneLake audit events don't show up in Microsoft 365 admin center](known-issues/known-issue-710-onelake-audit-events-not-show-microsoft-365-admin-center.md) | May 1, 2024 | Fixed: May 13, 2024 |
-|  552  | Power BI  |  [Autoscale not triggered by carry forward accumulated usage](known-issues/known-issue-552-autoscale-not-triggered-carry-forward-accumulated-usage.md)   | November 22, 2023  | Fixed: May 2, 2024 |
-|  679  | Power BI | [Copy visual as image for report and dashboard visuals is broken](known-issues/known-issue-679-copy-visual-image-report-dashboard-visuals-broken.md) | April 11, 2024 | Fixed: May 1, 2024 |
-|  678  | Administration & Management | [Git integrated workspaces incorrectly show status of Uncommitted](known-issues/known-issue-678-git-integrated-workspaces-show-status-uncommitted.md) | April 11, 2024 | Fixed: May 1, 2024 |
-|  660  | OneLake | [Exporting semantic model data to OneLake fails due to unicode characters](known-issues/known-issue-660-exporting-semantic-model-data-onelake-fails-unicode-characters.md) | March 28, 2024 | Fixed: May 1, 2024 |
-|  581  | Administration & Management | [Product switcher and creation process inadvertently show Fabric experiences](known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md)  | December 15, 2023 | Fixed: May 1, 2024 |
-|  665  | Power BI | [Currency format is unavailable in web modeling](known-issues/known-issue-665-currency-format-unavailable-web-modeling.md) | April 1, 2024 | Fixed: April 25, 2024 |
-|  611  | OneLake | [OneLake storage isn't billed for paused capacities](known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md) | February 2, 2024 | Fixed: April 25, 2024 |
 
 ## Related content
 

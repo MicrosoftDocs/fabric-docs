@@ -4,8 +4,8 @@ description: Learn about the available data integrations.
 ms.reviewer: aksdi
 ms.author: shsagir
 author: shsagir
-ms.topic: conceptual
-ms.date: 01/23/2024
+ms.topic: concept-article
+ms.date: 06/06/2024
 # CustomerIntent: As a data ingestor, I want to know what data connectors and tools are available, so that I can choose the right one for my use case.
 ---
 # Data connectors overview
