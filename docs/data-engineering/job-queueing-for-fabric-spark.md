@@ -1,6 +1,6 @@
 ---
-title: Job queueing for Fabric Spark
-description: Learn about the job queueing for notebooks, Spark job definitions, and lakehouse jobs in Fabric.
+title: Job queueing in Apache Spark for Fabric
+description: Learn about background job queueing for notebooks, Apache Spark job definitions, and lakehouse jobs in Fabric.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
@@ -10,7 +10,7 @@ ms.custom:
   - ignite-2023
 ms.date: 04/10/2024
 ---
-# Job queueing in Microsoft Fabric Spark
+# Job queueing in Apache Spark for Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 

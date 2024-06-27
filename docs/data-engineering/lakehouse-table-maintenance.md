@@ -1,6 +1,6 @@
 ---
-title: Use table maintenance feature to manage delta tables in Fabric
-description: Learn about the Lakehouse Delta table maintenance feature. It allows you to efficiently manage delta tables and to keep them always ready for analytics.
+title: Delta table maintenance in Microsoft Fabric
+description: Learn about the Lakehouse Delta table maintenance feature. It allows you to efficiently manage Delta tables and to keep them always ready for analytics.
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny

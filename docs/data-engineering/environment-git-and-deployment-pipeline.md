@@ -1,6 +1,6 @@
 ---
 title: Fabric environment Git integration and deployment pipeline
-description: Learn the Git integration and deployment pipeline for environment.
+description: Learn about the Git integration and deployment pipeline for Microsoft Fabric environments, including how to connect Azure DevOps.
 ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
