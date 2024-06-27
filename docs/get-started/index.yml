@@ -9,7 +9,6 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list. 
   ms.subservice: get-started
   ms.topic: landing-page # Required
-  ms.collection: collection # Optional; Remove if no collection is used.
   author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
   ms.author: sngun #Required; microsoft alias of author; optional team alias.
   ms.collection: ce-skilling-ai-copilot
