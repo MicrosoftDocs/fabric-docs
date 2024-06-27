@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 04/24/2024
 ms.custom: ''
 LocalizationGroup: Administration
+ms.collection: ce-skilling-ai-copilot
 no-loc: [Copilot]
 ---
 
