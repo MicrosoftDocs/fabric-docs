@@ -69,7 +69,7 @@ featurizer = VectorAssembler(inputCols=feature_cols, outputCol="features")
 train_data = featurizer.transform(df)["Bankrupt?", "features"]
 
 model = (
-    LightGBMClassifier(featuresCol="features", labelCol="Bankrupt?")
+    LightGBMClassifier(featuresCol="features", labelCol="Bankrupt?", dataTransferMode="bulk")
     .setEarlyStoppingRound(300)
     .setLambdaL1(0.5)
     .setNumIterations(1000)

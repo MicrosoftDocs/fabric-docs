@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 06/08/2024
+ms.date: 06/23/2024
 ---
 
 # Tenant settings index
@@ -20,12 +20,13 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Data Activator (preview)](../data-activator/data-activator-get-started.md)|Turn on Data Activator Preview to allow users to define a specific set of conditions about their data, and then receive notifications when those conditions are met. After they receive notifications, users can take action to correct the change in conditions. This setting can be managed at both the tenant and the capacity levels. Data Activator is currently available in  [these regions](https://go.microsoft.com/fwlink/?linkid=2250213). When you turn on Data Activator, you agree to the  [Data Activator Preview terms](https://go.microsoft.com/fwlink/?linkid=2244647).  [Learn More](https://go.microsoft.com/fwlink/?linkid=2237360)|
 |[Users can create Fabric items](fabric-switch.md)|Users can use production-ready features to create Fabric items. Turning off this setting doesn't impact users’ ability to create Power BI items. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2247554)|
 |[Sustainability solutions (preview)](/industry/sustainability/sustainability-data-solutions-overview)|Turn on this setting to give your tenant users the permission to deploy the Sustainability solutions (preview) and its associated capabilities.  [Learn More](https://aka.ms/learn-about-sustainability-solutions)|
-|Retail data solutions (preview)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://go.microsoft.com/fwlink/?linkid=2263806)|
-|Healthcare data solutions (preview)|Use advanced AI analytics to help generate new insights, enhance patient care, and improve outcomes.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2248375)|
+|[Retail data solutions (preview)](/industry/retail/retail-data-solutions/overview-retail-data-solutions)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://go.microsoft.com/fwlink/?linkid=2263806)|
+|[Healthcare data solutions (preview)](/industry/healthcare/overview)|Use advanced AI analytics to help generate new insights, enhance patient care, and improve outcomes.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2248375)|
 |[Users can create and use data workflows (preview)](../data-factory/create-data-workflows.md)|Data workflows are powered by Apache Airflow and offer an integrated Apache Airflow runtime environment, enabling users to author, execute, and schedule Python DAGs. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://aka.ms/fabricairflowintrodoc)|
-|Users can create Real-Time Dashboards (preview)|Users can create Real-Time Dashboards that are natively integrated with KQL databases using Kusto Query Language (KQL). This fully integrated dashboard experience provides improved query and visualization performance, and easier data exploration.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2258931)|
+|[API for GraphQL (preview)](../data-engineering/api-graphql-overview.md)|Select the admins who can view and change this setting, including any security group selections you've made.|
+|[Users can create Real-Time Dashboards (preview)](../real-time-intelligence/index.yml)|Users can create Real-Time Dashboards that are natively integrated with KQL databases using Kusto Query Language (KQL). This fully integrated dashboard experience provides improved query and visualization performance, and easier data exploration.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2258931)|
 |[Database Mirroring (preview)](../database/mirrored-database/overview.md)|Users can connect to and continuously replicate data from an external database into Fabric OneLake via Delta tables. Once in OneLake, users can operationalize the data (i.e., run analytics with Spark, execute notebooks, visualize through Power BI Reports, etc.). This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2261406)|
-|[Product Feedback](../get-started/feedback.md)|This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. Microsoft will use this feedback to help improve product features and services. User participation is voluntary.  [Learn More](https://aka.ms/fabric-feedback-learnmore)|
+|[Product Feedback](../get-started/feedback.md)|This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. Microsoft will use this feedback to help improve product features and services. User participation is voluntary.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272840)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 

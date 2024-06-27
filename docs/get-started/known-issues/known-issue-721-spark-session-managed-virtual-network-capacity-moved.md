@@ -4,7 +4,7 @@ description: A known issue is posted where the Spark session doesn't start when 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/16/2024
+ms.date: 06/20/2024
 ms.custom: known-issue-721
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-721
 
 You might receive an error when trying to start a Spark session or run a Spark job about the Livy session failing. This issue happens when the workspace for the managed virtual network moved across capacities.
 
-**Status:** Open
+**Status:** Fixed: June 20, 2024
 
 **Product Experience:** Data Engineering
 

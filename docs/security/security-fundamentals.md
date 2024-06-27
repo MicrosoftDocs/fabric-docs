@@ -35,7 +35,7 @@ The architectural diagram depicts the following concepts.
 
 2. Authentication is handled by Microsoft Entra ID, [previously known as Azure Active Directory](/entra/fundamentals/new-name), which is the cloud-based identity and access management service that authenticates the user or [service principal](/entra/identity-platform/app-objects-and-service-principals?tabs=browser#service-principal-object) and manages access to Fabric.
 
-3. The web front end receives user requests and facilitates login. It also routes requests and serves front-end content to the user.
+3. The web front end receives user requests and facilitates sign-in. It also routes requests and serves front-end content to the user.
 
 4. The metadata platform stores tenant metadata, which can include customer data. Fabric services query this platform on demand in order to retrieve authorization information and to authorize and validate user requests. It's located in the tenant home region.
 
@@ -99,11 +99,11 @@ For more information, see [Fabric and OneLake security](../onelake/security/fabr
 
 [Workspaces](../get-started/workspaces.md) represent the primary security boundary for data stored in OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace by assigning users to [workspace roles](../get-started/roles-workspaces.md).
 
-For more information, see [Fabric and OneLake security (Workspace security)](../onelake/security/fabric-onelake-security.md#fabric-data-security).
+For more information, see [Fabric and OneLake security (Workspace security)](../onelake/security/fabric-onelake-security.md).
 
 ### Item security
 
-Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/security/fabric-onelake-security.md#fabric-data-security) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
+Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/security/fabric-onelake-security.md) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
 
 ## Compliance resources
 

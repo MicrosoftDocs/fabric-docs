@@ -42,33 +42,33 @@ This tutorial helps you learn how to load data to Lakehouse using partition in a
 
 1. Open your Data pipeline and add a copy activity by selecting **Add pipeline activity** -> **Copy data**. Under **Source**, select **Sample dataset**, and select **Browse**, then select **Public Holidays**.
 
-    :::image type="content" source="media/tutorial-lakehouse-partition/data-store-type-sample-dataset.png" alt-text="Screenshot of using sample dataset.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/data-store-type-sample-dataset.png" lightbox="media/tutorial-lakehouse-partition/data-store-type-sample-dataset.png" alt-text="Screenshot of using sample dataset.":::
 
-    :::image type="content" source="media/tutorial-lakehouse-partition/sample-dataset-public-holidays.png" alt-text="Screenshot of selecting sample dataset.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/sample-dataset-public-holidays.png" lightbox="media/tutorial-lakehouse-partition/sample-dataset-public-holidays.png" alt-text="Screenshot of selecting sample dataset.":::
 
 2. Under **Destination** tab, select **Workspace** in **Data store type**, then select **Lakehouse** in **Workspace data store type**, specify your Lakehouse or select **+ New** to create a new Lakehouse. Choose **Table** in **Root folder** and specify your table name. 
 
-    :::image type="content" source="media/tutorial-lakehouse-partition/destination.png" alt-text="Screenshot of destination configuration.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/destination.png" lightbox="media/tutorial-lakehouse-partition/destination.png" alt-text="Screenshot of destination configuration.":::
 
 3. Expand **Advanced**, in **Table action**, select **Overwrite**, and then select **Enable partition**, under **Partition columns**, select **Add column**, and choose the column you want to use as the partition column. You can choose to use a single column or multiple columns as the partition column.
 
     If you use a single column, **countryOrRegion** (string type) is selected as an example in this tutorial. The data will be partitioned by different column values. 
 
-    :::image type="content" source="media/tutorial-lakehouse-partition/destination-partition-columns.png" alt-text="Screenshot showing the partition columns configuration under destination.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/destination-partition-columns.png" lightbox="media/tutorial-lakehouse-partition/destination-partition-columns.png" alt-text="Screenshot showing the partition columns configuration under destination.":::
 
     > [!Note]
     > The partition column that can be selected should be string, integer, boolean and datetime type. Columns of other data types are not displayed in the drop-down list.
 
     If you use multiple partition columns, add one more column and select **isPaidTimeOff** which is boolean type as an example. Then run the pipeline. The logic is that the table is partitioned by the first added column values firstly, and then the partitioned data continue to be partitioned by the second added column values. 
     
-    :::image type="content" source="media/tutorial-lakehouse-partition/configure-multiple-partition-columns.png" alt-text="Screenshot of configuring multiple partition columns.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/configure-multiple-partition-columns.png" lightbox="media/tutorial-lakehouse-partition/configure-multiple-partition-columns.png" alt-text="Screenshot of configuring multiple partition columns.":::
     
     > [!TIP]
     > You can drag columns to change the sequence of columns, and the partition sequence will also change.
 
 4. Select the **Run** and select **Save and run** to run the pipeline.
     
-    :::image type="content" source="media/tutorial-lakehouse-partition/save-and-run.png" alt-text="Screenshot of save and run.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/save-and-run.png" lightbox="media/tutorial-lakehouse-partition/save-and-run.png" alt-text="Screenshot of save and run.":::
 
 5. After the pipeline runs successfully, go to your **Lakehouse**. Find the table that you copied. Right-click the table name and select **View files**. 
 
@@ -77,15 +77,15 @@ This tutorial helps you learn how to load data to Lakehouse using partition in a
     
     :::image type="content" source="media/tutorial-lakehouse-partition/lakehouse-view-files.png" alt-text="Screenshot showing file view in Lakehouse.":::
     
-    :::image type="content" source="media/tutorial-lakehouse-partition/lakehouse-partition-public-holiday-files.png" alt-text="Screenshot showing the file view of copied public holiday data.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/lakehouse-partition-public-holiday-files.png" lightbox="media/tutorial-lakehouse-partition/lakehouse-partition-public-holiday-files.png" alt-text="Screenshot showing the file view of copied public holiday data.":::
     
     For multiple partition columns, you will find the table is partitioned into different folders by country or region names. 
         
-    :::image type="content" source="media/tutorial-lakehouse-partition/partition-country-folder.png" alt-text="Screenshot showing partition country or region folder.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/partition-country-folder.png" lightbox="media/tutorial-lakehouse-partition/partition-country-folder.png" alt-text="Screenshot showing partition country or region folder.":::
         
     Select one folder, for example **contryOrRegion=United States**. The table partitioned by the country or region name is partitioned again by the added second column isPaidTimeOff’s value: `True` or `False` or `__HIVE_DEFAULT_PARTITION__`(represents empty value in Sample dataset).
             
-    :::image type="content" source="media/tutorial-lakehouse-partition/country-partition-by-ispaidtimeoff.png" alt-text="Screenshot showing country or region partition by ispaidtimeoff.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/country-partition-by-ispaidtimeoff.png" lightbox="media/tutorial-lakehouse-partition/country-partition-by-ispaidtimeoff.png" alt-text="Screenshot showing country or region partition by ispaidtimeoff.":::
             
     Similarly, if you add three columns to partition the table, you will get the second level folder partitioned by the third column added.
         

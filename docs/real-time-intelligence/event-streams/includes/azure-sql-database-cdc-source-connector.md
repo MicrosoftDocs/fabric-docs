@@ -38,7 +38,7 @@ ms.date: 05/23/2024
 1. Now, on the **Connect** page, enter the following information:
 
    - Select **All tables** or enter the table names separated by commas, such as: dbo.table1, dbo.table2
-   - For **Port**, enter the port number or leave the default value of 1433.
+   - For **Port**, the default value is 1433 and cannot be modified.
 
 1. Select **Next**.
 
