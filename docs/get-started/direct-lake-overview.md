@@ -5,7 +5,7 @@ author: kfollis
 ms.author: kfollis
 ms.reviewer: ''
 ms.service: powerbi
-ms.subservice: powerbi-premium
+
 ms.custom:
   - ignite-2023-fabric
 ms.topic: concept-article

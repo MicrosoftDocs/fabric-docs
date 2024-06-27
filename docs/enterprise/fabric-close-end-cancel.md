@@ -4,7 +4,6 @@ description: Learn how to end a trial, cancel a subscription, and close an accou
 author: mihart
 ms.author: mihart
 ms.reviewer: ''
-ms.service: powerbi
 ms.subservice: pbi-fundamentals
 ms.topic: how-to
 ms.date: 04/30/2024

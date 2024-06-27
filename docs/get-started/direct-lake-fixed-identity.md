@@ -5,7 +5,7 @@ author: kfollis
 ms.author: kfollis
 ms.reviewer: ''
 ms.service: powerbi
-ms.subservice: powerbi-premium
+
 ms.topic: conceptual
 ms.date: 04/24/2024
 LocalizationGroup: Admin

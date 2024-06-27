@@ -4,8 +4,7 @@ description: How to configure row-level security for imported semantic models, a
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.topic: how-to
 ms.date: 04/24/2024
 ms.custom: ''
