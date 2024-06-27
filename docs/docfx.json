@@ -86,8 +86,8 @@
                 "real-time-intelligence/**/*.yml": "real-time-intelligence",
                 "security/**/*.md": "security",
                 "security/**/*.yml": "security",
-                "workload-development-kit/**/*.md": " workload-development-kit",
-                "workload-development-kit/**/*.yml": " workload-development-kit",
+                "workload-development-kit/**/*.md": "workload-development-kit",
+                "workload-development-kit/**/*.yml": "workload-development-kit",
                 "database/**/*.md": "database",
                 "database/**/*.yml": "database"
             },
