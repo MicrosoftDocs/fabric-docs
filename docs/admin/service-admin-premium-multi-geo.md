@@ -4,7 +4,6 @@ description: Learn how you can deploy content to data centers in regions other t
 author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: ''
-
 ms.custom:
   - ignite-2023
 ms.topic: how-to
