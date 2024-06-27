@@ -84,12 +84,12 @@ Items in stage A are automatically paired with items in stage B when a new works
 
 | Scenario | Stage A (e.g. Dev)                                       | Stage B (e.g. Test)                                       | Comment                                                        |
 |----------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------|
-| 1        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | Pairing occurs                                                 |
-| 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | Pairing doesn't occur (duplicates). Deployment fails.          |
-|          |                                                          | Name: *PBI Report*<br>Type: *Report*                    | Pairing doesn't occur (duplicates). Deployment fails.          |
-| 3        | Name: *PBI Report*<br>Type: *Report*<br>*Folder A* | Name: *PBI Report*<br>Type: *Report*<br>*Folder B*  | Deployment succeeds but this report is not paired with dev     |
-|          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*Folder A*  | Pairing  occurs using   folder as a tie breaker for duplicates |
-|          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*No folder* | Deployment succeeds but this report is not paired with dev     |
+| 1        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | :::image type="icon" source="media/intro-to-deployment-pipelines/yes-icon.svg" border="false"::: Pairing occurs                                                 |
+| 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | :::image type="icon" source="media/intro-to-deployment-pipelines/no-icon.svg" border="false"::: Pairing doesn't occur (duplicates). Deployment fails.          |
+|          |                                                          | Name: *PBI Report*<br>Type: *Report*                    | :::image type="icon" source="media/intro-to-deployment-pipelines/no-icon.svg" border="false"::: Pairing doesn't occur (duplicates). Deployment fails.          |
+| 3        | Name: *PBI Report*<br>Type: *Report*<br>*Folder A* | Name: *PBI Report*<br>Type: *Report*<br>*Folder B*  | :::image type="icon" source="media/intro-to-deployment-pipelines/yes-icon.svg" border="false"::: Deployment succeeds but :::image type="icon" source="media/intro-to-deployment-pipelines/no-icon.svg" border="false"::: this report is not paired with dev     |
+|          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*Folder A*  | :::image type="icon" source="media/intro-to-deployment-pipelines/yes-icon.svg" border="false"::: Pairing occurs using folder as a tie breaker for duplicates |
+|          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*No folder* | :::image type="icon" source="media/intro-to-deployment-pipelines/yes-icon.svg" border="false"::: Deployment succeeds but :::image type="icon" source="media/intro-to-deployment-pipelines/no-icon.svg" border="false"::: this report is not paired with dev     |
 
 :::image type="content" source="./media/intro-to-deployment-pipelines/pairing-rules.png" alt-text="Diagram describing when items are paired in different circumstances.":::
 
