@@ -31,6 +31,7 @@ Avro format is supported for the following activities and connectors as a source
 |  | [FTP](connector-ftp-copy-activity.md) |
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) |
 |  | [HTTP](connector-http-copy-activity.md)|
+|  | [Lakehouse Files](connector-lakehouse-copy-activity.md)|
 |  | [Oracle Cloud Storage](connector-oracle-cloud-storage-copy-activity.md)|
 |  | [SFTP](connector-sftp-copy-activity.md) |
 | **Supported activity** | [Copy activity](copy-data-activity.md) (source/destination) |
