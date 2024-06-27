@@ -5,7 +5,11 @@ ms.date: 06/23/2024
 ms.topic: how-to
 ms.reviewer: ramacg
 ---
+# Get data with the NLog sink
+
 [!INCLUDE [ingest-nlog-sink1](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-nlog-sink1.md)]
+
+In this article you will learn how to get data with nLog sink.
 
 For a complete list of data connectors, see [Data connectors overview](connector-overview.md).
 
@@ -17,6 +21,12 @@ For a complete list of data connectors, see [Data connectors overview](connector
 * A [KQL queryset](kusto-query-set.md). This will be referred to as your query environment.
 
 [!INCLUDE [ingest-nlog-sink2](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-nlog-sink2.md)]
+
+### Create a table and ingestion mapping
+
+Create an [empty table](create-empty-table.md) as the target table for the incoming data.
+
+[!INCLUDE [ingest-nlog-sink3](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-nlog-sink3.md)]
 
 ## Related content
 
