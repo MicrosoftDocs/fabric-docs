@@ -96,6 +96,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 ## Configure a React app to access the public holidays API
 
 1. We use an existing React app as a starting point. Follow all the steps on the tutorial [Create a React single-page application and prepare it for authentication](/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code) to create a React project with Entra authentication already configured, including additional files and folders required to be added to the project structure. We only need to change three files to adapt the app for our GraphQL use case.
+  
 1. In the *src* folder, open the *authConfig.js* file and replace the contents of the file with the following code snippet:
 
    ```javascript
@@ -175,8 +176,8 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
    As you can see in the code above, it's important to use the correct scope to access the application. In our case `https://analysis.windows.net/powerbi/api/Item.Execute.All` and 
    `https://analysis.windows.net/powerbi/api/Datamart.ReadWrite.All`.
 
-> [!IMPORTANT]
-> Scopes might change during Microsoft Fabric API for GraphQL preview.
+   > [!IMPORTANT]
+   > Scopes might change during Microsoft Fabric API for GraphQL preview.
 
 1. Replace the following values with the values from the Microsoft Entra admin center.
     - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered Entra application.
@@ -343,10 +344,9 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 10. A successful authenticated request to the GraphQL API in Fabric returns the data from GraphQL query to the Lakehouse in our React client application:
 
-   :::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the React sample app after receiving the GraphQL request.":::
+    :::image type="content" source="media/connect-apps-api-graphql/react-app-results.png" alt-text="Screenshot of the React sample app after receiving the GraphQL request.":::
 
 ## Other languages
-
 
 Find C#, Python, and other language samples for connecting to your GraphQL API in the [Microsoft Fabric Samples GitHub repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL).
 
