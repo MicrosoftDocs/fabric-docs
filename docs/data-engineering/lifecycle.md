@@ -1,13 +1,13 @@
 ---
-title: Apache Spark runtime in Fabric lifecycle and supportability
-description: Lifecycle and support policies for Apache Spark runtime in Fabric
+title: Apache Spark runtime in Fabric lifecycle
+description: Lifecycle for Apache Spark runtime in Fabric
 ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
 ---
 
-# Lifecycle and supportability for Apache Spark Runtimes in Fabric
+# Lifecycle for Apache Spark Runtimes in Fabric
 
 The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark, designed to facilitate the execution and management of data engineering and data science workflows. It synthesizes essential elements from both proprietary internal and open-source resources to offer a comprehensive solution to customers. For brevity, we refer to the Microsoft Fabric Runtime powered by Apache Spark simply as Fabric Runtime.
 
