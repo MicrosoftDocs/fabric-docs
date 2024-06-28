@@ -374,7 +374,8 @@ Body:
 }
 ```
 
-> [!NOTE] ```<job id>``` is the same id created and used in the Job Scheduler Public APIs
+> [!NOTE]
+> "job id" is the same id created and used in the Job Scheduler Public APIs
 
 Response 200:
 ```json
