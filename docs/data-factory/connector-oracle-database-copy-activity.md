@@ -98,7 +98,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Pre-copy script**: Specify a SQL query for the copy activity to execute before you write data into Oracle database in each run. You can use this property to clean up the preloaded data.
 - **Write batch timeout**: The wait time for the batch insert operation to complete before it times out. The allowed value is timespan. An example is 00:30:00 (30 minutes).
-- **Write batch size**: Specify the number of rows to insert into the Oracle database table per batch. The allowed value is integer (number of rows). By default, the service dynamically determines the appropriate batch size based on the row size. The default value is 10,000.
+- **Write batch size**: Specify the number of rows to insert into the Oracle database table per batch. The allowed value is integer (number of rows). The default value is 10,000.
 - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
 ### Mapping
