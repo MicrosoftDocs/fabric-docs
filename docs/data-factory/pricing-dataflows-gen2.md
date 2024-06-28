@@ -33,6 +33,17 @@ The following table indicates that to determine Dataflow Gen2 execution costs, e
 |Standard Compute     | Based on each mashup engine query execution duration in seconds.         | 16 CUs per hour         | Per Dataflow Gen2 item        |
 |High Scale Dataflows Compute     | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds.         | 6 CUs per hour         | Per workspace        |
 
+## Virtual Network Data Gateway Pricing with Dataflow Gen2 
+
+The VNET Data Gateway is billed as an additive premium infrastructure charge, associated with a Fabric capacity. This means that it has its own meter and incurs a bill that is consistent across and additional to all Fabric item runs. Currently, in Fabric Data Factory, only Dataflow Gen2 supports the VNet Data Gateway.
+
+The total bill for running Dataflows Gen2 through the VNET Data Gateway is calculated as: Dataflows Gen2 Charge + VNET Data Gateway Charge.
+
+The VNET Data Gateway Charge is proportional to your usage of the VNET Data Gateway, where usage is defined as uptime, or any time the VNET Data Gateway is on.
+
+VNET Data Gateway CU consumption rate: (4 CU-hour) * (Fabric capacity per unit price)
+
+Learn more at [Virtual Network Data Gateways Pricing and Billing](/data-integration/vnet/data-gateway-business-model).
 
 ## Changes to Microsoft Fabric workload consumption rate
 
