@@ -1,6 +1,6 @@
 ---
 title: What is the SQL analytics endpoint for a lakehouse?
-description: Discover how to run SQL queries directly on lakehouse tables with the SQL analytics endpoint.
+description: Learn about the SQL analytics endpoint and how to run SQL queries directly on Fabric lakehouse tables.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
