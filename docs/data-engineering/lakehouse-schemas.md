@@ -1,6 +1,6 @@
 ---
-title: What are lakehouse schemas (preview)
-description: Learn about lakehouse schemas: how to create, use, and understand their limitations.
+title: What are lakehouse schemas? (preview)
+description: Learn about lakehouse schemas, how to create, use, and understand their limitations.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
