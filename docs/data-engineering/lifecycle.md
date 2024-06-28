@@ -35,7 +35,7 @@ The following table lists the runtime name, and release dates for supported Azur
 | [Runtime 1.1 based on Apache Spark 3.3](./runtime-1-1.md) |  GA             | March 31, 2025                              |
 
 
-:::image type="content" source="media\runtime\lifecycle_runtimes.png" lightbox="media\runtime\lifecycle_runtimes.png":::
+:::image type="content" source="media\runtime\lifecycle_runtimes.png" alt-text="Lifecycle diagram." lightbox="media\runtime\lifecycle_runtimes.png":::
 
 The process outlined in the diagram follows the lifecycle of a runtime version from its experimental public
 preview stage to its deprecation and removal. 
