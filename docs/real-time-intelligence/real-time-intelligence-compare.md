@@ -12,6 +12,7 @@ ms.custom:
   - ignite-2023
   - build-2024
 ms.date: 05/01/2024
+ms.collection: ce-skilling-ai-copilot
 ms.search.form: Overview
 ---
 # What is the difference between Real-Time Intelligence and comparable Azure solutions?
