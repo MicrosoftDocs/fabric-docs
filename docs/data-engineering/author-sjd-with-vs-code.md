@@ -1,5 +1,5 @@
 ---
-title: Develop, execute, and debug Apache Spark job definitions in VS Code
+title: Create and manage Apache Spark job definitions in VS Code
 description: Learn about the VS Code extension for Synapse, which supports a pro-developer experience for creating, running, and debugging Spark job definitions.
 ms.reviewer: sngun
 ms.author: qixwang

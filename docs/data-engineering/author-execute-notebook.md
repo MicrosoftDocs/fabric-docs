@@ -1,6 +1,6 @@
 ---
 title: Develop, execute, and manage notebooks
-description: Learn how to author and develop Microsoft Fabric notebook jobs with rich built-in features.
+description: Learn how to author, execute, and manage Microsoft Fabric notebook jobs with rich built-in features.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
