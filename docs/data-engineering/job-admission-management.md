@@ -24,7 +24,7 @@ In Fabric, starter pools come with a default minimum of one node, while custom p
 
 ## How does this affect job concurrency?
 
-TThe minimum core requirement for each job determines if the job can be accepted. If the capacity is fully utilized and has no cores left  to fulfill a job's minimum core needs, the job is rejected. Interactive notebook jobs or Lakehouse operations will be blocked with an error message *Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later*. Batch jobs are queued and executed once cores become available.
+The minimum core requirement for each job determines if the job can be accepted. If the capacity is fully utilized and has no cores left  to fulfill a job's minimum core needs, the job is rejected. Interactive notebook jobs or Lakehouse operations will be blocked with an error message *Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later*. Batch jobs are queued and executed once cores become available.
 
 For example, consider a scenario with a user utilizing the Fabric F32 capacity SKU. Assuming all jobs use the default starter pool setup without optimistic job admission, the capacity would support a maximum concurrency of three jobs. The maximum number of cores per job are allocated according to the max nodes configuration.
 
