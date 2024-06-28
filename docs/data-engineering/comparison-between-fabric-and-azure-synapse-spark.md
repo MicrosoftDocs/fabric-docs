@@ -1,6 +1,6 @@
 ---
 title: Comparison between Fabric and Azure Synapse Spark.
-description: Learn about the key differences between Azure Synapse Spark and Fabric Spark support.
+description: Learn about the key differences between support for Azure Synapse Spark and Apache Spark for Fabric.
 ms.reviewer: snehagunda, aimurg
 ms.author: jejiang
 author: jejiang

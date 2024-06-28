@@ -1,5 +1,5 @@
 ---
-title: Create a lakehouse
+title: Create a lakehouse in Microsoft Fabric
 description: Learn how to create a lakehouse from the Data Engineering homepage, the Workspace view, or the Create page.
 ms.reviewer: snehagunda
 ms.author: avinandac

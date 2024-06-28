@@ -1,17 +1,17 @@
 ---
-title: Job admission and management in Fabric Spark
-description: Learn about job admission and management for notebooks, Spark job definitions, and lakehouse jobs in Fabric.
+title: Job admission in Apache Spark for Fabric
+description: Learn about job admission and management for notebooks, Apache Spark job definitions, and lakehouse jobs in Fabric.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
 ms.date: 05/09/2024
 ---
-# Job admission in Microsoft Fabric Spark
+# Job admission in Apache Spark for Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Fabric Spark utilizes the optimistic job admission technique to determine the minimum core requirement for Spark jobs. This process is applicable to interactive or batch jobs from notebooks, lakehouses, or Spark job definitions. It relies on the minimum node setting of the chosen Spark pool in the workspace settings or attached environment. If available cores are found in the Fabric capacity linked to the workspace, the job is accepted and commences execution. Jobs initiate with their minimum node setting and can scale up within their maximum node limits as per job stages. If the total cores used by running jobs utilizing the Fabric capacity is below the maximum burst cores assigned, the job admission and throttling layer on Fabric Spark permits the job to scale up.
+Apache Spark for Fabric utilizes the optimistic job admission technique to determine the minimum core requirement for Spark jobs. This process is applicable to interactive or batch jobs from notebooks, lakehouses, or Spark job definitions. It relies on the minimum node setting of the chosen Spark pool in the workspace settings or attached environment. If available cores are found in the Fabric capacity linked to the workspace, the job is accepted and commences execution. Jobs initiate with their minimum node setting and can scale up within their maximum node limits as per job stages. If the total cores used by running jobs utilizing the Fabric capacity is below the maximum burst cores assigned, the job admission and throttling layer on Fabric Spark permits the job to scale up.
 
 For more information, see [Concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md).
 
@@ -24,7 +24,7 @@ In Fabric, starter pools come with a default minimum of one node, while custom p
 
 ## How does this affect job concurrency?
 
-TThe minimum core requirement for each job determines if the job can be accepted. If the capacity is fully utilized and has no cores left  to fulfill a job's minimum core needs, the job is rejected. Interactive notebook jobs or Lakehouse operations will be blocked with an error message *Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later*. Batch jobs are queued and executed once cores become available.
+The minimum core requirement for each job determines if the job can be accepted. If the capacity is fully utilized and has no cores left  to fulfill a job's minimum core needs, the job is rejected. Interactive notebook jobs or Lakehouse operations will be blocked with an error message *Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later*. Batch jobs are queued and executed once cores become available.
 
 For example, consider a scenario with a user utilizing the Fabric F32 capacity SKU. Assuming all jobs use the default starter pool setup without optimistic job admission, the capacity would support a maximum concurrency of three jobs. The maximum number of cores per job are allocated according to the max nodes configuration.
 
