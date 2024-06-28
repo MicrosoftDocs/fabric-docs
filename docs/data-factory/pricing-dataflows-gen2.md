@@ -35,7 +35,7 @@ The following table indicates that to determine Dataflow Gen2 execution costs, e
 
 ## Virtual Network Data Gateway Pricing with Dataflow Gen2 
 
-The Virtual Network (VNET) Data Gateway is billed as an additive premium infrastructure charge, associated with a Fabric capacity. This means that it has its own meter and incurs a bill that is consistent across and extra to all Fabric item runs. Currently, in Fabric Data Factory, only Dataflow Gen2 supports the VNet Data Gateway.
+The Virtual Network (VNET) Data Gateway is billed as an additive infrastructure charge, associated with a Fabric capacity. This means that it has its own meter and incurs a bill that is consistent across and extra to all Fabric item runs.
 
 The total bill for running Dataflows Gen2 through the VNET Data Gateway is calculated as: Dataflows Gen2 Charge + VNET Data Gateway Charge.
 
