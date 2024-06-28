@@ -1,6 +1,6 @@
 ---
 title: Get started with streaming data in lakehouse
-description: Learn how to stream data into lakehouse and serve it through SQL analytics endpoint.
+description: Learn how to use an Apache Spark job definition to stream data into your lakehouse and then serve it through a SQL analytics endpoint.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
