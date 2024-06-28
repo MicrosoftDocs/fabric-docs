@@ -27,7 +27,7 @@ Overall, we aim to delineate a standard lifecycle path for the Microsoft Fabric 
 > Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.2](./runtime-1-2.md).
 
 :::image type="content" source="media\runtime\lifecycle_runtimes.png" alt-text="Lifecycle for Apache Spark Runtimes in
-Fabric as diagram" lightbox="media\runtime\lifecycle_runtimes.png":::
+Fabric as a diagram." lightbox="media\runtime\lifecycle_runtimes.png":::
 
 The process outlined in the diagram follows the lifecycle of a runtime version from its experimental public
 preview stage to its deprecation and removal. 
