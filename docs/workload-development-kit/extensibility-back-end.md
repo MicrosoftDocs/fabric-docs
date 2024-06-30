@@ -161,7 +161,8 @@ To set up the boilerplate sample project on your local machine, follow these ste
 
 1. *Program.cs* is the entry point and startup script for your application. In this file, you can configure various services, initialize the application, and start the web host.
 1. Build to ensure your project can access the required dependencies for compilation and execution.
-1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application located in *Backend\DevGateway*. Sign in with a user that has **capacity admin privileges** to the capacity you defined in workload-dev-mode.json (CapacityGuid). Upon the initialization of the workload, an authentication prompt appears.
+1. Download the DevGateway from [Microsoft's Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=105993)
+1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application located in *DevGateway* folder. Sign in with a user that has **capacity admin privileges** to the capacity you defined in workload-dev-mode.json (CapacityGuid). Upon the initialization of the workload, an authentication prompt appears.
 
    :::image type="content" source="./media/extensibility-back-end/sign-in.png" alt-text="Screenshot of Microsoft sign in page.":::
 
