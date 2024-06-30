@@ -418,6 +418,8 @@ IPython Widgets are eventful Python objects that have a representation in the br
 - The Fabric global *display* function doesn't support displaying multiple widgets in one call (for example, *display(a, b)*). This behavior is different from the IPython *display* function.
 
 - If you close a notebook that contains an IPython widget, you can't see or interact with it until you execute the corresponding cell again.
+  
+- The interact function (ipywidgets.interact) is not supported.
 
 ## Integrate a notebook
 
