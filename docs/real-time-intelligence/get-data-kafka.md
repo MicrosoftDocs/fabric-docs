@@ -11,6 +11,8 @@ ms.date: 04/21/2024
 
 [!INCLUDE [ingest-data-kafka](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-kafka.md)]
 
+[!INCLUDE [ingest-data-kafka-2](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-kafka-2.md)]
+
 ## Related content
 
 * [Create a KQL database](create-database.md)
