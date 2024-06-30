@@ -190,6 +190,19 @@ See the following table for the setting details.
 |**TimeSpan format**| Format string when converting between time periods and strings. For example, "dd\.hh\:mm\:ss".|
 |**Culture**| Culture information to be used when convert types. For example, "en-us", "fr-fr".|
 
+#### Configure your column flatten settings
+
+Expand **Column flatten settings** to configure your column flatten if needed when you use Microsoft 365 connector. 
+
+   :::image type="content" source="media/copy-data-activity/mapping-column-flatten-settings.png" alt-text="Screenshot of column flatten settings." lightbox="media/copy-data-activity/mapping-column-flatten-settings.png":::
+
+See the following table for the setting details.
+
+|Setting  |Description  |
+|---------|---------|
+|**Treat array as string** | Specify to treat array values as string. |
+|**Treat struct as string** |  Specify to treat struct values as string.|
+|**Flatten column delimiter** | Specify the flatten column delimiter, and the default is `.`. This setting is available when you enable **Treat array as string**. |
 
 ### Configure your other settings under settings tab
 
