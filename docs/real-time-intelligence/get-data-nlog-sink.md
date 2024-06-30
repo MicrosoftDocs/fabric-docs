@@ -29,7 +29,7 @@ For a complete list of data connectors, see [Data connectors overview](/azure/da
 
 Create an [empty table](create-empty-table.md) as the target table for the incoming data.
 
-[!INCLUDE [ingest-nlog-sink3](~/../data-explorer/data-explorer/includes/cross-repo/ingest-nlog-sink3.md)]
+[!INCLUDE [ingest-nlog-sink3](~/../data-explorer/includes/cross-repo/ingest-nlog-sink3.md)]
 
 ## Related content
 
