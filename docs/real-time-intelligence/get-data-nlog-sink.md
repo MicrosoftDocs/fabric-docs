@@ -1,7 +1,7 @@
 ---
 title: Get data with the NLog sink 
 description: Learn how to get data with the NLog sink in a KQL database in Real-Time Intelligence.
-ms.date: 06/23/2024
+ms.date: 06/30/2024
 ms.topic: how-to
 ms.reviewer: ramacg
 ---
@@ -12,6 +12,7 @@ ms.reviewer: ramacg
 In this article you will learn how to get data with nLog sink.
 
 For a complete list of data connectors, see [Data connectors overview](connector-overview.md).
+<!-- Update this link to the RTI Get data overview, once it is created and merged -->
 
 ## Prerequisites
 
