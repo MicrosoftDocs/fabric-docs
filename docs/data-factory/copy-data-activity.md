@@ -202,7 +202,7 @@ See the following table for the setting details.
 |---------|---------|
 |**Treat array as string** | Specify to treat array values as string. |
 |**Treat struct as string** |  Specify to treat struct values as string.|
-|**Flatten column delimiter** | Specify the flatten column delimiter, and the default is `.`. This setting is available when you enable **Treat array as string**. |
+|**Flatten column delimiter** | Specify the flatten column delimiter, and the default is `.`. This setting is not available when you enable **Treat struct as string**. |
 
 ### Configure your other settings under settings tab
 
