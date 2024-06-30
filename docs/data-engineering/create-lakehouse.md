@@ -63,7 +63,7 @@ To delete a lakehouse, navigate to **OneLake data hub** and find your lakehouse.
 
 > [!NOTE]
 > - A lakehouse can't be deleted if it's referenced elsewhere, for example, in a pipeline or within a real time analytics workflow.
-> - There is no way to restore after a lakehouse is deleted.
+> - There is no way to restore a lakehouse after it's deleted.
 
 ## Related content
 
