@@ -24,7 +24,7 @@ In this article, you'll learn how to:
 
 * [Fluent Bit](https://docs.fluentbit.io/manual/installation/getting-started-with-fluent-bit).
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md) with editing permissions
+* A [KQL database](create-database.md) with ingestion permissions
 * A [KQL queryset](create-query-set.md), which will be referred to later as your query environment
 
 [!INCLUDE [fluent-bit](~/../kusto-repo/data-explorer/includes/cross-repo/fluent-bit.md)]
