@@ -1,5 +1,5 @@
 ---
-title: What is LightGBM in SynapseML?
+title: Overview of LightGBM in SynapseML
 description: Learn about LightGBM in SynapseML.
 ms.topic: overview
 ms.custom:
@@ -8,9 +8,9 @@ ms.custom:
 ms.reviewer: ssalgado
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/08/2023
+ms.date: 06/25/2024
 ---
-# What is LightGBM?
+# Overview of LightGBM in SynapseML
 
 [LightGBM](https://github.com/Microsoft/LightGBM) is an open-source,
 distributed, high-performance gradient boosting (GBDT, GBRT, GBM, or

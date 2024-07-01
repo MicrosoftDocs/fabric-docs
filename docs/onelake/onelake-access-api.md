@@ -45,6 +45,7 @@ OneLake also supports the [Azure Blob Filesystem driver](/azure/storage/blobs/da
 ```http
 abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<path>/<fileName>
 ```
+The abfs driver URI doesn't allow special characters, such as spaces, in the workspace name. In these cases, you can reference workspaces and items with the globally unique identifiers (GUIDs) as described earlier in this section.
 
 ## Authorization
 

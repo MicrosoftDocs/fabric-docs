@@ -6,7 +6,7 @@ ms.author: kesharab
 ms.topic: overview
 ms.custom:
   - build-2024
-ms.date: 03/18/2024
+ms.date: 06/27/2024
 ---
 
 # Permission model
@@ -52,7 +52,7 @@ Different Fabric items have different permissions. To learn more about the permi
 
 * [warehouse](../data-warehouse/share-warehouse-manage-permissions.md)
 
-* [Data Factory](/azure/data-factory/concepts-roles-permissions)
+* [Data Factory](../data-factory/data-factory-overview.md)
 
 * [Lakehouse](../data-engineering/lakehouse-sharing.md)
 

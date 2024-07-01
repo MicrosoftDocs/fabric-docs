@@ -1,6 +1,6 @@
 ---
 title: Library management in Fabric environments
-description: Learn how to include public and custom libraries in Fabric environments.
+description: Learn about library management in Fabric, including how to add public and custom libraries to your Fabric environments.
 ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
