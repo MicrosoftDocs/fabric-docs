@@ -91,7 +91,7 @@ Items in stage A are automatically paired with items in stage B when a new works
 |          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*Folder A*  | :::image type="icon" source="media/intro-to-deployment-pipelines/yes-icon.svg" border="false"::: Pairing occurs using folder as a tie breaker for duplicates |
 |          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*No folder* | :::image type="icon" source="media/intro-to-deployment-pipelines/yes-icon.svg" border="false"::: Deployment succeeds but ❌ this report is not paired with dev     |
 
-:::image type="content" source="./media/intro-to-deployment-pipelines/pairing-rules.png" alt-text="Diagram describing when items are paired in different circumstances.":::
+<!--- :::image type="content" source="./media/intro-to-deployment-pipelines/pairing-rules.png" alt-text="Diagram describing when items are paired in different circumstances."::: --->
 
 * Items that are paired remain paired even if you change their names. Therefore, paired items can have different names.
 * Items added after the workspace is assigned to a pipeline aren't automatically paired. Therefore, you can have identical items in adjacent workspaces that aren't paired.
