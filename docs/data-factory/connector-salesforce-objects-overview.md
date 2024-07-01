@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 07/01/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -22,4 +22,11 @@ For information on how to connect to Salesforce objects in Dataflow Gen2, go to 
 
 ## Support in data pipelines
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Salesforce objects in data pipelines.
+The Salesforce connector supports the following capabilities in Data pipeline:
+
+| Supported capabilities | Gateway | Authentication |
+| --- | --- | ---|
+| **Copy activity (source/destination)** | None | Organizational account |
+| **Lookup activity** | None | Organizational account |
+
+To learn more about the copy activity configuration for Salesforce in Data pipeline, go to [Configure in a data pipeline copy activity](connector-salesforce-objects-copy-activity.md).
