@@ -43,18 +43,18 @@ The following properties are **required**:
       - **Object API**: Specify the Salesforce object name to retrieve data from. Select the name from the drop-down list.
 
     - If you select **Report**:
-      - **Report ID**: The ID of the Salesforce report to retrieve data from. It isn't supported in sink. There are [limitations](https://developer.salesforce.com/docs/atlas.en-us.api_analytics.meta/api_analytics/sforce_analytics_rest_api_limits_limitations.htm) when you use reports.
+      - **Report ID**: The ID of the Salesforce report to retrieve data from. It isn't supported in destination. There are [limitations](https://developer.salesforce.com/docs/atlas.en-us.api_analytics.meta/api_analytics/sforce_analytics_rest_api_limits_limitations.htm) when you use reports.
 
         :::image type="content" source="./media/connector-salesforce-objects/use-query-report.png" alt-text="Screenshot showing Use query - Report." :::
 
     - If you select **SOQL Query**:
-      - **SOQL Query**: Use the custom query to read data. Customers can only use [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query with limitations [Understanding Bulk API 2.0 Query](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/queries.htm#SOQL%20Considerations). If query is not specified, all the data of the Salesforce object specified in "objectApiName" in dataset will be retrieved.
+      - **SOQL Query**: Use the custom query to read data. You can only use [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query with limitations [Understanding Bulk API 2.0 Query](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/queries.htm#SOQL%20Considerations). If query is not specified, all the data of the Salesforce object specified in "objectApiName" in dataset will be retrieved.
 
         :::image type="content" source="./media/connector-salesforce-objects/use-query-soql-query.png" alt-text="Screenshot showing Use query - SOQL Query." :::
 
 Under **Advanced**, you can specify the following fields:
 
-- **Include deleted objects**: Indicates whether to query the existing records, or query all records including the deleted ones. If not specified, the default behavior is false.
+- **Include deleted objects**: Indicates whether to query the existing records, or query all records including the deleted ones. If not specified, the default behavior is false. Allowed values: **false** (default), **true**.
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ### Destination
@@ -108,9 +108,9 @@ The following tables contain more information about the copy activity in Salesfo
 | *For **Object API*** |  |  |  |  |
 | **Object API** | Specify the Salesforce object name to retrieve data from. |< your object name >  | Yes | objectApiName |
 | *For **Report*** |  |  |  |  |
-| **Report ID** | The ID of the Salesforce report to retrieve data from. It isn't supported in sink. There are [limitations](https://developer.salesforce.com/docs/atlas.en-us.api_analytics.meta/api_analytics/sforce_analytics_rest_api_limits_limitations.htm) when you use reports. | \<your report ID> | Yes | reportId |
+| **Report ID** | The ID of the Salesforce report to retrieve data from. It isn't supported in destination. There are [limitations](https://developer.salesforce.com/docs/atlas.en-us.api_analytics.meta/api_analytics/sforce_analytics_rest_api_limits_limitations.htm) when you use reports. | \<your report ID> | Yes | reportId |
 | *For **SOQL Query*** |  |  |  |  |
-| **SOQL Query** | Use the custom query to read data. Customers can only use [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query with limitations [Understanding Bulk API 2.0 Query](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/queries.htm#SOQL%20Considerations). If query is not specified, all the data of the Salesforce object specified in "objectApiName" in dataset will be retrieved. |< your SOQL query >  | Yes | query |
+| **SOQL Query** | Use the custom query to read data. You can only use [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query with limitations [Understanding Bulk API 2.0 Query](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/queries.htm#SOQL%20Considerations). If query is not specified, all the data of the Salesforce object specified in "objectApiName" in dataset will be retrieved. |< your SOQL query >  | Yes | query |
 |  |  |  |  |  |
 | **Include deleted objects** | Indicates whether to query the existing records, or query all records including the deleted ones. If not specified, the default behavior is false. |select or unselect | No | includeDeletedObjects: <br>false (default) or true |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
