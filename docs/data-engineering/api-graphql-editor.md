@@ -111,7 +111,7 @@ Use the **Query variables** pane on the right side of the **Query** tab to pass 
 
 ```json
 mutation MyMutation ($title: String!, $content: String!, $author: String!, $published: boolean){
-  createPost(title: $title, content: $content, author: author$) {
+  createPost(title: $title, content: $content, author: $author) {
     id
     title
     content
