@@ -18,6 +18,8 @@ In this tutorial, you go through the whole process of loading data into your wor
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
+[!INCLUDE [github-prereqs](../includes/github-prereqs.md)]
+
 * Download the [FoodSales.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/cicd/FoodSales.pbix) file into a Git repo that you can edit. We use this sample file in this tutorial. Alternatively, you can use your own semantic model and report, if you prefer.
 
 If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-connect-the-teams-development-workspace-to-git).
