@@ -80,6 +80,9 @@ Follow these steps to set up your copy activity using copy assistant.
 
    :::image type="content" source="media/copy-data-activity/connect-to-data-destination.png" alt-text="Screenshot of Connect to data destination." lightbox="media/copy-data-activity/connect-to-data-destination.png":::
 
+> [!NOTE]
+> You cannot use more than one on-premises data gateway within the same Copy activity. The source and sink for the activity must be connected with the same on-premises data gateway.
+
 ### Review and create your copy activity
 
 1. Review your copy activity settings in the previous steps and select **OK** to finish. Or you can go back to the previous steps to edit your settings if needed in the tool.
