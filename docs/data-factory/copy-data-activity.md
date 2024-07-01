@@ -192,9 +192,18 @@ See the following table for the setting details.
 
 #### Configure your column flatten settings
 
-Expand **Column flatten settings** to configure your column flatten if needed when you use Microsoft 365 connector. 
+Expand **Column flatten settings** to configure your column flatten if needed. Applies to the following connectors/formats:
 
-   :::image type="content" source="media/copy-data-activity/mapping-column-flatten-settings.png" alt-text="Screenshot of column flatten settings." lightbox="media/copy-data-activity/mapping-column-flatten-settings.png":::
+- [Azure Cosmos DB for NoSQL](connector-azure-cosmosdb-for-nosql-copy-activity.md)
+- [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-copy-activity.md)
+- [JSON](format-json.md)
+- [Microsoft 365](connector-microsoft-365-copy-activity.md)
+- [MongoDB](connector-mongodb-copy-activity.md)
+- [MongoDB Atlas](connector-mongodb-atlas-copy-activity.md)
+- [REST](connector-rest-copy-activity.md)
+- [XML](format-xml.md)
+
+:::image type="content" source="media/copy-data-activity/mapping-column-flatten-settings.png" alt-text="Screenshot of column flatten settings." lightbox="media/copy-data-activity/mapping-column-flatten-settings.png":::
 
 See the following table for the setting details.
 
