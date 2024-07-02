@@ -20,11 +20,11 @@ You can access the report from the [admin monitoring](monitoring-workspace.md) w
 
 The report is designed for admins to analyze a variety of Fabric usage scenarios. Use the Date range slicer to filter activity data across all pages for a specific range of time over the last 30 days.
 
-:::image type="content" source="docs/admin/media/admin-monitoring/date-slicer.png" alt-text="Date range slicer on the Adoption report.":::
+:::image type="content" source="./media/admin-monitoring/date-slicer.png" alt-text="Date range slicer on the Adoption report.":::
 
 Additionally, use the filter pane to filter activity data based on the desired analysis. Filters are available across different characteristics of usage - including capacity, user, and item-related info.
 
-:::image type="content" source="docs/admin/media/admin-monitoring/filter-pane.png" alt-text="Screenshot of the filter pane on the Adoption report.":::
+:::image type="content" source="./media/admin-monitoring/filter-pane.png" alt-text="Screenshot of the filter pane on the Adoption report.":::
     
 ## Report pages
 
@@ -42,7 +42,7 @@ The Feature Usage and Adoption report is comprised of five pages:
 
 ### Activity Overview page
 
-:::image type="content" source="docs/admin/media/admin-monitoring/activity-overview-page.png" alt-text="Screenshot of the Activity Overview page of the Adoption report.":::
+:::image type="content" source="./media/admin-monitoring/activity-overview-page.png" alt-text="Screenshot of the Activity Overview page of the Adoption report.":::
 
 The Activity Overview page helps you identify:
 
@@ -56,7 +56,7 @@ The Activity Overview page helps you identify:
 
 ### Analysis page
 
-:::image type="content" source="docs/admin/media/admin-monitoring/analysis-page.png" alt-text="Screenshot of the Analysis page of the Adoption report.":::
+:::image type="content" source="./media/admin-monitoring/analysis-page.png" alt-text="Screenshot of the Analysis page of the Adoption report.":::
 
 On the Analysis page, you can view:
 
@@ -100,7 +100,7 @@ The Activity Details page shows detailed information on specific usage scenarios
 
 ### Inventory page
 
-:::image type="content" source="docs/admin/media/admin-monitoring/inventory-page.png" alt-text="Screenshot of the Inventory page of the Adoption report.":::
+:::image type="content" source="./media/admin-monitoring/inventory-page.png" alt-text="Screenshot of the Inventory page of the Adoption report.":::
 
 The Inventory page displays all items in your Fabric tenant and how they are utilized. You can filter inventory by:
 
