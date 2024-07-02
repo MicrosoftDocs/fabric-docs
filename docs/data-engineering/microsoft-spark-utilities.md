@@ -479,10 +479,13 @@ Sample code for mounting a lakehouse to */test*:
 ```python
 from notebookutils import mssparkutils 
 mssparkutils.fs.mount( 
- "abfss://<workspace_id>@msit-onelake.dfs.fabric.microsoft.com/<lakehouse_id>", 
+ "abfss://<workspace_id>@onelake.dfs.fabric.microsoft.com/<lakehouse_id>", 
  "/test"
 )
 ```
+
+> [!NOTE]
+> Mounting a regional endpoint is not supported. Fabric only supports mounting the global endpoint, ```onelake.dfs.fabric.microsoft.com```.
 
 ### Access files under the mount point by using the *mssparktuils fs* API
 
