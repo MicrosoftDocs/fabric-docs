@@ -62,7 +62,7 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Include deleted objects**: Specify whether to query the existing records, or query all records including the deleted ones.
+- **Include deleted objects**: Specify whether to query the existing records (unselected), or query all records including the deleted ones (selected).
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ### Destination
@@ -74,7 +74,7 @@ The following properties are supported for Salesforce under the **Destination** 
 The following properties are **required**:
 
 - **Connection**: Select a Salesforce connection from the connection list. If no connection exists, then create a new Salesforce connection by selecting **New**.
-- **Object API**: Specify the Salesforce object name to retrieve data from. Select the name from the drop-down list.
+- **Object API**: Specify the Salesforce object name to write data to. Select the name from the drop-down list.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -128,7 +128,7 @@ The following tables contain more information about the copy activity in Salesfo
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 | **Connection** |Your connection to the destination data store.|\<your Salesforce connection> |Yes|connection|
-| **Object API** | The Salesforce object name to retrieve data from. | < your object name > | Yes | objectApiName |
+| **Object API** | Specify the Salesforce object name to write data to. | < your object name > | Yes | objectApiName |
 | **Write behavior** | The write behavior for the operation. Allowed values are **Insert** and **Upsert**. You can choose a behavior from the drop-down list. | • Insert<br>• Upsert| No (default is Insert) | writeBehavior: <br>insert<br>upsert |
 | **External ID field** | The name of the external ID field for the upsert operation. The specified field must be defined as **External ID Field** in the Salesforce object. It can't have NULL values in the corresponding input data. | < your external ID field >  | Yes for "Upsert" | externalIdFieldName |
 | **Ignore null values** | Indicates whether to ignore NULL values from input data during a write operation. | selected or unselected (default) | No | ignoreNullValues: <br>true or false (default) |
