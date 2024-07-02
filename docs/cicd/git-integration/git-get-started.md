@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 07/02/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -47,8 +47,6 @@ Only a workspace admin can connect a workspace to a repository, but once connect
 1. Select **Git integration**.
 
 1. Select your Git provider. Currently, Azure DevOps and GitHub are supported.
-
-    :::image type="content" source="./media/git-get-started/select-git-provider.png" alt-text="Screenshot of workspace settings window with choice of DevOps or GitHub to select.":::
 
 ### [Azure DevOps Connect](#tab/Azure)
 
