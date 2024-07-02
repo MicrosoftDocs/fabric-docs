@@ -10,11 +10,11 @@ ms.custom:
 ms.date: 03/24/2024
 ---
 
-# Feature Usage and Adoption report (preview)
+# Feature usage and adoption report (preview)
 
-The Feature Usage and Adoption report provides an in-depth analysis of how different features are utilized and adopted across your Microsoft Fabric tenant.
+The Feature usage and adoption report provides an in-depth analysis of how different features are utilized and adopted across your Microsoft Fabric tenant.
 
-You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To see this workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or have an admin share the report or semantic model directly with you. With build permissions to the semantic model, users can design a custom report that relies on the same underlying data.
+You can access the report from the [admin monitoring](monitoring-workspace.md) workspace. To see this workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or have an admin share the report or semantic model directly with you. With build permissions to the semantic model, users can design a custom report that relies on the same underlying data.
 
 ## Navigation
 
@@ -168,6 +168,6 @@ This section lists the report's considerations and limitations.
 
 ## Related content
 
-* [What is the Admin monitoring workspace?](monitoring-workspace.md)
+* [What is the admin monitoring workspace?](monitoring-workspace.md)
 
 * [Admin overview](microsoft-fabric-admin.md)
