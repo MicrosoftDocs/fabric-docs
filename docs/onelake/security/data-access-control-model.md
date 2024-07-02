@@ -265,7 +265,7 @@ Within a workspace, Fabric items can have permissions configured separately from
 | Read  | No by default, use OneLake RBAC to grant access. | No | No |
 | ReadAll | Yes by default. Use OneLake RBAC to restrict the access. | No | No |
 | Write | Yes | Yes | Yes |
-| Reshare, ViewOutput, ViewLogs | N/A - can't be granted on its own |  N/A - can't be granted on its own |  N/A - can't be granted on its own |
+| Execute, Reshare, ViewOutput, ViewLogs | N/A - can't be granted on its own |  N/A - can't be granted on its own |  N/A - can't be granted on its own |
 
 ### OneLake RBAC and Lakehouse SQL Analytics Endpoint permissions
 
