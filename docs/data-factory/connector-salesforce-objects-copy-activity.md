@@ -15,6 +15,14 @@ ms.custom:
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Salesforce.
 
+## Salesforce Bulk API 2.0 Limits
+
+We use Salesforce Bulk API 2.0 to query and ingest data. In Bulk API 2.0, batches are created for you automatically. You can submit up to **15,000** batches per rolling 24-hour period. If batches exceed the limit, you encounter failures.
+
+In Bulk API 2.0, only ingest jobs consume batches. Query jobs don't. For details, see [How Requests Are Processed in the Bulk API 2.0 Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/how_requests_are_processed.htm).
+
+For more information, see the **General Limits** section in [Salesforce developer limits](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_bulkapi.htm).
+
 ## Supported configuration
 
 For the configuration of each tab under copy activity, go to the following sections respectively.
@@ -82,7 +90,7 @@ Under **Advanced**, you can specify the following fields:
   - When it is selected: Leave the data in the destination object unchanged when you do an upsert or update operation. Insert a defined default value when you do an insert operation.
   - When it is unselected: Update the data in the destination object to NULL when you do an upsert or update operation. Insert a NULL value when you do an insert operation.
 
-- **Write batch size**: Specify the row count of data written to Salesforce in each batch.
+- **Write batch size**: Specify the row count of data written to Salesforce in each batch. Suggest set this value from 10,000 to 200,000. Too few rows in each batch reduces copy performance. Too many rows in each batch may cause API timeout.
 
 - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
@@ -123,8 +131,8 @@ The following tables contain more information about the copy activity in Salesfo
 | **Object API** | The Salesforce object name to retrieve data from. | < your object name > | Yes | objectApiName |
 | **Write behavior** | The write behavior for the operation. Allowed values are **Insert** and **Upsert**. You can choose a behavior from the drop-down list. | • Insert<br>• Upsert| No (default is Insert) | writeBehavior: <br>insert<br>upsert |
 | **External ID field** | The name of the external ID field for the upsert operation. The specified field must be defined as **External ID Field** in the Salesforce object. It can't have NULL values in the corresponding input data. | < your external ID field >  | Yes for "Upsert" | externalIdFieldName |
-| **Ignore null values** | Indicates whether to ignore NULL values from input data during a write operation. Allowed values: **false** (default), **true**. | selected or unselected (default) | No | ignoreNullValues: <br>true or false (default) |
-| **Write batch size** | The row count of data written to Salesforce in each batch. | \<number of rows> <br>(integer) | No (default is 100,000) | writeBatchSize |
+| **Ignore null values** | Indicates whether to ignore NULL values from input data during a write operation. | selected or unselected (default) | No | ignoreNullValues: <br>true or false (default) |
+| **Write batch size** | The row count of data written to Salesforce in each batch. Suggest set this value from 10,000 to 200,000. Too few rows in each batch reduces copy performance. Too many rows in each batch may cause API timeout. | \<number of rows> <br>(integer) | No (default is 100,000) | writeBatchSize |
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 
 
