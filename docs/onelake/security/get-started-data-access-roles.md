@@ -46,7 +46,7 @@ OneLake data access roles are only supported for lakehouse items.
 ## Create a role
 
 1. Open the lakehouse where you want to define security.
-2. In the right side of the lakehouse ribbon, select on **Manage OneLake data access (preview)**.
+2. In the right side of the lakehouse ribbon, select **Manage OneLake data access (preview)**.
 3. On the top left of the **Manage OneLake data access** pane, select **New Role**, and type the role name you want. The role name has certain restrictions:
     1. The role name can only contain alphanumeric characters.
     2. The role name must start with a letter.
@@ -60,7 +60,7 @@ OneLake data access roles are only supported for lakehouse items.
     1. In the bottom left, select **Save** to create your role.
 6. In the top left, select **Assign role** to open the role membership pane.
 7. Add people, groups, or email addresses to the **Add people or groups** control. For more information, see [Assign a member or group.](#assign-a-member-or-group)
-8. Select **Add** to move your selection to **Assigned people and groups** list. Selecting **Add** doesn't save your selection yet.
+8. Select **Add** to move your selection to **Assigned users** list. Selecting **Add** doesn't save your selection yet.
 9. Select **Save** and wait for the notification that the roles are successfully published.
 10. Select the **X** in the top right to exit the pane.
 
@@ -72,7 +72,7 @@ OneLake data access roles are only supported for lakehouse items.
 4. You can change which folders are being granted access to by selecting or deselecting the checkboxes next to each folder.
 5. To change the people, select **Assign role**. For more information, see [Assign a member or group.](#assign-a-member-or-group)
 6. To add more people, type names in the **Add people or groups** box and select **Add**.  
-7. To remove people, select their name under **Assigned people and groups** and select **Remove**.
+7. To remove people, select their name under **Assigned users** and select **Remove**.
 8. Select **Save** and wait for the notification that the roles are successfully published.
 9. Select the **X** in the top right to exit the pane.
 
@@ -86,11 +86,11 @@ OneLake data access roles are only supported for lakehouse items.
 
 ## Assign a member or group
 
-OneLake data access roles supports two different methods of adding users to a role. The main method is by adding users or groups directly to a role using the **Add people or group** box on the Assign role page. The second is using virtual memberships with the **Automatically add users with all these permissions** control.  
+OneLake data access roles supports two different methods of adding users to a role. The main method is by adding users or groups directly to a role using the **Add people or groups** box on the Assign role page. The second is using virtual memberships with the **Add users based on Lakehouse permissions** control.  
 
-Adding users directly to a role with the **Add people or group** box adds the users as explicit members of the role. These users show up with just their name and picture shown in the **Assigned people and groups** list.  
+Adding users directly to a role with the **Add people or group** box adds the users as explicit members of the role. These users show up with their name and picture shown in the **Assigned people and groups** list.  
 
-The virtual members allow for the membership of the role to be dynamically adjusted based on the Fabric item permissions of the users. By selecting **Automatically add users with all these permissions** box and selecting a permission, you're adding any user in the Fabric workspace who has all of the selected permissions as an implicit member of the role. For example, if you chose **ReadAll, Write** then any user of the Fabric workspace that has ReadAll AND Write permissions to the lakehouse would be included as a member of the role. You can see which users are being added as virtual members by looking for the "Assigned by workspace permissions" text under their name in the **Assigned people and groups** list. These members can't be manually removed and need to have their corresponding Fabric permission revoked in order to be unassigned.  
+The virtual members allow for the membership of the role to be dynamically adjusted based on the [Fabric item permissions](../../security/permission-model.md#item-permissions) of the users. By selecting the **Add users based on Lakehouse permissions** box and selecting a permission, you're adding any user in the Fabric workspace who has all of the selected permissions as an implicit member of the role. For example, if you chose **ReadAll, Write** then any user of the Fabric workspace that has ReadAll AND Write permissions to the item would be included as a member of the role. You can see which users are being added as virtual members by looking for the value "Lakehouse permissions" under the **Assigned by** column in the **Assigned users** list. These members can't be manually removed and need to have their corresponding Fabric permission revoked in order to be unassigned.
 
 Regardless of which membership type, data access roles support adding individual users, Microsoft Entra groups, and security principals.  
 
@@ -110,13 +110,13 @@ To get to the assign members page there are two ways:
 
 #### Assign users directly
 
-From the **Assign role** page, you can add members or groups by typing their name or email address in the **Add people or groups** box. Select on the result you want to select that user. You can repeat this step for as many users as you want. If you selected the wrong users, you can select the **X** next to their entry to remove them from the box, or select **Clear** to remove all entries. Once you're done, select **Add** to move the selected users to the access list. Adding them to the list doesn't save yet. It's a preview of the role membership list once those users are added.
+From the **Assign role** page, you can add members or groups by typing their name or email address in the **Add people or groups** box. Select the result you want to include that user. You can repeat this step for as many users as you want. If you selected the wrong users, you can select the **X** next to their entry to remove them from the box, or select **Clear** to remove all entries. Once you're done, select **Add** to move the selected users to the access list. Adding them to the list doesn't save yet. It's a preview of the role membership list once those users are added, and newly added users will have an indicator next to their name.
 
 To publish the access changes, select **Save** at the bottom of the pane.
 
 #### Assign virtual members
 
-To add virtual members, use the **Automatically add users with all these permissions** box. Select the box to open the dropdown picker to choose the Fabric permissions to virtualize. Users are virtualized if they have **all** of the checked permissions.  
+To add virtual members, use the **Add users based on Lakehouse permissions** box. Select the box to open the dropdown picker to choose the Fabric permissions to virtualize. Users are virtualized if they have **all** of the checked permissions.  
 
 The permissions that can be used for virtualization are:
 
@@ -125,14 +125,12 @@ The permissions that can be used for virtualization are:
 - Reshare
 - Execute
 - ReadAll
-- ViewOutput
-- ViewLogs
 
-Once a permission is selected, any virtualized members show in the **Assigned people and groups** list. The users have text beside their name indicating that they were assigned by the workspace permissions. These users can't be manually removed from the role assignment. Instead, remove the corresponding permissions from the virtualization control or remove the Fabric permission.
+After selecting the permissions, select **Add** to update the **Assigned users** list with the changes. The users have text beside their name indicating that they were assigned by the lakehouse permissions. These users can't be manually removed from the role assignment. Instead, remove the corresponding permissions from the **Add users based on Lakehouse permissions** control or remove the Fabric permission.
 
 ## Known issues
 
-The external data sharing preview feature (link) isn't compatible with the data access roles preview. When you enable the data access roles preview on a lakehouse, any existing external data shares may stop working.
+The [external data sharing preview](../../governance/external-data-sharing-overview.md) feature isn't compatible with the data access roles preview. When you enable the data access roles preview on a lakehouse, any existing external data shares may stop working.
 
 ## Related content
 
