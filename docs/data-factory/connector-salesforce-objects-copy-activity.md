@@ -43,18 +43,18 @@ The following properties are **required**:
       - **Object API**: Specify the Salesforce object name to retrieve data from. Select the name from the drop-down list.
 
     - If you select **Report**:
-      - **Report ID**: The ID of the Salesforce report to retrieve data from. It isn't supported in destination. There are [limitations](https://developer.salesforce.com/docs/atlas.en-us.api_analytics.meta/api_analytics/sforce_analytics_rest_api_limits_limitations.htm) when you use reports.
+      - **Report ID**: Specify the ID of the Salesforce report to retrieve data from. It isn't supported in destination. There are [limitations](https://developer.salesforce.com/docs/atlas.en-us.api_analytics.meta/api_analytics/sforce_analytics_rest_api_limits_limitations.htm) when you use reports.
 
         :::image type="content" source="./media/connector-salesforce-objects/use-query-report.png" alt-text="Screenshot showing Use query - Report." :::
 
     - If you select **SOQL Query**:
-      - **SOQL Query**: Use the custom query to read data. You can only use [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query with limitations [Understanding Bulk API 2.0 Query](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/queries.htm#SOQL%20Considerations). If query is not specified, all the data of the Salesforce object specified in "objectApiName" in dataset will be retrieved.
+      - **SOQL Query**: Use the custom query to read data. You can only use [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query with limitations [Understanding Bulk API 2.0 Query](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/queries.htm#SOQL%20Considerations). If you don't specify **SOQL query**, all the data of the Salesforce object specified in **Object API** or **Report ID** will be retrieved.
 
         :::image type="content" source="./media/connector-salesforce-objects/use-query-soql-query.png" alt-text="Screenshot showing Use query - SOQL Query." :::
 
 Under **Advanced**, you can specify the following fields:
 
-- **Include deleted objects**: Indicates whether to query the existing records, or query all records including the deleted ones. If not specified, the default behavior is false. Allowed values: **false** (default), **true**.
+- **Include deleted objects**: Specify whether to query the existing records, or query all records including the deleted ones.
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ### Destination
@@ -66,23 +66,23 @@ The following properties are supported for Salesforce under the **Destination** 
 The following properties are **required**:
 
 - **Connection**: Select a Salesforce connection from the connection list. If no connection exists, then create a new Salesforce connection by selecting **New**.
-- **Object API**: The Salesforce object name to retrieve data from.
+- **Object API**: Specify the Salesforce object name to retrieve data from. Select the name from the drop-down list.
 
 Under **Advanced**, you can specify the following fields:
 
-- **Write behavior**: The write behavior for the operation. Allowed values are **Insert** and **Upsert**. You can choose a behavior from the drop-down list.
+- **Write behavior**: Specify the write behavior for the operation. Allowed values are **Insert** and **Upsert**. You can choose a behavior from the drop-down list.
 
   If you select **Upsert**:
-  - **External ID field**: The name of the external ID field for the upsert operation. The specified field must be defined as "External ID Field" in the Salesforce object. It can't have NULL values in the corresponding input data.
+  - **External ID field**: The name of the external ID field for the upsert operation. The specified field must be defined as **External ID Field** in the Salesforce object. It can't have NULL values in the corresponding input data.
 
     :::image type="content" source="./media/connector-salesforce-objects/write-behavior-upsert.png" alt-text="Screenshot showing Write behavior - Upsert":::
 
-- **Ignore null values**: Indicates whether to ignore NULL values from input data during a write operation. Allowed values: **false** (default), **true**.
+- **Ignore null values**: Specify whether to ignore NULL values from input data during a write operation.
 
-  - **True**: Leave the data in the destination object unchanged when you do an upsert or update operation. Insert a defined default value when you do an insert operation.
-  - **False**: Update the data in the destination object to NULL when you do an upsert or update operation. Insert a NULL value when you do an insert operation.
+  - When it is selected: Leave the data in the destination object unchanged when you do an upsert or update operation. Insert a defined default value when you do an insert operation.
+  - When it is unselected: Update the data in the destination object to NULL when you do an upsert or update operation. Insert a NULL value when you do an insert operation.
 
-- **Write batch size**: The row count of data written to Salesforce in each batch.
+- **Write batch size**: Specify the row count of data written to Salesforce in each batch.
 
 - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
@@ -110,9 +110,9 @@ The following tables contain more information about the copy activity in Salesfo
 | *For **Report*** |  |  |  |  |
 | **Report ID** | The ID of the Salesforce report to retrieve data from. It isn't supported in destination. There are [limitations](https://developer.salesforce.com/docs/atlas.en-us.api_analytics.meta/api_analytics/sforce_analytics_rest_api_limits_limitations.htm) when you use reports. | \<your report ID> | Yes | reportId |
 | *For **SOQL Query*** |  |  |  |  |
-| **SOQL Query** | Use the custom query to read data. You can only use [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query with limitations [Understanding Bulk API 2.0 Query](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/queries.htm#SOQL%20Considerations). If query is not specified, all the data of the Salesforce object specified in "objectApiName" in dataset will be retrieved. |< your SOQL query >  | Yes | query |
+| **SOQL Query** | Use the custom query to read data. You can only use [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query with limitations [Understanding Bulk API 2.0 Query](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/queries.htm#SOQL%20Considerations). If you don't specify **SOQL query**, all the data of the Salesforce object specified in **Object API** or **Report ID** will be retrieved. |< your SOQL query >  | Yes | query |
 |  |  |  |  |  |
-| **Include deleted objects** | Indicates whether to query the existing records, or query all records including the deleted ones. If not specified, the default behavior is false. |select or unselect | No | includeDeletedObjects: <br>false (default) or true |
+| **Include deleted objects** | Indicates whether to query the existing records, or query all records including the deleted ones. | selected or unselected (default) | No | includeDeletedObjects: <br>true or false (default) |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
 ### Destination information
@@ -121,9 +121,9 @@ The following tables contain more information about the copy activity in Salesfo
 |:---|:---|:---|:---|:---|
 | **Connection** |Your connection to the destination data store.|\<your Salesforce connection> |Yes|connection|
 | **Object API** | The Salesforce object name to retrieve data from. | < your object name > | Yes | objectApiName |
-| **Write behavior** | The write behavior for the operation. Allowed values are **Insert** and **Upsert**. You can choose a behavior from the drop-down list. | \<your write behavior> | No (default is Insert) | writeBehavior: <br>insert, upsert |
-| **External ID field** | The name of the external ID field for the upsert operation. The specified field must be defined as "External ID Field" in the Salesforce object. It can't have NULL values in the corresponding input data. | < your external ID field >  | Yes for "Upsert" | externalIdFieldName |
-| **Ignore null values** | Indicates whether to ignore NULL values from input data during a write operation. Allowed values: **false** (default), **true**. | select or unselect | No | ignoreNullValues: <br>false (default) or true |
+| **Write behavior** | The write behavior for the operation. Allowed values are **Insert** and **Upsert**. You can choose a behavior from the drop-down list. | • Insert<br>• Upsert| No (default is Insert) | writeBehavior: <br>insert<br>upsert |
+| **External ID field** | The name of the external ID field for the upsert operation. The specified field must be defined as **External ID Field** in the Salesforce object. It can't have NULL values in the corresponding input data. | < your external ID field >  | Yes for "Upsert" | externalIdFieldName |
+| **Ignore null values** | Indicates whether to ignore NULL values from input data during a write operation. Allowed values: **false** (default), **true**. | selected or unselected (default) | No | ignoreNullValues: <br>true or false (default) |
 | **Write batch size** | The row count of data written to Salesforce in each batch. | \<number of rows> <br>(integer) | No (default is 100,000) | writeBatchSize |
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 
