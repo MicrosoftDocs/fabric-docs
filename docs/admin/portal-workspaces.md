@@ -142,7 +142,7 @@ Once you go inside the My workspace, you can perform any actions as if it's your
 
 ### Designate a default capacity for My workspaces
 
-A Fabric admin or capacity admin can designate a capacity as the default capacity for My workspaces. To configure a defualt capacity for My workspaces, go to the [details](capacity-settings.md#details) section in your [capacity settings](capacity-settings.md#capacity-settings).
+A Fabric admin or capacity admin can designate a capacity as the default capacity for My workspaces. To configure a default capacity for My workspaces, go to the [details](capacity-settings.md#details) section in your [capacity settings](capacity-settings.md#capacity-settings).
 
 For details, see [Designate a default capacity for My workspaces](/power-bi/enterprise/service-admin-premium-manage#designate-a-default-capacity-for-my-workspaces)
 
