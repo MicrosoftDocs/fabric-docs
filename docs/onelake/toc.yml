@@ -11,7 +11,7 @@ items:
     href: create-lakehouse-onelake.md
   - name: Implement medallion lakehouse architecture
     href: onelake-medallion-lakehouse-architecture.md
-  - name: Transform with Spark and query data with SQL
+  - name: Transform with Apache Spark and query data with SQL
     href: onelake-onecopy-quickstart.md
   - name: Connect to ADLS and transform data with Azure Databricks
     href: onelake-shortcuts-adb-quickstart.md
@@ -30,10 +30,12 @@ items:
   - name: Create an Amazon S3 compatible shortcut
     href: create-s3-compatible-shortcut.md
   - name: Create a Google Cloud Storage shortcut
-    href: create-gcs-shortcut.md  
+    href: create-gcs-shortcut.md
   - name: Create shortcuts to on-premises data
     href: create-on-premises-shortcut.md
-  - name: Access OneLake shortcuts in a Spark notebook
+  - name: Shortcut security
+    href: onelake-shortcut-security.md
+  - name: Access OneLake shortcuts in an Apache Spark notebook
     href: access-onelake-shortcuts.md
   - name: Use shortcuts REST API
     href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json

@@ -49,8 +49,8 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subscription](/azure/role-based-access-control/overview). If you do not have access to these roles in a subscription, you can ask your Azure subscription administrator to create a custom role with the following [Azure role-based access control](/azure/role-based-access-control/overview) (Azure RBAC) permissions:
   * Microsoft.Fabric/capacities/read
   * Microsoft.Fabric/capacities/write
-  * Microsoft.Fabric/suspend/action
-  * Microsoft.Fabric/resume/action
+  * Microsoft.Fabric/capacities/suspend/action
+  * Microsoft.Fabric/capacities/resume/action
 
 To buy an Azure SKU, follow these steps:
 

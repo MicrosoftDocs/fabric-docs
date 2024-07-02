@@ -5,14 +5,14 @@ ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: concept-article
-ms.date: 05/13/2024
+ms.date: 06/06/2024
 
 #customer intent: As a data analytics solutions architect, or as a data engineer, I want to learn about task flows and how they can help facilitate the completion of a complex data analytics solution. 
 
 ---
 # Task flows in Microsoft Fabric (preview)
 
-This article describes the task flows feature in Microsoft Fabric. Its target audience is data analytics solution architects who want to use a task flow to build a visual representation of their project, and engineers who are working on the project and want to use the task flow to facilitate their work.
+This article describes the task flows feature in Microsoft Fabric. Its target audience is data analytics solution architects who want to use a task flow to build a visual representation of their project, engineers who are working on the project and want to use the task flow to facilitate their work, and others who want to use the task flow to filter the item list to help navigate and understand the workspace.
 
 ## Overview
 
@@ -23,6 +23,9 @@ Fabric task flow is a workspace feature that enables you to build a visualizatio
 Fabric provides a range of predefined, end-to-end task flows based on industry best practices that are intended to make it easier to get started with your project. In addition, you can customize the task flows to suit your specific needs and requirements. This enables you to create a tailored solution that meets your unique business needs and goals.
 
 Each workspace has one task flow. The task flow occupies the upper part of workspace list view. It consists of a canvas where you can build the visualization of your data analytics project, and a side pane where you can see and edit details about the task flow, tasks, and connectors.
+
+> [!NOTE]
+> You can [resize or hide the task flow](./task-flow-work-with.md#resize-or-hide-the-taskflow) using the controls on the horizontal separator bar.
 
 ## Key concepts
 
@@ -60,7 +63,7 @@ Connectors are arrows that represent logical connections between the tasks in th
 ## Considerations and limitations
 
 * The positioning of tasks on the task flow canvas is persistent. However, due to a known issue, when a new task is added to the canvas, all tasks that aren't connected to another task will return to their default position. Therefore, whenever possible, it's recommended to connect all tasks before adding a new task.
-* Creating paginated reports and semantic models from a task isn't supported.
+* Creating paginated reports, dataflows Gen1, and semantic models from a task isn't supported.
 * Creating reports from a task is supported only if a published semantic model is picked. 
 
 ## Related content

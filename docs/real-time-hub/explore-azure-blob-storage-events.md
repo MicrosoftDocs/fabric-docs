@@ -15,9 +15,7 @@ ms.date: 05/21/2024
 This article shows how to explore Azure blob storage events in Fabric Real-Time hub. Azure blob storage events allow you to receive notifications when certain actions occur on your blobs. For example, you can receive a notification when a new blob is created, or an existing blob is modified. These events can be used to set alert on other actions or workflows, such as updating a database or sending a notification. This article provides the properties and schema for Azure blob storage events.  
 
 
-
-> [!NOTE]
-> Consuming Fabric events via eventstream or Data Activator isn't supported if the capacity region of the eventstream or Data Activator is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
+[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
 
 ## View Azure blob storage events detail page
@@ -84,6 +82,9 @@ An event has the following top-level data:
 | `id` | string | Unique identifier for the event. | `00000000-0000-0000-0000-000000000000` |
 | `data` | object | Blob storage event data. | `{{Data object}}` |
 | `specversion` | string | CloudEvents schema specification version. | `1.0` |
+| `fabricsource` | string | ID of the Fabric eventstream for the Azure Blob Storage event source. | `/tenants/00000000-0000-0000-0000-000000000000/workspaces/00000000-0000-0000-0000-000000000000/items/00000000-0000-0000-0000-000000000000` |
+| `fabricsubject` | string | ID of the event link for the Azure Blob Storage event source. | `eventLinks/00000000-0000-0000-0000-000000000000` |
+
 
 The `data` object has the following properties: 
 

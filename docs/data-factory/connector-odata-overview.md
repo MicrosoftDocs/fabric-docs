@@ -25,8 +25,8 @@ The OData connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Anonymous<br> Basic |
-| **Lookup activity** | None | Anonymous<br> Basic |
+| **Copy activity (source/-)** | None <br> On-premises | Anonymous<br> Basic |
+| **Lookup activity** | None <br> On-premises | Anonymous<br> Basic |
 
 To learn about how to connect to OData in data pipelines, go to [Set up your OData connection](connector-odata.md#set-up-your-connection-in-a-data-pipeline).
 

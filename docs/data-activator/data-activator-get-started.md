@@ -3,7 +3,7 @@ title: Get started using Data Activator
 description: Learn how to get started using Data Activator.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: concept-article
 ms.custom:
   - ignite-2023-fabric
 ms.date: 11/20/2023

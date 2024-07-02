@@ -17,10 +17,7 @@ When you navigate to Real-Time hub in Fabric, you see the following three tabs i
 :::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-tab.png" alt-text="Screenshot that shows the Fabric events tab of the Real-Time hub." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-tab.png":::
 
 
-
-> [!NOTE]
-> - Consuming Fabric events via eventstream or Data Activator isn't supported if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
-> - While consuming Fabric workspace item events, make sure that the capacity region of consuming eventstream or Data Activator is the same as the Tenant home region.
+[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
 ### Columns
 Fabric events have the following columns: 

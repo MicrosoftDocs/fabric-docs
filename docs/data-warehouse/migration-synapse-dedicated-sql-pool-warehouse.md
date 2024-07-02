@@ -161,8 +161,8 @@ This table summarizes information for data schema (DDL), database code (DML), an
 
 | Option Number | Option | What it does | Skill/Preference | Scenario |
 |:--|:--|:--|:--|:--|
-|1| [Data Factory](#option-1-schemadata-migration---copy-wizard-and-foreach-copy-activity) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline| Simplified all in one schema (DDL) and data migration.  Recommended for dimension tables.|
-|2| [Data Factory with partition](#option-2-ddldata-migration---data-pipeline-using-partition-option) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline | Using partitioning options to increase read/write parallelism providing 10x throughput vs option 1, recommended for fact tables.|
+|1| [Data Factory](#option-1-schemadata-migration---copy-wizard-and-foreach-copy-activity) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline| Simplified all in one schema (DDL) and data migration.  Recommended for [dimension tables](dimensional-modeling-dimension-tables.md).|
+|2| [Data Factory with partition](#option-2-ddldata-migration---data-pipeline-using-partition-option) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline | Using partitioning options to increase read/write parallelism providing 10x throughput vs option 1, recommended for [fact tables](dimensional-modeling-fact-tables.md).|
 |3| [Data Factory with accelerated code](#option-3-ddl-migration---copy-wizard-foreach-copy-activity) | Schema (DDL) conversion | ADF/Pipeline | Convert and migrate the schema (DDL) first, then use CETAS to extract and COPY/Data Factory to ingest data for optimal overall ingestion performance. |
 |4| [Stored procedures accelerated code](#migration-using-stored-procedures-in-synapse-dedicated-sql-pool) | Schema (DDL) conversion<br />Data extract<br />Code assessment | T-SQL | SQL user using IDE with more granular control over which tasks they want to work on. Use COPY/Data Factory to ingest data. |
 |5| [SQL Database Project extension for Azure Data Studio](#migration-using-sql-database-project) | Schema (DDL) conversion<br />Data extract<br />Code assessment | SQL Project | SQL Database Project for deployment with the integration of option 4. Use COPY or Data Factory to ingest data.|
@@ -243,7 +243,7 @@ The two previous options are great data migration options for *smaller* database
 
 #### Recommended use
 
-You can continue to use Data Factory to convert your schema (DDL). Using the Copy Wizard, you can select the specific table or **All tables**. By design, this migrates the schema and data in one step, extracting the schema without any rows, using the a false condition, `TOP 0` in the query statement.
+You can continue to use Data Factory to convert your schema (DDL). Using the Copy Wizard, you can select the specific table or **All tables**. By design, this migrates the schema and data in one step, extracting the schema without any rows, using the false condition, `TOP 0` in the query statement.
 
 The following code sample covers schema (DDL) migration with Data Factory.
 
@@ -427,7 +427,7 @@ For ingestion into Fabric Warehouse, use COPY INTO or Fabric Data Factory, depen
 
 Several factors to note so that you can design your process for maximum performance:
 
-- With Fabric, there isn't any resource contention loading multiple tables from ADLS to Fabric Warehouse concurrently. As a result, there is no performance degradation loading parallel threads. The maximum ingestion throughput will only be limited by the compute power of your Fabric capacity.
+- With Fabric, there isn't any resource contention when loading multiple tables from ADLS to Fabric Warehouse concurrently. As a result, there is no performance degradation when loading parallel threads. The maximum ingestion throughput will only be limited by the compute power of your Fabric capacity.
 - Fabric workload management provides separation of resources allocated for load and query. There's no resource contention while queries and data loading executed at the same time.
 
 ## Related content

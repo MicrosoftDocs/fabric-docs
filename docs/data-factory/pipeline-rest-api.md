@@ -4,13 +4,13 @@ description: This article describes the available REST APIs for pipelines in Dat
 author: kromerm
 ms.author: makromer
 ms.topic: conceptual
-ms.date: 03/13/2024
+ms.date: 06/28/2024
 ---
 
 # Microsoft Fabric data pipeline public REST API (Preview)
 
 > [!IMPORTANT]
-> The Microsoft Fabric API for Data Factory Create/Read/Update/Delete (CRUD) is currently in preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> The Microsoft Fabric API for Data Factory is currently in public preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 In Microsoft Fabric, Data Factory APIs consist solely of CRUD operations for pipelines and dataflows. Currently, only data pipelines are supported. Dataflows APIs will be released later. Other common areas for data integration projects are in separate APIs: schedules, monitoring, connections, have their own APIs in Fabric. The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/). Also refer to the [Core items API](/rest/api/fabric/core/items) and [Job scheduler](/rest/api/fabric/core/job-scheduler).
 
@@ -309,7 +309,7 @@ Body:
 { 
   "executionData": { 
     "parameters": {
-      "param_waitsec": 10" 
+      "param_waitsec": "10" 
     } 
   } 
 }
@@ -356,6 +356,63 @@ Response 202: (No body)
 
 > [!NOTE]
 > After cancelling a job you can check the status either by calling **Get item job instance** or looking at the **View run history** in the Fabric user interface.
+
+
+## Query activity runs
+
+example:
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/datapipelines/pipelineruns/<job id>/queryactivityruns```
+
+Body:
+
+```json
+{
+  "filters":[],
+  "orderBy":[{"orderBy":"ActivityRunStart","order":"DESC"}],
+  "lastUpdatedAfter":"2024-05-22T14:02:04.1423888Z",
+  "lastUpdatedBefore":"2024-05-24T13:21:27.738Z"
+}
+```
+
+> [!NOTE]
+> "job id" is the same id created and used in the Job Scheduler Public APIs
+
+Response 200:
+```json
+[
+    {
+        "pipelineName": "ca91f97e-5bdd-4fe1-b39a-1f134f26a701",
+        "pipelineRunId": "f2fa7a0e-586d-4d73-a2b4-7ddc785243ae",
+        "activityName": "Wait1",
+        "activityType": "Wait",
+        "activityRunId": "ef579d3d-d23e-477a-8150-d6e15d66a532",
+        "linkedServiceName": "",
+        "status": "Succeeded",
+        "activityRunStart": "2024-05-23T13:43:03.6397566Z",
+        "activityRunEnd": "2024-05-23T13:43:31.3906179Z",
+        "durationInMs": 27750,
+        "input": {
+            "waitTimeInSeconds": 27
+        },
+        "output": {},
+        "error": {
+            "errorCode": "",
+            "message": "",
+            "failureType": "",
+            "target": "Wait1",
+            "details": ""
+        },
+        "retryAttempt": null,
+        "iterationHash": "",
+        "userProperties": {},
+        "recoveryStatus": "None",
+        "integrationRuntimeNames": null,
+        "executionDetails": null,
+        "id": "/SUBSCRIPTIONS/4DA86268-68B8-4B08-AD58-A7AEE54138CD/RESOURCEGROUPS/4DA86268-68B8-4B08-AD58-A7AEE54138CD/PROVIDERS/MICROSOFT.TRIDENT/WORKSPACES/4DA86268-68B8-4B08-AD58-A7AEE54138CD/pipelineruns/f2fa7a0e-586d-4d73-a2b4-7ddc785243ae/activityruns/ef579d3d-d23e-477a-8150-d6e15d66a532"
+    }
+]
+
+```
 
 ## Known limitations
 

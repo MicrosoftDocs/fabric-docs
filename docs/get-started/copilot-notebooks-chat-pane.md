@@ -9,9 +9,10 @@ ms:custom:
   - ignite-2023-fabric
 ms.date: 01/16/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 #CustomerIntent: As a Data Scientist, or Data engineer, I want to use Copilot for Data Science and Data Engineering to increase my productivity and help answer questions I have about my data to use with notebooks.
 ---
-# Use the Copilot for Data Science and Data Engineering chat panel
+# Use the Copilot for Data Science and Data Engineering chat panel (preview)
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
@@ -76,7 +77,7 @@ Copilot for Data Science and Data Engineering notebooks is an AI assistant that 
 
 - The more specifically you describe your goals in your chat panel entries, the more accurate the Copilot responses.
 - You can "copy" or "insert" code from the chat panel. At the top of each code block, two buttons allow input of items directly into the notebook.
-- To clear your conversation, select the **Broom** icon at the top to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
+- To clear your conversation, select the :::image type="content" source="media/copilot-notebooks-chat-pane/broom-icon.png" alt-text="Screenshot showing the Copilot clean up prompt."::: icon at the top to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
 - Configure the Copilot privacy settings with the %configure_privacy_settings command, or the %set_sharing_level command in the chat magics library.
 - Transparency: Read our Transparency Note for details on data and algorithm use.
 

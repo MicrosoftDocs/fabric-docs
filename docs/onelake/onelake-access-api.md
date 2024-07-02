@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/27/2023
+ms.date: 06/04/2024
 ---
 
 # Connecting to Microsoft OneLake
@@ -45,6 +45,7 @@ OneLake also supports the [Azure Blob Filesystem driver](/azure/storage/blobs/da
 ```http
 abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<path>/<fileName>
 ```
+The abfs driver URI doesn't allow special characters, such as spaces, in the workspace name. In these cases, you can reference workspaces and items with the globally unique identifiers (GUIDs) as described earlier in this section.
 
 ## Authorization
 
@@ -58,7 +59,7 @@ For quick, ad-hoc testing of OneLake using direct API calls, here's a simple exa
    > OneLake only supports tokens in the `Storage` audience. In the following example, we set the audience through the `ResourceTypeName` parameter.
 
   ```powershell
-  az login --allow-no-subscriptions
+  Connect-AzAccount
   $testToken = Get-AzAccessToken -ResourceTypeName Storage
   $testToken.Token | Set-Clipboard
   ```

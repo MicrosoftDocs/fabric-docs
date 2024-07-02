@@ -15,7 +15,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 # Add custom endpoint source to an eventstream
 
-If you want to connect your own application with an eventstream, you can add a custom endpoint (former custom app) source. Then you can send data to the eventstream from your own application with the connection endpoint displayed as the custom endpoint (former custom app). This article shows you how to add a custom endpoint (former custom app) source to an eventstream.
+If you want to connect your own application with an eventstream, you can add a custom endpoint (i.e., Custom App in standard capability) source. Then you can send data to the eventstream from your own application with the connection endpoint displayed as the custom endpoint (i.e., Custom App in standard capability). This article shows you how to add a custom endpoint (i.e., Custom App in standard capability) source to an eventstream.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 

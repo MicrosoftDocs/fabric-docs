@@ -3,7 +3,7 @@ title: Get data for Data Activator from Real-Time Hub
 description: Learn how to get data from Real-Time Hub for use in Data Activator.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.date: 05/21/2024
 ---

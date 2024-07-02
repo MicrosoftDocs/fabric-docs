@@ -3,7 +3,7 @@ title: Get data for Data Activator from Power BI
 description: Learn how to get data from Power BI for use in Data Activator.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.date: 11/16/2023
 ---

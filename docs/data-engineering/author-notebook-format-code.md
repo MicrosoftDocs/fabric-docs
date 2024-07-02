@@ -1,6 +1,6 @@
 ---
 title: "Format code in Microsoft Fabric notebooks"
-description: "Learn how to extend a Microsoft Fabric notebook to use a PEP 8-compliant code formatter."
+description: Learn best practices for formatting code, including how to extend a Microsoft Fabric notebook to use a PEP 8-compliant code formatter.
 author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: snehagunda, arunsethia
@@ -11,7 +11,7 @@ ms.date: 10/30/2023
 
 # Format code in Microsoft Fabric notebooks
 
-There are many benefits to adopting good style and conventions when you write a Python notebook or Spark job definition. By consistently formatting your code, you can:
+There are many benefits to adopting good style and conventions when you write a Python notebook or Apache Spark job definition. By consistently formatting your code, you can:
 
 - Make it easier to read the code.
 - Increases maintainability of the code.
