@@ -1,6 +1,6 @@
 ---
-title: Git integration branches
-description: Learn how to use Git branches to work in your own isolated environment and improve collaboration with your team.
+title: Git integration workspaces
+description: Learn how to use Git branches to work in your own isolated workspace environment and improve collaboration with your team.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit

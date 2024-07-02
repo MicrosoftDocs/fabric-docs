@@ -36,7 +36,7 @@ It’s recommended to read the [overview of Git integration](./intro-to-git-inte
 
 ### Connect to a Git repo
 
-Only a workspace admin can connect a workspace to a repository, but once connected, anyone with [permission](./git-integration-process.md#permissions) can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to an Azure  or GitHub Repo, follow these steps:
+Only a workspace admin can connect a workspace to a repository, but once connected, anyone with [permission](./git-integration-process.md#permissions) can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to an Azure or GitHub Repo, follow these steps:
 
 1. Sign into Fabric and navigate to the workspace you want to connect with.
 
@@ -73,7 +73,7 @@ If it's the first time connecting, you need to <a href="https://docs.github.com/
 
 ### Connect to a workspace
 
-If you're connecting to a GitHub branch that someone else created and shared, follow the instructions for [Connecting to a shared workspace](./git-integration-process.md#connect-to-a-shared-workspace).
+If the workspace is already connected to GitHub, follow the instructions for [Connecting to a shared workspace](./git-integration-process.md#connect-to-a-shared-workspace).
 
 #### [Azure DevOps branch Connect](#tab/Azure)
 

@@ -5,12 +5,12 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: include
 ms.custom: 
-ms.date: 06/25/2024
+ms.date: 07/02/2024
 ---
 
 ### General Git integration limitations
 
-- The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be at least as strong as the authentication method for Azure DevOps. For example, if Azure DevOps requires multifactor authentication, Power BI needs to require multifactor authentication as well.
+- The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Power BI needs to require multifactor authentication as well.
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
 - GitHub doesn't support exports to different geographical regions. Even if [cross-geo export](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) is enabled.
 - Sovereign clouds aren't supported.
@@ -30,14 +30,14 @@ ms.date: 06/25/2024
 
 ### GitHub Enterprise limitations
 
-The following GitHub Enterprise settings aren't supported:
+Some GitHub Enterprise settings aren't supported. For example:
 
 - IP allow list
 - Private networking
 
 ### Workspace limitations
 
-- Only the workspace admin can manage the connections to the [Azure Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
+- Only the workspace admin can manage the connections to the [Git Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
 Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.  
 - The workspace folder structure isn't reflected in the Git repository. Workspace items in folders are exported to the root directory.
 
