@@ -110,8 +110,8 @@ mutation MyMutation {
 Use the **Query variables** pane on the right side of the **Query** tab to pass any parameters as variables to your queries or mutations. Variables work the same way as variables in any other programming language. Each variable needs to be declared with a name that is used to access the value stored in it. With the previous mutation example, you can modify it slightly to use query variables.
 
 ```json
-mutation MyMutation ($title: String!, $content: String!, $author: String!, $published: boolean){
-  createPost(title: $title, content: $content, author: author$) {
+mutation MyMutation ($title: String!, $content: String!, $author: String!){
+  createPost(title: $title, content: $content, author: $author) {
     id
     title
     content
