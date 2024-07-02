@@ -77,7 +77,7 @@ A Spark pool can be defined with node sizes that range from a small compute node
 | Medium | 8 | 56 GB |
 | Large | 16 | 112 GB |
 | X-Large | 32 | 224 GB |
-| XX-Large | 64 | 448 GB |
+| XX-Large | 64 | 400 GB |
 
 ## Autoscale
 
