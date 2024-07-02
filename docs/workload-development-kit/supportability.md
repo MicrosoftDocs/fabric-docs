@@ -4,7 +4,7 @@ description: Guide for ISVs to support their customers on Fabric.
 author: AtefSawaed
 ms.author: atefsaw
 ms.reviewer: amirshwar
-ms.topic: supportability
+ms.topic: concept-article
 ms.custom:
 ms.date: 07/01/2024
 ---
