@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: include
 ms.custom: 
-ms.date: 07/02/2024
+ms.date: 06/25/2024
 ---
 
 ### General Git integration limitations
@@ -24,7 +24,8 @@ ms.date: 07/02/2024
 #### [GitHub limitations](#tab/github)
 
 - GitHub can't enforce [cross-geo validations](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
-- The commit size is limited to 100 MB.
+- The commit size is limited to 100 MB per file.
+- The rate of requests is limited. In general, no more than 80 content-generating requests per minute and no more than 500 content-generating requests per hour are allowed. For more information see [secondary rate limits](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#about-secondary-rate-limits).
 
 ---
 
