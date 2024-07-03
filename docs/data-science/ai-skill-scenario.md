@@ -32,8 +32,8 @@ First create a Lakehouse and populate it with the necessary data.
 If you already have an instance of Adventure Works DW in a Warehouse or Lakehouse, you can skip this step. If not, create a Lakehouse from a Notebook, and use the Notebook to populate the Lakehouse with the data.
 
 **Step 1:** Create a new Notebook in the workspace where you want to create your AI skill.
-**Step 2:** Select the "+ Data sources" button in the left nav of the Explorer pane, to add an existing Lakehouse or create a new Lakehouse.
-**Step 3:** Add the below code in the top cell.
+**Step 2:** Select the "+ Data sources" button in the left nav of the Explorer pane. This adds an existing Lakehouse or create a new Lakehouse.
+**Step 3:** Add the following code snippet in the top cell.
 
 ```python
 import pandas as pd
@@ -69,7 +69,7 @@ Provide a name to create an AI skill.
 
 ## Select the data
 
-Select the Lakehouse you created, and select "Connect". You must then select the tables you want the AI skill to have available access.
+Select the Lakehouse you created, and select "Connect." You must then select the tables you want the AI skill to have available access.
 
 This exercise uses these tables:
 
@@ -107,7 +107,7 @@ The corresponding SQL indeed draws from the FactInternetSales table, and it sort
 
 As you continue to experiment with queries, you should add more instructions.
 
-For our scenario, we'll use this set of instructions:
+Our scenario uses this set of instructions:
 
 - Whenever I ask about "the most sold" products or items, the metric of interest is sales revenue, and not order quantity.
 - The primary table to use is the FactInternetSales. Only use FactResellerSales if explicitly asked about resales or when asked about total sales.
@@ -133,7 +133,7 @@ For our scenario, we'll use this set of instructions:
 - ListPrice in DimProduct is the suggested selling price, while the UnitPrice in FactInternetSales and FactResellerSales is the actual price at which each unit was sold. For most use cases on revenue, the unit price should be used.
 - Rank top resellers by sales amount.
 
-If you copy this text into the Notes for the model textbox, the AI will refer to these instructions when it generates its SQL queries.
+If you copy this text into the Notes for the model textbox, the AI refers to these instructions when it generates its SQL queries.
 
 ## Provide examples
 
@@ -145,7 +145,7 @@ For example, the question: "**How many active customers did we have June 1st, 20
 
 However, it isn't a good answer.
 
-Part of the problem is that "active customer" does not have a formal definition. More instructions in the Notes to the model textbox might help, but users will frequently ask this question. Therefore, make sure that the AI handles the question correctly. The relevant query is moderately complex, so provide an example, as shown in this screenshot:
+Part of the problem is that "active customer" doesn't have a formal definition. More instructions in the Notes to the model textbox might help, but users might frequently ask this question. Therefore, make sure that the AI handles the question correctly. The relevant query is moderately complex, so provide an example, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/examples-ai-skill-sql-query.png" alt-text="Screenshot showing an example AI skill SQL query." lightbox="./media/ai-skill-scenario/examples-ai-skill-sql-query.png":::
 

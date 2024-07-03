@@ -29,7 +29,7 @@ The AI skill relies on Generative AI - specifically, Large Language Models (LLMs
 
 ## AI skill configuration
 
-Think of the AI skill as you'd think about PowerBI reports. You first build the Report, and then you share the report with your colleagues who can consume it to get their data insights. The AI skill works in a similar way. You need to first set it up. Then, you can share it with your colleagues.
+Think of the AI skill as you'd think about Power BI reports. You first build the Report, and then you share the report with your colleagues who can consume it to get their data insights. The AI skill works in a similar way. You need to first set it up. Then, you can share it with your colleagues.
 
 You should expect to handle some necessary configuration steps before the AI skill works properly. An AI skill can often provide out-of-the-box answers to reasonable questions, but could provide incorrect answers for your specific situation. The incorrect answers typically occur because the AI is missing context about your company, setup, or definition of key terms. To solve the problem, provide the AI with instructions and example question-query pairs. You can use these powerful techniques to guide the AI to the right answers.
 
@@ -45,29 +45,29 @@ The technology behind the AI skill and the Fabric Copilots is similar. They both
 
 - The product team tested the AI skill on different public and private T-SQL task benchmarks, to ascertain the quality of SQL queries.
 
-- The product team also invested in additional harm mitigations. These include technological approaches to focus Copilot output on the context of the chosen data sources.
+- The product team also invested in extra harm mitigations. These include technological approaches to focus Copilot output on the context of the chosen data sources.
 
 ## Limitations
 
 The AI skill is currently in public preview and has certain limitations.
 
-- Generative AI does not interpret the results of an executed T-SQL query. It only generates that query.
+- Generative AI doesn't interpret the results of an executed T-SQL query. It only generates that query.
 - The AI skill might return incorrect answers. You should test the AI skill with your colleagues to verify that it answers questions as expected. If it makes mistakes, provide it with more examples and instructions.
-- Only T-SQL queries on Warehouses and Lakehouses is supported.
-- The AI skill only generates T-SQL "read" queries. It does not generate T-SQL queries that create, update, or delete data.
+- Only T-SQL queries on Warehouses and Lakehouses are supported.
+- The AI skill only generates T-SQL "read" queries. It doesn't generate T-SQL queries that create, update, or delete data.
 - The AI skill can only access data that you provide, and it only uses the data resource configurations that you provide.
 - The AI skill has data access permissions that match the permissions granted to the AI skill questioner. This is true when the AI skill is published to other locations - for example, Copilot for Microsoft 365 or Microsoft Copilot Studio.
-- You can't use the AI skill to access unstructured data resources. This includes .pdf, .docx or .txt files, for example.
+- You can't use the AI skill to access unstructured data resources. These resources include .pdf, .docx or .txt files, for example.
 - At this time, you can only select a single Warehouse or a single Lakehouse.
-- The AI skill does not support a conversational interface. Every question must be fully self-contained. It doesn't remember earlier questions.
+- The AI skill doesn't support a conversational interface. Every question must be fully self-contained. It doesn't remember earlier questions.
 - It blocks non-English language questions or instructions.
 - You can't connect the AI skill to Fabric Copilots, Microsoft Teams, or other experiences outside of Fabric.
 - You can't change the LLM that the AI skill uses.
 - The AI skill loses accuracy if you use nondescriptive column names.
 - The AI skill loses accuracy if you use large schemas with dozens of tables.
-- The AI skill is in a private preview status. This means that it has a limited scope and it may have bugs. Because of these considerations, we recommend that you avoid its use in production systems, and that you avoid its use for critical decisions.
-- Non-descriptive data resource column and table names will have a big, negative impact on generated T-SQL query quality. Use of descriptive names is recommended.
-- Use of too many columns and tables may lower AI skill performance.
+- The AI skill is in a preview status. This means that it has a limited scope and it might have bugs. Because of these considerations, we recommend that you avoid its use in production systems, and that you avoid its use for critical decisions.
+- Nondescriptive data resource column and table names have a significant, negative impact on generated T-SQL query quality. Use of descriptive names is recommended.
+- Use of too many columns and tables might lower AI skill performance.
 - The AI skill is currently designed to handle simple queries. Complex queries that require many joins or sophisticated logic tend to have lower reliability.
 
 ## Related content
