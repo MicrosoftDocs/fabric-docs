@@ -49,7 +49,6 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - Maximum file size is 25 MB.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
 - When naming a folder in Git, the logical ID (Guid) is added as a prefix before the type if the item’s display name:
-
   - Has more than 256 characters
   - Ends with `.`’ or a space
   - Contains any of the following characters: `"`, `/`, `:`, `<`, `>`, `\\`, `*`, `?`, `|`
@@ -66,7 +65,6 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 
 ### Sync and commit limitations
 
-- The commit size is limited to 100 MB for GitHub and 125 MB for DevOps.
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
 - Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](/fabric/admin/git-integration-admin-settings#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview) for help.
 - Works with [limited items]((/fabric/cicd/git-integration/intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they're ignored.
