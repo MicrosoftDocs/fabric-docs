@@ -26,8 +26,7 @@ ChatGPT and GPT-4 are language models optimized for conversational interfaces. T
 
 `deployment_name` could be one of:
 
--   `gpt-35-turbo-16k`
--   `gpt-4`
+-   `gpt-35-turbo-0125`
 -   `gpt-4-32k`
 
 ### Initialization
@@ -45,7 +44,7 @@ mwc_token = TokenUtils().get_openai_mwc_token()
 prebuilt_AI_base_url = mlflow_env_configs.workload_endpoint + "cognitive/openai/"
 print("workload endpoint for OpenAI: \n" + prebuilt_AI_base_url)
 
-deployment_name = "gpt-35-turbo-16k" # deployment_id could be one of {gpt-35-turbo-16k, gpt-4 or gpt-4-32k}
+deployment_name = "gpt-35-turbo-0125" # deployment_id could be one of {gpt-35-turbo-0125 or gpt-4-32k}
 openai_url = prebuilt_AI_base_url + f"openai/deployments/{deployment_name}/chat/completions?api-version=2024-02-01"
 print("The full uri of ChatGPT is: ", openai_url)
 
