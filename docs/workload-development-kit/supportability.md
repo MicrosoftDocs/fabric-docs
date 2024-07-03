@@ -3,10 +3,10 @@ title: Supportability - Best Practices for ISVs
 description: Guide for ISVs to support their customers on Fabric.
 author: AtefSawaed
 ms.author: atefsawaed
-ms.reviewer: amirshwar
+ms.reviewer: muliwienrib
 ms.topic: concept-article
 ms.custom:
-ms.date: 07/01/2024
+ms.date: 07/03/2024
 ---
 
 # Supportability: Best Practices for ISVs
