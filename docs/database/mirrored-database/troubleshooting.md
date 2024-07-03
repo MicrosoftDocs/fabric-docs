@@ -75,6 +75,14 @@ In the **Monitoring** page, the date shown is the last time data was successfull
 
 Changing the source database is not supported. Create a new mirrored database.
 
+#### Issues with Pause/Resume/Delete Fabric capacity/workspace
+
+| Cause    | Recommended Resolution     |
+|--------------|-----------|
+| Fabric capacity paused/deleted --> mirroring will stop | Step 1: resume/assign capacity from Azure portal <br> Step 2: go to Fabric mirror item, stop the replication. If the replication has not stopped successfully, execute the following stored procedure on your Azure SQL Database: exec sp_change_feed_disable_db; <br> Step 3: start the replication for the mirrored item | 
+| Fabric capacity resumed --> mirroring will not be resumed | Step 1: go to Fabric mirror item, stop the replication. If the replication has not stopped successfully, execute the following stored procedure on your Azure SQL Database: exec sp_change_feed_disable_db; <br> Step 2: start the replication for the mirrored item  | 
+| Workspace deleted --> mirroring stops automatically | In case mirroring is still active on the Azure SQL database execute the following stored procedure on your Azure SQL Database: exec sp_change_feed_disable_db |
+
 ## Related content
 
 - [What is Mirroring in Fabric?](overview.md)
