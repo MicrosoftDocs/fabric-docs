@@ -20,7 +20,7 @@ You can access the report from the [admin monitoring](monitoring-workspace.md) w
 
 The report is designed for admins to analyze a variety of Fabric usage scenarios. Use the Date range slicer to filter activity data across all pages for a specific range of time over the last 30 days.
 
-:::image type="content" source="./media/admin-monitoring/date-slicer.png" alt-text="Date range slicer on the Adoption report.":::
+:::image type="content" source="./media/admin-monitoring/date-slicer.png" alt-text="Screenshot of the date range slicer on the Adoption report.":::
 
 Additionally, use the filter pane to filter activity data based on the desired analysis. Filters are available across different characteristics of usage, including capacity, user, and item-related info.
 
@@ -32,7 +32,7 @@ The Feature Usage and Adoption report is comprised of five pages:
 
 * **Activity Overview** - Provides a high-level overview of Fabric usage across the organization
 
-* **Analysis** - Visualizes usage across different activity dimensions in a highly-flexible format
+* **Analysis** - Visualizes usage across different activity dimensions in a highly flexible format
 
 * **Activity Details** - Shows detailed information on specific activity scenarios
 
@@ -68,13 +68,13 @@ Continuing the example from the [Activity Overview](#activity-overview-page) pag
 
 To drill through to the [Activity Details](#activity-details-page) page:
 
-1. Right-click the visual element (such as Operation name) you want to drill through from
+1. Right-click the visual element (such as Operation name) you want to drill through from.
 
-2. Select *Drill through*
+2. Select *Drill through*.
 
-3. Select *Activity Details*
+3. Select *Activity Details*.
 
-:::image type="content" source="./media/feature-usage-adoption/analysis-drill-through-option.gif" alt-text="Image shows how to drill through from the Analysis page to the Activity Details page.":::
+:::image type="content" source="./media/feature-usage-adoption/analysis-drill-through-option.gif" alt-text="Animation that shows how to drill through from the Analysis page to the Activity Details page.":::
 
 ### Activity Details page
 
