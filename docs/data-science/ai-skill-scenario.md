@@ -5,9 +5,10 @@ author: IAmGrootel
 ms.author: avangrootel
 ms.reviewer: franksolomon
 reviewer: avangrootel
-ms.service: AISkill
+ms.service: fabric
+ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
-ms.date: 06/19/2024
+ms.date: 07/03/2024
 ms.collection: ce-skilling-ai-copilot
 
 ---

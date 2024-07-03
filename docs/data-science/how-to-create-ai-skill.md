@@ -5,9 +5,10 @@ author: IAmGrootel
 ms.author: avangrootel
 ms.reviewer: franksolomon
 reviewer: avangrootel
-ms.service: AI skill
+ms.service: fabric
+ms.subservice: data-science
 ms.topic: how-to #Don't change
-ms.date: 06/19/2024
+ms.date: 07/03/2024
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As an Analyst, I want to create an AI skill that relies on generative AI, that my colleagues and I can use to have conversations about our data.
