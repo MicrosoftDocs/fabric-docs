@@ -164,6 +164,16 @@
           "source_path_from_root": "/docs/data-factory/metrics-app-compute-page.md",
           "redirect_url": "/fabric/enterprise/metrics-app-compute-page",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-oracle-overview.md",
+          "redirect_url": "/fabric/data-factory/connector-oracle-database-overview",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-oracle-copy-activity.md",
+          "redirect_url": "/fabric/data-factory/connector-oracle-database-copy-activity",
+          "redirect_document_id": false
         }
     ]
 }
