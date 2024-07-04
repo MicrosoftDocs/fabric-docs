@@ -8,7 +8,7 @@ ms.topic: troubleshooting
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/11/2024
+ms.date: 07/04/2024
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -112,7 +112,7 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: When branching out to a new workspace, I’m navigated to the new workspace but Git integration isn’t enabled there.
 **Cause**: The [Git integration switch](../admin/git-integration-admin-settings.md) might be enabled for your source workspace, but not for the whole tenant as the tenant admin can delegate control of the switch to workspace admins. If this is the case, your new workspace will not have Git integration enabled and you will need to manually enable it from the workspace settings before syncing the workspace with Git.
-**Solution**: Enable Git integration from the workspace settings of your new workspace
+**Solution**: Enable Git integration from the workspace settings of your new workspace.
 
 ### Commit issues
 
@@ -120,6 +120,15 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: If there were updates made to the Git branch, commits are disabled until you update your workspace.  
 **Solution**: To enable commits, update your workspace.
+
+#### Maximum commit size exceeded
+
+**Description of problem**: When trying to commit items to GitHub, I get an error saying that I exceeded maximum commit size.
+
+  :::image type="content" source="./media/troubleshoot-cicd/maximum-commit-size.png" alt-text="Screenshot or error message that says Maximum commit size exceeded.":::
+
+**Cause**: The number of non-textual files per commit is limited. In general, up to about 80 files per minute and 500 files per hour are allowed. If your commit contains a large number of files, the commit might fail. For more information see [secondary rate limits](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#about-secondary-rate-limits).
+**Solution**: If you're trying to commit several items at once, consider committing them in smaller batches. If your commit contains one item with many files, contact [support](https://support.fabric.microsoft.com/).
 
 ### Update issues
 

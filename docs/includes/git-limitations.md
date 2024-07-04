@@ -25,7 +25,7 @@ ms.date: 07/04/2024
 
 - GitHub can't enforce [cross-geo validations](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 - The commit size is limited to 100 MB per file.
-- The number of non-textual files per commit is limited. Therefore, if you have several items to commit, it might sometimes be necessary to  For more information see [secondary rate limits](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#about-secondary-rate-limits).
+- The number of non-text files per commit is limited. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information see [secondary rate limits](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#about-secondary-rate-limits).
 
 ---
 
