@@ -1,5 +1,5 @@
 ---
-title: Spark connector for Microsoft Fabric data warehouses
+title: Spark connector for Microsoft Fabric Synapse Data Warehouse
 description: Learn how to use a Spark connector to access and work with data from a Microsoft Fabric warehouse and the SQL analytics endpoint of a lakehouse.
 author: ms-arali
 ms.author: arali
@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 05/10/2024
 ---
 
-# Spark connector for Microsoft Fabric data warehouses
+# Spark connector for Microsoft Fabric Synapse Data Warehouse
 
-The Spark connector for Microsoft Fabric data warehouses enables Spark developers and data scientists to access and work with data from a data warehouse and the SQL analytics endpoint of a lakehouse. The connector offers the following capabilities:
+The Spark connector for Synapse Data Warehouse enables Spark developers and data scientists to access and work with data from [a warehouse and the SQL analytics endpoint of a lakehouse](../data-warehouse/data-warehousing.md#data-warehousing-items-in-microsoft-fabric). The connector offers the following capabilities:
 
-* You can work with data from both the data warehouse and the SQL analytics endpoint from the same workspace or across multiple workspaces.
-* The SQL engine's endpoint is automatically discovered based on workspace context.
+* You can work with data from a warehouse or SQL analytics endpoint in the same workspace or across multiple workspaces.
+* The SQL analytics endpoint of a Lakehouse is automatically discovered based on workspace context.
 * The connector has a simplified Spark API, abstracts the underlying complexity, and operates with just one line of code.
 * While you're accessing a table or a view, the connector upholds security models defined at the SQL engine level. These models include object-level security (OLS), row-level security (RLS), and column-level security (CLS).
 * The connector comes preinstalled within the Fabric runtime, which eliminates the need for separate installation.
@@ -26,13 +26,13 @@ Microsoft Entra authentication is an integrated authentication approach. Users s
 
 ### Permissions
 
-To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the data warehouse or SQL analytics endpoint (item level). Users also need granular object-level permissions to read data from specific tables or views. To learn more, see [Security for data warehousing in Microsoft Fabric](../data-warehouse/security.md).
+To connect to the SQL engine, users need at least Read permission (similar to CONNECT permission in SQL Server) on the warehouse or SQL analytics endpoint (item level). Users also need granular object-level permissions to read data from specific tables or views. To learn more, see [Security for data warehousing in Microsoft Fabric](../data-warehouse/security.md).
 
 ## Code templates and examples
 
 ### Use a method signature
 
-The following command shows the `synapsesql` method signature for the read request. The three-part `tableName` argument is required for accessing tables or views from a Fabric data warehouse and the SQL analytics endpoint of a lakehouse. Update the argument with the following names, based on your scenario:
+The following command shows the `synapsesql` method signature for the read request. The three-part `tableName` argument is required for accessing tables or views from a warehouse and the SQL analytics endpoint of a lakehouse. Update the argument with the following names, based on your scenario:
 
 * Part 1: Name of the warehouse or lakehouse.
 * Part 2: Name of the schema.
@@ -110,7 +110,7 @@ Next, change the language preference on the notebook or at the cell level to PyS
 df = spark.read.table("<Temporary View Name>")
 ```
 
-### Create a lakehouse table based on data from a data warehouse
+### Create a lakehouse table based on data from a warehouse
 
 These lines of code provide an example to read data from a table or view in a Spark DataFrame in Scala and use it to create a lakehouse table:
 
@@ -127,7 +127,7 @@ Upon completion, the read response snippet appears in the cell's output. Failure
 
 Currently, the connector:
 
-* Supports data retrieval from Fabric data warehouses and SQL endpoints of lakehouse items.
+* Supports data retrieval from Fabric warehouses and SQL analytics endpoints of lakehouse items.
 * Supports Scala only.
 * Doesn't support custom queries or query pass-through.
 * Doesn't implement pushed-down optimization.

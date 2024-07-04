@@ -5,7 +5,7 @@ author: mihart
 ms.reviewer: mihirwagle
 ms.author: mihart
 ms.topic: conceptual
-ms.custom:
+ms.collection: ce-skilling-ai-copilot
 ms.date: 06/18/2024
 ---
 

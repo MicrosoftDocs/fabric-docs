@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 06/23/2024
+ms.date: 06/30/2024
 ---
 
 # Tenant settings index
