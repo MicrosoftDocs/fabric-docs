@@ -38,7 +38,7 @@ For details, intended uses, and limitations of these features, read about [Copil
 
 The AI skill will only have access to the data that you provide. It will make use of the schema (table name and column name), as well as the Notes for the model that you provide in the UI.  
 
-- The AI skill will only have access to data that the questioner has access to. If you use the AI skill, your credentials will be used to access the underlying database. If you do not have access to the underlying data, the AI skill will not either. This holds true when you publish the AI skill to other destinations, such as Copilot for Microsoft 365 or Microsoft Copilot Studio, where the AI skill can be used by other questioners.
+- The AI skill will only have access to data that the questioner has access to. If you use the AI skill, your credentials will be used to access the underlying database. If you don't have access to the underlying data, the AI skill won't either. This holds true when you publish the AI skill to other destinations, such as Copilot for Microsoft 365 or Microsoft Copilot Studio, where the AI skill can be used by other questioners.
 
 ## Evaluation of Copilot for Data Science
  
