@@ -67,17 +67,12 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
 - Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](/fabric/admin/git-integration-admin-settings#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview) for help.
-- Works with [limited items]((/fabric/cicd/git-integration/intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they're ignored.
+- Works with [limited items](/fabric/cicd/git-integration/intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they're ignored.
 - Duplicating names isn't allowed – even if Power BI allows it, the update, commit, or undo action fails.
 - B2B isn’t supported.
 - [Conflict resolution](/fabric/cicd/git-integration/conflict-resolution) is partially done in Git.
-
 - During the *Commit to Git* process, the Fabric service deletes files *inside the item folder* that aren't part of the item definition. Unrelated files not in an item folder aren't deleted.
-
 - After you commit changes, you might notice some unexpected changes to the item that you didn't make. These changes are semantically insignificant and can happen for several reasons. For example:
-
   - Manually changing the item definition file. These changes are valid, but might be different than if done through the editors. For example, if you rename a semantic model column in Git and import this change to the workspace, the next time you commit changes to the semantic model, the *bim* file will register as changed and the modified column pushed to the back of the `columns` array. This is because the AS engine that generates the *bim* files pushes renamed columns to the end of the array. This change doesn't affect the way the item operates.
-  
   - Committing a file that uses *CRLF* line breaks. The service uses *LF* (line feed) line breaks. If you had item files in the Git repo with *CRLF* line breaks, when you commit from the service these files are changed to *LF*. For example, if you open a report in desktop, save the *.pbip* project and upload it to Git using *CRLF*.
-
 - Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git diff after each refresh.
