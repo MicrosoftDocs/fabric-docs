@@ -127,7 +127,7 @@ To understand the considerations and limitations of various lifecycle management
 
   :::image type="content" source="./media/troubleshoot-cicd/maximum-commit-size.png" alt-text="Screenshot or error message that says Maximum commit size exceeded.":::
 
-**Cause**: The number of non-text files you can commit at once is limited. In general, up to about 80 files per minute and 500 files per hour are allowed. If your commit contains a large number of files, the commit might fail. For more information see <a href="https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#about-secondary-rate-limits" target="_blank">secondary rate limits</a>.  
+**Cause**: The number of non-text files you can commit at once is limited. In general, up to about 80 files per minute and 500 files per hour are allowed. If your commit contains a large number of non-text files, the commit might fail. For more information see <a href="https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#about-secondary-rate-limits" target="_blank">secondary rate limits</a>.  
 **Solution**: If you're trying to commit several items at once, consider committing them in smaller batches. If your commit contains one item with many files, contact <a href="https://support.fabric.microsoft.com/" target="_blank">support</a>.
 
 ### Update issues
