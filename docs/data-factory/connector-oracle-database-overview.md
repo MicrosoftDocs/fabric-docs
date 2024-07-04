@@ -27,7 +27,7 @@ The Oracle database connector supports the following capabilities in data pipeli
 
 To learn about how to connect to Oracle database in data pipelines, go to [Set up your Oracle database connection](connector-oracle-database.md).
 
-To learn more about the copy activity configuration for Oracle database in data pipelines, go to [Configure in a Data pipeline copy activity.](connector-oracle-database-copy-activity.md).
+To learn more about the copy activity configuration for Oracle database in data pipelines, go to [Configure in a data pipeline copy activity](connector-oracle-database-copy-activity.md).
 
 > [!NOTE]
 >To use Oracle connector in date pipelines, please install [Oracle Client for Microsoft Tools (OCMT)](https://www.oracle.com/database/technologies/appdev/ocmt.html) on the computer running on-premises data gateway. For detailed steps, go to [Prerequisites](connector-oracle-database.md#prerequisites).
