@@ -86,7 +86,7 @@ Items in stage A are automatically paired with items in stage B when a new works
 
 Paired items appear on the same line in the pipeline content list. Items that aren't paired, appear on a line by themselves:
 
-:::image type="content" source="./media/assign-pipeline/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
+:::image type="content" source="./media/intro-to-deployment-pipelines/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
 
 * Items that are paired remain paired even if you change their names. Therefore, paired items can have different names.
 * Items added after the workspace is assigned to a pipeline aren't automatically paired. Therefore, you can have identical items in adjacent workspaces that aren't paired.
