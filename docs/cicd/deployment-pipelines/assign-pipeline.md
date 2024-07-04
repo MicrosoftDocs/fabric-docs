@@ -84,6 +84,15 @@ Pairing can happen in one of two ways:
 
   If a single item in each stage has the same name and type then pairing occurs. If there's more than one item in a stage that has the same name and type, then items are paired if they're in the same folder. If the folders aren't the same, pairing fails.
 
+| Scenario | Stage A (e.g. Dev)                                       | Stage B (e.g. Test)                                       | Comment                                                        |
+|----------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------|
+| 1        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ✅ Pairing occurs                                                 |
+| 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
+|          |                                                          | Name: *PBI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
+| 3        | Name: *PBI Report*<br>Type: *Report*<br>*Folder A* | Name: *PBI Report*<br>Type: *Report*<br>*Folder B*  | ✅ Deployment succeeds but <br>❌ this report is not paired with dev     |
+|          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*Folder A*  | ✅ Pairing occurs using folder as a tie breaker for duplicates |
+|          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*No folder* | ✅ Deployment succeeds but <br>❌ this report is not paired with dev     |
+
 Once items are paired, renaming them *doesn't* unpair the items. Thus, there can be paired items with different names.
 
 ### See which items are paired

@@ -82,16 +82,11 @@ Items in stage A are automatically paired with items in stage B when a new works
 * If an item exists in stage B with the same name and type (semantic model, report etc) as an item in stage A, the items are paired. This is known as an incremental deploy.
 * If more than one item exists in stage B that matches an item in stage A, items in the same folder are automatically paired (again assuming no duplicates at the sub folder level). If the items are in different folders, they aren't paired.
 
-| Scenario | Stage A (e.g. Dev)                                       | Stage B (e.g. Test)                                       | Comment                                                        |
-|----------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------|
-| 1        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ✅ Pairing occurs                                                 |
-| 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
-|          |                                                          | Name: *PBI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
-| 3        | Name: *PBI Report*<br>Type: *Report*<br>*Folder A* | Name: *PBI Report*<br>Type: *Report*<br>*Folder B*  | ✅ Deployment succeeds but <br>❌ this report is not paired with dev     |
-|          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*Folder A*  | ✅ Pairing occurs using folder as a tie breaker for duplicates |
-|          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*No folder* | ✅ Deployment succeeds but <br>❌ this report is not paired with dev     |
-
 <!--- :::image type="content" source="./media/intro-to-deployment-pipelines/pairing-rules.png" alt-text="Diagram describing when items are paired in different circumstances."::: --->
+
+Paired items appear on the same line in the pipeline content list. Items that aren't paired, appear on a line by themselves:
+
+:::image type="content" source="./media/assign-pipeline/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
 
 * Items that are paired remain paired even if you change their names. Therefore, paired items can have different names.
 * Items added after the workspace is assigned to a pipeline aren't automatically paired. Therefore, you can have identical items in adjacent workspaces that aren't paired.
