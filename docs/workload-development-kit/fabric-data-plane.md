@@ -93,7 +93,7 @@ Alternatively, if you choose to utilize Azure SQL Database you can implement the
             }
     ```
 
-1. This connection can now be queried in order to access data from the Warehouse. For more information on utilizing the Microsoft.Data.SqlClient namespace, reference the[Microsoft.Data.SqlClient Namespace Documentation](/dotnet/api/microsoft.data.sqlclient)
+1. This connection can now be queried in order to access data from the Warehouse. For more information on utilizing the Microsoft.Data.SqlClient namespace, reference the [Microsoft.Data.SqlClient Namespace Documentation](/dotnet/api/microsoft.data.sqlclient).
 
 ### Writing data 
 
