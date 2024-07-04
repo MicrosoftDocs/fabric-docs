@@ -44,7 +44,7 @@ More details on how to obtain a token can be found in the [Microsoft Fabric Work
 ### Read Metadata
 
 Fabric REST APIs also provide you with a way to access the different properties of items. For example, querying the [Get Lakehouse API](/rest/api/fabric/lakehouse/items/get-lakehouse?tabs=HTTP) provides you with the metadata for a certain Lakehouse, including useful properties such as OneLake paths and the SQL connection string.
-Another useful endpoint is the [Get Warehouse API](https://learn.microsoft.com/en-us/rest/api/fabric/warehouse/items/get-warehouse?tabs=HTTP), which returns the following information:
+Another useful endpoint is the [Get Warehouse API](https://learn.microsoft.com/rest/api/fabric/warehouse/items/get-warehouse?tabs=HTTP), which returns the following information:
 
 ```
     {
@@ -61,7 +61,7 @@ Another useful endpoint is the [Get Warehouse API](https://learn.microsoft.com/e
     }
 ```
 
-Here, the "ConnectionInfo" property is the FQDN (Fully Qualified Domain Name) of the Warehouse SQL Server. With this FQDN, we'll be able to establish a SQL connection. For more information, see [Connectivity to Data Warehousing in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity).
+Here, the "ConnectionInfo" property is the FQDN (Fully Qualified Domain Name) of the Warehouse SQL Server. With this FQDN, we'll be able to establish a SQL connection. For more information, see [Connectivity to Data Warehousing in Microsoft Fabric](https://learn.microsoft.com/fabric/data-warehouse/connectivity).
 For implementation examples, refer to the [Microsoft Fabric Workload Development Kit](./index.yml).
 
 ### Reading data
@@ -93,7 +93,7 @@ Alternatively, if you choose to utilize Azure SQL Database you can implement the
             }
     ```
 
-1. This connection can now be queried in order to access data from the Warehouse. For more information on utilizing the Microsoft.Data.SqlClient namespace, reference the[Microsoft.Data.SqlClient Namespace Documentation](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient?view=sqlclient-dotnet-standard-5.2)
+1. This connection can now be queried in order to access data from the Warehouse. For more information on utilizing the Microsoft.Data.SqlClient namespace, reference the[Microsoft.Data.SqlClient Namespace Documentation](https://learn.microsoft.com/dotnet/api/microsoft.data.sqlclient)
 
 ### Writing data 
 
