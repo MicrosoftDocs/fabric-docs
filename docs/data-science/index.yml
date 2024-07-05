@@ -59,8 +59,11 @@ landingContent:
         links:
           - text: Overview
             url: ../get-started/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
-          - text: Overview 2 without query string
-            url: ../get-started/copilot-notebooks-overview.md  
+          - text: Chat-magics in Notebooks
+            url: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+          - text: Use the Copilot chat panel
+            url: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+
 
 # Card 
   - title: Preparing Data
