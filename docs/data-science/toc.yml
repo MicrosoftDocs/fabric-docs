@@ -30,7 +30,7 @@ items:
   - name: Overview of Chat-magics in Notebooks
     href: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Use the Copilot chat panel
-    href: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    href: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Notebooks
   items:
   - name: Create and use notebooks
