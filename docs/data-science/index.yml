@@ -58,7 +58,9 @@ landingContent:
       - linkListType: concept
         links:
           - text: Overview
-            url: "../get-started/copilot-notebooks-overview.md"
+            url: ../get-started/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+          - text: Overview 2 without query string
+            url: ../get-started/copilot-notebooks-overview.md  
 
 # Card 
   - title: Preparing Data
@@ -96,7 +98,7 @@ landingContent:
           - text: Fabric autologging
             url: mlflow-autologging.md 
 
-docs/identity/enterprise-apps/manage-consent-requests.md# Card 
+# Card 
   - title: AI with SynapseML
     linkLists:
       - linkListType: get-started
