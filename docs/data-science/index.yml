@@ -58,7 +58,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: Overview
-            url: ../get-started/copilot-notebooks-overview.md
+            url: "../get-started/copilot-notebooks-overview.md"
 
 # Card 
   - title: Preparing Data
