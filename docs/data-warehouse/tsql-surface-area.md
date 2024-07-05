@@ -4,7 +4,7 @@ description: T-SQL surface area of the SQL analytics endpoint and Warehouse in M
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 06/02/2024
+ms.date: 07/05/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -35,8 +35,8 @@ At this time, the following list of commands is NOT currently supported. Don't t
 
 - `ALTER TABLE ADD`/`ALTER`/`DROP COLUMN`
     - Currently, only the following subset of `ALTER TABLE` operations in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] are supported:
-      - ADD of `NULLABLE` columns of supported column data types.
-      - ADD and DROP of PRIMARY KEY, UNIQUE and FOREIGN_KEY column constraints but only if and only if the NOT ENFORCED option has been specified. All other ALTER TABLE operations are blocked.
+      - ADD nullable columns of supported column data types.
+      - ADD or DROP PRIMARY KEY, UNIQUE, and FOREIGN_KEY column constraints, but only if the NOT ENFORCED option has been specified. All other ALTER TABLE operations are blocked.
 - `BULK LOAD`
 - `CREATE ROLE`
 - `CREATE USER`
