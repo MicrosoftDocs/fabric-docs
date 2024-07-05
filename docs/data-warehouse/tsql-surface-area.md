@@ -34,7 +34,9 @@ This article covers the T-SQL language syntax capabilities of [!INCLUDE [product
 At this time, the following list of commands is NOT currently supported. Don't try to use these commands. Even though they might appear to succeed, they could cause issues to your warehouse.
 
 - `ALTER TABLE ADD`/`ALTER`/`DROP COLUMN`
-    - Currently, `ALTER TABLE` in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is only supported for constraints.
+    - Currently, only the following subset of `ALTER TABLE` operations in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] are supported:
+      - ADD of `NULLABLE` columns of supported column data types.
+      - ADD and DROP of PRIMARY KEY, UNIQUE and FOREIGN_KEY column constraints but only if and only if the NOT ENFORCED option has been specified. All other ALTER TABLE operations are blocked.
 - `BULK LOAD`
 - `CREATE ROLE`
 - `CREATE USER`
