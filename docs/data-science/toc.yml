@@ -23,6 +23,14 @@ items:
     href: tutorial-data-science-batch-scoring.md
   - name: 5 Create a Power BI report
     href: tutorial-data-science-create-report.md
+- name: Copilot for Data Science
+  items:
+  - name: Copilot for Data Science
+    href: ../get-started/copilot-notebooks-overview?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Overview of Chat-magics in Notebooks
+    href: ../get-started/copilot-notebooks-chat-magics?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Use the Copilot chat panel
+    href: ../get-started/copilot-notebooks-chat-magics?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Notebooks
   items:
   - name: Create and use notebooks

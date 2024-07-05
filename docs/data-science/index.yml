@@ -52,8 +52,17 @@ landingContent:
           - text: Create, evaluate, and score a churn prediction model
             url: customer-churn.md 
 
+# Card
+  - title: Copilot
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Overview
+            url: ../get-started/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+          - text: Overview 2 without query string
+            url: ../get-started/copilot-notebooks-overview.md  
 
-  # Card 
+# Card 
   - title: Preparing Data
     linkLists:
       - linkListType: how-to-guide
@@ -89,7 +98,7 @@ landingContent:
           - text: Fabric autologging
             url: mlflow-autologging.md 
 
-# Card 
+docs/identity/enterprise-apps/manage-consent-requests.md# Card 
   - title: AI with SynapseML
     linkLists:
       - linkListType: get-started
