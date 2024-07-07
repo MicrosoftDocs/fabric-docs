@@ -1,6 +1,6 @@
 ---
-title: Supportability - Best Practices for ISVs
-description: Guide for ISVs to support their customers on Fabric.
+title: Supportability - Best Practices for partners
+description: Guide for partners to support their customers on Fabric.
 author: AtefSawaed
 ms.author: atefsawaed
 ms.reviewer: muliwienrib
@@ -9,17 +9,17 @@ ms.custom:
 ms.date: 07/03/2024
 ---
 
-# Supportability: Best Practices for ISVs
+# Supportability: Best Practices for partners
 
-This document provides guidance for Independent Software Vendors (ISVs) on how to support their customers. It covers best practices for maintaining, saving, and correlating important request headers, as well as recommendations for logging, monitoring, and support.
+This document provides guidance for Fabric's partners on how to support their customers. It covers best practices for maintaining, saving, and correlating important request headers, as well as recommendations for logging, monitoring, and support.
 
 ## Overview
 
-Fabric enables third-party vendors (ISVs) to integrate their services into the platform using the Fabric Development Kit. This document outlines the supportability practices that ISVs should follow to ensure effective troubleshooting and customer support.
+Fabric enables third-party partners to integrate their services into the platform using the Fabric Development Kit. This document outlines the supportability practices that partners should follow to ensure effective troubleshooting and customer support.
 
 ## Request Headers
 
-Fabric exposes two important headers in requests made between the customer and Fabric, which are crucial for supportability:
+Fabric exposes two important headers in [requests](https://learn.microsoft.com/en-us/rest/api/fabric/workload/workloadapi/item-lifecycle/create-item?tabs=HTTP) made between the customer and Fabric, which are crucial for supportability:
 
 - **ActivityId**: A globally unique ID that can be used by you, the developer, to correlate the request with your systems when a Fabric user interacts with your workload.
 - **RequestId**: A globally unique ID that helps us (Fabric) to correlate your request with our traces, which will help us investigate the issue and assist you. If you cannot determine the issue on your end using the `ActivityId`, you can provide the `RequestId` to us when reporting an issue. Ensure that you maintain and save the `RequestId` so it can be easily provided later.
@@ -52,4 +52,4 @@ To effectively support your customers, it is essential to maintain, save, and co
 
 ## Conclusion
 
-By following these best practices, ISVs can effectively support their customers on the Fabric data platform, ensuring a seamless and efficient troubleshooting process. Proper logging, monitoring, request management, and support protocols are essential to maintaining high service quality and customer satisfaction.
+By following these best practices, partners can effectively support their customers on the Fabric data platform, ensuring a seamless and efficient troubleshooting process. Proper logging, monitoring, request management, and support protocols are essential to maintaining high service quality and customer satisfaction.
