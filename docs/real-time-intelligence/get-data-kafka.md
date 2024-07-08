@@ -13,6 +13,16 @@ ms.date: 04/21/2024
 
 [!INCLUDE [ingest-data-kafka-2](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-kafka-2.md)]
 
+## Clean up resources
+
+Clean up the items created by navigating to the workspace in which they were created.
+
+1. In your workspace, hover over your database and select the **More menu [...] > Delete**.
+
+1. Select **Delete**. You can't recover deleted items.
+
+[!INCLUDE [ingest-data-kafka-3](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-kafka-3.md)]
+
 ## Related content
 
 * [Create a KQL database](create-database.md)
