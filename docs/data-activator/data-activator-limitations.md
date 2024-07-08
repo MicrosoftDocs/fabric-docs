@@ -82,7 +82,7 @@ Each recipient of email alerts must be an internal email address, which means th
 
 ## Maximum data throughput for Eventstreams data
 
-For Eventstreams data sources, Data Activator supports throughput up to two events per second. If you send Eventstreams data to Data Activator at a more frequent rate, Data Activator may throttle the input, which means that Data Activator wouldn't process all events in the stream.
+For Eventstreams data sources, during the Public Preview, Data Activator supports throughput up to 10 events per second. If you send Eventstreams data to Data Activator at a more frequent rate, Data Activator may throttle the input, which means that Data Activator wouldn't process all events in the stream. At General Availability, reflex item sources will support thousands of events per second. If you'd like more information on this capability include early access to previews of the higher rate if available, please post in our [Community Forum](https://community.fabric.microsoft.com/t5/Reflex/bd-p/da_reflex_).  
 
 ## Maximum number of trigger actions
 
