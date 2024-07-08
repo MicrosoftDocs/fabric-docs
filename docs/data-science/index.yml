@@ -41,8 +41,9 @@ landingContent:
         links:
           - text: Use the Copilot chat panel
             url: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
-
-  # Card 
+# Card - AI Skill will go here
+  
+# Card 
   - title: Get started
     linkLists:
       - linkListType: get-started
@@ -77,7 +78,7 @@ landingContent:
           - text: How to read and write data with Pandas
             url: read-write-pandas.md 
 
-  # Card 
+# Card 
   - title: Training Models
     linkLists:
       - linkListType: overview
