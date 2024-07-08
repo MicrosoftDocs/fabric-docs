@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Data Science documentation in Microsoft Fabric # < 60 chars
-summary: Learn more about the Data Science experience in Microsoft Fabric  # < 160 chars
+summary: Learn more about the Data Science and AI experience in Microsoft Fabric  # < 160 chars
 
 metadata:
   title: Data Science in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
@@ -40,18 +40,6 @@ landingContent:
           - text: Machine learning models
             url: machine-learning-model.md 
 
-# Card 
-  - title: Tutorials
-    linkLists:
-      - linkListType: tutorial
-        links:
-          - text: How to use end-to-end AI samples
-            url: use-ai-samples.md 
-          - text: Forecasting
-            url: time-series-forecasting.md 
-          - text: Create, evaluate, and score a churn prediction model
-            url: customer-churn.md 
-
 # Card
   - title: Copilot
     linkLists:
@@ -66,6 +54,17 @@ landingContent:
           - text: Use the Copilot chat panel
             url: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 
+# Card 
+  - title: Tutorials
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: How to use end-to-end AI samples
+            url: use-ai-samples.md 
+          - text: Train and evaluate a time series forecasting model
+            url: time-series-forecasting.md 
+          - text: Create, evaluate, and score a churn prediction model
+            url: customer-churn.md 
 
 # Card 
   - title: Preparing Data
