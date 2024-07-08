@@ -7,6 +7,8 @@ items:
     href: security-overview.md
   - name: Security fundamentals
     href: security-fundamentals.md 
+  - name: Power BI security
+    href: power-bi-security.md     
   - name: Permission model
     href: permission-model.md  
   - name: Governance and compliance documentation

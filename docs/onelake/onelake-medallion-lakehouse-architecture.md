@@ -84,7 +84,7 @@ Medallion architecture consists of three distinct layers (or zones).
 
 - **Bronze:** Also known as the _raw zone_, this first layer stores source data in its original format. The data in this layer is typically append-only and immutable.
 - **Silver:** Also known as the _enriched zone_, this layer stores data sourced from the bronze layer. The raw data has been cleansed and standardized, and it's now structured as tables (rows and columns). It might also be integrated with other data to provide an enterprise view of all business entities, like customer, product, and others.
-- **Gold:** Also known as the _curated zone_, this final layer stores data sourced from the silver layer. The data is refined to meet specific downstream business and analytics requirements. Tables typically conform to [star schema design](/power-bi/guidance/star-schema), which supports the development of data models that are optimized for performance and usability.
+- **Gold:** Also known as the _curated zone_, this final layer stores data sourced from the silver layer. The data is refined to meet specific downstream business and analytics requirements. Tables typically conform to [star schema design](../data-warehouse/dimensional-modeling-overview.md#star-schema-design), which supports the development of data models that are optimized for performance and usability.
 
 > [!IMPORTANT]
 > Because a Fabric lakehouse represents a single zone, you create one lakehouse for each of the three zones.

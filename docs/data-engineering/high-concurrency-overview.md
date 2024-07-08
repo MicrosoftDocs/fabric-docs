@@ -1,5 +1,5 @@
 ---
-title: High concurrency mode in Fabric Spark compute
+title: High concurrency mode in Apache Spark compute for Fabric
 description: Learn about sharing Spark sessions using high concurrency mode in Microsoft Fabric for data engineering and data science workloads.
 ms.reviewer: snehagunda
 ms.author: saravi
@@ -10,9 +10,9 @@ ms.custom:
 ms.date: 10/20/2023
 ---
 
-# High concurrency mode in Fabric Spark
+# High concurrency mode in Apache Spark for Fabric
 
-High concurrency mode allows users to share the same Spark sessions in Fabric Spark for data engineering and data science workloads. An item like a notebook uses a standard Spark session for its execution. In high concurrency mode, the Spark session can support independent execution of multiple items within individual read-eval-print loop (REPL) cores that exist within the Spark application. These REPL cores provide isolation for each item, and prevent local notebook variables from being overwritten by variables with the same name from other notebooks sharing the same session.
+High concurrency mode allows users to share the same Spark sessions in Spark for Fabric for data engineering and data science workloads. An item like a notebook uses a standard Spark session for its execution. In high concurrency mode, the Spark session can support independent execution of multiple items within individual read-eval-print loop (REPL) cores that exist within the Spark application. These REPL cores provide isolation for each item, and prevent local notebook variables from being overwritten by variables with the same name from other notebooks sharing the same session.
 
 As the session is already running, this provides users with an instant run experience when reusing the session across multiple notebooks.
 

@@ -2,14 +2,14 @@
 title: Fabric trial capacity
 description: Understand how the Fabric trial works.
 author: mihart
-ms.author: mihirwagle
+ms.reviewer: mihirwagle
+ms.author: mihart
 ms.topic: conceptual
-ms.custom:
-ms.date: 05/23/2024
+ms.collection: ce-skilling-ai-copilot
+ms.date: 06/18/2024
 ---
 
 # Microsoft Fabric trial capacity
-
 
 Microsoft Fabric is provided free of charge when you sign up for a Microsoft Fabric trial capacity. Your use of the Microsoft Fabric trial capacity includes access to the Fabric product workloads and the resources to create and host Fabric items. The Fabric trial lasts for 60 days.
 
@@ -24,6 +24,7 @@ With one Fabric trial capacity, you get the following features:
 - The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity.
 
 Creating and collaborating in Fabric includes:
+
 - Creating [Workspaces](workspaces.md) (folders) for projects that support Fabric capabilities.
 - Sharing Fabric items, such as semantic models, warehouses, and notebooks, and collaborating on them with other Fabric users.
 - Creating analytics solutions using Fabric items.
@@ -35,7 +36,7 @@ When you start a Fabric capacity trial, your trial [capacity](../enterprise/lice
 
 To begin using your Fabric trial capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you.
 
-Although you don't actually receive a new license, the actions that you can perform and the features that you can user are similar to [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq] during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a PPU license. 
+Although you don't actually receive a new license, the actions that you can perform and the features that you can use are similar to [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq) during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a Premium Per User (PPU) license. 
 
 ## Existing Power BI users
 

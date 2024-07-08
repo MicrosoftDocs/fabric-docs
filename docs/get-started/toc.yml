@@ -157,6 +157,28 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Data warehouse deployment using deployment pipelines fails
+      href: known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md
+    - name: Dataflow Gen2 ownership takeover fails
+      href: known-issues/known-issue-773-dataflow-gen2-ownership-takeover-fails.md
+    - name: Data warehouse connection or query execution fails
+      href: known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md
+    - name: Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines
+      href: known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md
+    - name: SQL analytics endpoint table sync fails when table contains linked functions
+      href: known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md
+    - name: Dataflows Gen2 staging warehouse doesn't work in deployment pipelines
+      href: known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md
+    - name: New card and reference label tabular layout content hidden or truncated
+      href: known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md
+    - name: Python and R visuals don't work in Fabric capacity
+      href: known-issues/known-issue-762-python-r-visuals-not-work-capacity.md
+    - name: Report Builder can't sign in to the service for some clouds
+      href: known-issues/known-issue-761-report-builder-not-sign-in-service-some-clouds.md
+    - name: Copy activity from Oracle to lakehouse fails for Number data type
+      href: known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md
+    - name: Real-Time hub Set Alert fails on prior version of an eventstream
+      href: known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md
     - name: Pipeline Web activity through on-premises data gateway doesn't support SPN authentication
       href: known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md
     - name: Cross region shortcuts don't show data
@@ -167,7 +189,7 @@ items:
       href: known-issues/known-issue-736-previous-eventstream-ux-loads-instead-new-ux.md
     - name: Custom endpoint or Reflex destination on derived stream keeps loading
       href: known-issues/known-issue-734-custom-endpoint-reflex-destination-derived-stream-keeps-loading.md
-    - name: Sample data doesn’t flow after destination later added into eventstream
+    - name: Sample data doesn't flow after destination later added into eventstream
       href: known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md
     - name: Tenant migrations paused for June 2024
       href: known-issues/known-issue-749-tenant-migrations-paused-june-2024.md
