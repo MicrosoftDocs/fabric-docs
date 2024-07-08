@@ -26,7 +26,7 @@ The Salesforce objects connector supports the following capabilities in data pip
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Organizational account |
-| **Lookup activity** | None | Organizational account |
+| **Copy activity (source/destination)** | None <br> On-premises | Organizational account |
+| **Lookup activity** | None <br> On-premises | Organizational account |
 
-To learn more about the copy activity configuration for Salesforce objects in data pipelines, go to [Configure in a data pipeline copy activity](connector-salesforce-objects-copy-activity.md).
+To learn more about the copy activity configuration for Salesforce objects in data pipelines, go to [Configure in a data pipeline copy activity](connector-salesforce-copy-activity.md).
