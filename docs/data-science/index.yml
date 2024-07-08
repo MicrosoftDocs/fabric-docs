@@ -14,7 +14,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: sdgilley #Required; your GitHub user alias, with correct capitalization.
   ms.author: sgilley #Required; microsoft alias of author; optional team alias.
-  ms.date: 06/17/2024
+  ms.date: 07/08/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -27,18 +27,6 @@ landingContent:
         links:
           - text: What is Data Science?
             url: data-science-overview.md 
-
-  # Card 
-  - title: Get started
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: Introduction to Data science tutorials
-            url: tutorial-data-science-introduction.md
-          - text: Data science roles and permissions
-            url: models-experiments-rbac.md
-          - text: Machine learning models
-            url: machine-learning-model.md 
 
 # Card
   - title: Copilot
@@ -53,6 +41,19 @@ landingContent:
         links:
           - text: Use the Copilot chat panel
             url: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+
+  # Card 
+  - title: Get started
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Introduction to Data science tutorials
+            url: tutorial-data-science-introduction.md
+          - text: Data science roles and permissions
+            url: models-experiments-rbac.md
+          - text: Machine learning models
+            url: machine-learning-model.md 
+
 
 # Card 
   - title: Tutorials
