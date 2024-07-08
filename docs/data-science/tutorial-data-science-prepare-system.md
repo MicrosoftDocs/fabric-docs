@@ -1,9 +1,9 @@
 ---
 title: Data science tutorials - prepare your system
 description: Before you begin following the data science end-to-end scenario, learn about prerequisites, the sample dataset, and the lakehouse and notebooks you need.
-ms.reviewer: sgilley
-ms.author: amjafari
-author: amhjf
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: tutorial
 ms.custom:
   - build-2023
