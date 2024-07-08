@@ -35,13 +35,13 @@ Fabric workspaces that are provisioned with a dedicated virtual network provide 
 
 Managed virtual networks are provisioned for a Fabric workspace when
 
-*  Managed private endpoints which provide secure **oubound** access are added to a workspace. Workspace admins can create and delete managed private endpoint connections from the workspace settings of a Fabric Workspace.
+* Managed private endpoints, which provide secure **oubound** access, are added to a workspace. Workspace admins can create and delete managed private endpoint connections from the workspace settings of a Fabric workspace.
 
     :::image type="content" source="./media/security-managed-vnets-fabric-overview/creating-private-endpoint-animation.gif" alt-text="Animated illustration of the process of creating a private endpoint in Microsoft Fabric.":::
 
     For more information, see [About managed private endpoints in Fabric](./security-managed-private-endpoints-overview.md)
 
-* Enabling Private Link which provides **inbound** network protection and running a Spark job in a Fabric Workspace. Tenant admins can enable the Private Link setting in the Admin portal of their Microsoft Fabric tenant.
+* Enabling **Private Link**, which provides **inbound** network protection, and running a Spark job in a Fabric Workspace. Tenant admins can enable the [Private Link setting in the Admin portal](../admin/tenant-settings-index.md#advanced-networking) of their Microsoft Fabric tenant.
 
     Once you have enabled the Private Link setting, running the first Spark job (Notebook or Spark job definition) or performing a Lakehouse operation (for example, Load to Table, or a table maintenance operation such as Optimize or Vacuum) will result in the creation of a managed virtual network for the workspace.
 
