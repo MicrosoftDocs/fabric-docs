@@ -1,10 +1,9 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a sales forecasting model'
 description: This tutorial shows the data science workflow for building a model that predicts the sales for various categories of products.
-ms.reviewer: larryfr
-reviewer: Blackmist
-ms.author: amjafari
-author: amhjf
+ms.reviewer: amjafari
+ms.author: larryfr
+author: Blackmist
 ms.topic: tutorial
 ms.date: 01/22/2024
 #customer intent: As a data scientist, I want to build a forecasting model so I can predict the sales of products.
