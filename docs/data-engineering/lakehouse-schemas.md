@@ -36,7 +36,7 @@ df.write.mode("Overwrite").saveAsTable("contoso.sales")
 
 You can use Lakehouse Explorer to arrange your tables and drag and drop table names to different schemas.
 
-:::image type="content" source="media\lakehouse-schemas\movetables.gif" alt-text="Animation of moving tables between schemas.":::
+:::image type="content" source="media\lakehouse-schemas\move-tables.gif" alt-text="Animation of moving tables between schemas.":::
 
 > [!CAUTION]
 > If you modify the table, you must also update related items like notebook code or dataflows to ensure they are aligned with the correct schema.
