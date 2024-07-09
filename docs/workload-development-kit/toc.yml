@@ -19,6 +19,8 @@ items:
     href: quickstart-sample.md
 - name: Concept
   items:
+  - name: Workload environment
+    href: workload-environment.md
   - name: Authentication
     items:
     - name: Authentication overview
@@ -27,8 +29,6 @@ items:
       href: back-end-authentication.md
     - name: Authentication JavaScript API
       href: authentication-javascript-api.md         
-  - name: Workload environment
-    href: workload-environment.md
   - name: Item lifecycle
     href: item-lifecycle.md
   - name: User permissions
