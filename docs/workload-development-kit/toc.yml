@@ -61,3 +61,5 @@ items:
      href: https://go.microsoft.com/fwlink/?linkid=2271989
    - name: Samples
      href: https://github.com/microsoft/Microsoft-Fabric-workload-development-sample
+   - name: Supportability
+     href: supportability.md
