@@ -35,17 +35,29 @@ Direct Lake is supported on Microsoft Premium (P) SKUs and Microsoft Fabric (F) 
 
 ### Lakehouse
 
-Before using Direct Lake, you must provision a lakehouse (or a warehouse) with one or more Delta tables in a workspace hosted on a supported Microsoft Fabric capacity. The lakehouse is required because it provides the storage location for your parquet-formatted files in OneLake. The lakehouse also provides an access point to launch the Web modeling feature to create a Direct Lake model.
+Before using Direct Lake, you must provision a lakehouse (or a warehouse) with one or more Delta tables in a workspace hosted on a supported Microsoft Fabric capacity. The lakehouse is required because it provides the storage location for your parquet-formatted files in OneLake. 
 
 To learn how to provision a lakehouse, create a Delta table in the lakehouse, and create a basic model for the lakehouse, see [Create a lakehouse for Direct Lake](direct-lake-create-lakehouse.md).
 
-### SQL endpoint
+### SQL analytics endpoint and data warehouse
 
-As part of provisioning a lakehouse, a SQL endpoint for SQL querying and a default model for reporting are created and updated with any tables added to the lakehouse. While Direct Lake mode doesn't query the SQL endpoint when loading data directly from OneLake, it's required when a Direct Lake model must seamlessly fall back to DirectQuery mode, such as when the data source uses specific features like advanced security or views that can't be read through Direct Lake. Direct Lake mode also queries the SQL endpoint for schema- and security-related information.
+As part of provisioning a lakehouse, a SQL analytics endpoint for SQL querying is created and updated with any tables added to the lakehouse. While Direct Lake mode doesn't query the SQL analytics endpoint when loading data directly from OneLake, it's required when a Direct Lake model must seamlessly fall back to DirectQuery mode, such as when the data source uses specific features like [advanced security](/fabric/data-warehouse/security) or views that can't be read through Direct Lake and must utilize the SQL endpoint. Direct Lake mode also periodically queries the SQL endpoint for schema- and security-related information.
 
-### Data Warehouse
+As an alternative to a lakehouse with SQL analytics endpoint, you can also provision a warehouse and add tables by using SQL statements or data pipelines. The procedure to provision a standalone data warehouse is almost identical to the procedure for a lakehouse.
 
-As an alternative to a lakehouse with SQL endpoint, you can also provision a warehouse and add tables by using SQL statements or data pipelines. The procedure to provision a standalone data warehouse is almost identical to the procedure for a lakehouse.
+#### Default Power BI semantic model
+
+Data warehouses and SQL analytics endpoints also create a **default Power BI semantic model** in Direct Lake mode. This default semantic model can only be edited within the warehouse or SQL endpoint and has additional limitations, such as no model write support with XMLA endpoint. Refer to the [default Power BI semantic model](/fabric/data-warehouse/semantic-models) documentation. This Direct Lake documentation is for non-default Power BI semantic models in Direct Lake mode.
+
+### Create a Power BI semantic model in Direct Lake mode
+
+Power BI semantic models in Direct Lake mode are created in the lakehouse or warehouse.
+
+In the Lakehouse, click **New Power BI semantic model** to create a Power BI semantic model in Direct Lake mode. 
+
+In the warehouse or SQL analytics endpoint, click on the **Reporting** ribbon then click **New Power BI semantic model** to create a Power BI semantic model in Direct Lake mode. 
+
+You can then add relationships, measures, calculations groups, format strings, row-level security, etc., and rename tables and columns by [editing the semantic model in the browser](/power-bi/transform-model/service-edit-data-models). Edit the semantic model later using the context-menu from the workspace to **open data model**.
 
 ## Model write support with XMLA endpoint
 
@@ -141,6 +153,9 @@ The following example specifies all queries use Direct Lake mode only:
 database.Model.DirectLakeBehavior = DirectLakeBehavior.DirectLakeOnly = 1;
 database.Model.SaveChanges();
 ```
+This can also be set when [editing the semantic model in the browser](/power-bi/transform-model/service-edit-data-models) in the semantic model properties. Click on **Semantic model** in the **Model** tab of the **Data** pane. 
+
+:::image type="content" source="https://powerbiblogscdn.azureedge.net/wp-content/uploads/2024/02/Direct-Lake-behavior-web-modeling.png" alt-text="Screenshot of the Direct lake behavior semantic model property in web modeling.":::
 
 ## Analyze query processing
 
@@ -187,13 +202,13 @@ For example, a warehouse administrator can grant a user SELECT permissions on a 
 
 - By design, only tables in the semantic model derived from tables in a Lakehouse or Warehouse support Direct Lake mode. Although tables in the model can be derived from SQL views in the Lakehouse or Warehouse, queries using those tables will fall back to DirectQuery mode.
 
-- Direct Lake semantic model tables can only be derived from tables and views from a single Lakehouse or Warehouse.
+- Direct Lake semantic model tables can only be derived from tables and views from a single Lakehouse or Warehouse. A single Lakehouse can include shortcuts added from other Lakehouses.
 
-- Direct Lake tables can't currently be mixed with other table types, such as Import, DirectQuery, or Dual, in the same model. Composite models are currently not supported.
+- Direct Lake tables can't currently be mixed with other table types, such as Import, DirectQuery, or Dual, in the same model. [Composite models on Power BI semantic models](/power-bi/transform-model/desktop-composite-models#composite-models-on-power-bi-semantic-models-and-analysis-services) can use Power BI semantic models in Direct Lake storage mode as a source.
 
-- DateTime relationships aren't supported in Direct Lake models.
+- DateTime relationships aren't supported in Direct Lake models. Date relationships are supported.
 
-- Calculated columns and calculated tables aren't supported.
+- Calculated columns and calculated tables aren't supported. Calculation groups and field parameters are supported.
 
 - Some data types might not be supported, such as high-precision decimals and money types.
 
