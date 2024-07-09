@@ -1,13 +1,13 @@
 ---
 title: Row-level security (RLS) with Power BI
 description: How to configure row-level security for imported semantic models, and DirectQuery, within the Power BI service.
-author: mberdugo
-ms.author: monaberdugo
+author: emlisa
+ms.author: emlisa
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: how-to
-ms.date: 04/24/2024
+ms.date: 07/08/2024
 ms.custom: ''
 LocalizationGroup: Administration
 ms.collection: ce-skilling-ai-copilot
@@ -26,50 +26,7 @@ By default, row-level security filtering uses single-directional filters, whethe
 
 For more information, see [Bidirectional cross-filtering using DirectQuery in Power BI](/power-bi/transform-model/desktop-bidirectional-filtering) and the [Securing the Tabular BI Semantic Model](https://download.microsoft.com/download/D/2/0/D20E1C5F-72EA-4505-9F26-FEF9550EFD44/Securing%20the%20Tabular%20BI%20Semantic%20Model.docx) technical article.
 
- :::image type="content" source="media/service-admin-row-level-security/row-level-security-apply-security-filter.png" alt-text="Screenshot of selected apply security filter checkbox.":::
-
-## Define roles and rules in Power BI using enhanced row-level security editor (Preview)
-
-You can quickly and easily define row-level security roles and filters within Power BI using the enhanced row-level security editor. With this editor, you can toggle between using the default drop-down interface and a DAX interface. When you publish to Power BI, you also publish the role definitions.
-
-To define security roles using the enhanced row-level security editor:
-
-1. In Power BI Desktop, enable the preview by going to Files > Options and Settings > Options > Preview features and turn on “Enhanced row-level security editor”. Alternatively you can use this editor in the Service by [editing your data model in the Power BI service](/power-bi/transform-model/service-edit-data-models). 
-
-2. Import data into your Power BI semantic model, or configure a DirectQuery connection.
-
-3. From the ribbon, select **Manage roles**.
-
-   :::image type="content" source="media/service-admin-row-level-security/manage-roles-ribbon-button.png" alt-text="Screenshot of the Manage roles button in the Desktop ribbon.":::
-
-4. From the **Manage roles** window, select **New** to create a new role.
-
-   :::image type="content" source="media/service-admin-row-level-security/enhanced-row-level-security-new-role.png" alt-text="Screenshot of creating a new role in the enhanced row-level security editor.":::
-
-5. Under **Roles**, provide a name for the role and select enter.
-
-   :::image type="content" source="media/service-admin-row-level-security/enhanced-row-level-security-rename-role.png" alt-text="Screenshot of renaming a role in the enhanced row-level security editor.":::
-
-6. Under **Select tables**, select the table you want to apply a row-level security filter to.
-
-7. Under **Filter data**, use the default editor to define your roles. The expressions created return a true or false value.
-
-   :::image type="content" source="media/service-admin-row-level-security/enhanced-row-level-security-example-default-editor.png" alt-text="Screenshot of an example of using the default editor in the enhanced row-level security editor.":::
-
-   >[!NOTE]
-   > Not all row-level security filters supported in Power BI can be defined using the default editor. Limitations include expressions that today can only be defined using DAX including dynamic rules such as username() or userprincipalname(). To define roles using these filters switch to use the DAX editor.
-
-8. Optionally select **Switch to DAX editor** to switch to using the DAX editor to define your role. You can switch back to the default editor by selecting **Switch to default editor**. All changes made in either editor interface persist when switching interfaces when possible.
-
-   :::image type="content" source="media/service-admin-row-level-security/enhanced-row-level-security-example-dax-editor.png" alt-text="Screenshot of an example of using the DAX editor in the enhanced row-level security editor.":::
-
-   When defining a role using the DAX editor that can't be defined in the default editor, if you attempt to switch to the default editor you'll be prompted with a warning that switching editors may result in some information being lost. To keep this information, select **Cancel** and continue only editing this role in the DAX editor.
-
-   :::image type="content" source="media/service-admin-row-level-security/enhanced-row-level-security-parse-warning-dialog.png" alt-text="Screenshot of an example error dialog when switching from the DAX to default editor in enhanced row-level security editor.":::
-
-9. Select **Save**
-
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-desktop-view-as-roles.md)]
+![Screenshot of the model relationship setting to apply security filter in both directions.](../includes/media/powerbi-security-apply-filter-in-both-directions.png)
 
 ## Manage security on your model
 
