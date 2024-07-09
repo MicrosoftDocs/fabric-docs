@@ -47,7 +47,7 @@ As an alternative to a lakehouse with SQL analytics endpoint, you can also provi
 
 #### Default Power BI semantic model
 
-Data warehouses and SQL analytics endpoints also create a **default Power BI semantic model** in Direct Lake mode. This default semantic model can only be edited within the warehouse or SQL endpoint and has additional limitations, such as no model write support with XMLA endpoint. Refer to the [default Power BI semantic model](/fabric/data-warehouse/semantic-models) documentation. This Direct Lake documentation is for non-default Power BI semantic models in Direct Lake mode.
+Warehouses and SQL analytics endpoints also create a **default Power BI semantic model** in Direct Lake mode. This default semantic model can only be edited within the warehouse or SQL endpoint and has additional limitations. Refer to the [default Power BI semantic model](/fabric/data-warehouse/semantic-models) documentation. This Direct Lake documentation is for non-default Power BI semantic models in Direct Lake mode.
 
 ### Create a Power BI semantic model in Direct Lake mode
 
@@ -155,7 +155,7 @@ database.Model.SaveChanges();
 ```
 This can also be set when [editing the semantic model in the browser](/power-bi/transform-model/service-edit-data-models) in the semantic model properties. Click on **Semantic model** in the **Model** tab of the **Data** pane. 
 
-:::image type="content" source="https://powerbiblogscdn.azureedge.net/wp-content/uploads/2024/02/Direct-Lake-behavior-web-modeling.png" alt-text="Screenshot of the Direct lake behavior semantic model property in web modeling.":::
+![direct-lake-behavior](https://github.com/MicrosoftDocs/fabric-docs-pr/assets/102261521/21d7af71-9638-4f36-9125-ecc237c78258)
 
 ## Analyze query processing
 

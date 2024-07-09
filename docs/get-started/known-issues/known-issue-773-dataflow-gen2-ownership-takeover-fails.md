@@ -4,7 +4,7 @@ description: A known issue is posted where Dataflow Gen2 ownership takeover fail
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/05/2024
+ms.date: 07/09/2024
 ms.custom: known-issue-773
 ---
 
@@ -22,7 +22,13 @@ When trying to takeover the ownership of a Dataflow Gen2 dataflow, you receive a
 
 ## Solutions and workarounds
 
-To work around the issue, you can export the dataflow and import it as a new one.
+To work around the issue, you have two options:
+
+- If the owner can access the dataflow, export the dataflow as a Power Query template and import a new one
+- If the owner can't access the dataflow:
+  - Export the .json of the dataflow
+  - Extract the mashup script from within the dataflow
+  - Recreate a new dataflow from it
 
 ## Next steps
 
