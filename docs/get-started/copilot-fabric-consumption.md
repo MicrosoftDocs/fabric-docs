@@ -5,11 +5,12 @@ ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 02/01/2024
+ms.date: 06/17/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
-# Copilot in Fabric (preview) consumption
+# Copilot in Fabric consumption
 
 This page contains information on how the Fabric Copilot usage is billed and reported. Copilot usage is measured by the number of tokens processed. Tokens can be thought of as pieces of words. Approximately 1,000 tokens are about 750 words. Prices are calculated per 1,000 tokens, and input and output tokens are consumed at different rates.
 
@@ -52,8 +53,8 @@ The cost of Fabric Capacity Units can vary depending on the region. Regardless o
 
 Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s Release Notes or Microsoft Fabric Blog. If any change to a Copilot in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use Copilot in Fabric, customers can use the cancellation options available for the chosen payment method.
 
-## Next steps
+## Related content
 
-- [Overview of Copilot in Fabric (preview)](./copilot-fabric-overview.md)
+- [Overview of Copilot in Fabric](./copilot-fabric-overview.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
 - [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)

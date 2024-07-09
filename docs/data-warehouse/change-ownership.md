@@ -4,13 +4,15 @@ description: Learn how to change the owner of a Fabric Warehouse via API call.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stwynant
+ms.date: 04/24/2024
+ms.service: fabric
+ms.subservice: data-warehouse
 ms.topic: how-to
-ms.date: 03/26/2024
 ---
 
 # Change ownership of Fabric Warehouse
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 The Warehouse item uses the owner's identity when accessing data on OneLake. To change the owner of these items, currently the solution method is to use an API call as described in this article.
 

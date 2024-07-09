@@ -4,8 +4,10 @@ description: Learn how to resolve conflicts when using Fabric's Git integration 
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: how-to
-ms.date: 10/16/2023
+ms.date: 06/06/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -57,13 +59,13 @@ If you're not sure what changes were made and which version to choose and don’
 >[!NOTE]
 >Only a workspace admin can reconnect the workspace to the new branch.
 
-1. From the **Source control** pane, check out a new branch using the last synced branch ID shown on bottom of screen
+1. From the **Source control** panel, check out a new branch using the last synced branch ID shown on bottom of screen
 
-   :::image type="content" source="./media/conflict-resolution/checkout-new-branch.png" alt-text="Screenshot showing how to check out a new branch from the source control pane by selecting the down arrow.":::
+   :::image type="content" source="./media/conflict-resolution/checkout-new-branch.png" alt-text="Screenshot showing how to check out a new branch from the source control panel by selecting the down arrow.":::
 
    :::image type="content" source="./media/conflict-resolution/sync-info.png" alt-text="Screenshot of branch ID information shown on bottom of the screen.":::
 
-   This step creates a new branch from the conflicted branch using the last synced Git state, before changes were made that conflict with your changes. You can see your changes in the **Source control** pane, but there's nothing to update from the Git branch. The *checkout branch* keeps the current workspace state, so uncommitted changes are retained when changing the branch.
+   This step creates a new branch from the conflicted branch using the last synced Git state, before changes were made that conflict with your changes. You can see your changes in the **Source control** panel, but there's nothing to update from the Git branch. The *checkout branch* keeps the current workspace state, so uncommitted changes are retained when changing the branch.
 
 1. Commit your changes into the new branch. This new branch now has the changes you made to the items connected to an earlier version of the Git branch that doesn't conflict with your changes.
 1. In git, resolve the conflicts between the original branch and the new branch.
@@ -73,4 +75,4 @@ If you're not sure what changes were made and which version to choose and don’
 ## Related content
 
 - [Manually update after a failed update](./partial-update.md)
-- [Lifecycle management Frequently asked questions](../faq.md)
+- [Lifecycle management Frequently asked questions](../faq.yml)

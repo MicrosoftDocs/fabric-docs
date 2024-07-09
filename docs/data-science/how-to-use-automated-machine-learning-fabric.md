@@ -226,7 +226,7 @@ from sklearn.metrics import roc_auc_score
 
 with mlflow.start_run(run_name="default") as run:
     # Create a LightGBMClassifier model with specified settings
-    model = LightGBMClassifier(objective="binary", featuresCol="features", labelCol="Exited")
+    model = LightGBMClassifier(objective="binary", featuresCol="features", labelCol="Exited", dataTransferMode="bulk")
     
     # Fit the model to the training data
     model = model.fit(train_data)
@@ -382,7 +382,7 @@ print('Best roc_auc on validation data: {0:.4g}'.format(1-automl.best_loss))
 print('Training duration of best run: {0:.4g} s'.format(automl.best_config_train_time))
 ```
 
-## Next steps
+## Related content
 
 * [Learn about AutoML in Fabric](../data-science/automated-machine-learning-fabric.md)
 * [Visualize the results of your AutoML trial](../data-science/tuning-automated-machine-learning-visualizations.md)

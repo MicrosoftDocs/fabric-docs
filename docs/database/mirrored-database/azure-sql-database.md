@@ -4,8 +4,8 @@ description: Learn about the mirrored databases from Azure SQL Database in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
+ms.date: 06/20/2024
 ms.service: fabric
-ms.date: 03/20/2024
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -17,13 +17,17 @@ no-loc: [Copilot]
 
 For a tutorial on configuring your Azure SQL Database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-tutorial.md).
 
+To learn more and watch demos of Mirroring Azure SQL Database in Fabric, watch the following the [Data Exposed episode](/shows/data-exposed/key-mirroring-to-azure-sql-database-in-fabric-benefits-data-exposed).
+
+> [!VIDEO https://learn-video.azurefd.net/vod/player?show=data-exposed&ep=key-mirroring-to-azure-sql-database-in-fabric-benefits-data-exposed]
+
 ## Why use Mirroring in Fabric?
 
 With Mirroring in Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs, and built for openness and collaboration between Microsoft, Azure SQL Database, and the 1000s of technology solutions that can read the open-source Delta Lake table format.
 
 ## What analytics experiences are built in?
 
-Mirrored databases are an item in the **Fabric Synapse Data Warehousing** experience distinct from the **Warehouse** and **SQL analytics endpoint** items.
+Mirrored databases are an item in **Fabric Synapse Data Warehousing** distinct from the **Warehouse** and **SQL analytics endpoint**.
 
 :::image type="content" source="media/azure-sql-database/fabric-mirroring-sql-database.svg" alt-text="Diagram of Fabric Database Mirroring for Azure SQL Database.":::
 
@@ -67,3 +71,4 @@ The source Azure SQL Database can be either a single database or a database in a
 - [How to: Secure data Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-how-to-data-security.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-limitations.md)
 - [Monitor Fabric mirrored database replication](monitor.md)
+- [Troubleshoot Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-troubleshoot.md)

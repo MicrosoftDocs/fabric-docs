@@ -4,8 +4,8 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, roblescarlos, maprycem, cynotebo
+ms.date: 05/09/2024
 ms.service: fabric
-ms.date: 03/20/2024
 ms.topic: troubleshooting
 ms.search.form: Fabric Mirroring
 ---
@@ -14,19 +14,21 @@ ms.search.form: Fabric Mirroring
 
 Scenarios, resolutions, and workarounds for Microsoft Fabric mirrored databases.
 
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
+
 ## Resources
 
 Review the troubleshooting section of frequently asked questions for each data source:
 
-- [Troubleshoot Mirroring Azure SQL Database (Preview)](azure-sql-database-mirroring-faq.yml#troubleshoot-mirroring-azure-sql-database-in-microsoft-fabric)
-- [Troubleshoot Mirroring Snowflake (Preview)](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
-- [Troubleshoot Mirroring Azure Cosmos DB (Preview)](azure-cosmos-db-troubleshooting.yml)
+- [Troubleshoot Mirroring Azure SQL Database](azure-sql-database-troubleshoot.md) and [FAQ about Mirroring Azure SQL Database](azure-sql-database-mirroring-faq.yml)
+- [Troubleshoot Mirroring Azure Cosmos DB](azure-cosmos-db-troubleshooting.yml) and [FAQ about Mirroring Azure Cosmos DB](azure-cosmos-db-faq.yml)
+- [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
 
 Review limitations documentation for each data source:
 
-- [Limitations in Microsoft Fabric mirrored databases from Snowflake (Preview)](snowflake-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)
 
 ## Stop replication
 

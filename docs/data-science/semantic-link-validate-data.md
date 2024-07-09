@@ -1,5 +1,5 @@
 ---
-title: Validate functional dependencies in data with semantic link (preview)
+title: Validate functional dependencies in data with semantic link
 description: Explore and validate functional dependencies in data with semantic link and Microsoft Fabric.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -12,13 +12,11 @@ ms.date: 11/15/2023
 ms.search.form: semantic link
 ---
 
-# Detect, explore, and validate functional dependencies in your data, using semantic link (preview)
+# Detect, explore, and validate functional dependencies in your data, using semantic link
 
 Functional dependencies are relationships between columns in a table, where the values in one column are used to determine the values in another column.
 An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
 Functional dependencies act as an effective invariant that allows you to find and fix data quality issues that might be hard to detect otherwise.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this article, you'll use semantic link to:
 
@@ -36,6 +34,11 @@ In this article, you'll use semantic link to:
 - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
 - [!INCLUDE [sempy-notebook-installation](includes/sempy-notebook-installation.md)]
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+For Spark 3.4 and above, Semantic link is available in the default runtime when using Fabric, and there is no need to install it. If you are using Spark 3.3 or below, or if you want to update to the most recent version of Semantic Link, you can run the command:
+
+` ` ` python
+%pip install -U semantic-link
+` ` ` 
 
 ## Find functional dependencies in data
 
@@ -224,6 +227,6 @@ However, it's essential to carefully consider the context of your data and the f
 ## Related content
 
 - [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
-- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
-- [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)
-- [Accelerate data science using semantic functions (preview)](semantic-link-semantic-functions.md)
+- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
+- [Explore and validate relationships in semantic models](semantic-link-validate-relationship.md)
+- [Accelerate data science using semantic functions](semantic-link-semantic-functions.md)

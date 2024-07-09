@@ -17,6 +17,14 @@ items:
   items:
   - name: End-to-end tutorials
     href: end-to-end-tutorials.md
+- name: Task flows
+  items:
+  - name: Task flow overview
+    href: task-flow-overview.md
+  - name: Set up a task flow
+    href: task-flow-create.md
+  - name: Work with task flows
+    href: task-flow-work-with.md
 - name: Decision guides
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
@@ -56,7 +64,7 @@ items:
   - name: Copilot in Fabric overview
     href: copilot-fabric-overview.md
   - name: Enable Copilot in Fabric
-    href: copilot-fabric-enable.md
+    href: copilot-enable-fabric.md
   - name: Copilot in Fabric FAQ
     href: copilot-faq-fabric.yml
   - name: Privacy, security, and responsible use for Copilot in Fabric
@@ -67,8 +75,12 @@ items:
       href: copilot-data-factory-privacy-security.md
     - name: Responsible use in Data Science
       href: copilot-data-science-privacy-security.md
+    - name: Responsible use in Data Warehouse
+      href: copilot-data-warehouse-privacy-security.md
     - name: Responsible use in Power BI
       href: copilot-power-bi-privacy-security.md
+    - name: Responsible use in Real-Time Intelligence
+      href: copilot-real-time-intelligence-privacy-security.md
   - name: Copilot for Data Factory
     href: copilot-fabric-data-factory.md
   - name: Copilot for Data Science and Data Engineering
@@ -79,8 +91,24 @@ items:
       href: copilot-notebooks-chat-magics.md
     - name: Use the Copilot chat panel
       href: copilot-notebooks-chat-pane.md
+  - name: Copilot for Data Warehouse
+    href: ../data-warehouse/copilot.md
+  - name: Copilot for Real-Time Intelligence
+    href: copilot-real-time-intelligence.md
   - name: Copilot in Fabric Consumption
     href: copilot-fabric-consumption.md
+- name: Direct Lake
+  items:
+  - name: Direct Lake overview
+    href: direct-lake-overview.md
+  - name: Create a Lakehouse for Direct Lake
+    href: direct-lake-create-lakehouse.md
+  - name: Specify a fixed identity
+    href: direct-lake-fixed-identity.md
+  - name: Analyze query processing
+    href: direct-lake-analyze-query-processing.md
+  - name: Direct Lake mode and PBI reporting
+    href: lakehouse-power-bi-reporting.md
 - name: Promote or certify items
   href: endorsement-promote-certify.md
 - name: Share items
@@ -89,6 +117,8 @@ items:
   href: apply-sensitivity-labels.md
 - name: Delta Lake interoperability
   href: delta-lake-interoperability.md
+- name: Learn about Microsoft Fabric feedback
+  href: feedback.md  
 - name: Fabric adoption roadmap
   items: 
   - name: Introduction
@@ -127,6 +157,94 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Data warehouse deployment using deployment pipelines fails
+      href: known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md
+    - name: Dataflow Gen2 ownership takeover fails
+      href: known-issues/known-issue-773-dataflow-gen2-ownership-takeover-fails.md
+    - name: Data warehouse connection or query execution fails
+      href: known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md
+    - name: Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines
+      href: known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md
+    - name: SQL analytics endpoint table sync fails when table contains linked functions
+      href: known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md
+    - name: Dataflows Gen2 staging warehouse doesn't work in deployment pipelines
+      href: known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md
+    - name: New card and reference label tabular layout content hidden or truncated
+      href: known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md
+    - name: Python and R visuals don't work in Fabric capacity
+      href: known-issues/known-issue-762-python-r-visuals-not-work-capacity.md
+    - name: Report Builder can't sign in to the service for some clouds
+      href: known-issues/known-issue-761-report-builder-not-sign-in-service-some-clouds.md
+    - name: Copy activity from Oracle to lakehouse fails for Number data type
+      href: known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md
+    - name: Real-Time hub Set Alert fails on prior version of an eventstream
+      href: known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md
+    - name: Pipeline Web activity through on-premises data gateway doesn't support SPN authentication
+      href: known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md
+    - name: Cross region shortcuts don't show data
+      href: known-issues/known-issue-752-cross-region-shortcuts-not-show-data.md
+    - name: Eventstreams paused for more than two hours don't show data
+      href: known-issues/known-issue-740-eventstreams-paused-two-hours-not-show-data.md
+    - name: Previous Eventstream UX loads instead of new UX
+      href: known-issues/known-issue-736-previous-eventstream-ux-loads-instead-new-ux.md
+    - name: Custom endpoint or Reflex destination on derived stream keeps loading
+      href: known-issues/known-issue-734-custom-endpoint-reflex-destination-derived-stream-keeps-loading.md
+    - name: Sample data doesn't flow after destination later added into eventstream
+      href: known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md
+    - name: Tenant migrations paused for June 2024
+      href: known-issues/known-issue-749-tenant-migrations-paused-june-2024.md
+    - name: Shortcut creation on a lakehouse preview table takes long time
+      href: known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md
+    - name: Semantic models in Desktop sometimes fail in March 2024 and later versions
+      href: known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md
+    - name: Real-Time hub Set alert doesn't work for derived streams
+      href: known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md
+    - name: Opening a reflex for a stream in Real-Time hub doesn't work
+      href: known-issues/known-issue-729-opening-reflex-stream-real-time-hub-not-work.md
+    - name: Virtual network data gateway service interruption
+      href: known-issues/known-issue-742-virtual-network-data-gateway-service-interruption.md
+    - name: Pipeline using XML format copy gets stuck
+      href: known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md
+    - name: Azure SQL Database change data doesn't propagate to mirror
+      href: known-issues/known-issue-723-sql-azure-database-change-data-not-propagate-mirror.md
+    - name: Environment doesn't work when runtime version is changed to Runtime 1.1
+      href: known-issues/known-issue-728-environment-not-work-runtime-version-changed-1-1.md
+    - name: Shortcuts to a firewall-enabled ADLS stop working if lakehouse is shared
+      href: known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md
+    - name: West India region doesn't support on-premises data gateway for data pipelines
+      href: known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md
+    - name: Delta tables don't appear in SQL Analytics Endpoint Object Explorer
+      href: known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md
+    - name: Spark session doesn't start when managed virtual network's capacity moved
+      href: known-issues/known-issue-721-spark-session-managed-virtual-network-capacity-moved.md
+    - name: OneLake under-reports transactions in the Other category
+      href: known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md
+    - name: Response times when composing SQL queries slower than expected
+      href: known-issues/known-issue-716-response-times-composing-sql-queries-slower.md
+    - name: TMDL semantic models won't open in Desktop after web edited
+      href: known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md
+    - name: Sign-in required when you browse to a secure embed URL
+      href: known-issues/known-issue-713-sign-in-required-browse-secure-embed-url.md
+    - name: Azure Analysis Services Pricing Tier scaling table doesn't show data
+      href: known-issues/known-issue-711-azure-analysis-services-table-not-show-data.md
+    - name: OneLake audit events don't show up in Microsoft 365 admin center
+      href: known-issues/known-issue-710-onelake-audit-events-not-show-microsoft-365-admin-center.md
+    - name: Query folding indicators are incorrect for certain Power Query SDK based connectors
+      href: known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md
+    - name: SQL database mirror doesn't start when you create connection during mirror creation
+      href: known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md
+    - name: SQL endpoint and semantic model are orphaned when a lakehouse is deleted
+      href: known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md
+    - name: Apps and reports not available when editing scorecard metrics
+      href: known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md
+    - name: Semantic model export to OneLake fails for calculated columns in error state
+      href: known-issues/known-issue-693-semantic-model-export-onelake-fails-calculated-columns.md
+    - name: Shortcut data inaccessible if data is in a paused capacity
+      href: known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md
+    - name: Report Copilot button shows even though Copilot admin setting is off
+      href: known-issues/known-issue-690-report-copilot-button-shows-admin-setting-off.md
+    - name: Copilot and Azure OpenAI service capacity setting delegation postponed
+      href: known-issues/known-issue-689-copilot-service-capacity-setting-delegation-postponed.md
     - name: Copy visual as image for report and dashboard visuals is broken
       href: known-issues/known-issue-679-copy-visual-image-report-dashboard-visuals-broken.md
     - name: Git integrated workspaces incorrectly show status of Uncommitted

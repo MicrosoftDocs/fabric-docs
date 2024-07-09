@@ -11,12 +11,17 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
 ms.search.form: Microsoft Spark utilities
-ms.date: 11/15/2023
+ms.date: 05/02/2024
 ---
 
 # Microsoft Spark Utilities (MSSparkUtils) for Fabric
 
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can use MSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. The MSSparkUtils package is available in PySpark (Python) Scala, SparkR notebooks, and Fabric pipelines.
+
+> [!NOTE]
+>
+> - MsSparkUtils has been officially renamed to **NotebookUtils**. The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
+> - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates will be exclusively supported with notebookutils namespace going forward.
 
 ## File system utilities
 
@@ -121,6 +126,7 @@ This method moves a file or directory, and supports moves across file systems.
 
 ```python
 mssparkutils.fs.mv('source file or directory', 'destination directory', True) # Set the last parameter as True to firstly create the parent directory if it does not exist
+mssparkutils.fs.mv('source file or directory', 'destination directory', True, True) # Set the third parameter to True to firstly create the parent directory if it does not exist. Set the last parameter to True to overwrite the updates.
 ```
 
 ### Write file
@@ -175,13 +181,19 @@ run(path: String, timeoutSeconds: int, arguments: Map): String -> This method ru
 This method references a notebook and returns its exit value. You can run nesting function calls in a notebook interactively or in a pipeline. The notebook being referenced runs on the Spark pool of the notebook that calls this function.
 
 ```python
-mssparkutils.notebook.run("notebook name", <timeoutSeconds>, <parameterMap>)
+mssparkutils.notebook.run("notebook name", <timeoutSeconds>, <parameterMap>, <workspaceId>)
 ```
 
 For example:
 
 ```python
 mssparkutils.notebook.run("Sample1", 90, {"input": 20 })
+```
+
+Fabric notebook also supports referencing notebooks across multiple workspaces by specifying the *workspace ID*.
+
+```python
+mssparkutils.notebook.run("Sample1", 90, {"input": 20 }, "fe0a6e2a-a909-4aa3-a698-0a651de790aa")
 ```
 
 You can open the snapshot link of the reference run in the cell output. The snapshot captures the code run results and allows you to easily debug a reference run.
@@ -192,10 +204,13 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 > [!NOTE]
 >
-> - Currently, Fabric notebook only supports referencing notebooks within a workspace.
+> - The cross-workspace reference notebook is supported by **runtime version 1.2 and above**.
 > - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `mssparkutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
 
 ### Reference run multiple notebooks in parallel
+
+> [!IMPORTANT]
+> This feature is in [preview](../get-started/preview.md).
 
 The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the compute resources are shared by the reference notebook runs.
 
@@ -262,7 +277,20 @@ The execution result from the root notebook is as follows:
 :::image type="content" source="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png" alt-text="Screenshot of reference a list of notebooks with parameters." lightbox="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png":::
 
 > [!NOTE]
-> The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
+> - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
+> - The upper limitation of notebook activities in ``` msspakrutils.notebook.runMultiple() ``` is **50, having more than 50 notebook activities may have stability and performance issues due to compute resource usage**. If you still want to use more notebook activities in the API, you can set the spark settings ``` spark.notebookutils.runmultiple.limit ``` to a larger value as a workaround. You can set the spark properties in attached Environment or using [%%configure](author-execute-notebook.md#spark-session-configuration-magic-command) command.
+>   ```python
+>   %%configure
+>   {
+>       "conf": {          
+>           "spark.notebookutils.runmultiple.limit": "100" 
+>       }
+>   }
+>   ```
+> - If you want to use more than 50 notebook activities, to avoid the snapshot and progress bar content size exceed the total Notebook content size upper limits, we recommend you to run the below command to disable the rich UX features. 
+>   ```scala
+>   com.microsoft.spark.notebook.common.Configs.notebookRunSnapshotEnabled = false
+>   ```
 
 ### Exit a notebook
 
@@ -451,10 +479,13 @@ Sample code for mounting a lakehouse to */test*:
 ```python
 from notebookutils import mssparkutils 
 mssparkutils.fs.mount( 
- "abfss://<workspace_id>@msit-onelake.dfs.fabric.microsoft.com/<lakehouse_id>", 
+ "abfss://<workspace_id>@onelake.dfs.fabric.microsoft.com/<lakehouse_id>", 
  "/test"
 )
 ```
+
+> [!NOTE]
+> Mounting a regional endpoint is not supported. Fabric only supports mounting the global endpoint, ```onelake.dfs.fabric.microsoft.com```.
 
 ### Access files under the mount point by using the *mssparktuils fs* API
 
@@ -593,6 +624,20 @@ For more detailed information about each method and its parameters, utilize the 
 With MSSparkUtils' Lakehouse utilities, managing your Lakehouse artifacts becomes more efficient and integrated into your Fabric pipelines, enhancing your overall data management experience.
 
 Feel free to explore these utilities and incorporate them into your Fabric workflows for seamless Lakehouse artifact management.
+
+## Runtime utilities
+
+### Show the session context info
+
+With ``` mssparkutils.runtime.context ``` you can get the context information of the current live session, including the notebook name, default lakehouse, workspace info, if it's a pipeline run, etc.
+
+```python
+mssparkutils.runtime.context
+```
+
+## Known issue 
+
+When using runtime version above 1.2 and run ``` mssparkutils.help() ```, the listed **fabricClient**, **warehouse**, and **workspace** APIs are not supported for now, will be available in the further.
 
 ## Related content
 

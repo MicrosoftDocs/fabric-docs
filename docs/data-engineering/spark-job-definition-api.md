@@ -1,6 +1,6 @@
 ---
 title: Apache Spark job definition API tutorial
-description: Learn how to create a Spark job definition via public API.
+description: Learn how to create and update a Spark job definition with the Microsoft Fabric Rest API, which provides a service endpoint for CRUD operations of Fabric items.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
@@ -127,6 +127,7 @@ payload_data = {
 }
 
 # Make the POST request with Bearer authentication
+sjdCreateUrl = f"https://api.fabric.microsoft.com//v1/workspaces/{workspaceId}/items"
 response = requests.post(sjdCreateUrl, json=payload_data, headers=headers)
 
 ```

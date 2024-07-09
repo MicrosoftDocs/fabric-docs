@@ -1,6 +1,6 @@
 ---
 title: Develop, execute, and manage notebooks
-description: Learn how to author and develop Microsoft Fabric notebook jobs with rich built-in features.
+description: Learn how to author, execute, and manage Microsoft Fabric notebook jobs with rich built-in features.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
@@ -68,11 +68,11 @@ You can use multiple languages in a notebook by specifying the language magic co
 
 | **Magic command** | **Language** | **Description** |
 |---|---|---|
-| %%pyspark | Python | Execute a **Python** query against Spark Context. |
-| %%spark | Scala | Execute a **Scala** query against Spark Context. |
-| %%sql | SparkSQL | Execute a **SparkSQL** query against Spark Context. |
-| %%html | Html | Execute a **HTML** query against Spark Context. |
-| %%sparkr | R | Execute a **R** query against Spark Context. |
+| %%pyspark | Python | Execute a **Python** query against Apache Spark Context. |
+| %%spark | Scala | Execute a **Scala** query against Apache Spark Context. |
+| %%sql | SparkSQL | Execute a **SparkSQL** query against Apache Spark Context. |
+| %%html | Html | Execute a **HTML** query against Apache Spark Context. |
+| %%sparkr | R | Execute a **R** query against Apache Spark Context. |
 
 ### IDE-style IntelliSense
 
@@ -88,13 +88,13 @@ The IntelliSense features are at different levels of maturity for different lang
 | SparkR | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 
 > [!NOTE]
-> You must have an active Spark session to use IntelliSense code completion.
+> You must have an active Apache Spark session to use IntelliSense code completion.
 
 ### Code snippets
 
 Fabric notebooks provide code snippets that help you easily write commonly used code patterns, like:
 
-- Reading data as a Spark DataFrame
+- Reading data as an Apache Spark DataFrame
 - Drawing charts with Matplotlib
 
 Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellisense) mixed with other suggestions. The code snippet contents align with the code cell language. You can see available snippets by typing **Snippet**. You can also type any keyword to see a list of relevant snippets. For example, if you type **read**, you see the list of snippets to read data from various data sources.
@@ -298,9 +298,9 @@ A step-by-step cell execution status is displayed beneath the cell to help you s
 
 :::image type="content" source="media\author-execute-notebook\cell-run-status.png" alt-text="Screenshot showing an example of cell run status details." lightbox="media\author-execute-notebook\cell-run-status.png":::
 
-### Inline Spark job indicator
+### Inline Apache Spark job indicator
 
-The Fabric notebook is Spark based. Code cells are executed on the Spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar that appears to help you understand the job execution status. The number of tasks per each job or stage helps you to identify the parallel level of your Spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
+The Fabric notebook is Apache Spark based. Code cells are executed on the Apache Spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar that appears to help you understand the job execution status. The number of tasks per each job or stage helps you to identify the parallel level of your Spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
 
 You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you with useful suggestions to help refine and debug the code.
 
@@ -326,7 +326,7 @@ You can use familiar Ipython magic commands in Fabric notebooks. Review the foll
 > These are the only magic commands supported in Fabric pipeline: %%pyspark, %%spark, %%csharp, %%sql, %%configure.
 
 Available line magic commands:
-[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode.
+[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](#view-the-history-of-input-commands), [%run](#reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode.
 
 Fabric notebook also supports the improved library management commands **%pip** and **%conda**. For more information about usage, see [Manage Apache Spark libraries in Microsoft Fabric](library-management.md).
 
@@ -418,6 +418,8 @@ IPython Widgets are eventful Python objects that have a representation in the br
 - The Fabric global *display* function doesn't support displaying multiple widgets in one call (for example, *display(a, b)*). This behavior is different from the IPython *display* function.
 
 - If you close a notebook that contains an IPython widget, you can't see or interact with it until you execute the corresponding cell again.
+  
+- The interact function (ipywidgets.interact) is not supported.
 
 ## Integrate a notebook
 
@@ -439,7 +441,7 @@ When assigning parameter values, you can use the [pipeline expression language](
 
 ## Spark session configuration magic command
 
-You can personalize your Spark session with the magic command **%%configure**. Fabric notebook supports customized vCores, Memory of the Driver and Executor, Spark properties, mount points, pool, and the default lakehouse of the notebook session. They can be used in both interactive notebook and pipeline notebook activities. We recommend that you run the **%%configure** command at the beginning of your notebook, or you must restart the Spark session to make the settings take effect.
+You can personalize your Spark session with the magic command **%%configure**. Fabric notebook supports customized vCores, Memory of the Driver and Executor, Apache Spark properties, mount points, pool, and the default lakehouse of the notebook session. They can be used in both interactive notebook and pipeline notebook activities. We recommend that you run the **%%configure** command at the beginning of your notebook, or you must restart the Spark session to make the settings take effect.
 
 ```json
 %%configure
@@ -563,6 +565,22 @@ customizedLogger.warning("customized warning message")
 customizedLogger.error("customized error message")
 customizedLogger.critical("customized critical message")
 ```
+
+## View the history of input commands
+
+Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook. 
+
+``` %history [-n] [range [range ...]] ```
+
+For options:
+- **-n**: Print execution number.
+
+Where range can be:
+- **N**: Print code of **Nth** executed cell.
+- **M-N**: Print code from **Mth** to **Nth** executed cell.
+
+Example:
+- Print input history from 1st to 2nd executed cell: ``` %history -n 1-2 ```
 
 ## Shortcut keys
 

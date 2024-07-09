@@ -4,6 +4,8 @@ description: Understand how deployment pipelines, the Fabric Application lifecyc
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Lee
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/14/2024
@@ -129,7 +131,7 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a memb
 
 ## Folders in deployment pipelines (preview)
 
-[Folders](./manage-workspace-content.md) in a workspace enable users to efficiently organize and manage workspace items in a familiar way.
+Folders enable users to efficiently organize and manage workspace items in a familiar way.
 When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
 
 ### Folders representation
@@ -153,21 +155,9 @@ Since folders are considered part of the item’s name, items moved into a diffe
 
 * Deploying one item out of several in a folder also updates the structure of the items that aren't deployed in the target stage even though the items themselves aren't be deployed.
 
-## Supported items
-
-When you deploy content from one pipeline stage to another, the copied content can contain the following items:
-
-* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
-* Dataflows Gen1
-* Datamarts
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
-* [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
-* Reports (based on supported semantic models)
-* Semantic models (except for Direct Lake semantic models)
-* [Warehouses](../../data-warehouse/data-warehousing.md)
-
 ## Item properties copied during deployment
+
+For a list of supported items, see [Deployment pipelines supported items](./intro-to-deployment-pipelines.md#supported-items).
 
 During deployment, the following item properties are copied and overwrite the item properties at the target stage:
 
@@ -185,14 +175,14 @@ During deployment, the following item properties are copied and overwrite the it
 
 * Item relationships
 
-[Sensitivity labels](/power-bi/enterprise/service-security-sensitivity-label-overview) are copied *only* when one of the following conditions is met. If these conditions aren't met, sensitivity labels *are not* copied during deployment.
+* [Sensitivity labels](/power-bi/enterprise/service-security-sensitivity-label-overview) are copied *only* when one of the following conditions is met. If these conditions aren't met, sensitivity labels *are not* copied during deployment.
 
-* A new item is deployed, or an existing item is deployed to an empty stage.
+  * A new item is deployed, or an existing item is deployed to an empty stage.
 
     >[!NOTE]
     > In cases where default labeling is enabled on the tenant, and the default label is valid, if the item being deployed is a semantic model or dataflow, the label will be copied from the source item **only** if the label has protection. If the label is not protected, the default label will be applied to the newly created target semantic model or dataflow.
 
-* The source item has a label with protection and the target item doesn't. In such cases, a pop-up window asking for consent to override the target sensitivity label appears.
+  * The source item has a label with protection and the target item doesn't. In this case, a pop-up window asks for consent to override the target sensitivity label.
 
 ### Item properties that are not copied
 
@@ -239,6 +229,9 @@ Deployment pipelines supports [incremental refresh](/power-bi/connect-data/incre
 With deployment pipelines, you can make updates to a semantic model with incremental refresh while retaining both data and partitions. When you deploy the semantic model, the policy is copied along.
 
 To understand how incremental refresh behaves with dataflows, see [why do I see two data sources connected to my dataflow after using dataflow rules?](/power-bi/create-reports/deployment-pipelines-troubleshooting#why-do-i-see-two-data-sources-connected-to-my-dataflow-after-using-dataflow-rules-)
+
+> [!NOTE]
+> Incremental refresh settings aren't copied in Gen 1.
 
 #### Activating incremental refresh in a pipeline
 
@@ -383,7 +376,7 @@ This section lists most of the limitations in deployment pipelines.
 * [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) aren't supported as pipeline admins.
 * When you're deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment fails.
 * For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#considerations-and-limitations).
-* For a list of supported items, see [supported items](#supported-items). Any item not on the list isn't supported.
+* For a list of supported items, see [supported items](./intro-to-deployment-pipelines.md#supported-items). Any item not on the list isn't supported.
 * The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
 * Only Power BI items can be deployed to a workspace in a different capacity region. Other Fabric items can't be deployed to a workspace in a different capacity region.
 
@@ -391,7 +384,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * Datasets that use real-time data connectivity can't be deployed.
 
-* A semantic model with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables, isn’t supported. For more information, see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](../faq.md#what-can-i-do-if-i-have-a-dataset-with-directquery-or-composite-connectivity-mode-that-uses-variation-or-auto-datetime-tables).
+* A semantic model with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables, isn’t supported. For more information, see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](../faq.yml#deployment-pipelines-questions).
 
 * During deployment, if the target semantic model is using a [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets), the source semantic model must use this connection mode too.
 
@@ -402,6 +395,8 @@ This section lists most of the limitations in deployment pipelines.
 * Deployment is **not** supported on a semantic model that uses Native query and DirectQuery together and auto binding is engaged on the DirectQuery data source.
 
 ### Dataflow limitations
+
+* Incremental refresh settings aren't copied in Gen 1.
 
 * When you're deploying a dataflow to an empty stage, deployment pipelines creates a new workspace and sets the dataflow storage to a Fabric blob storage. Blob storage is used even if the source workspace is configured to use Azure data lake storage Gen2 (ADLS Gen2).
 

@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 07/02/2024
 LocalizationGroup: Administration
 ---
 
@@ -142,7 +142,9 @@ Once you go inside the My workspace, you can perform any actions as if it's your
 
 ### Designate a default capacity for My workspaces
 
-A Fabric admin or capacity admin can designate a capacity as the default capacity for My workspaces. For details, see [Designate a default capacity for My workspaces](/power-bi/enterprise/service-admin-premium-manage#designate-a-default-capacity-for-my-workspaces)
+A Fabric admin or capacity admin can designate a capacity as the default capacity for My workspaces. To configure a default capacity for My workspaces, go to the [details](capacity-settings.md#details) section in your [capacity settings](capacity-settings.md#capacity-settings).
+
+For details, see [Designate a default capacity for My workspaces](/power-bi/enterprise/service-admin-premium-manage#designate-a-default-capacity-for-my-workspaces)
 
 ### Prevent My workspace owners from reassigning their My workspaces to a different capacity
 
@@ -183,9 +185,9 @@ This means the following:
 
 * **Moving a workspace from one capacity to a capacity in a different region**
 
-    You won't be able to move a workspace if it has non-Power BI Fabric items in it.  If the workspace once had non-PowerBI Fabric items, but all items have since been deleted, you also won't be able to move the workspace to a capacity in a different region.
+    If the workspace has no non Power BI Fabric items (only Power BI items) then moving the workspace to another capacity in a different region is supported.
 
-    If the workspace has no non-Power BI Fabric items (that is, it has only Power BI items) moving the workspace to another capacity in a different region is supported.
+    If you want to move a workspace that contains non Power BI Fabric items, you must delete all the non Power BI Fabric items first.  After the workspace is migrated to a different region, it can take up to an hour before you can create new non-Power BI Fabric items.
 
 ## Related content
 

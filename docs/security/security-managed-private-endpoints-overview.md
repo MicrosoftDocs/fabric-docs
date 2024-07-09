@@ -1,14 +1,14 @@
 ---
-title: Overview of managed private endpoints for Microsoft Fabric (preview)
+title: Overview of managed private endpoints for Microsoft Fabric
 description: Learn about managed private endpoints for Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/06/2024
+ms.date: 05/30/2024
 ---
 
-# Overview of managed private endpoints for Fabric (preview)
+# Overview of managed private endpoints for Fabric
 
 Managed private endpoints are feature that allows secure and private access to data sources from Fabric Spark workloads.
 
@@ -38,9 +38,9 @@ For more information about supported data sources for managed private endpoints 
   
 | Region         |
 |----------------|
-| Central US     |
+| West Central US |
 | Israel Central |
-| Switzerland West |
+| Switzerland West | 
 | Italy North    |
 | West India     |
 | Mexico Central |
@@ -52,7 +52,7 @@ For more information about supported data sources for managed private endpoints 
   
 | Region         |
 |----------------|
-| Central US     |
+| West Central US |
 | Switzerland West |
 | Italy North    |
 | Qatar Central  |
@@ -67,6 +67,8 @@ For more information about supported data sources for managed private endpoints 
 * **Spark job resilience**: To prevent Spark job failures or errors, migrate workspaces with managed private endpoints to Fabric capacity SKUs of F64 or higher.
 
 * **Workspace migration**: Workspace migration across capacities in different regions is unsupported.
+
+* **[OneLake shortcuts](../onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints.
 
 These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.
 
