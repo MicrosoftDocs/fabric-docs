@@ -160,20 +160,14 @@ A matrix table that displays metrics for each item on the capacity. To gain a be
 
 You can hover over any value in the visual to see operation level data. You can also filter the visual with the item kind slicer and add or remove columns using the optional columns slicer.
 
-The colors in the matrix represent your *performance delta*:
+The colors in the matrix represent your [performance delta](metrics-app-calculations.md#performance-delta):
 * *No color* - A value higher than -10.
 * *Orange* - A value between -10 and -25.
 * *Red* - A value lower than -25.
 
-To create the *performance delta*, Microsoft Fabric calculates an hourly average for all the fast operations that take under 200 milliseconds to complete. The hourly value is used as a slow moving average over the last seven days (168 hours). The slow moving average is then compared to the average between the most recent data point, and a data point from seven days ago. The *performance delta* indicates the difference between these two averages.
-
-You can use the *performance delta* value to assess whether the average performance of your items improved or worsened over the past week. The higher the value is, the better the performance is likely to be. A value close to zero indicates that not much has changed, and a negative value suggests that the average performance of your items got worse over the past week.
-
-Sorting the matrix by the *performance delta* column helps identify semantic models that have the biggest change in their performance. During your investigation, don't forget to consider the *CU (s)* and number of *Users*. The *performance delta* value is a good indicator when it comes to Microsoft Fabric items that have a high CU utilization because they're heavily used or run many operations. However, small semantic models with little CU activity might not reflect a true picture, as they can easily show large positive or negative values.
-
 ### Default fields
 
-The table in this section lists the default fields that are displayed in the matrix by item and operation visual. You can't remove default fields from the table. 
+The table in this section lists the default fields that are displayed in the matrix by item and operation visual. You can't remove default fields from the table.
 
 |Name      |Description  |
 |----------|--------------|
