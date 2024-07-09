@@ -23,7 +23,7 @@ In both cases, you can use security groups to provide access to a specified list
 
 ## Prerequisites
 
-Mirroring can be enabled for any Fabric capacity, including Power BI Premium Capacity. 
+Mirroring can be enabled for any Fabric capacity, including Power BI Premium Capacity. For more information on Power BI Premium licensing, see [Power BI Premium licensing](https://powerbi.microsoft.com/blog/important-update-coming-to-power-bi-premium-licensing/).
 
 To enable Mirroring, you need to be a member of one of the following admin roles:
 
