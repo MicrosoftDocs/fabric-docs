@@ -155,7 +155,7 @@ database.Model.SaveChanges();
 ```
 This can also be set when [editing the semantic model in the browser](/power-bi/transform-model/service-edit-data-models) in the semantic model properties. Select **Semantic model** in the **Model** tab of the **Data** pane. 
 
-:::image type="content" source="media/direct-lake-overview/direct-lake-behavior.png" alt-text="Behavior of direct lake." lightbox="media/direct-lake-overview/direct-lake-behavior.png":::
+:::image type="content" source="media/direct-lake-overview/direct-lake-behavior.png" alt-text="A screenshot that shows the behavior of Direct Lake." lightbox="media/direct-lake-overview/direct-lake-behavior.png":::
 
 ## Analyze query processing
 
