@@ -28,6 +28,9 @@ When the future compute usage drops below 100%, additional requests are accepted
 
 Since the background rejection threshold is 24 hours, high percent throttling numbers indicate you overused your daily (24 hour) capacity resources. When your background rejection is higher than 100%, all requests are rejected. Rejection stops once your capacity usage is lower than 100%. For example, a background rejection of 250% means that you used 2.5 times the amount of your daily capacity resources for your SKU level.
 
+>[!NOTE]
+>Background jobs are not throttled and can extend the time it takes for interactive rejections to stop.
+
 ### Interactive delay and interactive rejection
 
 When you look at these visuals, you only see what’s affecting your capacity at a specific timepoint. These visuals include usage that was [smoothed](throttling.md#balance-between-performance-and-reliability) into the current evaluation window. Later timepoints might include additional smoothed usage that isn't impacting this timepoint. Background smoothed consumption could lower the amount of usage available for interactive requests in future timepoints.
@@ -54,17 +57,17 @@ $$
 \frac{250-100}{100}\times{24 \text{ hours} = 36 \text{ hours}}
 $$
 
-It will take 1.5 days for the capacity usage to get to 100%. Since background rejection doesn't allow new compute consumption, this estimate is accurate.
+It will take at least 1.5 days for the capacity usage to get to 100%. Background jobs are not rejected and can extend the time needed to stop interactive rejection.
 
 #### Interactive rejection calculation example
 
-When your usage reaches 250%, only interactive requests are rejected for the next90 minutes.
+When your usage reaches 250%, only interactive requests are rejected for at least the next 90 minutes.
 
 $$
 \frac{250-100}{100}\times{60 \text{ minutes} = 90 \text{ minutes}}
 $$
 
-It takes at least 1.5 hours for the capacity usage to get below 100%. However, since new background requests might impact your capacity, the duration of this event might be longer.
+It takes at least 1.5 hours for the capacity usage to get below 100%. However, since background jobs with future consumption beyond the 10 and 60 minute windows, might impact your capacity, the duration of this event might be longer.
 
 #### Interactive delays calculation example
 
@@ -74,7 +77,7 @@ $$
 \frac{250-100}{100}\times{10 \text{ minutes} = 15 \text{ minutes}}
 $$
 
-It takes at least 15 minutes for the capacity usage to get below 100%. However, since new interactive and background requests might impact your capacity, the duration of this event might be longer.
+It takes at least 15 minutes for the capacity usage to get below 100%. However, since background jobs with future consumption beyond the 10 and 60 minute windows, impact your capacity, the duration of this event might be longer.
 
 ## Performance delta
 
