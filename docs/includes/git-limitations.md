@@ -54,11 +54,11 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 
 ### Branching out limitations
 
-- Branch out requires permissions listed in [permissions table](/fabric/cicd/git-integration/git-integration-process.md#permissions-needed-for-common-operations).
+- Branch out requires permissions listed in [permissions table](/fabric/cicd/git-integration/git-integration-process#fabric-permissions-needed-for-common-operations).
 - There must be an available capacity for this action.
 - All [workspace](#workspace-limitations) and [branch naming limitations](#branch-and-folder-limitations) apply when branching out to a new workspace.
 - When branching out, a new workspace is created and the settings from the original workspace aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
-- Only [Git supported items](/fabric/cicd/git-integration/intro-to-git-integration.md#supported-items) are available in the new workspace.
+- Only [Git supported items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items) are available in the new workspace.
 - The related branches list only shows branches and workspaces you have permission to view.
 - [Git integration](/fabric/admin/git-integration-admin-settings) must be enabled.
 
@@ -66,7 +66,7 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
 - Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](/fabric/admin/git-integration-admin-settings#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview) for help.
-- Works with [limited items](/fabric/cicd/git-integration/intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they're ignored.
+- Works with [limited items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items). If unsupported items are in the folder, they're ignored.
 - Duplicating names isn't allowed. Even if Power BI allows name duplication, the update, commit, or undo action fails.
 - B2B isn’t supported.
 - [Conflict resolution](/fabric/cicd/git-integration/conflict-resolution) is partially done in Git.
