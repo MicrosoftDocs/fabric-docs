@@ -29,10 +29,7 @@ Creating and collaborating in Fabric includes:
 - Sharing Fabric items, such as semantic models, warehouses, and notebooks, and collaborating on them with other Fabric users.
 - Creating analytics solutions using Fabric items.
 
-> [!NOTE]
-> One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
-
-When you start a Fabric capacity trial, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You get the equivalent of an F64 capacity but there are a few key features that aren't available on trial capacities. These include [Copilot](/fabric/get-started/copilot-faq-fabric), [Trusted workspace access](../security/security-trusted-workspace-access.md), and [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview). 
+When you start a Fabric capacity trial, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You get the equivalent of an F64 capacity but there are a few key features that aren't available on trial capacities which are mentioned above.
 
 To begin using your Fabric trial capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you.
 
@@ -79,7 +76,7 @@ In some situations, your Fabric administrator [enables Microsoft Fabric for the 
 
 ## Share trial capacities
 
-Each standard Fabric trial includes 64 capacity units. The person who starts the trial becomes the Capacity administrator for only that trial capacity. And that Capacity administrator can share the trial by assigning workspaces to that specific trial capacity.  
+The person who starts the trial becomes the Capacity administrator for only that trial capacity. And that Capacity administrator can share the trial by assigning workspaces to that specific trial capacity.  
 
 Other users on the same tenant can also start a Fabric trial and become the Capacity administrator for their trial capacity. Microsoft sets a limit on the number of trial capacities that can be created on a single tenant. ​So sharing workspaces in trial capacities is essential to allow your colleagues to participate in the Fabric capacity trial. Each Fabric trial capacity can be used by hundreds of users.
 
