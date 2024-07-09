@@ -111,25 +111,42 @@ Scripting requires Power BI write permissions on the Power BI semantic model. Wi
 
 There are some situations where your organization might need to create additional Power BI semantic models based off [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data.
 
-The **New Power BI semantic model** button inherits the default semantic model's configuration and allows for further customization. The default semantic model acts as a starter template, helping to ensure a single version of the truth. For example, if you use the default semantic model and define new relationships, and then use the **New Power BI semantic model** button, the new semantic model will inherit those relationships if the tables selected include those new relationships.
+### Create a new Power BI semantic model in Direct Lake mode
+
+The **New Power BI semantic model** button creates a new blank Power BI semantic model in Direct Lake mode with any of the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables you choose to include. This new Power BI semantic model does not inherit relationships, measures, or columns changes made in the default semantic model. You can create additional Power BI semantic model in Direct Lake mode using this button again. See the [Direct Lake overview](/fabric/get-started/direct-lake-overview) for more information about the capabilities of semantic models in Direct Lake mode created this way.
 
 To create a Power BI semantic model from a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], follow these steps:
 
-1. Go to **Data Warehouse** in the Fabric portal.
-
 1. Open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Switch to the **Reporting** ribbon.
 
-1. In the **Reporting** ribbon, select **New semantic model**, and then in the **New semantic model** dialog, select tables to be included, and then select **Confirm**.
+1. In the **Reporting** ribbon, select **New semantic model**, and then in the **New semantic model** dialog, select tables to be included, give the new Power BI semantic model a name, and then select **Confirm**. This Power BI semantic model is automatically saved in the workspace based on the workspace of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], but this can be optionally changed to a different workspace.
 
-1. Power BI automatically saves the semantic model in the workspace based on the name of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and then opens the semantic model in Power BI.
+1. The new Power BI semantic opens in the Power BI model **editing in the browser** for you to add relationships, measures, calculation groups, format strings, row-level security, etc. and to rename columns and tables.
 
-1. Select **Open data model** to open the Power BI Web modeling experience where you can add table relationships and DAX measures.
+1. To make further changes later, choose the **Open data model** to again return to this model editing experience in the browser.
 
-To learn more on how to edit data models in the Power BI service, see [Edit Data Models](/power-bi/transform-model/service-edit-data-models).
+To learn more on how to edit these Power BI semantic models in the workspace, see [Edit Data Models](/power-bi/transform-model/service-edit-data-models).  Power BI semantic models in Direct Lake mode can also be edited using the XMLA endpoint. Note: The defualt Power BI semantic model cannot be edited this way.
+
+### Create a new Power BI semantic model in Import or DirectQuery mode
+In addition to using Direct Lake mode in the browser, you can create a Power BI semantic model using Import or DirectQuery mode using the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables in Power BI Desktop.
+
+1. Open **Power BI Desktop**.
+   
+1. Click on the **OneLake Data Hub**.
+   
+1. Click on the **[!INCLUDE [fabric-se](includes/fabric-se.md)]** or **[!INCLUDE [fabric-dw](includes/fabric-dw.md)]**.
+   
+1. Click to drop down next to Connect and choose **Connect to SQL endpoint**.
+   
+1. Pick the tables you want to use then click **Load**. Alternatively, you can click **Transform data** to make additional transformations.
+    
+1. Choose **Import** or **DirectQuery** for the storage mode then click **Okay**.
+
+1. Now you can use **Power BI Desktop** to add relationships, measures, calculation groups, format strings, row-level security, etc. and to rename columns and tables, as well as create a report to save locally and then publish to the workspace.
 
 ## Limitations
 
-Default Power BI semantic models follow the current limitations for semantic models in Power BI. Learn more:
+**Default Power BI semantic models** follow the current limitations for semantic models in Power BI. Learn more:
 
 - [Azure Analysis Services resource and object limits](/azure/analysis-services/analysis-services-capacity-limits)
 - [Data types in Power BI Desktop - Power BI](/power-bi/connect-data/desktop-data-types)
