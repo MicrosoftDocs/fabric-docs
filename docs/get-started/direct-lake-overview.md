@@ -9,7 +9,7 @@ ms.subservice: powerbi-premium
 ms.custom:
   - ignite-2023-fabric
 ms.topic: concept-article
-ms.date: 05/14/2024
+ms.date: 07/09/2024
 LocalizationGroup: Admin
 ---
 # Direct Lake
@@ -55,7 +55,7 @@ Power BI semantic models in Direct Lake mode are created in the lakehouse or war
 
 In the Lakehouse, click **New Power BI semantic model** to create a Power BI semantic model in Direct Lake mode. 
 
-In the warehouse or SQL analytics endpoint, click on the **Reporting** ribbon then click **New Power BI semantic model** to create a Power BI semantic model in Direct Lake mode. 
+In the warehouse or SQL analytics endpoint, select the **Reporting** ribbon then select **New Power BI semantic model** to create a Power BI semantic model in Direct Lake mode. 
 
 You can then add relationships, measures, calculations groups, format strings, row-level security, etc., and rename tables and columns by [editing the semantic model in the browser](/power-bi/transform-model/service-edit-data-models). Edit the semantic model later using the context-menu from the workspace to **open data model**.
 
@@ -153,9 +153,9 @@ The following example specifies all queries use Direct Lake mode only:
 database.Model.DirectLakeBehavior = DirectLakeBehavior.DirectLakeOnly = 1;
 database.Model.SaveChanges();
 ```
-This can also be set when [editing the semantic model in the browser](/power-bi/transform-model/service-edit-data-models) in the semantic model properties. Click on **Semantic model** in the **Model** tab of the **Data** pane. 
+This can also be set when [editing the semantic model in the browser](/power-bi/transform-model/service-edit-data-models) in the semantic model properties. Select **Semantic model** in the **Model** tab of the **Data** pane. 
 
-![direct-lake-behavior](https://github.com/MicrosoftDocs/fabric-docs-pr/assets/102261521/21d7af71-9638-4f36-9125-ecc237c78258)
+:::image type="content" source="media/direct-lake-overview/direct-lake-behavior.png" alt-text="Behavior of direct lake." lightbox="media/direct-lake-overview/direct-lake-behavior.png":::
 
 ## Analyze query processing
 
