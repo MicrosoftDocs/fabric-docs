@@ -17,13 +17,13 @@ ms.date: 07/04/2024
 #### [Azure DevOps limitations](#tab/azure-devops)
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
-- If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
+- The tenant admin must enable [cross-geo exports](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) if the workspace and Git repo are in two different geographical regions.
 - The commit size is limited to 125 MB.
 
 #### [GitHub limitations](#tab/github)
 
 - GitHub can't enforce [cross-geo validations](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
-- The number of non-text files per commit is limited. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
+- The number of nontext files per commit is limited. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information about committing nontext files in GitHub, see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
 - The commit size is limited to 100 MB per file.
 
 ---
@@ -32,7 +32,7 @@ ms.date: 07/04/2024
 
 Some GitHub Enterprise settings aren't supported. For example:
 
-- IP allow list
+- IP allowlist
 - Private networking
 
 ### Workspace limitations
@@ -50,7 +50,7 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - When naming a folder in Git, the logical ID (Guid) is added as a prefix before the type if the item’s display name:
   - Has more than 256 characters
   - Ends with <kbd>.</kbd> or a space
-  - Contains any of the following characters: <kbd>"</kbd>, <kbd>/</kbd>, <kbd>:</kbd>, <kbd><</kbd>,<kbd>></kbd>,<kbd>\\</kbd>,<kbd>*</kbd>, <kbd>?</kbd>, <kbd>|</kbd>
+  - Contains any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
 
 ### Branching out limitations
 
@@ -66,7 +66,7 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
 - Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](/fabric/admin/git-integration-admin-settings#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview) for help.
-- Works with [limited items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items). If unsupported items are in the folder, they're ignored.
+- Works with [limited items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items). Unsupported items in the folder are ignored.
 - Duplicating names isn't allowed. Even if Power BI allows name duplication, the update, commit, or undo action fails.
 - B2B isn’t supported.
 - [Conflict resolution](/fabric/cicd/git-integration/conflict-resolution) is partially done in Git.
