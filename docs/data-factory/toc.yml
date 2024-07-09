@@ -508,7 +508,7 @@
       - name: Set up your connection
         href: connector-salesforce-objects.md
       - name: Configure in a data pipeline Copy activity
-        href: connector-salesforce-objects-copy-activity.md  
+        href: connector-salesforce-copy-activity.md  
     - name: Salesforce reports
       items:
       - name: Salesforce reports - Overview
