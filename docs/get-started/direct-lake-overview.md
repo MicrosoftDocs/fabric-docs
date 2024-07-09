@@ -204,7 +204,7 @@ For example, a warehouse administrator can grant a user SELECT permissions on a 
 
 - Direct Lake semantic model tables can only be derived from tables and views from a single Lakehouse or Warehouse. A single Lakehouse can include shortcuts added from other Lakehouses.
 
-- Queries using [row-level security](fabric/data-warehouse/row-level-security) against tables in the warehouse (including the Lakehouse SQL analytics endpoint) will fall back to DirectQuery mode.
+- Queries using [row-level security](../data-warehouse/row-level-security.md) against tables in the warehouse (including the Lakehouse SQL analytics endpoint) will fall back to DirectQuery mode.
 
 - Direct Lake tables can't currently be mixed with other table types, such as Import, DirectQuery, or Dual, in the same model. [Composite models on Power BI semantic models](/power-bi/transform-model/desktop-composite-models#composite-models-on-power-bi-semantic-models-and-analysis-services) can use Power BI semantic models in Direct Lake storage mode as a source.
 
