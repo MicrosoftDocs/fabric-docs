@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 06/18/2024
+ms.date: 07/09/2024
 ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -45,7 +45,7 @@ Before you enable Git integration, make sure you review the following privacy st
 
 The following Git providers are supported:
 
-* [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant are supported.
+* [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant
 * [GitHub](https://github.com/)
 * [GitHub Enterprise](https://github.com/enterprise)
 

@@ -19,13 +19,13 @@ To access the Git integration feature, you need one of the following:
 
 In addition, the following [tenant switches](/fabric/admin/about-tenant-settings) must be enabled from the Admin portal:
 
-- [**Users can create Fabric items**](/fabric/admin/fabric-switch)
-- [**Users can synchronize workspace items with their Git repositories**](/fabric/admin/git-integration-admin-settings#users-can-synchronize-workspace-items-with-their-git-repositories-preview)
-- For GitHub users only: [**Users can synchronize workspace items with GitHub repositories**](/fabric/admin/git-integration-admin-settings#users-can-synchronize-workspace-items-with-github-repositories-preview)
+- [Users can create Fabric items](/fabric/admin/fabric-switch)
+- [Users can synchronize workspace items with their Git repositories](/fabric/admin/git-integration-admin-settings#users-can-synchronize-workspace-items-with-their-git-repositories-preview)
+- For GitHub users only: [Users can synchronize workspace items with GitHub repositories](/fabric/admin/git-integration-admin-settings#users-can-synchronize-workspace-items-with-github-repositories-preview)
 
-These switches can be enabled by the tenant admin, capacity admin, or workspace admin, depending on your organization's settings.
+These switches can be enabled by the tenant admin, capacity admin, or workspace admin, depending on your [organization's settings](/fabric/admin/delegate-settings).
 
-## Git prerequisites
+### Git prerequisites
 
 Git integration is currently supported for Azure DevOps and GitHub. To use Git integration with your Fabric workspace, you need the following in either Azure DevOps or GitHub:
 

@@ -10,9 +10,8 @@ ms.date: 07/04/2024
 
 ### General Git integration limitations
 
-- The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Power BI needs to require multifactor authentication as well.
+- The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
-- GitHub doesn't support exports to different geographical regions. Even if [cross-geo export](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) is enabled.
 - Sovereign clouds aren't supported.
 
 #### [Azure DevOps limitations](#tab/azure-devops)
@@ -24,8 +23,8 @@ ms.date: 07/04/2024
 #### [GitHub limitations](#tab/github)
 
 - GitHub can't enforce [cross-geo validations](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
-- The commit size is limited to 100 MB per file.
 - The number of non-text files per commit is limited. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
+- The commit size is limited to 100 MB per file.
 
 ---
 
@@ -50,16 +49,16 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
 - When naming a folder in Git, the logical ID (Guid) is added as a prefix before the type if the item’s display name:
   - Has more than 256 characters
-  - Ends with `.`’ or a space
-  - Contains any of the following characters: `"`, `/`, `:`, `<`, `>`, `\\`, `*`, `?`, `|`
+  - Ends with <kbd>.</kbd> or a space
+  - Contains any of the following characters: <kbd>"</kbd>, <kbd>/</kbd>, <kbd>:</kbd>, <kbd><</kbd>,<kbd>></kbd>,<kbd>\\</kbd>,<kbd>*</kbd>, <kbd>?</kbd>, <kbd>|</kbd>
 
 ### Branching out limitations
 
-- Branch out requires permissions listed in [permissions table]((/fabric/cicd/git-integration/git-integration-process.md#permissions-needed-for-common-operations).
+- Branch out requires permissions listed in [permissions table](/fabric/cicd/git-integration/git-integration-process.md#permissions-needed-for-common-operations).
 - There must be an available capacity for this action.
 - All [workspace](#workspace-limitations) and [branch naming limitations](#branch-and-folder-limitations) apply when branching out to a new workspace.
 - When branching out, a new workspace is created and the settings from the original workspace aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
-- Only [Git supported items]((/fabric/cicd/git-integration/intro-to-git-integration.md#supported-items) are available in the new workspace.
+- Only [Git supported items](/fabric/cicd/git-integration/intro-to-git-integration.md#supported-items) are available in the new workspace.
 - The related branches list only shows branches and workspaces you have permission to view.
 - [Git integration](/fabric/admin/git-integration-admin-settings) must be enabled.
 
@@ -68,7 +67,7 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
 - Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](/fabric/admin/git-integration-admin-settings#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview) for help.
 - Works with [limited items](/fabric/cicd/git-integration/intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they're ignored.
-- Duplicating names isn't allowed – even if Power BI allows it, the update, commit, or undo action fails.
+- Duplicating names isn't allowed. Even if Power BI allows name duplication, the update, commit, or undo action fails.
 - B2B isn’t supported.
 - [Conflict resolution](/fabric/cicd/git-integration/conflict-resolution) is partially done in Git.
 - During the *Commit to Git* process, the Fabric service deletes files *inside the item folder* that aren't part of the item definition. Unrelated files not in an item folder aren't deleted.

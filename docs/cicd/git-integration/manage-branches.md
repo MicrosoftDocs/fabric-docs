@@ -27,6 +27,8 @@ To work with branches using Git integration, first connect the shared developmen
 
 Then, each developer can choose the isolated environment in which to work.
 
+## Prerequisites
+
 [!INCLUDE [prerequisites](../../includes/github-prereqs.md)]
 
 ## Develop using client tools

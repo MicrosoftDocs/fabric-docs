@@ -179,8 +179,8 @@ Azure DevOps account details include:
 - Repository
 - Branch
 
---->
 #### [GitHub account details](#tab/GitHub)
+--->
 
 GitHub account details include:
 
