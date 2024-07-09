@@ -26,7 +26,7 @@ By default, row-level security filtering uses single-directional filters, whethe
 
 For more information, see [Bidirectional cross-filtering using DirectQuery in Power BI](/power-bi/transform-model/desktop-bidirectional-filtering) and the [Securing the Tabular BI Semantic Model](https://download.microsoft.com/download/D/2/0/D20E1C5F-72EA-4505-9F26-FEF9550EFD44/Securing%20the%20Tabular%20BI%20Semantic%20Model.docx) technical article.
 
-![Screenshot of the model relationship setting to apply security filter in both directions.](../includes/media/powerbi-security-applyfilterinbothdirections.png)
+![Screenshot of the model relationship setting to apply security filter in both directions.](../includes/media/powerbi-security-apply-filter-in-both-directions.png)
 
 ## Manage security on your model
 
