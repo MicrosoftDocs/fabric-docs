@@ -42,9 +42,9 @@ The first time when a notebook is created, a warning message will be shown to re
 
 Here are some best practices to help you avoid security issues:
 
-- Before you manually run the notebook, Open the Notebook setting and check value of "Last modified by" to make sure you are running code from who you trust.
-- Before you add a notebook activity to a pipeline, Open the Notebook setting and check value of "Last modified by" to make sure you are running code from who you trust. If you are not sure about the latest change, better open the Notebook to review the change before you add it into the pipeline.
-- Before you update the scheduler plan, Open the Notebook setting and check value of "Last modified by" to make sure you are running code from who you trust. If you are not sure about the latest change, better open the Notebook to review the change before you update the scheduler plan.
+- Before you manually run the notebook, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change.
+- Before you add a notebook activity to a pipeline, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you add it into the pipeline.
+- Before you update the scheduler plan, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you update the scheduler plan.
 - Separate the workspace into different stage (dev, test, prod) and control the access of different stage to avoid the security issue. Only add the user who you trust to the prod stage.
 
 
