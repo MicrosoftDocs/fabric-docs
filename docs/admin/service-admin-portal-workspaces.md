@@ -4,8 +4,7 @@ description: Learn how to view and understand info about Fabric workspaces and m
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - admin-portal
   - ignite-2023

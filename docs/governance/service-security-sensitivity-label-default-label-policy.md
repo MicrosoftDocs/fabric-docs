@@ -3,8 +3,7 @@ title: Default label policy in Power BI
 description: Learn how to ensure comprehensive protection and governance of sensitive data by enabling a default label policy with Power BI.
 author: paulinbar
 ms.author: painbar
-ms.service: powerbi
-ms.subservice: powerbi-eim
+
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
