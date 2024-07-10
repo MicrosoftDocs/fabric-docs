@@ -70,7 +70,7 @@ landingContent:
             url: customer-churn.md 
 
 # Card 
-  - title: Preparing Data
+  - title: Prepare data
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -80,7 +80,7 @@ landingContent:
             url: read-write-pandas.md 
 
 # Card 
-  - title: Training Models
+  - title: Train models
     linkLists:
       - linkListType: overview
         links:  
@@ -96,7 +96,7 @@ landingContent:
             url: train-models-pytorch.md 
 
 # Card 
-  - title: Tracking models and experiments
+  - title: Track models and experiments
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -122,7 +122,7 @@ landingContent:
             url: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
 
 # Card 
-  - title: Using semantic link 
+  - title: Use semantic link 
     linkLists:
       - linkListType: overview
         links:
