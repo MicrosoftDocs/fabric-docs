@@ -3,8 +3,7 @@ title: Enable content certification
 description: Learn how to enable certification for semantic models, dataflows, reports, and apps.
 author: paulinbar
 ms.author: painbar
-ms.service: powerbi
-ms.subservice: powerbi-eim
+
 ms.custom:
   - ignite-2023
 ms.topic: how-to

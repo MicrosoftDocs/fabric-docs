@@ -4,8 +4,7 @@ description: Learn about URL endpoints and ports with their associated linked si
 author: kesharab
 ms.author: kesharab
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.topic: conceptual
 ms.date: 04/18/2024
 ms.custom: ''

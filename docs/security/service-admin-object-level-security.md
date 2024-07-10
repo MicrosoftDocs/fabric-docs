@@ -4,8 +4,7 @@ description: How to configure object-level security for imported semantic models
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer:
-ms.service: powerbi
-ms.subservice: powerbi-developer
+
 ms.topic: how-to
 ms.date: 04/24/2024
 ---
