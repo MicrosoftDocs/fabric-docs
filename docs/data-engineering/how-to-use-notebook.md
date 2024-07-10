@@ -26,6 +26,28 @@ With a Fabric notebook, you can:
 
 This article describes how to use notebooks in data science and data engineering experiences.
 
+## Security context of running notebook
+
+The execution of a notebook can be triggered by three different manners in Fabric with full flexibility to meet different scenarios:
+
+- **Interactive run**: User manually trigger the execution via the different UX entries. The execution would be running under the current user's security context.
+- **Run as pipeline activity**: The execution is triggered from Fabric Data Factory pipeline. You can find the detail steps in the [Notebook Activity](../data-factory/notebook-activity.md). The execution would be running under the pipeline owner's security context.
+- **Scheduler**: The execution is triggered from a scheduler plan. The execution would be running under the security context of the user who setup/update the scheduler plan.
+
+The flexibility of these execution options with different security context allows you to meet different scenarios and requirements, but also requires you to be aware of the security context when you design and develop your notebook, otherwise it may cause unexpected behavior and even some security issues.
+
+The first time when a notebook is created, a warning message will be shown to remind you the risk of running the code without reviewing it.
+
+:::image type="content" source="media\how-to-use-notebook\notebook-security-warning.png" alt-text="Screenshot showing warning of running notebook.":::
+
+Here are some best practices to help you avoid security issues:
+
+- Before you manually run the notebook, Open the Notebook setting and check value of "Last modified by" to make sure you are running code from who you trust.
+- Before you add a notebook activity to a pipeline, Open the Notebook setting and check value of "Last modified by" to make sure you are running code from who you trust. If you are not sure about the latest change, better open the Notebook to review the change before you add it into the pipeline.
+- Before you update the scheduler plan, Open the Notebook setting and check value of "Last modified by" to make sure you are running code from who you trust. If you are not sure about the latest change, better open the Notebook to review the change before you update the scheduler plan.
+- Separate the workspace into different stage (dev, test, prod) and control the access of different stage to avoid the security issue. Only add the user who you trust to the prod stage.
+
+
 ## Create notebooks
 
 You can either create a new notebook or import an existing notebook.
