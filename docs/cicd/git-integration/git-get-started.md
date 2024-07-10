@@ -84,7 +84,7 @@ If the workspace is already connected to GitHub, follow the instructions for [Co
 
     - [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
     - [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
-    - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project). If you connected to GitHub using a scoped token, you can only connect to that repository.
+    - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project).
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
     - Folder (Type in the name of an existing folder or enter a name to create a new folder. If you leave the folder name blank, content will be created in the root folder. You can only connect to one folder at a time.)
 
@@ -97,7 +97,7 @@ If the workspace is already connected to GitHub, follow the instructions for [Co
     > [!NOTE]
     > You can only connect a workspace to one branch and one folder at a time.
 
-    - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project). If you connected to GitHub using a scoped token, you can only connect to that repository.
+    - [Repository URL](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project). If you connected to GitHub using a scoped token, you can only connect to that repository.
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
     - Folder (Type in the name of an existing folder or enter a name to create a new folder. If you leave the folder name blank, content will be created in the root folder. You can only connect to one folder at a time.)
 
