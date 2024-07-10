@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 07/05/2024
+ms.date: 07/09/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -94,7 +94,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  530  | Administration & Management | [Creating or updating Fabric items is blocked](known-issues/known-issue-530-creating-updating-fabric-items-blocked.md)  | October 23, 2023 |  Fixed: June 6, 2024 |
 |  526  | Power BI | [Dataflow REST API returns more data sources and gateways than expected](known-issues/known-issue-526-dataflow-rest-api-returns-more-data-sources-gateways.md)    | October 18, 2023 |  Fixed: June 6, 2024 |
 |  461  | Power BI | [A scheduled refresh of a semantic model intermittently hangs when connected to a dataflow](known-issues/known-issue-461-scheduled-refresh-dataset-hangs.md)    | July 27, 2023  | Fixed: June 6, 2024 |
-|  616  | OneLake | [Under-billing of OneLake storage for January 26 2024](known-issues/known-issue-616-under-billing-onelake-storage.md) | February 14, 2024 | Fixed: May 23, 2024 |
 
 ## Related content
 
