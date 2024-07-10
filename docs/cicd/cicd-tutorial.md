@@ -7,7 +7,8 @@ ms.reviewer: NimrodShalit
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
-ms.date: 06/18/2024
+ms.date: 07/10/2024
+#customer intent: As a developer, I want to understand how to use Git integration with deployment pipelines to manage the lifecycle of my apps.
 ---
 
 # Tutorial: Lifecycle management in Fabric
@@ -16,7 +17,8 @@ In this tutorial, you go through the whole process of loading data into your wor
 
 ## Prerequisites
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+> [!IMPORTANT]
+> The Git integration feature is in currently in [preview](../get-started/preview.md).
 
 [!INCLUDE [github-prereqs](../includes/github-prereqs.md)]
 

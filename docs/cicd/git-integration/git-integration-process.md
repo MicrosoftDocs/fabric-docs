@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 06/18/2024
+ms.date: 07/10/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -169,7 +169,7 @@ See [Branching out limitations](#branching-out-limitations) for more information
 
 ### Account details
 
-The Account details tab shows details of the GitHub account that the user is connected to. It has two sections. The top section shows the Git provider and the account name. The bottom section shows the repository and branch that the workspace is connected to. Currently, this tab is only available for GitHub accounts.
+The Account details tab shows details of the GitHub account that the user is connected to. It has two sections. The top section shows the Git provider and the account name. The bottom section shows the repository and branch that the workspace is connected to. Currently, this tab is only available for workspaces connected to GitHub.
 
 <!---
 #### [Azure DevOps account details](#tab/Azure)

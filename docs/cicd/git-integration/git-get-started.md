@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
-ms.date: 07/02/2024
+ms.date: 07/10/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -57,13 +57,13 @@ If you select Azure DevOps, select **Connect** to automatically sign into the Az
 ### [GitHub Connect](#tab/GitHub)
 
 If you select GitHub, you need to sign in to your GitHub account.  
-Select **Add account** if it's your first time signing in from Fabric, or select one of the accounts listed. After you sign in, select **Authorize** to allow Fabric to access your GitHub account.
+Select **Add account** if it's your first time signing in from Fabric, or select one of the accounts listed. After you sign in, select **Connect** to allow Fabric to access your GitHub account.
 
 :::image type="content" source="./media/git-get-started/github-first-connect.png" alt-text="Screenshot of GitHub integration window without any existing accounts to select.":::
 
 If it's the first time connecting, you need to <a href="https://docs.github.com/authentication/keeping-your-account-and-data-secure/about-authentication-to-github" target="_blank">Authorize</a> your GitHub user. Provide the following information:
 
-- *Display name* - must be unique for each user
+- *Display name* - must be unique for each GitHub user
 - *Personal access token* - <a href="https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" target="_blank">your classic or fine-grained personal access token</a>
 - *Repository URL* (optional) - If you don't enter a URL, you can connect to any repo you have access to. If you enter a URL, you can only connect to this repository.
 
@@ -75,7 +75,7 @@ If it's the first time connecting, you need to <a href="https://docs.github.com/
 
 If the workspace is already connected to GitHub, follow the instructions for [Connecting to a shared workspace](./git-integration-process.md#connect-to-a-shared-workspace).
 
-#### [Azure DevOps branch Connect](#tab/Azure)
+#### [Azure DevOps branch connect](#tab/Azure)
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
@@ -86,11 +86,11 @@ If the workspace is already connected to GitHub, follow the instructions for [Co
     - [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
     - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project). If you connected to GitHub using a scoped token, you can only connect to that repository.
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
-    - Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content will be created in the root folder. You can only connect to one folder at a time.)
+    - Folder (Type in the name of an existing folder or enter a name to create a new folder. If you leave the folder name blank, content will be created in the root folder. You can only connect to one folder at a time.)
 
 :::image type="content" source="./media/git-get-started/azure-connect-branch.png" alt-text="Screenshot to Azure connection.":::
 
-#### [GitHub Branch Connect](#tab/GitHub)
+#### [GitHub branch connect](#tab/GitHub)
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
@@ -99,7 +99,7 @@ If the workspace is already connected to GitHub, follow the instructions for [Co
 
     - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project). If you connected to GitHub using a scoped token, you can only connect to that repository.
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
-    - Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content is created in the root folder. You can only connect to one folder at a time.)
+    - Folder (Type in the name of an existing folder or enter a name to create a new folder. If you leave the folder name blank, content will be created in the root folder. You can only connect to one folder at a time.)
 
 :::image type="content" source="./media/git-get-started/github-connect-branch.png" alt-text="Screenshot to GitHub connection.":::
 
