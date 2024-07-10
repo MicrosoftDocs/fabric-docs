@@ -4,7 +4,7 @@ description: In this third tutorial step, learn how to ingest data into the ware
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
+ms.date: 07/10/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: tutorial
