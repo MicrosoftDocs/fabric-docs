@@ -80,6 +80,9 @@ Follow these steps to set up your copy activity using copy assistant.
 
    :::image type="content" source="media/copy-data-activity/connect-to-data-destination.png" alt-text="Screenshot of Connect to data destination." lightbox="media/copy-data-activity/connect-to-data-destination.png":::
 
+   > [!NOTE]
+   > You can only use a single on-premises data gateway within the same Copy activity. If both source and sink are on-premises data sources, they must use the same gateway. To move data between on-premises data sources with different gateways, you must copy using the first gateway to an intermediate cloud source in one Copy activity. Then you can use another Copy activity to copy it from the intermediate cloud source using the second gateway.
+
 ### Review and create your copy activity
 
 1. Review your copy activity settings in the previous steps and select **OK** to finish. Or you can go back to the previous steps to edit your settings if needed in the tool.

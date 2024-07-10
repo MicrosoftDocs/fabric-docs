@@ -44,4 +44,6 @@ items:
     - name: Plan your capacity size
       href: plan-capacity.md    
     - name: Monitor a paused capacity
-      href: monitor-paused-capacity.md                 
+      href: monitor-paused-capacity.md
+    - name: Understand the metrics app calculations
+      href: metrics-app-calculations.md

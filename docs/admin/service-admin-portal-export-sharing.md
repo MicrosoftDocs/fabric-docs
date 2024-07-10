@@ -4,8 +4,7 @@ description: Learn how to configure export and sharing settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
 ms.topic: how-to
 ms.date: 03/16/2024

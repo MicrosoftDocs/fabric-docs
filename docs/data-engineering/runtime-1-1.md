@@ -11,7 +11,7 @@ ms.custom:
 ms.date: 11/15/2023
 ---
 
-# Runtime 1.1
+# Runtime 1.1 (GA)
 
 Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of the Data Engineering and Data Science experiences in Fabric. This document covers the Fabric Runtime 1.1 components and versions.
 
@@ -24,6 +24,9 @@ Microsoft Fabric Runtime 1.1 is one of the runtimes offered within the Microsoft
 - Python: 3.10
 - Delta Lake: 2.2
 - R: 4.2.2
+
+> [!TIP]
+> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.2](./runtime-1-2.md).
 
 Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
 

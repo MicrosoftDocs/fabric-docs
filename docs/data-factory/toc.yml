@@ -37,6 +37,8 @@
             href: pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md
           - name: Load 2 GB of Parquet data to a Lakehouse table
             href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
+          - name: Load 6 GB of CSV data to a Lakehouse table with Fast Copy enabled
+            href: pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md
     - name: Keyboard shortcuts
       href: keyboard-shortcuts.md
   - name: Get started
@@ -509,6 +511,8 @@
         href: connector-salesforce-objects-overview.md
       - name: Set up your connection
         href: connector-salesforce-objects.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-salesforce-copy-activity.md  
     - name: Salesforce reports
       items:
       - name: Salesforce reports - Overview
