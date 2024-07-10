@@ -9,7 +9,7 @@ ms.subservice: powerbi-premium
 ms.custom:
   - ignite-2023-fabric
 ms.topic: concept-article
-ms.date: 05/14/2024
+ms.date: 07/09/2024
 LocalizationGroup: Admin
 ---
 # Direct Lake
@@ -24,7 +24,7 @@ On the other hand, with import mode, performance can be better because the data 
 
 Direct Lake mode eliminates the import requirement by loading the data directly from OneLake. Unlike DirectQuery, there's no translation from DAX or MDX to other query languages or query execution on other database systems, yielding performance similar to import mode. Because there's no explicit import process, it's possible to pick up any changes at the data source as they occur, combining the advantages of both DirectQuery and import modes while avoiding their disadvantages. Direct Lake mode can be the ideal choice for analyzing very large models and models with frequent updates at the data source.
 
-Direct Lake also supports [row-level security](../security/service-admin-row-level-security.md) and [object-level](../security/service-admin-object-level-security.md) security so users only see the data they have permission to see.
+Direct Lake also supports [Power BI row-level security](../security/service-admin-row-level-security.md) and [object-level](../security/service-admin-object-level-security.md) security so users only see the data they have permission to see.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ As an alternative to a lakehouse with SQL analytics endpoint, you can also provi
 
 #### Default Power BI semantic model
 
-Data warehouses and SQL analytics endpoints also create a **default Power BI semantic model** in Direct Lake mode. This default semantic model can only be edited within the warehouse or SQL endpoint and has additional limitations, such as no model write support with XMLA endpoint. Refer to the [default Power BI semantic model](/fabric/data-warehouse/semantic-models) documentation. This Direct Lake documentation is for non-default Power BI semantic models in Direct Lake mode.
+Warehouses and SQL analytics endpoints also create a **default Power BI semantic model** in Direct Lake mode. This default semantic model can only be edited within the warehouse or SQL endpoint and has additional limitations. Refer to the [default Power BI semantic model](/fabric/data-warehouse/semantic-models) documentation. This Direct Lake documentation is for non-default Power BI semantic models in Direct Lake mode.
 
 ### Create a Power BI semantic model in Direct Lake mode
 
@@ -55,7 +55,7 @@ Power BI semantic models in Direct Lake mode are created in the lakehouse or war
 
 In the Lakehouse, click **New Power BI semantic model** to create a Power BI semantic model in Direct Lake mode. 
 
-In the warehouse or SQL analytics endpoint, click on the **Reporting** ribbon then click **New Power BI semantic model** to create a Power BI semantic model in Direct Lake mode. 
+In the warehouse or SQL analytics endpoint, select the **Reporting** ribbon then select **New Power BI semantic model** to create a Power BI semantic model in Direct Lake mode. 
 
 You can then add relationships, measures, calculations groups, format strings, row-level security, etc., and rename tables and columns by [editing the semantic model in the browser](/power-bi/transform-model/service-edit-data-models). Edit the semantic model later using the context-menu from the workspace to **open data model**.
 
@@ -153,9 +153,9 @@ The following example specifies all queries use Direct Lake mode only:
 database.Model.DirectLakeBehavior = DirectLakeBehavior.DirectLakeOnly = 1;
 database.Model.SaveChanges();
 ```
-This can also be set when [editing the semantic model in the browser](/power-bi/transform-model/service-edit-data-models) in the semantic model properties. Click on **Semantic model** in the **Model** tab of the **Data** pane. 
+This can also be set when [editing the semantic model in the browser](/power-bi/transform-model/service-edit-data-models) in the semantic model properties. Select **Semantic model** in the **Model** tab of the **Data** pane. 
 
-:::image type="content" source="https://powerbiblogscdn.azureedge.net/wp-content/uploads/2024/02/Direct-Lake-behavior-web-modeling.png" alt-text="Screenshot of the Direct lake behavior semantic model property in web modeling.":::
+:::image type="content" source="media/direct-lake-overview/direct-lake-behavior.png" alt-text="A screenshot that shows the behavior of Direct Lake." lightbox="media/direct-lake-overview/direct-lake-behavior.png":::
 
 ## Analyze query processing
 
@@ -203,6 +203,8 @@ For example, a warehouse administrator can grant a user SELECT permissions on a 
 - By design, only tables in the semantic model derived from tables in a Lakehouse or Warehouse support Direct Lake mode. Although tables in the model can be derived from SQL views in the Lakehouse or Warehouse, queries using those tables will fall back to DirectQuery mode.
 
 - Direct Lake semantic model tables can only be derived from tables and views from a single Lakehouse or Warehouse. A single Lakehouse can include shortcuts added from other Lakehouses.
+
+- Queries using [row-level security](../data-warehouse/row-level-security.md) against tables in the warehouse (including the Lakehouse SQL analytics endpoint) will fall back to DirectQuery mode.
 
 - Direct Lake tables can't currently be mixed with other table types, such as Import, DirectQuery, or Dual, in the same model. [Composite models on Power BI semantic models](/power-bi/transform-model/desktop-composite-models#composite-models-on-power-bi-semantic-models-and-analysis-services) can use Power BI semantic models in Direct Lake storage mode as a source.
 
