@@ -54,7 +54,7 @@ This article outlines key considerations for determining the most suitable imple
 | Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
 | **Multicloud connectors** | Azure Stream Analytics connects to Confluent Kafka. No connectors to read data from Amazon Kinesis or Google Pub/Sub. | Native integration for Confluent Kafka, Amazon Kinesis, Google Pub/Sub. |
-| **Support for CDC streams** | Requires deployment of other services such as Debezium. | Native integration for Azure Cosmos DB, Postgresql, and Azure SQL. |
+| **Support for CDC streams** | Requires deployment of other services such as Debezium. | Native integration for Azure Cosmos DB, PostgreSQL, MySQL DB, and Azure SQL. |
 | **Support for protocols** | Azure Event Hubs, AMQP, Kafka, and MQTT. | Azure Event Hubs, AMQP, Kafka. |
 
 ## Analyze & transform
@@ -84,7 +84,7 @@ This article outlines key considerations for determining the most suitable imple
 |--|--|--|
 | **Unified catalog of data streams** | Not available | Real-time hub:<br />1. Data streams created by the users<br />2. Existing streams from Microsoft sources<br />3. Fabric system event streams |
 | **Discovery of Microsoft data streams** | Not available | Real-time Intelligence hub discovers data streams in your Azure tenant. |
-| **Capture and act on events from Azure Storage** | Requires deploying Azure Event Grid to act on events occurring in Azure Storage. | Can be deployed from Fabric. An Event Grid resource is created in the same resource group as the Azure Storage account. |
+| **Capture and act on events from Azure Storage** | Requires deploying Azure Event Grid to act on events occurring in Azure Storage. | Azure Blob Storage event-based triggers available. |
 | **Capture and act on events from Fabric** | Not applicable | Natively available in Fabric |
 
 ## Related content
