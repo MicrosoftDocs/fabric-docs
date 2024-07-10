@@ -33,8 +33,6 @@ Add the user identity who will be making the data access request as the owner of
 
 If you're requesting data for this context for the first time (a combination of which data table is being accessed, which destination account is the data being loaded into, and which user identity is making the data access request), the copy activity status is displayed as **In Progress**. Only when you select the [**Details** link under **Actions**](/azure/data-factory/copy-activity-overview#monitoring) will the status be displayed as **RequestingConsent**. A member of the data access approver group needs to approve the request in the Privileged Access Management before the data extraction can proceed.
 
-Refer to the [frequently asked questions](/graph/data-connect-faq#how-can-i-approve-pam-requests-via-the-microsoft-365-admin-center) on how the approver can approve the data access request. Refer to the [data connect integration with PAM](/graph/data-connect-pam) article for an explanation of the overall integration with Privileged Access Management, including how to set up the data access approver group.
-
 ## Supported configuration
 
 For the configuration of each tab under copy activity, go to the following sections respectively.
