@@ -222,7 +222,7 @@ For example, a warehouse administrator can grant a user SELECT permissions on a 
 
 - The floating point value ‘NaN’ (Not A Number) isn't supported in Direct Lake models.
 
-- Embedded scenarios that rely on embedded entities aren't supported yet.
+- Power BI Embedded scenarios that rely on embedded entities aren't supported yet.
 
 - Validation is limited for Direct Lake models. User selections are assumed correct and no queries will validate cardinality and cross filter selections for relationships, or for the selected date column in a date table.
 
