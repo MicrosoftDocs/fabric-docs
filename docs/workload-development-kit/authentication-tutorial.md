@@ -104,7 +104,7 @@ In the backend sample, we provide four examples. You can see them in [Backend/sr
 
 Preauthorize `871c010f-5e61-4fb1-83ac-98610a7e9110` (the Fabric client application) for these scopes.
 
-The application IDs of these apps can be found under [*Microsoft Power BI* and *Power BI Service*](/troubleshoot/azure/active-directory/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).  
+The application IDs of these apps can be found under [*Microsoft Power BI* and *Power BI Service*](/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).  
 
 Here's how your *Expose an API* section should look in your application. In this example, the ID URI is `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`:
 
