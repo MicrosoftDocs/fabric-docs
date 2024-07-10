@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - build-2024
-ms.date: 06/10/2024
+ms.date: 07/10/2024
 ---
 
 # The Fabric throttling policy
