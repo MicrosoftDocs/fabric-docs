@@ -105,7 +105,7 @@ Paired items appear on the same line in the pipeline content list. Items that ar
 
 There's no way to manually pair items except by following the pairing rules described in the [previous section](#pairing-rules). Adding a new item to a workspace that's part of a pipeline, doesn't automatically pair it to an identical item in an adjacent stage. Thus, you can have identical items with the same name in adjacent workspaces that aren't paired.
 
-Here's an example of items that were added to the *Test* pipeline after it was assigned and therefore not paired with the identical item in the *Dev* pipeline:
+Here's an example of items that were added to the directly to the *Test* workspace after it was assigned and therefore not paired with the identical item in the *Dev* pipeline:
 
 :::image type="content" source="./media/assign-pipeline/non-paired-items.png" alt-text="Screenshot showing adjacent stages with nonpaired items with identical names and types listed on the different lines.":::
 
