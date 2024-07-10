@@ -8,6 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2024
 ms.date: 04/18/2024
+ms.collection: ce-skilling-ai-copilot
 ms.search.form: Get started
 #customer intent: I want to learn how to query my streaming data in a KQL queryset in Real-Time Intelligence.
 ---

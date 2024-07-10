@@ -3,8 +3,8 @@ title: What is data warehousing in Microsoft Fabric?
 description: Learn more about data warehousing workloads in Synapse Data Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: joanpo, chweb
-ms.date: 04/24/2024
+ms.reviewer: joanpo, chweb, cynotebo
+ms.date: 07/02/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: overview
@@ -98,7 +98,7 @@ For more information about querying your data in [!INCLUDE [product-name](../inc
 
 In order to best serve your analytics use cases, there are a variety of capabilities available to you. Generally, the warehouse can be thought of as a superset of all other capabilities, providing a synergistic relationship between all other analytics offerings that provide T-SQL.  
 
-Within fabric, there are users who might need to decide between a [Warehouse](create-warehouse.md), [Lakehouse](get-started-lakehouse-sql-analytics-endpoint.md), and even a [Power BI datamart](../data-engineering/create-lakehouse.md).
+Within Microsoft Fabric, there are users who might need to decide between a [Warehouse](create-warehouse.md), [Lakehouse](get-started-lakehouse-sql-analytics-endpoint.md), and even a [Power BI datamart](../data-engineering/create-lakehouse.md).
 
 :::row:::
    :::column span="1"::: 

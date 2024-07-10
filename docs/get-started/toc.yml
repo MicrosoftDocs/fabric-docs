@@ -157,6 +157,18 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Data warehouse deployment using deployment pipelines fails
+      href: known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md
+    - name: Dataflow Gen2 ownership takeover fails
+      href: known-issues/known-issue-773-dataflow-gen2-ownership-takeover-fails.md
+    - name: Data warehouse connection or query execution fails
+      href: known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md
+    - name: Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines
+      href: known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md
+    - name: SQL analytics endpoint table sync fails when table contains linked functions
+      href: known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md
+    - name: Dataflows Gen2 staging warehouse doesn't work in deployment pipelines
+      href: known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md
     - name: New card and reference label tabular layout content hidden or truncated
       href: known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md
     - name: Python and R visuals don't work in Fabric capacity

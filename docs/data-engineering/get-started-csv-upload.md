@@ -1,6 +1,6 @@
 ---
-title: CSV upload to Delta for PBI reporting
-description: Go from your CSV file to a Lakehouse table to a PBI report.
+title: CSV file upload to Delta table for Power BI reporting
+description: Learn how to upload a CSV file to a lakehouse, convert it to a Delta table, and generate a semantic model and Power BI report.
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny

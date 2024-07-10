@@ -33,12 +33,12 @@ For considerations and limitations, see [Limitations](copilot-notebooks-overview
   - Schemas of data sources in the notebook.
   - Sample data from data sources in the notebook.
   - Schemas from external data sources in an attached lakehouse.
-
+    
 ## Evaluation of Copilot for Data Science
  
 - The product team has tested Copilot to see how well the system performs within the context of notebooks, and whether AI responses are insightful and useful.
 - The team also invested in additional harms mitigations, including technological approaches to focusing Copilot's output on topics related to data science.
- 
+
 ## Tips for working with Copilot for Data Science
 
 - Copilot is best equipped to handle data science topics, so limit your questions to this area.

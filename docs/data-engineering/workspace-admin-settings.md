@@ -1,6 +1,6 @@
 ---
-title: Apache Spark workspace administration settings in Microsoft Fabric
-description: Learn about the workspace administration settings for Data Engineering and Science experiences such as Apache Spark Pools, high concurrency Mode, runtime version, Spark properties, and autologging.
+title: Workspace administration settings in Microsoft Fabric
+description: Learn about the workspace administration settings for Data Engineering and Science experiences in Fabric.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
