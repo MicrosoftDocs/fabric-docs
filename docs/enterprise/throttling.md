@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - build-2024
-ms.date: 06/10/2024
+ms.date: 07/10/2024
 ---
 
 # The Fabric throttling policy
@@ -86,13 +86,13 @@ The Microsoft Fabric Capacity Metrics app drilldown allows admins to see operati
 
 ## Actions you can take to recover from overload situations
 
-Strategies you can use to recover from a throttling situation:
+When your capacity is throttled to the point it's frozen, users receive an error if their action requires Fabric compute resources. For example, the error can say *Cannot load model due to reaching capacity limits*. In such cases, you can use these strategies to recover your capacity from its frozen state.
 
-* wait until the overload state is over before issuing new requests.
-* upgrade the SKU of an F capacity.
-* pause/resume an F capacity.
-* [autoscale](/power-bi/enterprise/service-premium-auto-scale) a P capacity.
-* move lower priority or overconsuming workspaces out of the capacity.
+* Wait until the overload state is over before issuing new requests.
+* Upgrade the SKU of an F capacity.
+* Pause/resume an F capacity.
+* [A    utoscale](/power-bi/enterprise/service-premium-auto-scale) a P capacity.
+* Move lower priority or overconsuming workspaces out of the capacity.
 
 ## Related content
 
