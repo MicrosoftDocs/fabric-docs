@@ -4,8 +4,7 @@ description: Learn about admin organizational visual capabilities and how to cus
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer:
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
 ms.topic: conceptual
 ms.date: 01/11/2024
