@@ -33,8 +33,8 @@ Master data badges can only be applied to items that contain data, such as lakeh
 This article describes:
 
 * How to [promote items](#promote-items).
-* How to [certify items](#certify-items) if you're an authorized reviewer, or [request certification](#request-item-certification) if you're not.
-* How to [apply the **Master data** badge to a data item](#label-master-data) if you are authorized to do so.
+* How to [certify items](#certify-items) if you're an authorized reviewer, or [request certification](#request-certification-or-master-data-designation) if you're not.
+* How to [apply the **Master data** badge to a data item](#label-data-items-as-master-data) if you are authorized to do so, or [request master data designation](#request-certification-or-master-data-designation) if you're not.
 
 See the [endorsement overview](../governance/endorsement-overview.md) to learn more about endorsement.
 
@@ -59,7 +59,7 @@ To certify an item:
 * You must be [authorized by the Fabric administrator](../admin/endorsement-certification-enable.md).
 
     > [!NOTE]
-    > If you aren't authorized to certify an item yourself, you can [request item certification](#request-item-certification).
+    > If you aren't authorized to certify an item yourself, you can [request item certification](#request-certification-or-master-data-designation).
 
 * You must have write permissions on the item you want to apply the **Certified** badge to.
 
@@ -82,7 +82,7 @@ To label a data item as master data:
 * You must be [authorized by the Fabric administrator](../admin/endorsement-master-data-enable.md).
 
     > [!NOTE]
-    > If you aren't authorized to designate a data item as master data yourself, you can [the master data designation](#request-master-data-designation).
+    > If you aren't authorized to designate a data item as master data yourself, you can [the master data designation](#request-certification-or-master-data-designation).
 
 * You must have write permissions on the item you want to apply the **Master data** badge to.
 

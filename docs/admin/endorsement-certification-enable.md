@@ -31,10 +31,10 @@ Certification is part of Power BI's *endorsement* feature. For more information,
    :::image type="content" source="./media/endorsement-certification-enable/certification-setup-dialog.png" alt-text="Screenshot of how to set up semantic model and dataflow certification.":::
 
 1. Set the toggle to **Enabled**.
-1. If your organization has a published certification policy, provide its URL here. This becomes the **Learn more** link in the certification section of the [endorsement settings dialog](../get-started/endorsement-promote-certify.md#request-item-certification). If you don't supply a link, users who want to request certification of their item will be advised to contact their Fabric administrator.
+1. If your organization has a published certification policy, provide its URL here. This becomes the **Learn more** link in the certification section of the [endorsement settings dialog](../get-started/endorsement-promote-certify.md#request-certification-or-master-data-designation). If you don't supply a link, users who want to request certification of their item will be advised to contact their Fabric administrator.
 1. Specify one or more security groups whose members will be authorized to certify items. These authorized certifiers will able to use the Certification button in the certification section of the [endorsement settings dialog](../get-started/endorsement-promote-certify.md#certify-items). This field accepts security groups only. You can't enter named users.
     
-    If a security group contains subsecurity groups that you don't want to give certification rights to, you can check the **Except specific security groups** box and enter the name(s) of those group(s) in a text box that will appear.
+    If a security group contains subsecurity groups that you don't want to give certification rights to, you can check the **Except specific security groups** box and enter the names of those groups in a text box that will appear.
 
 1. Check the **Domain admins can enable/disable** checkbox if you want domain administrators to be able to override any or all tenant-level certification settings.
 
