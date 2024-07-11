@@ -85,7 +85,7 @@ Create a new DAG file in the dags folder with the following content. Update `wor
       run_pipeline
 ```
 
-## Create a plugin file for the custom operator (Optional)
+## Create a plugin file for the custom operator
 
 If you want to include an external monitoring link for Microsoft Fabric item runs, create a plugin file as follows:
 
@@ -117,3 +117,8 @@ Create a new file in the plugins folder with the following content:
 
 3. Xcom Integration: Trigger the DAG to view task outputs in the Xcom tab.
    :::image type="content" source="media/data-workflows/view-apache-airflow-dags-xcom.png" lightbox="media/data-workflows/view-apache-airflow-dags-xcom.png" alt-text="Screenshot to view Apache Airflow DAGs with Xcom tab.":::
+
+## Related Content
+
+[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)
+[Data workflows workspace settings](../data-factory/data-workflows-workspace-settings.md)
