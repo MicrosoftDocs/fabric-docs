@@ -30,9 +30,10 @@ This article describes how DLP in Fabric works, lists considerations and limitat
 
 * DLP policies apply to workspaces. Only workspaces hosted in Fabric or  [Premium capacities](./service-premium-what-is.md) are supported.
 
-* DLP semantic model evaluation workloads impact capacity. See [CPU metering for DLP policy evaluation](#cpu-metering-for-dlp-policy-evaluation) for more information.
+* DLP evaluation workloads impact capacity. See [CPU metering for DLP policy evaluation](#cpu-metering-for-dlp-policy-evaluation) for more information.
 
 * DLP policy templates aren't yet supported for Fabric DLP policies. When creating a DLP policy for Fabric, choose the "custom policy" option.
+
 * Fabric DLP policy rules currently support sensitivity labels and sensitive info types as conditions.
 
 * DLP policies for Fabric aren't supported for sample semantic models, [streaming datasets](../connect-data/service-real-time-streaming.md), or semantic models that connect to their data source via [DirectQuery](../connect-data/desktop-use-directquery.md) or [live connection](../connect-data/desktop-directquery-about.md#live-connections). This includes semantic models with mixed storage, where some of the data comes via import-mode and some comes via DirectQuery.
@@ -41,7 +42,7 @@ This article describes how DLP in Fabric works, lists considerations and limitat
 
 * DLP policies for Fabric support all the primitive Delta types except timestamp_ntz.
 
-* DLP policies for Fabric aren’t supported for the following Delta Parquet data types:
+* DLP policies for Fabric aren't supported for the following Delta Parquet data types:
     * Binary, timestamp_ntz, Struct, Array, List, Map, Json, Enum, Interval, Void.
     * Data encoded with RLE and Bit_RLE.
     * Data with LZ4, Zstd and Gzip compression codecs.
@@ -49,6 +50,13 @@ This article describes how DLP in Fabric works, lists considerations and limitat
 * [Exact data match (EDM) classifiers](/microsoft-365/compliance/sit-learn-about-exact-data-match-based-sits) and [trainable classifiers](/microsoft-365/compliance/classifier-learn-about) aren't supported by DLP for Fabric. If you select an EDM or trainable classifier in the condition of a policy, the policy will yield no results even if the semantic model or lakehouse does in fact contain data that satisfies the EDM or trainable classifier. Other classifiers specified in the policy will return results, if any.
 
 * DLP policies for Fabric aren't supported in the China North region. See [How to find the default region for your organization](../admin/service-admin-where-is-my-tenant-located.md#how-to-find-the-default-region-for-your-organization) to learn how to find your organization's default data region.
+
+* Azure capacities are not supported for DLP in Fabric in the following clusters:
+    * WUS3
+    * WUS2
+    * SCUS
+
+* Onbording a new tenant to DLP can take a few hours, depending on the number of supported workspaces that are being onboarded.
 
 ## Licensing and permissions
 
@@ -63,7 +71,7 @@ Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you sho
 
 ### Permissions
 
-Data from DLP for Fabric can be viewed in [Activity explorer](/microsoft-365/compliance/data-classification-activity-explorer). There are four roles that grant permission to activity explorer; the account you use for accessing the data must be a member of any one of them.
+Data from DLP for Fabric can be viewed in [Activity explorer](/microsoft-365/compliance/data-classification-activity-explorer). There are four roles that grant permission to Activity explorer; the account you use for accessing the data must be a member of any one of them.
 
 * Global administrator
 * Compliance administrator
@@ -81,14 +89,16 @@ Use the Power BI Premium Capacity Metrics App [DOES THIS NEED TO BE CHANGED???] 
 
 ## How do DLP policies for Fabric work
 
-You define a DLP policy in the data loss prevention section of the compliance portal. In the policy, you specify the sensitivity labels and/or sensitive info types you want to detect. You also specify the actions that will happen when the policy detects a semantic model that contains sensitive data of the kind you specified. DLP policies for Fabric support two actions:
+You define a DLP policy in the data loss prevention section of the compliance portal. In the policy, you specify the sensitivity labels and/or sensitive info types you want to detect. You also specify the actions that will happen when the policy detects a semantic model or lakehouse that contains sensitive data of the kind you specified. DLP policies for Fabric support two actions:
 
 * User notification via policy tips.
 * Alerts. Alerts can be sent by email to administrators and users. Additionally, administrators can monitor and manage alerts on the **Alerts** tab in the compliance portal.
 
 When a semantic model or lakehouse is evaluated by DLP policies, if it matches the conditions specified in a DLP policy, the actions specified in the policy occur. DLP policies are initiated by the following actions:
 
-**Semantic model**:
+**Semantic models**:
+
+A semantic model is evaluated against DLP policies whenever one of the following events occurs:
 
 * Publish
 * Republish
@@ -96,13 +106,13 @@ When a semantic model or lakehouse is evaluated by DLP policies, if it matches t
 * Scheduled refresh
 
 >[!NOTE]
-> DLP evaluation of the semantic model does not occur if either of the following is true:
+> DLP evaluation of the semantic model doesn't occur if either of the following is true:
 > * The initiator of the event (publish, republish, on-demand refresh, scheduled refresh) is an account using service principal authentication.
 > * The semantic model owner is a service principal.
 
 **Lakehouse**:
 
-* When the data within a lakehouse undergoes a change, such as getting new data, connecting a new source, adding or updating existing tables, and more.
+A lakehouse is evaluated against DLP policies When the data within a lakehouse undergoes a change, such as getting new data, connecting a new source, adding or updating existing tables, and more.
 
 ## What happens when an item is flagged by a Fabric DLP policy
 
@@ -119,7 +129,7 @@ When a DLP policy detects an issue with an item:
     >[!NOTE]
     > If you hide the policy tip, it doesn’t get deleted. It will appear the next time you visit the page.
 
-* For lakehouses, the indication will appear in the header in edit mode, and opening the fly out make it possible to see more details about the policy tips affecting the lakehouse, which can also be seen in the side panel.
+    For lakehouses, the indication will appear in the header in edit mode, and opening the fly out makes it possible to see more details about the policy tips affecting the lakehouse. This information can also be viewed in the side panel.
 
 * If alerts are enabled in the policy, an alert will be recorded on the data loss prevention **Alerts** page in the compliance portal, and (if configured) an email will be sent to administrators and/or specified users. The following image shows the **Alerts** page in the data loss prevention section of the compliance portal. To get to the **Alerts** page, in the compliance portal, expand the **Data loss prevention** solution and choose **Alerts**.
 
