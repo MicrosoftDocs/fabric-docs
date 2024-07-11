@@ -9,7 +9,7 @@ ms.subservice: data-warehouse
 ms.custom:
   - build-2024
 ms.topic: conceptual
-ms.date: 05/21/2024
+ms.date: 06/10/2024
 ---
 # Query data as it existed in the past (preview)
 
@@ -56,7 +56,7 @@ For samples, see [How to: Query using time travel](how-to-query-using-time-trave
 
 ## Retention of data history
 
-In Microsoft Fabric, a warehouse automatically preserves and maintains various versions of the data, up to a **default retention period of seven calendar days**. This allows the ability to query tables as of any prior point-in-time. All inserts, updates, and deletes made to the data warehouse are retained. The retention automatically begins from the moment the warehouse is created. Expired files are automatically deleted after the retention threshold.
+In Microsoft Fabric, a warehouse automatically preserves and maintains various versions of the data, up to a **default retention period of thirty calendar days**. This allows the ability to query tables as of any prior point-in-time. All inserts, updates, and deletes made to the data warehouse are retained. The retention automatically begins from the moment the warehouse is created. Expired files are automatically deleted after the retention threshold.
 
 - Currently, a `SELECT` statement with the `FOR TIMESTAMP AS OF` query hint returns the *latest* version of table schema.
 - Any records that are deleted in a table are available to be queried as they existed before deletion, if the deletion is within the retention period.
@@ -108,7 +108,8 @@ Any user who has **Admin**, **Member**, **Contributor**, or **Viewer** [workspac
 
 - Supply at most three digits of fractional seconds in the timestamp. If you supply more precision, you receive the error message `An error occurred during timestamp conversion. Please provide a timestamp in the format yyyy-MM-ddTHH:mm:ss[.fff]. Msg 22440, Level 16, State 1, Code line 29`.
 - Currently, only the Coordinated Universal Time (UTC) time zone is used for time travel.
-- Currently, the data retention for time travel queries is seven days.
+- Currently, the data retention for time travel queries is thirty calendar days.
+
 - `FOR TIMESTAMP AS OF` values in the `OPTION` clause must be deterministic. For an example of parameterization, see [Time travel in a stored procedure](how-to-query-using-time-travel.md#time-travel-in-a-stored-procedure).
 - Time travel is not supported for the SQL analytics endpoint of the Lakehouse.
 - The `OPTION FOR TIMESTAMP AS OF` syntax can only be used in queries that begin with `SELECT` statement. Queries such as `INSERT INTO SELECT` and `CREATE TABLE AS SELECT` cannot be used along with the `OPTION FOR TIMESTAMP AS OF`. Consider instead the ability to [Clone a warehouse table](clone-table.md) at a point in time.
