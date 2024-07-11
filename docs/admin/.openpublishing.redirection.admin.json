@@ -8,7 +8,12 @@
         {
             "source_path_from_root": "/docs/admin/service-admin-setup-certification.md",
             "redirect_url": "/fabric/admin/endorsement-certification-enable",
-            "redirect_document_id": true
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/admin/endorsement-setup.md",
+            "redirect_url": "/fabric/admin/endorsement-certification-enable",
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/admin/service-admin-portal-content-pack-app.md",
