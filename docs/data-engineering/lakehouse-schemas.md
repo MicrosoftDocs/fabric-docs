@@ -50,7 +50,7 @@ To reference multiple Delta tables from other Fabric lakehouse or external stora
 ## Access lakehouse schemas for Power BI reporting
 
 > [!NOTE]
-> SQL Analytics Endpoint is disabled until a fix is deployed. SQL Analytics Endpoint, Semantic model and PBI reporting won't work until then.
+> SQL Analytics Endpoint is disabled until a fix is deployed. SQL Analytics Endpoint, Semantic model, and Power BI reporting won't work until then.
 
 To make your semantic model, just choose the tables that you want to use. Tables can be in different schemas. If tables from different schemas share the same name, you see numbers next to table names when in the model view.
 
@@ -81,7 +81,7 @@ Below listed unsupported features/functionalities are for current release of pub
 
 | Unsupported Features/ Functionality | Notes |
 |-|-|
-| SQl Analytics Endpoint | SQL Analytics Endpoint is disabled until a fix is deployed. SQL Analytics Endpoint, Semantic model and PBI reporting won't work until then. |
+| SQL Analytics Endpoint | SQL Analytics Endpoint is disabled until a fix is deployed. SQL Analytics Endpoint, Semantic model, and Power BI reporting won't work until then. |
 | Git (CI/CD)	| Git integration isn't supported. Exporting schema enabled lakehouse would export as a nonschema lakehouse. Hence, only non-schema lakehouses are imported.|
 | Non-Delta, Managed table schema	| Getting schema for managed, non-Delta formatted tables (for example, CSV) isn't supported. Expanding these tables in lakehouse explorer doesn't show any schema information in the UX. |
 | External Spark tables	| External Spark table operations (for example, discovery, getting schema, etc.) aren't supported. These tables are unidentified in the UX. |
