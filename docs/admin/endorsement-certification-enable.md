@@ -1,14 +1,14 @@
 ---
-title: Enable content certification
-description: Learn how to enable certification for semantic models, dataflows, reports, and apps.
+title: "Enable certification endorsement"
+description: "This article shows Microsoft Fabric administrators how to enable certification endorsement on their tenant."
 author: paulinbar
 ms.author: painbar
+ms.service: fabric
+ms.subservice: governance
+ms.topic: how-to #Don't change
+ms.date: 07/11/2024
 
-ms.custom:
-  - ignite-2023
-ms.topic: how-to
-ms.date: 11/02/2023
-LocalizationGroup: Share your work
+#customer intent: As a Fabric administrator, I want to enable the certification endorsement feature so that specified users can apply the Certified badge to items that they can certify as meeting organizational quality standards.
 ---
 
 # Enable content certification
