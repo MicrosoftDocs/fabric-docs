@@ -20,11 +20,11 @@ This article describes how to train and track the iterations of a scikit-learn m
 
 ## Prerequisites
 
-- Install scikit-learn within your notebook. You can install or upgrade the version of scikit-learn on your environment by using the following command:
+Install scikit-learn within your notebook. You can install or upgrade the version of scikit-learn on your environment by using the following command:
 
-   ```shell
-   %pip install scikit-learn
-   ```
+```shell
+%pip install scikit-learn
+```
 
 ## Set up the machine learning experiment
 
