@@ -112,7 +112,7 @@ Create a new file in the plugins folder with the following content:
 
 1. Go to the Airflow UI and select the DAG you created.
 
-2. If you've added the plugin, you'll see an external monitoring link. Clicking it will navigate you to the item run.
+2. If you add the plugin, you see an external monitoring link. Clicking it navigates you to the item run.
    :::image type="content" source="media/data-workflows/view-apache-airflow-dags-external-link.png" lightbox="media/data-workflows/view-apache-airflow-dags-external-link.png" alt-text="Screenshot to view Apache Airflow DAGs with external link."::: 
 
 3. Xcom Integration: Trigger the DAG to view task outputs in the Xcom tab.
