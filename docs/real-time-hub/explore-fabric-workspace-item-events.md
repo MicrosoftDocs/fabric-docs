@@ -6,7 +6,7 @@ ms.author: ajetasi
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/22/2024
+ms.date: 07/10/2024
 ---
 
 # Explore Fabric workspace item events in Fabric Real-Time hub (preview)
