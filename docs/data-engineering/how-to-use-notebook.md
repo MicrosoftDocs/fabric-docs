@@ -30,7 +30,7 @@ This article describes how to use notebooks in data science and data engineering
 
 The execution of a notebook can be triggered by three different manners in Fabric with full flexibility to meet different scenarios:
 
-- **Interactive run**: User manually trigger the execution via the different UX entries or calling the REST API. The execution would be running under the current user's security context.
+- **Interactive run**: User manually triggers the execution via the different UX entries or calling the REST API. The execution would be running under the current user's security context.
 - **Run as pipeline activity**: The execution is triggered from Fabric Data Factory pipeline. You can find the detail steps in the [Notebook Activity](../data-factory/notebook-activity.md). The execution would be running under the pipeline owner's security context.
 - **Scheduler**: The execution is triggered from a scheduler plan. The execution would be running under the security context of the user who setup/update the scheduler plan.
 
