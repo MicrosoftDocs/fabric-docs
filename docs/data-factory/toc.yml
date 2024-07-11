@@ -167,12 +167,6 @@
         href: connector-azure-data-explorer.md
       - name: Configure in a data pipeline Copy activity
         href: connector-azure-data-explorer-copy-activity.md
-    - name: Azure Data Lake Storage Gen1
-      items:
-      - name: Azure Data Lake Storage Gen1 - Overview
-        href: connector-azure-data-lake-storage-gen1-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-azure-data-lake-storage-gen1-copy-activity.md
     - name: Azure Data Lake Storage Gen2
       items:
       - name: Azure Data Lake Storage Gen2 - Overview
