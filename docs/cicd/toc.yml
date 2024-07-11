@@ -11,8 +11,6 @@ items:
     href: deployment-pipelines/intro-to-deployment-pipelines.md
   - name: Understand the deployment process
     href: deployment-pipelines/understand-the-deployment-process.md
-  - name: Deployment pipeline folders
-    href: deployment-pipelines/manage-workspace-content.md
   - name: Get started with deployment pipelines
     href: deployment-pipelines/get-started-with-deployment-pipelines.md
   - name: Assign a workspace
@@ -25,8 +23,10 @@ items:
     href: deployment-pipelines/deployment-history.md
   - name: Create deployment rules
     href: deployment-pipelines/create-rules.md
-  - name: Automate deployment pipelines
+  - name: Automate deployment pipelines for Power BI items only
     href: deployment-pipelines/pipeline-automation.md
+  - name: Automate deployment pipelines for Fabric
+    href: deployment-pipelines/pipeline-automation-fabric.md
 - name: Git integration
   items:
   - name: Introduction to Git integration

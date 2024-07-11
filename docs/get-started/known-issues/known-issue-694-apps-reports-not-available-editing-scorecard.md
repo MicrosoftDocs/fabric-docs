@@ -4,7 +4,7 @@ description: A known issue is posted where apps and reports aren't available whe
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/30/2024
+ms.date: 06/11/2024
 ms.custom: known-issue-694
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-694
 
 When you create or edit a scorecard metric, you can change the **Current** or **Target** field. When you select **Connect to data**, you don't see any apps or reports. You can't select an app or report for the fields.
 
-**Status:** Open
+**Status:** Fixed: June 11, 2024
 
 **Product Experience:** Power BI
 
@@ -37,6 +37,6 @@ Otherwise:
 1. Select **Enter** key to reload your Power BI.
 1. Go back to your scorecard where you see the apps in the dialog.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

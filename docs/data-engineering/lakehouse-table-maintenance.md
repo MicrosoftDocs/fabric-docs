@@ -1,6 +1,6 @@
 ---
-title: Use table maintenance feature to manage delta tables in Fabric
-description: Learn about the Lakehouse Delta table maintenance feature. It allows you to efficiently manage delta tables and to keep them always ready for analytics.
+title: Delta table maintenance in Microsoft Fabric
+description: Learn about the Lakehouse Delta table maintenance feature. It allows you to efficiently manage Delta tables and to keep them always ready for analytics.
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
@@ -46,7 +46,7 @@ How to use the feature:
 1. Select the **Maintenance** menu entry.
 1. Check the maintenance options in the dialog per your requirement. For more information, see the [Table maintenance operations](#table-maintenance-operations) section of this article.
 1. Select **Run now** to execute the table maintenance job.
-1. Track maintenance job execution by the notifications pane, or the Monitoring Hub experience.
+1. Track maintenance job execution by the notifications pane, or the Monitoring Hub.
 
    :::image type="content" source="media\table-maintenance\table-maintenance.png" alt-text="Screenshot showing the load to tables dialog box with filled table name." lightbox="media\table-maintenance\table-maintenance.png":::
 

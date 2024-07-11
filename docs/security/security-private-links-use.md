@@ -1,5 +1,5 @@
 ---
-title: Set up and use private links for secure access to Fabric (Preview)
+title: Set up and use private links for secure access to Fabric
 description: Learn how to set up and use private links to provide secure access to Fabric.
 author: paulinbar
 ms.author: painbar
@@ -77,7 +77,7 @@ This step is used to support Azure Private Endpoint association with your Fabric
       ]
     }
     ```
-    If you're using an Azure Government cloud for Power BI, `location` should be the region name of the tenant. For example, if the tenant is in US Gov Texas, you should put  `"location": "usgovtexas"` in the ARM template. The list of Power BI US Government regions can be found in the [Fabric for US government article](/power-bi/enterprise/service-govus-overview#connect-government-and-global-azure-cloud-services).
+    If you're using an Azure Government cloud for Power BI, `location` should be the region name of the tenant. For example, if the tenant is in US Gov Texas, you should put  `"location": "usgovtexas"` in the ARM template. The list of Power BI US Government regions can be found in the [Power BI for US government article](/power-bi/enterprise/service-govus-overview#connect-government-and-global-azure-cloud-services).
 
     >[!IMPORTANT]
     > Use `Microsoft.PowerBI/privateLinkServicesForPowerBI` as `type` value, even though the resource is being created for Fabric.
@@ -234,8 +234,6 @@ The next step is to create a private endpoint for Fabric.
 
 1. Select **Create**.
 
-> [!NOTE]
-> If you have an existing Power BI private endpoint, it may not work for Fabric items. Currently, you need to create a new private endpoint to get support for Fabric items.
 
 ### Step 6. Connect to a VM using Bastion
 
@@ -269,7 +267,7 @@ The next step is to access Fabric privately, from the virtual machine you create
 
     :::image type="content" source="./media/security-private-links-use/nslookup-powershell.png" alt-text="Screenshot showing IP addresses returned in PowerShell." lightbox="./media/security-private-links-use/nslookup-powershell.png":::
 
-1. Open the browser and go to *app.fabric.com* to access Fabric privately.
+1. Open the browser and go to *app.fabric.microsoft.com* to access Fabric privately.
 
 ### Step 8. Disable public access for Fabric
 
@@ -278,7 +276,7 @@ Finally, you can optionally disable public access for Fabric.
 If you disable public access for Fabric, certain constraints on access to Fabric services are put into place, as described in the next section.
 
 > [!IMPORTANT]
-> When you turn on *Block Internet Access*, trial capacity will no longer work, and some Fabric items will be disabled.
+> When you turn on *Block Internet Access*, some unsupported Fabric items will be disabled. Learn full list of limitations and considerations in [About private links](./security-private-links-overview.md)
 
 To disable public access for Fabric, sign in to [Fabric](https://app.fabric.microsoft.com/) as an administrator, and navigate to the **Admin portal**. Select **Tenant settings** and scroll to the **Advanced networking** section. Enable the toggle button in the **Block Public Internet Access** tenant setting.
 
@@ -312,6 +310,9 @@ The following video shows how to connect a mobile device to Fabric, using privat
 > [!VIDEO https://www.youtube.com/embed/-3yFtlZBpqs]
 
 More questions? [Ask the Fabric Community](https://community.fabric.microsoft.com/).
+
+## Disable Private Link
+In case you want to disable private link setting, please ensure all the private endpoints you created and the corresponding private DNS zone are deleted before disabling private link setting. If your VNet has private endpoint set up but the private link is disabled, connections from this VNet may fail.
 
 ## Related content
 

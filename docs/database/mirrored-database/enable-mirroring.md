@@ -3,8 +3,8 @@ title: "Enable Mirroring"
 description: Learn how to enable Mirroring in your Fabric tenant.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: cynotebo
-ms.date: 04/24/2024
+ms.reviewer: cynotebo, im-microsoft
+ms.date: 07/09/2024
 ms.service: fabric
 ms.topic: how-to
 ---
@@ -22,6 +22,8 @@ You can enable Mirroring for:
 In both cases, you can use security groups to provide access to a specified list of users.
 
 ## Prerequisites
+
+Mirroring can be enabled for any Fabric capacity, including Power BI Premium Capacity. For more information on Power BI Premium licensing, see [Power BI Premium licensing](https://powerbi.microsoft.com/blog/important-update-coming-to-power-bi-premium-licensing/).
 
 To enable Mirroring, you need to be a member of one of the following admin roles:
 

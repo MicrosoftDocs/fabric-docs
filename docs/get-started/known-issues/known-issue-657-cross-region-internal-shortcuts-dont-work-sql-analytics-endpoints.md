@@ -24,6 +24,6 @@ The shortcut is visible through the Lakehouse  user interface and accessible thr
 
 No workarounds at this time. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

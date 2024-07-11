@@ -24,6 +24,6 @@ When viewing the default semantic model, you no longer see relationships that pr
 
 To mitigate the issue, you can recreate the missing relationships in the default semantic model.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

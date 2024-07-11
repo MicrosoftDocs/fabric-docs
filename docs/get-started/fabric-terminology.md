@@ -8,19 +8,20 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
 ms.search.form: product-trident
 ms.date: 12/14/2023
 ---
 
 # Microsoft Fabric terminology
 
-Learn the definitions of terms used in Microsoft Fabric, including terms specific to Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-Time Analytics, Data Factory, and Power BI.
+Learn the definitions of terms used in Microsoft Fabric, including terms specific to Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Real-Time Intelligence, Data Factory, and Power BI.
 
 ## General terms
 
 - **Capacity:** Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. Fabric offers capacity through the Fabric SKU and Trials. For more information, see [What is capacity?](../enterprise/licenses.md#capacity)
 
-- **Experience:** A collection of capabilities targeted to a specific functionality. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-Time Analytics, Data Factory, and Power BI.
+- **Experience:** A collection of capabilities targeted to a specific functionality. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Real-Time Intelligence, Data Factory, and Power BI.
 
 - **Item:** An item a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
 
@@ -50,6 +51,8 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Dataflow Gen2:** Dataflows provide a low-code interface for ingesting data from hundreds of data sources and transforming your data. Dataflows in Fabric are referred to as Dataflow Gen2. Dataflow Gen1 exists in Power BI. Dataflow Gen2 offers extra capabilities compared to Dataflows in Azure Data Factory or Power BI. You can't upgrade from Gen1 to Gen2. For more information, see [Dataflows](../data-factory/data-factory-overview.md#dataflows) in the Data Factory overview.
 
+- **Trigger:** An automation capability in Data Factory that initiates pipelines based on specific conditions, such as schedules or data availability.
+
 ## Synapse Data Science
 
 - **Data Wrangler:** Data Wrangler is a notebook-based tool that provides users with an immersive experience to conduct exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics and a set of common data-cleansing operations, all available with a few selected icons. Each operation generates code that can be saved back to the notebook as a reusable script.
@@ -66,13 +69,13 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Synapse Data Warehouse:** The Synapse Data Warehouse functions as a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse Data Warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
 
-## Synapse Real-Time Analytics
+## Real-Time Intelligence
 
-- **KQL database:** The KQL database holds data in a format that you can execute KQL queries against. For more information, see [Query a KQL database](../real-time-analytics/create-database.md).
+- **KQL database:** The KQL database holds data in a format that you can execute KQL queries against. For more information, see [Query a KQL database](../real-time-intelligence/create-database.md).
 
-- **KQL Queryset:** The KQL Queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL Queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-analytics/kusto-query-set.md)
+- **KQL Queryset:** The KQL Queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL Queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-intelligence/kusto-query-set.md)
 
-- **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../real-time-analytics/event-streams/overview.md).
+- **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../real-time-intelligence/event-streams/overview.md).
 
 ## OneLake
 

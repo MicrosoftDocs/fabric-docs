@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 03/04/2024
 ---
 
 # How to copy data using copy activity
@@ -79,6 +79,9 @@ Follow these steps to set up your copy activity using copy assistant.
    :::image type="content" source="media/copy-data-activity/map-to-destination.png" alt-text="Screenshot of Map to destination screen." lightbox="media/copy-data-activity/map-to-destination.png":::
 
    :::image type="content" source="media/copy-data-activity/connect-to-data-destination.png" alt-text="Screenshot of Connect to data destination." lightbox="media/copy-data-activity/connect-to-data-destination.png":::
+
+   > [!NOTE]
+   > You can only use a single on-premises data gateway within the same Copy activity. If both source and sink are on-premises data sources, they must use the same gateway. To move data between on-premises data sources with different gateways, you must copy using the first gateway to an intermediate cloud source in one Copy activity. Then you can use another Copy activity to copy it from the intermediate cloud source using the second gateway.
 
 ### Review and create your copy activity
 
@@ -184,6 +187,7 @@ See the following table for the setting details.
 |---------|---------|
 |**Allow data truncation** |Allow data truncation when converting source data to destination with different type during copy. For example, from decimal to integer, from DatetimeOffset to Datetime.  |
 |**Treat boolean as number** | Treat boolean as number. For example, treat true as 1. |
+|**Date format** |Format string when converting between dates and strings, e.g. "yyyy-MM-dd". For more information, see [Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings).<br><br>The date column can be read as date type for:<br>&nbsp;• [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)<br>&nbsp;• [Azure SQL Database](connector-azure-sql-database-copy-activity.md)<br>&nbsp;• [Azure SQL Database Managed Instance](connector-azure-sql-database-managed-instance-copy-activity.md)<br>&nbsp;• [Azure Synapse Analytics](connector-azure-synapse-analytics-copy-activity.md)<br>&nbsp;• [Delimited text format](format-delimited-text.md)<br>&nbsp;• [Lakehouse Table](connector-lakehouse-copy-activity.md)<br>&nbsp;• [Parquet format](format-parquet.md)<br>&nbsp;• [SQL server](connector-sql-server-copy-activity.md)|
 |**DateTime format** |Format string when converting between dates without time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff". |
 |**DateTimeOffset format** | Format string when converting between dates with time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff zzz".|
 |**TimeSpan format**| Format string when converting between time periods and strings. For example, "dd\.hh\:mm\:ss".|

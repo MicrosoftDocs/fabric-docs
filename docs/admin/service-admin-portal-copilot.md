@@ -4,8 +4,7 @@ description: Learn how administrators can configure Copilot admin settings in Fa
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: 'guptamaya'
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - tenant-setting
   - ignite-2023
@@ -13,6 +12,7 @@ ms.topic: how-to
 ms.date: 02/07/2024
 LocalizationGroup: Administration
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Copilot tenant settings (preview)

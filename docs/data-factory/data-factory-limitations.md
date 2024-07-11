@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 04/26/2024
+ms.date: 06/28/2024
 ---
 
 # Data Factory limitations overview
@@ -17,7 +17,7 @@ For service level outages or degradation notifications, check [Microsoft Fabric 
 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
-- Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) and [event triggers](/azure/data-factory/how-to-create-custom-event-trigger) aren't yet available.
+- Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) isn't yet available.
 - Connectors don't support OAuth, Azure key vault (AKV), and Managed System Identity (MSI).
 - Connectors can't use parameters.
 - GetMetaData activity can't have a source from Fabric KQL databases.
@@ -39,7 +39,7 @@ The following table describes the resource limitations for pipelines in Data Fac
 | External activities  like stored procedure, Web, Web Hook, and others | 3,000 | 3,000 |
 | Pipeline activities execute on integration runtime, including Lookup, GetMetadata, and Delete | 1,000 | 1,000 |
 | Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on | 200 | 200 |
-| Maximum activities per pipeline, which includes inner activities for containers | 80 | 120 (soft limit) |
+| Maximum activities per pipeline, which includes inner activities for containers | 80 | 120 |
 | Maximum parameters per pipeline | 50 | 50 |
 | ForEach items | 100,000 | 100,000 |
 | ForEach parallelism | 20 | 50 |
@@ -49,7 +49,8 @@ The following table describes the resource limitations for pipelines in Data Fac
 | Maximum timeout for pipeline activity runs | 24 hours | 24 hours |
 | Bytes per object for pipeline objects | 200 KB | 200 KB |
 | Bytes per payload for each activity run | 896 KB | 896 KB |
-| Data Integration Units per copy activity run | Auto | 256 |
+| Intelligent throughput optimization per copy activity run | Auto | 256 |
+| Concurrent intelligent throughput optimization per workspace | 400 | 400 |
 | Write API calls | 1,200/h | 1,200/h |
 | Read API calls | 12,500/h | 12,500/h |
 | Maximum time of data flow debug session | 8 hrs | 8 hrs |

@@ -1,5 +1,5 @@
 ---
-title: Overview of Copilot in Fabric and Power BI (preview)
+title: Overview of Copilot in Fabric
 description: Learn about Copilot in Fabric and Power BI, which brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
 author: maggiesMSFT
 ms.author: maggies
@@ -7,12 +7,14 @@ ms.reviewer: 'guptamaya'
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
+  - build-2024
 ms.topic: conceptual
-ms.date: 02/07/2024
+ms.date: 06/17/2024
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
-# Overview of Copilot in Fabric and Power BI (preview)
+# Overview of Copilot in Fabric
 
 Copilot and other generative AI features in preview bring new ways to transform and analyze data, generate insights, and create visualizations and reports in Microsoft Fabric and Power BI.
 
@@ -21,6 +23,9 @@ Copilot and other generative AI features in preview bring new ways to transform 
 Before your business can start using Copilot capabilities in Microsoft Fabric, you need to [enable Copilot](copilot-enable-fabric.md).
 
 Read on for answers to your questions about how it works in the different workloads, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. 
+
+> [!NOTE]
+> Copilot is not yet supported for sovereign clouds due to GPU availability.
 
 ## Copilot for Data Science and Data Engineering
 
@@ -36,6 +41,12 @@ Power BI has introduced generative AI that allows you to create reports automati
 
 See the article [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction) for details of the features and how to use Copilot for Power BI.
 
+## Copilot for Real-Time Intelligence
+
+Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists. 
+
+For more information, see [Copilot for Real-Time Intelligence overview](copilot-real-time-analytics.md).
+
 ## How do I use Copilot responsibly?
 
 Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues.
@@ -44,7 +55,7 @@ The article [Privacy, security, and responsible use for Copilot (preview)](copil
 
 Copilot features in Fabric are built to meet the Responsible AI Standard, which means that they're reviewed by multidisciplinary teams for potential harms, and then refined to include mitigations for those harms.  
 
-Before you use Copilot, your admin needs to enable Copilot in Fabric. See the article [Overview of Copilot in Fabric (preview)](copilot-fabric-overview.md) for details. Also, keep in mind the limitations of Copilot:
+Before you use Copilot, your admin needs to enable Copilot in Fabric. See the article [Overview of Copilot in Fabric](copilot-fabric-overview.md) for details. Also, keep in mind the limitations of Copilot:
 
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before using them in your work.
 - Reviews of outputs should be done by people who are able to meaningfully evaluate the content's accuracy and appropriateness.

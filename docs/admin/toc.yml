@@ -28,7 +28,9 @@ items:
   - name: Understand Fabric admin roles
     href: roles.md 
   - name: Service interruption notifications      
-    href: service-interruption-notifications.md   
+    href: service-interruption-notifications.md
+  - name: Diagnostic query text storage
+    href: query-text-storage.md
 - name: Monitor and manage Fabric
   expanded: false
   items:
@@ -54,6 +56,8 @@ items:
     href: service-admin-portal-capacity-settings.md
   - name: Manage embed codes
     href: service-admin-portal-embed-codes.md
+  - name: Manage Fabric identities
+    href: fabric-identities-manage.md
   - name: Manage featured content
     href: service-admin-portal-featured-content.md
   - name: Manage organizational visuals
@@ -80,14 +84,14 @@ items:
     href: portal-workspace.md
 - name: Feature set up
   items:
-  - name: Set up item certification
-    href: endorsement-setup.md
+  - name: Enable item certification
+    href: endorsement-certification-enable.md
+  - name: Enable master data endorsement
+    href: endorsement-master-data-enable.md
   - name: Configure notifications
     href: service-admin-premium-capacity-notifications.md
   - name: Set up metadata scanning
     href: metadata-scanning-setup.md
-  - name: Enable content certification
-    href: service-admin-setup-certification.md
   - name: Enable service principal authentication
     href: metadata-scanning-enable-read-only-apis.md
   - name: Configure Multi-Geo support

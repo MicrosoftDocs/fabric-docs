@@ -4,7 +4,7 @@ description: A known issue is posted where a sign-in is required when you browse
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/02/2024
+ms.date: 06/11/2024
 ms.custom: known-issue-713
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-713
 
 You can sign into the Power BI service in one browser tab and also go to a secure embed URL directly in a new browser tab. In this scenario, the sign-in page shows on the second browser tab.
 
-**Status:** Open
+**Status:** Fixed: June 11, 2024
 
 **Product Experience:** Power BI
 
@@ -24,6 +24,6 @@ You see a sign-in page when you browse to a secure embed url directly, even thou
 
 No workarounds at this time. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

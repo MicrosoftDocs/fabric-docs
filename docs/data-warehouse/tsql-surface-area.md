@@ -4,7 +4,7 @@ description: T-SQL surface area of the SQL analytics endpoint and Warehouse in M
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 04/25/2024
+ms.date: 07/05/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -19,6 +19,9 @@ ms.search.form: T-SQL Surface area # This article's title should not change. If 
 
 This article covers the T-SQL language syntax capabilities of [!INCLUDE [product-name](../includes/product-name.md)], when querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
+> [!NOTE]
+> For more information on upcoming feature development for Fabric Synapse Data Warehouse, see the [Synapse Data Warehouse in Microsoft Fabric release plan](/fabric/release-plan/data-warehouse).
+
 ## T-SQL surface area
 
 - Creating, altering, and dropping tables, and insert, update, and delete are only supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], not in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
@@ -31,7 +34,9 @@ This article covers the T-SQL language syntax capabilities of [!INCLUDE [product
 At this time, the following list of commands is NOT currently supported. Don't try to use these commands. Even though they might appear to succeed, they could cause issues to your warehouse.
 
 - `ALTER TABLE ADD`/`ALTER`/`DROP COLUMN`
-    - Currently, `ALTER TABLE` in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is only supported for constraints.
+    - Currently, only the following subset of `ALTER TABLE` operations in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] are supported:
+      - ADD nullable columns of supported column data types.
+      - ADD or DROP PRIMARY KEY, UNIQUE, and FOREIGN_KEY column constraints, but only if the NOT ENFORCED option has been specified. All other ALTER TABLE operations are blocked.
 - `BULK LOAD`
 - `CREATE ROLE`
 - `CREATE USER`

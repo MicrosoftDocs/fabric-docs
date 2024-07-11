@@ -8,8 +8,9 @@ ms.topic: how-to
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 6/25/2024
 ms.search.form:
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Use Azure OpenAI in Fabric with REST API (preview)
@@ -21,35 +22,35 @@ This document shows examples of how to use Azure OpenAI in Fabric using REST API
 
 ChatGPT and GPT-4 are language models optimized for conversational interfaces. To access Azure OpenAI chat endpoints in Fabric, you can send an API request using the following format:
 
-`POST <prebuilt_AI_base_url>/openai/deployments/<deployment_name>/chat/completions?api-version=2023-03-15-preview`
+`POST <prebuilt_AI_base_url>/openai/deployments/<deployment_name>/chat/completions?api-version=2024-02-01`
 
 `deployment_name` could be one of:
 
--   `gpt-35-turbo`
--   `gpt-35-turbo-16k`
+-   `gpt-35-turbo-0125`
+-   `gpt-4-32k`
 
 ### Initialization
 
-You can initialize the process by providing some necessary parameters. These parameters include the `Capacity ID`, `Workspace ID`, and User `AAD Token`, which can be obtained using the `mlflow-plugin` to create the base endpoint for Azure OpenAI models. 
+You can initialize the process by providing some necessary parameters. These parameters include the `Capacity ID`, `Workspace ID`, and User `MWC Token`, which can be obtained using the `TokenUtils` to create the base endpoint for Azure OpenAI models. 
 
-Additionally, the `x-ms-upstream-artifact-id` is the ID of the artifact that is being used and consumed for billing purposes, and the `x-ms-llm-feature-name` is the feature name that is used to track usage and configure the request rate limit. 
 
 ``` python
 from synapse.ml.mlflow import get_mlflow_env_config
+from synapse.ml.fabric.token_utils import TokenUtils
 
 mlflow_env_configs = get_mlflow_env_config()
-access_token = mlflow_env_configs.driver_aad_token
+mwc_token = TokenUtils().get_openai_mwc_token()
 
 prebuilt_AI_base_url = mlflow_env_configs.workload_endpoint + "cognitive/openai/"
 print("workload endpoint for OpenAI: \n" + prebuilt_AI_base_url)
 
-deployment_name = "gpt-35-turbo" # deployment name could be `gpt-35-turbo` or `gpt-35-turbo-16k`
-openai_url = prebuilt_AI_base_url + f"openai/deployments/{deployment_name}/chat/completions?api-version=2023-03-15-preview"
+deployment_name = "gpt-35-turbo-0125" # deployment_id could be one of {gpt-35-turbo-0125 or gpt-4-32k}
+openai_url = prebuilt_AI_base_url + f"openai/deployments/{deployment_name}/chat/completions?api-version=2024-02-01"
 print("The full uri of ChatGPT is: ", openai_url)
 
 post_headers = {
     "Content-Type" : "application/json",
-    "Authorization" : "Bearer {}".format(access_token)
+    "Authorization" : "MwcToken {}".format(mwc_token)
 }
 ```
 
@@ -113,7 +114,7 @@ OpenAI input:
 OpenAI output:
 
 ```    
-    A: Yes, other Azure Cognitive Services also support customer-managed keys through Azure Key Vault. Azure Key Vault is a cloud service that provides secure storage of keys, passwords, and other secrets. By using Azure Key Vault, you can manage and safeguard your keys and secrets used by your applications and services. 
+    A: Yes, Azure OpenAI supports customer managed keys. It enables you to use your own encryption keys to protect your data at rest in the OpenAI GPT-3 service. With customer managed keys, you have full control over the keys used to encrypt and decrypt your data, providing an additional layer of security.
 ``` 
 
 
@@ -265,304 +266,12 @@ status_code, post_body, result  = ChatGPTRequest(system_message, user_message_bo
 printresult(openai_url, status_code, post_body["messages"], result)
 ```
 
-## Completions
-
-The completions endpoint can be used for a wide variety of tasks. It provides a simple but powerful text-in, text-out interface to any of our models. You input some text as a prompt, and the model generates a text completion that attempts to match whatever context or pattern you gave it. For example, if you give the API the prompt, "As Descartes said, I think, therefore", it returns the completion " I am" with high probability.
-
-To access Azure OpenAI completions endpoints in Fabric, you can send an API request using the following format:
-
-`POST <url_prefix>/openai/deployments/<deployment_name>/completions?api-version=2022-12-01`
-
-`deployment_name` could be one of:
-
--   `text-davinci-003`
--   `code-cushman-002`
-
-
-### Initialization
-
-``` python
-from synapse.ml.mlflow import get_mlflow_env_config
-
-mlflow_env_configs = get_mlflow_env_config()
-access_token = mlflow_env_configs.driver_aad_token
-
-prebuilt_AI_base_url = mlflow_env_configs.workload_endpoint + "cognitive/openai/"
-print("workload endpoint for OpenAI: \n" + prebuilt_AI_base_url)
-
-deployment_name = "text-davinci-003" # deployment name could be `text-davinci-003` or `code-cushman-002`
-openai_url = prebuilt_AI_base_url + f"openai/deployments/{deployment_name}/completions?api-version=2022-12-01"
-print("The full uri of Completions is: ", openai_url)
-
-post_headers = {
-    "Content-Type" : "application/json",
-    "Authorization" : "Bearer {}".format(access_token)
-}
-
-post_body = {
-    "prompt": "empty prompt, need to fill in the content before the request",
-}
-```
-
-
-``` python
-import json
-import uuid
-import requests
-from pprint import pprint
-
-def get_model_response_until_empty(prompt:str, openai_url:str):
-    post_body["prompt"] = ""
-
-    while True:
-        post_body["prompt"] = post_body["prompt"] + prompt
-        response = requests.post(openai_url, headers=post_headers, json=post_body)
-        if response.status_code == 200:
-            prompt = response.json()["choices"][0]["text"]
-            if len(prompt) == 0:
-                result = post_body["prompt"]
-                break
-        else:
-            print(response.headers)
-            result = response.content
-            break
-    
-    return result, response.status_code
-
-
-def printresult(openai_url:str, response_code:int, prompt:str, result:str):
-    print("==========================================================================================")
-    print("| Post URI        |", openai_url)
-    print("------------------------------------------------------------------------------------------")
-    print("| Response Status |", response_code)
-    print("------------------------------------------------------------------------------------------")
-    print("| OpenAI Input    |\n", prompt)
-    print("------------------------------------------------------------------------------------------")
-    print("| OpenAI Output   |\n", result)
-    print("==========================================================================================")
-```
-
-
-### Summarize text
-
-OpenAI input:
-```
-    A neutron star is the collapsed core of a massive supergiant star, which had a total mass of between 10 and 25 solar masses, possibly more if the star was especially metal-rich.[1] Neutron stars are the smallest and densest stellar objects, excluding black holes and hypothetical white holes, quark stars, and strange stars.[2] Neutron stars have a radius on the order of 10 kilometres (6.2 mi) and a mass of about 1.4 solar masses.[3] They result from the supernova explosion of a massive star, combined with gravitational collapse, that compresses the core past white dwarf star density to that of atomic nuclei.
-
-
-    Tl;dr
-```
-OpenAI output:
-```
-    A neutron star is the collapsed core of a star that has undergone a supernova. These ultra-dense objects are incredibly fascinating due to their strange properties and the potential for phenomena such as extreme gravitational forces and a strong magnetic field.
-
-```
-``` python
-import requests
-import uuid
-
-prompt = "A neutron star is the collapsed core of a massive supergiant star, which had a total mass of between 10 and 25 solar masses, possibly more if the star was especially metal-rich.[1] Neutron stars are the smallest and densest stellar objects, excluding black holes and hypothetical white holes, quark stars, and strange stars.[2] Neutron stars have a radius on the order of 10 kilometres (6.2 mi) and a mass of about 1.4 solar masses.[3] They result from the supernova explosion of a massive star, combined with gravitational collapse, that compresses the core past white dwarf star density to that of atomic nuclei."
-prompt = prompt + "\n\nTl;dr"
-result, status = get_model_response_until_empty(prompt=prompt, openai_url=openai_url)
-printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=result)
-```
-
-
-### Classify text
-
-OpenAI input:
-```
-    Classify the following news article into 1 of the following categories: categories: [Business, Tech, Politics, Sport, Entertainment].
-    news article: Donna Steffensen Is Cooking Up a New Kind of Perfection. The Internet's most beloved cooking guru has a buzzy new book and a fresh new perspective:
-
-    Classified category:
-```
-OpenAI output:
-```
-    Business
-```
-``` python
-prompt = "Classify the following news article into 1 of the following categories: categories: [Business, Tech, Politics, Sport, Entertainment].\n news article: Donna Steffensen Is Cooking Up a New Kind of Perfection. The Internet's most beloved cooking guru has a buzzy new book and a fresh new perspective:"
-prompt = prompt + "\n\nClassified category:"
-result, status = get_model_response_until_empty(prompt=prompt, openai_url=openai_url)
-printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=result)
-```
-
-
-### Natural language to SQL
-
-OpenAI input:
-```
-    ### Postgres SQL tables, with their properties:
-    #
-    # Employee(id, name, department_id)
-    # Department(id, name, address)
-    # Salary_Payments(id, employee_id, amount, date)
-    #
-    ### A query to list the names of the departments which employed more than 10 employees in the last 3 months
-```
-OpenAI output:
-``` SQL
-    SELECT DISTINCT Department.name FROM Employee INNER JOIN Department ON Employee.department_id = Department.id ORDER BY Department.name ASC;
-
-```
-``` python
-# prompt =
-### Postgres SQL tables, with their properties:
-#
-# Employee(id, name, department_id)
-# Department(id, name, address)
-# Salary_Payments(id, employee_id, amount, date)
-#
-### A query to list the names of the departments which employed more than 10 employees in the last 3 months
-prompt = "### Postgres SQL tables, with their properties:\n#\n# Employee(id, name, department_id)\n# Department(id, name, address)\n# Salary_Payments(id, employee_id, amount, date)\n#\n### A query to list the names of the departments which employed more than 10 employees in the last 3 months"
-prompt = prompt + "\n\nSELECT"
-result, status = get_model_response_until_empty(prompt=prompt, openai_url=openai_url)
-printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=result)
-```
-
-
-### Natural language to code (Python/Java/Scala/C++/matlab)
-
-OpenAI input:
-
-```
-    Write a quick sort function using Python.
-```
-OpenAI output:
-
-``` python
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    else:
-        pivot = arr[-1]
-        left = [i for i in arr[:-1] if i <= pivot]
-        right = [j for j in arr[:-1] if j > pivot]
-        return quick_sort(left) + [pivot] + quick_sort(right) 
-```
-
-
-``` python
-prompt = "Write a quick sort function using Python."
-result, status = get_model_response_until_empty(prompt=prompt, openai_url=openai_url)
-printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=result)
-```
-
-
-### Generate new product names
-
-OpenAI input:
-```
-    Product description: A home milkshake maker
-    Seed words: fast, healthy, compact.
-    Product names: HomeShaker, Fit Shaker, QuickShake, Shake Maker
-
-    Product description: A pair of shoes that can fit any foot size.
-    Seed words: adaptable, fit, omni-fit.
-```
-OpenAI output:
-```
-    Product names: AllFits, OmniFits, PerfectFits, ShoeFits
-
-```
-
-``` python
-# prompt =
-# Product description: A home milkshake maker
-# Seed words: fast, healthy, compact.
-# Product names: HomeShaker, Fit Shaker, QuickShake, Shake Maker
-#
-# Product description: A pair of shoes that can fit any foot size.
-# Seed words: adaptable, fit, omni-fit.
-prompt = "Product description: A home milkshake maker\nSeed words: fast, healthy, compact.\nProduct names: HomeShaker, Fit Shaker, QuickShake, Shake Maker\n\nProduct description: A pair of shoes that can fit any foot size.\nSeed words: adaptable, fit, omni-fit."
-result, status = get_model_response_until_empty(prompt=prompt, openai_url=openai_url)
-printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=result)
-```
-
-
-### English to French
-
-OpenAI input:
-```
-    English: I do not speak French.
-    French: Je ne parle pas français.
-
-    English: See you later!
-    French: À tout à l'heure!
-
-    English: Where is a good restaurant?
-    French: Où est un bon restaurant?
-
-    English: What rooms do you have available?
-    French: Quelles chambres avez-vous de disponible?
-
-    English: I want to say nothing.
-```
-OpenAI output:
-```
-    French: Je ne veux rien dire.
-
-```
-``` python
-prompt = "English: I do not speak French.\nFrench: Je ne parle pas français.\n\nEnglish: See you later!\nFrench: À tout à l'heure!\n\nEnglish: Where is a good restaurant?\nFrench: Où est un bon restaurant?\n\nEnglish: What rooms do you have available?\nFrench: Quelles chambres avez-vous de disponible?\n\nEnglish: I want to say nothing.\n"
-result, status = get_model_response_until_empty(prompt=prompt, openai_url=openai_url)
-printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=result)
-```
-
-
-### Parse unstructured data
-
-OpenAI input:
-```
-    There are many fruits that were found on the recently discovered planet Goocrux. There are neoskizzles that grow there, which are purple and taste like candy. There are also loheckles, which are a grayish blue fruit and are very tart, a little bit like a lemon. Pounits are a bright green color and are more savory than sweet. There are also plenty of loopnovas which are a neon pink flavor and taste like cotton candy. Finally, there are fruits called glowls, which have a very sour and bitter taste which is acidic and caustic, and a pale orange tinge to them.
-
-    Please make a table summarizing the fruits from Goocrux
-    | Fruit | Color | Flavor |
-    | Neoskizzles | Purple | Sweet |
-    | Loheckles | Grayish blue | Tart |
-```
-OpenAI output:
-```
-    | Glowls | Pale orange | Sour and bitter |
-```
-``` python
-prompt = "There are many fruits that were found on the recently discovered planet Goocrux. There are neoskizzles that grow there, which are purple and taste like candy. There are also loheckles, which are a grayish blue fruit and are very tart, a little bit like a lemon. Pounits are a bright green color and are more savory than sweet. There are also plenty of loopnovas which are a neon pink flavor and taste like cotton candy. Finally, there are fruits called glowls, which have a very sour and bitter taste which is acidic and caustic, and a pale orange tinge to them.\n\nPlease make a table summarizing the fruits from Goocrux\n| Fruit | Color | Flavor |\n| Neoskizzles | Purple | Sweet |\n| Loheckles | Grayish blue | Tart |"
-result, status = get_model_response_until_empty(prompt=prompt, openai_url=openai_url)
-printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=result)
-```
-
-### Classification
-
-OpenAI input:
-```
-    The following is a list of companies and the categories they fall into
-
-    Facebook: Social media, Technology
-    LinkedIn: Social media, Technology, Enterprise, Careers
-    Uber: Transportation, Technology, Marketplace
-    Unilever: Conglomerate, Consumer Goods
-    Mcdonalds: Food, Fast Food, Logistics, Restaurants
-    FedEx:
-```
-OpenAI output:
-```
-    FedEx: Delivery, Courier, Logistics
-```
-
-``` python
-prompt = "The following is a list of companies and the categories they fall into\n\nFacebook: Social media, Technology\nLinkedIn: Social media, Technology, Enterprise, Careers\nUber: Transportation, Technology, Marketplace\nUnilever: Conglomerate, Consumer Goods\nMcdonalds: Food, Fast Food, Logistics, Restaurants\nFedEx:"
-result, status = get_model_response_until_empty(prompt=prompt, openai_url=openai_url)
-printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=result)
-```
-
-
 ## Embeddings
 An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For example, if two texts are similar, their vector representations should also be similar.
 
 To access Azure OpenAI embeddings endpoint in Fabric, you can send an API request using the following format:
 
-```POST <url_prefix>/openai/deployments/<deployment_name>/embeddings?api-version=2022-12-01```
+```POST <url_prefix>/openai/deployments/<deployment_name>/embeddings?api-version=2024-02-01```
 
 `deployment_name` could be `text-embedding-ada-002`.
 
@@ -570,20 +279,22 @@ To access Azure OpenAI embeddings endpoint in Fabric, you can send an API reques
 
 ``` python
 from synapse.ml.mlflow import get_mlflow_env_config
+from synapse.ml.fabric.token_utils import TokenUtils
+
 
 mlflow_env_configs = get_mlflow_env_config()
-access_token = mlflow_env_configs.driver_aad_token
+mwc_token = TokenUtils().get_openai_mwc_token()
 
 prebuilt_AI_base_url = mlflow_env_configs.workload_endpoint + "cognitive/openai/"
 print("workload endpoint for OpenAI: \n" + prebuilt_AI_base_url)
 
 deployment_name = "text-embedding-ada-002"
-openai_url = prebuilt_AI_base_url + f"openai/deployments/{deployment_name}/embeddings?api-version=2022-12-01"
+openai_url = prebuilt_AI_base_url + f"openai/deployments/{deployment_name}/embeddings?api-version=2024-02-01"
 print("The full uri of Embeddings is: ", openai_url)
 
 post_headers = {
     "Content-Type" : "application/json",
-    "Authorization" : "Bearer {}".format(access_token)
+    "Authorization" : "MwcToken {}".format(mwc_token)
 }
 
 post_body = {

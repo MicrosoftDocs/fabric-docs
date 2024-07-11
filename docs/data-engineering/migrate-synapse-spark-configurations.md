@@ -1,6 +1,6 @@
 ---
 title: Migrate Spark configurations
-description: Learn about how to migrate Spark configurations from Azure Synapse Spark to Fabric.
+description: Learn about migrating Spark configurations from Azure Synapse Spark to Fabric, including prerequisites and migration options.
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
