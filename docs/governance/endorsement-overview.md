@@ -14,7 +14,7 @@ ms.date: 07/11/2024
 
 Endorsement is a Fabric and Power BI feature that makes it easier for users in an organization to find high-quality, trust-worthy content and data. Endorsed items are clearly labeled in the UI with a badge, and in some lists they are given precedence and are listed first.
 
-Itema can receive one of three endorsement badges:
+Items can receive one of three endorsement badges:
 
 * **Promoted**: When an item has the **Promoted** badge, it means that the item creators think the item is ready for sharing and reuse. Any Fabric or Power BI item except Power BI dashboards can be promoted. Any user with write permissions on an item can promote it.
 
