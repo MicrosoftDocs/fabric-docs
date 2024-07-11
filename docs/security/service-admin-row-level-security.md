@@ -29,11 +29,9 @@ For more information, see [Bidirectional cross-filtering using DirectQuery in Po
 
 ## Manage security on your model
 
-To manage security on your semantic model, open the workspace where you saved your semantic model in the Power BI service and do the following steps:
+To manage security on your semantic model, open the workspace where you saved your semantic model in Fabric and do the following steps:
 
-1. In the Power BI service, select the **More options** menu for a semantic model. This menu appears when you hover on a semantic model name, whether you select it from the navigation menu or the workspace page.
-
-    :::image type="content" source="media/service-admin-row-level-security/dataset-left-nav-more-options.png" alt-text="Screenshot showing the More options menu in the workspace.":::
+1. In Fabric, select the **More options** menu for a semantic model. This menu appears when you hover on a semantic model name.
 
     :::image type="content" source="media/service-admin-row-level-security/dataset-canvas-more-options.png" alt-text="Screenshot showing the More options menu in navigation menu.":::
 

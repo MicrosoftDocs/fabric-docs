@@ -1,6 +1,6 @@
 ---
-title: Automate Git integration by using APIs and Azure DevOps
-description: Learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs and Azure DevOps.
+title: Automate Git integration by using APIs
+description: Learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs and Azure DevOps or GitHub.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Pierre, NimrodShalit
@@ -8,8 +8,8 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/02/2024
-ms.search.form: Git integration automation, Git integration APIs, Azure DevOps integration
+ms.date: 07/02/2024
+ms.search.form: Git integration automation, Git integration APIs, Azure DevOps integration, GitHub integration
 ---
 
 # Automate Git integration by using APIs and Azure DevOps
@@ -118,7 +118,7 @@ In this section we describe the steps involved in committing only specific chang
 
 For the complete script, see [Commit select changes to Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-CommitSelective.ps1).
 
-1. Log into Azure and get authentication.
+1. Log into Git and get authentication.
 1. Connect to workspace.
 1. Call the [Get status](/rest/api/fabric/core/git/get-status) API to see which items workspace were changed.
 1. Select the specific items to commit.
@@ -130,7 +130,7 @@ In this section, we describe the steps involved in updating a workspace with the
 
 For the complete script, see [Update workspace from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-UpdateFromGit.ps1).
 
-1. Log into Azure and get authentication.
+1. Log into Git and get authentication.
 1. Call the [Get Status](/rest/api/fabric/core/git/get-status) API to build the update from Git request body.
 1. Call the [Update From Git](/rest/api/fabric/core/git/update-from-git) API to update the workspace with commits pushed to the connected branch.
 
@@ -140,7 +140,7 @@ This section describes the steps involved in connecting and syncing a workspace 
 
 For the complete script, see [Connect and sync with Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1).
 
-1. Log into Azure and get authentication.
+1. Log into Git and get authentication.
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
 1. Call the [Initialize Connection](/rest/api/fabric/core/git/initialize-connection) API to initialize the connection between the workspace and the Git repository/branch.
 1. Based on the response from the Initialize Connection API, call either the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) or [Update From Git](/rest/api/fabric/core/git/update-from-git) API to complete the sync, or do nothing if no action required.
@@ -156,6 +156,7 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 * Git integration using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
 * Service principal isn't supported.
+* Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git *diff* after each refresh.
 
 ## Related content
 
