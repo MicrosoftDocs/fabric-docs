@@ -22,9 +22,9 @@ Microsoft Fabric is a platform that enables the storage and management of custom
 
 ### API Permissions
 
-Some methods of accessing customer data require the use of other services outside of Fabric such as Azure Storage or Azure SQL Database. For example, in the Microsoft Fabric Developer kit sample, the API permission Azure Storage `user_impersonation` is used in conjunction with the Power BI Service *Lakehouse.Read.All* permission in order to access data from Lakehouses.
+Some methods of accessing customer data require the use of other services outside of Fabric such as Azure Storage or Azure SQL Database. For example, in the Microsoft Fabric Developer kit sample, the API permission Azure Storage `user_impersonation` is used in conjunction with the Power BI service *Lakehouse.Read.All* permission in order to access data from Lakehouses.
 
-You may choose to use Azure SQL Database in order to access table data from Warehouse items. In this case configure your app with Azure SQL Database `user_impersonation` in order to query the database on behalf of the user and Power BI Service Warehouse.Read.All in order to query the Fabric REST API Get Warehouse endpoint.
+You may choose to use Azure SQL Database in order to access table data from Warehouse items. In this case configure your app with Azure SQL Database `user_impersonation` in order to query the database on behalf of the user and Power BI service Warehouse.Read.All in order to query the Fabric REST API Get Warehouse endpoint.
 
 Make sure you configure your Microsoft Entra ID app according to your development needs.
 
