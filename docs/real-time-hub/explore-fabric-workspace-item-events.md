@@ -86,14 +86,14 @@ The `data` object has the following properties:
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
 | `itemId` | guid | Unique identifier for the item/artifact. | `00000000-0000-0000-0000-000000000000` |
-| `itemKind` | string | The kind of item/artifact. | `Notebook` |
+| `itemKind` | string | The kind of item/artifact. | Item type such as `Notebook, Lakehouse, etc.` Refer to the notes below for item types not supported by workspace item events |
 | `itemName` | string | The item/artifact name. | `Test Notebook` |
 | `workspaceId` | guid | Unique identifier for the workspace. | `00000000-0000-0000-0000-000000000000` |
 | `workspaceName` | string | The name of the workspace. | `Test Workspace` |
 | `principalId` | guid | Unique identifier for the user. | `00000000-0000-0000-0000-000000000000` |
 | `executingPrincipalType` | string | The kind of user. | `User` |
 
-
+[!INCLUDE [unsupported-itemtypes-in-workspaceevents](./includes/unsupported-itemtypes-in-workspaceevents.md)]
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
