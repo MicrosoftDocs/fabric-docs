@@ -869,6 +869,8 @@
             href: data-workflows-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt
             href: data-workflows-dbt-fabric.md
+          - name: Run a Fabric Item Job
+            href: data-workflows-run-fabric-item-job.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases
