@@ -1,5 +1,5 @@
 ---
-title: How to train models with scikit-learn
+title: Train models with scikit-learn in Microsoft Fabric
 description: Learn how to train models with scikit-learn, a popular open-source machine learning framework frequently used for supervised and unsupervised learning.
 ms.reviewer: franksolomon
 ms.author: negust
@@ -8,27 +8,29 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 06/13/2024
+ms.date: 07/11/2024
 ms.search.form: Train models with scikit-learn
+
+#customer intent: As a developer, I want to use scikit-learn in Microsoft Fabric so that I can train models for supervised and unsupervised learning.
 ---
 
-# How to train models with scikit-learn in Microsoft Fabric
+# Train models with scikit-learn in Microsoft Fabric
 
-([Scikit-learn](https://scikit-learn.org)) is a popular, open-source machine learning framework. Scikit-learn is frequently used for supervised and unsupervised learning. It also provides tools for model fitting, data preprocessing, model selection, model evaluation, and more.
+This article describes how to train and track the iterations of a scikit-learn model. [Scikit-learn](https://scikit-learn.org/stable/) is a popular open-source machine learning framework frequently used for supervised and unsupervised learning. The framework provides tools for model fitting, data preprocessing, model selection, model evaluation, and more.
 
-This section presents an example that shows how to train and track the iterations of your Scikit-Learn model.
+## Prerequisites
 
-## Install scikit-learn
+- Install scikit-learn within your notebook. You can install or upgrade the version of scikit-learn on your environment by using the following command:
 
-First, you must verify that scikit-learn is installed within your notebook. You can install or upgrade the version of scikit-learn on your environment with this command:
-
-```shell
-%pip install scikit-learn
-```
+   ```shell
+   %pip install scikit-learn
+   ```
 
 ## Set up the machine learning experiment
 
-Create a machine learning experiment using the MLFLow API. The MLflow **set_experiment()** API creates a new machine learning experiment if it doesn't already exist.
+You can create a machine learning experiment by using the MLFLow API. The MLflow `set_experiment()` function creates a new machine learning experiment, if it doesn't already exist. 
+
+Run the following code in your notebook and create the experiment:
 
 ```python
 import mlflow
@@ -38,7 +40,9 @@ mlflow.set_experiment("sample-sklearn")
 
 ## Train a scikit-learn model
 
-After creation of the experiment, we'll create a sample dataset and create a logistic regression model. We'll start an MLflow run, and track the metrics, parameters, and final logistic regression model. Once we generate the final model, we'll save the resulting model for more tracking.
+After you set up the experiment, you create a sample dataset and a logistic regression model. The following code starts an MLflow run, and tracks the metrics, parameters, and final logistic regression model. After you generate the final model, you can save the resulting model for more tracking.
+
+Run the following code in your notebook and create the sample dataset and logistic regression model:
 
 ```python
 import mlflow.sklearn
@@ -75,7 +79,9 @@ with mlflow.start_run() as run:
 
 ## Load and evaluate the model on a sample dataset
 
-Once we save the model, we can load it for inferencing. To do this, we'll load the model and run the inference on a sample dataset.
+After you save the model, you can load it for inferencing.
+
+Run the following code in your notebook and load the model, and then run the inference on a sample dataset:
 
 ```python
 # Inference with loading the logged model
@@ -101,5 +107,5 @@ batch_predictions.show()
 
 ## Related content
 
-- Learn about [machine learning models](machine-learning-model.md).
-- Learn about [machine learning experiments](machine-learning-experiment.md).
+- Explore [machine learning models](machine-learning-model.md)
+- Create [machine learning experiments](machine-learning-experiment.md) 
