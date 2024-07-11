@@ -62,4 +62,4 @@ Now that you know how to build a data warehouse, load a table, and generate a re
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Transform data using a stored procedure](tutorial-transform-data.md)
+> [Tutorial: Transform data using a stored procedure](tutorial-clone-table.md)

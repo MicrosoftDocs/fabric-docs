@@ -4,7 +4,7 @@ description: In this tutorial step, learn how to clone a table using T-SQL in a 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish, prlangad
-ms.date: 05/03/2024
+ms.date: 07/10/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: tutorial
