@@ -119,8 +119,6 @@ Add a new 'schedule' entry to the artifact settings property in the frontend man
 * `artifactJobType`: Artifact job type defined in artifact job definition XML file.
 * `refreshType`: Specifies the display of the refresh button. There are three types: use "Refresh" and "Run" to enable refresh button and display name, set "None" to disable the refresh button.
 
-For an example of these frontend manifest properties, see localWorkloadManifest.json that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo, under the *manifest* folder. 
-
 #### Jobs JavaScript APIs
 
 In addition to unattended scheduled jobs, a workload can run a job on demand or even start a scheduled job on demand. We provide a set of APIs as part of our extension client:
@@ -186,8 +184,6 @@ The Fabric platform also expects a response from this action to notify the user 
 When the workload team registers the action for detailed information, Fabric expects the workload action to return the data in a certain format so that Fabric can display that information in the side panel.
 
 Currently, key value pairs in plain text or hyperlink is supported.
-
-* For an example of this frontend manifest property, see localWorkloadManifest.json that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo, under the *manifest* folder.
 
 * For an example of handling the job actions, see index.worker.ts that can be found in the https://github.com/microsoft/Microsoft-Fabric-workload-development-sample repo, and search for actions starting with 'artifact.job'.
 
