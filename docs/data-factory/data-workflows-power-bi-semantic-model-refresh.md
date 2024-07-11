@@ -15,9 +15,9 @@ ms.date: 04/15/2023
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-This tutorial outlines the integration of Azure Databricks and Data workflows (powered by Apache Airflow) for orchestrating data pipelines. Job orchestration is crucial for managing complex workflows, ensuring data accuracy, and optimizing processing efficiency. Azure Databricks is a powerful analytics platform built on the top of Apache Spark, while Apache Airflow offers robust workflow management capabilities. Combining these tools enables seamless coordination of tasks, from data ingestion to transformation and analysis. The Apache Airflow Azure Databricks connection lets you take advantage of the optimized Spark engine offered by Azure Databricks with the scheduling features of Apache Airflow.
+In today's data-driven world, maintaining up-to-date and accurate data models is crucial for informed business decisions. As data evolves, it's essential to refresh these models regularly to ensure that reports and dashboards reflect the most current information. Manual refreshes can be time-consuming and prone to errors, which is where Apache Airflow's orchestration, scheduling, and monitoring capabilities come into play. By leveraging Airflow, organizations can automate the refresh process of Power BI semantic models, ensuring timely and accurate data updates with minimal manual intervention. 
 
-In this tutorial, you'll learn how to build an Apache Airflow DAG to trigger the Power BI semantic model refresh from Data Workflows.
+This article talks about the integration of Apache Airflow with Power BI to automate semantic model refreshes using Data Workflows. It provides a step-by-step guide to setting up the environment, configuring connections, and creating workflows to seamlessly update Power BI semantic models.
 
 ## Prerequisites
 
@@ -29,12 +29,19 @@ To get started, you must complete the following prerequisites:
   > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
 
   1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Data workflows (preview)" section.
-
   2. Select Apply.
 
   :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
-- You must have an Admin account of Power BI.
+- Your tenant-level admin must enable "Service principals can use Fabric APIs":
+
+    1. Go to the Admin Portal of Microsoft Fabric and navigate to Tenant Settings.
+    2. Under Developer Settings, expand the "Service principals can use Fabric APIs" section.
+    3. Toggle the "Enabled" button and choose either "The entire organization" or "Specific security groups."
+    4. Select Apply.
+
+    :::image type="content" source="media/data-workflows/service-principal-use-fabric-api.png" lightbox="media/data-workflows/service-principal-use-fabric-api.png" alt-text="Screenshot to enable Service principal usage in Fabric APIs tenant.":::
+    
 
 - Create the [Service Principal](/entra/identity-platform/howto-create-service-principal-portal). You need to add your service principal as the Contributor in your Power BI workspace.
 
@@ -71,7 +78,7 @@ To get started, you must complete the following prerequisites:
 
 1. Start by selecting the "New DAG File" card. Then, assign a name to the file and select the "Create".
 
-2. Once created, you're presented with a boilerplate DAG code. Edit the file to include the provided contents. Update the `dataset_id` and `workspace_id` argument with the Power BI semantic model ID and workspace ID respectively.
+2. Once created, you're presented with a boilerplate DAG code. Edit the file to include the sample DAG. This DAG triggers the Power BI semantic model refresh synchronously. Update the `dataset_id` and `workspace_id` argument with the Power BI semantic model ID and workspace ID respectively.
 
 ```python
 from datetime import datetime
