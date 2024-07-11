@@ -9,7 +9,7 @@ ms.date: 03/15/2024
 ## Select a source
 
 1. Under **External sources**, select **Google Cloud Storage**.
-    
+
     :::image type="content" source="../includes/media/onelake-shortcuts/gcs-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the available shortcut types. The option titled Google Cloud Storage is highlighted." lightbox="../includes/media/onelake-shortcuts/gcs-shortcut/new-shortcut.png":::
 
 1. Enter the **Connection settings** according to the following table:
