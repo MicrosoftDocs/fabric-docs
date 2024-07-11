@@ -1,6 +1,6 @@
 ---
 title: Endorse Fabric and Power BI items
-description: Learn how to promote or certify Fabric items, or apply designate them as master data.
+description: Learn how to promote or certify Fabric items, or designate them as master data.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
@@ -100,7 +100,7 @@ If you would like to certify your item or get it labeled as master data but aren
 
 1. Go to the workspace where the item you want endorsed as certified or master data is located, and then open the settings of that item.
 
-1. Expand the endorsement section. The **Certified** or **Master data** button will be greyed if you're not authorized to endorse items as certifed or as master data.
+1. Expand the endorsement section. The **Certified** or **Master data** button will be greyed if you're not authorized to endorse items as certified or as master data.
 
 1. Select relevant link, **How do I get content certified** or  **How do I get content endorsed as Master data** to find out how to get your item endorsed the way you want it to be:
 
