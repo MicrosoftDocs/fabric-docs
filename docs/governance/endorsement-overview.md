@@ -29,7 +29,7 @@ Items can receive one of three endorsement badges - **Promoted**, **Certified**,
     Learn how to [label data items as master data](../get-started/endorsement-promote-certify.md#label-data-items-as-master-data) or [request master data designation](../get-started/../get-started/endorsement-promote-certify.md#request-certification-or-master-data-designation).
 
 > [!NOTE]
-> Certification and master data endorsement are available only if a Fabric administrator has enabled them for your organization.
+> Certification and master data endorsement are available only if a Fabric administrator has enabled them for your organization. Fabric admins should see [Enable item certification](../admin/endorsement-certification-enable.md) and [Enable master data endorsement](../admin/endorsement-master-data-enable.md).
 > 
 > Certification enablement can be delegated to domain administrators, making it possible to specify a different set of reviewers for each domain. For more information, see [Enable item certification](../admin/endorsement-certification-enable.md).
 
