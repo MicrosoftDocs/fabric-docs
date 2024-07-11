@@ -23,12 +23,12 @@ This article describes how to train and track the iterations of a scikit-learn m
 Install scikit-learn within your notebook. You can install or upgrade the version of scikit-learn on your environment by using the following command:
 
 ```shell
-%pip install scikit-learn
+pip install scikit-learn
 ```
 
 ## Set up the machine learning experiment
 
-You can create a machine learning experiment by using the MLFLow API. The MLflow `set_experiment()` function creates a new machine learning experiment, if it doesn't already exist. 
+You can create a machine learning experiment by using the MLFLow API. The MLflow `set_experiment()` function creates a new machine learning experiment named _sample-sklearn_, if it doesn't already exist. 
 
 Run the following code in your notebook and create the experiment:
 
