@@ -1,5 +1,6 @@
 ---
 title: Learn how to analyze query processing for Direct Lake semantic models
+
 description: Describes how to analyze query processing for Direct Lake semantic models.
 author: kfollis
 ms.author: kfollis
