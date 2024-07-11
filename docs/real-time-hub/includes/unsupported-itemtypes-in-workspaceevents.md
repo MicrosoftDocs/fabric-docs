@@ -9,8 +9,8 @@ ms.custom: references_unsupporteditemtypes
 ---
 
 > [!NOTE]
-> Currently, the following item types are not supported:
-> - Dataset
+> Currently, the following item types (`itemKind`) are not supported:
+> - Semantic Model
 > - Report
 > - App
 > - Dashboard
