@@ -8,3 +8,6 @@
   - name: Data Science
     tocHref: /fabric/data-engineering
     topicHref: /fabric/data-science/index
+  - name: Data Science
+    tocHref: /fabric/get-started
+    topicHref: /fabric/data-science/index
