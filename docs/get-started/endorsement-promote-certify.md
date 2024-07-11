@@ -1,5 +1,5 @@
 ---
-title: Endorse Fabric items
+title: Endorse Fabric and Power BI items
 description: Learn how to promote or certify Fabric items, or apply designate them as master data.
 author: paulinbar
 ms.author: painbar
@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 06/15/2023
+ms.date: 07/11/2024
 ---
 
 # Endorse Fabric and Power BI items
@@ -104,7 +104,7 @@ If you would like to certify your item or get it labeled as master data but aren
 
 1. Select relevant link, **How do I get content certified** or  **How do I get content endorsed as Master data** to find out how to get your item endorsed the way you want it to be:
 
-    :::image type="content" source="./media/endorsement-promote-certify/request-item-certification.png" alt-text="Screenshot of how to request certification link.":::
+    :::image type="content" source="./media/endorsement-promote-certify/request-item-endorsement.png" alt-text="Screenshot of how to request certification link.":::
     <a name="no-info-redirect"></a>
 
     > [!NOTE]
