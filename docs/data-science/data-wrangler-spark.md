@@ -1,5 +1,5 @@
 ---
-title: Explore and transform Spark data with Data Wrangler (Preview)
+title: Explore and transform Spark data with Data Wrangler
 description: Learn how to explore and transform Spark DataFrames with Data Wrangler, generating PySpark code in real time.
 author: orbey
 ms.author: erenorbey
@@ -13,7 +13,7 @@ ms.date: 11/15/2023
 ms.search.form: Data Wrangler
 ---
 
-# How to use Data Wrangler on Spark DataFrames (Preview)
+# How to use Data Wrangler on Spark DataFrames
 
 [Data Wrangler](data-wrangler.md), a notebook-based tool for exploratory data analysis, now supports both Spark DataFrames and pandas DataFrames, generating PySpark code in addition to Python code. For a general overview of Data Wrangler, which covers how to explore and transform pandas DataFrames, see the [the main tutorial](data-wrangler.md). The following tutorial shows how to use Data Wrangler to explore and transform Spark DataFrames.
 
