@@ -100,8 +100,8 @@ If you find that the AI consistently misinterprets certain words or acronyms, yo
 
 ## Related content
 
-- [AI skill scenario](ai-skill-scenario.md)
 - [AI skill concept](concept-ai-skill.md)
+- [AI skill scenario](ai-skill-scenario.md)
 
 <!-- Optional: Next step or Related content - H2
 

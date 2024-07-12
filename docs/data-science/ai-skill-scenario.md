@@ -180,8 +180,8 @@ Both instructions and examples were added to the AI skill. As testing proceeds, 
 
 ## Related content
 
-- [How to create an AI skill](how-to-create-ai-skill.md)
 - [AI skill concept](concept-ai-skill.md)
+- [How to create an AI skill](how-to-create-ai-skill.md)
 
 <!-- Optional: Related content - H2
 
