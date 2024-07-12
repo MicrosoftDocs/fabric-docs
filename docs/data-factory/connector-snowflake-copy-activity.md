@@ -4,7 +4,7 @@ description: This article explains how to copy data using Snowflake.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 07/12/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -46,6 +46,8 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
+- **Storage integration**: Specify the name of your storage integration that you created in the Snowflake. For the prerequisite steps of using the storage integration, see [Configuring a Snowflake storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration).
+
 - **Additional Snowflake copy options**: Specify additional Snowflake copy options which will be used in Snowflake COPY statement to load data. Additional copy options are provided as a dictionary of key-value pairs. Examples: MAX_FILE_SIZE, OVERWRITE. For more information, see [Snowflake Copy Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-location#copy-options-copyoptions).
 
   :::image type="content" source="./media/connector-snowflake/copy-options-source.png" alt-text="Screenshot showing additional snowflake copy options for source.":::
@@ -57,6 +59,17 @@ Under **Advanced**, you can specify the following fields:
 #### Direct copy from Snowflake
 
 If your destination data store and format meet the criteria described in this section, you can use the Copy activity to directly copy from Snowflake to destination. The service checks the settings and fails the Copy activity run if the following criteria is not met:
+
+  - When you specify `storageIntegration` in the source:
+    The destination data store is the Azure Blob Storage that you referred in the external stage in Snowflake. You need to complete the following steps before copying data:
+
+    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the destination Azure Blob Storage with any supported authentication types.
+
+    2. Grant at least **Storage Blob Data Contributor** role to the Snowflake service principal in the destination Azure Blob Storage **Access Control (IAM)**.
+
+  - When you don't specify `storageIntegration` in the source:
+
+    The **destination connection** is [**Azure Blob storage**](connector-azure-blob-storage.md) with **shared access signature** authentication. If you want to directly copy data to Azure Data Lake Storage Gen2 in the following supported format, you can create an Azure Blob Storage connection with SAS authentication against your Azure Data Lake Storage Gen2 account, to avoid using [staged copy from Snowflake](#staged-copy-from-snowflake).
 
   - The **destination connection** is **Azure Blob storage** with **shared access signature** authentication. If you want to directly copy data to Azure Data Lake Storage Gen2 in the following supported format, you can create an Azure Blob connection with SAS authentication against your ADLS Gen2 account.
 
@@ -75,6 +88,16 @@ If your destination data store and format meet the criteria described in this se
   - In copy activity source, **Additional columns** is not specified.
   - Column mapping is not specified.
 
+#### Staged copy from Snowflake
+
+When your destination data store or format isn't natively compatible with the Snowflake COPY command, as mentioned in the last section, enable the built-in staged copy using an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service exports data from Snowflake into staging storage, then copies the data to destination, and finally cleans up your temporary data from the staging storage. See Staged copy for details about copying data by using staging.
+
+To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md#set-up-your-connection-in-a-data-pipeline) that refers to the Azure storage account as the interim staging. Then specify the `enableStaging` and `stagingSettings` properties in the Copy activity.
+
+- When you specify `storageIntegration` in the source, the interim staging Azure Blob Storage should be the one that you referred in the external stage in Snowflake. Ensure that you create an [Azure Blob Storage](connector-azure-blob-storage.md) connection for it with any supported authentication, and grant at least **Storage Blob Data Contributor** role to the Snowflake service principal in the staging Azure Blob Storage **Access Control (IAM)**.
+
+- When you don't specify `storageIntegration` in the source, the staging Azure Blob Storage connection must use shared access signature authentication, as required by the Snowflake COPY command. Make sure you grant proper access permission to Snowflake in the staging Azure Blob Storage. To learn more about this, see this [article](https://docs.snowflake.com/en/user-guide/data-load-azure-config.html#option-2-generating-a-sas-token).
+
 ### Destination
 
 The following properties are supported for Snowflake under the **Destination** tab of a copy activity.
@@ -92,6 +115,8 @@ Under **Advanced**, you can specify the following fields:
 
 - **Pre-copy script**: Specify a script for Copy Activity to execute before writing data into destination table in each run. You can use this property to clean up the pre-loaded data.
 
+- **Storage integration**: Specify the name of your storage integration that you created in the Snowflake. For the prerequisite steps of using the storage integration, see [Configuring a Snowflake storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration).
+
 - **Additional Snowflake copy options**: Specify additional Snowflake copy options, which will be used in Snowflake COPY statement to load data. Additional copy options are provided as a dictionary of key-value pairs. Examples: ON_ERROR, FORCE, LOAD_UNCERTAIN_FILES. For more information, see [Snowflake Copy Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table#copy-options-copyoptions).
 
   :::image type="content" source="./media/connector-snowflake/copy-options-destination.png" alt-text="Screenshot showing additional snowflake copy options for destination.":::
@@ -103,6 +128,18 @@ Under **Advanced**, you can specify the following fields:
 #### Direct copy to Snowflake
 
 If your source data store and format meet the criteria described in this section, you can use the Copy activity to directly copy from source to Snowflake. The service checks the settings and fails the Copy activity run if the following criteria is not met:
+
+- When you specify `storageIntegration` in the destination:
+  
+  The source data store is the Azure Blob Storage that you referred in the external stage in Snowflake. You need to complete the following steps before copying data:
+
+    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the source Azure Blob Storage with any supported authentication types.
+
+    2. Grant at least **Storage Blob Data Reader** role to the Snowflake service principal in the source Azure Blob Storage **Access Control (IAM)**.
+
+- When you don't specify `storageIntegration` in the destination:
+
+  The **source connection** is [**Azure Blob storage**](connector-azure-blob-storage.md) with **shared access signature** authentication. If you want to directly copy data from Azure Data Lake Storage Gen2 in the following supported format, you can create an Azure Blob Storage connection with SAS authentication against your Azure Data Lake Storage Gen2 account, to avoid using [staged copy to Snowflake](#staged-copy-to-snowflake).
 
 - The **source connection** is **Azure Blob storage** with **shared access signature** authentication. If you want to directly copy data from Azure Data Lake Storage Gen2 in the following supported format, you can create an Azure Blob connection with SAS authentication against your ADLS Gen2 account.
 
@@ -127,6 +164,16 @@ If your source data store and format meet the criteria described in this section
    - If your source is a folder, **Recursively** is selected.
    - **Prefix**, **Start time (UTC)** and **End time (UTC)** in **Filter by last modified** and **Enable partition discovery** are not specified.
 
+#### Staged copy to Snowflake
+
+When your source data store or format isn't natively compatible with the Snowflake COPY command, as mentioned in the last section, enable the built-in staged copy using an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service automatically converts the data to meet the data format requirements of Snowflake. It then invokes the COPY command to load data into Snowflake. Finally, it cleans up your temporary data from the blob storage. See Staged copy for details about copying data using staging.
+
+To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md#set-up-your-connection-in-a-data-pipeline) that refers to the Azure storage account as the interim staging. Then specify the `enableStaging` and `stagingSettings` properties in the Copy activity.
+
+- When you specify `storageIntegration` in the destination, the interim staging Azure Blob Storage should be the one that you referred in the external stage in Snowflake. Ensure that you create an [Azure Blob Storage](connector-azure-blob-storage.md) connection for it with any supported authentication, and grant at least **Storage Blob Data Reader** role to the Snowflake service principal in the staging Azure Blob Storage **Access Control (IAM)**.
+
+- When you don't specify `storageIntegration` in the destination, the staging Azure Blob Storage connection need to use shared access signature authentication as required by the Snowflake COPY command.
+
 ### Mapping
 
 For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
@@ -149,6 +196,7 @@ The following tables contain more information about the copy activity in Snowfla
 |**Use query** |The way to read data from Snowflake.|• Table <br> • Query |No |• table<br>• query|
 |**Table** | The name of the table to read data. |< name of your source table>|Yes |schema <br> table|
 |**Query**| The SQL query to read data from Snowflake. |< name of your source query>|Yes|query|
+|**Storage integration**| Specify the name of your storage integration that you created in the Snowflake. For the prerequisite steps of using the storage integration, see [Configuring a Snowflake storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration).| < your storage integration > |No|storageIntegration|
 |**Additional Snowflake copy options** |Additional copy options, provided as a dictionary of key-value pairs. Examples: MAX_FILE_SIZE, OVERWRITE. For more information, see [Snowflake Copy Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-location#copy-options-copyoptions).|• Name<br>• Value|No |additionalCopyOptions|
 |**Additional Snowflake format options** |Additional file format options that are provided to COPY command as a dictionary of key-value pairs. Examples: DATE_FORMAT, TIME_FORMAT, TIMESTAMP_FORMAT. For more information, see [Snowflake Format Type Options](https://docs.snowflake.com/sql-reference/sql/copy-into-location#format-type-options-formattypeoptions).|• Name<br>• Value|No |additionalFormatOptions|
 
@@ -164,6 +212,7 @@ The following tables contain more information about the copy activity in Snowfla
 |**Database** |Your database that you use as destination.|< your database> |Yes|/|
 |**Table** | Your destination data table. |< name of your destination table>|Yes |• schema <br> • table|
 |**Pre-copy script**|A SQL query for the Copy activity to run before writing data into Snowflake in each run. Use this property to clean up the preloaded data.	|< your pre-copy script>|NO|preCopyScript|
+|**Storage integration**| Specify the name of your storage integration that you created in the Snowflake. For the prerequisite steps of using the storage integration, see [Configuring a Snowflake storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration).| < your storage integration > |No|storageIntegration|
 |**Additional Snowflake copy options** |Additional copy options, provided as a dictionary of key-value pairs. Examples: ON_ERROR, FORCE, LOAD_UNCERTAIN_FILES. For more information, see [Snowflake Copy Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table#copy-options-copyoptions).|• Name<br>• Value|No |additionalCopyOptions|
 |**Additional Snowflake format options** |Additional file format options provided to the COPY command, provided as a dictionary of key-value pairs. Examples: DATE_FORMAT, TIME_FORMAT, TIMESTAMP_FORMAT. For more information, see [Snowflake Format Type Options](https://docs.snowflake.com/sql-reference/sql/copy-into-table#format-type-options-formattypeoptions).|• Name<br>• Value|No |additionalFormatOptions|
 
