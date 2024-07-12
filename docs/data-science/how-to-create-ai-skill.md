@@ -15,7 +15,7 @@ ms.collection: ce-skilling-ai-copilot
 
 ---
 
-# Create an AI skill (previews)
+# Create an AI skill (preview)
 
 Are you ready for conversations about your data? You can create AI experiences with the AI skill on Fabric, to answer questions over your Lakehouse and Warehouse tables. This technique lowers the barriers for others to answer their data questions, because your colleagues can ask their questions in English and receive data-driven answers.
 
@@ -98,12 +98,7 @@ If you find that the AI consistently misinterprets certain words or acronyms, yo
 
 :::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png" alt-text="Screenshot showing where you can edit the instructions you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png":::
 
-## Next step -or- Related content
-
-> [!div class="nextstepaction"]
-> [Next sequential article title](./how-to-create-ai-skill.md)
-
--or-
+## Related content
 
 - [AI skill scenario](ai-skill-scenario.md)
 - [AI skill concept](concept-ai-skill.md)
