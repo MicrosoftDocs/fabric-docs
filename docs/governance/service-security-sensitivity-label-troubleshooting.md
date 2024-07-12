@@ -4,8 +4,7 @@ description: Find guidance for resolving common issues related to sensitivity la
 author: paulinbar
 ms.author: painbar
 manager: kfollis
-ms.service: powerbi
-ms.subservice: powerbi-eim
+
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/01/2024

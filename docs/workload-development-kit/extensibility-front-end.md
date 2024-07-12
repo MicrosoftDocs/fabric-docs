@@ -96,13 +96,13 @@ To set up the front end of the sample project, follow these steps:
 
    Refer to the localhost server notes for port details that appear after it starts.
    The current port is `60006`.
-   After the localhost server starts, opening the URL: `127.0.0.1:60006/manifests` fetches the contents of the `localWorkloadManifest.json` manifest file.
+   After the localhost server starts, opening the URL: `127.0.0.1:60006/manifests` fetches the aggregated manifest created from the 'Frontend/Package' folder.
    Open it to verify that the server is up and running.
 
    Modifying source files triggers a reload of contents in Fabric through `webpack`, if it's already connected.
    However, typically, you would still need to refresh the page.
 
-   If you change the `localWorkloadManifest.json` manifest file, refresh the Fabric page to reload the manifest.
+   If you change files under the 'Frontend/Package' folder , you should "npm start" again.
 
 1. **Run**
    In Fabric, enable the Frontend Developer mode setting, to allow Fabric to access your localhost server.
@@ -377,7 +377,7 @@ More information can be found [on the Fluent UI page](https://develop.fluentui.d
 ## Frontend Manifest customization
 
 The frontend manifest describes the frontend aspects of the workload - product appearance, names, visual assets, available actions, and more. It's the main point of contact between Fabric and the workload.
-For our sample workload, the `localWorkloadManifest.json` manifest is loaded into Fabric in Developer mode, and its various sections, definitions and examples of the manifest are shown [in the frontend manifest](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/frontendManifest.md).
+For our sample workload, the aggregated manifest is loaded into Fabric in Developer mode, and its various sections, definitions and examples of the manifest are shown [in the frontend manifest](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/frontendManifest.md).
 Changes to the manifest's entries, the wiring of different actions and updating of visual assets are seen in real time after a page refresh.
 
 ## Client SDK - supported APIs

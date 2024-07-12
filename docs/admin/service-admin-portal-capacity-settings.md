@@ -4,8 +4,7 @@ description: Learn how to manage your Fabric capacity settings and understand wh
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - admin-portal
   - ignite-2023

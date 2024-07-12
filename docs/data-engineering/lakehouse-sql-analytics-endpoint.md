@@ -1,6 +1,6 @@
 ---
 title: What is the SQL analytics endpoint for a lakehouse?
-description: Discover how to run SQL queries directly on lakehouse tables with the SQL analytics endpoint.
+description: Learn about the SQL analytics endpoint and how to run SQL queries directly on Fabric lakehouse tables.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
@@ -15,7 +15,7 @@ ms.search.form: Lakehouse SQL Analytics Endpoint
 
 # What is the SQL analytics endpoint for a lakehouse?
 
-Microsoft Fabrics provides a SQL-based experience for lakehouse Delta tables. This SQL-based experience is called the SQL analytics endpoint. You can analyze data in Delta tables using T-SQL language, save functions, generate views, and apply SQL security. To access SQL analytics endpoint, you select a corresponding item in the workspace view or switch to SQL analytics endpoint mode in Lakehouse explorer.
+Microsoft Fabric provides a SQL-based experience for lakehouse Delta tables. This SQL-based experience is called the SQL analytics endpoint. You can analyze data in Delta tables using T-SQL language, save functions, generate views, and apply SQL security. To access SQL analytics endpoint, you select a corresponding item in the workspace view or switch to SQL analytics endpoint mode in Lakehouse explorer.
 
 Creating a lakehouse creates a SQL analytics endpoint, which points to the lakehouse Delta table storage. Once you create a Delta table in the lakehouse, it's immediately available for querying using the SQL analytics endpoint. To learn more, see [Data Warehouse documentation: SQL analytics endpoint](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
 

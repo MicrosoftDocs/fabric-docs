@@ -37,6 +37,8 @@
             href: pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md
           - name: Load 2 GB of Parquet data to a Lakehouse table
             href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
+          - name: Load 6 GB of CSV data to a Lakehouse table with Fast Copy enabled
+            href: pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md
     - name: Keyboard shortcuts
       href: keyboard-shortcuts.md
   - name: Get started
@@ -165,12 +167,6 @@
         href: connector-azure-data-explorer.md
       - name: Configure in a data pipeline Copy activity
         href: connector-azure-data-explorer-copy-activity.md
-    - name: Azure Data Lake Storage Gen1
-      items:
-      - name: Azure Data Lake Storage Gen1 - Overview
-        href: connector-azure-data-lake-storage-gen1-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-azure-data-lake-storage-gen1-copy-activity.md
     - name: Azure Data Lake Storage Gen2
       items:
       - name: Azure Data Lake Storage Gen2 - Overview
@@ -179,6 +175,12 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in data pipeline copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+    - name: Azure Database for MySQL
+      items:
+      - name: Azure Database for MySQL - Overview
+        href: connector-azure-database-for-mysql-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-azure-database-for-mysql-copy-activity.md
     - name: Azure Database for PostgreSQL
       items:
       - name: Azure Database for PostgreSQL - Overview
@@ -463,10 +465,12 @@
         href: connector-odbc.md
     - name: Oracle
       items:
-      - name: Oracle - Overview
-        href: connector-oracle-overview.md
+      - name: Oracle database - Overview
+        href: connector-oracle-database-overview.md
+      - name: Set up your connection
+        href: connector-oracle-database.md
       - name: Configure in a data pipeline Copy activity
-        href: connector-oracle-copy-activity.md
+        href: connector-oracle-database-copy-activity.md
     - name: Oracle Cloud Storage
       items:
       - name: Oracle Cloud Storage - Overview
@@ -501,6 +505,8 @@
         href: connector-salesforce-objects-overview.md
       - name: Set up your connection
         href: connector-salesforce-objects.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-salesforce-copy-activity.md  
     - name: Salesforce reports
       items:
       - name: Salesforce reports - Overview
@@ -839,6 +845,8 @@
         items:
           - name: Synchronize your code from an existing Git repo
             href: data-workflows-sync-git-repo.md
+          - name: Data workflows workspace settings
+            href: data-workflows-workspace-settings.md
           - name: Install a private package
             href: data-workflows-install-private-package.md
           - name: Enable Azure Key Vault as Secret Backend
@@ -859,6 +867,10 @@
             href: data-workflows-run-databricks-job.md
           - name: Power BI Semantic Model Refresh
             href: data-workflows-power-bi-semantic-model-refresh.md
+          - name: Transform data using dbt
+            href: data-workflows-dbt-fabric.md
+          - name: Run a Fabric Item Job
+            href: data-workflows-run-fabric-item-job.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases

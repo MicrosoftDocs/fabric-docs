@@ -48,7 +48,7 @@ ChatGPT and GPT-4 are language models optimized for conversational interfaces. T
 import openai
 
 response = openai.ChatCompletion.create(
-    deployment_id='gpt-35-turbo', # deployment_id could be one of {gpt-35-turbo, gpt-35-turbo-16k}
+    deployment_id='gpt-35-turbo-0125', # deployment_id could be one of {gpt-35-turbo-0125 or gpt-4-32k}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -70,7 +70,7 @@ We can also stream the response
 
 ``` Python
 response = openai.ChatCompletion.create(
-    deployment_id='gpt-35-turbo', # deployment_id could be one of {gpt-35-turbo, gpt-35-turbo-16k}
+    deployment_id='gpt-35-turbo-0125', # deployment_id could be one of {gpt-35-turbo-0125 or gpt-4-32k}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -102,11 +102,11 @@ ChatGPT and GPT-4 models are language models that are optimized for conversation
 
 `deployment_name` could be one of:
 
--   `gpt-35-turbo`
--   `gpt-35-turbo-16k`
--   `gpt-4`
+-   `gpt-35-turbo-0125`
+-   `gpt-4-32k`
 
 ``` python
+from synapse.ml.services.openai import OpenAIChatCompletion
 from pyspark.sql import Row
 from pyspark.sql.types import *
 
@@ -137,7 +137,7 @@ chat_df = spark.createDataFrame(
 
 chat_completion = (
     OpenAIChatCompletion()
-    .setDeploymentName("gpt-35-turbo-16k") # deploymentName could be one of {gpt-35-turbo, gpt-35-turbo-16k, gpt-4}
+    .setDeploymentName("gpt-35-turbo-0125") # deploymentName could be one of {gpt-35-turbo-0125 or gpt-4-32k}
     .setMessagesCol("messages")
     .setErrorCol("error")
     .setOutputCol("chat_completions")
@@ -146,167 +146,6 @@ chat_completion = (
 display(
     chat_completion.transform(chat_df).select(
         "messages", "chat_completions.choices.message.content"
-    )
-)
-```
-
----
-
-## Completions
-
-# [Python SDK](#tab/python)
-
-The completions endpoint can be used for a wide variety of tasks. It provides a simple but powerful text-in, text-out interface to any of our models. You input some text as a prompt, and the model generates a text completion that attempts to match whatever context or pattern you gave it. For example, if you give the API the prompt, "As Descartes said, I think, therefore," it returns the completion " I am" with high probability.
-
-The example presented here showcases simple completions operations and isn't intended to serve as a tutorial.
-
-You can conclude a sentence using the completion endpoint.
-
-``` Python
-prompt = "The food was delicious and the waiter"
-completion = openai.Completion.create(deployment_id='text-davinci-003',  # deployment_id could be text-davinci-003 or code-cushman-002
-                                        prompt=prompt, 
-                                        stop=".", 
-                                        temperature=0)
-                                
-print(f"{prompt}{completion['choices'][0]['text']}.")
-```
-
-### Output
-
-``` json
-    The food was delicious and the waiter was very friendly.
-```
-
-You can use the completion endpoint to generate code from natural language. 
-
-``` Python
-deployment_id = "code-cushman-002" # deployment_id could be text-davinci-003 or code-cushman-002
-prompt = "# Python 3\n# Write a quick sort function\ndef quicksort(arr):"
-response = openai.Completion.create(
-    deployment_id=deployment_id,
-    prompt=prompt,
-    max_tokens=200,
-    temperature=0,
-    stop=["#"]
-)
-text = response['choices'][0]['text']
-print(prompt + text)
-```
-
-### Output
-
-``` Python 
-    # Python 3
-    # Write a quick sort function
-    def quicksort(arr):
-        if len(arr) <= 1:
-            return arr
-        pivot = arr[len(arr) // 2]
-        left = [x for x in arr if x < pivot]
-        middle = [x for x in arr if x == pivot]
-        right = [x for x in arr if x > pivot]
-        return quicksort(left) + middle + quicksort(right)
-
-    print(quicksort([3, 6, 8, 10, 1, 2, 1]))
-
-```
-
-# [SynapseML](#tab/synapseml)
-
-The completions endpoint can be used for a wide variety of tasks. It provides a simple but powerful text-in, text-out interface to any of our
-models. You input some text as a prompt, and the model generates a text completion that attempts to match whatever context or pattern you
-gave it. For example, if you give the API the prompt, "As Descartes said, I think, therefore", it returns the completion " I am" with
-high probability.
-
-`deployment_name` could be one of:
-
--   `text-davinci-003`
--   `code-cushman-002`
-
-``` python
-df = spark.createDataFrame(
-    [
-        ("Hello my name is",),
-        ("The best code is code thats",),
-        ("SynapseML is ",),
-    ]
-).toDF("prompt")
-
-deployment_name = "text-davinci-003" # deployment_name could be text-davinci-003 or code-cushman-002
-completion = (
-    OpenAICompletion()
-    .setDeploymentName(deployment_name)
-    .setMaxTokens(200)
-    .setPromptCol("prompt")
-    .setErrorCol("error")
-    .setOutputCol("completions")
-)
-```
-
-``` python
-from pyspark.sql.functions import col
-
-completed_df = completion.transform(df).cache()
-display(
-    completed_df.select(
-        col("prompt"),
-        col("error"),
-        col("completions.choices.text").getItem(0).alias("text"),
-    )
-)
-```
-
----
-
-### All functionalities in one call
-
-# [Python SDK](#tab/python)
-
-No steps for this section in the Python SDK. 
-
-# [SynapseML](#tab/synapseml)
-
-OpenAI contains numerous abilities including `Summarize Text`, `Classification`, `Natural Language to SQL`, `Code Generation`, `Translation`, etc.
-
-This sample shows that we could use one single `OpenAICompletion` instance to complete all above tasks within one single `.transform()` call.
-
-
-``` python
-df = spark.createDataFrame(
-    [
-        ("A neutron star is the collapsed core of a massive supergiant star, which had a total mass of between 10 and 25 solar masses, possibly more if the star was especially metal-rich.[1] Neutron stars are the smallest and densest stellar objects, excluding black holes and hypothetical white holes, quark stars, and strange stars.[2] Neutron stars have a radius on the order of 10 kilometres (6.2 mi) and a mass of about 1.4 solar masses.[3] They result from the supernova explosion of a massive star, combined with gravitational collapse, that compresses the core past white dwarf star density to that of atomic nuclei.\n\nTl;dr",),
-        ("Classify the following news article into 1 of the following categories: categories: [Business, Tech, Politics, Sport, Entertainment].\n news article: Donna Steffensen Is Cooking Up a New Kind of Perfection. The Internet's most beloved cooking guru has a buzzy new book and a fresh new perspective:",),
-        ("### Postgres SQL tables, with their properties:\n#\n# Employee(id, name, department_id)\n# Department(id, name, address)\n# Salary_Payments(id, employee_id, amount, date)\n#\n### A query to list the names of the departments which employed more than 10 employees in the last 3 months",),
-        ("Write a quick sort function using Python.",),
-        ("Product description: A home milkshake maker\nSeed words: fast, healthy, compact.\nProduct names: HomeShaker, Fit Shaker, QuickShake, Shake Maker\n\nProduct description: A pair of shoes that can fit any foot size.\nSeed words: adaptable, fit, omni-fit.",),
-        ("English: I do not speak French.\nFrench: Je ne parle pas français.\n\nEnglish: See you later!\nFrench: À tout à l'heure!\n\nEnglish: Where is a good restaurant?\nFrench: Où est un bon restaurant?\n\nEnglish: What rooms do you have available?\nFrench: Quelles chambres avez-vous de disponible?\n\nEnglish: I want to say nothing.\n",),
-        ("There are many fruits that were found on the recently discovered planet Goocrux. There are neoskizzles that grow there, which are purple and taste like candy. There are also loheckles, which are a grayish blue fruit and are very tart, a little bit like a lemon. Pounits are a bright green color and are more savory than sweet. There are also plenty of loopnovas which are a neon pink flavor and taste like cotton candy. Finally, there are fruits called glowls, which have a very sour and bitter taste which is acidic and caustic, and a pale orange tinge to them.\n\nPlease make a table summarizing the fruits from Goocrux\n| Fruit | Color | Flavor |\n| Neoskizzles | Purple | Sweet |\n| Loheckles | Grayish blue | Tart |",),
-        ("The following is a list of companies and the categories they fall into\n\nFacebook: Social media, Technology\nLinkedIn: Social media, Technology, Enterprise, Careers\nUber: Transportation, Technology, Marketplace\nUnilever: Conglomerate, Consumer Goods\nMcdonalds: Food, Fast Food, Logistics, Restaurants\nFedEx:",)
-    ]
-).toDF("prompt")
-```
-
-``` python
-from synapse.ml.cognitive.openai import OpenAICompletion
-from pyspark.sql.functions import col
-
-deployment_name = "text-davinci-003" # deployment_name could be text-davinci-003 or code-cushman-002
-completion = (
-    OpenAICompletion()
-    .setDeploymentName(deployment_name)
-    .setMaxTokens(200)
-    .setPromptCol("prompt")
-    .setErrorCol("error")
-    .setOutputCol("completions")
-)
-
-completed_df = completion.transform(df).cache()
-display(
-    completed_df.select(
-        col("prompt"),
-        col("error"),
-        col("completions.choices.text").getItem(0).alias("text"),
     )
 )
 ```

@@ -4,6 +4,7 @@ description: Learn which Fabric features are available to you depending on the c
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
+ms.collection: ce-skilling-ai-copilot
 ms.date: 06/19/2024
 ---
 

@@ -1,25 +1,22 @@
 ---
 title: Overview of Fabric Git integration
-description: An introduction to Git integration the Fabric Application lifecycle management (ALM) tool
+description: An introduction to integrating Git version control with the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 05/23/2024
+ms.topic: concept-article
+ms.date: 07/09/2024
 ms.search.form: Git integration supported items, Introduction to Git integration
+#customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
 
 # Introduction to Git integration (preview)
 
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
+This article explains to developers how to integrate Git version control with the Fabric Application lifecycle management (ALM) tool.
 
-> [!NOTE]
-> This articles in this section are about version control using Git integration. To manage deployment of your app, see the [deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md) documentation.
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 Git integration in Microsoft Fabric enables developers to integrate their development processes, tools, and best practices straight into the Fabric platform. It allows developers who are developing in Fabric to:
 
@@ -27,8 +24,6 @@ Git integration in Microsoft Fabric enables developers to integrate their develo
 * Revert to previous stages as needed
 * Collaborate with others or work alone using Git branches
 * Apply the capabilities of familiar source control tools to manage Fabric items
-
-:::image type="content" source="./media/intro-to-git-integration/git-flow.png" alt-text="Flowchart showing the connection between the remote Git repo and the Fabric workspace.":::
 
 The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. Currently, in Preview, only a few items are supported, but the list of [supported items](#supported-items) is growing.
 
@@ -38,13 +33,21 @@ The integration with source control is on a workspace level. Developers can vers
 
 * Read about the best way to manage your [Git branches](./manage-branches.md).
 
-## Privacy concerns
+## Privacy information
 
-Before you enable Git integration, make sure you understand the following possible privacy concerns:
+Before you enable Git integration, make sure you review the following privacy statements:
 
+* <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Microsoft privacy statement</a>
 * [Azure DevOps Services Data protection overview](/azure/devops/organizations/security/data-protection)
-* [Microsoft privacy statement](https://go.microsoft.com/fwlink/?LinkId=521839)
-<!--- * [Microsoft services agreement](https://www.microsoft.com/servicesagreement/default.aspx) -->
+* <a href="https://github.com/customer-terms/github-data-protection-agreement" target="_blank">GitHub Data protection agreement</a>
+
+## Supported Git providers
+
+The following Git providers are supported:
+
+* [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant
+* [GitHub](https://github.com/)
+* [GitHub Enterprise](https://github.com/enterprise)
 
 ## Supported items
 
@@ -60,14 +63,28 @@ The following items are currently supported:
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
 
-If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pane but you can't commit or update them.
+If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control panel but you can't commit or update them.
 
 ## Considerations and limitations
 
-* Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant is supported.  
-* If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).  
-* Azure DevOps **on-prem** isn't supported.
+[!INCLUDE [limitations](../../includes/git-limitations.md)]
+
+<!---
 * Sovereign clouds aren't supported.
+
+### [Azure DevOps limitations](#tab/azure-devops)
+
+* The Azure repo must use the *same tenant* as the Fabric tenant.
+* If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
+* The commit size is limited to 125 MB.
+
+### [GitHub limitations](#tab/github)
+
+* GitHub can't enforce [cross-geo validations](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
+* The commit size is limited to 100 MB.
+
+---
+--->
 
 ## Related content
 

@@ -8,7 +8,7 @@ ms.topic: troubleshooting
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/11/2024
+ms.date: 07/04/2024
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -102,12 +102,33 @@ To understand the considerations and limitations of various lifecycle management
 **Cause**: You can only connect to Git repos if you have a valid Premium license. If your license expired or you change your license to a license that doesn't include Git integration, you won't be able to connect to that repo anymore. This applies to trial licenses as well.  
 **Solution**: Disconnect from Git and work without source control, or purchase a Premium license.
 
+#### Branching out: I don't see the branch I want to connect to
+
+**Description of problem**: I don't see the branch I want to connect to in the branching out tab of the **Source control** panel.  
+**Cause**: The branching out list only shows branches that you have permission to view.  
+**Solution**: Check that the branch you want exists and that you have permission to view it. If not, ask the owner of the branch to give you permission See [Branch limitations](./git-integration/git-integration-process.md#branching-out-limitations) for more information.
+
+#### Branching out: My new workspace wasn’t synced with my Git repository
+
+**Description of problem**: When branching out to a new workspace, I’m navigated to the new workspace but Git integration isn’t enabled there.
+**Cause**: The [Git integration switch](../admin/git-integration-admin-settings.md) might be enabled for your source workspace, but not for the whole tenant as the tenant admin can delegate control of the switch to workspace admins. If this is the case, your new workspace will not have Git integration enabled and you will need to manually enable it from the workspace settings before syncing the workspace with Git.
+**Solution**: Enable Git integration from the workspace settings of your new workspace.
+
 ### Commit issues
 
 #### The Commit button is disabled
 
 **Description of problem**: If there were updates made to the Git branch, commits are disabled until you update your workspace.  
 **Solution**: To enable commits, update your workspace.
+
+#### Maximum commit size exceeded
+
+**Description of problem**: When trying to commit items to GitHub, I get an error saying that I exceeded maximum commit size.
+
+  :::image type="content" source="./media/troubleshoot-cicd/maximum-commit-size.png" alt-text="Screenshot or error message that says Maximum commit size exceeded.":::
+
+**Cause**: The number of non-text files you can commit at once is limited. In general, up to about 80 files per minute and 500 files per hour are allowed. If your commit contains a large number of non-text files, the commit might fail. For more information see <a href="https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#about-secondary-rate-limits" target="_blank">secondary rate limits</a>.  
+**Solution**: If you're trying to commit several items at once, consider committing them in smaller batches. If your commit contains one item with many files, contact <a href="https://support.fabric.microsoft.com/" target="_blank">support</a>.
 
 ### Update issues
 
