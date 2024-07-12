@@ -11,9 +11,12 @@ ms.custom:
 ms.date: 11/15/2023
 ---
 
-# Runtime 1.1 (GA)
+# Runtime 1.1
 
 Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of the Data Engineering and Data Science experiences in Fabric. This document covers the Fabric Runtime 1.1 components and versions.
+
+> [!Warning]
+> The end of support date for Runtime 1.1 has been announced as July 12, 2024. Runtime 1.1, based on Apache Spark 3.3, will be deprecated and disabled as of March 31, 2025. [Upgrade your workspace](https://learn.microsoft.com/en-us/fabric/data-engineering/runtime#multiple-runtimes-support) and environments to Runtime 1.2 or Runtime 1.3. For the complete lifecycle and support policies of Apache Spark runtimes in Fabric, refer to [Lifecycle of Apache Spark runtimes in Fabric](https://learn.microsoft.com/en-us/fabric/data-engineering/lifecycle).
 
 Microsoft Fabric Runtime 1.1 is one of the runtimes offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
 
