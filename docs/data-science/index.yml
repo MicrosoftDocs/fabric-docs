@@ -47,14 +47,14 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is AI skill (preview)?
+          - text: What is an AI skill (preview)?
             url: concept-ai-skill.md
       - linkListType: get-started
         links:
+          - text: AI skill over Adventure Works
+            url: ai-skill-scenario.md
           - text: Get started with AI skills
             url: how-to-create-ai-skill.md
-          - text: AI skill over adventure works
-            url: ai-skill-scenario.md
   
 # Card 
   - title: Get started

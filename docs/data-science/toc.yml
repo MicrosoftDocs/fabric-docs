@@ -349,7 +349,7 @@ items:
   items:
     - name: What is the AI skill?
       href: concept-ai-skill.md
-    - name: How to create an AI skill?
+    - name: How to create an AI skill
       href: how-to-create-ai-skill.md
     - name: AI skill scenario
       href: ai-skill-scenario.md

@@ -1,5 +1,5 @@
 ---
-title: How to Create an AI skill (preview)
+title: How to create an AI skill (preview)
 description: Learn how to create an AI skill
 author: IAmGrootel
 ms.author: avangrootel
@@ -102,24 +102,3 @@ If you find that the AI consistently misinterprets certain words or acronyms, yo
 
 - [AI skill concept](concept-ai-skill.md)
 - [AI skill scenario](ai-skill-scenario.md)
-
-<!-- Optional: Next step or Related content - H2
-
-Consider adding one of these H2 sections (not both):
-
-A "Next step" section that uses 1 link in a blue box 
-to point to a next, consecutive article in a sequence.
-
--or- 
-
-A "Related content" section that lists links to 
-1 to 3 articles the user might find helpful.
-
--->
-
-<!--
-
-Remove all comments except the customer intent
-before you sign off or merge to the main branch.
-
--->

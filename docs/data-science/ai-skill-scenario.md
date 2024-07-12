@@ -1,5 +1,5 @@
 ---
-title: AI skill Scenario (preview)
+title: AI skill scenario (preview)
 description: Learn how to configure an AI skill on the AdventureWorks dataset.
 author: IAmGrootel
 ms.author: avangrootel
@@ -32,7 +32,9 @@ First create a Lakehouse and populate it with the necessary data.
 If you already have an instance of Adventure Works DW in a Warehouse or Lakehouse, you can skip this step. If not, create a Lakehouse from a Notebook, and use the Notebook to populate the Lakehouse with the data.
 
 **Step 1:** Create a new Notebook in the workspace where you want to create your AI skill.
-**Step 2:** Select the "+ Data sources" button in the left nav of the Explorer pane. This adds an existing Lakehouse or create a new Lakehouse.
+
+**Step 2:** Select the "+ Data sources" button in the left nav of the Explorer pane. This adds an existing Lakehouse or creates a new Lakehouse.
+
 **Step 3:** Add the following code snippet in the top cell.
 
 ```python
@@ -182,17 +184,3 @@ Both instructions and examples were added to the AI skill. As testing proceeds, 
 
 - [AI skill concept](concept-ai-skill.md)
 - [How to create an AI skill](how-to-create-ai-skill.md)
-
-<!-- Optional: Related content - H2
-
-Consider including a "Related content" H2 section that 
-lists links to 1 to 3 articles the user might find helpful.
-
--->
-
-<!--
-
-Remove all comments except the customer intent
-before you sign off or merge to the main branch.
-
--->

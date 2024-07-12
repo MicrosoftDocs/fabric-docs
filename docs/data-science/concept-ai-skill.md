@@ -1,6 +1,6 @@
 ---
-title: AI skill Creation (preview)
-titleSuffix: AI skill Creation
+title: AI skill creation (preview)
+titleSuffix: Learn how to create an AI skill
 description: Learn how to create an AI skill that can answer questions about data.
 author: IAmGrootel
 ms.author: avangrootel
@@ -37,9 +37,9 @@ You should expect to handle some necessary configuration steps before the AI ski
 
 The technology behind the AI skill and the Fabric Copilots is similar. They both use Generative AI to reason over data. However, they have some key differences:
 
-1. **Configuration:** With an AI skill, you can configure the AI to behave the way you need. You can provide it with instructions and examples that tune it to your specific use case. A Fabric Copilot doesn't offer this configuration flexibility.
+- **Configuration:** With an AI skill, you can configure the AI to behave the way you need. You can provide it with instructions and examples that tune it to your specific use case. A Fabric Copilot doesn't offer this configuration flexibility.
 
-1. **Use Case**: A Copilot can help you do your work on Fabric. It can help you generate Notebook code or Data Warehouse queries. In contrast, the AI skill operates independently, and you can eventually connect it to Microsoft Teams and other areas outside of Fabric.
+- **Use Case**: A Copilot can help you do your work on Fabric. It can help you generate Notebook code or Data Warehouse queries. In contrast, the AI skill operates independently, and you can eventually connect it to Microsoft Teams and other areas outside of Fabric.
 
 ## Evaluation of the AI skill
 
