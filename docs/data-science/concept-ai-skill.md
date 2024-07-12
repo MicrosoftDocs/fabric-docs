@@ -9,7 +9,7 @@ reviewer: avangrootel
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "conceptual".
-ms.date: 07/03/2024
+ms.date: 07/12/2024
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: AI skill Concepts
 
