@@ -12,7 +12,7 @@ ms.date: 05/21/2024
 # Authentication setup (preview)
 
 > [!NOTE]  
-> To configure the following authentication settings in the setup guide, a tenant global admin role is required.
+> To configure the following authentication settings in the setup guide, a Global Administrator role is required.
 
 In order to be able to work with authentication, you need to set up its three component parts:
 * [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication) (formerly Azure AD App)
@@ -33,7 +33,7 @@ To make sure Azure Storage is provisioned in the tenant:
 
     :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
-If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-manually). If not, a tenant global admin needs to provision it.
+If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-manually). If not, a Global Administrator needs to provision it.
 
 Open **Windows PowerShell** as administrator and run the following script:
   
