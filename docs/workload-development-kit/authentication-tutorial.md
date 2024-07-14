@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: muliwienrib
 ms.topic: how-to
 ms.custom:
-ms.date: 05/21/2024
+ms.date: 07/14/2024
 ---
 
 # Authentication setup (preview)
@@ -139,7 +139,7 @@ Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null
 For a streamlined setup of your application in Microsoft Entra Identity, you can opt to use an automated PowerShell script. Follow these steps to configure your application:
 
 1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2.](/cli/azure/).
-2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1). You will be prompted to sign in by using the credentials of the user account under which you intend to create the application.
+2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1). You'll be prompted to sign in by using the credentials of the user account under which you intend to create the application.
 3. **Provide Required Information**: When prompted, enter the desired name for your application, the workload name (prefixed with "Org."), and your tenant ID.
 
 Upon successful execution of the script, it will output all necessary details to configure your workload. Additionally, it will provide a direct URL to your application and an administrative consent URL for tenant-wide application authorization.
