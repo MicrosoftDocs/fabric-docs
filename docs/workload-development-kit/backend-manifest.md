@@ -89,7 +89,7 @@ The `<JobScheduler>` section encompasses various elements that define the behavi
 - `<ItemJobType>`: Describes a specific job type. 
 - `<Name>`: The name of the job type. Must use the Item's name as a prefix. 
 
-For example, let's consider our sample workload, which includes two specific jobs defined within the `<ItemJobTypes>` section:
+For example, let's consider our sample workload, which includes three specific jobs defined within the `<ItemJobTypes>` section:
 
 ```
 <JobScheduler>
