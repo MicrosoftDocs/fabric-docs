@@ -97,7 +97,7 @@ To work with Create, Read, Update and Delete APIs for workload items, and perfor
 ### Add scopes for data plane API
 
 Other scopes need to be registered to represent groups of operations exposed by the data plane API.
-In the backend sample, we provide four examples. You can see them in [Backend/src/Constants/scopes.cs](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Constants/Scopes.cs). The scopes are:
+In the backend sample, we provide four examples. You can see them in [Backend/src/Constants/scopes.cs](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Constants/WorkloadScopes.cs). The scopes are:
 
 * `Item1.Read.All`: Used for reading workload items
 * `Item1.ReadWrite.All`: Used for reading/writing workload items
