@@ -15,10 +15,10 @@ ms.date: 07/14/2024
 
 The `WorkloadManifest.xml` and `Item.xml` files are required for workload definition in Fabric. It holds the basic Workload and Workload Items configuration settings for setup and it acts as a guide for workload setup and management, helping define, share, and record essential workload details for smooth integration into Fabric.
 
-During the build process, a `.nupkg` file is generated from the XML files located in the `src/Packages/manifest` folder. This packaged file holds all the necessary information about your workload. In the `workload-dev-mode.json` file, there's a field called `ManifestPackageFilePath` that should point to this newly created `.nupkg` file.
+In our sample repository a `.nupkg` file is generated from the XML files located in the `src/Packages/manifest` folder during the build process. This packaged file holds all the necessary information about your workload. In the `workload-dev-mode.json` file, there's a field called `ManifestPackageFilePath` that should point to this newly created `.nupkg` file.
 
 ### Upload and Registration Process 
-1. **User Authentication**: Upon executing the sample, your authentication initiates the upload and registration process. This ensures the correct association of the workload with your identity. 
+1. **User Authentication**: During development, once executing the sample, your authentication initiates the upload and registration process. This ensures the correct association of the workload with your identity. 
 2. **Manifest Parsing**: The uploaded manifest undergoes parsing to validate its structure and content. This step ensures that the manifest is correctly formatted and ready for further processing. 
 3. **Workload Registration**: If parsing is successful, the workload is registered in Fabric. Essential configuration details, such as the workload ID, are stored in the Fabric database, enabling effective workload management.
 
