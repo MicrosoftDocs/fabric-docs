@@ -1,3 +1,15 @@
+---
+title: Overview of the backend manifest of a workload for the Fabric Workload Development Kit
+description: This article describes the overview and key concepts for the backend manifest definition.
+author: AviSander
+ms.author: asander
+ms.reviewer: muliwienrib
+ms.topic: concept-article
+ms.custom:
+ms.date: 07/14/2024
+#customer intent: As a developer, I want to understand how to create a backend manifest for a customized Fabric workload so that I can create customized user experiences.
+---
+
 # Workload Manifest
 ## Overview
 
@@ -56,7 +68,7 @@ Backend endpoint, called 'Workload' includes item CRUD and jobs APIs
 </ServiceEndpoint>
 ```
 
-`<IsEndpointResolutionService>` and `EndpointResolutionContext`  are set based on whether your endpoint implements the workload API or only the endpoint resolution. See [Endpoint Resolution](https://learn.microsoft.com/en-us/rest/api/fabric/workload/workloadapi/endpoint-resolution) for detailed information.
+`<IsEndpointResolutionService>` and `EndpointResolutionContext`  are set based on whether your endpoint implements the workload API or only the endpoint resolution. See [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution) for detailed information.
 
 
 ## Item Manifest - Key Manifest Components
