@@ -28,7 +28,7 @@ Admins can specify internal URLs to override the destination of links on the Pow
 
 * **Community**. To take users to an internal forum from the help menu, instead of to the [Power BI Community](https://community.powerbi.com), set a custom URL for **Discussion forum**.
 
-* **Licensing upgrades**. Users with a Power BI (free) license or a Power BI Pro license can be presented with the opportunity to upgrade their account to a Power BI Premium Per User license. If you specify an internal URL for **Licensing requests**, you redirect users to an internal request and purchase flow and prevent self-service purchase. If you want to prevent users from buying licenses, but are okay with letting users start a Power BI Premium Per User trial, see [Users can try Microsoft Fabric paid features](#users-can-try-microsoft-fabric-paid-features) to separate the buy and try experiences.
+* **Licensing upgrades**. Users with a Fabric (Free) license can be presented with the opportunity to upgrade to Power BI Pro (Pro) or Power BI Premium Per User (PPU). Users with a Fabric (Free) or Power BI Pro license can be presented with the opportunity to upgrade their account to a Power BI Premium Per User license. If you specify an internal URL for **Licensing requests**, you redirect users to an internal request and purchase flow and prevent self-service purchase. If you want to prevent users from buying licenses, but are okay with letting users start a Power BI Pro or PPU trial, see [Users can try Microsoft Fabric paid features](#users-can-try-microsoft-fabric-paid-features) to separate the buy and try experiences.
 
 * **Get help**. To take users to an internal help desk from the help menu, instead of to [Microsoft Fabric Support](https://powerbi.microsoft.com/support), set a custom URL for **Help Desk**.
 
@@ -40,7 +40,7 @@ Mail-enabled security groups receive email notifications if this tenant is impac
 
 :::image type="content" source="media/tenant-settings/power-bi-settings-paid-features.png" alt-text="Screenshot showing Users can try Microsoft Fabric paid features.":::
 
-The setting to **Users can try Microsoft Fabric paid features** is enabled by default. This setting increases your control over how users get license upgrades. In scenarios where you have [blocked self-service purchase](/power-bi/enterprise/service-admin-disable-self-service), this setting lets users use more features free for 60 days. Users who have a Power BI (free) license and users with a Power BI Pro license can start a Power BI Premium Per User trial. Changing **Users can try Microsoft Fabric paid features** from **enabled** to **disabled** blocks self-service purchase of new licenses. It doesn't impact purchases that were already made.
+The setting to **Users can try Microsoft Fabric paid features** is enabled by default. This setting increases your control over how users get license upgrades. In scenarios where you have [blocked self-service purchase](/power-bi/enterprise/service-admin-disable-self-service), this setting lets users use more features free for 60 days. Users can start a Power BI pro or PPU trial or a trial of a Fabric capacity. Changing **Users can try Microsoft Fabric paid features** from **enabled** to **disabled** blocks self-service trials of new licenses and of the Fabric capacity trial. It doesn't impact purchases that were already made.
 
 The user's license upgrade experience depends on how you combine license settings. The following table shows how the upgrade experience is affected by different setting combinations:
 
