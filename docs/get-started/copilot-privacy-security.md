@@ -15,15 +15,7 @@ ms.collection: ce-skilling-ai-copilot
 ---
 # Privacy, security, and responsible use of Copilot in Fabric (preview)
 
-With Copilot for data science in Microsoft Fabric and other generative AI features such as the AI skill in preview, Fabric brings a new way to transform and analyze data, generate insights, and get answers from your data in natural language in data science and the other workloads.
-
-In this article, learn how to keep your business data secure and adhere to privacy requirements, and how you and your organization can use these generative AI features responsibly. This article expands on the foundational information in Privacy, security, and responsible use for Copilot (preview). The AI skill uses the same general process and underlying Azure OpenAI service models as Copilot in Fabric.
-
-## Start using Copilot in Fabric
-
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
-
-## Overview
 
 This article provides answers to common questions related to business data security and privacy to help your organization get started with Copilot in Fabric. The article [Privacy, security, and responsible use for Copilot in Power BI (preview)](copilot-power-bi-privacy-security.md) provides an overview of Copilot in Power BI. Read on for details about Copilot for Fabric.
 
