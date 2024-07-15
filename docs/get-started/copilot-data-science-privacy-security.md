@@ -53,17 +53,17 @@ AI Skill is a new tool in Fabric that brings a way to get answers from your tabu
 
 ### What can AI Skill do? 
 
-A data analyst or engineer can prepare AI Skill for use by non-technical business users. They need to configure Fabric data source and can optionally provide additional context information that is not obvious from the schema.
+A data analyst or engineer can prepare AI Skill for use by non-technical business users. They need to configure Fabric data source and can optionally provide additional context information that isn't obvious from the schema.
 
 Non-technical users can then type questions and receive the results from the execution of an AI generated SQL query.
 
 ### What is/are AI Skill’s intended use(s)?
 
-Business users who are not familiar with how the data is structured are able to ask descriptive questions such as “what are the 10 top products by sales volume last month?" on top of tabular data stored in Fabric Lakehouses and Fabric Warehouses.
+Business users who aren't familiar with how the data is structured are able to ask descriptive questions such as “what are the 10 top products by sales volume last month?" on top of tabular data stored in Fabric Lakehouses and Fabric Warehouses.
 
-AI Skill is not intended for use in cases where deterministic and 100% accurate results are required, which reflects the current LLM limitations.
+AI Skill isn't intended for use in cases where deterministic and 100% accurate results are required, which reflects the current LLM limitations.
 
-The AI Skill is not intended for uses cases that require deep analytics or causal analytics. E.g. asking “why did our sales numbers drop last month?” is out of scope. 
+The AI Skill isn't intended for uses cases that require deep analytics or causal analytics. E.g. asking “why did our sales numbers drop last month?” is out of scope. 
 
 ### How was AI Skill evaluated? What metrics are used to measure performance?
 
@@ -83,7 +83,7 @@ Provide examples in the model configuration panel in the UI. The system will lev
 
 The AI skill will only have access to the data that you provide. It will make use of the schema (table name and column name), as well as the Notes for the model and Examples that you provide in the UI.
 
-The AI skill will only have access to data that the questioner has access to. If you use the AI skill, your credentials will be used to access the underlying database. If you do not have access to the underlying data, the AI skill will not either. This holds true when you publish the AI skill to other destinations, such as Copilot for Microsoft 365 or Microsoft Copilot Studio, where the AI skill can be used by other questioners.
+The AI skill will only have access to data that the questioner has access to. If you use the AI skill, your credentials will be used to access the underlying database. If you don't have access to the underlying data, the AI skill won't either. This holds true when you publish the AI skill to other destinations, such as Copilot for Microsoft 365 or Microsoft Copilot Studio, where the AI skill can be used by other questioners.
 
 ## Related content
 
