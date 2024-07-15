@@ -20,28 +20,28 @@ In terms of data stores, OneLake serves as the common storage location for inges
 
 Microsoft Fabric is a platform that enables the storage and management of customer data. In order to read and write data in Fabric, you need to use the [Fabric REST APIs](/rest/api/fabric/articles/) and the appropriate authentication methods.
 
-### API Permissions
+### API permissions
 
-Some methods of accessing customer data require the use of other services outside of Fabric such as Azure Storage or Azure SQL Database. For example, in the Microsoft Fabric Developer kit sample, the API permission Azure Storage `user_impersonation` is used in conjunction with the Power BI service *Lakehouse.Read.All* permission in order to access data from Lakehouses.
+Some methods of accessing customer data require the use of other services outside of Fabric such as Azure Storage or Azure SQL Database. For example, in the Microsoft Fabric Developer kit sample, the API permission Azure Storage `user_impersonation` is used in conjunction with the Power BI service *Lakehouse.Read.All* permission to access data from Lakehouses.
 
-You may choose to use Azure SQL Database in order to access table data from Warehouse items. In this case configure your app with Azure SQL Database `user_impersonation` in order to query the database on behalf of the user and Power BI service Warehouse.Read.All in order to query the Fabric REST API Get Warehouse endpoint.
+You can use Azure SQL Database to access table data from Warehouse items. In this case, configure your app with Azure SQL Database `user_impersonation` to query the database on behalf of the user and Power BI service Warehouse.Read.All to query the Fabric REST API Get Warehouse endpoint.
 
-Make sure you configure your Microsoft Entra ID app according to your development needs.
+Make sure that you configure your Microsoft Entra ID app according to your development needs.
 
 ### Authentication 
 
-Before you can begin using the Fabric REST APIs, or other services such as Azure Storage and Azure SQL Database, on behalf of the user, you need to authenticate using a token. This token can be obtained through a token exchange process.
+Before you can begin using the Fabric REST APIs or other services, such as Azure Storage and Azure SQL Database, on behalf of the user, you need to authenticate using a token. This token can be obtained through a token exchange process.
 
-The Fabric Workload Development Kit SDK provides a method for acquiring an access token in the workload frontend. For example, see [Sample Workload Controller](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Frontend/src/controller/SampleWorkloadController.ts).
+The Fabric Workload Development Kit SDK provides a method for acquiring an access token in the workload front end. For example, see [Sample Workload Controller](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Frontend/src/controller/SampleWorkloadController.ts).
 
- This client token must be passed to the workload backend and exchanged using the on-behalf-of flow for a token with the necessary scopes to access the resources you need, such as OneLake. For example, in order to access and read from a Lakehouse, a user must authorize the application to make API calls on their behalf using the Azure Storage `user_impersonation` permission. Then, in the backend, the access token must be obtained with the delegated scope `https://storage.azure.com/user_impersonation` in order to use Azure Storage.
+ This client token must be passed to the workload back end and exchanged by using the on-behalf-of flow for a token with the necessary scopes to access the resources you need, such as OneLake. For example, to access and read from a Lakehouse, a user must authorize the application to make API calls on their behalf by using the Azure Storage `user_impersonation` permission. Then, in the back end, the access token must be obtained with the delegated scope `https://storage.azure.com/user_impersonation` to use Azure Storage.
 
-If you decide to use SQL to access your customer data, the access token must be obtained with the scope `https://database.windows.net//user_impersonation` in order to use Azure SQL Database and the Microsoft.Data.SqlClient namespace. The access token must be used as written, with two forward slashes before `user_impersonation`, in order to be be validated by the SQLConnection class.
-For more examples of token authentication, refer to the Microsoft Fabric Developer kit sample.
+If you decide to use SQL to access your customer data, the access token must be obtained with the scope `https://database.windows.net//user_impersonation` to use Azure SQL Database and the Microsoft.Data.SqlClient namespace. The access token must be used as written, with two forward slashes before `user_impersonation`, to be validated by the SQLConnection class.
+For more examples of token authentication, see the Microsoft Fabric Developer kit sample.
 
 More details on how to obtain a token can be found in the [Microsoft Fabric Workload Development REST API documentation](https://go.microsoft.com/fwlink/?linkid=2271986).
 
-### Read Metadata
+### Read metadata
 
 Fabric REST APIs provide a way to access item properties. For example, querying the [Get Lakehouse API](/rest/api/fabric/lakehouse/items/get-lakehouse) provides you with the metadata for a certain Lakehouse, including useful properties such as OneLake paths and the SQL connection string.
 Another useful endpoint is the [Get Warehouse API](/rest/api/fabric/warehouse/items/get-warehouse), which returns the following information:
@@ -62,18 +62,18 @@ Another useful endpoint is the [Get Warehouse API](/rest/api/fabric/warehouse/it
 ```
 
 Here, the "ConnectionInfo" property is the Fully Qualified Domain Name (FQDN) of the Warehouse SQL Server. With this FQDN, you can establish an SQL connection. For more information, see [Connectivity to Data Warehousing in Microsoft Fabric](../data-warehouse/connectivity.md).
-For implementation examples, refer to the [Microsoft Fabric Workload Development Kit](./index.yml).
+For implementation examples, see the [Microsoft Fabric Workload Development Kit](./index.yml).
 
 ### Reading data
 
 Once you authenticate, you can connect to OneLake using [Azure Data Lake Storage REST APIs](/rest/api/storageservices/data-lake-storage-gen2) to read different types of data. We recommend utilizing the [Delta Lake protocol](https://github.com/delta-io/delta/blob/master/PROTOCOL.md) in order to read tables.
 
-Alternatively, if you choose to utilize Azure SQL Database you can implement the following procedure to read data from a Warehouse.
+Alternatively, if you choose to utilize Azure SQL Database, you can implement the following procedure to read data from a Warehouse.
 
 1. Create an authorization context. For an example of creating an authorization context, see the [AuthenticateDataPlaneCall method](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthenticationService.cs).
-1. Acquire a token with the *Warehouse.Read.All* scope on behalf of the user using the bearer token passed from the frontend.
-1. Using the *Fabric* token, call the [Get Warehouse API](/rest/api/fabric/warehouse/items/get-warehouse). This is required in order to access the Connection info and the display name of the Warehouse, which is the initial catalog of the server.
-1. Acquire a token with SQL scopes on behalf of the user. In order to successfully establish an SQL connection, use the scope https://database.windows.net//user_impersonation.
+1. Acquire a token with the *Warehouse.Read.All* scope on behalf of the user using the bearer token passed from the front end.
+1. Use the *Fabric* token to call the [Get Warehouse API](/rest/api/fabric/warehouse/items/get-warehouse). It's required to access the Connection info and the display name of the Warehouse, which is the initial catalog of the server.
+1. Acquire a token with SQL scopes on behalf of the user. To successfully establish an SQL connection, use the scope `https://database.windows.net//user_impersonation`.
 1. Use the SQL token and connection information to open an SQL connection:
 
     ```csharp
@@ -92,7 +92,7 @@ Alternatively, if you choose to utilize Azure SQL Database you can implement the
             }
     ```
 
-1. This connection can now be queried in order to access data from the Warehouse. For more information on utilizing the *Microsoft.Data.SqlClient* namespace, see [Microsoft.Data.SqlClient Namespace Documentation](/dotnet/api/microsoft.data.sqlclient).
+1. This connection can now be queried to access data from the Warehouse. For more information on utilizing the *Microsoft.Data.SqlClient* namespace, see [Microsoft.Data.SqlClient Namespace Documentation](/dotnet/api/microsoft.data.sqlclient).
 
 ### Writing data 
 
