@@ -12,7 +12,7 @@ ms.date: 05/21/2024
 
 # Back-end implementation guide (preview)
 
-This [Microsoft Fabric developer sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a starting point for building applications that require integration with various services, including Workload and Lakehouse. This guide helps you set up the environment and configure the necessary components to get started. This article outlines the key components and outlines their roles in the architecture.
+This [Microsoft Fabric developer sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a starting point for building applications that require integration with various services, including Lakehouse. This guide helps you set up the environment and configure the necessary components to get started. This article outlines the key components and their roles in the architecture.
 
 ## Frontend
 
@@ -24,7 +24,7 @@ The backend stores both data and metadata. It utilizes CRUD operations to create
 
 ## Azure Relay and DevGateway
 
-*Azure Relay* facilitates interactions between the backend development box and the Fabric backend in local (development) mode. The `DevGateway.exe` utility handles the workload's side of Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity. The utility ensures that the workload is available in all workspaces assigned to that capacity and handles the deregistration when stopped.
+*Azure Relay* enables communication between the local development environment and the Fabric backend while operating in development mode. The `DevGateway.exe` utility handles the workload's side of Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity. The utility ensures that the workload is available in all workspaces assigned to that capacity and handles the deregistration when stopped.
 
 ## Dev gateway
 
@@ -38,14 +38,14 @@ The workload development kit architecture integrates seamlessly with Lakehouse, 
 
 Microsoft Entra ID is used for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
 
-[Th development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, guidelines, and getting started, see the respective sections in this [README](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/README.md).
+[Th development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, authentication guidelines, and getting started, see the respective sections in [Authentication overview](authentication-concept.md).
 
 :::image type="content" source="./media/extensibility-back-end/overview.png" alt-text="Diagram showing how Fabric SDK integrated into Fabric.":::
 
 The frontend establishes communication with the Fabric frontend portal via an iFrame. The portal, in turn, interacts with the Fabric backend by making calls to its exposed public APIs.
 
-For interactions between the backend development box and the Fabric backend, the Azure Relay serves as a conduit. Additionally, the backend development box seamlessly integrates with Lakehouse, performing operations such as saving, reading, and fetching data from this resource.
-The communication is facilitated by using Azure Relay and the Fabric Software Development Kit (SDK) installed on the back end development box.
+For interactions between the backend development box and the Fabric backend, the Azure Relay serves as a conduit. Additionally, the backend development box seamlessly integrates with Lakehouse.
+The communication is facilitated by using Azure Relay and the Fabric Software Development Kit (SDK) installed on the backend development box.
 
 The authentication for all communication within these components is ensured through Microsoft Entra. Entra provides a secure and authenticated environment for the interactions between the frontend, backend, Azure Relay, Fabric SDK, and Lakehouse.
 
@@ -58,13 +58,13 @@ Ensure that the NuGet Package Manager is integrated into your Visual Studio inst
 
 ### NuGet package management
 
-* `<NuspecFile>Packages\manifest\ManifestPackage.nuspec</NuspecFile>`: This property specifies the path to the NuSpec file used for creating the NuGet package. The NuSpec file contains metadata about the package, such as its ID, version, dependencies, and other relevant information.
+* `<NuspecFile>Packages\manifest\ManifestPackageDebug.nuspec</NuspecFile>` and `<NuspecFile>Packages\manifest\ManifestPackageRelease.nuspec</NuspecFile>`: These properties specify the path to the NuSpec files used for creating the NuGet package for Debug and Release modes. The NuSpec file contains metadata about the package, such as its ID, version, dependencies, and other relevant information.
 
 * `<GeneratePackageOnBuild>true</GeneratePackageOnBuild>`: When set to true, this property instructs the build process to automatically generate a NuGet package during each build. This property is useful to ensure that the package is always up-to-date with the latest changes in the project.
 
 * `<IsPackable>true</IsPackable>`: When set to true, this property indicates that the project is packable, meaning it can be packaged into a NuGet package. It's an essential property for projects intended to produce NuGet packages during the build process.
 
-The generated NuGet package is located in the **src\bin\Debug** directory after the build process.
+The generated NuGet package for Debug mode is located in the **src\bin\Debug** directory after the build process.
 
 ### Dependencies
 
@@ -76,10 +76,10 @@ The generated NuGet package is located in the **src\bin\Debug** directory after 
 
 * The Microsoft Identity package
 
-* Our Software Development Kit (SDK) to linking the project to Fabric. The SDK resides in the repository in src/packages/fabric. To configure the NuGet Package Manager, specify the path in the 'Package Sources' section before the build process.
+To configure the NuGet Package Manager, specify the path in the 'Package Sources' section before the build process.
 
 ```javascript
- <Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -98,13 +98,13 @@ The generated NuGet package is located in the **src\bin\Debug** directory after 
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Core" Version="1.36.0" />
-    <PackageReference Include="Azure.Identity" Version="1.10.4" />
+    <PackageReference Include="Azure.Core" Version="1.38.0" />
+    <PackageReference Include="Azure.Identity" Version="1.11.0" />
     <PackageReference Include="Azure.Storage.Files.DataLake" Version="12.14.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.5" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="4.58.1" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.60.3" />
     <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="6.30.1" />
     <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="6.30.1" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.30.1" />
@@ -116,8 +116,11 @@ The generated NuGet package is located in the **src\bin\Debug** directory after 
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="Packages\manifest\Fabric_Extension_BE_Boilerplate_WorkloadManifestValidator.exe Packages\manifest\WorkloadManifest.xml .\Packages\manifest\" />
-    <Error Condition="Exists('.\Packages\manifest\ValidationErrors.txt')" Text="WorkloadManifest validation error" File=".\Packages\manifest\ValidationErrors.txt" />
+    <Exec Command="powershell.exe -ExecutionPolicy Bypass -File ValidationScripts\RemoveErrorFile.ps1 -outputDirectory ValidationScripts\" />
+    <Exec Command="powershell.exe -ExecutionPolicy Bypass -File ValidationScripts\ManifestValidator.ps1 -inputDirectory .\Packages\manifest\ -inputXml WorkloadManifest.xml -inputXsd WorkloadDefinition.xsd -outputDirectory ValidationScripts\" />
+    <Exec Command="powershell.exe -ExecutionPolicy Bypass -File ValidationScripts\ItemManifestValidator.ps1 -inputDirectory .\Packages\manifest\ -inputXsd ItemDefinition.xsd -outputDirectory ValidationScripts\" />
+    <Exec Command="powershell.exe -ExecutionPolicy Bypass -File ValidationScripts\ValidateNoDefaults.ps1 -outputDirectory ValidationScripts\" />
+    <Error Condition="Exists('ValidationScripts\ValidationErrors.txt')" Text="Validation errors with either manifests or default values" File="ValidationScripts\ValidationErrors.txt" />
   </Target>
 
 </Project>
@@ -127,9 +130,9 @@ The generated NuGet package is located in the **src\bin\Debug** directory after 
 
 To set up the boilerplate sample project on your local machine, follow these steps:
 
-1. Clone the Boilerplate: `git clone https://github.com/microsoft/Microsoft-Fabric-developer-sample.git`
+1. Clone the Boilerplate: `git clone https://github.com/microsoft/Microsoft-Fabric-workload-development-sample.git`
 1. Open the solution in **Visual Studio 2022**.
-1. Set up an app registration by following instructions on the Authentication [guide](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Authentication/Setup.md). Ensure that both your Frontend and Backend projects have the necessary setup described in the guide. Microsoft Entra is employed for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
+1. Set up an app registration by following instructions on the Authentication [guide](authentication-tutorial.md). Ensure that both your Frontend and Backend projects have the necessary setup described in the guide. Microsoft Entra is employed for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
   
 1. Update the One Lake DFS Base URL: Depending on your Fabric environment, you can update the `OneLakeDFSBaseURL` within the **src\Constants** folder. The default is `onelake.dfs.fabric.microsoft.com` but this can be updated to reflect the environment you are on. More information on the DFS paths can be found [in the One Lake documentation](../onelake/onelake-access-api.md)
 
@@ -138,34 +141,35 @@ To set up the boilerplate sample project on your local machine, follow these ste
    * Copy workload-dev-mode.json from src/Config to `C:\`
    * In the workload-dev-mode.json file, update the following fields to match your configuration:
      * CapacityGuid: Your Capacity ID. This can be found within the Fabric Portal under the Capacity Settings of the Admin portal.
-     * ManifestPackageFilePath: The location of the manifest package. When you build the solution, it saves the manifest package within **src\bin\Debug**. More details on the manifest package can be found in the later steps.
+     * ManifestPackageFilePath: The location of the manifest package. When you build the solution, it saves the manifest package within **src\bin\Debug**. More details on the manifest package can be found in later steps.
      * WorkloadEndpointURL: Workload Endpoint URL.
    * In the Packages/manifest/WorkloadManifest.xml file, update the following fields to match your configuration:
-     *  \<AppId>: Client ID (Application ID) of the workload Entra application.
+     * \<AppId>: Client ID (Application ID) of the workload Entra application.
      * \<RedirectUri>: Redirect URIs. This can be found in your app registration that you created under 'Authentication' section.
      * \<ResourceId>: Audience for the incoming Entra tokens. This information can be found in your app registration that you created under 'Expose an API' section.
    * In the src/appsettings.json file, update the following fields to match your configuration:
      * PublisherTenantId: The ID of the workload publisher tenant.
-     * ClientId: Client ID (AppId) of the workload Entra application.
+     * ClientId: Client ID (Application ID) of the workload Entra application.
      * ClientSecret: The secret for the workload Entra application.
-     * Audience: Audience for incoming Entra tokens. This information can be found in your app registration that you created under "Expose an API" section. This is also referred to as the Application ID URI.
+     * Audience: Audience for the incoming Entra tokens. This information can be found in your app registration that you created under 'Expose an API' section. This is also referred to as the Application ID URI.
 
 1. Generate a manifest package.
    To generate a manifest package file, build Fabric_Extension_BE_Boilerplate. This runs a three step process to generate the manifest package file:
 
-   1. Trigger *Fabric_Extension_BE_Boilerplate_WorkloadManifestValidator.exe* on *workloadManifest.xml* in *Packages\manifest\files*. You can find the code of the validation process in *\workloadManifestValidator* directory. if the validation fails, an error file is generated.
-   1. If an error file exists, the build fails with *WorkloadManifest validation error*. Double select on the error in VS studio to see the error file.
-   1. After successful validation, pack the *WorkloadManifest.xml* and *FrontendManifest.json* files into ManifestPackage.1.0.0.nupkg. The resulting package is in **src\bin\Debug**.
+   1. Trigger `ManifestValidator.ps1` on `WorkloadManifest.xml` in *Packages\manifest\* and trigger `ItemManifestValidator.ps1` on all items XMLs (e.g., `Item1.xml`) in *Packages\manifest\*. If the validation fails, an error file is generated. You can view the validation scripts in *ValidationScripts\*.
+   1. If an error file exists, the build fails with `Validation errors with either manifests or default values`. Double select on the error in VS studio to see the error file.
+   1. After successful validation, pack the `WorkloadManifest.xml` and `Item1.xml` files into ManifestPackage.1.0.0.nupkg. The resulting package is in **src\bin\Debug**.
 
    Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-dev-mode.json configuration file.
 
 1. *Program.cs* is the entry point and startup script for your application. In this file, you can configure various services, initialize the application, and start the web host.
 1. Build to ensure your project can access the required dependencies for compilation and execution.
-1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application located in *Backend\DevGateway*. Sign in with a user that has **capacity admin privileges** to the capacity you defined in workload-dev-mode.json (CapacityGuid). Upon the initialization of the workload, an authentication prompt appears.
+1. Download the DevGateway from [Microsoft's Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=105993)
+1. Run the *Microsoft.Fabric.Workload.DevGateway.exe* application located in the *DevGateway* folder. Sign in with a user that has **capacity admin privileges** to the capacity you defined in workload-dev-mode.json (CapacityGuid). Upon the initialization of the workload, an authentication prompt appears.
 
    :::image type="content" source="./media/extensibility-back-end/sign-in.png" alt-text="Screenshot of Microsoft sign in page.":::
 
-   After authentication, external workloads establish communication with the Fabric back-end through Azure Relay. This process involves relay registration and communication management, facilitated by a designated Proxy node. Furthermore, the package containing the workload manifest is uploaded and published.
+   After authentication, external workloads establish communication with the Fabric backend through Azure Relay. This process involves relay registration and communication management, facilitated by a designated Proxy node. Furthermore, the package containing the workload manifest is uploaded and published.
 
    At this stage, Fabric has knowledge of the workload, encompassing its allocated capacity.
 
@@ -173,7 +177,7 @@ To set up the boilerplate sample project on your local machine, follow these ste
 
    If you don't get any errors, then the connection is established, registration is successfully executed, and the workload manifest was systematically uploaded.
 
-   :::image type="content" source="./media/extensibility-back-end/no-errors.png" alt-text="Screenshot of connection loading without any errors.":::
+   :::image type="content" source="./media/extensibility-back-end/devgateway.png" alt-text="Screenshot of connection loading without any errors.":::
 
 1. Change your startup project in Visual Studio to the *Boilerplate* project and select **Run**.
 
@@ -183,7 +187,7 @@ To set up the boilerplate sample project on your local machine, follow these ste
 
 ### Code generation
 
-We use the workload Boilerplate C# ASP.NET Core sample to explain how to build a workload with REST APIs. Starts with generating server stubs and contract classes based on the Workload API [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json). You can generate them using any of several Swagger code generation tools. Our Boilerplate sample uses [NSwag](https://github.com/RicoSuter/NSwag). The sample contains GenerateServerStub.cmd command line script, which wraps NSwag code generator. The script takes a single parameter, which is a full path to NSwag installation directory. It also expects to find the Swagger definition file (*swagger.json*) and configuration file (*nswag.json*) next to it.
+We use the workload Boilerplate C# ASP.NET Core sample to explain how to build a workload with REST APIs. Starts with generating server stubs and contract classes based on the Workload API [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json). You can generate them using any of several Swagger code generation tools. Our Boilerplate sample uses [NSwag](https://github.com/RicoSuter/NSwag). The sample contains GenerateServerStub.cmd command line script, which wraps NSwag code generator. The script takes a single parameter, which is a full path to NSwag installation directory. It also expects to find the Swagger definition file (*swagger.json*) and configuration file (*nswag.json*) next to it.
 
 Executing this script produces a C# file *WorkloadAPI_Generated.cs*. The contents of this file can be logically divided into three parts, as follows.
 
@@ -368,11 +372,6 @@ protected override void SetDefinition(CreateItemPayload payload)
 }
 ```
 
-## Migration from code developed based on first developers drop
-
-The Boilerplate sample was updated to work with REST APIs. Partners who start using the sample only now and those who used it before without making any customizations, can seamlessly start using the new version.
-Partners who customized the sample or used it as a reference for implementing their own workload need to make similar changes to their code. The following Boilerplate sample PR can be used as a reference for the required changes: [Adapt the sample for working with REST API defined in Swagger without dependency on .NET SDK](https://github.com/microsoft/Microsoft-Fabric-developer-sample/pull/160).
-
 ## Troubleshooting and Debugging
 
 ### Known Issues and Solutions
@@ -391,14 +390,14 @@ Original exception: AADSTS7000215: Invalid client secret provided. Ensure the se
 
 **Error**:
 
-Microsoft.Identity.Client.MsalUiRequiredException: AADSTS65001: The user or administrator didn't consent to use the application with ID '4e691b14-bffe-456c-af9f-4efdfa12ed52' named 'childofmsaapp'. Send an interactive authorization request for this user and resource.
+Microsoft.Identity.Client.MsalUiRequiredException: AADSTS65001: The user or administrator didn't consent to use the application with ID.... Send an interactive authorization request for this user and resource.
 
 **Resolution**:
-In the artifact editor, navigate to the bottom and select **Navigate to Authentication Page**.
+In the item editor, navigate to the bottom and select **Navigate to Authentication Page**.
 Under **Scopes** write *.default* and select **Get Access token**.
 Approve consent in the popped-up dialog.
 
-#### Artifact creation fails due to capacity selection
+#### Item creation fails due to capacity selection
 
 **Error**: PriorityPlacement: There are no available core services for priority placement only 'name','guid','workload-name'.
 
@@ -409,7 +408,6 @@ Approve consent in the popped-up dialog.
 **Error**:
 
 Creating a new file failed for filePath: 'workspace-id'/'lakehouse-id'/Files/data.json. Error: Response status code doesn't indicate success: 404 (NotFound).
-Resolution: Ensure you're using the correct OneLake DFS URL for your environment.
 
 **Resolution**: Make sure you're working with the OneLake DFS URL that fits your environment. For example, if you work with PPE environment, change EnvironmentConstants.OneLakeDFSBaseUrl in Constants.cs to the appropriate URL.
 
@@ -429,7 +427,7 @@ The debugger pause execution at the specified breakpoints, enabling you to exami
 
 ## Workspace
 
-If you try to run the Sample to make changes on the backend be sure you are in a named workspace, and not in the default *My Workspace*. Otherwise, you might get this error:
+If you are a connecting a backend to the Sample Workload, be aware that your item must belong to a workspace that has is associated to a capacity. By default, the "My Workspace" workspace is not associated to a capacity. Otherwise, you might get this error:
 
 :::image type="content" source="./media/extensibility-back-end/copy-item.png" alt-text="Screenshot of UI for naming a sample workload item.":::
 
