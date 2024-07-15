@@ -1,7 +1,7 @@
 ---
 title: Analyze data with Apache Spark and Python
 description: In this article, learn how to create rich data visualizations by using Apache Spark and Python in Microsoft Fabric.
-ms.reviewer: mopeakande
+ms.reviewer: franksolomon
 author: midesa
 ms.author: midesa
 ms.topic: how-to
