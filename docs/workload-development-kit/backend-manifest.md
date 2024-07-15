@@ -32,7 +32,7 @@ Represents Fabric's WorkloadDefinition.xsd published version.
 ### WorkloadName Attribute
 Your workload's unique identifier.
 **Note that it is required to have an 'Org.' prefix for workloadName such that name consists of two words with '.' separator, e.g. 'Org.MyWorkload'. Other prefixes are invalid and will cause an upload failure.**
-**This will be enforced in the following scenarions - dev connection, Test upload.**
+**This will be enforced in the following scenarios - dev connection, Test upload.**
 
 ### Version Element
 Your manifest's version, should be [SemVer](https://semver.org/) compliant
