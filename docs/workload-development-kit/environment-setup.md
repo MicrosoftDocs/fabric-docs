@@ -28,7 +28,7 @@ To enable the *Capacity admins can develop additional workloads* tenant setting,
 
 1. In Fabric, go to **Settings > Admin portal**.
 
-2. In the tenant settings go to the **Additional workloads** section.
+2. In the tenant settings, go to the **Additional workloads** section.
 
 3. Enable the **Capacity admins can develop additional workloads** tenant setting.
 
@@ -46,15 +46,15 @@ Download and install these tools before you start developing your workload.
 
 * [Git](https://git-scm.com/downloads) - A distributed version control system that we use to manage and track project changes.
 
-* [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - The default package manager for Node.js which is used to manage and share the packages that you use in your project.
+* [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - The default package manager for Node.js, which is used to manage and share the packages that you use in your project.
 
-* [Node.js](https://nodejs.org/en/download/) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. We'll use this to run our server-side JavaScript code.
+* [Node.js](https://nodejs.org/en/download/) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. Used to run the server-side JavaScript code.
 
 * [Webpack](https://webpack.js.org/guides/installation/) - A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
 
 * [Webpack CLI](https://webpack.js.org/guides/installation) - A command line interface for Webpack.
 
-* [DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) - A workload development component for communicating between your on-prem workload development box and Fabric.
+* [DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) - A workload development component for communicating between your on-premises workload development box and Fabric.
 
 
 
