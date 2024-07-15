@@ -1,5 +1,5 @@
 ---
-title: "Privacy, security, and responsible use of Copilot for Data Science (preview)"
+title: "Privacy, security, and responsible use of Copilot for Data Science"
 description: Learn about privacy, security, and responsible use of Copilot for Data Science in Microsoft Fabric.
 author: maggiesMSFT
 ms.author: maggies
@@ -8,12 +8,12 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.topic: conceptual
-ms.date: 06/02/2024
+ms.date: 07/15/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Privacy, security, and responsible use of Copilot for Data Science (preview)
+# Privacy, security, and responsible use of Copilot for Data Science
 
 In this article, learn how [Microsoft Copilot for Data Science](copilot-notebooks-overview.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot (preview)](copilot-privacy-security.md).
 
@@ -59,11 +59,11 @@ Non-technical users can then type questions and receive the results from the exe
 
 ### What is/are AI Skill’s intended use(s)?
 
-Business users who aren't familiar with how the data is structured are able to ask descriptive questions such as “what are the 10 top products by sales volume last month?" on top of tabular data stored in Fabric Lakehouses and Fabric Warehouses.
+- Business users who aren't familiar with how the data is structured are able to ask descriptive questions such as “what are the 10 top products by sales volume last month?" on top of tabular data stored in Fabric Lakehouses and Fabric Warehouses.
 
-AI Skill isn't intended for use in cases where deterministic and 100% accurate results are required, which reflects the current LLM limitations.
+- AI Skill isn't intended for use in cases where deterministic and 100% accurate results are required, which reflects the current LLM limitations.
 
-The AI Skill isn't intended for uses cases that require deep analytics or causal analytics. E.g. asking “why did our sales numbers drop last month?” is out of scope. 
+- The AI Skill isn't intended for uses cases that require deep analytics or causal analytics. E.g. asking “why did our sales numbers drop last month?” is out of scope. 
 
 ### How was AI Skill evaluated? What metrics are used to measure performance?
 
@@ -73,17 +73,17 @@ The team also invested in additional harms mitigations, including technological 
 
 ### What are the limitations of AI Skill? How can users minimize the impact of AI Skill’s limitations when using the system?
 
-Make sure your column names are descriptive. Instead of using column names like “C1” or “ActCu,” use “ActiveCustomer” or “IsCustomerActive.” This is the most effective way to get more reliable queries out of the AI.
+- Make sure your column names are descriptive. Instead of using column names like “C1” or “ActCu,” use “ActiveCustomer” or “IsCustomerActive.” This is the most effective way to get more reliable queries out of the AI.
 
-Make use of the Notes for the model in the configuration panel in the UI. If the SQL queries that the AI Skill generates are incorrect, you can provide instructions to the model in plain English to improve upon future queries. The system will make use of these instructions with every query. Short and direct instructions are best.
+- Make use of the Notes for the model in the configuration panel in the UI. If the SQL queries that the AI Skill generates are incorrect, you can provide instructions to the model in plain English to improve upon future queries. The system will make use of these instructions with every query. Short and direct instructions are best.
 
-Provide examples in the model configuration panel in the UI. The system will leverage the most relevant examples when providing its answers.
+- Provide examples in the model configuration panel in the UI. The system will leverage the most relevant examples when providing its answers.
 
 ### What operational factors and settings allow for effective and responsible use of AI Skill?
 
-The AI skill will only have access to the data that you provide. It will make use of the schema (table name and column name), as well as the Notes for the model and Examples that you provide in the UI.
+- The AI skill only has access to the data that you provide. It makes use of the schema (table name and column name), as well as the Notes for the model and Examples that you provide in the UI.
 
-The AI skill will only have access to data that the questioner has access to. If you use the AI skill, your credentials will be used to access the underlying database. If you don't have access to the underlying data, the AI skill won't either. This holds true when you publish the AI skill to other destinations, such as Copilot for Microsoft 365 or Microsoft Copilot Studio, where the AI skill can be used by other questioners.
+- The AI skill only has access to data that the questioner has access to. If you use the AI skill, your credentials are used to access the underlying database. If you don't have access to the underlying data, the AI skill doesn't either. This holds true when you publish the AI skill to other destinations, such as Copilot for Microsoft 365 or Microsoft Copilot Studio, where the AI skill can be used by other questioners.
 
 ## Related content
 
