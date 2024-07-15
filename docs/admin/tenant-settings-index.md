@@ -5,8 +5,8 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.collection: ce-skilling-ai-copilot
-ms.date: 07/09/2024
+ms.collection: ce-skilling-ai-copilot									 
+ms.date: 07/14/2024
 ---
 
 # Tenant settings index
