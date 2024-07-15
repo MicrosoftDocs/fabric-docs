@@ -1,5 +1,5 @@
 ---
-title: "Privacy, security, and responsible use of Copilot in Fabric (preview)"
+title: "Privacy, security, and responsible use of Copilot in Fabric"
 description: Learn about privacy, security, and responsible use for Copilot for data science in Microsoft Fabric.
 author: maggiesMSFT
 ms.author: maggies
@@ -13,7 +13,7 @@ ms.date: 07/15/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
-# Privacy, security, and responsible use of Copilot in Fabric (preview)
+# Privacy, security, and responsible use of Copilot in Fabric
 
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
