@@ -55,7 +55,7 @@ for table in (pbar := tqdm(df_tables['table'].values)):
     spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)
 ```
 
-**Step 4:** press run all.
+**Step 4:** Select **Run all**.
 
 :::image type="content" source="./media/ai-skill-scenario/notebook-run-all.png" alt-text="Screenshot showing a notebook with the Adventure Works upload code." lightbox="./media/ai-skill-scenario/notebook-run-all.png":::
 
@@ -179,6 +179,52 @@ You can manually add examples, but you can also upload them from a json file. Pr
 ## Test and revise the AI skill
 
 Both instructions and examples were added to the AI skill. As testing proceeds, more examples and instructions can improve the AI skill even further. It's important to work with your colleagues, to see if you provided examples and instructions that cover the kinds of questions they want to ask!
+
+## Use the AI skill programmatically
+
+You can use the AI skill programmatically within a Fabric notebook.
+
+After you publish the AI skill, go to Settings, and select **Publish**, as shown in this screenshot:
+
+:::image type="content" source="./media/ai-skill-scenario/ai-select-publish.png" alt-text="Screenshot showing selection of the Publish option." lightbox="./media/ai-skill-scenario/ai-select-publish.png":::
+
+The **Published URL** for the AI Skill will appear, as shown in this screenshot:
+
+:::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill.png" alt-text="Screenshot showing the published URL." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill.png":::
+
+You can then copy the URL and use it in the Fabric notebook as shown in the next screenshot. This allows you to query the AI skill by making calls to the AI skill API in a Fabric notebook.
+
+Copy the URL and use it in the Fabric notebook to query the AI skill by making calls to the AI skill API. Simply paste the copied URL and replace the question with any query relevant to your AI skill.
+
+```python
+import requests
+import json
+import pprint
+from synapse.ml.mlflow import get_mlflow_env_config
+
+
+# the URL could change if the workspace is assigned to a different capacity
+url = "https://<generic published URL value>"
+
+configs = get_mlflow_env_config()
+
+headers = {
+    "Authorization": f"Bearer {configs.driver_aad_token}",
+    "Content-Type": "application/json; charset=utf-8"
+}
+
+question = "{userQuestion: \"what is an example product?\"}"
+
+response = requests.post(url, headers=headers, data = question)
+
+print("RESPONSE: ", response)
+
+print("")
+
+response = json.loads(response.content)
+
+print(response["result"])
+```
 
 ## Related content
 
