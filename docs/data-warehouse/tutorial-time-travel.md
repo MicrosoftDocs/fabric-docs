@@ -13,7 +13,7 @@ ms.topic: how-to
 ---
 # Tutorial: Time travel using T-SQL at statement level (preview)
 
-In this article, learn how to time travel in your warehouse at the statement level using T-SQL. This feature allows you to query data as it appeared in the past, within a [retention period](time-travel.md#retention-of-data-history).
+In this article, learn how to time travel in your warehouse at the statement level using T-SQL. This feature allows you to query data as it appeared in the past, within a [retention period](time-travel.md#data-retention).
 
 > [!NOTE]
 > Currently, only the Coordinated Universal Time (UTC) time zone is used for time travel.

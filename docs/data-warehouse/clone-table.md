@@ -49,7 +49,7 @@ You can also clone a group of tables at once. This can be useful for cloning a g
 
 You can also query data from tables as they existed in the past, using the [Time travel](time-travel.md) feature in Warehouse.
 
-### Retention of data history
+### Data retention
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] automatically preserves and maintains the data history for thirty calendar days, allowing for clones to be made at a point in time. All inserts, updates, and deletes made to the data warehouse are retained for thirty calendar days.
 

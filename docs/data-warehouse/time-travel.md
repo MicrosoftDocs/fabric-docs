@@ -54,7 +54,7 @@ The timestamp can be specified only once using the `OPTION` clause for queries, 
 
 For samples, see [How to: Query using time travel](how-to-query-using-time-travel.md).
 
-## Retention of data history
+## Data retention
 
 In Microsoft Fabric, a warehouse automatically preserves and maintains various versions of the data, up to a **default retention period of thirty calendar days**. This allows the ability to query tables as of any prior point-in-time. All inserts, updates, and deletes made to the data warehouse are retained. The retention automatically begins from the moment the warehouse is created. Expired files are automatically deleted after the retention threshold.
 
