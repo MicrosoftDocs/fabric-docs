@@ -280,8 +280,8 @@ The execution result from the root notebook is as follows:
 
 > [!NOTE]
 > - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
-> - The upper limitation of notebook activities or concurrenct notebooks is **50, having more than 50 notebook activities or exceeding the concurrency limit may have stability and performance issues due to compute resource usage**. If issues happens, consider separating notebooks into multiple runMultiple calls, or reducing the number of concurrency by change the "concurrency" field of the DAG parameter.
-> - The default timeout for entire DAG is 12 hours, and the default timeout for each cell is 90 seconds. You can change the timeout by setting the "timeoutInSeconds" and "timeoutPerCellInSeconds" fields in the DAG parameter.
+> - The upper limitation of notebook activities or concurrent notebooks is **50, having more than 50 notebook activities or exceeding the concurrency limit may have stability and performance issues due to compute resource usage**. If issues happens, consider separating notebooks into multiple *runMultiple* calls, or reducing the number of concurrency by change the **concurrency** field of the DAG parameter.
+> - The default timeout for entire DAG is 12 hours, and the default timeout for each cell is 90 seconds. You can change the timeout by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
 
 ### Exit a notebook
 
