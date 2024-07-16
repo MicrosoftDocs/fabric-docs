@@ -91,7 +91,7 @@ When your capacity is throttled to the point it's frozen, users receive an error
 * Wait until the overload state is over before issuing new requests.
 * Upgrade the SKU of an F capacity.
 * Pause/resume an F capacity.
-* [A    utoscale](/power-bi/enterprise/service-premium-auto-scale) a P capacity.
+* [Autoscale](/power-bi/enterprise/service-premium-auto-scale) a P capacity.
 * Move lower priority or overconsuming workspaces out of the capacity.
 
 ## Related content
