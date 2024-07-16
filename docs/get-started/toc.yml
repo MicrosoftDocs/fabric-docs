@@ -157,6 +157,8 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Direct Lake semantic model table changes don't work
+      href: known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md
     - name: Data warehouse deployment using deployment pipelines fails
       href: known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md
     - name: Dataflow Gen2 ownership takeover fails
