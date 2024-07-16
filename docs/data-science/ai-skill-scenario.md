@@ -182,15 +182,17 @@ Both instructions and examples were added to the AI skill. As testing proceeds, 
 
 ## Use the AI skill programmatically
 
-You can use the AI skill programmatically within a Fabric notebook.
+You can use the AI skill programmatically within a Fabric notebook. Before publication, the AI skill does not have a Published URL value, as shown in this screenshot:
 
-After you publish the AI skill, go to Settings, and select **Publish**, as shown in this screenshot:
+:::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png" alt-text="Screenshot showing that an AI skill does not have a published URL value before publication." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png":::
+
+Select **Publish**, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/ai-select-publish.png" alt-text="Screenshot showing selection of the Publish option." lightbox="./media/ai-skill-scenario/ai-select-publish.png":::
 
 The **Published URL** for the AI Skill will appear, as shown in this screenshot:
 
-:::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill.png" alt-text="Screenshot showing the published URL." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill.png":::
+:::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png" alt-text="Screenshot showing the published URL." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png":::
 
 You can then copy the URL and use it in the Fabric notebook as shown in the next screenshot. This allows you to query the AI skill by making calls to the AI skill API in a Fabric notebook.
 
