@@ -4,8 +4,7 @@ description: Learn about using sensitivity labels from Microsoft Purview Informa
 author: paulinbar
 ms.author: painbar
 manager: kfollis
-ms.service: powerbi
-ms.subservice: powerbi-eim
+
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/01/2024

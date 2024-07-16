@@ -4,8 +4,7 @@ description: Learn how to manage Power BI users in the Microsoft 365 admin cente
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - admin-portal
   - ignite-2023
