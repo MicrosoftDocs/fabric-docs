@@ -463,7 +463,7 @@
         href: connector-odbc-overview.md
       - name: Set up your connection
         href: connector-odbc.md
-    - name: Oracle
+    - name: Oracle database
       items:
       - name: Oracle database - Overview
         href: connector-oracle-database-overview.md
