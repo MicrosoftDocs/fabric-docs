@@ -186,11 +186,11 @@ You can use the AI skill programmatically within a Fabric notebook. To determine
 
 :::image type="content" source="./media/ai-skill-scenario/initial-ai-skill-settings.png" alt-text="Screenshot showing selection of AI skill settings." lightbox="./media/ai-skill-scenario/initial-ai-skill-settings.png":::
 
-Before publication, the AI skill doesn't have a Published URL value, as shown in this screenshot:
+Before you publish the AI skill, it doesn't have a Published URL value, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png" alt-text="Screenshot showing that an AI skill doesn't have a published URL value before publication." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png":::
 
-In this case, select **Publish** as shown in this screenshot:
+Once you validate the performance of the AI skill, you might decide to publish it. In this case, select **Publish** as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/ai-select-publish.png" alt-text="Screenshot showing selection of the Publish option." lightbox="./media/ai-skill-scenario/ai-select-publish.png":::
 
