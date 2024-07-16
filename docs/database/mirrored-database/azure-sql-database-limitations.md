@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, imotiwala, sbahadur
-ms.date: 05/09/2024
+ms.date: 07/16/2024
 ms.service: fabric
 ms.topic: conceptual
 ms.custom:
