@@ -5,10 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 07/15/2024
+ms.date: 07/16/2024
 ---
 
-# Set up your environment
+# Set up your environment (preview)
 
 This article is aimed at developers who are looking to build a workload using the Microsoft Fabric Workload Development Kit. The article guides you through the process of setting up your development environment so that you can start building your workload.
 
@@ -18,7 +18,7 @@ To start developing workloads, you need to be granted permissions in the Fabric 
 
 ### Become an admin on the capacity
 
-To begin development and connect your local machine to a Fabric [capacity](../enterprise/licenses.md#capacity) you need to be an admin on the capacity you're using for development. Only developers with admin permission on the capacity can register their workload on to that capacity. If you're not an admin on the capacity you're going to use for development, ask someone in your organization who's an admin on the capacity you want to use, to add you as an admin. To add admins to a capacity, follow the instructions in [Add and remove admins](../admin/capacity-settings.md#add-and-remove-admins).
+To begin development and connect your local machine to a Fabric [capacity](../enterprise/licenses.md#capacity) you need to be an admin on the capacity you're using for development. Only developers with admin permission on the capacity can register their workload on that capacity. If you're not an admin on the capacity you're going to use for development, ask someone in your organization who's an admin on the capacity you want to use, to add you as an admin. To add admins to a capacity, follow the instructions in [Add and remove admins](../admin/capacity-settings.md#add-and-remove-admins).
 
 ### Enable the development tenant setting
 
@@ -34,7 +34,7 @@ To enable the *Capacity admins can develop additional workloads* tenant setting,
 
 ### Enable developer mode
 
-After the *Capacity admins can develop additional workloads* tenant setting is enabled, you need to enable the *Fabric Developer Mode*.
+After the *Capacity admins can develop additional workloads* tenant setting is enabled, you need to enable the *Fabric Developer Mode* setting.
 
 1. In Fabric, go to **Settings > Developer settings**.
 
@@ -55,8 +55,6 @@ Download and install these tools before you start developing your workload.
 * [Webpack CLI](https://webpack.js.org/guides/installation) - A command line interface for Webpack.
 
 * [DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516) - A workload development component for communicating between your on-premises workload development box and Fabric.
-
-
 
 ## Related content
 
