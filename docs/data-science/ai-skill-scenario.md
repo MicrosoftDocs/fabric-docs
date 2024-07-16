@@ -190,7 +190,7 @@ Before publication, the AI skill doesn't have a Published URL value, as shown in
 
 :::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png" alt-text="Screenshot showing that an AI skill doesn't have a published URL value before publication." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png":::
 
-Select **Publish**, as shown in this screenshot:
+In this case, select **Publish** as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/ai-select-publish.png" alt-text="Screenshot showing selection of the Publish option." lightbox="./media/ai-skill-scenario/ai-select-publish.png":::
 
