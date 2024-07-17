@@ -198,9 +198,7 @@ The **Published URL** for the AI Skill appears, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png" alt-text="Screenshot showing the published URL." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png":::
 
-You can then copy the URL and use it in the Fabric notebook as shown in the next screenshot. This allows you to query the AI skill by making calls to the AI skill API in a Fabric notebook.
-
-Copy the URL and use it in the Fabric notebook to query the AI skill by making calls to the AI skill API. Paste the copied URL and replace the question with any query relevant to your AI skill. This example uses **\<generic published URL value\>** as the URL.
+You can then copy the URL and use it in the Fabric notebook. This way, you can query the AI skill by making calls to the AI skill API in a Fabric notebook. Paste the copied URL in this code snippet, and then replace the question with any query relevant to your AI skill. This example uses **\<generic published URL value\>** as the URL.
 
 ```python
 import requests
