@@ -1,6 +1,6 @@
 ---
-title: How to train models with PyTorch
-description: Learn how to train models with PyTorch, a framework often used for applications such as computer vision and natural language processing.
+title: Train models with PyTorch in Microsoft Fabric
+description: Learn how to train models with the PyTorch framework in Microsoft Fabric for applications like computer vision and natural language processing.
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: negust
@@ -9,25 +9,29 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 06/13/2024
+ms.date: 07/17/2024
 ms.search.form: Train models with PyTorch
+
+#customer intent: As a developer, I want to use PyTorch in Microsoft Fabric so I can train models for applications, such as computer vision and natural language processing.
 ---
 
-# How to train models with PyTorch in Microsoft Fabric
+# Train models with PyTorch in Microsoft Fabric
 
-The [PyTorch](https://pytorch.org/) machine learning framework is based on the Torch library. PyTorch is often used for computer vision and natural language processing applications. This article presents an example of how to train and track the iterations of your PyTorch model.
+This article describes how to train and track the iterations of a PyTorch model. The [PyTorch](https://pytorch.org/) machine learning framework is based on the Torch library. PyTorch is often used for computer vision and natural language processing applications.
 
-## Install PyTorch
+## Prerequisites
 
-To get started with PyTorch, you must verify that it's installed within your notebook. You can install or upgrade the version of PyTorch on your environment with this command:
+Install PyTorch and torchvision within your notebook. You can install or upgrade the version of these libraries on your environment by using the following command:
 
 ```shell
-%pip install torch
+pip install torch torchvision
 ```
 
 ## Set up the machine learning experiment
 
-Create a machine learning experiment using the MLFLow API. The MLflow **set_experiment()** API creates a new machine learning experiment if it doesn't already exist.
+You can create a machine learning experiment by using the MLFLow API. The MLflow `set_experiment()` function creates a new machine learning experiment named _sample-pytorch_, if it doesn't already exist. 
+
+Run the following code in your notebook and create the experiment:
 
 ```python
 import mlflow
@@ -37,7 +41,9 @@ mlflow.set_experiment("sample-pytorch")
 
 ## Train and evaluate a Pytorch model
 
-After creation of the experiment, the next code sample loads the MNSIT dataset, generates our test and training datasets, and creates a training function.
+After you set up the experiment, you load the Modified National Institute of Standards and Technology (MNIST) dataset. You generate the test and training datasets, and then create a training function.
+
+Run the following code in your notebook and train the Pytorch model:
 
 ```python
 import os
@@ -49,7 +55,7 @@ import torchvision.transforms as transforms
 import torch.nn.functional as F
 import torch.optim as optim
 
-## load mnist dataset
+# Load the MNIST dataset
 root = "/tmp/mnist"
 if not os.path.exists(root):
     os.mkdir(root)
@@ -57,7 +63,8 @@ if not os.path.exists(root):
 trans = transforms.Compose(
     [transforms.ToTensor(), transforms.Normalize((0.5,), (1.0,))]
 )
-# if not exist, download mnist dataset
+
+# If the data doesn't exist, download the MNIST dataset
 train_set = dset.MNIST(root=root, train=True, transform=trans, download=True)
 test_set = dset.MNIST(root=root, train=False, transform=trans, download=True)
 
@@ -73,8 +80,7 @@ test_loader = torch.utils.data.DataLoader(
 print("==>>> total trainning batch number: {}".format(len(train_loader)))
 print("==>>> total testing batch number: {}".format(len(test_loader)))
 
-## network
-
+# Define the network
 class LeNet(nn.Module):
     def __init__(self):
         super(LeNet, self).__init__()
@@ -96,7 +102,7 @@ class LeNet(nn.Module):
     def name(self):
         return "LeNet"
 
-## training
+# Train the model
 model = LeNet()
 
 optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
@@ -104,7 +110,7 @@ optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 criterion = nn.CrossEntropyLoss()
 
 for epoch in range(1):
-    # trainning
+    # Model training
     ave_loss = 0
     for batch_idx, (x, target) in enumerate(train_loader):
         optimizer.zero_grad()
@@ -120,7 +126,7 @@ for epoch in range(1):
                     epoch, batch_idx + 1, ave_loss
                 )
             )
-    # testing
+    # Model testing
     correct_cnt, total_cnt, ave_loss = 0, 0, 0
     for batch_idx, (x, target) in enumerate(test_loader):
         x, target = Variable(x, volatile=True), Variable(target, volatile=True)
@@ -143,7 +149,9 @@ torch.save(model.state_dict(), model.name())
 
 ## Log model with MLflow
 
-Now, you start an MLflow run and track the results within our machine learning experiment.
+The next task starts an MLflow run and tracks the results within the machine learning experiment. The sample code creates a new model named **sample-pytorch**. It creates a run with the specified parameters, and logs the run within the _sample-pytorch_ experiment.  
+
+Run the following code in your notebook and log the model:
 
 ```python
 with mlflow.start_run() as run:
@@ -157,11 +165,11 @@ with mlflow.start_run() as run:
     print(f"Model URI: {model_uri}")
 ```
 
-This code creates a run with the specified parameters, and it logs the run within the sample-pytorch experiment. The code snippet creates a new model called sample-pytorch.  
-
 ## Load and evaluate the model
 
-Once the model is saved, it can also be loaded for inferencing.  
+After you save the model, you can load it for inferencing.
+
+Run the following code in your notebook and load the model for inferencing:
 
 ```python
 # Inference with loading the logged model
@@ -188,5 +196,5 @@ for batch_idx, (x, target) in enumerate(test_loader):
 
 ## Related content
 
-- Learn about [machine learning models](machine-learning-model.md)
-- Learn about [machine learning experiments](machine-learning-experiment.md)
+- Explore [machine learning models](machine-learning-model.md)
+- Create [machine learning experiments](machine-learning-experiment.md) 
