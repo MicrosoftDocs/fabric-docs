@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, imotiwala, sbahadur
-ms.date: 05/09/2024
+ms.date: 07/16/2024
 ms.service: fabric
 ms.topic: conceptual
 ms.custom:
@@ -58,9 +58,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
 - The following table-level data definition language (DDL) operations aren't allowed on source tables when they're enabled for Fabric SQL Database mirroring.  
     - Switch/Split/Merge partition
     - Alter primary key  
-    - Drop table  
     - Truncate table
-    - Rename table  
 - When there is DDL change, a complete data snapshot is restarted for the changed table, and data is reseeded.
 
 ## Column level
@@ -77,8 +75,6 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
     - **geometry**
     - **geography**
 - Column names for a SQL table cannot contain spaces nor the following characters: `space` `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
-- The following column level data definition language (DDL) operation is not yet supported on source tables that are being actively mirrored.
-    - Rename column (`sp_rename`)
  
 ## Warehouse limitations
 
