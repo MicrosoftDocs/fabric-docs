@@ -1,9 +1,10 @@
 ---
 title: How to train models with PyTorch
 description: Learn how to train models with PyTorch, a framework often used for applications such as computer vision and natural language processing.
-ms.reviewer: franksolomon
-ms.author: negust
-author: nelgson
+ms.author: franksolomon
+author: fbsolo-ms1
+ms.reviewer: negust
+reviewer: nelgson
 ms.topic: how-to
 ms.custom:
   - build-2023

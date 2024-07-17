@@ -3,9 +3,10 @@ title: AI services in SynapseML with bring your own key
 description: Learn about the capabilities of Azure AI services pretrained models for enriching your data with artificial intelligence (AI) in SynapseML.
 ms.topic: overview
 ms.custom: ignite-2023
-ms.reviewer: ssalgado
-author: JessicaXYWang
-ms.author: jessiwang
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: jessiwang
+reviewer: JessicaXYWang
 ms.date: 11/15/2023
 ms.collection: ce-skilling-ai-copilot
 ---
