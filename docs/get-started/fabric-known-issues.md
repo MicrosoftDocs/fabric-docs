@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 07/05/2024
+ms.date: 07/16/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  778  | Power BI | [Direct Lake semantic model table changes don't work](known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md) | July 16, 2024 |
 |  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 |
 |  773  | Data Factory | [Dataflow Gen2 ownership takeover fails](known-issues/known-issue-773-dataflow-gen2-ownership-takeover-fails.md) | July 5, 2024 |
 |  770  | Data Warehouse | [Data warehouse connection or query execution fails](known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md) | July 3, 2024 |
@@ -28,7 +29,6 @@ Select the **Title** to view more information about that specific known issue.
 |  765  | Data Factory | [Dataflows Gen2 staging warehouse doesn't work in deployment pipelines](known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md) | July 2, 2024 |
 |  764  | Power BI | [New card and reference label tabular layout content hidden or truncated](known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md) | June 26, 2024 |
 |  762  | Power BI | [Python and R visuals don't work in Fabric capacity](known-issues/known-issue-762-python-r-visuals-not-work-capacity.md) | June 26, 2024 |
-|  761  | Power BI | [Report Builder can't sign in to the service for some clouds](known-issues/known-issue-761-report-builder-not-sign-in-service-some-clouds.md) | June 20, 2024 |
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
 |  755  | Real-Time Intelligence | [Real-Time hub **Set Alert** fails on prior version of an eventstream](known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md) | June 20, 2024 |
 |  753  | Data Factory | [Pipeline Web activity through on-premises data gateway doesn't support SPN authentication](known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md) | June 11, 2024 |
@@ -82,6 +82,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  761  | Power BI | [Report Builder can't sign in to the service for some clouds](known-issues/known-issue-761-report-builder-not-sign-in-service-some-clouds.md) | June 20, 2024 | Fixed: July 16, 2024 |
 |  721  | Data Engineering | [Spark session doesn't start when managed virtual network's capacity moved](known-issues/known-issue-721-spark-session-managed-virtual-network-capacity-moved.md) | May 16, 2024 | Fixed: June 20, 2024 |
 |  713  | Power BI | [Sign-in required when you browse to a secure embed URL](known-issues/known-issue-713-sign-in-required-browse-secure-embed-url.md) | May 2, 2024 | Fixed: June 11, 2024 |
 |  694  | Power BI | [Apps and reports not available when editing scorecard metrics](known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md) | April 30, 2024 | Fixed: June 11, 2024 |
@@ -94,7 +95,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  530  | Administration & Management | [Creating or updating Fabric items is blocked](known-issues/known-issue-530-creating-updating-fabric-items-blocked.md)  | October 23, 2023 |  Fixed: June 6, 2024 |
 |  526  | Power BI | [Dataflow REST API returns more data sources and gateways than expected](known-issues/known-issue-526-dataflow-rest-api-returns-more-data-sources-gateways.md)    | October 18, 2023 |  Fixed: June 6, 2024 |
 |  461  | Power BI | [A scheduled refresh of a semantic model intermittently hangs when connected to a dataflow](known-issues/known-issue-461-scheduled-refresh-dataset-hangs.md)    | July 27, 2023  | Fixed: June 6, 2024 |
-|  616  | OneLake | [Under-billing of OneLake storage for January 26 2024](known-issues/known-issue-616-under-billing-onelake-storage.md) | February 14, 2024 | Fixed: May 23, 2024 |
 
 ## Related content
 

@@ -167,12 +167,6 @@
         href: connector-azure-data-explorer.md
       - name: Configure in a data pipeline Copy activity
         href: connector-azure-data-explorer-copy-activity.md
-    - name: Azure Data Lake Storage Gen1
-      items:
-      - name: Azure Data Lake Storage Gen1 - Overview
-        href: connector-azure-data-lake-storage-gen1-overview.md
-      - name: Configure in a data pipeline Copy activity
-        href: connector-azure-data-lake-storage-gen1-copy-activity.md
     - name: Azure Data Lake Storage Gen2
       items:
       - name: Azure Data Lake Storage Gen2 - Overview
@@ -469,7 +463,7 @@
         href: connector-odbc-overview.md
       - name: Set up your connection
         href: connector-odbc.md
-    - name: Oracle
+    - name: Oracle database
       items:
       - name: Oracle database - Overview
         href: connector-oracle-database-overview.md
@@ -511,6 +505,8 @@
         href: connector-salesforce-objects-overview.md
       - name: Set up your connection
         href: connector-salesforce-objects.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-salesforce-copy-activity.md  
     - name: Salesforce reports
       items:
       - name: Salesforce reports - Overview
@@ -873,6 +869,8 @@
             href: data-workflows-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt
             href: data-workflows-dbt-fabric.md
+          - name: Run a Fabric Item Job
+            href: data-workflows-run-fabric-item-job.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases

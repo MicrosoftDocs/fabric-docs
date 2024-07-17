@@ -6,13 +6,15 @@ ms.author: painbar
 ms.reviewer: muliwienrib
 ms.topic: how-to
 ms.custom:
-ms.date: 05/21/2024
+ms.date: 07/14/2024
 ---
 
 # Authentication setup (preview)
 
-In order to be able to work with authentication, you need to set up its three component parts:
+> [!NOTE]  
+> To configure the following authentication settings in the setup guide, a Global Administrator role is required.
 
+In order to be able to work with authentication, you need to set up its three component parts:
 * [Microsoft Entra ID Application](/power-bi/developer/visuals/entra-id-authentication) (formerly Azure AD App)
 * [Front-end sample](./extensibility-front-end.md)
 * [Back-end sample](./extensibility-back-end.md)
@@ -31,9 +33,9 @@ To make sure Azure Storage is provisioned in the tenant:
 
     :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
-If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-manually). If not, a tenant admin needs to provision it.
+If you see the Azure Storage application, it's already provisioned and you can continue to the [next step](#configure-your-application-in-microsoft-entra-id-manually). If not, a Global Administrator needs to provision it.
 
-Ask your tenant admin to open **Windows PowerShell** as administrator and run the following script:
+Open **Windows PowerShell** as administrator and run the following script:
   
 ```console
 Install-Module az  
@@ -95,7 +97,7 @@ To work with Create, Read, Update and Delete APIs for workload items, and perfor
 ### Add scopes for data plane API
 
 Other scopes need to be registered to represent groups of operations exposed by the data plane API.
-In the backend sample, we provide four examples. You can see them in [Backend/src/Constants/scopes.cs](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Constants/Scopes.cs). The scopes are:
+In the backend sample, we provide four examples. You can see them in [Backend/src/Constants/scopes.cs](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Constants/WorkloadScopes.cs). The scopes are:
 
 * `Item1.Read.All`: Used for reading workload items
 * `Item1.ReadWrite.All`: Used for reading/writing workload items
@@ -104,7 +106,7 @@ In the backend sample, we provide four examples. You can see them in [Backend/sr
 
 Preauthorize `871c010f-5e61-4fb1-83ac-98610a7e9110` (the Fabric client application) for these scopes.
 
-The application IDs of these apps can be found under [*Microsoft Power BI* and *Power BI Service*](/troubleshoot/azure/active-directory/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).  
+The application IDs of these apps can be found under [*Microsoft Power BI* and *Power BI Service*](/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications).  
 
 Here's how your *Expose an API* section should look in your application. In this example, the ID URI is `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`:
 
@@ -137,7 +139,7 @@ Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null
 For a streamlined setup of your application in Microsoft Entra Identity, you can opt to use an automated PowerShell script. Follow these steps to configure your application:
 
 1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2.](/cli/azure/).
-2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1). You will be prompted to sign in by using the credentials of the user account under which you intend to create the application.
+2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1). You'll be prompted to sign in by using the credentials of the user account under which you intend to create the application.
 3. **Provide Required Information**: When prompted, enter the desired name for your application, the workload name (prefixed with "Org."), and your tenant ID.
 
 Upon successful execution of the script, it will output all necessary details to configure your workload. Additionally, it will provide a direct URL to your application and an administrative consent URL for tenant-wide application authorization.
