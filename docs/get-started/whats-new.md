@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 07/02/2024
+ms.date: 07/12/2024
 ms.topic: whats-new
 ms.custom:
   - build-2024
@@ -289,6 +289,9 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|July 2024|**Time travel and clone table retention window expanded**|The retention period for [time travel queries](../data-warehouse/time-travel.md) and [clone table](../data-warehouse/clone-table.md) is now 30 days. |
+|July 2024|**Restore warehouse experience in the Fabric portal**|You can now create restore points and perform [a restore in-place of a warehouse item](../data-warehouse/restore-in-place-portal.md), with a no-code experience. |
+|June 2024|**Restore in place portal experience**|You can now [create user-created restore points in your warehouse via the Fabric portal](../data-warehouse/restore-in-place-portal.md). For more information, see [Restore in-place of a warehouse in Microsoft Fabric](../data-warehouse/restore-in-place.md).|
 |June 2024|**Fabric Spark connector for Fabric Data Warehouse in Spark runtime (preview)**|The [Fabric Spark connector for Fabric Data Warehouse (preview)](../data-engineering/spark-data-warehouse-connector.md) enables a Spark developer or a data scientist to access and work on data from Fabric DW and SQL analytics endpoint of the lakehouse (either from within the same workspace or from across workspaces) with a simplified Spark API. |
 |May 2024|**Monitor Warehouse tools**|You can [Monitor Synapse Data Warehouse](../data-warehouse/monitoring-overview.md) activity with a variety of tools, including: [Billing and utilization reporting in Synapse Data Warehouse](../data-warehouse/usage-reporting.md), [monitor connections, sessions, and requests using DMVs](../data-warehouse/monitor-using-dmv.md), [Query insights](../data-warehouse/query-insights.md), and now [Query activity](../data-warehouse/query-activity.md). For more information, read [Query activity: A one-stop view to monitor your running and completed T-SQL queries](https://blog.fabric.microsoft.com/blog/query-activity-a-one-stop-view-to-monitor-your-running-and-completed-sql-queries).|
 |May 2024|**Copilot for Data Warehouse**|[Copilot for Data Warehouse (preview)](../data-warehouse/copilot.md) is now available, offering [the Copilot chat pane](../data-warehouse/copilot-chat-pane.md), [quick actions](../data-warehouse/copilot-quick-action.md), and [code completions](../data-warehouse/copilot-code-completion.md). [Sign up here to enable Copilot for Data Warehouse in your organization](https://forms.office.com/r/268RjZr499) today!|
