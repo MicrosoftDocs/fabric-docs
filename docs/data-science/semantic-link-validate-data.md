@@ -1,10 +1,10 @@
 ---
 title: Validate functional dependencies in data with semantic link
 description: Explore and validate functional dependencies in data with semantic link and Microsoft Fabric.
-ms.reviewer: mopeakande
-reviewer: msakande
-ms.author: romanbat
-author: RomanBat
+ms.author: franksolomon
+author: fbsolo-ms1
+ms.reviewer: romanbat
+reviewer: RomanBat
 ms.topic: how-to
 ms.custom:
   - ignite-2023
