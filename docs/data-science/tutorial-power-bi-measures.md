@@ -1,10 +1,10 @@
 ---
 title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter notebook'
 description: This article shows how to use SemPy to calculate measures in Power BI semantic models.
-ms.reviewer: mopeakande
-reviewer: msakande
-ms.author: alsavelv
-author: alsavelv
+ms.reviewer: alsavelv
+reviewer: alsavelv
+ms.author: mopeakande
+author: msakande
 ms.topic: tutorial
 ms.custom:
   - ignite-2023

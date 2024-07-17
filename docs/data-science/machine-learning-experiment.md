@@ -1,9 +1,10 @@
 ---
 title: Machine learning experiment
 description: Learn how to create machine learning experiments, use the MLflow API, manage and compare runs, and save a run as a model.
-ms.reviewer: lagayhar
-ms.author: midesa
-author: midesa
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: midesa
+reviewer: midesa
 ms.topic: conceptual
 ms.custom:
   - build-2023

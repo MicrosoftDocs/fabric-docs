@@ -1,9 +1,10 @@
 ---
 title: Read and write data with Pandas
 description: Learn how to read and write lakehouse data in a notebook using Pandas, a popular Python library for data exploration and processing.
-ms.author: erenorbey
-author: orbey
-ms.reviewer: franksolomon
+ms.author: franksolomon
+author: fbsolo-ms1
+ms.reviewer: erenorbey
+reviewer: orbey
 ms.topic: how-to
 ms.custom:
   - build-2023

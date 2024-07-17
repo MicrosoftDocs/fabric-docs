@@ -4,7 +4,7 @@ description: Learn about how to perform a restore in-place of a warehouse in the
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
-ms.date: 07/12/2024
+ms.date: 07/17/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: how-to
@@ -19,6 +19,8 @@ ms.search.form: Warehouse Restore # This article's title should not change. If s
 ## Prerequisites
 
 - Review the [workspace roles](workspace-roles.md) membership required for the following steps. For more information, see [Restore in place Security](restore-in-place.md#security).
+- An existing user-defined or system-created restore point.
+    - A [system-created restore point](restore-in-place.md#system-created-restore-points) may not be available immediately for a new warehouse. If one is not yet available, [create a user-defined restore point](restore-points-manage.md).
 
 ### Restore the data warehouse using the restore point
 
