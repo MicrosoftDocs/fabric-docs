@@ -74,7 +74,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    
    table_name = 'fact_sale'
    
-   df = spark.read.format("parquet").load('Files/wwi-raw-data/full/fact_sale_1y_full')
+   df = spark.read.format("parquet").load('Files/<Guid>/wwi-raw-data/csv/full/fact_sale_1y_full')
    df = df.withColumn('Year', year(col("InvoiceDateKey")))
    df = df.withColumn('Quarter', quarter(col("InvoiceDateKey")))
    df = df.withColumn('Month', month(col("InvoiceDateKey")))
@@ -87,7 +87,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    ```python
    from pyspark.sql.types import *
    def loadFullDataFromSource(table_name):
-       df = spark.read.format("parquet").load('Files/wwi-raw-data/full/' + table_name)
+       df = spark.read.format("parquet").load('Files/<Guid>/wwi-raw-data/csv/full/' + table_name)
        df = df.drop("Photo")
        df.write.mode("overwrite").format("delta").save("Tables/" + table_name)
     
