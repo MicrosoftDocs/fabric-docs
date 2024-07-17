@@ -4,6 +4,10 @@ description: Use Apache Spark in Fabric to train machine learning models
 ms.reviewer: franksolomon
 ms.author: midesa
 author: midesa 
+ms.author: franksolomon
+author: fbsolo-ms1
+ms.reviewer: midesa
+reviewer: midesa
 ms.topic: conceptual
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 06/13/2024
