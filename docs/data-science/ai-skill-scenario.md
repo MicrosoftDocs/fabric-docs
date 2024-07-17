@@ -147,7 +147,11 @@ For example, the question: "**How many active customers did we have June 1st, 20
 
 However, it isn't a good answer.
 
-Part of the problem is that "active customer" doesn't have a formal definition. More instructions in the Notes to the model textbox might help, but users might frequently ask this question. Therefore, make sure that the AI handles the question correctly. The relevant query is moderately complex, so provide an example, as shown in this screenshot:
+Part of the problem is that "active customer" doesn't have a formal definition. More instructions in the Notes to the model textbox might help, but users might frequently ask this question. Therefore, make sure that the AI handles the question correctly. The relevant query is moderately complex, so provide an example by pressing the edit button.
+
+:::image type="content" source="./media/ai-skill-scenario/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/ai-skill-scenario/ai-skill-adding-examples.png":::
+
+Then you can upload an example.
 
 :::image type="content" source="./media/ai-skill-scenario/examples-ai-skill-sql-query.png" alt-text="Screenshot showing an example AI skill SQL query." lightbox="./media/ai-skill-scenario/examples-ai-skill-sql-query.png":::
 

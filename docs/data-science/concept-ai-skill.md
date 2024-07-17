@@ -29,7 +29,7 @@ The AI skill relies on Generative AI - specifically, Large Language Models (LLMs
 
 ## AI skill configuration
 
-Think of the AI skill as you'd think about Power BI reports. You first build the Report, and then you share the report with your colleagues who can consume it to get their data insights. The AI skill works in a similar way. You need to first set it up. Then, you can share it with your colleagues.
+Think of the AI skill as you'd think about Power BI reports. You first build the Report, and then you share the report with your colleagues who can consume it to get their data insights. The AI skill works in a similar way. You need to first create and configure the AI skill. Then, you can share it with your colleagues.
 
 You should expect to handle some necessary configuration steps before the AI skill works properly. An AI skill can often provide out-of-the-box answers to reasonable questions, but could provide incorrect answers for your specific situation. The incorrect answers typically occur because the AI is missing context about your company, setup, or definition of key terms. To solve the problem, provide the AI with instructions and example question-query pairs. You can use these powerful techniques to guide the AI to the right answers.
 
@@ -49,7 +49,7 @@ The technology behind the AI skill and the Fabric Copilots is similar. They both
 
 ## Limitations
 
-The AI skill is currently in public preview and has certain limitations.
+The AI skill is currently in public preview and has limitations described below. We will provide updates to improve the AI skill over time.
 
 - Generative AI doesn't interpret the results of an executed T-SQL query. It only generates that query.
 - The AI skill might return incorrect answers. You should test the AI skill with your colleagues to verify that it answers questions as expected. If it makes mistakes, provide it with more examples and instructions.
