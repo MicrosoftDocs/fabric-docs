@@ -1,9 +1,10 @@
 ---
 title: How to train models with scikit-learn
 description: Learn how to train models with scikit-learn, a popular open-source machine learning framework frequently used for supervised and unsupervised learning.
-ms.reviewer: franksolomon
-ms.author: negust
-author: nelgson
+ms.author: franksolomon
+author: fbsolo-ms1
+ms.reviewer: negust
+reviewer: nelgson
 ms.topic: how-to
 ms.custom:
   - build-2023

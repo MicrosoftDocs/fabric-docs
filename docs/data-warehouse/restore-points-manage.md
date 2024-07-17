@@ -4,7 +4,7 @@ description: Learn about how to manage a restore points of a warehouse in the Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
-ms.date: 07/12/2024
+ms.date: 07/17/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: how-to
@@ -16,7 +16,7 @@ ms.search.form: Warehouse Restore # This article's title should not change. If s
 
 Restore points enable the [Restore in-place](restore-in-place.md) feature of a warehouse, which can be used to restore to a prior known good state. This tutorial covers how to create, rename, manage, and view restore points for a warehouse.
 
-For a tutorial to restore a warehouse to a previous restore point, see [Restore in-place in the Fabric portal](restore-in-place-portal.md). 
+For a tutorial to restore a warehouse to a previous restore point, see [Restore in-place in the Fabric portal](restore-in-place-portal.md).
 
 ## Prerequisites
 
