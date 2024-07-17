@@ -1,9 +1,6 @@
 ---
 title: Train machine learning models with Apache Spark
 description: Use Apache Spark in Fabric to train machine learning models
-ms.reviewer: franksolomon
-ms.author: midesa
-author: midesa 
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: midesa
