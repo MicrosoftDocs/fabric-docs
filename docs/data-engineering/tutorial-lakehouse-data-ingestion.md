@@ -31,43 +31,43 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. In the **New pipeline** dialog box, specify the name as **IngestDataFromSourceToLakehouse** and select **Create**. A new data factory pipeline is created and opened.
 
-1. Next set up an HTTP connection to get sample world wide importers data into the Lakehouse. From the list of **New sources**, select **View more**. Search for **Http** and select it.
+1. Next, set up an HTTP connection to import the sample World Wide Importers data into the Lakehouse. From the list of **New sources**, select **View more**, search for **Http** and select it.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\select-http-connection.png" alt-text="Screenshot showing where to select the HTTP source.":::
 
-1. On the **Connect to data source** window, enter the details as shown in the following table and select **Next**.
+1. In the **Connect to data source** window, enter the details from the table below and select **Next**.
 
    | Property | Value |
    |---|---|
    | URL | `https://assetsprod.microsoft.com/en-us/wwi-sample-dataset.zip` |
-   |Connection | Create new connection |
+   |Connection | Create a new connection |
    | Connection name | wwisampledata |
    | Data gateway | None|
    | Authentication kind | Anonymous |
 
- :::image type="content" source="media\tutorial-lakehouse-data-ingestion\configure-http-connection.png" alt-text="Screenshot showing the parameters to configure the Http connection.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\configure-http-connection.png" alt-text="Screenshot showing the parameters to configure the Http connection.":::
 
-1. In the next step, check the **Binary copy** field and set the **Compression type** to **ZipDeflate (.zip)** because the source is a .zip file. Leave other fields to their default values and select **Next**
+1. In the next step, enable the **Binary copy** and choose **ZipDeflate (.zip)** as the **Compression type** since the source is a .zip file. Keep the other fields at their default values and click **Next**.
 
  :::image type="content" source="media\tutorial-lakehouse-data-ingestion\select-compression-type.png" alt-text="Screenshot showing how to choose a compression type.":::
 
-1. From the **Connect to data destination** window, set the **Root folder** to **Files** and select **Next**. The data is written to the *Files* section of the lakehouse.
+1. In the **Connect to data destination** window, specify the **Root folder** as **Files** and click **Next**. This will write the data to the *Files* section of the lakehouse.
 
- :::image type="content" source="media\tutorial-lakehouse-data-ingestion\configure-destination-connection.png" alt-text="Screenshot showing the destination connection settings of the lakehouse.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\configure-destination-connection.png" alt-text="Screenshot showing the destination connection settings of the lakehouse.":::
 
-1. For destination, select the **File format** as **Binary**. Select **Next** and then **Save+Run**. You can also schedule pipelines to refresh data at defined intervals to meet your business requirements. For this tutorial, we run the pipeline only once. This action triggers data copy from the underlying data source to the specified lakehouse and it takes around 10-15 minutes to complete.
+1. Choose the **File format** as **Binary** for the destination. Click **Next** and then **Save+Run**. You can schedule pipelines to refresh data periodically. In this tutorial, we only run the pipeline once. The data copy process takes approximately 10-15 minutes to complete.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-file-format.png" alt-text="Screenshot showing the destination file format.":::
 
-1. You can track the execution of the pipeline and its activity under the **Output** tab, which appears when you select anywhere on the canvas. Optionally, you can select the glasses icon, which appears when you hover over the name, to look at the details of the data transfer.
+1. You can monitor the pipeline execution and activity in the **Output** tab. You can also view detailed data transfer information by selecting the glasses icon next to the pipeline name, which appears when you hover over the name,.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\pipeline-status.png" alt-text="Screenshot showing the status of the copy pipeline activity.":::
 
-1. After the pipeline runs successfully, navigate to your lakehouse (**wwilakehouse**) and launch the explorer to view the imported data.
+1. After the successful execution of the pipeline, go to your lakehouse (**wwilakehouse**) and open the explorer to see the imported data.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png" alt-text="Screenshot showing how to navigate to the lakehouse.":::
 
-1. Validate that a new folder **WideWorldImportersDW** appears in the **Explorer** view,  and data for all the tables is copied there.
+1. Verify that the folder **WideWorldImportersDW** is present in the **Explorer** view and contains data for all tables.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-destination-files.png" alt-text="Screenshot showing the source data is copied into the Lakehouse explorer.":::
 
