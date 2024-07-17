@@ -39,7 +39,9 @@ To view all restore points for your warehouse, in the Fabric portal go to **Sett
 
 The creation of the system-created restore points is a built-in feature in [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. However, the warehouse should be in an **Active** state for automatic system-created restore point creation.
 
-System-generated restore points are created throughout the day, and are available for thirty days. From the moment the warehouse is created, the system-generated restore points are created automatically every eight hours. There can be up to 180 system-generated restore points at any given point in time.
+System-generated restore points are created throughout the day, and are available for thirty days. From the moment the warehouse is created, the system-generated restore points are created automatically every eight hours. A system-created restore point may not be available immediately for a new warehouse. If one is not yet available, [create a user-defined restore point](restore-points-manage.md).
+
+There can be up to 180 system-generated restore points at any given point in time.
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports an eight-hour recovery point objective (RPO).
 
