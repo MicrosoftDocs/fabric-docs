@@ -1,39 +1,38 @@
 ---
 title: Git integration process
-description: Understand how Microsoft Fabric interacts with Git on Azure Repos, what permissions are needed, and how to sync.
+description: Understand how Microsoft Fabric interacts with Git on Azure Repos or GitHub, what permissions are needed, and how to sync.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: conceptual
-ms.date: 06/18/2024
+ms.topic: concept-article
+ms.date: 07/10/2024
 ms.custom:
   - build-2023
   - ignite-2023
+#customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
 
 # Basic concepts in Git integration
 
 This article explains basic Git concepts and the process of integrating Git with your Microsoft Fabric workspace.
 
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
-
 ## Permissions
 
 - In order to use Git integration, your organization's administrator must [enable it](../../admin/git-integration-admin-settings.md) by your organization's administrator.
-- If the workspace and repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
-- The actions you can take on a workspace depend on the [permissions](#azure-devops-permissions) you have in both the workspace and Azure DevOps.
+- If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview). This restriction doesn't apply to GitHub.
+- The actions you can take on a workspace depend on the permissions you have in both the workspace and Git, as listed in the next sections.
 
-### Azure DevOps permissions
+### Git permissions
 
-The following list shows what different workspace roles can do depending on their Azure DevOps permissions:
+The following list shows what different workspace roles can do depending on their permissions in their Git repo:
 
-- **Admin**: Can perform any operation on the workspace, limited only by their Azure DevOps role.
-- **Member/Contributor**: Once they connect to a workspace, a member/contributor can commit and update changes, depending on their Azure DevOps role. For actions related to the workspace connection (for example, connect, disconnect, or switch branches) seek help from an Admin.
+- **Admin**: Can perform any operation on the workspace, limited only by their Git role.
+- **Member/Contributor**: Once they connect to a workspace, a member/contributor can commit and update changes, depending on their Git role. For actions related to the workspace connection (for example, connect, disconnect, or switch branches) seek help from an Admin.
 - **Viewer**: Can't perform any actions. The viewer can't see any Git related information in the workspace.
 
-### Permissions needed for common operations
+### Fabric permissions needed for common operations
 
 The following table describes the permissions needed to perform various common operations:
 
@@ -52,9 +51,9 @@ The following table describes the permissions needed to perform various common o
 
 ## Connect and sync
 
-Only a workspace admin can connect a workspace to Azure Repos, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help with connecting.
+Only a workspace admin can connect a workspace to a Git Repos, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help with connecting.
 
-When you [connect a workspace to Git](./git-get-started.md#connect-a-workspace-to-an-azure-repo), Fabric syncs between the two locations so they have the same content. During this initial sync, if either the workspace or Git branch is empty while the other has content, the content is copied from the nonempty location to the empty one.
+When you [connect a workspace to Git](./git-get-started.md#connect-a-workspace-to-a-git-repo), Fabric syncs between the two locations so they have the same content. During this initial sync, if either the workspace or Git branch is empty while the other has content, the content is copied from the nonempty location to the empty one.
 If both the workspace and Git branch have content, you have to decide which direction the sync should go.
 
 - If you commit your workspace to the Git branch, all supported workspace content is exported to Git and overwrites the current Git content.
@@ -65,6 +64,16 @@ If both the workspace and Git branch have content, you have to decide which dire
 If you don’t select which content to sync, you can’t continue to work.
 
 :::image type="content" source="./media/git-integration-process/sync-direction-continue.png" alt-text="Screenshot notification that you can't continue working until workspace is synced.":::
+
+### Connect to a shared workspace
+
+If you try connecting to a workspace that's already [connected to Git](./manage-branches.md), you might get the following message:
+
+:::image type="content" source="./media/git-integration-process/sign-into-git.png" alt-text="Screenshot of error message telling yo to sign in to a Git account.":::
+
+Go to the **Accounts** tab on the right side of the Source control panel, choose an account, and connect to it.
+
+:::image type="content" source="./media/git-integration-process/connect.png" alt-text="Screenshot of Accounts tab with user connecting to a GitHub account.":::
 
 ### Git status
 
@@ -91,7 +100,7 @@ As long as you’re connected, the following information appears at the bottom o
 
 :::image type="content" source="./media/git-integration-process/sync-info.png" alt-text="Screenshot of sync information that appears on the bottom of the screen when connected to Git.":::
 
-## Source control
+## Source control pane
 
 On top of the screen is the **Source control** icon. It shows the number of items that are different in the workspace and Git branch. When changes are made either to the workspace or the Git branch, the number is updated. When the workspace is synced with the Git branch, the Source control icon displays a *0*.
 
@@ -99,10 +108,11 @@ On top of the screen is the **Source control** icon. It shows the number of item
 
 Select the Source control icon to open the **Source control** panel.
 
-The **Source control** panel has two tabs on the side.
+The source control pane has three tabs on the side:
 
 - [Commits and updates](#commits-and-updates)
 - [Branches](#branches)
+- [Account details](#account-details)
 
 ### Commits and updates
 
@@ -157,54 +167,39 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
 See [Branching out limitations](#branching-out-limitations) for more information.
 
+### Account details
+
+The Account details tab shows details of the GitHub account that the user is connected to. It has two sections. The top section shows the Git provider and the account name. The bottom section shows the repository and branch that the workspace is connected to. Currently, this tab is only available for workspaces connected to GitHub.
+
+<!---
+#### [Azure DevOps account details](#tab/Azure)
+
+Azure DevOps account details include:
+
+- Repository
+- Branch
+
+#### [GitHub account details](#tab/GitHub)
+--->
+
+GitHub account details include:
+
+- Git account details
+
+  - Provider
+  - Account name
+
+- Git repository
+- Branch
+
+:::image type="content" source="./media/git-integration-process/github-account-details.png" alt-text="Screenshot of accounts tab in Source control panel showing the Git details and repository and branch names.":::
+
+<!---
+---
+--->
 ## Considerations and limitations
 
-### General limitations
-
-- The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
-- The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be at least as strong as the authentication method for Azure DevOps. For example, if Azure DevOps requires multifactor authentication, Power BI needs to require multifactor authentication as well.
-- Power BI Datasets connected to Analysis Services aren't supported at this time.
-- Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git diff after each refresh.
-- The workspace folder structure isn't reflected in the Git repository. Workspace items in folders are exported to the root directory.
-
-## Workspace limitations
-
-- Only the workspace admin can manage the connections to the [Azure Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
-Once connected, anyone with [permission](#permissions) can work in the workspace.
-
-### Branch and folder limitations
-
-- Maximum length of branch name is 244 characters.
-- Maximum length of full path for file names is 250 characters. Longer names fail.
-- Maximum file size is 25 MB.
-- You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
-- If the item’s display name:
-
-  - Has more than 256 characters
-  - Ends with `.`’ or a space
-  - Contains any of the following characters: `"`, `/`, `:`, `<`, `>`, `\\`, `*`, `?`, `|`
-
-  The logical ID (Guid) is added as a prefix before the type, when naming the folder in Git.
-
-### Branching out limitations
-
-- Branch out requires permissions listed in [permissions table](#permissions-needed-for-common-operations).
-- There must be an available capacity for this action.
-- All [workspace](./intro-to-git-integration.md#considerations-and-limitations) and [branch naming limitations](#branch-and-folder-limitations) apply when branching out to a new workspace.
-- When branching out, a new workspace is created and the settings from the original workspace aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
-- Only [Git supported items](./intro-to-git-integration.md#supported-items) are available in the new workspace.
-- The related branches list only shows branches and workspaces you have permission to view.
-- [Git integration](../../admin/git-integration-admin-settings.md) must be enabled.
-
-### Sync and commit limitations
-
-- The size limit for a commit is 125 MB.
-- You can only sync in one direction at a time. You can’t commit and update at the same time.
-- Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](../../admin/git-integration-admin-settings.md#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview) for help.
-- Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they're ignored.
-- Duplicating names isn't allowed – even if Power BI allows it, the update, commit, or undo action fails.
-- B2B isn’t supported.
-- [Conflict resolution](./conflict-resolution.md) is partially done in Git.
+[!INCLUDE [limitations](../../includes/git-limitations.md)]
 
 ## Related content
 

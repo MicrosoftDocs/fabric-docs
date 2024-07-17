@@ -1,9 +1,9 @@
 ---
 title: 'Tutorial: Use R to detect fraud'
 description: This tutorial shows a data science workflow in R, with an end-to-end example of building a model to detect fraud.
-ms.reviewer: sgilley
-ms.author: amjafari
-author: amhjf
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: tutorial
 ms.custom:
   - ignite-2023

@@ -18,6 +18,11 @@ ms.date: 05/02/2024
 
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can use MSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. The MSSparkUtils package is available in PySpark (Python) Scala, SparkR notebooks, and Fabric pipelines.
 
+> [!NOTE]
+>
+> - MsSparkUtils has been officially renamed to **NotebookUtils**. The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
+> - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates will be exclusively supported with notebookutils namespace going forward.
+
 ## File system utilities
 
 *mssparkutils.fs* provides utilities for working with various file systems, including Azure Data Lake Storage (ADLS) Gen2 and Azure Blob Storage. Make sure you configure access to [Azure Data Lake Storage Gen2](/azure/storage/blobs/data-lake-storage-introduction) and [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) appropriately.
@@ -262,7 +267,9 @@ DAG = {
             "retryIntervalInSeconds": 10,
             "dependencies": ["NotebookSimple"] # list of activity names that this activity depends on
         }
-    ]
+    ],
+    "timeoutInSeconds": 43200, # max timeout for the entire DAG, default to 12 hours
+    "concurrency": 50 # max number of notebooks to run concurrently, default to 50
 }
 mssparkutils.notebook.runMultiple(DAG, {"displayDAGViaGraphviz": False})
 ```
@@ -273,11 +280,8 @@ The execution result from the root notebook is as follows:
 
 > [!NOTE]
 > - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
-> - The upper limitation of notebook activities in ``` msspakrutils.notebook.runMultiple() ``` is **50, having more than 50 notebook activities may have stability and performance issues due to compute resource usage**. If you still want to use more notebook activities in the API, you can set the spark settings '*spark.notebookutils.runmultiple.limit*' to a larger value as a workaround. You can set the spark properties in attached Environment or using [%%configure](author-execute-notebook.md#spark-session-configuration-magic-command) command.
-> - If you want to use more than 50 notebook activities, to avoid the snapshot and progress bar content size exceed the total Notebook content size upper limits, we recommend you to run the below command to disable the rich UX features. 
->   ```scala
->   com.microsoft.spark.notebook.common.Configs.notebookRunSnapshotEnabled = false
->   ```
+> - The upper limit for notebook activities or concurrent notebooks is **50**. Exceeding this limit may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
+> - The default timeout for entire DAG is 12 hours, and the default timeout for each cell in child notebook is 90 seconds. You can change the timeout by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
 
 ### Exit a notebook
 
@@ -466,10 +470,13 @@ Sample code for mounting a lakehouse to */test*:
 ```python
 from notebookutils import mssparkutils 
 mssparkutils.fs.mount( 
- "abfss://<workspace_id>@msit-onelake.dfs.fabric.microsoft.com/<lakehouse_id>", 
+ "abfss://<workspace_id>@onelake.dfs.fabric.microsoft.com/<lakehouse_id>", 
  "/test"
 )
 ```
+
+> [!NOTE]
+> Mounting a regional endpoint is not supported. Fabric only supports mounting the global endpoint, ```onelake.dfs.fabric.microsoft.com```.
 
 ### Access files under the mount point by using the *mssparktuils fs* API
 

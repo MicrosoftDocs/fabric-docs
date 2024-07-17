@@ -1,10 +1,10 @@
 ---
 title: Fabric environment Git integration and deployment pipeline
-description: Learn the Git integration and deployment pipeline for environment.
+description: Learn about the Git integration and deployment pipeline for Microsoft Fabric environments, including how to connect Azure DevOps.
 ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
-ms.date: 05/01/2024
+ms.date: 07/14/2024
 ms.search.for: Fabric environment Git integration and deployment pipeline
 ---
 
@@ -21,9 +21,8 @@ Microsoft Fabric supports Git integration, allowing developers to backup, contro
 > [!NOTE]
 >
 > - Currently, Git supports only Libraries and Spark compute, including Spark runtime.
-> - The Git integration manages the **staging state** of the environment, ensuring that both published and saved configurations are synced with Git.
-> - To apply changes made in Git to the environment, they must be published. It's recommended to publish after updating the environment from Git to ensure the effectiveness of the configuration.
-> - For a code-first experience, you can use the [Publish API of environment](environment-public-api.md#make-the-changes-effective) to publish changes from Git without using the UI.
+> - The Git integration manages the **staging state** of the environment, to apply changes made in Git to the environment, they must be **published**. It's recommended to publish after updating the environment from Git to ensure the effectiveness of the configuration. You can use the [Publish API of environment](environment-public-api.md#make-the-changes-effective) to **publish changes through REST API** if you prefer the code-first experience.
+> - The attached **custom pool** persists in an environment when you sync from repo to a Fabric workspace. The pool definition is in the workspace setting and cross-workspace reference the pool is not supported. You must **manually update** the *instance_pool_id* to an existing custom pool in your destination workspace space or revert to Starter pool by remove this property. You can refer to [Custom Pools - List Workspace Custom Pools](/rest/api/fabric/spark/custom-pools/list-workspace-custom-pools) to get the full list of available pool in the destination workspace by REST API, or refer to [Custom Pools - Create Workspace Custom Pool](/rest/api/fabric/spark/custom-pools/create-workspace-custom-pool) to create a new custom pool.
 > - Each commit has as upper limit of 150 MB. Custom libraries larger than 150 MB aren't currently supported through Git.
 
 ### Connect the Fabric workspace to an Azure DevOps repository
@@ -73,8 +72,7 @@ You can find the deploying status after setting up the pipeline successfully. Af
 
 > [!IMPORTANT]
 >
-> - The **custom pool** is currently not supported in deployment pipeline. If the environment selects the custom pool, the configurations of **Compute** section in the destination environment are set with default values. In 
- this case, the environments keep showing different versions even the deployment is done successfully.
+> - The **custom pool** is currently not supported in deployment pipeline. If the environment selects the custom pool, the configurations of **Compute** section in the destination environment are set with default values. In this case, the environments keep showing diff in deployment pipeline even the deployment is done successfully.
 > - Using deployment rules to specify different pool in new workspace will be included in upcoming release.
 
 ## Related content

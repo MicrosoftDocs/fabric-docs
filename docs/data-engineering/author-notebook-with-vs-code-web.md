@@ -1,5 +1,5 @@
 ---
-title: Create and manage Microsoft Fabric notebooks from VS Code for the Web
+title: Create and manage Fabric notebooks from VS Code for the Web
 description: Learn about the VS Code extension for Synapse under the VS Code web experience, which supports a pro-developer authoring experience.
 ms.reviewer: sngun
 ms.author: qixwang

@@ -7,50 +7,46 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 06/16/2024
+ms.date: 07/11/2024
 ---
 
-# Endorsement
+# Endorsement overview
 
-Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. Identifying trustworthy, authoritative items can be difficult. Endorsement is a way to make it easier for users to find the high-quality items they need. Endorsed items are clearly labeled, both in Fabric and in other places where users look for Fabric items (such for Power BI semantic models in Excel). Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists.
+Endorsement is a Fabric and Power BI feature that makes it easier for users in an organization to find high-quality, trust-worthy content and data. Endorsed items are clearly labeled in the UI with a badge, and in some lists they are given precedence and are listed first.
 
-There are two kinds of endorsement: **promotion** and **certification**. See the following sections for details.
+Items can receive one of three endorsement badges - **Promoted**, **Certified**, or **Master data**:
 
-> [!NOTE]
-> A third type of endorsement, *master data* is scheduled for public preview release in July 2024. Currently, it might appear as a disabled option in some tenants, but it can't be used. At public preview, master data endorsement will be available on all tenants. In the meantime, see the [release plans](https://learn.microsoft.com/fabric/release-plan/admin-governance#fabric-items-master-data) for more information about master data.
+* **Promoted**: When an item has the **Promoted** badge, it means that the item creators think the item is ready for sharing and reuse. Any Fabric or Power BI item except Power BI dashboards can be promoted. Any user with write permissions on an item can promote it.
 
-## Promotion
+    Learn how to [promote items](../get-started/endorsement-promote-certify.md#promote-items).
 
-Promotion enables users to highlight items that they think are valuable, worthwhile, and ready for others to use. It encourages the collaborative spread of content within the organization.
+* **Certified**: When an item has the **Certified** badge, it means that an organization-authorized reviewer has certified that the item meets the organization's quality standards, can be regarded as reliable and authoritative, and is ready for use across the organization. Any Fabric or Power BI item except Power BI dashboards can be certified. Any user can request certification for an item, but only users specified by a Fabric administrator can actually certify items.
 
-Any content owner, or any member with write permissions the item, can simply promote the item when they think it's good enough for sharing.
+    Learn how to [certify items](../get-started/endorsement-promote-certify.md#certify-items) or [request certification](../get-started/../get-started/endorsement-promote-certify.md#request-certification-or-master-data-designation).
 
-[Learn how to promote your items](../get-started/endorsement-promote-certify.md#promote-items).
+* **Master data**: When an item has the **Master data** badge, it means the data in the item is a core source of organizational data. The master data designation is often used to indicate that a data item is to be regarded as the authoritative, single source of truth for certain kinds of organizational or business data, such as product codes or customer lists. The master data label can only be applied to items that contain data, such as lakehouses, and semantic models. Only users specified by the Fabric administrator can label data items as master data.
 
-## Certification
-
-Certification means that the item meets the organization's quality standards and can be regarded as reliable and authoritative, and is ready for use across the organization.
-
-Only a [select group of reviewers (defined by the Fabric administrator)](../admin/endorsement-setup.md) is authorized to certify items. Item owners who wish to see their item certified and aren't authorized to certify it themselves need to follow their organization's guidelines about getting it certified.
-
-Learn how to [certify items](../get-started/endorsement-promote-certify.md#certify-items) or [request certification](../get-started/../get-started/endorsement-promote-certify.md#request-item-certification).
-
-**Certification is available only if a Fabric administrator has [enabled and configured](../admin/endorsement-setup.md) it for your organization**.
+    Learn how to [label data items as master data](../get-started/endorsement-promote-certify.md#label-data-items-as-master-data) or [request master data designation](../get-started/../get-started/endorsement-promote-certify.md#request-certification-or-master-data-designation).
 
 > [!NOTE]
-> Certification enablement and configuration can be delegated to domain administrators, making it possible to specify a different set of reviewers for each domain. For more information, see [Set up item certification](../admin/endorsement-setup.md).
+> Certification and master data endorsement are available only if a Fabric administrator has enabled them for your organization. Fabric admins should see [Enable item certification](../admin/endorsement-certification-enable.md) and [Enable master data endorsement](../admin/endorsement-master-data-enable.md).
+> 
+> Certification enablement can be delegated to domain administrators, making it possible to specify a different set of reviewers for each domain. For more information, see [Enable item certification](../admin/endorsement-certification-enable.md).
 
-## How is endorsement represented
+## How endorsed items appear in Fabric and Power BI
 
-The following image illustrates how endorsed, promoted, and certified semantic models are clearly identified when you're searching for an item.
+The following image illustrates how promoted, certified, and master data items are clearly identified when you're searching for an item.
 
-[ ![Screenshot of endorsed semantic models in a semantic model selection dialog.](media/endorsement-overview/endorsement-data-hub.png)](media/endorsement-overview/endorsement-data-hub.png#lightbox)
+:::image type="content" source="./media/endorsement-overview/endorsement-badges.png" alt-text="Screenshot showing how endorsed items appear in the product." lightbox="./media/endorsement-overview/endorsement-badges.png" border="false":::
 
 ## Types of items that can be endorsed
 
-All Fabric items can be endorsed except for Power BI dashboards.
+* All Fabric items and Power BI items except Power BI dashboards can be promoted or certified.
+
+* All Fabric and Power BI items that contain data can be labeled as master data.
 
 ## Related content
 
 * [Promote or certify Fabric content](../get-started/endorsement-promote-certify.md)
-* [Enable certification for your organization](../admin/endorsement-setup.md) (Fabric admins)
+* [Enable item certification](../admin/endorsement-certification-enable.md) (Fabric admins)
+* [Enable master data endorsement](../admin/endorsement-master-data-enable.md) (Fabric admins)

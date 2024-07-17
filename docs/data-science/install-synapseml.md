@@ -4,9 +4,9 @@ description: Instruction of how to install SynapseML on Fabric
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.reviewer: larryfr
-author: JessicaXYWang
-ms.author: jessiwang
+ms.reviewer: jessiwang
+author: Blackmist
+ms.author: larryfr
 ms.date: 06/12/2023
 ---
 # Install a different version of SynapseML on Fabric

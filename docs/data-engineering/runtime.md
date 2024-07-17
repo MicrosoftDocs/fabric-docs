@@ -1,6 +1,6 @@
 ---
 title: Apache Spark runtime in Fabric
-description: Learn about the Apache Spark-based runtimes available in Fabric.
+description: Learn about the Apache Spark-based runtimes available in Fabric, including Fabric optimizations and support.
 ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
@@ -27,6 +27,9 @@ Major components of Fabric Runtime:
 - The Microsoft Fabric Runtime is built upon **a robust open-source operating system**, ensuring compatibility with various hardware configurations and system requirements.
 
 Below, you find a comprehensive comparison of key components, including Apache Spark versions, supported operating systems, Java, Scala, Python, Delta Lake, and R, for both Runtime 1.1 and Runtime 1.2 within the Microsoft Fabric platform.
+
+> [!TIP]
+> Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.2](./runtime-1-2.md).
 
 |                       | **[Runtime 1.1](./runtime-1-1.md)** | **[Runtime 1.2](./runtime-1-2.md)** | **[Runtime 1.3](./runtime-1-3.md)** |
 |-----------------------|-------------------------------------|-------------------------------------|-------------------------------------|
@@ -117,9 +120,6 @@ Scripts that expect or assume parquet table format should be revised. The follow
 *  `SHOW CREATE TABLE`
 *  `CREATE TABLE LIKE `
 
-## Versioning
-
-Our runtime version numbering, while closely related to Semantic Versioning, follows a slightly different approach. The runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, the upcoming Runtime 2 will align with Spark 4.0. It's essential to note that between the current runtimes, Runtime 1.1 and Runtime 1.2, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries.
 
 ## Related content
 

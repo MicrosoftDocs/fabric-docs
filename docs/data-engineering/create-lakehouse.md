@@ -1,5 +1,5 @@
 ---
-title: Create a lakehouse
+title: Create a lakehouse in Microsoft Fabric
 description: Learn how to create a lakehouse from the Data Engineering homepage, the Workspace view, or the Create page.
 ms.reviewer: snehagunda
 ms.author: avinandac
@@ -62,7 +62,8 @@ There are a few ways you can get started with the creation process:
 To delete a lakehouse, navigate to **OneLake data hub** and find your lakehouse. select the **...** next to the lakehouse name and select **Delete**. The lakehouse and its associated SQL analytics endpoint and semantic model are deleted. 
 
 > [!NOTE]
-> A lakehouse can't be deleted if it's referenced elsewhere, for example, in a pipeline or within a real time analytics workflow.
+> - A lakehouse can't be deleted if it's referenced elsewhere, for example, in a pipeline or within a real time analytics workflow.
+> - There is no way to restore a lakehouse after it's deleted.
 
 ## Related content
 

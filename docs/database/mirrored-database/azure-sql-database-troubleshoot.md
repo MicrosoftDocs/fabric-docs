@@ -17,7 +17,7 @@ If you're experiencing mirroring problems, perform the following database level 
 1. Execute the following query to check if the changes properly flow:
 
     ```sql
-    SELECT * FROM sys.dm_change_feed_log_scan_sessions 
+    SELECT * FROM sys.dm_change_feed_log_scan_sessions;
     ```
 
 1. If the `sys.dm_change_feed_log_scan_sessions` DMV doesn't show any progress on processing incremental changes, execute the following T-SQL query to check if there are any problems reported:
@@ -32,7 +32,7 @@ If you're experiencing mirroring problems, perform the following database level 
     exec sp_help_change_feed;
     ```
 
-    The key columns to look for here are the `table_name` and `state`. Any value besides `4` indicates a potential problem. 
+    The key columns to look for here are the `table_name` and `state`. Any value besides `4` indicates a potential problem.
 
 1. If replication is still not working, verify that the correct SAMI object has permissions.
     1. In the Fabric portal, select the "..." ellipses option on the mirrored database item.
@@ -62,7 +62,7 @@ If you accidentally remove the SPN permission, Mirroring Azure SQL database will
 
 If you remove Azure SQL database SPN permissions or permissions are not set up correctly, use the following steps.
 
-1. Add the SPN as a user by selecting the "..." ellipses option on the mirrored database item.
+1. Add the SPN as a user by selecting the `...` ellipses option on the mirrored database item.
 1. Select the **Manage Permissions** option.
 1. Enter the name of the Azure SQL Database logical server name. Provide **Read** and **Write** permissions.
 

@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 06/03/2024
+ms.date: 06/28/2024
 ---
 
 # Data Factory limitations overview
@@ -49,7 +49,8 @@ The following table describes the resource limitations for pipelines in Data Fac
 | Maximum timeout for pipeline activity runs | 24 hours | 24 hours |
 | Bytes per object for pipeline objects | 200 KB | 200 KB |
 | Bytes per payload for each activity run | 896 KB | 896 KB |
-| Data Integration Units per copy activity run | Auto | 256 |
+| Intelligent throughput optimization per copy activity run | Auto | 256 |
+| Concurrent intelligent throughput optimization per workspace | 400 | 400 |
 | Write API calls | 1,200/h | 1,200/h |
 | Read API calls | 12,500/h | 12,500/h |
 | Maximum time of data flow debug session | 8 hrs | 8 hrs |
