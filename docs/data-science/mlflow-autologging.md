@@ -1,9 +1,10 @@
 ---
 title: Autologging in Synapse Data Science
 description: Use autologging with MLflow to automatically capture machine learning metrics and parameters.
-ms.reviewer: mopeakande
-ms.author: midesa
-author: midesa
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: midesa
+reviewer: midesa
 ms.topic: conceptual
 ms.custom:
   - build-2023

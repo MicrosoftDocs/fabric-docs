@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 06/06/2023
 ---
 
-# Runtime 1.2
+# Runtime 1.2 (GA)
 
 The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. This document covers the Runtime 1.2 components and versions.
 

@@ -4,8 +4,7 @@ description: Troubleshooting topics for mirrored databases from Azure SQL Databa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, anagha-todalbagi
-ms.date: 07/03/2024
-ms.service: fabric
+ms.date: 07/18/2024
 ms.topic: troubleshooting
 ms.custom:
   - references_regions

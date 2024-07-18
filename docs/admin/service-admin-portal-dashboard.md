@@ -4,8 +4,7 @@ description: Learn how to configure Power BI dashboard admin settings.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - tenant-setting
   - ignite-2023

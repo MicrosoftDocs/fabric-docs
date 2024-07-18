@@ -7,7 +7,8 @@ ms.reviewer: NimrodShalit
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
-ms.date: 06/18/2024
+ms.date: 07/10/2024
+#customer intent: As a developer, I want to understand how to use Git integration with deployment pipelines to manage the lifecycle of my apps.
 ---
 
 # Tutorial: Lifecycle management in Fabric
@@ -16,12 +17,12 @@ In this tutorial, you go through the whole process of loading data into your wor
 
 ## Prerequisites
 
-Before you start, make sure of the following prerequisites:
+> [!IMPORTANT]
+> The Git integration feature is in currently in [preview](../get-started/preview.md).
 
-* Fabric is enabled. If you don't have Fabric enabled yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md).
-* You're signed up. If you're not signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
-* You have access to an Azure Git repo. If you don't have one, see [Set up a Git repository](/devops/develop/git/set-up-a-git-repository) for information on creating one.
-* Download the [FoodSales.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/cicd/FoodSales.pbix) file into a Git repo that you can edit. This is the sample file we use in this tutorial. Alternatively, you can use your own semantic model and report, if you prefer.
+[!INCLUDE [github-prereqs](../includes/github-prereqs.md)]
+
+* Download the [FoodSales.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/cicd/FoodSales.pbix) file into a Git repo that you can edit. We use this sample file in this tutorial. Alternatively, you can use your own semantic model and report, if you prefer.
 
 If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-connect-the-teams-development-workspace-to-git).
 
@@ -83,16 +84,17 @@ You can now create a deployment pipeline.
 
 ## Step 3: Connect the team's development workspace to git
 
-This workspace is shared by the entire team and each member of the team can edit it. By connecting this workspace to git, you can keep track of all the changes and revert back to previous versions if necessary. When all the changes are merged into this shared branch, the workspace is deployed to production using the deployment pipeline.  
+The entire team shares this workspace and each member of the team can edit it. By connecting this workspace to git, you can keep track of all the changes and revert back to previous versions if necessary. When all the changes are merged into this shared branch, deploy this workspace to production using the deployment pipeline.  
 Read more about version control with Git in [Introduction to Git integration](./git-integration/intro-to-git-integration.md).
 
-Let's connect this workspace to the main branch of your Azure repo so all team members can edit it and create pull requests.
+Let's connect this workspace to the main branch of your Git repo so all team members can edit it and create pull requests. Follow these steps if you're using an Azure DevOps repo. If you're using a GitHub repo, follow the directions in [Connect a workspace to a GitHub repo](./git-integration/git-get-started.md#connect-to-a-git-repo).
 
-1. Select the ellipsis (three dots) then **Workspace settings**.
+1. Go to **Workspace settings** in the top right corner.
+1. Select **Git integration**.
+1. Select **Azure DevOps**.
+    You’re automatically signed into the Azure Repos account registered to the Microsoft Entra user signed into the workspace.
 
-   :::image type="content" source="./media/cicd-tutorial/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed.":::
-
-1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Microsoft Entra user signed into the workspace.
+    :::image type="content" source="./media/cicd-tutorial/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed.":::
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
@@ -100,7 +102,7 @@ Let's connect this workspace to the main branch of your Azure repo so all team m
    * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
    * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
    * Select *main* (or *master*) branch
-   * Type the name of folder in the repo where the *.pbix* file located. This is the folder that will be synced with the workspace.
+   * Type the name of folder in the repo where the *.pbix* file located. This folder will be synced with the workspace.
 
      :::image type="content" source="./media/cicd-tutorial/git-connect-main.png" alt-text="Screenshot of workspace settings Git integration window with workspace connected to main branch of repo.":::
 
@@ -112,7 +114,7 @@ After you connect, the Workspace displays information about source control that 
 
 Now the workspace is synced with the main branch of your Git repo making it easy to keep track of changes.
 
-For more information about connecting to git, see [Connect a workspace to an Azure repo](git-integration/git-get-started.md#connect-a-workspace-to-an-azure-repo).
+For more information about connecting to git, see [Connect a workspace to an Azure repo](git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo).
 
 ## Step 4: Create a deployment pipeline
 
@@ -153,7 +155,7 @@ Now, deploy the content to the other stages of the pipeline.
 
    :::image type="content" source="media/cicd-tutorial/confirm-deploy.png" alt-text="Screenshot of Confirm deploy.":::
 
-   Notice the green check icon. This icon indicates that the content of the two stages is identical.
+   The green check icon indicates that the contents of the two stages are identical, since you deployed the entire content of the pipeline.
 
    :::image type="content" source="./media/cicd-tutorial/pipeline-compare-same.png" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they're the same.":::
 
@@ -165,7 +167,7 @@ Now, deploy the content to the other stages of the pipeline.
 
    :::image type="content" source="media/cicd-tutorial/refresh.png" alt-text="Screenshot of Refresh button.":::
 
-The entire team shares the same deployment pipeline. Each team member can edit the semantic model and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
+The entire team shares this deployment pipeline. Each team member can edit the semantic model and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
 
 For more information on deploying content, see [Deploy content](./deployment-pipelines/deploy-content.md).
 
@@ -186,7 +188,12 @@ In order to avoid editing the shared workspace and interfering with other team m
 
 1. Select **Branch out**.
 
+1. Select **Connect and sync**.
+
 Fabric creates the new workspace and syncs it to the new branch. You're automatically taken to the new workspace, but the sync might take a few minutes.
+
+The new workspace now contains the content of the Git repo folder. Notice it doesn't contain the *.pbix* file. Since *.pbix* files are unsupported, this file wasn't copied to the Git repo when we synced.  
+Use this workspace to make changes to the semantic model and report until you're ready to share them with your team.
 
 ## Step 7: Edit the workspace
 

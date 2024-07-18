@@ -1,9 +1,9 @@
 ---
 title: "Analyze Microsoft Fabric Warehouse data with range bands"
 description: "Learn how to analyze Microsoft Fabric Warehouse data with range bands."
-author: peter-myers
-ms.author: v-myerspeter
-ms.reviewer: wiassaf
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: v-myerspeter
 ms.date: 06/21/2024
 ms.topic: conceptual
 ms.custom: fabric-cat

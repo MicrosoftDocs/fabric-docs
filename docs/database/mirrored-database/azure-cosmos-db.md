@@ -5,7 +5,6 @@ author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
 ms.date: 04/24/2024
-ms.service: fabric
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
