@@ -73,14 +73,21 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 
 ## Security & Compliance requirements
 
-The following table lists compliance requirements for your workload offer.
-
 | Category | Description | Certification method | Status  | References  |
 |---|---|---|---|---|
 | Security general | Microsoft customers entrust Fabric with their most sensitive data. As partners implementing workloads can have access to data on it they also have a responsibility to protect that data. To that end we request workloads to  goe through a security assessment, a security review and attest that they dit it. discovered in the process. | Attestation | Requried | [Secure, protect and comply](../governance/governance-compliance-overview#secure-protect-and-comply) |
 | Privacy | Microsoft customers entrust Fabric  with their most sensitive data. As such, partners tht build workloads also have a responsibility to protect that data when they access it. To that end we request that every workload goes through a privacy assessment and a privacy review. | Attestation | Required | [Secure, protect and comply](../governance/governance-compliance-overview#secure-protect-and-comply) |
 | Data Residency | Fabric is making a Enterprise Promise around data residency not leaving the geography of the tenant not only for stored data but also for data in transit. As a workload you are showing up in Fabric directly and users need to be aware what your commitments to Data Residency are. In the attestation you need to define what our commitments are to the Data Residency of customer data.  | Attestation | Requried | [Data residency in Azure](https://azure.microsoft.com/en-us/explore/global-infrastructure/data-residency/)
 | Compliance attestation | Within the Attestation Document you can show customers how your app handles security, data, and compliance. In this self-assessment the Workload developer describes the Workload’s security attributes and data-handling practices. The publisher attestation document should be hosted on the partner website.  If applicable to your customers, align with additional Fabric certifications. | Attestation | Optional | [Governance overview and guidance](../governance/governance-compliance-overview.md) |
+
+## Support
+
+
+| Category | Description | Certification method | Status  | References  |
+|---|---|---|---|---|
+| Livesite | TBD - Internal ICM - how to approach internaly, SLA, Support Alias, Where to open tickest | Attestation | Requried |  |
+| Supportability | TBD - Information where users can get support | Attestation | Requried |  |
+| Service Health & Reliability | TBD  | TBD | Requried |  |
 
 ## Fabric features
 
