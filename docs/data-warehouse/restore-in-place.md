@@ -39,7 +39,7 @@ To view all restore points for your warehouse, in the Fabric portal go to **Sett
 
 The creation of the system-created restore points is a built-in feature in [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. However, the warehouse should be in an **Active** state for automatic system-created restore point creation.
 
-System-generated restore points are created throughout the day, and are available for thirty days. From the moment the warehouse is created, the system-generated restore points are created automatically every eight hours. A system-created restore point may not be available immediately for a new warehouse. If one is not yet available, [create a user-defined restore point](restore-points-manage.md).
+System-generated restore points are created throughout the day, and are available for thirty days. System-generated restore points are created automatically every eight hours. A system-created restore point might not be available immediately for a new warehouse. If one is not yet available, [create a user-defined restore point](restore-in-place-portal.md).
 
 There can be up to 180 system-generated restore points at any given point in time.
 
@@ -55,9 +55,7 @@ System-created restore points can't be deleted, as the restore points are used t
 
 Any number of user-defined restore points aligned with your specific business or organizational recovery strategy can be created. User-defined restore points are available for thirty calendar days and are automatically deleted on your behalf after the expiry of the retention period.
 
-Currently, you can [create a user-defined restore point in the Fabric portal](restore-in-place-portal.md) or through any of publicly available REST API tools.
-
-For more information about managing restore points, see [Manage restore points in the Fabric portal](restore-points-manage.md).
+For more information about creating and managing restore points, see [Manage restore points in the Fabric portal](restore-in-place-portal.md).
 
 ### Restore point retention
 
@@ -110,7 +108,7 @@ If you encounter Error 5064 after requesting a restore, resubmit the restore aga
 
 ## Related content
 
-- [Manage restore points in the Fabric portal](restore-points-manage.md)
+- [Manage restore points in the Fabric portal](restore-in-place-portal.md)
 - [Clone table in Microsoft Fabric](clone-table.md)
 - [Query data as it existed in the past](time-travel.md)
 - [Microsoft Fabric disaster recovery guide](../security/disaster-recovery-guide.md)
