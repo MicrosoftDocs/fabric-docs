@@ -38,7 +38,7 @@ OneLake uses Microsoft Entra ID for authentication; you can use it to give permi
 
 ## Audit Logs
 
-To view your OneLake audit logs, follow the instructions in [Track user activities in Microsoft Fabric](../admin/track-user-activities.md). OneLake operation names correspond to [ADLS APIs](/azure/storage/blobs/rest/api/storageservices/data-lake-storage-gen2) such as CreateFile or DeleteFile.  OneLake audit logs do not include read requests or requests made to OneLake via Fabric workloads.
+To view your OneLake audit logs, follow the instructions in [Track user activities in Microsoft Fabric](/fabric/admin/track-user-activities). OneLake operation names correspond to [ADLS APIs](/rest/api/storageservices/data-lake-storage-gen2) such as CreateFile or DeleteFile.  OneLake audit logs do not include read requests or requests made to OneLake via Fabric workloads.
 
 ## Encryption and networking
 
@@ -56,7 +56,7 @@ Inbound OneLake communication also enforces TLS 1.2 and negotiates to TLS 1.3, w
 
 ### Private links
 
-To configure Private Links in Fabric, see [Set up and use private links](../security/security-private-links-use.md).
+To configure Private Links in Fabric, see [Set up and use private links](/fabric/security/security-private-links-use).
 
 ## Allow apps running outside of Fabric to access data via OneLake
 
