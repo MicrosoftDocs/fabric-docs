@@ -34,12 +34,13 @@ This release includes minor internal fixes to enhance functionality.
 With this release users can make edits and updates with Excel to OneLake files, similar to the experience with OneDrive. Start by opening a csv or xlsx file using Excel, make updates and close the file. Closing the file will initiate the sync to OneLake. You can then view the updated file online in the Fabric web portal. This enhancement aims to streamline your workflow and provide a more intuitive approach to managing and editing your files with Excel.  
 
 ### Menu option to view Release Notes
+
 With this menu option, you can easily find details about what's new in the latest OneLake File Explorer version. Right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **About** > **Release Notes**. This action opens the OneLake file explorer release notes page in your browser window.
 
 ### TLS 1.3 support
 
 OneLake file explorer will default to the latest TLS version supported by Windows, currently TLS 1.3. Support for TLS 1.3 is recommended for maintaining the security and privacy of data exchanged over the internet.
- 
+
 ## September 2023 Update (v 1.0.10.0)
 
 ### Option to open workspaces and items on the web portal

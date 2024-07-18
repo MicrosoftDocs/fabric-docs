@@ -18,8 +18,6 @@ In this article, you learn how to create an Azure Data Lake Storage (ADLS) Gen2 
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
 
-
-
 ## Prerequisite
 
 - If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
