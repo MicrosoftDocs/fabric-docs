@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo
 ms.date: 04/24/2024
-ms.service: fabric
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
