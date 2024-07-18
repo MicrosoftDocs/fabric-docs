@@ -5,7 +5,7 @@ ms.reviewer: akshayd
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 06/02/2024
+ms.date: 07/16/2024
 ---
 # Get data from Cribl Stream
 
@@ -17,5 +17,19 @@ For a complete list of data connectors, see [Data connectors overview](data-conn
 
 * A [Cribl stream account](https://cribl.io)
 * A [KQL database](/fabric/real-time-analytics/create-database)
+* Access to the [Azure portal](https://portal.azure.com/)
 
 [!INCLUDE [ingest-data-cribl-2](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-cribl-2.md)]
+
+> [!NOTE]
+> The **Azure Data Explorer** connection works for both Azure Data Explorer and Real-Time Intelligence.
+
+[!INCLUDE [ingest-data-cribl-3](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-cribl-3.md)]
+
+## Target URI
+
+You'll need the database query URI for the **Cluster URI** value and the ingestion URI to use as the **Ingestion Service URI** value. For more information, see [Copy URI](access-database-copy-uri.md#copy-uri).
+
+## Related content
+* [Create a KQL database](create-database.md)
+* [Create Azure Data Explorer and Real-Time Intelligence Destinations](https://docs.cribl.io/stream/destinations-azure-data-explorer/)
