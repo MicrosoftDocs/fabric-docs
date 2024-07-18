@@ -13,21 +13,20 @@ The Microsoft Fabric runtime is an Azure-integrated platform based on Apache Spa
 
 ## Release cadence
 
-Apache Spark typically releases minor versions every 6 to 9 months. The Microsoft Fabric Spark team is committed to delivering new runtime versions with alacrity while ensuring the highest quality and integration as well as continuous
-support. Each version comprises around 110 components. As the runtime expands beyond Apache Spark, we ensure seamless integration within the Azure ecosystem.
+Apache Spark typically releases minor versions every 6 to 9 months. The Microsoft Fabric Spark team is committed to delivering new runtime versions with alacrity while ensuring the highest quality and integration as well as continuous support. Each version comprises around 110 components. As the runtime expands beyond Apache Spark, we ensure seamless integration within the Azure ecosystem.
 
-With a commitment to excellence, we approach new preview runtime releases carefully, establishing timelines on a case-by-case basis. This involves evaluating critical components of each Spark version, including Java, Scala, Python, R, and Delta Lake. After thorough assessment, we create a detailed timeline outlining the runtime's availability and progression through various stages. Overall, Our goal is to establish a standard lifecycle path for Microsoft Fabric runtimes for Apache Spark.
+With a commitment to excellence, we approach new preview runtime releases carefully, targeting an experimental preview in ~3 months but ultimately establishing timelines on a case-by-case basis. This involves evaluating critical components of each Spark version, including Java, Scala, Python, R, and Delta Lake. After thorough assessment, we create a detailed timeline outlining the runtime's availability and progression through various stages. Overall, Our goal is to establish a standard lifecycle path for Microsoft Fabric runtimes for Apache Spark.
 
 > [!TIP]
 > Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.2](./runtime-1-2.md).
 
 The following table lists the runtime name, and release dates for supported Azure Synapse Runtime releases.
 
-| Runtime name                                               | Release stage  | End of Support (Deprecation) effective date |
+| Runtime name                                               | Release stage  | End of Support date |
 |-----------------------------------------------------------| ----------------|---------------------------------------------|
 | [Runtime 1.3 based on Apache Spark 3.5](./runtime-1-3.md) |  Public Preview | N/A                                         |
-| [Runtime 1.2 based on Apache Spark 3.3](./runtime-1-2.md) |  GA             | March 31, 2026                              |
-| [Runtime 1.1 based on Apache Spark 3.3](./runtime-1-1.md) |  GA             | March 31, 2025                              |
+| [Runtime 1.2 based on Apache Spark 3.4](./runtime-1-2.md) |  GA             | March 31, 2026                              |
+| [Runtime 1.1 based on Apache Spark 3.3](./runtime-1-1.md) |  EOSA             | March 31, 2025                              |
 
 
 :::image type="content" source="media\runtime\lifecycle-runtimes.png" alt-text="Diagram showing lifecycle of a runtime in Fabric." lightbox="media\runtime\lifecycle-runtimes.png":::

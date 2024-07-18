@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Data Science documentation in Microsoft Fabric # < 60 chars
-summary: Learn more about the Data Science experience in Microsoft Fabric  # < 160 chars
+summary: Learn more about the Data Science and AI experience in Microsoft Fabric  # < 160 chars
 
 metadata:
   title: Data Science in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
@@ -14,7 +14,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: sdgilley #Required; your GitHub user alias, with correct capitalization.
   ms.author: sgilley #Required; microsoft alias of author; optional team alias.
-  ms.date: 06/17/2024
+  ms.date: 07/08/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -28,7 +28,23 @@ landingContent:
           - text: What is Data Science?
             url: data-science-overview.md 
 
-  # Card 
+# Card
+  - title: Copilot
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Overview
+            url: ../get-started/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+          - text: Chat-magics in Notebooks
+            url: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+      - linkListType: how-to-guide
+        links:
+          - text: Use the Copilot chat panel
+            url: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+
+# Card - AI Skill will go here
+  
+# Card 
   - title: Get started
     linkLists:
       - linkListType: get-started
@@ -40,6 +56,7 @@ landingContent:
           - text: Machine learning models
             url: machine-learning-model.md 
 
+
 # Card 
   - title: Tutorials
     linkLists:
@@ -47,14 +64,13 @@ landingContent:
         links:
           - text: How to use end-to-end AI samples
             url: use-ai-samples.md 
-          - text: Forecasting
+          - text: Train and evaluate a time series forecasting model
             url: time-series-forecasting.md 
           - text: Create, evaluate, and score a churn prediction model
             url: customer-churn.md 
 
-
-  # Card 
-  - title: Preparing Data
+# Card 
+  - title: Prepare data
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -63,8 +79,8 @@ landingContent:
           - text: How to read and write data with Pandas
             url: read-write-pandas.md 
 
-  # Card 
-  - title: Training Models
+# Card 
+  - title: Train models
     linkLists:
       - linkListType: overview
         links:  
@@ -80,7 +96,7 @@ landingContent:
             url: train-models-pytorch.md 
 
 # Card 
-  - title: Tracking models and experiments
+  - title: Track models and experiments
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -106,7 +122,7 @@ landingContent:
             url: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
 
 # Card 
-  - title: Using semantic link 
+  - title: Use semantic link 
     linkLists:
       - linkListType: overview
         links:
