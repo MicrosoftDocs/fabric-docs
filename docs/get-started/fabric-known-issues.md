@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 07/16/2024
+ms.date: 07/18/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  784  | Power BI | [Data Activator alert created from visual with no dimensions doesn't work](known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md) | July 18, 2024 |
+|  782  | Data Engineering | [Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse](known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md) | July 18, 2024 |
+|  780  | Power BI | [Cognitive Services ScoreSentiment function doesn't work in dataflows](known-issues/known-issue-780-cognitive-services-score-sentiment-function-not-work-dataflows.md) | July 18, 2024 |
 |  778  | Power BI | [Direct Lake semantic model table changes don't work](known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md) | July 16, 2024 |
 |  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 |
 |  773  | Data Factory | [Dataflow Gen2 ownership takeover fails](known-issues/known-issue-773-dataflow-gen2-ownership-takeover-fails.md) | July 5, 2024 |
@@ -28,7 +31,6 @@ Select the **Title** to view more information about that specific known issue.
 |  767  | Data Warehouse | [SQL analytics endpoint table sync fails when table contains linked functions](known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md) | July 2, 2024 |
 |  765  | Data Factory | [Dataflows Gen2 staging warehouse doesn't work in deployment pipelines](known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md) | July 2, 2024 |
 |  764  | Power BI | [New card and reference label tabular layout content hidden or truncated](known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md) | June 26, 2024 |
-|  762  | Power BI | [Python and R visuals don't work in Fabric capacity](known-issues/known-issue-762-python-r-visuals-not-work-capacity.md) | June 26, 2024 |
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
 |  755  | Real-Time Intelligence | [Real-Time hub **Set Alert** fails on prior version of an eventstream](known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md) | June 20, 2024 |
 |  753  | Data Factory | [Pipeline Web activity through on-premises data gateway doesn't support SPN authentication](known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md) | June 11, 2024 |
@@ -39,7 +41,6 @@ Select the **Title** to view more information about that specific known issue.
 |  733  | Real-Time Intelligence | [Sample data doesn’t flow after destination later added into eventstream](known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md) | June 6, 2024 |
 |  749  | Power BI | [Tenant migrations paused for June 2024](known-issues/known-issue-749-tenant-migrations-paused-june-2024.md) | May 31, 2024 |
 |  732  | Data Engineering | [Shortcut creation on a lakehouse preview table takes long time](known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md) | May 31, 2024 |
-|  743  | Power BI | [Semantic models in Desktop sometimes fail in March 2024 and later versions](known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md) | May 30, 2024 |
 |  730  | Real-Time Intelligence | [Real-Time hub **Set alert** doesn't work for derived streams](known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md) | May 29, 2024 |
 |  729  | Real-Time Intelligence | [Opening a reflex for a stream in Real-Time hub doesn't work](known-issues/known-issue-729-opening-reflex-stream-real-time-hub-not-work.md) | May 29, 2024 |
 |  726  | Data Factory | [Pipeline using XML format copy gets stuck](known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 |
@@ -54,7 +55,6 @@ Select the **Title** to view more information about that specific known issue.
 |  709  | Data Factory | [Query folding indicators are incorrect for certain Power Query SDK based connectors](known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md) | May 1, 2024 |
 |  708  | Data Warehouse | [SQL endpoint and semantic model are orphaned when a lakehouse is deleted](known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md) | May 1, 2024 |
 |  702  | Data Factory | [SQL database mirror doesn't start when you create connection during mirror creation](known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md) | May 1, 2024 |
-|  701  | OneLake | [Shortcut data inaccessible if data is in a paused capacity](known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md) | April 25, 2024 |
 |  670  | Power BI | [Filled or bubble layers on Azure Maps visual doesn't render](known-issues/known-issue-670-filled-bubble-layers-azure-maps-visual-render.md) | April 11, 2024 |
 |  667  | Power BI | [Upload reports from OneDrive or SharePoint fails](known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md) | April 1, 2024 |
 |  658  | Data Engineering | [PySpark import statements fail for .jar files installed through environment](known-issues/known-issue-658-pyspark-import-statements-fail-jar-files-installed.md) | March 28, 2024 |
@@ -82,6 +82,9 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  762  | Power BI | [Python and R visuals don't work in Fabric capacity](known-issues/known-issue-762-python-r-visuals-not-work-capacity.md) | June 26, 2024 | Fixed: July 18, 2024 |
+|  743  | Power BI | [Semantic models in Desktop sometimes fail in March 2024 and later versions](known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md) | May 30, 2024 | Fixed: July 18, 2024 |
+|  701  | OneLake | [Shortcut data inaccessible if data is in a paused capacity](known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md) | April 25, 2024 | Fixed: July 18, 2024 |
 |  761  | Power BI | [Report Builder can't sign in to the service for some clouds](known-issues/known-issue-761-report-builder-not-sign-in-service-some-clouds.md) | June 20, 2024 | Fixed: July 16, 2024 |
 |  721  | Data Engineering | [Spark session doesn't start when managed virtual network's capacity moved](known-issues/known-issue-721-spark-session-managed-virtual-network-capacity-moved.md) | May 16, 2024 | Fixed: June 20, 2024 |
 |  713  | Power BI | [Sign-in required when you browse to a secure embed URL](known-issues/known-issue-713-sign-in-required-browse-secure-embed-url.md) | May 2, 2024 | Fixed: June 11, 2024 |
