@@ -83,7 +83,7 @@ $warehouseid = 'warehouseID'
 Connect-PowerBIServiceAccount
 
 #Invoke warehouse takeover
-$url = '/groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + 'takeover'
+$url = '/groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + '/takeover'
 Invoke-PowerBIRestMethod -Url $url -Method Post -Body ""
 ```
 
