@@ -9,7 +9,7 @@ ms.custom: references_unsupporteditemtypes
 ---
 
 > [!NOTE]
-> Currently, the following Power BI item types (`itemKind`) are not supported:
+> Currently, the Fabric workspace item events for following the Power BI item types (`itemKind`) are not supported:
 > - Semantic Model
 > - Paginated report
 > - Report
