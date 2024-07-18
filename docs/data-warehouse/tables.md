@@ -126,6 +126,9 @@ The following list shows some of the table features that aren't currently suppor
 - Unique indexes
 - User-defined types
 
+> [!IMPORTANT]
+> There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
+
 ## Related content
 
 - [What is data warehousing in [!INCLUDE [product-name](../includes/product-name.md)]?](data-warehousing.md)

@@ -355,11 +355,13 @@ You can execute the specific stored procedure for the schema (DDL) conversion, d
 
 For the data migration, you'll need to use either COPY INTO or Data Factory to ingest the data into Fabric Warehouse.
 
-## Migration using SQL Database Project
+## Migration using SQL database projects
 
 Microsoft Fabric Data Warehouse is supported in the [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension?view=fabric&preserve-view=true) available inside of [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio?view=fabric&preserve-view=true) and [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 
 This extension is available inside Azure Data Studio and Visual Studio Code. This feature enables capabilities for source control, database testing and schema validation.  
+
+For more information on source control for warehouses in Microsoft Fabric, including Git integration and deployment pipelines, see [Source Control with Warehouse](source-control.md).
 
 #### Recommended use
 
