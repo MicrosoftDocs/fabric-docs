@@ -11,7 +11,7 @@ ms.date: 06/30/2024
 
 [!INCLUDE [ingest-nlog-sink-1](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-nlog-sink-1.md)]
 
-In this article you will learn how to get data with nLog sink.
+In this article you'll learn how to get data with nLog sink.
 
 For a complete list of data connectors, see [Data connectors overview](/azure/data-explorer/integrate-data-overview).
 <!-- Update this link to the RTI Get data overview, once it is created and merged -->
