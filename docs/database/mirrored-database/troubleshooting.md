@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, roblescarlos, maprycem, cynotebo
 ms.date: 05/09/2024
-ms.service: fabric
 ms.topic: troubleshooting
 ms.search.form: Fabric Mirroring
 ---

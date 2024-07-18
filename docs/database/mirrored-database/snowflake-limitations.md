@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
 ms.date: 04/24/2024
-ms.service: fabric
 ms.topic: conceptual
 ms.custom:
   - references_regions
