@@ -4,7 +4,7 @@ description: This article details the strategy, considerations, and methods of m
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: arturv, johoang
-ms.date: 04/24/2024
+ms.date: 07/17/2024
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
@@ -234,6 +234,9 @@ For fact tables, we recommended using Data Factory with partitioning option to i
 
 However, the increased parallelized reads require dedicated SQL pool to scale to higher DWU to allow the extract queries to be executed. Leveraging partitioning, the rate is improved 10x over no partition option.  You could increase the DWU to get additional throughput via compute resources, but the dedicated SQL pool has a maximum 128 active queries allow.
 
+> [!NOTE]
+> For more information on Synapse DWU to Fabric mapping, see [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/).
+
 ### Option 3. DDL migration - Copy Wizard ForEach Copy Activity
 
 The two previous options are great data migration options for *smaller* databases. But if you require higher throughput, we recommend an alternative option:
@@ -435,3 +438,4 @@ Several factors to note so that you can design your process for maximum performa
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
+- [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)

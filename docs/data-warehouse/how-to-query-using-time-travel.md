@@ -9,13 +9,13 @@ ms.subservice: data-warehouse
 ms.custom:
   - build-2024
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 06/10/2024
 ---
 # How to: Query using time travel at the statement level (preview)
 
 In Microsoft Fabric, the capability to [time travel](time-travel.md) unlocks the ability to query the prior versions of data without the need to generate multiple data copies, saving on storage costs. This article describes how to query warehouse tables using time travel at the statement level, using the T-SQL [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) and the [FOR TIMESTAMP AS OF](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#for-timestamp) syntax. This feature is currently in preview.
 
-Warehouse tables can be queried up to a retention period of seven calendar days using the `OPTION` clause, providing the date format `yyyy-MM-ddTHH:mm:ss[.fff]`.
+Warehouse tables can be queried up to a retention period of thirty calendar days using the `OPTION` clause, providing the date format `yyyy-MM-ddTHH:mm:ss[.fff]`.
 
 The following examples can be executed in the [SQL Query Editor](sql-query-editor.md), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [Azure Data Studio](/azure-data-studio/download-azure-data-studio), or any T-SQL query editor.
 

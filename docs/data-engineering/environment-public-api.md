@@ -32,7 +32,7 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 |Upload staging libraries|Adding one custom library or one/multiple public library in the environment.|Libraries|
 |Delete staging libraries|Delete one staging custom library or all public library.|Libraries|
 
-Learn more about the environment public APIs in [Item APIs - Environment](https://aka.ms/EnvironmentRESTAPISwaggerPage)
+Learn more about the environment public APIs in [Item APIs - Environment](/rest/api/fabric/environment/items)
 
 ## Environment public API use cases
 
@@ -160,6 +160,8 @@ Before changing the configurations for the environment, you can use the get publ
 #### Update the compute configurations
 
 You can update the Spark runtime, switch to another pool, refine compute configuration and add/remove Spark properties through editing the request body of this API.
+
+You can switch the attached pool by specifying the pool name and pool. Specify the pool name as `Starter Pool` to switch the pool to default settings. To get the full list of the available custom pools of the workspace by REST API, see [Custom Pools - List Workspace Custom Pools](/rest/api/fabric/spark/custom-pools/list-workspace-custom-pools)
 
 If you want to remove an existing Spark property, you need to specify the value as `null` with the key that you want to remove, as showing in the following example.
 
