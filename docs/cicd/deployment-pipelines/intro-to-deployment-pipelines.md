@@ -9,7 +9,7 @@ ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/10/2024
+ms.date: 07/18/2024
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -35,13 +35,13 @@ When you deploy content from one pipeline stage to another, the copied content c
 
 * [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
 * Dataflows Gen1
-* Datamarts
+* [Datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (based on supported semantic models)
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
-* Semantic models (except for DirectLake semantic models)
+* Semantic models
 * [Warehouses](../../data-warehouse/data-warehousing.md)
 
 ## Pipeline structure
@@ -76,14 +76,15 @@ It's important to understand how pairing works, in order to understand when item
 
 If items aren't paired, even if they appear to be the same (have the same name, type, and folder), they won't overwrite on a deployment. Instead, a duplicate copy will be created and paired with the item in the previous stage.
 
-<!--- :::image type="content" source="./media/intro-to-deployment-pipelines/pairing-rules.png" alt-text="Diagram describing when items are paired in different circumstances."::: --->
-
 Paired items appear on the same line in the pipeline content list. Items that aren't paired, appear on a line by themselves:
 
 :::image type="content" source="./media/intro-to-deployment-pipelines/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
 
 * Items that are paired remain paired even if you change their names. Therefore, paired items can have different names.
 * Items added after the workspace is assigned to a pipeline aren't automatically paired. Therefore, you can have identical items in adjacent workspaces that aren't paired.
+
+> [!NOTE]
+> Direct Lake semantic models don't pair items by default. Use datasource rules to pai.
 
 For a detailed explanation of which items are paired and how pairing works, see [Item pairing](./assign-pipeline.md#item-pairing).
 
