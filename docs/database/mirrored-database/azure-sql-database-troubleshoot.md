@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala
 ms.date: 05/09/2024
-ms.service: fabric
 ms.topic: troubleshooting
 ms.custom:
   - references_regions

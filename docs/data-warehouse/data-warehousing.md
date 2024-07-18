@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo, chweb, cynotebo
 ms.date: 07/02/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: overview
 ms.custom:
   - build-2023
