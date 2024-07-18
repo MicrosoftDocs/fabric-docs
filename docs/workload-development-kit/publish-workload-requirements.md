@@ -30,6 +30,25 @@ Fabric is designed to support the largest Tier 1 projects and data sizes. The Fa
 | Monetization | You can leverage the Azuer Markeplace to monetize your workload. | Attestation | Optional | [Monetize your workload](monetization.md) |
 
 
+
+## Technical requirements
+
+The following table lists technical requirements for your workload offer.
+
+| Category | Description | Certification method  | Status | Reference  |
+|---|---|---|---|---|
+| AAD Access | Fabric workloads must ensure that Azure AD identities can be granted access to our applications, services and API endpoints. If your service provides other authentication methods to data that was originaly stored in Fabric you need to document this. | Attestation | Required | [Autentication](./authentication-concept.md) |
+| OneLake | OneLake is where data is stored in Fabric. Workloads need to integrate with it to store data in the standard formats supported by the platform so that other services can take advantage of it. | Attestation | Required | [OneLake, the OneDrive for data](../onelake/onelake-overview.md) |
+| AAD Conditional Access | Enterprise customers require centralized control and management of the identities and credentials used to access their resources and data and, in Microsoft, Azure AD provides that service. If customers have enabled the feature make sure that your service will work with it. | Attestation | Required | [Conditional access](https://learn.microsoft.com/en-us/fabric/security/security-conditional-access) |
+| Admin Rest API | Admin REST APIs are an integral part of Fabric admin and governance process. These APIs help Fabric admins in discovering workspaces and items, and enforcing governance such as performing access reviews, etc. | Attestation | Not supported | [Admin REST API](https://learn.microsoft.com/en-us/rest/api/fabric/admin/items) |
+| Customer Facing Monitoring & Diagnostic | TBD | Attestation | Required | |
+| B2B | Fabric sharing strategy is focused on allowing customers to collaborate with their business partners, customers, vendors, subsidiaries etc. This also mens users form other tenants can potentially be granted access to items partner are creating.  | Attestation | Optional | [Guest User Sharing](https://learn.microsoft.com/en-us/fabric/security/security-b2b) |
+| Business Continuity and disaster recorvery | Fabric sommits to a seamless service availability to customers. We recognize the importance of planning for unforeseen events in a world of uncertainties. We ask partners providing workloads to customers within Fabric to think aobut this as well and define Business Continuity and Disaster Recovery (BCDR) plans designed to tackle unplanned disasters and recovery steps. | Attestation | Optional | [Reliability in Microsoft Fabric](https://learn.microsoft.com/en-us/azure/reliability/reliability-fabric) |
+| Performance | Performance is a very important requirement for Fabric customers. We recommend our parnters to think about this in the context of their workload as well and take measures to test and track prefromance of their Items.  | Attestation | Optional |  TBD|
+| Presence | To ensure that you can meet customer expectations in the same way no matter the region or cloud where Fabric is used, partners need to think how they want to align with fabric regions and clouds. Availablilty in certain restrictions also impacts the your Data Residency commitments. | Attestation | Optional | [Fabric Regions](https://learn.microsoft.com/en-us/fabric/admin/region-availability) |
+| Public APIs | Fabric Public APIs are the backbone of automation, enabling seamless communication and integration for both customers and ISVs within the Fabric ecosystem. Fabric Public API empowers users to build innovative solutions, enhance scalability, and streamline workflows. | Attestation | Not supported | [Doucmentation](https://learn.microsoft.com/en-us/rest/api/fabric/articles/) |
+
+
 ## Design/ UX requirements
 
 To get familiar with the design requirements for your Fabric workload review the [Fabric UX System](https://aka.ms/fabricux). The Fabric UX System provides an overview of the patterns and components that are available in the Fabric UX to accelerate your work. It also includes Fabric UX React and Angular wrapper libraries that integrate with Fluent web components.
@@ -51,25 +70,6 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 | Item actions | TBD | Attestation | Optional |  |
 | Workspace settings | TBD | Attestation | Not supported |  |
 | Search | TBD | Attestation | Not supported |  |
-
-
-## Technical requirements
-
-The following table lists technical requirements for your workload offer.
-
-| Category | Description | Certification method  | Status | Reference  |
-|---|---|---|---|---|
-| AAD Access | Fabric workloads must ensure that Azure AD identities can be granted access to our applications, services and API endpoints. If your service provides other authentication methods to data that was originaly stored in Fabric you need to document this. | Attestation | Required | [Autentication](./authentication-concept.md) |
-| OneLake | OneLake is where data is stored in Fabric. Workloads need to integrate with it to store data in the standard formats supported by the platform so that other services can take advantage of it. | Attestation | Required | [OneLake, the OneDrive for data](../onelake/onelake-overview.md) |
-| AAD Conditional Access | Enterprise customers require centralized control and management of the identities and credentials used to access their resources and data and, in Microsoft, Azure AD provides that service. If customers have enabled the feature make sure that your service will work with it. | Attestation | Required | [Conditional access](https://learn.microsoft.com/en-us/fabric/security/security-conditional-access) |
-| Admin Rest API | Admin REST APIs are an integral part of Fabric admin and governance process. These APIs help Fabric admins in discovering workspaces and items, and enforcing governance such as performing access reviews, etc. | Attestation | Not supported | [Admin REST API](https://learn.microsoft.com/en-us/rest/api/fabric/admin/items) |
-| Customer Facing Monitoring & Diagnostic | TBD | Attestation | Required | |
-| B2B | Fabric sharing strategy is focused on allowing customers to collaborate with their business partners, customers, vendors, subsidiaries etc. This also mens users form other tenants can potentially be granted access to items partner are creating.  | Attestation | Optional | [Guest User Sharing](https://learn.microsoft.com/en-us/fabric/security/security-b2b) |
-| Business Continuity and disaster recorvery | Fabric sommits to a seamless service availability to customers. We recognize the importance of planning for unforeseen events in a world of uncertainties. We ask partners providing workloads to customers within Fabric to think aobut this as well and define Business Continuity and Disaster Recovery (BCDR) plans designed to tackle unplanned disasters and recovery steps. | Attestation | Optional | [Reliability in Microsoft Fabric](https://learn.microsoft.com/en-us/azure/reliability/reliability-fabric) |
-| Performance | Performance is a very important requirement for Fabric customers. We recommend our parnters to think about this in the context of their workload as well and take measures to test and track prefromance of their Items.  | Attestation | Optional |  TBD|
-| Presence | To ensure that you can meet customer expectations in the same way no matter the region or cloud where Fabric is used, partners need to think how they want to align with fabric regions and clouds. Availablilty in certain restrictions also impacts the your Data Residency commitments. | Attestation | Optional | [Fabric Regions](https://learn.microsoft.com/en-us/fabric/admin/region-availability) |
-| Public APIs | Fabric Public APIs are the backbone of automation, enabling seamless communication and integration for both customers and ISVs within the Fabric ecosystem. Fabric Public API empowers users to build innovative solutions, enhance scalability, and streamline workflows. | Attestation | Not supported | [Doucmentation](https://learn.microsoft.com/en-us/rest/api/fabric/articles/) |
-
 
 ## Security & Compliance requirements
 
