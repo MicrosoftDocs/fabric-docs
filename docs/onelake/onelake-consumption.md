@@ -17,15 +17,16 @@ OneLake usage is defined by data stored and the number of transactions. This pag
 
 ## Storage
 
-OneLake storage is billed at a pay-as-you-go rate per GB of data used. Static Storage does NOT consume Fabric Capacity Units (CUs). Fabric items like Lakehouse and Datawarehouse  consume OneLake Storage. Data stored in OneLake for Power BI import Semantic models are FREE. Power BI data not in OneLake continues to be FREE as stated in the [premium per user page](/power-bi/enterprise/service-premium-per-user-faq#considerations-and-limitations). For Mirrored data, data up to the included capacity is FREE, and beyond that is charged. For more information about pricing, see the [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+OneLake storage is billed at a pay-as-you-go rate per GB of data used and does not consume Fabric Capacity Units (CUs). Fabric items like Lakehouse and Datawarehouse consume OneLake Storage. Data stored in OneLake for Power BI import semantic models is included in the price of your Power BI licensing. For Mirroring storage, data up to a certain limit is free based on the purchased compute capacity SKU you provision. For more information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
-You may visualize your OneLake storage usage in the Fabric Capacity Metrics app in the Storage tab. For more information about monitoring usage, see the [Metrics app Storage page](../enterprise/metrics-app-storage-page.md). To understand OneLake consumption more, see the [OneLake Capacity Consumption page](../onelake/onelake-capacity-consumption.md)
+You can visualize your OneLake storage usage in the Fabric Capacity Metrics app in the Storage tab. For more information about monitoring usage, see the [Metrics app Storage page](../enterprise/metrics-app-storage-page.md). To understand OneLake consumption more, see the [OneLake Capacity Consumption page](../onelake/onelake-capacity-consumption.md)
 
 ## Transactions
 
-Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. OneLake uses the same mappings as ADLS to classify the operation to the category as [here](/azure/storage/blobs/map-rest-apis-transaction-categories).
+Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. 
 
 ### Operation types
+OneLake uses the same [mappings](/azure/storage/blobs/map-rest-apis-transaction-categories) as ADLS to classify the operation to the category.
 
 This table defines CU consumption when OneLake data is accessed using applications that redirect certain requests. Redirection is an implementation that reduces consumption of OneLake compute.
 
