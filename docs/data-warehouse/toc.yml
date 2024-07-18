@@ -169,8 +169,6 @@ items:
   - name: Restore in-place in the Fabric portal
     href: restore-in-place-portal.md
     displayName: Restore
-  - name: Manage restore points
-    href: restore-points-manage.md
   - name: Clone tables
     href: clone-table.md
   - name: Clone tables in the Fabric portal
