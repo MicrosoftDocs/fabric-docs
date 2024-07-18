@@ -98,7 +98,7 @@ For more information about the Fabric deployment pipelines process, see [Overvie
     - Create a new copy of the table in the warehouse, using `CREATE TABLE` and `INSERT`, `CREATE TABLE AS SELECT`, or [Clone table](clone-table.md).
     - Modify the new table definition with new constraints or columns, as desired, using `ALTER TABLE`.
     - Delete the old table.
-    - Rename the new table to the name of the old table using [sp_rename](/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?view=fabric).
+    - Rename the new table to the name of the old table using [sp_rename](/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?view=fabric&preserve-view=true).
     - Modify the definition of the old table in the SQL database project in the *exact* same way. The SQL database project of the warehouse in source control and the live warehouse should now match.
 - Currently, do not create a Dataflow Gen2 with an output destination to the warehouse. Committing and updating from Git would be blocked by a new item named `DataflowsStagingWarehouse` that appears in the repository.
 - SQL analytics endpoint is not supported with Git integration.
