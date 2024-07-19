@@ -4,8 +4,6 @@ description: Learn how to Query data as it existed in the past with time travel 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.custom:
   - build-2024
 ms.topic: conceptual

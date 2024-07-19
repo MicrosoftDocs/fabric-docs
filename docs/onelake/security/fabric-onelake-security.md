@@ -36,6 +36,12 @@ OneLake uses Microsoft Entra ID for authentication; you can use it to give permi
 > [!NOTE]
 > To use service principals in a Fabric tenant, a tenant administrator must enable Service Principal Names (SPNs) for the entire tenant or specific security groups. Learn more about enabling Service Principals in [Developer Settings of Tenant Admin Portal](../../admin/tenant-settings-index.md#developer-settings)
 
+## Audit Logs
+
+To view your OneLake audit logs, follow the instructions in [Track user activities in Microsoft Fabric](/fabric/admin/track-user-activities). OneLake operation names correspond to [ADLS APIs](/rest/api/storageservices/data-lake-storage-gen2) such as CreateFile or DeleteFile.  OneLake audit logs do not include read requests or requests made to OneLake via Fabric workloads.
+
+## Encryption and networking
+
 ### Data at Rest
 
 Data stored in OneLake is encrypted at rest by default using Microsoft-managed key. Microsoft-managed keys are rotated appropriately. Data in OneLake is encrypted and decrypted transparently and it is FIPS 140-2 compliant.
@@ -48,9 +54,9 @@ Data in transit across the public internet between Microsoft services is always 
 
 Inbound OneLake communication also enforces TLS 1.2 and negotiates to TLS 1.3, whenever possible. Outbound Fabric communication to customer-owned infrastructure prefers secure protocols but might fall back to older, insecure protocols (including TLS 1.0) when newer protocols aren't supported.
 
-## Private links
+### Private links
 
-Fabric doesn’t currently support private link access to OneLake data via non-Fabric products and Apache Spark.
+To configure Private Links in Fabric, see [Set up and use private links](/fabric/security/security-private-links-use).
 
 ## Allow apps running outside of Fabric to access data via OneLake
 

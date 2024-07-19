@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, im-microsoft
 ms.date: 07/09/2024
-ms.service: fabric
 ms.topic: how-to
 ---
 # Enable Mirroring
