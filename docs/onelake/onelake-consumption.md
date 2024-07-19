@@ -17,15 +17,16 @@ OneLake usage is defined by data stored and the number of transactions. This pag
 
 ## Storage
 
-OneLake storage is billed at a pay-as-you-go rate per GB of data used. Static Storage does NOT consume Fabric Capacity Units (CUs). Fabric items like Lakehouse and Datawarehouse  consume OneLake Storage. Data stored in OneLake for Power BI import Semantic models are FREE. Power BI data not in OneLake continues to be FREE as stated in the [premium per user page](/power-bi/enterprise/service-premium-per-user-faq#considerations-and-limitations). For Mirrored data, data up to the included capacity is FREE, and beyond that is charged. For more information about pricing, see the [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+OneLake storage is billed at a pay-as-you-go rate per GB of data used and doesn't consume Fabric Capacity Units (CUs). Fabric items like lakehouses and warehouses consume OneLake storage. Data stored in OneLake for Power BI import semantic models is included in the price of your Power BI licensing. For Mirroring storage, data up to a certain limit is free based on the purchased compute capacity SKU you provision. For more information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
-You may visualize your OneLake storage usage in the Fabric Capacity Metrics app in the Storage tab. For more information about monitoring usage, see the [Metrics app Storage page](../enterprise/metrics-app-storage-page.md). To understand OneLake consumption more, see the [OneLake Capacity Consumption page](../onelake/onelake-capacity-consumption.md)
+You can visualize your OneLake storage usage in the Fabric Capacity Metrics app in the Storage tab. For more information about monitoring usage, see the [Metrics app Storage page](../enterprise/metrics-app-storage-page.md). To understand OneLake consumption more, see the [OneLake Capacity Consumption page](../onelake/onelake-capacity-consumption.md)
 
 ## Transactions
 
-Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. OneLake uses the same mappings as ADLS to classify the operation to the category as [here](/azure/storage/blobs/map-rest-apis-transaction-categories).
+Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. 
 
 ### Operation types
+OneLake uses the same [mappings](/azure/storage/blobs/map-rest-apis-transaction-categories) as Azure Data Lake Storage (ADLS) to classify the operation to the category.
 
 This table defines CU consumption when OneLake data is accessed using applications that redirect certain requests. Redirection is an implementation that reduces consumption of OneLake compute.
 
@@ -48,7 +49,7 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 | **OneLake Other Operations** | OneLake Other Operations | Per 10,000 | 306 CU seconds |
 
 ## Shortcuts
-When accessing data using OneLake shortcuts, the transaction usage counts against the capacity tied to the workspace where the shortcut is created. The capacity where the data is ultimately stored (that the shortcut points to) will be billed for the data stored.
+When accessing data using OneLake shortcuts, the transaction usage counts against the capacity tied to the workspace where the shortcut is created. The capacity where the data is ultimately stored (that the shortcut points to) is billed for the data stored.
 
 ## Paused Capacity
 When a capacity is paused, the data stored will continue to be billed using the pay-as-you-go rate per GB. All transactions are rejected when a capacity is paused, so no Fabric CUs are consumed due to OneLake transactions. To access your data or delete a Fabric item, the capacity needs to be resumed. You can delete the workspace while a capacity is paused.
@@ -67,12 +68,12 @@ When disaster recovery is enabled for a given capacity, write operations consume
 
 ### Disaster recovery operation types
 
-This table defines CU consumption when disaster recovery is enabled and OneLake data is accessed using applications that redirect certain requests.  Redirection is an implementation that reduces consumption of OneLake compute.
+This table defines CU consumption when disaster recovery is enabled and OneLake data is accessed using applications that redirect certain requests. Redirection is an implementation that reduces consumption of OneLake compute.
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 |---|---|---|---|
-| **OneLake BCDR Read via Redirect** | OneLake BCDR Read via Redirect | Every 4MB, per 10,000 | 104 CU seconds |
-| **OneLake BCDR Write via Redirect** | OneLake BCDR Write via Redirect | Every 4MB, per 10,000 | 3056 CU seconds |
+| **OneLake BCDR Read via Redirect** | OneLake BCDR Read via Redirect | Every 4 MB, per 10,000 | 104 CU seconds |
+| **OneLake BCDR Write via Redirect** | OneLake BCDR Write via Redirect | Every 4 MB, per 10,000 | 3056 CU seconds |
 | **OneLake BCDR Iterative Read via Redirect** | OneLake BCDR Iterative Read via Redirect | Per 10,000 | 1626 CU seconds |
 | **OneLake BCDR Iterative Write via Redirect** | OneLake BCDR Iterative Write via Redirect | Per 100 | 2730 CU seconds |
 | **OneLake BCDR Other Operations Via Redirect** | OneLake BCDR Other Operations Via Redirect | Per 10,000 | 104 CU seconds |
@@ -81,8 +82,8 @@ This table defines CU consumption when disaster recovery is enabled and OneLake 
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 |---|---|---|---|
-| **OneLake BCDR Read via Proxy** | OneLake BCDR Read via Proxy | Every 4MB, per 10,000 | 306 CU seconds |
-| **OneLake BCDR Write via Proxy** | OneLake BCDR Write via Proxy | Every 4MB, per 10,000 | 3870 CU seconds |
+| **OneLake BCDR Read via Proxy** | OneLake BCDR Read via Proxy | Every 4 MB, per 10,000 | 306 CU seconds |
+| **OneLake BCDR Write via Proxy** | OneLake BCDR Write via Proxy | Every 4 MB, per 10,000 | 3870 CU seconds |
 | **OneLake BCDR Iterative Read via Proxy** | OneLake BCDR Iterative Read via Proxy | Per 10,000 | 4798 CU seconds |
 | **OneLake BCDR Iterative Write via Proxy** | OneLake BCDR Iterative Write via Proxy | Per 100 | 3415.5 CU seconds |
 | **OneLake BCDR Other Operations** | OneLake BCDR Other Operations | Per 10,000 | 306 CU seconds |

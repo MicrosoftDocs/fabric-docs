@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, anithaa
 ms.date: 04/24/2024
-ms.service: fabric
 ms.topic: conceptual
 ---
 # Explore data in your mirrored database using Microsoft Fabric

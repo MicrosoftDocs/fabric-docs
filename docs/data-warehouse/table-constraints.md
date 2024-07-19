@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: kecona, xiaoyul
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -34,6 +32,9 @@ For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?v
 
 - [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] don't support default constraints at this time. 
 - For more information on tables, see [Tables in data warehousing in Microsoft Fabric](tables.md).
+
+> [!IMPORTANT]
+> There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
 
 ## Examples
 
