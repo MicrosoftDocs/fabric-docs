@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/16/2024
+ms.date: 07/19/2024
 ---
 
 # Lakehouse tutorial: Ingest data into the lakehouse
