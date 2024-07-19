@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 07/18/2024
+ms.date: 07/19/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  790  | Power BI | [Spark operations fail](known-issues/known-issue-790-spark-operations-fail.md) | July 19, 2024 |
 |  784  | Power BI | [Data Activator alert created from visual with no dimensions doesn't work](known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md) | July 18, 2024 |
 |  782  | Data Engineering | [Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse](known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md) | July 18, 2024 |
 |  780  | Power BI | [Cognitive Services ScoreSentiment function doesn't work in dataflows](known-issues/known-issue-780-cognitive-services-score-sentiment-function-not-work-dataflows.md) | July 18, 2024 |
