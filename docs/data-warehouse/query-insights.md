@@ -4,7 +4,7 @@ description: Query insights makes past query execution data and aggregated insig
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: mariyaali
-ms.date: 04/24/2024
+ms.date: 07/18/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -69,7 +69,7 @@ After your query completes execution, you see its execution data in the `queryin
 
 ## How are similar queries aggregated to generate insights?
 
-Queries are considered the same by the query insights feature if, other than predicate value, two queries have an exact match in the query text. White spaces and new line characters render the queries to be considered different.
+Queries are considered the same by the Query Insights if the queries have the same shape, even if the predicates may be different.
 
 You can utilize the `query hash` column in the views to analyze similar queries and drill down to each execution.
 
