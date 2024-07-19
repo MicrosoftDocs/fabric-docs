@@ -93,6 +93,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
     
    full_tables = [
        'dimension_city',
+       'dimension_customer'
        'dimension_date',
        'dimension_employee',
        'dimension_stock_item'
