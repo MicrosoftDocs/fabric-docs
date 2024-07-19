@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
 ms.date: 07/17/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: how-to
 ms.search.form: Warehouse Restore # This article's title should not change. If so, contact engineering.
 ---

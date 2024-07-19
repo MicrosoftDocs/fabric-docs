@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
 ms.date: 06/02/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
 ---
