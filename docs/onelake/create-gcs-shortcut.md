@@ -7,7 +7,7 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:
-ms.date: 03/15/2024
+ms.date: 07/19/2024
 ---
 
 # Create a Google Cloud Storage(GCS) shortcut
@@ -16,7 +16,6 @@ In this article, you learn how to create a Google Cloud Storage(GCS) shortcut in
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
