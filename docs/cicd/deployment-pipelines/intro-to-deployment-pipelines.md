@@ -83,9 +83,6 @@ Paired items appear on the same line in the pipeline content list. Items that ar
 * Items that are paired remain paired even if you change their names. Therefore, paired items can have different names.
 * Items added after the workspace is assigned to a pipeline aren't automatically paired. Therefore, you can have identical items in adjacent workspaces that aren't paired.
 
-> [!NOTE]
-> Direct Lake semantic models don't pair items by default. Use datasource rules to pai.
-
 For a detailed explanation of which items are paired and how pairing works, see [Item pairing](./assign-pipeline.md#item-pairing).
 
 ## Deployment method
