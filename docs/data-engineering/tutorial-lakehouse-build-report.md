@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/01/2024
+ms.date: 07/19/2024
 ---
 
 # Lakehouse tutorial: Building reports in Microsoft Fabric

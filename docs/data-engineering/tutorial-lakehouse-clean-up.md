@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 5/23/2023
+ms.date: 07/19/2024
 ---
 
 # Lakehouse tutorial: Clean up Fabric resources
