@@ -36,7 +36,7 @@ The following list shows what different workspace roles can do depending on thei
 
 #### Workspace roles
 
-The following table describes the permissions needed to perform various common operations:
+The following table describes the permissions needed in the Fabric workspace to perform various common operations:
 
 | **Operation**                                                        | **Workspace role**                                                                        |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
@@ -52,6 +52,8 @@ The following table describes the permissions needed to perform various common o
 | Branch out to a new workspace                                            | Admin, Member, Contributor                                                                |
 
 #### Git roles
+
+The following table describes the Git permissions needed to perform various common operations:
 
 ##### [Azure Repos](#tab/Azure)
 
@@ -71,24 +73,24 @@ The following table describes the permissions needed to perform various common o
 
 ##### [GitHub Repos](#tab/GitHub)
 
-If you're using a fine-grained access token, the following permissions are needed for common operations:
+- If you're using a fine-grained access token, the following permissions are needed for common operations:
 
-| **Operation**                                                        | **Git permissions**                           |
-|----------------------------------------------------------------------|-----------------------------------------------|
-| Connect workspace to Git repo                                        | Contents= Access: Read                        |
-| Sync workspace with Git repo                                         | Contents= Access: Read                        |
-| Disconnect workspace from Git repo                                   | No permissions are needed                     |
-| Switch branch in the workspace (or any change in connection setting) | Contents= Access: Read (in target repo/directory/branch) |
-| View Git connection details                                          | Contents= Access: Read or None                |
-| See workspace 'Git status'                                           | Contents= Access: Read                        |
-| Update from Git                                                      | Contents= Access: Read    |
-| Commit workspace changes to Git                                      | Contents= Access: Read <br/>Contribute=Allow<br/>branch policy should allow direct commit  |
-| Create new Git branch from within Fabric                             | Contents= Access: Read and write<br/>Create branch=Allow            |
-| Branch out to a new workspace   
+  | **Operation**                                                        | **Git permissions**                           |
+  |----------------------------------------------------------------------|-----------------------------------------------|
+  | Connect workspace to Git repo                                        | Contents= Access: Read                        |
+  | Sync workspace with Git repo                                         | Contents= Access: Read                        |
+  | Disconnect workspace from Git repo                                   | No permissions are needed                     |
+  | Switch branch in the workspace (or any change in connection setting) | Contents= Access: Read (in target repo/directory/branch) |
+  | View Git connection details                                          | Contents= Access: Read or None                |
+  | See workspace 'Git status'                                           | Contents= Access: Read                        |
+  | Update from Git                                                      | Contents= Access: Read    |
+  | Commit workspace changes to Git                                      | Contents= Access: Read <br/>Contribute=Allow<br/>branch policy should allow direct commit  |
+  | Create new Git branch from within Fabric                             | Contents= Access: Read and write<br/>Create branch=Allow            |
+  | Branch out to a new workspace   
 
-If you're using classic access token, the repo scope must be enabled:
+- If you're using classic access token, the repo scope must be enabled:
 
-:::image type="content" source="./media/git-integration-process/classic-token.png" alt-text="Screenshot of classic token generation with repo scope enabled.":::
+  :::image type="content" source="./media/git-integration-process/classic-token.png" alt-text="Screenshot of classic token generation with repo scope enabled.":::
 
 ---
 
