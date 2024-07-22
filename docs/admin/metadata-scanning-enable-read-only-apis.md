@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/27/2023
+ms.date: 07/22/2024
 ---
 
 # Enable service principal authentication for read-only admin APIs
