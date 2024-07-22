@@ -4,7 +4,7 @@ description: T-SQL surface area of the SQL analytics endpoint and Warehouse in M
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 07/05/2024
+ms.date: 07/19/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -54,6 +54,7 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - `SET ROWCOUNT`
 - `SET TRANSACTION ISOLATION LEVEL`
 - `sp_showspaceused`
+- Spatial geometry/geography functions
 - Temporary tables
 - Triggers
 - `TRUNCATE`

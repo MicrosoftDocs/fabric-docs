@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/01/2024
+ms.date: 07/19/2024
 ---
 
 # Lakehouse tutorial: Prepare and transform data in the lakehouse
@@ -93,6 +93,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
     
    full_tables = [
        'dimension_city',
+       'dimension_customer'
        'dimension_date',
        'dimension_employee',
        'dimension_stock_item'
