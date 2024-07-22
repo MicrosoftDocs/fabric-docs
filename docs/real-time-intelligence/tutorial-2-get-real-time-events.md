@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md).
 
-In this part of the tutorial, you browse the Real-Time hub, create an event stream, transform events, and create a destination to send the transformed events to a KQL database.
+In this part of the tutorial, you browse the Real-Time hub, create an Eventstream, transform events, and create a destination to send the transformed events to a KQL database.
 
 ## Create an event stream
 
@@ -49,7 +49,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
 
 1. Select **Open Eventstream** from the notification that appears after creating the event stream, or browse to the event stream from the Real-time hub and select **Open Eventstream**.
 1. From the menu ribbon, select **Edit**.
-1. In the event stream authoring canvas select the down arrow on the **Transform events or add destination** tile.  
+1. In the event stream authoring canvas, select the down arrow on the **Transform events or add destination** tile.  
 1. Select **Manage fields**. The tile is renamed to *Manage_fields*.
 1. Select the pencil icon on the *Manage_fields* tile.
 1. In the **Manage fields** pane, do the following actions:
@@ -64,7 +64,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
     1. Select **Add**.
 1. Select **Save**.
 
-    The *TutorialTransform* tile is now displayed but with an error, because the destination has not been set.
+    The *TutorialTransform* tile now displays but with an error, because the destination isn't set.
 
 ## Create a destination
 
@@ -81,13 +81,13 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
     | Field | Value |
     | --- | --- |
     | **Destination name** | *TutorialDestination* |
-    | **Workspace** | Select the workspace in which you've created your resources. |
+    | **Workspace** | Select the workspace in which you created your resources. |
     | **KQL Database** | *Tutorial* |
     | **Destination table** | *Create new* - enter *TutorialTable* as table name |
     | **Input data format** | *JSON* |  
 
 1. Select **Save**.
-1. From the menu ribbon select **Publish**.
+1. From the menu ribbon, select **Publish**.
 
 The event stream is now set up to transform events and send them to a KQL database.
 
