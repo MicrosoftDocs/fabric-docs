@@ -13,7 +13,7 @@ ms.date: 04/15/2023
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-This tutorial provides a detailed guide on integrating Microsoft Fabric items, such as Data Factory Pipelines and Notebooks, within Apache Airflow DAGs. It walks you through how to set up and execute Microsoft Fabric jobs by using Fabric managed storage in Data workflows and Apache Airflow plugin, leveraging the power of both platforms to create robust, scalable data workflows.
+This tutorial provides a detailed guide on integrating Microsoft Fabric items, such as Data Factory Pipelines and Notebooks, within Apache Airflow DAGs. It walks you through how to set up and execute Microsoft Fabric jobs by using Fabric managed storage in Data workflows and the Apache Airflow plugin, applying the power of both platforms to create robust, scalable data workflows.
 
 ## Prerequisites
 
@@ -24,13 +24,13 @@ To get started, you must complete the following prerequisites:
   > [!NOTE]
   > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Data workflows (preview)" section.
+  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Data workflows (preview)' section.
   2. Select Apply.
   :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - [Create a Microsoft Entra ID app](/azure/active-directory/develop/quickstart-register-app) if you don't have one.
 
-- Tenant level admin account must enable the setting “Allow user consent for apps”. Refer to: [Configure user consent](https://learn.microsoft.com/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
+- Tenant level admin account must enable the setting 'Allow user consent for apps'. Refer to: [Configure user consent](https://learn.microsoft.com/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
   :::image type="content" source="media/data-workflows/user-consent.png" lightbox="media/data-workflows/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
 
 - Obtain a refresh token for authentication. Follow the steps in the [Get Refresh Token](/entra/identity-platform/v2-oauth2-auth-code-flow#refresh-the-access-token) section.
