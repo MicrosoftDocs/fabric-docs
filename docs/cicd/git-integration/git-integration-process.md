@@ -18,13 +18,13 @@ ms.custom:
 
 This article explains basic Git concepts and the process of integrating Git with your Microsoft Fabric workspace.
 
-## Required permissions for popular actions
+## Permissions
 
 - In order to use Git integration, your organization's administrator must [enable it](../../admin/git-integration-admin-settings.md) by your organization's administrator.
 - If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview). This restriction doesn't apply to GitHub.
 - The actions you can take on a workspace depend on the permissions you have in both the workspace and Git, as listed in the next sections.
 
-### Git permissions
+### Required Git permissions for popular actions
 
 The following list shows what different workspace roles can do depending on their permissions in their Git repo:
 
@@ -32,7 +32,7 @@ The following list shows what different workspace roles can do depending on thei
 - **Member/Contributor**: Once they connect to a workspace, a member/contributor can commit and update changes, depending on their Git role. For actions related to the workspace connection (for example, connect, disconnect, or switch branches) seek help from an Admin.
 - **Viewer**: Can't perform any actions. The viewer can't see any Git related information in the workspace.
 
-### Fabric permissions needed for common operations
+### Required Fabric permissions for popular actions
 
 #### Workspace roles
 
