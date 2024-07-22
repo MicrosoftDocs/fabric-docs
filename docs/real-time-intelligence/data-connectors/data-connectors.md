@@ -113,7 +113,7 @@ The following table summarizes the available connectors and their capabilities:
 
 ### Azure Functions
 
-[Azure Functions](/azure/azure-functions/functions-overview) allow you to run serverless code in the cloud on a schedule or in response to an event. With input and output bindings for Azure Functions, you can integrate your database into your workflows to ingest data and run queries against your database.
+[Azure Functions](/azure/azure-functions/functions-overview) allows you to run serverless code in the cloud on a schedule or in response to an event. With input and output bindings for Azure Functions, you can integrate your database into your workflows to ingest data and run queries against your database.
 
 * **Functionality:** Ingestion, Export
 * **Ingestion type supported:** Batching
@@ -194,12 +194,12 @@ Serilog is a popular logging framework for .NET applications. Serilog allows dev
 * **Use cases:** Logs
 * **Underlying SDK:** [.NET](/azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/serilog-sinks-azuredataexplorer
-* **Documentation:** [Get data with the Serilog sink](/azure/data-explorer/serilog-sink?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data from Serilog](../get-data-serilog.md)
 * **Community Blog:** [Getting started with Serilog sink and Azure Data Explorer](https://go.microsoft.com/fwlink/p/?linkid=2227749)
 
 ### Splunk
 
-[Splunk Enterprise](https://www.splunk.com/en_us/products/splunk-enterprise.html) is a software platform that allows you to ingest data from many sources simultaneously.The [Azure Data Explorer add-on](https://splunkbase.splunk.com/app/6979) sends data from Splunk to a table in your cluster.
+[Splunk Enterprise](https://www.splunk.com/en_us/products/splunk-enterprise.html) is a software platform that allows you to ingest data from many sources simultaneously. The [Azure Data Explorer add-on](https://splunkbase.splunk.com/app/6979) sends data from Splunk to a table in your cluster.
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching

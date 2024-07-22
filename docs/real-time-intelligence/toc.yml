@@ -187,7 +187,7 @@ items:
       - name: Microsoft Power Automate
         href: /azure/data-explorer/flow?context=/fabric/context/context-rti&pivots=fabric
       - name: Serilog sink
-        href: /azure/data-explorer/serilog-sink?context=/fabric/context/context-rti&pivots=fabric
+        href: get-data-serilog.md
       - name: Splunk
         href: /azure/data-explorer/ingest-data-splunk?context=/fabric/context/context-rti&pivots=fabric
       - name: Splunk Universal Forwarder
