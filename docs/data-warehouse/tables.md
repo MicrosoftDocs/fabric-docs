@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: kecona
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -127,6 +125,9 @@ The following list shows some of the table features that aren't currently suppor
 - Triggers
 - Unique indexes
 - User-defined types
+
+> [!IMPORTANT]
+> There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
 
 ## Related content
 

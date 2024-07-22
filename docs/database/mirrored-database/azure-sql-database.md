@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
 ms.date: 06/20/2024
-ms.service: fabric
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]

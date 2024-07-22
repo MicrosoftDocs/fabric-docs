@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
-ms.date: 05/09/2024
+ms.date: 07/19/2024
 ---
 
 # OneLake shortcuts
@@ -203,7 +203,7 @@ Fabric users can also create shortcuts to Dataverse. From the create shortcuts U
 Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut, and all access to that shortcut is authorized using that credential. The supported delegated credential type is Organizational account (OAuth2). The organizational account must have the system administrator permission to access data in Dataverse Managed Lake.
 
 > [!NOTE]
-> Service Principals are currently not supported for Dataverse shortcut authorization.
+> Service principals added to the fabric workspace must have the admin role to authorize the Dataverse shortcut.
 
 ## Caching
 Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24hrs it is purged from the cache. Individual files greater than 1GB in size are not cached.
