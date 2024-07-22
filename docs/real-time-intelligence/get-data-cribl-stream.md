@@ -17,7 +17,8 @@ For a complete list of data connectors, see [Data connectors overview](data-conn
 
 * A [Cribl stream account](https://cribl.io)
 * A [KQL database](/fabric/real-time-analytics/create-database)
-* Access to the [Azure portal](https://portal.azure.com/)
+* An Azure subscription. Create a [free Azure account](https://azure.microsoft.com/free/).<a id=ingestion-uri></a>
+* Your database ingestion URI to use as the *TargetURI* value. For more information, see [Copy URI](access-database-copy-uri.md#copy-uri).
 
 [!INCLUDE [ingest-data-cribl-2](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-cribl-2.md)]
 
@@ -25,10 +26,6 @@ For a complete list of data connectors, see [Data connectors overview](data-conn
 > The **Azure Data Explorer** connection works for both Azure Data Explorer and Real-Time Intelligence.
 
 [!INCLUDE [ingest-data-cribl-3](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-cribl-3.md)]
-
-## Target URI
-
-You'll need the database query URI for the **Cluster URI** value and the ingestion URI to use as the **Ingestion Service URI** value. For more information, see [Copy URI](access-database-copy-uri.md#copy-uri).
 
 ## Related content
 * [Create a KQL database](create-database.md)
