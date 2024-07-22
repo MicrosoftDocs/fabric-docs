@@ -30,7 +30,7 @@ To get started, you must complete the following prerequisites:
 
 - [Create a Microsoft Entra ID app](/azure/active-directory/develop/quickstart-register-app) if you don't have one.
 
-- Tenant level admin account must enable the setting 'Allow user consent for apps'. Refer to: [Configure user consent](https://learn.microsoft.com/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
+- Tenant level admin account must enable the setting 'Allow user consent for apps'. Refer to: [Configure user consent](/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
   :::image type="content" source="media/data-workflows/user-consent.png" lightbox="media/data-workflows/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
 
 - Obtain a refresh token for authentication. Follow the steps in the [Get Refresh Token](/entra/identity-platform/v2-oauth2-auth-code-flow#refresh-the-access-token) section.
