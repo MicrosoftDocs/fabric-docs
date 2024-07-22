@@ -13,7 +13,7 @@ ms.date: 04/15/2023
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-This tutorial is designed to guide you through using a private Apache Airflow plugin. This plugin enables data engineers to trigger on-demand executions of Microsoft Fabric items directly within Apache Airflow DAGs (Directed Acyclic Graphs), facilitating seamless orchestration and, enhancing overall workflow management capabilities.
+This tutorial provides a detailed guide on integrating Microsoft Fabric items, such as Data Factory Pipelines and Notebooks, within Apache Airflow DAGs. It walks you through how to set up and execute Microsoft Fabric jobs by using Fabric managed storage in Data workflows and Apache Airflow plugin, leveraging the power of both platforms to create robust, scalable data workflows.
 
 ## Prerequisites
 
@@ -26,10 +26,12 @@ To get started, you must complete the following prerequisites:
 
   1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Data workflows (preview)" section.
   2. Select Apply.
-
   :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - [Create a Microsoft Entra ID app](/azure/active-directory/develop/quickstart-register-app) if you don't have one.
+
+- Tenant level admin account must enable the setting “Allow user consent for apps”. Refer to: [Configure user consent](https://learn.microsoft.com/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
+  :::image type="content" source="media/data-workflows/user-consent.png" lightbox="media/data-workflows/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
 
 - Obtain a refresh token for authentication. Follow the steps in the [Get Refresh Token](/entra/identity-platform/v2-oauth2-auth-code-flow#refresh-the-access-token) section.
 
@@ -38,7 +40,7 @@ To get started, you must complete the following prerequisites:
  
 ## Add Apache Airflow requirement
 
-Create the requirements.txt file in the dags folder with following content:   
+Create the requirements.txt file in the dags folder with the following content:   
 ```plaintext
 apache-airflow-microsoft-fabric-plugin
 ```
@@ -50,16 +52,16 @@ apache-airflow-microsoft-fabric-plugin
 
 2. Add a new connection, using the `Generic` connection type. Configure it with:
     * <strong>Connection ID:</strong> Name of the Connection ID.
-    * <strong>Connection Type:</strong>Generic
-    * <strong>Login:</strong>The Client ID of your service principal.
-    * <strong>Password:</strong>The refresh token fetched using Microsoft OAuth 2.0.
-    * <strong>Extra:</strong>{"tenantId": The Tenant ID of your service principal.}
+    * <strong>Connection Type:</strong> Generic
+    * <strong>Login:</strong> The Client ID of your service principal.
+    * <strong>Password:</strong> The refresh token fetched using Microsoft OAuth 2.0.
+    * <strong>Extra:</strong> {"tenantId": The Tenant ID of your service principal.}
 
 3. Select Save.
 
 ## Create a DAG to trigger Microsoft Fabric job items
 
-Create a new DAG file in the dags folder with the following content. Update `workspace_id` and `item_id` with the appropriate values for your scenario:
+Create a new DAG file in the 'dags' folder in Fabric managed storage with the following content. Update `workspace_id` and `item_id` with the appropriate values for your scenario:
 
  ```python
   from airflow import DAG
