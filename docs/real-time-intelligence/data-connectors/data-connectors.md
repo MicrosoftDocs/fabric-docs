@@ -138,7 +138,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming
 * **Use cases:** Machine data processing
-* **Documentation:** [Get data from Cribl](/azure/data-explorer/ingest-data-cribl?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data from Cribl Stream](../get-data-cribl-stream.md)
 
 ### Logstash
 
