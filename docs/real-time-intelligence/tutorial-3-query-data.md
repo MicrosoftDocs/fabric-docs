@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 4- Query streaming data in a KQL queryset
+title: Real-Time Intelligence tutorial part 3 - Query streaming data in a KQL queryset
 description: Learn how to query your streaming data in a KQL queryset Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -59,7 +59,7 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
 
     This query creates a time chart that shows the number of bikes in the Chelsea neighborhood as a time chart.
 
-    :::image type="content" source="media/tutorial/empty-docks-timechart.png" alt-text="Screenshot of empty docks timechart in Real-Time Intelligence.":::
+    :::image type="content" source="media/tutorial/empty-docks-timechart.png" alt-text="Screenshot of empty docks timechart in Real-Time Intelligence." lightbox="media/tutorial/empty-docks-timechart.png":::
 
 ## Related content
 

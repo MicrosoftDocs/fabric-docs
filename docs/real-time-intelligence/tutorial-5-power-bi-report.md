@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part  6- Create a Power BI report
+title: Real-Time Intelligence tutorial part 5 - Create a Power BI report
 description: Learn how to create a Power BI report from your KQL queryset Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -25,7 +25,7 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
 
     ```kusto
     TutorialTable
-    | summarize arg_max(Timestamp, No_Bikes,  No_Empty_Docks, Neighbourhood, Lat=todouble(Latitude), Lon=todouble(Longitude)) by BikepointID
+    | summarize arg_max(Timestamp, No_Bikes,  No_Empty_Docks, Neighborhood, Lat=todouble(Latitude), Lon=todouble(Longitude)) by BikepointID
     ```
 
 1. Select **Power BI**. The Power BI report editor opens with the query result available as a data source named **Kusto Query Result**.
@@ -38,14 +38,14 @@ A Power BI report is a multi-perspective view into a semantic model, with visual
     * **Lat** > **Latitude**
     * **Lon** > **Longitude**
     * **No_Bikes** > **Bubble size**
-    * **Neighbourhood** > **Add drill-through fields here**
+    * **Neighborhood** > **Add drill-through fields here**
 
     :::image type="content" source="media/tutorial/report-generated.png" alt-text="Screenshot of Power BI report generation window in Real-Time Intelligence." lightbox="media/tutorial/report-generated.png":::
 
 1. In the report editor, select **Visualizations** > **Stacked column chart** icon.
     :::image type="icon" source="media/tutorial/stacked-column-chart-icon.png" border="false":::
 1. Drag the following fields from **Data** > **Kusto Query Result** to the **Visualizations** pane.
-    * **Neighbourhood** > **X-axis**
+    * **Neighborhood** > **X-axis**
     * **No_Bikes** > **Y-axis**
     * **No_Empty_Docks** > **Y-axis**
 

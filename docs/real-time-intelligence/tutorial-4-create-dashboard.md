@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 5 - Create a Real-Time dashboard
+title: Real-Time Intelligence tutorial part 4 - Create a Real-Time dashboard
 description: Learn how to create a Real-Time dashboard in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
