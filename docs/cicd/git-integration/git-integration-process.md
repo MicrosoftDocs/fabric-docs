@@ -83,10 +83,10 @@ The following table describes the Git permissions needed to perform various comm
   | Switch branch in the workspace (or any change in connection setting) | Contents= Access: Read (in target repo/directory/branch) |
   | View Git connection details                                          | Contents= Access: Read or None                |
   | See workspace 'Git status'                                           | Contents= Access: Read                        |
-  | Update from Git                                                      | Contents= Access: Read    |
-  | Commit workspace changes to Git                                      | Contents= Access: Read <br/>Contribute=Allow<br/>branch policy should allow direct commit  |
-  | Create new Git branch from within Fabric                             | Contents= Access: Read and write<br/>Create branch=Allow            |
-  | Branch out to a new workspace                                        | Content=Read <br/>Create branch=Allow            |
+  | Update from Git                                                      | Contents= Access: Read                        |
+  | Commit workspace changes to Git                                      | Contents= Access: Read and write<br/>branch policy should allow direct commit  |
+  | Create new Git branch from within Fabric                             | Contents= Access: Read and write              |
+  | Branch out to a new workspace                                        | Content=Read and write                        |
 
 - If you're using classic access token, the repo scope must be enabled:
 
