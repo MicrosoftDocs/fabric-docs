@@ -69,7 +69,7 @@ The following table describes the Git permissions needed to perform various comm
 | Commit workspace changes to Git                                      | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit  |
 | Create new Git branch from within Fabric                             | Role=Write<br/>Create branch=Allow            |
 | Branch out to a new workspace                                        | Read=Allow<br/>Create branch=Allow            |
-                                     | Content=Read <br/>Create branch=Allow            |
+                                    
 
 ##### [GitHub Repos](#tab/GitHub)
 
@@ -86,7 +86,7 @@ The following table describes the Git permissions needed to perform various comm
   | Update from Git                                                      | Contents= Access: Read    |
   | Commit workspace changes to Git                                      | Contents= Access: Read <br/>Contribute=Allow<br/>branch policy should allow direct commit  |
   | Create new Git branch from within Fabric                             | Contents= Access: Read and write<br/>Create branch=Allow            |
-  | Branch out to a new workspace   
+  | Branch out to a new workspace                                        | Content=Read <br/>Create branch=Allow            |
 
 - If you're using classic access token, the repo scope must be enabled:
 
