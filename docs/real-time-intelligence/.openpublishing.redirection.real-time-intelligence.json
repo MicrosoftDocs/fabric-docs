@@ -466,10 +466,24 @@
       "redirect_document_id": true
     },
     {
-      "source_path_from_root": "docs/real-time-intelligence/tutorial-3-set-alert.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-set-alert",
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-set-alert.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-set-alert",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-query-data.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-query-data",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-create-dashboard.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-create-dashboard",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-power-bi-report.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-power-bi-report",
       "redirect_document_id": true
     }
-    
   ]
 }
