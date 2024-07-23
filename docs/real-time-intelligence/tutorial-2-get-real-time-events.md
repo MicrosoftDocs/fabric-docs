@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 07/23/2024
 ms.search.form: Get started
 # customer intent: I want to learn how to get data in the Real-Time hub in Real-Time Intelligence.
 ---
@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md).
 
-In this part of the tutorial, you browse the Real-Time hub, create an Eventstream, transform events, and create a destination to send the transformed events to a KQL database.
+In this part of the tutorial, you browse the Real-Time hub, create an event stream, transform events, and create a destination to send the transformed events to a KQL database.
 
 ## Create an event stream
 
