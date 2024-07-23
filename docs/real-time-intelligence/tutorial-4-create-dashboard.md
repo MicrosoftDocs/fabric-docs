@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Query streaming data in a KQL queryset](tutorial-3-query-data.md).
 
-In this part of the tutorial, learn how to create a Real-Time dashboard in Real-Time Intelligence. You create a Kusto Query language (KQL) query, create a Real-Time dashboard, add a new tile to the dashboard, and explore the data visually by adding an aggregation.
+In this part of the tutorial, you learn how to create a Real-Time dashboard in Real-Time Intelligence. You create a Kusto Query Language (KQL) query, create a Real-Time dashboard, add a new tile to the dashboard, and explore the data visually by adding an aggregation.
 
 ## Create a Real-Time dashboard
 
@@ -62,13 +62,13 @@ The new dashboard, *TutorialDashboard*, opens with the *Recent bikes by Bikepoin
     ```
 
 1. From the menu ribbon, Select **Apply changes**. 
-1. This action creates a new tile, rename the tile by selecting the **ellipsis icon** on the top right corner of the tile, the select **Rename tile**.
-1. Rename the tile to *Chelsea bikes*. 
-
+    A new tile is created. 
+1. Rename the tile by selecting the **More menu [...]** on the top right corner of the tile > **Rename tile**.
+1. Enter the new name *Chelsea bikes* to rename the tile.
 
 ## Explore the data visually by adding an aggregation
 
-1. On the new **Chelsea bikes** tile, select the **Explore** icon :::image type="icon" source="media/tutorial/explore-icon.png" border="false":::
+1. On the new **Chelsea bikes** tile, select the **Explore** icon. :::image type="icon" source="media/tutorial/explore-icon.png" border="false":::
 
     :::image type="content" source="media/tutorial/add-aggregation.gif" alt-text="GIF of how to visually add and modify the query." border="false":::
 
@@ -78,7 +78,7 @@ The new dashboard, *TutorialDashboard*, opens with the *Recent bikes by Bikepoin
 1. Select **Apply**.
 
     Notice that the query elements are updated to include the green **count() by Street** aggregation. The resulting table changed to show the total count of bike locations by street.
-1. Close the **Explore** pane and select **Save** from the menu ribbon to save the changes. 
+1. Close the **Explore** pane and select **Save** from the menu ribbon to save the changes.
 
 ## Related content
 
