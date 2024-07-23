@@ -54,7 +54,7 @@ spark.conf.set("spark.datawarehouse.<warehouse name>.sqlendpoint", "<sql endpoin
 spark.conf.set("spark.lakehouse.<lakeshouse name>.sqlendpoint", "<sql endpoint,port>")
 //Read from table
 spark.read.synapsesql("<warehouse/lakeshouse name>.<schema name>.<table or view name>") => org.apache.spark.sql.DataFrame
-
+```
 
 ### Read data within the same workspace
 
