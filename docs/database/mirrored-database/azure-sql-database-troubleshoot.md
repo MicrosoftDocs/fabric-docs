@@ -4,7 +4,7 @@ description: Troubleshooting topics for mirrored databases from Azure SQL Databa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, anagha-todalbagi
-ms.date: 07/18/2024
+ms.date: 07/23/2024
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
@@ -15,8 +15,8 @@ ms.custom:
 
 | Cause    | Result | Recommended resolution     |
 |:--|:--|:--|
-| Fabric capacity paused/deleted | Mirroring will stop | 1. Resume or assign capacity from the Azure portal <br> 2. Go to Fabric mirrored database item. Select **Monitor**. Select **Stop replication**. If the replication does not stop, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. <br> 3. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
-| Fabric capacity resumed | Mirroring will not be resumed | 1. Go to Fabric mirrored database item. Select **Monitor**. Select **Stop replication**. If the replication has not stopped successfully, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;` <br> 2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
+| Fabric capacity paused/deleted | Mirroring will stop | 1. Resume or assign capacity from the Azure portal <br> 2. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**. If the replication does not stop, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. <br> 3. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
+| Fabric capacity resumed | Mirroring will not be resumed | 1. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**. If the replication has not stopped successfully, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;` <br> 2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
 | Workspace deleted | Mirroring stops automatically | 1. If mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
 
 ## T-SQL queries for troubleshooting
