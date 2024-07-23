@@ -176,6 +176,10 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items/{{ART
             "conf": {
                 "spark.conf1": "value"
             },
+            "environment": {
+                "id": "<environment_id>",
+                "name": "<environment_name>"
+            },
             "defaultLakehouse": {
                 "name": "<lakehouse-name>",
                 "id": "<lakehouse-id>",
