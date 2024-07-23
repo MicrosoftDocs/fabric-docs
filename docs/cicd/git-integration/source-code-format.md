@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 05/12/2024
+ms.date: 07/23/2024
 ms.custom: build-2023
 #customer intent: As a developer, I want to understand how the items in Microsoft Fabric's Git integration tool are structured so that I can use it effectively.
 ---
@@ -24,8 +24,8 @@ The name of the item directory is `<item name>.<item type>` followed by the item
 
 :::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of Git directory containing items.":::
 
-* Once created, Git integration never changes the name of a directory. Even if you change the name of the item, the directory name stays the same.
-* If you manually change the name of an item directory, make sure to take the item's dependencies into account. For example, if you change a semantic model's directory then you should make sure to update the path of the semantic model in the report's dependency file. Keep in mind that dependency locations vary between workload types.
+- Once created, Git integration never changes the name of a directory. Even if you change the name of the item, the directory name stays the same.
+- If you manually change the name of an item directory, make sure to take the item's dependencies into account. For example, if you change a semantic model's directory then you should make sure to update the path of the semantic model in the report's dependency file. Keep in mind that dependency locations vary between workload types.
 
 ## Directory content
 
@@ -46,8 +46,6 @@ The following items are currently supported in Microsoft Fabric:
 
 Notebook folders contain a *.py* file:
 
-:::image type="content" source="./media/source-code-format/notebook-directory.png" alt-text="Screenshot of directory tree showing files in the notebook directory.":::
-
 For instructions on using Git integration with notebooks, see [Notebook source control and deployment](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration).
 
 #### Paginated report files
@@ -63,8 +61,6 @@ Report folders contain the following files:
 
 - definition.pbir
 - report.json
-
-:::image type="content" source="./media/source-code-format/report-directory.png" alt-text="Screenshot of directory tree showing files in the report directory.":::
 
 For more information about report folders and a complete list of their contents, see [Power BI Desktop project report folder](/power-bi/developer/projects/projects-report).
 
