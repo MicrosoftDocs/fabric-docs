@@ -1,6 +1,6 @@
 ---
-title: Real-Time Intelligence tutorial part 4 - Create a Real-Time dashboard
-description: Learn how to create a Real-Time dashboard in Real-Time Intelligence.
+title: Real-Time Intelligence tutorial part 4 - Create a Real-Time Dashboard
+description: Learn how to create a Real-Time Dashboard in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -9,16 +9,16 @@ ms.custom:
   - build-2024
 ms.date: 05/21/2024
 ms.search.form: Get started
-#customer intent: I want to learn how to create a Real-Time dashboard in Real-Time Intelligence.
+#customer intent: I want to learn how to create a Real-Time Dashboard in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 4: Create a Real-Time dashboard
+# Real-Time Intelligence tutorial part 4: Create a Real-Time Dashboard
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Query streaming data in a KQL queryset](tutorial-3-query-data.md).
 
-In this part of the tutorial, you learn how to create a Real-Time dashboard in Real-Time Intelligence. You create a Kusto Query Language (KQL) query, create a Real-Time dashboard, add a new tile to the dashboard, and explore the data visually by adding an aggregation.
+In this part of the tutorial, you learn how to create a Real-Time Dashboard in Real-Time Intelligence. You create a Kusto Query Language (KQL) query, create a Real-Time Dashboard, add a new tile to the dashboard, and explore the data visually by adding an aggregation.
 
-## Create a Real-Time dashboard
+## Create a Real-Time Dashboard
 
 1. In your KQL queryset, copy/paste, and run the following query. This query returns a column chart showing the most recent number of bikes by *BikepoointID*.
 
@@ -52,7 +52,7 @@ The new dashboard, *TutorialDashboard*, opens with the *Recent bikes by Bikepoin
 1. On the top menu bar, toggle from **Viewing** mode to **Editing** mode.
 1. Select **New tile**
 
-    :::image type="content" source="media/tutorial/new-tile.png" alt-text="Screenshot of Real-Time dashboard in editing mode with new tile selected.":::
+    :::image type="content" source="media/tutorial/new-tile.png" alt-text="Screenshot of Real-Time Dashboard in editing mode with new tile selected.":::
 
 1. In the query editor, enter the following query:
 
