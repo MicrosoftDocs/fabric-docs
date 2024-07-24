@@ -63,15 +63,6 @@ For troubleshooting, see:
     - Alter primary key  
     - Truncate table
 - When there is DDL change, a complete data snapshot is restarted for the changed table, and data is reseeded.
-- Source tables with the following collations are currently not supported for Mirroring:
-  - `Latin1_General_BIN2`
-  - `Thai100CaseInsensitiveAccentInsensitiveKanaSensitive`
-  - `Thai100CaseInsensitiveAccentSensitiveSupplementaryCharacters`
-  - `Thai100CaseSensitiveAccentInsensitiveKanaSensitive`
-  - `Thai100CaseSensitiveAccentInsensitiveKanaSensitiveWidthSensitiveSupplementaryCharacters`
-  - `Thai100CaseSensitiveAccentSensitiveKanaSensitive`
-  - `Thai100CaseSensitiveAccentSensitiveSupplementaryCharacters`
-  - `ThaiCaseSensitiveAccentInsensitiveWidthSensitive`
 
 ## Column level
 
