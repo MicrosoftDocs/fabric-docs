@@ -145,9 +145,9 @@ In [!INCLUDE [product-name](../includes/product-name.md)], a [!INCLUDE [fabric-d
 
 We recommend adding retries in your applications/ETL jobs to build resiliency. For more information, refer to the following docs:
 - [Retry pattern - Azure Architecture Center](/azure/architecture/patterns/retry)
-- [Working with transient errors - Azur SQL Database](/azure/azure-sql/database/troubleshoot-common-connectivity-issues?view=azuresql)
-- [Step 4: Connect resiliently to SQL with ADO.NET - ADO.NET Provider for SQL Server](/sql/connect/ado-net/step-4-connect-resiliently-sql-ado-net?view=sql-server-ver16)
-- [Step 4: Connect resiliently to SQL with PHP - PHP drivers for SQL Server ](/sql/connect/php/step-4-connect-resiliently-to-sql-with-php?view=sql-server-ver16)
+- [Working with transient errors - Azur SQL Database](/azure/azure-sql/database/troubleshoot-common-connectivity-issues?view=fabric&preserve-view=true)
+- [Step 4: Connect resiliently to SQL with ADO.NET - ADO.NET Provider for SQL Server](/sql/connect/ado-net/step-4-connect-resiliently-sql-ado-net?view=fabric&preserve-view=true)
+- [Step 4: Connect resiliently to SQL with PHP - PHP drivers for SQL Server ](/sql/connect/php/step-4-connect-resiliently-to-sql-with-php?view=fabric&preserve-view=true)
 
 ## Considerations and limitations
 
