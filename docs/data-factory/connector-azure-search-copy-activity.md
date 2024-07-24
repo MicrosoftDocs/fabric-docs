@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure AI Search.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/24/2024
+ms.date: 07/24/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -74,8 +74,8 @@ The following tables contain more information about the copy activity in Azure A
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the destination data store.|\< your Azure AI Search connection >|Yes|connection|
 |**Index name**|The name of the search index. The service does not create the index. The index must exist in Azure AI Search.| \< your search index name > |Yes |indexName|
-|**Index action**|Specify whether to merge or replace when a document already exists in the index. <br>Allowed values are: **Merge** (default), and **Upload**.|• Merge<br>• Upload|Yes|indexAction:<br>• merge<br>• upload |
-|**Write batch size**|Data is uploaded into the search index when the buffer size reaches the specified write batch size.|Integer 1 to 1,000<br> Default is 1000|Yes|writeBatchSize|
+|**Index action**|Specify whether to merge or replace when a document already exists in the index. <br>Allowed values are: **Merge** (default), and **Upload**.|• Merge<br>• Upload|No|indexAction:<br>• merge<br>• upload |
+|**Write batch size**|Data is uploaded into the search index when the buffer size reaches the specified write batch size.|Integer 1 to 1,000<br> Default is 1000|No|writeBatchSize|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run.|\<upper limit of concurrent connections><br>(integer)|No |maxConcurrentConnections|
 
 ## Related content
