@@ -86,7 +86,7 @@ Microsoft [!INCLUDE [product-name](../includes/product-name.md)] also supports c
 
 When establishing connectivity via JDBC, check for the following dependencies:
 
-1. Add artifacts, choose **Add Artifact** and add the following four dependencies in the window like this, then select **Download/Update** to load all dependencies.
+1. Add artifacts. Choose **Add Artifact** and add the following four dependencies, then select **Download/Update** to load all dependencies. For example:
 
     :::image type="content" source="media/connectivity/download-update.png" alt-text="Screenshot showing where to select Download/Update.":::
 
@@ -145,7 +145,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], a [!INCLUDE [fabric-d
 
 We recommend adding retries in your applications/ETL jobs to build resiliency. For more information, refer to the following docs:
 - [Retry pattern - Azure Architecture Center](/azure/architecture/patterns/retry)
-- [Working with transient errors - Azur SQL Database](/azure/azure-sql/database/troubleshoot-common-connectivity-issues?view=fabric&preserve-view=true)
+- [Working with transient errors - Azure SQL Database](/azure/azure-sql/database/troubleshoot-common-connectivity-issues?view=fabric&preserve-view=true)
 - [Step 4: Connect resiliently to SQL with ADO.NET - ADO.NET Provider for SQL Server](/sql/connect/ado-net/step-4-connect-resiliently-sql-ado-net?view=fabric&preserve-view=true)
 - [Step 4: Connect resiliently to SQL with PHP - PHP drivers for SQL Server ](/sql/connect/php/step-4-connect-resiliently-to-sql-with-php?view=fabric&preserve-view=true)
 
@@ -153,8 +153,8 @@ We recommend adding retries in your applications/ETL jobs to build resiliency. F
 
 - SQL Authentication is not supported.
 - Multiple Active Result Sets (MARS) is unsupported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
-- If you receive this error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This issue can be caused if the workspace has too many warehouses/SQL analytics endpoints, if the user is part of too many Entra groups, or a combination of the two. We recommend having 40 or fewer warehouses and SQL analytics endpoint per workspace to prevent this error. If the issue persists, please contact support.
-- If you receive error code 6005 with the message "Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to the connection being momentariy lost due to a system deployment/reconfiguration. To resolve this issue, sign in again and retry. Please refer to the [Best Practices](/connectivity#best-practices) section in this documentation to learn how to build resiliency and retries in your application. 
+- If you receive this error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This issue can be caused if the workspace has too many warehouses/SQL analytics endpoints, if the user is part of too many Entra groups, or a combination of the two. We recommend having 40 or fewer warehouses and SQL analytics endpoint per workspace to prevent this error. If the issue persists, contact support.
+- If you receive error code 6005 with the message "Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to temporary connection loss, likely because of a system deployment/reconfiguration. To resolve this issue, sign in again and retry. To learn how to build resiliency and retries in your application, see [Best Practices](#best-practices).
 - Linked server connections from SQL Server are not supported.
 
 ## Related content
