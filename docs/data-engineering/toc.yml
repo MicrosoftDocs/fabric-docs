@@ -79,6 +79,8 @@ items:
         href: runtime-1-2.md
       - name: Runtime 1.1 (Spark 3.3)
         href: runtime-1-1.md
+  - name: Native Execution Engine
+    href: native-execution-engine-overview.md
   - name: Spark compute
     items:
     - name: Overview
@@ -89,8 +91,6 @@ items:
       href: create-custom-spark-pools.md
     - name: Billing and utilization
       href: billing-capacity-management-for-spark.md
-    - name: Native Execution Engine
-      href: native-execution-engine-overview.md
     - name: High Concurrency mode
       href: high-concurrency-overview.md
     - name: Autotune Spark configuration
