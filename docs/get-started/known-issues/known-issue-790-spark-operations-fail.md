@@ -4,7 +4,7 @@ description: A known issue is posted where Spark operations fail.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/19/2024
+ms.date: 07/24/2024
 ms.custom: known-issue-790
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-790
 
 You might experience intermittent errors with notebook execution and Spark operations. The errors prevent you from starting notebooks or Spark sessions. In addition, you might notice other degradations in service availability.
 
-**Status:** Open
+**Status:** Fixed: July 24, 2024
 
 **Product Experience:** Data Engineering
 

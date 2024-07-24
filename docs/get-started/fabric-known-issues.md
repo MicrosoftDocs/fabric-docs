@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 07/19/2024
+ms.date: 07/24/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,8 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
-|  790  | Power BI | [Spark operations fail](known-issues/known-issue-790-spark-operations-fail.md) | July 19, 2024 |
-|  784  | Power BI | [Data Activator alert created from visual with no dimensions doesn't work](known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md) | July 18, 2024 |
+|  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 |
+|  785  | Power BI | [Add data to a report when scrollbar is present doesn't work](known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md) | July 24, 2024 |
+|  784  | Data Activator | [Data Activator alert created from visual with no dimensions doesn't work](known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md) | July 18, 2024 |
 |  782  | Data Engineering | [Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse](known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md) | July 18, 2024 |
 |  780  | Power BI | [Cognitive Services ScoreSentiment function doesn't work in dataflows](known-issues/known-issue-780-cognitive-services-score-sentiment-function-not-work-dataflows.md) | July 18, 2024 |
 |  778  | Power BI | [Direct Lake semantic model table changes don't work](known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md) | July 16, 2024 |
@@ -47,7 +48,6 @@ Select the **Title** to view more information about that specific known issue.
 |  726  | Data Factory | [Pipeline using XML format copy gets stuck](known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 |
 |  723  | Data Warehouse | [Azure SQL Database change data doesn't propagate to mirror](known-issues/known-issue-723-sql-azure-database-change-data-not-propagate-mirror.md) | May 24, 2024 |
 |  728  | Data Engineering | [Environment doesn't work when runtime version is changed to Runtime 1.1](known-issues/known-issue-728-environment-not-work-runtime-version-changed-1-1.md) | May 23, 2024 |
-|  724  | OneLake | [Shortcuts to a firewall-enabled ADLS stop working if lakehouse is shared](known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md) | May 23, 2024 |
 |  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
 |  722  | Data Warehouse | [Delta tables don't appear in SQL Analytics Endpoint Object Explorer](known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md) | May 16, 2024 |
 |  718  | OneLake | [OneLake under-reports transactions in the Other category](known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 |
@@ -83,6 +83,8 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  790  | Data Engineering | [Spark operations fail](known-issues/known-issue-790-spark-operations-fail.md) | July 19, 2024 | Fixed: July 24, 2024 |
+|  724  | OneLake | [Shortcuts to a firewall-enabled ADLS stop working if lakehouse is shared](known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md) | May 23, 2024 | Fixed: July 24, 2024 |
 |  762  | Power BI | [Python and R visuals don't work in Fabric capacity](known-issues/known-issue-762-python-r-visuals-not-work-capacity.md) | June 26, 2024 | Fixed: July 18, 2024 |
 |  743  | Power BI | [Semantic models in Desktop sometimes fail in March 2024 and later versions](known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md) | May 30, 2024 | Fixed: July 18, 2024 |
 |  701  | OneLake | [Shortcut data inaccessible if data is in a paused capacity](known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md) | April 25, 2024 | Fixed: July 18, 2024 |
@@ -93,12 +95,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  693  | Power BI | [Semantic model export to OneLake fails for calculated columns in error state](known-issues/known-issue-693-semantic-model-export-onelake-fails-calculated-columns.md) | April 30, 2024 | Fixed: June 11, 2024 |
 |  689  | Administration & Management | [Copilot and Azure OpenAI service capacity setting delegation postponed](known-issues/known-issue-689-copilot-service-capacity-setting-delegation-postponed.md) | April 25, 2024 | Fixed: June 11, 2024 |
 |  664  | Data Factory | [Creating or opening a Dataflow Gen2 dataflow shows endless spinner](known-issues/known-issue-664-creating-opening-dataflow-gen2-shows-endless-spinner.md) | April 1, 2024 | Fixed: June 11, 2024 |
-|  742  | Power BI | [Virtual network data gateway service interruption](known-issues/known-issue-742-virtual-network-data-gateway-service-interruption.md) | May 28, 2024 | Fixed: June 6, 2024 |
-|  663  | Data Factory | [Creating or opening a Dataflow Gen2 dataflow fails if capacity is inactive](known-issues/known-issue-663-creating-opening-dataflow-gen2-fails-capacity-inactive.md) | April 1, 2024 |  Fixed: June 6, 2024 |
-|  602  | Power BI | [Dataflow Gen1 refresh fails in premium workspaces connecting to Azure Cosmos DB](known-issues/known-issue-602-dataflow-gen1-premium-workspaces-azure-cosmos-db.md) | February 27, 2024 | Fixed: June 6, 2024 |
-|  530  | Administration & Management | [Creating or updating Fabric items is blocked](known-issues/known-issue-530-creating-updating-fabric-items-blocked.md)  | October 23, 2023 |  Fixed: June 6, 2024 |
-|  526  | Power BI | [Dataflow REST API returns more data sources and gateways than expected](known-issues/known-issue-526-dataflow-rest-api-returns-more-data-sources-gateways.md)    | October 18, 2023 |  Fixed: June 6, 2024 |
-|  461  | Power BI | [A scheduled refresh of a semantic model intermittently hangs when connected to a dataflow](known-issues/known-issue-461-scheduled-refresh-dataset-hangs.md)    | July 27, 2023  | Fixed: June 6, 2024 |
 
 ## Related content
 
