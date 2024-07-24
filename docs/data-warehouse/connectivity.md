@@ -78,7 +78,7 @@ We support connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or 
 
 ## Connect using ODBC
 
-Microsoft [!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Microsoft Entra ID (formerly Azure Active Directory) authentication. Only ODBC 18 is supported.
+Microsoft [!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Microsoft Entra ID (formerly Azure Active Directory) authentication. Only ODBC 18 or higher versions are supported.
 
 ## Connect using JDBC
 
