@@ -4,7 +4,7 @@ description: Follow steps to connect SSMS to data warehousing in your Microsoft 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, jacinda-eng
-ms.date: 07/03/2024
+ms.date: 07/24/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
