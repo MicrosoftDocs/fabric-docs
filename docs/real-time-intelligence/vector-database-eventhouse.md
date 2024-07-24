@@ -20,15 +20,16 @@ Specifically, in this tutorial you will:
 >
 > * Create an embedding for the natural language query using the Open AI model.
 > * Obtain the embedding vector for the search term from Open AI.
-> * Use the series_cosine_similarity KQL function to calculate the similarities between the query embedding vector and those of the wiki pages.
+> * Use the [series_cosine_similarity KQL function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) to calculate the similarities between the query embedding vector and those of the wiki pages.
 > * Select rows of the highest similarity to get the wiki pages that are most relevant to your search query.
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
-* Azure OpenAI credentials or OpenAI API key.
+* Azure OpenAI credentials or OpenAI API key. TODO: Choose one
 * Download the sample notebooks from the GitHub repository
+* Entra ID Application ID and Application Key TODO: add section for this
 
 ## Query the similarity
 

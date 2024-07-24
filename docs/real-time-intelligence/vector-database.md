@@ -10,23 +10,34 @@ ms.search.form: Eventhouse
 ---
 # Vector databases
 
-Vector databases store and manage data in the form of vectors that are numerical arrays of data points. Vector databases allow manipulating and analyzing set of vectors at scale using vector algebra and other advanced mathematical techniques.
+A vector database stores and manages data in the form of vectors, which are numerical arrays of data points.
 
-While traditional databases aren't well-suited for handling the high-dimensional data that is becoming increasingly common in data analytics, vector databases are designed to handle high-dimensional data, such as text, images, and audio, by representing them as vectors. The use of vectors allows for more complex queries and analyses, as vectors can be compared and analyzed using advanced techniques such as vector similarity search, quantization and clustering. 
+The use of vectors allows for complex queries and analyses, because vectors can be compared and analyzed using advanced techniques such as vector similarity search, quantization and clustering.
+While traditional databases aren't well-suited for handling the high-dimensional data that is becoming increasingly common in data analytics, vector databases are designed to handle high-dimensional data, such as text, images, and audio, by representing them as vectors. Vector databases are useful for tasks such as machine learning, natural language processing, and image recognition, where the goal is to identify patterns or similarities in large datasets.
 
-This article explains vector databases and how you can use an [Eventhouse](eventhouse.md) as a vector database in Real-Time Intelligence.
+This article gives some background about vector databases and explains conceptually how you can use an [Eventhouse](eventhouse.md) as a vector database in Real-Time Intelligence in Microsoft Fabric. For a practical example, see [Tutorial: Use an Eventhouse as a vector database](vector-database-eventhouse.md).
 
-## Vector similarity
+## Key concepts
 
-Vector similarity is a measure of how different (or similar) two or more vectors are. Vector similarity search is a technique used to find similar vectors in a dataset. Vectors are compared using a distance metric, such as Euclidean distance or cosine similarity. The closer two vectors are, the more similar they are. 
+The following key concepts are used in vector databases:
 
-## Embeddings
+### Vector similarity
 
-Embeddings are a common way of representing data in a vector format for use in vector databases. An embedding is a mathematical representation of a piece of data, such as a word, text document, or an image, that is designed to capture its semantic meaning. Embeddings are created using algorithms that analyze the data and generate a set of numerical values that represent its key features. For example, an embedding for a word might represent its meaning, its context, and its relationship to other words. The process of creating embeddings is straightforward, they can be created using standard python packages (for example, spaCy, sent2vec, Gensim), but Large Language Models (LLM) generate highest quality embeddings for semantic text search. For example, you can send text to an embedding model in [Azure Open AI](/azure/ai-services/openai/how-to/embeddings), and it generates a vector representation which can be stored for analysis.
+Vector similarity is a measure of how different (or similar) two or more vectors are. Vector similarity search is a technique used to find similar vectors in a dataset. Vectors are compared using a distance metric, such as [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) or [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity). The closer two vectors are, the more similar they are.
 
-## When to use vector databases
+### Embeddings
 
-Vector databases useful for tasks such as machine learning, natural language processing, and image recognition, where the goal is to identify patterns or similarities in large datasets.
+Embeddings are a common way of representing data in a vector format for use in vector databases. An embedding is a mathematical representation of a piece of data, such as a word, text document, or an image, that is designed to capture its semantic meaning. Embeddings are created using algorithms that analyze the data and generate a set of numerical values that represent its key features. For example, an embedding for a word might represent its meaning, its context, and its relationship to other words. The process of creating embeddings is straightforward. While they can be created using standard python packages (for example, spaCy, sent2vec, Gensim), Large Language Models (LLM) generate highest quality embeddings for semantic text search. For example, you can send text to an embedding model in [Azure Open AI](/azure/ai-services/openai/how-to/embeddings), and it generates a vector representation which can be stored for analysis. For more information, see [Understand embeddings in Azure OpenAI Service](/azure/ai-services/openai/concepts/understand-embeddings).
+
+## General workflow
+
+:::image type="content" source="media/vector-database/vector-schematic.png" alt-text="Schematic of how to embed, store, and query text stored as vectors.":::
+
+The general workflow for using a vector database is as follows:
+
+1. **Embed data**: Convert data into vector format using an embedding model. For example, you can embed text data using an Open AI model.
+1. **Store vectors**: Store the embedded vectors in a vector database. You can send the embedded data to an Eventhouse to store and manage the vectors.
+1. **Query vectors**: Use vector similarity search to find similar vectors in the database. 
 
 ## Eventhouse as a Vector Database
 
