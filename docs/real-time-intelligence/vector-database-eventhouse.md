@@ -29,7 +29,7 @@ Specifically, in this tutorial you will:
 * An [eventhouse](create-eventhouse.md) in your workspace
 * Azure OpenAI credentials or OpenAI API key. TODO: Choose one
 * Download the sample notebooks from the GitHub repository
-* Entra ID Application ID and Application Key TODO: add section for this
+
 
 ## Query the similarity
 
