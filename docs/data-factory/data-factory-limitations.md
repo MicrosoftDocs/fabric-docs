@@ -63,7 +63,7 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 - Data destination to Lakehouse:
   - Spaces or special characters aren't supported in column or table names.
   - Duration and binary columns aren't supported while authoring Dataflow Gen2 dataflows.
-- You need to have at least version **3000.210.14** or a gateway that is currently supported[(learn more)](/data-integration/gateway/service-gateway-onprem) of the gateway installed to use with Dataflow Gen2.
+- You must have a [currently supported gateway installed](/data-integration/gateway/service-gateway-monthly-updates) to use with Dataflow Gen2. The minimum version that works with Dataflow Gen2 is **3000.210.14**.
 - When using OAuth2 credentials, the gateway currently doesn't support refreshes longer than an hour. These refreshes will fail because the gateway cannot support refreshing tokens automatically when access tokens expire, which happens one hour after the refresh started. If you get the errors "InvalidConnectionCredentials" or "AccessUnauthorized" when accessing cloud data sources using OAuth2 credentials even though the credentials have been updated recently, you may be hitting this error. This limitation for long running refreshes exists for both VNET gateways and on-premises data gateways.
 - The incremental refresh feature isn't available yet in Dataflow Gen2.
 - The Delta Lake specification doesn't support case sensitive column names, so `MyColumn` and `mycolumn`, while supported in Mashup, results in a "duplicate columns" error.
