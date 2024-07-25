@@ -36,8 +36,7 @@ The following properties are supported for Azure AI Search under the **Destinati
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
-- **Connection**:  Select an Azure AI Search connection from the connection list. If the connection doesn't exist, then create a new Azure AI Search connection by selecting **New**.
+- **Connection**: Select an Azure AI Search database connection from the connection list. If no connection exists, then create a new Azure AI Search connection by selecting **More** at the bottom of the connection list.
 - **Index name**: Select the name of the search index. The service does not create the index. The index must exist in Azure AI Search.
 
 Under **Advanced**, you can specify the following fields:
