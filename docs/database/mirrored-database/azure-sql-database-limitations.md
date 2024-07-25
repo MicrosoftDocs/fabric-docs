@@ -1,5 +1,5 @@
 ---
-title: "Limitations for Fabric mirrored databases from Azure SQL Database (Preview)"
+title: "Limitations and behaviors for Fabric mirrored databases from Azure SQL Database (Preview)"
 description: A detailed list of limitations for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -10,7 +10,7 @@ ms.custom:
   - references_regions
   - build-2024
 ---
-# Limitations in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)
+# Limitations and behaviors in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)
 
 Current limitations in the [Microsoft Fabric mirrored databases](overview.md) from Azure SQL Database are listed in this page. This page is subject to change.
 
@@ -23,13 +23,16 @@ For troubleshooting, see:
 
 - Fabric Mirroring for Azure SQL Database is only supported on a writable primary database.
 - Azure SQL Database cannot be mirrored if the database has: enabled Change Data Capture (CDC), Azure Synapse Link for SQL, or the database is already mirrored in another Fabric workspace.
-- Active transactions continue to hold the transaction log truncation until the transaction commits and the mirrored Azure SQL Database catches up, or transaction aborts. Long-running transactions might result in the transaction log filling up more than usual. The source database transaction log should be monitored so that the transaction log does not fill. For more information, see [Transaction log grows due to long-running transactions and CDC - SQL Server & Azure SQL](/troubleshoot/sql/database-engine/replication/monitor-long-running-transactions-and-log-growth).
-- Each user workload varies. During initial snapshot, there might be more resource usage on the source database, for both CPU and IOPS (input/output operations per second, to read the pages). Table updates/delete operations can lead to increased log generation. Learn more on how to [monitor resources for your Azure SQL Database](/azure/azure-sql/database/monitor-tune-overview?view=azuresql-db&preserve-view=true#azure-sql-database-and-azure-sql-managed-instance-resource-monitoring).
-- The replicator engine monitors each table for changes independently. If there are no updates in a source table, the replicator engine starts to back off with an exponentially increasing duration for that table, up to an hour. The same can occur if there is a transient error, preventing data refresh. The replicator engine will automatically resume regular polling after updated data is detected.
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently cannot be replicated.
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
+ 
+## Active transactions, workloads and replicator engine behaviors
 
+- Active transactions continue to hold the transaction log truncation until the transaction commits and the mirrored Azure SQL Database catches up, or transaction aborts. Long-running transactions might result in the transaction log filling up more than usual. The source database transaction log should be monitored so that the transaction log does not fill. For more information, see [Transaction log grows due to long-running transactions and CDC - SQL Server & Azure SQL](/troubleshoot/sql/database-engine/replication/monitor-long-running-transactions-and-log-growth).
+- Each user workload varies. During initial snapshot, there might be more resource usage on the source database, for both CPU and IOPS (input/output operations per second, to read the pages). Table updates/delete operations can lead to increased log generation. Learn more on how to [monitor resources for your Azure SQL Database](/azure/azure-sql/database/monitor-tune-overview?view=azuresql-db&preserve-view=true#azure-sql-database-and-azure-sql-managed-instance-resource-monitoring).
+- The replicator engine monitors each table for changes independently. If there are no updates in a source table, the replicator engine starts to back off with an exponentially increasing duration for that table, up to an hour. The same can occur if there is a transient error, preventing data refresh. The replicator engine will automatically resume regular polling after updated data is detected.
+  
 ## Permissions in the source database
 
 - [Row-level security](/sql/relational-databases/security/row-level-security) is not currently supported for Azure SQL Database configured for mirroring to Fabric OneLake.  <!--    - Row-level security settings are not currently propagated and reflected from the source SQL database into Fabric.   -->
