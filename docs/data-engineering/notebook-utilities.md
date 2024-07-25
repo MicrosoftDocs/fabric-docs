@@ -622,7 +622,7 @@ notebookutils.fs.unmount("/test")
 
 - The current mount is a job level configuration; we recommend you use the *mounts* API to check if a mount point exists or not available.
 
-- The unmount mechanism is not automatic applied. When the application run finishes, to unmount the mount point and release the disk space, you need to explicitly call an unmount API in your code. Otherwise, the mount point will still exist in the node after the application run finishes.
+- The unmount mechanism is not automatically applied. When the application run finishes, to unmount the mount point and release the disk space, you need to explicitly call an unmount API in your code. Otherwise, the mount point will still exist in the node after the application run finishes.
 
 - Mounting an ADLS Gen1 storage account is not supported.
 
@@ -670,7 +670,7 @@ To utilize these methods effectively, consider the following usage examples:
 artifact = notebookutils.lakehouse.create("artifact_name", "Description of the artifact", "optional_workspace_id")
 ```
 
-#### getting a Lakehouse
+#### Getting a Lakehouse
 ```python
 artifact = notebookutils.lakehouse.get("artifact_name", "optional_workspace_id")
 ```
