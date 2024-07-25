@@ -70,7 +70,6 @@ The following tables contain more information about the copy activity in Azure A
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the destination data store.|\< your Azure AI Search connection >|Yes|connection|
 |**Index name**|The name of the search index. The service does not create the index. The index must exist in Azure AI Search.| \< your search index name > |Yes |indexName|
 |**Index action**|Specify whether to merge or replace when a document already exists in the index. <br>Allowed values are: **Merge** (default), and **Upload**.|• Merge<br>• Upload|No|indexAction:<br>• merge<br>• upload |
