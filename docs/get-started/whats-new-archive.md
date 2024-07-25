@@ -4,7 +4,7 @@ description: An archive of new feature announcements and documentation improveme
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 07/25/2024
+ms.date: 07/22/2024
 ms.topic: whats-new
 ms.custom:
   - ignite-2023
