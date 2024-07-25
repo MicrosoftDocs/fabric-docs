@@ -14,7 +14,7 @@ Managed private endpoints are feature that allows secure and private access to d
 
 ## What are Managed Private Endpoints?
 
-* Managed private endpoints are connections that workspace admins can create to access data sources that are behind a firewall or that are blocked from accessing from the public internet.
+* Managed private endpoints are connections that workspace admins can create to access data sources that are behind a firewall or that are blocked from public internet access.
 
 * Managed private endpoints allow Fabric Spark workloads to securely access data sources without exposing them to the public network or requiring complex network configurations.
 
