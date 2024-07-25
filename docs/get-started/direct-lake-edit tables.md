@@ -8,10 +8,10 @@ ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.custom:
 ms.topic: concept-article
-ms.date: 07/025/2024
+ms.date: 07/25/2024
 LocalizationGroup: Admin
 ---
-# Direct Lake
+# Edit tables for Direct Lake semantic models
 
 Semantic models in Direct Lake mode’s tables come from Microsoft Fabric and OneLake data. Instead of the **transform data** experience of Power BI import and DirectQuery, Direct Lake mode uses the **Edit tables** experience, allowing you to decide which tables you want the semantic model in Direct Lake mode to use.
 
@@ -34,13 +34,13 @@ The areas in the Edit tables dialog are the following:
     * Schema name
         * Object type (table or view)
             * Table or view name
-* **Check boxes** allow you to to select or unselect tables or views to use in the semantic model.
+* **Check boxes** allow you to select or unselect tables or views to use in the semantic model.
 * **Confirm or Cancel** button let you decide whether to make the change to the semantic model.
 
 
 In the semantic model, tables and columns can be renamed to support reporting expectations. Edit tables still show the data source table names, and schema sync doesn't impact the semantic model renames. 
 
-In the Lakehouse, tables and views can also be renamed. If the upstream data source renames a table or column after the table was added to the semantic model, the semantic model schema sync will still be looking for the table using the previous name, so the table will be removed from the model on schema sync. The table with the new name will show in the **Edit tables** dialog as unchecked, and will need to be explicitly checked again and re-added to the semantic model. Measures can be moved to the new table, but relationships and column property updates need to be reapplied to the table. 
+In the Lakehouse, tables and views can also be renamed. If the upstream data source renames a table or column after the table was added to the semantic model, the semantic model schema sync will still be looking for the table using the previous name, so the table will be removed from the model on schema sync. The table with the new name will show in the **Edit tables** dialog as unchecked, and must be explicitly checked again and added again to the semantic model. Measures can be moved to the new table, but relationships and column property updates need to be reapplied to the table. 
 
 ## Entry points
 
@@ -62,14 +62,14 @@ You can perform many actions that impact the tables in the semantic model:
 * Selecting the **Cancel** button returns to editing the model without applying any updates.
 * **Selecting** tables or views previously unselected adds the selected items to the semantic model.
 * **Unselecting** tables or views previously selected removes them from the semantic model.
-* **Greyed out selected tables** or views have measures in them, and they cannot be removed without first moving the measures to a different table or deleting them from the model.
+* **Greyed out selected tables** or views have measures in them, and they can't be removed without first moving the measures to a different table or deleting them from the model.
 
 ### Creating a new semantic model from Lakehouse and Warehouse
 
-When creating a semantic model you must specify two properties:
+When creating a semantic model, you must specify two properties:
 
 * **Direct Lake semantic model:** The name of the semantic model in the workspace, which can be changed later. If the semantic model with the same name already exists in the workspace, a number is automatically appended to the end of the model name.
-* **Workspace:** The workspace where the semantic model is saved. By default the workspace you are currently working in is selected, but you can change it to another Fabric workspace.
+* **Workspace:** The workspace where the semantic model is saved. By default the workspace you're currently working in is selected, but you can change it to another Fabric workspace.
 
 The following image shows the **New semantic model** dialog.
 
