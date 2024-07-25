@@ -39,6 +39,8 @@ items:
     href: fabric-data-plane.md
 - name: Tutorials
   items:
+  - name: The workload manifest
+    href: backend-manifest.md
   - name: Add and manage more workloads
     href: more-workloads-add.md
   - name: Upload and manage a workload
