@@ -6,7 +6,7 @@ ms.author: sngun
 ms.reviewer: v-myerspeter, arunsethia
 ms.topic: how-to
 ms.custom: fabric-cat
-ms.date: 10/30/2023
+ms.date: 07/25/2024
 ---
 
 # Format code in Microsoft Fabric notebooks
@@ -64,14 +64,14 @@ Either use the ```%load_ext``` magic command.
 
 ```python
 # Load the jupyter-black extension
-%load_ext jupyter-black
+%load_ext jupyter_black
 ```
 
 Or, use the load extension by using the programming API.
 
 ```python
-import jupyter-black
-jupyter-black.load()
+import jupyter_black
+jupyter_black.load()
 ```
 
 > [!TIP]
