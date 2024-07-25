@@ -39,7 +39,7 @@ Follow these steps to change the default capacity region when you're creating a 
 
 4. From the **Region** dropdown menu, select the region you want to use for this capacity.
 
-After you create a capacity, it remains in that region, and any workspaces created under it will have their content stored in that region. You can migrate workspaces from one region to another through the dropdown on the workspace settings screen.
+After you create a capacity, it remains in that region, and any workspaces created under it will have their content stored in that region. You can migrate workspaces from one capacity to another through the dropdown on the workspace settings screen.
 
 ![Screenshot showing the edit workspace settings screen to change the currently selected region.](media/service-admin-premium-multi-geo/power-bi-multi-geo-edit-workspace.png)
 
