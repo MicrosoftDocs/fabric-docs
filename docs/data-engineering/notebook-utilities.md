@@ -10,8 +10,8 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.search.form: Microsoft Spark utilities
-ms.date: 05/02/2024
+ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
+ms.date: 07/25/2024
 ---
 
 # NotebookUtils (former MSSparkUtils) for Fabric
@@ -62,7 +62,7 @@ NotebookUtils works with the file system in the same way as Spark APIs. Take *no
 
 | **Usage** | **Relative path from HDFS root** | **Absolute path for ABFS file system** |**Absolute path for local file system in driver node** |
 |---|---|---|---|
-| Nondefault lakehouse | Not supported | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
+| Non-default lakehouse | Not supported | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
 | Default lakehouse | Directory under “Files” or “Tables”: *notebookutils.fs.mkdirs("Files/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* |*notebookutils.fs.mkdirs("file:/<new_dir>")*|
 
 ### List files
@@ -542,7 +542,7 @@ notebookutils.fs.mount(
 ```
 
 > [!NOTE]
-> For security reasons, we recommended you don't store credentials in code. To further protect your credentials, we will redact your secret in notebook output. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
+> For security purposes, it is advised to avoid embedding credentials directly in code. To further safeguard your credentials, any secrets displayed in notebook outputs will be redacted. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
 
 ### How to mount a lakehouse
 
@@ -735,4 +735,6 @@ When using runtime version above 1.2 and run ``` notebookutils.help() ```, the l
 
 ## Related content
 
-- [Library management](library-management.md)
+- [Spark utilities](microsoft-spark-utilities.md)
+- [Develop and run notebooks](author-execute-notebook.md)
+- [Use Notebook public APIs](notebook-public-api.md)
