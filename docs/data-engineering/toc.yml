@@ -45,6 +45,8 @@ items:
     href: navigate-lakehouse-explorer.md
   - name: Lakehouse SQL analytics endpoint
     href: lakehouse-sql-analytics-endpoint.md
+  - name: Lakehouse schemas
+    href: lakehouse-schemas.md
   - name: Git and deployment pipelines
     href: lakehouse-git-deployment-pipelines.md
   - name: Lakehouse REST API
@@ -171,8 +173,9 @@ items:
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
     href: author-execute-notebook.md  
-  - name: NotebookUtils (former MSSparkUtils) for Fabric
+  - name: NotebookUtils
     href: notebook-utilities.md
+    displayName: MSSparkUtils
   - name: Run notebooks in High Concurrency mode
     href: configure-high-concurrency-session-notebooks.md
   - name: Notebook visualization
