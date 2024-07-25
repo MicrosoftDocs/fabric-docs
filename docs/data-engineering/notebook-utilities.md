@@ -735,6 +735,6 @@ When using runtime version above 1.2 and run ``` notebookutils.help() ```, the l
 
 ## Related content
 
-- [Spark utilities](microsoft-spark-utilities.md)
-- [Develop and run notebooks](author-execute-notebook.md)
-- [Use Notebook public APIs](notebook-public-api.md)
+- [Microsoft Spark Utilities (MSSparkUtils) for Fabric](microsoft-spark-utilities.md)
+- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
+- [Manage and execute notebooks in Fabric with APIs](notebook-public-api.md)
