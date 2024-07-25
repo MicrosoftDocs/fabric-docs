@@ -102,7 +102,7 @@ items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
   - name: Edit tables for Direct Lake semantic models
-    href: direct-lake-edit-tables.md 
+    href: direct-lake-edit-tables.md
   - name: Create a Lakehouse for Direct Lake
     href: direct-lake-create-lakehouse.md
   - name: Specify a fixed identity
