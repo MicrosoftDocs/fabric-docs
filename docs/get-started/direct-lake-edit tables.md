@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.custom:
 ms.topic: concept-article
-ms.date: 07/25/2024
+ms.date: 07/26/2024
 LocalizationGroup: Admin
 ---
 # Edit tables for Direct Lake semantic models
