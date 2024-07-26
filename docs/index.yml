@@ -166,37 +166,37 @@ conceptualContent:
         # Card
         - title: Prepare data
           links:
-          - url: 
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
             itemType: how-to-guide
-            text: 
-          - url: 
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
             itemType: how-to-guide
-            text: 
-          - url: 
-            itemType: concept
-            text: 
-          - url: 
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
             itemType: how-to-guide
-            text: 
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+            itemType: how-to-guide
+            text: Query data in a KQL queryset
           footerLink:
             url: admin/index.yml
             text: See more
 
         # Card
-        - title: Analyze and train data
+        - title: Query and analyze data
           links:
-          - url: 
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
             itemType: how-to-guide
-            text: 
-          - url: 
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
             itemType: how-to-guide
-            text: 
-          - url: 
-            itemType: concept
-            text: 
-          - url: 
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
             itemType: how-to-guide
-            text: 
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+            itemType: how-to-guide
+            text: Query data in a KQL queryset
           footerLink:
             url: admin/index.yml
             text: See more
