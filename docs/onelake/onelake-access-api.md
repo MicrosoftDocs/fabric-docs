@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 06/04/2024
+ms.date: 07/25/2024
 ---
 
 # Connecting to Microsoft OneLake
@@ -61,6 +61,7 @@ For quick, ad-hoc testing of OneLake using direct API calls, here's a simple exa
   ```powershell
   Connect-AzAccount
   $testToken = Get-AzAccessToken -ResourceTypeName Storage
+  # Retrieved token is of string type which you can validate with the "$testToken.Token.GetTypeCode()" command.
   $testToken.Token | Set-Clipboard
   ```
 

@@ -67,8 +67,8 @@ Use the namespace "workspace.lakehouse.schema.table” to refer to tables in you
 
 ```sql
 SELECT * 
-    FROM hr.hrm.employees as employees 
-    INNER JOIN corporate.company.departments as departments
+    FROM operations.hr.hrm.employees as employees 
+    INNER JOIN global.corporate.company.departments as departments
     ON employees.deptno = departments.deptno;
 ```
 
