@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 07/25/2024
+ms.date: 07/26/2024
 ms.topic: whats-new
 ms.custom:
   - build-2024
@@ -120,6 +120,7 @@ This section summarizes new Microsoft Fabric community opportunities for prospec
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|July 2024|**Fabric Influencers Spotlight**|Introducing the new **Fabric Influencers Spotlight** series of articles to highlight and amplify blog posts, videos, presentations, and other content related to Microsoft Fabric. [Read blogs from Microsoft MVPs and Fabric Super Users from the Fabric community](https://blog.fabric.microsoft.com/blog/fabric-influencers-spotlight-july-2024?ft=All).|
 |June 2024|**Solved Fabric Community posts are now available in the Fabric Help Pane**|You can now [find solved posts from Fabric Community discussions in the Fabric Help Pane](https://blog.fabric.microsoft.com/blog/solved-fabric-community-posts-are-now-available-in-the-fabric-help-pane). |
 |May 2024|**Announcing Microsoft Fabric Community Conference Europe**|Announcing the [Microsoft Fabric Community Conference Europe](https://blog.fabric.microsoft.com/blog/announcing-microsoft-fabric-community-conference-europe) on September 24, 2024. [Register today](https://www.sharepointeurope.com/european-microsoft-fabric-community-conference-tickets/)!|
 |May 2024|**Register for the Microsoft Build: Microsoft Fabric Cloud Skills Challenge**|Starting May 21, 2024, sign up for the [Microsoft Build: Microsoft Fabric Cloud Skills Challenge](/training/challenges?id=094443ef-321d-449c-96ef-2ffe6dcf9489) and prepare for Exam DP-600 and upskill to the Fabric Analytics Engineer Associate certification.|
