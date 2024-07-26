@@ -66,6 +66,8 @@ landingContent:
             url: security.md
           - text: Connectivity
             url: connectivity.md    
+          - text: Microsoft Entra ID authentication
+            url: entra-id-authentication.md
           - text: Workspace roles
             url: workspace-roles.md
           - text: SQL granular permissions

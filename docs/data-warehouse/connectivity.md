@@ -4,7 +4,7 @@ description: Follow steps to connect SSMS to data warehousing in your Microsoft 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, jacinda-eng
-ms.date: 07/24/2024
+ms.date: 07/26/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -29,6 +29,8 @@ In [!INCLUDE [product-name](../includes/product-name.md)], two types of authenti
 
 - Microsoft Entra ID (formerly Azure Active Directory) user principals, or user identities
 - Microsoft Entra ID (formerly Azure Active Directory) service principals
+
+For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
 The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the standard SQL Server port number. The SQL connection string also respects the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] security model for data access. Data can be obtained for all objects to which a user has access.
 
@@ -161,3 +163,4 @@ We recommend adding retries in your applications/ETL jobs to build resiliency. F
 
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
+- [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)
