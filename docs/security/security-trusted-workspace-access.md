@@ -137,15 +137,15 @@ With OneCopy in Fabric, you can access your OneLake shortcuts with trusted acces
 
 * **Spark**: You can use Spark to access data from your OneLake shortcuts. When shortcuts are used in Spark, they appear as folders in OneLake. You just need to reference the folder name to access the data. You can use the OneLake shortcut to storage accounts with trusted workspace access in Spark notebooks.
 
-* **SQL endpoint**: Shortcuts created in the "Tables" section of your lakehouse are also available in the SQL endpoint.  You can open the SQL endpoint and query your data just like any other table.
+* **SQL analytics endpoint**: Shortcuts created in the "Tables" section of your lakehouse are also available in the SQL analytics endpoint.  You can open the SQL analytics endpoint and query your data just like any other table.
 
 * **Pipelines**: Data pipelines can access managed shortcuts to storage accounts with trusted workspace access. Data pipelines can be used to read from or write to storage accounts through OneLake shortcuts.
 
 * **Dataflows v2**: Dataflows Gen2 can be used to access managed shortcuts to storage accounts with trusted workspace access. Dataflows Gen2 can read from or write to storage accounts through OneLake shortcuts.
 
-* **Semantic models and reports**: The default semantic model associated with a Lakehouse SQL endpoint can read managed shortcuts to storage accounts with trusted workspace access. To see the managed tables in the default semantic model, go to the SQL endpoint, select **Reporting**, and choose **Automatically update semantic model**.
+* **Semantic models and reports**: The default semantic model associated with the SQL analytics endpoint of a Lakehouse can read managed shortcuts to storage accounts with trusted workspace access. To see the managed tables in the default semantic model, go to the SQL analytics endpoint item, select **Reporting**, and choose **Automatically update semantic model**.
 
-    You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL endpoint, select **Reporting** and choose **New semantic model**.
+    You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL analytics endpoint, select **Reporting** and choose **New semantic model**.
 
     You can create reports on top of the default semantic models and custom semantic models.
 

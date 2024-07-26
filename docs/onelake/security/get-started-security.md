@@ -58,7 +58,7 @@ Another way to configure permissions is via an item's **Manage permissions** pag
 
 Data access can also be given through the SQL compute engine in Microsoft Fabric. The access granted through SQL only applies to users accessing data through SQL, but you can use this security to give more selective access to certain users. In its current state, SQL supports restricting access to specific tables and schemas, as well as row and column level security.
 
-Users accessing data through SQL may see different results than accessing data directly in OneLake depending on the compute permissions applied. To prevent this, ensure that a user's item permissions are configured to only grant them access to either the SQL Endpoint (using ReadData) or OneLake (using ReadAll or data access roles preview).
+Users accessing data through SQL may see different results than accessing data directly in OneLake depending on the compute permissions applied. To prevent this, ensure that a user's item permissions are configured to only grant them access to either the SQL analytics endpoint (using ReadData) or OneLake (using ReadAll or data access roles preview).
 
 In the following example, a user is given read-only access to a lakehouse through item sharing. The user is granted SELECT permission on a table through the SQL analytics endpoint. When that user tries to read data through the OneLake APIs, they're denied access because they don't have sufficient permissions. The user can successfully read through SQL SELECT statements.
 

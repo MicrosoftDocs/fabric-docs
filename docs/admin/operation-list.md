@@ -451,7 +451,7 @@ The following operations are available in the audit logs.
 | Retrieved status of Power BI gateway cluster | GetGatewayClusterStatus |  |
 | Retrieved status of Power BI gateway cluster datasource | GetGatewayClusterDatasourceStatus |  |
 | Retrieved upstream dataflows from Power BI dataflow | GetDataflowUpstreamDataflowsAsAdmin |  |
-| Retry lakehouse SQL analytics endpoint creation for a Lakehouse | RetryLakehouseSqlEndpointCreation | Retry SQL endpoint creation for a Lakehouse |
+| Retry lakehouse SQL analytics endpoint creation for a Lakehouse | RetryLakehouseSqlEndpointCreation | Retry SQL analytics endpoint creation for a Lakehouse |
 | Rotate Tenant Key | RotateTenantKey |  |
 | Rotated Power BI gateway tenant key | RotateTenantKeyEncryptionKey |  |
 | Run Artifact | RunArtifact |  |

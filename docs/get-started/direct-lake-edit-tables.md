@@ -13,7 +13,7 @@ LocalizationGroup: Admin
 ---
 # Edit tables for Direct Lake semantic models
 
-Semantic models in Direct Lake mode’s tables come from Microsoft Fabric and OneLake data. Instead of the **transform data** experience of Power BI import and DirectQuery, Direct Lake mode uses the **Edit tables** experience, allowing you to decide which tables you want the semantic model in Direct Lake mode to use.
+Semantic models in Direct Lake mode's tables come from Microsoft Fabric and OneLake data. Instead of the **transform data** experience of Power BI import and DirectQuery, Direct Lake mode uses the **Edit tables** experience, allowing you to decide which tables you want the semantic model in Direct Lake mode to use.
 
 ## Use and features of Edit tables
 
@@ -29,7 +29,7 @@ The areas in the Edit tables dialog are the following:
 * **Information** text and **learn more** link to the Direct Lake documentation.
 * **Search** to find the specific table or view from the data source.
 * **Filter** to limit the schema or object type (table or view) that is displayed.
-* **Reload** to sync Lakehouse or warehouse SQL endpoint (requires write permission on the Lakehouse or warehouse).
+* **Reload** to sync the SQL analytics endpoint of a Lakehouse or a warehouse (requires write permission on the Lakehouse or warehouse).
 * **Tree view** organizes the available tables or views:
     * Schema name
         * Object type (table or view)

@@ -133,7 +133,7 @@ To enhance performance of query processing, staging can be used within Dataflows
 
 When staging is enabled on your queries (the default behavior), your data is loaded into the staging location, which is an internal Lakehouse only accessible by dataflows itself.
 
-Using staging locations can enhance performance in some cases in which folding the query to the SQL endpoint is faster than in memory processing.
+Using staging locations can enhance performance in some cases in which folding the query to the SQL analytics endpoint is faster than in memory processing.
 
 When you're loading data into the Lakehouse or other non-warehouse destinations, we by default disable the staging feature to improve performance. When you load data into the data destination, the data is directly written to the data destination without using staging. If you want to use staging for your query, you can enable it again.
 
@@ -157,7 +157,7 @@ If you already have a warehouse as a destination and try to disable staging, a w
 
 In some cases when you have a nullable column, it gets detected by Power Query as non-nullable and when writing to the data destination, the column type is non-nullable. During refresh, the following error occurs:
 
-`E104100 Couldn’t refresh entity because of an issue with the mashup document MashupException.Error: DataFormat.Error: Error in replacing table’s content with new data in a version: #{0}., InnerException: We can’t insert null data into a non-nullable column., Underlying error: We can’t insert null data into a non-nullable column. Details: Reason = DataFormat.Error;Message = We can’t insert null data into a non-nullable column.; Message.Format = we can’t insert null data into a non-nullable column.`
+`E104100 Couldn't refresh entity because of an issue with the mashup document MashupException.Error: DataFormat.Error: Error in replacing table's content with new data in a version: #{0}., InnerException: We can't insert null data into a non-nullable column., Underlying error: We can't insert null data into a non-nullable column. Details: Reason = DataFormat.Error;Message = We can't insert null data into a non-nullable column.; Message.Format = we can't insert null data into a non-nullable column.`
 
 To force nullable columns, you can try the following steps:
 

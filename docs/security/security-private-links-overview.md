@@ -61,9 +61,9 @@ OneLake supports Private Link. You can explore OneLake in the Fabric portal or f
 
 Direct calls using OneLake regional endpoints don't work via private link to Fabric. For more information about connecting to OneLake and regional endpoints, see [How do I connect to OneLake?](../onelake/onelake-access-api.md).
 
-### Warehouse and Lakehouse SQL endpoint
+### Warehouse and Lakehouse SQL analytics endpoint
 
-Accessing Warehouse items and Lakehouse SQL endpoints in the portal is protected by Private Link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio, Azure Data Studio) to connect to Warehouse via Private link.
+Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric portal is protected by Private Link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio, Azure Data Studio) to connect to Warehouse via Private link.
 
 Visual query in Warehouse doesn't work when the **Block Public Internet Access** tenant setting is enabled.
 
@@ -119,7 +119,7 @@ Other Fabric items, such as Eventstream, don't currently support Private Link, a
 
 <!--### Other Fabric items
 
-Other Fabric items, such as KQL Database, and Eventstream, don’t currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+Other Fabric items, such as KQL Database, and Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 -->
 
 ### Microsoft Purview Information Protection
