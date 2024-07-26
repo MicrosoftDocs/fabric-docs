@@ -344,6 +344,10 @@ conceptualContent:
             url: get-started/copilot-fabric-overview.md
             text: See more
 
+
+    - title: Community # < 60 chars (Optional; Remove if not applicable.)
+      summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
+      items:
         # Card
         - title: Learning
           links:
