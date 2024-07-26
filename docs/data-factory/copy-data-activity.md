@@ -193,7 +193,7 @@ See the following table for the description of each setting.
 
 Parameters can be used to control the behavior of a pipeline and its activities. You can use **Add dynamic content** to specify parameters for your copy activity properties. Let's take specifying Lakehouse/Data Warehouse/KQL Database as an example to see how to use it.
 
-1. In your source or destination, after selecting **Workspace** as data store type and specifing **Lakehouse**/**Data Warehouse**/**KQL Database** as workspace data store type, select **Add dynamic content** in the drop-down list of **Lakehouse** or **Data Warehouse** or **KQL Database**.
+1. In your source or destination, after selecting **Workspace** as data store type and specifying **Lakehouse**/**Data Warehouse**/**KQL Database** as workspace data store type, select **Add dynamic content** in the drop-down list of **Lakehouse** or **Data Warehouse** or **KQL Database**.
 1. In the pop-up **Add dynamic content** pane, under **Parameters** tab, select **+**.
 
     :::image type="content" source="./media/copy-data-activity/add-dynamic-content-page.png" alt-text="Screenshot showing the Add dynamic content page.":::
