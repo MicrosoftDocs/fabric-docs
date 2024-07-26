@@ -38,7 +38,7 @@ For more information about supported data sources for managed private endpoints 
   
 | Region         |
 |----------------|
-| West Central US |
+| Singapore |
 | Israel Central |
 | Switzerland West | 
 | Italy North    |
@@ -46,7 +46,7 @@ For more information about supported data sources for managed private endpoints 
 | Mexico Central |
 | Qatar Central  |
 | Spain Central  |
-
+| Brazil South  |
 
 * **Capacity Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported capacity regions results in errors. These unsupported regions include 
   
@@ -63,6 +63,9 @@ For more information about supported data sources for managed private endpoints 
 | Korea South    |
 | Southafrica West |
 | UAE Central    |
+| Brazil South   |
+| Singapore |
+| Central US  |
 
 * **Spark job resilience**: To prevent Spark job failures or errors, migrate workspaces with managed private endpoints to Fabric capacity SKUs of F64 or higher.
 
