@@ -38,7 +38,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 [!INCLUDE [adls-gen2-shortcut](../includes/adls-gen2-shortcut.md)]
 
-1. The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
+7. The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 
