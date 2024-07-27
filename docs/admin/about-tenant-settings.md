@@ -31,7 +31,7 @@ You can identify new settings according to their *new* icon.  
 
 Go to the admin portal and select **Tenant settings**.
 
-1. At the top of the Fabric portal, select the settings (gear).
+1. At the top of the Fabric portal, select the settings (gear) icon.
 
 2. In the side pane that appears, select **Admin portal**.
 
