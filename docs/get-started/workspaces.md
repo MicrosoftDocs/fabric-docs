@@ -10,7 +10,7 @@ ms.custom:
   - ignite-2023
 ms.search.form: product-trident, Manage your workspace
 #customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
-ms.date: 05/13/2024
+ms.date: 07/27/2024
 
 ---
 
@@ -159,7 +159,7 @@ Read more about [[!INCLUDE [product-name](../includes/product-name.md)] auditing
 
 Limitations to be aware of:
 
-- Workspaces can contain a maximum of 1,000 semantic models, or 1,000 reports per semantic model.
+- Workspaces can contain a maximum of 1,000 Fabric and Power BI items.
 - Certain special characters aren't supported in workspace names when using an XMLA endpoint. As a workaround, use URL encoding of special characters, for example, for a forward slash **/**, use **%2F**.
 - A user or a [service principal](/power-bi/enterprise/service-premium-service-principal) can be a member of up to 1,000 workspaces.
 
