@@ -1,29 +1,29 @@
 ---
 title: Tables in data warehousing
 description: Learn about tables in Microsoft Fabric.
-author: KevinConanMSFT
-ms.author: kecona
-ms.reviewer: wiassaf
-ms.date: 05/23/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: kecona
+ms.date: 04/24/2024
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Tables in data warehousing in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This article details key concepts for designing tables in [!INCLUDE [product-name](../includes/product-name.md)].
 
 In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record.
 
-- In [!INCLUDE[fabricdw](includes/fabric-dw.md)], tables are database objects that contain all the transactional data. 
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+- In [!INCLUDE [fabricdw](includes/fabric-dw.md)], tables are database objects that contain all the transactional data.
 
 ## Determine table category
 
-A [star schema](/power-bi/guidance/star-schema) organizes data into fact and dimension tables. Some tables are used for integration or staging data before moving to a fact or dimension table. As you design a table, decide whether the table data belongs in a fact, dimension, or integration table. This decision informs the appropriate table structure.
+A [star schema](dimensional-modeling-overview.md#star-schema-design) organizes data into [fact tables](dimensional-modeling-fact-tables.md) and [dimension tables](dimensional-modeling-dimension-tables.md). Some tables are used for integration or staging data before moving to a fact or dimension table. As you design a table, decide whether the table data belongs in a fact, dimension, or integration table. This decision informs the appropriate table structure.
 
 - **Fact tables** contain quantitative data that are commonly generated in a transactional system, and then loaded into the data warehouse. For example, a retail business generates sales transactions every day, and then loads the data into a data warehouse fact table for analysis.
 
@@ -44,7 +44,7 @@ To show the organization of the tables, you could use `fact`, `dim`, or `int` as
 | Order | Fact | `wwi.FactOrder` |
 
 - Table names are case sensitive. 
-- Table names can't contain `/` or `\`.
+- Table names can't contain `/` or `\` or end with a `.`.
 
 ## Create a table
 
@@ -64,6 +64,9 @@ CREATE TABLE MyTable (col1 int, col2 int );
 ### Schema names
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports the creation of custom schemas. Like in SQL Server, schemas are a good way to group together objects that are used in a similar fashion. The following code creates a [user-defined schema](/sql/t-sql/statements/create-schema-transact-sql?view=fabric&preserve-view=true) called `wwi`.
+
+- Schema names are case sensitive. 
+- Schema names can't contain `/` or `\` or end with a `.`.
 
 ```sql
 CREATE SCHEMA wwi;
@@ -108,8 +111,9 @@ If data is coming from multiple data stores, you can port the data into the data
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports many, but not all, of the table features offered by other databases.
 
-The following list shows some of the table features that aren't currently supported. During preview, this list is subject to change.
+The following list shows some of the table features that aren't currently supported.  
 
+- 1024 maximum columns per table
 - Computed columns
 - Indexed views
 - Partitioned tables
@@ -122,7 +126,10 @@ The following list shows some of the table features that aren't currently suppor
 - Unique indexes
 - User-defined types
 
-## Next steps
+> [!IMPORTANT]
+> There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
+
+## Related content
 
 - [What is data warehousing in [!INCLUDE [product-name](../includes/product-name.md)]?](data-warehousing.md)
 - [What is data engineering in [!INCLUDE [product-name](../includes/product-name.md)]?](../data-engineering/data-engineering-overview.md)

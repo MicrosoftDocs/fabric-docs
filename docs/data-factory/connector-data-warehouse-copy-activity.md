@@ -1,18 +1,19 @@
 ---
-title: How to configure Data Warehouse in copy activity in Data Factory in Microsoft Fabric
+title: Configure Data Warehouse in copy activity in Data Factory in Microsoft Fabric
 description: This article explains how to copy data using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/12/2023
-ms.custom: template-how-to, build-2023
+ms.date: 04/10/2024
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure the Data Warehouse connector for the copy activity in Data Factory in Microsoft Fabric
+# Configure Data Warehouse in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to a Data Warehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 
@@ -95,9 +96,9 @@ Under **Advanced**, you can specify the following fields:
 - **Write batch timeout**: The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).
 - **Disable performance metrics analytics**: The service collects metrics for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.
 
-#### Direct copy by using COPY command
+#### Direct copy
 
-Data Warehouse COPY command directly supports **Azure Blob Storage** and **Azure Data Lake Storage Gen2** as source data stores. If your source data meets the criteria described in this section, use COPY command to copy directly from the source data store to Data Warehouse. 
+The COPY statement is the primary way to ingest data into Warehouse tables. Data Warehouse COPY command directly supports **Azure Blob Storage** and **Azure Data Lake Storage Gen2** as source data stores. If your source data meets the criteria described in this section, use COPY command to copy directly from the source data store to Data Warehouse. 
 
 1. The source data and format contain the following types and authentication methods:
 
@@ -122,9 +123,23 @@ To learn how to ingest data into your Data Warehouse using the COPY command, see
 
 If your source data store and format isn't originally supported by a COPY command, use the Staged copy by using the COPY command feature instead. It automatically converts the data into a COPY command compatible format, then calls a COPY command to load data into Data Warehouse.
 
+#### Staged copy
+
+When your source data is not natively compatible with COPY command, enable data copying via an interim staging storage. In this case, the service automatically converts the data to meet the data format requirements of COPY command. Then it invokes COPY command to load data into Data Warehouse. Finally, it cleans up your temporary data from the storage. 
+
+To use staged copy, go to **Settings** tab and select **Enable staging**. You can choose **Workspace** to use auto-created staging storage within Fabric. For **External**, Azure Blob Storage and Azure Data Lake Storage Gen2 are supported as the external staging storage. You need to create an Azure Blob Storage or Azure Data Lake Storage Gen2 connection first, and then select the connection from the drop-down list to use the staging storage.
+
+Please note that you need to ensure the IP range of the Data Warehouse has been allowed correctly from the staging storage.
+
 ### Mapping
 
-For the **Mapping** tab configuration, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, if you don't apply Data Warehouse with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+
+If you apply Data Warehouse with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+
+For example, the type for *ID* column in source is int, and you can change it to float type when mapping to the destination column.
+
+:::image type="content" source="media/connector-data-warehouse/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
 ### Settings
 
@@ -132,7 +147,7 @@ For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#c
 
 ## Table summary
 
-To following tables contain more information about a copy activity in Data Warehouse.
+The following tables contain more information about a copy activity in Data Warehouse.
 
 ### Source information
 
@@ -164,6 +179,6 @@ To following tables contain more information about a copy activity in Data Wareh
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
 
-## Next steps
+## Related content
 
 - [Data Warehouse connector overview](connector-data-warehouse-overview.md)

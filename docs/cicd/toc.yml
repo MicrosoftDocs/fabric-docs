@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: What is lifecycle management? 
   href: cicd-overview.md
-- name: End to end lifecycle management tutorial
+- name: "Tutorial: End to end lifecycle management"
   href: cicd-tutorial.md
 - name: Deployment pipelines
   items:
@@ -13,7 +13,7 @@ items:
     href: deployment-pipelines/understand-the-deployment-process.md
   - name: Get started with deployment pipelines
     href: deployment-pipelines/get-started-with-deployment-pipelines.md
-  - name: Assigning a workspace
+  - name: Assign a workspace
     href: deployment-pipelines/assign-pipeline.md
   - name: Compare content in different stages
     href: deployment-pipelines/compare-pipeline-content.md  
@@ -23,30 +23,42 @@ items:
     href: deployment-pipelines/deployment-history.md
   - name: Create deployment rules
     href: deployment-pipelines/create-rules.md
-  - name: Automate deployment pipelines
+  - name: Automate deployment pipelines for Power BI items only
     href: deployment-pipelines/pipeline-automation.md
+  - name: Automate deployment pipelines for Fabric
+    href: deployment-pipelines/pipeline-automation-fabric.md
 - name: Git integration
   items:
   - name: Introduction to Git integration
     href: git-integration/intro-to-git-integration.md
-  - name: Get started with git integration
+  - name: Get started with Git integration
     href: git-integration/git-get-started.md
   - name: "Git integration process"
     href: git-integration/git-integration-process.md
-  - name: Manage git branches
+  - name: Manage Git branches
     href: git-integration/manage-branches.md
+  - name: Automate Git integration
+    href: git-integration/git-automation.md
   - name: Handle errors and conflicts
     items:
     - name: Resolve conflicts
       href: git-integration/conflict-resolution.md
     - name: Manually fix a failed update
       href: git-integration/partial-update.md
+    - name: Resolve dependency errors
+      href: git-integration/dependency-errors.md
+    - name: Expired licenses
+      href: git-integration/license-change.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
 - name: Lifecycle management best practices
   href: best-practices-cicd.md
 - name: Frequently asked questions
-  href: faq.md
+  href: faq.yml
 - name: Troubleshooting
   href: troubleshoot-cicd.md
+- name: Partner solutions
+  items:
+  - name: ISV partner ecosystem
+    href: partners/partner-integration.md
 

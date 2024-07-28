@@ -1,21 +1,24 @@
 ---
 title: T-SQL surface area
-description: T-SQL surface area of the SQL Endpoint and Warehouse in Microsoft Fabric.
-author: cynotebo
-ms.author: cynotebo
-ms.reviewer: wiassaf
-ms.date: 07/12/2023
+description: T-SQL surface area of the SQL analytics endpoint and Warehouse in Microsoft Fabric.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: cynotebo
+ms.date: 07/19/2024
 ms.topic: conceptual
-ms.custom: build-2023
-ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
 # T-SQL surface area in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article covers the T-SQL language syntax capabilities of [!INCLUDE [product-name](../includes/product-name.md)], when querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!NOTE]
+> For more information on upcoming feature development for Fabric Synapse Data Warehouse, see the [Synapse Data Warehouse in Microsoft Fabric release plan](/fabric/release-plan/data-warehouse).
 
 ## T-SQL surface area
 
@@ -26,36 +29,39 @@ This article covers the T-SQL language syntax capabilities of [!INCLUDE [product
 
 ### Limitations
 
-At this time, the following list of commands is NOT currently supported. Don't try to use these commands because even though they may appear to succeed, they could cause issues to your warehouse. 
+At this time, the following list of commands is NOT currently supported. Don't try to use these commands. Even though they might appear to succeed, they could cause issues to your warehouse.
 
-- ALTER TABLE ADD/ALTER/DROP COLUMN
-- BULK LOAD
-- CREATE ROLE
-- CREATE SECURITY POLICY - Row Level Security (RLS)
-- CREATE USER
-- GRANT/DENY/REVOKE
+- `ALTER TABLE ADD`/`ALTER`/`DROP COLUMN`
+    - Currently, only the following subset of `ALTER TABLE` operations in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] are supported:
+      - ADD nullable columns of supported column data types.
+      - ADD or DROP PRIMARY KEY, UNIQUE, and FOREIGN_KEY column constraints, but only if the NOT ENFORCED option has been specified. All other ALTER TABLE operations are blocked.
+      - There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
+- `BULK LOAD`
+- `CREATE ROLE`
+- `CREATE USER`
 - Hints
-- Identity Columns
+- IDENTITY Columns
 - Manually created multi-column stats
-- MASK and UNMASK (Dynamic Data Masking)
-- MATERIALIZED VIEWS
-- MERGE
-- OPENROWSET
-- PREDICT
+- Materialized views
+- `MERGE`
+- `OPENROWSET`
+- `PREDICT`
 - Queries targeting system and user tables
 - Recursive queries
 - Result Set Caching
-- Schema and Table names can't contain / or \
-- SELECT - FOR (except JSON)
-- SET ROWCOUNT
-- SET TRANSACTION ISOLATION LEVEL
+- Schema and table names can't contain `/` or `\`
+- `SELECT` - `FOR`
+- `SET ROWCOUNT`
+- `SET TRANSACTION ISOLATION LEVEL`
 - `sp_showspaceused`
-- `sp_rename`
-- Temp Tables
+- Spatial geometry/geography functions
+- Temporary tables
 - Triggers
-- TRUNCATE
+- `TRUNCATE`
 
-## Next steps
+## Related content
 
+- [Query insights in Fabric data warehousing](query-insights.md)
+- [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
 - [Data types in Microsoft Fabric](data-types.md)
 - [Limitations in Microsoft Fabric](limitations.md)

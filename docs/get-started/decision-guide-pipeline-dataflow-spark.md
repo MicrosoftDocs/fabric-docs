@@ -5,15 +5,15 @@ ms.reviewer: sngun
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: quickstart
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 5/12/2023
 ---
 
 # Microsoft Fabric decision guide: copy activity, dataflow, or Spark
 
-Use this reference guide and the example scenarios to help you in deciding whether you need a copy activity, a dataflow, or Spark for your workloads using Microsoft Fabric.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+Use this reference guide and the example scenarios to help you in deciding whether you need a copy activity, a dataflow, or Spark for your Microsoft Fabric workloads.
 
 ## Copy activity, dataflow, and Spark properties
 
@@ -49,7 +49,7 @@ Adam is a data engineer working for a large retail company that uses a lakehouse
 
 Adam decides the best option is to use **Spark** to build the extract and transformation logic. Spark provides a distributed computing platform that can process large amounts of data in parallel. He writes a Spark application using Python or Scala, which reads structured, semi-structured, and unstructured data from OneLake for customer reviews and feedback. The application cleanses, transforms, and writes data to Delta tables in the lakehouse. The data is then ready to be used for downstream analytics.
 
-## Next steps
+## Related content
 
 - [How to copy data using copy activity](../data-factory/copy-data-activity.md)
 - [Quickstart: Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md)

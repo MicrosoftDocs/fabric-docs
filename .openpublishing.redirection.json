@@ -1,54 +1,6 @@
 {
+    "comment": "DO NOT USE this redirection file. Instead use the redirection files in each /docs/ subfolder. If one does not exist, create it and add it to .openpublishing.publish.config.json.",
     "redirections": [
-        {
-            "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
-            "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
-            "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/data-factory/move-data-lakehouse-copy-assistant.md",
-          "redirect_url": "/fabric/data-factory/tutorial-move-data-lakehouse-copy-assistant",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/data-warehouse/get-workspace-onelake-path.md",
-          "redirect_url": "/fabric/data-warehouse/access-data-warehouse-files-in-one-lake",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/get-started/known-issues/known-issue-447-temp-tables-in-dw-and-sql-endpoint.md",
-          "redirect_url": "/fabric/get-started/known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-oneLake-table-folder-not-removed.md",
-          "redirect_url": "/fabric/get-started/known-issues/known-issue-446-onelake-table-folder-isnt-removed",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/event-streams/bring-events-to-fabric-from-event-hub.md",
-          "redirect_url": "/fabric/real-time-analytics/event-streams/transform-and-stream-real-time-events-to-lakehouse",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/admin/admin-switch.md",
-          "redirect_url": "/fabric/admin/fabric-switch",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/onelake-shortcut.md",
-          "redirect_url": "/fabric/real-time-analytics/onelake-shortcuts",
-          "redirect_document_id": true
-        },
-        {
-          "source_path_from_root": "/docs/data-factory/known-issues.md",
-          "redirect_url": "/fabric/data-factory/data-factory-limitations",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/data-warehouse/item-permissions.md",
-          "redirect_url": "/fabric/data-warehouse/share-warehouse-manage-permissions",
-          "redirect_document_id": false
-        }
+
     ]
 }

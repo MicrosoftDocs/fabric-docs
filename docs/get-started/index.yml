@@ -9,9 +9,9 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list. 
   ms.subservice: get-started
   ms.topic: landing-page # Required
-  ms.collection: collection # Optional; Remove if no collection is used.
   author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
   ms.author: sngun #Required; microsoft alias of author; optional team alias.
+  ms.collection: ce-skilling-ai-copilot
   ms.date: 07/05/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -46,6 +46,8 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
+          - text: Get started with a task flow
+            url: task-flow-overview.md 
           - text: Find items in OneLake data hub
             url: onelake-data-hub.md 
           - text: Promote and certify items
@@ -54,6 +56,22 @@ landingContent:
         links:
           - text: Apply sensitivity labels
             url: apply-sensitivity-labels.md 
+
+  # Card 
+  - title: Copilot
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Copilot overview
+            url: copilot-fabric-overview.md
+          - text: Copilot in Fabric FAQ
+            url: copilot-faq-fabric.yml
+          - text: Privacy, security, and responsible use for Copilot
+            url: copilot-privacy-security.md
+      - linkListType: how-to-guide
+        links:
+          - text: Enable Copilot
+            url: copilot-enable-fabric.md
 
   # Card 
   - title: Workspaces
@@ -72,3 +90,16 @@ landingContent:
         links:
           - text: Workspace access control
             url: give-access-workspaces.md
+            
+  # Card 
+  - title: Get Help
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Use the integrated Help pane
+            url: fabric-help-pane.md
+          - text: Check for known issues
+            url: fabric-known-issues.md
+          - text: Contact Support
+            url: /power-bi/support/service-support-options
+   

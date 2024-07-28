@@ -3,17 +3,21 @@ title: Compare content in different stages before deployment
 description: Learn how to compare the content of the source stage and target stage before deployment with the Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/09/2023
 ms.search.form: Deployment pipelines operations
 ---
 
 # Compare content in different deployment stages
 
-Before you deploy content to a different stage, it can be helpful to see the differences between the two stages. The deployment pipeline home page compares the three deployment stages and indicates if there are any differences. Use the **Compare** and **Change review** buttons to display the content of each pipeline and see exactly which items are different and where those differences are.
+Before you deploy content to a different stage, it can be helpful to see the differences between the two stages. The deployment pipeline home page compares consecutive deployment stages and indicates if there are any differences between them. Use the **Compare** and **Change review** buttons to display the content of each pipeline and see exactly which items are different and where those differences are.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+Deployment pipelines pairs items of two neighboring stages by combining item type and item name, to know which items to compare and to override. Items of the same name and type are paired. If there's more than one item with the same name and type in a workspace, then the items are paired if their paths are the same. If the path isn't the same, the items aren't paired. The pairing is created only once, during the first deployment of one stage to another, or during assignment of a workspace. On subsequent deployments, each deployed item overrides its paired item metadata, including its name, if it was changed.
 
 ## Compare stages
 
@@ -31,7 +35,7 @@ When two sequential stages are different, a **Compare** link appears underneath 
 
 :::image type="content" source="media/compare-pipeline-content/compare.png" alt-text="A screenshot showing the compare option, which expands the compare view and allows comparing items between deployment pipeline stages." lightbox="media/compare-pipeline-content/compare.png":::
 
-In the comparison display, items are arranged alphabetically by item type. Paired items are next to each other, even if they have different names.
+In the comparison display, paired items are next to each other, even if they have different names. All items in the workspace are listed in a flat list, regardless of their folder structure. Hover over an item to see its path and name.
 
 Items that aren't paired or that were changed get one of the following labels:
 
@@ -39,16 +43,16 @@ Items that aren't paired or that were changed get one of the following labels:
 
 - **Different** – An item that exists both in the source and the target stage, where one of the versions was changed after the last deployment. After deployment, the item in the source stage will overwrite the item in the target stage, regardless of where the change was made.
 
-    Datasets with configured deployment rules that haven't been deployed, are also marked as *different*, since deployment rules aren't applied until the datasets are deployed from the source stage to the target stage.
+    Semantic models with configured deployment rules that haven't been deployed, are also marked as *different*, since deployment rules aren't applied until the semantic models are deployed from the source stage to the target stage.
 
-- **Missing from** – This item appears in the target stage, but not in the source stage.
+- **Missing from** – This item appears in the target stage, but not in the source stage. Deployment doesn't affect these items.
 
-    >[!NOTE]
-    >Deployment will not impact *missing from* items.
+> [!NOTE]
+> If you make changes to a folder, such as moving its location or renaming it, even if you didn't change the items in it, the items are still treated as if you renamed them. Therefore, when comparing pipelines the items are labeled as *Different*.
 
 ## Review changes to paired items
 
-If a text item, like a dataset, is different, hover over it to see the **Change review** button.
+If a text item, like a semantic model, is different, hover over it to see the **Change review** button.
 
 :::image type="content" source="./media/compare-pipeline-content/granular-change-button.png" alt-text="Screenshot showing the change review button next to an item.":::
 
@@ -98,7 +102,7 @@ In both comparison displays, whether inline or side-by-side, the differences are
 
 The two versions of the content shown in the change review window are modified in the following ways to make the comparison easier:
 
-- Datasource and parameter rules are applied to the source item so that the datasource you see is the one that will be deployed.
+- Data source and parameter rules are applied to the source item so that the data source you see is the one that's deployed.
 - Some fields that don't indicate differences (for example, timestamps and role membership) are removed from both items.
 - System managed tables, like auto aggregate, are removed.
 - Items are sorted so that fields and tables appear in the same order.
@@ -107,15 +111,15 @@ Close the window when you finish examining the differences and deploy to the nex
 
 ## Considerations and limitations
 
-- The *change review* feature only supports schema changes for textual item types. Currently it supports datasets, excluding data modeling format v1, and dataflows.
+- The *change review* feature only supports schema changes for textual item types. Currently it supports semantic models, excluding data modeling format v1, and dataflows.
 
 - An item can be tagged as *Different*, but still not qualify for change review. In these cases, the **Change review** button is disabled. For example:
   - Settings changes such as name change.
   - Item type isn't yet supported.
   - Item has an unknown status because the comparison process wasn't completed.
 
-- The content in the change review window may look a bit different than the original version since it was [modified before running the comparison](#file-modifications-before-comparison).
+- The content in the change review window might look a bit different than the original version since it was [modified before running the comparison](#file-modifications-before-comparison).
 
-## Next steps
+## Related content
 
 [Deploy content to the next stage](deploy-content.md)

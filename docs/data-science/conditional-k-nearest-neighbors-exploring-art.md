@@ -3,9 +3,10 @@ title: Conditional KNN Exploring Art Across Cultures
 description: A guideline for match-finding via k-nearest-neighbors.
 ms.topic: how-to
 ms.custom: build-2023
-ms.reviewer: larryfr
-author: JessicaXYWang
-ms.author: jessiwang
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: jessiwang
+reviewer: JessicaXYWang
 ms.date: 06/12/2023
 ---
 # Exploring Art across Culture and Medium with Fast, Conditional, k-Nearest Neighbors
@@ -243,7 +244,7 @@ The following cell performs batched queries given desired image IDs and a filena
 # sample query
 result_df = test_all(small_df, medium_cknn, culture_cknn, selected_ids, root=".")
 ```
-## Next steps
+## Related content
 
 - [How to use ONNX with SynapseML - Deep Learning](onnx-overview.md)
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)

@@ -5,8 +5,10 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 06/06/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Module 1: Create a pipeline with Data Factory
@@ -17,8 +19,6 @@ The high-level steps in module 1 are as follows:
 
 1. Create a data pipeline.
 1. Use a Copy Activity in the pipeline to load sample data into a data Lakehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Create a data pipeline
 
@@ -102,7 +102,7 @@ Select **Copy data** to open the copy assistant tool.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/copy-duration-breakdown.png" alt-text="Screenshot showing the duration breakdown of the Copy activity run.":::
 
-## Next steps
+## Related content
 
 In this first module to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned how to:
 

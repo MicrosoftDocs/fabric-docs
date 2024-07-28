@@ -4,13 +4,14 @@ description: Customer Lockbox for Microsoft Fabric is a service that allows cust
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 06/08/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - build-2024
+ms.date: 01/07/2024
 ---
 
 # Customer Lockbox for Microsoft Fabric
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Use [Customer Lockbox for Microsoft Azure](/azure/security/fundamentals/customer-lockbox-overview) to control how Microsoft engineers access your data. In this article you'll learn how Customer Lockbox requests are initiated, tracked, and stored for later reviews and audits.
 
@@ -18,7 +19,7 @@ Typically, Customer Lockbox is used to help Microsoft engineers troubleshoot a [
 
 ## Enable Customer Lockbox for Microsoft Fabric
 
-To enable Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)], you must be an Azure AD Global Administrator. To assign roles in Azure AD, see [Assign Azure AD roles to users](/azure/active-directory/roles/manage-roles-portal).
+To enable Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)], you must be a Microsoft Entra Global Administrator. To assign roles in Microsoft Entra ID, see [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal).
 
 1. Open the Azure portal.
 
@@ -46,7 +47,7 @@ When the request requires direct access to customer data, a Customer Lockbox req
 
 These steps describe a Microsoft initiated Customer Lockbox request, for [!INCLUDE [product-name](../includes/product-name.md)] service.
 
-1. The Azure AD Global Administrator receives a pending access request notification email from Microsoft. The admin who received the email, becomes the designated approver.
+1. The Microsoft Entra Global Administrator receives a pending access request notification email from Microsoft. The admin who received the email, becomes the designated approver.
 
     :::image type="content" source="media/security-lockbox/email-example.png" alt-text="Screenshot of pending access request notification email from Microsoft." lightbox="media/security-lockbox/email-example.png":::
 
@@ -88,6 +89,7 @@ Customer Lockbox has two type of logs:
     |DeleteAdminUsageDashboardsViaLockbox  |Delete admin usage dashboards via lockbox   |
     |DeleteUsageMetricsv2PackageViaLockbox |Delete usage metrics v2 package via lockbox |
     |DeleteAdminMonitoringFolderViaLockbox |Delete admin monitoring folder via lockbox  |
+    |GetQueryTextTelemetryViaLockbox |Get query text from secured telemetry store via Lockbox|
 
 ## Exclusions
 
@@ -104,14 +106,24 @@ Customer Lockbox requests aren't triggered in the following engineering support 
 Access to data varies according to the Microsoft Fabric experience your request is for. This section lists which data the Microsoft engineer can access, after you approve a Customer Lockbox request.
 
 * **Power BI** - When running the operations listed below, the Microsoft engineer will have access to a few tables linked to your request. Each operation the Microsoft engineer uses, is reflected in the audit logs.
-    * Get refresh history
+    * Get model refresh history
     * Delete admin usage dashboard
     * Delete usage metrics v2 package
     * Delete admin monitoring folder
+    * Delete admin workspace
+    * Access particular Dataset in storage
+    * Get query text from secured telemetry store
 
-* **Real-Time Analytics** - The Real-Time Analytics engineer will have access to the data in the KQL database that's linked to your request.
+* **Real-Time Intelligence** - The Real-Time Intelligence engineer will have access to the data in the KQL database that's linked to your request.
 
-## Next steps
+* **Data Engineering** - The Data Engineering engineer will have access to the following Spark logs linked to your request:
+    * Driver logs
+    * Event logs
+    * Executor logs
+ 
+* **Data Factory** - The Data Factory engineer will have access to data pipeline definitions linked to your request, if permission is granted.
+
+## Related content
 
 * [Microsoft Purview Customer Lockbox](/microsoft-365/compliance/customer-lockbox-requests)
 

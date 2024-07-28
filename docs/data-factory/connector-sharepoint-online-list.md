@@ -1,18 +1,19 @@
 ---
-title: How to create a SharePoint Online List connection
+title: Set up your SharePoint Online List connection
 description: This article provides information about how to create a SharePoint Online List connection in Microsoft Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to create a SharePoint Online List connection
+# Set up your SharePoint Online List connection
 
-This article outlines the steps to create SharePoint Online List connection.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+This article outlines the steps to create a SharePoint Online List connection.
 
 ## Supported authentication types
 
@@ -20,23 +21,22 @@ The SharePoint Online List connector supports the following authentication types
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Anonymous| √| |
-|OAuth2| √| |
-|Service Principal| √| |
-|Organizational account| | √|
+|Organizational account| n/a | √|
+|Service Principal| √ | √ |
 
->[!Note]
->For information about a SharePoint Online list connection in Dataflow Gen2, go to [Connect to a SharePoint Online list in dataflows](connector-sharepoint-online-list-dataflows.md).
+## Set up your connection in Dataflow Gen2
 
-## Prerequisites
+Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a SharePoint Online List. The following links provide the specific Power Query connector information you need to connect to a SharePoint Online List in Dataflow Gen2:
 
-The following prerequisites are required before you start:
+- To get started using the SharePoint Online list connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+- To determine the URL to use to access your SharePoint Online list, go to [Determine the site URL](/power-query/connectors/sharepoint-online-list#determine-the-site-url).
+- To connect to the Azure Blobs connector from Power Query, go to [Connect to a SharePoint Online list from Power Query Online](/power-query/connectors/sharepoint-online-list#connect-to-a-sharepoint-online-list-from-power-query-online).
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
+## Set up your connection in a data pipeline
 
-## Go to manage gateways to create connection
+To create a connection in a data pipeline:
 
 1. From the page header in Data Factory service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**.
 
@@ -66,23 +66,9 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The SharePoint Online List connector supports the following authentication types.
 
-- [Anonymous](#anonymous-authentication)
-- [OAuth2](#oauth2-authentication)
 - [Service Principal](#service-principal-authentication)
 
 :::image type="content" source="media/connector-sharepoint-online-list/authentication-method.png" alt-text="Screenshot showing that authentication method of SharePoint Online List.":::
-
-#### Anonymous authentication
-
-Select **Anonymous** under **Authentication method**.
-
-:::image type="content" source="./media/connector-sharepoint-online-list/authentication-anonymous.png" alt-text="Screenshot showing Anonymous authentication.":::
-
-#### OAuth2 authentication
-
-Select **OAuth2** under **Authentication method**.
-
-:::image type="content" source="media/connector-sharepoint-online-list/authentication-oauth2.png" alt-text="Screenshot showing that OAuth2 authentication method.":::
 
 #### Service Principal authentication
 
@@ -91,7 +77,7 @@ Select **Service Principal** under **Authentication method**, and fill in the re
 :::image type="content" source="media/connector-sharepoint-online-list/authentication-service-principal.png" alt-text="Screenshot showing that service principal authentication method.":::
 
 - **Tenant Id**: The tenant ID under which your application resides.
-- **Service principal ID**: The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details, including the permission settings.
+- **Service principal ID**: The Application (client) ID of the application registered in Microsoft Entra ID. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details, including the permission settings.
 - **Service principal key**: The application's key.
 
 ### Step 3: Specify the privacy level that you want to apply
@@ -122,14 +108,11 @@ The following table contains the supported authentication type properties.
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
-|**Anonymous**||||✓|
-|**OAuth2**||||✓|
 |**Service Principal**||||✓|
 |- Tenant ID|The tenant ID under which your application resides.|Yes |||
-|- Service Principal ID|The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.|Yes |||
+|- Service Principal ID|The Application (client) ID of the application registered in Microsoft Entra ID. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
 
-## Next steps
+## Related content
 
-- [How to configure SharePoint Online List in a copy activity](connector-sharepoint-online-list-copy-activity.md)
-- [Connect to a SharePoint Online list in dataflows](connector-sharepoint-online-list-dataflows.md)
+- [Configure SharePoint Online List in a copy activity](connector-sharepoint-online-list-copy-activity.md)

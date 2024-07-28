@@ -1,21 +1,20 @@
 ---
 title: Differences between Data Factory in Fabric and Azure
-description: This article provides information about compare differences between Azure Data Factory and Data Factory in Microsoft Fabric 
+description: This article provides information about compare differences between Azure Data Factory and Data Factory in Microsoft Fabric
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, buyild-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - buyild-2023
+  - ignite-2023
 ms.search.form: Pipeline Activity Overview
 ---
 
 # Getting from Azure Data Factory to Data Factory in Microsoft Fabric
 
 Data Factory in Microsoft Fabric is the next generation of Azure Data Factory which provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade. This article compares the differences between Azure Data Factory and Data Factory in Microsoft Fabric.
-
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Feature mapping
 
@@ -31,7 +30,7 @@ In the modern experience of Data Factory in Fabric, there are some different fea
 |Triggers |Schedules (other triggers are in progress) |Fabric can use the schedule to automatically run pipeline. We are adding more triggers supported by ADF in Microsoft Fabric.  |
 |Publish |Save, Run |For pipeline in Fabric, you don’t need to publish to save the content. Instead, you can use Save button to save the content directly. When you click Run button, it will save the content before running pipeline. |
 |Autoresolve and Azure Integration runtime |Not Applicable |In Fabric, we don’t have the concept of Integration runtime. |
-|Self-hosted integration runtimes |On-premises Data Gateway(in design) |The capability in Fabric is still in progress of design. |
+|Self-hosted integration runtimes |On-premises Data Gateway |On-premises Data Gateway enables access to on-premises data via the Fabric Data Factory. Details are in [How to access on-premises data sources in Data Factory for Microsoft Fabric](how-to-access-on-premises-data.md). |
 |Azure-SSIS integration runtimes |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design. |
 |MVNet and Private End Point |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design.|
 |Expression language |Expression language |Expression language is similar in ADF and Fabric. |
@@ -72,7 +71,7 @@ With the combined capabilities of the monitoring hub and the items of Data Facto
 
 :::image type="content" source="./media/connector-differences/monitoring-hub.png" alt-text="Screenshot showing the monitoring hub and the items of Data Factory.":::
 
-The pipeline copy monitoring results provides breakdown detail of copy activity. By selecting the run details button (with the **glasses icon** highlighted) to view the run details. Expand the **Duration breakdown**, you can know the time duration of each stage in copy activity.
+The pipeline copy monitoring results provide breakdown detail of the Copy activity. By selecting the run details button (with the **glasses icon** highlighted) to view the run details. Expand the **Duration breakdown**, you can know the time duration of each stage in copy activity.
 
 :::image type="content" source="./media/connector-differences/details-of-copy-activity.png" alt-text="Screenshot showing the pipeline copy monitoring results provides breakdown detail of copy activity.":::
 
@@ -84,7 +83,7 @@ Save as in Fabric pipeline provides a convenient way for you to duplicate an exi
 
 :::image type="content" source="./media/connector-differences/save-as-button.png" alt-text="Screenshot showing save as in Fabric pipeline.":::
 
-## Next steps
+## Related content
 
 - [Differences between Dataflow Gen1 Gen2](dataflows-gen2-overview.md)
 - [Build your first data integration](transform-data.md)

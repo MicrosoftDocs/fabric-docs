@@ -4,13 +4,13 @@ description: Learn how to manually apply sensitivity labels to Fabric items.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ---
 
 # Apply sensitivity labels to Fabric items
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Sensitivity labels from Microsoft Purview Information Protection on items can guard your sensitive content against unauthorized data access and leakage. They're a key component in helping your organization meet its governance and compliance requirements. Labeling your data correctly with sensitivity labels ensures that only authorized people can access your data. This article shows you how to apply sensitivity labels to your Microsoft Fabric items.
 
@@ -39,6 +39,6 @@ There are two common ways of applying a sensitivity label to an item: from the f
 
     :::image type="content" source="./media/apply-sensitivity-labels/apply-sensitivity-label-side-pane.png" alt-text="Screenshot of the sensitivity label side pane for items in Fabric.":::
 
-## Next steps
+## Related content
 
 * [Sensitivity label overview](/power-bi/enterprise/service-security-sensitivity-label-overview)

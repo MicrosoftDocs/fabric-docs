@@ -1,19 +1,19 @@
 ---
-title: How to configure Azure Cosmos DB for NoSQL in a copy activity
+title: Configure Azure Cosmos DB for NoSQL in a copy activity
 description: This article explains how to copy data using Azure Cosmos DB for NoSQL.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Azure Cosmos DB for NoSQL in a copy activity
+# Configure Azure Cosmos DB for NoSQL in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Cosmos DB for NoSQL.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 
 ## Supported configuration
 
@@ -129,6 +129,6 @@ The following tables contain more information about the copy activity in Azure C
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 |**Disable performance metrics analytics**|This setting controls collection of metrics such as DTU, DWU, RU, and so on for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.|Selected or unselect|No |disableMetricsCollection|
 
-## Next steps
+## Related content
 
-- [How to create an Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md)
+- [Set up your Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md)

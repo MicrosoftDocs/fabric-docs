@@ -1,32 +1,37 @@
 ---
-title: How to train models with scikit-learn
-description: Learn how to train models with scikit-learn, a popular open-source machine learning framework that's frequently used for supervised and unsupervised learning.
-ms.reviewer: ssalgado
-ms.author: negust
-author: nelgson
+title: Train models with scikit-learn in Microsoft Fabric
+description: Learn how to train models with scikit-learn, a popular open-source machine learning framework frequently used for supervised and unsupervised learning.
+ms.author: franksolomon
+author: fbsolo-ms1
+ms.reviewer: negust
+reviewer: nelgson
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 07/11/2024
 ms.search.form: Train models with scikit-learn
+
+#customer intent: As a developer, I want to use scikit-learn in Microsoft Fabric so that I can train models for supervised and unsupervised learning.
 ---
 
-# How to train models with scikit-learn in Microsoft Fabric
+# Train models with scikit-learn in Microsoft Fabric
 
-Scikit-learn ([scikit-learn.org](https://scikit-learn.org)) is a popular, open-source machine learning framework. It's frequently used for supervised and unsupervised learning. It also provides various tools for model fitting, data preprocessing, model selection, model evaluation, and more.  
+This article describes how to train and track the iterations of a scikit-learn model. [Scikit-learn](https://scikit-learn.org/stable/) is a popular open-source machine learning framework frequently used for supervised and unsupervised learning. The framework provides tools for model fitting, data preprocessing, model selection, model evaluation, and more.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+## Prerequisites
 
-In this section, we'll go through an example of how you can train and track the iterations of your Scikit-Learn model.
-
-## Install scikit-learn
-
-To get started with scikit-learn, you must ensure that it's installed within your notebook. You can install or upgrade the version of scikit-learn on your environment using the following command:
+Install scikit-learn within your notebook. You can install or upgrade the version of scikit-learn on your environment by using the following command:
 
 ```shell
-%pip install scikit-learn
+pip install scikit-learn
 ```
 
-Next, we'll create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
+## Set up the machine learning experiment
+
+You can create a machine learning experiment by using the MLFLow API. The MLflow `set_experiment()` function creates a new machine learning experiment named _sample-sklearn_, if it doesn't already exist. 
+
+Run the following code in your notebook and create the experiment:
 
 ```python
 import mlflow
@@ -36,7 +41,9 @@ mlflow.set_experiment("sample-sklearn")
 
 ## Train a scikit-learn model
 
-After the experiment has been created, we'll create a sample dataset and create a logistic regression model. We'll also start a MLflow run and track the metrics, parameters, and final logistic regression model. Once we've generated the final model, we'll also save the resulting model for additional tracking.
+After you set up the experiment, you create a sample dataset and a logistic regression model. The following code starts an MLflow run, and tracks the metrics, parameters, and final logistic regression model. After you generate the final model, you can save the resulting model for more tracking.
+
+Run the following code in your notebook and create the sample dataset and logistic regression model:
 
 ```python
 import mlflow.sklearn
@@ -73,7 +80,9 @@ with mlflow.start_run() as run:
 
 ## Load and evaluate the model on a sample dataset
 
-Once the model is saved, it can also be loaded for inferencing. To do this, we'll load the model and run the inference on a sample dataset.
+After you save the model, you can load it for inferencing.
+
+Run the following code in your notebook and load the model, and then run the inference on a sample dataset:
 
 ```python
 # Inference with loading the logged model
@@ -97,7 +106,7 @@ batch_predictions = model.transform(test_spark)
 batch_predictions.show()
 ```
 
-## Next steps
+## Related content
 
-- Learn about [machine learning models](machine-learning-model.md).
-- Learn about [machine learning experiments](machine-learning-experiment.md).
+- Explore [machine learning models](machine-learning-model.md)
+- Create [machine learning experiments](machine-learning-experiment.md) 

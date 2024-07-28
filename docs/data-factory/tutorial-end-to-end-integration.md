@@ -5,15 +5,15 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Module 3: Automate and send notifications with Data Factory
 
 You'll complete this module in 10 minutes to send an email notifying you when all the jobs in a pipeline are complete, and configure it to run on a scheduled basis.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 In this module you learn how to:
 - Add an Office 365 Outlook activity to send the output of a Copy activity by email.
@@ -105,7 +105,7 @@ You can also add the dataflow you created in [Module 2: Create a dataflow in Dat
 
    :::image type="content" source="media/tutorial-end-to-end-integration/choose-dataflow-settings.png" alt-text="Screenshot showing the Settings tab of the Dataflow activity.":::
 
-## Next steps
+## Related content
 
 In this third module to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned how to:
 

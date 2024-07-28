@@ -5,15 +5,15 @@ ms.reviewer: DougKlopfenstein
 ms.author: mideboer
 author: miquelladeboer
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Data source management
 
 [!INCLUDE [product-name](../includes/product-name.md)] supports many on-premises and cloud data sources, and each source has its own requirements. To learn how to add and manage an on-premises data source, go to [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources). In this article, you'll learn how to add an Azure SQL Server as a cloud data source. The steps are similar for other data sources.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 > [!NOTE]
 > Currently, these cloud connections are only supported for data pipelines and Kusto. In the future, other items can also make use of the cloud connections. To create personal cloud connections in datasets, datamarts, and dataflows, use the Power Query Online experience in "get data".
@@ -39,7 +39,7 @@ ms.date: 05/23/2023
    If you selected the **OAuth2** authentication method:
 
    - Any query that runs longer than the OAuth token expiration policy might fail.
-   - Cross-tenant Azure Active Directory (Azure AD) accounts aren't supported.
+   - Cross-tenant Microsoft Entra accounts aren't supported.
 
 6. Under **General** > **Privacy level**, optionally configure a [privacy level](https://support.office.com/article/Privacy-levels-Power-Query-CC3EDE4D-359E-4B28-BC72-9BEE7900B540) for your data source. This setting doesn't apply to [DirectQuery](/power-bi/connect-data/desktop-directquery-about).
 
@@ -87,6 +87,36 @@ Remember that you need to add users to each data source that you want to grant a
 
 On the **Manage Users** tab for the data source, you can remove users and security groups that use this data source.
 
-## Next steps
+## Manage sharing
 
-[Connectors overview](connector-overview.md)
+Restrict users who can share cloud connections in Fabric
+By default, any user in Fabric can share their connections if they have the following user role on the connection:
+-	Connection owner or admin
+-	Connection user with sharing
+
+Sharing a connection in Fabric is sometimes needed for collaboration within the same workload or when sharing the workload with others. Connection sharing in Fabric makes this easy by providing a secure way to share connections with others for collaboration, but without exposing the secrets at any time. These connections can only be used within the Fabric environment.
+
+If your organization does not allow for connection sharing or wants to limit the sharing of connections, a tenant admin can restrict sharing as a tenant policy. The policy allows you to block sharing within the entire tenant.
+
+> [!NOTE]
+> This restriction can result in limitations of multiple users being unable to collaborate within the same workloads.
+> Disabling connection sharing does not impact connections that have already been shared.
+
+How to enable the setting
+1.	Make sure that you are either an Azure AD Global administrator (which includes Global admins) or a Power BI service administrator.
+2.	In Power BI or Fabric go to settings and the manage connections and gateways page.
+3.	In the top right, turn on the toggle for tenant administation.
+
+:::image type="content" source="media/data-source-management/tenant-administration.png" alt-text="Screenshot showing the tenant administration toggle in the Manage connections and gateways page.":::
+
+4.	Select Blocking shareable cloud connections and set the toggle to on. By default, the policy is off, meaning that every user in the tenant can share cloud connections.
+
+:::image type="content" source="media/data-source-management/manage-cloud-connection-sharing.png" alt-text="Screenshot showing the manage cloud connection sharing feature.":::
+
+5.	If you want, you can allowlist individual users by searching for them a selecting Add. All the users in the list below can share connections.
+
+:::image type="content" source="media/data-source-management/manage-cloud-connection-sharing-on.png" alt-text="Screenshot showing the manage cloud connection sharing feature toggled on.":::
+
+## Related content
+
+- [Connectors overview](connector-overview.md)

@@ -3,16 +3,16 @@ title: Install the Microsoft Fabric capacity metrics app
 description: Learn how to install the Microsoft Fabric capacity metrics app.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: how to
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: how-to
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 05/20/2024
 ---
 
 # Install the Microsoft Fabric capacity metrics app
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-The *Microsoft Fabric Capacity Metrics* app, also known as the *metrics app*, is designed to provide monitoring capabilities for Power BI Premium capacities. Use this guide to install the app.
+The *Microsoft Fabric Capacity Metrics* app, also known as the *metrics app*, is designed to provide monitoring capabilities for Fabric and Power BI Premium capacities. Use this guide to install the app.
 
 ## Prerequisites
 
@@ -20,7 +20,9 @@ To install the metrics app, you need to be a capacity admin.
 
 ## Install the app
 
-Follow the steps according to the type of installation you need.
+Follow the steps according to the type of installation you need. If you're installing the app in a government cloud environment, use the links in [government clouds](#government-clouds).
+
+To avoid throttling due to capacity overutilization, install the app in a workspace with a [Pro license](/power-bi/fundamentals/service-features-license-type#pro-license).
 
 # [First time installation](#tab/1st)
 
@@ -70,11 +72,17 @@ To upgrade a previous installation of the *Microsoft Fabric Capacity Metrics* ap
 
 2. In the **Update app** window, select one of the following:
 
-    * **Update the workspace and the app** - Updates your current app and the workspace it resides in. This is the default option for upgrading the app. It will remove the current version and its workspace and replace them with the new version of the app and a corresponding workspace.
+    * **Update the workspace and the app**
 
-    * **Update only workspace content without updating the app** - Updates the workspace but doesn't update the app. Select this option to update the app's workspace without upgrading the app.
+    Updates your current app and the workspace it resides in. This is the default option for upgrading the app. It will remove the current version and its workspace and replace them with the new version of the app and a corresponding workspace.
 
-    * **Install another copy of the app into a new workspace** - Creates a new workspace and installs the new version of the app in this workspace. Select this option if you want to keep the old version of the app with the new one. This option creates another workspace for the new app version and installs the app in the newly created workspace. If you select this option, you'll need to provide a name for the new workspace.
+    * **Update only workspace content without updating the app**
+
+    Updates the workspace but doesn't update the app. Select this option to update the app's workspace without upgrading the app.
+
+    * **Install another copy of the app into a new workspace**
+
+    Creates a new workspace and installs the new version of the app in this workspace. Select this option if you want to keep the old version of the app with the new one. This option creates another workspace for the new app version and installs the app in the newly created workspace. If you select this option, you'll need to provide a name for the new workspace.
 
 3. Select **Install**.
 
@@ -94,7 +102,7 @@ To complete the installation, configure the Microsoft Fabric Capacity Metrics ap
 
     |Field          |Required |Value    |Notes    |
     |---------------|---------|---------|---------|
-    |**CapacityID** |Yes |An ID of a capacity you're an admin of |You can find the capacity ID in the URL of the capacity management page. In Microsoft Fabric, go to **Settings** > **Admin center** > **Capacity settings**, then select a capacity. The capacity ID is shown in the URL after */capacities/*. For example, `9B77CC50-E537-40E4-99B9-2B356347E584` is the capacity ID in this URL: `https://app.powerbi.com/admin-portal/capacities/9B77CC50-E537-40E4-99B9-2B356347E584`.</br> After installation, the app will let you see all the capacities you can access. |
+    |**CapacityID** |Yes |An ID of a capacity you're an admin of |You can find the capacity ID in the URL of the capacity management page. In Microsoft Fabric, go to **Settings** > **Governance and insights** > **Admin portal** > **Capacity settings**, then select a capacity. The capacity ID is shown in the URL after */capacities/*. For example, `9B77CC50-E537-40E4-99B9-2B356347E584` is the capacity ID in this URL: `https://app.powerbi.com/admin-portal/capacities/9B77CC50-E537-40E4-99B9-2B356347E584`.</br> After installation, the app will let you see all the capacities you can access. |
     |**UTC_offset** |Yes |Numerical values ranging from `14` to `-12`.</br> To signify a Half hour timezone, use `.5`. For example, for Iran's standard time enter `3.5`.   |Enter your organization's standard time in Coordinated Universal Time (UTC). |
     |**Timepoint**  |Automatically populated  |         |This field is automatically populated and is used for internal purposes. The value in this field will be overwritten when you use the app. |
     |**Timepoint2** |Automatically populated  |         |This field is automatically populated and is used for internal purposes. The value in this field will be overwritten when you use the app. |
@@ -117,6 +125,32 @@ To complete the installation, configure the Microsoft Fabric Capacity Metrics ap
 
 9. After you configure the app, it can take a few minutes for the app to get your data. If you run the app and it's not displaying any data, refresh the app. This behavior happens only when you open the app for the first time.
 
-## Next steps
+### Government clouds
 
-[Understand the metrics app overview page?](metrics-app-overview-page.md)
+To install the app in a government cloud environment, use one of these links. You can also use these links to upgrade the app. When upgrading, you don't need to delete the old app.
+
+* [Microsoft 365 Government Community Cloud (GCC)](https://aka.ms/FabricUSGovCapacityUsageReport)
+
+* [Microsoft 365 Government Community Cloud High (GCC High)](https://aka.ms/FabricUSGovHighCapacityUsageReport)
+
+* [Microsoft 365 Department of Defense (DoD)](https://aka.ms/FabricUSGovDodCapacityUsageReport)
+
+* [Power BI for China cloud](https://aka.ms/FabricMCCCapacityUsageReport)
+
+### Considerations and limitations
+
+OneLake isn't supported in Government Community Cloud (GCC).
+
+### Troubleshooting
+
+After installing the app, if it's not showing data or can't refresh, follow these steps:
+
+1. Delete the old app.
+
+2. Reinstall the latest version of the app.
+
+3. Update the semantic model credentials.
+
+## Related content
+
+* [Understand the metrics app compute page](metrics-app-compute-page.md)

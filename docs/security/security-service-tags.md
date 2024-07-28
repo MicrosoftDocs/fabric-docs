@@ -3,39 +3,37 @@ title: Service tags
 description: Learn how to use service tags in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept
-ms.custom: build-2023
-ms.date: 06/01/2023
+ms.topic: conceptual
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - build-2024
+ms.date: 02/25/2024
 ---
 
 # Service tags
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-You can use Azure [service tags](/azure/virtual-network/service-tags-overview) with Microsoft Fabric to enable an Azure SQL Managed Instance (MI) to allow incoming connections from the Microsoft Fabric. In Azure, a service tag is a defined group of IP addresses that you can configure to be automatically managed, as a group, to minimize the complexity of updates or changes to network security rules. By using service tags with Microsoft Fabric, you can enable a SQL Managed Instance to allow incoming connections from the Microsoft Fabric service.
+You can use Azure [service tags](/azure/virtual-network/service-tags-overview) to enable connections to and from Microsoft Fabric. In Azure, a service tag is a defined group of IP addresses that is automatically managed, as a group, to minimize the complexity of updates or changes to network security rules.
 
 ## Which service tags are supported?
 
-You can use the service tags in this table in Microsoft Fabric.
+In Microsoft Fabric, you can use the service tags listed in the table below. There's no service tag for untrusted code that is used in Data Engineering items.
 
 | Tag | Purpose | Can use inbound or outbound? | Can be regional? | Can use with Azure Firewall? |
 |--|--|--|--|--|
 | DataFactory | Azure Data Factory | Both | No | Yes |
+| DataFactoryManagement| On premises data pipeline activity | Outbound | No | Yes |
 | EventHub | Azure Event Hubs | Outbound | Yes | Yes |
-| PowerBI | Power BI and Microsoft Fabric | Both | No | Yes |
+| Power BI | Power BI and Microsoft Fabric | Both | No | Yes |
 | PowerQueryOnline | Power Query Online | Both | No | Yes |
-| KustoAnalytics | Real-Time Analytics | Both | No | No |
+| KustoAnalytics | Real-Time Intelligence | Both | No | No |
 
-## How to enable service tags?
+## Use service tags
 
-To enable service tags in Microsoft Fabric, follow the instructions in [Use service tags with Power BI](/power-bi/enterprise/service-premium-service-tags).
+You can use the service tags to define network access controls on [network security groups](/azure/virtual-network/network-security-groups-overview#service-tags), [Azure Firewall](/azure/firewall/service-tags), and user-defined routes.
 
-1. [Enable a public endpoint](/power-bi/enterprise/service-premium-service-tags#enable-a-public-endpoint) in the SQL Managed Instance.
+## Related content
 
-2. [Create a Network Security Group rule](/power-bi/enterprise/service-premium-service-tags#create-a-network-security-group-rule) to allow inbound traffic.
+* [Private endpoints](/power-bi/enterprise/service-security-private-links)
 
-3. [Enter the credentials](/power-bi/enterprise/service-premium-service-tags#enter-the-credentials-in-power-bi) in Microsoft Fabric.
-
-## Next steps
-
-[Private endpoints](/power-bi/enterprise/service-security-private-links)
+* [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519)<br/>You can refer to the `PowerBI` tag. Microsoft Fabric currently doesn't support regional service tags nor breakdown IP ranges by region.

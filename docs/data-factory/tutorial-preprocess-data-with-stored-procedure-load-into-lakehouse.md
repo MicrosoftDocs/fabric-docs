@@ -4,17 +4,17 @@ description: This tutorial shows you how to preprocess data with a stored proced
 ms.reviewer: jburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.topic: tutorial 
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: tutorial
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Pipeline Tutorials
 ---
 
 # Preprocess data with a stored procedure before loading into Lakehouse
 
 In this tutorial, we show you how to use a pipeline Script activity to run a stored procedure to create a table and preprocess the data in a Synapse Data Warehouse. After that, we load the preprocessed table into Lakehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -62,13 +62,13 @@ In this tutorial, we show you how to use a pipeline Script activity to run a sto
 
 In this section, we use a Script activity to run the stored procedure created in the prerequisites.
 
-1. Choose Script activity and then select **New** to connect to your Azure Synapse Data Warehouse.
+1. Choose a **Script** activity from the **Activities** toolbar and then select the settings tab in the properties pane to choose the connection details. Select the **Connection** dropdown there to choose **More**. Then you can connect to your Azure Synapse Data Warehouse.
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/create-new-script-activity.png" alt-text="Screenshot showing the pipeline interface to create a new script activity and connect to your Azure Synapse Data Warehouse.":::
 
-1. Select Azure Synapse Analytics and then **Continue**.
+1. Select **Azure Synapse Analytics (SQL DW)** under the **New sources** section.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-azure-synapse-analytics.png"  lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-azure-synapse-analytics.png" alt-text="Screenshot showing the New connection dialog with Azure Synapse Analytics selected.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-azure-synapse-analytics.png"  lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-azure-synapse-analytics.png" alt-text="Screenshot showing the Get data dialog with Azure Synapse Analytics (SQL DW) selected.":::
 
 1. Provide your **Server**, **Database**, and **Username** and **Password** fields for **Basic authentication**, and enter SynapseConnection for the **Connection name**. Then select **Create** to create the new connection.
 
@@ -80,11 +80,11 @@ In this section, we use a Script activity to run the stored procedure created in
 
 ## Use a pipeline activity to load preprocessed table data into Lakehouse
 
-1. Select **Copy data** and then select **Use copy assistant**.
+1. Select **Copy data** from the **Activities** toolbar and then select **Use copy assistant**, or use the **Copy data assistant** card on the pipeline landing page, to start the **Copy data assistant**.
 
-   :::image type="content" source="media/copy-data-activity/use-copy-assistant.png" alt-text="Screenshot showing the Use copy assistant button under Copy data.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/use-copy-assistant.png" alt-text="Screenshot showing the Use copy assistant button under Copy data.":::
 
-1. Select **Azure Synapse Analytics** for the data source, and then select **Next**.
+1. Enter _Synapse_ in the search filter and select **Azure Synapse Analytics (SQL DW)** for  data source, and then select **Next**.
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-copy-assistant-data-source.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-copy-assistant-data-source.png" alt-text="Screenshot showing the Copy assistant data source selection page with Azure Synapse Analytics selected.":::
 
@@ -96,21 +96,21 @@ In this section, we use a Script activity to run the stored procedure created in
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-table.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-table.png" alt-text="Screenshot showing the selection of the dbo.names table created and preprocessed by the stored procedure in the previous steps.":::
 
-1. Select **Lakehouse** under the **Workspace** tab as the destination, and then select **Next** again.
+1. Select **Lakehouse**.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-lakehouse-destination.png" alt-text="Screenshot showing the selection of Lakehouse for the copy destination in the Copy assistant.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/lakehouse-destination.png" alt-text="Screenshot showing the selection of Lakehouse for the copy destination in the Copy assistant.":::
 
-1. Choose an existing or create a new Lakehouse, then select **Next**.
+1. Enter a name then select **Create and connect**.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/choose-lakehouse-destination.png" alt-text="Screenshot showing the selection of a Lakehouse destination in the Copy assistant.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/create-new-lakehouse.png" alt-text="Screenshot showing the New Lakehouse dialog.":::
 
 1. Input a destination table name for the data to be copied into for the Lakehouse destination and select **Next**.
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/input-destination-table-name.png" alt-text="Screenshot showing the destination table name to be used in the Lakehouse destination.":::
 
-1. Review the summary on the final page of the Copy assistant and then select **OK**.
+1. Review the summary on the final page of the Copy assistant. Uncheck the **Start data transfer immediately** checkbox and then select **OK**.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/review-summary.png" alt-text="Screenshot showing the summary page of the Copy assistant with details of the configured connections.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/review-summary.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/review-summary.png" alt-text="Screenshot showing the summary page of the Copy assistant with details of the configured connections.":::
 
 1. After you select **OK**, the new Copy activity will be added onto the pipeline canvas.
 
@@ -126,23 +126,23 @@ In this section, we use a Script activity to run the stored procedure created in
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/run-pipeline.png" alt-text="Screenshot showing the pipeline Run button.":::
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Save and run button for the pipeline.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" lightbox="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Save and run button for the pipeline.":::
 
-1. After the pipeline successfully runs, you can view the details for more information.
+1. After the pipeline successfully runs, you can view the details for more information. Select the link with your Copy activity name to see it's run details.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-pipeline-run-details-button.png" alt-text="Screenshot showing the view pipeline run details button.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-pipeline-run-details-button.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-pipeline-run-details-button.png" alt-text="Screenshot showing the view pipeline run details button.":::
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/run-details.png" alt-text="Screenshot showing the run details for the pipeline.":::
 
-1. Switch to the workspace and select the Lakehouse to check the results.
+1. Switch to the workspace and find the Lakehouse you created. Select the **SQL analytics endpoint** underneath it to check the results.
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/workspace-with-lakehouse.png" alt-text="Screenshot showing the workspace with the Lakehouse destination highlighted.":::
 
 1. Select the table SynapseNamesTable to view the dat loaded into Lakehouse.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-lakehouse-table.png" alt-text="Screenshot showing the results in the SynapseNamesTable in Lakehouse.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-lakehouse-table.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-lakehouse-table.png" alt-text="Screenshot showing the results in the SynapseNamesTable in Lakehouse.":::
 
-## Next steps
+## Related content
 
 This sample shows you how to preprocess data with a stored procedure before loading the results into Lakehouse.  You learned how to:
 

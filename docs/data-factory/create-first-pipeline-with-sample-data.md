@@ -5,16 +5,16 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: quickstart
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Pipeline Tutorials
 ---
 
 # Quickstart: Create your first pipeline to copy data
 
 In this quickstart, you build a data pipeline to move a Sample dataset to the Lakehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -43,15 +43,15 @@ To get started, you must complete the following prerequisites:
 
 In this session, you start to build your first pipeline by following below steps about copying from a sample dataset provided by pipeline into Lakehouse.
 
-### Step 1: Start with the Copy assistant
+### Step 1: Start with the Copy data assistant
 
-1. After selecting **Copy data** on the canvas,  the **Copy assistant** tool will be opened to get started.
+1. After selecting **Copy data assistant** on the canvas,  the **Copy assistant** tool will be opened to get started.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/copy-data-button.png" alt-text="Screenshot showing the Copy data button.":::
 
 ### Step 2: Configure your source
 
-1. Choose the **Public Holidays** sample data, and then select **Next**.
+1. Choose the **Sample data** tab at the top of the data source browser page, then select the **Public Holidays** sample data, and then **Next**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data.png" alt-text="Screenshot showing the Choose data source page of the Copy data assistant with the Public Holidays sample data selected.":::
 
@@ -65,17 +65,17 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination in the Copy data assistant.":::
 
-1. Select **Create new Lakehouse**, and enter a **Lakehouse name**, then select **Next**.
+1. Enter a **Lakehouse name**, then select **Create and connect**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/create-new-lakehouse.png" alt-text="Screenshot showing the Create new Lakehouse button selected on the Choose data destination page of the Copy data assistant.":::
 
-1. Configure and map your source data to the destination Lakehouse table. Select **tables** and provide a **Table name** under **Root folder**, then choose the **Overwrite** option for **Table action**, and select **Next**.
+1. Configure and map your source data to the destination Lakehouse table. Select **Tables** for the **Root folder** and **Load to a new table** for **Load settings**. Provide a **Table** name and select **Next**.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/configure-lakehouse-tables.png" alt-text="Screenshot showing the Connect to data destination page of the Copy data assistant with Tables selected and a table name for the sample data provided.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/configure-lakehouse-tables.png" lightbox="media/create-first-pipeline-with-sample-data/configure-lakehouse-tables.png" alt-text="Screenshot showing the Connect to data destination page of the Copy data assistant with Tables selected and a table name for the sample data provided.":::
 
 ### Step 4: Review and create your copy activity
 
-1. Review your copy activity settings in the previous steps and select OK to finish. Or you can revisit the previous steps in the tool to edit your settings, if needed.
+1. Review your copy activity settings in the previous steps and select **Save + run** to finish. Or you can revisit the previous steps in the tool to edit your settings, if needed. If you just want to save but not run the pipeline, you can deselect the **Start data transfer immediately** checkbox.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/review-create-activity.png" alt-text="Screenshot of the Review + create page of the Copy data assistant highlighting source and destination.":::
 
@@ -85,13 +85,13 @@ In this session, you start to build your first pipeline by following below steps
 
 ## Run and schedule your data pipeline
 
-1. Switch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
+1. If you didn't choose to **Save + run** on the **Review + save** page of the **Copy data assistant**, switch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" lightbox="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
 
-1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas.  Select the run details button (with the glasses icon highlighted) to view the run details.
+1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas. Select link for the activity name in your output to view the run details.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details-button.png" alt-text="Screenshot showing the Output tab of the pipeline run in-progress with the Details button highlighted in the run status.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details-button.png" lightbox="media/create-first-pipeline-with-sample-data/run-details-button.png" alt-text="Screenshot showing the Output tab of the pipeline run in-progress with the Details button highlighted in the run status.":::
 
 1. The run details show how much data was read and written and various other details about the run.
 
@@ -101,7 +101,7 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
 
-## Next steps
+## Related content
 The pipeline in this sample shows you how to copy sample data to Lakehouse.  You learned how to:
 
 > [!div class="checklist"]

@@ -3,16 +3,16 @@ title: Search and find your content using global search
 description: Learn how to use the search and filter tools in Fabric to quickly find the content you want.
 author: mihart
 ms.author: mihart
-ms.topic: conceptual  
-ms.custom: build-2023
+ms.topic: conceptual
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 06/21/2023
 ---
 
 # Global search
 
 When you're new to [!INCLUDE [product-name](../includes/product-name.md)], you have only a few items (workspaces, reports, apps, lakehouses). But as you begin creating and sharing items, you can end up with long lists of content. That's when searching, filtering, and sorting become helpful.
-
-[!INCLUDE [trial note](../includes/preview-note.md)]
 
 ## Search for content
 
@@ -53,6 +53,7 @@ Another way to locate content quickly is to use the content list **Filter**. Dis
 
 :::image type="content" source="./media/fabric-search/power-bi-sort-filters-new.png" alt-text="Screenshot of the filter on a Recent content list.":::
 
-## Next steps
+## Related content
+
 - [Find Fabric items from Home](fabric-home.md)
 - [Start a Fabric trial](fabric-trial.md)

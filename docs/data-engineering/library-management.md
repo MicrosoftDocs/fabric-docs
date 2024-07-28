@@ -1,139 +1,132 @@
 ---
 title: Manage Apache Spark libraries
-description: Learn how to manage and use built-in libraries following best practices, and how to include other feed and custom libraries.
+description: Learn how to manage and use libraries following best practices. A library is a collection of prewritten code that can provide extra functionality.
 ms.reviewer: snehagunda
 ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 04/16/2024
+#customer intent: As a user, I want to learn about the mechanisms that Microsoft Fabric offers to manage libraries in order to make use of prewritten code.
 ---
 
 # Manage Apache Spark libraries in Microsoft Fabric
 
-**Libraries** provide reusable code that Apache Spark developers may want to include in their Spark application.
+A library is a collection of prewritten code that developers can import to provide functionality. By using libraries, you can save time and effort by not having to write code from scratch to do common tasks. Instead, import the library and use its functions and classes to achieve the desired functionality. Microsoft Fabric provides multiple mechanisms to help you manage and use libraries.
 
-Each workspace comes with a preinstalled set of libraries available in the Spark run-time that you can use immediately in a notebook or Spark job definition. We refer to these as built-in libraries.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-Based on your scenarios and specific needs, you can include other libraries. There are two types of libraries you may want to include:
-
-- **Feed library**: Feed libraries come from public sources or repositories. You can install Python feed libraries from PyPI and Conda by specifying the source in the Library Management portals. You can also use a Conda environment specification *.yml* file to install libraries.
-
-- **Custom library**: Custom libraries are the code built by you or your organization. *.whl*, *.jar* and *.tar.gz* can be managed through Library Management portals. Note that *.tar.gz* is only supported for R language; use *.whl* for Python custom libraries.
-
-## Summary of library management and best practices
-
-You can manage all the previously mentioned types of libraries via two different entry points: library management in workspace settings and in-line installation.
-
-- [**Workspace library management**](#library-management-in-workspace-setting): Workspace library settings define the working environment for the entire workspace. The libraries installed on a workspace level are available for all Notebooks and Spark job definitions under that workspace. Update the workspace libraries when you want to set up the shared environment for all items in a workspace.
-
-   > [!IMPORTANT]
-   > Workspace library management is restricted to workspace admins only. Workspace members, contributors, and viewers can view the libraries installed by the administrator.
-
-- [**In-line installation**](#in-line-installation): With in-line installation, you can install libraries for your notebook session without affecting the global environment. This option is convenient when you want a temporary and fast solution. For instance, you might want to try out a local package or use some other packages for a single session. Currently, Python packages and R packages can be managed in-line.
-
-   > [!IMPORTANT]
-   > In-line installation is session-specific and does not persist across sessions.
-   >
-   > The Python interpreter will be restarted to apply the changes of library, any variables defined before running the command cell will be lost. Therefore, we strongly recommend you to put all the commands for adding, deleting, or updating Python packages at the beginning of your notebook.
-
-**Summarizing all library management behaviors currently available in Fabric:**
-
-| **Library name** | **Workspace update** | **In-line installation** |
-|---|---|---|
-| **Python Feed (PyPI & Conda)** | Supported | Supported |
-| **Python Custom (.whl)** | Supported | Supported |
-| **R Feed (CRAN)** | Not supported | Supported |
-| **R custom (.tar.gz)** | Supported | Supported |
-| **Jar** | Supported | Not supported |
-
-> [!IMPORTANT]
-> We currently have limitations of *.jar* library.
->
-> - If you upload a *.jar* file with different version of built-in library, it will not be effective. Only the new *.jar* will be effective for your Spark sessions.
-> - *%% configure* magic commands are not fully supported on Fabric at this moment. Please don't use it to bring *.jar* file to your notebook session.
+- **Built-in libraries**: Each Fabric Spark runtime provides a rich set of popular preinstalled libraries. You can find the full built-in library list in [Fabric Spark Runtime](runtime.md).
+- **Public libraries**: Public libraries are sourced from repositories such as PyPI and Conda, which are currently supported.
+- **Custom libraries**: Custom libraries refer to code that you or your organization build. Fabric supports them in the *.whl*, *.jar*, and *.tar.gz* formats. Fabric supports *.tar.gz* only for the R language. For Python custom libraries, use the *.whl* format.
 
 ## Library management in workspace setting
 
-Under the **Workspace settings**, you find the workspace-level library management portal: **Workspace setting** > **Data engineering** > **Library management**.
+> [!IMPORTANT]
+> Library management at the workspace setting is no longer supported. To migrate workspace libraries and Spark properties to a default environment, see [Migrate the workspace libraries and Spark properties](environment-workspace-migration.md).
 
-### Manage feed library in workspace setting
+## Summary of library management best practices
 
-In this section, we explain how to manage feed libraries from PyPI or Conda using the workspace library management portal.
+The following scenarios describe best practices.
 
-- **View and search feed library**: You can see the installed libraries and their name, version, and dependencies on the **library management portal**. You can also use the filter box on the upper right corner to find an installed library quickly.
-- **Add new feed library**: The default source for installing Python feed libraries is PyPI. You can also select "Conda" from the drop-down button next to the add button. To add a new library, select the **+** button and enter the library name and version in the new row.
+### Scenario 1: Admin sets default libraries for the workspace
 
-   Alternatively, you can upload a .yml file to install multiple feed libraries at once.
-- **Remove existing feed library**: To remove a library, select the Trash button on its row.
-- **Update the version of existing feed library**: To change the version of a library, select a different one from the drop-down box on its row.
-- **Review and apply changes**: You can review your changes in the "Pending changes" panel. You can remove a change by clicking on the **X** button, or discard all changes by clicking on the **Discard** button at the bottom of the page. When you're satisfied with your changes, select **Apply** to make these changes effective.
+To set default libraries, you have to be the administrator of the workspace. As admin, you can perform these tasks:
 
-### Manage custom libraries in workspace setting
+1. [Create a new environment](create-and-use-environment.md#create-an-environment)
+1. [Install the required libraries in the environment](environment-manage-library.md)
+1. [Attach this environment as the workspace default](create-and-use-environment.md#attach-an-environment-as-workspace-default)
 
-In this section, we explain how to manage your custom packages, such as *.jar*, using the workspace library management portal.
+The notebooks and Spark job definitions in the workspace are attached to the **Workspace settings**. They start sessions with the libraries installed in the workspace's default environment.
 
-- **Upload new custom library**: You can upload your custom codes as packages to the Fabric runtime through the portal. The library management module helps you resolve potential conflicts and download dependencies in your custom libraries.
+### Scenario 2: Persist library specifications for one or multiple code items
 
-  To upload a package, select the **Upload** button under the **Custom libraries** panel and select a local directory.
+If you want to persist the library specifications, [install the libraries in an environment](environment-manage-library.md) and [attach it to the code items](create-and-use-environment.md#attach-an-environment-to-a-notebook-or-a-spark-job-definition).
 
-- **Remove existing custom library**: You can remove a custom library from the Spark runtime by clicking on the trash button under the **Custom libraries** panel.
-- **Review and apply changes**: As with feed libraries, you can review your changes in the **Pending changes** panel and apply them to your Fabric Spark workspace environment.
+One benefit of this approach is that it saves effort of running the code that requires common libraries all the time. Once successfully installed in the environment, the libraries are effective in all Spark sessions if the environment is attached.
 
-> [!NOTE]
-> For *.whl* packages, the library installation process will download the dependencies from public sources automatically. However, this feature is not available for *.tar.gz* packages. You need to upload the dependent packages of the main *.tar.gz* package manually if there are any.
+Another benefit is that the approach supports library configuration granularity lower than the workspace level. One environment can be attached to multiple code artifacts. If you have a subset of notebooks or Spark job definitions in one workspace that require the same libraries, attach them to the same environment. An administrator, member, or contributor of the workspace can create, edit, and attach the environment.
 
-### Cancel update
+### Scenario 3: Inline installation in interactive run
 
-The library update process may take some time to complete. You can cancel the process and continue editing while it's updating. The **Cancel** button appears during the process.
+If you're interested in the one-time use, within an interactive notebook, of a library that isn't installed, [inline installation](#inline-installation) is the most convenient option. Inline commands in Fabric allow you to have the library effective in the current notebook Spark session. The library doesn't persist across different sessions.
 
-### Troubleshooting
+Users who have the permission to run the notebook can install other libraries in the Spark session.
 
-If the library update process fails, you receive a notification. You can select the **View log** button to see the log details and troubleshoot the problem. If you encounter a system error, you can copy the root activity ID and report it to the support team.
+## Summary of supported library types
 
-## In-line installation
-
-If you want to use some other packages for a quick test in an interactive notebook run, in-line installation is the most convenient option.
+| **Library type** | **Environment library management** | **Inline installation** |
+|---|---|---|
+| **Python Public (PyPI & Conda)** | Supported | Supported |
+| **Python Custom (.whl)** | Supported | Supported |
+| **R Public (CRAN)** | Not supported | Supported |
+| **R custom (.tar.gz)** | Supported | Supported |
+| **Jar** | Supported as custom library | Not supported |
 
 > [!IMPORTANT]
+> There are currently limitations on the *.jar* library.
 >
-> *%pip* is recommended instead of *!pip*. *!pip* is a IPython built-in shell command which has following limitations:
+> - For Scala users, the *.jar* file can install successfully in an environment but it isn't effective for your Spark/Scala sessions. The installation overrides the built-in library with a different library. The new *.jar* works in the sessions.
+> - For Python users, all *.jar* files are currently not supported in an environment. They can install successfully in an environment but aren't effective in PySpark sessions.
+> - You can install the *.jar* files at the notebook [session level](#manage-jar-libraries-through-inline-installation) instead.
+
+<a id="in-line-installation"></a>
+## Inline installation
+
+Inline commands support Python libraries and R libraries.
+
+<a id="python-in-line-installation"></a>
+### Python inline installation
+
+The Python interpreter restarts to apply the change of libraries. Any variables defined before you run the command cell are lost. We strongly recommend that you put all the commands for adding, deleting, or updating Python packages at the beginning of your notebook.
+
+The inline commands for managing Python libraries are disabled in notebook pipeline run by default. If you want to enable `%pip install` for pipeline, add "_inlineInstallationEnabled" as bool parameter equals True in the notebook activity parameters.
+
+:::image type="content" source="media\environment-lm\library-management-enable-pip-in-pipeline.png" alt-text="Screenshot showing the the configuration of enabling pip install for notebook pipeline run.":::
+
+> [!NOTE]
 >
-> - *!pip* will only install package on driver node without executor nodes.
-> - Packages that install through *!pip* will not affect when conflicts with built-in packages or when it's already imported in a notebook.
->
-> However, *%pip* will handle all above mentioned scenarios. Libraries installed through *%pip* will be available on both driver and executor nodes and will be still effective even it's already imported.
+> The `%pip install` may lead to inconsistent results from time to time. It's recommended to install library in an environment and use it in the pipeline.
+> In notebook reference runs, inline commands for managing Python libraries are not supported. To ensure the correctness of execution, it is recommended to remove these inline commands from the referenced notebook.
+
+We recommend `%pip` instead of `!pip`. `!pip` is an IPython built-in shell command, which has the following limitations:
+
+- `!pip` only installs a package on the driver node, not executor nodes.
+- Packages that install through `!pip` don't affect conflicts with built-in packages or whether packages are already imported in a notebook.
+
+However, `%pip` handles these scenarios. Libraries installed through `%pip` are available on both driver and executor nodes and are still effective even the library is already imported.
 
 > [!TIP]
 >
-> - The *%conda install* command usually takes longer than the *%pip install* command to install new Python libraries, because it checks the full dependencies and resolves conflicts. You may want to use *%conda install* for more reliability and stability. You can use *%pip install* if you are sure that the library you want to install does not conflict with the pre-installed libraries in the runtime environment.
-> - All available Python in-line commands and its clarifications can be found: [%pip commands](https://pip.pypa.io/en/stable/cli/) and [%conda commands](https://docs.conda.io/projects/conda/en/latest/commands.html)
+> The `%conda install` command usually takes longer than the `%pip install` command to install new Python libraries. It checks the full dependencies and resolves conflicts.
+>
+> You might want to use `%conda install` for more reliability and stability. You can use `%pip install` if you are sure that the library you want to install doesn't conflict with the preinstalled libraries in the runtime environment.
 
-### Manage Python feed libraries through in-line installation
+For all available Python inline commands and clarifications, see [%pip commands](https://pip.pypa.io/en/stable/cli/) and [%conda commands](https://docs.conda.io/projects/conda/en/latest/commands.html).
 
-In this example, we show you how to use in-line commands to manage libraries. Suppose you want to use *altair*, a powerful visualization library for Python, for a one-time data exploration. And suppose the library isn't installed in your workspace. In the following example, we use conda commands to illustrate the steps.
+#### Manage Python public libraries through inline installation
 
-You can use in-line commands to enable *altair* on your notebook session without affecting other sessions of the notebook or other items.
+In this example, see how to use inline commands to manage libraries. Suppose you want to use *altair*, a powerful visualization library for Python, for a one-time data exploration. Suppose the library isn't installed in your workspace. The following example uses conda commands to illustrate the steps.
 
-1. Run the following commands in a notebook code cell to install the *altair* library and *vega_datasets*, which contains dataset you can use to visualize:
+You can use inline commands to enable *altair* on your notebook session without affecting other sessions of the notebook or other items.
+
+1. Run the following commands in a notebook code cell. The first command installs the *altair* library. Also, install *vega_datasets*, which contains a semantic model you can use to visualize.
 
    ```python
    %conda install altair          # install latest version through conda command
    %conda install vega_datasets   # install latest version through conda command
    ```
 
-   The log in the cell output indicates the result of installation.
+   The output of the cell indicates the result of the installation.
 
-2. Import the package and dataset by running the following codes in another notebook cell:
+2. Import the package and semantic model by running the following code in another notebook cell.
 
    ```python
    import altair as alt
    from vega_datasets import data
    ```
 
-3. Now you can play around with the session-scoped *altair* library:
+3. Now you can play around with the session-scoped *altair* library.
 
    ```python
    # load a simple dataset as a pandas DataFrame
@@ -145,35 +138,36 @@ You can use in-line commands to enable *altair* on your notebook session without
    ).interactive()
    ```
 
-### Manage Python custom libraries through in-line installation
+#### Manage Python custom libraries through inline installation
 
-You can upload your Python custom libraries to the **File** folder of the lakehouse attached to your notebook. Go to your lakehouse, select the **…** icon on the **File** folder, and upload the custom library.
+You can upload your Python custom libraries to the *File* folder of the lakehouse attached to your notebook. Go to your lakehouse, select the **…** icon on the **File** folder, and upload the custom library.
 
-After uploading, you can use the following command to install the custom library to your notebook session:
+After your upload, use the following command to install the custom library to your notebook session.
 
 ```python
 # install the .whl through pip command
 %pip install /lakehouse/default/Files/wheel_file_name.whl             
 ```
 
-### Manage R feed libraries through in-line installation
+### R inline installation
 
-Fabric supports *install.packages()*, *remove.packages()* and *devtools::* commands to manage R libraries.
+To manage R libraries, Fabric supports the `install.packages()`, `remove.packages()`, and `devtools::` commands. For all available R inline commands and clarifications, see [install.packages command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/install.packages.html) and [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html).
 
-> [!TIP]
-> All available R in-line commands and its clarifications can be found: [install.packages command](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/install.packages), [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html) and [devtools commands](https://www.r-project.org/nosvn/pandoc/devtools.html).
+#### Manage R public libraries through inline installation
 
-Follow this example to walk through the steps of installing an R feed library:
+Follow this example to walk through the steps of installing an R public library.
 
-1. Switch the working language to “SparkR(R)” in the notebook ribbon.
+To install an R feed library:
 
-2. Run the following command in a notebook cell to install *caesar* library:
+1. Switch the working language to **SparkR (R)** in the notebook ribbon.
+
+2. Install the *caesar* library by running the following command in a notebook cell.
 
    ```python
    install.packages("caesar")
    ```
 
-3. Now you can play around with the session-scoped *caesar* library with Spark job
+3. Now you can play around with the session-scoped *caesar* library with a Spark job.
 
    ```python
    library(SparkR)
@@ -186,6 +180,22 @@ Follow this example to walk through the steps of installing an R feed library:
    spark.lapply(c("hello world", "good morning", "good evening"), hello)
    ```
 
-## Next steps
+### Manage Jar libraries through inline installation
 
-- [Apache Spark workspace administration settings](workspace-admin-settings.md)
+The *.jar* files are support at notebook sessions with following command.
+
+```Scala
+%%configure -f
+{
+    "conf": {
+        "spark.jars": "abfss://<<Lakehouse prefix>>.dfs.fabric.microsoft.com/<<path to JAR file>>/<<JAR file name>>.jar",
+    }
+}        
+```
+
+The code cell is using Lakehouse's storage as an example. At the notebook explorer, you can copy the full file ABFS path and replace in the code.
+:::image type="content" source="media\environment-lm\library-management-get-ABFS-path.png" alt-text="Screenshot of get the ABFS path.":::
+
+## Related content
+
+- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md)

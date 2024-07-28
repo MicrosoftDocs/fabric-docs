@@ -1,11 +1,13 @@
 ---
-title: Use the Fabric contextual Help pane. 
+title: Use the Fabric contextual Help pane.
 description: "Learn how to use feature-aware help pane in Fabric "
 author: liudan66
 ms.author: mihart
 ms.reviewer: mihart
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/09/2023
 ---
 # Self-help with the Fabric contextual Help pane
@@ -13,8 +15,6 @@ ms.date: 05/09/2023
 This article explains how to use the Fabric Help pane. The Help pane is feature-aware and displays articles about the actions and features available on the current Fabric screen. The Help pane is also a search engine that quickly finds answers to questions in the Fabric documentation and Fabric community forums.
 
 :::image type="content" source="media/fabric-help-pane/fabric-help.png" alt-text="Screenshot of Fabric with the help pane outlined in red.":::
-
-[!INCLUDE [trial note](../includes/preview-note.md)]
 
 ## The Help pane is feature-aware
 

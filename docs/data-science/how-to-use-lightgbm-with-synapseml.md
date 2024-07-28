@@ -2,16 +2,23 @@
 title: How to use LightGBM with SynapseML in Microsoft Fabric
 description: Build LightGBM classification, regression, and ranking models with SynapseML in Microsoft Fabric.
 ms.topic: how-to
-ms.custom: build-2023
-ms.reviewer: mopeakande
-author: JessicaXYWang
-ms.author: jessiwang
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: JessicaXYWang
+reviewer: jessiwang
 ms.date: 05/08/2023
 ---
 
 # Use LightGBM models with SynapseML in Microsoft Fabric
 
 The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, you'll use LightGBM to build classification, regression, and ranking models.
+
+LightGBM is an open-source, distributed, high-performance gradient boosting (GBDT, GBRT, GBM, or
+MART) framework. LightGBM is part of Microsoft's
+[DMTK](https://github.com/microsoft/dmtk) project. You can use LightGBM by using LightGBMClassifier, LightGBMRegressor, and LightGBMRanker. LightGBM comes with the advantages of being incorporated into existing SparkML pipelines and used for batch, streaming, and serving workloads. It also offers a wide array of tunable parameters, that one can use to customize their decision tree system. LightGBM on Spark also supports new types of problems such as quantile regression.
 
 ## Prerequisites
 
@@ -84,7 +91,7 @@ In this section, you'll use LightGBM to build a classification model for predict
     from synapse.ml.lightgbm import LightGBMClassifier
     
     model = LightGBMClassifier(
-        objective="binary", featuresCol="features", labelCol="Bankrupt?", isUnbalance=True
+        objective="binary", featuresCol="features", labelCol="Bankrupt?", isUnbalance=True, dataTransferMode="bulk"
     )
     ```
 
@@ -170,7 +177,7 @@ In this section, you'll use LightGBM to build a regression model for drug discov
     from synapse.ml.lightgbm import LightGBMRegressor
     
     model = LightGBMRegressor(
-        objective="quantile", alpha=0.2, learningRate=0.3, numLeaves=31
+        objective="quantile", alpha=0.2, learningRate=0.3, numLeaves=31, dataTransferMode="bulk"
     ).fit(train)
     ```
 
@@ -231,6 +238,7 @@ In this section, you'll use LightGBM to build a ranking model.
         numIterations=200,
         evalAt=[1, 3, 5],
         metric="ndcg",
+        dataTransferMode="bulk"
     )
     ```
 
@@ -248,8 +256,8 @@ In this section, you'll use LightGBM to build a ranking model.
     predictions.limit(10).toPandas()
     ```
 
-## Next steps
+## Related content
 
-- [What is Cognitive Services in Azure Synapse Analytics?](overview-cognitive-services.md)
+- [What is Azure AI services in Azure Synapse Analytics?](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
