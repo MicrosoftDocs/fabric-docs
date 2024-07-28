@@ -27,7 +27,7 @@ Specifically, in this tutorial you will:
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
-* Azure OpenAI credentials or OpenAI API key. TODO: Choose one
+* Azure OpenAI
 * Download the sample notebooks from the GitHub repository
 
 
