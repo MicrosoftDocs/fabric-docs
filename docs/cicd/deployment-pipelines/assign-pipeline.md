@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.custom:
     - build-2023
     - ignite-2023
-ms.date: 07/21/2024
+ms.date: 07/28/2024
 ms.search.form: Deployment pipelines operations
 #customer intent: As a developer, I want to learn how to assign a workspace to a deployment pipeline so that I can manage my development process efficiently.
 ---
@@ -129,19 +129,19 @@ If two or more items in the workspace to be paired have the same name, type and 
 
 ## Considerations and limitations
 
-Only workspaces that can be assigned to a pipeline appear in the dropdown list. A workspace can be assigned to a pipeline stage if the following conditions apply:
+* Only workspaces that can be assigned to a pipeline appear in the dropdown list. A workspace can be assigned to a pipeline stage if the following conditions apply:
 
-* You must be an admin of the workspace.
+  * You're an admin of the workspace.
 
-* The workspace can't be assigned to any other pipeline.
+  * The workspace isn't assigned to any other pipeline.
 
-* The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md).
+  * The workspace resides on a [Fabric capacity](../../enterprise/licenses.md).
 
-* You need at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace member permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
+  * You have at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace member permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
 
-* You can't assign a workspace with [Power BI samples](/power-bi/create-reports/sample-datasets) to a pipeline stage.
+  * The workspace doesn't contain [Power BI samples](/power-bi/create-reports/sample-datasets).
 
-* You can't assign a [template app](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace) workspace.
+  * The workspace isn't a [template app](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace) workspace.
 
 * When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a LakeHouse is a source for a DirectLake semantic model and they are both deployed to the next stage, the DirectLake semantic model in the target stage will be bound to the LakeHouse in the source stage. Use datasourece rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
 
