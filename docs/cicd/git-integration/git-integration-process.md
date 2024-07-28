@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 07/10/2024
+ms.date: 07/28/2024
 ms.custom:
   - build-2023
   - ignite-2023
