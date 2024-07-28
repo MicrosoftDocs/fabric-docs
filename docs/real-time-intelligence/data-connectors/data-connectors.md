@@ -46,7 +46,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Telemetry
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/flink-connector-kusto/
-* **Documentation:** [Get data from Apache Flink](/azure/data-explorer/ingest-data-flink?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data from Apache Flink](../get-data-flink.md)
 
 ## Apache Kafka
 
@@ -57,7 +57,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Logs, Telemetry, Time series
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/kafka-sink-azure-kusto/
-* **Documentation:** [Get data from Apache Kafka](/azure/data-explorer/ingest-data-kafka?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data from Apache Kafka](../get-data-kafka.md)
 * **Community Blog:** [Kafka ingestion into Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/kafka-ingestion-into-azure-data-explorer-part-1/ba-p/1452439)
 
 ## Apache Log4J 2
@@ -69,7 +69,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Logs
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-log4j
-* **Documentation:** [Get data with the Apache Log4J 2 connector](/azure/data-explorer/apache-log4j2-connector?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data with the Apache Log4J 2 connector](../get-data-log4j2.md)
 * **Community Blog:** [Getting started with Apache Log4J and Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/getting-started-with-apache-log4j-and-azure-data-explorer/ba-p/3705242)
 
 ## Apache Spark
@@ -81,7 +81,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Telemetry
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-spark/
-* **Documentation:** [Apache Spark connector](/azure/data-explorer/spark-connector?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Apache Spark connector](../get-data-spark.md)
 * **Community Blog:** [Data preprocessing for Azure Data Explorer for Azure Data Explorer with Apache Spark](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/data-pre-processing-for-azure-data-explorer-with-apache-spark/ba-p/2727993/)
 
 ## Apache Spark for Azure Synapse Analytics
@@ -161,7 +161,7 @@ NLog is a flexible and free logging platform for various .NET platforms, includi
 * **Use cases:** Telemetry, Logs, Metrics
 * **Underlying SDK:** [.NET](/azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-nlog-sink
-* **Documentation:** [Get data with the NLog sink](/azure/data-explorer/nlog-sink?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data with the NLog sink](../get-data-nlog-sink.md)
 * **Community Blog:** [Getting started with NLog sink and Azure Data Explorer](https://aka.ms/adx-docs-nlog-blog)
 
 ## OpenTelemetry

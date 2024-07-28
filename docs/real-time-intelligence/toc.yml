@@ -165,7 +165,7 @@ items:
       - name: Apache Log4J 2
         href: get-data-log4j2.md
       - name: Apache Spark
-        href: /azure/data-explorer/spark-connector?context=/fabric/context/context-rti&pivots=fabric
+        href: get-data-spark.md
       - name: Azure Synapse workspace
         href: /azure/synapse-analytics/quickstart-connect-azure-data-explorer
       - name: Azure Data Factory
