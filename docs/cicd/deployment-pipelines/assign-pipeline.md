@@ -43,7 +43,7 @@ To assign a workspace to a pipeline stage, follow these steps:
 
 1. From the dropdown menu, select the workspace you want to assign to this stage. If you don't see the workspace you want, review the [limitations](#considerations-and-limitations) section and make sure that your workspace meets the required conditions.
 
-    :::image type="content" source="media/assign-pipeline/assign-workspace.png" alt-text="A screenshot showing the assign workspace dropdown in a deployment pipelines empty stage.":::
+    :::image type="content" source="media/assign-pipeline/assign-workspace.png" alt-text="A screenshot showing the *assign workspace* dropdown in a deployment pipelines empty stage.":::
 
 1. Select **Assign a workspace**.
 
@@ -61,7 +61,7 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 1. From the *settings* menu, select **Unassign workspace**.
 
-    :::image type="content" source="media/assign-pipeline/unassign-workspace.png" alt-text="A screenshot showing the unassign workspace option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/assign-pipeline/unassign-workspace.png":::
+    :::image type="content" source="media/assign-pipeline/unassign-workspace.png" alt-text="A screenshot showing the *unassign workspace* option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/assign-pipeline/unassign-workspace.png":::
 
 1. In the *Unassign workspace* dialogue box, select **Unassign**.
 
@@ -91,7 +91,7 @@ Pairing can happen in one of two ways:
   * Item Type
   * Folder Location (used as a tie breaker when a stage contains duplicate items (two or more items with the same name and type)
 
-  If a single item in each stage has the same name and type then pairing occurs. If there's more than one item in a stage that has the same name and type, then items are paired if they're in the same folder. If the folders aren't the same, pairing fails.
+  If a single item in each stage has the same name and type, then pairing occurs. If there's more than one item in a stage that has the same name and type, then items are paired if they're in the same folder. If the folders aren't the same, pairing fails.
 
   The following table shows when items are paired when a workspace is assigned in different circumstances:
 
@@ -100,9 +100,9 @@ Pairing can happen in one of two ways:
   | 1        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ✅ Pairing occurs                                                 |
   | 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
   |          |                                                          | Name: *PBI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
-  | 3        | Name: *PBI Report*<br>Type: *Report*<br>*Folder A* | Name: *PBI Report*<br>Type: *Report*<br>*Folder B*  | ✅ Deployment succeeds but <br>❌ this report is not paired with dev     |
+  | 3        | Name: *PBI Report*<br>Type: *Report*<br>*Folder A* | Name: *PBI Report*<br>Type: *Report*<br>*Folder B*  | ✅ Deployment succeeds but <br>❌ this report isn't paired with dev     |
   |          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*Folder A*  | ✅ Pairing occurs using folder as a tie breaker for duplicates |
-  |          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*No folder* | ✅ Deployment succeeds but <br>❌ this report is not paired with dev     |
+  |          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*No folder* | ✅ Deployment succeeds but <br>❌ this report isn't paired with dev     |
 
 > [!NOTE]
 > Once items are paired, renaming them *doesn't* unpair the items. Thus, there can be paired items with different names.
@@ -143,7 +143,7 @@ If two or more items in the workspace to be paired have the same name, type and 
 
   * The workspace isn't a [template app](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace) workspace.
 
-* When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a LakeHouse is a source for a DirectLake semantic model and they are both deployed to the next stage, the DirectLake semantic model in the target stage will be bound to the LakeHouse in the source stage. Use datasourece rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
+* When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a LakeHouse is a source for a DirectLake semantic model and they're both deployed to the next stage, the DirectLake semantic model in the target stage will be bound to the LakeHouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
 
 ## Related content
 
