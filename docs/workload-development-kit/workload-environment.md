@@ -75,13 +75,14 @@ The structure, including specific subfolder names ('BE', 'FE', 'assets'), is man
 
 During the development cycle, testing a workload on a nonproduction tenant can be done in two modes, local (devmode) and cloud mode (tenant mode).
 
-##### Limitations
+### Limits
 The following limitations apply to all types of NuGet packages, both in development mode and cloud mode:
 - Only `BE` and `FE` subfolders are permitted. Any other subfolders or files located outside these folders will result in an upload error.
 - The `BE` folder accepts only `.xml` files. Any other file type will result in an upload error.
 - A maximum of 10 item files is allowed, meaning the `BE` folder can contain one `WorkloaManifest.xml` and up to 10 `Item.xml` files. Having more than 10 item files in the folder will result in an upload error.
 - Filenames for items must be unique. Duplicate filenames will result in an upload error. 
-- Filenames must conatin alphanumeric characters or hyphens only and cannot exceed a length of 32 characters. Using other characters or exceeding this length will result in an upload error.
+- Filenames must contain alphanumeric (English) characters or hyphens only and cannot exceed a length of 32 characters. Using other characters or exceeding this length will result in an upload error.
+- Please refer to [the workload manifest definition](./backend-manifest.md) for manifest-specific limitations.
 
 ### Local development mode (devmode)
 
