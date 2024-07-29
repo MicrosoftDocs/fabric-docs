@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/15/2024
+ms.date: 07/27/2024
 ---
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
@@ -19,7 +19,7 @@ This article gives a high level view of navigating to your items and actions fro
 On Home, you see items that you create and that you have permission to use. These items are from all the workspaces that you access. That means that the items available on everyone's Home are different. At first, you might not have much content, but that changes as you start to create and share [!INCLUDE [product-name](../includes/product-name.md)] items.
 
 > [!NOTE]
-> Home is not workspace-specific. For example, the **Recent** area on Home might include items from many different workspaces.
+> Home is not workspace-specific. For example, the **Recent workspaces** area on Home might include items from many different workspaces.
 
 In [!INCLUDE [product-name](../includes/product-name.md)], the term *item* refers to: apps, lakehouses, warehouses, reports, and more. Your items are accessible and viewable in [!INCLUDE [product-name](../includes/product-name.md)], and often the best place to start working in [!INCLUDE [product-name](../includes/product-name.md)] is from **Home**. However, once you've created at least one new workspace, been granted access to a workspace, or you've added an item to **My workspace**, you might find it more convenient to navigate directly to a workspace. One way to navigate to a workspace is by using the nav pane and workspace selector.
 
@@ -36,13 +36,12 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 > [!NOTE]
 > **Power BI Home** is different from the other product experiences. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
 
-:::image type="content" source="media/fabric-home/fabric-home-numbered.png" alt-text="Screenshot of the left navigation menu with Knowledge center selected." lightbox="media/fabric-home/fabric-home-numbered.png":::
+:::image type="content" source="media/fabric-home/fabric-home-numbers.png" alt-text="Screenshot of the left navigation menu with Knowledge center selected." lightbox="media/fabric-home/fabric-home-numbers.png":::
 
 1. The left navigation pane (nav pane) for your product experience links you to different views of your items and to creator resources. You can [remove icons from the left nav](#remove-icons-from-the-nav-pane) to suit your workflow.
 1. The selector for switching product experiences.
 1. The top menu bar for orienting yourself in [!INCLUDE [product-name](../includes/product-name.md)], finding items, help, and sending Microsoft feedback. The [**Account manager**](#find-your-account-and-license-information) control is a critical icon for looking up your account information and managing your Fabric trial. 
 1. Options for creating new items.  
-1. Links to recommended content. This content helps you get started using the product experience and links to items and workspaces that you visit often.
 1. Your items organized by recent, favorites, and items shared with you by your colleagues. The items that appear here are the same across product experiences, except for the Power BI experience.  
 
 > [!IMPORTANT]
@@ -79,7 +78,7 @@ You can add an icon back if you decide you need it.
 
 Select **More ...**, then select the icon you want to return to the left nav.
 
-:::image type="content" source="media/fabric-home/more-menu-add-icon-back.png" alt-text="Screenshot showing how to add an item back to the left nav.":::
+:::image type="content" source="media/fabric-home/more-menu-add-icon.png" alt-text="Screenshot showing how to add an item back to the left nav.":::
 
 ### Find and open workspaces
 
@@ -144,7 +143,7 @@ In the upper-right corner of Home are several helpful icons. Take time to explor
 
 ### Find what you need on your Home canvas
 
-The final section of Home is the center area, called the **canvas**. The content of your canvas updates as you select different items. By default, the Home canvas displays options for creating new items, recommended items, recents, favorites, and content that has been shared with you. If you've selected the **Show less** view, the **New** section of the canvas is collapsed. 
+The final section of Home is the center area, called the **canvas**. The content of your canvas updates as you select different items. By default, the Home canvas displays options for creating new items, recents, favorites, and content that has been shared with you. If you've selected the **Show less** view, the **New** section of the canvas is collapsed. 
 
 :::image type="content" source="media/fabric-home/fabric-show-less.png" alt-text="Screenshot of the center area of the Home page, the canvas.":::
 
@@ -152,8 +151,6 @@ When you create a new item, it's saved in your **My workspace** unless you've se
 
 > [!NOTE]
 > Power BI **Home** is different from the other product experiences. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
-
-The **Recommended** area might include getting started content as well as items and workspaces that you use frequently.
 
 ## Related content
 
