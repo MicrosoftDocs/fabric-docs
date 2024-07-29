@@ -325,24 +325,7 @@ conceptualContent:
             url: get-started/index.yml
             text: See more
 
-        # Card
-        - title: Copilot
-          links:
-          - url: get-started/copilot-fabric-overview.md
-            itemType: how-to-guide
-            text: Overview of copilot in Fabric
-          - url: get-started/copilot-privacy-security.md
-            itemType: how-to-guide
-            text: Copilot privacy, security, and responsible use
-          - url: get-started/copilot-notebooks-overview.md
-            itemType: concept
-            text: Copilot for notebooks
-          - url: get-started/copilot-faq-fabric.md
-            itemType: how-to-guide
-            text: Copilot FAQ
-          footerLink:
-            url: get-started/copilot-fabric-overview.md
-            text: See more
+
 
 
     - title: Community # < 60 chars (Optional; Remove if not applicable.)
