@@ -289,7 +289,7 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
-|July 2024|**Microsoft Entra authentication for Fabric Synapse Data Warehouse**|For sample connection strings and more information on using Microsoft Entra as an alternative to SQL Authentication, see [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md).|
+|July 2024|**Microsoft Entra authentication for Fabric Synapse Data Warehouse**|For sample connection strings and more information on using Microsoft Entra as an alternative to SQL Authentication, see [Microsoft Entra authentication as an alternative to SQL authentication](../data-warehouse/entra-id-authentication.md).|
 |June 2024|**Mastering Enterprise T-SQL ETL/ELT: A Guide with Data Warehouse and Fabric Pipelines**|Learn about [foundational elements of an enterprise-scale ETL/ELT framework](https://blog.fabric.microsoft.com/blog/mastering-enterprise-t-sql-etl-elt-a-guide-with-data-warehouse-and-fabric-pipelines) using Fabric Pipelines and a Data Warehouse for performing our transformations in T-SQL. Additionally, we will examine a dynamic SQL script designed to incrementally process tables throughout your enterprise.|
 |April 2024|**Fabric Change the Game: Azure SQL Database mirror into Microsoft Fabric**|A [step-by-step guide to mirror your Azure SQL Database](https://blog.fabric.microsoft.com/blog/fabric-change-the-game-sqldb-mirror-into-microsoft-fabric) into Microsoft Fabric.|
 
