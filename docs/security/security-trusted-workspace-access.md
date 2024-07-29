@@ -17,7 +17,7 @@ Fabric workspaces that access a storage account with trusted workspace access ne
 To limit and protect access to firewall-enabled storage accounts from certain Fabric workspaces, you can set up resource instance rule to allow access from specific Fabric workspaces.
 
 > [!NOTE]
-> Trusted workspace access is **generally available**. Fabric workspace identity can only be created in workspaces associated with a Fabric capacity (F64 or higher). For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+> Trusted workspace access is **generally available**. Fabric workspace identity can only be created in workspaces associated with a Fabric F SKU capacity. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 
 This article shows you how to:
 
@@ -198,9 +198,9 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 
 ### Restrictions and Considerations
 
-* Trusted workspace access is only supported for workspaces in Fabric capacities (F64 or higher).
+* Trusted workspace access is supported for workspaces in any Fabric F SKU capacity.
 * You can only use trusted workspace access in OneLake shortcuts, data pipelines, and the T-SQL COPY statement. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md). 
-* If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity lower than F64, trusted workspace access will stop working after an hour.
+* If a workspace with a workspace identity is migrated to a non-Fabric capacity, or to a non-F SKU Fabric capacity, trusted workspace access will stop working after an hour.
 * Pre-existing shortcuts created before October 10, 2023 don't support trusted workspace access.
 * Connections for trusted workspace access can't be created or modified in **Manage connections and gateways**.
 * Connections to firewall-enabled Storage accounts will have have the status *Offline* in Manage connections and gateways.
