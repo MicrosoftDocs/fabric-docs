@@ -109,63 +109,57 @@ conceptualContent:
       summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
-        - title: "Microsoft Fabric: Get started"
+        - title: "Get started"
           links:
           - url: get-started/fabric-home.md
             itemType: how-to-guide
-            text: Navigate the Fabric portal          
-          - url: get-started/workspaces.md
+            text: Navigate the Fabric portal         
+          - url: get-started/share-items.md
+            itemType: how-to-guide
+            text: Collaborate and share items
+          - url: get-started/task-flow-overview.md
             itemType: concept
-            text: Fabric workspaces and settings
-          - url: get-started/whats-new.md
-            itemType: tutorial
-            text: What's new in Microsoft Fabric?
-          - url: enterprise/buy-subscription.md
+            text: Use task flows
+          - url: get-started/copilot-enable-fabric.md
             itemType: concept
-            text: Buy a Microsoft Fabric subscription
+            text: Try Copilot in Fabric
           # footerLink (optional)
           footerLink:
             url: get-started/index.yml
             text: See more
-        # Card
-        - title: Platform admin and governance
+       # Card
+        - title: Get data into Fabric
           links:
-          - url: admin/microsoft-fabric-admin.md
-            itemType: how-to-guide
-            text: Fabric administration
-          - url: governance/governance-compliance-overview.md
-            itemType: how-to-guide
-            text: Data governance and compliance
-          - url: admin/monitoring-workspace.md
+          - url: data-engineering/load-data-lakehouse.md
             itemType: concept
-            text: Admin monitoring workspace
-          - url: security/security-overview.md
+            text: Get data into a Lakehouse
+          - url: data-warehouse/ingest-data.md
+            itemType: concept
+            text: Get data into Warehouse
+          - url: data-factory/modern-get-data-experience-pipeline.md
             itemType: how-to-guide
-            text: Security
+            text: Get data with pipelines
+          - url: real-time-intelligence/get-data-local-file.md
+            itemType: how-to-guide
+            text: Get data into KQL database
+          footerLink:
+            url: data-activator-get-data-power-bi
+            text: See more
+        # Card
+        - title: Store data
+          links:
+          - url: /real-time-intelligence/eventhouse.md
+            itemType: concept
+            text: Eventhouse
+          - url: /data-warehouse/semantic-models.md
+            itemType: concept
+            text: Semantic models
+          - url: /power-bi/transform-model/datamarts/datamarts-overview
+            itemType: concept
+            text: Datamarts
           footerLink:
             url: admin/index.yml
             text: See more
-        # Card
-        - title: Developer
-          links:
-            - url: /rest/api/fabric/
-              itemType: reference
-              text: REST APIs
-
-            - url: workload-development-kit/development-kit-overview.md
-              itemType: concept
-              text: Microsoft Workload Development Kit
-
-
-            - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
-              itemType: concept
-              text: Deployment pipelines
-            - url: cicd/git-integration/intro-to-git-integration.md
-              itemType: concept
-              text: Git integration
-          footerLink:
-              url: cicd/index.yml
-              text: See more
         # Card
         - title: Learning
           links:
