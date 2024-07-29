@@ -210,7 +210,7 @@ items:
   items:
   - name: Overview
     href: setup-vs-code-extension.md
-  - name: Set up VS Code extension with Docker image
+  - name: VS Code extension with Docker image
     href: setup-vs-code-extension-with-docker-image.md
   - name: Notebook with VS Code extension
     href: author-notebook-with-vs-code.md
