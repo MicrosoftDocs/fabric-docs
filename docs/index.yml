@@ -109,6 +109,120 @@ conceptualContent:
       summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
+        - title: "Microsoft Fabric: Get started"
+          links:
+          - url: get-started/fabric-home.md
+            itemType: how-to-guide
+            text: Navigate the Fabric portal          
+          - url: get-started/workspaces.md
+            itemType: concept
+            text: Fabric workspaces and settings
+          - url: get-started/whats-new.md
+            itemType: tutorial
+            text: What's new in Microsoft Fabric?
+          - url: enterprise/buy-subscription.md
+            itemType: concept
+            text: Buy a Microsoft Fabric subscription
+          # footerLink (optional)
+          footerLink:
+            url: get-started/index.yml
+            text: See more
+        # Card
+        - title: Platform admin and governance
+          links:
+          - url: admin/microsoft-fabric-admin.md
+            itemType: how-to-guide
+            text: Fabric administration
+          - url: governance/governance-compliance-overview.md
+            itemType: how-to-guide
+            text: Data governance and compliance
+          - url: admin/monitoring-workspace.md
+            itemType: concept
+            text: Admin monitoring workspace
+          - url: security/security-overview.md
+            itemType: how-to-guide
+            text: Security
+          footerLink:
+            url: admin/index.yml
+            text: See more
+        # Card
+        - title: Developer
+          links:
+            - url: /rest/api/fabric/
+              itemType: reference
+              text: REST APIs
+
+            - url: workload-development-kit/development-kit-overview.md
+              itemType: concept
+              text: Microsoft Workload Development Kit
+
+
+            - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
+              itemType: concept
+              text: Deployment pipelines
+            - url: cicd/git-integration/intro-to-git-integration.md
+              itemType: concept
+              text: Git integration
+          footerLink:
+              url: cicd/index.yml
+              text: See more
+        # Card
+        - title: Learning
+          links:
+            - url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
+              itemType: training
+              text: Jumpstart your career with the Career Hub
+            - url: https://developer.microsoft.com/offers/30-days-to-learn-it?challenge_option=bfb9f08c-b763-4f60-b5d7-360debaf4f8f&ocid=fabric24_30DTLI_fabricdocs_card_clp
+              itemType: training
+              text: Skill up with the cloud skills challenge
+            - url: /training/fabric/?WT.mc_id=fabric_landingpage-docs-link
+              itemType: training
+              text: Explore role-based learning paths
+            - url: get-started/end-to-end-tutorials.md
+              itemType: training
+              text: Explore Fabric's capabilities
+          footerLink:
+              url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
+              text: See more
+        # Card
+        - title: Community
+          links:
+            - url: https://community.fabric.microsoft.com/
+              itemType: concept
+              text: Ask questions in our forums 
+            - url: https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups
+              itemType: concept
+              text: Join a user group
+            - url: https://ideas.fabric.microsoft.com/
+              itemType: concept
+              text: Vote and contribute product ideas 
+            - url: https://blog.fabric.microsoft.com/blog/
+              itemType: concept
+              text: Fabric updates blog
+        # Card
+        - title: Troubleshooting 
+          links:
+          - url: get-started/fabric-known-issues.md
+            itemType: how-to-guide
+            text: Known issues
+          - url: /power-bi/troubleshoot/
+            itemType: concept
+            text: Troubleshoot issues
+          - url: /power-bi/support/service-support-options
+            itemType: concept
+            text: Create a support ticket
+          footerLink:
+            url: get-started/index.yml
+            text: See more
+
+# conceptualContent section (optional)
+conceptualContent:
+# itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+  sections:
+    - title: Microsoft Fabric shared platform # < 60 chars (Optional; Remove if not applicable.)
+      summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
+      items:
+        # Card
         - title: "Get started"
           links:
           - url: get-started/fabric-home.md
@@ -325,7 +439,24 @@ conceptualContent:
             url: get-started/index.yml
             text: See more
 
-
+        # Card
+        - title: Copilot
+          links:
+          - url: get-started/copilot-fabric-overview.md
+            itemType: how-to-guide
+            text: Overview of copilot in Fabric
+          - url: get-started/copilot-privacy-security.md
+            itemType: how-to-guide
+            text: Copilot privacy, security, and responsible use
+          - url: get-started/copilot-notebooks-overview.md
+            itemType: concept
+            text: Copilot for notebooks
+          - url: get-started/copilot-faq-fabric.md
+            itemType: how-to-guide
+            text: Copilot FAQ
+          footerLink:
+            url: get-started/copilot-fabric-overview.md
+            text: See more
 
 
     - title: Community # < 60 chars (Optional; Remove if not applicable.)
