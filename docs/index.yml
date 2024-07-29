@@ -161,52 +161,58 @@ conceptualContent:
             url: admin/index.yml
             text: See more
         # Card
-        - title: Learning
+        - title: Prepare data
           links:
-            - url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
-              itemType: training
-              text: Jumpstart your career with the Career Hub
-            - url: https://developer.microsoft.com/offers/30-days-to-learn-it?challenge_option=bfb9f08c-b763-4f60-b5d7-360debaf4f8f&ocid=fabric24_30DTLI_fabricdocs_card_clp
-              itemType: training
-              text: Skill up with the cloud skills challenge
-            - url: /training/fabric/?WT.mc_id=fabric_landingpage-docs-link
-              itemType: training
-              text: Explore role-based learning paths
-            - url: get-started/end-to-end-tutorials.md
-              itemType: training
-              text: Explore Fabric's capabilities
-          footerLink:
-              url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
-              text: See more
-        # Card
-        - title: Community
-          links:
-            - url: https://community.fabric.microsoft.com/
-              itemType: concept
-              text: Ask questions in our forums 
-            - url: https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups
-              itemType: concept
-              text: Join a user group
-            - url: https://ideas.fabric.microsoft.com/
-              itemType: concept
-              text: Vote and contribute product ideas 
-            - url: https://blog.fabric.microsoft.com/blog/
-              itemType: concept
-              text: Fabric updates blog
-        # Card
-        - title: Troubleshooting 
-          links:
-          - url: get-started/fabric-known-issues.md
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
             itemType: how-to-guide
-            text: Known issues
-          - url: /power-bi/troubleshoot/
-            itemType: concept
-            text: Troubleshoot issues
-          - url: /power-bi/support/service-support-options
-            itemType: concept
-            text: Create a support ticket
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+            itemType: how-to-guide
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+            itemType: how-to-guide
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+            itemType: how-to-guide
+            text: Query data in a KQL queryset
           footerLink:
-            url: get-started/index.yml
+            url: admin/index.yml
+            text: See more
+        # Card
+        - title: Query and analyze data
+          links:
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+            itemType: how-to-guide
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+            itemType: how-to-guide
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+            itemType: how-to-guide
+            text: Query data in a KQL queryset
+          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+            itemType: how-to-guide
+            text: Query data in a KQL queryset
+          footerLink:
+            url: admin/index.yml
+            text: See more
+        # Card
+        - title: Visualize data
+          links:
+          - url: /power-bi/paginated-reports/paginated-reports-report-builder-power-bi
+            itemType: how-to-guide
+            text: Paginated reports
+          - url: real-time-intelligence/dashboard-real-time-create.md
+            itemType: concept
+            text: Real-time dashboards
+          - url: data-engineering/notebook-visualization.md
+            itemType: how-to-guide
+            text: Notebook visualization
+          - url: /data-science/tuning-automated-machine-learning-visualizations
+            itemType: how-to-guide
+            text: Use AutoML and tune visualizations
+          footerLink:
+            url: /real-time-intelligence/create-powerbi-report.md
             text: See more
 
 # conceptualContent section (optional)
