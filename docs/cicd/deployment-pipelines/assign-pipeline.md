@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.custom:
     - build-2023
     - ignite-2023
-ms.date: 07/28/2024
+ms.date: 07/29/2024
 ms.search.form: Deployment pipelines operations
 #customer intent: As a developer, I want to learn how to assign a workspace to a deployment pipeline so that I can manage my development process efficiently.
 ---
@@ -137,7 +137,7 @@ If two or more items in the workspace to be paired have the same name, type and 
 
   * The workspace resides on a [Fabric capacity](../../enterprise/licenses.md).
 
-  * You have at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace member permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
+  * You have at least [workspace contributor](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace contributor permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
 
   * The workspace doesn't contain [Power BI samples](/power-bi/create-reports/sample-datasets).
 

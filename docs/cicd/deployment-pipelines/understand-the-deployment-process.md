@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: conceptual
 ms.custom:
-ms.date: 07/24/2024
+ms.date: 07/29/2024
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -127,7 +127,7 @@ In many cases, when you have a small change such as adding or removing a table, 
 
 ### Requirements for deploying to a stage with an existing workspace
 
-Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity-license) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
+Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a contributor of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity-license) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
 
 ## Folders in deployment pipelines (preview)
 
@@ -318,7 +318,7 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 
 * Deployment pipelines doesn't support [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) as pipeline admins.
 
-To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a member or an admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, can view the pipeline and share it with others. However, this user can't view the content of the workspace in the pipeline, or in the service, and can't perform deployments.
+To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a contributor, member or admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, can view the pipeline and share it with others. However, this user can't view the content of the workspace in the pipeline, or in the service, and can't perform deployments.
 
 ### Permissions table
 
