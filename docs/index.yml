@@ -331,7 +331,6 @@ conceptualContent:
           footerLink:
             url: get-started/copilot-fabric-overview.md
             text: See more
-
     - title: Community # < 60 chars (Optional; Remove if not applicable.)
       summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
       items:
@@ -368,7 +367,21 @@ conceptualContent:
             - url: https://blog.fabric.microsoft.com/blog/
               itemType: concept
               text: Fabric updates blog
-
+        # Card
+        - title: Community
+          links:
+            - url: https://community.fabric.microsoft.com/
+              itemType: concept
+              text: Ask questions in our forums 
+            - url: https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups
+              itemType: concept
+              text: Join a user group
+            - url: https://ideas.fabric.microsoft.com/
+              itemType: concept
+              text: Vote and contribute product ideas 
+            - url: https://blog.fabric.microsoft.com/blog/
+              itemType: concept
+              text: Fabric updates blog
 additionalContent:
 # additionalContent section (optional)
 # Card with summary style
