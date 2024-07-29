@@ -9,6 +9,7 @@ ms.custom:
   - build-2024
 ms.search.form:
 ms.date: 07/29/2024
+#customer intent: As an ISV, I want to learn about the different pathways to integrate with Microsoft Fabric so that I can leverage the platform's capabilities to build and deploy my solutions.
 ---
 
 # Microsoft Fabric Integration Pathways for ISVs
@@ -21,7 +22,7 @@ ms.date: 07/29/2024
 
 The primary focus with Interop model is on enabling ISVs to integrate their solutions with the [OneLake Foundation](../../get-started/microsoft-fabric-overview.md). To Interop with Microsoft Fabric, we provide integration using a multitude of connectors in Data Factory and in Real-Time Intelligence, REST APIs for OneLake, shortcuts in OneLake, data sharing across Fabric tenants, and database mirroring.
 
-:::image type="content" source="media/partner-integration/onelake-interop.png" alt-text="Figure showing different ways to interop with OneLake: APIs, Fabric Data Factory, Real-Time Intelligence, Multicloud shortcuts, data sharing, and database mirroring.":::
+:::image type="content" source="media/partner-integration/onelake-interop.png" alt-text="Figure showing different ways to interop with OneLake: APIs, Data Factory, RTI, Multicloud shortcuts, data sharing, and database mirroring.":::
 
 The following sections describe some of the ways you can get started with this model.
 
@@ -71,7 +72,7 @@ Data Sharing allows Fabric users to share data across different Fabric tenants w
 
 - [Learn more about Data Sharing](../../governance/external-data-sharing-overview.md)
 
-:::image type="content" source="media/partner-integration/data-sharing.png" alt-text="Diagram showing data sharing in Fabric." lightbox="media/partner-integration/data-sharing.png":::
+:::image type="content" source="media/partner-integration/data-sharing.png" alt-text="Diagram showing how the data sharing process works in Fabric." lightbox="media/partner-integration/data-sharing.png":::
 
 ### Database mirroring
 
