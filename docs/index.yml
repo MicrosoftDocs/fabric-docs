@@ -214,6 +214,123 @@ conceptualContent:
           footerLink:
             url: /real-time-intelligence/create-powerbi-report.md
             text: See more
+        # Card
+        - title: Administer your resources
+          links:
+          - url: admin/microsoft-fabric-admin.md
+            itemType: overview
+            text: What is Fabric administration?
+          - url: admin/fabric-switch.md
+            itemType: overview
+            text: Enable Fabric
+          - url: admin/admin-center.md
+            itemType: concept
+            text: What is Fabric admin portal?
+          - url: /admin/capacity-settings.md
+            itemType: how-to-guide
+            text: Manage Fabric capacity
+          footerLink:
+            url: admin/index.yml
+            text: See more
+        # Card
+        - title: Govern your resources
+          links:
+          - url: governance/governance-compliance-overview.md
+            itemType: overview
+            text: Governance and compliance in Fabric
+          - url: governance/domains.md
+            itemType: overview
+            text: Domains
+          - url: governance/endorsement-overview.md
+            itemType: concept
+            text: Endorsement
+          - url: governance/information-protection.md
+            itemType: how-to-guide
+            text: Information protection
+          footerLink:
+            url: /governance/index.yml
+            text: See more
+        # Card
+        - title: Secure resources
+          links:
+          - url: security/security-overview.md
+            itemType: overview
+            text: Security in Fabric
+          - url: security/security-managed-private-endpoints-overview.md
+            itemType: overview
+            text: Managed VNets
+          - url: security/security-private-links-overview.md
+            itemType: concept
+            text: Private Links
+          - url: security/service-admin-row-level-security.md
+            itemType: how-to-guide
+            text: Row-level security (RLS) with Power BI
+          footerLink:
+            url: /security/index.yml
+            text: See more
+        # Card
+        - title: Stay informed with product updates
+          links:
+          - url: get-started/whats-new.md
+            itemType: tutorial
+            text: What's new in Microsoft Fabric?
+          - url: /release-plan/
+            itemType: how-to-guide
+            text: Microsoft Fabric release plans
+          - url: https://blog.fabric.microsoft.com/blog
+            itemType: concept
+            text: Microsoft Fabric updates blog
+          - url: /power-bi/developer/visuals/changelog
+            itemType: how-to-guide
+            text: Custom visuals change log
+          footerLink:
+            url: /release-plan/
+            text: See more
+        # Card
+        - title: Migrate to Fabric
+          links:
+          - url: data-factory/upgrade-paths.md
+            itemType: concept
+            text: Migrate to Data Factory
+          - url: data-engineering/migrate-synapse-overview.md
+            itemType: how-to-guide
+            text: Migrate from Azure Synapse Spark to Fabric
+          - url: data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md
+            itemType: how-to-guide
+            text: From Synapse dedicated SQL pools to Fabric
+          footerLink:
+            url: data-engineering/migrate-synapse-overview.md
+            text: See more
+        # Card
+        - title: Decision guides
+          links:
+          - url: get-started/decision-guide-data-store.md
+            itemType: how-to-guide
+            text: Data store
+          - url: get-started/decision-guide-pipeline-dataflow-spark.md
+            itemType: how-to-guide
+            text: Data Ingestion and transformation
+          footerLink:
+            url: get-started/index.yml
+            text: See more
+        # Card
+        - title: Copilot
+          links:
+          - url: get-started/copilot-fabric-overview.md
+            itemType: how-to-guide
+            text: Overview of copilot in Fabric
+          - url: get-started/copilot-privacy-security.md
+            itemType: how-to-guide
+            text: Copilot privacy, security, and responsible use
+          - url: get-started/copilot-notebooks-overview.md
+            itemType: concept
+            text: Copilot for notebooks
+          - url: get-started/copilot-faq-fabric.md
+            itemType: how-to-guide
+            text: Copilot FAQ
+          footerLink:
+            url: get-started/copilot-fabric-overview.md
+            text: See more
 
 # conceptualContent section (optional)
 
