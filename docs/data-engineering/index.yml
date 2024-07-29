@@ -159,7 +159,7 @@ landingContent:
         links:
           - text: Use notebooks from VS Code
             url: author-notebook-with-vs-code.md
-          - text: Use Container Image from VS Code
+          - text: Use container image from VS Code
             url: setup-vs-code-extension-with-docker-image.md
           - text: Use notebooks from VS Code with resource
             url: author-notebook-resource-with-vs-code.md
