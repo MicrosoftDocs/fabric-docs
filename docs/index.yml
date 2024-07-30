@@ -130,10 +130,10 @@ conceptualContent:
        # Card
         - title: Get data into Fabric
           links:
-          - url: data-engineering/load-data-lakehouse.md
+          - url: data-engineering/tutorial-lakehouse-data-ingestion.md
             itemType: concept
             text: Get data into a Lakehouse
-          - url: data-warehouse/ingest-data.md
+          - url: data-warehouse/ingest-data-pipelines.md
             itemType: concept
             text: Get data into Warehouse
           - url: data-factory/modern-get-data-experience-pipeline.md
@@ -161,38 +161,20 @@ conceptualContent:
             url: admin/index.yml
             text: See more
         # Card
-        - title: Prepare data
+        - title: Prepare and transform data
           links:
+          - url: data-engineering/tutorial-lakehouse-data-preparation.md
+            itemType: how-to-guide
+            text: Transform data in the lakehouse
           - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
             itemType: how-to-guide
-            text: Query data in a KQL queryset
-          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+            text: Transform data in a KQL queryset
+          - url: data-science/tutorial-data-science-explore-notebook.md
             itemType: how-to-guide
-            text: Query data in a KQL queryset
-          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+            text: Transform data with Data Wrangler
+          - url: data-warehouse/query-warehouse.md
             itemType: how-to-guide
-            text: Query data in a KQL queryset
-          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
-            itemType: how-to-guide
-            text: Query data in a KQL queryset
-          footerLink:
-            url: admin/index.yml
-            text: See more
-        # Card
-        - title: Query and analyze data
-          links:
-          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
-            itemType: how-to-guide
-            text: Query data in a KQL queryset
-          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
-            itemType: how-to-guide
-            text: Query data in a KQL queryset
-          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
-            itemType: how-to-guide
-            text: Query data in a KQL queryset
-          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
-            itemType: how-to-guide
-            text: Query data in a KQL queryset
+            text: Transform data in the warehouse
           footerLink:
             url: admin/index.yml
             text: See more
@@ -388,42 +370,45 @@ conceptualContent:
             - url: /training/fabric/?WT.mc_id=fabric_landingpage-docs-link
               itemType: training
               text: Explore role-based learning paths
-            - url: get-started/end-to-end-tutorials.md
+            - url: https://www.youtube.com/@MicrosoftFabric/featured
               itemType: training
-              text: Explore Fabric's capabilities
-          footerLink:
-              url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
-              text: See more
+              text: Fabric on YouTube
+            - url: https://fabric-flashcards.com/
+              itemType: training
+              text: Fabric flashcards
         # Card
-        - title: Community
+        - title: Community resources
           links:
             - url: https://community.fabric.microsoft.com/
               itemType: concept
               text: Ask questions in our forums 
-            - url: https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups
-              itemType: concept
-              text: Join a user group
             - url: https://ideas.fabric.microsoft.com/
               itemType: concept
               text: Vote and contribute product ideas 
             - url: https://blog.fabric.microsoft.com/blog/
               itemType: concept
               text: Fabric updates blog
-        # Card
-        - title: Community
-          links:
-            - url: https://community.fabric.microsoft.com/
+            - url: https://community.fabric.microsoft.com/t5/Community-News/Fabric-Community-Update-March-2024/td-p/3744214
               itemType: concept
-              text: Ask questions in our forums 
+              text: Signup for the Fabric newsletter
+        # Card
+        - title: Get involved
+          links:
             - url: https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups
               itemType: concept
               text: Join a user group
-            - url: https://ideas.fabric.microsoft.com/
+            - url: https://community.fabric.microsoft.com/t5/custom/page/page-id/UnifiedSearchPage?tabName=events
               itemType: concept
-              text: Vote and contribute product ideas 
-            - url: https://blog.fabric.microsoft.com/blog/
+              text: Join a local event
+        # Card
+        - title: Recognition programs
+          links:
+            - url: https://mvp.microsoft.com/
               itemType: concept
-              text: Fabric updates blog
+              text: MVP program
+            - url: https://mvp.microsoft.com/studentambassadors
+              itemType: concept
+              text: Microsoft Learn Student Ambassadors program
 additionalContent:
 # additionalContent section (optional)
 # Card with summary style
