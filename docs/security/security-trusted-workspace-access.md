@@ -203,7 +203,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity lower than F64, trusted workspace access will stop working after an hour.
 * Pre-existing shortcuts created before October 10, 2023 don't support trusted workspace access.
 * Connections for trusted workspace access can't be created or modified in **Manage connections and gateways**.
-* Connections to firewall-enabled Storage accounts will have have the status *Offline* in Manage connections and gateways.
+* Connections to firewall-enabled Storage accounts will have the status *Offline* in Manage connections and gateways.
 * If you reuse connections that support trusted workspace access in Fabric items other than shortcuts and pipelines, or in other workspaces, they might not work.
 * Only *organizational account* or *service principal* must be used for authentication to storage accounts for trusted workspace access.
 * Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.
