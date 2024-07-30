@@ -356,7 +356,7 @@ conceptualContent:
               itemType: concept
               text: Fabric for ISVs
           footerLink:
-              url: 
+              url: /workload-development-kit/
               text: See more
         # Card
         - title: Develop with APIs
