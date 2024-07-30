@@ -1,17 +1,18 @@
 ---
-title: OneLake shortcuts
+title: Unify data sources with OneLake shortcuts
 description: OneLake shortcuts provide a way to connect to existing data without having to directly copy it. Learn how to use them.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
 ms.search.form: Shortcuts
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
 ms.date: 05/09/2024
+#customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 
 # OneLake shortcuts
@@ -255,7 +256,7 @@ In this case, if User A has write permissions in the ADLS Gen2 account, the **Ba
 
 When creating shortcuts between multiple Fabric items within a workspace, you can visualize the shortcut relationships through the workspace lineage view. Select the **Lineage view** button (:::image type="icon" source="media\onelake-shortcuts\lineage-view-button.png":::) in the upper right corner of the Workspace explorer.
 
-:::image type="content" source="media\onelake-shortcuts\lineage-view.png" alt-text="Screenshot of the lineage view screen." lightbox="media\onelake-shortcuts\lineage-view.png":::
+:::image type="content" source="media\onelake-shortcuts\lineage-view.png" alt-text="Screenshot of the lineage view screen" lightbox="media\onelake-shortcuts\lineage-view.png":::
 
 > [!NOTE]
 > The lineage view is scoped to a single workspace. Shortcuts to locations outside the selected workspace won't appear.

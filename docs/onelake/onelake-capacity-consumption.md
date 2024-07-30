@@ -1,10 +1,11 @@
 ---
 title: OneLake capacity consumption example
-description: Information on how OneLake uses Fabric capacity and how storage is billed.
+description: Information on how OneLake uses Fabric capacity and how storage is billed with capacity consumption examples.
 ms.author: nishas
 author: nishas
 ms.topic: how-to
 ms.date: 02/26/2024
+#customer intent: As a capacity admin, I want to understand how OneLake consumes storage and compute so that I can effectively manage my capacity and optimize costs.
 ---
 
 # Fabric Capacity and OneLake Consumption

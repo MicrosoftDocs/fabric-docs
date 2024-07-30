@@ -1,6 +1,6 @@
 ---
 title: OneLake consumption
-description: Information on how OneLake usage affects your CU consumption.
+description: Information on how OneLake usage consumes Fabric capacity units including how consumption is calculated, billed, and reported.
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to
@@ -9,6 +9,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.date: 01/25/2024
+#customer intent: As a capacity admin, I want to understand how OneLake usage is billed and reported, including consumption of storage and transactions, so that I can effectively manage and optimize my costs and resources.
 ---
 
 # OneLake compute and storage consumption

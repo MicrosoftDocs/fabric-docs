@@ -1,6 +1,6 @@
 ---
 title: Integrate Databricks Unity Catalog with OneLake
-description: Learn how to sync Databricks Unity Catalog Delta tables to OneLake using shortcuts.
+description: Learn how to sync external Unity Catalog Delta tables created within your Azure Databricks workspace to OneLake using shortcuts.
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.custom:
   - fabric-cat
 ms.date: 02/15/2024
+#customer intent: As a data engineer, I want to learn how to integrate Databricks Unity Catalog with OneLake using shortcuts so that I can automatically sync my external Unity Catalog Delta tables to a Microsoft Fabric lakehouse.
 ---
 
 # Integrate Databricks Unity Catalog with OneLake

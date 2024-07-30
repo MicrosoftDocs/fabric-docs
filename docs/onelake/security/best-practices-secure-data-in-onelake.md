@@ -1,13 +1,14 @@
 ---
 title: Best practices for OneLake security
-description: Best practices for securing your data in OneLake.
+description: Best practices for securing your data in OneLake including least privilege access, workload permissions, and user permissions.
 ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - ignite-2023
 ms.date: 05/09/2024
+#customer intent: As a security engineer, I want to learn best practices for securing my data in OneLake, including least privilege access, workload permissions, and user permissions, so that I can effectively protect my data and reduce security risks.
 ---
 
 # Best practices for OneLake security
@@ -54,7 +55,5 @@ A user needs to be a workspace Viewer, or have the Read permission and the ReadA
 ## Related content
 
 - [Fabric Security overview](../../security/security-overview.md)
-
 - [Fabric and OneLake security overview](./fabric-onelake-security.md)
-
 - [Data Access Control Model](../security/data-access-control-model.md)

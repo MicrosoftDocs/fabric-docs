@@ -1,6 +1,6 @@
 ---
 title: OneLake File Explorer Release Notes
-description: Information about each release of the OneLake file explorer client app for Windows.
+description: Information about major updates in each release of the OneLake file explorer client app for Windows.
 ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
@@ -9,6 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 10/13/2023
+#customer intent: As a OneLake file explorer user, I want to stay informed about app updates and easily access release notes so that I can take advantage of new features and improvements.
 ---
 
 # What's new in the latest OneLake file explorer?

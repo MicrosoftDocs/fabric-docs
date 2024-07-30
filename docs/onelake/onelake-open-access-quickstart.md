@@ -1,6 +1,6 @@
 ---
 title: Ingest data into OneLake and analyze with Azure Databricks
-description: Learn how to use pipelines to ingest data into OneLake and analyze that data with Azure Databricks.
+description: Learn how to create a pipeline to ingest data into OneLake and analyze that data with Azure Databricks.
 ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
@@ -9,6 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 09/27/2023
+#customer intent: As a data engineer, I want to learn how to load data into OneLake and analyze it with Azure Databricks so that I can use my Azure Databricks notebook to read from and write to Delta tables.
 ---
 
 # Ingest data into OneLake and analyze with Azure Databricks
