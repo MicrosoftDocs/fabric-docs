@@ -685,6 +685,8 @@
         href: dataflows-gen2-monitor.md
       - name: Dataflow Gen2 refresh
         href: dataflow-gen2-refresh.md
+      - name: Data in Dataflows gen2 staging
+        href: data-in-staging-artifacts.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow
