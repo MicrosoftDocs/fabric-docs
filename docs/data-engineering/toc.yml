@@ -212,6 +212,8 @@ items:
     href: setup-vs-code-extension.md
   - name: VS Code extension with Docker image
     href: setup-vs-code-extension-with-docker-image.md
+  - name: Manage environment artifact with VS Code extension
+    href: manage-environment-with-vs-code.md  
   - name: Notebook with VS Code extension
     href: author-notebook-with-vs-code.md
   - name: Notebook resource with VS Code extension
