@@ -113,7 +113,7 @@ Limitations:
 * Data connectors relying on queued ingestion aren't supported.
 * Querying an event house using T-SQL isn't possible.
 
-### Healthcare data solutions
+### Healthcare data solutions (preview)
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. Within a tenant that has been enabled with a private link, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data.  This includes the ability to ingest healthcare data form various sources, such as Azure Storage accounts, and more.
 
