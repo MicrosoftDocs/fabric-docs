@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
-ms.date: 07/13/2024
+ms.date: 07/30/2024
 ---
 
 # Private links for secure access to Fabric
@@ -112,6 +112,10 @@ Limitations:
 * Ingesting data using queued ingestion isn't supported.
 * Data connectors relying on queued ingestion aren't supported.
 * Querying an event house using T-SQL isn't possible.
+
+### Healthcare data solutions
+
+Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. Within a tenant that has been enabled with a private link, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data.  This includes the ability to ingest healthcare data form various sources, such as Azure Storage accounts, and more.
 
 ### Other Fabric items
 
