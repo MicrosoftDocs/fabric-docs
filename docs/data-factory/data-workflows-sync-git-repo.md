@@ -17,7 +17,8 @@ ms.date: 03/25/2024
 > [!NOTE]
 > Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-Data workflows provide a simple and efficient way to create and manage Apache Airflow environments, enabling you to run data pipelines at scale with ease. It provides you the two methods to store your Data worklows files. In this article, you learn to synchronize your code from an existing GitHub repository.  
+Data Workflows, a transformative capability within Microsoft Fabric, redefines your approach to constructing and managing data pipelines. Powered by the Apache Airflow runtime, Data Workflows provides an integrated, cloud-based platform for developing, scheduling, and monitoring Python-based data workflows, articulated as Directed Acyclic Graphs (DAGs). It delivers a Software-as-a-Service (SaaS) experience for data pipeline development and management using Apache Airflow, making the runtime easily accessible and enabling the creation and operation of your data workflows.
+With data workflows, you have two options for storing your workflow files: Fabric-managed storage and GitHub-managed storage. In this article, you will learn how to synchronize your code from an existing GitHub repository.
 
 
 ## Prerequisites
@@ -91,6 +92,13 @@ Specify the git repository you want to sync your Data workflows with.
 
 3. Click on 'Apply'.
 
+
+#### Monitor Your DAGs
+- To verify if your repository is synchronized, navigate to the Apache Airflow's UI by clicking on "Monitor in Apache Airflow". In the UI, you'll see all the DAGs from your repository loaded directly.
+  :::image type="content" source="media/data-workflows/monitor-dag-apache-airflow.png" lightbox="media/data-workflows/monitor-dag-apache-airflow.png" alt-text="Screenshot to monitor dags in apache airflow.":::
+- Note that, Data workflows's code editor isn't supported for the git-sync feature. You need to edit your code locally and push the changes to your remote Git repository. Your latest commit will be automatically synchronized with Data Workflows, and you can see your updated code in the Apache Airflow's UI.
+
+
 #### Supported Git Repository Structure
 
 ```
@@ -113,6 +121,8 @@ Specify the git repository you want to sync your Data workflows with.
 |    |    ├-- __init__.py
 |    |    └-- *.py
 ```
+[!Note]
+Please note that we only synchronize the "dags" and "plugins" folders from the repository Therefore, any files or subfolders must be placed within one of these folders.
 
 ## Related Content
 
