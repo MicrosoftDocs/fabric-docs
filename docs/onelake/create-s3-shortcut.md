@@ -10,7 +10,10 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 07/25/2024
+<<<<<<< HEAD
 #customer intent: As a data engineer, I want to learn how to create an Amazon S3 shortcut inside a Fabric lakehouse so that I can efficiently access and manage S3 data within the lakehouse environment.
+=======
+>>>>>>> b966501a28e5aa547bd71d37ea1196ae0794d8c5
 ---
 
 # Create an Amazon S3 shortcut
@@ -29,7 +32,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 1. Open a lakehouse.
 
-1. Right-click on a directory within the **Lake view** of the lakehouse.
+1. Right-click on the **Tables** directory within the lakehouse.
 
 1. Select **New shortcut**.
 

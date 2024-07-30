@@ -11,6 +11,7 @@ ms.custom:
   - ignite-2023
 ms.date:07/25/2024
 #customer intent: As a data engineer, I want to learn how to create an Azure Data Lake Storage Gen2 shortcut inside a Microsoft Fabric lakehouse so that I can efficiently manage and access my data.
+ms.date: 07/25/2024
 ---
 
 # Create an Azure Data Lake Storage Gen2 shortcut
@@ -36,7 +37,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 [!INCLUDE [adls-gen2-shortcut](../includes/adls-gen2-shortcut.md)]
 
-The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
+7. The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 

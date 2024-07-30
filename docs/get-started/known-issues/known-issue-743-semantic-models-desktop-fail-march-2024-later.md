@@ -4,7 +4,7 @@ description: A known issue is posted where semantic models in Desktop sometimes 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/30/2024
+ms.date: 07/18/2024
 ms.custom: known-issue-743
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-743
 
 In Power BI Desktop March 2024 and later versions, connecting to a semantic model sometimes fails with a `Cannot load model` error message. The failure happens when you connect to a semantic model in a different user's My workspace.
 
-**Status:** Open
+**Status:** Fixed: July 18, 2024
 
 **Product Experience:** Power BI
 

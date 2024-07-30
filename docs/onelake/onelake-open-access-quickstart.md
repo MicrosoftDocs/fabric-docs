@@ -54,9 +54,9 @@ Before you start, you must have:
 
    :::image type="content" source="media\onelake-open-access-quickstart\onelake-final-pipeline-review.png" alt-text="Screenshot showing how to enter table name.":::
 
-1. When the job is complete, navigate to your lakehouse and view the delta table listed under /Tables.
+1. When the job is complete, navigate to your lakehouse and view the delta table listed under /Tables folder.
 
-1. Copy the Azure Blob Filesystem (ABFS) path to your delta table to by right-clicking the table name in the Explorer view and selecting **Properties**.
+1. Right-click on the created table name, select **Properties**, and copy the Azure Blob Filesystem (ABFS) path.
 
 1. Open your Azure Databricks notebook. Read the Delta table on OneLake.
 

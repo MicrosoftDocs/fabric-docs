@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stwynant
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: how-to
 ---
 
@@ -83,7 +81,7 @@ $warehouseid = 'warehouseID'
 Connect-PowerBIServiceAccount
 
 #Invoke warehouse takeover
-$url = '/groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + 'takeover'
+$url = '/groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + '/takeover'
 Invoke-PowerBIRestMethod -Url $url -Method Post -Body ""
 ```
 
