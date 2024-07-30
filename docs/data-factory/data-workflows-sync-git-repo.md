@@ -112,4 +112,6 @@ We only synchronize the "dags" and "plugins" folders from the repository. Make s
 
 ## Related Content
 
-* [Install Private Package in Data workflows](data-workflows-install-private-package.md)
+- [Install Private Package in Data workflows](data-workflows-install-private-package.md)
+- [Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)
+- [Data workflows workspace settings](../data-factory/data-workflows-workspace-settings.md)
