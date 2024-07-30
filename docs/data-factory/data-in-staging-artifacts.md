@@ -1,8 +1,9 @@
 ---
 title: Data in Dataflow gen2 staging 
-description: This article provides information about what staging artifacts are and how to access data wihtin them.
+description: This article provides information about what staging artifacts are and how to access data within them.
 author: Luitwieler
 ms.author: jeluitwi
+ms.topic: concept-article
 ms.date: 07/22/2024
 ---
 
@@ -12,7 +13,7 @@ To improve performance and reliability, Dataflow Gen2 uses staging items to stor
 
 ## What are staging artifacts?
 
-Staging artifacts are intermediate data storage locations used by Dataflow Gen2 to store data during data transformation. These artifacts go by the names "DataflowsStagingLakehouse" and "DataflowsStagingWarehouse". The staging artifacts are used to store intermediate data during data transformation to improve performance. These artifacts are created automatically when you create your first dataflow and are managed by Dataflow Gen2. These artifacts are by default hidden from the user in the workspace, but might be visible in other experiences like Get Data or the Lakehouse explorer. We strongly advise not to access or modify the data in the staging artifacts directly as it may lead to unexpected behavior. Also storing data yourself in the staging artifacts isn't supported and might result in data loss.
+Staging artifacts are intermediate data storage locations used by Dataflow Gen2 to store data during data transformation. These artifacts go by the "DataflowsStagingLakehouse" and "DataflowsStagingWarehouse" names. The staging artifacts are used to store intermediate data during data transformation to improve performance. These artifacts are created automatically when you create your first dataflow and are managed by Dataflow Gen2. These artifacts are by default hidden from the user in the workspace, but might be visible in other experiences like Get Data or the Lakehouse explorer. We strongly advise not to access or modify the data in the staging artifacts directly as it may lead to unexpected behavior. Also storing data yourself in the staging artifacts isn't supported and might result in data loss.
 
 ## Data in staging artifacts
 
