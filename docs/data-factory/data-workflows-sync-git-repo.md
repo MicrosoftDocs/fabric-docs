@@ -49,8 +49,7 @@ With data workflows, you have two options for storing your workflow files: Fabri
 Specify the git repository you want to sync your Data workflows with.
 
 1. Go to the "Settings" button and click on 'File Storage' tab. Choose "Git-sync" as the type of storage.
-
-:::image type="content" source="media/data-workflows/git-sync.png" lightbox="media/data-workflows/git-sync.png" alt-text="Screenshot to synchronize GitHub repository.":::
+   :::image type="content" source="media/data-workflows/git-sync.png" lightbox="media/data-workflows/git-sync.png" alt-text="Screenshot to synchronize GitHub repository.":::
 
 2. Fill out the following fields:
    * <strong>Git service type</strong>: Supported service types:
@@ -106,7 +105,8 @@ Specify the git repository you want to sync your Data workflows with.
 |    |    ├-- __init__.py
 |    |    └-- *.py
 ```
->[!Note] We only synchronize the "dags" and "plugins" folders from the repository. Make sure any files or subfolders are inside one of these folders.
+>[!Note]
+> We only synchronize the "dags" and "plugins" folders from the repository. Make sure any files or subfolders are inside one of these folders.
 
 ## Related Content
 
