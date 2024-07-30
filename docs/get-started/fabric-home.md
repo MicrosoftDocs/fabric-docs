@@ -23,7 +23,7 @@ On Home, you see items that you create and that you have permission to use. Thes
 
 In [!INCLUDE [product-name](../includes/product-name.md)], the term *item* refers to: apps, lakehouses, warehouses, reports, and more. Your items are accessible and viewable in [!INCLUDE [product-name](../includes/product-name.md)], and often the best place to start working in [!INCLUDE [product-name](../includes/product-name.md)] is from **Home**. However, once you create at least one new workspace, been granted access to a workspace, or you add an item to **My workspace**, you might find it more convenient to navigate directly to a workspace. One way to navigate to a workspace is by using the nav pane and workspace selector.
 
-:::image type="content" source="media/fabric-home/fabric-home-data-engineering-workspace.png" alt-text="Screenshot showing sample Home for the Data Science experience." lightbox="media/fabric-home/fabric-home-data-engineering-workspace.png":::
+:::image type="content" source="media/fabric-home/fabric-home-data-engineering-workspaces.png" alt-text="Screenshot showing sample Home for the Data Science experience." lightbox="media/fabric-home/fabric-home-data-engineering-workspaces.png":::
 
 To open **Home**, select it from the top of your left navigation pane. 
 
