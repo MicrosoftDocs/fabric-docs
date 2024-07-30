@@ -53,27 +53,26 @@ Specify the git repository you want to sync your Data workflows with.
 :::image type="content" source="media/data-workflows/git-sync.png" lightbox="media/data-workflows/git-sync.png" alt-text="Screenshot to synchronize GitHub repository.":::
 
 2. Fill out the following fields:
+   * <strong>Git service type</strong>: Supported service types:
+      * GitHub
+      * ADO: Azure DevOps
+      * GitLab
+      * BitBucket
 
-* <strong>Git service type</strong>: Supported service types:
-    * GitHub
-    * ADO: Azure DevOps
-    * GitLab
-    * BitBucket
-
-* <strong>Git Credential type</strong>: Supported credential types:
-    * None: Choose this credential type, if the repository is public.
-    * Personal Access token: A personal access token from the Git service used to authenticate with repository.
-      * Fill out the fields:
-         * Username: Username of GitHub.
-         * Personal Access token
-    * Service Principal: Select this credential when you choose Git Service as Azure Devops:
+   * <strong>Git Credential type</strong>: Supported credential types:
+      * None: Choose this credential type, if the repository is public.
+      * Personal Access token: A personal access token from the Git service used to authenticate with repository.
         * Fill out the fields:
-            * Service principal app ID: Client ID of your Service Principal that has access to Azure Devops Repository.
-            * Service principal secret: Client secret with access to Azure DevOps repository.
-            * Service principal tenant ID: Tenant ID of your Service Principal.
-
-* <strong>Repo</strong>: The clone URL to the repository you want to sync.
-* <strong>Branch</strong>: Name of the repository’s branch you want to sync.
+          * Username: Username of GitHub.
+          * Personal Access token
+      * Service Principal: Select this credential when you choose Git Service as Azure Devops:
+          * Fill out the fields:
+              * Service principal app ID: Client ID of your Service Principal that has access to Azure Devops Repository.
+              * Service principal secret: Client secret with access to Azure DevOps repository.
+              * Service principal tenant ID: Tenant ID of your Service Principal.
+              
+     * <strong>Repo</strong>: The clone URL to the repository you want to sync.
+     * <strong>Branch</strong>: Name of the repository’s branch you want to sync.
 
 3. Click on 'Apply'.
 
@@ -107,8 +106,7 @@ Specify the git repository you want to sync your Data workflows with.
 |    |    ├-- __init__.py
 |    |    └-- *.py
 ```
->[!Note]
-We only synchronize the "dags" and "plugins" folders from the repository. Make sure any files or subfolders are inside one of these folders.
+>[!Note] We only synchronize the "dags" and "plugins" folders from the repository. Make sure any files or subfolders are inside one of these folders.
 
 ## Related Content
 
