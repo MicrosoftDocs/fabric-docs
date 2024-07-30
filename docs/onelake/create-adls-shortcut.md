@@ -9,9 +9,8 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date:07/25/2024
-#customer intent: As a data engineer, I want to learn how to create an Azure Data Lake Storage Gen2 shortcut inside a Microsoft Fabric lakehouse so that I can efficiently manage and access my data.
 ms.date: 07/25/2024
+#customer intent: As a data engineer, I want to learn how to create an Azure Data Lake Storage Gen2 shortcut inside a Microsoft Fabric lakehouse so that I can efficiently manage and access my data.
 ---
 
 # Create an Azure Data Lake Storage Gen2 shortcut
