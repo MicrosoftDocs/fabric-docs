@@ -177,3 +177,11 @@ To force nullable columns, you can try the following steps:
    ```
 
 4. Add the data destination.
+
+### Data types conversion and upscaling
+
+In some cases the data type within the dataflow differs from what is supported in the data destination below are some default conversions we have put in place to ensure you are still able to get your data in the data destination:
+
+| Destination | Dataflow Datatype | Destination Datatype |
+|-------------|--------------------|-----------------------|
+| Fabric Warehouse   | Int8.Type          | Int16.Type            |
