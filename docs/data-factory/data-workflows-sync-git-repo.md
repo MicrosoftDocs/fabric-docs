@@ -33,7 +33,7 @@ With data workflows, you have two options for storing your workflow files: Fabri
 
 :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
-### Create a Data Workflow
+### Create a Data workflow
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Data workflows (preview)
@@ -44,7 +44,7 @@ With data workflows, you have two options for storing your workflow files: Fabri
 
 3. Give a suitable name to your project and Click on "Create" Button.
 
-### Synchronize Your GitHub Repository
+### Synchronize Your GitHub repository
 
 Specify the git repository you want to sync your Data workflows with.
 
@@ -76,14 +76,14 @@ Specify the git repository you want to sync your Data workflows with.
 3. Click on 'Apply'.
 
 
-#### Monitor Your DAGs
+#### Monitor your DAGs
 - To verify if your repository is synchronized, navigate to the Apache Airflow's UI by clicking on "Monitor in Apache Airflow". In the UI, you'll see all the DAGs from your repository loaded directly.
-  :::image type="content" source="media/data-workflows/monitor-dag-apache-airflow.png" lightbox="media/data-workflows/monitor-dag-apache-airflow.png" alt-text="Screenshot to monitor dags in apache airflow.":::
+  :::image type="content" source="media/data-workflows/monitor-dag-apache-airflow.png" lightbox="media/data-workflows/monitor-dag-apache-airflow.png" alt-text="Screenshot to monitor DAGs in apache airflow.":::
 
 - Code editor isn't supported while using git-sync storage. You need to edit your code locally and push the changes to your remote Git repository. Your latest commit will be automatically synchronized with Data Workflows, and you can see your updated code in the Apache Airflow's UI.
 
 
-#### Supported Git Repository Structure
+#### Supported Git repository structure
 
 ```
 |── dags/
@@ -106,9 +106,9 @@ Specify the git repository you want to sync your Data workflows with.
 |    |    └-- *.py
 ```
 >[!Note]
-> We only synchronize the "dags" and "plugins" folders from the repository. Make sure any files or subfolders are inside one of these folders.
+> We only synchronize the `dags` and `plugins` folders from the repository. Make sure any files or subfolders are inside one of these folders.
 
-## Related Content
+## Related content
 
 - [Install Private Package in Data workflows](data-workflows-install-private-package.md)
 - [Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)
