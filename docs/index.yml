@@ -331,6 +331,48 @@ conceptualContent:
           footerLink:
             url: get-started/copilot-fabric-overview.md
             text: See more
+    - title: Develop in Fabric # < 60 chars (Optional; Remove if not applicable.)
+      summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
+      items:
+        # Card
+        - title: Application Lifecycle Management (ALM)
+          links:
+            - url: /cicd/deployment-pipelines/intro-to-deployment-pipelines
+              itemType: concept
+              text: Deployment pipelines
+            - url: /cicd/git-integration/intro-to-git-integration
+              itemType: concept
+              text: Git integration
+          footerLink:
+              url: /cicd/index.yml
+              text: See more
+        # Card
+        - title: Extend Fabric
+          links:
+            - url: /workload-development-kit/development-kit-overview
+              itemType: concept
+              text: Workload development kit
+            - url: /cicd/partners/partner-integration
+              itemType: concept
+              text: Fabric for ISVs
+          footerLink:
+              url: 
+              text: See more
+        # Card
+        - title: Develop with APIs
+          links:
+            - url: /rest/api/fabric/articles/
+              itemType: concept
+              text: Fabric REST API
+            - url: /rest/api/power-bi/
+              itemType: concept
+              text: Power BI REST API
+            - url: https://learn.microsoft.com/en-us/javascript/api/overview/powerbi/
+              itemType: concept
+              text: Power BI embedded analytics Client APIs
+          footerLink:
+              url: /rest/api/fabric/
+              text: See more
     - title: Community # < 60 chars (Optional; Remove if not applicable.)
       summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
       items:
