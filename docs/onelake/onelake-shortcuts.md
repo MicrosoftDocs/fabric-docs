@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
-ms.date: 05/09/2024
+ms.date: 07/19/2024
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 

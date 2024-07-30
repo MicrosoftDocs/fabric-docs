@@ -50,7 +50,7 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 
 ## Shortcuts
 
-When accessing data using OneLake shortcuts, the transaction usage counts against the capacity tied to the workspace where the shortcut is created. The capacity where the data is ultimately stored (that the shortcut points to) will be billed for the data stored.
+When accessing data using OneLake shortcuts, the transaction usage counts against the capacity tied to the workspace where the shortcut is created. The capacity where the data is ultimately stored (that the shortcut points to) is billed for the data stored.
 
 ## Paused Capacity
 
