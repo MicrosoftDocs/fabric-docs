@@ -106,13 +106,13 @@ conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   sections:
     - title: Microsoft Fabric shared platform # < 60 chars (Optional; Remove if not applicable.)
-      summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
+      summary: Begin your journey with Microsoft Fabric. Import, transform, and visualize data, manage resources, stay updated with product news, explore migration guides, and utilize Copilot in Fabric. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
         - title: "Get started"
           links:
           - url: get-started/fabric-home.md
-            itemType: how-to-guide
+            itemType: concept
             text: Navigate the Fabric portal         
           - url: get-started/share-items.md
             itemType: how-to-guide
@@ -127,14 +127,41 @@ conceptualContent:
           footerLink:
             url: get-started/index.yml
             text: See more
+        # Card
+        - title: Migrate to Fabric
+          links:
+          - url: data-factory/upgrade-paths.md
+            itemType: concept
+            text: Migrate to Data Factory
+          - url: data-engineering/migrate-synapse-overview.md
+            itemType: concept
+            text: Migrate from Azure Synapse Spark to Fabric
+          - url: data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md
+            itemType: concept
+            text: From Synapse dedicated SQL pools to Fabric
+          footerLink:
+            url: data-engineering/migrate-synapse-overview.md
+            text: See more
+        # Card
+        - title: Decision guides
+          links:
+          - url: get-started/decision-guide-data-store.md
+            itemType: quickstart
+            text: Data store
+          - url: get-started/decision-guide-pipeline-dataflow-spark.md
+            itemType: quickstart
+            text: Data Ingestion and transformation
+          footerLink:
+            url: get-started/index.yml
+            text: See more
        # Card
         - title: Get data into Fabric
           links:
           - url: data-engineering/tutorial-lakehouse-data-ingestion.md
-            itemType: concept
+            itemType: tutorial
             text: Get data into a Lakehouse
           - url: data-warehouse/ingest-data-pipelines.md
-            itemType: concept
+            itemType: how-to-guide
             text: Get data into Warehouse
           - url: data-factory/modern-get-data-experience-pipeline.md
             itemType: how-to-guide
@@ -143,15 +170,15 @@ conceptualContent:
             itemType: how-to-guide
             text: Get data into KQL database
           footerLink:
-            url: data-activator-get-data-power-bi
+            url: data-activator/data-activator-get-data-power-bi.md
             text: See more
         # Card
         - title: Store data
           links:
-          - url: /real-time-intelligence/eventhouse.md
+          - url: real-time-intelligence/eventhouse.md
             itemType: concept
             text: Eventhouse
-          - url: /data-warehouse/semantic-models.md
+          - url: data-warehouse/semantic-models.md
             itemType: concept
             text: Semantic models
           - url: /power-bi/transform-model/datamarts/datamarts-overview
@@ -164,13 +191,13 @@ conceptualContent:
         - title: Prepare and transform data
           links:
           - url: data-engineering/tutorial-lakehouse-data-preparation.md
-            itemType: how-to-guide
+            itemType: tutorial
             text: Transform data in the lakehouse
-          - url: real-time-intelligence/kusto-query-set?tabs=kql-database.md
+          - url: real-time-intelligence/kusto-query-set.md
             itemType: how-to-guide
             text: Transform data in a KQL queryset
           - url: data-science/tutorial-data-science-explore-notebook.md
-            itemType: how-to-guide
+            itemType: tutorial
             text: Transform data with Data Wrangler
           - url: data-warehouse/query-warehouse.md
             itemType: how-to-guide
@@ -182,19 +209,19 @@ conceptualContent:
         - title: Visualize data
           links:
           - url: /power-bi/paginated-reports/paginated-reports-report-builder-power-bi
-            itemType: how-to-guide
+            itemType: overview
             text: Paginated reports
           - url: real-time-intelligence/dashboard-real-time-create.md
-            itemType: concept
+            itemType: how-to-guide
             text: Real-time dashboards
           - url: data-engineering/notebook-visualization.md
             itemType: how-to-guide
             text: Notebook visualization
-          - url: /data-science/tuning-automated-machine-learning-visualizations
-            itemType: how-to-guide
+          - url: data-science/tuning-automated-machine-learning-visualizations.md
+            itemType: overview
             text: Use AutoML and tune visualizations
           footerLink:
-            url: /real-time-intelligence/create-powerbi-report.md
+            url: real-time-intelligence/create-powerbi-report.md
             text: See more
         # Card
         - title: Administer your resources
@@ -208,7 +235,7 @@ conceptualContent:
           - url: admin/admin-center.md
             itemType: concept
             text: What is Fabric admin portal?
-          - url: /admin/capacity-settings.md
+          - url: admin/capacity-settings.md
             itemType: how-to-guide
             text: Manage Fabric capacity
           footerLink:
@@ -221,7 +248,7 @@ conceptualContent:
             itemType: overview
             text: Governance and compliance in Fabric
           - url: governance/domains.md
-            itemType: overview
+            itemType: concept
             text: Domains
           - url: governance/endorsement-overview.md
             itemType: concept
@@ -230,7 +257,7 @@ conceptualContent:
             itemType: how-to-guide
             text: Information protection
           footerLink:
-            url: /governance/index.yml
+            url: governance/index.yml
             text: See more
         # Card
         - title: Secure resources
@@ -239,7 +266,7 @@ conceptualContent:
             itemType: overview
             text: Security in Fabric
           - url: security/security-managed-private-endpoints-overview.md
-            itemType: overview
+            itemType: concept
             text: Managed VNets
           - url: security/security-private-links-overview.md
             itemType: concept
@@ -248,16 +275,16 @@ conceptualContent:
             itemType: how-to-guide
             text: Row-level security (RLS) with Power BI
           footerLink:
-            url: /security/index.yml
+            url: security/index.yml
             text: See more
         # Card
         - title: Stay informed with product updates
           links:
           - url: get-started/whats-new.md
-            itemType: tutorial
+            itemType: whats-new
             text: What's new in Microsoft Fabric?
-          - url: /release-plan/
-            itemType: how-to-guide
+          - url: /fabric/release-plan/
+            itemType: concept
             text: Microsoft Fabric release plans
           - url: https://blog.fabric.microsoft.com/blog
             itemType: concept
@@ -266,79 +293,52 @@ conceptualContent:
             itemType: how-to-guide
             text: Custom visuals change log
           footerLink:
-            url: /release-plan/
-            text: See more
-        # Card
-        - title: Migrate to Fabric
-          links:
-          - url: data-factory/upgrade-paths.md
-            itemType: concept
-            text: Migrate to Data Factory
-          - url: data-engineering/migrate-synapse-overview.md
-            itemType: how-to-guide
-            text: Migrate from Azure Synapse Spark to Fabric
-          - url: data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md
-            itemType: how-to-guide
-            text: From Synapse dedicated SQL pools to Fabric
-          footerLink:
-            url: data-engineering/migrate-synapse-overview.md
-            text: See more
-        # Card
-        - title: Decision guides
-          links:
-          - url: get-started/decision-guide-data-store.md
-            itemType: how-to-guide
-            text: Data store
-          - url: get-started/decision-guide-pipeline-dataflow-spark.md
-            itemType: how-to-guide
-            text: Data Ingestion and transformation
-          footerLink:
-            url: get-started/index.yml
+            url: /fabric/release-plan/
             text: See more
         # Card
         - title: Copilot
           links:
           - url: get-started/copilot-fabric-overview.md
-            itemType: how-to-guide
+            itemType: concept
             text: Overview of copilot in Fabric
           - url: get-started/copilot-privacy-security.md
-            itemType: how-to-guide
+            itemType: concept
             text: Copilot privacy, security, and responsible use
           - url: get-started/copilot-notebooks-overview.md
-            itemType: concept
+            itemType: overview
             text: Copilot for notebooks
-          - url: get-started/copilot-faq-fabric.md
+          - url: get-started/copilot-faq-fabric.yml
             itemType: how-to-guide
             text: Copilot FAQ
           footerLink:
             url: get-started/copilot-fabric-overview.md
             text: See more
     - title: Develop in Fabric # < 60 chars (Optional; Remove if not applicable.)
-      summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
+      summary: Build your solutions using Fabric, utilize the Workload Development Kit, set up CI/CD pipelines and Git integration, and develop with REST and JavaScript APIs. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
         - title: Application Lifecycle Management (ALM)
           links:
-            - url: /cicd/deployment-pipelines/intro-to-deployment-pipelines
+            - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
               itemType: concept
               text: Deployment pipelines
-            - url: /cicd/git-integration/intro-to-git-integration
+            - url: cicd/git-integration/intro-to-git-integration.md
               itemType: concept
               text: Git integration
           footerLink:
-              url: /cicd/index.yml
+              url: cicd/index.yml
               text: See more
         # Card
         - title: Extend Fabric
           links:
-            - url: /workload-development-kit/development-kit-overview
+            - url: workload-development-kit/development-kit-overview.md
               itemType: concept
               text: Workload development kit
-            - url: /cicd/partners/partner-integration
-              itemType: concept
+            - url: cicd/partners/partner-integration.md
+              itemType: overview
               text: Fabric for ISVs
           footerLink:
-              url: /workload-development-kit/
+              url: workload-development-kit/index.yml
               text: See more
         # Card
         - title: Develop with APIs
@@ -349,14 +349,14 @@ conceptualContent:
             - url: /rest/api/power-bi/
               itemType: concept
               text: Power BI REST API
-            - url: https://learn.microsoft.com/en-us/javascript/api/overview/powerbi/
+            - url: /javascript/api/overview/powerbi/
               itemType: concept
               text: Power BI embedded analytics Client APIs
           footerLink:
               url: /rest/api/fabric/
               text: See more
     - title: Community # < 60 chars (Optional; Remove if not applicable.)
-      summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
+      summary: Learn about Fabric, access training materials and learning paths, stay updated with the blog, engage in forums, contribute to product ideas, join user groups, and explore the MVP program. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
         - title: Learning
