@@ -24,13 +24,13 @@ Least privilege access is a fundamental security principle in computer science t
 
 ## Secure by workload
 
-Fabric allows for granting users access to specific data workloads through item permissions, compute permissions, and OneLake data access roles (preview). Securing by workload is a principle that restricts user access to only the necessary Fabric workload the user needs to do their job and configuring access in that workload to the least privileged. There are three main workloads for OneLake where this is relevant: Apache Spark/OneLake access, SQL Endpoints, and Semantic Models.
+Fabric allows for granting users access to specific data workloads through item permissions, compute permissions, and OneLake data access roles (preview). Securing by workload is a principle that restricts user access to only the necessary Fabric workload the user needs to do their job and configuring access in that workload to the least privileged. There are three main workloads for OneLake where this is relevant: Apache Spark/OneLake access, SQL analytics endpoints, and Semantic Models.
 
 **Apache Spark/OneLake access**
 This path is used for querying data through notebooks, moving data via pipelines, or creating shortcuts to reference data from other lakehouses. To configure security for these users, share the lakehouse to those users. Then use OneLake data access roles (preview) to control the specific folders that the users require read access to. If a user needs write access, they'll need to be added to the Admin, Member, or Contributor workspace role. Users in a write role can't have read restrictions applied to them when accessing OneLake.
 
-**SQL Endpoints**
-This approach is for reading data through SQL queries. Access to connect to the SQL Endpoint is given by sharing the lakehouse for those users. If the default permissions are given, users have no access to any tables. Users can then be granted access to specific tables using SQL GRANT permissions. Alternatively, the users can be given the ReadData permission. ReadData gives them full read access to all the tables in SQL, however that access can be restricted using SQL DENY permissions.
+**SQL analytics endpoints**
+This approach is for reading data through SQL queries. Access to connect to the SQL analytics endpoint is given by sharing the lakehouse for those users. If the default permissions are given, users have no access to any tables. Users can then be granted access to specific tables using SQL GRANT permissions. Alternatively, the users can be given the ReadData permission. ReadData gives them full read access to all the tables in SQL, however that access can be restricted using SQL DENY permissions.
 
 **Semantic Models**
 For users that need to connect via reports, security can be configured directly in the Semantic Model by defining security through DAX expressions. This further refines the security and then users need to be shared the reports.

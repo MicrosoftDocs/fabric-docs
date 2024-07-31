@@ -62,9 +62,9 @@ Different Fabric items have different permissions. To learn more about the permi
 
 ## Compute permissions
 
-Permissions can also be set within a specific compute engine in Fabric, specifically through the SQL endpoint or in a semantic model. Compute engine permissions enable a more granular data access control, such as table and row level security.
+Permissions can also be set within a specific compute engine in Fabric, specifically through the SQL analytics endpoint or in a semantic model. Compute engine permissions enable a more granular data access control, such as table and row level security.
 
-* **SQL endpoint** - The SQL endpoint provides direct SQL access to tables in OneLake, and can have security configured natively through SQL commands. These permissions only apply to queries made through SQL.
+* **SQL analytics endpoint** - The SQL analytics endpoint provides direct SQL access to tables in OneLake, and can have security configured natively through SQL commands. These permissions only apply to queries made through SQL.
 
 * **Semantic model** - Semantic models allow for security to be defined using DAX. Restrictions defined using DAX apply to users querying through the semantic model or Power BI reports built on the semantic model.  
 
@@ -142,7 +142,7 @@ This works fine when using import models as the data is imported in the semantic
 
 Because RLS is defined in the Semantic Model the data will be read first and then the rows will be filtered.
 
-If any security is defined in the SQL endpoint that the report is built on, the queries automatically fall back to DirectQuery mode. If you do not want this default fallback behavior, you can create a new Lakehouse using shortcuts to the tables in the original Lakehouse and not define RLS or OLS in SQL on the new Lakehouse.
+If any security is defined in the SQL analytics endpoint that the report is built on, the queries automatically fall back to DirectQuery mode. If you do not want this default fallback behavior, you can create a new Lakehouse using shortcuts to the tables in the original Lakehouse and not define RLS or OLS in SQL on the new Lakehouse.
 
 ## Related content
 

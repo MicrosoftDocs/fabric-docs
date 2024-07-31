@@ -18,7 +18,7 @@ OneLake data access roles for folders is a new feature that enables you to apply
 Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that aren't part of a data access role see no data in that lakehouse.
 
 > [!NOTE]
-> Data access role security ONLY applies to users accessing OneLake directly. Fabric items such as SQL Endpoint, Semantic models, and Warehouses have their own security models and access OneLake through a delegated identity. This means users can see different items in each workload if they are given access to multiple items.
+> Data access role security ONLY applies to users accessing OneLake directly. Fabric items such as SQL analytics endpoints, semantic models, and warehouses have their own security models and access OneLake through a delegated identity. This means users can see different items in each workload if they are given access to multiple items.
 
 ## How to opt in
 
@@ -56,7 +56,7 @@ OneLake data access roles are only supported for lakehouse items.
     1. This selection includes any folders that are added in the future.
 5. Select the **Selected folders** if you want to only have this role apply to selected folders.
     1. Check the boxes next to the folders you want the role to apply to.
-    1. Roles grant access to folders. To allow a user to access a folder, check the box next to it. If a user shouldn’t see a folder, don't check the box.
+    1. Roles grant access to folders. To allow a user to access a folder, check the box next to it. If a user shouldn't see a folder, don't check the box.
     1. In the bottom left, select **Save** to create your role.
 6. In the top left, select **Assign role** to open the role membership pane.
 7. Add people, groups, or email addresses to the **Add people or groups** control. For more information, see [Assign a member or group.](#assign-a-member-or-group)
