@@ -292,7 +292,7 @@ In Microsoft Fabric, when the user creates a lakehouse, the system also provisio
 
 When user shares a lakehouse, they grant other users or a group of users access to a lakehouse without giving access to the workspace and the rest of its items. Shared lakehouse can be found through Data Hub or the Shared with Me section in Microsoft Fabrics.
 
-When someone shares a lakehouse, they can also grant access to the SQL endpoint and associated default semantic model.
+When someone shares a lakehouse, they can also grant access to the SQL analytics endpoint and associated default semantic model.
 
 :::image type="content" source=".\media\lakehouse-sharing.png" alt-text="A screenshot of the lakehouse Grant people access screen.":::
 
@@ -316,7 +316,7 @@ For any folder in a lakehouse, RBAC permissions always inherit to all [Internal 
 When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut*. As a result, this user must have OneLake RBAC permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When accessing shortcuts through **Power BI semantic models** or **T-SQL**, the calling user’s identity is not passed through to the shortcut target. The calling item owner’s identity is passed instead, delegating access to the calling user.
+> When accessing shortcuts through **Power BI semantic models** or **T-SQL**, the calling user's identity is not passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user.
 
 Defining RBAC permissions for the internal shortcut is not allowed and must be defined on the target folder located in the target item. Since defining RBAC permissions is limited to lakehouse items only, OneLake enables RBAC permissions only for shortcuts targeting folders in lakehouse items.
 

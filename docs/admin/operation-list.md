@@ -458,7 +458,7 @@ The following operations are available in the audit logs.
 | Retrieved status of Power BI gateway cluster | GetGatewayClusterStatus |  |
 | Retrieved status of Power BI gateway cluster datasource | GetGatewayClusterDatasourceStatus |  |
 | Retrieved upstream dataflows from Power BI dataflow | GetDataflowUpstreamDataflowsAsAdmin |  |
-| Retry lakehouse SQL analytics endpoint creation for a Lakehouse | RetryLakehouseSqlEndpointCreation | Retry SQL endpoint creation for a Lakehouse |
+| Retry lakehouse SQL analytics endpoint creation for a Lakehouse | RetryLakehouseSqlEndpointCreation | Retry SQL analytics endpoint creation for a Lakehouse |
 | Rotate Tenant Key | RotateTenantKey |  |
 | Rotated Power BI gateway tenant key | RotateTenantKeyEncryptionKey |  |
 | Run Artifact | RunArtifact |  |
@@ -468,11 +468,11 @@ The following operations are available in the audit logs.
 | Schedule Artifact | ScheduleArtifact |  |
 | Sent a scan request in Power BI tenant | GetWorkspacesInfoAPI |  |
 | Set Capacity Tenant Key | SetCapacityTenantKey |  |
-| Set D Q Refresh Schedule Of Dateset | SetDQRefreshScheduleOfDateset |  |
+| Set D Q Refresh Schedule Of Dataset | SetDQRefreshScheduleOfDataset |  |
 | Set dataflow storage location for a workspace | SetDataflowStorageLocationForWorkspace |  |
 | Set Lakehouse Endorsement | SetLakehouseEndorsement |  |
 | Set Lakehouse Sensitivity Label | SetLakehouseSensitivityLabel |  |
-| Set Model Refresh Schedule Of Dateset | SetModelRefreshScheduleOfDateset |  |
+| Set Model Refresh Schedule Of Dataset | SetModelRefreshScheduleOfDataset |  |
 | Set Notebook Default Lakehouse | SetNotebookDefaultLakehouse | Set default lakehouse for notebook. |
 | Set scheduled refresh on Power BI dataflow | SetScheduledRefreshOnDataflow |  |
 | Set scheduled refresh on Power BI semantic model | SetScheduledRefresh |  |
