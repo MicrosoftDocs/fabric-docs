@@ -101,6 +101,8 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
+  - name: Edit tables for Direct Lake semantic models
+    href: direct-lake-edit-tables.md
   - name: Create a Lakehouse for Direct Lake
     href: direct-lake-create-lakehouse.md
   - name: Specify a fixed identity
@@ -157,6 +159,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: SQL analytics endpoint table queries fail due to RLE
+      href: known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md
+    - name: Add data to a report when scrollbar is present doesn't work
+      href: known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md
     - name: Spark operations fail
       href: known-issues/known-issue-790-spark-operations-fail.md
     - name: Data Activator alert created from visual with no dimensions doesn't work

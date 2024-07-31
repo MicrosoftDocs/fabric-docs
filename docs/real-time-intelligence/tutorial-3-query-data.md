@@ -1,5 +1,5 @@
 ---
-title: Real-Time Intelligence tutorial part 4- Query streaming data in a KQL queryset
+title: Real-Time Intelligence tutorial part 3 - Query streaming data in a KQL queryset
 description: Learn how to query your streaming data in a KQL queryset Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -7,29 +7,30 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 04/18/2024
+ms.date: 07/23/2024
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Get started
 #customer intent: I want to learn how to query my streaming data in a KQL queryset in Real-Time Intelligence.
 ---
-# Real-Time Intelligence tutorial part 4: Query streaming data in a KQL queryset
+# Real-Time Intelligence tutorial part 3: Query streaming data in a KQL queryset
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Set an alert on your event stream](tutorial-3-set-alert.md).
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data in the Real-Time hub](tutorial-2-get-real-time-events.md).
 
 In this part of the tutorial, you learn how to query your streaming data in a [KQL queryset](create-query-set.md). You create a KQL queryset, write a KQL query, and visualize the data in a time chart.
 
 ## Create a KQL queryset
 
-1. Browse to the KQL database you have created in a previous step, named *Tutorial*.
-1. Verify that the data is flowing into the database by viewing the **Size** tile in the database details page. The values in this tile should be greater than zero.
-1. From the ribbon, select **New related item** and choose **KQL Queryset**.
+1. From the navigation bar, select the KQL database you created in a previous step, named *Tutorial*.
+1. Verify that the data is flowing into the database by viewing the **Size** tile in the database details page. The values in this tile should be greater than zero. If the values in the **Size** tile are zero, select **Refresh** from the menu ribbon.
+1. From the menu ribbon, select **New related item** and choose **KQL Queryset**.
 
     :::image type="content" source="media/tutorial/new-queryset.png" alt-text="Screenshot of Tutorial database showing adding a new related item that is a KQL queryset.":::
 
-1. Enter the name for the KQL Queryset: *TutorialQueryset*.
+1. Enter the name for the KQL Queryset: *TutorialQueryset* and select **Create**.
+1. Select the *Tutorial* database as the data source for the KQL queryset, then select **Connect**.
 1. Select **Create**.
-    A new KQL queryset is created and opens in the KQL Queryset editor. It's connected to the *Tutorial* database as a data source, and is prepopulated with several general queries.
+    A new KQL queryset is created and opens in the KQL Queryset editor. It's connected to the *Tutorial* database as a data source, and is pre-populated with several general queries.
 
 ## Write a KQL query
 
@@ -38,7 +39,7 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
 > [!TIP]
 > If you have a sufficient subscription, you can use the Copilot feature to help you write queries. Copilot provides queries based on data in your table and natural language prompts. For more information, see [Copilot for Real-Time Intelligence (preview)](../get-started/copilot-real-time-analytics.md)
 
-1. In the query editor, enter the following query. Then press **Shift + Enter** to run the query.
+1. In the query editor, delete the pre-populated queries and enter the following query. Then press **Shift + Enter** to run the query.
 
     ```kusto
     TutorialTable
@@ -58,7 +59,7 @@ The name of the table you created in a previous step is *TutorialTable*. Use thi
 
     This query creates a time chart that shows the number of bikes in the Chelsea neighborhood as a time chart.
 
-    :::image type="content" source="media/tutorial/empty-docks-timechart.png" alt-text="Screenshot of empty docks timechart in Real-Time Intelligence.":::
+    :::image type="content" source="media/tutorial/empty-docks-timechart.png" alt-text="Screenshot of empty docks timechart in Real-Time Intelligence." lightbox="media/tutorial/empty-docks-timechart.png":::
 
 ## Related content
 
@@ -71,4 +72,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 5: Create a Real-Time dashboard](tutorial-5-create-dashboard.md)
+> [Tutorial part 4: Create a Real-Time dashboard](tutorial-4-create-dashboard.md)

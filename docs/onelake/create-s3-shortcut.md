@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/27/2023
+ms.date: 07/25/2024
 ---
 
 # Create an Amazon S3 shortcut
@@ -28,7 +28,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 1. Open a lakehouse.
 
-1. Right-click on a directory within the **Lake view** of the lakehouse.
+1. Right-click on the **Tables** directory within the lakehouse.
 
 1. Select **New shortcut**.
 
