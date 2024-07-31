@@ -6,6 +6,7 @@ metadata:
   ms.author: wiassaf
   ms.reviewer: imotiwala, maprycem
   ms.service: fabric
+  ms.subservice: data-warehouse
   ms.topic: faq
   ms.date: 03/14/2024
 title: "Frequently asked questions for Mirroring Snowflake in Microsoft Fabric (Preview)"

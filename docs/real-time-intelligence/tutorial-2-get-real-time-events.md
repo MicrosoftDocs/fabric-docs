@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 07/23/2024
 ms.search.form: Get started
 # customer intent: I want to learn how to get data in the Real-Time hub in Real-Time Intelligence.
 ---
@@ -49,8 +49,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
 
 1. Select **Open Eventstream** from the notification that appears after creating the event stream, or browse to the event stream from the Real-time hub and select **Open Eventstream**.
 1. From the menu ribbon, select **Edit**.
-1. In the event stream authoring canvas, select the event stream tile in the center.
-1. Select the down arrow on the **Transform events or add destination** tile.  
+1. In the event stream authoring canvas, select the down arrow on the **Transform events or add destination** tile.  
 1. Select **Manage fields**. The tile is renamed to *Manage_fields*.
 1. Select the pencil icon on the *Manage_fields* tile.
 1. In the **Manage fields** pane, do the following actions:
@@ -63,7 +62,9 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
 
     1. Enter *Timestamp* as the **Field name**.
     1. Select **Add**.
-1. Select **Done**.
+1. Select **Save**.
+
+    The *TutorialTransform* tile now displays but with an error, because the destination isn't set.
 
 ## Create a destination
 
@@ -80,13 +81,13 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
     | Field | Value |
     | --- | --- |
     | **Destination name** | *TutorialDestination* |
-    | **Workspace** | Select the workspace in which you've created your resources. |
+    | **Workspace** | Select the workspace in which you created your resources. |
     | **KQL Database** | *Tutorial* |
     | **Destination table** | *Create new* - enter *TutorialTable* as table name |
     | **Input data format** | *JSON* |  
 
 1. Select **Save**.
-1. Select **Publish**.
+1. From the menu ribbon, select **Publish**.
 
 The event stream is now set up to transform events and send them to a KQL database.
 
@@ -101,4 +102,4 @@ For more information about tasks performed in this tutorial, see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 3: Set an alert on your event stream](tutorial-3-set-alert.md)
+> [Tutorial part 3: Query streaming data in a KQL queryset](tutorial-3-query-data.md)

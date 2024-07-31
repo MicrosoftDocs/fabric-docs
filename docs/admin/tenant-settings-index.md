@@ -6,12 +6,14 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 07/09/2024
+ms.date: 07/27/2024
 ---
 
 # Tenant settings index
 
-This article lists all Fabric tenant settings, along with a brief description of each. For more information about tenant settings in general, see [About tenant settings](about-tenant-settings.md).
+This article lists all Fabric tenant settings, along with a brief description of each, and links to relevant documentation, if available. For more information about tenant settings in general, see [About tenant settings](about-tenant-settings.md).
+
+If you want to get to the tenant settings in the Fabric portal, see [How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 
 ## [Microsoft Fabric](fabric-switch.md)
 
@@ -287,6 +289,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Users can synchronize workspace items with their Git repositories (preview)](../cicd/git-integration/intro-to-git-integration.md)|Users can import and export workspace items to Git repositories for collaboration and version control. Turn off this setting to prevent users from syncing workspace items with their Git repositories. [Learn More](https://go.microsoft.com/fwlink/?linkid=2240844)|
 |[Users can export items to Git repositories in other geographical locations (preview)](git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview)|The workspace and the Git repository may reside in different geographies. Turn on this setting to allow users to export items to Git repositories in other geographies.|
 |[Users can export workspace items with applied sensitivity labels to Git repositories (preview)](git-integration-admin-settings.md#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview)|Turn on this setting to allow users to export items with applied sensitivity labels to their Git repositories.|
+|[Users can sync workspace items with GitHub repositories](./git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories-preview)|Users can select GitHub as their Git provider and sync items in their workspaces with GitHub repositories.|
 
 ## Copilot and Azure OpenAI Service​
 
@@ -299,8 +302,8 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Capacity admins and contributors can add and remove additional workloads](../workload-development-kit/environment-setup.md#tenant-setting-and-development-settings)|Capacity admins or individuals granted Contributor permissions in Capacity settings can add and remove additional workloads in capacities. If a workload is removed, users will no longer be able to work with items created with the workload.<br><br>When users interact with a workload, their data and access tokens, including name and email, are sent to the publisher. Sensitivity labels and protection settings including encryption aren't applied to items created with workloads.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268082)|
-|[Capacity admins can develop additional workloads](../workload-development-kit/environment-setup.md#tenant-setting-and-development-settings)|Capacity admins can develop additional workloads. Turn on to allow developers connect to capacity with a local machine development environment. Turning off this feature will prevent developers from connecting to the Fabric capacity.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268434)|
+|[Capacity admins and contributors can add and remove additional workloads](../workload-development-kit/environment-setup.md#enable-the-development-tenant-setting)|Capacity admins or individuals granted Contributor permissions in Capacity settings can add and remove additional workloads in capacities. If a workload is removed, users will no longer be able to work with items created with the workload.<br><br>When users interact with a workload, their data and access tokens, including name and email, are sent to the publisher. Sensitivity labels and protection settings including encryption aren't applied to items created with workloads.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268082)|
+|[Capacity admins can develop additional workloads](../workload-development-kit/environment-setup.md#enable-the-development-tenant-setting)|Capacity admins can develop additional workloads. Turn on to allow developers connect to capacity with a local machine development environment. Turning off this feature will prevent developers from connecting to the Fabric capacity.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268434)|
 
 ## Related content
 

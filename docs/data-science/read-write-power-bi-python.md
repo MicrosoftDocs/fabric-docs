@@ -1,10 +1,10 @@
 ---
 title: Read data from semantic models and write data that semantic models can consume using python
 description: Learn how to read from semantic models and write data that can be used in semantic models using python.
-ms.reviewer: mopeakande
-reviewer: msakande
-ms.author: marcozo
-author: eisber
+ms.author: franksolomon
+author: fbsolo-ms1
+ms.reviewer: marcozo
+reviewer: eisber
 ms.topic: how-to
 ms.custom:
   - ignite-2023

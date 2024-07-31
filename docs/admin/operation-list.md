@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/31/2024
+ms.date: 07/29/2024
 ---
 
 # Operation list
@@ -78,6 +78,7 @@ The following operations are available in the audit logs.
 | Create Datamart | CreateDatamart |  |
 | Create Dataset By Quick Share | CreateDatasetByQuickShare |  |
 | Create Directory In Git | CreateDirectoryInGit | Create Directory In Git is a git provider activity, which is generated when users create directory in Git. |
+| Create Folder | CreateFolder | Indicates a creation of a new workspace |
 | Create gateway cluster data source from kind path JSON | CreateGatewayClusterDatasourceFromKindPath | Create gateway cluster data source from kind path JSON |
 | Create Gateway Cluster User | CreateGatewayClusterUser |  |
 | Create Gateway Tenant Key | CreateGatewayTenantKey |  |
@@ -92,8 +93,10 @@ The following operations are available in the audit logs.
 | Create Scorecard Hierarchy | CreateScorecardHierarchy |  |
 | Create Scorecard View | CreateScorecardView |  |
 | Create Service Principal Profile | CreateServicePrincipalProfile |  |
+| Create task flow | CreateTaskFlow |  |
+| Create task flow | CreateTaskFlow |  |
 | Create Template App Package | CreateTemplateAppPackage | Create Template App Package is an app activity, which is generated on creation of a Template App Package |
-| Create Warehouse | CreateWarehouse |  |
+| Create subfolder | CreateSubfolder |  |
 | Create Workspace | CreateWorkspace |  |
 | Created a Power BI metric value | CreateGoalValue |  |
 | Created a Power BI scorecard | CreateScorecard |  |
@@ -132,6 +135,7 @@ The following operations are available in the audit logs.
 | Delete Domain | DeleteDataDomainAsAdmin | Delete Domain |
 | Delete Domain's Folder Relation As Folder Owner | DeleteDataDomainFolderRelationsAsFolderOwner | Delete Domain's Folder Relation As Folder Owner |
 | Delete Experiment Run | DeleteExperimentRun |  |
+| Delete Folder | DeleteFolder | Indicated a deletion of a workspace |
 | Delete Goal Current Value Rollup | DeleteGoalCurrentValueRollup |  |
 | Delete Goal Status Rules | DeleteGoalStatusRules |  |
 | Delete Goal Target Value Connection | DeleteGoalTargetValueConnection |  |
@@ -151,6 +155,7 @@ The following operations are available in the audit logs.
 | Delete Service Principal Profile | DeleteServicePrincipalProfile |  |
 | Delete Service Principal Profile As Admin | DeleteServicePrincipalProfileAsAdmin |  |
 | Delete source in GraphQL artifact | DeleteSourceGraphQL | Delete source in graphql artifact |
+| Delete subfolder | DeleteSubfolder |  |
 | Delete Template App Package | DeleteTemplateAppPackage | Delete Template App Package is an app activity, which is generated on deletion of a Template App package |
 | Delete Tile | DeleteTile | Delete Tile is a dashboard activity, which is generated on deletion of tiles from a Power BI Dashboard |
 | Delete usage metrics v2 package via lockbox | DeleteUsageMetricsv2PackageViaLockbox |  |
@@ -231,6 +236,7 @@ The following operations are available in the audit logs.
 | Generate screenshot | GenerateScreenshot |  |
 | Generated Power BI dataflow SAS token | GenerateDataflowSasToken |  |
 | Generated Power BI Embed Token | GenerateEmbedToken |  |
+| Get a task flow | GetTaskFlow |  |
 | Get All Private Link Services For Tenant | GetAllPrivateLinkServicesForTenant |  |
 | Get All Scorecards | GetAllScorecards |  |
 | Get Alm Pipeline Users As Admin | GetAlmPipelineUsersAsAdmin |  |
@@ -327,6 +333,7 @@ The following operations are available in the audit logs.
 | Migrated dataflow storage location | MigratedDataflowStorageLocation | Not currently used |
 | Migrated workspace to a capacity | MigrateWorkspaceIntoCapacity |  |
 | Modify Workspace Capacity | ModifyWorkspaceCapacity | Modify Workspace Capacity is a capacity activity, which is generated on assigning a Power BI workspace to a capacity using an API call or the UI. |
+| Move items into subfolder | MoveItemsIntoSubfolder |  |
 | Move Scorecard | MoveScorecard |  |
 | No Activity | NoActivity |  |
 | Opt In For P P U Trial | OptInForPPUTrial |  |
@@ -516,6 +523,8 @@ The following operations are available in the audit logs.
 | Update Domain's Folders Relations | UpdateDataDomainFoldersRelationsAsAdmin | Update Domain's Folders Relations |
 | Update Domain's Folders Relations As Contributor | UpdateDataDomainFoldersRelationsAsContributor | Update Domain's Folders Relations As Contributor |
 | Update Experiment Run | UpdateExperimentRun |  |
+| Update Folder | UpdateFolder | Indicates a workspace update  |
+| UUpdate Folder Access | UpdateFolderAccess | Indicates an update to workspace access settings  |
 | Update From Git | UpdateFromGit | Update From Git is an artifact activity, which is generated when users update artifact from Git. |
 | Update Gateway Cluster Member | UpdateGatewayClusterMember |  |
 | Update Gateway Installer Principals | UpdateGatewayInstallerPrincipals |  |
@@ -543,6 +552,8 @@ The following operations are available in the audit logs.
 | Update source in GraphQL artifact | UpdateSourceGraphQL | Update source in GraphQL artifact |
 | Update Sql Analytics Endpoint Lakehouse | UpdateSqlAnalyticsEndpointLakehouse | Updated a lakehouse SQL analytics endpoint |
 | Update Sql Analytics Endpoint Lakehouse Settings | UpdateSqlAnalyticsEndpointLakehouseSettings | Updated settings for a lakehouse SQL analytics endpoint |
+| Update subfolder | UpdateSubfolder |  |
+| Update task flow | UpdateTaskFlow |  |
 | Update the current set of DLP policies applied on the Tenant | UpdateTenantDlpPolicies | Update the current set of DLP policies applied on the Tenant |
 | Update Virtual Network | UpdateVirtualNetwork |  |
 | Update Warehouse | UpdateWarehouse |  |

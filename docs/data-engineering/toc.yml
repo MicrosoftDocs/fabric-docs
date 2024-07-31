@@ -67,18 +67,6 @@ items:
     href: lakehouse-sharing.md
 - name: Apache Spark
   items:
-  - name: Runtimes
-    items:
-      - name: Overview
-        href: runtime.md
-      - name: Runtime lifecycle
-        href: lifecycle.md
-      - name: Runtime 1.3 (Spark 3.5)
-        href: runtime-1-3.md
-      - name: Runtime 1.2 (Spark 3.4)
-        href: runtime-1-2.md
-      - name: Runtime 1.1 (Spark 3.3)
-        href: runtime-1-1.md
   - name: Spark compute
     items:
     - name: Overview
@@ -89,6 +77,16 @@ items:
       href: create-custom-spark-pools.md
     - name: Billing and utilization
       href: billing-capacity-management-for-spark.md
+    - name: Apache Spark Runtimes
+      items:
+        - name: Runtimes overview
+          href: runtime.md
+        - name: Runtime 1.3 (Spark 3.5)
+          href: runtime-1-3.md
+        - name: Runtime 1.2 (Spark 3.4)
+          href: runtime-1-2.md
+        - name: Runtime 1.1 (Spark 3.3)
+          href: runtime-1-1.md
     - name: Native Execution Engine
       href: native-execution-engine-overview.md
     - name: High Concurrency mode
@@ -175,8 +173,9 @@ items:
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
     href: author-execute-notebook.md  
-  - name: Format code in notebooks
-    href: author-notebook-format-code.md
+  - name: NotebookUtils
+    href: notebook-utilities.md
+    displayName: MSSparkUtils
   - name: Run notebooks in High Concurrency mode
     href: configure-high-concurrency-session-notebooks.md
   - name: Notebook visualization
@@ -189,6 +188,8 @@ items:
     href: notebook-source-control-deployment.md
   - name: Use Notebook public APIs
     href: notebook-public-api.md
+  - name: Format code in notebooks
+    href: author-notebook-format-code.md
 - name: Environments
   items:
   - name: Create, configure and use an environment

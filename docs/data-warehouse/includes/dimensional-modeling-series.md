@@ -1,9 +1,8 @@
 ---
-author: peter-myers
-ms.author: v-myerspeter
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: v-myerspeter
 ms.date: 06/16/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: include
 ms.custom: fabric-cat
 ---
