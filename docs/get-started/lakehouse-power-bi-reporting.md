@@ -14,21 +14,21 @@ ms.search.form: Lakehouse Power BI Reporting
 
 # How Direct Lake mode works with Power BI reporting
 
-In Microsoft Fabric, when the user creates a lakehouse, the system also provisions the associated SQL analytics endpoint and default semantic model. The default semantic model has metrics on top of lakehouse data. The semantic model allows Power BI to load data for reporting.
+In Microsoft Fabric, when the user creates a lakehouse, the system also provisions the associated SQL analytics endpoint and default semantic model in Direct Lake mode. You can add tables from the lakehouse into the default semantic model by going to the SQL analytics endpoint and clicking the **Manage default semantic model** button in the **Reporting** ribbon. You can also create a non-default Power BI semantic model in Direct Lake mode by clicking **New semantic model** in the lakehouse or SQL analytics endpoint. The non-default semantic model is created in Direct Lake mode and allows Power BI to consume data by creating Power BI reports, explores, and running user-created DAX queries in Power BI Desktop or the workspace itself. The default semantic model created in the SQL analytics endpoint can be used to create Power BI reports but has some [additional limitations](/fabric/data-warehouse/semantic-models).
 
-When a Power BI report shows an element that uses data, it requests it from the underlying semantic model. Next the semantic model accesses a lakehouse to retrieve data and return it to the Power BI report. For efficiency, the default semantic model loads commonly requested data into the cache and refreshes it when needed.
+When a Power BI report shows data in visuals, it requests it from the semantic model. Next the semantic model accesses a lakehouse to consume data and return it to the Power BI report. For efficiency, the semantic model can keep some data in the cache and refresh it when needed. [Direct Lake overview](/fabric/get-started/direct-lake-overview) has more details. 
 
-Lakehouse applies V-order optimization to tables. This optimization enables quickly loading data into the semantic model and having it ready for querying without any other sorting or transformations.
-
-This approach gives unprecedented performance and the ability to instantly load large amounts of data for Power BI reporting.
+Lakehouse also applies V-order optimization to delta tables. This optimization gives unprecedented performance and the ability to quickly consume large amounts of data for Power BI reporting.
 
 :::image type="content" source="media\power-bi-reporting\dataset.png" alt-text="Screenshot of the default semantic model landing page." lightbox="media\power-bi-reporting\dataset.png":::
 
 ## Setting permissions for report consumption
 
-The default semantic model is retrieving data from a lakehouse on demand. To make sure that data is accessible for the user that is viewing Power BI report, necessary permissions on the underlying lakehouse need to be set.
+The semantic model in Direct Lake mode is consuming data from a lakehouse on demand. To make sure that data is accessible for the user that is viewing Power BI report, necessary permissions on the underlying lakehouse need to be set.
 
-One option is to give the user the *Viewer* role in the workspace and grant necessary permissions to data using SQL security. Alternatively, the user can be given the *Admin, Member, or Contributor* role to have full access to the data.
+One option is to give the user the *Viewer* role in the workspace to consume all items in the workspace, including the lakehouse, if in this workspace, semantic models, and reports. Alternatively, the user can be given the *Admin, Member, or Contributor* role to have full access to the data and be able to create and edit the items, such as lakehouses, semantic models and reports. 
+
+In addition, non-default semantic models can utilize a [fixed identity](/fabric/get-started/direct-lake-fixed-identity) to read data from the lakehouse, without giving report users any access to the lakehouse, and users be given permission to access to the report through an [app](/power-bi/collaborate-share/service-create-distribute-apps). Also, with fixed idenity, non-default semantic models in Direct Lake mode can have row-level security defined in the semantic model to limit the data the report user sees while maintaining Direct Lake mode. SQL-based security at the SQL analytics endpoint can also be used, but Direct Lake mode will fallback to DirectQuery, so this should be avoided to maintain the performance of Direct Lake. 
 
 ## Related content
 
