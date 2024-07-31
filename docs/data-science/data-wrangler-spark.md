@@ -61,7 +61,7 @@ Data Wrangler automatically converts Spark DataFrames to pandas samples for perf
 When Data Wrangler loads, an informational banner above the preview grid reminds you that Spark DataFrames are temporarily converted to pandas samples, but all generated code is ultimately be converted to PySpark. Using Data Wrangler on Spark DataFrames is otherwise no different from using it on pandas DataFrames. A descriptive overview in the Summary panel displays information about the sample's dimensions, missing values, and more. Selecting any column in the Data Wrangler grid prompts the Summary panel to update and display descriptive statistics about that specific column. Quick insights about every column are also available in its header.
 
 > [!TIP]
-> Column-specific statistics and visuals (both in the Summary panel and in the column headers) depend on the column datatype. For instance, a binned histogram of a numeric column will appear in the column header only if the column is cast as a numeric type. Use the Operations panel to recast column types for the most accurate display.
+> Column-specific statistics and visuals (both in the Summary panel and in the column headers) depend on the column datatype. For instance, a binned histogram of a numeric column will appear in the column header only if the column is cast as a numeric type.
 
 :::image type="content" source="media/data-wrangler-spark/view-summary-panel.png" alt-text="Screenshot showing the Data Wrangler display grid and Summary panel." lightbox="media/data-wrangler-spark/view-summary-panel.png":::
 
