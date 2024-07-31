@@ -13,15 +13,18 @@ ms.date: 07/29/2024
 ms.search.form: Data Wrangler
 ---
 
-## How to use Data Wrangler on Spark DataFrames
+# How to use Data Wrangler on Spark DataFrames
 
 [Data Wrangler](data-wrangler.md), a notebook-based tool for exploratory data analysis, now supports both Spark DataFrames and pandas DataFrames, generating PySpark code in addition to Python code. For a general overview of Data Wrangler, which covers how to explore and transform pandas DataFrames, see the [the main tutorial](data-wrangler.md). The following tutorial shows how to use Data Wrangler to explore and transform Spark DataFrames.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
+
+## Limitations
+
+- Custom code operations are currently supported only for pandas DataFrames.
+- Data Wrangler's display works best on large monitors, although different portions of the interface can be minimized or hidden to accommodate smaller screens.
 
 ## Launching Data Wrangler with a Spark DataFrame
 
@@ -133,4 +136,5 @@ The toolbar above the Data Wrangler display grid provides options to save the ge
 ## Related content
 
 - To get an overview of Data Wrangler, see [this companion article](data-wrangler.md).
-- To try out Data Wrangler in VS Code, see [Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler).
+- To try out Data Wrangler in VS Code, head to [Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler).
+- Are we missing a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

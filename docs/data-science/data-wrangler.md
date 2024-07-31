@@ -11,9 +11,9 @@ ms.date: 07/29/2024
 ms.search.form: Data Wrangler
 ---
 
-## How to accelerate data prep with Data Wrangler in Microsoft Fabric
+# How to accelerate data prep with Data Wrangler in Microsoft Fabric
 
-Data Wrangler is a notebook-based tool that provides users with an immersive interface for exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data-cleaning operations. Each operation can be applied in a matter of clicks, updating the data display in real time and generating code in pandas or PySpark that can be saved back to the notebook as a reusable function. This article focuses on exploring and transforming pandas DataFrames. Instructions for using Data Wrangler on Spark DataFrames can be found [here](data-wrangler-spark.md).
+Data Wrangler is a notebook-based tool that provides an immersive interface for exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data-cleaning operations. Each operation can be applied in a matter of clicks, updating the data display in real time and generating code in pandas or PySpark that can be saved back to the notebook as a reusable function. This article focuses on exploring and transforming pandas DataFrames. Instructions for using Data Wrangler on Spark DataFrames can be found [here](data-wrangler-spark.md).
 
 ## Prerequisites
 
@@ -56,7 +56,7 @@ Data Wrangler allows you to open a custom sample of any active DataFrame by sele
 When Data Wrangler loads, it displays a descriptive overview of the chosen DataFrame in the Summary panel. This overview includes information about the DataFrame's dimensions, missing values, and more. Selecting any column in the Data Wrangler grid prompts the Summary panel to update and display descriptive statistics about that specific column. Quick insights about every column are also available in its header.
 
 > [!TIP]
-> Column-specific statistics and visuals (both in the Summary panel and in the column headers) depend on the column datatype. For instance, a binned histogram of a numeric column will appear in the column header only if the column is cast as a numeric type. Use the Operations panel to recast column types for the most accurate display.
+> Column-specific statistics and visuals (both in the Summary panel and in the column headers) depend on the column datatype. For instance, a binned histogram of a numeric column will appear in the column header only if the column is cast as a numeric type.
 
 :::image type="content" source="media/data-wrangler/view-summary-panel.png" alt-text="Screenshot showing the Data Wrangler display grid and Summary panel." lightbox="media/data-wrangler/view-summary-panel.png":::
 
@@ -130,4 +130,6 @@ The toolbar above the Data Wrangler display grid provides options to save the ge
 ## Related content
 
 - To try out Data Wrangler on Spark DataFrames, see [this companion article](data-wrangler-spark.md).
-- To try out Data Wrangler in VS Code, see [Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler).
+- To see a demo of Data Wrangler in Fabric, check out [this video from our friends at Guy in a Cube](https://www.youtube.com/watch?v=Ge0VWZMa50I).
+- To try out Data Wrangler in VS Code, head to [Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler).
+- Are we missing a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
