@@ -4,11 +4,12 @@ description: Microsoft OneLake provides open access to your files and folders th
 ms.reviewer: eloldag
 ms.author: mabasile
 author: mabasile-MSFT
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 07/25/2024
+#customer intent: As a data engineer, I want to understand how to connect to Microsoft OneLake using the existing Azure Data Lake Storage (ADLS) Gen2 APIs and SDKs so that I can seamlessly access and manipulate my data.
 ---
 
 # Connecting to Microsoft OneLake
@@ -17,7 +18,7 @@ Microsoft OneLake provides open access to all of your Fabric items through exist
 
 As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences instead of the ADLS Gen2 APIs. For a full list of changes to these APIs, see [OneLake API parity](onelake-api-parity.md).
 
-## URI Syntax
+## URI syntax
 
 Because OneLake exists across your entire Microsoft Fabric tenant, you can refer to anything in your tenant by its workspace, item, and path:
 
@@ -45,6 +46,7 @@ OneLake also supports the [Azure Blob Filesystem driver](/azure/storage/blobs/da
 ```http
 abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<path>/<fileName>
 ```
+
 The abfs driver URI doesn't allow special characters, such as spaces, in the workspace name. In these cases, you can reference workspaces and items with the globally unique identifiers (GUIDs) as described earlier in this section.
 
 ## Authorization

@@ -1,13 +1,14 @@
 ---
 title: How to secure data for common data architectures
-description: How to secure OneLake data for use with common data architectures like data mesh or hub and spoke.
+description: How to secure OneLake data for use with common data architectures such as data mesh or hub and spoke.
 ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - ignite-2023
 ms.date: 11/15/2023
+#customer intent: As a data architect, I want to understand how to secure OneLake data for common data architectures so that I can ensure the appropriate access and permissions are granted to different users based on their roles and responsibilities.
 ---
 
 # How to secure data for common data architectures

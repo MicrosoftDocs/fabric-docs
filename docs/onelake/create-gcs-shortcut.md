@@ -1,6 +1,6 @@
 ---
 title: Create a Google Cloud Storage(GCS) shortcut
-description: Learn how to create a Google Cloud Storage(GCS) shortcut.
+description: Learn how to create a OneLake shortcut for Google Cloud Storage (GCS) inside a Microsoft Fabric lakehouse.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
@@ -8,9 +8,10 @@ ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:
 ms.date: 03/15/2024
+#customer intent: As a data engineer, I want to learn how to create a shortcut for Google Cloud Storage (GCS) inside a Microsoft Fabric lakehouse so that I can easily access and manage my GCS data within the lakehouse environment.
 ---
 
-# Create a Google Cloud Storage(GCS) shortcut
+# Create a Google Cloud Storage (GCS) shortcut
 
 In this article, you learn how to create a Google Cloud Storage(GCS) shortcut inside a Fabric lakehouse.
 

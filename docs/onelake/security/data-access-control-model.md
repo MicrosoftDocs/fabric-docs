@@ -1,13 +1,14 @@
 ---
 title: Data Access Control Model in OneLake (Public Preview)
-description: Learn the details of how OneLake secures data.
+description: Learn the details of how OneLake secures data with role-based access control and the impact on Fabric permissions.
 ms.reviewer: aamerril
 ms.author: yuturchi
 author: yuturchi
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - onelake-data-access-public-preview-april-2024
 ms.date: 05/09/2024
+#customer intent: As a OneLake user, I want to understand how OneLake secures data with role-based access control and the impact on Fabric permissions so that I can protect data stored and accessed in OneLake.
 ---
 
 # Role-based access control (RBAC)
@@ -304,6 +305,7 @@ When someone shares a lakehouse, they can also grant access to the SQL analytics
 | Build  reports on the default dataset | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes |
 
 Learn more about data sharing permissions model:
+
 - [How lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
 - [Share your warehouse and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
 
@@ -348,7 +350,7 @@ Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake Shortcuts](../one
 
 ### Limits on OneLake RBAC
 
-The following table provides the limitations of OneLake data access roles. 
+The following table provides the limitations of OneLake data access roles.
 
 | Scenario | Limit |
 | ---- | ---- |
