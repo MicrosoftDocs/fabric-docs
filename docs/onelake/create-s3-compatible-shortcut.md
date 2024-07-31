@@ -1,6 +1,6 @@
 ---
 title: Create an Amazon S3 compatible shortcut
-description: Learn how to create an S3 compatible shortcut.
+description: Learn how to create a OneLake shortcut that's Amazon S3 compatible for easy data access in a Fabric lakehouse.
 ms.reviewer: eloldag
 ms.author: mahi
 author: Matt1883
@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.custom:
   - build-2024
 ms.date: 3/26/2024
+#customer intent: As a data engineer, I want to learn how to create an Amazon S3 compatible shortcut so that I can easily access data in my S3 bucket.
 ---
 
 # Create an Amazon S3 compatible shortcut
@@ -38,7 +39,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 ## Select a source
 
 1. Under **External sources**, select **Amazon S3 compatible**.
-    
+
     :::image type="content" source="media/create-s3-compatible-shortcut/s3-compatible-shortcut-card.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 Compatible is highlighted." lightbox="media/create-s3-compatible-shortcut/s3-compatible-shortcut-card.png":::
 
 1. Enter the **Connection settings** according to the following table:

@@ -1,13 +1,14 @@
 ---
 title: OneLake security overview
-description: Get started with securing your data in OneLake with this overview of the concepts and capabilities.
+description: Get started with securing your data in OneLake with this overview of the core concepts and capabilities.
 ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - ignite-2023
 ms.date: 11/15/2023
+#customer intent: As a OneLake user, I want to understand the core concepts and capabilities of data security in OneLake so that I can use them to protect my data stored and accessed in OneLake.
 ---
 
 # OneLake security overview
