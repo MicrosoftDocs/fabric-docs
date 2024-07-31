@@ -573,6 +573,7 @@ The following operations are available in the audit logs.
 | Update Domain's Folders Relations As Contributor | UpdateDataDomainFoldersRelationsAsContributor | Update Domain's Folders Relations As Contributor  |
 | Update Experiment Run | UpdateExperimentRun |   |
 | Update Folder | UpdateFolder | Indicates a workspace update   |
+| Update Folder Access | UpdateFolderAccess | Indicates an update to workspace access settings   |
 | Update From Git | UpdateFromGit | Update From Git is an artifact activity, which is generated when users update artifact from Git.  |
 | Update Gateway Cluster Member | UpdateGatewayClusterMember |   |
 | Update Gateway Installer Principals | UpdateGatewayInstallerPrincipals |   |
@@ -650,7 +651,6 @@ The following operations are available in the audit logs.
 | Upsert Sql Analytics Endpoint Lakehouse Parameters | UpsertSqlAnalyticsEndpointLakehouseParameters | Upserted parameters for a lakehouse SQL analytics endpoint |
 | Upsert Warehouse Parameters | UpsertWarehouseParameters |  |
 | Used Power BI to explore data in an external application | ExploreDataExternally | Someone used Power BI to explore their data in an external application. |
-| UUpdate Folder Access | UpdateFolderAccess | Indicates an update to workspace access settings   |
 | Vacuum Lakehouse Table | VacuumLakehouseTable |  |
 | View Datamart | ViewDatamart |  |
 | View mounted warehouse | ViewMountedWarehouse | Generated when mounted warehouse is fetched for viewing |
