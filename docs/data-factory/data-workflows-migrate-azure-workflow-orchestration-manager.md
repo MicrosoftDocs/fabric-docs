@@ -28,8 +28,18 @@ Data Workflows, a transformative capability within Microsoft Fabric, redefines y
 
 To enable customers to upgrade to Microsoft Fabric Data Workflows from Azure Workflow Orchestration Manager, consider the following two scenarios:
 
-- **Scenario 1: You are using Blob storage in Azure Workflow Orchestration Manager**: In this scenario, our recommended way is to open the file in Visual studio In this scenario, our recommended approach is to use Visual Studio Code for a straightforward migration. Open your workflow files in Visual Studio Code and copy-paste them into Fabric Managed Storage. This method ensures an easy transition and quick access to the powerful features of Data Workflows.
-- **Scenario 2: You are using Git sync storage in Azure Workflow Orchestration Manager**: In this scenario, use the Git sync feature of Data Workflows to seamlessly synchronize your GitHub repository. Similar to Azure Workflow Orchestration Manager, this feature ensures your GitHub repository stays in sync, allowing you to start developing instantly. To get started, follow the [tutorial: Synchronize your GitHub Repository in Data workflows](../data-factory/data-workflows-sync-git-repo.md).
+### Prerequisites
+- [Create a new or use an existing Data Workflow.](../data-factory/create-data-workflows.md)
+
+To enable customers to upgrade to Microsoft Fabric Data Workflows from Azure Workflow Orchestration Manager, consider the following two scenarios:
+
+**Scenario 1: You are using Blob storage in Azure Workflow Orchestration Manager.**
+
+In this scenario, our recommended approach is to use Visual Studio Code for a straightforward migration. Open your workflow files in Visual Studio Code and copy-paste them into Fabric managed Storage. This method ensures an easy transition and quick access to the powerful features of Data Workflows.
+
+**Scenario 2: You are using Git sync storage in Azure Workflow Orchestration Manager**  
+
+In this scenario, use the Git sync feature of Data Workflows to seamlessly synchronize your GitHub repository. Similar to Azure Workflow Orchestration Manager, this feature ensures your GitHub repository stays in sync, allowing you to start developing instantly. To get started, follow the [tutorial: Synchronize your GitHub Repository in Data workflows](../data-factory/data-workflows-sync-git-repo.md).
 
 ## Related content
 
