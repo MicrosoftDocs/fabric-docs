@@ -29,7 +29,7 @@ Environments define the hardware and software settings for your Spark jobs and n
 
 ## Check the association between an environment and code
 
-You can check the association between an environment and a code item such as notebook. To check the association, hover over the notebook name, from the pop-up panel, you can see the associated environment name.
+You can check the association between an environment and a code item such as notebook. To check the association, hover over the notebook name, from the pop-up panel, you can see the associated environment name and its item id.
 
 :::image type="content" source="media\vscode\check-env-association.png" alt-text="Screenshot showing check environment association ":::
 
