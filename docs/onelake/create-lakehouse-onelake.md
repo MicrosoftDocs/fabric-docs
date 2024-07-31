@@ -48,7 +48,7 @@ At this point, you have a lakehouse running on top of OneLake. Next, add some da
 
 1. Choose the file you want from your local machine and then select **Upload**.
 
-   :::image type="content" source="media\create-lakehouse-onelake\upload-files-screen.png" alt-text="Screenshot of the upload files screen":::
+   :::image type="content" source="media\create-lakehouse-onelake\upload-files-screen.png" alt-text="Screenshot of the upload files screen where you can select a local file to upload.":::
 
 1. You’ve now added data to OneLake. To add data in bulk or schedule data loads into OneLake, use the **Get data** button to create pipelines. Find more details about options for getting data in [Microsoft Fabric decision guide: copy activity, dataflow, or Spark](../get-started/decision-guide-pipeline-dataflow-spark.md).
 

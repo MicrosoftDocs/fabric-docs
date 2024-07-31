@@ -1,6 +1,6 @@
 ---
 title: How to secure data in OneLake for data warehousing
-description: Information on how to secure OneLake data in a lakehouse for data warehousing and query the data with T-SQL.
+description: Learn how to secure OneLake data in a lakehouse to query with data warehousing T-SQL queries.
 author: aamerril
 ms.author: aamerril
 ms.reviewer: eloldag, wiassaf

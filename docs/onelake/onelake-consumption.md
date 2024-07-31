@@ -1,6 +1,6 @@
 ---
 title: OneLake consumption
-description: Information on how OneLake usage consumes Fabric capacity units including how consumption is calculated, billed, and reported.
+description: Information on how OneLake consumes Fabric capacity units including how consumption is calculated, billed, and reported.
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to

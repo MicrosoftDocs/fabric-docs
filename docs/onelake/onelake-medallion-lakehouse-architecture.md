@@ -90,7 +90,7 @@ Medallion architecture consists of three distinct layers (or zones).
 > [!IMPORTANT]
 > Because a Fabric lakehouse represents a single zone, you create one lakehouse for each of the three zones.
 
-:::image type="content" source="media/onelake-medallion-lakehouse-architecture/onelake-medallion-lakehouse-architecture-example.png" alt-text="Diagram of an example of OneLake medallion architecture that shows data sources, prepare and transform with bronze, silver, and gold layers, and analyzing with the SQL analytics endpoint and Power BI" border="false":::
+:::image type="content" source="media/onelake-medallion-lakehouse-architecture/onelake-medallion-lakehouse-architecture-example.png" alt-text="Diagram of OneLake medallion architecture that shows data sources, prepare and transform with three layers, and analysis with SQL and Power BI." border="false":::
 
 In a typical medallion architecture implementation in Fabric, the bronze zone stores the data in the same format as the data source. When the data source is a relational database, Delta tables are a good choice. The silver and gold zones contain Delta tables.
 
