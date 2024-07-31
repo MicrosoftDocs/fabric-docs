@@ -6,14 +6,14 @@ ms.author: erenorbey
 ms.reviewer: franksolomon
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
+  - ignite-2024
+  - ignite-2024-fabric
+ms.date: 07/29/2024
 
 ms.search.form: Data Wrangler
 ---
 
-# How to use Data Wrangler on Spark DataFrames
+## How to use Data Wrangler on Spark DataFrames
 
 [Data Wrangler](data-wrangler.md), a notebook-based tool for exploratory data analysis, now supports both Spark DataFrames and pandas DataFrames, generating PySpark code in addition to Python code. For a general overview of Data Wrangler, which covers how to explore and transform pandas DataFrames, see the [the main tutorial](data-wrangler.md). The following tutorial shows how to use Data Wrangler to explore and transform Spark DataFrames.
 
@@ -33,11 +33,11 @@ The next code snippet creates a Spark DataFrame with the same sample data used i
 import pandas as pd
 
 # Read a CSV into a Spark DataFrame
-df = spark.createDataFrame(pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/titanic.csv"))
-display(df)
+sdf = spark.createDataFrame(pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/titanic.csv"))
+display(sdf)
 ```
 
-Under the notebook ribbon "Data" tab, use the Data Wrangler dropdown prompt to browse active DataFrames available for editing. Select the one you wish to open in Data Wrangler.
+In the notebook ribbon "Home" tab, use the Data Wrangler dropdown prompt to browse active DataFrames available for editing. Select the one you wish to open in Data Wrangler.
 
 > [!TIP]
 > Data Wrangler cannot be opened while the notebook kernel is busy. An executing cell must finish its execution before Data Wrangler can be launched.
@@ -63,9 +63,14 @@ When Data Wrangler loads, an informational banner above the preview grid reminds
 
 ## Browsing data-cleaning operations
 
-A searchable list of data-cleaning steps can be found in the Operations panel. (A smaller selection of the same operations is also available in the contextual menu of each column.) From the Operations panel, selecting a data-cleaning step prompts you to provide a target column or columns, along with any necessary parameters to complete the step. For example, the prompt for scaling a column numerically requires a new range of values. 
+A searchable list of data-cleaning steps can be found in the Operations panel. From the Operations panel, selecting a data-cleaning step prompts you to provide a target column or columns, along with any necessary parameters to complete the step. For example, the prompt for scaling a column numerically requires a new range of values. 
 
 :::image type="content" source="media/data-wrangler-spark/browse-operations.png" alt-text="Screenshot showing the Data Wrangler Operations panel." lightbox="media/data-wrangler-spark/browse-operations.png":::
+
+> [!TIP]
+> A smaller selection of operations can be applied from the menu of each column header.
+
+:::image type="content" source="media/data-wrangler-spark/apply-operation-shortcut.png" alt-text="Screenshot showing a Data Wrangler operation that can be applied from the column header menu." lightbox="media/data-wrangler-spark/apply-operation-shortcut.png":::
 
 ## Previewing and applying operations
 
@@ -105,6 +110,12 @@ The following table summarizes the operations that Data Wrangler currently suppo
 | **Convert text to uppercase** | Convert text to UPPERCASE |
 | **Scale min/max values** | Scale a numerical column between a minimum and maximum value |
 | **Flash Fill** | Automatically create a new column based on examples derived from an existing column |
+
+## Modifying your display
+
+At any point, you can customize the interface using the "Views" tab in the toolbar above the Data Wrangler display grid, hiding or showing different panes based on your preferences and screen size.
+
+:::image type="content" source="media/data-wrangler-spark/customize-view.png" alt-text="Screenshot showing the Data Wrangler menu for customizing the display view." lightbox="media/data-wrangler-spark/customize-view.png":::
 
 ## Saving and exporting code
 

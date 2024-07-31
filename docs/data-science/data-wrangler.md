@@ -5,13 +5,13 @@ author: orbey
 ms.author: erenorbey
 ms.reviewer: franksolomon
 ms.topic: how-to
-ms.custom: ignite-2023
-ms.date: 11/15/2023
+ms.custom: ignite-2024
+ms.date: 07/29/2024
 
 ms.search.form: Data Wrangler
 ---
 
-# How to accelerate data prep with Data Wrangler in Microsoft Fabric
+## How to accelerate data prep with Data Wrangler in Microsoft Fabric
 
 Data Wrangler is a notebook-based tool that provides users with an immersive interface for exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data-cleaning operations. Each operation can be applied in a matter of clicks, updating the data display in real time and generating code in pandas or PySpark that can be saved back to the notebook as a reusable function. This article focuses on exploring and transforming pandas DataFrames. Instructions for using Data Wrangler on Spark DataFrames can be found [here](data-wrangler-spark.md).
 
@@ -21,7 +21,6 @@ Data Wrangler is a notebook-based tool that provides users with an immersive int
 
 ## Limitations
 
-- Data Wrangler currently supports pandas code generation in general availability and [Spark code generation](data-wrangler-spark.md) in public preview.
 - Custom code operations are currently supported only for pandas DataFrames.
 - Data Wrangler's display works best on large monitors, although different portions of the interface can be minimized or hidden to accommodate smaller screens.
 
@@ -37,7 +36,7 @@ df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/titan
 display(df)
 ```
 
-Under the notebook ribbon "Data" tab, use the Data Wrangler dropdown prompt to browse active DataFrames available for editing. Select the one you wish to open in Data Wrangler.
+In the notebook ribbon "Home" tab, use the Data Wrangler dropdown prompt to browse active DataFrames available for editing. Select the one you wish to open in Data Wrangler.
 
 > [!TIP]
 > Data Wrangler cannot be opened while the notebook kernel is busy. An executing cell must finish its execution before Data Wrangler can be launched.
@@ -63,9 +62,14 @@ When Data Wrangler loads, it displays a descriptive overview of the chosen DataF
 
 ## Browsing data-cleaning operations
 
-A searchable list of data-cleaning steps can be found in the Operations panel. (A smaller selection of the same operations is available in the menu of each column header.) From the Operations panel, selecting a data-cleaning step prompts you to provide a target column or columns, along with any necessary parameters to complete the step. For example, the prompt for scaling a column numerically requires a new range of values. 
+A searchable list of data-cleaning steps can be found in the Operations panel. From the Operations panel, selecting a data-cleaning step prompts you to provide a target column or columns, along with any necessary parameters to complete the step. For example, the prompt for scaling a column numerically requires a new range of values. 
 
 :::image type="content" source="media/data-wrangler/browse-operations.png" alt-text="Screenshot showing the Data Wrangler Operations panel." lightbox="media/data-wrangler/browse-operations.png":::
+
+> [!TIP]
+> A smaller selection of operations can be applied from the menu of each column header.
+
+:::image type="content" source="media/data-wrangler/apply-operation-shortcut.png" alt-text="Screenshot showing a Data Wrangler operation that can be applied from the column header menu." lightbox="media/data-wrangler/apply-operation-shortcut.png":::
 
 ## Previewing and applying operations
 
@@ -105,6 +109,12 @@ The following table summarizes the operations that Data Wrangler currently suppo
 | **Convert text to uppercase** | Convert text to UPPERCASE |
 | **Scale min/max values** | Scale a numerical column between a minimum and maximum value |
 | **Flash Fill** | Automatically create a new column based on examples derived from an existing column |
+
+## Modifying your display
+
+At any point, you can customize the interface using the "Views" tab in the toolbar above the Data Wrangler display grid, hiding or showing different panes based on your preferences and screen size.
+
+:::image type="content" source="media/data-wrangler/customize-view.png" alt-text="Screenshot showing the Data Wrangler menu for customizing the display view." lightbox="media/data-wrangler/customize-view.png":::
 
 ## Saving and exporting code
 
