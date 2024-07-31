@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 07/02/2024
+ms.date: 07/17/2024
 ---
 
 # Manage your Fabric capacity

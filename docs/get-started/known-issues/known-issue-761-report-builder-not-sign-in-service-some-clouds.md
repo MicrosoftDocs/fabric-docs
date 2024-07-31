@@ -4,7 +4,7 @@ description: A known issue is posted where Report Builder can't sign in to the s
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/20/2024
+ms.date: 07/16/2024
 ms.custom: known-issue-761
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-761
 
 You can normally sign in to the Power BI service through Power BI Report Builder. If your Power BI service is in the Azure Government or Azure China 21Vianet clouds, you now can't sign in to the service using Report Builder.
 
-**Status:** Open
+**Status:** Fixed: July 16, 2024
 
 **Product Experience:** Power BI
 

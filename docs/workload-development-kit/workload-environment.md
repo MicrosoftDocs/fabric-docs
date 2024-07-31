@@ -75,6 +75,15 @@ The structure, including specific subfolder names ('BE', 'FE', 'assets'), is man
 
 During the development cycle, testing a workload on a nonproduction tenant can be done in two modes, local (devmode) and cloud mode (tenant mode).
 
+### Limits
+The following limits apply to all types of NuGet packages, both in development mode and cloud mode:
+- Only `BE` and `FE` subfolders are permitted. Any other subfolders or files located outside these folders result in an upload error.
+- The `BE` folder accepts only `.xml` files. Any other file type result in an upload error.
+- A maximum of 10 item files is allowed, meaning the `BE` folder can contain one `WorkloaManifest.xml` and up to 10 `Item.xml` files. Having more than 10 item files in the folder result in an upload error.
+- Filenames for items must be unique. Duplicate filenames result in an upload error. 
+- Filenames must contain alphanumeric (English) characters or hyphens only and cannot exceed a length of 32 characters. Using other characters or exceeding this length result in an upload error.
+- Please refer to [the workload manifest definition](./backend-manifest.md) for manifest specific limitations.
+
 ### Local development mode (devmode)
 
 The workload backend (BE) operates on the developer's machine. Workload API calls are transmitted via Azure Relay, with the workload's side of the Azure Relay channel managed by a specialized command-line utility, DevGateway. Workload control API calls are sent directly from the workload to Fabric, bypassing the Azure Relay channel. The DevGateway utility also oversees the registration of the local development instance of the workload with Fabric, within the context of a specific capacity. This ensures the workload's availability across all workspaces assigned to that capacity. Upon termination of the DevGateway utility, the registration of the workload instance is automatically rescinded. For more information, see [Back-end implementation guide](extensibility-back-end.md).
