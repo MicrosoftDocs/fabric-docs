@@ -160,7 +160,7 @@ landingContent:
           - text: Use notebooks from VS Code
             url: author-notebook-with-vs-code.md
           - text: Use container image from VS Code
-            url: setup-vs-code-extension-with-docker-image.md
+            url: set-up-vs-code-extension-with-docker-image.md
           - text: Use notebooks from VS Code with resource
             url: author-notebook-resource-with-vs-code.md
           - text: Use Spark job definitions from VS Code
