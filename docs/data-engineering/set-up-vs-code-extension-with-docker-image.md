@@ -1,5 +1,5 @@
 ---
-title: VS Code extension with docker support
+title: VS Code extension with Docker support
 description: Learn how Docker integration works with Synapse VS Code extension. It gives a containerized environment with all the dependencies installed and configured.
 ms.reviewer: sngun
 ms.author: qixwang
@@ -18,7 +18,7 @@ The Synapse VS Code extension seamlessly integrates with Docker containers, prov
 
 A docker image is provided by Synapse to support the VS Code extension. The docker image contains all the required dependencies to run the Synapse VS Code extension, including the Java Development Kit (JDK), Conda, and the Jupyter extension for VS Code. This image is hosed on the [Microsoft Artifact Registry](https://mcr.microsoft.com/en-us/product/msfabric/synapsevscode/fabric-synapse-vscode/about) and can be pulled from the following location: . To make it easier for users to get started, we have created a sample with devcontainer.json file that you can use to open the Synapse VS Code extension in a container. Follow the steps below to get started.
 
-Synapse provides a Docker image to support the VS Code extension. The Docker image includes all the necessary dependencies like the Java Development Kit (JDK), Conda, and the Jupyter extension for VS Code. This image is hosted on the [Microsoft Artifact Registry](https://mcr.microsoft.com/en-us/product/msfabric/synapsevscode/fabric-synapse-vscode/about). To help you get started quickly, a sample with *devcontainer.json* file can be used to open the Synapse VS Code extension in a container as described in the next sections.
+Synapse provides a Docker image to support the VS Code extension. The Docker image includes all the necessary dependencies like the Java Development Kit (JDK), Conda, and the Jupyter extension for VS Code. This image is hosted on the [Microsoft Artifact Registry](https://mcr.microsoft.com/product/msfabric/synapsevscode/fabric-synapse-vscode/about). To help you get started quickly, a sample with *devcontainer.json* file can be used to open the Synapse VS Code extension in a container as described in the next sections.
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ The following prerequisites should be met to use the Docker containers with the 
 - Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - Install [VS Code Remote Development pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
 
-## Getting Started
+## Getting started
 
 1. Clone the [Synapse VS Code Dev Container sample](https://github.com/microsoft/SynapseVSCode/tree/main/samples/.devcontainer).
 
