@@ -5,7 +5,7 @@ ms.reviewer: akshayd
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 07/16/2024
+ms.date: 07/31/2024
 ---
 # Get data from Cribl Stream
 
@@ -15,7 +15,7 @@ For a complete list of data connectors, see [Data connectors overview](data-conn
 
 ## Prerequisites
 
-* A [Cribl stream account](https://cribl.io)
+* A [Cribl Stream account](https://cribl.io)
 * A [KQL database](/fabric/real-time-analytics/create-database)
 * An Azure subscription. Create a [free Azure account](https://azure.microsoft.com/free/).<a id=ingestion-uri></a>
 * Your database ingestion URI to use as the *TargetURI* value. For more information, see [Copy URI](access-database-copy-uri.md#copy-uri).

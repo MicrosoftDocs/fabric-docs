@@ -176,6 +176,8 @@ items:
         href: /azure/data-explorer/integrate-azure-functions?context=/fabric/context/context-rti&pivots=fabric
       - name: Azure Stream Analytics
         href: /azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rti&pivots=fabric
+      - name: Cribl Stream
+        href: get-data-cribl-stream.md
       - name: Fluent Bit
         href: get-data-fluent.md
       - name: Logstash

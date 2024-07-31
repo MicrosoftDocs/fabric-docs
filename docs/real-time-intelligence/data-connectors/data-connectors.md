@@ -5,7 +5,7 @@ ms.reviewer: aksdi
 ms.author: shsagir
 author: shsagir
 ms.topic: concept-article
-ms.date: 06/27/2024
+ms.date: 07/31/2024
 # CustomerIntent: As a data ingestor, I want to know what data connectors and tools are available, so that I can choose the right one for my use case.
 ---
 # Data connectors overview
@@ -133,11 +133,11 @@ The following table summarizes the available connectors and their capabilities:
 
 ### Cribl Stream
 
-[Cribl stream](https://docs.cribl.io/stream/) collects and processes machine data and allows you to process machine data into a database for later analysis.
+[Cribl stream](https://docs.cribl.io/stream/) is a processing engine that securely collects, processes,and streams machine event data from any source. It allows you to parse and process that data for any destination for analysis.
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming
-* **Use cases:** Machine data processing
+* **Use cases:** Machine data processing including logs, metrics, instrumentation data
 * **Documentation:** [Get data from Cribl Stream](../get-data-cribl-stream.md)
 
 ### Logstash
