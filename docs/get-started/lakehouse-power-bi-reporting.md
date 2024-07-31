@@ -14,7 +14,7 @@ ms.search.form: Lakehouse Power BI Reporting
 
 # How Direct Lake mode works with Power BI reporting
 
-In Microsoft Fabric, when the user creates a lakehouse, the system also provisions the associated SQL endpoint and default semantic model. The default semantic model has metrics on top of lakehouse data. The semantic model allows Power BI to load data for reporting.
+In Microsoft Fabric, when the user creates a lakehouse, the system also provisions the associated SQL analytics endpoint and default semantic model. The default semantic model has metrics on top of lakehouse data. The semantic model allows Power BI to load data for reporting.
 
 When a Power BI report shows an element that uses data, it requests it from the underlying semantic model. Next the semantic model accesses a lakehouse to retrieve data and return it to the Power BI report. For efficiency, the default semantic model loads commonly requested data into the cache and refreshes it when needed.
 

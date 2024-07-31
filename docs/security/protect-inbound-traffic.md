@@ -18,7 +18,7 @@ Inbound traffic is traffic coming into Fabric from the internet. This article ex
 
 :::image type="content" source="media/protect-inbound-traffic/protect-inbound-traffic.png" alt-text="A diagram showing two authentication methods for inbound traffic into Fabric, Vnets and Microsoft Entra ID.":::
 
-Once traffic enters Fabric, it gets authenticated by Microsoft Entra ID, which is the same authentication method used by Microsoft 365, OneDrive, and Dynamics 365. Microsoft Entra ID authentication allows users to securely connect to cloud applications from any device and any network, whether they’re at home, remote, or in their corporate office.
+Once traffic enters Fabric, it gets authenticated by Microsoft Entra ID, which is the same authentication method used by Microsoft 365, OneDrive, and Dynamics 365. Microsoft Entra ID authentication allows users to securely connect to cloud applications from any device and any network, whether they're at home, remote, or in their corporate office.
 
 The Fabric backend platform is protected by a virtual network and isn't directly accessible from the public internet other than through secure endpoints. To understand how traffic is protected in Fabric, review Fabric's [Architectural diagram](security-fundamentals.md#architectural-diagram).
 
@@ -71,7 +71,7 @@ With private endpoints your service is assigned a private IP address from your v
 
 Using Private links, a tunnel from the service into one of your subnets creates a private channel. Communication from external devices travels from their IP address, to a private endpoint in that subnet, through the tunnel and into the service.
 
-When implementing private links, Fabric is no longer accessible through the public internet. To access Fabric, all users have to connect through the private network. The private network is required for all communications with Fabric, including viewing a Power BI report in the browser and using SQL Server Management Studio (SSMS) to connect to an SQL endpoint.
+When implementing private links, Fabric is no longer accessible through the public internet. To access Fabric, all users have to connect through the private network. The private network is required for all communications with Fabric, including viewing a Power BI report in the browser and using SQL Server Management Studio (SSMS) to connect to a SQL connections string like `<guid_unique_your_item>.datawarehouse.fabric.microsoft.com`.
 
 ### On-premises networks
 

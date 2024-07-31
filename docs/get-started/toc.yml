@@ -249,7 +249,7 @@ items:
       href: known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md
     - name: SQL database mirror doesn't start when you create connection during mirror creation
       href: known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md
-    - name: SQL endpoint and semantic model are orphaned when a lakehouse is deleted
+    - name: SQL analytics endpoint and semantic model are orphaned when a lakehouse is deleted
       href: known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md
     - name: Apps and reports not available when editing scorecard metrics
       href: known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md

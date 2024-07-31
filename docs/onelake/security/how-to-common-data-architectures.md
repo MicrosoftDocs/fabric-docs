@@ -32,7 +32,7 @@ Identify the downstream consumers of your data products and grant access accordi
 | ---- | --- |
 | [Data scientists](#data-scientists) | Apache Spark notebooks or lakehouse |
 | [Data engineers](#data-engineers) | Apache Spark notebooks, data flows, or pipelines |
-| [Business analysts](#business-analysts) | SQL Endpoint |
+| [Business analysts](#business-analysts) | SQL analytics endpoint |
 | [Report creators](#report-creators) | Semantic models |
 | [Report consumers](#report-consumers) | Power BI reports |
 
@@ -45,7 +45,7 @@ Identify the downstream consumers and grant access according to the minimum perm
 | User | Fabric items |
 | ---- | --- |
 | [Data scientists](#data-scientists) | Apache Spark notebooks or lakehouse |
-| [Business analysts](#business-analysts) | SQL Endpoint |
+| [Business analysts](#business-analysts) | SQL analytics endpoint |
 | [Report creators](#report-creators) | Semantic models |
 | [Report consumers](#report-consumers) | Power BI reports |
 
@@ -76,7 +76,7 @@ Use the share button to share the lakehouse with data engineers. Check the **Rea
 
 Business analysts (sometimes call data analysts) query data through SQL to answer business questions.
 
-Use the share button to share the lakehouse with the business analysts. Check the **Read all SQL endpoint data** box in the dialog. This setting gives business analysts access to the data in the SQL endpoint, but not to see the underlying OneLake files.
+Use the share button to share the lakehouse with the business analysts. Check the **Read all SQL endpoint data** box in the dialog. This setting gives business analysts access to the data in the SQL analytics endpoint of a Lakehouse, but not to see the underlying OneLake files.
 
 Access to data can be further restricted for these users by defining [row or column level security directly in SQL](../../data-warehouse/sql-granular-permissions.md).
 
@@ -84,13 +84,13 @@ Access to data can be further restricted for these users by defining [row or col
 
 Report creators build Power BI reports for other users to consume.
 
-Use the share button to share the lakehouse with the report creators. Check the **Build reports on the default semantic model** box in the dialog. This permission allows the report creators to build reports using the semantic model associated with the lakehouse. Those users can't access the data in OneLake or have full access to the SQL endpoint.
+Use the share button to share the lakehouse with the report creators. Check the **Build reports on the default semantic model** box in the dialog. This permission allows the report creators to build reports using the semantic model associated with the lakehouse. Those users can't access the data in OneLake or have full access to the SQL analytics endpoint.
 
 ### Report consumers
 
 Report consumers are the business leaders or directors that view data in a Power BI report to make decisions.
 
-Share a report with consumers using the share button. Don't check any of the boxes to grant access to read the report but not see any of the underlying data. To prevent users from accessing the SQL endpoint and viewing tables, ensure that no SQL permissions are defined that would grant access for these users.
+Share a report with consumers using the share button. Don't check any of the boxes to grant access to read the report but not see any of the underlying data. To prevent users from accessing the SQL analytics endpoint and viewing tables, ensure that no SQL permissions are defined that would grant access for these users.
 
 You can also share data with report consumers by using an [app](/power-bi/consumer/end-user-apps). Apps allow users to access a predefined report or set of reports without needing access to the underlying workspace. Note that for reports in direct lake mode, the users will need to have the underlying lakehouse shared with them in order to see data.
 

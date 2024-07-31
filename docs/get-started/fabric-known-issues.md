@@ -40,7 +40,7 @@ Select the **Title** to view more information about that specific known issue.
 |  740  | Real-Time Intelligence | [Eventstreams paused for more than two hours don't show data](known-issues/known-issue-740-eventstreams-paused-two-hours-not-show-data.md) | June 11, 2024 |
 |  736  | Real-Time Intelligence | [Previous Eventstream UX loads instead of new UX](known-issues/known-issue-736-previous-eventstream-ux-loads-instead-new-ux.md) | June 6, 2024 |
 |  734  | Real-Time Intelligence | [Custom endpoint or Reflex destination on derived stream keeps loading](known-issues/known-issue-734-custom-endpoint-reflex-destination-derived-stream-keeps-loading.md) | June 6, 2024 |
-|  733  | Real-Time Intelligence | [Sample data doesn’t flow after destination later added into eventstream](known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md) | June 6, 2024 |
+|  733  | Real-Time Intelligence | [Sample data doesn't flow after destination later added into eventstream](known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md) | June 6, 2024 |
 |  749  | Power BI | [Tenant migrations paused for June 2024](known-issues/known-issue-749-tenant-migrations-paused-june-2024.md) | May 31, 2024 |
 |  732  | Data Engineering | [Shortcut creation on a lakehouse preview table takes long time](known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md) | May 31, 2024 |
 |  730  | Real-Time Intelligence | [Real-Time hub **Set alert** doesn't work for derived streams](known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md) | May 29, 2024 |
@@ -54,7 +54,7 @@ Select the **Title** to view more information about that specific known issue.
 |  716  | Data Warehouse | [Response times when composing SQL queries slower than expected](known-issues/known-issue-716-response-times-composing-sql-queries-slower.md) | May 13, 2024 |
 |  715  | Power BI | [TMDL semantic models won't open in Desktop after web edited](known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md) | May 2, 2024 |
 |  709  | Data Factory | [Query folding indicators are incorrect for certain Power Query SDK based connectors](known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md) | May 1, 2024 |
-|  708  | Data Warehouse | [SQL endpoint and semantic model are orphaned when a lakehouse is deleted](known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md) | May 1, 2024 |
+|  708  | Data Warehouse | [SQL analytics endpoint and semantic model are orphaned when a lakehouse is deleted](known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md) | May 1, 2024 |
 |  702  | Data Factory | [SQL database mirror doesn't start when you create connection during mirror creation](known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md) | May 1, 2024 |
 |  670  | Power BI | [Filled or bubble layers on Azure Maps visual doesn't render](known-issues/known-issue-670-filled-bubble-layers-azure-maps-visual-render.md) | April 11, 2024 |
 |  667  | Power BI | [Upload reports from OneDrive or SharePoint fails](known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md) | April 1, 2024 |
