@@ -4,10 +4,11 @@ description: OneLake uses a layered security model built around the organization
 ms.reviewer: aamerril
 ms.author: yuturchi
 author: yuturchi
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2024
 ms.date: 04/01/2024
+#customer intent: As a security engineer, I want to understand the security features and considerations of Fabric and OneLake so that I can ensure the confidentiality and integrity of the data stored in the lakehouse.
 ---
 
 # Secure Data with Fabric, Compute Engines, and OneLake

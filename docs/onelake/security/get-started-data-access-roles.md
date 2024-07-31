@@ -1,12 +1,13 @@
 ---
 title: Get started with OneLake data access roles (preview)
-description: Learn about OneLake data access roles and how to get started using them.
+description: Learn about OneLake data access role security and how you can get started using them in your lakehouse.
 ms.reviewer: yuturchi
 ms.author: aamerril
 author: aamerril
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom:
 ms.date: 05/09/2024
+#customer intent: As a Fabric user, I want to learn how to create and manage OneLake data access roles so that I can control access to specific folders in my lakehouse and ensure data security.
 ---
 
 # Get started with OneLake data access roles (preview)
@@ -137,7 +138,5 @@ The external data sharing preview feature (link) isn't compatible with the data 
 ## Related content
 
 - [Fabric Security overview](../../security/security-overview.md)
-
 - [Fabric and OneLake security overview](./fabric-onelake-security.md)
-
 - [Data Access Control Model](../security/data-access-control-model.md)
