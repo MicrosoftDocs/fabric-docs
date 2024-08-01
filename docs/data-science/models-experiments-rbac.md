@@ -1,9 +1,10 @@
 ---
 title: Machine learning permissions
 description: Understand the permissions required for machine learning models and experiments in [!INCLUDE [product-name](../includes/product-name.md)] and how to assign these permissions to users.
-ms.reviewer: scottpolly
-ms.author: midesa
-author: midesa
+ms.author: larryfr
+author: Blackmist
+ms.reviewer: midesa
+reviewer: midesa
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -51,7 +52,7 @@ A user's role in a workspace implicitly grants them permissions on the datasets 
 > [!NOTE]
 > You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. To learn more about workspace roles in [!INCLUDE [product-name](../includes/product-name.md)], see [Roles in workspaces](../get-started/roles-workspaces.md)
 
-## Next steps
+## Related content
 
 - Learn about roles in workspaces: [Roles in [!INCLUDE [product-name](../includes/product-name.md)] workspaces](../get-started/roles-workspaces.md)
 - Give users access to workspaces: [Granting access to users](../get-started/give-access-workspaces.md)

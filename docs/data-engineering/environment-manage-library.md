@@ -1,22 +1,16 @@
 ---
 title: Library management in Fabric environments
-description: Learn how to include public and custom libraries in Fabric environments.
+description: Learn about library management in Fabric, including how to add public and custom libraries to your Fabric environments.
 ms.author: shuaijunye
-author: shuaijunye
+author: ShuaijunYe
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 06/12/2024
 ms.search.for: Manage libraries in Environment
 ---
 
 # Library management in Fabric environments
 
 Microsoft Fabric environments provide flexible configurations for running your Spark jobs. Libraries provide reusable code that developers want to include in their work. Except for the built-in libraries that come with each Spark runtime, you can install public and custom libraries in your Fabric environments. And you can easily attach environments to your notebooks and Spark job definitions.
-
-> [!IMPORTANT]
-> The environment item in Microsoft Fabric is currently in PREVIEW.
 
 ## Public libraries
 
@@ -31,9 +25,20 @@ To add a new public library, select a source and specify the name and version of
 > [!NOTE]
 > The auto-completion feature for library names during adding is limited to the most popular libraries. If the library you want to install is not on that list, you don't receive an auto-completion prompt. Instead, search for the library directly in PyPI or Conda by entering its full name. If the library name is valid, you see the available versions. If the library name is not valid, you get a warning that the library doesn't exist.
 
+### Add public libraries in a batch
+
+Environments support uploading the YAML file to manage multiple public libraries in a batch. The contents of the YAML are extracted and appended in the public library list.
+
+> [!NOTE]
+> The custom conda channels in YAML file are currently not supported. Only the libraries from PyPI and conda are recognized.
+
 ### Filter public libraries
 
 Enter keywords in the search box on the **Public Libraries** page, to filter the list of public libraries and find the one you need.
+
+### Update public libraries
+
+To update the version of an existing public library, navigate to your envronment and open the **Public libraries** or **Custom libraries**. Choose the required library, select the version drop-down, and update its version.
 
 ### Delete public libraries
 

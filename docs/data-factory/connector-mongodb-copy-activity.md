@@ -117,6 +117,6 @@ The following table contains more information about the copy activity in MongoDB
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out.|timespan<br>(the default is **00:30:00** - 30 minutes)|No|writeBatchTimeout|
 |**Write batch size**| Controls the size of documents to write in each batch. You can try increasing this value to improve performance and decreasing the value if your document size being large.|< your write batch size >|No|writeBatchSize|
 
-## Next steps
+## Related content
 
 - [MongoDB connector overview](connector-mongodb-overview.md)

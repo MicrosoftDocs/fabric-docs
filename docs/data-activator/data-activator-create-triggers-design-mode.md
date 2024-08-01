@@ -3,7 +3,7 @@ title: Create Data Activator triggers in design mode
 description: Learn how to create triggers in design mode for Data Activator.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.search.form: Data Activator Design Mode
 ms.date: 11/16/2023
@@ -94,7 +94,7 @@ Once you have defined a property, you can reference it from one or more triggers
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-11.png" alt-text="Screenshot of package too warm property for a trigger.":::
 
-## Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

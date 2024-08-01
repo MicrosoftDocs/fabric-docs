@@ -4,9 +4,10 @@ description: Instruction of how to install SynapseML on Fabric
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.reviewer: larryfr
-author: JessicaXYWang
-ms.author: jessiwang
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: jessiwang
+reviewer: JessicaXYWang
 ms.date: 06/12/2023
 ---
 # Install a different version of SynapseML on Fabric
@@ -51,7 +52,7 @@ import synapse.ml.lightgbm
 print(f"SynapseML lightgbm version: {synapse.ml.lightgbm.__version__}")
 ```
 
-## Next steps
+## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
 - [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)

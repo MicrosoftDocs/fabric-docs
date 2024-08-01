@@ -133,6 +133,6 @@ See the following table for the summary and more information for the Dynamics CR
 |**Write batch size**|The row count of data written to Dynamics CRM in each batch.|< your write batch size > <br>The default value is 10|No|writeBatchSize|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|< max concurrent connections >|No|maxConcurrentConnections|
 
-## Next steps
+## Related content
 
-[Dynamics CRM connector overview](connector-dynamics-crm-overview.md)
+- [Dynamics CRM connector overview](connector-dynamics-crm-overview.md)

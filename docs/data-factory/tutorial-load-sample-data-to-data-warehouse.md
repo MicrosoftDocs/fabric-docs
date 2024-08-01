@@ -107,7 +107,7 @@ In this session, you start to build your pipeline by following below steps about
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
 
-## Next steps
+## Related content
 
 This sample shows you how to load sample data into a Data Warehouse using Data Factory in Microsoft Fabric.  You learned how to:
 

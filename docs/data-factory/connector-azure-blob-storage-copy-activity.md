@@ -166,6 +166,6 @@ The following tables contain more information about the copy activity in Azure B
 |**Block size (MB)** |Specify the block size in MB when writing data to Azure Blob Storage. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
 |**Metadata**|Set the custom metadata when copy to destination.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
-## Next steps
+## Related content
 
 - [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md)

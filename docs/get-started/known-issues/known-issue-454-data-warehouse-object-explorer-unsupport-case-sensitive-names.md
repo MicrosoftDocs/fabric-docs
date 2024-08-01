@@ -23,6 +23,6 @@ If the customer notice the object shares the same noncase sensitive name as anot
 
 Recommend naming objects with different names and not relying on case-sensitivity as it helps avoid any inconsistency from not being listed in the object explorer, but listed in system views
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

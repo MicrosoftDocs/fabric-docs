@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 07/18/2024
 ---
 
 # How to copy data using copy activity
@@ -79,6 +79,9 @@ Follow these steps to set up your copy activity using copy assistant.
    :::image type="content" source="media/copy-data-activity/map-to-destination.png" alt-text="Screenshot of Map to destination screen." lightbox="media/copy-data-activity/map-to-destination.png":::
 
    :::image type="content" source="media/copy-data-activity/connect-to-data-destination.png" alt-text="Screenshot of Connect to data destination." lightbox="media/copy-data-activity/connect-to-data-destination.png":::
+
+   > [!NOTE]
+   > You can only use a single on-premises data gateway within the same Copy activity. If both source and sink are on-premises data sources, they must use the same gateway. To move data between on-premises data sources with different gateways, you must copy using the first gateway to an intermediate cloud source in one Copy activity. Then you can use another Copy activity to copy it from the intermediate cloud source using the second gateway.
 
 ### Review and create your copy activity
 
@@ -172,24 +175,6 @@ If the connector that you apply supports mapping, you can go to **Mapping** tab 
 
 Besides, you can select **+ New mapping** to add new mapping, select **Clear** to clear all mapping settings, and select **Reset** to reset all mapping **Source** column.
 
-#### Configure your type conversion
-
-Expand **Type conversion settings** to configure your type conversion if needed. 
-
-   :::image type="content" source="media/copy-data-activity/mapping-type-conversion.png" alt-text="Screenshot of mapping type conversion." lightbox="media/copy-data-activity/mapping-type-conversion.png":::
-
-See the following table for the setting details.
-
-|Setting  |Description  |
-|---------|---------|
-|**Allow data truncation** |Allow data truncation when converting source data to destination with different type during copy. For example, from decimal to integer, from DatetimeOffset to Datetime.  |
-|**Treat boolean as number** | Treat boolean as number. For example, treat true as 1. |
-|**DateTime format** |Format string when converting between dates without time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff". |
-|**DateTimeOffset format** | Format string when converting between dates with time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff zzz".|
-|**TimeSpan format**| Format string when converting between time periods and strings. For example, "dd\.hh\:mm\:ss".|
-|**Culture**| Culture information to be used when convert types. For example, "en-us", "fr-fr".|
-
-
 ### Configure your other settings under settings tab
 
 The **Settings** tab contains the settings of performance, staging, and so on.
@@ -211,7 +196,7 @@ See the following table for the description of each setting.
 
 Parameters can be used to control the behavior of a pipeline and its activities. You can use **Add dynamic content** to specify parameters for your copy activity properties. Let's take specifying Lakehouse/Data Warehouse/KQL Database as an example to see how to use it.
 
-1. In your source or destination, after selecting **Workspace** as data store type and specifing **Lakehouse**/**Data Warehouse**/**KQL Database** as workspace data store type, select **Add dynamic content** in the drop-down list of **Lakehouse** or **Data Warehouse** or **KQL Database**.
+1. In your source or destination, after selecting **Workspace** as data store type and specifying **Lakehouse**/**Data Warehouse**/**KQL Database** as workspace data store type, select **Add dynamic content** in the drop-down list of **Lakehouse** or **Data Warehouse** or **KQL Database**.
 1. In the pop-up **Add dynamic content** pane, under **Parameters** tab, select **+**.
 
     :::image type="content" source="./media/copy-data-activity/add-dynamic-content-page.png" alt-text="Screenshot showing the Add dynamic content page.":::
@@ -239,7 +224,7 @@ Parameters can be used to control the behavior of a pipeline and its activities.
     :::image type="content" source="./media/copy-data-activity/select-parameter.png" alt-text="Screenshot showing selecting parameter.":::
 
 
-## Next steps
+## Related content
 
 - [Connector overview](connector-overview.md)
 - [How to monitor pipeline runs](monitor-pipeline-runs.md)

@@ -3,8 +3,7 @@ title: Set or remove sensitivity labels programmatically with admin APIs
 description: See an example of how to use Power BI REST admin APIs to set or remove sensitivity labels on Power BI artifacts.
 author: paulinbar
 ms.author: painbar
-ms.service: powerbi
-ms.subservice: powerbi-eim
+
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -97,7 +96,7 @@ The following sample demonstrates how to set and remove sensitivity labels on Po
         }
 ```
 
-## Next steps
+## Related content
 
 * [setLabels API](/rest/api/power-bi/admin/information-protection-set-labels-as-admin)
 * [removeLabels API](/rest/api/power-bi/admin/information-protection-remove-labels-as-admin)

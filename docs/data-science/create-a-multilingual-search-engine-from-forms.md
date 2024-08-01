@@ -3,10 +3,12 @@ title: Build a Search Engine
 description: Build a custom search engine and question-answering system with SynapseML.
 ms.topic: overview
 ms.custom: build-2023
+ms.author: ssalgado
+author: ssalgadodev
 ms.reviewer: jessiwang
-author: JessicaXYWang
-ms.author: jessiwang
+reviewer: JessicaXYWang
 ms.date: 05/08/2023
+ms.collection: ce-skilling-ai-copilot
 ---
 # Tutorial: Create a custom search engine and question-answering system
 
@@ -367,7 +369,7 @@ display(
     .distinct()
 )
 ```
-## Next steps
+## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
 - [How to use SynapseML and Azure AI services for multivariate anomaly detection - Analyze time series](multivariate-anomaly-detection.md)

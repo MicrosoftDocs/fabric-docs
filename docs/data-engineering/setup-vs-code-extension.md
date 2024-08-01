@@ -8,7 +8,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 05/13/2024
 ms.search.form: VSCodeExtension
 ---
 
@@ -22,17 +22,17 @@ Visual Studio (VS) Code is a one of the most popular lightweight source code edi
 
 Prerequisites for the Synapse VS Code extension:
 
-- [OpenJDK8](https://adoptium.net/temurin/releases/?version=8)
-- [Conda](https://docs.conda.io/en/latest/miniconda.html)
-- [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+- Install Java Development Kit(JDK) from the [OpenJDK8](https://adoptium.net/temurin/releases/?version=8) website. Ensure to use the JDK link and not the JRE.
+- Install [Conda](https://docs.conda.io/en/latest/miniconda.html).
+- Install the [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 After you have installed the required software, you must update the operating system properties.
 
 ### Windows
 
-1. Add **JAVA_HOME** to the environment variables and point it to the directory where java 1.8 is installed.
+1. Add **JAVA_HOME** to the environment variables and point it to the directory where java 1.8 is installed. For example, if you install JDK at this path `C:\Program Files\Java\jdk-1.8`, set the *JAVA_HOME* variable value to that path.
 
-2. Add both **%JAVA_HOME%/bin** and the **condabin** subfolder of the Conda installation to the system path directory.
+2. Add both **%JAVA_HOME%/bin** and the **condabin** subfolder of the Conda installation to the system path directory. The *condabin* folder could be in the folder where you installed and in this format `\miniconda3\condsbin`. Open the environment variables and add **%JAVA_HOME%/bin** and **condabin** paths to the **Path** variable.
 
 ### macOS
 
@@ -89,5 +89,5 @@ Once you have a workspace, choose it by selecting the **Select Workspace** optio
 
 In this overview, you get a basic understanding of how to install and set up the Synapse VS Code extension. The next articles explain how to develop your notebooks and Spark job definitions locally in VS Code.
 
-- To get started with notebooks, see [Microsoft Fabric notebook experience in VS Code](author-notebook-with-vs-code.md).
-- To get started with Spark job definitions, see [Spark job definition experience in VS Code](author-sjd-with-vs-code.md).
+- To get started with notebooks, see [Create and manage Microsoft Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md).
+- To get started with Spark job definitions, see [Create and manage Apache Spark job definitions in Visual Studio Code](author-sjd-with-vs-code.md).

@@ -9,6 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 09/27/2023
+#customer intent: As a OneLake user, I want to learn how to install and use the OneLake file explorer client app for Windows so that I can seamlessly access and sync my OneLake data with Windows File Explorer.
 ---
 
 # Use OneLake file explorer to access Fabric data
@@ -34,6 +35,8 @@ To install:
    The storage location on your PC for the placeholders and any downloaded content is `\%USERPROFILE%\OneLake - Microsoft\`.
 
 Once you have installed and launched the application, you can now see your OneLake data in Windows File Explorer.
+
+Starting in version 1.0.13, the OneLake file explorer app will now notify you when a new update is available. You’ll receive a Windows notification when a new version becomes available and the OneLake icon will change. Right-click on the OneLake icon in the Windows notification area. Select **Update Available** and follow steps to update.
 
 ## Limitations and considerations
 
@@ -101,7 +104,7 @@ The OneLake file explorer only syncs updates when you're online and the applicat
 
 ### Edit files
 
-You can open files using your favorite apps and make edits. Selecting **Save** syncs the file to OneLake. Starting in version 1.0.11, you can also make updates with Excel to your files. **Close** the file after the udpate in Excel and it will initiate the sync to OneLake.
+You can open files using your favorite apps and make edits. Selecting **Save** syncs the file to OneLake. Starting in version 1.0.11, you can also make updates with Excel to your files. **Close** the file after the update in Excel and it will initiate the sync to OneLake.
 
 If you edit a file locally and select **Save**, the OneLake file explorer app detects if that file was updated elsewhere (by someone else) since you last selected **Sync from OneLake**. A **Confirm the action** dialog box appears:
 
@@ -133,7 +136,7 @@ You can enable additional client-side logging by selecting **Diagnostic Operatio
 
 ### Release Notes
 
-Starting in version 1.0.11, you can information find about each release of the OneLake file explorer by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar.  Select **About** > **Release Notes**. This opens the OneLake file explorer release notes page in your browser window. 
+Starting in version 1.0.11, you can find information about each release of the OneLake file explorer by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar.  Select **About** > **Release Notes**. This opens the OneLake file explorer release notes page in your browser window.
 
 ### Uninstall instructions
 
@@ -155,5 +158,5 @@ These OneLake file explorer icons appear in Windows File Explorer to indicate th
 
 ## Related content
 
-- Learn more about [OneLake security](onelake-security.md).
+- Learn more about [Fabric and OneLake security](./security/fabric-onelake-security.md).
 - [What's new in the latest OneLake file explorer?](onelake-file-explorer-release-notes.md)

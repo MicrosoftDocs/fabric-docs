@@ -11,7 +11,7 @@ items:
     href: create-lakehouse-onelake.md
   - name: Implement medallion lakehouse architecture
     href: onelake-medallion-lakehouse-architecture.md
-  - name: Transform with Spark and query data with SQL
+  - name: Transform with Apache Spark and query data with SQL
     href: onelake-onecopy-quickstart.md
   - name: Connect to ADLS and transform data with Azure Databricks
     href: onelake-shortcuts-adb-quickstart.md
@@ -23,12 +23,22 @@ items:
     href: onelake-shortcuts.md
   - name: Create a OneLake shortcut
     href: create-onelake-shortcut.md
-  - name: Access OneLake shortcuts in a Spark notebook
-    href: access-onelake-shortcuts.md
   - name: Create an ADLS Gen2 shortcut
     href: create-adls-shortcut.md
   - name: Create an Amazon S3 shortcut
-    href: create-S3-shortcut.md
+    href: create-s3-shortcut.md
+  - name: Create an Amazon S3 compatible shortcut
+    href: create-s3-compatible-shortcut.md
+  - name: Create a Google Cloud Storage shortcut
+    href: create-gcs-shortcut.md
+  - name: Create shortcuts to on-premises data
+    href: create-on-premises-shortcut.md
+  - name: Shortcut security
+    href: onelake-shortcut-security.md
+  - name: Access OneLake shortcuts in an Apache Spark notebook
+    href: access-onelake-shortcuts.md
+  - name: Use shortcuts REST API
+    href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
 - name: Open access
   items:
   - name: How do I connect to OneLake?
@@ -45,17 +55,35 @@ items:
     href: onelake-azure-storage-explorer.md
   - name: Azure Databricks
     href: onelake-azure-databricks.md
+  - name: Databricks Unity Catalog
+    href: onelake-unity-catalog.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
   - name: PowerShell
     href: onelake-powershell.md
 - name: Secure and manage data
   items:
-  - name: Secure data
-    href: onelake-security.md
+  - name: Fabric and OneLake data security
+    href: ./security/fabric-onelake-security.md
+  - name: OneLake Data Access Control Model
+    href: ./security/data-access-control-model.md
   - name: Get started with securing data in OneLake
-    href: get-started-security.md
-  - name: Plan for disaster recovery
+    items:
+    - name: OneLake security overview
+      href: ./security/get-started-security.md
+    - name: Get started with data access roles
+      href: ./security/get-started-data-access-roles.md
+    - name: Best Practices
+      href: ./security/best-practices-secure-data-in-onelake.md
+  - name: How To Secure Data in OneLake
+    items:
+    - name: For Data Science
+      href: ./security/how-to-secure-data-onelake-for-data-science.md
+    - name: For Data Warehousing
+      href: ./security/how-to-secure-data-onelake-for-data-warehousing.md
+    - name: For common data architectures
+      href: ./security/how-to-common-data-architectures.md
+  - name: Plan for disaster recovery and data protection
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
   items:
@@ -65,5 +93,13 @@ items:
     href: onelake-file-explorer-release-notes.md
 - name: Discover data in the OneLake data hub
   href: ../get-started/onelake-data-hub.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
-- name: OneLake compute and storage consumption
-  href: onelake-consumption.md
+- name: Billing and consumption
+  items:
+  - name: OneLake compute and storage consumption
+    href: onelake-consumption.md
+  - name: OneLake capacity consumption example
+    href: OneLake-capacity-consumption.md
+- name: Reference
+  items: 
+  - name: OneLake shortcuts REST API
+    href: /rest/api/fabric/core/onelake-shortcuts

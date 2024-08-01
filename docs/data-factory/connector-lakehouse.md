@@ -33,6 +33,6 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Next steps
+## Related content
 
 * [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md)

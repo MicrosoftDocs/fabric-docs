@@ -1,9 +1,10 @@
 ---
 title: Train regression models using explainable boosting machines (preview)
 description: Learn how to train regression models using explainable boosting machines
-ms.reviewer: mopeakande
-ms.author: midesa
-author: midesa
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: midesa
+reviewer: midesa
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -181,7 +182,7 @@ Feature scores are [-0.06610139373422304, -0.06386890875478829, 0.00678462951334
 
 ```
 
-## Next steps
+## Related content
 
 - [InterpretML explainable boosting machine: How it works](https://interpret.ml/docs/ebm.html#how-it-works)
 - [Track models with MLflow](mlflow-autologging.md)

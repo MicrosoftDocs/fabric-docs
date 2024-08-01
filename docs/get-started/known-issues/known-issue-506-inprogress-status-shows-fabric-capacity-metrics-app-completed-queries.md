@@ -26,6 +26,6 @@ In the interactive operations table on the timepoint page, completed queries in 
 
 No workarounds at this time. When the fix is released, we'll update this article.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

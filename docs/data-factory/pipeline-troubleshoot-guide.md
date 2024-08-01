@@ -161,7 +161,7 @@ For connector issues such as an encounter error using the copy activity, refer t
 
 - **Cause**: The Azure function that was called didn't return a JSON Payload in the response. Data Factory and Synapse pipeline Azure function activity only support JSON response content.
 
-- **Recommendation**: Update the Azure function to return a valid JSON Payload such as a C# function may return `(ActionResult)new OkObjectResult("{\"Id\":\"123\"}");`
+- **Recommendation**: Update the Azure function to return a valid JSON Payload such as a C# function might return `(ActionResult)new OkObjectResult("{\"Id\":\"123\"}");`
 
 ### Error code: 3606
 
@@ -183,7 +183,7 @@ For connector issues such as an encounter error using the copy activity, refer t
 
 - **Message**: `Call to provided Azure function '%FunctionName;' failed with status-'%statusCode;' and message - '%message;'.`
 
-- **Cause**: The Azure function details in the activity definition may be incorrect.
+- **Cause**: The Azure function details in the activity definition might be incorrect.
 
 - **Recommendation**: Fix the Azure function details and try again.
 
@@ -199,7 +199,7 @@ For connector issues such as an encounter error using the copy activity, refer t
 
 - **Message**: `There was an error while calling endpoint.`
 
-- **Cause**: The function URL may be incorrect.
+- **Cause**: The function URL might be incorrect.
 
 - **Recommendation**: Verify that the value for `functionAppUrl` in the activity JSON is correct and try again.
 
@@ -289,7 +289,7 @@ For connector issues such as an encounter error using the copy activity, refer t
 
 - **Message**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
-- **Cause**: There is a server error on Azure Machine Learning.
+- **Cause**: There's a server error on Azure Machine Learning.
 
 - **Recommendation**: Retry later. Contact the Azure Machine Learning team for help if the issue continues.
 
@@ -307,7 +307,7 @@ For connector issues such as an encounter error using the copy activity, refer t
 
 - **Message**: `Please provide value for the required property '%propertyName;'.`
 
-- **Cause**: The required value for the property has not been provided.
+- **Cause**: The required value for the property hasn't been provided.
 
 - **Recommendation**: Provide the value from the message and try again.
 
@@ -447,13 +447,13 @@ The following table applies to Azure Batch.
 
 - **Cause**: The execution output is greater than 4 MB in size but the maximum supported output response payload size is 4 MB.
 
-- **Recommendation**: Make sure the execution output size does not exceed 4 MB. For more information, see [How to scale out the size of data moving using Data Factory](/answers/questions/700102/how-to-scale-out-the-size-of-data-moving-using-azu.html).
+- **Recommendation**: Make sure the execution output size doesn't exceed 4 MB. For more information, see [How to scale out the size of data moving using Data Factory](/answers/questions/700102/how-to-scale-out-the-size-of-data-moving-using-azu.html).
 
 ### Error Code: 2002
 
 - **Message**: `The payload including configurations on activity/data/connection is too large. Please check if you have settings with very large value and try to reduce its size.`
 
-- **Cause**: The payload you are attempting to send is too large.
+- **Cause**: The payload you're attempting to send is too large.
 
 - **Recommendation**: Refer to [Payload is too large](pipeline-troubleshoot-guide.md#payload-is-too-large).
 
@@ -487,7 +487,7 @@ The following table applies to Azure Batch.
 
 - **Cause**: The request failed due to an underlying issue such as network connectivity, a DNS failure, a server certificate validation, or a timeout.
 
-- **Recommendation**: Use Fiddler/Postman/Netmon/Wireshark to validate the request.
+- **Recommendation**: Use Fiddler/Netmon/Wireshark to validate the request.
 
     **Using Fiddler**
     
@@ -531,7 +531,7 @@ The following table applies to Azure Batch.
 
 - **Cause**: Unable to generate certificate from Base64 string/password combination.
 
-- **Recommendation**: Verify that the Base64 encoded PFX certificate and password combination you are using are correctly entered.
+- **Recommendation**: Verify that the Base64 encoded PFX certificate and password combination you're using are correctly entered.
 
 ### Error Code: 2403
 
@@ -548,28 +548,28 @@ The following table applies to Azure Batch.
 
 **Error message:** {\"token\":null,\"range\":{\"min\":\..}
 
-**Cause:** When querying across multiple partitions/pages, backend service  returns continuation token in JObject format with 3 properties: **token, min and max key ranges**,  for instance, {\"token\":null,\"range\":{\"min\":\"05C1E9AB0DAD76\",\"max":\"05C1E9CD673398"}}). Depending on source data, querying can result 0 indicating missing token though there is more data to fetch.
+**Cause:** When querying across multiple partitions/pages, backend service  returns continuation token in JObject format with three properties: **token, min and max key ranges**,  for instance, {\"token\":null,\"range\":{\"min\":\"05C1E9AB0DAD76\",\"max":\"05C1E9CD673398"}}). Depending on source data, querying can result 0 indicating missing token though there's more data to fetch.
 
-**Recommendation:** When the continuationToken is non-null, as the string {\"token\":null,\"range\":{\"min\":\"05C1E9AB0DAD76\",\"max":\"05C1E9CD673398"}}, it is required  to call queryActivityRuns API again with the continuation token from the previous response. You need to pass the full string for the query API again. The activities will be returned in the subsequent pages for the query result. You should ignore that there is empty array in this page, as long as the full continuationToken value != null, you need continue querying. For more details, please refer to [REST api for pipeline run query.](/rest/api/datafactory/activity-runs/query-by-pipeline-run) 
+**Recommendation:** When the continuationToken is non-null, as the string {\"token\":null,\"range\":{\"min\":\"05C1E9AB0DAD76\",\"max":\"05C1E9CD673398"}}, it's required  to call queryActivityRuns API again with the continuation token from the previous response. You need to pass the full string for the query API again. The activities are returned in the subsequent pages for the query result. You should ignore that there's empty array in this page, as long as the full continuationToken value != null, you need continue querying. For more details, please refer to [REST api for pipeline run query.](/rest/api/datafactory/activity-runs/query-by-pipeline-run) 
 
 
 ### Activity stuck issue
 
-When you observe that the activity is running much longer than your normal runs with barely no progress, it may happen to be stuck. You can try canceling it and retry to see if it helps. If it's a copy activity, you can learn about the performance monitoring and troubleshooting from [Troubleshoot copy activity performance](/azure/data-factory/copy-activity-performance-troubleshooting); if it's a data flow, learn from [Mapping data flows performance](/azure/data-factory/concepts-data-flow-performance) and tuning guide.
+When you observe that the activity is running longer than your normal runs with barely no progress, it might happen to be stuck. You can try canceling it and retry to see if it helps. If it's a copy activity, you can learn about the performance monitoring and troubleshooting from [Troubleshoot copy activity performance](/azure/data-factory/copy-activity-performance-troubleshooting); if it's a data flow, learn from [Mapping data flows performance](/azure/data-factory/concepts-data-flow-performance) and tuning guide.
 
 ### Payload is too large
 
 **Error message:** `The payload including configurations on activity/data/connection is too large. Please check if you have settings with very large value and try to reduce its size.`
 
-**Cause:** The payload for each activity run includes the activity configuration, the associated data(s), and connection(s) configurations if any, and a small portion of system properties generated per activity type. The limit of such payload size is 896 KB as mentioned in the Azure limits documentation for [Data Factory](/azure/azure-resource-manager/management/azure-subscription-service-limits#data-factory-limits) and [Azure Synapse Analytics](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-synapse-analytics-limits).
+**Cause:** The payload for each activity run includes the activity configuration, the associated data, and connections' configurations if any, and a small portion of system properties generated per activity type. The limit of such payload size is 896 KB as mentioned in the Azure limits documentation for [Data Factory](/azure/azure-resource-manager/management/azure-subscription-service-limits#data-factory-limits) and [Azure Synapse Analytics](/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-synapse-analytics-limits).
 
 **Recommendation:** You hit this limit likely because you pass in one or more large parameter values from either upstream activity output or external, especially if you pass actual data across activities in control flow. Check if you can reduce the size of large parameter values, or tune your pipeline logic to avoid passing such values across activities and handle it inside the activity instead.
 
 ### Unsupported compression causes files to be corrupted
 
-**Symptoms**: You try to unzip a file that is stored in a blob container. A single copy activity in a pipeline has a source with the compression type set to "deflate64" (or any unsupported type). This activity runs successfully and produces the text file contained in the zip file. However, there is a problem with the text in the file, and this file appears corrupted. When this file is unzipped locally, it is fine.
+**Symptoms**: You try to unzip a file that is stored in a blob container. A single copy activity in a pipeline has a source with the compression type set to "deflate64" (or any unsupported type). This activity runs successfully and produces the text file contained in the zip file. However, there's a problem with the text in the file, and this file appears corrupted. When this file is unzipped locally, it's fine.
 
-**Cause**: Your zip file is compressed by the algorithm of "deflate64", while the internal zip library of Data Factory only supports "deflate". If the zip file is compressed by the Windows system and the overall file size exceeds a certain number, Windows will use "deflate64" by default, which is not supported in Data Factory. On the other hand, if the file size is smaller or you use some third party zip tools that support specifying the compress algorithm, Windows will use "deflate" by default.
+**Cause**: Your zip file is compressed by the algorithm of "deflate64," while the internal zip library of Data Factory only supports "deflate." If the zip file is compressed by the Windows system and the overall file size exceeds a certain number, Windows uses "deflate64" by default, which isn't supported in Data Factory. On the other hand, if the file size is smaller or you use some third party zip tools that support specifying the compress algorithm, Windows uses "deflate" by default.
 
 > [!TIP]
 > Actually, both [Binary format in Data Factory and Synapse Analytics](format-binary.md) and [Delimited text format in Data Factory and Azure Synapse Analytics](format-delimited-text.md) clearly state that the "deflate64" format is not supported in Data Factory.
@@ -578,23 +578,23 @@ When you observe that the activity is running much longer than your normal runs 
 
 **Error message:** `Operation on target ForEach1 failed: The execution of template action 'MainForEach1' failed: the result of the evaluation of 'foreach' expression '@pipeline().parameters.<parameterName>' is of type 'String'. The result must be a valid array.`
 
-**Cause:** Even if in the Execute Pipeline you create the parameter of type array, as shown in the below image, the pipeline will fail.
+**Cause:** Even if in the _Execute Pipeline_ you create the parameter of type array, as shown in the below image, the pipeline fails.
 
 :::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/parameter-type-array.png" alt-text="Screenshot showing the parameters of the Execute Pipeline activity.":::
 
-This is due to the fact that the payload is passed from the parent pipeline to the child as string. We can see it when we check the input passed to the child pipeline.
+This is because the payload is passed from the parent pipeline to the child as string. We can see it when we check the input passed to the child pipeline.
 
 :::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/input-type-string.png" alt-text="Screenshot showing the input type string.":::
 
-**Recommendation:** To solve the issue we can leverage the create array function as shown in the below image.
+**Recommendation:** To solve the issue, we can apply the create array function as shown in the below image.
 
 :::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/create-array-function.png" alt-text="Screenshot showing how to use the create array function.":::
 
-Then our pipeline will succeed. And we can see in the input box that the parameter passed is an array.
+Then our pipeline succeeds. And we can see in the input box that the parameter passed is an array.
 
 :::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/input-type-array.png" alt-text="Screenshot showing input type array.":::
 
-## Next steps
+## Related content
 
 For more troubleshooting help, try these resources:
 

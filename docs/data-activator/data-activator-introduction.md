@@ -3,7 +3,7 @@ title: Introduction to Data Activator
 description: Learn about Data Activator and how it works.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom:
   - ignite-2023
 ms.search.form: product-reflex
@@ -34,10 +34,9 @@ The following concepts are used to build and trigger automated actions and respo
 
 ### Events
 
-Data Activator considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields
-you’re monitoring. Event streams vary in frequency from many times per second in the case of IoT sensors down to more sporadic streams such as packages being scanned in and out of shipping locations. 
+Data Activator considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields you’re monitoring. Event streams vary in frequency from many times per second in the case of IoT sensors down to more sporadic streams such as packages being scanned in and out of shipping locations. 
 
-Data being observed from Power BI is also treated as an event stream. In this case, events are observations made of the data on a regular schedule that would typically match the refresh frequency of your Power BI semantic model (previously known as dataset). This might only happen once a day, or even once a week – it’s just a slowly changing event stream.
+Data being observed from Power BI is also treated as an event stream. In this case, events are observations made of the data on a regular schedule against the Power BI semantic model (previously known as dataset). This query happens once an hour – it’s just a slowly changing event stream.
 
 ### Objects
 
@@ -53,7 +52,7 @@ Triggers define the conditions you want to detect on your objects, and the actio
 
 Properties are useful when you want to reuse logic across multiple triggers. You might define a property on a Freezer object that smooths out the temperature readings over a one-hour period. You could then use that smoothed value in many triggers.
 
-## Next steps
+## Related content
 
 * [Get started with Data Activator](data-activator-get-started.md)
 * [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)

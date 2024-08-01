@@ -36,22 +36,34 @@ items:
     href: tutorial-clone-table.md
   - name: 7. Transform data using stored procedure
     href: tutorial-transform-data.md
-  - name: 8. Create queries with visual query builder
+  - name: 8. Time travel using T-SQL
+    href: tutorial-time-travel.md
+  - name: 9. Create queries with visual query builder
     href: tutorial-visual-query.md
-  - name: 9. Analyze data with a notebook
+  - name: 10. Analyze data with a notebook
     href: tutorial-analyze-data-notebook.md
-  - name: 10. Create queries with the SQL query editor
+  - name: 11. Create queries with the SQL query editor
     href: tutorial-sql-cross-warehouse-query-editor.md
-  - name: 11. Create Power BI reports
+  - name: 12. Create Power BI reports
     href: tutorial-power-bi-report.md
-  - name: 12. Build a report from the OneLake data hub
+  - name: 13. Build a report from the OneLake data hub
     href: tutorial-build-report-onelake-data-hub.md
-  - name: 13. Clean up resources
+  - name: 14. Clean up resources
     href: tutorial-clean-up.md        
 - name: Connect to the warehouse
   items: 
   - name: Connectivity
     href: connectivity.md
+- name: Copilot for Data Warehouse
+  items:
+  - name: Overview of Copilot for Data Warehouse
+    href: copilot.md
+  - name: Use the Copilot chat pane
+    href: copilot-chat-pane.md
+  - name: Use code completions
+    href: copilot-code-completion.md
+  - name: Use quick actions
+    href: copilot-quick-action.md
 - name: Design and Develop
   items:
   - name: Better together - the lakehouse and warehouse
@@ -74,6 +86,20 @@ items:
     href: transactions.md 
   - name: Warehouse settings and context menus
     href: settings-context-menus.md
+  - name: Source control with Warehouse
+    href: source-control.md
+  - name: Analyze with range bands
+    href: analyze-range-bands.md
+- name: Dimensional modeling
+  items:
+  - name: Overview
+    href: dimensional-modeling-overview.md
+  - name: Dimension tables
+    href: dimensional-modeling-dimension-tables.md
+  - name: Fact tables
+    href: dimensional-modeling-fact-tables.md
+  - name: Load tables
+    href: dimensional-modeling-load-tables.md
 - name: Load data into the warehouse
   items:
   - name: Ingesting data into the warehouse
@@ -132,14 +158,102 @@ items:
     href: data-preview.md
   - name: Query Delta Lake logs
     href: query-delta-lake-logs.md
+  - name: Query data as it existed in the past
+    href: time-travel.md
+    displayName: Time travel
+  - name: "How to: Query using time travel"
+    href: how-to-query-using-time-travel.md
+    displayName: Query using time travel
 - name: Data recovery
   items:
   - name: Restore in-place
     href: restore-in-place.md
+  - name: Restore in-place in the Fabric portal
+    href: restore-in-place-portal.md
+    displayName: Restore
   - name: Clone tables
     href: clone-table.md
   - name: Clone tables in the Fabric portal
     href: tutorial-clone-table-portal.md
+- name: Mirroring databases
+  items: 
+  - name: Mirroring overview
+    href: ../database/mirrored-database/overview.md
+  - name: How to
+    items:
+    - name: Enable Mirroring in your tenant
+      href: ../database/mirrored-database/enable-mirroring.md
+    - name: Monitor mirrored databases
+      displayName: Monitor mirroring
+      href: ../database/mirrored-database/monitor.md
+  - name: Explore mirrored data
+    items:
+    - name: Explore your mirrored database
+      href: ../database/mirrored-database/explore.md
+    - name: Explore directly in OneLake
+      displayName: Explore mirrored data directly in OneLake
+      href: ../database/mirrored-database/explore-data-directly.md
+    - name: Explore with notebooks
+      displayName: Explore mirrored data with notebooks
+      href: ../database/mirrored-database/explore-onelake-shortcut.md
+  - name: Mirroring Azure SQL Database
+    items:
+      - name: Mirrored database from Azure SQL Database
+        href: ../database/mirrored-database/azure-sql-database.md
+      - name: Azure SQL Database tutorial
+        href: ../database/mirrored-database/azure-sql-database-tutorial.md
+      - name: FAQ about mirrored Azure SQL Database
+        displayName: Frequently asked questions about Mirroring Azure SQL Database
+        href: ../database/mirrored-database/azure-sql-database-mirroring-faq.yml
+      - name: Secure data 
+        displayName: Securing data in mirrored Azure SQL Database
+        href: ../database/mirrored-database/azure-sql-database-how-to-data-security.md
+      - name: Troubleshoot
+        displayName: Troubleshoot mirrored Azure SQL Database
+        href: ../database/mirrored-database/azure-sql-database-troubleshoot.md
+      - name: Limitations
+        displayName: Limitations in mirrored Azure SQL Database
+        href: ../database/mirrored-database/azure-sql-database-limitations.md
+  - name: Mirroring Azure Cosmos DB
+    items: 
+      - name: Mirrored databases from Azure Cosmos DB
+        href: ../database/mirrored-database/azure-cosmos-db.md        
+      - name: Azure Cosmos DB tutorial
+        href: ../database/mirrored-database/azure-cosmos-db-tutorial.md
+      - name: FAQ about mirrored Azure Cosmos DB 
+        displayName: Frequently asked questions about mirrored Azure Cosmos DB
+        href: ../database/mirrored-database/azure-cosmos-db-faq.yml
+      - name: Limitations
+        displayName: Limitations in mirrored Azure Cosmos DB
+        href: ../database/mirrored-database/azure-cosmos-db-limitations.md
+      - name: Troubleshoot 
+        displayName: Troubleshoot mirrored Azure Cosmos DB
+        href: ../database/mirrored-database/azure-cosmos-db-troubleshooting.yml
+      - name: How to
+        items:
+          - name: Join data
+            href: ../database/mirrored-database/azure-cosmos-db-how-to-join-multiple.md
+          - name: Query nested data
+            href: ../database/mirrored-database/azure-cosmos-db-how-to-query-nested.md
+          - name: Access data using Lakehouse and notebooks
+            href: ../database/mirrored-database/azure-cosmos-db-lakehouse-notebooks.md
+  - name: Mirroring Snowflake
+    items: 
+      - name: Mirrored warehouses from Snowflake
+        href: ../database/mirrored-database/snowflake.md
+      - name: Snowflake tutorial
+        href: ../database/mirrored-database/snowflake-tutorial.md
+      - name: FAQ about mirrored Snowflake
+        displayName: Frequently asked questions about mirrored Snowflake
+        href: ../database/mirrored-database/snowflake-mirroring-faq.yml
+      - name: Secure data
+        displayName: Secure data in mirrored Snowflake
+        href: ../database/mirrored-database/snowflake-how-to-data-security.md
+      - name: Limitations 
+        displayName: Limitations in mirrored Snowflake
+        href: ../database/mirrored-database/snowflake-limitations.md        
+  - name: Troubleshoot Mirroring
+    href: ../database/mirrored-database/troubleshooting.md           
 - name: Manage performance
   items:
   - name: Statistics
@@ -148,11 +262,15 @@ items:
     href: caching.md
 - name: Monitor the warehouse
   items:
+  - name: Monitoring overview
+    href: monitoring-overview.md
   - name: Monitor using Capacity Metrics app
     href: usage-reporting.md
     displayName: Billing, usage reporting
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
+  - name: Query activity
+    href: query-activity.md
   - name: Query insights
     href: query-insights.md
   - name: How to
@@ -181,6 +299,8 @@ items:
     href: troubleshoot-synapse-data-warehouse.md
   - name: Limitations
     href: limitations.md      
+  - name: Change ownership of Warehouse
+    href: change-ownership.md
 - name: Reference
   items: 
   - name: T-SQL Reference for Fabric

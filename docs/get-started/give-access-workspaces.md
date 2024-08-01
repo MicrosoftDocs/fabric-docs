@@ -39,7 +39,7 @@ After you [create a workspace](create-workspaces.md) in [!INCLUDE [product-name]
    
    :::image type="content" source="media/workspace-access/workspace-manage-access-edit-role.png" alt-text="Screenshot of modify role in a workspace.":::
 
-## Next steps
+## Related content
 
 * Read about [the workspace experience](workspaces.md).
 * [Create workspaces](create-workspaces.md).

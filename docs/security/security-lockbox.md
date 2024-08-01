@@ -7,6 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
 ms.date: 01/07/2024
 ---
 
@@ -88,6 +89,7 @@ Customer Lockbox has two type of logs:
     |DeleteAdminUsageDashboardsViaLockbox  |Delete admin usage dashboards via lockbox   |
     |DeleteUsageMetricsv2PackageViaLockbox |Delete usage metrics v2 package via lockbox |
     |DeleteAdminMonitoringFolderViaLockbox |Delete admin monitoring folder via lockbox  |
+    |GetQueryTextTelemetryViaLockbox |Get query text from secured telemetry store via Lockbox|
 
 ## Exclusions
 
@@ -104,19 +106,24 @@ Customer Lockbox requests aren't triggered in the following engineering support 
 Access to data varies according to the Microsoft Fabric experience your request is for. This section lists which data the Microsoft engineer can access, after you approve a Customer Lockbox request.
 
 * **Power BI** - When running the operations listed below, the Microsoft engineer will have access to a few tables linked to your request. Each operation the Microsoft engineer uses, is reflected in the audit logs.
-    * Get refresh history
+    * Get model refresh history
     * Delete admin usage dashboard
     * Delete usage metrics v2 package
     * Delete admin monitoring folder
+    * Delete admin workspace
+    * Access particular Dataset in storage
+    * Get query text from secured telemetry store
 
-* **Real-Time Analytics** - The Real-Time Analytics engineer will have access to the data in the KQL database that's linked to your request.
+* **Real-Time Intelligence** - The Real-Time Intelligence engineer will have access to the data in the KQL database that's linked to your request.
 
 * **Data Engineering** - The Data Engineering engineer will have access to the following Spark logs linked to your request:
     * Driver logs
     * Event logs
     * Executor logs
+ 
+* **Data Factory** - The Data Factory engineer will have access to data pipeline definitions linked to your request, if permission is granted.
 
-## Next steps
+## Related content
 
 * [Microsoft Purview Customer Lockbox](/microsoft-365/compliance/customer-lockbox-requests)
 

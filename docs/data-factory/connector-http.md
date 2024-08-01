@@ -103,6 +103,6 @@ The following properties in the table are the supported authentication types.
 |- Username|The user name to use to access the HTTP endpoint.|Yes |||
 |- Password|The password for specified username.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure HTTP in a copy activity](connector-http-copy-activity.md)

@@ -10,8 +10,10 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/13/2023
+ms.date: 06/02/2024
 ms.search.form: Data Science Overview
+no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 # Overview of Copilot for Data Science and Data Engineering (preview)
 
@@ -19,8 +21,7 @@ ms.search.form: Data Science Overview
 
 Copilot for Data Science and Data Engineering is an AI assistant that helps analyze and visualize data. It works with Lakehouse tables and files, Power BI Datasets, and pandas/spark/fabric dataframes, providing answers and code snippets directly in the notebook. The most effective way of using Copilot is to add your data as a dataframe. You can ask your questions in the chat panel, and the AI provides responses or code to copy into your notebook. It understands your data's schema and metadata, and if data is loaded into a dataframe, it has awareness of the data inside of the data frame as well. You can ask Copilot to provide insights on data, create code for visualizations, or provide code for data transformations, and it recognizes file names for easy reference. Copilot streamlines data analysis by eliminating complex coding.
 
-> [!NOTE]
-> Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
+[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
 ## Introduction to Copilot for Data Science and Data Engineering for Fabric Data Science
 
@@ -78,7 +79,18 @@ Copilot responds with the relevant information if you added the lakehouse to the
 - When Copilot first launches, it offers a set of helpful prompts that can help you get started. They can help kickstart your conversation with Copilot. To refer to prompts later, you can use the sparkle button at the bottom of the chat panel.
 - You can "drag" the sidebar of the copilot chat to expand the chat panel, to view code more clearly or for readability of the outputs on your screen.
 
-## Next steps
+## Limitations
+
+Copilot features in the Data Science experience are currently scoped to notebooks. These features include the Copilot chat pane, IPython magic commands that can be used within a code cell, and automatic code suggestions as you type in a code cell. Copilot can also read Power BI semantic models using an integration of semantic link.
+
+Copilot has two key intended uses:
+
+  - One, you can ask Copilot to examine and analyze data in your notebook (for example, by first loading a DataFrame and then asking Copilot about data inside the DataFrame).
+  - Two, you can ask Copilot to generate a range of suggestions about your data analysis process, such as what predictive models might be relevant, code to perform different types of data analysis, and documentation for a completed notebook.
+
+Keep in mind that code generation with fast-moving or recently released libraries may include inaccuracies or fabrications.
+
+## Related content
 
 - [How to use Chat-magics](./copilot-notebooks-chat-magics.md)
 - [How to use the Copilot Chat Pane](./copilot-notebooks-chat-pane.md)

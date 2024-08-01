@@ -1,9 +1,9 @@
 ---
 title: Use Tidyverse
 description: How to use Tidyverse, a collection of R packages designed for data science.
-ms.reviewer: sgilley
-ms.author: ruxu
-author: ruixinxu
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -224,7 +224,7 @@ ggplot(lm_aug, aes(x = wt, y = mpg)) +
 ![Graph of model result.](./media/r-use-tidyverse/model-out.png)
 
 
-## Next steps
+## Related content
 
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)

@@ -102,6 +102,6 @@ The properties in the following table are the supported authentication types.
 |**Key**||||✓|
 |- Account key|The  Azure Cosmos DB for NoSQL account key.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md)

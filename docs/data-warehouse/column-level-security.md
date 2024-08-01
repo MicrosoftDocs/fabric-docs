@@ -1,17 +1,17 @@
 ---
 title: Column-level security in Fabric data warehousing
 description: Learn about column-level security in tables in Fabric data warehousing.
-author: SQLStijn-MSFT
-ms.author: stwynant
-ms.reviewer: wiassaf
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: stwynant
+ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
 ---
 # Column-level security in Fabric data warehousing
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Column-level security simplifies the design and coding of security in your application, allowing you to restrict column access to protect sensitive data. For example, ensuring that specific users can access only certain columns of a table pertinent to their department. 
 
@@ -31,12 +31,12 @@ Column-level security is applied to [shared warehouse or lakehouse](share-wareho
 
 Only Microsoft Entra authentication is supported.
 
-## Example
+## Examples
 
 This example will create a table and will limit the columns that `charlie@contoso.com` can see in the `customers` table.
 
 ```sql
-CREATE TABLE dbo.customers
+CREATE TABLE dbo.Customers
   (CustomerID int,
    FirstName varchar(100) NULL,
    CreditCard char(16) NOT NULL,
@@ -55,7 +55,7 @@ GRANT SELECT ON Customers(CustomerID, FirstName, LastName, Phone, Email) TO [Cha
 Queries executed as `charlie@contoso.com` will fail if they include the `CreditCard` column:
 
 ```sql
-SELECT * FROM Membership;
+SELECT * FROM Customers;
 ```
 
 ```output
@@ -63,14 +63,14 @@ Msg 230, Level 14, State 1, Line 12
 The SELECT permission was denied on the column 'CreditCard' of the object 'Customers', database 'ContosoSales', schema 'dbo'.
 ```
 
+## Next step
+
+> [!div class="nextstepaction"]
+> [Implement column-level security in Fabric Data Warehousing](tutorial-column-level-security.md)
+
 ## Related content
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
 - [Row-level security in Fabric data warehousing](row-level-security.md)
 - [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
-
-## Next step
-
-> [!div class="nextstepaction"]
-> [Implement column-level security in Fabric Data Warehousing](tutorial-column-level-security.md)

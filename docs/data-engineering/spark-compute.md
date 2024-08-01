@@ -1,6 +1,6 @@
 ---
-title: Spark compute for Data Engineering and Data Science
-description: Learn about the starter pools, custom Spark pools, and pool configurations for data Engineering and Science experiences in Fabric.
+title: Apache Spark compute for Data Engineering and Data Science
+description: Learn about the starter pools, custom Apache Spark pools, and pool configurations for data Engineering and Science experiences in Fabric.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
@@ -10,11 +10,11 @@ ms.custom:
   - ignite-2023
 ms.date: 10/20/2023
 ---
-# What is Spark compute in Microsoft Fabric?
+# What is Apache Spark compute in Microsoft Fabric?
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. With starter pools, you can expect rapid Spark session initialization, typically within 5 to 10 seconds, with no need for manual setup. You also get the flexibility to customize Spark pools according to your specific data engineering and data science requirements. The platform enables an optimized and tailored analytics experience.
+Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Apache Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. With starter pools, you can expect rapid Apache Spark session initialization, typically within 5 to 10 seconds, with no need for manual setup. You also get the flexibility to customize Apache Spark pools according to your specific data engineering and data science requirements. The platform enables an optimized and tailored analytics experience.
 
 :::image type="content" source="media/spark-compute/spark-compute-overview.png" alt-text="Image of a Spark compute platform with starter pools and custom Spark pools." lightbox="media/spark-compute/spark-compute-overview.png":::
 
@@ -24,11 +24,11 @@ Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platf
 
 :::image type="content" source="media/spark-compute/starter-pool-configuration.png" alt-text="Image of a table showing starter pool configuration.":::
 
-Starter pools have Spark clusters that are always on and ready for your requests. They use medium nodes that dynamically scale up based on your Spark job needs.
+Starter pools have Apache Spark clusters that are always on and ready for your requests. They use medium nodes that dynamically scale up based on your Spark job needs.
 
 :::image type="content" source="media/spark-compute/starter-pool.png" alt-text="Diagram showing the high-level design of starter pools.":::
 
-Starter pools also have default settings that let you install libraries quickly without slowing down the session start time. However, if you want to use extra custom Spark properties or libraries from your workspace or capacity settings, Spark takes longer to get the nodes for you. When it comes to billing and capacity consumption, you're charged for the capacity consumption when you start executing your notebook or Spark job definition. You aren't charged for the time the clusters are idle in the pool.
+Starter pools also have default settings that let you install libraries quickly without slowing down the session start time. However, if you want to use extra custom Apache Spark properties or libraries from your workspace or capacity settings, Spark takes longer to get the nodes for you. When it comes to billing and capacity consumption, you're charged for the capacity consumption when you start executing your notebook or Apache Spark job definition. You aren't charged for the time the clusters are idle in the pool.
 
 :::image type="content" source="media/spark-compute/starter-pool-billing-states-high-level.png" alt-text="Diagram showing the high-level stages in billing of starter pools." lightbox="media/spark-compute/starter-pool-billing-states-high-level.png":::
 
@@ -42,7 +42,7 @@ If you don't use your Spark pool for 2 minutes after your session expires, your 
 
 You can even create single node Spark pools, by setting the minimum number of nodes to one, so the driver and executor run in a single node that comes with restorable HA and is suited for small workloads.
 
-The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores doesn't exceed 128.
+The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Apache Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores doesn't exceed 128.
 
 Spark pools are billed like starter pools; you don't pay for the custom Spark pools that you have created unless you have an active Spark session created for running a notebook or Spark job definition. You're only billed for the duration of your job runs. You aren't billed for stages like the cluster creation and deallocation after the job is complete.
 
@@ -54,42 +54,45 @@ Possible custom pool configurations for F64 based on the previous example:
 
 | Fabric capacity SKU | Capacity units | Spark VCores | Node size | Max number of nodes |
 |--|--|--|--|--|
-| F64 | 64 | 128 | Small | 32 |
-| F64 | 64 | 128 | Medium | 16 |
-| F64 | 64 | 128 | Large | 8 |
-| F64 | 64 | 128 | X-Large | 4 |
-| F64 | 64 | 128 | XX-Large | 2 |
+| F64 | 64 | 384 | Small | 96 |
+| F64 | 64 | 384 | Medium | 48 |
+| F64 | 64 | 384 | Large | 24 |
+| F64 | 64 | 384 | X-Large | 12 |
+| F64 | 64 | 384 | XX-Large | 6 |
 
 > [!NOTE]
 > To create custom pools, you need **admin** permissions for the workspace. And the Microsoft Fabric capacity admin must grant permissions to allow workspace admins to size their custom Spark pools. To learn more, see [Get started with custom Spark pools in Fabric](create-custom-spark-pools.md)
 
 ## Nodes
 
-An Apache Spark pool instance consists of one head node and worker nodes, could start a minimum of one node in a Spark instance. The head node runs extra management services such as Livy, Yarn Resource Manager, Zookeeper, and the Spark driver. All nodes run services such as Node Agent and Yarn Node Manager. All worker nodes run the Spark Executor service.
+An Apache Spark pool instance consists of one head node and worker nodes, could start a minimum of one node in a Spark instance. The head node runs extra management services such as Livy, Yarn Resource Manager, Zookeeper, and the Apache Spark driver. All nodes run services such as Node Agent and Yarn Node Manager. All worker nodes run the Apache Spark Executor service.
 
 ## Node sizes
 
-A Spark pool can be defined with node sizes that range from a small compute node (with 4 vCore and 32 GB of memory) to a large compute node (with 64 vCore and 512 GB of memory per node). Node sizes can be altered after pool creation, although the active session would have to be restarted.
+A Spark pool can be defined with node sizes that range from a small compute node (with 4 vCore and 28 GB of memory) to a double extra large compute node (with 64 vCore and 400 GB of memory per node). Node sizes can be altered after pool creation, although the active session would have to be restarted.
 
 | Size | vCore | Memory |
 |--|--|--|
-| Small | 4 | 32 GB |
-| Medium | 8 | 64 GB |
-| Large | 16 | 128 GB |
-| X-Large | 32 | 256 GB |
-| XX-Large | 64 | 512 GB |
+| Small | 4 | 28 GB |
+| Medium | 8 | 56 GB |
+| Large | 16 | 112 GB |
+| X-Large | 32 | 224 GB |
+| XX-Large | 64 | 400 GB |
 
 ## Autoscale
 
 Autoscale for Apache Spark pools allows automatic scale up and down of compute resources based on the amount of activity. When you enable the autoscale feature, you set the minimum and maximum number of nodes to scale. When you disable the autoscale feature, the number of nodes set remains fixed. You can alter this setting after pool creation, although you might need to restart the instance.
 
+> [!NOTE]
+>  By default, spark.yarn.executor.decommission.enabled is set to true, enabling the automatic shutdown of underutilized nodes to optimize compute efficiency. If less aggressive scaling down is preferred, this configuration can be set to false
+
 ## Dynamic allocation
 
-Dynamic allocation allows the Spark application to request more executors if the tasks exceed the load that current executors can bear. It also releases the executors when the jobs are completed, and if the Spark application is moving to idle state. Enterprise users often find it hard to tune the executor configurations because they're vastly different across different stages of a Spark job execution process. These configurations are also dependent on the volume of data processed, which changes from time to time. You can enable dynamic allocation of executors option as part of the pool configuration, which enables automatic allocation of executors to the Spark application based on the nodes available in the Spark pool.
+Dynamic allocation allows the Apache Spark application to request more executors if the tasks exceed the load that current executors can bear. It also releases the executors when the jobs are completed, and if the Spark application is moving to idle state. Enterprise users often find it hard to tune the executor configurations because they're vastly different across different stages of a Spark job execution process. These configurations are also dependent on the volume of data processed, which changes from time to time. You can enable dynamic allocation of executors option as part of the pool configuration, which enables automatic allocation of executors to the Spark application based on the nodes available in the Spark pool.
 
 When you enable the dynamic allocation option for every Spark application submitted, the system reserves executors during the job submission step based on the maximum nodes. You specify maximum nodes to support successful automatic scale scenarios.
 
 ## Related content
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-overview.md)
-* [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+* [Apache Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)

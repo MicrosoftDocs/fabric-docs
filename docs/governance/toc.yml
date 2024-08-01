@@ -3,8 +3,14 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is Microsoft Fabric governance and compliance?
+  - name: Governance overview and guidance
     href: governance-compliance-overview.md
+  - name: Security documentation
+    href: ../security/index.yml
+  - name: Admin documentation
+    href: ../admin/index.yml
+  - name: Standards compliance
+    href: standards-compliance.md
 - name: Get started
   items:
   - name: Set up item certification
@@ -13,6 +19,11 @@ items:
   items:
   - name: Microsoft Purview and Fabric
     href: microsoft-purview-fabric.md
+    items:
+      - name: Connect in the same tenant
+        href: /purview/register-scan-fabric-tenant?context=/fabric/governance/context/context-purview
+      - name: Connect cross-tenant
+        href: /purview/register-scan-fabric-tenant-cross-tenant?context=/fabric/governance/context/context-purview
   - name: Microsoft Purview Hub
     href: use-microsoft-purview-hub.md
 - name: Information protection
@@ -21,16 +32,24 @@ items:
     href: information-protection.md
   - name: Sensitivity labels
     items:
+    - name: Protected sensitivity labels
+      href: protected-sensitivity-labels.md
     - name: Default label policy
       href: service-security-sensitivity-label-default-label-policy.md
     - name: Mandatory label policy
       href: service-security-sensitivity-label-mandatory-label-policy.md
+    - name: Sensitivity label support for paginated reports
+      href: service-security-sensitivity-label-paginated-reports.md
     - name: Programmatic labeling
       href: service-security-sensitivity-label-inheritance-set-remove-api.md
     - name: Downstream inheritance
       href: service-security-sensitivity-label-downstream-inheritance.md
     - name: Inheritance from data sources
       href: service-security-sensitivity-label-inheritance-from-data-sources.md
+    - name: Troubleshoot sensitivity labels
+      href: service-security-sensitivity-label-troubleshooting.md
+  - name: Microsoft Defender for Cloud Apps with Power BI
+    href: service-security-using-defender-for-cloud-apps-controls.md
 - name: Endorsement
   href: endorsement-overview.md
 - name: Lineage
@@ -38,7 +57,23 @@ items:
 - name: Impact analysis
   href: impact-analysis.md
 - name: Domains
-  href: domains.md
+  items:
+  - name: Domains
+    href: domains.md
+  - name: Audit schema for domains
+    href: domains-audit-schema.md
+- name: External data sharing
+  items:
+  - name: Overview
+    href: external-data-sharing-overview.md
+  - name: Create an external data share
+    href: external-data-sharing-create.md
+  - name: Accept an external data share
+    href: external-data-sharing-accept.md
+  - name: Manage external data shares
+    href: external-data-sharing-manage.md
+  - name: "Admins: Enable external data sharing"
+    href: external-data-sharing-enable.md
 - name: Metadata scanning
   items:
   - name: Metadata scanning overview

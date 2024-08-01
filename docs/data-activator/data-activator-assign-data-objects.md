@@ -3,7 +3,7 @@ title: Assign data to objects in Data Activator
 description: Learn how to assign data to objects in data mode for Data Activator.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.search.form: Data Activator Data Mode
 ms.date: 11/16/2023
@@ -55,7 +55,7 @@ You can assign a single event source to multiple objects, which is useful if you
 
 To assign an event stream to multiple objects, you follow the procedures described in the previous two sections, for each object to which you want to assign the event stream.
 
-## Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

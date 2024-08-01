@@ -1,9 +1,9 @@
 ---
 title: Use SparkR
 description: How to use SparkR, a light-weight frontend to use Apache Spark from R.
-ms.reviewer: sgilley
-ms.author: ruxu
-author: ruixinxu
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -143,7 +143,7 @@ channel <-odbcDriverConnect(ConnectionString)
 Rdf <- sqlQuery(channel, "select * from <table>")
 class(Rdf)
 
-# use SparkR::as.DataFrame to convert R date.frame to SparkR DataFrame.
+# use SparkR::as.DataFrame to convert R data.frame to SparkR DataFrame.
 spark_df <- as.DataFrame(Rdf)
 class(spark_df)
 head(spark_df)
@@ -326,7 +326,7 @@ model <- spark.glm(carsDF, mpg ~ wt + cyl, family = "gaussian")
 summary(model)
 ```
 
-## Next steps
+## Related content
 
 - [How to use sparklyr](./r-use-sparklyr.md)
 - [How to use Tidyverse](./r-use-tidyverse.md)

@@ -65,7 +65,7 @@ If you need more information about detail activity runs of the data pipeline run
 
 :::image type="content" source="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-level-two-status.png" alt-text="Screenshot showing a data pipeline run level two status." lightbox="media\monitoring-hub-pipeline-runs\pipeline-monitoring-hub-level-two-status.png":::
 
-## Next steps
+## Related content
 
 - [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
 - [Quickstart: Create your first Dataflow Gen2 to get and transform data](create-first-dataflow-gen2.md)

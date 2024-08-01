@@ -1,14 +1,14 @@
 ---
 title: "Tutorial: Train and register machine learning models"
 description: In this third part of the tutorial series, learn how to train machine learning models to predict whether bank customers would stop doing business with the bank or not, and then register the trained models.
-ms.reviewer: sgilley
-ms.author: amjafari
-author: amhjf
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 10/16/2023
+ms.date: 06/04/2024
 ---
 
 # Tutorial Part 3: Train and register a machine learning model
@@ -60,9 +60,14 @@ You'll access SMOTE using the `imblearn` library. Install it now using the in-li
 %pip install imblearn
 ```
 
-> [!TIP]
->
-> When you install a library in a notebook, it is only available for the duration of the notebook session and not in the workspace. If you restart the notebook, you'll need to install the library again. If you have a library you often use, you could instead [install it in your workspace](python-guide/python-library-management.md) to make it available to all notebooks in your workspace without further installs.
+> [!IMPORTANT]
+> Run this install     each time you restart the notebook.
+
+When you install a library in a notebook, it's only available for the duration of the notebook session and not in the workspace. If you restart the notebook, you'll need to install the library again.
+
+If you have a library you often use, and you want to make it available to all notebooks in your workspace, you can use a [Fabric environment](https://aka.ms/fabric/create-environment) for that purpose. You can create an environment, install the library in it, and then your __workspace admin__ can attach the environment to the workspace as its default environment. For more information on setting an environment as the workspace default, see [Admin sets default libraries for the workspace](../data-engineering/library-management.md#scenario-1-admin-sets-default-libraries-for-the-workspace). 
+
+For information on migrating existing workspace libraries and Spark properties to an environment, see [Migrate workspace libraries and Spark properties to a default environment](../data-engineering/environment-workspace-migration.md).
 
 ## Load the data
 
@@ -154,6 +159,10 @@ X_res, y_res = sm.fit_resample(X_train, y_train)
 new_train = pd.concat([X_res, y_res], axis=1)
 ```
 
+> [!TIP]
+> You can safely ignore the MLflow warning message that appears when you run this cell. 
+> If you see a **ModuleNotFoundError** message, you missed running the first cell in this notebook, which installs the `imblearn` library.  You need to install this library each time you restart the notebook. Go back and re-run all the cells starting with the first cell in this notebook.
+
 ### Model training
 
 * Train the model using Random Forest with maximum depth of 4 and 4 features
@@ -223,9 +232,13 @@ The experiment runs are automatically saved in the experiment artifact that can 
 
 To view your experiments:
 1. On the left panel, select your workspace.
+1. On the top right, filter to show only experiments, to make it easier to find the experiment you're looking for.
+
+    :::image type="content" source="media/tutorial-data-science-train-models/filter-workspace.png" alt-text="Screenshot shows the workspace with the experiments filter selected." lightbox="media/tutorial-data-science-train-models/filter-workspace.png":::
+
 1. Find and select the experiment name, in this case _bank-churn-experiment_. If you don't see the experiment in your workspace, refresh your browser.
 
-:::image type="content" source="media/tutorial-data-science-train-models/experiment-runs.png" alt-text="Screenshot shows the experiment page for the bank-churn-experiment." lightbox="media/tutorial-data-science-train-models/experiment-runs.png" :::
+    :::image type="content" source="media/tutorial-data-science-train-models/experiment-runs.png" alt-text="Screenshot shows the experiment page for the bank-churn-experiment." lightbox="media/tutorial-data-science-train-models/experiment-runs.png" :::
 
 ## Assess the performances of the trained models on the validation dataset
 

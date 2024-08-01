@@ -40,7 +40,7 @@ To publish the changes you made in your draft, you take the following steps:
 
 Your dataflow starts the publishing process in the background, which is indicated by a spinner next to the dataflow name. Once the spinner completes, the dataflow can be refreshed. If there are any publishing related errors, an indication is visible next to the dataflow name. Selecting the indication reveals the publishing errors and allows you to edit the dataflow from your last saved version.
 
-## Next steps
+## Related content
 
 - [Compare differences between Dataflow Gen1 and Gen2 in Data Factory](dataflows-gen2-overview.md)
 - [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)

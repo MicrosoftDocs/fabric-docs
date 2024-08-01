@@ -53,7 +53,7 @@ On the Schedule configuration page, you can specify a schedule frequency, start 
 
 Once configured, select **Apply** to set your schedule. You can view or edit the schedule again anytime by selecting the **Schedule** button again.
 
-## Next steps
+## Related content
 
 - [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
 - [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)

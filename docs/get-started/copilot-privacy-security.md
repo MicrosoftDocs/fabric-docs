@@ -1,36 +1,36 @@
 ---
-title: "Privacy, security, and responsible use for Copilot in Microsoft Fabric (preview)"
-description: Learn about privacy, security, and responsible use for Copilot in Microsoft Fabric.
+title: "Privacy, security, and responsible use of Copilot in Fabric"
+description: Learn about privacy, security, and responsible use for Copilot for data science in Microsoft Fabric.
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: 'guptamaya'
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
+  - build-2024
 ms.topic: conceptual
-ms.date: 11/09/2023
+ms.date: 07/15/2024
+no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
-
-# Privacy, security, and responsible use for Copilot Microsoft Fabric (preview)
-
-With Copilot and other generative AI features in preview, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
+# Privacy, security, and responsible use of Copilot in Fabric
 
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
-This article provides answers to common questions related to business data security and privacy to help your organization get started with Copilot in Fabric.
+This article provides answers to common questions related to business data security and privacy to help your organization get started with Copilot in Fabric. The article [Privacy, security, and responsible use for Copilot in Power BI (preview)](copilot-power-bi-privacy-security.md) provides an overview of Copilot in Power BI. Read on for details about Copilot for Fabric.
 
-## Overview
+[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
 ### Your business data is secure
 
 - Copilot features use [Azure OpenAI Service](/azure/ai-services/openai/overview), which is fully controlled by Microsoft. Your data isn't used to train models and isn't available to other customers.
 - You retain control over where your data is processed. Data processed by Copilot in Fabric stays within your tenant's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn't available in your region or availability is limited due to high demand. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
-- Data is stored for up to 30 days and may be reviewed by Microsoft employees for abuse monitoring.
+- Copilot does not store your data for abuse monitoring. To enhance privacy and trust, we’ve updated our approach to abuse monitoring: previously, we retained data from Copilot in Fabric, containing prompt inputs and outputs, for up to 30 days to check for abuse or misuse. Following customer feedback, we’ve eliminated this 30-day retention. Now, we no longer store prompt related data, demonstrating our unwavering commitment to your privacy and security.
 
 ### Check Copilot outputs before you use them
 
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before you use them in your work.
-- Reviews of outputs should be done by people who can meaningfully evaluate the content's accuracy and appropriateness.
+- People who can meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
 - Today, Copilot features work best in the English language. Other languages may not perform as well.
 
 > [!IMPORTANT]
@@ -46,7 +46,7 @@ In general, these features are designed to generate natural language, code, or o
 
 (b) [grounding data](#grounding) that the feature has access to.
 
-For example, Power BI, Data Factory, and Data Science offer Copilot chats where you can ask questions and get responses that are contextualized on your data. Copilot for Power BI can also create reports and other visualizations. Copilot for Data Factory can transform your data and explain what steps it has applied. Data Science offers Copilot features outside of the chat pane, such as custom IPython magic commands in notebooks. Copilot chats may be added to other experiences in Fabric, along with other features that are powered by Azure OpenAI under the hood.
+For example, Power BI, Data Factory, and data science offer Copilot chats where you can ask questions and get responses that are contextualized on your data. Copilot for Power BI can also create reports and other visualizations. Copilot for Data Factory can transform your data and explain what steps it has applied. Data science offers Copilot features outside of the chat pane, such as custom IPython magic commands in notebooks. Copilot chats may be added to other experiences in Fabric, along with other features that are powered by Azure OpenAI under the hood.
 
 This information is sent to Azure OpenAI Service, where it's processed and an output is generated. Therefore, data processed by Azure OpenAI can include:  
 
@@ -59,8 +59,6 @@ Grounding data may include a combination of dataset schema, specific data points
 Interactions with Copilot are specific to each user. This means that Copilot can only access data that the current user has permission to access, and its outputs are only visible to that user unless that user shares the output with others, such as sharing a generated Power BI report or generated code. Copilot doesn't use data from other users in the same tenant or other tenants.
 
 Copilot uses Azure OpenAI—not the publicly available OpenAI services—to process all data, including user inputs, grounding data, and Copilot outputs.  Copilot currently uses a combination of GPT models, including GPT 3.5. Microsoft hosts the OpenAI models in the Microsoft Azure environment, and the Service doesn't interact with any services by OpenAI, such as ChatGPT or the OpenAI API. Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
-
-Data from Copilot in Fabric is stored by Microsoft for up to 30 days (as outlined in the [Preview Terms of Use](https://azure.microsoft.com/support/legal/preview-supplemental-terms)) to help monitor and prevent abusive or harmful uses or outputs of the service. Authorized Microsoft employees may review data that has triggered our automated systems to investigate and verify potential abuse.
 
 ## The Copilot process
 
@@ -107,8 +105,6 @@ Interactions with Copilot are specific to each user. This means that Copilot can
 
 Copilot uses Azure OpenAI—not OpenAI's publicly available services—to process all data, including user inputs, grounding data, and Copilot outputs.  Copilot currently uses a combination of GPT models, including GPT 3.5. Microsoft hosts the OpenAI models in Microsoft's Azure environment and the Service doesn't interact with any services by OpenAI (for example, ChatGPT or the OpenAI API). Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
 
-Data from Copilot in Fabric is stored by Microsoft for up to 30 days (as outlined in the [Preview Terms of Use](https://azure.microsoft.com/support/legal/preview-supplemental-terms)) to help monitor and prevent abusive or harmful uses or outputs of the service. Authorized Microsoft employees may review data that has triggered our automated systems to investigate and verify potential abuse. 
-
 ### Data residency and compliance
 
 *You retain control over where your data is processed.* Data processed by Copilot in Fabric stays within your tenant's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn't available in your region or availability is limited due to high demand. (See [where Azure OpenAI is currently available.](/azure/ai-services/openai/concepts/models#model-summary-table-and-region-availability))
@@ -131,15 +127,13 @@ Before you use Copilot, keep in mind the limitations of Copilot:
 
 Privacy, security, and responsible use for:
 
-- [Copilot for Power BI (preview)](copilot-power-bi-privacy-security.md)
 - [Copilot for Data Factory (preview)](copilot-data-factory-privacy-security.md)
-- [Copilot for Data Science (preview)](copilot-data-science-privacy-security.md)
+- [Copilot for data science (preview)](copilot-data-science-privacy-security.md)
+- [Copilot for Data Warehouse (preview)](copilot-data-warehouse-privacy-security.md)
+- [Copilot for Power BI](copilot-power-bi-privacy-security.md)
+- [Copilot for Real-Time Intelligence (preview)](copilot-real-time-intelligence-privacy-security.md)
 
-## Notes by release
-
-Additional information for future releases or feature updates will appear here.
-
-## Next steps
+## Related content
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot in Fabric and Power BI: FAQ](copilot-faq-fabric.yml)

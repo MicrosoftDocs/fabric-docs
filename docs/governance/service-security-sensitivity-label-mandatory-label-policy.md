@@ -3,8 +3,7 @@ title: Mandatory label policy in Power BI
 description: Learn how organizations can require users to apply sensitivity labels with a mandatory label policy in Power BI.
 author: paulinbar
 ms.author: painbar
-ms.service: powerbi
-ms.subservice: powerbi-eim
+
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -64,7 +63,8 @@ Where:
 * The mandatory label policy setting for Power BI is independent of the mandatory label policy setting for files and email.
 * Mandatory labeling in Power BI isn't supported for service principals and APIs. Service principals and APIs aren't subject to mandatory label policies.
 * Mandatory labeling in Power BI isn't supported for [external guest users (B2B users)](/power-bi/enterprise/service-admin-azure-ad-b2b). B2B users aren't subject to mandatory label policies.
+* Mandatory labeling isn't supported for Dataflows Gen 2.
 
-## Next steps
+## Related content
 
 * [Default label policy for Power BI](service-security-sensitivity-label-default-label-policy.md)

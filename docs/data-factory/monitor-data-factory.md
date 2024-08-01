@@ -22,6 +22,6 @@ Refer to [How to monitor data pipeline runs](monitor-pipeline-runs.md) for detai
 
 Refer to [View refresh history and monitor your dataflows](dataflows-gen2-monitor.md) for details on how to monitor your dataflows.
 
-## Next steps
+## Related content
 
 To get started with [!INCLUDE [product-name](../includes/product-name.md)], go to [Quickstart: Create your first Dataflow Gen2 to get and transform data](create-first-dataflow-gen2.md).

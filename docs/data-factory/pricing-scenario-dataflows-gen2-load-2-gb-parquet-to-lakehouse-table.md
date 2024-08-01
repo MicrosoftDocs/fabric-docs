@@ -62,7 +62,7 @@ The High Scale Dataflow Compute Meter recorded negligible activity. Standard Com
 
 **Total run cost at $0.18/CU hour** = (31.14 CU-hours) * ($0.18/CU hour) ~= **$5.60**
 
-## Next steps
+## Related content
 
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)

@@ -1,9 +1,9 @@
 ---
 title: "Tutorial: Ingest data into a lakehouse"
 description: In this first part of the tutorial series, learn how to ingest a dataset into a Fabric lakehouse in delta lake format.
-ms.reviewer: sgilley
-ms.author: amjafari
-author: amhjf
+ms.reviewer: None
+ms.author: sgilley
+author: sdgilley
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -117,7 +117,7 @@ if not IS_CUSTOM_DATA:
 <!-- nbend -->
 
 
-## Next steps
+## Related content
 
 You'll use the data you just ingested in:
  

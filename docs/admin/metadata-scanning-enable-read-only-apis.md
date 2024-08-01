@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/27/2023
+ms.date: 07/22/2024
 ---
 
 # Enable service principal authentication for read-only admin APIs
@@ -28,7 +28,7 @@ To enable service principal authentication for Power BI read-only APIs, follow t
 1. Create a new Microsoft Entra **Security Group**. [Read more about how to create a basic group and add members using Microsoft Entra](/entra/fundamentals/how-to-manage-groups). You can skip this step if you already have a Microsoft Entra security group you would like to use.
     Make sure to select **Security** as the Group type.
 
-    ![Screenshot of new group creation dialog in Azure portal.](media/enable-read-only-apis/azure-portal-new-group-dialog.png)
+    :::image type="content" source="media/enable-read-only-apis/azure-portal-new-group-dialog.png" alt-text="Screenshot of new group creation dialog in Azure portal.":::
 
 3. Add your App-Id as a member of the security group you created. To do so:
     1. Navigate to **Azure portal > Microsoft Entra ID > Groups**, and choose the security group you created in Step 2.
@@ -38,8 +38,8 @@ To enable service principal authentication for Power BI read-only APIs, follow t
     > Make sure the app doesn't have any admin-consent required permissions for Power BI set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions).
 
 4. Enable the Fabric admin settings:
-    1. Log in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
-    1. Under **Admin API settings**, you'll see **Allow service principals to use read-only Power BI admin APIs**. Set the toggle to Enabled, and then select the **Specific security groups** radio button and add the security group you created in Step 2 in the text field that appears below it.
+    1. Sign in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
+    1. Under **Admin API settings**, **Service principals can access read-only admin APIs** displays. Set the toggle to Enabled, and then select the **Specific security groups** radio button and add the security group you created in Step 2 in the text field that appears below it.
 
         :::image type="content" source="media/enable-read-only-apis/allow-service-principals-tenant-setting.png" alt-text="Screenshot of allow service principals tenant setting.":::
 

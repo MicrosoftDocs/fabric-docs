@@ -174,7 +174,7 @@ Once you finish developing and testing your pipeline, you can schedule it to exe
 
    :::image type="content" source="media/transform-data/schedule-configuration.png" alt-text="Screenshot showing the schedule configuration for a pipeline to run daily at 8:00 PM until the end of the year.":::
 
-## Next steps
+## Related content
 
 This sample shows you how to create and configure a Dataflow Gen2 to create a merge query and store it in an Azure SQL database, then copy data from the database into a text file in Azure Blob Storage.  You learned how to:
 

@@ -135,6 +135,6 @@ The following table contains more information about the copy activity in FTP.
 | **Max concurrent connections** | The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections. | < upper limit of concurrent connections ><br>(integer) | No | maxConcurrentConnections | 
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. For more information, go to [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy) | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
-## Next steps
+## Related content
 
 - [FTP connector overview](connector-ftp-overview.md)

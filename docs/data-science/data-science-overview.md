@@ -1,9 +1,9 @@
 ---
 title: Data science in Microsoft Fabric
 description: Learn about the Data science machine learning resources, including models, experiments, and notebooks.
-author: nelgson
-ms.author: negust
-ms.reviewer: franksolomon
+author: sdgilley
+ms.author: sgilley
+ms.reviewer: negust
 ms.topic: overview
 ms.custom:
   - build-2023
@@ -113,11 +113,11 @@ Through the use of SemPy, organizations can expect to see:
 
 For more information on semantic link, see [What is semantic link (preview)?](semantic-link-overview.md).
 
-## Next steps
+## Related content
 
 - Get started with end-to-end data science samples, see [Data Science Tutorials](tutorial-data-science-introduction.md)
 - Learn more about data preparation and cleansing with Data Wrangler, see [Data Wrangler](data-wrangler.md)
 - Learn more about tracking experiments, see [Machine learning experiment](machine-learning-experiment.md)
 - Learn more about managing models, see [Machine learning model](machine-learning-model.md)
 - Learn more about batch scoring with Predict, see [Score models with PREDICT](model-scoring-predict.md)
-- Serve predictions from Lakehouse to Power BI with [Direct lake Mode](../data-engineering/lakehouse-pbi-reporting.md)
+- Serve predictions from Lakehouse to Power BI with [Direct lake Mode](../get-started/lakehouse-power-bi-reporting.md)

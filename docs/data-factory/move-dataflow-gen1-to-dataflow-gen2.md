@@ -83,6 +83,6 @@ To copy existing Dataflow Gen1 queries:
 
    :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/clean-up-query.png" alt-text="Screenshot showing the blank query selected, with emphasis on the delete option in the query's menu.":::
 
-## Next steps
+## Related content
 
 - [Differences between Dataflow Gen1 and Gen2 in Microsoft Fabric](dataflows-gen2-overview.md)

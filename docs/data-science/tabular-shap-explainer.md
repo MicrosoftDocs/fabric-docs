@@ -3,9 +3,10 @@ title: Interpretability - Tabular SHAP explainer
 description: Use Kernel SHAP to explain a tabular classification model.
 ms.topic: overview
 ms.custom: build-2023
+ms.author: ssalgado
+author: ssalgadodev
 ms.reviewer: jessiwang
-author: JessicaXYWang
-ms.author: jessiwang
+reviewer: JessicaXYWang
 ms.date: 05/08/2023
 ---
 # Interpretability - Tabular SHAP explainer
@@ -176,7 +177,7 @@ fig.update_layout(height=400 * rows, title_text="SHAP explanations")
 fig.show()
 ```
 
-## Next steps
+## Related content
 
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)
 - [How to use SynapseML for multivariate anomaly detection](isolation-forest-multivariate-anomaly-detection.md)

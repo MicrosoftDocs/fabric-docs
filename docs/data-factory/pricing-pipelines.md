@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 08/01/2024
 ---
 
 # Data pipelines pricing for Data Factory in Microsoft Fabric
@@ -29,8 +29,8 @@ The following table shows a breakdown of the pricing model for data pipelines wi
 
 |Data Pipelines Engine Type  |Charge Meters and Metric Units  |Fabric Capacity Units (CUs) consumption rate  |
 |---------|---------|---------|
-|Data orchestration    | Based on Copy activity run duration in hours and the used intelligent optimization throughput resources        | 1.5 CUs / hour   |
-|Data movement     |  Incorporates orchestration activity runs and activity integration runtime charges       | 0.0056 CUs for each non-copy activity run |
+|Data movement    | Based on Copy activity run duration in hours and the used intelligent optimization throughput resources        | 1.5 CUs / hour   |
+|Data orchestration     |  Incorporates orchestration activity runs and activity integration runtime charges       | 0.0056 CUs for each non-copy activity run |
 
 It indicates that for each intelligent optimization throughput resource usage in a Data Pipeline execution, 1.5 CU per hour are consumed for data movement Copy activities. Secondly, each orchestration activity run consumes 0.0056 CU. At the end of each pipeline run, the CU consumption for each engine type is summed and is billed as per the translated price of the Fabric Capacity in the region where the capacity is deployed.  
 
@@ -55,7 +55,7 @@ The following table can be used as a template to compute estimated costs using F
 
 **Total cost**: (X + Y CU-hour) * (Fabric capacity per unit price)
 
-## Next steps
+## Related content
 
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)
 - [Pricing Dataflow Gen2](pricing-dataflows-gen2.md)

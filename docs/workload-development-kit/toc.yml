@@ -1,0 +1,67 @@
+items:
+- name: Microsoft Fabric Workload Development Kit documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: Development Kit overview
+    href: development-kit-overview.md
+  - name: Monetize your workload
+    href: monetization.md  
+  - name: Publish your workload
+    href: publish-workload-flow.md
+  - name: Workload certification
+    href: publish-workload-requirements.md    
+- name: Get started
+  items:
+  - name: Set up your environment
+    href: environment-setup.md
+  - name: QuickStart - Run a workload sample
+    href: quickstart-sample.md
+- name: Concept
+  items:
+  - name: Workload environment
+    href: workload-environment.md
+  - name: Authentication
+    items:
+    - name: Authentication overview
+      href: authentication-concept.md
+    - name: Back-end authentication
+      href: back-end-authentication.md
+    - name: Authentication JavaScript API
+      href: authentication-javascript-api.md         
+  - name: Item lifecycle
+    href: item-lifecycle.md
+  - name: User permissions
+    href: user-permissions.md    
+  - name: Monitoring hub
+    href: monitoring-hub.md
+  - name: Working with customer data
+    href: fabric-data-plane.md
+- name: Tutorials
+  items:
+  - name: The workload manifest
+    href: backend-manifest.md
+  - name: Add and manage more workloads
+    href: more-workloads-add.md
+  - name: Upload and manage a workload
+    href: manage-workload.md
+  - name: Set up authentication
+    href: authentication-tutorial.md    
+  - name: Front-end implementation guide
+    href: extensibility-front-end.md
+  - name: Back-end implementation guide
+    href: extensibility-back-end.md
+  - name: Azure web app deployment
+    href: azure-web-app-deployment-tutorial.md    
+- name: Reference
+  items:
+   - name: Frequently asked questions
+     href: faq.md 
+   - name: REST APIs
+     href: https://go.microsoft.com/fwlink/?linkid=2271986
+   - name: Client-side APIs
+     href: https://go.microsoft.com/fwlink/?linkid=2271989
+   - name: Samples
+     href: https://github.com/microsoft/Microsoft-Fabric-workload-development-sample
+   - name: Supportability
+     href: supportability.md

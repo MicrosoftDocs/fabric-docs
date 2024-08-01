@@ -55,7 +55,7 @@ After building a model, it's imperative that researchers and engineers understan
 
 SynapseML is generally available on Azure Synapse Analytics with enterprise support. You can build large-scale machine learning pipelines using Azure AI services, LightGBM, ONNX, and other [selected SynapseML features](https://techcommunity.microsoft.com/t5/azure-synapse-analytics-blog/streamline-collaboration-and-insights-with-simplified-machine/ba-p/2924707). It even includes templates to quickly prototype distributed machine learning systems, such as visual search engines, predictive maintenance pipelines, document translation, and more.
 
-## Next steps
+## Related content
 
 * To learn more about SynapseML, see the [blog post.](https://www.microsoft.com/en-us/research/blog/synapseml-a-simple-multilingual-and-massively-parallel-machine-learning-library/)
 

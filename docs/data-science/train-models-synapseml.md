@@ -1,9 +1,10 @@
 ---
 title: How to train models with SynapseML
 description: Learn how to train models with SynapseML
+ms.author: ssalgado
+author: ssalgadodev
 ms.reviewer: jessiwang
-ms.author: jessiwang
-author: JessicaXYWang
+reviewer: JessicaXYWang
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -80,7 +81,7 @@ package. For help on SynapseML classes and methods, you can use Python's `help()
 help(synapse.ml.train.TrainClassifier)
 ```
 
-## Next steps
+## Related content
 
 - [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)
 - [Track models with MLflow](mlflow-autologging.md)

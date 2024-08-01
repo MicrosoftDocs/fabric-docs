@@ -4,8 +4,7 @@ description: Learn about sharing Fabric metadata with Microsoft 365 services.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: 'jadelynray'
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - ignite-2023
 ms.topic: conceptual

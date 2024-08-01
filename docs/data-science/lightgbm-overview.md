@@ -1,16 +1,17 @@
 ---
-title: What is LightGBM in SynapseML?
+title: Overview of LightGBM in SynapseML
 description: Learn about LightGBM in SynapseML.
 ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.reviewer: mopeakande
-author: JessicaXYWang
-ms.author: jessiwang
-ms.date: 05/08/2023
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: jessiwang
+reviewer: JessicaXYWang
+ms.date: 06/25/2024
 ---
-# What is LightGBM?
+# Overview of LightGBM in SynapseML
 
 [LightGBM](https://github.com/Microsoft/LightGBM) is an open-source,
 distributed, high-performance gradient boosting (GBDT, GBRT, GBM, or
@@ -42,7 +43,7 @@ many other machine learning tasks. LightGBM is part of Microsoft's
 - **LightGBMRanker**: used for building ranking models. For example, to predict the relevance of website search results, we could build a ranking model with `LightGBMRanker`.
 
 
-## Next steps
+## Related content
 
 - [How to use LightGBM models with SynapseML in Microsoft Fabric](how-to-use-lightgbm-with-synapseml.md)
 - [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)

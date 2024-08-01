@@ -19,6 +19,9 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
+> [!NOTE]
+> [Service principal authentication](/entra/identity-platform/app-objects-and-service-principals#service-principal-object)  is not supported for now.
+
 With the notebook APIs, data engineers and data scientists can automate their own pipelines and conveniently and efficiently establish CI/CD. These APIs also make it easy for users to manage and manipulate Fabric notebook items, and integrate notebooks with other tools and systems.
 
 These **Item management** actions are available for notebooks:
@@ -33,7 +36,7 @@ These **Item management** actions are available for notebooks:
 |Get item definition |Gets the content of a notebook.|
 |List item | List all items in a workspace.|
 
-For more information, see [Items - REST API](/rest/api/fabric/).
+For more information, see [Items - REST API](/rest/api/fabric/core/items).
 
 The following **Job scheduler** actions are available for notebooks:
 
@@ -43,7 +46,7 @@ The following **Job scheduler** actions are available for notebooks:
 |Cancel Item Job Instance|Cancel notebook job run.|
 |Get Item Job Instance| Get notebook run status.|
 
-For more information, see [Job Scheduler](/rest/api/fabric/).
+For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
 ## Notebook REST API usage examples
 
@@ -102,7 +105,7 @@ The payload in the request is a base64 string converted from the following sampl
         "language_info": {
             "name": "python"
         },
-        "trident": {
+        "dependencies": {
             "environment": {
                 "environmentId": "6524967a-18dc-44ae-86d1-0ec903e7ca05",
                 "workspaceId": "c31eddd2-26e6-4aa3-9abb-c223d3017004"
@@ -173,9 +176,13 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items/{{ART
             "conf": {
                 "spark.conf1": "value"
             },
+            "environment": {
+                "id": "<environment_id>",
+                "name": "<environment_name>"
+            },
             "defaultLakehouse": {
                 "name": "<lakehouse-name>",
-                "id": "<(optional) lakehouse-id>",
+                "id": "<lakehouse-id>",
                 "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>"
             },
             "useStarterPool": false,
@@ -194,7 +201,7 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/4b218778-e7a5-4d73-8187
 Retry-After: 60
 ```
 
-With `location`, you can use [Get Item Job Instance](/rest/api/fabric/) to view job status or use [Cancel Item Job Instance](/rest/api/fabric/) to cancel the current notebook run.
+With `location`, you can use [Get Item Job Instance](/rest/api/fabric/core/job-scheduler/get-item-job-instance) to view job status or use [Cancel Item Job Instance](/rest/api/fabric/core/job-scheduler/cancel-item-job-instance) to cancel the current notebook run.
 
 ## Related content
 

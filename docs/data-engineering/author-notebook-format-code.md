@@ -1,17 +1,17 @@
 ---
 title: "Format code in Microsoft Fabric notebooks"
-description: "Learn how to extend a Microsoft Fabric notebook to use a PEP 8-compliant code formatter."
-author: peter-myers
-ms.author: v-myerspeter
-ms.reviewer: snehagunda
+description: Learn best practices for formatting code, including how to extend a Microsoft Fabric notebook to use a PEP 8-compliant code formatter.
+author: snehagunda
+ms.author: sngun
+ms.reviewer: v-myerspeter, arunsethia
 ms.topic: how-to
 ms.custom: fabric-cat
-ms.date: 10/30/2023
+ms.date: 07/25/2024
 ---
 
 # Format code in Microsoft Fabric notebooks
 
-There are many benefits to adopting good style and conventions when you write a Python notebook or Spark job definition. By consistently formatting your code, you can:
+There are many benefits to adopting good style and conventions when you write a Python notebook or Apache Spark job definition. By consistently formatting your code, you can:
 
 - Make it easier to read the code.
 - Increases maintainability of the code.
@@ -38,9 +38,9 @@ There are two methods to set up a code formatter extension in a Fabric notebook.
 
 #### Workspace settings
 
-Use the workspace settings to set up the working environment for a Fabric workspace. Any library that you install in the workspace settings is available to all notebooks and Spark job definitions in the workspace. Therefore, when you install a code formatter extension in the workspace library, all notebooks within the workspace can benefit from it.
+Use the workspace settings to set up the working environment for a Fabric workspace. To make your libraries available for use in any notebooks and Spark job definitions in the workspace, you can create the environment, install the libraries in it, and then your workspace admin can attach the environment as the default for the workspace. Therefore, when a code formatter extension is installed in the workspace's default environment, all notebooks within the workspace can benefit from it.
 
-To learn how to install workspace libraries, see [Install workspace libraries](../data-science/python-guide/python-library-management.md#python-libraries-in-microsoft-fabric).
+For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
 
 #### In-line installation
 
@@ -64,14 +64,14 @@ Either use the ```%load_ext``` magic command.
 
 ```python
 # Load the jupyter-black extension
-%load_ext jupyter-black
+%load_ext jupyter_black
 ```
 
 Or, use the load extension by using the programming API.
 
 ```python
-import jupyter-black
-jupyter-black.load()
+import jupyter_black
+jupyter_black.load()
 ```
 
 > [!TIP]

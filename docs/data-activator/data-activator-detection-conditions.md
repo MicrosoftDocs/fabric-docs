@@ -3,7 +3,7 @@ title: Detection conditions in Data Activator
 description: Understand how detection conditions in triggers and properties operate in Data Activator.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.date: 11/16/2023
 ---
@@ -84,7 +84,7 @@ The condition timer indicates how long, or how many times, the condition must be
 
 
 
-## Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

@@ -5,9 +5,10 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.reviewer: mopeakande
-author: JessicaXYWang
-ms.author: jessiwang
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: JessicaXYWang
+reviewer: jessiwang
 ms.date: 05/08/2023
 ---
 
@@ -90,7 +91,7 @@ In this section, you'll use LightGBM to build a classification model for predict
     from synapse.ml.lightgbm import LightGBMClassifier
     
     model = LightGBMClassifier(
-        objective="binary", featuresCol="features", labelCol="Bankrupt?", isUnbalance=True
+        objective="binary", featuresCol="features", labelCol="Bankrupt?", isUnbalance=True, dataTransferMode="bulk"
     )
     ```
 
@@ -176,7 +177,7 @@ In this section, you'll use LightGBM to build a regression model for drug discov
     from synapse.ml.lightgbm import LightGBMRegressor
     
     model = LightGBMRegressor(
-        objective="quantile", alpha=0.2, learningRate=0.3, numLeaves=31
+        objective="quantile", alpha=0.2, learningRate=0.3, numLeaves=31, dataTransferMode="bulk"
     ).fit(train)
     ```
 
@@ -237,6 +238,7 @@ In this section, you'll use LightGBM to build a ranking model.
         numIterations=200,
         evalAt=[1, 3, 5],
         metric="ndcg",
+        dataTransferMode="bulk"
     )
     ```
 
@@ -254,7 +256,7 @@ In this section, you'll use LightGBM to build a ranking model.
     predictions.limit(10).toPandas()
     ```
 
-## Next steps
+## Related content
 
 - [What is Azure AI services in Azure Synapse Analytics?](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)

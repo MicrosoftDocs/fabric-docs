@@ -29,7 +29,7 @@ When you open your dataflow refresh history, you first notice a list of all your
 
 :::image type="content" source="./media/dataflows-gen2-monitor/refresh-history.png" alt-text="Screenshot of the refresh history screen." lightbox="./media/dataflows-gen2-monitor/refresh-history.png":::
 
-You can take some actions right away from this page like start a new refresh, schedule a refresh, or edit the dataflow.
+We show you up to 50 refresh histories or up to 6 months back (which ever comes first) and store up to 250 refresh histories or 6 months back in the onelake. You can take some actions right away from this page like start a new refresh, schedule a refresh, or edit the dataflow. 
 
 ### Download a CSV file of the refresh
 
@@ -99,7 +99,7 @@ This dashboard provides you with the following information:
 - Number of refreshes per day
 - Type of refresh
 
-## Next steps
+## Related content
 
 - [Compare differences between Dataflow Gen1 and Gen2 in Data Factory](dataflows-gen2-overview.md)
 - [Dataflows save as draft](dataflows-gen2-save-draft.md)

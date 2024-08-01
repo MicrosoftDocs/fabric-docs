@@ -176,6 +176,6 @@ The following table contains more information about the copy activity in SFTP.
 |**Operation timeout (minutes)**|The timeout for writing each chunk to SFTP server.|< your operation timeout ><br>The default value is 60|No|operationTimeout|
 |**Upload with temp file**|Indicates whether to upload temporary file(s) and rename. Disable this option if your SFTP server doesn't support rename operation.|selected (default) or unselected |No|useTempFileRename:<br>true (default) or false |
 
-## Next steps
+## Related content
 
 - [SFTP connector overview](connector-sftp-overview.md)

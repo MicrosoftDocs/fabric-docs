@@ -4,7 +4,7 @@ description: This article explains how to configure Binary format in the data pi
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 06/25/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -22,12 +22,19 @@ Binary format is supported for the following activities and connectors as source
 | Category | Connector/Activity |
 |---|---|
 | **Supported connector** | [Amazon S3](connector-amazon-s3-copy-activity.md) |
+|  | [Amazon S3 Compatible](connector-amazon-s3-compatible-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md) |
+|  | [Azure Files](connector-azure-files-copy-activity.md)|
+|  | File system |
+|  | [FTP](connector-ftp-copy-activity.md) |
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) |
 |  | [HTTP](connector-http-copy-activity.md)|
-| **Supported activity** | [Copy activity](copy-data-activity.md) |
+|  | [Lakehouse Files](connector-lakehouse-copy-activity.md)|
+|  | [Oracle Cloud Storage](connector-oracle-cloud-storage-copy-activity.md)|
+|  | [SFTP](connector-sftp-copy-activity.md) |
+| **Supported activity** | [Copy activity](copy-data-activity.md) (source/destination) |
 |  | [GetMetadata activity](get-metadata-activity.md) |
 |  | [Delete activity](delete-data-activity.md) |
 
@@ -109,7 +116,7 @@ The following properties are supported in the copy activity **Destination** sect
 |**Compression type**|The compression codec used to write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
 |**Compression level** |The compression ratio. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 
-## Next steps
+## Related content
 
 - [Connectors overview](connector-overview.md)
 - [Connect to Binary format in dataflows](connector-binary-dataflows.md)

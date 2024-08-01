@@ -1,9 +1,10 @@
 ---
 title: Machine learning experiment
 description: Learn how to create machine learning experiments, use the MLflow API, manage and compare runs, and save a run as a model.
-ms.reviewer: mopeakande
-ms.author: midesa
-author: midesa
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: midesa
+reviewer: midesa
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -145,7 +146,7 @@ Once a run yields the desired result, you can save the run as a model for enhanc
 
 :::image type="content" source="media/machine-learning-experiment/create-model-select-new.png" alt-text="Screenshot showing where to select Create a new model." lightbox="media/machine-learning-experiment/create-model-select-new.png":::
 
-## Next Steps
+## Related content
 
 - [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
 - [Track and manage machine learning models](machine-learning-model.md)

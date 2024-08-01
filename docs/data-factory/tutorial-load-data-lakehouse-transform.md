@@ -141,7 +141,7 @@ You now have a Lakehouse with sample data loaded.  Next, you'll use a dataflow t
 
 After the refresh is complete, you can view the data in the Lakehouse table. You can also use this data now to create reports, dashboards, and more.
 
-## Next steps
+## Related content
 
 This sample shows you how to copy sample data to Lakehouse and transform the data with a dataflow using Data Factory in Microsoft Fabric.  You learned how to:
 

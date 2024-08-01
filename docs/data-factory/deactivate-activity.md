@@ -1,8 +1,8 @@
 ---
 title: Deactivate an Activity
 description: Learn how to deactivate an activity to exclude from pipeline run and validation.
-author: chez-charlie
-ms.author: chez
+author: kromerm
+ms.author: makromer
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -67,6 +67,6 @@ Deactivation is a powerful tool for pipeline developer. It allows developers to 
 
 An inactive activity never actually runs. This means the activity won't have an error field, or its typical output fields. Any references to missing fields may throw errors downstream.
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)
