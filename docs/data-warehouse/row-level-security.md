@@ -148,10 +148,11 @@ GO
 To modify a row level security function, you must first drop the security policy. In the following script, we drop the policy `SalesFilter` before issuing an `ALTER FUNCTION` statement on `Security.tvf_securitypredicate`. Then, we recreate the policy `SalesFilter`.
 
 ```sql
-
+-- Drop policy so we can change the predicate function.
 DROP SECURITY POLICY SalesFilter;
 GO
--- Creating a function for the SalesRep evaluation
+
+-- Alter the function for the SalesRep evaluation
 ALTER FUNCTION Security.tvf_securitypredicate(@SalesRep AS nvarchar(50))
     RETURNS TABLE
 WITH SCHEMABINDING
@@ -160,13 +161,18 @@ AS
 WHERE @SalesRep = USER_NAME() OR USER_NAME() = 'president@contoso.com';
 GO
  
--- Using the function to create a Security Policy
+-- Re-create a Security Policy
 CREATE SECURITY POLICY SalesFilter
 ADD FILTER PREDICATE Security.tvf_securitypredicate(SalesRep)
 ON sales.Orders
 WITH (STATE = ON);
 GO
 ```
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Implement row-level security in Fabric Data Warehousing](tutorial-row-level-security.md)
 
 ## Related content
 
@@ -175,7 +181,3 @@ GO
 - [Column-level security in Fabric data warehousing](column-level-security.md)
 - [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
 
-## Next step
-
-> [!div class="nextstepaction"]
-> [Implement row-level security in Fabric Data Warehousing](tutorial-row-level-security.md)
