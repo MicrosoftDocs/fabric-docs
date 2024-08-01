@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.topic: concept-article #Don't change.
-ms.date: 06/03/2024
+ms.date: 08/01/2024
 
 #customer intent: As a member of a security and compliance team, I want to know which sensitivity label operations are audited and understand the information that appears in the audit entries.
 
@@ -37,10 +37,11 @@ This field indicates the type of item the label change took place on.
 
 |Value |Field  |
 |--|---------|
-|1|Dashboard|
-|2|Report|
-|3|Semantic model|
-|7|Dataflow|
+|1|Power BI dashboard|
+|2|Power BI report|
+|3|Power BI semantic model|
+|7|Power BI dataflow|
+|12|Fabric item|
 
 ## ActionSource
 
@@ -75,13 +76,4 @@ This field indicates whether the action resulted in a more restrictive label, le
 
 ## Related content
 
-* [Sensitivity labels in Power BI](service-security-sensitivity-label-overview.md)
-* [Track user activities in Power BI](../admin/service-admin-auditing.md)
-
-
-
-## Related content
-
-- [Related article title](link.md)
-- [Related article title](link.md)
-- [Related article title](link.md)
+* [Track user activities in Fabric](../admin/track-user-activities.md)
