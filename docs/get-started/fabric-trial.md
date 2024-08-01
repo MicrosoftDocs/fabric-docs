@@ -6,7 +6,7 @@ ms.reviewer: mihirwagle
 ms.author: mihart
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
-ms.date: 07/29/2024
+ms.date: 08/01/2024
 ---
 
 # Microsoft Fabric trial capacity

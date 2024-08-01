@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 06/21/2024
+ms.date: 08/01/2024
 ---
 
 # Workspace identity

@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
-ms.date: 07/29/2024
+ms.date: 08/01/2024
 ---
 
 # Microsoft Fabric features by SKU
