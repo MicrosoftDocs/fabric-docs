@@ -4,7 +4,7 @@ description: This article contains a list of current limitations in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo
-ms.date: 07/18/2024
+ms.date: 08/01/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -56,6 +56,10 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 - Some columns that exist in the Spark Delta tables might not be available in the tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. Refer to the [Data types](data-types.md) for a full list of supported data types. 
 
 - If you add a foreign key constraint between tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you won't be able to make any further schema changes (for example, adding the new columns). If you don't see the Delta Lake columns with the types that should be supported in [!INCLUDE [fabric-se](includes/fabric-se.md)], check if there is a foreign key constraint that might prevent updates on the table. 
+
+- The [!INCLUDE [fabric-se](includes/fabric-se.md)] does not support [lakehouse schemas](../data-engineering/lakehouse-schemas.md).
+
+- For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
 
 ## Known issues
 

@@ -70,6 +70,8 @@ In a [!INCLUDE [product-name](../includes/product-name.md)] workspace, a [!INCLU
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-analytics-endpoint.md).
 
+For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
+
 ### Synapse Data Warehouse
 
 In a [!INCLUDE [product-name](../includes/product-name.md)] workspace, a Synapse Data Warehouse or **Warehouse** is labeled as 'Warehouse' under the **Type** column. A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports transactions, DDL, and DML queries. 
@@ -79,6 +81,8 @@ In a [!INCLUDE [product-name](../includes/product-name.md)] workspace, a Synapse
 Unlike a [!INCLUDE [fabric-se](includes/fabric-se.md)] which only supports read only queries and creation of views and TVFs, a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] has full transactional DDL and DML support and is created by a customer. A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is populated by one of the supported data ingestion methods such as [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true), [Pipelines](ingest-data-pipelines.md), [Dataflows](ingest-data.md), or cross database ingestion options such as [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true), [INSERT..SELECT](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true), or [SELECT INTO](/sql/t-sql/queries/select-into-clause-transact-sql?view=fabric&preserve-view=true).
 
 To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Create a warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](create-warehouse.md).
+
+For information and recommendations on performance of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Warehouse performance guidelines](guidelines-warehouse-performance.md).
 
 ## Compare the Warehouse and the SQL analytics endpoint of the Lakehouse
 
@@ -265,7 +269,7 @@ NA
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] manages the automatically generated tables so the workspace users can't modify them. Users can enrich the database model by adding their own SQL schemas, views, procedures, and other database objects.
 
-For every Delta table in your [Lakehouse](../data-engineering/lakehouse-overview.md), the [!INCLUDE [fabric-se](includes/fabric-se.md)] automatically generates a table in the `dbo` schema.
+For every Delta table in your [Lakehouse](../data-engineering/lakehouse-overview.md), the [!INCLUDE [fabric-se](includes/fabric-se.md)] automatically generates a table in the `dbo` schema. 
 
 Tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)] are created with a minor delay. Once you create or update Delta Lake table in the lake, the [!INCLUDE [fabric-se](includes/fabric-se.md)] table that references the Delta lake table will be created/refreshed automatically within 10 seconds.
 
