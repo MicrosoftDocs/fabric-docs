@@ -61,10 +61,6 @@ A background process is responsible for scanning lakehouse for changes, and keep
 
         total_size = sum(file.size for file in files if not file.isDir)
         
-        # Convert size to GB
-
-        total_size_gb = total_size / (1024 ** 3)
-        
         # Count the number of files
 
         file_count = sum(1 for file in files if not file.isDir)
@@ -72,13 +68,13 @@ A background process is responsible for scanning lakehouse for changes, and keep
         # Write partition details
 
         partition_details[partition_name] = {
-            "size_gb": total_size_gb,
+            "size_bytes": total_size,
             "file_count": file_count
         }
         
   # Print the partition details
   for partition_name, details in partition_details.items():
-    print(f"Partition: {partition_name}, Size: {details['size_gb']:.2f} GB, Number of files: {details['file_count']}")
+    print(f"{partition_name}, Size: {details['size_bytes']:.2f} bytes, Number of files: {details['file_count']}")
 
   ```
 
