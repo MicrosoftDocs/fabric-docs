@@ -158,8 +158,9 @@ However, database editors can limit the minimum refresh rate that any viewer can
 ## Share the dashboard
 
 To share the dashboard link:
-    1. Select **Share** and then select **Copy link**
-    1. In the **Dashboard permissions** window, select **Copy link**.
+
+1. Select **Share** and then select **Copy link**
+1. In the **Dashboard permissions** window, select **Copy link**.
 
 ## Export dashboards
 
