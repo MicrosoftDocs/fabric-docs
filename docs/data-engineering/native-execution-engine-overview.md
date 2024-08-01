@@ -47,7 +47,6 @@ To enable the native execution engine for a single notebook or Spark job definit
 { 
    "conf": {
        "spark.native.enabled": "true", 
-       "spark.gluten.enabled": "true", 
        "spark.shuffle.manager": "org.apache.spark.shuffle.sort.ColumnarShuffleManager" 
    } 
 } 
@@ -75,7 +74,6 @@ To ensure uniform performance enhancement, enable the native execution engine ac
 | Property | Value |
 |:-:|:-:|
 | spark.native.enabled | true |
-| spark.gluten.enabled | true |
 | spark.shuffle.manager | org.apache.spark.shuffle.sort.ColumnarShuffleManager |
 
 :::image type="content" source="media\native\enable-environment.png" alt-text="Screenshot showing how to enable the native execution engine inside the environment item." lightbox="media\native\enable-environment.png":::
@@ -91,7 +89,6 @@ The mechanisms to enable the Native Execution Engine at the tenant, workspace, a
 ```sql
 %%sql 
 SET spark.native.enabled=FALSE; 
-SET spark.gluten.enabled=FALSE; 
 ```
 
 # [PySpark](#tab/pyspark)
@@ -99,7 +96,6 @@ SET spark.gluten.enabled=FALSE;
 ```python
 %%pyspark
 spark.conf.set('spark.native.enabled', 'false')   
-spark.conf.set('spark.gluten.enabled', 'false')   
 ```
 
 # [Scala Spark](#tab/scalaspark)
@@ -107,7 +103,6 @@ spark.conf.set('spark.gluten.enabled', 'false')
 ```scala
 %%spark  
 spark.conf.set("spark.native.enabled", "false")   
-spark.conf.set("spark.gluten.enabled", "false")   
 ```
 
 # [SparkR](#tab/sparkr)
@@ -116,7 +111,6 @@ spark.conf.set("spark.gluten.enabled", "false")
 %%sparkr
 library(SparkR)
 sparkR.conf("spark.native.enabled", "false")
-sparkR.conf("spark.gluten.enabled", "false")
 ```
 
 ---
@@ -130,7 +124,6 @@ After executing the query in which the native execution engine is disabled, you 
 ```sql
 %%sql 
 SET spark.native.enabled=TRUE; 
-SET spark.gluten.enabled=TRUE; 
 ```
 
 # [PySpark](#tab/pyspark)
@@ -138,7 +131,6 @@ SET spark.gluten.enabled=TRUE;
 ```python
 %%pyspark
 spark.conf.set('spark.native.enabled', 'true')   
-spark.conf.set('spark.gluten.enabled', 'true')   
 ```
 
 # [Scala Spark](#tab/scalaspark)
@@ -146,7 +138,6 @@ spark.conf.set('spark.gluten.enabled', 'true')
 ```scala
 %%spark  
 spark.conf.set("spark.native.enabled", "true")   
-spark.conf.set("spark.gluten.enabled", "true")   
 ```
 
 # [SparkR](#tab/sparkr)
@@ -155,7 +146,6 @@ spark.conf.set("spark.gluten.enabled", "true")
 %%sparkr
 library(SparkR)
 sparkR.conf("spark.native.enabled", "true")
-sparkR.conf("spark.gluten.enabled", "true")
 ```
 
 ---
