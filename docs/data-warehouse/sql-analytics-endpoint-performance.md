@@ -41,12 +41,15 @@ We have observed that a large volume of small-sized parquet files increases the 
     
 ### Sample script for partition details
 
-Use the following notebook to print a report detailing size and details of partitions underpinning a delta table. The script outputs the details of partitions, files per partitions, and size per partition in GB.
+Use the following notebook to print a report detailing size and details of partitions underpinning a delta table.
 
-1. First, provide the ABSFF path for your delta table in `delta_table_path`.  You can get ABFSS path of a delta table from the Fabric portal **Explorer**. Right-click on table name, then select `COPY PATH` from the list of options.
-2. The script outputs all partitions for the delta table, then iterates through each partition to calculate the total size and number of files.
+1. First, you must provide the ABSFF path for your delta table in the variable `delta_table_path`.  
+    - You can get ABFSS path of a delta table from the Fabric portal **Explorer**. Right-click on table name, then select `COPY PATH` from the list of options.
+1. The script outputs all partitions for the delta table.
+1. The script iterates through each partition to calculate the total size and number of files.
+1. The script outputs the details of partitions, files per partitions, and size per partition in GB.
 
-The complete file can be copied from the following code block:
+The complete script can be copied from the following code block:
 
   ```python
   # Purpose: Print out details of partitions, files per partitions, and size per partition in GB.
@@ -91,6 +94,6 @@ The complete file can be copied from the following code block:
 
 ## Related content
 
-- [SQL analytics endpoint](get-started-lakehouse-sql-analytics-endpoint.md)
-- [Warehouse performance guidelines](guidelines-warehouse-performance.md)
+- [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
+- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
 - [Limitations of the SQL analytics endpoint](limitations.md#limitations-of-the-sql-analytics-endpoint)

@@ -67,4 +67,4 @@ For known issues in [!INCLUDE [product-name](../includes/product-name.md)], visi
 
 ## Related content
 
-- [Get Started with Warehouse](create-warehouse.md)
+- [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
