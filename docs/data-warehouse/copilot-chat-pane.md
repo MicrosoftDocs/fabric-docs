@@ -1,16 +1,16 @@
 ---
 title: "How to: Use the Copilot chat pane for Synapse Data Warehouse"
-description: Learn more about Microsoft Copilot chat pane for Synapse Data Warehouse in Microsoft Fabric, to ask questions specific to your warehouse."
+description: Learn more about Microsoft Copilot chat pane for Synapse Data Warehouse in Microsoft Fabric, to ask questions specific to your warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
-ms.date: 05/08/2024
+ms.date: 08/01/2024
 ms.topic: how-to
+ms.collection: ce-skilling-ai-copilot
 ms.custom:
   - build-2024
   - build-2024-dataai
   - build-2024-fabric
-ms.collection: ce-skilling-ai-copilot
 ---
 # How to: Use the Copilot chat pane for Synapse Data Warehouse
 
@@ -43,7 +43,7 @@ The supported capabilities of interacting through chat include:
 
 1. In the **Data warehouse** workload, open a warehouse, and open a new SQL query.
 1. To open the Copilot chat pane, select the **Copilot** ribbon in the button.
-    :::image type="content" source="media/copilot-chat-pane/copilot-button.png" alt-text="Screenshot from the Fabric portal showing the Copilot button in the ribbon.":::
+    :::image type="content" source="media/copilot-chat-pane/copilot-button.png" alt-text="Screenshot from the Fabric portal showing the Copilot button in the ribbon." lightbox="media/copilot-chat-pane/copilot-button.png":::
 
 1. The chat pane offers helpful starter prompts to get started and familiar with Copilot. Select any option to ask Copilot a question. The **Ask a question** button provides example questions that are tailored specifically to your warehouse.
 
@@ -75,3 +75,4 @@ You can ask Copilot questions about the warehouse normally and it should respond
 - [Microsoft Copilot for Synapse Data Warehouse](copilot.md)
 - [How to: Use Copilot code completion for Synapse Data Warehouse](copilot-code-completion.md)
 - [How to: Use Copilot quick actions for Synapse Data Warehouse](copilot-quick-action.md)
+- [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../get-started/copilot-data-warehouse-privacy-security.md)
