@@ -178,8 +178,10 @@ landingContent:
     linkLists:
       - linkListType: architecture
         links:
-          - text: Performance guidelines
+          - text: Warehouse performance
             url: guidelines-warehouse-performance.md
+          - text: SQL analytics endpoint performance
+            url: sql-analytics-endpoint-performance.md
           - text: Security
             url: security.md
           - text: Ingest Data
