@@ -17,7 +17,7 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 
 **Applies to:** [!INCLUDE [fabric-se](includes/applies-to-version/fabric-se.md)]
 
-The SQL analytics endpoint [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in a Fabric Lakehouse using T-SQL language and TDS protocol. A SQL analytics endpoint is automatically created by the platform when you provision a [Lakehouse](../data-engineering/lakehouse-overview.md) or enable [Mirroring](../database/mirrored-database/overview.md) in Fabric.
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the Lakehouse using T-SQL language and TDS protocol. Every Lakehouse has one SQL analytics endpoint. The number of SQL analytics endpoints in a workspace matches the number of [lakehouses](../data-engineering/lakehouse-overview.md) and [mirrored databases](../database/mirrored-database/overview.md) provisioned in that one workspace.
 
 A background process is responsible for scanning lakehouse for changes, and keeping SQL analytics endpoint up-to-date for all the changes committed to lakehouses in a workspace. The sync process is transparently managed by Microsoft Fabric platform. When a change is detected in a lakehouse, a background process updates metadata and the SQL analytics endpoint reflects the changes committed to lakehouse tables. Under normal operating conditions, the lag between a lakehouse and SQL analytics endpoint should ideally be under a minute.
 
