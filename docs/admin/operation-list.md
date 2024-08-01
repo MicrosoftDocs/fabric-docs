@@ -51,7 +51,7 @@ The following operations are available in the audit logs.
 | Auto bind user credentials to   git | AutoBindGitCredentials | Auto bind existing user credentials for a git provider to a   git connection |
 | Binded Power BI semantic model to gateway | BindToGateway |   |
 | Binded monikers to Power BI datasources | BindMonikersToDatasources |   |
-| Branch Out in Git | BranchOutInGit | Branch out in Git is a workspace activity which is generated   when a new workspaces is created, which is connected to a newly forked git   branch based on the git branch that is connected to the origin workspace. |
+| Branch Out in Git | BranchOutInGit | Branch out in Git is a workspace activity which is generated when a new workspace is created, which is connected to a newly forked git   branch based on the git branch that is connected to the origin workspace. |
 | Cancel Datamart Batch | CancelDatamartBatch |   |
 | Cancel Dataset Refresh | CancelDatasetRefresh |   |
 | Cancel Publish Environment | CancelPublishEnvironment | Cancel publish environment |
@@ -117,7 +117,7 @@ The following operations are available in the audit logs.
 | Create Semantic Metric   Endpoint | CreateSemanticMetric | Create standalone semantic metric endpoint |
 | Create Service Principal Profile | CreateServicePrincipalProfile |   |
 | Create Template App Package | CreateTemplateAppPackage | Create Template App Package is an app activity, which is generated on creation of a Template App Package  |
-| Create Temporary Upload   Location | CreateTemporaryUploadLocation | Generated when a temporary upload URL is createded. |
+| Create Temporary Upload   Location | CreateTemporaryUploadLocation | Generated when a temporary upload URL is created. |
 | Create Warehouse | CreateWarehouse |  |
 | Create Workspace | CreateWorkspace |   |
 | Create a shortcut | CreateShortcut | OneLake operation. Part of Shortcut Controller |
@@ -437,7 +437,7 @@ The following operations are available in the audit logs.
 | Override Sjd Spark Settings | OverrideSjdSparkSettings |   |
 | Patch Gateway Cluster | PatchGatewayCluster |   |
 | Patch Goal Value Categories | PatchGoalValueCategories |   |
-| Patch file system | PatchFileSystem | OneLake operation. Sets properties for a workspaces. |
+| Patch file system | PatchFileSystem | OneLake operation. Sets properties for a workspace. |
 | Patched Power BI metric value | PatchGoalValue |   |
 | Patched Power BI metric | PatchGoal |   |
 | Patched Power BI note | PatchNote |   |
