@@ -68,14 +68,14 @@ You have two ways to browse to this page:
 
 In the **Connect data source** pane, specify the following field:
 
-- **Server**: Specify the location of Oracle database that you want to connect to. You can specify one of the following three locations:
+- **Server**: Specify the location of Oracle database that you want to connect to. You can specify this property in one of the following three ways:
 
     - [Oracle net service name](https://www.orafaq.com/wiki/Tnsnames.ora)
     - [Full connect descriptor](https://docs.oracle.com/cd/E11882_01/network.112/e41945/concepts.htm#NETAG253)
     - [Easy Connect (Plus) string](https://download.oracle.com/ocomdocs/global/Oracle-Net-Easy-Connect-Plus.pdf)
 
     >[!Note]
-    >The Oracle net service name is the predefined address name in the *tnsnames.ora* file. So, when using it, the *tnsnames.ora* should be correctly configured and placed in the Oracle Configuration File Directory specified during the previous [installation of OCMT](#prerequisites). Whereas, when using the full connect descriptor or the Easy Connect (Plus) string, you do not need to configure the *tnsnames.ora* file on your machine.
+    >The Oracle net service name is the predefined address name in the *tnsnames.ora* file. So, when using it, the *tnsnames.ora* should be correctly configured and placed in the Oracle Client configuration files' directory specified during the previous [installation of OCMT](#prerequisites). Whereas, when using the full connect descriptor or the Easy Connect (Plus) string, you do not need to configure the *tnsnames.ora* file on your machine.
     
 - **Connection**: Select **Create new connection**.
 - **Connection name**: Specify a name for your connection.
