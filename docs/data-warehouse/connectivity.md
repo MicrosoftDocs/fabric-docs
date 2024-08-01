@@ -1,14 +1,14 @@
 ---
 title: Connectivity to data warehousing
 description: Follow steps to connect SSMS to data warehousing in your Microsoft Fabric workspace.
-author: salilkanade
-ms.author: salilkanade
-ms.reviewer: wiassaf
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: salilkanade, stwynant
 ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/06/2023
+ms.date: 08/01/2024
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ---
 
@@ -33,11 +33,9 @@ In [!INCLUDE [product-name](../includes/product-name.md)], two types of authenti
 
 The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the standard SQL Server port number. The SQL connection string also respects the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] security model for data access. Data can be obtained for all objects to which a user has access.
 
-**Accessing a Fabric Warehouse from Behind a Firewall**
+### Allow Power BI service tags through firewall
 
-To ensure proper access, you need to whitelist the Power BI service tags listed in the [Power BI Service Tags documentation](/power-bi/enterprise/service-premium-service-tags).
-
-You cannot use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone, as we use REDIRECT. Therefore, whitelisting the Power BI service tags is necessary for connectivity through the firewall.
+To ensure proper access, you need to allow the Power BI service tags for firewall access. For more information, see [Power BI Service Tags](/power-bi/enterprise/service-premium-service-tags). You cannot use the Fully Qualified Domain Name (FQDN) of the TDS Endpoint alone. Allowing the Power BI service tags is necessary for connectivity through the firewall.
 
 ## Retrieve the SQL connection string
 
