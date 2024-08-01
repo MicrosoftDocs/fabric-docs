@@ -159,6 +159,8 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Custom visuals don't render in Desktop
+      href: known-issues/known-issue-801-custom-visuals-not-render.md
     - name: Teaching bubble blocks Lakehouse explorer context menu from opening
       href: known-issues/known-issue-800-teaching-bubble-blocks-lakehouse-explorer-context-menu.md
     - name: Localization blocks operations in a lakehouse
