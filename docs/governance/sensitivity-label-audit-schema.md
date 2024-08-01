@@ -61,7 +61,7 @@ This field gives more detail about what caused the action to take place.
 |0|None|There are no other details.|
 |3|AutoByInheritance|The label change took place as a result of an automatically triggered inheritance process.|
 |4|AutoByDeploymentPipeline|The label change took place automatically as a result of the deployment pipeline process.|
-|5|PublicAPI|The label change action was performed by one of the following Fabric public admin REST APIs: [setLabels](/rest/api/power-bi/admin/information-protection-set-labels-as-admin), [removeLabels](/rest/api/power-bi/admin/information-protection-remove-labels-as-admin).|
+|5|PublicAPI|The label change action was performed by one of the following Fabric public admin REST APIs: [bulkSetLabels](/rest/api/fabric/admin/labels/bulk-set-labels), [bulkRemoveLabels](/rest/api/fabric/admin/labels/bulk-remove-labels).|
 
 ## LabelEventType
 
