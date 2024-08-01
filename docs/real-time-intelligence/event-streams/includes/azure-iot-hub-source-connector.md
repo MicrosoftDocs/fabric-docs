@@ -27,23 +27,23 @@ ms.date: 05/21/2024
     1. For **Authentication method**, confirm that **Shared Access Key** is selected.
     1. For **Shared Access Key Name**, enter the name of the shared access key. 
     1. For **Shared Access Key**, enter the value of the shared access key.
-    2. Select **Connect** at the bottom of the page.
+    1. Select **Connect** at the bottom of the page.
         
         :::image type="content" source="./media/azure-iot-hub-source-connector/connection-page-1.png" alt-text="Screenshot that shows the Connect page one for Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/connection-page-1.png":::
 
         To get the access key name and value, follow these steps: 
         1. Navigate to the IoT Hub page for your Azure IoT hub in the Azure portal. 
-        2. On the **IoT Hub** page, select **Shared access policies** on the left navigation menu.
-        3. Select a **policy name** from the list. Note down the policy name.
-        4. Select the copy button next to the **Primary key**. 
+        1. On the **IoT Hub** page, select **Shared access policies** on the left navigation menu.
+        1. Select a **policy name** from the list. Note down the policy name.
+        1. Select the copy button next to the **Primary key**. 
     
             :::image type="content" source="./media/azure-iot-hub-source-connector/access-key-value.png" alt-text="Screenshot that shows the access key for an Azure IoT Hub." lightbox="./media/azure-iot-hub-source-connector/access-key-value.png":::                        
-2. Now, on the **Connect** page of wizard, for **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the IoT hub. 
-3. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure IoT hub. You can select from JSON, Avro, and CSV data formats, and then select Connect.
-4. Select **Next** at the bottom of the page. 
+1. Now, on the **Connect** page of wizard, for **Consumer group**, enter the name of the consumer group. By default, `$Default` is selected, which is the default consumer group for the IoT hub. 
+1. For **Data format**, select a data format of the incoming real-time events that you want to get from your Azure IoT hub. You can select from JSON, Avro, and CSV data formats, and then select Connect.
+1. Select **Next** at the bottom of the page. 
     
     :::image type="content" source="./media/azure-iot-hub-source-connector/connection-page-2.png" alt-text="Screenshot that shows the Connect page two for Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/connection-page-2.png":::        
-5. On the **Review and create** page, review settings, and select **Add**. 
+1. On the **Review and create** page, review settings, and select **Add**. 
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page for Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/review-create-page.png":::        
 
