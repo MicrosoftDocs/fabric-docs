@@ -3,9 +3,9 @@ title: Microsoft Fabric Workload Development Kit user permissions
 description: Learn about the Microsoft Fabric Workload Development Kit user permissions and review a list of permissions for internal and external users.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept
+ms.topic: concept-article
 ms.custom:
-ms.date: 05/27/2024
+ms.date: 07/09/2024
 ---
 
 # User permissions
@@ -48,7 +48,7 @@ This table lists the permissions for external users in the Microsoft Fabric Work
 
 ## Considerations and limitations
 
-* Opening the [admin portal](../admin/admin-center.md) isn't supported. A user with admin permissions that opens the admin portal, will view it as if he is a non-admin user.
+* Opening the [admin portal](../admin/admin-center.md) isn't supported. A user with admin permissions that opens the admin portal, will view it as a non-admin user.
 
 * You can't assign these roles to a user:
     * Capacity admin

@@ -1,5 +1,5 @@
 ---
-title: What is OneLake?
+title: OneLake, the OneDrive for data
 description: OneLake is included with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. Learn more.
 ms.reviewer: eloldag
 ms.author: eloldag
@@ -11,12 +11,13 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 07/25/2024
+#customer intent: As a data analyst, I want to understand the benefits of using OneLake so that I can effectively manage and analyze all the analytics data for my organization.
 ---
 
 # OneLake, the OneDrive for data
 
-OneLake is a single, unified, logical data lake for your whole organization. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. OneLake brings customers:
+OneLake is a single, unified, logical data lake for your whole organization. A data Lake processes large volumes of data from various sources. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. OneLake brings customers:
 
 - **One data lake** for the entire organization
 - **One copy of data** for use with multiple analytical engines
@@ -33,13 +34,13 @@ Within a tenant, you can create any number of workspaces. Workspaces enable diff
 
 :::image type="content" source="media\onelake-overview\onelake-foundation-for-fabric.png" alt-text="Diagram showing the function and structure of OneLake." lightbox="media\onelake-overview\onelake-foundation-for-fabric.png":::
 
-Within a workspace, you can create data items and you access all data in OneLake through data items. Similar to how Office stores Word, Excel, and PowerPoint files in OneDrive, Fabric stores lakehouses, warehouses, and other items in OneLake. Items can give tailored experiences for each persona, such the Spark developer experience in a lakehouse.
+Within a workspace, you can create data items and you access all data in OneLake through data items. Similar to how Office stores Word, Excel, and PowerPoint files in OneDrive, Fabric stores lakehouses, warehouses, and other items in OneLake. Items can give tailored experiences for each persona, such the Apache Spark developer experience in a lakehouse.
 
 For more information on how to get started using OneLake, see [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
 
 ### Open at every level
 
-OneLake is open at every level. OneLake is built on top of Azure Data Lake Storage (ADLS) Gen2 and can support any type of file, structured or unstructured. All Fabric data items like data warehouses and lakehouses store their data automatically in OneLake in Delta Parquet format. If a data engineer loads data into a lakehouse using Spark, and then a SQL developer uses T-SQL to load data in a fully transactional data warehouse, both are contributing to the same data lake. OneLake stores all tabular data in Delta Parquet format.
+OneLake is open at every level. OneLake is built on top of Azure Data Lake Storage (ADLS) Gen2 and can support any type of file, structured or unstructured. All Fabric data items like data warehouses and lakehouses store their data automatically in OneLake in Delta Parquet format. If a data engineer loads data into a lakehouse using Apache Spark, and then a SQL developer uses T-SQL to load data in a fully transactional data warehouse, both are contributing to the same data lake. OneLake stores all tabular data in Delta Parquet format.
 
 OneLake supports the same ADLS Gen2 APIs and SDKs to be compatible with existing ADLS Gen2 applications, including Azure Databricks. You can address data in OneLake as if it's one big ADLS storage account for the entire organization. Every workspace appears as a container within that storage account, and different data items appear as folders within those containers.
 
@@ -69,7 +70,7 @@ For more information on how to use shortcuts, see [OneLake shortcuts](onelake-sh
 
 ### One copy of data with multiple analytical engines
 
-While applications might have separation of storage and computing, the data is often optimized for a single engine, which makes it difficult to reuse the same data for multiple applications. With Fabric, the different analytical engines (T-SQL, Spark, Analysis Services, etc.) store data in the open Delta Parquet format to allow you to use the same data across multiple engines.
+While applications might have separation of storage and computing, the data is often optimized for a single engine, which makes it difficult to reuse the same data for multiple applications. With Fabric, the different analytical engines (T-SQL, Apache Spark, Analysis Services, etc.) store data in the open Delta Parquet format to allow you to use the same data across multiple engines.
 
 There's no longer a need to copy data just to use it with another engine. You're always able to choose the best engine for the job that you're trying to do. For example, imagine you have a team of SQL engineers building a fully transactional data warehouse. They can use the T-SQL engine and all the power of T-SQL to create tables, transform data, and load the data to tables. If a data scientist wants to make use of this data, they no longer need to go through a special Spark/SQL driver. OneLake stores all data in Delta Parquet format. Data scientists can use the full power of the Spark engine and its open-source libraries directly over the data.
 

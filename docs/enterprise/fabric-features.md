@@ -3,8 +3,9 @@ title: Microsoft Fabric features by SKU
 description: Learn which Fabric features are available to you depending on the capacity type. The article lists features according to SKUs by capacity type.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept
-ms.date: 05/24/2024
+ms.topic: conceptual
+ms.collection: ce-skilling-ai-copilot
+ms.date: 06/19/2024
 ---
 
 # Microsoft Fabric features by SKU
@@ -17,16 +18,15 @@ The following table lists Fabric features according to SKU type. The table lists
 
 | Feature                                                                                                  | F SKU         | P SKUs   |
 |----------------------------------------------------------------------------------------------------------|:-------------:|:--------:|
+| [Power BI Autoscale](/power-bi/enterprise/service-premium-auto-scale)                                    | &#x274C;      | &#x2705; |
 | [Copilot](../get-started/copilot-fabric-overview.md)                                                     | F64 or higher | &#x2705; |
-| [Workspace identity](../security/workspace-identity.md)                                                  | F64 or higher | &#x2705; |
 | [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)                  | F64 or higher | &#x274C; |
+| [Trusted workspace access](../security/security-trusted-workspace-access.md)                             | F64 or higher | &#x274C; |
 | [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)                             | &#x2705;      | &#x274C; |
-| [Trusted workspace access](../security/security-trusted-workspace-access.md)                             | &#x2705;      | &#x274C; |
-| [Data exfiltration protection](/azure/synapse-analytics/security/workspace-data-exfiltration-protection) | &#x2705;      | &#x274C; |
 | [Pause and resume your capacity](pause-resume.md)                                                        | &#x2705;      | &#x274C; |
 | [On-demand resizing](scale-capacity.md)                                                                  | &#x2705;      | &#x274C; |
-| [Power BI Autoscale](/power-bi/enterprise/service-premium-auto-scale)                                    | &#x274C;      | &#x2705; |
 | [Bring your own key for Power BI](/power-bi/enterprise/service-encryption-byok)                          | &#x2705;      | &#x2705; |
+| [Private links](../security/security-private-links-overview.md)                                          | &#x2705;      | &#x2705; |
 
 ## Related content
 

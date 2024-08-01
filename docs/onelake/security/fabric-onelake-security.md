@@ -4,39 +4,16 @@ description: OneLake uses a layered security model built around the organization
 ms.reviewer: aamerril
 ms.author: yuturchi
 author: yuturchi
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2024
 ms.date: 04/01/2024
+#customer intent: As a security engineer, I want to understand the security features and considerations of Fabric and OneLake so that I can ensure the confidentiality and integrity of the data stored in the lakehouse.
 ---
 
 # Secure Data with Fabric, Compute Engines, and OneLake
 
-Fabric offers a multi-layer security model that provides both simplicity and flexibility in managing data access. Security can be set for an entire workspace, for individual items, or through granular permissions in each Fabric engine.
-
-Granular engine permissions allow fine-grained access control such as table, column, and row-level security to be defined. These granular permissions apply to queries run against that engine. Different engines support different types of granular security, allowing each engine to be tailored specifically for its target users.
-
-:::image type="content" source=".\media\fabric-and-onelake-security.png" alt-text="Diagram showing different layers of security in Fabric, Compute Engines and OneLake.":::
-
-## Fabric data security
-
-Fabric controls data access using [workspaces](../../get-started/workspaces.md) and [items](../../get-started/fabric-terminology.md#general-terms). In workspaces, data appears in the form of Fabric Items, and users can't view or use data in the Items unless you give them access to workspace.
-
-Workspace permissions grant access to all items within workspace. In contrast,
-Fabric Item permissions allow granting access to specific items, such as lakehouses, warehouses, or reports. Admins can determine which Fabric Item the user can interact with. For example, limiting access to data via Analytics SQL Endpoint, while giving access to the same data via Lakehouse or via OneLake API directly.
-
-Learn more about controlling data access using Fabric Workspace and Item permissions in [Security in Microsoft .](../../security/security-overview.md)
-
-## Engine-specific data security
-
-Many Fabric engines allow fine-grained access control such as table, column, and row-level security to be defined. Some compute engines in Fabric have their own security models. For example, Fabric Warehouse lets users define access using T-SQL statements. Compute-specific security is always enforced when you access data using that engine. The compute engine security might not apply to users in certain Fabric roles when they access OneLake directly.
-
-Learn more about engine-specific granular data security:
-
-- [Data warehousing Security](../../data-warehouse/security.md)
-- [Power BI Security](/power-bi/enterprise/service-admin-power-bi-security)
-- [Data Factory - Set up you Lakehouse Connection](../../data-factory/connector-lakehouse-overview.md)
-- [Real-Time Intelligence Row-Level Security](/azure/data-explorer/kusto/management/row-level-security-policy)
+Fabric offers a [multi-layer security model](../../security/permission-model.md) for managing data access. Security can be set for an entire workspace, for individual items, or through granular permissions in each Fabric engine. OneLake has its own security considerations that are outlined in this document.
 
 ## OneLake data access roles (Preview)
 
@@ -60,6 +37,12 @@ OneLake uses Microsoft Entra ID for authentication; you can use it to give permi
 > [!NOTE]
 > To use service principals in a Fabric tenant, a tenant administrator must enable Service Principal Names (SPNs) for the entire tenant or specific security groups. Learn more about enabling Service Principals in [Developer Settings of Tenant Admin Portal](../../admin/tenant-settings-index.md#developer-settings)
 
+## Audit Logs
+
+To view your OneLake audit logs, follow the instructions in [Track user activities in Microsoft Fabric](/fabric/admin/track-user-activities). OneLake operation names correspond to [ADLS APIs](/rest/api/storageservices/data-lake-storage-gen2) such as CreateFile or DeleteFile.  OneLake audit logs do not include read requests or requests made to OneLake via Fabric workloads.
+
+## Encryption and networking
+
 ### Data at Rest
 
 Data stored in OneLake is encrypted at rest by default using Microsoft-managed key. Microsoft-managed keys are rotated appropriately. Data in OneLake is encrypted and decrypted transparently and it is FIPS 140-2 compliant.
@@ -72,14 +55,14 @@ Data in transit across the public internet between Microsoft services is always 
 
 Inbound OneLake communication also enforces TLS 1.2 and negotiates to TLS 1.3, whenever possible. Outbound Fabric communication to customer-owned infrastructure prefers secure protocols but might fall back to older, insecure protocols (including TLS 1.0) when newer protocols aren't supported.
 
-## Private links
+### Private links
 
-Fabric doesn’t currently support private link access to OneLake data via non-Fabric products and Spark.
+To configure Private Links in Fabric, see [Set up and use private links](/fabric/security/security-private-links-use).
 
 ## Allow apps running outside of Fabric to access data via OneLake
 
 OneLake allows you to restrict access to data from applications running outside of Fabric environments. Admins can find the setting in the [OneLake section of Tenant Admin Portal](../../admin/tenant-settings-index.md#onelake-settings).
-When you turn this switch ON, users can access data via all sources. When you turn the switch OFF, users can't access data via applications running outside of Fabric environments. For example, users can access data via applications like Azure Databricks, custom applications using Azure Data Lake Storage (ADLS) APIs, or OneLake file explorer.
+When you turn this switch ON, users can access data via all sources. When you turn the switch OFF, users can't access data via applications running outside of Fabric environments. For example, users can access data via applications using Azure Data Lake Storage (ADLS) APIs or OneLake file explorer.
 
 ## Related content
 

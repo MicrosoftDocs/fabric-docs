@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -69,7 +67,7 @@ Typically, you would bring data from transactional systems (or line of business 
 
 ## Data model
 
-While the WWI dimensional model contains multiple fact tables, for this tutorial we focus on the `fact_sale` table and its related dimensions only, as follows, to demonstrate this end-to-end data warehouse scenario:
+While the WWI dimensional model contains multiple [fact tables](dimensional-modeling-fact-tables.md), for this tutorial we focus on the `fact_sale` table and its related dimensions only, as follows, to demonstrate this end-to-end data warehouse scenario:
 
 :::image type="content" source="media/tutorial-introduction/data-warehouse-data-model.png" alt-text="Diagram that shows the data model you use in this tutorial, which includes the fact_sale table and its related dimensions.":::
 

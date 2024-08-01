@@ -1,16 +1,17 @@
 ---
 title: How to secure data in OneLake for data science
-description: How to secure OneLake data for use with Spark and data science tools in Microsoft Fabric
+description: Learn how to secure OneLake data for use with Apache Spark and data science tools in Microsoft Fabric.
 ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - ignite-2023
 ms.date: 05/09/2024
+#customer intent: As a data scientist, I want to learn how to secure data in OneLake for data science teams so that I can ensure the privacy and integrity of the data used in my workloads.
 ---
 
-# How to secure a lakehouse for Data Science teams
+# How to secure a lakehouse for data science teams
 
 ## Introduction
 
@@ -24,8 +25,8 @@ Microsoft Fabric uses a multi-layer security model with different controls avail
 
 Security in Microsoft Fabric is optimized around securing data for specific use cases. A use case is a set of users needing specific access and accessing data through a given engine. For data science scenarios, some example use cases are:
 
-- Spark writers: Users that need to write data to a lakehouse using Spark notebooks.
-- Spark readers: Users that need to read data using Spark notebooks.
+- Apache Spark writers: Users that need to write data to a lakehouse using Apache Spark notebooks.
+- Apache Spark readers: Users that need to read data using Apache Spark notebooks.
 - Pipeline readers: Users that need to read data from a lakehouse using pipelines.
 - Shortcut creators: Users that need to create shortcuts to data in a lakehouse.
 
@@ -39,7 +40,7 @@ Users with write access aren't restricted by [OneLake data access roles (preview
 
 ### Read access
 
-For users that need to read data using pipelines or Spark notebooks, permissions are governed by the Fabric item permissions together with the [OneLake data access roles (preview).](./get-started-security.md) The Fabric item permissions govern what items a user can see and how they can access that item. The OneLake data access roles govern what data the user can access through experiences that connect to OneLake. For lakehouses without the OneLake data access roles preview enabled, instead access is governed by the ReadAll item permission and access to OneLake data is granted for the entire lakehouse.
+For users that need to read data using pipelines or Apache Spark notebooks, permissions are governed by the Fabric item permissions together with the [OneLake data access roles (preview).](./get-started-security.md) The Fabric item permissions govern what items a user can see and how they can access that item. The OneLake data access roles govern what data the user can access through experiences that connect to OneLake. For lakehouses without the OneLake data access roles preview enabled, instead access is governed by the ReadAll item permission and access to OneLake data is granted for the entire lakehouse.
 
 In order to read data, a user first needs access to the lakehouse where that data lives. Granting access to a lakehouse can be done by selecting the **Share** button on a lakehouse either from the workspace page or from within the lakehouse UI. Enter the email addresses or security group for those users and select **Share**. (Leave the Additional permissions boxes unchecked. For lakehouses without the OneLake data access roles preview enabled, check the **Read all OneLake data (ReadAll)**) box.
 

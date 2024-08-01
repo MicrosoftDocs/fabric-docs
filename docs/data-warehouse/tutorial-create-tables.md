@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -15,7 +13,7 @@ ms.custom:
 
 # Tutorial: Create tables in a data warehouse
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 Learn how to create tables in the data warehouse you created in a previous part of the tutorial.
 

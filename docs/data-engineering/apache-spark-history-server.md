@@ -1,6 +1,6 @@
 ---
-title: Use the extended Spark history server to debug apps
-description: Use the extended Spark history server to debug and diagnose Spark applications in Fabric.
+title: Debug apps with the extended Apache Spark history server
+description: Use the extended Apache Spark history server to debug and diagnose Apache Spark applications in Fabric.
 author: jejiang
 ms.author: jejiang
 ms.topic: overview
@@ -14,11 +14,11 @@ ms.search.form: Spark history server to debug apps
 
 # Use extended Apache Spark history server to debug and diagnose Apache Spark applications
 
-This article provides guidance on how to use the extended Apache Spark history server to debug and diagnose completed and running Spark applications.
+This article provides guidance on how to use the extended Apache Spark history server to debug and diagnose completed and running Apache Spark applications.
 
 ## Access the Apache Spark history server
 
-The Apache Spark history server is the web user interface for completed and running Spark applications. You can open the Apache Spark web user interface from the progress indicator notebook or the Apache Spark application detail page.
+The Apache Spark history server is the web user interface for completed and running Spark applications. You can open the Apache Spark web user interface (UI) from the progress indicator notebook or the Apache Spark application detail page.
 
 ### Open the Spark web UI from progress indicator notebook
 
@@ -131,6 +131,18 @@ The job graph node displays the following information of each stage:
 Send feedback with issues by selecting **Provide us feedback**.
 
 :::image type="content" source="media\apache-spark-history-server\spark-ui-graph-feedback.png" alt-text="Screenshot showing spark application and job graph feedback." lightbox="media\apache-spark-history-server\spark-ui-graph-feedback.png":::
+
+### Stage number limit
+
+For performance consideration, by default the graph is only available when the Spark application has less than 500 stages. If there are too many stages, it will fail with an error like this:
+
+`` The number of stages in this application exceeds limit (500), graph page is disabled in this case.``
+
+As a workaround, before starting a Spark application, please apply this Spark configuration to increase the limit:
+
+`` spark.ui.enhancement.maxGraphStages 1000 ``
+
+But please notice that this may cause bad performance of the page and the API, because the content can be too large for browser to fetch and render.
 
 ## Explore the Diagnosis tab in Apache Spark history server
 

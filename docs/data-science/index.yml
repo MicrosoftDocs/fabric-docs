@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Data Science documentation in Microsoft Fabric # < 60 chars
-summary: Learn more about the Data Science experience in Microsoft Fabric  # < 160 chars
+summary: Learn more about the Data Science and AI experience in Microsoft Fabric  # < 160 chars
 
 metadata:
   title: Data Science in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
@@ -12,9 +12,9 @@ metadata:
     - ignite-2023
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: s-polly #Required; your GitHub user alias, with correct capitalization.
-  ms.author: scottpolly #Required; microsoft alias of author; optional team alias.
-  ms.date: 04/25/2023 #Required; mm/dd/yyyy format.
+  author: sdgilley #Required; your GitHub user alias, with correct capitalization.
+  ms.author: sgilley #Required; microsoft alias of author; optional team alias.
+  ms.date: 07/08/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -28,7 +28,23 @@ landingContent:
           - text: What is Data Science?
             url: data-science-overview.md 
 
-  # Card 
+# Card
+  - title: Copilot
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Overview
+            url: ../get-started/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+          - text: Chat-magics in Notebooks
+            url: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+      - linkListType: how-to-guide
+        links:
+          - text: Use the Copilot chat panel
+            url: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+
+# Card - AI Skill will go here
+  
+# Card 
   - title: Get started
     linkLists:
       - linkListType: get-started
@@ -40,6 +56,7 @@ landingContent:
           - text: Machine learning models
             url: machine-learning-model.md 
 
+
 # Card 
   - title: Tutorials
     linkLists:
@@ -47,19 +64,13 @@ landingContent:
         links:
           - text: How to use end-to-end AI samples
             url: use-ai-samples.md 
-          - text: Retail recommendation
-            url: retail-recommend-model.md 
-          - text: Fraud detection
-            url: fraud-detection.md 
-          - text: Forecasting
+          - text: Train and evaluate a time series forecasting model
             url: time-series-forecasting.md 
-          - text: Discover relationships in a semantic model, using semantic link (preview)
-            url: tutorial-power-bi-relationships.md 
-          - text: Analyze functional dependencies in a semantic model, using semantic link (preview)
-            url: tutorial-power-bi-dependencies.md   
+          - text: Create, evaluate, and score a churn prediction model
+            url: customer-churn.md 
 
-  # Card 
-  - title: Preparing Data
+# Card 
+  - title: Prepare data
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -68,8 +79,8 @@ landingContent:
           - text: How to read and write data with Pandas
             url: read-write-pandas.md 
 
-  # Card 
-  - title: Training Models
+# Card 
+  - title: Train models
     linkLists:
       - linkListType: overview
         links:  
@@ -85,7 +96,7 @@ landingContent:
             url: train-models-pytorch.md 
 
 # Card 
-  - title: Tracking models and experiments
+  - title: Track models and experiments
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -95,7 +106,7 @@ landingContent:
             url: mlflow-autologging.md 
 
 # Card 
-  - title: Using SynapseML
+  - title: AI with SynapseML
     linkLists:
       - linkListType: get-started
         links:
@@ -107,47 +118,15 @@ landingContent:
         links:
           - text: Use OpenAI for big data with SynapseML
             url: open-ai.md
-          - text: Use Cognitive Services with SynapseML
+          - text: Use AI Services with SynapseML
             url: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
-          - text: Deep learning with ONNX and SynapseML
-            url: onnx-overview.md
-          - text: Perform multivariate anomaly detection with SynapseML
-            url: isolation-forest-multivariate-anomaly-detection.md
-          - text: Tune hyperperameters with SynapseML
-            url: hyperparameter-tuning-fighting-breast-cancer.md
 
 # Card 
-  - title: Using R
+  - title: Use semantic link 
     linkLists:
       - linkListType: overview
         links:
-          - text: R overview
-            url: r-overview.md 
-      - linkListType: how-to-guide
-        links:
-          - text: How to use SparkR
-            url: r-use-sparkr.md 
-          - text: How to use sparklyr
-            url: r-use-sparklyr.md 
-          - text: R library management
-            url: r-library-management.md 
-          - text: R visualization
-            url: r-visualization.md 
-
-# Card
-  - title: Reference docs     
-    linkLists:
-      - linkListType: reference
-        links:
-        - text: SemPy Python SDK
-          url: /python/api/semantic-link/overview-semantic-link
-
-# Card 
-  - title: Using semantic link (preview)
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is semantic link (preview)?
+          - text: What is semantic link?
             url: semantic-link-overview.md
       - linkListType: how-to-guide
         links:
@@ -157,3 +136,13 @@ landingContent:
             url: semantic-link-validate-data.md
           - text: Explore and validate relationships in semantic models
             url: semantic-link-validate-relationship.md
+
+
+# Card
+  - title: Reference docs     
+    linkLists:
+      - linkListType: reference
+        links:
+        - text: SemPy Python SDK
+          url: /python/api/semantic-link/overview-semantic-link
+

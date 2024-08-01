@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: kecona
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -25,7 +23,7 @@ In tables, data is logically organized in a row-and-column format. Each row repr
 
 ## Determine table category
 
-A [star schema](/power-bi/guidance/star-schema) organizes data into fact and dimension tables. Some tables are used for integration or staging data before moving to a fact or dimension table. As you design a table, decide whether the table data belongs in a fact, dimension, or integration table. This decision informs the appropriate table structure.
+A [star schema](dimensional-modeling-overview.md#star-schema-design) organizes data into [fact tables](dimensional-modeling-fact-tables.md) and [dimension tables](dimensional-modeling-dimension-tables.md). Some tables are used for integration or staging data before moving to a fact or dimension table. As you design a table, decide whether the table data belongs in a fact, dimension, or integration table. This decision informs the appropriate table structure.
 
 - **Fact tables** contain quantitative data that are commonly generated in a transactional system, and then loaded into the data warehouse. For example, a retail business generates sales transactions every day, and then loads the data into a data warehouse fact table for analysis.
 
@@ -127,6 +125,9 @@ The following list shows some of the table features that aren't currently suppor
 - Triggers
 - Unique indexes
 - User-defined types
+
+> [!IMPORTANT]
+> There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
 
 ## Related content
 

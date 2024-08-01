@@ -1,10 +1,10 @@
 ---
 title: Library management in Fabric environments
-description: Learn how to include public and custom libraries in Fabric environments.
+description: Learn about library management in Fabric, including how to add public and custom libraries to your Fabric environments.
 ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
-ms.date: 05/01/2024
+ms.date: 06/12/2024
 ms.search.for: Manage libraries in Environment
 ---
 
@@ -35,6 +35,10 @@ Environments support uploading the YAML file to manage multiple public libraries
 ### Filter public libraries
 
 Enter keywords in the search box on the **Public Libraries** page, to filter the list of public libraries and find the one you need.
+
+### Update public libraries
+
+To update the version of an existing public library, navigate to your envronment and open the **Public libraries** or **Custom libraries**. Choose the required library, select the version drop-down, and update its version.
 
 ### Delete public libraries
 

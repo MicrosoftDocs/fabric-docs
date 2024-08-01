@@ -1,6 +1,6 @@
 ---
 title: Runtime 1.3 in Fabric
-description: Learn about Apache Spark-based runtime 1.3 in Fabric. This article explains the unique features, capabilities, and best practices of Fabric and implement your data-related solutions.
+description: Learn about Apache Spark-based runtime 1.3 in Fabric, including the unique features, capabilities, and best practices.
 ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
@@ -12,7 +12,7 @@ ms.date: 3/13/2024
 no-loc: [Copilot]
 ---
 
-# Fabric Runtime 1.3
+# Fabric Runtime 1.3 (Public Preview)
 
 Fabric runtime offers a seamless integration with Azure. It provides a sophisticated environment for both data engineering and data science projects that use Apache Spark. This article provides an overview of the essential features and components of Fabric Runtime 1.3, the newest runtime for big data computations.
 

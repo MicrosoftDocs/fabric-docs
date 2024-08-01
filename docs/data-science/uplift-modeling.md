@@ -1,9 +1,10 @@
 ---
 title: 'Tutorial: Create, train, and evaluate an uplift model'
 description: This tutorial describes creation, training, and evaluation of uplift models and application of uplift modeling techniques.
-ms.reviewer: franksolomon
-ms.author: amjafari
-author: amhjf
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: amjafari
+reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -262,7 +263,7 @@ mlflow.autolog(exclusive=False)
 
 ```python
 classifier = (
-    LightGBMClassifier()
+    LightGBMClassifier(dataTransferMode="bulk")
     .setFeaturesCol("features")  # Set the column name for features
     .setNumLeaves(10)  # Set the number of leaves in each decision tree
     .setNumIterations(100)  # Set the number of boosting iterations

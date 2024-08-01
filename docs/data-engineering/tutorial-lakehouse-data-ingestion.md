@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/01/2024
+ms.date: 07/19/2024
 ---
 
 # Lakehouse tutorial: Ingest data into the lakehouse
 
-In this tutorial, you ingest more dimensional and fact tables from the Wide World Importers (WWI) into the lakehouse.
+In this tutorial, you ingest more dimensional and [fact tables](../data-warehouse/dimensional-modeling-fact-tables.md) from the Wide World Importers (WWI) into the lakehouse.
 
 ## Prerequisites
 
@@ -31,72 +31,47 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. In the **New pipeline** dialog box, specify the name as **IngestDataFromSourceToLakehouse** and select **Create**. A new data factory pipeline is created and opened.
 
-1. On your newly created data factory pipeline, select **Pipeline activity** to add an activity to the pipeline and select **Copy data**. This action adds copy data activity to the pipeline canvas.
+1. Next, set up an HTTP connection to import the sample World Wide Importers data into the Lakehouse. From the list of **New sources**, select **View more**, search for **Http** and select it.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\pipeline-copy-data.png" alt-text="Screenshot showing where to select Pipeline activity and Copy data.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\select-http-connection.png" alt-text="Screenshot showing where to select the HTTP source.":::
 
-1. Select the newly added copy data activity from the canvas. Activity properties appear in a pane below the canvas (you might need to expand the pane upwards by dragging the top edge). On the **General** tab in the properties pane, type **Data Copy to Lakehouse** in the **Name** field.
-
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-copy-to-lakehouse.png" alt-text="Screenshot showing where to add the copy activity name on the General tab.":::
-
-1. On the **Source** tab of the selected copy data activity, select **External** as **Data store type** and then select **+ New** to create a new connection to data source.
-
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-external.png" alt-text="Screenshot showing where to select External and + New on the Source tab.":::
-
-1. For this tutorial, all the sample data is available in a public container of Azure blob storage. You connect to this container to copy data from it. On the first **New connection** screen, select **Azure Blob Storage** and then select **Continue**.
-
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\new-connection-azure-blob-storage.png" alt-text="Screenshot of the New connection wizard, showing where to select Azure Blob Storage.":::
-
-1. On the **Connection settings** screen, enter the following details and select **Create** to create the connection to the data source.
+1. In the **Connect to data source** window, enter the details from the table below and select **Next**.
 
    | Property | Value |
    |---|---|
-   | Account name or URL | `https://azuresynapsestorage.blob.core.windows.net/sampledata` |
-   |Connection | Create new connection |
+   | URL | `https://assetsprod.microsoft.com/en-us/wwi-sample-dataset.zip` |
+   |Connection | Create a new connection |
    | Connection name | wwisampledata |
+   | Data gateway | None|
    | Authentication kind | Anonymous |
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\connection-settings-details.png" alt-text="Screenshot of the Connection settings screen, showing where to enter the details and select Create.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\configure-http-connection.png" alt-text="Screenshot showing the parameters to configure the Http connection.":::
 
-1. Once the new connection is created, return to the **Source** tab of the copy data activity, and the newly created connection is selected by default. Specify the following properties before moving to the destination settings.
+1. In the next step, enable the **Binary copy** and choose **ZipDeflate (.zip)** as the **Compression type** since the source is a .zip file. Keep the other fields at their default values and click **Next**.
 
-   | Property | Value |
-   |---|---|
-   | Data store type | External |
-   | Connection | wwisampledata |
-   | File path type | File path |
-   | File path | Container name (first text box): sampledata<br>Directory name (second text box): WideWorldImportersDW/parquet |
-   | Recursively | Checked |
-   | File format | Binary |
+    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\select-compression-type.png" alt-text="Screenshot showing how to choose a compression type.":::
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\source-tab-details.png" alt-text="Screenshot of the source tab showing where to enter the specific details.":::
+1. In the **Connect to data destination** window, specify the **Root folder** as **Files** and click **Next**. This will write the data to the *Files* section of the lakehouse.
 
-1. On the **Destination** tab of the selected copy data activity, specify the following properties:
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\configure-destination-connection.png" alt-text="Screenshot showing the destination connection settings of the lakehouse.":::
 
-   | Property | Value |
-   |---|---|
-   | Data store type | Workspace |
-   | Workspace data store type | Lakehouse |
-   | Lakehouse | wwilakehouse |
-   | Root folder | Files |
-   | File path | Directory name (first text box): wwi-raw-data |
-   | File format | Binary |
+1. Choose the **File format** as **Binary** for the destination. Click **Next** and then **Save+Run**. You can schedule pipelines to refresh data periodically. In this tutorial, we only run the pipeline once. The data copy process takes approximately 10-15 minutes to complete.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-tab-details.png" alt-text="Screenshot of the Destination tab, showing where to enter specific details.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-file-format.png" alt-text="Screenshot showing the destination file format.":::
 
-1. You have configured the copy data activity. Select the save icon on the top ribbon (below **Home**) to save your changes, and select **Run** to execute your pipeline and its activity. You can also schedule pipelines to refresh data at defined intervals to meet your business requirements. For this tutorial, we run the pipeline only once by selecting **Run**.
+1. You can monitor the pipeline execution and activity in the **Output** tab. You can also view detailed data transfer information by selecting the glasses icon next to the pipeline name, which appears when you hover over the name.
 
-   This action triggers data copy from the underlying data source to the specified lakehouse and might take up to a minute to complete. You can monitor the execution of the pipeline and its activity under the **Output** tab, which appears when you click anywhere on the canvas. Optionally, you can select the glasses icon, which appears when you hover over the name, to look at the details of the data transfer.
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\pipeline-status.png" alt-text="Screenshot showing the status of the copy pipeline activity.":::
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\save-run-output-tab.png" alt-text="Screenshot showing where to select Save and Run, and where to find the run details and glasses icon on the Output tab.":::
+1. After the successful execution of the pipeline, go to your lakehouse (**wwilakehouse**) and open the explorer to see the imported data.
 
-1. Once the data is copied, go to the items view of the workspace and select your new lakehouse (**wwilakehouse**) to launch the **Explorer** view.
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png" alt-text="Screenshot showing how to navigate to the lakehouse.":::
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png" alt-text="Screenshot showing where to select the lakehouse to launch the Explorer view.":::
+1. Verify that the folder **WideWorldImportersDW** is present in the **Explorer** view and contains data for all tables.
 
-1. Validate that a new folder **wwi-raw-data** appears in the **Explorer** view,  and data for all the tables is copied there.
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-destination-files.png" alt-text="Screenshot showing the source data is copied into the Lakehouse explorer.":::
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-destination-table.png" alt-text="Screenshot showing the source data is copied into the Lakehouse explorer.":::
+1. The data is created under the **Files** section of the lakehouse explorer. A new folder with GUID contains all the needed data. Rename the GUID to **wwi-raw-data**
 
 To load incremental data into a lakehouse, see [Incrementally load data from a data warehouse to a lakehouse](../data-factory/tutorial-incremental-copy-data-warehouse-lakehouse.md).
 

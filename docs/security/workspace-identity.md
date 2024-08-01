@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/30/2024
+ms.date: 06/21/2024
 ---
 
 # Workspace identity
@@ -29,7 +29,7 @@ You must be a workspace admin to be able to create and manage a workspace identi
 1. Select the **Workspace identity** tab.
 1. Select the **+ Workspace identity** button.
 
-When the workspace identity has been created, the tab displays the workspace identity details, the list of authorized users, and allows you to make it possible to use the identity with customer-provided endpoints and custom code.
+When the workspace identity has been created, the tab displays the workspace identity details and the list of authorized users.
 
 :::image type="content" source="./media/workspace-identity/workspace-identity-details.png" alt-text="Screenshot showing workspace identity details." lightbox="./media/workspace-identity/workspace-identity-details.png":::
 
@@ -69,13 +69,22 @@ Workspace identity can be [created and deleted by workspace admins](#create-and-
 
 Currently, workspace identity isn't supported for authentication to target resources in connections. Authentication to target resources in connections will be supported in the future. Admins, members, and contributors will be able to use workspace identity in authentication in connections in the future.
 
-In the future, workspace admins will be able to enable the use of workspace identity in connections in custom code such as Spark notebooks and in data pipelines with customer-provided endpoints. Examples include data pipelines with web activity, and webhook activity.
-
 [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or users with higher roles can view, modify, and delete the service principal and app registration associated with the workspace identity in Azure.
 
 > [!WARNING]
 > Modifying or deleting the service principal or app registration in Azure is not recommended, as it will cause Fabric items relying on workspace identity to stop working.
 
+### Administer the workspace identity in Fabric
+
+Fabric administrators can administer the workspace identities created in their tenant on the [Fabric identities tab](../admin/fabric-identities-manage.md) in the admin portal.
+
+1. Navigate to the **Fabric identities** tab in the Admin portal.
+1. Select a workspace identity, and then select **Details**.
+1. In the Details tab, you can view additional information related to the workspace identity.
+1. You can also delete a workspace identity.
+   > [!NOTE]
+   > Workspace identities cannot be restored after deletion. Be sure to review the consequences of deleting a workspace identity described in [Delete a workspace identity](#delete-a-workspace-identity).
+   
 ### Administer the workspace identity in Purview
 
 You can view the audit events generated upon the creation and deletion of workspace identity in Purview Audit Log. To access the log
@@ -141,3 +150,4 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 ## Related content
 
 * [Trusted workspace access](security-trusted-workspace-access.md)
+* [Fabric identities](../admin/fabric-identities-manage.md)

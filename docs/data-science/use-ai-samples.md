@@ -1,9 +1,10 @@
 ---
 title: Use the end-to-end AI samples
 description: Understand the capabilities of the Synapse Data Science experience and examples of how machine learning models can address your common business problems.
-ms.reviewer: lagayhar
-ms.author: amjafari
-author: amhjf
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: amjafari
+reviewer: amhjf
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -11,6 +12,7 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
 ms.date: 01/22/2024
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Use end-to-end AI samples in Microsoft Fabric

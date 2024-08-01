@@ -86,6 +86,20 @@ items:
     href: transactions.md 
   - name: Warehouse settings and context menus
     href: settings-context-menus.md
+  - name: Source control with Warehouse
+    href: source-control.md
+  - name: Analyze with range bands
+    href: analyze-range-bands.md
+- name: Dimensional modeling
+  items:
+  - name: Overview
+    href: dimensional-modeling-overview.md
+  - name: Dimension tables
+    href: dimensional-modeling-dimension-tables.md
+  - name: Fact tables
+    href: dimensional-modeling-fact-tables.md
+  - name: Load tables
+    href: dimensional-modeling-load-tables.md
 - name: Load data into the warehouse
   items:
   - name: Ingesting data into the warehouse
@@ -154,6 +168,9 @@ items:
   items:
   - name: Restore in-place
     href: restore-in-place.md
+  - name: Restore in-place in the Fabric portal
+    href: restore-in-place-portal.md
+    displayName: Restore
   - name: Clone tables
     href: clone-table.md
   - name: Clone tables in the Fabric portal

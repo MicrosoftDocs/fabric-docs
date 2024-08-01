@@ -21,17 +21,21 @@ With the _Require fast copy_ option enabled, the dataflow refresh is cancelled i
 
 - You must have a Fabric capacity.
 - For file data, files are in .csv or parquet format of at least 100 MB, and stored in an Azure Data Lake Storage (ADLS) Gen2 or a Blob storage account.
-- For Azure SQL DB, 1 million rows or more of data in the data source.
+- For database including Azure SQL DB and PostgreSQL, 5 million rows or more of data in the data source.
+
+> [!NOTE]
+> You can bypass the threshold to force Fast Copy by selecting "Require fast copy" setting.
 
 ## Connector support
 
-Fast copy is currently only supported for the following Dataflow Gen2 connectors:
+Fast copy is currently supported for the following Dataflow Gen2 connectors:
 
 - ADLS Gen2
 - Blob storage
 - Azure SQL DB
 - Lakehouse
 - PostgreSQL
+- On premise SQL Server
 
 The copy activity only supports a few transformations when connecting to a file source:
 
@@ -40,23 +44,6 @@ The copy activity only supports a few transformations when connecting to a file 
 - Change data types
 - Rename a column
 - Remove a column
-
-Following are the supported column types:
-
-
-|Supported data types per storage location  |Dataflow Gen2 Staging Lakehouse  |Fabric Lakehouse Output  |
-|---------|---------|---------|
-|Action     |N         |N         |
-|Any     |N         |N         |
-|Binary     |N         |N         |
-|DateTimeZone     |Y         |N         |
-|Duration     |N         |N         |
-|Function     |N         |N         |
-|None     |N         |N         |
-|Null     |N         |N         |
-|Time     |Y         |Y         |
-|Type     |N         |N         |
-|Structured (List, Record, Table)     |N         |N         |
 
 You can still apply other transformations by splitting the ingestion and transformation steps into separate queries. The first query actually retrieves the data and the second query references its results so that DW compute can be used. For SQL sources, any transformation that's part of the native query is supported.
 

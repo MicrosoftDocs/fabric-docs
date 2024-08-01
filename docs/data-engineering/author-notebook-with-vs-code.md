@@ -16,7 +16,7 @@ ms.search.form: VSCodeExtension
 
 The Visual Studio (VS) Code extension for Synapse fully supports the CRUD (create, read, update, and delete) notebook operations in Fabric. The extension also supports synchronization between local and remote workspaces; when you synchronize changes, you can address any conflicts or differences between your local and remote workspace.
 
-With this extension, you can also run notebooks onto the remote Fabric Spark compute.
+With this extension, you can also run notebooks onto the remote Apache Spark compute for Fabric.
 
 ## Open a notebook with the Synapse extension
 
@@ -119,7 +119,7 @@ To update your local version with the latest workspace version, you pull the rem
 
 ## Run or debug a notebook on remote Spark compute
 
-By selecting the kernel **synapse-spark-kernel** shipped with this extension, you can run the code cell on top of the remote Fabric Spark compute. Once you have selected this kernel, during runtime, the extension intercepts all the PySpark API calls and translates them to the corresponding http call to the remote Spark compute. For pure Python code, it's still executed in the local environment.
+By selecting the kernel **synapse-spark-kernel** shipped with this extension, you can run the code cell on top of the remote Spark compute. Once you have selected this kernel, during runtime, the extension intercepts all the PySpark API calls and translates them to the corresponding http call to the remote Spark compute. For pure Python code, it's still executed in the local environment.
 
 :::image type="content" source="media\vscode\run-notebook.png" alt-text="Screenshot showing where to run a notebook.":::
 

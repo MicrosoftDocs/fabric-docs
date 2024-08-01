@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 04/21/2024
+ms.date: 07/17/2024
 ---
 
 # Manage your Fabric capacity
@@ -216,19 +216,7 @@ To add or remove admins in a Power BI Embedded capacity, follow these steps:
 
 # [Trial](#tab/trial)
 
-A [trial capacity](../get-started/fabric-trial.md#start-the-fabric-capacity-trial) is assigned to the user who signed up for the trial. To add or remove admins in a Trial capacity, follow these steps:
-
-1. In the **Capacity settings** page, select **Trial**.
-
-2. From the list of capacities, select the gear icon (**&#9881;**) next to the capacity you want to make changes to.
-
-3. From the settings page, select the **Manage fabric capacities in Azure** link. Your Trial capacity opens in Azure in a new tab.
-
-4. Select **Capacity administrators** and do one of the following:
-
-   * To add an admin, select **Add**, select the user or group to add as an admin, and then select **Select**.
-
-   * To remove an admin, select the admin you want to remove, and then select **Delete**.
+A [trial capacity](../get-started/fabric-trial.md#start-the-fabric-capacity-trial) is assigned to the user who signed up for the trial. You can't add or remove admins to a Trial capacity.
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -392,7 +380,7 @@ This table summarizes the actions you can take in the details section.
 | Contributor permissions              | Set up the ability to add workspaces to the capacity. Select one of these two options:<li>The entire organization</li><li>Specific users or security groups</li> |
 | Admin permissions                    | Give specific users or security groups the ability to do the following:<li>Change capacity settings</li><li>Add contributors to the capacity</li><li>Add or remove workspaces from the capacity</li> |
 | Power BI workloads                   | Configure [Power BI workloads](/power-bi/enterprise/service-admin-premium-workloads) for:<li>[Semantic models](/power-bi/enterprise/service-admin-premium-workloads#semantic-models)</li><li>[Paginated reports](/power-bi/enterprise/service-admin-premium-workloads#paginated-reports)</li><li>[AI](/power-bi/enterprise/service-admin-premium-workloads#ai-preview)</li> |
-| Preferred capacity for My workspace  | Designate the capacity as the [default capacity for My workspaces](/power-bi/enterprise/service-admin-premium-manage#designate-a-default-capacity-for-my-workspaces)         |
+| Preferred capacity for My workspace  | Designate the capacity as the default capacity for [My workspaces](../admin/portal-workspaces.md#govern-my-workspaces)         |
 | Data Engineering/Science Settings    | Allow workspace admins to set the size of their spark [pools](../data-engineering/workspace-admin-settings.md#pool) |
 | Workspaces assigned to this capacity | Add or remove workspaces assigned to the capacity |
 

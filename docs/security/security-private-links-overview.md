@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
-ms.date: 05/30/2024
+ms.date: 07/30/2024
 ---
 
 # Private links for secure access to Fabric
@@ -22,7 +22,7 @@ Enabling private endpoints has an impact on many items, so you should review thi
 
 Private endpoint guarantees that traffic going *into* your organization's Fabric items (such as uploading a file into OneLake, for example) always follows your organization's configured private link network path. You can configure Fabric to deny all requests that don't come from the configured network path.
 
-Private endpoints *do not* guarantee that traffic from Fabric to your external data sources, whether in the cloud or on-premises, is secured. Configure firewall rules and virtual networks to further secure your data sources.
+Private endpoints *don't* guarantee that traffic from Fabric to your external data sources, whether in the cloud or on-premises, is secured. Configure firewall rules and virtual networks to further secure your data sources.
 
 A private endpoint is a single, directional technology that lets clients initiate connections to a given service but doesn't allow the service to initiate a connection into the customer network. This private endpoint integration pattern provides management isolation since the service can operate independently of customer network policy configuration. For multitenant services, this private endpoint model provides link identifiers to prevent access to other customers' resources hosted within the same service.  
 
@@ -61,9 +61,9 @@ OneLake supports Private Link. You can explore OneLake in the Fabric portal or f
 
 Direct calls using OneLake regional endpoints don't work via private link to Fabric. For more information about connecting to OneLake and regional endpoints, see [How do I connect to OneLake?](../onelake/onelake-access-api.md).
 
-### Warehouse and Lakehouse SQL endpoint
+### Warehouse and Lakehouse SQL analytics endpoint
 
-Accessing Warehouse items and Lakehouse SQL endpoints in the portal is protected by Private Link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio, Azure Data Studio) to connect to Warehouse via Private link.
+Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric portal is protected by Private Link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio, Azure Data Studio) to connect to Warehouse via Private link.
 
 Visual query in Warehouse doesn't work when the **Block Public Internet Access** tenant setting is enabled.
 
@@ -113,13 +113,17 @@ Limitations:
 * Data connectors relying on queued ingestion aren't supported.
 * Querying an event house using T-SQL isn't possible.
 
+### Healthcare data solutions (preview)
+
+Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. Within a tenant that has been enabled with a private link, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data.  This includes the ability to ingest healthcare data form various sources, such as Azure Storage accounts, and more.
+
 ### Other Fabric items
 
-Other Fabric items, such as Event stream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+Other Fabric items, such as Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 
 <!--### Other Fabric items
 
-Other Fabric items, such as KQL Database, and Event stream, don’t currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+Other Fabric items, such as KQL Database, and Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 -->
 
 ### Microsoft Purview Information Protection
@@ -136,7 +140,7 @@ There are several considerations to keep in mind while working with private endp
 
 * Tenant migration is blocked when Private Link is turned on in the Fabric admin portal.
 
-* Customers can't connect to Fabric resources in multiple tenants from a single VNet, but rather only the last tenant to set up Private Link.
+* Customers can't connect to Fabric resources in multiple tenants from a single virtual network, but rather only the last tenant to set up Private Link.
 
 * Private link doesn't support in Trial capacity. When accessing Fabric via Private Link traffic, trial capacity won't work.
   
@@ -144,9 +148,9 @@ There are several considerations to keep in mind while working with private endp
 
 * Each private endpoint can be connected to one tenant only.  You can't set up a private link to be used by more than one tenant.
 
-* **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. VNet data gateways will work.
+* **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. [Learn more about this scenario](/data-integration/gateway/service-gateway-install#private-link-consideration). VNet data gateways will work. For more information, see [these considerations](/data-integration/gateway/service-gateway-install#private-link-consideration).
 
- * **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The gateway doesn't work properly when Private Link is enabled. A potential workaround is to disable the **Azure Private Link** tenant setting, configure the gateway in a remote region (a region other than the recommended region), then re-enable Azure Private Link. After Private Link is re-enabled, the gateway in the remote region won't use private links.
+* **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The on-premises data gateway doesn't work properly when Private Link is enabled. We recommend exploring the use of the [VNET data gateway](/data-integration/vnet/overview), which can be used with private links. A potential workaround is to disable the **Azure Private Link** tenant setting, configure the gateway in a remote region (a region other than the recommended region), then re-enable Azure Private Link. After Private Link is re-enabled, the gateway in the remote region won't use private links. However, we don't provide support for this scenario.
 
 * Private links resource REST APIs don't support tags.
 

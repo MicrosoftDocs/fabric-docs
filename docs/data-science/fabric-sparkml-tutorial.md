@@ -1,50 +1,48 @@
 ---
 title: How to train models with Apache Spark MLlib
 description: A tutorial on how to use Apache Spark MLlib to create a machine learning model that analyzes a dataset by using classification through logistic regression.
-ms.reviewer: franksolomon
-ms.author: midesa
-author: midesa
+ms.reviewer: midesa
+ms.author: franksolomon
+author: fbsolo-ms1
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/19/2024
 ---
 
 # Build a machine learning model with Apache Spark MLlib
 
+In this article, you learn how to use Apache Spark [MLlib](https://spark.apache.org/mllib/) to create a machine learning application that handles simple predictive analysis on an Azure open dataset. Spark provides built-in machine learning libraries. This example uses *classification* through logistic regression.
 
-
-In this article, you'll learn how to use Apache Spark [MLlib](https://spark.apache.org/mllib/) to create a machine learning application that does simple predictive analysis on an Azure open dataset. Spark provides built-in machine learning libraries. This example uses *classification* through logistic regression.
-
-SparkML and MLlib are core Spark libraries that provide many utilities that are useful for machine learning tasks, including utilities that are suitable for:
+The core SparkML and MLlib Spark libraries provide many utilities that are useful for machine learning tasks. These utilities are suitable for:
 
 - Classification
-- Regression
 - Clustering
-- Topic modeling
-- Singular value decomposition (SVD) and principal component analysis (PCA)
 - Hypothesis testing and calculating sample statistics
+- Regression
+- Singular value decomposition (SVD) and principal component analysis (PCA)
+- Topic modeling
 
 ## Understand classification and logistic regression
 
-*Classification*, a popular machine learning task, is the process of sorting input data into categories. It's the job of a classification algorithm to figure out how to assign *labels* to input data that you provide. For example, you can think of a machine learning algorithm that accepts stock information as input and divide the stock into two categories: stocks that you should sell and stocks that you should keep.
+*Classification*, a popular machine learning task, involves sorting input data into categories. A classification algorithm should figure out how to assign *labels* to the supplied input data. For example, a machine learning algorithm could accept stock information as input, and divide the stock into two categories: stocks that you should sell and stocks that you should keep.
 
-*Logistic regression* is an algorithm that you can use for classification. Spark's logistic regression API is useful for *binary classification*, or classifying input data into one of two groups. For more information about logistic regression, see [Wikipedia](https://en.wikipedia.org/wiki/Logistic_regression).
+The *Logistic regression* algorithm is useful for classification. The Spark logistic regression API is useful for *binary classification* of input data into one of two groups. For more information about logistic regression, see [Wikipedia](https://en.wikipedia.org/wiki/Logistic_regression).
 
-In summary, the process of logistic regression produces a *logistic function* that you can use to predict the probability that an input vector belongs in one group or the other.
+Logistic regression produces a *logistic function* that can predict the probability that an input vector belongs to one group or the other.
 
-## Predictive analysis example on NYC taxi data
+## Predictive analysis example of NYC taxi data
 
-To get started, install ```azureml-opendatasets```. The data is available through [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). This subset of the dataset contains information about yellow taxi trips, including the start and end time and locations, the cost, and other attributes.
+First, install ```azureml-opendatasets```. The data is available through the [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/) resource. This dataset subset hosts information about yellow taxi trips, including the start times, end times, start locations, end locations, trip costs, and other attributes.
 
 ```python
 %pip install azureml-opendatasets
 ```
 
-In the rest of this article, we'll use Apache Spark to perform some analysis on the NYC taxi-trip tip data and then develop a model to predict whether a particular trip includes a tip or not.
+The rest of this article relies on Apache Spark to first perform some analysis on the NYC taxi-trip tip data and then develop a model to predict whether a particular trip includes a tip or not.
 
 ## Create an Apache Spark machine learning model
 
-1. Create a PySpark notebook. For instructions, see [Create a notebook](../data-engineering/how-to-use-notebook.md).
+1. Create a PySpark notebook. For more information, visit [Create a notebook](../data-engineering/how-to-use-notebook.md).
 2. Import the types required for this notebook.
 
     ```python
@@ -61,7 +59,7 @@ In the rest of this article, we'll use Apache Spark to perform some analysis on 
     from pyspark.ml.evaluation import BinaryClassificationEvaluator
     ```
 
-3. We will use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If [!INCLUDE [product-name](../includes/product-name.md)] Autologging is enabled, the corresponding metrics and parameters are automatically captured.
+3. We'll use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If [!INCLUDE [product-name](../includes/product-name.md)] Autologging is enabled, the corresponding metrics and parameters are automatically captured.
 
     ```python
     import mlflow
@@ -69,9 +67,9 @@ In the rest of this article, we'll use Apache Spark to perform some analysis on 
 
 ## Construct the input DataFrame
 
-In this example, we will load the data into a Pandas dataframe and then convert it into an Apache Spark dataframe. Using this format, we can apply other Apache Spark operations to clean and filter the dataset.
+This example loads the data into a Pandas dataframe, and then converts it into an Apache Spark dataframe. In that format, we can apply other Apache Spark operations to clean and filter the dataset.
 
-1. Run the following lines to create a Spark DataFrame by pasting the code into a new cell. This step retrieves the data via the Open Datasets API. We can filter this data down to look at a specific window of data. The following code example uses `start_date` and `end_date` to apply a filter that returns a single month of data.
+1. Paste these lines into a new cell, and run them to create a Spark DataFrame. This step retrieves the data via the Open Datasets API. We can filter this data down to examine a specific window of data. The code example uses `start_date` and `end_date` to apply a filter that returns a single month of data.
 
     ```python
     from azureml.opendatasets import NycTlcYellow
@@ -85,14 +83,14 @@ In this example, we will load the data into a Pandas dataframe and then convert 
 
     ```
 
-2. The following code reduces the dataset to about 10,000 rows. To speed up the development and training, we will sample down our dataset for now.
+2. This code reduces the dataset to about 10,000 rows. To speed up the development and training, the code samples down our dataset for now.
 
     ```python
     # To make development easier, faster, and less expensive, sample down for now
     sampled_taxi_df = nyc_tlc_df.sample(True, 0.001, seed=1234)
     ```
 
-3. Next, we want to take a look at our data using the built-in ```display()``` command. This allows us to easily view a sample of the data or explore the trends in the data graphically.
+3. We want to look at our data using the built-in ```display()``` command. With this command, we can easily view a data sample, or graphically explore trends in the data.
 
     ```python
     #sampled_taxi_df.show(10)
@@ -101,12 +99,12 @@ In this example, we will load the data into a Pandas dataframe and then convert 
 
 ## Prepare the data
 
-Data preparation is a crucial step in the machine learning process. It involves cleaning, transforming, and organizing raw data to make it suitable for analysis and modeling. In the following code, you perform several data preparation steps:
+Data preparation is a crucial step in the machine learning process. It involves cleaning, transformation, and organization of raw data, to make it suitable for analysis and modeling. In this code sample, you perform several data preparation steps:
 
-- Remove outliers and incorrect values by filtering the dataset
-- Remove columns which are not needed for model training
+- Filter the dataset to remove outliers and incorrect values
+- Remove columns that aren't needed for model training
 - Create new columns from the raw data
-- Generate a label to determine if there will be a tip or not for the given Taxi trip
+- Generate a label to determine whether or not a given Taxi trip involves a tip
 
 ```python
 taxi_df = sampled_taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paymentType', 'rateCodeId', 'passengerCount'\
@@ -126,7 +124,7 @@ taxi_df = sampled_taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paym
                         )
 ```
 
-We will then make a second pass over the data to add the final features.
+Next, make a second pass over the data to add the final features.
 
 ```Python
 taxi_featurised_df = taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paymentType', 'passengerCount'\
@@ -142,9 +140,9 @@ taxi_featurised_df = taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'p
 
 ## Create a logistic regression model
 
-The final task is to convert the labeled data into a format that can be analyzed through logistic regression. The input to a logistic regression algorithm needs to be a set of *label/feature vector pairs*, where the *feature vector* is a vector of numbers that represent the input point.
+The final task converts the labeled data into a format that logistic regression can handle. The input to a logistic regression algorithm must have a *label/feature vector pairs* structure, where the *feature vector* is a vector of numbers that represent the input point.
 
-So, you need to convert the categorical columns into numbers. Specifically, you need to convert the `trafficTimeBins` and `weekdayString` columns into integer representations. There are multiple approaches to performing the conversion. The following example takes the `OneHotEncoder` approach.
+Based on the final task requirements, we must convert the categorical columns into numbers. Specifically, we must convert the `trafficTimeBins` and `weekdayString` columns into integer representations. We have many options available to handle this requirement. This example involves the `OneHotEncoder` approach:
 
 ```python
 # Because the sample uses an algorithm that works only with numeric features, convert them so they can be consumed
@@ -157,11 +155,11 @@ en2 = OneHotEncoder(dropLast=False, inputCol="weekdayIndex", outputCol="weekdayV
 encoded_final_df = Pipeline(stages=[sI1, en1, sI2, en2]).fit(taxi_featurised_df).transform(taxi_featurised_df)
 ```
 
-This action results in a new DataFrame with all columns in the right format to train a model.
+This action results in a new DataFrame with all columns in the proper format to train a model.
 
 ## Train a logistic regression model
 
-The first task is to split the dataset into a training set and a testing or validation set.
+The first task splits the dataset into a training set, and a testing or validation set.
 
 ```python
 # Decide on the split between training and test data from the DataFrame
@@ -173,7 +171,7 @@ seed = 1234
 train_data_df, test_data_df = encoded_final_df.randomSplit([trainingFraction, testingFraction], seed=seed)
 ```
 
-Now that there are two DataFrames, the next task is to create the model formula and run it against the training DataFrame. Then you can validate against the test dataFrame. Experiment with different versions of the model formula to see the impact of different combinations.
+Once we have two DataFrames, we must create the model formula and run it against the training DataFrame. Then we can validate against the test dataFrame. Experiment with different versions of the model formula to see the effects of different combinations.
 
 ```python
 ## Create a new logistic regression object for the model
@@ -192,7 +190,7 @@ metrics = BinaryClassificationMetrics(predictionAndLabels)
 print("Area under ROC = %s" % metrics.areaUnderROC)
 ```
 
-The output from this cell is:
+The cell outputs:
 
 ```shell
 Area under ROC = 0.9749430523917996
@@ -200,7 +198,7 @@ Area under ROC = 0.9749430523917996
 
 ## Create a visual representation of the prediction
 
-You can now construct a final visualization to interpret the model results. A [ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) is one way to review the result.
+We can now build a final visualization to interpret the model results. A [ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) can certainly present the result.
 
 ```python
 ## Plot the ROC curve; no need for pandas, because this uses the modelSummary object
@@ -214,7 +212,7 @@ plt.ylabel('True Positive Rate')
 plt.show()
 ```
 
-![Graph that shows the ROC curve for logistic regression in the tip model.](media/model-training/sparkml-tutorial-results.png)
+:::image type="content" source="media/model-training/sparkml-tutorial-results.png" alt-text="Graph that shows the ROC curve for logistic regression in the tip model." lightbox="media/model-training/sparkml-tutorial-results.png":::
 
 ## Related content
 

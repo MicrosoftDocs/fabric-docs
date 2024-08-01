@@ -3,8 +3,8 @@ title: Connectivity to data warehousing
 description: Follow steps to connect SSMS to data warehousing in your Microsoft Fabric workspace.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: salilkanade
-ms.date: 04/24/2024
+ms.reviewer: salilkanade, jacinda-eng
+ms.date: 08/01/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -15,7 +15,7 @@ ms.search.form: Warehouse connectivity # This article's title should not change.
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In Microsoft [!INCLUDE [product-name](../includes/product-name.md)], a Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is accessible through a Tabular Data Stream, or TDS endpoint, familiar to all modern web applications that interact with a SQL Server endpoint. This is referred to as the SQL Connection String within the [!INCLUDE [product-name](../includes/product-name.md)] user interface.
+In [!INCLUDE [product-name](../includes/product-name.md)], a Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is accessible through a Tabular Data Stream, or TDS endpoint, familiar to all modern web applications that interact with a SQL Server endpoint. This is referred to as the SQL Connection String within the [!INCLUDE [product-name](../includes/product-name.md)] user interface.
 
 This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. 
 
@@ -36,9 +36,9 @@ The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the sta
 
 To retrieve the connection string, follow these steps:
 
-1. Navigate to your workspace, select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and select **More options**. 
+1. Navigate to your workspace, select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and select the `...` ellipses for **More options**.
 
-   :::image type="content" source="media/connectivity/workspace-warehouse-more-options.png" alt-text="Screenshot of a workspace item for a warehouse. The More options button is boxed.":::
+   :::image type="content" source="media/connectivity/workspace-warehouse-more-options.png" alt-text="Screenshot of a workspace item for a warehouse. The More options or ellipses button is boxed.":::
 
 1. Select **Copy SQL connection string** to copy the connection string to your clipboard.
 
@@ -52,7 +52,7 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
    :::image type="content" source="media/connectivity/object-explorer-connect-menu.png" alt-text="Screenshot showing where to select Database Engine on the Connect menu.":::
 
-1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication. Remember that only Microsoft Entra multifactor authentication (MFA) is supported.
+1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication. Remember that only Microsoft Entra multifactor authentication (MFA) is supported, via the option **Microsoft Entra MFA**.
 
    :::image type="content" source="media/connectivity/connect-server-window.png" alt-text="Screenshot showing the Connect to server window.":::
 
@@ -60,7 +60,7 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
    :::image type="content" source="media/connectivity/object-explorer-example.png" alt-text="Screenshot showing where the connected server name appears in the Object Explorer pane.":::
 
-When connecting via SSMS (or ADS), you see both a [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] listed as warehouses, and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience.
+When connecting via SSMS (or ADS), you see both a [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] listed as warehouses, and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience. Only SSMS 19 or higher is supported.
 
 ## Connect using Power BI
 
@@ -78,7 +78,7 @@ We support connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or 
 
 ## Connect using ODBC
 
-Microsoft [!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Microsoft Entra ID (formerly Azure Active Directory) authentication.
+Microsoft [!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Microsoft Entra ID (formerly Azure Active Directory) authentication. Only ODBC 18 or higher versions are supported.
 
 ## Connect using JDBC
 
@@ -86,7 +86,7 @@ Microsoft [!INCLUDE [product-name](../includes/product-name.md)] also supports c
 
 When establishing connectivity via JDBC, check for the following dependencies:
 
-1. Add artifacts, choose **Add Artifact** and add the following four dependencies in the window like this, then select **Download/Update** to load all dependencies.
+1. Add artifacts. Choose **Add Artifact** and add the following four dependencies, then select **Download/Update** to load all dependencies. For example:
 
     :::image type="content" source="media/connectivity/download-update.png" alt-text="Screenshot showing where to select Download/Update.":::
 
@@ -141,11 +141,20 @@ Any third-party tool can use the SQL Connection string via ODBC or OLE DB driver
 
 In [!INCLUDE [product-name](../includes/product-name.md)], a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and a Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] provide a SQL connection string. Data is accessible from a vast ecosystem of SQL tooling, provided they can authenticate using Microsoft Entra ID (formerly Azure Active Directory). For more information, see [Connection libraries for Microsoft SQL Database](/sql/connect/sql-connection-libraries#drivers-for-relational-access).
 
+## Best practices
+
+We recommend adding retries in your applications/ETL jobs to build resiliency. For more information, refer to the following docs:
+- [Retry pattern - Azure Architecture Center](/azure/architecture/patterns/retry)
+- [Working with transient errors - Azure SQL Database](/azure/azure-sql/database/troubleshoot-common-connectivity-issues?view=fabric&preserve-view=true)
+- [Step 4: Connect resiliently to SQL with ADO.NET - ADO.NET Provider for SQL Server](/sql/connect/ado-net/step-4-connect-resiliently-sql-ado-net?view=fabric&preserve-view=true)
+- [Step 4: Connect resiliently to SQL with PHP - PHP drivers for SQL Server ](/sql/connect/php/step-4-connect-resiliently-to-sql-with-php?view=fabric&preserve-view=true)
+
 ## Considerations and limitations
 
 - SQL Authentication is not supported.
 - Multiple Active Result Sets (MARS) is unsupported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
-- On connection to a warehouse, you might receive an error that "The token size exceeded the maximum allowed payload size". This is due to having a large number of warehouses within the workspace or being a member of a large number of Microsoft Entra groups. In event of this error, work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
+- If you receive this error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This issue can be caused if the workspace has too many warehouses/SQL analytics endpoints, if the user is part of too many Entra groups, or a combination of the two. We recommend having 40 or fewer warehouses and SQL analytics endpoint per workspace to prevent this error. If the issue persists, contact support.
+- If you receive error code 24804 with the message "Couldn't complete the operation due to a system update. Close out this connection, sign in again, and retry the operation" or error code 6005 with the message "Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to temporary connection loss, likely because of a system deployment or reconfiguration. To resolve this issue, sign in again and retry. To learn how to build resiliency and retries in your application, see [Best Practices](#best-practices).
 - Linked server connections from SQL Server are not supported.
 
 ## Related content

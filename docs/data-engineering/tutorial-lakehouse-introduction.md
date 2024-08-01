@@ -1,6 +1,6 @@
 ---
 title: "Lakehouse end-to-end scenario: overview and architecture"
-description: This article describes the lakehouse end-to-end scenario including its architecture, the various components involved in its implementation, and the semantic model used.
+description: This article provides an overview of the lakehouse, including its architecture, the components involved in its implementation, and the semantic model.
 ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 5/23/2023
+ms.date: 07/19/2024
 ---
 
 # Lakehouse end-to-end scenario: overview and architecture
@@ -63,7 +63,7 @@ In general, data is brought from transactional systems or line-of-business appli
 
 ## Data model
 
-While the WWI dimensional model contains numerous fact tables, for this tutorial, we use the *Sale* fact table and its correlated dimensions. The following example illustrates the WWI data model:
+While the WWI dimensional model contains numerous [fact tables](../data-warehouse/dimensional-modeling-fact-tables.md), for this tutorial, we use the *Sale* fact table and its correlated dimensions. The following example illustrates the WWI data model:
 
 :::image type="content" source="media\tutorial-lakehouse-introduction\model-sale-fact-table.png" alt-text="Diagram of the Sale Fact table and related dimensions for this tutorial's data model.":::
 

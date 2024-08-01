@@ -6,7 +6,7 @@ ms.author: ajetasi
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 07/10/2024
 ---
 
 # Explore Fabric workspace item events in Fabric Real-Time hub (preview)
@@ -16,9 +16,7 @@ ms.date: 05/21/2024
 Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items, such as when a new artifact is created, or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Data Activator alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
 
 
-> [!NOTE]
-> - Consuming Fabric events via eventstream or Data Activator isn't supported if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
-> - While consuming Fabric workspace item events, make sure that the capacity region of consuming eventstream or Data Activator is the same as the Tenant home region.
+[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
 ## View Fabric workspace item events detail page
 
@@ -88,14 +86,14 @@ The `data` object has the following properties:
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
 | `itemId` | guid | Unique identifier for the item/artifact. | `00000000-0000-0000-0000-000000000000` |
-| `itemKind` | string | The kind of item/artifact. | `Notebook` |
+| `itemKind` | string | The kind of item/artifact. | Item type such as `Notebook, Lakehouse, etc.` Refer to the notes below for item types not supported by workspace item events |
 | `itemName` | string | The item/artifact name. | `Test Notebook` |
 | `workspaceId` | guid | Unique identifier for the workspace. | `00000000-0000-0000-0000-000000000000` |
 | `workspaceName` | string | The name of the workspace. | `Test Workspace` |
 | `principalId` | guid | Unique identifier for the user. | `00000000-0000-0000-0000-000000000000` |
 | `executingPrincipalType` | string | The kind of user. | `User` |
 
-
+[!INCLUDE [unsupported-itemtypes-in-workspaceevents](./includes/unsupported-itemtypes-in-workspaceevents.md)]
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)

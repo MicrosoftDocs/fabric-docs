@@ -1,13 +1,14 @@
 ---
 title: Best practices for OneLake security
-description: Best practices for securing your data in OneLake.
+description: Best practices for securing your data in OneLake including least privilege access, workload permissions, and user permissions.
 ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - ignite-2023
 ms.date: 05/09/2024
+#customer intent: As a security engineer, I want to learn best practices for securing my data in OneLake, including least privilege access, workload permissions, and user permissions, so that I can effectively protect my data and reduce security risks.
 ---
 
 # Best practices for OneLake security
@@ -20,17 +21,17 @@ Least privilege access is a fundamental security principle in computer science t
 
 - If users only need access to a single lakehouse or data item, use the share feature to grant them access to only that item. Assigning a user to a workspace role should only be used if that user needs to see ALL items in that workspace.
 
-- Use [OneLake data access roles (preview)](../security/get-started-security.md) to restrict access to folders and tables within a lakehouse for access through OneLake APIs or Spark notebooks. This feature allows for access to be given to only select items in a lakehouse.
+- Use [OneLake data access roles (preview)](../security/get-started-security.md) to restrict access to folders and tables within a lakehouse for access through OneLake APIs or Apache Spark notebooks. This feature allows for access to be given to only select items in a lakehouse.
 
 ## Secure by workload
 
-Fabric allows for granting users access to specific data workloads through item permissions, compute permissions, and OneLake data access roles (preview). Securing by workload is a principle that restricts user access to only the necessary Fabric workload the user needs to do their job and configuring access in that workload to the least privileged. There are three main workloads for OneLake where this is relevant: Spark/OneLake access, SQL Endpoints, and Semantic Models.
+Fabric allows for granting users access to specific data workloads through item permissions, compute permissions, and OneLake data access roles (preview). Securing by workload is a principle that restricts user access to only the necessary Fabric workload the user needs to do their job and configuring access in that workload to the least privileged. There are three main workloads for OneLake where this is relevant: Apache Spark/OneLake access, SQL analytics endpoints, and Semantic Models.
 
-**Spark/OneLake access**
+**Apache Spark/OneLake access**
 This path is used for querying data through notebooks, moving data via pipelines, or creating shortcuts to reference data from other lakehouses. To configure security for these users, share the lakehouse to those users. Then use OneLake data access roles (preview) to control the specific folders that the users require read access to. If a user needs write access, they'll need to be added to the Admin, Member, or Contributor workspace role. Users in a write role can't have read restrictions applied to them when accessing OneLake.
 
-**SQL Endpoints**
-This approach is for reading data through SQL queries. Access to connect to the SQL Endpoint is given by sharing the lakehouse for those users. If the default permissions are given, users have no access to any tables. Users can then be granted access to specific tables using SQL GRANT permissions. Alternatively, the users can be given the ReadData permission. ReadData gives them full read access to all the tables in SQL, however that access can be restricted using SQL DENY permissions.
+**SQL analytics endpoints**
+This approach is for reading data through SQL queries. Access to connect to the SQL analytics endpoint is given by sharing the lakehouse for those users. If the default permissions are given, users have no access to any tables. Users can then be granted access to specific tables using SQL GRANT permissions. Alternatively, the users can be given the ReadData permission. ReadData gives them full read access to all the tables in SQL, however that access can be restricted using SQL DENY permissions.
 
 **Semantic Models**
 For users that need to connect via reports, security can be configured directly in the Semantic Model by defining security through DAX expressions. This further refines the security and then users need to be shared the reports.
@@ -54,7 +55,5 @@ A user needs to be a workspace Viewer, or have the Read permission and the ReadA
 ## Related content
 
 - [Fabric Security overview](../../security/security-overview.md)
-
 - [Fabric and OneLake security overview](./fabric-onelake-security.md)
-
 - [Data Access Control Model](../security/data-access-control-model.md)

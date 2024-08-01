@@ -6,6 +6,7 @@ metadata:
   ms.author: sidandrews
   ms.reviewer: anithaa
   ms.service: fabric
+  ms.subservice: data-warehouse
   ms.topic: faq
   ms.date: 03/17/2024
 title: |
@@ -86,7 +87,7 @@ sections:
       - question: |
           Why am I getting a "JSON text isn't properly formatted. Unexpected character '"' is found at position" error message when running T-SQL queries against my SQL analytics endpoint?
         answer: |
-          Data warehouse can't handle JSON string columns greater than 8 KB in size. Nested data represented as a JSON string in SQL endpoint warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
+          Data warehouse can't handle JSON string columns greater than 8 KB in size. Nested data represented as a JSON string in SQL analytics endpoint or warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
       - question: |
           Why am I getting an "Invalid column name" error in the "monitor replication" pane?
         answer: |

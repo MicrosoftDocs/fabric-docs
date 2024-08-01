@@ -1,9 +1,9 @@
 ---
 title: "Microsoft Fabric end-to-end security scenario"
 description: "Learn about Microsoft Fabric security concepts and features that can help you confidently build your own analytical solution with Fabric."
-author: peter-myers
-ms.author: v-myerspeter
-ms.reviewer: kesharab, vparasuraman
+author: KesemSharabi
+ms.author: kesharab
+ms.reviewer: v-myerspeter, vparasuraman
 ms.date: 05/17/2024
 ms.topic: conceptual
 ms.custom: fabric-cat, security-guidance
@@ -55,7 +55,7 @@ Here's what happens when a user signs in to Fabric.
 
 The metadata platform and the back-end capacity platform each run in secured virtual networks. These networks expose a series of secure endpoints to the internet so that they can receive requests from users and other services. Apart from these endpoints, services are protected by network security rules that block access from the public internet.
 
-When users sign in to Fabric, you can enforce other layers of protection. That way, your tenant is only be accessible to certain users _and_ when other conditions, like network location and device compliance, are met. This layer of protection is called [inbound protection](protect-inbound-traffic.md).
+When users sign in to Fabric, you can enforce other layers of protection. That way, your tenant will only be accessible to certain users _and_ when other conditions, like network location and device compliance, are met. This layer of protection is called [inbound protection](protect-inbound-traffic.md).
 
 In this scenario, you're responsible for sensitive patient information in Fabric. So, your organization has mandated that all users who access Fabric must perform multifactor authentication (MFA), and that they must be on the corporate network—just securing user identity isn't enough.
 
@@ -115,6 +115,25 @@ All Fabric data stores are [encrypted at rest](security-fundamentals.md#data-han
 Data is also encrypted [in transit](security-fundamentals.md#data-in-transit). All inbound traffic to Fabric endpoints from the client systems enforces a minimum of [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) 1.2. It also negotiates TLS 1.3, whenever possible. TLS provides strong authentication, message privacy, and integrity (enabling detection of message tampering, interception, and forgery), interoperability, algorithm flexibility, and ease of deployment and use.
 
 In addition to encryption, network traffic between Microsoft services always routes over the [Microsoft global network](/azure/networking/microsoft-global-network), which is one of the largest backbone networks in the world.
+
+### Customer-managed key (CMK) encryption and Microsoft Fabric
+
+[Customer-managed keys (CMK)](/azure/security/fundamentals/encryption-overview#azure-encryption-models) allows you to encrypt data at-rest using your own keys. By default, Microsoft Fabric encrypts data-at-rest using platform managed keys. In this model, Microsoft is responsible for all aspects of key management and data-at-rest on OneLake is encrypted using its keys. From a compliance perspective, customers may have a requirement to use CMK to encrypt data-at-rest. In the CMK model, customer assumes full control of the key and uses their key(s) to encrypt data-at-rest.
+
+:::image type="content" source="media/security-scenario/fabric-shortcuts-cmk-scenario.svg" alt-text="Diagram shows a high-level representation of using CMK by using Fabric OneLake shortcuts.":::
+
+If you have a requirement to use CMK to encrypt data-at-rest, we recommend you use cloud storage services (ADLS Gen2, AWS S3, GCS) with CMK encryption enabled and access data from Microsoft Fabric using [OneLake shortcuts](../onelake/onelake-shortcuts.md). In this pattern, your data continues to reside on a cloud storage service or an external storage solution where encryption at rest using CMK is enabled, and you can perform in-place read operations from Fabric whilst staying compliant. Once a shortcut has been created, within Fabric, the data can be accessed by other Fabric experiences.
+
+There are some considerations for using this pattern:
+
+- Use the pattern discussed here for data which has encryption at-rest requirement using CMK. Data which does not have this requirement can be encrypted at-rest using platform-managed keys, and that data can be stored natively on Microsoft Fabric OneLake.
+- [Fabric Lakehouse](../onelake/create-onelake-shortcut.md) and [KQL database](../real-time-intelligence/onelake-shortcuts.md) are the two workloads within Microsoft Fabric which support creation of shortcuts. In this pattern where data continues to reside on an external storage service where CMK is enabled, you can use shortcuts within Lakehouses and KQL databases to bring your data into Microsoft Fabric for analysis, but data is physically stored outside of OneLake where CMK encryption is enabled.
+- ADLS Gen2 shortcut supports write and using this shortcut type, you can also write data back out to storage service, and it’ll be encrypted at-rest using CMK. While using CMK with ADLS Gen2, following considerations for [Azure Key Vault (AKV)](/azure/key-vault/keys/byok-specification) and [Azure Storage](/azure/storage/common/customer-managed-keys-overview) apply.
+- If you are using a third-party storage solution which is AWS S3 compatible (Cloudflare, Qumolo Core with public endpoint, Public MinIO and Dell ECS with public endpoint) and it has CMK enabled, the pattern discussed here in this document can be extended to these third-party storage solutions. Using [Amazon S3 compatible shortcut](../onelake/create-s3-compatible-shortcut.md), you can bring data into Fabric using a shortcut from these solutions. As with cloud-based storage services, you can store the data on external storage with CMK encryption, and carry out in-place reads so that data.
+- AWS S3 supports encryption at-rest using [customer-managed keys](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html). Fabric can perform in-place reads on S3 buckets using [S3 shortcut](../onelake/create-s3-shortcut.md); however, write operations using a shortcut to AWS S3 are not supported.
+- Google cloud storage supports data encryption using [customer-managed keys](https://cloud.google.com/storage/docs/encryption). Fabric can perform in-place reads on GCS; however, write operations using a shortcut to GCS are not supported.
+- Enable [audit](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for Microsoft Fabric to keep track of activities.
+- In Microsoft Fabric, Power BI experience supports [customer-managed key](/power-bi/enterprise/service-encryption-customer-managed-keys).
 
 ## Data residency
 

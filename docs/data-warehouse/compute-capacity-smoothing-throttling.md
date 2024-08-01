@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -40,7 +38,7 @@ For more information, visit [Throttling in Microsoft Fabric](../enterprise/throt
 
 ## Operation classification for Fabric data warehousing
 
-In general, similar to Power BI, [operations are classified either as ](/power-bi/enterprise/service-premium-interactive-background-operations#operation-list)*[interactive](/power-bi/enterprise/service-premium-interactive-background-operations#operation-list)* or *[background](/power-bi/enterprise/service-premium-interactive-background-operations#operation-list)*.
+In general, similar to Power BI, [operations](../enterprise/fabric-operations.md#fabric-operations-by-experience) are classified either as *[interactive](../enterprise/fabric-operations.md#interactive-operations)* or *[background](../enterprise/fabric-operations.md#background-operations)*.
 
 Most [operations](usage-reporting.md#warehouse-operation-categories) in the **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. With 24-hour smoothing, operations can run simultaneously without causing any spikes at any time during the day. Customers get the benefit of a consistently fast performance without having to worry about tiny spikes in their workload. Thus, classifying data warehousing as *background* reduces the frequency of peaks of CU utilization from triggering throttling too quickly.
 

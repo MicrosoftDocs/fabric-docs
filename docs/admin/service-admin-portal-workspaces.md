@@ -4,13 +4,12 @@ description: Learn how to view and understand info about Fabric workspaces and m
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - admin-portal
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 07/27/2024
 LocalizationGroup: Administration
 ---
 
@@ -68,6 +67,10 @@ The ribbon at the top of the list and the **More options (...)** menus of the in
 > Admins can also manage and recover workspaces using PowerShell cmdlets.
 >
 > Admins can also control users' ability to create new workspace experience workspaces and classic workspaces. See [Workspace settings](portal-workspace.md) for details.
+
+## Workspace limits
+
+Workspaces can contain a maximum of 1,000 Fabric and Power BI items.
 
 ## Govern My workspaces
 

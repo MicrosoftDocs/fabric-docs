@@ -100,7 +100,8 @@ The following sections show you how to use these methods.
 * Configure a [resource instance rule](#resource-instance-rule) for the storage account.
 
 > [!NOTE]
-> Preexisting shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
+>- Preexisting shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
+>- You must use the DFS URL ID for the storage account. Here's an example: `https://StorageAccountName.dfs.core.windows.net`
 
 #### Steps
 
@@ -136,15 +137,15 @@ With OneCopy in Fabric, you can access your OneLake shortcuts with trusted acces
 
 * **Spark**: You can use Spark to access data from your OneLake shortcuts. When shortcuts are used in Spark, they appear as folders in OneLake. You just need to reference the folder name to access the data. You can use the OneLake shortcut to storage accounts with trusted workspace access in Spark notebooks.
 
-* **SQL endpoint**: Shortcuts created in the "Tables" section of your lakehouse are also available in the SQL endpoint.  You can open the SQL endpoint and query your data just like any other table.
+* **SQL analytics endpoint**: Shortcuts created in the "Tables" section of your lakehouse are also available in the SQL analytics endpoint.  You can open the SQL analytics endpoint and query your data just like any other table.
 
 * **Pipelines**: Data pipelines can access managed shortcuts to storage accounts with trusted workspace access. Data pipelines can be used to read from or write to storage accounts through OneLake shortcuts.
 
 * **Dataflows v2**: Dataflows Gen2 can be used to access managed shortcuts to storage accounts with trusted workspace access. Dataflows Gen2 can read from or write to storage accounts through OneLake shortcuts.
 
-* **Semantic models and reports**: The default semantic model associated with a Lakehouse SQL endpoint can read managed shortcuts to storage accounts with trusted workspace access. To see the managed tables in the default semantic model, go to the SQL endpoint, select **Reporting**, and choose **Automatically update semantic model**.
+* **Semantic models and reports**: The default semantic model associated with the SQL analytics endpoint of a Lakehouse can read managed shortcuts to storage accounts with trusted workspace access. To see the managed tables in the default semantic model, go to the SQL analytics endpoint item, select **Reporting**, and choose **Automatically update semantic model**.
 
-    You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL endpoint, select **Reporting** and choose **New semantic model**.
+    You can also create new semantic models that reference table shortcuts to storage accounts with trusted workspace access. Go to the SQL analytics endpoint, select **Reporting** and choose **New semantic model**.
 
     You can create reports on top of the default semantic models and custom semantic models.
 
@@ -198,10 +199,11 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 ### Restrictions and Considerations
 
 * Trusted workspace access is only supported for workspaces in Fabric capacities (F64 or higher).
-* You can only use trusted workspace access in OneLake shortcuts and data pipelines. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md). 
+* You can only use trusted workspace access in OneLake shortcuts, data pipelines, and the T-SQL COPY statement. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md). 
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity lower than F64, trusted workspace access will stop working after an hour.
 * Pre-existing shortcuts created before October 10, 2023 don't support trusted workspace access.
 * Connections for trusted workspace access can't be created or modified in **Manage connections and gateways**.
+* Connections to firewall-enabled Storage accounts will have the status *Offline* in Manage connections and gateways.
 * If you reuse connections that support trusted workspace access in Fabric items other than shortcuts and pipelines, or in other workspaces, they might not work.
 * Only *organizational account* or *service principal* must be used for authentication to storage accounts for trusted workspace access.
 * Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.
@@ -209,6 +211,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * Trusted workspace access only works when public access is enabled from selected virtual networks and IP addresses.
 * Resource instance rules for Fabric workspaces must be created through ARM templates. Resource instance rules created through the Azure portal UI aren't supported.
 * Pre-existing shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
+* If your organization has an Entra Conditional access policy for workload identities that includes all service principals, then trusted workspace access won't work. In such instances, you need to exclude specific Fabric workspace identities from the Conditional access policy for workload identities.
 
 ### Troubleshooting issues with trusted workspace access
 
@@ -227,10 +230,6 @@ If a shortcut in a lakehouse that targets a firewall-protected ADLS Gen2 storage
             "name": "<storage account name>",
             "id": "/subscriptions/<subscription id of storage account>/resourceGroups/<resource group name>/providers/Microsoft.Storage/storageAccounts/<storage account name>",
             "location": "<region>",
-            "sku": {
-                "name": "Standard_RAGRS",
-                "tier": "Standard"
-            },
             "kind": "StorageV2",
             "properties": {
                 "networkAcls": {

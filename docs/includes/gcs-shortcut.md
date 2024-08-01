@@ -9,7 +9,7 @@ ms.date: 03/15/2024
 ## Select a source
 
 1. Under **External sources**, select **Google Cloud Storage**.
-    
+
     :::image type="content" source="../includes/media/onelake-shortcuts/gcs-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the available shortcut types. The option titled Google Cloud Storage is highlighted." lightbox="../includes/media/onelake-shortcuts/gcs-shortcut/new-shortcut.png":::
 
 1. Enter the **Connection settings** according to the following table:
@@ -32,7 +32,7 @@ ms.date: 03/15/2024
 
     If you used the global endpoint in the connection URL, all of your available buckets appear in the left navigation view. If you used a bucket specific endpoint in the connection URL, only the specified bucket and its contents appear in the navigation view.
 
-    Navigate the storage account by selecting a folder or clicking on the expansion carrot next to a folder.
+    Navigate the storage account by selecting a folder or clicking on the expansion arrow next to a folder.
 
     In this view, you can select one or more shortcut target locations.  Choose target locations by clicking the checkbox next a folder in the left navigation view.
 1. Select **Next**

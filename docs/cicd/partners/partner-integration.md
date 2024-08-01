@@ -8,7 +8,8 @@ ms.topic: overview
 ms.custom:
   - build-2024
 ms.search.form:
-ms.date: 05/22/2024
+ms.date: 07/29/2024
+#customer intent: As an ISV, I want to learn about the different pathways to integrate with Microsoft Fabric so that I can leverage the platform's capabilities to build and deploy my solutions.
 ---
 
 # Microsoft Fabric Integration Pathways for ISVs
@@ -21,7 +22,7 @@ ms.date: 05/22/2024
 
 The primary focus with Interop model is on enabling ISVs to integrate their solutions with the [OneLake Foundation](../../get-started/microsoft-fabric-overview.md). To Interop with Microsoft Fabric, we provide integration using a multitude of connectors in Data Factory and in Real-Time Intelligence, REST APIs for OneLake, shortcuts in OneLake, data sharing across Fabric tenants, and database mirroring.
 
-:::image type="content" source="media/partner-integration/onelake-interop.png" alt-text="Figure showing different ways to interop with OneLake: APIs, Fabric Data Factory, Real-Time Intelligence, Multicloud shortcuts, data sharing, and database mirroring.":::
+:::image type="content" source="media/partner-integration/onelake-interop.png" alt-text="Figure showing different ways to interop with OneLake: APIs, Data Factory, RTI, Multicloud shortcuts, data sharing, and database mirroring.":::
 
 The following sections describe some of the ways you can get started with this model.
 
@@ -39,11 +40,11 @@ The following sections describe some of the ways you can get started with this m
 
 Real-Time Intelligence streamlines data analysis and visualization, offering a centralized solution for immediate insights and actions on data in motion within an organization. It efficiently manages large volumes of data through robust querying, transformation, and storage capabilities.
 
-- Event houses are specifically designed for streaming data, compatible with Real-Time hub, and ideal for time-based events. Data is automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data that can be accessed in OneLake for use across Fabric's suite of experiences. Event houses support existing Event house APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Event houses. Learn more about [REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
-- Event streams enable you to bring real-time events from various sources and route them to various destinations, such as OneLake, KQL databases in event houses, and Data Activator. Learn more about [event streams](../../real-time-intelligence/event-streams/overview.md) and [event streams API](#develop-on-fabric).
+- Eventhouses are specifically designed for streaming data, compatible with Real-Time hub, and ideal for time-based events. Data is automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data that can be accessed in OneLake for use across Fabric's suite of experiences. Eventhouses support existing Eventhouse APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Eventhouses. Learn more about [REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
+- Event streams enable you to bring real-time events from various sources and route them to various destinations, such as OneLake, KQL databases in eventhouses, and Data Activator. Learn more about [event streams](../../real-time-intelligence/event-streams/overview.md) and [event streams API](#develop-on-fabric).
 - If you're using Databricks or Jupyter Notebooks, you can utilize the Kusto Python Client Library to work with KQL databases in Fabric. Learn more about [Kusto Python SDK](/azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context-rti&pivots=fabric).
-- You can utilize the existing [Microsoft Logic Apps](/azure/data-explorer/kusto/tools/logicapps), [Azure Data Factory](/azure/data-explorer/data-factory-integration), or [Microsoft Power Automate](/azure/data-explorer/flow) connectors to interact with your Event houses or KQL Databases.
-- [Database shortcuts in Real-Time Intelligence](../../real-time-intelligence/database-shortcut.md) are embedded references within an event house to a source database. The source database can either be a KQL Database in Real-Time Intelligence or an Azure Data Explorer database. Shortcuts can be used for in place sharing of data within the same tenant or across tenants. Learn more about managing [database shortcuts using the API](#develop-on-fabric).
+- You can utilize the existing [Microsoft Logic Apps](/azure/data-explorer/kusto/tools/logicapps), [Azure Data Factory](/azure/data-explorer/data-factory-integration), or [Microsoft Power Automate](/azure/data-explorer/flow) connectors to interact with your Eventhouses or KQL Databases.
+- [Database shortcuts in Real-Time Intelligence](../../real-time-intelligence/database-shortcut.md) are embedded references within an eventhouse to a source database. The source database can either be a KQL Database in Real-Time Intelligence or an Azure Data Explorer database. Shortcuts can be used for in place sharing of data within the same tenant or across tenants. Learn more about managing [database shortcuts using the API](#develop-on-fabric).
 
 :::image type="content" source="media/partner-integration/real-time-intelligence-apis.png" alt-text="Diagram showing how Real-Time Intelligence APIs interact with Fabric workloads." lightbox="media/partner-integration/real-time-intelligence-apis.png":::
 
@@ -71,7 +72,7 @@ Data Sharing allows Fabric users to share data across different Fabric tenants w
 
 - [Learn more about Data Sharing](../../governance/external-data-sharing-overview.md)
 
-:::image type="content" source="media/partner-integration/data-sharing.png" alt-text="Diagram showing data sharing in Fabric." lightbox="media/partner-integration/data-sharing.png":::
+:::image type="content" source="media/partner-integration/data-sharing.png" alt-text="Diagram showing how the data sharing process works in Fabric." lightbox="media/partner-integration/data-sharing.png":::
 
 ### Database mirroring
 
@@ -83,14 +84,14 @@ Mirroring provides a modern way of accessing and ingesting data continuously and
 
 :::image type="content" source="media/partner-integration/develop-on-fabric.png" alt-text="Diagram showing how to build apps on Fabric." lightbox="media/partner-integration/develop-on-fabric.png":::
 
-With the **Develop on Fabric model** ISVs can build their products and services on top of Fabric or seamlessly embed Fabric's functionalities within their existing applications. It's a transition from basic integration to actively applying the capabilities Fabric offers. The main integration surface area is via REST APIs for various Fabric workloads. The following table shows a subset of REST APIs grouped by the Fabric experience. For a complete list, see the [Fabric REST API documentation](/rest/api/fabric/articles/).
+With the **Develop on Fabric model** ISVs can build their products and services on top of Fabric or seamlessly embed Fabric's functionalities within their existing applications. It's a transition from basic integration to actively applying the capabilities Fabric offers. The main integration surface area is via REST APIs for various Fabric experiences. The following table shows a subset of REST APIs grouped by the Fabric experience. For a complete list, see the [Fabric REST API documentation](/rest/api/fabric/articles/).
 
 | Fabric Experience | API |
 |-------------------|-----|
 | Data Warehouse    | - [Warehouse](/rest/api/fabric/warehouse/items)<br> - [Mirrored Warehouse](/rest/api/fabric/mirroredwarehouse/items)|
 | Data Engineering    | - [Lakehouse](/rest/api/fabric/lakehouse/items)<br> - [Spark](/rest/api/fabric/spark/custom-pools)<br> - [Spark Job Definition](/rest/api/fabric/sparkjobdefinition/items)<br> - [Tables](/rest/api/fabric/lakehouse/tables)<br> - [Jobs](/rest/api/fabric/lakehouse/background-jobs)|
 | Data Factory    | - [DataPipeline](/rest/api/fabric/datapipeline/items)<br> |
-| Real-Time Intelligence    | - [Event house](/rest/api/fabric/eventhouse/items)<br> - [KQL Database](/rest/api/fabric/kqldatabase/items)<br> - [KQL Queryset](/rest/api/fabric/kqlqueryset/items)<br> - [Event stream](/rest/api/fabric/eventstream/items)|
+| Real-Time Intelligence    | - [Eventhouse](/rest/api/fabric/eventhouse/items)<br> - [KQL Database](/rest/api/fabric/kqldatabase/items)<br> - [KQL Queryset](/rest/api/fabric/kqlqueryset/items)<br> - [Event stream](/rest/api/fabric/eventstream/items)|
 | Data Science    | - [Notebook](/rest/api/fabric/notebook/items)<br> - [ML Experiment](/rest/api/fabric/mlexperiment/items)<br> - [ML Model](/rest/api/fabric/mlmodel/items)<br> |
 | OneLake    | - [Shortcut](/rest/api/fabric/core/onelake-shortcuts)<br> - [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2)<br> |
 | Power BI    | - [Report](/rest/api/fabric/report/items)<br> - [Dashboard](/rest/api/fabric/dashboard/items)<br> - [Semantic Model](/rest/api/fabric/semanticmodel/items)<br>|
@@ -99,9 +100,11 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 
 :::image type="content" source="media/partner-integration/fabric-workload.png" alt-text="Diagram showing how to create your own fabric workload." lightbox="media/partner-integration/fabric-workload.png":::
 
-**Build a Fabric workload** model is designed to empower ISVs to create custom workloads and experiences on the Fabric platform. It provides ISVs with the necessary tools and capabilities to align their offerings with the Fabric ecosystem, optimizing the combination of their unique value propositions with Fabric's extensive capabilities.
+**Build a Fabric workload** model is designed to empower ISVs to create custom experiences on the Fabric platform. It provides ISVs with the necessary tools and capabilities to align their offerings with the Fabric ecosystem, optimizing the combination of their unique value propositions with Fabric's extensive capabilities.
 
-The **Microsoft Fabric Workload Development Kit** offers a comprehensive toolkit for developers to integrate applications into the Microsoft Fabric workload hub. This integration allows for the addition of new capabilities directly within the Fabric workspace, enhancing the analytics journey for users. It provides developers and ISVs with a new avenue to reach customers, delivering both familiar and new experiences, and leveraging existing data applications. Fabric admins gain the ability to manage access to the workload hub, enabling it for the entire tenant or assigning it with specific scope to control access within the organization.
+The **Microsoft Fabric Workload Development Kit** offers a comprehensive toolkit for developers to integrate applications into the Microsoft Fabric hub. This integration allows for the addition of new capabilities directly within the Fabric workspace, enhancing the analytics journey for users. It provides developers and ISVs with a new avenue to reach customers, delivering both familiar and new experiences, and leveraging existing data applications. Fabric admins gain the ability to manage access to the workload hub, enabling it for the entire tenant or assigning it with specific scope to control access within the organization.
+
+## Related content
 
 - [Learn more about Microsoft Fabric Workload Development Kit](https://aka.ms/FabricWorkloaddevelopmentkitblog)
 - [Get started with building your first workload](../../workload-development-kit/development-kit-overview.md)

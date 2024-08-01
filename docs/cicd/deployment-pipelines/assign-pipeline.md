@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.custom:
     - build-2023
     - ignite-2023
-ms.date: 05/07/2024
+ms.date: 07/29/2024
 ms.search.form: Deployment pipelines operations
 #customer intent: As a developer, I want to learn how to assign a workspace to a deployment pipeline so that I can manage my development process efficiently.
 ---
@@ -43,7 +43,7 @@ To assign a workspace to a pipeline stage, follow these steps:
 
 1. From the dropdown menu, select the workspace you want to assign to this stage. If you don't see the workspace you want, review the [limitations](#considerations-and-limitations) section and make sure that your workspace meets the required conditions.
 
-    :::image type="content" source="media/assign-pipeline/assign-workspace.png" alt-text="A screenshot showing the assign workspace dropdown in a deployment pipelines empty stage.":::
+    :::image type="content" source="media/assign-pipeline/assign-workspace.png" alt-text="A screenshot showing the *assign workspace* dropdown in a deployment pipelines empty stage.":::
 
 1. Select **Assign a workspace**.
 
@@ -61,7 +61,7 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 1. From the *settings* menu, select **Unassign workspace**.
 
-    :::image type="content" source="media/assign-pipeline/unassign-workspace.png" alt-text="A screenshot showing the unassign workspace option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/assign-pipeline/unassign-workspace.png":::
+    :::image type="content" source="media/assign-pipeline/unassign-workspace.png" alt-text="A screenshot showing the *unassign workspace* option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/assign-pipeline/unassign-workspace.png":::
 
 1. In the *Unassign workspace* dialogue box, select **Unassign**.
 
@@ -69,22 +69,43 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 ## Item pairing
 
-Pairing is the process by which an item in one stage of the deployment pipeline is associated with the same item in the adjacent stage. If items aren't paired, even if they have the same name and type, the item in the target stage isn't overwritten.
+Pairing is the process by which an item in one stage of the deployment pipeline is associated with the same item in the adjacent stage. If items aren't paired, even if they have the same name and type, the item in the target stage isn't overwritten during a deploy. A deploy of an unpaired item is known as a clean deploy and creates a copy of that item in the adjacent stage.
 
 <a name="pairing-rules"></a>
 
 Pairing can happen in one of two ways:
 
-* **Deployment**: when an unpaired item is copied from one stage to another using the *Deploy* button, the previously unpaired item is automatically paired with the copy.
+* **Deployment**: when an unpaired item is copied from one stage to another using the *Deploy* button, a copy of the item is created in the next stage and paired with the item being deployed.
+
+  The following table shows when items are paired when the deploying button is used in different circumstances:
+
+    | Scenario | Stage A (e.g. Dev)                                       | Stage B (e.g. Test)                                       | Comment                                                        |
+    |----------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------|
+    | 1        | Name: *PBI Report*<br>Type: *Report*                   | None                    | Clean deploy - pairing occurs                                                 |
+    | 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | If items are paired, ([see if items are paired](#see-which-items-are-paired)) then pressing deploy overwrites stage B.                                                 |
+    | 3        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | If items aren't paired ([see if items are paired](#see-which-items-are-paired)) the report in stage A is copied to stage B. There are then two files in stage B with the same name- one paired and one unpaired. Deployments continues to succeed between the paired items.                                                 |
+
 * **Assigning a workspace to a deployment stage**: when a workspace is assigned to a deployment stage the deployment pipeline attempts to pair items. The pairing criteria are:
 
   * Item Name
   * Item Type
-  * Folder Location
+  * Folder Location (used as a tie breaker when a stage contains duplicate items (two or more items with the same name and type)
 
-  If a single item in each stage has the same name and type then pairing occurs. If there's more than one item in a stage that has the same name and type, then items are paired if they're in the same folder. If the folders aren't the same, pairing fails.
+  If a single item in each stage has the same name and type, then pairing occurs. If there's more than one item in a stage that has the same name and type, then items are paired if they're in the same folder. If the folders aren't the same, pairing fails.
 
-Once items are paired, renaming them *doesn't* unpair the items. Thus, there can be paired items with different names.
+  The following table shows when items are paired when a workspace is assigned in different circumstances:
+
+  | Scenario | Stage A (e.g. Dev)                                       | Stage B (e.g. Test)                                       | Comment                                                        |
+  |----------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------|
+  | 1        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ✅ Pairing occurs                                                 |
+  | 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
+  |          |                                                          | Name: *PBI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
+  | 3        | Name: *PBI Report*<br>Type: *Report*<br>*Folder A* | Name: *PBI Report*<br>Type: *Report*<br>*Folder B*  | ✅ Deployment succeeds but <br>❌ this report isn't paired with dev     |
+  |          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*Folder A*  | ✅ Pairing occurs using folder as a tie breaker for duplicates |
+  |          |                                                          | Name: *PBI Report*<br>Type: *Report*<br>*No folder* | ✅ Deployment succeeds but <br>❌ this report isn't paired with dev     |
+
+> [!NOTE]
+> Once items are paired, renaming them *doesn't* unpair the items. Thus, there can be paired items with different names.
 
 ### See which items are paired
 
@@ -96,7 +117,7 @@ Paired items appear on the same line in the pipeline content list. Items that ar
 
 There's no way to manually pair items except by following the pairing rules described in the [previous section](#pairing-rules). Adding a new item to a workspace that's part of a pipeline, doesn't automatically pair it to an identical item in an adjacent stage. Thus, you can have identical items with the same name in adjacent workspaces that aren't paired.
 
-Here's an example of items that were added to the *Test* pipeline after it was assigned and therefore not paired with the identical item in the *Dev* pipeline:
+Here's an example of items that were added to the directly to the *Test* workspace after it was assigned and therefore not paired with the identical item in the *Dev* pipeline:
 
 :::image type="content" source="./media/assign-pipeline/non-paired-items.png" alt-text="Screenshot showing adjacent stages with nonpaired items with identical names and types listed on the different lines.":::
 
@@ -108,19 +129,21 @@ If two or more items in the workspace to be paired have the same name, type and 
 
 ## Considerations and limitations
 
-Only workspaces that can be assigned to a pipeline appear in the dropdown list. A workspace can be assigned to a pipeline stage if the following conditions apply:
+* Only workspaces that can be assigned to a pipeline appear in the dropdown list. A workspace can be assigned to a pipeline stage if the following conditions apply:
 
-* You must be an admin of the workspace.
+  * You're an admin of the workspace.
 
-* The workspace can't be assigned to any other pipeline.
+  * The workspace isn't assigned to any other pipeline.
 
-* The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md).
+  * The workspace resides on a [Fabric capacity](../../enterprise/licenses.md).
 
-* You need at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace member permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
+  * You have at least [workspace contributor](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace contributor permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
 
-* You can't assign a workspace with [Power BI samples](/power-bi/create-reports/sample-datasets) to a pipeline stage.
+  * The workspace doesn't contain [Power BI samples](/power-bi/create-reports/sample-datasets).
 
-* You can't assign a [template app](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace) workspace.
+  * The workspace isn't a [template app](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace) workspace.
+
+* When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a LakeHouse is a source for a DirectLake semantic model and they're both deployed to the next stage, the DirectLake semantic model in the target stage will be bound to the LakeHouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
 
 ## Related content
 

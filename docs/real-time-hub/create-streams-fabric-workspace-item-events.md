@@ -16,6 +16,9 @@ This article describes how to get Fabric workspace item events as an eventstream
 
 Fabric workspace item events are discrete Fabric events that occur when changes are made to your Fabric Workspace. These changes include creating, updating, or deleting a Fabric item.
 
+Fabric workspace item events are discrete Fabric events that occur when contents of your Fabric Workspace is changed. These changes include creating, updating, or deleting of Fabric items except for the item types listed in the note below.
+[!INCLUDE [unsupported-itemtypes-in-workspaceevents](./includes/unsupported-itemtypes-in-workspaceevents.md)]
+
 With Fabric event streams, you can capture these Fabric workspace events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Fabric workspace events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your Fabric workspace.
 
 Here are the supported Fabric workspace events:
@@ -29,9 +32,7 @@ Here are the supported Fabric workspace events:
 - Microsoft.Fabric.ItemReadSucceeded
 - Microsoft.Fabric.ItemReadFailed
 
-> [!NOTE]
-> - Consuming Fabric events via eventstream isn't supported if the capacity region of the eventstream is in the following regions: Germany West Central, South-Central US, West US2, West US3 or West Europe. 
-> - While consuming Fabric workspace item events, make sure that the capacity region of consuming eventstream is the same as the Tenant home region. 
+[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
 ## Prerequisites 
 
@@ -67,8 +68,8 @@ Now, use instructions from the [Configure and create an eventstream](#configure-
 
     :::image type="content" source="./media/create-streams-fabric-workspace-item-events/select-event-types.png" alt-text="Screenshot that shows the selection of Fabric event types on the Connect page." lightbox="./media/create-streams-fabric-workspace-item-events/select-event-types.png":::
 1. This step is optional. To see the schemas for event types,  select **View selected event type schemas**. 
-1. For **Event source**, confirm that **By workspace** is selected.
-1. For **Workspace**, select the workspace for which you want to receive the events. 
+1. For **Event source**, there's an option between choosing to stream all workspace item events in the tenant by selecting the source option as **Across this tenant** or restricting it to specific workspace by choosing **By workspace** option. To select a **workspace** for which a user want to stream workspace item events, the user must be a workspace admin, member, or a contributor of that workspace. To receive workspace item events across the tenant, users must be a Fabric tenant admin
+1. If **By workspace** was chosen,  select the **workspace** for which you want to receive the events. 
 1. In the **Stream details** section, follow these steps.
     1. Select the **workspace** where you want to save the eventstream.
     1. Enter a **name for the eventstream**. The **Stream name** is automatically generated for you. 

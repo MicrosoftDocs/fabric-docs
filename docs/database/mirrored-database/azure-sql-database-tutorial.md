@@ -3,9 +3,8 @@ title: "Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL D
 description: Learn how to configure a mirrored database from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: roblescarlos
-ms.date: 05/21/2024
-ms.service: fabric
+ms.reviewer: roblescarlos, im-microsoft 
+ms.date: 07/30/2024
 ms.topic: tutorial
 ---
 
@@ -18,15 +17,17 @@ ms.topic: tutorial
 - Create or use an existing Azure SQL Database.
     - The source Azure SQL Database can be either a single database or a database in an elastic pool.
     - If you don't have an Azure SQL Database, [create a new single database](/azure/azure-sql/database/single-database-create-quickstart?view=azuresql-db&preserve-view=true&tabs=azure-portal). Use the [Azure SQL Database free offer](/azure/azure-sql/database/free-offer?view=azuresql-db&preserve-view=true) if you haven't already.
+    - Review the [tier and purchasing model requirements for Azure SQL Database](azure-sql-database.md#tier-and-purchasing-model-support).
     - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
-- [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md).
+- [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md). You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+    - The Fabric capacity needs to be active and running. A paused or deleted capacity will impact Mirroring and no data will be replicated.
 - Enable the Fabric tenant setting [Allow service principals to user Power BI APIs](../../admin/service-admin-portal-developer.md#allow-service-principals-to-use-power-bi-apis). To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
     - If you do not see Mirroring in your Fabric workspace or tenant, your organization admin must enable in admin settings.
 - Networking requirements for Fabric to access your Azure SQL Database:
     - Currently, Mirroring doesn't support Azure SQL Database logical servers behind an Azure Virtual Network or private networking. If you have your Azure SQL logical server behind a private network, you can't enable Azure SQL Database mirroring.
-    - Currently, you must update your Azure SQL logical server firewall rules to [Allow public network access](/azure/azure-sql/database/connectivity-settings#change-public-network-access). You can perform this change via the Azure portal, Azure PowerShell, and Azure CLI.
-    - You must enable the [Allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) option to connect to your Azure SQL Database logical server. You can make this change in the **Networking** section of Azure SQL logical server in the Azure portal.
+    - Currently, you must do one of the following:
+        - Update your Azure SQL logical server firewall rules to [Allow public network access](/azure/azure-sql/database/connectivity-settings#change-public-network-access). You can perform this change via the Azure portal, Azure PowerShell, and Azure CLI.
+        - Enable the [Allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) option to connect to your Azure SQL Database logical server. You can make this change in the **Networking** section of Azure SQL logical server in the Azure portal.
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL logical server
 

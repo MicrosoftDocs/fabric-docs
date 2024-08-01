@@ -13,6 +13,8 @@ items:
     href: buy-subscription.md
   - name: SKU considerations
     href: sku-considerations.md
+  - name: End a trial, close an account, cancel a subscription
+    href: fabric-close-end-cancel.md
 - name: Capacity operations
   items:
   - name: Understand your Azure bill
@@ -38,6 +40,10 @@ items:
     - name: Understand the metrics app storage page
       href: metrics-app-storage-page.md
     - name: Understand the metrics app timepoint page
-      href: metrics-app-timepoint-page.md    
+      href: metrics-app-timepoint-page.md
+    - name: Plan your capacity size
+      href: plan-capacity.md    
     - name: Monitor a paused capacity
-      href: monitor-paused-capacity.md                 
+      href: monitor-paused-capacity.md
+    - name: Understand the metrics app calculations
+      href: metrics-app-calculations.md

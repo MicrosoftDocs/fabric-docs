@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
 ms.date: 05/31/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -67,7 +65,7 @@ This graph in the Microsoft Fabric Capacity Metrics app shows utilization of res
 
 :::image type="content" source="media/usage-reporting/throttling-explore.png" alt-text="Screenshot of the explore button in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/throttling-explore.png":::
 
-In general, similar to Power BI, [operations are classified either as interactive or background](/power-bi/enterprise/service-premium-interactive-background-operations#operation-list), and denoted by color. Most operations in **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. Classifying data warehousing as background reduces the frequency of peaks of CU utilization from triggering [throttling](compute-capacity-smoothing-throttling.md#throttling).
+In general, similar to Power BI, [operations are classified either as interactive or background](../enterprise/fabric-operations.md#interactive-and-background-operations), and denoted by color. Most operations in **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. Classifying data warehousing as background reduces the frequency of peaks of CU utilization from triggering [throttling](compute-capacity-smoothing-throttling.md#throttling).
 
 ### Timepoint drill through graph
 

@@ -1,9 +1,9 @@
 ---
 title: 'Tutorial: Use R to predict avocado prices'
 description: This tutorial shows an end-to-end example of using R to analyze and visualize avocado prices in the United States to predict future prices.
-ms.reviewer: sgilley
-author: ruixinxu
-ms.author: ruxu
+ms.reviewer: None
+author: sdgilley
+ms.author: sgilley
 ms.topic: tutorial
 ms.custom:
   - build-2023

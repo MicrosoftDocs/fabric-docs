@@ -111,6 +111,9 @@ items:
 - name: series_lag_fl()
   displayName: functions library, filter, time shift, delay
   href: /azure/data-explorer/kusto/functions-library/series-lag-fl?context=/fabric/context/context-rti&pivots=fabric
+- name: series_monthly_decompose_anomalies_fl()
+  displayName: functions library, anomaly detection, monthly
+  href: /azure/data-explorer/kusto/functions-library/series-monthly-decompose-anomalies-fl?context=/fabric/context/context-rti&pivots=fabric
 - name: series_moving_avg_fl()
   displayName: functions library, filter, low-pass, smoothing
   href: /azure/data-explorer/kusto/functions-library/series-moving-avg-fl?context=/fabric/context/context-rti&pivots=fabric

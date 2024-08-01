@@ -4,8 +4,7 @@ description: Learn about the mirrored databases from Azure SQL Database in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
-ms.date: 05/09/2024
-ms.service: fabric
+ms.date: 06/20/2024
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -13,9 +12,13 @@ no-loc: [Copilot]
 
 # Mirroring Azure SQL Database (Preview)
 
-[Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate existing your Azure SQL Database estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Azure SQL databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
+[Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Azure SQL Database estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Azure SQL databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
 For a tutorial on configuring your Azure SQL Database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](azure-sql-database-tutorial.md).
+
+To learn more and watch demos of Mirroring Azure SQL Database in Fabric, watch the following the [Data Exposed episode](/shows/data-exposed/key-mirroring-to-azure-sql-database-in-fabric-benefits-data-exposed).
+
+> [!VIDEO https://learn-video.azurefd.net/vod/player?show=data-exposed&ep=key-mirroring-to-azure-sql-database-in-fabric-benefits-data-exposed]
 
 ## Why use Mirroring in Fabric?
 

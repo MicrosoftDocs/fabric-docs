@@ -1,9 +1,10 @@
 ---
 title: Use Azure AI services in Fabric
 description: Overview of using Azure AI services in Fabric.
-ms.reviewer: ssalgado
-author: ruixinxu
-ms.author: ruxu
+ms.author: larryfr
+author: Blackmist
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: overview
 ms.custom:
   - references_regions
@@ -12,6 +13,7 @@ ms.custom:
 ms.date: 11/15/2023
 ms.search.form:
 no-loc: [Copilot]
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # AI services in Fabric (preview)
@@ -36,15 +38,17 @@ Fabric provides two options for utilizing Azure AI services:
 
 ## Prebuilt AI models in Fabric (preview)
 
+> [!NOTE]
+> Prebuilt AI models are currently available in preview and offered for free with a limitation on the number of concurrent requests per user. For Open AI models, the limit is 20 requests per minute per user.
+
 ### [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) 
 
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md). [SynapseML](how-to-use-openai-sdk-synapse.md)
 
-- GPT-35-turbo: GPT-3.5 models can understand and generate natural language or code. The most capable and cost effective model in the GPT-3.5 family is GPT-3.5 Turbo, which has been optimized for chat and works well for traditional completions tasks as well. The `gpt-35-turbo` model supports 4096 max input tokens and the `gpt-35-turbo-16k` model supports up to 16,384 tokens.
-- gpt-4 family: `gpt-4` is supported.
+- GPT-35-turbo: GPT-3.5 models can understand and generate natural language or code. The most capable and cost effective model in the GPT-3.5 family is GPT-3.5 Turbo, which has been optimized for chat and works well for traditional completions tasks as well. The `gpt-35-turbo-0125` model supports up to 16,385 input tokens and 4,096 output tokens.
+- gpt-4 family: `gpt-4-32k` is supported.
 - text-embedding-ada-002 (version 2), embedding model that can be used with embedding API requests. The maximum accepted request token is 8,191, and the returned vector has dimensions of 1,536.
-- text-davinci-003, a legacy model that can do any language task with better quality, longer output, and consistent instruction.
-- code-cushman-002, a legacy model that is optimized for code-completion tasks.
+
 
 ### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) 
 [REST API](how-to-use-text-analytics.md), [SynapseML](how-to-use-text-analytics.md)
