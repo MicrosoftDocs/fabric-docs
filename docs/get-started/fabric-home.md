@@ -36,15 +36,14 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 > [!NOTE]
 > **Power BI Home** is different from the other product workloads. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
 
-:::image type="content" source="media/fabric-home/fabric-home-data-engineering-workspaces.png" alt-text="Screenshot of Home with sections of the canvas numbered." lightbox="media/fabric-home/fabric-home-data-engineering-workspaces.png":::
+:::image type="content" source="media/fabric-home/fabric-home-data-factory-steps.png" alt-text="Screenshot of Home with sections of the canvas numbered." lightbox="media/fabric-home/fabric-home-data-engineering-workspaces.png":::
 
 1. The left navigation pane (nav pane) for your product workload links you to different views of your items and to creator resources. You can [remove icons from the left nav](#remove-icons-from-the-nav-pane) to suit your workflow.
 1. The selector for switching product workloads.
-1. Options for creating a  [!INCLUDE [product-name](../includes/product-name.md)] workspace using a task flow. The task flow visualizes the flow of work in the workspace as you make selections.
 1. Options for creating new items. 
+1. The top menu bar for orienting yourself in Fabric, finding items, help, and sending feedback to Microsoft. The Account manager control is a critical icon for looking up your account information and managing your Fabric trial.
 1. Learning resources to get you started using the selected workload. 
 1. Your items organized by recent workspaces, recent items, and favorites. The items that appear here are the same across product workloads, except for the Power BI workload.
-1. The top menu bar for orienting yourself in Fabric, finding items, help, and sending feedback to Microsoft. The Account manager control is a critical icon for looking up your account information and managing your Fabric trial.
 
 > [!IMPORTANT]
 > Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. The exception to this is if your subscription or license changes to one with less access, then you will receive a prompt asking you to start a trial or upgrade your license. 
