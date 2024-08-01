@@ -20,7 +20,7 @@ This article details the current limitations in [!INCLUDE [product-name](../incl
 
 ## Limitations
 
-Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. Additional functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/en-us/blog/announcing-the-fabric-roadmap?ft=All).
+Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. More functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/en-us/blog/announcing-the-fabric-roadmap?ft=All).
 
 - At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations.
 - Data warehousing is not supported for *multiple* geographies at this time.
