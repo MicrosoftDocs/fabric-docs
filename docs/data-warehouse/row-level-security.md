@@ -4,7 +4,7 @@ description: Learn about row-level security in tables in Fabric data warehousing
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stwynant
-ms.date: 04/24/2024
+ms.date: 08/01/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -33,7 +33,9 @@ Row-level security in Fabric Synapse Data Warehouse supports predicate-based sec
 
 Access to row-level data in a table is restricted by a security predicate defined as an inline table-valued function. The function is then invoked and enforced by a security policy. For filter predicates, the application is unaware of rows that are filtered from the result set. If all rows are filtered, then a null set will be returned.
 
-Filter predicates are applied while reading data from the base table. They affect all get operations: `SELECT`, `DELETE`, and `UPDATE`. The users can't select or delete rows that are filtered. The user can't update rows that are filtered. But it's possible to update rows in such a way that they'll be filtered afterward. 
+Filter predicates are applied while reading data from the base table. They affect all get operations: `SELECT`, `DELETE`, and `UPDATE`. Each table must have its own row-level security defined separately. Users who query tables without a row level security policy will view unfiltered data.
+
+Users can't select or delete rows that are filtered. The user can't update rows that are filtered. But it's possible to update rows in such a way that they'll be filtered afterward. 
 
 Filter predicate and security policies have the following behavior:
 
@@ -133,6 +135,29 @@ WITH SCHEMABINDING
 AS
     RETURN SELECT 1 AS tvf_securitypredicate_result
 WHERE @SalesRep = USER_NAME() OR USER_NAME() = 'manager@contoso.com';
+GO
+ 
+-- Using the function to create a Security Policy
+CREATE SECURITY POLICY SalesFilter
+ADD FILTER PREDICATE Security.tvf_securitypredicate(SalesRep)
+ON sales.Orders
+WITH (STATE = ON);
+GO
+```
+
+To modify a row level security function, you must first drop the security policy. In the following script, we drop the policy `SalesFilter` before issuing an `ALTER FUNCTION` statement on `Security.tvf_securitypredicate`. Then, we recreate the policy `SalesFilter`.
+
+```sql
+
+DROP SECURITY POLICY SalesFilter;
+GO
+-- Creating a function for the SalesRep evaluation
+ALTER FUNCTION Security.tvf_securitypredicate(@SalesRep AS nvarchar(50))
+    RETURNS TABLE
+WITH SCHEMABINDING
+AS
+    RETURN SELECT 1 AS tvf_securitypredicate_result
+WHERE @SalesRep = USER_NAME() OR USER_NAME() = 'president@contoso.com';
 GO
  
 -- Using the function to create a Security Policy
