@@ -159,6 +159,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Teaching bubble blocks Lakehouse explorer context menu from opening
+      href: known-issues/known-issue-800-teaching-bubble-blocks-lakehouse-explorer-context-menu.md
+    - name: Localization blocks operations in a lakehouse
+      href: known-issues/known-issue-797-localization-blocks-operations-lakehouse.md
+    - name: Multiple installations of on-premises data gateway causes pipelines to fail
+      href: known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md
     - name: SQL analytics endpoint table queries fail due to RLE
       href: known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md
     - name: Add data to a report when scrollbar is present doesn't work
