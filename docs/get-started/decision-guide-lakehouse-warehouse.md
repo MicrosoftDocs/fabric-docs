@@ -12,7 +12,7 @@ Microsoft Fabric offers two enterprise-scale, open standard format workloads for
 
 ## Criterion
 
-:::image type="content" source="../get-started/media/decision-guide-warehouse-lakehouse/lakehouse-warehouse-choose.png" alt-text="Diagram that contains decision trees for Lakehouse and Warehouse in Microsoft Fabric.":::
+:::image type="content" source="../get-started/media/decision-guide-lakehouse-warehouse/lakehouse-warehouse-choose.png" alt-text="Diagram that contains decision trees for Lakehouse and Warehouse in Microsoft Fabric.":::
 
 **No Code or Pro Code solutions: How do you want to develop?​**
 
