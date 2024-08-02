@@ -180,9 +180,9 @@ conceptualContent:
           - url: get-started/copilot-fabric-data-factory.md
             itemType: concept
             text: Copilot for Data Factory
-          - url: Copilot for Data Science and Data Engineering
+          - url: get-started/copilot-notebooks-overview.md
             itemType: overview
-            text: Ask Copilot questions about data in the model
+            text: Copilot for Data Science and Data Engineering
           - url: data-warehouse/copilot.md
             itemType: concept
             text: Microsoft Copilot for Data Warehouse
