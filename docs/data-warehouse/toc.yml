@@ -262,6 +262,8 @@ items:
     href: statistics.md
   - name: Caching
     href: caching.md
+  - name: V-Order 
+    href: v-order.md
 - name: Monitor the warehouse
   items:
   - name: Monitoring overview
@@ -303,6 +305,8 @@ items:
     href: limitations.md      
   - name: Change ownership of Warehouse
     href: change-ownership.md
+  - name: Disable V-Order
+    href: disable-v-order.md
 - name: Reference
   items: 
   - name: T-SQL Reference for Fabric
