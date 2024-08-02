@@ -57,7 +57,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Spatial geometry/geography functions
 - Temporary tables
 - Triggers
-- `TRUNCATE`
 
 ## Related content
 
