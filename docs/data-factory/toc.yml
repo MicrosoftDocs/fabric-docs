@@ -681,6 +681,8 @@
         href: copy-activity-performance-and-scalability-guide.md
       - name: Use the modern get data experience for pipelines
         href: modern-get-data-experience-pipeline.md
+      - name: Data type mapping
+        href: data-type-mapping.md
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
@@ -857,6 +859,8 @@
             href: data-workflows-access-private-container-registry.md
           - name: Apache Airflow configurations
             href: data-workflows-supported-apache-airflow-configurations.md
+          - name: Migrate from Azure Workflow Orchestration Manager
+            href: data-workflows-migrate-azure-workflow-orchestration-manager.md
       - name: Tutorials
         items:
           - name: Hello Data workflows

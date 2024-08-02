@@ -4,7 +4,7 @@ description: A known issue is posted where Query folding indicators are incorrec
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/01/2024
+ms.date: 07/31/2024
 ms.custom: known-issue-709
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-709
 
 You can use a connector created with the Power Query SDK that relies on an ODBC driver. In this case and if the connector supports query folding, the Power Query editor might not yield the correct query folding indicator for certain steps.
 
-**Status:** Open
+**Status:** Fixed: July 31, 2024
 
 **Product Experience:** Data Factory
 

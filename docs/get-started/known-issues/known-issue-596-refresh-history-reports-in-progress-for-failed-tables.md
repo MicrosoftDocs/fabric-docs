@@ -4,7 +4,7 @@ description: A known issue is posted where a customer has issues with refresh hi
 author: luitwieler
 ms.author: jeluitwi
 ms.topic: troubleshooting
-ms.date: 1/16/2024
+ms.date: 7/31/2024
 ms.custom: known-issue-596
 ---
 
@@ -14,7 +14,7 @@ Users are experiencing an intermittent issue. Refresh history reports in progres
 
 **APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric.
 
-**Status:** Open
+**Status:** Fixed: July 31, 2024
 
 **Product experience:** Data Factory
 
