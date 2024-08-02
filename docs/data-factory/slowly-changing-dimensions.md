@@ -15,6 +15,9 @@ ms.date: 08/02/2024
 
 ## Common patterns
 
+>[!NOTE]
+>Setting the expectation that this isn't a complete list or fully comprehensive list of all patterns and rather just the ones that are most commonly used with our tool
+
 |Type|Short description|Summary|Link to article|
 |---|----|----|---|
 |1|overwrite|This method overwrites old with new data, and therefore does not track historical data| [Link](link)|
