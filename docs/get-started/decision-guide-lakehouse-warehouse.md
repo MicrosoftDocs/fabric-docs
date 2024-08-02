@@ -3,8 +3,8 @@ title: "Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse"
 description: "Learn more about the decisions for your data in the Warehouse or Lakehouse workloads in Microsoft Fabric."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.topic: product-comparison  #Don't change in the template.
 ms.date: 08/02/2024
+ms.topic: product-comparison  #Don't change in the template.
 ---
 # Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse
 
@@ -12,7 +12,7 @@ Microsoft Fabric offers two enterprise-scale, open standard format workloads for
 
 ## Criterion
 
-:::image type="content" source="../get-started/media/decision-guide-lakehouse-warehouse/lakehouse-warehouse-choose.png" alt-text="Diagram that contains decision trees for Lakehouse and Warehouse in Microsoft Fabric.":::
+:::image type="content" source="media/decision-guide-lakehouse-warehouse/lakehouse-warehouse-choose.png" alt-text="Diagram that contains decision trees for Lakehouse and Warehouse in Microsoft Fabric." lightbox="media/decision-guide-lakehouse-warehouse/lakehouse-warehouse-choose.png":::
 
 **No Code or Pro Code solutions: How do you want to develop?​**
 
