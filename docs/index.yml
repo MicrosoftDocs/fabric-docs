@@ -296,7 +296,7 @@ conceptualContent:
             url: /fabric/release-plan/
             text: See more
         # Card
-        - title: Copilot
+        - title: Use AI capabilities with copilot in Fabric
           links:
           - url: get-started/copilot-fabric-overview.md
             itemType: concept
@@ -325,6 +325,9 @@ conceptualContent:
             - url: cicd/git-integration/intro-to-git-integration.md
               itemType: concept
               text: Git integration
+            - url: ccicd/git-integration/git-automation.md
+              itemType: concept
+              text: Automate Git integration by using APIs
           footerLink:
               url: cicd/index.yml
               text: See more
@@ -334,9 +337,6 @@ conceptualContent:
             - url: workload-development-kit/development-kit-overview.md
               itemType: concept
               text: Workload development kit
-            - url: cicd/partners/partner-integration.md
-              itemType: overview
-              text: Fabric for ISVs
           footerLink:
               url: workload-development-kit/index.yml
               text: See more
@@ -354,6 +354,21 @@ conceptualContent:
               text: Power BI embedded analytics Client APIs
           footerLink:
               url: /rest/api/fabric/
+              text: See more
+        # Card
+        - title: Solutions for ISVs
+          links:
+            - url: cicd/partners/partner-integration.md
+              itemType: overview
+              text: Fabric for ISVs
+            - url: /power-bi/developer/embedded/embedded-analytics-power-bi
+              itemType: concept
+              text: Power BI embedded analytics
+            - url: /power-bi/developer/visuals/power-bi-custom-visuals
+              itemType: concept
+              text: Power BI custom visuals
+          footerLink:
+              url: cicd/partners/partner-integration.md
               text: See more
     - title: Community # < 60 chars (Optional; Remove if not applicable.)
       summary: Learn about Fabric, access training materials and learning paths, stay updated with the blog, engage in forums, contribute to product ideas, join user groups, and explore the MVP program. # < 160 chars (Optional; Remove if not applicable.)
