@@ -8,7 +8,7 @@ ms.date: 08/02/2024
 ---
 # Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse
 
-Microsoft Fabric offers two enterprise-scale, open standard format workloads for data storage: [Warehouse](data-warehousing.md) and [Lakehouse](../data-engineering/lakehouse-overview.md). This article compares the two platforms and the decision points for each.
+Microsoft Fabric offers two enterprise-scale, open standard format workloads for data storage: [Warehouse](../data-warehouse/data-warehousing.md) and [Lakehouse](../data-engineering/lakehouse-overview.md). This article compares the two platforms and the decision points for each.
 
 ## Criterion
 
