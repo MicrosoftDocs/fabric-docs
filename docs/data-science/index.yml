@@ -42,7 +42,19 @@ landingContent:
           - text: Use the Copilot chat panel
             url: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 
-# Card - AI Skill will go here
+# Card
+  - title: AI skill (preview)
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is an AI skill (preview)?
+            url: concept-ai-skill.md
+      - linkListType: get-started
+        links:
+          - text: AI skill over Adventure Works
+            url: ai-skill-scenario.md
+          - text: Get started with AI skills
+            url: how-to-create-ai-skill.md
   
 # Card 
   - title: Get started
