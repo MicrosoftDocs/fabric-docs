@@ -49,6 +49,21 @@
         "source_path_from_root": "/docs/data-science/python-guide/python-library-management.md",
         "redirect_url": "/fabric/data-engineering/library-management",
         "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/ai-skill-scenario.md",
+        "redirect_url": "/fabric/data-science/",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "docs/data-science/concept-ai-skill.md",
+        "redirect_url": "/fabric/data-science/",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "docs/data-science/how-to-create-ai-skill.md",
+        "redirect_url": "/fabric/data-science/",
+        "redirect_document_id": true
       }
 
     ]
