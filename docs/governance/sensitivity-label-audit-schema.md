@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.topic: concept-article #Don't change.
-ms.date: 08/01/2024
+ms.date: 08/04/2024
 
 #customer intent: As a member of a security and compliance team, I want to know which sensitivity label operations are audited and understand the information that appears in the audit entries.
 
@@ -41,6 +41,7 @@ This field indicates the type of item the label change took place on.
 |2|Power BI report|
 |3|Power BI semantic model|
 |7|Power BI dataflow|
+|11|Datamart|
 |12|Fabric item|
 
 ## ActionSource
