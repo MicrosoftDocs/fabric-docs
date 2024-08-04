@@ -13,7 +13,7 @@ ms.date: 08/04/2024
 
 # Audit schema for sensitivity labels in Fabric
 
-Whenever a sensitivity label on a Fabric item is applied, changed, or removed, that activity is recorded in the audit log for Fabric, where you can track it. For information about tracking activites in the audit log, see [Track user activities in Microsoft Fabric](../admin/track-user-activities.md).
+Whenever a sensitivity label on a Fabric item is applied, changed, or removed, that activity is recorded in the audit log for Fabric, where you can track it. For information about tracking activities in the audit log, see [Track user activities in Microsoft Fabric](../admin/track-user-activities.md).
 
 This article documents the information in the Fabric auditing schema that's specific to sensitivity labels. It covers the following activity keys:
 
