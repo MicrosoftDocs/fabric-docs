@@ -1,6 +1,6 @@
 ---
 title: OneLake consumption
-description: Information on how OneLake usage affects your CU consumption.
+description: Information on how OneLake consumes Fabric capacity units including how consumption is calculated, billed, and reported.
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to
@@ -8,7 +8,8 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 01/25/2024
+ms.date: 07/31/2024
+#customer intent: As a capacity admin, I want to understand how OneLake usage is billed and reported, including consumption of storage and transactions, so that I can effectively manage and optimize my costs and resources.
 ---
 
 # OneLake compute and storage consumption
@@ -19,7 +20,7 @@ OneLake usage is defined by data stored and the number of transactions. This pag
 
 OneLake storage is billed at a pay-as-you-go rate per GB of data used and doesn't consume Fabric Capacity Units (CUs). Fabric items like lakehouses and warehouses consume OneLake storage. Data stored in OneLake for Power BI import semantic models is included in the price of your Power BI licensing. For Mirroring storage, data up to a certain limit is free based on the purchased compute capacity SKU you provision. For more information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
-You can visualize your OneLake storage usage in the Fabric Capacity Metrics app in the Storage tab. For more information about monitoring usage, see the [Metrics app Storage page](../enterprise/metrics-app-storage-page.md). To understand OneLake consumption more, see the [OneLake Capacity Consumption page](../onelake/onelake-capacity-consumption.md)
+You can visualize your OneLake storage usage in the Fabric Capacity Metrics app in the Storage tab. Also note that [soft-deleted data](/fabric/onelake/onelake-disaster-recovery#soft-delete-for-onelake-files) is billed at the same rate as active data. For more information about monitoring usage, see the [Metrics app Storage page](../enterprise/metrics-app-storage-page.md). To understand OneLake consumption more, see the [OneLake Capacity Consumption page](../onelake/onelake-capacity-consumption.md)
 
 ## Transactions
 
@@ -49,9 +50,11 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 | **OneLake Other Operations** | OneLake Other Operations | Per 10,000 | 306 CU seconds |
 
 ## Shortcuts
+
 When accessing data using OneLake shortcuts, the transaction usage counts against the capacity tied to the workspace where the shortcut is created. The capacity where the data is ultimately stored (that the shortcut points to) is billed for the data stored.
 
 ## Paused Capacity
+
 When a capacity is paused, the data stored will continue to be billed using the pay-as-you-go rate per GB. All transactions are rejected when a capacity is paused, so no Fabric CUs are consumed due to OneLake transactions. To access your data or delete a Fabric item, the capacity needs to be resumed. You can delete the workspace while a capacity is paused.
 
 ## Disaster recovery

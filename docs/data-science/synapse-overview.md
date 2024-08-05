@@ -4,7 +4,7 @@ description: Learn about the SynapseML library and how it simplifies the creatio
 ms.reviewer: ssalgadodev
 author: JessicaXYWang
 ms.author: jessiwang
-ms.service: synapse-analytics
+ms.service: azure-synapse-analytics
 ms.topic: conceptual
 ms.subservice: machine-learning
 ms.date: 12/05/2023

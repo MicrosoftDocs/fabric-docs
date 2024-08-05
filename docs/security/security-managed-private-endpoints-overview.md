@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/30/2024
+ms.date: 08/01/2024
 ---
 
 # Overview of managed private endpoints for Fabric
@@ -14,7 +14,7 @@ Managed private endpoints are feature that allows secure and private access to d
 
 ## What are Managed Private Endpoints?
 
-* Managed private endpoints are connections that workspace admins can create to access data sources that are behind a firewall or that are blocked from accessing from the public internet.
+* Managed private endpoints are connections that workspace admins can create to access data sources that are behind a firewall or that are blocked from public internet access.
 
 * Managed private endpoints allow Fabric Spark workloads to securely access data sources without exposing them to the public network or requiring complex network configurations.
 
@@ -32,13 +32,13 @@ For more information about supported data sources for managed private endpoints 
 
 * **Starter pool limitation**: Workspaces with managed virtual networks (VNets) can't access starter pools. This category encompasses workspaces that use managed private endpoints or are associated with a Fabric tenant enabled with Azure Private Links and have executed Spark jobs. Such workspaces rely on on-demand clusters, taking three to five minutes to start a session.
 
-* **Managed private endpoints**: Managed private endpoints are supported only for Fabric trial capacity and Fabric capacities F64 or higher.
+* **Managed private endpoints**: Managed private endpoints are supported for Fabric trial capacity and all Fabric F SKU capacities.
 
 * **Tenant Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported Fabric Tenant home regions results in errors. These unsupported Tenant home regions include
   
 | Region         |
 |----------------|
-| West Central US |
+| Singapore |
 | Israel Central |
 | Switzerland West | 
 | Italy North    |
@@ -46,7 +46,7 @@ For more information about supported data sources for managed private endpoints 
 | Mexico Central |
 | Qatar Central  |
 | Spain Central  |
-
+| Brazil South  |
 
 * **Capacity Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported capacity regions results in errors. These unsupported regions include 
   
@@ -63,8 +63,11 @@ For more information about supported data sources for managed private endpoints 
 | Korea South    |
 | Southafrica West |
 | UAE Central    |
+| Brazil South   |
+| Singapore |
+| Central US  |
 
-* **Spark job resilience**: To prevent Spark job failures or errors, migrate workspaces with managed private endpoints to Fabric capacity SKUs of F64 or higher.
+* **Spark job resilience**: To prevent Spark job failures or errors, migrate workspaces with managed private endpoints to any Fabric F SKU capacity.
 
 * **Workspace migration**: Workspace migration across capacities in different regions is unsupported.
 

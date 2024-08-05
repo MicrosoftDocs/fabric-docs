@@ -5,13 +5,15 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.collection: ce-skilling-ai-copilot											   
-ms.date: 07/21/2024
+ms.collection: ce-skilling-ai-copilot
+ms.date: 08/04/2024
 ---
 
 # Tenant settings index
 
-This article lists all Fabric tenant settings, along with a brief description of each. For more information about tenant settings in general, see [About tenant settings](about-tenant-settings.md).
+This article lists all Fabric tenant settings, along with a brief description of each, and links to relevant documentation, if available. For more information about tenant settings in general, see [About tenant settings](about-tenant-settings.md).
+
+If you want to get to the tenant settings in the Fabric portal, see [How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 
 ## [Microsoft Fabric](fabric-switch.md)
 

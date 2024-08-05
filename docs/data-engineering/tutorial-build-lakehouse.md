@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/19/2024
+ms.date: 07/25/2024
 ---
 
 # Lakehouse tutorial: Create a lakehouse, ingest sample data, and build a report
@@ -110,7 +110,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the Delta table
 
 ## Build a report
 
-1. Previously all the lakehouse tables and views were automatically added to the semantic model. With recent updates, for new lakehouses, you must manually add your tables to the semantic model. From the lakehouse **Reporting** tab, select **Manage default semantic model** and select the tables that you want to add to the semantic model. In this case, select the **dimension_customer** table.
+1. Previously all the lakehouse tables and views were automatically added to the semantic model. With recent updates, for new lakehouses, you must manually add your tables to the semantic model. Open your lakehouse and switch to the **SQL analytics endpoint** view. From the **Reporting** tab, select **Manage default semantic model** and select the tables that you want to add to the semantic model. In this case, select the **dimension_customer** table.
 
    :::image type="content" source="media\tutorial-build-lakehouse\select-semantic-model-tables.png" alt-text="Screenshot where you can select the tables to add to the semantic model.":::
 
