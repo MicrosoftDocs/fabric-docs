@@ -1,10 +1,10 @@
 ---
 title: Monitor Microsoft Fabric event streams capacity consumption
 description: Learn how to monitor capacity consumption for Microsoft Fabric event streams.
-author: xujiang1
-ms.author: ajetasi
+author: xujxu
+ms.author: xujiang1
 ms.topic: how-to 
-ms.date: 06/11/2024
+ms.date: 08/05/2024
 ms.search.form: Monitor event streams capacity consumption
 ---
 
@@ -13,21 +13,24 @@ ms.search.form: Monitor event streams capacity consumption
 This article contains information on how Microsoft Fabric event streams usage is billed and reported. 
 
 ## Operation types
-The event streams usage is defined by three operation types, which are described in the following table<sup>**[Note 1](#Note-1)**</sup>. The table provides information about event streams operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
+The event streams usage is defined by four operation types, which are described in the following table <sup>**[Note 1](#Note-1)**</sup>. The table provides information about event streams operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
  
 
 | Operation in Capacity Metrics App | Description | Operation unit of measure | Fabric consumption rate |
 | --------------------------------- | ----------- | ------------------------- | ----------------------- |
-| Eventstream Per Hour | Flat charge | Per hour | 0.222 CU per hour |
-| Eventstream Data Traffic per GB | Data ingress & egress volume <br/> (Includes 24-hour retention) | Per GB | 0.342 CU per hour per GB |
-| Eventstream Processor Per Hour | Computing resources consumed by the processor | Per hour | Base-rate: 2.333 CU per hour. Starts at 0.778 CU per hour (1/3 of the base-rate) and autoscale<sup>**[Note 2](#Note-2)**</sup>  |
+| Eventstream Per Hour | Flat charge | Per hour | **0.222** CU per hour |
+| Eventstream Data Traffic per GB | Data ingress & egress volume in default and derived streams <br/> (Includes 24-hour retention) | Per GB | **0.342** CU per hour per GB |
+| Eventstream Processor Per Hour | Computing resources consumed by the processor | Per hour | Base-rate: 2.333 CU per hour. Starts at **0.778** CU per hour (1/3 of the base-rate) and autoscale <sup>**[Note 2](#Note-2)**</sup>  |
+| Eventstream Connectors Per vCore Hour | Computing resources consumed by the connectors | Per hour | **0.611** CU per vCore hour <sup>**[Note 3](#Note-3)**</sup> |
 
 * <a id="Note-1"></a>**Note 1**. Eventstream is charged only when it is active (i.e., has events flowing in or out). If there is no traffic flowing in or out for the past two hours (idle state), no charges will apply.
-* <a id="Note-2"></a>**Note 2**. The CU consumption rate of the Eventstream processor is correlated to the throughput of event traffic, the complexity of the event processing logic, and the partition count of input data:
+* <a id="Note-2"></a>**Note 2: Eventstream Processor Per Hour**. The CU consumption rate of the Eventstream processor is correlated to the throughput of event traffic, the complexity of the event processing logic, and the partition count of input data:
    * With "Low" set in "Event throughput setting", the processor CU consumption rate starts at 1/3 base-rate (0.778 CUs/hour) and autoscale within 2/3 base-rate (1.555 CUs/hour), 1 base-rate (2.333 CUs/hour), 2 base-rates, and 4 base-rates.
    * With "Medium" set in "Event throughput setting", the processor CU consumption rate starts at 1 base-rate and autoscale within multiple possible base-rates.
    * With "High" set in "Event throughput setting", the processor CU consumption rate starts at 2 base-rates and autoscale within multiple possible base-rates.
-
+* <a id="Note-3"></a>**Note 3: Eventstream Connectors Per vCore Hour** 
+   * The CU consumption of the Eventstream connector is for charging computing resources when pulling real-time data from sources, excluding Azure Event Hub, Azure IoT Hub, and Custom endpoints. Data from Azure Event Hub and Azure IoT Hub is pulled using the Eventstream Processor. 
+   * Connector consumption is designed to correlate with throughput. When throughput increases, the number of vCores will increase (autoscale), resulting in higher CU consumption. Currently, connector autoscaling is unavailable, so only one vCore is used per connector source.
 
 ## Storage billing
 Events retention in Fabric event streams is billed separately from your Fabric or Power BI premium capacity units.  
