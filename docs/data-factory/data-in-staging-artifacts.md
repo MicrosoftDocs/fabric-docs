@@ -4,7 +4,7 @@ description: This article provides information about what staging artifacts are.
 author: Luitwieler
 ms.author: jeluitwi
 ms.topic: concept-article
-ms.date: 07/22/2024
+ms.date: 08/05/2024
 ---
 
 # Data in Dataflow Gen2 staging artifacts
