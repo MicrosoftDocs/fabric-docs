@@ -29,15 +29,15 @@ After you complete the steps here, Data Factory will scan all the files in the s
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
+   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
 
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
 1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
 
-   :::image type="content" source="media/tutorial-incremental-copy-data-last-modified-date/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
 
-   :::image type="content" source="media/tutorial-incremental-copy-data-last-modified-date/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
+   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
 ### Step 2: Configure a copy activity for incremental copy
 
@@ -45,11 +45,11 @@ After you complete the steps here, Data Factory will scan all the files in the s
 
 1. In **Source** tab, select your Lakehouse as the connection, and select **Files** as the **Root folder**. In **File path**, select *source* as the folder. Specify **Binary** as your **File format**.
 
-   :::image type="content" source="media/tutorial-incremental-copy-data-last-modified-date/configure-source.png" alt-text="Screenshot showing the configuration of source.":::
+   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/configure-source.png" alt-text="Screenshot showing the configuration of source.":::
 
 1. In **Destination** tab, select your Lakehouse as the connection, and select **Files** as the **Root folder**. In **File path**, select *destination* as the folder. Specify **Binary** as your **File format**.
 
-   :::image type="content" source="media/tutorial-incremental-copy-data-last-modified-date/configure-destination.png" alt-text="Screenshot showing the configuration of destination.":::
+   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/configure-destination.png" alt-text="Screenshot showing the configuration of destination.":::
 
 ### Step 3: Set the time interval for incremental copy
 
@@ -57,13 +57,13 @@ Assume that you want to incrementally copy new or changed files in your source f
 
 1. Select the **Schedule** button on the top menu. In the pop-up pane, turn on your schedule run, select **By the minute** in **Repeat** and set the interval to **5** minutes. Then specify the **Start date and time** and **End date and time** to confirm the time span that you want this schedule to be executed. Then select **Apply**.
 
-   :::image type="content" source="media/tutorial-incremental-copy-data-last-modified-date/select-schedule.png" alt-text="Screenshot showing the schedule button.":::
+   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/select-schedule.png" alt-text="Screenshot showing the schedule button.":::
 
-   :::image type="content" source="media/tutorial-incremental-copy-data-last-modified-date/configure-schedule.png" alt-text="Screenshot showing the configuration of schedule.":::
+   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/configure-schedule.png" alt-text="Screenshot showing the configuration of schedule.":::
 
-1. Go to your copy activity source. In **Filter by last modified** under **Advanced**, specify the **Start time** using **Add dynamic content**. Enter `@formatDateTime(addMinutes(pipeline().TriggerTime, -5), 'yyyy-MM-dd HH:mm:ss')` in the opened window.
+1. Go to your copy activity source. In **Filter by last modified** under **Advanced**, specify the **Start time** using **Add dynamic content**. Enter `@formatDateTime(addMinutes(pipeline().TriggerTime, -5), 'yyyy-MM-dd HH:mm:ss')` in the opened pipeline expression builder.
 
-   :::image type="content" source="media/tutorial-incremental-copy-data-last-modified-date/start-time.png" alt-text="Screenshot showing the Start time under Filter by last modified.":::
+   :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/start-time.png" alt-text="Screenshot showing the Start time under Filter by last modified.":::
 
 1. Select **Run**. Now your copy activity can copy the new added or changed files in your source in every next five minutes to your destination folder.
 
