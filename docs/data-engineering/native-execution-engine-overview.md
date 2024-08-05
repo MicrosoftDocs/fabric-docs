@@ -156,13 +156,13 @@ There are several methods to determine if an operator in your Apache Spark job w
 
 ### Spark UI and Spark history server
 
-Access the Spark UI or Spark history server to locate the query you need to inspect. In the query plan displayed within the interface, look for any node names that end with the suffix *Transformer*. The suffix indicates that the native execution engine executed the operation. For instance, nodes might be labeled as *RollUpHashAggregateTransformer*, *ProjectExecTransformer*, *BroadcastHashJoinExecTransformer*, *ShuffledHashJoinExecTransformer*, or *BroadcastNestedLoopJoinExecTransformer*.
+Access the Spark UI or Spark history server to locate the query you need to inspect. In the query plan displayed within the interface, look for any node names that end with the suffix *Transformer*, *NativeFileScan* or *VeloxColumnarToRowExec*. The suffix indicates that the native execution engine executed the operation. For instance, nodes might be labeled as *RollUpHashAggregateTransformer*, *ProjectExecTransformer*, *BroadcastHashJoinExecTransformer*, *ShuffledHashJoinExecTransformer*, or *BroadcastNestedLoopJoinExecTransformer*.
 
 :::image type="content" source="media\native\spark-ui.jpg" alt-text="Screenshot showing how to check DAG visualization that ends with the suffix Transformer." lightbox="media\native\spark-ui.jpg":::
 
 ### DataFrame explain
 
-Alternatively, you can execute the `df.explain()` command in your notebook to view the execution plan. Within the output, look for the same *Transformer* suffixes. This method provides a quick way to confirm whether specific operations are being handled by the native execution engine.
+Alternatively, you can execute the `df.explain()` command in your notebook to view the execution plan. Within the output, look for the same *Transformer*, *NativeFileScan* or *VeloxColumnarToRowExec* suffixes. This method provides a quick way to confirm whether specific operations are being handled by the native execution engine.
 
 :::image type="content" source="media\native\df-details.jpg" alt-text="Screenshot showing how to check the physical plan for your query, and see that the query was executed by the native execution engine." lightbox="media\native\df-details.jpg":::
 
