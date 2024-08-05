@@ -1,6 +1,6 @@
 ---
 title: Data in Dataflows gen2 staging 
-description: This article provides information about what staging artifacts are and how to access data wihtin them.
+description: This article provides information about what staging artifacts are.
 author: Luitwieler
 ms.author: jeluitwi
 ms.topic: Conceptual
@@ -17,7 +17,7 @@ Staging artifacts are intermediate data storage locations used by Dataflows Gen2
 
 # Data in staging artifacts
 
-Staging artifacts are not designed for direct access by users. Dataflows Gen2 manages the data in the staging artifacts and ensures that the data is in a consistent state. Accessing data in staging artifacts directly is not recommended as it cannot be gueranteed that the data is in a consistent state. If you need to access data in staging artifacts for GDPR compliance or other reasons, you can use the dataflow connector in Power BI, Excel or other Dataflows.
+Staging artifacts are not designed for direct access by users. Dataflows Gen2 manages the data in the staging artifacts and ensures that the data is in a consistent state. Accessing data in staging artifacts directly is not recommended as it cannot be gueranteed that the data is in a consistent state. If you need to access data in staging artifacts for General Data Protection Regulation (GDPR) compliance or other reasons, you can use the dataflow connector in Power BI, Excel or other Dataflows.
 
 Removing data from the staging artifacts can be forced by one of the following actions:
 
