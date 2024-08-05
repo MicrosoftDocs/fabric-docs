@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/18/2024
+ms.date: 08/05/2024
 ---
 
 # How to copy data using copy activity
@@ -190,7 +190,13 @@ See the following table for the description of each setting.
 |**Fault tolerance** |When selecting this option, you can ignore some errors occurred in the middle of copy process. For example, incompatible rows between source and destination store, file being deleted during data movement, etc.  |
 |**Enable logging** |When selecting this option, you can log copied files, skipped files and rows|
 |**Enable staging** | Specify whether to copy data via an interim staging store. Enable staging only for the beneficial scenarios.|
-|**Staging account connection**| When selecting **Enable staging**, specify the connection of an Azure storage data source as an interim staging store. Select **+ New** to create a staging connection if you don't have it.|
+| **Data store type** | When selecting Enable staging, you can choose **Workspace** and **External** as your data store type.|
+| *For **Workspace*** |  |
+|**Workspace**| Specify to use built-in staging storage. |
+| *For **External*** |  |
+| **Staging account connection** |Specify the connection of an [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md), which refers to the instance of Storage that you use as an interim staging store. Create a staging connection if you don't have it. |
+| **Storage path** | Specify the path that you want to contain the staged data. If you do not provide a path, the service creates a container to store temporary data.  Specify a path only if you use Storage with a shared access signature, or you require temporary data to be in a specific location. |
+| **Enable compression** | Specifies whether data should be compressed before it's copied to the destination. This setting reduces the volume of data being transferred. |
 
 ### Configure parameters in a copy activity
 
