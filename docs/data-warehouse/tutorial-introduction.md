@@ -4,7 +4,7 @@ description: Learn about the purpose of the tutorial, the end-to-end scenario an
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
+ms.date: 07/18/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -37,12 +37,14 @@ In this tutorial, you take on the role of a [!INCLUDE [fabric-dw](includes/fabri
 1. [Ingest data](tutorial-ingest-data.md) from source to the data warehouse dimensional model with a data pipeline.
 1. [Create tables](tutorial-create-tables.md) in your [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 1. [Load data with T-SQL](tutorial-load-data.md) with the SQL query editor.
+1. [Clone a table using T-SQL](tutorial-clone-table.md) with the SQL query editor.
 1. [Transform the data](tutorial-transform-data.md) to create aggregated datasets using T-SQL.
+1. [Time travel using T-SQL](tutorial-time-travel.md) to see data as it appeared.
 1. [Use the visual query editor](tutorial-visual-query.md) to query the data warehouse.
 1. [Analyze data](tutorial-analyze-data-notebook.md) with a notebook.
 1. [Create and execute cross-warehouse queries](tutorial-sql-cross-warehouse-query-editor.md) with SQL query editor.
 1. [Create Power BI reports](tutorial-power-bi-report.md) using DirectLake mode to analyze the data in place.
-1. [Build a report](tutorial-build-report-onelake-data-hub.md) from the **Data Hub**.
+1. [Build a report](tutorial-build-report-onelake-data-hub.md) from the OneLake **Data Hub**.
 1. [Clean up resources](tutorial-clean-up.md) by deleting the workspace and other items.
 
 ## Data warehouse end-to-end architecture
