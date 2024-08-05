@@ -90,7 +90,7 @@ Autoscale for Apache Spark pools allows automatic scale up and down of compute r
 
 Dynamic allocation allows the Apache Spark application to request more executors if the tasks exceed the load that current executors can bear. It also releases the executors when the jobs are completed, and if the Spark application is moving to idle state. Enterprise users often find it hard to tune the executor configurations because they're vastly different across different stages of a Spark job execution process. These configurations are also dependent on the volume of data processed, which changes from time to time. You can enable dynamic allocation of executors option as part of the pool configuration, which enables automatic allocation of executors to the Spark application based on the nodes available in the Spark pool.
 
-When you enable the dynamic allocation option for every Spark application submitted, the system reserves executors during the job submission step based on the maximum nodes. You specify maximum nodes to support successful automatic scale scenarios.
+When you enable the dynamic allocation option for every Spark application submitted, the system reserves executors during the job submission step based on the minimum nodes. You specify maximum nodes to support successful automatic scale scenarios.
 
 ## Related content
 
