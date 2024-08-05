@@ -1,5 +1,5 @@
 ---
-title: Data in Dataflows gen2 staging 
+title: Data in Dataflows Gen2 staging 
 description: This article provides information about what staging artifacts are.
 author: Luitwieler
 ms.author: jeluitwi
