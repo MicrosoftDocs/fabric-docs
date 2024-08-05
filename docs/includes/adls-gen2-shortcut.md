@@ -30,7 +30,7 @@ ms.date: 07/16/2023
 
     If you just used the storage account in the connection URL, all of your available containers appear in the left navigation view. If you specified a container in connection URL, only the specified container and its contents appear in the navigation view.
 
-    Navigate the storage account by selecting a folder or clicking on the expansion carrot next to a folder.
+    Navigate the storage account by selecting a folder or clicking on the expansion arrow next to a folder.
 
     In this view, you can select one or more shortcut target locations. Choose target locations by clicking the checkbox next a folder in the left navigation view.
 1. Select **Next**

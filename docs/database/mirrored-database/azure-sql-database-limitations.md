@@ -50,7 +50,7 @@ For troubleshooting, see:
 
 ## Table level
 
-- A table cannot be mirrored if it does not have a primary key rowstore clustered index.
+- A table cannot be mirrored with the following attributes:
     - A table using a primary key defined and used as nonclustered primary key cannot be mirrored.  
     - A table cannot be mirrored if the primary key is one of the data types: **hierarchyid**, **sql_variant**, **timestamp**.
     - Clustered columnstore indexes are not currently supported.

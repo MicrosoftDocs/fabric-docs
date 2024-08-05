@@ -159,6 +159,14 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Custom visuals don't render in Desktop
+      href: known-issues/known-issue-801-custom-visuals-not-render.md
+    - name: Teaching bubble blocks Lakehouse explorer context menu from opening
+      href: known-issues/known-issue-800-teaching-bubble-blocks-lakehouse-explorer-context-menu.md
+    - name: Localization blocks operations in a lakehouse
+      href: known-issues/known-issue-797-localization-blocks-operations-lakehouse.md
+    - name: Multiple installations of on-premises data gateway causes pipelines to fail
+      href: known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md
     - name: SQL analytics endpoint table queries fail due to RLE
       href: known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md
     - name: Add data to a report when scrollbar is present doesn't work
@@ -249,7 +257,7 @@ items:
       href: known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md
     - name: SQL database mirror doesn't start when you create connection during mirror creation
       href: known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md
-    - name: SQL endpoint and semantic model are orphaned when a lakehouse is deleted
+    - name: SQL analytics endpoint and semantic model are orphaned when a lakehouse is deleted
       href: known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md
     - name: Apps and reports not available when editing scorecard metrics
       href: known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md
