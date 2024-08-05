@@ -127,7 +127,7 @@ To understand the considerations and limitations of various lifecycle management
 
   :::image type="content" source="./media/troubleshoot-cicd/maximum-commit-size.png" alt-text="Screenshot or error message that says Maximum commit size exceeded.":::
 
-**Cause**: The total size of files to commit is limited to 50MB. 
+**Cause**: The total size of files to commit is limited to 50 MB.  
 **Solution**: If you're trying to commit several items at once, consider committing them in smaller batches. If your commit contains one item with many files, contact <a href="https://support.fabric.microsoft.com/" target="_blank">support</a>.
 
 ### Update issues
