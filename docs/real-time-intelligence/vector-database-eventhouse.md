@@ -5,23 +5,23 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 07/18/2024
+ms.date: 08/05/2024
 ms.search.form: Eventhouse
 ---
 # Tutorial: Use an Eventhouse as a vector database
 
 In this tutorial, you'll learn how to use an Eventhouse as a vector database to store and query vector data in Real-Time Intelligence. For more information, see [Vector databases](vector-database.md)
 
-The scenario used is semantic searches on top of Wikipedia pages to find commonly themed pages. You generate vectors for tens of thousands of Wikipedia pages by embedding them with an Open AI model and storing the vectors in an Eventhouse, together with some metadata related to the page.
+The scenario used is semantic searches on top of Wikipedia pages to find commonly themed pages. You'll use an available sample dataset containing vectors for tens of thousands of Wikipedia pages that have been embedded with an Open AI model, and  store the vectors in an Eventhouse together with some metadata related to the page. Then you can encode your own query using the same Open AI model and search for the most similar Wikipedia pages. This could be useful if you want to find similarly themed movies, events in history, or any other topic that is covered in Wikipedia.
 
 Specifically, in this tutorial you will:
 
 > [!div class="checklist"]
 >
-> * Create an embedding for the natural language query using the Open AI model.
-> * Obtain the embedding vector for the search term from Open AI.
-> * Use the [series_cosine_similarity KQL function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) to calculate the similarities between the query embedding vector and those of the wiki pages.
-> * Select rows of the highest similarity to get the wiki pages that are most relevant to your search query.
+> * Write vector data from a pre-embedded dataset to an Eventhouse.
+> * Create an embedding for a natural language query using the Open AI model.
+> * Use the embedding vector from Open AI and the [series_cosine_similarity KQL function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) to calculate the similarities between the query embedding vector and those of the wiki pages.
+> * View rows of the highest similarity to get the wiki pages that are most relevant to your search query.
 
 ## Prerequisites
 
