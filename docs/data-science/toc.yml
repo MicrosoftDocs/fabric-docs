@@ -346,7 +346,7 @@ items:
     - name: SemPy Python SDK
       href: /python/api/semantic-link/overview-semantic-link
 - name: AI skill
-  items:
+  items: 
     - name: What is the AI skill?
       href: concept-ai-skill.md
     - name: How to create an AI skill
