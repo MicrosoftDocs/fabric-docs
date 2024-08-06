@@ -12,109 +12,38 @@ ms.date: 08/06/2024
 
 ---
 
-<!-- --------------------------------------
-
-- Use this template with pattern instructions for:
-
-How To
-
-- Before you sign off or merge:
-
-Remove all comments except the customer intent.
-
-- Feedback:
-
-https://aka.ms/patterns-feedback
-
--->
-
 # Create and manage a set of tags
 
-<!-- Required: Article headline - H1
-
-Identify the product or service and the task the
-article describes.
-
--->
+This article describes how to create and manage a set of tags in Microsoft Fabric. The target audience is Fabric administrators who want to create and manage such a set in their organization.
 
 [Introduce and explain the purpose of the article.]
+Can create one or more tags at a time.
+You can delete or rename tags.
+When you delete a tag it gets removed from an items it was applied to.
+When you rename a tag it gets renamed on any item it was applied to.
 
-<!-- Required: Introductory paragraphs (no heading)
-
-Write a brief introduction that can help the user
-determine whether the article is relevant for them
-and to describe the task the article covers.
-
--->
 
 ## Prerequisites
 
-<!-- Optional: Prerequisites - H2
+You must have a Fabric administrator role or higher to create and manage tags.
 
-If included, "Prerequisites" must be the first H2 in the article.
+## Create a set of tags
 
-List any items that are needed to complete the How To,
-such as permissions or software.
+This section shows how to create a set of one or more tags.
 
-If you need to sign in to a portal to complete the How To, 
-provide instructions and a link.
+1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags (Preview)**.
 
--->
+    The Tags tab opens. All currently defined tags are listed on the tab. (is there a limit on the number of tags that can be defined in the tenant?)
 
-## "[verb] * [noun]"
+1. Select **+ New tag**. If no tags have been defined yet, select **Add your first tags**.
 
-[Introduce the procedure.]
+    :::image type="content" source="./media/tags-define/create-tags.png" alt-text="Screenshot showing how to create two new tags.":::
 
 1. Procedure step
 1. Procedure step
-1. Procedure step
-
-<!-- Required: Steps to complete the task - H2
-
-In one or more H2 sections, organize procedures. A section
-contains a major grouping of steps that help the user complete
-a task.
-
-Begin each section with a brief explanation for context, and
-provide an ordered list of steps to complete the procedure.
-
-If it applies, provide sections that describe alternative tasks or
-procedures.
-
--->
-
-## Clean up resources
-
-<!-- Optional: Steps to clean up resources - H2
-
-Provide steps the user can take to clean up resources that
-they might no longer need.
-
--->
 
 ## Related content
 
 * [Tags overview](tags-overview.md)
 * [Apply tags to items](tags-apply.md)
 * [Monitor tag use](tags-monitor.md)
-
-<!-- Optional: Next step or Related content - H2
-
-Consider adding one of these H2 sections (not both):
-
-A "Next step" section that uses 1 link in a blue box 
-to point to a next, consecutive article in a sequence.
-
--or- 
-
-A "Related content" section that lists links to 
-1 to 3 articles the user might find helpful.
-
--->
-
-<!--
-
-Remove all comments except the customer intent
-before you sign off or merge to the main branch.
-
--->
