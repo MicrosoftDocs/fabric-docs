@@ -13,11 +13,11 @@ To improve performance and reliability, Dataflow Gen2 uses staging items to stor
 
 ## What are staging artifacts?
 
-Staging artifacts are intermediate data storage locations used by Dataflow Gen2 to store data during data transformation. These artifacts go by the "DataflowsStagingLakehouse" and "DataflowsStagingWarehouse" names. The staging artifacts are used to store intermediate data during data transformation to improve performance. These artifacts are created automatically when you create your first dataflow and are managed by Dataflow Gen2. These artifacts are by default hidden from the user in the workspace, but might be visible in other experiences like Get Data or the Lakehouse explorer. We strongly advise not to access or modify the data in the staging artifacts directly as it may lead to unexpected behavior. Also storing data yourself in the staging artifacts isn't supported and might result in data loss.
+Staging artifacts are intermediate data storage locations used by Dataflow Gen2 to store data during data transformation. These artifacts go by the "DataflowsStagingLakehouse" and "DataflowsStagingWarehouse" names. The staging artifacts are used to store intermediate data during data transformation to improve performance. These artifacts are created automatically when you create your first dataflow and are managed by Dataflow Gen2. These artifacts are hidden from the user in the workspace, but might be visible in other experiences like Get Data or the Lakehouse explorer. We strongly advise not to access or modify the data in the staging artifacts directly as it may lead to unexpected behavior. Also storing data yourself in the staging artifacts isn't supported and might result in data loss.
 
 ## Data in staging artifacts
 
-Staging artifacts aren't designed for direct access by users. Dataflow Gen2 manages the data in the staging artifacts and ensures that the data is in a consistent state. Accessing data in staging artifacts directly isn't recommended as it can't be guaranteed that the data is in a consistent state. If you need to access data in staging artifacts you can use the dataflow connector in Power BI, Excel, or other dataflows.
+Staging artifacts aren't designed for direct access by users. Dataflow Gen2 manages the data in the staging artifacts and ensures that the data is in a consistent state. Accessing data in staging artifacts directly isn't supported as it can't be guaranteed that the data is in a consistent state. If you need to access data in staging artifacts you can use the dataflow connector in Power BI, Excel, or other dataflows.
 
 Removing data from the staging artifacts can be forced by one of the following actions:
 
