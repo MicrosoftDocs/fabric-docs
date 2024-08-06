@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.custom:
   - ignite-2024
   - ignite-2024-fabric
-ms.date: 07/29/2024
+ms.date: 08/06/2024
 
 ms.search.form: Data Wrangler
 ---
@@ -29,7 +29,7 @@ ms.search.form: Data Wrangler
 
 ## Launching Data Wrangler with a Spark DataFrame
 
-Users can open Spark DataFrames in Data Wrangler directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook, by navigating to the same dropdown prompt where pandas DataFrames are displayed. A list of active Spark DataFrames appear in the dropdown beneath the list of active pandas variables.
+Users can open Spark DataFrames in Data Wrangler directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook, by navigating to the same dropdown prompt where pandas DataFrames are displayed. A list of active Spark DataFrames appears in the dropdown beneath the list of active pandas variables.
 
 The next code snippet creates a Spark DataFrame with the same sample data used in the [pandas Data Wrangler tutorial](data-wrangler.md):
 
@@ -58,16 +58,16 @@ Data Wrangler automatically converts Spark DataFrames to pandas samples for perf
 
 ## Viewing summary statistics
 
-When Data Wrangler loads, an informational banner above the preview grid reminds you that Spark DataFrames are temporarily converted to pandas samples, but all generated code is ultimately be converted to PySpark. Using Data Wrangler on Spark DataFrames is otherwise no different from using it on pandas DataFrames. A descriptive overview in the Summary panel displays information about the sample's dimensions, missing values, and more. Selecting any column in the Data Wrangler grid prompts the Summary panel to update and display descriptive statistics about that specific column. Quick insights about every column are also available in its header.
+When Data Wrangler loads, an informational banner above the preview grid reminds you that Spark DataFrames are temporarily converted to pandas samples, but all generated code is ultimately be converted to PySpark. Using Data Wrangler on Spark DataFrames is otherwise no different from using it on pandas DataFrames. A descriptive overview in the "Summary" panel displays information about the sample's dimensions, missing values, and more. Selecting any column in the Data Wrangler grid prompts the "Summary" panel to update and display descriptive statistics about that specific column. Quick insights about every column are also available in its header.
 
 > [!TIP]
-> Column-specific statistics and visuals (both in the Summary panel and in the column headers) depend on the column datatype. For instance, a binned histogram of a numeric column will appear in the column header only if the column is cast as a numeric type.
+> Column-specific statistics and visuals (both in the "Summary" panel and in the column headers) depend on the column datatype. For instance, a binned histogram of a numeric column will appear in the column header only if the column is cast as a numeric type.
 
 :::image type="content" source="media/data-wrangler-spark/view-summary-panel.png" alt-text="Screenshot showing the Data Wrangler display grid and Summary panel." lightbox="media/data-wrangler-spark/view-summary-panel.png":::
 
 ## Browsing data-cleaning operations
 
-A searchable list of data-cleaning steps can be found in the Operations panel. From the Operations panel, selecting a data-cleaning step prompts you to provide a target column or columns, along with any necessary parameters to complete the step. For example, the prompt for scaling a column numerically requires a new range of values. 
+A searchable list of data-cleaning steps can be found in the "Operations" panel. From the "Operations" panel, selecting a data-cleaning step prompts you to provide a target column or columns, along with any necessary parameters to complete the step. For example, the prompt for scaling a column numerically requires a new range of values. 
 
 :::image type="content" source="media/data-wrangler-spark/browse-operations.png" alt-text="Screenshot showing the Data Wrangler Operations panel." lightbox="media/data-wrangler-spark/browse-operations.png":::
 
@@ -82,12 +82,12 @@ The results of a selected operation are automatically previewed in the Data Wran
 
 :::image type="content" source="media/data-wrangler-spark/preview-operation.png" alt-text="Screenshot showing a Data Wrangler operation in progress." lightbox="media/data-wrangler-spark/preview-operation.png":::
 
-Once an operation is applied, the Data Wrangler display grid and summary statistics update to reflect the results. The code appears in the running list of committed operations, located in the Cleaning steps panel.
+Once an operation is applied, the Data Wrangler display grid and summary statistics update to reflect the results. The code appears in the running list of committed operations, located in the "Cleaning steps" panel.
 
 :::image type="content" source="media/data-wrangler-spark/operation-applied.png" alt-text="Screenshot showing an applied Data Wrangler operation." lightbox="media/data-wrangler-spark/operation-applied.png":::
 
 > [!TIP]
-> You can always undo the most recently applied step with the trash icon beside it, which appears if you hover your cursor over that step in the Cleaning steps panel.
+> You can always undo the most recently applied step with the trash icon beside it, which appears if you hover your cursor over that step in the "Cleaning steps" panel.
 
 :::image type="content" source="media/data-wrangler-spark/undo-operation.png" alt-text="Screenshot showing a Data Wrangler operation that can be undone." lightbox="media/data-wrangler-spark/undo-operation.png":::
 
@@ -137,5 +137,5 @@ The toolbar above the Data Wrangler display grid provides options to save the ge
 ## Related content
 
 - To get an overview of Data Wrangler, see [this companion article](data-wrangler.md).
-- To try out Data Wrangler in VS Code, head to [Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler).
+- To try out Data Wrangler in Visual Studio Code, head to [Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler).
 - Are we missing a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
