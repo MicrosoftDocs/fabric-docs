@@ -65,7 +65,7 @@ Assume that you want to incrementally copy new or changed files in your source f
 
    :::image type="content" source="media/tutorial-incremental-copy-files-last-modified-date/start-time.png" alt-text="Screenshot showing the Start time under Filter by last modified.":::
 
-1. Select **Run**. Now your copy activity can copy the new added or changed files in your source in every next five minutes to your destination folder.
+1. Select **Run**. Now your copy activity can copy the new added or changed files in your source in every next five minutes to your destination folder until the specified end time.
 
 1. When you select different **Repeat**, the following table shows different dynamic content that you need to specify in **Start time**. 
 
