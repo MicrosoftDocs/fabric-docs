@@ -22,7 +22,7 @@ On the **Workspaces** tab, you see a list of all the workspaces in your tenant. 
 
 :::image type="content" source="media/portal-workspaces/power-bi-workspaces-admin-portal.png" alt-text="Screenshot that shows a Power B I workspaces list in the admin portal.":::
 
-The columns of the list of workspaces are described below
+The following table describes the columns of the list of workspaces.
 
 | Column | Description |
 | --------- | --------- |
