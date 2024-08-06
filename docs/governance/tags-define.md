@@ -37,10 +37,17 @@ This section shows how to create a set of one or more tags.
 
 1. Select **+ New tag**. If no tags have been defined yet, select **Add your first tags**.
 
+1. In the dialog that appears, provide names for your new tags. Use comma-separated names to create more than one tag at a time. You can create as many tags as you want - there is no limit on the number of tags you can create.
+
     :::image type="content" source="./media/tags-define/create-tags.png" alt-text="Screenshot showing how to create two new tags.":::
 
-1. Procedure step
-1. Procedure step
+    Tag names can contain:
+    * Letters
+    * Numbers
+    * Spaces (not in the beginning of the tag)
+    * Special characters (can't be exclusively special characters, must also contain letters (or numbers?))
+
+1. When done, select **Create**. The new tags will be added to the list of tags.
 
 ## Related content
 
