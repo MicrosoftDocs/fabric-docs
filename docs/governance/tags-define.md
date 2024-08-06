@@ -1,14 +1,14 @@
 ---
-title: [Follow SEO guidance at 
-https://review.learn.microsoft.com/en-us/help/platform/seo-meta-title]
-description: "[Article description]."
-author: [your GitHub alias]
-ms.author: [your Microsoft alias or a team alias]
-ms.service: [the approved service name]
+title: Create and manage a set of tags
+description: "Learn how to create and manage a set of tags in Microsoft Fabric."
+author: paulinbar
+ms.author: painbar
+ms.service: fabric
+ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: [mm/dd/yyyy]
+ms.date: 08/06/2024
 
-#customer intent: As a <role>, I want <what> so that <why>.
+#customer intent: As a Fabric admin, I want to create and manage a set of tags so that data creators and data consumers can use them to better manage and find data.
 
 ---
 
@@ -28,7 +28,7 @@ https://aka.ms/patterns-feedback
 
 -->
 
-# "[verb] * [noun]"
+# Create and manage a set of tags
 
 <!-- Required: Article headline - H1
 
@@ -99,9 +99,9 @@ they might no longer need.
 
 -or-
 
-* [Related article title](link.md)
-* [Related article title](link.md)
-* [Related article title](link.md)
+* [Tags overview](tags-overview.md)
+* [Apply tags to items](tags-apply.md)
+* [Monitor tag use](tags-monitor.md)
 
 <!-- Optional: Next step or Related content - H2
 

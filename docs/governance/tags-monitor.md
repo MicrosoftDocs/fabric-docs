@@ -1,34 +1,18 @@
 ---
-title: [Follow SEO guidance at 
-https://review.learn.microsoft.com/en-us/help/platform/seo-meta-title]
-description: "[Article description]."
-author: [your GitHub alias]
-ms.author: [your Microsoft alias or a team alias]
-ms.service: [the approved service name]
+title: Monitor tag use
+description: "Learn how to monitor tag use in Microsoft Fabric."
+author: paulinbar
+ms.author: painbar
+ms.service: fabric
+ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: [mm/dd/yyyy]
+ms.date: 08/06/2024
 
-#customer intent: As a <role>, I want <what> so that <why>.
+#customer intent: As a Fabric admin, I want to monitor tag use.
 
 ---
 
-<!-- --------------------------------------
-
-- Use this template with pattern instructions for:
-
-How To
-
-- Before you sign off or merge:
-
-Remove all comments except the customer intent.
-
-- Feedback:
-
-https://aka.ms/patterns-feedback
-
--->
-
-# "[verb] * [noun]"
+# Monitor tag use
 
 <!-- Required: Article headline - H1
 
@@ -99,9 +83,9 @@ they might no longer need.
 
 -or-
 
-* [Related article title](link.md)
-* [Related article title](link.md)
-* [Related article title](link.md)
+* [Tags overview](tags-overview.md)
+* [Create and manage a set of tags](tags-define.md)
+* [Apply tags to items](tags-apply.md)
 
 <!-- Optional: Next step or Related content - H2
 

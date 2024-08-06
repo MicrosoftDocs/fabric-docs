@@ -1,34 +1,18 @@
 ---
-title: [Follow SEO guidance at 
-https://review.learn.microsoft.com/en-us/help/platform/seo-meta-title]
-description: "[Article description]."
-author: [your GitHub alias]
-ms.author: [your Microsoft alias or a team alias]
-ms.service: [the approved service name]
+title: Apply tags to items in Fabric
+description: "Learn how to apply tags to items in Microsoft Fabric."
+author: paulinbar
+ms.author: painbar
+ms.service: fabric
+ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: [mm/dd/yyyy]
+ms.date: 08/06/2024
 
-#customer intent: As a <role>, I want <what> so that <why>.
+#customer intent: As a data creator, I want to apply tags to my items so as to facilitate data management and discovery.
 
 ---
 
-<!-- --------------------------------------
-
-- Use this template with pattern instructions for:
-
-How To
-
-- Before you sign off or merge:
-
-Remove all comments except the customer intent.
-
-- Feedback:
-
-https://aka.ms/patterns-feedback
-
--->
-
-# "[verb] * [noun]"
+# Apply tags to items in Fabric
 
 <!-- Required: Article headline - H1
 

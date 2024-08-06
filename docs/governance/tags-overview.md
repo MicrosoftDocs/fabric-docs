@@ -1,34 +1,18 @@
 ---
-title: [Follow SEO guidance at 
-https://review.learn.microsoft.com/en-us/help/platform/seo-meta-title]
-description: "[Article description]."
-author: [your GitHub alias]
-ms.author: [your Microsoft alias or a team alias]
-ms.service: [the approved service name]
+title: Tags in Microsoft Fabric
+description: "Learn about tags in Microsoft Fabric."
+author: paulinbar
+ms.author: painbar
+ms.service: fabric
+ms.subservice: governance
 ms.topic: conceptual #Don't change
-ms.date: [mm/dd/yyyy]
+ms.date: 08/06/2024
 
-#customer intent: As a <role>, I want <what> so that <why>.
+#customer intent: As a Fabric admin, domain admin, data creator, or data consumer, I want to learn about tags in Microsoft Fabric.
 
 ---
 
-<!-- --------------------------------------
-
-- Use this template with pattern instructions for:
-
-Feature Description
-
-- Before you sign off or merge:
-
-Remove all comments except the customer intent.
-
-- Feedback:
-
-https://aka.ms/patterns-feedback
-
--->
-
-# [Feature] in [product or service]
+# Tags in Microsoft Fabric
 
 <!-- Required: Article headline - H1
 
@@ -123,9 +107,9 @@ and known issues. Use a bulleted list.
 
 ## Related content
 
-- [Related article title](link.md)
-- [Related article title](link.md)
-- [Related article title](link.md)
+- [Create and manage a set of tags](tags-define.md)
+- [Apply tags](tags-apply.md)
+- [Monitor tag use](tags-monitor.md)
 
 <!-- Optional: Related content - H2
 
