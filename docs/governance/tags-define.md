@@ -25,7 +25,7 @@ When you rename a tag it gets renamed on any item it was applied to.
 
 ## Prerequisites
 
-You must have a Fabric administrator role or higher to create and manage tags.
+You must have a Fabric administrator role or higher to be able to create, rename, or delete tags.
 
 ## Create a set of tags
 
@@ -48,6 +48,14 @@ This section shows how to create a set of one or more tags.
     * Special characters (can't be exclusively special characters, must also contain letters (or numbers?))
 
 1. When done, select **Create**. The new tags will be added to the list of tags.
+
+## Rename a tag
+
+[TBD]
+
+## Delete a tag
+
+[TBD]
 
 ## Related content
 
