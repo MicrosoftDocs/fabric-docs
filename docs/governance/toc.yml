@@ -54,16 +54,26 @@ items:
     href: service-security-using-defender-for-cloud-apps-controls.md
 - name: Endorsement
   href: endorsement-overview.md
-- name: Lineage
-  href: lineage.md
-- name: Impact analysis
-  href: impact-analysis.md
 - name: Domains
   items:
   - name: Domains
     href: domains.md
   - name: Audit schema for domains
     href: domains-audit-schema.md
+- name: Tagging
+  items:
+  - name: Tagging overview
+    href: tagging-overview.md
+  - name: Define tags
+    href: tags-define.md
+  - name: Apply tags
+    href: tags-apply.md
+  - name: Monitor tag use
+    href: tags-monitor.md
+- name: Lineage
+  href: lineage.md
+- name: Impact analysis
+  href: impact-analysis.md
 - name: External data sharing
   items:
   - name: Overview
