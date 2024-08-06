@@ -123,7 +123,7 @@ To understand the considerations and limitations of various lifecycle management
 
 #### Maximum commit size exceeded
 
-**Description of problem**: When trying to commit items to GitHub, I get an error saying that I exceeded maximum commit size.
+**Description of problem**: When trying to commit items to Git, I get an error saying that I exceeded maximum commit size.
 
   :::image type="content" source="./media/troubleshoot-cicd/maximum-commit-size.png" alt-text="Screenshot or error message that says Maximum commit size exceeded.":::
 

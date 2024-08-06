@@ -23,7 +23,6 @@ ms.date: 07/04/2024
 #### [GitHub limitations](#tab/github)
 
 - GitHub can't enforce [cross-geo validations](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
-- The total combined size of files to commit at once is limited to 50 MB. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information about committing files in GitHub, see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
 - The commit size is limited to 100 MB per file.
 
 ---
@@ -75,3 +74,4 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
   - Manually changing the item definition file. These changes are valid, but might be different than if done through the editors. For example, if you rename a semantic model column in Git and import this change to the workspace, the next time you commit changes to the semantic model, the *bim* file will register as changed and the modified column pushed to the back of the `columns` array. This is because the AS engine that generates the *bim* files pushes renamed columns to the end of the array. This change doesn't affect the way the item operates.
   - Committing a file that uses *CRLF* line breaks. The service uses *LF* (line feed) line breaks. If you had item files in the Git repo with *CRLF* line breaks, when you commit from the service these files are changed to *LF*. For example, if you open a report in desktop, save the *.pbip* project and upload it to Git using *CRLF*.
 - Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git diff after each refresh.
+- The total combined size of files to commit at once is limited to 50 MB. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information about committing files, see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
