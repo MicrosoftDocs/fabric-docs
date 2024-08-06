@@ -92,12 +92,7 @@ they might no longer need.
 
 -->
 
-## Next step -or- Related content
-
-> [!div class="nextstepaction"]
-> [Next sequential article title](link.md)
-
--or-
+## Related content
 
 * [Tags overview](tags-overview.md)
 * [Apply tags to items](tags-apply.md)

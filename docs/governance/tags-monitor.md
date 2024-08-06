@@ -76,12 +76,7 @@ they might no longer need.
 
 -->
 
-## Next step -or- Related content
-
-> [!div class="nextstepaction"]
-> [Next sequential article title](link.md)
-
--or-
+## Related content
 
 * [Tags overview](tags-overview.md)
 * [Create and manage a set of tags](tags-define.md)

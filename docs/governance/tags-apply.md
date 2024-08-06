@@ -76,16 +76,11 @@ they might no longer need.
 
 -->
 
-## Next step -or- Related content
+## Related content
 
-> [!div class="nextstepaction"]
-> [Next sequential article title](link.md)
-
--or-
-
-* [Related article title](link.md)
-* [Related article title](link.md)
-* [Related article title](link.md)
+* [Tags overview](tags-overview.md).md)
+* [Create and manage a set of tags](tags-define.md)
+* [Monitor tag use](tags-monitor.md)
 
 <!-- Optional: Next step or Related content - H2
 

@@ -60,13 +60,13 @@ items:
     href: domains.md
   - name: Audit schema for domains
     href: domains-audit-schema.md
-- name: Tagging
+- name: Tags
   items:
-  - name: Tagging overview
-    href: tagging-overview.md
-  - name: Define tags
+  - name: Overview
+    href: tags-overview.md
+  - name: Create and manage a set of tags
     href: tags-define.md
-  - name: Apply tags
+  - name: Apply tags to items
     href: tags-apply.md
   - name: Monitor tag use
     href: tags-monitor.md
