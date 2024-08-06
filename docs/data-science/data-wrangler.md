@@ -59,7 +59,7 @@ When Data Wrangler loads, it displays a descriptive overview of the chosen DataF
 > [!TIP]
 > Column-specific statistics and visuals (both in the "Summary" panel and in the column headers) depend on the column datatype. For instance, a binned histogram of a numeric column will appear in the column header only if the column is cast as a numeric type.
 
-:::image type="content" source="media/data-wrangler/view-summary-panel.png" alt-text="Screenshot showing the Data Wrangler display grid and "Summary" panel." lightbox="media/data-wrangler/view-summary-panel.png":::
+:::image type="content" source="media/data-wrangler/view-summary-panel.png" alt-text="Screenshot showing the Data Wrangler display grid and Summary panel." lightbox="media/data-wrangler/view-summary-panel.png":::
 
 ## Browsing data-cleaning operations
 
