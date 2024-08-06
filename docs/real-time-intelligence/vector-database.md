@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: concept-article
-ms.date: 07/18/2024
+ms.date: 08/06/2024
 ms.search.form: Eventhouse
 ---
 # Vector databases
@@ -37,7 +37,8 @@ The general workflow for using a vector database is as follows:
 
 1. **Embed data**: Convert data into vector format using an embedding model. For example, you can embed text data using an Open AI model.
 1. **Store vectors**: Store the embedded vectors in a vector database. You can send the embedded data to an Eventhouse to store and manage the vectors.
-1. **Query vectors**: Use vector similarity search to find similar vectors in the database. 
+1. **Embed query**: Convert the query data into vector format using the same embedding model used to embed the stored data.
+1. **Query vectors**: Use vector similarity search to find entries in the database that are similar to the query. 
 
 ## Eventhouse as a Vector Database
 
@@ -46,8 +47,8 @@ At the core of Vector Similarity Search is the ability to store, index, and quer
 The following components of the Eventhouse architecture enable its use as a vector database:
 
 * The [dynamic](/azure/data-explorer/kusto/query/scalar-data-types/dynamic) data type, which can store unstructured data such as arrays and property bags. Thus data type is recommended for storing vector values. You can further augment the vector value by storing metadata related to the original object as separate columns in your table.  
-* A new [encoding](/azure/data-explorer/kusto/management/encoding-policy) type [`Vector16`](/azure/data-explorer/kusto/management/alter-encoding-policy#encoding-policy-types) designed for storing vectors of floating-point numbers in 16-bits precision, which uses the `Bfloat16` instead of the default 64 bits. This encoding is recommended for storing ML vector embeddings as it reduces storage requirements by a factor of four and accelerates vector processing functions such as [series_dot_product()](/azure/data-explorer/kusto/query/series-dot-product-function) and [series_cosine_similarity()](/azure/data-explorer/kusto/query/series-cosine-similarity-function) by orders of magnitude.
-* The [series_cosine_similarity](/azure/data-explorer/kusto/query/series-cosine-similarity-function) function can perform vector similarity searches on top of the vectors stored in Eventhouse.
+* The [encoding](/azure/data-explorer/kusto/management/encoding-policy) type [`Vector16`](/azure/data-explorer/kusto/management/alter-encoding-policy#encoding-policy-types) designed for storing vectors of floating-point numbers in 16-bits precision, which uses the `Bfloat16` instead of the default 64 bits. This encoding is recommended for storing ML vector embeddings as it reduces storage requirements by a factor of four and accelerates vector processing functions such as [series_dot_product()](/azure/data-explorer/kusto/query/series-dot-product-function) and [series_cosine_similarity()](/azure/data-explorer/kusto/query/series-cosine-similarity-function) by orders of magnitude.
+* The [series_cosine_similarity](/azure/data-explorer/kusto/query/series-cosine-similarity-function) function, which can perform vector similarity searches on top of the vectors stored in Eventhouse.
 
 ## Next step
 

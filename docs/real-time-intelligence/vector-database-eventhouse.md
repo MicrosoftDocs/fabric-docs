@@ -10,26 +10,35 @@ ms.search.form: Eventhouse
 ---
 # Tutorial: Use an Eventhouse as a vector database
 
-In this tutorial, you'll learn how to use an Eventhouse as a vector database to store and query vector data in Real-Time Intelligence. For more information, see [Vector databases](vector-database.md)
+In this tutorial, you'll learn how to use an Eventhouse as a vector database to store and query vector data in Real-Time Intelligence. For general information about vector databases, see [Vector databases](vector-database.md)
 
-The scenario used is semantic searches on top of Wikipedia pages to find commonly themed pages. You'll use an available sample dataset containing vectors for tens of thousands of Wikipedia pages that have been embedded with an Open AI model, and  store the vectors in an Eventhouse together with some metadata related to the page. Then you can encode your own query using the same Open AI model and search for the most similar Wikipedia pages. This could be useful if you want to find similarly themed movies, events in history, or any other topic that is covered in Wikipedia.
+The given scenario involves the use of semantic searches on Wikipedia pages to find pages with common themes. You use an available sample dataset, which includes vectors for tens of thousands of Wikipedia pages. These pages have already been embedded with an Open AI model to produce vectors for each page. The vectors, along with some pertinent metadata related to the page, are then stored in an Eventhouse. This dataset could be used to find pages which are similar to each other, or to find pages that are similar to some theme you want to find. For example, say you want to look up "famous female scientists of the 19th century". You encode this phrase using the same Open AI model, and then run a vector similarity search over the stored Wikipedia page data to find the pages with the highest semantic similarity.
 
 Specifically, in this tutorial you will:
 
 > [!div class="checklist"]
 >
-> * Write vector data from a pre-embedded dataset to an Eventhouse.
-> * Create an embedding for a natural language query using the Open AI model.
-> * Use the embedding vector from Open AI and the [series_cosine_similarity KQL function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) to calculate the similarities between the query embedding vector and those of the wiki pages.
+> * Store vector data from a pre-embedded dataset to an Eventhouse.
+> * Embed afor a natural language query using the Open AI model.
+> * Use the [series_cosine_similarity KQL function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) to calculate the similarities between the query embedding vector and those of the wiki pages.
 > * View rows of the highest similarity to get the wiki pages that are most relevant to your search query.
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
-* Azure OpenAI
-* Download the sample notebooks from the GitHub repository
+* An Azure OpenAI resource with the text-embedding-ada-002 (Version 2) model deployed. This model is currently only available in certain regions. For more information, see [Create a resource](/azure/ai-services/openai/how-to/create-resource).
+* Download the sample notebook from the GitHub repository
 
+## Write vector data to an Eventhouse
+
+### Import notebook
+
+### Write data to the Eventhouse
+
+### View the data in the Eventhouse
+
+## Generate embedding for the search term
 
 ## Query the similarity
 
@@ -64,7 +73,8 @@ To optimize the cosine similarity search we need to split the vectors table to m
 } 
 ``` 
 ~~~
- In the example above we modified the partitioning policy for WikipediaEmbeddingsTitleD. This table was created from WikipediaEmbeddings by projecting the documents’ title and embeddings.
+
+In the example above we modified the partitioning policy for WikipediaEmbeddingsTitleD. This table was created from WikipediaEmbeddings by projecting the documents’ title and embeddings.
 
  
 
