@@ -6,7 +6,7 @@ ms.reviewer: mihirwagle
 ms.author: mihart
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
-ms.date: 08/01/2024
+ms.date: 08/08/2024
 ---
 
 # Microsoft Fabric trial capacity
@@ -16,10 +16,11 @@ Microsoft Fabric is provided free of charge when you sign up for a Microsoft Fab
 > [!NOTE]
 > If you're ready to purchase Fabric, visit the [Purchase Fabric page.](../enterprise/buy-subscription.md)
 
-With one Fabric trial capacity, you get the following features:
+With one trial of a Fabric capacity, you get the following features:
 
-- Full access to all of the Fabric workloads and features. There are a few key Fabric features that aren't available on trial capacities. These include [Copilot](/fabric/get-started/copilot-faq-fabric) and [Trusted workspace access](../security/security-trusted-workspace-access.md).
+- Full access to all of the Fabric workloads and features. There are a few key Fabric [features that aren't available on trial capacities](#about-the-trial-capacity).
 - OneLake storage up to 1 TB.
+- A license similar to Premium Per User (PPU)
 - One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
 - The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity.
 
@@ -32,11 +33,20 @@ Creating and collaborating in Fabric includes:
 > [!NOTE]
 > One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
 
-When you start a Fabric capacity trial, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You get the equivalent of an F64 capacity but there are a few key features that aren't available on trial capacities. These include [Copilot](/fabric/get-started/copilot-faq-fabric), [Trusted workspace access](../security/security-trusted-workspace-access.md), and [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview). 
+## About the trial capacity
 
-To begin using your Fabric trial capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you.
+When you start a trial of a Fabric capacity, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You get the equivalent of an F64 capacity but there are a few key features that aren't available on trial capacities. These include:
+- [Copilot](/fabric/get-started/copilot-faq-fabric)
+- [Trusted workspace access](../security/security-trusted-workspace-access.md)
+- [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview)
 
-Although you don't actually receive a new license, the actions that you can perform and the features that you can use are similar to [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq) during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a Premium Per User (PPU) license. 
+## About the trial license
+
+Although you don't actually receive a new license, the actions that you can perform and the features that you can use are similar to [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq) during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays your non-trial license. But in order to make full use of Fabric, your trial includes the equivalent of a Premium Per User (PPU) license. 
+
+## Use your trial
+
+To begin using your trial of a Fabric capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you.
 
 ## Existing Power BI users
 
