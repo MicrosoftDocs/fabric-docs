@@ -160,7 +160,7 @@ This section lists the report's considerations and limitations.
   
 ### Pro and PPU capacities
 
-Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on automatically managed logical capacities. The usage of these capacities can be seen in the admin monitoring reporting and audit events.
+Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities. The usage of these capacities can be seen in the admin monitoring reporting and audit events.
 
   * **Pro logical capacities** - Appears as *Reserved Capacity for Pro Workspaces* with a Capacity SKU value of *Pro*.
 
