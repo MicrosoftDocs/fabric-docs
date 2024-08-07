@@ -88,7 +88,7 @@ In Fabric, you can configure the AI skill so that the AI answers your questions 
 
 If you find that the AI doesn't generate the right queries, you can provide more examples.
 
-To provide examples, you can select the edit button under **Example SQL Queries** on the right side.
+To provide examples, you can select the edit button under **Example SQL queries** on the right side.
 
 :::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-examples.png":::
 
