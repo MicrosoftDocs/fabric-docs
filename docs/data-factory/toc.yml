@@ -665,7 +665,7 @@
         href: data-obfuscation-with-delphix.md
       - name: Slowly changing dimension patterns 
         items:
-          - name: Overview on Slowly changing dimension patterns
+          - name: Overview
             href: slowly-changing-dimensions.md 
           - name: Slowly Changing Dimension Type 2
             href: slowly-changing-dimension-type-two.md
