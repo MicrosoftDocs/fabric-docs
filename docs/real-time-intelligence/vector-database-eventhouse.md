@@ -68,7 +68,7 @@ To successfully make a call against Azure OpenAI, you need an endpoint, key, and
 
 | Variable name	| Value |
 |---|---|
-| endpoint	|This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). Alternatively, you can find the value in the **[Azure OpenAI Studio](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: https://docs-test-001.openai.azure.com/. |
+| endpoint	|This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). Alternatively, you can find the value in the **[Azure OpenAI Studio](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: `https://docs-test-001.openai.azure.com/`. |
 | api key |	This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). You can use either KEY1 or KEY2. |
 | deployment id | This value can be found under the **Deployments** section in the [Azure OpenAI Studio](https://oai.azure.com/). |
 
@@ -89,26 +89,26 @@ To optimize the cosine similarity search, you split the vectors table to many ex
 
 NOTE FOR ANSHUL: CAN YOU GIVE ME A COMMAND TO CREATE THIS TABLE?
 
-    ~~~kusto
-    .alter-merge table WikipediaEmbeddings policy partitioning  
-    ``` 
+~~~kusto
+.alter-merge table WikipediaEmbeddings policy partitioning  
+``` 
+{ 
+  "PartitionKeys": [ 
     { 
-      "PartitionKeys": [ 
-        { 
-          "ColumnName": "vector_id_str", 
-          "Kind": "Hash", 
-          "Properties": { 
-            "Function": "XxHash64", 
-            "MaxPartitionCount": 2048,      //  set it to max value create smaller partitions thus more balanced spread among all cluster nodes 
-            "Seed": 1, 
-            "PartitionAssignmentMode": "Uniform" 
-          } 
-        } 
-      ], 
-      "EffectiveDateTime": "2000-01-01"     //  set it to old date in order to apply partitioning on existing data 
+      "ColumnName": "vector_id_str", 
+      "Kind": "Hash", 
+      "Properties": { 
+        "Function": "XxHash64", 
+        "MaxPartitionCount": 2048,      //  set it to max value create smaller partitions thus more balanced spread among all cluster nodes 
+        "Seed": 1, 
+        "PartitionAssignmentMode": "Uniform" 
+      } 
     } 
-    ``` 
-    ~~~
+  ], 
+  "EffectiveDateTime": "2000-01-01"     //  set it to old date in order to apply partitioning on existing data 
+} 
+``` 
+~~~
 
 In the example above we modified the partitioning policy for WikipediaEmbeddingsTitleD. This table was created from Wiki by projecting the documents’ title and embeddings.
 
