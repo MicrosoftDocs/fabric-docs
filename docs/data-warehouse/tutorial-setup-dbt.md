@@ -4,7 +4,7 @@ description: In this tutorial, learn how to use the dbt adapter for Fabric Data 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: maprycem
-ms.date: 04/24/2024
+ms.date: 07/26/2024
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
@@ -93,7 +93,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 1. Authenticate yourself to Azure in the Visual Studio Code terminal. 
 
     - Run `az login` in Visual Studio Code terminal if you're using Azure CLI authentication.
-    - For Service Principal or other Microsoft Entra ID (formerly Azure Active Directory) authentication in Microsoft Fabric, refer to [dbt (Data Build Tool) setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [dbt Resource Configurations](https://docs.getdbt.com/reference/resource-configs/fabric-configs).
+    - For Service Principal or other Microsoft Entra ID (formerly Azure Active Directory) authentication in Microsoft Fabric, refer to [dbt (Data Build Tool) setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [dbt Resource Configurations](https://docs.getdbt.com/reference/resource-configs/fabric-configs). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
 1. Now you're ready to test the connectivity. To test the connectivity to your warehouse, run `dbt debug` in the Visual Studio Code terminal.
   

@@ -4,7 +4,7 @@ description: This article provides a Microsoft Fabric administration overview.
 author: KesemSharabi
 ms.author: mihart
 ms.topic: overview
-ms.date: 04/04/2024
+ms.date: 08/04/2024
 ---
 
 # Administration overview
@@ -28,7 +28,7 @@ To access the Fabric SaaS platform, you need a license. Fabric has two type of l
 
 * [Per user license](../enterprise/licenses.md#per-user-licenses) - Per user licenses allow users to work in Fabric.
 
-To purchase licenses, you must be a Billing or Global administrator. Global and Billing administrators can [buy licenses](../enterprise/buy-subscription.md) and control them with tools such as capacity [pause and resume](../enterprise/pause-resume.md) and [scale](../enterprise/scale-capacity.md). 
+To purchase licenses, you must be a Billing administrator. Billing administrators can [buy licenses](../enterprise/buy-subscription.md) and control them with tools such as capacity [pause and resume](../enterprise/pause-resume.md) and [scale](../enterprise/scale-capacity.md). 
 
 After you purchase licenses, use the Microsoft 365 admin center, PowerShell, or the Azure portal to view and manage those licenses. 
 
@@ -61,7 +61,7 @@ Fabric is composed of tenants, capacities, and workspaces. Your organization mig
 
 Admins can control these processes throughout the organization. For example, being an admin allows you to create and delete workspaces, and to control [workspace settings](../get-started/workspaces.md#workspace-settings) such as [Azure connections](../data-factory/dataflow-support.md), [Git integration](../cicd/git-integration/intro-to-git-integration.md) and [OneLake](../onelake/onelake-overview.md).
 
-To distribute management across the organization, you can also use [domains](../governance/domains.md). With a domain, you create a logical grouping of workspaces. For example, your organization can create domains according to functions such as sales and marketing. Designated users can become admins and oversee Fabric functions related to the data in each domain. Using domains allows your organization to appoint the right admins at the right level. You no longer need Global administrators with lots of permissions and responsibilities to manage every single area in your organization. Using domains, you can allocate some admin rights to users who are closer to the domain's subject matter. By doing that, you free Global administrators to concentrate on organizational processes, and allow experts to directly manage data in their fields.
+To distribute management across the organization, you can also use [domains](../governance/domains.md). With a domain, you create a logical grouping of workspaces. For example, your organization can create domains according to functions such as sales and marketing. Designated users can become admins and oversee Fabric functions related to the data in each domain. Using domains allows your organization to appoint the right admins at the right level. You no longer need Fabric administrators with lots of permissions and responsibilities to manage every single area in your organization. Using domains, you can allocate some admin rights to users who are closer to the domain's subject matter. By doing that, you free Fabric administrators to concentrate on organizational processes, and allow experts to directly manage data in their fields.
 
 ### Add and remove users
 
