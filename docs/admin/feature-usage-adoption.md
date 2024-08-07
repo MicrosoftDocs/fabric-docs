@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 03/24/2024
+ms.date: 08/07/2024
 ---
 
 # Feature usage and adoption report (preview)
@@ -158,11 +158,13 @@ This section lists the report's considerations and limitations.
 
 * The report retains information for 30 days, including the activities and metadata of deleted capacities, workspaces, and other items.
   
-### Capacities
+### Pro and PPU capacities
 
-* Semantic models in Pro and Premium Per User workspaces are hosted on automatically managed “logical capacities”.
-* These logical capacities are not visible to the end user since they are managed by the service, however their usage will be visible in Admin monitoring reporting and audit events.
-* The Pro logical capacity will appear as _Reserved Capacity for Pro Workspaces_ with a Capacity SKU value of _Pro_, while the Premium Per User logical capacity will appear as _Reserved Capacity for Premium Per User Workspaces_ with a Capacity SKU value of _PPU_.
+Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on automatically managed logical capacities. The usage of these capacities can be seen in the admin monitoring reporting and audit events.
+
+  * **Pro logical capacities** - Appears as *Reserved Capacity for Pro Workspaces* with a Capacity SKU value of *Pro*.
+
+  * **Premium Per User logical** - Appears as *Reserved Capacity for Premium Per User Workspaces* with a Capacity SKU value of *PPU*.
 
 ### Counting logic
 
