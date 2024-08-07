@@ -156,13 +156,17 @@ This section lists the report's considerations and limitations.
 
 * *NA* represents data that isn't available on an audit event. This can happen when an audit event doesn't have complete information, or when that information isn't applicable for the event.
 
-* The report retains audit information for 30 days.
+* The report retains information for 30 days, including the activities and metadata of deleted capacities, workspaces, and other items.
+  
+### Capacities
+
+* Semantic models in Pro and Premium Per User workspaces are hosted on automatically managed “logical capacities”.
+* These logical capacities are not visible to the end user since they are managed by the service, however their usage will be visible in Admin monitoring reporting and audit events.
+* The Pro logical capacity will appear as _Reserved Capacity for Pro Workspaces_ with a Capacity SKU value of _Pro_, while the Premium Per User logical capacity will appear as _Reserved Capacity for Premium Per User Workspaces_ with a Capacity SKU value of _PPU_.
 
 ### Counting logic
 
 * All *My workspaces* are counted as separate records as part of the *Active workspaces* total.
-
-* Activities of deleted capacities, workspaces, or items are retained in the report for 28 days past deletion.
 
 ## Related content
 
