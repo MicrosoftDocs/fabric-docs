@@ -21,7 +21,7 @@ With one trial of a Fabric capacity, you get the following features:
 - Full access to all of the Fabric workloads and features. There are a few key Fabric [features that aren't available on trial capacities](#about-the-trial-capacity).
 - OneLake storage up to 1 TB.
 - A license similar to Premium Per User (PPU)
-- One capacity per trial. Additional Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
+- One capacity per trial. Other Fabric capacity trials can be started until a maximum, set by Microsoft, is met.
 - The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity.
 
 Creating and collaborating in Fabric includes:
@@ -35,14 +35,14 @@ Creating and collaborating in Fabric includes:
 
 ## About the trial capacity
 
-When you start a trial of a Fabric capacity, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You get the equivalent of an F64 capacity but there are a few key features that aren't available on trial capacities. These include:
+When you start a trial of a Fabric capacity, your trial [capacity](../enterprise/licenses.md#capacity) has 64 capacity units (CU). You get the equivalent of an F64 capacity but there are a few key features that aren't available on trial capacities. These features include:
 - [Copilot](/fabric/get-started/copilot-faq-fabric)
 - [Trusted workspace access](../security/security-trusted-workspace-access.md)
 - [Managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview)
 
 ## About the trial license
 
-Although you don't actually receive a new license, the actions that you can perform and the features that you can use are similar to [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq) during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays your non-trial license. But in order to make full use of Fabric, your trial includes the equivalent of a Premium Per User (PPU) license. 
+Although you don't actually receive a new license, the actions that you can perform and the features that you can use are similar to [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq) during the trial. When you share your workspace that's in trial capacity, the permissions of workspace users are also upgraded. Your Account manager still displays your nontrial license. But in order to make full use of Fabric, your trial includes the equivalent of a Premium Per User (PPU) license. 
 
 ## Use your trial
 
@@ -85,7 +85,7 @@ Congratulations. You now have a Fabric trial capacity that includes a Power BI i
 
 ## Other ways to start a Microsoft Fabric trial
 
-In some situations, your Fabric administrator [enables Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant) but you don't have access to a capacity that has Fabric enabled. You have another option for enabling a Fabric capacity trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you're prompted to start a Fabric capacity trial. If you agree, your Fabric capacity trial starts and your **My workspace** is upgraded to a trial capacity workspace. You're now the Capacity administrator and can add workspaces to the trial capacity. 
+In some situations, your Fabric administrator [enables Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant) but you don't have access to a capacity that has Fabric enabled. You have another option for enabling a Fabric capacity trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you receive a prompt to start a trial of a Fabric capacity. If you agree, your trial starts and your **My workspace** is upgraded to a trial capacity workspace. You're the Capacity administrator and can add workspaces to the trial capacity. 
 
 ## Share trial capacities
 
