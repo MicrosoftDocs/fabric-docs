@@ -31,7 +31,7 @@ Embeddings are a common way of representing data in a vector format for use in v
 
 ## General workflow
 
-:::image type="content" source="media/vector-database/vector-schematic.png" alt-text="Schematic of how to embed, store, and query text stored as vectors.":::
+:::image type="content" source="media/vector-database/vector-schematic.png" alt-text="Schematic of how to embed, store, and query text stored as vectors." lightbox="media/vector-database/vector-schematic.png":::
 
 The general workflow for using a vector database is as follows:
 

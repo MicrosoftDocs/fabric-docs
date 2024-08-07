@@ -23,6 +23,10 @@ Specifically, in this tutorial you will:
 > * Use the [series_cosine_similarity KQL function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) to calculate the similarities between the query embedding vector and those of the wiki pages.
 > * View rows of the highest similarity to get the wiki pages that are most relevant to your search query.
 
+This flow can be visualized as follows:
+
+:::image type="content" source="media/vector-database/vector-schematic-condensed.png" alt-text="Schematic of Eventhouse as vector database workflow."  lightbox="media/vector-database/vector-schematic-condensed.png":::
+
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
