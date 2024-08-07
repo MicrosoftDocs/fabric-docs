@@ -122,7 +122,7 @@ Pages are optional containers for tiles. You can use pages to organize tiles int
 
 ## Use parameters
 
-Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tiles.  For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboard-parameters.md).
+Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tiles. For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboard-parameters.md).
 
 ## Tile legend
 
@@ -143,9 +143,9 @@ Use the **Invert** button to invert your selection.
 The **Up** and **Down** arrows navigate through the list in the following ways:
 
 * When one item is selected, the up and down arrows select the previous or next item.
-* When more than one item is selected, the up and down arrows scroll through the list of items and the data for the selected item you navigate to is highlighted.
+* When more than one item is selected, the up and down arrows scroll through the list of items, and the data for any selected items you navigate to is highlighted.
 
-:::image type="content" source="media/real-time-dashboard/interactive-legend.png"" alt-text="Screenshot showing the buttons to use the legend to interact with your data.":::
+:::image type="content" source="media/real-time-dashboard/interactive-legend.png" alt-text="Screenshot showing the buttons to use the legend to interact with your data.":::
 
 ## View query
 
