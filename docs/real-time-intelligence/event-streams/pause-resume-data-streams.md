@@ -7,7 +7,7 @@ author: wenyang
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/09/2024
+ms.date: 08/07/2024
 ms.search.form: Pause and Resume
 ---
 
@@ -17,11 +17,6 @@ The Pause and Resume features in Eventstream give you a full control over your d
 
 * **Activate/Deactivate All**: Quickly pause and resume all data traffic flowing in and out of Eventstream using the Activate All and Deactivate All options on the menu bar.
 * **Toggle Switch Button**: Each node has a toggle switch button, allowing you to activate or deactivate the data streaming from or to selected sources and destinations.
-
-Here are the data sources that currently support Traffic Pause and Resume:
-
-* **Sources**: Sample data, Azure Event Hubs, Azure IoT Hub
-* **Destinations**: Lakehouse, KQL Database (with Event Processor)
 
 The following table outlines the description of different node statuses:
 
@@ -35,7 +30,29 @@ The following table outlines the description of different node statuses:
 
 ## Activating or deactivating node using the switch toggle
 
-For nodes that support pause and resume features, you can easily manage their data flow using the toggle switch. Simply find the desired node and toggle the switch on or off to activate or deactivate the data traffic. If a node doesn't currently support pause and resume functionality, the toggle switch will be disabled.
+For nodes that support pause and resume features, you can easily manage their data flow using the toggle switch. Simply find the desired node and toggle the switch on or off to activate or deactivate the data traffic. Nodes that do not currently support pause and resume functionality will not have a toggle switch.
+
+Here is a detailed table of the nodes that support pause and resume functionality along with the available resume options:
+
+| Node                          | Type                  | Supports Pause and Resume |  Resume Options                              |
+|-------------------------------|-----------------------|-----------------------|---------------------------------------------|
+| Sample Data                   | Source                | YES                   | - Now                                       |
+| Azure Event Hubs              | Source                | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
+| Azure IoT Hub                 | Source                | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
+| Custom App                    | Source                | NO                    |                              |
+| Custom App                    | Destination           | NO                    |                              |
+| Lakehouse                     | Destination           | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
+| KQL Database (Direct Ingestion) | Destination           | NO                    |                               |
+| KQL Database (Event processing before ingestion) | Destination           | YES                   | - When streaming was last stopped<br>- Now<br>- Custom time |
+| Reflex                        | Destination           | NO                    |                               |
+
+Below is a description of the available resume options:
+
+| Resume Option                 | Description                                      |
+|-------------------------------|----------------------------------------------|
+| When streaming was last stopped | Resumes from the point where streaming was last stopped |
+| Now                           | Resumes from the current time                |
+| Custom time                   | Resumes from a customized time |
 
 :::image type="content" source="./media/pause-resume-data-streams/pause-resume-switch-toggle.png" alt-text="Screenshot showing switch toggle on the node and details." lightbox="./media/pause-resume-data-streams/pause-resume-switch-toggle.png" :::
 
