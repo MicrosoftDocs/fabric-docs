@@ -145,7 +145,7 @@ The **Up** and **Down** arrows navigate through the list in the following ways:
 * When one item is selected, the up and down arrows select the previous or next item.
 * When more than one item is selected, the up and down arrows scroll through the list of items and the data for the selected item you navigate to is highlighted.
 
-:::image type="content" source="media/adx-dashboards/interactive-legend.png" alt-text="Screenshot showing the buttons to use the legend to interact with your data.":::
+:::image type="content" source="media/real-time-dashboard/interactive-legend.png"" alt-text="Screenshot showing the buttons to use the legend to interact with your data.":::
 
 ## View query
 
