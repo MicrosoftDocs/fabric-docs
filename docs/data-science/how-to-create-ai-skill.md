@@ -1,6 +1,6 @@
 ---
-title: How to create an AI skill (preview)
-description: Learn how to create an AI skill
+title: Create an AI skill (preview)
+description: Learn how to create an AI skill.
 author: fbsolo-ms1
 ms.author: avangrootel
 ms.reviewer: franksolomon
@@ -17,7 +17,7 @@ ms.collection: ce-skilling-ai-copilot
 
 # Create an AI skill (preview)
 
-Are you ready for conversations about your data? You can create AI experiences with the AI skill on Fabric, to answer questions over your Lakehouse and Warehouse tables. This technique lowers the barriers for others to answer their data questions, because your colleagues can ask their questions in English and receive data-driven answers.
+Are you ready for conversations about your data? You can create AI experiences with the AI skill on Microsoft Fabric to answer questions over your lakehouse and warehouse tables. This technique lowers the barriers for others to answer their data questions, because your colleagues can ask their questions in English and receive data-driven answers.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -25,45 +25,43 @@ Are you ready for conversations about your data? You can create AI experiences w
 
 - An F64 Fabric capacity or higher.
 - [Copilot tenant switch](../admin/service-admin-portal-copilot.md) is enabled.
-- [Cross-Geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
-- A Warehouse or Lakehouse with data.
+- [Cross-geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
+- A warehouse or lakehouse with data.
 
-## Creating and configuring an AI skill
+## Create and configure an AI skill
 
 Creation and configuration of an AI skill on Fabric involves these steps:
 
-1. Create a new AI skill
-1. Select your data
-1. Ask the questions
-1. Provide examples
-1. Provide instructions
+1. Create a new AI skill.
+1. Select your data.
+1. Ask the questions.
+1. Provide examples.
+1. Provide instructions.
 
-It's a straightforward process, and you can begin testing the AI skill resources in minutes.
+The process is straightforward and you can begin testing the AI skill resources in minutes.
 
 ## Create a new AI skill
 
-Like other standard Fabric items creation processes, you can create a new AI skill from the Fabric Data Science homepage, the workspace New option, or the Create Hub. You must provide a name, as shown in this screenshot:
+Like other standard Fabric items creation processes, you can create a new AI skill from the Fabric **Data Science** home page, by selecting the workspace **New** option, or by using the Create Hub. You must provide a name.
 
 :::image type="content" source="./media/how-to-create-ai-skill/create-ai-skill.png" alt-text="Screenshot showing creation of an AI skill." lightbox="./media/how-to-create-ai-skill/create-ai-skill.png":::
 
-## Selecting your data
+## Select your data
 
-After you create an AI skill, select a data source - either a Data Warehouse or a Lakehouse - on the next screen. Select the Warehouse or Lakehouse, and then select "Connect."
+After you create an AI skill, you select a data source. It can be either a data warehouse or a lakehouse. On the next screen, select the warehouse or lakehouse, and then select **Connect**.
 
-The left nav populates with the available tables in the selected data source. Use the checkboxes to make a table available or unavailable to the AI. You must select at least one table before you can ask the AI skill your questions.
+The left pane populates with the available tables in the selected data source. Use the checkboxes to make a table available or unavailable to the AI. You must select at least one table before you can ask the AI skill your questions.
 
 > [!NOTE]
-> Make sure to use descriptive column names. Instead of using column names like “C1” or “ActCu,” use “ActiveCustomer” or “IsCustomerActive.” This is the most effective way to get more reliable queries out of the AI.
-> Use the Notes for the model in the UI configuration panel. If the AI skill generates incorrect T-SQL queries, you can provide instructions to the model in plain English to improve future queries. The system will use these instructions with every query. Short and direct instructions work best.
+> Make sure to use descriptive column names. Instead of using column names like `C1` or `ActCu`, use `ActiveCustomer` or `IsCustomerActive`. Using descriptive names is the most effective way to get more reliable queries out of the AI.
+> Use the notes for the model in the UI configuration panel. If the AI skill generates incorrect T-SQL queries, you can provide instructions to the model in plain English to improve future queries. The system will use these instructions with every query. Short and direct instructions work best.
 
-## Asking questions
+## Ask questions
 
-Once you select the data, you can start asking questions. The system handles questions that a single query can answer. This means that questions like
+After you select the data, you can start asking questions. The system handles questions that a single query can answer. Questions like the following examples should work:
 
-- "What were our total sales in California in 2023?" or
+- "What were our total sales in California in 2023?"
 - "What are the most expensive items that have never been sold?"
-
-should work, as shown in this screenshot:
 
 :::image type="content" source="./media/how-to-create-ai-skill/ask.png" alt-text="Screenshot showing a question for an AI skill." lightbox="./media/how-to-create-ai-skill/ask.png":::
 
@@ -72,29 +70,31 @@ These questions are out of scope:
 - "Why is our factory productivity lower in Q2 2024?"
 - "What is the root cause of our sales spike?"
 
-When you ask a question, the system uses your credentials to fetch the schema. Based on that question, the additional information you provided (see the sections on "Providing Examples" and "Providing Instructions" below), and the schema, the system then constructs a prompt. This prompt is the text that is sent to an AI, which generates multiple SQL queries. After generation of the SQL queries, study them to ensure that they only query the data. Additionally, verify that they don't create, update, delete, or otherwise change your data in any way. Then, extract the best query candidate from the list of generated queries, and make any needed basic repairs on the best AI-generated query. Finally, with your credentials, re-execute the query, and return the result set to you.
+When you ask a question, the system uses your credentials to fetch the schema. Based on the question, the system uses the information you provided (see the sections "Provide examples" and "Provide instructions") and the schema to construct a prompt. This prompt is the text that's sent to an AI, which generates multiple SQL queries.
 
-## Changing the data source
+After generation of the SQL queries, study them to ensure that they only query the data. Also, verify that they don't create, update, delete, or otherwise change your data in any way. Then, extract the best query candidate from the list of generated queries. Make any needed basic repairs on the best AI-generated query. Finally, with your credentials, reexecute the query and return the result set to you.
 
-To switch to another Lakehouse or Warehouse, select the arrows near the top of the Explorer pane, as shown in this screenshot:
+## Change the data source
 
-:::image type="content" source="./media/how-to-create-ai-skill/change-datasource.png" alt-text="Screenshot showing selection of another datasource." lightbox="./media/how-to-create-ai-skill/change-datasource.png":::
+To switch to another lakehouse or warehouse, select the arrows near the top of the **Explorer** pane.
 
-## Providing examples
+:::image type="content" source="./media/how-to-create-ai-skill/change-datasource.png" alt-text="Screenshot showing selection of another data source." lightbox="./media/how-to-create-ai-skill/change-datasource.png":::
 
-In Fabric, you can configure the AI skill so that the AI answers your questions as you would expect. One technique is to provide examples to the AI. In generative AI, refer to this as Few Shot Learning. Here, you give the AI access to query/question pairs. The next time you ask a question, the AI will find the most relevant questions in the set of questions that you provided. These questions, together with the corresponding SQL query you provided, give background to the AI as it generates the SQL.
+## Provide examples
+
+In Fabric, you can configure the AI skill so that the AI answers your questions as you would expect. One technique is to provide examples to the AI. In generative AI, this technique is referred to as *few shot learning*. Here, you give the AI access to query or question pairs. The next time you ask a question, the AI finds the most relevant questions in the set of questions that you provided. These questions, together with the corresponding SQL query you provided, give background to the AI as it generates the SQL.
 
 If you find that the AI doesn't generate the right queries, you can provide more examples.
 
-To provide examples, you can select the edit button under the "Example SQL Queries" on the right hand side, as shown in this screenshot:
+To provide examples, you can select the edit button under **Example SQL Queries** on the right side.
 
 :::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-examples.png":::
 
-## Providing instructions
+## Provide instructions
 
-You can also steer the AI with instructions. You can provide these instructions in the "Notes for the Model" textbox. Here, you can write instructions in English, and the AI uses those instructions when it generates SQL.
+You can also steer the AI with instructions. You can provide these instructions in the **Notes for model** text box. Here, you can write instructions in English. The AI uses those instructions when it generates SQL.
 
-If you find that the AI consistently misinterprets certain words or acronyms, you can provide definitions of terms in this section, as shown in this screenshot:
+If you find that the AI consistently misinterprets certain words or acronyms, you can provide definitions of terms in this section.
 
 :::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png" alt-text="Screenshot showing where you can edit the instructions you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png":::
 
