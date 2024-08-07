@@ -54,7 +54,9 @@ The left pane populates with the available tables in the selected data source. U
 
 > [!NOTE]
 > Make sure to use descriptive column names. Instead of using column names like `C1` or `ActCu`, use `ActiveCustomer` or `IsCustomerActive`. Using descriptive names is the most effective way to get more reliable queries out of the AI.
-> Use the notes for the model in the UI configuration panel. If the AI skill generates incorrect T-SQL queries, you can provide instructions to the model in plain English to improve future queries. The system will use these instructions with every query. Short and direct instructions work best.
+>
+> Use the notes for the model in the UI configuration panel. 
+>If the AI skill generates incorrect T-SQL queries, you can provide instructions to the model in plain English to improve future queries. The system will use these instructions with every query. Short and direct instructions work best.
 
 ## Ask questions
 

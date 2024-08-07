@@ -31,11 +31,11 @@ The AI skill relies on Generative AI, specifically, large language models (LLMs)
 
 Think of the AI skill as you might think about Power BI reports. You first build the report, and then you share the report with your colleagues who can consume it to get their data insights. The AI skill works in a similar way. You need to first create and configure the AI skill. Then, you can share it with your colleagues.
 
-You should expect to handle some necessary configuration steps before the AI skill works properly. An AI skill can often provide out-of-the-box answers to reasonable questions, but it could provide incorrect answers for your specific situation. The incorrect answers typically occur because the AI is missing context about your company, setup, or definition of key terms. To solve the problem, provide the AI with instructions and example question-query pairs. You can use these powerful techniques to guide the AI to the right answers.
+You should expect to handle some necessary configuration steps before the AI skill works properly. An AI skill can often provide out-of-the-box answers to reasonable questions, but it could provide incorrect answers for your specific situation. Incorrect answers typically occur because the AI is missing context about your company, setup, or definition of key terms. To solve the problem, provide the AI with instructions and example question-query pairs. You can use these powerful techniques to guide the AI to the right answers.
 
 ## Difference between an AI skill and a copilot
 
-The technology behind the AI skill and the Fabric copilots is similar. They both use Generative AI to reason over data. They also have some key differences:
+The technology behind the AI skill and the Fabric copilots is similar. They both use generative AI to reason over data. They also have some key differences:
 
 - **Configuration**: With an AI skill, you can configure the AI to behave the way you need. You can provide it with instructions and examples that tune it to your specific use case. A Fabric copilot doesn't offer this configuration flexibility.
 - **Use case**: A copilot can help you do your work on Fabric. It can help you generate notebook code or data warehouse queries. In contrast, the AI skill operates independently. You can eventually connect it to Microsoft Teams and other areas outside of Fabric.

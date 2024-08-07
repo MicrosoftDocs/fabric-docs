@@ -37,27 +37,27 @@ If you already have an instance of AdventureWorksDW in a warehouse or lakehouse,
 
 1. In the top cell, add the following code snippet:
 
-```python
-import pandas as pd
-from tqdm.auto import tqdm
-base = "https://synapseaisolutionsa.blob.core.windows.net/public/AdventureWorks"
-
-# load list of tables
-df_tables = pd.read_csv(f"{base}/adventureworks.csv", names=["table"])
-
-for table in (pbar := tqdm(df_tables['table'].values)):
-    pbar.set_description(f"Uploading {table} to lakehouse")
-
-    # download
-    df = pd.read_parquet(f"{base}/{table}.parquet")
-
-    # save as lakehouse table
-    spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)
-```
+    ```python
+    import pandas as pd
+    from tqdm.auto import tqdm
+    base = "https://synapseaisolutionsa.blob.core.windows.net/public/AdventureWorks"
+    
+    # load list of tables
+    df_tables = pd.read_csv(f"{base}/adventureworks.csv", names=["table"])
+    
+    for table in (pbar := tqdm(df_tables['table'].values)):
+        pbar.set_description(f"Uploading {table} to lakehouse")
+    
+        # download
+        df = pd.read_parquet(f"{base}/{table}.parquet")
+    
+        # save as lakehouse table
+        spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)
+    ```
 
 1. Select **Run all**.
 
-:::image type="content" source="./media/ai-skill-scenario/notebook-run-all.png" alt-text="Screenshot showing a notebook with the AdventureWorks upload code." lightbox="./media/ai-skill-scenario/notebook-run-all.png":::
+   :::image type="content" source="./media/ai-skill-scenario/notebook-run-all.png" alt-text="Screenshot showing a notebook with the AdventureWorks upload code." lightbox="./media/ai-skill-scenario/notebook-run-all.png":::
 
 After a few minutes, the lakehouse is populated with the necessary data.
 
