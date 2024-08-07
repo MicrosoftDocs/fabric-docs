@@ -91,7 +91,7 @@ In some situations, your Fabric administrator [enables Microsoft Fabric for the 
 
 Each standard Fabric trial includes 64 capacity units. The person who starts the trial becomes the Capacity administrator for only that trial capacity. And that Capacity administrator can share the trial by assigning workspaces to that specific trial capacity.  
 
-Other users on the same tenant can also start a Fabric trial and become the Capacity administrator for their trial capacity. Microsoft sets a limit on the number of trial capacities that can be created on a single tenant. ​So sharing workspaces in trial capacities is essential to allow your colleagues to participate in the Fabric capacity trial. Each Fabric trial capacity can be used by hundreds of users.
+Other users on the same tenant can also start a Fabric trial and become the Capacity administrator for their trial capacity. Microsoft sets a limit on the number of trial capacities that can be created on a single tenant. ​So sharing workspaces in trial capacities is essential to allow your colleagues to participate in the Fabric capacity trial. Hundreds of customers can use each Fabric trial capacity.
 
 The Capacity administrator can assign the trial capacity to multiple workspaces. Anyone with access to one of those workspaces is now also participating in the Fabric capacity trial. 
 
@@ -155,7 +155,7 @@ If you don't see the **Start trial** button in your Account manager:
 
 - Your Fabric administrator might disable access, and you can't start a Fabric trial. To request access, [contact your Fabric administrator](#look-up-the-trial-capacity-administrator). You can also start a trial using your own tenant. For more information, see [Sign up for Power BI with a new Microsoft 365 account](/power-bi/enterprise/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial).
 
-- You're an existing Power BI trial user, and you don't see **Start trial** in your Account manager. You can start a Fabric trial by attempting to [create a Fabric item](#other-ways-to-start-a-microsoft-fabric-trial). When you attempt to create a Fabric item, you're prompted to start a Fabric trial. If you don't see this prompt, it's possible that this action is deactivated by your Fabric administrator.
+- You're an existing Power BI trial user, and you don't see **Start trial** in your Account manager. You can start a Fabric trial by attempting to [create a Fabric item](#other-ways-to-start-a-microsoft-fabric-trial). When you attempt to create a Fabric item, you receive a prompt to start a Fabric trial. If you don't see this prompt, it's possible that this action is deactivated by your Fabric administrator.
 
 If you don't have a work or school account and want to sign up for a free trial. 
 
