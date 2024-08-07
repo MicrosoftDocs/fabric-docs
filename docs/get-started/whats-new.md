@@ -268,6 +268,7 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|August 2024|**TRUNCATE T-SQL support**|The `TRUNCATE` T-SQL command is now supported in Warehouse tables.|
 |July 2024|**ALTER TABLE and nullable column support**|We've added T-SQL `ALTER TABLE` support for some operations, as well as nullable column support to tables in the warehouse. For more information, see [ALTER TABLE (Transact-SQL)](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).|
 |July 2024|**Warehouse queries with time travel (GA)**|Warehouse in Microsoft Fabric offers the capability to [query the historical data as it existed in the past](../data-warehouse/time-travel.md) at the statement level, now generally available. The ability to [query data from a specific timestamp](https://blog.fabric.microsoft.com/blog/announcing-the-general-availability-of-time-travel-and-30-days-of-data-history-retention-in-fabric-warehouse?ft=All) is known in the data warehousing industry as *time travel*.|
 |July 2024|**Restore warehouse experience in the Fabric portal**|You can now create restore points and perform [a restore in-place of a warehouse item](../data-warehouse/restore-in-place-portal.md). For more information, see [Seamless Data Recovery through Warehouse restoration](https://blog.fabric.microsoft.com/blog/seamless-data-recovery-through-warehouse-restoration-within-fabric-query-editor).|
