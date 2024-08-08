@@ -126,9 +126,9 @@ Filter this column to only keep null values, which represent the values that don
 
 ![Result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Susan Eaten in the Northwest region](/fabric/data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png)
 
-The next step requires you to add missing fields to your record such as the StartDate, EndDate, IsCurrent, and even the SalesRepID. However, while the first three are easy to define with a simple formula, the SalesRepID requires you to first calculate this value from the existing values in the Dimension table.
+Remove the Count column and rename this query to be called **CompareStoM**.
 
-Rename this query to be called **CompareStoM**.
+The next step requires you to add missing fields to your record such as the StartDate, EndDate, IsCurrent, and even the SalesRepID. However, while the first three are easy to define with a simple formula, the SalesRepID requires you to first calculate this value from the existing values in the Dimension table.
 
 #### Get the sequence of identifiers from the Dimension table
 
@@ -167,7 +167,7 @@ It's time to add the missing columns using the Add custom column. Below is a tab
 
 |Column name|Data type|Formula|
 |---|----|--|
-|StartDate|Date|Date. From(DateTime.LocalNow())
+|StartDate|Date|Date.From(DateTime.LocalNow())
 |EndDate|Date|#date(9999,12,31)|
 |IsCurrent| logical| true|
 
