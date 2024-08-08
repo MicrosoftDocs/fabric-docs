@@ -91,15 +91,18 @@ val df = spark.read.synapsesql("<warehouse/lakehouse name>.<schema name>.<table 
 
 ### Read data across workspaces
 
-To access and read data from a warehouse or lakehouse across workspaces, you can specify the workspace ID where your warehouse or lakehouse exists. This line provides an example of reading data from a table or view in a Spark DataFrame from the warehouse or lakehouse from the specified workspace ID:
+To access and read data from a data warehouse or lakehouse across workspaces, you can specify the workspace ID where your data warehouse or lakehouse exists and then lakehouse or data warehouse item id. This line provides an example of reading data from a table or view in a Spark DataFrame from the data warehouse or lakehouse with the specified workspace ID and lakehouse/data warehouse ID:
 
 ```scala
 import com.microsoft.spark.fabric.Constants
-val df = spark.read.option(Constants.WorkspaceId, "<workspace id>").synapsesql("<warehouse/lakehouse name>.<schema name>.<table or view name>")
+//For lakehouse
+val df = spark.read.option(Constants.WorkspaceId, "<workspace id>").option(Constants.LakehouseId, "<lakehouse item id>").synapsesql("<lakehouse name>.<schema name>.<table or view name>")
+//For data warehouse
+val df = spark.read.option(Constants.WorkspaceId, "<workspace id>").option(Constants.DatawarehouseId, "<data warehouse item id>").synapsesql("<warehouse name>.<schema name>.<table or view name>")
 ```
 
 > [!NOTE]
-> When you're running the notebook, by default the connector looks for the specified warehouse or lakehouse in the workspace of the lakehouse that's attached to the notebook. To reference a warehouse or lakehouse from another workspace, specify the workspace ID.
+> When you're running the notebook, by default the connector looks for the specified data warehouse or lakehouse in the workspace of the lakehouse that's attached to the notebook. To reference a data warehouse or lakehouse from another workspace, specify the workspace ID and lakehouse or data warehouse item ID as above.
 
 ### Use materialized data across cells and languages
 
