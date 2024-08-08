@@ -102,10 +102,17 @@ Filter this column to only keep null values which will represent the values that
 
 ![Result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Susan Eaten in the Northwest region](/docs/data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png)
 
+From knowing what records simply don't exist in our dimension table, we can infer what new records we need to add. 
+At the same time, knowing what values from the dimension table don't exist in the snapshot of the source table can help us infer what values need to be updated with a new EndDate in the Dimension table and a change for their IsCurrent value. 
+The next two sub sections explain how you can create new queries to implement this logic and get a table for new records and a new table for records that require an update.
 
-### New records
+>[!NOTE]
+>You can extend the logic beyond what's showcased in this tutorial to meet your specific needs
 
-### Records to update
+#### New records
+
+
+#### Records to update
 
 ### Combining records to add and update into a single table
 
