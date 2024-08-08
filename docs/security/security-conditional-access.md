@@ -41,7 +41,7 @@ To ensure that conditional access for Fabric works as intended and expected, it'
 
 The following steps show how to configure a conditional access policy for Microsoft Fabric.
 
-1. Sign in to the Azure portal using an account with *global administrator permissions*.
+1. Sign in to the Azure portal.
 1. Select **Microsoft Entra ID**.
 1. On the Overview page, choose **Security** from the menu.
 1. On the Security | Getting started page, choose **Conditional Access**.
