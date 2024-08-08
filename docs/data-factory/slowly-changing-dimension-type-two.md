@@ -105,8 +105,44 @@ Filter this column to only keep null values, which represent the values that don
 
 ![Result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Susan Eaten in the Northwest region](/docs/data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png)
 
->[!NOTE]
->You can extend the logic beyond what's showcased in this tutorial to meet your specific needs
+The next step requires you to add missing fields to your record such as the StartDate, EndDate, IsCurrent and even the SalesRepID. However, while the first three are easy to set define with a simple formula, the SalesRepID requires you to first calculate this value from the existing values in the Dimension table.
+
+#### Get the sequence of identifiers from the Dimension table
+
+Reference the existing Dimension table and call this new query LastID as you will reference this query in the future. 
+
+The easiest way to calculate this value is to start by doing a Group by operation where you calculate the maximum value of the SalesRepID.
+
+<image>
+
+Given that your table could have no rows, right click the Count column and drill down to it. This will display a list value.
+
+Use the formula below that will calculate the max value from the SalesRepID and add one to it or establish the value one as the seed for new records in case your table doesn't have any records
+<formula>
+
+For this specific tutorial the result will be the number four.
+
+<image>
+
+Reference the Compare query where you had the single record for Susan Eaten in the Northwest region and call this new query "NewRecords". Add a new Index column through the Add column tab in the ribbon that starts from the number zero and increments by one.
+
+<image of adding index column>
+
+Check the formula of the step that was created and replace the 0 with the name of the query LastID. This will yield  starting value that represents the new values for your records in the Dimension table.
+
+#### Add missing fields to new records
+
+Its time to add the missing columns using the Add custom column. Below is a table with all the formulas to use for each of the new columns
+
+|Column name|Data type|Formula|
+|---|----|--|
+|StartDate|Date|Date.From(DateTime.LocalNow())
+|EndDate|Date|#date(9999,12,31)|
+|IsCurrent| logical| true|
+
+The result will give you a table that looks like the one below.
+
+<image>
 
 ### Records to update
 
@@ -121,9 +157,9 @@ This yields a table with records that are no longer used in the Source table. Yo
 
 ![Replace IsCurrent values from TRUE to FALSE](/docs/data-factory/media/slowly-changing-dimension-type-two/replace-is-current-value.png)
 
-You can right select the EndDate field and select the **Replace values...** as well. Input a value of 12/31/1999 or any date of your choice as you will replace this value later on.
+You can right select the EndDate field and select the **Replace values...** as well. Input a value of 12/31/1999 or any date of your choice as you'll replace this value later on.
 
-Once you've committed the dialog, a new replace values step will be added. Go to the formula bar of the step and change the component that has #date(1999,12,31) with the formula from below.
+Once you've committed the dialog, a new replace values step is added. Go to the formula bar of the step and change the component that has #date(1999,12,31) with the formula from below.
 
 ```m-code
 Date.From(DateTime.LocalNow())
@@ -131,14 +167,13 @@ Date.From(DateTime.LocalNow())
 
 This new formula will add a date stamp as to when the logic runs to determine the EndDate for that particular record.
 
-The result of this will be a table with exactly the records that should be updated with the new values
+The result of this will be a table with exactly the records that should be updated with their corresponding new values.
 
 ![Making the EndDate a dynamic function that adds a date stamp](/docs/data-factory/media/slowly-changing-dimension-type-two/current-time-for-replace.png)
 
-
 ### Combining records to add and update into a single table
 
-## Logic to update Dimension table
+## Logic to update the Dimension table
 
 ### Using Dataflow Gen2
 
@@ -146,3 +181,6 @@ The result of this will be a table with exactly the records that should be updat
 
 <Explain how you can use a Stored procedure, a notebook or other methods to upsert rows>
 
+## Conclusion
+
+You can extend the logic beyond what's showcased in this tutorial to meet your specific needs
