@@ -69,10 +69,12 @@ You have two ways to browse to this page:
 In the **Connect data source** pane, specify the following field:
 
 - **Server**: Specify the location of Oracle database that you want to connect to. You can specify this property in one of the following three ways:
-
-    - [Oracle Net Services Name (TNS Alias)](https://docs.oracle.com/en/database/oracle/oracle-database/23/netrf/local-naming-parameters-in-tns-ora-file.html#GUID-12C94B15-2CE1-4B98-9D0C-8226A9DDF4CB)
-    - [Connect Descriptor](https://docs.oracle.com/cd/E11882_01/network.112/e41945/concepts.htm#NETAG253)
-    - [Easy Connect (Plus) Naming](https://download.oracle.com/ocomdocs/global/Oracle-Net-Easy-Connect-Plus.pdf)
+    
+    | Way | Example|
+    | --- | --- |
+    |[Oracle Net Services Name (TNS Alias)](https://docs.oracle.com/en/database/oracle/oracle-database/23/netrf/local-naming-parameters-in-tns-ora-file.html#GUID-12C94B15-2CE1-4B98-9D0C-8226A9DDF4CB)|sales|
+    |[Connect Descriptor](https://docs.oracle.com/cd/E11882_01/network.112/e41945/concepts.htm#NETAG253)|	(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=sales-server)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=sales.us.acme.com)))|
+    |[Easy Connect (Plus) Naming](https://download.oracle.com/ocomdocs/global/Oracle-Net-Easy-Connect-Plus.pdf)|salesserver1:1521/sales.us.example.com|
 
     >[!Note]
     >The Oracle Net Services Name (TNS Alias) is the predefined address name in the *tnsnames.ora* file. So, when using it, the *tnsnames.ora* should be correctly configured and placed in the Oracle Client configuration files' directory specified during the previous [installation of OCMT](#prerequisites). Whereas, when using the Connect Descriptor or the Easy Connect (Plus) Naming, you do not need to configure the *tnsnames.ora* file on your machine.
