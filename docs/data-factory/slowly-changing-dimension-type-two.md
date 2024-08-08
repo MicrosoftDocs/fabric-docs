@@ -18,7 +18,7 @@ This article showcases a tutorial and an example of how you can implement a solu
 
 When implementing a solution for a Slowly changing dimension type 2, it's important to define your source table and what fields from your source table will drive the logic to identify new records.
 
-<Slowly changing dimension type2 diagram>
+![Architecture diagram showcasing the components or processes to make the slowly changing dimension type 2 happen in Dataflow](/fabric/data-factory/media/slowly-changing-dimension-type-two/diagram-architecture.png)
 
 As a whole, the architecture requires a minimum of four components:
 * **Source table**: This is your operational table where you can change the values as needed and its data or how the data is managed inside of this table isn't driven by Dimension table.
