@@ -150,14 +150,16 @@ The output of the LastID query for this example is the number four.
 ![The number four as the output of the query LastID](/fabric/data-factory/media/slowly-changing-dimension-type-two/lastid-query-output.png)
 
 >[!IMPORTANT]
->Custom represents the name of your previous step. If this is not the exact name of your query, modify the formula accordingly to reflect the name of your previous step.
+>**Custom** represents the name of your previous step. If this is not the exact name of your query, modify the formula accordingly to reflect the name of your previous step.
 
 Reference the Compare query where you had the single record for Susan Eaten in the Northwest region and call this new query "NewRecords". 
-Add a new Index column through the Add column tab in the ribbon that starts from the number zero and increments by one.
+Add a new Index column through the Add column tab in the ribbon that starts from the number zero.
 
-<image of adding index column>
+![Adding an index column](/fabric/data-factory/media/slowly-changing-dimension-type-two/add-index-column.png)
 
-Check the formula of the step that was created and replace the ```0``` with the name of the query LastID. This yields  starting value that represents the new values for your records in the Dimension table.
+Check the formula of the step that was created and replace the ```0``` with the name of the query **LastID**. This yields  starting value that represents the new values for your records in the Dimension table.
+
+![Adding an index column with a new start value](/fabric/data-factory/media/slowly-changing-dimension-type-two/index-with-new-start-value.png)
 
 #### Add missing fields to new records
 
@@ -169,9 +171,9 @@ It's time to add the missing columns using the Add custom column. Below is a tab
 |EndDate|Date|#date(9999,12,31)|
 |IsCurrent| logical| true|
 
-The result gives you a table that looks like the one below.
+The result now conforms to the sceham expected by the Dimension table.
 
-<image>
+![Table with all new records that need to be added to the Dimension table](/fabric/data-factory/media/slowly-changing-dimension-type-two/new-records-table.png)
 
 ### Records to update
 
