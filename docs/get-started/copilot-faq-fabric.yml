@@ -39,7 +39,7 @@ sections:
         answer: |
           The data that Copilot can access depends on your role-level security and user-based permission on Fabric. 
           
-          If you do not have permission to access specific data, then prompting Copilot for it will not retrieve the information. 
+          If you don't have permission to access specific data, then prompting Copilot for it won't retrieve the information. 
 
       - question: |
           Can Copilot prompts be saved for future reference?       
@@ -47,7 +47,7 @@ sections:
           Copilot prompts can't be saved for future reference. The only experience where it's possible to view your prompts is by using the chat-magic function in Notebooks, under the Fabric Data Science view. 
 
       - question: |
-          Does enabling Copilot and agreeing to the setting of “Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance” mean all my data is sent/processed outside my country?     
+          Does enabling Copilot and agreeing to the setting of "Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance" mean all my data is sent or processed outside my country?
         answer: |
           Not exactly. While the prompt itself is sent to Azure OpenAI, it doesn't mean your data is sent or processed outside your country. 
           
