@@ -87,7 +87,10 @@ Within the dialog, make sure to group by the Hash column and select the Operatio
 ![Aggregate a count column by using the Hash column from the Dimension table](/docs/data-factory/media/slowly-changing-dimension-type-two/aggregate-count-by-hash-dimension.png)
 
 
-### Comparing the snapshot of your table against the Dimension table
+### New records
+
+>[!NOTE]
+>Comparing the source table against the dimension table will fundamentally gives you what new records need to be added to the dimension table.
 
 Using your query with the Source table, go to the Home tab in the ribbon and select the option to Merge queries as new inside the Combine group. Rename this query to be Compare.
 Within the Merge dialog, make sure to pick the Dimension table in the "Right table for merge" dropdown and select the Hash columns from both tables while leaving the default Join kind of Left outer.
@@ -102,14 +105,13 @@ Filter this column to only keep null values which will represent the values that
 
 ![Result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Susan Eaten in the Northwest region](/docs/data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png)
 
-From knowing what records simply don't exist in our dimension table, we can infer what new records we need to add. 
-At the same time, knowing what values from the dimension table don't exist in the snapshot of the source table can help us infer what values need to be updated with a new EndDate in the Dimension table and a change for their IsCurrent value. 
-The next two sub sections explain how you can create new queries to implement this logic and get a table for new records and a new table for records that require an update.
-
 >[!NOTE]
 >You can extend the logic beyond what's showcased in this tutorial to meet your specific needs
 
-#### Records to update
+### Records to update
+
+>[!NOTE]
+>Comparing the dimension table against the source table will fundamentally gives you what records should be updated in the dimension table.
 
 Using the original Dimension query (Dimension), perform a new **Merge queries as new** operation and select the Source table query as the right table. Select the Hash columns from both tables and select Left anti as the join kind.
 
@@ -129,10 +131,9 @@ Date.From(DateTime.LocalNow())
 
 This new formula will add a date stamp as to when the logic runs to determine the EndDate for that particular record.
 
+The result of this will be a table with exactly the records that should be updated with the new values
+
 ![Making the EndDate a dynamic function that adds a date stamp](/docs/data-factory/media/slowly-changing-dimension-type-two/current-time-for-replace.png)
-
-#### New records
-
 
 
 ### Combining records to add and update into a single table
