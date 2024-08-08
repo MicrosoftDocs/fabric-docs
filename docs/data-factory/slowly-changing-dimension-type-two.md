@@ -253,3 +253,8 @@ You can sort this table using the **SalesRepID** field in ascending order and th
 ![Data preview of the final dimension table before it gets a definition for a data destination](/fabric/data-factory/media/slowly-changing-dimension-type-two/final-dimension-table.png)
 
 You can read more about how to set a data destination for your query and load the output of the query to your **Dimension** table from the article on [Dataflow Gen2 data destinations and managed settings](/fabric/data-factory/dataflow-gen2-data-destinations-and-managed-settings.md).
+
+![Final diagram view that showcases the full solution](/fabric/data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png)
+
+>[!NOTE]
+>Take into consideration that in Dataflow Gen2 you can leverage a staging mechanism at the query level. Read more about the [staging mechanism in Dataflow Gen2](/fabric/data-factory/data-in-staging-artifacts.md)
