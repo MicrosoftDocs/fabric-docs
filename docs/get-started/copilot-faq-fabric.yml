@@ -35,7 +35,7 @@ sections:
           Copilot is enabled at the tenant level and access can be restricted by security groups. If the workspace is tied to an F-64 or P1 capacity, Copilot experience will be enabled.    
       
       - question: |
-          When using Copilot, who has access to what data?     
+          When you're using Copilot, who has access to what data?     
         answer: |
           The data that Copilot can access depends on your role-level security and user-based permission on Fabric. 
           
