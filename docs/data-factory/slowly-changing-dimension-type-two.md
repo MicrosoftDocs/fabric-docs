@@ -204,6 +204,17 @@ The result of this will be a table with exactly the records that should be updat
 
 ### Combining records to add and update into a single table
 
+With a query that gives you all new records and another that gives you all records that need to be updated, you can [append](https://learn.microsoft.com/power-query/append-queries) both into a single query to simplify the following process to update your dimension table.
+
+To append the queries, be sure to select the query with the new records, go to the home tab of the ribbon and inside the Combine group you'll find the option to *Append queries as new*. From the Append dialog, make sure to also select the query with the records to update as the second table.
+
+![Append queries with new and updated records](/fabric/data-factory/media/slowly-changing-dimension-type-two/append-new-updated-records.png)
+
+Rename this new query as **StagingTableForUpdates** and it should contain 3 rows. This query wil lbe used in the logic to update the dimension table.
+
+![The query with all records to be added or updated combined](/fabric/data-factory/media//slowly-changing-dimension-type-two/staging-table-for-updates.png)
+
+
 ## Logic to update the Dimension table
 
 ### Using Dataflow Gen2
