@@ -169,7 +169,7 @@ It's time to add the missing columns using the Add custom column. Below is a tab
 |---|----|--|
 |StartDate|Date|Date.From(DateTime.LocalNow())
 |EndDate|Date|#date(9999,12,31)|
-|IsCurrent| logical| true|
+|IsCurrent| True/False| true|
 
 The result now conforms to the sceham expected by the Dimension table.
 
