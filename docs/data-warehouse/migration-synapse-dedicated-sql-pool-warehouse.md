@@ -4,9 +4,7 @@ description: This article details the strategy, considerations, and methods of m
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: arturv, johoang
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 07/17/2024
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
@@ -165,7 +163,7 @@ This table summarizes information for data schema (DDL), database code (DML), an
 |2| [Data Factory with partition](#option-2-ddldata-migration---data-pipeline-using-partition-option) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline | Using partitioning options to increase read/write parallelism providing 10x throughput vs option 1, recommended for [fact tables](dimensional-modeling-fact-tables.md).|
 |3| [Data Factory with accelerated code](#option-3-ddl-migration---copy-wizard-foreach-copy-activity) | Schema (DDL) conversion | ADF/Pipeline | Convert and migrate the schema (DDL) first, then use CETAS to extract and COPY/Data Factory to ingest data for optimal overall ingestion performance. |
 |4| [Stored procedures accelerated code](#migration-using-stored-procedures-in-synapse-dedicated-sql-pool) | Schema (DDL) conversion<br />Data extract<br />Code assessment | T-SQL | SQL user using IDE with more granular control over which tasks they want to work on. Use COPY/Data Factory to ingest data. |
-|5| [SQL Database Project extension for Azure Data Studio](#migration-using-sql-database-project) | Schema (DDL) conversion<br />Data extract<br />Code assessment | SQL Project | SQL Database Project for deployment with the integration of option 4. Use COPY or Data Factory to ingest data.|
+|5| [SQL Database Project extension for Azure Data Studio](#migrate-using-sql-database-projects) | Schema (DDL) conversion<br />Data extract<br />Code assessment | SQL Project | SQL Database Project for deployment with the integration of option 4. Use COPY or Data Factory to ingest data.|
 |6| [CREATE EXTERNAL TABLE AS SELECT (CETAS)](#migration-of-data-with-cetas) | Data extract | T-SQL | Cost effective and high-performance data extract into Azure Data Lake Storage (ADLS) Gen2. Use COPY/Data Factory to ingest data.|
 |7| [Migrate using dbt](#migration-via-dbt) | Schema (DDL) conversion<br />database code (DML) conversion | dbt | Existing dbt users can use the dbt Fabric adapter to convert their DDL and DML. You must then migrate data using other options in this table. |
 
@@ -233,6 +231,9 @@ While using partition can increase the throughput with the staging phase, there 
 For fact tables, we recommended using Data Factory with partitioning option to increase throughput. 
 
 However, the increased parallelized reads require dedicated SQL pool to scale to higher DWU to allow the extract queries to be executed. Leveraging partitioning, the rate is improved 10x over no partition option.  You could increase the DWU to get additional throughput via compute resources, but the dedicated SQL pool has a maximum 128 active queries allow.
+
+> [!NOTE]
+> For more information on Synapse DWU to Fabric mapping, see [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/).
 
 ### Option 3. DDL migration - Copy Wizard ForEach Copy Activity
 
@@ -354,11 +355,13 @@ You can execute the specific stored procedure for the schema (DDL) conversion, d
 
 For the data migration, you'll need to use either COPY INTO or Data Factory to ingest the data into Fabric Warehouse.
 
-## Migration using SQL Database Project
+## Migrate using SQL database projects
 
 Microsoft Fabric Data Warehouse is supported in the [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension?view=fabric&preserve-view=true) available inside of [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio?view=fabric&preserve-view=true) and [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 
 This extension is available inside Azure Data Studio and Visual Studio Code. This feature enables capabilities for source control, database testing and schema validation.  
+
+For more information on source control for warehouses in Microsoft Fabric, including Git integration and deployment pipelines, see [Source Control with Warehouse](source-control.md).
 
 #### Recommended use
 
@@ -435,3 +438,4 @@ Several factors to note so that you can design your process for maximum performa
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
+- [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)

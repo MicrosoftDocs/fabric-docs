@@ -4,9 +4,7 @@ description: How to clone tables in the Warehouse in the Fabric portal.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 07/12/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -32,7 +30,7 @@ On clone table pane, you can see the source table schema and name is already pop
 
 ## Clone table as of past point-in-time
 
-Similar to current state, you can also choose the past state of the table within last seven days by selecting the date and time in UTC. This generates a clone of the table from a specific point in time, selectable in the **Date and time of past state** fields.
+Similar to current state, you can also choose the past state of the table within last 30 days by selecting the date and time in UTC. This generates a clone of the table from a specific point in time, selectable in the **Date and time of past state** fields.
 
 :::image type="content" source="media/tutorial-clone-table-portal/clone-table-past-state.png" alt-text="Screenshot showing the clone table as past state of the source table.":::
 

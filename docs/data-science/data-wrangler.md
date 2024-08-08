@@ -1,9 +1,10 @@
 ---
 title: Accelerate data prep with Data Wrangler
 description: Learn how to use Data Wrangler, a notebook-based tool for exploring data and generating code to transform it.
-author: orbey
-ms.author: erenorbey
-ms.reviewer: franksolomon
+ms.author: franksolomon
+author: fbsolo-ms1
+ms.reviewer: erenorbey
+reviewer: orbey
 ms.topic: how-to
 ms.custom: ignite-2023
 ms.date: 11/15/2023

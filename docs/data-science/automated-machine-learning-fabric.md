@@ -2,9 +2,10 @@
 title: AutoML in Fabric
 description: Use AutoML in Fabric to automate the ML workflow (preview)
 ms.topic: overview
-ms.reviewer: ssalgado
-author: midesa
-ms.author: midesa
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: midesa
+reviewer: midesa
 ms.date: 03/18/2024
 ---
 

@@ -4,9 +4,7 @@ description: Learn more about options to write TSQL queries on the SQL analytics
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad, kecona
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 08/01/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -63,9 +61,9 @@ To get started with this tutorial, check the following prerequisites:
 
 ## Write a cross-database query
 
-You can write cross database queries to databases in the current active workspace in [!INCLUDE [product-name](../includes/product-name.md)].
+You can write cross database queries to warehouses and databases in the current active workspace in [!INCLUDE [product-name](../includes/product-name.md)].
 
-There are several ways you can write cross-database queries within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace, in this section we explore examples. You can join tables or views to run cross-warehouse queries within current active workspace.  
+There are several ways you can write cross-database or cross-warehouse queries within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace, in this section we explore examples. You can join tables or views to run cross-warehouse queries within current active workspace.  
 
 1. Add [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) from your current active workspace to object **Explorer** using **+ Warehouses** action. When you select [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) from the dialog, it gets added into the object **Explorer** for referencing when writing a SQL query or creating Visual query.
 

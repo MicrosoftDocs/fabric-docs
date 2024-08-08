@@ -4,9 +4,7 @@ description: In this tutorial step, learn how to load data from a public storage
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 07/18/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -62,4 +60,4 @@ Now that you know how to build a data warehouse, load a table, and generate a re
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Transform data using a stored procedure](tutorial-transform-data.md)
+> [Tutorial: Clone a table using T-SQL in Microsoft Fabric](tutorial-clone-table.md)

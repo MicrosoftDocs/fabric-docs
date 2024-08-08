@@ -70,8 +70,10 @@ items:
     href: get-started-lakehouse-sql-analytics-endpoint.md
   - name: Create a sample warehouse 
     href: create-warehouse-sample.md
-  - name: Performance guidelines
+  - name: Warehouse performance
     href: guidelines-warehouse-performance.md
+  - name: SQL analytics endpoint performance
+    href: sql-analytics-endpoint-performance.md
   - name: Tables
     href: tables.md
   - name: Data types
@@ -86,6 +88,8 @@ items:
     href: transactions.md 
   - name: Warehouse settings and context menus
     href: settings-context-menus.md
+  - name: Source control with Warehouse
+    href: source-control.md
   - name: Analyze with range bands
     href: analyze-range-bands.md
 - name: Dimensional modeling
@@ -124,6 +128,8 @@ items:
   items:
   - name: Data warehousing security
     href: security.md
+  - name: Microsoft Entra ID authentication
+    href: entra-id-authentication.md
   - name: Workspace roles
     href: workspace-roles.md
   - name: Manage SQL granular permissions
@@ -166,6 +172,9 @@ items:
   items:
   - name: Restore in-place
     href: restore-in-place.md
+  - name: Restore in-place in the Fabric portal
+    href: restore-in-place-portal.md
+    displayName: Restore
   - name: Clone tables
     href: clone-table.md
   - name: Clone tables in the Fabric portal
@@ -255,6 +264,8 @@ items:
     href: statistics.md
   - name: Caching
     href: caching.md
+  - name: V-Order 
+    href: v-order.md
 - name: Monitor the warehouse
   items:
   - name: Monitoring overview
@@ -296,6 +307,8 @@ items:
     href: limitations.md      
   - name: Change ownership of Warehouse
     href: change-ownership.md
+  - name: Disable V-Order
+    href: disable-v-order.md
 - name: Reference
   items: 
   - name: T-SQL Reference for Fabric

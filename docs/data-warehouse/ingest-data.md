@@ -4,9 +4,7 @@ description: Learn about the features that allow you to ingest data into your wa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
-ms.date: 05/01/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 07/29/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -72,7 +70,7 @@ SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 ```
 
 - Avoid ingesting data using singleton **INSERT** statements, as this causes poor performance on queries and updates. If singleton **INSERT** statements were used for data ingestion consecutively, we recommend creating a new table by using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT** patterns, dropping the original table, and then creating your table again from the table you created using **CREATE TABLE AS SELECT (CTAS)**.
-  - Dropping your existing table impacts your semantic model, including any custom measures or customizations you may have made to the semantic model.
+  - Dropping your existing table impacts your semantic model, including any custom measures or customizations you might have made to the semantic model.
 - When working with external data on files, we recommend that files are at least 4 MB in size.
 - For large compressed CSV files, consider splitting your file into multiple files.
 - Azure Data Lake Storage (ADLS) Gen2 offers better performance than Azure Blob Storage (legacy). Consider using an ADLS Gen2 account whenever possible. 
@@ -81,7 +79,7 @@ SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 - If a SELECT is within a transaction, and was preceded by data insertions, the [automatically generated statistics](statistics.md) can be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
 
 > [!NOTE]
-> Regardless of how you ingest data into warehouses, the parquet files produced by the data ingestion task will be optimized using V-Order write optimization. V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark and others. Warehouse queries in general benefit from faster read times for queries with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. [Unlike in Fabric Data Engineering](../data-engineering/delta-optimization-and-v-order.md), V-Order is a global setting in Synapse Data Warehouse that cannot be disabled.
+> Regardless of how you ingest data into warehouses, the parquet files produced by the data ingestion task will be optimized using V-Order write optimization. V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark and others. Warehouse queries in general benefit from faster read times for queries with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. [Unlike in Fabric Data Engineering](../data-engineering/delta-optimization-and-v-order.md), V-Order is a global setting in Synapse Data Warehouse that cannot be disabled. For more information on V-Order, see [Understand and manage V-Order for Warehouse](v-order.md).
 
 ## Related content
 

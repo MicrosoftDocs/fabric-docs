@@ -4,9 +4,7 @@ description: Learn more about securing the SQL analytics endpoint and Warehouse 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 07/26/2024
 ms.topic: overview
 ms.custom:
   - build-2023
@@ -97,10 +95,11 @@ When evaluating the permissions to assign to a user, consider the following guid
 - If they primarily require read only access, assign them to the Viewer role and grant read access on specific objects through T-SQL.  For more information, see [Manage SQL granular permissions](sql-granular-permissions.md).
 - If they are higher privileged users, assign them to Admin, Member or Contributor roles. The appropriate role is dependent on the other actions that they will need to perform.  
 - Other users, who only need access to an individual warehouse or require access to only specific SQL objects, should be given Fabric Item permissions and granted access through SQL to the specific objects.
-- You can manage permissions on Microsoft Entra ID (formerly Azure Active Directory) groups, as well, rather than adding each specific member.
+- You can manage permissions on Microsoft Entra ID (formerly Azure Active Directory) groups, as well, rather than adding each specific member. For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
 ## Related content
 
 - [Connectivity](connectivity.md)
 - [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md)
 - [How to share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
+- [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)

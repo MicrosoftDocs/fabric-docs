@@ -9,7 +9,7 @@ ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/10/2024
+ms.date: 07/28/2024
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
@@ -35,13 +35,13 @@ When you deploy content from one pipeline stage to another, the copied content c
 
 * [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
 * Dataflows Gen1
-* Datamarts
+* [Datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (based on supported semantic models)
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
-* Semantic models (except for DirectLake semantic models)
+* Semantic models (only those that originate from .pbix files and aren't PUSH datasets)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
 
 ## Pipeline structure
@@ -75,8 +75,6 @@ Pairing is the process by which an item (such as a report, dashboard, or semanti
 It's important to understand how pairing works, in order to understand when items will be copied, when they will be overwritten and when a deployment will fail when using the deploy function.
 
 If items aren't paired, even if they appear to be the same (have the same name, type, and folder), they won't overwrite on a deployment. Instead, a duplicate copy will be created and paired with the item in the previous stage.
-
-<!--- :::image type="content" source="./media/intro-to-deployment-pipelines/pairing-rules.png" alt-text="Diagram describing when items are paired in different circumstances."::: --->
 
 Paired items appear on the same line in the pipeline content list. Items that aren't paired, appear on a line by themselves:
 

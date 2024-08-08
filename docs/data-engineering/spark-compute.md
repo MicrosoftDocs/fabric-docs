@@ -69,15 +69,15 @@ An Apache Spark pool instance consists of one head node and worker nodes, could 
 
 ## Node sizes
 
-A Spark pool can be defined with node sizes that range from a small compute node (with 4 vCore and 32 GB of memory) to a large compute node (with 64 vCore and 512 GB of memory per node). Node sizes can be altered after pool creation, although the active session would have to be restarted.
+A Spark pool can be defined with node sizes that range from a small compute node (with 4 vCore and 28 GB of memory) to a double extra large compute node (with 64 vCore and 400 GB of memory per node). Node sizes can be altered after pool creation, although the active session would have to be restarted.
 
 | Size | vCore | Memory |
 |--|--|--|
-| Small | 4 | 32 GB |
-| Medium | 8 | 64 GB |
-| Large | 16 | 128 GB |
-| X-Large | 32 | 256 GB |
-| XX-Large | 64 | 512 GB |
+| Small | 4 | 28 GB |
+| Medium | 8 | 56 GB |
+| Large | 16 | 112 GB |
+| X-Large | 32 | 224 GB |
+| XX-Large | 64 | 400 GB |
 
 ## Autoscale
 
@@ -90,7 +90,7 @@ Autoscale for Apache Spark pools allows automatic scale up and down of compute r
 
 Dynamic allocation allows the Apache Spark application to request more executors if the tasks exceed the load that current executors can bear. It also releases the executors when the jobs are completed, and if the Spark application is moving to idle state. Enterprise users often find it hard to tune the executor configurations because they're vastly different across different stages of a Spark job execution process. These configurations are also dependent on the volume of data processed, which changes from time to time. You can enable dynamic allocation of executors option as part of the pool configuration, which enables automatic allocation of executors to the Spark application based on the nodes available in the Spark pool.
 
-When you enable the dynamic allocation option for every Spark application submitted, the system reserves executors during the job submission step based on the maximum nodes. You specify maximum nodes to support successful automatic scale scenarios.
+When you enable the dynamic allocation option for every Spark application submitted, the system reserves executors during the job submission step based on the minimum nodes. You specify maximum nodes to support successful automatic scale scenarios.
 
 ## Related content
 

@@ -46,6 +46,8 @@ items:
       href: service-security-sensitivity-label-downstream-inheritance.md
     - name: Inheritance from data sources
       href: service-security-sensitivity-label-inheritance-from-data-sources.md
+    - name: Audit schema for sensitivity labels
+      href: sensitivity-label-audit-schema.md
     - name: Troubleshoot sensitivity labels
       href: service-security-sensitivity-label-troubleshooting.md
   - name: Microsoft Defender for Cloud Apps with Power BI
