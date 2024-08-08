@@ -10,26 +10,26 @@ ms.date: 08/07/2024
 
 # Slowly changing dimension type 2 
 
-Slowly changing dimension type 2 is a method used in data warehousing to manage and track historical changes in dimension data. When an attribute value changes, a new record is created with a unique identifier, and the old record is retained. This allows for a complete historical record of changes over time, enabling accurate reporting and analysis based on different points in time.
+Slowly changing dimension type 2 is a method used in data warehousing to manage and track historical changes in dimension data. When an attribute value changes, a new record is created with a unique identifier, and the old record is retained. It allows for a complete historical record of changes over time, enabling accurate reporting and analysis based on different points in time.
 
 This article showcases a tutorial and an example of how you can implement a solution for this concept using Dataflow Gen2 inside of Data Factory for Microsoft Fabric.
 
 ## Solution architecture
 
-When implementing a solution for a Slowly changing dimension type 2, it's important to define your source table and what fields from your source table will drive the logic to identify new records.
+When implementing a solution for a Slowly changing dimension type 2, it's important to define your source table and what fields from your source table drive the logic to identify new records.
 
 ![Architecture diagram showcasing the components or processes to make the slowly changing dimension type 2 happen in Dataflow](/fabric/data-factory/media/slowly-changing-dimension-type-two/diagram-architecture.png)
 
 As a whole, the architecture requires a minimum of four components:
-* **Source table**: This is your operational table where you can change the values as needed and its data or how the data is managed inside of this table isn't driven by Dimension table.
-* **Dimension table**: This is historical table of all states that the **Source table** had based on a custom logic to identify changes and the effective dates of those changes
-* **Logic to identify changes**: This is effectively done by taken a snapshot of the current state of your **Source table** and comparing it to the available records in the **Dimension table**.
+* **Source table**: your operational table where you can change the values as needed
+* **Dimension table**: historical table of all states that the **Source table** had. It's based on a custom logic to identify changes and the effective dates of those changes
+* **Logic to identify changes**: effectively done by taken a snapshot of the current state of your **Source table** and comparing it to the available records in the **Dimension table**.
 * **Logic to update Dimension table**: Once all changes are identified in the **logic to identify changes**, a table with the records to be added and updated can be taken to update the **Dimension table**.
 
 
 ## Source table
 
-This tutorial starts with a sample source table for employees that contains four columns. Below is the exact table used for the tutorial:
+This tutorial starts with a sample source table for employees that contains four columns:
 
 |RepSourceID|	FirstName|	LastName|	Region|
 |-----------|------------|----------|---------|
@@ -40,7 +40,7 @@ The data in this table is expected to change. People can have changes in their l
 
 ## Dimension table
 
-The dimension table for this tutorial will be looking at changes that could be happening for the fields **FirstName**, **LastName, and **Region**. Below is the Dimension table that the tutorial uses:
+The dimension table for this tutorial looks at changes that could be happening for the fields **FirstName**, **LastName**, and **Region**. The dimension table and its data:
 
 |SalesRepID|	RepSourceID|	FirstName|	LastName|	Region|	StartDate|	EndDate|	IsCurrent|	Hash|
 |------|-------|-------|-------|-----|----|-----|---|---|
@@ -48,7 +48,7 @@ The dimension table for this tutorial will be looking at changes that could be h
 |2|	331|	Susan|	Eaton|	Southcentral|	3/20/2021|	12/31/9999|	TRUE|	3333317c537573616e7c4561746f6e7c536f75746863656e7472616c|
 |3|	334|	Miguel|	Escobar|	Panama|	2/14/2024|	12/31/9999|	TRUE|	3333347c4d696775656c7c4573636f6261727c50616e616d61|
 
-Below is a definition of the schema for this table and description for the fields:
+This is the definition of the schema for this table and description for the fields:
 
 |Field name|Data type|Description|
 |---|---|----|
@@ -85,7 +85,7 @@ In order to identify the changes, you first need to take a snapshot of your sour
     * Explicit Joins between tables
 * Custom logic using dynamic record matching with [Table.SelectRows](https://learn.microsoft.com/powerquery-m/table-selectrows)
 
-This tutorial demonstrates a hashing technique to use a single value that could be created within both tables for a JOIN, also known as [Merge operation](https://learn.microsoft.com/power-query/merge-queries-overview), to compare the records from the two tables.
+The tutorial demonstrates a hashing technique to use a single value that could be created within both tables for a JOIN, also known as [Merge operation](https://learn.microsoft.com/power-query/merge-queries-overview), to compare the records from the two tables.
 
 Once you've loaded the Source table into a Dataflow Gen2, you can select the Add column tab from the ribbon and use the Add Custom column option. In the Custom column dialog you can create a new column with the name Hash with the Text data type and using the formula below:
 
@@ -126,7 +126,7 @@ Filter this column to only keep null values, which represent the values that don
 
 ![Result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Susan Eaten in the Northwest region](/fabric/data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png)
 
-The next step requires you to add missing fields to your record such as the StartDate, EndDate, IsCurrent, and even the SalesRepID. However, while the first three are easy to set define with a simple formula, the SalesRepID requires you to first calculate this value from the existing values in the Dimension table.
+The next step requires you to add missing fields to your record such as the StartDate, EndDate, IsCurrent, and even the SalesRepID. However, while the first three are easy to define with a simple formula, the SalesRepID requires you to first calculate this value from the existing values in the Dimension table.
 
 #### Get the sequence of identifiers from the Dimension table
 
@@ -152,11 +152,12 @@ The output of the LastID query for this example is the number four.
 >[!IMPORTANT]
 >Custom represents the name of your previous step. If this is not the exact name of your query, modify the formula accordingly to reflect the name of your previous step.
 
-Reference the Compare query where you had the single record for Susan Eaten in the Northwest region and call this new query "NewRecords". Add a new Index column through the Add column tab in the ribbon that starts from the number zero and increments by one.
+Reference the Compare query where you had the single record for Susan Eaten in the Northwest region and call this new query "NewRecords". 
+Add a new Index column through the Add column tab in the ribbon that starts from the number zero and increments by one.
 
 <image of adding index column>
 
-Check the formula of the step that was created and replace the 0 with the name of the query LastID. This yields  starting value that represents the new values for your records in the Dimension table.
+Check the formula of the step that was created and replace the ```0``` with the name of the query LastID. This yields  starting value that represents the new values for your records in the Dimension table.
 
 #### Add missing fields to new records
 
