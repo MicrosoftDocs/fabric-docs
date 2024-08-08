@@ -75,16 +75,16 @@ Once you've loaded the Source table into a Dataflow Gen2, you can select the Add
 Binary.ToText( Text.ToBinary( Text.Combine(List.Transform({[RepSourceID],[FirstName],[LastName],[Region]}, each if _ = null then "" else Text.From(_)), "|")), BinaryEncoding.Hex)
 ```
 
-![Create a hash column in Dataflow Gen2](/docs/data-factory/media/slowly-changing-dimension-type-two/create-hash-column.png)
+![Create a hash column in Dataflow Gen2](/fabric/data-factory/media/slowly-changing-dimension-type-two/create-hash-column.png)
 
 Now with the Hash column in your Source table, you now have a simple way to compare both tables to find exact matches.
 
-![Source table with hash column](/docs/data-factory/media/slowly-changing-dimension-type-two/hash-column-in-source-table.png)
+![Source table with hash column](/fabric/data-factory/media/slowly-changing-dimension-type-two/hash-column-in-source-table.png)
 
 Once you've loaded your Dimension table, to simplify the process you can have an aggregated view of the table that just contains the count of records in the table by the Hash field. To do so, go to the Home tab in the ribbon and select the Group by option within the Transform group.
 Within the dialog, make sure to group by the Hash column and select the Operation for the new Count column to be Count rows.
 
-![Aggregate a count column by using the Hash column from the Dimension table](/docs/data-factory/media/slowly-changing-dimension-type-two/aggregate-count-by-hash-dimension.png)
+![Aggregate a count column by using the Hash column from the Dimension table](/fabric/data-factory/media/slowly-changing-dimension-type-two/aggregate-count-by-hash-dimension.png)
 
 
 ### New records
@@ -95,15 +95,15 @@ Within the dialog, make sure to group by the Hash column and select the Operatio
 Using your query with the Source table, go to the Home tab in the ribbon and select the option to Merge queries as new inside the Combine group. Rename this query to be Compare.
 Within the Merge dialog, make sure to pick the Dimension table in the "Right table for merge" dropdown and select the Hash columns from both tables while leaving the default Join kind of Left outer.
 
-![Joining the dimension and source table using the hash columns from both](/docs/data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-column.png)
+![Joining the dimension and source table using the hash columns from both](/fabric/data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-column.png)
 
 Once the merge has completed, be sure to expand the newly created column by only selecting the Count column to be expanded.
 
-![Only expanding the Count column after the merge operation](/docs/data-factory/media/slowly-changing-dimension-type-two/expand-count-column-only.png)
+![Only expanding the Count column after the merge operation](/fabric/data-factory/media/slowly-changing-dimension-type-two/expand-count-column-only.png)
 
 Filter this column to only keep null values, which represent the values that don't exist in the Dimension table today. The result yields a single record for Susan Eaten in the Northwest region.
 
-![Result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Susan Eaten in the Northwest region](/docs/data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png)
+![Result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Susan Eaten in the Northwest region](/fabric/data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png)
 
 The next step requires you to add missing fields to your record such as the StartDate, EndDate, IsCurrent and even the SalesRepID. However, while the first three are easy to set define with a simple formula, the SalesRepID requires you to first calculate this value from the existing values in the Dimension table.
 
@@ -151,11 +151,11 @@ The result will give you a table that looks like the one below.
 
 Using the original Dimension query (Dimension), perform a new **Merge queries as new** operation and select the Source table query as the right table. Select the Hash columns from both tables and select Left anti as the join kind.
 
-![Merge operation between Dimension and Source table using the hash columns and the left anti join kind](/docs/data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png)
+![Merge operation between Dimension and Source table using the hash columns and the left anti join kind](/fabric/data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png)
 
 This yields a table with records that are no longer used in the Source table. You'll need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will simply require you to update the values on the EndDate and IsCurrent fields. To do so, you can right select the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.
 
-![Replace IsCurrent values from TRUE to FALSE](/docs/data-factory/media/slowly-changing-dimension-type-two/replace-is-current-value.png)
+![Replace IsCurrent values from TRUE to FALSE](/fabric/data-factory/media/slowly-changing-dimension-type-two/replace-is-current-value.png)
 
 You can right select the EndDate field and select the **Replace values...** as well. Input a value of 12/31/1999 or any date of your choice as you'll replace this value later on.
 
@@ -169,7 +169,7 @@ This new formula will add a date stamp as to when the logic runs to determine th
 
 The result of this will be a table with exactly the records that should be updated with their corresponding new values.
 
-![Making the EndDate a dynamic function that adds a date stamp](/docs/data-factory/media/slowly-changing-dimension-type-two/current-time-for-replace.png)
+![Making the EndDate a dynamic function that adds a date stamp](/fabric/data-factory/media/slowly-changing-dimension-type-two/current-time-for-replace.png)
 
 ### Combining records to add and update into a single table
 
