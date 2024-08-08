@@ -1,5 +1,5 @@
 ---
-title: Copilot for Synapse Data Warehouse
+title: Copilot for Data Warehouse (preview)
 description: Learn more about Microsoft Copilot for Synapse Data Warehouse in Microsoft Fabric, the integrated AI assistant for your Fabric warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -12,11 +12,13 @@ ms.custom:
   - build-2024-dataai
   - build-2024-fabric
 ---
-# Microsoft Copilot for Synapse Data Warehouse
+# Overview of Copilot for Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 Microsoft Copilot for Synapse Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Copilot integrates seamlessly with your Fabric warehouse, providing intelligent insights to help you along each step of the way in your T-SQL explorations.
+
+Copilot for Data Warehouse is in preview today. Request access through this [form](https://forms.office.com/r/268RjZr499).
 
 ## Introduction to Copilot for Data Warehouse
 
