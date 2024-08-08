@@ -89,7 +89,7 @@ Within the dialog, make sure to group by the Hash column and select the Operatio
 
 ### Comparing the snapshot of your table against the Dimension table
 
-Using your query with the Source table, go to the Home tab in the ribbon and select the option to Merge queries as new inside the Combine group.
+Using your query with the Source table, go to the Home tab in the ribbon and select the option to Merge queries as new inside the Combine group. Rename this query to be Compare.
 Within the Merge dialog, make sure to pick the Dimension table in the "Right table for merge" dropdown and select the Hash columns from both tables while leaving the default Join kind of Left outer.
 
 ![Joining the dimension and source table using the hash columns from both](/docs/data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-column.png)
@@ -109,10 +109,31 @@ The next two sub sections explain how you can create new queries to implement th
 >[!NOTE]
 >You can extend the logic beyond what's showcased in this tutorial to meet your specific needs
 
+#### Records to update
+
+Using the original Dimension query (Dimension), perform a new **Merge queries as new** operation and select the Source table query as the right table. Select the Hash columns from both tables and select Left anti as the join kind.
+
+![Merge operation between Dimension and Source table using the hash columns and the left anti join kind](/docs/data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png)
+
+This will yield a table with records that are no longer used in the Source table. We will need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will simply require you to update the values on the EndDate and IsCurrent fields. To do so, you can right click the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.
+
+![Replace IsCurrent values from TRUE to FALSE](/docs/data-factory/media/slowly-changing-dimension-type-two/replace-is-current-value.png)
+
+You can right click the EndDate field and select the **Replace values...** as well. Input a value of 12/31/1999 or any date of your choice as you will replace this value later on.
+
+Once you've committed the dialog, a new replace values step will be added. Go to the formula bar of the step and change the component that has #date(1999,12,31) with the formula from below.
+
+```m-code
+Date.From(DateTime.LocalNow())
+```
+
+This new formula will add a date stamp as to when the logic runs to determine the EndDate for that particular record.
+
+![Making the EndDate a dynamic function that adds a date stamp](/docs/data-factory/media/slowly-changing-dimension-type-two/current-time-for-replace.png)
+
 #### New records
 
 
-#### Records to update
 
 ### Combining records to add and update into a single table
 
