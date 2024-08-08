@@ -26,6 +26,7 @@ As a whole, the architecture requires a minimum of four components:
 * **Logic to identify changes**: effectively done by taken a snapshot of the current state of your **Source table** and comparing it to the available records in the **Dimension table**.
 * **Logic to update Dimension table**: Once all changes are identified in the **logic to identify changes**, a table with the records to be added and updated can be taken to update the **Dimension table**.
 
+The solution will use Dataflow Gen2 in Microsoft Data Factory. While the logics can be changed and modified to fit your specific needs, the goal of this tutorial is to showcase a simple way to accomplish this pattern using a low code solution and visual solution like Dataflow Gen2. 
 
 ## Source table
 
@@ -222,8 +223,11 @@ Rename this new query as **StagingTableForUpdates** and it should contain 3 rows
 
 ## Logic to update the Dimension table
 
-### Using Dataflow Gen2
+![Diagram view of the Dataflow Gen2 solution so far](/fabric/data-factory/media/slowly-changing-dimension-type-two/diagram-architecture-dataflow-gen2.png)
 
-### Using other methods
+The solution so far provides a query with all records for an upsert operation into the destination. From this point, you can define the logic that you wish to use to load your data to the Dimension table but you typically have two:
 
-<Explain how you can use a Stored procedure, a notebook or other methods to upsert rows>
+* **Upsert operation**: You can accomplish this today by storing the results of the **StagingTableForUpdates** query to a staging table in your data source and then runnning a stored procedure in your Server / Data source engine. You could also leverage other mechanisms such as a notebook within Microsoft Fabric. Finally, you can then establish a Data Pipeline that can trigger the notebook or the stored procedure after your Dataflow Gen2 finishes its operation and automate this for future operations and set it on a schedule.
+* **Delete existing data and recreate table**: You can accomplish this today within Dataflow Gen2 without the need for other tools, but you could potentially leverage other tools as well to implement this logic. This tutorial will showcase this approach.
+
+### Using Dataflow Gen2 to load data to your Dimension destination table
