@@ -178,7 +178,7 @@ The result now conforms to the sceham expected by the Dimension table.
 ### Records to update
 
 >[!NOTE]
->Comparing the dimension table against the source table will fundamentally gives you what records should be updated in the dimension table.
+>Comparing the dimension table against the source table will give you what records should be updated in the dimension table.
 
 Using the original Dimension query (Dimension), perform a new **Merge queries as new** operation and select the Source table query as the right table. Select the Hash columns from both tables and select Left anti as the join kind.
 
