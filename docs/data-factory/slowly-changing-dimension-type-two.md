@@ -161,6 +161,8 @@ Check the formula of the step that was created and replace the ```0``` with the 
 
 ![Adding an index column with a new start value](/fabric/data-factory/media/slowly-changing-dimension-type-two/index-with-new-start-value.png)
 
+Rename this Index column to be **SalesRepID**.
+
 #### Add missing fields to new records
 
 It's time to add the missing columns using the Add custom column. Below is a table with all the formulas to use for each of the new columns
@@ -207,9 +209,9 @@ The result of this will be a table with exactly the records that should be updat
 
 ### Combining records to add and update into a single table
 
-You can [append](https://learn.microsoft.com/power-query/append-queries) the query for new records with the one that has records to be updated into a single query to simplify the following process to update your dimension table.
+You can [append](https://learn.microsoft.com/power-query/append-queries) the query for **NewRecords** with the one that has records to be updated (**RecordsToUpdate**) into a single query to simplify the following process to update your dimension table.
 
-To append the queries, be sure to select the query with the new records, go to the home tab of the ribbon and inside the Combine group you find the option to *Append queries as new*. From the Append dialog, make sure to also select the query with the records to update as the second table.
+To append the queries, be sure to select the **NewRecords** query, go to the home tab of the ribbon and inside the Combine group you find the option to *Append queries as new*. From the Append dialog, make sure to also select the query with the records to update as the second table.
 
 ![Append queries with new and updated records](/fabric/data-factory/media/slowly-changing-dimension-type-two/append-new-updated-records.png)
 
