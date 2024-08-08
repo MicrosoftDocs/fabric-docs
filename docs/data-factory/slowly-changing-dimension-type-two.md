@@ -26,7 +26,7 @@ As a whole, the architecture requires a minimum of four components:
 * **Logic to identify changes**: effectively done by taken a snapshot of the current state of your **Source table** and comparing it to the available records in the **Dimension table**.
 * **Logic to update Dimension table**: Once all changes are identified in the **logic to identify changes**, a table with the records to be added and updated can be taken to update the **Dimension table**.
 
-The solution will use Dataflow Gen2 in Microsoft Data Factory. While the logics can be changed and modified to fit your specific needs, the goal of this tutorial is to showcase a simple way to accomplish this pattern using a low code solution and visual solution like Dataflow Gen2. 
+The solution uses Dataflow Gen2 in Microsoft Data Factory. While the logics can be changed and modified to fit your specific needs, the goal of this tutorial is to showcase a simple way to accomplish this pattern using a low code solution and visual solution like Dataflow Gen2. 
 
 ## Source table
 
@@ -115,11 +115,11 @@ Within the dialog, make sure to group by the Hash column and select the Operatio
 >Comparing the source table against the dimension table will fundamentally gives you what new records need to be added to the dimension table.
 
 Select the **Source** query, go to the Home tab in the ribbon and select the option to *Merge queries as new* inside the Combine group. Rename this query to be Compare.
-Within the Merge dialog, make sure to pick the **AggregatedDimHash** in the "Right table for merge" dropdown and select the Hash columns from both tables while leaving the default Join kind of Left outer.
+Within the Merge dialog, make sure to pick the **AggregatedDimHash** in the "Right table for merge" dropdown and select the Hash columns from both tables while leaving the default *Join kind* of Left outer.
 
 ![Joining the dimension and source table using the hash columns from both](/fabric/data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-column.png)
 
-Once the merge has completed, be sure to expand the newly created column by only selecting the Count column to be expanded.
+Once the merge completes, be sure to expand the newly created column by only selecting the Count column to be expanded.
 
 ![Only expanding the Count column after the merge operation](/fabric/data-factory/media/slowly-changing-dimension-type-two/expand-count-column-only.png)
 
@@ -135,11 +135,11 @@ The next step requires you to add missing fields to your record such as the Star
 
 Reference the existing Dimension table and call this new query **LastID** as you'll reference this query in the future. 
 
-Assuming that this is an integer that increments by one every time there are new records added, you can implement a logic that finds the maximum value in the **SalesRepID**. Right click the **SalesRepID** and select the option to drill down.
+Assuming that this is an integer that increments by one every time there are new records added, you can implement a logic that finds the maximum value in the **SalesRepID**. Right select the **SalesRepID** and select the option to drill down.
 
 ![Drill down operation for the SalesRepID column](/fabric/data-factory/media/slowly-changing-dimension-type-two/drill-down-salesrepid.png)
 
-This will yield a list and in the ribbon you'll now have the statistics options where you can choose the option to calculate the maximum value of this list:
+This yields a list and in the ribbon you'll now have the statistics options where you can choose the option to calculate the maximum value of this list:
 
 ![Maximum option from the statistics operations for list tools](/fabric/data-factory/media/slowly-changing-dimension-type-two/list-tool-maximum.png)
 
@@ -187,7 +187,7 @@ Using the original Dimension query (Dimension), perform a new **Merge queries as
 
 ![Merge operation between Dimension and Source table using the hash columns and the left anti join kind](/fabric/data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png)
 
-The output is a table with records that are no longer used in the Source table. Make sure to expand the newly created column with table values and only expand the Hash column and the subsequently delete it. 
+The output is a table with records that are no longer used in the Source table. Make sure to expand the newly created column with table values and only expand the Hash column and the later delete it. 
 Rename the query to be **RecordsToUpdate**.
 
 You now need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will simply require you to update the values on the EndDate and IsCurrent fields. To do so, you can right select the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.
@@ -216,7 +216,7 @@ To append the queries, be sure to select the **NewRecords** query, go to the hom
 
 ![Append queries with new and updated records](/fabric/data-factory/media/slowly-changing-dimension-type-two/append-new-updated-records.png)
 
-Rename this new query as **StagingTableForUpdates** and it should contain 3 rows. This query will be used in the logic to update the dimension table. You can move the SalesRepID or rearrange the columns as you wish. For simplicity and demonstration purposes, this tutorial will show the output of this query using the same order of fields as in the **Dimension** table.
+Rename this new query as **StagingTableForUpdates** and it should contain 3 rows. This query is used in the logic to update the dimension table. You can move the SalesRepID or rearrange the columns as you wish. For simplicity and demonstration purposes, this tutorial shows the output of this query using the same order of fields as in the **Dimension** table.
 
 ![The query with all records to be added or updated combined](/fabric/data-factory/media//slowly-changing-dimension-type-two/staging-table-for-updates.png)
 
@@ -227,7 +227,29 @@ Rename this new query as **StagingTableForUpdates** and it should contain 3 rows
 
 The solution so far provides a query with all records for an upsert operation into the destination. From this point, you can define the logic that you wish to use to load your data to the Dimension table but you typically have two:
 
-* **Upsert operation**: You can accomplish this today by storing the results of the **StagingTableForUpdates** query to a staging table in your data source and then runnning a stored procedure in your Server / Data source engine. You could also leverage other mechanisms such as a notebook within Microsoft Fabric. Finally, you can then establish a Data Pipeline that can trigger the notebook or the stored procedure after your Dataflow Gen2 finishes its operation and automate this for future operations and set it on a schedule.
-* **Delete existing data and recreate table**: You can accomplish this today within Dataflow Gen2 without the need for other tools, but you could potentially leverage other tools as well to implement this logic. This tutorial will showcase this approach.
+* **Upsert operation**: You can accomplish this today by storing the results of the **StagingTableForUpdates** query to a staging table in your data source and then running a stored procedure in your Server / Data source engine. You could also use other mechanisms such as a notebook within Microsoft Fabric. Finally, you can then establish a Data Pipeline that can trigger the notebook or the stored procedure after your Dataflow Gen2 finishes its operation and automate this for future operations and set it on a schedule.
+* **Delete existing data and recreate table**: You can accomplish this today within Dataflow Gen2 without the need for other tools, but you could potentially use other tools as well to implement this logic. This tutorial showcases this approach.
 
 ### Using Dataflow Gen2 to load data to your Dimension destination table
+
+You can create a logic that leverages three queries to come up with a query with all the records that should exist in the Dimension table. With the new query, you can use the [data destinations feature in Dataflow Gen2 to load your data](fabric/data-factory/dataflow-gen2-data-destinations-and-managed-settings).
+
+#### Records to keep from original Dimension table
+
+The first logic to implement is the records from the original Dimension table to keep.
+
+With the **Dimension** query selected, go to the Home tab in the Ribbon and use the **Merge queries as new** option. In the Merge dialog, select the **RecordsToUpdate** query as the right table. Select the **SalesRepID** columns from both columns and use the *Left anti* as the join kind. Click Ok.
+
+![Merge dialog with the logic](/fabric/data-factory/media/slowly-changing-dimension-type-two/only-records-to-keep-from-original-dimension-table.png)
+
+Make sure to expand the *Hash* field from the newly created column. Once expanded, you can delete that column.
+
+Now that know exactly what records need to be kept from the original Dimension table, you can append the **StagingTableForUpdates** to the existing query to have a query will all records that should be in the **Dimension** table. To do that, in the Home tab of the ribbong select the option to **Append** within the existing query and append the **StagingTableForUpdates** query.
+
+![Append dialog for the final query to upload all data to Dimension table ](/fabric/data-factory/media/slowly-changing-dimension-type-two/append-staging-table-for-updates.png)
+
+You can sort this table using the **SalesRepID** field in ascending order and the output can be used with the data destination feature to load the data to the Dimension table.
+
+![Data preview of the final dimension table before it gets a definition for a data destination](/fabric/data-factory/media/slowly-changing-dimension-type-two/final-dimension-table.png)
+
+You can read more about how to set a data destination for your query and load the output of the query to your **Dimension** table from the article on [Dataflow Gen2 data destinations and managed settings](/fabric/data-factory/dataflow-gen2-data-destinations-and-managed-settings.md).
