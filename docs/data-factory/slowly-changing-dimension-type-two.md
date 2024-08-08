@@ -52,7 +52,7 @@ This is the definition of the schema for this table and description for the fiel
 
 |Field name|Data type|Description|
 |---|---|----|
-|SalesRepID|Number|A unique identifier throughout the entire Dimension table|
+|SalesRepID|Number|A surrogate key used to uniquely identify records throughout the entire Dimension table|
 |RepSourceID|Number|A natural key from the source table that represents an identifier for an employee|
 |FirstName|Text|The first name of the employee. This field comes from the Source table|
 |LastName|Text|The last name of the employee. This field comes from the Source table|
@@ -102,7 +102,7 @@ Now with the Hash column in your Source table, you now have a simple way to comp
 
 ![Source table with hash column](/fabric/data-factory/media/slowly-changing-dimension-type-two/hash-column-in-source-table.png)
 
-Once you've loaded your Dimension table, to simplify the process you can have an aggregated view of the table that just contains the count of records in the table by the Hash field. To do so, go to the Home tab in the ribbon and select the Group by option within the Transform group.
+Once you've loaded your Dimension table, create a reference of this query by either right clicking the query in the queries pane or in the diagram view and select the option to reference. Rename this new query to **AggregatedDimHash**. In this new query you can aggregate the count of records in the table by the Hash field. To do so, go to the Home tab in the ribbon and select the Group by option within the Transform group.
 Within the dialog, make sure to group by the Hash column and select the Operation for the new Count column to be Count rows.
 
 ![Aggregate a count column by using the Hash column from the Dimension table](/fabric/data-factory/media/slowly-changing-dimension-type-two/aggregate-count-by-hash-dimension.png)
@@ -113,8 +113,8 @@ Within the dialog, make sure to group by the Hash column and select the Operatio
 >[!NOTE]
 >Comparing the source table against the dimension table will fundamentally gives you what new records need to be added to the dimension table.
 
-Using your query with the Source table, go to the Home tab in the ribbon and select the option to Merge queries as new inside the Combine group. Rename this query to be Compare.
-Within the Merge dialog, make sure to pick the Dimension table in the "Right table for merge" dropdown and select the Hash columns from both tables while leaving the default Join kind of Left outer.
+Select the **Source** query, go to the Home tab in the ribbon and select the option to *Merge queries as new* inside the Combine group. Rename this query to be Compare.
+Within the Merge dialog, make sure to pick the **AggregatedDimHash** in the "Right table for merge" dropdown and select the Hash columns from both tables while leaving the default Join kind of Left outer.
 
 ![Joining the dimension and source table using the hash columns from both](/fabric/data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-column.png)
 
@@ -128,31 +128,31 @@ Filter this column to only keep null values, which represent the values that don
 
 The next step requires you to add missing fields to your record such as the StartDate, EndDate, IsCurrent, and even the SalesRepID. However, while the first three are easy to define with a simple formula, the SalesRepID requires you to first calculate this value from the existing values in the Dimension table.
 
+Rename this query to be called **CompareStoM**.
+
 #### Get the sequence of identifiers from the Dimension table
 
 Reference the existing Dimension table and call this new query **LastID** as you'll reference this query in the future. 
 
-The easiest way to calculate this value is to start by doing a Group by operation where you calculate the maximum value of the SalesRepID. In this example you can call that new column "Count" which is the default value provided:
+Assuming that this is an integer that increments by one every time there are new records added, you can implement a logic that finds the maximum value in the **SalesRepID**. Right click the **SalesRepID** and select the option to drill down.
 
-![Using the group by feature to calculate the maximum value of a column](/fabric/data-factory/media/slowly-changing-dimension-type-two/group-by-max-id.png)
+![Drill down operation for the SalesRepID column](/fabric/data-factory/media/slowly-changing-dimension-type-two/drill-down-salesrepid.png)
 
-Given that your table could have no rows, right select the Count column and drill down into it. This displays a list value in the data preview.
+This will yield a list and in the ribbon you'll now have the statistics options where you can choose the option to calculate the maximum value of this list:
 
-Right select the last step of your query and select **Insert step after** to insert a custom step. Modify the formula of this step by adding ``{0}`` at the end the existing formula such as ```#"Drill down 1"{0}```. For this example, this yields the value 3.
-
-![Drill down to the maximum value of the SalesRepID column](/fabric/data-factory/media/slowly-changing-dimension-type-two/drill-down-with-custom-extraction.png)
+![Maximum option from the statistics operations for list tools](/fabric/data-factory/media/slowly-changing-dimension-type-two/list-tool-maximum.png)
 
 Add another custom step after the previous step added and replace the formula for this step of your query with the formula below that calculates the max value from the SalesRepID and add one to it or establish the value one as the seed for new records in case your table doesn't have any records
-```try Custom +1 otherwise 1```
+```try #"Calculated maximum" +1 otherwise 1```
 
 The output of the LastID query for this example is the number four.
 
 ![The number four as the output of the query LastID](/fabric/data-factory/media/slowly-changing-dimension-type-two/lastid-query-output.png)
 
 >[!IMPORTANT]
->``Custom`` represents the name of your previous step. If this is not the exact name of your query, modify the formula accordingly to reflect the name of your previous step.
+>``#"Calculated maximum"`` represents the name of your previous step. If this is not the exact name of your query, modify the formula accordingly to reflect the name of your previous step.
 
-Reference the Compare query where you had the single record for Susan Eaten in the Northwest region and call this new query "NewRecords". 
+Reference the **CompareStoM** query where you had the single record for Susan Eaten in the Northwest region and call this new query "NewRecords". 
 Add a new Index column through the Add column tab in the ribbon that starts from the number zero.
 
 ![Adding an index column](/fabric/data-factory/media/slowly-changing-dimension-type-two/add-index-column.png)
