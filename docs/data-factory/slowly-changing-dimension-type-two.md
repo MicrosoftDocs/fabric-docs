@@ -65,6 +65,16 @@ Below is a definition of the schema for this table and description for the field
 >[!NOTE]
 >It is highly encouraged that you create a dimension table with the correct schema before establishing this process. The tutorial takes into consideration that you've already created the dimnension table in advance and have already established a hashing or lookup mechanism that could be used within your Dataflow Gen2 logic.
 
+The desired outcome is an updated dimension table that has updates to SalesRepID two and three, as well as a new record four. That table will look as follows:
+
+|SalesRepID|	RepSourceID|	FirstName|	LastName|	Region|	StartDate|	EndDate|	IsCurrent|	Hash|
+|------|-------|-------|-------|-----|----|-----|---|---|
+|1|	312|	Juan|	Cao|	Southwest|	3/20/2021|	12/31/9999|	TRUE|	3331327c4a75616e7c43616f7c536f75746877657374|
+|2|	331|	Susan|	Eaton|	Southcentral|	3/20/2021|	8/8/2024|	FALSE|	3333317c537573616e7c4561746f6e7c536f75746863656e7472616c|
+|3|	334|	Miguel|	Escobar|	Panama|	2/14/2024|	8/8/2024|	FALSE|	3333347c4d696775656c7c4573636f6261727c50616e616d61|
+|4|331|Susan|Eaton|Northwest|8/8/2024|12/31/9999|TRUE|3333317c537573616e7c4561746f6e7c4e6f72746877657374|
+
+
 ## Logic to identify changes
 
 In order to identify the changes, you first need to take a snapshot of your source table and establish a logic to compare it against the records from your dimension table. There are many ways in which you can establish a logic to compare these tables. Some of them are:
