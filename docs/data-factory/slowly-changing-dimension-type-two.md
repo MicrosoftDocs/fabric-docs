@@ -211,7 +211,3 @@ The result of this will be a table with exactly the records that should be updat
 ### Using other methods
 
 <Explain how you can use a Stored procedure, a notebook or other methods to upsert rows>
-
-## Conclusion
-
-You can extend the logic beyond what's showcased in this tutorial to meet your specific needs
