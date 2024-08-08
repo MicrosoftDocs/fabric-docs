@@ -67,7 +67,13 @@ Below is a definition of the schema for this table and description for the field
 
 ## Logic to identify changes
 
-In order to identify the changes, you first need to take a snapshot of your source table and establish a logic to compare it against your Dimension table. There are many ways in which you can establish a logic to compare these tables. This tutorial uses a hashing technique to use a single value that could be created within both tables and then used in a JOIN (Merge operation) to compare these two tables.
+In order to identify the changes, you first need to take a snapshot of your source table and establish a logic to compare it against the records from your dimension table. There are many ways in which you can establish a logic to compare these tables. Some of them are:
+
+* Using Natural keys
+* Hashing techniques
+* Custom logic using dynamic record matching with [Table.SelectRows](https://learn.microsoft.com/powerquery-m/table-selectrows)
+
+This tutorial demonstrates a hashing technique to use a single value that could be created within both tables for a JOIN, also known as [Merge operation](https://learn.microsoft.com/power-query/merge-queries-overview), to compare the records from the two tables.
 
 Once you've loaded the Source table into a Dataflow Gen2, you can select the Add column tab from the ribbon and use the Add Custom column option. In the Custom column dialog you can create a new column with the name Hash with the Text data type and using the formula below:
 
