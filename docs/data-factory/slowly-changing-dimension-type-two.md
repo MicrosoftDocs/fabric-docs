@@ -142,7 +142,7 @@ Right select the last step of your query and select **Insert step after** to ins
 
 ![Drill down to the maximum value of the SalesRepID column](/fabric/data-factory/media/slowly-changing-dimension-type-two/drill-down-with-custom-extraction.png)
 
-Add another custom step after the previous step added and replace the formula for this step of your query with the formula below that will calculate the max value from the SalesRepID and add one to it or establish the value one as the seed for new records in case your table doesn't have any records
+Add another custom step after the previous step added and replace the formula for this step of your query with the formula below that calculates the max value from the SalesRepID and add one to it or establish the value one as the seed for new records in case your table doesn't have any records
 ```try Custom +1 otherwise 1```
 
 The output of the LastID query for this example is the number four.
@@ -204,13 +204,13 @@ The result of this will be a table with exactly the records that should be updat
 
 ### Combining records to add and update into a single table
 
-With a query that gives you all new records and another that gives you all records that need to be updated, you can [append](https://learn.microsoft.com/power-query/append-queries) both into a single query to simplify the following process to update your dimension table.
+You can [append](https://learn.microsoft.com/power-query/append-queries) the query for new reocrds with the one that has records to be updated into a single query to simplify the following process to update your dimension table.
 
-To append the queries, be sure to select the query with the new records, go to the home tab of the ribbon and inside the Combine group you'll find the option to *Append queries as new*. From the Append dialog, make sure to also select the query with the records to update as the second table.
+To append the queries, be sure to select the query with the new records, go to the home tab of the ribbon and inside the Combine group you find the option to *Append queries as new*. From the Append dialog, make sure to also select the query with the records to update as the second table.
 
 ![Append queries with new and updated records](/fabric/data-factory/media/slowly-changing-dimension-type-two/append-new-updated-records.png)
 
-Rename this new query as **StagingTableForUpdates** and it should contain 3 rows. This query wil lbe used in the logic to update the dimension table.
+Rename this new query as **StagingTableForUpdates** and it should contain 3 rows. This query will be used in the logic to update the dimension table.
 
 ![The query with all records to be added or updated combined](/fabric/data-factory/media//slowly-changing-dimension-type-two/staging-table-for-updates.png)
 
