@@ -10,7 +10,7 @@ ms.date: 08/07/2024
 
 # Slowly changing dimension type 2 
 
-Slowly changing dimension type 2 (SCD Type 2) is a method used in data warehousing to manage and track historical changes in dimension data. When an attribute value changes, a new record is created with a unique identifier, and the old record is retained. This allows for a complete historical record of changes over time, enabling accurate reporting and analysis based on different points in time.
+Slowly changing dimension type 2 is a method used in data warehousing to manage and track historical changes in dimension data. When an attribute value changes, a new record is created with a unique identifier, and the old record is retained. This allows for a complete historical record of changes over time, enabling accurate reporting and analysis based on different points in time.
 
 This article showcases a tutorial and an example of how you can implement a solution for this concept using Dataflow Gen2 inside of Data Factory for Microsoft Fabric.
 
@@ -40,7 +40,7 @@ The data in this table is expected to change. People can have changes in their l
 
 ## Dimension table
 
-The dimension table for this tutorial will be looking at changes that could be happening for the fields **FirstName**, **LastName** and **Region**. Below is the Dimension table that the tutorial will use:
+The dimension table for this tutorial will be looking at changes that could be happening for the fields **FirstName**, **LastName, and **Region**. Below is the Dimension table that the tutorial uses:
 
 |SalesRepID|	RepSourceID|	FirstName|	LastName|	Region|	StartDate|	EndDate|	IsCurrent|	Hash|
 |------|-------|-------|-------|-----|----|-----|---|---|
@@ -60,12 +60,12 @@ Below is a definition of the schema for this table and description for the field
 |StartDate|Date|Date stamp that establishes when the record becomes effective|
 |EndDate|Date|Date stamp that establishes until when the record is effective|
 |IsCurret|Logical|Simple flag to denote if the record is current or not. True represents that the record is current|
-|Hash|Text|The hash encoding of the fields RepSourceID, FirstName, LastName and Region combined|
+|Hash|Text|The hash encoding of the fields RepSourceID, FirstName, LastName, and Region combined|
 
 >[!NOTE]
 >It is highly encouraged that you create a dimension table with the correct schema before establishing this process. The tutorial takes into consideration that you've already created the dimnension table in advance and have already established a hashing or lookup mechanism that could be used within your Dataflow Gen2 logic.
 
-The desired outcome is an updated dimension table that has updates to SalesRepID two and three, as well as a new record four. That table will look as follows:
+The desired outcome is an updated dimension table that has updates to SalesRepID two and three, and a new record four. That table looks as follows:
 
 |SalesRepID|	RepSourceID|	FirstName|	LastName|	Region|	StartDate|	EndDate|	IsCurrent|	Hash|
 |------|-------|-------|-------|-----|----|-----|---|---|
@@ -79,8 +79,10 @@ The desired outcome is an updated dimension table that has updates to SalesRepID
 
 In order to identify the changes, you first need to take a snapshot of your source table and establish a logic to compare it against the records from your dimension table. There are many ways in which you can establish a logic to compare these tables. Some of them are:
 
-* Using Natural keys
-* Hashing techniques
+* Merge / JOIN patterns
+    * Using Natural keys
+    * Using Hashing techniques to create lookup fields
+    * Explicit Joins between tables
 * Custom logic using dynamic record matching with [Table.SelectRows](https://learn.microsoft.com/powerquery-m/table-selectrows)
 
 This tutorial demonstrates a hashing technique to use a single value that could be created within both tables for a JOIN, also known as [Merge operation](https://learn.microsoft.com/power-query/merge-queries-overview), to compare the records from the two tables.
@@ -92,6 +94,9 @@ Binary.ToText( Text.ToBinary( Text.Combine(List.Transform({[RepSourceID],[FirstN
 ```
 
 ![Create a hash column in Dataflow Gen2](/fabric/data-factory/media/slowly-changing-dimension-type-two/create-hash-column.png)
+
+>[!IMPORTANT]
+>While this sample formula showcases how to use these four columns, you can change the reference of the columns to your own columns and define what specific fields from your table need to be used to create the hash.
 
 Now with the Hash column in your Source table, you now have a simple way to compare both tables to find exact matches.
 
@@ -121,42 +126,49 @@ Filter this column to only keep null values, which represent the values that don
 
 ![Result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Susan Eaten in the Northwest region](/fabric/data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png)
 
-The next step requires you to add missing fields to your record such as the StartDate, EndDate, IsCurrent and even the SalesRepID. However, while the first three are easy to set define with a simple formula, the SalesRepID requires you to first calculate this value from the existing values in the Dimension table.
+The next step requires you to add missing fields to your record such as the StartDate, EndDate, IsCurrent, and even the SalesRepID. However, while the first three are easy to set define with a simple formula, the SalesRepID requires you to first calculate this value from the existing values in the Dimension table.
 
 #### Get the sequence of identifiers from the Dimension table
 
-Reference the existing Dimension table and call this new query LastID as you will reference this query in the future. 
+Reference the existing Dimension table and call this new query **LastID** as you'll reference this query in the future. 
 
-The easiest way to calculate this value is to start by doing a Group by operation where you calculate the maximum value of the SalesRepID.
+The easiest way to calculate this value is to start by doing a Group by operation where you calculate the maximum value of the SalesRepID. In this example you can call that new column "Count" which is the default value provided:
 
-<image>
+![Using the group by feature to calculate the maximum value of a column](/fabric/data-factory/media/slowly-changing-dimension-type-two/group-by-max-id.png)
 
-Given that your table could have no rows, right click the Count column and drill down to it. This will display a list value.
+Given that your table could have no rows, right select the Count column and drill down into it. This displays a list value in the data preview.
 
-Use the formula below that will calculate the max value from the SalesRepID and add one to it or establish the value one as the seed for new records in case your table doesn't have any records
-<formula>
+Right select the last step of your query and select **Insert step after** to insert a custom step. Modify the formula of this step by adding ``{0}`` at the end the existing formula such as ```#"Drill down 1"{0}```. For this example, this yields the value 3.
 
-For this specific tutorial the result will be the number four.
+![Drill down to the maximum value of the SalesRepID column](/fabric/data-factory/media/slowly-changing-dimension-type-two/drill-down-with-custom-extraction.png)
 
-<image>
+Add another custom step after the previous step added and replace the formula for this step of your query with the formula below that will calculate the max value from the SalesRepID and add one to it or establish the value one as the seed for new records in case your table doesn't have any records
+```try Custom +1 otherwise 1```
+
+The output of the LastID query for this example is the number four.
+
+![The number four as the output of the query LastID](/fabric/data-factory/media/slowly-changing-dimension-type-two/lastid-query-output.png)
+
+>[!IMPORTANT]
+>Custom represents the name of your previous step. If this is not the exact name of your query, modify the formula accordingly to reflect the name of your previous step.
 
 Reference the Compare query where you had the single record for Susan Eaten in the Northwest region and call this new query "NewRecords". Add a new Index column through the Add column tab in the ribbon that starts from the number zero and increments by one.
 
 <image of adding index column>
 
-Check the formula of the step that was created and replace the 0 with the name of the query LastID. This will yield  starting value that represents the new values for your records in the Dimension table.
+Check the formula of the step that was created and replace the 0 with the name of the query LastID. This yields  starting value that represents the new values for your records in the Dimension table.
 
 #### Add missing fields to new records
 
-Its time to add the missing columns using the Add custom column. Below is a table with all the formulas to use for each of the new columns
+It's time to add the missing columns using the Add custom column. Below is a table with all the formulas to use for each of the new columns
 
 |Column name|Data type|Formula|
 |---|----|--|
-|StartDate|Date|Date.From(DateTime.LocalNow())
+|StartDate|Date|Date. From(DateTime.LocalNow())
 |EndDate|Date|#date(9999,12,31)|
 |IsCurrent| logical| true|
 
-The result will give you a table that looks like the one below.
+The result gives you a table that looks like the one below.
 
 <image>
 
@@ -169,7 +181,7 @@ Using the original Dimension query (Dimension), perform a new **Merge queries as
 
 ![Merge operation between Dimension and Source table using the hash columns and the left anti join kind](/fabric/data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png)
 
-This yields a table with records that are no longer used in the Source table. You'll need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will simply require you to update the values on the EndDate and IsCurrent fields. To do so, you can right select the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.
+This yields a table with records that are no longer used in the Source table. You need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will simply require you to update the values on the EndDate and IsCurrent fields. To do so, you can right select the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.
 
 ![Replace IsCurrent values from TRUE to FALSE](/fabric/data-factory/media/slowly-changing-dimension-type-two/replace-is-current-value.png)
 
@@ -181,7 +193,7 @@ Once you've committed the dialog, a new replace values step is added. Go to the 
 Date.From(DateTime.LocalNow())
 ```
 
-This new formula will add a date stamp as to when the logic runs to determine the EndDate for that particular record.
+This new formula adds a date stamp as to when the logic runs to determine the EndDate for that particular record.
 
 The result of this will be a table with exactly the records that should be updated with their corresponding new values.
 
