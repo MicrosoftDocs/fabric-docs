@@ -28,11 +28,6 @@ Data Workflows, a transformative capability within Microsoft Fabric, redefines y
 
 To enable customers to upgrade to Microsoft Fabric Data Workflows from Azure Workflow Orchestration Manager, consider the following two scenarios:
 
-### Prerequisites
-- [Create a new or use an existing Data Workflow.](../data-factory/create-data-workflows.md)
-
-To enable customers to upgrade to Microsoft Fabric Data Workflows from Azure Workflow Orchestration Manager, consider the following two scenarios:
-
 **Scenario 1: You are using Blob storage in Azure Workflow Orchestration Manager.**
 
 In this scenario, our recommended approach is to use Visual Studio Code for a straightforward migration. Open your workflow files in Visual Studio Code and copy-paste them into Fabric managed Storage. This method ensures an easy transition and quick access to the powerful features of Data Workflows.
