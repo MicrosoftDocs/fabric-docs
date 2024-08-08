@@ -184,7 +184,10 @@ Using the original Dimension query (Dimension), perform a new **Merge queries as
 
 ![Merge operation between Dimension and Source table using the hash columns and the left anti join kind](/fabric/data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png)
 
-This yields a table with records that are no longer used in the Source table. You need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will simply require you to update the values on the EndDate and IsCurrent fields. To do so, you can right select the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.
+The output is a table with records that are no longer used in the Source table. Make sure to expand the newly created column with table values and only expand the Hash column and the subsequently delete it. 
+Rename the query to be **RecordsToUpdate**.
+
+You now need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will simply require you to update the values on the EndDate and IsCurrent fields. To do so, you can right select the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.
 
 ![Replace IsCurrent values from TRUE to FALSE](/fabric/data-factory/media/slowly-changing-dimension-type-two/replace-is-current-value.png)
 
@@ -204,7 +207,7 @@ The result of this will be a table with exactly the records that should be updat
 
 ### Combining records to add and update into a single table
 
-You can [append](https://learn.microsoft.com/power-query/append-queries) the query for new reocrds with the one that has records to be updated into a single query to simplify the following process to update your dimension table.
+You can [append](https://learn.microsoft.com/power-query/append-queries) the query for new records with the one that has records to be updated into a single query to simplify the following process to update your dimension table.
 
 To append the queries, be sure to select the query with the new records, go to the home tab of the ribbon and inside the Combine group you find the option to *Append queries as new*. From the Append dialog, make sure to also select the query with the records to update as the second table.
 
