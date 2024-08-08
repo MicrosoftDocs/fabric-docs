@@ -215,7 +215,7 @@ To append the queries, be sure to select the **NewRecords** query, go to the hom
 
 ![Append queries with new and updated records](/fabric/data-factory/media/slowly-changing-dimension-type-two/append-new-updated-records.png)
 
-Rename this new query as **StagingTableForUpdates** and it should contain 3 rows. This query will be used in the logic to update the dimension table.
+Rename this new query as **StagingTableForUpdates** and it should contain 3 rows. This query will be used in the logic to update the dimension table. You can move the SalesRepID or rearrange the columns as you wish. For simplicity and demonstration purposes, this tutorial will show the output of this query using the same order of fields as in the **Dimension** table.
 
 ![The query with all records to be added or updated combined](/fabric/data-factory/media//slowly-changing-dimension-type-two/staging-table-for-updates.png)
 
