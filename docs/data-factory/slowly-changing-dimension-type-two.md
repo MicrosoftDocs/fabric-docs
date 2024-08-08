@@ -150,7 +150,7 @@ The output of the LastID query for this example is the number four.
 ![The number four as the output of the query LastID](/fabric/data-factory/media/slowly-changing-dimension-type-two/lastid-query-output.png)
 
 >[!IMPORTANT]
->**Custom** represents the name of your previous step. If this is not the exact name of your query, modify the formula accordingly to reflect the name of your previous step.
+>``Custom`` represents the name of your previous step. If this is not the exact name of your query, modify the formula accordingly to reflect the name of your previous step.
 
 Reference the Compare query where you had the single record for Susan Eaten in the Northwest region and call this new query "NewRecords". 
 Add a new Index column through the Add column tab in the ribbon that starts from the number zero.
