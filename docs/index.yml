@@ -113,7 +113,7 @@ conceptualContent:
           links:
           - url: get-started/fabric-home.md
             itemType: concept
-            text: Navigate the Fabric portal         
+            text: Tour the Fabric portal        
           - url: get-started/share-items.md
             itemType: how-to-guide
             text: Collaborate and share items
@@ -154,6 +154,24 @@ conceptualContent:
           footerLink:
             url: get-started/index.yml
             text: See more
+        # Card
+        - title: Administer your resources
+          links:
+          - url: admin/microsoft-fabric-admin.md
+            itemType: overview
+            text: What is Fabric administration?
+          - url: admin/fabric-switch.md
+            itemType: overview
+            text: Enable Fabric
+          - url: admin/admin-center.md
+            itemType: concept
+            text: What is the admin portal?
+          - url: admin/capacity-settings.md
+            itemType: how-to-guide
+            text: Manage Fabric capacity
+          footerLink:
+            url: admin/index.yml
+            text: See more
        # Card
         - title: Get data into Fabric
           links:
@@ -178,14 +196,17 @@ conceptualContent:
           - url: real-time-intelligence/eventhouse.md
             itemType: concept
             text: Eventhouse
-          - url: data-warehouse/semantic-models.md
+          - url: /power-bi/connect-data/service-datasets-understand
             itemType: concept
             text: Semantic models
           - url: /power-bi/transform-model/datamarts/datamarts-overview
             itemType: concept
             text: Datamarts
+          - url: data-engineering/lakehouse-overview.md
+            itemType: concept
+            text: Lakehouse
           footerLink:
-            url: admin/index.yml
+            url: data-warehouse/data-warehousing.md
             text: See more
         # Card
         - title: Prepare and transform data
@@ -202,8 +223,11 @@ conceptualContent:
           - url: data-warehouse/query-warehouse.md
             itemType: how-to-guide
             text: Transform data in the warehouse
+          - url: get-started/copilot-notebooks-overview.md
+            itemType: overview
+            text: transform data with copilot for notebooks
           footerLink:
-            url: admin/index.yml
+            url: real-time-intelligence/event-streams/overview.md
             text: See more
         # Card
         - title: Visualize data
@@ -220,26 +244,29 @@ conceptualContent:
           - url: data-science/tuning-automated-machine-learning-visualizations.md
             itemType: overview
             text: Use AutoML and tune visualizations
+          - url: /power-bi/create-reports/copilot-create-report-service
+            itemType: how-to-guide
+            text: Create reports with copilot
           footerLink:
             url: real-time-intelligence/create-powerbi-report.md
             text: See more
         # Card
-        - title: Administer your resources
+        - title: Use AI capabilities and get insights with copilot
           links:
-          - url: admin/microsoft-fabric-admin.md
-            itemType: overview
-            text: What is Fabric administration?
-          - url: admin/fabric-switch.md
-            itemType: overview
-            text: Enable Fabric
-          - url: admin/admin-center.md
+          - url: get-started/copilot-fabric-overview.md
             itemType: concept
-            text: What is Fabric admin portal?
-          - url: admin/capacity-settings.md
+            text: Overview of copilot in Fabric
+          - url: get-started/copilot-privacy-security.md
+            itemType: concept
+            text: Copilot privacy, security, and responsible use
+          - url: get-started/copilot-faq-fabric.yml
             itemType: how-to-guide
-            text: Manage Fabric capacity
+            text: Copilot FAQ
+          - url: get-started/copilot-fabric-consumption.md
+            itemType: how-to-guide
+            text: Copilot billing and reporting
           footerLink:
-            url: admin/index.yml
+            url: get-started/copilot-fabric-overview.md
             text: See more
         # Card
         - title: Govern your resources
@@ -265,12 +292,15 @@ conceptualContent:
           - url: security/security-overview.md
             itemType: overview
             text: Security in Fabric
-          - url: security/security-managed-private-endpoints-overview.md
+          - url: security/security-managed-vnets-fabric-overview.md 
             itemType: concept
             text: Managed VNets
           - url: security/security-private-links-overview.md
             itemType: concept
             text: Private Links
+          - url: security/security-trusted-workspace-access.md
+            itemType: concept
+            text: Trusted workspace access
           - url: security/service-admin-row-level-security.md
             itemType: how-to-guide
             text: Row-level security (RLS) with Power BI
@@ -295,24 +325,6 @@ conceptualContent:
           footerLink:
             url: /fabric/release-plan/
             text: See more
-        # Card
-        - title: Use AI capabilities with copilot in Fabric
-          links:
-          - url: get-started/copilot-fabric-overview.md
-            itemType: concept
-            text: Overview of copilot in Fabric
-          - url: get-started/copilot-privacy-security.md
-            itemType: concept
-            text: Copilot privacy, security, and responsible use
-          - url: get-started/copilot-notebooks-overview.md
-            itemType: overview
-            text: Copilot for notebooks
-          - url: get-started/copilot-faq-fabric.yml
-            itemType: how-to-guide
-            text: Copilot FAQ
-          footerLink:
-            url: get-started/copilot-fabric-overview.md
-            text: See more
     - title: Develop in Fabric # < 60 chars (Optional; Remove if not applicable.)
       summary: Build your solutions using Fabric, utilize the Workload Development Kit, set up CI/CD pipelines and Git integration, and develop with REST and JavaScript APIs. # < 160 chars (Optional; Remove if not applicable.)
       items:
@@ -332,13 +344,19 @@ conceptualContent:
               url: cicd/index.yml
               text: See more
         # Card
-        - title: Extend Fabric
+        - title: Build reports
           links:
-            - url: workload-development-kit/development-kit-overview.md
+            - url: /power-bi/developer/embedded/embedded-analytics-power-bi
               itemType: concept
-              text: Workload development kit
+              text: Power BI embedded analytics
+            - url: /power-bi/developer/visuals/power-bi-custom-visuals
+              itemType: concept
+              text: Power BI custom visuals
+            - url: /power-bi/connect-data/service-template-apps-overview
+              itemType: how-to-guide
+              text: Power BI template apps
           footerLink:
-              url: workload-development-kit/index.yml
+              url: /power-bi/create-reports/
               text: See more
         # Card
         - title: Develop with APIs
@@ -361,12 +379,9 @@ conceptualContent:
             - url: cicd/partners/partner-integration.md
               itemType: overview
               text: Fabric for ISVs
-            - url: /power-bi/developer/embedded/embedded-analytics-power-bi
+            - url: workload-development-kit/development-kit-overview.md
               itemType: concept
-              text: Power BI embedded analytics
-            - url: /power-bi/developer/visuals/power-bi-custom-visuals
-              itemType: concept
-              text: Power BI custom visuals
+              text: Workload development kit
           footerLink:
               url: cicd/partners/partner-integration.md
               text: See more
