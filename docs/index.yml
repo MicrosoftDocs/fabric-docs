@@ -58,7 +58,7 @@ conceptualContent:
           links:
           - url: get-started/fabric-home.md
             itemType: concept
-            text: Navigate the Fabric portal         
+            text: Tour the Fabric portal
           - url: get-started/share-items.md
             itemType: how-to-guide
             text: Collaborate and share items
@@ -110,7 +110,7 @@ conceptualContent:
             text: Enable Fabric
           - url: admin/admin-center.md
             itemType: concept
-            text: What is Fabric admin portal?
+            text: What is the admin portal?
           - url: admin/capacity-settings.md
             itemType: how-to-guide
             text: Manage Fabric capacity
@@ -141,12 +141,15 @@ conceptualContent:
           - url: security/security-overview.md
             itemType: overview
             text: Security in Fabric
-          - url: security/security-managed-private-endpoints-overview.md
+          - url: security/security-managed-vnets-fabric-overview.md 
             itemType: concept
             text: Managed VNets
           - url: security/security-private-links-overview.md
             itemType: concept
             text: Private Links
+          - url: security/security-trusted-workspace-access.md
+            itemType: concept
+            text: Trusted workspace access
           - url: security/service-admin-row-level-security.md
             itemType: how-to-guide
             text: Row-level security (RLS) with Power BI
@@ -192,15 +195,12 @@ conceptualContent:
         # Card
         - title: Workspaces
           links:
-          - url: get-started/roles-workspaces.md
+          - url: get-started/workspaces.md
             itemType: concept
             text: Workspace roles and permissions
           - url: get-started/create-workspaces.md
             itemType: how-to-guide
             text: Create a workspace
-          - url: get-started/workspaces-folders.md
-            itemType: how-to-guide
-            text: Create folders in workspaces
           - url: cicd/git-integration/git-get-started.md
             itemType: how-to-guide
             text: Manage workspaces
