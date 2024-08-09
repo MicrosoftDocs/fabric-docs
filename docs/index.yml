@@ -251,6 +251,24 @@ conceptualContent:
             url: real-time-intelligence/create-powerbi-report.md
             text: See more
         # Card
+        - title: Build and evaluate models
+          links:
+          - url: data-science/machine-learning-model.md
+            itemType: concept
+            text: Machine learning model in Fabric
+          - url: data-science/model-training-overview.md
+            itemType: concept
+            text: Train machine learning models
+          - url: data-science/synapseml-first-model.md
+            itemType: how-to-guide
+            text: Build a model with SynapseML
+          - url: data-science/model-scoring-predict.md
+            itemType: how-to-guide
+            text: Machine learning model scoring 
+          footerLink:
+            url: data-science/machine-learning-model.md
+            text: See more
+        # Card
         - title: Use AI capabilities and get insights with copilot
           links:
           - url: get-started/copilot-fabric-overview.md
