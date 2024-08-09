@@ -355,7 +355,7 @@ conceptualContent:
             - url: cicd/git-integration/intro-to-git-integration.md
               itemType: concept
               text: Git integration
-            - url: ccicd/git-integration/git-automation.md
+            - url: cicd/git-integration/git-automation.md
               itemType: concept
               text: Automate Git integration by using APIs
           footerLink:
