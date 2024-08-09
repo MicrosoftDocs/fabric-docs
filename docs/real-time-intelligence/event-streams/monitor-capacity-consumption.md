@@ -1,14 +1,14 @@
 ---
-title: Monitor Microsoft Fabric event streams capacity consumption
+title: Microsoft Fabric event streams capacity consumption
 description: Learn how to monitor capacity consumption for Microsoft Fabric event streams.
 author: xujxu
 ms.author: xujiang1
 ms.topic: how-to 
-ms.date: 08/05/2024
+ms.date: 08/12/2024
 ms.search.form: Monitor event streams capacity consumption
 ---
 
-# Monitor capacity consumption for Microsoft Fabric event streams
+# Microsoft Fabric event streams capacity consumption
 
 This article contains information on how Microsoft Fabric event streams usage is billed and reported. 
 
@@ -30,7 +30,7 @@ The event streams usage is defined by four operation types, which are described 
    * With "High" set in "Event throughput setting", the processor CU consumption rate starts at 2 base-rates and autoscale within multiple possible base-rates.
 * <a id="Note-3"></a>**Note 3: Eventstream Connectors Per vCore Hour** 
    * The CU consumption of the Eventstream connector is for charging computing resources when pulling real-time data from sources, excluding Azure Event Hubs, Azure IoT Hub, and Custom endpoints. Data from Azure Event Hubs and Azure IoT Hub is pulled using the Eventstream Processor. 
-   * Connector consumption is designed to correlate with throughput. When throughput increases, the number of vCores increases (autoscale), resulting in higher CU consumption. Currently, connector autoscaling is unavailable, so only one vCore is used per connector source.
+   * Connector CU consumption is designed to correlate with throughput. When throughput increases, the number of vCores increases (autoscale), resulting in higher CU consumption. Currently, connector autoscaling is unavailable, so only one vCore is used per connector source.
 
 ## Storage billing
 Events retention in Fabric event streams is billed separately from your Fabric or Power BI premium capacity units.  
