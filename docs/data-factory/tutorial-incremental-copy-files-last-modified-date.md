@@ -67,13 +67,13 @@ Assume that you want to incrementally copy new or changed files in your source f
 
 1. Select **Run**. Now your copy activity can copy the new added or changed files in your source in every next five minutes to your destination folder until the specified end time.
 
-1. When you select different **Repeat**, the following table shows different dynamic content that you need to specify in **Start time**. 
+1. When you select different **Repeat**, the following table shows different dynamic content that you need to specify in **Start time**. When choose Daily and Weekly, you can only set a single time for the use of the corresponding dynamic content.
 
     | Repeat | Dynamic content |
     |:---|:---|
     | By the minute | `@formatDateTime(addMinutes(pipeline().TriggerTime, -<your set repeat minute>), 'yyyy-MM-dd HH:mm:ss')`  |
     | Hourly | `@formatDateTime(addHours(pipeline().TriggerTime, -<your set repeat hour>), 'yyyy-MM-ddTHH:mm:ss')` |
-    | Daily  | `@formatDateTime(addDays(pipeline().TriggerTime, -<your set repeat day>), 'yyyy-MM-ddTHH:mm:ss')`  |
+    | Daily  | `@formatDateTime(addDays(pipeline().TriggerTime, -1), 'yyyy-MM-ddTHH:mm:ss')`  |
     | Weekly | `@formatDateTime(addDays(pipeline().TriggerTime, -7), 'yyyy-MM-ddTHH:mm:ss')`  |
 
 
