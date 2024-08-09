@@ -55,11 +55,13 @@ items:
 - name: Data loss prevention policies
   items:
   - name: Overview
-    href: information-protection.md
+    href: data-loss-prevention-overview.md
   - name: Configure a DLP policy for Fabric
     href: data-loss-prevention-configure.md
   - name: Respond to a DLP policy violation
     href: data-loss-prevention-respond.md
+  - name: Monitor DLP policy violations
+    href: data-loss-prevention-monitor.md
 - name: Endorsement
   href: endorsement-overview.md
 - name: Lineage
