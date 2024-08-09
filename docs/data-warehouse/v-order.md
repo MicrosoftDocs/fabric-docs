@@ -41,4 +41,5 @@ Disabling V-Order can be useful for write-intensive warehouses, such as for ware
 
 ## Related content
 
+- [Disable V-Order on Warehouse in Microsoft Fabric](disable-v-order.md)
 - [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)

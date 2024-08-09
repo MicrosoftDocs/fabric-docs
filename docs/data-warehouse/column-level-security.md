@@ -4,7 +4,7 @@ description: Learn about column-level security in tables in Fabric data warehous
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stwynant
-ms.date: 04/24/2024
+ms.date: 07/26/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -29,7 +29,7 @@ Implement column-level security with the [GRANT](/sql/t-sql/statements/grant-tr
 
 Column-level security is applied to [shared warehouse or lakehouse](share-warehouse-manage-permissions.md), because the underlying data source hasn't changed.
 
-Only Microsoft Entra authentication is supported.
+Only Microsoft Entra authentication is supported. For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
 ## Examples
 

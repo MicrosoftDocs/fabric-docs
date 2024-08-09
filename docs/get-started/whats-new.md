@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 07/26/2024
+ms.date: 07/29/2024
 ms.topic: whats-new
 ms.custom:
   - build-2024
@@ -268,6 +268,7 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|August 2024|**TRUNCATE T-SQL support**|The `TRUNCATE` T-SQL command is now supported in Warehouse tables.|
 |July 2024|**ALTER TABLE and nullable column support**|We've added T-SQL `ALTER TABLE` support for some operations, as well as nullable column support to tables in the warehouse. For more information, see [ALTER TABLE (Transact-SQL)](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).|
 |July 2024|**Warehouse queries with time travel (GA)**|Warehouse in Microsoft Fabric offers the capability to [query the historical data as it existed in the past](../data-warehouse/time-travel.md) at the statement level, now generally available. The ability to [query data from a specific timestamp](https://blog.fabric.microsoft.com/blog/announcing-the-general-availability-of-time-travel-and-30-days-of-data-history-retention-in-fabric-warehouse?ft=All) is known in the data warehousing industry as *time travel*.|
 |July 2024|**Restore warehouse experience in the Fabric portal**|You can now create restore points and perform [a restore in-place of a warehouse item](../data-warehouse/restore-in-place-portal.md). For more information, see [Seamless Data Recovery through Warehouse restoration](https://blog.fabric.microsoft.com/blog/seamless-data-recovery-through-warehouse-restoration-within-fabric-query-editor).|
@@ -289,6 +290,7 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|July 2024|**Microsoft Entra authentication for Fabric Synapse Data Warehouse**|For sample connection strings and more information on using Microsoft Entra as an alternative to SQL Authentication, see [Microsoft Entra authentication as an alternative to SQL authentication](../data-warehouse/entra-id-authentication.md).|
 |June 2024|**Mastering Enterprise T-SQL ETL/ELT: A Guide with Data Warehouse and Fabric Pipelines**|Learn about [foundational elements of an enterprise-scale ETL/ELT framework](https://blog.fabric.microsoft.com/blog/mastering-enterprise-t-sql-etl-elt-a-guide-with-data-warehouse-and-fabric-pipelines) using Fabric Pipelines and a Data Warehouse for performing our transformations in T-SQL. Additionally, we will examine a dynamic SQL script designed to incrementally process tables throughout your enterprise.|
 |April 2024|**Fabric Change the Game: Azure SQL Database mirror into Microsoft Fabric**|A [step-by-step guide to mirror your Azure SQL Database](https://blog.fabric.microsoft.com/blog/fabric-change-the-game-sqldb-mirror-into-microsoft-fabric) into Microsoft Fabric.|
 
