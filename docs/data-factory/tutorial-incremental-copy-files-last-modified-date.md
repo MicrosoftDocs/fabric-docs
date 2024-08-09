@@ -71,8 +71,8 @@ Assume that you want to incrementally copy new or changed files in your source f
 
     | Repeat | Dynamic content |
     |:---|:---|
-    | By the minute | `@formatDateTime(addMinutes(pipeline().TriggerTime, --<your set repeat minute>), 'yyyy-MM-dd HH:mm:ss')`  |
-    | Hourly | `@formatDateTime(addHours(pipeline().TriggerTime, --<your set repeat hour>), 'yyyy-MM-ddTHH:mm:ss')` |
+    | By the minute | `@formatDateTime(addMinutes(pipeline().TriggerTime, -<your set repeat minute>), 'yyyy-MM-dd HH:mm:ss')`  |
+    | Hourly | `@formatDateTime(addHours(pipeline().TriggerTime, -<your set repeat hour>), 'yyyy-MM-ddTHH:mm:ss')` |
     | Daily  | `@formatDateTime(addDays(pipeline().TriggerTime, -<your set repeat day>), 'yyyy-MM-ddTHH:mm:ss')`  |
     | Weekly | `@formatDateTime(addDays(pipeline().TriggerTime, -7), 'yyyy-MM-ddTHH:mm:ss')`  |
 
