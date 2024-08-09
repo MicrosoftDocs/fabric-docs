@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 08/04/2024
+ms.date: 08/09/2024
 ---
 
 # Tenant settings index
@@ -29,6 +29,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Users can create Real-Time Dashboards (preview)](../real-time-intelligence/index.yml)|Users can create Real-Time Dashboards that are natively integrated with KQL databases using Kusto Query Language (KQL). This fully integrated dashboard experience provides improved query and visualization performance, and easier data exploration.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2258931)|
 |[Database Mirroring (preview)](../database/mirrored-database/overview.md)|Users can connect to and continuously replicate data from an external database into Fabric OneLake via Delta tables. Once in OneLake, users can operationalize the data (i.e., run analytics with Spark, execute notebooks, visualize through Power BI Reports, etc.). This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2261406)|
 |[Product Feedback](../get-started/feedback.md)|This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. Microsoft will use this feedback to help improve product features and services. User participation is voluntary.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272840)|
+|[Users can create and share AI skill item types (preview)](../data-science/concept-ai-skill.md)|Users can create natural language data question and answer (Q&amp;A) experiences using generative AI and then save them as AI skill items. AI skill items can be shared with others in the organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2276218)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 
@@ -149,7 +150,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Allow visuals created using the Power BI SDK](/power-bi/admin/organizational-visuals#visuals-from-appsource-or-a-file)|Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the "Organizational visuals" page are not affected by this setting.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2121300)|
 |[Add and use certified visuals only (block uncertified)](/power-bi/admin/organizational-visuals#certified-power-bi-visuals)|Users in the organization with permissions to add and use visuals can add and use certified visuals only. Visuals allowed in the "Organizational visuals" page are not affected by this setting, regardless of certification.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2036068)|
 |[Allow downloads from custom visuals](/power-bi/admin/organizational-visuals#export-data-to-file)|Enabling this setting will let custom visuals download any information available to the visual (such as summarized data and visual configuration) upon user consent. It is not affected by download restrictions applied in your organization's Export and sharing settings.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2185233&amp;clcid=0x409)|
-|[Custom visuals can get users' Microsoft Entra access tokens](./organizational-visuals.md#appsource-custom-visuals-sso)|Custom visuals can get the Microsoft Entra access tokens of signed-in users.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2236555)|
+|[AppSource Custom Visuals SSO](./organizational-visuals.md#appsource-custom-visuals-sso)|Enable SSO capability for AppSource custom visuals. This feature allows custom visuals from AppSource to get Microsoft Entra ID access tokens for signed-in users through the Authentication API. Microsoft Entra ID access tokens include personal information, including users’ names and email addresses, and may be sent across regions and compliance boundaries.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2236555)|
 |[Allow access to the browser's local storage](./organizational-visuals.md#appsource-custom-visuals-sso)|When this setting is on, custom visuals can store information on the user's browser's local storage.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2195648)|
 
 ## [R and Python visuals settings](service-admin-portal-r-python-visuals.md)
