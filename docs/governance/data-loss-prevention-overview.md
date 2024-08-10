@@ -1,6 +1,6 @@
 ---
 title: "Data loss prevention policies in Microsoft Fabric"
-description: "Learn about how Microsooft Purview data loss prevention policies work in Microsoft Fabric."
+description: "Learn about how Microsoft Purview data loss prevention policies work in Microsoft Fabric."
 author: paulinbar
 ms.author: painbar
 ms.service: fabric
@@ -13,16 +13,17 @@ ms.date: 05/01/2024
 
 # Data loss prevention policies in Fabric
 
-This article describes Microsoft Purview data loss prevention (DLP) policies in Fabric. The target audience is Fabric administrators, security and compliance teams, and Fabric data owners.
+This article describes Microsoft Purview Data Loss Prevention (DLP) policies in Fabric. The target audience is Fabric administrators, security and compliance teams, and Fabric data owners.
 
 ## Overview
 
-To help organizations detect and protect their sensitive data, Fabric supports [Microsoft Purview Data Loss Prevention (DLP) polices](/microsoft-365/compliance/dlp-learn-about-dlp). When a DLP policy for Fabric detects a semantic model or lakehouse containing sensitive information, a policy tip can be attached to the item that explains the nature of the sensitive content, and an alert can be registered on the data loss prevention **Alerts** page in the Microsoft Purview compliance portal for monitoring and management by administrators. In addition, email alerts can be sent to administrators and specified users.
+To help organizations detect and protect their sensitive data, Fabric supports [Microsoft Purview Data Loss Prevention (DLP) polices](/microsoft-365/compliance/dlp-learn-about-dlp). When a DLP policy for Fabric detects a [supported item type](#supported-item-types) containing sensitive information, a policy tip can be attached to the item that explains the nature of the sensitive content, and an alert can be registered on the data loss prevention **Alerts** page in the Microsoft Purview compliance portal for monitoring and management by administrators. In addition, email alerts can be sent to administrators and specified users.
 
-This article describes how DLP in Fabric works, lists considerations and limitations as well as licensing and permissions requirements, and explains how DLP CPU usage is metered. For further information, see:
+This article describes how DLP in Fabric works, lists considerations and limitations as well as licensing and permissions requirements, and explains how DLP CPU usage is metered. For more information, see:
  
 * [Configure a DLP policy for Fabric](./data-loss-prevention-configure.md) to see how to configure DLP policies for Fabric.
 * [Respond to a DLP policy violation in Fabric](./data-loss-prevention-respond.md) to see how to respond when a policy tip tells you your lakehouse or semantic model has a DLP policy violation.
+* [Monitor DLP policy violations in Fabric](./data-loss-prevention-monitor.md) to see how to sign in to the Microsoft Purview portal to see details about DLP violation alerts.
 
 ## Considerations and limitations
 
@@ -40,29 +41,29 @@ This article describes how DLP in Fabric works, lists considerations and limitat
 
 * DLP policies for Fabric apply only on data in Lakehouse Tables/ folder stored in Delta format.
 
-* DLP policies for Fabric support all the primitive Delta types except timestamp_ntz.
+* DLP policies for Fabric support all the primitive Delta types except *timestamp_ntz*.
 
 * DLP policies for Fabric aren't supported for the following Delta Parquet data types:
     * Binary, timestamp_ntz, Struct, Array, List, Map, Json, Enum, Interval, Void.
     * Data encoded with RLE and Bit_RLE.
-    * Data with LZ4, Zstd and Gzip compression codecs.
+    * Data with LZ4, Zstd, and Gzip compression codecs.
 
 * [Exact data match (EDM) classifiers](/microsoft-365/compliance/sit-learn-about-exact-data-match-based-sits) and [trainable classifiers](/microsoft-365/compliance/classifier-learn-about) aren't supported by DLP for Fabric. If you select an EDM or trainable classifier in the condition of a policy, the policy will yield no results even if the semantic model or lakehouse does in fact contain data that satisfies the EDM or trainable classifier. Other classifiers specified in the policy will return results, if any.
 
 * DLP policies for Fabric aren't supported in the China North region. See [How to find the default region for your organization](../admin/service-admin-where-is-my-tenant-located.md#how-to-find-the-default-region-for-your-organization) to learn how to find your organization's default data region.
 
-* Azure capacities are not supported for DLP in Fabric in the following clusters:
+* Azure capacities aren't supported for DLP in Fabric in the following clusters:
     * WUS3
     * WUS2
     * SCUS
 
-* Onbording a new tenant to DLP can take a few hours, depending on the number of supported workspaces that are being onboarded.
+* Onboarding a new tenant to DLP can take a few hours, depending on the number of supported workspaces that are being onboarded.
 
 ## Licensing and permissions
 
 ### SKU/subscriptions licensing
 
-Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you should confirm your [Microsoft 365 subscription](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans?rtc=1). The admin account that sets up the DLP rules must be assigned one of the following licenses:
+Before you get started with DLP for Fabric, you should confirm your [Microsoft 365 subscription](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans?rtc=1). The admin account that sets up the DLP rules must be assigned one of the following licenses:
 
 * Microsoft 365 E5
 * Microsoft 365 E5 Compliance
@@ -78,18 +79,27 @@ Data from DLP for Fabric can be viewed in [Activity explorer](/microsoft-365/com
 * Security administrator
 * Compliance data administrator
 
+## Supported item types
+
+DLP policies for Fabric currently support the following item types.
+
+* Semantic models
+* Lakehouses
+
+See [Considerations and limitations](#considerations-and-limitations) for exceptions.
+
 ## CPU metering for DLP policy evaluation
 
 DLP policy evaluation uses CPU from the premium capacity associated with the workspace where the semantic model being evaluated is located. CPU consumption of the evaluation is calculated as 30% of the CPU consumed by the action that triggered the evaluation. For example, if a refresh action costs 30 milliseconds of CPU, the DLP scan will cost another 9 milliseconds. This fixed 30% additional CPU consumption for DLP evaluation helps you predict the impact of DLP policies on your overall Capacity CPU utilization, and perform capacity planning when rolling out DLP policies in your organization.
 
-Use the Power BI Premium Capacity Metrics App [DOES THIS NEED TO BE CHANGED???] to monitor the CPU usage of your DLP policies. For more information, see [Use the Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app).
+Use the Microsoft Fabric Capacity Metrics app to monitor the CPU usage of your DLP policies. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md).
 
 >[!NOTE]
 >Users with Power BI PPU licenses do not incur the DLP policy evaluation costs described above, as these costs are covered for them up front by their PPU license.
 
 ## How do DLP policies for Fabric work
 
-You define a DLP policy in the data loss prevention section of the compliance portal. In the policy, you specify the sensitivity labels and/or sensitive info types you want to detect. You also specify the actions that will happen when the policy detects a semantic model or lakehouse that contains sensitive data of the kind you specified. DLP policies for Fabric support two actions:
+You define a DLP policy in the data loss prevention section of the Microsoft Purview portal. In the policy, you specify the sensitivity labels and/or sensitive info types you want to detect. You also specify the actions that will happen when the policy detects a semantic model or lakehouse that contains sensitive data of the kind you specified. DLP policies for Fabric support two actions:
 
 * User notification via policy tips.
 * Alerts. Alerts can be sent by email to administrators and users. Additionally, administrators can monitor and manage alerts on the **Alerts** tab in the compliance portal.
@@ -131,17 +141,7 @@ When a DLP policy detects an issue with an item:
 
     For lakehouses, the indication will appear in the header in edit mode, and opening the fly out makes it possible to see more details about the policy tips affecting the lakehouse. This information can also be viewed in the side panel.
 
-* If alerts are enabled in the policy, an alert will be recorded on the data loss prevention **Alerts** page in the compliance portal, and (if configured) an email will be sent to administrators and/or specified users. The following image shows the **Alerts** page in the data loss prevention section of the compliance portal. To get to the **Alerts** page, in the compliance portal, expand the **Data loss prevention** solution and choose **Alerts**.
-
-    :::image type="content" source="./media/data-loss-prevention-overview/alerts-tab.png" alt-text="Screenshot of Alerts tab in the compliance portal.":::
-
-## Monitor and manage policy alerts
-
-Log into the [Microsoft Purview compliance portal](https://go.microsoft.com/fwlink/p/?linkid=2077149), expand the **Data loss prevention** solution, and choose **Alerts**.
-
-:::image type="content" source="./media/data-loss-prevention-overview/alerts-tab.png" alt-text="Screenshot of D L P Alerts tab.":::
-
-Select an alert to start drilling down to its details and to see management options.
+* If alerts are enabled in the policy, an alert will be recorded on the data loss prevention **Alerts** page in the Purview portal, and (if configured) an email will be sent to administrators and/or specified users. For more information, see [Monitor and manage DLP policy violations](./data-loss-prevention-monitor.md).
 
 ## Related content
 
