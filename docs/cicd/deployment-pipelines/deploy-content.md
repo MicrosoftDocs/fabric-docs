@@ -25,7 +25,7 @@ If you already have a workspace that you'd like to use with a specific stage, in
 
 When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a semantic model in the source stage, is cloned alongside its semantic model, and the clones are similarly bound in the target workspace. The folder structure is also kept. If you have items in a folder in the source stage, a folder is created in the target stage. Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
 
-Once the deployment is complete, refresh the semantic model. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#deploy-content-to-an-empty-stage).
+Once the deployment is complete, refresh the semantic model. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#assign-content-to-an-empty-stage).
 
 ### Deploying options
 
@@ -39,17 +39,45 @@ After you choose how to deploy your content, you can [Review your deployment and
 
 #### Deploy all content
 
+##### [Original deploy method](#tab/old)
+
 Select the stage to deploy from and then select the deployment button. The deployment process creates a duplicate workspace in the target stage. This workspace includes all the content existing in the current stage.
 
 :::image type="content" source="media/deploy-content/deploy.png" alt-text="A screenshot showing the deploy button for the development and test stages in a deployment pipeline." lightbox="media/deploy-content/deploy.png":::
 
+##### [New deploy method](#tab/new)
+
+1. Select the target stage.
+1. From the drop down menu, choose an adjacent stage to deploy from.
+1. Select the items you want to deploy.
+1. Select the **Deploy** button. 
+
+:::image type="content" source="media/deploy-content/deploy-new.png" alt-text="A screenshot showing how to deploy content from the development to test stage in the new deployment pipeline interface." lightbox="media/deploy-content/deploy-new.png":::
+
+The deployment process creates a duplicate workspace in the target stage. This workspace includes all the selected content from the source stage.
+
+---
+
 #### Selective deployment
+
+
+##### [Original selective deploy method](#tab/old)
 
 If you don't want to deploy everything from that stage, you can select specific items for deployment. Select the **Show more** link, and then select the items you wish to deploy. When you select the **Deploy** button, only the selected items are deployed to the next stage.
 
 Since dashboards, reports, semantic models, and dataflows are related and have dependencies, you can use the select related button to see all items that those items are dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
 :::image type="content" source="media/deploy-content/selective-deploy.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines, available after selecting the show more option." lightbox="media/deploy-content/selective-deploy.png":::
+
+##### [New selective deploy method](#tab/new)
+
+If you don't want to deploy everything from that stage, you can select only specific items for deployment.
+
+Since dashboards, reports, semantic models, and dataflows are related and have dependencies, you can use the select related button to see all items that those items are dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
+
+:::image type="content" source="media/deploy-content/selective-deploy-new.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines." lightbox="media/deploy-content/selective-deploy-new.png":::
+
+---
 
 >[!NOTE]
 >

@@ -46,14 +46,15 @@ To create a pipeline from anywhere in Fabric:
 
    :::image type="content" source="media/get-started-with-deployment-pipelines/creating-pipeline.png" alt-text="A screenshot of the deployment pipelines entry point.":::
 
-1. Select **Create pipeline**.
+1. Select **Create pipeline**, or **+ New pipeline**.
 
     :::image type="content" source="media/get-started-with-deployment-pipelines/create-pipeline.png" alt-text="A screenshot of the create pipeline button.":::
-1. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Next**.
+
+1. In the *Create deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Next**.
 
     :::image type="content" source="media/get-started-with-deployment-pipelines/name-pipeline.png" alt-text="Screenshot of the name and describe pipeline dialog.":::
 
-1. By default, the pipeline has three stages named **Development**, **Test**, and **Production**. You can accept these default stages or change the number of stages and their names. You can have anywhere between 2-10 stages in a pipeline. Select **+Add** to add another stage, delete stages, or rename them by typing a new name in the box. Select **Create** when you're done.
+1. By default, the pipeline has three stages named **Development**, **Test**, and **Production**. You can accept these default stages or change the number of stages and their names. You can have anywhere between 2-10 stages in a pipeline. You can add another stage, delete stages, or rename them by typing a new name in the box. Select **Create** (or **Create and continue**) when you're done.
 
     :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
 
@@ -78,7 +79,7 @@ From Power BI, you also have the option of creating a pipeline from inside an ex
 
 ---
 
-For pipelines with more than three stages, use the arrows on the top-right corner to navigate between stages.
+For pipelines with more than three stages, use the arrows on the top-right corner to navigate between stages (original UI), or zoom in and out with your mouse wheel (new UI).
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages.png" alt-text="Screenshot of arrows in the top right corner of the deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages.png":::
 
@@ -97,17 +98,33 @@ Follow the instructions in the link to [assign a workspace to a pipeline](assign
 
 By default, the final stage of the pipeline is made public. A consumer of a public stage who has no access to the pipeline sees it as a regular workspace, without the stage name and deployment pipeline icon on the workspace page next to the workspace name.
 
+### [Make a stage public: original UI](#tab/make-public)
+
 You can have as many public stages as you want, or none at all. To change the public status of a stage at any time, go to the pipeline stage settings and check or uncheck the **Make this stage public** box.
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/make-stage-public.png" alt-text="Screenshot of the stage settings with the make this stage public checkbox highlighted.":::
 
+### [Make a stage public: new UI](#tab/make-public-new)
+
+You can have as many public stages as you want, or none at all. To change the public status of a stage at any time:
+
+1. Go to the pipeline stage settings. 
+
+    :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings-new.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
+
+1. Set the **Make this stage public** box to *yes* or *no*, and then save.
+
+    :::image type="content" source="media/get-started-with-deployment-pipelines/make-stage-public-new.png" alt-text="Screenshot of the stage settings with the make this stage public toggle set to yes.":::
+
+---
+
 ## Step 4 - Deploy to an empty stage
 
 When you finished working with content in one pipeline stage, you can deploy it to the next stage. Deploying content to another stage is often done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production, but you can deploy in any direction. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
-Deployment pipelines offer two options when it comes to deploying your content:
+Deployment pipelines offer two options for deploying your content:
 
 * [Full deployment](deploy-content.md#deploy-all-content) - Deploy all your content to the target stage.
 
@@ -119,11 +136,9 @@ After you choose how to deploy your content, you can [Review your deployment and
 
 Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](./assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
-To deploy content to the next stage in the deployment pipeline, select the deploy button at the bottom of the stage.
+You can review the deployment history to see the last time content was deployed to each stage.
 
-When reviewing the stages cards, you can see the last time content was deployed to each stage.
-
-Deployment time is useful for establishing when a stage was last updated. It can also be helpful if you want to track time between deployments.
+Deployment history is useful for establishing when a stage was last updated. It can also be helpful if you want to track time between deployments.
 
 To examine the differences between the two pipelines before you deploy, see [compare content in different deployment stages](./compare-pipeline-content.md).
 
@@ -131,7 +146,7 @@ To examine the differences between the two pipelines before you deploy, see [com
 
 When you're working in a deployment pipeline, different stages may have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
-When you deploy content between pipeline stages, configuring deployment rules enables you to allow changes to content while keeping some settings intact. For example, if you want a semantic model in a production stage to point to a production database, you can define a rule for this. Define the rule in the production stage under the appropriate semantic model. Once a rule is defined or changed, you need to redeploy the content. The deployed content will inherit the value defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
+When you deploy content between pipeline stages, configuring deployment rules enables you to allow changes to content while keeping some settings intact. For example, if you want a semantic model in a production stage to point to a production database, you can define a rule for this. Define the rule in the production stage under the appropriate semantic model. Once a rule is defined or changed, redeploy the content. The deployed content will inherit the value defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
 
 [Read about how to define deployment rules.](create-rules.md)
 
