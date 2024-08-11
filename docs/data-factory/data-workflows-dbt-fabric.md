@@ -91,7 +91,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
         fabric-dev:
           type: fabric
           driver: "ODBC Driver 18 for SQL Server"
-          server: <sql endpoint of your data warehouse>
+          server: <sql connection string of your data warehouse>
           port: 1433
           database: "<name of the database>"
           schema: dbo

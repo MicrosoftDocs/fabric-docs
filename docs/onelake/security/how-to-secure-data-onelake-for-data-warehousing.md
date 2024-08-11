@@ -1,13 +1,14 @@
 ---
 title: How to secure data in OneLake for data warehousing
-description: How to secure OneLake data for use via T-SQL query access.
+description: Learn how to secure OneLake data in a lakehouse to query with data warehousing T-SQL queries.
 author: aamerril
 ms.author: aamerril
 ms.reviewer: eloldag, wiassaf
 ms.date: 06/05/2024
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - ignite-2023
+#customer intent: As a data engineer, I want to understand how to secure a lakehouse in Fabric for data warehousing so that I can ensure the data is protected and accessible only to authorized users.
 ---
 
 # How to secure a lakehouse for Data Warehousing teams

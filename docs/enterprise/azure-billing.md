@@ -19,7 +19,7 @@ In Microsoft Cost Management, your cost analysis and invoice show multiple meter
 
 | Name                                                  | Description                                                                                                             | State         |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| Available Capacity Usage CU                                       | Represents the available capacity that wasn't used by Fabric.                                                           | GA |
+| Compute Pool Capacity Usage CU                                    | Represents the available capacity.                                                           | GA |
 | Data Movement Capacity Usage CU                                   | Represents the Pipelines Data Movement usage on your capacity                                                           | GA |
 | Data Orchestration Capacity Usage CU                              | Represents the Pipelines Data Orchestration usage on your capacity                                                      | GA |
 | Data Warehouse Capacity Usage CU                                  | Represents the Synapse Data Warehouse usage on your capacity                                                            | GA |

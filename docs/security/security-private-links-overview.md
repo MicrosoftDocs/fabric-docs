@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: conceptual
-ms.date: 07/13/2024
+ms.date: 07/30/2024
 ---
 
 # Private links for secure access to Fabric
@@ -61,9 +61,9 @@ OneLake supports Private Link. You can explore OneLake in the Fabric portal or f
 
 Direct calls using OneLake regional endpoints don't work via private link to Fabric. For more information about connecting to OneLake and regional endpoints, see [How do I connect to OneLake?](../onelake/onelake-access-api.md).
 
-### Warehouse and Lakehouse SQL endpoint
+### Warehouse and Lakehouse SQL analytics endpoint
 
-Accessing Warehouse items and Lakehouse SQL endpoints in the portal is protected by Private Link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio, Azure Data Studio) to connect to Warehouse via Private link.
+Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric portal is protected by Private Link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio, Azure Data Studio) to connect to Warehouse via Private link.
 
 Visual query in Warehouse doesn't work when the **Block Public Internet Access** tenant setting is enabled.
 
@@ -113,13 +113,17 @@ Limitations:
 * Data connectors relying on queued ingestion aren't supported.
 * Querying an event house using T-SQL isn't possible.
 
+### Healthcare data solutions (preview)
+
+Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. Within a tenant that has been enabled with a private link, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data.  This includes the ability to ingest healthcare data form various sources, such as Azure Storage accounts, and more.
+
 ### Other Fabric items
 
 Other Fabric items, such as Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 
 <!--### Other Fabric items
 
-Other Fabric items, such as KQL Database, and Eventstream, don’t currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
+Other Fabric items, such as KQL Database, and Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 -->
 
 ### Microsoft Purview Information Protection

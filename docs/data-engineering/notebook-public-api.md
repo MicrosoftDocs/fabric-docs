@@ -105,7 +105,7 @@ The payload in the request is a base64 string converted from the following sampl
         "language_info": {
             "name": "python"
         },
-        "trident": {
+        "dependencies": {
             "environment": {
                 "environmentId": "6524967a-18dc-44ae-86d1-0ec903e7ca05",
                 "workspaceId": "c31eddd2-26e6-4aa3-9abb-c223d3017004"
@@ -175,6 +175,10 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items/{{ART
         "configuration": {
             "conf": {
                 "spark.conf1": "value"
+            },
+            "environment": {
+                "id": "<environment_id>",
+                "name": "<environment_name>"
             },
             "defaultLakehouse": {
                 "name": "<lakehouse-name>",

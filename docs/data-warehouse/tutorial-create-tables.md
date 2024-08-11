@@ -4,9 +4,7 @@ description: In this tutorial step, learn how to create tables in the data wareh
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 07/18/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -29,7 +27,7 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
    :::image type="content" source="media/tutorial-create-tables/select-the-warehouse.png" alt-text="Screenshot of the warehouse option that appears in the item list.":::
 
-1. From the ribbon, select **New SQL query**.
+1. From the ribbon, select **New SQL query**. Under **Blank**, select **New SQL query** for a new blank query window.
 
    :::image type="content" source="media/tutorial-create-tables/ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option where it appears on the ribbon.":::
 
@@ -109,7 +107,7 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
 
-1. Validate the table was created successfully by selecting the **refresh** button on the ribbon.
+1. Validate the table was created successfully by selecting the refresh icon button on the ribbon.
 
    :::image type="content" source="media/tutorial-create-tables/home-ribbon-refresh.png" alt-text="Screenshot of the ribbon on the Home screen, showing where to select the refresh option.":::
 

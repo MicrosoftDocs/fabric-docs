@@ -4,9 +4,7 @@ description: Learn about reports in Synapse Data Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 07/26/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -68,7 +66,7 @@ Alternatively, if you have the SQL connection string of your [[!INCLUDE [fabric-
 1. Paste the SQL connection string under **Server**.
 1. In the **Navigator** dialog, select the databases and tables you would like to load.
 1. If prompted for authentication, select **Organizational account**.
-1. Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA).
+1. Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
 ## Related content
 

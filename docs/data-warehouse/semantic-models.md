@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: chweb, salilkanade
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -19,9 +17,9 @@ ms.search.form: Default semantic model overview # This article's title should no
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
 
-In [!INCLUDE [product-name](../includes/product-name.md)], Power BI semantic models are a logical description of an analytical domain, with metrics, business friendly terminology, and representation, to enable deeper analysis. This semantic model is typically a [star schema](dimensional-modeling-overview.md#star-schema-design) with facts that represent a domain, and dimensions that allow you to analyze, or slice and dice the domain to drill down, filter, and calculate different analyses. With the semantic model, the semantic model is created automatically for you, and the aforementioned business logic gets inherited from the parent lakehouse or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] respectively, jump-starting the downstream analytics experience for business intelligence and analysis with an item in [!INCLUDE [product-name](../includes/product-name.md)] that is managed, optimized, and kept in sync with no user intervention.
+In [!INCLUDE [product-name](../includes/product-name.md)], Power BI semantic models are a logical description of an analytical domain, with metrics, business friendly terminology, and representation, to enable deeper analysis. This semantic model is typically a [star schema](dimensional-modeling-overview.md#star-schema-design) with facts that represent a domain, and dimensions that allow you to analyze, or slice and dice the domain to drill down, filter, and calculate different analyses. With the semantic model, the semantic model is created automatically for you, and you choose which tables, relationships, and measures are to be added, and the aforementioned business logic gets inherited from the parent lakehouse or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] respectively, jump-starting the downstream analytics experience for business intelligence and analysis with an item in [!INCLUDE [product-name](../includes/product-name.md)] that is managed, optimized, and kept in sync with no user intervention.
 
-Visualizations and analyses in **Power BI reports** can now be built completely in the web - or in just a few steps in Power BI desktop - saving users time, resources, and by default, providing a seamless consumption experience for end-users. The default Power BI semantic model follows the naming convention of the Lakehouse.
+Visualizations and analysis in **Power BI reports** can now be built in the web - or in just a few steps in Power BI Desktop - saving users time, resources, and by default, providing a seamless consumption experience for end-users. The default Power BI semantic model follows the naming convention of the Lakehouse.
 
 **Power BI semantic models** represent a source of data ready for reporting, visualization, discovery, and consumption. Power BI semantic models provide:
 
@@ -40,27 +38,25 @@ For more on Power BI, see [Power BI guidance](/power-bi/guidance/).
 
 ## Direct Lake mode
 
-[Direct Lake](../get-started/direct-lake-overview.md) mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of loading parquet-formatted files directly from a data lake, without having to query a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and without having to import or duplicate data into a Power BI semantic model. This native integration brings a unique mode of accessing the data from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], called Direct Lake.  
+[Direct Lake](../get-started/direct-lake-overview.md) mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of consuming parquet-formatted files directly from a data lake, without having to query a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and without having to import or duplicate data into a Power BI semantic model. This native integration brings a unique mode of accessing the data from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], called Direct Lake. [Direct Lake overview](/fabric/get-started/direct-lake-overview) has further information about this storage mode for Power BI semantic models.
 
-Direct Lake provides the most performant query and reporting experience. Direct Lake is a fast path to load the data from the data lake straight into the Power BI engine, ready for analysis.
+Direct Lake provides the most performant query and reporting experience. Direct Lake is a fast path to consume the data from the data lake straight into the Power BI engine, ready for analysis.
 
 - In traditional DirectQuery mode, the Power BI engine directly queries the data from the source for each query execution, and the query performance depends on the data retrieval speed. DirectQuery eliminates the need to copy data, ensuring that any changes in the source are immediately reflected in query results. 
 
 - In Import mode, the performance is better because the data is readily available in memory, without having to query the data from the source for each query execution. However, the Power BI engine must first copy the data into the memory, at data refresh time. Any changes to the underlying data source are picked up during the next data refresh.
 
-- Direct Lake mode eliminates the Import requirement by loading the data files directly into memory. Because there's no explicit import process, it's possible to pick up any changes at the source as they occur. Direct Lake combines the advantages of DirectQuery and Import mode while avoiding their disadvantages. Direct Lake mode is the ideal choice for analyzing very large datasets and datasets with frequent updates at the source.
+- Direct Lake mode eliminates the Import requirement to copy the data by consuming the data files directly into memory. Because there's no explicit import process, it's possible to pick up any changes at the source as they occur. Direct Lake combines the advantages of DirectQuery and Import mode while avoiding their disadvantages. Direct Lake mode is the ideal choice for analyzing very large datasets and datasets with frequent updates at the source. Direct Lake will [automatically fallback to DirectQuery](/fabric/get-started/direct-lake-overview#fallback) using the SQL analytics endpoint of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] when Direct Lake exceeds limits for the SKU, or uses features not supported, allowing report users to continue uninterrupted. 
 
-Direct Lake mode is the default connection type for semantic models that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source.
+Direct Lake mode is the storage mode for default Power BI semantic models, and new Power BI semantic models created in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)]. Using Power BI Desktop, you can also create Power BI semantic models using the SQL analytics endpoint of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source for semantic models in import or DirectQuery storage mode. 
 
 ## Understand what's in the default Power BI semantic model
 
-When you create a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md) or [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md), a default Power BI semantic model is created. The default semantic model is represented with the *(default)* suffix.
-
-The default semantic model is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse or Warehouse. You can also query the default semantic model via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse).
+When you create a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md) or [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md), a default Power BI semantic model is created. The default semantic model is represented with the *(default)* suffix. You can use **Manage default semantic model** to choose tables to add.
 
 ### Sync the default Power BI semantic model
 
-Previously we auto added all tables and views in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] to the default Power BI semantic model. Based on feedback, we have modified the default behavior to not automatically add tables and views to the default Power BI semantic model. This change will ensure the background sync will not get triggered. This will also disable some actions like "New Measure", "Create Report", "Analyze in Excel".
+Previously we automatically added all tables and views in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] to the default Power BI semantic model. Based on feedback, we have modified the default behavior to not automatically add tables and views to the default Power BI semantic model. This change will ensure the background sync will not get triggered. This will also disable some actions like "New Measure", "Create Report", "Analyze in Excel".
 
 If you want to change this default behavior, you can:
 
@@ -107,25 +103,45 @@ View the Tabular Model Scripting Language (TMSL) schema of the semantic model by
 
 Scripting requires Power BI write permissions on the Power BI semantic model. With read permissions, you can see the data but not the schema of the Power BI semantic model.
 
-## Create a new Power BI semantic model
+## Create a new Power BI semantic model in Direct Lake storage mode
 
-There are some situations where your organization might need to create additional Power BI semantic models based off [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data.
+You can also create additional Power BI semantic models in Direct Lake mode using [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data. These **new Power BI semantic models** can be edited in the workspace using [Open data model](/power-bi/transform-model/service-edit-data-models) and can be used with other features such as write DAX queries and semantic model row-level security. 
 
-The **New Power BI semantic model** button inherits the default semantic model's configuration and allows for further customization. The default semantic model acts as a starter template, helping to ensure a single version of the truth. For example, if you use the default semantic model and define new relationships, and then use the **New Power BI semantic model** button, the new semantic model will inherit those relationships if the tables selected include those new relationships.
+The **New Power BI semantic model** button creates a new blank semantic model separate from the default semantic model. 
 
-To create a Power BI semantic model from a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], follow these steps:
+To create a Power BI semantic model in Direct Lake mode, follow these steps:
 
-1. Go to **Data Warehouse** in the Fabric portal.
+1. Open the lakehouse and select **New Power BI semantic model** from the ribbon.
 
-1. Open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Switch to the **Reporting** ribbon.
+1. Alternatively, open a Warehouse or Lakehouse's SQL analytics endpoint, first select the **Reporting** ribbon, then select **New Power BI semantic model**.
 
-1. In the **Reporting** ribbon, select **New semantic model**, and then in the **New semantic model** dialog, select tables to be included, and then select **Confirm**.
+1. Enter a name for the new semantic model, select a workspace to save it in, and pick the tables to include. Then select **Confirm**.
 
-1. Power BI automatically saves the semantic model in the workspace based on the name of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and then opens the semantic model in Power BI.
+1. The new Power BI semantic model can be [edited in the workspace](/power-bi/transform-model/service-edit-data-models), where you can add relationships, measures, rename tables and columns, choose how values are displayed in report visuals, and much more. If the model view does not show after creation, check the pop-up blocker of your browser. 
 
-1. Select **Open data model** to open the Power BI Web modeling experience where you can add table relationships and DAX measures.
+1. To edit the Power BI semantic model later, select **Open data model** from the semantic model context menu or item details page to edit the semantic model further.
 
-To learn more on how to edit data models in the Power BI service, see [Edit Data Models](/power-bi/transform-model/service-edit-data-models).
+Power BI reports can be created in the workspace by selecting **New report** from web modeling, or in Power BI Desktop by live connecting to this new semantic model.
+
+To learn more on how to [connect to semantic models in the Power BI service from Power BI Desktop](/power-bi/connect-data/desktop-report-lifecycle-datasets)
+
+## Create a new Power BI semantic model in import or DirectQuery storage mode
+
+Having your data in Microsoft Fabric means you can create Power BI semantic models in any storage mode -- Direct Lake, import, or DirectQuery. You can create additional Power BI semantic models in import or DirectQuery mode using [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data.
+
+To create a Power BI semantic model in import or DirectQuery mode, follow these steps:
+
+1. Open Power BI Desktop, sign in, and click on **OneLake data hub**.
+
+1. Choose the SQL analytics endpoint of the lakehouse or warehouse.
+
+1. Select the Connect button dropdown and choose **Connect to SQL endpoint**.
+
+1. Select import or DirectQuery storage mode and the tables to add to the semantic model.
+
+From there you can create the Power BI semantic model and report to publish to the workspace when ready. 
+
+To learn more about Power BI, see [Power BI](/power-bi/fundamentals/).
 
 ## Limitations
 
@@ -135,6 +151,8 @@ Default Power BI semantic models follow the current limitations for semantic mod
 - [Data types in Power BI Desktop - Power BI](/power-bi/connect-data/desktop-data-types)
 
 If the parquet, Apache Spark, or SQL data types can't be mapped to one of the Power BI desktop data types, they are dropped as part of the sync process. This is in line with current Power BI behavior. For these columns, we recommend that you add explicit type conversions in their ETL processes to convert it to a type that is supported. If there are data types that are needed upstream, users can optionally specify a view in SQL with the explicit type conversion desired. This will be picked up by the sync or can be added manually as previously indicated.
+
+- Default Power BI semantic models can only be edited in the SQL analytics endpoint or warehouse.
 
 ## Related content
 

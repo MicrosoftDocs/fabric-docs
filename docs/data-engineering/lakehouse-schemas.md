@@ -67,8 +67,8 @@ Use the namespace "workspace.lakehouse.schema.table” to refer to tables in you
 
 ```sql
 SELECT * 
-    FROM hr.hrm.employees as employees 
-    INNER JOIN corporate.company.departments as departments
+    FROM operations.hr.hrm.employees as employees 
+    INNER JOIN global.corporate.company.departments as departments
     ON employees.deptno = departments.deptno;
 ```
 
@@ -82,7 +82,6 @@ Below listed unsupported features/functionalities are for current release of pub
 | Unsupported Features/ Functionality | Notes |
 |-|-|
 | SQL Analytics Endpoint | SQL Analytics Endpoint is disabled until a fix is deployed. SQL Analytics Endpoint, Semantic model, and Power BI reporting won't work until then. |
-| Git (CI/CD)	| Git integration isn't supported. Exporting schema enabled lakehouse would export as a nonschema lakehouse. Hence, only non-schema lakehouses are imported.|
 | Non-Delta, Managed table schema	| Getting schema for managed, non-Delta formatted tables (for example, CSV) isn't supported. Expanding these tables in lakehouse explorer doesn't show any schema information in the UX. |
 | External Spark tables	| External Spark table operations (for example, discovery, getting schema, etc.) aren't supported. These tables are unidentified in the UX. |
 | Public API	| Public APIs (List tables, Load table, exposing defaultSchema extended property etc.) aren't supported for schema enabled Lakehouse. Existing public APIs called on a schema enabled Lakehouse results an error. |
