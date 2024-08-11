@@ -9,6 +9,8 @@ items:
   items:
   - name: Introduction to deployment pipelines
     href: deployment-pipelines/intro-to-deployment-pipelines.md
+  - name: New deployment pipelines interface
+    href: deployment-pipelines/deployment-pipelines-new-ui.md
   - name: Understand the deployment process
     href: deployment-pipelines/understand-the-deployment-process.md
   - name: Get started with deployment pipelines
