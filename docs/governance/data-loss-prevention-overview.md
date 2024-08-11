@@ -4,6 +4,7 @@ description: "Learn about how Microsoft Purview data loss prevention policies wo
 author: paulinbar
 ms.author: painbar
 ms.service: fabric
+ms.subservice: governance
 ms.topic: concept-article #Don't change
 ms.date: 08/10/2024
 
@@ -29,7 +30,7 @@ This article describes how DLP in Fabric works, lists considerations and limitat
 
 * DLP policies for Fabric are defined in the [Microsoft Purview compliance portal](https://go.microsoft.com/fwlink/p/?linkid=2077149).
 
-* DLP policies apply to workspaces. Only workspaces hosted in Fabric or  [Premium capacities](./service-premium-what-is.md) are supported.
+* DLP policies apply to workspaces. Only workspaces hosted in Fabric or  [Premium capacities](./service-premium-what-is.md) are supported. For more information about capacities, see [Microsoft Fabric license types](../enterprise/licenses#microsoft-fabric-license-types).
 
 * DLP evaluation workloads impact capacity. See [CPU metering for DLP policy evaluation](#cpu-metering-for-dlp-policy-evaluation) for more information.
 

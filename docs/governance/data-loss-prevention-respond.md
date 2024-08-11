@@ -4,6 +4,7 @@ description: "Learn about how Microsooft Purview data loss prevention policies w
 author: paulinbar
 ms.author: painbar
 ms.service: fabric
+ms.subservice: governance
 ms.topic: concept-article #Don't change
 ms.date: 05/01/2024
 

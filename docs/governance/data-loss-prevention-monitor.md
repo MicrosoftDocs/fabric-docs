@@ -4,6 +4,7 @@ description: "Learn how to monitor Fabric DLP policy violations in Microsoft Fab
 author: paulinbar
 ms.author: painbar
 ms.service: fabric
+ms.subservice: governance
 ms.topic: how-to #Don't change
 ms.date: 08/09/2024
 

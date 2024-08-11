@@ -1,56 +1,36 @@
 ---
-title: "Data loss prevention policies in Microsoft Fabric"
-description: "Learn about how Microsooft Purview data loss prevention policies work in Microsoft Fabric."
+title: "Configure data loss prevention policies for Microsoft Fabric"
+description: "Learn how to configure Purview data loss prevention policies for Microsoft Fabric."
 author: paulinbar
 ms.author: painbar
 ms.service: fabric
-ms.topic: concept-article #Don't change
-ms.date: 05/01/2024
+ms.subservice: governance
+ms.topic: how-to #Don't change
+ms.date: 08/11/2024
 
-#customer intent: As a Fabric administrator, security or compliance admin, or data owner, I want to understand how Microsoft Purview data loss prevention policies work in Microsoft Fabric.
+#customer intent: As a Purview compliance administrator, I want to learn how to configure DLP policies for Fabric so that my organization can detect leakage of sensitive data from Fabric items.
 
 ---
 
-# Data loss prevention policies in Fabric
+# Configure data loss prevention policies for Fabric
 
-This article describes Microsoft Purview data loss prevention (DLP) policies in Fabric. The target audience is Fabric administrators, security and compliance teams, and Fabric data owners.
+Data loss prevention policies for Fabric help organizations protect their sensitive data by detecting upload of sensitive data in supported item types. When a policy violation occurs, data owners can see this indicated, and alerts can be sent to data owners and security admins, and violations can be investigated. For more information, see [Overview of data loss prevention policies for Fabric](./data-loss-prevention-overview.md).
 
-## Overview
+This article describes how to configure Purview data loss prevention (DLP) policies for Fabric. The target audience is compliance administrators who are responsible for data loss prevention in their organization.
 
-To help organizations detect and protect their sensitive data, Fabric supports [Microsoft Purview Data Loss Prevention (DLP) polices](/microsoft-365/compliance/dlp-learn-about-dlp). When a DLP policy for Fabric detects a semantic model or lakehouse containing sensitive information, a policy tip can be attached to the item that explains the nature of the sensitive content, and an alert can be registered on the data loss prevention **Alerts** page in the Microsoft Purview compliance portal for monitoring and management by administrators. In addition, email alerts can be sent to administrators and specified users.
+## Prerequisites
 
-This article describes how DLP in Fabric works, lists considerations and limitations as well as licensing and permissions requirements, and explains how DLP CPU usage is metered. For further information, see:
- 
-* [Configure a DLP policy for Fabric](./data-loss-prevention-configure.md) to see how to configure DLP policies for Fabric.
-* [Respond to a DLP policy violation in Fabric](./data-loss-prevention-respond.md) to see how to respond when a policy tip tells you your lakehouse or semantic model has a DLP policy violation.
+Data from DLP for Fabric can be viewed in [Activity explorer](/microsoft-365/compliance/data-classification-activity-explorer). There are four roles that grant permission to activity explorer; the account you use for accessing the data must be a member of any one of them.
 
-## Considerations and limitations
 
-* DLP policies for Fabric are defined in the [Microsoft Purview compliance portal](https://go.microsoft.com/fwlink/p/?linkid=2077149).
+The account you use to create DLP policies must be a member of one of these role groups
 
-* DLP policies apply to workspaces. Only workspaces hosted in Fabric or  [Premium capacities](./service-premium-what-is.md) are supported.
+* Compliance administrator
+* Compliance data administrator
+* Information Protection
+* Information Protection Admin
+* Security administrator
 
-* DLP semantic model evaluation workloads impact capacity. See [CPU metering for DLP policy evaluation](#cpu-metering-for-dlp-policy-evaluation) for more information.
-
-* DLP policy templates aren't yet supported for Fabric DLP policies. When creating a DLP policy for Fabric, choose the "custom policy" option.
-* Fabric DLP policy rules currently support sensitivity labels and sensitive info types as conditions.
-
-* DLP policies for Fabric aren't supported for sample semantic models, [streaming datasets](../connect-data/service-real-time-streaming.md), or semantic models that connect to their data source via [DirectQuery](../connect-data/desktop-use-directquery.md) or [live connection](../connect-data/desktop-directquery-about.md#live-connections). This includes semantic models with mixed storage, where some of the data comes via import-mode and some comes via DirectQuery.
-
-* DLP policies for Fabric apply only on data in Lakehouse Tables/ folder stored in Delta format.
-
-* DLP policies for Fabric support all the primitive Delta types except timestamp_ntz.
-
-* DLP policies for Fabric aren’t supported for the following Delta Parquet data types:
-    * Binary, timestamp_ntz, Struct, Array, List, Map, Json, Enum, Interval, Void.
-    * Data encoded with RLE and Bit_RLE.
-    * Data with LZ4, Zstd and Gzip compression codecs.
-
-* [Exact data match (EDM) classifiers](/microsoft-365/compliance/sit-learn-about-exact-data-match-based-sits) and [trainable classifiers](/microsoft-365/compliance/classifier-learn-about) aren't supported by DLP for Fabric. If you select an EDM or trainable classifier in the condition of a policy, the policy will yield no results even if the semantic model or lakehouse does in fact contain data that satisfies the EDM or trainable classifier. Other classifiers specified in the policy will return results, if any.
-
-* DLP policies for Fabric aren't supported in the China North region. See [How to find the default region for your organization](../admin/service-admin-where-is-my-tenant-located.md#how-to-find-the-default-region-for-your-organization) to learn how to find your organization's default data region.
-
-## Licensing and permissions
 
 ### SKU/subscriptions licensing
 
@@ -61,80 +41,165 @@ Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you sho
 * Microsoft 365 E5 Information Protection & Governance
 * Purview capacities
 
-### Permissions
+## Configure a DLP policy for Fabric
 
-Data from DLP for Fabric can be viewed in [Activity explorer](/microsoft-365/compliance/data-classification-activity-explorer). There are four roles that grant permission to activity explorer; the account you use for accessing the data must be a member of any one of them.
+[Introduce the procedure.]
 
-* Global administrator
-* Compliance administrator
-* Security administrator
-* Compliance data administrator
+1. Log into the [Microsoft Purview compliance portal](https://go.microsoft.com/fwlink/p/?linkid=2077149).
 
-## CPU metering for DLP policy evaluation
+1. Expand the **Data loss prevention** solution in the navigation pane, select **Policies**, and choose **Create policy**.
 
-DLP policy evaluation uses CPU from the premium capacity associated with the workspace where the semantic model being evaluated is located. CPU consumption of the evaluation is calculated as 30% of the CPU consumed by the action that triggered the evaluation. For example, if a refresh action costs 30 milliseconds of CPU, the DLP scan will cost another 9 milliseconds. This fixed 30% additional CPU consumption for DLP evaluation helps you predict the impact of DLP policies on your overall Capacity CPU utilization, and perform capacity planning when rolling out DLP policies in your organization.
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-create.png" alt-text="Screenshot of D L P create policy page.":::
 
-Use the Power BI Premium Capacity Metrics App [DOES THIS NEED TO BE CHANGED???] to monitor the CPU usage of your DLP policies. For more information, see [Use the Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app).
-
->[!NOTE]
->Users with Power BI PPU licenses do not incur the DLP policy evaluation costs described above, as these costs are covered for them up front by their PPU license.
-
-## How do DLP policies for Fabric work
-
-You define a DLP policy in the data loss prevention section of the compliance portal. In the policy, you specify the sensitivity labels and/or sensitive info types you want to detect. You also specify the actions that will happen when the policy detects a semantic model that contains sensitive data of the kind you specified. DLP policies for Fabric support two actions:
-
-* User notification via policy tips.
-* Alerts. Alerts can be sent by email to administrators and users. Additionally, administrators can monitor and manage alerts on the **Alerts** tab in the compliance portal.
-
-When a semantic model or lakehouse is evaluated by DLP policies, if it matches the conditions specified in a DLP policy, the actions specified in the policy occur. DLP policies are initiated by the following actions:
-
-**Semantic model**:
-
-* Publish
-* Republish
-* On-demand refresh
-* Scheduled refresh
-
->[!NOTE]
-> DLP evaluation of the semantic model does not occur if either of the following is true:
-> * The initiator of the event (publish, republish, on-demand refresh, scheduled refresh) is an account using service principal authentication.
-> * The semantic model owner is a service principal.
-
-**Lakehouse**:
-
-* When the data within a lakehouse undergoes a change, such as getting new data, connecting a new source, adding or updating existing tables, and more.
-
-## What happens when an item is flagged by a Fabric DLP policy
-
-When a DLP policy detects an issue with an item:
-
-* If "user notification" is enabled in the policy, the item will be marked in Fabric with an icon that indicates that a DLP policy has detected an issue with the item. Selecting the icon brings up a hover card that provides an option to see more details in a side panel.
-
-    :::image type="content" source="./media/data-loss-prevention-overview/policy-tip-on-dataset.png" alt-text="Screenshot of policy tip badge on semantic model in lists.":::
-
-    For semantic models, opening the details page will show a policy tip that explains the policy violation and how the type of sensitive information detected should be handled. Selecting **View all** opens a side panel with all the policy details.
-
-    :::image type="content" source="./media/data-loss-prevention-overview/policy-tip-in-dataset-details.png" alt-text="Screenshot of policy tip on semantic model details page.":::
-
+1. Choose the **Custom** category and then the **Custom policy** template.
+    
     >[!NOTE]
-    > If you hide the policy tip, it doesn’t get deleted. It will appear the next time you visit the page.
+    >No other categories or templates are currently supported.
 
-* For lakehouses, the indication will appear in the header in edit mode, and opening the fly out make it possible to see more details about the policy tips affecting the lakehouse, which can also be seen in the side panel.
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-choose-custom.png" alt-text="Screenshot of D L P choose custom policy page.":::
+ 
+    When done, select **Next**.
 
-* If alerts are enabled in the policy, an alert will be recorded on the data loss prevention **Alerts** page in the compliance portal, and (if configured) an email will be sent to administrators and/or specified users. The following image shows the **Alerts** page in the data loss prevention section of the compliance portal. To get to the **Alerts** page, in the compliance portal, expand the **Data loss prevention** solution and choose **Alerts**.
+1. Name the policy and provide a meaningful description.
 
-    :::image type="content" source="./media/data-loss-prevention-overview/alerts-tab.png" alt-text="Screenshot of Alerts tab in the compliance portal.":::
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-name-description.png" alt-text="Screenshot of D L P policy name description section.":::
+ 
+    When done, select **Next**.
 
-## Monitor and manage policy alerts
+1. Select **Next** when you get to the Assign admin units page.
 
-Log into the [Microsoft Purview compliance portal](https://go.microsoft.com/fwlink/p/?linkid=2077149), expand the **Data loss prevention** solution, and choose **Alerts**.
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-admin-units.png" alt-text="Screenshot of D L P policy admin units section.":::
 
-:::image type="content" source="./media/data-loss-prevention-overview/alerts-tab.png" alt-text="Screenshot of D L P Alerts tab.":::
+1. Enable Power BI as a location for the DLP policy. **Disable all other locations**. Currently, DLP policies for Power BI must specify Power BI as the sole location.
 
-Select an alert to start drilling down to its details and to see management options.
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-choose-location.png" alt-text="Screenshot of D L P choose location page.":::
+
+    By default the policy will apply to all workspaces. Alternatively, you can specify particular workspaces to include in the policy as well as workspaces to exclude from the policy.
+    >[!NOTE]
+    > DLP actions are supported only for workspaces hosted in Premium capacities.
+
+    If you select **Choose workspaces** or **Exclude workspaces**, a dialog will allow you to select workspaces to be included (or excluded).
+
+    You can search for workspaces by workspace name or by user email address. When you search by a user's email address, that user's My Workspace will be listed as *personalWorkspace - \<email address\>*, and you can then select it.
+
+    ![Screenshot of D L P choose workspaces dialog.](./media/data-loss-prevention-configure/power-bi-dlp-choose-workspaces.png)
+ 
+    After enabling Power BI as a DLP location for the policy and choosing which workspaces the policy will apply to, select **Next**.
+
+1. The **Define policy settings** page appears. Choose **Create or customize advanced DLP rules** to begin defining your policy.
+
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-create-advanced-rule.png" alt-text="Screenshot of D L P create advanced rule page.":::
+ 
+    When done, select **Next**.
+
+1. On the **Customize advanced DLP rules** page, you can either start creating a new rule or choose an existing rule to edit. Select **Create rule**.
+
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-create-rule.png" alt-text="Screenshot of D L P create rule page.":::
+
+1. The **Create rule** page appears. On the create rule page, provide a name and description for the rule, and then configure the other sections, which are described following the image below.
+
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-create-rule-form.png" alt-text="Screenshot of D L P create rule form.":::
+ 
+## Conditions
+
+In the condition section, you define the conditions under which the policy will apply to a semantic model. Conditions are created in groups. Groups make it possible to construct complex conditions.
+
+1. Open the conditions section. Choose **Add condition** if you want to create a simple or complex condition, or **Add group** if you want to start creating a complex condition.
+
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-add-conditions-content-contains.png" alt-text="Screenshot of D L P add conditions content contains section.":::
+
+    For more information about using the condition builder, see [Complex rule design](/microsoft-365/compliance/dlp-policy-design#complex-rule-design).
+
+1. If you chose **Add condition**, next choose **Content contains**, then **Add**, and then either **Sensitive info types** or **Sensitivity labels**.
+
+    If you started with **Add group**, you'll eventually get to **Add condition**, after which you continue as described above.
+
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-add-conditions.png" alt-text="Screenshot of D L P add conditions section.":::
+
+     If you started with **Add group**, you'll eventually get to **Add condition**, after which you continue as described above.
+ 
+    When you choose either **Sensitive info types** or **Sensitivity labels**, you'll be able to choose the particular sensitivity labels or sensitive info types you want to detect from a list that will appear in a sidebar.
+
+    ![Screenshot of sensitivity-label and sensitive info types choices.](./media/data-loss-prevention-configure/power-bi-dlp-sensitivity-labels-types.png)
+
+    When you select a sensitive info type as a condition, you then need to specify how many instances of that type must be detected in order for the condition to be considered as met. You can specify from 1 to 500 instances. If you want to detect 500 or more unique instances, enter a range of '500' to 'Any'. You also can select the degree of confidence in the matching algorithm. Select the info button next to the confidence level to see the definition of each level.
+
+    ![Screenshot of confidence level setting for sensitive info types.](./media/data-loss-prevention-configure/power-bi-dlp-confidence-level-settings.png) 
+
+    You can add additional sensitivity labels or sensitive info types to the group. To the right of the group name, you can specify **Any of these** or **All of these**. This determines whether matches on all or any of the items in the group is required for the condition to hold. If you specified more than one sensitivity label, you'll only be able to choose **Any of these**, since semantic models can’t have more than one label applied.
+
+    The image below shows a group (Default) that contains two sensitivity label conditions. The logic Any of these means that a match on any one of the sensitivity labels in the group constitutes “true” for that group.
+
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-condition-group.png" alt-text="Screenshot of D L P conditions group section.":::
+ 
+    You can use the Quick summary toggle to get the logic of the rule summarized in a sentence.
+
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-condition-quick-summary.png" alt-text="Screenshot of D L P conditions quick summary.":::
+
+    You can create more than one group, and you can control the logic between the groups with **AND** or **OR** logic. 
+
+    The image below shows a rule containing two groups, joined by **OR** logic.
+
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-content-contains.png" alt-text="Screenshot of rule with two groups.":::
+
+    Here's the same rule shown as a quick summary.
+
+    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-content-contains-quick-summary.png" alt-text="Screenshot of quick summary of rule with two groups.":::
+ 
+## Actions
+
+Protection actions are currently unavailable for Power BI DLP policies.
+
+![Screenshot of D L P policy actions section.](./media/data-loss-prevention-configure/power-bi-dlp-actions-section.png)
+
+## User notifications
+
+The user notifications section is where you configure your policy tip. Turn on the toggle, select the **Notify users in Office 365 service with a policy tip** and **Policy tips** checkboxes, and write your policy tip in the text box.
+
+:::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-user-notification.png" alt-text="Screenshot of D L P user notification section.":::
+ 
+## User overrides
+ 
+If you enabled user notifications and selected the **Notify users in Office 365 service with a policy tip** checkbox, semantic model owners (users with an Admin or Member role in the workspace where the semantic model is located) will be able to respond to violations on the **[Data loss prevention policies side pane](./service-security-dlp-policies-for-power-bi-respond.md)**, which they can display from a button on the policy tip. The options they have depend on your selections in the **User overrides** section.
+
+:::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-user-overrides-section.png" alt-text="Screenshot of D L P user overrides section.":::
+
+The options are described below.
+
+* **Allow overrides from M365 services. Allows users in Power BI, Exchange, SharePoint, OneDrive, and Teams to override policy restrictions** (automatically selected when you've enabled user notifications and selected the **Notify users in Office 365 service with a policy tip** checkbox): Users will be able to either report the issue as a false positive or override the policy.
+
+* **Require a business justification to override**: Users will be able to either report the issue as a false positive or override the policy. If they choose to override, they'll need to provide a business justification.
+
+* **Override the rule automatically if they report it as a false positive**: Users will be able to report the issue as a false positive and automatically override the policy, or they can just override the policy without reporting it as a false positive.
+
+* If you select both **Override the rule automatically if they report it as a false positive** and **Require a business justification to override**, users will be able to report the issue as a false positive and automatically override the policy, or they can just override the policy without reporting it as a false positive, but they'll have to provide a business justification.
+
+Overriding a policy means that from now on the policy will no longer check the semantic model for sensitive data.
+
+Reporting an issue as a false positive means that the data owner believes that the policy has mistakenly identified non-sensitive data as sensitive. You can use false positives to fine tune your rules.
+
+Any action the user takes is logged for reporting.
+
+## Incident reports
+
+Assign a severity level that will be shown in alerts generated from this policy. Enable (default) or disable email notification to admins, specify users or groups for email notification, and configure the details about when notification will occur.
+
+:::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-incidence-report.png" alt-text="Screenshot of D L P incident report section.":::
+   
+## Additional options
+
+:::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-additional-options.png" alt-text="Screenshot of D L P additional options section.":::
+
+
+## Considerations and limitations
+
+* DLP policy templates aren't yet supported for Fabric DLP policies. When creating a DLP policy for Fabric, choose the "custom policy" option.
+* Fabric DLP policy rules currently support sensitivity labels and sensitive info types as conditions.
+
 
 ## Related content
 
-* [Configure a DLP policy for Fabric](./data-loss-prevention-configure.md).
-* [Respond to DLP policy violation in Fabric](./data-loss-prevention-respond.md).
-* [Learn about data loss prevention](/purview/dlp-learn-about-dlp)
+* [Create and Deploy data loss prevention policies](/purview/dlp-create-deploy-policy)
+* [Data loss prevention policies in Fabric](./data-loss-prevention-overview.md)
+* [Respond to a DLP policy violation](./data-loss-prevention-respond.md)
+* [Monitor DLP policy violations](./data-loss-prevention-monitor.md)
