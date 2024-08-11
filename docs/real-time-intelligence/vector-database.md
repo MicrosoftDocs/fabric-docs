@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: concept-article
-ms.date: 08/06/2024
+ms.date: 08/11/2024
 ms.search.form: Eventhouse
 ---
 # Vector databases
