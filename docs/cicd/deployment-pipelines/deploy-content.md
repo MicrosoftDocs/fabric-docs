@@ -35,6 +35,8 @@ Deployment pipelines offer three options when it comes to deploying your Fabric 
 
 * [Selective deployment](#selective-deployment) - Select which content to deploy to an adjacent stage.
 
+* Backward deployment - Deploy content from a later stage to an earlier stage. Currently, this capability is available only when [deploying to an empty stage](./understand-the-deployment-process.md#assign-content-to-an-empty-stage).
+
 After you choose how to deploy your content, you can [Review your deployment and leave a note](#review-your-deployment-and-leave-a-note).
 
 #### Deploy all content
@@ -60,12 +62,11 @@ The deployment process creates a duplicate workspace in the target stage. This w
 
 #### Selective deployment
 
-
 ##### [Original selective deploy method](#tab/old)
 
 If you don't want to deploy everything from that stage, you can select specific items for deployment. Select the **Show more** link, and then select the items you wish to deploy. When you select the **Deploy** button, only the selected items are deployed to the next stage.
 
-Since dashboards, reports, semantic models, and dataflows are related and have dependencies, you can use the select related button to see all items that those items are dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
+Fabric items are often related to or dependent on other items. Dashboards, reports, semantic models, dataflows, Lakehouses and Warehouses are all examples of items that can have related to or dependent on other items. To include all items that are related to the item you want to deploy, use the select related button. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
 :::image type="content" source="media/deploy-content/selective-deploy.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines, available after selecting the show more option." lightbox="media/deploy-content/selective-deploy.png":::
 
@@ -73,7 +74,7 @@ Since dashboards, reports, semantic models, and dataflows are related and have d
 
 If you don't want to deploy everything from that stage, you can select only specific items for deployment.
 
-Since dashboards, reports, semantic models, and dataflows are related and have dependencies, you can use the select related button to see all items that those items are dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
+Since dashboards, reports, semantic models, and dataflows are related and have dependencies, you can use the select related button to see all the items that the selected item is dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
 :::image type="content" source="media/deploy-content/selective-deploy-new.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines." lightbox="media/deploy-content/selective-deploy-new.png":::
 
