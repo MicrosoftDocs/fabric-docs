@@ -65,6 +65,8 @@ The following steps are used to import the embedded Wikipedia data and write it 
 
 1. Run the remaining cells to write the data to the Eventhouse. This can take some time to execute.
 
+QUESTION FOR ANSHUL: WHY AREN'T WE USING THE VECTOR16 ENCODING IN THE NOTEBOOK?
+
 ### View the data in the Eventhouse
 
 At this point, you can verify the data was written to the eventhouse by browsing to the database details page.
