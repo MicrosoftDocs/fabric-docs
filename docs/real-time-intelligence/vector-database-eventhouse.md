@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 08/05/2024
+ms.date: 08/11/2024
 ms.search.form: Eventhouse
 ---
 # Tutorial: Use an Eventhouse as a vector database
@@ -49,12 +49,15 @@ The following steps are used to import the embedded Wikipedia data and write it 
 
 1. Run the cells to set up your environment.
 1. Run the cells to download the precomputed embeddings.
+
+      :::image type="content" source="media/vector-database/precomputed-embeddings.png" alt-text="Screenshot of running the precomputed embeddings cell in the notebook.":::
+
 1. To write to the eventhouse, enter your Cluster URI, which can be found on the [system overview page](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse), and the name of the database.
 1. Run the remaining cells to write the data to the Eventhouse.
 
 ### View the data in the Eventhouse
 
-At this point, you can verify the data has been written to the eventhouse by browsing to the database details page. 
+At this point, you can verify the data has been written to the eventhouse by browsing to the database details page.
 1. Browse to your workspace homepage in Real-Time Intelligence.
 1. Select the database item that was provided in the previous section. You should see a summary of the data that has been written to the "Wiki" table:
 
@@ -72,13 +75,16 @@ To successfully make a call against Azure OpenAI, you need an endpoint, key, and
 | api key |	This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). You can use either KEY1 or KEY2. |
 | deployment id | This value can be found under the **Deployments** section in the [Azure OpenAI Studio](https://oai.azure.com/). |
 
-1. Use the above information when running the Azure OpenAI cells. 
+Use the above information when running the Azure OpenAI cells.
+
+> [!IMPORTANT]
+> Key-based authentication must be enabled on your resource in order to use the API key.
 
 ## Query the similarity
 
 The query is run directly from the notebook, and uses the returned embedding from the previous step in a comparison against the embedded Wikipedia pages stored in your eventhouse. This query uses the [cosine similarity function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) and returns the top 10 most similar vectors.
 
-Run the cells in the notebook to see the results of the query. 
+Run the cells in the notebook to see the results of the query. You can change the search term and re-run the query to see different results. You could also compare an existing entry in the Wiki database to find similar entries.
 
 ## Optimize for scale
 
