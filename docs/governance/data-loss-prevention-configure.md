@@ -62,25 +62,30 @@ Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you sho
 
 1. Name the policy and provide a meaningful description.
 
-    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-name-description.png" alt-text="Screenshot of D L P policy name description section.":::
+    :::image type="content" source="./media/data-loss-prevention-configure/name-policy.png" alt-text="Screenshot of D L P policy name description section.":::
  
     When done, select **Next**.
 
 1. Select **Next** when you get to the Assign admin units page.
 
-    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-admin-units.png" alt-text="Screenshot of D L P policy admin units section.":::
+    :::image type="content" source="./media/data-loss-prevention-configure/admin-units.png" alt-text="Screenshot of D L P policy admin units section.":::
 
 1. Enable Power BI as a location for the DLP policy. **Disable all other locations**. Currently, DLP policies for Power BI must specify Power BI as the sole location.
 
-    :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-choose-location.png" alt-text="Screenshot of D L P choose location page.":::
+    :::image type="content" source="./media/data-loss-prevention-configure/choose-location.png" alt-text="Screenshot of D L P choose location page.":::
 
     By default the policy will apply to all workspaces. Alternatively, you can specify particular workspaces to include in the policy as well as workspaces to exclude from the policy.
+    
     >[!NOTE]
-    > DLP actions are supported only for workspaces hosted in Premium capacities.
+    > DLP actions are supported only for workspaces hosted in Fabric or Premium capacities.
 
-    If you select **Choose workspaces** or **Exclude workspaces**, a dialog will allow you to select workspaces to be included (or excluded).
+    To specify specific workspaces, or to exclude workspaces, select **Edit**. The **Scope for Fabric and Power BI workspaces** opens.
 
-    You can search for workspaces by workspace name or by user email address. When you search by a user's email address, that user's My Workspace will be listed as *personalWorkspace - \<email address\>*, and you can then select it.
+    To exclude workspaces, select the **Exclude workspaces** checkbox and then choose **+ Exclude workspaces**.
+
+    To specify particular workspaces, select the Specific workspaces radio button and then choose **+ Include workspaces**.
+
+    In either case, a list of workspaces will appear. Choose the workspaces you want to exlude or include.
 
     ![Screenshot of D L P choose workspaces dialog.](./media/data-loss-prevention-configure/power-bi-dlp-choose-workspaces.png)
  
