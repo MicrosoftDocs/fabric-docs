@@ -49,6 +49,7 @@ The following steps are used to import the embedded Wikipedia data and write it 
 
 1. Run the cells to set up your environment.
 
+QUESTION FOR REVIEWERS: SHOULD WE INCLUDE ALL THE CODE IN THE TUTORIAL?
   
 1. Run the cells to download the precomputed embeddings.
 
