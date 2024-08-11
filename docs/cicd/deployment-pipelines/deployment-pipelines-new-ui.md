@@ -50,6 +50,6 @@ The following deployment pipeline features remain unchanged:
 
 Switch between the new and old UIs using the toggle switch in the upper right corner.
 
-:::image type="content" source="./media/deployment-pipelines-new/pipeline-switch.gif" alt-text="Demonstration of how to use the toggle button to switch between the two interfaces.":::
+:::image type="content" source="./media/deployment-pipelines-new-ui/pipeline-switch.gif" alt-text="Demonstration of how to use the toggle button to switch between the two interfaces.":::
 
 Your selection is saved and will be remembered the next time you visit the page. You can switch back and forth as many times as you like.
