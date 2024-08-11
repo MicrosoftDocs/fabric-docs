@@ -48,12 +48,22 @@ The following steps are used to import the embedded Wikipedia data and write it 
 ### Write data to the Eventhouse
 
 1. Run the cells to set up your environment.
+
+  
 1. Run the cells to download the precomputed embeddings.
 
       :::image type="content" source="media/vector-database/precomputed-embeddings.png" alt-text="Screenshot of running the precomputed embeddings cell in the notebook.":::
 
-1. To write to the eventhouse, enter your Cluster URI, which can be found on the [system overview page](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse), and the name of the database.
-1. Run the remaining cells to write the data to the Eventhouse.
+1. To write to the eventhouse, enter your Cluster URI, which can be found on the [system overview page](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse), and the name of the database. The table is created in the notebook and later referenced in the query.
+
+    ```python
+    # replace with your Eventhouse Cluster URI, Database name, and Table name
+    KUSTO_CLUSTER =  "Eventhouse Cluster URI"
+    KUSTO_DATABASE = "Database name"
+    KUSTO_TABLE = "Wiki"
+    ```
+
+1. Run the remaining cells to write the data to the Eventhouse. This can take some time to execute.
 
 ### View the data in the Eventhouse
 
@@ -85,6 +95,8 @@ Use the information in the table when running the Azure OpenAI cells.
 The query is run directly from the notebook, and uses the returned embedding from the previous step in a comparison against the embedded Wikipedia pages stored in your eventhouse. This query uses the [cosine similarity function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) and returns the top 10 most similar vectors.
 
 Run the cells in the notebook to see the results of the query. You can change the search term and rerun the query to see different results. You could also compare an existing entry in the Wiki database to find similar entries.
+
+:::image type="content" source="media/vector-database/similarity-results.png" alt-text="Screenshot of running cell of similarity results" lightbox="media/vector-database/similarity-results.png":::
 
 ## Optimize for scale
 
@@ -128,4 +140,9 @@ The following chart compares search performance (in seconds) before and after pa
 
 Even on the smallest cluster, the search speed improves by more than a factor of four. In general, the speed is inversely proportional to the number of nodes. The number of embedding vectors that are needed for common LLM (Large Language Model) scenarios (for example, Retrieval Augmented Generation) rarely exceeds 100 K, so by having eight nodes searching can be done in 1 sec.
 
- 
+## Clean up resources
+
+When you're done with the tutorial, you can delete the resources you created to avoid incurring additional costs. To delete the resources, follow these steps:
+
+1. Delete the notebook from the Real-Time Intelligence experience.
+1. Delete the Eventhouse from the Real-Time Intelligence experience.
