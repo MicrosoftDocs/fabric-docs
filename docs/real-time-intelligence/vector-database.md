@@ -55,8 +55,6 @@ The following components of the Eventhouse architecture enable its use as a vect
 To optimize the cosine similarity search, you can split the vectors table to many extents that are evenly distributed among all cluster nodes. You can see the effects of partitioning on query time in the following example. This example uses multiple tables containing up to 1M embedding vectors testing the cosine similarity performance on clusters with 1, 2, 4, 8 & 20 nodes.
 The following chart compares search performance (in seconds) before and after partitioning:
 
-> [!NOTE]
-> You may notice that the cluster has 2 nodes, but the tables are stored on a single node. This is the baseline before applying the partitioning policy.
 
 :::image type="content" source="media/vector-database/duration-search.png" alt-text="Graph showing the duration of semantic search in sections as a function of cluster nodes.":::
 
@@ -86,6 +84,9 @@ To set the partitioning policy for the embedding table, use the [`.alter-merge p
 } 
 ``` 
 ~~~
+
+> [!NOTE]
+> You may notice that the cluster has 2 nodes, but the tables are stored on a single node. This is the baseline before applying the partitioning policy.
 
 The partitioning process requires a string key with high cardinality, so the unique `vector_id` was projected and converted to a `string` datatype. The best practice is to create an empty table, modify its partition policy then ingest the data. In that case there's no need to define the old `EffectiveDateTime` as in the previous command. It takes some time after data ingestion until the policy is applied.
 
