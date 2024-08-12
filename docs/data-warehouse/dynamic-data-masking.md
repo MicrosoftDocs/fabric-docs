@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stwynant
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -31,7 +29,7 @@ Dynamic data masking is complementary to other Fabric security features like [co
 
 ## Define a dynamic data mask
 
-A masking rule can be defined on a column in a table, in order to obfuscate the data in that column. Five types of masks are available.
+A masking rule can be defined on a column in a table, in order to obfuscate the data in that column. There are four types of masks available.
 
 | Function | Description | Examples |
 | --- | --- | --- |

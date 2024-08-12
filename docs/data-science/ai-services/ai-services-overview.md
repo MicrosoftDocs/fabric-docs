@@ -1,9 +1,10 @@
 ---
 title: Use Azure AI services in Fabric
 description: Overview of using Azure AI services in Fabric.
-ms.reviewer: ssalgado
-author: ruixinxu
-ms.author: ruxu
+ms.author: larryfr
+author: Blackmist
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: overview
 ms.custom:
   - references_regions
@@ -44,8 +45,8 @@ Fabric provides two options for utilizing Azure AI services:
 
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md). [SynapseML](how-to-use-openai-sdk-synapse.md)
 
-- GPT-35-turbo: GPT-3.5 models can understand and generate natural language or code. The most capable and cost effective model in the GPT-3.5 family is GPT-3.5 Turbo, which has been optimized for chat and works well for traditional completions tasks as well. The`gpt-35-turbo-16k` model supports up to 16,384 tokens.
-- gpt-4 family: `gpt-4` and `gpt-4-32k` are supported.
+- GPT-35-turbo: GPT-3.5 models can understand and generate natural language or code. The most capable and cost effective model in the GPT-3.5 family is GPT-3.5 Turbo, which has been optimized for chat and works well for traditional completions tasks as well. The `gpt-35-turbo-0125` model supports up to 16,385 input tokens and 4,096 output tokens.
+- gpt-4 family: `gpt-4-32k` is supported.
 - text-embedding-ada-002 (version 2), embedding model that can be used with embedding API requests. The maximum accepted request token is 8,191, and the returned vector has dimensions of 1,536.
 
 

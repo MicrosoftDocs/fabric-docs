@@ -5,9 +5,10 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.reviewer: ssalgado
-author: JessicaXYWang
-ms.author: jessiwang
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: JessicaXYWang
+reviewer: jessiwang
 ms.date: 05/08/2023
 ---
 
@@ -176,7 +177,7 @@ In this section, you'll use LightGBM to build a regression model for drug discov
     from synapse.ml.lightgbm import LightGBMRegressor
     
     model = LightGBMRegressor(
-        objective="quantile", alpha=0.2, learningRate=0.3, numLeaves=31
+        objective="quantile", alpha=0.2, learningRate=0.3, numLeaves=31, dataTransferMode="bulk"
     ).fit(train)
     ```
 
@@ -237,6 +238,7 @@ In this section, you'll use LightGBM to build a ranking model.
         numIterations=200,
         evalAt=[1, 3, 5],
         metric="ndcg",
+        dataTransferMode="bulk"
     )
     ```
 

@@ -5,7 +5,6 @@ author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
 ms.date: 04/24/2024
-ms.service: fabric
 ms.topic: limits-and-quotas
 ms.custom:
   - references_regions
@@ -152,10 +151,10 @@ Here's a list of regions that support mirroring for Azure Cosmos DB:
 - PowerQuery includes `ToJson` to expand JSON string data selectively.
 - Mirroring doesn't have schema constraints on the level of nesting. For more information, see [Azure Cosmos DB analytical store schema constraints](/azure/cosmos-db/analytical-store-introduction#schema-constraints).
 
-## Data Warehouse limitations
+## Data warehouse limitations
 
-- Data warehouse can't handle JSON string columns greater than 8 KB in size. The error message for this scenario is **"JSON text is not properly formatted. Unexpected character '"' is found at position"**.
-- Nested data represented as a JSON string in SQL endpoint warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message.
+- Warehouse can't handle JSON string columns greater than 8 KB in size. The error message for this scenario is **"JSON text is not properly formatted. Unexpected character '"' is found at position"**.
+- Nested data represented as a JSON string in SQL analytics endpoint and warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message.
 
 ## Mirrored item limitations
 

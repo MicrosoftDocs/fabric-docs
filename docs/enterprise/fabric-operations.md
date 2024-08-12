@@ -94,7 +94,15 @@ One Synapse Data Warehouse core (unit of compute for Data Warehouse) is equivale
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
 | Warehouse Query    | Compute charge for all user generated and system generated T-SQL statements within a Warehouse     | Warehouse | Data Warehouse Capacity Usage CU      | Background |
-| SQL Endpoint Query | Compute charge for all user generated and system generated T-SQL statements within a SQL Endpoint  | Warehouse | Data Warehouse Capacity Usage CU     | Background |
+| SQL Endpoint Query | Compute charge for all user generated and system generated T-SQL statements within the SQL analytics endpoint of a Lakehouse  | Warehouse | Data Warehouse Capacity Usage CU     | Background |
+
+### Fabric API for GraphQL
+
+GraphQL operations are made up of requests performed on API for GraphQL items by API clients. Each GraphQL request and response operation processing time is reported in Capacity Units (CUs) in seconds at the rate of ten CUs per hour.
+
+| Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
+| ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
+| Query    | Compute charge for all generated GraphQL queries (reads) and mutations (writes) by clients within a GraphQL API     | GraphQL | API for GraphQL Query Capacity Usage CU      | Interactive |
 
 ### OneLake
 
@@ -187,6 +195,9 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 | Spark job scheduled run | Synapse batch job runs triggered by notebook scheduled events   | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job pipeline run  | Synapse batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job VS Code run   | Synapse Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
+
+
+
 
 ## Related content
 

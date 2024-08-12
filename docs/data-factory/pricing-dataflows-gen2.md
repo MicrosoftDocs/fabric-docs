@@ -32,6 +32,7 @@ The following table indicates that to determine Dataflow Gen2 execution costs, e
 |---------|---------|---------|---------|
 |Standard Compute     | Based on each mashup engine query execution duration in seconds.         | 16 CUs per hour         | Per Dataflow Gen2 item        |
 |High Scale Dataflows Compute     | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds.         | 6 CUs per hour         | Per workspace        |
+|Data movement     | Based on Fast Copy run duration in hours and the used intelligent optimization throughput resources.         | 1.5 CUs per hour         | Per Dataflow Gen2 item        |
 
 ## Virtual Network Data Gateway Pricing with Dataflow Gen2 
 

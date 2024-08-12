@@ -101,6 +101,8 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
+  - name: Edit tables for Direct Lake semantic models
+    href: direct-lake-edit-tables.md
   - name: Create a Lakehouse for Direct Lake
     href: direct-lake-create-lakehouse.md
   - name: Specify a fixed identity
@@ -157,6 +159,44 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Mirroring for Azure Cosmos DB fails
+      href: known-issues/known-issue-796-mirroring-cosmos-db-fails.md
+    - name: Pipeline copy to Oracle using on-premises data gateway errors
+      href: known-issues/known-issue-781-pipeline-copy-oracle-data-gateway-errors.md
+    - name: Custom visuals don't render in Desktop
+      href: known-issues/known-issue-801-custom-visuals-not-render.md
+    - name: Teaching bubble blocks Lakehouse explorer context menu from opening
+      href: known-issues/known-issue-800-teaching-bubble-blocks-lakehouse-explorer-context-menu.md
+    - name: Localization blocks operations in a lakehouse
+      href: known-issues/known-issue-797-localization-blocks-operations-lakehouse.md
+    - name: Multiple installations of on-premises data gateway causes pipelines to fail
+      href: known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md
+    - name: SQL analytics endpoint table queries fail due to RLE
+      href: known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md
+    - name: Add data to a report when scrollbar is present doesn't work
+      href: known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md
+    - name: Spark operations fail
+      href: known-issues/known-issue-790-spark-operations-fail.md
+    - name: Data Activator alert created from visual with no dimensions doesn't work
+      href: known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md
+    - name: Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse
+      href: known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md
+    - name: Cognitive Services ScoreSentiment function doesn't work in dataflows
+      href: known-issues/known-issue-780-cognitive-services-score-sentiment-function-not-work-dataflows.md
+    - name: Direct Lake semantic model table changes don't work
+      href: known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md
+    - name: Data warehouse deployment using deployment pipelines fails
+      href: known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md
+    - name: Dataflow Gen2 ownership takeover fails
+      href: known-issues/known-issue-773-dataflow-gen2-ownership-takeover-fails.md
+    - name: Data warehouse connection or query execution fails
+      href: known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md
+    - name: Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines
+      href: known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md
+    - name: SQL analytics endpoint table sync fails when table contains linked functions
+      href: known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md
+    - name: Dataflows Gen2 staging warehouse doesn't work in deployment pipelines
+      href: known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md
     - name: New card and reference label tabular layout content hidden or truncated
       href: known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md
     - name: Python and R visuals don't work in Fabric capacity
@@ -221,7 +261,7 @@ items:
       href: known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md
     - name: SQL database mirror doesn't start when you create connection during mirror creation
       href: known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md
-    - name: SQL endpoint and semantic model are orphaned when a lakehouse is deleted
+    - name: SQL analytics endpoint and semantic model are orphaned when a lakehouse is deleted
       href: known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md
     - name: Apps and reports not available when editing scorecard metrics
       href: known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md

@@ -23,6 +23,14 @@ items:
     href: tutorial-data-science-batch-scoring.md
   - name: 5 Create a Power BI report
     href: tutorial-data-science-create-report.md
+- name: Copilot for Data Science
+  items:
+  - name: Copilot for Data Science
+    href: ../get-started/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Overview of Chat-magics in Notebooks
+    href: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Use the Copilot chat panel
+    href: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Notebooks
   items:
   - name: Create and use notebooks
@@ -337,3 +345,11 @@ items:
   items:
     - name: SemPy Python SDK
       href: /python/api/semantic-link/overview-semantic-link
+- name: AI skill
+  items: 
+    - name: What is the AI skill?
+      href: concept-ai-skill.md
+    - name: How to create an AI skill
+      href: how-to-create-ai-skill.md
+    - name: AI skill scenario
+      href: ai-skill-scenario.md

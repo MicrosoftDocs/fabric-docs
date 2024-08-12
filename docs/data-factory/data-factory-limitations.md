@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 06/03/2024
+ms.date: 06/28/2024
 ---
 
 # Data Factory limitations overview
@@ -49,7 +49,8 @@ The following table describes the resource limitations for pipelines in Data Fac
 | Maximum timeout for pipeline activity runs | 24 hours | 24 hours |
 | Bytes per object for pipeline objects | 200 KB | 200 KB |
 | Bytes per payload for each activity run | 896 KB | 896 KB |
-| Data Integration Units per copy activity run | Auto | 256 |
+| Intelligent throughput optimization per copy activity run | Auto | 256 |
+| Concurrent intelligent throughput optimization per workspace | 400 | 400 |
 | Write API calls | 1,200/h | 1,200/h |
 | Read API calls | 12,500/h | 12,500/h |
 | Maximum time of data flow debug session | 8 hrs | 8 hrs |
@@ -62,12 +63,12 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 - Data destination to Lakehouse:
   - Spaces or special characters aren't supported in column or table names.
   - Duration and binary columns aren't supported while authoring Dataflow Gen2 dataflows.
-- You need to have the latest version of the gateway installed to use with Dataflow Gen2.
+- You must have a [currently supported gateway installed](/data-integration/gateway/service-gateway-monthly-updates) to use with Dataflow Gen2. The minimum version that works with Dataflow Gen2 is **3000.210.14**.
 - When using OAuth2 credentials, the gateway currently doesn't support refreshes longer than an hour. These refreshes will fail because the gateway cannot support refreshing tokens automatically when access tokens expire, which happens one hour after the refresh started. If you get the errors "InvalidConnectionCredentials" or "AccessUnauthorized" when accessing cloud data sources using OAuth2 credentials even though the credentials have been updated recently, you may be hitting this error. This limitation for long running refreshes exists for both VNET gateways and on-premises data gateways.
 - The incremental refresh feature isn't available yet in Dataflow Gen2.
 - The Delta Lake specification doesn't support case sensitive column names, so `MyColumn` and `mycolumn`, while supported in Mashup, results in a "duplicate columns" error.
 - Dataflows that use a Gateway and the data destination feature are limited to an evaluation or refresh time of one hour. Read more about the [gateway considerations when using data destinations](gateway-considerations-output-destinations.md).
-- Currently, column nullability is based on the underlying behavior specified in the Power Query that generates the data for the Dataflow Gen2. 
+- Currently, column nullability is defaulting to allow nulls in all columns in the destination.
 
 The following table indicates the supported data types in specific storage locations.
 

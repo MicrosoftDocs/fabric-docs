@@ -28,7 +28,7 @@ The following table summarizes the available data connectors, tools, and integra
 | [Fluent Bit](#fluent-bit)                                                             | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/fluent/fluent-bit_)                                                                          | Logs, Metrics, Traces        |
 | [Logstash](#logstash)                                                                 | **Ingestion**                 |                     | [Open source](https://github.com/Azure/logstash-output-kusto/)                                                                | Logs                         |
 | [NLog](#nlog)                                                                         | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/Azure/azure-kusto-nlog-sink)                                                                 | Telemetry, Logs, Metrics     |
-| [Open Telemetry](#open-telemetry)                                                     | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs        |
+| [Open Telemetry](#opentelemetry)                                                     | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs        |
 | [Power Automate](#power-automate)                                                     | **Export**<br />**Ingestion** |                     | First party                                                                                                                   | Data orchestration           |
 | [Serilog](#serilog)                                                                   | **Ingestion**                 | :heavy_check_mark:  | [Open source](https://github.com/Azure/serilog-sinks-azuredataexplorer)                                                       | Logs                         |
 | [Splunk](#splunk)                                                                     | **Ingestion**                 |                     | [Open source](https://github.com/Azure/azure-kusto-splunk/tree/main/splunk-adx-alert-addon)                                   | Logs                         |
@@ -37,7 +37,7 @@ The following table summarizes the available data connectors, tools, and integra
 
 The following table summarizes the available connectors and their capabilities:
 
-### Apache Flink
+## Apache Flink
 
 [Apache Flink](https://flink.apache.org/) is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams. The connector implements data sink for moving data across Azure Data Explorer and Flink clusters. Using Azure Data Explorer and Apache Flink, you can build fast and scalable applications targeting data driven scenarios. For example, machine learning (ML), Extract-Transform-Load (ETL), and Log Analytics.
 
@@ -46,21 +46,21 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Telemetry
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/flink-connector-kusto/
-* **Documentation:** [Get data from Apache Flink](/azure/data-explorer/ingest-data-flink?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data from Apache Flink](../get-data-flink.md)
 
-### Apache Kafka
+## Apache Kafka
 
-[Apache Kafka](https://kafka.apache.org/documentation/) is a distributed streaming platform for building real-time streaming data pipelines that reliably move data between systems or applications. Kafka Connect is a tool for scalable and reliable streaming of data between Apache Kafka and other data systems. The Kafka Sink serves as the connector from Kafka and doesn't require using code. This is gold certified by Confluent - has gone through comprehensive review and testing for quality, feature completeness, compliance with standards, and for performance.
+[Apache Kafka](https://kafka.apache.org/documentation/) is a distributed streaming platform for building real-time streaming data pipelines that reliably move data between systems or applications. Kafka Connect is a tool for scalable and reliable streaming of data between Apache Kafka and other data systems. The Kafka Sink serves as the connector from Kafka and doesn't require using code. The connector is gold certified by Confluent and went through comprehensive review and testing for quality, feature completeness, compliance with standards, and for performance.
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming
 * **Use cases:** Logs, Telemetry, Time series
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/kafka-sink-azure-kusto/
-* **Documentation:** [Get data from Apache Kafka](/azure/data-explorer/ingest-data-kafka?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data from Apache Kafka](../get-data-kafka.md)
 * **Community Blog:** [Kafka ingestion into Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/kafka-ingestion-into-azure-data-explorer-part-1/ba-p/1452439)
 
-### Apache Log4J 2
+## Apache Log4J 2
 
 [Log4J](https://logging.apache.org/log4j/2.x/)  is a popular logging framework for Java applications maintained by the Apache Foundation. Log4j allows developers to control which log statements are output with arbitrary granularity based on the logger's name, logger level, and message pattern. The Apache Log4J 2 sink allows you to stream your log data to your database, where you can analyze and visualize your logs in real time.
 
@@ -69,10 +69,10 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Logs
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-log4j
-* **Documentation:** [Get data with the Apache Log4J 2 connector](/azure/data-explorer/apache-log4j2-connector?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data with the Apache Log4J 2 connector](../get-data-log4j2.md)
 * **Community Blog:** [Getting started with Apache Log4J and Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/getting-started-with-apache-log4j-and-azure-data-explorer/ba-p/3705242)
 
-### Apache Spark
+## Apache Spark
 
 [Apache Spark](https://spark.apache.org/) is a unified analytics engine for large-scale data processing. The [Spark connector](/azure/data-explorer/spark-connector?context=/fabric/context/context-rti&pivots=fabric) is an open source project that can run on any Spark cluster. It implements data source and data sink for moving data to or from Spark clusters. Using the Apache Spark connector, you can build fast and scalable applications targeting data driven scenarios. For example, machine learning (ML), Extract-Transform-Load (ETL), and Log Analytics. With the connector, your database becomes a valid data store for standard Spark source and sink operations, such as read, write, and writeStream.
 
@@ -81,10 +81,10 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Telemetry
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-spark/
-* **Documentation:** [Apache Spark connector](/azure/data-explorer/spark-connector?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Apache Spark connector](../get-data-spark.md)
 * **Community Blog:** [Data preprocessing for Azure Data Explorer for Azure Data Explorer with Apache Spark](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/data-pre-processing-for-azure-data-explorer-with-apache-spark/ba-p/2727993/)
 
-### Apache Spark for Azure Synapse Analytics
+## Apache Spark for Azure Synapse Analytics
 
 [Apache Spark](https://spark.apache.org/) is a parallel processing framework that supports in-memory processing to boost the performance of big data analytic applications. [Apache Spark in Azure Synapse](/azure/synapse-analytics/spark/apache-spark-overview) Analytics is one of Microsoft's implementations of Apache Spark in the cloud. You can access a database from [Synapse Studio](/azure/synapse-analytics/) with Apache Spark for Azure Synapse Analytics.
 
@@ -94,7 +94,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rti&pivots=fabric)
 * **Documentation:** [Connect to an Azure Synapse workspace](/azure/synapse-analytics/quickstart-connect-azure-data-explorer)
 
-### Azure Data Factory
+## Azure Data Factory
 
 [Azure Data Factory](/azure/data-factory) (ADF) is a cloud-based data integration service that allows you to integrate different data stores and perform activities on the data.
 
@@ -103,7 +103,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Data orchestration
 * **Documentation:** [Copy data to your database by using Azure Data Factory](/azure/data-explorer/data-factory-load-data?context=/fabric/context/context-rti&pivots=fabric)
 
-### Azure Event Hubs
+## Azure Event Hubs
 
 [Azure Event Hubs](/azure/event-hubs/event-hubs-about) is a big data streaming platform and event ingestion service. You can configure continuous ingestion from customer-managed Event Hubs.
 
@@ -111,9 +111,9 @@ The following table summarizes the available connectors and their capabilities:
 * **Ingestion type supported:** Batching, Streaming
 * **Documentation:** [Azure Event Hubs data connection](/azure/data-explorer/ingest-data-event-hub-overview?context=/fabric/context/context-rti&pivots=fabric)
 
-### Azure Functions
+## Azure Functions
 
-[Azure Functions](/azure/azure-functions/functions-overview) allow you to run serverless code in the cloud on a schedule or in response to an event. With input and output bindings for Azure Functions, you can integrate your database into your workflows to ingest data and run queries against your database.
+[Azure Functions](/azure/azure-functions/functions-overview) allows you to run serverless code in the cloud on a schedule or in response to an event. With input and output bindings for Azure Functions, you can integrate your database into your workflows to ingest data and run queries against your database.
 
 * **Functionality:** Ingestion, Export
 * **Ingestion type supported:** Batching
@@ -121,7 +121,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Documentation:** [Integrating Azure Functions using input and output bindings (preview)](/azure/data-explorer/integrate-azure-functions?context=/fabric/context/context-rti&pivots=fabric)
 * **Community Blog:** [Azure Data Explorer (Kusto) Bindings for Azure Functions](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/azure-data-explorer-kusto-bindings-for-azure-functions-public/ba-p/3828472)
 
-### Azure Stream Analytics
+## Azure Stream Analytics
 
 [Azure Stream Analytics](/azure/stream-analytics/stream-analytics-introduction) is a real-time analytics and complex event-processing engine that's designed to process high volumes of fast streaming data from multiple sources simultaneously.
 
@@ -130,17 +130,17 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Event processing
 * **Documentation:** [Get data from Azure Stream Analytics](/azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rti&pivots=fabric)
 
-### Fluent Bit
+## Fluent Bit
 
 Fluent Bit is an open-source agent that collects logs, metrics, and traces from various sources. It allows you to filter, modify, and aggregate event data before sending it to storage.
 
 * **Functionality:** Ingestion
-* **Ingestion type supported:** Batching, Streaming
+* **Ingestion type supported:** Batching
 * **Use cases:** Logs, Metrics, Traces
 * **Repository:** [fluent-bit Kusto Output Plugin](https://github.com/fluent/fluent-bit/tree/master/plugins/out_azure_kusto)
 * **Documentation:** [Get data with Fluent Bit](../get-data-fluent.md)
 
-### Logstash
+## Logstash
 
 [The Logstash plugin](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric) enables you to process events from Logstash into an Azure Data Explorer database for later analysis.
 
@@ -152,31 +152,31 @@ Fluent Bit is an open-source agent that collects logs, metrics, and traces from 
 * **Documentation:** [Get data from Logstash](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric)
 * **Community Blog:** [How to migrate from Elasticsearch to Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/how-to-migrate-from-elasticsearch-to-azure-data-explorer/ba-p/1621539/)
 
-### NLog
+## NLog
 
-NLog is a flexible and free logging platform for various .NET platforms, including .NET standard. NLog allows you to write to several targets, such as a database, file, or console. With NLog you can change the logging configuration on-the-fly. The NLog sink is a target for NLog that allows you to send your log messages to your database. The plugin provides an efficient way to sink your logs to your cluster.
+NLog is a flexible and free logging platform for various .NET platforms, including .NET standard. NLog allows you to write to several targets, such as a database, file, or console. With NLog, you can change the logging configuration on-the-fly. The NLog sink is a target for NLog that allows you to send your log messages to your database. The plugin provides an efficient way to sink your logs to your cluster.
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming
 * **Use cases:** Telemetry, Logs, Metrics
 * **Underlying SDK:** [.NET](/azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-nlog-sink
-* **Documentation:** [Get data with the NLog sink](/azure/data-explorer/nlog-sink?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data with the NLog sink](../get-data-nlog-sink.md)
 * **Community Blog:** [Getting started with NLog sink and Azure Data Explorer](https://aka.ms/adx-docs-nlog-blog)
 
-### Open Telemetry
+## OpenTelemetry
 
-[The OpenTelemetry connector](/azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rti&pivots=fabric) supports ingestion of data from many receivers into your database. It works as a bridge to ingest data generated by Open telemetry to your database by customizing the format of the exported data according to your needs.
+[The OpenTelemetry connector](/azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rti&pivots=fabric) supports ingestion of data from many receivers into your database. It works as a bridge to ingest data generated by OpenTelemetry to your database by customizing the format of the exported data according to your needs.
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming
 * **Use cases:** Traces, Metrics, Logs
 * **Underlying SDK:** [Go](/azure/data-explorer/kusto/api/golang/kusto-golang-client-library?context=/fabric/context/context-rti&pivots=fabric)
-* **Repository:** Open Telemetry - https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter
+* **Repository:** OpenTelemetry - https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter
 * **Documentation:** [Get data from OpenTelemetry](/azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rti&pivots=fabric)
 * **Community Blog:** [Getting started with Open Telemetry and Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/getting-started-with-open-telemetry-and-azure-data-explorer/ba-p/3675708)
 
-### Power Automate
+## Power Automate
 
 [Power Automate](/power-automate/getting-started) is an orchestration service used to automate business processes. The :::no-loc text="Power Automate"::: (previously Microsoft Flow) connector enables you to orchestrate and schedule flows, send notifications, and alerts, as part of a scheduled or triggered task.
 
@@ -185,7 +185,7 @@ NLog is a flexible and free logging platform for various .NET platforms, includi
 * **Use cases:** Data orchestration
 * **Documentation:** [Microsoft Power Automate connector](/azure/data-explorer/flow?context=/fabric/context/context-rti&pivots=fabric)
 
-### Serilog
+## Serilog
 
 Serilog is a popular logging framework for .NET applications. Serilog allows developers to control which log statements are output with arbitrary granularity based on the logger's name, logger level, and message pattern. The Serilog sink, also known as an appender, streams your log data to your database, where you can analyze and visualize your logs in real time.
 
@@ -194,12 +194,12 @@ Serilog is a popular logging framework for .NET applications. Serilog allows dev
 * **Use cases:** Logs
 * **Underlying SDK:** [.NET](/azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/context-rti&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/serilog-sinks-azuredataexplorer
-* **Documentation:** [Get data with the Serilog sink](/azure/data-explorer/serilog-sink?context=/fabric/context/context-rti&pivots=fabric)
+* **Documentation:** [Get data from Serilog](../get-data-serilog.md)
 * **Community Blog:** [Getting started with Serilog sink and Azure Data Explorer](https://go.microsoft.com/fwlink/p/?linkid=2227749)
 
-### Splunk
+## Splunk
 
-[Splunk Enterprise](https://www.splunk.com/en_us/products/splunk-enterprise.html) is a software platform that allows you to ingest data from many sources simultaneously.The [Azure Data Explorer add-on](https://splunkbase.splunk.com/app/6979) sends data from Splunk to a table in your cluster.
+[Splunk Enterprise](https://www.splunk.com/en_us/products/splunk-enterprise.html) is a software platform that allows you to ingest data from many sources simultaneously. The [Azure Data Explorer add-on](https://splunkbase.splunk.com/app/6979) sends data from Splunk to a table in your cluster.
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching
@@ -210,7 +210,7 @@ Serilog is a popular logging framework for .NET applications. Serilog allows dev
 * **Splunk Base:** [Microsoft Fabric Add-On for Splunk](https://classic.splunkbase.splunk.com/app/7069/)
 * **Community Blog:** [Getting started with Microsoft Azure Data Explorer Add-On for Splunk](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/getting-started-with-microsoft-azure-data-explorer-add-on-for/ba-p/3917176)
 
-### Splunk Universal Forwarder
+## Splunk Universal Forwarder
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching
@@ -219,9 +219,9 @@ Serilog is a popular logging framework for .NET applications. Serilog allows dev
 * **Documentation:** [Get data from Splunk Universal Forwarder to Azure Data Explorer](/azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric)
 * **Community Blog:** [Get data using Splunk Universal forwarder into Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/ingest-data-using-splunk-universal-forwarder-into-azure-data/ba-p/3964043)
 
-### Telegraf
+## Telegraf
 
-Telegraf is an open source, lightweight, minimal memory foot print agent for collecting, processing and writing telemetry data including logs, metrics, and IoT data. Telegraf supports hundreds of input and output plugins. It's widely used and well supported by the open source community. The output plugin serves as the connector from Telegraf and supports ingestion of data from many types of input plugins into your database.
+Telegraf is an open source, lightweight, minimal memory foot print agent for collecting, processing, and writing telemetry data including logs, metrics, and IoT data. Telegraf supports hundreds of input and output plugins. It's widely used and well supported by the open source community. The output plugin serves as the connector from Telegraf and supports ingestion of data from many types of input plugins into your database.
 
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming

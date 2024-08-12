@@ -1,18 +1,16 @@
 ---
 title: "How to: Use Copilot code completion for Synapse Data Warehouse"
-description: Learn more about Microsoft Copilot code completion for Synapse Data Warehouse in Microsoft Fabric, to provide intelligent autocomplete-style code suggestions."
+description: Learn more about Microsoft Copilot code completion for Synapse Data Warehouse in Microsoft Fabric, to provide intelligent autocomplete-style code suggestions.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
-ms.date: 05/08/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 08/01/2024
 ms.topic: how-to
+ms.collection: ce-skilling-ai-copilot
 ms.custom:
   - build-2024
   - build-2024-dataai
   - build-2024-fabric
-ms.collection: ce-skilling-ai-copilot
 ---
 # How to: Use Copilot code completion for Synapse Data Warehouse
 
@@ -39,13 +37,13 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 
 1. Start writing your query in the SQL query editor within the warehouse. As you type, Copilot will provide real-time code suggestions and completions of your query by presenting a dimmed ghost text.
 
-    :::image type="content" source="media/copilot-code-completion/code-completion-suggestion.png" alt-text="Screenshot from the query editor showing the dimmed text of a Copilot code suggestion.":::
+    :::image type="content" source="media/copilot-code-completion/code-completion-suggestion.png" alt-text="Screenshot from the query editor showing the dimmed text of a Copilot code suggestion." lightbox="media/copilot-code-completion/code-completion-suggestion.png":::
 
 1. You can then accept the suggestion with the **Tab** key, or dismiss it. If you do not want to accept an entire suggestion from Copilot, you can use the **Ctrl+Right** keyboard shortcut to accept the next word of a suggestion.
 
 1. Copilot can provide different suggestions for the same input. You can hover over the suggestion to preview the other options.
 
-    :::image type="content" source="media/copilot-code-completion/code-completion-suggestion-other-options.png" alt-text="Screenshot from the query editor showing the dimmed text and the selector for multiple selection options.":::
+    :::image type="content" source="media/copilot-code-completion/code-completion-suggestion-other-options.png" alt-text="Screenshot from the query editor showing the dimmed text and the selector for multiple selection options." lightbox="media/copilot-code-completion/code-completion-suggestion-other-options.png":::
 
 1. To help Copilot, understand the query you're writing, you can provide context about what code you expect by leaving a comment with `--`. For example, you could specify which warehouse object, condition, or methods to use. Copilot can even autocomplete your comment to help you write clear and accurate comments more efficiently.
 
@@ -56,3 +54,4 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 - [Microsoft Copilot for Synapse Data Warehouse](copilot.md)
 - [How to: Use the Copilot chat pane for Synapse Data Warehouse](copilot-chat-pane.md)
 - [How to: Use Copilot quick actions for Synapse Data Warehouse](copilot-quick-action.md)
+- [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../get-started/copilot-data-warehouse-privacy-security.md)

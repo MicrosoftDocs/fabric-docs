@@ -3,8 +3,7 @@ title: Set or remove sensitivity labels programmatically with admin APIs
 description: See an example of how to use Power BI REST admin APIs to set or remove sensitivity labels on Power BI artifacts.
 author: paulinbar
 ms.author: painbar
-ms.service: powerbi
-ms.subservice: powerbi-eim
+
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -20,7 +19,7 @@ The APIs set or remove labels from artifacts by artifact ID.
 
 ## Requirements and considerations
 
-* Users must have administrator rights (such as Microsoft 365 global administrator or Fabric administrator) to call these APIs.
+* Users must be Fabric administrators to call these APIs.
 * The admin user (and the delegated user, if provided) must have sufficient [usage rights](/azure/information-protection/configure-usage-rights) to set or remove labels.
 * To set a sensitivity label using the setLabels API, the admin user (or the delegated user, if provided) must have the label included in their label policy.
 * The APIs allow a maximum of 25 requests per hour. Each request can update up to 2000 artifacts.

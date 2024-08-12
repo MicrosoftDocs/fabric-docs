@@ -1,9 +1,10 @@
 ---
 title: Use Azure OpenAI with Python SDK
 description: How to use prebuilt Azure openai in Fabric with Python library
-ms.reviewer: ssalgado
-ms.author: ruxu
-author: ruixinxu
+ms.author: larryfr
+author: Blackmist
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -48,7 +49,7 @@ ChatGPT and GPT-4 are language models optimized for conversational interfaces. T
 import openai
 
 response = openai.ChatCompletion.create(
-    deployment_id='gpt-35-turbo-16k', # deployment_id could be one of {gpt-35-turbo-16k, gpt-4 or gpt-4-32k}
+    deployment_id='gpt-35-turbo-0125', # deployment_id could be one of {gpt-35-turbo-0125 or gpt-4-32k}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -70,7 +71,7 @@ We can also stream the response
 
 ``` Python
 response = openai.ChatCompletion.create(
-    deployment_id='ggpt-35-turbo-16k', # deployment_id could be one of {gpt-35-turbo-16k, gpt-4 or gpt-4-32k}
+    deployment_id='gpt-35-turbo-0125', # deployment_id could be one of {gpt-35-turbo-0125 or gpt-4-32k}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -102,8 +103,7 @@ ChatGPT and GPT-4 models are language models that are optimized for conversation
 
 `deployment_name` could be one of:
 
--   `gpt-35-turbo-16k`
--   `gpt-4`
+-   `gpt-35-turbo-0125`
 -   `gpt-4-32k`
 
 ``` python
@@ -138,7 +138,7 @@ chat_df = spark.createDataFrame(
 
 chat_completion = (
     OpenAIChatCompletion()
-    .setDeploymentName("gpt-35-turbo-16k") # deploymentName could be one of {gpt-35-turbo-16k, gpt-4 or gpt-4-32k}
+    .setDeploymentName("gpt-35-turbo-0125") # deploymentName could be one of {gpt-35-turbo-0125 or gpt-4-32k}
     .setMessagesCol("messages")
     .setErrorCol("error")
     .setOutputCol("chat_completions")

@@ -16,14 +16,14 @@ items:
       href: tutorial-1-resources.md
     - name: 2- Get data in the Real-Time hub
       href: tutorial-2-get-real-time-events.md
-    - name: 3- Set an alert on your event stream
-      href: tutorial-3-set-alert.md
-    - name: 4- Query streaming data in a KQL queryset
-      href: tutorial-4-query-data.md
-    - name: 5- Create a Real-Time dashboard
-      href: tutorial-5-create-dashboard.md
-    - name: 6- Create a Power BI report
-      href: tutorial-6-power-bi-report.md
+    - name: 3- Query streaming data in a KQL queryset
+      href: tutorial-3-query-data.md
+    - name: 4- Create a Real-Time dashboard
+      href: tutorial-4-create-dashboard.md
+    - name: 5- Create a Power BI report
+      href: tutorial-5-power-bi-report.md
+    - name: 6- Set an alert on your event stream
+      href: tutorial-6-set-alert.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
 - name: User flows
@@ -165,7 +165,7 @@ items:
       - name: Apache Log4J 2
         href: get-data-log4j2.md
       - name: Apache Spark
-        href: /azure/data-explorer/spark-connector?context=/fabric/context/context-rti&pivots=fabric
+        href: get-data-spark.md
       - name: Azure Synapse workspace
         href: /azure/synapse-analytics/quickstart-connect-azure-data-explorer
       - name: Azure Data Factory
@@ -187,7 +187,7 @@ items:
       - name: Microsoft Power Automate
         href: /azure/data-explorer/flow?context=/fabric/context/context-rti&pivots=fabric
       - name: Serilog sink
-        href: /azure/data-explorer/serilog-sink?context=/fabric/context/context-rti&pivots=fabric
+        href: get-data-serilog.md
       - name: Splunk
         href: /azure/data-explorer/ingest-data-splunk?context=/fabric/context/context-rti&pivots=fabric
       - name: Splunk Universal Forwarder

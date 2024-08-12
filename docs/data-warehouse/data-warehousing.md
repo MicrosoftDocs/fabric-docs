@@ -3,10 +3,8 @@ title: What is data warehousing in Microsoft Fabric?
 description: Learn more about data warehousing workloads in Synapse Data Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: joanpo, chweb
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.reviewer: joanpo, chweb, cynotebo
+ms.date: 08/01/2024
 ms.topic: overview
 ms.custom:
   - build-2023
@@ -20,7 +18,7 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse i
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides customers with a unified product that addresses every aspect of their data estate by offering a complete, SaaS-ified Data, Analytics and AI platform, which is lake-centric and open. The foundation of [!INCLUDE [product-name](../includes/product-name.md)] enables the novice user through to the seasoned professional to leverage Database, Analytics, Messaging, Data Integration and Business Intelligence workloads through a rich, easy to use, shared SaaS experience with Microsoft OneLake as the centerpiece. 
+[!INCLUDE [product-name](../includes/product-name.md)] provides customers with a unified product that addresses every aspect of their data estate by offering a complete, SaaS-ified Data, Analytics and AI platform, which is lake-centric and open. The foundation of [!INCLUDE [product-name](../includes/product-name.md)] enables the novice user through to the seasoned professional to use Database, Analytics, Messaging, Data Integration and Business Intelligence workloads through a rich, easy to use, shared SaaS experience with Microsoft OneLake as the centerpiece. 
 
 ### A lake-centric SaaS experience built for any skill level
 
@@ -38,7 +36,7 @@ Cross-database queries can be created through the [Visual Query editor](visual-q
 
 ### Autonomous workload management
 
-Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an industry-leading distributed query processing engine, which provides customers with workloads that have a natural isolation boundary. There are no knobs to turn with the autonomous allocation and relinquishing of resources to offer best in breed performance with automatic scale and concurrency built in. True isolation is achieved by separating workloads with different characteristics, ensuring that ETL jobs never interfere with their ad hoc analytics and reporting workloads. 
+Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] use an industry-leading distributed query processing engine, which provides customers with workloads that have a natural isolation boundary. There are no knobs to turn with the autonomous allocation and relinquishing of resources to offer best in breed performance with automatic scale and concurrency built in. True isolation is achieved by separating workloads with different characteristics, ensuring that ETL jobs never interfere with their ad hoc analytics and reporting workloads. 
 
 ### Open format for seamless engine interoperability
 
@@ -72,6 +70,8 @@ In a [!INCLUDE [product-name](../includes/product-name.md)] workspace, a [!INCLU
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-analytics-endpoint.md).
 
+For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
+
 ### Synapse Data Warehouse
 
 In a [!INCLUDE [product-name](../includes/product-name.md)] workspace, a Synapse Data Warehouse or **Warehouse** is labeled as 'Warehouse' under the **Type** column. A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports transactions, DDL, and DML queries. 
@@ -81,6 +81,8 @@ In a [!INCLUDE [product-name](../includes/product-name.md)] workspace, a Synapse
 Unlike a [!INCLUDE [fabric-se](includes/fabric-se.md)] which only supports read only queries and creation of views and TVFs, a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] has full transactional DDL and DML support and is created by a customer. A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is populated by one of the supported data ingestion methods such as [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true), [Pipelines](ingest-data-pipelines.md), [Dataflows](ingest-data.md), or cross database ingestion options such as [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true), [INSERT..SELECT](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true), or [SELECT INTO](/sql/t-sql/queries/select-into-clause-transact-sql?view=fabric&preserve-view=true).
 
 To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Create a warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](create-warehouse.md).
+
+For information and recommendations on performance of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Warehouse performance guidelines](guidelines-warehouse-performance.md).
 
 ## Compare the Warehouse and the SQL analytics endpoint of the Lakehouse
 
@@ -98,7 +100,7 @@ For more information about querying your data in [!INCLUDE [product-name](../inc
 
 In order to best serve your analytics use cases, there are a variety of capabilities available to you. Generally, the warehouse can be thought of as a superset of all other capabilities, providing a synergistic relationship between all other analytics offerings that provide T-SQL.  
 
-Within fabric, there are users who might need to decide between a [Warehouse](create-warehouse.md), [Lakehouse](get-started-lakehouse-sql-analytics-endpoint.md), and even a [Power BI datamart](../data-engineering/create-lakehouse.md).
+Within Microsoft Fabric, there are users who might need to decide between a [Warehouse](create-warehouse.md), [Lakehouse](get-started-lakehouse-sql-analytics-endpoint.md), and even a [Power BI datamart](../data-engineering/create-lakehouse.md).
 
 :::row:::
    :::column span="1"::: 
@@ -267,16 +269,23 @@ NA
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] manages the automatically generated tables so the workspace users can't modify them. Users can enrich the database model by adding their own SQL schemas, views, procedures, and other database objects.
 
-For every Delta table in your [Lakehouse](../data-engineering/lakehouse-overview.md), the [!INCLUDE [fabric-se](includes/fabric-se.md)] automatically generates one table. 
+For every Delta table in your [Lakehouse](../data-engineering/lakehouse-overview.md), the [!INCLUDE [fabric-se](includes/fabric-se.md)] automatically generates a table in the `dbo` schema. 
 
-Tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)] are created with a delay. Once you create or update Delta Lake folder/table in the lake, the warehouse table that references the lake data won't be immediately created/refreshed. The changes will be applied in the warehouse after 5-10 seconds.
+Tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)] are created with a minor delay. Once you create or update Delta Lake table in the lake, the [!INCLUDE [fabric-se](includes/fabric-se.md)] table that references the Delta lake table will be created/refreshed automatically within 10 seconds.
+
+The amount of time it takes to refresh the table is related to how optimized the Delta tables are. For more information, review [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md) to learn more about key scenarios, and an in-depth guide on how to efficiently maintain Delta tables for maximum performance.
+
+You can manually force a refresh of the automatic metadata scanning in the Fabric portal. On the page for the [!INCLUDE [fabric-se](includes/fabric-se.md)], select the **Refresh** button in the toolbar to refresh the schema.
+
+:::image type="content" source="media/data-warehousing/sql-endpoint-refresh-button.png" alt-text="Screenshot from the Fabric portal showing the SQL analytics endpoint Refresh schema button." lightbox="media/data-warehousing/sql-endpoint-refresh-button.png":::
 
 For autogenerated schema data types for the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [Data types in Microsoft Fabric](data-types.md#autogenerated-data-types-in-the-sql-analytics-endpoint).
 
 ## Related content
 
-- [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-analytics-endpoint.md)
-- [Create a warehouse](create-warehouse.md)
+- [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
+- [Create a warehouse in Microsoft Fabric](create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
 - [Introduction to Power BI datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
-- [Creating reports](create-reports.md)
+- [Create reports on data warehousing in Microsoft Fabric](create-reports.md)
+- [Source control with Warehouse (preview)](source-control.md)

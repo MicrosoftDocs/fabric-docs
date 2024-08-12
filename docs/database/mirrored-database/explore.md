@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, anithaa
 ms.date: 04/24/2024
-ms.service: fabric
 ms.topic: conceptual
 ---
 # Explore data in your mirrored database using Microsoft Fabric
@@ -16,7 +15,7 @@ Learn more about all the methods to query the data in your mirrored database wit
 
 Microsoft Fabric provides a read-only T-SQL serving layer for replicated delta tables. This SQL-based experience is called the SQL analytics endpoint. You can analyze data in delta tables using a no code visual query editor or T-SQL to create views, functions, stored procedures, and apply SQL security.
 
-To access the SQL analytics endpoint, select the corresponding item in the workspace view or switch to the SQL analytics endpoint mode in the mirrored database explorer. For more information, see [What is SQL endpoint for a lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
+To access the SQL analytics endpoint, select the corresponding item in the workspace view or switch to the SQL analytics endpoint mode in the mirrored database explorer. For more information, see [What is the SQL analytics endpoint for a lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
 
 ## Use Data view to preview data
 

@@ -4,9 +4,7 @@ description: Learn more about table constraints support using Warehouse in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: kecona, xiaoyul
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 08/01/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -27,13 +25,16 @@ Learn about table constraints in [!INCLUDE [fabricse](includes/fabric-se.md)] an
 [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] support these table constraints: 
 
 - PRIMARY KEY is only supported when NONCLUSTERED and NOT ENFORCED are both used.
-- UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED is used.
 - FOREIGN KEY is only supported when NOT ENFORCED is used.
+- UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED are both used.
 
 For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 
 - [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] don't support default constraints at this time. 
 - For more information on tables, see [Tables in data warehousing in Microsoft Fabric](tables.md).
+
+> [!IMPORTANT]
+> There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
 
 ## Examples
 

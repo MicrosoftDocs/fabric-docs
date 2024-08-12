@@ -37,7 +37,7 @@ To preview the source data of an event hub or sample data in the eventstream:
 
 ## Preview a destination
 
-To preview the destination data of a KQL database or lakehouse in the eventstream:
+To preview the destination data of a KQL database, Reflex or lakehouse in the eventstream:
 
 1. In the main editor canvas, select one of the destination nodes in your eventstream.
 
