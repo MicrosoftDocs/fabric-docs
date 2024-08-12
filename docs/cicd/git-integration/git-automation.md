@@ -10,6 +10,7 @@ ms.topic: conceptual
 ms.custom:
 ms.date: 07/02/2024
 ms.search.form: Git integration automation, Git integration APIs, Azure DevOps integration, GitHub integration
+#customer intent: As a developer, I want to learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs, so that I can manage my content lifecycle.
 ---
 
 # Automate Git integration by using APIs and Azure DevOps

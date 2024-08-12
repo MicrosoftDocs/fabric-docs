@@ -31,6 +31,14 @@ Fabric's [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipel
 
 For the most efficient lifecycle management experience in Fabric, connect your developer workspace to Git, and deploy from there using deployment pipelines.
 
+## Variable library
+
+Customers can:
+Define and manage variables (user-defined variables) in a unified way for the workspace items.
+Use the variables in different places in the product: In item definitions (i.e. queries), as reference to other items (Lakehouse ID), and more.
+Reuse variables across fabric WLs and items (i.e. variable is referred by several items in the ws).
+CI/CD - Use variables to adjust values based on the release pipeline stage.
+
 ## Related content
 
 * [End to end lifecycle management tutorial](./cicd-tutorial.md)
