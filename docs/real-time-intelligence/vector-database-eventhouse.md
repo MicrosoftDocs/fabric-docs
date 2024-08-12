@@ -98,9 +98,6 @@ The following steps are used to import the embedded Wikipedia data and write it 
     article_df["content_vector"] = article_df.content_vector.apply(literal_eval)
     article_df.head()
     ```
-    
-
-      :::image type="content" source="media/vector-database/precomputed-embeddings.png" alt-text="Screenshot of running the precomputed embeddings cell in the notebook.":::
 
 1. To write to the eventhouse, enter your Cluster URI, which can be found on the [system overview page](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse), and the name of the database. The table is created in the notebook and later referenced in the query.
 
@@ -118,12 +115,12 @@ The following steps are used to import the embedded Wikipedia data and write it 
     
     access_token=mssparkutils.credentials.getToken(kustoOptions["kustoCluster"])
     ```
-    
+
     ```python
     #Pandas data frame to spark dataframe
     sparkDF=spark.createDataFrame(article_df)
     ```
-    
+
     ```python
     # Write data to a table in Eventhouse
     sparkDF.write. \
@@ -155,9 +152,9 @@ Now that you stored the embedded wiki data in your eventhouse, you can use this 
 
 To successfully make a call against Azure OpenAI, you need an endpoint, key, and deployment ID.
 
-| Variable name	| Value |
+| Variable name | Value |
 |---|---|
-| endpoint	|This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). Alternatively, you can find the value in the **[Azure OpenAI Studio](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: `https://docs-test-001.openai.azure.com/`. |
+| endpoint |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). Alternatively, you can find the value in the **[Azure OpenAI Studio](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: `https://docs-test-001.openai.azure.com/`. |
 | api key |	This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://ms.portal.azure.com/). You can use either KEY1 or KEY2. |
 | deployment id | This value can be found under the **Deployments** section in the [Azure OpenAI Studio](https://oai.azure.com/). |
 
@@ -169,7 +166,6 @@ Use the information in the table when running the Azure OpenAI cells.
 ```python
 import openai
 ```
-
 
 ```python
 openai.api_version = '2022-12-01'
