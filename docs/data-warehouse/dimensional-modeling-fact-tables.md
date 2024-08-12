@@ -166,6 +166,12 @@ An _aggregate fact table_ represents a rollup of a base fact table to a lower di
 
 > [!NOTE]
 > A Power BI semantic model can generate [user-defined aggregations](/power-bi/transform-model/aggregations-advanced) to achieve the same result, or use the data warehouse aggregate fact table by using [DirectQuery storage mode](/power-bi/transform-model/aggregations-advanced#storage-modes).
+> 
+
+### Bridge Tables
+A bridge table is designed to manage many-to-many relationships between fact and dimension tables. It acts as an intermediary that links these tables, ensuring data integrity and reducing redundancy. Bridge tables are particularly useful in scenarios where dimensions have hierarchical or multiple associations with facts, such as tracking multiple roles of employees in projects or capturing various diagnoses for patients. By using a bridge table, you can maintain the granularity of the fact table while accurately representing complex relationships, facilitating more accurate and flexible data analysis. 
+
+In Power BI, a bridge table is supported using a many-to-many relationship. This type of relationship allows a bridge table to link fact tables with dimension tables where there are multiple overlapping associations. The bridge table typically contains unique values that act as intermediary keys, connecting the corresponding keys in the fact and dimension tables. 
 
 ## Related content
 
