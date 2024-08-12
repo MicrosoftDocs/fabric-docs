@@ -18,6 +18,7 @@ Specifically, in this tutorial you will:
 
 > [!div class="checklist"]
 >
+> * Prepare a table in the Eventhouse with `Vector16` encoding for the vector columns.
 > * Store vector data from a pre-embedded dataset to an Eventhouse.
 > * Embed afor a natural language query using the Open AI model.
 > * Use the [series_cosine_similarity KQL function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) to calculate the similarities between the query embedding vector and those of the wiki pages.
@@ -32,10 +33,30 @@ This flow can be visualized as follows:
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
 * An Azure OpenAI resource with the text-embedding-ada-002 (Version 2) model deployed. This model is currently only available in certain regions. For more information, see [Create a resource](/azure/ai-services/openai/how-to/create-resource).
+    * Make sure that local authentication is [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your resource.
 * Download the sample notebook from the GitHub repository
 
 > [!NOTE]
 > While this tutorial uses Azure OpenAI, you can use any embedding model provider to generate vectors for text data.
+
+## Prepare your Eventhouse environment
+
+1. Browse to your workspace homepage in Real-Time Intelligence.
+1. Select the Eventhouse you created in the prerequisites.
+1. Select the target database where you want to store the vector data. If you don't have a database, you can create one by selecting **Add database**.
+1. Select **Explore my data**. Copy/paste the following KQL query to create a table with the necessary columns:
+
+    ```kusto
+    .create table Wiki (id:string,url:string,['title']:string,text:string,title_vector:dynamic,content_vector:dynamic,vector_id:long)
+    ```
+
+1. Copy/paste the following commands to set the encoding policy of the vector columns. Run these commands sequentially.
+
+    ```kusto
+    .alter column Wiki.title_vector policy encoding type='Vector16'
+
+    .alter column Wiki.content_vector policy encoding type='Vector16'
+    ```
 
 ## Write vector data to an Eventhouse
 
@@ -147,9 +168,6 @@ At this point, you can verify the data was written to the eventhouse by browsing
 
 Now that you stored the embedded wiki data in your eventhouse, you can use this data as a reference to find pages on a particular article. In order to make the comparison, you embed the search term, and then do a comparison between the search term and the Wikipedia pages.
 
-> [!NOTE]
-> While this tutorial uses Azure OpenAI, you can use any embedding model provider to generate vectors for text data.
-
 To successfully make a call against Azure OpenAI, you need an endpoint, key, and deployment ID.
 
 | Variable name | Value |
@@ -161,7 +179,7 @@ To successfully make a call against Azure OpenAI, you need an endpoint, key, and
 Use the information in the table when running the Azure OpenAI cells.
 
 > [!IMPORTANT]
-> Key-based authentication must be enabled on your resource in order to use the API key.
+> Local authentication must be [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your resource in order to use the API key.
 
 ```python
 import openai
