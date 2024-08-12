@@ -52,6 +52,8 @@ This file contains the Kusto sink properties file where you'll update specific c
 
 [!INCLUDE [ingest-data-kafka-3](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-kafka-3.md)]
 
+[!INCLUDE [ingest-data-kafka-4](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-kafka-4.md)]
+
 ## Clean up resources
 
 Clean up the items created by navigating to the workspace in which they were created.
@@ -60,7 +62,7 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 1. Select **Delete**. You can't recover deleted items.
 
-[!INCLUDE [ingest-data-kafka-4](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-kafka-4.md)]
+[!INCLUDE [ingest-data-kafka-5](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-kafka-5.md)]
 
 ## Related content
 
