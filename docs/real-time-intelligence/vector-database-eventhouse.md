@@ -34,6 +34,9 @@ This flow can be visualized as follows:
 * An Azure OpenAI resource with the text-embedding-ada-002 (Version 2) model deployed. This model is currently only available in certain regions. For more information, see [Create a resource](/azure/ai-services/openai/how-to/create-resource).
 * Download the sample notebook from the GitHub repository
 
+> [!NOTE]
+> While this tutorial uses Azure OpenAI, you can use any embedding model provider to generate vectors for text data.
+
 ## Write vector data to an Eventhouse
 
 The following steps are used to import the embedded Wikipedia data and write it in an Eventhouse:
@@ -49,9 +52,53 @@ The following steps are used to import the embedded Wikipedia data and write it 
 
 1. Run the cells to set up your environment.
 
-QUESTION FOR REVIEWERS: SHOULD WE INCLUDE ALL THE CODE IN THE TUTORIAL?
-  
+    ```
+    %%configure -f
+    {"conf":
+        {
+            "spark.rpc.message.maxSize": "1024"
+        }
+    }
+    ```
+    
+    ```
+    %pip install wget
+    ```
+    
+    ```
+    %pip install openai
+    ```
+      
 1. Run the cells to download the precomputed embeddings.
+
+    ```
+    import wget
+    
+    embeddings_url = "https://cdn.openai.com/API/examples/data/vector_database_wikipedia_articles_embedded.zip"
+    
+    # The file is ~700 MB so it might take some time
+    wget.download(embeddings_url)
+    ```
+    
+    ```
+    import zipfile
+    
+    with zipfile.ZipFile("vector_database_wikipedia_articles_embedded.zip","r") as zip_ref:
+        zip_ref.extractall("/lakehouse/default/Files/data")
+    ```
+    
+    ```
+    import pandas as pd
+    
+    from ast import literal_eval
+    
+    article_df = pd.read_csv('/lakehouse/default/Files/data/vector_database_wikipedia_articles_embedded.csv')
+    # Read vectors from strings back into a list
+    article_df["title_vector"] = article_df.title_vector.apply(literal_eval)
+    article_df["content_vector"] = article_df.content_vector.apply(literal_eval)
+    article_df.head()
+    ```
+    
 
       :::image type="content" source="media/vector-database/precomputed-embeddings.png" alt-text="Screenshot of running the precomputed embeddings cell in the notebook.":::
 
@@ -66,11 +113,34 @@ QUESTION FOR REVIEWERS: SHOULD WE INCLUDE ALL THE CODE IN THE TUTORIAL?
 
 1. Run the remaining cells to write the data to the Eventhouse. This can take some time to execute.
 
-QUESTION FOR ANSHUL: WHY AREN'T WE USING THE VECTOR16 ENCODING IN THE NOTEBOOK?
+    ``` 
+    kustoOptions = {"kustoCluster": KUSTO_CLUSTER, "kustoDatabase" :KUSTO_DATABASE, "kustoTable" : KUSTO_TABLE }
+    
+    access_token=mssparkutils.credentials.getToken(kustoOptions["kustoCluster"])
+    ```
+    
+    ```
+    #Pandas data frame to spark dataframe
+    sparkDF=spark.createDataFrame(article_df)
+    ```
+    
+    ```
+    # Write data to a table in Eventhouse
+    sparkDF.write. \
+    format("com.microsoft.kusto.spark.synapse.datasource"). \
+    option("kustoCluster",kustoOptions["kustoCluster"]). \
+    option("kustoDatabase",kustoOptions["kustoDatabase"]). \
+    option("kustoTable", kustoOptions["kustoTable"]). \
+    option("accessToken", access_token). \
+    option("tableCreateOptions", "CreateIfNotExist").\
+    mode("Append"). \
+    save()
+    ```
 
 ### View the data in the Eventhouse
 
 At this point, you can verify the data was written to the eventhouse by browsing to the database details page.
+
 1. Browse to your workspace homepage in Real-Time Intelligence.
 1. Select the database item that was provided in the previous section. You should see a summary of the data that was written to the "Wiki" table:
 
@@ -79,6 +149,9 @@ At this point, you can verify the data was written to the eventhouse by browsing
 ## Generate embedding for the search term
 
 Now that you stored the embedded wiki data in your eventhouse, you can use this data as a reference to find pages on a particular article. In order to make the comparison, you embed the search term, and then do a comparison between the search term and the Wikipedia pages.
+
+> [!NOTE]
+> While this tutorial uses Azure OpenAI, you can use any embedding model provider to generate vectors for text data.
 
 To successfully make a call against Azure OpenAI, you need an endpoint, key, and deployment ID.
 
@@ -93,55 +166,54 @@ Use the information in the table when running the Azure OpenAI cells.
 > [!IMPORTANT]
 > Key-based authentication must be enabled on your resource in order to use the API key.
 
+```
+import openai
+```
+
+
+```
+openai.api_version = '2022-12-01'
+openai.api_base = 'endpoint' # Add your endpoint here
+openai.api_type = 'azure'
+openai.api_key = 'api key'  # Add your api key here
+
+def embed(query):
+  # Creates embedding vector from user query
+  embedded_query = openai.Embedding.create(
+          input=query,
+          deployment_id="deployment id", # Add your deployment id here
+          chunk_size=1
+  )["data"][0]["embedding"]
+  return embedded_query
+```
+
+```
+searchedEmbedding = embed("most difficult gymnastics moves in the olympics")
+#print(searchedEmbedding)
+```
+
 ## Query the similarity
 
 The query is run directly from the notebook, and uses the returned embedding from the previous step in a comparison against the embedded Wikipedia pages stored in your eventhouse. This query uses the [cosine similarity function](/azure/data-explorer/kusto/query/series-cosine-similarity-function) and returns the top 10 most similar vectors.
 
 Run the cells in the notebook to see the results of the query. You can change the search term and rerun the query to see different results. You could also compare an existing entry in the Wiki database to find similar entries.
 
+```
+kustoQuery = "Wiki | extend similarity = series_cosine_similarity(dynamic("+str(searchedEmbedding)+"), content_vector) | top 10 by similarity desc" 
+accessToken = mssparkutils.credentials.getToken(KUSTO_CLUSTER)
+kustoDf  = spark.read\
+    .format("com.microsoft.kusto.spark.synapse.datasource")\
+    .option("accessToken", accessToken)\
+    .option("kustoCluster", KUSTO_CLUSTER)\
+    .option("kustoDatabase", KUSTO_DATABASE)\
+    .option("kustoQuery", kustoQuery).load()
+
+# Example that uses the result data frame.
+kustoDf.show()
+```
+
+
 :::image type="content" source="media/vector-database/similarity-results.png" alt-text="Screenshot of running cell of similarity results" lightbox="media/vector-database/similarity-results.png":::
-
-## Optimize for scale
-
-To optimize the cosine similarity search, you split the vectors table to many extents that are evenly distributed among all cluster nodes. Set the partitioning policy for the embedding table using the [`.alter-merge policy partitioning` command](/azure/data-explorer/kusto/management/alter-merge-table-partitioning-policy-command) as follows:
-
-1. Browse to your database in the Real-Time Intelligence experience.
-1. Select **Explore your data**, and copy/paste the following command:
-
-NOTE FOR ANSHUL: CAN YOU GIVE ME A COMMAND TO CREATE THIS TABLE?
-
-~~~kusto
-.alter-merge table WikipediaEmbeddings policy partitioning  
-``` 
-{ 
-  "PartitionKeys": [ 
-    { 
-      "ColumnName": "vector_id_str", 
-      "Kind": "Hash", 
-      "Properties": { 
-        "Function": "XxHash64", 
-        "MaxPartitionCount": 2048,      //  set it to max value create smaller partitions thus more balanced spread among all cluster nodes 
-        "Seed": 1, 
-        "PartitionAssignmentMode": "Uniform" 
-      } 
-    } 
-  ], 
-  "EffectiveDateTime": "2000-01-01"     //  set it to old date in order to apply partitioning on existing data 
-} 
-``` 
-~~~
-
-In this example, we modified the partitioning policy for WikipediaEmbeddingsTitleD. This table was created from Wiki by projecting the documents’ title and embeddings.
-
-The partitioning process requires a string key with high cardinality, so we also projected the unique `vector_id` and converted it to string. The best practice is to create an empty table, modify its partition policy then ingest the data. In that case there's no need to define the old `EffectiveDateTime` as in the previous command. It takes some time after data ingestion until the policy is applied. To test the effect of partitioning, we created in a similar manner multiple tables containing up to 1M embedding vectors and tested the cosine similarity performance on clusters with 1, 2, 4, 8 & 20 nodes.
-The following chart compares search performance (in seconds) before and after partitioning:
-
-> [!NOTE]
-> You may notice that the cluster has 2 nodes, but the tables are stored on a single node. This is the baseline before applying the partitioning policy.
-
-:::image type="content" source="media/vector-database/duration-search.png" alt-text="Graph showing the duration of semantic search in sections as a function of cluster nodes.":::
-
-Even on the smallest cluster, the search speed improves by more than a factor of four. In general, the speed is inversely proportional to the number of nodes. The number of embedding vectors that are needed for common LLM (Large Language Model) scenarios (for example, Retrieval Augmented Generation) rarely exceeds 100 K, so by having eight nodes searching can be done in 1 sec.
 
 ## Clean up resources
 

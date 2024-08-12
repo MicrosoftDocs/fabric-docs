@@ -50,6 +50,43 @@ The following components of the Eventhouse architecture enable its use as a vect
 * The [encoding](/azure/data-explorer/kusto/management/encoding-policy) type [`Vector16`](/azure/data-explorer/kusto/management/alter-encoding-policy#encoding-policy-types) designed for storing vectors of floating-point numbers in 16-bits precision, which uses the `Bfloat16` instead of the default 64 bits. This encoding is recommended for storing ML vector embeddings as it reduces storage requirements by a factor of four and accelerates vector processing functions such as [series_dot_product()](/azure/data-explorer/kusto/query/series-dot-product-function) and [series_cosine_similarity()](/azure/data-explorer/kusto/query/series-cosine-similarity-function) by orders of magnitude.
 * The [series_cosine_similarity](/azure/data-explorer/kusto/query/series-cosine-similarity-function) function, which can perform vector similarity searches on top of the vectors stored in Eventhouse.
 
+## Optimize for scale
+
+To optimize the cosine similarity search, you split the vectors table to many extents that are evenly distributed among all cluster nodes. Set the partitioning policy for the embedding table using the [`.alter-merge policy partitioning` command](/azure/data-explorer/kusto/management/alter-merge-table-partitioning-policy-command) as follows:
+
+~~~kusto
+.alter-merge table TABLENAME policy partitioning  
+``` 
+{ 
+  "PartitionKeys": [ 
+    { 
+      "ColumnName": "vector_id_str", 
+      "Kind": "Hash", 
+      "Properties": { 
+        "Function": "XxHash64", 
+        "MaxPartitionCount": 2048,      //  set it to max value create smaller partitions thus more balanced spread among all cluster nodes 
+        "Seed": 1, 
+        "PartitionAssignmentMode": "Uniform" 
+      } 
+    } 
+  ], 
+  "EffectiveDateTime": "2000-01-01"     //  set it to old date in order to apply partitioning on existing data 
+} 
+``` 
+~~~
+
+In this example, we modified the partitioning policy a table that contained the wiki pages’ title and embeddings.
+
+The partitioning process requires a string key with high cardinality, so we also projected the unique `vector_id` and converted it to string. The best practice is to create an empty table, modify its partition policy then ingest the data. In that case there's no need to define the old `EffectiveDateTime` as in the previous command. It takes some time after data ingestion until the policy is applied. To test the effect of partitioning, we created in a similar manner multiple tables containing up to 1M embedding vectors and tested the cosine similarity performance on clusters with 1, 2, 4, 8 & 20 nodes.
+The following chart compares search performance (in seconds) before and after partitioning:
+
+> [!NOTE]
+> You may notice that the cluster has 2 nodes, but the tables are stored on a single node. This is the baseline before applying the partitioning policy.
+
+:::image type="content" source="media/vector-database/duration-search.png" alt-text="Graph showing the duration of semantic search in sections as a function of cluster nodes.":::
+
+Even on the smallest cluster, the search speed improves by more than a factor of four. In general, the speed is inversely proportional to the number of nodes. The number of embedding vectors that are needed for common LLM (Large Language Model) scenarios (for example, Retrieval Augmented Generation) rarely exceeds 100 K, so by having eight nodes searching can be done in 1 sec.
+
 ## Next step
 
 > [!div class="nextstepaction"]
