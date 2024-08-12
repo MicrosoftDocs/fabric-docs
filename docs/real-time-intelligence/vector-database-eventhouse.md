@@ -52,7 +52,7 @@ The following steps are used to import the embedded Wikipedia data and write it 
 
 1. Run the cells to set up your environment.
 
-    ```
+    ```python
     %%configure -f
     {"conf":
         {
@@ -61,17 +61,17 @@ The following steps are used to import the embedded Wikipedia data and write it 
     }
     ```
     
-    ```
+    ```python
     %pip install wget
     ```
     
-    ```
+    ```python
     %pip install openai
     ```
       
 1. Run the cells to download the precomputed embeddings.
 
-    ```
+    ```python
     import wget
     
     embeddings_url = "https://cdn.openai.com/API/examples/data/vector_database_wikipedia_articles_embedded.zip"
@@ -80,14 +80,14 @@ The following steps are used to import the embedded Wikipedia data and write it 
     wget.download(embeddings_url)
     ```
     
-    ```
+    ```python
     import zipfile
     
     with zipfile.ZipFile("vector_database_wikipedia_articles_embedded.zip","r") as zip_ref:
         zip_ref.extractall("/lakehouse/default/Files/data")
     ```
     
-    ```
+    ```python
     import pandas as pd
     
     from ast import literal_eval
@@ -113,18 +113,18 @@ The following steps are used to import the embedded Wikipedia data and write it 
 
 1. Run the remaining cells to write the data to the Eventhouse. This can take some time to execute.
 
-    ``` 
+    ```python
     kustoOptions = {"kustoCluster": KUSTO_CLUSTER, "kustoDatabase" :KUSTO_DATABASE, "kustoTable" : KUSTO_TABLE }
     
     access_token=mssparkutils.credentials.getToken(kustoOptions["kustoCluster"])
     ```
     
-    ```
+    ```python
     #Pandas data frame to spark dataframe
     sparkDF=spark.createDataFrame(article_df)
     ```
     
-    ```
+    ```python
     # Write data to a table in Eventhouse
     sparkDF.write. \
     format("com.microsoft.kusto.spark.synapse.datasource"). \
@@ -166,12 +166,12 @@ Use the information in the table when running the Azure OpenAI cells.
 > [!IMPORTANT]
 > Key-based authentication must be enabled on your resource in order to use the API key.
 
-```
+```python
 import openai
 ```
 
 
-```
+```python
 openai.api_version = '2022-12-01'
 openai.api_base = 'endpoint' # Add your endpoint here
 openai.api_type = 'azure'
@@ -187,7 +187,7 @@ def embed(query):
   return embedded_query
 ```
 
-```
+```python
 searchedEmbedding = embed("most difficult gymnastics moves in the olympics")
 #print(searchedEmbedding)
 ```
@@ -198,7 +198,7 @@ The query is run directly from the notebook, and uses the returned embedding fro
 
 Run the cells in the notebook to see the results of the query. You can change the search term and rerun the query to see different results. You could also compare an existing entry in the Wiki database to find similar entries.
 
-```
+```python
 kustoQuery = "Wiki | extend similarity = series_cosine_similarity(dynamic("+str(searchedEmbedding)+"), content_vector) | top 10 by similarity desc" 
 accessToken = mssparkutils.credentials.getToken(KUSTO_CLUSTER)
 kustoDf  = spark.read\
@@ -212,12 +212,12 @@ kustoDf  = spark.read\
 kustoDf.show()
 ```
 
-
 :::image type="content" source="media/vector-database/similarity-results.png" alt-text="Screenshot of running cell of similarity results" lightbox="media/vector-database/similarity-results.png":::
 
 ## Clean up resources
 
 When you're done with the tutorial, you can delete the resources you created to avoid incurring additional costs. To delete the resources, follow these steps:
 
-1. Delete the notebook from the Real-Time Intelligence experience.
-1. Delete the Eventhouse from the Real-Time Intelligence experience.
+1. Browse to your workspace homepage.
+1. Delete the notebook created in this tutorial.
+1. Delete the Eventhouse or [database](manage-monitor-eventhouse.md#manage-kql-databases) used in this tutorial.
