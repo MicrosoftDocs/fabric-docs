@@ -1,5 +1,5 @@
 ---
-title: Copilot admin settings (preview)
+title: Copilot admin settings
 description: Learn how administrators can configure Copilot admin settings in Fabric.
 author: maggiesMSFT
 ms.author: maggies
@@ -15,9 +15,9 @@ no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Copilot tenant settings (preview)
+# Copilot tenant settings
 
-Fabric has a new tenant setting group, **Copilot and Azure OpenAI Service (preview)**, with following two settings:
+Fabric has a new tenant setting group, **Copilot and Azure OpenAI Service**, with following two settings:
 
 - Admins can turn on Copilot for specific security groups, or for their entire organization. Users in those groups can use a preview of Copilot and other features powered by Azure OpenAI.
 
