@@ -271,6 +271,12 @@ items:
     - name: Sample gallery
       displayName: Query sample data
       href: sample-gallery.md
+  - name: Vector database 
+    items:
+    - name: Eventhouse as a vector database overview
+      href: vector-database.md
+    - name: "Tutorial: Use an Eventhouse as a vector database"
+      href: vector-database-eventhouse.md
   - name: Notebooks
     items:
     - name: Use Fabric notebooks with data from a KQL database
