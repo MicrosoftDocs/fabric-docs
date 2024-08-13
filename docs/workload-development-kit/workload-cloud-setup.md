@@ -26,7 +26,7 @@ The Entra ID app resourceId should comply with the following format:
 ```
 https://<ISV's tenant verified domain>/<workload frontend server>/<workload backend server>/<workload id>/<optional string>
 ```
-- ISV's tenant verified domain -  an exact match of the verified domain in the publisher's tenant without any prefixes or subdomains. [Learn how to add a custom domain to Microsoft Entra](https://learn.microsoft.com/en-us/entra/fundamentals/add-custom-domain).
+- ISV's tenant verified domain -  an exact match of the verified domain in the publisher's tenant without any prefixes or subdomains. [Learn how to add a custom domain to Microsoft Entra](https://learn.microsoft.com/entra/fundamentals/add-custom-domain).
 - Workload frontend server - the frontend server name as it appears in the frontend URL (the additional segment in the frontend URL on top of the verified domain).
 - Workload backend server - the backend server name as it appears in the backend URL (the additional segment in the backend URL on top of the verified domain).
 - Workload id - the workload id as it appears in the workload manifest.
