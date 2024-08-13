@@ -38,7 +38,7 @@ Our SDK provides an abstract class that your workloads need to implement in orde
 
    This method is called whenever a job should be executed. The workload receives all the necessary information to start running the job, including operation context (tenant, capacity, workspace, and item IDs), item and job type, job instance ID (a unique identifier for the current job), and job properties that include a payload sent from the UI.
 
-* ***OnCancelFabricItemJobInstanceAsync**
+* **OnCancelFabricItemJobInstanceAsync**
 
    This method is called whenever a job should be canceled. The workload receives the same properties as OnRunFabricItemJobAsync, except for the jobProperties, which are irrelevant in this case.
 
@@ -148,13 +148,13 @@ To add your artifact to the filter pane, define a new property in the artifact F
 
 :::image type="content" source="./media/monitoring-hub/monitoring-hub-quick-actions.png" alt-text="Screenshot showing jobs quick actions buttons in the monitoring hub.":::
 
-There's a set of operations that user can execute against a job, such as cancel, retry, and get details.
+There's a set of operations that a user can execute against a job, such as cancel, retry, and get details.
 
 The workload team decides which one they want to enable by setting the `artifactJobConfig` property in the artifact Frontend manifest. If not set, the icons won't be visible.
 
 For example, the config we added to our sample artifact that supports all job actions is shown below.
 
-When a user selects the canceled icon of the sample artifact job, we'll call the provided action “artifact.job.cancel” with the job related context to the extension "Fabric.WorkloadSample", which is implemented by the workload to actually cancel the job.
+When a user selects the cancel icon of the sample artifact job, we'll call the provided action “artifact.job.cancel” with the job related context to the extension "Fabric.WorkloadSample", which is implemented by the workload to actually cancel the job.
 
 The Fabric platform also expects a response from this action to notify the user with the results.
 

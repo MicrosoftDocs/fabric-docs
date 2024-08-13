@@ -65,7 +65,7 @@ To set up the front end of the sample project, follow these steps:
     * **Manifests** - location of the frontend manifest file
     * **node_modules** - the sample workload is shipped with preinstalled SDK packages - under `@trident` -  as their npm package isn't yet publically available
     * **src** - Workload code:
-      * **index.ts** - main initialization file, `boostrap` the `index.worker` and `index.ui` iFrames - *detailed below*
+      * **index.ts** - main initialization file, `bootstrap` the `index.worker` and `index.ui` iFrames - *detailed below*
       * **App.tsx** - routing of paths to pages, for example - `/sample-workload-editor` is routed to the `SampleWorkloadEditor` function under `components`
       * **assets** - location for images(`svg`, `jpg`, `png`, etc.), that can be referenced in the **Manifest** and be shown in the UI. For example, `assets/github.svg` is set in the manifest as the Product's icon.
       * **components** - location of the actual UI code - the Editor view, and other views that are used by the sample (Ribbon, Authentication page, Panel, etc.)
@@ -105,8 +105,8 @@ To set up the front end of the sample project, follow these steps:
    If you change files under the 'Frontend/Package' folder , you should "npm start" again.
 
 1. **Run**
-   In Fabric, enable the Frontend Developer mode setting, to allow Fabric to access your localhost server.
-   Go to **Developer Settings** --> **Fabric Developer Mode** and refresh of the page.
+   In Fabric, enable the Fabric Developer mode setting, to allow Fabric to access your localhost server.
+   Go to **Developer Settings** --> **Fabric Developer Mode** and refresh the page.
    This setting is persisted in the current browser.
 
    :::image type="content" source="./media/extensibility-front-end/developer-mode.png" alt-text="Screenshot of a product switcher example in developer mode.":::
@@ -231,7 +231,7 @@ The `FluentProvider` class ensures style consistency across the various FluentUI
 
 * `App` routes the code into the `SampleWorkloadEditor`, which is a **function** returning a `React.JSX.Element`.
 * The function contains the UI structure (the Ribbon and the controls on the page - buttons, input fields, etc.).
-* Information collected from the user is stored via React's `useState()`
+* Information collected from the user is stored via React's `useState()` hook.
 * Handlers of the UI controls call the SampleWorkloadController functions and pass the relevant state variables.
 * To support the CRUD operations, the state of the created/loaded item is stored in `artifactItem` along with `workspaceObjectId` and a sample implementation of payload variables.
 

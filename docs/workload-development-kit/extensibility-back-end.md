@@ -38,7 +38,7 @@ The workload development kit architecture integrates seamlessly with Lakehouse, 
 
 Microsoft Entra ID is used for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
 
-[Th development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, authentication guidelines, and getting started, see the respective sections in [Authentication overview](authentication-concept.md).
+[The development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, authentication guidelines, and getting started, see the respective sections in [Authentication overview](authentication-concept.md).
 
 :::image type="content" source="./media/extensibility-back-end/overview.png" alt-text="Diagram showing how Fabric SDK integrated into Fabric.":::
 
@@ -73,8 +73,7 @@ The generated NuGet package for Debug mode is located in the **src\bin\Debug** d
   * Azure.Core
   * Azure.Identity
   * Azure.Storage.Files.DataLake
-
-* The Microsoft Identity package
+  * The Microsoft Identity package
 
 To configure the NuGet Package Manager, specify the path in the 'Package Sources' section before the build process.
 
@@ -134,7 +133,7 @@ To set up the boilerplate sample project on your local machine, follow these ste
 1. Open the solution in **Visual Studio 2022**.
 1. Set up an app registration by following instructions on the Authentication [guide](authentication-tutorial.md). Ensure that both your Frontend and Backend projects have the necessary setup described in the guide. Microsoft Entra is employed for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
   
-1. Update the One Lake DFS Base URL: Depending on your Fabric environment, you can update the `OneLakeDFSBaseURL` within the **src\Constants** folder. The default is `onelake.dfs.fabric.microsoft.com` but this can be updated to reflect the environment you are on. More information on the DFS paths can be found [in the One Lake documentation](../onelake/onelake-access-api.md)
+1. Update the One Lake DFS Base URL: Depending on your Fabric environment, you can update the `OneLakeDFSBaseURL` within the **src\Constants** folder. The default is `onelake.dfs.fabric.microsoft.com` but this can be updated to reflect the environment you are on. More information on the DFS paths can be found [in the One Lake documentation](../onelake/onelake-access-api.md).
 
 1. Setup Workload Configuration
 
@@ -157,7 +156,7 @@ To set up the boilerplate sample project on your local machine, follow these ste
    To generate a manifest package file, build Fabric_Extension_BE_Boilerplate. This runs a three step process to generate the manifest package file:
 
    1. Trigger `ManifestValidator.ps1` on `WorkloadManifest.xml` in *Packages\manifest\* and trigger `ItemManifestValidator.ps1` on all items XMLs (e.g., `Item1.xml`) in *Packages\manifest\*. If the validation fails, an error file is generated. You can view the validation scripts in *ValidationScripts\*.
-   1. If an error file exists, the build fails with `Validation errors with either manifests or default values`. Double select on the error in VS studio to see the error file.
+   1. If an error file exists, the build fails with `Validation errors with either manifests or default values`. Double select on the error in VIsual Studio to see the error file.
    1. After successful validation, pack the `WorkloadManifest.xml` and `Item1.xml` files into ManifestPackage.1.0.0.nupkg. The resulting package is in **src\bin\Debug**.
 
    Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-dev-mode.json configuration file.
