@@ -156,7 +156,7 @@ To set up the boilerplate sample project on your local machine, follow these ste
    To generate a manifest package file, build Fabric_Extension_BE_Boilerplate. This runs a three step process to generate the manifest package file:
 
    1. Trigger `ManifestValidator.ps1` on `WorkloadManifest.xml` in *Packages\manifest\* and trigger `ItemManifestValidator.ps1` on all items XMLs (e.g., `Item1.xml`) in *Packages\manifest\*. If the validation fails, an error file is generated. You can view the validation scripts in *ValidationScripts\*.
-   1. If an error file exists, the build fails with `Validation errors with either manifests or default values`. Double select on the error in VIsual Studio to see the error file.
+   1. If an error file exists, the build fails with `Validation errors with either manifests or default values`. Double select on the error in Visual Studio to see the error file.
    1. After successful validation, pack the `WorkloadManifest.xml` and `Item1.xml` files into ManifestPackage.1.0.0.nupkg. The resulting package is in **src\bin\Debug**.
 
    Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-dev-mode.json configuration file.
@@ -385,7 +385,7 @@ Original exception: AADSTS7000215: Invalid client secret provided. Ensure the se
 
 **Resolution**: Make sure you have the correct client secret in *appsettings.json*.
 
-#### Error during artifact creation due to missing admin consent
+#### Error during item creation due to missing admin consent
 
 **Error**:
 

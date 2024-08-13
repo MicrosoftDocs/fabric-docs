@@ -84,7 +84,7 @@ Your item's unique identifier.
 ### Job Scheduler Configuration
 
 The `<JobScheduler>` section encompasses various elements that define the behavior and settings of job scheduling, tracking, and management. 
-- `<OnDemandJobDeduplicateOptions>` and `<ScheduledJobDeduplicateOptions>`: Define deduplication options for on-demand and scheduled artifact jobs, respectively. Options include `None` (no deduplication), `PerItem` (one job run for the same item and job type), and `PerUser` (one job run for the same user and item). 
+- `<OnDemandJobDeduplicateOptions>` and `<ScheduledJobDeduplicateOptions>`: Define deduplication options for on-demand and scheduled item jobs, respectively. Options include `None` (no deduplication), `PerItem` (one job run for the same item and job type), and `PerUser` (one job run for the same user and item). 
 - `<ItemJobTypes>`: Contains configurations for different item job types. 
 - `<ItemJobType>`: Describes a specific job type. 
 - `<Name>`: The name of the job type. Must use the Item's name as a prefix. 
