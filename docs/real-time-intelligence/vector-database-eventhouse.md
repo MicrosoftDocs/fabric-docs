@@ -41,6 +41,8 @@ This flow can be visualized as follows:
 
 ## Prepare your Eventhouse environment
 
+In this setup step, you create a table in an Eventhouse with the necessary columns and encoding policies to store the vector data.
+
 1. Browse to your workspace homepage in Real-Time Intelligence.
 1. Select the Eventhouse you created in the prerequisites.
 1. Select the target database where you want to store the vector data. If you don't have a database, you can create one by selecting **Add database**.
