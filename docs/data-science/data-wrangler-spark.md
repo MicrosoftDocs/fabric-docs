@@ -80,7 +80,7 @@ A searchable list of data-cleaning steps can be found in the "Operations" panel.
 
 ## Previewing and applying operations
 
-The Data Wrangler display grid automatically previews the results of a selected operation, and the corresponding code automatically appears in the panel below the grid. To commit the previewed code, select "Apply" in either place. To delete the previewed code and try a new operation, select "Discard.", as shown in this screenshot:
+The Data Wrangler display grid automatically previews the results of a selected operation, and the corresponding code automatically appears in the panel below the grid. To commit the previewed code, select "Apply" in either place. To delete the previewed code and try a new operation, select "Discard" as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler-spark/preview-operation.png" alt-text="Screenshot showing a Data Wrangler operation in progress." lightbox="media/data-wrangler-spark/preview-operation.png":::
 

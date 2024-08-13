@@ -14,7 +14,7 @@ ms.search.form: Data Wrangler
 
 # How to accelerate data prep with Data Wrangler in Microsoft Fabric
 
-The Data Wrangler tool is a notebook-based resource that provides an immersive interface for exploratory data analysis. It combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data-cleaning operations. You can apply each operation with a few operations. You can update the data display in real time, and generate code in pandas or PySpark that you can save back to the notebook as a reusable function. This article focuses on exploration and transformation of pandas DataFrames. For more information about using Data Wrangler on Spark DataFrames, visit [this resource](data-wrangler-spark.md).
+The Data Wrangler tool is a notebook-based resource that provides an immersive interface for exploratory data analysis. It combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data-cleaning operations. You can apply each operation with a few steps. You can update the data display in real time, and generate code in pandas or PySpark that you can save back to the notebook as a reusable function. This article focuses on exploration and transformation of pandas DataFrames. For more information about using Data Wrangler on Spark DataFrames, visit [this resource](data-wrangler-spark.md).
 
 ## Prerequisites
 
@@ -76,7 +76,7 @@ A searchable list of data-cleaning steps can be found in the "Operations" panel.
 
 ## Previewing and applying operations
 
-The Data Wrangler display grid automatically previews the results of a selected operation, and the corresponding code automatically appears in the panel below the grid. To commit the previewed code, select "Apply" in either place. To delete the previewed code and try a new operation, select "Discard.", as shown in this screenshot:
+The Data Wrangler display grid automatically previews the results of a selected operation, and the corresponding code automatically appears in the panel below the grid. To commit the previewed code, select "Apply" in either place. To delete the previewed code and try a new operation, select "Discard" as shown in this screenshot:
 
 :::image type="content" source="media/data-wrangler/preview-operation.png" alt-text="Screenshot showing a Data Wrangler operation in progress." lightbox="media/data-wrangler/preview-operation.png":::
 
