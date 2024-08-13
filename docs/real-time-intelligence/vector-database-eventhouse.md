@@ -179,7 +179,7 @@ To successfully make a call against Azure OpenAI, you need an endpoint, key, and
 Use the information in the table when running the Azure OpenAI cells.
 
 > [!IMPORTANT]
-> Local authentication must be [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your resource in order to use the API key.
+> Local authentication must be [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your Azure Open AI resource in order to use the API key.
 
 ```python
 import openai
