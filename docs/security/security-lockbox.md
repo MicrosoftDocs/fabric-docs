@@ -37,7 +37,7 @@ After the access request is submitted, the JIT service evaluates the request, co
 
 * The scope of the resource
 
-* Whether the requester is an isolated identity or using multi-factor authentication
+* Whether the requester is an isolated identity or using multifactor authentication
 
 * Permissions levels
 
