@@ -34,7 +34,7 @@ This flow can be visualized as follows:
 * An [eventhouse](create-eventhouse.md) in your workspace
 * An Azure OpenAI resource with the text-embedding-ada-002 (Version 2) model deployed. This model is currently only available in certain regions. For more information, see [Create a resource](/azure/ai-services/openai/how-to/create-resource).
     * Make sure that local authentication is [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your Azure OpenAI resource.
-* Download the sample notebook from the GitHub repository
+* Download the [sample notebook](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/vector-database-eventhouse-notebook.ipynb) from the GitHub repository
 
 > [!NOTE]
 > While this tutorial uses Azure OpenAI, you can use any embedding model provider to generate vectors for text data.
