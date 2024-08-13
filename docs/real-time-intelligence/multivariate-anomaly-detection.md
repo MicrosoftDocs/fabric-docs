@@ -19,7 +19,7 @@ In contrast, univariate anomaly detection enables you to monitor and detect abno
 Reference: Multivariate Time-Series Anomaly Detection via Graph Attention Network DOI:10.1109/ICDM50108.2020.00093
 
 
-# Time Series Anomaly Detection in Fabric RTI
+## Time Series Anomaly Detection in Fabric RTI
 
 There are few options for time series anomaly detection in Fabric RTI
 (Real Time Intelligence):
@@ -27,11 +27,11 @@ There are few options for time series anomaly detection in Fabric RTI
 -   For [univariate
     analysis](https://en.wikipedia.org/wiki/Univariate_(statistics)#Analysis),
     KQL contains native function
-    [series_decompose_anomalies()](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction)
+    [series_decompose_anomalies()](/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction)
     that can perform process thousands of time series in seconds. For
     further info on using this function take a look at [Time series
     anomaly detection & forecasting in Azure Data
-    Explorer](https://learn.microsoft.com/en-us/azure/data-explorer/anomaly-detection).
+    Explorer](/azure/data-explorer/anomaly-detection).
 
 -   For [multivariate
     analysis](https://en.wikipedia.org/wiki/Multivariate_statistics#Multivariate_analysis),
@@ -39,7 +39,7 @@ There are few options for time series anomaly detection in Fabric RTI
     multivariate analysis algorithms in
     [scikit-learn](https://scikit-learn.org/stable/index.html) , taking
     advantage of [ADX capability to run inline Python as part of the KQL
-    query](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/pythonplugin?pivots=azuredataexplorer).
+    query](/azure/data-explorer/kusto/query/pythonplugin?pivots=azuredataexplorer).
     For further info see [Multivariate Anomaly Detection in Azure Data
     Explorer - Microsoft Community
     Hub](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/multivariate-anomaly-detection-in-azure-data-explorer/ba-p/3689616).
@@ -86,7 +86,7 @@ In the following example we shall
 
  Select 3.11.7 DL image that contains the time-series-anomaly-detector package
 
-:::image type="content" source="media/multivariate-anomaly-detection/image8.png" alt-text="Screenshot of multivariate anomaly detection image 18.":::
+:::image type="content" source="media/multivariate-anomaly-detection/image8.png" alt-text="Screenshot of multivariate anomaly detection image 8.":::
 
 5.  Upload the data table from
     <https://artifactswestus.blob.core.windows.net/public/demo/demo_stocks_change.csv>
