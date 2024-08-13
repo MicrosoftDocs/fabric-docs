@@ -48,7 +48,6 @@ To view sign-in activity, follow these steps:
 1. Select **Apply**.
 
 **Microsoft Power BI** filters to sign-in activity related to the service. **Power BI Gateway** filters to sign-in activity specific to the on-premises data gateway.
-    :::image type="content" source="media/service-admin-access-usage/sign-in-filter.png" alt-text="Screenshot of the Sign-in filter with the Application field highlighted.":::
 
 ## Export the data
 
