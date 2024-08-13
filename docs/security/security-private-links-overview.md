@@ -137,6 +137,7 @@ To enable these capabilities in Desktop, admins can configure [service tags](/az
 There are several considerations to keep in mind while working with private endpoints in Fabric:
 
 * Fabric supports up to 450 capacities in a tenant where Private Link is enabled.
+* When capacity is newly created, it won't support private link until its endpoint is reflected in the private DNS zone. This can take up to 24 hours. 
 
 * Tenant migration is blocked when Private Link is turned on in the Fabric admin portal.
 
