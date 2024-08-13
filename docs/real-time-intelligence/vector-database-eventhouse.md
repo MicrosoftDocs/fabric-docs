@@ -33,7 +33,7 @@ This flow can be visualized as follows:
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
 * An Azure OpenAI resource with the text-embedding-ada-002 (Version 2) model deployed. This model is currently only available in certain regions. For more information, see [Create a resource](/azure/ai-services/openai/how-to/create-resource).
-    * Make sure that local authentication is [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your resource.
+    * Make sure that local authentication is [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your Azure OpenAI resource.
 * Download the sample notebook from the GitHub repository
 
 > [!NOTE]
@@ -67,7 +67,7 @@ The following steps are used to import the embedded Wikipedia data and write it 
 ### Import notebook
 
 1. Download the sample notebook from the [GitHub repository]().
-1. Browse to your Fabric envrionment. In the experience switcher, choose **Data Engineering**.
+1. Browse to your Fabric environment. In the experience switcher, choose **Data Engineering**.
 1. Select **Import notebook** > **Upload**, and choose the upload you downloaded in a previous step. :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
 1. Open the imported notebook item.
 
@@ -131,7 +131,7 @@ The following steps are used to import the embedded Wikipedia data and write it 
     KUSTO_TABLE = "Wiki"
     ```
 
-1. Run the remaining cells to write the data to the Eventhouse. This can take some time to execute.
+1. Run the remaining cells to write the data to the Eventhouse. This operation can take some time to execute.
 
     ```python
     kustoOptions = {"kustoCluster": KUSTO_CLUSTER, "kustoDatabase" :KUSTO_DATABASE, "kustoTable" : KUSTO_TABLE }
@@ -232,7 +232,7 @@ kustoDf.show()
 
 ## Clean up resources
 
-When you're done with the tutorial, you can delete the resources you created to avoid incurring additional costs. To delete the resources, follow these steps:
+When you finish the tutorial, you can delete the resources, you created to avoid incurring other costs. To delete the resources, follow these steps:
 
 1. Browse to your workspace homepage.
 1. Delete the notebook created in this tutorial.
