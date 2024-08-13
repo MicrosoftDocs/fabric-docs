@@ -18,6 +18,8 @@ Create a variable library item
 Add variables and types
 Add values
 Add new value set
+Manage variables and value sets
+Reference in Data pipeline
 
 One time setup of default value set for each stage
 
