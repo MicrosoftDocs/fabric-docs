@@ -7,7 +7,7 @@ author: kromerm
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 05/15/2024
+ms.date: 08/13/2024
 ---
 
 # Use the **invoke pipeline activity** to run another pipeline
@@ -23,7 +23,7 @@ To get started, you must complete the following prerequisites:
 - A workspace is created.
 
 > [!NOTE]
-> Currently, only pipelines within the same workspace can be orchestrated with the Invoke pipeline activity. 
+> There are currently two Invoke Pipeline activities (legacy and preview). The legacy invoke pipeline only supports Fabric pipelines in the same workspace as your parent pipeline. You can also only monitor the parent pipeline and cannot invoke ADF or Synapse pipelines using the legacy activity. Using the new preview invoke pipeline activity will allow you to invoke pipelines across Fabric workspaces, from ADF or Synapse, and monitor child pipelines.There is a current known limitation with the preview activity that prohibits the use of pipeline return values. This issue is being fixed and is temporary.
 
 ## Add an **invoke pipeline activity** to a pipeline with UI
 
@@ -36,8 +36,6 @@ To use an **invoke pipeline activity** in a pipeline, complete the following ste
 
    :::image type="content" source="media/invoke-pipeline-activity/add-invoke-pipeline-activity-to-pipeline.png" lightbox="media/invoke-pipeline-activity/add-invoke-pipeline-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Invoke pipeline activity highlighted.":::
 
-   > [!NOTE]
-   > Information the user should notice even if skimmingIf your window size is not wide enough, the icon may appear without the text **Invoke pipeline** on the toolbar, although hovering over it will display its name.
 
    :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-button-without-text.png" alt-text="Screenshot showing the pipeline editor window with the Invoke pipeline button on the activities tab without its descriptive text.":::
 
@@ -53,15 +51,20 @@ Select the **Settings** tab, and choose an existing pipeline from the **invoke p
 
 :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-settings.png" alt-text="Screenshot showing the Invoke pipeline activity settings tab, highlighting the tab.":::
 
-   > [!NOTE]
-   > Connection, upgrade, and calling across workspace features are currently on hold pending bug fixes and will be released later in CY24
-
 
 * Connection: Each **invoke pipeline activity** requires a Connection object that is stored in the secure Fabric credentials store. This connection object stores your user token associated with your Fabric workspace. If you haven't yet created a new **invoke pipeline activity**, you'll be required to create a new connection object first before you can use the activity.
   
 * Workspace: Choose the Fabric workspace where the target pipeline is located that you wish to invoke from your parent pipeline.
 
 :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-new-001.png" alt-text="Screenshot showing the pipeline editor window with the Invoke pipeline activity workspace and connection selection.":::
+
+#### Invoke pipelines from ADF and Synapse
+
+- Type: Choose the source of your pipeline (Fabric, Azure Data Factory, Synapse)
+- Connection: Reference to Fabric, Azure Data Factory or Synapse registered as a connection
+- Pipeline: Select the pipeline name you wish to invoke
+  
+:::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-002.png" alt-text="Screenshot showing the Invoke pipeline activity settings tab, highlighting ADF and Synapse.":::
 
 ## Save and run or schedule the pipeline
 
