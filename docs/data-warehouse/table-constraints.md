@@ -38,7 +38,7 @@ For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?v
 
 ## Examples
 
-Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a primary key: 
+Create a [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table with a primary key: 
 
 ```sql 
 CREATE TABLE PrimaryKeyTable (c1 INT NOT NULL, c2 INT);
@@ -46,7 +46,7 @@ CREATE TABLE PrimaryKeyTable (c1 INT NOT NULL, c2 INT);
 ALTER TABLE PrimaryKeyTable ADD CONSTRAINT PK_PrimaryKeyTable PRIMARY KEY NONCLUSTERED (c1) NOT ENFORCED;
 ```
 
-Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a unique constraint:
+Create a [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table with a unique constraint:
 
 ```sql
 CREATE TABLE UniqueConstraintTable (c1 INT NOT NULL, c2 INT);
@@ -54,7 +54,7 @@ CREATE TABLE UniqueConstraintTable (c1 INT NOT NULL, c2 INT);
 ALTER TABLE UniqueConstraintTable ADD CONSTRAINT UK_UniqueConstraintTablec1 UNIQUE NONCLUSTERED (c1) NOT ENFORCED;
 ```
 
-Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a foreign key:
+Create a [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table with a foreign key:
 
 ```sql
 CREATE TABLE ForeignKeyReferenceTable (c1 INT NOT NULL);

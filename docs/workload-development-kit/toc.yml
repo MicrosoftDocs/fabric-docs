@@ -52,7 +52,9 @@ items:
   - name: Back-end implementation guide
     href: extensibility-back-end.md
   - name: Azure web app deployment
-    href: azure-web-app-deployment-tutorial.md    
+    href: azure-web-app-deployment-tutorial.md
+  - name: Working in cloud mode
+    href: workload-cloud-setup.md
 - name: Reference
   items:
    - name: Frequently asked questions

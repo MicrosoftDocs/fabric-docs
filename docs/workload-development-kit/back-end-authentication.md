@@ -120,7 +120,7 @@ When coming from the workload, the included tokens are:
 
 * `subjectToken`: This is a user-delegated token (obtained through the OBO flow) representing the user on whose behalf the operation is being performed. Fabric verifies that the user has the required permissions to perform the needed action.
 
-* `appToken`: This is a token specific to the workload application. Fabric checks that this is token is from the Entra app of the workload that the relevant Fabric item belongs to and that is on the workload publisher's tenant.
+* `appToken`: This is a token specific to the workload application. Fabric checks that this token is from the Entra app of the workload that the relevant Fabric item belongs to and that is on the workload publisher's tenant.
 
 See the `ValidatePermissions` method in [AuthorizationHandler](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthorizationHandler.cs).
 

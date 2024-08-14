@@ -85,7 +85,7 @@ Once the local server is running and *Developer Mode* is enabled, the new sample
       * *ManifestPackageFilePath*: The location of the manifest package. When you build the solution, it saves the manifest package within **src\bin\Debug**. More details on the manifest package can be found in the later steps.
       * *WorkloadEndpointURL*: Workload endpoint URL.
 
-   * In the src/appsettings.json file, update the following fields to match your configuration:\
+   * In the src/appsettings.json file, update the following fields to match your configuration:
 
       * *PublisherTenantId*: The ID of the workload publisher tenant.
       * *ClientId*: Client ID (AppID) of the workload Microsoft Entra application.

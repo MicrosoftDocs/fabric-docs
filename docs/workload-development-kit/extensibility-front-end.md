@@ -65,7 +65,7 @@ To set up the front end of the sample project, follow these steps:
     * **Manifests** - location of the frontend manifest file
     * **node_modules** - the sample workload is shipped with preinstalled SDK packages - under `@trident` -  as their npm package isn't yet publically available
     * **src** - Workload code:
-      * **index.ts** - main initialization file, `boostrap` the `index.worker` and `index.ui` iFrames - *detailed below*
+      * **index.ts** - main initialization file, `bootstrap` the `index.worker` and `index.ui` iFrames - *detailed below*
       * **App.tsx** - routing of paths to pages, for example - `/sample-workload-editor` is routed to the `SampleWorkloadEditor` function under `components`
       * **assets** - location for images(`svg`, `jpg`, `png`, etc.), that can be referenced in the **Manifest** and be shown in the UI. For example, `assets/github.svg` is set in the manifest as the Product's icon.
       * **components** - location of the actual UI code - the Editor view, and other views that are used by the sample (Ribbon, Authentication page, Panel, etc.)
@@ -105,8 +105,8 @@ To set up the front end of the sample project, follow these steps:
    If you change files under the 'Frontend/Package' folder , you should "npm start" again.
 
 1. **Run**
-   In Fabric, enable the Frontend Developer mode setting, to allow Fabric to access your localhost server.
-   Go to **Developer Settings** --> **Fabric Developer Mode** and refresh of the page.
+   In Fabric, enable the Fabric Developer mode setting, to allow Fabric to access your localhost server.
+   Go to **Developer Settings** --> **Fabric Developer Mode** and refresh the page.
    This setting is persisted in the current browser.
 
    :::image type="content" source="./media/extensibility-front-end/developer-mode.png" alt-text="Screenshot of a product switcher example in developer mode.":::
@@ -127,7 +127,7 @@ To run a typical *Hello World* test scenario:
 
    :::image type="content" source="./media/extensibility-front-end/sample-editor.png" alt-text="Screenshot of the[Main Sample UI image interface.":::
 
-Explore the various controls to see Fabric's ExtensionClient API (SDK) capabilities:
+Explore the various controls to see Fabric's WorkloadClient API (SDK) capabilities:
 
 * Open Notifications and Dialogs
 * Navigate to pages
@@ -182,15 +182,15 @@ These actions can be sent either by the workload itself to Fabric, and then call
 The current workspace `objectId` is passed into the frontend-only experience as well.
 
 ```javascript
-   extensionClient.action.onAction((message) => {
+   workloadClient.action.onAction((message) => {
         switch (message.action) {
             /**
              * This opens the Frontend-only experience, allowing to experiment with the UI without the need for CRUD operations.
              * This experience still allows saving the item, if the Backend is connected and registered
              */
             case 'open.createSampleWorkloadFrontendOnly':
-                const { workspaceObjectId: workspaceObjectId1 } = data as ArtifactCreateContext;
-                return extensionClient.page.open({
+                const { workspaceObjectId: workspaceObjectId1 } = data as ItemCreateContext;
+                return workloadClient.page.open({
                     extensionName: 'Fabric.WorkloadSample',
                     route: {
                         path: `/sample-workload-frontend-only/${workspaceObjectId1}`,
@@ -212,7 +212,7 @@ The following diagram describes how an action is invoked and handled:
 
 ### index.ui
 
-The `initialize()` function renders the React DOM where the `App` function is embedded. To invoke the API calls, pass the `extensionClient` SDK handle, which is used throughout the code.
+The `initialize()` function renders the React DOM where the `App` function is embedded. To invoke the API calls, pass the `workloadClient` SDK handle, which is used throughout the code.
 The `FluentProvider` class ensures style consistency across the various FluentUI controls.
 
  ```react
@@ -220,7 +220,7 @@ The `FluentProvider` class ensures style consistency across the various FluentUI
         <FluentProvider theme={fabricLightTheme}>
             <App
                 history={history}
-                extensionClient={extensionClient}
+                workloadClient={workloadClient}
             />
         </FluentProvider>,
         document.querySelector("#root")
@@ -231,7 +231,7 @@ The `FluentProvider` class ensures style consistency across the various FluentUI
 
 * `App` routes the code into the `SampleWorkloadEditor`, which is a **function** returning a `React.JSX.Element`.
 * The function contains the UI structure (the Ribbon and the controls on the page - buttons, input fields, etc.).
-* Information collected from the user is stored via React's `useState()`
+* Information collected from the user is stored via React's `useState()` hook.
 * Handlers of the UI controls call the SampleWorkloadController functions and pass the relevant state variables.
 * To support the CRUD operations, the state of the created/loaded item is stored in `artifactItem` along with `workspaceObjectId` and a sample implementation of payload variables.
 
@@ -265,7 +265,7 @@ An example with `notification.open()` API:
      ```javascript
       function onCallNotification() {
        ... elided for brevity
-        callNotificationOpen(apiNotificationTitle, apiNotificationMessage, undefined, undefined, extensionClient, setNotificationId);
+        callNotificationOpen(apiNotificationTitle, apiNotificationMessage, undefined, undefined, workloadClient, setNotificationId);
       };
      ```
 
@@ -277,10 +277,10 @@ An example with `notification.open()` API:
          message: string,
          type: NotificationType = NotificationType.Success,
          duration: NotificationToastDuration = NotificationToastDuration.Medium,
-         extensionClient: ExtensionClientAPI,
+         workloadClient: WorkloadClientAPI,
          setNotificationId?: Dispatch<SetStateAction<string>>) {
 
-         const result = await extensionClient.notification.open({
+         const result = await workloadClient.notification.open({
              notificationType: type,
              title,
              duration,
@@ -298,18 +298,18 @@ While a frontend-only development scenario is easily supported, the full end-to-
 The [Back-end implementation guide](extensibility-back-end.md) describes in detail how to set up and use the backend side.
 
 Once the backend is up and running, and the `Org.WorkloadSample.SampleWorkloadItem` type is **registered in Fabric**, you can perform CRUD operations on this type.
-The following operations are exposed via [ArtifactCrud API](/javascript/api/@ms-fabric/workload-client/artifactcrudapi).
+The following operations are exposed via [ItemCrud API](/javascript/api/@ms-fabric/workload-client/artifactcrudapi).
 
 #### CREATE
 
 A sample call to `create`, as implemented when saving the workload item for the first time:
 
 ```javascript
- const params: CreateArtifactParams = {
+ const params: CreateItemParams = {
         workspaceObjectId,
         payload: { artifactType, displayName, description, workloadPayload: JSON.stringify(workloadPayload), payloadContentType: "InlineJson", }
     };
- const result: CreateArtifactResult = await extensionClient.artifactCrud.createArtifact(params);
+ const result: CreateItemResult = await workloadClient.ItemCrud.createItem(params);
 ```
 
 Our sample implementation stores the created item inside the `artifactItem`.
@@ -334,17 +334,17 @@ When you select an existing Sample Workload item in the workspace view, Fabric n
    },
 ```
 
-When you invoke `artifactCrud.getArtifact`, data is loaded from Fabric's backend, along with data from the Workload backend, and is loaded into the `artifactItem` object of the opened GUI.
+When you invoke `itemCrud.getItem`, data is loaded from Fabric's backend, along with data from the Workload backend, and is loaded into the `artifactItem` object of the opened GUI.
 
 :::image type="content" source="./media/extensibility-front-end/items-in-workspace.png" alt-text="Screenshot of opening existing items in the workspace.":::
 
 #### UPDATE
 
-Updated an existing item with `artifactCrud.updateArtifact`. The Workload payload itself is updated by the Workload backend, while in Fabric only the item's `lastModifiedTime` is changed.
+Updated an existing item with `itemCrud.updateItem`. The Workload payload itself is updated by the Workload backend, while in Fabric only the item's `lastModifiedTime` is changed.
 
 #### DELETE
 
-Call the *delete* operation either from Fabric's Workspace view (as a general action available for all items), or via an explicit call from the Workload to `artifactCrud.deleteArtifact`.
+Call the *delete* operation either from Fabric's Workspace view (as a general action available for all items), or via an explicit call from the Workload to `itemCrud.deleteItem`.
 Both calls go through the Workload backend's `onDeleteItem` callback.
 
 ### Authentication
@@ -408,13 +408,13 @@ The following APIs are supported:
 * settings.onChange
 * errorHandling.openErrorDialog
 * errorHandling.handleRequestFailure
-* artifactCrud.createArtifact
-* artifactCrud.getArtifact
-* artifactCrud.updateArtifact
-* artifactCrud.deleteArtifact
-* artifactSchedule.runArtifactJob
-* artifactSchedule.cancelArtifactJob
-* artifactRecentRuns.open
+* itemCrud.createItem
+* itemCrud.getItem
+* itemCrud.updateItem
+* itemCrud.deleteItem
+* itemSchedule.runItemJob
+* itemSchedule.cancelItemJob
+* itemRecentRuns.open
 
 ## Related content
 

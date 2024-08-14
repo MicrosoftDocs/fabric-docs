@@ -44,6 +44,8 @@ items:
     items:
     - name: What is Fabric event streams?
       href: event-streams/overview.md
+    - name: Event streams capacity consumption
+      href: event-streams/monitor-capacity-consumption.md
     - name: Create eventstreams 
       items: 
       - name: Create an eventstream
@@ -112,12 +114,8 @@ items:
         href: event-streams/configure-settings.md
       - name: Pause and resume data streams
         href: event-streams/pause-resume-data-streams.md
-    - name: Monitor eventstreams
-      items:
-      - name: Monitor status and performance of eventstreams
-        href: event-streams/monitor.md
-      - name: Monitor event streams capacity consumption
-        href: event-streams/monitor-capacity-consumption.md
+    - name: Monitor status and performance of eventstreams
+      href: event-streams/monitor.md
     - name: Integrate with other Fabric items
       href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
     - name: Tutorials
@@ -273,6 +271,12 @@ items:
     - name: Sample gallery
       displayName: Query sample data
       href: sample-gallery.md
+  - name: Vector database 
+    items:
+    - name: Eventhouse as a vector database overview
+      href: vector-database.md
+    - name: "Tutorial: Use an Eventhouse as a vector database"
+      href: vector-database-eventhouse.md
   - name: Notebooks
     items:
     - name: Use Fabric notebooks with data from a KQL database
