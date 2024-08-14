@@ -31,8 +31,7 @@ To call the API in the Frontend sample, create a sample item and then scroll dow
 
 ## Consents  
 
-To understand why consents are required, please go over [User and admin consent in Microsoft Entra ID
-](/entra/identity/enterprise-apps/user-admin-consent-overview).
+To understand why consents are required, please go over [User and admin consent in Microsoft Entra ID](/entra/identity/enterprise-apps/user-admin-consent-overview).
 
 > [!NOTE]
 > Consents are required for CRUD/Jobs to work and to acquire tokens across tenants.
