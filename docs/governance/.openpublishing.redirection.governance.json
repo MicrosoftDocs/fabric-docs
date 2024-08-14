@@ -1,0 +1,9 @@
+{
+    "redirections": [
+        {
+            "source_path_from_root": "/docs/governance/service-security-sensitivity-label-mandatory-label-policy.md",
+            "redirect_url": "/fabric/govenance/mandatory-label-policy",
+            "redirect_document_id": true
+        }
+    ]
+}
