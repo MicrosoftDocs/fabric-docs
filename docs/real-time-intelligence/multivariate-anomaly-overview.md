@@ -1,14 +1,14 @@
 ---
-title: Multivariate anomaly detection
-description: Learn how to perform multivariate anomaly detection in Real-Time Intelligence.
+title: Multivariate anomaly detection overview
+description: Learn about multivariate anomaly detection in Real-Time Intelligence.
 ms.reviewer: adieldar
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: conceptual
-ms.date: 08/13/2024
+ms.date: 08/14/2024
 ---
 
-# Time Series Anomaly Detection in Microsoft Fabric
+# Time Series Anomaly Detection in Microsoft Fabric - overview
 
 The Multivariate Anomaly Detection APIs further enable developers by easily integrating advanced AI for detecting anomalies from groups of metrics, without the need for machine learning knowledge or labeled data. Dependencies and inter-correlations between up to 300 different signals are now automatically counted as key factors. This new capability helps you to proactively protect your complex systems such as software applications, servers, factory machines, spacecraft, or even your business, from failures.
 
