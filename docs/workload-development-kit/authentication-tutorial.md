@@ -55,7 +55,7 @@ To work with authentication, you need an application registered in Microsoft Ent
   
    > [!NOTE]
    >
-   >* The redirect URI should be a URI that simply closes the page when navigating to it. The URI `http://localhost:60006/close` is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/src/index.ts) (If you change it, make sure it matches the one configured for your application).
+   >* The redirect URI should be a URI that simply closes the page when navigating to it. The URI `http://localhost:60006/close` is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Frontend/src/index.ts) (If you change it, make sure it matches the one configured for your application).
    >* You can configure the redirect URI after creating the application from the **Manage** menu under **Authentication**.
 
    :::image type="content" source="./media/authentication-tutorial/register-application.png" alt-text="Screenshot of application registration UI." lightbox="./media/authentication-tutorial/register-application.png":::
