@@ -89,15 +89,6 @@ DLP policies for Fabric currently support the following item types.
 
 See [Considerations and limitations](#considerations-and-limitations) for exceptions.
 
-## CPU metering for DLP policy evaluation
-
-DLP policy evaluation uses CPU from the premium capacity associated with the workspace where the semantic model being evaluated is located. CPU consumption of the evaluation is calculated as 30% of the CPU consumed by the action that triggered the evaluation. For example, if a refresh action costs 30 milliseconds of CPU, the DLP scan will cost another 9 milliseconds. This fixed 30% additional CPU consumption for DLP evaluation helps you predict the impact of DLP policies on your overall Capacity CPU utilization, and perform capacity planning when rolling out DLP policies in your organization.
-
-Use the Microsoft Fabric Capacity Metrics app to monitor the CPU usage of your DLP policies. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md).
-
->[!NOTE]
->Users with Power BI PPU licenses do not incur the DLP policy evaluation costs described above, as these costs are covered for them up front by their PPU license.
-
 ## How do DLP policies for Fabric work
 
 You define a DLP policy in the data loss prevention section of the Microsoft Purview portal. In the policy, you specify the sensitivity labels and/or sensitive info types you want to detect. You also specify the actions that will happen when the policy detects a semantic model or lakehouse that contains sensitive data of the kind you specified. DLP policies for Fabric support two actions:
@@ -129,9 +120,9 @@ A lakehouse is evaluated against DLP policies When the data within a lakehouse u
 
 When a DLP policy detects an issue with an item:
 
-* If "user notification" is enabled in the policy, the item will be marked in Fabric with an icon that indicates that a DLP policy has detected an issue with the item. Selecting the icon brings up a hover card that provides an option to see more details in a side panel.
+* If "user notification" is enabled in the policy, the item will be marked in Fabric with an icon that indicates that a DLP policy has detected an issue with the item. Hover over the icon to display a hover card that provides an option to see the full details in a side panel. For more information about what you see in the side panel, see [Respond to a DLP violation in Fabric](./data-loss-prevention-respond.md).
 
-    :::image type="content" source="./media/data-loss-prevention-overview/policy-tip-on-dataset.png" alt-text="Screenshot of policy tip badge on semantic model in lists.":::
+    :::image type="content" source="./media/data-loss-prevention-overview/dlp-policy-tip-indication.png" alt-text="Screenshot of policy tip icon in the OneLake data hub.":::
 
     For semantic models, opening the details page will show a policy tip that explains the policy violation and how the type of sensitive information detected should be handled. Selecting **View all** opens a side panel with all the policy details.
 
@@ -147,5 +138,5 @@ When a DLP policy detects an issue with an item:
 ## Related content
 
 * [Configure a DLP policy for Fabric](./data-loss-prevention-configure.md).
-* [Respond to DLP policy violation in Fabric](./data-loss-prevention-respond.md).
+* [Respond to a DLP policy violation in Fabric](./data-loss-prevention-respond.md).
 * [Learn about data loss prevention](/purview/dlp-learn-about-dlp)
