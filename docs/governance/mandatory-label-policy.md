@@ -25,13 +25,24 @@ To help ensure comprehensive protection and governance of sensitive data, you ca
 
 **In Fabric and the Power BI service**:
 
-* Users must apply a sensitivity label before they can save new items (if the item is a supported item type).
-* Users must apply a sensitivity label before they can save changes to the settings or content of existing, unlabeled items (if the item is a supported item type).
+* Users must apply a sensitivity label before they can save new items (if the item is a [supported item type](#supported-item-types)).
+* Users must apply a sensitivity label before they can save changes to the settings or content of existing, unlabeled items (if the item is a [supported item type](#supported-item-types)).
 * If users try to import data from an unlabeled *.pbix* file, a prompt requires them to select a label before the import can continue. The label they select is applied to the resulting semantic model and report in the service. **It's not applied to the *.pbix* file itself**.
 
 **In Power BI Desktop**:
 
 * Users must apply sensitivity labels to unlabeled *.pbix* files before they can save or publish to the service.
+
+## Supported item types
+
+Mandatory labeling in Fabric and Power BI is supported for all item types except:
+
+* RDL report
+* Scorecard
+* Dataflow Gen 1
+* Dataflow Gen 2
+* Streaming semantic model
+* Streaming dataflow
 
 ## Enabling a mandatory label policy for Fabric and Power BI
 
@@ -46,26 +57,25 @@ Set-LabelPolicy -Identity "<policy name>" -AdvancedSettings @{powerbimandatory="
 ```
 
 Where:
-* `<policy name>` is the name of the policy where you want to set labeling in Power BI as mandatory.
+* `<policy name>` is the name of the policy where you want to set labeling in Fabric and Power BI as mandatory.
 
 **Requirements for using PowerShell**
 
 * You need the Exchange Online PowerShell (EXO) module to run this command. For more information, see [About the Exchange Online PowerShell module](/powershell/exchange/exchange-online-powershell-v2#install-and-maintain-the-exchange-online-powershell-module).
-* A connection to the Purview compliance portal is also required. For more information, see [Connect to Security & Compliance PowerShell using the EXO module](/powershell/exchange/connect-to-scc-powershell).
+* A connection to the Purview portal is also required. For more information, see [Connect to Security & Compliance PowerShell using the EXO module](/powershell/exchange/connect-to-scc-powershell).
 
 ### Documentation
 
-* [Admin Guide: Custom configurations for the Azure Information Protection unified labeling client](/azure/information-protection/rms-client/clientv2-admin-guide-customizations)
-* [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels#use-powershell-for-sensitivity-labels-and-their-policies)
+* [Admin Guide: Advanced settings for Microsoft Purview Information Protection client](/azure/information-protection/rms-client/clientv2-admin-guide-customizations)
+* [Use PowerShell for sensitivity labels and their policies](/purview/create-sensitivity-labels#use-powershell-for-sensitivity-labels-and-their-policies)
 * [Set-LabelPolicy documentation](/powershell/module/exchange/set-labelpolicy)
 
 ## Considerations and limitations
-* Mandatory labeling in Power BI covers most common scenarios, but there might be some less common flows that still allow a user to create or edit unlabeled content.
-* The mandatory label policy setting for Power BI is independent of the mandatory label policy setting for files and email.
-* Mandatory labeling in Power BI isn't supported for service principals and APIs. Service principals and APIs aren't subject to mandatory label policies.
-* Mandatory labeling in Power BI isn't supported for [external guest users (B2B users)](/power-bi/enterprise/service-admin-azure-ad-b2b). B2B users aren't subject to mandatory label policies.
-* Mandatory labeling isn't supported for Dataflows Gen 2.
+* Mandatory labeling in Fabric and Power BI covers most common scenarios, but there might be some less common flows that still allow a user to create or edit unlabeled content.
+* The mandatory label policy setting for Fabric and Power BI is independent of the mandatory label policy setting for files and email.
+* Mandatory labeling in Fabric and Power BI isn't supported for service principals and APIs. Service principals and APIs aren't subject to mandatory label policies.
+* Mandatory labeling in Fabric and Power BI isn't supported for [external guest users (B2B users)](/power-bi/enterprise/service-admin-azure-ad-b2b). B2B users aren't subject to mandatory label policies.
 
 ## Related content
 
-* [Default label policy for Power BI](service-security-sensitivity-label-default-label-policy.md)
+* [Default label policy for Fabric and Power BI](./service-security-sensitivity-label-default-label-policy.md)
