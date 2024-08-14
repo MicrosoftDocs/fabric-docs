@@ -28,10 +28,21 @@ Specifically, in this tutorial you will:
 * Download the notebook from the GitHub repo
 * Download the sample data from the GitHub repo
 
-## Get data into the Eventhouse
+
+## Enable OneLake mirroring
+
+This step is important, because it enables the data you will ingest to become available in the OneLake. In a later step, you'll access this same data from your Notebook to train the model.
 
 1. Browse to your workspace homepage in Real-Time Intelligence.
 1. Select the Eventhouse you created in the prerequisites.
+1. Select the pencil icon next to **OneLake availability**
+1. In the right pane, toggle the button to **Active**.
+1. Select **Done**.
+
+:::image type="content" source="media/multivariate-anomaly-detection/one-lake-availability.png" alt-text="Screenshot of enabling OneLake availability in your Eventhouse.":::
+
+## Get data into the Eventhouse
+
 1. Hover over the KQL database where you want to store your data. Select the **More menu [...]** > **Get data** > **Local file**.
 
     :::image type="content" source="media/multivariate-anomaly-detection/local-file.png" alt-text="Screenshot of get data from local file.":::
@@ -42,17 +53,6 @@ Specifically, in this tutorial you will:
 1. Selct **Finish**.
 1. When the data is uploaded, select **Close**.
 
-## Enable OneLake mirroring
-
-This step is important, because it enables the data you have just ingested to become available in the OneLake. In a later step, you'll access this same data from your Notebook to train the model.
-
-Once you've finished loading the data, you are returned to the Database details page. 
-
-1. Select the pencil icon next to **OneLake availability**
-1. In the right pane, toggle the button to **Active**.
-1. Select **Done**.
-
-:::image type="content" source="media/multivariate-anomaly-detection/one-lake-availability.png" alt-text="Screenshot of enabling OneLake availability in your Eventhouse.":::
 
 ## Enable KQL Python plugin
 
@@ -65,14 +65,19 @@ In this step, you enable the python plugin in your Eventhouse. This is required 
 
     :::image type="content" source="media/multivariate-anomaly-detection/python-package.png" alt-text="Screenshot for how to enable python package 3.11.7 DL in the Eventhouse.":::
 
-## Create a Lakehouse
+## Create a OneLake shortcut to the table
 
-1.  Go back to the workspace and create Lakehouse 
+In this step, you create a [OneLake shortcut](/onelake/create-onelake-shortcut.md) to the table that was created in a previous step. This is required to access the data from the Notebook.
 
-:::image type="content" source="media/multivariate-anomaly-detection/image12.png" alt-text="Screenshot of multivariate anomaly detection image 12.":::
+1. Browse to a Lakehouse or create a new Lakehouse in your workspace.
+1. Select **New shortcut**
 
-:::image type="content" source="media/multivariate-anomaly-detection/image13.png" alt-text="Screenshot of multivariate anomaly detection image 13.":::
+    :::image type="content" source="media/multivariate-anomaly-detection/new-shortcut.png" alt-text="Screenshot of how to create a new shortcut in the Lakehouse.":::
 
+1. Under **Internal sources**, select **Microsoft OneLake**.
+1. Select the KQL database used in the previous steps. Select **Next**.
+1. 
+1. 
 1.  Create a shortcut to 'demo_stocks_change' table
 
 :::image type="content" source="media/multivariate-anomaly-detection/image14.png" alt-text="Screenshot of multivariate anomaly detection image 14.":::
