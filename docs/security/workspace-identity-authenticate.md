@@ -38,7 +38,7 @@ When the workspace identity has been created, the tab displays the workspace ide
 
 Workspace identity can be [created and deleted by workspace admins](/fabric/security/workspace-identity). The workspace identity has the workspace contributor role on the workspace. Admins, members, and contributors in the workspace can configure the identity as authentication method in ADLS gen2 shortcuts.
 
-## Step 2: Grant the identity with permissions to the storage account
+## Step 2: Grant the identity permissions on the storage account
 
 1. Sign in to the Azure portal and navigate to the storage account you want to access from OneLake.
 
@@ -68,7 +68,7 @@ Follow the steps listed in [Create an Azure Data Lake Storage Gen2 shortcut](../
 Follow the steps listed in [Module 1 - Create a pipeline with Data Factory](../data-factory/tutorial-end-to-end-pipeline.md) to create the data pipeline. Select workspace identity as the authentication method (supported only for ADLS gen2 and for Copy, Lookup, and GetMetadata activities)
 
 > [!NOTE]
-> The user creating the shortcut with workspace identity must be have a workspace admin, member or contributor role. Users accessing the shortcuts only need permissions on the lakehouse.
+> The user creating the shortcut with workspace identity must have an admin, member or contributor role in the workspace. Users accessing the shortcuts only need permissions on the lakehouse.
 
 ## Known issues:
    
