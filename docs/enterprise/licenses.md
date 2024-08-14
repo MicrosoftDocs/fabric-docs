@@ -40,7 +40,7 @@ Each Microsoft Entra tenant that has Fabric deployed to it, has a shared capacit
 >[!NOTE]
 >If you're using a [Power BI Premium](/power-bi/enterprise/service-premium-what-is) capacity, Microsoft Fabric items aren't enabled. To enable support for Microsoft Fabric items on your Power BI capacity, [enable Microsoft Fabric](../admin/fabric-switch.md).
 
-Workspaces can be created in (or assigned to) Microsoft Fabric capacities. The workspace license mode dictates what kind of capacity the workspace can be hosted in and as a result the capabilities available.
+Workspaces can be created in (or assigned to) Microsoft Fabric capacities. The workspace license mode dictates what kind of capacity the workspace can be hosted in. User capabilities in the workspace are determined by the workspace license mode.
 
 | Workspace license mode | User capabilities | Access | Supported experiences |
 |--|--|--|--|
