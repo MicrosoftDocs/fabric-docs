@@ -28,10 +28,9 @@ Specifically, in this tutorial you will:
 * Download the notebook from the GitHub repo
 * Download the sample data from the GitHub repo
 
+## Enable OneLake availability
 
-## Enable OneLake mirroring
-
-This step is important, because it enables the data you will ingest to become available in the OneLake. In a later step, you'll access this same data from your Notebook to train the model.
+OneLake availability must be [enabled](event-house-onelake-availability.md) before you get data in the Eventhouse. This step is important, because it enables the data you will ingest to become available in the OneLake. In a later step, you'll access this same data from your Notebook to train the model.
 
 1. Browse to your workspace homepage in Real-Time Intelligence.
 1. Select the Eventhouse you created in the prerequisites.
@@ -46,13 +45,13 @@ This step is important, because it enables the data you will ingest to become av
 1. Hover over the KQL database where you want to store your data. Select the **More menu [...]** > **Get data** > **Local file**.
 
     :::image type="content" source="media/multivariate-anomaly-detection/local-file.png" alt-text="Screenshot of get data from local file.":::
+
 1. Select **+ New table** and enter *demo_stocks_change* as the table name.
 1. In the upload data dialog, select **Browse for files** and upload the sample data file that was downloaded in the [Prerequisites](#prerequisites)
 1. Select **Next**.
 1. In the **Inspect the data** section, toggle **First row is column header** to **On**.
 1. Selct **Finish**.
 1. When the data is uploaded, select **Close**.
-
 
 ## Enable KQL Python plugin
 
@@ -76,30 +75,25 @@ In this step, you create a [OneLake shortcut](/onelake/create-onelake-shortcut.m
 
 1. Under **Internal sources**, select **Microsoft OneLake**.
 1. Select the KQL database used in the previous steps. Select **Next**.
-1. 
-1. 
-1.  Create a shortcut to 'demo_stocks_change' table
+1. Select the table you created in the previous steps. Select **Next**.
 
-:::image type="content" source="media/multivariate-anomaly-detection/image14.png" alt-text="Screenshot of multivariate anomaly detection image 14.":::
+    :::image type="content" source="media/multivariate-anomaly-detection/select-table-shortcut.png" alt-text="Screenshot of selecting your table to create a OneLake shortcut to a KQL database table.":::
 
-:::image type="content" source="media/multivariate-anomaly-detection/image15.png" alt-text="Screenshot of multivariate anomaly detection image 15.":::
+## Create a Spark environment
 
-:::image type="content" source="media/multivariate-anomaly-detection/image16.png" alt-text="Screenshot of multivariate anomaly detection image 16.":::
+1. In the experience switcher, choose **Data Engineering**.
+1. Select **Environments** and enter a name for the environment.
+1. Under **Libraries**, select **Public libraries**.
+1. Select **Add from PyPI**.
+1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version.
+1. Select **Save**.
 
-:::image type="content" source="media/multivariate-anomaly-detection/image17.png" alt-text="Screenshot of multivariate anomaly detection image 17.":::
+    `:::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment.":::
 
-8.  Go back to the workspace and create the Spark environment
+## Train the model
 
-:::image type="content" source="media/multivariate-anomaly-detection/image18.png" alt-text="Screenshot of multivariate anomaly detection image 18.":::
-
-:::image type="content" source="media/multivariate-anomaly-detection/image19.png" alt-text="Screenshot of multivariate anomaly detection image 19.":::
-
-:::image type="content" source="media/multivariate-anomaly-detection/image20.png" alt-text="Screenshot of multivariate anomaly detection image 20.":::
-
-> Add the time-series-anomaly-detector package from PyPI and publish the
-> environment
->
-:::image type="content" source="media/multivariate-anomaly-detection/image21.png" alt-text="Screenshot of multivariate anomaly detection image 21.":::
+1. In the experience switcher, choose **Data Engineering**.
+1. Select **Import notebook** > **Upload**, and choose the upload you downloaded in a previous step. :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
 
 9.  Go back to the workspace and attach the environment to the workspace
 
