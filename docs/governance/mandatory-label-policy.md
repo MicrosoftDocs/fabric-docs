@@ -8,7 +8,7 @@ ms.subservice: governance
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 09/12/2023
+ms.date: 08/14/2024
 LocalizationGroup: Data from files
 ---
 
