@@ -49,18 +49,18 @@ It's recommended that you become familiar with the [Microsoft identity platform]
 
 ## How to work with tokens
 
-Your front-end should ask for a token `extensionClient.auth.acquireAccessToken({});`. You can use this token to authenticate with your back-end.
+Your front-end should ask for a token `workloadClient.auth.acquireAccessToken({});`. You can use this token to authenticate with your back-end.
 
 If you wish to access some resource, send your token to the back-end and try to exchange it using an OBO flow for that resource. You can also use the token received from control APIs (CRUD/Jobs) and try to exchange it for that resource.
 
-If the exchange fails for consent reasons, notify your front-end and call `extensionClient.auth.acquireAccessToken({additionalScopesToConsent:[resource]});` and try the process again.
+If the exchange fails for consent reasons, notify your front-end and call `workloadClient.auth.acquireAccessToken({additionalScopesToConsent:[resource]});` and try the process again.
 
-If the exchange fails for MFA reasons, notify your front-end along with the claim received when tying to exchange and call `extensionClient.auth.acquireAccessToken({claimsForConditionalAccessPolicy:claims});`.
+If the exchange fails for MFA reasons, notify your front-end along with the claim received when trying to exchange and call `workloadClient.auth.acquireAccessToken({claimsForConditionalAccessPolicy:claims});`.
 
    For examples, see: [Error response example](/entra/identity-platform/v2-oauth2-on-behalf-of-flow#error-response-example).
 
 > [!NOTE]
-> The token you receive when acquiring a token in the front-end is not related to additionalScopesToConsent you pass. This means that once the user consents, you can use any token you received from `extensionClient.auth.acquireAccessToken` for your OBO flow.
+> The token you receive when acquiring a token in the front-end is not related to additionalScopesToConsent you pass. This means that once the user consents, you can use any token you received from `workloadClient.auth.acquireAccessToken` for your OBO flow.
 
 ## Authentication JavaScript API
 
