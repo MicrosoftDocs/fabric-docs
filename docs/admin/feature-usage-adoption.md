@@ -10,11 +10,11 @@ ms.custom:
 ms.date: 08/07/2024
 ---
 
-# Feature usage and adoption report (preview)
+# Feature Usage and Adoption report (preview)
 
-The Feature usage and adoption report provides an in-depth analysis of how different features are utilized and adopted across your Microsoft Fabric tenant.
+The Feature Usage and Adoption report provides an in-depth analysis of how different features are utilized and adopted across your Microsoft Fabric tenant.
 
-You can access the report from the [admin monitoring](monitoring-workspace.md) workspace. To see this workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or have an admin share the report or semantic model directly with you. With build permissions to the semantic model, users can design a custom report that relies on the same underlying data.
+You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To see this workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or [Microsoft 365 global administator]([url](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)). Conversely, you can have one of these roles share the Adoption report or semantic model directly with you. With build permissions to the semantic model, users can also design a custom report that relies on the same underlying data.
 
 ## Navigation
 
@@ -142,6 +142,18 @@ After drilling through, you see the following information for the selected item 
 
 * **Items** - The total number of items
 
+## Measures
+
+| Measure name    | Description |
+| -------- | ------- |
+| Active capacities  | The number of unique capacities with auditable activity over the last 30 days, or based on the Date slicer and any other filtering. For more information on capacities, see the [Pro and PPU capacities](#pro-and-ppu-capacities) section.   |
+| Active users | The number of unique users with auditable activity over the last 30 days, or based on the Date slicer and any other filtering.     |
+| Active workspaces    | The number of unique workspaces with auditable activity over the last 30 days, or based on the Date slicer and any other filtering.    |
+| Activities  | The number of unique audit activities over the last 30 days, or based on the Date slicer and any other filtering. Used in chart-related visuals.    |
+| Items | The count of items displayed, specifically used on the Item Details drill through table. Used in chart-related visuals.     |
+| Total activities    | Same as _Activities_, but reverts to 0 if no audit data is displayed; used specifically in card visuals.    |
+| Total items    | Same as _Items_, but reverts to 0 if no items are displayed; used specifically in card visuals.    |
+
 ## Considerations and limitations
 
 This section lists the report's considerations and limitations.
@@ -160,7 +172,7 @@ This section lists the report's considerations and limitations.
   
 ### Pro and PPU capacities
 
-Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities. The usage of these capacities can be seen in the admin monitoring report and as operations in the audit logs.
+Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities. The usage of these capacities can be seen in this report and as operations in the audit logs.
 
   * **Pro logical capacities** - Appear as *Reserved Capacity for Pro Workspaces* with the capacity SKU value *Pro* or *SharedOnPremium*.
 
@@ -172,6 +184,6 @@ Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on i
 
 ## Related content
 
-* [What is the admin monitoring workspace?](monitoring-workspace.md)
+* [What is the Admin monitoring workspace?](monitoring-workspace.md)
 
 * [Admin overview](microsoft-fabric-admin.md)
