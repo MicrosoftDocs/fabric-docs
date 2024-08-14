@@ -71,10 +71,10 @@ Add the workload's frontend URL to the `CloudServiceConfiguration` section in th
 ## Configuring your application in Microsoft Entra ID
 When configuring your application in Microsoft Entra Id, ensure the following applies:
 1. The Redirect URL should point to your frontend URL appended with `/close`, for exmaple, `feserver.datafactory.contoso.com/close`.
-2. The application Id URI should match the verified domain of your application.
+2. The application ID URI should match the verified domain of your application.
 
 > [!NOTE]
-> All other application configurations in Microsoft Entra Id are the same as in dev mode.
+> All other application configurations in Microsoft Entra ID are the same as in dev mode.
 
 ## Configuring your workload (Backend)
 Navigate to `src/appsettings.json` in the Backend sample and configure the following applies:
