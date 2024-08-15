@@ -103,9 +103,9 @@ If your organization does not allow for connection sharing or wants to limit the
 > Disabling connection sharing does not impact connections that have already been shared.
 
 How to enable the setting
-1.	Make sure that you are either an Entra ID Global administrator (which includes Global admins) or a Power BI service administrator.
-2.	In Power BI or Fabric go to settings and the manage connections and gateways page.
-3.	In the top right, turn on the toggle for tenant administation.
+1.	You must have sufficient privileges from the Power BI Service Administrator role.
+3.	In Power BI or Fabric go to settings and the manage connections and gateways page.
+4.	In the top right, turn on the toggle for tenant administation.
 
 :::image type="content" source="media/data-source-management/tenant-administration.png" alt-text="Screenshot showing the tenant administration toggle in the Manage connections and gateways page.":::
 
