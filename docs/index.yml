@@ -15,7 +15,7 @@ metadata:
   ms.collection: collection
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 07/29/2024
+  ms.date: 08/15/2024
 # highlightedContent section (optional)
 # Maximum of 8 items 
 highlightedContent:
@@ -412,9 +412,9 @@ conceptualContent:
             - url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
               itemType: training
               text: Jumpstart your career with the Career Hub
-            - url: https://developer.microsoft.com/offers/30-days-to-learn-it?challenge_option=bfb9f08c-b763-4f60-b5d7-360debaf4f8f&ocid=fabric24_30DTLI_fabricdocs_card_clp
+            - url: https://learn.microsoft.com/en-us/training/topics/30-day-plans/
               itemType: training
-              text: Skill up with the cloud skills challenge
+              text: Skill up with Microsoft Learn 30 Day Plans
             - url: /training/fabric/?WT.mc_id=fabric_landingpage-docs-link
               itemType: training
               text: Explore role-based learning paths
