@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 08/01/2024
+ms.date: 08/15/2024
 ---
 
 # Workspace identity
@@ -56,7 +56,11 @@ When an identity is deleted, Fabric items relying on the workspace identity for 
 
 ## How to use workspace identity
 
- Shortcuts in a workspace that has a workspace identity can be used for trusted service access. For more information, see [trusted workspace access](../security/security-trusted-workspace-access.md).
+ Workspace identity currently can be used in two ways:
+
+* For authentication: See [Authenticate with workspace identity](./workspace-identity-authenticate.md)
+
+* For trusted workspace access: Shortcuts in a workspace that has a workspace identity can be used for trusted service access. For more information, see [trusted workspace access](../security/security-trusted-workspace-access.md).
 
 ## Security, administration, and governance of the workspace identity
 
@@ -66,7 +70,7 @@ The following sections describe who can use the workspace identity, and how you 
 
 Workspace identity can be [created and deleted by workspace admins](#create-and-manage-a-workspace-identity). The workspace identity has the workspace contributor role on the workspace.
 
-Currently, workspace identity isn't supported for authentication to target resources in connections. Authentication to target resources in connections will be supported in the future. Admins, members, and contributors will be able to use workspace identity in authentication in connections in the future.
+Workspace identity is supported for authentication to target resources in connections. Only users with an admin, member, or contributor role in the workspace can configure the workspace identity for authentication in connections.
 
 [Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or users with higher roles can view, modify, and delete the service principal and app registration associated with the workspace identity in Azure.
 
