@@ -14,6 +14,8 @@ ms.date: 05/21/2024
 
 To create and deploy the boilerplate Azure web app, you need to create and deploy the backend and frontend web apps. This tutorial provides instructions for creating and deploying the boilerplate backend and frontend web apps.
 
+Make sure you go over the [workload cloud setup tutorial](workload-cloud-setup.md) before deploying your backend and frontend web apps.
+
 ## Create and deploy the boilerplate backend web app
 
 To create an Azure web app from the Azure portal:
