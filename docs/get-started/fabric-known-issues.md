@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 08/06/2024
+ms.date: 08/14/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  809  | Data Factory | [Dataflow Gen2 refresh fails due to missing SQL analytics endpoint](known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md) | August 14, 2024 |
+|  808  | Power BI | [Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser](known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md) | August 14, 2024 |
+|  807  | Data Warehouse | [Mirroring for Azure Cosmos DB fails when you create a new container](known-issues/known-issue-807-mirroring-cosmos-db-fails-create-container.md) | August 14, 2024 |
 |  796  | Data Warehouse | [Mirroring for Azure Cosmos DB fails](known-issues/known-issue-796-mirroring-cosmos-db-fails.md) | August 6, 2024 |
 |  781  | Data Factory | [Pipeline copy to Oracle using on-premises data gateway errors](known-issues/known-issue-781-pipeline-copy-oracle-data-gateway-errors.md) | August 6, 2024 |
 |  801  | Power BI | [Custom visuals don't render in Desktop](known-issues/known-issue-801-custom-visuals-not-render.md) | August 1, 2024 |
@@ -27,10 +30,8 @@ Select the **Title** to view more information about that specific known issue.
 |  797  | Data Engineering | [Localization blocks operations in a lakehouse](known-issues/known-issue-797-localization-blocks-operations-lakehouse.md) | July 31, 2024 |
 |  795  | Data Factory | [Multiple installations of on-premises data gateway causes pipelines to fail](known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md) | July 31, 2024 |
 |  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 |
-|  785  | Power BI | [Add data to a report when scrollbar is present doesn't work](known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md) | July 24, 2024 |
 |  784  | Data Activator | [Data Activator alert created from visual with no dimensions doesn't work](known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md) | July 18, 2024 |
 |  782  | Data Engineering | [Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse](known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md) | July 18, 2024 |
-|  780  | Power BI | [Cognitive Services ScoreSentiment function doesn't work in dataflows](known-issues/known-issue-780-cognitive-services-score-sentiment-function-not-work-dataflows.md) | July 18, 2024 |
 |  778  | Power BI | [Direct Lake semantic model table changes don't work](known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md) | July 16, 2024 |
 |  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 |
 |  770  | Data Warehouse | [Data warehouse connection or query execution fails](known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md) | July 3, 2024 |
@@ -86,6 +87,8 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  785  | Power BI | [Add data to a report when scrollbar is present doesn't work](known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md) | July 24, 2024 | Fixed: August 14, 2024 |
+|  780  | Power BI | [Cognitive Services ScoreSentiment function doesn't work in dataflows](known-issues/known-issue-780-cognitive-services-score-sentiment-function-not-work-dataflows.md) | July 18, 2024 | Fixed: August 14, 2024 |
 |  773  | Data Factory | [Dataflow Gen2 ownership takeover fails](known-issues/known-issue-773-dataflow-gen2-ownership-takeover-fails.md) | July 5, 2024 | Fixed: August 6, 2024 |
 |  709  | Data Factory | [Query folding indicators are incorrect for certain Power Query SDK based connectors](known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md) | May 1, 2024 | Fixed: July 31, 2024 |
 |  596  | Data Factory   | [Refresh history reports in progress for some tables that failed](known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables.md)  | August 24, 2023 | Fixed: July 31, 2024 |

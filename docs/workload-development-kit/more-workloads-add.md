@@ -27,8 +27,8 @@ Each workload includes additional information describing workload capabilities a
 
 * **Item Type**: A list of items this workload can create.
 * **Compatible with**: which items are integrated with by the workload.
-* **Publisher support**: Documentation, Certification page & Help links by the workload publisher.
-* Videos and screenshots material by the publisher.
+* **Publisher support**: Documentation, Certification page & Help links provided by the workload publisher.
+* Videos and screenshots material provided by the publisher.
 
 ## Adding and removing workloads
 

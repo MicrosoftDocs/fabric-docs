@@ -159,6 +159,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Dataflow Gen2 refresh fails due to missing SQL analytics endpoint
+      href: known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md
+    - name: Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser
+      href: known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md
+    - name: Mirroring for Azure Cosmos DB fails when you create a new container
+      href: known-issues/known-issue-807-mirroring-cosmos-db-fails-create-container.md
     - name: Mirroring for Azure Cosmos DB fails
       href: known-issues/known-issue-796-mirroring-cosmos-db-fails.md
     - name: Pipeline copy to Oracle using on-premises data gateway errors
