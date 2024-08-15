@@ -92,16 +92,16 @@ When you first ask the AI skill questions with the listed tables selected, the A
 
 - `Long-Sleeve Logo Jersey, L`
 
-However, the SQL query needs some improvement. First, it only looks at the `FactResellerSales` table. It ignores the `FactInternetSales` table. Second, it orders the products by order quantity, when total sales revenue associated with the product is the most important consideration.
+However, the SQL query needs some improvement. First, it only looks at the `FactResellerSales` table. It ignores the `FactInternetSales` table. Second, it orders the products by order quantity, when total sales revenue associated with the product is the most important consideration, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/most-sold-ai-skill-first-question.png" alt-text="Screenshot showing the first example AI skill highest sales product question." lightbox="./media/ai-skill-scenario/most-sold-ai-skill-first-question.png":::
 
-To improve the query generation, provide some instructions:
+To improve the query generation, provide some instructions, as shown in these examples:
 
 - Whenever I ask about "the most sold" products or items, the metric of interest is total sales revenue and not order quantity.
 - The primary table to use is `FactInternetSales`. Only use `FactResellerSales` if explicitly asked about resales or when asked about total sales.
 
-Asking the question again returns a different answer, `Mountain-200 Black, 46`.
+Asking the question again returns a different answer, `Mountain-200 Black, 46`, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/most-sold-ai-skill-second-question.png" alt-text="Screenshot showing the second example AI skill highest sales product question." lightbox="./media/ai-skill-scenario/most-sold-ai-skill-second-question.png":::
 
@@ -141,7 +141,7 @@ If you copy this text into the notes for the model text box, the AI refers to th
 
 In addition to instructions, examples serve as another effective way to guide the AI. If you have questions that your AI skill often receives, or questions that require complex joins, consider adding examples for them.
 
-For example, the question **How many active customers did we have June 1st, 2013** generates some valid SQL.
+For example, the question **How many active customers did we have June 1st, 2013** generates some valid SQL, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/active-customer-ai-skill-first-question.png" alt-text="Screenshot showing the first example AI skill active customer count question." lightbox="./media/ai-skill-scenario/active-customer-ai-skill-first-question.png":::
 
@@ -186,19 +186,19 @@ Both instructions and examples were added to the AI skill. As testing proceeds, 
 
 ## Use the AI skill programmatically
 
-You can use the AI skill programmatically within a Fabric notebook. To determine whether or not the AI skill has a published URL value, select **Settings**.
+You can use the AI skill programmatically within a Fabric notebook. To determine whether or not the AI skill has a published URL value, select **Settings**, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/initial-ai-skill-settings.png" alt-text="Screenshot showing selection of AI skill settings." lightbox="./media/ai-skill-scenario/initial-ai-skill-settings.png":::
 
-Before you publish the AI skill, it doesn't have a published URL value.
+Before you publish the AI skill, it doesn't have a published URL value, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png" alt-text="Screenshot showing that an AI skill doesn't have a published URL value before publication." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-no-published-url-value.png":::
 
-After you validate the performance of the AI skill, you might decide to publish it. In this case, select **Publish**.
+After you validate the performance of the AI skill, you might decide to publish it. In this case, select **Publish**, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/ai-select-publish.png" alt-text="Screenshot showing selection of the Publish option." lightbox="./media/ai-skill-scenario/ai-select-publish.png":::
 
-The published URL for the AI skill appears.
+The published URL for the AI skill appears, as shown in this screenshot:
 
 :::image type="content" source="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png" alt-text="Screenshot showing the published URL." lightbox="./media/ai-skill-scenario/fabric-notebook-ai-skill-published-url-value.png":::
 

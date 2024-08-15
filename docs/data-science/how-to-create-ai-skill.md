@@ -42,7 +42,7 @@ The process is straightforward and you can begin testing the AI skill resources 
 
 ## Create a new AI skill
 
-Like other standard Fabric items creation processes, you can create a new AI skill from the Fabric **Data Science** home page, by selecting the workspace **New** option, or by using the Create Hub. You must provide a name.
+Like other standard Fabric items creation processes, you can create a new AI skill from the Fabric **Data Science** home page, by selecting the workspace **New** option, or by using the Create Hub. You must provide a name, as shown in this screenshot:
 
 :::image type="content" source="./media/how-to-create-ai-skill/create-ai-skill.png" alt-text="Screenshot showing creation of an AI skill." lightbox="./media/how-to-create-ai-skill/create-ai-skill.png":::
 
@@ -60,12 +60,14 @@ The left pane populates with the available tables in the selected data source. U
 
 ## Ask questions
 
-After you select the data, you can start asking questions. The system handles questions that a single query can answer. Questions like the following examples should work:
+After you select the data, you can start asking questions. The system handles questions that a single query can answer, as shown in this screenshot:
+
+:::image type="content" source="./media/how-to-create-ai-skill/ask.png" alt-text="Screenshot showing a question for an AI skill." lightbox="./media/how-to-create-ai-skill/ask.png":::
+
+Questions like the following examples should work:
 
 - "What were our total sales in California in 2023?"
 - "What are the most expensive items that have never been sold?"
-
-:::image type="content" source="./media/how-to-create-ai-skill/ask.png" alt-text="Screenshot showing a question for an AI skill." lightbox="./media/how-to-create-ai-skill/ask.png":::
 
 These questions are out of scope:
 
@@ -78,7 +80,7 @@ After generation of the SQL queries, study them to ensure that they only query t
 
 ## Change the data source
 
-To switch to another lakehouse or warehouse, select the arrows near the top of the **Explorer** pane.
+To switch to another lakehouse or warehouse, select the arrows near the top of the **Explorer** pane, as shown in this screenshot:
 
 :::image type="content" source="./media/how-to-create-ai-skill/change-datasource.png" alt-text="Screenshot showing selection of another data source." lightbox="./media/how-to-create-ai-skill/change-datasource.png":::
 
@@ -88,7 +90,7 @@ In Fabric, you can configure the AI skill so that the AI answers your questions 
 
 If you find that the AI doesn't generate the right queries, you can provide more examples.
 
-To provide examples, you can select the edit button under **Example SQL queries** on the right side.
+To provide examples, you can select the edit button under **Example SQL queries** on the right side, as shown in this screenshot:
 
 :::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-examples.png":::
 
@@ -96,7 +98,7 @@ To provide examples, you can select the edit button under **Example SQL queries*
 
 You can also steer the AI with instructions. You can provide these instructions in the **Notes for model** text box. Here, you can write instructions in English. The AI uses those instructions when it generates SQL.
 
-If you find that the AI consistently misinterprets certain words or acronyms, you can provide definitions of terms in this section.
+If you find that the AI consistently misinterprets certain words or acronyms, you can provide definitions of terms in this section, as shown in this screenshot:
 
 :::image type="content" source="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png" alt-text="Screenshot showing where you can edit the instructions you provide to the AI." lightbox="./media/how-to-create-ai-skill/ai-skill-adding-instructions.png":::
 
