@@ -1,15 +1,15 @@
 ---
 title: Microsoft Fabric product, experience, and item icons
-description: Official icons for use in building architecture diagrams and illustrations for Microsoft Fabric.
+description: Microsoft Fabric icons are designed for creating architecture diagrams and illustrations, ensuring a consistent and professional appearance for your projects.
 author: SnehaGunda
 ms.topic: conceptual
-ms.date: 06/13/2023
+ms.date: 08/12/2024
 ms.author: sngun
 ---
 
 # Microsoft Fabric product, experience, and item icons
 
-This article provides information about the official collection of icons for Microsoft Fabric that you can use in architectural diagrams, training materials, or documentation.
+This article provides information about the official collection of icons for Microsoft Fabric that you can use in architectural diagrams, training materials, slide decks or documentation.
 
 ## Do's
 
@@ -25,7 +25,7 @@ This article provides information about the official collection of icons for Mic
 
 ## Terms
 
-Microsoft permits the use of these icons in architectural diagrams, training materials, or documentation. You may copy, distribute, and display the icons only for the permitted use unless granted explicit permission by Microsoft. Microsoft reserves all other rights.
+Microsoft permits the use of these icons in architectural diagrams, training materials, or documentation. You may copy, distribute, and display the icons only for the permitted use unless granted explicit permission by Microsoft. Microsoft reserves all other rights. 
 
 > [!div class="button"]
 > [Download icons from GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/Icons.zip)
