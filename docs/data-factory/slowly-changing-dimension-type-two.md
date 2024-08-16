@@ -238,7 +238,7 @@ The solution so far provides a query with all records for an upsert operation in
 
 ### Using Dataflow Gen2 to load data to your Dimension destination table
 
-You can create a logic that uses three queries to come up with a query with all the records that should exist in the Dimension table. With the new query, you can use the [data destinations feature in Dataflow Gen2 to load your data](fabric/data-factory/dataflow-gen2-data-destinations-and-managed-settings.md).
+You can create a logic that uses three queries to come up with a query with all the records that should exist in the Dimension table. With the new query, you can use the [data destinations feature in Dataflow Gen2 to load your data](/fabric/data-factory/dataflow-gen2-data-destinations-and-managed-settings.md).
 
 #### Records to keep from original Dimension table
 
@@ -258,7 +258,7 @@ You can sort this table using the **SalesRepID** field in ascending order and th
 
 ![Data preview of the final dimension table before it gets a definition for a data destination](../data-factory/media/slowly-changing-dimension-type-two/final-dimension-table.png)
 
-You can read more about how to set a data destination for your query and load the output of the query to your **Dimension** table from the article on [Dataflow Gen2 data destinations and managed settings](fabric/data-factory/dataflow-gen2-data-destinations-and-managed-settings.md).
+You can read more about how to set a data destination for your query and load the output of the query to your **Dimension** table from the article on [Dataflow Gen2 data destinations and managed settings](/fabric/data-factory/dataflow-gen2-data-destinations-and-managed-settings.md).
 
 ![Final diagram view that showcases the full solution](../data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png)
 
