@@ -1,6 +1,6 @@
 ---
 title: Slowly changing dimension type 2
-description: 
+description: A tutorial and pattern on how to accomplish a Slowly Changing Dimension Type 2 solution using Data Factory and Dataflow Gen2 inside of Microsoft Fabric.
 author: ptyx507x
 ms.author: miescobar
 ms.reviewer: jburchel
@@ -240,21 +240,21 @@ The first logic to implement is the records from the original Dimension table to
 
 With the **Dimension** query selected, go to the Home tab in the Ribbon and use the **Merge queries as new** option. In the Merge dialog, select the **RecordsToUpdate** query as the right table. Select the **SalesRepID** columns from both columns and use the *Left anti* as the join kind. Click Ok.
 
-![Merge dialog with the logic](/fabric/data-factory/media/slowly-changing-dimension-type-two/only-records-to-keep-from-original-dimension-table.png)
+![Merge dialog with the logic](../data-factory/media/slowly-changing-dimension-type-two/only-records-to-keep-from-original-dimension-table.png)
 
 Make sure to expand the *Hash* field from the newly created column. Once expanded, you can delete that column.
 
 Now that know exactly what records need to be kept from the original Dimension table, you can append the **StagingTableForUpdates** to the existing query to have a query will all records that should be in the **Dimension** table. To do that, in the Home tab of the ribbong select the option to **Append** within the existing query and append the **StagingTableForUpdates** query.
 
-![Append dialog for the final query to upload all data to Dimension table ](/fabric/data-factory/media/slowly-changing-dimension-type-two/append-staging-table-for-updates.png)
+![Append dialog for the final query to upload all data to Dimension table ](../data-factory/media/slowly-changing-dimension-type-two/append-staging-table-for-updates.png)
 
 You can sort this table using the **SalesRepID** field in ascending order and the output can be used with the data destination feature to load the data to the Dimension table.
 
-![Data preview of the final dimension table before it gets a definition for a data destination](/fabric/data-factory/media/slowly-changing-dimension-type-two/final-dimension-table.png)
+![Data preview of the final dimension table before it gets a definition for a data destination](../data-factory/media/slowly-changing-dimension-type-two/final-dimension-table.png)
 
 You can read more about how to set a data destination for your query and load the output of the query to your **Dimension** table from the article on [Dataflow Gen2 data destinations and managed settings](/fabric/data-factory/dataflow-gen2-data-destinations-and-managed-settings.md).
 
-![Final diagram view that showcases the full solution](/fabric/data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png)
+![Final diagram view that showcases the full solution](../data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png)
 
 >[!NOTE]
->Take into consideration that in Dataflow Gen2 you can leverage a staging mechanism at the query level. Read more about the [staging mechanism in Dataflow Gen2](/fabric/data-factory/data-in-staging-artifacts.md)
+>Take into consideration that in Dataflow Gen2 you can leverage a staging mechanism at the query level. Read more about the [staging mechanism in Dataflow Gen2](../data-factory/data-in-staging-artifacts.md)
