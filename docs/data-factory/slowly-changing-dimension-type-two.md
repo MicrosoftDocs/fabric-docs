@@ -255,7 +255,7 @@ Now that you know exactly what records need to be kept from the original Dimensi
 
 You can sort this table using the **SalesRepID** field in ascending order and the output can be used with the data destination feature to load the data to the Dimension table.
 
-![Screenshot of the data preview for the final dimension table before it gets a definition for a data destination.](../data-factory/media/slowly-changing-dimension-type-two/final-dimension-table.png)
+:::image type="content" source="../data-factory/media/slowly-changing-dimension-type-two/final-dimension-table.png" alt-text="Screenshot of the data preview for the final dimension table before it gets a definition for a data destination." lightbox="../data-factory/media/slowly-changing-dimension-type-two/final-dimension-table.png":::
 
 You can read more about how to set a data destination for your query and load the output of the query to your **Dimension** table from the article on [Dataflow Gen2 data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md).
 
