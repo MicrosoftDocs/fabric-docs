@@ -669,7 +669,7 @@
         href: tutorial-dataflows-gen2-pipeline-activity.md
       - name: Pattern to incrementally amass data with Dataflow Gen2
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
-      - name: Slowly changing dimension Type 2 
+      - name: Slowly changing dimension type 2 
         href: slowly-changing-dimension-type-two.md        
     - name: Fabric Dataflows for ADF Mapping Data Flow users
       href: guide-to-dataflows-for-mapping-data-flow-users.md

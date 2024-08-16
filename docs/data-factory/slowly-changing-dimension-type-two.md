@@ -22,7 +22,7 @@ The article showcases a tutorial and an example of how you can implement a solut
 
 When implementing a solution for a Slowly changing dimension type 2, it's important to define your source table and what fields from your source table drive the logic to identify new records.
 
-![Architecture diagram showcasing the components or processes to make the slowly changing dimension type 2 happen in Dataflow](../data-factory/media/slowly-changing-dimension-type-two/diagram-architecture.png)
+![Diagram showcasing the components or processes to make the slowly changing dimension type 2 happen in Dataflow.](../data-factory/media/slowly-changing-dimension-type-two/diagram-architecture.png)
 
 As a whole, the architecture requires a minimum of four components:
 
@@ -100,19 +100,19 @@ Once you load the Source table into a Dataflow Gen2, you can select the **Add co
 Binary.ToText( Text.ToBinary( Text.Combine(List.Transform({[RepSourceID],[FirstName],[LastName],[Region]}, each if _ = null then "" else Text.From(_)), "|")), BinaryEncoding.Hex)
 ```
 
-![Create a hash column in Dataflow Gen2](../data-factory/media/slowly-changing-dimension-type-two/create-hash-column.png)
+![Screenshot showing the formula to create a hash column in Dataflow Gen2 using a Custom column.](../data-factory/media/slowly-changing-dimension-type-two/create-hash-column.png)
 
 >[!IMPORTANT]
 >While this sample formula showcases how to use these four columns, you can change the reference of the columns to your own columns and define what specific fields from your table need to be used to create the hash.
 
 Now with the Hash column in your Source table, you now have a simple way to compare both tables to find exact matches.
 
-![Source table with hash column](../data-factory/media/slowly-changing-dimension-type-two/hash-column-in-source-table.png)
+![Screenshot of the source table with hash column.](../data-factory/media/slowly-changing-dimension-type-two/hash-column-in-source-table.png)
 
 Once you load your Dimension table, create a reference of this query by either right clicking the query in the queries pane or in the diagram view and select the option to reference. Rename this new query to **AggregatedDimHash**. You can aggregate the count of records in the table by the Hash field. To do so, go to the Home tab in the ribbon and select the Group by option within the Transform group.
 Within the dialog, make sure to group by the Hash column and select the Operation for the new Count column to be Count rows.
 
-![Aggregate a count column by using the Hash column from the Dimension table](../data-factory/media/slowly-changing-dimension-type-two/aggregate-count-by-hash-dimension.png)
+![Screenshot of the Group by dialog showing how to create an aggregated count column grouped by the Hash column from the Dimension table.](../data-factory/media/slowly-changing-dimension-type-two/aggregate-count-by-hash-dimension.png)
 
 
 ### New records
@@ -123,15 +123,15 @@ Within the dialog, make sure to group by the Hash column and select the Operatio
 Select the **Source** query, go to the Home tab in the ribbon and select the option to *Merge queries as new* inside the Combine group. Rename this query to be Compare.
 Within the Merge dialog, make sure to pick the **AggregatedDimHash** in the "Right table for merge" dropdown and select the Hash columns from both tables while leaving the default *Join kind* of Left outer.
 
-![Joining the dimension and source table using the hash columns from both](../data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-column.png)
+![Screenshot of the Merge dialog showing the settings to merge the dimension and source tables using the hash columns from both.](../data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-column.png)
 
 Once the merge completes, be sure to expand the newly created column by only selecting the Count column to be expanded.
 
-![Only expanding the Count column after the merge operation](../data-factory/media/slowly-changing-dimension-type-two/expand-count-column-only.png)
+![Screenshot of the expand dialog while only selecting the Count column.](../data-factory/media/slowly-changing-dimension-type-two/expand-count-column-only.png)
 
 Filter this column to only keep null values, which represent the values that don't exist in the Dimension table today. The result yields a single record for Adrian King in the Northwest region.
 
-![Result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Adrian King in the Northwest region](../data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png)
+![Screenshot for the result of doing a direct exact comparison of hash values between Source and Dimension table only yields a single record for Adrian King in the Northwest region.](../data-factory/media/slowly-changing-dimension-type-two/comparison-no-exact-matches.png)
 
 Remove the Count column and rename this query to be called **CompareStoM**.
 
@@ -143,18 +143,18 @@ Reference the existing Dimension table and rename the query to **LastID**. You'l
 
 Assuming that the value of the query is an integer that increments by one every time there are new records added, you can implement a logic that finds the maximum value in the **SalesRepID**. Right select the **SalesRepID** and select the option to drill down.
 
-![Drill down operation for the SalesRepID column](../data-factory/media/slowly-changing-dimension-type-two/drill-down-salesrepid.png)
+![Screenshot of the contextual menu when right clicking the SalesRepID column and highlighting the Drukk down operation.](../data-factory/media/slowly-changing-dimension-type-two/drill-down-salesrepid.png)
 
 This yields a list and in the ribbon you'll now have the statistics options where you can choose the option to calculate the maximum value of this list:
 
-![Maximum option from the statistics operations for list tools](../data-factory/media/slowly-changing-dimension-type-two/list-tool-maximum.png)
+![Screenshot of the List tools contextual menu in the Power Query editor ribbon highlighting the Maximum option from the statistics operations.](../data-factory/media/slowly-changing-dimension-type-two/list-tool-maximum.png)
 
 Add another custom step after the previous step added and replace the formula for this step of your query with the formula below that calculates the max value from the SalesRepID and add one to it or establish the value one as the seed for new records in case your table doesn't have any records
 ```try #"Calculated maximum" +1 otherwise 1```
 
 The output of the LastID query for this example is the number four.
 
-![The number four as the output of the query LastID](../data-factory/media/slowly-changing-dimension-type-two/lastid-query-output.png)
+![Screenshot of the data preview of the LastID query showing the number four as the result.](../data-factory/media/slowly-changing-dimension-type-two/lastid-query-output.png)
 
 >[!IMPORTANT]
 >``#"Calculated maximum"`` represents the name of your previous step. If this is not the exact name of your query, modify the formula accordingly to reflect the name of your previous step.
@@ -162,11 +162,11 @@ The output of the LastID query for this example is the number four.
 Reference the **CompareStoM** query where you had the single record for Adrian King in the Northwest region and call this new query "NewRecords". 
 Add a new Index column through the Add column tab in the ribbon that starts from the number zero.
 
-![Adding an index column](../data-factory/media/slowly-changing-dimension-type-two/add-index-column.png)
+![Screenshot of the Index column entry point from within the Add column menu of the ribbon in the Power Query Editor.](../data-factory/media/slowly-changing-dimension-type-two/add-index-column.png)
 
 Check the formula of the step that was created and replace the ```0``` with the name of the query **LastID**. This yields  starting value that represents the new values for your records in the Dimension table.
 
-![Adding an index column with a new start value](../data-factory/media/slowly-changing-dimension-type-two/index-with-new-start-value.png)
+![Screenshot showing the result of the query after the formula for the add index was modified where the result for Adrian King in the new Index column is equal to four.](../data-factory/media/slowly-changing-dimension-type-two/index-with-new-start-value.png)
 
 Rename this Index column to be **SalesRepID**.
 
@@ -182,7 +182,7 @@ It's time to add the missing columns using the Add custom column. Below is a tab
 
 The result now conforms to the schema expected by the Dimension table.
 
-![Table with all new records that need to be added to the Dimension table](../data-factory/media/slowly-changing-dimension-type-two/new-records-table.png)
+![Screenshot of table with all new records that need to be added to the Dimension table.](../data-factory/media/slowly-changing-dimension-type-two/new-records-table.png)
 
 ### Records to update
 
@@ -191,14 +191,14 @@ The result now conforms to the schema expected by the Dimension table.
 
 Using the original Dimension query (Dimension), perform a new **Merge queries as new** operation and select the Source table query as the right table. Select the Hash columns from both tables and select Left anti as the join kind.
 
-![Merge operation between Dimension and Source table using the hash columns and the left anti join kind](../data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png)
+![Screenshot of Merge dialog with thh Dimension and Source tables using the hash columns as column pairs and the left anti join kind being selected as the join kind.](../data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png)
 
 The output is a table with records that are no longer used in the Source table. Make sure to expand the newly created column with table values and only expand the Hash column and the later delete it. 
 Rename the query to be **RecordsToUpdate**.
 
 You now need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will require you to update the values on the EndDate and IsCurrent fields. To do so, you can right select the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.
 
-![Replace IsCurrent values from TRUE to FALSE](../data-factory/media/slowly-changing-dimension-type-two/replace-is-current-value.png)
+![Screenshot of the Replace dialog where the value to find is equals to TRUE and the replace with is FALSE.](../data-factory/media/slowly-changing-dimension-type-two/replace-is-current-value.png)
 
 You can right select the EndDate field and select the **Replace values...** as well. Input a value of 12/31/1999 or any date of your choice as you'll replace this value later on.
 
@@ -212,7 +212,7 @@ This new formula adds a date stamp as to when the logic runs to determine the En
 
 The result of this will be a table with exactly the records that should be updated with their corresponding new values.
 
-![Making the EndDate a dynamic function that adds a date stamp](../data-factory/media/slowly-changing-dimension-type-two/current-time-for-replace.png)
+![Screenshot Making the EndDate a dynamic function that adds a date stamp](../data-factory/media/slowly-changing-dimension-type-two/current-time-for-replace.png)
 
 ### Combining records to add and update into a single table
 
@@ -220,16 +220,15 @@ You can [append](/power-query/append-queries) the query for **NewRecords** with 
 
 To append the queries, be sure to select the **NewRecords** query, go to the home tab of the ribbon and inside the Combine group you find the option to *Append queries as new*. From the Append dialog, make sure to also select the query with the records to update as the second table.
 
-![Append queries with new and updated records](../data-factory/media/slowly-changing-dimension-type-two/append-new-updated-records.png)
+![Screenshot of the Append dialog selecting the first table as NewRecords and the second table as RecordToUpdate.](../data-factory/media/slowly-changing-dimension-type-two/append-new-updated-records.png)
 
 Rename this new query as **StagingTableForUpdates** and it should contain 3 rows. This query is used in the logic to update the dimension table. You can move the SalesRepID or rearrange the columns as you wish. For simplicity and demonstration purposes, this tutorial shows the output of this query using the same order of fields as in the **Dimension** table.
 
-![The query with all records to be added or updated combined](../data-factory/media//slowly-changing-dimension-type-two/staging-table-for-updates.png)
-
+:::image type="content" source="../data-factory/media//slowly-changing-dimension-type-two/staging-table-for-updates.png" alt-text="Screenshot of the query with all records to be added and records that will be updated combined into a single table." lightbox="../data-factory/media//slowly-changing-dimension-type-two/staging-table-for-updates.png":::
 
 ## Logic to update the Dimension table
 
-![Diagram view of the Dataflow Gen2 solution so far](../data-factory/media/slowly-changing-dimension-type-two/diagram-architecture-dataflow-gen2.png)
+![Diagram view of the Dataflow Gen2 solution until the StagingTableForUpdates query was created.](../data-factory/media/slowly-changing-dimension-type-two/diagram-architecture-dataflow-gen2.png)
 
 The solution so far provides a query with all records for an upsert operation into the destination. From this point, you can define the logic that you wish to use to load your data to the Dimension table but you typically have two:
 
@@ -246,21 +245,21 @@ The first logic to implement is the records from the original Dimension table to
 
 With the **Dimension** query selected, go to the Home tab in the Ribbon and use the **Merge queries as new** option. In the Merge dialog, select the **RecordsToUpdate** query as the right table. Select the **SalesRepID** columns from both columns and use the *Left anti* as the join kind. Select Ok.
 
-![Merge dialog with the logic](../data-factory/media/slowly-changing-dimension-type-two/only-records-to-keep-from-original-dimension-table.png)
+![Screenshot of the Merge dialog using the Dimension and RecordsToUpdate tables joined by the SalesRepID column and using a left anti join as the join kind.](../data-factory/media/slowly-changing-dimension-type-two/only-records-to-keep-from-original-dimension-table.png)
 
 Make sure to expand the *Hash* field from the newly created column. Once expanded, you can delete that column.
 
 Now that you know exactly what records need to be kept from the original Dimension table, you can append the **StagingTableForUpdates** to the existing query to have a query will all records that should be in the **Dimension** table. To do that, in the Home tab of the ribbon select the option to **Append** within the existing query and append the **StagingTableForUpdates** query.
 
-![Append dialog for the final query to upload all data to Dimension table ](../data-factory/media/slowly-changing-dimension-type-two/append-staging-table-for-updates.png)
+![Screenshot of the Append dialog for the final query to upload all data to Dimension table.](../data-factory/media/slowly-changing-dimension-type-two/append-staging-table-for-updates.png)
 
 You can sort this table using the **SalesRepID** field in ascending order and the output can be used with the data destination feature to load the data to the Dimension table.
 
-![Data preview of the final dimension table before it gets a definition for a data destination](../data-factory/media/slowly-changing-dimension-type-two/final-dimension-table.png)
+![Screenshot of the data preview for the final dimension table before it gets a definition for a data destination.](../data-factory/media/slowly-changing-dimension-type-two/final-dimension-table.png)
 
 You can read more about how to set a data destination for your query and load the output of the query to your **Dimension** table from the article on [Dataflow Gen2 data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md).
 
-![Final diagram view that showcases the full solution](../data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png)
+:::image type="content" source="../data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png" alt-text="Diagram view that showcases the final solution with the data destination logic incorporated into it." lightbox="../data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png":::
 
 >[!NOTE]
 >Take into consideration that in Dataflow Gen2 you can leverage a staging mechanism at the query level. Read more about the [staging mechanism in Dataflow Gen2](../data-factory/data-in-staging-artifacts.md)
