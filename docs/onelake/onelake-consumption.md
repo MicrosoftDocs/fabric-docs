@@ -39,6 +39,8 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 | **OneLake Iterative Write via Redirect** | OneLake Iterative Write via Redirect | Per 100 | 1300 CU seconds |
 | **OneLake Other Operations via Redirect** | OneLake Other Operations via Redirect | Per 10,000 | 104 CU seconds |
 
+For files > 4 MB in size, OneLake counts a transaction for every 4 MB block of data read or written. For files < 4 MB, a full transaction will be counted. For example, if you do 10,000 read operations and each file read is 16 MB in size, you will be charged for 40,000 transactions or 416 CU seconds.
+
 This table defines CU consumption when OneLake data is accessed using applications that proxy requests.
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
