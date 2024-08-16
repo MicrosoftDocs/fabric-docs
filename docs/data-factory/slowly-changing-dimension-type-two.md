@@ -12,7 +12,7 @@ ms.date: 08/16/2024
 
 >[!TIP]
 >You can [download the Power Query Template file](https://github.com/microsoft/DataFactory/raw/main/Slowly%20Changing%20Dimension%20Type%202.pqt) that has the full Slowly changing dimension type 2 pattern solution to follow along this tutorial.
->To learn more about how to use a Power Query template file, check out the documentation article on [Power Query Templates](https://learn.microsoft.com/power-query/power-query-template).
+>To learn more about how to use a Power Query template file, check out the documentation article on [Power Query Templates](/power-query/power-query-template).
 
 Slowly changing dimension type 2 is a method used in data warehousing to manage and track historical changes in dimension data. When an attribute value changes, a new record is created with a unique identifier, and the old record is retained. It allows for a complete historical record of changes over time, enabling accurate reporting and analysis based on different points in time.
 
@@ -90,9 +90,9 @@ In order to identify the changes, you first need to take a snapshot of your sour
     * Using Natural keys
     * Using Hashing techniques to create lookup fields
     * Explicit Joins between tables
-* Custom logic using dynamic record matching with [Table.SelectRows](https://learn.microsoft.com/powerquery-m/table-selectrows)
+* Custom logic using dynamic record matching with [Table.SelectRows](/powerquery-m/table-selectrows)
 
-The tutorial demonstrates a hashing technique to use a single value that could be created within both tables for a JOIN, also known as [Merge operation](https://learn.microsoft.com/power-query/merge-queries-overview), to compare the records from the two tables.
+The tutorial demonstrates a hashing technique to use a single value that could be created within both tables for a JOIN, also known as [Merge operation](/power-query/merge-queries-overview), to compare the records from the two tables.
 
 Once you load the Source table into a Dataflow Gen2, you can select the **Add column** tab from the ribbon and use the Add Custom column option. In the Custom column dialog you can create a new column with the name Hash with the Text data type and using the formula:
 
@@ -216,7 +216,7 @@ The result of this will be a table with exactly the records that should be updat
 
 ### Combining records to add and update into a single table
 
-You can [append](https://learn.microsoft.com/power-query/append-queries) the query for **NewRecords** with the one that has records to be updated (**RecordsToUpdate**) into a single query to simplify the following process to update your dimension table.
+You can [append](/power-query/append-queries) the query for **NewRecords** with the one that has records to be updated (**RecordsToUpdate**) into a single query to simplify the following process to update your dimension table.
 
 To append the queries, be sure to select the **NewRecords** query, go to the home tab of the ribbon and inside the Combine group you find the option to *Append queries as new*. From the Append dialog, make sure to also select the query with the records to update as the second table.
 
@@ -258,7 +258,7 @@ You can sort this table using the **SalesRepID** field in ascending order and th
 
 ![Data preview of the final dimension table before it gets a definition for a data destination](../data-factory/media/slowly-changing-dimension-type-two/final-dimension-table.png)
 
-You can read more about how to set a data destination for your query and load the output of the query to your **Dimension** table from the article on [Dataflow Gen2 data destinations and managed settings](../data-factory/dataflow-gen2-data-destinations-and-managed-settings.md).
+You can read more about how to set a data destination for your query and load the output of the query to your **Dimension** table from the article on [Dataflow Gen2 data destinations and managed settings](/../data-factory/dataflow-gen2-data-destinations-and-managed-settings.md).
 
 ![Final diagram view that showcases the full solution](../data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png)
 
