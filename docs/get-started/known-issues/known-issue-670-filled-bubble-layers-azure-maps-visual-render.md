@@ -4,7 +4,7 @@ description: A known issue is posted where the filled or bubble layers on Azure 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/11/2024
+ms.date: 08/16/2024
 ms.custom: known-issue-670
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-670
 
 The Azure Maps APIs used by Azure maps visual had a bug where place geocoding results, such as geocoding for a place **Washington**, **Seattle**, **King County**, as opposed to an address, returned empty results. You see filled or bubble layers in the Azure maps visual not rendering. The geocoding bug was mitigated, but Power BI cached some of the empty result sets, which could cause you to continue to see blank geocoding results. The cached results last up to three months, so if affected, you can clear your geocoding cache using the workarounds provided.
 
-**Status:** Open
+**Status:** Fixed: August 16, 2024
 
 **Product Experience:** Power BI
 
