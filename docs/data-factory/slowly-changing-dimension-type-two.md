@@ -212,7 +212,7 @@ This new formula adds a date stamp as to when the logic runs to determine the En
 
 The result of this will be a table with exactly the records that should be updated with their corresponding new values.
 
-![Screenshot Making the EndDate a dynamic function that adds a date stamp](../data-factory/media/slowly-changing-dimension-type-two/current-time-for-replace.png)
+![Screenshot Making the EndDate a dynamic function that adds a date stamp.](../data-factory/media/slowly-changing-dimension-type-two/current-time-for-replace.png)
 
 ### Combining records to add and update into a single table
 
