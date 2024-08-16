@@ -5,7 +5,7 @@ author: ptyx507x
 ms.author: miescobar
 ms.reviewer: jburchel
 ms.topic: concept
-ms.date: 08/07/2024
+ms.date: 08/16/2024
 ---
 
 # Slowly changing dimension type 2 
