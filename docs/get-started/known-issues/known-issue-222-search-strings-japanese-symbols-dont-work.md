@@ -6,7 +6,7 @@ ms.author: mihart
 ms.topic: troubleshooting  
 ms.service: powerbi
 ms.subservice: pbi-troubleshooting
-ms.date: 01/17/2024
+ms.date: 08/16/2024
 ms.custom: known-issue-222
 ---
 
@@ -14,12 +14,11 @@ ms.custom: known-issue-222
 
 In the Power BI service, you may see unexpected results when the search string contains Japanese symbols. Search strings that include Japanese symbols don't return matching content in the search results.
 
-**APPLIES TO:** :::image type="icon" source="../../includes/media/yes-icon.svg" border="false"::: Power BI Service
+**APPLIES TO:** Power BI
 
-**Status:** Open
+**Status:** Removed: August 16, 2024
 
-**Problem area:** Consume and View.
-
+**Problem area:** Consume and View
 
 ## Symptoms
 
@@ -27,7 +26,7 @@ When using the global search box in the header of the Power BI service, you may 
 
 ## Solutions and workarounds
 
-No workarounds at this time. When the fix is released, this article is updated.
+As [documented](/power-bi/consumer/end-user-search-sort#limitations), search currently supports only English characters.
 
 ## Related content
 
