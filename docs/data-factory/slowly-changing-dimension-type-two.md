@@ -190,7 +190,7 @@ Using the original Dimension query (Dimension), perform a new **Merge queries as
 The output is a table with records that are no longer used in the Source table. Make sure to expand the newly created column with table values and only expand the Hash column and the later delete it. 
 Rename the query to be **RecordsToUpdate**.
 
-You now need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will simply require you to update the values on the EndDate and IsCurrent fields. To do so, you can right select the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.
+You now need to update the records from the Dimension table to reflect this change in the source table. The changes are trivial and will require you to update the values on the EndDate and IsCurrent fields. To do so, you can right select the IsCurrent field and select the option to **Replace values...**. Within the Replace value dialog you can replace the value TRUE with FALSE.
 
 ![Replace IsCurrent values from TRUE to FALSE](/fabric/data-factory/media/slowly-changing-dimension-type-two/replace-is-current-value.png)
 

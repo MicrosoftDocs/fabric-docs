@@ -663,12 +663,6 @@
         href: dataflows-gen2-save-draft.md
       - name: How to obfuscate data
         href: data-obfuscation-with-delphix.md
-      - name: Slowly changing dimension patterns 
-        items:
-          - name: Overview
-            href: slowly-changing-dimensions.md 
-          - name: Slowly Changing Dimension Type 2
-            href: slowly-changing-dimension-type-two.md
     - name: Tutorials
       items:  
       - name: Use a dataflow in a pipeline
@@ -677,6 +671,8 @@
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
     - name: Fabric Dataflows for ADF Mapping Data Flow users
       href: guide-to-dataflows-for-mapping-data-flow-users.md
+    - name: Slowly Changing Dimension Type 2
+      href: slowly-changing-dimension-type-two.md    
   - name: FAQ and Troubleshooting
     items:
     - name: Frequently asked questions
