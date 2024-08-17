@@ -33,8 +33,8 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
-| **OneLake Read via Redirect** | OneLake Read via Redirect | Every 4 MB, per 10,000 | 104 CU seconds |
-| **OneLake Write via Redirect** | OneLake Write via Redirect | Every 4 MB, per 10,000 | 1626 CU seconds |
+| **OneLake Read via Redirect** | OneLake Read via Redirect | Every 4 MB, per 10,000* | 104 CU seconds |
+| **OneLake Write via Redirect** | OneLake Write via Redirect | Every 4 MB, per 10,000* | 1626 CU seconds |
 | **OneLake Iterative Read via Redirect** | OneLake Iterative Read via Redirect | Per 10,000 | 1626 CU seconds |
 | **OneLake Iterative Write via Redirect** | OneLake Iterative Write via Redirect | Per 100 | 1300 CU seconds |
 | **OneLake Other Operations via Redirect** | OneLake Other Operations via Redirect | Per 10,000 | 104 CU seconds |
@@ -43,11 +43,13 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
-| **OneLake Read via Proxy** | OneLake Read via Proxy | Every 4 MB, per 10,000 | 306 CU seconds |
-| **OneLake Write via Proxy** | OneLake Write via Proxy | Every 4 MB, per 10,000 | 2650 CU seconds |
+| **OneLake Read via Proxy** | OneLake Read via Proxy | Every 4 MB, per 10,000* | 306 CU seconds |
+| **OneLake Write via Proxy** | OneLake Write via Proxy | Every 4 MB, per 10,000* | 2650 CU seconds |
 | **OneLake Iterative Read via Proxy** | OneLake Iterative Read via Proxy | Per 10,000 | 4798 CU seconds |
 | **OneLake Iterative Write via Proxy** | OneLake Iterative Write via Proxy | Per 100 | 2117.95 CU seconds |
 | **OneLake Other Operations** | OneLake Other Operations | Per 10,000 | 306 CU seconds |
+
+*For files > 4 MB in size, OneLake counts a transaction for every 4 MB block of data read or written. For files < 4 MB, a full transaction is counted. For example, if you do 10,000 read operations via Redirect and each file read is 16 MB in size, your capacity consumption is 40,000 transactions or 416 CU seconds.
 
 ## Shortcuts
 
@@ -55,7 +57,7 @@ When accessing data using OneLake shortcuts, the transaction usage counts agains
 
 ## Paused Capacity
 
-When a capacity is paused, the data stored will continue to be billed using the pay-as-you-go rate per GB. All transactions are rejected when a capacity is paused, so no Fabric CUs are consumed due to OneLake transactions. To access your data or delete a Fabric item, the capacity needs to be resumed. You can delete the workspace while a capacity is paused.
+When a capacity is paused, the data stored is continued to be billed using the pay-as-you-go rate per GB. All transactions are rejected when a capacity is paused, so no Fabric CUs are consumed due to OneLake transactions. To access your data or delete a Fabric item, the capacity needs to be resumed. You can delete the workspace while a capacity is paused.
 
 ## Disaster recovery
 
