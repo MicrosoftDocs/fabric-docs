@@ -80,8 +80,13 @@ The following limits apply to all types of NuGet packages, both in development m
 - Only `BE` and `FE` subfolders are permitted. Any other subfolders or files located outside these folders result in an upload error.
 - The `BE` folder accepts only `.xml` files. Any other file type result in an upload error.
 - A maximum of 10 item files is allowed, meaning the `BE` folder can contain one `WorkloadManifest.xml` and up to 10 `Item.xml` files. Having more than 10 item files in the folder result in an upload error.
+- The `Assets` subfolder must reside under the `FE` folder. It can contain up to 15 files, with each file being no larger than 1.5 MB.
+- Only the following file types are permitted in the `Assets` subfolder: `.jpeg`, `.jpg`, `.png`.
+- The `FE` folder can contain a maximum of 10 item files plus one `product.json` file.
+- Each asset within the `Assets` folder must be referenced within the item files. Any asset referenced from an item file that is missing in the `Assets` folder will result in an upload error.
 - Filenames for items must be unique. Duplicate filenames result in an upload error. 
 - Filenames must contain alphanumeric (English) characters or hyphens only and cannot exceed a length of 32 characters. Using other characters or exceeding this length result in an upload error.
+- The total package size must not exceed 20 MB.
 - Please refer to [the workload manifest definition](./backend-manifest.md) for manifest specific limitations.
 
 ### Local development mode (devmode)
