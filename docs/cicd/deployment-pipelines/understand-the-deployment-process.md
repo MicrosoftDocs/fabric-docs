@@ -127,7 +127,7 @@ In many cases, when you have a small change such as adding or removing a table, 
 
 ### Requirements for deploying to a stage with an existing workspace
 
-Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a contributor of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity-license) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
+Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a contributor of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
 
 ## Folders in deployment pipelines (preview)
 
