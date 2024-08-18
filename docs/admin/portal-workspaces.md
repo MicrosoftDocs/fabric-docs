@@ -174,9 +174,31 @@ After the deleted workspace has been restored as an app workspace, it's just lik
 
 Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities by choosing the workspace license mode. Such movement might be between capacities in different regions.
 
-In Microsoft Fabric, such movement currently has the following restrictions:
+To move a workspace from one capacity to another, you need to be a workspace admin. Follow the steps below to move a workspace to a different capacity.
 
-* Workspaces with non Power BI Fabric items can't move from Premium or Fabric license mode to Pro or Premium Per User license mode..
+1. In Fabric, select **Workspaces**.
+
+2. From the list of workspaces, locate the workspace you want to move, and select **More options** (...).
+
+3. Select **Workspace settings**.
+
+4. In the *Workspace settings* pane, select **License info**.
+
+5. In the *License Configuration* section, select **Edit**.
+
+6. From the **License mode** list, select the license mode you want the workspace to have. Workspaces with a PPU license mode are moved to the orgainzation's PPU capacity.
+
+7. From the **License capacity** dropdown, select the capacity you want to move your workspace to.
+
+8. Select **Select license**.
+
+### Considerations and limitations
+
+Moving workspaces from one capacity to another, has the following restrictions:
+
+* When you move a workspace, all jobs related to items in the workspace get cancelled.
+
+* Workspaces with non Power BI Fabric items can't move from Premium or Fabric license mode to Pro or Premium Per User license mode.
 
 * Non Power BI Fabric items can't move between regions.
 
@@ -196,4 +218,4 @@ This means the following:
 
 ## Related content
 
-- [About the admin portal](admin-center.md)
+* [About the admin portal](admin-center.md)
