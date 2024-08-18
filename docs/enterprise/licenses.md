@@ -13,7 +13,7 @@ ms.date: 08/18/2024
 
 # Microsoft Fabric concepts and licenses
 
-[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a platform that allows users to get, create, share, and visualize data using an array of tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [F or P capacity](#capacity-license), and at least one [per-user license](#per-user-licenses).
+[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a platform that allows users to get, create, share, and visualize data using an array of tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [F or P capacity](#capacity), and at least one [per-user license](#per-user-licenses).
 
 A Microsoft Fabric deployment can be organized in various ways according to your organizational needs. This illustration shows two different ways of deploying Fabric in an organization. Retail company A has a single Microsoft Entra tenant for the entire company. Retail company B has two Microsoft Entra tenants, which have complete separation between them, one for military products and another for commercial products. Both companies deployed Fabric capacities according to their geographical location.
 
@@ -80,7 +80,7 @@ Workspaces can be created in (or assigned to) Microsoft Fabric capacities. The w
 | [Premium per-user](/power-bi/enterprise/service-premium-per-user-faq) (PPU) | Collaborate using most of the [Power BI Premium features](/power-bi/enterprise/service-premium-features), including dataflows, and datamarts. |To access a Premium Per User (PPU) workspace you need a PPU license or a Power BI individual trial. | Power BI |
 | [Premium per capacity](/power-bi/enterprise/service-premium-what-is) (P SKUs)   | Create Power BI content. Share, collaborate on, and distribute Power BI content. | To create workspaces and share content you need a Pro or PPU license. To view content, you need a Microsoft Fabric (Free) license with a viewer role on the workspace. If you have any other role on the workspace, you need a Pro or a PPU license, or a Power BI individual trial. | All Fabric experiences |
 | [Embedded](/power-bi/developer/embedded/embedded-capacity#power-bi-embedded) (A SKUs) | Embed content in an Azure capacity. | To create workspaces and share content you need a Pro, Premium Per User (PPU) or a Power BI individual trial license. | Power BI |
-| Fabric capacity (F SKUs) | Create, share, collaborate on, and distribute Fabric content. | To view Power BI content with a Microsoft Fabric free per user license, your capacity must reside on an F64 or larger [SKU](#capacity-license), and you need to have a viewer role on the workspace. | All Fabric experiences |
+| Fabric capacity (F SKUs) | Create, share, collaborate on, and distribute Fabric content. | To view Power BI content with a Microsoft Fabric free per user license, your capacity must reside on an F64 or larger [SKU](#capacity), and you need to have a viewer role on the workspace. | All Fabric experiences |
 | Trial | Try Fabric features and experiences for 60 days. | Microsoft Fabric (Free) license | All Fabric experiences |
 
 ## Per user licenses
