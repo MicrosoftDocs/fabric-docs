@@ -8,20 +8,29 @@ ms.topic: conceptual
 ms.date: 08/14/2024
 ---
 
-# Time Series Anomaly Detection in Microsoft Fabric - overview
+# Time series anomaly detection in Microsoft Fabric - overview
 
-The Multivariate Anomaly Detection APIs further enable developers by easily integrating advanced AI for detecting anomalies from groups of metrics, without the need for machine learning knowledge or labeled data. Dependencies and inter-correlations between up to 300 different signals are now automatically counted as key factors. This new capability helps you to proactively protect your complex systems such as software applications, servers, factory machines, spacecraft, or even your business, from failures.
+What is multivariate anomaly detection? Multivariate anomaly detection is a method of detecting anomalies in a system by analyzing multiple signals or metrics together. This method is particularly useful when the signals are interdependent and the anomalies are not easily detected by analyzing each signal individually. Multivariate anomaly detection can be used in a variety of applications, such as monitoring the health of complex systems, detecting fraud in financial transactions, and identifying unusual patterns in network traffic.
 
-Imagine 20 sensors from an auto engine generating 20 different signals like rotation, fuel pressure, bearing, etc. The readings of those signals individually may not tell you much about system level issues, but together they can represent the health of the engine. When the interaction of those signals deviates outside the usual range, the multivariate anomaly detection feature can sense the anomaly like a seasoned expert. The underlying AI models are trained and customized using your data such that it understands the unique needs of your business. With the new APIs in Anomaly Detector, developers can now easily integrate the multivariate time series anomaly detection capabilities into predictive maintenance solutions, AIOps monitoring solutions for complex enterprise software, or business intelligence tools.
+For example, consider a system that monitors the performance of a fleet of vehicles. The system collects data on various metrics, such as speed, fuel consumption, and engine temperature. By analyzing these metrics together, the system can detect anomalies that would not be apparent by analyzing each metric individually. For example, a sudden increase in fuel consumption combined with a decrease in engine temperature could indicate a problem with the engine, even if each metric on its own is within normal range.In contrast, univariate anomaly detection enables you to monitor and detect abnormalities in a single variable.
 
-In contrast, univariate anomaly detection enables you to monitor and detect abnormalities in a single variable.
+To perform multivariate anomaly detection in Microsoft Fabric, a unique solution is given. The solution is based on a graph attention network (GAT) that captures the correlations between different time series and detects anomalies in real-time. The GAT model is trained on historical data to learn the relationships between different time series and is then used to predict anomalies in real-time data. The model is able to detect anomalies that would not be detected by analyzing each time series individually, making it a powerful tool for monitoring the health of complex systems.
 
-Reference: Multivariate Time-Series Anomaly Detection via Graph Attention Network DOI:10.1109/ICDM50108.2020.00093
+## When to use multivariate anomaly detection
 
-- For [univariate analysis](https://en.wikipedia.org/wiki/Univariate_(statistics)#Analysis), KQL contains native function [series_decompose_anomalies()](/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction) that can perform process thousands of time series in seconds. For
-    further info on using this function take a look at [Time series anomaly detection & forecasting in Azure Data Explorer](/azure/data-explorer/anomaly-detection).
-- For [multivariate analysis](https://en.wikipedia.org/wiki/Multivariate_statistics#Multivariate_analysis),
-    there are few KQL library functions leveraging few known multivariate analysis algorithms in [scikit-learn](https://scikit-learn.org/stable/index.html), taking advantage of [ADX capability to run inline Python as part of the KQL query](/azure/data-explorer/kusto/query/pythonplugin?pivots=azuredataexplorer). For further info see [Multivariate Anomaly Detection in Azure Data Explorer - Microsoft Community Hub](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/multivariate-anomaly-detection-in-azure-data-explorer/ba-p/3689616).
+Add information about when this solution works, and when it doesn't.
 
+## Solution components
 
-Suppose we monitor two car metrics: speed and engine rpm. Having 0 for specific metric is not anomalous – either the car doesn’t move, or its engine is off. But measuring speed of 40 km/hour with 0 rpm is definitely anomalous - the car might be sliding or pulled. To detect these types of anomalies we need to use multivariate analysis methods that jointly analyze time series of multiple metrics.
+This solution relies on the following components:
+
+* Eventhouse:
+* OneLake:
+* Algorithm for multivariate anomaly detection: ?Name? 
+    Reference: [Multivariate Time-Series Anomaly Detection via Graph Attention Network](https://arxiv.org/pdf/2009.02040)
+* KQL queries with the XX python ML library ?Explain?
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Multivariate Anomaly Detection](multivariate-anomaly-detection.md)

@@ -277,6 +277,12 @@ items:
       href: vector-database.md
     - name: "Tutorial: Use an Eventhouse as a vector database"
       href: vector-database-eventhouse.md
+  - name: Multivariate anomaly detection
+    items:
+    - name: Multivariate anomaly detection overview
+      href: multivariate-anomaly-overview.md
+    - name: Multivariate anomaly detection tutorial
+      href: multivariate-anomaly-detection.md
   - name: Notebooks
     items:
     - name: Use Fabric notebooks with data from a KQL database
