@@ -45,16 +45,17 @@ Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you sho
 
 [Introduce the procedure.]
 
-1. Log into the [Microsoft Purview compliance portal](https://go.microsoft.com/fwlink/p/?linkid=2077149).
-
-1. Expand the **Data loss prevention** solution in the navigation pane, select **Policies**, and choose **Create policy**.
+1. Open the [data loss prevention policies page](https://purview.microsoft.com/datalossprevention/policies) in the Microsoft Purview portal and select **+ Create policy**.
 
     :::image type="content" source="./media/data-loss-prevention-configure/create-policy.png" alt-text="Screenshot of D L P create policy page.":::
 
+    > [!NOTE]
+    > The **+ Create policy** option is only available if the prerequistes have been met.
+
 1. Choose the **Custom** category and then the **Custom policy** template.
     
-    >[!NOTE]
-    >No other categories or templates are currently supported.
+    > [!NOTE]
+    > No other categories or templates are currently supported.
 
     :::image type="content" source="./media/data-loss-prevention-configure/choose-custom-policy.png" alt-text="Screenshot of D L P choose custom policy page.":::
  
