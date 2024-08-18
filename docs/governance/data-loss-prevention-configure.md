@@ -52,14 +52,12 @@ Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you sho
     > [!NOTE]
     > The **+ Create policy** option is only available if the prerequistes have been met.
 
-1. Choose the **Custom** category and then the **Custom policy** template.
+1. Choose the **Custom** category and then the **Custom policy** template. When done, select **Next**.
     
+    :::image type="content" source="./media/data-loss-prevention-configure/choose-custom-policy.png" alt-text="Screenshot of D L P choose custom policy page.":::
+
     > [!NOTE]
     > No other categories or templates are currently supported.
-
-    :::image type="content" source="./media/data-loss-prevention-configure/choose-custom-policy.png" alt-text="Screenshot of D L P choose custom policy page.":::
- 
-    When done, select **Next**.
 
 1. Name the policy and provide a meaningful description.
 
