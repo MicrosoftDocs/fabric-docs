@@ -345,6 +345,4 @@ items:
       displayName: data activator, trigger, reflex, faq
       href: ../data-activator/data-activator-troubleshooting.md
 - name: KQL reference
-  items:
-  - name: Kusto Query Language
-    href: kusto-tocs/query/toc.yml
+  href: kusto-tocs/query/toc.yml
