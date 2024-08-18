@@ -59,36 +59,24 @@ Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you sho
     > [!NOTE]
     > No other categories or templates are currently supported.
 
-1. Name the policy and provide a meaningful description.
+1. Name the policy and provide a meaningful description. When done, select **Next**.
 
     :::image type="content" source="./media/data-loss-prevention-configure/name-policy.png" alt-text="Screenshot of D L P policy name description section.":::
- 
-    When done, select **Next**.
 
 1. Select **Next** when you get to the Assign admin units page.
 
     :::image type="content" source="./media/data-loss-prevention-configure/admin-units.png" alt-text="Screenshot of D L P policy admin units section.":::
 
-1. Enable Power BI as a location for the DLP policy. **Disable all other locations**. Currently, DLP policies for Power BI must specify Power BI as the sole location.
+1. Select **Fabric and Power BI workspaces** as the location for the DLP policy. All other locations will be disabled, as DLP policies for Fabric and Power BI only support this location.
 
     :::image type="content" source="./media/data-loss-prevention-configure/choose-location.png" alt-text="Screenshot of D L P choose location page.":::
 
-    By default the policy will apply to all workspaces. Alternatively, you can specify particular workspaces to include in the policy as well as workspaces to exclude from the policy.
+    By default the policy will apply to all workspaces. However, you can specify particular workspaces to include in the policy as well as workspaces to exclude from the policy. To specify specific workspaces for inclusion or exclusion, select **Edit**. Then:
     
     >[!NOTE]
     > DLP actions are supported only for workspaces hosted in Fabric or Premium capacities.
-
-    To specify specific workspaces, or to exclude workspaces, select **Edit**. The **Scope for Fabric and Power BI workspaces** opens.
-
-    To exclude workspaces, select the **Exclude workspaces** checkbox and then choose **+ Exclude workspaces**.
-
-    To specify particular workspaces, select the Specific workspaces radio button and then choose **+ Include workspaces**.
-
-    In either case, a list of workspaces will appear. Choose the workspaces you want to exlude or include.
-
-    ![Screenshot of D L P choose workspaces dialog.](./media/data-loss-prevention-configure/power-bi-dlp-choose-workspaces.png)
  
-    After enabling Power BI as a DLP location for the policy and choosing which workspaces the policy will apply to, select **Next**.
+    After you've enabled Fabric and Power BI as the DLP location for the policy and choosing which workspaces the policy will apply to, select **Next**.
 
 1. The **Define policy settings** page appears. Choose **Create or customize advanced DLP rules** to begin defining your policy.
 
