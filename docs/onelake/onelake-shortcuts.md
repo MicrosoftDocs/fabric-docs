@@ -127,6 +127,7 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 - **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
 - **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute
 - **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
+- **Workspace Identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
 
 > [!NOTE]
 > You must have Hierarchical Namespaces enabled on your ADLS Gen 2 storage account.
