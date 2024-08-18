@@ -37,7 +37,7 @@ items:
   - name: "Explore your data visually in Real-Time Dashboards"
     href: user-flow-4.md
   - name: "Set alerts based on Fabric events"
-    href: user-flow-5.md 
+    href: user-flow-5.md
 - name: Get data
   items:
   - name: Get, process, and route events
@@ -46,17 +46,17 @@ items:
       href: event-streams/overview.md
     - name: Event streams capacity consumption
       href: event-streams/monitor-capacity-consumption.md
-    - name: Create eventstreams 
-      items: 
+    - name: Create eventstreams
+      items:
       - name: Create an eventstream
         href: event-streams/create-manage-an-eventstream.md
-      - name: Create default and derived streams 
+      - name: Create default and derived streams
         href: event-streams/create-default-derived-streams.md
-      - name: Create eventstreams for discrete events 
+      - name: Create eventstreams for discrete events
         href: event-streams/create-eventstreams-discrete-events.md
-      - name: Edit and publish eventstreams 
+      - name: Edit and publish eventstreams
         href: event-streams/edit-publish.md
-      - name: Route events based on content 
+      - name: Route events based on content
         href: event-streams/route-events-based-on-content.md
     - name: Add sources to eventstreams
       items:
@@ -70,29 +70,29 @@ items:
         href: event-streams/add-source-custom-app.md
       - name: Sample data
         href: event-streams/add-source-sample-data.md
-      - name: Azure SQL Database Change Data Capture 
+      - name: Azure SQL Database Change Data Capture
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
-      - name: PostgreSQL Database Change Data Capture 
+      - name: PostgreSQL Database Change Data Capture
         href: event-streams/add-source-postgresql-database-change-data-capture.md
-      - name: MySQL Database Change Data Capture 
+      - name: MySQL Database Change Data Capture
         href: event-streams/add-source-mysql-database-change-data-capture.md
-      - name: Azure Cosmos DB Change Data Capture 
+      - name: Azure Cosmos DB Change Data Capture
         href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-      - name: Google Cloud Pub/Sub 
+      - name: Google Cloud Pub/Sub
         href: event-streams/add-source-google-cloud-pub-sub.md
-      - name: Amazon Kinesis Data Streams 
+      - name: Amazon Kinesis Data Streams
         href: event-streams/add-source-amazon-kinesis-data-streams.md
-      - name: Confluent Cloud Kafka 
+      - name: Confluent Cloud Kafka
         href: event-streams/add-source-confluent-kafka.md
-      - name: Fabric Workspace Item events 
+      - name: Fabric Workspace Item events
         href: event-streams/add-source-fabric-workspace.md
-      - name: Azure Blob Storage events 
+      - name: Azure Blob Storage events
         href: event-streams/add-source-azure-blob-storage.md
     - name: Add destinations to eventstreams
       items:
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations.md
-      - name: Derived stream 
+      - name: Derived stream
         href: event-streams/add-destination-derived-stream.md
       - name: KQL Database
         href: event-streams/add-destination-kql-database.md
@@ -146,7 +146,7 @@ items:
       href: get-data-onelake.md
     - name: Get data from Eventstream
       href: get-data-eventstream.md
-    - name: Get data from Real-Time hub 
+    - name: Get data from Real-Time hub
       href: get-data-real-time-hub.md
     - name: Configure KQL Database in a data pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
@@ -197,18 +197,18 @@ items:
     - name: Get data from Power BI
       href: ../data-activator/data-activator-get-data-power-bi.md
     - name: Create alerts from a Real-Time Dashboard
-      href: ../data-activator/data-activator-get-data-real-time-dashboard.md    
+      href: ../data-activator/data-activator-get-data-real-time-dashboard.md
     - name: Get data from Eventstreams
       href: ../data-activator/data-activator-get-data-eventstreams.md
 - name: Store data
   items:
-  - name: Eventhouse 
+  - name: Eventhouse
     items:
-    - name: Eventhouse overview 
+    - name: Eventhouse overview
       href: eventhouse.md
-    - name: Create an eventhouse 
+    - name: Create an eventhouse
       href: create-eventhouse.md
-    - name: Manage and monitor an eventhouse 
+    - name: Manage and monitor an eventhouse
       href: manage-monitor-eventhouse.md
   - name: KQL Database
     items:
@@ -237,12 +237,12 @@ items:
       - name: Enable Python plugin
         href: python-plugin.md
     - name: Management commands
-      href: management/toc.yml
+      href: kusto-tocs/management/toc.yml
     - name: API
-      href: api/toc.yml
+      href: kusto-tocs/api/toc.yml
     - name: OneLake
       items:
-      - name: Eventhouse OneLake availability 
+      - name: Eventhouse OneLake availability
         href: event-house-onelake-availability.md
       - name: Create OneLake shortcuts in a KQL database
         href: onelake-shortcuts.md
@@ -271,7 +271,7 @@ items:
     - name: Sample gallery
       displayName: Query sample data
       href: sample-gallery.md
-  - name: Vector database 
+  - name: Vector database
     items:
     - name: Eventhouse as a vector database overview
       href: vector-database.md
@@ -287,21 +287,21 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
-    - name: Create a Real-Time Dashboard 
+    - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
-    - name: Explore data in Real-Time Dashboard tiles 
+    - name: Explore data in Real-Time Dashboard tiles
       href: dashboard-explore-data.md
-    - name: Customize Real-Time Dashboard visuals 
+    - name: Customize Real-Time Dashboard visuals
       href: dashboard-visuals-customize.md
-    - name: Apply conditional formatting in Real-Time Dashboards 
+    - name: Apply conditional formatting in Real-Time Dashboards
       href: dashboard-conditional-formatting.md
-    - name: Use parameters in Real-Time Dashboards 
+    - name: Use parameters in Real-Time Dashboards
       href: dashboard-parameters.md
-    - name: Real-Time Dashboard-specific visuals 
+    - name: Real-Time Dashboard-specific visuals
       href: dashboard-visuals.md
     - name: Create alerts from a Real-Time Dashboard
       displayName: trigger, data activator, reflex
-      href: ../data-activator/data-activator-get-data-real-time-dashboard.md    
+      href: ../data-activator/data-activator-get-data-real-time-dashboard.md
   - name: Power BI
     items:
     - name: Visualize data in a Power BI report
@@ -325,7 +325,7 @@ items:
       href: ../data-activator/data-activator-get-data-power-bi.md
     - name: Create alerts from a Real-Time Dashboard
       displayName: alert, trigger, data activator, reflex
-      href: ../data-activator/data-activator-get-data-real-time-dashboard.md    
+      href: ../data-activator/data-activator-get-data-real-time-dashboard.md
     - name: Get data from Eventstreams
       href: ../data-activator/data-activator-get-data-eventstreams.md
   - name: Create objects and alerts
@@ -347,7 +347,4 @@ items:
 - name: KQL reference
   items:
   - name: Kusto Query Language
-    href: kusto-query-language/toc.yml
-  - name: Functions library
-    href: functions-library/toc.yml
-    
+    href: kusto-tocs/query/toc.yml
