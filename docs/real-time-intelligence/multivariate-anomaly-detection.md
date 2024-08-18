@@ -23,8 +23,8 @@ Specifically, in this tutorial you will:
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
-* Download the notebook from the GitHub repo
 * Download the sample data from the GitHub repo
+* Download the notebook from the GitHub repo
 
 ## Enable OneLake availability
 
@@ -79,6 +79,8 @@ In this step, you create a [OneLake shortcut](../onelake/create-onelake-shortcut
 
 ## Create a Spark environment
 
+For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md).
+
 1. In the experience switcher, choose **Data Engineering**. If you are already in the Data Engineering experience, browse to **Home**.
 1. From **Recommended items to create**, Select **Environments** and enter a name for the environment.
 
@@ -89,13 +91,13 @@ In this step, you create a [OneLake shortcut](../onelake/create-onelake-shortcut
 1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version.
 1. Select **Save**.
 
-    `:::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment.":::
+    :::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment.":::
 
 ## Attach the environment to the workspace
 
 TODO: What role is needed to attach the environment to the workspace?
 
-1. Select workspace settings from the top right corner of the workspace. 
+1. Select workspace settings icon from the top menu ribbon.
 1. Expand the **Data Engineering/Science** section and select **Spark settings**.
 1. Select the **Environment** tab.
 1. Toggle **Set default environment** to **On**.
@@ -106,20 +108,12 @@ TODO: What role is needed to attach the environment to the workspace?
 ## Train the model
 
 1. In the experience switcher, choose **Data Engineering**.
-1. Select **Import notebook** > **Upload**, and choose the upload you downloaded in a previous step. :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
+1. Select **Import notebook** > **Upload**, and choose the upload you downloaded the [prerequisites](#prerequisites). :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
+1. After the notebook is uploaded, browse to your workspace and open the notebook.
+1. Attach the notebook to your Lakehouse: From the source pane, select **+ Lakehouse**.
+1. Select **Existing Lakehouse** > **Add**.
+1. In the OneLake data hub explorer, select the Lakehouse you created in the previous steps. Select **Connect**.
 
-
-10. Download the training notebook from
-    <https://artifactswestus.blob.core.windows.net/public/demo/MVAD%205%20Stocks%20(Spark).ipynb>
-    to your local disk. Go back to the workspace, select the Data
-    Science experience and import it
-
-:::image type="content" source="media/multivariate-anomaly-detection/image24.png" alt-text="Screenshot of multivariate anomaly detection image 24.":::
-
-
-11. Open the notebook
-
-12. Update the attached Lake House to the current one
 
 :::image type="content" source="media/multivariate-anomaly-detection/image25.png" alt-text="Screenshot of multivariate anomaly detection image 25.":::
 
@@ -157,7 +151,7 @@ abfss://b0b7b174-dd02-4091-a5f2-76794001d4c3@onelakedxt.pbidedicated.windows.net
     <https://artifactswestus.blob.core.windows.net/public/demo/MVAD%205%20Stocks%20(KQL).kql>
     to your local disk.
 
-```kusto 
+```kusto
 .create-or-alter function with (folder = "Packages\\ML", docstring = "Predict MVAD model in Microsoft Fabric")
 predict_fabric_mvad_fl(samples:(*), features_cols:dynamic, artifacts_uri:string, trim_result:bool=false)
 {
