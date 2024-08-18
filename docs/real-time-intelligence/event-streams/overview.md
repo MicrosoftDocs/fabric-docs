@@ -59,7 +59,7 @@ You can attach multiple destinations in an eventstream to simultaneously receive
 
 
 > [!NOTE]
-> We recommend that you use the Microsoft Fabric event streams feature with at least 4 capacity units ([SKU](../../enterprise/licenses.md#capacity-license): F4)
+> We recommend that you use the Microsoft Fabric event streams feature with at least 4 capacity units ([SKU](../../enterprise/licenses.md#capacity): F4)
 
 ## Enhanced capabilities (preview)
 There are more features, sources, and destinations available when you enable the **Enhanced capabilities (preview)** option while creating an eventstream. Use the **Enhanced capabilities (preview)** and **Standard capabilities** tabs to learn about additional sources and destinations supported with the enhanced capabilities. 
