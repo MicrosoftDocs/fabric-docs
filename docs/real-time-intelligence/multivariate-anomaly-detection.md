@@ -5,11 +5,10 @@ ms.reviewer: adieldar
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.date: 08/14/2024
+ms.date: 08/18/2024
 ms.search.form: KQL Queryset
 ---
-# Time Series Anomaly Detection
-
+# Multivariate Anomaly Detection
 
 Specifically, in this tutorial you will:
 
@@ -19,7 +18,6 @@ Specifically, in this tutorial you will:
 > * Enable OneLake availability on this data.
 > * Train the multivariate anomaly detection model in a Python notebook using Spark engine
 > * Predict anomalies by applying the trained model to new data using Eventhouse (Kusto) engine
-
 
 ## Prerequisites
 
@@ -66,10 +64,10 @@ In this step, you enable the python plugin in your Eventhouse. This is required 
 
 ## Create a OneLake shortcut to the table
 
-In this step, you create a [OneLake shortcut](/onelake/create-onelake-shortcut.md) to the table that was created in a previous step. This is required to access the data from the Notebook.
+In this step, you create a [OneLake shortcut](../onelake/create-onelake-shortcut.md) to the table that was created in a previous step. A OneLake shortcut is an objects in OneLake that point to other storage locations, and is required to access the data that was made available from your Eventhouse. In a later step, you access this data from the Notebook.
 
 1. Browse to a Lakehouse or create a new Lakehouse in your workspace.
-1. Select **New shortcut**
+1. Select **New shortcut**.
 
     :::image type="content" source="media/multivariate-anomaly-detection/new-shortcut.png" alt-text="Screenshot of how to create a new shortcut in the Lakehouse.":::
 
@@ -81,8 +79,11 @@ In this step, you create a [OneLake shortcut](/onelake/create-onelake-shortcut.m
 
 ## Create a Spark environment
 
-1. In the experience switcher, choose **Data Engineering**.
-1. Select **Environments** and enter a name for the environment.
+1. In the experience switcher, choose **Data Engineering**. If you are already in the Data Engineering experience, browse to **Home**.
+1. From **Recommended items to create**, Select **Environments** and enter a name for the environment.
+
+    :::image type="content" source="media/multivariate-anomaly-detection/create-environment.png" alt-text="Screenshot of creating an environment in Data Engineering.":::
+
 1. Under **Libraries**, select **Public libraries**.
 1. Select **Add from PyPI**.
 1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version.
@@ -90,16 +91,23 @@ In this step, you create a [OneLake shortcut](/onelake/create-onelake-shortcut.m
 
     `:::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment.":::
 
+## Attach the environment to the workspace
+
+TODO: What role is needed to attach the environment to the workspace?
+
+1. Select workspace settings from the top right corner of the workspace. 
+1. Expand the **Data Engineering/Science** section and select **Spark settings**.
+1. Select the **Environment** tab.
+1. Toggle **Set default environment** to **On**.
+1. Select the environment you created in the previous step. Select **Save**.
+
+    :::image type="content" source="media/multivariate-anomaly-detection/attach-environment-workspace.png" alt-text="Screenshot of attaching the environment to the workspace." lightbox="media/multivariate-anomaly-detection/attach-environment-workspace.png":::
+
 ## Train the model
 
 1. In the experience switcher, choose **Data Engineering**.
 1. Select **Import notebook** > **Upload**, and choose the upload you downloaded in a previous step. :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
 
-9.  Go back to the workspace and attach the environment to the workspace
-
-:::image type="content" source="media/multivariate-anomaly-detection/image22.png" alt-text="Screenshot of multivariate anomaly detection image 22.":::
-
-:::image type="content" source="media/multivariate-anomaly-detection/image23.png" alt-text="Screenshot of multivariate anomaly detection image 23.":::
 
 10. Download the training notebook from
     <https://artifactswestus.blob.core.windows.net/public/demo/MVAD%205%20Stocks%20(Spark).ipynb>
