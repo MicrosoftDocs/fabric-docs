@@ -66,7 +66,7 @@ This is the definition of the schema for this table and description for the fiel
 |Region|Text| The region in which the employee works for. This field comes from the Source table|
 |StartDate|Date|Date stamp that establishes when the record becomes effective|
 |EndDate|Date|Date stamp that establishes until when the record is effective|
-|IsCurret|Logical|Simple flag to denote if the record is current or not. True represents that the record is current|
+|IsCurrent|Logical|Simple flag to denote if the record is current or not. True represents that the record is current|
 |Hash|Text|The hash encoding of the fields RepSourceID, FirstName, LastName, and Region combined|
 
 >[!NOTE]
