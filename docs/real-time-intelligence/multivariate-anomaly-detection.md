@@ -22,6 +22,7 @@ Specifically, in this tutorial you will:
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* Role of **Admin**, **Contributor**, or **Member** in the workspace. This permission level is needed to create items such as an Environment.
 * An [eventhouse](create-eventhouse.md) in your workspace
 * Download the sample data from the GitHub repo
 * Download the notebook from the GitHub repo
@@ -36,7 +37,7 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 1. In the right pane, toggle the button to **Active**.
 1. Select **Done**.
 
-:::image type="content" source="media/multivariate-anomaly-detection/one-lake-availability.png" alt-text="Screenshot of enabling OneLake availability in your Eventhouse.":::
+    :::image type="content" source="media/multivariate-anomaly-detection/one-lake-availability.png" alt-text="Screenshot of enabling OneLake availability in your Eventhouse.":::
 
 ## Get data into the Eventhouse
 
@@ -51,6 +52,12 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 1. Selct **Finish**.
 1. When the data is uploaded, select **Close**.
 
+## Copy OneLake path to the table
+
+Make sure you've selected the recently created table. In the **Table details** section, select **Copy path** to copy the OneLake path to your clipboard. Save this in a text editor somewhere to use in a later step.
+
+    :::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
+
 ## Enable KQL Python plugin
 
 In this step, you enable the python plugin in your Eventhouse. This is required to run the Python code in the KQL query. It's important to choose the correct package that contains the necessary libraries for the time-series-anomaly-detector package.
@@ -62,6 +69,7 @@ In this step, you enable the python plugin in your Eventhouse. This is required 
 
     :::image type="content" source="media/multivariate-anomaly-detection/python-package.png" alt-text="Screenshot for how to enable python package 3.11.7 DL in the Eventhouse.":::
 
+<!--
 ## Create a OneLake shortcut to the table
 
 In this step, you create a [OneLake shortcut](../onelake/create-onelake-shortcut.md) to the table that was created in a previous step. A OneLake shortcut is an objects in OneLake that point to other storage locations, and is required to access the data that was made available from your Eventhouse. In a later step, you access this data from the Notebook.
@@ -76,10 +84,11 @@ In this step, you create a [OneLake shortcut](../onelake/create-onelake-shortcut
 1. Select the table you created in the previous steps. Select **Next**.
 
     :::image type="content" source="media/multivariate-anomaly-detection/select-table-shortcut.png" alt-text="Screenshot of selecting your table to create a OneLake shortcut to a KQL database table.":::
+-->
 
 ## Create a Spark environment
 
-For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md).
+For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md). In this step, you create a Spark environment to run the Python notebook that trains the multivariate anomaly detection model.
 
 1. In the experience switcher, choose **Data Engineering**. If you are already in the Data Engineering experience, browse to **Home**.
 1. From **Recommended items to create**, Select **Environments** and enter a name for the environment.
@@ -93,9 +102,15 @@ For more information on creating environments, see [Create and manage environmen
 
     :::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment.":::
 
+1. Select the **Home** tab in the environment.
+1. Select the **Publish** icon from the ribbon. :::image type="icon" source="media/multivariate-anomaly-detection/publish-icon.png" border="false":::
+1. Select **Publish all**. This step can take several minutes to complete.
+
+    :::image type="content" source="media/multivariate-anomaly-detection/publish-environment.png" alt-text="Screenshot of publishing the environment.":::
+
 ## Attach the environment to the workspace
 
-TODO: What role is needed to attach the environment to the workspace?
+In this step, you attach the environment you created in the previous step to the workspace where you will run your notebook. 
 
 1. Select workspace settings icon from the top menu ribbon.
 1. Expand the **Data Engineering/Science** section and select **Spark settings**.
@@ -110,22 +125,74 @@ TODO: What role is needed to attach the environment to the workspace?
 1. In the experience switcher, choose **Data Engineering**.
 1. Select **Import notebook** > **Upload**, and choose the upload you downloaded the [prerequisites](#prerequisites). :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
 1. After the notebook is uploaded, browse to your workspace and open the notebook.
+1. From the top ribbon select the **Workspace default** dropdown and select the environment you created in the previous step.
+
+    :::image type="content" source="media/multivariate-anomaly-detection/select-environment.png" alt-text="Screenshot of selecting the environment in the notebook.":::
+
+<!--
 1. Attach the notebook to your Lakehouse: From the source pane, select **+ Lakehouse**.
 1. Select **Existing Lakehouse** > **Add**.
 1. In the OneLake data hub explorer, select the Lakehouse you created in the previous steps. Select **Connect**.
+-->
 
+### Run the notebook
 
-:::image type="content" source="media/multivariate-anomaly-detection/image25.png" alt-text="Screenshot of multivariate anomaly detection image 25.":::
+1. Set up the environment.
 
-:::image type="content" source="media/multivariate-anomaly-detection/image26.png" alt-text="Screenshot of multivariate anomaly detection image 26.":::
+    ```python
+    import numpy as np
+    import pandas as pd
+    ```
 
-:::image type="content" source="media/multivariate-anomaly-detection/image27.png" alt-text="Screenshot of multivariate anomaly detection image 27.":::
+1. Define the function to convert the OneLake URI to ABFSS URI.
 
-13. Update the notebook cell to load the table from your Lake House
+    ```python
+    def convert_onelake_to_abfss(onelake_uri):
+    if not onelake_uri.startswith('https://'):
+        raise ValueError("Invalid OneLake URI. It should start with 'https://'.")
+    uri_without_scheme = onelake_uri[8:]
+    parts = uri_without_scheme.split('/')
+    if len(parts) < 3:
+        raise ValueError("Invalid OneLake URI format.")
+    account_name = parts[0].split('.')[0]
+    container_name = parts[1]
+    path = '/'.join(parts[2:])
+    abfss_uri = f"abfss://{container_name}@{parts[0]}/{path}"
+    return abfss_uri
+    ```
 
-:::image type="content" source="media/multivariate-anomaly-detection/image28.png" alt-text="Screenshot of multivariate anomaly detection image 28.":::
+1. Input your OneLake URI copied from [Create a OneLake shortcut to the table](#create-a-onelake-shortcut-to-the-table) to load the table.
 
-14. Run the notebook to train the model and save it in Fabric MLflow
+    ```python
+    onelake_uri = "Paste your OneLake URI here"
+    abfss_uri = convert_onelake_to_abfss(onelake_uri)
+    print(abfss_uri)
+    df = spark.read.format('delta').load(abfss_uri)
+    df = df.toPandas()
+    print(df.shape)
+    df[:3]
+    ```
+
+1. Run the notebook cells to load the data into the notebook.
+
+    ```python
+    features_cols = ['AAPL', 'AMZN', 'GOOG', 'MSFT', 'SPY']
+    cutoff_date = pd.to_datetime('2023-01-01')
+    ```
+
+    ```python
+    train_df = df[df.Date < cutoff_date]
+    print(train_df.shape)
+    train_df[:3]
+    ```
+    
+    ```python
+    train_len = len(train_df)
+    predict_len = len(df) - train_len
+    print(f'Total samples: {len(df)}. Split to {train_len} for training, {predict_len} for testing')
+    ```
+
+1. Run the notebook to train the model and save it in Fabric MLflow
     models registry
 
 :::image type="content" source="media/multivariate-anomaly-detection/image29.png" alt-text="Screenshot of multivariate anomaly detection image 29.":::
