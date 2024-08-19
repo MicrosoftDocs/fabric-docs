@@ -9,7 +9,7 @@ ms.custom:
   - ignite-2023-fabric
   - build-2024
 ms.topic: conceptual
-ms.date: 06/17/2024
+ms.date: 08/19/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -35,11 +35,15 @@ Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored
 
 Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks.
 
+## Copilot for Data Warehouse
+
+Microsoft Copilot for Synapse Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Key features of Copilot for Warehouse include Natural Language to SQL, code completion, quick actions, and intelligent insights. For more information, see [Copilot for Data Warehouse](data-warehouse/copilot.md).
+
 ## Copilot for Power BI
 
 Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities. 
 
-See the article [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction) for details of the features and how to use Copilot for Power BI.
+For more information on the features and how to use Copilot for Power BI, see [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction).
 
 ## Copilot for Real-Time Intelligence
 
