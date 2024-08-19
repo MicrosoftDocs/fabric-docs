@@ -12,7 +12,7 @@ ms.date: 05/21/2024
 
 # Back-end implementation guide (preview)
 
-This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a starting point for building applications that require integration with various services, as well as integration with Lakehouse platform. This guide helps you set up the environment and configure the necessary components to get started. This article outlines the key components and their roles in the architecture.
+This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a starting point for building applications that require integration with various services, as well as integration with the Lakehouse platform. This guide helps you set up the environment and configure the necessary components to get started. This article outlines the key components and their roles in the architecture.
 
 ## Frontend
 
@@ -29,7 +29,7 @@ The backend stores both data and metadata. It utilizes CRUD operations to create
 In developer mode, the workload operates on the developer's machine.
 The `DevGateway.exe` utility has two roles:
 * Handles the workload's side of Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity, making the workload accessible in all workspaces assigned to that capacity. The utility ensures that the workload is available in all workspaces assigned to that capacity and handles the deregistration when stopped.
-* Workload API calls from Fabric to the workload are channeled through Azure Relay and DevGatway utility.
+* Workload API calls from Fabric to the workload are channeled through Azure Relay and DevGateway utility.
 
 Workload Control API calls are made directly from the workload to Fabric, and don't require the Azure Relay channel.
 
