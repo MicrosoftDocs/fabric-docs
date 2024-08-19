@@ -28,7 +28,7 @@ The backend stores both data and metadata. It utilizes CRUD operations to create
 *Azure Relay* enables communication between the local development environment and the Fabric backend while operating in development mode. 
 In developer mode, the workload operates on the developer's machine.
 The `DevGateway.exe` utility has two roles:
-* Handles the workload's side of Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity, making the workload accessible in all workspaces assigned to that capacity. The utility ensures that the workload is available in all workspaces assigned to that capacity and handles the deregistration when stopped.
+* Handles the workload's side of Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity, making the workload accessible in all workspaces assigned to that capacity. The utility handles the deregistration when stopped.
 * Channels (along with Azure relay) workload API calls from Fabric to the workload.
 
 Workload Control API calls are made directly from the workload to Fabric, and don't require the Azure Relay channel.
