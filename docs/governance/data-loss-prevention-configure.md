@@ -71,12 +71,12 @@ Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you sho
 
     :::image type="content" source="./media/data-loss-prevention-configure/choose-location.png" alt-text="Screenshot of D L P choose location page.":::
 
-    By default the policy will apply to all workspaces. However, you can specify particular workspaces to include in the policy as well as workspaces to exclude from the policy. To specify specific workspaces for inclusion or exclusion, select **Edit**. Then:
+    By default the policy will apply to all workspaces. However, you can specify particular workspaces to include in the policy as well as workspaces to exclude from the policy. To specify specific workspaces for inclusion or exclusion, select **Edit**.
     
     >[!NOTE]
     > DLP actions are supported only for workspaces hosted in Fabric or Premium capacities.
  
-    After you've enabled Fabric and Power BI as the DLP location for the policy and choosing which workspaces the policy will apply to, select **Next**.
+    After you've enabled Fabric and Power BI as the DLP location for the policy and chosen which workspaces the policy will apply to, select **Next**.
 
 1. The **Define policy settings** page appears. Choose **Create or customize advanced DLP rules** to begin defining your policy.
 
@@ -94,7 +94,7 @@ Before you get started with DLP for Power BI [SHOULD THIS BE FABRIC???], you sho
  
 ## Conditions
 
-In the condition section, you define the conditions under which the policy will apply to a semantic model. Conditions are created in groups. Groups make it possible to construct complex conditions.
+In the condition section, you define the conditions under which the policy will apply to [supported item types](./data-loss-prevention-overview.md#supported-item-types). Conditions are created in groups. Groups make it possible to construct complex conditions.
 
 1. Open the conditions section. Choose **Add condition** if you want to create a simple or complex condition, or **Add group** if you want to start creating a complex condition.
 
@@ -104,11 +104,9 @@ In the condition section, you define the conditions under which the policy will 
 
 1. If you chose **Add condition**, next choose **Content contains**, then **Add**, and then either **Sensitive info types** or **Sensitivity labels**.
 
-    If you started with **Add group**, you'll eventually get to **Add condition**, after which you continue as described above.
-
     :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-add-conditions.png" alt-text="Screenshot of D L P add conditions section.":::
 
-     If you started with **Add group**, you'll eventually get to **Add condition**, after which you continue as described above.
+    If you started with **Add group**, you'll eventually get to **Add condition**, after which you continue as described above.
  
     When you choose either **Sensitive info types** or **Sensitivity labels**, you'll be able to choose the particular sensitivity labels or sensitive info types you want to detect from a list that will appear in a sidebar.
 
