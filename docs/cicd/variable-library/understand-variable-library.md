@@ -13,124 +13,28 @@ ms.search.form: Introduction to Deployment pipelines, Manage access in Deploymen
 #customer intent: As a developer, I want to learn how to use the variable library item in the Microsoft Fabric Application lifecycle management (ALM) tool, so that I can manage my content lifecycle.
 ---
 
----
-title: [Follow SEO guidance at 
-https://review.learn.microsoft.com/en-us/help/platform/seo-meta-title]
-description: "[Article description]."
-author: [your GitHub alias]
-ms.author: [your Microsoft alias or a team alias]
-ms.service: [the approved service name]
-ms.topic: concept-article #Don't change.
-ms.date: [mm/dd/yyyy]
+# Variable library concepts
 
-#customer intent: As a <role>, I want <what> so that <why>.
-
----
-
-<!-- --------------------------------------
-
-- Use this template with pattern instructions for:
-
-Concept
-
-- Before you sign off or merge:
-
-Remove all comments except the customer intent.
-
-- Feedback:
-
-https://aka.ms/patterns-feedback
-
--->
-
-# [noun phrase] concept(s)
-
-or
-
-# [noun] overview
-
-<!-- Required: Article headline - H1
-
-Identify the product, service, or feature the
-article covers.
-
--->
-
-[Introduce and explain the purpose of the article.]
-
-<!-- Required: Introductory paragraphs (no heading)
-
-Write a brief introduction that can help the user
-determine whether the article is relevant for them
-and to describe the concept the article covers.
-
-For definitive concepts, it's better to lead with a
-sentence in the form, "X is a (type of) Y that does Z."
-
--->
+This article describes what you need to know to use the Microsoft Fabric [variable library](./variable-library-overview.md) item in your workspace. The variable library is a container that holds values for different variables that can be consumed by other items in the workspace. It can hold several values for each variable, is fully supported in CI/CD, and can be automated.
 
 ## Prerequisites
 
-<!--Optional: Prerequisites - H2
+* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 
-If this section is needed, make "Prerequisites" your
-first H2 in the article.
+## Variable library structure
 
-Use clear and unambiguous language and use
-an unordered list format. 
+The variable library is a Fabric item that allows you to define and manage workspace items in different stages of your pipeline.
 
--->
+The following table represents the contents of a sample variable library. It lists different items in the workspace and their types:
 
-## [Main idea]
-
-[Describe a main idea.]
-
-<!-- Required: Main ideas - H2
-
-Use one or more H2 sections to describe the main ideas
-of the concept.
-
-Follow each H2 heading with a sentence about how
-the section contributes to the whole. Then, describe 
-the concept's critical features as you define what it is.
-
--->
-
-## Related content
-
-- [Related article title](link.md)
-- [Related article title](link.md)
-- [Related article title](link.md)
-
-<!-- Optional: Related content - H2
-
-Consider including a "Related content" H2 section that 
-lists links to 1 to 3 articles the user might find helpful.
-
--->
-
-<!--
-
-Remove all comments except the customer intent
-before you sign off or merge to the main branch.
-
--->
-
-
-# The Microsoft Fabric variable library
-
-The variable library is a Fabric item that allows you to define and manage workspace items in different stages of your pipeline. It's basically a container that holds values for different variables that can be consumed by other items in the workspace. The variable library can hold several values for each variables, one for each stage in the release pipeline. It's fully supported in CI/CD and can be automated.
-
-The following table lists different items in the workspace and their types:
-
-| Item name | Item type | Description |
-| --- | --- | --- |
-| My Variables | Variable library | Holds several values for variables, one for each stage in the release pipeline. |
-| MyLakehouse | Lakehouse | Represents a data lake in the workspace. |
-| NYC-taxi pipeline | Data pipeline | Represents a data pipeline in the workspace. |
-| NYC-taxi NB | Notebook | Represents a notebook in the workspace. |
-| NYC-taxi Env | Environment | Represents an environment in the workspace. |
-| NYC-taxi SM | Semantic model | Represents a semantic model in the workspace. |
+| Item name | Item type |
+| --- | --- |
+| My Variables | Variable library |
+| MyLakehouse | Lakehouse |
+| NYC-taxi pipeline | Data pipeline |
+| NYC-taxi NB | Notebook |
+| NYC-taxi Env | Environment |
+| NYC-taxi SM | Semantic model |
 
 Other items in the workspace can refer to and use variables in the library
 
@@ -154,6 +58,10 @@ The following items are supported in the variable library:
 - Lakehouse
 - Data pipeline
 - Notebook
+
+## Learn to use the variable library
+
+## Variable library automation
 
 ## Related content
 

@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: concept-article
+ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
@@ -14,7 +14,7 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
 
-# Introduction to deployment pipelines
+# What is deployment pipelines
 
 > [!NOTE]
 > This articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
