@@ -37,7 +37,7 @@ Copilot for Data Factory is an AI-enhanced toolset that supports both citizen an
 
 ## Copilot for Data Warehouse
 
-Microsoft Copilot for Synapse Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Key features of Copilot for Warehouse include Natural Language to SQL, code completion, quick actions, and intelligent insights. For more information, see [Copilot for Data Warehouse](data-warehouse/copilot.md).
+Microsoft Copilot for Synapse Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Key features of Copilot for Warehouse include Natural Language to SQL, code completion, quick actions, and intelligent insights. For more information, see [Copilot for Data Warehouse](../data-warehouse/copilot.md).
 
 ## Copilot for Power BI
 
