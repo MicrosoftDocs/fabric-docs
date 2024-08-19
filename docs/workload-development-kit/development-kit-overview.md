@@ -1,9 +1,8 @@
 ---
 title: Microsoft Fabric Workload Development Kit overview (preview)
 description: Learn about building a Fabric workload. 
-author: mberdugo
-ms.author: monaberdugo
-ms.reviewer: tebercov
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
 ms.date: 05/21/2024
