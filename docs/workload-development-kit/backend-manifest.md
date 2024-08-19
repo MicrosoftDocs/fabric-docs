@@ -104,7 +104,7 @@ For example, let's consider our sample workload, which includes three specific j
  
 - **CalculateAsText Job** : This job type handles text-based calculations, taking `Operand1` and `Operand2`, performing the selected operation, and saving the result in the lakehouse. 
 - **CalculateAsParquet Job** : Specifically tailored for working with Parquet data, this job type also takes `Operand1` and `Operand2`, performs the selected operation, and stores the result in the lakehouse, following the Parquet data format.
-For more information on jobs and related configuration, please see [monitoring hub guide](monitoring-hub.md).
+See [monitoring hub guide](monitoring-hub.md) for more information on jobs and related configuration.
 
 In summary, the Workload and Item Manifests serve as foundational documents for adding custom workloads to Fabric.
 The authentication process triggers a straightforward sequence of actions: upload, parsing, and registration, guaranteeing proper configuration and efficient workload management within the Azure ecosystem.
