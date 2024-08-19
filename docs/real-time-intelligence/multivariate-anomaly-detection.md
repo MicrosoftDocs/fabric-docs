@@ -23,7 +23,7 @@ Specifically, in this tutorial you will:
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * Role of **Admin**, **Contributor**, or **Member** in the workspace. This permission level is needed to create items such as an Environment.
-* An [eventhouse](create-eventhouse.md) in your workspace
+* An [eventhouse](create-eventhouse.md) in your workspace with a database.
 * Download the sample data from the GitHub repo
 * Download the notebook from the GitHub repo
 
@@ -32,8 +32,8 @@ Specifically, in this tutorial you will:
 OneLake availability must be [enabled](event-house-onelake-availability.md) before you get data in the Eventhouse. This step is important, because it enables the data you will ingest to become available in the OneLake. In a later step, you'll access this same data from your Notebook to train the model.
 
 1. Browse to your workspace homepage in Real-Time Intelligence.
-1. Select the Eventhouse you created in the prerequisites.
-1. Select the pencil icon next to **OneLake availability**
+1. Select the Eventhouse you created in the prerequisites. Choose the database where you want to store your data.
+1. In the **Database details** tile, select the pencil icon next to **OneLake availability**
 1. In the right pane, toggle the button to **Active**.
 1. Select **Done**.
 
