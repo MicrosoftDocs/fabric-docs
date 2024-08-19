@@ -29,7 +29,7 @@ The backend stores both data and metadata. It utilizes CRUD operations to create
 In developer mode, the workload operates on the developer's machine.
 The `DevGateway.exe` utility has two roles:
 * Handles the workload's side of Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity, making the workload accessible in all workspaces assigned to that capacity. The utility ensures that the workload is available in all workspaces assigned to that capacity and handles the deregistration when stopped.
-* Workload API calls from Fabric to the workload are channeled through Azure Relay and DevGateway utility.
+* Channels (along with Azure relay) workload API calls from Fabric to the workload.
 
 Workload Control API calls are made directly from the workload to Fabric, and don't require the Azure Relay channel.
 
@@ -67,8 +67,8 @@ Ensure that the NuGet Package Manager is integrated into your Visual Studio inst
 
 * `<IsPackable>true</IsPackable>`: When set to true, this property indicates that the project is packable, meaning it can be packaged into a NuGet package. It's an essential property for projects intended to produce NuGet packages during the build process.
 
-The generated NuGet package for Debug mode is located in the **src\bin\Debug** directory after the build process.
-When working in cloud mode, you can switch Visual Studio build configuration to 'Release' and build your package. The generated package is located in the **src\bin\Release** directory. For more information, see [Working in cloud mode guide](workload-cloud-setup.md)
+The generated NuGet package for Debug mode is located in the `src\bin\Debug` directory after the build process.
+When working in cloud mode, you can switch Visual Studio build configuration to **Release** and build your package. The generated package is located in the `src\bin\Release` directory. For more information, see [Working in cloud mode guide](workload-cloud-setup.md)
 
 ### Dependencies
 
