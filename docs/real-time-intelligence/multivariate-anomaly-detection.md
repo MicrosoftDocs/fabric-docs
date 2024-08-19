@@ -103,7 +103,7 @@ In this step, you attach the environment you created in the previous step to the
 
     :::image type="content" source="media/multivariate-anomaly-detection/attach-environment-workspace.png" alt-text="Screenshot of attaching the environment to the workspace." lightbox="media/multivariate-anomaly-detection/attach-environment-workspace.png":::
 
-## Part 7- Train the model
+## Part 7- Set up the notebook
 
 1. In the experience switcher, choose **Data Engineering**.
 1. Select **Import notebook** > **Upload**, and choose the upload you downloaded the [prerequisites](#prerequisites). :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
@@ -118,7 +118,7 @@ In this step, you attach the environment you created in the previous step to the
 1. In the OneLake data hub explorer, select the Lakehouse you created in the previous steps. Select **Connect**.
 -->
 
-### Part 8- Run the notebook
+## Part 8- Run the notebook
 
 1. Set up the environment.
 
