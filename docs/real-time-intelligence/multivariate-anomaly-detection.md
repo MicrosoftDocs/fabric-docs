@@ -144,7 +144,7 @@ In this step, you attach the environment you created in the previous step to the
     return abfss_uri
     ```
 
-1. Input your OneLake URI copied from [Copy OneLake path to the table](#copy-onelake-path-to-the-table) to load the table.
+1. Input your OneLake URI copied from [Part 3- Copy OneLake path to the table](#part-3--copy-onelake-path-to-the-table) to load the table.
 
     ```python
     onelake_uri = "Paste your OneLake URI here"
