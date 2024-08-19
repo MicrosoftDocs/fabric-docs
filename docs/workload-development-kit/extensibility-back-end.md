@@ -68,7 +68,7 @@ Ensure that the NuGet Package Manager is integrated into your Visual Studio inst
 * `<IsPackable>true</IsPackable>`: When set to true, this property indicates that the project is packable, meaning it can be packaged into a NuGet package. It's an essential property for projects intended to produce NuGet packages during the build process.
 
 The generated NuGet package for Debug mode is located in the **src\bin\Debug** directory after the build process.
-When working in cloud mode, you can switch Visual Studio build configuration to 'Relaese' and build your package. The generated package is located in the **src\bin\Release** directory. For more information, see [Working in cloud mode guide](workload-cloud-setup.md)
+When working in cloud mode, you can switch Visual Studio build configuration to 'Release' and build your package. The generated package is located in the **src\bin\Release** directory. For more information, see [Working in cloud mode guide](workload-cloud-setup.md)
 
 ### Dependencies
 
