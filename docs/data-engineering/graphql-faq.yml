@@ -36,6 +36,13 @@ sections:
       - question: How do I open a support ticket for API for GraphQL?
         answer: To get help from Microsoft Support on any issue related to Fabric API for GraphQL, visit our [Fabric Support site](https://support.fabric.microsoft.com/en-US/support/) and choose the **Data Engineering** option.
 
+      - question: Which Fabric regions does API GraphQL not currently support?
+        answer: API for GraphQL is not currently supported in the following Fabric regions
+          - Germany West Central
+          - Italy North
+          - Poland Central
+          - Central US
+
 additionalContent: |
     ## Related content
 
