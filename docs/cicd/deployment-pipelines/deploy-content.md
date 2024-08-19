@@ -25,7 +25,7 @@ If you already have a workspace that you'd like to use with a specific stage, in
 
 When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a semantic model in the source stage, is cloned alongside its semantic model, and the clones are similarly bound in the target workspace. The folder structure is also kept. If you have items in a folder in the source stage, a folder is created in the target stage. Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
 
-Once the deployment is complete, refresh the semantic model. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#assign-content-to-an-empty-stage).
+Once the deployment is complete, refresh the semantic model. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#assign-a-workspace-to-an-empty-stage).
 
 ### Deploying options
 
@@ -35,7 +35,7 @@ Deployment pipelines offer three options when it comes to deploying your Fabric 
 
 * [Selective deployment](#selective-deployment) - Select which content to deploy to an adjacent stage.
 
-* Backward deployment - Deploy content from a later stage to an earlier stage. Currently, this capability is available only when [deploying to an empty stage](./understand-the-deployment-process.md#assign-content-to-an-empty-stage).
+* Backward deployment - Deploy content from a later stage to an earlier stage. Currently, this capability is available only when [deploying to an empty stage](./understand-the-deployment-process.md#assign-a-workspace-to-an-empty-stage).
 
 After you choose how to deploy your content, you can [Review your deployment and leave a note](#review-your-deployment-and-leave-a-note).
 
@@ -105,7 +105,7 @@ To leave a note, expand the **Add a note** option and write your note in the tex
 
 ## Deploy content from one stage to another
 
-Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. Though you can have up to 10 different stages in the pipeline, a typical workflow for moving content is development to test stage, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
+Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. Though you can have up to 10 different stages in the pipeline, a typical workflow for moving content is development to test stage, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
 
 When you deploy content to a stage that already has other content in it, select the items you want to deploy. If there's already an item there with the same name, that item is overwritten. Relationships between the items aren't kept. Therefore, if you deploy a report that is bound to a semantic model in the source stage, only the report is deployed. If you want to deploy everything connected to the report, use the **Select related** button.
 

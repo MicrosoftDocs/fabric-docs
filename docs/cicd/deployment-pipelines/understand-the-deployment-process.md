@@ -374,7 +374,7 @@ In the production stage, you can also update the app page in Fabric, so that any
 
 ### [Update app - new UI](#tab/new)
 
-:::image type="content" source="media/understand-the-deployment-process/update-app-new.png" alt-text="A screenshot highlighting the update app button in the new UI." lightbox="media/understand-the-deployment-process/update-app.png":::
+:::image type="content" source="media/understand-the-deployment-process/update-new.png" alt-text="A screenshot highlighting the update app button in the new UI.":::
 
 ---
 
