@@ -27,7 +27,7 @@ Specifically, in this tutorial you will:
 * Download the sample data from the GitHub repo
 * Download the notebook from the GitHub repo
 
-## Enable OneLake availability
+## Part 1- Enable OneLake availability
 
 OneLake availability must be [enabled](event-house-onelake-availability.md) before you get data in the Eventhouse. This step is important, because it enables the data you will ingest to become available in the OneLake. In a later step, you'll access this same data from your Notebook to train the model.
 
@@ -39,7 +39,7 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 
     :::image type="content" source="media/multivariate-anomaly-detection/one-lake-availability.png" alt-text="Screenshot of enabling OneLake availability in your Eventhouse.":::
 
-## Get data into the Eventhouse
+## Part 2- Get data into the Eventhouse
 
 1. Hover over the KQL database where you want to store your data. Select the **More menu [...]** > **Get data** > **Local file**.
 
@@ -52,13 +52,13 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 1. Selct **Finish**.
 1. When the data is uploaded, select **Close**.
 
-## Copy OneLake path to the table
+## Part 3- Copy OneLake path to the table
 
 Make sure you've selected the recently created table. In the **Table details** tile, select **Copy path** to copy the OneLake path to your clipboard. Save this in a text editor somewhere to use in a later step.
 
 :::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
 
-## Enable KQL Python plugin
+## Part 4- Enable KQL Python plugin
 
 In this step, you enable the python plugin in your Eventhouse. This is required to run the Python code in the KQL query. It's important to choose the correct package that contains the necessary libraries for the time-series-anomaly-detector package.
 
@@ -86,7 +86,7 @@ In this step, you create a [OneLake shortcut](../onelake/create-onelake-shortcut
     :::image type="content" source="media/multivariate-anomaly-detection/select-table-shortcut.png" alt-text="Screenshot of selecting your table to create a OneLake shortcut to a KQL database table.":::
 -->
 
-## Create a Spark environment
+## Part 5- Create a Spark environment
 
 For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md). In this step, you create a Spark environment to run the Python notebook that trains the multivariate anomaly detection model.
 
@@ -108,7 +108,7 @@ For more information on creating environments, see [Create and manage environmen
 
     :::image type="content" source="media/multivariate-anomaly-detection/publish-environment.png" alt-text="Screenshot of publishing the environment.":::
 
-## Attach the environment to the workspace
+## Part 6- Attach the environment to the workspace
 
 In this step, you attach the environment you created in the previous step to the workspace where you will run your notebook. 
 
@@ -120,7 +120,7 @@ In this step, you attach the environment you created in the previous step to the
 
     :::image type="content" source="media/multivariate-anomaly-detection/attach-environment-workspace.png" alt-text="Screenshot of attaching the environment to the workspace." lightbox="media/multivariate-anomaly-detection/attach-environment-workspace.png":::
 
-## Train the model
+## Part 7- Train the model
 
 1. In the experience switcher, choose **Data Engineering**.
 1. Select **Import notebook** > **Upload**, and choose the upload you downloaded the [prerequisites](#prerequisites). :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
@@ -135,7 +135,7 @@ In this step, you attach the environment you created in the previous step to the
 1. In the OneLake data hub explorer, select the Lakehouse you created in the previous steps. Select **Connect**.
 -->
 
-### Run the notebook
+### Part 8- Run the notebook
 
 1. Set up the environment.
 
@@ -231,7 +231,7 @@ In this step, you attach the environment you created in the previous step to the
 
 1. Copy the <a name="modeluri">model URI </a>from the last cell output. You will use this in the next step.
 
-## Set up your KQL queryset
+## Part 9- Set up your KQL queryset
 
 1. In the experience switcher, choose **Real-Time Intelligence**.
 1. Select your workspace.
@@ -240,7 +240,7 @@ In this step, you attach the environment you created in the previous step to the
 1. In the **OneLake data hub** window, select the KQL database where you stored the data.
 1. Select **Connect**.
 
-## Predict anomalies in the KQL queryset
+## Part 10- Predict anomalies in the KQL queryset
 
 1. Copy/paste and run the following '.create-or-alter function' query to define the  `predict_fabric_mvad_fl()` stored function:
 
@@ -307,7 +307,6 @@ In this step, you attach the environment you created in the previous step to the
 The resulting anomaly chart should look like the following image: 
 
 :::image type="content" source="media/multivariate-anomaly-detection/kql-query-output.png" alt-text="Screenshot of multivariate anomaly output.":::
-
 
 ## Clean up resources
 
