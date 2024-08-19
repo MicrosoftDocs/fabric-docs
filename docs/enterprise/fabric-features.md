@@ -10,7 +10,7 @@ ms.date: 08/01/2024
 
 # Microsoft Fabric features by SKU
 
-Microsoft Fabric is a cloud-based platform with a rich set of features. The availability of these features depends on the SKU and capacity type. This article lists key Fabric features according to [SKU](licenses.md#capacity-license) type.
+Microsoft Fabric is a cloud-based platform with a rich set of features. The availability of these features depends on the SKU and capacity type. This article lists key Fabric features according to [SKU](licenses.md#capacity) type.
 
 ## Features list
 
