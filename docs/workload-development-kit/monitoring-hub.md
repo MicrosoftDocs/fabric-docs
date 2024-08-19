@@ -1,9 +1,8 @@
 ---
 title: Fabric Workload Development Kit monitoring hub (preview)
 description: Learn about the Fabric Workload Development Kit monitoring hub.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024
