@@ -22,7 +22,7 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 Microsoft Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](#supported-items) that you can deploy.
 
 > [!IMPORTANT]
-> The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see link.
+> The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
 
 ## Learn to use deployment pipelines
 
@@ -98,11 +98,13 @@ For a detailed explanation of which items are paired and how pairing works, see 
 
 ## Deployment method
 
-When you deploy content from one stage to another, the source content overwrites anything with the same name in the target stage. Content in the target stage that doesn't exist in the source stage remains in the target stage as is. After you select **Deploy**, you get a warning message letting you know the items that will be overwritten.
+To deploy content to another stage, at least one items must be selected. When you deploy content from one stage to another,the items being copied from the source stage overwrite the paired item in the stage you're in according to the [pairing rules](./assign-pipeline.md#item-pairing). Items that doesn't exist in the source stage remain as is.
+
+After you select **Deploy**, you get a warning message letting you know the items that will be overwritten.
 
 :::image type="content" source="media/intro-to-deployment-pipelines/replaced-content.png" alt-text="A screenshot of the replaced content warning displayed when a deployment is about to cause changes to items in the stage you're deploying to.":::
 
-You can learn more about [which item properties are copied to the next stage](understand-the-deployment-process.md#item-properties-copied-during-deployment), and which properties aren't copied, in [Understand the deployment process](understand-the-deployment-process.md#item-properties-that-are-not-copied).
+Learn more about [which item properties are copied to the next stage](understand-the-deployment-process.md#item-properties-copied-during-deployment), and which properties aren't copied, in [Understand the deployment process](understand-the-deployment-process.md#item-properties-that-are-not-copied).
 
 ## Automation
 

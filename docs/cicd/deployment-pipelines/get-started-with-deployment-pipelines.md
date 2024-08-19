@@ -36,7 +36,9 @@ To access the deployment pipelines feature, you must meet the following conditio
 
 ## Step 1 - Create a deployment pipeline
 
-You can create a pipeline from the deployment pipelines entry point in Fabric, or from a specific workspace. If you create a pipeline from a workspace, the workspace is automatically assigned to the pipeline.
+When you create a pipeline, you define how many stages it should have and what they should be called. The number of stages and their names are permanent and can't be changed after the pipeline is created.
+
+You can create a pipeline from the deployment pipelines entry point in Fabric (at the bottome of the workspace list), or from a specific workspace. If you create a pipeline from a workspace, the workspace is automatically assigned to the pipeline.
 
 ### [Create a pipeline from the deployment pipelines button in Fabric](#tab/from-fabric)
 
@@ -73,7 +75,7 @@ From Power BI, you also have the option of creating a pipeline from inside an ex
    >[!NOTE]
    >If the workspace isn't assigned to your organization's capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity).  
 
-1. Set your deployment pipeline’s structure by defining the required stages for your deployment pipeline. By default, the most common stages are presented, but you can add new ones, remove some, or rename them. Select **+Add** to add another stage, delete stages, or rename them by typing a new name in the box. Select **Create** when you're done.
+1. Set your deployment pipeline’s structure by defining the required stages for your deployment pipeline. By default, the pipeline has three stages named *Development*, *Test*, and *Production*. You can accept this default structure or change the number of stages and their names. You can have anywhere between 2-10 stages in a pipeline.  To add, remove, or rename stages, select **+Add**. Select **Create** when you're done.
 
    :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
 
@@ -124,11 +126,13 @@ You can have as many public stages as you want, or none at all. To change the pu
 
 When you finished working with content in one pipeline stage, you can deploy it to the next stage. Deploying content to another stage is often done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production, but you can deploy in any direction. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
-Deployment pipelines offer two options for deploying your content:
+Deployment pipelines offer three options for deploying your content:
 
 * [Full deployment](deploy-content.md#deploy-all-content) - Deploy all your content to the target stage.
 
 * [Selective deployment](deploy-content.md#selective-deployment) - Select which content to deploy to the target stage.
+
+* Backward deployment - Deploy content from a later stage to an earlier stage in the pipeline. Currently, this is only possible when the target stage is empty (has no workspace assigned to it).
 
 After you choose how to deploy your content, you can [Review your deployment and leave a note](deploy-content.md#review-your-deployment-and-leave-a-note).
 

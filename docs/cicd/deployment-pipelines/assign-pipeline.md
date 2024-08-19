@@ -33,7 +33,7 @@ To assign a workspace to a pipeline, the pipeline stage you want to assign the w
 Before you assign a workspace to a pipeline stage, review the [limitations](#considerations-and-limitations) section and make sure that the workspace meets the required conditions.
 
 >[!NOTE]
->Before you assign or unassign a workspace to a pipeline, consider that every time you deploy to a vacant stage, a new workspace is created.
+>Before you assign or unassign a workspace to a pipeline, consider that every time you deploy to a vacant stage, a new workspace is created, and whenever you unassign a workspace, you loose all the stage deployments history and configured rules.
 
 To assign a workspace to a pipeline stage, follow these steps:
 
@@ -43,13 +43,13 @@ To assign a workspace to a pipeline stage, follow these steps:
 
     :::image type="content" source="media/assign-pipeline/new-workspace.png" alt-text="A screenshot showing a deployment pipelines new workspace with all the pipeline stages unassigned." lightbox="media/assign-pipeline/new-workspace.png":::
 
-1. In the stage you want to assign a workspace to, expand the dropdown titled **Choose a workspace to assign to this pipeline**.
+1. In the stage you want to assign a workspace to, expand the dropdown titled **Add content to this stage**.
 
-1. From the dropdown menu, select the workspace you want to assign to this stage. If you don't see the workspace you want, review the [limitations](#considerations-and-limitations) section and make sure that your workspace meets the required conditions.
+1. Select the workspace you want to assign to this stage. If you don't see the workspace you want, review the [limitations](#considerations-and-limitations) section and make sure that your workspace meets the required conditions.
 
     :::image type="content" source="media/assign-pipeline/assign-workspace.png" alt-text="A screenshot showing the *assign workspace* dropdown in a deployment pipelines empty stage.":::
 
-1. Select **Assign a workspace**.
+1. Select **Assign**.
 
     :::image type="content" source="media/assign-pipeline/assign-button.png" alt-text="A screenshot showing the assign workspace button in a deployment pipelines empty stage.":::
 
@@ -145,7 +145,15 @@ Pairing can happen in one of two ways:
 
 Paired items appear on the same line in the pipeline content list. Items that aren't paired, appear on a line by themselves:
 
+#### [Paired items: Original UI](#tab/old)
+
 :::image type="content" source="./media/assign-pipeline/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
+
+#### [Paired items: New UI](#tab/new)
+
+:::image type="content" source="./media/assign-pipeline/paired-items-new.png" alt-text="Screenshot of new UI showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
+
+---
 
 ### Create nonpaired items with the same name
 

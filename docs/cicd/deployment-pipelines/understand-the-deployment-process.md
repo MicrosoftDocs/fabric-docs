@@ -35,10 +35,10 @@ To define a pipeline, follow the instructions in [Create a deployment pipeline](
 
 You can add content to a pipeline stage in two ways:
 
-* [Assigning a workspace to an empty stage](#assign-content-to-an-empty-stage)
-* [Deploying content from one stage to another](#deploy-content-to-an-existing-workspace)
+* [Assigning a workspace to an empty stage](#assign-a-workspace-to-an-empty-stage)
+* [Deploying content from one stage to another](#deploy-content-from-one-stage-to-another)
 
-### Assign content to an empty stage
+### Assign a workspace to an empty stage
 
 When you assign content to an empty stage, a new workspace is created on a capacity for the stage you deploy to. All the metadata in the reports, dashboards, and semantic models of the original workspace is copied to the new workspace in the stage you're deploying to.
 
@@ -56,12 +56,11 @@ If you don't have permissions, the workspace is created but the content isn’t 
 
 If you're using [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq), your workspace is automatically associated with your PPU. In such cases, permissions aren't required. However, if you create a workspace with a PPU, only other PPU users can access it. In addition, only PPU users can consume content created in such workspaces.
 
-
 #### Workspace and content ownership
 
 The deploying user automatically becomes the owner of the cloned semantic models, and the only admin of the new workspace.
 
-## Deploy content to an existing workspace
+## Deploy content from one stage to another
 
 There are several ways to deploy content from one stage to another. You can deploy all the content, or you can [select which items to deploy](deploy-content.md#selective-deployment).
 
@@ -91,7 +90,15 @@ During deployment, deployment pipelines checks for dependencies. The deployment 
 
 Autobinding works only with items that are supported by deployment pipelines and reside within Fabric. To view the dependencies of an item, from the item's *More options* menu, select *View lineage*.
 
-:::image type="content" source="media/understand-the-deployment-process/view-lineage.png" alt-text="A screenshot of the view lineage option, in an item's more options menu.":::
+#### [Classic View lineage UI](#tab/old)
+
+:::image type="content" source="media/understand-the-deployment-process/view-lineage-old.png" alt-text="A screenshot of the old view lineage option, in an item's more options menu.":::
+
+#### [New View lineage UI](#tab/new)
+
+:::image type="content" source="media/understand-the-deployment-process/view-lineage-new.png" alt-text="A screenshot of the new view lineage option, in an item's more options menu.":::
+
+---
 
 #### Autobinding across pipelines
 
@@ -159,18 +166,39 @@ When you deploy content that contains folders to a different stage, the folder h
 
 ### Folders representation
 
-Since a deployment is of items only, workspace content is shown in Deployment pipelines as a flat list of items. An item’s full path is shown when hovering over its name on the list.
-In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it will be created in its workspace first. Folders can be seen and managed only on the workspace page.
+#### [Classic folders representation](#tab/old)
+
+The workspace content is shown in Deployment pipelines as a flat list of items. An item’s full path is shown when hovering over its name on the list.
 
 :::image type="content" source="media/understand-the-deployment-process/folder-path.png" alt-text="Screenshot showing the full pathname of an item inside a folder. The name includes the name of the folder.":::
+
+#### [New folders representation](#tab/new)
+
+The workspace content is shown as it's structured in the workspace. Folders are listed, and in order to see their items you need to select the folder. An item’s full path is shown at the top of the items list. Since a deployment is of items only, you can only select a folder that contains supported items. Selecting a folder for deployment means selecting all its items and sub-folders with their items for a deployment.
+
+This picture shows the contents of a folder inside the workspace. The full pathname of the folder is shown at the top of the list.
+
+:::image type="content" source="media/understand-the-deployment-process/folder-path-new.png" alt-text="Screenshot showing the contents of a folder with full pathname of the folder above. The name includes the name of the folder.":::
+
+---
+
+In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it will be created in its workspace first. Folders can be seen and managed only on the workspace page.
 
 Deploy items inside a folder from that folder. You can't deploy items from different hierarchies at the same time.
 
 ### Identify items that were moved to different folders
 
-Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* in *Compare* mode. Moreover, unless there's also a schema change, the option next to the label to open a *Change review* window that presents the schema changes, is disabled. Hovering over it shows a note saying the change is a *settings* change (like *rename*). This is because compared to their paired items on the source stage, the change isn't yet deployed.
+Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* in *Compare* mode. Moreover, unless there's also a schema change, the option next to the label to open a *Change review* window that presents the schema changes, is disabled. Hovering over it shows a note saying the change is a *settings* change (like *rename*). This is because compared to their paired items in the source stage, the change isn't yet deployed.
+
+#### [Moved folder item in old UI](#tab/old)
 
 :::image type="content" source="media/understand-the-deployment-process/moved-folder-item.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder.":::
+
+#### [Moved folder item in new UI](#tab/new)
+
+:::image type="content" source="media/understand-the-deployment-process/moved-folder-item-new.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder in the new UI.":::
+
+---
 
 * Individual folders can't be deployed manually in deployment pipelines. Their deployment is triggered automatically when at least one of their items is deployed.
 
@@ -179,6 +207,10 @@ Since folders are considered part of the item’s name, items moved into a diffe
 * Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
 
 * Deploying one item out of several in a folder also updates the structure of the items that aren't deployed in the target stage even though the items themselves aren't be deployed.
+
+## Parent-child item representation
+
+These appear only in the new UI. Looks same as in the workspace. Child is not deployed but recreated on the target stage
 
 ## Item properties copied during deployment
 
@@ -324,11 +356,27 @@ Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incre
 
 Create an app for each deployment pipeline stage, so that you can test each update from an end user's point of view. Use the **publish** or **view** button in the workspace card to publish or view the app in a specific pipeline stage.
 
+### [Publish app - old UI](#tab/old)
+
 :::image type="content" source="media/understand-the-deployment-process/publish.png" alt-text="A screenshot highlighting the publish app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/publish.png":::
 
-In the production stage, the main action button on the bottom-right corner opens the update app page in Fabric, so that any content updates become available to app users.
+### [Publish app - new UI](#tab/new)
+
+:::image type="content" source="media/understand-the-deployment-process/publish-new.png" alt-text="A screenshot showing the publish app button, in the stage options.":::
+
+---
+
+In the production stage, you can also update the app page in Fabric, so that any content updates become available to app users.
+
+### [Update app - old UI](#tab/old)
 
 :::image type="content" source="media/understand-the-deployment-process/update-app.png" alt-text="A screenshot highlighting the update app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/update-app.png":::
+
+### [Update app - new UI](#tab/new)
+
+:::image type="content" source="media/understand-the-deployment-process/update-app-new.png" alt-text="A screenshot highlighting the update app button in the new UI." lightbox="media/understand-the-deployment-process/update-app.png":::
+
+---
 
 >[!IMPORTANT]
 >The deployment process does not include updating the app content or settings. To apply changes to content or settings, you need to manually update the app in the required pipeline stage.
