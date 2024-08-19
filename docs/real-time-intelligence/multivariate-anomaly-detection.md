@@ -16,8 +16,8 @@ Specifically, in this tutorial you will:
 >
 > * Prepare a table in the Eventhouse with sample data.
 > * Enable OneLake availability on this data.
-> * Train the multivariate anomaly detection model in a Python notebook using Spark engine
-> * Predict anomalies by applying the trained model to new data using Eventhouse (Kusto) engine
+> * Train the multivariate anomaly detection model in a Python notebook using the Spark engine
+> * Predict anomalies by applying the trained model to new data using the Eventhouse engine
 
 ## Prerequisites
 
