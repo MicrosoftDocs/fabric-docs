@@ -1,9 +1,8 @@
 ---
 title: Overview of Fabric Workload Development Kit authentication (preview)
 description: This article describes how to use tokens to authenticate and validate for a customized Fabric workload.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: concept-article
 ms.custom:
 ms.date: 05/21/2024

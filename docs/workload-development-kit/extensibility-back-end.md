@@ -1,9 +1,8 @@
 ---
 title: Fabric workload development kit backend workload (preview)
 description: Learn about building the backend of a customized Fabric workload application using the Fabric extensions.
-author: mberdugo
-ms.author: monaberdugo
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024
