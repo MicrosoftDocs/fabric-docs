@@ -118,7 +118,7 @@ In the condition section, you define the conditions under which the policy will 
 
     You can add additional sensitivity labels or sensitive info types to the group. To the right of the group name, you can specify **Any of these** or **All of these**. This determines whether matches on all or any of the items in the group is required for the condition to hold. If you specified more than one sensitivity label, you'll only be able to choose **Any of these**, since semantic models can’t have more than one label applied.
 
-    The image below shows a group (Default) that contains two sensitivity label conditions. The logic Any of these means that a match on any one of the sensitivity labels in the group constitutes “true” for that group.
+    The image below shows a group (Default) that contains two sensitivity label conditions. The logic Any of these means that a match on any one of the sensitivity labels in the group constitutes *true* for that group.
 
     :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-condition-group.png" alt-text="Screenshot of D L P conditions group section.":::
  
@@ -138,19 +138,19 @@ In the condition section, you define the conditions under which the policy will 
  
 ## Actions
 
-Protection actions are currently unavailable for Power BI DLP policies.
+Protection actions are unavailable for Fabric and Power BI DLP policies.
 
 ![Screenshot of D L P policy actions section.](./media/data-loss-prevention-configure/power-bi-dlp-actions-section.png)
 
 ## User notifications
 
-The user notifications section is where you configure your policy tip. Turn on the toggle, select the **Notify users in Office 365 service with a policy tip** and **Policy tips** checkboxes, and write your policy tip in the text box.
+The user notifications section is where you configure your policy tip. Turn on the toggle, select the **Notify users in Office 365 service with a policy tip or email notifications** check box, and then select the **Policy tips** checkbox. Write your policy tip in the text box that appears.
 
 :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-user-notification.png" alt-text="Screenshot of D L P user notification section.":::
  
 ## User overrides
  
-If you enabled user notifications and selected the **Notify users in Office 365 service with a policy tip** checkbox, semantic model owners (users with an Admin or Member role in the workspace where the semantic model is located) will be able to respond to violations on the **[Data loss prevention policies side pane](./service-security-dlp-policies-for-power-bi-respond.md)**, which they can display from a button on the policy tip. The options they have depend on your selections in the **User overrides** section.
+If you enabled user notifications and selected the **Notify users in Office 365 service with a policy tip** checkbox, owners of items that have DLP policy violations (owners - that is, users with an Admin or Member role in the workspace where the item is located) will be able to respond to violations on the **[Data loss prevention policies side pane](./service-security-dlp-policies-for-power-bi-respond.md)**, which they can display from a button or a link on the policy tip. The selection of response options they have depends on the choices you make in the **User overrides** section.
 
 :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-user-overrides-section.png" alt-text="Screenshot of D L P user overrides section.":::
 
