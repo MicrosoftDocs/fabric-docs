@@ -1,8 +1,8 @@
 ---
 title: Upload and manage a workload (preview)
 description: How to deploy and manage a workload solution in the Fabric service to improve performance and user engagement.
-author: mberdugo
-ms.author: monaberdugo
+author: KesemSharabi
+ms.author: kesharab
 ms.service: fabric
 ms.topic: how-to
 ms.date: 05/21/2024
