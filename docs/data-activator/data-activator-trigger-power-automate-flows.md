@@ -50,7 +50,7 @@ To access your input fields in the flow, use a Power Automate expression of the 
 your input field. 
 
 ```
-triggerBody()?['customProperties/NAME_OF_INPUT_FIELD'].
+triggerBody()?['customProperties/NAME_OF_INPUT_FIELD']
 ```
 
 ### Complete your custom action

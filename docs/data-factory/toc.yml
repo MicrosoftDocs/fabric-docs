@@ -699,6 +699,8 @@
         href: tutorial-load-sample-data-to-data-warehouse.md
       - name: Incrementally load data from Data Warehouse to Lakehouse
         href: tutorial-incremental-copy-data-warehouse-lakehouse.md
+      - name: Incrementally copy files by the last modified date
+        href: tutorial-incremental-copy-files-last-modified-date.md        
       - name: Load data to Lakehouse using partition
         href: tutorial-lakehouse-partition.md  
       - name: Move data from Oracle to Fabric Lakehouse via pipeline and on-premises data gateway
@@ -733,6 +735,8 @@
         href: tutorial-dataflows-gen2-pipeline-activity.md
       - name: Pattern to incrementally amass data with Dataflow Gen2
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
+      - name: Slowly changing dimension type 2 
+        href: slowly-changing-dimension-type-two.md        
     - name: Fabric Dataflows for ADF Mapping Data Flow users
       href: guide-to-dataflows-for-mapping-data-flow-users.md
   - name: Data gateway
