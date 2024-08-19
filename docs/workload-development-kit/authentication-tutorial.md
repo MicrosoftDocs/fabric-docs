@@ -1,9 +1,8 @@
 ---
 title: Fabric Workload Development Kit authentication setup (preview)
 description: Learn how to set up the authorization for a customized Fabric workload.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 07/14/2024

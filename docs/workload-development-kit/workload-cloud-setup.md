@@ -1,9 +1,8 @@
 ---
 title: Overview of the workload cloud setup steps for the Fabric Workload Development Kit
 description: This article describes the prerequisites and steps to use a cloud environment with the Workload Development Kit.
-author: AnitaMayorov
-ms.author: anitamayorov
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 08/12/2024
