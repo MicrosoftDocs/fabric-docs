@@ -9,7 +9,7 @@ ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 07/29/2024
+ms.date: 08/19/2024
 #customer intent: As a developer, I want to learn how to deploy content to an empty or nonempty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool so that I can manage my content lifecycle.
 ---
 
@@ -75,6 +75,8 @@ Fabric items are often related to or dependent on other items. Dashboards, repor
 If you don't want to deploy everything from that stage, you can select only specific items for deployment.
 
 Since dashboards, reports, semantic models, and dataflows are related and have dependencies, you can use the select related button to see all the items that the selected item is dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
+
+Unsupported items are also shown in this list. Unsupported items can't be deployed but they can be filtered.
 
 :::image type="content" source="media/deploy-content/selective-deploy-new.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines." lightbox="media/deploy-content/selective-deploy-new.png":::
 

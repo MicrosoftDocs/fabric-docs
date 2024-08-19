@@ -164,6 +164,8 @@ In Deployment pipelines, folders are considered part of an item’s name (an ite
 
 :::image type="content" source="media/understand-the-deployment-process/folder-path.png" alt-text="Screenshot showing the full pathname of an item inside a folder. The name includes the name of the folder.":::
 
+Deploy items inside a folder from that folder. You can't deploy items from different hierarchies at the same time.
+
 ### Identify items that were moved to different folders
 
 Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* in *Compare* mode. Moreover, unless there's also a schema change, the option next to the label to open a *Change review* window that presents the schema changes, is disabled. Hovering over it shows a note saying the change is a *settings* change (like *rename*). This is because compared to their paired items on the source stage, the change isn't yet deployed.
