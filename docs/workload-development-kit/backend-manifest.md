@@ -56,9 +56,8 @@ Consult the [authentication documentation](./authentication-concept.md) for a de
 
 ### ServiceEndpoint Elements
 
-Configuration of a specific logical endpoint:
-
-* Backend endpoint, called 'Workload', includes implementation for item CRUD and jobs APIs. The configuration for workload's backend endpoint states the backend URL of your workload.
+Represent the configuration of a specific logical endpoint, for example the backend endpoint which includes implementation for item CRUD and jobs APIs.
+* The configuration for workload's backend endpoint states the backend URL of your workload.
 ```
 <ServiceEndpoint>
     <Name>Workload</Name>
@@ -67,8 +66,7 @@ Configuration of a specific logical endpoint:
     <EndpointResolutionContext>...
 </ServiceEndpoint>
 ```
-
-`<IsEndpointResolutionService>` and `EndpointResolutionContext`  are set based on whether your endpoint implements the workload API or only the endpoint resolution. See [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution) for detailed information about the resolution context and response.
+* `<IsEndpointResolutionService>` and `EndpointResolutionContext`  are set based on whether your endpoint implements the workload API or only the endpoint resolution. See [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution) for detailed information about the resolution context and response.
 
 
 ## Item Manifest - Key Manifest Components
