@@ -55,9 +55,8 @@ Consult the [authentication documentation](./authentication-concept.md) for a de
 
 ### ServiceEndpoint Elements
 
-Configuration of a specific logical endpoint
-
-Backend endpoint, called 'Workload' includes item CRUD and jobs APIs
+Represent the configuration of a specific logical endpoint, for example the backend endpoint which includes implementation for item CRUD and jobs APIs.
+* The configuration for workload's backend endpoint states the backend URL of your workload.
 ```
 <ServiceEndpoint>
     <Name>Workload</Name>
@@ -66,8 +65,7 @@ Backend endpoint, called 'Workload' includes item CRUD and jobs APIs
     <EndpointResolutionContext>...
 </ServiceEndpoint>
 ```
-
-`<IsEndpointResolutionService>` and `EndpointResolutionContext`  are set based on whether your endpoint implements the workload API or only the endpoint resolution. See [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution) for detailed information.
+* `<IsEndpointResolutionService>` and `EndpointResolutionContext`  are set based on whether your endpoint implements the workload API or only the endpoint resolution. See [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution) for detailed information about the resolution context and response.
 
 
 ## Item Manifest - Key Manifest Components
@@ -105,6 +103,7 @@ For example, let's consider our sample workload, which includes three specific j
  
 - **CalculateAsText Job** : This job type handles text-based calculations, taking `Operand1` and `Operand2`, performing the selected operation, and saving the result in the lakehouse. 
 - **CalculateAsParquet Job** : Specifically tailored for working with Parquet data, this job type also takes `Operand1` and `Operand2`, performs the selected operation, and stores the result in the lakehouse, following the Parquet data format.
+See [monitoring hub guide](monitoring-hub.md) for more information on jobs and related configuration.
 
 In summary, the Workload and Item Manifests serve as foundational documents for adding custom workloads to Fabric.
 The authentication process triggers a straightforward sequence of actions: upload, parsing, and registration, guaranteeing proper configuration and efficient workload management within the Azure ecosystem.
