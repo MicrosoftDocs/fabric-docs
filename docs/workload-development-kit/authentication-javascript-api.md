@@ -1,9 +1,8 @@
 ---
 title: Overview of Fabric workload authentication JavaScript API (preview)
 description: Learn how to use JavaScript APIs to authenticate a customized Fabric workload.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024

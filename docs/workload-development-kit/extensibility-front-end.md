@@ -1,9 +1,8 @@
 ---
 title: Fabric workload development kit frontend (preview)
 description: Learn how to edit files in the developer sample repo to build the frontend of a customized Fabric workload.
-author: mberdugo
-ms.author: monaberdugo
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024

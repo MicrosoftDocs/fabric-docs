@@ -1,9 +1,8 @@
 ---
 title: Create and deploy the boilerplate Azure web app (preview)
 description: Learn about how to create and build the boilerplate Azure web app.
-author: mberdugo
-ms.author: monaberdugo
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024
