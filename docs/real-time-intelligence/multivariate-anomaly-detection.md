@@ -22,7 +22,7 @@ Specifically, in this tutorial you will:
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* Role of **Admin**, **Contributor**, or **Member** in the workspace. This permission level is needed to create items such as an Environment.
+* Role of **Admin**, **Contributor**, or **Member** [in the workspace](../get-started/roles-workspaces.md). This permission level is needed to create items such as an Environment.
 * An [eventhouse](create-eventhouse.md) in your workspace with a database.
 * Download the sample data from the GitHub repo
 * Download the notebook from the GitHub repo
@@ -54,7 +54,7 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 
 ## Copy OneLake path to the table
 
-Make sure you've selected the recently created table. In the **Table details** section, select **Copy path** to copy the OneLake path to your clipboard. Save this in a text editor somewhere to use in a later step.
+Make sure you've selected the recently created table. In the **Table details** tile, select **Copy path** to copy the OneLake path to your clipboard. Save this in a text editor somewhere to use in a later step.
 
 :::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
 
@@ -91,7 +91,7 @@ In this step, you create a [OneLake shortcut](../onelake/create-onelake-shortcut
 For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md). In this step, you create a Spark environment to run the Python notebook that trains the multivariate anomaly detection model.
 
 1. In the experience switcher, choose **Data Engineering**. If you are already in the Data Engineering experience, browse to **Home**.
-1. From **Recommended items to create**, Select **Environments** and enter a name for the environment.
+1. From **Recommended items to create**, Select **Environments** and enter the name *MultivariateAnomalyDetectionTutorial* for the environment.
 
     :::image type="content" source="media/multivariate-anomaly-detection/create-environment.png" alt-text="Screenshot of creating an environment in Data Engineering.":::
 
@@ -185,107 +185,137 @@ In this step, you attach the environment you created in the previous step to the
     print(train_df.shape)
     train_df[:3]
     ```
-    
+
     ```python
     train_len = len(train_df)
     predict_len = len(df) - train_len
     print(f'Total samples: {len(df)}. Split to {train_len} for training, {predict_len} for testing')
     ```
 
-1. Run the notebook to train the model and save it in Fabric MLflow
-    models registry
+1. Run the cells to train the model and save it in Fabric MLflow models registry.
 
-:::image type="content" source="media/multivariate-anomaly-detection/image29.png" alt-text="Screenshot of multivariate anomaly detection image 29.":::
+    ```python
+    import mlflow
+    from anomaly_detector import MultivariateAnomalyDetector
+    model = MultivariateAnomalyDetector()
+    ```
 
-Verify you received the predictions chart
+    ```python
+    sliding_window = 200
+    param   s = {"sliding_window": sliding_window}
+    ```
 
-:::image type="content" source="media/multivariate-anomaly-detection/image30.png" alt-text="Screenshot of multivariate anomaly detection image 30.":::
+    ```python
+    model.fit(train_df, params=params)
+    ```
 
-Note the model URI in the last cell:
-abfss://b0b7b174-dd02-4091-a5f2-76794001d4c3@onelakedxt.pbidedicated.windows.net/b0ad521b-88b2-441c-a099-65cbb23b6d38/be4abe73-3fa1-450c-8f54-54cceda3526f/artifacts
+    ```python
+    with mlflow.start_run():
+        mlflow.log_params(params)
+        mlflow.set_tag("Training Info", "MVAD on 5 Stocks Dataset")
+    
+        model_info = mlflow.pyfunc.log_model(
+            python_model=model,
+            artifact_path="mvad_artifacts",
+            registered_model_name="mvad_5_stocks_model",
+        )
+    ```
 
-15. Create a Query set
+    ```python
+    # Extract the registered model path to be used for prediction using Kusto Python sandbox
+    
+    mi = mlflow.search_registered_models(filter_string="name='mvad_5_stocks_model'")[0]
+    model_abfss = mi.latest_versions[0].source
+    print(model_abfss)
+    ```
 
-:::image type="content" source="media/multivariate-anomaly-detection/image31.png" alt-text="Screenshot of multivariate anomaly detection image 31.":::
+1. Copy the <a name="modeluri">model URI </a>from the last cell output. You will use this in the next step.
 
-:::image type="content" source="media/multivariate-anomaly-detection/image32.png" alt-text="Screenshot of multivariate anomaly detection image 32.":::
+## Set up your KQL queryset
 
-16. Attache your KQL DB to this query set
+1. In the experience switcher, choose **Real-Time Intelligence**.
+1. Select your workspace.
+1. Select **+New item** > **KQL Queryset**. Enter the name *MultivariateAnomalyDetectionTutorial*.
+1. Select **Create**.
+1. In the **OneLake data hub** window, select the KQL database where you stored the data.
+1. Select **Connect**.
 
-:::image type="content" source="media/multivariate-anomaly-detection/image33.png" alt-text="Screenshot of multivariate anomaly detection image 33.":::
+## Predict anomalies in the KQL queryset
 
-17. Download the kql file from
-    <https://artifactswestus.blob.core.windows.net/public/demo/MVAD%205%20Stocks%20(KQL).kql>
-    to your local disk.
+1. Copy/paste and run the following '.create-or-alter function' query to define the  `predict_fabric_mvad_fl()` stored function:
 
-```kusto
-.create-or-alter function with (folder = "Packages\\ML", docstring = "Predict MVAD model in Microsoft Fabric")
-predict_fabric_mvad_fl(samples:(*), features_cols:dynamic, artifacts_uri:string, trim_result:bool=false)
-{
-    let s = artifacts_uri;
-    let artifacts = bag_pack('MLmodel', strcat(s, '/MLmodel;impersonate'), 'conda.yaml', strcat(s, '/conda.yaml;impersonate'),
-                             'requirements.txt', strcat(s, '/requirements.txt;impersonate'), 'python_env.yaml', strcat(s, '/python_env.yaml;impersonate'),
-                             'python_model.pkl', strcat(s, '/python_model.pkl;impersonate'));
-    let kwargs = bag_pack('features_cols', features_cols, 'trim_result', trim_result);
-    let code = ```if 1:
-        import os
-        import shutil
-        import mlflow
-        model_dir = 'C:/Temp/mvad_model'
-        model_data_dir = model_dir + '/data'
-        os.mkdir(model_dir)
-        shutil.move('C:/Temp/MLmodel', model_dir)
-        shutil.move('C:/Temp/conda.yaml', model_dir)
-        shutil.move('C:/Temp/requirements.txt', model_dir)
-        shutil.move('C:/Temp/python_env.yaml', model_dir)
-        shutil.move('C:/Temp/python_model.pkl', model_dir)
-        features_cols = kargs["features_cols"]
-        trim_result = kargs["trim_result"]
-        test_data = df[features_cols]
-        model = mlflow.pyfunc.load_model(model_dir)
-        predictions = model.predict(test_data)
-        predict_result = pd.DataFrame(predictions)
-        samples_offset = len(df) - len(predict_result)        # this model doesn't output predictions for the first sliding_window-1 samples
-        if trim_result:                                       # trim the prefix samples
-            result = df[samples_offset:]
-            result.iloc[:,-4:] = predict_result.iloc[:, 1:]   # no need to copy 1st column which is the timestamp index
-        else:
-            result = df                                       # output all samples
-            result.iloc[samples_offset:,-4:] = predict_result.iloc[:, 1:]
-        ```;
-    samples
-    | evaluate python(typeof(*), code, kwargs, external_artifacts=artifacts)
-}
-```
+    ```kusto
+    .create-or-alter function with (folder = "Packages\\ML", docstring = "Predict MVAD model in Microsoft Fabric")
+    predict_fabric_mvad_fl(samples:(*), features_cols:dynamic, artifacts_uri:string, trim_result:bool=false)
+    {
+        let s = artifacts_uri;
+        let artifacts = bag_pack('MLmodel', strcat(s, '/MLmodel;impersonate'), 'conda.yaml', strcat(s, '/conda.yaml;impersonate'),
+                                 'requirements.txt', strcat(s, '/requirements.txt;impersonate'), 'python_env.yaml', strcat(s, '/python_env.yaml;impersonate'),
+                                 'python_model.pkl', strcat(s, '/python_model.pkl;impersonate'));
+        let kwargs = bag_pack('features_cols', features_cols, 'trim_result', trim_result);
+        let code = ```if 1:
+            import os
+            import shutil
+            import mlflow
+            model_dir = 'C:/Temp/mvad_model'
+            model_data_dir = model_dir + '/data'
+            os.mkdir(model_dir)
+            shutil.move('C:/Temp/MLmodel', model_dir)
+            shutil.move('C:/Temp/conda.yaml', model_dir)
+            shutil.move('C:/Temp/requirements.txt', model_dir)
+            shutil.move('C:/Temp/python_env.yaml', model_dir)
+            shutil.move('C:/Temp/python_model.pkl', model_dir)
+            features_cols = kargs["features_cols"]
+            trim_result = kargs["trim_result"]
+            test_data = df[features_cols]
+            model = mlflow.pyfunc.load_model(model_dir)
+            predictions = model.predict(test_data)
+            predict_result = pd.DataFrame(predictions)
+            samples_offset = len(df) - len(predict_result)        # this model doesn't output predictions for the first sliding_window-1 samples
+            if trim_result:                                       # trim the prefix samples
+                result = df[samples_offset:]
+                result.iloc[:,-4:] = predict_result.iloc[:, 1:]   # no need to copy 1st column which is the timestamp index
+            else:
+                result = df                                       # output all samples
+                result.iloc[samples_offset:,-4:] = predict_result.iloc[:, 1:]
+            ```;
+        samples
+        | evaluate python(typeof(*), code, kwargs, external_artifacts=artifacts)
+    }
+    ```
 
-```kusto
-let cutoff_date=datetime(2023-01-01);
-let num_predictions=toscalar(demo_stocks_change | where Date >= cutoff_date | count);   //  number of latest points to predict
-let sliding_window=200;                                                                 //  should match the window that was set for model training
-let prefix_score_len = sliding_window/2+min_of(sliding_window/2, 200)-1;
-let num_samples = prefix_score_len + num_predictions;
-demo_stocks_change
-| top num_samples by Date desc 
-| order by Date asc
-| extend is_anomaly=bool(false), score=real(null), severity=real(null), interpretation=dynamic(null)
-| invoke predict_fabric_mvad_fl(pack_array('AAPL', 'AMZN', 'GOOG', 'MSFT', 'SPY'),
-            // NOTE: Update artifacts_uri to model path
-            artifacts_uri='abfss://b0b7b174-dd02-4091-a5f2-76794001d4c3@onelakedxt.pbidedicated.windows.net/b0ad521b-88b2-441c-a099-65cbb23b6d38/be4abe73-3fa1-450c-8f54-54cceda3526f/artifacts',
-            trim_result=true)
-| summarize Date=make_list(Date), AAPL=make_list(AAPL), AMZN=make_list(AMZN), GOOG=make_list(GOOG), MSFT=make_list(MSFT), SPY=make_list(SPY), anomaly=make_list(toint(is_anomaly))
-| render anomalychart with(anomalycolumns=anomaly, title='Stock Price Changest in % with Anomalies')
-```
+1. Copy/paste and run the following prediction query that will detect multivariate anomalies on the 5 stocks, based on the trained model, and render it as anomalychart. Note that the anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies, i.e. anomalies of the vector of the 5 stocks in the specific date. Replace the output model URI copied in a [previous step](#modeluri).
 
-18. Copy its content to your query set.
+    ```kusto
+    let cutoff_date=datetime(2023-01-01);
+    let num_predictions=toscalar(demo_stocks_change | where Date >= cutoff_date | count);   //  number of latest points to predict
+    let sliding_window=200;                                                                 //  should match the window that was set for model training
+    let prefix_score_len = sliding_window/2+min_of(sliding_window/2, 200)-1;
+    let num_samples = prefix_score_len + num_predictions;
+    demo_stocks_change
+    | top num_samples by Date desc 
+    | order by Date asc
+    | extend is_anomaly=bool(false), score=real(null), severity=real(null), interpretation=dynamic(null)
+    | invoke predict_fabric_mvad_fl(pack_array('AAPL', 'AMZN', 'GOOG', 'MSFT', 'SPY'),
+                // NOTE: Update artifacts_uri to model path
+                artifacts_uri='enter your model URI here',
+                trim_result=true)
+    | summarize Date=make_list(Date), AAPL=make_list(AAPL), AMZN=make_list(AMZN), GOOG=make_list(GOOG), MSFT=make_list(MSFT), SPY=make_list(SPY), anomaly=make_list(toint(is_anomaly))
+    | render anomalychart with(anomalycolumns=anomaly, title='Stock Price Changest in % with Anomalies')
+    ```
 
-19. Run the '.create-or-alter function' query to define
-    predict_fabric_mvad_fl() stored function
+The resulting anomaly chart should look like the following image: 
 
-20. Run the prediction query that will detect multivariate anomalies on the 5 stocks, based on the trained model, and render it as anomalychart. Note that the anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies, i.e. anomalies of the vector of the 5 stocks in the specific date.
+:::image type="content" source="media/multivariate-anomaly-detection/kql-query-output.png" alt-text="Screenshot of multivariate anomaly output.":::
 
-:::image type="content" source="media/multivariate-anomaly-detection/image34.png" alt-text="Screenshot of multivariate anomaly detection image 34.":::
 
-## Summary
+## Clean up resources
 
-The addition of the time-series-anomaly-detector package to Fabric makes it the top platform for univariate & multivariate time series anomaly detection. Choose the anomaly detection method that best fits your scenario -- from native KQL function for  univariate analysis at scale, through standard multivariate analysis techniques and up to the best of breed time series anomaly detection algorithms implemented in the time-series-anomaly-detector package.
+When you finish the tutorial, you can delete the resources, you created to avoid incurring other costs. To delete the resources, follow these steps:
+
+1. Browse to your workspace homepage.
+1. Delete the notebook created in this tutorial.
+1. Delete the Eventhouse or [database](manage-monitor-eventhouse.md#manage-kql-databases) used in this tutorial.
+1. Delete the KQL queryset created in this tutorial.
+
 
