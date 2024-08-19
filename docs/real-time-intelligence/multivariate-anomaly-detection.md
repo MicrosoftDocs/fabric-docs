@@ -56,7 +56,7 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 
 Make sure you've selected the recently created table. In the **Table details** section, select **Copy path** to copy the OneLake path to your clipboard. Save this in a text editor somewhere to use in a later step.
 
-    :::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
+:::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
 
 ## Enable KQL Python plugin
 
@@ -161,7 +161,7 @@ In this step, you attach the environment you created in the previous step to the
     return abfss_uri
     ```
 
-1. Input your OneLake URI copied from [Create a OneLake shortcut to the table](#create-a-onelake-shortcut-to-the-table) to load the table.
+1. Input your OneLake URI copied from [Copy OneLake path to the table](#copy-onelake-path-to-the-table) to load the table.
 
     ```python
     onelake_uri = "Paste your OneLake URI here"
