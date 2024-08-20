@@ -11,13 +11,14 @@ ms.custom:
   - ignite-2023
 ms.date: 05/09/2023
 ms.search.form: Deployment pipelines operations
+#customer intent: As a developer, I want to learn how to compare the content of the source stage and target stage before deployment so that I can ensure that the content is correct.
 ---
 
 # Compare content in different deployment stages
 
 Before you deploy content to a different stage, it can be helpful to see the differences between the two stages. The deployment pipeline home page compares consecutive deployment stages and indicates if there are any differences between them.
 
-Deployment pipelines pairs items of two neighboring stages by combining item type and item name, to know which items to compare and to override. Items of the same name and type are paired. If there's more than one item with the same name and type in a workspace, then the items are paired if their paths are the same. If the path isn't the same, the items aren't paired. The pairing is created only once, during the first deployment of one stage to another, or during assignment of a workspace. On subsequent deployments, each deployed item overrides its paired item metadata, including its name, if it was changed.
+Deployment pipelines pairs items of two neighboring stages by combining item type and item name, to know which items to compare and to override. Items of the same name and type are paired. If there's more than one item with the same name and type in a workspace, then the items are paired if their paths are the same. If the path isn't the same, the items aren't paired. The pairing is created only once, during the first deployment of one stage to another, or during assignment of a workspace. On subsequent deployments, each deployed item overrides its paired item metadata, including its name, if it was changed. For more information on pairing, see [pairing items](./understand-the-deployment-process.md#autobinding).
 
 ## Compare stages
 
@@ -29,9 +30,21 @@ A comparison icon indicator appears between two sequential stages to give a quic
 
 - **Green indicator** – The metadata for each content item in both stages, is the same.
 
-- **Orange indicator** - Appears if one of these conditions is true:
-  - Some of the content items in each stage were changed or updated (have different metadata).
-  - There's a difference in the number of items in each stage.
+- **Orange indicator** - Appears if at least one item in one of the compared stages were changed, added, or removed.
+
+### [New deployment pipeline UI](#tab/new)
+
+A comparison icon indicator appears on each stage card except for the first stage of the pipeline. It indicates if this stage is identical to the source stage (previous stage) to give a quick visual insight into the differences between them.
+
+:::image type="content" source="./media/compare-pipeline-content/deployment-pipelines-compare-new.png" alt-text="Screenshot showing three stages of deployment. There's list of all the items in the source and target stages with icons showing the compare status." lightbox="media/compare-pipeline-content/deployment-pipelines-compare-new.png":::
+
+The comparison indicator has two states:
+
+- **Green indicator** – The metadata for each content item in both stages, is the same.
+
+- **Orange indicator** - Appears if at least one item in one of the compared stages were changed, added, or removed.
+
+---
 
 When two sequential stages are different, a **Compare** link appears underneath the orange comparison icon. Select **Compare** to open the content item list in both stages. This *Compare view* helps you track changes or differences between items in each pipeline stage.
 
@@ -52,32 +65,29 @@ Items that aren't paired or that were changed get one of the following labels:
 > [!NOTE]
 > If you make changes to a folder, such as moving its location or renaming it, even if you didn't change the items in it, the items are still treated as if you renamed them. Therefore, when comparing pipelines the items are labeled as *Different*.
 
-### [New Deployment pipeline UI](#tab/new)
+When you select a deployment pipelines stage, the items in the stage are listed and compared to the item they are linked to in the source stage.
 
-:::image type="content" source="./media/compare-pipeline-content/deployment-pipelines-compare-new.png" alt-text="Screenshot showing three stages of deployment. There's list of all the items in the source and target stages with icons showing the compare status." lightbox="media/compare-pipeline-content/deployment-pipelines-compare-new.png":::
+The source stage is shown in the drop-down menu on the bottom pane and the name of the compared source item’s name appears on the last column 
 
-When you select a deployment pipelines stage, the items in the stage are listed and compared to the they are linked to in the source stage.
+:::image type="content" source="./"media/compare-pipeline-content/compare-stages-new.png" alt-text="Screenshot of production stage with paired items from test stage.":::
 
-In the comparison display, items are arranged alphabetically by default. Paired items are next to each other, even if they have different names. You can sort or filter the items to find the ones you're interested in, ir you can search for a specific item.
+In the stage display, items are arranged alphabetically by default. You can sort or filter the items to find the ones you're interested in, or you can search for a specific item. Each item has one of the following labels depending on the comparison status:
 
-Each items has one of the following labels depending on the comparison status:
+- **Not in source** – This item appears in the selected stage, but not in the source stage.
+This item can't be selected for deployment (since it doesn't exist in the source) and won’t be impacted during a deployment.
 
-- **Same as source** – The item in the source stage and target stage are identical.
+- **Different from source** – A difference was identified between this item and its paired item in the source stage. The difference could be a schema change to one of the items, property change like name (considering full path of folders if any), or deployment rules that were set for this item but haven’t been applied yet (requires deployment of the item). After deployment, the item in the source stage overwrites the item in the target stage, regardless of where the change was made.
 
-- **Different from source** – An item that exists both in the source and the target stage, where one of the versions was changed after the last deployment. After deployment, the item in the source stage will overwrite the item in the target stage, regardless of where the change was made.
+- **Only in source** – A new item identified in the source stage. This item doesn't exist in the selected stage and therefore s as a placeholder with no item name in the first column (under ‘name’). After deployment, this item will be cloned to this stage.
 
-    Semantic models with configured deployment rules that haven't been deployed, are also marked as *different*, since deployment rules aren't applied until the semantic models are deployed from the source stage to the target stage.
-
-- **Only in source** – This item appears in the source stage, but not in the target stage.
-
-- **Not in source** – This item appears in the target stage, but not in the source stage.
+- **Same as source** – No difference was identified between this item and its pair in the source stage.
 
     >[!NOTE]
     >Deployment will not impact items not in the source stage.
 
----
-
 ## Review changes to paired items
+
+If there's a change in the schema, you can see the differences between the two items by selecting the **Compare** button.
 
 ### [Original Deployment change review button](#tab/old)
 
@@ -89,12 +99,13 @@ If there's [nothing to compare](#considerations-and-limitations), the button is 
 
 ### [New Deployment change review button](#tab/new)
 
-To compare the items in the two stages, select the *Compare* icon:
+To compare the items in the two stages, select the **Compare** icon:
 
 :::image type="content" source="./media/compare-pipeline-content/compare-new.png" alt-text="Screenshot showing the compare button in the top right corner.":::
 
 ---
-When you select the **Change review** button, a pop-up window opens with a line by line comparison of the item's content as it [currently looks in the two stages being compared](#file-modifications-before-comparison).
+
+A pop-up window opens with a line by line comparison of the item's content as it [currently looks in the two stages being compared](#file-modifications-before-comparison).
 
 The top of the screen has the following information:
 
@@ -103,13 +114,16 @@ The top of the screen has the following information:
 1. Up and down arrows that take you to the previous or next difference in the file.
 1. A navigation bar on the right side with red or green bars highlighting where the changes are in the file.
 1. Buttons that toggle between a side-by-side view and an inline view of the changes.
-1. The change review window with a line by line comparison of the items.
 
 ### [Side-by-side view](#tab/browser)
+
+A line by line comparison of the items. On the left is the schema of this stage’s item. On the right is the schema of the paired item in the source stage.
 
 :::image type="content" source="./media/compare-pipeline-content/changes-side-by-side-numbered.png" alt-text="Screenshot showing a side-by-side view of the changes made to the file.":::
 
 ### [Inline view](#tab/visual-studio)
+
+A line by line comparison of the items. The schema of this stage’s item is on top, and beneath is the schema of the paired item in the source stage.
 
 :::image type="content" source="./media/compare-pipeline-content/changes-inline-numbered.png" alt-text="Screenshot showing an inline view of the changes made to the file.":::
 
@@ -136,7 +150,7 @@ In both comparison displays, whether inline or side-by-side, the differences are
 
 ### File modifications before comparison
 
-The two versions of the content shown in the change review window are modified in the following ways to make the comparison easier:
+Both versions of the content shown in the *Compare* window are modified in the following ways to make the comparison easier:
 
 - Data source and parameter rules are applied to the source item so that the data source you see is the one that's deployed.
 - Some fields that don't indicate differences (for example, timestamps and role membership) are removed from both items.
@@ -149,7 +163,7 @@ Close the window when you finish examining the differences and deploy to the nex
 
 - The *change review* feature only supports schema changes for textual item types. Currently it supports semantic models, excluding data modeling format v1, and dataflows.
 
-- An item can be tagged as *Different*, but still not qualify for change review. In these cases, the **Change review** button is disabled. For example:
+- An item can be tagged as *Different*, but still not qualify to appear in the Compare window. In these cases, the **Compare** button is disabled. For example:
   - Settings changes such as name change.
   - Item type isn't yet supported.
   - Item has an unknown status because the comparison process wasn't completed.
