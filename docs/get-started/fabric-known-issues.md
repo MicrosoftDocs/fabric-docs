@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 08/06/2024
+ms.date: 08/19/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,13 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  815  | Data Factory | [Dataflows automatically create tables from queries on Fabric destinations](known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md) | August 19, 2024 |
+|  814  | Power BI | [Scorecard dropdown slicers aren't visible when filtering](known-issues/known-issue-814-scorecard-dropdown-slicers-not-visible-filtering.md) | August 19, 2024 |
+|  811  | Data Engineering | [Fabric Runtime 1.3 causes invalid libraries](known-issues/known-issue-811-fabric-runtime-invalid-libraries.md) | August 16, 2024 |
+|  810  | Data Warehouse | [Inserting nulls into Data Warehouse tables fail with incorrect error message](known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md) | August 16, 2024 |
+|  809  | Data Factory | [Dataflow Gen2 refresh fails due to missing SQL analytics endpoint](known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md) | August 14, 2024 |
+|  808  | Power BI | [Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser](known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md) | August 14, 2024 |
+|  807  | Data Warehouse | [Mirroring for Azure Cosmos DB fails when you create a new container](known-issues/known-issue-807-mirroring-cosmos-db-fails-create-container.md) | August 14, 2024 |
 |  796  | Data Warehouse | [Mirroring for Azure Cosmos DB fails](known-issues/known-issue-796-mirroring-cosmos-db-fails.md) | August 6, 2024 |
 |  781  | Data Factory | [Pipeline copy to Oracle using on-premises data gateway errors](known-issues/known-issue-781-pipeline-copy-oracle-data-gateway-errors.md) | August 6, 2024 |
 |  801  | Power BI | [Custom visuals don't render in Desktop](known-issues/known-issue-801-custom-visuals-not-render.md) | August 1, 2024 |
@@ -27,17 +34,14 @@ Select the **Title** to view more information about that specific known issue.
 |  797  | Data Engineering | [Localization blocks operations in a lakehouse](known-issues/known-issue-797-localization-blocks-operations-lakehouse.md) | July 31, 2024 |
 |  795  | Data Factory | [Multiple installations of on-premises data gateway causes pipelines to fail](known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md) | July 31, 2024 |
 |  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 |
-|  785  | Power BI | [Add data to a report when scrollbar is present doesn't work](known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md) | July 24, 2024 |
 |  784  | Data Activator | [Data Activator alert created from visual with no dimensions doesn't work](known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md) | July 18, 2024 |
 |  782  | Data Engineering | [Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse](known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md) | July 18, 2024 |
-|  780  | Power BI | [Cognitive Services ScoreSentiment function doesn't work in dataflows](known-issues/known-issue-780-cognitive-services-score-sentiment-function-not-work-dataflows.md) | July 18, 2024 |
 |  778  | Power BI | [Direct Lake semantic model table changes don't work](known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md) | July 16, 2024 |
 |  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 |
 |  770  | Data Warehouse | [Data warehouse connection or query execution fails](known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md) | July 3, 2024 |
 |  769  | Data Factory | [Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines](known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md) | July 2, 2024 |
 |  767  | Data Warehouse | [SQL analytics endpoint table sync fails when table contains linked functions](known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md) | July 2, 2024 |
 |  765  | Data Factory | [Dataflows Gen2 staging warehouse doesn't work in deployment pipelines](known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md) | July 2, 2024 |
-|  764  | Power BI | [New card and reference label tabular layout content hidden or truncated](known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md) | June 26, 2024 |
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
 |  755  | Real-Time Intelligence | [Real-Time hub **Set Alert** fails on prior version of an eventstream](known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md) | June 20, 2024 |
 |  753  | Data Factory | [Pipeline Web activity through on-premises data gateway doesn't support SPN authentication](known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md) | June 11, 2024 |
@@ -60,7 +64,6 @@ Select the **Title** to view more information about that specific known issue.
 |  715  | Power BI | [TMDL semantic models won't open in Desktop after web edited](known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md) | May 2, 2024 |
 |  708  | Data Warehouse | [SQL analytics endpoint and semantic model are orphaned when a lakehouse is deleted](known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md) | May 1, 2024 |
 |  702  | Data Factory | [SQL database mirror doesn't start when you create connection during mirror creation](known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md) | May 1, 2024 |
-|  670  | Power BI | [Filled or bubble layers on Azure Maps visual doesn't render](known-issues/known-issue-670-filled-bubble-layers-azure-maps-visual-render.md) | April 11, 2024 |
 |  667  | Power BI | [Upload reports from OneDrive or SharePoint fails](known-issues/known-issue-667-upload-reports-onedrive-sharepoint-fails.md) | April 1, 2024 |
 |  658  | Data Engineering | [PySpark import statements fail for .jar files installed through environment](known-issues/known-issue-658-pyspark-import-statements-fail-jar-files-installed.md) | March 28, 2024 |
 |  657  | OneLake | [Cross-region internal shortcuts don't work with SQL analytics endpoints](known-issues/known-issue-657-cross-region-internal-shortcuts-dont-work-sql-analytics-endpoints.md) | March 28, 2024 |
@@ -78,7 +81,6 @@ Select the **Title** to view more information about that specific known issue.
 |  506  | Data Warehouse | [InProgress status shows in Fabric capacity metrics app for completed queries](known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md)  | October 5, 2023 |
 |  454  | Data Warehouse              | [Warehouse's object explorer doesn't support case-sensitive object names](known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)    |  July 10, 2023  |
 |  447  | Data Warehouse              | [Temp tables in Data Warehouse and SQL analytics endpoint](known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md)    |  July 5, 2023  |
-|  222  | Power BI                 |  [Search strings that include Japanese symbols don't return matches](known-issues/known-issue-222-search-strings-japanese-symbols-dont-work.md)   |  August 3, 2022  |
 
 ## Recently closed known issues
 
@@ -86,6 +88,11 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  764  | Power BI | [New card and reference label tabular layout content hidden or truncated](known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md) | June 26, 2024 |  Fixed: August 16, 2024 |
+|  670  | Power BI | [Filled or bubble layers on Azure Maps visual doesn't render](known-issues/known-issue-670-filled-bubble-layers-azure-maps-visual-render.md) | April 11, 2024 | Fixed: August 16, 2024 |
+|  222  | Power BI |  [Search strings that include Japanese symbols don't return matches](known-issues/known-issue-222-search-strings-japanese-symbols-dont-work.md)   |  August 3, 2022  | Removed: August 16, 2024 |
+|  785  | Power BI | [Add data to a report when scrollbar is present doesn't work](known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md) | July 24, 2024 | Fixed: August 14, 2024 |
+|  780  | Power BI | [Cognitive Services ScoreSentiment function doesn't work in dataflows](known-issues/known-issue-780-cognitive-services-score-sentiment-function-not-work-dataflows.md) | July 18, 2024 | Fixed: August 14, 2024 |
 |  773  | Data Factory | [Dataflow Gen2 ownership takeover fails](known-issues/known-issue-773-dataflow-gen2-ownership-takeover-fails.md) | July 5, 2024 | Fixed: August 6, 2024 |
 |  709  | Data Factory | [Query folding indicators are incorrect for certain Power Query SDK based connectors](known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md) | May 1, 2024 | Fixed: July 31, 2024 |
 |  596  | Data Factory   | [Refresh history reports in progress for some tables that failed](known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables.md)  | August 24, 2023 | Fixed: July 31, 2024 |

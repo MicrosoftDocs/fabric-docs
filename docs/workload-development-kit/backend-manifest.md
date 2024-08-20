@@ -1,9 +1,8 @@
 ---
 title: Overview of the backend manifest of a workload for the Fabric Workload Development Kit
 description: This article describes the overview and key concepts for the backend manifest definition.
-author: AviSander
-ms.author: asander
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: concept-article
 ms.custom:
 ms.date: 07/14/2024
@@ -13,7 +12,7 @@ ms.date: 07/14/2024
 # Workload Manifest
 ## Overview
 
-The `WorkloadManifest.xml` and `Item.xml` files are required for workload definition in Fabric. It holds the basic Workload and Workload Items configuration settings for setup and it acts as a guide for workload setup and management, helping define, share, and record essential workload details for smooth integration into Fabric.
+The `WorkloadManifest.xml` and `Item.xml` files are required for workload definition in Fabric. They hold the basic Workload and Workload Items configuration settings for setup and they act as a guide for workload setup and management, helping define, share, and record essential workload details for smooth integration into Fabric.
 
 In our sample repository a `.nupkg` file is generated from the XML files located in the `src/Packages/manifest` folder during the build process. This packaged file holds all the necessary information about your workload. In the `workload-dev-mode.json` file, there's a field called `ManifestPackageFilePath` that should point to this newly created `.nupkg` file.
 
@@ -35,7 +34,7 @@ Your workload's unique identifier.
 **This will be enforced in the following scenarios - dev connection, Test upload.**
 
 ### Version Element
-Your manifest's version, should be [SemVer](https://semver.org/) compliant
+Your manifest's version, should be [SemVer](https://semver.org/) compliant.
 
 ### CloudServiceConfiguration Element
 Your workload's service configuration, currently only one configuration is supported.
@@ -52,13 +51,12 @@ The `<AADApp>` section sets up Microsoft Entra ID [Azure Active Directory (AAD)]
 </AADApp>
 ```
 
-Ensure to consult the [authentication documentation](./authentication-concept.md) for a deeper understanding of `AppId`, `ResourceId`, and `RedirectUri` and their significance in the context of authentication processes.
+Consult the [authentication documentation](./authentication-concept.md) for a deeper understanding of `AppId`, `ResourceId`, and `RedirectUri` and their significance in the context of authentication processes.
 
 ### ServiceEndpoint Elements
 
-Configuration of a specific logical endpoint
-
-Backend endpoint, called 'Workload' includes item CRUD and jobs APIs
+Represent the configuration of a specific logical endpoint, for example the backend endpoint which includes implementation for item CRUD and jobs APIs.
+* The configuration for workload's backend endpoint states the backend URL of your workload.
 ```
 <ServiceEndpoint>
     <Name>Workload</Name>
@@ -67,8 +65,7 @@ Backend endpoint, called 'Workload' includes item CRUD and jobs APIs
     <EndpointResolutionContext>...
 </ServiceEndpoint>
 ```
-
-`<IsEndpointResolutionService>` and `EndpointResolutionContext`  are set based on whether your endpoint implements the workload API or only the endpoint resolution. See [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution) for detailed information.
+* `<IsEndpointResolutionService>` and `EndpointResolutionContext`  are set based on whether your endpoint implements the workload API or only the endpoint resolution. See [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution) for detailed information about the resolution context and response.
 
 
 ## Item Manifest - Key Manifest Components
@@ -79,12 +76,12 @@ The manifest, whose structure is defined by ItemDefinition.xsd, outlines core at
 Represents Fabric's ItemDefinition.xsd published version.
 
 ### TypeName Attribute
-Your item's unique identifier
+Your item's unique identifier.
 
 ### Job Scheduler Configuration
 
 The `<JobScheduler>` section encompasses various elements that define the behavior and settings of job scheduling, tracking, and management. 
-- `<OnDemandJobDeduplicateOptions>` and `<ScheduledJobDeduplicateOptions>`: Define deduplication options for on-demand and scheduled artifact jobs, respectively. Options include `None` (no deduplication), `PerItem` (one job run for the same item and job type), and `PerUser` (one job run for the same user and item). 
+- `<OnDemandJobDeduplicateOptions>` and `<ScheduledJobDeduplicateOptions>`: Define deduplication options for on-demand and scheduled item jobs, respectively. Options include `None` (no deduplication), `PerItem` (one job run for the same item and job type), and `PerUser` (one job run for the same user and item). 
 - `<ItemJobTypes>`: Contains configurations for different item job types. 
 - `<ItemJobType>`: Describes a specific job type. 
 - `<Name>`: The name of the job type. Must use the Item's name as a prefix. 
@@ -106,6 +103,7 @@ For example, let's consider our sample workload, which includes three specific j
  
 - **CalculateAsText Job** : This job type handles text-based calculations, taking `Operand1` and `Operand2`, performing the selected operation, and saving the result in the lakehouse. 
 - **CalculateAsParquet Job** : Specifically tailored for working with Parquet data, this job type also takes `Operand1` and `Operand2`, performs the selected operation, and stores the result in the lakehouse, following the Parquet data format.
+See [monitoring hub guide](monitoring-hub.md) for more information on jobs and related configuration.
 
 In summary, the Workload and Item Manifests serve as foundational documents for adding custom workloads to Fabric.
 The authentication process triggers a straightforward sequence of actions: upload, parsing, and registration, guaranteeing proper configuration and efficient workload management within the Azure ecosystem.

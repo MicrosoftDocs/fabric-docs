@@ -24,7 +24,7 @@ As an admin, you can manage many platform aspects for your organization. This se
 
 To access the Fabric SaaS platform, you need a license. Fabric has two type of licenses:
 
-* [Capacity license](../enterprise/licenses.md#capacity-license) - An organizational license that provides a pool of resources for Fabric operations. Capacity licenses are divided into stock keeping units (SKUs). Each SKU provides a different number of capacity units (CUs) which are used to calculate the capacity's compute power.
+* [Capacity license](../enterprise/licenses.md#capacity) - An organizational license that provides a pool of resources for Fabric operations. Capacity licenses are divided into stock keeping units (SKUs). Each SKU provides a different number of capacity units (CUs) which are used to calculate the capacity's compute power.
 
 * [Per user license](../enterprise/licenses.md#per-user-licenses) - Per user licenses allow users to work in Fabric.
 
