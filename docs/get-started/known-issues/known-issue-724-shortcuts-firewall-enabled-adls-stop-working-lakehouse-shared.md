@@ -4,7 +4,7 @@ description: A known issue is posted where shortcuts to a firewall-enabled ADLS 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/23/2024
+ms.date: 07/24/2024
 ms.custom: known-issue-724
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-724
 
 You have a lakehouse that contains an Azure Data Lake Storage (ADLS) Gen2 shortcut, where the ADLS Gen2 storage account is protected by a firewall. You share the lakehouse with a viewer or user outside of the workspace, and user can't access the shortcut. Also, no other users can access the shortcut.
 
-**Status:** Open
+**Status:** Fixed: July 24, 2024
 
 **Product Experience:** OneLake
 

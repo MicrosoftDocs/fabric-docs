@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -22,7 +20,7 @@ This article is specific to data warehousing workloads in Microsoft Fabric. For 
 
 ## Compute capacity
 
-Capacity forms the foundation in Microsoft Fabric and provides the computing power that drives all Fabric workloads. Based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across Fabric. You can review the CUs for each SKU at [Capacity and SKUs](../enterprise/licenses.md#capacity-license).
+Capacity forms the foundation in Microsoft Fabric and provides the computing power that drives all Fabric workloads. Based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across Fabric. You can review the CUs for each SKU at [Capacity and SKUs](../enterprise/licenses.md#capacity).
 
 ## Smoothing
 

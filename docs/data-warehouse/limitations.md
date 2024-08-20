@@ -4,9 +4,7 @@ description: This article contains a list of current limitations in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 08/01/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -22,7 +20,7 @@ This article details the current limitations in [!INCLUDE [product-name](../incl
 
 ## Limitations
 
-Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. Additional functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/en-us/blog/announcing-the-fabric-roadmap?ft=All).
+Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. More functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/en-us/blog/announcing-the-fabric-roadmap?ft=All).
 
 - At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations.
 - Data warehousing is not supported for *multiple* geographies at this time.
@@ -37,6 +35,7 @@ For more limitations in specific areas, see:
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
 - [Pause and resume in Fabric data warehousing](pause-resume.md#considerations-and-limitations)
 - [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)
+- [Limitations in source control](source-control.md#limitations-in-source-control)
 - [Statistics](statistics.md#limitations)
 - [Tables](tables.md#limitations)
 - [Transactions](transactions.md#limitations)
@@ -58,10 +57,14 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 - If you add a foreign key constraint between tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you won't be able to make any further schema changes (for example, adding the new columns). If you don't see the Delta Lake columns with the types that should be supported in [!INCLUDE [fabric-se](includes/fabric-se.md)], check if there is a foreign key constraint that might prevent updates on the table. 
 
+- The [!INCLUDE [fabric-se](includes/fabric-se.md)] does not support [lakehouse schemas](../data-engineering/lakehouse-schemas.md).
+
+- For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
+
 ## Known issues
 
 For known issues in [!INCLUDE [product-name](../includes/product-name.md)], visit [Microsoft Fabric Known Issues](https://support.fabric.microsoft.com/known-issues/).
 
 ## Related content
 
-- [Get Started with Warehouse](create-warehouse.md)
+- [Create a Warehouse in Microsoft Fabric](create-warehouse.md)

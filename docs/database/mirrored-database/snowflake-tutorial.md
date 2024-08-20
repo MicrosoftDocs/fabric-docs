@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
 ms.date: 04/24/2024
-ms.service: fabric
 ms.topic: tutorial
 ---
 
@@ -30,6 +29,7 @@ In this example, you will learn how to configure a secure connection to your Sno
   - `SELECT table`
   - `SHOW tables`
   - `DESCRIBE tables`
+- The user needs to have at least one role assigned that allows access to the Snowflake database.
 
 ## Create a mirrored database
 

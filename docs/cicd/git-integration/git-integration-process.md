@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 07/10/2024
+ms.date: 07/28/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -24,7 +24,7 @@ This article explains basic Git concepts and the process of integrating Git with
 - If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview). This restriction doesn't apply to GitHub.
 - The actions you can take on a workspace depend on the permissions you have in both the workspace and Git, as listed in the next sections.
 
-### Git permissions
+### Required Git permissions for popular actions
 
 The following list shows what different workspace roles can do depending on their permissions in their Git repo:
 
@@ -32,22 +32,67 @@ The following list shows what different workspace roles can do depending on thei
 - **Member/Contributor**: Once they connect to a workspace, a member/contributor can commit and update changes, depending on their Git role. For actions related to the workspace connection (for example, connect, disconnect, or switch branches) seek help from an Admin.
 - **Viewer**: Can't perform any actions. The viewer can't see any Git related information in the workspace.
 
-### Fabric permissions needed for common operations
+### Required Fabric permissions for popular actions
 
-The following table describes the permissions needed to perform various common operations:
+#### Workspace roles
 
-| **Operation**                                                        | **Workspace role**                                                                        | **Git permissions**                          |
-|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|
-| Connect workspace to Git repo                                        | Admin                                                                                     | Read=Allow                                    |
-| Sync workspace with Git repo                                         | Admin                                                                                     | Read=Allow                                    |
-| Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    |
-| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Read=Allow  (in target repo/directory/branch) |
-| View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 |
-| See workspace 'Git status'                                           | Admin, Member, Contributor                                                                | Read=Allow                                    |
-| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow   |
-| Commit workspace changes to Git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit  |
-| Create new Git branch from within Fabric                             | Admin                                                                                     | Role=Write<br/>Create branch=Allow            |
-| Branch out to a new workspace                                            | Admin, Member, Contributor                                                                | Read=Allow<br/>Create branch=Allow            |
+The following table describes the permissions needed in the Fabric workspace to perform various common operations:
+
+| **Operation**                                                        | **Workspace role**                                                                        |
+|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| Connect workspace to Git repo                                        | Admin                                                                                     |
+| Sync workspace with Git repo                                         | Admin                                                                                     |
+| Disconnect workspace from Git repo                                   | Admin                                                                                     |
+| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     |
+| View Git connection details                                          | Admin, Member, Contributor                                                                |
+| See workspace 'Git status'                                           | Admin, Member, Contributor                                                                |
+| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
+| Commit workspace changes to Git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
+| Create new Git branch from within Fabric                             | Admin                                                                                     |
+| Branch out to a new workspace                                            | Admin, Member, Contributor                                                                |
+
+#### Git roles
+
+The following table describes the Git permissions needed to perform various common operations:
+
+##### [Azure Repos](#tab/Azure)
+
+| **Operation**                                                        | **Git permissions**                           |
+|----------------------------------------------------------------------|-----------------------------------------------|
+| Connect workspace to Git repo                                        | Read=Allow                                    |
+| Sync workspace with Git repo                                         | Read=Allow                                    |
+| Disconnect workspace from Git repo                                   | No permissions are needed                     |
+| Switch branch in the workspace (or any change in connection setting) | Read=Allow  (in target repo/directory/branch) |
+| View Git connection details                                          | Read or None                                  |
+| See workspace 'Git status'                                           | Read=Allow                                    |
+| Update from Git                                                      | Read=Allow   |
+| Commit workspace changes to Git                                      | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit  |
+| Create new Git branch from within Fabric                             | Role=Write<br/>Create branch=Allow            |
+| Branch out to a new workspace                                        | Read=Allow<br/>Create branch=Allow            |
+                                    
+
+##### [GitHub Repos](#tab/GitHub)
+
+- If you're using a fine-grained access token, the following permissions are needed for common operations:
+
+  | **Operation**                                                        | **Git permissions**                           |
+  |----------------------------------------------------------------------|-----------------------------------------------|
+  | Connect workspace to Git repo                                        | Contents= Access: Read                        |
+  | Sync workspace with Git repo                                         | Contents= Access: Read                        |
+  | Disconnect workspace from Git repo                                   | No permissions are needed                     |
+  | Switch branch in the workspace (or any change in connection setting) | Contents= Access: Read (in target repo/directory/branch) |
+  | View Git connection details                                          | Contents= Access: Read or None                |
+  | See workspace 'Git status'                                           | Contents= Access: Read                        |
+  | Update from Git                                                      | Contents= Access: Read                        |
+  | Commit workspace changes to Git                                      | Contents= Access: Read and write<br/>branch policy should allow direct commit  |
+  | Create new Git branch from within Fabric                             | Contents= Access: Read and write              |
+  | Branch out to a new workspace                                        | Content=Read and write                        |
+
+- If you're using classic access token, the repo scope must be enabled:
+
+  :::image type="content" source="./media/git-integration-process/classic-token.png" alt-text="Screenshot of classic token generation with repo scope enabled.":::
+
+---
 
 ## Connect and sync
 

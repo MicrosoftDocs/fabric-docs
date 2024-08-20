@@ -1,17 +1,18 @@
 ---
-title: OneLake shortcuts
+title: Unify data sources with OneLake shortcuts
 description: OneLake shortcuts provide a way to connect to existing data without having to directly copy it. Learn how to use them.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
 ms.search.form: Shortcuts
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
   - build-2024
-ms.date: 05/09/2024
+ms.date: 07/19/2024
+#customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 
 # OneLake shortcuts
@@ -167,7 +168,7 @@ Shortcuts can be created to Google Cloud Storage(GCS) using the XML API for GCS.
 When configuring the connection for a GCS shortcut you can either specify the global endpoint for the storage service or use a bucket specific endpoint.
 
 - Global Endpoint example: `https://storage.googleapis.com`
-- Bucket Specific Endpoint example: ` https://<BucketName>.storage.googleapis.com`
+- Bucket Specific Endpoint example: `https://<BucketName>.storage.googleapis.com`
 
 #### Authorization
 
@@ -179,6 +180,7 @@ The account must have permission to access the data within the GCS bucket. If th
 - `stoage.objects.list`
 
 If the global endpoint was used in the connection for the shortcut, the account must also have the following permission:
+
 - `storage.buckets.list`
 
 > [!NOTE]
@@ -188,11 +190,13 @@ If the global endpoint was used in the connection for the shortcut, the account 
 
 Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. This integration is accomplished through shortcuts, which can be created in two ways: through the PowerApps maker portal or through Fabric directly.
 
-#### Creating Shortcuts through PowerApps Maker Portal 
+#### Creating Shortcuts through PowerApps Maker Portal
+
 Authorized PowerApps users can access the PowerApps maker portal and use the **Link to Microsoft Fabric** feature. From this single action, a Lakehouse is created in Fabric and shortcuts are automatically generated for each table in the Dataverse environment. 
  For more information, see [Dataverse direct integration with Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
 
-#### Creating Shortcuts through Fabric 
+#### Creating Shortcuts through Fabric
+
 Fabric users can also create shortcuts to Dataverse. From the create shortcuts UX, users can select Dataverse, supply their environment URL, and browse the available tables. This experience allows users to selectively choose which tables to bring into Fabric rather than bringing in all tables.
 
 > [!NOTE]
@@ -203,9 +207,10 @@ Fabric users can also create shortcuts to Dataverse. From the create shortcuts U
 Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut, and all access to that shortcut is authorized using that credential. The supported delegated credential type is Organizational account (OAuth2). The organizational account must have the system administrator permission to access data in Dataverse Managed Lake.
 
 > [!NOTE]
-> Service Principals are currently not supported for Dataverse shortcut authorization.
+> Service principals added to the fabric workspace must have the admin role to authorize the Dataverse shortcut.
 
 ## Caching
+
 Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24hrs it is purged from the cache. Individual files greater than 1GB in size are not cached.
 > [!NOTE]
 > Shortcut caching is currently only supported for GCS, S3 and S3 compatible shortcuts.
@@ -213,7 +218,6 @@ Shortcut caching can be used to reduce egress costs associated with cross-cloud 
 To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and select **Save**.
 
 :::image type="content" source="media\onelake-shortcuts\shortcut-cache-settings.png" alt-text="Screenshot of workspace settings panel with OneLake tab selected." lightbox="media\onelake-shortcuts\shortcut-cache-settings.png":::
-
 
 ## How shortcuts utilize cloud connections
 

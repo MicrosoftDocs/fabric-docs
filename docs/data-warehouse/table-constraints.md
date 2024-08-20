@@ -4,9 +4,7 @@ description: Learn more about table constraints support using Warehouse in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: kecona, xiaoyul
-ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
+ms.date: 08/01/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -27,17 +25,20 @@ Learn about table constraints in [!INCLUDE [fabricse](includes/fabric-se.md)] an
 [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] support these table constraints: 
 
 - PRIMARY KEY is only supported when NONCLUSTERED and NOT ENFORCED are both used.
-- UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED is used.
 - FOREIGN KEY is only supported when NOT ENFORCED is used.
+- UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED are both used.
 
 For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 
 - [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] don't support default constraints at this time. 
 - For more information on tables, see [Tables in data warehousing in Microsoft Fabric](tables.md).
 
+> [!IMPORTANT]
+> There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
+
 ## Examples
 
-Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a primary key: 
+Create a [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table with a primary key: 
 
 ```sql 
 CREATE TABLE PrimaryKeyTable (c1 INT NOT NULL, c2 INT);
@@ -45,7 +46,7 @@ CREATE TABLE PrimaryKeyTable (c1 INT NOT NULL, c2 INT);
 ALTER TABLE PrimaryKeyTable ADD CONSTRAINT PK_PrimaryKeyTable PRIMARY KEY NONCLUSTERED (c1) NOT ENFORCED;
 ```
 
-Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a unique constraint:
+Create a [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table with a unique constraint:
 
 ```sql
 CREATE TABLE UniqueConstraintTable (c1 INT NOT NULL, c2 INT);
@@ -53,7 +54,7 @@ CREATE TABLE UniqueConstraintTable (c1 INT NOT NULL, c2 INT);
 ALTER TABLE UniqueConstraintTable ADD CONSTRAINT UK_UniqueConstraintTablec1 UNIQUE NONCLUSTERED (c1) NOT ENFORCED;
 ```
 
-Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a foreign key:
+Create a [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table with a foreign key:
 
 ```sql
 CREATE TABLE ForeignKeyReferenceTable (c1 INT NOT NULL);

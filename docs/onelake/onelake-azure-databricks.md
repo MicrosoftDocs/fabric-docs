@@ -10,6 +10,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.date: 09/27/2023
+#customer intent: As a data engineer, I want to learn how to integrate OneLake with Azure Databricks so that I can read and write data to a Microsoft Fabric lakehouse from my Azure Databricks workspace.
 ---
 
 # Integrate OneLake with Azure Databricks

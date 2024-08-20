@@ -5,7 +5,6 @@ author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
 ms.date: 04/24/2024
-ms.service: fabric
 ms.topic: overview
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -145,7 +144,7 @@ Currently, mirroring doesn't support private endpoints or customer managed keys 
 
 ## Disaster recovery and replication latency
 
-In Fabric, you can deploy content to data centers in regions other than the home region of the Fabric tenant. For more information, see [multi-geo support](../../admin/service-admin-premium-multi-geo.md#view-capacity-regions).
+In Fabric, you can deploy content to data centers in regions other than the home region of the Fabric tenant. For more information, see [multi-geo support](../../admin/service-admin-premium-multi-geo.md).
 
 For an Azure Cosmos DB account with a primary write region and multiple read regions, mirroring chooses the Azure Cosmos DB read region closest to the region where Fabric capacity is configured. This selection helps provide low-latency replication for mirroring.
 

@@ -101,6 +101,8 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
+  - name: Edit tables for Direct Lake semantic models
+    href: direct-lake-edit-tables.md
   - name: Create a Lakehouse for Direct Lake
     href: direct-lake-create-lakehouse.md
   - name: Specify a fixed identity
@@ -157,6 +159,44 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Dataflows automatically create tables from queries on Fabric destinations
+      href: known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md
+    - name: Scorecard dropdown slicers aren't visible when filtering
+      href: known-issues/known-issue-814-scorecard-dropdown-slicers-not-visible-filtering.md
+    - name: Fabric Runtime 1.3 causes invalid libraries
+      href: known-issues/known-issue-811-fabric-runtime-invalid-libraries.md
+    - name: Inserting nulls into Data Warehouse tables fail with incorrect error message
+      href: known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md
+    - name: Dataflow Gen2 refresh fails due to missing SQL analytics endpoint
+      href: known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md
+    - name: Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser
+      href: known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md
+    - name: Mirroring for Azure Cosmos DB fails when you create a new container
+      href: known-issues/known-issue-807-mirroring-cosmos-db-fails-create-container.md
+    - name: Mirroring for Azure Cosmos DB fails
+      href: known-issues/known-issue-796-mirroring-cosmos-db-fails.md
+    - name: Pipeline copy to Oracle using on-premises data gateway errors
+      href: known-issues/known-issue-781-pipeline-copy-oracle-data-gateway-errors.md
+    - name: Custom visuals don't render in Desktop
+      href: known-issues/known-issue-801-custom-visuals-not-render.md
+    - name: Teaching bubble blocks Lakehouse explorer context menu from opening
+      href: known-issues/known-issue-800-teaching-bubble-blocks-lakehouse-explorer-context-menu.md
+    - name: Localization blocks operations in a lakehouse
+      href: known-issues/known-issue-797-localization-blocks-operations-lakehouse.md
+    - name: Multiple installations of on-premises data gateway causes pipelines to fail
+      href: known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md
+    - name: SQL analytics endpoint table queries fail due to RLE
+      href: known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md
+    - name: Add data to a report when scrollbar is present doesn't work
+      href: known-issues/known-issue-785-add-data-report-scrollbar-present-not-work.md
+    - name: Spark operations fail
+      href: known-issues/known-issue-790-spark-operations-fail.md
+    - name: Data Activator alert created from visual with no dimensions doesn't work
+      href: known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md
+    - name: Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse
+      href: known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md
+    - name: Cognitive Services ScoreSentiment function doesn't work in dataflows
+      href: known-issues/known-issue-780-cognitive-services-score-sentiment-function-not-work-dataflows.md
     - name: Direct Lake semantic model table changes don't work
       href: known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md
     - name: Data warehouse deployment using deployment pipelines fails
@@ -235,7 +275,7 @@ items:
       href: known-issues/known-issue-709-query-folding-indicators-incorrect-power-query-sdk.md
     - name: SQL database mirror doesn't start when you create connection during mirror creation
       href: known-issues/known-issue-702-sql-database-mirror-not-start-create-connection-mirror-creation.md
-    - name: SQL endpoint and semantic model are orphaned when a lakehouse is deleted
+    - name: SQL analytics endpoint and semantic model are orphaned when a lakehouse is deleted
       href: known-issues/known-issue-708-sql-endpoint-semantic-model-orphaned-when-lakehouse-deleted.md
     - name: Apps and reports not available when editing scorecard metrics
       href: known-issues/known-issue-694-apps-reports-not-available-editing-scorecard.md

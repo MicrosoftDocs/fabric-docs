@@ -5,8 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 04/24/2024
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -33,7 +31,7 @@ Now that you have a workspace, you can create your first [!INCLUDE [fabric-dw](i
 
 1. On the **New warehouse** dialog, enter `WideWorldImporters` as the name.
 
-1. Set the **Sensitivity** to **Public**.
+<!-- 1. Set the **Sensitivity** to **Public**. -->
 
 1. Select **Create**.
 

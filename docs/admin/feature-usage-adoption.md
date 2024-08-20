@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 03/24/2024
+ms.date: 08/07/2024
 ---
 
 # Feature usage and adoption report (preview)
@@ -156,13 +156,19 @@ This section lists the report's considerations and limitations.
 
 * *NA* represents data that isn't available on an audit event. This can happen when an audit event doesn't have complete information, or when that information isn't applicable for the event.
 
-* The report retains audit information for 30 days.
+* The report retains information for 30 days, including the activities and metadata of deleted capacities, workspaces, and other items.
+  
+### Pro and PPU capacities
+
+Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities. The usage of these capacities can be seen in the admin monitoring report and as operations in the audit logs.
+
+  * **Pro logical capacities** - Appear as *Reserved Capacity for Pro Workspaces* with the capacity SKU value *Pro* or *SharedOnPremium*.
+
+  * **Premium Per User logical capacities** - Appear as *Reserved Capacity for Premium Per User Workspaces* with the capacity SKU value *PPU*.
 
 ### Counting logic
 
 * All *My workspaces* are counted as separate records as part of the *Active workspaces* total.
-
-* Activities of deleted capacities, workspaces, or items are retained in the report for 28 days past deletion.
 
 ## Related content
 

@@ -23,8 +23,7 @@ ms.date: 07/04/2024
 #### [GitHub limitations](#tab/github)
 
 - GitHub can't enforce [cross-geo validations](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
-- The number of nontext files per commit is limited. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information about committing nontext files in GitHub, see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
-- The commit size is limited to 100 MB per file.
+- The total combined size of files to commit at once is limited to 50 MB. Therefore, if you have several items to commit, it might sometimes be necessary to separate them into a few separate commits. For more information about committing files, see our [troubleshooting guide](/fabric/cicd/troubleshoot-cicd#maximum-commit-size-exceeded).
 
 ---
 

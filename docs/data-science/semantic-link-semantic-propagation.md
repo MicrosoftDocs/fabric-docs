@@ -1,13 +1,11 @@
 ---
 title: Semantic link propagation with SemPy
 description: Learn how the SemPy Python library supports propagation of metadata attached to semantic models you operate on.
-ms.reviewer: mopeakande
-reviewer: msakande
-ms.author: marcozo
-author: eisber
+ms.author: mopeakande
+author: msakande
+ms.reviewer: marcozo
+reviewer: eisber
 ms.topic: conceptual
-ms.custom:
-  - ignite-2023
 ms.date: 06/06/2024
 ms.search.form: semantic link
 ---

@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/01/2024
+ms.date: 07/19/2024
 ---
 
 # Lakehouse tutorial: Building reports in Microsoft Fabric
@@ -35,7 +35,7 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
    :::image type="content" source="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png" alt-text="Screenshot showing where to find and select SQL analytics endpoint from the top right drop-down menu.":::
 
-1. From the SQL endpoint pane, you should be able to see all the tables you created. If you don't see them yet, select the **Refresh** icon at the top. Next, select the **Model** tab at the bottom to open the default Power BI semantic model.
+1. From the SQL analytics endpoint pane, you should be able to see all the tables you created. If you don't see them yet, select the **Refresh** icon at the top. Next, select the **Model** tab at the bottom to open the default Power BI semantic model.
 
    :::image type="content" source="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png" alt-text="Screenshot showing where to select the Refresh icon and the Model tab.":::
 

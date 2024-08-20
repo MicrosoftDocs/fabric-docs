@@ -39,7 +39,7 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
    Available connection types supported for on-premises connections include:
 
-   - Active Directory
+   - Entra ID
    - Adobe Analytics
    - Analysis Services
    - Azure Blob Storage
