@@ -2,14 +2,14 @@
 title: AI skill creation (preview)
 titleSuffix: Learn how to create an AI skill
 description: Learn how to create an AI skill that can answer questions about data.
-author: IAmGrootel
+author: fbsolo-ms1
 ms.author: avangrootel
 ms.reviewer: franksolomon
 reviewer: avangrootel
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "conceptual".
-ms.date: 07/12/2024
+ms.date: 08/05/2024
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: AI skill Concepts
 

@@ -31,7 +31,7 @@ Now that you have a workspace, you can create your first [!INCLUDE [fabric-dw](i
 
 1. On the **New warehouse** dialog, enter `WideWorldImporters` as the name.
 
-1. Set the **Sensitivity** to **Public**.
+<!-- 1. Set the **Sensitivity** to **Public**. -->
 
 1. Select **Create**.
 

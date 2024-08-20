@@ -1,14 +1,14 @@
 ---
 title: How to create an AI skill (preview)
 description: Learn how to create an AI skill
-author: IAmGrootel
+author: fbsolo-ms1
 ms.author: avangrootel
 ms.reviewer: franksolomon
 reviewer: avangrootel
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
-ms.date: 07/12/2024
+ms.date: 08/05/2024
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As an Analyst, I want to create an AI skill that relies on generative AI, that my colleagues and I can use to have conversations about our data.

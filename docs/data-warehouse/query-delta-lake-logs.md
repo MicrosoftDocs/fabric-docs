@@ -51,6 +51,42 @@ You can locate Delta Lake logs via the following methods:
 
     :::image type="content" source="media/query-delta-lake-logs/onelake-explorer-delta-log.png" alt-text="Screenshot of the Windows OneLake Explorer, showing the path to the delta logs folder for the call_center table." lightbox="media/query-delta-lake-logs/onelake-explorer-delta-log.png":::
 
+## Pausing Delta Lake log publishing
+
+Publishing of Delta Lake logs can be paused and resumed if needed. When publishing is paused, Microsoft Fabric engines that read tables outside of the Warehouse sees the data as it was before the pause. It ensures that reports remain stable and consistent, reflecting data from all tables as they existed before any changes were made to the tables. Once your data updates are complete, you can resume Delta Lake Log publishing to make all recent data changes visible to other analytical engines. Another use case for pausing Delta Lake log publishing is when users do not need interoperability with other compute engines in Microsoft Fabric, as it can help save on compute costs.
+
+The syntax to pause and resume Delta Lake log publishing is as follows: 
+
+```sql
+ALTER DATABASE CURRENT SET DATA_LAKE_LOG_PUBLISHING = PAUSED | AUTO
+```
+
+### Example: pause and resume Delta Lake log publishing
+
+To pause Delta Lake log publishing, use the following code snippet: 
+
+```sql
+ALTER DATABASE CURRENT SET DATA_LAKE_LOG_PUBLISHING = PAUSED
+```
+
+Queries to warehouse tables on the current warehouse from other Microsoft Fabric engines (for example, queries from a Lakehouse) now show a version of the data as it was before pausing Delta Lake log publishing. Warehouse queries still show the latest version of data. 
+
+To resume Delta Lake log publishing, use the following code snippet: 
+
+```sql
+ALTER DATABASE CURRENT SET DATA_LAKE_LOG_PUBLISHING = AUTO
+```
+
+When the state is changed back to **AUTO**, the Fabric Warehouse engine publishes logs of all recent changes made to tables on the warehouse, allowing other analytical engines in Microsoft Fabric to read the latest version of data. 
+
+### Checking the status of Delta Lake log publishing
+
+To check the current state of Delta Lake log publishing on all warehouses for the current workspace, use the following code snippet: 
+
+```sql
+SELECT [name], [DATA_LAKE_LOG_PUBLISHING_DESC] FROM sys.databases
+```
+
 ## Limitations
 
 - Table Names can only be used by Spark and other systems if they only contain these characters: A-Z a-z 0-9 and underscores.
