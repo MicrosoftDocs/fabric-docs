@@ -67,7 +67,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     The system overview page displays the following information:
 
-    * **Running state of the eventhouse**: Indicates whether the eventhouse. Possible states are:
+    * **Running state of the eventhouse**: Shows the operational status of the eventhouse. Possible states are:
         * **Running**: The eventhouse is running optimally
         * **Optimize capacity**: The eventhouse is not running optimally and requires more capacity. Contact your capacity admin to increase the capacity.
         * **Throttling**: The eventhouse is running at maximum capacity. Contact your capacity admin to increase the capacity.
