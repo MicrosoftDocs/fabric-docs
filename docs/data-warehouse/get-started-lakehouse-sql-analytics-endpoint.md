@@ -33,7 +33,7 @@ There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Mic
 
 ### Automatic Metadata Discovery
 
-A seamless process reads the delta logs and from the files folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [Automatically generated schema in the [!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#automatically-generated-schema-in-the-sql-analytics-endpoint-of-the-lakehouse).
+A seamless process reads the delta logs and from the files folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [Automatically generated schema in the [!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-analytics-endpoint-performance.md#automatically-generated-schema-in-the-sql-analytics-endpoint-of-the-lakehouse).
 
 ## Scenarios the Lakehouse enables for data warehousing
 

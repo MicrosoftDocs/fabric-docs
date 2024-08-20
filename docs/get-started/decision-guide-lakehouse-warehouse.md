@@ -3,7 +3,7 @@ title: "Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse"
 description: "Learn more about the decisions for your data in the Warehouse or Lakehouse workloads in Microsoft Fabric."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 08/02/2024
+ms.date: 08/20/2024
 ms.topic: product-comparison  #Don't change in the template.
 ---
 # Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse
@@ -62,7 +62,129 @@ The **Lakehouse** item in Fabric Synapse Data Engineering
 
 Both are included in Power BI Premium or Fabric capacities​.
 
+## Compare different warehousing capabilities
+
+In order to best serve your analytics use cases, there are a variety of capabilities available to you. Generally, the warehouse can be thought of as a superset of all other capabilities, providing a synergistic relationship between all other analytics offerings that provide T-SQL.  
+
+Within Microsoft Fabric, there are users who might need to decide between a [Warehouse](create-warehouse.md), [Lakehouse](get-started-lakehouse-sql-analytics-endpoint.md), and even a [Power BI datamart](../data-engineering/create-lakehouse.md).
+
+:::row:::
+   :::column span="1"::: 
+**[!INCLUDE [product-name](../includes/product-name.md)] offering** 
+   :::column-end:::
+   :::column span="1"::: 
+**[!INCLUDE [fabric-dw](includes/fabric-dw.md)]** 
+   :::column-end:::
+   :::column span="1"::: 
+**[!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse**
+   :::column-end:::
+:::row-end:::
+---
+:::row::: 
+   :::column span="1"::: 
+Primary capabilities
+   :::column-end:::
+   :::column span="1"::: 
+ACID compliant, full data warehousing with transactions support in T-SQL.
+   :::column-end:::
+   :::column span="1"::: 
+Read only, system generated [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse for T-SQL querying and serving. Supports analytics on the Lakehouse Delta tables, and the Delta Lake folders referenced via [shortcuts](../onelake/onelake-shortcuts.md).
+   :::column-end:::
+:::row-end:::
+---
+:::row::: 
+   :::column span="1"::: 
+Developer profile
+   :::column-end:::
+   :::column span="1"::: 
+SQL Developers or citizen developers
+   :::column-end:::
+   :::column span="1"::: 
+Data Engineers or SQL Developers 
+   :::column-end:::
+:::row-end:::
+---
+:::row::: 
+   :::column span="1":::
+Recommended use case
+   :::column-end:::
+   :::column span="1"::: 
+ - Data Warehousing for enterprise use
+ - Data Warehousing supporting departmental, business unit or self service use
+ - Structured data analysis in T-SQL with tables, views, procedures and functions and Advanced SQL support for BI 
+   :::column-end:::
+   :::column span="1"::: 
+ - Exploring and querying delta tables from the lakehouse
+ - Staging Data and Archival Zone for analysis
+ - [Medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md) with zones for bronze, silver and gold analysis
+ - Pairing with Warehouse for enterprise analytics use cases 
+   :::column-end:::
+:::row-end:::
+---
+:::row:::
+   :::column span="1"::: 
+Development experience 
+   :::column-end:::
+   :::column span="1"::: 
+ - Warehouse Editor with full support for T-SQL data ingestion, modeling, development, and querying UI experiences for data ingestion, modeling, and querying
+ - Read / Write support for 1st and 3rd party tooling 
+   :::column-end:::
+   :::column span="1"::: 
+ - Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] with limited T-SQL support for views, table valued functions, and SQL Queries
+ - UI experiences for modeling and querying
+ - Limited T-SQL support for 1st and 3rd party tooling  
+   :::column-end:::
+:::row-end:::
+---
+:::row:::
+   :::column span="1"::: 
+T-SQL capabilities 
+   :::column-end:::
+   :::column span="1"::: 
+Full DQL, DML, and DDL T-SQL support, full transaction support
+   :::column-end:::
+   :::column span="1"::: 
+Full DQL, No DML, limited DDL T-SQL Support such as SQL Views and TVFs    
+   :::column-end:::
+:::row-end:::
+---
+:::row:::
+   :::column span="1"::: 
+Data loading
+   :::column-end:::
+   :::column span="1"::: 
+SQL, pipelines, dataflows
+   :::column-end:::
+   :::column span="1"::: 
+Spark, pipelines, dataflows, shortcuts 
+   :::column-end:::
+:::row-end:::
+---
+:::row:::
+   :::column span="1"::: 
+Delta table support
+   :::column-end:::
+   :::column span="1":::
+Reads and writes Delta tables
+   :::column-end:::
+   :::column span="1":::
+Reads delta tables
+   :::column-end:::
+:::row-end:::
+---
+:::row:::
+   :::column span="1"::: 
+Storage layer
+   :::column-end:::
+   :::column span="1"::: 
+Open Data Format - Delta 
+   :::column-end:::
+   :::column span="1"::: 
+Open Data Format - Delta  
+   :::column-end:::
+:::row-end:::
+---
+
 ## Related content
 
 - [Microsoft Fabric decision guide: choose a data store](../get-started/decision-guide-data-store.md)
-- [Microsoft Fabric decision guide: copy activity, dataflow, or Spark](../get-started/decision-guide-pipeline-dataflow-spark.md)
