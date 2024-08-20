@@ -609,8 +609,10 @@
         href: deactivate-activity.md
       - name: Delete data activity
         href: delete-data-activity.md
-      - name: Fail Activity
+      - name: Fail activity
         href: fail-activity.md
+      - name: Filter activity
+        href: filter-activity.md
       - name: For-each activity
         href: foreach-activity.md
       - name: Functions activity
