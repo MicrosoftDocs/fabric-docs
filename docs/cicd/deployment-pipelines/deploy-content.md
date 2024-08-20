@@ -99,7 +99,7 @@ When deploying workspaces that contain folders, the following rules apply:
 
 You might sometimes want to deploy content to a previous stage. For example, if you assign an existing workspace to a production stage and then deploy it backwards, first to the test stage, and then to the development stage. Deploying to a previous stage works only if the previous stage is empty.
 
-:::image type="content" source="media/deploy-content/backwards-deploy.png" alt-text="A screenshot showing how to change the stage you deploy to.":::
+:::image type="content" source="./media/deploy-content/backwards-deploy.png" alt-text="A screenshot showing how to change the stage you deploy to.":::
 
 ### Review your deployment and leave a note
 
