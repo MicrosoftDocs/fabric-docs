@@ -69,7 +69,7 @@ When you select a deployment pipelines stage, the items in the stage are listed 
 
 The source stage is shown in the drop-down menu on the bottom pane and the name of the compared source item’s name appears on the last column 
 
-:::image type="content" source="./"media/compare-pipeline-content/compare-stages-new.png" alt-text="Screenshot of production stage with paired items from test stage.":::
+:::image type="content" source="./media/compare-pipeline-content/compare-stages-new.png" alt-text="Screenshot of production stage with paired items from test stage.":::
 
 In the stage display, items are arranged alphabetically by default. You can sort or filter the items to find the ones you're interested in, or you can search for a specific item. Each item has one of the following labels depending on the comparison status:
 

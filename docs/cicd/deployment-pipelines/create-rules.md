@@ -36,7 +36,7 @@ You can configure data source rules, parameter rules, and default lakehouse rule
 
 To create a deployment rule, follow the steps in this section. After you create all the deployment rules you need, deploy the semantic models with the newly created rules from the source stage to the target stage where the rules were created. Your rules won't apply until you deploy the semantic models from the source to the target stage.
 
-### [Create a deployment rule in the old UI](#old)
+### [Create a deployment rule in the old UI](#tab/old)
 
 1. In the pipeline stage you want to create a deployment rule for, select **Deployment rules**.
 
@@ -72,7 +72,7 @@ To create a deployment rule, follow the steps in this section. After you create 
     * **Default lakehouse rules**
          This rule only applies to notebooks. Select a lakehouse to connect to the notebook in the target stage and set it as its default. For more information, see [Notebook in deployment pipelines](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines).
 
-### [Create a deployment rule in the new UI](#new)
+### [Create a deployment rule in the new UI](#tab/new)
 
 1. In the pipeline stage you want to create a deployment rule for, select **Deployment rules**.
 
