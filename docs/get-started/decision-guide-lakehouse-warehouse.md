@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse"
+title: "Microsoft Fabric Decision Guide: Choose between Warehouse and Lakehouse"
 description: "Learn more about the decisions for your data in the Warehouse or Lakehouse workloads in Microsoft Fabric."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -101,6 +101,41 @@ SQL Developers or citizen developers
 Data Engineers or SQL Developers 
    :::column-end:::
 :::row-end:::
+:::row:::
+   :::column span="1"::: 
+Data loading
+   :::column-end:::
+   :::column span="1"::: 
+SQL, pipelines, dataflows
+   :::column-end:::
+   :::column span="1"::: 
+Spark, pipelines, dataflows, shortcuts 
+   :::column-end:::
+:::row-end:::
+---
+:::row:::
+   :::column span="1"::: 
+Delta table support
+   :::column-end:::
+   :::column span="1":::
+Reads and writes Delta tables
+   :::column-end:::
+   :::column span="1":::
+Reads delta tables
+   :::column-end:::
+:::row-end:::
+---
+:::row:::
+   :::column span="1"::: 
+Storage layer
+   :::column-end:::
+   :::column span="1"::: 
+Open Data Format - Delta 
+   :::column-end:::
+   :::column span="1"::: 
+Open Data Format - Delta  
+   :::column-end:::
+:::row-end:::
 ---
 :::row::: 
    :::column span="1":::
@@ -143,42 +178,6 @@ Full DQL, DML, and DDL T-SQL support, full transaction support
    :::column-end:::
    :::column span="1"::: 
 Full DQL, No DML, limited DDL T-SQL Support such as SQL Views and TVFs
-   :::column-end:::
-:::row-end:::
----
-:::row:::
-   :::column span="1"::: 
-Data loading
-   :::column-end:::
-   :::column span="1"::: 
-SQL, pipelines, dataflows
-   :::column-end:::
-   :::column span="1"::: 
-Spark, pipelines, dataflows, shortcuts 
-   :::column-end:::
-:::row-end:::
----
-:::row:::
-   :::column span="1"::: 
-Delta table support
-   :::column-end:::
-   :::column span="1":::
-Reads and writes Delta tables
-   :::column-end:::
-   :::column span="1":::
-Reads delta tables
-   :::column-end:::
-:::row-end:::
----
-:::row:::
-   :::column span="1"::: 
-Storage layer
-   :::column-end:::
-   :::column span="1"::: 
-Open Data Format - Delta 
-   :::column-end:::
-   :::column span="1"::: 
-Open Data Format - Delta  
    :::column-end:::
 :::row-end:::
 ---
