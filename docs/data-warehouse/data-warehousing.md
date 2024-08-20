@@ -34,7 +34,7 @@ Data warehouse customers benefit from:
 - **Reduced time to insights** with an easily consumable, always connected semantic model that is integrated with Power BI in Direct Lake mode. Reports always have the most recent data for analysis and reporting.
 - **Built for any skill level**, from the citizen developer to DBA or data engineer.
 
-## Data warehousing experiences in Microsoft Fabric
+## Data warehousing items
 
 Fabric Warehouse is not a traditional enterprise data warehouse, it's a lake warehouse that supports two distinct warehousing items: the Fabric data warehouse and the SQL analytics endpoint. Both are purpose-built to meet customers' business needs while providing best in class performance, minimizing costs, and reduced administrative overhead.
 

@@ -9,7 +9,7 @@ ms.date: 05/10/2024
 
 # Spark connector for Microsoft Fabric Synapse Data Warehouse
 
-The Spark connector for Synapse Data Warehouse enables Spark developers and data scientists to access and work with data from [a warehouse and the SQL analytics endpoint of a lakehouse](../data-warehouse/data-warehousing.md#data-warehousing-items-in-microsoft-fabric). The connector offers the following capabilities:
+The Spark connector for Synapse Data Warehouse enables Spark developers and data scientists to access and work with data from [a warehouse and the SQL analytics endpoint of a lakehouse](../data-warehouse/data-warehousing.md#data-warehousing-items). The connector offers the following capabilities:
 
 * You can work with data from a warehouse or SQL analytics endpoint in the same workspace or across multiple workspaces.
 * The SQL analytics endpoint of a Lakehouse is automatically discovered based on workspace context.
