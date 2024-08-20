@@ -159,6 +159,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Dataflows automatically create tables from queries on Fabric destinations
+      href: known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md
+    - name: Scorecard dropdown slicers aren't visible when filtering
+      href: known-issues/known-issue-814-scorecard-dropdown-slicers-not-visible-filtering.md
     - name: Fabric Runtime 1.3 causes invalid libraries
       href: known-issues/known-issue-811-fabric-runtime-invalid-libraries.md
     - name: Inserting nulls into Data Warehouse tables fail with incorrect error message
