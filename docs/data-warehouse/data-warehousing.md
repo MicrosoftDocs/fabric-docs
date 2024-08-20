@@ -4,7 +4,7 @@ description: Learn more about data warehousing workloads in Synapse Data Warehou
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo, chweb, cynotebo
-ms.date: 08/01/2024
+ms.date: 08/20/2024
 ms.topic: overview
 ms.custom:
   - build-2023
@@ -18,70 +18,73 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse i
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] is a next-generation data warehousing solution within Microsoft Fabric.  The lake-centric warehouse is built on an enterprise grade distributed processing engine that enables industry leading performance at scale while minimizing the need for configuration and management.  Living in the lake and designed to natively support open data formats, Fabric data warehouse enables seamless collaboration between data engineers and business users without compromising security or governance.  As the only pure SaaS solution in the market, Fabric data warehouse delivers all of the benefits customers have come to expect like: predictable costs, seamless workflow integration and ease of management.  The easy-to-use SaaS experience is also tightly integrated with Power BI for easy analysis and reporting, converging the world of data lakes and warehouses and greatly simplifying an organizations investment in their analytics estate.  Data warehouse customers benefit from:
+[!INCLUDE [product-name](../includes/product-name.md)] is a next-generation data warehousing solution within Microsoft Fabric.
 
-- Data stored in Delta-parquet format ,enabling ACID transactions and cross engine. interoperability with other Fabric workloads means customers do not need to create multiple copies of their data.
+The lake-centric warehouse is built on an enterprise grade distributed processing engine that enables industry leading performance at scale while minimizing the need for configuration and management. Living in the data lake and designed to natively support open data formats, Fabric data warehouse enables seamless collaboration between data engineers and business users without compromising security or governance.
 
-- Cross database querying.  Quickly and seamlessly use multiple data sources for fast insights with zero data duplication.
+The easy-to-use SaaS experience is also tightly integrated with Power BI for easy analysis and reporting, converging the world of data lakes and warehouses and greatly simplifying an organizations investment in their analytics estate.  
 
-- Easily ingest, load and transform data at scale through Pipelines, Dataflows, cross database query or the COPY INTO command.
+Data warehouse customers benefit from:
 
-- Autonomous workload management with industry-leading distributed query processing engine means no knobs to turn to achieve best in class performance.
+- **Data stored in Delta-parquet format** enables ACID transactions and interoperability with other Fabric workloads means you don't need multiple copies of data.
+- **Cross database queryies** can use multiple data sources for fast insights with zero data duplication.
+- **Easily ingest, load and transform data** at scale through Pipelines, Dataflows, cross database query or the COPY INTO command.
+- **Autonomous workload management** with industry-leading distributed query processing engine means no knobs to turn to achieve best in class performance.
+- **Scale near instantaneously** to meet business demands. Storage and compute are separated.
+- **Reduced time to insights** with an easily consumable, always connected semantic model that is integrated with Power BI in Direct Lake mode. Reports always have the most recent data for analysis and reporting.
+- **Built for any skill level**, from the citizen developer to DBA or data engineer.
 
-- Separation of storage and compute enabling customers to scale near instantaneously to meet business demands.
+## Data warehousing experiences in Microsoft Fabric
 
-- Reduced time to insights by having an easily consumable, always connected semantic model that is integrated with Power BI in Direct Lake mode ensuring reports always have the most recent data for analysis and reporting.
-
-- Built for any skill level, from the citizen developer to DBA or data engineer.
-
-### Data warehousing experiences in Microsoft Fabric
-
-Fabric data warehouse is not a traditional enterprise data warehouse, it’s a lake warehouse that supports two distinct warehousing items, the Fabric data warehouse and the SQL analytics endpoint both of which are purpose built to meet customers' business needs while providing best in class performance, minimizing costs and reducing administrative overhead and meet customers where they are.
+Fabric Warehouse is not a traditional enterprise data warehouse, it's a lake warehouse that supports two distinct warehousing items: the Fabric data warehouse and the SQL analytics endpoint. Both are purpose-built to meet customers' business needs while providing best in class performance, minimizing costs, and reduced administrative overhead.
 
 ### Synapse Data Warehouse
 
-In a Microsoft Fabric workspace, a Synapse Data Warehouse or __Warehouse__ is labeled as 'Warehouse' in the __Type__ column. When you need the full power and transactional capabilities (DDL and DML query support) of a data warehouse, this is the fast and simple solution for you.
+In a Microsoft Fabric workspace, a Synapse Data Warehouse or **Warehouse** is labeled as 'Warehouse' in the **Type** column. When you need the full power and transactional capabilities (DDL and DML query support) of a data warehouse, this is the fast and simple solution for you.
 
-:::image type="content" source="media/data-warehousing/warehouse-type.png" alt-text="Screenshot showing the Warehouse type in workspace." lightbox="media/data-warehousing/warehouse-type.png":::The warehouse can be populated by any one of the supported data ingestion methods such as [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true), [Pipelines](/fabric/data-warehouse/ingest-data-pipelines), [Dataflows](/fabric/data-warehouse/ingest-data), or cross database ingestion options such as [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true), [INSERT..SELECT](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true), or [SELECT INTO](/sql/t-sql/queries/select-into-clause-transact-sql?view=fabric&preserve-view=true).
+:::image type="content" source="media/data-warehousing/warehouse-type.png" alt-text="Screenshot showing the Warehouse type in workspace." lightbox="media/data-warehousing/warehouse-type.png":::
 
-To get started with the Warehouse, see [Create a warehouse in Microsoft Fabric](/fabric/data-warehouse/create-warehouse).
+The warehouse can be populated by any one of the supported data ingestion methods such as [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true), [Pipelines](/fabric/data-warehouse/ingest-data-pipelines), [Dataflows](/fabric/data-warehouse/ingest-data), or cross database ingestion options such as [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true), [INSERT..SELECT](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true), or [SELECT INTO](/sql/t-sql/queries/select-into-clause-transact-sql?view=fabric&preserve-view=true).
 
-For more information and recommendations on performance of the Warehouse, see <Warehouse performance guidelines>.
+To get started with the Warehouse, see:
+
+- [Create a warehouse in Microsoft Fabric](/fabric/data-warehouse/create-warehouse)
+- [Performance guidelines](guidelines-warehouse-performance.md)
 
 ### SQL analytics endpoint of the Lakehouse
 
-In a Microsoft Fabric workspace, each Lakehouse has an autogenerated SQL analytics endpoint labeled "SQL analytics endpoint" in the __Type__ column which can be used to transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" view of the same Lakehouse to create views, functions, stored procedures, and apply SQL security.
+In a Microsoft Fabric workspace, each Lakehouse has an autogenerated "SQL analytics endpoint" which can be used to transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" view of the same Lakehouse to create views, functions, stored procedures, and apply SQL security.
 
-:::image type="content" source="media/data-warehousing/sql-endpoint-type.png" alt-text="Screenshot showing the SQL analytics endpoint type in workspace." lightbox="media/data-warehousing/sql-endpoint-type.png":::Via the SQL analytics endpoint of the Lakehouse, the user has a subset of SQL commands that can define and query data objects but not manipulate or modify the data. You can perform the following actions in the SQL analytics endpoint:
+:::image type="content" source="media/data-warehousing/sql-endpoint-type.png" alt-text="Screenshot showing the SQL analytics endpoint type in workspace." lightbox="media/data-warehousing/sql-endpoint-type.png":::
+
+With the SQL analytics endpoint of the Lakehouse, T-SQL commands can define and query data objects but not manipulate or modify the data. You can perform the following actions in the SQL analytics endpoint:
 
 - Query the tables that reference data in your Delta Lake folders in the lake.
-
 - Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
-
 - Manage permissions on the objects.
 
-To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-analytics-endpoint.md).
+To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see:
 
-For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
+- [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-analytics-endpoint.md)
+- [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md)
+- [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
 
+## Warehouse or lakehouse
 
-For more information about querying your data in [!INCLUDE [product-name](../includes/product-name.md)], see [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md).
+When deciding between using a warehouse or a lakehouse, it's important to consider the specific needs and context of your data management and analytics requirements. Equally important, *this is not a one way decision*!
 
-## When should I use a data warehouse vs a lakehouse
-
-When deciding between using a data warehouse or a lake house, it's important to consider the specific needs and context of your data management and analytics requirements.  Equally important, __this is not a one way decision__!  You always have the opportunity to add one or the other at a later point should your business needs change and regardless of where you start, both the data warehouse and the lakehouse use the same powerful SQL engine for all TSQL queries.
+You always have the opportunity to add one or the other at a later point should your business needs change and regardless of where you start, both the warehouse and the lakehouse use the same powerful SQL engine for all T-SQL queries.
 
 Here are some general guidelines to help you make the decision:
 
-- Choose a __data warehouse__ when you need an enterprise-scale solution with open standard format, no knobs performance, and minimal setup.  Best suited for semi-structured and structured data formats, the data warehouse is suitable for both beginner and experienced data professionals, offering simple and intuitive experiences.
+- Choose a **data warehouse** when you need an enterprise-scale solution with open standard format, no knobs performance, and minimal setup.  Best suited for semi-structured and structured data formats, the data warehouse is suitable for both beginner and experienced data professionals, offering simple and intuitive experiences.
 
-- Choose a __lakehouse__ when you need a large repository of highly unstructured data from heterogeneous sources, leveraging low-cost object storage and want to use SPARK as your primary development tool.  Acting as a ‘lightweight’ data warehouse, you always have the option to use the SQL endpoint and TSQL tools to deliver reporting and data intelligence scenarios in your lakehouse.
+- Choose a **lakehouse** when you need a large repository of highly unstructured data from heterogeneous sources, leveraging low-cost object storage and want to use SPARK as your primary development tool. Acting as a 'lightweight' data warehouse, you always have the option to use the SQL endpoint and T-SQL tools to deliver reporting and data intelligence scenarios in your lakehouse.
 
-For more detailed guidance, you can refer to the decision guide <link to decision guide>
+For more detailed decision guidance, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md).
 
 ## Related content
 
-- [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md)
 - [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
 - [Create a warehouse in Microsoft Fabric](create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)

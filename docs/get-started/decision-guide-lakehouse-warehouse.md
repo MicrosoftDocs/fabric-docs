@@ -64,19 +64,17 @@ Both are included in Power BI Premium or Fabric capacities​.
 
 ## Compare different warehousing capabilities
 
-In order to best serve your analytics use cases, there are a variety of capabilities available to you. Generally, the warehouse can be thought of as a superset of all other capabilities, providing a synergistic relationship between all other analytics offerings that provide T-SQL.  
-
-Within Microsoft Fabric, there are users who might need to decide between a [Warehouse](create-warehouse.md), [Lakehouse](get-started-lakehouse-sql-analytics-endpoint.md), and even a [Power BI datamart](../data-engineering/create-lakehouse.md).
+This table compares the [!INCLUDE [fabric-dw](../data-warehouse/includes/fabric-dw.md)] to the [!INCLUDE [fabric-se](../data-warehouse/includes/fabric-se.md)] of the Lakehouse.
 
 :::row:::
    :::column span="1"::: 
-**[!INCLUDE [product-name](../includes/product-name.md)] offering** 
+**[!INCLUDE [product-name](../includes/product-name.md)] offering**
    :::column-end:::
    :::column span="1"::: 
-**[!INCLUDE [fabric-dw](includes/fabric-dw.md)]** 
+**[!INCLUDE [fabric-dw](../data-warehouse/includes/fabric-dw.md)]**
    :::column-end:::
    :::column span="1"::: 
-**[!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse**
+**[!INCLUDE [fabric-se](../data-warehouse/includes/fabric-se.md)] of the Lakehouse**
    :::column-end:::
 :::row-end:::
 ---
@@ -88,7 +86,7 @@ Primary capabilities
 ACID compliant, full data warehousing with transactions support in T-SQL.
    :::column-end:::
    :::column span="1"::: 
-Read only, system generated [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse for T-SQL querying and serving. Supports analytics on the Lakehouse Delta tables, and the Delta Lake folders referenced via [shortcuts](../onelake/onelake-shortcuts.md).
+Read only, system generated [!INCLUDE [fabric-se](../data-warehouse/includes/fabric-se.md)] for Lakehouse for T-SQL querying and serving. Supports analytics on the Lakehouse Delta tables, and the Delta Lake folders referenced via [shortcuts](../onelake/onelake-shortcuts.md).
    :::column-end:::
 :::row-end:::
 ---
@@ -127,10 +125,10 @@ Development experience
    :::column-end:::
    :::column span="1"::: 
  - Warehouse Editor with full support for T-SQL data ingestion, modeling, development, and querying UI experiences for data ingestion, modeling, and querying
- - Read / Write support for 1st and 3rd party tooling 
+ - Read / Write support for 1st and 3rd party tooling
    :::column-end:::
    :::column span="1"::: 
- - Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] with limited T-SQL support for views, table valued functions, and SQL Queries
+ - Lakehouse [!INCLUDE [fabric-se](../data-warehouse/includes/fabric-se.md)] with limited T-SQL support for views, table valued functions, and SQL Queries
  - UI experiences for modeling and querying
  - Limited T-SQL support for 1st and 3rd party tooling  
    :::column-end:::
@@ -144,7 +142,7 @@ T-SQL capabilities
 Full DQL, DML, and DDL T-SQL support, full transaction support
    :::column-end:::
    :::column span="1"::: 
-Full DQL, No DML, limited DDL T-SQL Support such as SQL Views and TVFs    
+Full DQL, No DML, limited DDL T-SQL Support such as SQL Views and TVFs
    :::column-end:::
 :::row-end:::
 ---
