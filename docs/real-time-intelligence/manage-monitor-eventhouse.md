@@ -69,7 +69,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **Running state of the eventhouse**: Shows the operational status of the eventhouse. Possible states are:
         * **Running**: The eventhouse is running optimally
-        * **Optimize capacity**: The eventhouse is not running optimally and requires more capacity. Contact your capacity admin to increase the capacity.
+        * **Optimize capacity**: The eventhouse isn't running optimally and requires more capacity. Contact your capacity admin to increase the capacity.
         * **Throttling**: The eventhouse is running at maximum capacity. Contact your capacity admin to increase the capacity.
     * **Storage**: OneLake Cache storage shows the amount of retained data and OneLake Standard storage shows any additional data that's not in the cache. <!-- For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md). -->
     * **Storage usage by database**: Shows the storage breakdown by database. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
