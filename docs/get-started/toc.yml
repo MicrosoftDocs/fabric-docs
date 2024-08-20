@@ -161,6 +161,20 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Dataflows automatically create tables from queries on Fabric destinations
+      href: known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md
+    - name: Scorecard dropdown slicers aren't visible when filtering
+      href: known-issues/known-issue-814-scorecard-dropdown-slicers-not-visible-filtering.md
+    - name: Fabric Runtime 1.3 causes invalid libraries
+      href: known-issues/known-issue-811-fabric-runtime-invalid-libraries.md
+    - name: Inserting nulls into Data Warehouse tables fail with incorrect error message
+      href: known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md
+    - name: Dataflow Gen2 refresh fails due to missing SQL analytics endpoint
+      href: known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md
+    - name: Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser
+      href: known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md
+    - name: Mirroring for Azure Cosmos DB fails when you create a new container
+      href: known-issues/known-issue-807-mirroring-cosmos-db-fails-create-container.md
     - name: Mirroring for Azure Cosmos DB fails
       href: known-issues/known-issue-796-mirroring-cosmos-db-fails.md
     - name: Pipeline copy to Oracle using on-premises data gateway errors

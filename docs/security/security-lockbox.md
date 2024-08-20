@@ -37,7 +37,7 @@ After the access request is submitted, the JIT service evaluates the request, co
 
 * The scope of the resource
 
-* Whether the requester is an isolated identity or using multi-factor authentication
+* Whether the requester is an isolated identity or using multifactor authentication
 
 * Permissions levels
 
@@ -48,8 +48,6 @@ When the request requires direct access to customer data, a Customer Lockbox req
 These steps describe a Microsoft initiated Customer Lockbox request, for [!INCLUDE [product-name](../includes/product-name.md)] service.
 
 1. The Microsoft Entra Global Administrator receives a pending access request notification email from Microsoft. The admin who received the email, becomes the designated approver.
-
-    :::image type="content" source="media/security-lockbox/email-example.png" alt-text="Screenshot of pending access request notification email from Microsoft." lightbox="media/security-lockbox/email-example.png":::
 
 2. The email provides a link to Customer Lockbox in the Azure Administration module. Using the link, the designated approver signs in to the Azure portal to view any pending Customer Lockbox requests. The request remains in the customer queue for four days. After that, the access request automatically expires and no access is granted to Microsoft engineers.
 

@@ -1,9 +1,8 @@
 ---
 title: Fabric Workload Development Kit authentication setup (preview)
 description: Learn how to set up the authorization for a customized Fabric workload.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 07/14/2024
@@ -29,7 +28,7 @@ To make sure Azure Storage is provisioned in the tenant:
 
 1. Log into the [Azure portal](https://portal.azure.com)
 1. Go to **Microsoft Entra ID** > **Enterprise applications**
-1. In the filters, choose **application type = all aplications**. The application ID starts with e406a681-f3d4-42a8-90b6-c2b029497af1
+1. In the filters, choose **application type = all applications**. The application ID starts with e406a681-f3d4-42a8-90b6-c2b029497af1
 
     :::image type="content" source="./media/authentication-tutorial/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-tutorial/azure-storage-provisioning.png":::
 
@@ -55,7 +54,7 @@ To work with authentication, you need an application registered in Microsoft Ent
   
    > [!NOTE]
    >
-   >* The redirect URI should be a URI that simply closes the page when navigating to it. The URI `http://localhost:60006/close` is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/src/index.ts) (If you change it, make sure it matches the one configured for your application).
+   >* The redirect URI should be a URI that simply closes the page when navigating to it. The URI `http://localhost:60006/close` is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Frontend/src/index.ts) (If you change it, make sure it matches the one configured for your application).
    >* You can configure the redirect URI after creating the application from the **Manage** menu under **Authentication**.
 
    :::image type="content" source="./media/authentication-tutorial/register-application.png" alt-text="Screenshot of application registration UI." lightbox="./media/authentication-tutorial/register-application.png":::
@@ -88,11 +87,13 @@ To work with authentication, you need an application registered in Microsoft Ent
 
 ### Add a scope for CRUD/jobs
 
-To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and add *Fabric service application* to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
+To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and two dedicated Fabric applications to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
 
 * Under **Expose an API**, select **Add a scope**. Name the scope *FabricWorkloadControl* and provide the necessary details for it.
 
 * Under **Authorized client applications**, select **Add a client application**. Add `00000009-0000-0000-c000-000000000000` (Fabric service application) and select your scope.
+
+* Under **Authorized client applications**, select **Add a client application**. Add `d2450708-699c-41e3-8077-b0c8341509aa` (Fabric client for workloads application) and select your scope.
 
 ### Add scopes for data plane API
 
@@ -126,7 +127,7 @@ Under **Token configuration**, select **Add optional claim**. Choose **Access to
 
 ### Add API permissions
 
-Under ***API permissions**, add the desired permissions for your application. For the backend sample, add **Storage user_impersonation** (for OneLake APIs) and **Power BI Workspace.Read.all** (for workload control APIs):
+Under **API permissions**, add the desired permissions for your application. For the backend sample, add **Storage user_impersonation** (for OneLake APIs) and **Power BI Workspace.Read.all** (for workload control APIs):
 
 :::image type="content" source="./media/authentication-tutorial/add-api-permissions.png" alt-text="Screenshot showing adding API permissions." lightbox="./media/authentication-tutorial/add-api-permissions.png":::
 
@@ -138,7 +139,7 @@ Under **Manifest**, make sure `accessTokenAcceptedVersion` is set to either null
 
 For a streamlined setup of your application in Microsoft Entra Identity, you can opt to use an automated PowerShell script. Follow these steps to configure your application:
 
-1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2.](/cli/azure/).
+1. **Install Azure CLI**: Begin by installing the Azure Command-Line Interface (CLI) [Install the Azure CLI for Windows | Microsoft Learn2](/cli/azure/).
 2. **Execute the CreateDevAADApp.ps1 Script**: Execute the [CreateDevAADApp script](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Authentication/CreateDevAADApp.ps1). You'll be prompted to sign in by using the credentials of the user account under which you intend to create the application.
 3. **Provide Required Information**: When prompted, enter the desired name for your application, the workload name (prefixed with "Org."), and your tenant ID.
 
@@ -208,4 +209,4 @@ You can now do the following tasks:
 * Work with CRUD/Jobs operations.
 * Get an access token for your application on the client side.
 * Use the authentication page in the frontend sample as a playground to call your workload APIs. 
-* See what APIs the backend sample offers in [Backend/src/controllers](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Backend/src/Controllers).
+* See what APIs the backend sample offers in [Backend/src/controllers](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Backend/src/Controllers).

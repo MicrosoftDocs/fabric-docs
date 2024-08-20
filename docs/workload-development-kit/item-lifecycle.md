@@ -1,9 +1,8 @@
 ---
 title: Item lifecycle (preview)
 description: Learn about item lifecycle in Microsoft Fabric.
-author: mberdugo
-ms.author: monaberdugo
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: concept-article
 ms.custom:
 ms.date: 05/21/2024
