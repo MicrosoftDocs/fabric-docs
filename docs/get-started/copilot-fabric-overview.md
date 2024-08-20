@@ -53,7 +53,7 @@ For more information, see [Copilot for Real-Time Intelligence overview](copilot-
 
 ## Build your own copilot solution accelerator
 
-Using the [client advisor AI accelerator](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator) sample, you can build custom copilots with your enterprise data. The client advisor AI accelerator leverages Azure Open AI Service, Azure AI Search and Microsoft Fabric, to create custom copilot solutions. It's an all-in-one custom copilot that empowers client advisors to harness the power of generative AI across both structured and unstructured data. It helps you to optimize daily tasks and foster better interactions with more clients.
+Using the [client advisor AI accelerator](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator) sample, you can build custom copilots with your enterprise data. The client advisor AI accelerator uses Azure OpenAI Service, Azure AI Search and Microsoft Fabric, to create custom copilot solutions. It's an all-in-one custom copilot that empowers client advisors to harness the power of generative AI across both structured and unstructured data. It helps you to optimize daily tasks and foster better interactions with more clients.
 
 ## How do I use Copilot responsibly?
 
