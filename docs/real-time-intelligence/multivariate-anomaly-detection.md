@@ -34,7 +34,7 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 
 ## Part 2- Enable KQL Python plugin
 
-In this step, you enable the python plugin in your Eventhouse. This step is required to run the predict anomalies **(replace this with a link to step #10)** Python code in the KQL queryset. It's important to choose the correct package that contains the [time-series-anomaly-detector](https://pypi.org/project/time-series-anomaly-detector/) package.
+In this step, you enable the python plugin in your Eventhouse. This step is required to [run the predict anomalies](#part-9--predict-anomalies-in-the-kql-queryset) Python code in the KQL queryset. It's important to choose the correct package that contains the [time-series-anomaly-detector](https://pypi.org/project/time-series-anomaly-detector/) package.
 
 1. In the Eventhouse screen, select your database, then select **Manage** > **Plugins** from the ribbon..
 1. In the Plugins pane, toggle the **Python language extension to** to **On**.
@@ -126,19 +126,22 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
 1. Input your OneLake URI copied from [Part 5- Copy OneLake path to the table](#part-5--copy-onelake-path-to-the-table) to load *demo_stocks_change* table into a pandas dataframe.
 
     ```python
-    onelake_uri = "Paste your OneLake URI here"
+    onelake_uri = "OneLakeTableURI" # Replace with your OneLake table URI 
     abfss_uri = convert_onelake_to_abfss(onelake_uri)
     print(abfss_uri)
+    ```
+
+    ```python
     df = spark.read.format('delta').load(abfss_uri)
-    df = df.toPandas()
+    df = df.toPandas().set_index('Date')
     print(df.shape)
     df[:3]
     ```
 
-1. Run the following cells to prepare the training and prediction dataframes. 
+1. Run the following cells to prepare the training and prediction dataframes.
 
-    > [!NOTE] 
-    > The actual predictions will be run on new data by the Eventhouse in [part 9- Predict-anomalies-in-the-kql-queryset](#part-9--predict-anomalies-in-the-kql-queryset). In this notebook, we test predictions on historical date to verify the model was trained and saved correctly.
+    > [!NOTE]
+    > The actual predictions will be run on data by the Eventhouse in [part 9- Predict-anomalies-in-the-kql-queryset](#part-9--predict-anomalies-in-the-kql-queryset). In a production scenario, if you were streaming data into the eventhouse, the predictions would be made on the new streaming data. For the purpose of the tutorial, the dataset has been split by date into two sections for training and prediction. This is to simulate historical data and new streaming data.
 
     ```python
     features_cols = ['AAPL', 'AMZN', 'GOOG', 'MSFT', 'SPY']
@@ -194,9 +197,11 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
     print(model_abfss)
     ```
 
-1. Copy the <a name="modeluri">model URI </a>from the last cell output. You'll use this in the next step.
+1. Copy the model URI from the last cell output. You'll use this in the next step.
 
 ## Part 8- Set up your KQL queryset
+
+For general information, see [Create a KQL queryset](create-query-set.md).
 
 1. In the experience switcher, choose **Real-Time Intelligence**.
 1. Select your workspace.
