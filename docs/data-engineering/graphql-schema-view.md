@@ -53,13 +53,29 @@ You can use the Schema explorer to modify objects after the API creates them for
 
 :::image type="content" source="media/graphql-schema-view/schema-explorer-modify-object.png" alt-text="Screenshot of the Schema explorer with the ellipsis selected, showing the available menu options.":::
 
-The following options are available:
+The following options are available for Types:
 
 - **Update schema** - Allows you to update the schema with new objects from the data source.
 - **Rename** - Changes the name of the object. PLEASE NOTE: This change **only** affects the API schema, and has no effect on the original data source object from which it was derived.
 - **Remove from schema** - Effectively deletes the object from the GraphQL schema so you can no longer reference it.
 - **Manage relationships** - Takes you to the relationship management experience. For more information, see [Manage relationships in Fabric API for GraphQL](manage-relationships-graphql.md).
 - **Properties** - Shows additional information about the object.
+
+## Enable and disable queries and mutations
+
+The enable/disable feature for queries and mutations provides administrators and developers with granular control over API access and usage. It allows you to selectively activate or deactivate specific queries and mutations within the GraphQL schema. This lets you manage API capabilities dynamically without modifying code or deploying changes.
+
+Queries and mutations in the schema explorer have two additional options:
+
+- **Disable** - Prevents any requests from executing the query or mutation. If execution is attempted, an error is returned. Once a query or a mutation is disabled, a schema reload occurs, and the query or mutation appears grayed out in the schema explorer.
+
+![Screenshot of disable query or mutation option shown on schema explorer.](./media/graphql-schema-view/disable-query.png)
+
+- **Enable** - Re-enable a previously disabled query or mutation. Execution of the item is immediately available upon schema reload operation that takes place after selecting the **Enable** option.
+
+![Screenshot of enable query of mutation option shown on schema explorer.](media/graphql-schema-view/enable-query.png)
+
+Please note that queries or mutations auto generated from stored procedures can only be deleted. Once deleted, they can be re-added using the **Get Data** or the **Update Schema** options.
 
 ## Related content
 
