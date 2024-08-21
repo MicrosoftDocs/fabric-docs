@@ -75,7 +75,7 @@ Queries and mutations in the schema explorer have two additional options:
 
 ![Enable query of mutation option shown on schema explorer](media/graphql-schema-view/enable-query.png)
 
-Please note that queries or mutations auto-generated from stored procedures can only be deleted. Once deleted, they can be re-added using the Get Data button or the Update Schema options.
+Please note that queries or mutations auto generated from stored procedures can only be deleted. Once deleted, they can be re-added using the **Get Data** or the **Update Schema** options.
 
 ## Related content
 
