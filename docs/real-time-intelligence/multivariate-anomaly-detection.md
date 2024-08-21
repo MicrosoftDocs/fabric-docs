@@ -18,7 +18,7 @@ For general information about multivariate anomaly detection in Real-Time Intell
 * Role of **Admin**, **Contributor**, or **Member** [in the workspace](../get-started/roles-workspaces.md). This permission level is needed to create items such as an Environment.
 * An [eventhouse](create-eventhouse.md) in your workspace with a database.
 * Download the [sample data](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/demo_stocks_change.csv) from the GitHub repo
-* Download the notebook from the GitHub repo
+* Download the notebook from the [GitHub repo](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/multivariate-anomaly-detection-tutorial.ipynb)
 
 ## Part 1- Enable OneLake availability
 
@@ -123,7 +123,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
     return abfss_uri
     ```
 
-1. Input your OneLake URI copied from [Part 6- Copy OneLake path to the table](#part-6--copy-onelake-path-to-the-table) to load *demo_stocks_change* table into a pandas dataframe.
+1. Input your OneLake URI copied from [Part 5- Copy OneLake path to the table](#part-5--copy-onelake-path-to-the-table) to load *demo_stocks_change* table into a pandas dataframe.
 
     ```python
     onelake_uri = "Paste your OneLake URI here"
