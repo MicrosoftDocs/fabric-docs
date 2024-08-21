@@ -53,13 +53,23 @@ You can use the Schema explorer to modify objects after the API creates them for
 
 :::image type="content" source="media/graphql-schema-view/schema-explorer-modify-object.png" alt-text="Screenshot of the Schema explorer with the ellipsis selected, showing the available menu options.":::
 
-The following options are available:
+The following options are available for Types:
 
 - **Update schema** - Allows you to update the schema with new objects from the data source.
 - **Rename** - Changes the name of the object. PLEASE NOTE: This change **only** affects the API schema, and has no effect on the original data source object from which it was derived.
 - **Remove from schema** - Effectively deletes the object from the GraphQL schema so you can no longer reference it.
 - **Manage relationships** - Takes you to the relationship management experience. For more information, see [Manage relationships in Fabric API for GraphQL](manage-relationships-graphql.md).
 - **Properties** - Shows additional information about the object.
+
+## Enabling and Disabling Queries and Mutations
+
+The Enable/Disable feature for queries and mutations provides administrators and developers with granular control over API access and usage. You to selectively activate or deactivate specific queries and mutations within your GraphQL schema, giving you the ability to manage API capabilities dynamically without altering the underlying code or deploying changes.
+
+Queries and Mutations in the Schema Explorer have two additional options for this:
+
+- **Disable** - Prevents any requests from executing the query or mutation. If execution is attempted, an error will be returned. Once a query or a mutation is disabled, a schema reload takes place and Schema Explorer will show the query or mutation as grayed out.![Disable query or mutation option shown on schema explorer](./media/graphql-schema-view/disable-query.png)
+- **Enable** - Enable a previously disabled query or mutation. Execution of the item is immediately available upon schema reload operation that takes place after selecting the Enable option.
+![Enable query of mutation option shown on schema explorer](media/graphql-schema-view/enable-query.png)
 
 ## Related content
 

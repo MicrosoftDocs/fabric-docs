@@ -11,3 +11,5 @@ docs/data-engineering/.DS_Store
 media/.DS_Store
 .idea/
 /.vs
+.vscode/
+
