@@ -5,26 +5,19 @@ ms.reviewer: adieldar
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.date: 08/18/2024
+ms.date: 08/21/2024
 ms.search.form: KQL Queryset
 ---
 # Multivariate Anomaly Detection
 
-Specifically, in this tutorial you will:
-
-> [!div class="checklist"]
->
-> * Prepare a table in the Eventhouse with sample data.
-> * Enable OneLake availability on this data.
-> * Train the multivariate anomaly detection model in a Python notebook using the Spark engine
-> * Predict anomalies by applying the trained model to new data using the Eventhouse engine
+For general information about multivariate anomaly detection in Real-Time Intelligence, see [Multivariate anomaly detection in Microsoft Fabric - overview](multivariate-anomaly-overview.md). In this tutorial you will use sample data to train a multivariate anomaly detection model using the Spark engine in a Python notebook. You will then predict anomalies by applying the trained model to new data using the Eventhouse engine. The first few steps set up your environments, and the following steps train the model and predict anomalies.
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * Role of **Admin**, **Contributor**, or **Member** [in the workspace](../get-started/roles-workspaces.md). This permission level is needed to create items such as an Environment.
 * An [eventhouse](create-eventhouse.md) in your workspace with a database.
-* Download the sample data from the GitHub repo
+* Download the [sample data](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/demo_stocks_change.csv) from the GitHub repo
 * Download the notebook from the GitHub repo
 
 ## Part 1- Enable OneLake availability
@@ -39,37 +32,18 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 
     :::image type="content" source="media/multivariate-anomaly-detection/one-lake-availability.png" alt-text="Screenshot of enabling OneLake availability in your Eventhouse.":::
 
-## Part 2- Get data into the Eventhouse
-
-1. Hover over the KQL database where you want to store your data. Select the **More menu [...]** > **Get data** > **Local file**.
-
-    :::image type="content" source="media/multivariate-anomaly-detection/local-file.png" alt-text="Screenshot of get data from local file.":::
-
-1. Select **+ New table** and enter *demo_stocks_change* as the table name.
-1. In the upload data dialog, select **Browse for files** and upload the sample data file that was downloaded in the [Prerequisites](#prerequisites)
-1. Select **Next**.
-1. In the **Inspect the data** section, toggle **First row is column header** to **On**.
-1. Select **Finish**.
-1. When the data is uploaded, select **Close**.
-
-## Part 3- Copy OneLake path to the table
-
-Make sure you select the demo_stocks_change table. In the **Table details** tile, select **Copy path** to copy the OneLake path to your clipboard. Save this copied text in a text editor somewhere to use in a later step.
-
-:::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
-
-## Part 4- Enable KQL Python plugin
+## Part 2- Enable KQL Python plugin
 
 In this step, you enable the python plugin in your Eventhouse. This step is required to run the predict anomalies (make it a link to step #10) Python code in the KQL queryset. It's important to choose the correct package that contains the time-series-anomaly-detector package.
 
-1. In the Eventhouse screen, first click on your database, then select **Manage** > **Plugins** from the ribbon..
+1. In the Eventhouse screen, select your database, then select **Manage** > **Plugins** from the ribbon..
 1. In the Plugins pane, toggle the **Python language extension to** to **On**.
 1. Select **Python 3.11.7 DL (preview)**.
 1. Select **Done**.
 
     :::image type="content" source="media/multivariate-anomaly-detection/python-package.png" alt-text="Screenshot for how to enable python package 3.11.7 DL in the Eventhouse.":::
 
-## Part 5- Create a Spark environment
+## Part 3- Create a Spark environment
 
 In this step, you create a Spark environment to run the Python notebook that trains the multivariate anomaly detection model using the Spark engine. For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md). 
 
@@ -91,7 +65,7 @@ In this step, you create a Spark environment to run the Python notebook that tra
 
     :::image type="content" source="media/multivariate-anomaly-detection/publish-environment.png" alt-text="Screenshot of publishing the environment.":::
 
-## Part 6- Attach the environment to the workspace
+## Part 4- Attach the environment to the workspace
 
 In this step, you attach the environment you created in the previous step to the workspace where you'll run your notebook. 
 
@@ -103,6 +77,25 @@ In this step, you attach the environment you created in the previous step to the
 
     :::image type="content" source="media/multivariate-anomaly-detection/attach-environment-workspace.png" alt-text="Screenshot of attaching the environment to the workspace." lightbox="media/multivariate-anomaly-detection/attach-environment-workspace.png":::
 
+## Part 5- Get data into the Eventhouse
+
+1. Hover over the KQL database where you want to store your data. Select the **More menu [...]** > **Get data** > **Local file**.
+
+    :::image type="content" source="media/multivariate-anomaly-detection/local-file.png" alt-text="Screenshot of get data from local file.":::
+
+1. Select **+ New table** and enter *demo_stocks_change* as the table name.
+1. In the upload data dialog, select **Browse for files** and upload the sample data file that was downloaded in the [Prerequisites](#prerequisites)
+1. Select **Next**.
+1. In the **Inspect the data** section, toggle **First row is column header** to **On**.
+1. Select **Finish**.
+1. When the data is uploaded, select **Close**.
+
+## Part 6- Copy OneLake path to the table
+
+Make sure you select the *demo_stocks_change* table. In the **Table details** tile, select **Copy path** to copy the OneLake path to your clipboard. Save this copied text in a text editor somewhere to use in a later step.
+
+:::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
+
 ## Part 7- Set up the notebook
 
 1. In the experience switcher, choose **Data Engineering**.
@@ -112,22 +105,16 @@ In this step, you attach the environment you created in the previous step to the
 
     :::image type="content" source="media/multivariate-anomaly-detection/select-environment.png" alt-text="Screenshot of selecting the environment in the notebook.":::
 
-<!--
-1. Attach the notebook to your Lakehouse: From the source pane, select **+ Lakehouse**.
-1. Select **Existing Lakehouse** > **Add**.
-1. In the OneLake data hub explorer, select the Lakehouse you created in the previous steps. Select **Connect**.
--->
-
 ## Part 8- Run the notebook
 
-1. Standard imports
+1. Import standard packages.
 
     ```python
     import numpy as np
     import pandas as pd
     ```
 
-1. Spark needs ABFSS URI to securely connect to OneLake storage, thus we define this function to convert the OneLake URI to ABFSS URI.
+1. Spark needs uses an ABFSS URI to securely connect to OneLake storage, so the next step defines this function to convert the OneLake URI to ABFSS URI.
 
     ```python
     def convert_onelake_to_abfss(onelake_uri):
@@ -144,7 +131,7 @@ In this step, you attach the environment you created in the previous step to the
     return abfss_uri
     ```
 
-1. Input your OneLake URI copied from [Part 3- Copy OneLake path to the table](#part-3--copy-onelake-path-to-the-table) to load demo_stocks_change table into a pandas dataframe.
+1. Input your OneLake URI copied from [Part 3- Copy OneLake path to the table](#part-6--copy-onelake-path-to-the-table) to load *demo_stocks_change* table into a pandas dataframe.
 
     ```python
     onelake_uri = "Paste your OneLake URI here"
@@ -269,7 +256,7 @@ In this step, you attach the environment you created in the previous step to the
 
 1. Copy/paste the following prediction query.
 1. Replace the output model URI copied in the end of step (8) (best to add a link).
-1. Run the query. It will detect multivariate anomalies on the five stocks, based on the trained model, and render the results as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies (i.e. anomalies of the joint changes of the five stocks in the specific date).
+1. Run the query. It will detect multivariate anomalies on the five stocks, based on the trained model, and render the results as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies (in other words, anomalies of the joint changes of the five stocks in the specific date).
 
     ```kusto
     let cutoff_date=datetime(2023-01-01);
@@ -302,5 +289,3 @@ When you finish the tutorial, you can delete the resources, you created to avoid
 1. Delete the notebook created in this tutorial.
 1. Delete the Eventhouse or [database](manage-monitor-eventhouse.md#manage-kql-databases) used in this tutorial.
 1. Delete the KQL queryset created in this tutorial.
-
-
