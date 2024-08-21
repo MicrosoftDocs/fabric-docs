@@ -34,7 +34,7 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 
 ## Part 2- Enable KQL Python plugin
 
-In this step, you enable the python plugin in your Eventhouse. This step is required to run the predict anomalies (make it a link to step #10) Python code in the KQL queryset. It's important to choose the correct package that contains the time-series-anomaly-detector package.
+In this step, you enable the python plugin in your Eventhouse. This step is required to run the predict anomalies **(replace this with a link to step #10)** Python code in the KQL queryset. It's important to choose the correct package that contains the [time-series-anomaly-detector](https://pypi.org/project/time-series-anomaly-detector/) package.
 
 1. In the Eventhouse screen, select your database, then select **Manage** > **Plugins** from the ribbon..
 1. In the Plugins pane, toggle the **Python language extension to** to **On**.
@@ -92,14 +92,16 @@ In this step, you attach the environment you created in the previous step to the
 
 ## Part 6- Copy OneLake path to the table
 
-Make sure you select the *demo_stocks_change* table. In the **Table details** tile, select **Copy path** to copy the OneLake path to your clipboard. Save this copied text in a text editor somewhere to use in a later step.
+Make sure you select the *demo_stocks_change* table. In the **Table details** tile, select **Copy path** to copy the OneLake path to your clipboard. Save this copied text in a text editor somewhere to be used in a later step.
 
 :::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
 
 ## Part 7- Set up the notebook
 
 1. In the experience switcher, choose **Data Engineering**.
-1. Select **Import notebook** > **Upload**, and choose the notebook you downloaded in the [prerequisites](#prerequisites). :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
+1. Select **Import notebook** > **Upload**, and choose the notebook you downloaded in the [prerequisites](#prerequisites).
+
+:::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
 1. After the notebook is uploaded, browse to your workspace and open the notebook.
 1. From the top ribbon, select the **Workspace default** dropdown and select the environment you created in the previous step.
 
@@ -114,7 +116,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
     import pandas as pd
     ```
 
-1. Spark needs uses an ABFSS URI to securely connect to OneLake storage, so the next step defines this function to convert the OneLake URI to ABFSS URI.
+1. Spark needs an ABFSS URI to securely connect to OneLake storage, so the next step defines this function to convert the OneLake URI to ABFSS URI.
 
     ```python
     def convert_onelake_to_abfss(onelake_uri):
@@ -131,7 +133,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
     return abfss_uri
     ```
 
-1. Input your OneLake URI copied from [Part 3- Copy OneLake path to the table](#part-6--copy-onelake-path-to-the-table) to load *demo_stocks_change* table into a pandas dataframe.
+1. Input your OneLake URI copied from [Part 6- Copy OneLake path to the table](#part-6--copy-onelake-path-to-the-table) to load *demo_stocks_change* table into a pandas dataframe.
 
     ```python
     onelake_uri = "Paste your OneLake URI here"
@@ -143,7 +145,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
     df[:3]
     ```
 
-1. Run the following cells to prepare the training and prediction dataframes.
+1. Run the following cells to prepare the training and prediction dataframes. Note that we will run the actual predictions on new data by the Eventhouse in [part 10- Predict-anomalies-in-the-kql-queryset](#part-10--predict-anomalies-in-the-kql-queryset). In this notebook we just test predictions on historical date to verify the model was trained and saved correctly.
 
     ```python
     features_cols = ['AAPL', 'AMZN', 'GOOG', 'MSFT', 'SPY']
