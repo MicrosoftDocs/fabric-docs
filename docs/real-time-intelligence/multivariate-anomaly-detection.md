@@ -65,19 +65,7 @@ In this step, you create a Spark environment to run the Python notebook that tra
 
     :::image type="content" source="media/multivariate-anomaly-detection/publish-environment.png" alt-text="Screenshot of publishing the environment.":::
 
-## Part 4- Attach the environment to the workspace
-
-In this step, you attach the environment you created in the previous step to the workspace where you'll run your notebook. 
-
-1. Select workspace settings icon from the top menu ribbon.
-1. Expand the **Data Engineering/Science** section and select **Spark settings**.
-1. Select the **Environment** tab.
-1. Toggle **Set default environment** to **On**.
-1. Select the environment you created in the previous step. Select **Save**.
-
-    :::image type="content" source="media/multivariate-anomaly-detection/attach-environment-workspace.png" alt-text="Screenshot of attaching the environment to the workspace." lightbox="media/multivariate-anomaly-detection/attach-environment-workspace.png":::
-
-## Part 5- Get data into the Eventhouse
+## Part 4- Get data into the Eventhouse
 
 1. Hover over the KQL database where you want to store your data. Select the **More menu [...]** > **Get data** > **Local file**.
 
@@ -90,24 +78,25 @@ In this step, you attach the environment you created in the previous step to the
 1. Select **Finish**.
 1. When the data is uploaded, select **Close**.
 
-## Part 6- Copy OneLake path to the table
+## Part 5- Copy OneLake path to the table
 
 Make sure you select the *demo_stocks_change* table. In the **Table details** tile, select **Copy path** to copy the OneLake path to your clipboard. Save this copied text in a text editor somewhere to be used in a later step.
 
 :::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
 
-## Part 7- Set up the notebook
+## Part 6
 
 1. In the experience switcher, choose **Data Engineering**.
 1. Select **Import notebook** > **Upload**, and choose the notebook you downloaded in the [prerequisites](#prerequisites).
 
-:::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
+    :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
+
 1. After the notebook is uploaded, browse to your workspace and open the notebook.
 1. From the top ribbon, select the **Workspace default** dropdown and select the environment you created in the previous step.
 
     :::image type="content" source="media/multivariate-anomaly-detection/select-environment.png" alt-text="Screenshot of selecting the environment in the notebook.":::
 
-## Part 8- Run the notebook
+## Part 7- Run the notebook
 
 1. Import standard packages.
 
@@ -145,7 +134,10 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
     df[:3]
     ```
 
-1. Run the following cells to prepare the training and prediction dataframes. Note that we will run the actual predictions on new data by the Eventhouse in [part 10- Predict-anomalies-in-the-kql-queryset](#part-10--predict-anomalies-in-the-kql-queryset). In this notebook we just test predictions on historical date to verify the model was trained and saved correctly.
+1. Run the following cells to prepare the training and prediction dataframes. 
+
+    > [!NOTE] 
+    > The actual predictions will be run on new data by the Eventhouse in [part 9- Predict-anomalies-in-the-kql-queryset](#part-9--predict-anomalies-in-the-kql-queryset). In this notebook, we test predictions on historical date to verify the model was trained and saved correctly.
 
     ```python
     features_cols = ['AAPL', 'AMZN', 'GOOG', 'MSFT', 'SPY']
@@ -203,7 +195,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
 
 1. Copy the <a name="modeluri">model URI </a>from the last cell output. You'll use this in the next step.
 
-## Part 9- Set up your KQL queryset
+## Part 8- Set up your KQL queryset
 
 1. In the experience switcher, choose **Real-Time Intelligence**.
 1. Select your workspace.
@@ -212,7 +204,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
 1. In the **OneLake data hub** window, select the KQL database where you stored the data.
 1. Select **Connect**.
 
-## Part 10- Predict anomalies in the KQL queryset
+## Part 9- Predict anomalies in the KQL queryset
 
 1. Copy/paste and run the following '.create-or-alter function' query to define the  `predict_fabric_mvad_fl()` stored function:
 
@@ -257,7 +249,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
     ```
 
 1. Copy/paste the following prediction query.
-1. Replace the output model URI copied in the end of step (8) (best to add a link).
+1. Replace the output model URI copied in the end of [step 7](#part-7--run-the-notebook).
 1. Run the query. It will detect multivariate anomalies on the five stocks, based on the trained model, and render the results as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies (in other words, anomalies of the joint changes of the five stocks in the specific date).
 
     ```kusto
