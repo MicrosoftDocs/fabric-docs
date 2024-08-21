@@ -61,7 +61,7 @@ The following options are available for Types:
 - **Manage relationships** - Takes you to the relationship management experience. For more information, see [Manage relationships in Fabric API for GraphQL](manage-relationships-graphql.md).
 - **Properties** - Shows additional information about the object.
 
-## Enabling and Disabling Queries and Mutations
+## Enable and disable queries and mutations
 
 The enable/disable feature for queries and mutations provides administrators and developers with granular control over API access and usage. It allows you to selectively activate or deactivate specific queries and mutations within the GraphQL schema. This lets you manage API capabilities dynamically without modifying code or deploying changes.
 
