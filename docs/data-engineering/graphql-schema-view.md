@@ -63,7 +63,7 @@ The following options are available for Types:
 
 ## Enabling and Disabling Queries and Mutations
 
-The Enable/Disable feature for queries and mutations provides administrators and developers with granular control over API access and usage. You to selectively activate or deactivate specific queries and mutations within your GraphQL schema, giving you the ability to manage API capabilities dynamically without altering the underlying code or deploying changes.
+The enable/disable feature for queries and mutations provides administrators and developers with granular control over API access and usage. It allows you to selectively activate or deactivate specific queries and mutations within the GraphQL schema. This lets you manage API capabilities dynamically without modifying code or deploying changes.
 
 Queries and Mutations in the Schema Explorer have two additional options for this:
 
