@@ -279,8 +279,6 @@ items:
       href: vector-database-eventhouse.md
   - name: Timeseries anomaly detection
     items:
-    - name: Time series anomaly root cause diagnosis
-      href: /kusto/query/anomaly-diagnosis?view=microsoft-fabric&preserve-view=true  
     - name: Univariate anomaly detection and forecasting
       href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
     - name: Multivariate anomaly detection
