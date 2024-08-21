@@ -51,9 +51,11 @@ Copilot for Real-Time Intelligence is an advanced AI tool designed to help you e
 
 For more information, see [Copilot for Real-Time Intelligence overview](copilot-real-time-analytics.md).
 
-## Build your own copilot solution accelerator
+## AI solution accelerators
 
-Using the [client advisor AI accelerator](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator) sample, you can build custom copilots with your enterprise data. The client advisor AI accelerator uses Azure OpenAI Service, Azure AI Search and Microsoft Fabric, to create custom copilot solutions. It's an all-in-one custom copilot that empowers client advisors to harness the power of generative AI across both structured and unstructured data. It helps you to optimize daily tasks and foster better interactions with more clients.
+### Build your own copilots
+
+Using the [client advisor AI accelerator](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator) tool, you can build custom copilot with your enterprise data. The client advisor AI accelerator uses Azure OpenAI Service, Azure AI Search, and Microsoft Fabric to create custom copilot solutions. This all-in-one custom copilot empowers client advisors to use generative AI across structured and unstructured data optimizing daily tasks and fostering better interactions with clients. To learn more, see the [GitHub repo](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator).
 
 ## How do I use Copilot responsibly?
 
