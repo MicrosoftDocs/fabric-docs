@@ -13,7 +13,7 @@ ms.date: 05/21/2024
 
 This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a guide for integrating a custom UX Workload with Microsoft Fabric. This project enables developers to seamlessly integrate their own UI components and behaviors into Fabric's runtime environment, enabling rapid experimentation and customization. Developers can use the Fabric development kit's framework to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with Independent Software Vendor (ISV) capabilities. For example, the item editor allows creating a native, consistent user experience by embedding ISV’s frontend in the context of a Fabric workspace item.
 
-The UX Workload Frontend is a standard web app ([React](https://react.dev/)) that incorporates our extension client SDK, a standard npm package, to enable its functionality.
+The UX Workload Frontend is a standard web app ([React](https://react.dev/)) that incorporates our workload client SDK, a standard npm package, to enable its functionality.
 The ISV hosts and runs it inside an `<iframe>` in the Fabric portal. It presents ISV-specific UI experiences such as an item editor.
 The SDK provides all the necessary interfaces, APIs, and bootstrap functions required to transform a regular web app into a Micro Frontend web app that operates seamlessly within the Fabric portal.
 
@@ -43,11 +43,11 @@ The following diagram shows how Fabric uses the Manifest to read the workload's 
 
 -->
 
-## Step 1: Enable Workload Extensions in Fabric
+## Step 1: Enable Workloads Development Feature in Fabric
 
-The tenant administrator has to enable the workload development feature in the Admin Portal. It can be enabled for the entire organization or for specific groups within the organization by enabling the tenant switch *Capacity admins can develop additional workloads*.
+The tenant administrator has to enable the workloads development feature in the Admin Portal. It can be enabled for the entire organization or for specific groups within the organization by enabling the tenant switch *Capacity admins can develop additional workloads*.
 
-:::image type="content" source="./media/extensibility-front-end/tenant-switch.png" alt-text="Screenshot of the workloads extensions tenant switch.":::
+:::image type="content" source="./media/extensibility-front-end/tenant-switch.png" alt-text="Screenshot of the workloads development tenant switch.":::
 
 ## Step 2: Set up the frontend
 
@@ -60,9 +60,7 @@ To set up the front end of the sample project, follow these steps:
     <a name="package-structure"></a>
     This is the package directory layout, with a description of the essential components and resources:
 
-    * **docs** - SDK documentation, images
-    * **Manifests** - location of the frontend manifest file
-    * **node_modules** - the sample workload is shipped with preinstalled SDK packages - under `@trident` -  as their npm package isn't yet publically available
+    * **Package** - the location of the workload package: Frontend resources, including manifests and assets.
     * **src** - Workload code:
       * **index.ts** - main initialization file, `bootstrap` the `index.worker` and `index.ui` iFrames - *detailed below*
       * **App.tsx** - routing of paths to pages, for example - `/sample-workload-editor` is routed to the `SampleWorkloadEditor` function under `components`
@@ -72,7 +70,9 @@ To set up the front end of the sample project, follow these steps:
       * **models** - the contracts and models used by the UI itself and for communication with the boilerplate's backend
     * **tools** -  
       * `webpack.config.js` - configuration of the local Node.js server
-      * `manifest.reader.js` - reading the manifest file
+      * Web configuration and manifest reader/processor
+    * **validation** - 
+      * `validateSchema.js` - validation of product and item json files schema. It is configured to run on `npm start`.
 
 1. **Install**. Notice the existing packages under `node_modules`
 
@@ -81,9 +81,6 @@ To set up the front end of the sample project, follow these steps:
    ```console
    <repository folder>\Frontend> npm install
     ```
-
-    > [!NOTE]
-    >The repository provides packages under ***node_modules/@trident***. These packages aren't yet available on public npm feeds, so deleting them renders the repo unusable. If there are issues with the npm install (when merging mismatching versions, etc.), delete everything under `node_modules` **except** for the `@trident` folder, and delete the `package-lock.json` file, before rerunning **npm install**.
 
 1. **Start server**
 
@@ -163,7 +160,7 @@ Every Fabric Workload app needs to support being loaded in two modes:
 
 * **UI mode**: Am app in UI mode is loaded in visible iFrames and listens for its own route changes to render corresponding UI components, including pages, panels, dialogs, and so on.
 * **Worker mode**: An app in worker mode runs in an invisible iFrame, which is primarily used to receive commands sent from the outside world and respond to them.
-`@trident/extension-client-3p` provides a `bootstrap()` method to simplify the initialization steps. The bootstrap() method internally detects whether the current app is loaded in UI mode or worker mode, and then calls the appropriate initialization method (initializeUI or initializeWorker). After the initialization is complete, bootstrap() notifies Fabric micro-frontend framework of the initialization success or failure.
+`@ms-fabric/workload-client` provides a `bootstrap()` method to simplify the initialization steps. The bootstrap() method internally detects whether the current app is loaded in UI mode or worker mode, and then calls the appropriate initialization method (initializeUI or initializeWorker). After the initialization is complete, bootstrap() notifies Fabric micro-frontend framework of the initialization success or failure.
 
 ```javascript
 bootstrap({
@@ -190,7 +187,7 @@ The current workspace `objectId` is passed into the frontend-only experience as 
             case 'open.createSampleWorkloadFrontendOnly':
                 const { workspaceObjectId: workspaceObjectId1 } = data as ItemCreateContext;
                 return workloadClient.page.open({
-                    extensionName: 'Fabric.WorkloadSample',
+                    extensionName: 'Org.WorkloadSample',
                     route: {
                         path: `/sample-workload-frontend-only/${workspaceObjectId1}`,
                     },
@@ -328,7 +325,7 @@ When you select an existing Sample Workload item in the workspace view, Fabric n
   {
    "name": "Org.WorkloadSample.SampleWorkloadItem",
    "editor": {
-    "extension": "Fabric.WorkloadSample",
+    "extension": "Org.WorkloadSample",
     "path": "/sample-workload-editor"
    },
 ```
@@ -350,15 +347,8 @@ Both calls go through the Workload backend's `onDeleteItem` callback.
 
  In the sample workload editor, there's a section that lets you navigate to the authentication section.
  Before you use authentication API, configure an Entra app Microsoft Entra ID.
- In localWorkloadManifest.json, configure your Entra config under "extension":
-
-```json
-   "devAADAppConfig": {
-   "appId": your app id,
-   "redirectUri": "http://localhost:60006/close" // you can change this to whatever path that suits you in index.ts
-   "audience": your audience
-  }
-```
+ Additionally, ensure that your env.dev file is configured accurately. For more details refer to:
+ [Configure the workload local manifest and acquire a token for your application](authentication-tutorial#configure-the-workload-local-manifest-and-acquire-a-token-for-your-application-frontend)
 
 ## Step 4: Debug
 
