@@ -283,6 +283,8 @@ items:
       href: multivariate-anomaly-overview.md
     - name: Multivariate anomaly detection tutorial
       href: multivariate-anomaly-detection.md
+    - name: Time series anomaly detection and forcasting
+      href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserveview=true
   - name: Notebooks
     items:
     - name: Use Fabric notebooks with data from a KQL database
