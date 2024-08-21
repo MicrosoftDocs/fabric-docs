@@ -84,7 +84,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
 
 :::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
 
-## Part 6
+## Part 6- Prepare the notebook
 
 1. In the experience switcher, choose **Data Engineering**.
 1. Under **Recommended items to create**, select **Import notebook**. You may have to scroll to the right to find this option.
@@ -250,8 +250,8 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
     ```
 
 1. Copy/paste the following prediction query.
-1. Replace the output model URI copied in the end of [step 7](#part-7--run-the-notebook).
-1. Run the query. It will detect multivariate anomalies on the five stocks, based on the trained model, and render the results as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies (in other words, anomalies of the joint changes of the five stocks in the specific date).
+    1. Replace the output model URI copied in the end of [step 7](#part-7--run-the-notebook).
+    1. Run the query. It will detect multivariate anomalies on the five stocks, based on the trained model, and render the results as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies (in other words, anomalies of the joint changes of the five stocks in the specific date).
 
     ```kusto
     let cutoff_date=datetime(2023-01-01);
