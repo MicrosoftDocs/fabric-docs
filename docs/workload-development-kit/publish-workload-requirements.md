@@ -1,8 +1,8 @@
 ---
 title: Fabric Workload Hub validation guidelines and requirements (preview)
 description: Learn about the guidelines and requirements for publishing a Microsoft Fabric workload to the Workload Hub.
-author: KesemSharabi
-ms.author: kesharab
+author: gesaur
+ms.author: gesaur
 ms.topic: conceptual
 ms.date: 05/21/2024
 ---
@@ -24,7 +24,7 @@ This document provides a comprehensive overview of all the different components 
 | Value to customers | Your offer must provide enough value to justify the investment it takes to learn and use. Your offer should provide significant benefits such as enhanced efficiency, innovative features, or strategic advantages. | Attestation | Required  | Required  | |
 | Terms and conditions | You need to provide your customers with terms and conditions for the offer you provide on the platform. In the terms and conditions you need to highlight the compliancy aspects of your solution. For example, what happens to data at rest and transit? Where are the services you provide Azure customers available from? | Workload Package | Required  |Required | [Governance overview and guidance](../governance/governance-compliance-overview.md) |
 | Metadata | Metadata such as title, summary, and icon, must be identical in the Workload package manifest and the SaaS offer submission in Partner Center. Add all the assets of the workload such as icons and screenshots under `fe/assests` directory. Your workload package has to comply with the frontend and [backend](extensibility-back-end.md) manifest requirements. | Workload Package | Required |Requried | [Manifest](extensibility-back-end.md)
-| Attestation Document | Partners need to provide a page that contains all the information about their workload certification status. This document needs to be linked in the Workload Package and kept up-to-date. You must add the link in the workload metadata manifest under the `supportLink` field in `certification`. The link must also appear in the workload product page in the Workload Hub. | Workload Package | Required | Required | [Example document](publish-workload-attestation-example.md) |
+| Attestation Document | Partners need to provide a page that contains all the information about their workload certification status. This document needs to be linked in the Workload Package and kept up-to-date. You must add the link in the workload metadata manifest under the `supportLink` field in `certification`. The link must also appear in the workload product page in the Workload Hub. | Workload Package | Required | Required | |
 | Trial | Provide an easy and fast trial experience. The trial should be available to the customer without waiting time (less than 5 seconds), and give the them a free and easy way to explore the offered workload. | Attestation | Required | Required |  [Trials](monetization.md#trials) |
 | Marketplace Offer | Partners need to enlist a SaaS offer in the Azure Marketplace. This offer can just be a *contact us* listing to get leads from the platform. We expect partners to also transact over the Marketplace. You can build Bring Your Own License (BYOL) capabilities into your workload. | Workload Package | Required | Required | [Creating a SaaS offer](/partner-center/marketplace-offers/create-new-saas-offer) <br> <br> [Commercial marketplace certification policies](/legal/marketplace/certification-policies#1000-software-as-a-service-saas)  |
 |Documentation | You need to provide doucmentation for your Workload to customers in an easy and understandable form.  | Workload Package | Required | Required | |
