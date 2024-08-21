@@ -370,7 +370,7 @@ To view the settings of a specific capacity, follow these steps:
 This table summarizes the actions you can take in the details section.
 
 >[!NOTE]
->Trail capacities only have some of the settings listed in the table
+>Trial capacities only have some of the settings listed in the table
 
 | Details setting name                 | Description |
 |--------------------------------------|-------------|
@@ -378,7 +378,7 @@ This table summarizes the actions you can take in the details section.
 | Capacity usage report                | The usage report is replaced with the [capacity metrics app](../enterprise/metrics-app.md) |
 | Notifications                        | Enable [notification](service-admin-premium-capacity-notifications.md) for your capacity |
 | Contributor permissions              | Set up the ability to add workspaces to the capacity. Select one of these two options:<li>The entire organization</li><li>Specific users or security groups</li> |
-| Admin permissions                    | Give specific users or security groups the ability to do the following:<li>Change capacity settings</li><li>Add contributors to the capacity</li><li>Add or remove workspaces from the capacity</li> |
+| Admin permissions                    | Give specific users the ability to do the following:<li>Change capacity settings</li><li>Add contributors to the capacity</li><li>Add or remove workspaces from the capacity</li> |
 | Power BI workloads                   | Configure [Power BI workloads](/power-bi/enterprise/service-admin-premium-workloads) for:<li>[Semantic models](/power-bi/enterprise/service-admin-premium-workloads#semantic-models)</li><li>[Paginated reports](/power-bi/enterprise/service-admin-premium-workloads#paginated-reports)</li><li>[AI](/power-bi/enterprise/service-admin-premium-workloads#ai-preview)</li> |
 | Preferred capacity for My workspace  | Designate the capacity as the default capacity for [My workspaces](../admin/portal-workspaces.md#govern-my-workspaces)         |
 | Data Engineering/Science Settings    | Allow workspace admins to set the size of their spark [pools](../data-engineering/workspace-admin-settings.md#pool) |
