@@ -257,7 +257,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
     ```
 
 1. Copy/paste the following prediction query.
-1. Replace the output model URI copied in the end of step (8) (best to add a link).
+1. Replace the output model URI copied in the **end of step (8) (best to add a link).**
 1. Run the query. It will detect multivariate anomalies on the five stocks, based on the trained model, and render the results as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies (in other words, anomalies of the joint changes of the five stocks in the specific date).
 
     ```kusto
