@@ -71,7 +71,7 @@ Queries and mutations in the schema explorer have two additional options:
 
 ![Disable query or mutation option shown on schema explorer](./media/graphql-schema-view/disable-query.png)
 
-- **Enable** - Enable a previously disabled query or mutation. Execution of the item is immediately available upon schema reload operation that takes place after selecting the Enable option.
+- **Enable** - Re-enable a previously disabled query or mutation. Execution of the item is immediately available upon schema reload operation that takes place after selecting the **Enable** option.
 
 ![Enable query of mutation option shown on schema explorer](media/graphql-schema-view/enable-query.png)
 
