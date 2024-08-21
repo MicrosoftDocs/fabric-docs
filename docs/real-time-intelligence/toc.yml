@@ -279,18 +279,16 @@ items:
       href: vector-database-eventhouse.md
   - name: Timeseries anomaly detection
     items:
+    - name: Time series anomaly root cause diagnosis
+      href: /kusto/query/anomaly-diagnosis?view=microsoft-fabric&preserve-view=true  
+    - name: Univariate anomaly detection and forecasting
+      href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
     - name: Multivariate anomaly detection
       items: 
       - name: Multivariate anomaly detection overview
         href: multivariate-anomaly-overview.md
       - name: Multivariate anomaly detection tutorial
         href: multivariate-anomaly-detection.md
-    - name: Univariate anomaly detection
-      items:
-      - name: Time series anomaly detection and forcasting
-        href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
-      - name: Time series anomaly root cause diagnosis
-        href: /kusto/query/anomaly-diagnosis?view=microsoft-fabric&preserve-view=true  
   - name: Notebooks
     items:
     - name: Use Fabric notebooks with data from a KQL database
