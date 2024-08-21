@@ -29,7 +29,7 @@ Specifically, in this tutorial you will:
 
 ## Part 1- Enable OneLake availability
 
-OneLake availability must be [enabled](event-house-onelake-availability.md) before you get data in the Eventhouse. This step is important, because it enables the data you ingest to become available in the OneLake. In a later step, you access this same data from your Notebook to train the model.
+OneLake availability must be [enabled](event-house-onelake-availability.md) before you get data in the Eventhouse. This step is important, because it enables the data you ingest to become available in the OneLake. In a later step, you access this same data from your Spark Notebook to train the model.
 
 1. Browse to your workspace homepage in Real-Time Intelligence.
 1. Select the Eventhouse you created in the prerequisites. Choose the database where you want to store your data.
@@ -54,15 +54,15 @@ OneLake availability must be [enabled](event-house-onelake-availability.md) befo
 
 ## Part 3- Copy OneLake path to the table
 
-Make sure you select the recently created table. In the **Table details** tile, select **Copy path** to copy the OneLake path to your clipboard. Save this copied text in a text editor somewhere to use in a later step.
+Make sure you select the demo_stocks_change table. In the **Table details** tile, select **Copy path** to copy the OneLake path to your clipboard. Save this copied text in a text editor somewhere to use in a later step.
 
 :::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
 
 ## Part 4- Enable KQL Python plugin
 
-In this step, you enable the python plugin in your Eventhouse. This step is required to run the Python code in the KQL query. It's important to choose the correct package that contains the necessary libraries for the time-series-anomaly-detector package.
+In this step, you enable the python plugin in your Eventhouse. This step is required to run the predict anomalies (make it a link to step #10) Python code in the KQL queryset. It's important to choose the correct package that contains the time-series-anomaly-detector package.
 
-1. In the Eventhouse ribbon, select **Manage** > **Plugins**.
+1. In the Eventhouse screen, first click on your database, then select **Manage** > **Plugins** from the ribbon..
 1. In the Plugins pane, toggle the **Python language extension to** to **On**.
 1. Select **Python 3.11.7 DL (preview)**.
 1. Select **Done**.
@@ -71,16 +71,16 @@ In this step, you enable the python plugin in your Eventhouse. This step is requ
 
 ## Part 5- Create a Spark environment
 
-For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md). In this step, you create a Spark environment to run the Python notebook that trains the multivariate anomaly detection model.
+In this step, you create a Spark environment to run the Python notebook that trains the multivariate anomaly detection model using the Spark engine. For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md). 
 
 1. In the experience switcher, choose **Data Engineering**. If you're already in the Data Engineering experience, browse to **Home**.
-1. From **Recommended items to create**, Select **Environments, and enter the name *MultivariateAnomalyDetectionTutorial* for the environment.
+1. From **Recommended items to create**, Select **Environments, and enter the name *MVAD_ENV* for the environment.
 
     :::image type="content" source="media/multivariate-anomaly-detection/create-environment.png" alt-text="Screenshot of creating an environment in Data Engineering.":::
 
 1. Under **Libraries**, select **Public libraries**.
 1. Select **Add from PyPI**.
-1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version.
+1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version. This tutorial was created using version 0.2.7, which is the version included in the Kusto Python 3.11.7 DL.
 1. Select **Save**.
 
     :::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment.":::
@@ -106,7 +106,7 @@ In this step, you attach the environment you created in the previous step to the
 ## Part 7- Set up the notebook
 
 1. In the experience switcher, choose **Data Engineering**.
-1. Select **Import notebook** > **Upload**, and choose the upload you downloaded the [prerequisites](#prerequisites). :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
+1. Select **Import notebook** > **Upload**, and choose the notebook you downloaded in the [prerequisites](#prerequisites). :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
 1. After the notebook is uploaded, browse to your workspace and open the notebook.
 1. From the top ribbon, select the **Workspace default** dropdown and select the environment you created in the previous step.
 
@@ -120,14 +120,14 @@ In this step, you attach the environment you created in the previous step to the
 
 ## Part 8- Run the notebook
 
-1. Set up the environment.
+1. Standard imports
 
     ```python
     import numpy as np
     import pandas as pd
     ```
 
-1. Define the function to convert the OneLake URI to ABFSS URI.
+1. Spark needs ABFSS URI to securely connect to OneLake storage, thus we define this function to convert the OneLake URI to ABFSS URI.
 
     ```python
     def convert_onelake_to_abfss(onelake_uri):
@@ -144,7 +144,7 @@ In this step, you attach the environment you created in the previous step to the
     return abfss_uri
     ```
 
-1. Input your OneLake URI copied from [Part 3- Copy OneLake path to the table](#part-3--copy-onelake-path-to-the-table) to load the table.
+1. Input your OneLake URI copied from [Part 3- Copy OneLake path to the table](#part-3--copy-onelake-path-to-the-table) to load demo_stocks_change table into a pandas dataframe.
 
     ```python
     onelake_uri = "Paste your OneLake URI here"
@@ -156,7 +156,7 @@ In this step, you attach the environment you created in the previous step to the
     df[:3]
     ```
 
-1. Run the notebook cells to load the data into the notebook.
+1. Run the following cells to prepare the training and prediction dataframes.
 
     ```python
     features_cols = ['AAPL', 'AMZN', 'GOOG', 'MSFT', 'SPY']
@@ -267,7 +267,9 @@ In this step, you attach the environment you created in the previous step to the
     }
     ```
 
-1. Copy/paste and run the following prediction query that will detect multivariate anomalies on the five stocks, based on the trained model, and render it as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies, that is, anomalies of the vector of the five stocks in the specific date. Replace the output model URI copied in a [previous step](#modeluri).
+1. Copy/paste the following prediction query.
+1. Replace the output model URI copied in the end of step (8) (best to add a link).
+1. Run the query. It will detect multivariate anomalies on the five stocks, based on the trained model, and render the results as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies (i.e. anomalies of the joint changes of the five stocks in the specific date).
 
     ```kusto
     let cutoff_date=datetime(2023-01-01);
@@ -296,6 +298,7 @@ The resulting anomaly chart should look like the following image:
 When you finish the tutorial, you can delete the resources, you created to avoid incurring other costs. To delete the resources, follow these steps:
 
 1. Browse to your workspace homepage.
+1. Delete the environment created in this tutorial.
 1. Delete the notebook created in this tutorial.
 1. Delete the Eventhouse or [database](manage-monitor-eventhouse.md#manage-kql-databases) used in this tutorial.
 1. Delete the KQL queryset created in this tutorial.
