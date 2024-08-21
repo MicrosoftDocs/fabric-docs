@@ -67,9 +67,15 @@ The Enable/Disable feature for queries and mutations provides administrators and
 
 Queries and Mutations in the Schema Explorer have two additional options for this:
 
-- **Disable** - Prevents any requests from executing the query or mutation. If execution is attempted, an error will be returned. Once a query or a mutation is disabled, a schema reload takes place and Schema Explorer will show the query or mutation as grayed out.![Disable query or mutation option shown on schema explorer](./media/graphql-schema-view/disable-query.png)
+- **Disable** - Prevents any requests from executing the query or mutation. If execution is attempted, an error will be returned. Once a query or a mutation is disabled, a schema reload takes place and Schema Explorer will show the query or mutation as grayed out.
+
+![Disable query or mutation option shown on schema explorer](./media/graphql-schema-view/disable-query.png)
+
 - **Enable** - Enable a previously disabled query or mutation. Execution of the item is immediately available upon schema reload operation that takes place after selecting the Enable option.
+
 ![Enable query of mutation option shown on schema explorer](media/graphql-schema-view/enable-query.png)
+
+Please note that queries or mutations auto-generated from stored procedures can only be deleted. Once deleted, they can be re-added using the Get Data button or the Update Schema options.
 
 ## Related content
 
