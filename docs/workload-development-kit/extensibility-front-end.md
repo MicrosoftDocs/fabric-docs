@@ -11,7 +11,7 @@ ms.date: 05/21/2024
 
 # Fabric workload development kit frontend (preview)
 
-[This Fabric developer sample](https://github.com/microsoft/Microsoft-Fabric-developer-sample.git) serves as a guide for integrating a custom UX Workload with Microsoft Fabric. This project enables developers to seamlessly integrate their own UI components and behaviors into Fabric's runtime environment, enabling rapid experimentation and customization. Developers can use the Fabric development kit's framework to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with Independent Software Vendor (ISV) capabilities. For example, the item editor allows creating a native, consistent user experience by embedding ISV’s frontend in the context of a Fabric workspace item.
+This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a guide for integrating a custom UX Workload with Microsoft Fabric. This project enables developers to seamlessly integrate their own UI components and behaviors into Fabric's runtime environment, enabling rapid experimentation and customization. Developers can use the Fabric development kit's framework to build workloads and create custom capabilities that extend the Fabric experience. The Fabric platform is designed to be interoperable with Independent Software Vendor (ISV) capabilities. For example, the item editor allows creating a native, consistent user experience by embedding ISV’s frontend in the context of a Fabric workspace item.
 
 The UX Workload Frontend is a standard web app ([React](https://react.dev/)) that incorporates our extension client SDK, a standard npm package, to enable its functionality.
 The ISV hosts and runs it inside an `<iframe>` in the Fabric portal. It presents ISV-specific UI experiences such as an item editor.
@@ -34,7 +34,7 @@ The SDK provides a sample UI with the following features:
 
    The UX Workload Frontend Manifest is a JSON resource that the ISV provides. It contains essential information about the workload, such as the URL of the workload web app, and various UI details like the display name of the ISV item and associated icons. It also enables the ISV to customize what happens when users interact with their items in the Fabric portal.
 
-   In this package, the manifest is located in the [Frontend Manifest file](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/Manifests/localWorkloadManifest.json) and a detailed description can be found in the frontend manifest file.
+In this package, the manifest files are located here, under the Package folder: [Frontend Manifest files](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/Package) and a detailed description can be found in the frontend manifest files.
 
 <!--
 The following diagram shows how Fabric uses the Manifest to read the workload's metadata and behavior and how it embeds the workload's web app inside Fabric's iFrame.
@@ -376,14 +376,12 @@ More information can be found [on the Fluent UI page](https://develop.fluentui.d
 ## Frontend Manifest customization
 
 The frontend manifest describes the frontend aspects of the workload - product appearance, names, visual assets, available actions, and more. It's the main point of contact between Fabric and the workload.
-For our sample workload, the aggregated manifest is loaded into Fabric in Developer mode, and its various sections, definitions and examples of the manifest are shown [in the frontend manifest](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/frontendManifest.md).
+For our sample workload, the aggregated manifest is loaded into Fabric in Developer mode, and its various sections, definitions and examples of the manifest are shown [in the frontend manifest files](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/Package).
 Changes to the manifest's entries, the wiring of different actions and updating of visual assets are seen in real time after a page refresh.
 
 ## Client SDK - supported APIs
 
-The SDK documentation is located [in the docs section of the Fabric developer sample repo](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/docs/client-3p/index.html).
-To view it, download, or clone the repo, open the `index.html` from the file system.
-This opens the API documentation that you can see in each of the SDK's files.
+The Client SDK documentation is located here: [@ms-fabric/workload-client package](https://go.microsoft.com/fwlink/?linkid=2271989).
 
 The following APIs are supported:
 
