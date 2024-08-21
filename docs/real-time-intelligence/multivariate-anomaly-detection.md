@@ -197,7 +197,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
     print(model_abfss)
     ```
 
-1. Copy the model URI from the last cell output. You'll use this in the next step.
+1. Copy the model URI from the last cell output. You'll use this in a later next step.
 
 ## Part 8- Set up your KQL queryset
 
