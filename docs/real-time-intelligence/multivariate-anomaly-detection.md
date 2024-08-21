@@ -87,7 +87,8 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
 ## Part 6
 
 1. In the experience switcher, choose **Data Engineering**.
-1. Select **Import notebook** > **Upload**, and choose the notebook you downloaded in the [prerequisites](#prerequisites).
+1. Under **Recommended items to create**, select **Import notebook**. You may have to scroll to the right to find this option.
+1. Select **Upload**, and choose the notebook you downloaded in the [prerequisites](#prerequisites).
 
     :::image type="icon" source="media/vector-database/import-notebook.png" border="false":::
 
