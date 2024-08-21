@@ -289,6 +289,8 @@ items:
       items:
       - name: Time series anomaly detection and forcasting
         href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
+      - name: Time series anomaly root cause diagnosis
+        href: /kusto/query/anomaly-diagnosis?view=microsoft-fabric&preserve-view=true  
   - name: Notebooks
     items:
     - name: Use Fabric notebooks with data from a KQL database
