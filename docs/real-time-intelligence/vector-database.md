@@ -68,7 +68,7 @@ In the following example, a static vector table is defined for storing 1M vector
 1. The following KQL commands are run one by one to create the empty table and set the required policies and encoding:
 
     ```kusto
-    .create table embedding_vectors(vector_id:long, vector:dynamic)                                     //  This is a sample selection of columns, you can add more columns
+    .create table embedding_vectors(vector_id:long, vector:dynamic)                                  //  This is a sample selection of columns, you can add more columns
     
     .alter column embedding_vectors.vector policy encoding type = 'Vector16'                         // Store the coefficients in 16 bits instead of 64 bits accelerating calculation of dot product, suppress redundant indexing
     
