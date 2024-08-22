@@ -75,7 +75,7 @@ When you enable OneLake availability on data in an Eventhouse, a Delta table is 
 | **Large data source** | Use Copy tool in pipelines |
 | **Complex data transformations** | Use Notebook code |
 | **Streaming data** | Use Eventstream to stream data into Eventhouse; enable OneLake availability and create a shortcut from Lakehouse|
-| **Data exists in Eventhouse** | Create a shortcut to Eventhouse |
+| **Time-series data** | Get data from Eventhouse |
 
 ## Related content
 
