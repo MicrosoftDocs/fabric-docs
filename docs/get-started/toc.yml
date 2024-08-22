@@ -31,6 +31,8 @@ items:
     href: decision-guide-pipeline-dataflow-spark.md
   - name: Decision guide - choose a data store
     href: decision-guide-data-store.md
+  - name: Decision guide - Warehouse and Lakehouse
+    href: ../get-started/decision-guide-lakehouse-warehouse.md
 - name: Find your way around Fabric
   items:
   - name: Find your items from Fabric Home
