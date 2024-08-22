@@ -146,6 +146,7 @@ Currently, the connector:
 
 * Supports data retrieval from Fabric warehouses and SQL analytics endpoints of lakehouse items.
 * Supports Scala only.
+* Fabric DW now supports `Time Travel` however this connector doesn't work for a query with time travel syntax. 
 * Doesn't implement pushed-down optimization.
 * Retains the usage signature like the one shipped with Apache Spark for Azure Synapse Analytics for consistency. However, it's not backward compatible to connect and work with a dedicated SQL pool in Azure Synapse Analytics.
 * Column names with special characters will be handled by adding escape character before the query, based on 3 part table/view name, is submitted. In case of a custom or passthrough-query based read, users are required to escape column names that would contain special characters.
