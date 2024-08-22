@@ -1,9 +1,8 @@
 ---
 title: Adding a Microsoft Fabric workload (preview)
 description: Learn how to add, remove, and use a workload from the workload hub.
-author: mberdugo
-ms.author: monaberdugo
-ms.reviewer: teddyberco
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
 ms.date: 05/21/2024
@@ -27,8 +26,8 @@ Each workload includes additional information describing workload capabilities a
 
 * **Item Type**: A list of items this workload can create.
 * **Compatible with**: which items are integrated with by the workload.
-* **Publisher support**: Documentation, Certification page & Help links by the workload publisher.
-* Videos and screenshots material by the publisher.
+* **Publisher support**: Documentation, Certification page & Help links provided by the workload publisher.
+* Videos and screenshots material provided by the publisher.
 
 ## Adding and removing workloads
 

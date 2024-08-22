@@ -1,15 +1,17 @@
 ---
 title:  Fabric decision guide - choose a data store
-description: Review a reference table and some quick scenarios to help in choosing whether to use a warehouse, lakehouse, Power BI Datamart, or eventhouse for your data in Fabric.
+description: Review a reference table and scenarios to choose the most suitable data store for your Microsoft Fabric workloads, ensuring optimal performance.
 author: bradleyschacht
 ms.author: scbradl
 ms.reviewer: sngun, wiassaf
-ms.topic: quickstart
-ms.date: 06/10/2024
+ms.topic: concept-article
+ms.date: 08/21/2024
 ms.custom:
   - build-2023
   - ignite-2023
   - build-2024
+  - FY25Q1-Linter
+#customer intent: As a data engineer, I want to understand the different data store options and their use cases in Fabric so that I can make an informed decision for my data storage needs.
 ---
 
 # Microsoft Fabric decision guide: choose a data store
@@ -17,6 +19,8 @@ ms.custom:
 Use this reference guide and the example scenarios to help you choose a data store for your Microsoft Fabric workloads.
 
 ## Data store properties
+
+This table compares data stores such as warehouse, lakehouse, Power BI datamart, and eventhouse based on data volume, type, developer persona, skill set, operations. and other capabilities.
 
 | | **Warehouse** | **Lakehouse** | **Power BI Datamart**  | **Eventhouse** |
 |---|:---:|:---:|:---:|:---:|
@@ -29,7 +33,7 @@ Use this reference guide and the example scenarios to help you choose a data sto
 | **Write operations** | T-SQL | Spark(Scala, PySpark, Spark SQL, R) | Dataflows, T-SQL | KQL, Spark, connector ecosystem |
 | **Multi-table transactions** | Yes | No | No | Yes, for multi-table ingestion. See [update policy](/azure/data-explorer/kusto/management/updatepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric#the-update-policy-object).|
 | **Primary development interface** | SQL scripts | Spark notebooks,Spark job definitions | Power BI | KQL Queryset, KQL Database |
-| **Security** | Object level (table, view, function, stored procedure, etc.), column level, row level, DDL/DML, dynamic data masking | Row level, table level (when using T-SQL), none for Spark | Built-in RLS editor | Row-level Security |
+| **Security** | Object level (table, view, function, stored procedure, etc.), column level, row level, DDL/DML, dynamic data masking | Row level, column level (for lakehouse accessed through a SQL analytics endpoint), table level (when using T-SQL), none for Spark | Built-in RLS editor | Row-level Security |
 | **Access data via shortcuts** | Yes, through a lakehouse using three-part names | Yes | No | Yes |
 | **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No | Yes |
 | **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables; query across lakehouses (including shortcuts using Spark) | No | Yes, query across KQL Databases, lakehouses, and warehouses with shortcuts |
@@ -69,5 +73,3 @@ Daisy decides to use an **eventhouse** because of its scalability, quick respons
 - [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 - [Create a warehouse in Microsoft Fabric](../data-warehouse/create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
-- [Introduction to Power BI datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
-- [Create an eventhouse](../real-time-intelligence/create-eventhouse.md)
