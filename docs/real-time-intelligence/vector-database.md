@@ -44,7 +44,7 @@ The general workflow for using a vector database is as follows:
 
 At the core of Vector Similarity Search is the ability to store, index, and query vector data. Eventhouses provide a solution for handling and analyzing large volumes of data, particularly in scenarios requiring real-time analytics and exploration, making it an excellent choice for storing and searching vectors. 
 
-The following components of the Eventhouse architecture enable its use as a vector database:
+The following components of the enable the use of Eventhouse a vector database:
 
 * The [dynamic](/kusto/query/scalar-data-types/dynamic?view=microsoft-fabric&preserve-view=true) data type, which can store unstructured data such as arrays and property bags. Thus data type is recommended for storing vector values. You can further augment the vector value by storing metadata related to the original object as separate columns in your table.  
 * The [encoding](/kusto/management/encoding-policy?view=microsoft-fabric&preserve-view=true) type [`Vector16`](/kusto/management/alter-encoding-policy#encoding-policy-types?view=microsoft-fabric&preserve-view=true) designed for storing vectors of floating-point numbers in 16-bits precision, which uses the `Bfloat16` instead of the default 64 bits. This encoding is recommended for storing ML vector embeddings as it reduces storage requirements by a factor of four and accelerates vector processing functions such as [series_dot_product()](/kusto/query/series-dot-product-function?view=microsoft-fabric&preserve-view=true) and [series_cosine_similarity()](/kusto/query/series-cosine-similarity-function?view=microsoft-fabric&preserve-view=true) by orders of magnitude.
@@ -56,7 +56,6 @@ For more information on optimizing vector similarity search, read the [blog](htt
 
 To maximize performance and the resulting search times, follow the following steps:
 
-1. Use series_cosine_similarity(), the optimized native function to calculate cosine similarity.
 1. Set the encoding of the embeddings column to Vector16, the 16-bit encoding of the vectors coefficients (instead of the default 64-bit).
 1. Store the embedding vectors table on all cluster nodes with at least one shard per processor, which is done by the following steps:
     1. Limit the number of embedding vectors per shard by altering the *ShardEngineMaxRowCount* of the [sharding policy](/kusto/management/sharding-policy?view=microsoft-fabric&preserve-view=true). The sharding policy balances data on all nodes with multiple extents per node so the search can use all available processors.
@@ -64,14 +63,17 @@ To maximize performance and the resulting search times, follow the following ste
 
 ### Example optimization steps
 
-In the following example, a simple vector table is defined. The embedding policy is defined as Vector16, and the sharding and merging policies are set to optimize the table for vector similarity search. In this example, the table contains 1M vectors and the cluster has 20 nodes each has 16 processors. The table’s shards should contain at most 1000000/(20*16)=3125 rows. 
+In the following example, a static vector table is defined for storing 1M vectors. The embedding policy is defined as Vector16, and the sharding and merging policies are set to optimize the table for vector similarity search. For this let's assume the cluster has 20 nodes each has 16 processors. The table’s shards should contain at most 1000000/(20*16)=3125 rows. 
 
-1. The following KQL commands are run sequentially to create the empty table and set the required policies and encoding:
+1. The following KQL commands are run one by one to create the empty table and set the required policies and encoding:
 
     ```kusto
     .create table embedding_vectors(vector_id:long, vector:dynamic)                                     //  This is a sample selection of columns, you can add more columns
-    .alter column embedding_vectors.vector policy encoding type = 'Vector16'                    // Store the coefficients in 16 bits instead of 64 bits accelerating calculation of dot product, suppress redundant indexing
-    .alter-merge table embedding_vectors policy sharding '{ "ShardEngineMaxRowCount" : 3125 }'  // Balanced data on all nodes and, multiple extents per node so the search can use all processors 
+    
+    .alter column embedding_vectors.vector policy encoding type = 'Vector16'                         // Store the coefficients in 16 bits instead of 64 bits accelerating calculation of dot product, suppress redundant indexing
+    
+    .alter-merge table embedding_vectors policy sharding '{ "ShardEngineMaxRowCount" : 3125 }'       // Balanced data on all nodes and, multiple extents per node so the search can use all processors 
+    
     .alter-merge table embedding_vectors policy merge '{ "RowCountUpperBoundForMerge" : 3125 }'      // Suppress merging extents after ingestion
     ```
   
