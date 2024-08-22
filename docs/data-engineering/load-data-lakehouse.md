@@ -58,7 +58,9 @@ You can use available Spark libraries to connect to a data source directly, load
 
 With Eventstream, you can get, process, and route high volumes real-time events from a wide variety of sources. For more information, see [Microsoft Fabric event streams - overview](../real-time-intelligence/event-streams/overview.md). 
 
-To see how to add lakehouse as a destination for Eventstream, see [Add a lakehouse destination to an eventstream](../real-time-intelligence/event-streams/add-destination-lakehouse.md).
+:::image type="content" source="media/load-data-lakehouse/get-data-eventstream.png" alt-text="Screenshot of getting data into a lakehouse from Eventstream.":::
+
+To see how to add lakehouse as a destination for Eventstream, see [Get data from Eventstream in a lakehouse](../real-time-intelligence/event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-eventstream-in-a-lakehouse).
 
 For optimal streaming performance, you can stream data from Eventstream into an Eventhouse and then [enable OneLake availability](#get-data-from-eventhouse).
 
