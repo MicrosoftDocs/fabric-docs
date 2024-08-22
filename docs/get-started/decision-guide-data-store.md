@@ -5,7 +5,7 @@ author: bradleyschacht
 ms.author: scbradl
 ms.reviewer: sngun, wiassaf
 ms.topic: concept-article
-ms.date: 08/21/2024
+ms.date: 08/22/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -46,9 +46,9 @@ Review these scenarios for help with choosing a data store in Fabric.
 
 Susan, a professional developer, is new to Microsoft Fabric. They are ready to get started cleaning, modeling, and analyzing data but need to decide to build a data warehouse or a lakehouse. After review of the details in the previous table, the primary decision points are the available skill set and the need for multi-table transactions.
 
-Susan has spent many years building data warehouses on relational database engines, and is familiar with SQL syntax and functionality. Thinking about the larger team, the primary consumers of this data are also skilled with SQL and SQL analytical tools. Susan decides to use a **data warehouse**, which allows the team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data. 
+Susan has spent many years building data warehouses on relational database engines, and is familiar with SQL syntax and functionality. Thinking about the larger team, the primary consumers of this data are also skilled with SQL and SQL analytical tools. Susan decides to use a **data warehouse**, which allows the team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data.
 
-Susan creates a new lakehouse. Using the Fabric portal, creates shortcuts to the external data tables and places them in the `/Tables` folder. Susan now can write T-SQL queries that reference shortcuts to query Delta Lake data in the lakehouse. The shortcuts automatically appear as tables in the SQL analytics endpoint and can be queried with T-SQL using three-part names.
+Susan creates a new lakehouse and access the data warehouse capabilities with the lakehouse SQL analytics endpoint. Using the Fabric portal, creates shortcuts to the external data tables and places them in the `/Tables` folder. Susan now can write T-SQL queries that reference shortcuts to query Delta Lake data in the lakehouse. The shortcuts automatically appear as tables in the SQL analytics endpoint and can be queried with T-SQL using three-part names.
 
 ### Scenario 2
 
