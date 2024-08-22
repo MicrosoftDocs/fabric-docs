@@ -59,8 +59,10 @@ items:
     href: load-data-lakehouse.md
   - name: Shortcut data in a lakehouse
     href: lakehouse-shortcuts.md
-  - name: Stream data to a lakehouse
-    href: lakehouse-streaming-data.md
+  - name: Get streaming data into lakehouse with Spark
+    href: get-started-streaming.md
+  - name: Get streaming data into lakehouse with Eventstreams 
+    href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
 - name: Lakehouse access control
   items:
   - name: Workspace roles and permissions
