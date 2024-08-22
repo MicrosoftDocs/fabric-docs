@@ -41,6 +41,20 @@ The following command shows the `synapsesql` method signature for the read reque
 ```scala
 synapsesql(tableName:String="<Part 1.Part 2.Part 3>") => org.apache.spark.sql.DataFrame
 ```
+In addition to reading from a table or view directly, this connector also allows you to specify a custom or passthrough query, which gets passed to SQL engine and result is returned back to Spark.
+```scala
+spark.read.option(Constants.DatabaseName, "<warehouse/lakeshouse name>").synapsesql("<T-SQL Query>") => org.apache.spark.sql.DataFrame
+```
+
+While this connector auto discovers the endpoint for the specified warehouse / lakehouse, if you want to specify it explicitly, you can do it.
+```scala
+//For warehouse
+spark.conf.set("spark.datawarehouse.<warehouse name>.sqlendpoint", "<sql endpoint,port>")
+//For lakehouse
+spark.conf.set("spark.lakehouse.<lakeshouse name>.sqlendpoint", "<sql endpoint,port>")
+//Read from table
+spark.read.synapsesql("<warehouse/lakeshouse name>.<schema name>.<table or view name>") => org.apache.spark.sql.DataFrame
+```
 
 ### Read data within the same workspace
 
@@ -49,7 +63,7 @@ synapsesql(tableName:String="<Part 1.Part 2.Part 3>") => org.apache.spark.sql.Da
 >
 > `import com.microsoft.spark.fabric.tds.implicits.read.FabricSparkTDSImplicits._`
 >
-> `import org.apache.spark.sql.functions._`
+> `import com.microsoft.spark.fabric.Constants`
 
 The following code is an example to read data from a table or view in a Spark DataFrame:
 
@@ -77,15 +91,18 @@ val df = spark.read.synapsesql("<warehouse/lakehouse name>.<schema name>.<table 
 
 ### Read data across workspaces
 
-To access and read data from a warehouse or lakehouse across workspaces, you can specify the workspace ID where your warehouse or lakehouse exists. This line provides an example of reading data from a table or view in a Spark DataFrame from the warehouse or lakehouse from the specified workspace ID:
+To access and read data from a data warehouse or lakehouse across workspaces, you can specify the workspace ID where your data warehouse or lakehouse exists and then lakehouse or data warehouse item id. This line provides an example of reading data from a table or view in a Spark DataFrame from the data warehouse or lakehouse with the specified workspace ID and lakehouse/data warehouse ID:
 
 ```scala
 import com.microsoft.spark.fabric.Constants
-val df = spark.read.option(Constants.WorkspaceId, "<workspace id>").synapsesql("<warehouse/lakehouse name>.<schema name>.<table or view name>")
+//For lakehouse
+val df = spark.read.option(Constants.WorkspaceId, "<workspace id>").option(Constants.LakehouseId, "<lakehouse item id>").synapsesql("<lakehouse name>.<schema name>.<table or view name>")
+//For data warehouse
+val df = spark.read.option(Constants.WorkspaceId, "<workspace id>").option(Constants.DatawarehouseId, "<data warehouse item id>").synapsesql("<warehouse name>.<schema name>.<table or view name>")
 ```
 
 > [!NOTE]
-> When you're running the notebook, by default the connector looks for the specified warehouse or lakehouse in the workspace of the lakehouse that's attached to the notebook. To reference a warehouse or lakehouse from another workspace, specify the workspace ID.
+> When you're running the notebook, by default the connector looks for the specified data warehouse or lakehouse in the workspace of the lakehouse that's attached to the notebook. To reference a data warehouse or lakehouse from another workspace, specify the workspace ID and lakehouse or data warehouse item ID as above.
 
 ### Use materialized data across cells and languages
 
@@ -129,9 +146,9 @@ Currently, the connector:
 
 * Supports data retrieval from Fabric warehouses and SQL analytics endpoints of lakehouse items.
 * Supports Scala only.
-* Doesn't support custom queries or query pass-through.
 * Doesn't implement pushed-down optimization.
 * Retains the usage signature like the one shipped with Apache Spark for Azure Synapse Analytics for consistency. However, it's not backward compatible to connect and work with a dedicated SQL pool in Azure Synapse Analytics.
+* Column names with special characters will be handled by adding escape character before the query, based on 3 part table/view name, is submitted. In case of a custom or passthrough-query based read, users are required to escape column names that would contain special characters.
 
 ## Related content
 

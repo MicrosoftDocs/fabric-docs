@@ -1,9 +1,8 @@
 ---
 title: Fabric Workload Development Kit authentication setup (preview)
 description: Learn how to set up the authorization for a customized Fabric workload.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 07/14/2024
@@ -88,11 +87,13 @@ To work with authentication, you need an application registered in Microsoft Ent
 
 ### Add a scope for CRUD/jobs
 
-To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and add *Fabric service application* to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
+To work with Create, Read, Update and Delete APIs for workload items, and perform other operations with jobs, [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope), and two dedicated Fabric applications to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric:
 
 * Under **Expose an API**, select **Add a scope**. Name the scope *FabricWorkloadControl* and provide the necessary details for it.
 
 * Under **Authorized client applications**, select **Add a client application**. Add `00000009-0000-0000-c000-000000000000` (Fabric service application) and select your scope.
+
+* Under **Authorized client applications**, select **Add a client application**. Add `d2450708-699c-41e3-8077-b0c8341509aa` (Fabric client for workloads application) and select your scope.
 
 ### Add scopes for data plane API
 
@@ -175,14 +176,14 @@ This example demonstrates how to use the `CreateDevAADApp.ps1` script with comma
 > [!NOTE]
 > This step is only applicable to the devmode scenario.
 
-After configuring your application, add the following configurations to the `devAADAppConfig` section of the `Frontend/.env.dev` configuration file located in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254):
+After configuring your application, update the following configurations in `.env.dev` configuration file located in the [Frontend folder](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend):
 
-```json
-"devAADAppConfig": {  
-    "DEV_AAD_CONFIG_AUDIENCE": "", // The ID URI configured in your application for developer scenario
-    "DEV_AAD_CONFIG_REDIRECT_URI": "http://localhost:60006/close", // or the path you configured in index.ts
-    "DEV_AAD_CONFIG_APPID": "" // your app Id
-}
+```
+"DEV_AAD_CONFIG_AUDIENCE": "", // The ID URI configured in your application for developer scenario
+
+"DEV_AAD_CONFIG_REDIRECT_URI": "http://localhost:60006/close", // or the path you configured in index.ts
+
+"DEV_AAD_CONFIG_APPID": "" // your app Id
 ```
 
 :::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot that shows the configuration of a .env.dev file.":::
@@ -208,4 +209,4 @@ You can now do the following tasks:
 * Work with CRUD/Jobs operations.
 * Get an access token for your application on the client side.
 * Use the authentication page in the frontend sample as a playground to call your workload APIs. 
-* See what APIs the backend sample offers in [Backend/src/controllers](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Backend/src/Controllers).
+* See what APIs the backend sample offers in [Backend/src/controllers](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Backend/src/Controllers).
