@@ -366,7 +366,7 @@ More information can be found [on the Fluent UI page](https://develop.fluentui.d
 ## Frontend Manifest customization
 
 The frontend manifest describes the frontend aspects of the workload - product appearance, names, visual assets, available actions, and more. It's the main point of contact between Fabric and the workload.
-For our sample workload, the aggregated manifest is loaded into Fabric in Developer mode, and its various sections, definitions and examples of the manifest are shown [in the frontend manifest files](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/Package).
+For our sample workload, the manifest is loaded into Fabric in Developer mode, and its various sections, definitions and examples of the manifest are shown [in the frontend manifest files](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/Package).
 Changes to the manifest's entries, the wiring of different actions and updating of visual assets are seen in real time after a page refresh.
 
 ## Client SDK - supported APIs
