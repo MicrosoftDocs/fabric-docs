@@ -85,18 +85,18 @@ Top use cases for this view include:
     - The "Rejected" status can occur because of resource limitations.
 - Identification of an operation that consumed many resources: sort the table by **Total CU(s)** descending to find the most expensive queries, then use **Operation Id** to uniquely identify an operation. This is the distributed statement ID, which can be used in other monitoring tools like dynamic management views (DMVs) and Query Insights for end-to-end traceability, such as in `dist_statement_id` in [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=fabric&preserve-view=true), and `distributed_statement_id` in [query insights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true). Examples:
 
-   The following sample T-SQL query uses the **Operation Id** inside a query on the `sys.dm_exec_requests` dynamic management view.
+   The following sample T-SQL query uses an **Operation Id** inside a query on the `sys.dm_exec_requests` dynamic management view.
    
    ```sql 
    SELECT * FROM sys.dm_exec_requests 
-   WHERE dist_statement_id = '<Operation Id here>';
+   WHERE dist_statement_id = '00AA00AA-BB11-CC22-DD33-44EE44EE44EE';
    ```
 
-   The following T-SQL query uses the **Operation Id** in a query on the `queryinsights.exec_requests_history` view. 
+   The following T-SQL query uses an **Operation Id** in a query on the `queryinsights.exec_requests_history` view. 
 
    ```sql
    SELECT * FROM queryinsights.exec_requests_history 
-   WHERE distributed_statement_id = '<Operation Id here>`;
+   WHERE distributed_statement_id = '00AA00AA-BB11-CC22-DD33-44EE44EE44EE`;
    ```
    
 ### Billing example
