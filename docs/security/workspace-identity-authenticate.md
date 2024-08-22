@@ -36,7 +36,7 @@ You must be a workspace admin to be able to create and manage a workspace identi
 
 When the workspace identity has been created, the tab displays the workspace identity details and the list of authorized users.
 
-Workspace identity can be [created and deleted by workspace admins](/fabric/security/workspace-identity). The workspace identity has the workspace contributor role on the workspace. Admins, members, and contributors in the workspace can configure the identity as authentication method in ADLS gen2 shortcuts.
+Workspace identity can be [created and deleted by workspace admins](/fabric/security/workspace-identity). The workspace identity has the workspace contributor role on the workspace. Admins, members, and contributors in the workspace can configure the identity as authentication method in ADLS gen2 connections that are used in data pipelines and shortcuts.
 
 ## Step 2: Grant the identity permissions on the storage account
 
