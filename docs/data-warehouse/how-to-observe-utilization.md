@@ -4,7 +4,7 @@ description: Learn how to use the Fabric Capacity Metrics app to observe Microso
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
-ms.date: 04/24/2024
+ms.date: 08/22/2024
 ms.topic: how-to
 ms.custom:
   - ignite-2023
@@ -52,8 +52,22 @@ The following animated image walks through several steps you can use to drill th
 1. In the **Utilization**, **Throttling**, or **Overages** tabs, select a specific timepoint to enable the **Explore** button for further drill through analysis. 
 1. Select **Explore**. The new page provides tables to explore details of both interactive and background operations. The page shows some background operations that are not occurring at that time, due to the 24-hour smoothing logic. In the previous animated image, operations are displayed between October 15 12:57 PM to October 16 12:57 PM, because of the background operations still being smoothed at the selected timepoint.
 1. In the **Background operations** table, you can also identify users, operations, start/stop times, durations that consumed the most CUs.
-    - The table includes an `Operation Id` for a specific operation. This is a unique identifier that can be used in other monitoring tools. For example, use the `Operation Id` for end-to-end traceability with the `dist_statement_id` in [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=fabric&preserve-view=true).
-    - The table of operations also provides a list of operations that are **InProgress**, so you can understand long running queries and its current CU consumption.
+   - The table of operations also provides a list of operations that are **InProgress**, so you can understand long running queries and its current CU consumption.
+   - Identification of an operation that consumed many resources: sort the table by **Total CU(s)** descending to find the most expensive queries, then use **Operation Id** to uniquely identify an operation. This is the distributed statement ID, which can be used in other monitoring tools like dynamic management views (DMVs) and Query Insights for end-to-end traceability, such as in `dist_statement_id` in [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=fabric&preserve-view=true), and `distributed_statement_id` in [query insights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true). Examples:
+
+      The following sample T-SQL query uses the **Operation Id** inside a query on the `sys.dm_exec_requests` dynamic management view.
+
+      ```sql 
+      SELECT * FROM sys.dm_exec_requests 
+      WHERE dist_statement_id = '00AA00AA-BB11-CC22-DD33-44EE44EE44EE';
+      ```
+
+      The following T-SQL query uses the **Operation Id** in a query on the `queryinsights.exec_requests_history` view. 
+
+      ```sql
+      SELECT * FROM queryinsights.exec_requests_history 
+      WHERE distributed_statement_id = '00AA00AA-BB11-CC22-DD33-44EE44EE44EE`;
+      ```
 1. The **Burndown table** graph represents the different Fabric workloads that are running on this capacity and the % compute consumed by them at the selected timepoint. 
     - The table entry for **DMS** is your Warehouse workload. In the previous sample animated image, DMS has added 26% to the overall carryforward debt.
     - The **Cumulative %** column provides a percentage of how much the capacity has overconsumed. This value should be below 100% to avoid throttling. For example, in the previous sample animated image, 2433.84% indicates that DMS used 24 times more capacity than what the current SKU (F2) allows.
