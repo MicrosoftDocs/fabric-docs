@@ -72,8 +72,8 @@ When you enable OneLake availability on data in an Eventhouse, a Delta table is 
 | **Small data or specific connector** | Use Dataflows |
 | **Large data source** | Use Copy tool in pipelines |
 | **Complex data transformations** | Use Notebook code |
-| **Streaming data** | Use Eventstream |
-| **Data exists in Eventhouse** | Create a shortcut to a Delta table from an Eventhouse |
+| **Streaming data** | Use Eventstream to push data into Eventhouse; enable OneLake availability|
+| **Data exists in Eventhouse** | Create a shortcut to Eventhouse |
 
 ## Related content
 
