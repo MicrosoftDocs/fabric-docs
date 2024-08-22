@@ -9,7 +9,7 @@ ms.date: 05/10/2024
 
 # Spark connector for Microsoft Fabric Synapse Data Warehouse
 
-The Spark connector for Synapse Data Warehouse enables Spark developers and data scientists to access and work with data from [a warehouse and the SQL analytics endpoint of a lakehouse](../data-warehouse/data-warehousing.md#data-warehousing-items-in-microsoft-fabric). The connector offers the following capabilities:
+The Spark connector for Synapse Data Warehouse enables Spark developers and data scientists to access and work with data from [a warehouse and the SQL analytics endpoint of a lakehouse](../data-warehouse/data-warehousing.md#data-warehousing-items). The connector offers the following capabilities:
 
 * You can work with data from a warehouse or SQL analytics endpoint in the same workspace or across multiple workspaces.
 * The SQL analytics endpoint of a Lakehouse is automatically discovered based on workspace context.
@@ -146,6 +146,7 @@ Currently, the connector:
 
 * Supports data retrieval from Fabric warehouses and SQL analytics endpoints of lakehouse items.
 * Supports Scala only.
+* Fabric DW now supports `Time Travel` however this connector doesn't work for a query with time travel syntax. 
 * Doesn't implement pushed-down optimization.
 * Retains the usage signature like the one shipped with Apache Spark for Azure Synapse Analytics for consistency. However, it's not backward compatible to connect and work with a dedicated SQL pool in Azure Synapse Analytics.
 * Column names with special characters will be handled by adding escape character before the query, based on 3 part table/view name, is submitted. In case of a custom or passthrough-query based read, users are required to escape column names that would contain special characters.
