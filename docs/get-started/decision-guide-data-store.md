@@ -10,6 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - build-2024
+  - FY25Q1-Linter
 #customer intent: As a data engineer, I want to understand the different data store options and their use cases in Fabric so that I can make an informed decision for my data storage needs.
 ---
 

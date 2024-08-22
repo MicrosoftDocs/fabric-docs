@@ -3,13 +3,15 @@ title: Debug apps with the extended Apache Spark history server
 description: Use the extended Apache Spark history server to debug and diagnose Apache Spark applications in Fabric.
 author: jejiang
 ms.author: jejiang
-ms.topic: overview
+ms.topic: how-to
 ms.date: 04/30/2023
 ms.custom:
-  - template-howto
-  - build-2023
-  - ignite-2023
+ - template-howto
+ - build-2023
+ - ignite-2023
+ - FY25Q1-Linter
 ms.search.form: Spark history server to debug apps
+# customer intent: As a data engineer, I want to use the Apache Spark history server in Fabric to debug and diagnose Apache Spark applications effectively.
 ---
 
 # Use extended Apache Spark history server to debug and diagnose Apache Spark applications
@@ -26,11 +28,19 @@ When an Apache Spark job is triggered, the button to open **Spark web UI** is in
 
 :::image type="content" source="media\apache-spark-history-server\spark-web-ui-in-the-progress-indicator-notebook.png" alt-text="Screenshot showing open the Spark web UI from progress indicator notebook." lightbox="media\apache-spark-history-server\spark-web-ui-in-the-progress-indicator-notebook.png":::
 
+:::image type="content" source="media\apache-spark-history-server\spark-web-ui-in-the-progress-indicator-notebook.png" alt-text="Screenshot showing open the Spark web UI from progress indicator notebook." lightbox="media\apache-spark-history-server\spark-web-ui-in-the-progress-indicator-notebook.png":::
+
 ### Open the Spark web UI from Apache Spark application detail page
+
+:::image type="content" source="media\apache-spark-history-server\spark-web-ui-from-application-detail-page.png" alt-text="Screenshot showing open the Spark web UI from Apache Spark application detail page." lightbox="media\apache-spark-history-server\spark-web-ui-from-application-detail-page.png":::
 
 The Spark web UI can also be opened through the Apache Spark application detail page. Select **Monitoring hub** on the left side of the page, and then select an Apache Spark application. The detail page of the application appears.
 
+:::image type="content" source="media\apache-spark-history-server\running-spark-ui.png" alt-text="Screenshot showing the button displays the spark ui in the running state." lightbox="media\apache-spark-history-server\running-spark-ui.png":::
+
 :::image type="content" source="media\apache-spark-history-server\spark-web-ui-from-application-detail-page.png" alt-text="Screenshot showing open the Spark web UI from Apache Spark application detail page." lightbox="media\apache-spark-history-server\spark-web-ui-from-application-detail-page.png":::
+
+:::image type="content" source="media\apache-spark-history-server\ended-spark-history-server.png" alt-text="Screenshot showing the button displays the spark ui in the ended state." lightbox="media\apache-spark-history-server\ended-spark-history-server.png":::
 
 For an Apache Spark application whose status is running, the button shows **Spark UI**. Select **Spark UI** and the Spark UI page appears.
 
@@ -40,11 +50,17 @@ For an Apache Spark application whose status is ended, the ended status can be *
 
 :::image type="content" source="media\apache-spark-history-server\ended-spark-history-server.png" alt-text="Screenshot showing the button displays the spark ui in the ended state." lightbox="media\apache-spark-history-server\ended-spark-history-server.png":::
 
+:::image type="content" source="media\apache-spark-history-server\apache-spark-graph-job-id.png" alt-text="Screenshot showing spark application and job graph job ID." lightbox="media\apache-spark-history-server\apache-spark-graph-job-id.png":::
+
 ## Graph tab in Apache Spark history server
 
 Select the Job ID for the job you want to view. Then, select **Graph** on the tool menu to get the job graph view.
 
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-display.png" alt-text="Screenshot showing spark application and job graph display." lightbox="media\apache-spark-history-server\spark-ui-graph-display.png":::
+
 ### Overview
+
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-heatmap.png" alt-text="Screenshot showing spark application and job graph heatmap." lightbox="media\apache-spark-history-server\spark-ui-graph-heatmap.png":::
 
 You can see an overview of your job in the generated job graph. By default, the graph shows all jobs. You can filter this view by **Job ID**.
 
@@ -60,9 +76,15 @@ The graph node displays the colors shown in the heatmap legend.
 
 :::image type="content" source="media\apache-spark-history-server\spark-ui-graph-heatmap.png" alt-text="Screenshot showing spark application and job graph heatmap." lightbox="media\apache-spark-history-server\spark-ui-graph-heatmap.png":::
 
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-running.png" alt-text="Screenshot showing spark application and job graph color sample, running." lightbox="media\apache-spark-history-server\spark-ui-graph-color-running.png":::
+
 ### Playback
 
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-skip.png" alt-text="Screenshot showing spark application and job graph color sample, skip." lightbox="media\apache-spark-history-server\spark-ui-graph-color-skip.png":::
+
 To play back the job, select **Playback**. You can select **Stop** at any time to stop. The task colors show different statuses when playing back:
+
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-failed.png" alt-text="Screenshot showing spark application and job graph color sample, failed." lightbox="media\apache-spark-history-server\spark-ui-graph-color-failed.png":::
 
 |Color|Meaning|
 |-|-|
@@ -70,17 +92,20 @@ To play back the job, select **Playback**. You can select **Stop** at any time t
 |Orange|Retried: Instances of tasks that failed but don't affect the final result of the job. These tasks had duplicate or retry instances that may succeed later.|
 |Blue|Running: The task is running.|
 |White|Waiting or skipped: The task is waiting to run, or the stage has skipped.|
-|Red|Failed: The task has failed.|
+
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-zoom-to-fit.png" alt-text="Screenshot showing spark application and job graph zoom to fit." lightbox="media\apache-spark-history-server\spark-ui-graph-zoom-to-fit.png":::
 
 The following image shows green, orange, and blue status colors.
 
-:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-running.png" alt-text="Screenshot showing spark application and job graph color sample, running." lightbox="media\apache-spark-history-server\spark-ui-graph-color-running.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-tooltip.png" alt-text="Screenshot showing spark application and job graph tooltip." lightbox="media\apache-spark-history-server\spark-ui-graph-tooltip.png":::
 
 The following image shows green and white status colors.
 
 :::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-skip.png" alt-text="Screenshot showing spark application and job graph color sample, skip." lightbox="media\apache-spark-history-server\spark-ui-graph-color-skip.png":::
 
 The following image shows red and green status colors.
+
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-skew-icon.png" alt-text="Screenshot showing spark application and job graph skew icon." lightbox="media\apache-spark-history-server\spark-ui-graph-skew-icon.png":::
 
 :::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-failed.png" alt-text="Screenshot showing spark application and job graph color sample, failed." lightbox="media\apache-spark-history-server\spark-ui-graph-color-failed.png":::
 
@@ -103,7 +128,9 @@ On the job graph tab, stages have a tooltip and a small icon displayed if they h
 
 |Condition|Description|
 |-|-|
-|Data skew|Data read size > average data read size of all tasks inside this stage * 2 and data read size > 10 MB.|
+
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-feedback.png" alt-text="Screenshot showing spark application and job graph feedback." lightbox="media\apache-spark-history-server\spark-ui-graph-feedback.png":::
+
 |Time skew|Execution time > average execution time of all tasks inside this stage * 2 and execution time > 2 minutes.|
 
 :::image type="content" source="media\apache-spark-history-server\spark-ui-graph-skew-icon.png" alt-text="Screenshot showing spark application and job graph skew icon." lightbox="media\apache-spark-history-server\spark-ui-graph-skew-icon.png":::
@@ -118,34 +145,6 @@ The job graph node displays the following information of each stage:
 * Data read: the sum of input size and shuffle read size
 * Data write: the sum of output size and shuffle writes size
 * Execution time: the time between start time of the first attempt and completion time of the last attempt
-* Row count: the sum of input records, output records, shuffle read records and shuffle write records
-* Progress
-
-> [!NOTE]
-> By default, the job graph node displays information from the last attempt of each stage (except for stage execution time). However, during playback, the graph node shows information of each attempt.
->
-> The data size of read and write is 1MB = 1000 KB = 1000 * 1000 bytes.
-
-### Provide feedback
-
-Send feedback with issues by selecting **Provide us feedback**.
-
-:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-feedback.png" alt-text="Screenshot showing spark application and job graph feedback." lightbox="media\apache-spark-history-server\spark-ui-graph-feedback.png":::
-
-### Stage number limit
-
-For performance consideration, by default the graph is only available when the Spark application has less than 500 stages. If there are too many stages, it will fail with an error like this:
-
-`` The number of stages in this application exceeds limit (500), graph page is disabled in this case.``
-
-As a workaround, before starting a Spark application, please apply this Spark configuration to increase the limit:
-
-`` spark.ui.enhancement.maxGraphStages 1000 ``
-
-But please notice that this may cause bad performance of the page and the API, because the content can be too large for browser to fetch and render.
-
-## Explore the Diagnosis tab in Apache Spark history server
-
 To access the Diagnosis tab, select a job ID. Then select **Diagnosis** on the tool menu to get the job Diagnosis view. The diagnosis tab includes **Data Skew**, **Time Skew**, and **Executor Usage Analysis**.
 
 Check the **Data Skew**, **Time Skew**, and **Executor Usage Analysis** by selecting the tabs respectively.
@@ -180,13 +179,10 @@ The **Time Skew** tab displays skewed tasks based on task execution time.
 
 This feature has been deprecated in Fabric now. If you still want to use this as a workaround, please access the page by explicitly adding "/executorusage" behind path "/diagnostic" in the URL, like this:
 
-   :::image type="content" source="media\apache-spark-history-server\modify-path.png" alt-text="Screenshot showing modify the url." lightbox="media\apache-spark-history-server\modify-path.png":::
-   
+   :::image type="content" source="media\apache-spark-history-server\modify-path.png" alt-text="Screenshot showing how to modify the URL." lightbox="media\apache-spark-history-server\modify-path.png":::
 
 ## Related content
 
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
 * [Browse item recent runs](spark-item-recent-runs.md)
 * [Monitor Apache Spark jobs within notebooks](spark-monitor-debug.md)
-* [Monitor Apache Spark job definition](monitor-spark-job-definitions.md)
-* [Monitor Apache Spark application details](spark-detail-monitoring.md)
