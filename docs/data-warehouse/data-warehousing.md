@@ -27,7 +27,7 @@ The easy-to-use SaaS experience is also tightly integrated with Power BI for eas
 Data warehouse customers benefit from:
 
 - **Data stored in Delta-parquet format** enables ACID transactions and interoperability with other Fabric workloads means you don't need multiple copies of data.
-- **Cross database queryies** can use multiple data sources for fast insights with zero data duplication.
+- **Cross database queries** can use multiple data sources for fast insights with zero data duplication.
 - **Easily ingest, load and transform data** at scale through Pipelines, Dataflows, cross database query or the COPY INTO command.
 - **Autonomous workload management** with industry-leading distributed query processing engine means no knobs to turn to achieve best in class performance.
 - **Scale near instantaneously** to meet business demands. Storage and compute are separated.
