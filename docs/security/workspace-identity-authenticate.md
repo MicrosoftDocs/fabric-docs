@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subervice: security
 ms.topic: how-to #Don't change
-ms.date: 08/14/2024
+ms.date: 08/22/2024
 
 #customer intent: As a data owner, I want to authenticate using workspace identity so that my Fabric items can connect with data sources securely.
 
@@ -63,7 +63,7 @@ Workspace identity can be [created and deleted by workspace admins](/fabric/secu
 
 Follow the steps listed in [Create an Azure Data Lake Storage Gen2 shortcut](../onelake/create-adls-shortcut.md#create-a-shortcut). Select workspace identity as the authentication method (supported only for ADLS gen2).
 
-:::image type="content" source="./media/workspace-identity-authentication/workspace-identity-authentication-option.png" alt-text="Screenshot showing Workspace identity as an authentication option.":::
+:::image type="content" source="./media/workspace-identity-authenticate/workspace-identity-authentication-option.png" alt-text="Screenshot showing Workspace identity as an authentication option.":::
 
 ### Data pipelines with Copy, Lookup and GetMetadata activities
 
