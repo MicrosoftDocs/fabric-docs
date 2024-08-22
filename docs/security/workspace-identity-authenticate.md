@@ -63,6 +63,8 @@ Workspace identity can be [created and deleted by workspace admins](/fabric/secu
 
 Follow the steps listed in [Create an Azure Data Lake Storage Gen2 shortcut](../onelake/create-adls-shortcut.md#create-a-shortcut). Select workspace identity as the authentication method (supported only for ADLS gen2).
 
+:::image type="content" source="./media/workspace-identity-authentication/workspace-identity-authentication-option.png" alt-text="Screenshot showing Workspace identity as an authentication option.":::
+
 ### Data pipelines with Copy, Lookup and GetMetadata activities
 
 Follow the steps listed in [Module 1 - Create a pipeline with Data Factory](../data-factory/tutorial-end-to-end-pipeline.md) to create the data pipeline. Select workspace identity as the authentication method (supported only for ADLS gen2 and for Copy, Lookup, and GetMetadata activities)
