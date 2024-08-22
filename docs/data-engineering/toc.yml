@@ -17,7 +17,7 @@ items:
     href: get-started-csv-upload.md
   - name: Get streaming data into lakehouse with Spark
     href: get-started-streaming.md
-  - name: Get streaming data into lakehouse with Eventstreams
+  - name: Get streaming data into lakehouse with Eventstreams 
     href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
   - name: Reference external data for data science
     href: get-started-shortcuts.md
