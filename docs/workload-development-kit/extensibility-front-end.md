@@ -348,7 +348,7 @@ Both calls go through the Workload backend's `onDeleteItem` callback.
  In the sample workload editor, there's a section that lets you navigate to the authentication section.
  Before you use authentication API, configure an Entra app Microsoft Entra ID.
  Additionally, ensure that your env.dev file is configured accurately. For more details refer to:
- [Configure the workload local manifest and acquire a token for your application](authentication-tutorial#configure-the-workload-local-manifest-and-acquire-a-token-for-your-application-frontend)
+ [Configure the workload local manifest and acquire a token for your application](authentication-tutorial.md#configure-the-workload-local-manifest-and-acquire-a-token-for-your-application-frontend)
 
 ## Step 4: Debug
 
