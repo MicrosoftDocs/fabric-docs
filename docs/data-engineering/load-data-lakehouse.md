@@ -60,9 +60,9 @@ With Eventstream, you can get, process, and route high volumes real-time events 
 
 To see how to add lakehouse as a destination for Eventstream, see [Add a lakehouse destination to an eventstream](../real-time-intelligence/event-streams/add-destination-lakehouse.md).
 
-### Create a shortcut to a Delta table from an Eventhouse
+### Create a shortcut to Eventhouse
 
-When you enable OneLake availability on data from an Eventhouse, a Delta table is created in OneLake. This Delta table can be accessed by a lakehouse using a shortcut. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md). For more information, see [Eventhouse OneLake Availability](../real-time-intelligence/event-house-onelake-availability.md).
+When you enable OneLake availability on data in an Eventhouse, a Delta table is created in OneLake. This Delta table can be accessed by a lakehouse using a shortcut. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md). For more information, see [Eventhouse OneLake Availability](../real-time-intelligence/event-house-onelake-availability.md).
 
 ## Considerations when choosing approach to load data
 
