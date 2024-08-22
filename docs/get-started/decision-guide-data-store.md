@@ -5,7 +5,7 @@ author: bradleyschacht
 ms.author: scbradl
 ms.reviewer: sngun, wiassaf
 ms.topic: concept-article
-ms.date: 06/10/2024
+ms.date: 08/21/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -32,7 +32,7 @@ This table compares data stores such as warehouse, lakehouse, Power BI datamart,
 | **Write operations** | T-SQL | Spark(Scala, PySpark, Spark SQL, R) | Dataflows, T-SQL | KQL, Spark, connector ecosystem |
 | **Multi-table transactions** | Yes | No | No | Yes, for multi-table ingestion. See [update policy](/azure/data-explorer/kusto/management/updatepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric#the-update-policy-object).|
 | **Primary development interface** | SQL scripts | Spark notebooks,Spark job definitions | Power BI | KQL Queryset, KQL Database |
-| **Security** | Object level (table, view, function, stored procedure, etc.), column level, row level, DDL/DML, dynamic data masking | Row level, column level (for akehouse accessed through a SQL analytics endpoint), table level (when using T-SQL), none for Spark | Built-in RLS editor | Row-level Security |
+| **Security** | Object level (table, view, function, stored procedure, etc.), column level, row level, DDL/DML, dynamic data masking | Row level, column level (for lakehouse accessed through a SQL analytics endpoint), table level (when using T-SQL), none for Spark | Built-in RLS editor | Row-level Security |
 | **Access data via shortcuts** | Yes, through a lakehouse using three-part names | Yes | No | Yes |
 | **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No | Yes |
 | **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables; query across lakehouses (including shortcuts using Spark) | No | Yes, query across KQL Databases, lakehouses, and warehouses with shortcuts |
