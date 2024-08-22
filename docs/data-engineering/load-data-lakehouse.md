@@ -30,8 +30,8 @@ In Microsoft Fabric, there are a few ways you can get data into a lakehouse:
 - Run a copy tool in pipelines
 - Set up a dataflow
 - Apache Spark libraries in notebook code
-- Stream with Eventstream
-- Create a shortcut to a Delta table from an Eventhouse
+- Stream real-time events with Eventstream
+- Get data from Eventhouse
 
 ### Local file upload
 
