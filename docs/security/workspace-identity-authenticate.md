@@ -36,7 +36,7 @@ You must be a workspace admin to be able to create and manage a workspace identi
 
 When the workspace identity has been created, the tab displays the workspace identity details and the list of authorized users.
 
-Workspace identity can be [created and deleted by workspace admins](/fabric/security/workspace-identity). The workspace identity has the workspace contributor role on the workspace. Admins, members, and contributors in the workspace can configure the identity as authentication method in ADLS gen2 connections that are used in data pipelines and shortcuts.
+Workspace identity can be [created and deleted by workspace admins](/fabric/security/workspace-identity). The workspace identity has the workspace contributor role on the workspace. Admins, members, and contributors in the workspace can configure the identity as the authentication method in ADLS gen2 connections that are used in data pipelines and shortcuts.
 
 ## Step 2: Grant the identity permissions on the storage account
 
@@ -71,10 +71,8 @@ Follow the steps listed in [Module 1 - Create a pipeline with Data Factory](../d
 > The user creating the shortcut with workspace identity must have an admin, member or contributor role in the workspace. Users accessing the shortcuts only need permissions on the lakehouse.
 
 ## Known issues:
-   
-* [Bug 1451995](https://powerbi.visualstudio.com/Trident/_workitems/edit/1451995): Write to shortcut destination fails when using workspace identity as auth method
-   
-* [Bug 1452009](https://powerbi.visualstudio.com/Trident/_workitems/edit/1452009): Error when adding table to a report. SQL endpoint is on a lakehouse that has shortcut with workspace identity authentication.
+
+Write to shortcut destination fails when using workspace identity as the authentication method.
 
 ## Considerations and limitations
 
@@ -82,13 +80,11 @@ Follow the steps listed in [Module 1 - Create a pipeline with Data Factory](../d
 
 * Trusted workspace access to firewall-enabled Storage accounts are supported in any F capacity.
 
-* We plan to add support for additional Fabric items such as semantic models, data pipelines, and dataflow gen2. We also plan to add support for additional connectors.
+* You can create ADLS gen 2 connections with workspace-identity-based authentication in the Manage Gateways and Connections experience.
 
-* Support for workspace identity authentication in Pipeline scope activity will be added in the future.
+* Connections with workspace-identity-authentication can only be used in shortcuts and data pipelines.
 
-* You can create ADLS gen 2 connections with workspace identity auth in Manage Gateways and Connections experience. 
-
-* Connections with workspace identity auth can only be used in shortcuts and data pipelines 
+* Checking the status of a connection that has workspace identity as the authentication method is not supported.
 
 ## Related content
 
