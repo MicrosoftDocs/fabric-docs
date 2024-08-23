@@ -32,6 +32,8 @@ When the workspace identity has been created, the tab displays the workspace ide
 
 Workspace identity can be [created and deleted by workspace admins](./workspace-identity.md). The workspace identity has the workspace contributor role on the workspace. Admins, members, and contributors in the workspace can configure the identity as the authentication method in Azure Data Lake Storage (ADLS) Gen2 connections that are used in data pipelines and shortcuts.
 
+For more detail, see [Create and manage a workspace identity](./workspace-identity.md#create-and-manage-a-workspace-identity).
+
 ## Step 2: Grant the identity permissions on the storage account
 
 1. Sign in to the Azure portal and navigate to the storage account you want to access from OneLake.
