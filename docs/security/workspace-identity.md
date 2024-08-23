@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 08/22/2024
+ms.date: 08/23/2024
 ---
 
 # Workspace identity
@@ -152,5 +152,6 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 
 ## Related content
 
+* [Authenticate with workspace identity](./workspace-identity-authenticate.md)
 * [Trusted workspace access](security-trusted-workspace-access.md)
 * [Fabric identities](../admin/fabric-identities-manage.md)
