@@ -161,6 +161,14 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Subscriptions and exports with maps might produce wrong results
+      href: known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md
+    - name: Edit tables for a data warehouse's semantic model doesn't work
+      href: known-issues/known-issue-818-edit-tables-warehouse-semantic-model-not-work.md
+    - name: Pipelines don't support Role property for Snowflake connector
+      href: known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md
+    - name: Pipeline deployment fails when parent contains deactivated activity
+      href: known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md
     - name: Dataflows automatically create tables from queries on Fabric destinations
       href: known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md
     - name: Scorecard dropdown slicers aren't visible when filtering
