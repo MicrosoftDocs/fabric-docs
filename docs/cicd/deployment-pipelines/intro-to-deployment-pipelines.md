@@ -110,7 +110,7 @@ To deploy content to another stage, at least one item must be selected. When you
 
 After you select **Deploy**, you get a confirmation message.
 
-:::image type="content" source="media/intro-to-deployment-pipelines/confirm-deply.png" alt-text="A screenshot of the replaced content warning displayed when a deployment is about to cause changes to items in the stage you're deploying to.":::
+:::image type="content" source="media/intro-to-deployment-pipelines/confirm-deploy.png" alt-text="A screenshot of the replaced content warning displayed when a deployment is about to cause changes to items in the stage you're deploying to.":::
 
 Learn more about [which item properties are copied to the next stage](understand-the-deployment-process.md#item-properties-copied-during-deployment), and which properties aren't copied, in [Understand the deployment process](understand-the-deployment-process.md#item-properties-that-are-not-copied).
 
