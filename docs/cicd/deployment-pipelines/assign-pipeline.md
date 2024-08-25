@@ -40,7 +40,7 @@ To assign a workspace to a pipeline stage, follow these steps:
 ### [Assign: New UI](#tab/new)
 
 1. Open the pipeline.
-1. In the stage you want to assign a workspace to, expand the dropdown titled **Assign a workspace**.
+1. In the stage you want to assign a workspace to, expand the dropdown titled **Add content to this stage**.
 1. Select the workspace you want to assign to this stage.
 
     :::image type="content" source="media/assign-pipeline/assign-workspace-new.png" alt-text="A screenshot showing the assign workspace dropdown in a deployment pipelines empty stage in the new UI.":::

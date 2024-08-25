@@ -32,20 +32,6 @@ A comparison icon indicator appears between two sequential stages to give a quic
 
 - **Orange indicator** - Appears if at least one item in one of the compared stages were changed, added, or removed.
 
-### [New deployment pipeline UI](#tab/new)
-
-A comparison icon indicator appears on each stage card except for the first stage of the pipeline. It indicates if this stage is identical to the source stage (previous stage) to give a quick visual insight into the differences between them.
-
-:::image type="content" source="./media/compare-pipeline-content/deployment-pipelines-compare-new.png" alt-text="Screenshot showing three stages of deployment. There's list of all the items in the source and target stages with icons showing the compare status." lightbox="media/compare-pipeline-content/deployment-pipelines-compare-new.png":::
-
-The comparison indicator has two states:
-
-- **Green indicator** – The metadata for each content item in both stages, is the same.
-
-- **Orange indicator** - Appears if at least one item in one of the compared stages were changed, added, or removed.
-
----
-
 When two sequential stages are different, a **Compare** link appears underneath the orange comparison icon. Select **Compare** to open the content item list in both stages. This *Compare view* helps you track changes or differences between items in each pipeline stage.
 
 :::image type="content" source="media/compare-pipeline-content/compare.png" alt-text="A screenshot showing the compare option, which expands the compare view and allows comparing items between deployment pipeline stages." lightbox="media/compare-pipeline-content/compare.png":::
@@ -62,8 +48,17 @@ Items that aren't paired or that were changed get one of the following labels:
 
 - **Missing from** – This item appears in the target stage, but not in the source stage. Deployment doesn't affect these items.
 
-> [!NOTE]
-> If you make changes to a folder, such as moving its location or renaming it, even if you didn't change the items in it, the items are still treated as if you renamed them. Therefore, when comparing pipelines the items are labeled as *Different*.
+### [New deployment pipeline UI](#tab/new)
+
+A comparison icon indicator appears on each stage card except for the first stage of the pipeline. It indicates if this stage is identical to the source stage (previous stage) to give a quick visual insight into the differences between them.
+
+:::image type="content" source="./media/compare-pipeline-content/deployment-pipelines-compare-new.png" alt-text="Screenshot showing three stages of deployment. There's list of all the items in the source and target stages with icons showing the compare status." lightbox="media/compare-pipeline-content/deployment-pipelines-compare-new.png":::
+
+The comparison indicator has two states:
+
+- **Green indicator** – The metadata for each content item in both stages, is the same.
+
+- **Orange indicator** - Appears if at least one item in one of the compared stages were changed, added, or removed.
 
 When you select a deployment pipelines stage, the items in the stage are listed and compared to the item they are linked to in the source stage.
 
@@ -82,8 +77,12 @@ This item can't be selected for deployment (since it doesn't exist in the source
 
 - **Same as source** – No difference was identified between this item and its pair in the source stage.
 
-    >[!NOTE]
-    >Deployment will not impact items not in the source stage.
+---
+
+> [!NOTE]
+>
+> - If you make changes to a folder, such as moving its location or renaming it, even if you didn't change the items in it, the items are still treated as if you renamed them. Therefore, when comparing pipelines the items are labeled as *Different*.
+> - Deployment will not impact items not in the source stage.
 
 ## Review changes to paired items
 
@@ -123,7 +122,7 @@ A line by line comparison of the items. On the left is the schema of this stage�
 
 ### [Inline view](#tab/visual-studio)
 
-A line by line comparison of the items. The schema of this stage’s item is on top, and beneath is the schema of the paired item in the source stage.
+An inline comparison of the items. The schema of this stage’s item is on top, and beneath is the schema of the paired item in the source stage.
 
 :::image type="content" source="./media/compare-pipeline-content/changes-inline-numbered.png" alt-text="Screenshot showing an inline view of the changes made to the file.":::
 
