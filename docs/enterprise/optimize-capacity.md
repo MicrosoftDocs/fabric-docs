@@ -126,6 +126,7 @@ Here are some points to consider to help minimize compute.
 - Strive to achieve [query folding](/power-query/power-query-folding) whenever possible. It can improve the performance of your dataflows by reducing the amount of data that needs to be transferred between the data source and destination. When query folding doesn't occur, Power Query retrieves all the data from the data source and performs transformations locally, which can be inefficient and slow.
 - Disable staging when working with small data volumes and/or performing simple transformations. Staging might be required in some cases, like when you load a data warehouse.
 - Avoid refreshing data more frequently than the data source requires. For example, if the data source is only updated once every 24 hours, refreshing the data hourly won't provide any more value. Instead, consider refreshing the data at an appropriate frequency to ensure that it's up-to-date and accurate.
+- While the Fabric service uses various technologies and techniques to ensure effective resource management, some cases require active monitoring and optimization from the user's side. This includes leveraging available tools and performance metrics to continually assess workloads and adjust as needed.
 
 ### Power BI
 
@@ -138,6 +139,7 @@ The following **interactive** operations typically result in high compute usage.
 - Report pages contain too many visuals, which can result in slow visual refresh.
 - Report visuals display high cardinality results (too many rows or columns), or they contain too many measures.
 - The capacity experiences high concurrency because there are too many users for the capacity size. Consider enabling [query scale-out](/power-platform-release-plan/2022wave2/power-bi/query-scale-out) to improve the user experience for high-concurrency semantic models (but it doesn't result in more total compute).
+- Continuous monitoring allows you to create feedback loops that identify performance bottlenecks early and provide actionable insights for optimization. Moreover, feedback loops facilitate proactive management of workloads, reducing unexpected throttling events and ensuring better adherence to service limits.
 
 The following **background** operations typically result in high compute usage.
 
