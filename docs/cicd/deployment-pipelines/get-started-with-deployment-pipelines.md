@@ -50,44 +50,50 @@ To create a pipeline from anywhere in Fabric:
 
 1. Select **Create pipeline**, or **+ New pipeline**.
 
-    :::image type="content" source="media/get-started-with-deployment-pipelines/create-pipeline.png" alt-text="A screenshot of the create pipeline button.":::
-
-1. In the *Create deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Next**.
-
-    :::image type="content" source="media/get-started-with-deployment-pipelines/name-pipeline.png" alt-text="Screenshot of the name and describe pipeline dialog.":::
-
-1. By default, the pipeline has three stages named **Development**, **Test**, and **Production**. You can accept these default stages or change the number of stages and their names. You can have anywhere between 2-10 stages in a pipeline. You can add another stage, delete stages, or rename them by typing a new name in the box. Select **Create** (or **Create and continue**) when you're done.
-
-    :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
-
 ### [Create a pipeline from a workspace in Power BI](#tab/from-workspace)
 
 From Power BI, you also have the option of creating a pipeline from inside an existing workspace, if you're the admin of that [workspace](../../get-started/create-workspaces.md).
 
-1. From the workspace, select **Create deployment pipeline**.
+From the workspace, select **Create deployment pipeline**.
 
-    :::image type="content" source="media/get-started-with-deployment-pipelines/workspace-deploy.png" alt-text="Screenshot of the button for creating a pipeline in a workspace.":::
+:::image type="content" source="media/get-started-with-deployment-pipelines/workspace-deploy.png" alt-text="Screenshot of the button for creating a pipeline in a workspace.":::
 
-1. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Next**.
+---
 
-    :::image type="content" source="media/get-started-with-deployment-pipelines/name-pipeline.png" alt-text="Screenshot of the name and describe pipeline dialog.":::
+## Step 2 - Name the pipeline and assign stages
 
-   >[!NOTE]
-   >If the workspace isn't assigned to your organization's capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity).  
+1. In the *Create deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Next**.
 
-1. Set your deployment pipeline’s structure by defining the required stages for your deployment pipeline. By default, the pipeline has three stages named *Development*, *Test*, and *Production*. You can accept this default structure or change the number of stages and their names. You can have anywhere between 2-10 stages in a pipeline.  To add, remove, or rename stages, select **+Add**. Select **Create** when you're done.
+1. Set your deployment pipeline’s structure by defining the required stages for your deployment pipeline. By default, the pipeline has three stages named **Development**, **Test**, and **Production**. You can accept these default stages or change the number of stages and their names. You can have anywhere between 2-10 stages in a pipeline. You can add another stage, delete stages, or rename them by typing a new name in the box. Select **Create** (or **Create and continue**) when you're done.
+
+### [Customize the pipeline: new UI](#tab/new)
 
    :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
+
+### [Customize the pipeline: old UI](#tab/old)
+
+   :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
+
+   >[!NOTE]
+   >In Power BI, if the workspace isn't assigned to your organization's capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity).
 
 ---
 
 For pipelines with more than three stages, use the arrows on the top-right corner to navigate between stages (original UI), or zoom in and out with your mouse wheel (new UI).
 
+### [Navigate between stages: new UI](#tab/new)
+
+:::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline-new.png" alt-text="Screenshot of deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages.png":::
+
+### [Navigate between stages: old UI](#tab/old)
+
 :::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages.png" alt-text="Screenshot of arrows in the top right corner of the deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages.png":::
+
+---
 
 After the pipeline is created, you can share it with other users, edit, or delete it. When you share a pipeline with others, they receive access to the pipeline and become [pipeline admins](understand-the-deployment-process.md#permissions). Pipeline access enables users to view, share, edit, and delete the pipeline.
 
-## Step 2 - Assign a workspace
+## Step 3 - Assign a workspace
 
 >[!NOTE]
 >If you're creating a pipeline directly from a workspace, you can skip this stage as the workspace is already selected.
@@ -96,7 +102,7 @@ After creating a pipeline, you need to add the content you want to manage to the
 
 Follow the instructions in the link to [assign a workspace to a pipeline](assign-pipeline.md#assign-a-workspace-to-any-vacant-pipeline-stage).
 
-## Step 3 - Make a stage public (optional)
+## Step 4 - Make a stage public (optional)
 
 By default, the final stage of the pipeline is made public. A consumer of a public stage who has no access to the pipeline sees it as a regular workspace, without the stage name and deployment pipeline icon on the workspace page next to the workspace name.
 
@@ -112,17 +118,23 @@ You can have as many public stages as you want, or none at all. To change the pu
 
 You can have as many public stages as you want, or none at all. To change the public status of a stage at any time:
 
-1. Go to the pipeline stage settings. 
+1. Go to the pipeline stage settings
+
+#### [Stage settings: new UI](#tab/stage-settings-new)
 
     :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings-new.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 
-1. Set the **Make this stage public** box to *yes* or *no*, and then save.
+#### [Stage settings: old UI](#tab/stage-settings-old)
 
-    :::image type="content" source="media/get-started-with-deployment-pipelines/make-stage-public-new.png" alt-text="Screenshot of the stage settings with the make this stage public toggle set to yes.":::
+    :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 
 ---
 
-## Step 4 - Deploy to an empty stage
+2. Set the **Make this stage public** box, and then save.
+
+    :::image type="content" source="media/get-started-with-deployment-pipelines/make-stage-public-new.png" alt-text="Screenshot of the stage settings with the make this stage public toggle set to yes.":::
+
+## Step 5 - Deploy to an empty stage
 
 When you finished working with content in one pipeline stage, you can deploy it to the next stage. Deploying content to another stage is often done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production, but you can deploy in any direction. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
 
@@ -136,7 +148,7 @@ Deployment pipelines offer three options for deploying your content:
 
 After you choose how to deploy your content, you can [Review your deployment and leave a note](deploy-content.md#review-your-deployment-and-leave-a-note).
 
-## Step 5 - Deploy content from one stage to another
+## Step 6 - Deploy content from one stage to another
 
 Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. [Paired items](./assign-pipeline.md#item-pairing) are overwritten. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
 
@@ -146,7 +158,7 @@ Deployment history is useful for establishing when a stage was last updated. It 
 
 To examine the differences between the two pipelines before you deploy, see [compare content in different deployment stages](./compare-pipeline-content.md).
 
-## Step 6 - Create deployment rules (optional)
+## Step 7 - Create deployment rules (optional)
 
 When you're working in a deployment pipeline, different stages may have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 

@@ -44,7 +44,7 @@ When you assign content to an empty stage, a new workspace is created on a capac
 
 After the deployment is complete, refresh the semantic models so that you can use the newly copied content. The semantic model refresh is required because data isn't copied from one stage to another. To understand which item properties are copied during the deployment process, and which item properties aren't copied, review the [item properties copied during deployment](#item-properties-copied-during-deployment) section.
 
-For instructions on how to assign and unassign workspaces to deployment pipeline stagesm see [Assign a workspace to a Microsoft Fabric deployment pipeline](./assign-pipeline.md).
+For instructions on how to assign and unassign workspaces to deployment pipeline stages, see [Assign a workspace to a Microsoft Fabric deployment pipeline](./assign-pipeline.md).
 
 ### Create a workspace
 
@@ -82,6 +82,8 @@ In the target stage, [item properties that aren't copied](understand-the-deploym
 
 In Fabric, when items are connected, one of the items depends on the other. For example, a report always depends on the semantic model it's connected to. A semantic model can depend on another semantic model, and can also be connected to several reports that depend on it. If there's a connection between two items, deployment pipelines always tries to maintain this connection.
 
+#### Autobinding across pipelines
+
 During deployment, deployment pipelines checks for dependencies. The deployment either succeeds or fails, depending on the location of the item that provides the data that the deployed item depends on.
 
 * **Linked item exists in the target stage** - Deployment pipelines automatically connect (autobind) the deployed item to the item it depends on in the deployed stage. For example, if you deploy a paginated report from development to test, and it's connected to a semantic model that was previously deployed to the test stage, it automatically connects to that semantic model.
@@ -100,7 +102,7 @@ Autobinding works only with items that are supported by deployment pipelines and
 
 ---
 
-#### Autobinding across pipelines
+#### Autobinding across workspaces
 
 Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item it's connected to in the other pipeline. For example, if you have a report in the test stage of pipeline A that's connected to a semantic model in the test stage of pipeline B, deployment pipelines recognizes this connection.
 
@@ -159,7 +161,7 @@ In many cases, when you have a small change such as adding or removing a table, 
 
 Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a contributor of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
 
-### Folders in deployment pipelines (preview)
+## Folders in deployment pipelines (preview)
 
 Folders enable users to efficiently organize and manage workspace items in a familiar way.
 When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
@@ -188,9 +190,11 @@ Deploy items inside a folder from that folder. You can't deploy items from diffe
 
 ### Identify items that were moved to different folders
 
-Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* in *Compare* mode. Moreover, unless there's also a schema change, the option next to the label to open a *Change review* window that presents the schema changes, is disabled. Hovering over it shows a note saying the change is a *settings* change (like *rename*). This is because compared to their paired items in the source stage, the change isn't yet deployed.
+Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* when compared. This item won't appear in the compare window since it is not a schema change but settings change.
 
 #### [Moved folder item in old UI](#tab/old)
+
+Unless there's also a schema change, the option next to the label to open a *Change review* window that presents the schema changes, is disabled. Hovering over it shows a note saying the change is a *settings* change (like *rename*).
 
 :::image type="content" source="media/understand-the-deployment-process/moved-folder-item.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder.":::
 
@@ -211,6 +215,8 @@ Since folders are considered part of the item’s name, items moved into a diffe
 ## Parent-child item representation
 
 These appear only in the new UI. Looks same as in the workspace. Child is not deployed but recreated on the target stage
+
+:::image type="content" source="media/understand-the-deployment-process/parent-child.png" alt-text="Screenshot showing the depiction of a parent child relationship in the new UI.":::
 
 ## Item properties copied during deployment
 
