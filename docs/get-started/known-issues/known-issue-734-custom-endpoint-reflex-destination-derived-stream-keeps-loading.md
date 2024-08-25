@@ -4,7 +4,7 @@ description: A known issue is posted where a custom endpoint or Reflex destinati
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/06/2024
+ms.date: 08/23/2024
 ms.custom: known-issue-734
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-734
 
 After publishing an eventstream that has a custom endpoint or Reflex destination appended to an already established derived stream, the custom endpoint or Reflex will be in **Loading** status in live view.
 
-**Status:** Open
+**Status:** Fixed: August 23, 2024
 
 **Product Experience:** Real-Time Intelligence
 
