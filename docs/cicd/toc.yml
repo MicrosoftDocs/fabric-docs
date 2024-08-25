@@ -19,7 +19,7 @@ items:
     href: deployment-pipelines/assign-pipeline.md
   - name: Compare content in different stages
     href: deployment-pipelines/compare-pipeline-content.md  
-  - name: Deploy content to the next stage
+  - name: Deploy content to a stage
     href: deployment-pipelines/deploy-content.md
   - name: Deployment history
     href: deployment-pipelines/deployment-history.md
