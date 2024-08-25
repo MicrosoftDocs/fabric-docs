@@ -36,7 +36,7 @@ To access the deployment pipelines feature, you must meet the following conditio
 
 ## Step 1 - Create a deployment pipeline
 
-When you create a pipeline, you define how many stages it should have and what they should be called. The number of stages and their names are permanent and can't be changed after the pipeline is created.
+When you create a pipeline, you define how many stages it should have and what they should be called. The number of stages are permanent and can't be changed after the pipeline is created.
 
 You can create a pipeline from the deployment pipelines entry point in Fabric (at the bottome of the workspace list), or from a specific workspace. If you create a pipeline from a workspace, the workspace is automatically assigned to the pipeline.
 

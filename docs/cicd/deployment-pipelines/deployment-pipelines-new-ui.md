@@ -34,13 +34,13 @@ The main difference in the new UI is the perspective. The focus is on a single s
 * View the sync status
 * Compare the content with the source stage
 * View the deployment history of previous deployments to that stage
-* Create rules for deployment
+* Create rules for deployment to this stage
 
 This is a more consistent and intuitive experience than before. Whereas in the original UI, you deployed content while in the source stage, but created rules while in the target stage, in the new UI, everything is done from the same stage.
 
 #### Compare status by item
 
-When you select a stage in the new UI, the contents of that stage appear on the bottom pane with each item shown next to its [paired item](./intro-to-deployment-pipelines.md#item-pairing) in the source stage and the sync status displayed by default. The source stave is the one shown in the drop-down menu next to the *Deploy* button. Learn more in [Compare stages content](./compare-pipeline-content.md#compare-stages).
+When you select a stage in the new UI, the content of that stage appears on the bottom pane with each item shown next to its [paired item](./intro-to-deployment-pipelines.md#item-pairing) in the source stage and the sync status displayed by default. The source stage is the one shown in the drop-down menu next to the *Deploy* button. Learn more in [Compare stages content](./compare-pipeline-content.md#compare-stages).
 
 :::image type="content" source="./media/deployment-pipelines-new-ui/source-stage.png" alt-text="Screenshot showing where to find the name of the source stage in the new UI. It's next to the deploy button.":::
 
@@ -54,18 +54,12 @@ The new UI contains advanced functionalities for a better experience. Some of th
 * Filter by item type or sync status.
 * Sort by name, type, or sync status
 * Zoom in/out in the pipeline view
-
-These functionalities don't impact item selection. They hve a visual affect only and are there to help you navigate and find the items you need.
-
-#### New functionalities supported only in the new UI
-
-* [Workspace folders](./understand-the-deployment-process.md#folders-in-deployment-pipelines-preview) - View the workspace items by their folder hierarchy. To deploy items in a subfolder, navigate to that folder.
-* [Parent/child items](../../data-warehouse/dimensional-modeling-dimension-tables.md#unbalanced-hierarchies) - Child items are shown but can't be deployed. During deployment, the child item is recreated in the target stage in each deployment.
 * Unsupported items in the pipeline can be seen and filtered, but not deployed.
+* Custom actions for deployment pipelines, such as *Configure rules*, are no longer available in the item menu but are available elsewhere in the UI. The item menu list is now the same as the menu on the workspace page.
+* The following functionalities are supported only in the new UI
 
-#### Item menu
-
-The item menu list is the same as the menu on the workspace page. This means that custom actions for deployment pipelines, such as *Configure rules*, are no longer available in the item menu but are available elsewhere in the UI.
+  * [Workspace folders](./understand-the-deployment-process.md#folders-in-deployment-pipelines-preview) - View the workspace items by their folder hierarchy. To deploy items in a subfolder, navigate to that folder.
+  * [Parent/child items](../../data-warehouse/dimensional-modeling-dimension-tables.md#unbalanced-hierarchies) - Child items are shown but can't be deployed. During deployment, the child item is recreated in the target stage in each deployment.
 
 ## What remains unchanged
 
