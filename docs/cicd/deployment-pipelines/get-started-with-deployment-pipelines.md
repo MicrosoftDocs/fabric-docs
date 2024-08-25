@@ -83,7 +83,7 @@ For pipelines with more than three stages, use the arrows on the top-right corne
 
 ### [Navigate between stages: new UI](#tab/new)
 
-:::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline-new.png" alt-text="Screenshot of deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages.png":::
+:::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages-new.png" alt-text="Screenshot of deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages-new.png":::
 
 ### [Navigate between stages: old UI](#tab/old)
 
@@ -122,11 +122,11 @@ You can have as many public stages as you want, or none at all. To change the pu
 
 #### [Stage settings: new UI](#tab/stage-settings-new)
 
-    :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings-new.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
+:::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings-new.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 
 #### [Stage settings: old UI](#tab/stage-settings-old)
 
-    :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
+:::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 
 ---
 
