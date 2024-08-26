@@ -37,7 +37,7 @@ Before you assign a workspace to a pipeline stage, review the [limitations](#con
 
 To assign a workspace to a pipeline stage, follow these steps:
 
-### [Assign: New UI](#tab/new)
+### [Assign a workspace: New UI](#tab/new)
 
 1. Open the pipeline.
 1. In the stage you want to assign a workspace to, expand the dropdown titled **Add content to this stage**.
@@ -47,7 +47,7 @@ To assign a workspace to a pipeline stage, follow these steps:
 
 1. Select **Assign**.
 
-### [Assign: Original UI](#tab/old)
+### [Assign a workspace: Original UI](#tab/old)
 
 1. Open the pipeline.
 
@@ -71,7 +71,7 @@ You can unassign a workspace from any pipeline stage. If you want to assign a di
 
 To unassign a workspace from a pipeline stage, follow these steps:
 
-### [Unassign: New UI](#tab/new)
+### [Unassign a workspace: New UI](#tab/new)
 
 1. Open the pipeline.
 
@@ -85,7 +85,7 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
     :::image type="content" source="media/assign-pipeline/unassign-note.png" alt-text="A screenshot showing the unassign workspace pop-up window in deployment pipelines. The unassign button is highlighted.":::
 
-### [Unassign: Original UI](#tab/old)
+### [Unassign a workspace: Original UI](#tab/old)
 
 1. Open the pipeline.
 

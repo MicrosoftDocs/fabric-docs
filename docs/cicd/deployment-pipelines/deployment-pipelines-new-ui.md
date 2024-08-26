@@ -48,8 +48,6 @@ When you select a stage in the new UI, the content of that stage appears on the 
 
 The new UI contains advanced functionalities for a better experience. Some of these functionalities include:
 
-#### Enhanced item display
-
 * Search for an item by its name (free text)
 * Filter by item type or sync status.
 * Sort by name, type, or sync status
@@ -78,3 +76,8 @@ The default UI is the new one, but you can switch between the new and old UIs us
 :::image type="content" source="./media/deployment-pipelines-new-ui/pipeline-switch.png" alt-text="Demonstration of how to use the toggle button to switch between the two interfaces.":::
 
 Your selection is saved and will be remembered the next time you visit the page. You can switch back and forth as many times as you like.
+
+## Related content
+
+* [Overview of deployment pipelines](./intro-to-deployment-pipelines.md)
+* [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)

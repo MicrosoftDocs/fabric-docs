@@ -68,9 +68,9 @@ From the workspace, select **Create deployment pipeline**.
 
 ### [Customize the pipeline: new UI](#tab/new)
 
-   :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
+   :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline-new.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
 
-For pipelines with more than three stages, use the arrows on the top-right corner to navigate between stages (original UI).
+To navigate between stages, zoom in and out with your mouse wheel or use the buttons in the top right. You can also drag the pipeline with your mouse to move it around.
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages-new.png" alt-text="Screenshot of deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages-new.png":::
 
@@ -81,7 +81,7 @@ For pipelines with more than three stages, use the arrows on the top-right corne
    >[!NOTE]
    >In Power BI, if the workspace isn't assigned to your organization's capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity).
 
-To navigate between stages, zoom in and out with your mouse wheel or use the buttons in the top right. You can also drag the pipeline with your mouse to move it around.
+For pipelines with more than three stages, use the arrows on the top-right corner to navigate between stages.
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages.png" alt-text="Screenshot of arrows in the top right corner of the deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages.png":::
 
