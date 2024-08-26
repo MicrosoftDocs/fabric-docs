@@ -38,7 +38,7 @@ To access the deployment pipelines feature, you must meet the following conditio
 
 When you create a pipeline, you define how many stages it should have and what they should be called. The number of stages are permanent and can't be changed after the pipeline is created.
 
-You can create a pipeline from the deployment pipelines entry point in Fabric (at the bottome of the workspace list), or from a specific workspace. If you create a pipeline from a workspace, the workspace is automatically assigned to the pipeline.
+You can create a pipeline from the deployment pipelines entry point in Fabric (at the bottom of the workspace list), or from a specific workspace. If you create a pipeline from a workspace, the workspace is automatically assigned to the pipeline.
 
 ### [Create a pipeline from the deployment pipelines button in Fabric](#tab/from-fabric)
 
@@ -70,6 +70,10 @@ From the workspace, select **Create deployment pipeline**.
 
    :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
 
+For pipelines with more than three stages, use the arrows on the top-right corner to navigate between stages (original UI).
+
+:::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages-new.png" alt-text="Screenshot of deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages-new.png":::
+
 ### [Customize the pipeline: original UI](#tab/old)
 
    :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
@@ -77,15 +81,7 @@ From the workspace, select **Create deployment pipeline**.
    >[!NOTE]
    >In Power BI, if the workspace isn't assigned to your organization's capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity).
 
----
-
-For pipelines with more than three stages, use the arrows on the top-right corner to navigate between stages (original UI), or zoom in and out with your mouse wheel (new UI).
-
-### [Navigate between stages: new UI](#tab/new)
-
-:::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages-new.png" alt-text="Screenshot of deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages-new.png":::
-
-### [Navigate between stages: original UI](#tab/old)
+To navigate between stages, zoom in and out with your mouse wheel or use the buttons in the top right. You can also drag the pipeline with your mouse to move it around.
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages.png" alt-text="Screenshot of arrows in the top right corner of the deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages.png":::
 
@@ -104,7 +100,7 @@ Follow the instructions in the link to [assign a workspace to a pipeline](assign
 
 ## Step 4 - Make a stage public (optional)
 
-By default, the final stage of the pipeline is made public. A consumer of a public stage who has no access to the pipeline sees it as a regular workspace, without the stage name and deployment pipeline icon on the workspace page next to the workspace name.
+By default, the final stage of the pipeline is made public. A consumer of a public stage without access to the pipeline sees it as a regular workspace, without the stage name and deployment pipeline icon on the workspace page next to the workspace name.
 
 You can have as many public stages as you want, or none at all. To change the public status of a stage at any time, go to the pipeline stage settings and check or uncheck the **Make this stage public** box.
 
@@ -124,7 +120,7 @@ Set the **Make this stage public** box, and then save.
 
 ## Step 5 - Deploy to an empty stage
 
-When you finished working with content in one pipeline stage, you can deploy it to the next stage. Deploying content to another stage is often done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production, but you can deploy in any direction. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
+When you finished working with content in one pipeline stage, you can deploy it to the next stage. Deploying content to another stage is often done after you performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production, but you can deploy in any direction. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
 
 Deployment pipelines offer three options for deploying your content:
 
@@ -132,7 +128,7 @@ Deployment pipelines offer three options for deploying your content:
 
 * [Selective deployment](deploy-content.md#selective-deployment) - Select which content to deploy to the target stage.
 
-* Backward deployment - Deploy content from a later stage to an earlier stage in the pipeline. Currently, this is only possible when the target stage is empty (has no workspace assigned to it).
+* Backward deployment - Deploy content from a later stage to an earlier stage in the pipeline. Currently, backward deployment is only possible when the target stage is empty (has no workspace assigned to it).
 
 After you choose how to deploy your content, you can [Review your deployment and leave a note](deploy-content.md#review-your-deployment-and-leave-a-note).
 
@@ -148,9 +144,9 @@ To examine the differences between the two pipelines before you deploy, see [com
 
 ## Step 7 - Create deployment rules (optional)
 
-When you're working in a deployment pipeline, different stages may have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
+When you're working in a deployment pipeline, different stages can have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
-When you deploy content between pipeline stages, configuring deployment rules enables you to allow changes to content while keeping some settings intact. For example, if you want a semantic model in a production stage to point to a production database, you can define a rule for this. Define the rule in the production stage under the appropriate semantic model. Once a rule is defined or changed, redeploy the content. The deployed content will inherit the value defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
+When you deploy content between pipeline stages, configuring deployment rules enables you to allow changes to content while keeping some settings intact. For example, you can define a rule for a semantic model in a production stage to point to a production database. Define the rule in the production stage under the appropriate semantic model. Once a rule is defined or changed, redeploy the content. The deployed content inherits the value defined in the deployment rule, and always applies as long as the rule is unchanged and valid.
 
 [Read about how to define deployment rules.](create-rules.md)
 
