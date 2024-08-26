@@ -44,7 +44,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (based on supported semantic models)
 * [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
-* Semantic models (only those that originate from .pbix files and aren't PUSH datasets)
+* Semantic models (only semantic models that originate from .pbix files and aren't PUSH datasets)
 * [Warehouses](../../data-warehouse/data-warehousing.md)
 
 ## Pipeline structure
@@ -83,7 +83,7 @@ You decide how many stages you want in your deployment pipeline. There can be an
 
 Pairing is the process by which an item (such as a report, dashboard, or semantic model) in one stage of the deployment pipeline is associated with the same item in the adjacent stage. Pairing occurs when you assign a workspace to a deployment stage or when you deploy new unpaired content from one stage to another (a clean deploy).
 
-It's important to understand how pairing works, in order to understand when items are copied, when they are overwritten, and when a deployment fails when using the deploy function.
+It's important to understand how pairing works, in order to understand when items are copied, when they're overwritten, and when a deployment fails when using the deploy function.
 
 If items aren't paired, even if they appear to be the same (have the same name, type, and folder), they don't overwrite on a deployment. Instead, a duplicate copy is created and paired with the item in the previous stage.
 

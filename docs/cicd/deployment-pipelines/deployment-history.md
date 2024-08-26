@@ -51,7 +51,7 @@ The deployment history log is formatted as a table. Each row represents a single
     | :::image type="content" source="media/deployment-history/unchanged-item.png" alt-text="A screenshot of the deployment pipelines history unchanged item icon.":::      | Unchanged items | A deployment item that's identical to the one in the target stage | :::image type="content" source="media/deployment-history/expanded-unchanged-items.png" alt-text="A screenshot of the deployment pipelines history unchanged item icon selected, with the list of unchanged items for this deployment expanded."::: |
     | :::image type="content" source="media/deployment-history/failed-deployment.png" alt-text="A screenshot of the deployment pipelines history failed deployment icon."::: | Items failed to deploy            | Indicates a failed deployment | :::image type="content" source="media/deployment-history/expanded-failed-deployment.png" alt-text="A screenshot of the deployment pipelines history failed deployment icon selected."::: |
 
-* **Note** - A note, if exists. Select the note's icon to display its content.
+* **Note** - A note, if one exists. To display the note's content, select its icon.
 
     :::image type="content" source="media/deployment-history/expanded-note.png" alt-text="A screenshot of the deployment pipelines history note icon selected, with the expanded note displayed.":::
 
@@ -70,7 +70,7 @@ You can choose to see the deployment history of a specific stage, or of all stag
 
 The following section lists the deployment history limitations.
 
-* Detailed information is displayed from June 2022. Prior to this date, summarized information is displayed.
+* Detailed information is displayed from June 2022. Before this date, summarized information is displayed.
 
 * Deployment history displays the name of the item during deployment. When you change an item's name, deployment history treats it as a new item. In such cases, the item with the changed name will appear in the log for the first time, after it's deployed.
 

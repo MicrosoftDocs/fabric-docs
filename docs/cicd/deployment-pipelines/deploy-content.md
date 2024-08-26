@@ -44,7 +44,7 @@ After you choose how to deploy your content, you can [Review your deployment and
 ##### [New deploy method](#tab/new)
 
 1. Select the target stage.
-1. From the drop down menu, choose an adjacent stage to deploy from.
+1. From the drop-down menu, choose an adjacent stage to deploy from.
 1. Select the items you want to deploy.
 1. Select the **Deploy** button. 
 
@@ -64,9 +64,9 @@ Select the stage to deploy from and then select the deployment button. The deplo
 
 If you don't want to deploy everything from that stage, you can select specific items for deployment. Select the **Show more** link, and then select the items you wish to deploy. When you select the **Deploy** button, only the selected items are deployed to the next stage.
 
-Fabric items are often related to or dependent on other items. Dashboards, reports, semantic models, dataflows, Lakehouses and Warehouses are all examples of items that can have related to or dependent on other items. To include all items that are related to the item you want to deploy, use the select related button. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
+Fabric items are often related to or dependent on other items. Dashboards, reports, semantic models, dataflows, Lakehouses, and Warehouses are all examples of items that can be related to or dependent on other items. To include all items that are related to the item you want to deploy, use the select related button. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
-If you don't want to deploy everything from that stage, you can select only specific items for deployment. Since dashboards, reports, semantic models, and dataflows are related and have dependencies, you can use the select related button to see all the items that the selected item is dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
+If you don't want to deploy everything from that stage, you can select only specific items for deployment. Since dashboards, reports, semantic models, and dataflows can have dependencies, you can use the select related button to see all the items that the selected item is dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
 ##### [New selective deploy method](#tab/new)
 
@@ -111,9 +111,9 @@ To leave a note, expand the **Add a note** option and write your note in the tex
 
 ## Deploy content from one stage to another
 
-Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. Though you can have up to 10 different stages in the pipeline, a typical workflow for moving content is development to test stage, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
+Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. Though you can have up to 10 different stages in the pipeline, a typical workflow for moving content is development to test stage, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
 
-When you deploy content to a stage that already has other content in it, select the items you want to deploy. An item which is paired with another item in the source stage (the paired item name appears on the last column) is overwritten by it.
+When you deploy content to a stage that already has other content in it, select the items you want to deploy. An item that is paired with another item in the source stage (the paired item name appears on the last column) is overwritten by it.
 
 Relationships between the items aren't kept. Therefore, if you deploy a report that is bound to a semantic model in the source stage, only the report is deployed. If you want to deploy everything connected to the report, use the **Select related** button.
 

@@ -18,7 +18,7 @@ ms.search.form: Deployment pipelines operations
 
 Before you deploy content to a different stage, it can be helpful to see the differences between the two stages. The deployment pipeline home page compares consecutive deployment stages and indicates if there are any differences between them.
 
-Deployment pipelines pairs items of two neighboring stages by combining item type and item name, to know which items to compare and to override. Items of the same name and type are paired. If there's more than one item with the same name and type in a workspace, then the items are paired if their paths are the same. If the path isn't the same, the items aren't paired. The pairing is created only once, during the first deployment of one stage to another, or during assignment of a workspace. On subsequent deployments, each deployed item overrides its paired item metadata, including its name, if it was changed. For more information on pairing, see [pairing items](./understand-the-deployment-process.md#autobinding).
+Deployment pipelines pairs items of two neighboring stages by combining item type and item name, to know which items to compare and to override. Items of the same name and type are paired. If there's more than one item in a workspace with the same name and type, then the items are paired if their paths are the same. If the path isn't the same, the items aren't paired. The pairing is created only once, during the first deployment of one stage to another, or during assignment of a workspace. On subsequent deployments, each deployed item overrides its paired item metadata, including its name, if it was changed. For more information on pairing, see [pairing items](./understand-the-deployment-process.md#autobinding).
 
 ## Compare stages
 
@@ -34,7 +34,7 @@ The comparison indicator has two states:
 
 - **Orange indicator** - Appears if at least one item in one of the compared stages were changed, added, or removed.
 
-When you select a deployment pipelines stage, the items in the stage are listed and compared to the item they are linked to in the source stage.
+When you select a deployment pipelines stage, the items in the stage are listed and compared to the item they're linked to in the source stage.
 
 The source stage is shown in the drop-down menu on the bottom pane and the name of the compared source item’s name appears on the last column 
 
@@ -43,11 +43,17 @@ The source stage is shown in the drop-down menu on the bottom pane and the name 
 In the stage display, items are arranged alphabetically by default. You can sort or filter the items to find the ones you're interested in, or you can search for a specific item. Each item has one of the following labels depending on the comparison status:
 
 - **Not in source** – This item appears in the selected stage, but not in the source stage.
-This item can't be selected for deployment (since it doesn't exist in the source) and won’t be impacted during a deployment.
+This item can't be selected for deployment (since it doesn't exist in the source) and isn't impacted during a deployment.
 
-- **Different from source** – A difference was identified between this item and its paired item in the source stage. The difference could be a schema change to one of the items, property change like name (considering full path of folders if any), or deployment rules that were set for this item but haven’t been applied yet (requires deployment of the item). After deployment, the item in the source stage overwrites the item in the target stage, regardless of where the change was made.
+- **Different from source** – A difference was identified between this item and its paired item in the source stage. The difference could be any of several things:
 
-- **Only in source** – A new item identified in the source stage. This item doesn't exist in the selected stage and therefore s as a placeholder with no item name in the first column (under ‘name’). After deployment, this item will be cloned to this stage.
+  - a schema change to one of the items
+  - property change, like a name change (considering full path of folders, if any)
+  - deployment rules that were set for this item but not applied yet (requires deployment of the item).
+
+  After deployment, the item in the source stage overwrites the item in the target stage, regardless of where the change was made.
+
+- **Only in source** – A new item identified in the source stage. This item doesn't exist in the selected stage and therefore s as a placeholder with no item name in the first column (under *name*). After deployment, this item will be cloned to this stage.
 
 - **Same as source** – No difference was identified between this item and its pair in the source stage.
 
@@ -61,7 +67,7 @@ A comparison icon indicator appears between two sequential stages to give a quic
 
 - **Orange indicator** - Appears if at least one item in one of the compared stages were changed, added, or removed.
 
-When two sequential stages are different, a **Compare** link appears underneath the orange comparison icon. Select **Compare** to open the content item list in both stages. This *Compare view* helps you track changes or differences between items in each pipeline stage.
+When two sequential stages are different, a **Compare** link appears underneath the orange comparison icon. Select **Compare** to open the content item list in both stages. The *Compare view* helps you track changes or differences between items in each pipeline stage.
 
 :::image type="content" source="media/compare-pipeline-content/compare.png" alt-text="A screenshot showing the compare option, which expands the compare view and allows comparing items between deployment pipeline stages." lightbox="media/compare-pipeline-content/compare.png":::
 
@@ -122,7 +128,7 @@ A line by line comparison of the items. On the left is the schema of this stage�
 
 ### [Inline view](#tab/visual-studio)
 
-An inline comparison of the items. The schema of this stage’s item is on top, and beneath is the schema of the paired item in the source stage.
+An inline comparison of the items. The schema of this stage’s item is on top, and under it is the schema of the paired item in the source stage.
 
 :::image type="content" source="./media/compare-pipeline-content/changes-inline-numbered.png" alt-text="Screenshot showing an inline view of the changes made to the file.":::
 

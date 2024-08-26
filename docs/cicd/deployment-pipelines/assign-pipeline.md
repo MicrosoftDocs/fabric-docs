@@ -33,7 +33,7 @@ To assign a workspace to a pipeline, the pipeline stage you want to assign the w
 Before you assign a workspace to a pipeline stage, review the [limitations](#considerations-and-limitations) section and make sure that the workspace meets the required conditions.
 
 >[!NOTE]
->Before you assign or unassign a workspace to a pipeline, consider that every time you deploy to a vacant stage, a new workspace is created, and whenever you unassign a workspace, you loose all the stage deployments history and configured rules.
+>Before you assign or unassign a workspace to a pipeline, consider that every time you deploy to a vacant stage, a new workspace is created, and whenever you unassign a workspace, you lose all the stage deployments history and configured rules.
 
 To assign a workspace to a pipeline stage, follow these steps:
 
@@ -113,11 +113,11 @@ Pairing can happen in one of two ways:
 
   The following table shows when items are paired when the deploying button is used in different circumstances:
 
-    | Scenario | Stage A (e.g. Dev)                                       | Stage B (e.g. Test)                                       | Comment                                                        |
+    | Scenario | Stage A (for example, Dev)                                       | Stage B (for example, Test)                                       | Comment                                                        |
     |----------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------|
     | 1        | Name: *PBI Report*<br>Type: *Report*                   | None                    | Clean deploy - pairing occurs                                                 |
-    | 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | If items are paired, ([see if items are paired](#see-which-items-are-paired)) then pressing deploy overwrites stage B.                                                 |
-    | 3        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | If items aren't paired ([see if items are paired](#see-which-items-are-paired)) the report in stage A is copied to stage B. There are then two files in stage B with the same name- one paired and one unpaired. Deployments continues to succeed between the paired items.                                                 |
+    | 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | [If items are paired](#see-which-items-are-paired), then pressing deploy overwrites stage B.                                                 |
+    | 3        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | If items aren't paired, the report in stage A is copied to stage B. There are then two files in stage B with the same name- one paired and one unpaired. Deployments continues to succeed between the paired items.                                                 |
 
 * **Assigning a workspace to a deployment stage**: when a workspace is assigned to a deployment stage the deployment pipeline attempts to pair items. The pairing criteria are:
 
@@ -129,7 +129,7 @@ Pairing can happen in one of two ways:
 
   The following table shows when items are paired when a workspace is assigned in different circumstances:
 
-  | Scenario | Stage A (e.g. Dev)                                       | Stage B (e.g. Test)                                       | Comment                                                        |
+  | Scenario | Stage A (for example, Dev)                                       | Stage B (for example, Test)                                       | Comment                                                        |
   |----------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------|
   | 1        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ✅ Pairing occurs                                                 |
   | 2        | Name: *PBI Report*<br>Type: *Report*                   | Name: *PBI Report*<br>Type: *Report*                    | ❌ Pairing doesn't occur (duplicates). <br>❌ Deployment fails.          |
@@ -147,7 +147,7 @@ Paired items appear on the same line in the pipeline content list. Items that ar
 
 #### [Paired items: New UI](#tab/new)
 
-:::image type="content" source="./media/assign-pipeline/paired-items-new.png" alt-text="Screenshot of new UI showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
+:::image type="content" source="./media/assign-pipeline/paired-items-new.png" alt-text="Screenshot of new UI showing adjacent stages. Paired items are listed on the same line, and one item in the second stage isn't in the first stage.":::
 
 #### [Paired items: Original UI](#tab/old)
 

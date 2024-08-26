@@ -17,7 +17,7 @@ ms.search.form: Deployment rules
 
 When you're working in a deployment pipeline, different stages might have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
-When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, if you want a semantic model in a production stage to point to a production database instead of one in the test stage, you can define a rule for this. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production, will inherit the value as defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
+When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, you can define a rule for semantic model in a production stage to point to a production database instead of one in the test stage. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production, inherits the value as defined in the deployment rule. This rule always applies as long as it's unchanged and valid.
 
 You can configure data source rules, parameter rules, and default lakehouse rules. The following table lists the type of items you can configure rules for, and the type of rule you can configure for each one.
 
@@ -34,7 +34,7 @@ You can configure data source rules, parameter rules, and default lakehouse rule
 
 ## Create a deployment rule
 
-To create a deployment rule, follow the steps in this section. After you create all the deployment rules you need, deploy the semantic models with the newly created rules from the source stage to the target stage where the rules were created. Your rules won't apply until you deploy the semantic models from the source to the target stage.
+To create a deployment rule, follow the steps in this section. After you create all the deployment rules you need, deploy the semantic models with the newly created rules from the source stage to the target stage where the rules were created. Your rules don't apply until you deploy the semantic models from the source to the target stage.
 
 ### [Create a deployment rule in the new UI](#tab/new)
 
@@ -160,7 +160,7 @@ This section lists the limitations for the deployment rules.
 
 * Deployment rules only take effect the next time you deploy to that stage. However, if you create rules and then compare the stages before you deploy, the comparison is done based on the rules that were created even though they didn't take effect yet.
 
-* Creating data source rules on a semantic model that uses Native query and DirectQuery together is not supported.
+* Creating data source rules on a semantic model that uses Native query and DirectQuery together isn't supported.
 
 >[!NOTE]
 >Parameter rules aren't supported for paginated reports.
