@@ -92,13 +92,13 @@ During deployment, deployment pipelines checks for dependencies. The deployment 
 
 Autobinding works only with items that are supported by deployment pipelines and reside within Fabric. To view the dependencies of an item, from the item's *More options* menu, select *View lineage*.
 
-#### [Classic View lineage UI](#tab/old)
-
-:::image type="content" source="media/understand-the-deployment-process/view-lineage-old.png" alt-text="A screenshot of the old view lineage option, in an item's more options menu.":::
-
 #### [New View lineage UI](#tab/new)
 
 :::image type="content" source="media/understand-the-deployment-process/view-lineage-new.png" alt-text="A screenshot of the new view lineage option, in an item's more options menu.":::
+
+#### [Original View lineage UI](#tab/old)
+
+:::image type="content" source="media/understand-the-deployment-process/view-lineage-old.png" alt-text="A screenshot of the old view lineage option, in an item's more options menu.":::
 
 ---
 
@@ -168,12 +168,6 @@ When you deploy content that contains folders to a different stage, the folder h
 
 ### Folders representation
 
-#### [Classic folders representation](#tab/old)
-
-The workspace content is shown in Deployment pipelines as a flat list of items. An item’s full path is shown when hovering over its name on the list.
-
-:::image type="content" source="media/understand-the-deployment-process/folder-path.png" alt-text="Screenshot showing the full pathname of an item inside a folder. The name includes the name of the folder.":::
-
 #### [New folders representation](#tab/new)
 
 The workspace content is shown as it's structured in the workspace. Folders are listed, and in order to see their items you need to select the folder. An item’s full path is shown at the top of the items list. Since a deployment is of items only, you can only select a folder that contains supported items. Selecting a folder for deployment means selecting all its items and sub-folders with their items for a deployment.
@@ -181,6 +175,12 @@ The workspace content is shown as it's structured in the workspace. Folders are 
 This picture shows the contents of a folder inside the workspace. The full pathname of the folder is shown at the top of the list.
 
 :::image type="content" source="media/understand-the-deployment-process/folder-path-new.png" alt-text="Screenshot showing the contents of a folder with full pathname of the folder above. The name includes the name of the folder.":::
+
+#### [Original folders representation](#tab/old)
+
+The workspace content is shown in Deployment pipelines as a flat list of items. An item’s full path is shown when hovering over its name on the list.
+
+:::image type="content" source="media/understand-the-deployment-process/folder-path.png" alt-text="Screenshot showing the full pathname of an item inside a folder. The name includes the name of the folder.":::
 
 ---
 
@@ -192,15 +192,15 @@ Deploy items inside a folder from that folder. You can't deploy items from diffe
 
 Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* when compared. This item won't appear in the compare window since it is not a schema change but settings change.
 
-#### [Moved folder item in old UI](#tab/old)
+#### [Moved folder item in new UI](#tab/new)
+
+:::image type="content" source="media/understand-the-deployment-process/moved-folder-item-new.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder in the new UI.":::
+
+#### [Moved folder item in original UI](#tab/old)
 
 Unless there's also a schema change, the option next to the label to open a *Change review* window that presents the schema changes, is disabled. Hovering over it shows a note saying the change is a *settings* change (like *rename*).
 
 :::image type="content" source="media/understand-the-deployment-process/moved-folder-item.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder.":::
-
-#### [Moved folder item in new UI](#tab/new)
-
-:::image type="content" source="media/understand-the-deployment-process/moved-folder-item-new.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder in the new UI.":::
 
 ---
 
@@ -362,25 +362,25 @@ Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incre
 
 Create an app for each deployment pipeline stage, so that you can test each update from an end user's point of view. Use the **publish** or **view** button in the workspace card to publish or view the app in a specific pipeline stage.
 
-### [Publish app - old UI](#tab/old)
-
-:::image type="content" source="media/understand-the-deployment-process/publish.png" alt-text="A screenshot highlighting the publish app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/publish.png":::
-
 ### [Publish app - new UI](#tab/new)
 
 :::image type="content" source="media/understand-the-deployment-process/publish-new.png" alt-text="A screenshot showing the publish app button, in the stage options.":::
+
+### [Publish app - original UI](#tab/old)
+
+:::image type="content" source="media/understand-the-deployment-process/publish.png" alt-text="A screenshot highlighting the publish app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/publish.png":::
 
 ---
 
 In the production stage, you can also update the app page in Fabric, so that any content updates become available to app users.
 
-### [Update app - old UI](#tab/old)
-
-:::image type="content" source="media/understand-the-deployment-process/update-app.png" alt-text="A screenshot highlighting the update app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/update-app.png":::
-
 ### [Update app - new UI](#tab/new)
 
 :::image type="content" source="media/understand-the-deployment-process/update-new.png" alt-text="A screenshot highlighting the update app button in the new UI.":::
+
+### [Update app - original UI](#tab/old)
+
+:::image type="content" source="media/understand-the-deployment-process/update-app.png" alt-text="A screenshot highlighting the update app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/update-app.png":::
 
 ---
 

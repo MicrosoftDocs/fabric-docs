@@ -76,7 +76,7 @@ Unsupported items are also shown in this list. Unsupported items can't be deploy
 
 :::image type="content" source="media/deploy-content/selective-deploy-new.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines." lightbox="media/deploy-content/selective-deploy-new.png":::
 
-##### [Old selective deploy method](#tab/old)
+##### [Original selective deploy method](#tab/old)
 
 :::image type="content" source="media/deploy-content/selective-deploy.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines, available after selecting the show more option." lightbox="media/deploy-content/selective-deploy.png":::
 

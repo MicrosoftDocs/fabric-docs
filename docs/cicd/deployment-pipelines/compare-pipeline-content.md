@@ -22,32 +22,6 @@ Deployment pipelines pairs items of two neighboring stages by combining item typ
 
 ## Compare stages
 
-### [Original Deployment pipeline UI](#tab/old)
-
-:::image type="content" source="./media/compare-pipeline-content/deployment-pipelines-compare.png" alt-text="Screenshot showing three stages of deployment. There's a green check between the test and production stages and an orange X between the development and test stages." lightbox="media/compare-pipeline-content/deployment-pipelines-compare.png":::
-
-A comparison icon indicator appears between two sequential stages to give a quick visual insight into the differences between them. The comparison indicator has two states:
-
-- **Green indicator** – The metadata for each content item in both stages, is the same.
-
-- **Orange indicator** - Appears if at least one item in one of the compared stages were changed, added, or removed.
-
-When two sequential stages are different, a **Compare** link appears underneath the orange comparison icon. Select **Compare** to open the content item list in both stages. This *Compare view* helps you track changes or differences between items in each pipeline stage.
-
-:::image type="content" source="media/compare-pipeline-content/compare.png" alt-text="A screenshot showing the compare option, which expands the compare view and allows comparing items between deployment pipeline stages." lightbox="media/compare-pipeline-content/compare.png":::
-
-In the comparison display, paired items are next to each other, even if they have different names. All items in the workspace are listed in a flat list, regardless of their folder structure. Hover over an item to see its path and name.
-
-Items that aren't paired or that were changed get one of the following labels:
-
-- **New** – A new item in the source stage. This item doesn't exist in the target stage. After deployment, this item will be cloned to the target stage.
-
-- **Different** – An item that exists both in the source and the target stage, where one of the versions was changed after the last deployment. After deployment, the item in the source stage will overwrite the item in the target stage, regardless of where the change was made.
-
-    Semantic models with configured deployment rules that haven't been deployed, are also marked as *different*, since deployment rules aren't applied until the semantic models are deployed from the source stage to the target stage.
-
-- **Missing from** – This item appears in the target stage, but not in the source stage. Deployment doesn't affect these items.
-
 ### [New deployment pipeline UI](#tab/new)
 
 A comparison icon indicator appears on each stage card except for the first stage of the pipeline. It indicates if this stage is identical to the source stage (previous stage) to give a quick visual insight into the differences between them.
@@ -77,6 +51,32 @@ This item can't be selected for deployment (since it doesn't exist in the source
 
 - **Same as source** – No difference was identified between this item and its pair in the source stage.
 
+### [Original Deployment pipeline UI](#tab/old)
+
+:::image type="content" source="./media/compare-pipeline-content/deployment-pipelines-compare.png" alt-text="Screenshot showing three stages of deployment. There's a green check between the test and production stages and an orange X between the development and test stages." lightbox="media/compare-pipeline-content/deployment-pipelines-compare.png":::
+
+A comparison icon indicator appears between two sequential stages to give a quick visual insight into the differences between them. The comparison indicator has two states:
+
+- **Green indicator** – The metadata for each content item in both stages, is the same.
+
+- **Orange indicator** - Appears if at least one item in one of the compared stages were changed, added, or removed.
+
+When two sequential stages are different, a **Compare** link appears underneath the orange comparison icon. Select **Compare** to open the content item list in both stages. This *Compare view* helps you track changes or differences between items in each pipeline stage.
+
+:::image type="content" source="media/compare-pipeline-content/compare.png" alt-text="A screenshot showing the compare option, which expands the compare view and allows comparing items between deployment pipeline stages." lightbox="media/compare-pipeline-content/compare.png":::
+
+In the comparison display, paired items are next to each other, even if they have different names. All items in the workspace are listed in a flat list, regardless of their folder structure. Hover over an item to see its path and name.
+
+Items that aren't paired or that were changed get one of the following labels:
+
+- **New** – A new item in the source stage. This item doesn't exist in the target stage. After deployment, this item will be cloned to the target stage.
+
+- **Different** – An item that exists both in the source and the target stage, where one of the versions was changed after the last deployment. After deployment, the item in the source stage will overwrite the item in the target stage, regardless of where the change was made.
+
+    Semantic models with configured deployment rules that haven't been deployed, are also marked as *different*, since deployment rules aren't applied until the semantic models are deployed from the source stage to the target stage.
+
+- **Missing from** – This item appears in the target stage, but not in the source stage. Deployment doesn't affect these items.
+
 ---
 
 > [!NOTE]
@@ -88,6 +88,12 @@ This item can't be selected for deployment (since it doesn't exist in the source
 
 If there's a change in the schema, you can see the differences between the two items by selecting the **Compare** button.
 
+### [New Deployment change review button](#tab/new)
+
+To compare the items in the two stages, select the **Compare** icon:
+
+:::image type="content" source="./media/compare-pipeline-content/compare-new.png" alt-text="Screenshot showing the compare button in the top right corner.":::
+
 ### [Original Deployment change review button](#tab/old)
 
 If a text item, like a semantic model, is different, hover over it to see the **Change review** button.
@@ -95,12 +101,6 @@ If a text item, like a semantic model, is different, hover over it to see the **
 :::image type="content" source="./media/compare-pipeline-content/granular-change-button.png" alt-text="Screenshot showing the change review button next to an item.":::
 
 If there's [nothing to compare](#considerations-and-limitations), the button is disabled. If there are changes to the schema, you can select the button to see a detailed, line by line comparison of the two items.
-
-### [New Deployment change review button](#tab/new)
-
-To compare the items in the two stages, select the **Compare** icon:
-
-:::image type="content" source="./media/compare-pipeline-content/compare-new.png" alt-text="Screenshot showing the compare button in the top right corner.":::
 
 ---
 

@@ -93,7 +93,7 @@ Paired items appear on the same line in the pipeline content list. Items that ar
 
 :::image type="content" source="./media/intro-to-deployment-pipelines/paired-items-new.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line in the new UI.":::
 
-### [Old pairing design](#tab/old)
+### [Original pairing design](#tab/old)
 
 :::image type="content" source="./media/intro-to-deployment-pipelines/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
 

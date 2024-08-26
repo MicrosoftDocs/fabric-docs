@@ -36,21 +36,21 @@ You can configure data source rules, parameter rules, and default lakehouse rule
 
 To create a deployment rule, follow the steps in this section. After you create all the deployment rules you need, deploy the semantic models with the newly created rules from the source stage to the target stage where the rules were created. Your rules won't apply until you deploy the semantic models from the source to the target stage.
 
-### [Create a deployment rule in the old UI](#tab/old)
+### [Create a deployment rule in the new UI](#tab/new)
 
 1. In the pipeline stage you want to create a deployment rule for, select **Deployment rules**.
 
-    :::image type="content" source="media/create-rules/deployment-settings-screenshot.png" alt-text="A screenshot of the deployment rules button, located in the deployment rules.":::
+    :::image type="content" source="media/create-rules/deployment-settings-screenshot-new.png" alt-text="A screenshot of the deployment rules button, located in the deployment stage menu.":::
 
 1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows, semantic model, datamarts, notebooks, and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
 
-    :::image type="content" source="media/create-rules/deployment-rules.png" alt-text="A screenshot of the deployment rules pane, showing that you can set rules for dataflows, datasets, datamarts, and paginated reports.":::
+    :::image type="content" source="media/create-rules/deployment-rules-new.png" alt-text="A screenshot of the deployment rules pane in the new UI, showing that you can set rules for dataflows, datasets, datamarts, and paginated reports.":::
 
 1. Select the item you want to create a rule for. The types of rules you can create for that item are displayed. So, for example, if you're creating a rule for a dataflow, you can create a data source rule or a parameter rule. If you're creating a rule for a notebook, you can create a default lakehouse rule.
 
 1. Select the type of rule you want to create, expand the list, and then select **Add rule**. There are two types of rules you can create:
 
-    :::image type="content" source="media/create-rules/deployment-rule-types.png" alt-text="A screenshot of the deployment rules pane. It shows a selected dataset and the two rule types, data source and parameter, you can configure for it.":::
+    :::image type="content" source="media/create-rules/deployment-rule-types-new.png" alt-text="A screenshot of the new deployment rules pane. It shows a selected dataset and the two rule types, data source and parameter, you can configure for it.":::
 
     * **Data source rules**
 
@@ -72,21 +72,21 @@ To create a deployment rule, follow the steps in this section. After you create 
     * **Default lakehouse rules**
          This rule only applies to notebooks. Select a lakehouse to connect to the notebook in the target stage and set it as its default. For more information, see [Notebook in deployment pipelines](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines).
 
-### [Create a deployment rule in the new UI](#tab/new)
+### [Create a deployment rule in the original UI](#tab/old)
 
 1. In the pipeline stage you want to create a deployment rule for, select **Deployment rules**.
 
-    :::image type="content" source="media/create-rules/deployment-settings-screenshot-new.png" alt-text="A screenshot of the deployment rules button, located in the deployment stage menu.":::
+    :::image type="content" source="media/create-rules/deployment-settings-screenshot.png" alt-text="A screenshot of the deployment rules button, located in the deployment rules.":::
 
 1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows, semantic model, datamarts, notebooks, and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
 
-    :::image type="content" source="media/create-rules/deployment-rules-new.png" alt-text="A screenshot of the deployment rules pane in the new UI, showing that you can set rules for dataflows, datasets, datamarts, and paginated reports.":::
+    :::image type="content" source="media/create-rules/deployment-rules.png" alt-text="A screenshot of the deployment rules pane, showing that you can set rules for dataflows, datasets, datamarts, and paginated reports.":::
 
 1. Select the item you want to create a rule for. The types of rules you can create for that item are displayed. So, for example, if you're creating a rule for a dataflow, you can create a data source rule or a parameter rule. If you're creating a rule for a notebook, you can create a default lakehouse rule.
 
 1. Select the type of rule you want to create, expand the list, and then select **Add rule**. There are two types of rules you can create:
 
-    :::image type="content" source="media/create-rules/deployment-rule-types-new.png" alt-text="A screenshot of the new deployment rules pane. It shows a selected dataset and the two rule types, data source and parameter, you can configure for it.":::
+    :::image type="content" source="media/create-rules/deployment-rule-types.png" alt-text="A screenshot of the deployment rules pane. It shows a selected dataset and the two rule types, data source and parameter, you can configure for it.":::
 
     * **Data source rules**
 

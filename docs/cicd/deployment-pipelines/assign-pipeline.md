@@ -71,20 +71,6 @@ You can unassign a workspace from any pipeline stage. If you want to assign a di
 
 To unassign a workspace from a pipeline stage, follow these steps:
 
-### [Unassign: Original UI](#tab/old)
-
-1. Open the pipeline.
-
-1. In the stage you want to unassign the workspace from, select **settings**.
-
-1. From the *settings* menu, select **Unassign workspace**.
-
-    :::image type="content" source="media/assign-pipeline/unassign-workspace.png" alt-text="A screenshot showing the *unassign workspace* option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/assign-pipeline/unassign-workspace.png":::
-
-1. In the *Unassign workspace* dialogue box, select **Unassign**.
-
-    :::image type="content" source="media/assign-pipeline/unassign-note.png" alt-text="A screenshot showing the unassign workspace pop-up window in deployment pipelines. The unassign button is highlighted.":::
-
 ### [Unassign: New UI](#tab/new)
 
 1. Open the pipeline.
@@ -94,6 +80,20 @@ To unassign a workspace from a pipeline stage, follow these steps:
 1. Select **Unassign workspace**.
 
     :::image type="content" source="media/assign-pipeline/unassign-workspace-new.png" alt-text="A screenshot showing the unassign workspace option in the new UI of deployment pipelines." lightbox="media/assign-pipeline/unassign-workspace.png":::
+
+1. In the *Unassign workspace* dialogue box, select **Unassign**.
+
+    :::image type="content" source="media/assign-pipeline/unassign-note.png" alt-text="A screenshot showing the unassign workspace pop-up window in deployment pipelines. The unassign button is highlighted.":::
+
+### [Unassign: Original UI](#tab/old)
+
+1. Open the pipeline.
+
+1. In the stage you want to unassign the workspace from, select **settings**.
+
+1. From the *settings* menu, select **Unassign workspace**.
+
+    :::image type="content" source="media/assign-pipeline/unassign-workspace.png" alt-text="A screenshot showing the *unassign workspace* option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/assign-pipeline/unassign-workspace.png":::
 
 1. In the *Unassign workspace* dialogue box, select **Unassign**.
 
@@ -145,13 +145,13 @@ Pairing can happen in one of two ways:
 
 Paired items appear on the same line in the pipeline content list. Items that aren't paired, appear on a line by themselves:
 
-#### [Paired items: Original UI](#tab/old)
-
-:::image type="content" source="./media/assign-pipeline/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
-
 #### [Paired items: New UI](#tab/new)
 
 :::image type="content" source="./media/assign-pipeline/paired-items-new.png" alt-text="Screenshot of new UI showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
+
+#### [Paired items: Original UI](#tab/old)
+
+:::image type="content" source="./media/assign-pipeline/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
 
 ---
 

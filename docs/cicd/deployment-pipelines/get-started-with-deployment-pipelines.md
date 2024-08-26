@@ -70,7 +70,7 @@ From the workspace, select **Create deployment pipeline**.
 
    :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
 
-### [Customize the pipeline: old UI](#tab/old)
+### [Customize the pipeline: original UI](#tab/old)
 
    :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
 
@@ -85,7 +85,7 @@ For pipelines with more than three stages, use the arrows on the top-right corne
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages-new.png" alt-text="Screenshot of deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages-new.png":::
 
-### [Navigate between stages: old UI](#tab/old)
+### [Navigate between stages: original UI](#tab/old)
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages.png" alt-text="Screenshot of arrows in the top right corner of the deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages.png":::
 
@@ -106,31 +106,19 @@ Follow the instructions in the link to [assign a workspace to a pipeline](assign
 
 By default, the final stage of the pipeline is made public. A consumer of a public stage who has no access to the pipeline sees it as a regular workspace, without the stage name and deployment pipeline icon on the workspace page next to the workspace name.
 
-### [Make a stage public: original UI](#tab/make-public)
-
 You can have as many public stages as you want, or none at all. To change the public status of a stage at any time, go to the pipeline stage settings and check or uncheck the **Make this stage public** box.
-
-:::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
-
-:::image type="content" source="media/get-started-with-deployment-pipelines/make-stage-public.png" alt-text="Screenshot of the stage settings with the make this stage public checkbox highlighted.":::
-
-### [Make a stage public: new UI](#tab/make-public-new)
-
-You can have as many public stages as you want, or none at all. To change the public status of a stage at any time:
-
-1. Go to the pipeline stage settings
 
 #### [Stage settings: new UI](#tab/stage-settings-new)
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings-new.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 
-#### [Stage settings: old UI](#tab/stage-settings-old)
+#### [Stage settings: original UI](#tab/stage-settings-old)
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 
 ---
 
-2. Set the **Make this stage public** box, and then save.
+Set the **Make this stage public** box, and then save.
 
     :::image type="content" source="media/get-started-with-deployment-pipelines/make-stage-public-new.png" alt-text="Screenshot of the stage settings with the make this stage public toggle set to yes.":::
 
