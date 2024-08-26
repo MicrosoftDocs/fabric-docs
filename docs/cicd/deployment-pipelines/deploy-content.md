@@ -41,12 +41,6 @@ After you choose how to deploy your content, you can [Review your deployment and
 
 #### Deploy all content
 
-##### [Original deploy method](#tab/old)
-
-Select the stage to deploy from and then select the deployment button. The deployment process creates a duplicate workspace in the target stage. This workspace includes all the content existing in the current stage.
-
-:::image type="content" source="media/deploy-content/deploy.png" alt-text="A screenshot showing the deploy button for the development and test stages in a deployment pipeline." lightbox="media/deploy-content/deploy.png":::
-
 ##### [New deploy method](#tab/new)
 
 1. Select the target stage.
@@ -58,11 +52,15 @@ Select the stage to deploy from and then select the deployment button. The deplo
 
 The deployment process creates a duplicate workspace in the target stage. This workspace includes all the selected content from the source stage.
 
+##### [Original deploy method](#tab/old)
+
+Select the stage to deploy from and then select the deployment button. The deployment process creates a duplicate workspace in the target stage. This workspace includes all the content existing in the current stage.
+
+:::image type="content" source="media/deploy-content/deploy.png" alt-text="A screenshot showing the deploy button for the development and test stages in a deployment pipeline." lightbox="media/deploy-content/deploy.png":::
+
 ---
 
 #### Selective deployment
-
-##### [Original selective deploy method](#tab/old)
 
 If you don't want to deploy everything from that stage, you can select specific items for deployment. Select the **Show more** link, and then select the items you wish to deploy. When you select the **Deploy** button, only the selected items are deployed to the next stage.
 
