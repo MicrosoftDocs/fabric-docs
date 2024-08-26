@@ -120,7 +120,7 @@ You can have as many public stages as you want, or none at all. To change the pu
 
 Set the **Make this stage public** box, and then save.
 
-    :::image type="content" source="media/get-started-with-deployment-pipelines/make-stage-public-new.png" alt-text="Screenshot of the stage settings with the make this stage public toggle set to yes.":::
+:::image type="content" source="media/get-started-with-deployment-pipelines/make-stage-public-new.png" alt-text="Screenshot of the stage settings with the make this stage public toggle set to yes.":::
 
 ## Step 5 - Deploy to an empty stage
 
