@@ -176,11 +176,11 @@ It's time to add the missing columns using the Add custom column. Below is a tab
 
 |Column name|Data type|Formula|
 |---|----|--|
-|StartDate|Date|Date.From(DateTime.LocalNow())
+|StartDate|Date|Date.From(DateTimeZone.SwitchZone(DateTimeZone.FixedUtcNow(), -3))
 |EndDate|Date|#date(9999,12,31)|
 |IsCurrent| True/False| true|
 
-The result now conforms to the schema expected by the Dimension table.
+The result now conforms to the schema expected by the Dimension table. In this case we are using the time zonte utc -3, change for your respectively timezone.
 
 ![Screenshot of table with all new records that need to be added to the Dimension table.](../data-factory/media/slowly-changing-dimension-type-two/new-records-table.png)
 
@@ -205,7 +205,7 @@ You can right select the EndDate field and select the **Replace values...** as w
 Once you've committed the dialog, a new replace values step is added. Go to the formula bar of the step and change the component that has #date(1999,12,31) with the formula from below.
 
 ```m-code
-Date.From(DateTime.LocalNow())
+Date.From(DateTimeZone.SwitchZone(DateTimeZone.FixedUtcNow(), -3))
 ```
 
 This new formula adds a date stamp as to when the logic runs to determine the EndDate for that particular record.
