@@ -14,7 +14,7 @@ ms.date: 08/07/2024
 
 The Feature usage and adoption report provides an in-depth analysis of how different features are utilized and adopted across your Microsoft Fabric tenant.
 
-You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or [Microsoft 365 global administator](microsoft-365-docs-pr/microsoft-365/admin/add-users/about-admin-roles). Conversely, you can have one of these roles share the report or semantic model directly with you. With build permissions to the semantic model, users can also design a custom report that relies on the same underlying data.
+You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or [Microsoft 365 global administator](https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide#commonly-used-microsoft-365-admin-center-roles). Conversely, you can have one of these roles share the report or semantic model directly with you. With build permissions to the semantic model, users can also design a custom report that relies on the same underlying data.
 
 ## Navigation
 
