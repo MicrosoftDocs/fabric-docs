@@ -4,7 +4,7 @@ description: "Learn about Microsoft Fabric security concepts and features that c
 author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: v-myerspeter, vparasuraman
-ms.date: 05/17/2024
+ms.date: 08/27/2024
 ms.topic: conceptual
 ms.custom: fabric-cat, security-guidance
 ---
