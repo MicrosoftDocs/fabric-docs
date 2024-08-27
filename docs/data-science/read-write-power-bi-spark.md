@@ -109,13 +109,13 @@ All Spark SQL commands can be executed in Python, R, and Scala. The semantic lin
 The read access APIs have the following limitations:
 
 - Power BI table access using Spark SQL is subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
-- Predicate pushdown for Spark *_Metrics* queries is limited to a single [IN](https://spark.apache.org/docs/3.3.0/api/sql/index.html#in) expression. Extra IN expressions and unsupported predicates are evaluated in Spark after data transfer.
+- Predicate pushdown for Spark *_Metrics* queries is limited to a single [IN](https://spark.apache.org/docs/latest/api/sql/index.html#in) expression. Extra IN expressions and unsupported predicates are evaluated in Spark after data transfer.
 - Predicate pushdown for Power BI tables accessed using Spark SQL doesn't support the following expressions:
-  - [ISNULL](https://spark.apache.org/docs/3.3.0/api/sql/#isnull)
-  - [IS_NOT_NULL](https://spark.apache.org/docs/3.3.0/api/sql/#isnotnull)
-  - [STARTS_WITH](https://spark.apache.org/docs/3.3.0/api/sql/#startswith)
-  - [ENDS_WITH](https://spark.apache.org/docs/3.3.0/api/sql/#endswith)
-  - [CONTAINS](https://spark.apache.org/docs/3.3.0/api/sql/#contains).
+  - [ISNULL](https://spark.apache.org/docs/latest/api/sql/index.html#isnull)
+  - [IS_NOT_NULL](https://spark.apache.org/docs/latest/api/sql/index.html#isnotnull)
+  - [STARTS_WITH](https://spark.apache.org/docs/latest/api/sql/index.html#startswith)
+  - [ENDS_WITH](https://spark.apache.org/docs/latest/api/sql/index.html#endswith)
+  - [CONTAINS](https://spark.apache.org/docs/latest/api/sql/index.html#contains).
 - The Spark session must be restarted to make new semantic models accessible in Spark SQL.
 
 ## Related content
