@@ -1,9 +1,8 @@
 ---
 title: Overview of Fabric workload authentication JavaScript API (preview)
 description: Learn how to use JavaScript APIs to authenticate a customized Fabric workload.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024
@@ -46,7 +45,7 @@ Typically the redirect URI is in the same domain as the page that requested the 
   
 In our case, it's not in the same domain, since Fabric is requesting the token and the redirect URI of the workload isn't in the Fabric domain. So when the consent dialog opens, it needs to be closed manually after redirect. We don't use the code returned in the redirectUri, hence we just autoclose it (when Microsoft Entra ID redirects the popup to the redirect URI it simply closes).
   
-You can see the code/configuration of the redirect Uri in the [index.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/staging/Frontend/src/index.ts) file.
+You can see the code/configuration of the redirect Uri in the [index.ts](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Frontend/src/index.ts) file.
 
 Here's an example of a consent popup for our app "my workload app" and its dependencies (storage and Power BI) that we configured when going over [authentication setup](./authentication-tutorial.md):
 
@@ -97,4 +96,4 @@ This parameter is used when facing OBO failures in the workload BE because of so
 
 OBO failures because of conditional access policies return a string called "claims." This string should be sent to the workload FE where the FE should ask for a token and pass the claim as claimsForConditionalAccessPolicy. For more information, see [Handling multi-factor auth (MFA), conditional access, and incremental consent](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#handling-multi-factor-auth-mfa-c).
 
-Refer to [AuthenticationService](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/staging/Backend/src/Services/AuthenticationService.cs) AddBearerClaimToResponse usage in the BE sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies.
+Refer to [AuthenticationService](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Services/AuthenticationService.cs) AddBearerClaimToResponse usage in the BE sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies.

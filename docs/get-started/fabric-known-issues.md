@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 08/16/2024
+ms.date: 08/23/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,12 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md) | August 23, 2024 |
+|  818  | Data Warehouse | [Edit tables for a data warehouse's semantic model doesn't work](known-issues/known-issue-818-edit-tables-warehouse-semantic-model-not-work.md) | August 23, 2024 |
+|  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 |
+|  816  | Data Factory | [Pipeline deployment fails when parent contains deactivated activity](known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md) | August 23, 2024 |
+|  815  | Data Factory | [Dataflows automatically create tables from queries on Fabric destinations](known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md) | August 19, 2024 |
+|  814  | Power BI | [Scorecard dropdown slicers aren't visible when filtering](known-issues/known-issue-814-scorecard-dropdown-slicers-not-visible-filtering.md) | August 19, 2024 |
 |  811  | Data Engineering | [Fabric Runtime 1.3 causes invalid libraries](known-issues/known-issue-811-fabric-runtime-invalid-libraries.md) | August 16, 2024 |
 |  810  | Data Warehouse | [Inserting nulls into Data Warehouse tables fail with incorrect error message](known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md) | August 16, 2024 |
 |  809  | Data Factory | [Dataflow Gen2 refresh fails due to missing SQL analytics endpoint](known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md) | August 14, 2024 |
@@ -41,17 +47,10 @@ Select the **Title** to view more information about that specific known issue.
 |  767  | Data Warehouse | [SQL analytics endpoint table sync fails when table contains linked functions](known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md) | July 2, 2024 |
 |  765  | Data Factory | [Dataflows Gen2 staging warehouse doesn't work in deployment pipelines](known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md) | July 2, 2024 |
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
-|  755  | Real-Time Intelligence | [Real-Time hub **Set Alert** fails on prior version of an eventstream](known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md) | June 20, 2024 |
 |  753  | Data Factory | [Pipeline Web activity through on-premises data gateway doesn't support SPN authentication](known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md) | June 11, 2024 |
 |  752  | OneLake | [Cross region shortcuts don't show data](known-issues/known-issue-752-cross-region-shortcuts-not-show-data.md) | June 11, 2024 |
-|  740  | Real-Time Intelligence | [Eventstreams paused for more than two hours don't show data](known-issues/known-issue-740-eventstreams-paused-two-hours-not-show-data.md) | June 11, 2024 |
-|  736  | Real-Time Intelligence | [Previous Eventstream UX loads instead of new UX](known-issues/known-issue-736-previous-eventstream-ux-loads-instead-new-ux.md) | June 6, 2024 |
-|  734  | Real-Time Intelligence | [Custom endpoint or Reflex destination on derived stream keeps loading](known-issues/known-issue-734-custom-endpoint-reflex-destination-derived-stream-keeps-loading.md) | June 6, 2024 |
-|  733  | Real-Time Intelligence | [Sample data doesn't flow after destination later added into eventstream](known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md) | June 6, 2024 |
 |  749  | Power BI | [Tenant migrations paused for June 2024](known-issues/known-issue-749-tenant-migrations-paused-june-2024.md) | May 31, 2024 |
 |  732  | Data Engineering | [Shortcut creation on a lakehouse preview table takes long time](known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md) | May 31, 2024 |
-|  730  | Real-Time Intelligence | [Real-Time hub **Set alert** doesn't work for derived streams](known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md) | May 29, 2024 |
-|  729  | Real-Time Intelligence | [Opening a reflex for a stream in Real-Time hub doesn't work](known-issues/known-issue-729-opening-reflex-stream-real-time-hub-not-work.md) | May 29, 2024 |
 |  726  | Data Factory | [Pipeline using XML format copy gets stuck](known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 |
 |  723  | Data Warehouse | [Azure SQL Database change data doesn't propagate to mirror](known-issues/known-issue-723-sql-azure-database-change-data-not-propagate-mirror.md) | May 24, 2024 |
 |  728  | Data Engineering | [Environment doesn't work when runtime version is changed to Runtime 1.1](known-issues/known-issue-728-environment-not-work-runtime-version-changed-1-1.md) | May 23, 2024 |
@@ -86,6 +85,13 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  755  | Real-Time Intelligence | [Real-Time hub **Set Alert** fails on prior version of an eventstream](known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md) | June 20, 2024 | Fixed: August 23, 2024 |
+|  740  | Real-Time Intelligence | [Eventstreams paused for more than two hours don't show data](known-issues/known-issue-740-eventstreams-paused-two-hours-not-show-data.md) | June 11, 2024 | Fixed: August 23, 2024 |
+|  736  | Real-Time Intelligence | [Previous Eventstream UX loads instead of new UX](known-issues/known-issue-736-previous-eventstream-ux-loads-instead-new-ux.md) | June 6, 2024 | Fixed: August 23, 2024 |
+|  734  | Real-Time Intelligence | [Custom endpoint or Reflex destination on derived stream keeps loading](known-issues/known-issue-734-custom-endpoint-reflex-destination-derived-stream-keeps-loading.md) | June 6, 2024 | Fixed: August 23, 2024 |
+|  733  | Real-Time Intelligence | [Sample data doesn't flow after destination later added into eventstream](known-issues/known-issue-733-sample-data-not-flow-destination-later-added-eventstream.md) | June 6, 2024 | Fixed: August 23, 2024 |
+|  730  | Real-Time Intelligence | [Real-Time hub **Set alert** doesn't work for derived streams](known-issues/known-issue-730-real-time-hub-set-alert-not-work-derived-streams.md) | May 29, 2024 | Fixed: August 23, 2024 |
+|  729  | Real-Time Intelligence | [Opening a reflex for a stream in Real-Time hub doesn't work](known-issues/known-issue-729-opening-reflex-stream-real-time-hub-not-work.md) | May 29, 2024 | Fixed: August 23, 2024 |
 |  764  | Power BI | [New card and reference label tabular layout content hidden or truncated](known-issues/known-issue-764-new-card-reference-label-tabular-layout-content-hidden-truncated.md) | June 26, 2024 |  Fixed: August 16, 2024 |
 |  670  | Power BI | [Filled or bubble layers on Azure Maps visual doesn't render](known-issues/known-issue-670-filled-bubble-layers-azure-maps-visual-render.md) | April 11, 2024 | Fixed: August 16, 2024 |
 |  222  | Power BI |  [Search strings that include Japanese symbols don't return matches](known-issues/known-issue-222-search-strings-japanese-symbols-dont-work.md)   |  August 3, 2022  | Removed: August 16, 2024 |

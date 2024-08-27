@@ -14,7 +14,7 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article explains the data warehousing workload with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing.
+This article explains the data warehousing workload with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing. For a decision guide on choosing to develop warehouse data, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md).
 
 ## What is a Lakehouse SQL analytics endpoint?
 
@@ -33,7 +33,7 @@ There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Mic
 
 ### Automatic Metadata Discovery
 
-A seamless process reads the delta logs and from the files folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [Automatically generated schema in the [!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#automatically-generated-schema-in-the-sql-analytics-endpoint-of-the-lakehouse).
+A seamless process reads the delta logs and from the files folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [Automatically generated schema in the [!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-analytics-endpoint-performance.md#automatically-generated-schema-in-the-sql-analytics-endpoint-of-the-lakehouse).
 
 ## Scenarios the Lakehouse enables for data warehousing
 
@@ -138,6 +138,7 @@ A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analyt
 ## Related content
 
 - [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
+- [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md)
 - [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md)
 - [Default Power BI semantic models](semantic-models.md)
 - [Load data into the lakehouse](../data-engineering/load-data-lakehouse.md)
