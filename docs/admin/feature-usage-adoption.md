@@ -14,21 +14,21 @@ ms.date: 08/07/2024
 
 The Feature usage and adoption report provides an in-depth analysis of how different features are utilized and adopted across your Microsoft Fabric tenant.
 
-You can access the report from the [admin monitoring](monitoring-workspace.md) workspace. To see this workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or have an admin share the report or semantic model directly with you. With build permissions to the semantic model, users can design a custom report that relies on the same underlying data.
+You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or [Microsoft 365 global administator](/microsoft-365/admin/add-users/about-admin-roles). Conversely, you can have one of these roles share the report or semantic model directly with you. With build permissions to the semantic model, users can also design a custom report that relies on the same underlying data.
 
 ## Navigation
 
-The report is designed for admins to analyze a variety of Fabric usage scenarios. Use the Date range slicer to filter activity data across all pages for a specific range of time over the last 30 days.
+The report is designed for admins to analyze a variety of Fabric usage scenarios. Use the date range slicer to filter activity data across all pages for a specific range of time over the last 30 days.
 
-:::image type="content" source="./media/admin-monitoring/date-slicer.png" alt-text="Screenshot of the date range slicer on the Adoption report.":::
+:::image type="content" source="./media/admin-monitoring/date-slicer.png" alt-text="Screenshot of the date range slicer.":::
 
 Additionally, use the filter pane to filter activity data based on the desired analysis. Filters are available across different characteristics of usage, including capacity, user, and item-related info.
 
-:::image type="content" source="./media/admin-monitoring/filter-pane.png" alt-text="Screenshot of the filter pane on the Adoption report.":::
+:::image type="content" source="./media/admin-monitoring/filter-pane.png" alt-text="Screenshot of the filter pane.":::
     
 ## Report pages
 
-The Feature Usage and Adoption report is comprised of five pages:
+The report is comprised of five pages:
 
 * **Activity Overview** - Provides a high-level overview of Fabric usage across the organization
 
@@ -52,7 +52,7 @@ The Activity Overview page helps you identify:
 
 #### Example
 
-In a large retail organization, you might use the [Activity Overview](#activity-overview-page) page to check which capacities were most utilized at a given month. Using the Date range slicer to filter to the month of December, you notice the *Sales and Marketing* capacity had nearly 1,000 activities while other capacities had under 200. To understand why this is happening, you then go to the [Analysis](#analysis-page) page.
+In a large retail organization, you might use the [Activity Overview](#activity-overview-page) page to check which capacities were most utilized in a given month. Using the date range slicer to filter to the month of December, you notice the *Sales and Marketing* capacity had nearly 1,000 activities while other capacities had under 200. To understand why this is happening, you then go to the [Analysis](#analysis-page) page.
 
 ### Analysis page
 
@@ -64,7 +64,7 @@ On the Analysis page, you can view:
 
 #### Example
 
-Continuing the example from the [Activity Overview](#activity-overview-page) page, you use the Analysis page to investigate why the *Sales and Marketing* capacity had significantly more activities in December. The decomposition tree reveals the most popular activity was *ViewReport*, which signifies the viewing of a Power BI report. You then drill through to the [Activity Details](#activity-details-page) page to identify which reports were most frequently viewed that month on the *Sales and Marketing* capacity.
+Continuing the example from the [Activity Overview](#activity-overview-page) page, you use the Analysis page to investigate why the *Sales and Marketing* capacity had significantly more activity in December than all other capacities. The decomposition tree reveals the most popular activity on the *Sales and Marketing* capacity was *ViewReport*, which signifies the viewing of a Power BI report. You then drill through to the [Activity Details](#activity-details-page) page to identify which reports were most frequently viewed that month on the *Sales and Marketing* capacity.
 
 To drill through to the [Activity Details](#activity-details-page) page:
 
@@ -128,7 +128,7 @@ After drilling through, you see the following information for the selected item 
 
 * **Workspace ID** - The ID of the workspace that the item is located in
 
-* **Workspace name** - The name of the workspace that the items is located in
+* **Workspace name** - The name of the workspace that the item is located in
 
 * **Item ID** - The unique ID of the item
 
@@ -142,6 +142,18 @@ After drilling through, you see the following information for the selected item 
 
 * **Items** - The total number of items
 
+## Measures
+
+| Measure name    | Description |
+| -------- | ------- |
+| Active capacities  | The number of capacities with audit activity over the last 30 days, or based on the filters you apply.   |
+| Active users | The number of users who have generated audit activity over the last 30 days, or based on the filters you apply.     |
+| Active workspaces    | The number of workspaces with audit activity over the last 30 days, or based on the filters you apply.    |
+| Activities  | The number of audit activities generated over the last 30 days, or based on the filters you apply.    |
+| Items | The count of items displayed.    |
+| Total activities    | The number of audit activities generated over the last 30 days, or based on the filters you apply. Reflected as 0 when no audit data is returned; used exclusively in card visuals.    |
+| Total items    | The count of items displayed. Reflected as 0 when no items are returned; used exclusively in card visuals.    |
+
 ## Considerations and limitations
 
 This section lists the report's considerations and limitations.
@@ -150,7 +162,7 @@ This section lists the report's considerations and limitations.
 
 * Condensing the zoom slider on a date trend visual to a single day displays a misleading time range, as activities are aggregated by day and not by time.
 
-* Using the *next level in the hierarchy* option on the *Most active Capacities* visual doesn't update the dynamic title.
+* Using the *next level in the hierarchy* option on the *Most active Capacities* visual doesn't update the dynamic visual title.
 
 * Items with the same name, or those deleted and recreated with the same name, may reflect as one item in certain visuals. To count the total number of unique items, use item IDs or the *Total items* measure.
 
@@ -160,7 +172,7 @@ This section lists the report's considerations and limitations.
   
 ### Pro and PPU capacities
 
-Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities. The usage of these capacities can be seen in the admin monitoring report and as operations in the audit logs.
+Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities. The usage of these capacities can be seen in this report and as operations in the audit logs.
 
   * **Pro logical capacities** - Appear as *Reserved Capacity for Pro Workspaces* with the capacity SKU value *Pro* or *SharedOnPremium*.
 
@@ -172,6 +184,6 @@ Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on i
 
 ## Related content
 
-* [What is the admin monitoring workspace?](monitoring-workspace.md)
+* [What is the Admin monitoring workspace?](monitoring-workspace.md)
 
 * [Admin overview](microsoft-fabric-admin.md)
