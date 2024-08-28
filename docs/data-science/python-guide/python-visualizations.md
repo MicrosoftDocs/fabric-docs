@@ -178,5 +178,5 @@ In addition to the built-in notebook charting options, you can use popular open-
 
 ## Related content
 
-- [Pandas API on Apache Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html)
+- [Pandas API on Apache Spark](https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_ps.html)
 - [Python in-line installation](../../data-engineering/library-management.md#python-in-line-installation)

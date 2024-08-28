@@ -4,7 +4,7 @@ description: "Learn about Microsoft Fabric security concepts and features that c
 author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: v-myerspeter, vparasuraman
-ms.date: 05/17/2024
+ms.date: 08/27/2024
 ms.topic: conceptual
 ms.custom: fabric-cat, security-guidance
 ---
@@ -134,6 +134,7 @@ There are some considerations for using this pattern:
 - Google cloud storage supports data encryption using [customer-managed keys](https://cloud.google.com/storage/docs/encryption). Fabric can perform in-place reads on GCS; however, write operations using a shortcut to GCS are not supported.
 - Enable [audit](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for Microsoft Fabric to keep track of activities.
 - In Microsoft Fabric, Power BI experience supports [customer-managed key](/power-bi/enterprise/service-encryption-customer-managed-keys).
+- Disable the [shortcut caching](../onelake/onelake-shortcuts.md#caching) feature for S3, GCS, and S3-compatible shortcuts. as the cached data is persisted on OneLake.
 
 ## Data residency
 
