@@ -11,6 +11,7 @@ ms.custom:
   - build-2024
   - build-2024-dataai
   - build-2024-fabric
+  - copilot-learning-hub
 ---
 # Overview of Copilot for Data Warehouse
 
