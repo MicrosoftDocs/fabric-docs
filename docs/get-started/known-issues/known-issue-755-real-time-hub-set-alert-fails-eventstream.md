@@ -4,7 +4,7 @@ description: A known issue is posted where using the Real-Time hub **Set Alert**
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/20/2024
+ms.date: 08/23/2024
 ms.custom: known-issue-755
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-755
 
 In the Real-Time hub, you can use the **Set Alert** functionality to target an eventstream. If the target eventstream is the prior version of Microsoft Fabric Eventstream (version 1), the **Set Alert** functionality doesn't work. Using the current version of Microsoft Fabric Eventstream (version 2) does work.
 
-**Status:** Open
+**Status:** Fixed: August 23, 2024
 
 **Product Experience:** Real-Time Intelligence
 
