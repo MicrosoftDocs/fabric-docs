@@ -52,12 +52,13 @@ The new UI contains advanced functionalities for a better experience. Some of th
 * Filter by item type or sync status.
 * Sort by name, type, or sync status
 * Zoom in/out in the pipeline view
-* Unsupported items in the pipeline can be seen and filtered, but not deployed.
-* Custom actions for deployment pipelines, such as *Configure rules*, are no longer available in the item menu but are available elsewhere in the UI. The item menu list is now the same as the menu on the workspace page.
+
 * The following functionalities are supported only in the new UI
 
   * [Workspace folders](./understand-the-deployment-process.md#folders-in-deployment-pipelines-preview) - View the workspace items by their folder hierarchy. To deploy items in a subfolder, navigate to that folder.
   * [Parent/child items](../../data-warehouse/dimensional-modeling-dimension-tables.md#unbalanced-hierarchies) - Child items are shown but can't be deployed. During deployment, the child item is recreated in the target stage in each deployment.
+  * Unsupported items in the pipeline can be seen and filtered, but not deployed.
+  * Custom actions for deployment pipelines, such as *Configure rules*, are no longer available in the item menu but are available elsewhere in the UI. The item menu list is now the same as the menu on the workspace page.
 
 ## What remains unchanged
 
