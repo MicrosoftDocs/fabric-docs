@@ -48,7 +48,7 @@ In this scenario, all deployments originate from the git repository. Each stage 
 1. After the update of *Dev* is complete, a PR is created to the *Test* branch. In most cases, this is done using a release branch that can cherry pick the content to move into the next stage. The PR should include the same review and approval processes as any other in your team or organization.
 1. An additional *Build* and *release* pipeline is triggered to update the *Test* workspace, using a process similar to the one described in step #1.
 1. A PR is created to *Prod* branch, using a process similar to the one described in step #2.
-1. An additional *Build* and *release* pipeline is triggered to update the ‘Prod’ workspace, using a process similar to the one described in step #1.
+1. An additional *Build* and *release* pipeline is triggered to update the *Prod* workspace, using a process similar to the one described in step #1.
 
 #### When should you consider this option?
 
@@ -65,8 +65,8 @@ This is a great option in the following circumstances:
 In this scenario, all deployments originates from the git repository, as well as from the same branch (Main). Each stage in the release pipeline has a dedicated *build* and ‘Release’ pipeline, that might use a ‘Build environment’ to run unit tests and scripts that will change some of the definitions in the items before they are uploaded to the workspace. Some examples might be changing the data source connection, changing connections between items in the workspace, or changing values of parameters to adjust configuration for the right stage. Once the PR to *dev* branch is approved and merged:
 
 1. A *build* pipeline is triggered to spin up a new *Build env.*, and run unit tests for *dev* stage. Once tests have completed, a ‘release’ pipeline is triggered to upload the content to a ‘Build env.’, run scripts to change some of the configuration, to adjust those to *dev* stage, and then use Fabric’s ‘Update item definition’ APIs to upload the files into the Workspace.
-2. Only after the process described above is complete, including ingesting data and approval from release managers, the next *build* and ‘release’ pipelines for *test* stage can kick off, in a similar way as described in step #1. For *test* stage, additional automated or manual tests might be required after the deployment, to validate the changes are ready to be release to ‘Prod’ stage in high-quality.
-3. After all automated and manual tests are completed, release manager can approve and kick off the *build* and ‘release’ pipelines to ‘Prod’ stage. As ‘Prod’ usually have different configurations than *test/Dev* stages, it is key to also test out the changes after the deployment. In addition, the deployment should also trigger any additional ingestion of data, based on the change, so that potential no availability to consumers is reduced to minimum.
+2. Only after the process described above is complete, including ingesting data and approval from release managers, the next *build* and ‘release’ pipelines for *test* stage can kick off, in a similar way as described in step #1. For *test* stage, additional automated or manual tests might be required after the deployment, to validate the changes are ready to be release to *Prod* stage in high-quality.
+3. After all automated and manual tests are completed, release manager can approve and kick off the *build* and ‘release’ pipelines to *Prod* stage. As *Prod* usually have different configurations than *test/Dev* stages, it is key to also test out the changes after the deployment. In addition, the deployment should also trigger any additional ingestion of data, based on the change, so that potential no availability to consumers is reduced to minimum.
 
 When should I consider this option:
 
@@ -84,7 +84,7 @@ Once the PR to *main* branch is approved and merged:
 
 1. A *build* pipeline is triggered, that eventually uploads the changes to the *dev* stage using Fabric Git APIs. If needed, the pipeline can trigger additional APIs to start post-deployment operations/tests in the *dev* stage.
 1. After the *dev* deployment is completed, A release pipeline kicks in to deploy the changes from *dev* stage to *test* stage. Automated and manual tests should take place after the deployment, to ensure that the changes are well-tested before reaching production.
-1. After tests have been completed, and the release manager has approved to deploy to ‘Prod’ stage, the release to ‘Prod’ can kick in and complete the deployment.
+1. After tests have been completed, and the release manager has approved to deploy to *Prod* stage, the release to *Prod* can kick in and complete the deployment.
 
 When should I consider this option:
 
@@ -96,11 +96,11 @@ When should I consider this option:
 
 :::image type="content" source="./media/manage-deployment-pipelines/isv.png" alt-text="Diagram showing the flow of git based deployment for ISVs.":::
 
-The last scenario is different from the others as it is more relevant for Independent Software Vendors (ISV), that build SaaS applications for their customers on top of Fabric. In that case, usually they have separate workspaces per customer, that can get to 100s or 1000s of workspaces in size. When the structure of the analytics provided to each customer is similar and out-of-the-box, it is recommended to have a centralized development and testing process, that diverges to each customer only in ‘Prod’ stage. This scenario is based on scenario #2. Once the PR to *main* branch is approved and merged:
+The last scenario is different from the others as it is more relevant for Independent Software Vendors (ISV), that build SaaS applications for their customers on top of Fabric. In that case, usually they have separate workspaces per customer, that can get to 100s or 1000s of workspaces in size. When the structure of the analytics provided to each customer is similar and out-of-the-box, it is recommended to have a centralized development and testing process, that diverges to each customer only in *Prod* stage. This scenario is based on scenario #2. Once the PR to *main* branch is approved and merged:
 
 1. A *build* pipeline is triggered to spin up a new ‘Build env.’ and run unit tests for *dev* stage. Once tests have completed, a ‘release’ pipeline is triggered to upload the content to a ‘Build env.’, run scripts to change some of the configuration, to adjust those to *dev* stage, and then use Fabric’s ‘Update item definition’ APIs to upload the files into the Workspace.
-1. Only after the process described above is complete, including ingesting data and approval from release managers, the next *build* and ‘release’ pipelines for *test* stage can kick off, in a similar way as described in step #1. For *test* stage, additional automated or manual tests might be required after the deployment, to validate the changes are ready to be release to ‘Prod’ stage in high-quality.
-1. Once all tests have passed and approval process is complete, the deployment to ‘Prod’ customers can start. Each customer will have it’s own release with its own parameters, so that its specific configuration and data connection will take place in the relevant customer’s workspace. The configuration change can happen through scripts in a *build* environment, or using APIs post deployment. All releases can happen in parallel as they are not related nor dependent of each other.
+1. Only after the process described above is complete, including ingesting data and approval from release managers, the next *build* and ‘release’ pipelines for *test* stage can kick off, in a similar way as described in step #1. For *test* stage, additional automated or manual tests might be required after the deployment, to validate the changes are ready to be release to *Prod* stage in high-quality.
+1. Once all tests have passed and approval process is complete, the deployment to *Prod* customers can start. Each customer will have it’s own release with its own parameters, so that its specific configuration and data connection will take place in the relevant customer’s workspace. The configuration change can happen through scripts in a *build* environment, or using APIs post deployment. All releases can happen in parallel as they are not related nor dependent of each other.
 
 When should I consider this option:
 
