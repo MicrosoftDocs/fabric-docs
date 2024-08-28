@@ -17,9 +17,9 @@ Building applications in Fabric is more like creating documents in office than p
 
 Fabric is designed to support the largest Tier 1 projects and data sizes. The Fabric platform provides a common set of services that the workload must not replace with their own proprietary services. Consistent use of the platform services across all the workloads ensures a uniform experience and functionality throughout the system.
 
-This document provides a comprehensive overview of all the different components that you need to take into account to certify a workload. Certification is required to move into Public Preview and GA. The Status of the individual item provides you with an indication what is needed. 
+This document provides a comprehensive overview of all the different components that you need to take into account to certify a workload. Certification is required to move into Preview and GA. The Status of the individual item provides you with an indication what is needed. 
 
-| Name | Description | Certification method | Public Preview | General Availability | Reference |
+| Name | Description | Certification method | Preview | General Availability | Reference |
 |---|---|---|---|---|---|
 | Value to customers | Your offer must provide enough value to justify the investment it takes to learn and use. Your offer should provide significant benefits such as enhanced efficiency, innovative features, or strategic advantages. | Attestation | Required | Required | |
 | Terms and conditions | You need to provide your customers with terms and conditions for the offer you provide on the platform. In the terms and conditions you need to highlight the compliancy aspects of your solution. For example, what happens to data at rest and transit? Where are the services you provide Azure customers available from? | Workload Package | Required |Required | [Governance overview and guidance](../governance/governance-compliance-overview.md) |
@@ -34,7 +34,7 @@ This document provides a comprehensive overview of all the different components 
 
 The following table lists technical requirements for your workload offer.
 
-| Category | Description | Certification method | Public Preview | General Availability | Reference |
+| Category | Description | Certification method | Preview | General Availability | Reference |
 |---|---|---|---|---|---|
 | Microsoft Entra Access | Fabric workloads must ensure that Microsoft Entra identities can be granted access to our applications, services, and API endpoints. If your service provides other authentication methods to data that was originally stored in Fabric this needs to be document. </br> | Attestation | Required | Required | [Authentication](./authentication-concept.md) |
 | OneLake | OneLake is where data is stored in Fabric. Workloads need to integrate with it to store data in the standard formats supported by the platform so that other services can take advantage of it. | Attestation | Required | Required | [OneLake, the OneDrive for data](../onelake/onelake-overview.md) |
@@ -53,7 +53,7 @@ Get familiar with the design requirements for your Fabric workload review the [F
 
 Fabric users expect a fast loading UX. Independent of the technical implementation and regional hosting, your workload should load fast within all Fabric regions.
 
-| Name | Description | Certification method | Public Preview | General Availability | Reference |
+| Name | Description | Certification method | Preview | General Availability | Reference |
 |---|---|---|---|---|---|
 | Common UX | The workload and all Item types the partner provides as part of it need to comply with the Fabric UX guidelines. | Attestation | Required | Required | [Fabric UX System](https://aka.ms/fabricux) |
 | Item Creation Experience | Partners need to comply with the Item creation experience according to the Fabric UX System. | Attestation | Required | Required | [Fabric UX System](https://aka.ms/fabricux) |
@@ -71,10 +71,9 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 
 ## Security & Compliance requirements
 
-| Category | Description | Certification method | Public Preview | General Availability | References |
+| Category | Description | Certification method | Preview | General Availability | References |
 |---|---|---|---|---|---|
-| Security general | Microsoft customers entrust Fabric with their most sensitive data. As partners implementing workloads can have access to this data, they also have a responsibility to protect that data. We request workloads to go through a security assessment, a security review and attest that they did it. discovered in the process. <br><br> *Extra requirements:* <br> | Attestation | Optional | Required | [Secure, protect, and comply](../governance/governance-compliance-overview.md#secure-protect-and-comply) |
-| | Before calling any JS functions exposed by Fabric, partners must first obtain user Microsoft Entra ID token from the Fabric host. | Attestation | Required | Required | |
+| Security general | Microsoft customers entrust Fabric with their most sensitive data. As partners implementing workloads can have access to this data, they also have a responsibility to protect that data. We request workloads to go through a security assessment, a security review and attest that they did it. discovered in the process. | Attestation | Optional | Required | [Secure, protect, and comply](../governance/governance-compliance-overview.md#secure-protect-and-comply) |
 | Privacy | Microsoft customers entrust Fabric with their most sensitive data. As such, partners the build workloads also have a responsibility to protect that data when they access it. To that end we request that every workload goes through a privacy assessment and a privacy review. <br><br> *Extra requirements:* <br> | Attestation | Optional | Required | [Secure, protect, and comply](../governance/governance-compliance-overview.md#secure-protect-and-comply) |
 ||Workload owners can only use essential HTTP-only cookies. Workload can use them only after positively authenticating the user. | Attestation | Required | Required | [Cookie compliance - Commerce](/dynamics365/commerce/cookie-compliance) |
 | Data Residency | Fabric is making an Enterprise Promise around data not leaving the geography of the tenant for stored data and data in transit. As a workload you're showing up in Fabric directly and users need to be aware what your commitments to Data Residency are. In the attestation, you need to define what our commitments are to the Data Residency of customer data. | Attestation | Optional | Required | [Data residency in Azure](https://azure.microsoft.com/explore/global-infrastructure/data-residency/) |
@@ -83,15 +82,15 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 ## Support
 
 
-| Category | Description | Certification method | Public Preview | General Availability | References |
+| Category | Description | Certification method | Preview | General Availability | References |
 |---|---|---|---|---|---|
 | Live site | Partner workloads are becoming an integral part of Fabric therefore our support teams need to be aware how you want to be contacted in case customers are reaching out to us directly. Partners need to provide the contact details as part of the certification process to us. | Attestation | Optional | Required | |
-| Supportability | Partners are responsible to define and document their support parameters (Service level agreement, contact methods, ...). This information needs to be linked from the Workload page and should always be accessible to customers. In addition the Marketplace criteria, need to be taken into account for the listing of the SaaS offer. | Attestation | Optional | Required | [Marketplace listing guidelines](https://learn.microsoft.com/partner-center/marketplace-offers/marketplace-criteria-content-validation) |
+| Supportability | Partners are responsible to define and document their support parameters (Service level agreement, contact methods, ...). This information needs to be linked from the Workload page and should always be accessible to customers. In addition the Marketplace criteria, need to be taken into account for the listing of the SaaS offer. | Attestation | Optional | Required | [Marketplace listing guidelines](https://learn.microsoft.com/partner-center/marketplace-offers/marketplace-criteria-content-validation) [Workload requirements](./supportability.md) |
 | Service Health & Availability | Partners need to host their a website that shows their service health and availability to customers. This information can be included in the Supportability page. | Attestation | Optional | Required | |
 
 ## Fabric features
 
-| Category | Description | Certification method | Public Preview | General Availability | Reference |
+| Category | Description | Certification method | Preview | General Availability | Reference |
 |---|---|---|---|---|---|
 | Application lifecycle management (ALM) | Microsoft Fabric's lifecycle management tools enable efficient product development, continuous updates, fast releases, and ongoing feature enhancements. | Attestation | Not Supported | Not Supported | [ALM in Fabric](../cicd/cicd-overview.md) |
 | Private Links | In Fabric, you can configure and use an endpoint that allows your organization to access Fabric privately. | Attestation | Not Supported | Not supported | [Private Links](../security/security-private-links-use.md) |
