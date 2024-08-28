@@ -1,6 +1,6 @@
 ---
 title: Git integration workspaces
-description: Learn how to use Git branches to work in your own isolated workspace environment and improve collaboration with your team.
+description: Learn how to develop an app using Git branches to work in your own isolated workspace environment and improve collaboration with your team.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
@@ -16,22 +16,26 @@ ms.custom:
 
 # Manage branches in Microsoft Fabric workspaces
 
-The Fabric workspace is a shared environment that accesses live items. Any changes made directly in the workspace override and affect all other workspace users. Therefore, Git best practice is for developers to work in isolation outside of the shared workspaces. There are two ways for a developer to work in their own protected workspace.
+The goal of this article is to present Fabric developers with different options for building CI/CD processes in Fabric, based on common customer scenarios. This article focuses more on the *continuous integration (CI)* part of the CI/CD process. For a discussion of the continuous delivery (CD) part, see [manage deployment pipelines](../deployment-pipelines/manage-deployment-pipelines.md).
 
-- [Develop using client tools](#develop-using-client-tools), such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for reports and semantic models, or [VS Code](https://code.visualstudio.com/) for Notebooks.
-- [Develop in a separate Fabric workspace](#develop-using-another-workspace). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
-
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
-
-To work with branches using Git integration, first connect the shared development team’s workspace to a single shared branch. For example, if your team uses one shared workspace, connect it to the *main* branch in your team’s repository, and sync between the workspace and the repo. If your team’s workflow has multiple shared branches like *Dev/Test/Prod* branches, each branch can be connected to a different workspace.
-
-Then, each developer can choose the isolated environment in which to work.
+This article outlines a few distinct integration options, but many organizations use a combination of them.  
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](../../includes/github-prereqs.md)]
 
-## Develop using client tools
+## Development process
+
+The Fabric workspace is a shared environment that accesses live items. Any changes made directly in the workspace override and affect all other workspace users. Therefore, Git best practice is for developers to work in isolation outside of the shared workspaces. There are two ways for a developer to work in their own protected workspace.
+
+- [Develop using client tools](#scenario-1---develop-using-client-tools), such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for reports and semantic models, or [VS Code](https://code.visualstudio.com/) for Notebooks.
+- [Develop in a separate Fabric workspace](#scenario-2---develop-using-another-workspace). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
+
+To work with branches using Git integration, first connect the shared development team’s workspace to a single shared branch. For example, if your team uses one shared workspace, connect it to the *main* branch in your team’s repository, and sync between the workspace and the repo. If your team’s workflow has multiple shared branches like *Dev/Test/Prod* branches, each branch can be connected to a different workspace.
+
+Then, each developer can choose the isolated environment in which to work.
+
+### Scenario 1 - Develop using client tools
 
 If the items you're developing are available in other tools, you can work on those items directly in the client tool. Not all items are available in every tool. Items that are only available in Fabric need to be developed in Fabric.
 
@@ -51,7 +55,7 @@ The workflow for developers using a client tool like Power BI Desktop should loo
 
 For a specific guidance on how to use the new Power BI Desktop file format in git, see [Source code format](./source-code-format.md).
 
-## Develop using another workspace
+### Scenario 2 - Develop using another workspace
 
 For a developer who works in the web, the flow would be as follows:
 
@@ -77,6 +81,10 @@ For a developer who works in the web, the flow would be as follows:
 Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes.
 
 See [branching out limitations](./git-integration-process.md#branching-out-limitations) for more information.
+
+## Release process
+
+The release process begins once new updates have completed a Pull Request process and merged into the team’s shared branch (such as ‘Main’, ‘Dev’ etc). From this point, we will outline the different options to build a release process in Fabric. You can find the different considerations for the release process in [manage deployment pipelines](../deployment-pipelines/manage-deployment-pipelines.md).
 
 ## Switch branches
 
