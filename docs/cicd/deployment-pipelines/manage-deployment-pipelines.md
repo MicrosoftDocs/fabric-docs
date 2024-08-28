@@ -116,7 +116,7 @@ Same goes for tooling- while we mention different tools here, you might choose o
 ## Related content
 
 * [Git integration branches](../git-integration/manage-branches.md)
-* [Automate Git integration by using APIs and Azure DevOps](../git-integration/automate-git-integration.md)
-* [Automate deployment pipeline by using Fabric APIs](./automate-deployment-pipelines.md)
+* [Automate Git integration by using APIs and Azure DevOps](../git-integration/git-automation.md)
+* [Automate deployment pipeline by using Fabric APIs](./pipeline-automation-fabric.md)
 * [Best practices for lifecycle management in Fabric](../best-practices-cicd.md)
 * [Power BI implementation planning: Deploy content]
