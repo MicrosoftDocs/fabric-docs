@@ -30,6 +30,7 @@ This document outlines the known limitations of Fabric notebooks to help you und
 ## Other Specific Limitations
 
 - **256** code cells could be executed for each notebook at most.
+- **7 days** is the longest running job time.
 - The upper limit for notebook activities or concurrent notebooks in ```notebookutils.notebook.runMultiple()``` is
 **50**.
 - The statement depth for ```%run``` is up to **5**, with a total of **1000** referenced cells.
