@@ -10,7 +10,7 @@ ms.date: 11/15/2023
 
 # Data workflows pricing for Data Factory in Microsoft Fabric
 
-Data workflows allows you to build and schedule Apache Airflow DAGs in Microsoft Fabric. For more details refer [What are Data Workflows]([What are Data Workflows? - Microsoft Fabric | Microsoft Learn](https://learn.microsoft.com/en-us/fabric/data-factory/data-workflows-concepts)).
+Data workflows allows you to build and schedule Apache Airflow DAGs in Microsoft Fabric. For more details refer [What are Data Workflows](data-workflows-concepts.md).
 
 
 
