@@ -17,6 +17,8 @@
         href: pricing-pipelines.md
       - name: Pricing Dataflow Gen2
         href: pricing-dataflows-gen2.md
+      - name: Pricing Data workflow
+        href: pricing-apache-airflow-job.md
       - name: Pricing examples
         items:
         - name: Data pipelines
