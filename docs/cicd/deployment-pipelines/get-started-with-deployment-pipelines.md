@@ -68,7 +68,7 @@ From the workspace, select **Create deployment pipeline**.
 
 ### [Customize the pipeline: new UI](#tab/new)
 
-   :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline-new.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
+:::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline-new.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
 
 To navigate between stages, zoom in and out with your mouse wheel or use the buttons in the top right. You can also drag the pipeline with your mouse to move it around.
 

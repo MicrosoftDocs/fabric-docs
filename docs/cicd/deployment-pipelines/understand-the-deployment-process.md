@@ -78,11 +78,11 @@ When content from the source stage is copied to the target stage, Fabric identif
 
 In the target stage, [item properties that aren't copied](understand-the-deployment-process.md#item-properties-that-are-not-copied), remain as they were before deployment. New content and new items are copied from the source stage to the target stage.
 
-### Autobinding
+## Autobinding
 
 In Fabric, when items are connected, one of the items depends on the other. For example, a report always depends on the semantic model it's connected to. A semantic model can depend on another semantic model, and can also be connected to several reports that depend on it. If there's a connection between two items, deployment pipelines always tries to maintain this connection.
 
-#### Autobinding across pipelines
+### Autobinding in the same workspace
 
 During deployment, deployment pipelines checks for dependencies. The deployment either succeeds or fails, depending on the location of the item that provides the data that the deployed item depends on.
 
@@ -102,7 +102,7 @@ Autobinding works only with items that are supported by deployment pipelines and
 
 ---
 
-#### Autobinding across workspaces
+### Autobinding across workspaces
 
 Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item it's connected to in the other pipeline. For example, if you have a report in the test stage of pipeline A that's connected to a semantic model in the test stage of pipeline B, deployment pipelines recognizes this connection.
 
@@ -168,7 +168,7 @@ When you deploy content that contains folders to a different stage, the folder h
 
 ### Folders representation
 
-#### [New folders representation](#tab/new)
+#### [New folders representation UI](#tab/new)
 
 The workspace content is shown as it's structured in the workspace. Folders are listed, and in order to see their items you need to select the folder. An item’s full path is shown at the top of the items list. Since a deployment is of items only, you can only select a folder that contains supported items. Selecting a folder for deployment means selecting all its items and subfolders with their items for a deployment.
 
@@ -176,7 +176,7 @@ This picture shows the contents of a folder inside the workspace. The full pathn
 
 :::image type="content" source="media/understand-the-deployment-process/folder-path-new.png" alt-text="Screenshot showing the contents of a folder with full pathname of the folder. The name includes the name of the folder.":::
 
-#### [Original folders representation](#tab/old)
+#### [Original folders representation UI](#tab/old)
 
 The workspace content is shown in Deployment pipelines as a flat list of items. An item’s full path is shown when hovering over its name on the list.
 
