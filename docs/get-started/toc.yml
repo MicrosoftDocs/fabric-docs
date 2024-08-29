@@ -161,6 +161,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: SQL queries fail intermittently
+      href: known-issues/known-issue-822-sql-queries-fail-intermittently.md
+    - name: Schema refresh for a data warehouse's semantic model fails
+      href: known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md
     - name: Subscriptions and exports with maps might produce wrong results
       href: known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md
     - name: Edit tables for a data warehouse's semantic model doesn't work
