@@ -66,14 +66,14 @@ from great_expectations_zipcode_expectations.expectations import expect_column_v
 
 ## Set up GX Data Context and Data Source
 
-In order to get started with Great Expectations, you first have to set up a GX [Data Context](https://docs.greatexpectations.io/docs/reference/learn/terms/data_context). The context serves as an entry point for GX operations and holds all relevant configurations.
+In order to get started with Great Expectations, you first have to set up a GX [Data Context](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/data_context). The context serves as an entry point for GX operations and holds all relevant configurations.
 
 
 ```python
 context = gx.get_context()
 ```
 
-You can now add your Fabric dataset to this context as a [Data Source](https://docs.greatexpectations.io/docs/reference/learn/terms/datasource) to start interacting with the data. This tutorial uses a standard Power BI sample semantic model [Retail Analysis Sample .pbix file](/power-bi/create-reports/sample-retail-analysis).
+You can now add your Fabric dataset to this context as a [Data Source](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/datasource) to start interacting with the data. This tutorial uses a standard Power BI sample semantic model [Retail Analysis Sample .pbix file](/power-bi/create-reports/sample-retail-analysis).
 
 
 ```python
@@ -82,7 +82,7 @@ ds = context.sources.add_fabric_powerbi("Retail Analysis Data Source", dataset="
 
 ## Specify Data Assets
 
-Define [Data Assets](https://docs.greatexpectations.io/docs/reference/learn/terms/data_asset) to specify the subset of data you'd like to work with. The asset can be as simple as full tables, or be as complex as a custom Data Analysis Expressions (DAX) query.
+Define [Data Assets](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/data_asset) to specify the subset of data you'd like to work with. The asset can be as simple as full tables, or be as complex as a custom Data Analysis Expressions (DAX) query.
 
 Here, you'll add multiple assets:
 * Power BI table
@@ -152,7 +152,7 @@ ds.add_powerbi_dax_asset(
 
 ## Expectations
 
-To add specific constraints to the assets, you first have to configure [Expectation Suites](https://docs.greatexpectations.io/docs/reference/learn/terms/expectation_suite). After adding individual [Expectations](https://docs.greatexpectations.io/docs/reference/learn/terms/expectation) to each suite, you can then update the Data Context set up in the beginning with the new suite. For a full list of available expectations, see the [GX Expectation Gallery](https://greatexpectations.io/expectations/).
+To add specific constraints to the assets, you first have to configure [Expectation Suites](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/expectation_suite). After adding individual [Expectations](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/expectation/) to each suite, you can then update the Data Context set up in the beginning with the new suite. For a full list of available expectations, see the [GX Expectation Gallery](https://greatexpectations.io/expectations/).
 
 Start by adding a "Retail Store Suite" with two expectations:
 * a valid zip code
@@ -231,7 +231,7 @@ context.add_or_update_expectation_suite(expectation_suite=suite_dmv)
 
 ## Validation
 
-To actually run the specified expectations against the data, first create a [Checkpoint](https://docs.greatexpectations.io/docs/reference/learn/terms/checkpoint) and add it to the context. For more information on Checkpoint configuration, see [Data Validation workflow](https://docs.greatexpectations.io/docs/oss/guides/validation/validate_data_overview).
+To actually run the specified expectations against the data, first create a [Checkpoint](https://docs.greatexpectations.io/docs/0.18/reference/learn/terms/checkpoint/) and add it to the context. For more information on Checkpoint configuration, see [Data Validation workflow](https://docs.greatexpectations.io/docs/0.18/oss/guides/validation/validate_data_overview/).
 
 
 ```python
@@ -357,7 +357,7 @@ From the plot, you can see that April and July were slightly out of range and ca
 
 ## Storing GX configuration
 
-As the data in your dataset changes over time, you might want to rerun the GX validations you just performed. Currently, the Data Context (containing the connected Data Assets, Expectation Suites, and Checkpoint) lives ephemerally, but it can be converted to a File Context for future use. Alternatively, you can instantiate a File Context (see [Instantiate a Data Context](https://docs.greatexpectations.io/docs/oss/guides/setup/configuring_data_contexts/instantiating_data_contexts/instantiate_data_context)).
+As the data in your dataset changes over time, you might want to rerun the GX validations you just performed. Currently, the Data Context (containing the connected Data Assets, Expectation Suites, and Checkpoint) lives ephemerally, but it can be converted to a File Context for future use. Alternatively, you can instantiate a File Context (see [Instantiate a Data Context](https://docs.greatexpectations.io/docs/0.18/oss/guides/setup/configuring_data_contexts/instantiating_data_contexts/instantiate_data_context/)).
 
 
 ```python
