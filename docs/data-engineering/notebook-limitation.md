@@ -21,7 +21,7 @@ This document outlines the known limitations of Fabric notebooks to help you und
 - Notebook content size is limited to **32 MB**.
 - The notebook snapshot size is limited to **32 MB**.
 - Rich dataframe table output is limited to **10K** rows and **5 MB** data size.
-- The maximum resource storage for both resources folder and environment is **500 MB**, with a single file size up to **100 MB**.
+- The maximum Resource storage for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**.
 
 ## Output table
 
