@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 08/23/2024
+ms.date: 08/28/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,12 +20,13 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  822  | Data Warehouse | [SQL queries fail intermittently](known-issues/known-issue-822-sql-queries-fail-intermittently.md) | August 28, 2024 |
+|  821  | Data Warehouse | [Schema refresh for a data warehouse's semantic model fails](known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md) | August 28, 2024 |
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md) | August 23, 2024 |
 |  818  | Data Warehouse | [Edit tables for a data warehouse's semantic model doesn't work](known-issues/known-issue-818-edit-tables-warehouse-semantic-model-not-work.md) | August 23, 2024 |
 |  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 |
 |  816  | Data Factory | [Pipeline deployment fails when parent contains deactivated activity](known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md) | August 23, 2024 |
 |  815  | Data Factory | [Dataflows automatically create tables from queries on Fabric destinations](known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md) | August 19, 2024 |
-|  814  | Power BI | [Scorecard dropdown slicers aren't visible when filtering](known-issues/known-issue-814-scorecard-dropdown-slicers-not-visible-filtering.md) | August 19, 2024 |
 |  811  | Data Engineering | [Fabric Runtime 1.3 causes invalid libraries](known-issues/known-issue-811-fabric-runtime-invalid-libraries.md) | August 16, 2024 |
 |  810  | Data Warehouse | [Inserting nulls into Data Warehouse tables fail with incorrect error message](known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md) | August 16, 2024 |
 |  809  | Data Factory | [Dataflow Gen2 refresh fails due to missing SQL analytics endpoint](known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md) | August 14, 2024 |
@@ -38,7 +39,6 @@ Select the **Title** to view more information about that specific known issue.
 |  797  | Data Engineering | [Localization blocks operations in a lakehouse](known-issues/known-issue-797-localization-blocks-operations-lakehouse.md) | July 31, 2024 |
 |  795  | Data Factory | [Multiple installations of on-premises data gateway causes pipelines to fail](known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md) | July 31, 2024 |
 |  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 |
-|  784  | Data Activator | [Data Activator alert created from visual with no dimensions doesn't work](known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md) | July 18, 2024 |
 |  782  | Data Engineering | [Tables aren't visible in the SQL analytics endpoint in schema enabled lakehouse](known-issues/known-issue-782-tables-not-visible-sql-endpoint-schema-enabled-lakehouse.md) | July 18, 2024 |
 |  778  | Power BI | [Direct Lake semantic model table changes don't work](known-issues/known-issue-778-direct-lake-semantic-model-table-changes-not-work.md) | July 16, 2024 |
 |  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 |
@@ -55,7 +55,6 @@ Select the **Title** to view more information about that specific known issue.
 |  723  | Data Warehouse | [Azure SQL Database change data doesn't propagate to mirror](known-issues/known-issue-723-sql-azure-database-change-data-not-propagate-mirror.md) | May 24, 2024 |
 |  728  | Data Engineering | [Environment doesn't work when runtime version is changed to Runtime 1.1](known-issues/known-issue-728-environment-not-work-runtime-version-changed-1-1.md) | May 23, 2024 |
 |  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
-|  722  | Data Warehouse | [Delta tables don't appear in SQL Analytics Endpoint Object Explorer](known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md) | May 16, 2024 |
 |  718  | OneLake | [OneLake under-reports transactions in the Other category](known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 |
 |  716  | Data Warehouse | [Response times when composing SQL queries slower than expected](known-issues/known-issue-716-response-times-composing-sql-queries-slower.md) | May 13, 2024 |
 |  715  | Power BI | [TMDL semantic models won't open in Desktop after web edited](known-issues/known-issue-715-semantic-models-tmdl-not-open-desktop.md) | May 2, 2024 |
@@ -85,6 +84,9 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  814  | Power BI | [Scorecard dropdown slicers aren't visible when filtering](known-issues/known-issue-814-scorecard-dropdown-slicers-not-visible-filtering.md) | August 19, 2024 | Fixed: August 28, 2024 |
+|  784  | Data Activator | [Data Activator alert created from visual with no dimensions doesn't work](known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md) | July 18, 2024 | Fixed: August 28, 2024 |
+|  722  | Data Warehouse | [Delta tables don't appear in SQL Analytics Endpoint Object Explorer](known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md) | May 16, 2024 | Fixed: August 28, 2024 |
 |  755  | Real-Time Intelligence | [Real-Time hub **Set Alert** fails on prior version of an eventstream](known-issues/known-issue-755-real-time-hub-set-alert-fails-eventstream.md) | June 20, 2024 | Fixed: August 23, 2024 |
 |  740  | Real-Time Intelligence | [Eventstreams paused for more than two hours don't show data](known-issues/known-issue-740-eventstreams-paused-two-hours-not-show-data.md) | June 11, 2024 | Fixed: August 23, 2024 |
 |  736  | Real-Time Intelligence | [Previous Eventstream UX loads instead of new UX](known-issues/known-issue-736-previous-eventstream-ux-loads-instead-new-ux.md) | June 6, 2024 | Fixed: August 23, 2024 |
