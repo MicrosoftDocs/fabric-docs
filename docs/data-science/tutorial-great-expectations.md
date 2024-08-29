@@ -7,7 +7,7 @@ ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 11/14/2023
+ms.date: 08/29/2024
 #Customer intent: As a data scientist, I want to validate my data to ensure it meets my expectations.
 ---
 
@@ -49,7 +49,7 @@ In this section, you set up a notebook environment with the necessary modules an
 
 ```python
 # install libraries
-%pip install semantic-link great-expectations great_expectations_experimental great_expectations_zipcode_expectations
+%pip install semantic-link 'great-expectations<1.0' great_expectations_experimental great_expectations_zipcode_expectations
 
 # load %%dax cell magic
 %load_ext sempy
