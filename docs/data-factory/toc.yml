@@ -71,14 +71,16 @@
       href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
   - name: Tutorials
     items:
-    - name: Introduction - Data Factory tutorial
-      href: tutorial-end-to-end-introduction.md
-    - name: Module 1 - Create a pipeline
-      href: tutorial-end-to-end-pipeline.md
-    - name: Module 2 - Transform data with a dataflow
-      href: tutorial-end-to-end-dataflow.md
-    - name: Module 3 - Automate and send notification
-      href: tutorial-end-to-end-integration.md
+    - name: End-to-end Data Factory tutorial
+      items:
+      - name: Introduction
+        href: tutorial-end-to-end-introduction.md
+      - name: Module 1 - Create a pipeline
+        href: tutorial-end-to-end-pipeline.md
+      - name: Module 2 - Transform data with a dataflow
+        href: tutorial-end-to-end-dataflow.md
+      - name: Module 3 - Automate and send notification
+        href: tutorial-end-to-end-integration.md
     - name: SAP CDC to Fabric OneLake using ADF
       href: change-data-capture-from-sap-to-onelake-with-azure-data-factory.md
   - name: Connectors
