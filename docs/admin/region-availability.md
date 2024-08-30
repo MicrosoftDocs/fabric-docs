@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.topic: overview
-ms.date: 05/31/2024
+ms.date: 08/30/2024
 ---
 
 # Fabric region availability
@@ -26,11 +26,13 @@ For more information about purchasing a Fabric subscription, see [Buy a Microsof
 | Canada East       | France Central      |             |                    | Central India      |
 | East US           | Germany West Central|             |                    | East Asia          |
 | East US 2         | Norway East         |             |                    | Japan East         |
+| Central US        | Italy North         |             |                    |                    |
 | North Central US  | Sweden Central      |             |                    | Korea Central      |
 | South Central US  | Switzerland North   |             |                    | Southeast Asia     |
 | West US           | Switzerland West    |             |                    | South India        |
 | West US 2         | UK South            |             |                    |                    |
 | West US 3         | UK West             |             |                    |                    |
+|                   | Poland Central      |             |                    |                    |
 
 ## Related content
 
