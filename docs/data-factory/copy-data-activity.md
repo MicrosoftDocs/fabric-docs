@@ -185,9 +185,9 @@ See the following table for the description of each setting.
 
 |Setting  |Description  |JSON script property |
 |---------|---------|---------|
-|**Intelligent throughput optimization** |Specify to optimize the throughput. You can choose from: <br>• **Auto**<br>• **Standard**<br>• **Balanced**<br>• **Maximum**<br> When you choose **Auto**, the optimal setting is dynamically applied based on your source-destination pair and data pattern. You can also customize your throughput, and custom value can be 2-256 while higher value implies more gains.  | dataIntegrationUnits |
+|**Intelligent throughput optimization** |Specify to optimize the throughput. You can choose from: <br>• **Auto**<br>• **Standard**<br>• **Balanced**<br>• **Maximum**<br><br> When you choose **Auto**, the optimal setting is dynamically applied based on your source-destination pair and data pattern. You can also customize your throughput, and custom value can be 2-256 while higher value implies more gains.  | dataIntegrationUnits |
 |**Degree of copy parallelism** | Specify the degree of parallelism that data loading would use. | parallelCopies |
-|**Fault tolerance** |When selecting this option, you can ignore some errors occurred in the middle of copy process. For example, incompatible rows between source and destination store, file being deleted during data movement, etc.  |• enableSkipIncompatibleRow <br> • skipErrorFile: <br>  &nbsp; fileMissing <br>&nbsp; fileForbidden <br> &nbsp; invalidFileName |
+|**Fault tolerance** |When selecting this option, you can ignore some errors occurred in the middle of copy process. For example, incompatible rows between source and destination store, file being deleted during data movement, etc.  |• enableSkipIncompatibleRow <br> • skipErrorFile: <br>  &nbsp;&nbsp; fileMissing <br>&nbsp;&nbsp; fileForbidden <br> &nbsp;&nbsp; invalidFileName |
 |**Enable logging** |When selecting this option, you can log copied files, skipped files and rows.| / |
 |**Enable staging** | Specify whether to copy data via an interim staging store. Enable staging only for the beneficial scenarios.| enableStaging |
 | **Data store type** | When enable staging, you can choose **Workspace** and **External** as your data store type.| / |
@@ -197,6 +197,7 @@ See the following table for the description of each setting.
 | **Staging account connection** |Specify the connection of an [Azure Blob Storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md), which refers to the instance of Storage that you use as an interim staging store. Create a staging connection if you don't have it. | connection (under *`externalReferences`*) |
 | **Storage path** | Specify the path that you want to contain the staged data. If you do not provide a path, the service creates a container to store temporary data. Specify a path only if you use Storage with a shared access signature, or you require temporary data to be in a specific location. | path |
 | **Enable compression** | Specifies whether data should be compressed before it's copied to the destination. This setting reduces the volume of data being transferred. | enableCompression |
+| **Preserve** | Specify whether to preserve metadata/ACLs during data copy. | preserve |
 
 >[!NOTE]
 > If you use staged copy with compression enabled, the service principal authentication for staging blob connection isn't supported.
