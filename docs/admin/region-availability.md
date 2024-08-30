@@ -25,14 +25,14 @@ For more information about purchasing a Fabric subscription, see [Buy a Microsof
 | Canada Central    | West Europe         |             |                    | Australia Southeast|
 | Canada East       | France Central      |             |                    | Central India      |
 | Central US        | Germany West Central|             |                    | East Asia          |
-| East US           | Norway East         |             |                    | Japan East         |
-| East US 2         | Italy North         |             |                    | Korea Central      |
-| North Central US  | Sweden Central      |             |                    | Southeast Asia     |
-| South Central US  | Switzerland North   |             |                    | South India        |
-| West US           | Switzerland West    |             |                    |                    |
-| West US 2         | UK South            |             |                    |                    |
-| West US 3         | UK West             |             |                    |                    |
-|                   | Poland Central      |             |                    |                    |
+| East US           | Italy North         |             |                    | Japan East         |
+| East US 2         | Norway East         |             |                    | Korea Central      |
+| North Central US  | Poland Central      |             |                    | Southeast Asia     |
+| South Central US  | Sweden Central      |             |                    | South India        |
+| West US           | Switzerland North   |             |                    |                    |
+| West US 2         | Switzerland West    |             |                    |                    |
+| West US 3         | UK South            |             |                    |                    |
+|                   | UK West             |             |                    |                    |
 
 ## Related content
 
