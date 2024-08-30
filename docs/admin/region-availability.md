@@ -24,15 +24,15 @@ For more information about purchasing a Fabric subscription, see [Buy a Microsof
 | Brazil South      | North Europe        | UAE North   | South Africa North | Australia East     |
 | Canada Central    | West Europe         |             |                    | Australia Southeast|
 | Canada East       | France Central      |             |                    | Central India      |
-| East US           | Germany West Central|             |                    | East Asia          |
-| East US 2         | Norway East         |             |                    | Japan East         |
-| Central US        | Italy North         |             |                    |                    |
-| North Central US  | Sweden Central      |             |                    | Korea Central      |
-| South Central US  | Switzerland North   |             |                    | Southeast Asia     |
-| West US           | Switzerland West    |             |                    | South India        |
-| West US 2         | UK South            |             |                    |                    |
-| West US 3         | UK West             |             |                    |                    |
-|                   | Poland Central      |             |                    |                    |
+| Central US        | Germany West Central|             |                    | East Asia          |
+| East US           | Italy North         |             |                    | Japan East         |
+| East US 2         | Norway East         |             |                    | Korea Central      |
+| North Central US  | Poland Central      |             |                    | Southeast Asia     |
+| South Central US  | Sweden Central      |             |                    | South India        |
+| West US           | Switzerland North   |             |                    |                    |
+| West US 2         | Switzerland West    |             |                    |                    |
+| West US 3         | UK South            |             |                    |                    |
+|                   | UK West             |             |                    |                    |
 
 ## Related content
 
