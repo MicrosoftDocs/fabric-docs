@@ -197,6 +197,7 @@ See the following table for the description of each setting.
 | **Staging account connection** |Specify the connection of an [Azure Blob Storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md), which refers to the instance of Storage that you use as an interim staging store. Create a staging connection if you don't have it. | connection (under *`externalReferences`*) |
 | **Storage path** | Specify the path that you want to contain the staged data. If you do not provide a path, the service creates a container to store temporary data. Specify a path only if you use Storage with a shared access signature, or you require temporary data to be in a specific location. | path |
 | **Enable compression** | Specifies whether data should be compressed before it's copied to the destination. This setting reduces the volume of data being transferred. | enableCompression |
+|  |  |  |
 | **Preserve** | Specify whether to preserve metadata/ACLs during data copy. | preserve |
 
 >[!NOTE]
