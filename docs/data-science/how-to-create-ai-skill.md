@@ -2,7 +2,7 @@
 title: Create an AI skill (preview)
 description: Learn how to create an AI skill.
 author: fbsolo-ms1
-ms.author: avangrootel
+ms.author: amjafari
 ms.reviewer: franksolomon
 reviewer: avangrootel
 ms.service: fabric

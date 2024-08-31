@@ -2,7 +2,7 @@
 title: AI skill scenario (preview)
 description: Learn how to configure an AI skill on the AdventureWorks dataset.
 author: fbsolo-ms1
-ms.author: avangrootel
+ms.author: amjafari
 ms.reviewer: franksolomon
 reviewer: avangrootel
 ms.service: fabric
