@@ -23,7 +23,8 @@ Are you ready for conversations about your data? You can create AI experiences w
 
 ## Prerequisites
 
-- An F64 Fabric capacity or higher.
+- A paid F64 or higher Fabric capacity resource.
+- [AI skill tenant switch](./ai-skill-tenant-switch.md) is enabled.
 - [Copilot tenant switch](../admin/service-admin-portal-copilot.md) is enabled.
 - [Cross-geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
 - A warehouse or lakehouse with data.
