@@ -35,14 +35,14 @@ Fabric FE makes an API call to Fabric BE to fetch the required information, incl
 
 It's a common practice in Fabric to allow creating an item with no user input, except the item name. It isn't expected that such items do anything meaningful (therefore "empty"), but they appear in the workspace and can participate in basic flows and operations. Moreover, in some cases they can even be functional, based on reasonable defaults set by the workload.
 
-This flow starts with prompting the user to provide a name for the new item. Having the name, the iframe makes a call to the host JS API to initiate the item creation flow, passing optional JSON object as "creation payload," and the host will then make a call to Fabric BE. Authentication is handled by the host. Fabric BE resolves the workload BE URL based on the context, and calls `CreateItem` workload API, passing the "creation payload" sent by the X. The workload BE is expected to store the new item metadata, possibly allocate some resources (although this step can be deferred to a later point), and do any other relevant work. When item creation is completed from the workload BE perspective, it needs to notify Fabric BE on item metadata change. The same process needs to happen on any update of the item metadata, and so the subject token needs to be exchanged for the Fabric BE audience.
+This flow starts with prompting the user to provide a name for the new item. Having the name, the iframe makes a call to the host JS API to initiate the item creation flow, passing optional JSON object as "creation payload," and the host will then make a call to Fabric BE. Authentication is handled by the host. Fabric BE resolves the workload BE URL based on the context, and calls the `CreateItem` workload API, passing the "creation payload" sent by the iframe. The workload BE is expected to store the new item metadata, possibly allocate some resources (although this step can be deferred to a later point), and do any other relevant work. When item creation is completed from the workload BE perspective, it needs to notify Fabric BE on item metadata change. The same process needs to happen on any update of the item metadata, and so the subject token needs to be exchanged for the Fabric BE audience.
 
 > [!NOTE]  
 > The API for notifying item metadata update is not currently available.
 
 ## Load the item
 
-To edit an item, the iframe needs to load its metadata. This process is same for loading "empty" and "initialized" items. The iframe makes a call to the host JS API, which calls Fabric BE, which in turn call GetItemPayload workload API. The workload BE can return a JSON object, which is then passed to the X. Authentication is handled by the host.
+To edit an item, the iframe needs to load its metadata. This process is same for loading "empty" and "initialized" items. The iframe makes a call to the host JS API, which calls Fabric BE, which in turn call GetItemPayload workload API. The workload BE can return a JSON object, which is then passed back to the iframe. Authentication is handled by the host.
 
 ## Edit the item
 
