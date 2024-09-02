@@ -36,7 +36,7 @@ With optimistic job admission with same capacity as above, 24 jobs can be admitt
 
 ## Scale jobs with Spark autoscale
 
-When you enable autoscale for Spark pools, jobs exuecute with their minimum node configuration. During runtime, scaling may occur. These requests go through the job admission control. Approved requests scale up to the maximum limits based on total available cores. Rejected requests don't affect active jobs; they continue to run with their current configuration until cores become available.
+When you enable autoscale for Spark pools, jobs execute with their minimum node configuration. During runtime, scaling may occur. These requests go through the job admission control. Approved requests scale up to the maximum limits based on total available cores. Rejected requests don't affect active jobs; they continue to run with their current configuration until cores become available.
 
 :::image type="content" source="media/job-admission-and-management/job-scale-up.gif" alt-text="Screenshot showing a job scaling up with optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/job-scale-up.gif":::
 
