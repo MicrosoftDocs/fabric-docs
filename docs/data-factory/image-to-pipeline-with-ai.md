@@ -333,5 +333,4 @@ Once your pipeline is created, you can edit it in your Fabric workspace, to see 
 ## Related content
 
 - [How to monitor data pipeline runs in Microsoft Fabric](monitor-pipeline-runs.md)
-- [Secure your Azure OpenAI service](/azure/ai-services/openai/how-to-manage-access-security)
 - [Azure OpenAI Service documentation](/azure/ai-services/openai/overview)
