@@ -9,15 +9,15 @@ ms.date: 08/29/2024
 
 # From image to pipeline in Data Factory for Microsoft Fabric
 
-Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios and empowers you with a modern data integration experience to ingest, prepare and transform data from a rich set of data sources. Within Data Factory, you can create data pipelines to leverage out-of-the-box rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
+Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios and empowers you with a modern data integration experience to ingest, prepare, and transform data from a rich set of data sources. Within Data Factory, you can create data pipelines to use out-of-the-box rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
 
-Now, with the `gpt-4o` AI model in Azure, we are pushing the limits of what you can do with Data Factory and making it possible for you to create data solutions from just an image.
+Now, with the `gpt-4o` AI model in Azure, we're pushing the limits of what you can do with Data Factory and making it possible for you to create data solutions from just an image.
 
-What do you need to get started? Just a Microsoft Fabric account and an idea! We will show you how transform a whiteboard idea to a Fabric Data Factory data pipeline using just a picture and `gpt-4o`.
+What do you need to get started? Just a Microsoft Fabric account and an idea. Here, we show you how to transform a whiteboard idea to a Fabric Data Factory data pipeline using just a picture and `gpt-4o`.
 
 ## Prerequisites
 
-Before you create the solution, ensure the following prerequisites are setup in Azure and Fabric:
+Before you create the solution, ensure the following prerequisites are set up in Azure and Fabric:
 
 - Microsoft Fabric enabled workspace.
 - Azure OpenAI account with an API key and a `gpt-4o` model deployed.
@@ -26,19 +26,19 @@ Before you create the solution, ensure the following prerequisites are setup in 
 > [!WARNING]
 > API keys are sensitive information and production keys should always only be stored securely in Azure Key Vault or other secure stores. This sample uses an OpenAI key for demonstration purposes only. For production code, consider using Microsoft Entra ID instead of key authentication for a more secure environment that doesn't rely on key sharing or risk a security breach if a key is compromised.
 
-## Step 1: Upload your image(s) to a Lakehouse
+## Step 1: Upload your image to a Lakehouse
 
-Before you can analyze the images, you need to upload them to your Lakehouse. Log in to your Microsof Fabric account and navigate to your workspace. Select **+ New** and create a new Lakehouse.
+Before you can analyze the image, you need to upload it to your Lakehouse. Sign in to your Microsoft Fabric account and navigate to your workspace. Select **+ New** and create a new Lakehouse.
 
 :::image type="content" source="media/image-to-pipeline-with-ai/create-new-lakehouse.png" alt-text="Screenshot showing where to create a new Lakehouse.":::
 
-Once your Lakehouse is setup, create a new folder under **files**, called **images**, and upload the image(s) there.
+Once your Lakehouse is set up, create a new folder under **files**, called **images**, and upload the image there.
 
 :::image type="content" source="media/image-to-pipeline-with-ai/image-to-convert.png" alt-text="Screenshot showing a drawn image to be converted to a pipeline.":::
 
 ## Step 2: Create the notebook in your workspace
 
-Now we just need to create a notebook to execute some simple Python code that will create summarize and create the pipeline in the workspace!
+Now we just need to create a notebook to execute some Python code that summarizes and creates the pipeline in the workspace.
 
 Create a new Notebook in your workspace:
 
@@ -84,7 +84,7 @@ Run this code block to configure the environment.
 
 ## Step 3: Use `gpt-4o` to describe the pipeline (optional)
 
-This step is optional, but shows you how simple it is to extract details from the image, which could be relevant for your purposes. If you don't execute this step, you can still generate the pipeline JSON in the next step.
+This step is optional, but shows you how simple it's to extract details from the image, which could be relevant for your purposes. If you don't execute this step, you can still generate the pipeline JSON in the next step.
 
 First select **Edit** on the main menu for the Notebook, and then select the **+ Add code cell below** button on the toolbar, to add a new block of code after the previous one.
 
@@ -141,7 +141,7 @@ Run this code block to see the AI summarization of the image and its components.
 
 ## Step 4: Generate the pipeline JSON
 
-Add another code block to the Notebook, and add the following code. This code will analyze the image and generate the pipeline JSON.
+Add another code block to the Notebook, and add the following code. This code analyzes the image and generate the pipeline JSON.
 
 ```python
 # Analyze the image and generate the pipeline JSON
@@ -188,11 +188,11 @@ pipeline_json = response_json["choices"][0]['message']['content']
 print(pipeline_json)
 ```
 
-Run this code block to see generate the pipeline JSON from the image.
+Run this code block to generate the pipeline JSON from the image.
 
 ## Step 4: Create the pipeline with Fabric REST APIs
 
-Now that you obtained the pipeline JSON, you can create it directly using the Fabric REST APIs. Add another code block to the Notebook, and add the following code. This code will create the pipeline in your workspace.
+Now that you obtained the pipeline JSON, you can create it directly using the Fabric REST APIs. Add another code block to the Notebook, and add the following code. This code creates the pipeline in your workspace.
 
 ```python
 # Convert pipeline JSON to Fabric REST API request
@@ -320,7 +320,7 @@ print("Workspace pipelines after creation:")
 df_items
 ```
 
-You will see output confirming the name of the pipeline created, and showing a list of your workspace's pipelines, so you can validate it is present.
+Output confirms the name of the pipeline created, and showing a list of your workspace's pipelines, so you can validate it's present.
 
 :::image type="content" source="media/image-to-pipeline-with-ai/notebook-output.png" alt-text="Screenshot showing the output of the notebook after the pipeline was created.":::
 
@@ -328,7 +328,7 @@ You will see output confirming the name of the pipeline created, and showing a l
 
 Once your pipeline is created, you can edit it in your Fabric workspace, to see your image implemented as a pipeline. You can select each activity to configure it as you wish, and then run and monitor it as you require.
 
-:::image type="content" source="media/image-to-pipeline-with-ai/generated-pipeline.png" alt-text="Screenshot showing the pipeline generated by the notebook with AI.":::
+:::image type="content" source="media/image-to-pipeline-with-ai/generated-pipeline.png" lightbox="media/image-to-pipeline-with-ai/generated-pipeline.png" alt-text="Screenshot showing the pipeline generated by the notebook with AI.":::
 
 ## Related content
 
