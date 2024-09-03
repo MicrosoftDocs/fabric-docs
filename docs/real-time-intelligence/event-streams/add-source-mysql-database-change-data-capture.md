@@ -65,7 +65,7 @@ SHOW GRANTS FOR user;
 ```
 
 
-For more information about granting the required permissions to the user, see [Debezium connector for MySQL :: Debezium Documentation](https://debezium.io/documentation/reference/stable/connectors/mysql.html#mysql-creating-user).
+For more information about granting the required permissions to the user, see [Debezium connector for MySQL: Debezium Documentation](https://debezium.io/documentation/reference/stable/connectors/mysql.html#mysql-creating-user).
 
 ## Enable the binlog
 

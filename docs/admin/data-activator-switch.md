@@ -64,7 +64,7 @@ Consider the Data Activator setting a recommendation for the entire organization
 
 Follow these steps to enable Data Activator for a specific capacity.
 
-1. Navigate to the [capacity settings](service-admin-portal-capacity-settings.md) in the admin portal.
+1. Navigate to the [capacity settings](capacity-settings.md) in the admin portal.
 
 2. Select the capacity you want to enable Data Activator for.
 
