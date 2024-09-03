@@ -52,8 +52,6 @@ items:
     href: service-admin-custom-branding.md
   - name: Manage Azure connections
     href: service-admin-portal-azure-connections.md
-  - name: Manage capacity settings
-    href: service-admin-portal-capacity-settings.md
   - name: Manage embed codes
     href: service-admin-portal-embed-codes.md
   - name: Manage Fabric identities
