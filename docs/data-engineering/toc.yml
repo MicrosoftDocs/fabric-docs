@@ -176,7 +176,9 @@ items:
   - name: Create and use notebooks
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
-    href: author-execute-notebook.md  
+    href: author-execute-notebook.md 
+  - name: Notebook known limitation
+    href: notebook-limitation.md 
   - name: NotebookUtils
     href: notebook-utilities.md
     displayName: MSSparkUtils
