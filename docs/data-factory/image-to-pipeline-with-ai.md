@@ -299,14 +299,13 @@ payload = {
         }
 }
 
-print(f"A pipeline - {pipelineName} - will be created with the following payload:")
+print(f"Creating pipeline: {pipelineName}")
 
 # Call the Fabric REST API to generate the pipeline
 client = fabric.FabricRestClient()
 workspaceId = fabric.get_workspace_id()
 try:
     response = client.post(f"/v1/workspaces/{workspaceId}/items",json=payload)
-    print(response)
     if response.status_code != 201:
         raise FabricHTTPException(response)
 except WorkspaceNotFoundException as e:
@@ -321,6 +320,12 @@ print("Workspace pipelines after creation:")
 df_items
 ```
 
+You will see output confirming the name of the pipeline created, and showing a list of your workspace's pipelines, so you can validate it is present.
+
+:::image type="content" source="media/image-to-pipeline-with-ai/notebook-output.png" alt-text="Screenshot showing the output of the notebook after the pipeline was created.":::
+
 ## Step 6: Run and monitor your pipeline
+
+
 
 ## Related content
