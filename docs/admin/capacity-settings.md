@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 07/17/2024
+ms.date: 09/03/2024
 ---
 
 # Manage your Fabric capacity
@@ -278,7 +278,7 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 
 ### Delete a capacity
 
-When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they're deleted. If you have defined a [workspace retention policy](portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified. For more information about what happens to your files when you delete a capacity, see [Fabric capacity deletion](service-admin-portal-capacity-settings.md#fabric-capacity-deletion).
+When you delete a capacity, the workspaces associated with the capacity are retained for seven days before they're deleted. If you have defined a [workspace retention policy](portal-workspaces.md#workspace-retention) your workspaces are retained for the period specified. For more information about what happens to your files when you delete a capacity, see [Fabric capacity deletion](capacity-settings.md#delete-a-capacity).
 
 Ongoing operations are stopped or canceled and scheduled operations are canceled.
 
@@ -392,7 +392,7 @@ This table summarizes the actions you can take in the details section.
 
 * Tenant settings delegated by the Fabric Admin.
 
-By default, delegated tenant settings inherit their configuration from the tenant. To override this configuration, follow these steps:
+By default, delegated tenant settings inherit their configuration from the tenant. To override this configuration, follow the steps below. When the tenant setting delegation is enabled, you can disable delegation by clearing the *Override tenant admin selection* checkbox.
 
 1. From the **Delegate tenant setting** list, open the setting you want to delegate permissions for.
 
