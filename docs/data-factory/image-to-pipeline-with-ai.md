@@ -13,6 +13,243 @@ Data factory in Microsoft Fabric provides cloud-scale data movement and data tra
 
 Now, with the `gpt4o` AI model in Azure, we are pushing the limits of what you can do with Data Factory and making it possible for you to create data solutions from just an image.
 
-What do you need to get started?  
+What do you need to get started? Just a Microsoft Fabric account and an idea! We will show you how transform a whiteboard idea to a Fabric Data Factory data pipeline using just a picture and `gpt-4o`.
 
-Just a Microsoft Fabric account and an idea! We will show you how transform a whiteboard idea to a Fabric Data Factory data pipeline using just a picture and GPT40. 
+## Prerequisites
+
+Before you create the solution, ensure the following prerequisites are setup in Azure and Fabric:
+
+- Microsoft Fabric enabled workspace.
+- Azure OpenAI account with an API key and a `gpt-4o` model deployed.
+- An image of what you want your pipeline to look like.
+
+> [!WARNING]
+> API keys are sensitive information and production keys should always only be stored securely in Azure Key Vault or other secure stores. This sample uses an OpenAI key for demonstration purposes only. For production code, consider using Microsoft Entra ID instead of key authentication for a more secure environment that doesn't rely on key sharing or risk a security breach if a key is compromised.
+
+## Step 1: Upload your image(s) to a Lakehouse
+
+Before you can analyze the images, you need to upload them to your Lakehouse. Log in to your Microsof Fabric account and navigate to your workspace. Select **+ New** and create a new Lakehouse.
+
+:::image type="content" source="media/image-to-pipeline-with-ai/create-new-lakehouse.png" alt-text="Screenshot showing where to create a new Lakehouse.":::
+
+Once your Lakehouse is setup, create a new folder under **files**, called **images**, and upload the image(s) there.
+
+:::image type="content" source="media/image-to-pipeline-with-ai/image-to-convert.png" alt-text="Screenshot showing a drawn image to be converted to a pipeline.":::
+
+## Step 2: Create the notebook in your workspace
+
+Now we just need to create a notebook to execute some simple Python code that will create summarize and create the pipeline in the workspace!
+
+Create a new Notebook in your workspace:
+
+:::image type="content" source="media/image-to-pipeline-with-ai/create-new-notebook.png" alt-text="Screenshot showing how to create a new Notebook in a Data Factory for Fabric workspace.":::
+
+In the code area, enter the following code, which sets up the required libraries and configuration and encodes the image:
+
+```python
+# Configuration
+AZURE_OPENAI_KEY = "a72f9ebc894c4d088e22724878fb30b3"
+AZURE_OPENAI_GPT4O_ENDPOINT = "https://imageflow-poc-resource.openai.azure.com/openai/deployments/gtp40-deply-1/chat/completions?api-version=2024-05-01-preview"
+IMAGE_PATH = "/lakehouse/default/files/images/<your_image>.png"
+
+# Install the OpenAI library
+!pip uninstall --yes openai
+!pip install openai
+%pip install openai --upgrade
+# Install the semantic-link library 
+!pip install semantic-link --q 
+
+# Basic imports
+import os
+import requests
+import base64
+import json
+import sempy.fabric as fabric
+
+# Authentication imports
+from azure.keyvault.secrets import SecretClient
+from azure.identity import DefaultAzureCredential
+
+# Import OpenAI
+import openai
+
+# Load the image
+image_bytes = open(IMAGE_PATH, 'rb').read()
+encoded_image = base64.b64encode(image_bytes).decode('ascii')
+
+## Request headers
+headers = {
+    "Content-Type": "application/json",
+    "api-key": AZURE_OPENAI_KEY,
+}
+```
+
+Run this code block to validate your Azure OpenAI connection is working, and configure the environment.
+
+## Step 3: Use `gpt-4o` to describe the pipeline (optional)
+
+This step is optional, but shows you how simple it is to extract details from the image, which could be relevant for your purposes. If you don't execute this step, you can still generate the pipeline JSON in the next step.
+
+First select **Edit** on the main menu for the Notebook, and then select the **+ Add code cell below** button on the toolbar, to add a new block of code after the previous one.
+
+:::image type="content" source="media/image-to-pipeline-with-ai/add-new-code-cell-below.png" alt-text="Screenshot showing where to add a new code cell below the current one in the Notebook editor.":::
+
+Then add the following code to the new section. This code shows how `gpt4o` can interpret and summarize the image to understand its contents.
+
+```python
+# Summarize the image
+
+## Request payload
+payload = {
+    "messages": [
+    {
+        "role": "system",
+        "content": [
+        {
+            "type": "text",
+            "text": "You are an AI assistant that helps an Azure engineer understand an image that likely shows a Data Factory in Microsoft Fabric data pipeline. Show list of pipeline activities and how they are connected."
+        }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+        {
+            "type": "image_url",
+            "image_url": {
+            "url": f"data:image/jpeg;base64,{encoded_image}"
+            }
+        }
+        ]
+    }
+    ],
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "max_tokens": 800
+}
+
+## Send request
+try:
+    response = requests.post(AZURE_OPENAI_GPT4O_ENDPOINT, headers=headers, json=payload)
+    response.raise_for_status()  # Will raise an HTTPError if the HTTP request returned an unsuccessful status code
+except requests.RequestException as e:
+    raise SystemExit(f"Failed to make the request. Error: {e}")
+
+response_json = response.json()
+
+## Show AI response
+print(response_json["choices"][0]['message']['content'])
+```
+
+Run this code block to see the AI summarization of the image and its components.
+
+## Step 4: Generate the pipeline JSON
+
+Add another code block to the Notebook, and add the following code. This code will analyze the image and generate the pipeline JSON.
+
+```python
+# Analyze the image and generate the pipeline JSON
+
+## Setup new payload
+payload = {
+    "messages": [
+    {
+        "role": "system",
+        "content": [
+        {
+            "type": "text",
+            "text": "You are an AI assistant that helps an Azure engineer understand an image that likely shows a Data Factory in Microsoft Fabric data pipeline. Succeeded is denoted by a green line, and Fail is denoted by a red line. Generate an ADF v2 pipeline JSON with what you see. Return ONLY the JSON text required, without any leading or trailing markdown denoting a code block."
+        }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+        {
+            "type": "image_url",
+            "image_url": {
+            "url": f"data:image/jpeg;base64,{encoded_image}"
+            }
+        }
+        ]
+    }
+    ],
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "max_tokens": 800
+}
+
+## Send request
+try:
+    response = requests.post(AZURE_OPENAI_GPT40_ENDPOINT, headers=headers, json=payload)
+    response.raise_for_status()  # Will raise an HTTPError if the HTTP request returned an unsuccessful status code
+except requests.RequestException as e:
+    raise SystemExit(f"Failed to make the request. Error: {e}")
+
+## Get JSON from request and show
+response_json = response.json()
+pipeline_json = response_json["choices"][0]['message']['content']
+print(pipeline_json)
+```
+
+Run this code block to see generate the pipeline JSON from the image.
+
+## Step 4: Create your pipeline with Fabric REST APIs
+
+Now that you obtained the pipeline JSON, you can create it directly using the Fabric REST APIs. Add another code block to the Notebook, and add the following code. This code will create the pipeline in your workspace.
+
+```python
+json_data = json.loads(pipeline_json)
+
+# Show all Activities and DependsOn and to be created
+activities = json_data["properties"]["activities"]
+
+print ("Activities to be created")
+for activity in activities:
+    print (activity["name"])
+
+print ("DependsOn to be created")
+for activity in activities:
+    print (activity["name"] )
+    if 'dependsOn' in activity:
+        activity_dependent_list = activity["dependsOn"] 
+        print (activity_dependent_list)
+        
+        if ( len(activity_dependent_list) > 0 ):
+            print (activity_dependent_list[0]["activity"])
+
+client = fabric.FabricRestClient()
+
+# Create a Fabric Item
+def create_fabric_item(payload:dict, workspace=None):
+    if workspace is None:
+        workspaceId = fabric.get_workspace_id()
+    else:
+        workspaceId = fabric.resolve_workspace_id(workspace)
+
+    try:
+        response = client.post(f"/v1/workspaces/{workspaceId}/items",json= payload)
+        print(response)
+        
+        if response.status_code != 201:
+            raise FabricHTTPException(response)
+
+    except WorkspaceNotFoundException as e:
+        print("Caught a WorkspaceNotFoundException:", e)
+    except FabricHTTPException as e:
+        print(e)
+        print("Caught a FabricHTTPException. Check the API endpoint, authentication.")
+
+    
+    response
+    return
+
+```
+
+THIS IS NOT COMPLETE YET.
+
+## Step 5: Verify your pipeline is created
+
+## Step 6: Run and monitor your pipeline
+
+## Related content
