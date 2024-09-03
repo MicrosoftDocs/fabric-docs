@@ -66,7 +66,6 @@ The OLS rules are now defined. Users without the required permission will receiv
 
 * Semantic models with OLS configured for one or more table or column objects aren't supported with these Power BI features:
 
-  * Q&A visualizations
   * Quick insights visualizations
   * Smart narrative visualizations
   * Excel Data Types gallery
