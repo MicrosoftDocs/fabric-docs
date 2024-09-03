@@ -48,26 +48,26 @@ In the code area, enter the following code, which sets up the required libraries
 
 ```python
 # Configuration
-AZURE_OPENAI_KEY = "a72f9ebc894c4d088e22724878fb30b3"
-AZURE_OPENAI_GPT4O_ENDPOINT = "https://imageflow-poc-resource.openai.azure.com/openai/deployments/gtp40-deply-1/chat/completions?api-version=2024-05-01-preview"
-IMAGE_PATH = "/lakehouse/default/files/images/<your_image>.png"
+AZURE_OPENAI_KEY = "<Your Azure OpenAI key>"
+AZURE_OPENAI_GPT4O_ENDPOINT = "<Your Azure OpenAI gpt4o deployment endpoint>"
+IMAGE_PATH = "<Path to your uploaded image file>" # For example, "/lakehouse/default/files/images/pipeline.png"
 
 # Install the OpenAI library
+!pip install semantic-link --q 
 !pip uninstall --yes openai
 !pip install openai
 %pip install openai --upgrade
-# Install the semantic-link library 
-!pip install semantic-link --q 
 
-# Basic imports
+# Imports
 import os
 import requests
 import base64
 import json
-import sempy.fabric as fabric
-
-# Import OpenAI
+import time
+import pprint
 import openai
+import sempy.fabric as fabric
+import pandas as pd
 
 # Load the image
 image_bytes = open(IMAGE_PATH, 'rb').read()
@@ -190,61 +190,136 @@ print(pipeline_json)
 
 Run this code block to see generate the pipeline JSON from the image.
 
-## Step 4: Create your pipeline with Fabric REST APIs
+## Step 4: Create the pipeline with Fabric REST APIs
 
 Now that you obtained the pipeline JSON, you can create it directly using the Fabric REST APIs. Add another code block to the Notebook, and add the following code. This code will create the pipeline in your workspace.
 
 ```python
+# Convert pipeline JSON to Fabric REST API request
+
 json_data = json.loads(pipeline_json)
 
-# Show all Activities and DependsOn and to be created
+# Extract the activities from the JSON
 activities = json_data["properties"]["activities"]
 
-print ("Activities to be created")
-for activity in activities:
-    print (activity["name"])
+# Prepare the data pipeline JSON definition
+data = {}
+activities_list = []
 
-print ("DependsOn to be created")
+idx = 0
+
+# Name mapping used to track activity name found in image to dynamically generated name
+name_mapping = {}
+
 for activity in activities:
-    print (activity["name"] )
-    if 'dependsOn' in activity:
+    idx = idx + 1
+    activity_name = activity["type"].replace("Activity","")
+
+    objName = f"{activity_name}{idx}"
+
+    # store the name mapping so we can deal with dependency 
+    name_mapping[activity["name"]] = objName
+
+    if 'dependsOn' in activity: 
         activity_dependent_list = activity["dependsOn"] 
-        print (activity_dependent_list)
         
+        dependent_activity = ""
         if ( len(activity_dependent_list) > 0 ):
-            print (activity_dependent_list[0]["activity"])
+            dependent_activity = activity_dependent_list[0]["activity"]
 
-client = fabric.FabricRestClient()
-
-# Create a Fabric Item
-def create_fabric_item(payload:dict, workspace=None):
-    if workspace is None:
-        workspaceId = fabric.get_workspace_id()
+        match activity_name:
+            case "Copy":
+                activities_list.append({'name': objName, 'type': "Copy", 'dependsOn': [],
+                'typeProperties': { "source": { "datasetSettings": {} },
+                "sink": { "datasetSettings": {} } }})
+            case "Web":
+                activities_list.append({'name': objName, 'type': "Office365Outlook",
+                        "dependsOn": [
+                            {
+                                "activity":  name_mapping[dependent_activity] ,
+                                "dependencyConditions": [
+                                    "Succeeded"
+                                ]
+                            }
+                        ]
+                    }
+                )
+            case "ExecutePipeline":
+                activities_list.append({'name': "execute pipeline 1", 'type': "ExecutePipeline",
+                    "dependsOn": [
+                            {
+                                "activity":  name_mapping[dependent_activity] ,
+                                "dependencyConditions": [
+                                    "Succeeded"
+                                ]
+                            }
+                        ]
+                    }
+                )
+            case _:
+                continue
     else:
-        workspaceId = fabric.resolve_workspace_id(workspace)
+        # simple activities with no dependencies
+        match activity_name:
+            case "Copy":
+                activities_list.append({'name': objName, 'type': "Copy", 'dependsOn': [],
+                'typeProperties': { "source": { "datasetSettings": {} } , "sink": { "datasetSettings": {} } }})
+            case "SendEmail":
+                 activities_list.append({'name': "Send mail on success", 'type': "Office365Outlook"})
+            case "Web":
+                activities_list.append({'name': "Send mail on success", 'type': "Office365Outlook"})
+            case "ExecutePipeline":
+                activities_list.append({'name': "execute pipeline 1", 'type': "ExecutePipeline"})
+            case _:
+                print("NoOp")
 
-    try:
-        response = client.post(f"/v1/workspaces/{workspaceId}/items",json= payload)
-        print(response)
-        
-        if response.status_code != 201:
-            raise FabricHTTPException(response)
+# Now that the activities_list is created, assign it to the activities tag in properties
+data['properties'] = { "activities": activities_list}
 
-    except WorkspaceNotFoundException as e:
-        print("Caught a WorkspaceNotFoundException:", e)
-    except FabricHTTPException as e:
-        print(e)
-        print("Caught a FabricHTTPException. Check the API endpoint, authentication.")
+# Convert data from dict to string, then Byte Literal, before doing a Base-64 encoding
+data_str = str(data).replace("'",'"')
+createPipeline_json = data_str.encode(encoding="utf-8")
+createPipeline_Json64 = base64.b64encode(createPipeline_json)
 
-    
-    response
-    return
+# Create a new data pipeline in Fabric
+timestr = time.strftime("%Y%m%d-%H%M%S")
+pipelineName = f"Pipeline from image with AI-{timestr}"
 
+payload = {
+        "displayName": pipelineName,
+        "type": "DataPipeline",
+        "definition": {
+           "parts": [ 
+             { 
+              "path": "pipeline-content.json", 
+              "payload": createPipeline_Json64, 
+              "payloadType": "InlineBase64" 
+              }
+            ]
+        }
+}
+
+print(f"A pipeline - {pipelineName} - will be created with the following payload:")
+
+# Call the Fabric REST API to generate the pipeline
+client = fabric.FabricRestClient()
+workspaceId = fabric.get_workspace_id()
+try:
+    response = client.post(f"/v1/workspaces/{workspaceId}/items",json=payload)
+    print(response)
+    if response.status_code != 201:
+        raise FabricHTTPException(response)
+except WorkspaceNotFoundException as e:
+    print("Caught a WorkspaceNotFoundException:", e)
+except FabricHTTPException as e:
+    print(e)
+    print("Caught a FabricHTTPException. Check the API endpoint, authentication.")
+
+response = client.get(f"/v1/workspaces/{workspaceId}/Datapipelines")
+df_items = pd.json_normalize(response.json()['value'])
+print("Workspace pipelines after creation:")
+df_items
 ```
-
-THIS IS NOT COMPLETE YET.
-
-## Step 5: Verify your pipeline is created
 
 ## Step 6: Run and monitor your pipeline
 
