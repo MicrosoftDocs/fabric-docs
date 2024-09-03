@@ -177,7 +177,7 @@ payload = {
 
 ## Send request
 try:
-    response = requests.post(AZURE_OPENAI_GPT40_ENDPOINT, headers=headers, json=payload)
+    response = requests.post(AZURE_OPENAI_GPT4O_ENDPOINT, headers=headers, json=payload)
     response.raise_for_status()  # Will raise an HTTPError if the HTTP request returned an unsuccessful status code
 except requests.RequestException as e:
     raise SystemExit(f"Failed to make the request. Error: {e}")
