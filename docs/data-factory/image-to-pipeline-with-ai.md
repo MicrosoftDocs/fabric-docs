@@ -66,10 +66,6 @@ import base64
 import json
 import sempy.fabric as fabric
 
-# Authentication imports
-from azure.keyvault.secrets import SecretClient
-from azure.identity import DefaultAzureCredential
-
 # Import OpenAI
 import openai
 
@@ -84,7 +80,7 @@ headers = {
 }
 ```
 
-Run this code block to validate your Azure OpenAI connection is working, and configure the environment.
+Run this code block to configure the environment.
 
 ## Step 3: Use `gpt-4o` to describe the pipeline (optional)
 
