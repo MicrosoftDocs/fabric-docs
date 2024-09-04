@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 08/28/2024
+ms.date: 09/04/2024
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,20 +20,21 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  828  | Power BI | [Edit tables dialog doesn't load when reloading a Direct Lake semantic model](known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md) | September 4, 2024 |
+|  825  | Power BI | [Paginated report cascading parameters with default values aren't set as expected](known-issues/known-issue-825-paginated-report-cascading-parameters-default-values-not-set-expected.md) | September 4, 2024 |
+|  823  | Data Warehouse | [Concurrent stored procedures block each other in data warehouse](known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md) | September 4, 2024 |
 |  822  | Data Warehouse | [SQL queries fail intermittently](known-issues/known-issue-822-sql-queries-fail-intermittently.md) | August 28, 2024 |
 |  821  | Data Warehouse | [Schema refresh for a data warehouse's semantic model fails](known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md) | August 28, 2024 |
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md) | August 23, 2024 |
 |  818  | Data Warehouse | [Edit tables for a data warehouse's semantic model doesn't work](known-issues/known-issue-818-edit-tables-warehouse-semantic-model-not-work.md) | August 23, 2024 |
 |  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 |
 |  816  | Data Factory | [Pipeline deployment fails when parent contains deactivated activity](known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md) | August 23, 2024 |
-|  815  | Data Factory | [Dataflows automatically create tables from queries on Fabric destinations](known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md) | August 19, 2024 |
 |  811  | Data Engineering | [Fabric Runtime 1.3 causes invalid libraries](known-issues/known-issue-811-fabric-runtime-invalid-libraries.md) | August 16, 2024 |
 |  810  | Data Warehouse | [Inserting nulls into Data Warehouse tables fail with incorrect error message](known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md) | August 16, 2024 |
 |  809  | Data Factory | [Dataflow Gen2 refresh fails due to missing SQL analytics endpoint](known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md) | August 14, 2024 |
 |  808  | Power BI | [Custom visuals are blurry in zoomed in or out Microsoft Edge (Chromium) browser](known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md) | August 14, 2024 |
 |  807  | Data Warehouse | [Mirroring for Azure Cosmos DB fails when you create a new container](known-issues/known-issue-807-mirroring-cosmos-db-fails-create-container.md) | August 14, 2024 |
 |  796  | Data Warehouse | [Mirroring for Azure Cosmos DB fails](known-issues/known-issue-796-mirroring-cosmos-db-fails.md) | August 6, 2024 |
-|  781  | Data Factory | [Pipeline copy to Oracle using on-premises data gateway errors](known-issues/known-issue-781-pipeline-copy-oracle-data-gateway-errors.md) | August 6, 2024 |
 |  801  | Power BI | [Custom visuals don't render in Desktop](known-issues/known-issue-801-custom-visuals-not-render.md) | August 1, 2024 |
 |  800  | Data Engineering | [Teaching bubble blocks Lakehouse explorer context menu from opening](known-issues/known-issue-800-teaching-bubble-blocks-lakehouse-explorer-context-menu.md) | July 31, 2024 |
 |  797  | Data Engineering | [Localization blocks operations in a lakehouse](known-issues/known-issue-797-localization-blocks-operations-lakehouse.md) | July 31, 2024 |
@@ -49,7 +50,6 @@ Select the **Title** to view more information about that specific known issue.
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
 |  753  | Data Factory | [Pipeline Web activity through on-premises data gateway doesn't support SPN authentication](known-issues/known-issue-753-pipeline-web-activity-opdg-not-support-spn-auth.md) | June 11, 2024 |
 |  752  | OneLake | [Cross region shortcuts don't show data](known-issues/known-issue-752-cross-region-shortcuts-not-show-data.md) | June 11, 2024 |
-|  749  | Power BI | [Tenant migrations paused for June 2024](known-issues/known-issue-749-tenant-migrations-paused-june-2024.md) | May 31, 2024 |
 |  732  | Data Engineering | [Shortcut creation on a lakehouse preview table takes long time](known-issues/known-issue-732-shortcut-creation-lakehouse-preview-table-takes-long-time.md) | May 31, 2024 |
 |  726  | Data Factory | [Pipeline using XML format copy gets stuck](known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 |
 |  723  | Data Warehouse | [Azure SQL Database change data doesn't propagate to mirror](known-issues/known-issue-723-sql-azure-database-change-data-not-propagate-mirror.md) | May 24, 2024 |
@@ -84,6 +84,9 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  815  | Data Factory | [Dataflows automatically create tables from queries on Fabric destinations](known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md) | August 19, 2024 | Fixed: September 4, 2024 |
+|  781  | Data Factory | [Pipeline copy to Oracle using on-premises data gateway errors](known-issues/known-issue-781-pipeline-copy-oracle-data-gateway-errors.md) | August 6, 2024 |  Fixed: September 4, 2024 |
+|  749  | Power BI | [Tenant migrations paused for June 2024](known-issues/known-issue-749-tenant-migrations-paused-june-2024.md) | May 31, 2024 | Fixed: September 4, 2024 |
 |  814  | Power BI | [Scorecard dropdown slicers aren't visible when filtering](known-issues/known-issue-814-scorecard-dropdown-slicers-not-visible-filtering.md) | August 19, 2024 | Fixed: August 28, 2024 |
 |  784  | Data Activator | [Data Activator alert created from visual with no dimensions doesn't work](known-issues/known-issue-784-alert-visual-no-dimensions-not-work.md) | July 18, 2024 | Fixed: August 28, 2024 |
 |  722  | Data Warehouse | [Delta tables don't appear in SQL Analytics Endpoint Object Explorer](known-issues/known-issue-722-delta-tables-not-appear-sql-analytics-endpoint-object-explorer.md) | May 16, 2024 | Fixed: August 28, 2024 |
@@ -104,10 +107,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  596  | Data Factory   | [Refresh history reports in progress for some tables that failed](known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables.md)  | August 24, 2023 | Fixed: July 31, 2024 |
 |  790  | Data Engineering | [Spark operations fail](known-issues/known-issue-790-spark-operations-fail.md) | July 19, 2024 | Fixed: July 24, 2024 |
 |  724  | OneLake | [Shortcuts to a firewall-enabled ADLS stop working if lakehouse is shared](known-issues/known-issue-724-shortcuts-firewall-enabled-adls-stop-working-lakehouse-shared.md) | May 23, 2024 | Fixed: July 24, 2024 |
-|  762  | Power BI | [Python and R visuals don't work in Fabric capacity](known-issues/known-issue-762-python-r-visuals-not-work-capacity.md) | June 26, 2024 | Fixed: July 18, 2024 |
-|  743  | Power BI | [Semantic models in Desktop sometimes fail in March 2024 and later versions](known-issues/known-issue-743-semantic-models-desktop-fail-march-2024-later.md) | May 30, 2024 | Fixed: July 18, 2024 |
-|  701  | OneLake | [Shortcut data inaccessible if data is in a paused capacity](known-issues/known-issue-701-shortcut-data-inaccessible-paused-capacity.md) | April 25, 2024 | Fixed: July 18, 2024 |
-|  761  | Power BI | [Report Builder can't sign in to the service for some clouds](known-issues/known-issue-761-report-builder-not-sign-in-service-some-clouds.md) | June 20, 2024 | Fixed: July 16, 2024 |
 
 ## Related content
 
