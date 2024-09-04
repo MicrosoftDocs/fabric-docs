@@ -21,7 +21,7 @@ Select the **Title** to view more information about that specific known issue.
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
 |  828  | Power BI | [Edit tables dialog doesn't load when reloading a Direct Lake semantic model](known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md) | September 4, 2024 |
-|  825  | Power BI | [Paginated report cascading parameters with default values aren't set as expected](known-issues/known-issue-825-paginated-report-cascading-parameters-default-values-not-set-expected.md) | September 4, 2024 |
+|  825  | Power BI | [Paginated report cascading parameters with default values aren't set as expected](known-issues/known-issue-825-paginated-cascading-parameters-default-values-not-expected.md) | September 4, 2024 |
 |  823  | Data Warehouse | [Concurrent stored procedures block each other in data warehouse](known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md) | September 4, 2024 |
 |  822  | Data Warehouse | [SQL queries fail intermittently](known-issues/known-issue-822-sql-queries-fail-intermittently.md) | August 28, 2024 |
 |  821  | Data Warehouse | [Schema refresh for a data warehouse's semantic model fails](known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md) | August 28, 2024 |

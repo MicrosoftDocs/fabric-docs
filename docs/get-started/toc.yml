@@ -164,7 +164,7 @@ items:
     - name: Edit tables dialog doesn't load when reloading a Direct Lake semantic model
       href: known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md
     - name: Paginated report cascading parameters with default values aren't set as expected
-      href: known-issues/known-issue-825-paginated-report-cascading-parameters-default-values-not-set-expected.md
+      href: known-issues/known-issue-825-paginated-cascading-parameters-default-values-not-expected.md
     - name: Concurrent stored procedures block each other in data warehouse
       href: known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md
     - name: SQL queries fail intermittently
