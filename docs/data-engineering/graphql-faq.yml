@@ -37,7 +37,7 @@ sections:
         answer: To get help from Microsoft Support on any issue related to Fabric API for GraphQL, visit our [Fabric Support site](https://support.fabric.microsoft.com/en-US/support/) and choose the **Data Engineering** option.
 
       - question: Which regions are not yet supported by the API for GraphQL?
-        answer: "API for GraphQL is currently not supported in the Germany West Central, Italy North, Poland Central, and Central US regions."
+        answer: "API for GraphQL is currently not supported in the Italy North, Poland Central, and Central US regions."
 
 additionalContent: |
     ## Related content

@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, im-microsoft 
-ms.date: 07/30/2024
+ms.date: 09/03/2024
 ms.topic: tutorial
 ---
 
@@ -49,14 +49,14 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/azure-data-studio/download-azure-data-studio). Connect to the `master` database.
 1. Create a server login and assign the appropriate permissions.
-    - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following in the `master` database:
+    - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
 
     ```sql
     CREATE LOGIN fabric_login WITH PASSWORD = '<strong password>';
     ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER fabric_login;
     ```
 
-    - Or, create a Microsoft Entra ID authenticated login from an existing account. Run the following in the `master` database:
+    - Or, create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
 
     ```sql
     CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
@@ -82,22 +82,14 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
-1. Navigate to the **Create** pane.
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Workspace creation."::: -->
-1. Select the **Create** icon.  
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Create button."::: -->
-1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure SQL Database (preview)**.
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of SQL DB card."::: -->
-1. Enter the name of your Azure SQL database to be mirrored, then select **Create**.
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of SQL DB mirrored name."::: -->
+1. Navigate to the **Create** pane. Select the **Create** icon.  
+1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure SQL Database (preview)**. Enter the name of your Azure SQL database to be mirrored, then select **Create**.
 
 ## Connect to your Azure SQL Database
 
 To enable Mirroring, you will need to connect to the Azure SQL logical server from Fabric to initiate connection between SQL Database and Fabric. The following steps guide you through the process of creating the connection to your Azure SQL Database:
 
-1. Under **New connection**, select **Azure SQL Database** or select an existing connection.  
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of New connection panel."::: -->
-
+1. Under **New sources**, select **Azure SQL Database**. Or, select an existing Azure SQL Database connection from the OneLake data hub.
 1. If you selected **New connection**, enter the connection details to the Azure SQL Database.
    - **Server**: You can find the **Server name** by navigating to the Azure SQL Database **Overview** page in the Azure portal. For example, `server-name.database.windows.net`.
    - **Database**: Enter the name of your Azure SQL Database.
@@ -105,11 +97,8 @@ To enable Mirroring, you will need to connect to the Azure SQL logical server fr
    - **Connection name**: An automatic name is provided. You can change it.
    - **Authentication kind**:
        - Basic (SQL Authentication)
-         <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of New connection with SQL Login."::: -->
        - Organization account (Microsoft Entra ID)  
-         <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of New connection with Microsoft Entra ID."::: -->
        - Tenant ID (Azure Service Principal)  
-         <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of New connection with Service Principal."::: -->
 1. Select **Connect**.
 
 ## Start mirroring process
@@ -117,27 +106,17 @@ To enable Mirroring, you will need to connect to the Azure SQL logical server fr
 1. The **Configure mirroring** screen allows you to mirror all data in the database, by default.
 
     - **Mirror all data** means that any new tables created after Mirroring is started will be mirrored. 
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Configure mirroring - All data."::: -->
 
     - Optionally, choose only certain objects to mirror. Disable the **Mirror all data** option, then select individual tables from your database.
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Configure mirroring - Selective."::: -->
 
     For this tutorial, we select the **Mirror all data** option.
 
 1. Select **Mirror database**. Mirroring begins.
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Mirroring starting."::: -->
-
 1. Wait for 2-5 minutes. Then, select **Monitor replication** to see the status.
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Monitoring Mirroring."::: -->
-
-1. After a few minutes, the status should change to *Running*,  which means the tables are being synchronized.
+1. After a few minutes, the status should change to *Running*, which means the tables are being synchronized.
 
     If you don't see the tables and the corresponding replication status, wait a few seconds and then refresh the panel.
-
 1. When they have finished the initial copying of the tables, a date appears in the **Last refresh** column.
-
-    <!-- :::image type="content" source="media/image.png" alt-text="Screenshot of Mirroring Status."::: -->
-
 1. Now that your data is up and running, there are various analytics scenarios available across all of Fabric.
 
 > [!IMPORTANT]
