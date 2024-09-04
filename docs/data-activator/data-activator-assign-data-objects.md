@@ -1,12 +1,12 @@
 ---
 title: Assign data to objects in Data Activator
-description: Learn how to assign data to objects in data mode for Data Activator.
+description: Learn how to assign data to objects in data mode for Data Activator and improve your data management capabilities.
 author: davidiseminger
 ms.author: davidi
-ms.topic: conceptual
+ms.topic: conceptual-article
 ms.custom: 
 ms.search.form: Data Activator Data Mode
-ms.date: 11/16/2023
+ms.date: 09/04/2024
 ---
 
 # Assign data to objects in Data Activator
@@ -14,7 +14,7 @@ ms.date: 11/16/2023
 > [!IMPORTANT]
 > Data Activator is currently in preview.
 
-Once you [get data](data-activator-get-data-power-bi.md) into Data Activator, the next step is to assign your events to objects. You assign events to objects in **Data Mode**, which you can access from the tab at the bottom of the screen. 
+Once you [get data](data-activator-get-data-power-bi.md) into Data Activator, the next step is to assign your events to objects. You assign events to objects in **Data Mode**, which you can access from the tab at the bottom of the screen.
 
 > [!NOTE]
 > If you started from Power BI, then Data Activator automatically creates an object for you and assign your Power BI data to it. You can skip this section unless you wish to combine your Power BI data with other events coming from Eventstreams.
@@ -26,28 +26,26 @@ To create an object, pick the events that you wish to monitor, then select **Ass
 The example below is based on the sample *Packages* data that comes with Data Activator. Since this data is monitoring packages, we choose *Package* as our object name. We choose *Package ID* as our key column
 because it uniquely identifies packages.
 
-:::image type="content" source="media/data-activator-assign-data-objects/data-activator-assign-data-objects-01.png" alt-text="Screenshot of assign your data window.":::
+:::image type="content" source="media/data-activator-assign-data-objects/data-activator-assign-data-objects-01.png" alt-text="Screenshot of assign your data window":::
 
 When you create an object, you're switched to **Design mode** with the event stream for the new object selected. The preview in the following image shows you the events that were received split out by the
 unique values from the ID column.
 
 :::image type="content" source="media/data-activator-assign-data-objects/data-activator-assign-data-objects-02.png" alt-text="Screenshot of event received by data activator.":::
 
-
 By default the events for five random instances for the previous 24 hours are displayed in the chart. You can change this using the population selector and time selectors above the card.
 
 ## Assign data to an existing object
 
 You can assign multiple data streams to a single object, which can be useful if data about an object is spread across multiple streams. A typical reason is that you have slowly changing reference
-data about an object in one event stream, and fast-moving updates about an object in another event stream. 
- 
-You achieve this using the *Assign to Existing* option in the *Assign Data* pane. The process is the same as for assigning data to a new object, except that you select an existing object to assign the events to. 
+data about an object in one event stream, and fast-moving updates about an object in another event stream.
+
+You achieve this using the *Assign to Existing* option in the *Assign Data* pane. The process is the same as for assigning data to a new object, except that you select an existing object to assign the events to.
 
 > [!NOTE]
 > When assigning to an existing object, it is essential that you choose a key column that references the same object IDs that you used when creating the object in the first place, otherwise you will get unexpected results from your properties and triggers.
 
 :::image type="content" source="media/data-activator-assign-data-objects/data-activator-assign-data-objects-03.png" alt-text="Screenshot of assigning data in data activator.":::
-
 
 ## Assign data to multiple objects
 
