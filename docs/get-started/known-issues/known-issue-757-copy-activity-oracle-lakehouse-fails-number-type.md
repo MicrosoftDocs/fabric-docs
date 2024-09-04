@@ -4,7 +4,7 @@ description: A known issue is posted where the copy activity from Oracle to lake
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/20/2024
+ms.date: 09/04/2024
 ms.custom: known-issue-757
 ---
 
@@ -22,7 +22,7 @@ When trying to copy data from Oracle to a lakehouse, you receive an error simila
 
 ## Solutions and workarounds
 
-No workarounds at this time. This article will be updated when the fix is released.
+You can work around this issue by using a query to explicitly cast the column to `NUMBER(p,s)` or other types like `BINARY_DOUBLE`. When using `NUMBER(p,s)`, ensure `p >= s` and `s >= 0`. Meanwhile, the range defined by `NUMBER(p,s)` should cover the range of the values stored in the column. If not, you receive an error similar to `ORA-01438: value larger than specified precision allowed for this column`. Here's a sample query: `SELECT CAST(ColA AS BINARY_DOUBLE) AS ColB FROM TableA`
 
 ## Next steps
 
