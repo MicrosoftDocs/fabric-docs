@@ -2,7 +2,7 @@
 title: AI skill scenario (preview)
 description: Learn how to configure an AI skill on the AdventureWorks dataset.
 author: fbsolo-ms1
-ms.author: avangrootel
+ms.author: amjafari
 ms.reviewer: franksolomon
 reviewer: avangrootel
 ms.service: fabric
@@ -21,7 +21,8 @@ This article shows how to configure an AI skill on the AdventureWorks dataset.
 
 ## Prerequisites
 
-- An F64 Microsoft Fabric capacity or higher.
+- A paid F64 or higher Fabric capacity resource.
+- [AI skill tenant switch](./ai-skill-tenant-switch.md) is enabled.
 - [Copilot tenant switch](../admin/service-admin-portal-copilot.md) is enabled.
 - [Cross-geo sharing for AI](../admin/service-admin-portal-copilot.md) is enabled, if relevant.
 
