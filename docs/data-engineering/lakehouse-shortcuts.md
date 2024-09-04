@@ -23,7 +23,7 @@ To create a shortcut, open lakehouse **Explorer**. Select the **...** symbol nex
 
 :::image type="content" source="media\lakehouse-shortcuts\create-lakehouse-schortcut.png" alt-text="Screenshot showing how to create a shortcut for a table or file from the lakehouse explorer.":::
 
-After a shortcut is created, you can differentiate a regular file or table from the shortcut from it's properties. The properties have a **Shortcut Type** parameter that indicates the item is a shortcut.
+After a shortcut is created, you can differentiate a regular file or table from the shortcut from its properties. The properties have a **Shortcut Type** parameter that indicates the item is a shortcut.
 
 ## Access Control for shortcuts
 
