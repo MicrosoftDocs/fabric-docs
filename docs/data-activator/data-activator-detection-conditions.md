@@ -11,7 +11,7 @@ ms.date: 09/04/2024
 
 # Detection conditions in Data Activator
 
-This article describes the range of detection conditions available to you when you create a trigger.
+This article describes the range of detection conditions available to you when you create a trigger. You will learn to understand how detection conditions in triggers and properties operate in Data Activator and learn how to configure them effectively.
 
 > [!IMPORTANT]
 > Data Activator is currently in preview.
@@ -56,7 +56,7 @@ Condition types fall into the following categories:
 |---------|---------|
 |**Is** conditions     |**Is** conditions activate for each event for which the condition is true. |
 |**Becomes** conditions     |**Becomes** conditions activate only when the condition becomes true, after having previously been false. For example, “Becomes greater than 10” will activate if the value of the property changes from a value of 5 (less than 10) to a value of 11 (greater than 10). It will only activate again when the condition goes from being false to true. |
-|**Enters/Exits Range** conditions     |The Enters range condition specifies a range of values, and activates at the point when a property value enters the range. It only activates when the previous value of the property was outside of the range, and the current value is within the range. <p>The exits range condition is similar, except that it activates when the property value goes outside of the range. |
+|**Enters/Exits Range** conditions     |The Enters range condition specifies a range of values, and activates at the point when a property value enters the range. It only activates when the previous value of the property was outside of the range, and the current value is within the range. The exits range condition is similar, except that it activates when the property value goes outside of the range. |
 |**Changes, Changes to, Changes from**     |These conditions activate when a condition changes, changes to, or changes from condition activation boundaries.   |
 
 ### Condition timers
