@@ -4,7 +4,7 @@ description: A known issue is posted where tenant migrations are paused through 
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/31/2024
+ms.date: 09/04/2024
 ms.custom: known-issue-749
 ---
 
@@ -12,13 +12,13 @@ ms.custom: known-issue-749
 
 Cross-region tenant migrations are paused from June 1, 2024 through August 20, 2024. New or existing requests aren't processed during the months of June, July, and August.
 
-**Status:** Open
+**Status:** Fixed: September 4, 2024
 
 **Product Experience:** Power BI
 
 ## Solutions and workarounds
 
-This article will be updated once tenant migrations are resumed.
+Tenant migrations are resumed.
 
 ## Next steps
 
