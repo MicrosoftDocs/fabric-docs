@@ -23,5 +23,5 @@ By default, the **Tenant settings** for a Fabric AI skill are disabled. Ask 
 
 ## Related content
 
-- [Copilot in Fabric and Power BI overview](../get-started/copilot-fabric-overview.md)
+- [AI Skill in Fabric](./concept-ai-skill.md)
 - [About tenant settings](../admin/about-tenant-settings.md)
