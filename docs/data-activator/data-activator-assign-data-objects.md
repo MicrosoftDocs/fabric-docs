@@ -3,7 +3,7 @@ title: Assign data to objects in Data Activator
 description: Learn how to assign data to objects in data mode for Data Activator and improve your data management capabilities.
 author: davidiseminger
 ms.author: davidi
-ms.topic: conceptual-article
+ms.topic: concept-article
 ms.custom: 
 ms.search.form: Data Activator Data Mode
 ms.date: 09/04/2024
