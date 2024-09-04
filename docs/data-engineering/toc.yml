@@ -15,9 +15,9 @@ items:
     href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
   - name: Upload CSV to delta tables
     href: get-started-csv-upload.md
-  - name: Get streaming data into lakehouse with Spark
+  - name: Stream data into lakehouse with Spark
     href: get-started-streaming.md
-  - name: Get streaming data into lakehouse with Eventstreams 
+  - name: Stream data into lakehouse with Eventstreams 
     href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
   - name: Reference external data for data science
     href: get-started-shortcuts.md
@@ -59,8 +59,8 @@ items:
     href: load-data-lakehouse.md
   - name: Shortcut data in a lakehouse
     href: lakehouse-shortcuts.md
-  - name: Get streaming data into lakehouse with Spark
-    href: get-started-streaming.md
+  - name: Optimize streaming data ingestion
+    href: lakehouse-streaming-data.md
   - name: Get streaming data into lakehouse with Eventstreams 
     href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
 - name: Lakehouse access control
