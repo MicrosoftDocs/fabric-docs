@@ -12,10 +12,10 @@ ms.date: 09/04/2024
 
 # Create Data Activator triggers in design mode
 
+Once you have [assigned data to objects](data-activator-assign-data-objects.md#assign-data-to-objects-in-data-activator), you can create triggers to act on your data. You do this in **Design Mode,** which you can access from the tab at the bottom of your screen.
+
 > [!IMPORTANT]
 > Data Activator is currently in preview.
-
-Once you have [assigned data to objects](data-activator-assign-data-objects.md#assign-data-to-objects-in-data-activator), you can create triggers to act on your data. You do this in **Design Mode,** which you can access from the tab at the bottom of your screen.
 
 ## Define a trigger condition and action
 
