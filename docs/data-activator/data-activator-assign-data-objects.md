@@ -7,14 +7,15 @@ ms.topic: concept-article
 ms.custom: 
 ms.search.form: Data Activator Data Mode
 ms.date: 09/04/2024
+#customer intent: As a Fabric user I want to assign data to objects in Data Activator
 ---
 
 # Assign data to objects in Data Activator
 
+Once you [get data](data-activator-get-data-power-bi.md) into Data Activator, the next step is to assign your events to objects. You assign events to objects in **Data Mode**, which you can access from the tab at the bottom of the screen.
+
 > [!IMPORTANT]
 > Data Activator is currently in preview.
-
-Once you [get data](data-activator-get-data-power-bi.md) into Data Activator, the next step is to assign your events to objects. You assign events to objects in **Data Mode**, which you can access from the tab at the bottom of the screen.
 
 > [!NOTE]
 > If you started from Power BI, then Data Activator automatically creates an object for you and assign your Power BI data to it. You can skip this section unless you wish to combine your Power BI data with other events coming from Eventstreams.
