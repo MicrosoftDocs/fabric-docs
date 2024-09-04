@@ -22,7 +22,10 @@ On a paginated report with cascading parameters, changing the value of the paren
 
 ## Solutions and workarounds
 
-You can manually set the values of the parameters and render the report normally. Alternatively, you can go to **File** > **Disable preview features** to disable the react renderer to fix the issue temporarily. Note: The old renderer is no longer supported and other issues with parameters or rendering might occur with preview features disabled.
+You can manually set the values of the parameters and render the report normally. Alternatively, you can go to **File** > **Disable preview features** to disable the react renderer to fix the issue temporarily.
+
+> [!NOTE]
+> The old react renderer is no longer supported and other issues with parameters or rendering might occur with preview features disabled.
 
 ## Next steps
 
