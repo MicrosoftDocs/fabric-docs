@@ -1,36 +1,34 @@
 ---
 title: Detection conditions in Data Activator
-description: Understand how detection conditions in triggers and properties operate in Data Activator.
+description: Understand how detection conditions in triggers and properties operate in Data Activator and learn how to configure them effectively.
 author: davidiseminger
 ms.author: davidi
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: 
-ms.date: 11/16/2023
+ms.date: 09/04/2024
+#customer intent: As a Fabric user I want to detect conditions in data activator.
 ---
 
 # Detection conditions in Data Activator
 
+This article describes the range of detection conditions available to you when you create a trigger.
+
 > [!IMPORTANT]
 > Data Activator is currently in preview.
 
-This article describes the range of detection conditions available to you when you create a trigger.
-
 ## Summaries over time
 
-Summaries are available in **select** cards in properties and triggers, using the “Add” button. 
+Summaries are available in **select** cards in properties and triggers, using the “Add” button.
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-01.png" alt-text="Screenshot of adding data activator summary.":::
 
-
 When you create a summary, you specify a **time window** which can be between 1 minute and 24 hours long. A summary takes all of the values of the property/column during each time window and converts them into a single summary value for the time window.
-
 
 |Summary type  |Description  |
 |---------|---------|
 |Average over time      |Computes the average value of the property/column over the time window|
 |Count     |Computes the number of events containing the property/column over the time window|
 |Minimum/Maximum over time     |Computes the minimum/maximum value of the property/column during the time window|
-
 
 ## Filters
 
@@ -44,7 +42,7 @@ You can specify up to three filters on a card.
 
 ## Conditions
 
-You specify a condition in the **detect** card.
+You specify a condition in the **detected** card.
 
 ### Condition types
 
@@ -54,7 +52,6 @@ The condition type specifies what type of condition should cause the trigger to 
 
 Condition types fall into the following categories:
 
-
 |Condition type  |Description  |
 |---------|---------|
 |**Is** conditions     |**Is** conditions activate for each event for which the condition is true. |
@@ -62,27 +59,19 @@ Condition types fall into the following categories:
 |**Enters/Exits Range** conditions     |The Enters range condition specifies a range of values, and activates at the point when a property value enters the range. It only activates when the previous value of the property was outside of the range, and the current value is within the range. <p>The exits range condition is similar, except that it activates when the property value goes outside of the range. |
 |**Changes, Changes to, Changes from**     |These conditions activate when a condition changes, changes to, or changes from condition activation boundaries.   |
 
-
-
 ### Condition timers
 
 After you specify a condition type, you can specify a condition timer.
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-04.png" alt-text="Screenshot of using data activator condition timers.":::
 
-
 The condition timer indicates how long, or how many times, the condition must be true before the trigger fires.
-
-
 
 |Timer  |Description  |
 |---------|---------|
 |Each time |Activate the trigger each time the condition is true |
 |Number of times |Count how many times the condition is true, and activate the trigger only when it has been true this many times |
 |Stays |Activate the trigger if the condition is continuously true for this amount of time |
-
-
-
 
 ## Related content
 
