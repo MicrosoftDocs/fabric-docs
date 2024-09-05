@@ -82,7 +82,7 @@ When enabled at the environment level, all subsequent jobs and notebooks inherit
 
 ### Control on the query level
 
-The mechanisms to enable the Native Execution Engine at the tenant, workspace, and environment levels, seamlessly integrated with the UI, are under active development. In the meantime, you can disable the native execution engine for specific queries, particularly if they involve operators that aren't currently supported (see [limitations](#limitations)). To disable, set the Spark configuration spark.gluten.enabled to false for the specific cell containing your query.
+The mechanisms to enable the Native Execution Engine at the tenant, workspace, and environment levels, seamlessly integrated with the UI, are under active development. In the meantime, you can disable the native execution engine for specific queries, particularly if they involve operators that aren't currently supported (see [limitations](#limitations)). To disable, set the Spark configuration spark.native.enabled to false for the specific cell containing your query.
 
 # [Spark SQL](#tab/sparksql)
 
@@ -117,7 +117,7 @@ sparkR.conf("spark.native.enabled", "false")
 
 :::image type="content" source="media\native\disable.jpg" alt-text="Screenshot showing how to disable the native execution engine inside a notebook." lightbox="media\native\disable.jpg":::
 
-After executing the query in which the native execution engine is disabled, you must re-enable it for subsequent cells by setting spark.gluten.enabled to true. This step is necessary because Spark executes code cells sequentially.
+After executing the query in which the native execution engine is disabled, you must re-enable it for subsequent cells by setting spark.native.enabled to true. This step is necessary because Spark executes code cells sequentially.
 
 # [Spark SQL](#tab/sparksql)
 
