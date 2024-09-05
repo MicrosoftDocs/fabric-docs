@@ -50,7 +50,7 @@ Selecting the Settings tab, you can choose between 2 radio button options for th
 ### 1) Fabric user data functions activity settings
 Under the **Settings** tab, you can choose the **Fabric user data functions** option to run your customized user data functions for event driven scenarios. You will need to specify the **Workspace** information, choose an existing or create a new **User data function** and select the **Fabric function** you would like to execute.
 
-:::image type="content" source="media/fabric-user-data-functions-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Fabric user data functions activity.":::
+:::image type="content" source="media/functions-activity/fabric-user-data-functions-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Fabric user data functions activity.":::
 
 ### 2) Azure Functions activity settings
 
