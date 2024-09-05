@@ -17,13 +17,13 @@ Workspace identities can be created in the workspace settings of workspaces that
 When you create a workspace identity, Fabric creates a service principal in Microsoft Entra ID to represent the identity. An accompanying app registration is also created. Fabric automatically manages the credentials associated with workspace identities, thereby preventing credential leaks and downtime due to improper credential handling.
 
 > [!NOTE]
-> Fabric workspace identity is **generally available**. You can create a workspace identity in any Fabric F SKU capacity. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+> Fabric workspace identity is **generally available**. You can create a workspace identity in any workspace except My workspaces.
 
 While Fabric workspace identities share some similarities with Azure managed identities, their lifecycle, administration, and governance are different. A workspace identity has an independent lifecycle that is managed entirely in Fabric. A Fabric workspace can optionally be associated with an identity. When the workspace is deleted, the identity gets deleted. The name of the workspace identity is always the same as the name of the workspace it's associated with.
 
 ## Create and manage a workspace identity
 
-You must be a workspace admin to be able to create and manage a workspace identity. The workspace you're creating the identity for must be associated with a Fabric F SKU capacity.
+You must be a workspace admin to be able to create and manage a workspace identity. The workspace you're creating the identity for can't be a My Workspace.
 1. Navigate to the workspace and open the workspace settings.
 1. Select the **Workspace identity** tab.
 1. Select the **+ Workspace identity** button.
@@ -133,7 +133,7 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 
 ## Considerations and limitations
 
-* A workspace identity can only be created in workspaces associated with a Fabric F SKU capacity. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+* A workspace identity can be created in any workspace except a My Workspace. You can only use trusted access in F SKUs.
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity or to a non-F SKU Fabric capacity, the identity won't be disabled or deleted, but Fabric items relying on the workspace identity will stop working.
 * A maximum of 1,000 workspace identities can be created in a tenant. Once this limit is reached, workspace identities must be deleted to enable newer ones to be created.
 * Azure Data Lake Storage Gen2 shortcuts in a workspace that has a workspace identity will be capable of trusted service access.
