@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 06/12/2024
+ms.date: 09/05/2024
 ms.search.form: lakehouse api
 ---
 
@@ -107,7 +107,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lak
         "oneLakeTablesPath": "https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{lakehouseId}/Tables", 
         "oneLakeFilesPath": "https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{lakehouseId}/Files", 
         "sqlEndpointProperties": { 
-            "connectionString": "hkpobavgthae5kji5cuqxtivcu-dda6npvkyiaeteyrkfkgim53xa-datawarehouse.pbidedicated.windows.net", 
+            "connectionString": "A1bC2dE3fH4iJ5kL6mN7oP8qR9-C2dE3fH4iJ5kL6mN7oP8qR9sT0uV-datawarehouse.pbidedicated.windows.net", 
             "id": "0dfbd45a-2c4b-4f91-920a-0bb367826479", 
             "provisioningStatus": "Success" 
         } 
