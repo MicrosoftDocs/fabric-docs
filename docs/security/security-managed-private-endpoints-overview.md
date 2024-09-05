@@ -4,7 +4,7 @@ description: Learn about managed private endpoints for Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.custom:
+ms.custom: references_regions
 ms.date: 09/05/2024
 ---
 
@@ -34,7 +34,7 @@ For more information about supported data sources for managed private endpoints 
 
 * **Managed private endpoints**: Managed private endpoints are supported for Fabric trial capacity and all Fabric F SKU capacities.
 
-* **Tenant Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported Fabric Tenant home regions results in errors. These unsupported Tenant home regions include
+* **Tenant Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported Fabric Tenant home regions results in errors. These unsupported Tenant home regions include:
   
     | Region         |
     |----------------|
@@ -48,7 +48,7 @@ For more information about supported data sources for managed private endpoints 
     | Spain Central  |
     | Brazil South  |
 
-* **Capacity Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported capacity regions results in errors. These unsupported regions include 
+* **Capacity Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported capacity regions results in errors. These unsupported regions include: 
   
     | Region         |
     |----------------|
