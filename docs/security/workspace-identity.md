@@ -133,7 +133,7 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 
 ## Considerations and limitations
 
-* A workspace identity can be created in any workspace except a My Workspace. You can only use trusted access in F SKUs.
+* A workspace identity can be created in any workspace except a **My Workspace**. You can only use trusted access in F SKUs.
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity or to a non-F SKU Fabric capacity, the identity won't be disabled or deleted, but Fabric items relying on the workspace identity will stop working.
 * A maximum of 1,000 workspace identities can be created in a tenant. Once this limit is reached, workspace identities must be deleted to enable newer ones to be created.
 * Azure Data Lake Storage Gen2 shortcuts in a workspace that has a workspace identity will be capable of trusted service access.
