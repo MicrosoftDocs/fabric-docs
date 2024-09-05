@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 08/01/2024
+ms.date: 09/05/2024
 ---
 
 # Overview of managed private endpoints for Fabric
@@ -36,42 +36,44 @@ For more information about supported data sources for managed private endpoints 
 
 * **Tenant Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported Fabric Tenant home regions results in errors. These unsupported Tenant home regions include
   
-| Region         |
-|----------------|
-| Singapore |
-| Israel Central |
-| Switzerland West | 
-| Italy North    |
-| West India     |
-| Mexico Central |
-| Qatar Central  |
-| Spain Central  |
-| Brazil South  |
+    | Region         |
+    |----------------|
+    | Singapore |
+    | Israel Central |
+    | Switzerland West | 
+    | Italy North    |
+    | West India     |
+    | Mexico Central |
+    | Qatar Central  |
+    | Spain Central  |
+    | Brazil South  |
 
 * **Capacity Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported capacity regions results in errors. These unsupported regions include 
   
-| Region         |
-|----------------|
-| West Central US |
-| Switzerland West |
-| Italy North    |
-| Qatar Central  |
-| West India     |
-| France South   |
-| Germany North  |
-| Japan West     |
-| Korea South    |
-| Southafrica West |
-| UAE Central    |
-| Brazil South   |
-| Singapore |
-| Central US  |
+    | Region         |
+    |----------------|
+    | West Central US |
+    | Switzerland West |
+    | Italy North    |
+    | Qatar Central  |
+    | West India     |
+    | France South   |
+    | Germany North  |
+    | Japan West     |
+    | Korea South    |
+    | Southafrica West |
+    | UAE Central    |
+    | Brazil South   |
+    | Singapore |
+    | Central US  |
 
 * **Spark job resilience**: To prevent Spark job failures or errors, migrate workspaces with managed private endpoints to any Fabric F SKU capacity.
 
 * **Workspace migration**: Workspace migration across capacities in different regions is unsupported.
 
 * **[OneLake shortcuts](../onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints.
+
+* Creating a managed private endpoint with a fully qualified domain name (FQDN) is not supported.
 
 These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.
 
