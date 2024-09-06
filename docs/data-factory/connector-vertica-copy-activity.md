@@ -32,7 +32,7 @@ For **General** tab configuration, go to [General](activity-overview.md#general-
 
 The following properties are supported for Vertica under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-vertica/vertica-source.png" alt-text="Screenshot showing source tab." lightbox="./media/connector-vertica/source.png":::
+:::image type="content" source="./media/connector-vertica/vertica-source.png" alt-text="Screenshot showing source tab.":::
 
 The following three properties are **required**:
 
