@@ -204,6 +204,7 @@ display(result.select("text", "script"))
 
 ---
 
+# [Rest API](#tab/rest)
 
 ## Supported Languages Retrieval
 
@@ -219,7 +220,7 @@ response = requests.get(service_url, headers=post_headers)
 # Output all information of the request process
 printresponse(response)
 ```
-
+---
 
 ## Related content
 
