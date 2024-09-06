@@ -527,10 +527,14 @@ display(result.select("text", "entityNames"))
 
 ---
 
-# [SynapseML](#tab/synapseml)
 
 ## Entity linking
 
+# [Rest API](#tab/rest)
+
+No steps for REST API in this section.
+
+# [SynapseML](#tab/synapseml)
 
 Entity linking identifies and disambiguates the identity of entities found in text. For example, in the sentence "We went to Seattle last
 week.", the word "Seattle" would be identified, with a link to more information on Wikipedia. See [Supported languages for entity linking](/azure/ai-services/language-service/entity-linking/language-support) for the list of enabled languages.
