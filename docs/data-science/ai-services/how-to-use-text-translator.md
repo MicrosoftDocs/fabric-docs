@@ -147,7 +147,6 @@ display(result.select("text", "translation"))
 
 # [Rest API](#tab/rest)
 
-
 Transliteration is the process of converting a word or phrase from the script (alphabet) of one language to another based on phonetic similarity.
 
 
@@ -204,9 +203,10 @@ display(result.select("text", "script"))
 
 ---
 
+## Supported Languages Retrieval
+
 # [Rest API](#tab/rest)
 
-## Supported Languages Retrieval
 
 Gets a list of languages supported by the operations of Translator.
 
@@ -220,6 +220,11 @@ response = requests.get(service_url, headers=post_headers)
 # Output all information of the request process
 printresponse(response)
 ```
+
+# [SynapseML](#tab/synapseml)
+
+No steps for SynapseML in this section.
+
 ---
 
 ## Related content
