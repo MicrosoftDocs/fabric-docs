@@ -15,14 +15,13 @@ ms.date: 07/25/2024
 
 # Lakehouse tutorial: Create a lakehouse, ingest sample data, and build a report
 
-In this tutorial, you build a lakehouse, ingest sample data into the Delta table, apply transformation where required, and then create reports.
-
-In this tutorial, you'll learn to:
+In this tutorial, you build a lakehouse, ingest sample data into the Delta table, apply transformation where required, and then create reports. In this tutorial, you'll learn to:
 
 > [!div class="checklist"]
 > * Create a lakehouse from the Data Engineering workload
 > * Download and ingest sample customer data
-> * Add tables to the semantic model and build a report
+> * Add tables to the semantic model
+> * Build a report
 
 If you don’t have a Microsoft Fabric, sign up for a free [trial capacity](../get-started/fabric-trial.md).
 
