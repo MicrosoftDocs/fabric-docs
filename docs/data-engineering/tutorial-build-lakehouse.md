@@ -8,8 +8,8 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
+  - FY25Q1-Linter 
 ms.date: 07/25/2024
-ms.custom: FY25Q1-Linter 
 # Customer Intent: As a data engineer, I want to use lakehouses to transform data and build reports using Power BI and Fabric.
 ---
 
@@ -17,12 +17,12 @@ ms.custom: FY25Q1-Linter
 
 In this tutorial, you build a lakehouse, ingest sample data into the Delta table, apply transformation where required, and then create reports.
 
-In this tutorial, you will:
+In this tutorial, you'll learn to:
 
 > [!div class="checklist"]
-> * Create a lakehouse
-> * Ingest sample data
-> * Build a report
+> * Create a lakehouse from the Data Engineering workload
+> * Download and ingest sample customer data
+> * Add tables to the semantic model and build a report
 
 If you don’t have a Microsoft Fabric, sign up for a free [trial capacity](../get-started/fabric-trial.md).
 
@@ -125,7 +125,7 @@ In this section, you ingest sample customer data into the lakehouse.
 
 ## Build a report
 
-In this section, you will build a report from the ingested data.
+In this section, you'll build a report from the ingested data.
 
 1. Previously all the lakehouse tables and views were automatically added to the semantic model. With recent updates, for new lakehouses, you must manually add your tables to the semantic model. Open your lakehouse and switch to the **SQL analytics endpoint** view. From the **Reporting** tab, select **Manage default semantic model** and select the tables that you want to add to the semantic model. In this case, select the **dimension_customer** table.
 
