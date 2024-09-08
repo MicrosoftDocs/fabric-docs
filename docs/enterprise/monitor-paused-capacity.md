@@ -38,7 +38,7 @@ You can find out what's the percentage of [carryforward](throttling.md#carryforw
 
 ## Considerations and limitations
 
-* When you pause a capacity, the timepoint of the paused capacity is displayed on the [Timepoint page](metrics-app-timepoint-page.md) 30 seconds afterward. This timepoint includes all of your capacity’s reconciled consumption.
+* When you pause a capacity, the timepoint of the paused capacity is displayed on the [Timepoint page](metrics-app-timepoint-page.md) 30 seconds afterward. This timepoint includes all of your capacity’s reconciled consumption. If you have enabled [capacity alerts](../admin/service-admin-premium-capacity-notifications.md) you might receive a false alert that your capacity usage has exceeded the threshold you specified, after it was paused. This is a known issue that we will be addressing.
 
 * When you pause a capacity, the timepoint preceding the timepoint at which the capacity was paused is canceled and doesn't appear on the [Compute page](metrics-app-compute-page.md). For example, if you pause your capacity at 13:00:00, the 12:29:30 timepoint won't exist.
 
