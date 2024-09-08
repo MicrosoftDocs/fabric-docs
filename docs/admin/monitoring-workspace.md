@@ -48,7 +48,7 @@ The admin monitoring workspace is automatically installed the first time an admi
 
 :::image type="content" source="./media/admin-monitoring/empty-report.png" alt-text="Image shows a blank report in the workspace before data refresh.":::
 
-5. The first data refresh will begin around 5 minutes after the workspace is installed, and usually completes within a few minutes.
+5. The first data refresh begins around 5 minutes after the workspace is installed, and usually completes within a few minutes.
 
 :::image type="content" source="./media/admin-monitoring/data-refresh.png" alt-text="Image shows the first refresh in the workspace.":::
 
@@ -62,7 +62,7 @@ The semantic models in the workspace are automatically refreshed once per day, a
 
 :::image type="content" source="./media/admin-monitoring/second-data-refresh.png" alt-text="Image shows a scheduled refresh in the workspace.":::
 
-To maintain the scheduled refresh process, consider the following:
+To maintain the scheduled refresh process, consider the following limitations:
 
 * If the user who first accessed the workspace is no longer an admin, scheduled refreshes in the workspace fail. This issue can be mitigated by having any other admin log into Fabric, as their credentials will automatically be assigned to all semantic models in the workspace to support any future data refreshes.
 
@@ -70,11 +70,11 @@ To maintain the scheduled refresh process, consider the following:
 
 ## Considerations and limitations
 
-* The admin monitoring workspace can only be set up by a user whose admin role is assigned directly. If the workspace is set up by a user whose admin role is assigned via a group, data refreshes in the workspace fail.
+* Only users whose admin roles are assigned directly can set up the admin monitoring workspace. If the workspace creator's admin role is assigned via a group, data refreshes in the workspace fail.
 
 * The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Workspace users, including admins, aren't able to edit or view properties of items such as semantic models and reports in the workspace.
 
-* Users granted *build* permissions to a semantic model in the admin monitoring workspace show as having *read* permissions.
+* Users with _build_ permissions for a semantic model in the admin monitoring workspace are shown as having _read_ permissions.
 
 * [Granular delegated admin privileges (GDAP)](/partner-center/gdap-introduction) aren't supported.
 
@@ -96,7 +96,7 @@ Admins can execute an API to reinitialize the workspace using the following step
 api.powerbi.com/v1/admin/workspaces/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -Method Delete
 `
 
-3) Refresh the page, and the reinitialization of the workspace will begin, similar to the process of the first installation.
+3) Refresh the page, and the reinitialization of the workspace begins, similar to the process of the first installation.
 
 :::image type="content" source="./media/admin-monitoring/workspace-installing.png" alt-text="Image shows the admin monitoring workspace being installed.":::
 
