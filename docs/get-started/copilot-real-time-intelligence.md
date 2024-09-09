@@ -17,7 +17,7 @@ Copilot for Real-Time Intelligence is an advanced AI tool designed to help you e
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-For billing information about copilot, see [Announcing Copilot in Fabric pricing](https://blog.fabric.microsoft.com/en-us/blog/announcing-fabric-copilot-pricing-2/).
+For billing information about Copilot, see [Announcing Copilot in Fabric pricing](https://blog.fabric.microsoft.com/en-us/blog/announcing-fabric-copilot-pricing-2/).
 
 ## Prerequisites
 
