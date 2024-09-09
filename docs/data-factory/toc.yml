@@ -323,6 +323,10 @@
           href: format-excel.md
         - name: Configure in Dataflow Gen2
           href: connector-excel-dataflows.md
+      - name: Iceberg
+        items:
+        - name: Configure in Data pipeline
+          href: format-iceberg.md      
       - name: JSON
         items:
         - name: Configure in Data pipeline

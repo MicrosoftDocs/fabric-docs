@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure Data Lake Storag
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 09/09/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -23,6 +23,7 @@ Azure Data Lake Storage Gen2 supports the following file formats. Refer to each 
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
+- [Iceberg format](format-iceberg.md)
 - [JSON format](format-json.md)
 - [ORC format](format-orc.md)
 - [Parquet format](format-parquet.md)
