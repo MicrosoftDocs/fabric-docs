@@ -15,10 +15,6 @@ ms.custom:
 
 The Vertica connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support the Vertica connector in Dataflow Gen2. To get Vertica data in Dataflow Gen2, use the [Web API](/power-query/connectors/web/web) connector instead.
-
 ## Support in data pipelines
 
 The Vertica connector supports the following capabilities in data pipelines:
