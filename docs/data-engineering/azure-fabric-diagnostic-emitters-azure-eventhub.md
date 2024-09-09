@@ -18,7 +18,7 @@ In this tutorial, you'll learn how to use the Fabric Apache Spark diagnostic emi
 
 ### Step 1: Create an Azure Event Hubs Instance
 
-To collect diagnostic logs and metrics, you can use an existing Azure Event Hubs instance. If you don't have one, you can [create an event hub](../event-hubs/event-hubs-create.md).
+To collect diagnostic logs and metrics, you can use an existing Azure event hubs instance. If you don't have one, you can [create an event hub](/azure/event-hubs/event-hubs-create).
 
 ### Step 2: Create a Fabric Environment Artifact with Apache Spark Configuration
  

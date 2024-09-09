@@ -17,7 +17,7 @@ In this tutorial, you'll learn how to use the Fabric Apache Spark diagnostic emi
 ## Collect logs and metrics to storage account
 
 ### Step 1: Create a storage account
-To collect diagnostic logs and metrics, you can use an existing Azure Storage account. If you don't have one, you can [create an Azure blob storage account](azure/storage/common/storage-account-create) or [create a storage account to use with Azure Data Lake Storage Gen2](azure/storage/blobs/create-data-lake-storage-account).
+To collect diagnostic logs and metrics, you can use an existing Azure Storage account. If you don't have one, you can [create an Azure blob storage account](/azure/storage/common/storage-account-create) or [create a storage account to use with Azure Data Lake Storage Gen2](/azure/storage/blobs/create-data-lake-storage-account).
 
 
 ### Step 2: Create a Fabric Environment Artifact with Apache Spark Configuration
@@ -43,7 +43,7 @@ To collect diagnostic logs and metrics, you can use an existing Azure Storage ac
 
 > [!NOTE]
 >
-> Ensure that users who submit Apache Spark applications are granted read secret permissions. For more information, see [Provide access to Key Vault keys, certificates, and secrets with an Azure role-based access control](azure/key-vault/general/rbac-guide).
+> Ensure that users who submit Apache Spark applications are granted read secret permissions. For more information, see [Provide access to Key Vault keys, certificates, and secrets with an Azure role-based access control](/azure/key-vault/general/rbac-guide).
 
 To configure Azure Key Vault for storing the workspace key:
 
@@ -101,10 +101,10 @@ After submitting a job to the configured Spark session, you can view the logs an
 | `spark.synapse.diagnostic.emitters`                                         | Required. The comma-separated destination names of diagnostic emitters. For example, `MyDest1,MyDest2` |
 | `spark.synapse.diagnostic.emitter.<destination>.type`                       | Required. Built-in destination type. To enable Azure storage destination, `AzureStorage` needs to be included in this field. |
 | `spark.synapse.diagnostic.emitter.<destination>.categories`                 | Optional. The comma-separated selected log categories. Available values include `DriverLog`, `ExecutorLog`, `EventLog`, `Metrics`. If not set, the default value is **all** categories. |
-| `spark.synapse.diagnostic.emitter.<destination>.auth`                       | Required. `AccessKey` for using storage account [access key](azure/storage/common/storage-account-keys-manage) authorization. `SAS` for [shared access signatures](azure/storage/common/storage-sas-overview) authorization. |
+| `spark.synapse.diagnostic.emitter.<destination>.auth`                       | Required. `AccessKey` for using storage account [access key](/azure/storage/common/storage-account-keys-manage) authorization. `SAS` for [shared access signatures](/azure/storage/common/storage-sas-overview) authorization. |
 | `spark.synapse.diagnostic.emitter.<destination>.uri`                        | Required. The destination blob container folder uri. Should match pattern `https://<my-blob-storage>.blob.core.windows.net/<container-name>/<folder-name>`. |
 | `spark.synapse.diagnostic.emitter.<destination>.secret`                     | Optional. The secret (AccessKey or SAS) content. |
-| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` is not specified. The [Azure Key vault](azure/key-vault/general/overview) name where the secret (AccessKey or SAS) is stored. |
+| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` is not specified. The [Azure Key vault](/azure/key-vault/general/overview) name where the secret (AccessKey or SAS) is stored. |
 | `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault.secretName` | Required if `.secret.keyVault` is specified. The Azure Key vault secret name where the secret (AccessKey or SAS) is stored. |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.eventName.match`     | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerApplicationStart,SparkListenerApplicationEnd` |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match`    | Optional. The comma-separated log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger` |
