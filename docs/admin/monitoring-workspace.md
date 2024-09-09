@@ -14,7 +14,7 @@ ms.date: 04/18/2024
 
 The admin monitoring workspace is a specialized environment designed for Fabric administrators to monitor and manage workloads, usage, and governance within their tenant. Using the resources available within the workspace, admins can perform tasks such as security audits, performance monitoring, capacity management, and more.
 
-:::image type="content" source="./media/admin-monitoring/workspace-overview.png" alt-text="Image shows the landing page of the admin monitoring workspace.":::
+:::image type="content" source="./media/admin-monitoring/workspace-overview.png" alt-text="Screenshot shows the landing page of the admin monitoring workspace.":::
 
 ## Prerequisites
 
