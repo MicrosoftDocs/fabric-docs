@@ -4,7 +4,7 @@ description: Learn how to assign data to objects in data mode for Data Activator
 author: davidiseminger
 ms.author: davidi
 ms.topic: concept-article
-ms.custom: 
+ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Data Mode
 ms.date: 09/04/2024
 #customer intent: As a Fabric user I want to assign data to objects in Data Activator

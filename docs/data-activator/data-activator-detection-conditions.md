@@ -4,7 +4,7 @@ description: Understand how detection conditions in triggers and properties oper
 author: davidiseminger
 ms.author: davidi
 ms.topic: concept-article
-ms.custom: 
+ms.custom: FY25Q1-Linter
 ms.date: 09/04/2024
 #customer intent: As a Fabric user I want to detect conditions in data activator.
 ---

@@ -4,7 +4,7 @@ description: Learn how to create triggers in design mode for Data Activator, tak
 author: davidiseminger
 ms.author: davidi
 ms.topic: concept-article
-ms.custom: 
+ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Design Mode
 ms.date: 09/04/2024
 # customer intent: As a Fabric user I want to create Data Activator triggers in design mode.
