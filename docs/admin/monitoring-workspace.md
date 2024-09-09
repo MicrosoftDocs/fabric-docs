@@ -26,7 +26,7 @@ To set up the admin monitoring workspace, one of the following roles is required
 
 Once set up, admins can share all reports in the workspace with nonadmins through a workspace viewer role. Admins can also share individual [reports](/power-bi/collaborate-share/service-share-dashboards) or [semantic models](/power-bi/connect-data/service-datasets-share) with nonadmins through links or direct access.
 
-:::image type="content" source="./media/admin-monitoring/share-link.png" alt-text="Image shows how to share reports in the admin monitoring workspace.":::
+:::image type="content" source="./media/admin-monitoring/share-link.png" alt-text="Screenshot shows how to share reports in the admin monitoring workspace.":::
 
 Only admins can see the admin monitoring workspace at the top of the workspaces menu. Nonadmins can access the workspace's contents indirectly by using the _Browse_ or _OneLake data hub_ pages, or by bookmarking the workspace URL.
 
@@ -38,19 +38,19 @@ The admin monitoring workspace is automatically installed the first time an admi
 
 2. From the navigation menu, select **Workspaces**.
 
-:::image type="content" source="./media/admin-monitoring/workspace-menu.png" alt-text="Image shows the admin monitoring workspace listed in the workspaces menu.":::
+:::image type="content" source="./media/admin-monitoring/workspace-menu.png" alt-text="Screenshot shows the admin monitoring workspace listed in the workspaces menu.":::
 
 3. Select **Admin monitoring**. When selected for the first time, the workspace installation begins automatically and usually completes within a few minutes.
 
-:::image type="content" source="./media/admin-monitoring/workspace-installed.png" alt-text="Image shows the admin monitoring workspace notification after being installed.":::
+:::image type="content" source="./media/admin-monitoring/workspace-installed.png" alt-text="Screenshot shows the admin monitoring workspace notification after being installed.":::
   
 4. Reports in the workspace appear as blank until the first data refresh.
 
-:::image type="content" source="./media/admin-monitoring/empty-report.png" alt-text="Image shows a blank report in the workspace before data refresh.":::
+:::image type="content" source="./media/admin-monitoring/empty-report.png" alt-text="Screenshot shows a blank report in the workspace before data refresh.":::
 
 5. The first data refresh begins around 5 minutes after the workspace is installed, and usually completes within a few minutes.
 
-:::image type="content" source="./media/admin-monitoring/data-refresh.png" alt-text="Image shows the first refresh in the workspace.":::
+:::image type="content" source="./media/admin-monitoring/data-refresh.png" alt-text="Screenshot shows the first refresh in the workspace.":::
 
 ## Reports and semantic models
 
@@ -60,7 +60,7 @@ You can use the reports in the admin monitoring workspace for getting insights a
 
 The semantic models in the workspace are automatically refreshed once per day, around the same time that the workspace was installed for the first time.
 
-:::image type="content" source="./media/admin-monitoring/second-data-refresh.png" alt-text="Image shows a scheduled refresh in the workspace.":::
+:::image type="content" source="./media/admin-monitoring/second-data-refresh.png" alt-text="Screenshot shows a scheduled refresh in the workspace.":::
 
 To maintain the scheduled refresh process, consider the following limitations:
 
@@ -88,17 +88,17 @@ Admins can execute an API to reinitialize the workspace using the following step
 
 1) Retrieve the ID of the admin monitoring workspace from the URL.
    
-:::image type="content" source="./media/admin-monitoring/workspace-url.png" alt-text="Image shows how to retrieve the URL for the admin monitoring workspace.":::
+:::image type="content" source="./media/admin-monitoring/workspace-url.png" alt-text="Screenshot shows how to retrieve the URL for the admin monitoring workspace.":::
 
 2) Execute the semantic model deletion API, first replacing the 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' with the ID of your admin monitoring workspace.
    
 `
-api.powerbi.com/v1/admin/workspaces/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -Method Delete
+   api.powerbi.com/v1/admin/workspaces/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -Method Delete
 `
 
 3) Refresh the page, and the reinitialization of the workspace begins, similar to the process of the first installation.
 
-:::image type="content" source="./media/admin-monitoring/workspace-installing.png" alt-text="Image shows the admin monitoring workspace being installed.":::
+:::image type="content" source="./media/admin-monitoring/workspace-installing.png" alt-text="Screenshot shows the admin monitoring workspace being installed.":::
 
 ## Related content
 
