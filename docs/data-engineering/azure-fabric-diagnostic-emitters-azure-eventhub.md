@@ -3,10 +3,8 @@ title: Collect your Apache Spark applications logs and metrics using Azure Event
 description: In this tutorial, you learn how to use the Fabric Apache Spark diagnostic emitter extension to emit Apache Spark applications logs, event logs and metrics to your Azure Event Hubs.
 author: hrasheed-msft
 ms.author: jejiang
-ms.reviewer: whhender 
-ms.service: fabric
+ms.reviewer: whhender
 ms.topic: tutorial
-ms.subservice: spark
 ms.date: 08/22/2024
 ---
 
@@ -20,7 +18,7 @@ In this tutorial, you'll learn how to use the Fabric Apache Spark diagnostic emi
 
 ### Step 1: Create an Azure Event Hubs Instance
 
-To collect diagnostic logs and metrics, you can use an existing Azure Event Hubs instance. If you don't have one, you can [create an event hub](../../event-hubs/event-hubs-create.md).
+To collect diagnostic logs and metrics, you can use an existing Azure Event Hubs instance. If you don't have one, you can [create an event hub](../event-hubs/event-hubs-create.md).
 
 ### Step 2: Create a Fabric Environment Artifact with Apache Spark Configuration
  
@@ -40,8 +38,9 @@ To collect diagnostic logs and metrics, you can use an existing Azure Event Hubs
 
 #### Option 2: Configure with Azure Key Vault
 
-> [!NOTE] 
-Ensure that users who submit Apache Spark applications are granted read secret permissions. For more information, see [Provide access to Key Vault keys, certificates, and secrets with an Azure role-based access control](/azure/key-vault/general/rbac-guide).
+> [!NOTE]
+>
+> Ensure that users who submit Apache Spark applications are granted read secret permissions. For more information, see [Provide access to Key Vault keys, certificates, and secrets with an Azure role-based access control](/azure/key-vault/general/rbac-guide).
 
 To configure Azure Key Vault for storing the workspace key:
 
@@ -61,25 +60,27 @@ To configure Azure Key Vault for storing the workspace key:
    spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault <AZURE_KEY_VAULT_NAME>
    spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault.secretName <AZURE_KEY_VAULT_SECRET_KEY_NAME>
    ```
+   
    Fill in the following parameters in the configuration file: `<AZURE_KEY_VAULT_NAME>`, `<AZURE_KEY_VAULT_SECRET_KEY_NAME>`. For more details on these parameters, refer to [Azure Event Hubs configurations](#available-configurations).
    
 6. Save and publish changes.
 
 ### Step 3: Attach the Environment Artifact to Notebooks or Spark Job Definitions, or Set It as the Workspace Default
 
-**To attach the environment to Notebooks or Spark job definitions:**
+**To attach the environment to Notebooks or Spark job definitions**:
 1. Navigate to the specific notebook or Spark job definition in Fabric.
 2. Click the **Environment** menu on the Home tab and select the environment with the configured diagnostics Spark properties.
 3. The configuration will be applied when you start a **Spark session**.
 
-**To set the environment as the workspace default:**
+**To set the environment as the workspace default**:
 
 1. Navigate to Workspace Settings in Fabric.
-2. Find the **Spark settings** in your Workspace settings **(Workspace setting -> Data Engineering/Science -> Spark settings)**
+2. Find the **Spark settings** in your Workspace settings **(Workspace setting -> Data Engineering/Science -> Spark settings)**.
 3. Click **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
 
 > [!NOTE]
-Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](https://learn.microsoft.com/en-us/fabric/get-started/workspaces).
+>
+> Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](../get-started/workspaces.md).
 
 ## Available configurations
 
@@ -134,16 +135,17 @@ Here is a sample log record in JSON format:
 ```
 
  ## Fabric workspaces with Managed VNET
-Create a managed private endpoint for the target Azure Event Hub. For detailed instructions, refer to [Create and use managed private endpoints in Microsoft Fabric - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/security/security-managed-private-endpoints-create).
+Create a managed private endpoint for the target Azure Event Hub. For detailed instructions, refer to [Create and use managed private endpoints in Microsoft Fabric - Microsoft Fabric](../security/security-managed-private-endpoints-create.md).
 
 Once the managed private endpoint is approved, users can begin emitting logs and metrics to the target Azure Event Hub.
 
 ## Next steps
 
-- [Create Apache Spark job definition](https://learn.microsoft.com/en-us/fabric/data-engineering/create-spark-job-definition)
-- [Create, configure, and use an environment in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-engineering/create-and-use-environment)
-- [Create and use managed private endpoints in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/security/security-managed-private-endpoints-create)
-- [Develop, execute, and manage Microsoft Fabric notebooks](https://learn.microsoft.com/en-us/fabric/data-engineering/author-execute-notebook)
-- [Monitor Spark Applications](https://learn.microsoft.com/en-us/fabric/data-engineering/spark-monitoring-overview)
+- [Create Apache Spark job definition](../data-engineering/create-spark-job-definition.md)
+- [Create, configure, and use an environment in Microsoft Fabric](../data-engineering/create-and-use-environment.md)
+- [Create and use managed private endpoints in Microsoft Fabric](../security/security-managed-private-endpoints-create.md)
+- [Develop, execute, and manage Microsoft Fabric notebooks](../data-engineering/author-execute-notebook.md)
+- [Monitor Spark Applications](../data-engineering/spark-monitoring-overview.md)
+
 
 
