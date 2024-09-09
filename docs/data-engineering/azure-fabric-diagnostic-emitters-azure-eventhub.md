@@ -12,7 +12,7 @@ ms.date: 08/22/2024
 
 The Fabric Apache Spark diagnostic emitter extension is a library that enables Apache Spark applications to emit logs, event logs, and metrics to various destinations, including Azure Log Analytics, Azure Storage, and Azure Event Hubs.
 
-In this tutorial, you'll learn how to use the Fabric Apache Spark diagnostic emitter extension to send Apache Spark application logs, event logs, and metrics to your Azure Event Hubs.
+In this tutorial, you learn how to use the Fabric Apache Spark diagnostic emitter extension to send Apache Spark application logs, event logs, and metrics to your Azure Event Hubs.
 
 ## Collect logs and metrics to Azure Event Hubs
 
@@ -24,17 +24,17 @@ To collect diagnostic logs and metrics, you can use an existing Azure event hubs
  
 #### Option 1: Configure with Azure Event Hubs Connection String
 
-1. Create an Fabric Evnrionment Artifact in Fabric
+1. Create a Fabric Environment Artifact in Fabric
 2. Add the following **Spark properties** with the appropriate values to the environment artifact, or **select Add from .yml** in the ribbon to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375) which already containing the following properties.  
 
-   ```
+   ```properties
    spark.synapse.diagnostic.emitters MyEventHub
    spark.synapse.diagnostic.emitter.MyEventHub.type AzureEventHub
    spark.synapse.diagnostic.emitter.MyEventHub.categories Log,EventLog,Metrics
    spark.synapse.diagnostic.emitter.MyEventHub.secret <connection-string>
    ```
 
-   Fill in the `<connection-string>` parameters in the configuration file. For more information, refer to [Azure Event Hubs configurations](#available-configurations).
+   Fill in the `<connection-string>` parameters in the configuration file. For more information, see [Azure Event Hubs configurations](#available-configurations).
 
 #### Option 2: Configure with Azure Key Vault
 
@@ -50,10 +50,10 @@ To configure Azure Key Vault for storing the workspace key:
    - **Name**: Enter a name for the secret.
    - **Value**: Enter the `<connection-string>` for the secret.
    - Leave the other values to their defaults. Then select **Create**.
-4. Create a Fabric Evnrionment Artifact in Fabric.
-5. Add the following **Spark properties**. Or select **Add from .yml** on the ribbon to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375) which includes following Spark properties.
+4. Create a Fabric Environment Artifact in Fabric.
+5. Add the following **Spark properties**. Or select **Add from .yml** on the ribbon to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375), which includes following Spark properties.
 
-   ```
+   ```properties
    spark.synapse.diagnostic.emitters MyEventHub
    spark.synapse.diagnostic.emitter.MyEventHub.type AzureEventHub
    spark.synapse.diagnostic.emitter.MyEventHub.categories Log,EventLog,Metrics
@@ -70,7 +70,7 @@ To configure Azure Key Vault for storing the workspace key:
 **To attach the environment to Notebooks or Spark job definitions**:
 1. Navigate to the specific notebook or Spark job definition in Fabric.
 2. Click the **Environment** menu on the Home tab and select the environment with the configured diagnostics Spark properties.
-3. The configuration will be applied when you start a **Spark session**.
+3. The configuration is applied when you start a **Spark session**.
 
 **To set the environment as the workspace default**:
 
@@ -90,10 +90,10 @@ To configure Azure Key Vault for storing the workspace key:
 | `spark.synapse.diagnostic.emitter.<destination>.type`                       | Required. Built-in destination type. To enable Azure Event Hubs destination, the value should be `AzureEventHub`.                                                                                    |
 | `spark.synapse.diagnostic.emitter.<destination>.categories`                 | Optional. The comma-separated selected log categories. Available values include `DriverLog`, `ExecutorLog`, `EventLog`, `Metrics`. If not set, the default value is **all** categories.              |
 | `spark.synapse.diagnostic.emitter.<destination>.secret`                     | Optional. The Azure Event Hubs instance connection string. This field should match this pattern `Endpoint=sb://<FQDN>/;SharedAccessKeyName=<KeyName>;SharedAccessKey=<KeyValue>;EntityPath=<PathName>` |
-| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` is not specified. The [Azure Key vault](/azure/key-vault/general/overview) name where the secret (connection string) is stored.                                                                  |
+| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` isn't specified. The [Azure Key vault](/azure/key-vault/general/overview) name where the secret (connection string) is stored.                                                                  |
 | `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault.secretName` | Required if `.secret.keyVault` is specified. The Azure Key vault secret name where the secret (connection string) is stored.                                                                         |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.eventName.match`     | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerApplicationStart,SparkListenerApplicationEnd` |
-| `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match`    | Optional. The comma-separated log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger` |
+| `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match`    | Optional. The comma-separated Log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger` |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.metricName.match`    | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used` |
 
 
@@ -103,7 +103,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 ## Log data sample
 
-Here is a sample log record in JSON format:
+Here's a sample log record in JSON format:
 
 ```json
 {

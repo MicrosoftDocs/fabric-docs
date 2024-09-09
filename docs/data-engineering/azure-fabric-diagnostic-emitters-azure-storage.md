@@ -8,11 +8,11 @@ ms.topic: tutorial
 ms.date: 08/22/2024
 ---
 
-# Collect your Apache Spark applications logs and metrics using Azure Storage account
+# Collect your Apache Spark applications logs and metrics using Azure storage account
 
 The Fabric Apache Spark diagnostic emitter extension is a library that enables Apache Spark applications to emit logs, event logs, and metrics to multiple destinations, including Azure Log Analytics, Azure Storage, and Azure Event Hubs.
 
-In this tutorial, you'll learn how to use the Fabric Apache Spark diagnostic emitter extension to send Apache Spark application logs, event logs, and metrics to your Azure Storage account.
+In this tutorial, you learn how to use the Fabric Apache Spark diagnostic emitter extension to send Apache Spark application logs, event logs, and metrics to your Azure Storage account.
 
 ## Collect logs and metrics to storage account
 
@@ -24,20 +24,20 @@ To collect diagnostic logs and metrics, you can use an existing Azure Storage ac
 
 #### Option 1: Configure with Azure Storage URI and Access key   
 
-1. Create an Fabric Evnrionment Artifact in Fabric
-2. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375) which already containing the following properties.  
+1. Create a Fabric Environment Artifact in Fabric
+2. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375), which already containing the following properties.  
 
-   ```
+   ```properties
    spark.synapse.diagnostic.emitters: MyStorageBlob
    spark.synapse.diagnostic.emitter.MyStorageBlob.type: "AzureStorage"
    spark.synapse.diagnostic.emitter.MyStorageBlob.categories: "DriverLog,ExecutorLog,EventLog,Metrics"
    spark.synapse.diagnostic.emitter.MyStorageBlob.uri:  "https://<my-blob-storage>.blob.core.windows.net/<container-name>/<folder-name>"
    spark.synapse.diagnostic.emitter.MyDestination1.auth: <AccessKey>
    spark.synapse.diagnostic.emitter.MyDestination1.secret: <storage-access-key>
-   
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
-   Fill in the following parameters in the configuration file: `<my-blob-storage>`, `<container-name>`, `<folder-name>`, `<storage-access-key>`. For more details on these parameters, refer to [Azure Storage configurations](#available-configurations).
+
+   Fill in the following parameters in the configuration file: `<my-blob-storage>`, `<container-name>`, `<folder-name>`, `<storage-access-key>`. For more details on these parameters, see [Azure Storage configurations](#available-configurations).
 
 #### Option 2: Configure with Azure Key Vault
 
@@ -53,10 +53,10 @@ To configure Azure Key Vault for storing the workspace key:
    - **Name**: Enter a name for the secret.
    - **Value**: Enter the `<storage-access-key>` for the secret.
    - Leave the other values to their defaults. Then select **Create**.
-4. Create a Fabric Evnrionment Artifact in Fabric.
+4. Create a Fabric Environment Artifact in Fabric.
 5. Add the following **Spark properties**. Or select **Add from .yml** on the ribbon to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375) which includes following Spark properties.
 
-   ```
+   ```properties
    spark.synapse.diagnostic.emitters: <MyStorageBlob>
    spark.synapse.diagnostic.emitter.MyStorageBlob.type: "AzureStorage"
    spark.synapse.diagnostic.emitter.MyStorageBlob.categories: "DriverLog,ExecutorLog,EventLog,Metrics"
@@ -64,11 +64,10 @@ To configure Azure Key Vault for storing the workspace key:
    spark.synapse.diagnostic.emitter.MyStorageBlob.auth: <AccessKey>
    spark.synapse.diagnostic.emitter.MyStorageBlob.secret.keyVault: <AZURE_KEY_VAULT_NAME>
    spark.synapse.diagnostic.emitter.MyStorageBlob.secret.keyVault.secretName: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
-
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
-   Fill in the following parameters in the configuration file: `<my-blob-storage>`, `<container-name>`, `<folder-name>`,  `<AZURE_KEY_VAULT_NAME>`, `<AZURE_KEY_VAULT_SECRET_KEY_NAME>`. For more details on these parameters, refer to [Azure Storage configurations](#available-configurations).
+   Fill in the following parameters in the configuration file: `<my-blob-storage>`, `<container-name>`, `<folder-name>`,  `<AZURE_KEY_VAULT_NAME>`, `<AZURE_KEY_VAULT_SECRET_KEY_NAME>`. For more details on these parameters, see [Azure Storage configurations](#available-configurations).
 
 6. Save and publish changes.
 
@@ -78,7 +77,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 1. Navigate to the specific notebook or Spark job definition in Fabric.
 2. Click the **Environment** menu on the Home tab and select the environment with the configured diagnostics Spark properties.
-3. The configuration will be applied when you start a **Spark session**.
+3. The configuration is applied when you start a **Spark session**.
 
 **To set the environment as the workspace default**:
 
@@ -104,16 +103,16 @@ After submitting a job to the configured Spark session, you can view the logs an
 | `spark.synapse.diagnostic.emitter.<destination>.auth`                       | Required. `AccessKey` for using storage account [access key](/azure/storage/common/storage-account-keys-manage) authorization. `SAS` for [shared access signatures](/azure/storage/common/storage-sas-overview) authorization. |
 | `spark.synapse.diagnostic.emitter.<destination>.uri`                        | Required. The destination blob container folder uri. Should match pattern `https://<my-blob-storage>.blob.core.windows.net/<container-name>/<folder-name>`. |
 | `spark.synapse.diagnostic.emitter.<destination>.secret`                     | Optional. The secret (AccessKey or SAS) content. |
-| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` is not specified. The [Azure Key vault](/azure/key-vault/general/overview) name where the secret (AccessKey or SAS) is stored. |
+| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` isn't specified. The [Azure Key vault](/azure/key-vault/general/overview) name where the secret (AccessKey or SAS) is stored. |
 | `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault.secretName` | Required if `.secret.keyVault` is specified. The Azure Key vault secret name where the secret (AccessKey or SAS) is stored. |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.eventName.match`     | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerApplicationStart,SparkListenerApplicationEnd` |
-| `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match`    | Optional. The comma-separated log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger` |
+| `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match`    | Optional. The comma-separated Log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger` |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.metricName.match`    | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used` |
 | `spark.fabric.pools.skipStarterPools`    | Required. This Spark property is used to force an on-demand Spark session. You should set the value to `True` when using the default pool in order to trigger the libraries to emit logs and metrics.  |
 
 ## Log data sample 
 
-Here is a sample log record in JSON format:
+Here's a sample log record in JSON format:
 
 ```json
 {
@@ -144,7 +143,7 @@ Here is a sample log record in JSON format:
 }
 ```
 
- ## Fabric workspaces with Managed VNET
+ ## Fabric workspaces with Managed VNet
 
 Create a managed private endpoint for the target Azure Blob Storage. For detailed instructions, refer to [Create and use managed private endpoints in Microsoft Fabric - Microsoft Fabric](../security/security-managed-private-endpoints-create.md).
 

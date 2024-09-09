@@ -12,7 +12,7 @@ ms.custom: references_regions
 
 The Fabric Apache Spark diagnostic emitter extension is a library that enables Apache Spark applications to emit logs, event logs, and metrics to multiple destinations, including Azure log analytics, Azure storage, and Azure event hubs.
 
-In this tutorial, you'll learn how to configure and emit Spark logs and metrics to Log analytics in Fabric. Once configured, you'll be able to collect and analyze Apache Spark application metrics and logs in your [Log analytics workspace](/azure/azure-monitor/logs/quick-create-workspace). 
+In this tutorial, you learn how to configure and emit Spark logs and metrics to Log analytics in Fabric. Once configured, you are able to collect and analyze Apache Spark application metrics and logs in your [Log analytics workspace](/azure/azure-monitor/logs/quick-create-workspace). 
 
 ## Configure workspace information
 
@@ -31,13 +31,13 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
 
 #### Option 1: Configure with Log Analytics Workspace ID and Key
 
-1. Create an Fabric Evnrionment Artifact in Fabric
-2. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375) which already containing the required properties.  
+1. Create a Fabric Environment Artifact in Fabric
+2. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375), which already containing the required properties.  
 
    - `<LOG_ANALYTICS_WORKSPACE_ID>`: Log Analytics workspace ID.
    - `<LOG_ANALYTICS_WORKSPACE_KEY>`: Log Analytics key. To find this, in the Azure portal, go to **Azure Log Analytics workspace** > **Agents** > **Primary key**.
 
-   ``` 
+   ```properties
    spark.synapse.diagnostic.emitters LA
    spark.synapse.diagnostic.emitter.LA.type AzureLogAnalytics
    spark.synapse.diagnostic.emitter.LA.categories Log,EventLog,Metrics
@@ -47,7 +47,7 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
 
    Alternatively, to apply the same configuration as Azure Synapse, use the following properties:
 
-   ```
+   ```properties
    spark.synapse.logAnalytics.enabled true
    spark.synapse.logAnalytics.workspaceId <LOG_ANALYTICS_WORKSPACE_ID>
    spark.synapse.logAnalytics.secret <LOG_ANALYTICS_WORKSPACE_KEY>
@@ -69,14 +69,14 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
    - **Name**: Enter a name for the secret. For the default, enter `SparkLogAnalyticsSecret`.
    - **Value**: Enter the `<LOG_ANALYTICS_WORKSPACE_KEY>` for the secret.
    - Leave the other values to their defaults. Then select **Create**.
-4. Create an Fabric Evnrionment Artifact in Fabric
+4. Create an Fabric Environment Artifact in Fabric
 5. Add the following **Spark properties** with the corresponding values to the environment artifact, or Select **Add from .yml** on the ribbon in the Environment artifact to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375) which includes following Spark properties.
 
    - `<LOG_ANALYTICS_WORKSPACE_ID>`: The Log Analytics workspace ID.
    - `<AZURE_KEY_VAULT_NAME>`: The key vault name that you configured.
    - `<AZURE_KEY_VAULT_SECRET_KEY_NAME>` (optional): The secret name in the key vault for the workspace key. The default is `SparkLogAnalyticsSecret`.
 
-   ```
+   ```properties
    // Spark properties for LA
    spark.synapse.diagnostic.emitters LA
    spark.synapse.diagnostic.emitter.LA.type AzureLogAnalytics
@@ -88,7 +88,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
 
    Alternatively, to apply the same configuration as Azure Synapse, use the following properties:
 
-   ```
+   ```properties
    spark.synapse.logAnalytics.enabled true
    spark.synapse.logAnalytics.workspaceId <LOG_ANALYTICS_WORKSPACE_ID>
    spark.synapse.logAnalytics.keyVault.name <AZURE_KEY_VAULT_NAME>
@@ -134,7 +134,7 @@ To submit an Apache Spark application:
 
 ## Write custom application logs
 
-You can use the Apache Log4j library to write custom logs. Below are examples for Scala and PySpark:
+You can use the Apache Log4j library to write custom logs. Here are examples for Scala and PySpark:
 
 Scala Example:
 ```scala
@@ -194,10 +194,10 @@ SparkMetrics_CL
 ```
 
 ## Data limits
-Fabric sends log data to Azure Monitor by usintg the HTTP Data Collector API. [The data posted to the Azure Monitor Data collection API is subject to certain constraints](/azure/azure-monitor/logs/data-collector-api#data-limits):
+Fabric sends log data to Azure Monitor by using the HTTP Data Collector API. [The data posted to the Azure Monitor Data collection API is subject to certain constraints](/azure/azure-monitor/logs/data-collector-api#data-limits):
 
 * Maximum of 30 MB per post to Azure Monitor Data Collector API. This is a size limit for a single post. If the data from a single post exceeds 30 MB, you should split the data into smaller sized chunks and send them concurrently.
-* Maximum of 32 KB for field values. If the field value is greater than 32 KB, the data will be truncated.
+* Maximum of 32 KB for field values. If the field value is greater than 32 KB, the data is truncated.
 * Recommended maximum of 50 fields for a given type. This is a practical limit from a usability and search experience perspective.  
 * Tables in Log Analytics workspaces support only up to 500 columns. 
 * Maximum of 45 characters for column names.
@@ -206,8 +206,8 @@ Fabric sends log data to Azure Monitor by usintg the HTTP Data Collector API. [T
 
 Users can query to evaluate metrics and logs at a set frequency, and fire an alert based on the results. For more information, see [Create, view, and manage log alerts by using Azure Monitor](/azure/azure-monitor/alerts/alerts-create-metric-alert-rule).
 
-## Fabric workspaces with Managed VNET
-Azure Log Analytics cannot currently be selected as a destination for Spark logs and metrics emission in a managed VNET because the managed private endpoint does not support Log Analytics as a data source. 
+## Fabric workspaces with managed VNet
+Azure Log Analytics can't currently be selected as a destination for Spark logs and metrics emission in a managed VNet because the managed private endpoint doesn't support Log Analytics as a data source. 
 
 ## Next steps
 
