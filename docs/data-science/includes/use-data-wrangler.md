@@ -13,7 +13,7 @@ To explore and transform any pandas Dataframes in your notebook, launch Data Wra
 >Data Wrangler can not be opened while the notebook kernel is busy. The cell execution must complete prior to launching Data Wrangler.
 
 1. Under the notebook ribbon **Data** tab, select **Launch Data Wrangler**. You'll see a list of activated pandas DataFrames available for editing. 
-1. Select the DataFrame you wish to open in Data Wrangler. Since this notebook only contains one DataFrame, `pd`, select `pd`.
+1. Select the DataFrame you wish to open in Data Wrangler. Since this notebook only contains one DataFrame, `df`, select `df`.
 
 :::image type="content" source="../media/tutorial-data-science-explore-notebook/launch-data-wrangler.png" alt-text="Screenshot shows how to launch the data wrangler from a notebook.":::
 

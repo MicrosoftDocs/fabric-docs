@@ -1,14 +1,15 @@
 ---
 title: OneLake parity and integration
-description: Microsoft OneLake supports ADLS Gen2 APIs, with a few differences.
+description: Microsoft OneLake supports Azure Data Lake Storage Gen2 APIs, with a few differences in behavior and feature management.
 ms.reviewer: eloldag
 ms.author: mabasile
 author: mabasile-MSFT
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 09/27/2023
+#customer intent: As a data engineer, I want to understand the differences between OneLake and Azure Data Lake Storage (ADLS) Gen2 APIs, so that I can effectively use OneLake for managing and manipulating data in my applications.
 ---
 
 # OneLake and Azure Data Lake Storage (ADLS) Gen2 API parity

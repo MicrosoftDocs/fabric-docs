@@ -1,8 +1,8 @@
 ---
 title: Scope activity
 description: The Scope activity for Data Factory pipelines in Microsoft Fabric allows you to execute a script in Azure Data Lake Analytics.
-author: chez-charlie
-ms.author: chez
+author: kromerm
+ms.author: makromer
 ms.reviewer: jburchel
 ms.topic: how-to
 ms.date: 01/11/2024
@@ -54,6 +54,6 @@ When your pipeline is finished, switch to the **Home** tab at the top of the pip
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
 [How to monitor pipeline runs](monitor-pipeline-runs.md)

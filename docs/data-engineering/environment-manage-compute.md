@@ -4,10 +4,7 @@ description: A Fabric environment contains a collection of configurations, inclu
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: overview
-ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 05/01/2024
 ms.search.for: Manage Spark compute in Environment
 ---
 
@@ -16,9 +13,6 @@ ms.search.for: Manage Spark compute in Environment
 Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. It includes starter pools and custom pools.
 
 A Fabric environment contains a collection of configurations, including Spark compute properties that allow users to configure the Spark session after they're attached to notebooks and Spark jobs. With an environment, you have a flexible way to customize compute configurations for running your Spark jobs. In an environment, the compute section allows you to configure the Spark session level properties to customize the memory and cores of executors based on workload requirements.
-
-> [!IMPORTANT]
-> The Fabric environment feature is currently in PREVIEW.
 
 Workspace admins can enable or disable compute customizations with the **Customize compute configurations for items** switch in the **Pool** tab of the **Data Engineering/Science** section in the **Workspace settings** screen.
 
@@ -36,7 +30,7 @@ As a user, you can select a pool for the environment from the list of pools avai
 
 After you select a pool in the **Compute** section, you can tune the cores and memory for the executors within the bounds of the node sizes and limits of the selected pool.
 
-For example: You select a custom pool with node size of large, which is 16 Spark Vcores, as the environment pool. You can then choose the driver/executor core to be either 4, 8 or 16, based on your job level requirement. For the memory allocated to driver and executors, you can choose 28 g, 56 g, or 112 g, which are all within the bounds of a large node memory limit.
+For example: You select a custom pool with node size of large, which is 16 Spark vCores, as the environment pool. You can then choose the driver/executor core to be either 4, 8 or 16, based on your job level requirement. For the memory allocated to driver and executors, you can choose 28 g, 56 g, or 112 g, which are all within the bounds of a large node memory limit.
 
 :::image type="content" source="media\environment-introduction\env-cores-selection.png" alt-text="Screenshot showing where to select the number of cores in the environment Compute section.":::
 

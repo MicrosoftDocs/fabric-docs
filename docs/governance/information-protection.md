@@ -52,7 +52,7 @@ Mandatory labeling is currently supported for Power BI items only. Mandatory lab
 
 For lakehouses, pipelines, and data warehouses: Assuming that information protection is enabled, if mandatory labeling is on and default labeling is off, it will be possible for the user to select a label. However, mandatory labeling logic isn't enforced. That means that the user can save the item without a label, unless the experience itself requires that a label be set.
 
-For more information about mandatory labeling, see [Mandatory label policy for Power BI](service-security-sensitivity-label-mandatory-label-policy.md).
+For more information about mandatory labeling, see [Mandatory label policy for Fabric and Power BI](mandatory-label-policy.md).
 
 ### Programmatic labeling
 
@@ -91,7 +91,7 @@ For more information about downstream inheritance, see [Sensitivity label inheri
 
 ### Inheritance from data sources
 
-Inheritance from data sources is currently supported for Power BI semantic models only. For more information, see [Sensitivity label inheritance from data sources (preview)](service-security-sensitivity-label-inheritance-from-data-sources.md).
+Inheritance from data sources is currently supported for Power BI semantic models only. For more information, see [Sensitivity label inheritance from data sources](service-security-sensitivity-label-inheritance-from-data-sources.md).
 
 ### Export
 

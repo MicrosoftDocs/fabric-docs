@@ -1,6 +1,6 @@
 ---
 title: Get started with streaming data in lakehouse
-description: Learn how to stream data into lakehouse and serve it through SQL analytics endpoint.
+description: Learn how to use an Apache Spark job definition to stream data into your lakehouse and then serve it through a SQL analytics endpoint.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/23/2023
+ms.date: 05/13/2024
 ms.search.form: Get Started Lakehouse Streaming SQL Endpoint
 ---
 
@@ -42,7 +42,7 @@ This quickstart explains how to create a Spark Job Definition that contains Pyth
 
 Use the following steps to create a lakehouse:
 
-1. In Microsoft Fabric, select the **Synapse Data Engineering** experience.
+1. In Microsoft Fabric, select **Synapse Data Engineering**.
 
 1. Navigate to your desired workspace or create a new one if needed.
 

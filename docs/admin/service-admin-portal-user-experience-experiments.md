@@ -4,8 +4,6 @@ description: Learn how to configure user experience experiments admin settings i
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
 ms.custom:
   - tenant-setting
   - ignite-2023

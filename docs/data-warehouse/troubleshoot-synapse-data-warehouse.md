@@ -1,10 +1,10 @@
 ---
 title: Troubleshoot the Warehouse
 description: Troubleshoot common issues in using Warehouse in Microsoft Fabric.
-author: xiaoyuMSFT
-ms.author: XiaoyuL
-ms.reviewer: wiassaf
-ms.date: 11/15/2023
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: xiaoyul
+ms.date: 07/26/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -15,7 +15,7 @@ ms.search.form: Monitoring # This article's title should not change. If so, cont
 ---
 # Troubleshoot the Warehouse
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This article provides guidance in troubleshooting common issues in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. 
 
@@ -71,3 +71,4 @@ A SELECT statement could have completed successfully in the backend and fails wh
 - [Monitoring connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
 - [Limitations in Microsoft Fabric](limitations.md)
+- [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)

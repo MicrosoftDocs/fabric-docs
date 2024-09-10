@@ -3,7 +3,7 @@ title: Troubleshooting errors in Data Activator
 description: Learn the meaning of errors in Data Activator and how to fix them
 author: jamesdhutton
 ms.author: jameshutton
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.date: 11/16/2023
 ---
@@ -17,7 +17,7 @@ If a problem occurs with any of your Data Activator events, objects, or triggers
 
 ## Data ingestion error codes
 
-The following error codes represent problems that can occur when Data Activator ingests data from Power BI datasets and Eventstreams items.
+The following error codes represent problems that can occur when Data Activator ingests data from Power BI semantic model and eventstream items.
 
 ### PowerBiSourceNotFoundOrInsufficientPermission
 
@@ -33,19 +33,19 @@ This error code means that Data Activator couldn't query the Power BI dataset fo
 
 ### EventHubNotFound
 
-This error code means that Data Activator couldn't find the Fabric Eventstream for your object. This can occur if the Eventstream for your object has been deleted, or if the connection from your Eventstream to your Data Activator item has been removed. To resolve the problem, reconnect a Fabric eventstream to your Data Activator object.
+This error code means that Data Activator couldn't find the Fabric eventstream for your object. This can occur if the eventstream for your object has been deleted, or if the connection from your eventstream to your Data Activator item has been removed. To resolve the problem, reconnect a Fabric eventstream to your Data Activator object.
 
 ### EventHubException
 
-This error code means that Data Activator received an exception from Eventstreams when importing your data from your Eventstreams item. To resolve the problem, open your eventstreams item and examine the connection to your Data Activator object, to check for errors in the connection or the event stream.
+This error code means that Data Activator received an exception from eventstreams when importing your data from your eventstream item. To resolve the problem, open your eventstream item and examine the connection to your Data Activator object, to check for errors in the connection or the eventstream.
 
 ### UnauthorizedAccess
 
-This error code means that Data Activator was unauthorized to access the Eventstreams item for your data activator object. This can occur if permission on the Eventstreams item have changed since you connected your Eventsterams item to Data Activator. To resolve the problem, make sure that you have permission to access the Eventstream item.
+This error code means that Data Activator was unauthorized to access the eventstream item for your data activator object. This can occur if permission on the eventstream item have changed since you connected your Eventsterams item to Data Activator. To resolve the problem, make sure that you have permission to access the eventstream item.
 
 ### IncorrectDataFormat
 
-This error code means that the Eventstreams item connected to your Data Activator object contained data in a format that is not recognized by Data Activator. To resolve the problem, review the data in your Eventstreams item to ensure that it's in JSON dictionary format, as described in [Get data for Data Activator from Eventstreams](data-activator-get-data-eventstreams.md).
+This error code means that the eventstream item connected to your Data Activator object contained data in a format that isn't recognized by Data Activator. To resolve the problem, review the data in your eventstream item to ensure that it's in JSON dictionary format, as described in [Get data for Data Activator from eventstreams](data-activator-get-data-eventstreams.md).
 
 ## Trigger evaluation error codes
 
@@ -59,13 +59,13 @@ This error code indicates that your trigger exceeded data processing limits for 
 To resolve this problem, either reduce the number of events per second you're sending to your object, or update your trigger condition so that your trigger activates less frequently.
 
 ### WorkspaceCapacityDeallocated
-This error code means that the Fabric capacity for the your trigger's workspace has been deallocated, so you no longer have Fabric capacity available to process your trigger. To resolve this problem, contact your Fabric capacity administrator to ensure that you have a Fabric capacity assigned to your trigger's workspace.
+This error code means that the Fabric capacity for your trigger's workspace has been deallocated, so you no longer have Fabric capacity available to process your trigger. To resolve this problem, contact your Fabric capacity administrator to ensure that you have a Fabric capacity assigned to your trigger's workspace.
 
 ### DefinitionFailedValidation
 This error code means that your trigger definition is invalid. It indicates an internal problem with Data Activator. If you receive this error code, please ask for assistance on the [Data Activator community site](https://community.fabric.microsoft.com/t5/Data-Activator-forums/ct-p/dataactivator).
 
 ### MaxDelayReached
-The error code means that Data Activator has been unable to receive incoming data for your trigger for the past 7 days, and so has stopped evaluating your trigger. It indicates an internal problem with Data Activator. If you receive this error code, please ask for assistance on the [Data Activator community site](https://community.fabric.microsoft.com/t5/Data-Activator-forums/ct-p/dataactivator).
+The error code means that Data Activator has been unable to receive incoming data for your trigger for the past seven days, and so has stopped evaluating your trigger. It indicates an internal problem with Data Activator. If you receive this error code, ask for assistance on the [Data Activator community site](https://community.fabric.microsoft.com/t5/Data-Activator-forums/ct-p/dataactivator).
 
 ## Alert and Action Error codes
 
@@ -102,7 +102,7 @@ This error code means that you have a trigger that sends a Teams alert, and that
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)
 * [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
-* [Get data for Data Activator from Eventstreams](data-activator-get-data-eventstreams.md)
+* [Get data for Data Activator from eventstreams](data-activator-get-data-eventstreams.md)
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)

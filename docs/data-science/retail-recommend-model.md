@@ -1,9 +1,10 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a recommendation system'
 description: This tutorial shows the data engineering and data science workflow for building a system that provides online book recommendations.
-ms.reviewer: lagayhar
-ms.author: amjafari
-author: amhjf
+ms.author: lagayhar 
+author: lgayhardt
+ms.reviewer: amjafari
+reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
   - build-2023
@@ -139,7 +140,7 @@ if not IS_CUSTOM_DATA:
 
 ### Set up the MLflow experiment tracking
 
-Use this code to set up the MLflow experiment tracking. This example disables autologging. For more information, see the [Autologging in Microsoft Fabric](/fabric/data-science/mlflow-autologging) article.
+Use this code to set up the MLflow experiment tracking. This example disables autologging. For more information, see the [Autologging in Microsoft Fabric](mlflow-autologging.md) article.
 
 ```python
 # Set up MLflow for experiment tracking

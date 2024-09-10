@@ -1,6 +1,6 @@
 ---
 title: Migrate Spark libraries
-description: Learn about how to migrate Spark libraries from Azure Synapse Spark to Fabric.
+description: Learn about migrating Spark libraries from Azure Synapse Spark to Fabric, including migration prerequisites and options.
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu

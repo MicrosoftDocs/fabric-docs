@@ -1,5 +1,5 @@
 ---
-title: Create and manage Microsoft Fabric notebooks from VS Code for the Web
+title: Create and manage Fabric notebooks from VS Code for the Web
 description: Learn about the VS Code extension for Synapse under the VS Code web experience, which supports a pro-developer authoring experience.
 ms.reviewer: sngun
 ms.author: qixwang
@@ -47,7 +47,7 @@ The notebook tree node lists all of the notebook items in the current workspace.
 
 You can also delete any existing file/folder in the notebook file system.
 
-:::image type="content" source="media\vscode\manage-notebook-vs-code-web.png" alt-text="Screenshot of notebook tree node.":::
+:::image type="content" source="media\vscode\manage-notebook-vs-code-web.png" alt-text="Screenshot showing the notebook tree node.":::
 
 ## Run notebooks in the VS Code for the Web experience
 

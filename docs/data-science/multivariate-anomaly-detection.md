@@ -5,17 +5,19 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.reviewer: fsolomon
-author: JessicaXYWang
-ms.author: jessiwang
+ms.author: ssalgado
+author: ssalgadodev
+ms.reviewer: jessiwang
+reviewer: JessicaXYWang
 ms.date: 01/24/2024
+ms.collection: ce-skilling-ai-copilot
 ---
 # Recipe: Azure AI services - Multivariate Anomaly Detection
 
 This recipe shows how you can use SynapseML and Azure AI services on Apache Spark for multivariate anomaly detection. Multivariate anomaly detection allows for the detection of anomalies among many variables or time series, taking into account all the inter-correlations and dependencies between the different variables. In this scenario, we use SynapseML to train a model for multivariate anomaly detection using the Azure AI services, and we then use to the model to infer multivariate anomalies within a dataset containing synthetic measurements from three IoT sensors.
 
 > [!IMPORTANT]
-> Starting on the 20th of September, 2023 you won’t be able to create new Anomaly Detector resources. The Anomaly Detector service is being retired on the 1st of October, 2026.
+> Starting on the 20th of September, 2023 you won't be able to create new Anomaly Detector resources. The Anomaly Detector service is being retired on the 1st of October, 2026.
 
 To learn more about the Azure AI Anomaly Detector, refer to [this documentation page](/azure/ai-services/anomaly-detector/).
 

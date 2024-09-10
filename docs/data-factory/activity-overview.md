@@ -5,10 +5,7 @@ ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
 ms.topic: overview
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 03/19/2024
 ms.search.form: Pipeline Activity Overview
 ---
 
@@ -42,7 +39,8 @@ Data transformation activity | Compute environment
 [Dataflow Gen2](dataflows-gen2-overview.md) | Compute manager by Microsoft Fabric
 [Delete data](delete-data-activity.md) | Compute manager by Microsoft Fabric
 [Fabric Notebook](notebook-activity.md) | Apache Spark clusters managed by Microsoft Fabric
-Fabric Spark job definition (coming soon) | Apache Spark clusters managed by Microsoft Fabric
+[HDInsight activity](azure-hdinsight-activity.md) | Apache Spark clusters managed by Microsoft Fabric 
+[Spark Job Definition](spark-job-definition-activity.md) | Apache Spark clusters managed by Microsoft Fabric
 [Stored Procedure](stored-procedure-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 [SQL script](script-activity.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 
@@ -99,10 +97,10 @@ The general settings will always include **Name** and **Description** fields for
 |Retry |Maximum number of retry attempts. |
 |(Advanced properties) Retry interval (sec) |The number of seconds between each retry attempt. |
 |(Advanced properties) Secure output |When checked, output from the activity isn't captured in logging. |
-|(Advanced properties) Secure input |The number of seconds between each retry attempt. |
+|(Advanced properties) Secure input |When checked, input from the activity isn't captured in logging. |
 
 > [!NOTE]
-> There is a default limit of maximum 40 activities per pipeline, which includes inner activities for containers.
+> There is a default soft limit of maximum 80 activities per pipeline, which includes inner activities for containers.
 
 ## Related content
 

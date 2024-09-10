@@ -18,10 +18,10 @@ The Azure SQL Database Managed Instance connector supports the following capabil
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | --- |
-| **Copy activity (source/destination)** | None | Basic<br>Organizational account<br>Service principal |
-| **Lookup activity** | None | Basic<br>Organizational account<br>Service principal |
-| **GetMetadata activity** | None | Basic<br>Organizational account<br>Service principal |
-| **Script activity** | None | Basic<br>Organizational account<br>Service principal |
-| **Stored procedure activity** | None | Basic<br>Organizational account<br>Service principal |
+| **Copy activity (source/destination)** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
+| **Lookup activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
+| **GetMetadata activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
+| **Script activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
+| **Stored procedure activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
 
 To learn more about the copy activity configuration for Azure SQL Database Managed Instance in Data pipeline, go to [Configure in a data pipeline copy activity](connector-azure-sql-database-managed-instance-copy-activity.md).

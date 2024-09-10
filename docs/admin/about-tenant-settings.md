@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/21/2023
+ms.date: 07/27/2024
 ---
 
 # About tenant settings
@@ -30,6 +30,12 @@ You can identify new settings according to their *new* icon.  
 ## How to get to the tenant settings
 
 Go to the admin portal and select **Tenant settings**.
+
+1. At the top of the Fabric portal, select the settings (gear) icon.
+
+2. In the side pane that appears, select **Admin portal**.
+
+3. The admin portal opens. Select **Tenant settings**.
 
 :::image type="content" source="media/tenant-settings-index/admin-portal-tenant-settings.png" alt-text="Screenshot of how to get to the tenant settings.":::
 

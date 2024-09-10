@@ -1,9 +1,9 @@
 ---
 title: "Microsoft Fabric security fundamentals"
 description: "Learn about Microsoft Fabric security fundamentals and how the main flows in the system work."
-author: peter-myers
-ms.author: v-myerspeter
-ms.reviewer: sergeig, vparasuraman
+author: KesemSharabi
+ms.author: kesharab
+ms.reviewer: v-myerspeter, sergeig, vparasuraman
 ms.date: 01/14/2024
 ms.topic: conceptual
 ms.custom: fabric-cat
@@ -35,7 +35,7 @@ The architectural diagram depicts the following concepts.
 
 2. Authentication is handled by Microsoft Entra ID, [previously known as Azure Active Directory](/entra/fundamentals/new-name), which is the cloud-based identity and access management service that authenticates the user or [service principal](/entra/identity-platform/app-objects-and-service-principals?tabs=browser#service-principal-object) and manages access to Fabric.
 
-3. The web front end receives user requests and facilitates login. It also routes requests and serves front-end content to the user.
+3. The web front end receives user requests and facilitates sign-in. It also routes requests and serves front-end content to the user.
 
 4. The metadata platform stores tenant metadata, which can include customer data. Fabric services query this platform on demand in order to retrieve authorization information and to authorize and validate user requests. It's located in the tenant home region.
 
@@ -79,7 +79,7 @@ While data can be processed in memory in an unencrypted state, it's never persis
 
 ### Data in transit
 
-Data in transit across the public internet between Microsoft services is always encrypted with at least TLS 1.2. Fabric negotiates to TLS 1.3 whenever possible. Traffic between Microsoft services always routes over the [Microsoft global network](/azure/networking/microsoft-global-network).
+Data in transit between Microsoft services is always encrypted with at least TLS 1.2. Fabric negotiates to TLS 1.3 whenever possible. Traffic between Microsoft services always routes over the [Microsoft global network](/azure/networking/microsoft-global-network).
 
 Inbound Fabric communication also enforces TLS 1.2 and negotiates to TLS 1.3, whenever possible. Outbound Fabric communication to customer-owned infrastructure prefers secure protocols but might fall back to older, insecure protocols (including TLS 1.0) when newer protocols aren't supported.
 
@@ -93,17 +93,17 @@ Telemetry is used to maintain performance and reliability of the Fabric platform
 
 OneLake supports the same [Azure Data Lake Storage Gen2 (ADLS Gen2)](/azure/storage/blobs/data-lake-storage-introduction) [APIs](../onelake/onelake-api-parity.md) and SDKs, therefore it's compatible with existing ADLS Gen2 applications, including [Azure Databricks](/azure/databricks/introduction/).
 
-For more information, see [OneLake security](../onelake/onelake-security.md).
+For more information, see [Fabric and OneLake security](../onelake/security/fabric-onelake-security.md).
 
 ### Workspace security
 
 [Workspaces](../get-started/workspaces.md) represent the primary security boundary for data stored in OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace by assigning users to [workspace roles](../get-started/roles-workspaces.md).
 
-For more information, see [OneLake security (Workspace security)](../onelake/onelake-security.md#workspace-security).
+For more information, see [Fabric and OneLake security (Workspace security)](../onelake/security/fabric-onelake-security.md).
 
 ### Item security
 
-Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/onelake-security.md#item-security) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
+Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/security/fabric-onelake-security.md) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
 
 ## Compliance resources
 
@@ -120,7 +120,8 @@ The Fabric service follows the Security Development Lifecycle (SDL), which consi
 For more information about Fabric security, see the following resources.
 
 - [Security in Microsoft Fabric](security-overview.md)
-- [OneLake security](../onelake/onelake-security.md)
-- [Microsoft Fabric licenses](../enterprise/licenses.md)
-- Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).
-- Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).
+- [Microsoft Fabric end-to-end security scenario](security-scenario.md)
+- [OneLake security overview](../onelake/security/fabric-onelake-security.md)
+- [Microsoft Fabric concepts and licenses](../enterprise/licenses.md)
+- Questions? Try asking the [Microsoft Fabric community](https://community.fabric.microsoft.com/).
+- Suggestions? [Contribute ideas to improve Microsoft Fabric](https://ideas.fabric.microsoft.com/).

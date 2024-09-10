@@ -1,6 +1,6 @@
 ---
 title: Apache Spark application detail monitoring
-description: Learn how to view detailed monitoring of an application.
+description: Learn how to monitor your Apache Spark application details, including recent run status, issues, and the progress of your jobs.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang

@@ -7,6 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - build-2024
 ms.date: 01/07/2024
 ---
 
@@ -36,7 +37,7 @@ After the access request is submitted, the JIT service evaluates the request, co
 
 * The scope of the resource
 
-* Whether the requester is an isolated identity or using multi-factor authentication
+* Whether the requester is an isolated identity or using multifactor authentication
 
 * Permissions levels
 
@@ -47,8 +48,6 @@ When the request requires direct access to customer data, a Customer Lockbox req
 These steps describe a Microsoft initiated Customer Lockbox request, for [!INCLUDE [product-name](../includes/product-name.md)] service.
 
 1. The Microsoft Entra Global Administrator receives a pending access request notification email from Microsoft. The admin who received the email, becomes the designated approver.
-
-    :::image type="content" source="media/security-lockbox/email-example.png" alt-text="Screenshot of pending access request notification email from Microsoft." lightbox="media/security-lockbox/email-example.png":::
 
 2. The email provides a link to Customer Lockbox in the Azure Administration module. Using the link, the designated approver signs in to the Azure portal to view any pending Customer Lockbox requests. The request remains in the customer queue for four days. After that, the access request automatically expires and no access is granted to Microsoft engineers.
 
@@ -88,6 +87,7 @@ Customer Lockbox has two type of logs:
     |DeleteAdminUsageDashboardsViaLockbox  |Delete admin usage dashboards via lockbox   |
     |DeleteUsageMetricsv2PackageViaLockbox |Delete usage metrics v2 package via lockbox |
     |DeleteAdminMonitoringFolderViaLockbox |Delete admin monitoring folder via lockbox  |
+    |GetQueryTextTelemetryViaLockbox |Get query text from secured telemetry store via Lockbox|
 
 ## Exclusions
 
@@ -104,12 +104,15 @@ Customer Lockbox requests aren't triggered in the following engineering support 
 Access to data varies according to the Microsoft Fabric experience your request is for. This section lists which data the Microsoft engineer can access, after you approve a Customer Lockbox request.
 
 * **Power BI** - When running the operations listed below, the Microsoft engineer will have access to a few tables linked to your request. Each operation the Microsoft engineer uses, is reflected in the audit logs.
-    * Get refresh history
+    * Get model refresh history
     * Delete admin usage dashboard
     * Delete usage metrics v2 package
     * Delete admin monitoring folder
+    * Delete admin workspace
+    * Access particular Dataset in storage
+    * Get query text from secured telemetry store
 
-* **Real-Time Analytics** - The Real-Time Analytics engineer will have access to the data in the KQL database that's linked to your request.
+* **Real-Time Intelligence** - The Real-Time Intelligence engineer will have access to the data in the KQL database that's linked to your request.
 
 * **Data Engineering** - The Data Engineering engineer will have access to the following Spark logs linked to your request:
     * Driver logs

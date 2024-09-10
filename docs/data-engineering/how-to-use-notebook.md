@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: Create and use notebooks
-ms.date: 11/15/2023
+ms.date: 07/25/2024
 ---
 
 # How to use Microsoft Fabric notebooks
@@ -25,6 +25,28 @@ With a Fabric notebook, you can:
 - Be productive with enhanced authoring capabilities and built-in data visualization.
 
 This article describes how to use notebooks in data science and data engineering experiences.
+
+## Security context of running notebook
+
+The execution of a notebook can be triggered by three different manners in Fabric with full flexibility to meet different scenarios:
+
+- **Interactive run**: User manually triggers the execution via the different UX entries or calling the REST API. The execution would be running under the current user's security context.
+- **Run as pipeline activity**: The execution is triggered from Fabric Data Factory pipeline. You can find the detail steps in the [Notebook Activity](../data-factory/notebook-activity.md). The execution would be running under the pipeline owner's security context.
+- **Scheduler**: The execution is triggered from a scheduler plan. The execution would be running under the security context of the user who setup/update the scheduler plan.
+
+The flexibility of these execution options with different security context allows you to meet different scenarios and requirements, but also requires you to be aware of the security context when you design and develop your notebook, otherwise it may cause unexpected behavior and even some security issues.
+
+The first time when a notebook is created, a warning message will be shown to remind you the risk of running the code without reviewing it.
+
+:::image type="content" source="media\how-to-use-notebook\notebook-security-warning.png" alt-text="Screenshot showing warning of running notebook.":::
+
+Here are some best practices to help you avoid security issues:
+
+- Before you manually run the notebook, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change.
+- Before you add a notebook activity to a pipeline, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you add it into the pipeline.
+- Before you update the scheduler plan, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you update the scheduler plan.
+- Separate the workspace into different stage (dev, test, prod) and control the access of different stage to avoid the security issue. Only add the user who you trust to the prod stage.
+
 
 ## Create notebooks
 
@@ -152,6 +174,25 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
    :::image type="content" source="media\how-to-use-notebook\new-comment.png" alt-text="Screenshot showing where to select New.":::
 
 1. If you need them, find the **Edit comment**, **Resolve thread**, and **Delete thread** options by selecting the More option next to your comment.
+
+### Tagging others in a comment
+ 
+"Tagging" refers to mentioning and notifying a user in a comment thread, enhancing collaboration efficiently on the specifics.
+ 
+1. Select a section of code in a cell and new a comment thread.
+ 
+1. Input user name and choose the correct one on the suggestion list if you want to mention someone for discussion about a certain section.
+ 
+1. Share your insights and **Post** them.
+ 
+1. An Email notification will be triggered, and user clicks on **Open Comments** link to quickly locate this cell.
+ 
+1. Moreover, authorize and configure the permissions for users when tagging someone who doesn’t have access, ensuring that your code assets are well managed.
+
+![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
+
+> [!NOTE]
+> For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.
 
 ## Switch notebook mode
 

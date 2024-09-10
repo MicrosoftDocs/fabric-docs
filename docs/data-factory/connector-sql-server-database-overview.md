@@ -26,10 +26,10 @@ The SQL Server database connector supports the following capabilities in Data pi
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | --- |
-| **Copy activity (source/destination)** | None | Basic |
-| **Lookup activity** | None | Basic |
-| **GetMetadata activity** | None | Basic |
-| **Script activity** | None | Basic |
-| **Stored procedure activity** | None | Basic |
+| **Copy activity (source/destination)** | None <br> On-premises | Basic |
+| **Lookup activity** | None <br> On-premises | Basic |
+| **GetMetadata activity** | None <br> On-premises | Basic |
+| **Script activity** | None <br> On-premises | Basic |
+| **Stored procedure activity** | None <br> On-premises | Basic |
 
 To learn more about the copy activity configuration for SQL Server database in Data pipeline, go to [Configure in a data pipeline copy activity](connector-sql-server-copy-activity.md).

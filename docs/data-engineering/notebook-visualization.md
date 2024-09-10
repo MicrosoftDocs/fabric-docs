@@ -33,8 +33,8 @@ The output of SQL statement appears in the rendered table view by default.
 ![Animated GIF of rich dataframe preview.](media\notebook-visualization\rich-dataframe-preview.gif)
 
 1. **Table** view is rendered by default when using _display()_ command.
-1. You can profile your dataframe by clicking on **Inspect** button. It provide the summarized data distribution and showing statistics of each column. 
-1. Each card in the "Inspect" side pane maps to a column of the dataframke, you can view more details by clicking on the card or selecting a column in the table.
+1. You can profile your dataframe by clicking on **Inspect** button. It provides the summarized data distribution and showing statistics of each column. 
+1. Each card in the "Inspect" side pane maps to a column of the dataframe, you can view more details by clicking on the card or selecting a column in the table.
 1. You can view the cell details by clicking on the cell of the table. This is useful when the dataframe contains long string type of contents.
 1. You can specify the row count of the table view, the default value is **1000**, Notebook support to view and profile **10000** rows of a dataframe at most.
 
@@ -177,7 +177,7 @@ You can easily embed and interact with Power BI reports in your notebooks with j
 
 The following image is an example of rendering existing Power BI report.
 
-:::image type="content" source="media\notebook-visualization\spark-quick-visual-report.png" alt-text="Screenshot of a spark quick visual." lightbox="media\notebook-visualization\spark-quick-visual-report.png":::
+:::image type="content" source="media\notebook-visualization\spark-quick-visual-report.png" alt-text="Screenshot of a spark visual rendering a Power BI report." lightbox="media\notebook-visualization\spark-quick-visual-report.png":::
 
 Run the following code to render an existing Power BI report.
 
@@ -196,7 +196,7 @@ You can use a Spark DataFrame in your notebook to quickly generate insightful vi
 
 The following image is an example of a `QuickVisualize()` from a Spark DataFrame.
 
-:::image type="content" source="media\notebook-visualization\powerbi-report-example.png" alt-text="Screenshot of a Power BI report." lightbox="media\notebook-visualization\powerbi-report-example.png":::
+:::image type="content" source="media\notebook-visualization\powerbi-report-example.png" alt-text="Screenshot of a Power BI report from a dataframe." lightbox="media\notebook-visualization\powerbi-report-example.png":::
 
 Run the following code to render a report from a Spark DataFrame.
 
@@ -218,7 +218,7 @@ You can also create reports based on a pandas DataFrame in notebook.
 
 The following image is an example of a `QuickVisualize()` from a pandas DataFrame.
 
-:::image type="content" source="media\notebook-visualization\pandas-quick-visual-report.png" alt-text="Screenshot of a pandas quick visual." lightbox="media\notebook-visualization\pandas-quick-visual-report.png":::
+:::image type="content" source="media\notebook-visualization\pandas-quick-visual-report.png" alt-text="Screenshot of a report from pandas dataframe." lightbox="media\notebook-visualization\pandas-quick-visual-report.png":::
 
 Run the following code to render a report from a Spark DataFrame.
 

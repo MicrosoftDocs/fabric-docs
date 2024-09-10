@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/18/2023
+ms.date: 05/23/2024
 ---
 
 # Buy a Microsoft Fabric subscription
@@ -18,7 +18,7 @@ After you buy a capacity, you can learn how to [manage your capacity](/power-bi/
 
 ## SKU types
 
-Microsoft Fabric has an array of capacities that you can buy. The capacities are split into Stock Keeping Units (SKU). Each SKU provides a different amount of computing power, measured by its Capacity Unit (CU) value. Refer to the [Capacity and SKUs](licenses.md#capacity-license) table to see how many CUs each SKU provides.
+Microsoft Fabric has an array of capacities that you can buy. The capacities are split into Stock Keeping Units (SKU). Each SKU provides a different amount of computing power, measured by its Capacity Unit (CU) value. Refer to the [Capacity and SKUs](licenses.md#capacity) table to see how many CUs each SKU provides.
 
 Microsoft Fabric operates on two types of SKUs:
 
@@ -32,7 +32,9 @@ Azure SKUs, also known as F SKUs, are the recommended capacities for Microsoft F
 
 Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
-* Pay as you go with no time commitment.
+* Pay-as-you-go with no time commitment.
+
+* A [capacity reservation](/azure/cost-management-billing/reservations/fabric-capacity). This feature allows you to reserve a capacity for a specific period of time, and save money on your Azure bill. A reserved capacity is no longer charged at the pay-as-you-go rates.
 
 * You can [scale your capacity](scale-capacity.md) up or down using the Azure portal.
 
@@ -44,9 +46,15 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 ### Buy an Azure SKU
 
-To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subscription](/azure/role-based-access-control/overview).
+To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subscription](/azure/role-based-access-control/overview). If you do not have access to these roles in a subscription, you can ask your Azure subscription administrator to create a custom role with the following [Azure role-based access control](/azure/role-based-access-control/overview) (Azure RBAC) permissions:
+  * Microsoft.Fabric/capacities/read
+  * Microsoft.Fabric/capacities/write
+  * Microsoft.Fabric/capacities/suspend/action
+  * Microsoft.Fabric/capacities/resume/action
 
-1. Select the **Microsoft Fabric** service. You can search for *Microsoft Fabric* using the search menu.
+To buy an Azure SKU, follow these steps:
+
+1. In Azure, select the **Microsoft Fabric** service. You can search for *Microsoft Fabric* using the search menu.
 
 2. Select **Create Fabric Capacity**.
 
@@ -60,7 +68,7 @@ To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subsc
 
     * *Region* - Select the region you want your capacity to be part of.
 
-    * *Size* - Select your capacity size. Capacities come in different stock keeping units (SKUs) and we measure them by capacity units (CUs). You can view a detailed list of Microsoft Fabric capacities in [Capacities and SKUs](licenses.md#capacity-license).
+    * *Size* - Select your capacity size. Capacities come in different stock keeping units (SKUs) and we measure them by capacity units (CUs). You can view a detailed list of Microsoft Fabric capacities in [Capacities and SKUs](licenses.md#capacity).
 
     * *Fabric capacity administrator* - Select the [admin](../admin/microsoft-fabric-admin.md#capacity-admin-roles) for this capacity.
 

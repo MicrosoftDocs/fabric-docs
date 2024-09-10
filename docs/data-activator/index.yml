@@ -6,13 +6,14 @@ summary: Learn about Data Activator, and how to create events and triggers for y
 metadata:
   title: Data Activator documentation
   description: Browse the Data Activator documentation.
-  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: enterprise
+  ms.custom:
+    - build-2024
   ms.topic: landing-page
   author: davidiseminger
   ms.author: davidi
   ms.date: 10/03/2023
-
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -38,6 +39,11 @@ landingContent:
         links:
           - text: Get data from Eventstreams
             url: data-activator-get-data-eventstreams.md
+      - linkListType: overview
+        links:
+          - text: Create alerts from a Real-Time Dashboard
+            url: data-activator-get-data-real-time-dashboard.md
+            
 
   - title: Create objects and triggers
     linkLists:

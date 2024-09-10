@@ -119,7 +119,7 @@ After completing the configuration of your data pipeline, run the data pipeline 
 
     :::image type="content" source="media/tutorial-move-data-lakehouse-pipeline/schedule.png" alt-text="Screenshot of scheduling the data pipeline.":::
 
-## Next steps
+## Related content
 
 - [Connector overview](connector-overview.md)
 - [How to monitor data pipeline runs](monitor-pipeline-runs.md)

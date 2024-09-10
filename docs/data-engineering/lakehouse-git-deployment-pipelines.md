@@ -1,6 +1,6 @@
 ---
 title: Lakehouse deployment pipelines and git integration
-description: Learn about the lakehouse git integration and deployment pipelines.
+description: Learn about the Microsoft Fabric lakehouse deployment pipelines and git integration, including what is tracked in a git-connected workspace.
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny

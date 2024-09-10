@@ -11,7 +11,7 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 05/23/2023
+ms.date: 05/13/2024
 ---
 
 # What is Data engineering in Microsoft Fabric?
@@ -46,9 +46,11 @@ Notebooks are an interactive computing environment that allows users to create a
 
 Data pipelines are a series of steps that can collect, process, and transform data from its raw form to a format that you can use for analysis and decision-making. They're a critical component of data engineering, as they provide a way to move data from its source to its destination in a reliable, scalable, and efficient way.
 
+You can use Data Engineering in Microsoft Fabric free of charge when you sign up for the [Fabric trial](../get-started/fabric-trial.md). You can also buy a [Microsoft Fabric capacity](../enterprise/buy-subscription.md) or a [Fabric reserved capacity](/azure/cost-management-billing/reservations/fabric-capacity)
+
 ## Related content
 
-Get started with the Data Engineering experience:
+Get started with Data Engineering:
 
 - To learn more about lakehouses, see [What is a lakehouse in Microsoft Fabric?](lakehouse-overview.md)
 - To get started with a lakehouse, see [Create a lakehouse in Microsoft Fabric](create-lakehouse.md).

@@ -3,7 +3,7 @@ title: Use custom actions to trigger Power Automate flows
 description: Understand how to use custom actions to trigger Power Automate flows with Data Activator.
 author: davidiseminger
 ms.author: davidi
-ms.topic: concept
+ms.topic: conceptual
 ms.custom: 
 ms.date: 11/16/2023
 ---
@@ -50,7 +50,7 @@ To access your input fields in the flow, use a Power Automate expression of the 
 your input field. 
 
 ```
-triggerBody()?['customProperties/NAME_OF_INPUT_FIELD'].
+triggerBody()?['customProperties/NAME_OF_INPUT_FIELD']
 ```
 
 ### Complete your custom action

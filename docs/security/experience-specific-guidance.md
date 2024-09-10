@@ -8,6 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
+  - build-2024
 ms.date: 11/14/2023
 ---
 
@@ -56,7 +57,7 @@ Customers can recreate lakehouses by using a custom Scala script.
 
 1. Create a new notebook in the workspace C2.W2.
 
-1. To recover the tables and files from the original lakehouse, you need to use the ABFS path to access the data (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example below (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
+1. To recover the tables and files from the original lakehouse, refer to the data with OneLake paths such as abfss (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example below (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
 
     ```
     mssparkutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
@@ -267,9 +268,9 @@ If you want to recover a Dataflow Gen2 item in the new region, you need to expor
 
 Customers can't access data pipelines in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical data pipelines in multiple workspaces across different regions.
 
-## Real-Time Analytics
+## Real-Time Intelligence
 
-This guide walks you through the recovery procedures for the Real-Time Analytics experience. It covers KQL databases/querysets and eventstreams.
+This guide walks you through the recovery procedures for the Real-Time Intelligence experience. It covers KQL databases/querysets and eventstreams.
 
 ### KQL Database/Queryset
 

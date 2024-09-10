@@ -11,14 +11,20 @@ items:
   items:
   - name: Get data from Power BI
     href: data-activator-get-data-power-bi.md
+  - name: Create alerts from a Real-Time Dashboard
+    href: data-activator-get-data-real-time-dashboard.md    
   - name: Get data from Eventstreams
-    href: data-activator-get-data-eventstreams.md        
+    href: data-activator-get-data-eventstreams.md   
+  - name: Get data from Real-Time Hub
+    href: data-activator-get-data-real-time-hub.md             
 - name: Create objects and triggers
   items:
   - name: Assign data to objects in Data Mode
     href: data-activator-assign-data-objects.md    
   - name: Create triggers in design mode
-    href: data-activator-create-triggers-design-mode.md        
+    href: data-activator-create-triggers-design-mode.md       
+  - name: Trigger Fabric items
+    href: data-activator-trigger-fabric-items.md       
   - name: Detection conditions
     href: data-activator-detection-conditions.md            
   - name: Use custom actions to trigger Power Automate flows

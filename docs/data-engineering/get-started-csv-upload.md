@@ -1,6 +1,6 @@
 ---
-title: CSV upload to Delta for PBI reporting
-description: Go from your CSV file to a Lakehouse table to a PBI report.
+title: CSV file upload to Delta table for Power BI reporting
+description: Learn how to upload a CSV file to a lakehouse, convert it to a Delta table, and generate a semantic model and Power BI report.
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
@@ -8,7 +8,7 @@ ms.topic: get-started
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 05/23/2023
+ms.date: 05/13/2024
 ms.search.form: csv load to delta to pbi report
 ---
 
@@ -59,9 +59,9 @@ In this tutorial you learn to:
 
 1. Select **New Power BI semantic model** on the Lakehouse ribbon.
 1. Select the table to be added to the semantic model, select the **Confirm** button.
-1. On the semantic model editing experience, you are able to define relationships between multiple tables, and also apply data types normalization and DAX transformations to the data if desired.
+1. With semantic model editing, you are able to define relationships between multiple tables, and also apply data types normalization and DAX transformations to the data if desired.
 1. Select **New report** on the ribbon.
-1. Use the report builder experience to design a Power BI report.
+1. Use the report builder to design a Power BI report.
 
    :::image type="content" source="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif" alt-text="Animated image showing semantic model and power bi report generation" lightbox="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif":::
 

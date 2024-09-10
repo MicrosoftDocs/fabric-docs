@@ -1,6 +1,6 @@
 ---
 title: OneLake File Explorer Release Notes
-description: Information about each release of the OneLake file explorer client app for Windows.
+description: Information about major updates in each release of the OneLake file explorer client app for Windows.
 ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
@@ -9,6 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 10/13/2023
+#customer intent: As a OneLake file explorer user, I want to stay informed about app updates and easily access release notes so that I can take advantage of new features and improvements.
 ---
 
 # What's new in the latest OneLake file explorer?
@@ -17,6 +18,16 @@ Continue reading for information on major updates to OneLake file explorer.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
+## April 2024 Update
+
+### v 1.0.13.0 - Update Notifications
+
+We believe that staying informed about app updates is crucial. Whether it’s a bug fix, performance improvement, or exciting new features. Starting with this version, the OneLake file explorer app will now notify you when a new update is available. You’ll receive a Windows notification when a new version is available and the OneLake icon in the Windows notification area will change. Simply right-click the icon to see if an update is available.
+
+### v 1.0.12.0 - Internal update
+
+This release includes minor internal fixes to enhance functionality.
+
 ## December 2023 Update (v 1.0.11.0)
 
 ### Ability to update files using Excel
@@ -24,12 +35,13 @@ Continue reading for information on major updates to OneLake file explorer.
 With this release users can make edits and updates with Excel to OneLake files, similar to the experience with OneDrive. Start by opening a csv or xlsx file using Excel, make updates and close the file. Closing the file will initiate the sync to OneLake. You can then view the updated file online in the Fabric web portal. This enhancement aims to streamline your workflow and provide a more intuitive approach to managing and editing your files with Excel.  
 
 ### Menu option to view Release Notes
+
 With this menu option, you can easily find details about what's new in the latest OneLake File Explorer version. Right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **About** > **Release Notes**. This action opens the OneLake file explorer release notes page in your browser window.
 
 ### TLS 1.3 support
 
 OneLake file explorer will default to the latest TLS version supported by Windows, currently TLS 1.3. Support for TLS 1.3 is recommended for maintaining the security and privacy of data exchanged over the internet.
- 
+
 ## September 2023 Update (v 1.0.10.0)
 
 ### Option to open workspaces and items on the web portal

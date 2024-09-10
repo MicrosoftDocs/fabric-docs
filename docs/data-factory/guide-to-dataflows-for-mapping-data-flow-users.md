@@ -1,6 +1,6 @@
 ---
-title: A guide to learning Dataflows for Mapping Data Flow users
-description: Guide on common transformations from Azure Data Factory Mapping Dataflows and their equivalent transformations in Power Query inside of Dataflows
+title: A guide to Fabric Dataflows for Azure Data Factory Mapping Data Flow users
+description: Guide on common transformations from Azure Data Factory Mapping Dataflows and their equivalent transformations in Power Query inside of Fabric's Dataflows
 author: itsnotaboutthecell
 ms.topic: overview
 ms.custom:
@@ -10,9 +10,9 @@ ms.author: alpowers
 ms.search.form: DataflowGen2
 ---
 
-# A guide to learning Dataflows for Mapping Data Flow users
+# A guide to Fabric Dataflows for Azure Data Factory Mapping Data Flow users
 
-Microsoft Fabric’s Data Factory experience provides an intuitive and user-friendly interface using Power Query Online that can help you streamline your data transformation workflows when authoring Dataflow Gen2. If you’re a developer with a background in Azure Data Factory and Mapping Data Flows, you’ll find this guide helpful in mapping your existing Mapping Data Flow transformations to the Dataflow Gen2 Power Query user interface.
+Microsoft Fabric’s Data Factory experience provides an intuitive and user-friendly interface using Power Query Online that can help you streamline your data transformation workflows when authoring Dataflow Gen2. If you’re a developer with a background in Azure Data Factory's Mapping Data Flows, you’ll find this guide helpful in mapping your existing Mapping Data Flow transformations to the Dataflow Gen2 Power Query user interface.
 
 ## Global search box
 When first starting to author Dataflows, you can also leverage the Global search box (shortcut: **Alt + Q**) found in the middle of the editor to search for connectors, transformations (actions), queries, and more while you learn your way around the Power Query Online interface.

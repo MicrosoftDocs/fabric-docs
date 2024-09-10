@@ -4,8 +4,7 @@ description: Learn how to configure Power BI visuals admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - tenant-setting
   - ignite-2023
@@ -47,7 +46,7 @@ To learn more, see [Export data to file](organizational-visuals.md#export-data-t
 
 Enabling this setting lets [custom visuals](/power-bi/developer/visuals/power-bi-custom-visuals) obtain Microsoft Entra ID (formerly known as Azure AD) access tokens for signed-in users, facilitating single sign-on authentication.
 
-To learn more, see [Obtain Microsoft Entra access token](organizational-visuals.md#obtain-microsoft-entra-access-token).
+To learn more, see [Obtain Microsoft Entra access token](organizational-visuals.md#appsource-custom-visuals-sso).
 
 ## Related content
 

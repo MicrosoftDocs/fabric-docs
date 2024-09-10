@@ -1,5 +1,5 @@
 ---
-title: Teams activity
+title: Teams activity (Preview)
 description: Learn how to add a Teams activity to a pipeline and use it to send a Teams message.
 ms.reviewer: xupxhou
 ms.author: jburchel
@@ -10,9 +10,13 @@ ms.custom:
 ms.date: 11/15/2023
 ---
 
-# Use the Teams activity to send a message in Teams
+# Use the Teams activity to send a message in Teams (Preview)
 
 The Teams activity in Data Factory for Microsoft Fabric allows you to send a message to a Teams channel or group chat. The message can include dynamic expressions to be customized as much as necessary.
+
+> [!IMPORTANT]
+> The Teams activity in Data Factory for Microsoft Fabric is currently in preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 
 ## Prerequisites
 
@@ -50,7 +54,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
    :::image type="content" source="media/teams-activity/choose-where-to-post.png" alt-text="Screenshot showing the Teams activity Settings tab, after signing in, with the Post in options dropdown expanded to show its available options.":::
 
-1. The **Group chat** or **Team** and **Channel** dropdowns appear after you select where to post. Use them to select a group chat or team and channel where you want to post the message.
+1. The **Group chat** or **Team** and **Channel** dropdowns appear after you select where to post. Use them to select a group chat or team and channel where you want to post the message. If you select group chat, a new dropdown will appear allowing you to select from the group chats of which you are a member. If you select channel, you'll see two dropdown boxes. The first allows you to choose a team from among the teams to which you belong. After that, the second dropdown allows you to choose from among the channels availble for that team.
 
 1. Use the **Message** area to create a message. Dynamic expressions are supported allowing you to incorporate any system or user variables, expressions, or functions to customize the message however necessary. To use dynamic expressions, select the **View in expression builder** link below the message area.
 

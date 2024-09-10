@@ -1,6 +1,6 @@
 ---
 title: Create a OneLake shortcut
-description: Learn how to create OneLake shortcuts.
+description: Learn how to create a OneLake shortcut inside a Fabric lakehouse using a lakehouse, data warehouse, or Kusto Query Language database as the source.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
@@ -10,11 +10,14 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 09/27/2023
+#customer intent: As a data engineer, I want to learn how to create a OneLake shortcut inside a Fabric lakehouse using different data sources so that I can efficiently access and manage data within the lakehouse.
 ---
 
 # Create a OneLake shortcut
 
-In this article, you learn how to create a OneLake shortcut inside a Fabric lakehouse. You can use a lakehouse, a data warehouse, or a Kusto Query Language (KQL) database as the source for your shortcut. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+In this article, you learn how to create a OneLake shortcut inside a Fabric lakehouse. You can use a lakehouse, a data warehouse, or a Kusto Query Language (KQL) database as the source for your shortcut.
+
+For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
 
 ## Prerequisite
 
@@ -40,3 +43,4 @@ The lakehouse automatically refreshes. The shortcut(s) appears under the selecte
 
 - [Create an Azure Data Lake Storage Gen2 shortcut](create-adls-shortcut.md)
 - [Create an Amazon S3 shortcut](create-s3-shortcut.md)
+- [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)

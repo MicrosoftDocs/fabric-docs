@@ -4,6 +4,8 @@ description: Learn how to update your workspace manually when there's an interna
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.service: fabric
+ms.subservice: cicd
 ms.topic: how-to
 ms.date: 06/12/2023
 ms.custom:

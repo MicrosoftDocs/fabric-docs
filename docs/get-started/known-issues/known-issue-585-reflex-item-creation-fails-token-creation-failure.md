@@ -4,7 +4,7 @@ description: A known issue is posted where creating a reflex item fails due to a
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 12/15/2023
+ms.date: 02/27/2024
 ms.custom: known-issue-585
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-585
 
 You can create a reflex trigger from a Power BI report.  The creation can fail because of a token creation failure.
 
-**Status:** Open
+**Status:** Fixed: February 27, 2024
 
 **Product Experience:** Data Activator
 

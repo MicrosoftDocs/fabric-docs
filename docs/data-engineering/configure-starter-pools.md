@@ -1,6 +1,6 @@
 ---
 title: Configure and manage starter pools in Fabric Spark.
-description: Learn how to customize starter pools from your Fabric workspace settings.
+description: Learn how to customize starter pools from your Fabric workspace settings for your analytics workloads.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
@@ -62,19 +62,6 @@ The following section lists various default configurations and the max node limi
 
 > [!NOTE]
 > To customize a starter pool, you need admin access to the workspace.
-
-## Known Issues 
-
-### Slower Session Start Times in Starter Pools with Single Node Configuration
-
-#### Issue Description:
-Starter Pools in Microsoft Fabric, primarily utilized for data engineering and science workloads, default to Medium node sizing (8 Spark Cores). Currently, an identified issue arises when the maximum node configuration is limited to a single node. In such cases, the system attempts to accommodate both the driver and executor within this single node Starter Pool, leading to a noticeable delay in session startup times.
-
-#### Impact:
-Users may experience a session start delay ranging from 2-3 minutes.
-
-#### Status:
-Our team is actively working on resolving this issue. We anticipate a solution to be implemented shortly, which will improve session start times to ~5 seconds in single node Starter Pool configurations.
 
 ## Related content
 

@@ -4,8 +4,7 @@ description: Learn how to manage Power BI users in the Microsoft 365 admin cente
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - admin-portal
   - ignite-2023
@@ -24,4 +23,6 @@ You manage Power BI users, groups, and admins in the [Microsoft 365 admin center
 
 ## Related content
 
+* [Administration overview](admin-overview.md)
 * [What is the admin portal?](admin-center.md)
+* [Give users access to workspaces](../get-started/give-access-workspaces.md)

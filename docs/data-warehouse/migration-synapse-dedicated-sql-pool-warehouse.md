@@ -4,12 +4,13 @@ description: This article details the strategy, considerations, and methods of m
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: arturv, johoang
-ms.date: 11/15/2023
+ms.date: 07/17/2024
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
   - ignite-2023
   - ignite-2023-fabric
+  - build-2024
 ---
 
 # Migration​: ​Azure Synapse Analytics dedicated SQL pools to Fabric
@@ -20,7 +21,7 @@ This article details the strategy, considerations, and methods of migration of d
 
 ## Migration introduction
 
-As Microsoft introduced [Microsoft Fabric](../get-started/microsoft-fabric-overview.md), an all-in-one SaaS analytics solution for enterprises that offers a comprehensive suite of services, including [Data Factory](../data-factory/data-factory-overview.md), [Data Engineering](../data-engineering/data-engineering-overview.md), [Data Warehousing](../data-warehouse/data-warehousing.md), [Data Science](../data-science/data-science-overview.md), [Real-Time Analytics](../real-time-analytics/overview.md), and [Power BI](/power-bi/fundamentals/power-bi-overview). 
+As Microsoft introduced [Microsoft Fabric](../get-started/microsoft-fabric-overview.md), an all-in-one SaaS analytics solution for enterprises that offers a comprehensive suite of services, including [Data Factory](../data-factory/data-factory-overview.md), [Data Engineering](../data-engineering/data-engineering-overview.md), [Data Warehousing](../data-warehouse/data-warehousing.md), [Data Science](../data-science/data-science-overview.md), [Real-Time Intelligence](../real-time-intelligence/overview.md), and [Power BI](/power-bi/fundamentals/power-bi-overview). 
 
 This article focuses on options for schema (DDL) migration, database code (DML) migration, and data migration. Microsoft offers several options, and here we discuss each option in detail and provide guidance on which of these options you should consider for your scenario. This article uses the TPC-DS industry benchmark for illustration and performance testing. Your actual result might vary depending on many factors including type of data, data types, width of tables, data source latency, etc.
 
@@ -158,11 +159,11 @@ This table summarizes information for data schema (DDL), database code (DML), an
 
 | Option Number | Option | What it does | Skill/Preference | Scenario |
 |:--|:--|:--|:--|:--|
-|1| [Data Factory](#option-1-schemadata-migration---copy-wizard-and-foreach-copy-activity) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline| Simplified all in one schema (DDL) and data migration.  Recommended for dimension tables.|
-|2| [Data Factory with partition](#option-2-ddldata-migration---data-pipeline-using-partition-option) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline | Using partitioning options to increase read/write parallelism providing 10x throughput vs option 1, recommended for fact tables.|
+|1| [Data Factory](#option-1-schemadata-migration---copy-wizard-and-foreach-copy-activity) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline| Simplified all in one schema (DDL) and data migration.  Recommended for [dimension tables](dimensional-modeling-dimension-tables.md).|
+|2| [Data Factory with partition](#option-2-ddldata-migration---data-pipeline-using-partition-option) | Schema (DDL) conversion<br />Data extract<br />Data ingestion | ADF/Pipeline | Using partitioning options to increase read/write parallelism providing 10x throughput vs option 1, recommended for [fact tables](dimensional-modeling-fact-tables.md).|
 |3| [Data Factory with accelerated code](#option-3-ddl-migration---copy-wizard-foreach-copy-activity) | Schema (DDL) conversion | ADF/Pipeline | Convert and migrate the schema (DDL) first, then use CETAS to extract and COPY/Data Factory to ingest data for optimal overall ingestion performance. |
 |4| [Stored procedures accelerated code](#migration-using-stored-procedures-in-synapse-dedicated-sql-pool) | Schema (DDL) conversion<br />Data extract<br />Code assessment | T-SQL | SQL user using IDE with more granular control over which tasks they want to work on. Use COPY/Data Factory to ingest data. |
-|5| [SQL Database Project extension for Azure Data Studio](#migration-using-sql-database-project) | Schema (DDL) conversion<br />Data extract<br />Code assessment | SQL Project | SQL Database Project for deployment with the integration of option 4. Use COPY or Data Factory to ingest data.|
+|5| [SQL Database Project extension for Azure Data Studio](#migrate-using-sql-database-projects) | Schema (DDL) conversion<br />Data extract<br />Code assessment | SQL Project | SQL Database Project for deployment with the integration of option 4. Use COPY or Data Factory to ingest data.|
 |6| [CREATE EXTERNAL TABLE AS SELECT (CETAS)](#migration-of-data-with-cetas) | Data extract | T-SQL | Cost effective and high-performance data extract into Azure Data Lake Storage (ADLS) Gen2. Use COPY/Data Factory to ingest data.|
 |7| [Migrate using dbt](#migration-via-dbt) | Schema (DDL) conversion<br />database code (DML) conversion | dbt | Existing dbt users can use the dbt Fabric adapter to convert their DDL and DML. You must then migrate data using other options in this table. |
 
@@ -231,6 +232,9 @@ For fact tables, we recommended using Data Factory with partitioning option to i
 
 However, the increased parallelized reads require dedicated SQL pool to scale to higher DWU to allow the extract queries to be executed. Leveraging partitioning, the rate is improved 10x over no partition option.  You could increase the DWU to get additional throughput via compute resources, but the dedicated SQL pool has a maximum 128 active queries allow.
 
+> [!NOTE]
+> For more information on Synapse DWU to Fabric mapping, see [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/).
+
 ### Option 3. DDL migration - Copy Wizard ForEach Copy Activity
 
 The two previous options are great data migration options for *smaller* databases. But if you require higher throughput, we recommend an alternative option:
@@ -240,7 +244,7 @@ The two previous options are great data migration options for *smaller* database
 
 #### Recommended use
 
-You can continue to use Data Factory to convert your schema (DDL). Using the Copy Wizard, you can select the specific table or **All tables**. By design, this migrates the schema and data in one step, extracting the schema without any rows, using the a false condition, `TOP 0` in the query statement.
+You can continue to use Data Factory to convert your schema (DDL). Using the Copy Wizard, you can select the specific table or **All tables**. By design, this migrates the schema and data in one step, extracting the schema without any rows, using the false condition, `TOP 0` in the query statement.
 
 The following code sample covers schema (DDL) migration with Data Factory.
 
@@ -256,7 +260,7 @@ This Data Pipeline accepts a parameter `SchemaName`, which allows you to specify
 
 In the **Default value** field, enter  a comma-delimited list of table schema indicating which schemas to migrate: `'dbo','tpch'` to provide two schemas, `dbo` and `tpch`.
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Data Pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated. ":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Data Pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated.":::
 
 ##### Pipeline design: Lookup activity
 
@@ -271,7 +275,7 @@ In the **Settings** tab:
 
     This expression within the LookUp Activity generates a SQL statement to query the system views to retrieve a list of schemas and tables. References the SchemaName parameter to allow for filtering on SQL schemas. The Output of this is an Array of SQL schema and tables that will be used as input into the ForEach Activity.
 
-    Use the below code to return a list of all user tables with their schema name. 
+    Use the following code to return a list of all user tables with their schema name.
 
     ```json
     @concat('
@@ -295,7 +299,7 @@ For the ForEach Loop, configure the following options in the **Settings** tab:
 - Set **Batch count** to `50`, limiting the maximum number of concurrent iterations.
 - The Items field needs to use dynamic content to reference the output of the LookUp Activity. Use the following code snippet: `@activity('Get List of Source Objects').output.value`
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-settings-foreach-loop-items.png" alt-text="A screenshot showing the ForEach Loop Activity's settings tab.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-settings-foreach-loop-items.png" alt-text="Screenshot showing the ForEach Loop Activity's settings tab.":::
  
 ##### Pipeline design: Copy Activity inside the ForEach Loop
 
@@ -318,7 +322,7 @@ In the **Destination** tab:
     - Schema refers to the current iteration's field, SchemaName with the snippet: `@item().SchemaName`
     - Table is referencing TableName with the snippet: `@item().TableName`
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-foreach-copy-activity-destination.png" alt-text="Screenshot from Data Factory showing the Destination tab of the Copy Activity inside each ForEach Loop.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-foreach-copy-activity-destination.png" alt-text="Screenshot from Data Factory showing the Destination tab of the Copy Activity inside each ForEach Loop." lightbox="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-foreach-copy-activity-destination.png":::
 
 ##### Pipeline design: Sink
 
@@ -351,11 +355,13 @@ You can execute the specific stored procedure for the schema (DDL) conversion, d
 
 For the data migration, you'll need to use either COPY INTO or Data Factory to ingest the data into Fabric Warehouse.
 
-## Migration using SQL Database Project
+## Migrate using SQL database projects
 
 Microsoft Fabric Data Warehouse is supported in the [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension?view=fabric&preserve-view=true) available inside of [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio?view=fabric&preserve-view=true) and [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 
 This extension is available inside Azure Data Studio and Visual Studio Code. This feature enables capabilities for source control, database testing and schema validation.  
+
+For more information on source control for warehouses in Microsoft Fabric, including Git integration and deployment pipelines, see [Source Control with Warehouse](source-control.md).
 
 #### Recommended use
 
@@ -424,7 +430,7 @@ For ingestion into Fabric Warehouse, use COPY INTO or Fabric Data Factory, depen
 
 Several factors to note so that you can design your process for maximum performance:
 
-- With Fabric, there isn't any resource contention loading multiple tables from ADLS to Fabric Warehouse concurrently. As a result, there is no performance degradation loading parallel threads. The maximum ingestion throughput will only be limited by the compute power of your Fabric capacity.
+- With Fabric, there isn't any resource contention when loading multiple tables from ADLS to Fabric Warehouse concurrently. As a result, there is no performance degradation when loading parallel threads. The maximum ingestion throughput will only be limited by the compute power of your Fabric capacity.
 - Fabric workload management provides separation of resources allocated for load and query. There's no resource contention while queries and data loading executed at the same time.
 
 ## Related content
@@ -432,3 +438,4 @@ Several factors to note so that you can design your process for maximum performa
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
+- [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)

@@ -4,7 +4,7 @@ description: This article provides information about how to create a Salesforce 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 07/02/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -22,7 +22,7 @@ The Salesforce objects connector supports the following authentication types for
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Organizational account| n/a | √ |
+|Organizational account| √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 
@@ -33,7 +33,3 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 - To connect to the Salesforce objects connector from Power Query, go to [Connect to Salesforce objects from Power Query Online](/power-query/connectors/salesforce-objects#connect-to-salesforce-objects-from-power-query-online).
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
-
-## Set up your connection in a data pipeline
-
-Data Factory in Microsoft Fabric doesn't currently support Salesforce objects in data pipelines.

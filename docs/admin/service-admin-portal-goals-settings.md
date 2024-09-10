@@ -4,8 +4,7 @@ description: Learn how to configure Metrics admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - tenant-setting
   - ignite-2023

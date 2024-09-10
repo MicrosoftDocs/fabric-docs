@@ -1,10 +1,10 @@
 ---
 title: Set up dbt for Fabric Data Warehouse
 description: In this tutorial, learn how to use the dbt adapter for Fabric Data Warehouse. dbt (Data Build Tool) is an open-source framework for SQL-first transformation.
-author: MarkPryceMaherMSFT
-ms.author: maprycem
-ms.reviewer: wiassaf
-ms.date: 01/22/2024
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: maprycem
+ms.date: 09/04/2024
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
@@ -38,7 +38,7 @@ Follow this list to install and set up the dbt prerequisites:
     pip install dbt-fabric
     ```
 
-    > [!NOTE] 
+    > [!NOTE]
     > By changing `pip install dbt-fabric` to `pip install dbt-synapse` and using the following instructions, you can [install the dbt adapter for Synapse dedicated SQL pool](https://docs.getdbt.com/docs/core/connect-data-platform/azuresynapse-setup).
 
 1. Make sure to verify that dbt-fabric and its dependencies are installed by using `pip list` command:
@@ -66,7 +66,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 
 1. Open the `jaffle_shop` project folder in Visual Studio Code.
 
-    :::image type="content" source="media\tutorial-setup-dbt\jaffle-project-vscode.png" alt-text="Screenshot from the Visual Studio Code, showing the open project.":::
+    :::image type="content" source="media/tutorial-setup-dbt/jaffle-project-vscode.png" alt-text="Screenshot from the Visual Studio Code, showing the open project.":::
 
 1. You can skip the sign-up if you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] already.
 1. Create a `profiles.yml` file. Add the following configuration to `profiles.yml`. This file configures the connection to your warehouse in Microsoft Fabric using the dbt-fabric adapter.
@@ -93,7 +93,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 1. Authenticate yourself to Azure in the Visual Studio Code terminal. 
 
     - Run `az login` in Visual Studio Code terminal if you're using Azure CLI authentication.
-    - For Service Principal or other Microsoft Entra ID (formerly Azure Active Directory) authentication in Microsoft Fabric, refer to [dbt (Data Build Tool) setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [dbt Resource Configurations](https://docs.getdbt.com/reference/resource-configs/fabric-configs).
+    - For Service Principal or other Microsoft Entra ID (formerly Azure Active Directory) authentication in Microsoft Fabric, refer to [dbt (Data Build Tool) setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [dbt Resource Configurations](https://docs.getdbt.com/reference/resource-configs/fabric-configs). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
 1. Now you're ready to test the connectivity. To test the connectivity to your warehouse, run `dbt debug` in the Visual Studio Code terminal.
   
@@ -101,13 +101,13 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
     dbt debug
     ```
 
-    :::image type="content" source="media\tutorial-setup-dbt\dbt-debug.png" alt-text="Screenshot from the Visual Studio Code, showing the dbt debug command." lightbox="media/tutorial-setup-dbt\dbt-debug.png":::
+    :::image type="content" source="media/tutorial-setup-dbt/dbt-debug.png" alt-text="Screenshot from the Visual Studio Code, showing the dbt debug command." lightbox="media/tutorial-setup-dbt/dbt-debug.png":::
 
     All checks are passed, which means you can connect your warehouse using dbt-fabric adapter from the `jaffle_shop` dbt project.
 
 1. Now, it's time to test if the adapter is working or not. First run `dbt seed` to insert sample data into the warehouse.
 
-    :::image type="content" source="media\tutorial-setup-dbt\dbt-seed.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt seed command." lightbox="media/tutorial-setup-dbt\dbt-seed.png":::
+    :::image type="content" source="media/tutorial-setup-dbt/dbt-seed.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt seed command." lightbox="media/tutorial-setup-dbt/dbt-seed.png":::
   
 1. Run `dbt run` to validate data against some tests.
 
@@ -115,15 +115,15 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
     dbt run
     ```
 
-    :::image type="content" source="media\tutorial-setup-dbt\dbt-run.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt run command." lightbox="media/tutorial-setup-dbt\dbt-run.png":::
+    :::image type="content" source="media/tutorial-setup-dbt/dbt-run.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt run command." lightbox="media/tutorial-setup-dbt/dbt-run.png":::
 
 1. Run `dbt test` to run the models defined in the demo dbt project.
-   
+
     ```powershell
     dbt test
     ```
-     
-    :::image type="content" source="media\tutorial-setup-dbt\dbt-test.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt test command." lightbox="media/tutorial-setup-dbt\dbt-test.png":::
+
+    :::image type="content" source="media/tutorial-setup-dbt/dbt-test.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt test command." lightbox="media/tutorial-setup-dbt/dbt-test.png":::
 
 You have now deployed a dbt project to Synapse Data Warehouse in Fabric.
 
@@ -136,6 +136,14 @@ It's simple move the dbt project between different warehouses. A dbt project on 
 1. Update the `type` property in the `profiles.yml` file.
 
 1. Build the project.
+
+## dbt in Fabric Data Factory
+
+When integrated with Apache Airflow, a popular workflow management system, dbt becomes a powerful tool for orchestrating data transformations. Airflow's scheduling and task management capabilities allow data teams to automate dbt runs. It ensures regular data updates and maintains a consistent flow of high-quality data for analysis and reporting. This combined approach, using dbt's transformation expertise with Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
+
+[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+
+For more information to operationalize dbt with your warehouse, see [Transform data using dbt with Data Factory in Microsoft Fabric](../data-factory/data-workflows-dbt-fabric.md).
 
 ## Considerations
 
@@ -151,10 +159,16 @@ Important things to consider when using dbt-fabric adapter:
 
 - Review [Unsupported data types](data-types.md#unsupported-data-types) to learn about the supported and unsupported data types.
 
-- You can log issues on the dbt-fabric adapter by visiting [Issues · microsoft/dbt-fabric · GitHub](https://github.com/microsoft/dbt-fabric/issues).
+- You can log issues on the dbt-fabric adapter on GitHub by visiting [Issues · microsoft/dbt-fabric · GitHub](https://github.com/microsoft/dbt-fabric/issues).
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Transform data using dbt with Data Factory in Microsoft Fabric](../data-factory/data-workflows-dbt-fabric.md)
 
 ## Related content
 
 - [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
 - [Tutorial: Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)
 - [Tutorial: Transform data using a stored procedure](tutorial-transform-data.md)
+- [Source Control with Warehouse](source-control.md)

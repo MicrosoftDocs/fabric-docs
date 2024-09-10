@@ -1,6 +1,6 @@
 ---
 title: Migrate Spark job definition
-description: Learn about how to migrate Spark job definition from Azure Synapse Spark to Fabric.
+description: Learn about migrating Spark job definitions from Azure Synapse Spark to Fabric, including migration prerequisites and options.
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu

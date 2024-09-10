@@ -1,17 +1,17 @@
 ---
 title: Column-level security in Fabric data warehousing
 description: Learn about column-level security in tables in Fabric data warehousing.
-author: SQLStijn-MSFT
-ms.author: stwynant
-ms.reviewer: wiassaf
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: stwynant
+ms.date: 08/21/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
 ---
 # Column-level security in Fabric data warehousing
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Column-level security simplifies the design and coding of security in your application, allowing you to restrict column access to protect sensitive data. For example, ensuring that specific users can access only certain columns of a table pertinent to their department. 
 
@@ -27,11 +27,11 @@ In addition, column-level security is simpler and than designing additional [vie
 
 Implement column-level security with the [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true) T-SQL statement. For simplicity of management, assigning permissions to roles is preferred to using individuals.
 
-Column-level security is applied to [shared warehouse or lakehouse](share-warehouse-manage-permissions.md), because the underlying data source hasn't changed.
+Column-level security is applied to [shared warehouse or lakehouse accessed through a SQL analytics endpoint](share-warehouse-manage-permissions.md), because the underlying data source hasn't changed.
 
-Only Microsoft Entra authentication is supported.
+Only Microsoft Entra authentication is supported. For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
 
-## Example
+## Examples
 
 This example will create a table and will limit the columns that `charlie@contoso.com` can see in the `customers` table.
 
@@ -63,14 +63,14 @@ Msg 230, Level 14, State 1, Line 12
 The SELECT permission was denied on the column 'CreditCard' of the object 'Customers', database 'ContosoSales', schema 'dbo'.
 ```
 
+## Next step
+
+> [!div class="nextstepaction"]
+> [Implement column-level security in Fabric Data Warehousing](tutorial-column-level-security.md)
+
 ## Related content
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
 - [Row-level security in Fabric data warehousing](row-level-security.md)
 - [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
-
-## Next step
-
-> [!div class="nextstepaction"]
-> [Implement column-level security in Fabric Data Warehousing](tutorial-column-level-security.md)

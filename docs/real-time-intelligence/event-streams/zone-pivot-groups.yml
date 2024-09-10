@@ -1,0 +1,10 @@
+# YamlMime:ZonePivotGroups
+groups:
+- id: event-streams-standard-enhanced
+  title: Event streams enhanced and standard capabilities
+  prompt: Choose the capabilities of event streams
+  pivots:
+  - id: enhanced-capabilities
+    title: Enhanced capabilities (preview)
+  - id: standard-capabilities
+    title: Standard capabilities

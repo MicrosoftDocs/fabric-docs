@@ -4,8 +4,7 @@ description: Learn how to view and understand usage metrics by using dashboards 
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.service: powerbi
-ms.subservice: powerbi-admin
+
 ms.custom:
   - admin-portal
   - ignite-2023
