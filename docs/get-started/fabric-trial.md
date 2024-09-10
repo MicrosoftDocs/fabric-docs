@@ -66,7 +66,7 @@ Follow these steps to start your Fabric capacity trial.
 1. In the Account manager, select **Free trial**. If you don't see **Free trial** or **Start trial** or a **Trial status**, trials might be disabled for your tenant.
 
 > [!NOTE]
-> If the Account manager already displays **Trial status**, you may already have a **Power BI trial** in progress. In this case, to generate a prompt to start a Fabric trial, attempt to use a Fabric feature. For example, For more information, see [Start using Fabric](#other-ways-to-start-a-microsoft-fabric-trial).
+> If the Account manager already displays **Trial status**, you may already have a **Power BI trial** or a **Fabric (Free) trial** in progress. To test this out, attempt to use a Fabric feature. For more information, see [Start using Fabric](#other-ways-to-start-a-microsoft-fabric-trial).
 
 :::image type="content" source="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
 
