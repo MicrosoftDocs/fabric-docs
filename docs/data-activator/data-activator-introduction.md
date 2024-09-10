@@ -34,15 +34,15 @@ The following concepts are used to build and trigger automated actions and respo
 ### Events
 
 Data Activator considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields
-you’re monitoring. Eventstreams vary in frequency from many times per second in the case of IoT sensors down to more sporadic streams such as packages being scanned in and out of shipping locations. 
+you’re monitoring. Eventstreams vary in frequency from many times per second for IoT sensors, to more sporadic streams such as packages being scanned in and out of shipping locations. 
 
-Data being observed from Power BI is also treated as an eventstream. In this case, events are observations made of the data on a regular schedule that typically matches the refresh frequency of your Power BI semantic model (previously known as dataset). This might only happen once a day, or even once a week – it’s just a slowly changing event stream.
+Data being observed from Power BI is also treated as an eventstream. In this case, events are observations made of the data on a regular schedule that typically matches the refresh frequency of your Power BI semantic model (previously known as a dataset). These observations might only happen once a day, or even once a week – it’s just a slowly changing event stream.
 
 ### Objects
 
 The business objects that you want to monitor could be physical objects like freezers, vehicles, packages, and users. The business object can also be less tangible concepts like advertising campaigns, accounts, and user sessions. In your reflex item, you model the object by connecting one or more eventstreams, choosing a column for the object ID, and specifying the fields you want to make properties of the object.
 
-The term ‘object instance’ means a specific freezer/vehicle/package etc. where *object* is typically used for the definition or class of object. We use *population* to refer to all of the object instances.
+The term *object instance* refers to a specific freezer/vehicle/package etc. where *object* is typically used for the definition or class of object. We use *population* to refer to all of the object instances.
 
 ### Triggers
 
