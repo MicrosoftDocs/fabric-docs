@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 08/21/2024
 ---
 
-# Workload certification (preview)
+# Workload publishing requirements (preview)
 
 This article describes the requirements that are needed for a custom workload to be listed in the Microsoft Fabric Workload Hub. Make sure your workload complies with these requirements before you submit your workload for publication.
 
@@ -17,14 +17,14 @@ Building applications in Fabric is more like creating documents in office than p
 
 Fabric is designed to support the largest Tier 1 projects and data sizes. The Fabric platform provides a common set of services that the workload must not replace with their own proprietary services. Consistent use of the platform services across all the workloads ensures a uniform experience and functionality throughout the system.
 
-This document provides a comprehensive overview of all the different components that you need to take into account to certify a workload. Certification is required to move into Preview and GA. The Status of the individual item provides you with an indication what is needed. 
+This document provides a comprehensive overview of all the different components that you need to take into account to publish a workload. Sharing this information upfront is required to move into Preview and GA (see [Publishing Flow](./publish-workload-flow.md). 
 
-| Name | Description | Certification method | Preview | General Availability | Reference |
+| Name | Description | Validation method | Preview | General Availability | Reference |
 |---|---|---|---|---|---|
 | Value to customers | Your offer must provide enough value to justify the investment it takes to learn and use. Your offer should provide significant benefits such as enhanced efficiency, innovative features, or strategic advantages. | Attestation | Required | Required | |
 | Terms and conditions | You need to provide your customers with terms and conditions for the offer you provide on the platform. In the terms and conditions you need to highlight the compliancy aspects of your solution. For example, what happens to data at rest and transit? Where are the services you provide Azure customers available from? | Workload Package | Required |Required | [Governance overview and guidance](../governance/governance-compliance-overview.md) |
 | Metadata | Metadata such as title, summary, and icon, must be identical in the Workload package manifest and the SaaS offer submission in Partner Center. Add all the assets of the workload such as icons and screenshots under `fe/assests` directory. Your workload package has to comply with the frontend and [backend](extensibility-back-end.md) manifest requirements. | Workload Package | Required |Required | [Manifest](extensibility-back-end.md)
-| Attestation Document | Partners need to provide a page that contains all the information about their workload certification status. This document needs to be linked in the Workload Package and kept up-to-date. You must add the link in the workload metadata manifest under the `supportLink` field in `certification`. The link must also appear in the workload product page in the Workload Hub. | Workload Package | Required | Required | |
+| Attestation Document | Partners need to provide a page that contains all the information about their workload publishing requirements status. This document needs to be linked in the Workload Package and kept up-to-date. You must add the link in the workload metadata manifest under the `supportLink` field in `certification`. The link must also appear in the workload product page in the Workload Hub. | Workload Package | Required | Required | |
 | Trial | Provide an easy and fast trial experience. The trial should be available to the customer without waiting time (less than 5 seconds), and give the them a free and easy way to explore the offered workload. | Attestation | Required | Required | [Trials](monetization.md#trials) |
 | Marketplace Offer | Partners need to enlist a SaaS offer in the Azure Marketplace. This offer can just be a *contact us* listing to get leads from the platform. We expect partners to also transact over the Marketplace. You can build Bring Your Own License (BYOL) capabilities into your workload. | Workload Package | Required | Required | [Creating a SaaS offer](/partner-center/marketplace-offers/create-new-saas-offer) <br> <br> [Commercial marketplace certification policies](/legal/marketplace/certification-policies#1000-software-as-a-service-saas) |
 |Documentation | You need to provide documentation for your Workload to customers in an easy and understandable form. | Workload Package | Required | Required | |
@@ -34,7 +34,7 @@ This document provides a comprehensive overview of all the different components 
 
 The following table lists technical requirements for your workload offer.
 
-| Category | Description | Certification method | Preview | General Availability | Reference |
+| Category | Description | Validation method | Preview | General Availability | Reference |
 |---|---|---|---|---|---|
 | Microsoft Entra Access | Fabric workloads must use Microsoft Entra authentication and authorization. If your service provides other authentication methods to data that was originally stored in Fabric this needs to be document. <br><br> *Extra requirements:* <br>   | Attestation | Required | Required | [Authentication](./authentication-concept.md) |
 |  | The workload  must take a static dependency on `https://analysis.windows.net/powerbi/api/Fabric.Extend` scope and get user consent for it. Workload Development Kit infrastructure helps to implement the consent flow, but the responsibility is with the workload owner to take dependency on Fabric. Extend scope and ensure consent is granted. Fabric reserves the rights to block the integration with a workload for which the consent isn't granted. | Workload Package | Required | Required | |
@@ -54,7 +54,7 @@ Get familiar with the design requirements for your Fabric workload review the [F
 
 Fabric users expect a fast loading UX. Independent of the technical implementation and regional hosting, your workload should load fast within all Fabric regions.
 
-| Name | Description | Certification method | Preview | General Availability | Reference |
+| Name | Description | Validation method | Preview | General Availability | Reference |
 |---|---|---|---|---|---|
 | Common UX | The workload and all Item types the partner provides as part of it need to comply with the Fabric UX guidelines. | Attestation | Required | Required | [Fabric UX System](https://aka.ms/fabricux) |
 | Item Creation Experience | Partners need to comply with the Item creation experience according to the Fabric UX System. | Attestation | Required | Required | [Fabric UX System](https://aka.ms/fabricux) |
@@ -62,7 +62,7 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 | Trial Experience | Partners are required to provide a Trial Experience for users as outlined in the design guidelines. | Attestation | Optional | Required | [Fabric Templates](https://aka.ms/fabrictemplates) |
 | Monetization Experience | Partners that want to monetize their solution in fabric need to follow the patterns defined in the Fabric Templates. Monetization can happen through Azure Marketplace or you can use your existing methods. In any case, you need to follow the design guidelines defined in the Fabric templates. | Attestation | Optional | Required | [Fabric Templates](https://aka.ms/fabrictemplates) |
 | Accessibility | Partners need to comply with the Fabric UX design guidelines for Accessibility. | Attestation | Optional | Required | [Fabric UX System](https://aka.ms/fabricux) |
-| World Readiness | English has to be the default language. Content can be localized if you decide to do it. In this case add the supported languages to your certification page. | Workload Package | Optional | Required | |
+| World Readiness | English has to be the default language. Content can be localized if you decide to do it. In this case add the supported languages to your attestation page. | Workload Package | Optional | Required | |
 | Jobs to be done | To be listed in different create experiences within Fabric, you need to onboard to the Jobs to Be done definition for your Item types. | Workload Package | Optional | Required | |
 | Item Settings | Partners need to implement the item settings as part of the Ribbon. | Attestation | Required | Required | [Fabric UX System](https://aka.ms/fabricux) |
 | Samples | Partners can use samples that are creating preconfigured items of their type to help customers get started more easily. | Attestation | Optional | Optional | |
@@ -72,7 +72,7 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 
 ## Security & Compliance requirements
 
-| Category | Description | Certification method | Preview | General Availability | References |
+| Category | Description | Validation method | Preview | General Availability | References |
 |---|---|---|---|---|---|
 | Security general | Microsoft customers entrust Fabric with their most sensitive data. As partners implementing workloads can have access to this data, they also have a responsibility to protect that data. We request workloads to go through a security assessment, a security review and attest that they did it. discovered in the process. | Attestation | Optional | Required | [Secure, protect, and comply](../governance/governance-compliance-overview.md#secure-protect-and-comply) |
 | Privacy | Microsoft customers entrust Fabric with their most sensitive data. As such, partners the build workloads also have a responsibility to protect that data when they access it. To that end we request that every workload goes through a privacy assessment and a privacy review. <br><br> *Extra requirements:* <br> | Attestation | Optional | Required | [Secure, protect, and comply](../governance/governance-compliance-overview.md#secure-protect-and-comply) |
@@ -83,15 +83,15 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 ## Support
 
 
-| Category | Description | Certification method | Preview | General Availability | References |
+| Category | Description | Validation method | Preview | General Availability | References |
 |---|---|---|---|---|---|
-| Live site | Partner workloads are becoming an integral part of Fabric therefore our support teams need to be aware how you want to be contacted in case customers are reaching out to us directly. Partners need to provide the contact details as part of the certification process to us. | Attestation | Optional | Required | |
+| Live site | Partner workloads are becoming an integral part of Fabric therefore our support teams need to be aware how you want to be contacted in case customers are reaching out to us directly. Partners need to provide the contact details as part of the publishing process to us. | Attestation | Optional | Required | |
 | Supportability | Partners are responsible to define and document their support parameters (Service level agreement, contact methods, ...). This information needs to be linked from the Workload page and should always be accessible to customers. In addition the Marketplace criteria, need to be taken into account for the listing of the SaaS offer. | Attestation | Optional | Required | [Marketplace listing guidelines](/partner-center/marketplace-offers/marketplace-criteria-content-validation) [Workload requirements](./supportability.md) |
 | Service Health & Availability | Partners need to host their a website that shows their service health and availability to customers. This information can be included in the Supportability page. | Attestation | Optional | Required | |
 
 ## Fabric features
 
-| Category | Description | Certification method | Preview | General Availability | Reference |
+| Category | Description | Validation method | Preview | General Availability | Reference |
 |---|---|---|---|---|---|
 | Application lifecycle management (ALM) | Microsoft Fabric's lifecycle management tools enable efficient product development, continuous updates, fast releases, and ongoing feature enhancements. | Attestation | Not Supported | Not Supported | [ALM in Fabric](../cicd/cicd-overview.md) |
 | Private Links | In Fabric, you can configure and use an endpoint that allows your organization to access Fabric privately. | Attestation | Not Supported | Not supported | [Private Links](../security/security-private-links-use.md) |
@@ -103,5 +103,5 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 ## Related content
 
 * [Microsoft Fabric Workload Development Kit](development-kit-overview.md)
-
+* [Publishing flow](./publish-workload-flow.md)
 * [Commercial marketplace certification policies](/legal/marketplace/certification-policies)
