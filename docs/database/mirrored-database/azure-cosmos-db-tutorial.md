@@ -182,10 +182,10 @@ Now, use T-SQL to query your NoSQL data that is now stored in Fabric OneLake.
 
 ## Building BI reports on the SQL queries or views
    1. Select the query or view and then select **Explore this data (preview)**. This action explores the query in Power BI directly using Direct Lake on OneLake mirrored data.
-   2. Edit the charts as needed and save the report. 
-
-    > [!TIP]
-    > You can also optionally use Copilot or other enhancements to build dashboards and reports without any further data movement.
+   2. Edit the charts as needed and save the report.
+      
+> [!TIP]
+> You can also optionally use Copilot or other enhancements to build dashboards and reports without any further data movement.
 
 ## More examples
 
