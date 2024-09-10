@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 08/29/2024
+ms.date: 09/05/2024
 ms.topic: whats-new
 ms.custom:
   - build-2024
@@ -121,6 +121,7 @@ This section summarizes new Microsoft Fabric community opportunities for prospec
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|August 2024|**Fabric Influencers Spotlight August 2024**|The [Fabric Influencers Spotlight August 2024](https://blog.fabric.microsoft.com/blog/fabric-influencers-spotlight-august-2024?ft=All) highlights and amplifies blog posts, videos, presentations, and other content related to Microsoft Fabric from members of Microsoft MVPs & Fabric Super Users from the Fabric community. |
 |August 2024|**Winners of the Fabric Community Sticker Challenge**|Congratulations to the winners of the [Fabric Community Sticker Challenge](https://community.fabric.microsoft.com/t5/Community-News/Winners-of-the-Fabric-Community-Sticker-Challenge/td-p/4073926)! |
 |July 2024|**Fabric Influencers Spotlight**|Introducing the new **Fabric Influencers Spotlight** series of articles to highlight and amplify blog posts, videos, presentations, and other content related to Microsoft Fabric. [Read blogs from Microsoft MVPs and Fabric Super Users from the Fabric community](https://blog.fabric.microsoft.com/blog/fabric-influencers-spotlight-july-2024?ft=All).|
 |June 2024|**Solved Fabric Community posts are now available in the Fabric Help Pane**|You can now [find solved posts from Fabric Community discussions in the Fabric Help Pane](https://blog.fabric.microsoft.com/blog/solved-fabric-community-posts-are-now-available-in-the-fabric-help-pane). |
@@ -319,6 +320,7 @@ This section summarizes recent improvements and features for [Real-Time Intellig
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|September 2024|**Announcement: Eventhouse Standard Storage billing**|Starting the week of September 16 you will start seeing [billable consumption of the OneLake Storage Data Stored meter](https://blog.fabric.microsoft.com/blog/announcement-eventhouse-standard-storage-billing?ft=All) from the Eventhouse and KQL Database items. |
 |August 2024|**Fabric Real-Time Hub Teaching Bubbles**|New teaching bubbles provide a step-by-step guide through its major functionalities. These interactive guides allow you to seamlessly navigate each tab of the Real-Time Hub. For more information, see [Fabric Real-Time Hub Teaching Bubble](https://blog.fabric.microsoft.com/blog/microsoft-fabric-august-2024-update?ft=All#post-13355-_Toc132933915).|
 |August 2024|**KQL Queryset REST API support**|The new Fabric Queryset REST APIs allow you to create/update/delete KQL Querysets in Fabric, and programmatically manage them without manual intervention. For more information, see [KQL Queryset REST API support](https://blog.fabric.microsoft.com/blog/microsoft-fabric-august-2024-update?ft=All#post-13355-_Toc266620982).|
 |July 2024|**Update records in a KQL Database preview**|The [.update command](/azure/data-explorer/kusto/management/update-table-command) is now generally available. Learn more about how to [Update records in a Kusto database](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/update-records-in-a-kusto-database-public-preview/ba-p/4059695).|
@@ -346,7 +348,7 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
 |August 2024|**Advanced Time Series Anomaly Detector in Fabric**|Read an [example using the time-series-anomaly-detector in Fabric](https://blog.fabric.microsoft.com/blog/advanced-time-series-anomaly-detector-in-fabric?ft=All) to upload stocks change table to Fabric, train the multivariate anomaly detection model in a Python notebook using Spark engine, and predict anomalies by applying the trained model to new data using Eventhouse (Kusto) engine. |
-|August 2024|**Acting on Real-Time data using custom actions with Data Activator**|Learn how to monitor and acting on data is to use Data Activator, which is a no-code experience in Microsoft Fabric for taking action automatically when the condition of the package temperature is detected in the data.
+|August 2024|**Acting on Real-Time data using custom actions with Data Activator**|Learn how to monitor and acting on data is to use Data Activator, which is a no-code experience in Microsoft Fabric for taking action automatically when the condition of the package temperature is detected in the data.|
 |July 2024|**Build real-time order notifications with Eventstream's CDC connector**|Read about a [a real-life example of how an online store used Eventstream's CDC connector](https://blog.fabric.microsoft.com/blog/build-real-time-order-notifications-with-eventstreams-cdc-connector?ft=All) from Azure SQL Database.|
 |July 2024|**Automating Real-Time Intelligence Eventhouse deployment using PowerShell**|[Let's build a PowerShell script to automate the deployment of Eventhouse, KQL Database, Tables, Functions, and Materialized Views](https://blog.fabric.microsoft.com/blog/automating-real-time-intelligence-eventhouse-deployment-using-powershell) into a workspace in Microsoft Fabric. |
 |May 2024|**Alerting and acting on data from the Real-Time hub**|Microsoft Fabric's new [Real-Time hub and Data Activator provide a no-code experience for automatically taking actions](https://blog.fabric.microsoft.com/blog/alerting-and-acting-on-data-from-the-real-time-hub) when patterns or conditions are detected in changing data and is embedded around the Real-Time hub to make creating alerts always accessible.|
@@ -385,6 +387,7 @@ This section includes guidance and documentation updates on development process,
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|September 2024|**New Deployment Pipelines design**|A new and improved design for the Deployment Pipeline introduces a range of changes, additions, and improvements designed to elevate your deployment process. Read more about [What's changed in deployment pipelines](https://blog.fabric.microsoft.com/blog/introducing-the-new-deployment-pipelines-design-a-leap-forward-in-deployment-efficiency?ft=All).|
 |July 2024|**GitHub integration for source control (preview)**|[Fabric developers can now choose GitHub or GitHub Enterprise as their source control tool](https://blog.fabric.microsoft.com/blog/announcing-github-integration-for-source-control-preview?ft=All), and version their Fabric items there. For more information, see [Get started with Git integration (preview)](../cicd/git-integration/git-get-started.md#connect-to-a-git-repo).|
 |July 2024|**Microsoft Fabric .NET SDK**|We are excited to announce the very [first release of the Microsoft Fabric .NET SDK](https://blog.fabric.microsoft.com/blog/microsoft-fabric-net-sdk)! For more information on the REST API documentation, see [Microsoft Fabric REST API documentation](/rest/api/fabric/articles/).|
 |June 2024|**Introducing New Branching Capabilities in Fabric Git Integration**|[New branching capabilities](https://blog.fabric.microsoft.com/blog/introducing-new-branching-capabilities-in-fabric-git-integration) in [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md) include a redesigned Source Control pane, the ability to quickly create a new connected workspace and branch, and contextual related branches to find content related to the current workspace.|

@@ -81,6 +81,12 @@ When you directly load the query to an output destination, only Lakehouse destin
 1. Publish the dataflow.
 1. Check after refresh completed to confirm fast copy was used.
 
+## Known limitations
+1. An on-premises data gateway version 3000.214.2 or newer is needed to support Fast Copy.
+2. The VNet gateway isn't supported.
+3. Writing data into an existing table in Lakehouse isn't supported.
+4. Fixed schema is not supported.
+
 ## Related content
 
 - [Dataflows Gen2 Overview](dataflows-gen2-overview.md)

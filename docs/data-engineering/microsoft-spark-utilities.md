@@ -198,9 +198,9 @@ mssparkutils.notebook.run("Sample1", 90, {"input": 20 }, "fe0a6e2a-a909-4aa3-a69
 
 You can open the snapshot link of the reference run in the cell output. The snapshot captures the code run results and allows you to easily debug a reference run.
 
-:::image type="content" source="media\microsoft-spark-utilities\reference-run.png" alt-text="Screenshot of reference run result." lightbox="media\microsoft-spark-utilities\reference-run.png":::
+:::image type="content" source="media\microsoft-spark-utilities\reference-run.png" alt-text="Screenshot showing the reference run result." lightbox="media\microsoft-spark-utilities\reference-run.png":::
 
-:::image type="content" source="media\microsoft-spark-utilities\run-snapshot.png" alt-text="Screenshot of a snapshot example." lightbox="media\microsoft-spark-utilities\run-snapshot.png":::
+:::image type="content" source="media\microsoft-spark-utilities\run-snapshot.png" alt-text="Screenshot of a snapshot with code run results." lightbox="media\microsoft-spark-utilities\run-snapshot.png":::
 
 > [!NOTE]
 >

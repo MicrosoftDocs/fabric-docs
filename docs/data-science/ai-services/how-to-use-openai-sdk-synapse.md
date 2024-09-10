@@ -207,6 +207,15 @@ representations should also be similar.
 
 `deployment_name` could be `text-embedding-ada-002`.
 
+```python
+df = spark.createDataFrame(
+    [
+        ("Once upon a time",),
+        ("Best programming language award goes to",),
+        ("SynapseML is ",)
+    ]
+).toDF("text")
+```
 
 
 ``` python
