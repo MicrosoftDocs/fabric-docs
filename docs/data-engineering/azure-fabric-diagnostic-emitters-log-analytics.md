@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 08/22/2024
 ms.custom: references_regions
 ---
-# Monitor Apache Spark applications with Azure log analytics
+# Monitor Apache Spark applications with Azure log analytics (preview)
 
 The Fabric Apache Spark diagnostic emitter extension is a library that enables Apache Spark applications to emit logs, event logs, and metrics to multiple destinations, including Azure log analytics, Azure storage, and Azure event hubs.
 
@@ -69,7 +69,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
    - **Name**: Enter a name for the secret. For the default, enter `SparkLogAnalyticsSecret`.
    - **Value**: Enter the `<LOG_ANALYTICS_WORKSPACE_KEY>` for the secret.
    - Leave the other values to their defaults. Then select **Create**.
-4. Create an Fabric Environment Artifact in Fabric
+4. Create a Fabric Environment Artifact in Fabric
 5. Add the following **Spark properties** with the corresponding values to the environment artifact, or Select **Add from .yml** on the ribbon in the Environment artifact to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375) which includes following Spark properties.
 
    - `<LOG_ANALYTICS_WORKSPACE_ID>`: The Log Analytics workspace ID.
@@ -107,14 +107,14 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
 
 **To attach the environment to notebooks or Spark job definitions:**
 1. Navigate to your notebook or Spark job definition in Fabric.
-2. Click the **Environment** menu on the Home tab and select the configured environment.
+2. Select the **Environment** menu on the Home tab and select the configured environment.
 3. The configuration will be applied after starting a **Spark session**.
 
 **To set the environment as the workspace default:**
 
 1. Navigate to Workspace settings in Fabric.
 2. Find the **Spark settings** in your Workspace settings **(Workspace setting -> Data Engineering/Science -> Spark settings)**
-3. Click **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
+3. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
 
 > [!NOTE]
 >
@@ -206,8 +206,8 @@ Fabric sends log data to Azure Monitor by using the HTTP Data Collector API. [Th
 
 Users can query to evaluate metrics and logs at a set frequency, and fire an alert based on the results. For more information, see [Create, view, and manage log alerts by using Azure Monitor](/azure/azure-monitor/alerts/alerts-create-metric-alert-rule).
 
-## Fabric workspaces with managed VNet
-Azure Log Analytics can't currently be selected as a destination for Spark logs and metrics emission in a managed VNet because the managed private endpoint doesn't support Log Analytics as a data source. 
+## Fabric workspaces with managed virtual network
+Azure Log Analytics can't currently be selected as a destination for Spark logs and metrics emission in a managed virtual network because the managed private endpoint doesn't support Log Analytics as a data source. 
 
 ## Next steps
 

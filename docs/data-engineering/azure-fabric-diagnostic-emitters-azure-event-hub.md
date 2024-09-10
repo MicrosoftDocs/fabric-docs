@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 08/22/2024
 ---
 
-# Collect your Apache Spark applications logs and metrics using Azure Event Hubs 
+# Collect your Apache Spark applications logs and metrics using Azure Event Hubs (preview)
 
 The Fabric Apache Spark diagnostic emitter extension is a library that enables Apache Spark applications to emit logs, event logs, and metrics to various destinations, including Azure Log Analytics, Azure Storage, and Azure Event Hubs.
 
@@ -18,7 +18,7 @@ In this tutorial, you learn how to use the Fabric Apache Spark diagnostic emitte
 
 ### Step 1: Create an Azure Event Hubs Instance
 
-To collect diagnostic logs and metrics, you can use an existing Azure event hubs instance. If you don't have one, you can [create an event hub](/azure/event-hubs/event-hubs-create).
+To collect diagnostic logs and metrics, you can use an existing Azure Event Hubs instance. If you don't have one, you can [create an event hub](/azure/event-hubs/event-hubs-create).
 
 ### Step 2: Create a Fabric Environment Artifact with Apache Spark Configuration
  
@@ -69,14 +69,14 @@ To configure Azure Key Vault for storing the workspace key:
 
 **To attach the environment to Notebooks or Spark job definitions**:
 1. Navigate to the specific notebook or Spark job definition in Fabric.
-2. Click the **Environment** menu on the Home tab and select the environment with the configured diagnostics Spark properties.
+2. Select the **Environment** menu on the Home tab and select the environment with the configured diagnostics Spark properties.
 3. The configuration is applied when you start a **Spark session**.
 
 **To set the environment as the workspace default**:
 
 1. Navigate to Workspace Settings in Fabric.
 2. Find the **Spark settings** in your Workspace settings **(Workspace setting -> Data Engineering/Science -> Spark settings)**.
-3. Click **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
+3. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
 
 > [!NOTE]
 >
@@ -134,10 +134,10 @@ Here's a sample log record in JSON format:
 }
 ```
 
- ## Fabric workspaces with Managed VNET
-Create a managed private endpoint for the target Azure Event Hub. For detailed instructions, refer to [Create and use managed private endpoints in Microsoft Fabric - Microsoft Fabric](../security/security-managed-private-endpoints-create.md).
+ ## Fabric workspaces with Managed virtual network
+Create a managed private endpoint for the target Azure Event Hubs. For detailed instructions, refer to [Create and use managed private endpoints in Microsoft Fabric - Microsoft Fabric](../security/security-managed-private-endpoints-create.md).
 
-Once the managed private endpoint is approved, users can begin emitting logs and metrics to the target Azure Event Hub.
+Once the managed private endpoint is approved, users can begin emitting logs and metrics to the target Azure Event Hubs.
 
 ## Next steps
 

@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 08/22/2024
 ---
 
-# Collect your Apache Spark applications logs and metrics using Azure storage account
+# Collect your Apache Spark applications logs and metrics using Azure storage account (preview)
 
 The Fabric Apache Spark diagnostic emitter extension is a library that enables Apache Spark applications to emit logs, event logs, and metrics to multiple destinations, including Azure Log Analytics, Azure Storage, and Azure Event Hubs.
 
@@ -76,14 +76,14 @@ To configure Azure Key Vault for storing the workspace key:
 **To attach the environment to Notebooks or Spark job definitions**:
 
 1. Navigate to the specific notebook or Spark job definition in Fabric.
-2. Click the **Environment** menu on the Home tab and select the environment with the configured diagnostics Spark properties.
+2. Select the **Environment** menu on the Home tab and select the environment with the configured diagnostics Spark properties.
 3. The configuration is applied when you start a **Spark session**.
 
 **To set the environment as the workspace default**:
 
 1. Navigate to Workspace Settings in Fabric.
 2. Find the **Spark settings** in your Workspace settings **(Workspace setting -> Data Engineering/Science -> Spark settings)**.
-3. Click **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
+3. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
 
 > [!NOTE]
 >
@@ -143,7 +143,7 @@ Here's a sample log record in JSON format:
 }
 ```
 
- ## Fabric workspaces with Managed VNet
+ ## Fabric workspaces with Managed virtual network
 
 Create a managed private endpoint for the target Azure Blob Storage. For detailed instructions, refer to [Create and use managed private endpoints in Microsoft Fabric - Microsoft Fabric](../security/security-managed-private-endpoints-create.md).
 
