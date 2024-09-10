@@ -84,6 +84,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
    spark.synapse.diagnostic.emitter.LA.workspaceId <LOG_ANALYTICS_WORKSPACE_ID>
    spark.synapse.diagnostic.emitter.LA.secret.keyVault <AZURE_KEY_VAULT_NAME>
    spark.synapse.diagnostic.emitter.LA.secret.keyVault.secretName <AZURE_KEY_VAULT_SECRET_KEY_NAME>
+   spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
    Alternatively, to apply the same configuration as Azure Synapse, use the following properties:
@@ -93,6 +94,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
    spark.synapse.logAnalytics.workspaceId <LOG_ANALYTICS_WORKSPACE_ID>
    spark.synapse.logAnalytics.keyVault.name <AZURE_KEY_VAULT_NAME>
    spark.synapse.logAnalytics.keyVault.key.secret <AZURE_KEY_VAULT_SECRET_KEY_NAME>
+   spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
    > [!NOTE]

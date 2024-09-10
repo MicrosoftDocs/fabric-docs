@@ -32,6 +32,7 @@ To collect diagnostic logs and metrics, you can use an existing Azure Event Hubs
    spark.synapse.diagnostic.emitter.MyEventHub.type AzureEventHub
    spark.synapse.diagnostic.emitter.MyEventHub.categories Log,EventLog,Metrics
    spark.synapse.diagnostic.emitter.MyEventHub.secret <connection-string>
+   spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
    Fill in the `<connection-string>` parameters in the configuration file. For more information, see [Azure Event Hubs configurations](#available-configurations).
@@ -59,6 +60,7 @@ To configure Azure Key Vault for storing the workspace key:
    spark.synapse.diagnostic.emitter.MyEventHub.categories Log,EventLog,Metrics
    spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault <AZURE_KEY_VAULT_NAME>
    spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault.secretName <AZURE_KEY_VAULT_SECRET_KEY_NAME>
+   spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
    
    Fill in the following parameters in the configuration file: `<AZURE_KEY_VAULT_NAME>`, `<AZURE_KEY_VAULT_SECRET_KEY_NAME>`. For more details on these parameters, refer to [Azure Event Hubs configurations](#available-configurations).
