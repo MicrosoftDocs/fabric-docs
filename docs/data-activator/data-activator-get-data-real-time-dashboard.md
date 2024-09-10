@@ -1,12 +1,13 @@
 ---
 title: Create Data Activator alerts from a Real-Time Dashboard
-description: Learn how to create a Data Activator alert from a Real-Time Dashboard.
+description: Learn how to create a Data Activator alert from a Real-Time Dashboard and receive real-time notifications when conditions are met.
 author: jamesdhutton
 ms.author: jameshutton
-ms.topic: conceptual
-ms.custom:
+ms.topic: how-to
+ms.custom: FY25Q1-Linter
   - build-2024
-ms.date: 05/08/2024
+ms.date: 09/09/2024
+#customer intent: As a Fabric user I want to create Data Activator alerts from a Real-Time Dashboard.
 ---
 
 # Create Data Activator alerts from a Real-Time Dashboard
@@ -47,6 +48,7 @@ Next, define your alert conditions. In the *Set Alert* pane that appears, take t
 ## Optional: Edit your trigger in Data Activator
 
 When your trigger is ready, you'll receive a notification with a link to your trigger. You can click the link to edit your trigger in Data Activator. Editing your trigger can be useful if you want to do one of the following:
+
 * Add other recipients to your alert.
 * Define a more complex alert condition than is possible in the *Set alert* pane.
 
@@ -81,7 +83,7 @@ Data Activator **ignores the changed value**, because it has already read a valu
 The most common reason that a measure value can change over time is that the most recent point on the time axis is subject to change. The worked example above is an example of this situation: since the most recent point on the time axis represents the current date, the number of sales can increase throughout the day. The number of items sold on previous days never change, because these dates are in the past. When this situation occurs, there are two ways you can work around it:
 
 1. **Exclude the current date/time from the chart**: you can add a relative time filter to your chart to exclude the current date or time from your chart. That way, Data Activator will see values only once they are final and no longer subject to change.
-1. **Use a card or KPI visual to track the value for the current date**: the limitation described here only applies to charts with a time axis. So if you want to alert on values for the current date or time, then you can use a KPI or card visual that shows the value for the current date or time. For example, you could have a KPI visual that displays "sales so far for today". Data Activator will be able to read and respond to changes in this value throughout the day.
+2. **Use a card or KPI visual to track the value for the current date**: the limitation described here only applies to charts with a time axis. So if you want to alert on values for the current date or time, then you can use a KPI or card visual that shows the value for the current date or time. For example, you could have a KPI visual that displays "sales so far for today". Data Activator will be able to read and respond to changes in this value throughout the day.
 
 ## Related content
 

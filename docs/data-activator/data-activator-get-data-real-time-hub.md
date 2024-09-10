@@ -1,23 +1,28 @@
 ---
 title: Get data for Data Activator from Real-Time Hub
-description: Learn how to get data from Real-Time Hub for use in Data Activator.
+description: Learn how to get data from Real-Time Hub and use it in Data Activator to enhance your application's functionality.
 author: davidiseminger
 ms.author: davidi
-ms.topic: conceptual
-ms.custom: 
-ms.date: 05/21/2024
+ms.topic: concept-article
+ms.custom: FY25Q1-Linter
+ms.date: 09/09/2024
+#customer intent: As a Fabric user I want to learn to get data for Data Activator from Real-Time Hub.
 ---
 
 # Get data for Data Activator from Real-Time Hub
 
-> [!IMPORTANT]
-> Data Activator is currently in preview.
-
-From within a Data Activator reflex item, you can bring new events from Real-Time Hub.
+From within a Data Activator reflex item, you can bring new events from Real-Time Hub. Review all prerequisites before beginning.
 
 ## Prerequisites
 
-Before you begin, you must have a reflex item already created. However, you can connect to events from Real-Time Hub from an empty reflex item, or a reflex item that already has events flowing into it.
+Before you begin:
+
+* You must have a reflex item already created
+* You can connect to events from Real-Time Hub from an empty reflex item
+* You can connect to events from a reflex item that already has events flowing into it
+
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 ### Browse Real-Time Hub from reflex
 
@@ -32,7 +37,6 @@ A wizard appears enabling you to bring new events using the recommended connecto
 When you choose a connector, a new Eventstream is created to manage the connection and transformation of the new events.
 
 For more information about connecting to data with Real-Time Hub, see the [Real-Time Hub](../real-time-hub/real-time-hub-overview.md) article.
-
 
 ## Related content
 
