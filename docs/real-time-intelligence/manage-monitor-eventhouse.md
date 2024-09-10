@@ -71,13 +71,13 @@ The system overview page provides a snapshot of the current state of the eventho
         * **Running**: The eventhouse is running optimally.
         * **Maintenance**: The eventhouse is temporarily unavailable. Try refreshing the page later.
         * **Unknown**: For unknown reasons, the eventhouse is unavailable.
-        * **Suspended capacity**: The eventhouse has been suspended. Go to Fabric settings to reverse the suspension. If you don't have access to Fabric settings, contact your capacity admin.
-        * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute capacity has reached its limits. Try again later or contact your capacity admin to increase the capacity.
-    * **Storage**: OneLake Cache storage shows the amount of retained data and OneLake Standard storage shows any additional data that's not in the cache. <!-- For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md). -->
+        * **Suspended capacity**: The capacity used for this eventhouse was suspended. Go to Fabric settings to reverse the suspension. If you don't have access to Fabric settings, contact your capacity admin.
+        * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute capacity reached its limits. Try again later or contact your capacity admin to increase the capacity.
+    * **Storage**: OneLake Cache storage shows the amount of retained data and OneLake Standard storage shows any more data that's not in the cache. <!-- For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md). -->
     * **Storage usage by database**: Shows the storage breakdown by database. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
     * **Activity in minutes**: Shows the duration, in minutes, to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
 
-        For example, if two users execute queries at the same time, one taking 3 minutes and the other 5 minutes, the total compute minutes would be 8. But since these queries ran together, the actual compute units used is just 5 minutes.
+        For example, if two users execute queries at the same time, one taking 3 minutes and the other 5 minutes, the total compute minutes would be 8. But since these queries ran together, the actual compute units used are just 5 minutes.
 
         Likewise, even if 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
 
@@ -99,7 +99,7 @@ The system overview page provides a snapshot of the current state of the eventho
         * Create, alter, or delete a function
         * Alter a caching policy, retention policy, or table update policy
 
-1. Optionally, select one of the tabs at the top of a card to filter its date by time range. These tabs allow you to filter by one hour (1h), one day (1d), one week (7d), one month (30d).
+1. Optionally, select one of the tabs at the top of a card to filter its date by time range. These tabs allow you to filter by one hour (1 h), one day (1d), one week (7d), one month (30d).
 
 ### View all databases in an eventhouse
 
