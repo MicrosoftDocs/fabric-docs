@@ -1,17 +1,15 @@
 ---
 title: Use custom actions to trigger Power Automate flows
-description: Understand how to use custom actions to trigger Power Automate flows with Data Activator.
+description: Understand how to use custom actions to trigger Power Automate flows with Data Activator and achieve seamless integration between systems.
 author: davidiseminger
 ms.author: davidi
-ms.topic: conceptual
-ms.custom: 
-ms.date: 11/16/2023
+ms.topic: concept-article
+ms.custom: FY25Q1-Linter
+ms.date: 09/10/2024
+#customer intent: As a Fabric user I want to learn to use custom actions to trigger power automate flows.
 ---
 
 # Use Custom Actions to trigger Power Automate Flows
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 Using Power Automate, you can generate actions in external systems when your Data Activator triggers activate. This can be useful for:
 
@@ -19,7 +17,10 @@ Using Power Automate, you can generate actions in external systems when your Dat
 * Creating action items in ticketing systems.
 * Calling line-of-business apps.
 
-To trigger Power Automate flows from your triggers, you first create a *custom action*. Then, you call your custom action from your triggers. 
+To trigger Power Automate flows from your triggers, you first create a *custom action*. Then, you call your custom action from your triggers.
+
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 ## Create a custom action
 
@@ -38,18 +39,17 @@ The next step is to define your flow in Power Automate. Select the *copy connect
 
 ### Define your flow
 
-The flow is prepopulated with an action for data activator. 
+The flow is prepopulated with an action for data activator.
 
 > [!IMPORTANT]
 > You must paste the connection string from the previous step into this action, as shown in the following screenshot. Once you have done so, add further steps to your flow as needed, and save the flow.
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-06.png" alt-text="Screenshot of defining a flow for data activator.":::
 
-
 To access your input fields in the flow, use a Power Automate expression of the form shown below. Use the *Expression* tab in the field editor to add your expression. Replace NAME\_OF\_INPUT\_FIELD with the name of
-your input field. 
+your input field.
 
-```
+```json
 triggerBody()?['customProperties/NAME_OF_INPUT_FIELD']
 ```
 
@@ -57,16 +57,13 @@ triggerBody()?['customProperties/NAME_OF_INPUT_FIELD']
 
 After you save your flow, return to Data Activator. Upon successful saving of the flow, you see a confirmation box in Data Activator as follows. At this point, your custom action is complete, and you may move on to the next step, [calling your custom action from a trigger](#call-your-custom-action-from-a-trigger). If you need to rename your action, or edit the list of input fields, you can still do so at this point. Select *Done* when you're ready.
 
-
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-07.png" alt-text="Screenshot of custom action completion for data activator.":::
-
 
 ## Call your custom action from a trigger
 
 Once you have created a custom action, it's available for use by all Data Activator users, in all triggers and reflexes. To call your custom action, from a trigger, select the *Custom Action* tile in the trigger’s *Act* card, and select your custom action from the list:
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-08.png" alt-text="Screenshot of calling a custom action for data activator.":::
-
 
 You'll then get a card for your custom action, containing the input fields for your custom action. Fill them out as appropriate for your trigger definition:
 

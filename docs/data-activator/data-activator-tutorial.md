@@ -1,17 +1,15 @@
 ---
 title: Data Activator tutorial using sample data
-description: Learn how Data Activator works using sample data.
+description: Learn how Data Activator works using sample data. Data Activator is a powerful tool for working with data and creating triggers based on specific conditions.
 author: davidiseminger
 ms.author: davidi
-ms.topic: conceptual
-ms.custom: 
-ms.date: 03/22/2024
+ms.topic: how-to
+ms.custom: FY25Q1-Linter
+ms.date: 09/10/2024
+#customer intent: As a Fabric user I want to learn more about Data Activator using a tutorial and sample data.
 ---
 
-# Data Activator tutorial using sample data
-
-> [!IMPORTANT]
-> Data Activator is currently in preview.
+# Learn Data Activator using sample data
 
 This step-by-step tutorial uses the sample *Packages* data that comes with reflex. By the end of this tutorial, you'll have accomplished the following:
 
@@ -19,24 +17,26 @@ This step-by-step tutorial uses the sample *Packages* data that comes with refle
 2. Created an object.
 3. Created and started a trigger.
 
+> [!IMPORTANT]
+> Data Activator is currently in preview.
+
 ## Prerequisites
 
-Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../get-started/workspaces.md) article.  
+* Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../get-started/workspaces.md) article.  
 
 ## Step-by-step guide
 
 The following steps walk you through the tutorial and work with sample data for Data Activator.
 
-### Step 1: Create a sample reflex
+## Step 1: Create a sample reflex
 
 From the Fabric homepage, select a workspace with a Fabric capacity. Select the Data Activator experience then select *Reflex sample* to create a reflex that is prepopulated with sample events and objects.
 
 :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-01.png" alt-text="Selecting reflex sample for data activator tutorial data.":::
 
-
 ### Step 2: Explore the package events in data mode
 
-In this step we explore data mode. 
+In this step we explore data mode.
 
 1. In the newly created reflex, select on the *data* tab, then select the *Package in Transit* events stream. These events show the real-time status of packages that are in the process of being delivered by a logistics company. Look at the incoming events and note the columns on the events. The *PackageId* column uniquely identifies the Packages; this is the ID column that we use to assign the Package events to Package objects.
 2. Select on the other two event streams. These come from different sources in the logistics company, but they're also about packages. They also have a *Package ID* column.
@@ -50,7 +50,7 @@ Now we explore design mode.
 2. In the left navigation pane, look at the *Events* section of the Package object. All three event streams from data mode are linked to the package object. This enables you to create triggers about packages that use data from any of the three event streams.
 
 3. Select the trigger called *Medicine package too warm*. Observe how it works:
-    
+  
     1. It selects the *Temperature* column from the *Package in Transit* events
     2. It detects the Temperature becoming greater than 50, but only if the *Special Care* column equals *Medicine*
     3. It sends an email if the condition is true
