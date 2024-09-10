@@ -32,7 +32,7 @@ To collect diagnostic logs and metrics, you can use an existing Azure Storage ac
    spark.synapse.diagnostic.emitter.MyStorageBlob.type: "AzureStorage"
    spark.synapse.diagnostic.emitter.MyStorageBlob.categories: "DriverLog,ExecutorLog,EventLog,Metrics"
    spark.synapse.diagnostic.emitter.MyStorageBlob.uri:  "https://<my-blob-storage>.blob.core.windows.net/<container-name>/<folder-name>"
-   spark.synapse.diagnostic.emitter.MyDestination1.auth: <AccessKey>
+   spark.synapse.diagnostic.emitter.MyDestination1.auth: "AccessKey"
    spark.synapse.diagnostic.emitter.MyDestination1.secret: <storage-access-key>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
@@ -61,7 +61,7 @@ To configure Azure Key Vault for storing the workspace key:
    spark.synapse.diagnostic.emitter.MyStorageBlob.type: "AzureStorage"
    spark.synapse.diagnostic.emitter.MyStorageBlob.categories: "DriverLog,ExecutorLog,EventLog,Metrics"
    spark.synapse.diagnostic.emitter.MyStorageBlob.uri:  "https://<my-blob-storage>.blob.core.windows.net/<container-name>/<folder-name>"
-   spark.synapse.diagnostic.emitter.MyStorageBlob.auth: <AccessKey>
+   spark.synapse.diagnostic.emitter.MyStorageBlob.auth: "AccessKey"
    spark.synapse.diagnostic.emitter.MyStorageBlob.secret.keyVault: <AZURE_KEY_VAULT_NAME>
    spark.synapse.diagnostic.emitter.MyStorageBlob.secret.keyVault.secretName: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
