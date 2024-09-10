@@ -65,10 +65,10 @@ Follow these steps to start your Fabric capacity trial.
 
 1. In the Account manager, select **Free trial**. If you don't see **Free trial** or **Start trial** or a **Trial status**, trials might be disabled for your tenant.
 
-> [!NOTE]
-> If the Account manager already displays **Trial status**, you may already have a **Power BI trial** or a **Fabric (Free) trial** in progress. To test this out, attempt to use a Fabric feature. For more information, see [Start using Fabric](#other-ways-to-start-a-microsoft-fabric-trial).
+    > [!NOTE]
+    > If the Account manager already displays **Trial status**, you may already have a **Power BI trial** or a **Fabric (Free) trial** in progress. To test this out, attempt to use a Fabric feature. For more information, see [Start using Fabric](#other-ways-to-start-a-microsoft-fabric-trial).
 
-:::image type="content" source="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
+    :::image type="content" source="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
 
 1. If prompted, agree to the terms and then select **Start trial**.
 
@@ -163,7 +163,7 @@ If you don't have a work or school account and want to sign up for a free trial.
 If you do see the **Start trial** button in your Account manager:
 
 - You might not be able to start a trial if your tenant exhausted its limit of trial capacities. If that is the case, you have the following options:
-- Request another trial capacity user to share their trial capacity workspace with you. [Give users access to workspaces](give-access-workspaces.md)
+  - Request another trial capacity user to share their trial capacity workspace with you. [Give users access to workspaces](give-access-workspaces.md).
   - [Purchase a Fabric capacity from Azure](https://aka.ms/fabricibiza) by performing a search for *Microsoft Fabric*.
 
 - To increase tenant trial capacity limits, [reach out to your Fabric administrator](#look-up-the-trial-capacity-administrator) to create a Microsoft support ticket.
