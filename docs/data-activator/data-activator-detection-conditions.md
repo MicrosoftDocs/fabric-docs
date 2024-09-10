@@ -1,8 +1,8 @@
 ---
 title: Detection conditions in Data Activator
 description: Understand how detection conditions in triggers and properties operate in Data Activator and learn how to configure them effectively.
-author: davidiseminger
-ms.author: davidi
+author: mihart
+ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 09/04/2024

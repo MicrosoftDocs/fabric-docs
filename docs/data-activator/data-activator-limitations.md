@@ -1,8 +1,8 @@
 ---
 title: Data Activator limitations
 description: Learn about the limitations of using Data Activator in your applications and dashboards. Data Activator provides real-time insights and analytics for your data.
-author: davidiseminger
-ms.author: davidi
+author: mihart
+ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
@@ -87,7 +87,6 @@ For Eventstreams data sources, during the Public Preview, Data Activator support
 ## Maximum number of trigger actions
 
 Data Activator imposes the following limits on the number of trigger actions that may occur in a given time period. If a trigger action occurs that exceeds the limit, Data Activator may throttle the action, which means that Data Activator wouldn't execute the specified action.
-
 
 |Trigger action  |Scope  |Limit  |
 |---------|---------|---------|

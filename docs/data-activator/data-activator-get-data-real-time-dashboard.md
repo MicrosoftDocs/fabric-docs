@@ -1,8 +1,8 @@
 ---
 title: Create Data Activator alerts from a Real-Time Dashboard
 description: Learn how to create a Data Activator alert from a Real-Time Dashboard and receive real-time notifications when conditions are met.
-author: jamesdhutton
-ms.author: jameshutton
+author: mihart
+ms.author: mihart
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
 ms.date: 09/09/2024
@@ -15,7 +15,7 @@ You can create Data Activator alerts from several data sources in Microsoft Fabr
 
 ## Alert when conditions are met in a Real-Time Dashboard
 
-You can use Data Activator to trigger notifications when conditions are met on data in a Real-time Dashboard. For example, if you have a Real-Time Dashboard displaying real-time availability of bicycles for hire in multiple locations, you can trigger an alert if there are too few bicycles available in any one location. You can send alert notifications either to yourself, or to others in your organization, via either email or Microsoft Teams. 
+You can use Data Activator to trigger notifications when conditions are met on data in a Real-time Dashboard. For example, if you have a Real-Time Dashboard displaying real-time availability of bicycles for hire in multiple locations, you can trigger an alert if there are too few bicycles available in any one location. You can send alert notifications either to yourself, or to others in your organization, via either email or Microsoft Teams.
 
 ## Prerequisites
 
@@ -62,7 +62,7 @@ If you have a chart with a time axis in Power BI or in a Real-Time Dashboard, th
 The following example illustrates this limitation. In this example, a chart shows number of items sold over time. Data Activator first reads the chart in the morning of 3 January. At this time, the chart shows 10 items sold so far for 3 January:
 
 |Date        | Number of items sold
-|------------|---------------------|
+|------------|---------------------
 |1 January   |20
 |2 January   |18
 |3 January   |10
@@ -70,7 +70,7 @@ The following example illustrates this limitation. In this example, a chart show
 Later in the day of 3 January, more items get sold. The chart updates to reflect this, and the number of items sold for 3 January now reads 15:
 
 |Date        | Number of items sold
-|------------|---------------------|
+|------------|---------------------
 |1 January   |20
 |2 January   |18
 |3 January   |15 *(changed from earlier in the day)*

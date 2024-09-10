@@ -1,8 +1,8 @@
 ---
 title: Trigger Fabric items
 description: Understand how to trigger Fabric items with Data Activator and automate data loading and transformation processes.
-author: davidiseminger
-ms.author: davidi
+author: mihart
+ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 09/10/2024

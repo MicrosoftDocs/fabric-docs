@@ -1,8 +1,8 @@
 ---
 title: Use custom actions to trigger Power Automate flows
 description: Understand how to use custom actions to trigger Power Automate flows with Data Activator and achieve seamless integration between systems.
-author: davidiseminger
-ms.author: davidi
+author: mihart
+ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 09/10/2024
@@ -24,16 +24,15 @@ To trigger Power Automate flows from your triggers, you first create a *custom a
 
 ## Create a custom action
 
-A custom action is a reusable action template that you can use in multiple triggers, in multiple Reflex items. Creating a custom action requires familiarity with Power Automate. However, once you have created a custom action, other Data Activator users can use the action in any trigger, without requiring any knowledge of Power Automate. 
+A custom action is a reusable action template that you can use in multiple triggers, in multiple Reflex items. Creating a custom action requires familiarity with Power Automate. However, once you have created a custom action, other Data Activator users can use the action in any trigger, without requiring any knowledge of Power Automate.
 
 A custom action defines how to call a specific external system from a Data Activator trigger using a flow. It defines a set of *input fields* to pass from your triggers to the flow, so that the flow can call the external system. For example, suppose you wanted to define a custom action that sends an SMS message. The input fields for such an action might be *Phone number* and *Message*. This custom action would link to a flow that uses an SMS connector to send the message to the recipient.
 
 ### Name your action and add input fields
 
-To create a custom action, select **new custom action** from the ribbon in the design pane. Then, give your action a name such as *Send SMS message* and define the input fields (such as *Phone number* and *Message*). 
+To create a custom action, select **new custom action** from the ribbon in the design pane. Then, give your action a name such as *Send SMS message* and define the input fields (such as *Phone number* and *Message*).
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-05.png" alt-text="Screenshot of creating a data activator new custom action.":::
-
 
 The next step is to define your flow in Power Automate. Select the *copy connection string* button, then select *Create Flow in Power Automate*. This creates a flow in Power Automate, and takes you to it so that you can define your flow.
 

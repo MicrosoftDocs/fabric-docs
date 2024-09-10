@@ -1,8 +1,8 @@
 ---
 title: Troubleshooting errors in Data Activator
 description: Learn the meaning of errors in Data Activator, how to fix them, and troubleshoot common issues in this comprehensive troubleshooting guide
-author: jamesdhutton
-ms.author: jameshutton
+author: mihart
+ms.author: mihart
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 09/10/2024
@@ -55,6 +55,7 @@ This error code means that the eventstream item connected to your Data Activator
 The following error codes represent problems that can occur when Data Activator evaluates your trigger condition to see if the condition has been met.
 
 ### ProcessingLimitsReached
+
 This error code indicates that your trigger exceeded data processing limits for one of two reasons:
 
 * You're sending too many events per second to your Data Activator object, or
@@ -88,7 +89,7 @@ This error code means that Data Activator couldn't alert the recipient of your t
 
 ### BotBlockedByUser
 
-This error code means that you have a trigger that sends a Teams alert, and the recipient of the alert has blocked the Data 
+This error code means that you have a trigger that sends a Teams alert, and the recipient of the alert has blocked the Data
 Activator bot from sending them messages. To resolve this problem, ask the recipient to unblock the bot.
 
 ### TeamsAppBlockedInTenant

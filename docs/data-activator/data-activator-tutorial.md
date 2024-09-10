@@ -1,8 +1,8 @@
 ---
 title: Data Activator tutorial using sample data
 description: Learn how Data Activator works using sample data. Data Activator is a powerful tool for working with data and creating triggers based on specific conditions.
-author: davidiseminger
-ms.author: davidi
+author: mihart
+ms.author: mihart
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
 ms.date: 09/10/2024
@@ -43,7 +43,7 @@ In this step we explore data mode.
 
 ### Step 3: Explore the Package object in design mode
 
-Now we explore design mode. 
+Now we explore design mode.
 
 1. Select the *Design* tab at the bottom of the screen to enter design mode.
 

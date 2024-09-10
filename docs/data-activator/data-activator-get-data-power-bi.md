@@ -1,8 +1,8 @@
 ---
 title: Get data for Data Activator from Power BI
 description: Learn how to get data from Power BI for use in Data Activator, integrate it into your workflows, and take advantage of powerful data analysis capabilities.
-author: davidiseminger
-ms.author: davidi
+author: mihart
+ms.author: dmihart
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
 ms.date: 09/09/2024
@@ -26,14 +26,14 @@ Before you begin:
 
 ## Create a Data Activator trigger from a Power BI visual
 
-This section, and the sections within it, describes how to create a Data Activator from a Power BI visual. 
+This section, and the sections within it, describes how to create a Data Activator from a Power BI visual.
 
 ## Select Set alert on your Power BI visual
 
 To begin creating a trigger from a Power BI report:
 
 1. Open your Power BI report.
-2. Choose a visual on the report for Data Activator to monitor. 
+2. Choose a visual on the report for Data Activator to monitor.
 3. Select the ellipsis (…) at the top-right of the visual, and select *Set Alert*. You can also use the *Set Alert* button in the Power BI toolbar.
 
 The following image shows an example of how to trigger an action from a visual that displays today’s sales for each store in a retail chain:
@@ -55,7 +55,7 @@ Then with the example from step 1, the following image shows how you would creat
 
 ### Optional: edit your trigger in Data Activator
 
-When your trigger is ready, Power BI notifies you and gives you the option to edit your trigger in Data Activator. 
+When your trigger is ready, Power BI notifies you and gives you the option to edit your trigger in Data Activator.
 
 :::image type="content" source="media/data-activator-get-data/data-activator-get-data-03.png" alt-text="Screenshot of trigger successfully created.":::
 
