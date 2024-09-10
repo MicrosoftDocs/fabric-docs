@@ -70,7 +70,7 @@ The system overview page provides a snapshot of the current state of the eventho
     * **Running state of the eventhouse**: Shows the operational status of the eventhouse. Possible states are:
         * **Running**: The eventhouse is running optimally.
         * **Maintenance**: The eventhouse is temporarily unavailable. Try refreshing the page later.
-        * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute capacity reached its limits. Try again later or contact your capacity admin to [increase the capacity](../enterprise/scale-capacity.md).
+        * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute [capacity reached its limits](../enterprise/throttling.md). Try again later or contact your capacity admin to [increase the capacity](../enterprise/scale-capacity.md).
         * **Suspended capacity**: The capacity used for this eventhouse was suspended. Contact your capacity admin to [reverse the suspension](../enterprise/pause-resume.md).
         * **Unknown**: For unknown reasons, the eventhouse is unavailable.
     * **Storage**: OneLake Cache storage shows the amount of retained data and OneLake Standard storage shows any more data that's not in the cache. <!-- For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md). -->
