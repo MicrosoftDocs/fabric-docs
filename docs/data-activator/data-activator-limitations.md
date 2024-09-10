@@ -12,7 +12,7 @@ ms.date: 09/09/2024
 
 # Data Activator limitations
 
-Data Activator is subject to the following general and specific limitations. Please review and consider these limitations and take them into consideration when working with Data Activator.
+Data Activator is subject to the following general and specific limitations. Before you began your work with Data Activator review and consider these limitations and take them into consideration.
 
 > [!IMPORTANT]
 > Data Activator is currently in preview.
@@ -66,12 +66,12 @@ Data Activator supports only the following tile types in Real-Time Dashboards:
 * Multi stat
 * Pie Chart
 
-Additionally, for a tile to be supported by Data Activator:
+Additionally, for Data Activator to support a tile:
 
 * The data in the tile must not be static
 * The data in the tile must be based on a KQL query
 * The tile must have at most one time range
-* The tile must be filtered by one of the pre-defined time ranges; custom time ranges are not supported
+* The tile must be filtered by a pre-defined time range; using a custom time range aren't supported
 * The tile must not contain time series data (for example, data created using the *make-series* KQL operator)
 
  For more information, see [Limitations on charts with a time axis](data-activator-get-data-real-time-dashboard.md#limitations-on-charts-with-a-time-axis).
