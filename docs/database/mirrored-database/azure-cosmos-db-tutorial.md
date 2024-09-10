@@ -171,16 +171,18 @@ Now, use T-SQL to query your NoSQL data that is now stored in Fabric OneLake.
 
 1. Select the query and then select **Save as view**. Give the view a unique name. You can access this view at any time from the Fabric portal.
 
-1. Select the query and then select **Explore this data (preview)**. This action explores the query in Power BI directly using Direct Lake on OneLake mirrored data.
-
-    > [!TIP]
-    > You can also optionally use Copilot or other enhancements to build dashboards and reports without any further data movement.
-
 1. Return back to the mirrored database in the Fabric portal.
 
 1. Select **New visual query**. Use the query editor to build complex queries.
 
     :::image type="content" source="media/azure-cosmos-db-tutorial/query-editor.png" alt-text="Screenshot of the query editor for both text-based and visual queries in Fabric." lightbox="media/azure-cosmos-db-tutorial/query-editor.png":::
+
+## Building BI reports on the SQL queries or views
+   1. Select the query or view and then select **Explore this data (preview)**. This action explores the query in Power BI directly using Direct Lake on OneLake mirrored data.
+   2. Edit the charts as needed and save the report. 
+
+    > [!TIP]
+    > You can also optionally use Copilot or other enhancements to build dashboards and reports without any further data movement.
 
 ## More examples
 
