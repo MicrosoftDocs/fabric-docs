@@ -1,26 +1,25 @@
 ---
 title: Introduction to Data Activator
-description: Learn about Data Activator and how it works.
+description: Learn about Data Activator, a powerful tool for automating actions based on changing data in Microsoft Fabric.
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
-ms.custom:
+ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
 ms.date: 09/10/2024
+#customer intent: As a Fabric user I want to learn about Data Activator.
 ---
 
 # What is Data Activator?
 
-Data Activator is a no-code experience in Microsoft Fabric for automatically taking actions when patterns or conditions are detected in changing data. It monitors data in Power BI reports and Eventstreams items, for when the data hits certain thresholds or matches other patterns. It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
-
+Data Activator is a no-code experience in Microsoft Fabric for automatically taking actions when patterns or conditions are detected in changing data. 
+It monitors data in Power BI reports and Eventstreams items, for when the data hits certain thresholds or matches other patterns. 
+It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 > [!IMPORTANT]
 > Data Activator is currently in preview.
-
-
 Data Activator is a no-code experience in Microsoft Fabric for automatically taking actions when patterns or conditions are detected in changing data. It monitors data in Power BI reports and eventstream items, for when the data hits certain thresholds or matches other patterns. It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
 Data Activator allows customers to build a digital nervous system that acts across all their data, at scale and in a timely manner. Business users can describe business conditions in a no-code experience to launch actions such as email, Teams notifications, Power Automate flows and call into third party action systems. Business users can self-serve their needs and reduce their reliance on internal IT and developer teams, either of which is often costly and hinders agility. Customer organizations don’t need a developer team to manage and maintain custom in-house monitoring or alerting solutions.
-
 
 Some common use cases are:
 
@@ -38,7 +37,7 @@ The following concepts are used to build and trigger automated actions and respo
 ## Events
 
 Data Activator considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields
-you’re monitoring. Eventstreams vary in frequency from many times per second for IoT sensors, to more sporadic streams such as packages being scanned in and out of shipping locations. 
+you’re monitoring. Eventstreams vary in frequency from many times per second for IoT sensors, to more sporadic streams such as packages being scanned in and out of shipping locations.
 
 Data being observed from Power BI is also treated as an eventstream. In this case, events are observations made of the data on a regular schedule that typically matches the refresh frequency of your Power BI semantic model (previously known as a dataset). These observations might only happen once a day, or even once a week – it’s just a slowly changing event stream.
 
@@ -50,7 +49,7 @@ The term *object instance* refers to a specific freezer/vehicle/package etc. whe
 
 ### Triggers
 
-Triggers define the conditions you want to detect on your objects, and the actions that you want to take when those conditions are met. When a trigger activates, it's always for a specific object instance. A trigger on a freezer object might detect the freezer being too warm, and send an email to the relevant technician. 
+Triggers define the conditions you want to detect on your objects, and the actions that you want to take when those conditions are met. When a trigger activates, it's always for a specific object instance. A trigger on a freezer object might detect the freezer being too warm, and send an email to the relevant technician.
 
 ### Properties
 
