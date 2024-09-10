@@ -43,6 +43,7 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
    spark.synapse.diagnostic.emitter.LA.categories Log,EventLog,Metrics
    spark.synapse.diagnostic.emitter.LA.workspaceId <LOG_ANALYTICS_WORKSPACE_ID>
    spark.synapse.diagnostic.emitter.LA.secret <LOG_ANALYTICS_WORKSPACE_KEY>
+   spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
    Alternatively, to apply the same configuration as Azure Synapse, use the following properties:
@@ -51,6 +52,7 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
    spark.synapse.logAnalytics.enabled true
    spark.synapse.logAnalytics.workspaceId <LOG_ANALYTICS_WORKSPACE_ID>
    spark.synapse.logAnalytics.secret <LOG_ANALYTICS_WORKSPACE_KEY>
+   spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
 3. Save and publish changes.
