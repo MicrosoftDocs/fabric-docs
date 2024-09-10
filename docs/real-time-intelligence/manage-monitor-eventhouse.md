@@ -70,9 +70,9 @@ The system overview page provides a snapshot of the current state of the eventho
     * **Running state of the eventhouse**: Shows the operational status of the eventhouse. Possible states are:
         * **Running**: The eventhouse is running optimally.
         * **Maintenance**: The eventhouse is temporarily unavailable. Try refreshing the page later.
+        * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute capacity reached its limits. Try again later or contact your capacity admin to [increase the capacity](../enterprise/scale-capacity.md).
+        * **Suspended capacity**: The capacity used for this eventhouse was suspended. Contact your capacity admin to [reverse the suspension](../enterprise/pause-resume.md).
         * **Unknown**: For unknown reasons, the eventhouse is unavailable.
-        * **Suspended capacity**: The capacity used for this eventhouse was suspended. Go to Fabric settings to reverse the suspension. If you don't have access to Fabric settings, contact your capacity admin.
-        * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute capacity reached its limits. Try again later or contact your capacity admin to increase the capacity.
     * **Storage**: OneLake Cache storage shows the amount of retained data and OneLake Standard storage shows any more data that's not in the cache. <!-- For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md). -->
     * **Storage usage by database**: Shows the storage breakdown by database. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
     * **Activity in minutes**: Shows the duration, in minutes, to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
