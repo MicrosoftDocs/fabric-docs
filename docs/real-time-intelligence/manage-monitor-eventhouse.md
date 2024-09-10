@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: shsagir
 author: shsagir
 ms.topic: how-to
-ms.date: 05/23/2024
+ms.date: 09/10/2024
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -68,9 +68,11 @@ The system overview page provides a snapshot of the current state of the eventho
     The system overview page displays the following information:
 
     * **Running state of the eventhouse**: Shows the operational status of the eventhouse. Possible states are:
-        * **Running**: The eventhouse is running optimally
-        * **Optimize capacity**: The eventhouse isn't running optimally and requires more capacity. Contact your capacity admin to increase the capacity.
-        * **Throttling**: The eventhouse is running at maximum capacity. Contact your capacity admin to increase the capacity.
+        * **Running**: The eventhouse is running optimally.
+        * **Maintenance**: The eventhouse is temporarily unavailable. Try refreshing the page later.
+        * **Unknown**: For unknown reasons, the eventhouse is unavailable.
+        * **Suspended capacity**: The eventhouse has been suspended. Go to Fabric settings to reverse the suspension. If you don't have access to Fabric settings, contact your capacity admin.
+        * **Missing capacity**: The eventhouse is unavailable because your organization's Fabric compute capacity has reached its limits. Try again later or contact your capacity admin to increase the capacity.
     * **Storage**: OneLake Cache storage shows the amount of retained data and OneLake Standard storage shows any additional data that's not in the cache. <!-- For information about OneLake storage and how to turn it on, see [OneLake availability](one-logical-copy.md). -->
     * **Storage usage by database**: Shows the storage breakdown by database. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
     * **Activity in minutes**: Shows the duration, in minutes, to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
