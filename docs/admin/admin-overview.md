@@ -2,7 +2,7 @@
 title: Administration overview
 description: This article provides a Microsoft Fabric administration overview.
 author: KesemSharabi
-ms.author: KesemSharabi
+ms.author: kesharab
 ms.topic: overview
 ms.date: 08/04/2024
 ---
