@@ -28,10 +28,10 @@ To collect diagnostic logs and metrics, you can use an existing Azure Event Hubs
 2. Add the following **Spark properties** with the appropriate values to the environment artifact, or **select Add from .yml** in the ribbon to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375) which already containing the following properties.  
 
    ```properties
-   spark.synapse.diagnostic.emitters MyEventHub
-   spark.synapse.diagnostic.emitter.MyEventHub.type AzureEventHub
-   spark.synapse.diagnostic.emitter.MyEventHub.categories Log,EventLog,Metrics
-   spark.synapse.diagnostic.emitter.MyEventHub.secret <connection-string>
+   spark.synapse.diagnostic.emitters: <MyEventHub>
+   spark.synapse.diagnostic.emitter.MyEventHub.type: "AzureEventHub"
+   spark.synapse.diagnostic.emitter.MyEventHub.categories: "Log,EventLog,Metrics"
+   spark.synapse.diagnostic.emitter.MyEventHub.secret: <connection-string>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
@@ -55,11 +55,11 @@ To configure Azure Key Vault for storing the workspace key:
 5. Add the following **Spark properties**. Or select **Add from .yml** on the ribbon to upload the [sample yaml file](https://go.microsoft.com/fwlink/?linkid=2169375), which includes following Spark properties.
 
    ```properties
-   spark.synapse.diagnostic.emitters MyEventHub
-   spark.synapse.diagnostic.emitter.MyEventHub.type AzureEventHub
-   spark.synapse.diagnostic.emitter.MyEventHub.categories Log,EventLog,Metrics
-   spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault <AZURE_KEY_VAULT_NAME>
-   spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault.secretName <AZURE_KEY_VAULT_SECRET_KEY_NAME>
+   spark.synapse.diagnostic.emitters: <MyEventHub>
+   spark.synapse.diagnostic.emitter.MyEventHub.type: "AzureEventHub"
+   spark.synapse.diagnostic.emitter.MyEventHub.categories: "Log,EventLog,Metrics"
+   spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault: <AZURE_KEY_VAULT_NAME>
+   spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault.secretName: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
    

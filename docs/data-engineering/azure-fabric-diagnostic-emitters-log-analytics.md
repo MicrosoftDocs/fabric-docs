@@ -38,20 +38,20 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
    - `<LOG_ANALYTICS_WORKSPACE_KEY>`: Log Analytics key. To find this, in the Azure portal, go to **Azure Log Analytics workspace** > **Agents** > **Primary key**.
 
    ```properties
-   spark.synapse.diagnostic.emitters LA
-   spark.synapse.diagnostic.emitter.LA.type AzureLogAnalytics
-   spark.synapse.diagnostic.emitter.LA.categories Log,EventLog,Metrics
-   spark.synapse.diagnostic.emitter.LA.workspaceId <LOG_ANALYTICS_WORKSPACE_ID>
-   spark.synapse.diagnostic.emitter.LA.secret <LOG_ANALYTICS_WORKSPACE_KEY>
+   spark.synapse.diagnostic.emitters: LA
+   spark.synapse.diagnostic.emitter.LA.type: "AzureLogAnalytics"
+   spark.synapse.diagnostic.emitter.LA.categories: "Log,EventLog,Metrics"
+   spark.synapse.diagnostic.emitter.LA.workspaceId: <LOG_ANALYTICS_WORKSPACE_ID>
+   spark.synapse.diagnostic.emitter.LA.secret: <LOG_ANALYTICS_WORKSPACE_KEY>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
    Alternatively, to apply the same configuration as Azure Synapse, use the following properties:
 
    ```properties
-   spark.synapse.logAnalytics.enabled true
-   spark.synapse.logAnalytics.workspaceId <LOG_ANALYTICS_WORKSPACE_ID>
-   spark.synapse.logAnalytics.secret <LOG_ANALYTICS_WORKSPACE_KEY>
+   spark.synapse.logAnalytics.enabled: "true"
+   spark.synapse.logAnalytics.workspaceId: <LOG_ANALYTICS_WORKSPACE_ID>
+   spark.synapse.logAnalytics.secret: <LOG_ANALYTICS_WORKSPACE_KEY>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
@@ -81,21 +81,21 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
    ```properties
    // Spark properties for LA
    spark.synapse.diagnostic.emitters LA
-   spark.synapse.diagnostic.emitter.LA.type AzureLogAnalytics
-   spark.synapse.diagnostic.emitter.LA.categories Log,EventLog,Metrics
-   spark.synapse.diagnostic.emitter.LA.workspaceId <LOG_ANALYTICS_WORKSPACE_ID>
-   spark.synapse.diagnostic.emitter.LA.secret.keyVault <AZURE_KEY_VAULT_NAME>
-   spark.synapse.diagnostic.emitter.LA.secret.keyVault.secretName <AZURE_KEY_VAULT_SECRET_KEY_NAME>
+   spark.synapse.diagnostic.emitter.LA.type: "AzureLogAnalytics"
+   spark.synapse.diagnostic.emitter.LA.categories: "Log,EventLog,Metrics"
+   spark.synapse.diagnostic.emitter.LA.workspaceId: <LOG_ANALYTICS_WORKSPACE_ID>
+   spark.synapse.diagnostic.emitter.LA.secret.keyVault: <AZURE_KEY_VAULT_NAME>
+   spark.synapse.diagnostic.emitter.LA.secret.keyVault.secretName: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
    Alternatively, to apply the same configuration as Azure Synapse, use the following properties:
 
    ```properties
-   spark.synapse.logAnalytics.enabled true
-   spark.synapse.logAnalytics.workspaceId <LOG_ANALYTICS_WORKSPACE_ID>
-   spark.synapse.logAnalytics.keyVault.name <AZURE_KEY_VAULT_NAME>
-   spark.synapse.logAnalytics.keyVault.key.secret <AZURE_KEY_VAULT_SECRET_KEY_NAME>
+   spark.synapse.logAnalytics.enabled: "true"
+   spark.synapse.logAnalytics.workspaceId: <LOG_ANALYTICS_WORKSPACE_ID>
+   spark.synapse.logAnalytics.keyVault.name: <AZURE_KEY_VAULT_NAME>
+   spark.synapse.logAnalytics.keyVault.key.secret: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
