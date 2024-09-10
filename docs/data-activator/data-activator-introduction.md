@@ -1,19 +1,19 @@
 ---
 title: Introduction to Data Activator
-description: Learn about Data Activator and how it works.
+description: Learn about Data Activator, an automated no-code experience in Microsoft Fabric for taking actions based on changing data.
 author: davidiseminger
 ms.author: davidi
-ms.topic: conceptual
-ms.custom:
-  - ignite-2023
+ms.topic: concept-article
+ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
-ms.date: 11/16/2023
+ms.date: 09/09/2024
+#customer intent: As a Fabric user I want to learn more about Data Activator.
 ---
-
-# What is Data Activator?
 
 > [!IMPORTANT]
 > Data Activator is currently in preview.
+
+# What is Data Activator?
 
 Data Activator is a no-code experience in Microsoft Fabric for automatically taking actions when patterns or conditions are detected in changing data. It monitors data in Power BI reports and Eventstreams items, for when the data hits certain thresholds or matches other patterns. It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
@@ -32,7 +32,7 @@ Some common use cases are:
 
 The following concepts are used to build and trigger automated actions and responses in Data Activator.
 
-### Events
+## Events
 
 Data Activator considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields you’re monitoring. Event streams vary in frequency from many times per second in the case of IoT sensors down to more sporadic streams such as packages being scanned in and out of shipping locations. 
 

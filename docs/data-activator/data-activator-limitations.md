@@ -3,11 +3,11 @@ title: Data Activator limitations
 description: Learn about Data Activator limitations.
 author: davidiseminger
 ms.author: davidi
-ms.topic: conceptual
-ms.custom:
-  - build-2024
+ms.topic: concept-article
+ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
-ms.date: 01/04/2024
+ms.date: 09/09/2024
+#customer intent: 
 ---
 
 # Data Activator limitations
@@ -98,7 +98,6 @@ Data Activator imposes the following limits on the number of trigger actions tha
 |Teams     |Messages/recipient/hour           |100        |
 |Teams     |Messages/Teams tenant/second      |50         |
 |PA        |Flow executions/trigger/hour      |10000      |
-
 
 ## Related content
 

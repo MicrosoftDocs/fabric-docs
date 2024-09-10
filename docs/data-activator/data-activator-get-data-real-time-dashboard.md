@@ -5,7 +5,6 @@ author: jamesdhutton
 ms.author: jameshutton
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
-  - build-2024
 ms.date: 09/09/2024
 #customer intent: As a Fabric user I want to create Data Activator alerts from a Real-Time Dashboard.
 ---
