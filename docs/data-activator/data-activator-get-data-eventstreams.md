@@ -8,14 +8,15 @@ ms.custom: FY25Q1-Linter
 ms.date: 09/09/2024
 #customer intent: As a Fabric user I want to learn how to use Data Activator to get data from eventstreams.
 ---
-> [!IMPORTANT]
-> Data Activator is currently in preview.
 
 # Get data for Data Activator from eventstreams
 
 You can get data for use in Data Activator from many sources. This article describes how to get data from eventstreams.
 
 If you have real-time streaming data in Fabric eventstreams, you can connect it to Data Activator. This section explains how.
+
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 ## Prerequisites
 
@@ -42,7 +43,7 @@ To connect your eventstream item to data activator:
 
 * Open your eventstream item
 * Add a destination to your eventstream item, of type *Reflex*
-:::image type="content" source="media/data-activator-get-data/data-activator-get-data-04.png" alt-text="Screenshot of reflex eventstream item showing data flow.":::
+:::image type="content" source="media/data-activator-get-data/data-activator-get-data-04.png" alt-text=" A Screenshot of reflex eventstream item showing data flow.":::
 * In the side panel, select an existing reflex item, or make a new one, as appropriate, then select *Add.*
 * Open your reflex item. You see the data flowing from your eventstream item in the data pane.
   

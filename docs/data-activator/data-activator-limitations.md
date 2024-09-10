@@ -1,21 +1,21 @@
 ---
 title: Data Activator limitations
-description: Learn about Data Activator limitations.
+description: Learn about the limitations of using Data Activator in your applications and dashboards. Data Activator provides real-time insights and analytics for your data.
 author: davidiseminger
 ms.author: davidi
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
 ms.date: 09/09/2024
-#customer intent: 
+#customer intent: As a Fabric user I want to learn about Data Activator limitations.
 ---
 
 # Data Activator limitations
 
+Data Activator is subject to the following general and specific limitations. Please review and consider these limitations and take them into consideration when working with Data Activator.
+
 > [!IMPORTANT]
 > Data Activator is currently in preview.
-
-Data Activator is subject to the following limitations and considerations.
 
 ## General limitations
 
