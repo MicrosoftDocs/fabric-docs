@@ -14,7 +14,7 @@ no-loc: [Copilot]
 
 In this tutorial, you configure a Fabric mirrored database from an existing Azure Cosmos DB for NoSQL account.
 
-Mirorring incrementally replicates Azure Cosmos DB data into Fabric OneLake in near real-time, without impacting the performance of transactional workloads or consuming Request Units (RUs).
+Mirroring incrementally replicates Azure Cosmos DB data into Fabric OneLake in near real-time, without impacting the performance of transactional workloads or consuming Request Units (RUs).
 You can build Power BI reports directly on the data in OneLake, using DirectLake mode. You can run ad-hoc queries in SQL or Spark, build data models using notebooks and leverage built-in Copilot and advanced AI capabilities in Fabric to analyze the data. 
 
 > [!IMPORTANT]
