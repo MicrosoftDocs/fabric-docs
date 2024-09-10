@@ -2,7 +2,7 @@
 title: Get data for Data Activator from Power BI
 description: Learn how to get data from Power BI for use in Data Activator, integrate it into your workflows, and take advantage of powerful data analysis capabilities.
 author: mihart
-ms.author: dmihart
+ms.author: mihart
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
 ms.date: 09/09/2024
