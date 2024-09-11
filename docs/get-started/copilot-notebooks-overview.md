@@ -10,6 +10,7 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
+  - copilot-learning-hub
 ms.date: 06/02/2024
 ms.search.form: Data Science Overview
 no-loc: [Copilot]

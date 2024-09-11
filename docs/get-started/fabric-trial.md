@@ -47,7 +47,7 @@ To begin using your trial of a Fabric capacity, add items to **My workspace** or
 
 ## Existing Power BI users
 
-If you're an existing Power BI user, you can skip to [Start the Fabric trial](#start-the-fabric-capacity-trial). If you're already enrolled in a Power BI trial, you don't see the option to **Start trial" in your Account manager. Instead, open Fabric and attempt to use a feature that requires a Fabric capacity. Fabric prompts you to start a Fabric trial capacity. 
+If you're an existing Power BI user, you can skip to [Start the Fabric trial](#start-the-fabric-capacity-trial). If you're already enrolled in a Power BI trial, you don't see the option to **Start trial** or **Free trial** in your Account manager. 
 
 ## Users who are new to Power BI
 
@@ -63,12 +63,12 @@ Follow these steps to start your Fabric capacity trial.
 
     :::image type="content" source="media/fabric-trial/fabric-home-page.png" alt-text="Screenshot of the Microsoft Fabric homepage with the Account manager outlined in red.":::
 
-1. In the Account manager, select **Start trial**. If you don't see the *Start trial* button, trials might be disabled for your tenant.
+1. In the Account manager, select **Free trial**. If you don't see **Free trial** or **Start trial** or a **Trial status**, trials might be disabled for your tenant.
 
-> [!NOTE]
-> If the Account manager already displays **Trial status**, you may already have a **Power BI trial** in progress.  In this case, attempt to use a Fabric feature to generate a prompt to start a Fabric trial capacity too.  For more information, see [Start using Fabric](#other-ways-to-start-a-microsoft-fabric-trial).
+    > [!NOTE]
+    > If the Account manager already displays **Trial status**, you may already have a **Power BI trial** or a **Fabric (Free) trial** in progress. To test this out, attempt to use a Fabric feature. For more information, see [Start using Fabric](#other-ways-to-start-a-microsoft-fabric-trial).
 
-:::image type="content" source="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
+    :::image type="content" source="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
 
 1. If prompted, agree to the terms and then select **Start trial**.
 
@@ -119,7 +119,9 @@ If you're the capacity or Fabric administrator, from the upper right corner of F
 
 ## End a Fabric trial
 
-End a Fabric capacity trail by canceling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial but individual users don't have this ability. All licenses return to their original versions. You no longer have the equivalent of a PPU license. If you want to retain your data and continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. <!-- For more information, see [Canceling, expiring, and closing](../enterprise/fabric-close-end-cancel.md). -->
+End a Fabric capacity trail by canceling, letting it expire, or purchasing the full Fabric experience. Only capacity admins can cancel the trial. Individual users don't have this ability. All licenses return to their original versions. You no longer have the equivalent of a PPU license. If you want to retain your data and continue to use Microsoft Fabric, [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. 
+
+For more information, see [Canceling, expiring, and closing](../enterprise/fabric-close-end-cancel.md).
 
 ### The trial expires 
 
@@ -161,7 +163,7 @@ If you don't have a work or school account and want to sign up for a free trial.
 If you do see the **Start trial** button in your Account manager:
 
 - You might not be able to start a trial if your tenant exhausted its limit of trial capacities. If that is the case, you have the following options:
-- Request another trial capacity user to share their trial capacity workspace with you. [Give users access to workspaces](give-access-workspaces.md)
+  - Request another trial capacity user to share their trial capacity workspace with you. [Give users access to workspaces](give-access-workspaces.md).
   - [Purchase a Fabric capacity from Azure](https://aka.ms/fabricibiza) by performing a search for *Microsoft Fabric*.
 
 - To increase tenant trial capacity limits, [reach out to your Fabric administrator](#look-up-the-trial-capacity-administrator) to create a Microsoft support ticket.
