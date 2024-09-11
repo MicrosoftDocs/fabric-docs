@@ -11,6 +11,17 @@ ms.date: 08/21/2024
 
 This article describes the requirements that are needed for a custom workload to be listed in the Microsoft Fabric Workload Hub. Make sure your workload complies with these requirements before you submit your workload for publication.
 
+_Definitions:_
+
+* Required:
+Workloads need to implement and comply with the requirement to pass validation.
+
+* Optional:
+Workloads can decide if they want to use or support this requirement or not. In any case, it needs to be documented in the Attestation document.
+
+* Not-Supported:
+Workloads can't support this requirement today because the platform doesn't allow it. To create transparency to the customer partners are still asked to put the information into their Attestation document.
+
 ## Business requirements
 
 Building applications in Fabric is more like creating documents in office than provisioning resources in Azure. While we don’t expect every user to be able to take advantage of every workload in Fabric, each of the workloads must appeal to the broadest set of users.
