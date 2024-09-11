@@ -4,7 +4,7 @@ description: Learn about Data Activator and how it works.
 author: mihart
 ms.author: mihart
 ms.topic: concept-article
-ms.custom:
+ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
 ms.date: 09/10/2024
 ---
