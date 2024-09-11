@@ -11,7 +11,7 @@ ms.date: 05/21/2024
 
 # Publish a workload to the Fabric Workload Hub (preview)
 
-The Fabric Workload Hub is a place where users can browse, explore, and manage workloads within Fabric. Workloads are categorized into two groups: Core Fabric workloads and workloads developed by Microsoft partners. Within the Fabric Workload Hub users can explore different capabilities that are available to them and add those new functionalities.
+The Fabric [Workload Hub](./more-workloads-add.md) is a place where users can browse, explore, and manage workloads within Fabric. Workloads are categorized into two groups: Core Fabric workloads and workloads developed by Microsoft partners. Within the Workload Hub users can explore different capabilities that are available to them and add those new functionalities.
 
 ## Process
 
@@ -38,7 +38,7 @@ After the tenant was added to the preview audience, the Administrator of the ten
 
 ## Preview
 
-The preview enlists a workload and all items it contains to all Fabric users in the Workload hub. To move a workload to the preview stage, owners need to fill out the [Publishing Request Form](https://aka.ms/fabric_workload_publishing) which triggers a validation process. The [Workload publishing requirements](./publish-workload-requirements.md) provide an overview of the requirements the workload needs to meet to be enlisted.
+The preview enlists a workload and all items it contains to all Fabric users in the Workload Hub. To move a workload to the preview stage, owners need to fill out the [Publishing Request Form](https://aka.ms/fabric_workload_publishing) which triggers a validation process. The [Workload publishing requirements](./publish-workload-requirements.md) provide an overview of the requirements the workload needs to meet to be enlisted.
 
 After the form was submitted, the Fabric workload team validates the information and provide feedback on the request. If the workload checks all the requirements, partners are informed about the status change through the contact details provided in the form. The workload shows up in the Workload Hub of every Fabric customer with an indication that it's still in preview.
 
