@@ -83,11 +83,11 @@ User can export the report's data by selecting Export Data. Selecting Export Dat
 
 * The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're stored in OneLake:
 
-| Experience          | Fabric item |
-|---------------------|-------------|
-| Data Activator      | Reflex      |
-| Lakehouse           | Lakehouse   |
-| Real-Time Intelligence | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
+  | Experience          | Fabric item |
+  |---------------------|-------------|
+  | Data Activator      | Reflex      |
+  | Lakehouse           | Lakehouse   |
+  | Real-Time Intelligence | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
 
 * [OneLake soft delete](../onelake/onelake-disaster-recovery.md#soft-delete-for-onelake-files) storage is charged at the same rate as regular storage. For more information about OneLake soft delete, see [OneLake Storage](../onelake/onelake-capacity-consumption.md#onelake-storage).
 
