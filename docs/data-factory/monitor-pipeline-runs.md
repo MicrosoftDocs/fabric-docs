@@ -43,7 +43,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
    
 7. Use the **Filter** to filter by activity status or **Column Options** to edit the columns viewed in the monitoring view.
 
-   :::image type="content" source="media/monitor-pipeline-runs/filter-options.png" alt-text="Screenshot of filter options.":::
+   :::image type="content" source="media/monitor-pipeline-runs/filter-options.png" alt-text="Screenshot of activity run filter options.":::
 
    :::image type="content" source="media/monitor-pipeline-runs/column-options.png" alt-text="Screenshot of column options.":::
 
