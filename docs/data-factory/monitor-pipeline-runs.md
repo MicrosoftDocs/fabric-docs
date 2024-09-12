@@ -17,7 +17,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
 ## Monitor data pipeline runs
 
-1. To monitor your data pipeline runs, hover over your pipeline in your workspace. Doing so will bring up three dots to the right of your pipeline name.
+1. To monitor your data pipeline runs, hover over your pipeline in your workspace. Doing so brings up three dots to the right of your pipeline name.
 
    :::image type="content" source="media/monitor-pipeline-runs/more-options-for-pipeline.png" alt-text="Screenshot showing where to find more pipeline options.":::
 
@@ -59,7 +59,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
 8. To find additional information on your pipeline runs **Input** and **Output**, select the input or output links to the right of the relevant row in the Activity Runs.
 
-9. You can select **Update pipeline** to make changes to your pipeline from this screen. This selection will take you back in the pipeline canvas.
+9. You can select **Update pipeline** to make changes to your pipeline from this screen. This selection takes you back to the pipeline canvas.
 
 10. You can also **Rerun** your data pipeline. You can choose to rerun the entire pipeline or only rerun the pipeline from the failed activity.  
 
@@ -73,7 +73,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
 ## Gantt view
 
-A Gantt chart is a view that lets you see the run history over a time range. If you switch to a Gantt view, all pipeline runs will be grouped by name, displayed as bars relative to how long the run took.
+A Gantt chart is a view that lets you see the run history over a time range. If you switch to a Gantt view, all pipeline runs are grouped by name, displayed as bars relative to how long the run took.
 
 :::image type="content" source="media/monitor-pipeline-runs/gantt-view.png" alt-text="Screenshot showing where to switch between views.":::
 
