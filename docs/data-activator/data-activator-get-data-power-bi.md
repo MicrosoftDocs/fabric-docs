@@ -1,45 +1,46 @@
 ---
 title: Get data for Data Activator from Power BI
-description: Learn how to get data from Power BI for use in Data Activator.
-author: davidiseminger
-ms.author: davidi
-ms.topic: conceptual
-ms.custom: 
-ms.date: 11/16/2023
+description: Learn how to get data from Power BI for use in Data Activator, integrate it into your workflows, and take advantage of powerful data analysis capabilities.
+author: mihart
+ms.author: mihart
+ms.topic: how-to
+ms.custom: FY25Q1-Linter
+ms.date: 09/09/2024
+#customer intent: As a Power BI user I want to learn how to get data for Data Activator in Power BI.
 ---
 
 # Get data for Data Activator from Power BI
 
-> [!IMPORTANT]
-> Data Activator is currently in preview.
-
 You can get data for use in Data Activator from many sources. This article describes how to get data from Power BI.
 
-## Get data from Power BI
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 You can use Data Activator to trigger notifications when conditions are met about data in a Power BI report. For example, if you have a report displaying daily sales per store, you could send a notification at the end of the day if daily sales for any store fall beneath a threshold. You can send notifications to yourself, or to others in your organization. This section explains how notifications can be created and triggered.
 
 ## Prerequisites
 
-Before you begin, you need a Power BI report that is published online to a Fabric workspace in a Premium capacity.
+Before you begin:
 
-### Create a Data Activator trigger from a Power BI visual
+* You need a Power BI report that is published online to a Fabric workspace in a Premium capacity.
 
-This section, and the sections within it, describes how to create a Data Activator from a Power BI visual. 
+## Create a Data Activator trigger from a Power BI visual
 
-#### Select Set alert on your Power BI visual
+This section, and the sections within it, describes how to create a Data Activator from a Power BI visual.
+
+## Select Set alert on your Power BI visual
 
 To begin creating a trigger from a Power BI report:
 
 1. Open your Power BI report.
-2. Choose a visual on the report for Data Activator to monitor. 
+2. Choose a visual on the report for Data Activator to monitor.
 3. Select the ellipsis (…) at the top-right of the visual, and select *Set Alert*. You can also use the *Set Alert* button in the Power BI toolbar.
 
 The following image shows an example of how to trigger an action from a visual that displays today’s sales for each store in a retail chain:
 
-:::image type="content" source="media/data-activator-get-data/data-activator-get-data-01.png" alt-text="Screenshot of sales by store.":::
+:::image type="content" source="media/data-activator-get-data/data-activator-get-data-01.png" alt-text="Screenshot of sales by store in Power BI report.":::
 
-#### Create your Data Activator trigger
+### Create your Data Activator trigger
 
 Next, define your trigger conditions and to create your trigger. In the *Set Alert* pane that appears, take the following steps:
 
@@ -50,16 +51,15 @@ Next, define your trigger conditions and to create your trigger. In the *Set Ale
 
 Then with the example from step 1, the following image shows how you would create a trigger that fires daily if the sales for any store drop to under $60,000:
 
-:::image type="content" source="media/data-activator-get-data/data-activator-get-data-02.png" alt-text="Screenshot of create an alert window.":::
+:::image type="content" source="media/data-activator-get-data/data-activator-get-data-02.png" alt-text="Screenshot of create an alert window showing daily sales trigger.":::
 
 ### Optional: edit your trigger in Data Activator
 
-When your trigger is ready, Power BI notifies you and gives you the option to edit your trigger in Data Activator. 
+When your trigger is ready, Power BI notifies you and gives you the option to edit your trigger in Data Activator.
 
 :::image type="content" source="media/data-activator-get-data/data-activator-get-data-03.png" alt-text="Screenshot of trigger successfully created.":::
 
 Editing your trigger in Data Activator can be useful if you want to define a more complex alert condition than is possible in Power BI, or if you want to trigger a Power Automate flow when your trigger fires. Refer to [Create triggers in design mode](data-activator-create-triggers-design-mode.md) for information on how to edit triggers in Data Activator.
-
 
 ## Related content
 
