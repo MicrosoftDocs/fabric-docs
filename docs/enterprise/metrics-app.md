@@ -30,9 +30,9 @@ To install the app, follow the instructions in [Install the Microsoft Fabric Cap
 
 ## Considerations and limitations
 
-When using the Microsoft Fabric Capacity Metrics app, consider the following:
+When using the Microsoft Fabric Capacity Metrics app, consider the following considerations and limitations:
 
-* Billable items and operations consume CU units from your capacity and are paid for by your organization. Non-billable items and operations reflect preview features that don't count towards your capacity limit, and are not paid for. They provide an indication of possible future impact on your capacity. When preview features become generally available, your organization starts paying for them and their impact on your capacity is taking into account.
+* Billable items and operations consume CU units from your capacity and are paid for by your organization. Non-billable items and operations reflect preview features that don't count towards your capacity limit, and aren't paid for. They provide an indication of possible future impact on your capacity. When preview features become generally available, your organization starts paying for them and their impact on your capacity is taking into account.
 
 * In the [Capacity utilization and throttling](metrics-app-compute-page.md#capacity-utilization-and-throttling) visual logarithmic's view, the primary axis seen on the left of the visual, isn't aligned with the secondary axis seen on the right of the visual.
 
