@@ -55,7 +55,7 @@ For information on how to edit triggers in Data Activator, see [Create triggers 
 
 ## Limitations on charts with a time axis
 
-If you have a chart with a time axis in Power BI or in a Real-Time Dashboard, then Data Activator will read the measure value exactly once for each point on the time axis. If the measure value for a given time point changes after Data Activator reads it, then Data Activator will ignore the changed value.
+If you have a chart with a time axis in Power BI or in a Real-Time Dashboard, then Data Activator will read the measure value exactly once for each point on the time axis. If the measured value for a given time point changes after Data Activator reads it, then Data Activator will ignore the changed value.
 
 ### Limitation example
 
@@ -81,8 +81,21 @@ Data Activator **ignores the changed value**, because it has already read a valu
 
 The most common reason that a measure value can change over time is that the most recent point on the time axis is subject to change. The worked example above is an example of this situation: since the most recent point on the time axis represents the current date, the number of sales can increase throughout the day. The number of items sold on previous days never change, because these dates are in the past. When this situation occurs, there are two ways you can work around it:
 
-1. **Exclude the current date/time from the chart**: you can add a relative time filter to your chart to exclude the current date or time from your chart. That way, Data Activator will see values only once they are final and no longer subject to change.
-2. **Use a card or KPI visual to track the value for the current date**: the limitation described here only applies to charts with a time axis. So if you want to alert on values for the current date or time, then you can use a KPI or card visual that shows the value for the current date or time. For example, you could have a KPI visual that displays "sales so far for today". Data Activator will be able to read and respond to changes in this value throughout the day.
+
+1. **Exclude the current date/time from the chart**, so that this value won't be sampled while it's still subject to change. There are a few ways to do this:
+
+      * Add a relative time filter to your chart to exclude the current date or time from your chart. That way, Data Activator will see values only once they are final and no longer subject to change.
+      * Add a time filter where the time range ends at 'one bin before' the current time, so the last bin sampled by Data Activator is already "closed" and won't change.
+
+        ```kusto 
+        TableForReflex
+        | where YourTimeColumn between (ago(5h)..bin(now(), 1h))
+        | summarize count() by bin(YourTimeColumn, 1h)
+        | render timechart
+        ```
+    
+1. **Use a card or KPI visual to track the value for the current date**: the limitation described here only applies to charts with a time axis. So if you want to alert on values for the current date or time, then you can use a KPI or card visual that shows the value for the current date or time. For example, you could have a KPI visual that displays "sales so far for today". Data Activator will be able to read and respond to changes in this value throughout the day.
+
 
 ## Related content
 
