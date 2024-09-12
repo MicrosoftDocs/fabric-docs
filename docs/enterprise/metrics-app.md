@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - build-2024
-ms.date: 07/25/2024
+ms.date: 09/12/2024
 ---
 
 # What is the Microsoft Fabric Capacity Metrics app?
@@ -39,6 +39,8 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following:
 * In the [interactive](metrics-app-timepoint-page.md#interactive-operations-for-timerange) and [background](metrics-app-timepoint-page.md#background-operations-for-timerange) operation tables, the *Throttling(s)* column displays zero when throttling is disabled, even when the capacity is overloaded.
 
 * There's a difference of 0.01-0.05 percent between the *CU %* value in the [Top row visuals](metrics-app-timepoint-page.md#top-row-visuals) *Heartbeat line chart*, and the [interactive](metrics-app-timepoint-page.md#interactive-operations-for-timerange) and [background](metrics-app-timepoint-page.md#background-operations-for-timerange) operations tables *Total CU* values.
+
+* When the capacity state remains unchanged during the selected dates or the past 14 days, it won't appear in the System Event table.
 
 * Updates from version 1 to version 1.1 are installed in a new workspace.
 
