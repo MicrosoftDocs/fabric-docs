@@ -38,7 +38,7 @@ To begin creating a trigger from a Power BI report:
 
 The following image shows an example of how to trigger an action from a visual that displays today’s sales for each store in a retail chain:
 
-:::image type="content" source="media/data-activator-get-data/data-activator-get-data-01.png" alt-text="Sales by store in Power BI report":::
+:::image type="content" source="media/data-activator-get-data/data-activator-get-data-01.png" alt-text="Screenshot of sales by store in Power BI report.":::
 
 ### Create your Data Activator trigger
 

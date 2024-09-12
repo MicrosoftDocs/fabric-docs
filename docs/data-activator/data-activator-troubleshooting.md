@@ -44,7 +44,7 @@ This error code means that Data Activator received an exception from eventstream
 
 ### UnauthorizedAccess
 
-This error code means that Data Activator was unauthorized to access the eventstream item for your data activator object. This can occur if permission on the eventstream item have changed since you connected your Eventsterams item to Data Activator. To resolve the problem, make sure that you have permission to access the eventstream item.
+This error code means that Data Activator was unauthorized to access the eventstream item for your data activator object. This can occur if permissions on the eventstream item have changed since you connected your Eventstreams item to Data Activator. To resolve the problem, make sure that you have permission to access the eventstream item.
 
 ### IncorrectDataFormat
 

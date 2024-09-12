@@ -25,7 +25,7 @@ Triggers are where you specify the values you want to select from events, the co
 
 You use the **New trigger** button in the ribbon to create a new trigger. You can give it a name by clicking the name of the trigger and editing it.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-01.png" alt-text="Screenshot of creating a new trigger":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-01.png" alt-text="Screenshot of creating a new trigger.":::
 
 ### Step 2: Select your data
 
@@ -68,13 +68,13 @@ After you have created a trigger, you can test it by selecting *Send me a test a
 * The test alert will always go to you, regardless of the recipient field in the *Act* card
 * The *Send me a test alert* option is only enabled if you have had at least one past event for which the trigger condition is true.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-08.png" alt-text="Screenshot of testing a trigger":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-08.png" alt-text="Screenshot of testing a trigger.":::
 
 ## Start and stop your trigger
 
 Triggers are created in a 'Stopped' state. This means they're not being evaluated as data flows into the system, and won't take any actions as a result. You also need to select Start from the toolbar for Data Activator to start running the trigger and taking action.
 
-:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-09.png" alt-text="Screenshot of starting a trigger":::
+:::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-09.png" alt-text="Screenshot of starting a trigger.":::
 
 Once started, you'll see *Running* appears in the title area of the property.
 

@@ -27,7 +27,7 @@ To create an object, pick the events that you wish to monitor, then select **Ass
 The example shown is based on the sample *Packages* data that comes with Data Activator. Since this data is monitoring packages, we choose *Package* as our object name. We choose *Package ID* as our key column
 because it uniquely identifies packages.
 
-:::image type="content" source="media/data-activator-assign-data-objects/data-activator-assign-data-objects-01.png" alt-text="Screenshot of assign your data window":::
+:::image type="content" source="media/data-activator-assign-data-objects/data-activator-assign-data-objects-01.png" alt-text="Screenshot of assign your data window.":::
 
 When you create an object, you're switched to **Design mode** with the eventstream for the new object selected. The preview in the following image shows you the events that were received split out by the
 unique values from the ID column.

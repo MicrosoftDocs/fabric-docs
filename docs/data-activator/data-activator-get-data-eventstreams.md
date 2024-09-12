@@ -43,7 +43,9 @@ To connect your eventstream item to data activator:
 
 * Open your eventstream item
 * Add a destination to your eventstream item, of type *Reflex*
-:::image type="content" source="media/data-activator-get-data/data-activator-get-data-04.png" alt-text=" A Screenshot of reflex eventstream item showing data flow.":::
+
+   :::image type="content" source="media/data-activator-get-data/data-activator-get-data-04.png" alt-text=" A Screenshot of reflex eventstream item showing data flow.":::
+  
 * In the side panel, select an existing reflex item, or make a new one, as appropriate, then select *Add.*
 * Open your reflex item. You see the data flowing from your eventstream item in the data pane.
   
