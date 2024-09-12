@@ -79,6 +79,10 @@ A Spark pool can be defined with node sizes that range from a small compute node
 | X-Large | 32 | 256 GB |
 | XX-Large | 64 | 512 GB |
 
+
+> [!NOTE]
+>  Node sizes X-Large and XX-Large are only allowed for non-trial Fabric SKUs. 
+
 ## Autoscale
 
 Autoscale for Apache Spark pools allows automatic scale up and down of compute resources based on the amount of activity. When you enable the autoscale feature, you set the minimum and maximum number of nodes to scale. When you disable the autoscale feature, the number of nodes set remains fixed. You can alter this setting after pool creation, although you might need to restart the instance.
