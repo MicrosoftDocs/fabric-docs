@@ -82,15 +82,15 @@ The most common reason that a measure value can change over time is that the mos
 
 1. **Exclude the current date/time from the chart**, so that this value won't be sampled while it's still subject to change. There are a few ways to do this:
 
-  * Add a relative time filter to your chart to exclude the current date or time from your chart. That way, Data Activator will see values only once they are final and no longer subject to change.
-  * Add a time filter where the time range ends at 'one bin before' the current time, so the last bin sampled by Data Activator is already "closed" and won't change.
+      * Add a relative time filter to your chart to exclude the current date or time from your chart. That way, Data Activator will see values only once they are final and no longer subject to change.
+      * Add a time filter where the time range ends at 'one bin before' the current time, so the last bin sampled by Data Activator is already "closed" and won't change.
 
-    ```kusto 
-    TableForReflex
-    | where YourTimeColumn between (ago(5h)..bin(now(), 1h))
-    | summarize count() by bin(YourTimeColumn, 1h)
-    | render timechart
-    ```
+        ```kusto 
+        TableForReflex
+        | where YourTimeColumn between (ago(5h)..bin(now(), 1h))
+        | summarize count() by bin(YourTimeColumn, 1h)
+        | render timechart
+        ```
     
 1. **Use a card or KPI visual to track the value for the current date**: the limitation described here only applies to charts with a time axis. So if you want to alert on values for the current date or time, then you can use a KPI or card visual that shows the value for the current date or time. For example, you could have a KPI visual that displays "sales so far for today". Data Activator will be able to read and respond to changes in this value throughout the day.
 
