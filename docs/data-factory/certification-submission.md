@@ -9,7 +9,6 @@ ms.author: miescobar
 
 # Power Query connector submission
 
-## Introduction
 
 This article provides instructions for how to submit your Power Query custom connector for certification. Don't submit your connector for certification unless you've been explicitly directed to by your Microsoft contact.
 

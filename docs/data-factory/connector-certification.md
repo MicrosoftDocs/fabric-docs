@@ -13,7 +13,6 @@ ms.custom: intro-internal
 > [!NOTE]
 > This article describes the requirements and process to submit a Power Query custom connector for certification. Read the entire article closely before starting the certification process.
 
-## Introduction
 
 With the [Power Query SDK](/power-query/install-sdk), everyone is empowered to create a custom Power Query connector to connect to a data source from Power Query. Currently, custom connectors are only supported in Power BI semantic models (Power BI Desktop and Power BI service), and require the use of an on-premises data gateway to refresh through Power BI service. Custom connectors need to be individually distributed by the developer.
 
