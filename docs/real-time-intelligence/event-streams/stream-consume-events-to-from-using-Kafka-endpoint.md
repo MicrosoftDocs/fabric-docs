@@ -20,7 +20,7 @@ To complete this tutorial, make sure you have the following prerequisites:
 
 - Get access to a premium workspace with Contributor or higher permissions where your eventstream is located.
 - Create a Windows virtual machine and install the following components:
-  - [Java Development Kit (JDK) 1.7+](https://learn.microsoft.com/en-us/azure/developer/java/fundamentals/java-support-on-azure).
+  - [Java Development Kit (JDK) 1.7+](https://learn.microsoft.com/azure/developer/java/fundamentals/java-support-on-azure).
   - [Download](https://maven.apache.org/download.cgi) and [install](https://maven.apache.org/install.html) a Maven binary archive.
   - [Git](https://www.git-scm.com/).
 
@@ -70,7 +70,7 @@ Follow these steps to add a custom endpoint source to your eventstream:
 
    <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/custom-endpoint-edit-mode.png" width="500" alt="A screenshot showing custom endpoint in edit mode.">
    
-1. To see the Kafka endpoint details, select **Publish**. Once it is published successfully, you can retrieve the Kafka endpoint details (**Keys** and **sample code**, refer to [Kafka endpoint details ](./add-source-custom-app.md###Kafka)) by selecting the **Kafka** tab in the bottom pane of the custom endpoint source node.
+2. To see the Kafka endpoint details, select **Publish**. Once it is published successfully, you can retrieve the Kafka endpoint details (**Keys** and **sample code**, refer to [Kafka endpoint details ](./add-source-custom-app.md#Kafka)) by selecting the **Kafka** tab in the bottom pane of the custom endpoint source node.
 
 From the **Keys** page, you can obtain the important Kafka endpoint information:
 
