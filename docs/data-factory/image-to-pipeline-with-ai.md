@@ -309,14 +309,14 @@ try:
     if response.status_code != 201:
         raise FabricHTTPException(response)
 except WorkspaceNotFoundException as e:
-    print("Caught a WorkspaceNotFoundException:", e)
+    print("Workspace is not available or cannot be found.")
 except FabricHTTPException as e:
     print(e)
-    print("Caught a FabricHTTPException. Check the API endpoint, authentication.")
+    print("Fabric HTTP Exception. Check that you have the correct Fabrric API endpoints.")
 
 response = client.get(f"/v1/workspaces/{workspaceId}/Datapipelines")
 df_items = pd.json_normalize(response.json()['value'])
-print("Workspace pipelines after creation:")
+print("List of pipelines in the workspace:")
 df_items
 ```
 
