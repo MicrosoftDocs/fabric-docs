@@ -116,7 +116,7 @@ You can find the \{YOUR.TOPIC.NAME\} on the Key page under the Kafka tab as show
 
 Select the eventstream node, which is the middle node displaying your eventstream name, to preview the data which were sent with this Kafka application.  Selecting the data format ‘CSV with delimiter comma without header’ since this matches the format in which the application has streamed the events data. 
 
- <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-data-preview.png" alt="A screenshot showing kafka data preview." width="600" />
+   <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-data-preview.png" alt="A screenshot showing kafka data preview." width="600" />
     
 ## Obtain the Kafka endpoint from an added custom endpoint destination
 Similarly, you can add a custom endpoint destination to obtain the Kafka connection endpoint details for consuming events from your eventstream. Once it is added successfully, you can obtain the information from the **Details** pane of this destination in live view.
