@@ -65,7 +65,7 @@ The Fabric trial capacity lasts 60 days. [Cancel a Fabric capacity trial](../get
 ### Delete a Fabric capacity and Fabric trial capacity
 
 The Capacity administrator can delete Fabric capacities using the Fabric admin portal. Fabric items in workspaces assigned to the capacity become unusable unless the workspaces are assigned to a different Fabric capacity within seven days. To learn more, see [Delete a capacity](../admin/capacity-settings.md#delete-a-capacity) and 
-[Fabric capacity deletion.](../admin/service-admin-portal-capacity-settings.md#fabric-capacity-deletion)
+[Fabric capacity deletion.](../admin/capacity-settings.md#delete-a-capacity)
 
 ### Buy a Fabric trial capacity
 

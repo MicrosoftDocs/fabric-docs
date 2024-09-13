@@ -180,8 +180,7 @@ The **Time Skew** tab displays skewed tasks based on task execution time.
 
 This feature has been deprecated in Fabric now. If you still want to use this as a workaround, please access the page by explicitly adding "/executorusage" behind path "/diagnostic" in the URL, like this:
 
-   :::image type="content" source="media\apache-spark-history-server\modify-path.png" alt-text="Screenshot showing modify the url." lightbox="media\apache-spark-history-server\modify-path.png":::
-   
+   :::image type="content" source="media\apache-spark-history-server\modify-path.png" alt-text="Screenshot showing how to modify the url." lightbox="media\apache-spark-history-server\modify-path.png":::
 
 ## Related content
 

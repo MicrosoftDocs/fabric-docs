@@ -17,8 +17,10 @@ items:
     href: ../get-started/decision-guide-lakehouse-warehouse.md
   - name: Upload CSV to delta tables
     href: get-started-csv-upload.md
-  - name: Get streaming data into lakehouse
+  - name: Stream data into lakehouse with Spark
     href: get-started-streaming.md
+  - name: Stream data into lakehouse with Eventstreams 
+    href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
   - name: Reference external data for data science
     href: get-started-shortcuts.md
 - name: Tutorials
@@ -59,8 +61,10 @@ items:
     href: load-data-lakehouse.md
   - name: Shortcut data in a lakehouse
     href: lakehouse-shortcuts.md
-  - name: Stream data to a lakehouse
+  - name: Optimize streaming data ingestion
     href: lakehouse-streaming-data.md
+  - name: Get streaming data into lakehouse with Eventstreams 
+    href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
 - name: Lakehouse access control
   items:
   - name: Workspace roles and permissions
@@ -155,6 +159,12 @@ items:
       href: apache-spark-history-server.md  
     - name: Monitor Spark capacity consumption
       href: monitor-spark-capacity-consumption.md
+    - name: Collect Spark logs and metrics with Azure Log Analytics
+      href: azure-fabric-diagnostic-emitters-log-analytics.md
+    - name: Collect Spark logs and metrics with Azure Storage Account
+      href: azure-fabric-diagnostic-emitters-azure-storage.md
+    - name: Collect Spark logs and metrics with Azure Event Hub 
+      href: azure-fabric-diagnostic-emitters-azure-event-hub.md
   - name: Spark Connectors
     items:
     - name: Data warehouse and lakehouse connector
@@ -176,7 +186,9 @@ items:
   - name: Create and use notebooks
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
-    href: author-execute-notebook.md  
+    href: author-execute-notebook.md 
+  - name: Notebook known limitation
+    href: notebook-limitation.md 
   - name: NotebookUtils
     href: notebook-utilities.md
     displayName: MSSparkUtils

@@ -1,24 +1,25 @@
 ---
 title: Create Data Activator triggers in design mode
-description: Learn how to create triggers in design mode for Data Activator.
-author: davidiseminger
-ms.author: davidi
-ms.topic: conceptual
-ms.custom: 
+description: Learn how to create triggers in design mode for Data Activator, take action on your data, and automate workflows.
+author: mihart
+ms.author: mihart
+ms.topic: concept-article
+ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Design Mode
-ms.date: 11/16/2023
+ms.date: 09/04/2024
+# customer intent: As a Fabric user I want to create Data Activator triggers in design mode.
 ---
 
 # Create Data Activator triggers in design mode
 
+Once you have [assigned data to objects](data-activator-assign-data-objects.md#assign-data-to-objects-in-data-activator), you can create triggers to act on your data. You do this in **Design Mode,** which you can access from the tab at the bottom of your screen.
+
 > [!IMPORTANT]
 > Data Activator is currently in preview.
 
-Once you have [assigned data to objects](data-activator-assign-data-objects.md#assign-data-to-objects-in-data-activator), you can create triggers to act on your data. You do this in **Design Mode,** which you can access from the tab at the bottom of your screen. 
-
 ## Define a trigger condition and action
 
-Triggers are where you specify the values you want to select from events, the conditions you want to detect, and the actions you want Data Activator to take. 
+Triggers are where you specify the values you want to select from events, the conditions you want to detect, and the actions you want Data Activator to take.
 
 ### Step 1: Make a new trigger
 
@@ -46,7 +47,7 @@ The **Detect** card then shows two charts:
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-05.png" alt-text="Screenshot of a detect card showing two charts.":::
 
-The first shows, for the five sampled instances, when the condition was detected. In the previous screenshot the instance labeled in yellow, **RFX-9461367**, crossed the threshold of 45 degrees four times. 
+The first shows, for the five sampled instances, when the condition was detected. In the previous screenshot the instance labeled in yellow, **RFX-9461367**, crossed the threshold of 45 degrees four times.
 
 The second chart show the total number of times the trigger would have fired, for all instances that Data Activator is tracking. There are two spikes, around 5am and 7am, where the alert was fired four times. These might not be from the 5 instances sampled in the other charts.
 
@@ -69,10 +70,9 @@ After you have created a trigger, you can test it by selecting *Send me a test a
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-08.png" alt-text="Screenshot of testing a trigger.":::
 
-
 ## Start and stop your trigger
 
-Triggers are created in a 'Stopped' state. This means they're not being evaluated as data flows into the system, and won't take any actions as a result. You also need to select Start from the toolbar for Data Activator to start running the trigger and taking action. 
+Triggers are created in a 'Stopped' state. This means they're not being evaluated as data flows into the system, and won't take any actions as a result. You also need to select Start from the toolbar for Data Activator to start running the trigger and taking action.
 
 :::image type="content" source="media/data-activator-create-triggers-design-mode/data-activator-create-triggers-design-mode-09.png" alt-text="Screenshot of starting a trigger.":::
 

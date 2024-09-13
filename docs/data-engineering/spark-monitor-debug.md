@@ -35,7 +35,7 @@ A built-in Spark advisor analyzes your notebook code and Spark executions in rea
 
 To view the advice, click the arrow at the beginning to expand and reveal the details.
 
-:::image type="content" source="media\spark-monitor-debug\light-bulb.png" alt-text="Screenshot showing light bulb." lightbox="media\spark-monitor-debug\light-bulb.png":::
+:::image type="content" source="media\spark-monitor-debug\light-bulb.png" alt-text="Screenshot showing the light bulb to expand details." lightbox="media\spark-monitor-debug\light-bulb.png":::
 
 After expanding the advisor section, one or more pieces of advice become visible.
 
