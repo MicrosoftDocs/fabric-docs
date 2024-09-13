@@ -1,6 +1,6 @@
 ---
 title: Add a custom app destination to an eventstream
-description: Learn how to add a custom app or endpoint destination to an eventstream.
+description: Learn how to add a custom app or endpoint destination to an eventstream consume streaming events using the Kafka protocol.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu

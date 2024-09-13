@@ -20,7 +20,7 @@ To complete this tutorial, make sure you have the following prerequisites:
 
 - Get access to a premium workspace with Contributor or higher permissions where your eventstream is located.
 - Create a Windows virtual machine and install the following components:
-  - [Java Development Kit (JDK) 1.7+](https://learn.microsoft.com/azure/developer/java/fundamentals/java-support-on-azure).
+  - [Java Development Kit (JDK) 1.7+](/azure/developer/java/fundamentals/java-support-on-azure).
   - [Download](https://maven.apache.org/download.cgi) and [install](https://maven.apache.org/install.html) a Maven binary archive.
   - [Git](https://www.git-scm.com/).
 
@@ -43,10 +43,12 @@ You can create an eventstream from the **Workspace page** or the **Create hub** 
        :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the Eventstream tile on the Create hub page." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
 1. Enter a **name** for the new eventstream and select **Enhanced Capabilities (preview)** checkbox, and then select **Create**. 
 
-    :::image type="content" source="./media/create-manage-an-eventstream-enhanced/create-event-stream-dialog-box.png" alt-text="Screenshot showing the New eventstream dialog box." lightbox="./media/create-manage-an-eventstream-enhanced/create-event-stream-dialog-box.png" :::
+    
+   <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/create-esv2-kafka-endpoint.png" width="300" alt="A screenshot showing custom endpoint in edit mode.">
+
 1. Creation of the new eventstream in your workspace can take a few seconds. After the eventstream is created, you're directed to the main editor where you can start with adding sources to the eventstream. 
 
-   :::image type="content" source="./media/create-manage-an-eventstream-enhanced/editor.png" alt-text="Screenshot showing the editor." lightbox="./media/create-manage-an-eventstream-enhanced/editor.png" :::
+    <img src="./media/create-manage-an-eventstream-enhanced/editor.png" width="500" alt="Screenshot showing the editor.">
 
 ## Retrieve the Kafka endpoint from an added custom endpoint source
 To get a Kafka topic endpoint, simply add a custom endpoint source to your eventstream. Once added, the Kafka connection endpoint is readily available and exposed within the custom endpoint source.
@@ -72,20 +74,21 @@ Follow these steps to add a custom endpoint source to your eventstream:
    
 2. To see the Kafka endpoint details, select **Publish**. Once it is published successfully, you can retrieve the Kafka endpoint details (**Keys** and **sample code**, refer to [Kafka endpoint details ](./add-source-custom-app.md#kafka)) by selecting the **Kafka** tab in the bottom pane of the custom endpoint source node.
 
-From the **Keys** page, you can obtain the important Kafka endpoint information:
+    From the **Keys** page, you can obtain the important Kafka endpoint information:
 
-- `bootstrap.servers={YOUR.BOOTSTRAP.SERVER}`
-- `security.protocol=SASL_SSL`
-- `sasl.mechanism=PLAIN`
-- `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";`
+   - `bootstrap.servers={YOUR.BOOTSTRAP.SERVER}`
+   - `security.protocol=SASL_SSL`
+   - `sasl.mechanism=PLAIN`
+   - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";`
 
-The `{YOUR.CONNECTION.STRING}` can be either the **Connection string-primary key** or the **Connection string-secondary key**. Choose one to use.
+    The `{YOUR.CONNECTION.STRING}` can be either the **Connection string-primary key** or the **Connection string-secondary key**. Choose one to use.
 
-   ![A screenshot showing kafka keys and sample code.](media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-keys-sample-code.png)
+   <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-keys-sample-code.png" width="500" alt="A screenshot showing kafka keys and sample code.">
 
 ## Send events with Kafka application
 
 With the important Kafka information obtained from the above step, you will be able to use it to replace the connection configurations in your existing Kafka application. Then you can send the events to your eventstream. 
+
 Here is one application based on event hub SDK written in JAVA by following the Kafka protocol. To use this application to stream events to your eventstream, just follow the following steps to replace the Kafka endpoint information and execute it properly:
 
 1. Clone the [Azure Event Hubs for Kafka repository](https://github.com/Azure/azure-event-hubs-for-kafka).
@@ -97,6 +100,8 @@ Here is one application based on event hub SDK written in JAVA by following the 
    - `sasl.mechanism=PLAIN`
    - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";`
    
+    The `{YOUR.CONNECTION.STRING}` can be either the **Connection string-primary key** or the **Connection string-secondary key**. Choose one to use.
+
 1. Update the topic name with the new topic name in the Keys page in `src/main/java/TestProducer.java` as follows:
    - `private final static String TOPIC = "{YOUR.TOPIC.NAME}";` 
 You can find the \{YOUR.TOPIC.NAME\} on the Key page under the Kafka tab as shown in the screenshot below.
@@ -126,6 +131,7 @@ From the **Keys** page, you can obtain the important Kafka endpoint information:
 - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";`
 
 The `YOUR.CONNECTION.STRING` can be either the **Connection string-primary key** or the **Connection string-secondary key**. Choose one to use.
+
 <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-connection-string.png" alt="A screenshot showing kafka connection string." width="700" />
 
 ## Consume events with Kafka application
@@ -138,9 +144,10 @@ Now you can use another application in [Azure Event Hubs for Kafka repository](h
    - `group.id={YOUR.EVENTHUBS.CONSUMER.GROUP}`
    - `security.protocol=SASL_SSL`
    - `sasl.mechanism=PLAIN`
-   - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";`
+   - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString"`
+   - `password="{YOUR.CONNECTION.STRING}";`
 
-The `YOUR.CONNECTION.STRING` can be either the **Connection string-primary key** or the **Connection string-secondary key**. Choose one to use.
+    The `YOUR.CONNECTION.STRING` can be either the **Connection string-primary key** or the **Connection string-secondary key**. Choose one to use.
 
 1. Update the topic name with the new topic name in the Keys page in **Keys** page in *src/main/java/TestProducer.java* as follows:
    - `private final static String TOPIC = "{YOUR.TOPIC.NAME}";`

@@ -1,6 +1,6 @@
 ---
 title: Add custom app source to an eventstream
-description: Learn how to add a custom app source to an eventstream.
+description: Learn how to add a custom app source to an eventstream and send streaming events using the Kafka protocol.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
