@@ -161,6 +161,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Copilot in DAX query view returns DAX query with syntax error
+      href: known-issues/known-issue-836-copilot-dax-query-view-returns-dax-query-error.md
+    - name: Managed private endpoint connection could fail
+      href: known-issues/known-issue-835-managed-private-endpoint-connection-fail.md
     - name: Edit tables dialog doesn't load when reloading a Direct Lake semantic model
       href: known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md
     - name: Paginated report cascading parameters with default values aren't set as expected
