@@ -36,11 +36,12 @@ You can create an eventstream from the **Workspace page** or the **Create hub** 
 
    - On the **Workspace** page, select **New** and then **Eventstream**:
   
-    <img src="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" width="300" alt="Screenshot showing where to find the eventstream option in the New menu on the Workspace page.">
+      <img src="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" width="300" alt="Screenshot showing where to find the eventstream option in the New menu on the Workspace page.">
 
    - On the **Create hub** page, select the **Eventstream** tile:
+  
+      <img src="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" width="500" alt="Screenshot showing the Eventstream tile on the Create hub page.">
 
-       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the Eventstream tile on the Create hub page." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
 2. Enter a **name** for the new eventstream and select **Enhanced Capabilities (preview)** checkbox, and then select **Create**. 
 
     
@@ -117,7 +118,7 @@ You can find the \{YOUR.TOPIC.NAME\} on the Key page under the Kafka tab as show
 Select the eventstream node, which is the middle node displaying your eventstream name, to preview the data which were sent with this Kafka application.  Selecting the data format ‘CSV with delimiter comma without header’ since this matches the format in which the application has streamed the events data. 
 
    <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-data-preview.png" alt="A screenshot showing kafka data preview." width="600" />
-    
+   
 ## Obtain the Kafka endpoint from an added custom endpoint destination
 
 Similarly, you can add a custom endpoint destination to obtain the Kafka connection endpoint details for consuming events from your eventstream. Once it is added successfully, you can obtain the information from the **Details** pane of this destination in live view.
