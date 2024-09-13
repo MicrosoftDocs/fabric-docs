@@ -128,6 +128,8 @@ items:
         href: event-streams/build-report-from-iot-hub.md
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
+      - name: Stream and consume events to and from Real-Time Intelligence using the Kafka endpoint in Eventstream
+        href: event-streams/stream-consume-events-to-from-using-Kafka-endpoint.md
   - name: Get data in a KQL Database
     items:
     - name: Data formats
