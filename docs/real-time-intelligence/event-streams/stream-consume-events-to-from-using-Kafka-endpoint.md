@@ -119,6 +119,7 @@ Select the eventstream node, which is the middle node displaying your eventstrea
    <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-data-preview.png" alt="A screenshot showing kafka data preview." width="600" />
     
 ## Obtain the Kafka endpoint from an added custom endpoint destination
+
 Similarly, you can add a custom endpoint destination to obtain the Kafka connection endpoint details for consuming events from your eventstream. Once it is added successfully, you can obtain the information from the **Details** pane of this destination in live view.
 
 From the **Basic** page, you can get the **Consumer group** which will be needed to configure the Kafka consumer application later.
