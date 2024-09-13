@@ -67,13 +67,13 @@ Follow these steps to add a custom endpoint source to your eventstream:
 
 1. Enter a **Source name** value for the custom endpoint, and then select **Add**. The source name will appear on the source node on your eventstream’s canvas. Check it in the following step.
    
-    ![A screenshot of entering custom endpoint name.](media/stream-consume-events-to-from-using-Kafka-endpoint/add-custom-endpoint-name.png)
-
-1. After you add the custom endpoint source, you see it on the canvas in **Edit mode**.
+   <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/add-custom-endpoint-name.png" width="500" alt="A screenshot of entering custom endpoint name.">
+   
+2. After you add the custom endpoint source, you see it on the canvas in **Edit mode**.
 
    <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/custom-endpoint-edit-mode.png" width="500" alt="A screenshot showing add custom endpoint in edit mode.">
    
-2. To see the Kafka endpoint details, select **Publish**. Once it is published successfully, you can retrieve the Kafka endpoint details (**Keys** and **sample code**, refer to [Kafka endpoint details ](./add-source-custom-app.md#kafka)) by selecting the **Kafka** tab in the bottom pane of the custom endpoint source node.
+3. To see the Kafka endpoint details, select **Publish**. Once it is published successfully, you can retrieve the Kafka endpoint details (**Keys** and **sample code**, refer to [Kafka endpoint details ](./add-source-custom-app.md#kafka)) by selecting the **Kafka** tab in the bottom pane of the custom endpoint source node.
 
     From the **Keys** page, you can obtain the important Kafka endpoint information:
 
@@ -117,8 +117,8 @@ You can find the \{YOUR.TOPIC.NAME\} on the Key page under the Kafka tab as show
 
 Select the eventstream node, which is the middle node displaying your eventstream name, to preview the data which were sent with this Kafka application.  Selecting the data format ‘CSV with delimiter comma without header’ since this matches the format in which the application has streamed the events data. 
 
-   <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-data-preview.png" alt="A screenshot showing kafka data preview." width="600" />
-   
+<img src="media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-data-preview.png" alt="A screenshot showing kafka data preview." width="600" />
+
 ## Obtain the Kafka endpoint from an added custom endpoint destination
 
 Similarly, you can add a custom endpoint destination to obtain the Kafka connection endpoint details for consuming events from your eventstream. Once it is added successfully, you can obtain the information from the **Details** pane of this destination in live view.
@@ -137,6 +137,7 @@ The `YOUR.CONNECTION.STRING` can be either the **Connection string-primary key**
 <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-connection-string.png" alt="A screenshot showing kafka connection string." width="700" />
 
 ## Consume events with Kafka application
+
 Now you can use another application in [Azure Event Hubs for Kafka repository](https://github.com/Azure/azure-event-hubs-for-kafka) to consume the events from your eventstream. To utilize this application for consuming events from your eventstream, simply follow these steps to replace the Kafka endpoint details and run it appropriately:
 
 1. Clone the [Azure Event Hubs for Kafka repository](https://github.com/Azure/azure-event-hubs-for-kafka).
