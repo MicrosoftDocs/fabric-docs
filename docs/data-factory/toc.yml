@@ -93,6 +93,14 @@
       href: pipeline-support.md
     - name: Service principal support
       href: service-principals.md
+    - name: Connector certification
+      items:
+      - name: Overview
+        href: connector-certification.md
+      - name: Submission
+        href: certification-submission.md
+      - name: Custom connector documentation
+        href: providing-user-documentation.md
     - name: Access database
       items:
       - name: Access database - Overview
