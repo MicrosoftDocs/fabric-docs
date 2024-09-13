@@ -7,7 +7,7 @@ author: xujxu
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 09/12/2024
+ms.date: 09/13/2024
 ms.search.form: Event Streams Tutorials
 ---
 
