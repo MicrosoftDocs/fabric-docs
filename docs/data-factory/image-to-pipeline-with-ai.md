@@ -332,5 +332,6 @@ Once your pipeline is created, you can edit it in your Fabric workspace, to see 
 
 ## Related content
 
+- [View or download the complete Python notebook with this sample](https://github.com/n0elleli/Azure-DataFactory/blob/fabric_samples/FabricSamples/Image%20to%20Pipeline%20with%20AI/NotebookSample.py)
 - [How to monitor data pipeline runs in Microsoft Fabric](monitor-pipeline-runs.md)
 - [Azure OpenAI Service documentation](/azure/ai-services/openai/overview)
