@@ -35,18 +35,18 @@ You can create an eventstream from the **Workspace page** or the **Create hub** 
        :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the eventstream tile on the homepage.":::
 
    - On the **Workspace** page, select **New** and then **Eventstream**:
-
-       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing where to find the eventstream option in the New menu on the Workspace page." :::
+  
+    <img src="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" width="300" alt="Screenshot showing where to find the eventstream option in the New menu on the Workspace page.">
 
    - On the **Create hub** page, select the **Eventstream** tile:
 
        :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the Eventstream tile on the Create hub page." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
-1. Enter a **name** for the new eventstream and select **Enhanced Capabilities (preview)** checkbox, and then select **Create**. 
+2. Enter a **name** for the new eventstream and select **Enhanced Capabilities (preview)** checkbox, and then select **Create**. 
 
     
-   <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/create-esv2-kafka-endpoint.png" width="300" alt="A screenshot showing custom endpoint in edit mode.">
+   <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/create-esv2-kafka-endpoint.png" width="300" alt="A screenshot showing select Enhanced Capabilities.">
 
-1. Creation of the new eventstream in your workspace can take a few seconds. After the eventstream is created, you're directed to the main editor where you can start with adding sources to the eventstream. 
+3. Creation of the new eventstream in your workspace can take a few seconds. After the eventstream is created, you're directed to the main editor where you can start with adding sources to the eventstream. 
 
     <img src="./media/create-manage-an-eventstream-enhanced/editor.png" width="500" alt="Screenshot showing the editor.">
 
@@ -70,7 +70,7 @@ Follow these steps to add a custom endpoint source to your eventstream:
 
 1. After you add the custom endpoint source, you see it on the canvas in **Edit mode**.
 
-   <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/custom-endpoint-edit-mode.png" width="500" alt="A screenshot showing custom endpoint in edit mode.">
+   <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/custom-endpoint-edit-mode.png" width="500" alt="A screenshot showing add custom endpoint in edit mode.">
    
 2. To see the Kafka endpoint details, select **Publish**. Once it is published successfully, you can retrieve the Kafka endpoint details (**Keys** and **sample code**, refer to [Kafka endpoint details ](./add-source-custom-app.md#kafka)) by selecting the **Kafka** tab in the bottom pane of the custom endpoint source node.
 
