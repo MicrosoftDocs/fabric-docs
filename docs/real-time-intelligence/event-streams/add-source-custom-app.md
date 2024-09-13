@@ -80,6 +80,7 @@ The **Sample code** page in Event Hub tab offers ready-to-use code with the requ
 
 ![A screenshot showing the Sample code in the Details pane of the eventstream Live view.](media\add-source-custom-app-enhanced\details-event-sample.png)
 
+<a id="kafka"></a>
 ### Kafka
 
 The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use the **Keys** and **Sample code** in Kafka protocol format to connect to your eventstream and stream the events.

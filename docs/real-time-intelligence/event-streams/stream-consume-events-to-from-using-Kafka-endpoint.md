@@ -70,7 +70,7 @@ Follow these steps to add a custom endpoint source to your eventstream:
 
    <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/custom-endpoint-edit-mode.png" width="500" alt="A screenshot showing custom endpoint in edit mode.">
    
-2. To see the Kafka endpoint details, select **Publish**. Once it is published successfully, you can retrieve the Kafka endpoint details (**Keys** and **sample code**, refer to [Kafka endpoint details ](./add-source-custom-app.md#Kafka)) by selecting the **Kafka** tab in the bottom pane of the custom endpoint source node.
+2. To see the Kafka endpoint details, select **Publish**. Once it is published successfully, you can retrieve the Kafka endpoint details (**Keys** and **sample code**, refer to [Kafka endpoint details ](./add-source-custom-app.md#kafka)) by selecting the **Kafka** tab in the bottom pane of the custom endpoint source node.
 
 From the **Keys** page, you can obtain the important Kafka endpoint information:
 
