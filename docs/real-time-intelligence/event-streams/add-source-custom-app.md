@@ -58,7 +58,7 @@ Once you complete these steps, the custom endpoint data is available for visuali
 
 ![A screenshot showing the eventstream in Live view.](media\add-source-custom-app-enhanced\live-view.png)
 
-## ## Get endpoint details in Details pane to send events
+## Get endpoint details in Details pane to send events
 
 The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code** which offer the endpoint details with the corresponding protocol for connecting. 
 
@@ -82,8 +82,7 @@ The **Sample code** page in Event Hub tab offers ready-to-use code with the requ
 
 <img src="media\add-source-custom-app-enhanced\details-event-sample.png" alt="[A screenshot showing the Sample code in the Details pane of the eventstream Live view]" width="900" />
 
-<a id="kafka"></a>
-### Kafka
+## Kafka {#kafka-enhanced-capabilities}
 
 The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use the **Keys** and **Sample code** in Kafka protocol format to connect to your eventstream and stream the events.
 
@@ -150,7 +149,7 @@ If you want to connect your own application with an eventstream, you can add a c
 
    :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source.png" alt-text="Screenshot showing the custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source.png":::
 
- ## ## Get endpoint details in Details pane to send events
+## Get endpoint details in Details pane to send events
 
 The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code** which offer the endpoint details with the corresponding protocol for connecting. 
 
