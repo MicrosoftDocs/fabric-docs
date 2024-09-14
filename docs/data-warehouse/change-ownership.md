@@ -56,7 +56,7 @@ Before you begin, you need:
     ```
 1. Run the following command:
     ```powershell
-    $url = '/groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + '/takeover'
+    $url = 'groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + '/takeover'
     ```
 1. Run the following command:
     ```powershell
