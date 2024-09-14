@@ -101,7 +101,7 @@ The **AMQP** format is compatible with the AMQP 1.0 protocol, which is a standar
 
 The **Sample code** page in AMQP tab also provides you with the ready-to-use code with connection keys information in AMQP format. 
 
-<img src="media\add-source-custom-app-enhanced\details-amqp-sample-code.png" alt="[A screenshot showing the amqp sample code in the Details pane of the eventstream Live view]" style="max-width: 900px; height: auto;" />
+<img src="media\add-source-custom-app-enhanced\details-amqp-sample-code.png" alt="[A screenshot showing the amqp sample code in the Details pane of the eventstream Live view]" width="900" />
 
 You can choose the protocol format that suits your application needs and preferences and copy and paste the connection string into your application. You can also refer to or copy the sample code that we provide in the Sample code tab, which shows how to send or receive events using different protocols.
 
