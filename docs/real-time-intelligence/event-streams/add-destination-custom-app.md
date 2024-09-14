@@ -1,6 +1,6 @@
 ---
-title: Add a custom app destination to an eventstream
-description: Learn how to add a custom app or endpoint destination to an eventstream consume streaming events using the Kafka protocol.
+title: Add an custom endpoint destination to an eventstream
+description: Learn how to add a custom app or endpoint destination to an eventstream for consuming real-time events with multiple protocols, like the popular Apache Kafka protocol.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -15,7 +15,7 @@ zone_pivot_groups: event-streams-standard-enhanced
 
 # Add a custom endpoint destination to an eventstream
 
-If you want to connect your own application with an eventstream, you can add a custom endpoint (i.e., Custom App in standard capability) destination. Then you can consume data from the eventstream to your own application with the connection endpoint displayed as the custom endpoint (i.e., Custom App in standard capability). Furthermore, with the Apache Kafka protocol available as an option for custom endpoints (i.e., Custom App in standard capability), you can consume streaming events using the Kafka protocol. This article shows you how to add a custom endpoint (i.e., Custom App in standard capability) destination to an eventstream in Microsoft Fabric event streams. 
+If you want to connect your own application with an eventstream, you can add a custom endpoint (i.e., Custom App in standard capability) destination. Then you can consume real-time events from the eventstream to your own application with the connection endpoint exposed on the custom endpoint (i.e., Custom App in standard capability). Furthermore, with the Apache Kafka protocol available as an option for custom endpoints (i.e., Custom App in standard capability), you can consume real-time events using the Apache Kafka protocol. This article shows you how to add a custom endpoint (i.e., Custom App in standard capability) destination to an eventstream in Microsoft Fabric event streams.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
@@ -54,13 +54,14 @@ If you want to route event data to your app, you can add a custom endpoint as yo
 
     :::image type="content" source="./media/add-destination-custom-app-enhanced/details-event-hub-tab.png" alt-text="Screenshot that shows the Details pane with three tabs - Event Hubs, AMQP, and Kafka." lightbox="./media/add-destination-custom-app-enhanced/details-event-hub-tab.png":::                
 
-## Get endpoint detains in Details pane to consume events
+## Get endpoint details in Details pane to consume events
 
 The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code** which offer the endpoint details with the corresponding protocol for connecting.
 
 **Basic** shows the name, description, type, and status of your custom endpoint.
 
-![A screenshot showing the basic tab in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\details-basic.png)
+<img src="media\add-destination-custom-app-enhanced\details-basic.png" alt="[A screenshot showing the basic tab in the Details pane of the eventstream Live view.]" width="900" />
+
 
 **Keys** and **Sample code** pages provide you with the connection keys information and the sample code with the corresponding keys embedded that you can use to stream the events to your eventstream. The Keys and Sample code information varies by protocol.
 
@@ -68,27 +69,34 @@ The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kaf
 
 The **Keys** in the Event hub protocol format contain information related to an event hub connection string, including the **Event hub name**, **Shared access key name**, **Primary key**, and **Connection string-primary key**. The Event hub format is the default for the connection string and works with Azure Event Hubs SDK. This format allows you to connect to your eventstream via the Event Hubs protocol.
 The following example shows what the connection string looks like in **Event hub** format:
+
 *Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxx*
 
-![A screenshot showing the Event Hub keys in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\eventhub-keys.png)
+<img src="media\add-destination-custom-app-enhanced\eventhub-keys.png" alt="[A screenshot showing the Event Hub keys in the Details pane of the eventstream Live view.]" width="900" />
 
-![A screenshot showing the Event Hub Sample code in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\eventhub-sample-code.png)
+The **Sample code** page in Event Hub tab offers ready-to-use code with the required connection keys information in Event hub included. Simply copy and paste it into your application for use.
+
+<img src="media\add-destination-custom-app-enhanced\eventhub-sample-code.png" alt="[A screenshot showing the Event Hub Sample code in the Details pane of the eventstream Live view.]" width="900" />
 
 ### Kafka
 
 The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use the **Keys** and **Sample code** in Kafka protocol format to connect to eventstream and consume the events.
 
-![A screenshot showing the Kafka keys in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\kafka-keys.png)
+<img src="media\add-destination-custom-app-enhanced\kafka-keys.png" alt="[A screenshot showing the Kafka keys in the Details pane of the eventstream Live view.]" width="900" />
 
-![A screenshot showing the Kafka Sample code in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\kafka-sample-code.png)
+The **Sample code** page in Kafka tab provides you with ready-made code, including the necessary connection keys in Kafka format. Simply copy it for your use.
+
+<img src="media\add-destination-custom-app-enhanced\kafka-sample-code.png" alt="[A screenshot showing the Kafka Sample code in the Details pane of the eventstream Live view.]" width="900" />
 
 ### AMQP
 
 The **AMQP** format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between different platforms and languages. You can use this format to connect to your eventstream using the AMQP protocol.
 
-![A screenshot showing the AMQP keys in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\amqp-keys.png)
+<img src="media\add-destination-custom-app-enhanced\amqp-keys.png" alt="[A screenshot showing the AMQP keys in the Details pane of the eventstream Live view.]" width="900" />
 
-![A screenshot showing the AMQP Sample code in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\amqp-sample-code.png)
+The **Sample code** page in AMQP tab also provides you with the ready-to-use code with connection keys information in AMQP format.
+
+<img src="media\add-destination-custom-app-enhanced\amqp-sample-code.png" alt="[A screenshot showing the AMQP Sample code in the Details pane of the eventstream Live view.]" width="900" />
 
 You can choose the protocol format that suits your application needs and preferences and copy and paste the connection string into your application. You can also refer to or copy the sample code that we provide in the Sample code tab, which shows how to send or receive events using different protocols.
 
@@ -125,13 +133,14 @@ If you want to route event data to your application, you can add a custom app as
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png":::
 
-## Get endpoint detains in Details pane to consume events
+## Get endpoint details in Details pane to consume events
 
 The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kafka**. Each protocol tab has three pages: **Basics**, **Keys**, and **Sample code** which offer the endpoint details with the corresponding protocol for connecting.
 
-**Basic** shows the name, description, type, and status of your custom endpoint.
+**Basic** shows the name, description, type, and status of your custom app.
 
-![A screenshot showing the basic tab in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\details-basic.png)
+<img src="media\add-destination-custom-app-enhanced\customapp-details-basic.png" alt="[A screenshot showing the customapp basic tab in the Details pane of the eventstream.]" width="900" />
+
 
 **Keys** and **Sample code** pages provide you with the connection keys information and the sample code with the corresponding keys embedded that you can use to stream the events to your eventstream. The Keys and Sample code information varies by protocol.
 
@@ -139,27 +148,34 @@ The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kaf
 
 The **Keys** in the Event hub protocol format contain information related to an event hub connection string, including the **Event hub name**, **Shared access key name**, **Primary key**, and **Connection string-primary key**. The Event hub format is the default for the connection string and works with Azure Event Hubs SDK. This format allows you to connect to your eventstream via the Event Hubs protocol.
 The following example shows what the connection string looks like in **Event hub** format:
+
 *Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxx*
 
-![A screenshot showing the Event Hub keys in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\eventhub-keys.png)
+<img src="media\add-destination-custom-app-enhanced\eventhub-keys.png" alt="[A screenshot showing the Event Hub keys in the Details pane of the eventstream.]" width="900" />
 
-![A screenshot showing the Event Hub Sample code in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\eventhub-sample-code.png)
+The **Sample code** page in Event Hub tab offers ready-to-use code with the required connection keys information in Event hub included. Simply copy and paste it into your application for use.
+
+<img src="media\add-destination-custom-app-enhanced\eventhub-sample-code.png" alt="[A screenshot showing the Event Hub Sample code in the Details pane of the eventstream.]" width="900" />
 
 ### Kafka
 
 The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use the **Keys** and **Sample code** in Kafka protocol format to connect to eventstream and consume the events.
 
-![A screenshot showing the Kafka keys in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\kafka-keys.png)
+<img src="media\add-destination-custom-app-enhanced\kafka-keys.png" alt="[A screenshot showing the Kafka keys in the Details pane of the eventstream.]" width="900" />
 
-![A screenshot showing the Kafka Sample code in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\kafka-sample-code.png)
+The **Sample code** page in Kafka tab provides you with ready-made code, including the necessary connection keys in Kafka format. Simply copy it for your use.
+
+<img src="media\add-destination-custom-app-enhanced\kafka-sample-code.png" alt="[A screenshot showing the Kafka Sample code in the Details pane of the eventstream.]" width="900" />
 
 ### AMQP
 
 The **AMQP** format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between different platforms and languages. You can use this format to connect to your eventstream using the AMQP protocol.
 
-![A screenshot showing the AMQP keys in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\amqp-keys.png)
+<img src="media\add-destination-custom-app-enhanced\amqp-keys.png" alt="[A screenshot showing the AMQP keys in the Details pane of the eventstream.]" width="900" />
 
-![A screenshot showing the AMQP Sample code in the Details pane of the eventstream Live view.](media\add-destination-custom-app-enhanced\amqp-sample-code.png)
+The **Sample code** page in AMQP tab also provides you with the ready-to-use code with connection keys information in AMQP format.
+
+<img src="media\add-destination-custom-app-enhanced\amqp-sample-code.png" alt="[A screenshot showing the AMQP Sample code in the Details pane of the eventstream.]" width="900" />
 
 You can choose the protocol format that suits your application needs and preferences and copy and paste the connection string into your application. You can also refer to or copy the sample code that we provide in the Sample code tab, which shows how to send or receive events using different protocols.
 

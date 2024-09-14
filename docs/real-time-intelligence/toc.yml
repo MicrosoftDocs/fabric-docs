@@ -120,6 +120,8 @@ items:
       href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
     - name: Tutorials
       items:
+      - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
+        href: event-streams/stream-consume-events-to-from-using-Kafka-endpoint.md
       - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
         href: event-streams/transform-and-stream-real-time-events-to-lakehouse.md
       - name: Stream real-time events from custom application to Microsoft Fabric KQL Database
@@ -128,8 +130,6 @@ items:
         href: event-streams/build-report-from-iot-hub.md
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
-      - name: Stream and consume events to and from Real-Time Intelligence using the Kafka endpoint in Eventstream
-        href: event-streams/stream-consume-events-to-from-using-Kafka-endpoint.md
   - name: Get data in a KQL Database
     items:
     - name: Data formats

@@ -12,7 +12,7 @@ ms.search.form: Event Streams Overview
 ---
 
 # Microsoft Fabric event streams - overview
-The event streams feature in the Microsoft Fabric **Real-Time Intelligence** experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an eventstream, which is an instance of the **Eventstream** item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. Additionally, with Apache Kafka endpoints available on the Eventstream item, you can send or consume streaming events using the Kafka protocol.
+The event streams feature in the Microsoft Fabric **Real-Time Intelligence** experience lets you bring real-time events into Fabric, transform them, and then route them to various destinations without writing any code (no-code). You create an eventstream, which is an instance of the **Eventstream** item in Fabric, add event data sources to the stream, optionally add transformations to transform the event data, and then route the data to supported destinations. Additionally, with Apache Kafka endpoints available on the Eventstream item, you can send or consume real-time events using the Kafka protocol.
 
 ## Bring events into Fabric
 The event streams feature provides you with various source connectors to fetch event data from the various sources. There are more sources available when you enable **Enhanced capabilities** at the time of creating an eventstream. 
@@ -66,8 +66,7 @@ The Fabric event streams feature offers an Apache Kafka endpoint on the Eventstr
 
 Fabric event streams feature is powered by Azure Event Hubs, a fully managed cloud-native service. When an eventstream is created, an event hub namespace is automatically provisioned, and an event hub is allocated to the default stream without requiring any provisioning configurations. To learn more about the Kafka-compatible features in Azure Event Hubs service, see [Azure Event Hubs for Apache Kafka](/azure/event-hubs/azure-event-hubs-kafka-overview)
 
-To learn more about how to obtain the Kafka endpoint details for sending events to eventstream, see [Add custom app source to an eventstream](./add-source-custom-app.md) (will have a dedicated section for Kafka, EH and AMQP details intro like the ones in destination); and for consuming events from eventstream, see [Add a custom app destination to an eventstream](./add-destination-custom-app.md)
-
+To learn more about how to obtain the Kafka endpoint details for sending events to eventstream, see [Add custom endpoint source to an eventstream](./add-source-custom-app.md); and for consuming events from eventstream, see [Add a custom endpoint destination to an eventstream](./add-destination-custom-app.md)
 ## Enhanced capabilities (preview)
 There are more features, sources, and destinations available when you enable the **Enhanced capabilities (preview)** option while creating an eventstream. Use the **Enhanced capabilities (preview)** and **Standard capabilities** tabs to learn about additional sources and destinations supported with the enhanced capabilities. 
 
