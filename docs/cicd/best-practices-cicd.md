@@ -31,7 +31,7 @@ The article is divided into four sections:
 
 ## Best practices for content preparation
 
-To best prepare your content for on-going management throughout its lifecycle, review the information in this section before you:
+To best prepare your content for ongoing management throughout its lifecycle, review the information in this section before you:
 
 * Release content to production.
 
@@ -117,7 +117,7 @@ When you want to work in isolation, use a separate workspace as an isolated envi
 
 ### Use Client tools to edit your work
 
-For items and tools that support it, it might be easier to work with client tools for authoring, such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for semantic models and reports, [VSCode](https://code.visualstudio.com/) for Notebooks etc. These tools can be your local development environment. After you complete your work, push the changes into the remote repo, and sync the workspace to upload the changes. Just make sure you're working with the [supported structure](./git-integration/source-code-format.md) of the item you're authoring. If you’re not sure, first clone a repo with content already synced to a workspace, then start authoring from there, where the structure is already in place.
+For items and tools that support it, it might be easier to work with client tools for authoring, such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for semantic models and reports, [VS Code](https://code.visualstudio.com/) for Notebooks etc. These tools can be your local development environment. After you complete your work, push the changes into the remote repo, and sync the workspace to upload the changes. Just make sure you're working with the [supported structure](./git-integration/source-code-format.md) of the item you're authoring. If you’re not sure, first clone a repo with content already synced to a workspace, then start authoring from there, where the structure is already in place.
 
 ### Managing workspaces and branches
 
