@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: best-practice
-ms.date: 11/15/2023
+ms.date: 09/15/2024
 ms.custom:
   - intro-deployment
   - build-2023
@@ -21,13 +21,13 @@ This article provides guidance for data & analytics creators who are managing th
 
 The article is divided into four sections:
 
-* [**Content preparation**](#content-preparation) - Prepare your content for lifecycle management.
+* [**Content preparation**](#best-practices-for-content-preparation) - Prepare your content for lifecycle management.
 
-* [**Development**](#development) - Learn about the best ways of creating content in the deployment pipelines development stage.
+* [**Development**](#best-practices-for-deployment-pipelines-development-stage) - Learn about the best ways of creating content in the deployment pipelines development stage.
 
-* [**Test**](#test) - Understand how to use a deployment pipelines test stage to test your environment.
+* [**Test**](#best-practices-for-deployment-pipelines-test-stage) - Understand how to use a deployment pipelines test stage to test your environment.
 
-* [**Production**](#production) - Utilize a deployment pipelines production stage to make your content available for consumption.
+* [**Production**](#best-practices-for-deployment-pipelines-productions-stage) - Utilize a deployment pipelines production stage to make your content available for consumption.
 
 ## Best practices for content preparation
 
