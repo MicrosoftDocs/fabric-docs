@@ -4,7 +4,7 @@ description: Learn about the best practices for Git integration and deployment p
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.topic: conceptual
+ms.topic: best-practice
 ms.date: 11/15/2023
 ms.custom:
   - intro-deployment
@@ -13,7 +13,7 @@ ms.custom:
 ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
 ---
 
-# Lifecycle management best practices
+# Best practices for lifecycle management in Fabric
 
 This article provides guidance for data & analytics creators who are managing their content throughout its lifecycle in Microsoft Fabric. The article focuses on the use of [Git integration](./git-integration/intro-to-git-integration.md) for source control and [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) as a release tool. For a general guidance on Enterprise content publishing, [Enterprise content publishing](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-enterprise-content-publishing).
 
@@ -29,7 +29,7 @@ The article is divided into four sections:
 
 * [**Production**](#production) - Utilize a deployment pipelines production stage to make your content available for consumption.
 
-## Content preparation
+## Best practices for content preparation
 
 To best prepare your content for on-going management throughout its lifecycle, review the information in this section before you:
 
@@ -77,9 +77,9 @@ Whenever possible, add [parameters](./deployment-pipelines/understand-the-deploy
 Parameters have different uses, such as defining connections to data sources, or to internal items in Fabric. They can also be used to make changes to queries, filters, and the text displayed to users.  
 In deployment pipelines, you can configure parameter rules to set different values for each deployment stage.
 
-## Development
+## Best practices for deployment pipelines development stage
 
-This section provides guidance for working with the deployment pipelines and using fit for your development stage.
+This section provides guidance for working with the deployment pipelines and using it for your development stage.
 
 ### Back up your work into a Git repository
 
@@ -136,7 +136,7 @@ To duplicate an item in a Git repository:
 1. Change the display name to differentiate it from the original item and to avoid duplicate display name error.
 1. If necessary, update the logicalId and/or display names in any dependencies.
 
-## Test
+## Best practices for deployment pipelines test stage
 
 This section provides guidance for working with a deployment pipelines test stage.
 
@@ -191,7 +191,7 @@ If you're distributing content to your customers through an app, review the app'
 >[!IMPORTANT]
 >The deployment process doesn't include updating the app content or settings. To apply changes to content or settings, manually update the app in the required pipeline stage.
 
-## Production
+## Best practices for deployment pipelines productions stage
 
 This section provides guidance to the deployment pipelines production stage.
 
