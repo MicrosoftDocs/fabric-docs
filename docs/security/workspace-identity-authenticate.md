@@ -14,7 +14,9 @@ ms.date: 08/23/2024
 
 # Authenticate with workspace identity
 
-A Fabric workspace identity is an automatically managed service principal that can be associated with a Fabric workspace. You can use the workspace identity as an authentication method when connecting Fabric items in the workspace to resources that support Microsoft Entra authentication.
+A Fabric workspace identity is an automatically managed service principal that can be associated with a Fabric workspace. You can use the workspace identity as an authentication method when connecting Fabric items in the workspace to resources that support Microsoft Entra authentication. Workspace identity is a secure authentication method as there is no need to manage keys, secrets, and certificates.  When you grant the workspace identity with permissions on target resources such as ADLS gen 2, Fabric can use the identity to obtain Microsoft Entra tokens to access the resource. 
+
+Trusted access to Storage accounts and authentication with workspace identity can be combined together. You can use workspace identity as the authentication method to access storage accounts that have public access restricted to selected virtual networks and IP addresses.
 
 This article describes how to use the workspace identity to authenticate when connecting OneLake shortcuts and data pipelines to data sources. The target audience is data engineers and anyone interested in establishing a secure connection between Fabric items and data sources.
 
@@ -75,8 +77,10 @@ Write to shortcut destination fails when using workspace identity as the authent
 ## Considerations and limitations
 
 * Workspace identity can be created in workspaces associated with any capacity (except for My workspaces).
+  
+* Workspace identity can be used for authentication in any capacity that supports OneLake shortcuts and data pipelines.
 
-* Trusted workspace access to firewall-enabled Storage accounts are supported in any F capacity.
+* Trusted workspace access to firewall-enabled Storage accounts is supported in any F capacity.
 
 * You can create ADLS Gen 2 connections with workspace-identity-based authentication in the Manage Gateways and Connections experience.
 
