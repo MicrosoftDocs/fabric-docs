@@ -4,8 +4,8 @@ description: Learn about the best practices for Git integration and deployment p
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.topic: conceptual
-ms.date: 11/15/2023
+ms.topic: best-practice
+ms.date: 09/15/2024
 ms.custom:
   - intro-deployment
   - build-2023
@@ -13,7 +13,7 @@ ms.custom:
 ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
 ---
 
-# Lifecycle management best practices
+# Best practices for lifecycle management in Fabric
 
 This article provides guidance for data & analytics creators who are managing their content throughout its lifecycle in Microsoft Fabric. The article focuses on the use of [Git integration](./git-integration/intro-to-git-integration.md) for source control and [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) as a release tool. For a general guidance on Enterprise content publishing, [Enterprise content publishing](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-enterprise-content-publishing).
 
@@ -21,17 +21,17 @@ This article provides guidance for data & analytics creators who are managing th
 
 The article is divided into four sections:
 
-* [**Content preparation**](#content-preparation) - Prepare your content for lifecycle management.
+* [**Content preparation**](#best-practices-for-content-preparation) - Prepare your content for lifecycle management.
 
-* [**Development**](#development) - Learn about the best ways of creating content in the deployment pipelines development stage.
+* [**Development**](#best-practices-for-deployment-pipelines-development-stage) - Learn about the best ways of creating content in the deployment pipelines development stage.
 
-* [**Test**](#test) - Understand how to use a deployment pipelines test stage to test your environment.
+* [**Test**](#best-practices-for-deployment-pipelines-test-stage) - Understand how to use a deployment pipelines test stage to test your environment.
 
-* [**Production**](#production) - Utilize a deployment pipelines production stage to make your content available for consumption.
+* [**Production**](#best-practices-for-deployment-pipelines-productions-stage) - Utilize a deployment pipelines production stage to make your content available for consumption.
 
-## Content preparation
+## Best practices for content preparation
 
-To best prepare your content for on-going management throughout its lifecycle, review the information in this section before you:
+To best prepare your content for ongoing management throughout its lifecycle, review the information in this section before you:
 
 * Release content to production.
 
@@ -77,9 +77,9 @@ Whenever possible, add [parameters](./deployment-pipelines/understand-the-deploy
 Parameters have different uses, such as defining connections to data sources, or to internal items in Fabric. They can also be used to make changes to queries, filters, and the text displayed to users.  
 In deployment pipelines, you can configure parameter rules to set different values for each deployment stage.
 
-## Development
+## Best practices for deployment pipelines development stage
 
-This section provides guidance for working with the deployment pipelines and using fit for your development stage.
+This section provides guidance for working with the deployment pipelines and using it for your development stage.
 
 ### Back up your work into a Git repository
 
@@ -117,7 +117,7 @@ When you want to work in isolation, use a separate workspace as an isolated envi
 
 ### Use Client tools to edit your work
 
-For items and tools that support it, it might be easier to work with client tools for authoring, such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for semantic models and reports, [VSCode](https://code.visualstudio.com/) for Notebooks etc. These tools can be your local development environment. After you complete your work, push the changes into the remote repo, and sync the workspace to upload the changes. Just make sure you're working with the [supported structure](./git-integration/source-code-format.md) of the item you're authoring. If you’re not sure, first clone a repo with content already synced to a workspace, then start authoring from there, where the structure is already in place.
+For items and tools that support it, it might be easier to work with client tools for authoring, such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for semantic models and reports, [VS Code](https://code.visualstudio.com/) for Notebooks etc. These tools can be your local development environment. After you complete your work, push the changes into the remote repo, and sync the workspace to upload the changes. Just make sure you're working with the [supported structure](./git-integration/source-code-format.md) of the item you're authoring. If you’re not sure, first clone a repo with content already synced to a workspace, then start authoring from there, where the structure is already in place.
 
 ### Managing workspaces and branches
 
@@ -136,7 +136,7 @@ To duplicate an item in a Git repository:
 1. Change the display name to differentiate it from the original item and to avoid duplicate display name error.
 1. If necessary, update the logicalId and/or display names in any dependencies.
 
-## Test
+## Best practices for deployment pipelines test stage
 
 This section provides guidance for working with a deployment pipelines test stage.
 
@@ -191,7 +191,7 @@ If you're distributing content to your customers through an app, review the app'
 >[!IMPORTANT]
 >The deployment process doesn't include updating the app content or settings. To apply changes to content or settings, manually update the app in the required pipeline stage.
 
-## Production
+## Best practices for deployment pipelines productions stage
 
 This section provides guidance to the deployment pipelines production stage.
 

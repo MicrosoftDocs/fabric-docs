@@ -21,7 +21,7 @@ ms.date: 07/16/2023
       | **URL**| The connection string for your delta container. | `https://`*StorageAccountName*`.dfs.core.windows.net`|
       |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If no connections exist, create a new connection.| *Create new connection*. |
       |**Connection name** | The Azure Data Lake Storage Gen2 connection name.| A name for your connection.|
-      |**Authentication kind**| The authorization model. The supported models are: Organizational account, Account key, Shared Access Signature (SAS), and Service principal. For more information, see [ADLS shortcuts](../onelake/onelake-shortcuts.md#adls-shortcuts). | Dependent on the authorization model. Once you select an authentication kind, fill in the required credentials.|
+      |**Authentication kind**| The authorization model. The supported models are: Organizational account, Account key, Shared Access Signature (SAS), Service principal, and Workspace Identity. For more information, see [ADLS shortcuts](../onelake/onelake-shortcuts.md#adls-shortcuts). | Dependent on the authorization model. Once you select an authentication kind, fill in the required credentials.|
 
 1. Select **Next**.
 1. Browse to the target location for the shortcut.
