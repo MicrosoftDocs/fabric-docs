@@ -1,27 +1,26 @@
 ---
 title: Get started using Data Activator
-description: Learn how to get started using Data Activator.
-author: davidiseminger
-ms.author: davidi
-ms.topic: concept-article
-ms.custom:
-  - ignite-2023-fabric
-ms.date: 11/20/2023
+description: Learn how to get started using Data Activator and unleash the power of data-driven decision making in your organization.
+author: mihart
+ms.author: mihart
+ms.topic: how-to
+ms.custom: FY25Q1-Linter
+ms.date: 09/09/2024
+#customer intent: As a Fabric user I want to get started with Data Activator.
 ---
 
 # Get started with Data Activator
 
-> [!IMPORTANT]
-> Data Activator is currently in preview.
-
-The first step in using Data Activator is for your administrator to enable Data Activator for your organization. The following image shows where to enable Data Activator in the Admin portal.
+The first step in using Data Activator is for your administrator to enable Data Activator for your organization.
+Use the following image as a reference that shows where to enable Data Activator in the Admin portal.
 
 :::image type="content" source="media/data-activator-get-started/data-activator-get-started-04.png" alt-text="Screenshot of enabling data activator in the admin portal.":::
-
 Next, select the Data Activator experience in Microsoft Fabric, then select it from the menu at the bottom of the screen to tailor your Fabric experience to Data Activator.
 
 :::image type="content" source="media/data-activator-get-started/data-activator-get-started-01.png" alt-text="Screenshot of data activator fabric experience.":::
 
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 ## Create a reflex item
 
@@ -29,7 +28,8 @@ As with all Fabric experiences, you begin using Data Activator by creating an it
 
 A reflex holds all the information necessary to connect to data, monitor for conditions, and act. You'll typically create a reflex for each business process or area you’re monitoring.
 
-To get started, you create a reflex item in your Fabric workspace. From the New menu in the workspace, choose the **Reflex** item.
+1. Create a reflex item in your Fabric workspace.
+2. From the New menu in the workspace, choose the **Reflex** item.
 
 :::image type="content" source="media/data-activator-get-started/data-activator-get-started-03.png" alt-text="Screenshot of selecting a new data activator reflex item.":::
 
