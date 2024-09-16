@@ -7,14 +7,14 @@ ms.reviewer:
 
 ms.custom:
 ms.topic: conceptual
-ms.date: 01/11/2024
+ms.date: 09/09/2024
 ---
 
 # Manage Power BI visuals admin settings
 
 As a Fabric administrator for your organization, you can control the type of Power BI visuals that users can access across the organization and limit the actions users can perform.
 
-To manage Power BI visuals, you must be a Global Administrator in Office 365, or have been assigned the Fabric administrator role. For more information about the Fabric administrator role, see [Understand Microsoft Fabric admin roles](roles.md).
+To manage Power BI visuals, you must be a Fabric administrator. For more information about the Fabric administrator role, see [Understand Microsoft Fabric admin roles](roles.md).
 
 ## Power BI visuals tenant settings
 
