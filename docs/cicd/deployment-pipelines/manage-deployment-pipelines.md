@@ -14,9 +14,9 @@ ms.custom:
 #customer intent: As a developer, I want to learn how to use deployment pipelines in Fabric so that I can manage my development process efficiently.
 ---
 
-# Develop with deployment pipelines
+# Choose the best CI/CD scenario for your Fabric workspace
 
-The goal of this article is to present Fabric developers with different options for building CI/CD processes in Fabric, based on common customer scenarios. This article focuses more on the *continuous delivery* (CD) of the CI/CD process. For a discussion on the *continuous integration* (CI) part, see [Git integration workspaces](../git-integration/manage-branches.md).
+The goal of this article is to present Fabric developers with different options for building CI/CD processes in Fabric, based on common customer scenarios. This article focuses more on the *continuous deployment* (CD) of the CI/CD process. For a discussion on the *continuous integration* (CI) part, see [Manage Git branches](../git-integration/manage-branches.md).
 
 While this article outlines several distinct options, many organizations take a hybrid approach.
 
@@ -30,7 +30,7 @@ To access the deployment pipelines feature, you must meet the following conditio
 
 ## Development process
 
-The development process is the same in all deployment scenarios, and is independent of how to release new updates into production. When developers work with source control, they need to work in an isolated environment. In Fabric, that environment can either be an IDE on your local machine (such as Power BI Desktop, or VSCode), or a different workspace in Fabric. You can find information about the different considerations for the development process in [Git integration workspaces](../git-integration/manage-branches.md)
+The development process is the same in all deployment scenarios, and is independent of how to release new updates into production. When developers work with source control, they need to work in an isolated environment. In Fabric, that environment can either be an IDE on your local machine (such as Power BI Desktop, or VSCode), or a different workspace in Fabric. You can find information about the different considerations for the development process in [Manage Git branches](../git-integration/manage-branches.md)
 
 :::image type="content" source="./media/manage-deployment-pipelines/development-process.png" alt-text="Diagram showing how the development process works.":::
 
@@ -42,11 +42,11 @@ The release process starts once new updates are complete and the pull request (P
 
 :::image type="content" source="./media/manage-deployment-pipelines/git-based-deployment.png" alt-text="Diagram showing how the Git based deployment works.":::
 
-In this scenario, all deployments originate from the Git repository. Each stage in the release pipeline has a dedicated primary branch (in the diagram, these stages are *Dev*, *Test*, and *Prod*), which feeds the appropriate workspace in Fabric. 
+In this scenario, all deployments originate from the Git repository. Each stage in the release pipeline has a dedicated primary branch (in the diagram, these stages are *Dev*, *Test*, and *Prod*), which feeds the appropriate workspace in Fabric.
 
 Once When a PR to the *Dev* branch is approved and merged:
 
-1. A release pipeline is triggered to update the content of the *Dev* workspace. This process also can include a *Build* pipeline to run unit tests, but the actual upload of files is done directly from the repo into the workspace, using Fabric Git APIs. You might need to call other Fabric APIs for post-deployment operations that set specific configurations for this workspace, or ingest data.  
+1. A release pipeline is triggered to update the content of the *Dev* workspace. This process also can include a *Build* pipeline to run unit tests, but the actual upload of files is done directly from the repo into the workspace, using [Fabric Git APIs](/rest/api/fabric/core/git/update-from-git). You might need to call other Fabric APIs for post-deployment operations that set specific configurations for this workspace, or ingest data.
 1. A PR is then created to the *Test* branch. In most cases, the PR is created using a release branch that can cherry pick the content to move into the next stage. The PR should include the same review and approval processes as any other in your team or organization.
 1. Another *Build* and *release* pipeline is triggered to update the *Test* workspace, using a process similar to the one described in the first step.
 1. A PR is created to *Prod* branch, using a process similar to the one described in step #2.
@@ -54,12 +54,9 @@ Once When a PR to the *Dev* branch is approved and merged:
 
 #### When should you consider using option #1?
 
-This option is great in the following circumstances:
-
 * When you want to use your Git repo as the single source of truth, and the origin of all deployments.
 * When your team follows *Gitflow* as the branching strategy, including multiple primary branches.
-
-The upload from the repo goes directly into the workspace, as we don’t need *build environments* to alter the files before deployments. You can change this by calling APIs or running items in the workspace after deployment.
+* The upload from the repo goes directly into the workspace, as we don’t need *build environments* to alter the files before deployments. You can change this by calling APIs or running items in the workspace after deployment.
 
 ### Scenario 2 - Git- based deployments using Build environments
 
@@ -77,8 +74,7 @@ Once a PR to the *dev* branch is approved and merged:
 
 * When you want to use Git as your single source of truth, and the origin of all deployments.
 * When your team follows *Trunk-based* workflow as its branching strategy.
-
-You're applying scripts to change the files themselves before uploading it to each stage, so you upload it first to *Build environment*, and from there update the workspace.
+* You're applying scripts to change the files themselves before uploading it to each stage, so you upload it first to *Build environment*, and from there update the workspace.
 
 ### Scenario 3 - Deploy using Fabric deployment pipelines
 
@@ -88,7 +84,7 @@ In this scenario, Git is connected only until the *dev* stage. From the *dev* st
 
 Once the PR to the *main* branch is approved and merged:
 
-1. A *build* pipeline is triggered that uploads the changes to the *dev* stage using Fabric Git APIs. If necessary, the pipeline can trigger other APIs to start post-deployment operations/tests in the *dev* stage.
+1. A *build* pipeline is triggered that uploads the changes to the *dev* stage using [Fabric Git APIs](/rest/api/fabric/core/git/update-from-git?tabs=HTTP). If necessary, the pipeline can trigger other APIs to start post-deployment operations/tests in the *dev* stage.
 1. After the *dev* deployment is completed, a release pipeline kicks in to deploy the changes from *dev* stage to *test* stage. Automated and manual tests should take place after the deployment, to ensure that the changes are well-tested before reaching production.
 1. After tests are completed and the release manager approves the deployment to *Prod* stage, the release to *Prod* kicks in and completes the deployment.
 
@@ -102,7 +98,9 @@ Once the PR to the *main* branch is approved and merged:
 
 :::image type="content" source="./media/manage-deployment-pipelines/isv.png" alt-text="Diagram showing the flow of Git based deployment for ISVs.":::
 
-This scenario is different from the others. It's most relevant for Independent Software Vendors (ISV) who build SaaS applications for their customers on top of Fabric. ISVs usually have a separate workspace for each customer and can have as many as several hundred or thousands of workspaces. When the structure of the analytics provided to each customer is similar and out-of-the-box, we recommend having a centralized development and testing process that splits off to each customer only in the *Prod* stage. This scenario is based on [scenario #2](#scenario-2---git--based-deployments-using-build-environments). Once the PR to *main* is approved and merged:
+This scenario is different from the others. It's most relevant for Independent Software Vendors (ISV) who build SaaS applications for their customers on top of Fabric. ISVs usually have a separate workspace for each customer and can have as many as several hundred or thousands of workspaces. When the structure of the analytics provided to each customer is similar and out-of-the-box, we recommend having a centralized development and testing process that splits off to each customer only in the *Prod* stage.
+
+This scenario is based on [scenario #2](#scenario-2---git--based-deployments-using-build-environments). Once the PR to *main* is approved and merged:
 
 1. A *build* pipeline is triggered to spin up a new *Build environment* and run unit tests for *dev* stage. When tests are complete, a *release* pipeline is triggered to upload the content to a *Build environment*, run scripts to change some of the configuration, adjust the configuration to *dev* stage, and then use Fabric’s [Update item definition](/rest/api/fabric/core/items/update-item) APIs to upload the files into the Workspace.
 1. After this process is complete, including ingesting data and approval from release managers, the next *build* and *release* pipelines for *test* stage can kick off, in a process similar to that described in the first step. For *test* stage, other automated or manual tests might be required after the deployment, to validate the changes are ready to be release to *Prod* stage in high-quality.
@@ -112,17 +110,16 @@ This scenario is different from the others. It's most relevant for Independent S
 
 * You're an ISV building applications on top of Fabric.
 * You're using different workspaces for each customer to manage the multi-tenancy of your application
-
-For more separation, or for specific tests for different customers, you might want to have multi-tenancy in earlier stages of *dev* or *test*. In that case, consider that with multi-tenancy the number of workspaces required grows significantly.
+* For more separation, or for specific tests for different customers, you might want to have multi-tenancy in earlier stages of *dev* or *test*. In that case, consider that with multi-tenancy the number of workspaces required grows significantly.
 
 ## Summary
 
 This article summarizes the main CI/CD scenarios for a team who wants to build an automated CI/CD process in Fabric. While we outline four options, the real-life constraints and solution architecture might lend themselves to hybrid scenarios, or completely different ones. You can use this article to guide you through different options and how to build them, but you're not forced to choose only one of the options.
-The same goes for tooling. While we mention different tools here, you might choose other tools that can provide same level of functionality. Consider that Fabric has better integration with some tools, so choosing others might bring up more limitations that need different solutions.
+The same goes for tooling. While we mention different tools here, you might choose other tools that can provide same level of functionality. Consider that Fabric has better integration with some tools, so choosing others result in more limitations that need different workarounds.
 
 ## Related content
 
-* [Git integration branches](../git-integration/manage-branches.md)
+* [Manage Git branches](../git-integration/manage-branches.md)
 * [Automate Git integration by using APIs and Azure DevOps](../git-integration/git-automation.md)
 * [Automate deployment pipeline by using Fabric APIs](./pipeline-automation-fabric.md)
 * [Best practices for lifecycle management in Fabric](../best-practices-cicd.md)
