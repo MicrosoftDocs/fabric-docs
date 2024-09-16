@@ -84,19 +84,19 @@ While data flow Gen 2 pricing is like Gen 1 pricing, Fabric pipelines take a dif
 
 | ADF Meter                             | Cost   | Billed hours | ADF price | Fabric CU multiplier | Fabric CU hour | Fabric price | Fabric cost   |
 |---------------------------------------|-----------|--------------|-----------|----------------------|----------------|--------------|---------------|
-| Self-Hosted Data Movement             | 1688.1    | 16881        | 0.1       | 6                    | 101286         | 0.18         | 18231.48      |
-| Self-Hosted External Pipeline Activity| 10.0994   | 100994       | 0.0001    |                      |                |              |               |
-| Self-Hosted Orchestration Activity Run| 2005.5    | 1337         | 1.5       | 0.0056               | 7.4872         | 0.18         | 1.347696      |
-| Self-Hosted Pipeline Activity         | 215.982   | 107991       | 0.002     | 0.0056               | 604.7496       | 0.18         | 108.854928    |
-| Cloud Data Movement                   | 3.25      | 13           | 0.25      | 1.5                  | 19.5           | 0.18         | 3.51          |
-| Cloud External Pipeline Activity      | 0.63125   | 2525         | 0.00025   |                      |                |              |               |
-| Cloud Orchestration Activity Run      | 1678      | 1678         | 1         | 0.0056               | 9.3968         | 0.18         | 1.691424      |
-| Cloud Pipeline Activity               | 34.275    | 6855         | 0.005     | 0.0056               | 38.388         | 0.18         | 6.90984       |
-| Azure Managed virtual network Data Movement      | 86.75     | 347          | 0.25      | 1.5                  | 520.5          | 0.18         | 93.69         |
+| Self-Hosted Data Movement             | $1,688.10    | 16881        | 0.1       | 6                    | 101286         | 0.18         | $18,231.48      |
+| Self-Hosted External Pipeline Activity| $10.10   | 100994       | 0.0001    |                      |                |              |               |
+| Self-Hosted Orchestration Activity Run| $2,005.50    | 1337         | 1.5       | 0.0056               | 7.4872         | 0.18         | $1.35      |
+| Self-Hosted Pipeline Activity         | $215.93   | 107991       | 0.002     | 0.0056               | 604.7496       | 0.18         | $108.85    |
+| Cloud Data Movement                   | $3.25      | 13           | 0.25      | 1.5                  | 19.5           | 0.18         | $3.51          |
+| Cloud External Pipeline Activity      | $0.63   | 2525         | 0.00025   |                      |                |              |               |
+| Cloud Orchestration Activity Run      | $1,68      | 1678         | 1         | 0.0056               | 9.3968         | 0.18         | $1.70      |
+| Cloud Pipeline Activity               | $34.28    | 6855         | 0.005     | 0.0056               | 38.388         | 0.18         | $6.91       |
+| Azure Managed virtual network Data Movement      | 86.75     | 347          | 0.25      | 1.5                  | 520.5          | 0.18         | $93.69         |
 | Azure Managed virtual network External Pipeline Activity| 7160 | 7160         | 1         |                      |                |              |               |
-| Azure Managed virtual network Orchestration Activity Run| 37 | 37           | 1         | 0.0056               | 0.2072         | 0.18         | 0.037296      |
-| Azure Managed virtual network Pipeline Activity  | 1008      | 1008         | 1         | 0.0056               | 5.6448         | 0.18         | 1.016064      |
-| **Total Revenue/Billed hours**        | **$13,927.588** | **246,826** |           |                      | **102,491.8736**|              | **$18,448.53725**|
+| Azure Managed virtual network Orchestration Activity Run| 37 | 37           | 1         | 0.0056               | 0.2072         | 0.18         | $0.04      |
+| Azure Managed virtual network Pipeline Activity  | 1008      | 1008         | 1         | 0.0056               | 5.6448         | 0.18         | $1.02      |
+| **Total Revenue/Billed hours**        | **$13,927.59** | **246,826** |           |                      | **102,491.8736**|              | **$18,448.54**|
 
 The following table summarizes Fabric pricing for Data Factory Data Flows Gen 2:
 
