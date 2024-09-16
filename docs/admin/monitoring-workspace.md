@@ -90,7 +90,7 @@ Admins can execute an API to reinitialize the workspace using the following step
    api.powerbi.com/v1/admin/workspaces/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -Method Delete
 `
 
-3) Refresh the page, and the reinitialization of the workspace begins, similar to the process of the first installation.
+3) Click the **Workspaces** menu and select **Admin monitoring** to trigger the reinitialization of the workspace, similar to the process of the first installation. On occasion, refreshing the page is also required.
 
 ## Related content
 
