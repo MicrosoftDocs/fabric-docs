@@ -98,9 +98,34 @@ While data flow Gen 2 pricing is like Gen 1 pricing, Fabric pipelines take a dif
 | Azure Managed VNET Pipeline Activity  | 1008      | 1008         | 1         | 0.0056               | 5.6448         | 0.18         | 1.016064      |
 | **Total Revenue/Billed hours**        | **13927.588** | **246826** |           |                      | **102491.8736**|              | **18448.53725**|
 
-The following table summarizes Fabric pricing for Data Factory data flows Gen 2:
+The following table summarizes Fabric pricing for Data Factory Data Flows Gen 2:
 
 | Dataflow Gen2 Engine Type       | Consumption Meters                                                                 | Fabric CU consumption rate | Consumption reporting granularity |
 |---------------------------------|-------------------------------------------------------------------------------------|----------------------------|-----------------------------------|
 | Standard Compute                | Based on each mashup engine query execution duration in seconds.                    | 16 CUs per hour            | Per Dataflow Gen2 item            |
 | High Scale Dataflows Compute    | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds. | 6 CUs per hour             | Per Workspace                     |
+
+## Making a Fabric cost estimation for Data Factory
+
+By now, you have enough information on how legacy Azure Data Factory and Data Factory Gen 1 are metered and billed. The prior tables showed how you can take current meter data and convert to Fabric Data Factory pipeline and Data Flows Gen 2 costs to Fabric.
+
+Here we describe the steps to estimate costs for each artifact.
+
+- For Data Flows Gen 1, obtain the past data flow Gen 1 capacity cost from the PowerBI Metric app. Then, recalculate capacity hours for the same number of refreshes in Data Flows Gen2 as shown in the previous table. 
+
+  On the Admin Portal's **Capacity settings**, select **See usage report**:
+
+  :::image type="content" source="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage.png" alt-text="Screenshot showing the capacity usage reported for Power BI in the Admin Portal.":::
+
+  From there, you can find the details of the capacity usage.
+
+  :::image type="content" source="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage-report.png" alt-text="Screenshot showing the details of the capacity usage report for Power BI.":::
+
+2. For Azure Data Factory you cab get all meter data from your current ADF subscription. Build out a table and  plugin the values for customers. Create the table as shown in the case of the sample table. Like Data Flows Gen 1, you can get pipeline Capacity Units for pipelines in Fabric Matric App. Given ADF cost, calculate Fabric cost for pay-as-you-go. You can interpolate it to one year to get discounted pricing.
+
+  > [!NOTE]
+  > In case of mapping data flow uses, we assume you will use Spark notebook or Data Flows Gen2. If you are using a Spark notebook, that is a cost you can estimate with the Data Engineering guidelines.
+
+## Related content
+
+- [Microsoft Fabric cost estimation](https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/)
