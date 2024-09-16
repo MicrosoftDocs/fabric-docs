@@ -14,7 +14,7 @@ ms.custom:
 #customer intent: As a developer, I want to learn how to use deployment pipelines in Fabric so that I can manage my development process efficiently.
 ---
 
-# Choose the best CI/CD scenario for your Fabric workspace
+# Choose the best Fabric CI/CD scenario for you
 
 The goal of this article is to present Fabric developers with different options for building CI/CD processes in Fabric, based on common customer scenarios. This article focuses more on the *continuous deployment* (CD) of the CI/CD process. For a discussion on the *continuous integration* (CI) part, see [Manage Git branches](../git-integration/manage-branches.md).
 
