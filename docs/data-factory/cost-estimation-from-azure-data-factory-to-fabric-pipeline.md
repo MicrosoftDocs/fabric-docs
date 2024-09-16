@@ -128,4 +128,4 @@ Here we describe the steps to estimate costs for each artifact.
 
 ## Related content
 
-- [Microsoft Fabric cost estimation](https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/)
+- [Microsoft Fabric cost estimation](https://azure.microsoft.com/pricing/details/microsoft-fabric/)
