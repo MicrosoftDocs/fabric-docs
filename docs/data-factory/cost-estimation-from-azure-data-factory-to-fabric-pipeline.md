@@ -115,11 +115,11 @@ Here we describe the steps to estimate costs for each artifact.
 
   On the Admin Portal's **Capacity settings**, select **See usage report**:
 
-  :::image type="content" source="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage.png" alt-text="Screenshot showing the capacity usage reported for Power BI in the Admin Portal.":::
+  :::image type="content" source="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage.png" lightbox="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage.png" alt-text="Screenshot showing the capacity usage reported for Power BI in the Admin Portal.":::
 
   From there, you can find the details of the capacity usage.
 
-  :::image type="content" source="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage-report.png" alt-text="Screenshot showing the details of the capacity usage report for Power BI.":::
+  :::image type="content" source="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage-report.png" lightbox="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage-report.png" alt-text="Screenshot showing the details of the capacity usage report for Power BI.":::
 
 2. For Azure Data Factory, your can get all meter data from your current ADF subscription. Build out a table and  plugin the values for customers. Create the table as shown in the case of the sample table. Like Data Flows Gen 1, you can get pipeline Capacity Units for pipelines in Fabric Metric App. Given ADF cost, calculate Fabric cost for pay-as-you-go. You can interpolate it to one year to get discounted pricing.
 
