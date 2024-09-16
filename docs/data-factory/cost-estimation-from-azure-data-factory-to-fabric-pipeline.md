@@ -21,18 +21,18 @@ Pricing for data pipelines in Azure Data Factory is calculated based on several 
 
 Below is a breakdown of the costs:
 
-| Type                        | Azure Integration Runtime Price | Azure Managed VNET Integration Runtime Price | Self-Hosted Integration Runtime Price |
+| Type                        | Azure Integration Runtime Price | Azure Managed virtual network Integration Runtime Price | Self-Hosted Integration Runtime Price |
 |-----------------------------|---------------------------------|---------------------------------------------|---------------------------------------|
 | Orchestration (activity runs, trigger executions, and debug runs)              | $1 per 1,000 runs               | $1 per 1,000 runs                           | $1.50 per 1,000 runs                   |
-| Data movement activity     | $0.25/DIU-hour                  | $0.25/DIU-hour                              | $0.10/hour                            |
+| Data movement activity     | $0.25 /DIU-hour                  | $0.25 /DIU-hour                              | $0.10/hour                            |
 | Pipeline Activity          | $0.005/hour                     | $1/hour                                     |                                       |
 | (Up to 50 concurrent pipeline activities) | $0.002/hour            |                                             |                                       |
 | External Pipeline Activity | $0.00025/hour                   | $1/hour                                     |                                       |
 | (Up to 800 concurrent pipeline activities) | $0.0001/hour            |                                             |                                       |
 
-There are a few additional details to consider regarding data pipeline costs:
+There are a few other details to consider regarding data pipeline costs:
 
-- Use of the data movement Copy activity to move data out of an Azure data center incurs additional network bandwidth charges, which appear as a separate outbound data transfer line item on your bill.
+- Use of the data movement Copy activity to move data out of an Azure data center incurs other network bandwidth charges, which appear as a separate outbound data transfer line item on your bill.
 - Pipeline activities execute on the integration runtime. Pipeline activities include Lookup, Get Metadata, Delete, and schema operations during authoring (test connection, browse folder list and table list, get schema, and preview data).
 - External pipeline activities are managed on the integration runtime but execute on linked services. External activities include the Databricks, Stored Procedure, HDInsight activities, and many more.
 
@@ -57,13 +57,13 @@ In Fabric, the pricing model for pipelines works as follows:
 
 **Total cost** (X + Y CU-hour) * (Fabric capacity per unit price)
 
-You can find duration and capacity unitsin the Fabric Metric App report for your capacity.
+You can find duration and capacity units in the Fabric Metric App report for your capacity.
 
 ## Fabric Data Flow Gen 1 pricing
 
 Data flow Gen 1 is currently priced with Power BI premium per user (PPU) or premium capacity on second consumption normalized to an hour. The capacity is deducted from your overall capacity allocated to the tenant. Capacity can be configured to support any data flows or paginated reports, with each requiring a configurable maxsimum percentage of memory. The memory is dynamically allocated to your data flows.
 
-FP64/P1 capacity provides a total of 8 PBI vcores and 64 capacity units. Capacity units get deducted as data flows consume CPU and memory. In Fabric, high scale compute is accounted for reducing total capacity if you have Lakehouse and warehouse as sources and destinations with staging enabled.
+FP64/P1 capacity provides a total of 8 Power BI virtual cores and 64 capacity units. Capacity units get deducted as data flows consume CPU and memory. In Fabric, high scale compute is accounted for reducing total capacity if you have Lakehouse and warehouse as sources and destinations with staging enabled.
 
 ## Data Factory Data Flow Gen 2 pricing
 
@@ -74,13 +74,13 @@ In Fabric the pricing model for Data Flow Gen 2 works as follows:
 | Total CUs                 | s CU seconds           | h CU seconds             |
 | Effective CU-hours billed | s / (60*60) = S CU-hour| h / (60*60) = H CU-hour  |
 
-You can find Duration and Capacity units from Fabric Matric App report for your capacity.
+You can find Duration and Capacity units from Fabric Metric App report for your capacity.
 
 **Total refresh cost** = (S + H CU-hour) * (Fabric capacity per unit price)
 
 ## Converting Azure Data Factory cost estimations to Fabric
 
-While data flow Gen 2 pricing is like Gen 1 pricing, Fabric pipelines take a different approach than Azure Data Factory. In Fabric, we do not price external pipeline activities. The following table summarizes the conversion of Azure Data Factory costs to Fabric costs:
+While data flow Gen 2 pricing is like Gen 1 pricing, Fabric pipelines take a different approach than Azure Data Factory. In Fabric, we don't price external pipeline activities. The following table summarizes the conversion of Azure Data Factory costs to Fabric costs:
 
 | ADF Meter                             | Revenue   | Billed hours | ADF price | Fabric CU multiplier | Fabric CU hour | Fabric price | Fabric cost   |
 |---------------------------------------|-----------|--------------|-----------|----------------------|----------------|--------------|---------------|
@@ -92,10 +92,10 @@ While data flow Gen 2 pricing is like Gen 1 pricing, Fabric pipelines take a dif
 | Cloud External Pipeline Activity      | 0.63125   | 2525         | 0.00025   |                      |                |              |               |
 | Cloud Orchestration Activity Run      | 1678      | 1678         | 1         | 0.0056               | 9.3968         | 0.18         | 1.691424      |
 | Cloud Pipeline Activity               | 34.275    | 6855         | 0.005     | 0.0056               | 38.388         | 0.18         | 6.90984       |
-| Azure Managed VNET Data Movement      | 86.75     | 347          | 0.25      | 1.5                  | 520.5          | 0.18         | 93.69         |
-| Azure Managed VNET External Pipeline Activity| 7160 | 7160         | 1         |                      |                |              |               |
-| Azure Managed VNET Orchestration Activity Run| 37 | 37           | 1         | 0.0056               | 0.2072         | 0.18         | 0.037296      |
-| Azure Managed VNET Pipeline Activity  | 1008      | 1008         | 1         | 0.0056               | 5.6448         | 0.18         | 1.016064      |
+| Azure Managed virtual network Data Movement      | 86.75     | 347          | 0.25      | 1.5                  | 520.5          | 0.18         | 93.69         |
+| Azure Managed virtual network External Pipeline Activity| 7160 | 7160         | 1         |                      |                |              |               |
+| Azure Managed virtual network Orchestration Activity Run| 37 | 37           | 1         | 0.0056               | 0.2072         | 0.18         | 0.037296      |
+| Azure Managed virtual network Pipeline Activity  | 1008      | 1008         | 1         | 0.0056               | 5.6448         | 0.18         | 1.016064      |
 | **Total Revenue/Billed hours**        | **13927.588** | **246826** |           |                      | **102491.8736**|              | **18448.53725**|
 
 The following table summarizes Fabric pricing for Data Factory Data Flows Gen 2:
@@ -111,7 +111,7 @@ By now, you have enough information on how legacy Azure Data Factory and Data Fa
 
 Here we describe the steps to estimate costs for each artifact.
 
-- For Data Flows Gen 1, obtain the past data flow Gen 1 capacity cost from the PowerBI Metric app. Then, recalculate capacity hours for the same number of refreshes in Data Flows Gen2 as shown in the previous table. 
+- For Data Flows Gen 1, obtain the past data flow Gen 1 capacity cost from the Power BI Metric app. Then, recalculate capacity hours for the same number of refreshes in Data Flows Gen2 as shown in the previous table. 
 
   On the Admin Portal's **Capacity settings**, select **See usage report**:
 
@@ -121,7 +121,7 @@ Here we describe the steps to estimate costs for each artifact.
 
   :::image type="content" source="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage-report.png" alt-text="Screenshot showing the details of the capacity usage report for Power BI.":::
 
-2. For Azure Data Factory you cab get all meter data from your current ADF subscription. Build out a table and  plugin the values for customers. Create the table as shown in the case of the sample table. Like Data Flows Gen 1, you can get pipeline Capacity Units for pipelines in Fabric Matric App. Given ADF cost, calculate Fabric cost for pay-as-you-go. You can interpolate it to one year to get discounted pricing.
+2. For Azure Data Factory, your can get all meter data from your current ADF subscription. Build out a table and  plugin the values for customers. Create the table as shown in the case of the sample table. Like Data Flows Gen 1, you can get pipeline Capacity Units for pipelines in Fabric Metric App. Given ADF cost, calculate Fabric cost for pay-as-you-go. You can interpolate it to one year to get discounted pricing.
 
   > [!NOTE]
   > In case of mapping data flow uses, we assume you will use Spark notebook or Data Flows Gen2. If you are using a Spark notebook, that is a cost you can estimate with the Data Engineering guidelines.
