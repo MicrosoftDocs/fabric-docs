@@ -11,7 +11,11 @@ ms.date: 08/29/2024
 
 [Azure Data Factory (ADF) billing](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/) is already understood to many existing ADF users using Dataflow Gen1 activities, who are interested to explore pipelines for Data Factory in Microsoft Fabric. Pipelines are control flows of discrete activities. You pay for data pipeline orchestration by activity run and activity execution by integration runtime hours. The integration runtime, which is serverless in Azure and self-hosted in hybrid scenarios, provides the compute resources used to execute the activities in a pipeline. Integration runtime charges are prorated by the minute and rounded up. For example, the Azure Data Factory Copy activity can move data across various data stores in a secure, reliable, performant, and scalable way.
 
-## Azure Data Factory data pipeline pricing
+## Azure Data Factory pricing
+
+Azure Data Factory costs arise from data pipelines and Data Flows.
+
+### Azure Data Factory data pipeline pricing
 
 Pricing for data pipelines in Azure Data Factory is calculated based on several metrics:
 
@@ -36,7 +40,7 @@ There are a few other details to consider regarding data pipeline costs:
 - Pipeline activities execute on the integration runtime. Pipeline activities include Lookup, Get Metadata, Delete, and schema operations during authoring (test connection, browse folder list and table list, get schema, and preview data).
 - External pipeline activities are managed on the integration runtime but execute on linked services. External activities include the Databricks, Stored Procedure, HDInsight activities, and many more.
 
-## Azure Data Factory Dataflow Gen1 activity pricing
+### Azure Data Factory Data Flow Gen1 activity pricing
 
 Read/write operations for Azure Data Factory entities include create, read, update, and delete. Entities include datasets, linked services, pipelines, integration runtime, and triggers. Monitoring operations include get and list for pipeline, activity, trigger, and debug runs. The following table shows these costs:
 
@@ -59,13 +63,13 @@ In Fabric, the pricing model for pipelines works as follows:
 
 You can find duration and capacity units in the Fabric Metric App report for your capacity.
 
-## Fabric Data Flow Gen 1 pricing
+### Fabric Data Flow Gen 1 pricing
 
 Data flow Gen 1 is currently priced with Power BI premium per user (PPU) or premium capacity on second consumption normalized to an hour. The capacity is deducted from your overall capacity allocated to the tenant. Capacity can be configured to support any data flows or paginated reports, with each requiring a configurable maxsimum percentage of memory. The memory is dynamically allocated to your data flows.
 
 FP64/P1 capacity provides a total of 8 Power BI virtual cores and 64 capacity units. Capacity units get deducted as data flows consume CPU and memory. In Fabric, high scale compute is accounted for reducing total capacity if you have Lakehouse and warehouse as sources and destinations with staging enabled.
 
-## Data Factory Data Flow Gen 2 pricing
+### Data Factory Data Flow Gen 2 pricing
 
 In Fabric the pricing model for Data Flow Gen 2 works as follows:
 
