@@ -32,13 +32,13 @@ To trigger the installation of the admin monitoring workspace, follow these step
 
 ## Sharing the admin monitoring workspace
 
-Once set up, admins can share all reports in the workspace with users that are not admins through a workspace viewer role. Admins can also share individual [reports](/power-bi/collaborate-share/service-share-dashboards) or [semantic models](/power-bi/connect-data/service-datasets-share) with users that are not admins through links or direct access.
+Once set up, admins can share all reports in the workspace with users that aren't admins through a workspace viewer role. Admins can also share individual [reports](/power-bi/collaborate-share/service-share-dashboards) or [semantic models](/power-bi/connect-data/service-datasets-share) with users that aren't admins through links or direct access.
 
-Only admins can see the admin monitoring workspace at the top of the workspaces menu. Users that are not admins can access the workspace's contents indirectly by using the _Browse_ or _OneLake data hub_ pages, or by bookmarking the workspace URL.
+Only admins can see the admin monitoring workspace at the top of the workspaces menu. Users that aren't admins can access the workspace's contents indirectly by using the _Browse_ or _OneLake data hub_ pages, or by bookmarking the workspace URL.
 
 ## Managing the admin monitoring workspace
 
-By default, the admin monitoring workspace is a Pro-licensed workspace. If your organization has a capacity and would like to take advantage of capacity benefits such as unlimited content sharing, the admin monitoring workspace can be assigned to a capacity using the following steps:
+By default, the admin monitoring workspace is a Pro-licensed workspace. To take advantage of capacity benefits such as unlimited content sharing for the admin monitoring workspace, follow these steps:
 
 1. Navigate to the **Admin portal**.
    
