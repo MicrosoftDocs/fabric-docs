@@ -314,6 +314,8 @@ More questions? [Ask the Fabric Community](https://community.fabric.microsoft.co
 ## Disable Private Link
 In case you want to disable private link setting, please ensure all the private endpoints you created and the corresponding private DNS zone are deleted before disabling private link setting. If your VNet has private endpoint set up but the private link is disabled, connections from this VNet may fail.
 
+We suggest you to disable private link setting during off-business hours. It may cause up to 15mins downtime for some scenarios to reflect the change. 
+
 ## Related content
 
 * [About private links](./security-private-links-overview.md)
