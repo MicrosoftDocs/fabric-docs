@@ -98,7 +98,7 @@ https://onelake.dfs.fabric.microsoft.com/MyWorkspace/MyLakhouse/Tables/MyShortcu
 
 ## Types of shortcuts
 
-OneLake shortcuts support multiple filesystem data sources. These include internal OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3, and Dataverse.
+OneLake shortcuts support multiple filesystem data sources. These include internal OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3, S3 Compatible, Google Cloud Storage(GCS) and Dataverse.
 
 ### Internal OneLake shortcuts
 
@@ -160,7 +160,7 @@ The IAM user must have the following permissions on the bucket that the shortcut
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
 
-### Google Cloud Storage shortcuts (Preview)
+### Google Cloud Storage shortcuts
 
 Shortcuts can be created to Google Cloud Storage(GCS) using the XML API for GCS.  When you create shortcuts to Google Cloud Storage, the target path must contain a bucket name at a minimum.  You can also restrict the scope of the shortcut by further specifying the prefix/folder you want to point to within the storage hierarchy. 
 
