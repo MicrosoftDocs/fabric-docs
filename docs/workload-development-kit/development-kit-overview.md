@@ -39,7 +39,7 @@ In this section, you can find a few examples of use cases to help you understand
 * **Data visualization** - Data visualization applications that are entirely based on existing Fabric data items. They allow the creation of dynamic and interactive visual representations of your data. [Power BI reports](/power-bi/consumer/end-user-reports) and [dashboards](/power-bi/create-reports/service-dashboards) serve as excellent examples of this type of workload.
 
 ## Publish to the Workload Hub
-After developing your Fabric Workload according to the [certification requirement](publish-workload-requirements.md), publish it to the [Workload Hub](./more-workloads-add.md) which will allow every Fabric user a chance to easily start a trial experience and then buy your workload. An in-dept description of how to publish the workload can be found [here](./publish-workload-flow.md).
+After developing your Fabric Workload according to the [certification requirement](publish-workload-requirements.md), publish it to the [Workload Hub](./more-workloads-add.md) which will allow every Fabric user a chance to easily start a trial experience and then buy your workload. An in-depth description of how to publish the workload can be found [here](./publish-workload-flow.md).
 
 ## Key Considerations for Developing a Fabric Workload
 There are several important concepts to understand before beginning development of a Fabric workload:

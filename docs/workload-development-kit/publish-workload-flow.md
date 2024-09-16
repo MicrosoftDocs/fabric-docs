@@ -17,23 +17,25 @@ The Fabric [Workload Hub](./more-workloads-add.md) is a place where users can br
 
 Publishing a partner workload in Fabric involves different steps. Before all Fabric users have access to it there are different stages available to test the workload and get early feedback from your customers.
 
-:::image type="content" source="./media/publish-workload-flow/publishing-process.png" alt-text="Screenshot showing the different stages for publishing.":::
+:::image type="content" source="./media/publish-workload-flow/publishing-process.png" alt-text="The publishing stages process are 1. Testing, 2. Preview Audience, 3. Preview, 4. General availability. They are explained in this article.":::
 
 As a first step you need to define your `Publishing tenant` and the `Workload ID` that you want to use. Both are fixed and can't be changed at a later time.
 
 * Publisher tenant
 
-This Fabric tenant will be used to publish and manage the lifecycle of workloads in the future. Make sure to use a production tenant that users that need to manage the lifecycle for the workload have access to.  
+This Fabric tenant is used to publish and manage the lifecycle of workloads in the future. Make sure to use a production tenant that users that need to manage the lifecycle for the workload have access to.  
 
 * Workload ID
 
 The workload ID consists of two components combined by a dot `[Publisher].[Workload]`. For the `[Publisher]` make sure to use a meaningful name. Ideally use your company name or abbreviation. For the `[Workload]`, it would be best to align with your product name or offering. The Workload ID must be unique in the system.  
 
-Before you start your publishing journey, you need to decide on both and fill out the [Workload registration form](https://aka.ms/fabric_workload_registration). The fabric team checks the information and enable you to start the publishing process. Without completing this step, you can't publish a workload outside of your own organization.
+Before you start your publishing journey, you need to decide on both and fill out the [Workload registration form](https://aka.ms/fabric_workload_registration). The fabric team checks the information and enables you to start the publishing process. Without completing this step, you can't publish a workload outside of your own organization.
+
+Once Registration is completed you can leverage the ID in your [Workload Manifest](./backend-manifest.md). The Workload Manifest that leverages the Workload ID can now be [uploaded](./manage-workload.md) into the Fabric Portal. Once it is uploaded you can begin publishing.  
 
 ## Preview Audience
 
-Before you publish your workload to all Fabric customers, you can use a preview audience to test and get early feedback. After your Tenant is enabled to publish the workload with the ID you selected, you can enable up to 10 tenants. We recommend to start testing the workload with another Fabric Test Tenant that you own.
+Before you publish your workload to all Fabric customers, you can use a preview audience to test and get early feedback. After your Tenant is enabled to publish the workload with the ID you selected, you can enable up to ten tenants. We recommend to start testing the workload with another Fabric test tenant that you own.
 After the tenant was added to the preview audience, the Administrator of the tenant needs to enable the feature in the [Fabric tenant settings](../admin/tenant-settings-index.md). Changing this setting has immediate effect and allowing all users within the tenant to use the functionality. The workload and the items have a clear indication that they're part of a preview and the publishing requirements aren't validated so far.
 
 ## Preview

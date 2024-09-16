@@ -28,7 +28,7 @@ Building applications in Fabric is more like creating documents in office than p
 
 Fabric is designed to support the largest Tier 1 projects and data sizes. The Fabric platform provides a common set of services that the workload must not replace with their own proprietary services. Consistent use of the platform services across all the workloads ensures a uniform experience and functionality throughout the system.
 
-This document provides a comprehensive overview of all the different components that you need to take into account to publish a workload. Sharing this information upfront is required to move into Preview and GA (see [Publishing Flow](./publish-workload-flow.md). 
+This document provides a comprehensive overview of all the different components that you need to take into account to publish a workload. Sharing this information upfront is required to move into Preview and GA, see [Publishing Flow](./publish-workload-flow.md).
 
 | Name | Description | Validation method | Preview | General Availability | Reference |
 |---|---|---|---|---|---|
@@ -47,7 +47,7 @@ The following table lists technical requirements for your workload offer.
 
 | Category | Description | Validation method | Preview | General Availability | Reference |
 |---|---|---|---|---|---|
-| Microsoft Entra Access | Fabric workloads must use Microsoft Entra authentication and authorization. If your service provides other authentication methods to data that was originally stored in Fabric this needs to be document. <br><br> *Extra requirements:* <br>   | Attestation | Required | Required | [Authentication](./authentication-concept.md) |
+| Microsoft Entra Access | Fabric workloads must use Microsoft Entra authentication and authorization. If your service provides other authentication methods to data stored in Fabric, this needs to be document. <br><br> *Extra requirements:* <br>   | Attestation | Required | Required | [Authentication](./authentication-concept.md) |
 |  | The workload  must take a static dependency on `https://analysis.windows.net/powerbi/api/Fabric.Extend` scope and get user consent for it. Workload Development Kit infrastructure helps to implement the consent flow, but the responsibility is with the workload owner to take dependency on Fabric. Extend scope and ensure consent is granted. Fabric reserves the rights to block the integration with a workload for which the consent isn't granted. | Workload Package | Required | Required | |
 | OneLake | OneLake is where data is stored in Fabric. Workloads need to integrate with it to store data in the standard formats supported by the platform so that other services can take advantage of it. | Attestation | Required | Required | [OneLake, the OneDrive for data](../onelake/onelake-overview.md) |
 | Microsoft Entra Conditional Access | Enterprise customers require centralized control and management of the identities and credentials used to access their resources and data and, in Microsoft, Microsoft Entra provides that service. Make sure that your service works with even if customers enable this functionality. | Attestation | Required | Required | [Conditional access](../security/security-conditional-access.md) |
