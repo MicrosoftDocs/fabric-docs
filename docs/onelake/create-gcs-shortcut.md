@@ -21,7 +21,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 - If you don't have a lakehouse, create one by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
 
-- Ensure your chosen GCS bucket and user meet the [access and authorization requirements for GCS shortcuts](onelake-shortcuts.md#google-cloud-storage-shortcuts-preview).
+- Ensure your chosen GCS bucket and user meet the [access and authorization requirements for GCS shortcuts](onelake-shortcuts.md#google-cloud-storage-shortcuts).
 
 ## Create a shortcut
 
