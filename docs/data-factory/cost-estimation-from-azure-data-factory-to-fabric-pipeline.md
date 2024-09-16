@@ -80,9 +80,9 @@ You can find Duration and Capacity units from Fabric Metric App report for your 
 
 ## Converting Azure Data Factory cost estimations to Fabric
 
-While data flow Gen 2 pricing is like Gen 1 pricing, Fabric pipelines take a different approach than Azure Data Factory. In Fabric, we don't price external pipeline activities. The following table summarizes the conversion of Azure Data Factory costs to Fabric costs:
+While data flow Gen 2 pricing is like Gen 1 pricing, Fabric pipelines take a different approach than Azure Data Factory. In Fabric, we don't price external pipeline activities. The following table summarizes the conversion of Azure Data Factory costs to Fabric costs for a sample set of activities:
 
-| ADF Meter                             | Revenue   | Billed hours | ADF price | Fabric CU multiplier | Fabric CU hour | Fabric price | Fabric cost   |
+| ADF Meter                             | Cost   | Billed hours | ADF price | Fabric CU multiplier | Fabric CU hour | Fabric price | Fabric cost   |
 |---------------------------------------|-----------|--------------|-----------|----------------------|----------------|--------------|---------------|
 | Self-Hosted Data Movement             | 1688.1    | 16881        | 0.1       | 6                    | 101286         | 0.18         | 18231.48      |
 | Self-Hosted External Pipeline Activity| 10.0994   | 100994       | 0.0001    |                      |                |              |               |
@@ -96,7 +96,7 @@ While data flow Gen 2 pricing is like Gen 1 pricing, Fabric pipelines take a dif
 | Azure Managed virtual network External Pipeline Activity| 7160 | 7160         | 1         |                      |                |              |               |
 | Azure Managed virtual network Orchestration Activity Run| 37 | 37           | 1         | 0.0056               | 0.2072         | 0.18         | 0.037296      |
 | Azure Managed virtual network Pipeline Activity  | 1008      | 1008         | 1         | 0.0056               | 5.6448         | 0.18         | 1.016064      |
-| **Total Revenue/Billed hours**        | **13927.588** | **246826** |           |                      | **102491.8736**|              | **18448.53725**|
+| **Total Revenue/Billed hours**        | **$13,927.588** | **246,826** |           |                      | **102,491.8736**|              | **$18,448.53725**|
 
 The following table summarizes Fabric pricing for Data Factory Data Flows Gen 2:
 
