@@ -893,7 +893,7 @@
     items:
       - name: Connector certification
         items:
-        - name: Data Factory Connector Certification program
+        - name: Data Factory Connector Certification
           href: connector-certification.md
         - name: Submission
           href: certification-submission.md
