@@ -50,13 +50,13 @@ To ensure the best experience for our customers, we only consider connectors tha
 
 * **The developer must provide an estimate for current and future usage**. 
 
-* **The connector must be already made available to customers directly to fulfill a user need or business scenario**. This criteria can be fulfilled using a Private Preview program by distributing the completed connector directly to end users and organizations. We suggest that developers of connectors to use a [self-distribution mechanism](power-query/install-sdk#self-distribution) and run private previews of their own connectors to iterate over their connectors under a controlled group. Each user or organization should be able to provide feedback and validation that there's a business need for the connector and that the connector is working successfully to fulfill their business requirements.
+* **The connector must be already made available to customers directly to fulfill a user need or business scenario**. This criteria can be fulfilled using a Private Preview program by distributing the completed connector directly to end users and organizations. We suggest that developers of connectors to use a [self-distribution mechanism](power-query/install-sdk#self-distribution) and run internal testing of their own connectors to iterate over their connectors under a controlled group. Each user or organization should be able to provide feedback and validation that there's a business need for the connector and that the connector is working successfully to fulfill their business requirements.
 
 * **The connector must be working successfully at an anticipated level of usage by customers**.
 
 * **There must be a thread in the [Fabric Ideas forum](https://aka.ms/FabricIdeas) driven by customers to indicate demand to make the connector publicly available in Data Factory and / or Power BI**. There's no set threshold of engagement. However the more engagement, the stronger the evidenced demand for the connector.
 
-These prerequisites exist to ensure that connectors undergoing certification have significant customer and business need to be used and supported post-certification.
+These prerequisites exist to ensure that connectors undergoing certification have significant customer and business need to be used to and supported post-certification.
 
 ### Process and Timelines
 
