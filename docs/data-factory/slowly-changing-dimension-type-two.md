@@ -5,7 +5,7 @@ author: ptyx507x
 ms.author: miescobar
 ms.reviewer: jburchel
 ms.topic: tutorial
-ms.date: 08/16/2024
+ms.date: 09/16/2024
 ---
 
 # Slowly changing dimension type 2 

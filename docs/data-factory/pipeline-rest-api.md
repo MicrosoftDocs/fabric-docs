@@ -4,7 +4,7 @@ description: This article describes the available REST APIs for pipelines in Dat
 author: kromerm
 ms.author: makromer
 ms.topic: conceptual
-ms.date: 06/28/2024
+ms.date: 09/16/2024
 ---
 
 # Microsoft Fabric data pipeline public REST API (Preview)
