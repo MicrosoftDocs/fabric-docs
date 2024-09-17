@@ -4,7 +4,7 @@ description: This article provides information about how to set up an Azure Data
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 03/01/2024
+ms.date: 08/22/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -25,6 +25,7 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 |Organizational account| √| √|
 |Service Principal|√||
 |Shared Access Signature (SAS)| √| √|
+|Workspace Identity| √||
 
 ## Set up your connection in Dataflow Gen2
 
@@ -72,7 +73,7 @@ To create a connection in a data pipeline:
 
 1. Configure a workspace identity in the workspace where the connection will be used. For more information, see [Workspace identity](../security/workspace-identity.md).
 
-1. Grant the organizational account or service principal access to the storage account. For more information, see [Create a OneLake shortcut to storage account with trusted workspace access](../security/security-trusted-workspace-access.md#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access)
+1. Grant the workspace identity, organizational account, or service principal access to the storage account. For more information, see [Create a OneLake shortcut to storage account with trusted workspace access](../security/security-trusted-workspace-access.md#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access)
 
 1. Configure a resource instance rule. For more information, see [Resource instance rule](../security/security-trusted-workspace-access.md#resource-instance-rule).
 
@@ -80,10 +81,12 @@ To create a connection in a data pipeline:
 
 ### Considerations and limitations
 
-* Organizational Account and Service Principal are the only supported auth types.
+* Workspace identity, Organizational Account, and Service Principal are the only supported authentication types.
+* Connections for trusted workspace access only work in OneLake shortcuts and data pipelines.
 * Connections for trusted workspace access can't be created from the **Manage Gateways and connections** experience.
-* Connections for trusted workspace access only work in OneLake shortcuts.
 * Existing connections that work for trusted workspace access can't be modified in the **Manage Gateways and connections** experience.
+* Connections to firewall-enabled Storage accounts will have the status *Offline* in Manage connections and gateways.
+* Checking the status of a connection with workspace identity as the authentication method is not supported.
 
 ## Set up your connection
 
@@ -106,6 +109,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 - [OAuth2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication)
 - [Shared Access Signature](connector-azure-data-lake-storage-gen2.md#shared-access-signature-authentication)
 - [Service Principal](connector-azure-data-lake-storage-gen2.md#service-principal-authentication)
+- [Workspace Identity](connector-azure-data-lake-storage-gen2.md#workspace-identity-authentication)
 
 :::image type="content" source="media/connector-azure-data-lake-storage-gen2/authentication-method.png" alt-text="Screenshot showing the authentication method for Azure Data Lake Storage Gen2.":::
 
@@ -154,6 +158,13 @@ To use service principal authentication, follow these steps:
     > [!NOTE]
     > If you use a UI to author and the service principal isn't set with the "Storage Blob Data Reader/Contributor" role in IAM, when doing a test connection or browsing/navigating folders, choose **Test connection to file path** or **Browse from specified path**, and then specify a path with **Read + Execute** permission to continue.
 
+#### Workspace identity authentication
+
+**Workspace identity**: Select workspace identity from the authentication method drop down. A Fabric workspace identity is an automatically managed service principal that can be associated with a Fabric workspace. Fabric workspaces with a workspace identity can securely read or write to Azure Data Lake Storage Gen2 accounts through OneLake shortcuts and data pipelines. When selecting this option in the connector, make sure that the workspace has a workspace identity and that the identity has the ability to read or write to the intended Azure Data Lake Storage Gen2 account. For more information, see [Workspace identity](../security/workspace-identity.md)
+
+> [!NOTE]
+> Connections with workspace identity will have the status *Offline* in Manage connections and gateways. Checking the status of a connection with workspace identity isn't supported.
+
 ### Step 3: Specify the privacy level you want to apply
 
 In the **General** tab, select the privacy level that you want apply in the **Privacy level** drop-down list. Three privacy levels are supported. For more information, go to General.
@@ -193,6 +204,7 @@ The properties in the following table are the supported authentication types.
 |- Tenant ID|The tenant information (domain name or tenant ID).|Yes |||
 |- Service Principal ID|The application's client ID.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
+|**Workspace identity**||||✓|
 
 ## Related content
 

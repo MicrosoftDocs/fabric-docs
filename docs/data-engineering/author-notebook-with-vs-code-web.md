@@ -47,7 +47,7 @@ The notebook tree node lists all of the notebook items in the current workspace.
 
 You can also delete any existing file/folder in the notebook file system.
 
-:::image type="content" source="media\vscode\manage-notebook-vs-code-web.png" alt-text="Screenshot of notebook tree node.":::
+:::image type="content" source="media\vscode\manage-notebook-vs-code-web.png" alt-text="Screenshot showing the notebook tree node.":::
 
 ## Run notebooks in the VS Code for the Web experience
 

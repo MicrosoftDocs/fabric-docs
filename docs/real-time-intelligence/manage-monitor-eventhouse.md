@@ -47,7 +47,7 @@ Minimum consumption sets a minimum available capacity unit (CU) size for an even
 1. From the ribbon, select **Minimum consumption**
 1. In the **Minimum consumption** pane, select the size corresponding to the [minimum available CU](eventhouse.md#minimum-consumption) size you want to apply to this eventhouse, and then select **Done**.
 
-    The following table maps the size to the minimum [capacity units](../admin/service-admin-portal-capacity-settings.md) allotted to the eventhouse:
+    The following table maps the size to the minimum [capacity units](../admin/capacity-settings.md) allotted to the eventhouse:
 
     [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
 

@@ -77,4 +77,4 @@ The burstable scale factor can be achieved independently for ingestion at the sa
 - [Workload management](workload-management.md)
 - [Scale your capacity](../enterprise/scale-capacity.md)
 - [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
-- [Manage capacity settings](../admin/service-admin-portal-capacity-settings.md)
+- [Capacity settings](../admin/capacity-settings.md)
