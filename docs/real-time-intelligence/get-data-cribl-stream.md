@@ -5,7 +5,7 @@ ms.reviewer: akshayd
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 07/31/2024
+ms.date: 09/17/2024
 ---
 # Get data from Cribl Stream
 
@@ -28,5 +28,6 @@ For a complete list of data connectors, see [Data connectors overview](data-conn
 [!INCLUDE [ingest-data-cribl-3](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-cribl-3.md)]
 
 ## Related content
+
 * [Create a KQL database](create-database.md)
 * [Create Azure Data Explorer and Real-Time Intelligence Destinations](https://docs.cribl.io/stream/destinations-azure-data-explorer/)
