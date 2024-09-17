@@ -94,7 +94,7 @@ Applications and client tools can set the `Authentication` connection property
 |:--|:--|:--|
 | Microsoft Entra Interactive | Utilized by applications or tools in situations where user authentication can occur interactively, or when it is acceptable to have manual intervention for credential verification. | [Activate MFA](/entra/identity/authentication/tutorial-enable-azure-mfa) and [Microsoft Entra Conditional Access policies](/entra/identity/conditional-access/concept-conditional-access-policies) to enforce organizational rules. |
 | Microsoft Entra Service Principal | Used by apps for secure authentication without human intervention, most suited for application integration. | Advisable to enable [Microsoft Entra Conditional Access policies](/entra/identity/conditional-access/workload-identity). |
-| Microsoft Entra Password | When applications can't use SPN-based authentication due to incompatibility, or require a generic username and password for many users, or if other methods are infeasible. | MFA must be off, and no conditional access policies can be set. It's recommended to validate with customer's security team before opting this solution. |
+| Microsoft Entra Password | When applications can't use SPN-based authentication due to incompatibility, or require a generic username and password for many users, or if other methods are infeasible. | MFA must be off, and no conditional access policies can be set. We recommend validating with the customer's security team before opting for this solution. |
 
 :::image type="content" source="media/entra-id-authentication/mode-flow-chart.png" alt-text="Flowchart showing Microsoft Entra authentication modes and decision points.":::
 
