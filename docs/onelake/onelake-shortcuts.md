@@ -274,6 +274,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
 - Additional shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models is not currently available.
+- It may take up to a minute for the Table API to recognize new shortcuts.
 
 ## Related content
 

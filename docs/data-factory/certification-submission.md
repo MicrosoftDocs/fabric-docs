@@ -3,14 +3,14 @@ title: Power Query connector certification submission
 description: Instructions for submitting a Power Query custom connector for certification.
 author: ptyx507x
 ms.topic: conceptual
-ms.date: 9/12/2024
+ms.date: 9/16/2024
 ms.author: miescobar
 ---
 
 # Power Query connector submission
 
 
-This article provides instructions for how to submit your Power Query custom connector for certification. Don't submit your connector for certification unless you've been explicitly directed to by your Microsoft contact.
+This article provides instructions for how to submit your Data Factory custom connector for certification. Don't submit your connector for certification unless you've been explicitly directed to by your Microsoft contact.
 
 ## Prerequisites
 
@@ -34,9 +34,9 @@ The Connector Certification Portal is an experience within that allows Microsoft
 
 6. Read the guidelines for providing [documentation](./providing-user-documentation.md) for your custom connector. Create a Markdown (`.md`) file following the custom connector documentation guidelines, using examples from existing documentation if needed. This step is crucial to ensure users know how to use your connector. Once you have the pull request for the public documentation available, email the pull request link to your Microsoft contact.
 
-7. In the Activity Control, share a paragraph introducing your connector and explaining its value proposition to users and customers. This entry will be submitted as part of the Power BI blog in the upcoming month's post, announcing the release of your connector.
+7. In the Activity Control, share a paragraph introducing your connector and explaining its value proposition to users and customers.
 
-**Note that we need you to complete all the steps in order to move forward with certification.** If you would like to add teammates to manage your connector, let your Microsoft contact know.
+**Note that we need you to complete all the steps in order to move forward with certification.** 
 
 After your connector code review is complete, you'll need to submit a demo video to us outlining the following scenarios:
 
