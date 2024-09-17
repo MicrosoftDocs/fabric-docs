@@ -1,19 +1,19 @@
 ---
-title: Providing user documentation for your Power Query custom connector
+title: Providing user documentation for your certified connector
 description: Describes the format and layout of the user documentation that needs to be submitted for your Power Query custom connector.
 author: ptyx507x
 ms.topic: conceptual
-ms.date: 9/12/2024
+ms.date: 9/16/2024
 ms.author: miescobar
 ---
 
 # Providing user documentation for your custom connector
 
-Once you finish designing your Power Query custom connector, you need to submit an article that provides instructions on how to use your connector for publication on Microsoft Learn. This article discusses the layout of such an article and how to format the text of your article.
+Once you finish designing your Data Factory connector, you need to submit an article that provides instructions on how to use your connector for publication on Microsoft Learn. This article discusses the layout of such an article and how to format the text of your article.
 
 ## Article layout
 
-This section describes the general layout of the Power Query connector articles. Your custom connector article should follow this general layout.
+This section describes the general layout of the connector articles. Your connector article should follow this general layout.
 
 ### Support note
 
