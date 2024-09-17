@@ -7,7 +7,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/18/2024
+ms.date: 09/17/2024
 ---
 
 # What is the admin monitoring workspace? (Preview)
@@ -20,7 +20,7 @@ To set up the admin monitoring workspace, a [Fabric administrator](microsoft-fab
 
 ## Installing the admin monitoring workspace
 
-The admin monitoring workspace is automatically installed the first time an admin accesses it. Reports in the workspace appear as blank until the first data refresh. The first data refresh begins around 5 minutes after the workspace is installed, and usually completes within a few minutes.
+The admin monitoring workspace is automatically installed the first time an admin accesses it. Reports in the workspace appear as blank until the first data refresh. The first data refresh begins around five minutes after the workspace is installed, and usually completes within a few minutes.
 
 To trigger the installation of the admin monitoring workspace, follow these steps:
 
@@ -86,9 +86,7 @@ Admins can execute an API to reinitialize the workspace using the following step
 
 2) Execute the semantic model deletion API, first replacing the 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' with the ID of your admin monitoring workspace.
    
-`
-   api.powerbi.com/v1/admin/workspaces/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -Method Delete
-`
+    `api.powerbi.com/v1/admin/workspaces/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -Method Delete`
 
 3) Click the **Workspaces** menu and select **Admin monitoring** to trigger the reinitialization of the workspace, similar to the process of the first installation. On occasion, refreshing the page is also required.
 
