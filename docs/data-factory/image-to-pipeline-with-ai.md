@@ -309,14 +309,14 @@ try:
     if response.status_code != 201:
         raise FabricHTTPException(response)
 except WorkspaceNotFoundException as e:
-    print("Caught a WorkspaceNotFoundException:", e)
+    print("Workspace is not available or cannot be found.")
 except FabricHTTPException as e:
     print(e)
-    print("Caught a FabricHTTPException. Check the API endpoint, authentication.")
+    print("Fabric HTTP Exception. Check that you have the correct Fabrric API endpoints.")
 
 response = client.get(f"/v1/workspaces/{workspaceId}/Datapipelines")
 df_items = pd.json_normalize(response.json()['value'])
-print("Workspace pipelines after creation:")
+print("List of pipelines in the workspace:")
 df_items
 ```
 
@@ -332,5 +332,6 @@ Once your pipeline is created, you can edit it in your Fabric workspace, to see 
 
 ## Related content
 
+- [View or download the complete Python notebook with this sample](https://github.com/n0elleli/Azure-DataFactory/blob/fabric_samples/FabricSamples/Image%20to%20Pipeline%20with%20AI/NotebookSample.py)
 - [How to monitor data pipeline runs in Microsoft Fabric](monitor-pipeline-runs.md)
 - [Azure OpenAI Service documentation](/azure/ai-services/openai/overview)
