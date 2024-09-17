@@ -36,7 +36,7 @@ Certified connectors are:
 We work with partners to try to make sure that they have support in maintenance, but customer issues with the connector itself are directed to the partner developer.
 
 >[!NOTE]
->Today you can leverage the [Power Query SDK](power-query/install-sdk) to create a connector that can be certified through the Data Factory connector certification program. Head over to the [Power Query SDK overview](power-query/power-query-sdk-vs-code) to learn more about this tool.
+>Today you can leverage the [Power Query SDK](/power-query/install-sdk) to create a connector that can be certified through the Data Factory connector certification program. Head over to the [Power Query SDK overview](/power-query/power-query-sdk-vs-code) to learn more about this tool.
 
 ## Certification Overview
 
@@ -50,7 +50,7 @@ To ensure the best experience for our customers, we only consider connectors tha
 
 * **The developer must provide an estimate for current and future usage**. 
 
-* **The connector must be already made available to customers directly to fulfill a user need or business scenario**. This criteria can be fulfilled using a Private Preview program by distributing the completed connector directly to end users and organizations. We suggest that developers of connectors to use a [self-distribution mechanism](power-query/install-sdk#self-distribution) and run internal testing of their own connectors to iterate over their connectors under a controlled group. Each user or organization should be able to provide feedback and validation that there's a business need for the connector and that the connector is working successfully to fulfill their business requirements.
+* **The connector must be already made available to customers directly to fulfill a user need or business scenario**. This criteria can be fulfilled using a Private Preview program by distributing the completed connector directly to end users and organizations. We suggest that developers of connectors to use a [self-distribution mechanism](/power-query/install-sdk#self-distribution) and run internal testing of their own connectors to iterate over their connectors under a controlled group. Each user or organization should be able to provide feedback and validation that there's a business need for the connector and that the connector is working successfully to fulfill their business requirements.
 
 * **The connector must be working successfully at an anticipated level of usage by customers**.
 
@@ -71,7 +71,7 @@ Certified connectors are released with monthly Power BI Desktop releases, so the
 * **Technical Review**: finalization of the connector files, passing Microsoft review and certification. This review must occur by the 15th of the month before the targeted Power BI Desktop release.
   * For example, for the April Power BI Desktop release, the deadline would be March 15.
 
-Due to the complexity of the technical reviews and potential delays, rearchitecture, and testing issues, **we highly recommend submitting early with a long lead time for the initial release and certification**. If you feel like your connector is important to deliver to a few customers with minimal overhead, we recommend [self-signing](#custom-connector-distribution) and providing it that way.
+Due to the complexity of the technical reviews and potential delays, rearchitecture, and testing issues, **we highly recommend submitting early with a long lead time for the initial release and certification**.
 
 ## Certification Requirements
 
