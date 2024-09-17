@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 08/29/2024
 ---
 
-# Use Azure Open AI to turn whiteboard sketches into data pipelines
+# Use Azure OpenAI to turn whiteboard sketches into data pipelines
 
 Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios and empowers you with a modern data integration experience to ingest, prepare, and transform data from a rich set of data sources. Within Data Factory, you can create data pipelines to use out-of-the-box rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
 
@@ -141,7 +141,7 @@ Run this code block to see the AI summarization of the image and its components.
 
 ## Step 4: Generate the pipeline JSON
 
-Add another code block to the Notebook, and add the following code. This code analyzes the image and generate the pipeline JSON.
+Add another code block to the Notebook, and add the following code. This code analyzes the image and generates the pipeline JSON.
 
 ```python
 # Analyze the image and generate the pipeline JSON
