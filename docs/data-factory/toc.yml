@@ -81,6 +81,8 @@
       href: tutorial-end-to-end-integration.md
     - name: SAP CDC to Fabric OneLake using ADF
       href: change-data-capture-from-sap-to-onelake-with-azure-data-factory.md
+    - name: Use AI to turn sketches into pipelines
+      href: image-to-pipeline-with-ai.md
   - name: Connectors
     items:
     - name: Connector overview
