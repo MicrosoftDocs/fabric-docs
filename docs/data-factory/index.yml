@@ -110,8 +110,10 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-        - text: Connector overview
-          url: connector-overview.md
+        - text: Dataflow Gen2 connectors
+          url: dataflow-support.md
+        - text: Data pipeline connectors
+          url: pipeline-support.md
       - linkListType: how-to-guide
         links:
         - text: Connector certification
