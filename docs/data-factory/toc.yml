@@ -893,11 +893,11 @@
     items:
       - name: Connector certification
         items:
-        - name: Data Factory Connector Certification
+        - name: Data Factory connector certification
           href: connector-certification.md
-        - name: Submission
+        - name: Connector certification submission
           href: certification-submission.md
-        - name: Custom connector documentation
+        - name: Provide connector documentation
           href: providing-user-documentation.md   
   - name: FAQ and Troubleshooting
     items:
