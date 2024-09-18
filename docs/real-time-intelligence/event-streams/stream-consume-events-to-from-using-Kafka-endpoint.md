@@ -136,7 +136,7 @@ From the **Keys** page, you can obtain the important Kafka endpoint information:
 - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";`
 
 The `{YOUR.BOOTSTRAP.SERVER}` is the **Bootstrap server** and
-The `YOUR.CONNECTION.STRING` can be either the **Connection string-primary key** or the **Connection string-secondary key**. Choose one to use.
+`YOUR.CONNECTION.STRING` can be either the **Connection string-primary key** or the **Connection string-secondary key** shown in the **Keys** page. Choose one to use.
 
 <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-connection-string.png" alt="A screenshot showing kafka connection string." width="900" />
 
