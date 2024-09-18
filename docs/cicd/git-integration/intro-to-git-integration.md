@@ -12,11 +12,9 @@ ms.search.form: Git integration supported items, Introduction to Git integration
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
 
-# Introduction to Git integration (preview)
+# Introduction to Git integration
 
 This article explains to developers how to integrate Git version control with the Fabric Application lifecycle management (ALM) tool.
-
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 Git integration in Microsoft Fabric enables developers to integrate their development processes, tools, and best practices straight into the Fabric platform. It allows developers who are developing in Fabric to:
 
@@ -25,7 +23,7 @@ Git integration in Microsoft Fabric enables developers to integrate their develo
 * Collaborate with others or work alone using Git branches
 * Apply the capabilities of familiar source control tools to manage Fabric items
 
-The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. Currently, in Preview, only a few items are supported, but the list of [supported items](#supported-items) is growing.
+The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. Only a few items are currently supported, but the list of [supported items](#supported-items) is growing.
 
 * Read up on [version control](/devops/develop/git/what-is-version-control) and [Git](/devops/develop/git/what-is-git) to make sure you’re familiar with basic Git concepts.  
 
@@ -53,15 +51,15 @@ The following Git providers are supported:
 
 The following items are currently supported:
 
-* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
+* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) (preview)
+* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) (preview)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
-* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
-* Reports (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces))
-* Semantic models (except push datasets, live connections to Analysis Services, model v1).
-* [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md)
-* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
-* [Warehouses](../../data-warehouse/data-warehousing.md)
+* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi) (preview)
+* Reports (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) (preview)
+* Semantic models (except push datasets, live connections to Analysis Services, model v1) (preview).
+* [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) (preview)
+* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) (preview)
+* [Warehouses](../../data-warehouse/data-warehousing.md) (preview)
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control panel but you can't commit or update them.
 
