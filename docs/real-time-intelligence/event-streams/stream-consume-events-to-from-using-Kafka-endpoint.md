@@ -154,7 +154,7 @@ Now you can use another application in [Azure Event Hubs for Kafka repository](h
    - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString"`
    - `password="{YOUR.CONNECTION.STRING}";`
 
-   The`{YOUR.BOOTSTRAP.SERVER}` can be either the **Bootstrap server**.The `YOUR.EVENTHUBS.CONSUMER.GROUP` can be got from the **Basic** page in the **Details** pane fo the custom endpoint destination. The `YOUR.CONNECTION.STRING` can be either the **Connection string-primary key** or the **Connection string-secondary key**. Choose one to use.
+   Replace `{YOUR.BOOTSTRAP.SERVER}` with **Bootstrap server**. The `YOUR.EVENTHUBS.CONSUMER.GROUP` can be got from the **Basic** page in the **Details** pane fo the custom endpoint destination. The `YOUR.CONNECTION.STRING` can be either the **Connection string-primary key** or the **Connection string-secondary key**. Choose one to use.
 
 1. Update the topic name with the new topic name in the Keys page in **Keys** page in *src/main/java/TestConsumer.java* as follows:
    - `private final static String TOPIC = "{YOUR.TOPIC.NAME}";`
