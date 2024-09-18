@@ -98,7 +98,7 @@ Once the PR to the *main* branch is approved and merged:
 
 ### Option 4 - CI/CD for ISVs in Fabric (managing multiple customers/solutions)
 
-:::image type="content" source="./media/manage-deployment-pipelines/isv.png" alt-text="Diagram showing the flow of Git based deployment for ISVs.":::
+:::image type="content" source="./media/manage-deployment-pipelines/software-vendors.png" alt-text="Diagram showing the flow of Git based deployment for ISVs.":::
 
 This option is different from the others. It's most relevant for Independent Software Vendors (ISV) who build SaaS applications for their customers on top of Fabric. ISVs usually have a separate workspace for each customer and can have as many as several hundred or thousands of workspaces. When the structure of the analytics provided to each customer is similar and out-of-the-box, we recommend having a centralized development and testing process that splits off to each customer only in the *Prod* stage.
 
@@ -128,4 +128,3 @@ The same goes for tooling. While we mention different tools here, you might choo
 * [Automate Git integration by using APIs and Azure DevOps](../git-integration/git-automation.md)
 * [Automate deployment pipeline by using Fabric APIs](./pipeline-automation-fabric.md)
 * [Best practices for lifecycle management in Fabric](../best-practices-cicd.md)
-* [Power BI implementation planning: Deploy content]

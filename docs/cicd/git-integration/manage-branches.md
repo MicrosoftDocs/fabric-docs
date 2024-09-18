@@ -92,13 +92,13 @@ If your workspace is connected to a Git branch and you want to switch to another
 When you switch branches, the workspace syncs with the new branch and all items in the workspace are overridden. If there are different versions of the same item in each branch, the item is replaced. If an item is in the old branch, but not the new one, it gets deleted.
 To switch between branches, follow these steps:
 
-1. From the *Branches* tab of the **Source control** menu, select **Checkout new branch**.
+1. From the *Branches* tab of the **Source control** menu, select **Check out new branch**.
 
-    :::image type="content" source="media/manage-branches/checkout-new-branch.png" alt-text="Screenshot of source control checkout a new branch option.":::
+    :::image type="content" source="media/manage-branches/check-out-new-branch.png" alt-text="Screenshot of source control check out a new branch option.":::
 
 1. Specify the branch you want to connect to. This branch must contain the same directory as the current branch.
 
-1. Select **Checkout branch**.
+1. Select **Check out branch**.
 
 If you have any unsaved changes in the workspace, they will be lost if you switch branches without saving them first. Select **Cancel** to go back and save your changes before switching branches.
 

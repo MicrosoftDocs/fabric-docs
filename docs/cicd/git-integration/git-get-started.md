@@ -185,7 +185,7 @@ After the update is completed successfully, the status of the items changes to *
 
 ## Disconnect a workspace from Git
 
-Only a workspace admin can disconnect a workspace from an Git Repo. If you’re not an admin, ask your admin for help with disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
+Only a workspace admin can disconnect a workspace from a Git Repo. If you’re not an admin, ask your admin for help with disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
 
 1. Go to **Workspace settings**
 1. Select **Git integration**
