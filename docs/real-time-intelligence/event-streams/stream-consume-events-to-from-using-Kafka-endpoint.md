@@ -82,7 +82,7 @@ Follow these steps to add a custom endpoint source to your eventstream:
    - `sasl.mechanism=PLAIN`
    - `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.CONNECTION.STRING}";`
 
-    The `{YOUR.CONNECTION.STRING}` can be either the **Connection string-primary key** or the **Connection string-secondary key**. Choose one to use.
+    The `{YOUR.BOOTSTRAP.SERVER}` is the **Bootstrap server** and the `{YOUR.CONNECTION.STRING}` can be either the **Connection string-primary key** or the **Connection string-secondary key** shown in the **Keys** page.  Choose one to use.
 
    <img src="media/stream-consume-events-to-from-using-Kafka-endpoint/kafka-keys-sample-code.png" width="900" alt="A screenshot showing kafka keys and sample code.">
 
