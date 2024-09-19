@@ -157,11 +157,11 @@ The following example shows what the connection string looks like in **Event hub
 
 *Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxx*
 
-<img src="media\add-destination-custom-app-enhanced\eventhub-keys.png" alt="[A screenshot showing the Event Hub keys in the Details pane of the eventstream.]" width="900" />
+<img src="media\add-destination-custom-app-enhanced\event-hub-keys.png" alt="[A screenshot showing the Event Hub keys in the Details pane of the eventstream.]" width="900" />
 
 The **Sample code** page in Event Hubs tab offers ready-to-use code with the required connection keys information in Event hub included. Simply copy and paste it into your application for use.
 
-<img src="media\add-destination-custom-app-enhanced\eventhub-sample-code.png" alt="[A screenshot showing the Event Hub Sample code in the Details pane of the eventstream.]" width="900" />
+<img src="media\add-destination-custom-app-enhanced\event-hub-sample-code.png" alt="[A screenshot showing the Event Hub Sample code in the Details pane of the eventstream.]" width="900" />
 
 ### Kafka
 
