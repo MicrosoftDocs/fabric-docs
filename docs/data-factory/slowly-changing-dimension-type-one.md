@@ -45,13 +45,33 @@ As you can see in the diagram view, we run a comparison between sourced dimensio
 let
     Source = Source,
 
-    #"Added custom" = Table.TransformColumnTypes(Table.AddColumn(Source, "Hash", each Binary.ToText( Text.ToBinary( Text.Combine(List.Transform({[FirstName],[LastName],[Region]}, each if _ = null then "" else _), "|")), BinaryEncoding.Hex)), {{"Hash", type text}}),
+    #"Added custom" = Table.TransformColumnTypes(
+        Table.AddColumn(Source, "Hash", each Binary.ToText( 
+            Text.ToBinary( 
+                Text.Combine(
+                    List.Transform({[FirstName],[LastName],[Region]}, each if _ = null then "" else _),
+                "|")),
+            BinaryEncoding.Hex)
+        ),
+    {{"Hash", type text}}),
 
     #"Marked key columns" = Table.AddKey(#"Added custom", {"Hash"}, false),
 
-    #"Merged queries" = Table.NestedJoin(#"Marked key columns", {"Hash"}, ExistingDimRecords, {"Hash"}, "ExistingDimRecords", JoinKind.LeftOuter),
+    #"Merged queries" = Table.NestedJoin(
+        #"Marked key columns",
+        {"Hash"},
+        ExistingDimRecords,
+        {"Hash"},
+        "ExistingDimRecords",
+        JoinKind.LeftOuter
+    ),
 
-    #"Expanded ExistingDimRecords" = Table.ExpandTableColumn(#"Merged queries", "ExistingDimRecords", {"Count"}, {"Count"}),
+    #"Expanded ExistingDimRecords" = Table.ExpandTableColumn(
+        #"Merged queries",
+        "ExistingDimRecords",
+        {"Count"},
+        {"Count"}
+    ),
 
     #"Filtered rows" = Table.SelectRows(#"Expanded ExistingDimRecords", each ([Count] = null)),
 
