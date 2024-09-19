@@ -51,38 +51,21 @@ The following Git providers are supported:
 
 The following items are currently supported:
 
-* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) (preview)
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) (preview)
+* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
+* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
-* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi) (preview)
-* Reports (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) (preview)
-* Semantic models (except push datasets, live connections to Analysis Services, model v1) (preview).
-* [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) (preview)
-* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) (preview)
-* [Warehouses](../../data-warehouse/data-warehousing.md) (preview)
+* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi) *(preview)*
+* Reports (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
+* Semantic models (except push datasets, live connections to Analysis Services, model v1) *(preview)*
+* [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
+* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
+* [Warehouses](../../data-warehouse/data-warehousing.md) *(preview)*
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control panel but you can't commit or update them.
 
 ## Considerations and limitations
 
 [!INCLUDE [limitations](../../includes/git-limitations.md)]
-
-<!---
-* Sovereign clouds aren't supported.
-
-### [Azure DevOps limitations](#tab/azure-devops)
-
-* The Azure repo must use the *same tenant* as the Fabric tenant.
-* If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
-* The commit size is limited to 125 MB.
-
-### [GitHub limitations](#tab/github)
-
-* GitHub can't enforce [cross-geo validations](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
-* The commit size is limited to 100 MB.
-
----
---->
 
 ## Related content
 
