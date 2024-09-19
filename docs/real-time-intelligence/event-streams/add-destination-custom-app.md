@@ -1,5 +1,5 @@
 ---
-title: Add an custom endpoint destination to an eventstream
+title: Add a custom endpoint destination to an eventstream
 description: Learn how to add a custom app or endpoint destination to an eventstream for consuming real-time events with multiple protocols, like the popular Apache Kafka protocol.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -34,22 +34,28 @@ If you want to route event data to your app, you can add a custom endpoint as yo
 1. If you are in the **live view**, switch to the edit mode by selecting **Edit** on the ribbon. 
 
     :::image type="content" source="./media/add-destination-custom-app-enhanced/switch-to-edit-mode.png" alt-text="Screenshot that shows the Edit button that lets you switch to the edit mode." lightbox="./media/add-destination-custom-app-enhanced/switch-to-edit-mode.png":::
+
 1. In the edit mode, add a custom endpoint destination in one of the following ways: 
     - Select **Add destination** on the ribbon, then select **Custom endpoint**, and connect it to your default stream or derived stream.
 
         :::image type="content" source="./media/add-destination-custom-app-enhanced/add-destination-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of Custom endpoint menu on the ribbon." lightbox="./media/add-destination-custom-app-enhanced/add-destination-custom-endpoint-menu.png"::: 
+
     - In the editor, select **Transform events or add destination**, and then select **Custom endpoint**. 
     
-        :::image type="content" source="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of Custom endpoint menu in the editor." lightbox="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png":::                
+        :::image type="content" source="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png" alt-text="Screenshot that shows the selection of Custom endpoint menu in the editor." lightbox="./media/add-destination-custom-app-enhanced/transform-custom-endpoint-menu.png":::   
+
 1. Enter a destination **name** for the custom endpoint, and select **Save**. 
 
-    :::image type="content" source="./media/add-destination-custom-app-enhanced/custom-app-name.png" alt-text="Screenshot that shows the popup to enter the name for the custom endpoint." lightbox="./media/add-destination-custom-app-enhanced/custom-app-name.png":::    
+    :::image type="content" source="./media/add-destination-custom-app-enhanced/custom-app-name.png" alt-text="Screenshot that shows the popup to enter the name for the custom endpoint." lightbox="./media/add-destination-custom-app-enhanced/custom-app-name.png":::   
+
 1. Connect the default stream tile to the custom endpoint tile if there's no connection already.
 
-    :::image type="content" source="./media/add-destination-custom-app-enhanced/connect.png" alt-text="Screenshot that shows the connection to the custom endpoint tile.":::                
+    :::image type="content" source="./media/add-destination-custom-app-enhanced/connect.png" alt-text="Screenshot that shows the connection to the custom endpoint tile.":::  
+
 1. To view the detailed information of your custom endpoint, select **Publish**. 
 
-    :::image type="content" source="./media/add-destination-custom-app-enhanced/publish-button.png" alt-text="Screenshot that shows the selection of the Publish button." lightbox="./media/add-destination-custom-app-enhanced/publish-button.png":::                
+    :::image type="content" source="./media/add-destination-custom-app-enhanced/publish-button.png" alt-text="Screenshot that shows the selection of the Publish button." lightbox="./media/add-destination-custom-app-enhanced/publish-button.png":::     
+
 1. In the live view, select the custom endpoint tile. Then, see the **Details** pane at the bottom of the page. For more information, see the next section. 
 
     :::image type="content" source="./media/add-destination-custom-app-enhanced/details-event-hub-tab.png" alt-text="Screenshot that shows the Details pane with three tabs - Event Hubs, AMQP, and Kafka." lightbox="./media/add-destination-custom-app-enhanced/details-event-hub-tab.png":::                
@@ -72,11 +78,11 @@ The following example shows what the connection string looks like in **Event hub
 
 *Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxx*
 
-<img src="media\add-destination-custom-app-enhanced\eventhub-keys.png" alt="[A screenshot showing the Event Hub keys in the Details pane of the eventstream Live view.]" width="900" />
+<img src="media\add-destination-custom-app-enhanced\event-hub-keys.png" alt="[A screenshot showing the Event Hub keys in the Details pane of the eventstream Live view.]" width="900" />
 
-The **Sample code** page in Event Hub tab offers ready-to-use code with the required connection keys information in Event hub included. Simply copy and paste it into your application for use.
+The **Sample code** page in Event Hubs tab offers ready-to-use code with the required connection keys information in Event hub included. Simply copy and paste it into your application for use.
 
-<img src="media\add-destination-custom-app-enhanced\eventhub-sample-code.png" alt="[A screenshot showing the Event Hub Sample code in the Details pane of the eventstream Live view.]" width="900" />
+<img src="media\add-destination-custom-app-enhanced\event-hub-sample-code.png" alt="[A screenshot showing the Event Hub Sample code in the Details pane of the eventstream Live view.]" width="900" />
 
 ### Kafka
 
@@ -139,7 +145,7 @@ The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, and **Kaf
 
 **Basic** shows the name, description, type, and status of your custom app.
 
-<img src="media\add-destination-custom-app-enhanced\customapp-details-basic.png" alt="[A screenshot showing the customapp basic tab in the Details pane of the eventstream.]" width="900" />
+<img src="media\add-destination-custom-app-enhanced\custom-app-details-basic.png" alt="[A screenshot showing the customapp basic tab in the Details pane of the eventstream.]" width="900" />
 
 
 **Keys** and **Sample code** pages provide you with the connection keys information and the sample code with the corresponding keys embedded that you can use to stream the events to your eventstream. The Keys and Sample code information varies by protocol.
@@ -153,7 +159,7 @@ The following example shows what the connection string looks like in **Event hub
 
 <img src="media\add-destination-custom-app-enhanced\eventhub-keys.png" alt="[A screenshot showing the Event Hub keys in the Details pane of the eventstream.]" width="900" />
 
-The **Sample code** page in Event Hub tab offers ready-to-use code with the required connection keys information in Event hub included. Simply copy and paste it into your application for use.
+The **Sample code** page in Event Hubs tab offers ready-to-use code with the required connection keys information in Event hub included. Simply copy and paste it into your application for use.
 
 <img src="media\add-destination-custom-app-enhanced\eventhub-sample-code.png" alt="[A screenshot showing the Event Hub Sample code in the Details pane of the eventstream.]" width="900" />
 

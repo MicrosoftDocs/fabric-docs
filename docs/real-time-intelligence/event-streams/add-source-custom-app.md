@@ -78,7 +78,7 @@ The following example shows what the connection string looks like in **Event hub
 
 <img src="media\add-source-custom-app-enhanced\details-event-keys.png" alt="[A screenshot showing the Keys information in the Details pane of the eventstream Live view]" width="900" />
 
-The **Sample code** page in Event Hub tab offers ready-to-use code with the required connection keys information in Event hub included. Simply copy and paste it into your application for use.
+The **Sample code** page in Event Hubs tab offers ready-to-use code with the required connection keys information in Event hub included. Simply copy and paste it into your application for use.
 
 <img src="media\add-source-custom-app-enhanced\details-event-sample.png" alt="[A screenshot showing the Sample code in the Details pane of the eventstream Live view]" width="900" />
 
@@ -157,7 +157,7 @@ The **Details** pane has three protocol tabs: **Event Hub**, **AMQP**, a
 
 **Basic** shows the name, description, type, and status of your custom app. 
 
-<img src="media\add-source-custom-app-enhanced\customapp-details-event-basic.png" alt="[A screenshot showing the customapp Basic information in the Details pane of the eventstream.]" width="900" />
+<img src="media\add-source-custom-app-enhanced\custom-app-details-event-basic.png" alt="[A screenshot showing the customapp Basic information in the Details pane of the eventstream.]" width="900" />
 
 **Keys** and **Sample code** pages provide you with the connection keys information and the sample code with the corresponding keys embedded that you can use to stream the events to your eventstream. The Keys and Sample code information varies by protocol.
 
@@ -170,7 +170,7 @@ The following example shows what the connection string looks like in **Event hub
 
 <img src="media\add-source-custom-app-enhanced\details-event-keys.png" alt="[A screenshot showing the Keys information in the Details pane of the eventstream.]" width="900" />
 
-The **Sample code** page in Event Hub tab offers ready-to-use code with the required connection keys information in Event hub included. Simply copy and paste it into your application for use.
+The **Sample code** page in Event Hubs tab offers ready-to-use code with the required connection keys information in Event hub included. Simply copy and paste it into your application for use.
 
 <img src="media\add-source-custom-app-enhanced\details-event-sample.png" alt="[A screenshot showing the Sample code in the Details pane of the eventstream.]" width="900" />
 
