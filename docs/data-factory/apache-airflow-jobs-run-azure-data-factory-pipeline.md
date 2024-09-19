@@ -1,6 +1,6 @@
 ---
-title: Orchestrate Azure Data Factory Pipeline with Data workflows
-description: Learn to run data factory pipeline in Data workflows.
+title: Orchestrate Azure Data Factory Pipeline with Apache Airflow Jobs
+description: Learn to run data factory pipeline in Apache Airflow Jobs.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -13,26 +13,26 @@ ms.date: 04/15/2023
 # Tutorial: Orchestrate an Azure Data Factory (ADF) Pipeline with data workflows
 
 > [!NOTE]
-> Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-In this tutorial, you'll build an Apache Airflow DAG to orchestrate the ADF pipeline with the Data workflows.
+In this tutorial, you'll build an Apache Airflow DAG to orchestrate the ADF pipeline with the Apache Airflow Jobs.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- Enable Data workflows in your Tenant.
+- Enable Apache Airflow Jobs in your Tenant.
 
   > [!NOTE]
-  > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
+  > Since Apache Airflow Jobs are in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Jobs, your tenant admin may have already enabled it.
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Data workflows (preview)" section.
+  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Jobs (preview)" section.
 
   2. Click Apply.
 
   :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/data-workflows/enable-data-workflow-tenant.png":::
 
-- [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md).
+- [Create the "Apache Airflow Jobs" in the workspace.](../data-factory/create-data-workflows.md).
 
 - [Create the data pipeline in Azure Data Factory](/azure/data-factory/tutorial-copy-data-portal).
 
@@ -100,7 +100,7 @@ with DAG(
 
 3. Click "Save" button.
 
-## Monitor the Data workflow DAG and run it from Apache Airflow UI
+## Monitor the Apache Airflow DAG and run it from Apache Airflow UI
 
 The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on "Monitor in Apache Airflow" button.
 
@@ -109,4 +109,4 @@ The saved dag files are loaded in the Apache Airflow UI. You can monitor them by
 
 ## Related Content
 
-Quickstart: [Create a Data workflow](../data-factory/create-data-workflows.md)
+Quickstart: [Create an Apache Airflow Job](../data-factory/create-data-workflows.md)

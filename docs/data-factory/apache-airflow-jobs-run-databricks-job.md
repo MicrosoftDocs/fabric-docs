@@ -1,6 +1,6 @@
 ---
-title: Orchestrate Azure Databricks job with Data workflows
-description: Learn to run Azure Databricks job with Data workflows.
+title: Orchestrate Azure Databricks job with Apache Airflow Jobs
+description: Learn to run Azure Databricks job with Apache Airflow Jobs.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -13,28 +13,28 @@ ms.date: 04/15/2023
 # Tutorial: Orchestrate Azure Databricks ETL jobs with data workflows
 
 > [!NOTE]
-> Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-This tutorial outlines the integration of Azure Databricks and Data workflows (powered by Apache Airflow) for orchestrating data pipelines. Job orchestration is crucial for managing complex workflows, ensuring data accuracy, and optimizing processing efficiency. Azure Databricks is a powerful analytics platform built on the top of Apache Spark, while Apache Airflow offers robust workflow management capabilities. Combining these tools enables seamless coordination of tasks, from data ingestion to transformation and analysis. The Apache Airflow Azure Databricks connection lets you take advantage of the optimized Spark engine offered by Azure Databricks with the scheduling features of Apache Airflow.
+This tutorial outlines the integration of Azure Databricks and Apache Airflow Jobs (powered by Apache Airflow) for orchestrating data pipelines. Job orchestration is crucial for managing complex workflows, ensuring data accuracy, and optimizing processing efficiency. Azure Databricks is a powerful analytics platform built on the top of Apache Spark, while Apache Airflow offers robust workflow management capabilities. Combining these tools enables seamless coordination of tasks, from data ingestion to transformation and analysis. The Apache Airflow Azure Databricks connection lets you take advantage of the optimized Spark engine offered by Azure Databricks with the scheduling features of Apache Airflow.
 
-In this tutorial, you build an Apache Airflow DAG to trigger the Azure Databricks job with the Data workflows.
+In this tutorial, you build an Apache Airflow DAG to trigger the Azure Databricks job with the Apache Airflow Jobs.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- Enable Data workflows in your Tenant.
+- Enable Apache Airflow Jobs in your Tenant.
 
   > [!NOTE]
-  > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
+  > Since Apache Airflow Jobs are in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Jobs, your tenant admin may have already enabled it.
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Data workflows (preview)" section.
+  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Jobs (preview)" section.
 
   2. Select Apply.
 
   :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
-- [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md)
+- [Create the "Apache Airflow Jobs" in the workspace.](../data-factory/create-data-workflows.md)
 
 - [Create a basic ETL pipeline with Databricks](https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html)
 
@@ -60,7 +60,7 @@ To get started, you must complete the following prerequisites:
 
 ## Create an Apache Airflow connection to connect with Azure Databricks workspace
 
-When you install "apache-airflow-providers-databricks" as a requirement in Data workflows environment, a default connection for Azure Databricks is configured by default in Apache Airflow Connections list. Update the connection to connect to your workspace using the personal access token you created previously:
+When you install "apache-airflow-providers-databricks" as a requirement in Apache Airflow Jobs environment, a default connection for Azure Databricks is configured by default in Apache Airflow Connections list. Update the connection to connect to your workspace using the personal access token you created previously:
 
 1. Select on the "View Airflow connections" to see a list of all the connections configured.
 
@@ -68,7 +68,7 @@ When you install "apache-airflow-providers-databricks" as a requirement in Data 
 
 2. Under Conn ID, locate databricks_default and select the Edit record button.
 
-3. Replace the value in the Host field with the workspace instance name of your Azure Databricks deployment, for example, ```https://adb-123456789.cloud.databricks.com```.
+3. Replace the value in the Host field with the workspace instance name of your Azure Databricks deployment, for example, `https://adb-123456789.cloud.databricks.com`.
 
 4. In the Password field, enter your Azure Databricks personal access token.
 
@@ -106,7 +106,7 @@ with DAG('databricks_dag',
 
    :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
-## Monitor the Data workflow DAG and run it from Apache Airflow UI
+## Monitor the Apache Airflow DAG and run it from Apache Airflow UI
 
 After saving, the DAG files are automatically loaded into the Apache Airflow UI. To monitor them, select on the "Monitor in Apache Airflow" button.
 
@@ -114,4 +114,4 @@ After saving, the DAG files are automatically loaded into the Apache Airflow UI.
 
 ## Related Content
 
-[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)

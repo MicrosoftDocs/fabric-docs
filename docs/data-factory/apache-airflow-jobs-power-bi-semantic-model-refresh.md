@@ -1,6 +1,6 @@
 ---
-title: Refresh Power BI semantic model with Data workflows
-description: Learn to refresh Power BI semantic model with Data workflows.
+title: Refresh Power BI semantic model with Apache Airflow Jobs
+description: Learn to refresh Power BI semantic model with Apache Airflow Jobs.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -13,9 +13,9 @@ ms.date: 04/15/2023
 # Tutorial: Refresh Power BI Semantic Model with Data Workflows
 
 > [!NOTE]
-> Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-In today's data-driven world, maintaining up-to-date and accurate data models is crucial for informed business decisions. As data evolves, it's essential to refresh these models regularly to ensure that reports and dashboards reflect the most current information. Manual refreshes can be time-consuming and prone to errors, which is where Apache Airflow's orchestration, scheduling, and monitoring capabilities come into play. By leveraging Airflow, organizations can automate the refresh process of Power BI semantic models, ensuring timely and accurate data updates with minimal manual intervention. 
+In today's data-driven world, maintaining up-to-date and accurate data models is crucial for informed business decisions. As data evolves, it's essential to refresh these models regularly to ensure that reports and dashboards reflect the most current information. Manual refreshes can be time-consuming and prone to errors, which is where Apache Airflow's orchestration, scheduling, and monitoring capabilities come into play. By leveraging Airflow, organizations can automate the refresh process of Power BI semantic models, ensuring timely and accurate data updates with minimal manual intervention.
 
 This article talks about the integration of Apache Airflow with Power BI to automate semantic model refreshes using Data Workflows. It provides a step-by-step guide to setting up the environment, configuring connections, and creating workflows to seamlessly update Power BI semantic models.
 
@@ -23,29 +23,28 @@ This article talks about the integration of Apache Airflow with Power BI to auto
 
 To get started, you must complete the following prerequisites:
 
-- Enable Data workflows in your Tenant.
+- Enable Apache Airflow Jobs in your Tenant.
 
   > [!NOTE]
-  > Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
+  > Since Apache Airflow Jobs are in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Jobs, your tenant admin may have already enabled it.
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Data workflows (preview)" section.
+  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Jobs (preview)" section.
   2. Select Apply.
 
   :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - Your tenant-level admin must enable "Service principals can use Fabric APIs":
 
-    1. Go to the Admin Portal of Microsoft Fabric and navigate to Tenant Settings.
-    2. Under Developer Settings, expand the "Service principals can use Fabric APIs" section.
-    3. Toggle the "Enabled" button and choose either "The entire organization" or "Specific security groups."
-    4. Select Apply.
+  1. Go to the Admin Portal of Microsoft Fabric and navigate to Tenant Settings.
+  2. Under Developer Settings, expand the "Service principals can use Fabric APIs" section.
+  3. Toggle the "Enabled" button and choose either "The entire organization" or "Specific security groups."
+  4. Select Apply.
 
-    :::image type="content" source="media/data-workflows/service-principal-use-fabric-api.png" lightbox="media/data-workflows/service-principal-use-fabric-api.png" alt-text="Screenshot to enable Service principal usage in Fabric APIs tenant.":::
-    
+  :::image type="content" source="media/data-workflows/service-principal-use-fabric-api.png" lightbox="media/data-workflows/service-principal-use-fabric-api.png" alt-text="Screenshot to enable Service principal usage in Fabric APIs tenant.":::
 
 - Create the [Service Principal](/entra/identity-platform/howto-create-service-principal-portal). You need to add your service principal as the Contributor in your Power BI workspace.
 
-- [Create the "Data workflows" in the workspace.](../data-factory/create-data-workflows.md)
+- [Create the "Apache Airflow Jobs" in the workspace.](../data-factory/create-data-workflows.md)
 
 - [Create a semantic model in Power BI](https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html)
 
@@ -66,11 +65,12 @@ To get started, you must complete the following prerequisites:
    :::image type="content" source="media/data-workflows/view-apache-airflow-connection.png" lightbox="media/data-workflows/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
 2. Add the new connection. You may use `Generic` connection type. Store the following fields:
-    * <strong>Connection ID:</strong> The Connection ID.
-    * <strong>Connection Type:</strong>Generic
-    * <strong>Login:</strong>The Client ID of your service principal.
-    * <strong>Password:</strong>The Client secret of your service principal.
-    * <strong>Extra:</strong>{"tenantId": The Tenant ID of your service principal.}
+
+   - <strong>Connection ID:</strong> The Connection ID.
+   - <strong>Connection Type:</strong>Generic
+   - <strong>Login:</strong>The Client ID of your service principal.
+   - <strong>Password:</strong>The Client secret of your service principal.
+   - <strong>Extra:</strong>{"tenantId": The Tenant ID of your service principal.}
 
 3. Select Save.
 
@@ -151,4 +151,4 @@ After you click on save, files are automatically loaded into the Apache Airflow 
 
 ## Related Content
 
-[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)

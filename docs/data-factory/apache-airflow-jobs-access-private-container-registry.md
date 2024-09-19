@@ -10,29 +10,30 @@ ms.custom:
 ms.date: 03/25/2024
 ---
 
-# Add a Kubernetes secret in data workflows
+# Add a Kubernetes secret in Apache Airflow jobs
 
 > [!NOTE]
-> Data workflows is powered by Apache Airflow.</br>[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow Jobs are powered by Apache Airflow.</br>[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
 This article shows how to add a Kubernetes secret in Apache Airflow environment in Fabric to pull a custom image from an Azure Container Registry.
 
 ## Prerequisites
+
 - **Azure Container Registry**: Configure an [Azure Container Registry](/azure/container-registry/container-registry-get-started-portal?tabs=azure-cli) with the custom image you want to use in the directed acyclic graph (DAG). For more information on push and pull container images, see [Push and pull container image - Azure Container Registry](/azure/container-registry/container-registry-get-started-docker-cli?tabs=azure-cli).
 
 ### Add a Kubernetes secret.
 
 1. Navigate to the `Environment configuration` page by clicking on `Configure Airflow`.
 2. Under `Kubernetes secrets` section, click on `New` button.
-:::image type="content" source="media/data-workflows/kubernetes-new-secret.png" lightbox="media/data-workflows/kubernetes-new-secret.png" alt-text="Screenshot that shows button to add new Kubernetes secret." :::
+   :::image type="content" source="media/data-workflows/kubernetes-new-secret.png" lightbox="media/data-workflows/kubernetes-new-secret.png" alt-text="Screenshot that shows button to add new Kubernetes secret." :::
 3. Fill out the fields that appear in Dialog box:
-    * <strong>Name</strong>: Name of the Kubernetes secret.
-    * <strong>Namespace</strong>: The namespace to run within Kubernetes. By default: Fill the field as `adf`.
-    * <strong>Secret type</strong>: Choose the type of the secret between the values: `Private registry credential` and `Basic auth credential`.
-    * <strong>Registry server url</strong>: URL of your private container registry, for example, ```\registry_name\>.azurecr.io```.
-    * <strong>Username</strong>: Username of your private container registry.
-    * <strong>Password</strong>: Password to access the private container registry.
-:::image type="content" source="media/data-workflows/kubernetes-new-secret-form.png" lightbox="media/data-workflows/kubernetes-new-secret-form.png" alt-text="Screenshot that shows form to add new Kubernetes secret." :::
+   _ <strong>Name</strong>: Name of the Kubernetes secret.
+   _ <strong>Namespace</strong>: The namespace to run within Kubernetes. By default: Fill the field as `adf`.
+   _ <strong>Secret type</strong>: Choose the type of the secret between the values: `Private registry credential` and `Basic auth credential`.
+   _ <strong>Registry server url</strong>: URL of your private container registry, for example, `\registry_name\>.azurecr.io`.
+   _ <strong>Username</strong>: Username of your private container registry.
+   _ <strong>Password</strong>: Password to access the private container registry.
+   :::image type="content" source="media/data-workflows/kubernetes-new-secret-form.png" lightbox="media/data-workflows/kubernetes-new-secret-form.png" alt-text="Screenshot that shows form to add new Kubernetes secret." :::
 4. Once all the fields are filled, click on the `Create` button to finalize the creation of the Kubernetes secret.
 
 ### A sample DAG using stored Kubernetes secret to pull a custom image from ACR.
@@ -71,4 +72,4 @@ acr_kubernetes = KubernetesPodOperator(
 
 ## Related Content
 
-[Quickstart: Create a Data workflow](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)

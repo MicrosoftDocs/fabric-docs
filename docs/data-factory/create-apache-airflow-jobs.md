@@ -1,6 +1,6 @@
 ---
-title: Create a Data workflow project in Microsoft Fabric
-description: This tutorial helps you create a Data workflow in Microsoft Fabric.
+title: Create an Apache Airflow Job project in Microsoft Fabric
+description: This tutorial helps you create an Apache Airflow Job in Microsoft Fabric.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: nabhishek
@@ -10,30 +10,30 @@ ms.custom:
 ms.date: 09/16/2024
 ---
 
-# Quickstart: Create a Data workflow
+# Quickstart: Create an Apache Airflow Job
 
 > [!NOTE]
-> Data workflows is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-Data workflows provide a simple and efficient way to create and manage Apache Airflow environments, enabling you to run your data workflows at scale with ease. In this quickstart, you create your first Data workflow and run a Directed Acyclic Graph (DAG) to familiarize yourself with the environment and functionalities of Data workflows.
+Apache Airflow Jobs provide a simple and efficient way to create and manage Apache Airflow environments, enabling you to run your data workflows at scale with ease. In this quickstart, you create your first Apache Airflow Job and run a Directed Acyclic Graph (DAG) to familiarize yourself with the environment and functionalities of Apache Airflow Jobs.
 
 ## Prerequisites
 
-- Enable Data workflows in your Tenant.
+- Enable Apache Airflow Jobs in your Tenant.
 
 > [!NOTE]
-> Since Data workflows is in preview state, you need to enable it through your tenant admin. If you already see Data workflows, your tenant admin may have already enabled it.
+> Since Apache Airflow Jobs are in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Jobs, your tenant admin may have already enabled it.
 
-1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Data workflows (preview)' section.
+1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Jobs (preview)' section.
 2. Select **Apply**.
 
 :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
-### Create a Data workflow
+### Create an Apache Airflow Job
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 
-2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Data workflows (preview)
+2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Jobs (preview)
 
    :::image type="content" source="media/data-workflows/more-options.png" lightbox="media/data-workflows/more-options.png" alt-text="Screenshot shows click on more options.":::
 
@@ -67,8 +67,7 @@ Data workflows provide a simple and efficient way to create and manage Apache Ai
 
    :::image type="content" source="media/data-workflows/notification-to-run-directed-acyclic-graph.png" alt-text="Screenshot to navigate to Apache Airflow UI from notification center." lightbox="media/data-workflows/notification-to-run-directed-acyclic-graph.png":::
 
-
-### Monitor your Data workflow DAG in Apache Airflow UI
+### Monitor your Apache Airflow DAG in Apache Airflow UI
 
 The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on the "Monitor in Apache Airflow" button.
 
@@ -78,4 +77,4 @@ The saved dag files are loaded in the Apache Airflow UI. You can monitor them by
 
 ## Related Content
 
-* [Install Private Package in Data workflows](data-workflows-install-private-package.md)
+- [Install Private Package in Apache Airflow jobs](data-workflows-install-private-package.md)

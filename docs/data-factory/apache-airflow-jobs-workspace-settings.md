@@ -1,6 +1,6 @@
 ---
-title: Data workflows workspace settings
-description: This article enumerates the Data workflow environment run-time configurations.
+title: Apache Airflow Jobs workspace settings
+description: This article enumerates the Apache Airflow jobs environment run-time configurations.
 author: nabhishek
 ms.author: abnarain
 ms.reviewer: abnarain
@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 04/24/2024
 ---
 
-# Data workflows workspace settings
+# Apache Airflow Jobs workspace settings
 
 > [!NOTE]
-> Data workflows is powered by Apache Airflow.
+> Apache Airflow Jobs are powered by Apache Airflow.
 >
 > [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-You can configure and manage the runtime settings of Apache Airflow in Data workflows and the default Apache Airflow runtime for the workspace. Data workflow offers the two types of the environment settings, that is, Starter pool and Custom pool. You can use the starter pool which is configured by default or create custom pools for your workspace. If the setting for customizing compute configurations for items is disabled, the starter pool is used for all environments within the workspace. Starter pools offer an instant Apache Airflow runtime, which is automatically deprovisioned when not in use. On the other hand, custom pools provide more flexibility and offer an always-on Apache Airflow runtime. This article outlines each setting and suggests ideal scenarios for their respective usage.
+You can configure and manage the runtime settings of Apache Airflow in Apache Airflow Jobs and the default Apache Airflow runtime for the workspace. Apache Airflow jobs offers the two types of the environment settings, that is, Starter pool and Custom pool. You can use the starter pool which is configured by default or create custom pools for your workspace. If the setting for customizing compute configurations for items is disabled, the starter pool is used for all environments within the workspace. Starter pools offer an instant Apache Airflow runtime, which is automatically deprovisioned when not in use. On the other hand, custom pools provide more flexibility and offer an always-on Apache Airflow runtime. This article outlines each setting and suggests ideal scenarios for their respective usage.
 
 ## Starter Pool and Custom Pool
 
@@ -50,4 +50,4 @@ The following table contains the list the properties of both the pools.
 
 ## Related content
 
-[Quickstart: Create a Data workflow.](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job.](../data-factory/create-data-workflows.md)
