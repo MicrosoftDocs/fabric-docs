@@ -326,7 +326,7 @@ Response 202: (No body)
 
 Example:
 
-```GET https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances/<job ID>```dotnetcli
+```GET https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items/<pipeline id>/jobs/instances/<job ID>```
 
 Response 200:
 
@@ -360,7 +360,8 @@ Response 202: (No body)
 
 ## Query activity runs
 
-example:
+Example:
+
 ```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/datapipelines/pipelineruns/<job id>/queryactivityruns```
 
 Body:
@@ -416,7 +417,7 @@ Response 200:
 
 ## Known limitations
 
-- Service Principal Auth (SPN) is currenty not supported
+- Service Principal Auth (SPN) is currently not supported.
 
 ## Related content
 
