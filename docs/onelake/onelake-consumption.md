@@ -73,6 +73,10 @@ When disaster recovery is enabled, the data in OneLake gets geo-replicated. Thus
 
 ## Disaster recovery transactions
 
+[!!IMPORTANT]
+
+Currently, OneLake BCDR transactions via Redirect are reported as non-BCDR. This is a temporary situation. Kindly check the [Known Issues](../get-started/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing) for updates on when the issue will be corrected.
+
 When disaster recovery is enabled for a given capacity, write operations consume higher capacity units.
 
 ### Disaster recovery operation types
