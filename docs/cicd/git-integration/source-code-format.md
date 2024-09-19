@@ -29,7 +29,7 @@ The item directory name is based on the following rules:
   - Trailing space or dot is replaced with its [HTML number](https://www.ascii-code.com/).
 - If that folder name isn't available, the name of the item's logicalID (GUID) is used instead of the display name.
 
-For example, if you have the following items in a workspace (note that the first and third item have an invisible leading and trailing space respectively):
+For example, if you have the following items in a workspace (note that the first and third items have an invisible leading and trailing space respectively):
 
 :::image type="content" source="./media/source-code-format/item-names.png" alt-text="Screenshot of list of items in a Fabric workspace.":::
 
@@ -38,7 +38,7 @@ The following directories are created in the Git repository:
 :::image type="content" source="./media/source-code-format/item-directory-names-git.png" alt-text="Screenshot of names of the Git directories containing the Fabric items.":::
 
 - Once created, Git integration never changes the name of a directory. Even if you change the name of the item, the directory name stays the same.
-- If you manually change the name of an item directory, make sure to take the item's dependencies into account. For example, if you change a semantic model's directory then you should make sure to update the path of the semantic model in the report's dependency file. Keep in mind that dependency locations vary between different Fabric experiences. Changing thr directory name *won't* cause an incoming chnge in the workspace.
+- If you manually change the name of an item directory, make sure to take the item's dependencies into account. For example, if you change a semantic model's directory then you should make sure to update the path of the semantic model in the report's dependency file. Keep in mind that dependency locations vary between different Fabric experiences. Changing the directory name *doesn't* cause an incoming change in the workspace.
 
 ## Directory content
 
