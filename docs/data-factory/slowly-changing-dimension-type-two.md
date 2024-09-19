@@ -63,7 +63,7 @@ This is the definition of the schema for this table and description for the fiel
 |RepSourceID|Number|A natural key from the source table that represents an identifier for an employee|
 |FirstName|Text|The first name of the employee. This field comes from the Source table|
 |LastName|Text|The last name of the employee. This field comes from the Source table|
-|Region|Text| The region in which the employee works for. This field comes from the Source table|
+|Region|Text| The region in which the employee works. This field comes from the Source table|
 |StartDate|Date|Date stamp that establishes when the record becomes effective|
 |EndDate|Date|Date stamp that establishes until when the record is effective|
 |IsCurrent|Logical|Simple flag to denote if the record is current or not. True represents that the record is current|
