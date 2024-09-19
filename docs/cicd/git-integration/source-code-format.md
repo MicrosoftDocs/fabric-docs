@@ -24,7 +24,7 @@ The item directory name is based on the following rules:
 
 - The pattern for the name is `{display name}.{public facing type}`.
 - If necessary, the following changes to the display name are made:
-  - [Invalid characters](https://dev.azure.com/powerbi/Power%20BI/_git/powerbi?path=/Sql/CloudBI/AS/src/PowerBI/GitIntegration/Utils/GitPath.cs&version=GBmaster&_a=contents) are replaced with the [HTML number](https://www.ascii-code.com/).
+  - Invalid characters are replaced with the [HTML number](https://www.ascii-code.com/).
   - Leading space is replaced with its [HTML number](https://www.ascii-code.com/).
   - Trailing space or dot is replaced with its [HTML number](https://www.ascii-code.com/).
 - If that folder name isn't available, the name of the item's logicalID (GUID) is used instead of the display name.
