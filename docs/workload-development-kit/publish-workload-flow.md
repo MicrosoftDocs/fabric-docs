@@ -17,7 +17,7 @@ The Fabric [Workload Hub](./more-workloads-add.md) is a place where users can br
 
 Publishing a partner workload in Fabric involves different steps. Before all Fabric users have access to it there are different stages available to test the workload and get early feedback from your customers.
 
-:::image type="content" source="./media/publish-workload-flow/publishing-process.png" alt-text="The publishing stages process are 1. Testing, 2. Preview Audience, 3. Preview, 4. General availability. They're explained in this article.":::
+:::image type="content" source="./media/publish-workload-flow/publishing-process.png" alt-text="Diagram showing that the steps in the publishing stages process are 1. Testing, 2. Preview Audience, 3. Preview, 4. General availability. They're explained in this article.":::
 
 As a first step you need to define your `Publishing tenant` and the `Workload ID` that you want to use. Both are fixed and can't be changed at a later time.
 

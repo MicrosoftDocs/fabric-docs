@@ -93,14 +93,6 @@
       href: pipeline-support.md
     - name: Service principal support
       href: service-principals.md
-    - name: Connector certification
-      items:
-      - name: Overview
-        href: connector-certification.md
-      - name: Submission
-        href: certification-submission.md
-      - name: Custom connector documentation
-        href: providing-user-documentation.md
     - name: Access database
       items:
       - name: Access database - Overview
@@ -695,6 +687,8 @@
         href: modern-get-data-experience-pipeline.md
       - name: Data type mapping
         href: data-type-mapping.md
+      - name: Use AI to turn sketches into pipelines
+        href: image-to-pipeline-with-ai.md        
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
@@ -896,7 +890,17 @@
   - name: Best practices
     items:
     - name: Copy performance for SQL databases
-      href: copy-performance-sql-databases.md          
+      href: copy-performance-sql-databases.md    
+  - name: Extensibility
+    items:
+      - name: Connector certification
+        items:
+        - name: Data Factory connector certification
+          href: connector-certification.md
+        - name: Connector certification submission
+          href: certification-submission.md
+        - name: Provide connector documentation
+          href: providing-user-documentation.md   
   - name: FAQ and Troubleshooting
     items:
     - name: Frequently asked questions
