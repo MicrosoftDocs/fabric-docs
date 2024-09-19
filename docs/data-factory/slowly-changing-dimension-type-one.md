@@ -7,7 +7,7 @@ ms.topic: tutorial
 ms.date: 9/18/2024
 ---
 
-# How to implement slowly changing dimension type 1
+# How to implement slowly changing dimension type 1 using Power Query
 
 Slowly changing dimensions, commonly referred to as SCD, is a framework for updating and maintaining data stored in dimension tables as dimensions change. There are a few different methods to handle changing dimensions, and these techniques are commonly referred to as slowly changing dimension "types."
 
@@ -53,7 +53,8 @@ let
                 "|")),
             BinaryEncoding.Hex)
         ),
-    {{"Hash", type text}}),
+        {{"Hash", type text}}
+    ),
 
     #"Marked key columns" = Table.AddKey(#"Added custom", {"Hash"}, false),
 
