@@ -9,7 +9,7 @@ ms.date: 9/19/2024
 
 # How to handle schema drift in Dataflow Gen2
 
-*Schema drift* is defined as any change that occurs to the structure of the data, such as when a new column is added or a column is removed. Dataflows allow schema drift management in several ways. Using type detection to change the destination according to the source schema is possible. Destination schema management on publish is also available. Each of these methods are specific to dataflows.
+*Schema drift* is defined as any change that occurs to the structure of the data, such as when a new column is added or a column is removed. Dataflows allow schema drift management in several ways. Using type detection to change the destination according to the source schema is possible. Destination schema management on publish is also available. Each of these methods is specific to dataflows.
 
 Let's explore how it's achieved.  
 
@@ -51,7 +51,7 @@ Schema options on publish only apply when the update method is replace. When you
 
 * **Fixed schema**: When you choose fixed schema, schema changes aren't possible. When the dataflow gets refreshed, only the rows in the table are dropped and replaced with the output data from the dataflow. Any relationships or measures on the table stay intact. If you make any changes to your query in the dataflow, the dataflow publish fails if it detects that the query schema doesn't match the data destination schema. Use this setting when you don't plan to change the schema and have relationships or measure added to your destination table.
 
-You see checkboxes or dropdowns depending on the schema update type (for example, for "Fixed") and if the table has already been created. If the table has alreading been created, you get dropdowns. If you create a new table, you're shown checkboxes because the destination table doesn't exist. Thus, Dataflow Gen2 allows you to update your schema before table creation.
+You see checkboxes or dropdowns depending on the schema update type (for example, for "Fixed") and if the table is already created. If the table is already created, you get dropdowns. If you create a new table, you're shown checkboxes because the destination table doesn't exist. Thus, Dataflow Gen2 allows you to update your schema before table creation.
 
 > [!NOTE]
 > When loading data into the warehouse, only fixed schema is supported. If a column isn't present in your initial settings and you add manually, "(none)" is displayed.  
