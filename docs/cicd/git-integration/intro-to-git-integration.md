@@ -16,6 +16,9 @@ ms.search.form: Git integration supported items, Introduction to Git integration
 
 This article explains to developers how to integrate Git version control with the Fabric Application lifecycle management (ALM) tool.
 
+> [!NOTE]
+> Some of the items for Git integration are in preview. For more information, see the list of [supported items](#supported-items).
+
 Git integration in Microsoft Fabric enables developers to integrate their development processes, tools, and best practices straight into the Fabric platform. It allows developers who are developing in Fabric to:
 
 * Backup and version their work
