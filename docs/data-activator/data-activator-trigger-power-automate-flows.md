@@ -54,7 +54,7 @@ triggerBody()?['customProperties/NAME_OF_INPUT_FIELD']
 
 ### Complete your custom action
 
-After you save your flow, return to Data Activator. Upon successful saving of the flow, you see a confirmation box in Data Activator. At this point, your custom action is complete, and you may move on to the next step, [calling your custom action from a trigger](#call-your-custom-action-from-a-trigger). If you need to rename your action, or edit the list of input fields, you can still do so at this point. Select **Done** when you're ready.
+After you save your flow, return to Data Activator. Upon successful saving of the flow, you see a confirmation box in Data Activator. At this point, your custom action is complete, and you may move on to the next step, [calling your custom action from a trigger](#call-your-custom-action-from-a-rule). If you need to rename your action, or edit the list of input fields, you can still do so at this point. Select **Done** when you're ready.
 
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-07.png" alt-text="Screenshot of custom action completion for data activator.":::
 
