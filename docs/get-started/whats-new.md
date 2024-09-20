@@ -22,8 +22,6 @@ This page is continuously updated with a recent review of what's new in [Microso
 
 ## New to Microsoft Fabric?
 
-This section includes articles and announcements for users new to Microsoft Fabric.
-
 - [Learning Paths for Fabric](/training/browse/?terms=fabric&resource_type=learning%20path)
 - [Get started with Microsoft Fabric](/training/paths/get-started-fabric/)
 - [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
