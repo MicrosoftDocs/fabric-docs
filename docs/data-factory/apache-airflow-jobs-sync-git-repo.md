@@ -30,7 +30,7 @@ With data workflows, you have two options for storing your workflow files: Fabri
 1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Jobs (preview)' section.
 2. Select **Apply**.
 
-:::image type="content" source="media/apache-airflow-jobs/enable-data-workflow-tenant.png" lightbox="media/apache-airflow-jobs/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+:::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 ### Create an Apache Airflow Job
 

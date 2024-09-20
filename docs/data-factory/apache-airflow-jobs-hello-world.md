@@ -30,7 +30,7 @@ To get started, you must complete the following prerequisite:
 
   2. Click Apply.
 
-     :::image type="content" source="media/apache-airflow-jobs/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/apache-airflow-jobs/enable-data-workflow-tenant.png":::
+     :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant." lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png":::
 
 ### Create an Apache Airflow Job
 

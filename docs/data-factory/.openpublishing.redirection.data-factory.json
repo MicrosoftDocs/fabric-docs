@@ -259,6 +259,11 @@
         "source_path_from_root": "/docs/data-factory/data-workflows-sync-git-repo.md",
         "redirect_url": "/docs/data-factory/apache-airflow-jobs-sync-git-repo.md",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/data-workflows-workspace-settings.md",
+        "redirect_url": "/docs/data-factory/data-workflows-workspace-settings.md",
+        "redirect_document_id": false
       }
     ]
 }
