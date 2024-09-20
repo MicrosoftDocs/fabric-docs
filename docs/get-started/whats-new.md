@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 09/05/2024
+ms.date: 09/19/2024
 ms.topic: whats-new
 ms.custom:
   - build-2024
@@ -28,11 +28,6 @@ This section includes articles and announcements for users new to Microsoft Fabr
 - [Get started with Microsoft Fabric](/training/paths/get-started-fabric/)
 - [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
 - [Definitions of terms used in Microsoft Fabric](fabric-terminology.md)
-
-|**Month** | **Feature** | **Learn more** |
-|:-- |:-- | :-- |
-|May 2024|**Power BI: Subscriptions, licenses, and trials**|Information on Power BI implementation planning and [key considerations for planning subscriptions, licenses, and trials for Power BI and Fabric](/power-bi/guidance/powerbi-implementation-planning-subscriptions-licenses-trials).|
-|May 2024|**Register for the Microsoft Build: Microsoft Fabric Cloud Skills Challenge**|Starting May 21, 2024, sign up for the [Microsoft Build: Microsoft Fabric Cloud Skills Challenge](/training/challenges?id=094443ef-321d-449c-96ef-2ffe6dcf9489) and prepare for Exam DP-600 and upskill to the Fabric Analytics Engineer Associate certification.|
 
 ## Features currently in preview
 
@@ -121,6 +116,7 @@ This section summarizes new Microsoft Fabric community opportunities for prospec
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|September 2024|**Announcing: The Microsoft Fabric & AI Learning Hackathon**|Get ready for [the Microsoft Fabric & AI Learning Hackathon](https://blog.fabric.microsoft.com/blog/announcing-the-microsoft-fabric-ai-learning-hackathon?ft=All)! We're calling all Data/AI Enthusiasts and Data/AI practitioners to join us for another exciting opportunity to upskill and build the next generation of Data + AI solutions with Microsoft Fabric! The Hackathon is open for a 7-week submission period and offers a total of $10,000 in prizes! |
 |August 2024|**Fabric Influencers Spotlight August 2024**|The [Fabric Influencers Spotlight August 2024](https://blog.fabric.microsoft.com/blog/fabric-influencers-spotlight-august-2024?ft=All) highlights and amplifies blog posts, videos, presentations, and other content related to Microsoft Fabric from members of Microsoft MVPs & Fabric Super Users from the Fabric community. |
 |August 2024|**Winners of the Fabric Community Sticker Challenge**|Congratulations to the winners of the [Fabric Community Sticker Challenge](https://community.fabric.microsoft.com/t5/Community-News/Winners-of-the-Fabric-Community-Sticker-Challenge/td-p/4073926)! |
 |July 2024|**Fabric Influencers Spotlight**|Introducing the new **Fabric Influencers Spotlight** series of articles to highlight and amplify blog posts, videos, presentations, and other content related to Microsoft Fabric. [Read blogs from Microsoft MVPs and Fabric Super Users from the Fabric community](https://blog.fabric.microsoft.com/blog/fabric-influencers-spotlight-july-2024?ft=All).|
@@ -155,6 +151,9 @@ This section summarizes recent new features and capabilities of [Data Factory in
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|September 2024|**Lakehouse Connector in Fabric Data Factory introduces Schema Support**|Fabric Lakehouse supports the creation of [custom schemas](../data-engineering/lakehouse-schemas.md).When reading from a Lakehouse table [with the Lakehouse Connector in Fabric Data Factory, custom schema information is now automatically included](https://blog.fabric.microsoft.com/blog/introducing-the-new-feature-in-lakehouse-connector-in-fabric-data-factory-schema-support-for-reading-and-writing-data?ft=All).|
+|September 2024|**Storage Integration Support in Snowflake Connector for Fabric Data Factory**|You can now [connect Snowflake with external storage solutions](https://blog.fabric.microsoft.com/blog/announcing-new-storage-integration-support-in-snowflake-connector-for-fabric-data-factory?ft=All) (such as Azure Blob Storage) using a secure and centralized approach. For more information, see [Snowflake SQL storage integration](https://docs.snowflake.com/en/sql-reference/sql/create-storage-integration).|
+|September 2024|**New Data Factory Connectors Released in Q3 2024**|New [Data Factory Connectors include Salesforce, Azure MySQL Database, and Azure Cosmos DB for MongoDB](https://blog.fabric.microsoft.com/blog/announcing-new-data-factory-connectors-released-in-q3-2024?ft=All). |
 |August 2024|**Certified connector updates**|Updated [Dataflow Gen2 connectors](../data-factory/dataflow-support.md) have been released, as well as two new [Data pipeline connectors](../data-factory/modern-get-data-experience-pipeline.md) for Salesforce and Vertica. For more information, see the [August 2024 Certified connector updates](https://blog.fabric.microsoft.com/blog/microsoft-fabric-august-2024-update?ft=All#post-13355-_Toc1586184621). |
 |August 2024|**Data Warehouse Connector Supports TLS 1.3**|The [Data Warehouse connector now supports TLS 1.3](https://blog.fabric.microsoft.com/blog/microsoft-fabric-august-2024-update?ft=All#post-13355-_Toc1148103571), the latest version of the Transport Layer Security protocol. |
 |August 2024|**Connect to your Azure Resources by Modern Get Data Experience in Data pipeline**| You can easily [browse and connect to your Azure resources automatically with the modern data experience of Data Pipeline](https://blog.fabric.microsoft.com/blog/microsoft-fabric-august-2024-update?ft=All#post-13355-_Toc1682513921).|
@@ -362,6 +361,7 @@ News and feature announcements core to the Microsoft Fabric experience.
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|September 2024|**Microsoft Fabric Achieves HITRUST CSF Certification**| Microsoft Fabric is now certified for [the HITRUST Common Security Framework (CSF) v11.0.1](https://blog.fabric.microsoft.com/blog/microsoft-fabric-achieves-hitrust-csf-certification?ft=All). |
 |August 2024|**OneLake data access role improvements**|Based on key feedback, we've [updated data access roles](https://blog.fabric.microsoft.com/blog/microsoft-fabric-august-2024-update?ft=All#post-13355-_Toc1180047233) with a user interface redesign. For more information, see [Get started with OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md).|
 |August 2024|**Workspace filter improvement to support nested folders**|We have [upgraded the filter experience](https://blog.fabric.microsoft.com/blog/microsoft-fabric-august-2024-update?ft=All#post-13355-_Toc451728527) to support filtering through the entire workspace or through a specific folder with all its nested folders.|
 |August 2024|**Announcing the availability of Trusted workspace access and Managed private endpoints in any Fabric capacity**|[Use Trusted workspace access and Managed Private endpoints in Fabric](https://blog.fabric.microsoft.com/blog/announcing-the-availability-of-trusted-workspace-access-and-managed-private-endpoints-in-any-fabric-capacity?ft=All) with any F capacity and enjoy the benefits of secure and optimized data access and connectivity.|
@@ -378,6 +378,8 @@ News and feature announcements core to the Microsoft Fabric experience.
 |May 2024|**Fabric workload dev kit (preview)**|The [Microsoft Fabric workload development kit](https://blog.fabric.microsoft.com/blog/microsoft-fabric-may-2024-update/#post-11444-_Toc167109037) extends to additional workloads and offers a robust developer toolkit for designing, developing, and interoperating with [Microsoft Fabric using frontend SDKs and backend REST APIs](https://aka.ms/Fabricdeveloperdocumentation).|
 |May 2024|**Introducing external data sharing (preview)**|[External Data Sharing (preview)](https://blog.fabric.microsoft.com/blog/microsoft-fabric-may-2024-update/#post-11444-_Toc167109039) is a new feature that makes it possible for Fabric users to share data from within their Fabric tenant with users in another Fabric tenant.|
 |May 2024|**Task flows in Microsoft Fabric (preview)**|The [preview of task flows in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/announcing-the-public-preview-of-task-flows-in-microsoft-fabric) is enabled for all Microsoft Fabric users. With [Fabric task flows](task-flow-overview.md), when designing a data project, you no longer need to use a whiteboard to sketch out the different parts of the project and their interrelationships. Instead, you can use a task flow to build and bring this key information into the project itself. |
+|May 2024|**Power BI: Subscriptions, licenses, and trials**|Information on Power BI implementation planning and [key considerations for planning subscriptions, licenses, and trials for Power BI and Fabric](/power-bi/guidance/powerbi-implementation-planning-subscriptions-licenses-trials).|
+|May 2024|**Register for the Microsoft Build: Microsoft Fabric Cloud Skills Challenge**|Starting May 21, 2024, sign up for the [Microsoft Build: Microsoft Fabric Cloud Skills Challenge](/training/challenges?id=094443ef-321d-449c-96ef-2ffe6dcf9489) and prepare for Exam DP-600 and upskill to the Fabric Analytics Engineer Associate certification.|
 
 For older updates, review the [Microsoft Fabric What's New archive](whats-new-archive.md#microsoft-fabric-core-features).
 
