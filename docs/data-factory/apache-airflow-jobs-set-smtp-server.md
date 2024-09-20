@@ -50,6 +50,7 @@ To enable email notifications and alerts, you need to set up a Simple Mail Trans
   | AIRFLOW_SMTP_SMTP_PASSWORD  | your_app_password    |
   | AIRFLOW_SMTP_SMTP_PORT      | 587                  |
   | AIRFLOW_SMTP_SMTP_MAIL_FROM | your_email@gmail.com |
+
   :::image type="content" source="media/apache-airflow-jobs/airflow-smtp-configurations.png" lightbox="media/apache-airflow-jobs/airflow-smtp-configurations.png" alt-text="Screenshot presents airflow confiurations for SMTP.":::
 
 ## Example: A DAG that sends an email on the DAG Failure
