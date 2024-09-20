@@ -56,4 +56,4 @@ You see checkboxes or dropdowns depending on the schema update type (for example
 > [!NOTE]
 > When loading data into the warehouse, only fixed schema is supported. If a column isn't present in your initial settings and you add manually, "(none)" is displayed.  
 
-:::image type="content" source="media/how-to-handle-schema-drift/schema-options-on-publish.png" alt-text="Screenshot of ":::
+:::image type="content" source="media/how-to-handle-schema-drift/schema-options-on-publish.png" alt-text="Screenshot of the schema options on publish dialog with fixed schema selected.":::
