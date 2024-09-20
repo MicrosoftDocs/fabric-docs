@@ -174,6 +174,22 @@ In some instances, the native execution engine might not be able to execute a qu
 
 :::image type="content" source="media\native\logs.jpg" alt-text="Screenshot showing how to check logs associated with the fallback mechanism." lightbox="media\native\logs.jpg":::
 
+## Monitor Queries and DataFrames executed by the engine 
+
+To better understand how the Native Execution engine is applied to SQL queries and DataFrame operations, and to drill down to the stage and operator levels, you can refer to the Spark UI and Spark History Server for more detailed information about the native engine execution. 
+
+### Native Execution Engine Tab
+
+You can navigate to the new 'Gluten SQL / DataFrame' tab to view the Gluten build information and query execution details. The Queries table provides insights into the number of nodes running on the Native engine and those falling back to the JVM for each query.
+
+:::image type="content" source="media\native\native-execution-engine-tab.png" alt-text="Screenshot showing native execution engine tab." lightbox="media\native\native-execution-engine-tab.png":::
+
+### Query Execution Graph
+
+You can also click on the query description for the Apache Spark query execution plan visualization. The execution graph provides native execution details across stages and their respective operations. Background colors differentiate the execution engines: green represents the Native Execution Engine, while light blue indicates that the operation is running on the default JVM Engine.
+
+:::image type="content" source="media\native\query-execution-graph.png" alt-text="Screenshot showing native execution engine tab." lightbox="media\native\query-execution-graph.png":::
+
 ## Limitations
 
 While the native execution engine enhances performance for Apache Spark jobs, note its current limitations.
