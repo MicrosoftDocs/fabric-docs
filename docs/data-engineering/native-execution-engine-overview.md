@@ -188,7 +188,7 @@ You can navigate to the new 'Gluten SQL / DataFrame' tab to view the Gluten buil
 
 You can also click on the query description for the Apache Spark query execution plan visualization. The execution graph provides native execution details across stages and their respective operations. Background colors differentiate the execution engines: green represents the Native Execution Engine, while light blue indicates that the operation is running on the default JVM Engine.
 
-:::image type="content" source="media\native\query-execution-graph.png" alt-text="Screenshot showing native execution engine tab." lightbox="media\native\query-execution-graph.png":::
+:::image type="content" source="media\native\query-execution-graph.jpeg" alt-text="Screenshot showing native execution engine tab." lightbox="media\native\query-execution-graph.jpeg":::
 
 ## Limitations
 
