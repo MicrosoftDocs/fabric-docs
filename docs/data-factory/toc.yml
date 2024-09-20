@@ -735,6 +735,8 @@
         href: dataflows-gen2-save-draft.md
       - name: How to obfuscate data
         href: data-obfuscation-with-delphix.md
+      - name: How to handle schema drift
+        href: how-to-handle-schema-drift.md
     - name: Tutorials
       items:
       - name: Use a dataflow in a pipeline
