@@ -48,7 +48,6 @@ Follow these steps to set up your copy activity using copy assistant.
 
    :::image type="content" source="media/copy-data-activity/choose-data-source.png" alt-text="Screenshot of Choose data source screen." lightbox="media/copy-data-activity/choose-data-source.png":::
 
-   :::image type="content" source="media/copy-data-activity/choose-azure-blob-storage-source.png" alt-text="Screenshot showing where to select the correct data source." lightbox="media/copy-data-activity/choose-azure-blob-storage-source.png":::
 
 2. Create a connection to your data source by selecting **Create new connection**.
 
@@ -66,15 +65,11 @@ Follow these steps to set up your copy activity using copy assistant.
 
 ### Configure your destination
 
-1. Select a data source type from the category. You'll use Azure Blob Storage as an example. Select **Azure Blob Storage**, and then select **Next**.
+1. Select a data source type from the category. You'll use Azure Blob Storage as an example. You can either create a new connection that links to a new Azure Blob Storage account by following the steps in the previous section or use an existing connection from the connection drop-down list. The capabilities of **Test connection** and **Edit** are available to each selected connection.
 
    :::image type="content" source="media/copy-data-activity/choose-destination.png" alt-text="Screenshot showing how to select Azure Blob Storage." lightbox="media/copy-data-activity/choose-destination.png":::
 
-2. You can either create a new connection that links to a new Azure Blob Storage account by following the steps in the previous section or use an existing connection from the connection drop-down list. The capabilities of **Test connection** and **Edit** are available to each selected connection.
-
-   :::image type="content" source="media/copy-data-activity/destination-connection-configuration.png" alt-text="Screenshot showing data connection options." lightbox="media/copy-data-activity/destination-connection-configuration.png":::
-
-3. Configure and map your source data to your destination. Then select **Next** to finish your destination configurations.
+1. Configure and map your source data to your destination. Then select **Next** to finish your destination configurations.
 
    :::image type="content" source="media/copy-data-activity/map-to-destination.png" alt-text="Screenshot of Map to destination screen." lightbox="media/copy-data-activity/map-to-destination.png":::
 
