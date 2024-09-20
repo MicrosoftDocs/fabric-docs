@@ -25,7 +25,7 @@ This article shows how to add a Kubernetes secret in Apache Airflow environment 
 
 1. Navigate to the `Environment configuration` page by clicking on `Configure Airflow`.
 2. Under `Kubernetes secrets` section, click on `New` button.
-   :::image type="content" source="media/data-workflows/kubernetes-new-secret.png" lightbox="media/data-workflows/kubernetes-new-secret.png" alt-text="Screenshot that shows button to add new Kubernetes secret." :::
+   :::image type="content" source="media/apache-airflow-jobs/kubernetes-new-secret.png" lightbox="media/apache-airflow-jobs/kubernetes-new-secret.png" alt-text="Screenshot that shows button to add new Kubernetes secret." :::
 3. Fill out the fields that appear in Dialog box:
    _ <strong>Name</strong>: Name of the Kubernetes secret.
    _ <strong>Namespace</strong>: The namespace to run within Kubernetes. By default: Fill the field as `adf`.
@@ -33,7 +33,7 @@ This article shows how to add a Kubernetes secret in Apache Airflow environment 
    _ <strong>Registry server url</strong>: URL of your private container registry, for example, `\registry_name\>.azurecr.io`.
    _ <strong>Username</strong>: Username of your private container registry.
    _ <strong>Password</strong>: Password to access the private container registry.
-   :::image type="content" source="media/data-workflows/kubernetes-new-secret-form.png" lightbox="media/data-workflows/kubernetes-new-secret-form.png" alt-text="Screenshot that shows form to add new Kubernetes secret." :::
+   :::image type="content" source="media/apache-airflow-jobs/kubernetes-new-secret-form.png" lightbox="media/apache-airflow-jobs/kubernetes-new-secret-form.png" alt-text="Screenshot that shows form to add new Kubernetes secret." :::
 4. Once all the fields are filled, click on the `Create` button to finalize the creation of the Kubernetes secret.
 
 ### A sample DAG using stored Kubernetes secret to pull a custom image from ACR.
@@ -72,4 +72,4 @@ acr_kubernetes = KubernetesPodOperator(
 
 ## Related Content
 
-[Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)

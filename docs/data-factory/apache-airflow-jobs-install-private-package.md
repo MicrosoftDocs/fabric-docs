@@ -71,8 +71,8 @@ Add the package as a requirement under `Airflow requirements`. Use the format `/
 
 For example, if your private package is located at `/dags/test/private.whl` in a GitHub repo, add the requirement `/opt/airflow/git/<repoName>.git/dags/test/private.whl` to the Airflow environment.
 
-:::image type="content" source="media/data-workflows/private-package.png" lightbox="media/data-workflows/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
+:::image type="content" source="media/apache-airflow-jobs/private-package.png" lightbox="media/apache-airflow-jobs/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
 
 ## Related Content
 
-[Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)

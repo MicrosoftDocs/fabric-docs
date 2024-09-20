@@ -26,7 +26,7 @@ Data Workflows, a transformative capability within Microsoft Fabric, redefines y
 
 ### Prerequisites
 
-- [Create a new or use an existing Data Workflow.](../data-factory/create-data-workflows.md)
+- [Create a new or use an existing Data Workflow.](../data-factory/create-apache-airflow-jobs.md)
 
 To enable customers to upgrade to Microsoft Fabric Data Workflows from Azure Workflow Orchestration Manager, consider the following two scenarios:
 
@@ -40,6 +40,6 @@ In this scenario, use the Git sync feature of Data Workflows to seamlessly synch
 
 ## Related content
 
-- [Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)
-- [Run Dag in Apache Airflow Jobs](../data-factory/data-workflows-hello-world.md)
-- [Apache Airflow Jobs workspace settings](../data-factory/data-workflows-workspace-settings.md)
+- [Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
+- [Run Dag in Apache Airflow Jobs](../data-factory/apache-airflow-jobs-hello-world.md)
+- [Apache Airflow Jobs workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)

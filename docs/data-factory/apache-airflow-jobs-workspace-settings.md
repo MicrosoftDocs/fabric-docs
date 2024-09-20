@@ -35,7 +35,7 @@ The following table contains the list the properties of both the pools.
 2. In the 'Data Factory' section, click on 'Data Workflow Settings.'
 3. You find that the Default Data Workflow Setting is currently set to Starter Pool. To switch to a Custom Pool, expand the dropdown menu labeled 'Default Data Workflow Setting' and select 'New Pool.'
 
-   :::image type="content" source="media/data-workflows/data-workflow-runtime-settings.png" lightbox="media/data-workflows/data-workflow-runtime-settings.png" alt-text="Screenshot shows data workflows run time settings.":::
+   :::image type="content" source="media/apache-airflow-jobs/data-workflow-runtime-settings.png" lightbox="media/apache-airflow-jobs/data-workflow-runtime-settings.png" alt-text="Screenshot shows data workflows run time settings.":::
 
 4. Customize the following properties according to your needs:
 
@@ -44,10 +44,10 @@ The following table contains the list the properties of both the pools.
    - Enable autoscale: This feature allows your Apache Airflow pool to scale nodes up or down as needed.
    - Extra nodes: Extra nodes enable the pool to run more DAGs concurrently. Each node provides the capacity to run three more workers.
 
-   :::image type="content" source="media/data-workflows/new-custom-pool.png" lightbox="media/data-workflows/new-custom-pool.png" alt-text="Screenshot shows custom pool settings in data workflow.":::
+   :::image type="content" source="media/apache-airflow-jobs/new-custom-pool.png" lightbox="media/apache-airflow-jobs/new-custom-pool.png" alt-text="Screenshot shows custom pool settings in data workflow.":::
 
 5. Click on 'Create' to finalize your configuration.
 
 ## Related content
 
-[Quickstart: Create an Apache Airflow Job.](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job.](../data-factory/create-apache-airflow-jobs.md)

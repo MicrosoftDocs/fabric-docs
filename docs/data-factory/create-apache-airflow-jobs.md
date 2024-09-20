@@ -27,7 +27,7 @@ Apache Airflow Jobs provide a simple and efficient way to create and manage Apac
 1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Jobs (preview)' section.
 2. Select **Apply**.
 
-:::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+:::image type="content" source="media/apache-airflow-jobs/enable-data-workflow-tenant.png" lightbox="media/apache-airflow-jobs/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 ### Create an Apache Airflow Job
 
@@ -35,9 +35,9 @@ Apache Airflow Jobs provide a simple and efficient way to create and manage Apac
 
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Jobs (preview)
 
-   :::image type="content" source="media/data-workflows/more-options.png" lightbox="media/data-workflows/more-options.png" alt-text="Screenshot shows click on more options.":::
+   :::image type="content" source="media/apache-airflow-jobs/more-options.png" lightbox="media/apache-airflow-jobs/more-options.png" alt-text="Screenshot shows click on more options.":::
 
-   :::image type="content" source="media/data-workflows/apache-airflow-project.png" alt-text="Screenshot to select Data Workflow.":::
+   :::image type="content" source="media/apache-airflow-jobs/apache-airflow-project.png" alt-text="Screenshot to select Data Workflow.":::
 
 3. Give a suitable name to your project and click on the "Create" button.
 
@@ -45,36 +45,36 @@ Apache Airflow Jobs provide a simple and efficient way to create and manage Apac
 
 1. Click on "New DAG file" card -> give the name to the file and Click on "Create" button.
 
-   :::image type="content" source="media/data-workflows/name-directed-acyclic-graph-file.png" alt-text="Screenshot to name the DAG file.":::
+   :::image type="content" source="media/apache-airflow-jobs/name-directed-acyclic-graph-file.png" alt-text="Screenshot to name the DAG file.":::
 
 2. A boilerplate DAG code is presented to you. You can edit the file as per your requirements.
 
-   :::image type="content" source="media/data-workflows/boilerplate-directed-acyclic-graph.png" lightbox="media/data-workflows/boilerplate-directed-acyclic-graph.png" alt-text="Screenshot presents boilerplate DAG file in Microsoft Fabric.":::
+   :::image type="content" source="media/apache-airflow-jobs/boilerplate-directed-acyclic-graph.png" lightbox="media/apache-airflow-jobs/boilerplate-directed-acyclic-graph.png" alt-text="Screenshot presents boilerplate DAG file in Microsoft Fabric.":::
 
 3. Click on "Save icon".
 
-   :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
+   :::image type="content" source="media/apache-airflow-jobs/click-on-save-icon.png" lightbox="media/apache-airflow-jobs/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
 ### Run a DAG
 
 1. Begin by clicking on the "Run DAG" button.
 
-   :::image type="content" source="media/data-workflows/run-directed-acyclic-graph.png" alt-text="Screenshot to run the DAG from data workflows UI." lightbox="media/data-workflows/run-directed-acyclic-graph.png":::
+   :::image type="content" source="media/apache-airflow-jobs/run-directed-acyclic-graph.png" alt-text="Screenshot to run the DAG from data workflows UI." lightbox="media/apache-airflow-jobs/run-directed-acyclic-graph.png":::
 
 2. Once initiated, a notification will promptly appear indicating the DAG is running.
 
 3. To monitor the progress of the DAG run, simply click on "View Details" within the notification center. This action will redirect you to the Apache Airflow UI, where you can conveniently track the status and details of the DAG run.
 
-   :::image type="content" source="media/data-workflows/notification-to-run-directed-acyclic-graph.png" alt-text="Screenshot to navigate to Apache Airflow UI from notification center." lightbox="media/data-workflows/notification-to-run-directed-acyclic-graph.png":::
+   :::image type="content" source="media/apache-airflow-jobs/notification-to-run-directed-acyclic-graph.png" alt-text="Screenshot to navigate to Apache Airflow UI from notification center." lightbox="media/apache-airflow-jobs/notification-to-run-directed-acyclic-graph.png":::
 
 ### Monitor your Apache Airflow DAG in Apache Airflow UI
 
 The saved dag files are loaded in the Apache Airflow UI. You can monitor them by clicking on the "Monitor in Apache Airflow" button.
 
-:::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
+:::image type="content" source="media/apache-airflow-jobs/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 
-:::image type="content" source="media/data-workflows/directed-acyclic-graph-in-ui.png" alt-text="Screenshot presents the loaded Airflow DAG.":::
+:::image type="content" source="media/apache-airflow-jobs/directed-acyclic-graph-in-ui.png" alt-text="Screenshot presents the loaded Airflow DAG.":::
 
 ## Related Content
 
-- [Install Private Package in Apache Airflow jobs](data-workflows-install-private-package.md)
+- [Install Private Package in Apache Airflow jobs](apache-airflow-jobs-install-private-package.md)

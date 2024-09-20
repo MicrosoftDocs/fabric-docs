@@ -34,14 +34,14 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 
 - **Airflow Requirements**: Install [apache-airflow-providers-microsoft-azure](https://airflow.apache.org/docs/apache-airflow-providers-microsoft-azure/stable/index.html) during your initial Airflow environment setup.
 
-  :::image type="content" source="media/data-workflows/enable-azure-key-vault-requirement.png" alt-text="Screenshot that shows the Airflow Environment Setup window highlighting the Airflow requirements." lightbox="media/data-workflows/enable-azure-key-vault-requirement.png":::
+  :::image type="content" source="media/apache-airflow-jobs/enable-azure-key-vault-requirement.png" alt-text="Screenshot that shows the Airflow Environment Setup window highlighting the Airflow requirements." lightbox="media/apache-airflow-jobs/enable-azure-key-vault-requirement.png":::
 
 - **Configuration overrides**: Add the following settings for the **Airflow configuration overrides** in integration runtime properties:
 
   - **AIRFLOW**SECRETS**BACKEND**: `airflow.providers.microsoft.azure.secrets.key_vault.AzureKeyVaultBackend`
   - **AIRFLOW**SECRETS**BACKEND_KWARGS**: `{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "vault_url": **\<your keyvault uri\>**}`
 
-  :::image type="content" source="media/data-workflows/enable-azure-key-vault-configurations.png" alt-text="Screenshot that shows the configuration of the Airflow configuration overrides setting in the Airflow environment setup." lightbox="media/data-workflows/enable-azure-key-vault-configurations.png":::
+  :::image type="content" source="media/apache-airflow-jobs/enable-azure-key-vault-configurations.png" alt-text="Screenshot that shows the configuration of the Airflow configuration overrides setting in the Airflow environment setup." lightbox="media/apache-airflow-jobs/enable-azure-key-vault-configurations.png":::
 
 - **Environment variables**: Add the following variables for the configuration in the Airflow integration runtime properties:
 
@@ -95,8 +95,8 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 
 1. Stored variable in Azure Key Vault.
 
-   :::image type="content" source="media/data-workflows/variable-in-azure-key-vault.png" alt-text="Screenshot that shows the configuration of secrets in Azure Key Vault." lightbox="media/data-workflows/variable-in-azure-key-vault.png":::
+   :::image type="content" source="media/apache-airflow-jobs/variable-in-azure-key-vault.png" alt-text="Screenshot that shows the configuration of secrets in Azure Key Vault." lightbox="media/apache-airflow-jobs/variable-in-azure-key-vault.png":::
 
 ## Related Content
 
-[Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)

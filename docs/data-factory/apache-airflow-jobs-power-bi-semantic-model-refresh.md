@@ -31,7 +31,7 @@ To get started, you must complete the following prerequisites:
   1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Jobs (preview)" section.
   2. Select Apply.
 
-  :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+  :::image type="content" source="media/apache-airflow-jobs/enable-data-workflow-tenant.png" lightbox="media/apache-airflow-jobs/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - Your tenant-level admin must enable "Service principals can use Fabric APIs":
 
@@ -40,11 +40,11 @@ To get started, you must complete the following prerequisites:
   3. Toggle the "Enabled" button and choose either "The entire organization" or "Specific security groups."
   4. Select Apply.
 
-  :::image type="content" source="media/data-workflows/service-principal-use-fabric-api.png" lightbox="media/data-workflows/service-principal-use-fabric-api.png" alt-text="Screenshot to enable Service principal usage in Fabric APIs tenant.":::
+  :::image type="content" source="media/apache-airflow-jobs/service-principal-use-fabric-api.png" lightbox="media/apache-airflow-jobs/service-principal-use-fabric-api.png" alt-text="Screenshot to enable Service principal usage in Fabric APIs tenant.":::
 
 - Create the [Service Principal](/entra/identity-platform/howto-create-service-principal-portal). You need to add your service principal as the Contributor in your Power BI workspace.
 
-- [Create the "Apache Airflow Jobs" in the workspace.](../data-factory/create-data-workflows.md)
+- [Create the "Apache Airflow Jobs" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 
 - [Create a semantic model in Power BI](https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html)
 
@@ -56,13 +56,13 @@ To get started, you must complete the following prerequisites:
 
 3. Select "Apply," to save the changes.
 
-   :::image type="content" source="media/data-workflows/databricks-add-requirement.png" lightbox="media/data-workflows/databricks-add-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
+   :::image type="content" source="media/apache-airflow-jobs/databricks-add-requirement.png" lightbox="media/apache-airflow-jobs/databricks-add-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
 
 ## Create an Apache Airflow connection to connect with Power BI workspace
 
 1. Select on the "View Airflow connections" to see a list of all the connections are configured.
 
-   :::image type="content" source="media/data-workflows/view-apache-airflow-connection.png" lightbox="media/data-workflows/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
+   :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
 2. Add the new connection. You may use `Generic` connection type. Store the following fields:
 
@@ -110,7 +110,7 @@ with DAG(
 
 3. Select on "Save," to save the file.
 
-   :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
+   :::image type="content" source="media/apache-airflow-jobs/click-on-save-icon.png" lightbox="media/apache-airflow-jobs/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
 ## Create a plugin file for Power BI (Optional)
 
@@ -147,8 +147,8 @@ class AirflowExtraLinkPlugin(AirflowPlugin):
 
 After you click on save, files are automatically loaded into the Apache Airflow UI. To monitor them, select on the "Monitor in Apache Airflow" button.
 
-:::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
+:::image type="content" source="media/apache-airflow-jobs/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 
 ## Related Content
 
-[Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)

@@ -26,12 +26,12 @@ To get started, you must complete the following prerequisites:
 
   1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Jobs (preview)' section.
   2. Select Apply.
-     :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+     :::image type="content" source="media/apache-airflow-jobs/enable-data-workflow-tenant.png" lightbox="media/apache-airflow-jobs/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - [Create a Microsoft Entra ID app](/azure/active-directory/develop/quickstart-register-app) if you don't have one.
 
 - Tenant level admin account must enable the setting 'Allow user consent for apps'. Refer to: [Configure user consent](/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
-  :::image type="content" source="media/data-workflows/user-consent.png" lightbox="media/data-workflows/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
+  :::image type="content" source="media/apache-airflow-jobs/user-consent.png" lightbox="media/apache-airflow-jobs/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
 
 - Obtain a refresh token for authentication. Follow the steps in the [Get Refresh Token](/entra/identity-platform/v2-oauth2-auth-code-flow#refresh-the-access-token) section.
 
@@ -48,7 +48,7 @@ apache-airflow-microsoft-fabric-plugin
 ## Create an Airflow connection for Microsoft Fabric
 
 1. Navigate to "View Airflow connections" to see all configured connections.
-   :::image type="content" source="media/data-workflows/view-apache-airflow-connection.png" lightbox="media/data-workflows/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
+   :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
 2. Add a new connection, using the `Generic` connection type. Configure it with:
 
@@ -117,12 +117,12 @@ Create a new file in the plugins folder with the following content:
 1. Go to the Airflow UI and select the DAG you created.
 
 2. If you add the plugin, you see an external monitoring link. Clicking it navigates you to the item run.
-   :::image type="content" source="media/data-workflows/view-apache-airflow-dags-external-link.png" lightbox="media/data-workflows/view-apache-airflow-dags-external-link.png" alt-text="Screenshot to view Apache Airflow DAGs with external link.":::
+   :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-dags-external-link.png" alt-text="Screenshot to view Apache Airflow DAGs with external link.":::
 
 3. Xcom Integration: Trigger the DAG to view task outputs in the Xcom tab.
-   :::image type="content" source="media/data-workflows/view-apache-airflow-dags-xcom.png" lightbox="media/data-workflows/view-apache-airflow-dags-xcom.png" alt-text="Screenshot to view Apache Airflow DAGs with Xcom tab.":::
+   :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-dags-xcom.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-dags-xcom.png" alt-text="Screenshot to view Apache Airflow DAGs with Xcom tab.":::
 
 ## Related Content
 
-[Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)
-[Apache Airflow Jobs workspace settings](../data-factory/data-workflows-workspace-settings.md)
+[Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
+[Apache Airflow Jobs workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)

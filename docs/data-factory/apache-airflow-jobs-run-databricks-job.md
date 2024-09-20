@@ -32,9 +32,9 @@ To get started, you must complete the following prerequisites:
 
   2. Select Apply.
 
-  :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+  :::image type="content" source="media/apache-airflow-jobs/enable-data-workflow-tenant.png" lightbox="media/apache-airflow-jobs/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
-- [Create the "Apache Airflow Jobs" in the workspace.](../data-factory/create-data-workflows.md)
+- [Create the "Apache Airflow Jobs" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 
 - [Create a basic ETL pipeline with Databricks](https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html)
 
@@ -46,7 +46,7 @@ To get started, you must complete the following prerequisites:
 
 3. Select "Apply," to save the changes.
 
-   :::image type="content" source="media/data-workflows/databricks-add-requirement.png" lightbox="media/data-workflows/databricks-add-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
+   :::image type="content" source="media/apache-airflow-jobs/databricks-add-requirement.png" lightbox="media/apache-airflow-jobs/databricks-add-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
 
 ## Create an Azure Databricks personal access token for Apache Airflow connection
 
@@ -64,7 +64,7 @@ When you install "apache-airflow-providers-databricks" as a requirement in Apach
 
 1. Select on the "View Airflow connections" to see a list of all the connections configured.
 
-   :::image type="content" source="media/data-workflows/view-apache-airflow-connection.png" lightbox="media/data-workflows/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
+   :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
 2. Under Conn ID, locate databricks_default and select the Edit record button.
 
@@ -104,14 +104,14 @@ with DAG('databricks_dag',
 
 1. Select on "Save," to save the file.
 
-   :::image type="content" source="media/data-workflows/click-on-save-icon.png" lightbox="media/data-workflows/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
+   :::image type="content" source="media/apache-airflow-jobs/click-on-save-icon.png" lightbox="media/apache-airflow-jobs/click-on-save-icon.png" alt-text="Screenshot presents how to save DAG file in Microsoft Fabric.":::
 
 ## Monitor the Apache Airflow DAG and run it from Apache Airflow UI
 
 After saving, the DAG files are automatically loaded into the Apache Airflow UI. To monitor them, select on the "Monitor in Apache Airflow" button.
 
-:::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
+:::image type="content" source="media/apache-airflow-jobs/monitor-directed-acyclic-graph.png" alt-text="Screenshot to monitor the Airflow DAG.":::
 
 ## Related Content
 
-[Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)

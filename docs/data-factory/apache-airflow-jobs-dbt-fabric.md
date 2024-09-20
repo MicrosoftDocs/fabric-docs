@@ -33,13 +33,13 @@ To get started, you must complete the following prerequisites:
   1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Jobs (preview)" section.
 
   2. Select Apply.
-     :::image type="content" source="media/data-workflows/enable-data-workflow-tenant.png" lightbox="media/data-workflows/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+     :::image type="content" source="media/apache-airflow-jobs/enable-data-workflow-tenant.png" lightbox="media/apache-airflow-jobs/enable-data-workflow-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal). Add the service principal as the `Contributor` in the workspace where you create data warehouse.
 
 - If you don't have one, [Create a Fabric warehouse](../data-warehouse/create-warehouse.md). Ingest the sample data into the warehouse using data pipeline. For this tutorial, we use the <strong>NYC Taxi-Green</strong> sample.
 
-- [Create the "Apache Airflow Jobs" in the workspace.](../data-factory/create-data-workflows.md)
+- [Create the "Apache Airflow Jobs" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 
 ## Transform the data stored in Fabric warehouse using dbt
 
@@ -77,7 +77,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
    ```
 
 2. Create the folder named `nyc_taxi_green` in the `dags` folder with `profiles.yml` file. This folder contains all the files required for dbt project.
-   :::image type="content" source="media/data-workflows/dbt-profiles.png" lightbox="media/data-workflows/dbt-profiles.png" alt-text="Screenshot shows create files for the dbt project.":::
+   :::image type="content" source="media/apache-airflow-jobs/dbt-profiles.png" lightbox="media/apache-airflow-jobs/dbt-profiles.png" alt-text="Screenshot shows create files for the dbt project.":::
 
 3. Copy the following contents into the `profiles.yml`. This configuration file contains database connection details and profiles used by dbt.
    Update the placeholder values and save the file.
@@ -154,7 +154,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
       select * from final
    ```
 
-   :::image type="content" source="media/data-workflows/dbt-models.png" lightbox="media/data-workflows/dbt-models.png" alt-text="Screenshot shows models for the dbt project.":::
+   :::image type="content" source="media/apache-airflow-jobs/dbt-models.png" lightbox="media/apache-airflow-jobs/dbt-models.png" alt-text="Screenshot shows models for the dbt project.":::
 
 ### [Create an Apache Airflow DAG to orchestrate dbt jobs](#create-an-apache-airflow-dag-to-orchestrate-dbt-jobs)
 
@@ -188,17 +188,17 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
 ## Run your DAG
 
 1. Run the DAG within Apache Airflow Jobs.
-   :::image type="content" source="media/data-workflows/run-directed-acyclic-graph.png" lightbox="media/data-workflows/run-directed-acyclic-graph.png" alt-text="Screenshot shows run dag.":::
+   :::image type="content" source="media/apache-airflow-jobs/run-directed-acyclic-graph.png" lightbox="media/apache-airflow-jobs/run-directed-acyclic-graph.png" alt-text="Screenshot shows run dag.":::
 
 1. To see your dag loaded in the Apache Airflow UI, Click on `Monitor in Apache Airflow.`
-   :::image type="content" source="media/data-workflows/monitor-directed-acyclic-graph.png" lightbox="media/data-workflows/monitor-directed-acyclic-graph.png" alt-text="Screenshot shows how to monitor dbt dag.":::
-   :::image type="content" source="media/data-workflows/dag-run-success.png" lightbox="media/data-workflows/dag-run-success.png" alt-text="Screenshot shows successful dag run.":::
+   :::image type="content" source="media/apache-airflow-jobs/monitor-directed-acyclic-graph.png" lightbox="media/apache-airflow-jobs/monitor-directed-acyclic-graph.png" alt-text="Screenshot shows how to monitor dbt dag.":::
+   :::image type="content" source="media/apache-airflow-jobs/dag-run-success.png" lightbox="media/apache-airflow-jobs/dag-run-success.png" alt-text="Screenshot shows successful dag run.":::
 
 ## Validate your data
 
 - After a successful run, to validate your data, you can see the new table named 'nyc_trip_count.sql' created in your Fabric data warehouse.
-  :::image type="content" source="media/data-workflows/dbt-successful.png" lightbox="media/data-workflows/dbt-successful.png" alt-text="Screenshot shows successful dbt dag.":::
+  :::image type="content" source="media/apache-airflow-jobs/dbt-successful.png" lightbox="media/apache-airflow-jobs/dbt-successful.png" alt-text="Screenshot shows successful dbt dag.":::
 
 ## Related content
 
-[Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)

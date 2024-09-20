@@ -73,4 +73,4 @@ Data Workflows in Data Factory for Microsoft Fabric offer a range of powerful fe
 
 ## Related Content
 
-- Quickstart: [Create an Apache Airflow Job](../data-factory/create-data-workflows.md).
+- Quickstart: [Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md).

@@ -52,7 +52,7 @@ To use email notifications and alerts, you need to set up a (Simple Mail Transfe
   | AIRFLOW**SMTP**SMTP_PORT      | 587                  |
   | AIRFLOW**SMTP**SMTP_MAIL_FROM | your_email@gmail.com |
 
-  :::image type="content" source="media/data-workflows/airflow-smtp-configurations.png" lightbox="media/data-workflows/airflow-smtp-configurations.png" alt-text="Screenshot presents airflow confiurations for SMTP.":::
+  :::image type="content" source="media/apache-airflow-jobs/airflow-smtp-configurations.png" lightbox="media/apache-airflow-jobs/airflow-smtp-configurations.png" alt-text="Screenshot presents airflow confiurations for SMTP.":::
 
 ## Example: A DAG that sends an email on the DAG Failure
 
@@ -96,8 +96,8 @@ The email contains the following information:
 - Host: Host Name of Apache Airflow Jobs
 - Mark success: Link that redirects to the Failed DAG state.
 
-  :::image type="content" source="media/data-workflows/airflow-email.png" lightbox="media/data-workflows/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::
+  :::image type="content" source="media/apache-airflow-jobs/airflow-email.png" lightbox="media/apache-airflow-jobs/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::
 
 ## Related Content
 
-[Quickstart: Create an Apache Airflow Job](../data-factory/create-data-workflows.md)
+[Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
