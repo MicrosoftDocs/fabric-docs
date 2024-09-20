@@ -7,9 +7,7 @@ author: nabhishek
 ms.topic: quickstart
 ms.custom:
   - build-2024
-# ms.custom:
-#   - ignite-2023
-ms.date: 03/25/2024
+ms.date: 09/16/2024
 ---
 
 # Quickstart: Create a Data workflow

@@ -4,7 +4,7 @@ description: This article provides an overview of the Azure Data Lake Storage Ge
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/22/2024
+ms.date: 09/16/2024
 ms.custom:
   - template-how-to
   - build-2023

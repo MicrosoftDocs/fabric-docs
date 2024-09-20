@@ -5,7 +5,7 @@ author: nikkiwaghani
 ms.author: nikkiwaghani
 ms.reviewer: dougklo
 ms.topic: conceptual
-ms.date: 1/16/2024
+ms.date: 09/16/2024
 ---
 
 # Service principal support in Data Factory
