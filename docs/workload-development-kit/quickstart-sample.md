@@ -20,6 +20,8 @@ Before you begin, ensure that you have the following installed on your system:
 * Access to a Fabric tenant with the workload feature and developer mode enabled. See [Introducing workloads](./workload-environment.md) for more information.
 * [Node.js](https://nodejs.org).
 * [npm](https://www.npmjs.com/).
+* [.NET 6.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-6.0.31-windows-x64-installer?cid=getdotnetcore).
+* [ASP.NET Core Runtime 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-6.0.31-windows-x64-installer?cid=getdotnetcore).
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/).
 * [Fabric Workload DevGateway](https://go.microsoft.com/fwlink/?linkid=2272516)
 
