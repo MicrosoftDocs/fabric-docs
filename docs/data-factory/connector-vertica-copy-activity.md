@@ -15,6 +15,26 @@ ms.custom:
 
 This article outlines how to use the copy activity in a data pipeline to copy data from Vertica.
 
+## Prerequisites
+
+To use Vertica connector, install the Vertica ODBC driver on the machine by following these steps:
+
+1. Download the Vertica client setup for ODBC driver from [Client Drivers | OpenText™ Vertica™](https://www.vertica.com/download/vertica/client-drivers/). Take Windows system setup as an example:
+
+   :::image type="content" source="media/connector-vertica/download.png" alt-text="Screenshot of a Windows system setup example.":::  
+
+1. Open the downloaded .exe to begin the installation process.
+
+   :::image type="content" source="media/connector-vertica/install.png" alt-text="Screenshot of the installation process.":::
+
+1. Select **ODBC driver** under Vertica Component List, then select **Next** to start the installation.
+
+   :::image type="content" source="media/connector-vertica/select-odbc-driver.png" alt-text="Screenshot of selecting ODBC driver.":::
+
+1. After the installation process is successfully completed, you can go to  Start -> ODBC Data Source Administrator to confirm the successful installation.
+
+   :::image type="content" source="media/connector-vertica/confirm-the successful-installation.png" alt-text="Screenshot of confirming the successful installation.":::
+
 ## Supported configuration
 
 For the configuration of each tab under the copy activity, go to the following sections respectively.
