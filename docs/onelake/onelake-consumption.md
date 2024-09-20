@@ -73,9 +73,9 @@ When disaster recovery is enabled, the data in OneLake gets geo-replicated. Thus
 
 ## Disaster recovery transactions
 
-[!!IMPORTANT]
-
-Currently, OneLake BCDR transactions via Redirect are consuming Fabric CUs at the rate of non-BCDR transactions. The CU consumption for OneLake BCDR write operations is higher than non-BCDR. This is a temporary situation. Kindly check the [Known Issues](../get-started/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) for updates on when the issue will be corrected.
+> [!IMPORTANT]
+> 
+> Currently, OneLake BCDR transactions via Redirect are consuming Fabric CUs at the rate of non-BCDR transactions. The CU consumption for OneLake BCDR write operations is higher than non-BCDR. This is a temporary situation. Kindly check the [Known Issues](../get-started/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) for updates on when the issue will be corrected.
 
 When disaster recovery is enabled for a given capacity, write operations consume higher capacity units.
 
