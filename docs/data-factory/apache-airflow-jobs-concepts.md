@@ -1,6 +1,6 @@
 ---
-title: What are Apache Airflow jobs?
-description: Learn about when to use Data Workflows, basic concepts and supported regions.
+title: What is Apache Airflow job?
+description: Learn about when to use Apache Airlfow job, basic concepts and supported regions.
 ms.topic: conceptual
 ms.custom:
   - build-2024
@@ -9,22 +9,21 @@ ms.author: abnarain
 ms.date: 04/16/2024
 ---
 
-# What are Apache Airflow Jobs?
+# What is Apache Airflow Job?
 
 > [!NOTE]
-> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-Apache Airflow Jobs are the next generation of Azure Data Factory's Workflow Orchestration Manager. Data Factory in Fabric offers serverless pipelines for data process orchestration, data movement with 100+ managed connectors, and visual transformations with the mapping data flow.
+Apache Airflow job is the next generation of Azure Data Factory's Workflow Orchestration Manager.
+It is a simple and efficient way to create and manage [Apache Airflow](https://airflow.apache.org) orchestration jobs, enabling you to run Directed Acyclic Graphs (DAGs) at scale with ease.  It is the part of Fabric's Data Factory that empowers you with a modern data integration experience to ingest, prepare and transform data from a rich set of data sources (for example, databases, data warehouse, Lakehouse, real-time data, and more).
 
-Data Workflows is a simple and efficient way to create and manage [Apache Airflow](https://airflow.apache.org) environments, enabling you to run data pipelines at scale with ease. Developers can focus on writing business logic without worrying about the underlying infrastructure. It abstracts away the complexities of distributed systems, allowing developers to build resilient and scalable DAGs.
+## When to use Apache Airflow job?
 
-## When to use Data Workflows?
-
-Data Workflows is a Managed service that offers allows the users to create and manage Apache Airflow based python DAGs (python code-centric authoring) for defining the data orchestration process without having to manage the underlying infrastructure. If you have the Apache Airflow background, or are currently using Apache Airflow, you might prefer to use the Data Workflows. On the contrary, if you wouldn't like to write/ manage python-based DAGs for data process orchestration, you might prefer to use pipelines.
+Apache Airflow jobs offers a managed service that enable users to create and manage Python-based DAGs (Directed Acyclic Graphs) for workflow orchestration, without worrying about the underlying infrastructure. If you have experience with Apache Airflow or you prefer code-centric approach, this option is ideal. In contrast, if you prefer a no-code solution for data orchestration, data pipelines offer a user-friendly alternative that doesn’t require managing or writing Python-based workflows.
 
 ## Key Features
 
-Data Workflows in Data Factory for Microsoft Fabric offer a range of powerful features, including:
+Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, including:
 
 | Key Features                                                                       | Data Workflows in Fabric | Workflow Orchestration Manager in ADF |
 | ---------------------------------------------------------------------------------- | ------------------------ | ------------------------------------- |

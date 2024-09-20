@@ -13,18 +13,18 @@ ms.date: 09/16/2024
 # Quickstart: Create an Apache Airflow Job
 
 > [!NOTE]
-> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex jobs. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex jobs. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-Apache Airflow Jobs provide a simple and efficient way to create and manage Apache Airflow environments, enabling you to run your orchestration jobs at scale with ease. In this quickstart, let's create a simple Apache Airflow job to familiarize yourself with the environment and functionalities of Apache Airflow Jobs.
+Apache Airflow Job provide a simple and efficient way to create and manage Apache Airflow environments, enabling you to run your orchestration jobs at scale with ease. In this quickstart, let's create a simple Apache Airflow job to familiarize yourself with the environment and functionalities of Apache Airflow Job.
 
 ## Prerequisites
 
-- Enable Apache Airflow Jobs in your Tenant.
+- Enable Apache Airflow Job in your Tenant.
 
 > [!NOTE]
-> Since Apache Airflow Jobs are in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Jobs, your tenant admin may have already enabled it.
+> Since Apache Airflow job is in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it.
 
-1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Jobs (preview)' section.
+1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Job (preview)' section.
 2. Select **Apply**.
 
 :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
@@ -33,7 +33,7 @@ Apache Airflow Jobs provide a simple and efficient way to create and manage Apac
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 
-2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Jobs (preview)
+2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Job (preview)
 
    :::image type="content" source="media/apache-airflow-jobs/more-options.png" lightbox="media/apache-airflow-jobs/more-options.png" alt-text="Screenshot shows click on more options.":::
 
@@ -77,4 +77,4 @@ The saved dag files are loaded in the Apache Airflow UI. You can monitor them by
 
 ## Related Content
 
-- [Install Private Package in Apache Airflow jobs](apache-airflow-jobs-install-private-package.md)
+- [Install Private Package in Apache Airflow job](apache-airflow-jobs-install-private-package.md)

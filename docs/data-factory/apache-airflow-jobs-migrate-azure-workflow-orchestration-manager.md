@@ -1,6 +1,6 @@
 ---
-title: Migrate to Apache Airflow Jobs in Microsoft Fabric
-description: Learn to migrate from Azure workflow orchestration manager to Apache Airflow Jobs in Microsoft Fabric.
+title: Migrate to Apache Airflow Job in Microsoft Fabric
+description: Learn to migrate from Azure workflow orchestration manager to Apache Airflow Job in Microsoft Fabric.
 ms.reviewer: abnarain
 ms.author: v-ambgarg
 author: abnarain
@@ -8,14 +8,14 @@ ms.topic: how-to
 ms.date: 07/26/2024
 ---
 
-# Migrate to Data Workflows in Microsoft Fabric
+# Migrate to Apache Airflow job in Microsoft Fabric
 
-Data Workflows, a transformative capability within Microsoft Fabric, redefines your approach to constructing and managing data pipelines. Powered by the Apache Airflow runtime, Data Workflows provides an integrated, cloud-based platform for developing, scheduling, and monitoring Python-based data workflows, articulated as Directed Acyclic Graphs (DAGs). It delivers a Software-as-a-Service (SaaS) experience for data pipeline development and management using Apache Airflow. This makes the Apache Airflow runtime easily accessible, enabling the creation and operation of your data workflows.
+Apache Airflow job, a transformative capability within Microsoft Fabric, redefines your approach to constructing and managing data pipelines. Powered by the Apache Airflow runtime, Apache Airflow jobs provides an integrated, cloud-based platform for developing, scheduling, and monitoring Python-based DAGs(Directed Acyclic Graphs). It delivers a Software-as-a-Service (SaaS) experience for data pipeline development and management using Apache Airflow. This makes the Apache Airflow runtime easily accessible, enabling the creation and operation of your Airflow DAGs.
 
-## Key concepts in Data Workflows
+## Key concepts in Apache Airflow job
 
 - **Instant Apache Airflow Runtime Provisioning**: Initiate a new Data Workflow and immediately access an Apache Airflow runtime to run, debug, and operationalize your DAGs.
-- **Versatile Cloud-Based Authoring (IDE)**: In addition to your existing development tools to craft Apache Airflow DAGs, you can utilize the cloud-based authoring environment provided by Apache Airflow Jobs for a truly cloud-native and SaaS-optimized authoring and debugging experience.
+- **Versatile Cloud-Based Authoring (IDE)**: In addition to your existing development tools to craft Apache Airflow DAGs, you can utilize the cloud-based authoring environment provided by Apache Airflow Job for a truly cloud-native and SaaS-optimized authoring and debugging experience.
 - **Dynamic Auto-Scaling**: Execute hundreds of Apache Airflow tasks concurrently with our autoscaling feature, designed to mitigate job queuing and enhance performance.
 - **Intelligent Auto-pause**: Achieve cost-effectiveness by automatically pausing the Apache Airflow runtime minutes after inactivity in Data Workflows, optimizing capacity usage, particularly during development phases where continuous runtime is unnecessary.
 - **Enhanced Built-in Security**: Integrated within Microsoft Fabric, the Apache Airflow runtime supports Microsoft Entra ID, facilitating single sign-On (SSO) experiences when interfacing with Apache Airflow UIs. Additionally, it incorporates Microsoft Fabric workspace roles for robust security measures.
@@ -26,9 +26,9 @@ Data Workflows, a transformative capability within Microsoft Fabric, redefines y
 
 ### Prerequisites
 
-- [Create a new or use an existing Data Workflow.](../data-factory/create-apache-airflow-jobs.md)
+- [Create a new or use an existing Apache Airflow job.](../data-factory/create-apache-airflow-jobs.md)
 
-To enable customers to upgrade to Microsoft Fabric Data Workflows from Azure Workflow Orchestration Manager, consider the following two scenarios:
+To enable customers to upgrade to Microsoft Fabric's Apache Airflow job from Azure's Workflow Orchestration Manager, consider the following two scenarios:
 
 **Scenario 1: You are using Blob storage in Azure Workflow Orchestration Manager.**
 
@@ -36,10 +36,10 @@ In this scenario, our recommended approach is to use Visual Studio Code for a st
 
 **Scenario 2: You are using Git sync storage in Azure Workflow Orchestration Manager**
 
-In this scenario, use the Git sync feature of Data Workflows to seamlessly synchronize your GitHub repository. Similar to Azure Workflow Orchestration Manager, this feature ensures your GitHub repository stays in sync, allowing you to start developing instantly. To get started, follow the [tutorial: Synchronize your GitHub Repository in Apache Airflow Jobs](../data-factory/apache-airflow-jobs-sync-git-repo.md).
+In this scenario, use the Git sync feature of Apache Airflow Job to seamlessly synchronize your GitHub repository. Similar to Azure Workflow Orchestration Manager, this feature ensures your GitHub repository stays in sync, allowing you to start developing instantly. To get started, follow the [tutorial: Synchronize your GitHub Repository in Apache Airflow Job](../data-factory/apache-airflow-jobs-sync-git-repo.md).
 
 ## Related content
 
 - [Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
-- [Run Dag in Apache Airflow Jobs](../data-factory/apache-airflow-jobs-hello-world.md)
-- [Apache Airflow Jobs workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)
+- [Run Dag in Apache Airflow Job](../data-factory/apache-airflow-jobs-hello-world.md)
+- [Apache Airflow Job workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)

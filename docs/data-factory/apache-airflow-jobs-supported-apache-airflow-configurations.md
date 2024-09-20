@@ -1,6 +1,6 @@
 ---
 title: Supported Apache Airflow configurations
-description: This article enumerates the Apache Airflow configurations supported by the Apache Airflow Jobs.
+description: This article enumerates the Apache Airflow configurations supported by the Apache Airflow Job.
 author: nabhishek
 ms.author: abnarain
 ms.reviewer: abnarain
@@ -13,9 +13,9 @@ ms.date: 04/24/2024
 # Supported Apache Airflow configurations
 
 > [!NOTE]
-> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-In Apache Airflow Jobs, Apache Airflow configurations can be integrated with the platform's runtime as key-value pairs. While the `airflow.cfg` isn't directly accessible in the UI, users can override these configurations via the UI's "Airflow Configuration overrides" section, retaining access to other `airflow.cfg` settings. Developers have the flexibility to override most Apache Airflow configurations within Apache Airflow Jobs, `except for those explicitly outlined in a provided table`.
+In Apache Airflow Job, Apache Airflow configurations can be integrated with the platform's runtime as key-value pairs. While the `airflow.cfg` isn't directly accessible in the UI, users can override these configurations via the UI's "Airflow Configuration overrides" section, retaining access to other `airflow.cfg` settings. Developers have the flexibility to override most Apache Airflow configurations within Apache Airflow Job, `except for those explicitly outlined in a provided table`.
 
 ## Airflow configurations reference
 

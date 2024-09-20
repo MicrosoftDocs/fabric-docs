@@ -1,6 +1,6 @@
 ---
-title: Orchestrate Azure Databricks job with Apache Airflow Jobs
-description: Learn to run Azure Databricks job with Apache Airflow Jobs.
+title: Orchestrate Azure Databricks job with Apache Airflow Job
+description: Learn to run Azure Databricks job with Apache Airflow Job.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -10,31 +10,31 @@ ms.custom:
 ms.date: 04/15/2023
 ---
 
-# Tutorial: Orchestrate Azure Databricks ETL jobs with data workflows
+# Tutorial: Orchestrate Azure Databricks ETL jobs with Apache Airflow Job
 
 > [!NOTE]
-> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-This tutorial outlines the integration of Azure Databricks and Apache Airflow Jobs (powered by Apache Airflow) for orchestrating data pipelines. Job orchestration is crucial for managing complex workflows, ensuring data accuracy, and optimizing processing efficiency. Azure Databricks is a powerful analytics platform built on the top of Apache Spark, while Apache Airflow offers robust workflow management capabilities. Combining these tools enables seamless coordination of tasks, from data ingestion to transformation and analysis. The Apache Airflow Azure Databricks connection lets you take advantage of the optimized Spark engine offered by Azure Databricks with the scheduling features of Apache Airflow.
+This tutorial outlines the integration of Azure Databricks and Apache Airflow Job (powered by Apache Airflow) for orchestrating data pipelines. Job orchestration is crucial for managing complex workflows, ensuring data accuracy, and optimizing processing efficiency. Azure Databricks is a powerful analytics platform built on the top of Apache Spark, while Apache Airflow offers robust workflow management capabilities. Combining these tools enables seamless coordination of tasks, from data ingestion to transformation and analysis. The Apache Airflow Azure Databricks connection lets you take advantage of the optimized Spark engine offered by Azure Databricks with the scheduling features of Apache Airflow.
 
-In this tutorial, you build an Apache Airflow DAG to trigger the Azure Databricks job with the Apache Airflow Jobs.
+In this tutorial, you build an Apache Airflow DAG to trigger the Azure Databricks job with the Apache Airflow Job.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- Enable Apache Airflow Jobs in your Tenant.
+- Enable Apache Airflow Job in your Tenant.
 
   > [!NOTE]
-  > Since Apache Airflow Jobs are in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Jobs, your tenant admin may have already enabled it.
+  > Since Apache Airflow job is in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it.
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Jobs (preview)" section.
+  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Job (preview)" section.
 
   2. Select Apply.
 
   :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
-- [Create the "Apache Airflow Jobs" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
+- [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 
 - [Create a basic ETL pipeline with Databricks](https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html)
 
@@ -60,7 +60,7 @@ To get started, you must complete the following prerequisites:
 
 ## Create an Apache Airflow connection to connect with Azure Databricks workspace
 
-When you install "apache-airflow-providers-databricks" as a requirement in Apache Airflow Jobs environment, a default connection for Azure Databricks is configured by default in Apache Airflow Connections list. Update the connection to connect to your workspace using the personal access token you created previously:
+When you install "apache-airflow-providers-databricks" as a requirement in Apache Airflow Job environment, a default connection for Azure Databricks is configured by default in Apache Airflow Connections list. Update the connection to connect to your workspace using the personal access token you created previously:
 
 1. Select on the "View Airflow connections" to see a list of all the connections configured.
 

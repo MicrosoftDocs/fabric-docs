@@ -1,6 +1,6 @@
 ---
-title: Hello world tutorial for Apache Airflow Jobs
-description: Learn to get started with the Apache Airflow Jobs and run a Hello World dag.
+title: Hello world tutorial for Apache Airflow Job
+description: Learn to get started with the Apache Airflow Job and run a Hello World dag.
 ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
@@ -10,23 +10,23 @@ ms.custom:
 ms.date: 04/15/2024
 ---
 
-# Tutorial: Run Hello-world DAG in Apache Airflow Jobs
+# Tutorial: Run Hello-world DAG in Apache Airflow Job
 
 > [!NOTE]
-> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-In this tutorial, you'll run a hello-world DAG in Apache Airflow Jobs. This tutorial focuses on getting users acquainted with the Apache Airflow Jobs features and environment.
+In this tutorial, you'll run a hello-world DAG in Apache Airflow Job. This tutorial focuses on familiarizing users with the features and environment of the Apache Airflow Job.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisite:
 
-- Enable Apache Airflow Jobs in your Tenant.
+- Enable Apache Airflow Job in your Tenant.
 
   > [!NOTE]
-  > Since Apache Airflow Jobs are in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Jobs, your tenant admin may have already enabled it.
+  > Since Apache Airflow job is in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it.
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Jobs (preview)' section.
+  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Job (preview)' section.
 
   2. Click Apply.
 
@@ -36,17 +36,17 @@ To get started, you must complete the following prerequisite:
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
 
-2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Jobs (preview)
+2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Job (preview)
 
    :::image type="content" source="media/apache-airflow-jobs/more-options.png" lightbox="media/apache-airflow-jobs/more-options.png" alt-text="Screenshot shows click on more options.":::
 
-   :::image type="content" source="media/apache-airflow-jobs/apache-airflow-project.png" alt-text="Screenshot to select Data Workflow.":::
+   :::image type="content" source="media/apache-airflow-jobs/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow job.":::
 
 3. Give a suitable name to your project and click on the "Create" button.
 
 ### Create a DAG File
 
-1. Click on "New DAG file" card -> give the name to the file and Click on "Create" button.
+1. Click on "New DAG file" card -> Give the name to the file and Click on "Create" button.
 
    :::image type="content" source="media/apache-airflow-jobs/name-directed-acyclic-graph-file.png" alt-text="Screenshot to name the DAG file.":::
 

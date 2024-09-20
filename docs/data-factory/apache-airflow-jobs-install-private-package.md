@@ -1,6 +1,6 @@
 ---
-title: Install a Private Package as a requirement in Apache Airflow Jobs
-description: This tutorial helps to install a Private Package as a requirement in Apache Airflow Jobs.
+title: Install a Private Package as a requirement in Apache Airflow Job
+description: This tutorial shows how to install private package as a requirement in Apache Airflow Job.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -12,16 +12,14 @@ ms.custom:
 ms.date: 03/25/2024
 ---
 
-# Install a Private Package as a requirement in data workflows
+# Install a Private Package as a requirement in Apache Airflow job
 
 > [!NOTE]
-> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-A python package is a way to organize related Python modules into a single directory hierarchy. A package is typically represented as a directory that contains a special file called **init**.py. Inside a package directory, you can have multiple Python module files (.py files) that define functions, classes, and variables. In the context of Apache Airflow Jobs, you can create packages to add your custom code.
+A python package is a way to organize related Python modules into a single directory hierarchy. A package is typically represented as a directory that contains a special file called **init**.py. Inside a package directory, you can have multiple Python module files (.py files) that define functions, classes, and variables. In the context of Apache Airflow Job, you can develop you private packages to add custom Apache Airflow operators, hooks, sensors, plugins etc.
 
-This guide provides step-by-step instructions on installing `.whl` (Wheel) file, which serves as a binary distribution format for Python package in Apache Airflow Jobs.
-
-For illustration purpose, I create a simple custom operator as python package that can be imported as a module inside dag file.
+In this tutorial, you will create a simple custom operator as a Python package, add it as a requirement in the Apache Airflow job environment, and import the private package as a module within the DAG file.
 
 ## Develop a custom operator and test with an Apache Airflow Dag
 
@@ -48,6 +46,7 @@ For illustration purpose, I create a simple custom operator as python package th
    from datetime import datetime
    from airflow import DAG
 
+    # Import from private package
    from airflow_operator.sample_operator import SampleOperator
 
 
@@ -63,7 +62,7 @@ For illustration purpose, I create a simple custom operator as python package th
        task
    ```
 
-3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Apache Airflow Jobs or you can use preconfigured repository(Install-Private-Package)[https://github.com/ambika-garg/Install-Private-Package-Fabric]
+3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Apache Airflow Job or you can use preconfigured repository(Install-Private-Package)[https://github.com/ambika-garg/Install-Private-Package-Fabric]
 
 ## Add your package as a requirement
 

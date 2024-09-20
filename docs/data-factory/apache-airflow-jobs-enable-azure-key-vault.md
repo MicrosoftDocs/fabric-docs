@@ -1,6 +1,6 @@
 ---
 title: Enable Azure Key Vault for Apache Airflow backend
-description: This article explains how to enable Azure Key Vault as the secret backend in Apache Airflow Jobs.
+description: This article explains how to enable Azure Key Vault as the secret backend in Apache Airflow Job.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -13,9 +13,9 @@ ms.date: 03/25/2024
 # Enable Azure Key Vault as a secret backend
 
 > [!NOTE]
-> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-Apache Airflow offers various backends for securely storing sensitive information such as variables and connections. One of these options is Azure Key Vault. This article walks you through the process of configuring Key Vault as the secret backend for Apache Airflow Jobs in Data Factory.
+Apache Airflow offers various backends for securely storing sensitive information such as variables and connections. One of these options is Azure Key Vault. This article walks you through the process of configuring Key Vault as the secret backend for Apache Airflow Job.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 - Key Vault Contributor
 - Key Vault Secrets User
 
-## Configurations to enable the Azure Key Vault as a secret backend in Apache Airflow Jobs.
+## Configurations to enable the Azure Key Vault as a secret backend in Apache Airflow Job.
 
 - **Airflow Requirements**: Install [apache-airflow-providers-microsoft-azure](https://airflow.apache.org/docs/apache-airflow-providers-microsoft-azure/stable/index.html) during your initial Airflow environment setup.
 

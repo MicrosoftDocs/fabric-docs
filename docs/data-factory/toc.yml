@@ -851,7 +851,7 @@
           href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json 
         - name: Download diagnostics logs
           href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json 
-  - name: Apache Airflow Jobs
+  - name: Apache Airflow Job
     items:
       - name: Concepts
         href: apache-airflow-jobs-concepts.md
@@ -859,7 +859,7 @@
         items:
           - name: Synchronize your code from an existing Git repo
             href: apache-airflow-jobs-sync-git-repo.md
-          - name: Apache Airflow Jobs workspace settings
+          - name: Apache Airflow Job workspace settings
             href: apache-airflow-jobs-workspace-settings.md
           - name: Install a private package
             href: apache-airflow-jobs-install-private-package.md
@@ -875,11 +875,11 @@
             href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
       - name: Tutorials
         items:
-          - name: Hello Apache Airflow Jobs
+          - name: Hello Apache Airflow Job
             href: apache-airflow-jobs-hello-world.md
-          - name: Orchestrate ADF pipeline with Apache Airflow Jobs
+          - name: Orchestrate ADF pipeline with Apache Airflow Job
             href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
-          - name: Orchestrate Azure Databricks job with Apache Airflow Jobs
+          - name: Orchestrate Azure Databricks job with Apache Airflow Job
             href: apache-airflow-jobs-run-databricks-job.md
           - name: Power BI Semantic Model Refresh
             href: apache-airflow-jobs-power-bi-semantic-model-refresh.md

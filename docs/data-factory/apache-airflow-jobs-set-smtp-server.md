@@ -1,6 +1,6 @@
 ---
 title: Set up SMTP server in data workflows
-description: This tutorial helps to set up smtp server in Apache Airflow Jobs.
+description: This tutorial helps to set up smtp server in Apache Airflow Job.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -10,15 +10,15 @@ ms.custom:
 ms.date: 03/25/2024
 ---
 
-# Set up SMTP Server in data workflows
+# Set up SMTP Server in Apache Airflow Job
 
 > [!NOTE]
-> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
 One of the features of Airflow is the ability to send email notifications and alerts when a task fails, succeeds, or retries. This feature can help you keep track of your workflows and troubleshoot any issues.
 
-To use email notifications and alerts, you need to set up a (Simple Mail Transfer Protocol) SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Apache Airflow Jobs using Gmail.
-To use email notifications and alerts, you need to set up a (Simple Mail Transfer Protocol) SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Apache Airflow Jobs using Gmail.
+To use email notifications and alerts, you need to set up a (Simple Mail Transfer Protocol) SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Apache Airflow Job using Gmail.
+To use email notifications and alerts, you need to set up a (Simple Mail Transfer Protocol) SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Apache Airflow Job using Gmail.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ To use email notifications and alerts, you need to set up a (Simple Mail Transfe
 
 ## Set up the environment variables
 
-- Once you have the prerequisites, you can configure the Apache Airflow Jobs to use your SMTP server or service. Edit the `Airflow configurations` section, with the following fields:
+- Once you have the prerequisites, you can configure the Apache Airflow Job to use your SMTP server or service. Edit the `Airflow configurations` section, with the following fields:
 
   - **AIRFLOW**SMTP**SMTP_HOST**: The hostname or IP address of your SMTP server or service.
   - **AIRFLOW**SMTP**SMTP_STARTTLS**: Whether to use TLS (Transport Layer Security) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service supports TLS, or False otherwise.
@@ -92,8 +92,8 @@ The email contains the following information:
 - Number of Attempts
 - Error
 - Log: Link that redirects to the failed task logs.
-- Host: Host Name of Apache Airflow Jobs
-- Host: Host Name of Apache Airflow Jobs
+- Host: Host Name of Apache Airflow Job
+- Host: Host Name of Apache Airflow Job
 - Mark success: Link that redirects to the Failed DAG state.
 
   :::image type="content" source="media/apache-airflow-jobs/airflow-email.png" lightbox="media/apache-airflow-jobs/airflow-email.png" alt-text="Screenshot showing private package added as requirement.":::

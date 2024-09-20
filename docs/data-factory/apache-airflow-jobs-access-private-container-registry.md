@@ -1,6 +1,6 @@
 ---
 title: Add a Kubernetes secret to pull an image from a private container registry
-description: This article explains how to add a Kubernetes secret to pull a custom image from a private container registry.
+description: This article explains how to add a Kubernetes secret to pull container image from a private container registry.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -10,12 +10,14 @@ ms.custom:
 ms.date: 03/25/2024
 ---
 
-# Add a Kubernetes secret in Apache Airflow jobs
+# Add a Kubernetes secret in Apache Airflow job
 
 > [!NOTE]
-> Apache Airflow Jobs are powered by Apache Airflow.</br>[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow Job is powered by Apache Airflow.</br>[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex jobs. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-This article shows how to add a Kubernetes secret in Apache Airflow environment in Fabric to pull a custom image from an Azure Container Registry.
+A Kubernetes secret is an object designed to securely store sensitive information, such as passwords, tokens, or keys. By utilizing secrets, you avoid embedding confidential data directly in your application code.
+
+This guide walks you through adding a Kubernetes secret in an Apache Airflow environment hosted on Microsoft Fabric to pull container images from private registries. For this example, we’ll use Azure Container Registry to create a custom image, which will then be pulled within an Airflow DAG.
 
 ## Prerequisites
 
@@ -26,7 +28,7 @@ This article shows how to add a Kubernetes secret in Apache Airflow environment 
 1. Navigate to the `Environment configuration` page by clicking on `Configure Airflow`.
 2. Under `Kubernetes secrets` section, click on `New` button.
    :::image type="content" source="media/apache-airflow-jobs/kubernetes-new-secret.png" lightbox="media/apache-airflow-jobs/kubernetes-new-secret.png" alt-text="Screenshot that shows button to add new Kubernetes secret." :::
-3. Fill out the fields that appear in Dialog box:
+3. Fill out the fields that appear in the dialog box:
    _ <strong>Name</strong>: Name of the Kubernetes secret.
    _ <strong>Namespace</strong>: The namespace to run within Kubernetes. By default: Fill the field as `adf`.
    _ <strong>Secret type</strong>: Choose the type of the secret between the values: `Private registry credential` and `Basic auth credential`.
@@ -36,7 +38,7 @@ This article shows how to add a Kubernetes secret in Apache Airflow environment 
    :::image type="content" source="media/apache-airflow-jobs/kubernetes-new-secret-form.png" lightbox="media/apache-airflow-jobs/kubernetes-new-secret-form.png" alt-text="Screenshot that shows form to add new Kubernetes secret." :::
 4. Once all the fields are filled, click on the `Create` button to finalize the creation of the Kubernetes secret.
 
-### A sample DAG using stored Kubernetes secret to pull a custom image from ACR.
+### A sample DAG that uses stored Kubernetes secret to pull a custom image from ACR.
 
 ```python
 from datetime import datetime, timedelta

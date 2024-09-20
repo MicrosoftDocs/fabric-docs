@@ -15,19 +15,19 @@ ms.date: 03/25/2024
 # Synchronize your code from an existing GitHub repository
 
 > [!NOTE]
-> Apache Airflow Jobs are powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+> Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
 Data Workflows, a transformative capability within Microsoft Fabric, redefines your approach to constructing and managing data pipelines. Powered by the Apache Airflow runtime, Data Workflows provides an integrated, cloud-based platform for developing, scheduling, and monitoring Python-based data workflows, articulated as Directed Acyclic Graphs (DAGs). It delivers a Software-as-a-Service (SaaS) experience for data pipeline development and management using Apache Airflow, making the runtime easily accessible and enabling the creation and operation of your data workflows.<br>
 With data workflows, you have two options for storing your workflow files: Fabric-managed storage and GitHub-managed storage. In this article, you'll learn how to synchronize your code from an existing GitHub repository.
 
 ## Prerequisites
 
-- Enable Apache Airflow Jobs in your Tenant.
+- Enable Apache Airflow Job in your Tenant.
 
 > [!NOTE]
-> Since Apache Airflow Jobs are in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Jobs, your tenant admin may have already enabled it.
+> Since Apache Airflow job is in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it.
 
-1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Jobs (preview)' section.
+1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Job (preview)' section.
 2. Select **Apply**.
 
 :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
@@ -35,17 +35,17 @@ With data workflows, you have two options for storing your workflow files: Fabri
 ### Create an Apache Airflow Job
 
 1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
-2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Jobs (preview)
+2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Job (preview)
 
    :::image type="content" source="media/apache-airflow-jobs/more-options.png" lightbox="media/apache-airflow-jobs/more-options.png" alt-text="Screenshot shows click on more options.":::
 
-   :::image type="content" source="media/apache-airflow-jobs/apache-airflow-project.png" lightbox="media/apache-airflow-jobs/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow Jobs.":::
+   :::image type="content" source="media/apache-airflow-jobs/apache-airflow-project.png" lightbox="media/apache-airflow-jobs/apache-airflow-project.png" alt-text="Screenshot to select Apache Airflow Job.":::
 
 3. Give a suitable name to your project and Click on "Create" Button.
 
 ### Synchronize Your GitHub repository
 
-Specify the git repository you want to sync your Apache Airflow Jobs with.
+Specify the git repository you want to sync your Apache Airflow Job with.
 
 1. Go to the "Settings" button and click on 'File Storage' tab. Choose "Git-sync" as the type of storage.
    :::image type="content" source="media/apache-airflow-jobs/git-sync.png" lightbox="media/apache-airflow-jobs/git-sync.png" alt-text="Screenshot to synchronize GitHub repository.":::
@@ -110,6 +110,6 @@ Specify the git repository you want to sync your Apache Airflow Jobs with.
 
 ## Related content
 
-- [Install Private Package in Apache Airflow Jobs](apache-airflow-jobs-install-private-package.md)
+- [Install Private Package in Apache Airflow Job](apache-airflow-jobs-install-private-package.md)
 - [Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
-- [Apache Airflow Jobs workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)
+- [Apache Airflow Job workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)

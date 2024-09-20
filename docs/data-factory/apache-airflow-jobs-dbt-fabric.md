@@ -1,6 +1,6 @@
 ---
 title: Transform data using dbt
-description: This tutorial guides you through orchestrating dbt jobs using Apache Airflow Jobs.
+description: This tutorial guides you through orchestrating dbt jobs using Apache Airflow Job.
 ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
@@ -15,22 +15,26 @@ ms.date: 05/24/2024
 # Transform data using dbt
 
 > [!NOTE]
-> Apache Airflow Jobs are powered by Apache Airflow.
+> Apache Airflow job is powered by Apache Airflow.
 >
 > [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-The [dbt](https://www.getdbt.com/product/what-is-dbt), short for "Data Build Tool," is an open-source command-line interface (CLI) that revolutionizes data transformation and modeling within data warehouses. It addresses a critical challenge of managing complex SQL code in a structured and maintainable way in data pipelines. dbt empowers data teams to build robust, reliable, and testable data transformations that form the core of their analytical pipelines. When integrated with Apache Airflow, a popular workflow management system, dbt becomes a powerful tool for orchestrating data transformations. Airflow's scheduling and task management capabilities allow data teams to automate dbt runs. It ensures regular data updates and maintains a consistent flow of high-quality data for analysis and reporting. This combined approach, using dbt's transformation expertise with Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
+[dbt(Data Build Tool)](https://www.getdbt.com/product/what-is-dbt) is an open-source command-line interface (CLI) that simplifies data transformation and modeling within data warehouses by managing complex SQL code in a structured, maintainable way. It enables data teams to create reliable, testable transformations at the core of their analytical pipelines.
+
+When paired with Apache Airflow, dbt's transformation capabilities are enhanced by Airflow's scheduling, orchestration, and task management features. This combined approach, using dbt's transformation expertise alongside Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
+
+This tutorial illustrates how to create an Apache Airflow DAG that uses dbt to transform data stored in the Microsoft Fabric Data Warehouse.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- Enable Apache Airflow Jobs in your Tenant.
+- Enable Apache Airflow Job in your Tenant.
 
   > [!NOTE]
-  > Since Apache Airflow Jobs are in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Jobs, your tenant admin may have already enabled it.
+  > Since Apache Airflow job is in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it.
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Jobs (preview)" section.
+  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Job (preview)" section.
 
   2. Select Apply.
      :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
@@ -39,14 +43,14 @@ To get started, you must complete the following prerequisites:
 
 - If you don't have one, [Create a Fabric warehouse](../data-warehouse/create-warehouse.md). Ingest the sample data into the warehouse using data pipeline. For this tutorial, we use the <strong>NYC Taxi-Green</strong> sample.
 
-- [Create the "Apache Airflow Jobs" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
+- [Create the "Apache Airflow Job" in the workspace.](../data-factory/create-apache-airflow-jobs.md)
 
 ## Transform the data stored in Fabric warehouse using dbt
 
 This section walks you through the following steps:
 
 1. [Specify the requirements.](#specify-the-requirements)
-2. [Create a dbt project in Fabric managed storage](#create-a-dbt-project-in-fabric-managed-storage).
+2. [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-fabric-managed-storage).
 3. [Create an Apache Airflow DAG to orchestrate dbt jobs](#create-an-apache-airflow-dag-to-orchestrate-dbt-jobs)
 
 ### [Specify the requirements](#specify-the-requirements)
@@ -61,9 +65,9 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
      dbt-fabric==1.5.0
   ```
 
-### [Create a dbt project in Fabric managed storage](#create-a-dbt-project-in-fabric-managed-storage)
+### [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-fabric-managed-storage)
 
-1. In this section, we create a sample dbt project in the Apache Airflow Jobs for the dataset `nyc_taxi_green` with the following directory structure.
+1. In this section, we create a sample dbt project in the Apache Airflow Job for the dataset `nyc_taxi_green` with the following directory structure.
 
    ```bash
       dags
@@ -158,7 +162,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
 
 ### [Create an Apache Airflow DAG to orchestrate dbt jobs](#create-an-apache-airflow-dag-to-orchestrate-dbt-jobs)
 
-- Create the file named `my_cosmos_dag.py` in `dags` folder and Paste the following contents in it.
+- Create the file named `my_cosmos_dag.py` in `dags` folder and paste the following contents in it.
 
   ```python
    import os
@@ -187,7 +191,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
 
 ## Run your DAG
 
-1. Run the DAG within Apache Airflow Jobs.
+1. Run the DAG within Apache Airflow Job.
    :::image type="content" source="media/apache-airflow-jobs/run-directed-acyclic-graph.png" lightbox="media/apache-airflow-jobs/run-directed-acyclic-graph.png" alt-text="Screenshot shows run dag.":::
 
 1. To see your dag loaded in the Apache Airflow UI, Click on `Monitor in Apache Airflow.`
