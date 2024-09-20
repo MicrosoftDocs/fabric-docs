@@ -50,7 +50,7 @@ To get started, you must complete the following prerequisites:
 This section walks you through the following steps:
 
 1. [Specify the requirements.](#specify-the-requirements)
-2. [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-fabric-managed-storage-provided-by-the-apache-airflow-job).
+2. [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-the-fabric-managed-storage-provided-by-the-apache-airflow-job).
 3. [Create an Apache Airflow DAG to orchestrate dbt jobs](#create-an-apache-airflow-dag-to-orchestrate-dbt-jobs)
 
 ### [Specify the requirements](#specify-the-requirements)
@@ -65,7 +65,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
      dbt-fabric==1.5.0
   ```
 
-### [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-fabric-managed-storage-provided-by-the-apache-airflow-job)
+### [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-the-fabric-managed-storage-provided-by-the-apache-airflow-job)
 
 1. In this section, we create a sample dbt project in the Apache Airflow Job for the dataset `nyc_taxi_green` with the following directory structure.
 
