@@ -5,6 +5,7 @@ author: ssabat
 ms.author: susabat
 ms.topic: concept-article
 ms.date: 08/29/2024
+ms.custom: FY25Q1-Linter
 ---
 
 # Cost estimation for Fabric pipelines based on Dataflow Gen1 equivalent activities in Azure Data Factory
