@@ -186,8 +186,8 @@
         "redirect_document_id": false
       },
       {
-        "source_path_from_root": "docs/data-factory/create-data-workflows.md",
-        "redirect_url": "docs/data-factory/create-apache-airflow-jobs.md",
+        "source_path_from_root": "/docs/data-factory/create-data-workflows.md",
+        "redirect_url": "/docs/data-factory/create-apache-airflow-jobs.md",
         "redirect_document_id": false
       }
     ]
