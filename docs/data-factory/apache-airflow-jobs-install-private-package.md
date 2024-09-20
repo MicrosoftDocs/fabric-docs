@@ -62,7 +62,7 @@ In this tutorial, you will create a simple custom operator as a Python package, 
        task
    ```
 
-3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Apache Airflow Job or you can use preconfigured repository(Install-Private-Package)[https://github.com/ambika-garg/Install-Private-Package-Fabric]
+3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Apache Airflow Job or you can use preconfigured repository[Install-Private-Package](https://github.com/ambika-garg/Install-Private-Package-Fabric)
 
 ## Add your package as a requirement
 
