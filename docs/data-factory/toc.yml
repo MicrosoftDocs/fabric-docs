@@ -735,12 +735,16 @@
         href: dataflows-gen2-save-draft.md
       - name: How to obfuscate data
         href: data-obfuscation-with-delphix.md
+      - name: How to handle schema drift
+        href: how-to-handle-schema-drift.md
     - name: Tutorials
       items:
       - name: Use a dataflow in a pipeline
         href: tutorial-dataflows-gen2-pipeline-activity.md
       - name: Pattern to incrementally amass data with Dataflow Gen2
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
+      - name: Slowly changing dimension type 1
+        href: slowly-changing-dimension-type-one.md
       - name: Slowly changing dimension type 2 
         href: slowly-changing-dimension-type-two.md        
     - name: Fabric Dataflows for ADF Mapping Data Flow users
