@@ -34,7 +34,7 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 
 - **Airflow Requirements**: Install [apache-airflow-providers-microsoft-azure](https://airflow.apache.org/docs/apache-airflow-providers-microsoft-azure/stable/index.html) during your initial Airflow environment setup.
 
-  :::image type="content" source="media/apache-airflow-jobs/enable-azure-key-vault-requirement.png" alt-text="Screenshot that shows the Airflow Environment Setup window highlighting the Airflow requirements." lightbox="media/apache-airflow-jobs/enable-azure-key-vault-requirement.png":::
+  :::image type="content" source="media/apache-airflow-jobs/add-airflow-requirement.png" alt-text="Screenshot that shows the Airflow Environment Setup window highlighting the Airflow requirements." lightbox="media/apache-airflow-jobs/add-airflow-requirement.png":::
 
 - **Configuration overrides**: Add the following settings for the **Airflow configuration overrides** in integration runtime properties:
 

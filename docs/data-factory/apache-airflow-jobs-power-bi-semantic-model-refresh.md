@@ -56,7 +56,7 @@ To get started, you must complete the following prerequisites:
 
 3. Select "Apply," to save the changes.
 
-   :::image type="content" source="media/apache-airflow-jobs/databricks-add-requirement.png" lightbox="media/apache-airflow-jobs/databricks-add-requirement.png" alt-text="Screenshot to Add Airflow requirement.":::
+   :::image type="content" source="media/apache-airflow-jobs/configure-airflow-environment.png" lightbox="media/apache-airflow-jobs/configure-airflow-environment.png" alt-text="Screenshot to Add Airflow requirement.":::
 
 ## Create an Apache Airflow connection to connect with Power BI workspace
 
