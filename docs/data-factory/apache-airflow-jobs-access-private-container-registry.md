@@ -29,12 +29,12 @@ This guide walks you through adding a Kubernetes secret in an Apache Airflow env
 2. Under `Kubernetes secrets` section, click on `New` button.
    :::image type="content" source="media/apache-airflow-jobs/kubernetes-new-secret.png" lightbox="media/apache-airflow-jobs/kubernetes-new-secret.png" alt-text="Screenshot that shows button to add new Kubernetes secret." :::
 3. Fill out the fields that appear in the dialog box:
-   _ <strong>Name</strong>: Name of the Kubernetes secret.
-   _ <strong>Namespace</strong>: The namespace to run within Kubernetes. By default: Fill the field as `adf`.
-   _ <strong>Secret type</strong>: Choose the type of the secret between the values: `Private registry credential` and `Basic auth credential`.
-   _ <strong>Registry server url</strong>: URL of your private container registry, for example, `\registry_name\>.azurecr.io`.
-   _ <strong>Username</strong>: Username of your private container registry.
-   _ <strong>Password</strong>: Password to access the private container registry.
+   - <strong>Name</strong>: Name of the Kubernetes secret.
+   - <strong>Namespace</strong>: The namespace to run within Kubernetes. By default: Fill the field as `adf`.
+   - <strong>Secret type</strong>: Choose the type of the secret between the values: `Private registry credential` and `Basic auth credential`.
+   - <strong>Registry server url</strong>: URL of your private container registry, for example, `\registry_name\>.azurecr.io`.
+   - <strong>Username</strong>: Username of your private container registry.
+   - <strong>Password</strong>: Password to access the private container registry.
    :::image type="content" source="media/apache-airflow-jobs/kubernetes-new-secret-form.png" lightbox="media/apache-airflow-jobs/kubernetes-new-secret-form.png" alt-text="Screenshot that shows form to add new Kubernetes secret." :::
 4. Once all the fields are filled, click on the `Create` button to finalize the creation of the Kubernetes secret.
 

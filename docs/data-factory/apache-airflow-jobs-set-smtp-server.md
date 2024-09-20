@@ -15,14 +15,13 @@ ms.date: 03/25/2024
 > [!NOTE]
 > Apache Airflow job is powered by Apache Airflow. </br> [Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
 
-One of the features of Airflow is the ability to send email notifications and alerts when a task fails, succeeds, or retries. This feature can help you keep track of your workflows and troubleshoot any issues.
+Apache Airflow includes a powerful feature that allows you to send email notifications and alerts when tasks fail, succeed, or retry. This capability is essential for monitoring your workflows and troubleshooting any issues that may arise.
 
-To use email notifications and alerts, you need to set up a (Simple Mail Transfer Protocol) SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Apache Airflow Job using Gmail.
-To use email notifications and alerts, you need to set up a (Simple Mail Transfer Protocol) SMTP server that can send emails on behalf of Airflow. SMTP stands for Simple Mail Transfer Protocol, and it's a standard for sending and receiving emails over the internet. You can use your own SMTP server, or a third-party service like Gmail, SendGrid, or Mailgun. This article shows you how to set up SMTP server with Apache Airflow Job using Gmail.
+To enable email notifications and alerts, you need to set up a Simple Mail Transfer Protocol (SMTP) server that can send emails on behalf of Airflow. SMTP is a standard protocol for sending and receiving emails over the internet. You can use your own SMTP server or a third-party service like Outlook, Gmail, SendGrid, or Mailgun. This article demonstrates how to configure an SMTP server for your Apache Airflow job using Gmail.
 
 ## Prerequisites
 
-- **SMTP server** or service that your can use to send emails. You need the SMTP host, port, username, and password for your server or service. If you're using Gmail, create an app password for your account.
+- **SMTP server**: You need the SMTP host, port, username, and password for your server or service. If you're using Gmail, create an app password for your account.
 
 - An email address that you want to use as the sender of the notifications and alerts. This email address can be the same as your SMTP username, or a different one if your SMTP service allows it.
 
@@ -32,26 +31,25 @@ To use email notifications and alerts, you need to set up a (Simple Mail Transfe
 
 - Once you have the prerequisites, you can configure the Apache Airflow Job to use your SMTP server or service. Edit the `Airflow configurations` section, with the following fields:
 
-  - **AIRFLOW**SMTP**SMTP_HOST**: The hostname or IP address of your SMTP server or service.
-  - **AIRFLOW**SMTP**SMTP_STARTTLS**: Whether to use TLS (Transport Layer Security) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service supports TLS, or False otherwise.
-  - **AIRFLOW**SMTP**SMTP_SSL**: Whether to use SSL (Secure Sockets Layer) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service requires SSL, or False otherwise.
-  - **AIRFLOW**SMTP**SMTP_USER**: The username for your SMTP server or service. This username is usually your email address, or an API key if you're using SendGrid.
-  - **AIRFLOW**SMTP**SMTP_PASSWORD**: The password for your SMTP server or service. This password is usually your email password, or an app password if you're using Gmail.
-  - **AIRFLOW**SMTP**SMTP_PORT**: The port number for your SMTP server or service. This port is usually 25, 465, or 587, depending on the encryption method and the SMTP service.
-  - **AIRFLOW**SMTP**SMTP_MAIL_FROM**: The email address that you want to use as the sender of the notifications and alerts. This mail can be the same as your SMTP username, or a different one if your SMTP service allows it.
+  - **AIRFLOW_SMTP_SMTP_HOST**: The hostname or IP address of your SMTP server or service.
+  - **AIRFLOW_SMTP_SMTP_STARTTLS**: Whether to use TLS (Transport Layer Security) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service supports TLS, or False otherwise.
+  - **AIRFLOW_SMTP_SMTP_SSL**: Whether to use SSL (Secure Sockets Layer) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service requires SSL, or False otherwise.
+  - **AIRFLOW_SMTP_SMTP_USER**: The username for your SMTP server or service. This username is usually your email address, or an API key if you're using SendGrid.
+  - **AIRFLOW_SMTP_SMTP_PASSWORD**: The password for your SMTP server or service. This password is usually your email password, or an app password if you're using Gmail.
+  - **AIRFLOW_SMTP_SMTP_PORT**: The port number for your SMTP server or service. This port is usually 25, 465, or 587, depending on the encryption method and the SMTP service.
+  - **AIRFLOW_SMTP_SMTP_MAIL_FROM**: The email address that you want to use as the sender of the notifications and alerts. This mail can be the same as your SMTP username, or a different one if your SMTP service allows it.
 
   If you're using Gmail, refer to the following values.
 
   | Airflow Configuration         | Gmail                |
   | ----------------------------- | -------------------- |
-  | AIRFLOW**SMTP**SMTP_HOST      | smtp.gmail.com       |
-  | AIRFLOW**SMTP**SMTP_STARTTLS  | True                 |
-  | AIRFLOW**SMTP**SMTP_SSL       | False                |
-  | AIRFLOW**SMTP**SMTP_USER      | your_email@gmail.com |
-  | AIRFLOW**SMTP**SMTP_PASSWORD  | your_app_password    |
-  | AIRFLOW**SMTP**SMTP_PORT      | 587                  |
-  | AIRFLOW**SMTP**SMTP_MAIL_FROM | your_email@gmail.com |
-
+  | AIRFLOW_SMTP_SMTP_HOST      | smtp.gmail.com       |
+  | AIRFLOW_SMTP_SMTP_STARTTLS  | True                 |
+  | AIRFLOW_SMTP_SMTP_SSL       | False                |
+  | AIRFLOW_SMTP_SMTP_USER      | your_email@gmail.com |
+  | AIRFLOW_SMTP_SMTP_PASSWORD  | your_app_password    |
+  | AIRFLOW_SMTP_SMTP_PORT      | 587                  |
+  | AIRFLOW_SMTP_SMTP_MAIL_FROM | your_email@gmail.com |
   :::image type="content" source="media/apache-airflow-jobs/airflow-smtp-configurations.png" lightbox="media/apache-airflow-jobs/airflow-smtp-configurations.png" alt-text="Screenshot presents airflow confiurations for SMTP.":::
 
 ## Example: A DAG that sends an email on the DAG Failure
