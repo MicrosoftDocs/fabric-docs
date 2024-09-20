@@ -36,7 +36,7 @@ In this scenario, our recommended approach is to use Visual Studio Code for a st
 
 **Scenario 2: You are using Git sync storage in Azure Workflow Orchestration Manager**
 
-In this scenario, use the Git sync feature of Data Workflows to seamlessly synchronize your GitHub repository. Similar to Azure Workflow Orchestration Manager, this feature ensures your GitHub repository stays in sync, allowing you to start developing instantly. To get started, follow the [tutorial: Synchronize your GitHub Repository in Apache Airflow Jobs](../data-factory/data-workflows-sync-git-repo.md).
+In this scenario, use the Git sync feature of Data Workflows to seamlessly synchronize your GitHub repository. Similar to Azure Workflow Orchestration Manager, this feature ensures your GitHub repository stays in sync, allowing you to start developing instantly. To get started, follow the [tutorial: Synchronize your GitHub Repository in Apache Airflow Jobs](../data-factory/apache-airflow-jobs-sync-git-repo.md).
 
 ## Related content
 
