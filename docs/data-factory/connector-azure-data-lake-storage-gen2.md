@@ -4,7 +4,7 @@ description: This article provides information about how to set up an Azure Data
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 08/22/2024
+ms.date: 09/16/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -160,7 +160,7 @@ To use service principal authentication, follow these steps:
 
 #### Workspace identity authentication
 
-**Workspace identity**: Select workspace identity from the authentication method drop down. A Fabric workspace identity is an automatically managed service principal that can be associated with a Fabric workspace. Fabric workspaces with a workspace identity can securely read or write to Azure Data Lake Storage Gen2 accounts through OneLake shortcuts and data pipelines. When selecting this option in the connector, make sure that the workspace has a workspace identity and that the identity has the ability to read or write to the intended Azure Data Lake Storage Gen2 account. For more information, see [Workspace identity](../security/workspace-identity.md)
+**Workspace identity**: Select workspace identity from the authentication method dropdown. A Fabric workspace identity is an automatically managed service principal that can be associated with a Fabric workspace. Fabric workspaces with a workspace identity can securely read or write to Azure Data Lake Storage Gen2 accounts through OneLake shortcuts and data pipelines. When selecting this option in the connector, make sure that the workspace has a workspace identity and that the identity has the ability to read or write to the intended Azure Data Lake Storage Gen2 account. For more information, see [Workspace identity](../security/workspace-identity.md)
 
 > [!NOTE]
 > Connections with workspace identity will have the status *Offline* in Manage connections and gateways. Checking the status of a connection with workspace identity isn't supported.
