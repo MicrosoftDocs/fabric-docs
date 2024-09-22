@@ -7,20 +7,14 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/16/2023
+ms.date: 09/22/2024
 ---
 
 # What is the admin portal?
 
 The Microsoft Fabric admin portal includes settings that govern Microsoft Fabric. For example, you can make changes to [tenant settings](tenant-settings-index.md), access the Microsoft 365 admin portal, and control how users interact with Microsoft Fabric.
 
-To access the admin portal you need a [Fabric license](../enterprise/licenses.md#per-user-licenses). The admin portal can be accessed by admins with the following roles:
-
-* Global administrator
-
-* Power Platform administrator
-
-* Fabric administrator
+To access the admin portal you need to a [Fabric license](../enterprise/licenses.md#per-user-licenses). The admin portal can be accessed by admins with the *Fabric administrator* role:
 
 If you're not in one of these roles, you only see *Capacity settings* in the admin portal.
 
