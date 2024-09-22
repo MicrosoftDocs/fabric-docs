@@ -84,7 +84,7 @@ See [branching out limitations](./git-integration-process.md#branching-out-limit
 
 ## Release process
 
-The release process begins once new updates have completed a Pull Request process and merged into the team’s shared branch (such as ‘Main’, ‘Dev’ etc.). From this point, we will outline the different options to build a release process in Fabric. You can find the different considerations for the release process in [manage deployment pipelines](../deployment-pipelines/manage-deployment-pipelines.md).
+The release process begins once new updates have completed a Pull Request process and merged into the team’s shared branch (such as ‘Main’, ‘Dev’ etc). From this point, we will outline the different options to build a release process in Fabric. You can find the different considerations for the release process in [manage deployment pipelines](../deployment-pipelines/manage-deployment-pipelines.md).
 
 ## Switch branches
 
