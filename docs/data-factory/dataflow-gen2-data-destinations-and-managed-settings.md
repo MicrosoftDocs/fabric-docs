@@ -5,7 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 4/10/2024
+ms.date: 09/17/2024
 ---
 
 # Dataflow Gen2 data destinations and managed settings

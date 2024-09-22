@@ -7,7 +7,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/07/2023
+ms.date: 09/22/2024
 ---
 
 # Enable Microsoft Fabric for your organization
@@ -27,13 +27,7 @@ In both cases, you can use security groups to provide Microsoft Fabric access to
 
 ## Prerequisites
 
-To enable Microsoft Fabric, you need to have one of the following admin roles:
-
-* [Microsoft 365 Global admin](microsoft-fabric-admin.md#microsoft-365-admin-roles)
-
-* [Power Platform admin](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
-
-* [Fabric admin](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
+To enable Microsoft Fabric, you need to have the *Fabric administrator* role.
 
 ## Enable for your tenant
 
