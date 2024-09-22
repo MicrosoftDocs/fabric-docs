@@ -4,7 +4,7 @@ description: A known issue is posted where Dataflow Gen2 ownership takeover fail
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/09/2024
+ms.date: 08/06/2024
 ms.custom: known-issue-773
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-773
 
 In the **Settings** of a Dataflow Gen2 dataflow, you can select the **Take over** button to assign ownership of the dataflow to yourself. When trying to perform the takeover, you might receive an error message, and the takeover fails.
 
-**Status:** Open
+**Status:** Fixed: August 6, 2024
 
 **Product Experience:** Data Factory
 

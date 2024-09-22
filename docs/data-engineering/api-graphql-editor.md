@@ -135,4 +135,5 @@ Variables make the mutation code cleaner and easier to read, test, and modify th
 
 ## Related content
 
+- [More query and mutation examples](https://learn.microsoft.com/azure/data-api-builder/graphql#supported-root-types)
 - [Fabric API for GraphQL schema view and Schema explorer](graphql-schema-view.md)

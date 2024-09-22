@@ -103,3 +103,5 @@ items:
   items: 
   - name: OneLake shortcuts REST API
     href: /rest/api/fabric/core/onelake-shortcuts
+  - name: OneLake data access roles REST API
+    href: /rest/api/fabric/core/onelake-data-access-security

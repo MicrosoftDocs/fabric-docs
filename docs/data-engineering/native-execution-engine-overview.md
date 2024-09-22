@@ -47,7 +47,6 @@ To enable the native execution engine for a single notebook or Spark job definit
 { 
    "conf": {
        "spark.native.enabled": "true", 
-       "spark.gluten.enabled": "true", 
        "spark.shuffle.manager": "org.apache.spark.shuffle.sort.ColumnarShuffleManager" 
    } 
 } 
@@ -75,7 +74,6 @@ To ensure uniform performance enhancement, enable the native execution engine ac
 | Property | Value |
 |:-:|:-:|
 | spark.native.enabled | true |
-| spark.gluten.enabled | true |
 | spark.shuffle.manager | org.apache.spark.shuffle.sort.ColumnarShuffleManager |
 
 :::image type="content" source="media\native\enable-environment.png" alt-text="Screenshot showing how to enable the native execution engine inside the environment item." lightbox="media\native\enable-environment.png":::
@@ -84,14 +82,13 @@ When enabled at the environment level, all subsequent jobs and notebooks inherit
 
 ### Control on the query level
 
-The mechanisms to enable the Native Execution Engine at the tenant, workspace, and environment levels, seamlessly integrated with the UI, are under active development. In the meantime, you can disable the native execution engine for specific queries, particularly if they involve operators that aren't currently supported (see [limitations](#limitations)). To disable, set the Spark configuration spark.gluten.enabled to false for the specific cell containing your query.
+The mechanisms to enable the Native Execution Engine at the tenant, workspace, and environment levels, seamlessly integrated with the UI, are under active development. In the meantime, you can disable the native execution engine for specific queries, particularly if they involve operators that aren't currently supported (see [limitations](#limitations)). To disable, set the Spark configuration spark.native.enabled to false for the specific cell containing your query.
 
 # [Spark SQL](#tab/sparksql)
 
 ```sql
 %%sql 
 SET spark.native.enabled=FALSE; 
-SET spark.gluten.enabled=FALSE; 
 ```
 
 # [PySpark](#tab/pyspark)
@@ -99,7 +96,6 @@ SET spark.gluten.enabled=FALSE;
 ```python
 %%pyspark
 spark.conf.set('spark.native.enabled', 'false')   
-spark.conf.set('spark.gluten.enabled', 'false')   
 ```
 
 # [Scala Spark](#tab/scalaspark)
@@ -107,7 +103,6 @@ spark.conf.set('spark.gluten.enabled', 'false')
 ```scala
 %%spark  
 spark.conf.set("spark.native.enabled", "false")   
-spark.conf.set("spark.gluten.enabled", "false")   
 ```
 
 # [SparkR](#tab/sparkr)
@@ -116,21 +111,19 @@ spark.conf.set("spark.gluten.enabled", "false")
 %%sparkr
 library(SparkR)
 sparkR.conf("spark.native.enabled", "false")
-sparkR.conf("spark.gluten.enabled", "false")
 ```
 
 ---
 
 :::image type="content" source="media\native\disable.jpg" alt-text="Screenshot showing how to disable the native execution engine inside a notebook." lightbox="media\native\disable.jpg":::
 
-After executing the query in which the native execution engine is disabled, you must re-enable it for subsequent cells by setting spark.gluten.enabled to true. This step is necessary because Spark executes code cells sequentially.
+After executing the query in which the native execution engine is disabled, you must re-enable it for subsequent cells by setting spark.native.enabled to true. This step is necessary because Spark executes code cells sequentially.
 
 # [Spark SQL](#tab/sparksql)
 
 ```sql
 %%sql 
 SET spark.native.enabled=TRUE; 
-SET spark.gluten.enabled=TRUE; 
 ```
 
 # [PySpark](#tab/pyspark)
@@ -138,7 +131,6 @@ SET spark.gluten.enabled=TRUE;
 ```python
 %%pyspark
 spark.conf.set('spark.native.enabled', 'true')   
-spark.conf.set('spark.gluten.enabled', 'true')   
 ```
 
 # [Scala Spark](#tab/scalaspark)
@@ -146,7 +138,6 @@ spark.conf.set('spark.gluten.enabled', 'true')
 ```scala
 %%spark  
 spark.conf.set("spark.native.enabled", "true")   
-spark.conf.set("spark.gluten.enabled", "true")   
 ```
 
 # [SparkR](#tab/sparkr)
@@ -155,7 +146,6 @@ spark.conf.set("spark.gluten.enabled", "true")
 %%sparkr
 library(SparkR)
 sparkR.conf("spark.native.enabled", "true")
-sparkR.conf("spark.gluten.enabled", "true")
 ```
 
 ---
@@ -166,13 +156,13 @@ There are several methods to determine if an operator in your Apache Spark job w
 
 ### Spark UI and Spark history server
 
-Access the Spark UI or Spark history server to locate the query you need to inspect. In the query plan displayed within the interface, look for any node names that end with the suffix *Transformer*. The suffix indicates that the native execution engine executed the operation. For instance, nodes might be labeled as *RollUpHashAggregateTransformer*, *ProjectExecTransformer*, *BroadcastHashJoinExecTransformer*, *ShuffledHashJoinExecTransformer*, or *BroadcastNestedLoopJoinExecTransformer*.
+Access the Spark UI or Spark history server to locate the query you need to inspect. In the query plan displayed within the interface, look for any node names that end with the suffix *Transformer*, *NativeFileScan* or *VeloxColumnarToRowExec*. The suffix indicates that the native execution engine executed the operation. For instance, nodes might be labeled as *RollUpHashAggregateTransformer*, *ProjectExecTransformer*, *BroadcastHashJoinExecTransformer*, *ShuffledHashJoinExecTransformer*, or *BroadcastNestedLoopJoinExecTransformer*.
 
 :::image type="content" source="media\native\spark-ui.jpg" alt-text="Screenshot showing how to check DAG visualization that ends with the suffix Transformer." lightbox="media\native\spark-ui.jpg":::
 
 ### DataFrame explain
 
-Alternatively, you can execute the `df.explain()` command in your notebook to view the execution plan. Within the output, look for the same *Transformer* suffixes. This method provides a quick way to confirm whether specific operations are being handled by the native execution engine.
+Alternatively, you can execute the `df.explain()` command in your notebook to view the execution plan. Within the output, look for the same *Transformer*, *NativeFileScan* or *VeloxColumnarToRowExec* suffixes. This method provides a quick way to confirm whether specific operations are being handled by the native execution engine.
 
 :::image type="content" source="media\native\df-details.jpg" alt-text="Screenshot showing how to check the physical plan for your query, and see that the query was executed by the native execution engine." lightbox="media\native\df-details.jpg":::
 
@@ -183,6 +173,22 @@ In some instances, the native execution engine might not be able to execute a qu
 :::image type="content" source="media\native\fallback.jpg" alt-text="Screenshot showing the fallback mechanism." lightbox="media\native\fallback.jpg":::
 
 :::image type="content" source="media\native\logs.jpg" alt-text="Screenshot showing how to check logs associated with the fallback mechanism." lightbox="media\native\logs.jpg":::
+
+## Monitor Queries and DataFrames executed by the engine 
+
+To better understand how the Native Execution engine is applied to SQL queries and DataFrame operations, and to drill down to the stage and operator levels, you can refer to the Spark UI and Spark History Server for more detailed information about the native engine execution. 
+
+### Native Execution Engine Tab
+
+You can navigate to the new 'Gluten SQL / DataFrame' tab to view the Gluten build information and query execution details. The Queries table provides insights into the number of nodes running on the Native engine and those falling back to the JVM for each query.
+
+:::image type="content" source="media\native\native-execution-engine-tab.png" alt-text="Screenshot showing native execution engine tab." lightbox="media\native\native-execution-engine-tab.png":::
+
+### Query Execution Graph
+
+You can also click on the query description for the Apache Spark query execution plan visualization. The execution graph provides native execution details across stages and their respective operations. Background colors differentiate the execution engines: green represents the Native Execution Engine, while light blue indicates that the operation is running on the default JVM Engine.
+
+:::image type="content" source="media\native\query-execution-graph.jpeg" alt-text="Screenshot showing query execution graph." lightbox="media\native\query-execution-graph.jpeg":::
 
 ## Limitations
 

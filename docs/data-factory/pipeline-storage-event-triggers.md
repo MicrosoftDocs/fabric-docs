@@ -6,7 +6,7 @@ ms.author: makromer
 ms.topic: concept-article
 ms.custom:
   - build-2024
-ms.date: 05/06/2024
+ms.date: 09/16/2024
 ---
 
 # Data pipelines storage event triggers in Data Factory (Preview)

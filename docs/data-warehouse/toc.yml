@@ -8,6 +8,8 @@ items:
   items:
   - name: Decision guide - choose a data store
     href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+  - name: Decision guide - Warehouse and Lakehouse
+    href: ../get-started/decision-guide-lakehouse-warehouse.md
   - name: 1. Create a warehouse
     href: create-warehouse.md
   - name: 2. Create a table
@@ -70,8 +72,10 @@ items:
     href: get-started-lakehouse-sql-analytics-endpoint.md
   - name: Create a sample warehouse 
     href: create-warehouse-sample.md
-  - name: Performance guidelines
+  - name: Warehouse performance
     href: guidelines-warehouse-performance.md
+  - name: SQL analytics endpoint performance
+    href: sql-analytics-endpoint-performance.md
   - name: Tables
     href: tables.md
   - name: Data types
@@ -126,6 +130,8 @@ items:
   items:
   - name: Data warehousing security
     href: security.md
+  - name: Microsoft Entra ID authentication
+    href: entra-id-authentication.md
   - name: Workspace roles
     href: workspace-roles.md
   - name: Manage SQL granular permissions
@@ -260,6 +266,8 @@ items:
     href: statistics.md
   - name: Caching
     href: caching.md
+  - name: V-Order 
+    href: v-order.md
 - name: Monitor the warehouse
   items:
   - name: Monitoring overview
@@ -301,6 +309,8 @@ items:
     href: limitations.md      
   - name: Change ownership of Warehouse
     href: change-ownership.md
+  - name: Disable V-Order
+    href: disable-v-order.md
 - name: Reference
   items: 
   - name: T-SQL Reference for Fabric

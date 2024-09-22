@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 08/30/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -20,6 +20,3 @@ The open database connectivity (Odbc) connector is supported in Data Factory for
 
 For information on how to connect to Odbc in Dataflow Gen2, go to [Set up your Odbc connection](connector-odbc.md).
 
-## Support in data pipelines
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Odbc in data pipelines.

@@ -51,7 +51,7 @@ Capacity admins can override this setting, depending on their needs. For example
 
 Follow these steps to enable Database Mirroring for a specific capacity.
 
-1. Navigate to the [capacity settings](../../admin/service-admin-portal-capacity-settings.md) in the admin portal.
+1. Navigate to the [capacity settings](../../admin/capacity-settings.md) in the admin portal.
 1. Select the capacity where you want to enable Mirroring.
 1. Select the **Delegate tenant settings** tab.
 1. Expand the **Mirroring (Preview)** setting.

@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 09/16/2024
 ms.search.form: lakehouse load to delta lake tables
 ---
 
@@ -45,7 +45,7 @@ The following standard applies to the Load to table experience:
 
 - Text files without column headers are replaced with standard **```col#```** notation as the table column names.
 
-- Column names allow any English letter, upper or lower case, underscore (**```_```**), and characters in other language such as Chinese in UTF, length up to **32 characters**. Column names are validated during the load action. The Load to Delta algorithm replaces forbidden values with underbar (**```_```**). If no proper column name is achieved during validation, the load action fails.
+- Column names allow any English letter, upper or lower case, underscore (**```_```**), and characters in other language such as Chinese in UTF, length up to **128 characters**. Column names are validated during the load action. The Load to Delta algorithm replaces forbidden values with underbar (**```_```**). If no proper column name is achieved during validation, the load action fails.
 
 - For CSV files, separator can't be empty, can't be longer than **8 characters**, or use any of the following characters: **```(```**, **```)```**, **```[```**, **```]```**,**```{```**, **```}```**, single quote (**```'```**), double quote (**```"```**), and white space.
 

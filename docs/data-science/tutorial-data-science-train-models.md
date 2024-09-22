@@ -21,7 +21,7 @@ In this tutorial, you'll:
 
 > [!div class="checklist"]
 >
-> * Train Random Forrest and LightGBM models.
+> * Train Random Forest and LightGBM models.
 > * Use Microsoft Fabric's native integration with the MLflow framework to log the trained machine learning models, the used hyperaparameters, and evaluation metrics.
 > * Register the trained machine learning model.
 > * Assess the performances of the trained machine learning models on the validation dataset.
@@ -103,7 +103,7 @@ mlflow.autolog(exclusive=False)
 
 ## Import scikit-learn and LightGBM
 
-With your data in place, you can now define the machine learning models. You'll apply Random Forrest and LightGBM models in this notebook. Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. 
+With your data in place, you can now define the machine learning models. You'll apply Random Forest and LightGBM models in this notebook. Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. 
 
 
 ```python

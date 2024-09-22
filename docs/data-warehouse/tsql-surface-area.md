@@ -4,7 +4,7 @@ description: T-SQL surface area of the SQL analytics endpoint and Warehouse in M
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 07/19/2024
+ms.date: 08/13/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -26,6 +26,7 @@ This article covers the T-SQL language syntax capabilities of [!INCLUDE [product
 - You can create your own T-SQL views, functions, and procedures on top of the tables that reference your Delta Lake data in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - For more about CREATE/DROP TABLE support, see [Tables](tables.md).
 - For more about data types, see [Data types](data-types.md).
+- TRUNCATE Table is supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ### Limitations
 
@@ -57,7 +58,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Spatial geometry/geography functions
 - Temporary tables
 - Triggers
-- `TRUNCATE`
 
 ## Related content
 

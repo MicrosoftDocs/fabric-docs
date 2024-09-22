@@ -27,7 +27,7 @@ ms.date: 05/21/2024
     1. For **Authentication method**, confirm that **Shared Access Key** is selected.
     1. For **Shared Access Key Name**, enter the name of the shared access key. 
     1. For **Shared Access Key**, enter the value of the shared access key.
-    1. Select **Connect** at the bottom of the page.1. 
+    1. Select **Connect** at the bottom of the page.
         
         :::image type="content" source="./media/azure-iot-hub-source-connector/connection-page-1.png" alt-text="Screenshot that shows the Connect page one for Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/connection-page-1.png":::
 

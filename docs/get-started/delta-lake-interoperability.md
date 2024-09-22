@@ -59,6 +59,8 @@ Currently, Fabric doesn't support these Delta Lake features:
 * TIMESTAMP_NTZ data type
 * Identity columns writing (proprietary Databricks feature)
 * Delta Live Tables (proprietary Databricks feature)
+* RLE (Run Length Encoding) enabled on the checkpoint file
+
 
 ## Related content
 

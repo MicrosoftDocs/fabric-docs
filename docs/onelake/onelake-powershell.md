@@ -9,6 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 09/27/2023
+#customer intent: As a data engineer, I want to learn how OneLake integrates with Azure PowerShell so I can read, write, and manage data in OneLake with the Azure PowerShell module.
 ---
 
 # Manage OneLake with PowerShell
