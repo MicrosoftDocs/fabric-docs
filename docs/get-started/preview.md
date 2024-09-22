@@ -27,7 +27,7 @@ Preview experiences and features:
 
 ## Who can enable a preview experiences and features
 
-To enable a preview experience or feature, you need to have a *Fabric administrator* [admin roles](../admin/roles.md):
+To enable a preview experience or feature, you need to have a *Fabric administrator* [admin role](../admin/roles.md).
 
 >[!NOTE]
 >When a preview feature is delegated, it can be enabled by a [capacity admin](../admin/microsoft-fabric-admin.md#capacity-admin-roles) for that capacity.

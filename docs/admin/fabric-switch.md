@@ -27,7 +27,7 @@ In both cases, you can use security groups to provide Microsoft Fabric access to
 
 ## Prerequisites
 
-To enable Microsoft Fabric, you need to have the *Fabric administrator* role:
+To enable Microsoft Fabric, you need to have the *Fabric administrator* role.
 
 ## Enable for your tenant
 

@@ -24,7 +24,7 @@ In both cases, you can use security groups to provide access to a specified list
 
 ## Prerequisites
 
-To enable Data Activator, you need to have the *Fabric administrator* role:
+To enable Data Activator, you need to have the *Fabric administrator* role.
 
 ## Enable for your tenant
 

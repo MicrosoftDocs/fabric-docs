@@ -14,7 +14,7 @@ Knowing who is taking what action on which item in Microsoft Fabric, can be crit
 
 ## Prerequisites
 
-You must either be assigned the Audit Logs role in Exchange Online to access the audit log. By default, the Compliance Management and Organization Management role groups have roles assigned on the **Admin roles** page in the Exchange admin center. For more information about the roles that can view audit logs, see [Requirements to search the audit log](/purview/audit-search    #before-you-search-the-audit-log).
+You must be assigned the Audit Logs role in Exchange Online to access the audit log. By default, the Compliance Management and Organization Management role groups have roles assigned on the **Admin roles** page in the Exchange admin center. For more information about the roles that can view audit logs, see [Requirements to search the audit log](/purview/audit-search#before-you-search-the-audit-log).
 
 ## Access
 
