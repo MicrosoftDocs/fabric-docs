@@ -22,7 +22,9 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 Microsoft Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](#supported-items) that you can deploy.
 
 > [!IMPORTANT]
-> The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
+>
+> * The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
+> * Some of the items for deployment pipelines are in preview. For more information, see the list of [supported items](#supported-items).
 
 ## Learn to use deployment pipelines
 
@@ -36,16 +38,16 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
-* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
+* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
 * Dataflows Gen1
-* [Datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
+* [Datamarts](/power-bi/transform-model/datamarts/datamarts-overview) *(preview)*
+* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
-* Reports (based on supported semantic models)
-* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
-* Semantic models (only semantic models that originate from .pbix files and aren't PUSH datasets)
-* [Warehouses](../../data-warehouse/data-warehousing.md)
+* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi) *(preview)*
+* Reports (based on supported semantic models) *(preview)*
+* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
+* [Semantic models](/power-bi/connect-data/service-datasets-understand) (that originate from .pbix files and aren't PUSH datasets) *(preview)*
+* [Warehouses](../../data-warehouse/data-warehousing.md) *(preview)*
 
 ## Pipeline structure
 
