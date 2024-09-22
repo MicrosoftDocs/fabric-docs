@@ -13,8 +13,6 @@ ms.date: 08/10/2023
 
 # What is lifecycle management in Microsoft Fabric?
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 Microsoft Fabric's lifecycle management tools provide a standardized system for communication and collaboration between all members of the development team throughout the life of the product. Lifecycle management facilitates an effective process for releasing products quickly by continuously delivering updated content into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method. There are two main components of lifecycle management in Fabric:
 
 ## Git integration
@@ -22,6 +20,9 @@ Microsoft Fabric's lifecycle management tools provide a standardized system for 
 :::image type="content" source="./media/cicd-overview/git-flow.png" alt-text="Flowchart showing the connection between the remote Git branch and the live workspace.":::
 
 With Fabric's [Git integration](./git-integration/intro-to-git-integration.md) process, incremental workspace updates can be made frequently and reliably by multiple developers. By leveraging Git advantages and best practices, developers can collaborate and ensure that content changes get to the workspace quickly and reliably. When ready, the delivery process can then deliver the content to deployment pipelines for testing and distribution.
+
+> [!NOTE]
+> The list of [supported items](./git-integration/intro-to-git-integration.md#supported-items) for the Git integration feature is in limited but growing.
 
 ## Delivery through deployment pipelines
 
