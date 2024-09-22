@@ -20,8 +20,6 @@ This article explains how Git integration and deployment pipelines work for note
 
 Fabric notebooks offer Git integration for source control with Azure DevOps. With Git integration, you can back up and version your notebook, revert to previous stages as needed, collaborate or work alone using Git branches, and manage your notebook content lifecycle entirely within Fabric.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 ### Set up a connection
 
 From your workspace settings, you can easily set up a connection to your repo to commit and sync changes. To set up the connection, see [Get started with Git integration](../cicd/git-integration/git-get-started.md). Once connected, your items, including notebooks, appear in the **Source control** panel.
@@ -55,8 +53,6 @@ Notebook cell output isn't included when syncing to Git.
 ## Notebook in deployment pipelines
 
 You can also use Deployment pipeline to deploy your notebook code across different environments, such as development, test, and production. This feature can enable you to streamline your development process, ensure quality and consistency, and reduce manual errors with lightweight low-code operations. You can also use deployment rules to customize the behavior of your notebooks when they're deployed, such as changing the default lakehouse of a notebook.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 Use the following steps to complete your notebook deployment using the deployment pipeline.
 
