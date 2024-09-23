@@ -130,7 +130,7 @@ When a DLP policy detects an issue with an item:
     >[!NOTE]
     > If you hide the policy tip, it doesn’t get deleted. It will appear the next time you visit the page.
 
-    For lakehouses, the indication will appear in the header in edit mode, and opening the fly out makes it possible to see more details about the policy tips affecting the lakehouse. This information can also be viewed in the side panel.
+    For lakehouses, the indication will appear in the header in edit mode, and opening the fly out makes it possible to see more details about the policy tips affecting the lakehouse. Selecting **View all** opens a side panel with all the policy details.
 
     :::image type="content" source="./media/data-loss-prevention-overview/policy-tip-in-lakehouse-details.png" alt-text="Screenshot of policy tip on semantic model details page.":::
 
