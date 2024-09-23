@@ -3,7 +3,7 @@ title: AI skill creation (preview)
 titleSuffix: Learn how to create an AI skill
 description: Learn how to create an AI skill that can answer questions about data.
 author: fbsolo-ms1
-ms.author: avangrootel
+ms.author: amjafari
 ms.reviewer: franksolomon
 reviewer: avangrootel
 ms.service: fabric
