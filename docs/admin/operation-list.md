@@ -134,13 +134,11 @@ The following operations are available in the audit logs.
 | Create or update data access   roles | CreateOrUpdateDataAccessRoles | Creates or updates data access roles |
 | Create subfolder | CreateSubfolder |   |
 | Create task flow | CreateTaskFlow |   |
-| Create task flow | CreateTaskFlow |   |
 | Create virtual network data   gateway proxy | CreateVirtualNetworkDataGatewayProxy | Create HTTP proxy for virtual network data gateway |
 | Created Power BI app | CreateApp |   |
 | Created Power BI dashboard | CreateDashboard |   |
 | Created Power BI dataflow | CreateDataflow |   |
 | Created Power BI email subscription | CreateEmailSubscription |   |
-| Created Power BI folder | CreateFolder |   |
 | Created Power BI gateway cluster datasource | CreateGatewayClusterDatasource |   |
 | Created Power BI gateway | CreateGateway |   |
 | Created Power BI group | CreateGroup |   |
@@ -222,7 +220,6 @@ The following operations are available in the audit logs.
 | Deleted Power BI dataflow | DeleteDataflow | Not currently used  |
 | Deleted Power BI email subscription | DeleteEmailSubscription |   |
 | Deleted Power BI folder access | DeleteFolderAccess | Not currently used  |
-| Deleted Power BI folder | DeleteFolder |   |
 | Deleted Power BI gateway cluster datasource | DeleteGatewayClusterDatasource |   |
 | Deleted Power BI gateway cluster | DeleteGatewayCluster |   |
 | Deleted Power BI gateway | DeleteGateway |   |
@@ -696,8 +693,6 @@ The following operations are available in the audit logs.
 | Updated Power BI dataflow | UpdateDataflow |  |
 | Updated Power BI discoverable model settings | UpdateDiscoverableModelSettings | Generated when a report is set to feature on home |
 | Updated Power BI email subscription | UpdateEmailSubscription |  |
-| Updated Power BI folder access | UpdateFolderAccess |  |
-| Updated Power BI folder | UpdateFolder |  |
 | Updated Power BI gateway cluster datasource | UpdateGatewayClusterDatasource |  |
 | Updated Power BI gateway data source credentials | UpdateDatasourceCredentials |  |
 | Updated Power BI semantic model data sources | UpdateDatasources |  |
