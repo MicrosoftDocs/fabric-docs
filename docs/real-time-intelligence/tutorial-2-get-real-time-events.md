@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 07/23/2024
+ms.date: 09/05/2024
 ms.search.form: Get started
 # customer intent: I want to learn how to get data in the Real-Time hub in Real-Time Intelligence.
 ---
@@ -21,11 +21,11 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
 ## Create an event stream
 
 1. From the navigation bar, select **Real-Time hub**.
-1. Select **+ Get events**.
+1. Select **+ Add source**.
     
     :::image type="content" source="media/tutorial/get-events.png" alt-text="Screenshot of Real-time hub with get events highlighted.":::
 
-1. The **Get events** pane opens. Select **Sample data**. 
+1. The **Add source** pane opens. Select **Sample data**.
 
 ### Sample data
 

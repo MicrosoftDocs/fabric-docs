@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 08/11/2024
+ms.date: 09/16/2024
 ms.search.form: Eventhouse
 ---
 # Tutorial: Use an Eventhouse as a vector database
@@ -162,9 +162,7 @@ The following steps are used to import the embedded Wikipedia data and write it 
 At this point, you can verify the data was written to the eventhouse by browsing to the database details page.
 
 1. Browse to your workspace homepage in Real-Time Intelligence.
-1. Select the database item that was provided in the previous section. You should see a summary of the data that was written to the "Wiki" table:
-
-    :::image type="content" source="media/vector-database/database-with-data.png" alt-text="Screenshot of database details page with data ingested from the embedded sample data.":::
+1. Select the database item that was provided in the previous section. You should see a summary of the data that was written to the "Wiki" table.
 
 ## Generate embedding for the search term
 
