@@ -161,6 +161,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: PostgreSQL data source connections additions or updates fail
+      href: known-issues/known-issue-850-postgresql-connections-additions-updates-fail.md
+    - name: Data warehouse exports using deployment pipelines or git fail
+      href: known-issues/known-issue-842-warehouse-exports-pipelines-fail.md
     - name: OneLake BCDR write transactions aren't categorized correctly for billing
       href: known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md
     - name: Excel enterprise data types feature experiences issues
