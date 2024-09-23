@@ -50,7 +50,7 @@ You can also propagate concatenations of FabricDataFrames with regular pandas Da
 
 ## Semantic propagation for Spark users
 
-The semantic link Spark native connector hydrates (or populates) the [metadata](https://spark.apache.org/docs/3.3.2/api/python/reference/pyspark.sql/api/pyspark.sql.types.StructField.html#pyspark.sql.types.StructField) dictionary of a Spark column.
+The semantic link Spark native connector hydrates (or populates) the [metadata](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StructField.html) dictionary of a Spark column.
 Currently, support for semantic propagation is limited and subject to Spark's internal implementation of how schema information is propagated.
 For example, column aggregation strips the metadata.
 
