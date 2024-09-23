@@ -16,7 +16,7 @@ ms.custom:
 
 # Choose the best Fabric CI/CD workflow option for you
 
-The goal of this article is to present Fabric developers with different options for building CI/CD processes in Fabric, based on common customer scenarios. This article focuses more on the *continuous deployment* (CD) of the CI/CD process. For a discussion on the *continuous integration* (CI) part, see [Manage Git branches](../git-integration/manage-branches.md).
+The goal of this article is to present Fabric developers with different options for building CI/CD processes in Fabric, based on common customer scenarios. This article focuses more on the *continuous deployment* (CD) of the CI/CD process. For a discussion on the *continuous integration* (CI) part, see [Manage Git branches](./git-integration/manage-branches.md).
 
 While this article outlines several distinct options, many organizations take a hybrid approach.
 
@@ -24,15 +24,15 @@ While this article outlines several distinct options, many organizations take a 
 
 To access the deployment pipelines feature, you must meet the following conditions:
 
-* You have a [Microsoft Fabric subscription](../../enterprise/licenses.md)
+* You have a [Microsoft Fabric subscription](../enterprise/licenses.md)
 
-* You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md)
+* You're an admin of a Fabric [workspace](../get-started/create-workspaces.md)
 
 ## Development process
 
-The development process is the same in all deployment scenarios, and is independent of how to release new updates into production. When developers work with source control, they need to work in an isolated environment. In Fabric, that environment can either be an IDE on your local machine (such as Power BI Desktop, or VS Code), or a different workspace in Fabric. You can find information about the different considerations for the development process in [Manage Git branches](../git-integration/manage-branches.md)
+The development process is the same in all deployment scenarios, and is independent of how to release new updates into production. When developers work with source control, they need to work in an isolated environment. In Fabric, that environment can either be an IDE on your local machine (such as Power BI Desktop, or VS Code), or a different workspace in Fabric. You can find information about the different considerations for the development process in [Manage Git branches](./git-integration/manage-branches.md)
 
-:::image type="content" source="./media/manage-deployment-pipelines/development-process.png" alt-text="Diagram showing how the development process works.":::
+:::image type="content" source="./media/manage-deployment/development-process.png" alt-text="Diagram showing how the development process works.":::
 
 ## Release process
 
@@ -40,7 +40,7 @@ The release process starts once new updates are complete and the pull request (P
 
 ### Option 1 - Git- based deployments
 
-:::image type="content" source="./media/manage-deployment-pipelines/git-based-deployment.png" alt-text="Diagram showing how the Git based deployment works.":::
+:::image type="content" source="./media/manage-deployment/git-based-deployment.png" alt-text="Diagram showing how the Git based deployment works.":::
 
 With this option, all deployments originate from the Git repository. Each stage in the release pipeline has a dedicated primary branch (in the diagram, these stages are *Dev*, *Test*, and *Prod*), which feeds the appropriate workspace in Fabric.
 
@@ -60,7 +60,7 @@ Once When a PR to the *Dev* branch is approved and merged:
 
 ### Option 2 - Git- based deployments using Build environments
 
-:::image type="content" source="./media/manage-deployment-pipelines/git-build.png" alt-text="Diagram showing the flow of Git based deployment using build environments.":::
+:::image type="content" source="./media/manage-deployment/git-build.png" alt-text="Diagram showing the flow of Git based deployment using build environments.":::
 
 With this option, all deployments originate from the same branch of the Git repository (*Main*). Each stage in the release pipeline has a dedicated *build* and *Release* pipeline. These pipelines might use a *Build environment* to run unit tests and scripts that change some of the definitions in the items before they're uploaded to the workspace. For example, you might want to change the data source connection, the connections between items in the workspace, or the values of parameters to adjust configuration for the right stage.
 
@@ -79,9 +79,9 @@ Once a PR to the *dev* branch is approved and merged:
 
 ### Option 3 - Deploy using Fabric deployment pipelines
 
-:::image type="content" source="./media/manage-deployment-pipelines/deployment-pipelines.png" alt-text="Diagram showing the flow of Git based deployment using deployment pipelines.":::
+:::image type="content" source="./media/manage-deployment/deployment-pipelines.png" alt-text="Diagram showing the flow of Git based deployment using deployment pipelines.":::
 
-With this option, Git is connected only until the *dev* stage. From the *dev* stage, deployments happen directly between the workspaces of *Dev/Test/Prod*, using Fabric deployment pipelines. While the tool itself is internal to Fabric, developers can use the [deployment pipelines APIs](/rest/api/fabric) to orchestrate the deployment as part of their Azure release pipeline, or a GitHub workflow. These APIs enable the team to build a similar *build* and *release* process as in other options, by using automated tests (that can be done in the workspace itself, or before *dev* stage), approvals etc.
+With this option, Git is connected only until the *dev* stage. From the *dev* stage, deployments happen directly between the workspaces of *Dev/Test/Prod*, using Fabric deployment pipelines. While the tool itself is internal to Fabric, developers can use the [deployment pipelines APIs](/rest/api/fabric/core/deployment-pipelines) to orchestrate the deployment as part of their Azure release pipeline, or a GitHub workflow. These APIs enable the team to build a similar *build* and *release* process as in other options, by using automated tests (that can be done in the workspace itself, or before *dev* stage), approvals etc.
 
 Once the PR to the *main* branch is approved and merged:
 
@@ -98,7 +98,7 @@ Once the PR to the *main* branch is approved and merged:
 
 ### Option 4 - CI/CD for ISVs in Fabric (managing multiple customers/solutions)
 
-:::image type="content" source="./media/manage-deployment-pipelines/software-vendors.png" alt-text="Diagram showing the flow of Git based deployment for ISVs.":::
+:::image type="content" source="./media/manage-deployment/software-vendors.png" alt-text="Diagram showing the flow of Git based deployment for ISVs.":::
 
 This option is different from the others. It's most relevant for Independent Software Vendors (ISV) who build SaaS applications for their customers on top of Fabric. ISVs usually have a separate workspace for each customer and can have as many as several hundred or thousands of workspaces. When the structure of the analytics provided to each customer is similar and out-of-the-box, we recommend having a centralized development and testing process that splits off to each customer only in the *Prod* stage.
 
@@ -118,13 +118,13 @@ This option is based on [option #2](#option-2---git--based-deployments-using-bui
 
 This article summarizes the main CI/CD options for a team who wants to build an automated CI/CD process in Fabric. While we outline four options, the real-life constraints and solution architecture might lend themselves to hybrid options, or completely different ones. You can use this article to guide you through different options and how to build them, but you're not forced to choose only one of the options.
 
-Some scenarios or specific items might have [limitations in place](./understand-the-deployment-process.md#considerations-and-limitations) that can keep you from adopting any of these scenarios.
+Some scenarios or specific items might have [limitations in place](./deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) that can keep you from adopting any of these scenarios.
 
 The same goes for tooling. While we mention different tools here, you might choose other tools that can provide same level of functionality. Consider that Fabric has better integration with some tools, so choosing others result in more limitations that need different workarounds.
 
 ## Related content
 
-* [Manage Git branches](../git-integration/manage-branches.md)
-* [Automate Git integration by using APIs and Azure DevOps](../git-integration/git-automation.md)
-* [Automate deployment pipeline by using Fabric APIs](./pipeline-automation-fabric.md)
-* [Best practices for lifecycle management in Fabric](../best-practices-cicd.md)
+* [Manage Git branches](./git-integration/manage-branches.md)
+* [Automate Git integration by using APIs and Azure DevOps](./git-integration/git-automation.md)
+* [Automate deployment pipeline by using Fabric APIs](./deployment-pipelines/pipeline-automation-fabric.md)
+* [Best practices for lifecycle management in Fabric](./best-practices-cicd.md)
