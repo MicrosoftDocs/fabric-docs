@@ -127,6 +127,7 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 - **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
 - **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute
 - **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
+- **Workspace Identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
 
 > [!NOTE]
 > You must have Hierarchical Namespaces enabled on your ADLS Gen 2 storage account.
@@ -273,6 +274,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
 - Additional shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models is not currently available.
+- It may take up to a minute for the Table API to recognize new shortcuts.
 
 ## Related content
 

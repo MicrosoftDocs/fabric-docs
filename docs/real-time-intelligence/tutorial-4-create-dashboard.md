@@ -20,7 +20,7 @@ In this part of the tutorial, you learn how to create a Real-Time Dashboard in R
 
 ## Create a Real-Time Dashboard
 
-1. In your KQL queryset, copy/paste, and run the following query. This query returns a column chart showing the most recent number of bikes by *BikepoointID*.
+1. In your KQL queryset, copy/paste, and run the following query. This query returns a column chart showing the most recent number of bikes by *BikepointID*.
 
     ```kusto
     TutorialTable

@@ -4,7 +4,7 @@ description: In this tutorial, learn how to use the dbt adapter for Fabric Data 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: maprycem
-ms.date: 07/26/2024
+ms.date: 09/04/2024
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
@@ -137,6 +137,14 @@ It's simple move the dbt project between different warehouses. A dbt project on 
 
 1. Build the project.
 
+## dbt in Fabric Data Factory
+
+When integrated with Apache Airflow, a popular workflow management system, dbt becomes a powerful tool for orchestrating data transformations. Airflow's scheduling and task management capabilities allow data teams to automate dbt runs. It ensures regular data updates and maintains a consistent flow of high-quality data for analysis and reporting. This combined approach, using dbt's transformation expertise with Airflow's workflow management, delivers efficient and robust data pipelines, ultimately leading to faster and more insightful data-driven decisions.
+
+[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex data workflows. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent data pipelines.
+
+For more information to operationalize dbt with your warehouse, see [Transform data using dbt with Data Factory in Microsoft Fabric](../data-factory/data-workflows-dbt-fabric.md).
+
 ## Considerations
 
 Important things to consider when using dbt-fabric adapter:
@@ -151,7 +159,12 @@ Important things to consider when using dbt-fabric adapter:
 
 - Review [Unsupported data types](data-types.md#unsupported-data-types) to learn about the supported and unsupported data types.
 
-- You can log issues on the dbt-fabric adapter by visiting [Issues · microsoft/dbt-fabric · GitHub](https://github.com/microsoft/dbt-fabric/issues).
+- You can log issues on the dbt-fabric adapter on GitHub by visiting [Issues · microsoft/dbt-fabric · GitHub](https://github.com/microsoft/dbt-fabric/issues).
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Transform data using dbt with Data Factory in Microsoft Fabric](../data-factory/data-workflows-dbt-fabric.md)
 
 ## Related content
 

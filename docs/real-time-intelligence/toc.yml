@@ -120,6 +120,8 @@ items:
       href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
     - name: Tutorials
       items:
+      - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
+        href: event-streams/stream-consume-events-use-kafka-endpoint.md
       - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
         href: event-streams/transform-and-stream-real-time-events-to-lakehouse.md
       - name: Stream real-time events from custom application to Microsoft Fabric KQL Database
@@ -277,6 +279,16 @@ items:
       href: vector-database.md
     - name: "Tutorial: Use an Eventhouse as a vector database"
       href: vector-database-eventhouse.md
+  - name: Timeseries anomaly detection
+    items:
+    - name: Univariate anomaly detection and forecasting
+      href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
+    - name: Multivariate anomaly detection
+      items: 
+      - name: Multivariate anomaly detection overview
+        href: multivariate-anomaly-overview.md
+      - name: Multivariate anomaly detection tutorial
+        href: multivariate-anomaly-detection.md
   - name: Notebooks
     items:
     - name: Use Fabric notebooks with data from a KQL database

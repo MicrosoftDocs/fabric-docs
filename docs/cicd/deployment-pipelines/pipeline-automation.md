@@ -36,6 +36,14 @@ You can use the [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pip
 
 * Cascade depending on pipeline deployments. If you have content connected across pipelines, you can make sure some pipelines are deployed before others.
 
+## Prerequisites
+
+Before you use the deployment pipelines APIs, make sure you have the following:
+
+* The [*service principal*](/power-bi/developer/embedded/embed-service-principal), or the *user* that calls the APIs needs [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Microsoft Entra application](/entra/identity-platform/how-applications-are-added).
+
+* If you're going to use PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
+
 ## Deployment pipelines API functions
 
 The [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pipelines) allow you to perform the following functions:
@@ -61,14 +69,6 @@ The APIs support the following deployment types:
 * **Backward deploy** - Deploys new  items to the previous stage. Backward deployment only works if the items that are deployed don't already exist in the target stage. For this operation, use either the [Deploy all](/rest/api/power-bi/pipelines/deployall) or the [Selective deploy](/rest/api/power-bi/pipelines/selectivedeploy) APIs, with `isBackwardDeployment` set to `True`.
 
 * **Update App** - As part of the deployment API call, you can update the content of the app related to that stage. Updated items are automatically available to your end users, after a deployment is complete. For this operation, use either the [Deploy all](/rest/api/power-bi/pipelines/deployall) or the [Selective deploy](/rest/api/power-bi/pipelines/selectivedeploy) APIs, with [PipelineUpdateAppSettings](/rest/api/power-bi/pipelines/selectivedeploy#pipelineupdateappsettings).
-
-## Before you begin
-
-Before you use the deployment pipelines APIs, make sure you have the following:
-
-* The [*service principal*](/power-bi/developer/embedded/embed-service-principal), or the *user* that calls the APIs needs [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Microsoft Entra application](/entra/identity-platform/how-applications-are-added).
-
-* If you're going to use PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
 
 ## Integrate your pipeline with Azure DevOps
 

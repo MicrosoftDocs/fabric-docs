@@ -1,12 +1,12 @@
 ---
 title: Create Data Activator alerts from a Real-Time Dashboard
-description: Learn how to create a Data Activator alert from a Real-Time Dashboard.
-author: jamesdhutton
-ms.author: jameshutton
-ms.topic: conceptual
-ms.custom:
-  - build-2024
-ms.date: 05/08/2024
+description: Learn how to create a Data Activator alert from a Real-Time Dashboard and receive real-time notifications when conditions are met.
+author: mihart
+ms.author: mihart
+ms.topic: how-to
+ms.custom: FY25Q1-Linter
+ms.date: 09/09/2024
+#customer intent: As a Fabric user I want to create Data Activator alerts from a Real-Time Dashboard.
 ---
 
 # Create Data Activator alerts from a Real-Time Dashboard
@@ -15,7 +15,7 @@ You can create Data Activator alerts from several data sources in Microsoft Fabr
 
 ## Alert when conditions are met in a Real-Time Dashboard
 
-You can use Data Activator to trigger notifications when conditions are met on data in a Real-time Dashboard. For example, if you have a Real-Time Dashboard displaying real-time availability of bicycles for hire in multiple locations, you can trigger an alert if there are too few bicycles available in any one location. You can send alert notifications either to yourself, or to others in your organization, via either email or Microsoft Teams. 
+You can use Data Activator to trigger notifications when conditions are met on data in a Real-time Dashboard. For example, if you have a Real-Time Dashboard displaying real-time availability of bicycles for hire in multiple locations, you can trigger an alert if there are too few bicycles available in any one location. You can send alert notifications either to yourself, or to others in your organization, via either email or Microsoft Teams.
 
 ## Prerequisites
 
@@ -47,6 +47,7 @@ Next, define your alert conditions. In the *Set Alert* pane that appears, take t
 ## Optional: Edit your trigger in Data Activator
 
 When your trigger is ready, you'll receive a notification with a link to your trigger. You can click the link to edit your trigger in Data Activator. Editing your trigger can be useful if you want to do one of the following:
+
 * Add other recipients to your alert.
 * Define a more complex alert condition than is possible in the *Set alert* pane.
 
@@ -54,14 +55,14 @@ For information on how to edit triggers in Data Activator, see [Create triggers 
 
 ## Limitations on charts with a time axis
 
-If you have a chart with a time axis in Power BI or in a Real-Time Dashboard, then Data Activator will read the measure value exactly once for each point on the time axis. If the measure value for a given time point changes after Data Activator reads it, then Data Activator will ignore the changed value.
+If you have a chart with a time axis in Power BI or in a Real-Time Dashboard, then Data Activator will read the measure value exactly once for each point on the time axis. If the measured value for a given time point changes after Data Activator reads it, then Data Activator will ignore the changed value.
 
 ### Limitation example
 
 The following example illustrates this limitation. In this example, a chart shows number of items sold over time. Data Activator first reads the chart in the morning of 3 January. At this time, the chart shows 10 items sold so far for 3 January:
 
 |Date        | Number of items sold
-|------------|---------------------|
+|------------|---------------------
 |1 January   |20
 |2 January   |18
 |3 January   |10
@@ -69,7 +70,7 @@ The following example illustrates this limitation. In this example, a chart show
 Later in the day of 3 January, more items get sold. The chart updates to reflect this, and the number of items sold for 3 January now reads 15:
 
 |Date        | Number of items sold
-|------------|---------------------|
+|------------|---------------------
 |1 January   |20
 |2 January   |18
 |3 January   |15 *(changed from earlier in the day)*
@@ -80,8 +81,21 @@ Data Activator **ignores the changed value**, because it has already read a valu
 
 The most common reason that a measure value can change over time is that the most recent point on the time axis is subject to change. The worked example above is an example of this situation: since the most recent point on the time axis represents the current date, the number of sales can increase throughout the day. The number of items sold on previous days never change, because these dates are in the past. When this situation occurs, there are two ways you can work around it:
 
-1. **Exclude the current date/time from the chart**: you can add a relative time filter to your chart to exclude the current date or time from your chart. That way, Data Activator will see values only once they are final and no longer subject to change.
+
+1. **Exclude the current date/time from the chart**, so that this value won't be sampled while it's still subject to change. There are a few ways to do this:
+
+      * Add a relative time filter to your chart to exclude the current date or time from your chart. That way, Data Activator will see values only once they are final and no longer subject to change.
+      * Add a time filter where the time range ends at 'one bin before' the current time, so the last bin sampled by Data Activator is already "closed" and won't change.
+
+        ```kusto 
+        TableForReflex
+        | where YourTimeColumn between (ago(5h)..bin(now(), 1h))
+        | summarize count() by bin(YourTimeColumn, 1h)
+        | render timechart
+        ```
+    
 1. **Use a card or KPI visual to track the value for the current date**: the limitation described here only applies to charts with a time axis. So if you want to alert on values for the current date or time, then you can use a KPI or card visual that shows the value for the current date or time. For example, you could have a KPI visual that displays "sales so far for today". Data Activator will be able to read and respond to changes in this value throughout the day.
+
 
 ## Related content
 

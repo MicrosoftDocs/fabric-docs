@@ -8,6 +8,8 @@ items:
   items:
   - name: Decision guide - choose a data store
     href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+  - name: Decision guide - Warehouse and Lakehouse
+    href: ../get-started/decision-guide-lakehouse-warehouse.md
   - name: 1. Create a warehouse
     href: create-warehouse.md
   - name: 2. Create a table

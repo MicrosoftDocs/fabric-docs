@@ -176,14 +176,14 @@ This example demonstrates how to use the `CreateDevAADApp.ps1` script with comma
 > [!NOTE]
 > This step is only applicable to the devmode scenario.
 
-After configuring your application, add the following configurations to the `devAADAppConfig` section of the `Frontend/.env.dev` configuration file located in the [repository](https://go.microsoft.com/fwlink/?linkid=2272254):
+After configuring your application, update the following configurations in `.env.dev` configuration file located in the [Frontend folder](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend):
 
-```json
-"devAADAppConfig": {  
-    "DEV_AAD_CONFIG_AUDIENCE": "", // The ID URI configured in your application for developer scenario
-    "DEV_AAD_CONFIG_REDIRECT_URI": "http://localhost:60006/close", // or the path you configured in index.ts
-    "DEV_AAD_CONFIG_APPID": "" // your app Id
-}
+```
+"DEV_AAD_CONFIG_AUDIENCE": "", // The ID URI configured in your application for developer scenario
+
+"DEV_AAD_CONFIG_REDIRECT_URI": "http://localhost:60006/close", // or the path you configured in index.ts
+
+"DEV_AAD_CONFIG_APPID": "" // your app Id
 ```
 
 :::image type="content" source="./media/authentication-tutorial/configure-workload-env-dev.png" alt-text="Screenshot that shows the configuration of a .env.dev file.":::

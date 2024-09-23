@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 08/30/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -20,6 +20,3 @@ The SAP HANA database connector is supported in Data Factory for [!INCLUDE [prod
 
 For information on how to connect to an SAP HANA database in Dataflow Gen2, go to [Set up your SAP HANA database connection](connector-sap-hana.md).
 
-## Support in data pipelines
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support an SAP HANA database connection in data pipelines.

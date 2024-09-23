@@ -18,6 +18,10 @@ The **Pause** and **Resume** (i.e., **Deactivate** and **Activate**) features in
 * **Activate/Deactivate All**: Quickly pause and resume all data traffic flowing in and out of Eventstream using the Activate All and Deactivate All options on the menu bar.
 * **Activate/Deactivate Toggle Switch Button**: Each node has a toggle switch button, allowing you to activate (i.e., resume) or deactivate (i.e., pause) the data streaming from or to selected sources and destinations.
 
+> [!NOTE]
+>Currently, the Pause and Resume feature is only available in **standard capabilities** Eventstream.
+
+
 The following table outlines the description of different node statuses:
 
 | Node Status | Description |

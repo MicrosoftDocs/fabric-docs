@@ -4,7 +4,7 @@ description: A known issue is posted where dataflows automatically create tables
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/19/2024
+ms.date: 09/04/2024
 ms.custom: known-issue-815
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-815
 
 In a Dataflow Gen 2 dataflow, you can create queries using functions or combine files steps. You can also have a data destination that is a lakehouse, warehouse, or other experience in Fabric. If both of the previous criteria are true, the query is created as a table in the destination.
 
-**Status:** Open
+**Status:** Fixed: September 4, 2024
 
 **Product Experience:** Data Factory
 

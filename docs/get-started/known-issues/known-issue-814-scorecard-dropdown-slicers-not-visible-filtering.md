@@ -4,7 +4,7 @@ description: A known issue is posted where scorecard dropdown slicers aren't vis
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/19/2024
+ms.date: 08/28/2024
 ms.custom: known-issue-814
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-814
 
 When using reports with dropdown slicers in your scorecards, you might encounter issues when filtering data during the creation or editing of the scorecard.
 
-**Status:** Open
+**Status:** Fixed: August 28, 2024
 
 **Product Experience:** Power BI
 

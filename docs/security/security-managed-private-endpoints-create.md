@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom:
-ms.date: 05/30/2024
+ms.date: 09/05/2024
 ---
 
 # Create and  use managed private endpoints
@@ -27,6 +27,9 @@ Users with admin permissions to a Microsoft Fabric workspace can create, view, a
     :::image type="content" source="./media/security-managed-private-endpoints-create/create-managed-private-endpoint-dialog.png" alt-text="Screenshot of the Network security tab in the workspace settings.":::
 
 1. Specify a name for the private endpoint and copy in the resource identifier for the Azure resource. The resource identifier can be found in the properties tab on the Azure portal page.
+
+    > [!NOTE]
+    > Creating a managed private endpoint with a fully qualified domain name (FQDN) is not supported.
 
     When done, select **Create**.  
 
@@ -137,7 +140,6 @@ Ensure resource ID format is followed as shown in the following table.
 | Azure Key Vault | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}|
 | Azure Data Explorer (Kusto) | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Kusto/clusters/{cluster-name}|
 | Azure Machine Learning | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}|
-| Private Link Service | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/privateLinkServices/{service-name}|
 | Microsoft Purview | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Purview/accounts/{account-name}|
 | Azure Search | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Search/searchServices/{service-name}|
 | Azure SQL Database | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}|

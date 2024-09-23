@@ -31,6 +31,8 @@ items:
     href: decision-guide-pipeline-dataflow-spark.md
   - name: Decision guide - choose a data store
     href: decision-guide-data-store.md
+  - name: Decision guide - Warehouse and Lakehouse
+    href: ../get-started/decision-guide-lakehouse-warehouse.md
 - name: Find your way around Fabric
   items:
   - name: Find your items from Fabric Home
@@ -159,6 +161,36 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: OneLake BCDR write transactions aren't categorized correctly for billing
+      href: known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md
+    - name: Excel enterprise data types feature experiences issues
+      href: known-issues/known-issue-840-excel-enterprise-data-types-feature-experiences-issues.md
+    - name: Dynamics 365 Business Central connector causes refresh failures
+      href: known-issues/known-issue-839-dynamics-365-business-central-connector-causes-failures.md
+    - name: Monitoring hub displays incorrect queued duration
+      href: known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md
+    - name: Copilot in DAX query view returns DAX query with syntax error
+      href: known-issues/known-issue-836-copilot-dax-query-view-returns-dax-query-error.md
+    - name: Managed private endpoint connection could fail
+      href: known-issues/known-issue-835-managed-private-endpoint-connection-fail.md
+    - name: Edit tables dialog doesn't load when reloading a Direct Lake semantic model
+      href: known-issues/known-issue-828-edit-tables-not-load-when-reload-direct-lake-semantic-model.md
+    - name: Paginated report cascading parameters with default values aren't set as expected
+      href: known-issues/known-issue-825-paginated-cascading-parameters-default-values-not-expected.md
+    - name: Concurrent stored procedures block each other in data warehouse
+      href: known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md
+    - name: SQL queries fail intermittently
+      href: known-issues/known-issue-822-sql-queries-fail-intermittently.md
+    - name: Schema refresh for a data warehouse's semantic model fails
+      href: known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md
+    - name: Subscriptions and exports with maps might produce wrong results
+      href: known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md
+    - name: Edit tables for a data warehouse's semantic model doesn't work
+      href: known-issues/known-issue-818-edit-tables-warehouse-semantic-model-not-work.md
+    - name: Pipelines don't support Role property for Snowflake connector
+      href: known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md
+    - name: Pipeline deployment fails when parent contains deactivated activity
+      href: known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md
     - name: Dataflows automatically create tables from queries on Fabric destinations
       href: known-issues/known-issue-815-dataflows-create-tables-queries-destinations.md
     - name: Scorecard dropdown slicers aren't visible when filtering

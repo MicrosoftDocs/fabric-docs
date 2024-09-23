@@ -77,8 +77,8 @@ Use instructions from the [Add Azure SQL Database CDC as a source](#add-azure-sq
    
         :::image type="content" source="./media/add-source-azure-sql-database-cdc/connection-credentials.png" alt-text="Screenshot that shows the Connection credentials section of the New connection page." ::: 
 1. Now, on the **Connect** page, do these steps:
-    1. Enter the **name** of the **SQL table**.
-    1. For **Port**, Enter the port number (default is 1433). 
+    1. Select **All tables** or enter the table names separated by commas, such as: `dbo.table1, dbo.table2`.
+    1. For **Port**, the default value is 1433 and cannot be modified.
     1. In the **Stream details** section to the right, select the Fabric **workspace** where you want to save the eventstream that the Wizard is going to create. 
     1. For **eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected Azure SQL Database CDC as a source.
     1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You see this stream on the **Data streams** tab of Real-Time hub when the wizard finishes. 

@@ -53,11 +53,15 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 
 ## Shortcuts
 
-When accessing data using OneLake shortcuts, the transaction usage counts against the capacity tied to the workspace where the shortcut is created. The capacity where the data is ultimately stored (that the shortcut points to) is billed for the data stored.
+When you access data via OneLake shortcuts, the transaction usage counts against the capacity tied to the workspace where the shortcut is created. The capacity where the data is ultimately stored (that the shortcut points to) is billed for the data stored. 
+
+When you access data via a shortcut to a source external to OneLake, such as to ADLS Gen2, OneLake does not count the CU usage for that external request. The transactions would be charged directly to you by the external service such as ADLS Gen2.
 
 ## Paused Capacity
 
-When a capacity is paused, the data stored is continued to be billed using the pay-as-you-go rate per GB. All transactions are rejected when a capacity is paused, so no Fabric CUs are consumed due to OneLake transactions. To access your data or delete a Fabric item, the capacity needs to be resumed. You can delete the workspace while a capacity is paused.
+When a capacity is paused, the data stored is continued to be billed using the pay-as-you-go rate per GB. All transactions to that capacity are rejected when it is paused, so no Fabric CUs are consumed due to OneLake transactions. To access your data or delete a Fabric item, the capacity needs to be resumed. You can delete the workspace while a capacity is paused.
+
+The consumption of the data via shortcuts is always counted against the consumer’s capacity, so the capacity where the data is stored can be paused without disrupting downstream consumers in other capacities. See an example on the [OneLake Capacity Consumption page](../onelake/onelake-capacity-consumption.md#onelake-compute)
 
 ## Disaster recovery
 
@@ -68,6 +72,10 @@ OneLake usage when disaster recovery is enabled is also defined by the amount of
 When disaster recovery is enabled, the data in OneLake gets geo-replicated. Thus, the storage is billed as Business Continuity and Disaster Recovery (BCDR) Storage. For more information about pricing, see [Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 
 ## Disaster recovery transactions
+
+> [!IMPORTANT]
+> 
+> Currently, OneLake BCDR transactions via Redirect are consuming Fabric CUs at the rate of non-BCDR transactions. The CU consumption for OneLake BCDR write operations is higher than non-BCDR. This is a temporary situation. Kindly check the [Known Issues](../get-started/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) for updates on when the issue will be corrected.
 
 When disaster recovery is enabled for a given capacity, write operations consume higher capacity units.
 
