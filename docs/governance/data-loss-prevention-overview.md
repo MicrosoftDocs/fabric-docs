@@ -46,7 +46,6 @@ This article describes how DLP in Fabric works, lists considerations and limitat
 
 * DLP policies for Fabric aren't supported for the following Delta Parquet data types:
     * Binary, timestamp_ntz, Struct, Array, List, Map, Json, Enum, Interval, Void.
-    * Data encoded with RLE and Bit_RLE.
     * Data with LZ4, Zstd, and Gzip compression codecs.
 
 * [Exact data match (EDM) classifiers](/microsoft-365/compliance/sit-learn-about-exact-data-match-based-sits) and [trainable classifiers](/microsoft-365/compliance/classifier-learn-about) aren't supported by DLP for Fabric. If you select an EDM or trainable classifier in the condition of a policy, the policy will yield no results even if the semantic model or lakehouse does in fact contain data that satisfies the EDM or trainable classifier. Other classifiers specified in the policy will return results, if any.
@@ -132,6 +131,8 @@ When a DLP policy detects an issue with an item:
     > If you hide the policy tip, it doesn’t get deleted. It will appear the next time you visit the page.
 
     For lakehouses, the indication will appear in the header in edit mode, and opening the fly out makes it possible to see more details about the policy tips affecting the lakehouse. This information can also be viewed in the side panel.
+
+    :::image type="content" source="./media/data-loss-prevention-overview/policy-tip-in-lakehouse-details.png" alt-text="Screenshot of policy tip on semantic model details page.":::
 
 * If alerts are enabled in the policy, an alert will be recorded on the data loss prevention **Alerts** page in the Purview portal, and (if configured) an email will be sent to administrators and/or specified users. For more information, see [Monitor and manage DLP policy violations](./data-loss-prevention-monitor.md).
 
