@@ -15,17 +15,17 @@ ms.collection: ce-skilling-ai-copilot
 
 ## Publishing and versioning
 
-AI skill creation includes setting adjustments - notes to the model, example queries, etc. Once the AI skill performance looks good, you can publish it. Publishing AI skill generates a published version of the AI skill, which makes it available for others to use. You can't edit the published version of the AI skill.
+Creating an AI Skill is an iterative process that involves refinement of various configurations - for example, notes to the model, example SQL queries, and more. As you make adjustments and improve the AI Skill's performance, you can soon enough publish it. Once published, a published version of the AI Skill is generated, which you can then share with others to use. You cannot edit the published version.
 
 As part of the publishing process, you can include a description that explains what the AI skill does. The description is available to consumers of the AI skill, to help them understand its purpose and functionality.
 
 :::image type="content" source="./media/ai-skill-sharing/publish-ai-skill-description.png" alt-text="Screenshot showing creation of an AI skill description." lightbox="./media/ai-skill-sharing/publish-ai-skill-description.png":::
 
-After you publish your AI skill, you can continue to work on its current working version to enhance and improve its performance. The changes you make in this working version don't affect the published version that others use, so you can iterate and improve your current working version with confidence. You can seamlessly switch between the published version and development versions of your AI skill. You can then ask the same set of queries on both versions, to compare their performance. This gives valuable insights about how your changes affect the effectiveness of your AI skill.
+After you publish your AI skill, you can continue to work on its current working version to enhance and improve its performance. The changes you make in this working version don't affect the published version that others use, so you can iterate and improve your current working version with confidence. You can seamlessly switch between the published version and current working versions of your AI skill. You can then ask the same set of queries on both versions, to compare their performance. This gives valuable insights about how your changes affect the effectiveness of your AI skill.
 
 :::image type="content" source="./media/ai-skill-sharing/published-switch.png" alt-text="Screenshot showing how to switch between published and development AI skill versions." lightbox="./media/ai-skill-sharing/published-switch.png":::
 
-You can easily update only the AI skill description. Navigate to Settings, select Publishing, and then update the description, as show in this screenshot:
+If you need to update the AI skill description without making any other changes, you can navigate to Settings, select Publishing, and then update the description, as show in this screenshot:
 
 :::image type="content" source="./media/ai-skill-sharing/update-description.png" alt-text="Screenshot showing how to update the AI skill description." lightbox="./media/ai-skill-sharing/update-description.png":::
 
