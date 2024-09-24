@@ -56,7 +56,7 @@ sections:
           How do I know Fabric is replicating data on my Azure SQL Database? 
         answer: |
            If you're experiencing mirroring problems, perform the following database level checks using Dynamic Management Views (DMVs) and stored procedures to validate configuration. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
-           1. Execute the following query to check if the changes properly flow: 
+           - Execute the following query to check if the changes properly flow: 
               ```sql
               SELECT * FROM sys.dm_change_feed_log_scan_sessions 
               ```
