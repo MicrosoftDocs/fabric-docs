@@ -96,7 +96,7 @@ sections:
       - question: |
           Can I mirror the same source database multiple times? 
         answer: 
-          Yes, you can, but you shouldn't need to. Once the data is in Fabric, it can be shared from there.
+          No, each Azure SQL Database can only be mirrored once. You just need a single copy of the data in Fabric OneLake, which you can share with others.
 
       - question: |
           Can I mirror only specific tables from my Azure SQL database? 
@@ -123,7 +123,7 @@ sections:
       - question: |
           What are the costs associated with Mirroring?
         answer: 
-          During preview, there's no cost for Mirroring or storing mirrored data in Fabric. Cost of the source Azure SQL Database is separate from Fabric Mirroring.
+          There is no compute cost for mirroring data from the source to Fabric OneLake. The Mirroring storage cost is free up to a certain limit based on the purchased compute capacity SKU you provision. Learn more from the Mirroring section in [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
       - question: |
           What do we recommend a customer do to avoid or reduce Azure SQL Database costs? 
         answer: 
@@ -132,6 +132,10 @@ sections:
           How are ingress fees handled? 
         answer: 
           Fabric doesn't charge for Ingress fees into OneLake for Mirroring.
+      - question: |
+          How are egress fees handled?
+        answer: 
+          If the Azure SQL Database is located in a different region from your Fabric capacity, data egress will be charged. If in the same region, there is no data egress.
 
   - name: Licensing
     questions:
@@ -139,10 +143,6 @@ sections:
           What are licensing options for Fabric Mirroring? 
         answer:
           A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../../enterprise/licenses.md).
-      - question: |
-          How are egress fees handled?
-        answer: 
-          If the Azure SQL Database is located in a different region from your Fabric capacity, data egress will be charged. If in the same region, there is no data egress.
 
   - name: Stop or pause Fabric Mirroring
     questions:
