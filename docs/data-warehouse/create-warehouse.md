@@ -46,13 +46,9 @@ You can create your warehouse from the **Create** hub by selecting the **Warehou
 
 To create a warehouse, navigate to your workspace, select **+ New** and then select **Warehouse** to create a warehouse.
 
-:::image type="content" source="media/create-warehouse/warehouse-workspace-list.png" alt-text="Screenshot showing where to select New and Warehouse in the workspace list view.":::
-
 #### Ready for data
 
 Once initialized, you can load data into your warehouse. For more information about getting data into a warehouse, see [Ingesting data](ingest-data.md).
-
-:::image type="content" source="media/create-warehouse/warehouse-home.png" alt-text="Screenshot of an automatically created warehouse." lightbox="media/create-warehouse/warehouse-home.png":::
 
 <a id="how-to-create-a-warehouse-sample"></a>
 
@@ -70,25 +66,19 @@ In this section, we walk you through creating a sample [!INCLUDE [fabric-dw](inc
 
 1. The create action creates a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and start loading sample data into it. The data loading takes few minutes to complete.
 
-   :::image type="content" source="media/create-warehouse/loading-sample-data.png" alt-text="Screenshot showing the loading sample data into Warehouse." lightbox="media/create-warehouse/loading-sample-data.png":::
-
 1. On completion of loading sample data, the warehouse opens with data loaded into tables and views to query.
 
    :::image type="content" source="media/create-warehouse/warehouse-with-sample-table-view.png" alt-text="Screenshot showing the Warehouse loaded with sample data." lightbox="media/create-warehouse/warehouse-with-sample-table-view.png":::
 
-Now, you're ready to load sample data.
+If you have an existing warehouse created that's empty, the following steps will show how to load sample data.
 
-1. Once you have created your warehouse, you can load sample data into warehouse from **Use sample database** card.
-
-   :::image type="content" source="media/create-warehouse/use-sample-database.png" alt-text="Screenshot showing where to select the Warehouse sample card in the Home hub." lightbox="media/create-warehouse/use-sample-database.png":::
+1. Once you have created your warehouse, you can load sample data into warehouse from **Use sample database** card on the home page of the warehouse.
 
 1. The data loading takes few minutes to complete.
 
-   :::image type="content" source="media/create-warehouse-sample/loading-sample-data.png" alt-text="Screenshot showing the loading sample data into warehouse." lightbox="media/create-warehouse-sample/loading-sample-data.png":::
-
 1. On completion of loading sample data, the warehouse displays data loaded into tables and views to query.
 
-   :::image type="content" source="media/create-warehouse-sample/warehouse-with-sample-table-view.png" alt-text="Screenshot showing the warehouse loaded with sample data." lightbox="media/create-warehouse-sample/warehouse-with-sample-table-view.png":::
+   :::image type="content" source="media/create-warehouse/warehouse-with-sample-table-view.png" alt-text="Screenshot showing the warehouse loaded with sample data." lightbox="media/create-warehouse/warehouse-with-sample-table-view.png":::
 
 1. The following sample T-SQL scripts can be used on the sample data in your new warehouse.
 

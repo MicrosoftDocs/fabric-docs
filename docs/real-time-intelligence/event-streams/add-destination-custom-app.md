@@ -197,7 +197,7 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 ## Related content
 To learn how to add other destinations to an eventstream, see the following articles:     
 
-- [KQL Database](add-destination-kql-database.md)   
+- [Eventhouse](add-destination-kql-database.md)   
 - [Lakehouse](add-destination-lakehouse.md)
 - [Reflex](add-destination-reflex.md)
 

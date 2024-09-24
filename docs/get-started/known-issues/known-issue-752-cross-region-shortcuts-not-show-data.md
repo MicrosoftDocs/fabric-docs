@@ -4,7 +4,7 @@ description: A known issue is posted where cross region shortcuts don't show dat
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/11/2024
+ms.date: 09/23/2024
 ms.custom: known-issue-752
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-752
 
 You can create a OneLake shortcut A in one region that points to a shortcut B in another region, which is considered a cross region shortcut. In this scenario, creating a new or accessing an existing cross region shortcut doesn't work.
 
-**Status:** Open
+**Status:** Fixed: September 23, 2024
 
 **Product Experience:** OneLake
 
