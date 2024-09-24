@@ -65,9 +65,9 @@ Select the tab that corresponds with your desired database type.
 
 ## Interact with databases using the connection pane
 
-The connection pane allows you to browse and switch between your databases. The connection pane shows a break down of Tables, Materialized View, Shortcuts and Functions included in the selected database.
+The connection pane allows you to browse and switch between the databases connected to the queryset. Under **Database** in the connection pane, select **V** to expand the database connections menu. Select the database you want to explore. The connection pane shows a breakdown of Tables, Materialized View, Shortcuts and Functions included in the selected database.
 
-In the connection pane, you can explore what items is included in each section. To open the action menu, hover over the item and select the elipse. The menu gives options to **Refresh data**, **View data profile**, **Insert** to create a script and paste it in to the query editor, or **Delete**. Different actions are available for different types of items.
+In the connection pane, you can explore what items is included in each section. To open the action menu, hover over the item and select the elipses. The menu gives options to **Refresh data**, **View data profile**, **Insert** to create a script and paste it in to the query editor, or **Delete**. Different actions are available for different types of items.
 
 ## Write a query
 
@@ -97,7 +97,7 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 You might want to copy or share the queries you create.
 
 1. At the top of the query window, select the **Home** tab.
-1. Select **Copy query**.
+1. Select **Copy query** in the query pane.
 
     :::image type="content" source="media/kusto-query-set/copy-query-results.png" alt-text="Screenshot of the Manage tab of the KQL Queryset showing the dropdown of the copy query or query results option.":::
 
@@ -127,7 +127,7 @@ This is a one-time method to export a CSV file containing the query results.
 
     :::image type="content" source="media/kusto-query-set/export-csv.png" alt-text="Screenshot of the Home tab of the KQL Queryset showing the highlighted option to export results to CSV.":::
 
-1. Select **Export results to CSV**.
+1. Select **Export results to CSV** in the query pane.
 1. Save the CSV file locally.
 
 ## Delete KQL queryset
