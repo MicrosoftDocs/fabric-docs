@@ -4,7 +4,7 @@ description: A known issue is posted where pipeline Web activity through on-prem
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/11/2024
+ms.date: 09/23/2024
 ms.custom: known-issue-753
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-753
 
 You can use **Web** activity in a pipeline. If you use an on-premises data gateway, you can't use service principal name (SPN) authentication for the **Web** activity.
 
-**Status:** Open
+**Status:** Fixed: September 23, 2024
 
 **Product Experience:** Data Factory
 

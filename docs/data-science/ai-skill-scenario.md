@@ -8,7 +8,7 @@ reviewer: avangrootel
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
-ms.date: 08/05/2024
+ms.date: 09/21/2024
 ms.collection: ce-skilling-ai-copilot
 
 ---

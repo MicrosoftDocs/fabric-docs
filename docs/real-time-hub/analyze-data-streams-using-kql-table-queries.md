@@ -1,12 +1,12 @@
 ---
 title: Analyze data streams in Real-Time hub
 description: This article describes how to analyze data streams in Real-Time hub. Process using transformations in eventstreams, add KQL destination to send it to a KQL table and analyze it.
-author: ajetasin
-ms.author: ajetasi
+author: mystina
+ms.author: majia
 ms.topic: how-to
 ms.custom:
   - build-2024
-ms.date: 05/21/2024
+ms.date: 09/04/2024
 ---
 
 # Analyze data streams in Real-Time hub (preview)
@@ -30,39 +30,40 @@ In Real-Time hub, when you get events from the [supported sources](supported-sou
 
 - **Get events** experience:
 
-    At the end of creating this stream, on the **Review and create** page, you see the **Open eventstream** link to open the eventstream associated with the stream in an editor. 
-- **Data streams** tab:
+    At the end of creating this stream, on the **Review and create** page, you see the **Open eventstream** link to open the eventstream associated with the stream in an editor.
+-**All data streams** page:
 
-    Move the mouse over a stream whose parent is an eventstream, and select the **Open** link, or select **... (ellipsis)**, and then select **Open eventstream**. 
+    Move the mouse over a stream whose parent is an eventstream, and select the **Open** link, or select **... (ellipsis)**, and then select **Open eventstream**.
 - **Detail page**:
 
-    Select a stream whose parent is an eventstream on the **Data streams** tab to see a stream detail page. On this page, select **Open eventstream** link on the ribbon.  
+    Select a stream whose parent is an eventstream on the **All data streams** page to see a stream detail page. On this page, select **Open eventstream** link on the ribbon.  
 
 ### Add KQL Database destination to the eventstream
+
 After you open an eventstream in the editor, you can [add a KQL database destination](../real-time-intelligence/event-streams/add-destination-kql-database.md). When data is output to a KQL table, you can run queries against the KQL table to analyze the data.
 
 1. After you open the eventstream, select **Edit** on the ribbon to enter into the edit mode. 
 
     :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/edit-button.png" alt-text="Screenshot that shows the selection of the Edit button on the ribbon." lightbox="./media/analyze-data-streams-using-kql-table-queries/edit-button.png":::   
-1. Add a KQL Database destination. Select **Transform events or add destination** tile or **Transform events** on the ribbon, and then select **KQL Database**. 
+1. Add a KQL Database destination. Select **Transform events or add destination** tile or **Transform events** on the ribbon, and then select **KQL Database**.
 
     :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/add-destination-kql-database-menu.png" alt-text="Screenshot that shows the selection of the KQL Database in the list of destinations." lightbox="./media/analyze-data-streams-using-kql-table-queries/add-destination-kql-database-menu.png":::   
-1. Configure the KQL Database destination by following instructions from [Add KQL Database destination to an eventstream](../real-time-intelligence/event-streams/add-destination-kql-database.md). 
-1. Wait for the data to be streamed into the KQL destination. Verify the status of streaming into the KQL database on the canvas. 
+1. Configure the KQL Database destination by following instructions from [Add KQL Database destination to an eventstream](../real-time-intelligence/event-streams/add-destination-kql-database.md).
+1. Wait for the data to be streamed into the KQL destination. Verify the status of streaming into the KQL database on the canvas.
 1. Select the destination tile and switch to the **Details** tab in the bottom pane.
 1. Select **Open item** to open the destination KQL database.
 
     :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/kql-database-destination.png" alt-text="Screenshot that shows the selection of the KQL Database tile on the canvas and a link to open KQL database in the Details pane at the bottom." lightbox="./media/analyze-data-streams-using-kql-table-queries/kql-database-destination.png":::   
-1. Now, Run queries against the destination KQL table to analyze the data streaming into the KQL database. 
+1. Now, Run queries against the destination KQL table to analyze the data streaming into the KQL database.
 
 ## Analyze tables
 
 You can open the KQL database that's associated with a table by using one of the following ways: 
 
-- On the **Data streams** tab, move the mouse over a data stream of table type, and select the **Open** link, or select **... (ellipsis)**, and then select **Open KQL Database**. 
+- On the **All data streams** page, move the mouse over a data stream of table type, and select the **Open** link, or select **... (ellipsis)**, and then select **Open KQL Database**. 
 
     :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/open-kql-database-list.png" alt-text="Screenshot that shows the Open KQL Database links for a stream of type Table." :::   
-- Select a KQL table on the **Data streams** tab to see a table detail page. On this page, you can select **Open KQL Database** link on the ribbon.  
+- Select a KQL table on the **All data streams** page to see a table detail page. On this page, you can select **Open KQL Database** link on the ribbon. 
 
     :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/open-kql-database-detail.png" alt-text="Screenshot that shows the Open KQL Database links for a stream of type Table from the detail view." :::   
 

@@ -4,7 +4,7 @@ description: A known issue is posted where subscriptions and exports with maps m
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/23/2024
+ms.date: 09/23/2024
 ms.custom: known-issue-819
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-819
 
 You can set up a subscription or export on a report or dashboard. If the item contains an Azure or Bing map visual, the map data might show incorrect results.
 
-**Status:** Open
+**Status:** Fixed: September 23, 2024
 
 **Product Experience:** Power BI
 
