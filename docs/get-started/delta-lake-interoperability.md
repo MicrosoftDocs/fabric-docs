@@ -33,8 +33,9 @@ The following matrix shows key Delta Lake features and their support on each Fab
 |---------|---------|---------|---------|---------|---------|---------|---------|
 |Data warehouse Delta Lake export|No|Yes|Yes|Yes|No|Yes|Reader: 3<br/>Writer: 7<br/>Deletion Vectors|
 SQL analytics endpoint|No|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|N/A (not applicable)|
-Fabric Spark runtime 1.2|Yes|Yes|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
-Fabric Spark runtime 1.1|Yes|No|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
+Fabric Spark Runtime 1.3|Yes|Yes|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
+Fabric Spark Runtime 1.2|Yes|Yes|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
+Fabric Spark Runtime 1.1|Yes|No|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
 Dataflows|Yes|Yes|Yes|No|Yes|Yes|Reader: 1<br/>Writer: 2<br/>|
 Data pipelines|No|No|Yes|No|Yes, overwrite only|Yes|Reader: 1<br/>Writer: 2|
 Power BI direct lake semantic models|Yes|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|N/A (not applicable)|
