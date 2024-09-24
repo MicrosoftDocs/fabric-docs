@@ -71,7 +71,7 @@ With private endpoints your service is assigned a private IP address from your v
 
 Using Private links, a tunnel from the service into one of your subnets creates a private channel. Communication from external devices travels from their IP address, to a private endpoint in that subnet, through the tunnel and into the service.
 
-When implementing private links, Fabric is no longer accessible through the public internet. To access Fabric, all users have to connect through the private network. The private network is required for all communications with Fabric, including viewing a Power BI report in the browser and using SQL Server Management Studio (SSMS) to connect to a SQL connections string like `<guid_unique_your_item>.datawarehouse.fabric.microsoft.com`.
+After implementing private links, Fabric is no longer accessed through the public internet. To access Fabric, all users have to connect through the private network. The private network is required for all communications with Fabric, including viewing a Power BI report in the browser and using SQL Server Management Studio (SSMS) to connect to a SQL connections string like `<guid_unique_your_item>.datawarehouse.fabric.microsoft.com`.
 
 ### On-premises networks
 
