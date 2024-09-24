@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 07/23/2024
+ms.date: 09/05/2024
 ms.search.form: Get started
 # customer intent: I want to learn how to get data in the Real-Time hub in Real-Time Intelligence.
 ---
@@ -21,11 +21,11 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
 ## Create an event stream
 
 1. From the navigation bar, select **Real-Time hub**.
-1. Select **+ Get events**.
+1. Select **+ Add source**.
     
     :::image type="content" source="media/tutorial/get-events.png" alt-text="Screenshot of Real-time hub with get events highlighted.":::
 
-1. The **Get events** pane opens. Select **Sample data**. 
+1. The **Add source** pane opens. Select **Sample data**.
 
 ### Sample data
 
@@ -69,22 +69,23 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
 ## Create a destination
 
 1. Hover over the right edge of the *TutorialTransform* tile and select the green plus icon.
-1. Select **Destinations** > **KQL Database**.
+1. Select **Destinations** > **Eventhouse**.
 
-    A new tile is created entitled *KQLDatabase1*.
+    A new tile is created entitled *Eventhouse*.
 
-1. Select the pencil icon on the *KQLDatabase1* tile.
-1. Enter the following information in the **KQL Database** pane:
+1. Select the pencil icon on the *Eventhouse* tile.
+1. Enter the following information in the **Eventhouse** pane:
 
-    :::image type="content" source="media/tutorial/kql-database-details.png" alt-text="Screenshot showing the KQL database destination pane in Real-Time Intelligence.":::
+    :::image type="content" source="media/tutorial/kql-database-details.png" alt-text="Screenshot showing the Eventhouse destination pane in Real-Time Intelligence.":::
 
     | Field | Value |
     | --- | --- |
     | **Destination name** | *TutorialDestination* |
     | **Workspace** | Select the workspace in which you created your resources. |
+    | **Eventhouse** | *Tutorial* |
     | **KQL Database** | *Tutorial* |
     | **Destination table** | *Create new* - enter *TutorialTable* as table name |
-    | **Input data format** | *JSON* |  
+    | **Input data format** | *Json* |  
 
 1. Select **Save**.
 1. From the menu ribbon, select **Publish**.

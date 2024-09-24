@@ -4,7 +4,7 @@ description: A known issue is posted where tables aren't visible in the SQL anal
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/18/2024
+ms.date: 09/23/2024
 ms.custom: known-issue-782
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-782
 
 When creating a lakehouse, you can enable the [Lakehouse schemas (Public Preview) option](/fabric/data-engineering/lakehouse-schemas). If you create a schema enabled lakehouse, you can't see delta tables in the SQL analytics endpoint. We know the root cause of this problem and are actively working on resolving this issue.
 
-**Status:** Open
+**Status:** Fixed: September 23, 2024
 
 **Product Experience:** Data Engineering
 

@@ -22,11 +22,13 @@ Review the troubleshooting section of frequently asked questions for each data s
 - [Troubleshoot Mirroring Azure SQL Database](azure-sql-database-troubleshoot.md) and [FAQ about Mirroring Azure SQL Database](azure-sql-database-mirroring-faq.yml)
 - [Troubleshoot Mirroring Azure Cosmos DB](azure-cosmos-db-troubleshooting.yml) and [FAQ about Mirroring Azure Cosmos DB](azure-cosmos-db-faq.yml)
 - [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
+- [FAQ about Mirroring Azure Databricks](azure-databricks-faq.yml)
 
 Review limitations documentation for each data source:
 
 - [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)
 
 ## Stop replication

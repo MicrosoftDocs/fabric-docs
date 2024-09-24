@@ -6,7 +6,7 @@ items:
 - name: "Tutorial: End to end lifecycle management"
   href: cicd-tutorial.md
 - name: CI/CD workflow options in Fabric
-  href: deployment-pipelines/manage-deployment-pipelines.md
+  href: manage-deployment.md
 - name: Deployment pipelines
   items:
   - name: New deployment pipelines interface

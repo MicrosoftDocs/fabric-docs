@@ -1,6 +1,6 @@
 ---
-title: Add a KQL Database destination to an eventstream
-description: Learn how to add a KQL Database destination to an eventstream in Microsoft Fabric event streams.
+title: Add an Eventhouse destination to an eventstream
+description: Learn how to add an Eventhouse destination to an eventstream in Microsoft Fabric event streams.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -13,9 +13,9 @@ zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-group
 zone_pivot_groups: event-streams-standard-enhanced
 ---
 
-# Add a KQL Database destination to an eventstream
+# Add an Eventhouse destination to an eventstream
 
-This article shows you how to add a KQL database as a destination to an eventstream in Microsoft Fabric event streams.
+This article shows you how to add an Eventhouse as a destination to an eventstream in Microsoft Fabric event streams.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
@@ -24,34 +24,34 @@ This article shows you how to add a KQL database as a destination to an eventstr
 ## Prerequisites
 
 - Access to the Fabric **premium workspace** where your eventstream is located with **Contributor** or higher permissions.
-- Access to a KQL database created in a Fabric **premium workspace** where you have **Contributor** or higher permissions.
+- Access to an Eventhouse created in a Fabric **premium workspace** where you have **Contributor** or higher permissions.
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
-##  Add a KQL database as a destination
+##  Add an Eventhouse as a destination
 
-To add a KQL database as a destination, you can choose between two ingestion modes: **Direct ingestion** or **Event processing before ingestion**.
+To add an Eventhouse as a destination, you can choose between two ingestion modes: **Direct ingestion** or **Event processing before ingestion**.
 
 ### Direct ingestion mode
 
-Direct ingestion mode ingests your event data directly into the KQL database without any processing. You can use direct ingestion mode to add a KQL database destination to your default stream.
+Direct ingestion mode ingests your event data directly into the Eventhouse without any processing. You can use direct ingestion mode to add an Eventhouse destination to your default stream.
 
 > [!IMPORTANT]
-> You can use **Direct ingestion** only for your default stream. Direct ingestion can't follow processing operators or derived streams. If you want to add a KQL Database destination after processing operators or derived streams, use **Event processing before ingestion** instead.
+> You can use **Direct ingestion** only for your default stream. Direct ingestion can't follow processing operators or derived streams. If you want to add a Eventhouse destination after processing operators or derived streams, use **Event processing before ingestion** instead.
 
-1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon or select the **Transform events or add destination** card on the canvas, and then select **KQL Database**. 
+1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon or select the **Transform events or add destination** card on the canvas, and then select **Eventhouse**. 
 
-   :::image type="content" source="media/add-destination-kql-database/add-destination.png" alt-text="A screenshot of selecting KQL database in the Add destination dropdown list." lightbox="media/add-destination-kql-database/add-destination.png":::
+   :::image type="content" source="media/add-destination-kql-database/add-eventhouse-destination.png" alt-text="A screenshot of selecting Eventhouse in the Add destination dropdown list." lightbox="media/add-destination-kql-database/add-eventhouse-destination.png"::: 
+   
+1. On the Eventhouse screen, select **Direct ingestion**.
 
-1. On the KQL Database screen, select **Direct ingestion**.
-
-1. Enter a **Destination name**, a **Workspace**, and a **KQL Database** from the selected workspace.
+1. Enter a **Destination name**, a **Workspace**, and a **Eventhouse** from the selected workspace.
 
 1. Select **Save**.
 
-   ![A screenshot of the KQL Database configuration screen.](media/add-destination-kql-database/direct-ingestion.png)
+   ![A screenshot of the Eventhouse configuration screen.](media/add-destination-kql-database/eventhouse-direct-ingestion.png)
 
-1. Connect the new KQL Database destination card to the output of your eventstream if not already connected, and then select **Publish**.
+1. Connect the new Eventhouse destination card to the output of your eventstream if not already connected, and then select **Publish**.
 
    :::image type="content" source="media/add-destination-kql-database/edit-mode.png" alt-text="A screenshot of the eventstream with the Publish button highlighted." lightbox="media/add-destination-kql-database/edit-mode.png":::
 
@@ -92,7 +92,7 @@ Direct ingestion mode ingests your event data directly into the KQL database wit
 
 You can now see the KQL Database destination on the canvas in **Live view**.
 
-:::image type="content" source="media/add-destination-kql-database/live-view-finished.png" alt-text="A screenshot of the configured KQL Database destination in Live view." lightbox="media/add-destination-kql-database/live-view-finished.png":::
+:::image type="content" source="media/add-destination-kql-database/live-view-finished.png" alt-text="A screenshot of the configured KQL Database destination in Live view." lightbox="media/add-destination-kql-database/live-view-finished.png"::: 
 
 ### Event processing before ingestion
 
@@ -100,11 +100,11 @@ The event processing before ingestion mode processes your event data before inge
 
 1. In **Edit mode** for your eventstream, hover over an operator or derived stream, select **+**, and then select **KQL Database**.
 
-   :::image type="content" source="media/add-destination-kql-database/select-kql.png" alt-text="A screenshot of selecting the + symbol for the operator output and selecting KQL Database." lightbox="media/add-destination-kql-database/select-kql.png":::
+   :::image type="content" source="media/add-destination-kql-database/select-eventhouse.png" alt-text="A screenshot of selecting the + symbol for the operator output and selecting KQL Database." lightbox="media/add-destination-kql-database/select-eventhouse.png":::
 
 1. On the **KQL Database** screen, **Event processing before ingestion** should already be selected. Complete the rest of the information about your KQL database, and then select **Save**.
 
-   ![A screenshot of the KQL Database configuration screen for Event processing before ingestion.](media/add-destination-kql-database/event-processing.png)
+   ![A screenshot of the KQL Database configuration screen for Event processing before ingestion.](media/add-destination-kql-database/eventhouse-event-processing.png)
 
 1. To implement the newly added KQL Database destination, select **Publish**.
 
@@ -112,7 +112,7 @@ The event processing before ingestion mode processes your event data before inge
 
 Once you complete these steps, the eventstream with KQL Database destination is available for visualization in **Live view.**
 
-:::image type="content" source="media/add-destination-kql-database/live-view-processed.png" alt-text="A screenshot of the configured KQL Database event processing flow in Live view." lightbox="media/add-destination-kql-database/live-view-processed.png":::
+:::image type="content" source="media/add-destination-kql-database/live-view-processed-eventhouse.png" alt-text="A screenshot of the configured KQL Database event processing flow in Live view." lightbox="media/add-destination-kql-database/live-view-processed-eventhouse.png":::
 
 
 ## Related content
