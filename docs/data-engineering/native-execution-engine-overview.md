@@ -76,7 +76,7 @@ For notebooks, insert the required configuration commands in the first cell. For
 
 :::image type="content" source="media\native\enable.png" alt-text="Screenshot showcasing how to enable the native execution engine inside the notebook." lightbox="media\native\enable.png":::
 
-The native execution engine is integrated with custom pools, meaning that enabling this feature initiates a new session, typically taking up to two minutes to start.
+The Native Execution Engine is integrated with live pools, so once you enable the feature, it takes effect immediately without requiring you to initiate a new session.
 
 > [!IMPORTANT]
 > Configuration of the native execution engine must be done prior to the initiation of the Spark session. After the Spark session starts, the `spark.shuffle.manager` setting becomes immutable and can't be changed. Ensure that these configurations are set within the `%%configure` block in notebooks or in the Spark session builder for Spark job definitions.
