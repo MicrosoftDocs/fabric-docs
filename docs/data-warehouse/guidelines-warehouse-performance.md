@@ -109,4 +109,3 @@ The data compaction process is seamlessly integrated into the Data Warehouse eng
 - [T-SQL surface area](tsql-surface-area.md)
 - [Tables in data warehouse](tables.md)
 - [Caching in Fabric data warehousing](caching.md)
-- [Announcing: Automatic Data Compaction for Fabric Warehouse](https://blog.fabric.microsoft.com/en-US/blog/announcing-automatic-data-compaction-for-fabric-warehouse/)
