@@ -65,7 +65,7 @@ Select the tab that corresponds with your desired database type.
 
 ## Interact with databases using the connection pane
 
-The connection pane allows you to browse and switch between the databases connected to the queryset. Under **Database** in the connection pane, select **V** to expand the database connections menu. Select the database you want to explore. The connection pane shows a breakdown of Tables, Materialized View, Shortcuts and Functions included in the selected database.
+The connection pane allows you to browse and switch between the databases connected to the queryset. Under **Database** in the connection pane, select **V** to expand the database connections menu. Select the database you want to explore. The connection pane shows a breakdown of **Tables**, **Materialized View**, **Shortcuts** and **Functions** included in the selected database.
 
 In the connection pane, you can explore what items is included in each section. To open the action menu, hover over the item and select the elipses. The menu gives options to **Refresh data**, **View data profile**, **Insert** to create a script and paste it in to the query editor, or **Delete**. Different actions are available for different types of items.
 
