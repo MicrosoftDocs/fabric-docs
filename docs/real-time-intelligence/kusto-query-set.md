@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 04/21/2024
+ms.date: 09/23/2024
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
@@ -33,7 +33,7 @@ Select the tab that corresponds with your desired database type.
 ## [KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. Under **Database**, select **V** to expand the database connections menu.
+1. Under **Database** in the connection pane on the left-hand side of the query page, select **V** to expand the database connections menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
 
@@ -45,7 +45,7 @@ Select the tab that corresponds with your desired database type.
 ## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. Under **Database**, select **V** to expand the database connections menu.
+1. Under **Database** in the Connection pane, select **V** to expand the database connections menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
 
@@ -61,7 +61,13 @@ Select the tab that corresponds with your desired database type.
 
 ----
 
- A list of tables associated with this database appears below the database name.
+ A list of tables associated with this database appears below the database name in the connection pane.
+
+## Interact with databases using the connection pane
+
+The connection pane allows you to browse and switch between your databases. The connection pane shows a break down of Tables, Materialized View, Shortcuts and Functions included in the selected database.
+
+In the connection pane, you can explore what items is included in each section. To open the action menu, hover over the item and select the elipse. The menu gives options to **Refresh data**, **View data profile**, **Insert** to create a script and paste it in to the query editor, or **Delete**. Different actions are available for different types of items.
 
 ## Write a query
 
