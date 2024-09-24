@@ -150,7 +150,7 @@ The user notifications section is where you configure your policy tip. Turn on t
  
 ## User overrides
  
-If you enabled user notifications and selected the **Notify users in Office 365 service with a policy tip** checkbox, owners of items that have DLP policy violations (owners - that is, users with an Admin or Member role in the workspace where the item is located) will be able to respond to violations on the **[Data loss prevention policies side pane](./service-security-dlp-policies-for-power-bi-respond.md)**, which they can display from a button or a link on the policy tip. The selection of response options they have depends on the choices you make in the **User overrides** section.
+If you enabled user notifications and selected the **Notify users in Office 365 service with a policy tip** checkbox, owners of items that have DLP policy violations (owners - that is, users with an Admin or Member role in the workspace where the item is located) will be able to respond to violations on the **[Data loss prevention policies side pane](./data-loss-prevention-respond.md)**, which they can display from a button or a link on the policy tip. The selection of response options they have depends on the choices you make in the **User overrides** section.
 
 :::image type="content" source="./media/data-loss-prevention-configure/power-bi-dlp-user-overrides-section.png" alt-text="Screenshot of D L P user overrides section.":::
 
