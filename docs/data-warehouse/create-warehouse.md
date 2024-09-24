@@ -4,7 +4,7 @@ description: Learn how to create a Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 04/24/2024
+ms.date: 09/24/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -40,8 +40,6 @@ Another option available to create your warehouse is through the **Create** hub,
 
 You can create your warehouse from the **Create** hub by selecting the **Warehouse** card under the **Data Warehousing** section. When you select the card, an empty warehouse is created for you to start creating objects in the warehouse or use a sample to get started as previously mentioned.
 
-:::image type="content" source="media/create-warehouse/warehouse-create-hub.png" alt-text="Screenshot showing where to select the Warehouse card in the Create hub.":::
-
 #### Create a warehouse from the workspace list view
 
 To create a warehouse, navigate to your workspace, select **+ New** and then select **Warehouse** to create a warehouse.
@@ -61,8 +59,6 @@ In this section, we walk you through creating a sample [!INCLUDE [fabric-dw](inc
    :::image type="content" source="media/create-warehouse/home-hub-warehouse-sample.png" alt-text="Screenshot showing the Warehouse sample card in the Home hub.":::
 
 1. Provide the name for your sample warehouse and select **Create**.
-
-   :::image type="content" source="media/create-warehouse/home-hub-provide-sample-name.png" alt-text="Screenshot showing the Warehouse creation experience in the Home hub.":::
 
 1. The create action creates a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and start loading sample data into it. The data loading takes few minutes to complete.
 
