@@ -4,7 +4,7 @@ description: A known issue is posted where custom visuals don't render in Deskto
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/01/2024
+ms.date: 09/23/2024
 ms.custom: known-issue-801
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-801
 
 In Power BI Desktop, when you add or view a custom visual, the visual doesn't render properly. Instead of the visual appearing, you see a blank box.
 
-**Status:** Open
+**Status:** Fixed: September 23, 2024
 
 **Product Experience:** Power BI
 

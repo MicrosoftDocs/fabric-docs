@@ -54,13 +54,14 @@ items:
     href: /kusto/management/databases?view=microsoft-fabric&preserve-view=true
     items:
     - name: .show databases command
+      displayName: .show databases command, .show cluster databases command
       href: /kusto/management/show-databases?view=microsoft-fabric&preserve-view=true
     - name: .show database command
       href: /kusto/management/show-database?view=microsoft-fabric&preserve-view=true
-    - name: .show cluster databases command
-      href: /kusto/management/show-cluster-database?view=microsoft-fabric&preserve-view=true
     - name: .alter database prettyname command
-      href: /kusto/management/alter-database?view=microsoft-fabric&preserve-view=true
+      href: /kusto/management/alter-database-prettyname?view=microsoft-fabric&preserve-view=true
+    - name: .drop database prettyname command
+      href: /kusto/management/drop-database-prettyname?view=microsoft-fabric&preserve-view=true
     - name: .show database schema command
       displayName: .show databases schema
       href: /kusto/management/show-schema-database?view=microsoft-fabric&preserve-view=true

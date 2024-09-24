@@ -42,14 +42,14 @@ The following table describes the behavior of your KQL database and tables when 
 
 You can turn on **OneLake availability** either on a KQL database or table level.
 
-1. To turn on **OneLake availability**, browse to the details page of your KQL database or table.
-1. Next to **OneLake availability** in the **Database details** pane, select the **Edit** (pencil) icon.
+1. To turn on **OneLake availability**, browse to the **OneLake** section in the details pane of your KQL database or table.
+1. Set **Availability** to **On**.
 
-    :::image type="content" source="media/event-house-onelake-availability/onelake-availability.png" alt-text="Screenshot of the Database details pane in Real-Time Intelligence showing an overview of the database with the edit OneLake availability option highlighted." lightbox="media/event-house-onelake-availability/onelake-availability.png":::
+    :::image type="content" source="media/event-house-onelake-availability/onelake-availability.png" alt-text="Screenshot of the OneLake section of the Database details pane in Real-Time Intelligence showing the Availability option highlighted." lightbox="media/event-house-onelake-availability/onelake-availability.png":::
 
-1. Turn on the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically.
+1. The database refreshes automatically.
 
-    :::image type="content" source="media/event-house-onelake-availability/enable-data-copy.png" alt-text="Screenshot of the OneLake folder details window in Real-Time Intelligence in Microsoft Fabric. The option to expose data to OneLake is turned on.":::
+    :::image type="content" source="media/event-house-onelake-availability/enable-data-copy.png" alt-text="Screenshot of the OneLake section details in Real-Time Intelligence in Microsoft Fabric once Availability is set to On. The option to expose data to OneLake is turned on.":::
 
 You turned on **OneLake availability** in your KQL database. You can now access all the new data added to your database at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
 
