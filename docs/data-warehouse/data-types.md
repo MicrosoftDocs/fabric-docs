@@ -47,6 +47,8 @@ For T-SQL data types that aren't currently supported, some alternatives are avai
 | **nchar** and **nvarchar** | Use **char** and **varchar** respectively, as there's no similar **unicode** data type in Parquet. The **char** and **varchar** types in a UTF-8 collation might use more storage than **nchar** and **nvarchar** to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](/sql/relational-databases/collations/collation-and-unicode-support?view=fabric&preserve-view=true#storage_differences). |
 | **text and ntext** | Use **varchar**. |
 | **image** | Use **varbinary**. |
+| **tinyint** | Use **smallint**. |
+| **geography** | No equivalent. |
 
 Unsupported data types can still be used in T-SQL code for variables, or any in-memory use in session. Creating tables or views that persist data on disk with any of these types isn't allowed.
 
