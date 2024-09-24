@@ -353,3 +353,7 @@ items:
       href: how-to-create-ai-skill.md
     - name: AI skill scenario
       href: ai-skill-scenario.md
+    - name: AI skill tenant switch
+      href: ai-skill-tenant-switch.md
+    - name: AI skill sharing
+      href: ai-skill-sharing.md
