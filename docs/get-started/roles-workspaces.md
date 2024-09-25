@@ -5,7 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas, stwynant
 ms.topic: conceptual
-ms.date: 03/20/2024
+ms.date: 09/25/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -25,32 +25,34 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 
 ## [!INCLUDE [product-name](../includes/product-name.md)] workspace roles
 
-| Capability   | Admin | Member | Contributor | Viewer|
-|---|---|---|---|---|
-| Update and delete the workspace.  | &#x2705; |   |   |   |
-| Add or remove people, including other admins.  |  &#x2705; |   |   |   |
-| Add members or others with lower permissions.  |  &#x2705; | &#x2705;  |   |   |
-| Allow others to reshare items.<sup>1</sup> |  &#x2705; | &#x2705;  |   |   |
-| Create or modify database mirroring items.  |  &#x2705; | &#x2705;  |   |   |
-|View and read content of data pipelines, notebooks, Spark job definitions, ML models and experiments, and Event streams.  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
-|View and read content of KQL databases, KQL query-sets, and real-time dashboards.  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
-|Connect to SQL analytics endpoint of Lakehouse or the Warehouse | &#x2705;|   &#x2705; | &#x2705; | &#x2705; |
-|Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> with T-SQL through TDS endpoint. | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
-|Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> through OneLake APIs and Spark. | &#x2705; | &#x2705; | &#x2705; | |
-|Read Lakehouse data through Lakehouse explorer.  | &#x2705; | &#x2705; | &#x2705; |  |
-|Write or delete data pipelines, notebooks, Spark job definitions, ML models and experiments, and Event streams.  | &#x2705; | &#x2705; | &#x2705; |   |
-|Write or delete KQL query-sets, real-time dashboards, and schema and data of KQL databases, Lakehouses, data warehouses, and shortcuts.  | &#x2705; | &#x2705; | &#x2705; |   |
-|Execute or cancel execution of notebooks, Spark job definitions, ML models and experiments.  | &#x2705; | &#x2705; | &#x2705; |  |
-|Execute or cancel execution of data pipelines.  | &#x2705; | &#x2705; | &#x2705; |  |
-|View execution output of data pipelines, notebooks, ML models and experiments.  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
-| Schedule data refreshes via the on-premises gateway.<sup>3</sup> | &#x2705; | &#x2705; | &#x2705; |  |
-| Modify gateway connection settings.<sup>3</sup> | &#x2705; | &#x2705; | &#x2705; |  |
+| Capability                                                                                                                                                      | Admin    | Member   | Contributor | Viewer   |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ----------- | -------- |
+| Update and delete the workspace.                                                                                                                                | &#x2705; |          |             |          |
+| Add or remove people, including other admins.                                                                                                                   | &#x2705; |          |             |          |
+| Add members or others with lower permissions.                                                                                                                   | &#x2705; | &#x2705; |             |          |
+| Allow others to reshare items.<sup>1</sup>                                                                                                                      | &#x2705; | &#x2705; |             |          |
+| Create or modify database mirroring items.                                                                                                                      | &#x2705; | &#x2705; |             |          |
+| View and read content of data pipelines, notebooks, Spark job definitions, ML models and experiments, and Event streams.                                        | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
+| View and read content of KQL databases, KQL query-sets, and real-time dashboards.                                                                               | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
+| Connect to SQL analytics endpoint of Lakehouse or the Warehouse                                                                                                 | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
+| Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> with T-SQL through TDS endpoint.                                                               | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
+| Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> through OneLake APIs and Spark.                                                                | &#x2705; | &#x2705; | &#x2705;    |          |
+| Read Lakehouse data through Lakehouse explorer.                                                                                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
+| Write or delete data pipelines, notebooks, Spark job definitions, ML models and experiments, and Event streams.                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
+| Write or delete Eventhouses<sup>3</sup>, KQL Querysets, Real-Time Dashboards, and schema and data of KQL Databases, Lakehouses, data warehouses, and shortcuts. | &#x2705; | &#x2705; | &#x2705;    |          |
+| Execute or cancel execution of notebooks, Spark job definitions, ML models and experiments.                                                                     | &#x2705; | &#x2705; | &#x2705;    |          |
+| Execute or cancel execution of data pipelines.                                                                                                                  | &#x2705; | &#x2705; | &#x2705;    |          |
+| View execution output of data pipelines, notebooks, ML models and experiments.                                                                                  | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
+| Schedule data refreshes via the on-premises gateway.<sup>4</sup>                                                                                                | &#x2705; | &#x2705; | &#x2705;    |          |
+| Modify gateway connection settings.<sup>4</sup>                                                                                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
 
 <sup>1</sup> Contributors and Viewers can also share items in a workspace, if they have Reshare permissions.
 
 <sup>2</sup> Additional permissions are needed to read data from shortcut destination. Learn more about [shortcut security model.](../onelake/onelake-shortcuts.md?#types-of-shortcuts)
 
-<sup>3</sup> Keep in mind that you also need permissions on the gateway. Those permissions are managed elsewhere, independent of workspace roles and permissions.
+<sup>3</sup> Additional permissions are needed to perform certain operatons on data in an Eventhouse. Learn more about the [hybrid role-based access control model](/kusto/access-control/role-based-access-control?view=microsoft-fabric&preserve-view=true).
+
+<sup>4</sup> Keep in mind that you also need permissions on the gateway. Those permissions are managed elsewhere, independent of workspace roles and permissions.
 
 ## Related content
 
@@ -62,3 +64,4 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 - [Data warehouse security](../data-warehouse/workspace-roles.md)
 - [Data engineering security](../data-engineering/workspace-roles-lakehouse.md)
 - [Data science roles and permissions](../data-science/models-experiments-rbac.md)
+- [Role-based access control in Eventhouse](/kusto/access-control/role-based-access-control?view=microsoft-fabric&preserve-view=true)
