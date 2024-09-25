@@ -6,13 +6,14 @@ ms.author: monaberdugo
 ms.reviewer: Pierre, NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 07/02/2024
 ms.search.form: Git integration automation, Git integration APIs, Azure DevOps integration, GitHub integration
+#customer intent: As developer, I want to learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, so that I can simplify continuous integration and continuous delivery (CI/CD) of my content.
 ---
 
-# Automate Git integration by using APIs and Azure DevOps
+# Automate Git integration by using APIs
 
 The Microsoft Fabric [Git integration](intro-to-git-integration.md) tool enables teams to work together using source control to build an efficient and reusable release process for their Fabric content.
 
@@ -23,6 +24,19 @@ This article describes how to use the [Git integration REST APIs](/rest/api/fabr
 <!--- 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the Git integration API operations.
 --->
+
+## Prerequisites
+
+To work with Fabric Git APIs, you need:
+
+* The same [prerequisites you need to use Git integration in the UI](./git-get-started.md#prerequisites).
+
+* A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
+
+You can use the REST APIs without PowerShell, but the scripts in this article use [PowerShell](/powershell/scripting/overview). To run the scripts, you need to take the following steps:
+
+* Install [PowerShell](/powershell/scripting/install/installing-powershell).
+* Install the [Azure PowerShell Az module](/powershell/azure/install-azure-powershell).
 
 ## Git integration API functions
 
@@ -40,18 +54,11 @@ The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve 
 
 * [**Update the workspace**](/rest/api/fabric/core/git/update-from-git) with commits pushed to the connected branch.
 
-## Prerequisites
+For GitHub users, the following APIs are also available:
 
-To work with Fabric Git APIs, you need:
+* [**Bind**](/rest/api/fabric/core/git/bind-my-cloud-connection) and [**unbind](/rest/api/fabric/core/git/unbind-my-cloud-connection) cloud connection and the specified Git-connected workspace.
 
-* The same [prerequisites you need to use Git integration in the UI](./git-get-started.md#prerequisites).
-
-* A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
-
-You can use the REST APIs without PowerShell, but the scripts in this article use [PowerShell](/powershell/scripting/overview). To run the scripts, you need to take the following steps:
-
-* Install [PowerShell](/powershell/scripting/install/installing-powershell).
-* Install the [Azure PowerShell Az module](/powershell/azure/install-azure-powershell).
+* [**Get bound cloud connection**](/rest/api/fabric/core/git/get-my-bound-cloud-connection) for the specified Git-connected workspace.
 
 ## Examples
 
