@@ -14,20 +14,33 @@ ms.date: 08/06/2024
 
 # Tags in Microsoft Fabric
 
-<!-- Required: Article headline - H1
+Tags is a Microsoft Fabric feature that gives organizations the ability to apply additional metadata to items in Fabric to help admins govern data and to enhance data discoverability. Tags are simply labels, such as XXX or XXX, that admins can define according to their organization’s needs. Data and content owners can then apply these tags to their Fabric items, admins can use the tags applied to items to help monitor and manage their organization's data, and users in the organization can use the tags to help them find the data and content they need.
 
-Identify the product or service and the feature area
-the article describes.
+Tags are component of Fabric's data mesh architecture. They complement [domains](./domains.md) by providing additional flexibility and granularity:
 
--->
+* Tags are applied per item, whereas domains are applied per workspace.
+* An item can have multiple tags, whereas it can only belong to one domain.
 
-[Introduce and explain the purpose of the article.]
+By monitoring and analyzing tag use and distribution, admins can use tags to help them manage and govern their organizations data.
 
-<!-- Required: Introductory paragraphs (no heading)
+Users can filter lists by tags in order to help them discover the items they need.
 
-Write a brief introduction that can help the user
-determine whether the article is relevant for them
-and to describe the feature the article describes.
+The set of tags available to use is defined by the Fabric administrator. For more information, see [Create and manage a set of tags](./tags-define.md).
+
+Tags can be applied to items by users with write permissions on the items. For more information, see [Apply tags to items in Fabric](./tags-apply.md).
+
+Users can see tags in the UI and use filters to help them find the content they're looking for. For more information, see []().
+
+## How tags work
+
+1. Admins are create an open list of tags for use across the organization.
+1. Data owners, who best know how to categorize their own data, apply tags to items.
+1. Once tags are applied, any user in the org can use them to filter or search for the most relevant content.  
+
+## Requirements
+
+## Considerations and limitations
+
 
 -->
 
