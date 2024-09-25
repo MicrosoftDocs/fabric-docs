@@ -14,9 +14,9 @@ The purpose of this document is to guide you in estimating the cost of running t
 
 ## Prerequisites
 
-- Microsoft Fabric Licensing Concept(/enterprise/licenses.md#capacity-license)
-- Data pipelines pricing for Data Factory in Microsoft Fabric(pricing-pipelines.md)
-- Dataflow Gen2 pricing for Data Factory in Microsoft Fabric(pricing-dataflows-gen2.md)
+- [Microsoft Fabric Licensing Concept](/enterprise/licenses.md#capacity-license)
+- [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
+- [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 
 ## Azure Data Factory pricing
 
@@ -36,16 +36,19 @@ Pricing for Data Pipeline in Azure Data Factory is calculated based on:
   | External Pipeline Activity**⁴**   | $0.00025/hour                   | $1/hour (Up to 800 concurrent pipeline activities) | $0.0001/hour                         |
   
   **¹**Orchestration refers to activity runs, trigger executions, and debug runs.
+  
   **²**2Use of the copy activity to egress data out of an Azure data center incurs extra network bandwidth charges, which will show up as a separate outbound data transfer line item on your bill.
+  
   **³**Pipeline activities execute on integration runtime. Pipeline activities include Lookup, Get Metadata, Delete, and schema operations during authoring (test connection, browse folder list and table list, get schema, and preview data).
   External pipeline activities are managed on integration runtime but execute on linked services. External activities include Databricks, stored procedure, HDInsight activities, and many more.
+  
   **⁴**External pipeline activities are managed on integration runtime but execute on linked services. External activities include Databricks, stored procedure, HDInsight activities, and many more.
 
 Read/write operations for Azure Data Factory entities include create, read, update, and delete. Entities include datasets, linked services, pipelines, integration runtime, and triggers.
 
 | Type        | Price                          | Examples                                           |
 |-------------|--------------------------------|----------------------------------------------------|
-| Read/Write* | $0.50 per 50,000 modified/referenced entities | Read/write of entities in Azure Data Factory       |
+| Read/Write | $0.50 per 50,000 modified/referenced entities | Read/write of entities in Azure Data Factory       |
 | Monitoring  | $0.25 per 50,000 run records retrieved         | Monitoring of pipeline, activity, trigger, and debug runs |
 
 ## Data Factory for Fabric pricing
@@ -108,7 +111,7 @@ By now, you have enough information on how legacy Azure Data Factory and Data Fa
 
 Here we describe the steps to estimate costs for each artifact.
 
-- For Data Flows Gen 1, obtain the past data flow Gen 1 capacity cost from the Power BI Metric app. Then, recalculate capacity hours for the same number of refreshes in Data Flows Gen2 as shown in the previous table.
+1. For Data Flows Gen 1, obtain the past data flow Gen 1 capacity cost from the Power BI Metric app. Then, recalculate capacity hours for the same number of refreshes in Data Flows Gen2 as shown in the previous table.
 
   On the Admin Portal's **Capacity settings**, select **See usage report**:
 
@@ -118,7 +121,7 @@ Here we describe the steps to estimate costs for each artifact.
 
   :::image type="content" source="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage-report.png" lightbox="media/cost-estimation-from-azure-data-factory-to-fabric-pipeline/power-bi-capacity-usage-report.png" alt-text="Screenshot showing the details of the capacity usage report for Power BI.":::
 
-2. For Azure Data Factory, your can get all meter data from your current ADF subscription. Build out a table and  plugin the values for customers. Create the table as shown in the case of the sample table. Like Data Flows Gen 1, you can get pipeline Capacity Units for pipelines in Fabric Metric App. Given ADF cost, calculate Fabric cost for pay-as-you-go. You can interpolate it to one year to get discounted pricing.
+1. For Azure Data Factory, your can get all meter data from your current ADF subscription. Build out a table and  plugin the values for customers. Create the table as shown in the case of the sample table. Like Data Flows Gen 1, you can get pipeline Capacity Units for pipelines in Fabric Metric App. Given ADF cost, calculate Fabric cost for pay-as-you-go. You can interpolate it to one year to get discounted pricing.
 
 ## Related content
 
