@@ -33,7 +33,7 @@ You must have a Fabric administrator role or higher to be able to create, rename
 
 This section shows how to create a set of one or more tags.
 
-1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags (Preview)**.
+1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags (preview)**.
 
     The Tags tab opens. All currently defined tags are listed on the tab. (is there a limit on the number of tags that can be defined in the tenant?)
 
@@ -53,17 +53,23 @@ This section shows how to create a set of one or more tags.
 
 ## Rename a tag
 
-1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags (Preview)**.
+1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags (preview)**.
 
 1. Open the options menu of the tag you want to rename and select **Rename**.
 
     :::image type="content" source="./media/tags-define/rename-tag.png" alt-text="Screenshot showing how to rename a tag.":::
 
-1. Change the name as desired and then select **Rename**. The name changes wherever the tag is applied. 
+1. Change the name as desired and then select **Rename**. The new name is reflected wherever the tag is applied.
 
-## Delete a tag
+## Delete a tag from the set of tags
 
-[TBD]
+1. Open the [admin portal](../admin/admin-center.md#how-to-get-to-the-admin-portal) and select **Tags (preview)**.
+
+1. Open the options menu of the tag you want to rename and select **Delete**.
+
+    :::image type="content" source="./media/tags-define/delete-tag.png" alt-text="Screenshot showing how to delete a tag from the set of tags.":::
+
+1. Select **Delete**. The tag is deleted from the set of defined tags, and is removed from all items where it is applied.
 
 ## Related content
 
