@@ -103,14 +103,14 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
-  - name: Direct Lake in Power BI Desktop (preview)
-    href: direct-lake-power-bi-desktop.md    
   - name: Develop Direct Lake models
     href: direct-lake-develop.md
   - name: Manage Direct Lake models
     href: direct-lake-manage.md
   - name: Understand storage for Direct Lake
     href: direct-lake-understand-storage.md
+  - name: Direct Lake in Power BI Desktop (preview)
+    href: direct-lake-power-bi-desktop.md        
   - name: Edit tables for Direct Lake semantic models
     href: direct-lake-edit-tables.md
   - name: Create a Lakehouse for Direct Lake
