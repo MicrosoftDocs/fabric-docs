@@ -57,7 +57,7 @@ The following operations are available in the audit logs.
 | Cancel Publish Environment | CancelPublishEnvironment | Cancel publish environment |
 | Cancel Running Artifact | CancelRunningArtifact |   |
 | Cancel Spark Application | CancelSparkApplication |   |
-| Cancel Sql Analytics Endpoint Lakehouse Batch | CancelSqlAnalyticsEndpointLakehouseBatch | Canceled a lakehouse SQL analytics endpoint batch  |
+| Cancel Sql Analytics Endpoint Lakehouse Batch | CancelSqlAnalyticsEndpointLakehouseBatch | Canceled a lakehouse SQL analytics endpoint batch. Previously named *Canceled a default warehouse* (Operation name: *CancelDefaultWarehouseBatch*)  |
 | Cancel Warehouse Batch | CancelWarehouseBatch |   |
 | Cancel Workspace Upgrades As Admin | CancelWorkspaceUpgradesAsAdmin |   |
 | Cancel mounted warehouse batch | CancelMountedWarehouseBatch | Generated when a mounted warehouse batch is canceled  |
@@ -79,11 +79,13 @@ The following operations are available in the audit logs.
 | Completed an artifact access request action in Power BI | ArtifactAccessRequest |   |
 | Connect To Git | ConnectToGit | Connect To Git is a workspace activity, which is generated when users connect the workspace to Git.  |
 | Connected to Power BI semantic model from external app | ConnectFromExternalApplication | Not currently used  |
+| Connected to a Warehouse or SQL analytics endpoint from an external app | ConnectWarehouseAndSqlAnalyticsEndpointLakehouseFromExternalApp | Previously named *Connected to a warehouse or default warehouse from an external app* (Operation name: *ConnectWarehouseAndDefaultWarehouseFromExternalApp*)  |
 | Convert Personal Workspace To Workspace | ConvertPersonalWorkspaceToWorkspace |   |
 | Copied Power BI dashboard | CopyDashboard |   |
 | Copied Power BI report | CopyReport |   |
 | Copy Scorecard | CopyScorecard |   |
 | Copy blob | CopyBlob | OneLake operation. Copies a source blob to a destination blob in this storage account or in another storage account. |
+| Create an SQL query from a Warehouse | CreateSqlQueryFromWarehouse |   |
 | Create Artifact | CreateArtifact |   |
 | Create Branch In Git | CreateBranchInGit | Create Branch In Git is a git provider activity, which is generated when users create branch in Git.  |
 | Create Cloud Datasource From Kind Path | CreateCloudDatasourceFromKindPath |   |
@@ -118,6 +120,7 @@ The following operations are available in the audit logs.
 | Create Service Principal Profile | CreateServicePrincipalProfile |   |
 | Create Template App Package | CreateTemplateAppPackage | Create Template App Package is an app activity, which is generated on creation of a Template App Package  |
 | Create Temporary Upload   Location | CreateTemporaryUploadLocation | Generated when a temporary upload URL is created. |
+| Created visual query from a Warehouse | CreateVisualQueryFromWarehouse |  |
 | Create Warehouse | CreateWarehouse |  |
 | Create Workspace | CreateWorkspace |   |
 | Create a shortcut | CreateShortcut | OneLake operation. Part of Shortcut Controller |
@@ -148,9 +151,11 @@ The following operations are available in the audit logs.
 | Created a Power BI metric value | CreateGoalValue |   |
 | Created a Power BI scorecard metric | CreateGoal |   |
 | Created a Power BI scorecard | CreateScorecard |   |
+| Created a visual query from an SQL analytics endpoint | CreateVisualQueryFromSqlAnalyticsEndpointLakehouse |   |
 | Created a Power BI template or a workspace for a template app | CreateTemplateApp |   |
 | Created an install ticket for installing Power BI template app | CreateTemplateAppInstallTicket |   |
 | Created an organizational custom visual | InsertOrganizationalGalleryItem |   |
+| Created an SQL query from a SQL analytics endpoint | CreateSqlQueryFromSqlAnalyticsEndpointLakehouse |   |
 | Created deployment pipeline | CreateAlmPipeline |   |
 | Custom visual requested Azure AD access token | GenerateCustomVisualAADAccessToken |   |
 | Custom visual requested Office Web Apps access token | CustomVisualWACAccessToken | Not currently used  |
@@ -231,7 +236,9 @@ The following operations are available in the audit logs.
 | Deleted Power BI semantic model from external app | DeleteDatasetFromExternalApplication | Not currently used  |
 | Deleted Power BI semantic model rows | DeleteDatasetRows | Indicates that the Push Datasets - Datasets DeleteRows API was called  |
 | Deleted Power BI semantic model | DeleteDataset |   |
-| Deleted a Power BI template app or a workspace for a template app | DeleteTemplateApp |   |
+| Deleted Power BI template app or a workspace for a template app | DeleteTemplateApp |   |
+| Deleted a SQL query from a SQL analytics endpoint | DeleteSqlQueryFromSqlAnalyticsEndpointLakehouse | This audit event covers both deleting SQL and visual queries from the SQL analytics endpoint of the Lakehouse  |
+| Deleted SQL query from a Warehouse | DeleteSqlQueryFromWarehouse | Covers both deleting SQL and visual queries from the Warehouse  |
 | Deleted an organizational custom visual | DeleteOrganizationalGalleryItem |   |
 | Deleted current value connection of Power BI metric | DeleteGoalCurrentValueConnection |   |
 | Deleted deployment pipeline | DeleteAlmPipeline |   |
@@ -472,7 +479,7 @@ The following operations are available in the audit logs.
 | Refresh Goal Current Value Rollup | RefreshGoalCurrentValueRollup |   |
 | Refresh Goal Target Value Rollup | RefreshGoalTargetValueRollup |   |
 | Refresh Lakehouse Data | RefreshLakehouseData |   |
-| Refresh Sql Analytics Endpoint Lakehouse Metadata | RefreshSqlAnalyticsEndpointLakehouseMetadata | Refreshed metadata for a lakehouse SQL analytics endpoint  |
+| Refresh Sql Analytics Endpoint Lakehouse Metadata | RefreshSqlAnalyticsEndpointLakehouseMetadata | Refreshed metadata for a lakehouse SQL analytics endpoint. Previously named *Refreshed metadata for a default warehouse* (Operation name: *RefreshDefaultWarehouseMetadata*)  |
 | Refresh mounted warehouse metadata | RefreshMountedWarehouseMetadata | Generated when mounted warehouse metadata is refreshed  |
 | Refreshed current value of Power BI metric | RefreshGoalCurrentValue |   |
 | Refreshed target value of Power BI metric | RefreshGoalTargetValue |   |
@@ -506,7 +513,7 @@ The following operations are available in the audit logs.
 | Restore deleted workspace | RestoreWorkspaceViaAdminApi | Restores the deleted workspace |
 | Restored Power BI workspace | RestoreWorkspace |   |
 | Resume Suspended Datamart | ResumeSuspendedDatamart |   |
-| Resume Suspended Sql Analytics Endpoint Lakehouse | ResumeSuspendedSqlAnalyticsEndpointLakehouse | Resumed a suspended lakehouse SQL analytics endpoint  |
+| Resume Suspended Sql Analytics Endpoint Lakehouse | ResumeSuspendedSqlAnalyticsEndpointLakehouse | Resumed a suspended lakehouse SQL analytics endpoint. Previously named *Resumed a suspended default warehouse* (Operation name: *ResumeSuspendedDefaultWarehouse*)  |
 | Resume Suspended Warehouse | ResumeSuspendedWarehouse |   |
 | Resume suspended mounted warehouse | ResumeSuspendedMountedWarehouse | Generated when a suspended mounted warehouse is resumed  |
 | Retrieved Power BI app users | GetAppUsersAsAdmin |   |
@@ -669,7 +676,7 @@ The following operations are available in the audit logs.
 | Update Scorecard View | UpdateScorecardView |  |
 | Update Semantic Metric   Endpoint | UpdateSemanticMetric | Update standalone semantic metric endpoint |
 | Update Service Principal Profile | UpdateServicePrincipalProfile |  |
-| Update Sql Analytics Endpoint Lakehouse Settings | UpdateSqlAnalyticsEndpointLakehouseSettings | Updated settings for a lakehouse SQL analytics endpoint |
+| Update Sql Analytics Endpoint Lakehouse Settings | UpdateSqlAnalyticsEndpointLakehouseSettings | Updated settings for a lakehouse SQL analytics endpoint. Previously named *Updated a default warehouse* (Operation name: *UpdateDefaultWarehouse*) |
 | Update Sql Analytics Endpoint Lakehouse | UpdateSqlAnalyticsEndpointLakehouse | Updated a lakehouse SQL analytics endpoint |
 | Update USEC roles for an artifact | UpdateArtifactRoles | OneLake operation. |
 | Update Virtual Network | UpdateVirtualNetwork |  |
@@ -724,7 +731,7 @@ The following operations are available in the audit logs.
 | Upsert Goal Status Rules | UpsertGoalStatusRules |  |
 | Upsert Goal Target Value Rollup | UpsertGoalTargetValueRollup |  |
 | Upsert Goal Values | UpsertGoalValues |  |
-| Upsert Sql Analytics Endpoint Lakehouse Parameters | UpsertSqlAnalyticsEndpointLakehouseParameters | Upserted parameters for a lakehouse SQL analytics endpoint |
+| Upsert Sql Analytics Endpoint Lakehouse Parameters | UpsertSqlAnalyticsEndpointLakehouseParameters | Upserted parameters for a lakehouse SQL analytics endpoint. Previously named *Updated parameters from a default warehouse* (Operation name: *UpsertDefaultWarehouseParameters*) |
 | Upsert Warehouse Parameters | UpsertWarehouseParameters |  |
 | Upsert mounted warehouse parameters | UpsertMountedWarehouseParameters | Generated when mounted warehouse parameters are added or updated |
 | Used Power BI to explore data in an external application | ExploreDataExternally | Someone used Power BI to explore their data in an external application. |
@@ -733,7 +740,7 @@ The following operations are available in the audit logs.
 | View Spark App Input Output | ViewSparkAppInputOutput |  |
 | View Spark App Log | ViewSparkAppLog |  |
 | View Spark Application | ViewSparkApplication |  |
-| View Sql Analytics Endpoint Lakehouse | ViewSqlAnalyticsEndpointLakehouse | Viewed a lakehouse SQL analytics endpoint |
+| View Sql Analytics Endpoint Lakehouse | ViewSqlAnalyticsEndpointLakehouse | Viewed a lakehouse SQL analytics endpoint. Previously named *Viewed a default warehouse* (Operation name: *ViewDefaultWarehouse*) |
 | View Warehouse | ViewWarehouse |  |
 | View mounted warehouse | ViewMountedWarehouse | Generated when mounted warehouse is fetched for viewing |
 | Viewed Power BI dashboard | ViewDashboard | Some fields such as CapacityID and CapacityName, will return null if the report or dashboard is viewed from a Power BI app, rather than a Power BI workspace |
