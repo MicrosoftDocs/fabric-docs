@@ -37,7 +37,7 @@ landingContent:
             url: data-activator-get-data-power-bi.md
           - text: Get data from Eventstreams
             url: data-activator-get-data-eventstreams.md
-          - text: Get data from Real-Time
+          - text: Get data from Real-Time Hub
             url: data-activator-get-data-real-time-hub.md                    
 
   - title: Create objects and triggers
