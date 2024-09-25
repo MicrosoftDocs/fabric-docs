@@ -72,7 +72,7 @@ The connection pane allows you to browse and switch between the databases connec
 * **Shortcuts**
 * **Functions**
 
-In the connection pane, you can explore what items is included in each section. To open the action menu, hover over the item and select the **More menu** [...]. The menu gives options to:
+In the connection pane, you can explore what items are included in each section. To open the action menu, hover over the item and select the **More menu** [...]. The menu gives options to:
 
 * **Refresh data**
 * **View data profile**
@@ -90,7 +90,7 @@ The following examples use data that is publicly available at [https://kustosamp
 1. Write or copy a query in the top pane of the KQL Queryset.
 1. Select the **Run** button, or press **Shift**+**Enter** to run the query.
 
-    The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query has finished successfully, and time used to compute the query results.
+    The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query completed successfully, and time used to compute the query results.
 
     :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the KQL Queryset showing the results of a query. Both the query and the results pane are highlighted."  lightbox="media/kusto-query-set/query-window.png":::
 
