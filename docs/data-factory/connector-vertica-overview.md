@@ -21,8 +21,8 @@ The Vertica connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | On-premises | Basic |
-| **Lookup activity** | On-premises | Basic |
+| **Copy activity (source/-)** | On-premises (version 3000.238.11 or above) | Basic |
+| **Lookup activity** | On-premises (version 3000.238.11 or above) | Basic |
 
 To learn about the copy activity configuration for Vertica in data pipelines, go to [Configure Vertica in a copy activity](connector-vertica-copy-activity.md).
 
