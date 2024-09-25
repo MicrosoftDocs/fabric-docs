@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: tutorial
 ms.custom:
   - build-2024
-ms.date: 09/05/2024
+ms.date: 09/25/2024
 ms.search.form: Get started
 # customer intent: I want to learn how to get data in the Real-Time hub in Real-Time Intelligence.
 ---
@@ -22,7 +22,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
 
 1. From the navigation bar, select **Real-Time hub**.
 1. Select **+ Add source**.
-    
+
     :::image type="content" source="media/tutorial/get-events.png" alt-text="Screenshot of Real-time hub with get events highlighted.":::
 
 1. The **Add source** pane opens. Select **Sample data**.
@@ -48,7 +48,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
 ## Transform events
 
 1. Select **Open Eventstream** from the notification that appears after creating the event stream, or browse to the event stream from the Real-time hub and select **Open Eventstream**.
-1. From the menu ribbon, select **Edit**.
+1. From the menu ribbon, select **Edit**. The authoring canvas, which is the center tile, turns yellow and becomes active for changes.
 1. In the event stream authoring canvas, select the down arrow on the **Transform events or add destination** tile.  
 1. Select **Manage fields**. The tile is renamed to *Manage_fields*.
 1. Select the pencil icon on the *Manage_fields* tile.
@@ -56,12 +56,12 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
     1. In **Operation name**, enter *TutorialTransform*. 
     1. Select **Add all fields**
     1. Select **+ Add field**.
-    1. From the **Built-in Date Time Function** dropdown, select **SYSTEM.Timestamp()**
-
-        :::image type="content" source="media/tutorial/system-timestamp.png" alt-text="Screenshot showing the system timestamp selected in the event stream manage fields tile in Real-Time Intelligence.":::
-
+    1. From the **Field** dropdown, select **Built-in Date Time Function** > **SYSTEM.Timestamp()**
     1. Enter *Timestamp* as the **Field name**.
     1. Select **Add**.
+
+    :::image type="content" source="media/tutorial/system-timestamp.png" alt-text="Screenshot showing the system timestamp selected in the event stream manage fields tile in Real-Time Intelligence.":::
+
 1. Select **Save**.
 
     The *TutorialTransform* tile now displays but with an error, because the destination isn't set.
@@ -87,6 +87,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an event stre
     | **Destination table** | *Create new* - enter *TutorialTable* as table name |
     | **Input data format** | *Json* |  
 
+1. Ensure that the box **Activate ingestion after adding the data** is checked. 
 1. Select **Save**.
 1. From the menu ribbon, select **Publish**.
 
