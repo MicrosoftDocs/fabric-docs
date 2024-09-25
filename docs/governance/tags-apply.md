@@ -14,15 +14,15 @@ ms.date: 08/06/2024
 
 # Apply tags to items in Fabric
 
-This article decribes how to apply tags to items in Microsoft Fabric. It is intended for users who want to apply tags to Fabric items they have write permissions to.
+This article decribes how to apply tags to items in Microsoft Fabric. It is intended for users who want to apply tags to Fabric items.
 
 For more information about tags, see [Tags in Microsoft Fabric](./tags-overview.md).
 
 ## Prerequisites
 
-You must have write permissions on an item in order to be able to apply a tag to it.
+You must have write permissions on an item to be able to apply tags to it or remove tags from it.
 
-## Apply a tag on an item
+## Apply tags to an item
 
 1. Open the item's settings and go the **Tags** tab.
 
@@ -30,11 +30,11 @@ You must have write permissions on an item in order to be able to apply a tag to
 
 1. Select the tags that are relevant for your item. You can select more than one tag. An item can have up to ten tags applied.
 
+    :::image type="content" source="./media/tags-apply/choose-tags.png" alt-text="Screenshot showing how to choose tags to apply to an item.":::
+
 1. When done, select **Save** or **Apply** if required. Otherwise, just close the settings pane.
 
 ## Remove tags from an item
-
-You must have write permissions on an item in order to be able to remove tags that are applied to it.
 
 1. Open the item's settings and go the **Tags** tab.
 
