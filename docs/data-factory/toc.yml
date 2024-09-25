@@ -17,7 +17,7 @@
         href: pricing-pipelines.md
       - name: Pricing Dataflow Gen2
         href: pricing-dataflows-gen2.md
-      - name: Cost estimation from ADF to Fabric
+      - name: Cost estimation from Azure Data Factory to Fabric
         href: cost-estimation-from-azure-data-factory-to-fabric-pipeline.md
       - name: Pricing examples
         items:
