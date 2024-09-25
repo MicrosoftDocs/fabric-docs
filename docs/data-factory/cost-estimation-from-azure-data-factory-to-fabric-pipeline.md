@@ -14,7 +14,7 @@ The purpose of this document is to guide you in estimating the cost of running t
 
 ## Prerequisites
 
-- [Microsoft Fabric Licensing Concept](/enterprise/licenses.md#capacity-license)
+- [Microsoft Fabric Licensing Concept](../enterprise/licenses.md#capacity-license)
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 
