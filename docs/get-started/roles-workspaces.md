@@ -19,7 +19,7 @@ You can either assign roles to individuals or to security groups, Microsoft 365 
 
 To create a new workspace, see [Create a workspace](create-workspaces.md).
 
-Everyone in a user group gets the role that you've assigned. If someone is in several user groups, they get the highest level of permission that's provided by the roles that they're assigned. If you nest user groups and assign a role to a group, all the contained users have permissions.
+Everyone in a user group gets the role that you assign. If someone is in several user groups, they get the highest level of permission that's provided by the roles that they're assigned. If you nest user groups and assign a role to a group, all the contained users have permissions.
 
 Users in workspace roles have the following [!INCLUDE [product-name](../includes/product-name.md)] capabilities, in addition to the existing Power BI capabilities associated with these roles.
 
@@ -38,9 +38,9 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 | Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> with T-SQL through TDS endpoint.                                                               | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> through OneLake APIs and Spark.                                                                | &#x2705; | &#x2705; | &#x2705;    |          |
 | Read Lakehouse data through Lakehouse explorer.                                                                                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
-| Write or delete data pipelines, notebooks, Spark job definitions, ML models and experiments, and Event streams.                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
+| Write or delete data pipelines, notebooks, Spark job definitions, ML models, and experiments, and Event streams.                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
 | Write or delete Eventhouses<sup>3</sup>, KQL Querysets, Real-Time Dashboards, and schema and data of KQL Databases, Lakehouses, data warehouses, and shortcuts. | &#x2705; | &#x2705; | &#x2705;    |          |
-| Execute or cancel execution of notebooks, Spark job definitions, ML models and experiments.                                                                     | &#x2705; | &#x2705; | &#x2705;    |          |
+| Execute or cancel execution of notebooks, Spark job definitions, ML models, and experiments.                                                                     | &#x2705; | &#x2705; | &#x2705;    |          |
 | Execute or cancel execution of data pipelines.                                                                                                                  | &#x2705; | &#x2705; | &#x2705;    |          |
 | View execution output of data pipelines, notebooks, ML models and experiments.                                                                                  | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | Schedule data refreshes via the on-premises gateway.<sup>4</sup>                                                                                                | &#x2705; | &#x2705; | &#x2705;    |          |
@@ -48,9 +48,9 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 
 <sup>1</sup> Contributors and Viewers can also share items in a workspace, if they have Reshare permissions.
 
-<sup>2</sup> Additional permissions are needed to read data from shortcut destination. Learn more about [shortcut security model.](../onelake/onelake-shortcuts.md?#types-of-shortcuts)
+<sup>2</sup> Other permissions are needed to read data from shortcut destination. Learn more about [shortcut security model.](../onelake/onelake-shortcuts.md?#types-of-shortcuts)
 
-<sup>3</sup> Additional permissions are needed to perform certain operatons on data in an Eventhouse. Learn more about the [hybrid role-based access control model](/kusto/access-control/role-based-access-control?view=microsoft-fabric&preserve-view=true).
+<sup>3</sup> Other permissions are needed to perform certain operations on data in an Eventhouse. Learn more about the [hybrid role-based access control model](/kusto/access-control/role-based-access-control?view=microsoft-fabric&preserve-view=true).
 
 <sup>4</sup> Keep in mind that you also need permissions on the gateway. Those permissions are managed elsewhere, independent of workspace roles and permissions.
 
