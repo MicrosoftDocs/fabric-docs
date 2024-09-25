@@ -24,21 +24,18 @@ Tags is a Microsoft Fabric feature that gives organizations the ability to apply
 
 1. Once tags are applied, any user in the org can use them to filter or search for the most relevant content.
 
-## How do tags differ from domains
+## How do tags complement domains
 
-Like [domains](./domains.md), tags are component of Fabric's data mesh architecture. They complement [domains](./domains.md) by providing additional flexibility and granularity:
+Like [domains](./domains.md), tags are an important component of Fabric's data mesh architecture. They complement [domains](./domains.md) by providing additional flexibility and granularity:
 
-* Tags are applied per item, whereas domains are applied per workspace.
-* Tags allow additional details to be added at the item level, across workspaces and domains.
+* Tags are applied at the item level, and hence can be leveraged across workspaces and domains.
 * An item can have multiple tags, whereas it can only belong to one domain.
-
-Tags are a crucial element for implementing data mesh architecture, allowing additional details to be added at the item level, across workspaces and domains. This assists data consumers in effortlessly discovering the content they require.
 
 ## What benefits do tags provide
 
-* By monitoring and analyzing tag use and distribution, admins can use tags to help them manage and govern their organizations data.
+* **Data governance**: By monitoring and analyzing tag use and distribution, admins can use tags to help them manage and govern their organizations data.
 
-* Users can see tags in the UI and use filters to help them find the content they're looking for.
+* **Data discoverability**: Users can see tags in the UI and use filters to help them find the content they're looking for.
 
 ## Use cases
 
