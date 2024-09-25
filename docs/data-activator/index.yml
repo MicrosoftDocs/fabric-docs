@@ -11,9 +11,9 @@ metadata:
   ms.custom:
     - build-2024
   ms.topic: landing-page
-  author: davidiseminger
-  ms.author: davidi
-  ms.date: 10/03/2023
+  author: mihart
+  ms.author: mihart
+  ms.date: 09/24/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -31,32 +31,45 @@ landingContent:
 
   - title: Get Data
     linkLists:
-      - linkListType: overview
+      - linkListType: how-to-guide
         links:
           - text: Get data from Power BI
             url: data-activator-get-data-power-bi.md
-      - linkListType: get-started
-        links:
           - text: Get data from Eventstreams
             url: data-activator-get-data-eventstreams.md
-      - linkListType: overview
+          - text: Get data from Real-Time
+            url: data-activator-get-data-real-time-hub.md  
+      - linkListType: how-to-guide
         links:
           - text: Create alerts from a Real-Time Dashboard
             url: data-activator-get-data-real-time-dashboard.md
-            
+          - text: Create alerts from a Real-Time Dashboard
+            url: data-activator-get-data-real-time-dashboard.md
+          - text: Create alerts from a Real-Time Dashboard
+            url: data-activator-get-data-real-time-dashboard.md                        
 
   - title: Create objects and triggers
     linkLists:
       - linkListType: concept
         links:
-          - text: Assign data to objects in Data Mode
-            url: data-activator-assign-data-objects.md
-          - text: Create triggers in Design Mode
+          - text: Creating triggers
             url: data-activator-create-triggers-design-mode.md
-          - text: Detection conditions in Data Activator
-            url: data-activator-detection-conditions.md
+          - text: Detection conditions
+            url: data-activator-detection-conditions.md          
+      - linkListType: how-to-guide
+        links:
+          - text: Assign data to objects
+            url: data-activator-assign-data-objects.md
+          - text: Trigger Fabric items
+            url: data-activator-trigger-fabric-items.md
+          - text: Assign data to objects
+            url: data-activator-assign-data-objects.md
           - text: Use custom actions to trigger Power Automate flows
-            url: data-activator-trigger-power-automate-flows.md           
+            url: data-activator-trigger-power-automate-flows.md
+- title: Troubleshoot
+    linkLists:
+      - linkListType: how-to-guide
+        links:
           - text: Data Activator limitations
             url: data-activator-limitations.md
           - text: Troubleshoot errors
