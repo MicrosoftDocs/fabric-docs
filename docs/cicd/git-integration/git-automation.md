@@ -56,7 +56,7 @@ The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve 
 
 For GitHub users, the following APIs are also available:
 
-* [**Bind**](/rest/api/fabric/core/git/bind-my-cloud-connection) and [**unbind](/rest/api/fabric/core/git/unbind-my-cloud-connection) cloud connection and the specified Git-connected workspace.
+* [**Bind**](/rest/api/fabric/core/git/bind-my-cloud-connection) and [**unbind**](/rest/api/fabric/core/git/unbind-my-cloud-connection) cloud connection and the specified Git-connected workspace.
 
 * [**Get bound cloud connection**](/rest/api/fabric/core/git/get-my-bound-cloud-connection) for the specified Git-connected workspace.
 
