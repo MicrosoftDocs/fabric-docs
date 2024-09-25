@@ -20,7 +20,7 @@ Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easil
 
 > [!NOTE]
 >
-> - MsSparkUtils has been officially renamed to **NotebookUtils**. The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
+> - MsSparkUtils has been officially renamed to [**NotebookUtils**](notebook-utilities.md). The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
 > - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates will be exclusively supported with notebookutils namespace going forward.
 
 ## File system utilities

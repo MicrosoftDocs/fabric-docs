@@ -446,20 +446,22 @@ You can personalize your Spark session with the magic command **%%configure**. F
 ```json
 %%configure
 {
-    // You can get a list of valid parameters to config the session from  https://github.com/cloudera/livy#request-body.
+    // You can get a list of valid parameters to config the session from https://github.com/cloudera/livy#request-body.
+    // Detailed document for %%configure can be found at https://go.microsoft.com/fwlink/?linkid=2250064.
     "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g", "472g"]
     "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64, 80]
     "executorMemory": "28g",
     "executorCores": 4,
     "jars": ["abfs[s]: //<file_system>@<account_name>.dfs.core.windows.net/<path>/myjar.jar", "wasb[s]: //<containername>@<accountname>.blob.core.windows.net/<path>/myjar1.jar"],
-    "conf": {
+    "conf":
+    {
         // Example of customized property, you can specify count of lines that Spark SQL returns by configuring "livy.rsc.sql.num-rows".
         "livy.rsc.sql.num-rows": "3000",
         "spark.log.level": "ALL"
-    }
+    },
     "defaultLakehouse": {  // This overwrites the default lakehouse for current session
         "name": "<lakehouse-name>",
-        "id": "<lakehouse-id>",
+        "id": "<(optional) lakehouse-id>",
         "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>" // Add workspace ID if it's from another workspace
     },
     "mountPoints": [
@@ -472,6 +474,11 @@ You can personalize your Spark session with the magic command **%%configure**. F
             "source": "abfs[s]://<file_system>@<account_name>.dfs.core.windows.net/<path1>"
         },
     ],
+    "environment": {
+        "id": "<environment-id>",
+        "name": "<environment-name>"
+    },
+    "sessionTimeoutInSeconds": 1200,
     "useStarterPool": false,  // Set to true to force using starter pool
     "useWorkspacePool": "<workspace-pool-name>"
 }
