@@ -32,7 +32,7 @@ A custom action defines how to call a specific external system from a trigger us
 
 To create a custom action, select **Manage action** from the Home tab. Then, give your action a name such as *Send SMS message* and define the input fields (such as *Phone number* and *Message*).
 
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-05.png" alt-text="Screenshot of creating a Data Activator new custom action.":::
+:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-condition-05.png" alt-text="Screenshot of creating a Data Activator new custom action.":::
 
 The next step is to define your flow in Power Automate. Select **Copy connection string**, then choose **Create flow in Power Automate.** You create a flow in Power Automate, and Data Activator takes you to it so that you can define that flow.
 
