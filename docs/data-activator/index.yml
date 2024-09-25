@@ -38,15 +38,7 @@ landingContent:
           - text: Get data from Eventstreams
             url: data-activator-get-data-eventstreams.md
           - text: Get data from Real-Time
-            url: data-activator-get-data-real-time-hub.md  
-      - linkListType: overview
-        links:
-          - text: Create alerts from a Real-Time Dashboard
-            url: data-activator-get-data-real-time-dashboard.md
-          - text: Create alerts from a Real-Time Dashboard
-            url: data-activator-get-data-real-time-dashboard.md
-          - text: Create alerts from a Real-Time Dashboard
-            url: data-activator-get-data-real-time-dashboard.md                        
+            url: data-activator-get-data-real-time-hub.md                    
 
   - title: Create objects and triggers
     linkLists:
@@ -62,8 +54,6 @@ landingContent:
             url: data-activator-assign-data-objects.md
           - text: Trigger Fabric items
             url: data-activator-trigger-fabric-items.md
-          - text: Assign data to objects
-            url: data-activator-assign-data-objects.md
           - text: Use custom actions to trigger Power Automate flows
             url: data-activator-trigger-power-automate-flows.md
 
