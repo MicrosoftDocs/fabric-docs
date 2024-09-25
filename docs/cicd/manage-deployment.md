@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 09/16/2024
+ms.date: 09/25/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -44,7 +44,7 @@ The release process starts once new updates are complete and the pull request (P
 
 With this option, all deployments originate from the Git repository. Each stage in the release pipeline has a dedicated primary branch (in the diagram, these stages are *Dev*, *Test*, and *Prod*), which feeds the appropriate workspace in Fabric.
 
-Once When a PR to the *Dev* branch is approved and merged:
+Once a PR to the *Dev* branch is approved and merged:
 
 1. A release pipeline is triggered to update the content of the *Dev* workspace. This process also can include a *Build* pipeline to run unit tests, but the actual upload of files is done directly from the repo into the workspace, using [Fabric Git APIs](/rest/api/fabric/core/git/update-from-git). You might need to call other Fabric APIs for post-deployment operations that set specific configurations for this workspace, or ingest data.
 1. A PR is then created to the *Test* branch. In most cases, the PR is created using a release branch that can cherry pick the content to move into the next stage. The PR should include the same review and approval processes as any other in your team or organization.
