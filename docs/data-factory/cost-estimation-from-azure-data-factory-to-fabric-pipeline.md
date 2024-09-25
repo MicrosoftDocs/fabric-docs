@@ -1,6 +1,6 @@
 ---
-title: Cost estimation for Fabric pipelines based on Dataflow Gen1 equivalent activities in Azure Data Factory
-description: This article guides you through estimation of costs for pipelines in Data Factory for Microsoft Fabric compared to their equivalent activities in an Azure Data Factory Dataflow Gen1.
+title: Cost estimation for Fabric pipelines based on equivalent activities in Azure Data Factory
+description: This article guides you through estimation of costs for pipelines in Data Factory for Microsoft Fabric compared to their equivalent activities in an Azure Data Factory.
 author: ssabat
 ms.author: susabat
 ms.topic: concept-article
@@ -8,7 +8,7 @@ ms.date: 08/29/2024
 ms.custom: FY25Q1-Linter
 ---
 
-# Cost estimation for Fabric pipelines based on Dataflow Gen1 equivalent activities in Azure Data Factory
+# Cost estimation for Fabric pipelines based on equivalent activities in Azure Data Factory
 
 The purpose of this document is to guide you in estimating the cost of running the same activities in the Fabric Data Factory Pipeline instead of Azure Data Factory or Synapse Pipelines, and estimating the cost of running Dataflows Gen2 in Fabric Data Factory instead of Dataflows Gen1.
 
