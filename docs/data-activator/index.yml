@@ -39,7 +39,7 @@ landingContent:
             url: data-activator-get-data-eventstreams.md
           - text: Get data from Real-Time
             url: data-activator-get-data-real-time-hub.md  
-      - linkListType: how-to-guide
+      - linkListType: overview
         links:
           - text: Create alerts from a Real-Time Dashboard
             url: data-activator-get-data-real-time-dashboard.md
