@@ -24,9 +24,9 @@ You must have write permissions on an item in order to be able to apply a tag to
 
 ## Apply a tag on an item
 
-1. Open the item's settings and go the the **Tags** tab.
+1. Open the item's settings and go the **Tags** tab.
 
-    If the item already has some tags applied, they are listed under an **Applied tags** heading.
+    If the item already has some tags applied, they are listed under **Applied tags**.
 
 1. Select the tags that are relevant for your item. You can select more than one tag. An item can have up to ten tags applied.
 
@@ -36,11 +36,11 @@ You must have write permissions on an item in order to be able to apply a tag to
 
 You must have write permissions on an item in order to be able to remove tags that are applied to it.
 
-1. Open the item's settings and go the the **Tags** tab.
+1. Open the item's settings and go the **Tags** tab.
 
-    Any applied tags appear under the **Applied tags** header.
+    All the tags applied to the item appear under **Applied tags**.
 
-1. Select the **X** next to the name of the tag you wish to remove from the item. The tag will be removed from the set of applied tags.
+1. Select the **X** next to the names of the tags you wish to remove from the item. The tags will be removed from the set of applied tags.
 
 1. When done, select **Save** or **Apply** if required. Otherwise, just close the settings pane.
 

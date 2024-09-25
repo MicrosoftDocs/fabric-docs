@@ -37,11 +37,24 @@ Like [domains](./domains.md), tags are an important component of Fabric's data m
 
 * **Data discoverability**: Users can see tags in the UI and use filters to help them find the content they're looking for.
 
-## Use cases
+## Optimized Discoverability
 
-## Requirements
+Once the item has tags applied, an icon will be shown next to the item name.
+
+:::image type="content" source="{source}" alt-text="{alt-text}":::
+
+You can filter by tags in the workspace list and in OneLake data hub.
+
+:::image type="content" source="{source}" alt-text="{alt-text}":::
+
+In addition, you can see the applied tags in an item's details, in the item's flyout card, and in lineage view.
+
+You can also search by tags and see all the relevant results, accompanied by additional metadata (item owner and item location).
 
 ## Considerations and limitations
+
+10000 tags per tenant.
+10 tags per item
 
 ## Related content
 
