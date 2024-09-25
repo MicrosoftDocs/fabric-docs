@@ -12,7 +12,7 @@ ms.date: 09/30/2024
 
 # Use the Functions activity to run Fabric user data functions and Azure Functions
 
-The Functions activity in Data Factory for Microsoft Fabric allows you to run Fabric user data functions (private preview) and Azure Functions.
+The Functions activity in Data Factory for Microsoft Fabric allows you to run Fabric user data functions (preview) and Azure Functions.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ To use a Functions activity in a pipeline, complete the following steps:
 1. Search for Functions in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
 
    > [!NOTE]
-   > You may need to expand the menu and scroll down to see the Functions activity as highlighted in the following screenshot.
+   > You might need to expand the menu and scroll down to see the Functions activity as highlighted in the following screenshot.
 
    :::image type="content" source="media/functions-activity/add-functions-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Functions activity highlighted.":::
 
@@ -43,17 +43,18 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 
 ## Configure settings
-Selecting the Settings tab, you can choose between 2 radio button options for the type of Functions activity you would like to execute.
 
+Selecting the Settings tab, you can choose between two radio button options for the type of Functions activity you would like to execute.
 
-### 1) Fabric user data functions (private preview) activity settings
-Under the **Settings** tab, you can choose the **Fabric user data functions** option to run your customized user data functions for event driven scenarios. You will need to specify the **Workspace** information, choose an existing or create a new **User data function** and select the **Fabric function** you would like to execute.
+### 1) Fabric user data functions (preview) activity settings
+
+Under the **Settings** tab, you can choose the **Fabric user data functions** option to run your customized user data functions for event driven scenarios. You'll need to specify the **Workspace** information, choose an existing, or create a new **User data function** and select the **Fabric function** you would like to execute.
 
 :::image type="content" source="media/functions-activity/fabric-user-data-functions-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Fabric user data functions activity.":::
 
 ### 2) Azure Functions activity settings
 
-Under the **Settings** tab, you can choose the **Azure function** option to run your functions. You can choose either an existing or create a new **Azure Function connection**, provide a **Function relative URL** that points to the relative path to the Azure App function within the Azure Function connection, and an HTTP **Method** to be submitted to the URL. You can also specify as many additional **Headers** as required for the function you are executing.
+Under the **Settings** tab, you can choose the **Azure function** option to run your functions. You can choose either an existing or create a new **Azure Function connection**, provide a **Function relative URL** that points to the relative path to the Azure App function within the Azure Function connection, and an HTTP **Method** to be submitted to the URL. You can also specify as many additional **Headers** as required for the function you're executing.
 
 :::image type="content" source="media/functions-activity/azure-function-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Function activity.":::
 
