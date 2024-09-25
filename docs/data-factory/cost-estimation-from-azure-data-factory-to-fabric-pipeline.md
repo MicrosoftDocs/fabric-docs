@@ -48,7 +48,11 @@ Read/write operations for Azure Data Factory entities include create, read, upda
 | Read/Write* | $0.50 per 50,000 modified/referenced entities | Read/write of entities in Azure Data Factory       |
 | Monitoring  | $0.25 per 50,000 run records retrieved         | Monitoring of pipeline, activity, trigger, and debug runs |
 
-## Data Factory in Fabric data pipelines pricing
+## Data Factory for Fabric pricing
+
+Pricing in Data Factory for Fabric is billed through Data Factory pipelines, and Dataflow Gen1 with Power BI.
+
+### Fabric data pipelines pricing
 
 The following table shows a breakdown of the pricing model for data pipelines in Data Factory for Microsoft Fabric:
 
@@ -59,12 +63,12 @@ The following table shows a breakdown of the pricing model for data pipelines in
 
 It indicates that for each intelligent optimization throughput resource usage in a Data Pipeline execution, 1.5 CU per hour is consumed for data movement Copy activities. Secondly, each orchestration activity run consumes 0.0056 CU. At the end of each pipeline run, the CU consumption for each engine type is summed and is billed as per the translated price of the Fabric Capacity in the region where the capacity is deployed. For more information about Data pipelines pricing, see [Pricing for data pipelines](pricing-pipelines.md).
 
-### Dataflow Gen1 Pricing in Power BI
+### Dataflow Gen1 pricing in Power BI
 
 Dataflow Gen 1 is currently priced as per Power BI premium per user or premium capacity on second consumption normalized to an hour. The capacity hour gets deducted from your overall capacity allocated to tenant. Capacity can be configured to support any dataflows or paginated reports, with each requiring a configurable maximum percentage of memory. The memory is dynamically allocated to your dataflows.
 Given F64/P1 capacity, it has a total of 8 PBI v-cores and 64 capacity units. Capacity units get deducted as dataflows consume CPU and memory. 
 
-### Fabric Dataflow Gen 2 pricing
+### Data Factory in Fabric pricing
 
 The following table indicates that to determine Dataflow Gen2 execution costs, each query execution utilizes the mashup engine for standard computing, and that compute execution duration is translated to a consumption rate of 16 CUs per hour. Secondly, for high scale compute scenarios when staging is enabled, Lakehouse/Warehouse SQL engine execution duration should be accounted for as well. Compute execution duration is translated to a consumption rate of 6 CUs per hour. At the end of each Dataflow Gen2 run, the Capacity Unit (CU) consumption for each engine type is summed and is billed according to the translated price for Fabric capacity in the region where it's deployed.
 
