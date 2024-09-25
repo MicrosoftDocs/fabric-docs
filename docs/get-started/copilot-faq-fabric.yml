@@ -30,6 +30,30 @@ sections:
   - name: Power BI
     questions:
       - question: |
+          Can Copilot be enabled for specific workspaces within a tenant?  
+        answer: |
+          Copilot is enabled at the tenant level and access can be restricted by security groups. If the workspace is tied to an F-64 or P1 capacity, Copilot experience will be enabled.    
+      
+      - question: |
+          When you're using Copilot, who has access to what data?     
+        answer: |
+          The data that Copilot can access depends on your role-level security and user-based permission on Fabric. 
+          
+          If you don't have permission to access specific data, then prompting Copilot for it won't retrieve the information. 
+
+      - question: |
+          Can Copilot prompts be saved for future reference?       
+        answer: |
+          Copilot prompts can't be saved for future reference. The only experience where it's possible to view your prompts is by using the chat-magic function in Notebooks, under the Fabric Data Science view. 
+
+      - question: |
+          Does enabling Copilot and agreeing to the setting of "Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance" mean all my data is sent or processed outside my country?
+        answer: |
+          Not exactly. While the prompt itself is sent to Azure OpenAI, it doesn't mean your data is sent or processed outside your country. 
+          
+          The prompt isn't used to train any models.   
+    
+      - question: |
           I loaded my semantic model, but it doesn't meet all the criteria listed in the data evaluation. What should I do?  
         answer: |
           The criteria listed in [Update your data model to work well with Copilot for Power BI](/power-bi/create-reports/copilot-evaluate-data) is important because it helps you get a better quality report. As long as you meet seven of the eight points, including Consistency, the quality of the reports generated should be good.  
@@ -44,7 +68,7 @@ sections:
 
           If you load a semantic model and still can't see the Copilot button, file a bug here: Copilot Bug Template.
       - question: |
-          I selected the Copilot button, and it's stuck on Analyzing your semantic model  
+          I selected the Copilot button, and it's stuck on Analyzing your semantic model.
         answer: |
           Depending upon the size of the semantic model, Copilot might take a while to analyze it. If you've waited longer than 15 minutes and you haven't received any errors, chances are that there's an internal server error. 
 

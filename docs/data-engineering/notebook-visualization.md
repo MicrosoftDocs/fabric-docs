@@ -177,7 +177,7 @@ You can easily embed and interact with Power BI reports in your notebooks with j
 
 The following image is an example of rendering existing Power BI report.
 
-:::image type="content" source="media\notebook-visualization\spark-quick-visual-report.png" alt-text="Screenshot of a spark quick visual." lightbox="media\notebook-visualization\spark-quick-visual-report.png":::
+:::image type="content" source="media\notebook-visualization\spark-quick-visual-report.png" alt-text="Screenshot of a spark visual rendering a Power BI report." lightbox="media\notebook-visualization\spark-quick-visual-report.png":::
 
 Run the following code to render an existing Power BI report.
 
@@ -196,7 +196,7 @@ You can use a Spark DataFrame in your notebook to quickly generate insightful vi
 
 The following image is an example of a `QuickVisualize()` from a Spark DataFrame.
 
-:::image type="content" source="media\notebook-visualization\powerbi-report-example.png" alt-text="Screenshot of a Power BI report." lightbox="media\notebook-visualization\powerbi-report-example.png":::
+:::image type="content" source="media\notebook-visualization\powerbi-report-example.png" alt-text="Screenshot of a Power BI report from a dataframe." lightbox="media\notebook-visualization\powerbi-report-example.png":::
 
 Run the following code to render a report from a Spark DataFrame.
 
@@ -218,7 +218,7 @@ You can also create reports based on a pandas DataFrame in notebook.
 
 The following image is an example of a `QuickVisualize()` from a pandas DataFrame.
 
-:::image type="content" source="media\notebook-visualization\pandas-quick-visual-report.png" alt-text="Screenshot of a pandas quick visual." lightbox="media\notebook-visualization\pandas-quick-visual-report.png":::
+:::image type="content" source="media\notebook-visualization\pandas-quick-visual-report.png" alt-text="Screenshot of a report from pandas dataframe." lightbox="media\notebook-visualization\pandas-quick-visual-report.png":::
 
 Run the following code to render a report from a Spark DataFrame.
 

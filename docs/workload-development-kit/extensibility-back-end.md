@@ -1,9 +1,8 @@
 ---
 title: Fabric workload development kit backend workload (preview)
 description: Learn about building the backend of a customized Fabric workload application using the Fabric extensions.
-author: mberdugo
-ms.author: monaberdugo
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.custom:
 ms.date: 05/21/2024
@@ -12,11 +11,12 @@ ms.date: 05/21/2024
 
 # Back-end implementation guide (preview)
 
-This [Microsoft Fabric developer sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a starting point for building applications that require integration with various services, including Lakehouse. This guide helps you set up the environment and configure the necessary components to get started. This article outlines the key components and their roles in the architecture.
+This [Microsoft Fabric workload development sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) serves as a starting point for building applications that require integration with various services, as well as integration with the Lakehouse platform. This guide helps you set up the environment and configure the necessary components to get started. This article outlines the key components and their roles in the architecture.
 
 ## Frontend
 
 The frontend is where you manage the user experience (UX) and behavior. It communicates with the Fabric frontend portal via an iFrame, facilitating seamless interaction with the user.
+For more information see [Fabric workload development kit frontend guide](extensibility-front-end.md).
 
 ## Backend
 
@@ -24,11 +24,13 @@ The backend stores both data and metadata. It utilizes CRUD operations to create
 
 ## Azure Relay and DevGateway
 
-*Azure Relay* enables communication between the local development environment and the Fabric backend while operating in development mode. The `DevGateway.exe` utility handles the workload's side of Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity. The utility ensures that the workload is available in all workspaces assigned to that capacity and handles the deregistration when stopped.
+*Azure Relay* enables communication between the local development environment and the Fabric backend while operating in development mode. 
+In developer mode, the workload operates on the developer's machine.
+The `DevGateway.exe` utility has two roles:
+* Handles the workload's side of Azure Relay channel and manages the registration of the workload local instance with Fabric in the context of a specific capacity, making the workload accessible in all workspaces assigned to that capacity. The utility handles the deregistration when stopped.
+* Channels (along with Azure relay) workload API calls from Fabric to the workload.
 
-## Dev gateway
-
-In local mode, the workload operates on the developer's machine. Workload API calls from Fabric to the workload are channeled through Azure Relay. The workload's side of the Azure Relay channel is managed by the DevGateway command-line utility. Workload Control API calls are made directly from the workload to Fabric, and don't require the Azure Relay channel. The DevGateway utility also manages the registration of the workload's local (development) instance with Fabric within a specific capacity context, making the workload accessible in all workspaces assigned to that capacity. Terminating the DevGateway utility automatically removes the workload instance registration.
+Workload Control API calls are made directly from the workload to Fabric, and don't require the Azure Relay channel.
 
 ## Lakehouse integration
 
@@ -38,7 +40,7 @@ The workload development kit architecture integrates seamlessly with Lakehouse, 
 
 Microsoft Entra ID is used for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
 
-[Th development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, authentication guidelines, and getting started, see the respective sections in [Authentication overview](authentication-concept.md).
+[The development kit overview](development-kit-overview.md) provides a glimpse into our architecture. For more information on project configuration, authentication guidelines, and getting started, see the respective sections in [Authentication overview](authentication-concept.md).
 
 :::image type="content" source="./media/extensibility-back-end/overview.png" alt-text="Diagram showing how Fabric SDK integrated into Fabric.":::
 
@@ -64,17 +66,17 @@ Ensure that the NuGet Package Manager is integrated into your Visual Studio inst
 
 * `<IsPackable>true</IsPackable>`: When set to true, this property indicates that the project is packable, meaning it can be packaged into a NuGet package. It's an essential property for projects intended to produce NuGet packages during the build process.
 
-The generated NuGet package for Debug mode is located in the **src\bin\Debug** directory after the build process.
+The generated NuGet package for Debug mode is located in the `src\bin\Debug` directory after the build process.
+When working in cloud mode, you can switch Visual Studio build configuration to **Release** and build your package. The generated package is located in the `src\bin\Release` directory. For more information, see [Working in cloud mode guide](workload-cloud-setup.md)
 
 ### Dependencies
 
-* The backend boilerplate depends on the following Azure SDK packages:
+* The backend sample boilerplate depends on the following Azure SDK packages:
 
   * Azure.Core
   * Azure.Identity
   * Azure.Storage.Files.DataLake
-
-* The Microsoft Identity package
+  * The Microsoft Identity package
 
 To configure the NuGet Package Manager, specify the path in the 'Package Sources' section before the build process.
 
@@ -128,13 +130,13 @@ To configure the NuGet Package Manager, specify the path in the 'Package Sources
 
 ## Getting Started
 
-To set up the boilerplate sample project on your local machine, follow these steps:
+To set up the workload sample project on your local machine, follow these steps:
 
-1. Clone the Boilerplate: `git clone https://github.com/microsoft/Microsoft-Fabric-workload-development-sample.git`
+1. Clone the repository: `git clone https://github.com/microsoft/Microsoft-Fabric-workload-development-sample.git`
 1. Open the solution in **Visual Studio 2022**.
 1. Set up an app registration by following instructions on the Authentication [guide](authentication-tutorial.md). Ensure that both your Frontend and Backend projects have the necessary setup described in the guide. Microsoft Entra is employed for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
   
-1. Update the One Lake DFS Base URL: Depending on your Fabric environment, you can update the `OneLakeDFSBaseURL` within the **src\Constants** folder. The default is `onelake.dfs.fabric.microsoft.com` but this can be updated to reflect the environment you are on. More information on the DFS paths can be found [in the One Lake documentation](../onelake/onelake-access-api.md)
+1. Update the OneLake DFS Base URL: Depending on your Fabric environment, you can update the `OneLakeDFSBaseURL` within the **src\Constants** folder. The default is `onelake.dfs.fabric.microsoft.com` but this can be updated to reflect the environment you are on. More information on the DFS paths can be found [in the One Lake documentation](../onelake/onelake-access-api.md).
 
 1. Setup Workload Configuration
 
@@ -157,7 +159,7 @@ To set up the boilerplate sample project on your local machine, follow these ste
    To generate a manifest package file, build Fabric_Extension_BE_Boilerplate. This runs a three step process to generate the manifest package file:
 
    1. Trigger `ManifestValidator.ps1` on `WorkloadManifest.xml` in *Packages\manifest\* and trigger `ItemManifestValidator.ps1` on all items XMLs (e.g., `Item1.xml`) in *Packages\manifest\*. If the validation fails, an error file is generated. You can view the validation scripts in *ValidationScripts\*.
-   1. If an error file exists, the build fails with `Validation errors with either manifests or default values`. Double select on the error in VS studio to see the error file.
+   1. If an error file exists, the build fails with `Validation errors with either manifests or default values`. Double select on the error in Visual Studio to see the error file.
    1. After successful validation, pack the `WorkloadManifest.xml` and `Item1.xml` files into ManifestPackage.1.0.0.nupkg. The resulting package is in **src\bin\Debug**.
 
    Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-dev-mode.json configuration file.
@@ -386,7 +388,7 @@ Original exception: AADSTS7000215: Invalid client secret provided. Ensure the se
 
 **Resolution**: Make sure you have the correct client secret in *appsettings.json*.
 
-#### Error during artifact creation due to missing admin consent
+#### Error during item creation due to missing admin consent
 
 **Error**:
 

@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 08/07/2024
 ms.search.form: Data Preview and Insights
 ---
 
@@ -54,9 +54,9 @@ To view data insights for an eventstream:
 
 :::image type="content" source="./media/monitor/eventstream-metrics.png" alt-text="Screenshot showing the eventstream metrics." lightbox="./media/monitor/eventstream-metrics.png" :::
 
-### Data insights in Azure event hub source, lakehouse destination and KQL database destination nodes
+### Data insights in Azure event hub source,  Azure iot hub source, lakehouse destination and KQL database destination nodes
 
-The following metrics are available on the **Data insights** tab for Azure event hub source, lakehouse destination, and KQL database destination ('Event processing before ingestion' mode) nodes:
+The following metrics are available on the **Data insights** tab for Azure event hub source, Azure iot hub source, lakehouse destination, and KQL database destination ('Event processing before ingestion' mode) nodes:
 
 | Metric | Unit | Description |
 |--|--|--|
@@ -69,9 +69,9 @@ The following metrics are available on the **Data insights** tab for Azure event
 | **deserialization errors** | Count | Number of input events that couldn't be deserialized inside the eventstream engine. |
 | **Watermark delay** | Second | Maximum watermark delay across all partitions of all outputs for this source or destination. It is computed as the wall clock time minus the largest watermark. |
 
-To view the data insights for an Azure event hub source, lakehouse destination or KQL database destination ('Event processing before ingestion' mode):
+To view the data insights for an Azure event hub source, Azure iot hub source, lakehouse destination or KQL database destination ('Event processing before ingestion' mode):
 
-1. Select the Azure event hub source node, lakehouse destination node or KQL database destination node in the main editor canvas
+1. Select the Azure event hub source node, Azure iot hub source, lakehouse destination node or KQL database destination node in the main editor canvas
 
 2. In the lower pane, select the **Data insights** tab.
 
@@ -85,7 +85,7 @@ To view the data insights for an Azure event hub source, lakehouse destination o
 
 The **Runtime logs** tab enables you to check the detailed logs that occur in the eventstream engine. Runtime logs have three severity levels: warning, error, and information.
 
-To view the runtime logs for Azure event hub source, lakehouse destination and KQL database destination ('Event processing before ingestion' mode):
+To view the runtime logs for Azure event hub source, Azure iot hub source, lakehouse destination and KQL database destination ('Event processing before ingestion' mode):
 
 1. Select the Azure event hub source, lakehouse destination or KQL database destination in the main editor canvas.
 

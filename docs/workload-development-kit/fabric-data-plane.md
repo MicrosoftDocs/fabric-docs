@@ -1,9 +1,8 @@
 ---
 title: Work with customer data in Microsoft Fabric (preview)
 description: Learn about how to work with customer data in Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: concept-article
 ms.custom:
 ms.date: 05/21/2024

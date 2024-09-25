@@ -4,7 +4,7 @@ description: A known issue is posted where pipeline copy to Oracle using on-prem
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/06/2024
+ms.date: 09/04/2024
 ms.custom: known-issue-781
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-781
 
 You can use the copy activity in a data pipeline to load data into an Oracle database. If you use the on-premises data gateway and an Oracle database as the sink, you might receive an error. Although you receive an error, the pipeline does insert the first batch of rows into the Oracle table.
 
-**Status:** Open
+**Status:** Fixed: September 4, 2024
 
 **Product Experience:** Data Factory
 

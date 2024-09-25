@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 06/28/2024
+ms.date: 09/16/2024
 ---
 
 # Data Factory limitations overview
@@ -18,15 +18,16 @@ For service level outages or degradation notifications, check [Microsoft Fabric 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
 - Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) isn't yet available.
-- Connectors don't support OAuth, Azure key vault (AKV), and Managed System Identity (MSI).
-- Connectors can't use parameters.
-- GetMetaData activity can't have a source from Fabric KQL databases.
-- Script activity can't have a source from Fabric KQL databases.
-- Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and resource URI.
-- Data pipelines are scoped to their workspace, and can't interact with items in other workspaces.
-- Pipelines can't use a managed VNet.
-- Web activity does not support service principal based authentication.
-- Pipeline scheduling options currently include only by the minute, hourly, daily, and weekly. 
+-	Connectors don't support OAuth and  Azure key vault (AKV).
+-	Managed System Identity (MSI) is only available for Azure Blob Storage. Support for other sources is coming soon. 
+-	Connectors can't use parameters.
+-	GetMetaData activity can't have a source from Fabric KQL databases.
+-	Script activity can't have a source from Fabric KQL databases.
+-	Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and resource URI.
+-	Validation activity, Mapping Data Flow activity, and the SSIS integration runtime are not available. 
+-	Pipelines can't use a managed virtual network.
+-	Web activity does not support service principal based authentication.
+-	Pipeline scheduling options currently include only by the minute, hourly, daily, and weekly.
 
 ## Data pipeline resource limits
 
@@ -69,6 +70,7 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 - The Delta Lake specification doesn't support case sensitive column names, so `MyColumn` and `mycolumn`, while supported in Mashup, results in a "duplicate columns" error.
 - Dataflows that use a Gateway and the data destination feature are limited to an evaluation or refresh time of one hour. Read more about the [gateway considerations when using data destinations](gateway-considerations-output-destinations.md).
 - Currently, column nullability is defaulting to allow nulls in all columns in the destination.
+- You cannot connect to a public endpoint of an Azure Storage account using Power Query Online or Dataflows Gen2 (no gateway) if the Azure Storage account already has one or more Private Endpoints created. You will need to connect to such storage accounts using a VNet data gateway or an on-premises data gateway that can connect using private endpoints. 
 
 The following table indicates the supported data types in specific storage locations.
 

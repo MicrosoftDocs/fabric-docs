@@ -40,7 +40,7 @@ The **Endpoint** column lists domain names and links to external sites, which co
 ## OneLake
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|For OneLake access for DFS APIs (default Onelake endpoint) |*.onelake.dfs.fabric.microsoft.com|Port 1443|
+|For OneLake access for DFS APIs (default Onelake endpoint) |*.onelake.dfs.fabric.microsoft.com|TCP 1443|
 |Onelake endpoint for calling Blob APIs|*.onelake.blob.fabric.microsoft.com|TCP 443|
 |**Optional**: Regional Endpoints for DFS APIs |*\<region\>-onelake.dfs.fabric.microsoft.com|TCP 443|
 |**Optional**: Regional Endpoints for Blob APIs |*\<region\>-onelake.blob.fabric.microsoft.com|TCP 443|
@@ -99,10 +99,10 @@ The **Endpoint** column lists domain names and links to external sites, which co
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|**Required**: Datamart SQL |datamart.fabric.microsoft.com|1433|
-|**Required**: Datamart SQL |datamart.pbidedicated.microsoft.com|1433|
-|**Required**: Fabric DW SQL |datawarehouse.fabric.microsoft.com|1433|
-|**Required**: Fabric SQL |datawarehouse.pbidedicated.microsoft.com|1433|
+|**Required**: Datamart SQL |datamart.fabric.microsoft.com|TCP 1433|
+|**Required**: Datamart SQL |datamart.pbidedicated.microsoft.com|TCP 1433|
+|**Required**: Fabric DW SQL |datawarehouse.fabric.microsoft.com|TCP 1433|
+|**Required**: Fabric SQL |datawarehouse.pbidedicated.microsoft.com|TCP 1433|
 
 ## Data Science
 

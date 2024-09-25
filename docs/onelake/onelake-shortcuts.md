@@ -98,7 +98,7 @@ https://onelake.dfs.fabric.microsoft.com/MyWorkspace/MyLakhouse/Tables/MyShortcu
 
 ## Types of shortcuts
 
-OneLake shortcuts support multiple filesystem data sources. These include internal OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3, and Dataverse.
+OneLake shortcuts support multiple filesystem data sources. These include internal OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3, S3 Compatible, Google Cloud Storage(GCS) and Dataverse.
 
 ### Internal OneLake shortcuts
 
@@ -127,6 +127,7 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 - **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
 - **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute
 - **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
+- **Workspace Identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
 
 > [!NOTE]
 > You must have Hierarchical Namespaces enabled on your ADLS Gen 2 storage account.
@@ -159,7 +160,7 @@ The IAM user must have the following permissions on the bucket that the shortcut
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
 
-### Google Cloud Storage shortcuts (Preview)
+### Google Cloud Storage shortcuts
 
 Shortcuts can be created to Google Cloud Storage(GCS) using the XML API for GCS.  When you create shortcuts to Google Cloud Storage, the target path must contain a bucket name at a minimum.  You can also restrict the scope of the shortcut by further specifying the prefix/folder you want to point to within the storage hierarchy. 
 
@@ -273,6 +274,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
 - Additional shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models is not currently available.
+- It may take up to a minute for the Table API to recognize new shortcuts.
 
 ## Related content
 

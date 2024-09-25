@@ -20,7 +20,7 @@ Data Workflows is a simple and efficient way to create and manage [Apache Airflo
 
 ## When to use Data Workflows?
 
-Data Workflows offer Apache Airflow based python DAGs (python code-centric authoring) for defining the data orchestration process. If you have the Apache Airflow background, or are currently using Apache Airflow, you might prefer to use the Data Workflows. On the contrary, if you wouldn't like to write/ manage python-based DAGs for data process orchestration, you might prefer to use pipelines.
+Data Workflows is a Managed service that offers allows the users to create and manage Apache Airflow based python DAGs (python code-centric authoring) for defining the data orchestration process without having to manage the underlying infrastructure. If you have the Apache Airflow background, or are currently using Apache Airflow, you might prefer to use the Data Workflows. On the contrary, if you wouldn't like to write/ manage python-based DAGs for data process orchestration, you might prefer to use pipelines.
 
 ## Key Features
 Data Workflows in Data Factory for Microsoft Fabric offer a range of powerful features, including:
@@ -41,21 +41,27 @@ Data Workflows in Data Factory for Microsoft Fabric offer a range of powerful fe
 
 ## Region availability (public preview)
 
-- Japan West
-- Japan East
-- Qatar Central
-- North Europe
-- West Central US
-- West US
-- East US 2 EUAP
-- UK South
+- Australia East
+- Australia Southeast
+- Brazil South
+- Brazil South (duplicate)
+- Canada East
+- East Asia
 - East US
+- East US 2 EUAP
+- Germany West Central
+- Japan East
+- Japan West
+- North Europe
+- Qatar Central
+- South Africa North
 - South Central US
 - Southeast Asia
+- UK South
+- UK South (duplicate)
+- West Central US
 - West Europe
-- Australia Southeast
-- Australia East
-- Brazil South
+- West US
 
 ## Supported Apache Airflow versions
 

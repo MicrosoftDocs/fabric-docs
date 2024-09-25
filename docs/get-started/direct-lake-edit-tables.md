@@ -29,7 +29,7 @@ The areas in the Edit tables dialog are the following:
 * **Information** text and **learn more** link to the Direct Lake documentation.
 * **Search** to find the specific table or view from the data source.
 * **Filter** to limit the schema or object type (table or view) that is displayed.
-* **Reload** to sync the SQL analytics endpoint of a Lakehouse or a warehouse (requires write permission on the Lakehouse or warehouse).
+* **Reload** to sync the SQL analytics endpoint of a Lakehouse or a warehouse (requires write permission on the Lakehouse or warehouse). Not available in all scenarios.
 * **Tree view** organizes the available tables or views:
     * Schema name
         * Object type (table or view)
@@ -62,7 +62,8 @@ You can perform many actions that impact the tables in the semantic model:
 * Selecting the **Cancel** button returns to editing the model without applying any updates.
 * **Selecting** tables or views previously unselected adds the selected items to the semantic model.
 * **Unselecting** tables or views previously selected removes them from the semantic model.
-* **Greyed out selected tables** or views have measures in them, and they can't be removed without first moving the measures to a different table or deleting them from the model.
+
+Tables that have measures can be unselected but will still show in the model with columns removed and only showing measures. The measures can be either deleted or moved to a different table. When all measures have been moved or deleted, go back to Edit tables and click Confirm to no longer show the empty table in the model.
 
 ### Creating a new semantic model from Lakehouse and Warehouse
 

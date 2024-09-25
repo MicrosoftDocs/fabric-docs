@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 08/22/2024
 ms.search.form: Notebook git deployment pipelines alm ci cd
 ---
 
@@ -19,8 +19,6 @@ This article explains how Git integration and deployment pipelines work for note
 ## Notebook Git integration
 
 Fabric notebooks offer Git integration for source control with Azure DevOps. With Git integration, you can back up and version your notebook, revert to previous stages as needed, collaborate or work alone using Git branches, and manage your notebook content lifecycle entirely within Fabric.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ### Set up a connection
 
@@ -56,8 +54,6 @@ Notebook cell output isn't included when syncing to Git.
 
 You can also use Deployment pipeline to deploy your notebook code across different environments, such as development, test, and production. This feature can enable you to streamline your development process, ensure quality and consistency, and reduce manual errors with lightweight low-code operations. You can also use deployment rules to customize the behavior of your notebooks when they're deployed, such as changing the default lakehouse of a notebook.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
 Use the following steps to complete your notebook deployment using the deployment pipeline.
 
 1. Create a new deployment pipeline or open an existing deployment pipeline. (For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).)
@@ -74,7 +70,7 @@ Use the following steps to complete your notebook deployment using the deploymen
 
     :::image type="content" source="media\notebook-source-control-deployment\deploy-rule-entry.png" alt-text="Screenshot of deployment rules entry." lightbox="media\notebook-source-control-deployment\deploy-rule-entry.png":::
 
-    Fabric supports parameterizing the default lakehouse for **each** notebook instance when deploying with deployment rules. Three options are available to specify the target default lakehouse: Same with source lakehouse, _N/A_, and other lakehouse.
+    Fabric supports parameterizing the default lakehouse for **each** notebook instance when deploying with deployment rules. Three options are available to specify the target default lakehouse: Same with source lakehouse, _N/A_(no default lakehouse), and other lakehouse.
 
     :::image type="content" source="media\notebook-source-control-deployment\set-default-lakehouse.png" alt-text="Screenshot of set default lakehouse." lightbox="media\notebook-source-control-deployment\set-default-lakehouse.png":::
 
