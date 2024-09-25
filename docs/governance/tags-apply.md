@@ -14,67 +14,35 @@ ms.date: 08/06/2024
 
 # Apply tags to items in Fabric
 
-<!-- Required: Article headline - H1
+This article decribes how to apply tags to items in Microsoft Fabric. It is intended for users who want to apply tags to Fabric items they have write permissions to.
 
-Identify the product or service and the task the
-article describes.
-
--->
-
-[Introduce and explain the purpose of the article.]
-
-<!-- Required: Introductory paragraphs (no heading)
-
-Write a brief introduction that can help the user
-determine whether the article is relevant for them
-and to describe the task the article covers.
-
--->
+For more information about tags, see [Tags in Microsoft Fabric](./tags-overview.md).
 
 ## Prerequisites
 
-<!-- Optional: Prerequisites - H2
+You must have write permissions on an item in order to be able to apply a tag to it.
 
-If included, "Prerequisites" must be the first H2 in the article.
+## Apply a tag on an item
 
-List any items that are needed to complete the How To,
-such as permissions or software.
+1. Open the item's settings and go the the **Tags** tab.
 
-If you need to sign in to a portal to complete the How To, 
-provide instructions and a link.
+    If the item already has some tags applied, they are listed under an **Applied tags** heading.
 
--->
+1. Select the tags that are relevant for your item. You can select more than one tag. An item can have up to ten tags applied.
 
-## "[verb] * [noun]"
+1. When done, select **Save** or **Apply** if required. Otherwise, just close the settings pane.
 
-[Introduce the procedure.]
+## Remove tags from an item
 
-1. Procedure step
-1. Procedure step
-1. Procedure step
+You must have write permissions on an item in order to be able to remove tags that are applied to it.
 
-<!-- Required: Steps to complete the task - H2
+1. Open the item's settings and go the the **Tags** tab.
 
-In one or more H2 sections, organize procedures. A section
-contains a major grouping of steps that help the user complete
-a task.
+    Any applied tags appear under the **Applied tags** header.
 
-Begin each section with a brief explanation for context, and
-provide an ordered list of steps to complete the procedure.
+1. Select the **X** next to the name of the tag you wish to remove from the item. The tag will be removed from the set of applied tags.
 
-If it applies, provide sections that describe alternative tasks or
-procedures.
-
--->
-
-## Clean up resources
-
-<!-- Optional: Steps to clean up resources - H2
-
-Provide steps the user can take to clean up resources that
-they might no longer need.
-
--->
+1. When done, select **Save** or **Apply** if required. Otherwise, just close the settings pane.
 
 ## Related content
 
